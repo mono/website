@@ -1,0 +1,7 @@
+title: Mono Project
+
+
+exclude:
+  - CNAME
+  - Gemfile*
+
