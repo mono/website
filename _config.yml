@@ -1,3 +1,4 @@
+baseurl: http://akoeplinger.github.com/mono-project.com
 relative_permalinks: false
 permalink: /news/:year/:month/:day/:title/
 paginate: 5
