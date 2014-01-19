@@ -1,0 +1,21 @@
+<div id="header_nav" class="contain-to-grid">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/"><img src="/img/mono-gorilla.svg" id="logo"/>Mono</a></h1>
+      </li>
+      <li class="toggle-topbar"><a href="#">Menu</a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li {% if page.navgroup == "home" %}class="active"{% endif %}><a href="/"><i class="fa fa-home"></i> Home</a></li>
+        <li {% if page.navgroup == "download" %}class="active"{% endif %}><a href="/download"><i class="fa fa-download"></i> Download</a></li>
+        <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="/docs"><i class="fa fa-book"></i> Documentation</a></li>
+        <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="/news"><i class="fa fa-bullhorn"></i> News</a></li>
+        <li {% if page.navgroup == "contribute" %}class="active"{% endif %}><a href="/contribute"><i class="fa fa-github"></i> Contribute</a></li>
+      </ul>
+    </section>
+  </nav>
+</div>

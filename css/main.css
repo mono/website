@@ -1,0 +1,67 @@
+#logo {
+  height: 50px;
+  margin-top: -6px;
+  margin-right: 10px;
+}
+
+#header_nav {
+  margin-bottom: 15px;
+  box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6);
+}
+
+.top-bar {
+  height: 60px;
+}
+
+.top-bar .name {
+  height: 60px;
+}
+
+.top-bar .name h1 {
+  line-height: 60px;
+  font-size: 1.8em;
+}
+
+.top-bar .name h1 a {
+  width: 100%;
+}
+
+.top-bar-section > ul { 
+  margin-top: 8px;
+}
+
+.top-bar .toggle-topbar {
+  margin-top: 8px;
+}
+
+.meta {
+  margin-left: 2px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.meta .date:before { 
+  font: 1.0em FontAwesome;
+  content: "\f073"
+}
+
+#mono-download.tabs dd > a {
+  font-size: 1.5em;
+}
+
+#mono-download.tabs dd.active a {
+  background-color: #333;
+  color: #fff;
+}
+
+#mono-download.tabs dd {
+  line-height: 1em;
+}
+
+footer ul {
+  font-size: 0.85em;
+}
+
+footer h6 a {
+  color: #000;
+}

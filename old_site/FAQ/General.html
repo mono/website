@@ -1,0 +1,214 @@
+---
+layout: obsolete
+title: "FAQ: General"
+permalink: /FAQ:_General/
+---
+<h2> <span class="mw-headline" id="Basics">Basics</span></h2>
+<p><b> Can Mono run binaries produced by Visual Studio? </b>
+</p><p>Yes, Mono can run binaries produced by Visual Studio, there is no need to recompile.
+</p><p>Use our <a title="Moma" class="mw-redirect" href="/Moma">Mono Migration Analysis</a> tool to check if everything that your application uses has been implemented in Mono or if there are special considerations to keep in mind.
+</p><p>The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our <a title="Roadmap" class="mw-redirect" href="/Roadmap">Roadmap</a> for details about what is implemented.
+</p><p><b> What is Mono™ exactly? </b>
+</p><p>The Mono Project is an open development initiative sponsored by Novell to develop an open source, UNIX version of the Microsoft .NET development platform. Its objective is to enable UNIX developers to build and deploy cross-platform .NET Applications. The project implements various technologies developed by Microsoft that have now been submitted to the ECMA for standardization. 
+</p><p>The Mono Project has also sparked a lot of interest in developing C#-based components, libraries and frameworks.  The most important ones, some of which were developed by the Mono team, are: 
+</p>
+<ul><li> <a class="external text" href="http://gtk-sharp.sf.net" rel="nofollow">Gtk#</a>: Bindings for the popular Gtk+ GUI toolkit for UNIX and Windows systems. Other bindings are available: Diacanvas-Sharp and MrProject.
+</li></ul>
+<ul><li> <a title="Cecil" href="/Cecil">Mono.Cecil</a>: A library to generate and inspect CIL assemblies.
+</li></ul>
+<ul><li> <a class="external text" href="http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx" rel="nofollow">#ZipLib</a>: A library to manipulate various kinds of compressed files and archives (Zip and tar).
+</li></ul>
+<ul><li> <a title="Tao" href="/Tao">Tao Framework</a>: bindings for OpenGL
+</li></ul>
+<ul><li> Mono.Directory.LDAP / Novell.Directory.LDAP: LDAP access for .NET apps.
+</li></ul>
+<ul><li> Mono.Data: We ship support for PostgreSQL, MySQL, Firebird, Sybase ASE, IBM DB2, SQLite, Microsoft SQL Server, Oracle, and ODBC data sources.
+</li></ul>
+<ul><li> Mono.Cairo: Bindings for the <a class="external text" href="http://www.cairographics.org" rel="nofollow">Cairo</a> rendering engine (Our System.Drawing is implemented on top of this).
+</li></ul>
+<ul><li> Mono.Posix / Mono.UNIX: Bindings for building POSIX applications using C#.
+</li></ul>
+<ul><li> Mono.Remoting.Channels.Unix: Unix socket based remoting
+</li></ul>
+<ul><li> Mono.Security: Enhanced security and crypto framework
+</li></ul>
+<ul><li> Mono.Math: BigInteger and Prime number generation
+</li></ul>
+<ul><li> Mono.Http: Support for creating custom, embedded HTTP servers and common HTTP handlers for your applications.
+</li></ul>
+<ul><li> Mono.XML: Extended support for XML
+</li></ul>
+<ul><li> Managed.Windows.Forms (aka System.Windows.Forms): A complete and cross platform, System.Drawing based Winforms implementation.
+</li></ul>
+<ul><li> <a class="external text" href="http://remoting-corba.sourceforge.net/" rel="nofollow">Remoting.CORBA</a>: A CORBA implementation for Mono.
+</li></ul>
+<ul><li> Ginzu: An implementation on top of Remoting for the <a class="external text" href="http://www.zeroc.com" rel="nofollow">ICE</a> stack
+</li></ul>
+<p>For a more complete list, see the <a title="Libraries" href="/Libraries">Libraries</a> and <a title="Software" href="/Software">Software</a> pages.
+</p><p><b> What is the difference between Mono and the .NET Initiative? </b>
+</p><p>The ".NET Initiative" is a somewhat nebulous company-wide effort by Microsoft, one part of which is a cross-platform development framework. Mono is an implementation of the development framework, but not an implementation of anything else related to the .NET Initiative, such as Passport or software-as-a-service.
+</p><p><b> What technologies are included in Mono? </b>
+</p><p>Mono contains a number of components useful for building new software: 
+</p>
+<ul><li> A Common Language Infrastructure (CLI) virtual machine that contains a class loader, Just-in-time compiler, and a garbage collecting runtime.
+</li></ul>
+<ul><li> A class library that can work with any language which works on the CLR. Both .NET compatible class libraries as well as Mono-provided class libraries are included.
+</li></ul>
+<ul><li> A compiler for the C# language. In the future we might work on other compilers that target the Common Language Runtime.
+</li></ul>
+<p>Windows has compilers that target the virtual machine from <a class="external text" href="http://msdn.microsoft.com/net/thirdparty/default.asp#lang" rel="nofollow">a number of languages:</a> Managed C++, Java Script, Eiffel, Component Pascal, APL, Cobol, Perl, Python, Scheme, Smalltalk, Standard ML, Haskell, Mercury and Oberon.
+</p><p>The CLR and the Common Type System (CTS) enables applications and libraries to be written in a collection of different languages that target the byte code 
+This means for example that if you define a class to do algebraic manipulation in C#, that class can be reused from any other language that supports the CLI. You could create a class in C#, subclass it in C++ and instantiate it in an Eiffel program. 
+A single object system, threading system, class libraries, and garbage collection system can be shared across all these languages.
+</p><p><b> Where can I find the specification for these technologies? </b>
+</p><p>You can find the information here:
+</p><p>C# <a class="external free" href="http://www.ecma-international.org/publications/standards/Ecma-334.htm" rel="nofollow">http://www.ecma-international.org/publications/standards/Ecma-334.htm</a>
+</p><p>CLI <a class="external free" href="http://www.ecma-international.org/publications/standards/Ecma-335.htm" rel="nofollow">http://www.ecma-international.org/publications/standards/Ecma-335.htm</a>
+</p><p><b> Will you implement the .NET Framework SDK class libraries? </b>
+</p><p>Yes, we will be implementing the APIs of the .NET Framework SDK class libraries.
+</p><p><b> Will you offer an ECMA-compliant set of class libraries? </b>
+</p><p>Eventually we will. Our current focus is on inter-operating with the Microsoft SDK, but we will also offer an ECMA compliant subset of the libraries.
+</p><p><b> What does the name "Mono" mean? </b>
+</p><p>Mono is the word for 'monkey' in Spanish. We like monkeys.
+</p><p><b> Does Mono work today? </b>
+</p><p>Yes, Mono is used in many <a title="Software" href="/Software">commercial and open source applications</a> and is used by many <a title="Companies Using Mono" href="/Companies_Using_Mono">companies</a>.
+</p><p>The execution engine works on many platforms (See the <a title="Supported Platforms" href="/Supported_Platforms">detailed list</a>) and the scope of Mono is quite comprehensive.  Detailed plans are available in our <a title="Plans" href="/Plans">Plans</a> page.
+</p><p><br>
+<b> What companies are using Mono? </b>
+</p><p>You can see a list of some <a title="Companies Using Mono" href="/Companies_Using_Mono">Companies Using Mono</a> page.
+</p><p>A number of commercial software products are listed <a title="Software" href="/Software">here</a>.
+</p><p><b> When will you ship Mono? </b>
+</p><p>Please see the <a title="Mono Project Roadmap" href="/Mono_Project_Roadmap">Mono Roadmap</a> for more details on the release plans.
+</p><p><b> How can I contribute? </b>
+</p><p>Check the <a title="Contributing" href="/Contributing">contributing</a> section.
+</p><p><b> Is there an online guide for Mono? </b>
+</p><p>Visit the <a title="Monkeyguide" href="/Monkeyguide">Monkeyguide</a> page.
+</p><p><b> Aren't you just copying someone else's work? </b>
+</p><p>We are interested in providing the best tools for programmers to develop applications for Free Operating Systems. We also want to help provide the interoperability that will allow those systems to fit in with other standards. 
+For more background, read the <a title="Mono Rationale" href="/Mono_Rationale"> Mono Project white paper</a>.
+</p><p><b> Miguel said once that Mono was being implemented in COBOL. Is that true? </b>
+</p><p>No. It was a joke.
+</p><p><b> Is there a list of known vulnerabilities affecting versions of Mono&nbsp;? </b>
+</p><p>Yes. We have compiled a list of <a title="Vulnerabilities" href="/Vulnerabilities">vulnerabilities</a> for Mono and its tools.
+</p>
+<h2> <span class="mw-headline" id="Availability"> Availability </span></h2>
+<p><b> What architectures and operating systems does Mono support? </b>
+</p><p>See our <a title="Supported Platforms" href="/Supported_Platforms">Supported Platforms</a> page for the complete list.
+</p><p>Although we support plenty of platforms, we do not package Mono in binary form for all of the supported platforms.
+</p><p><b> My platform is  not supported, can Mono support it? </b>
+</p><p>Porting Mono to a new platform has two dimensions:
+</p>
+<ul><li> Architecture port: this means porting the code generator used by the JIT to produce native code for a new CPU.
+</li><li> Operating system port: this includes porting Mono's IO-Layer which copes with threading, file I/O and networking as well as porting the garbage collector and exception handling code, which tends to be operating system specific.
+</li></ul>
+<p>Most Unix variants behave very similarly, so porting to a new Unix is relatively simple.   Porting to embedded operating systems or new research operating systems are the only places where a new operating system port might be required. 
+</p><p>Porting Mono to a new architecture takes about three months of work.  
+</p><p><b> Will Novell port Mono to my architecture/operating system? </b>
+</p><p>In the past Novell has done ports of Mono to new architectures and operating systems.   We have done this for internal Novell needs (x86-64, Itanium and with Neale's help to s390, s390x) or for customer needs (PowerPC).
+</p><p>Novell is certainly open to adding support for new architectures, but there are a number of variables: is the port going to benefit a large segment of users, hardware requirements and adequate funding.
+</p><p>If you want to discuss a port of Mono to a new architecture, you should <a title="Contact" href="/Contact">contact the Mono team at Novell</a>.
+</p>
+<h2> <span class="mw-headline" id="Installation_Problems"> Installation Problems </span></h2>
+<p><b> I installed Mono from the installer, but some applications now fail to work? </b>
+</p><p>When you install Mono with the installer, the new Mono will take precedence over your system Mono.   Lets call these MonoNew and MonoSystem.
+</p><p>The problem is typically that applications depend on assemblies installed in the system GAC.   This is usually located in /usr/lib/mono/gac.   MonoNew is typically installed into a user's home directory, for example /home/bob/mono-1.2.6.
+</p><p>You can instruct MonoNew to fallback to load assemblies from the system directory by setting the following environment variable:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(122, 8, 116); font-weight: bold;">export</span> <span style="color: rgb(0, 120, 0);">MONO_GAC_PREFIX</span>=<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>bob<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>mono-1.2.6:<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>usr</pre>
+<p>Notice that the first directory points to the MonoNew GAC.   This is necessary so the new assemblies are always loaded before the MonoSystem assemblies.   If the Mono assembly loader does not find the assembly in the MonoNew prefix, it will fallback to load the assemblies from the /usr directory structure.
+</p>
+<h2> <span class="mw-headline" id="Mono_and_GNOME"> Mono and GNOME </span></h2>
+<p><b> How is Mono related to GNOME? </b>
+</p><p>In a number of ways. This project was born out of the need of providing improved tools for the GNOME community, and will use existing components that have been developed for GNOME when they are available.
+Mono team members work actively on the <a class="external text" href="http://www.mono-project.com/GtkSharp" rel="nofollow">Gtk#</a> project: a binding of the GNOME class libraries for .NET and Mono.
+</p><p><b> Has the GNOME Foundation or the GNOME team adopted Mono? </b>
+</p><p>Mono is too new to be adopted by those groups. We hope that the tools that we will provide will be adopted by free software programmers including the GNOME Foundation members and the GNOME project generally.
+</p><p><b> Should GNOME programmers use Mono? </b>
+</p><p>Yes, we believe that Mono is a great development platform for building applications for the GNOME desktop. Mono includes <a title="GtkSharp" href="/GtkSharp">Gtk#</a> a .NET binding for GTK+ and various GNOME libraries which together with C# and the System libraries provide developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing.
+</p><p><b> Will Mono include compatibility with Bonobo components? What is the relationship between Mono and Bonobo? </b>
+</p><p>Although we had plan to support Bonobo, we have not yet done any work on this area and it is no longer a high priority.
+</p><p><b> Does Mono depend on GNOME? </b>
+</p><p>No, Mono does not depend on GNOME. We use a few packages produced by the GNOME team like the 'glib' library, we also use other third-party open source libraries like Cairo and ICU.
+</p><p><b> But will I be able to build GNOME applications? </b>
+</p><p>Yes, we will enable people to write GNOME applications using Mono.
+</p><p><b> Do you have C# bindings for GNOME? </b>
+</p><p>Yes, the <a title="GtkSharp" href="/GtkSharp">Gtk# project</a> provides bindings for Gtk+, Gdk, Atk, libgnome, libgnomecanvas, and libgnomeui. Other libraries under the GNOME framework will be added on an as-needed (and as-requested) basis.
+</p>
+<h2> <span class="mw-headline" id="GUI_applications"> GUI applications </span></h2>
+<p>See also our <a title="FAQ: Winforms" href="/FAQ:_Winforms">FAQ on Windows Forms</a> page.
+</p><p><b> Will Mono enable GUI applications to be authored? </b>
+</p><p>Yes, you will be able to build GUI applications. 
+</p><p>Indeed, that was the main driver for the creation of Mono. Today you can use <a title="GtkSharp" href="/GtkSharp">Gtk#</a> to develop GUI applications on Windows, Linux and MacOS X. 
+</p><p>We are also developing a complete <a title="Winforms" class="mw-redirect" href="/Winforms">Windows.Forms</a> implementation.
+</p><p>A list of pros and cons on the various APIs is available in our <a title="Gui Toolkits" href="/Gui_Toolkits">Gui Toolkits</a> page.
+</p><p><b> Will Gtk# applications run on Windows? </b>
+</p><p>Yes, applications compiled using Gtk# will work out of the box on Windows.
+</p><p>Note that using the Mozilla and most Gnome libraries is not currently supported and will limit the portability of your application. 
+</p><p><b> What is the difference between Gtk# and System.Windows.Forms? </b>
+</p><p>Gtk# is a set of bindings for the Gtk+ toolkit for C# (and other CIL-enabled languages), it integrates natively with the Gnome desktop. System.Windows.Forms is an API defined by Microsoft to build GUI applications.
+</p><p>For more details see the <a title="Gui Toolkits" href="/Gui_Toolkits">Gui Toolkits</a> page which presents the pros and cons of using each option.
+</p><p><b> Where can I learn more about Gtk#? </b>
+</p><p>See the <a title="GtkSharp" href="/GtkSharp">Gtk#</a> page for more information about Gtk# or jump on over to the <a title="GtkSharpBeginnersGuide" href="/GtkSharpBeginnersGuide">Gtk# Beginners Guide</a> to get started.
+</p><p><b> What can I do with Gtk#? </b>
+</p><p>Gtk# is becoming very usable and you can create applications and applets like those you see in a GNOME desktop environment. It's easy to install so it's worth a try.
+</p><p><b> How can I compile my HelloWorld.cs which uses Gtk#? </b>
+</p><p>Try: mcs -pkg:gtk-sharp-2.0 HelloWorld.cs
+</p><p>See <a title="GtkSharpBeginnersGuide" href="/GtkSharpBeginnersGuide">Gtk# Beginners Guide</a> for more details.
+</p><p><b> Is there any way how to connect DataAdapter to some Gtk# controls? </b>
+</p><p>There is a sample file called "DbClient" in gtk-sharp/samples that you might to look at. It is a sample program in Gtk# that adds/updates/deletes information on a PostgreSQL database. When we have the new table/tree widgets, I am sure someone would write an adapter for System.Data (in Gtk2 the tree/list widgets are written using a view/model, so you only need to write a model that maps to the database). You can have a look at gtk-sharp/sample/DbClient, where there is a Gtk# application that uses System.Data. It does not use DataAdapter, but DataReader though.
+</p><p><b> Do you have a comparison chart about the various toolkit offerings? </b>
+</p><p>See <a title="Gui Toolkits" href="/Gui_Toolkits">Gui Toolkits</a>.
+</p>
+<h2> <span class="mw-headline" id="Languages_and_Bindings"> Languages and Bindings </span></h2>
+<p><b> What programming languages are available for Mono? </b>
+</p><p>See our <a title="Languages" href="/Languages">Languages</a> page for a complete list of open source and commercial compilers that are available for Mono.
+</p><p><b> Why do arrow keys and tab not work with IronPython? </b>
+</p><p>IronPython defaults to strict emulation of the python console, to get the arrow keys, backspace and tab completion working, run your IronPython interepter like this:
+</p><p>mono ipy.exe -X:TabCompletion
+</p><p><b> Does Mono support COM? </b>
+</p><p>See <a title="COM Interop" href="/COM_Interop">COM Interop</a>.
+</p><p><b> Are there bindings for Open Office? </b>
+</p><p>There are .NET bindings for creating OpenOffice applications.  For more details see Go-OpenOffice's <a class="external text" href="http://go-ooo.org/wiki/index.php/Mono_Integration" rel="nofollow">Open Office integration with Mono</a> article.
+</p><p>openSUSE ships with a Mono-enabled version of OpenOffice which developers can use right away.
+</p>
+<h2> <span class="mw-headline" id="Mono_and_Microsoft"> Mono and Microsoft </span></h2>
+<p><b> Is Microsoft helping Novell with this project? </b>
+</p><p>Until September of 2007 there was no high level communication between Novell and Microsoft, but engineers who work on .NET or the ECMA groups have been very friendly, and very nice to answer our questions, or clarify part of the specification for us. 
+</p><p>In September 2007 an agreement between Microsoft and Novell opened the doors to collaboration specifically on the implementation of open source implementations of Silverlight 1.0 and Silverlight 2.0.
+</p><p>Silverlight 2.0 contains a subset of the virtual execution engine, and a subset of the class libraries that are designed to write rich web applications. 
+</p><p>Microsoft is interested in other implementations of .NET and are willing to help make the ECMA spec more accurate for this purpose.  Novell participates in the ECMA committee meetings for C# and the CLI.
+</p><p><br>
+<b> Do you fear that Microsoft will change the spec and render Mono useless? </b>
+</p><p>No. Microsoft proved with the CLI and the C# language that it was possible to create a powerful foundation for many languages to inter-operate. We will always have that.
+</p><p>Even if changes happened in the platform which were undocumented, the existing platform would have value on its own.
+</p><p><b> Are you writing Mono from the ECMA specs? </b>
+</p><p>Yes, we are writing them from the ECMA specs and the published materials in print about .NET.
+</p><p><b> If my applications use Mono, will I have to pay a service fee? </b>
+</p><p>No. Mono is not related to Microsoft's initiative of software-as-a-service.
+</p><p><b> If Microsoft will release a port of their .NET platform under the 'Shared Source' license, why should I bother with anything else? </b>
+</p><p>The Shared Source implementation will be expensive and its uses will be tightly restricted, especially for commercial use. We are working towards an implementation that will grant a number of important rights to recipients: use for any purpose, redistribution, modification, and redistribution of modifications. 
+This is what we call <a class="external text" href="http://www.gnu.org/philosophy/free-sw.html" rel="nofollow">Free Software</a>
+</p><p><b> Will Mono running on Linux make Passport available for Linux? </b>
+</p><p>No. However, the Passport toolkit for Linux-based web servers is available from Microsoft.
+</p><p><b> Will Mono allow me to run Microsoft Office on Linux? </b>
+</p><p>No, it will not. Microsoft Office is a Windows application. To learn more about running Windows applications on Intel UNIX systems refer to <a class="external text" href="http://www.winehq.com" rel="nofollow">the Wine Project</a>.
+</p><p><b> Can mono run the WebMatrix? </b>
+</p><p>No. WebMatrix is not a pure .NET application making use of many different Win32 API calls.
+</p><p><b> Does mono have something like Passport? Will mono have a server side Passport/Similar framework for XSP as well as client classes? </b>
+</p><p>Not yet, but the client side API for authentication is not the problem. We will likely have a lot of other authentication APIs, like the Liberty Alliance APIs. The problem is people on the web provider end that might use this for authentication.
+</p>
+<h2> <span class="mw-headline" id="Credits"> Credits </span></h2>
+<p>The FAQ contains material contributed by Miguel de Icaza, Jaime Anguiano, Lluis Sánchez.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 44/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key monoframework_mediawiki:pcache:idhash:734-0!*!0!!en!*!edit=0 and timestamp 20131124130855 -->
+<div class="printfooter">
+</div>
+

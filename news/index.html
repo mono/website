@@ -1,0 +1,22 @@
+---
+layout: default
+title: News
+navgroup: news
+---
+{% assign index = true %}
+<div itemscope itemtype="http://schema.org/Blog">
+{% for blogpost in paginator.posts %}
+{% assign content = blogpost.content %}
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        {% include blogpost.html %}
+    </article>
+{% endfor %}
+</div>
+<nav>
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" class="prev">&laquo; Previous Page</a>
+    {% endif %}
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">Next Page &raquo; </a>
+    {% endif %}
+</nav>

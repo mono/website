@@ -1,0 +1,781 @@
+---
+layout: obsolete
+title: "FAQ: Technical"
+permalink: /FAQ:_Technical/
+---
+<h2> <span class="mw-headline" id="Mono_Runtime"> Mono Runtime </span></h2>
+<p><b>Where can I find the Technical Documentation to the Mono Runtime?</b>
+</p><p>The documentation that used to be available on the mono/docs directory is now being moved into this web site and is available in the <a title="Mono:Runtime:Documentation" href="/Mono:Runtime:Documentation"> Runtime Documentation</a> section.
+</p>
+<h2> <span class="mw-headline" id="Mono_Platforms"> Mono Platforms </span></h2>
+<p><b> What operating systems does Mono run on? </b>
+</p><p>Mono runs on Linux, UNIX and Windows systems.  For a more detailed list, see the <a title="Supported Platforms" href="/Supported_Platforms">Supported Platforms</a> page.
+</p><p><b> Is Mono Binary Compatible with Windows? </b>
+</p><p>Yes, Mono is binary compatible with Windows.  Which means that you can run binaries produced by .NET compilers from Microsoft and other vendors.
+</p><p>When porting your applications, you should make sure that you test its functionality as differences in the underlying operating system and differences in the VM implementations (bugs, missing features) might affect your application.
+</p><p>Mono does not have every .NET 1.1 API implemented (see the Mono release notes for Mono 1.0) and when executing a binary from Windows that consumes an unimplemented API you might get an obscure message about tokens not being found.
+</p><p>In these cases it is useful to compile your application with Mono's C# compiler just to ensure that you are consuming APIs that are supported. 
+</p><p>This is not a perfect solution, as some APIs in Mono throw NotImplementedExceptions in certain cases, so you still should test your application with Mono.　If you care about application portability, check <a title="MoMA" href="/MoMA">MoMA</a>, the migration analyzer.
+</p><p><b> Are there any reasons to build on Mono instead of using Visual Studio and copying the binaries? </b>
+</p><p>In general, you can continue to use Visual Studio to write your code if you feel comfortable doing so.
+</p><p>Using Linux to develop will encourage you to test your software on Linux more frequently and if you have the chance, it will also help you to "dogfood" your own product.
+</p><p>Jonathan Pryor adds:
+</p>
+<blockquote><i>
+The benefit is that you can more easily know which APIs exist vs. which do not.  In general, if an API doesn't exist within Mono, we try NOT to provide the method within the assembly (with a default version throwing NotImplemetedException()), so that you can use gmcs compile to determine if all the APIs you use actually exist.
+<p>
+This isn't always possible, so there are several instances where a NotImplementedException is thrown, but when a NIE can be avoided by omitting the member, the member is omitted.
+</p>
+<p>
+The alternative is to build under .NET and run under Mono, which leaves you (more) at the mercy of NotImplementedException's or MissingMememberException.  A decent regression test platform should find these issues, so this might not be an actual problem.
+</p>
+</i></blockquote>
+<p><b> Can I run Mono applications without using 'mono program.exe'? </b>
+</p><p>Yes, this is possible on Linux systems, to do this, use something like:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">!</span> <span style="color: rgb(102, 0, 51);">-e</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>proc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>sys<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fs<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>binfmt_misc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>register <span style="color: rgb(122, 8, 116); font-weight: bold;">]</span>; <span style="color: rgb(0, 0, 0); font-weight: bold;">then</span>
+     <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>sbin<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>modprobe binfmt_misc
+     <span style="color: rgb(194, 12, 185); font-weight: bold;">mount</span> <span style="color: rgb(102, 0, 51);">-t</span> binfmt_misc none <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>proc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>sys<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fs<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>binfmt_misc
+<span style="color: rgb(0, 0, 0); font-weight: bold;">fi</span> 
+<span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span> <span style="color: rgb(102, 0, 51);">-e</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>proc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>sys<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fs<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>binfmt_misc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>register <span style="color: rgb(122, 8, 116); font-weight: bold;">]</span>; <span style="color: rgb(0, 0, 0); font-weight: bold;">then</span>
+     <span style="color: rgb(122, 8, 116); font-weight: bold;">echo</span> <span style="color: rgb(255, 0, 0);">':CLR:M::MZ::/usr/bin/mono:'</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>proc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>sys<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fs<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>binfmt_misc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>register
+<span style="color: rgb(0, 0, 0); font-weight: bold;">else</span>
+     <span style="color: rgb(122, 8, 116); font-weight: bold;">echo</span> <span style="color: rgb(255, 0, 0);">"No binfmt_misc support"</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">exit</span> <span style="color: rgb(0, 0, 0);">1</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">fi</span></pre>
+<p>This practice is discouraged as it is not portable.    
+</p><p>It is better to follow the pattern described in the <a title="Guidelines:Application Deployment" href="/Guidelines:Application_Deployment">Application Deployment Guidelines</a> and use a wrapper script to invoke Mono.   That has several advantages (portability, ability to write relocatable applications, avoiding pollution of bin directories and allowing for flags and options to be passed to Mono).
+</p><p>If you create software with MonoDevelop and you have selected "Unix Integration", the scripts will be generated by default.
+</p><p><b> What architectures does Mono support? </b>
+</p><p>See our <a title="Supported Platforms" href="/Supported_Platforms">Supported Platforms</a> page.
+</p><p><b> Can Mono run on Windows 9x, or ME editions? </b>
+</p><p>Mono has not been compiled on Windows 9x or ME for many years and it is not actively developed or maintained on that configuration.
+</p><p>That being said, the following information is from the days of Mono 1.2.x and might be useful to someone trying to port it:
+</p><p>Mono requires Unicode versions of Win32 APIs to run, and only a handful of the 
+"W" functions is supported under Win9x.  There is Microsoft Layer for Unicode that provides implementation of these APIs on 9x systems.
+</p><p>Unfortunately it uses linker trick for delayed load that is not supported by ld, so some sort of adapter is necessary. You will need MSLU and one of the following libs to link Mono to unicows.dll <a class="external free" href="http://mono.eurosoft.od.ua/files/unimono.zip" rel="nofollow">http://mono.eurosoft.od.ua/files/unimono.zip</a> or alternatively search the net for "libunicows".
+</p><p><b> Why support Windows, when you can run the real thing? </b>
+</p><p>There are various reasons:
+</p><p><br>
+</p>
+<ul><li>  Supporting Windows helps us identify the portable portions of Mono from the non-portable versions of it, helping Mono become more portable in the future.
+</li></ul>
+<ul><li> It assists us since we can isolate problems in Mono by partitioning the problem (is it a runtime issue, or an OS issue?).
+</li></ul>
+<ul><li>  About half the contributors to Mono are Windows developers. They have many different reasons for contributing to the effort, and we find it very important to let those developers run the runtime on Windows without forcing them to use a new operating system.
+</li></ul>
+<ul><li>  Mono does not heavily modify the windows registry, update system DLLs, install DLLs to the Windows/System32 path. 
+</li></ul>
+<ul><li> It helps Windows-based developers to test their code under Mono before they deploy into Linux.
+</li></ul>
+<ul><li> Mono and applications that embed Mono can be deployed without an installer (you can "xcopy" deploy your application and the required Mono files without installing the .NET runtime).
+</li></ul>
+<ul><li> Some applications and libraries premise pair (or more) of applications, such as clients and servers. Windows version helps mixed solutions of .NET and Mono easier, for example by running one on .NET and one on Mono locally on Windows.
+</li></ul>
+<p>A reader comments:
+</p>
+<pre>In other words, I knew Mono would not cause 
+any legacy enterprise applications
+to stop working - and it hasn't. However, 
+our CIO is against it because of the 
+changes that would be made to Windows 2000, 
+such as, affecting security.
+</pre>
+<p>Another user comments:
+</p>
+<pre>By the way, the Mono libraries, 
+including corlib, needed to support the 
+application total 14MB so fit easily 
+on even the smallest memory sticks.
+</pre>
+<p><b> How to detect the execution platform&nbsp;? </b>
+</p><p>The execution platform can be detected by using the <code>System.Environment.OSVersion.Platform</code> value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any <code>PlatformID</code> value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the <code>PlatformID</code> enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and MacOS X, introducing yet another value 6 for MacOS X.
+</p><p>This means that in order to detect properly code running on Unix platforms you must check the three values (4, 6 and 128). This ensure that the detection code will work as expected when executed on Mono CLR 1.x runtime and with both Mono and Microsoft CLR 2.x runtimes.
+</p>
+<pre class="csharp" style="font-family: monospace;"><span style="color: rgb(6, 0, 255); font-weight: bold;">using</span> <span style="color: rgb(0, 128, 128);">System</span><span style="color: rgb(0, 128, 0);">;</span>
+&nbsp;
+<span style="color: rgb(102, 102, 204); font-weight: bold;">class</span> Program <span style="color: rgb(0, 128, 0);">{</span>
+&nbsp;
+        <span style="color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="color: rgb(102, 102, 204); font-weight: bold;">void</span> Main <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+        <span style="color: rgb(0, 128, 0);">{</span>
+                <span style="color: rgb(102, 102, 204); font-weight: bold;">int</span> p <span style="color: rgb(0, 128, 0);">=</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 204); font-weight: bold;">int</span><span style="color: rgb(0, 128, 0);">)</span> Environment<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">OSVersion</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Platform</span><span style="color: rgb(0, 128, 0);">;</span>
+                <span style="color: rgb(6, 0, 255); font-weight: bold;">if</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">(</span>p <span style="color: rgb(0, 128, 0);">==</span> <span style="color: rgb(255, 0, 0);">4</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">||</span> <span style="color: rgb(0, 128, 0);">(</span>p <span style="color: rgb(0, 128, 0);">==</span> <span style="color: rgb(255, 0, 0);">6</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">||</span> <span style="color: rgb(0, 128, 0);">(</span>p <span style="color: rgb(0, 128, 0);">==</span> <span style="color: rgb(255, 0, 0);">128</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">{</span>
+                        Console<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">WriteLine</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"Running on Unix"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+                <span style="color: rgb(0, 128, 0);">}</span> <span style="color: rgb(6, 0, 255); font-weight: bold;">else</span> <span style="color: rgb(0, 128, 0);">{</span>
+                        Console<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">WriteLine</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"NOT running on Unix"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+                <span style="color: rgb(0, 128, 0);">}</span>
+        <span style="color: rgb(0, 128, 0);">}</span>
+<span style="color: rgb(0, 128, 0);">}</span></pre>
+<p>Notice that as of Mono 2.2 the version returned on MacOS X is still 4 for legacy reasons, too much code was written between the time that the MacOSX value was introduced and the time that we wrote this text which has lead to a lot of user code in the wild to not cope with the newly introduced value.
+</p><p>A better way of testing for Unixness is to make tests that are feature specific instead of dividing the code in Unix vs Windows.   For example, for file system operations, it is better to use the path character separator and compare it for '/' or '\' as that would not depend on the actual enumeration value.   
+</p><p><b> How can I tell where the Mono runtime is installed (Windows OS)? </b>
+</p><p>While it can be argued that there are no totally reliable methods for detecting the presence of a Mono installation in a Windows environment, the following shows one way which detection may be achieved:
+</p><p>Firstly, look for the version string stored in a certain registry key.
+</p>
+<pre>$version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
+</pre>
+<p>Then, using this version string, check the registry again for the path prefix, $monoprefix:
+</p>
+<pre>$monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
+</pre>
+<p>(optional) You might wish to then check this by detecting whether or not $mono-prefix\bin\mono.exe exists.
+</p><p>If one of the steps above failed, Mono may not be properly
+installed or the version may be too old.
+</p><p><i>Adapted from Robert Jordan's explanation, <a class="external text" href="http://lists.ximian.com/pipermail/mono-list/2006-August/032573.html" rel="nofollow">link to email held at the mono-list archive</a></i>
+</p><p><b> How can I detect if am running in Mono? </b>
+</p><p>Having code that depends on the underlying runtime is considered to be <b>bad coding</b> style, but sometimes such code is necessary to work around runtime bugs.
+The supported way of detecting Mono is:
+</p>
+<pre class="csharp" style="font-family: monospace;"><span style="color: rgb(6, 0, 255); font-weight: bold;">using</span> <span style="color: rgb(0, 128, 128);">System</span><span style="color: rgb(0, 128, 0);">;</span>
+&nbsp;
+<span style="color: rgb(102, 102, 204); font-weight: bold;">class</span> Program <span style="color: rgb(0, 128, 0);">{</span>
+    <span style="color: rgb(6, 0, 255); font-weight: bold;">static</span> <span style="color: rgb(102, 102, 204); font-weight: bold;">void</span> Main <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+    <span style="color: rgb(0, 128, 0);">{</span>
+        Type t <span style="color: rgb(0, 128, 0);">=</span> Type<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">GetType</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"Mono.Runtime"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+        <span style="color: rgb(6, 0, 255); font-weight: bold;">if</span> <span style="color: rgb(0, 128, 0);">(</span>t <span style="color: rgb(0, 128, 0);">!=</span> <span style="color: rgb(6, 0, 255); font-weight: bold;">null</span><span style="color: rgb(0, 128, 0);">)</span>
+             Console<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">WriteLine</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"You are running with the Mono VM"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+        <span style="color: rgb(6, 0, 255); font-weight: bold;">else</span>
+             Console<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">WriteLine</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"You are running something else"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+    <span style="color: rgb(0, 128, 0);">}</span>
+<span style="color: rgb(0, 128, 0);">}</span></pre>
+<p>Any other hack, such as checking the underlying type of System.Int32 or
+of other corlib types, is doomed to fail in the future.
+</p><p><b> Does Mono run on Fedora Core 5 </b>
+</p><p>Mono will run on FC5 as long as you turn off SELinux. Otherwise, some applications may experience errors.
+</p><p>Some people have reported compilation problems as well, but there are no details at this point, make sure you turn off SELinux if you want to use Mono
+</p><p>Updated as of May 8th.
+</p><p><b> Does Mono run on very small systems </b>
+</p><p>The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the <a title="Small footprint" href="/Small_footprint">Small footprint</a> page.
+</p>
+<h2> <span class="mw-headline" id="Compatibility"> Compatibility </span></h2>
+<p><b> Can Mono run applications developed with the Microsoft.NET framework? </b>
+</p><p>Yes, Mono can run applications developed with the Microsoft .NET Framework on UNIX. There are a few caveats to keep in mind: Mono has not been completed yet, so a few API calls might be missing; And in some cases the Mono behavior <i>might be incorrect</i>.
+</p><p>Mono today ships with support for the .NET 2.0 API for the supported namespaces;   Support for the 3.0 and 3.5 and 4.0 API is not complete.
+</p><p><b> I am using Visual Studio 2008 (or 2005), will Mono run my code? </b>
+</p><p>Visual Studio 2005 and 2008 produces code that targets from .NET 2.x up to 3.5 API.  This means that most code will work until you hit an API that has not been implemented in Mono.
+</p><p>This will appear as a TypeLoadException when you try to use a method or a property from one of the assemblies.
+</p><p>To make Visual Studio produce 1.1-based applications see this blog post <a class="external text" href="http://weblogs.asp.net/israelio/archive/2005/06/08/410811.aspx" rel="nofollow">here</a>.
+</p><p><b> Will missing API entry points be implemented? </b>
+</p><p>Yes, the goal of Mono is to implement precisely the .NET Framework API (as well as compile-time selectable subsets, for those interested in a lighter version of Mono).
+</p><p><b> If the behavior of an API call is different, will you fix it? </b>
+</p><p>Yes, we will. But we will need your assistance for this. If you find a bug in the Mono implementation, please fill a bug report in <a class="external free" href="http://bugzilla.ximian.com" rel="nofollow">http://bugzilla.ximian.com</a>. Do not assume we know about the problem, we might not, and using the bug tracking system helps us organize the development process.
+</p><p><b> Can I develop my applications on Windows, and deploy on a supported Mono platform (like Linux)? </b>
+</p><p>Yes, you can. 
+As of today, Mono is not 100% finished, so it is sometimes useful to compile the code with Mono, to find out if your application depends on unimplemented functionality.
+</p><p><b> Will applications run out the box with Mono? </b>
+</p><p>Sometimes they will. But sometimes a .NET application might invoke Win32 API calls, or assume certain patterns that are not correct for cross-platform applications.
+</p><p>You can find which native methods an assembly is using by using <a title="MoMA" href="/MoMA">MoMA</a>.
+</p><p>or alternatively, by using monodis like this:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);">$ </span>monodis <span style="color: rgb(102, 0, 51);">--implmap</span> file.exe</pre>
+<p>The above command will list all of the invocations that the application has.
+</p><p><a title="Gendarme" href="/Gendarme">Gendarme</a> also gives you some interoperability warnings.
+</p><p><b> Must I have mono to create or run Gtk# applications in Windows? </b>
+</p><p>No.  Currently you can use the <a title="Gtk-Sharp Installer for .NET Framework" href="/Gtk-Sharp_Installer_for_.NET_Framework">Gtk-Sharp Installer for .NET Framework</a> which when coupled with the Microsoft .NET Framework, will allow you to build .NET applications that use Gtk# as their graphical user interface.
+</p><p><b> What is a 100% .NET application? </b>
+</p><p>A '100% .NET application' is one that only uses the APIs defined under the System namespace and does not use P/Invoke. These applications would in theory run unmodified on Windows, Linux, Solaris, MacOS X and others. 
+Note that this requirement also holds for all assemblies used by the application. If one of them is Windows-specific, then the entire program is not a 100% .NET application. 
+Furthermore, a 100% .NET application must not contain non-standard data streams in the assembly. For example, Visual Studio .NET will insert a <tt>#-</tt> stream into assemblies built under the "Debug" target. This stream contains debugging information for use by Visual Studio .NET; however, this stream can not be interpreted by Mono (unless you're willing to donate support). 
+Thus, it is recommended that all Visual Studio .NET-compiled code be compiled under the Release target before it is executed under Mono.
+</p><p><b> Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C#, Managed Extensions for C++, C++/CLI, etc.) under Mono? </b>
+</p><p>Yes, with some reservations. 
+</p><p>The .NET program must either be a 100% .NET application, or (somehow) have all dependent assemblies available on all desired platforms. (How to do so is outside the bounds of this FAQ). Or if the application uses P/Invoke, the invoked native libraries must exist on other platforms as well.
+</p><p>Mono must also have an implementation for the .NET assemblies used. For example the System.EnterpriseServices namespace is part of .NET, but it has not been implemented in Mono. Thus, any applications using this namespace will not run under Mono. 
+</p><p>With regards to languages, C# applications tend to be most portable. 
+Visual Basic .NET applications are portable, but Mono's Microsoft.VisualBasic.dll implementation is incomplete. It is recommended to either avoid using this assembly in your own code, only use the portions that Mono has implemented, or to help implement the missing features. Additionally, you can set 'Option Strict On', which eliminates the implicit calls to the unimplemented Microsoft.VisualBasic.CompilerServices.ObjectType class. (Thanks to Jörg Rosenkranz.) 
+</p><p>Managed Extensions for C++ and C++/CLI are least likely to operate under Mono. Mono has support for mixed-mode assemblies (that is, assemblies containing both managed and unmanaged code, which Managed C++ can produce) on Windows. You need a fully-managed assembly to run under other platforms, and getting the Visual C++ .NET compiler to generate such an executable can be difficult. You need to use only the .NET-framework assemblies, not the C libraries (you can't use <b>printf</b>(3) for example.), and you need to use the linker options <tt>/nodefaultlib /entry:main mscoree.lib</tt> in addition to the <tt>/clr</tt> compiler flag. You can still use certain compiler intrinsic functions (such as <b>memcpy</b>(3)) and the STL. 
+</p><p>You should also see <a class="external text" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vcmex/html/vcgrfconvertingmanagedextensionsforcprojectsfrommixed-modetopureil.asp" rel="nofollow">Converting Managed Extensions for C++ Projects from Mixed Mode to Pure Intermediate Language</a> at MSDN. Finally, you can use PEVERIFY.EXE from the .NET SDK to determine if the assembly is fully managed.
+</p><p>Thanks to Sergey Chaban for the linker flags to use.
+</p><p>C++/CLI meanwhile needs to use the <tt>/clr:pure</tt> or <tt>/clr:safe</tt> compiler flag to avoid the use of mixed-mode assemblies.
+</p><p>For more details see our <a title="CPlusPlus" href="/CPlusPlus">C++ page</a>.
+</p><p><b> Does Mono have a Global Assembly Cache (GAC)? </b>
+</p><p>Yes, Mono has a Global Assembly Cache.  
+</p><p>It operates in a similar way to the .NET Global Assembly Cache, but has a few extensions, see the <a title="Assemblies and the GAC" href="/Assemblies_and_the_GAC">Assemblies and the GAC</a> article for details.
+</p><p><b> What about serialization compatibility? Can I serialize an object in Mono and deserialize it in MS.NET or vice versa? </b>
+</p><p>The serialization format implemented in Mono is fully compatible with that of MS.NET. However, having a compatible format is not enough. In order to successfully exchange serialized objects, the corresponding classes need to have the same internal structure (that is, the same public and private fields) in both sides.
+</p><p>If you are serializing your own classes, there is no problem, since you have control over the assemblies and classes being used for serialization.
+</p><p>However, if you are serializing objects from the framework, serialization compatibility is not guaranteed, since the internal structure of those objects may be different. This compatibility is not even guaranteed between different MS.NET versions or Mono versions.
+</p><p>Our policy is to do our best to make the framework classes compatible between Mono and MS.NET, however sometimes this is not possible because the internal implementation is too different. Notice also that when we change a class to make it compatible with MS.NET, we lose compatibility with older versions of Mono.
+</p><p>In summary, if you are designing an application that will run in different environments and platforms which are not under your control, and which need to share serialized objects (either using remoting, plain files, or whatever), you must be careful with what objects you share, and avoid objects from the framework when possible.
+</p><p>(Notice that this only applies to serializers based on the System.Runtime.Serialization framework, and does not apply to the XmlSerializer).
+</p><p><b> Can I use Mono to build applications for the Compact Framework? </b>
+</p><p>Binaries produced by Mono do not contain the same public key expected by the compact framework.  The compact framework will refuse to load applications that have been compiled with this key.
+</p><p>JB Evain produced a patcher that can be used to modify binaries produced by Mono to run on the Compact Framework, you can find it <a class="external text" href="http://evain.net/public/cf-cecil-patcher.cs.html" rel="nofollow">here</a>.
+</p><p>Patches binaries will be loaded in the Compact Framework, but if your assembly consumes features that are not present on it, your software will crash.
+</p><p><b> How can I map a Windows P/Invoke Library into a Unix library? </b>
+</p><p>See the <a title="Config" href="/Config">Config</a> page, and in particular the <a title="Config DllMap" href="/Config_DllMap">&lt;dllmap&gt;</a> and <a title="Config DllMap" href="/Config_DllMap">&lt;dllentry&gt;</a> directives.
+</p>
+<h2> <span class="mw-headline" id="Development_Tools"> Development Tools </span></h2>
+<p><b> Does Mono have a debugger? </b>
+</p><p>Yes, see our <a title="Debugger" href="/Debugger">Debugger</a> page for more information.
+</p><p>Also look at the <a title="Guide:Debugger" href="/Guide:Debugger">Guide:Debugger</a> for a tutorial and reference guide to the Mono debugger.
+</p><p><b> Debugger Tutorial </b>
+</p><p>See the <a title="Guide:Debugger" href="/Guide:Debugger">Guide:Debugger</a> for a debugger tutorial and reference guide.
+</p><p><b> What Platforms does the Debugger Support? </b>
+</p><p>Currently the Mono Debugger only supports Linux on x86 and x86-64 platforms.
+</p><p><b> How can I debug my programs? </b>
+</p><p>You must have the Mono Debugger installed (mdb), and compile your code with debugging information, this is done by passing the -debug flag to the compiler:
+</p>
+<pre class="bash" style="font-family: monospace;">$ mcs <span style="color: rgb(102, 0, 51);">-debug</span> sample.cs
+$ mdb sample.exe
+<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span>mdb<span style="color: rgb(122, 8, 116); font-weight: bold;">)</span> run</pre>
+<p>Mono-aware compilers generate debugging information in a file with the extension .mdb.   
+</p><p><b> Can I convert Microsoft PDB files to Mono MDB files? </b>
+</p><p>You can convert PDB files to MDB files using "pdb2mdb" in mono tree, a program written by JB Evain. For details see <a class="external text" href="http://evain.net/blog/articles/2009/04/27/pdb2mdb-and-mono-cecil-pdb" rel="nofollow">his blog post</a>. For earlier effort by Robert Jordan, see his emails on the subject <a class="external text" href="http://lists.ximian.com/pipermail/mono-list/2006-September/032692.html" rel="nofollow">here</a> and <a class="external text" href="http://lists.ximian.com/pipermail/mono-list/2006-September/032693.html" rel="nofollow">here</a>.
+</p><p><b> Does Mono have a profiler? </b>
+</p><p>Mono has a built-in profiler which can be activated by running Mono with the --profile argument.   The profiler can be further tuned, see the manual page for mono (mono(1)) for more details. Most of the time you want to use the statistical profiler (which has a very low performance overhead):
+</p>
+<pre> /path/to/mono --profile=default:stat program.exe
+</pre>
+<p>If you have binutils installed (the addr2line program specifically), you'll get detailed profiling info also on unmanaged code.
+</p><p>In addition it is possible to create custom profilers using Mono's profiling interface.   For a list of existing profilers for Mono see our <a title="Performance Tips" href="/Performance_Tips">Performance Tips</a> page.
+</p><p>A more advanced profiler is the <a title="LoggingProfiler" class="mw-redirect" href="/LoggingProfiler">Logging Profiler</a>
+</p><p><b> Does Mono have a memory profiler? </b>
+</p><p>Mono has several memory profilers: a built-in one (see manual page), <a title="HeapShot" href="/HeapShot">HeapShot</a>  for information about the Mono live memory usage, <a title="HeapBuddy" href="/HeapBuddy">HeapBuddy</a> for memory allocation patterns and <a title="OprofileWithAnonJitData using OProfile to profile JITed code (page does not exist)" class="new" href="?title=OprofileWithAnonJitData_using_OProfile_to_profile_JITed_code&amp;action=edit&amp;redlink=1">OprofileWithAnonJitData using OProfile to profile JITed code</a>.
+</p><p>See the <a title="Profile" href="/Profile">Profile</a> page for more information.
+</p><p><b> Does Mono have Code Coverage Tools? </b>
+</p><p>Mono has a bundled code coverage tool that you can use with your applications.   Use the "coverage" profiler, like this:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);">$ </span>mono <span style="color: rgb(102, 0, 51);">--profile</span>=cov demo.exe</pre>
+<p>See the <a title="Code Coverage" href="/Code_Coverage">Code Coverage</a> page for more information.
+</p><p><b> Does Mono have some kind of tracing facility? </b>
+</p><p>The Mono runtime has a built-in tracing facility to trace the method execution and it reports parameters passed, values returned and exceptions thrown.  This is enabled with the --trace flag to the Mono runtime.
+</p><p>The tracing facility has a simple syntax for limiting the scope of traces, see the mono manual page for more details on this facility.
+</p><p><b> How can I debug problems with my DllImports? </b>
+</p><p>You can export the following environment variables to turn on DllImport logging, it is useful when tracking down the source of a problem when loading a library:
+</p><p>MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono program.exe
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="Web_Services"> Web Services </span></h2>
+<p><b> How is Mono related to Web Services? </b>
+</p><p>Mono is only related to Web Services in that it will implement the same set of classes that have been authored in the .NET Framework to simplify and streamline the process of building Web Services.
+</p><p>But most importantly, Mono is an Open Source implementation of the .NET Framework.
+</p><p><b> Can I author Web Services with Mono? </b>
+</p><p>You will be able to write Web Services on .NET that run on Mono and vice-versa.
+</p><p><b> What does Mono support for Web Services? </b>
+</p><p>As of today, Mono support Web services in a couple of forms:
+</p>
+<ol><li> Remoting SOAP channels (as well as binary channels)
+</li><li> ASMX Web Services (System.Web.Services)
+</li><li> <a title="WCF" class="mw-redirect" href="/WCF">WCF</a>, preliminary
+</li></ol>
+<p>You can use Mono for remoting and ASMX web services either as client or as server (or both). ASMX Web Service client also works on MonoTouch.
+</p><p>WCF client is supported in Mono, Moonlight and MonoTouch. WCF server implementation effort is ongoing. Note that the supported WCF bindings are limited to some basic ones.
+</p><p><b> Can I use CORBA? </b>
+</p><p>Yes. The CLI contains enough information about a class that exposing it to other RPC systems (like CORBA) is really simple, and does not even require support from an object. 
+</p><p><a class="external text" href="http://remoting-corba.sourceforge.net/" rel="nofollow">Remoting.CORBA</a> is a CORBA implementation that is gaining momentum. 
+Building an implementation of the Bonobo interfaces once this is ready should be relatively simple.
+</p><p>There are other CORBA implementations for .NET available as well.
+</p><p><b> Can I serialize my objects to other things other than XML? </b>
+</p><p>Yes. We support runtime/binary serialization as well as XML serialization. You also write your own serialization providers. We also support WCF serialization (binary, XML, JSON).
+</p>
+<h2> <span class="mw-headline" id="MonoDoc"> MonoDoc </span></h2>
+<p><b> What is MonoDoc? </b>
+</p><p>MonoDoc is a graphical documentation browser for the Mono documentation: class libraries, tutorials and manual pages. Currently, monodoc has a GUI front-end written in Gtk# and a Web front-end using ASP.NET
+</p><p>The contents of Monodoc today are visible on the web <a class="external text" href="http://www.go-mono.com/docs/" rel="nofollow">here</a>
+</p><p>More information about the Mono documentation can be found on the <a title="Documentation" href="/Documentation">Documentation</a> page.
+</p>
+<h2> <span class="mw-headline" id="Development_Tools_and_Issues"> Development Tools and Issues </span></h2>
+<p><b> Will it be possible to use the CLI features without using byte codes or the JIT? </b>
+</p><p>Yes. The CLI engine will be made available as a shared library. The garbage collection engine, the threading abstraction, the object system, the dynamic type code system and the JIT are available for C developers to integrate with their applications if they wish to do so.
+</p><p><b> Will you have new development tools? </b>
+</p><p>With any luck, Free Software enthusiasts will contribute tools to improve the developer environment. These tools could be developed initially using the Microsoft implementation of the CLI and then executed later with Mono. 
+We are recommending people to use and contribute to existing projects like SharpDevelop, Anjuta and Eclipse.
+</p><p><b> What kind of rules make the Common Intermediate Language useful for JITers? </b>
+</p><p>The main rule is that the stack in the CLI is not a general purpose stack. You are not allowed to use it for other purposes than computing values and passing arguments to functions or return values. 
+At any given call or return instruction, the types on the stack have to be the same independently of the flow of execution of your code.
+</p><p><b> Is it true that the CIL is ideal for JITing and not efficient for interpreters? </b>
+</p><p>The CIL is better suited to be JITed than JVM byte codes, but you can interpret them as trivially as you can interpret JVM byte codes.
+</p><p><b> Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries? </b>
+Yes. Just use two installation prefixes. Use --prefix=/whatever/you/prefer option when configuring mono.
+</p><p><b> How should I write tests or a tests suite? </b>
+</p><p>It is up to you, but we use NUnit for testing our own class libraries as a choice.
+</p><p><b> Is it possible to build a C# file to some sort of intermediate format which can linked into a final module, like the traditional .c -&gt; .o -&gt; .so path? </b>
+</p><p>You can use:
+</p>
+<pre class="bash" style="font-family: monospace;">mcs <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>target:library file1.cs
+mcs <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>target:library file2.cs
+mcs <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>target:exe file1.dll file2.dll <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>out:mybin.exe</pre>
+<p>It is not worth doing the above for individual files.  The C# compiler is so fast that usually the cost of compiling a few hundred source files is smaller than the cost of creating the separate dll files.
+</p><p>Also the final results will be an assembly that references all of the other .dll files, it wont be a single unit.
+</p><p>If you want to merge the assemblies,  you could try the prototype "merge" tool that is part of <a title="Cecil" href="/Cecil">Cecil</a>.
+</p><p><b> Is remoting supported and working in Mono? </b>
+</p><p>The remoting infrastructure is in place. We have implementations of the TcpChannel, HttpChannel and the Soap and Binary Formatters. They are compatible with .NET. 
+</p><p>However, some classes from the library may have a different binary representation, because they may have a different internal data structure, so for example you won't be able to exchange a Hashtable object between Mono and MS.NET. It should not be a problem if you are using primitive types, arrays or your own classes. If you have  problems, please post a test case.
+</p><p><b> My C code uses the __stdcall which is not available on Linux, how can I make the code portable Windows/UNIX across platforms? </b>
+</p>
+Replace the __stdcall attribute with the STDCALL macro, and include this in your C code for newer gcc versions: <pre>#ifndef STDCALL 
+#define STDCALL __attribute__((stdcall)) 
+#endif </pre>
+<p><b> I see funny characters when I run programs, what is the problem? </b>
+</p><p>(From Peter Williams and Gonzalo Paniagua): 
+</p>
+This is Red Hat 9 (probably) using UTF8 on its console; the bytes are the UTF8 endianness markers. You can do: <pre> LC_ALL=C mono myexe.exe </pre>
+<p>And they wont show up.
+</p>
+Alternatively, you can do: <pre> $ echo -e "\033%G" </pre>
+<p>to enable UTF-8 on the console.
+</p><p><b> How does Unicode interact with Mono? </b>
+</p><p>These are a few bits that you might want to know when dealing with Unicode strings in Mono and Unix:
+</p>
+<ul><li> Mono compilers will default to the current language encoding as their native encoding.   If your LANG environment variable contains the terminator UTF-8 (for example mine is LANG=en_US.UTF-8) it will process its input files as UTF-8
+</li><li> You can control the encoding used by the compilers using the -codepage: command line option, for the special case of utf-8, you can use: -codepage:utf8 to inform the compiler that your sources are in UTF-8, for more codepages, see the manual page for the compiler.
+</li><li> CIL executables generated by the Mono compilers store everything in UTF-16 encodings.
+</li><li> If you are dealing with ASP.NET that invokes the compiler automatically for you, you can control the encoding used by specifying this on the web config file.  See the reference for [[Config_system.web_globalization|web/globalization] for details.
+</li></ul>
+<p>The above takes care of converting the input you provide to Mono compilers and runtimes into Unicode.  Another issue is how these characters get rendered into the screen.
+</p><p>For console output Mono will use the encoding specified in your LANG environment variable to display the Unicode strings that the program has.   If your LANG variable does not allow for the full range of Unicode strings to be displayed (for example, LANG=en alone) then only the subset supported by that specific character set can be displayed.
+</p><p><b> How do I build mono/mcs on Windows from Mono's Subversion <a title="SVN" class="mw-redirect" href="/SVN">repository</a>? </b>
+</p><p>See this "<a title="Compiling Mono on Windows" href="/Compiling_Mono_on_Windows">Compiling Mono on Windows</a>" page.
+</p><p><b> I just made a change in my code and am getting Segfaults, what is it? </b>
+</p><p>Segfaults are typically the result of a stack overflow, these are caused by recursive invocations of a method, and these happen frequently with OO code, as developers forget to call the "base" method, for example:
+</p>
+<pre class="csharp" style="font-family: monospace;"><span style="color: rgb(102, 102, 204); font-weight: bold;">class</span> Child <span style="color: rgb(0, 128, 0);">:</span> Parent <span style="color: rgb(0, 128, 0);">{</span>
+     <span style="color: rgb(6, 0, 255); font-weight: bold;">public</span> <span style="color: rgb(6, 0, 255); font-weight: bold;">override</span> GetNumber <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+     <span style="color: rgb(0, 128, 0);">{</span>  
+           <span style="color: rgb(6, 0, 255); font-weight: bold;">return</span> GetNumber <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">+</span> <span style="color: rgb(255, 0, 0);">1</span><span style="color: rgb(0, 128, 0);">;</span>
+     <span style="color: rgb(0, 128, 0);">}</span>
+<span style="color: rgb(0, 128, 0);">}</span></pre>
+<p>When the developer really wanted:
+</p>
+<pre class="csharp" style="font-family: monospace;"><span style="color: rgb(102, 102, 204); font-weight: bold;">class</span> Child <span style="color: rgb(0, 128, 0);">:</span> Parent <span style="color: rgb(0, 128, 0);">{</span>
+     <span style="color: rgb(6, 0, 255); font-weight: bold;">public</span> <span style="color: rgb(6, 0, 255); font-weight: bold;">override</span> GetNumber <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+     <span style="color: rgb(0, 128, 0);">{</span>  
+           <span style="color: rgb(6, 0, 255); font-weight: bold;">return</span> <span style="color: rgb(6, 0, 255); font-weight: bold;">base</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">GetNumber</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">+</span> <span style="color: rgb(255, 0, 0);">1</span><span style="color: rgb(0, 128, 0);">;</span>
+     <span style="color: rgb(0, 128, 0);">}</span>
+<span style="color: rgb(0, 128, 0);">}</span></pre>
+<p>Although Mono has support for turning these into a StackOverflowException, the code that does this introduces an instability into the Garbage Collector, so it is no longer being turned on by default.
+</p><p><b> What are the issues with FileSystemWatcher? </b>
+</p><p>The Mono implementation of FileSystemWatcher has a number of backends, the most optimal one, the one with fewer dependencies is the inotify-backend (available in Mono 1.1.17 and newer versions).  
+</p><p>With this backend the kernel provides Mono with updates on any changes to files on the file system but it requires an inotify-enabled kernel, which only newer Linux distributions ship.
+</p><p>In older Linux systems, you must have installed FAM or Gamin (it will work with either one). You might need the -devel packets installed.
+</p><p>For the *BSD family, there's a Kqueue based implementation that will be used when detected at runtime.
+</p><p>If none of the above work, Mono falls back to polling the directories for changes, which far from optimal.
+</p><p><b> Am using Mono with FakeRoot an my application hangs, what can I do? </b>
+</p><p>Try this:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(194, 12, 185); font-weight: bold;">mkdir</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>tmp<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fakeroot-wapi
+<span style="color: rgb(0, 120, 0);">MONO_SHARED_DIR</span>=<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>tmp<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>fakeroot-wapi fakeroot ...</pre>
+<p>Otherwise mono would try to write to /root/.wapi/ because
+fakeroot doesn't fake the pwent functions that Mono is using
+to obtain the home directory.
+</p>
+<h2> <span class="mw-headline" id="Mono_and_ASP.NET"> Mono and ASP.NET </span></h2>
+<p>See <a class="external text" href="http://www.mono-project.com/FAQ:_ASP.NET" rel="nofollow">FAQ: ASP.NET</a>
+</p>
+<h2> <span class="mw-headline" id="Mono_and_ADO.NET"> Mono and ADO.NET </span></h2>
+<p><b> What is the status of ADO.NET support?. Could I start migrating applications from MS.NET to Mono? </b>
+</p><p>The ADO.NET support is fairly complete and there are many <a title="Database Access" href="/Database_Access">database providers</a> available.
+</p><p><b> In developing the data architecture for the application are there and objects I should stay away from in order to insure the smoothest possible transition (minimum code rewrite) to Mono's ADO.NET implementation? (For example, strongly typed datasets versus untyped datasets, etc...) </b>
+</p><p>We are implementing all the classes in Microsoft .NET's System.Data, so you can be sure that things will work the same in Mono as with the Microsoft implementation.  There is strongly typed dataset support in Mono now.
+</p><p><b> Can you connect to a Sybase database using Mono? </b>
+</p><p>Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class.  See <a class="external text" href="http://www.mono-project.com/Sybase" rel="nofollow">here</a> for more info.
+</p><p><b> Has the MySQL Connector/Net replaced ByteFX.Data </b>
+</p><p>Yes it has.  MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases.  The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now.  See <a class="external text" href="http://www.mono-project.com/MySQL" rel="nofollow">here</a> for more info.
+</p><p><b> How do I connect to a SQLite database? </b>
+</p><p>Use Mono.Data.SqliteClient.  Make sure you are using at least Mono 1.1.4 since SQL Lite provider does not work in the Mono 1.0.x releases and prior.  Use a connection string like "URI=file:SqliteTest.db" if you are using SQL Lite version 2.x or use "version=3,URI=file:SqliteTest.db" if using SQL Lite version 3.x.  See <a title="SQLite" href="/SQLite">SQLite</a> for more info.
+</p><p><b> What provider do I use to connect to PostgreSQL? </b>
+</p><p>You would use Npgsql which is included with Mono.  It is also included with the Win32 installer for PostgreSQL 8.0 which runs natively on Windows. See <a class="external text" href="http://www.mono-project.com/PostgreSQL" rel="nofollow">here</a> for more info.
+</p><p><b> Do you have any plans to implement ObjectSpaces? </b>
+</p><p>No. Note that Microsoft dropped ObjectSpaces for .NET Framework 2.0.
+</p>
+<h2> <span class="mw-headline" id="Mono_and_EnterpriseServices"> Mono and EnterpriseServices </span></h2>
+<p>The following document link to the status of EnterpriseServices in Mono:
+</p>
+<ul><li> <a title="EnterpriseServices" href="/EnterpriseServices">EnterpriseServices</a>
+</li><li> <a title="SystemMessaging" class="mw-redirect" href="/SystemMessaging">SystemMessaging</a>
+</li><li> <a title="Transactions" href="/Transactions">Transactions</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Mono_and_Java"> Mono and Java </span></h2>
+<p><b> Why don't you use Java? </b> 
+</p><p>After all, there are many languages that target the Java VM. 
+</p><p>You can get very good tools for doing Java development on free systems right now. <a class="external text" href="http://www.redhat.com" rel="nofollow">Red Hat</a> has contributed a <a class="external text" href="http://gcc.gnu.org" rel="nofollow">GCC</a> <a class="external text" href="http://gcc.gnu.org/java/" rel="nofollow">front-end for Java</a> that can take Java sources or Java byte codes and generate native executables; Transvirtual implemented <a class="external text" href="http://www.kaffe.org" rel="nofollow">Kaffe</a> a JIT engine for Java; Intel also has a Java VM called <a class="external text" href="http://www.intel.com/research/mrl/orp/" rel="nofollow">ORP</a>.
+</p><p>The JVM is not designed to be a general purpose virtual machine. The Common Intermediate Language (CIL), on the other hand, is designed to be a target for a wide variety of programming languages, and has a set of rules designed to be optimal for JITers.
+</p><p><b> Could Java target the CLI? </b>
+</p><p>Yes, Java could target the CLI, Microsoft's J# compiler does that. 
+The <a class="external text" href="http://www.ikvm.net/" rel="nofollow">IKVM</a> project builds a Java runtime that works on top of .NET and on top of Mono. IKVM is essentially a JIT compiler that translates from JVM bytecodes into CIL instructions, and then lets the native JIT engine take over.
+</p><p><b> Is it possible to write a JVM byte code to CIL converter? </b>
+</p><p>Yes, this is what <a class="external text" href="http://www.ikvm.net/" rel="nofollow">IKVM</a> does.
+</p><p><b> Could mono become a hybrid CIL/java platform? </b>
+</p><p>This can be obtained easily with IKVM.
+</p><p><b> Do you plan to implement a Javascript compiler? </b>
+</p><p>Yes. The beginnings of the JScript compiler can be found on SVN. Cesar coordinates this effort.
+</p><p><b> Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM? </b>
+</p><p>What you can do with mono is to load different applications in their own application domain: this is a feature of the CLR that allows sandboxing applications inside a single process space. This is usually exploited to compartmentalize different parts of the same app, but it can also be effectively used to reduce the startup and memory overhead. Using different appdomains the runtime representation of types and methods is shared across applications.
+</p>
+<h2> <span class="mw-headline" id="Mono_and_the_Enterprise_Application_Blocks"> Mono and the Enterprise Application Blocks </span></h2>
+<p>The Enteprise Application Blocks license that Microsoft has chosen explicitly prevents developers from using it on non-Windows platforms (see the [<a class="external free" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnpag2/html/pageula.asp" rel="nofollow">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnpag2/html/pageula.asp</a> license wording, section 10).
+</p><p>There are a few alternatives available on Mono.
+</p><p><b> What can I used instead of the Data Access Application Block? </b>
+</p><p>You can use the Mono <a title="Provider Factory" href="/Provider_Factory">Provider Factory</a> which is a standard component of all Mono installations.
+</p>
+<h2> <span class="mw-headline" id="Extending_Mono"> Extending Mono </span></h2>
+<p><b> Would you allow other classes other than those in the specification? </b>
+</p><p>Yes. The Microsoft class collection is very big, but it is by no means complete. 
+For more information on extending Mono, see our <a title="Ideas" href="/Ideas">ideas</a> page.
+</p><p><b> Do you plan to Embrace and Extend .NET? </b>
+</p><p>Embracing a good technology is good. Extending technologies in incompatible ways is bad for the users, so we do not plan on making incompatible changes to the technologies.
+</p><p>If you have innovative ideas, and want to create new classes, we encourage you to make those classes operate correctly well in both Mono and .NET. 
+Today Mono ships with a number of extra libraries that were developed either by members of the Mono community, or other groups. 
+In some cases, we have found the bits from Microsoft to be incomplete, but we avoid breaking the API, instead we expose the missing functionality in new assemblies (see <a title="Cryptography" href="/Cryptography">Mono.Security</a>).
+</p><p><b> Do you plan on exploring, changing other parts? </b>
+</p><p>The Mono team at Novell is currently focused on improving Mono's performance, platform support, coverage, quality and features, so we are likely going to be busy doing those things.
+</p><p>But Mono has already been used as a foundation for trying out new ideas for the C# language (there are three or four compilers derived from Mono's C# compiler) and a number of innovative ideas (like continuations for the VM) have been implemented as research prototypes on top of Mono.
+</p><p>We need to explore in a case-by-case basis which of these ideas can be integrated into Mono, we are certainly open to the idea of getting some of these ideas merged into Mono, but in addition to the standard considerations for any contributed code we have to take into account things like whether we can maintain it effectively, whether it makes too many changes to Mono, whether it is a clean and maintainable implementation. 
+</p><p>So in short: we are open to the idea of deviating from .NET for research purposes and when the idea is good, but we will incorporate based on a case-by-case study of the proposal.
+</p><p><b> Is there any way I can develop the class libraries using Linux yet? </b>
+</p><p>Yes. Mono has been self hosting since March 2002.
+</p><p><b> Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries? </b>
+Yes. Just use two installation prefixes.
+</p><p><b> I have a great library that I want to contribute, will you take it? </b>
+</p><p>The first step for a library to be integrated into Mono is for the library to be licensed under the terms of the MIT X11 license.
+</p><p>These days we recommend that third-party libraries are maintained independently of the core of the Mono class libraries and that they are shipped independently with their own release schedule.
+</p><p>The problem with bundling libraries with Mono is that they have a higher requirement for backwards-compatibility, so any breakage in the API requires us to ship a new version of the library and keep the old version around.  Maintaining too many libraries can be cumbersome after a while.
+</p><p>We recommend that the libraries are given a chance to evolve, and have their API mature before they are installed in the GAC, which is the first step towards being considered for inclusion with Mono.   To learn more about this read our <a title="Application Deployment Guidelines (page does not exist)" class="new" href="?title=Application_Deployment_Guidelines&amp;action=edit&amp;redlink=1">Application Deployment Guidelines</a>.
+</p><p>There is another downside that library developers face when bundling libraries with Mono: their release schedule ends tied to Mono, which might be too slow for a rapidly evolving library.  This also imposes extra work if you try to match our release and development schedules.
+</p><p>A better practice is to keep the library on its own schedule, release it on its own schedule and ensure that packages are available for most distributions.
+</p>
+<h2> <span class="mw-headline" id="Portability"> Portability </span></h2>
+<p><b> Will Mono only work on Linux? </b>
+</p><p><br>
+Currently, we are doing our work on Linux-based systems and Windows. We do not expect many Linux-isms in the code, so it should be easy to port Mono to other UNIX variants.
+</p><p><b> What about Mono on non Linux-based systems? </b>
+</p><p>Our main intention at Novell is to be able to develop GNOME applications with Mono, but if you are interested in providing a port of the Winforms classes to other platforms (frame buffer or MacOS X for example), we would gladly integrate them, as long they are under an open source license.
+</p><p><b> What operating systems/CPUs do you support? </b>
+</p><p>Mono currently runs on <a title="Mono:Linux" href="/Mono:Linux">Linux</a>, <a title="Mono:Windows" class="mw-redirect" href="/Mono:Windows">Windows</a>, Solaris, <a title="Mono:BSD" href="/Mono:BSD">FreeBSD</a> and <a title="Mono:OSX" href="/Mono:OSX">MacOS X</a>. 
+The Just-In-Time engine (JIT) is available on <a title="Mono:X86" href="/Mono:X86">x86</a> and <a title="Mono:PowerPC" href="/Mono:PowerPC">PowerPC</a>, <a title="Mono:SPARC" href="/Mono:SPARC">Sparc</a> and S390 processors and can generate code and optimizations tailored for a particular CPU. 
+Interpreters exist for the Itanium, HP-PA, StrongARM CPUs.
+</p><p><b> Does Mono run on Windows? </b>
+</p><p>Yes. You can get pre-compiled binaries from <a title="Downloads" href="/Downloads">http://www.mono-project.com/downloads/index.html</a>
+</p><p><b> What is WAPI? </b>
+</p><p>WAPI stands for Windows API.
+</p><p>For portability reasons, Mono uses Win32 APIs for I/O and related operations (semaphores, process creation, etc).  You can find the Unix versions of these Win32 APIs in mono/mono/io-layer.
+</p><p>So on Windows, Mono directly uses Win32, while on Unix Mono uses Win32 APIs implemented in the io-layer.
+</p><p>This was necessary because many of the System.IO, etc. APIs have "Win32-isms" which prevent direct Unix implementation.
+</p><p>Part of the wapi implementation is per-user shared-data, stored in =~/.wapi=.  This holds process IDs of mono processes, file share information (so opening a file opened for exclusive read can be denied), and other assorted information.
+</p><p>Deleting this shared data can have bad effects on mono applications.&nbsp;:-)
+</p><p><b> Does Mono run on Linux? </b>
+</p><p>Yes. You can get pre-compiled binaries from <a title="Downloads" href="/Downloads">http://www.mono-project.com/downloads/index.html</a>
+</p><p><b> Will I require Cygwin to run mono? </b>
+</p><p>No. Cygwin is only required to build Mono.
+</p><p><b> How can I make calls to WindowsPrincipal.IsInRole () work on Linux? </b>
+</p><p>If you have an application that makes a call like this:
+</p>
+<pre class="csharp" style="font-family: monospace;">     <span style="color: rgb(102, 102, 204); font-weight: bold;">bool</span> allowed <span style="color: rgb(0, 128, 0);">=</span> WindowsPrincipal<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">IsInRole</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"USAGNT<span style="color: rgb(0, 128, 128); font-weight: bold;">\\</span>UGR_RBP"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span></pre>
+<p>To make this work on Unix, you have to add a Unix group to the system, and list all the users that are to participate in this role, this can be done by adding the following line to /etc/group:
+</p>
+<pre class="bash" style="font-family: monospace;">USAGNT\UGR_RBP:x:<span style="color: rgb(0, 0, 0);">300</span>:miguel,don,jon,julia</pre>
+<p>Where each of the users that belong to the group are added there.
+</p><p><b> Will Mono depend on GNOME? </b>
+</p><p>It will depend only if you are using a particular assembly (for example, for doing Gtk# based GUI applications). If you are just interested in Mono for implementing a 'Hello World Enterprise P2P Web Service', you will not need any GNOME components.
+</p><p><b> Do you plan to port Rhino to C#? </b>
+. 
+Eto Demerzal has started a Rhino port to C#.
+</p><p><b> Has anyone succeeded in building a Mac version of the C# environment. If so can you explain how? </b>
+</p><p>Yes, Mono works on Linux/PPC and MacOS X (10.2 and 10.3)
+</p>
+<h2> <span class="mw-headline" id="Reusing_Existing_Code"> Reusing Existing Code </span></h2>
+<p><b> What projects will you reuse or build upon? </b>
+</p><p><br>
+We want to get Mono in the hands of programmers soon. We are interested in reusing existing open source software.
+</p><p><b> Will I be able to use Microsoft SQL Server 2000 or will I need to switch to a specific Open Source Database. Will I need to recode? </b>
+</p><p>There is no need to rewrite your code as long as you keep using Microsoft SQL Server. If you want to use an open source database, you might need to make changes to your code.
+</p><p><b> What do I need to watch out for when programming in VB.NET so that I'm sure to be able to run those apps on Linux? </b>
+</p><p><br>
+Not making any P/Invoke or DLL calls should and not using anything in the Microsoft namespaces should suffice. Also do not use any Methods/Classes marked as "This type/method supports the .NET Framework infrastructure and is not intended to be used directly from your code." even if you know what these classes/methods do.
+</p><p><b> Will built-in reporting be supported for crystal reports? </b>
+Crystal Reports are proprietary. Someone may try to emulate the behavior, but no-one has yet volunteered.
+</p><p><b> What about writing to the registry? As I understand it, Linux does not have a counterpart to the registry. Should I avoid relying on that feature? </b>
+</p><p><br>
+Try to avoid it. Although there would be a emulation for registry in Mono too. GNOME does have a registry like mechanism for configuration. But Even if gnome has a configuration system similar to the registry, the keys will not be equal, so you will probably end up having to do some runtime detection, and depending on this load an assembly that has your platform-specific hacks.
+</p><p><b> System.Data.SqlClient with FreeTDS, will you port parts of these to C# and use them? </b>
+</p><p>This has been done.  System.Data.SqlClient is a fully managed provider for Microsoft SQL Server 7, 2000, and 2005 databases written in 100% C#.  It used FreeTDS and jTDS as resources.
+</p>
+<h2> <span class="mw-headline" id="Operating_System_Questions"> Operating System Questions </span></h2>
+<p><b> Can I use signal handlers with Mono? </b>
+</p><p>You can as long as you use the Mono.Unix APIs that provide a safe mechanism for signal delivery.
+</p><p>To use the Mono.Unix API, you should:
+</p>
+<ul><li> Reference the Mono.Posix.dll assembly
+</li><li> Create a UnixSignal instance for each signal that you want to handle
+</li><li> Call WaitAny on the UnixSignal
+</li></ul>
+<p>Typically you would create a thread to wait for the UnixSignal deliveries, as UnixSignal can not be mixed with other WaitHandles.
+</p><p>For example:
+</p>
+<pre class="csharp" style="font-family: monospace;"><span style="color: rgb(0, 128, 128); font-style: italic;">// Catch SIGINT and SIGUSR1</span>
+UnixSignal<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> signals <span style="color: rgb(0, 128, 0);">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> UnixSignal <span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> <span style="color: rgb(0, 128, 0);">{</span>
+    <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> UnixSignal <span style="color: rgb(0, 128, 0);">(</span>Mono<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Unix</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Native</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Signum</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">SIGINT</span><span style="color: rgb(0, 128, 0);">)</span>,
+    <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> UnixSignal <span style="color: rgb(0, 128, 0);">(</span>Mono<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Unix</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Native</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Signum</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">SIGUSR1</span><span style="color: rgb(0, 128, 0);">)</span>,
+<span style="color: rgb(0, 128, 0);">}</span><span style="color: rgb(0, 128, 0);">;</span>
+&nbsp;
+Thread signal_thread <span style="color: rgb(0, 128, 0);">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> Thread <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 204); font-weight: bold;">delegate</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">{</span>
+    <span style="color: rgb(6, 0, 255); font-weight: bold;">while</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(6, 0, 255); font-weight: bold;">true</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">{</span>
+        <span style="color: rgb(0, 128, 128); font-style: italic;">// Wait for a signal to be delivered</span>
+        <span style="color: rgb(102, 102, 204); font-weight: bold;">int</span> index <span style="color: rgb(0, 128, 0);">=</span> UnixSignal<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">WaitAny</span> <span style="color: rgb(0, 128, 0);">(</span>signals, <span style="color: rgb(0, 128, 0);">-</span><span style="color: rgb(255, 0, 0);">1</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+&nbsp;
+        Mono<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Unix</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Native</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Signum</span> signal <span style="color: rgb(0, 128, 0);">=</span> signals <span style="color: rgb(0, 128, 0);">[</span>index<span style="color: rgb(0, 128, 0);">]</span><span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Signum</span><span style="color: rgb(0, 128, 0);">;</span>
+&nbsp;
+        <span style="color: rgb(0, 128, 128); font-style: italic;">// Notify the main thread that a signal was received,</span>
+	<span style="color: rgb(0, 128, 128); font-style: italic;">// you can use things like:</span>
+	<span style="color: rgb(0, 128, 128); font-style: italic;">//    Application.Invoke () for Gtk#</span>
+	<span style="color: rgb(0, 128, 128); font-style: italic;">//    Control.Invoke on Windows.Forms</span>
+	<span style="color: rgb(0, 128, 128); font-style: italic;">//    Write to a pipe created with UnixPipes for server apps.</span>
+	<span style="color: rgb(0, 128, 128); font-style: italic;">//    Use an AutoResetEvent</span>
+&nbsp;
+	<span style="color: rgb(0, 128, 128); font-style: italic;">// For example, this works with Gtk#	</span>
+	Application<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">Invoke</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 204); font-weight: bold;">delegate</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span> <span style="color: rgb(0, 128, 0);">{</span> ReceivedSignal <span style="color: rgb(0, 128, 0);">(</span>signal<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span> <span style="color: rgb(0, 128, 0);">}</span>
+    <span style="color: rgb(0, 128, 0);">}</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span></pre>
+<p>UnixSignal is the supported mechanism in Mono for receiving signals as it will not interfere with the runtime and isolates the developer from the finer complexity of signal handling in Unix.
+</p><p><b>Can I set my own signal handler like I do in C?</b>
+</p><p>In general, you should not use signal handlers with Mono.   Signal handlers behave like new threads and execute within the context of the thread that receives the signal which makes them very error prone.
+</p><p>If you still need to use a signal handler here are some guidelines for how to do this, but keep in mind that this is an <b>unsupported</b> use of the runtime and that you might very well be facing bugs on your own.
+</p><p>You should keep in mind that all you can do in a signal handler is set a static variable, anything else will randomly corrupt the state of your application.
+</p><p>But to set the variable, you need need to ensure that the signal handler is JITed before the signal is actually delivered.  You must ensure at startup that your application will call the signal handler to ensure that the code has been JITed in advance, and only then set the signal handler to point to it.
+</p><p>A sample program that uses signal handlers in this way is <tt>mono-service</tt> you can browse the source code <a class="external text" href="http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/mono-service/" rel="nofollow">here</a>.
+</p><p><b> How to open a link in the user's browser? </b>
+</p><p>See the <a title="Howto OpenBrowser" href="/Howto_OpenBrowser">Howto_OpenBrowser</a>
+</p>
+<h2> <span class="mw-headline" id="Mono_and_GCC"> Mono and GCC </span></h2>
+<p><b> Will you support running C code on the Mono VM? </b>
+</p><p>C is going to be supported through the GCC CIL project that is underway, this code is now hosted on the GCC CVS repository.
+</p><p>Also, invoking existing C code from Mono is possible by using P/Invoke, the Platform Invocation services.
+</p><p><b> Will you support running C++, Managed C++, C++ CLI code on the Mono VM? </b>
+</p><p>For more details see our <a title="CPlusPlus" href="/CPlusPlus">C++ page</a>.
+</p><p><b> I have a C++ library that I would like to call from Mono, what can I do? </b>
+</p><p>There are a few possible approaches:
+</p>
+<ul><li> Use a code generator such as SWIG that parses the C++ code and generates C wrapper functions and C# code which DllImports the C wrappers.
+</li></ul>
+<p>Pro: This permits use of C++ code from C# 
+Con: Not terribly elegant; Extra layer of C code may impact performance.
+</p>
+<ul><li> There was work on a WHIRL-to-IL compiler, which would compile C (and probably C++) into CIL which Mono could execute.
+</li></ul>
+<p>Long term solutions that require a lot of work might be possible:
+</p>
+<ul><li> Modify GCC's to produce CIL.
+</li></ul>
+<p><b> What is the WHIRL-to-IL tion for using C++ with Mono? </b>
+</p><p>We are no longer considering WHIRL as an intermediate IR for supporting C and C++, instead its now possible to use GCC 4.0 internal representation to generate CIL code.
+</p><p><b> What about Managed C++? </b>
+</p><p><br>
+Once a full translator for GCC exists, we are interested in looking at expanding the GCC frontends to include extensions for Managed C++.
+</p><p><br>
+<b> Are you working on a GCC front-end to C#? </b>
+</p><p>We are not working on a GCC front-end for C#. 
+</p><p><b> What about making a front-end to GCC that takes CIL images and generates native code? </b>
+</p><p><br>
+There is no active work on this area, but Mono already provides pre-compilation services (Ahead-of-Time compilation).
+</p>
+<h2> <span class="mw-headline" id="Mono_and_the_Basic_Language"> Mono and the Basic Language </span></h2>
+<p><b> Does Mono implement the Basic language? </b>
+</p><p>An implementation of the VB.NET language is now available, to find out more about the current state of the compiler see the page on <a title="Language BASIC" class="mw-redirect" href="/Language_BASIC">Basic</a>.
+</p><p><b> What about VB6 </b>
+</p><p>Mono does not have current plans to implement VB6 at this point.
+</p><p>The major value of VB6 is reportedly its deep integration with COM-based controls which would not be available on Unix, and it seems to be generally accepted that the major value of VB6 is the availability of third party controls. 
+</p><p>An effort to implement a full stack would probably require a COM-stack to be implemented and a way of running existing controls.  A task that is outside the scope of Mono.
+</p><p><b> What about VBScript and VBA? </b>
+</p><p>Those languages are simpler to implement due to the restricted dependency on external COM objects, but there are no plans at this point to implement them by the Mono team.
+</p>
+<h2> <span class="mw-headline" id="Performance"> Performance </span></h2>
+<p><b> How fast is Mono? </b>
+</p><p>We can not predict the future, but a conservative estimate is that it would be at least 'as fast as other JIT engines'. 
+</p><p>In general, it is hard to answer the question rating from zero to ten as on a typical application there are many elements involved:
+</p>
+<ul><li> the quality of the generated code, this being a metric of the code generator and the optimizations implemented on it.  You can read about some optimizations in Mono on the <a title="Runtime (page does not exist)" class="new" href="?title=Runtime&amp;action=edit&amp;redlink=1">Runtime</a> page.
+</li><li> The maturity of the class libraries used by the application.  Mono's tuning of class libraries has been done in an as-needed basis, and not every class is at the same level of maturity.
+</li><li> The host operating system: I/O benchmarks are dominated by the operating system specifics (file system performance, file system synchronization guarantees, micro kernel or not and so on).
+</li><li> Mono's GC is a conservative collector, while Java and Microsoft's .NET are copying/tracing collectors, so many benchmarks will go in one direction or the other depending on the task being performed.
+</li><li> On Web applications and database applications, the configuration and tuning of the web server will play a dominant role, while Mono's performance these days is no longer on the critical path.
+</li></ul>
+<p>The best thing to do is to test your application in Mono and identify if the performance of your application is good enough in Mono.
+</p><p>We are currently working on a <a title="Generational GC" href="/Generational_GC">Generational GC</a> that will assist in some of the limitations described above.
+</p><p><b> Can you compare Mono performance with other languages/platforms? </b>
+</p><p>The folks at the <a class="external text" href="http://shootout.alioth.debian.org/debian/csharp.php" rel="nofollow">Language Shootout</a> compare Mono's performance with other platforms.
+</p><p><b> Do you track Mono's performance improvements? </b>
+</p><p>See our <a title="PerformanceTesting" href="/PerformanceTesting">Performance Testing</a> page for more details on the tests that we are tracking on performance.
+</p><p><b> What kind of framework does Mono have for new optimizations? </b>
+</p><p>Mono's JIT engine has been recently re-architected, and it provides many new features, and layers suitable for optimization. It is relatively easy to add new optimizations to Mono.
+</p><p>Read the <a title="Runtime (page does not exist)" class="new" href="?title=Runtime&amp;action=edit&amp;redlink=1">Runtime</a> page for more details.
+</p><p><b> Are you working on improving Mono performance? </b>
+</p><p>Optimization and performance are things that we keep in mind during the development of our software.  We routinely implement code, profile it and tune it.  This is an ongoing process in all of Mono.
+</p><p><b> How can I improve the performance of my application? </b>
+</p><p>We have a number of recommendations in our <a title="Performance Tips" href="/Performance_Tips">Performance Tips</a> page covering some common practices to improve the performance of your application.
+</p><p><b> Are there any advantages in the CIL byte code over Java bytecode? </b>
+</p><p>The CIL has some advantages over the Java byte code: The existence of structs in addition to classes helps a lot the performance and minimizes the memory footprint of applications. 
+</p><p>Generics in the CLI world are first-class citizens, they are not just a strong-typing addition to the language. The generic specifications are embedded into the instruction stream, the JIT uses this information to JIT a unique instances of a method that is optimized for the type arguments.
+</p><p>The CIL is really an intermediate representation and there are a number of restrictions on how you can emit CIL code that simplify creating better JIT engines. 
+</p><p>For example, on the CIL, the stack is not really an abstraction available for the code generator to use at will. Rather, it is a way of creating a postfix representation of the parsed tree. At any given call point or return point, the contents of the stack are expected to contain the same object types independently of how the instruction was reached.
+</p><p><b> Does mono support performance counters? </b>
+</p><p>Yes, they are described in our <a title="Mono Performance Counters" href="/Mono_Performance_Counters">Mono Performance Counters</a> page.
+</p><p><br>
+</p>
+<h2> <span class="mw-headline" id="Mono_and_Portable.NET"> Mono and Portable.NET </span></h2>
+<p><b> What are the differences between Mono and Portable.NET? </b>
+</p><p>Most of Mono is being written using C#, with only a few parts written in C (The JIT engine, the runtime, the interfaces to the garbage collection system).
+</p><p>It is easier to describe what is unique about Mono: 
+</p>
+<ul><li> An advanced native-code compilation engine: Both just-in-time compilation (JIT) and pre-compilation of CIL bytecodes into native code are supported.
+</li></ul>
+<ul><li> A foundation for code optimization: The new code generator in Mono builds on the experience of our first JIT engine, and enables us to implement various advanced compiler optimization tricks. With an SSA-framework, plenty of new optimizations are possible.   The current list of optimizations are: Peephole postpass, Branch optimizations, Inline method calls, Constant folding, Constant propagation, Copy propagation, Dead code elimination, Linear scan global reg allocation, Conditional moves, Emit per-domain code, Instruction scheduling, Intrinsic method implementations, Tail recursion and tail calls, Loop related optimizations, Fast x86 FP compares, Leaf procedures optimizations.  SSA-based partial redunancy elimination.
+</li></ul>
+<ul><li> A self-hosting C# compiler written in C#, which is clean, easy to maintain.
+</li></ul>
+<ul><li>  Mono has a complete <a title="Mono C (page does not exist)" class="new" href="?title=Mono_C&amp;action=edit&amp;redlink=1">C# 1.0</a> implementation and has been stress tested a lot more than Portable.NET's compiler.
+</li></ul>
+<ul><li> Generics support and complete C# 2.0 support.
+</li></ul>
+<ul><li> A multi-platform runtime engine: both a JIT engine and an interpreter exist. The JIT engine runs currently on x86, PowerPC, S390, S390x, Sparc, x86-64, Itanium and ARM systems, while the interpreter works on x86, SPARC, ARM, s390, PowerPC, HP-PA and Alpha systems.
+</li></ul>
+<ul><li>  The JIT engine is written using a portable instruction selector which not only generates good code but is also the foundation to re-target the JIT engine to other systems.
+</li></ul>
+<ul><li> Full support for remoting in the runtime.
+</li></ul>
+<ul><li> The C# compiler, the JIT engine and the class libraries are mature enough that the whole system has been self-hosting since April 2002. This means that we develop Mono completely with itself at this point.
+</li></ul>
+<p>By forcing ourselves to use our own code to develop our tools, we bug fix problems rapidly, and the system is overall more robust and tested than if we did not.
+</p>
+<ul><li>  Our class libraries are licensed under the terms of the MIT X11 license which is a very liberal license as opposed to the GNU GPL with exceptions, this means that Mono can be used in places where the GPL with exceptions is not permissible.
+</li></ul>
+<ul><li>  Mono has a complete Web Services stack: we implement ASP.NET web servers and web clients as well as implementing the Remoting-based SOAP infrastructure.
+</li></ul>
+<ul><li>  Remoting implementation: Mono has a complete remoting infrastructure that is used in our own codebase to provide added functionality and performance to our ASP.NET engine and more.
+</li></ul>
+<ul><li> Mono's C# compiler flags more errors and warnings on invalid C# code.
+</li></ul>
+<ul><li> Mono's C# compiler is a CLS consumer and producer, which means that it will enforce during development the CLS rules.
+</li></ul>
+<ul><li> Mono's C# compiler has strong error handling and has closer adherence to the specification with support for definite assignment (required to generate verifiable IL code).
+</li></ul>
+<ul><li>  Mono's C# compiler is written in C# which is easier for new developers to come in and improve, fix and tune. The Mono C# compiler in C# is faster than their C-based compiler.
+</li></ul>
+<ul><li> Mono has a complete Reflection and Reflection.Emit: these are important for advanced applications, compilers and dynamic code generation (Applications like IKVM and IronPython depend on this feature for example).
+</li></ul>
+<ul><li>  Mono has a <a title="XML Classes" class="mw-redirect" href="/XML_Classes">complete managed XML stack</a>: XML, XPath, XML Serializer, XML Schema handling are fully functional, feature complete and tuned for performance. In addition to the Microsoft API, mono ships with the Mono.Xml.Ext library that contains an XQuery/XPath2 implementations.
+</li></ul>
+<ul><li>  Mono has a <a title="Cryptography" href="/Cryptography">complete cryptography stack</a>: we implement the 1.0 and 1.1 APIs as well as using our fully managed stack to implement the SSL/TLS transports.
+</li></ul>
+<ul><li>  <a title="ADO.NET" href="/ADO.NET">Extensive database support</a>: Mono ships with database provides for <a title="Firebird Interbase" href="/Firebird_Interbase">Firebird</a>, <a title="IBM DB2" href="/IBM_DB2">IBM DB2</a>, <a title="Oracle" href="/Oracle">Oracle</a>, <a title="Sybase" href="/Sybase">Sybase</a>, Microsoft <a title="SQLClient" href="/SQLClient">SQL Server</a>, <a title="SQLite" href="/SQLite">SQLite</a>, <a title="MySQL" href="/MySQL">MySQL</a>, <a title="PostgreSQL" href="/PostgreSQL">PostgreSQL</a>, <a title="OLE DB" href="/OLE_DB">Ole DB</a> and <a title="ODBC" href="/ODBC">ODBC</a>.
+</li></ul>
+<ul><li> A more complete System.Drawing implementation, based on Cairo. 
+</li></ul>
+<ul><li>  Mono includes LDAP support.
+</li></ul>
+<ul><li>  Mono has a larger community of active developers. Full time developer from companies (Novell and Mainsoft) as well as volunteers from the community.
+</li></ul>
+<p>In general, Mono is more mature and complete since it has been used to develop itself, which is a big motivator for stability and correctness, while Portable.NET remains pretty much an untested platform.
+</p><p><b> I hear Mono keeps changing the P/Invoke API, why? </b>
+</p><p>We are just fixing our implementation to be compatible with the Microsoft implementation. In other words, the Mono P/Invoke API is more complete when compared to the Portable.NET version, hence various pieces of software that depend on this extended functionality fail to work properly with Portable.NET.
+</p>
+<h2> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h2>
+<p><b> I have a multi-threaded application, and I keep getting timeouts, what is happening? </b>
+</p><p>For a complete explanation of the problem, see our article: <a title="Article:ThreadPool Deadlocks" href="/Article:ThreadPool_Deadlocks">ThreadPool Deadlocks</a>
+</p><p><b> MONO_EXTERNAL_ENCODINGS </b>
+</p><p>When I run an application, I get the following error message:
+</p>
+<pre>** Message: Bad encoding for '????'
+Consider using MONO_EXTERNAL_ENCODINGS
+</pre>
+<p>This problem arises when you have files in your file system that Mono can not convert into Unicode.   Mono uses the UTF-8 encoding for the filenames stored in your file system by default, because it is the universally accepted standard.
+</p><p>The problem typically arises when you transfer files that were stored on a system that used a different encoding.  This might happen if you copy a backup from an older system that encoded filename is latin-1 encoding and your current system uses UTF-8 (Example: the old system probably had LANG set to "en_US" and the new system uses "en_US.UTF-8).
+</p><p>It is highly recommended that you fix the encoding of your filenames on your file system using a tool like <i>convmv</i>, a perl utility that lets you rename files from one encoding to another.
+</p><p>Alternatively, you can set the MONO_EXTERNAL_ENCODINGS variable, but this is not recommended.  To use this set the MONO_EXTERNAL_ENCODINGS variable to a comma separated list of encodings that the Mono runtime should try to use when guessing the values encoded in a filename.
+</p><p>See the manual page for details on how Mono uses this variable.
+</p><p>The values allowed are those returned by "iconv --list".
+</p><p>This is a sample:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(102, 102, 102);">$ </span><span style="color: rgb(122, 8, 116); font-weight: bold;">export</span> <span style="color: rgb(0, 120, 0);">MONO_EXTERNAL_ENCODINGS</span>=<span style="color: rgb(255, 0, 0);">"utf8:latin1"</span></pre>
+<p>Notice that in older versions of Mono, the error message had a typo, and said "MONO_EXTERNAL_ENCODING" instead of "MONO_EXTERNAL_ENCODINGS"
+</p><p>The problem with using MONO_EXTERNAL_ENCODINGS is that even if Mono will be able to parse your filenames, Mono will still store the filenames internall as Unicode.   If you try to move, overwrite or do any other manipulation in the file Mono will transform the filename from Unicode to your native encoding and it might fail to find the file.
+</p><p><b> ICMP Ping throws an exception </b>
+</p><p>I used Mono to create a small C# console application that uses the ICMP class from <a class="external free" href="http://cpp.sourceforge.net/?show=17688" rel="nofollow">http://cpp.sourceforge.net/?show=17688</a> to ping a host. 
+</p>
+<pre>ICMP ping = new ICMP();
+ping.Open();
+TimeSpan span = ping.Send("192.168.1.1", new TimeSpan(0,0,5));
+</pre>
+<p>Unfortunately there is an exception.
+</p>
+<pre>Unhandled Exception: System.Net.Sockets.SocketException: Access denied 
+in &lt;0x000b8&gt; System.Net.Sockets.Socket:.ctor (AddressFamily family, SocketType type, ProtocolType proto)
+in [0x00004] (at cPing.cs:41) ICMP:Open ()
+in [0x00007] (at Main.cs:14) MainClass:Main (System.String[] args
+</pre>
+<p>The same code works fine when run in Visual Studio 2005 Professional or Mono on Windows.  It does not work on Linux because you must run as root in order send ICMP packets.  The /bin/ping program runs on Linux with the setuid bit.  To ping from a Mono program you may either P/Invoke /bin/ping or setuid root your Mono program (after undertaking a thorough security audit of the runtime, the class libraries and any third party libraries that are linked, of course).
+</p><p>Alternatively, if your Linux kernel supports the so-called <b>Linux capabilities</b> you can use the <tt>setcap</tt> (part of the <tt>libcap</tt> library) to set the raw networking capability on the mono binary. In order to do it you need to log in as root and issue the following command:
+</p>
+<pre>setcap cap_net_raw=iep /path/to/mono
+</pre>
+<p>Doing it does <b>not</b> give mono the same privileges as setting the uid bit on the binary - it merely lets the mono runtime construct raw ip packets which is needed for the ICMP ping to work.
+<b> How can I configure Web.config and an ASPX file to turn the trace on? </b>
+</p>
+<pre>&lt;configuration&gt;
+        &lt;system.web&gt;
+                &lt;trace
+                        enabled="false"
+                        requestLimit="10"
+                        pageOutput="true"
+                        traceMode="SortByTime"
+                        localOnly="false"
+                /&gt;
+...
+</pre>
+<p>I never used pageOutput="true". If it doesn't work you may set it to "false" and get the trace from Trace.axd.
+</p><p><b> SelectSingleNode and SelectNodes ignore the default namespace I set in XmlNamespaceManager and thus do not return the expected nodes </b>
+</p><p>(It is also likely to happen that you do not pass the XmlNamespaceManager argument to SelectNodes and SelectSingleNode, though in such cases you will soon notice since it will cause an error saying that you need it.)
+</p><p>You can't use the default namespace in XPath (see <a class="external text" href="http://www.w3.org/TR/xpath#node-tests" rel="nofollow">| section 2.3</a> of the XPath specification for details). Thus code like below won't work:
+</p>
+<pre class="csharp" style="font-family: monospace;">XmlNamespaceManager nm <span style="color: rgb(0, 128, 0);">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> XmlNamespaceManager <span style="color: rgb(0, 128, 0);">(</span>nameTable<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+nm<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">AddNamespace</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">""</span>, <span style="color: rgb(102, 102, 102);">"http://www.w3.org/1999/xhtml"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+<span style="color: rgb(6, 0, 255); font-weight: bold;">return</span> node<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">SelectSingleNode</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"/html/body/form"</span>, nm<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span></pre>
+<p>You need to set non-empty prefix to the namespace you want to map e.g.:
+</p>
+<pre class="csharp" style="font-family: monospace;">XmlNamespaceManager nm <span style="color: rgb(0, 128, 0);">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: rgb(0, 128, 0);">new</span></a> XmlNamespaceManager <span style="color: rgb(0, 128, 0);">(</span>nameTable<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+nm<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">AddNamespace</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"h"</span>, <span style="color: rgb(102, 102, 102);">"http://www.w3.org/1999/xhtml"</span><span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span>
+<span style="color: rgb(6, 0, 255); font-weight: bold;">return</span> node<span style="color: rgb(0, 128, 0);">.</span><span style="color: rgb(0, 0, 255);">SelectSingleNode</span> <span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(102, 102, 102);">"/h:html/h:body/h:form"</span>, nm<span style="color: rgb(0, 128, 0);">)</span><span style="color: rgb(0, 128, 0);">;</span></pre>
+<p>Note that you don't have to change the prefixes in queried documents. They have nothing to do with the registered prefixes in the argument XmlNamespaceManager.
+</p><p><b> _wapi_shm_semaphores_init problems </b>
+</p><p>If you get an error message like this:
+</p>
+<pre class="bash" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">**</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">(</span>process:<span style="color: rgb(0, 0, 0);">2473</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>: CRITICAL <span style="color: rgb(0, 0, 0); font-weight: bold;">**</span>: _wapi_shm_semaphores_init: semget error: No
+space left on device.  Try deleting some semaphores with ipcs and ipcrm</pre>
+<p>It means that you have run out of semaphores.
+</p><p>Mono keeps a file in ~/.wapi tracking the semaphore usage and will clean it up on shutdown.  But if Mono fails to shutdown properly (abnormal program termination) or if you delete the file that Mono uses to track this information, semaphores might leak.
+</p><p>This typically happens when Mono has not had a chance to cleanup (abnormal program termination, or if you have instructed Mono to use a different location for semaphores, using a chroot environment and then wiping it out).
+</p><p>You can use: ipcs -s to list all the semaphores, and you must manually remove them (using ipcrm).  These semaphores typically look like this:
+</p>
+<pre class="bash" style="font-family: monospace;">$ ipcs <span style="color: rgb(102, 0, 51);">-s</span>
+&nbsp;
+<span style="color: rgb(102, 0, 51);">------</span> Semaphore Arrays <span style="color: rgb(102, 0, 51);">--------</span>
+key        semid      owner      perms      nsems
+...
+0x4d036b25 <span style="color: rgb(0, 0, 0);">156139526</span>  username      <span style="color: rgb(0, 0, 0);">600</span>        <span style="color: rgb(0, 0, 0);">8</span>
+...
+$</pre>
+<p>To delete use:
+</p>
+<pre class="bash" style="font-family: monospace;">ipcrm <span style="color: rgb(102, 0, 51);">-s</span> NNNN</pre>
+<p>Where NNNN is the number of the semaphore.
+</p><p><b> How can I execute assemblies from shared folders in Windows? </b>
+</p><p>Open up a SDK command prompt and execute the following command:
+</p>
+<pre class="bash" style="font-family: monospace;">caspol <span style="color: rgb(102, 0, 51);">-q</span> <span style="color: rgb(102, 0, 51);">-machine</span> <span style="color: rgb(102, 0, 51);">-addgroup</span> <span style="color: rgb(0, 0, 0);">1</span> <span style="color: rgb(102, 0, 51);">-url</span> file:<span style="color: rgb(0, 0, 0); font-weight: bold;">//</span>z:<span style="color: rgb(0, 0, 0); font-weight: bold;">/*</span> FullTrust <span style="color: rgb(102, 0, 51);">-name</span> <span style="color: rgb(255, 0, 0);">"Z Drive"</span></pre>
+<p>Replace Z: with the drive (or path) where you have your shared folders.
+</p><p>To enable 1.1 assemblies you need to open a SDK 1.1 command prompt and to enable 2.0 assemblies you need to open a SDK 2.0 command prompt.
+</p><p>For more information see this: <a class="external free" href="http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519" rel="nofollow">http://www.sellsbrothers.com/news/showTopic.aspx?ixTopic=1519</a>
+</p>
+<h2> <span class="mw-headline" id="Credits"> Credits </span></h2>
+<p>The FAQ contains material contributed by Miguel de Icaza, Jaime Anguiano, Lluis Sánchez, Niel Bornstein.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 303/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key monoframework_mediawiki:pcache:idhash:737-0!*!0!!en!*!edit=0 and timestamp 20131124145025 -->
+<div class="printfooter">
+</div>
+
