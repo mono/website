@@ -1,0 +1,293 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.0"
+permalink: /old_site/Release_Notes_Mono_2.0/
+---
+
+<h1>Release Notes Mono 2.0</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Mono_2.0_Release_Notes"><span class="tocnumber">1</span> <span class="toctext">Mono 2.0 Release Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Major_Highlights"><span class="tocnumber">2</span> <span class="toctext">Major Highlights</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Microsoft_Compatible_APIs"><span class="tocnumber">2.1</span> <span class="toctext">Microsoft Compatible APIs</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Mono_APIs"><span class="tocnumber">2.2</span> <span class="toctext">Mono APIs</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Third_Party_APIs_bundled_with_Mono"><span class="tocnumber">2.2.1</span> <span class="toctext">Third Party APIs bundled with Mono</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Compilers"><span class="tocnumber">2.3</span> <span class="toctext">Compilers</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Tools"><span class="tocnumber">2.4</span> <span class="toctext">Tools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#License"><span class="tocnumber">3</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#More_Detail"><span class="tocnumber">4</span> <span class="toctext">More Detail</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Windows.Forms:_New_Controls"><span class="tocnumber">4.1</span> <span class="toctext">Windows.Forms: New Controls</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#ToolStrip_and_MenuStrip"><span class="tocnumber">4.1.1</span> <span class="toctext">ToolStrip and MenuStrip</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#DataGridView"><span class="tocnumber">4.1.2</span> <span class="toctext">DataGridView</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#WebBrowser"><span class="tocnumber">4.1.3</span> <span class="toctext">WebBrowser</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#TableLayoutPanel"><span class="tocnumber">4.1.4</span> <span class="toctext">TableLayoutPanel</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#FlowLayoutPanel"><span class="tocnumber">4.1.5</span> <span class="toctext">FlowLayoutPanel</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#SplitContainer"><span class="tocnumber">4.1.6</span> <span class="toctext">SplitContainer</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#Windows.Forms:_Putting_it_all_together"><span class="tocnumber">4.2</span> <span class="toctext">Windows.Forms: Putting it all together</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Paint.Net"><span class="tocnumber">4.2.1</span> <span class="toctext">Paint.Net</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#NClass"><span class="tocnumber">4.2.2</span> <span class="toctext">NClass</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Changes_Since_1.9"><span class="tocnumber">5</span> <span class="toctext">Changes Since 1.9</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Runtime:_Performance"><span class="tocnumber">5.1</span> <span class="toctext">Runtime: Performance</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Runtime:_Features"><span class="tocnumber">5.2</span> <span class="toctext">Runtime: Features</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Gendarme"><span class="tocnumber">5.3</span> <span class="toctext">Gendarme</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#C.23_Compiler"><span class="tocnumber">5.4</span> <span class="toctext">C# Compiler</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#LINQ"><span class="tocnumber">5.5</span> <span class="toctext">LINQ</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Performance_Counters_Implementation"><span class="tocnumber">5.6</span> <span class="toctext">Performance Counters Implementation</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#ASP.NET:_VirtualPathProvider"><span class="tocnumber">5.7</span> <span class="toctext">ASP.NET: VirtualPathProvider</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Support_for_Native_Methods."><span class="tocnumber">5.8</span> <span class="toctext">Support for Native Methods.</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Big_Arrays"><span class="tocnumber">5.9</span> <span class="toctext">Big Arrays</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#DTrace_Support"><span class="tocnumber">5.10</span> <span class="toctext">DTrace Support</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#ASP.NET_and_ADO.NET"><span class="tocnumber">5.11</span> <span class="toctext">ASP.NET and ADO.NET</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Windows.Forms"><span class="tocnumber">5.12</span> <span class="toctext">Windows.Forms</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#Monodoc"><span class="tocnumber">5.13</span> <span class="toctext">Monodoc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-34"><a href="#Installing_Mono_2.0"><span class="tocnumber">6</span> <span class="toctext">Installing Mono 2.0</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="#Contributors"><span class="tocnumber">7</span> <span class="toctext">Contributors</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Mono_2.0_Release_Notes"> Mono 2.0 Release Notes </span></h1>
+<p>Mono 2.0 is a portable and open source implementation of
+the .NET framework for Unix, Windows, MacOS and other operating
+systems.
+</p><p><i>Release Date: October 6th, 2008</i>
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights">Major Highlights</span></h1>
+<p>Mono 2.0 is a major milestone in the Mono project, and it supports the following features:
+</p>
+<h2> <span class="mw-headline" id="Microsoft_Compatible_APIs"> Microsoft Compatible APIs </span></h2>
+<ul><li> ADO.NET 2.0 API for accessing databases.
+</li></ul>
+<ul><li> ASP.NET 2.0 API for developing Web-based applications.
+</li></ul>
+<ul><li> Windows.Forms 2.0 API to create desktop applications.
+</li></ul>
+<ul><li> System.XML 2.0: An API to manipulate XML documents.
+</li></ul>
+<ul><li> System.Core: Provides support for the Language Integrated Query (LINQ).
+</li></ul>
+<ul><li> System.Xml.Linq: Provides a LINQ provider for XML.
+</li></ul>
+<ul><li> System.Drawing 2.0 API: A portable graphics rendering API.
+</li></ul>
+<h2> <span class="mw-headline" id="Mono_APIs"> Mono APIs </span></h2>
+<ul><li> Gtk# 2.12: A binding to the Gtk+ 2.12 and GNOME libraries for creating desktop applications on Linux, Windows and MacOS X.
+</li><li> Mono.Cecil: A library to manipulate ECMA CLI files (the native format used for executables and libraries).
+</li><li> Mono.Cairo: A binding to the Cairo Graphics library to produce 2D graphics and render them into a variety of forms (images, windows, postscript and PDF).
+</li><li> Mono's SQLite support: a library to create and consume databases created with SQLite.
+</li><li> Mono.Posix: a library to access Linux and Unix specific functionality from your managed application. With both a low-level interface as well as higher level interfaces.
+</li></ul>
+<h3> <span class="mw-headline" id="Third_Party_APIs_bundled_with_Mono"> Third Party APIs bundled with Mono </span></h3>
+<ul><li> Extensive support for databases: PostgreSQL, DB2, Oracle, Sybase, SQL server, SQLite and Firebird.
+</li><li> C5 Generics Library: we are bundling the C5 generics collection class library as part of Mono.
+</li></ul>
+<h2> <span class="mw-headline" id="Compilers"> Compilers </span></h2>
+<p>These compilers are part of the Mono 2.0 release:
+</p>
+<ul><li> C# 3.0 compiler implementation, with full support for LINQ.
+</li><li> Visual Basic 8 compiler.
+</li><li> IL assembler and disassembler and the development toolchain required to create libraries and applications. 
+</li></ul>
+<h2> <span class="mw-headline" id="Tools"> Tools </span></h2>
+<p>Mono includes profiling tools, the standard development kit tools that are part of the .NET framework
+</p>
+<ul><li> <a href="{{site.baseurl}}/Debugger" title="Debugger">Debugger</a>: this is the first release when we support a debugger for managed code.
+</li><li> <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>: is an extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.
+</li><li> <a href="{{site.baseurl}}/Linker" title="Linker">Mono Linker</a>: a linker that allows developers to reduce the size of their executables and libraries by removing features from libraries using an XML definition of the desired public API.
+</li><li> Mono Tuner: a tool to apply arbitrary user-defined transformations to assemblies.   Mono uses this library to produce the Silverlight core libraries from the main system libraries.
+</li><li> Mono Documentation Tools: the Mono Documentation framework has been upgraded to support documenting generics and extension methods.  The tools can be used to produce online and offline documentation for any any APIs, and are used by the project to document our own APIs.
+</li></ul>
+<h1> <span class="mw-headline" id="License">License</span></h1>
+<p>Mono is an open source project, the class libraries and the C# compiler are licensed under the MIT X11 license, the runtime under the GNU LGPL and the SDK tools are released under the GNU GPL or the MIT X11 license. 
+</p><p>Licensing is available for statically linking Mono (for the Apple iPhone, Nintendo Wii platforms and other proprietary operating systems).   For licensing information, you can <a href="http://www.go-mono.com/contact" class="external text" rel="nofollow">contact us</a>
+</p>
+<h1> <span class="mw-headline" id="More_Detail"> More Detail </span></h1>
+<h2> <span class="mw-headline" id="Windows.Forms:_New_Controls">Windows.Forms: New Controls</span></h2>
+<p>Mono 2.0 contains an API complete implementation of .Net's System.Windows.Forms (winforms) namespace, allowing winforms applications to run on Linux, MacOX and other Unix systems.
+</p><p>Thank you to everyone on the winforms team (past and present), everyone who has contributed code to winforms, and everyone who has submitted bug reports, helping to make winforms (and Mono!) what it is today!
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="ToolStrip_and_MenuStrip">ToolStrip and MenuStrip</span></h3>
+<p>Mono 2.0 contains complete implementations of .Net 2.0's ToolStrip/MenuStrip/StatusStrip/ContextMenuStrip controls, which look better and provide many more features than the orginial controls that they replace.  (Don't worry, the old controls are still there!)
+</p><p><a href="{{site.baseurl}}/images/old_site/2/2a/Notepad.png" class="image"><img alt="Notepad.png" src="{{site.baseurl}}/images/old_site/2/2a/Notepad.png" width="600" height="361" /></a>
+</p>
+<h3> <span class="mw-headline" id="DataGridView">DataGridView</span></h3>
+<p>Mono 2.0 contains a much better implementation of DataGridView.  There are still some missing features, such as VirtualMode, which will be addressed in future Mono versions. However, this new version has considerably more features than previously.
+</p>
+<ul><li> Much better rendering
+</li><li> Table/Cell styles
+</li><li> Column sorting
+</li><li> Full row/column selection
+</li><li> Row/column hide supported
+</li></ul>
+<p><a href="{{site.baseurl}}/images/old_site/4/43/Datagridview.png" class="image"><img alt="Datagridview.png" src="{{site.baseurl}}/images/old_site/4/43/Datagridview.png" width="598" height="250" /></a>
+</p>
+<h3> <span class="mw-headline" id="WebBrowser">WebBrowser</span></h3>
+<p>Mono 2.0 contains an implementation of WebBrowser that is based on Mozilla's Gecko HTML rendering engine.
+</p><p><a href="{{site.baseurl}}/images/old_site/2/22/Ieclone.png" class="image"><img alt="Ieclone.png" src="{{site.baseurl}}/images/old_site/2/22/Ieclone.png" width="600" height="441" /></a>
+</p>
+<h3> <span class="mw-headline" id="TableLayoutPanel">TableLayoutPanel</span></h3>
+<p>Mono 2.0 contains a complete implementation of TableLayoutPanel, allowing controls to be positioned using a simple column/row layout.
+</p><p><a href="{{site.baseurl}}/images/old_site/3/31/Tablelayoutpanel.png" class="image"><img alt="Tablelayoutpanel.png" src="{{site.baseurl}}/images/old_site/3/31/Tablelayoutpanel.png" width="409" height="145" /></a>
+</p>
+<h3> <span class="mw-headline" id="FlowLayoutPanel">FlowLayoutPanel</span></h3>
+<p>Mono 2.0 contains a complete implementation of FlowLayoutPanel, allowing controls to be positioned by flowing to fill available space.
+</p><p><a href="{{site.baseurl}}/images/old_site/e/e2/Flow1.jpg" class="image"><img alt="Flow1.jpg" src="{{site.baseurl}}/images/old_site/e/e2/Flow1.jpg" width="553" height="180" /></a>
+</p><p><a href="{{site.baseurl}}/images/old_site/2/23/Flow2.jpg" class="image"><img alt="Flow2.jpg" src="{{site.baseurl}}/images/old_site/2/23/Flow2.jpg" width="281" height="334" /></a>
+</p>
+<h3> <span class="mw-headline" id="SplitContainer">SplitContainer</span></h3>
+<p>Mono 2.0 contains an implementation of SplitContainer, which provides an easier way to make adjustable layouts than using Splitters.
+</p><p><a href="{{site.baseurl}}/images/old_site/a/a3/Splitcontainer.png" class="image"><img alt="Splitcontainer.png" src="{{site.baseurl}}/images/old_site/a/a3/Splitcontainer.png" width="600" height="424" /></a>
+</p>
+<h2> <span class="mw-headline" id="Windows.Forms:_Putting_it_all_together">Windows.Forms: Putting it all together</span></h2>
+<p>Some examples of public 2.0 applications running on Mono 2.0.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Paint.Net">Paint.Net</span></h3>
+<p>Paint.Net hasn't been fully ported to Mono yet (due to p/invokes), but we can still see it using the new 2.0 controls.
+</p><p><a href="{{site.baseurl}}/images/old_site/b/b9/Monopaint.png" class="image"><img alt="Monopaint.png" src="{{site.baseurl}}/images/old_site/b/b9/Monopaint.png" width="600" height="480" /></a>
+</p>
+<h3> <span class="mw-headline" id="NClass">NClass</span></h3>
+<p>NClass is a UML modeling application written in C#.
+</p><p><a href="{{site.baseurl}}/images/old_site/a/aa/Nclass.png" class="image"><img alt="Nclass.png" src="{{site.baseurl}}/images/old_site/a/aa/Nclass.png" width="600" height="447" /></a>
+</p>
+<h1> <span class="mw-headline" id="Changes_Since_1.9">Changes Since 1.9</span></h1>
+<p>These are the major changes that happened since the 1.9 release of Mono.
+</p><p>All of the changes since 1.2 are documented in the following release notes:
+</p><p><a href="http://www.go-mono.com/archive/1.2.1" class="external text" rel="nofollow">1.2.1</a>,
+<a href="http://www.go-mono.com/archive/1.2.2" class="external text" rel="nofollow">1.2.2</a>,
+<a href="http://www.go-mono.com/archive/1.2.3" class="external text" rel="nofollow">1.2.3</a>,
+<a href="http://www.go-mono.com/archive/1.2.4" class="external text" rel="nofollow">1.2.4</a>,
+<a href="http://www.go-mono.com/archive/1.2.5" class="external text" rel="nofollow">1.2.5</a>,
+<a href="http://www.go-mono.com/archive/1.2.6" class="external text" rel="nofollow">1.2.6</a>,
+<a href="http://www.go-mono.com/archive/1.9" class="external text" rel="nofollow">1.9</a> and
+<a href="http://www.go-mono.com/archive/1.9.1" class="external text" rel="nofollow">1.9.1</a>.
+</p>
+<h2> <span class="mw-headline" id="Runtime:_Performance">Runtime: Performance</span></h2>
+<ul><li> The performance of operations on decimals has significantly improved.
+</li></ul>
+<ul><li> The performance of locking (Monitor.Enter/Monitor.Exit) is significally improved.
+</li></ul>
+<ul><li> The memory usage of the runtime is reduced, especially when using generics.
+</li></ul>
+<ul><li> Many race conditions and threading problems were fixed, improving reliability.
+</li></ul>
+<ul><li> Math.Min/Math.Max and some forms of Interlocked.CompareExchange (CAS) are now implemented using fast inline code on x86/amd64.
+</li></ul>
+<ul><li> There is now a MONO_DEBUG=dont-free-domains option that improves the performance of ASP.NET-based applications.
+</li></ul>
+<h2> <span class="mw-headline" id="Runtime:_Features">Runtime: Features</span></h2>
+<ul><li> Some progress has been made on the Winx64 port [Bill Holmes, Jonathan Chambers]
+</li></ul>
+<ul><li> The runtime is now built using the dolt libtool replacement (<a href="http://dolt.freedesktop.org/" class="external free" rel="nofollow">http://dolt.freedesktop.org/</a>) this speeds up runtime compilations by about 30%.
+</li></ul>
+<ul><li> The runtime build process is now less verbose on some platforms,  similar to the way the linux kernel is built. To turn it off, use the --enable-quiet-build=no argument to configure, or pass the V=1 argument to make.
+</li></ul>
+<ul><li> There is now a --debug=casts command line option to the runtime which turns on the reporting of better InvalidCastException message details.
+</li></ul>
+<ul><li> The mono_method_get_unmanaged_thunk () function has been implemented for developers <a href="{{site.baseurl}}/Embedding_Mono" title="Embedding Mono">embedding Mono</a> which simplifies calling managed methods from unmanaged code. 
+</li></ul>
+<ul><li> <a href="https://bugzilla.novell.com/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;long_desc_type=fulltext&amp;long_desc=&amp;classification=Mono&amp;product=Mono%3A+Runtime&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=NEEDINFO&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;resolution=FIXED&amp;resolution=INVALID&amp;resolution=WONTFIX&amp;resolution=DUPLICATE&amp;resolution=WORKSFORME&amp;emailassigned_to1=1&amp;emailtype1=substring&amp;email1=&amp;emailassigned_to2=1&amp;emailreporter2=1&amp;emailqa_contact2=1&amp;emailcc2=1&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=2008-01-29&amp;chfieldto=2008-07-15&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=" class="external text" rel="nofollow">Runtime bugs fixed/closed in this release</a>.
+</li></ul>
+<h2> <span class="mw-headline" id="Gendarme">Gendarme</span></h2>
+<p>This release introduce a new wizard-based GUI runner. It also add support for .MDB and .PDB debugging symbols, allowing source lines numbers inside reports.
+</p><p>This release contains 151 rules (56 new and many updated) divided into 14 categories (2 new) and yet is faster than the  versionshipped with Mono 1.9. 
+<a href="http://anonsvn.mono-project.com/source/branches/mono-2-0/mono-tools/gendarme/NEWS" class="external text" rel="nofollow">More...</a>
+</p>
+<h2> <span class="mw-headline" id="C.23_Compiler">C# Compiler</span></h2>
+<p>The compiler now support expression trees (turning expressions into an AST at compile time when the type of a parameter is a System.Linq.Expressions.Expression). This completes the C# 3.0 support.
+</p><p>Over 60 reported bugs in the compiler were fixed and many of the internals have been cleaned up.   Extensive refactoring and hardening of the C# 2.0 and 3.0 support are now better integrated.
+</p><p>A major rewrite of the anonymous method/lambda support in the internals of the compiler now optimizes the resulting code, and fixes several bugs in this area.
+</p><p>The compiler is now dual licensed under the MIT X11 and the GNU GPL version 2 (only).
+</p><p>The compiler now supports #pragma checksum for use with ASP.NET debugging and #line hidden, as well as flagging more compiler-generated code properly (to avoid the debugger single-stepping into those bits).
+</p>
+<h2> <span class="mw-headline" id="LINQ">LINQ</span></h2>
+<p>LINQ and LINQ to XML are now complete, support for expression trees is now available as well as the backend to support expression tree compilation.
+</p><p>LINQ to Dataset has also been implemented.
+</p>
+<h2> <span class="mw-headline" id="Performance_Counters_Implementation">Performance Counters Implementation</span></h2>
+<p>Mono now has a performance counters implementation that can be used to monitor various statistics of Mono processes.  To access this API you use the System.Diagnostics.PerformanceCounter classes.
+</p><p>Currently the counters can only be read from the same process, there is no setup to share across processes.
+</p>
+<h2> <span class="mw-headline" id="ASP.NET:_VirtualPathProvider">ASP.NET: VirtualPathProvider</span></h2>
+<p>This was one of the missing features from our ASP.NET 2.0 implementation, we now have a it available (Marek).
+</p><p>ASP.NET now has support for *.browser files.
+</p>
+<h2> <span class="mw-headline" id="Support_for_Native_Methods.">Support for Native Methods.</span></h2>
+<p>Support for native methods in assemblies was developed by Kornél Pál.  These are assemblies that contain a mix of CIL bytecode as well as native code (x86 or x86-64 for now), generated by Microsoft's C++ compiler.   Native methods are referred as "IJW" for it-just-works thunks.
+</p><p>This feature is only supported for Windows.
+</p>
+<h2> <span class="mw-headline" id="Big_Arrays">Big Arrays</span></h2>
+<p>Mono now supports 64-bit indexed arrays on 64-bit systems. Although this is permitted by the ECMA standard, this today is a unique feature of Mono as .NET on Windows does not support
+64-bit array indexes.  This code was developed by Luis Ortiz at Interactive Supercomputing and integrated by Rodrigo Kumpera.
+</p><p>This feature is useful for developers that needs to manipulate very large data sets with C# arrays.   
+</p><p>To use this feature, you must configure Mono with
+--enable-big-arrays.
+</p>
+<h2> <span class="mw-headline" id="DTrace_Support">DTrace Support</span></h2>
+<p>On MacOS and Solaris Mono supports DTrace probes.
+</p><p>To use this feature, you must configure mono with --enable-dtrace, details about this feature are available on the <a href="{{site.baseurl}}/DTrace" title="DTrace">DTrace</a> page.
+</p>
+<h2> <span class="mw-headline" id="ASP.NET_and_ADO.NET">ASP.NET and ADO.NET</span></h2>
+<p>Several changes to improve the scaling and performance of both ASP.NET and ADO.NET (Christian, Gonzalo, Marek, Varadhan). 
+</p><p>Increased performance is now available if you use the option MONO_DEBUG=dont-free-domains option on ASP.NET sites.
+</p>
+<h2> <span class="mw-headline" id="Windows.Forms">Windows.Forms</span></h2>
+<p>Windows.Forms now supports international keyboard input through XIM.  This new support has been tested with both scim-anthy and Atok X3 (iiimx).
+</p>
+<h2> <span class="mw-headline" id="Monodoc">Monodoc</span></h2>
+<p>Monodoc now supports extension methods and will display links to applicable extension methods from a type's Members page. Extension methods are displayed from all documentation sources registered with monodoc.
+</p><p>The monodoc command line tools (e.g.  <tt>mdassembler</tt>, 
+<tt>monodocer</tt>, <tt>monodocs2html</tt>, and
+<tt>monodocs2slashdoc</tt>) have been wrapped into a single
+<tt>mdoc</tt> program to normalize and simplify usage.
+</p>
+<h1> <span class="mw-headline" id="Installing_Mono_2.0">Installing Mono 2.0</span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-<span style="color: #000000;">2.0</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-<span style="color: #000000;">2.0</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-<span style="color: #000000;">2.0</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-<span style="color: #000000;">2.0</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h1> <span class="mw-headline" id="Contributors">Contributors</span></h1>
+<p>These are the SVN commiters to the Mono 2.0 release:
+</p><p>Aaron Bockover, Adar Wesley, Alan McGovern, Alejandro Serrano, Alexander Olk, Alexandre Gomes, Allan Hsu, Alp Toker, Andreas Faerber, Andreas Nahr, Andreia Gaita, Andres Aragoneses, Andrew Jorgensen, Andrew Skiba, Andy Henderson, Ankit Jain, Antonello Provenzano, Antti Oja, Arina Itkes, Atsushi Enomoto, Ben Motmans, Bill Holmes, Boris Kirzner, Brad Taylor, Brian Merrell, Brian Nickel, C.J. Collier, Calen Chen, Calvin Gaisford, Carlos Alberto Cortes, Cesar Octavio Lopez Nataren, Chris Toshok, Daniel Morgan, Daniel Nauck, David Elkin, David Hudson, David Makovski, Dean Brettle, Dick Porter, Duncan Mak, Eric Butler, Everaldo Canuto, Eyal Alaluf, Federico Di Gregorio, Fernando Herrera, Francisco Figueiredo Jr., Francisco T. Martinez, Gabriel Burt, Geoff Norton, George Giolfan, Gert Driesen, Gideon de Swardt, Gonzalo Paniagua, Guy Cohen, Hagit Yidov, Hector E. Gomez Morales, Hisham Mardam Bey, Igor Zalmanovich, Ilya Kharmatsky, Ivan N. Zlatev, Jackson Harper, Jacob Ilsø Christensen, James Willcox, Jared Hendry, Jb Evain, Jeff Stedfast, Joe Shaw, Joel Reed, Jonathan Pobst, Jonathan Pryor, Jonathan S. Chambers, Jordi Mas, Joseph Hill, Joshua Tauberer, Juraj Skripsky, Justin Cherniak, Karthik Kailash, Konstantin Triger, Kornél Pál, Larry Ewing, Laurent Debacker, Leonid Freydeovich, Leszek Ciesielski, Levi Bard, Lluis Sanchez, Luke Page, Manuel Alejandro Cerón Estrada, Marc Christensen, Marcos Cobena, Marcos Marin, Marek Habersack, Marek Safar, Marek Sieradzki, Mario Carrion, Mario Sopena Novales, Mark E Mason, Mark Probst, Mart Roosmaa, Martin Baulig, Massimiliano Mantione, Matej Urbas, Merav Soudri, Michael Hutchinson, Michal Dominik, Miguel de Icaza, Mike Gorse, Mike Kestner, Mike Krüger, Mirco Bauer, Mitchell Wheeler, Moty Mondiano, Nachiappan Palaniappan, Nagappan Alagappan, Neale Ferguson, Nestor Salceda, Neville Gao, Nick Granado, Noam Lampert, Paolo Molaro, Pedro Martinez, Peter Johanson, Peter Williams, R. Tyler Ballance, Radek Doulik, Rafael Mizrahi, Rafael Teixeira, Raja R Harinath, Ray Wang, Rob Loach, Robert Jordan, Rodrigo B. de Oliveira, Rodrigo Kumpera, Roei Erez, Rolf Bjarne Kvinge, Rusty Howell, Sandy Armstrong, Sasha Kogan, Scott Ellington, Scott Peterson, Sebastien Pouliot, Stephane Delcroix, Stephen Shaw, Tal Klar, Thomas Vanmachelen, Thomas Wiest, Todd Schavey, Veerapuram Varadhan, Vladimir Krasnov, Vladislav Spivak, Wade Berrier, Yaacov Akiba Slama, Yoni Klain, Zac Bowling, Zach Lute, Zoltan Varga and Olivier Dufour.
+</p><p>We apologize in advance if the list is incomplete and your contribution is not listed.   Please email miguel@novell.com any corrections.
+</p><p>These are the contributors that sent patches:
+</p>

@@ -1,0 +1,272 @@
+---
+layout: obsolete
+title: "GtkSharp: Packing with Boxes"
+permalink: /old_site/GtkSharp:_Packing_with_Boxes/
+---
+
+<h1>GtkSharp: Packing with Boxes</h1>
+
+<p><br />
+If you've worked a lot with Windows GUI programming, you're probably used to positioning widgets using coordinates. Although this is possible with Gtk#, the preferred way of aligning widgets is with boxes. Boxes are invisible widget containers. They come in two forms: horizontal (HBox) and vertical (VBox). While this is more difficult for a newcomer, it has some advantages: 
+</p>
+<ul><li>Independent of screensize  
+</li><li>Easier Internationalization
+</li></ul>
+<h1> <span class="mw-headline" id="HBox_and_VBox"> HBox and VBox </span></h1>
+<p>[http:/monodoc/T:Gtk.HBox HBox] and [http:/monodoc/T:Gtk.VBox VBox] objects work similarly to Button objects or any other widget. After you've layed out an HBox or VBox, be sure to call one of the packing methods to set up the box.
+</p><p>For a VBox, PackStart will pack the box starting at the top, and PackEnd will pack it starting at the bottom. For an HBox, PackStart will pack the box from left to right, and PackEnd will pack it right to left. 
+</p><p>PackStart and PackEnd tell Gtk# where you want to place your widgets; the library will handle automatic resizing and other nifty things. There are also a number of options as to how your widgets should be packed; read the API documentation for HBox and VBox for more details. The resulting layout system is significantly more flexible than pixel-by-pixel coordinate layouts. 
+</p>
+<h1> <span class="mw-headline" id="Using_the_Boxes"> Using the Boxes </span></h1>
+<p>Because the Gtk# packing system is so flexible, it can be confusing at first. In the end, however, there are basically five different styles of packing. 
+</p><p>[Image:packbox.png] 
+</p><p>In the image above, each line contains one horizontal box (HBox) with several buttons. The call to Pack() is shorthand for the call to pack each of the buttons into the HBox. Each of the buttons is packed into the HBox the same way (i.e., same arguments to the PackStart() method). 
+</p><p>This is the declaration of the PackStart() method. 
+</p>
+<pre class="csharp" style="font-family:monospace;">box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>Widget child, <span style="color: #6666cc; font-weight: bold;">bool</span> expand, <span style="color: #6666cc; font-weight: bold;">bool</span> fill, <span style="color: #6666cc; font-weight: bold;">int</span> padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The first argument is object you want to pack into the box. The objects will all be buttons for now, so we'll be packing buttons into boxes.
+</p><p>The expand argument to PackStart and PackEnd controls whether the widgets are layed out in the box to fill in all the extra space in the box so the box is expanded to fill the area allotted to it (true); or the box is shrunk to just fit the widgets (false). Setting expand to false will allow you to do right and left justification of your widgets. Otherwise, they will all expand to fit into the box.
+</p><p>The fill argument to the Pack functions control whether the extra space is allocated to the objects themselves (true), or as extra padding in the box around these objects (false). It only has an effect if the expand argument is also true. 
+</p><p>When creating a new box, the function looks like this: 
+</p>
+<pre>
+HBox hbox1 = new HBox(bool homogeneous, int  spacing);
+</pre>
+<p>The homogeneous argument to HBox (and the same for VBox) controls whether each object in the box has the same size (i.e., the same width in an HBox, or the same height in a vbox). If it is set, the Pack routines function essentially as if the expand argument was always turned on. 
+</p><p>What's the difference between spacing (set when the box is created) and padding (set when elements are packed)? Spacing is added between objects, and padding is added on either side of an object.
+</p>
+<h1> <span class="mw-headline" id="Example"> Example </span></h1>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// packingdemo.cs - Gtk# Tutorial example</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// Author: Alejandro Sánchez Acosta &lt;raciel@es.gnu.org&gt;</span>
+<span style="color: #008080; font-style: italic;">//         Cesar Octavio Lopez Nataren &lt;cesar@ciencias.unam.mx&gt;</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// (c) 2002 Alejandro Sánchez Acosta</span>
+<span style="color: #008080; font-style: italic;">//          Cesar Octavio Lopez Nataren</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> GtkSharpTutorial <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gdk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">GLib</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> fixedcontainer
+        <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> x <span style="color: #008000;">=</span> <span style="color: #FF0000;">50</span><span style="color: #008000;">;</span>
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> y <span style="color: #008000;">=</span> <span style="color: #FF0000;">50</span><span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">HBox</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">bool</span> homogeneous, <span style="color: #6666cc; font-weight: bold;">int</span> spacing, <span style="color: #6666cc; font-weight: bold;">bool</span> expand, <span style="color: #6666cc; font-weight: bold;">bool</span> fill, <span style="color: #6666cc; font-weight: bold;">uint</span> padding<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        HBox box<span style="color: #008000;">;</span>
+                        Box box1<span style="color: #008000;">;</span>
+                        Button button<span style="color: #008000;">;</span>
+                        <span style="color: #6666cc; font-weight: bold;">string</span> padstr<span style="color: #008000;">;</span>
+&#160;
+                        box <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox <span style="color: #008000;">&#40;</span>homogeneous, spacing<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk_box_pack&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;(box,&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;button&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>expand <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span>
+                                button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TRUE&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">else</span>
+                                button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;FALSE&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span>fill <span style="color: #008000;">?</span> <span style="color: #666666;">&quot;TRUE,&quot;</span> <span style="color: #008000;">:</span> <span style="color: #666666;">&quot;FALSE,&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        padstr<span style="color: #008000;">=</span>padding<span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">+</span><span style="color: #666666;">&quot;);&quot;</span><span style="color: #008000;">;</span>
+&#160;
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span>padstr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>button, expand, fill, padding<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">return</span> box<span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> exitbutton_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, ButtonPressEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window<span style="color: #008000;">;</span>
+                        Button button<span style="color: #008000;">;</span>
+                        VBox box1<span style="color: #008000;">;</span>
+                        HBox box2<span style="color: #008000;">;</span>
+                        HSeparator separator<span style="color: #008000;">;</span>
+                        Misc misc<span style="color: #008000;">;</span>
+                        Box quitbox<span style="color: #008000;">;</span>
+                        <span style="color: #6666cc; font-weight: bold;">int</span> which<span style="color: #008000;">;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span> label<span style="color: #008000;">;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">!=</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Usage: packbox num, where num is 1, 2 o 3&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+&#160;
+                        which <span style="color: #008000;">=</span> Convert<span style="color: #008000;">.</span><span style="color: #0000FF;">ToInt32</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;packingdemo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span>
+&#160;
+                        box1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">switch</span> <span style="color: #008000;">&#40;</span>which<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                <span style="color: #0600FF; font-weight: bold;">case</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">:</span> 
+                                        label<span style="color: #008000;">=</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk_hbox_new (FALSE, 0);&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">SetAlignment</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">=</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk_hbox_new (TRUE, 0);&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">SetAlignment</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">;</span>
+&#160;
+                                <span style="color: #0600FF; font-weight: bold;">case</span> <span style="color: #FF0000;">2</span><span style="color: #008000;">:</span>
+                                        box2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk_hbox_new (FALSE, 10);&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">SetAlignment</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        label<span style="color: #008000;">=</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk_hbox_new (FALSE, 0);&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">SetAlignment</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">;</span>
+&#160;
+                                <span style="color: #0600FF; font-weight: bold;">case</span> <span style="color: #FF0000;">3</span><span style="color: #008000;">:</span>
+                                        box2 <span style="color: #008000;">=</span> make_box <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;end&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackEnd</span><span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                                        separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span><span style="color: #008000;">&#40;</span><span style="color: #FF0000;">400</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                        quitbox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Quit&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> ClickedEventHandler<span style="color: #008000;">;</span>
+&#160;
+                        quitbox<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>button, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>quitbox, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>box1<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        quitbox<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> ClickedEventHandler<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> sender, EventArgs e<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

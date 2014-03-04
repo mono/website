@@ -1,0 +1,274 @@
+---
+layout: obsolete
+title: "SGen DTrace"
+permalink: /old_site/SGen_DTrace/
+---
+
+<h1>SGen DTrace</h1>
+
+<p>On MacOS X Mono's <a href="{{site.baseurl}}/Generational_GC" title="Generational GC">Generational GC</a> is instrumented with several
+<a href="{{site.baseurl}}/DTrace" title="DTrace">DTrace</a>
+probes that give insight into the garbage collection process and can
+help in finding the causes for performance problems.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Probes"><span class="tocnumber">1</span> <span class="toctext">The Probes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Example_scripts"><span class="tocnumber">2</span> <span class="toctext">Example scripts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Garbage_collection_times"><span class="tocnumber">2.1</span> <span class="toctext">Garbage collection times</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#GC_lock"><span class="tocnumber">2.2</span> <span class="toctext">GC lock</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Objects_pinned_in_the_nursery"><span class="tocnumber">2.3</span> <span class="toctext">Objects pinned in the nursery</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="The_Probes"> The Probes </span></h1>
+<p>The DTrace provider name for all these probes is <tt>monoPID</tt>,
+where <tt>PID</tt> is the respective process's PID.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>begin <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> generation<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>end <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> generation<span style="color: #009900;">&#41;</span></pre>
+<p>These probes fire whenever a garbage collection starts or finishes.
+The value for generation can be <tt>0</tt> for the nursery or
+<tt>1</tt> for the old generation.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>locked <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>unlocked <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span></pre>
+<p>Fire whenever the global GC lock is taken or released.  This happens
+around garbage collections and in other circumstances, but only during
+collections should the lock be held for an extended period of time.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>heap<span style="color: #339933;">-</span>alloc <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> len<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>heap<span style="color: #339933;">-</span><a href="http://www.opengroup.org/onlinepubs/009695399/functions/free.html"><span style="color: #000066;">free</span></a> <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> len<span style="color: #009900;">&#41;</span></pre>
+<p>These fire when the garbage collector allocates or frees a section of
+memory from the operating system for the purpose of storing managed
+objects.  Memory allocated for metadata or internal garbage collector
+data is not reported via these probes.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>nursery<span style="color: #339933;">-</span>tlab<span style="color: #339933;">-</span>alloc <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> len<span style="color: #009900;">&#41;</span></pre>
+<p>This probe fires when a thread local allocation buffer (TLAB) is
+allocated to a thread.  At the point when the probe fires the TLAB is
+empty, i.e. it contains no objects.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>nursery<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>alloc <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span></pre>
+<p>Fires whenever an object is allocated in the nursery from unmanaged
+code.  Most of the time objects in TLABs are allocated in the managed
+allocator which is not instrumented due to performance considerations.
+To disable the managed allocator use the <tt>MONO_GC_DEBUG</tt>
+environment variable option <tt>no-managed-allocator</tt>.  That will
+make all nursery allocations trigger the probe.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>major<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>alloc<span style="color: #339933;">-</span>large <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>major<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>alloc<span style="color: #339933;">-</span>pinned <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>major<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>alloc<span style="color: #339933;">-</span>degraded <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>major<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>alloc<span style="color: #339933;">-</span>mature <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span></pre>
+<p>Fires when objects are allocated directly from the old generation.
+This happens in the following cases.
+</p>
+<ul><li> Large objects, meaning objects larger than 8000 bytes.
+</li></ul>
+<ul><li> Objects that are specifically requested to be allocated pinned.
+</li></ul>
+<ul><li> Degraded allocation.  If the nursery is pinned to such an extent that it doesn't permit object allocation, SGen switches into degraded mode, allocating all objects directly from the major heap. If nontrivial amounts of degraded allocations occur, increase the nursery size.
+</li></ul>
+<ul><li> Objects that are specifically requested to be allocated in the old
+</li></ul>
+<p>generation.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>moved <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> dest<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> src<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> dest_gen<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> src_gen<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #009900;">&#41;</span></pre>
+<p>Whenever an object is moved this probe fires.  Moves can occur within
+and between generations, specifically:
+</p>
+<ul><li> Within the nursery, if the aging semi-spaces are used.
+</li></ul>
+<ul><li> From the nursery to the major heap, for objects surviving the nursery and therefore being promoted.
+</li></ul>
+<ul><li> Within the major heap, in case of defragmentation.
+</li></ul>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>nursery<span style="color: #339933;">-</span>swept <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> len<span style="color: #009900;">&#41;</span>
+gc<span style="color: #339933;">-</span>major<span style="color: #339933;">-</span>swept <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> len<span style="color: #009900;">&#41;</span></pre>
+<p>These probes fire when parts of the nursery or major heap are swept
+clean of objects.  Note that the swept regions can encompass more than
+one (dead) object.
+</p>
+<pre class="c" style="font-family:monospace;">gc<span style="color: #339933;">-</span>obj<span style="color: #339933;">-</span>pinned <span style="color: #009900;">&#40;</span><span style="color: #993333;">uintptr_t</span> addr<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>ns_name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>class_name<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> generation<span style="color: #009900;">&#41;</span></pre>
+<p>Fires whenever an object is pinned.
+</p>
+<h1> <span class="mw-headline" id="Example_scripts"> Example scripts </span></h1>
+<h2> <span class="mw-headline" id="Garbage_collection_times"> Garbage collection times </span></h2>
+<p>How long do garbage collections take for a specific workload?
+</p>
+<pre>dtrace -q -c "mono-sgen foo.exe" -n 'mono$target:::gc-begin { self-&gt;ts = timestamp; } mono$target:::gc-end { @[arg0] = quantize ((timestamp - self-&gt;ts)/1000); }'
+</pre>
+<p>Example output:
+</p>
+<pre>
+     1
+value  ------------- Distribution ------------- count
+   16 |                                         0
+   32 |@@@@@@@@@@@@@                            1
+   64 |                                         0
+  128 |                                         0
+  256 |                                         0
+  512 |                                         0
+ 1024 |                                         0
+ 2048 |                                         0
+ 4096 |                                         0
+ 8192 |                                         0
+16384 |@@@@@@@@@@@@@@@@@@@@@@@@@@@              2
+32768 |                                         0
+
+     0
+value  ------------- Distribution ------------- count
+    4 |                                         0
+    8 |                                         1
+   16 |                                         0
+   32 |                                         1
+   64 |                                         1
+  128 |                                         0
+  256 |                                         0
+  512 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    90
+ 1024 |                                         1
+ 2048 |                                         0
+ 4096 |                                         0
+ 8192 |@                                        3
+16384 |                                         1
+32768 |                                         0
+</pre>
+<p>The graph for <tt>0</tt> shows collection times for the nursery, the
+graph for <tt>1</tt> shows times for the major collections.  We can
+see here that the majority of nursery collections took about half a
+millisecond, with 4 outliers taking around 10 ms.  There were 3 major
+collections, two of which took around 16 ms and the third one barely
+took any time at all.
+</p>
+<h2> <span class="mw-headline" id="GC_lock"> GC lock </span></h2>
+<p>Not counting garbage collections, how often and for how long is the GC
+lock held?
+</p>
+<pre>dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono*:::gc-locked { self-&gt;ts = timestamp; } mono*:::gc-begin { @ = quantize ((timestamp - self-&gt;ts)/1000); } mono*:::gc-end { self-&gt;ts = timestamp; } mono*:::gc-unlocked { @ = quantize ((timestamp - self-&gt;ts)/1000); }'
+</pre>
+<p>Output:
+</p>
+<pre>
+value  ------------- Distribution ------------- count
+    0 |                                         0
+    1 |@@@@@@@@@@@@@@@@@@@@@@@@@                5462
+    2 |@@@@@@@@@@@@@                            2789
+    4 |                                         97
+    8 |                                         49
+   16 |@                                        192
+   32 |                                         12
+   64 |                                         2
+  128 |                                         0
+  256 |                                         0
+  512 |                                         0
+ 1024 |                                         1
+ 2048 |                                         0
+</pre>
+<p>SGen takes the lock quite often, but apart from one outlier at about 1
+millisecond, it's released almost immediately.  Further analysis (not
+presented here) shows that the outlier is a result of thread-pool
+initialization during startup, when a few objects are allocated
+pinned, requiring allocating some memory from the operating system.
+</p>
+<h2> <span class="mw-headline" id="Objects_pinned_in_the_nursery"> Objects pinned in the nursery </span></h2>
+<p>How many objects of which types are pinned during nursery collections?
+</p>
+<pre>dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0/ { @[strjoin(copyinstr(arg2),strjoin(".",copyinstr(arg3)))] = count (); }' | tail -5
+</pre>
+<p>Output:
+</p>
+<pre>
+Microsoft.Scripting.Actions.DynamicSiteTarget`3                  863
+IronPython.Runtime.Calls.CallTarget1                             864
+System.Object[]                                                 1271
+Microsoft.Scripting.Actions.CallSite`1                          1350
+System.String[]                                                 1440
+</pre>
+<p>Here we see the pin counts for the 5 most pinned classes during
+nursery collections.  Combining all nursery collections, for example,
+1440 string arrays were pinned.
+</p><p>What if we'd like to know how many bytes of memory are pinned in the
+nursery during each collection?
+</p>
+<pre>dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-begin /arg0==0/ { bytes=0; } mono$target:::gc-obj-pinned /arg4==0/ { bytes += arg1; } mono$target:::gc-end /arg0==0/ { @ = quantize(bytes); }'
+</pre>
+<pre>
+value  ------------- Distribution ------------- count
+   32 |                                         0
+   64 |                                         1
+  128 |@                                        2
+  256 |                                         0
+  512 |                                         0
+ 1024 |                                         0
+ 2048 |                                         0
+ 4096 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  95
+ 8192 |                                         0
+</pre>
+<p>This looks a bit suspicious.  We had about 100 nursery collections, so
+according to the object counts above there were on average 13 object
+arrays and 14 string arrays pinned per nursery collection, in addition
+to lots of other objects.  All of those supposedly amount to only
+about 4 kilobytes of memory.  Are we counting something wrong or are
+these very short arrays?  Let's see:
+</p>
+<pre>dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0/ { @[strjoin(copyinstr(arg2),strjoin(".",copyinstr(arg3)))] = quantize (arg1); }'
+</pre>
+<p>These are the parts of the output giving the counts for the arrays
+we're interested in:
+</p>
+<pre>
+System.String[]
+         value  ------------- Distribution ------------- count
+             8 |                                         0
+            16 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    1344
+            32 |@@@                                      96
+            64 |                                         0
+
+System.Object[]
+         value  ------------- Distribution ------------- count
+             8 |                                         0
+            16 |@@@@@@@@@@@@@@@@@@@@@@@@@@@              870
+            32 |@@@@@@@@@@@@@                            409
+            64 |                                         0
+</pre>
+<p>Apparently those arrays really are very short.  But maybe the probe is
+lying to us about the object size?  If we know about Mono's internal
+object layout we can read out the array length directly from the heap:
+</p>
+<pre>dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0 &amp;&amp; copyinstr(arg3)=="Object[]"/ { this-&gt;l = *(int*)copyin(arg0+12,4); @[arg1] = lquantize(this-&gt;l, 0, 8); }'
+</pre>
+<p>On 32-bit Mono the length of an array is at offset 12, so we read 4
+bytes from there and cast it to an <tt>int</tt>.  We get a few graphs
+like these:
+</p>
+<pre>
+    16
+value  ------------- Distribution ------------- count
+  &lt; 0 |                                         0
+    0 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 96
+    1 |                                         0
+
+    28
+value  ------------- Distribution ------------- count
+    2 |                                         0
+    3 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 2
+    4 |                                         0
+
+    20
+value  ------------- Distribution ------------- count
+    0 |                                         0
+    1 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 481
+    2 |                                         0
+</pre>
+<p>Each of them gives us the distribution of the array lengths for array
+objects of specific sizes.  If everything is correct then for each
+array object size there must only be one array length, which is
+exactly what we get.  For example, all 481 array objects of size 20
+bytes have a length of one.
+</p><p>In fact, the numbers show that the sizes we get are exactly what we
+should expect given Mono's object layout on 32-bits: A reference
+array with a given length has a size of 16+4n bytes.
+</p>

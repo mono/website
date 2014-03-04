@@ -1,0 +1,140 @@
+---
+layout: obsolete
+title: "Mono:Runtime:Documentation:ThreadSafety"
+permalink: /old_site/Mono:Runtime:Documentation:ThreadSafety/
+---
+
+<h1>Mono:Runtime:Documentation:ThreadSafety</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Thread_safety_of_metadata_structures"><span class="tocnumber">1</span> <span class="toctext">Thread safety of metadata structures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Synchronization_of_read-only_data"><span class="tocnumber">1.1</span> <span class="toctext">Synchronization of read-only data</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Deadlock_prevention_plan"><span class="tocnumber">1.2</span> <span class="toctext">Deadlock prevention plan</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Locks"><span class="tocnumber">1.3</span> <span class="toctext">Locks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Simple_locks"><span class="tocnumber">1.3.1</span> <span class="toctext">Simple locks</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#The_loader_lock"><span class="tocnumber">1.3.2</span> <span class="toctext">The loader lock</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#The_domain_lock"><span class="tocnumber">1.3.3</span> <span class="toctext">The domain lock</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#The_domain_jit_code_hash_lock"><span class="tocnumber">1.3.4</span> <span class="toctext">The domain jit code hash lock</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#The_locking_hierarchy"><span class="tocnumber">1.4</span> <span class="toctext">The locking hierarchy</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Notes"><span class="tocnumber">1.5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#The_Lock_Tracer"><span class="tocnumber">1.6</span> <span class="toctext">The Lock Tracer</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Thread_safety_of_metadata_structures"> Thread safety of metadata structures </span></h2>
+<h3> <span class="mw-headline" id="Synchronization_of_read-only_data"> Synchronization of read-only data </span></h3>
+<p>Read-only data is data which is not modified after creation, like the actual binary metadata in the metadata tables.
+</p><p>There are three kinds of threads with regards to read-only data:
+</p>
+<ul><li> readers
+</li><li> the creator of the data
+</li><li> the destroyer of the data
+</li></ul>
+<p>Most threads are readers.
+</p>
+<ul><li> synchronization between readers is not necessary
+</li><li> synchronization between the writers is done using locks.
+</li><li> synchronization between the readers and the creator is done by not exposing the data to readers before it is fully constructed.
+</li><li> synchronization between the readers and the destroyer: TBD.
+</li></ul>
+<h3> <span class="mw-headline" id="Deadlock_prevention_plan"> Deadlock prevention plan </span></h3>
+<p>Hold locks for the shortest time possible. Avoid calling functions inside 
+locks which might obtain global locks (i.e. locks known outside this module).
+</p>
+<h3> <span class="mw-headline" id="Locks"> Locks </span></h3>
+<h4> <span class="mw-headline" id="Simple_locks"> Simple locks </span></h4>
+<p>There are a lot of global data structures which can be protected by a 'simple' lock. Simple means:
+</p>
+<ul><li> the lock protects only this data structure or it only protects the data structures in a given C module. An example would be the appdomains list in domain.c
+</li><li> the lock can span many modules, but it still protects access to a single resource or set of resources. An example would be the image lock, which protects all data structures that belong to a given MonoImage. 
+</li><li> the lock is only held for a short amount of time, and no other lock is acquired inside this simple lock. Thus there is no possibility of deadlock.
+</li></ul>
+<p>Simple locks include, at least, the following&#160;:
+</p>
+<ul><li> the per-image lock acquired by using mono_image_(un)lock functions.
+</li></ul>
+<h4> <span class="mw-headline" id="The_loader_lock"> The loader lock </span></h4>
+<p>This locks is held by class loading routines and any global synchronization routines. This is effectively the runtime global lock. Other locks can call
+code that acquire the loader lock out of order if the current thread already owns it.
+</p>
+<h4> <span class="mw-headline" id="The_domain_lock"> The domain lock </span></h4>
+<p>Each appdomain has a lock which protects the per-domain data structures.
+</p>
+<h4> <span class="mw-headline" id="The_domain_jit_code_hash_lock"> The domain jit code hash lock </span></h4>
+<p>This per-domain lock protects the JIT'ed code of each domain. Originally we used the domain lock, but it was split to reduce contention.
+</p>
+<h3> <span class="mw-headline" id="The_locking_hierarchy"> The locking hierarchy </span></h3>
+<p>It is useful to model locks by a locking hierarchy, which is a relation between locks, which is reflexive, transitive, and antisymmetric, in other words, a lattice. If a thread wants to acquire a lock B, while already holding A, it can only do it if A &lt; B. If all threads work this way, then no deadlocks can occur.
+</p><p>Our locking hierarchy so far looks like this:
+</p>
+<pre>
+    &lt;LOADER LOCK&gt; 
+        \
+       &lt;DOMAIN LOCK&gt; 
+         \
+          &lt;DOMAIN JIT LOCK&gt;
+		\			\
+	&lt;SIMPLE LOCK 1&gt; 	&lt;SIMPLE LOCK 2&gt;
+</pre>
+<h3> <span class="mw-headline" id="Notes"> Notes </span></h3>
+<p>Some common scenarios:
+</p>
+<ul><li> if a function needs to access a data structure, then it should lock it itself, and do not count on its caller locking it. So for example, the image-&gt;class_cache hash table would be locked by mono_class_get().
+</li></ul>
+<ul><li> there are lots of places where a runtime data structure is created and stored in a cache. In these places, care must be taken to avoid multiple threads creating the same runtime structure, for example, two threads might call mono_class_get () with the same class name. There are two choices here:
+</li></ul>
+<pre>
+	&lt;enter mutex&gt;
+	&lt;check that item is created&gt;
+	if (created) {
+		&lt;leave mutex&gt;
+		return item
+	}
+	&lt;create item&gt;
+	&lt;store it in cache&gt;
+	&lt;leave mutex&gt;
+</pre>
+<p>This is the easiest solution, but it requires holding the lock for the whole time which might create a scalability problem, and could also lead to deadlock.
+</p>
+<pre>
+	&lt;enter mutex&gt;
+	&lt;check that item is created&gt;
+	&lt;leave mutex&gt;
+	if (created) {
+		return item
+	}
+	&lt;create item&gt;
+	&lt;enter mutex&gt;
+	&lt;check that item is created&gt;
+	if (created) {
+		/* Another thread already created and stored the same item */
+		&lt;free our item&gt;
+		&lt;leave mutex&gt;
+		return orig item
+	}
+	else {
+		&lt;store item in cache&gt;
+		&lt;leave mutex&gt;
+		return item
+	}
+</pre>
+<p>	This solution does not present scalability problems, but the created item might be hard to destroy (like a MonoClass). If memory is allocated from
+a mempool, that memory is leaked, but the leak is very rare and it is bounded.
+</p>
+<ul><li> lazy initialization of hashtables etc. is not thread safe
+</li></ul>
+<p><a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/docs/thread-safety.txt?revision=126671&amp;view=markup" class="external text" rel="nofollow">Original version of this document in SVN</a>
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="The_Lock_Tracer"> The Lock Tracer </span></h3>
+<p>Mono now have a lock tracer that allows to record the locking behavior of the runtime during execution and later verify it's correctness.
+</p><p>To enable lock tracer support define LOCK_TRACER in mono/mono/metadata/lock-tracer.h and recompile mono. To enable it at runtime define the MONO_ENABLE_LOCK_TRACER environment variable.
+</p><p>The lock tracer produces a file in the same directory of the application, it's named 'lock.ZZZ' where ZZZ is the pid of the mono process.
+</p><p>After producing such lock file, run the trace decoder that can be found in mono/data/lock-decoder. It currently only works on linux and OSX, it requires binutils to be installed. The decoder will report locking errors specifying the functions that caused it.
+</p>

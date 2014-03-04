@@ -1,0 +1,60 @@
+---
+layout: obsolete
+title: "Code Coverage"
+permalink: /old_site/Code_Coverage/
+---
+
+<h1>Code Coverage</h1>
+
+<p>Code Coverage can be used to track how many of the code paths that your program is using are actually exercised.
+</p><p>For more information see <a href="{{site.baseurl}}/Profile" title="Profile">Profile</a>.
+</p>
+<h1> <span class="mw-headline" id="MonoCov"> MonoCov </span></h1>
+<p>MonoCov is made up of two components: a code coverage module, and a GUI interface for doing code coverage.   This is available as part of the package "monocov" (available <a href="http://github.com/mono/monocov" class="external text" rel="nofollow">here</a>).
+</p><p>To use it, run your program like this:
+</p>
+<pre class="bash" style="font-family:monospace;">   mono <span style="color: #660033;">--debug</span> <span style="color: #660033;">--profile</span>=monocov program.exe</pre>
+<p>The coverage information will be output to the program.exe.cov file. Now you can load this file in the GUI with:
+</p>
+<pre class="bash" style="font-family:monospace;">   monocov program.exe.cov</pre>
+<p>and browse the namespaces for interesting types you want to check code coverage for. Double clicking on a method will bring up a viewer with the source file of the method with the lines of code not reached by execution highlighted in red.
+</p><p>To limit the collection of data to a specific assembly you can specify it as an argument to the profiler. For example, to consider only the code in mscorlib, use:
+</p>
+<pre class="bash" style="font-family:monospace;">   mono <span style="color: #660033;">--debug</span> <span style="color: #660033;">--profile</span>=monocov:+<span style="color: #7a0874; font-weight: bold;">&#91;</span>mscorlib<span style="color: #7a0874; font-weight: bold;">&#93;</span> test-suite.exe</pre>
+<p>To be able to easily collect coverage information from the unit tests in the mono mcs directory you can also run the test suite as follows, for example in mcs/class/corlib:
+</p>
+<pre class="bash" style="font-family:monospace;">   <span style="color: #c20cb9; font-weight: bold;">make</span> run-test <span style="color: #007800;">RUNTIME_FLAGS</span>=<span style="color: #ff0000;">&quot;--profile=monocov:outfile=corlib.cov,+[mscorlib]&quot;</span></pre>
+<p>To use similar options while running unit tests directly with nunit-console2, specify MONO_OPTIONS as follows:
+</p>
+<pre class="bash" style="font-family:monospace;">   <span style="color: #007800;">MONO_OPTIONS</span>=<span style="color: #ff0000;">&quot;--profile=monocov:+[MyAssembly]&quot;</span> nunit-console2 MyTestAssembly.dll</pre>
+<p>Monocov can also generate a set of HTML pages that display the coverage data. <a href="http://primates.ximian.com/~lupus/corlib-cov/project.html" class="external text" rel="nofollow">Here</a> are the files generated when running the nunit-based test suite for mono's mscorlib with the following command:
+</p>
+<pre class="bash" style="font-family:monospace;">    monocov <span style="color: #660033;">--export-html</span>=<span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>corlib-cov corlib.cov</pre>
+<p>Hopefully this tool will help both new and old contributors to easily find untested spots in our libraries and contribute tests for them.
+</p>
+<h1> <span class="mw-headline" id="Built-in_Code_Coverage"> Built-in Code Coverage </span></h1>
+<p>The built-in code coverage module is fairly limited
+</p><p>Mono ships with a code coverage module.  This module is activated by using the Mono --profile=cov option.  The format is:
+</p>
+<pre>--profile=cov[:assembly-name[/namespace]] test-suite.exe
+</pre>
+<p><br />
+By default code coverage will default to all the assemblies loaded, you can limit this by specifying the assembly name, for example to perform code coverage in the routines of your program use, for example the following command line limits the code coverage to routines in the "demo" assembly:
+</p>
+<pre class="bash" style="font-family:monospace;">        mono <span style="color: #660033;">--profile</span>=cov:demo demo.exe</pre>
+<p>Notice that the assembly-name does not include the extension.
+</p><p>You can further restrict the code coverage output by specifying a namespace:
+</p>
+<pre class="bash" style="font-family:monospace;">        mono <span style="color: #660033;">--profile</span>=cov:demo<span style="color: #000000; font-weight: bold;">/</span>My.Utilities demo.exe</pre>
+<p>Which will only perform code coverage in the given assembly and namespace.
+</p><p>Typical output looks like this:
+</p>
+<pre>       Not covered: Class:.ctor ()
+       Not covered: Class:A ()
+       Not covered: Driver:.ctor ()
+       Not covered: Driver:method ()
+       Partial coverage: Driver:Main ()
+               offset 0x000a
+</pre>
+<p>The offsets displayed are IL offsets.
+</p>

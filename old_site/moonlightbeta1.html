@@ -1,0 +1,52 @@
+---
+layout: obsolete
+title: "MoonlightBeta1"
+permalink: /old_site/MoonlightBeta1/
+---
+
+<h1>MoonlightBeta1</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Requirements"><span class="tocnumber">1</span> <span class="toctext">Requirements</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Known_Bugs"><span class="tocnumber">2</span> <span class="toctext">Known Bugs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Fully_Working_Sites"><span class="tocnumber">3</span> <span class="toctext">Fully Working Sites</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Firefox_3_Issues"><span class="tocnumber">4</span> <span class="toctext">Firefox 3 Issues</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Windowless_Cursors"><span class="tocnumber">4.1</span> <span class="toctext">Windowless Cursors</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Windowless_mouse_event_problems"><span class="tocnumber">4.2</span> <span class="toctext">Windowless mouse event problems</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Requirements"> Requirements </span></h1>
+<p>We are passing all of the Microsoft Silverlight 1.0 tests, have been tested with all of the sites listed in the <a href="#Fully_Working_Sites">Fully Working Sites</a> section, and are able to install the Microsoft Media Pack as hosted on Microsoft.com
+</p>
+<h1> <span class="mw-headline" id="Known_Bugs">Known Bugs</span></h1>
+<ul><li> <a href="http://bugzilla.novell.com/buglist.cgi?query_format=advanced&amp;classification=Mono&amp;product=Moonlight&amp;target_milestone=1.0.0&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=NEEDINFO&amp;bug_status=REOPENED&amp;bugidtype=include&amp;chfieldto=Now&amp;cmdtype=doit" class="external text" rel="nofollow">Moonlight 1.0 Beta bugs to be fixed for 1.0 Final</a>
+</li></ul>
+<ul><li> <a href="http://bugzilla.novell.com/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=NEEDINFO&amp;bug_status=REOPENED&amp;chfieldto=Now&amp;classification=Mono&amp;emailassigned_to1=1&amp;emailassigned_to2=1&amp;emailcc2=1&amp;emailqa_contact2=1&amp;emailreporter2=1&amp;field-1-0-0=bug_status&amp;field-1-1-0=classification&amp;field-1-2-0=product&amp;product=Moonlight%20&amp;query_format=advanced&amp;type-1-0-0=anyexact&amp;type-1-1-0=anyexact&amp;type-1-2-0=anyexact&amp;value-1-0-0=NEW%2CASSIGNED%2CNEEDINFO%2CREOPENED&amp;value-1-1-0=Mono&amp;value-1-2-0=Moonlight%20&amp;order=bugs.bug_id%20&amp;query_based_on=Moonlight" class="external text" rel="nofollow">Open Moonlight 1.0 bugs</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Fully_Working_Sites"> Fully Working Sites </span></h1>
+<p>The following sites:
+</p>
+<ul><li> <a href="http://silverlight.net/Showcase" class="external text" rel="nofollow">Silverlight Showcase</a>
+</li><li> <a href="http://videoshow.vertigo.com" class="external text" rel="nofollow">Vertigo's Video.Show</a> - video playback
+</li><li> <a href="http://mediapreview.tv" class="external text" rel="nofollow">Mediapreview TV</a> - video playback
+</li></ul>
+<p>The following Silverlight 1.0 samples:
+</p>
+<ul><li> <a href="http://silverlight.net/samples/1.0/Page-Turn/default.html" class="external text" rel="nofollow">Silverlight Page Turn</a>
+</li><li> <a href="http://silverlight.net/samples/1.0/Sprawl/default.html" class="external text" rel="nofollow">Sprawl</a>
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Firefox_3_Issues">Firefox 3 Issues </span></h1>
+<h2> <span class="mw-headline" id="Windowless_Cursors"> Windowless Cursors </span></h2>
+<p>Firefox 3.0 on linux lacks support for windowless cursors.  This is a failing of the NPAPI, not of moonlight.  We have contributed an experimental patch to support windowless plugin cursors (within the set of CSS defined cursors, which unfortunately does not overlap completely with the set of Silverlight defined cursors).  The code is compiled into moonlight, and if the patch is rolled into FireFox, it should all "just work" in a future version of xulrunner.
+</p><p>More information at <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=430451" class="external text" rel="nofollow">Mozilla Bug #430451</a>
+</p>
+<h2> <span class="mw-headline" id="Windowless_mouse_event_problems"> Windowless mouse event problems </span></h2>
+<p>Firefox 3.0 shipped with faulty mouse motion compression, which leads to moonlight windowless plugins getting events out of order.  It is impossible to diagnose and correct this problem from within moonlight.  This has been fixed upstream in Firefox and should be released in xulrunner 1.9.1.
+</p><p>More information is available at <a href="https://bugzilla.novell.com/show_bug.cgi?id=433687" class="external text" rel="nofollow">Novell Bug #433687</a>, including a url to 1.9.0 xulrunner packages for SuSE which contain the backported fix.
+</p>

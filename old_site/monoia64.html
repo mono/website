@@ -1,0 +1,24 @@
+---
+layout: obsolete
+title: "Mono:IA64"
+permalink: /old_site/Mono:IA64/
+---
+
+<h1>Mono:IA64</h1>
+
+<p>The IA64 port is at the same level as the x86/amd64 ports. Currently, only linux is supported.
+</p><p>The port was started by Zoltan Varga in May 2005 and completed in August of the same year. 
+</p>
+<h1> <span class="mw-headline" id="Building_Mono_on_IA64"> Building Mono on IA64 </span></h1>
+<p>In addition to the usual mono dependencies, it depends on the libunwind package to implement exception handling:
+</p><p><a href="http://www.hpl.hp.com/research/linux/libunwind/" class="external free" rel="nofollow">http://www.hpl.hp.com/research/linux/libunwind/</a>
+</p><p>By default, the mono GC is configured to use 8KB pages, which will not work on
+IA64 machines with a 4KB page size. To check the page size on your system,
+type:
+</p><p>zcat /proc/config.gz | grep PAGE_SIZE_4KB
+</p><p>If this prints something like this:
+</p><p>CONFIG_IA64_PAGE_SIZE_4KB=y
+</p><p>then mono needs to be compiled with a compiler flag to use 4KB pages:
+</p><p>configure "CFLAGS=-DHBLKSIZE=4096"
+</p><p>A runtime compiled this way will work on machines using both 4KB and 8KB pages.
+</p>

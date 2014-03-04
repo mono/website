@@ -1,0 +1,59 @@
+---
+layout: obsolete
+title: "FAQ: Novell Bugzilla"
+permalink: /old_site/FAQ:_Novell_Bugzilla/
+---
+
+<h1>FAQ: Novell Bugzilla</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Accounts"><span class="tocnumber">1</span> <span class="toctext">Accounts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#How_do_I_create_a_Novell_Bugzilla_account.3F"><span class="tocnumber">1.1</span> <span class="toctext">How do I create a Novell Bugzilla account?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#I_can.27t_login_because_it_says_I_need_to_validate_my_e-mail_address"><span class="tocnumber">1.2</span> <span class="toctext">I can't login because it says I need to validate my e-mail address</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#How_do_I_edit_my_Novell_Account_settings.3F"><span class="tocnumber">1.3</span> <span class="toctext">How do I edit my Novell Account settings?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#General"><span class="tocnumber">2</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Why_is_Novell_Bugzilla_so_slow.3F"><span class="tocnumber">2.1</span> <span class="toctext">Why is Novell Bugzilla so slow?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#I_don.27t_like_the_.22My_Bugs.22_saved_search.2C_how_do_I_get_rid_of_it.3F"><span class="tocnumber">2.2</span> <span class="toctext">I don't like the "My Bugs" saved search, how do I get rid of it?</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Who_do_I_contact_if_I_have_problems_that_aren.27t_addressed_on_this_FAQ.3F"><span class="tocnumber">2.3</span> <span class="toctext">Who do I contact if I have problems that aren't addressed on this FAQ?</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Accounts"> Accounts </span></h2>
+<h4> <span class="mw-headline" id="How_do_I_create_a_Novell_Bugzilla_account.3F"> How do I create a Novell Bugzilla account? </span></h4>
+<p>Go to <a href="http://secure-www.novell.com/selfreg/jsp/createSimpleAccount.jsp?target=https%3A//bugzilla.novell.com/ichainlogin.cgi%3Ftarget%3Dindex.cgi%3FGoAheadAndLogIn%253D1" class="external text" rel="nofollow">Create a Novell Account</a>. Fill out the information and click "Create Account". Make sure you remember to validate your account using the instructions in this FAQ.
+</p>
+<h4> <span class="mw-headline" id="I_can.27t_login_because_it_says_I_need_to_validate_my_e-mail_address"> I can't login because it says I need to validate my e-mail address </span></h4>
+<p>After creating a Novell bugzilla account, you should receive an e-mail asking you to validate your e-mail address. Follow the instructions in the e-mail and then try to login to bugzilla again.
+</p><p>If for some reason you don't receive the validation e-mail, you can ask them to re-send the validation e-mail by going to the <a href="http://secure-www.novell.com/selfreg/jsp/protected/validateEmail.jsp" class="external text" rel="nofollow">validate e-mail address</a> link. On the bottom of the page, under the section "Don't have a code?" click on the "Request Code" button. This will send you the validation e-mail.
+</p>
+<h4> <span class="mw-headline" id="How_do_I_edit_my_Novell_Account_settings.3F"> How do I edit my Novell Account settings? </span></h4>
+<p>Go <a href="http://secure-www.novell.com/selfreg/jsp/protected/manageAccount.jsp" class="external text" rel="nofollow">Here</a>.
+</p>
+<h2> <span class="mw-headline" id="General"> General </span></h2>
+<h4> <span class="mw-headline" id="Why_is_Novell_Bugzilla_so_slow.3F"> Why is Novell Bugzilla so slow? </span></h4>
+<p>Novell Bugzilla is used by many people, so at certain times of the day it is slower than at other times. Generally it is slower during 6:00am - 6:00pm MST because that's when the bulk of Novell employees use it.
+</p><p>That being said, even during those peak times, it isn't slow enough to be unusable. If it is unusable to you, it is probably while you are logging in to Bugzilla. This is actually not part of Bugzilla at all. It is the common authentication for all of Novell.Com called iChain. I have talked to both the Bugzilla and the iChain teams about this slowness and they are looking into it. One thing that seems to help is to turn off TLS 1.0 support in your browser. In FireFox on Linux you can do this by going to Edit / Preferences / Advanced / Encryption and unchecking the checkbox "Use TLS 1.0". Since I made this change, I haven't seen any long pauses while logging into Novell Bugzilla.
+</p><p>It is unfortunate that the slowness happens during login, as this is the first thing you do in Bugzilla. This seems to give the impression that all of Novell Bugzilla is slow, however, the rest of Novell Bugzilla should run at normal Bugzilla speed.
+</p><p>If there is a repeatable procedure to show slowness, or if you have a WireShark log of your Novell login session where it was slow, please contact twiest on <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a> (#mono).
+</p>
+<h4> <span class="mw-headline" id="I_don.27t_like_the_.22My_Bugs.22_saved_search.2C_how_do_I_get_rid_of_it.3F"> I don't like the "My Bugs" saved search, how do I get rid of it? </span></h4>
+<p>You can't really delete it, but you can make it not show in the header / footer.  
+</p><p>Here's how:
+</p>
+<ul><li> Login to Novell Bugzilla
+</li><li> Click on "Preferences"
+</li><li> Click on "Saved Searches"
+</li><li> Uncheck the "Show in Footer" checkbox that's next to "My Bugs / My Reports"
+</li><li> Click "Submit Changes"
+</li></ul>
+<h4> <span class="mw-headline" id="Who_do_I_contact_if_I_have_problems_that_aren.27t_addressed_on_this_FAQ.3F"> Who do I contact if I have problems that aren't addressed on this FAQ? </span></h4>
+<p>Please contact twiest on <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a> (#mono).
+</p>

@@ -1,0 +1,23 @@
+---
+layout: obsolete
+title: "Mono:X86"
+permalink: /old_site/Mono:X86/
+---
+
+<h1>Mono:X86</h1>
+
+<p>Mono's main developers use x86 systems and its the most tuned version, currently it supports:
+</p>
+<ul><li> Linux.
+</li><li> Windows.
+</li><li> BSD (Requires a modern version for proper thread support).
+</li><li> Solaris/x86
+</li></ul>
+<p>Mono on x86 supports both Just-in-Time (JIT) compilation as well as Ahead-of-Time (<a href="{{site.baseurl}}/AOT" title="AOT">AOT</a>) compilation, the later produces Position Independent Code.
+</p>
+<h1> <span class="mw-headline" id="X86_Specific_Optimizations"> X86 Specific Optimizations </span></h1>
+<ul><li> Thread local storage (TLS): on systems that support TLS, Mono is able to take advantage of it.
+</li><li> x86 peephole optimizations.
+</li><li> Instruction selector is able to pick best instructions on x86.
+</li></ul>
+

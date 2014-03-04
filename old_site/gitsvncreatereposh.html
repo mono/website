@@ -1,0 +1,27 @@
+---
+layout: obsolete
+title: "GitSVN:create-repo.sh"
+permalink: /old_site/GitSVN:create-repo.sh/
+---
+
+<h1>GitSVN:create-repo.sh</h1>
+
+<pre>
+if [ $# -lt 2 ]; then
+	echo &quot;Usage: create-repo.sh &lt;mono|mcs&gt; &lt;svn account&gt;&quot;
+	exit 1
+fi
+REPO=$1
+SVN=$2
+mkdir $REPO &amp;&amp; \
+cd $REPO &amp;&amp; \
+git init &amp;&amp; \
+git svn init svn+ssh://$SVN@$REPO-cvs.ximian.com/source &amp;&amp; \
+git config svn-remote.svn.fetch trunk/$REPO:refs/remotes/git-svn/trunk &amp;&amp; \
+git config svn-remote.svn.branches branches/*/$REPO:refs/remotes/git-svn/branches/* &amp;&amp; \
+git config svn-remote.svn.tags tags/*/$REPO:refs/remotes/git-svn/tags/* &amp;&amp; \
+git fetch git://repo.or.cz/$REPO.git refs/heads/master:refs/remotes/git-svn/trunk refs/heads/branches/*:refs/remotes/git-svn/branches/* refs/tags/*:refs/remotes/git-svn/tags/* &amp;&amp; \
+git reset --hard git-svn/trunk &amp;&amp; \
+git svn rebase
+</pre>
+

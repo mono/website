@@ -1,0 +1,112 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.0.1"
+permalink: /old_site/Release_Notes_Mono_2.0.1/
+---
+
+<h1>Release Notes Mono 2.0.1</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Mono_2.0.1_Release_Notes"><span class="tocnumber">1</span> <span class="toctext">Mono 2.0.1 Release Notes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Major_Highlights"><span class="tocnumber">2</span> <span class="toctext">Major Highlights</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Changes_Since_2.0"><span class="tocnumber">3</span> <span class="toctext">Changes Since 2.0</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#GTK.23"><span class="tocnumber">3.1</span> <span class="toctext">GTK#</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Bug_Fixes"><span class="tocnumber">3.2</span> <span class="toctext">Bug Fixes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Installing_Mono_2.0.1"><span class="tocnumber">4</span> <span class="toctext">Installing Mono 2.0.1</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Contributors"><span class="tocnumber">5</span> <span class="toctext">Contributors</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Mono_2.0.1_Release_Notes"> Mono 2.0.1 Release Notes </span></h1>
+<p>Mono 2.0.1 is a portable and open source implementation of
+the .NET framework for Unix, Windows, MacOS and other operating
+systems.
+</p><p><i>Release Date: October 23rd, 2008</i>
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights">Major Highlights</span></h1>
+<p>Mono 2.0.1 is a bug fix release for 2.0.
+</p>
+<h1> <span class="mw-headline" id="Changes_Since_2.0">Changes Since 2.0</span></h1>
+<p>These are the major changes that happened since the 2.0 release of Mono.
+</p><p>All of the changes since 1.2 are documented in the following release notes:
+</p><p><a href="http://www.go-mono.com/archive/1.2.1" class="external text" rel="nofollow">1.2.1</a>,
+<a href="http://www.go-mono.com/archive/1.2.2" class="external text" rel="nofollow">1.2.2</a>,
+<a href="http://www.go-mono.com/archive/1.2.3" class="external text" rel="nofollow">1.2.3</a>,
+<a href="http://www.go-mono.com/archive/1.2.4" class="external text" rel="nofollow">1.2.4</a>,
+<a href="http://www.go-mono.com/archive/1.2.5" class="external text" rel="nofollow">1.2.5</a>,
+<a href="http://www.go-mono.com/archive/1.2.6" class="external text" rel="nofollow">1.2.6</a>,
+<a href="http://www.go-mono.com/archive/1.9" class="external text" rel="nofollow">1.9</a>,
+<a href="http://www.go-mono.com/archive/1.9.1" class="external text" rel="nofollow">1.9.1</a> and
+<a href="http://www.mono-project.com/Release_Notes_Mono_2.0" class="external text" rel="nofollow">2.0</a>.
+</p>
+<h2> <span class="mw-headline" id="GTK.23"> GTK# </span></h2>
+<p>GTK# was updated to 2.12.5 on the Mono VMware image, openSUSE 11.0 and Mac OS X. 
+</p><p>Here's what's new:
+</p>
+<ul><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=400595" class="external text" rel="nofollow">Bug 400595 - Crashes when the window delete event is added after the creation of the window</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=426876" class="external text" rel="nofollow">Bug 426876 - Classes "*Adapter" should throw ArgumentNullException for their (*Implementor) constructor</a>
+</li><li> Atk API cleanup
+</li><li> Win32 installer build integration
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Bug_Fixes"> Bug Fixes </span></h2>
+<p>Here are the bugs that were fixed for 2.0.1:
+</p>
+<ul><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=426309" class="external text" rel="nofollow">Bug 426309 - Crash with microsoft-compiled binary</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=431304" class="external text" rel="nofollow">Bug 431304 - reverse invoke via COM when marshaling a BSTR by ref retval fails to convert MonoString to native string.</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=433908" class="external text" rel="nofollow">Bug 433908 - Problem with Npsql and pooling</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=431811" class="external text" rel="nofollow">Bug 431811 - Process.HasExited does not work on Mono 2.0 runtime</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=434620" class="external text" rel="nofollow">Bug 434620 - Structure Corruption</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=428406" class="external text" rel="nofollow">Bug 428406 - InvalidCastException when casting multi-dimensional jagged arrays</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=434544" class="external text" rel="nofollow">Bug 434544 - JIT / Runtime corruption</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=432673" class="external text" rel="nofollow">Bug 432673 - Invalid IL code in ctor ()</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=426264" class="external text" rel="nofollow">Bug 426264 - Function return inconsistent ulong value, which has dummy parameter of a Class and a ulong</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=430963" class="external text" rel="nofollow">Bug 430963 - Optimization - Don't allocate 32kb buffer in CachedRawResponse that is never used</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=430040" class="external text" rel="nofollow">Bug 430040 - TcpClient breaks after 1000 consecutive connections</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=435549" class="external text" rel="nofollow">Bug 435549 - Memory leak with Response.Cache.SetCacheability(HttpCacheability.Public);</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=432466" class="external text" rel="nofollow">Bug 432466 - NPIV screens in an NVP deployment cannot assume presence of ZOS</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=433741" class="external text" rel="nofollow">Bug 433741 - PATCH for OdbcDataReader.GetBytes()</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=416462" class="external text" rel="nofollow">Bug 416462 - Remoting takes an inordinate amount of time when passing 4KB or 8KB strings</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=437691" class="external text" rel="nofollow">Bug 437691 - System.InvalidCastException: Cannot cast from source type to destination type. at System.Web.HttpApplicationFactory.AttachEvents (System.Web.HttpApplication app)</a>
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=437289" class="external text" rel="nofollow">Bug 437289 - with EnableSessionState="False" access to Context.ApplicationInstance.Session; should throw an exception</a>
+</li></ul>
+<p>Other bug fixes without bug numbers:
+</p>
+<ul><li> Fixed a deadlock in the runtime assembly loading code.
+</li><li> Added a workaround against an amd64 shutdown crash.
+</li><li> Fixed an issue with finalizers not being called which was a regression from 1.9.x.
+</li><li> Added a workaround for parent processes which disable some real time signals needed by the runtime <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=499569" class="external autonumber" rel="nofollow">[1]</a>.
+</li></ul>
+<h1> <span class="mw-headline" id="Installing_Mono_2.0.1">Installing Mono 2.0.1</span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-<span style="color: #000000;">2.0</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-<span style="color: #000000;">2.0</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-2.0.1.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-2.0.1
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h1> <span class="mw-headline" id="Contributors">Contributors</span></h1>
+<p>These are the SVN commiters to the Mono 2.0.1 release:
+</p>

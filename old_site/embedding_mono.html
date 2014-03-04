@@ -1,0 +1,573 @@
+---
+layout: obsolete
+title: "Embedding Mono"
+permalink: /old_site/Embedding_Mono/
+---
+
+<h1>Embedding Mono</h1>
+
+<p>by Miguel de Icaza (miguel@ximian.com), Paolo Molaro (lupus@ximian.com)
+</p><p>This document describes how to embed the Mono runtime in your
+application, and how to invoke managed methods from C, and how to
+invoke C code from managed code.
+</p><p>For a general overview of why you would like to embed Mono in your application see the <a href="{{site.baseurl}}/Scripting_With_Mono" title="Scripting With Mono">Scripting With Mono</a> article.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Source_Code"><span class="tocnumber">1</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How_Embedding_Works"><span class="tocnumber">2</span> <span class="toctext">How Embedding Works</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Embedding_the_Runtime"><span class="tocnumber">3</span> <span class="toctext">Embedding the Runtime</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Compiling_and_Linking"><span class="tocnumber">3.1</span> <span class="toctext">Compiling and Linking</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Initializing_the_Mono_runtime"><span class="tocnumber">3.2</span> <span class="toctext">Initializing the Mono runtime</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Configuring_the_Runtime"><span class="tocnumber">3.2.1</span> <span class="toctext">Configuring the Runtime</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Shutting_down_the_runtime"><span class="tocnumber">3.3</span> <span class="toctext">Shutting down the runtime</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Exposing_C_code_to_the_CIL_universe"><span class="tocnumber">3.4</span> <span class="toctext">Exposing C code to the CIL universe</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Windows_Considerations"><span class="tocnumber">3.5</span> <span class="toctext">Windows Considerations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Updates_for_Mono_version_2.8.2B"><span class="tocnumber">4</span> <span class="toctext">Updates for Mono version 2.8+</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Invoking_Methods_in_the_CIL_universe"><span class="tocnumber">5</span> <span class="toctext">Invoking Methods in the CIL universe</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Invoking_a_Method"><span class="tocnumber">5.1</span> <span class="toctext">Invoking a Method</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Creating_objects"><span class="tocnumber">5.1.1</span> <span class="toctext">Creating objects</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Data_types"><span class="tocnumber">5.1.2</span> <span class="toctext">Data types</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Unmanaged_to_Managed_Thunks"><span class="tocnumber">5.1.3</span> <span class="toctext">Unmanaged to Managed Thunks</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#C.23_to_C_delegate_registration"><span class="tocnumber">5.1.4</span> <span class="toctext">C# to C delegate registration</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#Threading_issues"><span class="tocnumber">5.2</span> <span class="toctext">Threading issues</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Signal_handling"><span class="tocnumber">5.3</span> <span class="toctext">Signal handling</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#API_Documentation"><span class="tocnumber">6</span> <span class="toctext">API Documentation</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Common_Problems"><span class="tocnumber">7</span> <span class="toctext">Common Problems</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Threads"><span class="tocnumber">7.1</span> <span class="toctext">Threads</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Missing_functionality"><span class="tocnumber">7.2</span> <span class="toctext">Missing functionality</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Chicken.2FEgg"><span class="tocnumber">7.3</span> <span class="toctext">Chicken/Egg</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Samples"><span class="tocnumber">8</span> <span class="toctext">Samples</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Source_Code"> Source Code </span></h1>
+<p>Source code and samples for Mono embedding can be found in the Mono distribution in the mono/samples/embed directory.
+</p>
+<h1> <span class="mw-headline" id="How_Embedding_Works"> How Embedding Works </span></h1>
+<p>Typically you would begin with an existing C application: 
+</p><p><a href="{{site.baseurl}}/images/old_site/f/fa/Existing.png" class="image"><img alt="Existing.png" src="{{site.baseurl}}/images/old_site/f/fa/Existing.png" width="160" height="55" /></a> 
+</p><p>Embedding links the mono runtime with your application, so your application now has a full virtual execution system running side-by-side with it. This is done by linking `libmono' with your application (we will cover the details about this later). Once linked, the address space of your application would look like this: 
+</p><p><a href="{{site.baseurl}}/images/old_site/8/87/Linked.png" class="image"><img alt="Linked.png" src="{{site.baseurl}}/images/old_site/8/87/Linked.png" width="302" height="88" /></a>
+</p><p>The Mono embedded API exposes the Mono Runtime to the existing C code. The interface exposed by the Mono runtime lets the developer control various aspects of the runtime and inspect the code that runs on the CIL world inside the Mono runtime. 
+</p><p>Once you have the Mono runtime initialized, the most interesting thing to do is to load some CIL/.NET code into it.   The code can be written in any of the <a href="{{site.baseurl}}/Languages" title="Languages">Mono supported languages</a> like C#, Java, IronPython or Visual Basic.  This will result in an address space like this: 
+</p><p><a href="{{site.baseurl}}/images/old_site/2/2b/Loaded.png" class="image"><img alt="Loaded.png" src="{{site.baseurl}}/images/old_site/2/2b/Loaded.png" width="535" height="86" /></a>
+</p><p>The C code is typically referred as <i>unmanaged</i> code, while the CIL code generated by a <a href="{{site.baseurl}}/Languages" title="Languages">CIL-compiler</a> is referred to as <i>managed code</i>.
+</p><p>But to make the system more interesting than just load some managed code and have it run side-by-side with your code, it is desirable to have the managed code invoke C code, and the C code invoke managed code.
+</p><p>Managed code can invoke unmanaged code in two ways, using <a href="{{site.baseurl}}/DllImport" title="DllImport" class="mw-redirect">P/Invoke</a> or using the low-level Mono embedding API.  
+</p><p>The result looks like this: 
+</p><p>[Image:exposing.png]  
+Now your existing C code can trigger methods in the managed world, and the managed world can react and notify of any interesting changes to the C code: 
+</p><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Callback.png" class="new" title="File:Callback.png">File:Callback.png</a>
+</p><p>The loaded assembly can be as simple as you want, some common things that developers have done:  
+</p>
+<ul><li>Load a library of methods that are wired to the user interface of an application: GUI elements, dialog boxes are then handled on the managed world, while core processing remains in C.  
+</li><li>Load user defined code as assemblies, and trigger invocations of those from the existing C code base.  
+</li><li>Move some of the development to the managed world, gaining all of the benefits of managed development (exception handling, runtime type checking, just-in-time compilation, rich introspection system, type-safe libraries and more) while keeping your existing investment in C intact.  
+</li><li>A launcher that launches background threads to perform some work on behalf of the application.  
+</li><li>Embed a web application or a web service server inside your application.  
+</li><li>Use Mono to host the user scripting interface, turning Mono and the scripts into a generic plugin interface.  
+</li><li>Integrate the Mono object system with third-party object systems.  
+</li></ul>
+<p>Since the Mono framework is a fairly powerful framework there are almost no limitations on the different kind of applications that you can create with the above setup.
+</p>
+<h1> <span class="mw-headline" id="Embedding_the_Runtime"> Embedding the Runtime </span></h1>
+<p>Embedding the runtime consists of various steps: 
+</p>
+<ul><li> Compiling and linking the Mono runtime
+</li><li> Initializing the Mono runtime
+</li><li> Optionally expose C code to the C#/CIL universe.
+</li></ul>
+<p>These are discussed in detail next.
+</p>
+<h3> <span class="mw-headline" id="Compiling_and_Linking"> Compiling and Linking </span></h3>
+<p>To embed the runtime, you have to link your code against the
+Mono runtime libraries.  To do this, you want to pass the
+flags returned by pkg-config to your compiler:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>pkg-config <span style="color: #660033;">--cflags</span> <span style="color: #660033;">--libs</span> mono-<span style="color: #000000;">2</span></pre>
+<p>is used to get the flags for the JIT runtime.
+</p><p>Like this:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span><span style="color: #c20cb9; font-weight: bold;">gcc</span> sample.c <span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--cflags</span> <span style="color: #660033;">--libs</span> mono-<span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">`</span></pre>
+<p>You can separate the compilation flags from the linking flags, for 
+instance, you can use the following macros in your makefile:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">CFLAGS</span>=<span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--cflags</span> mono-<span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">`</span>
+<span style="color: #007800;">LDFLAGS</span>=<span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--libs</span> mono-<span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">`</span></pre>
+<p>For mono versions before 2.8, use "<b>mono</b>" instead of "<b>mono-2</b>" in the above commands: the ABI version of the libmono library has changed.
+</p><p>On windows you need to generate an import library for mono.dll by getting the following file:
+</p>
+<pre> <a href="http://github.com/mono/mono/blob/master/msvc/mono.def" class="external free" rel="nofollow">http://github.com/mono/mono/blob/master/msvc/mono.def</a>
+</pre>
+<p>and creating mono.lib with the command:
+</p>
+<pre class="bash" style="font-family:monospace;">lib <span style="color: #000000; font-weight: bold;">/</span>nologo <span style="color: #000000; font-weight: bold;">/</span>def:mono.def <span style="color: #000000; font-weight: bold;">/</span>out:mono.lib <span style="color: #000000; font-weight: bold;">/</span>machine:x86</pre>
+<p>Then you link your application with mono.lib.
+</p>
+<h3> <span class="mw-headline" id="Initializing_the_Mono_runtime"> Initializing the Mono runtime </span></h3>
+<p>To initialize the JIT runtime, call mono_jit_init, like this:
+</p>
+<pre class="c" style="font-family:monospace;">        <span style="color: #339933;">#include &lt;glib/glib.h&gt;</span>
+        <span style="color: #339933;">#include &lt;mono/jit/jit.h&gt;</span>
+        <span style="color: #339933;">#include &lt;mono/metadata/assembly.h&gt;</span>
+&#160;
+        MonoDomain <span style="color: #339933;">*</span>domain<span style="color: #339933;">;</span>
+&#160;
+        domain <span style="color: #339933;">=</span> mono_jit_init <span style="color: #009900;">&#40;</span>domain_name<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>That will return a MonoDomain where your code will be
+executed. domain_name is the name of the main application domain.
+This call will initialize the default framework version, which could be 2.0 or 4.0, depending on the Mono version used. To specify a framework version, you can use something like:
+</p>
+<pre class="c" style="font-family:monospace;">       domain <span style="color: #339933;">=</span> mono_jit_init_version <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;myapp&quot;</span><span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;&quot;</span>v2.0.50727<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>The first thing you usually do is to load your assembly and execute it:
+</p>
+<pre class="c" style="font-family:monospace;">	MonoAssembly <span style="color: #339933;">*</span>assembly<span style="color: #339933;">;</span>
+&#160;
+	assembly <span style="color: #339933;">=</span> mono_domain_assembly_open <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;file.exe&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span>assembly<span style="color: #009900;">&#41;</span>
+		error <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>In the above example, the contents of `file.exe' will be
+loaded into the domain.  This only loads the code, but it will
+not execute anything yet.  You can replace `file.exe' with
+another transport file, like `file.dll'.
+</p><p>To start executing code, you must invoke a method in the
+assembly, or if you have provided a static Main method (an
+entry point), you can use the convenience function:
+</p>
+<pre class="c" style="font-family:monospace;">	retval <span style="color: #339933;">=</span> mono_jit_exec <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> assembly<span style="color: #339933;">,</span> argc <span style="color: #339933;">-</span> <span style="color: #0000dd;">1</span><span style="color: #339933;">,</span> argv <span style="color: #339933;">+</span> <span style="color: #0000dd;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>Make sure you always provide a Main() method and execute it with mono_jit_exec()
+at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
+</p><p>If you want to invoke a different method, look at the
+<a href="#Invoking_Methods_in_the_CIL_universe">`Invoking Methods in the CIL universe'</a> section.
+</p><p>Certain features of the runtime like Dll remapping depend on a configuration file, to load the configuration file, just add:
+</p>
+<pre class="c" style="font-family:monospace;">         mono_config_parse <span style="color: #009900;">&#40;</span>NULL<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>Which will load the Mono configuration file (typically /etc/mono/config), but if you want to load your own configuration file, pass the filename as the argument to mono_config_parse:
+</p>
+<pre class="c" style="font-family:monospace;">         mono_config_parse <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;my_mappings&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h4> <span class="mw-headline" id="Configuring_the_Runtime"> Configuring the Runtime </span></h4>
+<p>When Mono is embedded into an application it needs a way of finding its runtime assemblies and configuration files.  By default it will use the system defined locations that the runtime was built with (typically assemblies in /usr/lib/mono and configuration in /etc/mono).  This will work out of the box for you.
+</p><p>But if you are using a Mono that was relocated from an original distribution, for example if you are distributing your application with Mono, you must inform the Mono runtime where to find its assemblies and configuration files.  To do so, you must call the mono_set_dirs routine:
+</p>
+<pre class="c" style="font-family:monospace;">     mono_set_dirs <span style="color: #009900;">&#40;</span>myapp_lib<span style="color: #339933;">,</span> myapp_etc<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>In Windows this is common since you will install your Mono on a different directory, so for example:
+</p>
+<pre class="c" style="font-family:monospace;">mono_set_dirs<span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;C:<span style="color: #000099; font-weight: bold;">\\</span>Mono-2.6.7<span style="color: #000099; font-weight: bold;">\\</span>lib&quot;</span><span style="color: #339933;">,</span><span style="color: #ff0000;">&quot;C:<span style="color: #000099; font-weight: bold;">\\</span>Mono-2.6.7<span style="color: #000099; font-weight: bold;">\\</span>etc&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h3> <span class="mw-headline" id="Shutting_down_the_runtime"> Shutting down the runtime </span></h3>
+<p>To shutdown the Mono runtime, you have to clean up all the
+domains that were created, use this function:
+</p>
+<pre>
+	mono_jit_cleanup (domain);
+</pre>
+<p>Note that for current versions of Mono, the mono runtime can't be reloaded into the same process, so call mono_jit_cleanup() only if you're never going to initialize it again.
+</p>
+<h3> <span class="mw-headline" id="Exposing_C_code_to_the_CIL_universe"> Exposing C code to the CIL universe </span></h3>
+<p>The Mono runtime provides two mechanisms to expose C code to
+the CIL universe: internal calls and native C code.   Internal
+calls are tightly integrated with the runtime, and provide no support
+for marshalling between runtime types and C types.
+</p><p>For example, passing a C# string will result into a MonoString* in the C function when using an internal call (that is, it will be a pointer to the managed heap object representing the string). A C# string passed to a P/Invoke C function will result instead in, for example, a utf8 char pointer, depending on the marshalling attributes.
+</p><p>The other option is to use the <a href="{{site.baseurl}}/DllImport" title="DllImport" class="mw-redirect">Platform Invoke</a> (P/Invoke) to
+call C code from the CIL universe, using the standard P/Invoke
+mechanisms.
+</p><p>To use the P/Invoke system, you have to make your C function public, for example:
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #993333;">void</span> DoSomething <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+   <span style="color: #808080; font-style: italic;">/* ... */</span>
+<span style="color: #009900;">&#125;</span></pre>
+<p>To make the runtime lookup the symbol in the current executable, use the special library name <b>__Internal</b> like this, in your DllImport attribute:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Runtime.InteropServices</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;__Internal&quot;</span>, EntryPoint<span style="color: #008000;">=</span><span style="color: #666666;">&quot;DoSomething&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">void</span> DoSomething <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The "__Internal" library name will instruct Mono not to look this up in an external library, but to try to satisfy the symbol referenced (DoSomething) in the current executable image.
+</p><p>The P/Invoke framework provides extensive marshalling capabilities (converting strings, converting data types, mapping delegates to function pointers and much more).    This is the simplest mechanism to use.
+</p><p>If you want direct access to managed objects you can register C code with the runtime, and later bind to it from managed code.
+</p><p>To register an internal call, use this call in the C code:
+</p>
+<pre>
+	mono_add_internal_call (&quot;Hello::Sample&quot;, sample);
+</pre>
+<p>Now, you need to declare this on the C# side:
+</p>
+<pre>	using System;
+	using System.Runtime.CompilerServices;
+	
+	class Hello {
+	[MethodImplAttribute(MethodImplOptions.InternalCall)]
+	extern static string Sample ();
+	}
+</pre>
+<p>Since this routine returns a string, here is the C definition:
+</p>
+<pre>	static MonoString*
+	Sample () 
+	{
+		return mono_string_new (mono_domain_get (), &quot;Hello!&quot;);
+	}
+</pre>
+<p>Notice that we have to return a `MonoString', and we use the
+`mono_string_new' API call to obtain this from a string.
+</p>
+<h3> <span class="mw-headline" id="Windows_Considerations"> Windows Considerations </span></h3>
+<p>On Windows, it is necessary for you to flag any methods that you want to expose through P/Invoke to be flagged with __dllexport or __declspec(dllexport).
+</p>
+<h1> <span class="mw-headline" id="Updates_for_Mono_version_2.8.2B"> Updates for Mono version 2.8+ </span></h1>
+<p>To support advanced GC implementations, implement a few optimizations and to do a much needed cleanup, the API and ABI exposed by the Mono library starting with version 2.8 has changed.
+Most of the API remains unchanged, but a few tweaks may be needed in the build setup and in the code. As much as possible the changes needed will allow the code to compile with both API versions.
+</p><p>The first thing to change is to use mono-2 instead of mono in the pkg-config invocations. To get the preprocessor flags to use during compilation, for example, you'll use:
+</p>
+<pre>pkg-config --cflags mono-2
+</pre>
+<p>Please also note that mono may not use GLib anymore internally, so if you use it in your program, make sure you also link to it explicitly.
+No other change to the build setup should be needed.
+</p><p>Now let's list the changes that may be needed to the source code.
+</p>
+<ul><li> The glib.h header file is no longer included in the mono header files, so if you use GLib and relied on mono including the header for you, you'll need to explicitly include the glib.h header now.
+</li></ul>
+<ul><li> A few functions in the API return a pointer to allocated memory: this memory must be freed with mono_free() instead of g_free().
+</li></ul>
+<p>FIXME: provide a list or a small script to allow people to easily grep for them in their code.
+</p>
+<ul><li> A few internal headers are not installed anymore. You should simply remove the inclusion on those headers. This includes headers in the mono/utils directory (except mono-logger.h and the newly added mono-publib.h), headers in the mono/io-layer directory and mono/metadata/mempool.h.
+</li></ul>
+<ul><li> The MonoType struct is no longer fully visible: if you have code that accesses its fields directly, you need to change it to use the accessors that are already provided also in the 1.0 version of the mono API.
+</li></ul>
+<p>For example, if you accessed the byref flag of the type using:
+</p>
+<pre>type-&gt;byref
+</pre>
+<p>you need to change the code to read:
+</p>
+<pre>mono_type_is_byref (type)
+</pre>
+<ul><li> The MonoMethodSignature struct is no longer fully visible: if you have code that accesses its fields directly, you need to change it to use the accessors that are already provided also in the 1.0 version of the mono API.
+</li></ul>
+<p>For example, if you accessed the return type of the signature using:
+</p>
+<pre>signature-&gt;ret
+</pre>
+<p>you need to change the code to read:
+</p>
+<pre>mono_signature_get_return_type (signature)
+</pre>
+<ul><li> The MonoArray and MonoString structures are no longer visible.
+</li></ul>
+<p>If you accessed the fields directly, you need to change the code
+to use the macros and functions already part of the API.
+</p>
+<ul><li> The MonoAssemblyName struct is no longer fully visible: to access its fields
+</li></ul>
+<p>you need to use the newly-provided accessors. Note also that it can't be allocated on the stack anymore and you'll need to create and destroy it with
+the following API:
+</p>
+<pre>MonoAssemblyName *aname = mono_assembly_name_new ("mscorlib");
+mono_assembly_name_free (aname);
+</pre>
+<ul><li> The MonoMethodHeader object is now transient: you need to free it when you're done to avoid leaking by calling the (already existing and safe to call) function mono_metadata_free_mh ().
+</li></ul>
+<ul><li> Array API changes: the integer types that represent arry lengths and array boundaries has changed to uintptr_t and intptr_t. This allows us to transparently provide a mono build that supports 64 bit indices on 64 bit systems. The affected APIs are:
+</li></ul>
+<pre> mono_array_new ()
+ mono_array_new_full ()
+ mono_array_new_specific ()
+ mono_array_length ()
+</pre>
+<ul><li> Profiler API changes.
+</li></ul>
+<p>Mono can now support multiple profilers running at the same time. The profiler
+initialization sequence must first install the profiler and only after that
+install the callbacks and set the event mask.
+</p><p>Also note that objects can move in memory. Use the
+</p>
+<pre> void mono_profiler_install_gc_moves    (MonoProfileGCMoveFunc callback);
+</pre>
+<p>function to get notifications of the old and new addresses of objects as they are moved.
+</p>
+<ul><li> The mono logger API now exposes only the ability to set the trace level and trace mask with the two functions:
+</li></ul>
+<pre>void mono_trace_set_mask_string (const char *value);
+void mono_trace_set_level_string (const char *value);
+</pre>
+<ul><li> The following methods and structures (which were really unlikely to be used/useful to anyone outside of the mono internals) are not part of the public API anymore:
+</li></ul>
+<pre>mono_remote_class() MonoRemoteClass
+ves_icall_System_Environment_GetOSVersionString()
+mono_alloc_special_static_data()/mono_get_special_static_data()
+</pre>
+<h1> <span class="mw-headline" id="Invoking_Methods_in_the_CIL_universe"> Invoking Methods in the CIL universe </span></h1>
+<p>Calling a method in the CIL universe from C requires a number of steps:
+</p>
+<ul><li> Obtaining the MonoMethod handle to the method. 
+</li><li> The method invocation.
+</li></ul>
+<p>To get a MonoMethod there are several ways.
+</p><p>You can get a MonoClass (the structure representing a type)
+using:
+</p>
+<pre>
+        MonoImage *
+        mono_assembly_get_image  (MonoAssembly *assembly);
+
+	MonoClass *
+	mono_class_from_name (MonoImage *image, const char* name_space, const char *name);
+</pre>
+<p>and then loop in the returned class method array until you get the one you're looking for. There are examples of such searches as static functions in several C files in metadata/*.c: we need to expose one through the API and remove
+the duplicates.
+</p><p>The other, simpler, way is to use the functions in debug-helpers.h: there are examples of their use in monograph, mint and the jit as well.  You basically use a string description of the method, like:
+</p>
+<pre>
+        &quot;System.Object:GetHashCode()&quot;
+</pre>
+<p>and create a MonoMethodDesc out of it with:
+</p>
+<pre>
+#include &lt;mono/metadata/debug-helpers.h&gt;
+
+MonoMethodDesc* mono_method_desc_new (const char *name, gboolean include_namespace);
+</pre>
+<p>You can then use:
+</p>
+<pre>
+MonoMethod*     mono_method_desc_search_in_class (MonoMethodDesc *desc, MonoClass *klass);
+MonoMethod*     mono_method_desc_search_in_image (MonoMethodDesc *desc, MonoImage *image);
+</pre>
+<p>and
+</p>
+<pre>
+#include &lt;mono/metadata/assembly.h&gt;
+
+MonoImage    *mono_assembly_get_image  (MonoAssembly *assembly);
+</pre>
+<p>to search for the method in a class or in an image.  You would
+typically do this just once at the start of the program and
+store the result for reuse somewhere.
+</p>
+<h2> <span class="mw-headline" id="Invoking_a_Method"> Invoking a Method </span></h2>
+<p>You can invoke methods either with [#Unmanaged_to_Managed_Thunks|Unmanaged to Managed Thunks] which create a custom version of an invocation method or by using the mono_runtime_invoke () methods.
+</p><p>The unmanaged to managed thunks are faster because they will create a custom trampoline from unmanaged code to managed code for the particular method signature that you are invoking.   The mono_runtime_invoke methods can be used with any arguments and any method signatures.
+</p><p>If you are doing a few invocations, mono_runtime_invoke will probably suffice, but if you are adding this to a code that in your code that requires the best possible performance, you will want to use the thunks.
+</p><p>There are two functions to call a managed method:
+</p>
+<pre class="c" style="font-family:monospace;">	MonoObject<span style="color: #339933;">*</span>
+	mono_runtime_invoke         <span style="color: #009900;">&#40;</span>MonoMethod <span style="color: #339933;">*</span>method<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>obj<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">**</span>params<span style="color: #339933;">,</span>
+	                             MonoObject <span style="color: #339933;">**</span>exc<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	and
+	MonoObject<span style="color: #339933;">*</span>
+	mono_runtime_invoke_array   <span style="color: #009900;">&#40;</span>MonoMethod <span style="color: #339933;">*</span>method<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>obj<span style="color: #339933;">,</span> MonoArray <span style="color: #339933;">*</span>params<span style="color: #339933;">,</span>
+	                             MonoObject <span style="color: #339933;">**</span>exc<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>obj is the 'this' pointer, it should be NULL for static
+methods, a MonoObject* for object instances and a pointer to
+the value type for value types.
+</p><p>The params array contains the arguments to the method with the same convention: MonoObject* pointers for object instances and pointers to the value type otherwise. The _invoke_array variant takes a C# object[] as the params argument (MonoArray *params): in this case the value types are boxed inside the  respective reference representation.
+</p><p>From unmanaged code you'll usually use the mono_runtime_invoke() variant.
+</p><p>Note that this function doesn't handle virtual methods for you, it will exec the exact method you pass: we still need to expose a function to lookup the derived class implementation of a virtual method (there are examples of this in the code, though).
+</p><p>You can pass NULL as the exc argument if you don't want to catch exceptions, otherwise, *exc will be set to the exception  thrown, if any.  if an exception is thrown, you can't use the MonoObject* result from the function.
+</p><p>If the method returns a value type, it is boxed in an object.
+</p><p>For example, to invoke the following C# methods:
+</p>
+<pre class="c" style="font-family:monospace;">  class MyClass <span style="color: #009900;">&#123;</span>
+    <span style="color: #993333;">static</span> <span style="color: #993333;">void</span> Foo <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> value<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      ...
+    <span style="color: #009900;">&#125;</span>
+&#160;
+    <span style="color: #993333;">int</span> Bar <span style="color: #009900;">&#40;</span>string name<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      ...
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span></pre>
+<p>assuming you got the corresponding MonoMethod* in foo_method and bar_method and this_arg is a MonoObject* of type MyClass, you simply execute:
+</p>
+<pre class="c" style="font-family:monospace;">  <span style="color: #808080; font-style: italic;">/* we execute methods that take one argument */</span>
+  <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>args <span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span>
+  <span style="color: #993333;">int</span> val <span style="color: #339933;">=</span> <span style="color: #0000dd;">10</span><span style="color: #339933;">;</span>
+  <span style="color: #808080; font-style: italic;">/* Note we put the address of the value type in the args array */</span>
+  args <span style="color: #009900;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #339933;">&amp;</span>val<span style="color: #339933;">;</span>
+&#160;
+  <span style="color: #808080; font-style: italic;">/* execute Foo (10);
+   * it's a static method, so use NULL as the second argument.
+   */</span>
+  mono_runtime_invoke <span style="color: #009900;">&#40;</span>foo_method<span style="color: #339933;">,</span> NULL<span style="color: #339933;">,</span> args<span style="color: #339933;">,</span> NULL<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+  <span style="color: #808080; font-style: italic;">/* a string is a reference, so we put it directly in the args array */</span>
+  args <span style="color: #009900;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> mono_string_new <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;Hello&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #808080; font-style: italic;">/* execute my_class_instance.Bar (&quot;Hello&quot;);
+   * See the Creating Objects section to learn how to get this_arg.
+   */</span>
+  MonoObject <span style="color: #339933;">*</span>result <span style="color: #339933;">=</span> mono_runtime_invoke <span style="color: #009900;">&#40;</span>bar_method<span style="color: #339933;">,</span> this_arg<span style="color: #339933;">,</span> args<span style="color: #339933;">,</span> NULL<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #808080; font-style: italic;">/* we always get a MonoObject* from mono_runtime_invoke (), so to get
+   * the integer value we need to unbox (which returns a pointer to
+   * the value stored in the object) and dereference.
+   */</span>
+  <span style="color: #993333;">int</span> int_result <span style="color: #339933;">=</span> <span style="color: #339933;">*</span><span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span><span style="color: #339933;">*</span><span style="color: #009900;">&#41;</span>mono_object_unbox <span style="color: #009900;">&#40;</span>result<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="Creating_objects"> Creating objects </span></h3>
+<p>Creating an object involves two separate actions: allocating the memory
+and invoking the constructor.
+</p><p>For constructors that take no arguments this is very simple:
+</p>
+<pre class="c" style="font-family:monospace;">  <span style="color: #808080; font-style: italic;">/* we usually get the class we need during initialization */</span>
+  MonoImage <span style="color: #339933;">*</span>image <span style="color: #339933;">=</span> mono_assembly_get_image <span style="color: #009900;">&#40;</span>assembly<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  MonoClass <span style="color: #339933;">*</span>my_class <span style="color: #339933;">=</span> mono_class_from_name <span style="color: #009900;">&#40;</span>image<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;MyNamespace&quot;</span><span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;MyClass&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  ...
+  <span style="color: #808080; font-style: italic;">/* allocate memory for the object */</span>
+  MonoObject <span style="color: #339933;">*</span>my_class_instance <span style="color: #339933;">=</span> mono_object_new <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> my_class<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #808080; font-style: italic;">/* execute the default argument-less constructor */</span>
+  mono_runtime_object_init <span style="color: #009900;">&#40;</span>my_class_instance<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>For more complex constructors or if you want to have more control of the execution of the constructor, you can use mono_runtime_invoke() as explained in the previous section, after getting the MonoMethod* representing the constructor:
+</p>
+<pre class="c" style="font-family:monospace;">  <span style="color: #808080; font-style: italic;">/* execute my_class_instance = new MyClass (&quot;Mono rocks&quot;); */</span>
+  MonoObject <span style="color: #339933;">*</span>my_class_instance <span style="color: #339933;">=</span> mono_object_new <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> my_class<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>args <span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span>
+  args <span style="color: #009900;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> mono_string_new <span style="color: #009900;">&#40;</span>domain<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;Mono rocks&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #808080; font-style: italic;">/* constructor methods return void, so we ignore the return value,
+   * the constructed object is my_class_instance.
+   */</span>
+  mono_runtime_invoke <span style="color: #009900;">&#40;</span>ctor_method<span style="color: #339933;">,</span> my_class_instance<span style="color: #339933;">,</span> args<span style="color: #339933;">,</span> NULL<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h3> <span class="mw-headline" id="Data_types"> Data types </span></h3>
+<p>Unlike <a href="{{site.baseurl}}/PInvoke" title="PInvoke" class="mw-redirect">PInvoke</a>, there is no intermediate layer that translates the managed types into unmanaged typed or the other way around.   With the embedded runtime, when you register an internal call, or when you call a method, you need to use the data types expected by the runtime.
+</p><p>This means that you need to convert your C types into Mono runtime types before you can pass them to Mono, or you must convert those Mono types to C types before you can consume them"
+</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th>C Type </th>
+<th> Mono Type  </th>
+<th> C to Mono </th>
+<th> Mono to C
+</th></tr>
+<tr>
+<td> strings, char *
+</td>
+<td> MonoString *
+</td>
+<td> mono_string_new, mono_string_new_len,
+<p>mono_string_new_wrapper, mono_string-new_utf16
+</p>
+</td>
+<td> mono_string_to_utf8, mono_string_to_utf16
+</td></tr>
+<tr>
+<td> array of x
+</td>
+<td> MonoArray *
+</td>
+<td> mono_array_new, mono_array_new_full, mono_array_new_specific
+</td></tr>
+</table>
+<p>See the embedded API documentation for more details about these.
+</p>
+<h3> <span class="mw-headline" id="Unmanaged_to_Managed_Thunks"> Unmanaged to Managed Thunks </span></h3>
+<p>With Mono 2.0 we introduced a new function that can wrap a MonoMethod into a function pointer:
+</p>
+<pre class="c" style="font-family:monospace;">	<span style="color: #993333;">void</span><span style="color: #339933;">*</span> mono_method_get_unmanaged_thunk <span style="color: #009900;">&#40;</span>MonoMethod <span style="color: #339933;">*</span>method<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>You'll be able to store the returned pointer in a function pointer with the proper signature and call that directly from
+C:
+</p>
+<pre class="c" style="font-family:monospace;">	<span style="color: #993333;">typedef</span> gint32 <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>GetHashCode<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span>MonoObject <span style="color: #339933;">*</span>obj<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+	GetHashCode func <span style="color: #339933;">=</span> mono_method_get_unmanaged_thunk <span style="color: #009900;">&#40;</span>System_Object_GetHashCode_method<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+	gint32 hashvalue <span style="color: #339933;">=</span> func <span style="color: #009900;">&#40;</span>myobject<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>Another approach is calling <a href="http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.getfunctionpointerfordelegate.aspx" class="external text" rel="nofollow">Marshal.GetFunctionPointerForDelegate ()</a> either from managed code, or using mono_runtime_invoke ().
+</p>
+<h3> <span class="mw-headline" id="C.23_to_C_delegate_registration"> C# to C delegate registration </span></h3>
+<p>Another common pattern to have C code invoke C# code is to pass C# delegates to C through the <a href="{{site.baseurl}}/Interop_with_Native_Libraries" title="Interop with Native Libraries">Interop with Native Libraries</a> support in Mono.  
+</p><p>When you pass a C# delegate to C, the Mono runtime will create the thunk automatically for you.   The function received on the C side will be a function pointer that points to a thunk that invokes code in the C# world.
+</p><p>The C# side of the code would look like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Runtime.InteropServices</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Demo <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #6666cc; font-weight: bold;">int</span> MyCallback1 <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;MyRuntime&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> RegisterCallback <span style="color: #008000;">&#40;</span>MyCallback1 callback1<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> a <span style="color: #008000;">+</span> b<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> Sub <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> a <span style="color: #008000;">-</span> b<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #6666cc; font-weight: bold;">void</span> Init <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// This one registers the method &quot;Add&quot; to be invoked back by C code</span>
+        RegisterCallback <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Then your C code would look like this:
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #993333;">typedef</span> <span style="color: #993333;">int</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>callback<span style="color: #339933;">-</span>t<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> a<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">static</span> callback_t my_callback<span style="color: #339933;">;</span>
+&#160;
+<span style="color: #993333;">void</span> RegisterCallback <span style="color: #009900;">&#40;</span>my_callback_t cb<span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+    my_callback <span style="color: #339933;">=</span> cb<span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&#160;
+<span style="color: #993333;">int</span> InvokeManagedCode <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> a<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> b<span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+    <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>my_callback <span style="color: #339933;">==</span> NULL<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#123;</span>
+         <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Managed code has not initialized this library yet&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+         <a href="http://www.opengroup.org/onlinepubs/009695399/functions/abort.html"><span style="color: #000066;">abort</span></a> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+    <span style="color: #b1b100;">return</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>my_callback<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span>a<span style="color: #339933;">,</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Threading_issues"> Threading issues </span></h2>
+<p>If your application creates threads on its own, and you want them to 
+be able to interact with Mono, you have to register the thread so that the
+runtime knows about it.
+</p><p>To do so, call the mono_thread_attach() function before you execute
+any other Mono API or before manipulating any managed object.
+</p>
+<h2> <span class="mw-headline" id="Signal_handling"> Signal handling </span></h2>
+<p>Mono consumes a set of signals during execution that your applications will not be able to consume, here is what these are:
+</p>
+<ul><li> SIGPWR, SIGXCPU: these are used internally by the GC and pthreads.
+</li><li> SIGFPE: caught so we can turn that into an exception
+</li><li> SIGQUIT, SIGKILL to produce ExecutionEngineException.
+</li><li> SIGSEGV: to produce NullReferenceExceptions
+</li></ul>
+<p>One signal picked at startup time between SIGRTMIN and SIGRTMAX.  The signal is picked up by finding a signal in that range which is set to SIG_DFL.
+</p><p>Optionally:
+</p>
+<ul><li> SIGUSR2: this is used when --trace=disable is passed on the command line and its used to turn on/off the output of trace.
+</li></ul>
+<p>Currently Mono does not provide a mechanism for signal chaining, but one might be available in the future, see <a href="http://bugzilla.ximian.com/show_bug.cgi?id=75990" class="external text" rel="nofollow">Bug #75990</a> for information on the current status of this feature.
+</p>
+<h1> <span class="mw-headline" id="API_Documentation"> API Documentation </span></h1>
+<p>See <a href="http://go-mono.com/docs/index.aspx?tlink=root:/embed" class="external text" rel="nofollow">here</a>.
+</p>
+<h1> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h1>
+<h2> <span class="mw-headline" id="Threads"> Threads </span></h2>
+<p>If your applications has threads that will access Mono, access Mono variables, point to Mono objects, be called back by Mono, these threads must be registered with the Mono runtime using the <tt>mono_thread_attach</tt>.
+</p>
+<h2> <span class="mw-headline" id="Missing_functionality"> Missing functionality </span></h2>
+<p>If the embedding API is missing some functionality, you might be able to work around it by invoking managed code using mono_runtime_invoke (), i.e. for creating delegates you can call Delegate.CreateDelegate () etc.
+</p>
+<h2> <span class="mw-headline" id="Chicken.2FEgg"> Chicken/Egg </span></h2>
+<p>If you have a .NET app which P/Invokes to an unmanaged library, which
+embeds Mono for basically 100% of its logic, bad things can happen:
+</p><p>Under Linux, libmono is statically linked by default. If you p/invoke a library that it turn is linked against libmono, you'll end up with 2 runtime instances.
+</p><p>Even if you link libmono dynamically (there is a `configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call mono_jit_init/cleanup from the SO.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Samples"> Samples </span></h1>
+<p>See the sample programs in <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/samples/embed/" class="external text" rel="nofollow">mono/samples/embed</a> for examples of
+embedding the Mono runtime in your application.
+</p>

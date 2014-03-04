@@ -1,0 +1,20 @@
+---
+layout: obsolete
+title: "Compiling Mono From Tarball"
+permalink: /old_site/Compiling_Mono_From_Tarball/
+---
+
+<h1>Compiling Mono From Tarball</h1>
+
+<p>If you are building versions of Mono prior to 2.8, you will need to obtain the Mono dependencies first: <a href="http://www.gtk.org" class="external text" rel="nofollow">glib 2.x</a> and <a href="http://www.freedesktop.org/software/pkgconfig" class="external text" rel="nofollow">pkg-config</a>.  With Mono 2.8 it is no longer necessary to have either one of those.
+</p><p><b>Building From Packages</b>
+</p><p>This applies to the officially <a href="http://download.mono-project.com/sources/mono/" class="external text" rel="nofollow">released packages</a>.
+</p><p>Unpack the Mono runtime distribution:
+</p>
+<pre>tar -xjvf mono-X.XX.tar.bz2; cd mono-X.XX</pre>
+<p>Then configure, compile and install:
+</p>
+<pre>./configure --prefix=/usr/local; make; make install</pre>
+<p>This will give you a runtime, C# compiler and runtime libraries, where /usr/local is the prefix where Mono will be installed.  You can change this to suit your needs.
+</p><p>If you are not using GNU/Linux system (such as Solaris or BSD variants), make sure to use GNU make.
+</p>

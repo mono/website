@@ -1,0 +1,137 @@
+---
+layout: obsolete
+title: "Scripting With Mono"
+permalink: /old_site/Scripting_With_Mono/
+---
+
+<h1>Scripting With Mono</h1>
+
+<p>by <a href="/index.php?title=Miguel&amp;action=edit&amp;redlink=1" class="new" title="Miguel (page does not exist)">Miguel de Icaza</a>
+</p><p>In this article we will discuss how you can use Mono to increase your productivity and make your software applications extensible without having to rewrite any of your existing C or C++ code into C#.
+</p><p>This technique has many names: application scripting, runtime hosting, runtime embedding.  They are all the same thing.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Scripting"><span class="tocnumber">1</span> <span class="toctext">Scripting</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_Mono_Offering"><span class="tocnumber">2</span> <span class="toctext">The Mono Offering</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Scripting_an_Application"><span class="tocnumber">3</span> <span class="toctext">Scripting an Application</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Game_Developers"><span class="tocnumber">4</span> <span class="toctext">Game Developers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Performance"><span class="tocnumber">4.1</span> <span class="toctext">Performance</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Language_Support"><span class="tocnumber">4.2</span> <span class="toctext">Language Support</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Licensing"><span class="tocnumber">4.3</span> <span class="toctext">Licensing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Continued_Performance_Increase"><span class="tocnumber">5</span> <span class="toctext">Continued Performance Increase</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Using_Mono_in_your_Application"><span class="tocnumber">6</span> <span class="toctext">Using Mono in  your Application</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Scripting"> Scripting </span></h1>
+<p>In the past, software used to be written entirely in a single programming language.   Developers had to strike a balance between high performance and having to pick a low-level language or slower execution speed but using a high level language.
+</p><p>For example a C/C++ application would look like this:
+</p>
+<div class="center"><div class="floatnone"><a href="{{site.baseurl}}/images/old_site/6/6b/Text2286.png" class="image"><img alt="Text2286.png" src="{{site.baseurl}}/images/old_site/6/6b/Text2286.png" width="293" height="115" /></a></div></div>
+<p>A scripted language application would look like this:
+</p>
+<div class="center"><div class="floatnone"><a href="{{site.baseurl}}/images/old_site/a/a7/Text2304.png" class="image"><img alt="Text2304.png" src="{{site.baseurl}}/images/old_site/a/a7/Text2304.png" width="293" height="154" /></a></div></div>
+<p>Picking one or the other is a difficult choice as there are many nuances that software developers face.   The high-level languages are more productive and developers get more done for each line of code written.   But high-level languages come with a price, the software does not run as fast as it could and sometimes requires more cpu, more resources and in some markets might make the difference between a successful project or a failed project.
+</p><p>Developers have turned to scripting as a mechanism to balance the best of both worlds, the idea is simple.   The <b>engine</b> of the application is developed in C or C++ and usually maintained and developed by the veteran members of a team, while pieces of the UI, dialogs, interaction, or non-performance critical routines are written in a higher-level scripting language.   
+</p><p>The result looks like this:
+</p>
+<div class="center"><div class="floatnone"><a href="{{site.baseurl}}/images/old_site/3/30/Text2330.png" class="image"><img alt="Text2330.png" src="{{site.baseurl}}/images/old_site/3/30/Text2330.png" width="293" height="239" /></a></div></div>
+<p>This idea was for a long time championed by John Ousterhout.  You can read some of his discussions <a href="http://home.pacbell.net/ouster/scripting.html" class="external text" rel="nofollow">here</a>.
+</p><p>The following figure is a slightly updated version of John's figure:
+</p><p><a href="{{site.baseurl}}/images/old_site/a/a3/Screenshot103.png" class="image"><img alt="Screenshot103.png" src="{{site.baseurl}}/images/old_site/a/a3/Screenshot103.png" width="444" height="323" /></a>
+</p><p>From John Ousterhout's paper: 
+</p>
+<dl><dd>A comparison of various programming languages based on their level (higher level languages execute more machine instructions for each language statement) and their degree of typing.   System programming languages like C tend to be strongly typed and medium level (5-10 instructions/statement).  Scripting languages like Tcl tend to be weakly typed and very high-level (100-1000 instructions per statement). 
+</dd></dl>
+<p>By using a high-level scripting language, developers are able to mix low-level code with high level code.   
+</p><p>Historically, developers have turned to different technologies to implement scripting, from the very simple "batch processing" languages, to evolutions of those (Tcl, the tool command language comes to mind) to some custom in-house developed languages (Second Life's LSL is a good example) to more mainstream languages like Lua, Perl or Python.
+</p><p>Some languages were designed with embedding in mind from the beginning (like Python) which makes embedding Python very simple.   Other languages are embeddable but the embedding API is not as clear as it could be, and mostly they expose the internals of the language and merely allow for the language to be embedded.
+</p><p>You can think of the speed of languages as a progression (and here am taking a few liberties, but this is just for illustration purposes), roughly it goes like this:
+</p>
+<ul><li> Assembler (fastest).
+</li><li> Compiled Static, unsafe languages C/C++.
+</li><li> JITed Static, safe languages (C#, Java).
+</li><li> ...
+</li><li> A <b>large</b> performance gap goes here.
+</li><li> ...
+</li><li> JITed Dynamic, safe languages (IronPython)
+</li><li> Interpreted dynamic, safe languages and mainstream (Python, Perl, Javascript).
+</li><li> In-house custom languages.
+</li></ul>
+<p>As I said, the above is just a rough approximation.
+</p><p>The worst kind of language tends to be the in-house custom language.   These in-house and ad-hoc languages tend to be quick hacks that evolve over the life time of a program.   The authors of those languages are not language designers or experts in language design nor compiler developers, so their languages suffer as a result.   The languages tend to be slow, buggy, poorly documented and packed with quirks. 
+</p><p>This is why many developers tend to look for more mature language implementations when possible.
+</p><p>Extending your applications has many benefits.   By using a scripting language, you will get an environment that is suitable for quickly prototyping without having to rebuild your core product for small changes, or polishing an existing application.    
+</p><p>Scripting languages also offer a secure execution sandbox that allows high-level developers to quickly prototype and experiment without having to worry about many low-level details of the core C engine and without having to take care of some of the more mundane details like resource management and memory management, vastly simplifying the development of applications.
+</p><p>By splitting the responsibilities between the engine developer and the scripting developer, it is possible to reduce the complexity in a software project and it allows developers to focus on the bigger picture instead of having to learn all the details of the underlying core engine implementation for your software and the various rules for resource management that you might have.
+</p>
+<h1> <span class="mw-headline" id="The_Mono_Offering"> The Mono Offering </span></h1>
+<p>Mono offers the same functionality that developers have used to extend their application with a safe environment for scripting language with Just-in-Time compiled code.   
+</p><p>Scripting languages tend to be interpreted, and as such are not as fast as native code.  Mono expands the option of scripting language users to use languages that are suitable to be JIT-compiled into native code.   The performance is typically much better than those of a scripted language and many of the high-level language benefits are still available to the developer.
+</p><p>It also offers a wide variety of programming languages depending on the needs of your software.
+</p><p>Mono offers:
+</p>
+<ul><li> A choice of languages for scripting your application, some examples:
+<ul><li> Static languages: C#, VisualBasic.NET, RemObject's Pascal.
+</li><li> Dynamic languages: <a href="http://boo.codehaus.org" class="external text" rel="nofollow">Boo</a>, IronPython, IronRuby.
+</li><li> Functional languages: Nemerle, F#
+</li><li> And of course, many more, see <a href="{{site.baseurl}}/Languages" title="Languages">Languages</a> for more details.
+</li></ul>
+</li><li> A native code generator to run your software as fast as possible.
+</li><li> Easy support for calling your native code
+<ul><li> <a href="{{site.baseurl}}/PInvoke" title="PInvoke" class="mw-redirect">PInvoke</a> allows you skeleton/stub-less invocation of C methods.
+</li><li> InternalMethod provide access to raw C/C++ methods.
+</li><li> C function pointer to scripting language transitions (a function pointer provided by Mono when invoked would trigger a transition to Mono-controlled code for execution of any scripting capability, very useful for callbacks or notifications).
+</li></ul>
+</li><li> Access to a large body of <a href="{{site.baseurl}}/Libraries" title="Libraries">libraries</a> and reusable components.
+</li></ul>
+<h1> <span class="mw-headline" id="Scripting_an_Application"> Scripting an Application </span></h1>
+<p>Scripting an application usually exposes some of the internals of the low-level code in one way or another.   Usually there are handles or object systems that are surfaced for the scripting developer to consume.   The developer of the binding will typically have to design the system to allow for the scripting language to consume it.
+</p>
+<h1> <span class="mw-headline" id="Game_Developers"> Game Developers </span></h1>
+<p>Game developers are some of the major users of scripting technologies, they develop the performance sensitive code in C and assembler and they take advantage of graphics-accelerated hardware, physics libraries, physics accelerated hardware and multi-cpu processing to increase the performance of a game.
+</p>
+<h2> <span class="mw-headline" id="Performance"> Performance </span></h2>
+<p>Higher-level constructs and game play are typically implemented in a scripting language.   The problem that game developers face with scripting languages is that they are usually the major performance bottleneck in a game.   After spending years fine-tuning their C, C++ and assembly language code and taking advantage of every little trick in their GPUs, the game play ends up running very slow because the scripting language is just not as fast as it could be.
+</p><p>Consider <a href="http://www.secondlife.com" class="external text" rel="nofollow">SecondLife</a>, an online 3D virtual world that is scripted with the LSL programming language.   An ongoing effort at Linden Labs is replacing the LSL scripting engine with the Mono runtime.   They have written an LSL compiler that will generate the ECMA bytecode consumed by the Mono runtime, this allows them to keep all of their existing scripts running without modifications and get the advantages of Mono.
+</p><p>The early results of switching showed that there was a 50 to 150 times performance increase in switching from LSL/interpreted to LSL/Mono.
+</p><p>The <a href="http://unity3d.com" class="external text" rel="nofollow">Unity3D</a> game design engine uses Mono to provide scripting capabilities to the applications and games built with it by supporting Boo, C# and UnityScript (a strongly-typed version of Javascript which helps make the code faster).
+</p>
+<h2> <span class="mw-headline" id="Language_Support"> Language Support </span></h2>
+<p>By using Mono as a scripting engine, you get to pick the language that better suits your needs.   Mono's extensive <a href="{{site.baseurl}}/Languages" title="Languages">language support</a> allows developers to pick the best language or the best languages for their particular problem.
+</p><p>Developers familiar with LUA can use the <a href="http://www.lua.inf.puc-rio.br/luanet/lua2il/" class="external text" rel="nofollow">LUA2IL</a> compiler to run their existing code, or apply existing skills to run the same LUA code under the Mono optimizing JIT compiler at increased speed.
+</p><p>In addition, developers get to reuse their experience with C# and the .NET class libraries with their game, companies get access to a larger pool of developers that are experienced with a mainstream language and they can focus on creating the best possible game play instead of spending precious resources and time implementing yet another virtual machine, another set of debugging tools and a new ad-hoc language. 
+</p><p>Mono allows code to be written in multiple languages: components can be authored in C# that is a language with strong support for best engineering practices (your core libraries, and reusable components can be authored in it) and yet allow the flexibility of a scripting language like Python or Javascript for code that you must quickly prototype or alter.
+</p><p>C#'s support for yielding execution is also very convenient for writing clear code that must maintain state.
+</p><p>The <a href="http://boo.codehaus.org/" class="external text" rel="nofollow">Boo programming language</a> is also a popular choice.   This language is an extensible programming language which allows developers to create new language constructs that can be applied to the particular scenarios that are necessary for your game.
+</p>
+<h2> <span class="mw-headline" id="Licensing"> Licensing </span></h2>
+<p>Mono is an open source technology that can be used freely under the terms of the GNU LGPL license.   Novell alternatively offers commercial licenses of the Mono runtime if you require to use Mono in any of the following situations:
+</p>
+<ul><li> On Windows or Mac games, if:
+<ul><li> Static linking Mono into your application.
+</li><li> Preventing Mono or its class libraries from being upgraded (for example, to prevent gamers from cheating).
+</li><li> You want to add proprietary extensions that you want to keep.
+</li></ul>
+</li></ul>
+<ul><li> On Consoles where the end user is not allowed to upgrade the Mono runtime and repackage the game:
+<ul><li> Wii, PS3 or Xbox360
+</li></ul>
+</li></ul>
+<ul><li> Proprietary extensions:
+<ul><li> If your game requires proprietary extensions that would be incompatible with the LGPL.
+</li></ul>
+</li></ul>
+<p><a href="http://www.go-mono.com/store/#Mono_Tools_Ultimate" class="external text" rel="nofollow">Mono Tools for Visual Studio Ultimate Edition</a> includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under $2M annually. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
+</p><p>For other licensing options, <a href="{{site.baseurl}}/Contact" title="Contact">contact us</a>.
+</p>
+<h1> <span class="mw-headline" id="Continued_Performance_Increase"> Continued Performance Increase </span></h1>
+<p>We are committed to improving Mono's JIT performance and code generation quality.    In the last year plenty of optimizations have been done to the runtime in many areas and applications run as much as twice as fast just by upgrading to a newer version of the Mono runtime.
+</p><p>As Mono matures, and its JIT compiler evolves you can expect bigger performance improvements becoming available for your software.
+</p>
+<h1> <span class="mw-headline" id="Using_Mono_in_your_Application"> Using Mono in  your Application </span></h1>
+<p>Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the <a href="{{site.baseurl}}/Embedding_Mono" title="Embedding Mono">Embedding Mono</a> page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
+</p>

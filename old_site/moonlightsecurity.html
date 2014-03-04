@@ -1,0 +1,117 @@
+---
+layout: obsolete
+title: "MoonlightSecurity"
+permalink: /old_site/MoonlightSecurity/
+---
+
+<h1>MoonlightSecurity</h1>
+
+<p>CoreCLR <i>agnostic</i> information is available <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR"> here</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Attributes"><span class="tocnumber">1</span> <span class="toctext">Attributes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Goals"><span class="tocnumber">1.1</span> <span class="toctext">Goals</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Tools"><span class="tocnumber">1.2</span> <span class="toctext">Tools</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Find-SC_:_Compatibility"><span class="tocnumber">1.2.1</span> <span class="toctext">Find-SC&#160;: Compatibility</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Manual_override_files"><span class="tocnumber">1.2.2</span> <span class="toctext">Manual override files</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Detect"><span class="tocnumber">1.2.3</span> <span class="toctext">Detect</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Tuner"><span class="tocnumber">1.2.4</span> <span class="toctext">Tuner</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Validation"><span class="tocnumber">1.3</span> <span class="toctext">Validation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#API_Access_Compatibility"><span class="tocnumber">1.3.1</span> <span class="toctext">API Access Compatibility</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Unit_tests"><span class="tocnumber">1.3.2</span> <span class="toctext">Unit tests</span></a>
+<ul>
+<li class="toclevel-4 tocsection-11"><a href="#SecurityCriticalTest"><span class="tocnumber">1.3.2.1</span> <span class="toctext">SecurityCriticalTest</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="#ReflectionTest"><span class="tocnumber">1.3.2.2</span> <span class="toctext">ReflectionTest</span></a></li>
+<li class="toclevel-4 tocsection-13"><a href="#ReflectionEmitTest"><span class="tocnumber">1.3.2.3</span> <span class="toctext">ReflectionEmitTest</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Attributes"> Attributes </span></h1>
+<p>Silverlight <b>platform</b> code executes in three different states. Custom attributes are used to decorated methods (mostly, some types too)
+into
+</p>
+<ul><li> <b>transparent</b> code, using <code>[SecurityTransparent]</code> but you wont see many of them (if any) because <i>transparent</i> is default under the CoreCLR;
+</li><li> <b>safe critical</b>, using <code>[SecuritySafeCritical]</code>; and
+</li><li> <b>critical</b> code, using <code>[SecurityCritical]</code>
+</li></ul>
+<p>Those attributes are <b>not</b> part of Moonlight's source code (if they are present they will be ignored) but are kept into data
+files (compatibility and manual overrides) or are computed at build time before being <i>injected</i> by the tuner.
+</p>
+<h2> <span class="mw-headline" id="Goals"> Goals </span></h2>
+<p>The main goal is to make it easy to track changes by <i>automating</i> the process and by <i>centralizing</i> the information.
+</p><p>This means that we can adjust them quickly following updates to Silverlight 3.0 (e.g. bug fixes) or newer versions (e.g. 4.0).
+Even more important is that we don't need to consistently track all changes to mono libraries source code - which are heavily reused by Moonlight.
+</p>
+<h2> <span class="mw-headline" id="Tools"> Tools </span></h2>
+<h3> <span class="mw-headline" id="Find-SC_:_Compatibility"> Find-SC&#160;: Compatibility </span></h3>
+<p>This tool is executed on <i>Silverlight</i> platform assemblies.  It is similar in concept to <i>gui-compare</i> and <i>corcompare</i>. 
+It list for each platform assembly what are the API (types and methods) decorated by <code>[SecurityCritical]</code> attributes. 
+This list is important because it guarantees API compatibility with Silverlight.
+</p><p>The data files resuling from <b>find-sc</b> are kept in our <a href="https://github.com/mono/moon/tree/master/class/SecurityAttributes/compatibility" class="external text" rel="nofollow">GIT</a> repository.
+</p>
+<h3> <span class="mw-headline" id="Manual_override_files"> Manual override files </span></h3>
+<p>This is not a <i>real</i> tool since this is the result of a manual process. 
+Applying the right security attributes into platform code '<i>cannot</i> be totally automatized.
+Some part will need to be customized, like removing some attributes or adding new ones.
+</p><p>The manual data <i>override</i> files are text files kept in our <a href="https://github.com/mono/moon/tree/master/class/SecurityAttributes/overrides/" class="external text" rel="nofollow">GIT</a> repository.
+</p>
+<h3> <span class="mw-headline" id="Detect"> Detect </span></h3>
+<p>This tool is executed on Moonlight platform assemblies. Its goals are to:
+</p>
+<ul><li> <i>automatically</i> detect cases where a <code>[SecurityCritical]</code> attribute is needed for code to be executed under the CoreCLR security manager. E.g. p/invoke and unsafe code <b>needs</b> to be decorated with <code>[SecurityCritical]</code> attributes otherwise they won't be executed.
+</li></ul>
+<ul><li> <i>automatically</i> detect cases where a <code>[SecuritySafeCritical]</code> attribute is needed for code to be executed under the CoreCLR security manager. All code calling <i>critical</i> code <b>needs</b> to be decorated with <code>[SecuritySafeCritical]</code> attributes otherwise they won't be executed.
+</li></ul>
+<ul><li> merge the previous (critical, safe-critical) data with the <i>compatibility</i> and manual <i>overrides</i> data.
+</li></ul>
+<p>Unlike the other tools the merged results are <b>not</b> kept in GIT and do not, by default, include any comments. You can run the 'detect' tool manually with the '--a' option to get extra annotations.
+</p>
+<h3> <span class="mw-headline" id="Tuner"> Tuner </span></h3>
+<p>The tuning process has a step to inject the <i>right</i> security attributes into the Moonlight assemblies. The process looks like:
+</p>
+<ul><li> Remove any existing <code>[SecurityCritical]</code> or <code>[SecuritySafeCritical]</code> attributes (since we want to track them in as few places as possible)
+</li><li> add <code>[SecurityCritical]</code> and <code>[SecuritySafeCritical]</code> from the merged data files
+<ul><li> <code>[SecurityCritical]</code> will replace any <code>[SecuritySafeCritical]</code>
+</li><li> <code>[SecuritySafeCritical]</code> is ignored if a <code>[SecurityCritical]</code> is already present
+</li></ul>
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Validation"> Validation </span></h2>
+<h3> <span class="mw-headline" id="API_Access_Compatibility"> API Access Compatibility </span></h3>
+<p>We can ensure visible API compatibility by using <b>find-sc</b> on Moonlight and making a diff against the files we produced with Silverlight. Any extra or missing <code>[SecurityCritical]</code> should be easily spotted.
+</p>
+<h3> <span class="mw-headline" id="Unit_tests"> Unit tests </span></h3>
+<h4> <span class="mw-headline" id="SecurityCriticalTest"> SecurityCriticalTest </span></h4>
+<p>The original idea was to auto-generate unit tests for all <code>[SecurityCritical]</code> code. However their number (of visible API) proved to be quite small.
+</p><p>In general the test cases asserts either a <code>TypeLoadException</code>, <code>MethodAccessException</code> or <code>FieldAccessException</code> when a security check fails (on a type load or when accessing a method or field).
+</p><p>Notes:
+</p>
+<ul><li> There's no need to have unit tests for <code>[SecurityCritical]</code> with pointer parameters - since application code won't be able to call it because it lack support for <b>unsafe</b> blocks.
+</li></ul>
+<ul><li> Overloads. It's common that only some method overloads are decorated with <code>[SecurityCritical]</code>. In those cases all overloads needs to be tested to ensure that the undecorated ones are working (and not simply calling the <code>[SecurityCritical]</code> which would cause an error). That could be the case in SL (none found so far) or inside Mono/ML code base.
+</li></ul>
+<h4> <span class="mw-headline" id="ReflectionTest"> ReflectionTest </span></h4>
+<p>Reflection is possible under the CoreCLR but is a little different than the <i>classic</i> case. The general rule is that if you can write it as code then you can use reflection to do the same (i.e. <b>private</b> stuff are private).
+</p><p>References:
+</p>
+<ul><li> <a href="http://msdn.microsoft.com/en-us/library/stfy7tfc(VS.95).aspx" class="external text" rel="nofollow">MSDN: Security Considerations for Reflection</a>
+</li></ul>
+<h4> <span class="mw-headline" id="ReflectionEmitTest"> ReflectionEmitTest </span></h4>
+<p>Emitting code at runtime is also possible with the CoreCLR (think DLR). Again some restrictions apply.
+</p><p>References:
+</p>
+<ul><li> <a href="http://msdn.microsoft.com/en-us/library/9syytdak(VS.95).aspx" class="external text" rel="nofollow">MSDN: Security Issues in Reflection Emit</a>
+</li></ul>
+

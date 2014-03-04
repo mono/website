@@ -1,0 +1,199 @@
+---
+layout: obsolete
+title: "Summer2006"
+permalink: /old_site/Summer2006/
+---
+
+<h1>Summer2006</h1>
+
+<p>During the Summer of 2006, the Mono project will be mentoring a group of students as part of Google's Open Source Summer of Code initiative.  We thank Google for their financial support.
+</p><p>Last year Summer projects are listed <a href="{{site.baseurl}}/Summer2005" title="Summer2005">here</a>
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_CIL_Linker"><span class="tocnumber">1</span> <span class="toctext">A CIL Linker</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#ASP.NET_Project_Support_for_MonoDevelop"><span class="tocnumber">2</span> <span class="toctext">ASP.NET Project Support for MonoDevelop</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Assembly_Browser_Addin_for_MonoDevelop"><span class="tocnumber">3</span> <span class="toctext">Assembly Browser Addin for MonoDevelop</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#New_Class_Wizard:"><span class="tocnumber">3.1</span> <span class="toctext">New Class Wizard:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Bindings_for_Gstreamer"><span class="tocnumber">4</span> <span class="toctext">Bindings for Gstreamer</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Bittorrent_Class_Library:_Client.2FCore"><span class="tocnumber">5</span> <span class="toctext">Bittorrent Class Library: Client/Core</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#BitTorrent_Class_Libraries.2C_GUI"><span class="tocnumber">6</span> <span class="toctext">BitTorrent Class Libraries, GUI</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#BitTorrent_Class_Libraries:_Server.2FTracker"><span class="tocnumber">7</span> <span class="toctext">BitTorrent Class Libraries: Server/Tracker</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Distributed_Transactions"><span class="tocnumber">8</span> <span class="toctext">Distributed Transactions</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Elimination_of_redundant_checks_in_JITted_code"><span class="tocnumber">9</span> <span class="toctext">Elimination of redundant checks in JITted code</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Deliverables"><span class="tocnumber">9.1</span> <span class="toctext">Deliverables</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Project_Details"><span class="tocnumber">9.2</span> <span class="toctext">Project Details</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Further_implementation_of_MBuild_build_tool"><span class="tocnumber">10</span> <span class="toctext">Further implementation of MBuild build tool</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#GCC_CIL_Backend"><span class="tocnumber">11</span> <span class="toctext">GCC CIL Backend</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#MonoDevelop_Source_Code_Control_Integration"><span class="tocnumber">12</span> <span class="toctext">MonoDevelop Source Code Control Integration</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#PHP.NET_Compiler_.28continuation_to_last_summer.27s_project.29"><span class="tocnumber">13</span> <span class="toctext">PHP.NET Compiler (continuation to last summer's project)</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Strip_Controls"><span class="tocnumber">14</span> <span class="toctext">Strip Controls</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Visual_Basic_Compiler"><span class="tocnumber">15</span> <span class="toctext">Visual Basic Compiler</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#WebParts_Implementation"><span class="tocnumber">16</span> <span class="toctext">WebParts Implementation</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#X_GL_compositing_for_Mono:_a_compiz_CLR_binding"><span class="tocnumber">17</span> <span class="toctext">X GL compositing for Mono: a compiz CLR binding</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="A_CIL_Linker"> A CIL Linker </span></h1>
+<p>Student: Jb Evain
+</p><p>Mentor: Miguel de Icaza, Paolo Molaro
+</p><p>The idea is to create a "linker" for assemblies in Mono. The goal is to only ship the minimal possible set of functions that a set of programs might require to run as opposed to the full libraries.
+</p><p>This is convenient in many cases:
+</p>
+<ul><li> Embedded systems could continue to work, but not resort to hacks to fit Mono down
+</li><li> It could be used to generate libraries for multiple profiles from the same binary: ECMA profile, 1.0 profile, 1.1 profile, 1.1 service pack profile, etc.
+</li><li> Applications that embed Mono could reduce the download size by shipping only the bits that they require. 
+</li></ul>
+<p>The Mark and Sweep needs to be very inclusive and should be possible to augment it with flags or extra work to do, so the behavior of the program can be customized.
+</p><p>For example, if we were to define an ECMA-basic profile (no Math, Reflection or anything like that, we would create a sample EcmaBasic.cs file that references all the methods in the ECMA basic profile.
+</p><p>Then the linker could be used on the resulting EcmaBasic.dll to produce a minimal set of libraries for mscorlib.dll, System.dll, System.Xml.dll.
+</p><p>It should also be possible to fine-tune the result, by manually listing classes and members that must be extracted. 
+</p>
+<h1> <span class="mw-headline" id="ASP.NET_Project_Support_for_MonoDevelop"> ASP.NET Project Support for MonoDevelop </span></h1>
+<p>Student: Michael Hutchinson
+</p><p>Mentor: Lluis Sanchez Gual
+</p><p>Last summer Michael Hutchinson and Blagovest Dachev created a GUI editor for ASP.NET pages. We would like to see a MonoDevelop Add-in that would allow developers to maintain web sites with it.
+</p><p>The add-in can take inspiration from both WebMatrix and the new VS.NET 2005 development style for applications. It should also ideally launch XSP on demand to test drive the pages. 
+</p>
+<h1> <span class="mw-headline" id="Assembly_Browser_Addin_for_MonoDevelop"> Assembly Browser Addin for MonoDevelop </span></h1>
+<p>Student: Philip Turnbull
+</p><p>Mentor: Lluis Sanchez Gual
+</p><p>The project can be broken down as:
+1) Improve Formatting in the ClassPad Component
+2) Show Project References in the ClassPad Component
+3) Show Base Types in the ClassPad Component
+4) Create an Assembly Browser Component
+5) Create Separate Assembly Browser Application
+6) Create New Class Wizard
+7) AssemblyInfo Front-End
+</p><p>ClassPad Component:
+Firstly, the ClassPad should include support for formatting of members in a user-defined way. My current implementation relies on my own custom formatting rules. The new implementation would extend the Ambience related services so an ambience for ant particular language can be retrieved (the current services only allow for querying the ambience of individual projects). The formatting would be user defined to either the project ambience (i.e. C#, Boo) or to a generic ambience (similar to standard UML notation). In addition to this, project references, both assembly and other projects, would be shown in the ClassPad. These would be be navigable similar to projects. Also, types in the ClassPad would show a new 'Base Types' node, which would list each type's base types (classes and interfaces). 
+</p><p>With the new formatting rules in the ClassPad, the default search behaviour does not work quite as well. The existing behaviour is a straight match with the text of the node. The new proposed behaviour would search nodes based on their 'semantic' name, eg. A search for “GetI” would match both “string GetIcon(string name)” and “GetIcon(name&#160;: string)&#160;: string”.
+</p><p><br />
+Assembly Browser Component:
+The major part of the proposed project is the new Assembly Browser Component. This would involve creating a new 'View' that would act similarly to the assembly browser in Visual Studio and SharpDevelop. The implementation would be heavily based on the existing ClassPad code, indeed the existing code would perhaps be made more generic to avoid code duplication. The Assembly Browser would contain all projects and referenced assemblies in the current solution but also allow arbitrary assemblies to be inspected as well. The proposed component would be tightly integrated with the IDE, for example the standard right-click menu on the source view would have a new 'View in Assembly Browser'.
+</p><p>Similarly to SharpDevelop's AssemblyScout addin, methods will be able to be decompiled to ILAsm in the AssemblyBrowser. This will be based on the Mono.Cecil library. This would include support for exporting whole classes or just individual methods to file.
+</p><p>Additionally, embedded resources in assemblies will be viewable in the AssemblyBrowser. The resources can be exported from assemblies. The exporting would support addins, eg. Addins could be added to export images in different formats (PNG, bitmap, JPEG etc) or export string data in different formats (XML, plain-text, ODS etc)
+</p><p>Lastly a stand alone application would be created that would contain just the Assembly Browser container. Thanks to the way SharpDevelop/MonoDevelop is designed, this would be a simple task.
+</p>
+<h2> <span class="mw-headline" id="New_Class_Wizard:"> New Class Wizard: </span></h2>
+<p>Similar to Visual Studio and SharpDevelop, create a 'New Class' wizard to autogenerate code for new classes. This would include choosing base type and interfaces to implement. These base types would be chosen from TreeView widgets.  
+The generated classes would implement the stub for each inherited method, which would just throw a NotImplementedException. The generation of code would be customizable in an options panel, for example, the order of generated methods, whether documentation comments are generated, whether '#region' comments are generated etc.
+</p><p>AssemblyInfo Front-End:
+As a lower level priority for the project, someone on the MonoDevelop bug list [2] suggested a new panel in the project properties that would auto-generate the AssemblyInfo.cs file. This would contain the common properties such as Name, Copyright etc. and a path to a public key file for signing the assembly. It would also contain a secting for entering custom attributes if required.
+</p>
+<h1> <span class="mw-headline" id="Bindings_for_Gstreamer"> Bindings for Gstreamer </span></h1>
+<p>Student: Khaled Abdul Karim Mohammed
+</p><p>Mentor: Aaron Bockover, Mike Kestner
+</p><p><br />
+</p>
+<ul><li> Create C# binding for the GStreamer plugins.
+</li><li> Create NUnit Tests for testing the new formats.
+</li><li> Try to make the library portable to windows, solaris and others. 
+</li></ul>
+<h1> <span class="mw-headline" id="Bittorrent_Class_Library:_Client.2FCore"> Bittorrent Class Library: Client/Core </span></h1>
+<p>Student: Alan McGovern
+</p><p>Mentor: Miguel de Icaza
+</p><p>An API to bittorrent to use it for downloading and exposing files to the world (tracker included).
+</p><p>The library should
+</p>
+<ul><li> Initializing a download from a local torrent file
+</li><li> Initializating a download from a remote torrent file.
+</li><li> Download pieces of files from other machines on the torrent.
+</li><li> Provide pieces of the files to other machines on the torrent.
+</li><li> Have an API that exposes the current progress, clients.
+</li><li> Have an API to tune the uploads/downloads.
+</li><li> A sample command-line client to demostrate it works
+</li></ul>
+<h1> <span class="mw-headline" id="BitTorrent_Class_Libraries.2C_GUI"> BitTorrent Class Libraries, GUI </span></h1>
+<p>Student: Piotr Wolny
+</p><p>Mentor: Miguel de Icaza
+</p><p>See previous entry for details;
+</p><p>This will be a Gtk# based client for the Bittorrent client and server.
+</p>
+<h1> <span class="mw-headline" id="BitTorrent_Class_Libraries:_Server.2FTracker"> BitTorrent Class Libraries: Server/Tracker </span></h1>
+<p>Student: Gregor Burger
+</p><p>Mentor: Miguel de Icaza
+</p><p>See previous entry for details. 
+</p><p>This component will implement the tracker-side of BitTorrent.
+</p>
+<h1> <span class="mw-headline" id="Distributed_Transactions"> Distributed Transactions </span></h1>
+<p>Student: Hugo Matos
+</p><p>Mentor: Raja R Harinath
+</p><p>Mono currently supports Local transactions, implement a daemon that would support multi-process transactions.
+</p>
+<h1> <span class="mw-headline" id="Elimination_of_redundant_checks_in_JITted_code"> Elimination of redundant checks in JITted code </span></h1>
+<p>Student: Gianluigi Spagnuolo
+</p><p>Mentor: Massimiliano Mantione
+</p><p>Extend the current Array Bounds Check Elimination system to the 
+isinst and null pointer checks.
+</p>
+<h2> <span class="mw-headline" id="Deliverables"> Deliverables </span></h2>
+<p>Add to ABCREM a system for the isinst and null pointer redundant 
+check elimination. Write a paper on the ABCREM internals, for 
+possible future extension to other checks.
+</p>
+<h2> <span class="mw-headline" id="Project_Details"> Project Details </span></h2>
+<p>For the extension of ABCREM to other checks is necessary to
+characterize new relations for the isinst and null checks. 
+These new types of relations must be added to those already used 
+by ABCREM, inside the structures in abcremoval.h, integrating them 
+or creating some new structures. We have to modify the build 
+mechanism of 'MonoVariableRelationsEvaluationArea area' and 'MonoAdditionalVariableRelationsForBB additional_relations', 
+in order to hold the new relations.
+Then in process_inst(), in addition to the array accesses, we 
+look for the opcodes introducing isinst and null pointer checks.
+Then we execute the proper functions that, using the evaluation 
+area and the dominator tree, verify if the check is redundant.
+That said, I intend to write a paper about the implementation of 
+ABCREM, extending abcrem.txt in the Mono documentation.
+</p>
+<h1> <span class="mw-headline" id="Further_implementation_of_MBuild_build_tool"> Further implementation of MBuild build tool </span></h1>
+<p>Student: Peter Williams
+</p><p>Mentor: Richard Porter
+</p><p>More information: <a href="http://www.newton.cx/~peter/mbuild/handbook/whybother.xhtml" class="external text" rel="nofollow">here</a>
+</p><p>The chief deliverable for the summer will be a build specification compiler for MBuild. This will take the textual build files, process them into a fully-expanded build graph, and save the result in an efficient on-disk format. (Currently, MBuild processes the textual build files on every invocation and constructs the target graph in memory with a C# object heirarchy.) The compiler will just be a separate stage of execution in MBuild, not a standalone program. Such a compiler will help clean up MBuild conceptually, because constructing the target graph and traversing it are completely separate steps in MBuild. I think that codifying this separation will also make it easy to implement more complex processing of the build specification; eg, creation of intermediary build targets that the developer shouldn't need to worry about (foo.c -&gt; foo.o -&gt; foo). Adding a compiler step will also make MBuild more efficient, because 1) the parsing/construction step will almost always be skipped and 2) the core build engine will be changed to work with integer target IDs instead of textual target names. (The fundamental nature of such a change makes me think that adding this compiler is not a case of premature optimization.)  I think this compiler will take about seven weeks to implement: it's a somewhat large change to the codebase, but a lot of its implementation will be refactoring the current MBuild code, and I'm pretty sure that there aren't many subtleties to the compilation step.
+</p><p>A second deliverable will be support for build rules private to individual projects. MBuild is like automake in that it uses prepackaged build rules; however, it is obvious that many projects need custom build rules for miscellaneous tasks. At the moment, MBuild currently does not support a convenient way for specifying and using custom rules in a project. I will develop an infrastructure that supports such rules. If time permits, I will write a System.CodeDom formatter for Boo so that build rules can be written in that language. (Right now I write rules in C#, but Boo seems like a better language for the build rule code.) This support should take about four weeks to implement. I'm pretty sure that this feature won't involve a whole lot of code when it's done, but I haven't thought about the details of its implementation much and there are a few bootstrapping-related details that may be tricky to resolve.
+</p>
+<h1> <span class="mw-headline" id="GCC_CIL_Backend"> GCC CIL Backend </span></h1>
+<p>Student: Yi Wang
+</p><p>Mentor: Massimiliano Mantione 
+</p><p>During the last summer, some progress was achieved in creating a CIL backend for GCC. A backedn that would allow all of the GCC languages to target the Mono CIL intermediate language. But Jey, the developer behind this effort, broke his wrist before the project was completed.
+</p>
+<h1> <span class="mw-headline" id="MonoDevelop_Source_Code_Control_Integration"> MonoDevelop Source Code Control Integration </span></h1>
+<p>Student: Thiago Becker
+</p><p>Mentor: Lluis Sanchez Gual 	
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="PHP.NET_Compiler_.28continuation_to_last_summer.27s_project.29"> PHP.NET Compiler (continuation to last summer's project) </span></h1>
+<p>Student: Maria Inmaculada
+</p><p>Mentor: Miguel de Icaza
+</p><p>Complete the third milestone of the existing Mono PHP.NET compiler.
+</p>
+<h1> <span class="mw-headline" id="Strip_Controls"> Strip Controls </span></h1>
+<p>Student: Matthew Balkam
+</p><p>Mentor: Aaron Bockover 	
+</p><p>Implement the Winforms 2.0 StripControls.
+</p>
+<h1> <span class="mw-headline" id="Visual_Basic_Compiler"> Visual Basic Compiler </span></h1>
+<p>Student: Rolf Bjarne Kvinge
+</p><p>Mentor: Miguel de Icaza
+</p><p>An implementation of a VB.NET 8 Compiler in VB.
+</p><p>The deliverable for the end of the summer is to have this compiler bootstrap itself.
+</p>
+<h1> <span class="mw-headline" id="WebParts_Implementation"> WebParts Implementation </span></h1>
+<p>Student: Dimitar Dimitrov
+</p><p>Mentor: Gonzalo Paniagua Javier
+</p><p>Implementation of the WebParts classes for ASP.NET.
+</p>
+<h1> <span class="mw-headline" id="X_GL_compositing_for_Mono:_a_compiz_CLR_binding"> X GL compositing for Mono: a compiz CLR binding </span></h1>
+<p>Student: Alp Toker
+</p><p>Mentor: Massimiliano Mantione
+</p><p>Bindings to allow developers to create Compiz extensions with Mono, C# and Tao.
+</p><p>Deliverables should include a sample plugin that hooks up to all the Compiz events and does something interesting (it does not have to be useful, it has to work).
+</p>

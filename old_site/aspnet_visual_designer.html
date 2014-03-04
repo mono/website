@@ -1,0 +1,85 @@
+---
+layout: obsolete
+title: "ASP.NET Visual Designer"
+permalink: /old_site/ASP.NET_Visual_Designer/
+---
+
+<h1>ASP.NET Visual Designer</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Features"><span class="tocnumber">2</span> <span class="toctext">Features</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Plans"><span class="tocnumber">4</span> <span class="toctext">Plans</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Architecture"><span class="tocnumber">5</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#License"><span class="tocnumber">6</span> <span class="toctext">License</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Credits"><span class="tocnumber">7</span> <span class="toctext">Credits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Sponsors"><span class="tocnumber">7.1</span> <span class="toctext">Sponsors</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Primary_developers"><span class="tocnumber">7.2</span> <span class="toctext">Primary developers</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Other_contributors"><span class="tocnumber">7.3</span> <span class="toctext">Other contributors</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>The ASP.NET Visual Designer, codenamed AspNetEdit, is a visual design surface for ASP.NET, aiming to provide Mono users with a RAD web design tool on Linux. It allows users to manipulate ASP.NET Web Controls in an HTML designer.
+</p>
+<h2> <span class="mw-headline" id="Features">Features</span></h2>
+AspNetEdit does not aim to be a complete IDE. After being developed as a proof-of-concept standalone editor, it now has been integrated into <a href="http://monodevelop.com" class="external text" rel="nofollow">MonoDevelop</a>, where it is intended to be part of a complete ASP.NET editing solution.<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="{{site.baseurl}}/images/old_site/3/30/Aspnetedit.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/3/30/Aspnetedit.png" width="350" height="269" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/3/30/Aspnetedit.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>The ASP.NET Visual Designer embedded in MonoDevelop</div></div></div>
+<ul><li> Web Controls can be placed on the design surface from the toolbox, and can be selected, resized and moved around
+</li><li> The properties of the selected Web Control can be inspected and modified with the property grid
+</li><li> Many of the Mozilla editor's features are exposed: text can be entered directly into the design surface, and made bold, italic, indented and so forth. Tables can also be edited directly on the design surface.
+</li><li> ASPX pages can be loaded and saved
+</li></ul>
+<h2> <span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Prospective users are recommended not to install AspNetEdit at this early point in development, but to wait for a release to be made.
+</p><p>Nevertheless, AspNetEdit can be downloaded as part of the MonoDevelop codebase; it is in the extras/AspNetEdit subdirectory. It can be built against the system MonoDevelop installation by using the configure script (./configure; make; make install). Alternatively it can be hooked into the MonoDevelop build by running the top-level MonoDevelop configure script using a profile that contains AspNetEdit.
+</p><p>The standalone editor code is still available from the Mono <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> repository, module <i>aspeditor</i>, or can be <a href="http://anonsvn.mono-project.com/viewvc/trunk/aspeditor/" class="external text" rel="nofollow">viewed online</a>. Please follow the instructions in the INSTALL file to build and run the program.
+</p>
+<h2> <span class="mw-headline" id="Plans">Plans</span></h2>
+<p>In the short term, there are a few features that need to be completed before the editor is ready for use:
+</p>
+<ul><li> Expose HTML controls in the toolbox.
+</li><li> Provide a more acceptable runtime environment so that more controls can run.
+</li><li> Handle more ASP.NET syntax.
+</li><li> Merge the parser with that in MonoDevelop's ASP.NET project support.
+</li><li> Expose more Mozilla Editor features: full table, font and image editing.
+</li></ul>
+<p><br />
+In the long term, there is a lot that can be done. A few of the possibilities:
+</p>
+<ul><li> Write a Gecko DOM wrapper to provide deeper integration with Mozilla
+</li><li> Add support for web controls with HTML and other arbitrary controls inside them
+</li><li> Implement more of the .NET designer framework, and use control designers rather than rendering the controls directly
+</li><li> Add data binding support 
+</li><li> XHTML support in Mozilla editor
+</li><li> Stop Mozilla editor from rearranging source indentation
+</li><li> Semantically-oriented CSS editor (some <a href="http://mjhutchinson.com/journal/2005-14-12/asp_net_and_css" class="external text" rel="nofollow">thoughts</a>)
+</li><li> Document outline
+</li><li> User controls: editing and consuming
+</li><li> <i>(ASP.NET 2)</i> Master Pages: editing and consuming
+</li><li> <i>(ASP.NET 2)</i> Designer regions
+</li></ul>
+<p>If you are interested in contributing, please contact <a href="mailto:m.j.hutchinson@gmail.com" class="external text" rel="nofollow">Michael</a>.
+</p>
+<h2> <span class="mw-headline" id="Architecture">Architecture</span></h2>
+<p>AspNetEdit is based on the Mozilla Editor, which it hosts in a Gecko# GTK# widget. A custom Mozilla extension allows it to visualise blocks of HTML emitted by ASP.NET Web Controls as discrete entities, and together with a C++ interop library allows it to be controlled from the C# host.
+</p><p>The C# host initatiates and tracks Web Control objects, and provides them with various designer services, using the .NET component model. It is also responsible for parsing and persisting .aspx pages.
+</p><p>More in-depth discussions of AspNetEdit, and updates on the project's status, can be found on Michael Hutchinson's <a href="http://mjhutchinson.com/journal/category/mono" class="external text" rel="nofollow">blog</a>
+</p>
+<h2> <span class="mw-headline" id="License">License</span></h2>
+<p>AspNetEdit is licensed under the <a href="http://www.opensource.org/licenses/mit-license.html" class="external text" rel="nofollow">MIT X11</a> license.
+</p>
+<h2> <span class="mw-headline" id="Credits"> Credits </span></h2>
+<h3> <span class="mw-headline" id="Sponsors">Sponsors</span></h3>
+<p>Many thanks to <b>Google</b>, who originally funded the project as part of their <a href="http://code.google.com/summerofcode.html" class="external text" rel="nofollow">Summer of Code</a> programme in 2005, and funded the MonoDevelop integration in 2006.
+</p>
+<h3> <span class="mw-headline" id="Primary_developers">Primary developers</span></h3>
+<p><b>Michael Hutchinson</b> wrote the C# host, the designer infrastructure and the Gecko interop code, and integrated it into MonoDevelop. 
+</p><p><b>Blagovest Dachev</b> wrote the Mozilla extension, and provided valuable Mozilla editor expertise.
+</p>
+<h3> <span class="mw-headline" id="Other_contributors">Other contributors</span></h3>
+<p><b>Eric Butler</b> provided the initial GTK# property grid implementation
+</p>

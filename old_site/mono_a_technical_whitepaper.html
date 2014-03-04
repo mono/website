@@ -1,0 +1,476 @@
+---
+layout: obsolete
+title: "Mono, a technical whitepaper"
+permalink: /old_site/Mono,_a_technical_whitepaper/
+---
+
+<h1>Mono, a technical whitepaper</h1>
+
+<p><i>Note:</i> this is a very early draft of the Mono technical white paper some chapters are nothing more than placeholders right now with awkwardly written content.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Executive_Overview"><span class="tocnumber">1</span> <span class="toctext">Executive Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Mono_increases_developer_productivity"><span class="tocnumber">1.1</span> <span class="toctext">Mono increases developer productivity</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Mono_brings_more_software_to_Linux"><span class="tocnumber">1.2</span> <span class="toctext">Mono brings more software to Linux</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Mono_reuses_existing_knowledge.2C_work"><span class="tocnumber">1.3</span> <span class="toctext">Mono reuses existing knowledge, work</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Mono_provides_cross-platform_development"><span class="tocnumber">1.4</span> <span class="toctext">Mono provides cross-platform development</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Mono.2C_open_source_development_platform"><span class="tocnumber">1.5</span> <span class="toctext">Mono, open source development platform</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Target_Audience"><span class="tocnumber">2.1</span> <span class="toctext">Target Audience</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Introduction_to_Mono"><span class="tocnumber">2.2</span> <span class="toctext">Introduction to Mono</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Features_and_Benefits"><span class="tocnumber">2.2.1</span> <span class="toctext">Features and Benefits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#The_Mono_rationale"><span class="tocnumber">2.3</span> <span class="toctext">The Mono rationale</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Opportunities"><span class="tocnumber">2.3.1</span> <span class="toctext">Opportunities</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Solution"><span class="tocnumber">2.3.2</span> <span class="toctext">Solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#The_Mono_community_and_open_source_projects"><span class="tocnumber">2.4</span> <span class="toctext">The Mono community and open source projects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Developer_Personalities"><span class="tocnumber">3</span> <span class="toctext">Developer Personalities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Microsoft_.NET_developer"><span class="tocnumber">3.1</span> <span class="toctext">Microsoft .NET developer</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#ASP.NET_Web_Application_and_Web_Services_Applications"><span class="tocnumber">3.1.1</span> <span class="toctext">ASP.NET Web Application and Web Services Applications</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Desktop_Applications_with_System.Windows.Forms"><span class="tocnumber">3.1.2</span> <span class="toctext">Desktop Applications with System.Windows.Forms</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#IT_Developer"><span class="tocnumber">3.2</span> <span class="toctext">IT Developer</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#ISV_developer"><span class="tocnumber">3.3</span> <span class="toctext">ISV developer</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Linux_Desktop_applications_developer"><span class="tocnumber">3.4</span> <span class="toctext">Linux Desktop applications developer</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Mac_OS_X_developer"><span class="tocnumber">3.5</span> <span class="toctext">Mac OS X developer</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Unix_developer"><span class="tocnumber">3.6</span> <span class="toctext">Unix developer</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Web_Applications_developer"><span class="tocnumber">3.7</span> <span class="toctext">Web Applications developer</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Embeded_system_application_developer"><span class="tocnumber">3.8</span> <span class="toctext">Embeded system application developer</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Mono_Technical_Overview"><span class="tocnumber">4</span> <span class="toctext">Mono Technical Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="#Features_List"><span class="tocnumber">4.1</span> <span class="toctext">Features List</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Runtime_environment"><span class="tocnumber">4.2</span> <span class="toctext">Runtime environment</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href="#Virtual_Machine"><span class="tocnumber">4.2.1</span> <span class="toctext">Virtual Machine</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#Supported_Platforms"><span class="tocnumber">4.2.2</span> <span class="toctext">Supported Platforms</span></a>
+<ul>
+<li class="toclevel-4 tocsection-31"><a href="#Linux"><span class="tocnumber">4.2.2.1</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-4 tocsection-32"><a href="#Mac_OS_X"><span class="tocnumber">4.2.2.2</span> <span class="toctext">Mac OS X</span></a></li>
+<li class="toclevel-4 tocsection-33"><a href="#Windows"><span class="tocnumber">4.2.2.3</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-4 tocsection-34"><a href="#Unixes"><span class="tocnumber">4.2.2.4</span> <span class="toctext">Unixes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-35"><a href="#Language_Support"><span class="tocnumber">4.2.3</span> <span class="toctext">Language Support</span></a>
+<ul>
+<li class="toclevel-4 tocsection-36"><a href="#C.23"><span class="tocnumber">4.2.3.1</span> <span class="toctext">C#</span></a></li>
+<li class="toclevel-4 tocsection-37"><a href="#Java"><span class="tocnumber">4.2.3.2</span> <span class="toctext">Java</span></a></li>
+<li class="toclevel-4 tocsection-38"><a href="#VB.NET"><span class="tocnumber">4.2.3.3</span> <span class="toctext">VB.NET</span></a></li>
+<li class="toclevel-4 tocsection-39"><a href="#Ironpython_and_Boo"><span class="tocnumber">4.2.3.4</span> <span class="toctext">Ironpython and Boo</span></a></li>
+<li class="toclevel-4 tocsection-40"><a href="#Miscelaneous_languages"><span class="tocnumber">4.2.3.5</span> <span class="toctext">Miscelaneous languages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-41"><a href="#Embedding_the_runtime"><span class="tocnumber">4.2.4</span> <span class="toctext">Embedding the runtime</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-42"><a href="#Developer_Productivity"><span class="tocnumber">4.3</span> <span class="toctext">Developer Productivity</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#System_Classes"><span class="tocnumber">4.4</span> <span class="toctext">System Classes</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#Web_Application_and_Web_Services"><span class="tocnumber">4.5</span> <span class="toctext">Web Application and Web Services</span></a>
+<ul>
+<li class="toclevel-3 tocsection-45"><a href="#ASP.NET"><span class="tocnumber">4.5.1</span> <span class="toctext">ASP.NET</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#XSP.2C_Apache_and_mod_mono"><span class="tocnumber">4.5.2</span> <span class="toctext">XSP, Apache and mod_mono</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-47"><a href="#Desktop_Applications_development"><span class="tocnumber">4.6</span> <span class="toctext">Desktop Applications development</span></a>
+<ul>
+<li class="toclevel-3 tocsection-48"><a href="#System.Windows.Forms"><span class="tocnumber">4.6.1</span> <span class="toctext">System.Windows.Forms</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#Gtk.23"><span class="tocnumber">4.6.2</span> <span class="toctext">Gtk#</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#Cocoa.23"><span class="tocnumber">4.6.3</span> <span class="toctext">Cocoa#</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#Others"><span class="tocnumber">4.6.4</span> <span class="toctext">Others</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-52"><a href="#Database_Connectivity"><span class="tocnumber">4.7</span> <span class="toctext">Database Connectivity</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#Interactions_with_native_libraries"><span class="tocnumber">4.8</span> <span class="toctext">Interactions with native libraries</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#Migration_of_existing_.NET_applications"><span class="tocnumber">4.9</span> <span class="toctext">Migration of existing .NET applications</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#Compatible_libraries_and_components"><span class="tocnumber">4.10</span> <span class="toctext">Compatible libraries and components</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#Mono_packaging"><span class="tocnumber">4.11</span> <span class="toctext">Mono packaging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-57"><a href="#Mono_Licensing"><span class="tocnumber">5</span> <span class="toctext">Mono Licensing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-58"><a href="#Open_Source_license"><span class="tocnumber">5.1</span> <span class="toctext">Open Source license</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#Commercial_license"><span class="tocnumber">5.2</span> <span class="toctext">Commercial license</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-60"><a href="#Mono_Applications"><span class="tocnumber">6</span> <span class="toctext">Mono Applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-61"><a href="#Open_Source"><span class="tocnumber">6.1</span> <span class="toctext">Open Source</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#Commercial"><span class="tocnumber">6.2</span> <span class="toctext">Commercial</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-63"><a href="#Simplified_Mono_Roadmap"><span class="tocnumber">7</span> <span class="toctext">Simplified Mono Roadmap</span></a>
+<ul>
+<li class="toclevel-2 tocsection-64"><a href="#Mono_1.0"><span class="tocnumber">7.1</span> <span class="toctext">Mono 1.0</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#Mono_1.2"><span class="tocnumber">7.2</span> <span class="toctext">Mono 1.2</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#Mono_2.0"><span class="tocnumber">7.3</span> <span class="toctext">Mono 2.0</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-67"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-68"><a href="#Conclusion"><span class="tocnumber">9</span> <span class="toctext">Conclusion</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Executive_Overview"> Executive Overview </span></h2>
+<p>Mono is a comprehensive and unified open source development platform based on the .NET framework that allows IT and ISV developers to build Linux and cross-platform applications (MacOS X, S390, Sun Solaris) with unprecedented productivity.
+</p><p>Incorporating key components from the .NET development platform: a C# compiler, and a portable execution system Mono provides:
+</p>
+<ul><li> Advanced development environment for writing Linux applications with unprecedented productivity.
+</li><li> Comprehensive APIs for delivering rich client, web services and server-side applications.
+</li><li> Cross-platform deployment capabilities, supporting Linux, Sun Solaris, Apple MacOS X, Microsoft Windows NT/XP and various other UNIX systems on a variety of architectures.
+</li><li> Highly productive tools that facilitate the creation of product APIs and SDKs that are language independent across multiple operating systems.
+</li></ul>
+<p>Why should you care about Mono&#160;? Because it will change the way software is developed for cross-platform use on both Linux and Windows.
+</p><p>&#8594; insert here something about the benefits of open source for commercial endeavors
+</p><p>&#8594; from miguel's interview on Novell.com
+</p>
+<h3> <span class="mw-headline" id="Mono_increases_developer_productivity"> Mono increases developer productivity</span></h3>
+<p>Mono brings a very modern development platform for Linux; it allows software developers to reuse components that, so far, were only available on Windows and gives them access to many components that used to be out of reach for Linux.
+</p><p>The creation of Mono was a reaction to the Ximian Evolution development experience. Evolution is the best groupware client for open source, praised time and again by every reviewer, but the time and cost of developing it was too high. Mono allows new generations of programmers to write their next big application with less money, less time and the ability to innovate faster.
+</p><p>Today the .NET/ECMA virtual machine is one of the most advanced commercial Virtual Machine available, and Mono bring the benefits of this virtual machine to Linux developers. It increases programmer productivity and makes Linux a top contender in the marketplace.
+</p>
+<h3> <span class="mw-headline" id="Mono_brings_more_software_to_Linux"> Mono brings more software to Linux </span></h3>
+<p>Currently software houses have to choose carefully which platforms they will support because supporting new platforms often means that they have to rewrite large portions of their code for each operating system, so they tend to support only the major platform: Windows. Mono is bringing more and more software to Linux transparently.
+</p>
+<h3> <span class="mw-headline" id="Mono_reuses_existing_knowledge.2C_work"> Mono reuses existing knowledge, work </span></h3>
+<p>Developers who write code for Windows can immediately be productive on Linux. They can reduce training costs and easily add Linux to the menu of systems they support, and continue to use familiar tools and processes to produce software.
+</p><p>Developers will be able to use the same programming languages (C#, Visual Basic .NET, Java, Python) and Application Programing Interfaces (such as ADO.NET, XML, ASP.NET, System.Windows.Forms) they work with on Windows. They can re-use existing .NET class libraries whether created by third parties or their own, without even having to re-compile. Moreover, ASP.NET web services and applications as well as rich client software built with System.Windows.Forms will run un-modified on Linux and other platforms supported by Mono.
+</p>
+<h3> <span class="mw-headline" id="Mono_provides_cross-platform_development"> Mono provides cross-platform development </span></h3>
+<p>Mono supports a wide range of platforms: Linux, Sun Solaris, Microsoft Windows and Apple Mac OS X. Programs written in Mono will automatically work across all of the supported operating systems and architectures—without recompilation. Mono is a tool that can help unify these divergent worlds.
+</p>
+<h3> <span class="mw-headline" id="Mono.2C_open_source_development_platform"> Mono, open source development platform </span></h3>
+<p>Today, Mono is the seventh largest open source project, with 200 developers with access to the CVS, and about a third of them active on any given week.
+</p><p>Unlike many of today's mainstream development platform such as Microsoft .NET, Sun's Java or Apple's Cocoa, all closed source products, Mono is open source with its runtime, compilers and libraries available under an open source license.
+</p><p>Relying on a corporate sponsored open source development platform has many advantages amongst which:
+</p>
+<ul><li> Large community of contributors to the platform
+</li><li>
+</li><li>
+</li></ul>
+<h2> <span class="mw-headline" id="Overview"> Overview </span></h2>
+<h3> <span class="mw-headline" id="Target_Audience"> Target Audience </span></h3>
+<ul><li> IT developers and managers in enterprises considering building or migrating applications to Linux as they adopt it for desktops or servers.
+</li><li> ISV product managers, CTOs and engineering leads considering supporting Linux for their software (Horizontal and Vertical) as their customers start requesting Linux versions.
+</li><li> Open Source software developers that target the Linux Desktop
+</li></ul>
+<h3> <span class="mw-headline" id="Introduction_to_Mono"> Introduction to Mono </span></h3>
+<p>Mono is a comprehensive and unified open source development platform based on the Microsoft .NET framework that allows IT and ISV developers to build Linux and cross-platform applications (MacOS X, S390, Sun Solaris) with unprecedented productivity.
+</p><p>Sponsored by Novell, the Mono project has an active and enthusiastic contributing community and ispositioned to become the leading choice for development of Linux applications.
+. Mono includes both developer tools and the infrastructure needed to run .NET client and server applications.
+</p><p>Mono includes a complete developer toolchain, a .NET compatible runtime and two stacks of APIs: a Mono stack that takes the most advantage of your Linux server and desktop and a set of APIs compatible with the Microsoft .NET Framework 1.1 providing support for ASP.NET, ADO.NET and many other components.
+</p>
+<h4> <span class="mw-headline" id="Features_and_Benefits"> Features and Benefits </span></h4>
+<p>Incorporating key .NET compliant components: a C# compiler, class libraries and a portable execution system the Mono Project provides:
+</p>
+<ul><li> Advanced development environment for writing Linux applications with unprecedented productivity.
+</li><li> Comprehensive APIs for delivering rich client, web services and server-side applications.
+</li><li> Cross-platform deployment capabilities, supporting Linux, Sun Solaris, Apple MacOS X, Microsoft Windows NT/XP and various other UNIX systems on a variety of architectures.
+</li><li> Highly productive developer tools that facilitate the creation of product APIs and SDKs that are language independent across multiple operating systems.
+</li></ul>
+<h3> <span class="mw-headline" id="The_Mono_rationale"> The Mono rationale </span></h3>
+<p>&#8594; needs to be beefed up
+</p>
+<h4> <span class="mw-headline" id="Opportunities"> Opportunities </span></h4>
+<p>Migrating to Linux servers and desktop is an enticing proposition whether prompted by license or maintenance cost, stability and performance, consolidation and administration ROI.
+</p><p>Novell's Linux offering includes a strong OS core, desktop and office productivity applications as well as server-based services. Developing applications for the Linux desktop remains a challenging proposition and migrating them is a complex task.
+</p><p>The languages and tools that exist today were created for an extremely technical audience of Linux hackers.
+They are not particularly easy to use, nor do they meet the requirements of the general software development market in terms of productivity, simplicity and suitability to solve business problems.
+</p><p>While quite powerful, today's development languages and development environments for Linux have a very steep learning curve and don't usually allow for deployement of the same code base on different hardware platforms.
+</p><p>For those reasons, no general standard for Linux development or cross-platform tool has emerged that mainstream IT and ISV developers can realistically use.
+</p>
+<h4> <span class="mw-headline" id="Solution"> Solution </span></h4>
+<p>Mono is a commercial-grade development platform for Linux desktop and servers which delivers a complete set of tools and APIs.
+</p><p>Being an open source solution based on published standards and proven programming languages and libraries, Mono allows enterprises to leverage existing corporate skill sets, technical documentations, tool sets and third party components
+</p><p>Beyond Linux, Mono's cross platform capabilities for deployment of created applications on Microsoft Windows, Apple MacOS X and other flavors of UNIX is key to IT organizations and ISVs that have to support many client and server platforms.
+</p>
+<h3> <span class="mw-headline" id="The_Mono_community_and_open_source_projects"> The Mono community and open source projects </span></h3>
+<p>Since its creation in 2001 by Miguel de Icaza (founder of the Gnome desktop project), the Mono open source project has grown to be one of the largest open source community endeavor.
+</p><p>Strong of more than two hundrer regular contributors, Mono is very accessible to new developers. Because of the breadth of the project and the large numbers of sub-projects under its umbrella (Gtk#, MonoDevelop, VB.NET &amp; JScript runtimes and compilers, Cocoa# and many, many more), it is easy contributors to find an area that fits their expertise whether seasonned open source developers or relatevely new enthousiasts
+</p>
+<h2> <span class="mw-headline" id="Developer_Personalities"> Developer Personalities </span></h2>
+<p>Mono's original raison d'être was to help Linux developpers build desktop applications by delivering a complete and modern open source development platform. Because of the technology choices made early on, it also serves as a vessel for cross platform development, an enticing offer for Windows developers, IT and ISV alike. Let's explore how different profiles of developers can use Mono and why they'd use it. A real life developer will likely be a mix of those different personalities. For example, a .NET developer that builds a software package for Windows and is looking at ways to expand it market to Linux will likely be a Microsoft .NET developer, an ISV developer and a Linux desktop application developer.
+</p>
+<h3> <span class="mw-headline" id="Microsoft_.NET_developer"> Microsoft .NET developer </span></h3>
+<p>Now that Microsoft has moved most of its developer technologies to .NET, a typical Windows application developer is likely to be using .NET in some fashion for any Windows development.
+</p><p>While .NET is in concept platform agnostic, before Mono, it remained a Microsoft Windows only platform. With Mono, Microsoft .NET developers can use the same technologies they use on Windows to develop or migrate their applications to Linux and other platforms supported by Mono.
+</p><p>As such they can re-use:
+</p>
+<ul><li> Programming Language expertise (C#, VB.NET, Java, JScript, ...)
+</li><li> Working knowledge of the many .NET APIs (System.XML, ASP.NET, ADO.NET, System.Windows.Forms, ...)
+</li><li> their own .NET class libraries
+</li><li> Third party controls
+</li><li> Command Line tools (Mono's toolchain adopts the same syntax as their Microsoft equivalent)
+</li><li> Visual Studio
+</li></ul>
+<p>Since the same .NET skillset and knowledge can be used with Mono, companies can leverage:
+</p>
+<ul><li> Existing .NET books
+</li><li> .NET programming classes
+</li><li> Expert .NET developers
+</li></ul>
+<p>for Mono applicaition development.
+</p>
+<h4> <span class="mw-headline" id="ASP.NET_Web_Application_and_Web_Services_Applications"> ASP.NET Web Application and Web Services Applications </span></h4>
+<p>The .NET framework and its open source implementation, Mono, both include a set of web development technologies called ASP.NET. Programmers can use this set of technologies to build web applications and XML web services. ASP.NET is often used in conjunction with ADO.NET, .NET data access layer to build IT applications.
+</p><p>Very early on, it became apparent that a lot of Mono potential users wanted to use the framework to deploy ASP.NET applications to Linux. Mono's implementation of the ADO.NET and ASP.NET framework is very complete and can be used today to migrate and deploy existing applications to running behind Apache web server on Linux or other Unixes. The migration is essentially effortless in most cases.
+</p><p>Mono offers support for many commercial and open source databases so no database migration is necessary.
+</p><p>Deploying ASP.NET applications to Linux (or other Unixes) is a very attractive proposition where server license and maitenance costs are a concern. It also allows organizations which mainly maitain J2EE applications on Linux or Solaris for example, to consolidate their server operating systems and deploy ASP.NET applications to the same environment.
+</p>
+<h4> <span class="mw-headline" id="Desktop_Applications_with_System.Windows.Forms"> Desktop Applications with System.Windows.Forms </span></h4>
+<p>While many applications we use on a daily basis are web applications, there are still a lot of rich client applications being developped either as packaged commercial software (think Adobe Acrobat, Quicken Turbo Tax, Microsoft Word), business applications built by your IT organization or all the great little applications you might use on a daily basis (RSS reader, note taking application, Mp3 or Movie players and many others).
+</p><p>On Windows, most .NET developers use the Windows.Forms API to build those applications.
+System.Windows.Forms (or SWF) is the name given to the GUI portion of the Microsoft .NET development framework, providing access to the native Windows widgets by wrapping the existing Win32 API.
+</p><p>Since early 2004, the Mono project has been working on completing its System.Windows.Forms implementation. Scheduled for delivery as part of Mono 1.2 in Q3 2005, it will allow desktop applications built with System.Windows.Forms to be deployed unmodified on Linux but also on Mac OS X, BSD and Solaris.
+</p>
+<h3> <span class="mw-headline" id="IT_Developer"> IT Developer </span></h3>
+<h3> <span class="mw-headline" id="ISV_developer"> ISV developer </span></h3>
+<p>Developing software is all about productivity. As the Linux desktop get adopted more and more, portability is becoming important as well. Independent software vendors are starting to see a real monetary benefit from developing code that runs on Windows, Mac OS X and Linux. Mono makes this endeavor possible and the approach, effective.
+</p>
+<h3> <span class="mw-headline" id="Linux_Desktop_applications_developer"> Linux Desktop applications developer </span></h3>
+<p>Linux currently lacks a comprehensive development platform for building Desktop applications.  Although GUI toolkits like Gtk and Qt fill the gap in some areas, they are necessary but not sufficient. Developers today need a complete set of class libraries to build and interact with Web Services, communicate with databases and integrate third party components.
+</p>
+<h3> <span class="mw-headline" id="Mac_OS_X_developer"> Mac OS X developer </span></h3>
+<h3> <span class="mw-headline" id="Unix_developer"> Unix developer </span></h3>
+<h3> <span class="mw-headline" id="Web_Applications_developer"> Web Applications developer </span></h3>
+<h3> <span class="mw-headline" id="Embeded_system_application_developer"> Embeded system application developer </span></h3>
+<h2> <span class="mw-headline" id="Mono_Technical_Overview"> Mono Technical Overview </span></h2>
+<h3> <span class="mw-headline" id="Features_List"> Features List</span></h3>
+<table border="1" cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 1em 1em; text-align:left; border-collapse:collapse; border:1px gray solid; font-size:85%; background:#ffffff">
+			
+
+<tr>
+<td>
+<p>						<b>Feature</b>
+</p>
+</td>
+<td>
+<p>						<b>Description</b>
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						ECMA
+						CLI-based virtual execution system
+</p>
+</td>
+<td>
+<p>						Provides an execution environment compatible with Microsoft .NET 1.1, a
+						comprehensive class library and support for many programming
+						language
+</p><p>						An advanced runtime engine that supports both
+						Just-in-Time and Ahead-of-Time compilation.
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Java VM Support
+</p>
+</td>
+<td>
+<p>						Allows
+						Java and .NET code to run  side-by-side
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Cross-Platform
+						Support
+</p>
+</td>
+<td>
+<p>						Optimizing
+						compiler for x86, AMD64, PowerPC, SPARC and  S390 based architectures
+						(Just-in-Time (JIT) and Ahead-of-Time (<a href="{{site.baseurl}}/AOT" title="AOT">AOT</a>) compilation modes
+						supported). Provides an highly optimized runtime environment to
+						run applications on many different platforms without
+						recompilation. Support
+						for Linux, MacOS X,
+						Windows and Solaris
+						(HP-UX supported with
+						the interpreter).
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						C# 1.0
+						Support
+</p>
+</td>
+<td>
+<p>						Complete
+						implementation of a compiler for the ECMA C# language provides
+						an accessible and powerful object oriented language that boost
+						developer productivity beyond what can be achieved with
+						languages such as C++ and Java. Includes C# 2.0 extensions such
+						as generics to achieve even greater developer productivity.
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Microsoft .NET compatible APIs
+</p>
+</td>
+<td>
+<p>						Provides
+						implementations of .NET class libraries such as ADO.NET and
+						ASP.NET for building Web applications and web services and bind
+						to commercial and open source databases (including Oracle,
+						Microsoft SQL Server, MySQL, Postgress and others).
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Mono
+						APIs
+</p>
+</td>
+<td>
+<p>						Provide
+						class libraries to tightly integrate applications with the
+						Linux desktop such as bindings for GTK (to use the Gnome
+						graphical toolkit with Mono), Mozilla, Novell iFolder, GnomeDB.
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Open
+						IDE support
+</p>
+</td>
+<td>
+<p>						Because
+						developers can't be forced out of their chosen development
+						environment, Mono integrates with existing Integrated
+						Development Environments (IDE) such as Eclipse and Emacs. Mono
+						also includes an IDE with MonoDevelop on Linux and MacOS X.
+						Developers can also use Microsoft Visual Studio .NET and deploy
+						to Linux with Mono.
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Development
+						Toolchain
+</p>
+</td>
+<td>	Complete set of development tools, including compilers, assembler and
+<p>						disassembler, native code invocation class generators, class
+						library introspection utilities, API documentation browser,
+						with Wiki-like capabilities.
+</p>
+</td></tr>
+<tr>
+<td>
+<p>						Embedding
+						Support
+</p>
+</td>
+<td>
+<p>						Extend
+						existing applications (C, C++, Perl) with C#  or any other .NET
+						language using our embedding API.
+</p>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Runtime_environment"> Runtime environment </span></h3>
+<h4> <span class="mw-headline" id="Virtual_Machine"> Virtual Machine </span></h4>
+<h4> <span class="mw-headline" id="Supported_Platforms"> Supported Platforms </span></h4>
+<h5> <span class="mw-headline" id="Linux"> Linux </span></h5>
+<h5> <span class="mw-headline" id="Mac_OS_X"> Mac OS X </span></h5>
+<h5> <span class="mw-headline" id="Windows"> Windows </span></h5>
+<h5> <span class="mw-headline" id="Unixes"> Unixes </span></h5>
+<h4> <span class="mw-headline" id="Language_Support"> Language Support </span></h4>
+<h5> <span class="mw-headline" id="C.23"> C# </span></h5>
+<h5> <span class="mw-headline" id="Java"> Java </span></h5>
+<h5> <span class="mw-headline" id="VB.NET"> VB.NET </span></h5>
+<h5> <span class="mw-headline" id="Ironpython_and_Boo"> Ironpython and Boo </span></h5>
+<h5> <span class="mw-headline" id="Miscelaneous_languages"> Miscelaneous languages </span></h5>
+<h4> <span class="mw-headline" id="Embedding_the_runtime"> Embedding the runtime </span></h4>
+<h3> <span class="mw-headline" id="Developer_Productivity"> Developer Productivity </span></h3>
+<h3> <span class="mw-headline" id="System_Classes"> System Classes </span></h3>
+<h3> <span class="mw-headline" id="Web_Application_and_Web_Services"> Web Application and Web Services </span></h3>
+<h4> <span class="mw-headline" id="ASP.NET"> ASP.NET </span></h4>
+<p>Mono has a fully functional implementation of ASP.NET. This includes full support for ASP.NET Web Forms and Web Services which essentially means that any ASP.NET application developed using .NET Framework will work with Mono. 
+</p><p>Some code might have to be modified as many Windows developers prefer to use hard coded file path separators and disregard case sensitivity instead of relying on methods built into .NET to solve cross platform issues. Also, when applications found invoking native code (p/invoking) might have to find alternative ways to implement a few things when the native code is not found on other platforms.
+</p><p>Mono's ASP.NET and ADO.NET implementation is excellent and many commercial applications now support Mono as a deployment solution on Linux and other platforms.
+</p>
+<h4> <span class="mw-headline" id="XSP.2C_Apache_and_mod_mono"> XSP, Apache and mod_mono </span></h4>
+<h3> <span class="mw-headline" id="Desktop_Applications_development"> Desktop Applications development </span></h3>
+<h4> <span class="mw-headline" id="System.Windows.Forms"> System.Windows.Forms </span></h4>
+<h4> <span class="mw-headline" id="Gtk.23"> Gtk# </span></h4>
+<p>Gtk#, a GUI Toolkit, is a set of .NET bindings for the gtk+ toolkit and assorted GNOME libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
+</p><p>Applications built using Gtk# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
+</p><p>You can use Glade along with the Glade# bindings to easily design GUI applications.  A new GUI designer called Stetic is being built which will be integrated with the MonoDevelop IDE.
+</p><p>In addition to support the standard Gtk/Gnome stack of development tools, the gtk-dotnet.dll assembly provides a bridge to consume functionality available on the .NET stack, at this point this includes the functionality to use System.Drawing to draw on a widget.
+</p>
+<h4> <span class="mw-headline" id="Cocoa.23"> Cocoa# </span></h4>
+<h4> <span class="mw-headline" id="Others"> Others </span></h4>
+<h3> <span class="mw-headline" id="Database_Connectivity"> Database Connectivity </span></h3>
+<h3> <span class="mw-headline" id="Interactions_with_native_libraries"> Interactions with native libraries </span></h3>
+<h3> <span class="mw-headline" id="Migration_of_existing_.NET_applications"> Migration of existing .NET applications </span></h3>
+<h3> <span class="mw-headline" id="Compatible_libraries_and_components"> Compatible libraries and components </span></h3>
+<h3> <span class="mw-headline" id="Mono_packaging"> Mono packaging </span></h3>
+<h2> <span class="mw-headline" id="Mono_Licensing"> Mono Licensing </span></h2>
+<p>Mono is available as open source software primarily, its licensing scheme is planned to allow proprietary developers to write applications with Mono.
+</p>
+<h3> <span class="mw-headline" id="Open_Source_license"> Open Source license </span></h3>
+<p>The Mono project use three open source licenses:
+</p>
+<ul><li> The C# Compiler and tools are released under the terms of the <a href="http://www.opensource.org/licenses/gpl-license.html" class="external text" rel="nofollow">GNU General Public License</a> (GPL). 
+</li></ul>
+<ul><li> The runtime libraries are under the <a href="http://www.gnu.org/copyleft/library.html#TOC1" class="external text" rel="nofollow">GNU Library GPL 2.0</a> (LGPL 2.0). 
+</li></ul>
+<ul><li> The class libraries are released under the terms of the <a href="http://www.opensource.org/licenses/mit-license.html" class="external text" rel="nofollow">MIT X11</a> license.
+</li></ul>
+<p>The licensing scheme allows for great flexibility. A commercial application vendor can deploy and bundle its application on Mono without the need for a commercial license unless it is their intent to redistribute a modified version of the Mono runtime without feeding back the changes to the Mono project. An IT organization can deploy applications without the need for a commercial license either.
+</p><p>Software vendors can freely use, modfify, redistribute the class libraries providing they include its copyright notice and permission notice in all copies or substantial portions of the Software.
+</p><p>The LGPL 2.0 and MIT X11 components license has no viral clause and their use does not affect the licensing of your own commercial software even if deployed with Mono. Thus, commercial software does not become open source by being deployed, distributed or bunding Mono.
+</p><p>However, the C# compiler and tools are licensed under the GPL license which requires derivative works of GPL-licensed programs to also be licensed under the GPL.
+</p>
+<h3> <span class="mw-headline" id="Commercial_license"> Commercial license </span></h3>
+<p>Both the Mono runtime and the Mono C# Compiler are also available under a proprietary license for those who can not use the LGPL and the GPL in their code.
+</p>
+<h2> <span class="mw-headline" id="Mono_Applications"> Mono Applications </span></h2>
+<p>&#8594; include screenshots
+</p>
+<h3> <span class="mw-headline" id="Open_Source"> Open Source </span></h3>
+<h3> <span class="mw-headline" id="Commercial"> Commercial </span></h3>
+<h2> <span class="mw-headline" id="Simplified_Mono_Roadmap"> Simplified Mono Roadmap </span></h2>
+<h3> <span class="mw-headline" id="Mono_1.0"> Mono 1.0 </span></h3>
+<p>Released, June 2004
+</p><p>Implements .NET 1.1 API (except for VB.NET and SWF support, planned for Mono 1.2) and Mono specific API stack (as described here).
+</p>
+<h3> <span class="mw-headline" id="Mono_1.2"> Mono 1.2 </span></h3>
+<p>Q1 2006
+</p>
+<ul><li> C# 2.0 implementation
+</li><li> Preview of Visual Basic compiler and .NET 2.0 enhancements (including ASP.NET 2.0, XML 2.0 and ADO.NET 2.0))
+</li><li> Improved IO-Layer and Internationalization framework.
+</li><li> Gtk# improvement and GUI designer.
+</li><li> Mono Debugger.
+</li><li> System.Windows.Forms support.
+</li><li> JIT performance work.
+</li><li> Code Access Security Framework.
+</li><li> Continued bug fixing of major and critical bugs.
+</li></ul>
+<h3> <span class="mw-headline" id="Mono_2.0"> Mono 2.0 </span></h3>
+<p>Q3 2006
+</p><p>This release will focus on .NET 2.0 API implementation including ASP.NET 2.0, XML 2.0, Web Services 2.0.
+</p>
+<h2> <span class="mw-headline" id="References"> References </span></h2>
+<h2> <span class="mw-headline" id="Conclusion"> Conclusion </span></h2>
+

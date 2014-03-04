@@ -1,0 +1,176 @@
+---
+layout: obsolete
+title: "Moonlight/ControlStatus"
+permalink: /old_site/Moonlight/ControlStatus/
+---
+
+<h1>Moonlight/ControlStatus</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Controls_in_System.Windows.dll"><span class="tocnumber">1</span> <span class="toctext">Controls in System.Windows.dll</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Containers"><span class="tocnumber">1.1</span> <span class="toctext">Containers</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Buttons"><span class="tocnumber">1.2</span> <span class="toctext">Buttons</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Dialogs"><span class="tocnumber">1.3</span> <span class="toctext">Dialogs</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Lists.2C_listboxes.2C_comboboxes.2C_etc"><span class="tocnumber">1.4</span> <span class="toctext">Lists, listboxes, comboboxes, etc</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Scrolling"><span class="tocnumber">1.5</span> <span class="toctext">Scrolling</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Slider_and_ProgressBar"><span class="tocnumber">1.6</span> <span class="toctext">Slider and ProgressBar</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Text"><span class="tocnumber">1.7</span> <span class="toctext">Text</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Control"><span class="tocnumber">1.8</span> <span class="toctext">Control</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ContentControl"><span class="tocnumber">1.9</span> <span class="toctext">ContentControl</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#DeepZoom"><span class="tocnumber">1.10</span> <span class="toctext">DeepZoom</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Ink"><span class="tocnumber">1.11</span> <span class="toctext">Ink</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Media"><span class="tocnumber">1.12</span> <span class="toctext">Media</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Misc"><span class="tocnumber">1.13</span> <span class="toctext">Misc</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Controls_in_System.Windows.Controls.dll"><span class="tocnumber">2</span> <span class="toctext">Controls in System.Windows.Controls.dll</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Calendar"><span class="tocnumber">2.1</span> <span class="toctext">Calendar</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#DatePicker"><span class="tocnumber">2.2</span> <span class="toctext">DatePicker</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#TabControl"><span class="tocnumber">2.3</span> <span class="toctext">TabControl</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Controls_in_System.Windows.Controls.Data.dll"><span class="tocnumber">3</span> <span class="toctext">Controls in System.Windows.Controls.Data.dll</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#DataGrid"><span class="tocnumber">3.1</span> <span class="toctext">DataGrid</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Controls_in_System.Windows.dll"> Controls in System.Windows.dll </span></h2>
+<h3> <span class="mw-headline" id="Containers"> Containers </span></h3>
+<ul><li> Border (System.Windows.Controls) (<b>100% done</b>)
+</li><li> Canvas (System.Windows.Controls) (<b>100% done</b>)
+</li><li> Panel (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> Grid (<b>80% done</b>)
+<ul><li> Grid (System.Windows.Controls)
+</li><li> ColumnDefinition (System.Windows.Controls)
+</li><li> ColumnDefinitionCollection (System.Windows.Controls)
+</li><li> RowDefinition (System.Windows.Controls)
+</li><li> RowDefinitionCollection (System.Windows.Controls)
+</li></ul>
+</li></ul>
+<ul><li> StackPanel (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> Popup (System.Windows.Controls.Primitives) (<b>90% done</b>)
+</li></ul>
+<ul><li> Tooltips (<b>~0% done</b>, we have beta1 source code, which needs a lot of work)
+<ul><li> depends on Popup (System.Windows.Controls.Primitives)
+</li><li> ToolTip        (System.Windows.Controls)
+</li><li> ToolTipService (System.Windows.Controls))
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Buttons"> Buttons </span></h3>
+<ul><li> Button (System.Windows.Controls) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> RadioButton (System.Windows.Controls) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> CheckBox (System.Windows.Controls) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> ButtonBase (System.Windows.Controls.Primitives) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> RepeatButton (System.Windows.Controls.Primitives) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> ToggleButton (System.Windows.Controls.Primitives) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<h3> <span class="mw-headline" id="Dialogs"> Dialogs </span></h3>
+<ul><li> OpenFileDialog (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> SaveFileDialog (System.Windows.Controls) (<b>0% done</b>, SL3 control, easy enough to implement)
+</li></ul>
+<h3> <span class="mw-headline" id="Lists.2C_listboxes.2C_comboboxes.2C_etc"> Lists, listboxes, comboboxes, etc </span></h3>
+<ul><li> Selector (System.Windows.Controls.Primitives) (<b>100% done</b>)
+</li></ul>
+<ul><li> ItemsControl (System.Windows.Controls) (<b>~50% done</b>)
+</li><li> ItemsPresenter (System.Windows.Controls) (<b>~50% done</b>)
+</li><li> ItemsPanelTemplate (System.Windows.Controls) (<b>~50% done</b>)
+</li><li> ItemCollection (System.Windows.Controls) (<b>~90% done</b>)
+</li></ul>
+<ul><li> ListBox (System.Windows.Controls) (<b>~25% done</b>)
+</li><li> ListBoxItem (System.Windows.Controls) (<b>~25% done</b>)
+</li></ul>
+<ul><li> ComboBox (<b>~10% done</b>)
+<ul><li> depends on Popup (System.Windows.Controls.Primitives)   
+</li><li> ComboBox (System.Windows.Controls)
+</li><li> ComboBoxItem (System.Windows.Controls)
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Scrolling"> Scrolling </span></h3>
+<ul><li> ScrollViewer (System.Windows.Controls) (<b>80% done</b>, needs converting/porting from the Beta1 drop)
+</li></ul>
+<ul><li> ScrollContentPresenter (System.Windows.Controls) (<b>80% done</b>, needs converting/porting from the Beta1 drop)
+</li></ul>
+<ul><li> ScrollBar (System.Windows.Controls.Primitives) (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<ul><li> Thumb (<b>100% done</b>, included in SL2 RTM source drop)
+</li></ul>
+<h3> <span class="mw-headline" id="Slider_and_ProgressBar"> Slider and ProgressBar </span></h3>
+<ul><li> Slider     (System.Windows.Controls)
+<ul><li> included in SL2 RTM source drop
+</li></ul>
+</li><li> ProgressBar (System.Windows.Controls)
+<ul><li> included in SL2 RTM source drop
+</li></ul>
+</li><li> RangeBase  (System.Windows.Controls.Primitives)
+<ul><li> included in SL2 RTM source drop
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Text"> Text </span></h3>
+<ul><li> blocking on ScrollViewer
+</li></ul>
+<ul><li> TextBlock   (System.Windows.Controls) (<b>90% done</b>)
+</li></ul>
+<ul><li> TextBox     (System.Windows.Controls) (<b>90% done</b>)
+</li></ul>
+<ul><li> PasswordBox (System.Windows.Controls) (<b>90% done</b>)
+</li></ul>
+<h3> <span class="mw-headline" id="Control"> Control </span></h3>
+<ul><li> Control         (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> ControlTemplate (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> UserControl     (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<h3> <span class="mw-headline" id="ContentControl"> ContentControl </span></h3>
+<ul><li> ContentControl   (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<ul><li> ContentPresenter (System.Windows.Controls) (<b>100% done</b>)
+</li></ul>
+<h3> <span class="mw-headline" id="DeepZoom"> DeepZoom </span></h3>
+<ul><li> MultiScaleImage (System.Windows.Controls) (<b>90% done</b>)
+</li></ul>
+<h3> <span class="mw-headline" id="Ink"> Ink </span></h3>
+<ul><li> InkPresenter (System.Windows.Controls)
+<ul><li> done
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Media"> Media </span></h3>
+<ul><li> MediaElement (System.Windows.Controls)
+<ul><li> done
+</li></ul>
+</li></ul>
+<ul><li> Image (System.Windows.Controls)
+<ul><li> done
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Misc"> Misc </span></h3>
+<ul><li> HyperlinkButton (System.Windows.Controls) (<b>80% done</b>, beta1 code needs porting/cleaning up)
+</li></ul>
+<h2> <span class="mw-headline" id="Controls_in_System.Windows.Controls.dll"> Controls in System.Windows.Controls.dll </span></h2>
+<h3> <span class="mw-headline" id="Calendar"> Calendar </span></h3>
+<ul><li> (<b>100% done</b>, included in the SL2 RTM source drop)
+</li></ul>
+<h3> <span class="mw-headline" id="DatePicker"> DatePicker </span></h3>
+<ul><li> (<b>100% done</b>, included in the SL2 RTM source drop)
+</li></ul>
+<h3> <span class="mw-headline" id="TabControl"> TabControl </span></h3>
+<ul><li> (<b>100% done</b>, included in the SL2 RTM source drop)
+</li></ul>
+<h2> <span class="mw-headline" id="Controls_in_System.Windows.Controls.Data.dll"> Controls in System.Windows.Controls.Data.dll </span></h2>
+<h3> <span class="mw-headline" id="DataGrid"> DataGrid </span></h3>
+<ul><li> (<b>100% done</b>, included in the SL2 RTM source drop)
+</li></ul>
+

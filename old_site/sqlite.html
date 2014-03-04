@@ -1,0 +1,170 @@
+---
+layout: obsolete
+title: "SQLite"
+permalink: /old_site/SQLite/
+---
+
+<h1>SQLite</h1>
+
+<p><br />
+The Mono.Data.SqliteClient assembly contains an ADO.NET data provider for the <a href="http://www.sqlite.org/" class="external text" rel="nofollow">SQLite</a> embeddable database engine (both version 2 and version 3).  
+</p><p>SQLite has a notable oddity: table cell data does not retain what kind of data it was.  Everything is stored as either a long, double, string, or blob.  And in SQLite version 2, everything is stored as a string.  So you need to be careful about avoiding casting values returned by SQLite without checking the type of the value returned.  See below for notes on storing DateTimes.
+</p><p>(The last maintainer of Mono.Data.SqliteClient was <a href="http://razor.occams.info" class="external text" rel="nofollow">Josh Tauberer</a>.)
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#New_style_assembly_shipped_with_Mono_1.2.4"><span class="tocnumber">1</span> <span class="toctext">New style assembly shipped with Mono 1.2.4</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Prerequisites"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Connection_String_Format"><span class="tocnumber">3</span> <span class="toctext">Connection String Format</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Storing_DateTimes"><span class="tocnumber">4</span> <span class="toctext">Storing DateTimes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Character_Encodings"><span class="tocnumber">5</span> <span class="toctext">Character Encodings</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#C.23_Example_.281.1_profile_of_the_new_assembly_and_the_old_assembly.29"><span class="tocnumber">6</span> <span class="toctext">C# Example (1.1 profile of the new assembly and the old assembly)</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="New_style_assembly_shipped_with_Mono_1.2.4"> New style assembly shipped with Mono 1.2.4 </span></h2>
+<p>Starting with the 1.2.4 release, Mono ships a second SQLite assembly - Mono.Data.Sqlite. The new assembly provides support <b>only for SQLite version 3 </b>and is not 100% binary and API compatible with the older assembly. The new assembly is based on code by Robert Simpson from <a href="http://sqlite.phxsoftware.com/" class="external free" rel="nofollow">http://sqlite.phxsoftware.com/</a> and provides full ADO.NET 2.0 API interface. Code from the old binary is contained in the new one but is available <b>only in the 1.1 profile</b>. The 2.0 profile can no longer access the old code when referencing the new assembly. We have chosen this way as means to provide a migration path for developers using  SQLite in their .NET applications - both assemblies will be shipped with several future releases of Mono, and at some (yet undetermined) point the old one will be removed from the distribution. All the developers are encouraged to start transitioning their code to the new assembly - for both 1.1 and 2.0 profiles.
+</p><p>One disadvantage of the new assembly is its binary incompatibility in the data format. That is, if your application uses SQLite database v2 format you <b>will not</b> be able to access your data with the new assembly. To solve this problem you must dump your data using sqlite v2 utilities and then restore it using sqlite v3 utilities.
+</p>
+<h2> <span class="mw-headline" id="Prerequisites"> Prerequisites </span></h2>
+<p>If you do not have <a href="http://www.sqlite.org/" class="external text" rel="nofollow">SQLite</a>, download it. There are binaries for Windows and Linux.  You can put the .dll or .so along side your application binaries, or in a system-wide library path.
+</p>
+<h2> <span class="mw-headline" id="Connection_String_Format"> Connection String Format </span></h2>
+<p>The format of the connection string is:
+</p>
+<pre>[1.1 profile and the old assembly]
+URI=file:/path/to/file 
+</pre>
+<pre>[2.0 profile in the new assembly]
+Data Source=file:/path/to/file
+Data Source=|DataDirectory|filename
+</pre>
+<p>The latter case for the 2.0 profile references the App_Data directory (or any other directory that's configured to contain data files for an ASP.NET 2.0 application)
+</p><p>As an example:
+</p>
+<pre>[1.1 and the old assembly]
+URI=file:SqliteTest.db 
+</pre>
+<pre>[2.0 and the new assembly]
+Data Source=file:SqliteTest.db
+</pre>
+<p>That will use the database SqliteTest.db in the current directory.  It will be created if it does not exist.
+</p><p>Or you prefer to use SQLite as an in memory database
+</p>
+<pre>URI=file::memory:,version=3
+</pre>
+<p>The <tt>version=3</tt> is supported, but not necessary with the new assembly.
+</p><p>With the old assembly, the ADO.NET adapter will use SQLite version 2 by default, but if version 2 is not found and version 3 is available, it will fallback to version 3.  You can force the adapter to use version 3 by adding "version=3" to the connection string:
+</p>
+<pre>URI=file:SqliteTest.db,version=3
+</pre>
+<p>The new assembly, as described above, uses only database format version 3.
+</p><p><br />
+</p>
+<ul><li> Connection String Parameters:
+</li></ul>
+<p><b>For the 1.1 profile and the old assembly</b>
+</p>
+<table border="1" cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 1em 1em; text-align:left; border-collapse:collapse; border:1px gray solid; font-size:95%; background:#f9f9f9">
+<tr>
+<th> Parameter Definition </th>
+<th> Description </th>
+<th> Example
+</th></tr>
+<tr>
+<td> URI </td>
+<td> a file Universal Resource Identifier </td>
+<td> URI=file:SqliteTest.db
+</td></tr>
+<tr>
+<td> version </td>
+<td> version of SQL Lite to use: version 2 or 3 </td>
+<td> version=3
+</td></tr>
+<tr>
+<td> busy_timeout </td>
+<td> a timeout, in milliseconds, to wait when the database is locked before throwing a SqliteBusyException (since Mono 1.1.14) </td>
+<td> busy_timeout=3000
+</td></tr></table>
+<p>The busy_timeout parameter is implemented as a call to <a href="http://sqlite.org/capi3ref.html#sqlite3_busy_timeout" class="external text" rel="nofollow">sqlite(3)_busy_timeout</a>.  The default value is 0, which means to throw a SqliteBusyException immediately if the database is locked.
+</p><p><b>For the 2.0 profile in the new assembly</b>
+</p>
+<table border="1" cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 1em 1em; text-align:left; border-collapse:collapse; border:1px gray solid; font-size:95%; background:#f9f9f9">
+<tr>
+<th> Parameter Definition </th>
+<th> Description </th>
+<th> Example
+</th></tr>
+<tr>
+<td> Data Source </td>
+<td> a file Universal Resource Identifier </td>
+<td> Data Source=file:SqliteTest.db
+</td></tr>
+<tr>
+<td> version </td>
+<td> version of SQL Lite to use: version 3 </td>
+<td> version=3
+</td></tr></table>
+<h2> <span class="mw-headline" id="Storing_DateTimes"> Storing DateTimes </span></h2>
+<p>The way DateTimes are stored and retrieved from Sqlite databases depends on a lot, unfortunately, because Sqlite doesn't have a way of storing datetimes natively.  Further, there are two versions of Sqlite (2 and 3) which are treated differently when it comes to DateTimes.  The recommended way of using DateTimes with Sqlite is to encode/decode them yourself to/from some particular integer string format that you decide, and <i>not</i> putting them into a DATE or DATETIME column.
+</p><p>Sqlite2 only has strings internally.  No matter what the column was declared as, DateTimes are just going to be converted into strings.  If you use parameters, for instance, DateTimes will be converted in a culture-sensitive format.  When reading back the data, there's no way to know that it was originally a DateTime and not a string, so Mono.Data.SqliteClient returns the string.  Using Sqlite2, you really can't use DateTimes without encoding them yourself.
+</p><p>If you explicitly are targetting Sqlite3, or using the new assembly (in which case you should be providing the version parameter in the connection string, unless you are using the new assembly), you can rely on the particular behavior used when connecting to a Sqlite3 database.  Sqlite3 has string, integer (64bit), real, and blob internal storage types.  When putting a DateTime into the database using parameters, Mono.Data.SqliteClient will encode the DateTime as an integer using ToFileTime(). But this doesn't help when reading the data back to determine that a value was originally a DateTime.  Sqlite3 also exposes the names of the types of the columns as the table was created with.  If a column is declared as a DATE or DATETIME, SqliteDataReader will try to turn the value back into a DateTime.  If it finds an integer value, it uses DateTime.FromFileTime, which is the reverse of how it encodes DateTimes if you insert a DateTime via parameters.  If it finds a string value, it uses DateTime.Parse, but note that Parse is a very slow operation.  So with Sqlite3, DateTimes should be put into DATE or DATETIME columns in the database either
+through parameters or by turning it into a long with ToFileTime
+yourself, and then they will be read back as DateTimes.
+</p>
+<h2> <span class="mw-headline" id="Character_Encodings"> Character Encodings </span></h2>
+<p>The Sqlite client treats character encodings differently for version 2 and version 3 because of the way Sqlite2 and 3 treat strings.
+</p><p>In Sqlite3, the Sqlite client communicates with Sqlite in Unicode.  Therefore, you should be able to read and write any characters from the database, but note that if you write Unicode characters to a database, you may not be able to read them back in other applications if the application does not communicate with Sqlite using Unicode.
+</p><p>In Sqlite2, the client by default communicates with Sqlite using the UTF-8 encoding, which means you can read and write any character.  But you must beware of two things.  The first is that since non-ASCII characters are encoded as multi-byte characters in UTF-8, and Sqlite2 doesn't recognize multibyte characters (unless it was compiled specifically with UTF-8 support), LIKE, GLOB, LENGTH, and SUBSTR will behave oddly.  The second caveat is that other applications using the database must be using UTF-8 as well.
+</p><p>When using Sqlite2, you can force Mono.Data.SqliteClient to use a different encoding instead of UTF-8 by adding ";encoding=ASCII" for instance to the connection string.  It must be an encoding that ends with a single null terminator, however.
+</p>
+<h2> <span class="mw-headline" id="C.23_Example_.281.1_profile_of_the_new_assembly_and_the_old_assembly.29"> C# Example (1.1 profile of the new assembly and the old assembly) </span></h2>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Mono.Data.SqliteClient</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Test
+ <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;URI=file:SqliteTest.db&quot;</span><span style="color: #008000;">;</span>
+       IDbConnection dbcon<span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>IDbConnection<span style="color: #008000;">&#41;</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SqliteConnection<span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       IDbCommand dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+       <span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+       <span style="color: #008080; font-style: italic;">// such as,</span>
+       <span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (</span>
+       <span style="color: #008080; font-style: italic;">//           firstname varchar(32),</span>
+       <span style="color: #008080; font-style: italic;">//           lastname varchar(32));</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+          <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+       IDataReader reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> FirstName <span style="color: #008000;">=</span> reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetString</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> LastName <span style="color: #008000;">=</span> reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetString</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: &quot;</span> <span style="color: #008000;">+</span>
+                FirstName <span style="color: #008000;">+</span> <span style="color: #666666;">&quot; &quot;</span> <span style="color: #008000;">+</span> LastName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008000;">&#125;</span>
+       <span style="color: #008080; font-style: italic;">// clean up</span>
+       reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<p>To build the example:
+</p>
+<ul><li> Save the example to a file, such as, TestExample.cs
+</li><li> Build using Mono C# compiler:
+</li></ul>
+<pre>mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SqliteClient.dll
+</pre>
+<p>To run the example:
+</p>
+<pre>mono TestExample.exe
+</pre>

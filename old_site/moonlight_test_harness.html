@@ -1,0 +1,258 @@
+---
+layout: obsolete
+title: "Moonlight Test Harness"
+permalink: /old_site/Moonlight_Test_Harness/
+---
+
+<h1>Moonlight Test Harness</h1>
+
+<h2> <span class="mw-headline" id="The_Developer_Regression_Test_List_.28drtlist.29"> The Developer Regression Test List (drtlist) </span></h2>
+<p>Tests are specified in an XML file called a drtlist.  The drtlist should contain a &lt;DRTList&gt; root element and each test should be specified with the &lt;Test&gt; element.  The following attributes can be set on a test.  Any other attributes will be ignored.
+</p>
+<table border="1">
+
+<tr valign="top">
+<td>id
+</td>
+<td>A readable name to identify the test
+</td></tr>
+<tr valign="top">
+<td>inputFile
+</td>
+<td>Mandatory:  The test file, either a .xaml or .htm(l) file
+</td></tr>
+<tr valign="top">
+<td>masterFile masterFile10 or masterFile11
+</td>
+<td>Mandatory:  The master image that the result file will be compared to.  If the test does not need an image comparison use "None" as the value for masterFile.  Only one of masterFile, masterFile10 and masterFile11 should be specified.  In the future, multiple master files will be allowed to test multiple versions of Moonlight.
+<p>Master files can be either PNGs or TIFFs.  PNGs should be used for simgle image capture tests and TIFFs should be used when multiple images are captured.  Each capture will be saved as another layer in the TIFF.
+</p>
+</td></tr>
+<tr valign="top">
+<td>codebehind
+</td>
+<td>A C# codebehind file can be specified for the the 2.0 tests in the format <pre class="c" style="font-family:monospace;"><span style="color: #009900;">&#91;</span><span style="color: #339933;">,</span> dll name<span style="color: #009900;">&#93;</span>. <span style="color: #202020;">For</span> example codebehind<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;nested-canvas.cs&quot;</span> or codebehind<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;nested-canvas.cs, mylib.dll&quot;</span>
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>categories
+<span style="color: #339933;">|</span> A comma separated list of categories that the test is a member of.  <span style="color: #202020;">Categories</span> are explained further in the Running Tests section.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>expectedError
+<span style="color: #339933;">|</span>The ErrorType of ErrorArgs passed to the error handler when an error is encountered in the test.  <span style="color: #202020;">If</span> the error does not occur<span style="color: #339933;">,</span> or the error is of the wrong type the test will fail.  <span style="color: #202020;">This</span> attribute will only work <span style="color: #b1b100;">for</span> xaml tests<span style="color: #339933;">,</span> since the error handling functionality is built into the html template generated <span style="color: #b1b100;">for</span> the .<span style="color: #202020;">xaml</span> tests.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>knownFailure
+<span style="color: #339933;">|</span>Tests the implement a feature that is known to be broken or not implemented should be marked as a known failure.  <span style="color: #202020;">Marking</span> tests as a known failure makes it easier to differentiate between failures that are regression and failures that are known.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>failureReason
+<span style="color: #339933;">|</span>Failure reasons should be given <span style="color: #b1b100;">for</span> all knownFailures.  <span style="color: #202020;">This</span> allows people triaging tests to easily understand why tests are failing.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>ignore
+<span style="color: #339933;">|</span>Tests that may hang or crash the test harness should be marked as ignore.  <span style="color: #202020;">These</span> tests will not be run during a test run.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>ignoreReason
+<span style="color: #339933;">|</span>Tests that are marked as ignored should have a reason assigned to them.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>captureSpecifier
+<span style="color: #339933;">|</span>A capture specifier is normally used <span style="color: #b1b100;">for</span> taking multiple screenshots.  <span style="color: #202020;">The</span> capture specifier is a compacted method of setting the captureInterval maxImagesToCapture and initialDelay.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>captureInterval
+<span style="color: #339933;">|</span>When taking multiple screenshots the captureInterval is the <a href="http://www.opengroup.org/onlinepubs/009695399/functions/time.html"><span style="color: #000066;">time</span></a> to wait inbetween captures.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>maxImagesToCapture
+<span style="color: #339933;">|</span>The total number of screenshots that should be captured.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>initialDelay
+<span style="color: #339933;">|</span>The <a href="http://www.opengroup.org/onlinepubs/009695399/functions/time.html"><span style="color: #000066;">time</span></a> to wait before beginning image capture.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>captureWidth
+<span style="color: #339933;">|</span>The width of the image to capture.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>captureHeight
+<span style="color: #339933;">|</span>The height of the image to capture.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>imageCompareTolerance
+<span style="color: #339933;">|</span>The tolerance <span style="color: #b1b100;">for</span> image comparisons can be overriden with this attribute.  <span style="color: #202020;">The</span> <span style="color: #b1b100;">default</span> tolerance is two percent. <span style="color: #202020;">To</span> make the comparison <span style="color: #0000dd;">1</span><span style="color: #339933;">%</span> you would use imageCompareTolerance<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;0.01&quot;</span>.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>xspExecDir
+<span style="color: #339933;">|</span>Some tests may want to have xsp running in the background.  <span style="color: #202020;">For</span> example tests that attempt to connect to special web handlers or need to interact with an aspx page.  <span style="color: #202020;">The</span> xspExecDirectory is the directory that xsp should be run from.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>remote
+<span style="color: #339933;">|</span>Some tests may reside on remote file systems <span style="color: #339933;">/</span> on the web. <span style="color: #202020;">This</span> flag <span style="color: #009900;">&#40;</span>valid value is <span style="color: #ff0000;">'True'</span><span style="color: #009900;">&#41;</span> tells the test harness that it shouldn<span style="color: #ff0000;">'t try to modify the test to make it run correctly, nor try to resolve any paths, prepend current directory, etc, which would otherwise be done.
+|}
+&#160;
+== How to run tests ==
+&#160;
+If you are running the test harness from the moon/test directory there are a couple of make targets you can use:
+&#160;
+{| border=&quot;1&quot;
+|- valign=&quot;top&quot;
+|make run-tests
+|This will run all of the tests in moon/test/xaml/drtlist.xml that are not marked as ignore or knownFailure.
+|- valign=&quot;top&quot;
+|make run-all-tests
+|This will run all of the tests in moon/test/xaml/drtlist.xml that are not marked as ignore.
+|- valign=&quot;top&quot;
+|make list-known-failures
+|This will list all of the tests marked as knownFailure in moon/test/xaml/drtlist.xml and their reason for failing.
+|- valign=&quot;top&quot;
+|make run-drtlist
+|This will run the drtlist specified in the environment variable DRTLIST, otherwise it'</span>ll work as <span style="color: #ff0000;">'make run-tests'</span>
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span>make run<span style="color: #339933;">-</span>valgrind
+<span style="color: #339933;">|</span>This will run the drtlist specified in the environment variable DRTLIST with valgrind<span style="color: #339933;">,</span> otherwise it<span style="color: #ff0000;">'ll work as '</span>make run<span style="color: #339933;">-</span>tests<span style="color: #ff0000;">'
+|- valign=&quot;top&quot;
+|make run-gdb
+|This will run the drtlist specified in the environment variable DRTLIST with gdb, otherwise it'</span>ll work as <span style="color: #ff0000;">'make run-tests'</span>
+<span style="color: #339933;">|</span><span style="color: #009900;">&#125;</span>
+&#160;
+&#160;
+If you are running the test harness outside of the make targets<span style="color: #339933;">,</span> these options are available to you<span style="color: #339933;">:</span>
+&#160;
+<span style="color: #009900;">&#123;</span><span style="color: #339933;">|</span> border<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;1&quot;</span>
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>v<span style="color: #339933;">,</span> <span style="color: #339933;">-</span>verbose
+<span style="color: #339933;">|</span>Increase the verbosity level.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">--</span>fixture<span style="color: #339933;">=,</span> <span style="color: #339933;">-</span>fixtures<span style="color: #339933;">=</span>
+<span style="color: #339933;">|</span>Specify one or a list of fixtures to run.
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>categories<span style="color: #339933;">=</span>
+<span style="color: #339933;">|</span>Specify one or a list of categories to run.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>drtlist<span style="color: #339933;">=</span>
+<span style="color: #339933;">|</span>Specify the path to the drtlist.  <span style="color: #202020;">If</span> the drtlist is not specified<span style="color: #339933;">,</span> the test runner will attempt to load drtlist.<span style="color: #202020;">xml</span> from the current directory.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>agviewer<span style="color: #339933;">=</span>
+<span style="color: #339933;">|</span>Specify the path to the agviewer binary.  <span style="color: #202020;">If</span> the agviewer binary is not specified<span style="color: #339933;">,</span> the harness will attempt to find agviewer by searching recursively down from the current directory and using the PATH environment variable.
+<span style="color: #339933;">|-</span> valign<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;top&quot;</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>no<span style="color: #339933;">-</span>console<span style="color: #339933;">-</span>report
+<span style="color: #339933;">|</span>Disable reporting results to the terminal
+<span style="color: #339933;">|-</span> 
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>html<span style="color: #339933;">-</span>report<span style="color: #339933;">,</span> <span style="color: #339933;">-</span>generate<span style="color: #339933;">-</span>html<span style="color: #339933;">-</span>report
+<span style="color: #339933;">|</span>Create an HTML report <span style="color: #b1b100;">for</span> the test run
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>run<span style="color: #339933;">-</span>known<span style="color: #339933;">-</span>failures
+<span style="color: #339933;">|</span>Run tests marked as known failures
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>list<span style="color: #339933;">-</span>known<span style="color: #339933;">-</span>failures
+<span style="color: #339933;">|</span>List tests marked as known failure and their reason <span style="color: #b1b100;">for</span> failing.
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>compare<span style="color: #339933;">-</span>to<span style="color: #339933;">-</span>moon
+<span style="color: #339933;">|</span>Compare to the moon master files instead of the master files specified in the 
+drtlist.
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>valgrind
+<span style="color: #339933;">|</span>Execute moonlight with valgrind. <span style="color: #202020;">Valgrind</span> will be executed with <span style="color: #339933;">--</span>tool<span style="color: #339933;">=</span>memcheck<span style="color: #339933;">,</span> unless MOONLIGHT_VALGRIND_OPTIONS is set<span style="color: #339933;">,</span> in which <span style="color: #b1b100;">case</span> it will be executed with that value.
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>gdb
+<span style="color: #339933;">|</span>Execute moonlight with gdb. <span style="color: #202020;">There</span> is currently no way to pass options to gdb. <span style="color: #202020;">If</span> <span style="color: #339933;">-</span>valgrind is specified<span style="color: #339933;">,</span> this flag is ignored.
+<span style="color: #339933;">|-</span>
+<span style="color: #339933;">|</span> <span style="color: #339933;">-</span>generate<span style="color: #339933;">-</span>master<span style="color: #339933;">-</span>files	
+<span style="color: #339933;">|</span>Generate master files to be used with the compare<span style="color: #339933;">-</span>to<span style="color: #339933;">-</span>moon option.
+<span style="color: #339933;">|</span><span style="color: #009900;">&#125;</span>
+&#160;
+&#160;
+There are two ways of running a subset of the drtlist.<span style="color: #202020;">xml</span> tests.  <span style="color: #202020;">You</span> can use categories or specify the tests you would like to use<span style="color: #339933;">:</span>
+&#160;
+<span style="color: #339933;">===</span> Categories <span style="color: #339933;">===</span>
+&#160;
+Test categories are specified in the drtlist.<span style="color: #202020;">xml</span> with the categories<span style="color: #339933;">=</span><span style="color: #ff0000;">&quot;&lt;cat one&gt;,&lt;cat two&gt;,&lt;cat three&gt;,....&quot;</span> attribute.  <span style="color: #202020;">If</span> a test was both a text test and a brushes test<span style="color: #339933;">,</span> it<span style="color: #ff0000;">'s XML would look like this:
+&#160;
+     &lt;Test id=&quot;MyTest&quot;
+          inputFile=&quot;MyTest.xaml&quot;
+          masterFile=&quot;MyTestMaster.png&quot;
+          categories=&quot;text,brushes&quot;
+      /&gt;
+&#160;
+Category names are case sensitive strings. A new category can be created by adding it'</span>s name to the categories attribute. <span style="color: #202020;">Currently</span> these categories are used in our tests<span style="color: #339933;">:</span>
+&#160;
+<span style="color: #339933;">*</span> text
+<span style="color: #339933;">*</span> animation
+<span style="color: #339933;">*</span> brushes
+<span style="color: #339933;">*</span> parser
+&#160;
+There are two ways of running category tests.  <span style="color: #202020;">If</span> you are using the make targets mentioned above<span style="color: #339933;">,</span> the easiest way is to specify the categories with the MOON_DRT_CATEGORIES<span style="color: #339933;">=&lt;</span>cat name<span style="color: #339933;">&gt;,&lt;</span>cat name<span style="color: #339933;">&gt;,</span>... <span style="color: #202020;">environment</span> variable.  <span style="color: #202020;">To</span> run the text and animation tests using this variable your command line would look like this<span style="color: #339933;">:</span>
+&#160;
+    $ MOON_DRT_CATEGORIES<span style="color: #339933;">=</span>text<span style="color: #339933;">,</span>animation make run<span style="color: #339933;">-</span>tests
+&#160;
+If you are not using the make targets you can specify the categories you would like to run on the command line with the <span style="color: #339933;">-</span>categories flag<span style="color: #339933;">:</span>
+&#160;
+    $ mono test<span style="color: #339933;">-</span>runner.<span style="color: #202020;">exe</span> <span style="color: #339933;">-</span>categories<span style="color: #339933;">=</span>text<span style="color: #339933;">,</span>animation
+&#160;
+You can also exclude categories<span style="color: #339933;">,</span> <span style="color: #b1b100;">if</span> you want to run all tests except text and brushes tests<span style="color: #339933;">,</span> you could <span style="color: #b1b100;">do</span><span style="color: #339933;">:</span>
+&#160;
+    $ MOON_DRT_EXCLUDE_CATEGORIES<span style="color: #339933;">=</span>text<span style="color: #339933;">,</span>brushes make run<span style="color: #339933;">-</span>tests
+&#160;
+&#160;
+<span style="color: #339933;">===</span> Specifying tests <span style="color: #339933;">===</span>
+&#160;
+If you would like to limit a test run to just a single test<span style="color: #339933;">,</span> or a small set of tests<span style="color: #339933;">,</span> that aren<span style="color: #ff0000;">'t in the same category, you can specify the tests to run.  If you are using the make targets listed above, the easiest way to specify a single or set of tests to run is with the MOON_DRT_FIXTURE=&lt;test id&gt; and MOON_DRT_FIXTURES=&lt;test id&gt;,&lt;test id&gt;,&lt;test id&gt;,... environment variables.  To run tests 2 and 5 using this method your command line would look like this:
+&#160;
+     $ MOON_DRT_FIXTURES=2,5 make run-tests
+&#160;
+If you aren'</span>t using the make targets you can specify the tests on the command line with the <span style="color: #339933;">-</span>fixture or <span style="color: #339933;">-</span>fixtures flags<span style="color: #339933;">:</span>
+&#160;
+     $ mono test<span style="color: #339933;">-</span>runner.<span style="color: #202020;">exe</span> <span style="color: #339933;">-</span>fixtures<span style="color: #339933;">=</span><span style="color: #0000dd;">2</span><span style="color: #339933;">,</span><span style="color: #0000dd;">5</span>
+&#160;
+Id<span style="color: #ff0000;">'s are specified in the drtlist.xml with the id attribute:
+&#160;
+     &lt;Test id=&quot;2&quot;
+          inputFile=&quot;MyTest.xaml&quot;
+          masterFile=&quot;MyTestMaster.png&quot;
+          categories=&quot;text,brushes&quot;
+     /&gt;
+&#160;
+You can also specify a different drtlist.xml, this will run the drtlist in media/video/drtlist.xml:
+&#160;
+     $ DRTLIST=media/video/drtlist.xml make run-drtlist
+&#160;
+=== Using Xvfb ===
+When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground. 
+Setup the virtual buffer like so:
+&lt;pre&gt;
+     $ Xvfb -fp /usr/share/fonts/misc -ac -screen 0 1024x1024x24 -nolisten tcp&#160;:3
+&lt;/pre&gt;
+Then in another terminal, run the test suite and redirect the display to the virtual buffer.
+&lt;pre&gt;
+     $ DISPLAY=:3 make run-tests
+&lt;/pre&gt;
+&#160;
+== While the tests are running ==
+&#160;
+Depending on the verbosity level and the reporting options, test results will print out on the console as they are completed.  The following legend is for the default verbose level and reporting options:
+&#160;
+{| border=&quot;1&quot;
+|-
+|.
+|The test passed
+|-
+|F
+|The test failed
+|-
+|K
+|The test was marked as a known failure.
+|-
+|I
+|The test was ignored, either because the master file couldn'</span>t be found<span style="color: #339933;">,</span> or because it was marked as ignore in the drtlist.
+<span style="color: #339933;">|</span><span style="color: #009900;">&#125;</span>
+&#160;
+If you would like to <a href="http://www.opengroup.org/onlinepubs/009695399/functions/abort.html"><span style="color: #000066;">abort</span></a> a test run<span style="color: #339933;">,</span> press the Escape key <span style="color: #b1b100;">while</span> a test is running.  <span style="color: #202020;">This</span> will signal the test harness to stop the run once this test has completed.  <span style="color: #202020;">If</span> you press the escape key again<span style="color: #339933;">,</span> it will cause the currently running test to <a href="http://www.opengroup.org/onlinepubs/009695399/functions/abort.html"><span style="color: #000066;">abort</span></a>.
+&#160;
+<span style="color: #339933;">==</span> When the test has finished <span style="color: #339933;">==</span>
+&#160;
+Generally any test will shutdown the browser when it has finished <span style="color: #009900;">&#40;</span>the test harness waits <span style="color: #b1b100;">for</span> the browser to shut down before executing the next test<span style="color: #009900;">&#41;</span>. <span style="color: #202020;">However</span><span style="color: #339933;">,</span> there may be times when you don<span style="color: #ff0000;">'t want the browser to shut down when the test has finished (to inspect state, you have other tabs open, etc). In this case you can use the MOONLIGHT_SHOCKER_DONT_DIE flag, which will prevent the browser from shutting down:
+&#160;
+    $ MOONLIGHT_SHOCKER_DONT_DIE=1 make run-tests
+&#160;
+== Reading test output ==
+&#160;
+By default the tests will output a summary of the test run on stdout. The verbosity level will effect the amount of data in the summary.  The verbosity levels are:
+&#160;
+#Show data from the test plugin
+#Show data printed to stderr during the test run
+#Show data printed to stdout during the test run
+&#160;
+If the -html-report option is used (our make targets use this option) there will also be an html_report/ directory created with an html report and all of the master files, result files and image comparison files.   Multiple image capture which are normally saved as tiffs will be converted into a png mosaic of all of the layers of the tiff.</span></pre>
+</td>
+</tr>
+</table>
+

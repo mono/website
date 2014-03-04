@@ -1,0 +1,122 @@
+---
+layout: obsolete
+title: "WinForms"
+permalink: /old_site/WinForms/
+---
+
+<h1>WinForms</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Quick_Resources"><span class="tocnumber">1</span> <span class="toctext">Quick Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Code_Status"><span class="tocnumber">1.1</span> <span class="toctext">Code Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#About_System.Windows.Forms"><span class="tocnumber">2</span> <span class="toctext">About System.Windows.Forms</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Contributing"><span class="tocnumber">2.1</span> <span class="toctext">Contributing</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Drivers"><span class="tocnumber">2.2</span> <span class="toctext">Drivers</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Accessibility"><span class="tocnumber">2.3</span> <span class="toctext">Accessibility</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Sample_Code"><span class="tocnumber">3</span> <span class="toctext">Sample Code</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Theming"><span class="tocnumber">4</span> <span class="toctext">Theming</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Why_Not_Use_Native_Widgets.3F"><span class="tocnumber">4.1</span> <span class="toctext">Why Not Use Native Widgets?</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Fitting_In"><span class="tocnumber">4.2</span> <span class="toctext">Fitting In</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Maturity_of_the_Theming_Interface"><span class="tocnumber">4.3</span> <span class="toctext">Maturity of the Theming Interface</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#History"><span class="tocnumber">5</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Webbrowser_Control"><span class="tocnumber">6</span> <span class="toctext">Webbrowser Control</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#WinForms_Designer"><span class="tocnumber">7</span> <span class="toctext">WinForms Designer</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Quick_Resources"> Quick Resources </span></h2>
+<ul><li> <a href="{{site.baseurl}}/WinForms_Getting_Started_Guide" title="WinForms Getting Started Guide">Guide: Getting Started</a>
+</li><li> <a href="{{site.baseurl}}/Guide:_Porting_Winforms_Applications" title="Guide: Porting Winforms Applications">Guide: Porting Winforms Applications to Mono</a>
+</li><li> <a href="{{site.baseurl}}/Guide:_Debugging_With_MWF" title="Guide: Debugging With MWF">Guide: Debugging Winforms Applications with Visual Studio</a>
+</li><li> <a href="http://zetcode.com/tutorials/monowinformstutorial/" class="external text" rel="nofollow">Tutorial: Using Winforms with Mono/C#</a>
+</li><li> <a href="{{site.baseurl}}/FAQ:_Winforms" title="FAQ: Winforms">Frequently Asked Questions about WinForms</a>
+</li><li> Bugs <a href="http://bugzilla.novell.com/buglist.cgi?product=Mono%3A+Class+Libraries&amp;component=Windows.Forms&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.bug_id" class="external text" rel="nofollow">Current</a>, <a href="http://bugzilla.novell.com/enter_bug.cgi?alias=&amp;assigned_to=&amp;blocked=&amp;bug_file_loc=http%3A%2F%2F&amp;bug_severity=Normal&amp;bug_status=NEW&amp;cf_foundby=---&amp;cf_nts_priority=&amp;cf_nts_support_num=&amp;cf_partnerid=&amp;comment=Description%20of%20Problem%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20problem%3A%0D%0A1.%20%0D%0A2.%20%0D%0A%0D%0A%0D%0AActual%20Results%3A%0D%0A%0D%0A%0D%0AExpected%20Results%3A%0D%0A%0D%0A%0D%0AHow%20often%20does%20this%20happen%3F%20%0D%0A%0D%0A%0D%0AAdditional%20Information%3A%0D%0A%0D%0A%0D%0A&amp;component=Windows.Forms&amp;contenttypeentry=&amp;contenttypemethod=autodetect&amp;contenttypeselection=text%2Fplain&amp;data=&amp;deadline=&amp;dependson=&amp;description=&amp;estimated_time=0.0&amp;flag_type-2=X&amp;form_name=enter_bug&amp;keywords=&amp;maketemplate=Remember%20values%20as%20bookmarkable%20template&amp;op_sys=Other&amp;priority=P5%20-%20None&amp;product=Mono%3A%20Class%20Libraries%20&amp;qa_contact=&amp;rep_platform=Other&amp;short_desc=&amp;version=unspecified" class="external text" rel="nofollow">Submit New</a>
+</li><li> Some <a href="{{site.baseurl}}/Winforms_Samples" title="Winforms Samples">Winforms Samples</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Code_Status"> Code Status </span></h3>
+<p>Support for Windows Forms 2.0 is complete.  At this point, we are largely just fixing bugs and polishing our code.
+</p>
+<h2> <span class="mw-headline" id="About_System.Windows.Forms"> About System.Windows.Forms </span></h2>
+<p>System.Windows.Forms (aka Managed.Windows.Forms, MWF, Winforms) is one of the many <a href="{{site.baseurl}}/Gui_Toolkits" title="Gui Toolkits">GUI Toolkits</a> for use with Mono and is compatible with Microsoft's System.Windows.Forms. Support for Winforms 1.1 and 2.0 has been completed, and is now in a maintenance/bug fixing state.
+</p><p>System.Windows.Forms in Mono is implemented using System.Drawing.  All controls are natively drawn through <a href="{{site.baseurl}}/Drawing" title="Drawing">System.Drawing</a>.  System.Windows.Forms implements its own driver interface to communicate with the host OS windowing system. Currently, we have drivers for X11, Win32, and OSX.  These drivers translate the native window messages into WndProc compatible messages, to provide as much compatibility with native .Net as possible.
+</p><p>In terms of integrating visually with the desktop, we currently ship with a classic Win32 theme.
+</p>
+<h3> <span class="mw-headline" id="Contributing"> Contributing </span></h3>
+<p>The Winforms effort is being coordinated on the Mono-Winforms-List mailing list.  If you would like to contribute, or need help using Winforms, it is suggested that you subscribe to this mailing list.  (See <a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">Mailing Lists</a> for details.)
+</p><p>Currently, all of the controls are pretty much complete.  We are now mainly fixing bugs in our implementation.  See <a href="{{site.baseurl}}/Bugs" title="Bugs">Bugs</a>.
+</p><p>If you would like to contribute, you can:
+</p>
+<ul><li> If you find a bug in one of our methods, you can file a bug with a small test case.
+</li><li> You can fix a bug in one of our methods, either that you found or from our bugs page.
+</li></ul>
+<p>Please note there are a few rules for contributing to Winforms:
+</p>
+<ul><li> The general rules from <a href="{{site.baseurl}}/Contributing" title="Contributing">Contributing</a>, especially the Special Notes at the bottom.
+</li><li> Controls must be drawn using System.Drawing code.
+</li><li> Drawing code must be tied into the theming interface.
+</li><li> If your method can be tested by an automated NUnit test, please include a test as well.
+</li></ul>
+<p>If you are working on a large feature, you may wish to post your intent on the mailing list to prevent duplication of effort.
+</p>
+<h3> <span class="mw-headline" id="Drivers"> Drivers </span></h3>
+<p>There is a per-windowing system driver which performs the following tasks:
+</p>
+<ul><li> Keyboard input
+</li><li> Window creation
+</li><li> Event translation
+</li></ul>
+<p>Mono's Windows.Forms implementation translates the native system events such as X11 into Win32 WM_ messages and dispatches them using the WndProc mechanism.  This allows applications that depend on overriding WndProc to get some features not exposed by the APIs to still run.
+</p>
+<h3> <span class="mw-headline" id="Accessibility"> Accessibility </span></h3>
+<p>Currently Windows.Forms does not support accessibility, this is being worked on in a separate project that started in January of 2008.   See the <a href="{{site.baseurl}}/Accessibility" title="Accessibility">Accessibility</a> page for details about how this will integrate into the system.
+</p>
+<h2> <span class="mw-headline" id="Sample_Code"> Sample Code </span></h2>
+<p>Sample applications for Mono's Windows.Forms are available in <a href="https://github.com/mono/winforms" class="external text" rel="nofollow">winforms on github</a>
+</p>
+<h2> <span class="mw-headline" id="Theming"> Theming </span></h2>
+<p>This section discusses the theming issues in Mono's implementation of Windows Forms as these questions are asked frequently:
+</p>
+<h3> <span class="mw-headline" id="Why_Not_Use_Native_Widgets.3F"> Why Not Use Native Widgets? </span></h3>
+<p>It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects).  A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">Gtk#</a>.
+</p>
+<h3> <span class="mw-headline" id="Fitting_In"> Fitting In </span></h3>
+<p>Although we cannot use native widgets, we still would like to make a reasonable effort to achieve a more native "look and feel" on different platforms.  To accomplish this, we have created a theming interface with the hope that in the future it will facilitate our controls looking more native.  Having a separate theme class from the get-go forces those who are writing the controls to design code where the drawing code is not integrated and intermingled with the control code.
+</p>
+<h3> <span class="mw-headline" id="Maturity_of_the_Theming_Interface"> Maturity of the Theming Interface </span></h3>
+<p>Currently, we have the default managed Win32 Classic theme and a native Windows VisualStyles theme.  We would like to have native theming on Linux and OSX.
+</p><p>The best option we currently have for theming is the VisualStyles theme.  On Windows, this calls the native Windows API and allows it to draw natively for us.  Unfortunately, the System.Windows.Forms.VisualStyles namespace is not currently implemented on Linux or OSX.  The best way forward would be to implement this namespace on those platforms.  (Alternatively, one could port Wine's uxtheme.dll and we could ship Clearlooks and Aqua themes that people have done.)
+</p><p>The VisualStyles namespace allows you to focus simply on drawing one element, like a "selected button" instead of having to try to sift through the theming code to find out how it draws a button.
+</p>
+<h2> <span class="mw-headline" id="History"> History </span></h2>
+<p>There were two previous attempts to implement System.Windows.Forms in Mono.  These initial attempts were done on top of other toolkits: first Gtk, then Wine.  Each one had its share of problems, causing it to be abandoned.
+</p><p>The Gtk effort had the following problems:
+</p>
+<ul><li> Mapping one toolkit's semantics to another was very hard.
+</li><li> It would be very cumbersome to map all events into WndProc events, the messaging system at the core of Windows.Forms.
+</li><li> The development effort happened early in the Mono life, with this very sporadic development effort, the code quickly became obsolete or bit-rotted.
+</li><li> Using this on other systems required a Gtk+ installation on the target system (OS X and embedded devices would have suffered the most).
+</li></ul>
+<p>The Wine effort could have been a successful approach, however there were several technical obstacles:
+</p>
+<ul><li> Multithreading support. Wine has a specific thread setup that is not compatible with Mono. While this was solvable, it would have required larger patches to Wine.
+</li><li> Dependencies. To have Mono and Wine interoperate, a glue library was required. This library required to know where Wine was installed to (we had a Wine patch that eased this requirement, but it was not accepted into Wine).
+</li><li> Moving target. Key functions in Wine changed often enough that with every Wine release we had to start over making our glue code work again, sometimes becoming incompatible with previous Wine versions.
+</li><li> Wine/Gdi+ interactions: The way System.Drawing had to be made compatible with Wine was extremely inefficient.  Wine uses the GDI model (raster painting), while our System.Drawing implementation, built on top of Cairo, uses the GDI+ model (compositing model).  Making them both talk was extremely inefficient as every transition from one model to the other required the bitmaps to be copied.
+</li></ul>
+<p>The current approach is to implement all controls fully in managed code, and uses an abstract theme interface to paint the widgets.  The default theme interfaces renders the widgets using System.Drawing.
+</p>
+<h2> <span class="mw-headline" id="Webbrowser_Control"> Webbrowser Control </span></h2>
+<p>Information about the WebBrowser control can be found on the <a href="{{site.baseurl}}/WebBrowser" title="WebBrowser">WebBrowser</a> page.
+</p>
+<h2> <span class="mw-headline" id="WinForms_Designer"> WinForms Designer </span></h2>
+<p>For more information <a href="{{site.baseurl}}/WinForms_Designer" title="WinForms Designer"> check here</a>.
+</p>

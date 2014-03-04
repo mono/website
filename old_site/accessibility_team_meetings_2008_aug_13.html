@@ -1,0 +1,1083 @@
+---
+layout: obsolete
+title: "Accessibility: Team Meetings 2008 Aug 13"
+permalink: /old_site/Accessibility:_Team_Meetings_2008_Aug_13/
+---
+
+<h1>Accessibility: Team Meetings 2008 Aug 13</h1>
+
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, let's start then, we'll follow the usual order, unless QA or build guys want to start earlier than the devs&#160;:)
+</td>
+<td> 07:07
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- suseROCKs [~bryen@c-24-12-98-76.hsd1.il.comcast.ne t] has quit [Remote closed the connection]
+</td>
+<td> 07:08
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> ok, should I start then?
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- knocte changed the topic of #mono-a11y to: Accessibility: Iteration switch meeting (weekly)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yes, sandy, please, go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I've been spending a lot of time fixing up base provider unit tests this iteration (not yet committed). I've found some issues with my LabeledBy property implementation. I'm thinking now that I've just made some mistakes using the Navigation stuff, so I'll ask Mario for some help there today.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm also working to add support for recursive property changes...for example when a control's BoundingRectangeProperty changes, this should also change for its children, etc.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also have a bridge patch to notify at-spi when IsOffscreenProperty and BoundingRectangleProperty change, but I need to genericize it a bit because right now it's only implemented for Button.  This is related to bug #411345.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I will have all of these bits wrapped up by the end of the week.  Then I can move on to the next control.  Also, decriptor has been working to see if we can get the UIA and WindowsBase assemblies moved from olive to mcs.  I'm going to get him some details about how far along WindowsBase is, and I may also be helping him to finish filling out missing fields/classes/etc in olive's UIA assemblies.  The discussion won't really start until Miguel
+</td></tr>
+<tr>
+<td>
+</td>
+<td>  is back in town next week.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Oh, and I'm not sure that I'll be able to work Friday.  I have to fast and take some nasty drugs in preparation for yet another doctor appointment (on Saturday), so that might affect my ability to work.
+</td>
+<td> 07:09
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'll update the wiki after the meeting; sorry for not getting to it earlier
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- jpallen [~jpallen@137.65.132.9] has joined #mono-a11y
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> jpallen: we just started; I just went
+</td></tr>
+<tr>
+<td>
+</td>
+<td> you haven't missed much
+</td></tr>
+<tr>
+<td> <b>&lt; jpallen&gt;&#160;</b>
+</td>
+<td> thanks
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, sandy thanks, hi jpallen
+</td>
+<td> 07:10
+</td></tr>
+<tr>
+<td> <b>&lt; jpallen&gt;&#160;</b>
+</td>
+<td> hello
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy: any delay in respect to what you planned in last meeting?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> just the uncommitted code?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: yes, I did not start a new control like I had planned
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I had PrintPreviewDialog in there as a placeholder for whatever control I was going to do
+</td>
+<td> 07:11
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but I did not get to it
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so that will be my big priority this iteration
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok fine
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mario: you ready?
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> yes!
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> go ahead
+</td>
+<td> 07:12
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> I updated Navigation, now you don't need to implement any Navigation-classes, all is *automagically*
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> woo hoo!
+</td>
+<td> 07:13
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> fixed some bugs, and I opened new bugs to track the patches in mcs MWF
+</td></tr>
+<tr>
+<td>
+</td>
+<td> spent some time fixing bugs found by mgorse
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm missing the component-based providers, but I'm sure next iteration will finish them
+</td>
+<td> 07:14
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done!
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, I hope mgorse has not get stuck too much about them
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so your plan for next iteration is finish component based providers delayed in this one?
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> yes
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's switch to mgorse
+</td>
+<td> 07:15
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I started working on mapping ProgressBar in the bridge but haven't tested it yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Also started working on ListItem
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I haven't committed any of that yet, except for accidentally committing a ProgressBar test
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I've fixed a few bugs in the bridge
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I've been reworking the bridge unit tests to generate real widgets with a form as the parent, since I think that that will make it less likely that we'll run into strange problems with the tester, although I'm not sure yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also tried to add in a PreviewKeyDown event listener on a form, in the hope that it would intercept keys and let me pass them on to the bridge, but it wasn't working.  I'll ask about that on #mono-winforms
+</td>
+<td> 07:16
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, your plan for next iteration? a new bridge class?
+</td>
+<td> 07:17
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> Next iteration I plan on working on mapping GroupBox in the bridge (unless knocte has already taken it--haven't looked at the wiki) and trying to get the unit tests that are failing to pass
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, thanks mike
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's talk with neville
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> ok
+</td>
+<td> 07:18
+</td></tr>
+<tr>
+<td>
+</td>
+<td> this iteration, is not productive, i was going to implement status bar panel, but puzzled with its type, it is maybe pane type or edit type, but not sure right now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> as FragmentRootControl can automatically add child provider, i deprecated edit provider and its behaviors
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration, i will follow mario's comments on my patch, and make a new version. to implement other controls, i would like to talk about it with sandy and mario after meeting
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, do you know which controls are they going to be? already chosen?
+</td>
+<td> 07:19
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> not yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i will finish navigation first
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, remember to update wiki status, on the schedule page and on the provider status
+</td>
+<td> 07:20
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and thanks!
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> now let's talk about my "dev" part
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I've been catching up with a lot of things after my FTO, and figuring out about all my new tasks for the new role, however also looked at some tests I was lacking
+</td>
+<td> 07:21
+</td></tr>
+<tr>
+<td>
+</td>
+<td> had a bad time figuring out a misleading/confusing implementation in gail about the difference between menuitem and menu (it turns out a submenuitem can take the "menu" role, which is crazy) so
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I fixed some tests and now I was going to commit more
+</td>
+<td> 07:22
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I hope to finish all these bits by the end of the week and have the Menu finally finished
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (BTW on Friday it's national holiday in Spain IIRC, just FYI)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, let's switch to QA guys
+</td>
+<td> 07:23
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: you there and ready?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's get back to calen that I'm sure is there&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> This iteration was just Monday and Tuesday for me.  I added some code to one of our gtk examples to show how we can test the sorting order of certain controls.  I created some QA architecture diagrams (showing how we are testing WinForms using Strongwind) to add to our QA docs and also to be used for our utosc presentation.
+</td>
+<td> 07:24
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh sorry brian
+</td></tr>
+<tr>
+<td>
+</td>
+<td> go on
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> knocte:^^
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> I also came up with a plan for how to test the different "styles" of each control.  Knocte suggested this because some controls have different
+</td></tr>
+<tr>
+<td>
+</td>
+<td> styles/properties that will affect their implementation by the developers
+</td></tr>
+<tr>
+<td>
+</td>
+<td> This week I'm going to start working with Orca like I mentioned last week.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ray: i'll talk to you about your mailing list questions after this meeting if you have time
+</td>
+<td> 07:25
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks brian, now calen&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> knocte: okay
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I adjusted my schedule and have finished strongwind code for label and form controls but not for groupbox, picturebox.
+</td>
+<td> 07:26
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> (btw, good job on the styles part)
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> added 'showing' state to our states list and modify some states with '-' to link two word in states.py, modify all of the old winforms test code because bug411345 has been fixed. verified some bugs
+</td></tr>
+<tr>
+<td>
+</td>
+<td> read 'Testing Howto' and make a little bit correction, give some suggestions. discuss 'styles' issue.
+</td>
+<td> 07:27
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I would like to keep on script strongwind test for listbox, checkedlistbox in the coming iteration.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> sandy: sorry i reopened <a href="https://bugzilla.novell.com/show_bug.cgi" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi</a>&#160;?id=411328, i think you have noticed that&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte, decriptor: BTW, there is one crash when i run groupbox.py app today, the debug info in: <a href="http://rafb.net/p/8tTUxc51.html" class="external free" rel="nofollow">http://rafb.net/p/8tTUxc51.html</a>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, btw that reminds me about the scrollbar bugs, mgorse: you started to work on scrollbar already, right?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks calen, mmm, groupbox was not started IIRC, at least there's no class with that name in the bridge
+</td>
+<td> 07:28
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> knocte: yeah. Theoretically, anyway.  What bugs are you referring to?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> does that bug need to be marked as private?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> mgorse: you'll get emails in your inbox about them soon if you didn't already
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: why?
+</td>
+<td> 07:29
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> decriptor: all of our bugs are private
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> I've sort of got detoured with getting exceptions in the tester
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> decriptor: needs to be fixed
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy: is that a requirement from anyone?
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> yes, why are bugs private?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: marking them private kills community effort
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> decriptor: I agree, that's why I'm asking sandy
+</td>
+<td> 07:30
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> jpallen: was there somebody we needed to ping to fix that?
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> bgmerrell: fyi, Orca isn't working right with our bridge right now because of the key-grab issue that I alluded to
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I'm on my other computer so I dont' have my IM logs handy, sorry
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> sandy: you can change it on the bug itself I think
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy: oh, then you mean by default?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> decriptor: no, our entire product/component/whatever is private
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> oh
+</td></tr>
+<tr>
+<td>
+</td>
+<td> sandy: I guess that doesn't help&#160;:P
+</td>
+<td> 07:31
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, I'll try to move the bugzilla private problem forward
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> mgorse: thanks for the tip, i guess i will set up some orca tests against our gtk samples for now, just to set things up
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> anyway, I have more info in a IM log with jpallen, so I'll check that
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, ok, we deviated a bit, I think we were with Ray's turn now, right?
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> bgmerrell: okay.  I'm hoping that someone on #mono-winforms might know what to do and I'll be able to make some progress on it
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> yes
+</td>
+<td> 07:32
+</td></tr>
+<tr>
+<td>
+</td>
+<td> should i start?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> mgorse:  cool, ray: yes, first QA, then build
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> in the early days of the week, i implement two controls, but get stuck with two controls as well. it wastes me a lot of time.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> there are 8 controls left, and i left the complex controls and implement them at the end, so that i could be concentrated on them.&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and then, i have spent time to read new materials on the wiki.
+</td>
+<td> 07:33
+</td></tr>
+<tr>
+<td>
+</td>
+<td> didn't do much about building, packaging atspi-dbus drives me and decriptor crazy&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> in the next iteration,  i'll pursue to do what i am doing, and pay  more  attention to Strongwind test script.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> when you get stuck with a control, maybe it's handy to use VS.NET's visual designer, I use it on my virtual machine sometimes
+</td>
+<td> 07:34
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> yes, me too
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> (easier to design sample controls that way, instead of coding them all by hand)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> oh fine then
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, thanks ray
+</td></tr>
+<tr>
+<td>
+</td>
+<td> now, decriptor?
+</td>
+<td> 07:35
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> can do
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> your turn
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> I was at linux world expo last week and gave a presentation on UIA&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> cool
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> but I've worked on figure out what's getting messed up in monobuild with the rpms, working on trying to get atspi-dbus build working
+</td>
+<td> 07:36
+</td></tr>
+<tr>
+<td>
+</td>
+<td> as ray mentioned
+</td></tr>
+<tr>
+<td>
+</td>
+<td> also looking at possibly using cruise control .net as I have time to look at it
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it might be something that the mono team moves to as well once 2.0 is out the door
+</td>
+<td> 07:37
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh really, did you talk about it with any mono team member?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> and in some free time, look at making our uia stuff api stable with some help from sandy
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: with ajorg who seems to be the goto guy now since wade left
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> the goto guy? heheh
+</td>
+<td> 07:38
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: also I've been emailing on the mono-devel list about olive and mono/mcs and moving our stuff from olive to mono
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: you are on the mono-devel list right?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, saw that, many thanks about your interest
+</td></tr>
+<tr>
+<td>
+</td>
+<td> yep
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> no prob
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, if you're done then
+</td>
+<td> 07:39
+</td></tr>
+<tr>
+<td>
+</td>
+<td> did I miss anyone?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> next iteration, I'm going to continue working on build stuff&#160;:) ...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm thinking if we can get our stuff out of olive and into mono/mcs it might be easier to get our stuff built on other distributions as well
+</td></tr>
+<tr>
+<td>
+</td>
+<td> hoping to get that atpsi-dbus stuff working too
+</td>
+<td> 07:40
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, I hope we can move it forward, however it seems there's a lot of code stubs there...mmm
+</td></tr>
+<tr>
+<td>
+</td>
+<td> fine, dive into atspi-dbus if you can
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: its an rpmlint issue that we can't figure out
+</td>
+<td> 07:41
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td>wiki alias suffix preferably)
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> I've started asking around and all the obvious things are there&#160;:(
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> decriptor: rpmlint is an rpm "compiler"&#160;?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> or verifier like gendarme?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> tester of sorts
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I think
+</td></tr>
+<tr>
+<td>
+</td>
+<td> verifier is probably more correct
+</td>
+<td> 07:42
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> yes, i guess verifier
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: a question that has come up, maybe for mgorse is how do we go about checking/testing atspi-dbus
+</td></tr>
+<tr>
+<td>
+</td>
+<td>&#160;?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> uninstall the old and install the new?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I guess it's about removing at-spi corba packages and replacing them, and then running QA tests for instance?
+</td>
+<td> 07:43
+</td></tr>
+<tr>
+<td>
+</td>
+<td> s/them/them with the new ones/
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> that's more up to bgmerrell I guess&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yes, maybe you can sync with him after you have the packages
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> can do, I'm really hoping to have those finished this iteration
+</td>
+<td> 07:44
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> decriptor: Do you mean testing the package, or testing the functionality of the code?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> both I guess
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> There is some stuff in the tests sub-directory, but it isn't complete
+</td>
+<td> 07:46
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte, decriptor: Apparently Gary Ekker is the guy who can fix bugzilla for us; jpallen emailed him last month but we didn't hear anything back, so I just pinged him again about it.
+</td></tr>
+<tr>
+<td> <b>&lt; jpallen&gt;&#160;</b>
+</td>
+<td> so, i'm not seeing how it is private
+</td>
+<td> 07:47
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> sandy: he sits across the hall from me&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh, thanks sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> jpallen: you can't see them without a novell account
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I'll test with my brother's bugzilla account which is not a novell one
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> I have both a novell and non novell account that's how I found out its private
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> or just log out and try to look at a bug url
+</td></tr>
+<tr>
+<td> <b>&lt; jpallen&gt;&#160;</b>
+</td>
+<td> hmm
+</td>
+<td> 07:48
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh yeah, that's easier
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> jpallen: you'll see toward the bottom that there is a checkbox "This bug is only open to Novell employees and contractors"
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> decriptor, you can see the top right of the page, it has a red novell icon
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> if you look at group visibility on the right you only see the red circle N and not a globe for global
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> jpallen: and it cannot be unchecked
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ditto decriptor
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> mgorse: is anyone else testing the functionality of the at-spi over dbus code?
+</td>
+<td> 07:49
+</td></tr>
+<tr>
+<td> <b>&lt; jpallen&gt;&#160;</b>
+</td>
+<td> ah
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well, I think we can close the meeting?&#160;:)  thanks all for coming
+</td>
+<td> 07:51
+</td></tr>
+</table>
+

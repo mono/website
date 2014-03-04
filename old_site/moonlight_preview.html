@@ -1,0 +1,92 @@
+---
+layout: obsolete
+title: "Moonlight/Preview"
+permalink: /old_site/Moonlight/Preview/
+---
+
+<h1>Moonlight/Preview</h1>
+
+<p>Moonlight 3.0 will be the new version of Novell's Silverlight-compatible plugin, compatible with Silverlight 3.0.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Downloading"><span class="tocnumber">1</span> <span class="toctext">Downloading</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Source_code"><span class="tocnumber">2</span> <span class="toctext">Source code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Release_Notes"><span class="tocnumber">3</span> <span class="toctext">Release Notes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Preview_1"><span class="tocnumber">4</span> <span class="toctext">Preview 1</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Preview_2"><span class="tocnumber">5</span> <span class="toctext">Preview 2</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Preview_7"><span class="tocnumber">6</span> <span class="toctext">Preview 7</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Preview_9"><span class="tocnumber">7</span> <span class="toctext">Preview 9</span></a></li>
+</ul>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Downloading"> Downloading </span></h3>
+<p>XPI's for both 32 and 64 bit linux platforms, as well as instructions on getting tarballs and source from SVN are available <a href="http://go-mono.com/moonlight-preview" class="external text" rel="nofollow">here</a>.
+</p>
+<h3> <span class="mw-headline" id="Source_code"> Source code </span></h3>
+<p>While we are not currently providing preview releases as tar files but you can check out the source from svn.
+</p>
+<pre class="bash" style="font-family:monospace;"> $ <span style="color: #c20cb9; font-weight: bold;">svn co</span> svn:<span style="color: #000000; font-weight: bold;">//</span>anonsvn.mono-project.com<span style="color: #000000; font-weight: bold;">/</span>source<span style="color: #000000; font-weight: bold;">/</span>branches<span style="color: #000000; font-weight: bold;">/</span>moon-<span style="color: #000000;">2</span>-<span style="color: #000000;">99</span>-<span style="color: #000000;">0</span>-<span style="color: #000000;">3</span></pre>
+<p><br />
+Notice that this branch contains moonlight as well as mono, mcs, and mono-basic, these releases are required to build this version of Moonlight, it will <b>not</b> work with Mono 2.4, and also won't work out of the box with Mono 2.6.
+</p><p>To build the above, you should build the modules in this order:
+</p>
+<ul><li> mono
+</li><li> mono-basic
+</li><li> moon
+</li></ul>
+<p>Follow the instructions in our <a href="{{site.baseurl}}/Compiling_Mono_From_SVN" title="Compiling Mono From SVN">Compiling Mono From SVN</a> page.
+</p><p>As always, you can get the development source from trunk:
+</p>
+<pre class="bash" style="font-family:monospace;"> $ <span style="color: #c20cb9; font-weight: bold;">svn co</span> svn:<span style="color: #000000; font-weight: bold;">//</span>anonsvn.mono-project.com<span style="color: #000000; font-weight: bold;">/</span>source<span style="color: #000000; font-weight: bold;">/</span>trunk<span style="color: #000000; font-weight: bold;">/</span>moon</pre>
+<h3> <span class="mw-headline" id="Release_Notes"> Release Notes </span></h3>
+<h3> <span class="mw-headline" id="Preview_1"> Preview 1 </span></h3>
+<ul><li> Our platform abstraction layer is in SVN now.  Currently the only implementation is for Gtk, but none of the core code has any dependency on windowing systems, and should be much more easily portable to other OS's and windowing system (and UI toolkits).
+</li></ul>
+<ul><li> MP4 demuxer.  Currently there is no h264 decoder, though, unless you're compiling using ffmpeg.
+</li></ul>
+<ul><li> The start of work on UI virtualization.  This is a common method for dealing with scrollable lists displaying large datasets.
+</li></ul>
+<ul><li> We've fixed the problem that was causing other plugins to register themselves as handling silverlight content.  We play much nicer with the rest of the plugin ecosystem, so all you people who had to remove your picasa plugins to use moonlight, rejoice!
+</li></ul>
+<ul><li> A multitude of small fixes and additions from 3.0 -- really too many to count -- such as Style.BasedOn, RelativeSource based Bindings, etc).
+</li></ul>
+<h3> <span class="mw-headline" id="Preview_2"> Preview 2 </span></h3>
+<ul><li> New NPAPI-based html bridge.  We no longer need the bridges for dealing with the page.  We're working on removing the need for the bridge for the remaining case (mms urls).
+</li></ul>
+<ul><li> Firefox 3.6 and 3.7:  We added a Firefox 3.6 specific bridge, and as long as the app doesn't do anything with mms urls, things *should* work in Firefox 3.7.  For instance, the nbc olympics site works in 3.7, and performance of both the plugin and the browser is improved on multi-cpu systems.
+</li></ul>
+<ul><li> Olympics support.  This is our first preview to really start working with the NBC Olympics site.  We are tracking issues at <a href="{{site.baseurl}}/Moonlight/OlympicsPlayerIssues" title="Moonlight/OlympicsPlayerIssues">Moonlight/OlympicsPlayerIssues</a>
+</li></ul>
+<ul><li> Local Messaging.  Demos from last year's MIX, such as Chess Wars and the Bouncing Balls, work.
+</li></ul>
+<ul><li> Effects are available now.  Our blur effect is a hand coded version, while the DropShadow and all ShaderEffects are implemented by converting to Gallium's shader language.  They can cause a big perf hit, but you can disable them by adding "effects=no" to the MOONLIGHT_OVERRIDES environment variable before starting your browser.  The Olympics player uses the BlurEffect pretty extensively, so you'll want to use that environment variable if you run into performance problems.
+</li></ul>
+<ul><li> Some optimizations making DependencyObject::GetValue a bit speedier, and we also do fewer GetValues in general by caching things locally (particularly when used in loop conditions).
+</li></ul>
+<ul><li> Many memory leaks have been fixed, and we've started work on bringing down our per-tick allocation requirements.
+</li></ul>
+<h3> <span class="mw-headline" id="Preview_7"> Preview 7 </span></h3>
+<ul><li> Roughly API complete to SL4.0 beta.  Next preview will be API compatible with SL 4.0 RTW.
+</li></ul>
+<ul><li> video4linux2 capture support, but support for pixel formats is sparse.  right now the supported formats are YUYV and YV12/YUV420 (planar).
+</li></ul>
+<ul><li> SSE2 fast paths for gradient fills in the embedded pixman/cairo (not pushed upstream yet).
+</li></ul>
+<ul><li> Fixes for chrome support and to our curl bridge.
+</li></ul>
+<ul><li> Several html bridge fixes.
+</li></ul>
+<ul><li> element to element binding.
+</li></ul>
+<ul><li> Client HTTP stack
+</li></ul>
+<ul><li> cascading (BasedOn) styles are now supported
+</li></ul>
+<ul><li> new right-click dialog so we can (finally!) managed isostore usage.
+</li></ul>
+<h3> <span class="mw-headline" id="Preview_9"> Preview 9 </span></h3>
+<ul><li> new managed parser for RuntimeVersion=4
+</li></ul>
+<ul><li> improved GC support - the GC is now the one-true means of freeing all objects, including c++ peers.
+</li></ul>
+

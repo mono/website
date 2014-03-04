@@ -1,0 +1,834 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Performance"
+permalink: /old_site/Gendarme.Rules.Performance/
+---
+
+<h1>Gendarme.Rules.Performance</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s performance rules are located in the <b>Gendarme.Rules.Performance.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Performance/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AvoidLargeNumberOfLocalVariablesRule"><span class="tocnumber">1.1</span> <span class="toctext">AvoidLargeNumberOfLocalVariablesRule</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#MaximumVariables"><span class="tocnumber">1.1.1</span> <span class="toctext">MaximumVariables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#AvoidLargeStructureRule"><span class="tocnumber">1.2</span> <span class="toctext">AvoidLargeStructureRule</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#MaxSize"><span class="tocnumber">1.2.1</span> <span class="toctext">MaxSize</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#AvoidRepetitiveCastsRule"><span class="tocnumber">1.3</span> <span class="toctext">AvoidRepetitiveCastsRule</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AvoidReturningArraysOnPropertiesRule"><span class="tocnumber">1.4</span> <span class="toctext">AvoidReturningArraysOnPropertiesRule</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AvoidTypeGetTypeForConstantStringsRule"><span class="tocnumber">1.5</span> <span class="toctext">AvoidTypeGetTypeForConstantStringsRule</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#AvoidUncalledPrivateCodeRule"><span class="tocnumber">1.6</span> <span class="toctext">AvoidUncalledPrivateCodeRule</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#AvoidUninstantiatedInternalClassesRule"><span class="tocnumber">1.7</span> <span class="toctext">AvoidUninstantiatedInternalClassesRule</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#AvoidUnneededCallsOnStringRule"><span class="tocnumber">1.8</span> <span class="toctext">AvoidUnneededCallsOnStringRule</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#AvoidUnneededFieldInitializationRule"><span class="tocnumber">1.9</span> <span class="toctext">AvoidUnneededFieldInitializationRule</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#AvoidUnneededUnboxingRule"><span class="tocnumber">1.10</span> <span class="toctext">AvoidUnneededUnboxingRule</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#AvoidUnsealedConcreteAttributesRule"><span class="tocnumber">1.11</span> <span class="toctext">AvoidUnsealedConcreteAttributesRule</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#AvoidUnsealedUninheritedInternalTypeRule"><span class="tocnumber">1.12</span> <span class="toctext">AvoidUnsealedUninheritedInternalTypeRule</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#AvoidUnusedParametersRule"><span class="tocnumber">1.13</span> <span class="toctext">AvoidUnusedParametersRule</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#AvoidUnusedPrivateFieldsRule"><span class="tocnumber">1.14</span> <span class="toctext">AvoidUnusedPrivateFieldsRule</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#CompareWithEmptyStringEfficientlyRule"><span class="tocnumber">1.15</span> <span class="toctext">CompareWithEmptyStringEfficientlyRule</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#ConsiderCustomAccessorsForNonVisibleEventsRule"><span class="tocnumber">1.16</span> <span class="toctext">ConsiderCustomAccessorsForNonVisibleEventsRule</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#DoNotIgnoreMethodResultRule"><span class="tocnumber">1.17</span> <span class="toctext">DoNotIgnoreMethodResultRule</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#ImplementEqualsTypeRule"><span class="tocnumber">1.18</span> <span class="toctext">ImplementEqualsTypeRule</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#MathMinMaxCandidateRule"><span class="tocnumber">1.19</span> <span class="toctext">MathMinMaxCandidateRule</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#OverrideValueTypeDefaultsRule"><span class="tocnumber">1.20</span> <span class="toctext">OverrideValueTypeDefaultsRule</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#PreferCharOverloadRule"><span class="tocnumber">1.21</span> <span class="toctext">PreferCharOverloadRule</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#PreferLiteralOverInitOnlyFieldsRule"><span class="tocnumber">1.22</span> <span class="toctext">PreferLiteralOverInitOnlyFieldsRule</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#RemoveUnneededFinalizerRule"><span class="tocnumber">1.23</span> <span class="toctext">RemoveUnneededFinalizerRule</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#RemoveUnusedLocalVariablesRule"><span class="tocnumber">1.24</span> <span class="toctext">RemoveUnusedLocalVariablesRule</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#ReviewLinqMethodRule"><span class="tocnumber">1.25</span> <span class="toctext">ReviewLinqMethodRule</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#UseIsOperatorRule"><span class="tocnumber">1.26</span> <span class="toctext">UseIsOperatorRule</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#UseStringEmptyRule"><span class="tocnumber">1.27</span> <span class="toctext">UseStringEmptyRule</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule"><span class="tocnumber">1.28</span> <span class="toctext">UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#UseTypeEmptyTypesRule"><span class="tocnumber">1.29</span> <span class="toctext">UseTypeEmptyTypesRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="AvoidLargeNumberOfLocalVariablesRule"> AvoidLargeNumberOfLocalVariablesRule </span></h3>
+<p>This rule warns when the number of local variables exceed a maximum value (default is 64). Having a large amount of local variables makes it hard to generate code that performs well and, likely, makes the code harder to understand. 
+</p><p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<p><b>Configuration</b>
+</p><p>Some elements of this rule can be customized to better fit your needs.
+</p>
+<h4> <span class="mw-headline" id="MaximumVariables"> MaximumVariables </span></h4>
+<p>The maximum number of local variables which methods may have without a defect being reported.
+</p>
+<h3> <span class="mw-headline" id="AvoidLargeStructureRule"> AvoidLargeStructureRule </span></h3>
+<p>This rule will fire if a value type (struct in C#) is larger than a maximum value (16 bytes by default). This is a problem because, unlike reference types, value types are bitwise-copied whenever they are assigned to a variable or passed to a method. If the type cannot be reduced in size then it should be turned into a reference type (class in C#). 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">struct</span> BigArgb <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">long</span> a, r, g, b<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> BigArgb <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">long</span> a, r, g, b<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<p><b>Configuration</b>
+</p><p>Some elements of this rule can be customized to better fit your needs.
+</p>
+<h4> <span class="mw-headline" id="MaxSize"> MaxSize </span></h4>
+<p>The maximum size structs may be without a defect.
+</p>
+<h3> <span class="mw-headline" id="AvoidRepetitiveCastsRule"> AvoidRepetitiveCastsRule </span></h3>
+<p>This rule fires if multiple casts are done on the same value, for the same type. Casts are expensive so reducing them, by changing the logic or caching the result, can help performance. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// first cast (is)</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>o <a href="http://www.google.com/search?q=is+msdn.microsoft.com"><span style="color: #008000;">is</span></a> ICollection<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// second cast (as) if item implements ICollection</span>
+        Process <span style="color: #008000;">&#40;</span>o <span style="color: #0600FF; font-weight: bold;">as</span> ICollection<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// a single cast (as) per item</span>
+    ICollection c <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>o <span style="color: #0600FF; font-weight: bold;">as</span> ICollection<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>c <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        SingleCast <span style="color: #008000;">&#40;</span>c<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// first cast (is):</span>
+<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>o <a href="http://www.google.com/search?q=is+msdn.microsoft.com"><span style="color: #008000;">is</span></a> IDictionary<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// second cast if item implements IDictionary:</span>
+    Process <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>IDictionary<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008080; font-style: italic;">// first cast (is):</span>
+    <span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>o <a href="http://www.google.com/search?q=is+msdn.microsoft.com"><span style="color: #008000;">is</span></a> ICollection<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// second cast if item implements ICollection:</span>
+        Process <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>ICollection<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// a single cast (as) per item</span>
+IDictionary dict<span style="color: #008000;">;</span>
+ICollection col<span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>dict <span style="color: #008000;">=</span> o <span style="color: #0600FF; font-weight: bold;">as</span> IDictionary<span style="color: #008000;">&#41;</span> <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    SingleCast <span style="color: #008000;">&#40;</span>dict<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>col <span style="color: #008000;">=</span> o <span style="color: #0600FF; font-weight: bold;">as</span> ICollection<span style="color: #008000;">&#41;</span> <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        SingleCast <span style="color: #008000;">&#40;</span>col<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidReturningArraysOnPropertiesRule"> AvoidReturningArraysOnPropertiesRule </span></h3>
+<p>This rule check for properties which return arrays. This can be a problem because properties are supposed to execute very quickly so it's likely that this property is returning a reference to the internal state of the object. This means that the caller can change the object's internal state via a back-door channel which is usually a very bad thing and it means that the array's contents may change unexpectedly if the caller holds onto the array. The preferred approach is to either return a read-only collection or to change the property to a method and return a copy of the array (it's important to use a method so that callers are not misled about the performance of the property). 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> Foo <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// return the data inside the instance</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> foo<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> Bar <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// return a copy of the instance's data</span>
+        <span style="color: #008080; font-style: italic;">// (this is bad because users expect properties to execute quickly)</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span> bar<span style="color: #008000;">.</span><span style="color: #0000FF;">Clone</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> GetFoo <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span> foo<span style="color: #008000;">.</span><span style="color: #0000FF;">Clone</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> GetFoo <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span> bar<span style="color: #008000;">.</span><span style="color: #0000FF;">Clone</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidTypeGetTypeForConstantStringsRule"> AvoidTypeGetTypeForConstantStringsRule </span></h3>
+<p>This rule warns when a method use <b>Type.GetType(string)</b> with a constant string. Such calls requires reflection in order to return a <b>Type</b> instance and, for known types, can be replaced with a much faster <b>typeof(x)</b>. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;">booleanType <span style="color: #008000;">=</span> Type<span style="color: #008000;">.</span><span style="color: #0000FF;">GetType</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;System.Boolean&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;">booleanType <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">bool</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUncalledPrivateCodeRule"> AvoidUncalledPrivateCodeRule </span></h3>
+<p>This rule will check for internally visible methods which are never called. The rule will warn you if a private method isn't called in its declaring type or if an internal method doesn't have any callers in the assembly or isn't invoked by the runtime or a delegate. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeSuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// ...</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (removing unused code):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (use the code):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeSuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// ...</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        MakeSuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidUninstantiatedInternalClassesRule"> AvoidUninstantiatedInternalClassesRule </span></h3>
+<p>This rule will fire if a type is only visible within its assembly, can be instantiated, but is not instantiated. Such types are often leftover (dead code) or are debugging/testing code and not required. However in some case the types might by needed, e.g. when accessed thru reflection or if the <b>[InternalsVisibleTo]</b> attribute is used on the assembly. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// defined, but never instantiated</span>
+<span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyInternalClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// ...</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyInternalClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        MyInternalClass c <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyInternalClass <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008080; font-style: italic;">// ...</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidUnneededCallsOnStringRule"> AvoidUnneededCallsOnStringRule </span></h3>
+<p>This rule detects when some methods, like <b>Clone()</b>, <b>Substring(0)</b>, <b>ToString()</b> or <b>ToString(IFormatProvider)</b>, are being called on a string instance. Since these calls all return the original string they don't do anything useful and should be carefully reviewed to see if they are working as intended and, if they are, the method call can be removed. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> PrintName <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: {0}&quot;</span>, name<span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> PrintName <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: {0}&quot;</span>, name<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.0 this rule was more limited and named AvoidToStringOnStringsRule
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUnneededFieldInitializationRule"> AvoidUnneededFieldInitializationRule </span></h3>
+<p>This rule looks for constructors that assign fields to their default value (e.g. 0 for an integer, null for an object or a string). Since the CLR zero initializes all values there is no need, under most circumstances, to assign default values. Doing so only adds size to source code and in IL. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> i<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> Bad <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+        s <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> i<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> Good <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// don't assign 'i' since it's already 0</span>
+        <span style="color: #008080; font-style: italic;">// but we might prefer to assign a string to String.Empty</span>
+        s <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.2
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUnneededUnboxingRule"> AvoidUnneededUnboxingRule </span></h3>
+<p>This rule checks methods which unbox the same value type multiple times (i.e. the value is copied from the heap into the stack). Because the copy is relatively expensive, the code should be rewritten to minimize unboxes. For example, using a local variable of the right value type should remove the need for more than one unbox instruction per variable. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">struct</span> Message <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">int</span> msg<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> IntPtr hwnd, lParam, wParam, IntPtr result<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #6666cc; font-weight: bold;">bool</span> result <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">msg</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">msg</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hwnd</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hwnd</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lParam</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lParam</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">wParam</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">wParam</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">result</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">result</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> result<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">struct</span> Message <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">int</span> msg<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> IntPtr hwnd, lParam, wParam, IntPtr result<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Message msg <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Message<span style="color: #008000;">&#41;</span> o<span style="color: #008000;">;</span>
+        <span style="color: #6666cc; font-weight: bold;">bool</span> result <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">msg</span> <span style="color: #008000;">==</span> msg<span style="color: #008000;">.</span><span style="color: #0000FF;">msg</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hwnd</span> <span style="color: #008000;">==</span> msg<span style="color: #008000;">.</span><span style="color: #0000FF;">hwnd</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lParam</span> <span style="color: #008000;">==</span> msg<span style="color: #008000;">.</span><span style="color: #0000FF;">lParam</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">wParam</span> <span style="color: #008000;">==</span> msg<span style="color: #008000;">.</span><span style="color: #0000FF;">wParam</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        result <span style="color: #008000;">&amp;=</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">result</span> <span style="color: #008000;">==</span> msg<span style="color: #008000;">.</span><span style="color: #0000FF;">result</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> result<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUnsealedConcreteAttributesRule"> AvoidUnsealedConcreteAttributesRule </span></h3>
+<p>This rule fires if an attribute is defined which is both concrete (i.e. not abstract) and unsealed. This is a performance problem because it means that <b>System.Attribute.GetCustomAttribute</b> has to search the attribute type hierarchy for derived types. To fix this either seal the type or make it abstract. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>AttributeUsage <span style="color: #008000;">&#40;</span>AttributeTargets<span style="color: #008000;">.</span><span style="color: #0000FF;">All</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> BadAttribute <span style="color: #008000;">:</span> Attribute <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (sealed):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>AttributeUsage <span style="color: #008000;">&#40;</span>AttributeTargets<span style="color: #008000;">.</span><span style="color: #0000FF;">All</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> SealedAttribute <span style="color: #008000;">:</span> Attribute <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (abstract and sealed):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>AttributeUsage <span style="color: #008000;">&#40;</span>AttributeTargets<span style="color: #008000;">.</span><span style="color: #0000FF;">All</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">class</span> AbstractAttribute <span style="color: #008000;">:</span> Attribute <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008000;">&#91;</span>AttributeUsage <span style="color: #008000;">&#40;</span>AttributeTargets<span style="color: #008000;">.</span><span style="color: #0000FF;">All</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> ConcreteAttribute <span style="color: #008000;">:</span> AbstractAttribute <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.0 this rule was named AvoidUnsealedAttributesRule.
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUnsealedUninheritedInternalTypeRule"> AvoidUnsealedUninheritedInternalTypeRule </span></h3>
+<p>This rule will fire for classes which are internal to the assembly and have no derived classes, but are not <b>sealed</b>. Sealing the type clarifies the type hierarchy and allows the compiler/JIT to perform optimizations such as eliding virtual method calls. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// this one is correct since MyInheritedStuff inherits from this class</span>
+<span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyBaseStuff <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// this one is bad, since no other class inherit from MyConcreteStuff</span>
+<span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyInheritedStuff <span style="color: #008000;">:</span> MyBaseStuff <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// this one is correct since the class is abstract</span>
+<span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyAbstractStuff <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// this one is correct since the class is sealed</span>
+<span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyConcreteStuff <span style="color: #008000;">:</span> MyAbstractStuff <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0 and, before 2.2, was named AvoidUnsealedUninheritedInternalClassesRule
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidUnusedParametersRule"> AvoidUnusedParametersRule </span></h3>
+<p>This rule is used to ensure that all parameters in a method signature are being used. The rule wont report a defect against the following: 
+</p>
+<ul><li> Methods that are referenced by a delegate;
+</li><li> Methods used as event handlers;
+</li><li> Abstract methods;
+</li><li> Virtual or overriden methods;
+</li><li> External methods (e.g. p/invokes)
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MethodWithUnusedParameters <span style="color: #008000;">&#40;</span>IEnumerable enumerable, <span style="color: #6666cc; font-weight: bold;">int</span> x<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> item <span style="color: #0600FF; font-weight: bold;">in</span> enumerable<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>item<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MethodWithUsedParameters <span style="color: #008000;">&#40;</span>IEnumerable enumerable<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> item <span style="color: #0600FF; font-weight: bold;">in</span> enumerable<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>item<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidUnusedPrivateFieldsRule"> AvoidUnusedPrivateFieldsRule </span></h3>
+<p>This rule checks all private fields inside each type to see if some of them are not being used. This could be a leftover from debugging or testing code or a more serious typo where a wrong field is being used. In any case this makes the type bigger than it needs to be which can affect performance when a large number of instances exist. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> level<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Indent <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        level<span style="color: #008000;">++;</span>
+        <span style="color: #008080;">#if DEBUG</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>b<span style="color: #008000;">&#41;</span> Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>level<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008080;">#endif</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> level<span style="color: #008000;">;</span>
+    <span style="color: #008080;">#if DEBUG</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b<span style="color: #008000;">;</span>
+    <span style="color: #008080;">#endif</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Indent <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        level<span style="color: #008000;">++;</span>
+        <span style="color: #008080;">#if DEBUG</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>b<span style="color: #008000;">&#41;</span> Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>level<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008080;">#endif</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="CompareWithEmptyStringEfficientlyRule"> CompareWithEmptyStringEfficientlyRule </span></h3>
+<p>This rule will fire if a string is compared to <b>""</b> or <b>String.Empty</b>. Instead use a <b>String.Length</b> test which should be a bit faster. Another possibility (with .NET 2.0) is to use the static <b>String.IsNullOrEmpty</b> method. <b>String.IsNullOrEmpty</b>. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SimpleMethod <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> myString<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>myString<span style="color: #008000;">.</span><span style="color: #0000FF;">Equals</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SimpleMethod <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> myString<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>myString<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="ConsiderCustomAccessorsForNonVisibleEventsRule"> ConsiderCustomAccessorsForNonVisibleEventsRule </span></h3>
+<p>This rule looks for non-visible events to see if their add/remove accessors are the default ones. The default, compiler generated, accessor is marked as synchronized which means that the runtime will bracket them between <b>Monitor.Enter</b> and <b>Monitor.Exit</b> calls. This is the safest approach unless, for non-visible events, you have a performance bottleneck around the events. In this case you should review if your code needs the locks or if you can provide an alternative to them. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">event</span> EventHandler<span style="color: #008000;">&lt;</span>TestEventArgs<span style="color: #008000;">&gt;</span> TimeCritical<span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> TimeCriticalEvent <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+EventHandlerList events <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> EventHandlerList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">event</span> EventHandler<span style="color: #008000;">&lt;</span>TestEventArgs<span style="color: #008000;">&gt;</span> TimeCritical <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">add</span> <span style="color: #008000;">&#123;</span>
+        events<span style="color: #008000;">.</span><span style="color: #0000FF;">AddHandler</span> <span style="color: #008000;">&#40;</span>TimeCriticalEvent, <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">remove</span> <span style="color: #008000;">&#123;</span>
+        events<span style="color: #008000;">.</span><span style="color: #0000FF;">AddHandler</span> <span style="color: #008000;">&#40;</span>TimeCriticalEvent, <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotIgnoreMethodResultRule"> DoNotIgnoreMethodResultRule </span></h3>
+<p>This rule fires if a method is called that returns a new instance but that instance is not used. This is a performance problem because it is wasteful to create and collect objects which are never actually used. It may also indicate a logic problem. Note that this rule currently only checks methods within a small number of System types. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> GetName <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> name <span style="color: #008000;">=</span> Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008080; font-style: italic;">// This is a bug: strings are (mostly) immutable so Trim leaves</span>
+    <span style="color: #008080; font-style: italic;">// name untouched and returns a new string.</span>
+    name<span style="color: #008000;">.</span><span style="color: #0000FF;">Trim</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: {0}&quot;</span>, name<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> GetName <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> name <span style="color: #008000;">=</span> Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    name <span style="color: #008000;">=</span> name<span style="color: #008000;">.</span><span style="color: #0000FF;">Trim</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: {0}&quot;</span>, name<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="ImplementEqualsTypeRule"> ImplementEqualsTypeRule </span></h3>
+<p>This rule looks for types that override <b>Object.Equals(object)</b> but do not provide a <b>Equals(x)</b> overload using the type. Such an overload removes the need to cast the object to the correct type. For value types this also removes the costly boxing operations. Assemblies targeting .NET 2.0 (and later) should also implement <b>System.IEquatable&lt;T&gt;</b>. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Equals</span> <span style="color: #008000;">&#40;</span>obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetHashCode <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GetHashCode</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// IEquatable&lt;T&gt; is only available since</span>
+<span style="color: #008080; font-style: italic;">// version 2.0 of the .NET framework</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">:</span> IEquatable<span style="color: #008000;">&lt;</span>Good<span style="color: #008000;">&gt;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #0600FF; font-weight: bold;">as</span> Good<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span>Good other<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span>other <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetHashCode <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GetHashCode</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="MathMinMaxCandidateRule"> MathMinMaxCandidateRule </span></h3>
+<p>This rule checks methods for code which seems to duplicate <b>Math.Min</b> or <b>Math.Max</b>. The JIT can inline these methods and generate better code for, at least some types, than it can for a custom inline implementation. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">int</span> max <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>a <span style="color: #008000;">&gt;</span> b<span style="color: #008000;">&#41;</span> <span style="color: #008000;">?</span> a <span style="color: #008000;">:</span> b<span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">int</span> max <span style="color: #008000;">=</span> Math<span style="color: #008000;">.</span><span style="color: #0000FF;">Max</span> <span style="color: #008000;">&#40;</span>a, b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="OverrideValueTypeDefaultsRule"> OverrideValueTypeDefaultsRule </span></h3>
+<p>This rule checks all value types, except enumerations, to see if they use the default implementation of <b>Equals(object)</b> and <b>GetHashCode()</b> methods. While <b>ValueType</b> implementations work for any value type they do so at the expense of performance (the default implementation uses reflection to access fields). You can easily override both methods with much faster code since you know all meaningful fields inside your structure. At the same time you should also provide, if your language allows it, operator overloads for equality (<b>op_Equality</b>, <b>==</b>) and inequality (<b>op_Inequality</b>, <b>!=</b>). 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">struct</span> Coord <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> X, Y, Z<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">struct</span> Coord <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> X, Y, Z<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        Coord c <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Coord<span style="color: #008000;">&#41;</span>obj<span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>X <span style="color: #008000;">==</span> c<span style="color: #008000;">.</span><span style="color: #0000FF;">X</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&amp;&amp;</span> <span style="color: #008000;">&#40;</span>Y <span style="color: #008000;">==</span> c<span style="color: #008000;">.</span><span style="color: #0000FF;">Y</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&amp;&amp;</span> <span style="color: #008000;">&#40;</span>Z <span style="color: #008000;">==</span> c<span style="color: #008000;">.</span><span style="color: #0000FF;">Z</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetHashCode <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> X <span style="color: #008000;">^</span> Y <span style="color: #008000;">^</span> Z<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">bool</span> <span style="color: #0600FF; font-weight: bold;">operator</span> <span style="color: #008000;">==</span> <span style="color: #008000;">&#40;</span>Coord left, Coord right<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> left<span style="color: #008000;">.</span><span style="color: #0000FF;">Equals</span> <span style="color: #008000;">&#40;</span>right<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">bool</span> <span style="color: #0600FF; font-weight: bold;">operator</span> <span style="color: #008000;">!=</span> <span style="color: #008000;">&#40;</span>Coord left, Coord right<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">!</span>left<span style="color: #008000;">.</span><span style="color: #0000FF;">Equals</span> <span style="color: #008000;">&#40;</span>right<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="PreferCharOverloadRule"> PreferCharOverloadRule </span></h3>
+<p>This rule looks for calls to <b>String</b> methods that use <b>String</b>parameters when a <b>Char</b> parameter could have been used. Using the <b>Char</b> overload is preferred because it will be faster. Note, however, that this may result in subtly different behavior on versions of .NET before 4.0: the string overloads do a culture based comparison using <b>CultureInfo.CurrentCulture</b> and the char methods do an ordinal comparison (a simple compare of the character values). This can result in a change of behavior (for example the two can produce different results when precomposed characters are used). If this is important it is best to use an overload that allows StringComparison or CultureInfo to be explicitly specified see <a href="http://msdn.microsoft.com/en-us/library/ms973919.aspx#stringsinnet20_topic4" class="external autonumber" rel="nofollow">[1]</a> for more details. With .NET 4.0 <b>String'</b>s behavior will change and the various methods will be made more consistent. In particular the comparison methods will be changed so that they all default to doing an ordinal comparison. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">.</span><span style="color: #0000FF;">IndexOf</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;:&quot;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">==</span> <span style="color: #008000;">-</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;no separator found&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">.</span><span style="color: #0000FF;">IndexOf</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">':'</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">==</span> <span style="color: #008000;">-</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;no separator found&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.4
+</li></ul>
+<h3> <span class="mw-headline" id="PreferLiteralOverInitOnlyFieldsRule"> PreferLiteralOverInitOnlyFieldsRule </span></h3>
+<p>This rule looks for <b>InitOnly</b> fields (<b>readonly</b> in C#) that could be turned into <b>Literal</b> (<b>const</b> in C#) because their value is known at compile time. <b>Literal</b> fields don't need to be initialized (i.e. they don't force the compiler to add a static constructor to the type) resulting in less code and the value (not a reference to the field) will be directly used in the IL (which is OK if the field has internal visibility, but is often problematic if the field is visible outside the assembly). 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ClassWithReadOnly <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">readonly</span> <span style="color: #6666cc; font-weight: bold;">int</span> One <span style="color: #008000;">=</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ClassWithConst
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">const</span> <span style="color: #6666cc; font-weight: bold;">int</span> One <span style="color: #008000;">=</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.2
+</li></ul>
+<h3> <span class="mw-headline" id="RemoveUnneededFinalizerRule"> RemoveUnneededFinalizerRule </span></h3>
+<p>This rule looks for types that have an empty finalizer (a.k.a. destructor in C# or <b>Finalize</b> method). Finalizers that simply set fields to null are considered to be empty because this does not help the garbage collection. You should remove the empty finalizer to alleviate pressure on the garbage collector and finalizer thread. 
+</p><p><b>Bad</b> example (empty):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    ~Bad <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Bad</b> example (only nulls fields):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">;</span>
+&#160;
+    ~Bad <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        o <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.2 this rule was named EmptyDestructorRule
+</li></ul>
+<h3> <span class="mw-headline" id="RemoveUnusedLocalVariablesRule"> RemoveUnusedLocalVariablesRule </span></h3>
+<p>This rule looks for unused local variables inside methods. This can leads to larger code (IL) size and longer JIT time, but note that some optimizing compilers can remove the locals so they won't be reported even if you can still see them in the source code. This could also be a typo in the source were a value is assigned to the wrong variable. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">bool</span> DualCheck <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b1 <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b2 <span style="color: #008000;">=</span> CheckDetails <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>b2<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// typo: a find-replace changed b1 into b2</span>
+        b2 <span style="color: #008000;">=</span> CheckMoreDetails <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> b2 <span style="color: #008000;">&amp;&amp;</span> b2<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">bool</span> DualCheck <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b1 <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">bool</span> b2 <span style="color: #008000;">=</span> CheckDetails <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>b2<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        b1 <span style="color: #008000;">=</span> CheckMoreDetails <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> b1 <span style="color: #008000;">&amp;&amp;</span> b2<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="ReviewLinqMethodRule"> ReviewLinqMethodRule </span></h3>
+<p>Linq extension methods operate on sequences of values so they generally have linear time complexity. However you may be able to achieve better than linear time performance if you use a less general method or take advantage of a method provided by an <b>Sytem.Collections.Generic.IEnumerable&lt;T&gt;</b> subclass. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> FirstOrMissing <span style="color: #008000;">&#40;</span>IEnumerable<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> sequence, <span style="color: #6666cc; font-weight: bold;">string</span> missing<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// Count () is O(n)</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>sequence<span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&gt;</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> sequence<span style="color: #008000;">.</span><span style="color: #0000FF;">First</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> missing<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Append <span style="color: #008000;">&#40;</span>List<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> lines, <span style="color: #6666cc; font-weight: bold;">string</span> line<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// Last () is O(n)</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>lines<span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span> <span style="color: #008000;">||</span> lines<span style="color: #008000;">.</span><span style="color: #0000FF;">Last</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">!=</span> line<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        lines<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>line<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> FirstOrMissing <span style="color: #008000;">&#40;</span>IEnumerable<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> sequence, <span style="color: #6666cc; font-weight: bold;">string</span> missing<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// We don't need an exact count so we can use the O(1) Any () method.</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>sequence<span style="color: #008000;">.</span><span style="color: #0000FF;">Any</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> sequence<span style="color: #008000;">.</span><span style="color: #0000FF;">First</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> missing<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Append <span style="color: #008000;">&#40;</span>List<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> lines, <span style="color: #6666cc; font-weight: bold;">string</span> line<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// Lines is a List so we can use the O(1) subscript operator instead of</span>
+    <span style="color: #008080; font-style: italic;">// the Last () method.</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>lines<span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span> <span style="color: #008000;">||</span> lines <span style="color: #008000;">&#91;</span>lines<span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span> <span style="color: #008000;">-</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">&#93;</span> <span style="color: #008000;">!=</span> line<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        lines<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>line<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.6
+</li></ul>
+<h3> <span class="mw-headline" id="UseIsOperatorRule"> UseIsOperatorRule </span></h3>
+<p>This rule looks for complex cast operations (e.g. a <b>as</b>with a <b>null</b> check) that can be simplified using the <b>is</b> operator (C# syntax). Note: in some case a compiler, like [g]mcs, can optimize the code and generate IL identical to a <b>is</b> operator. In this case the rule will not report an error even if you could see one while looking the at source code. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">bool</span> is_my_type <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>my_instance <span style="color: #0600FF; font-weight: bold;">as</span> MyType<span style="color: #008000;">&#41;</span> <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">bool</span> is_my_type <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>my_instance <a href="http://www.google.com/search?q=is+msdn.microsoft.com"><span style="color: #008000;">is</span></a> MyType<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="UseStringEmptyRule"> UseStringEmptyRule </span></h3>
+<p>This rule checks for methods that are using the literal <b>""</b> instead of the <b>String.Empty</b> field. You'll get slighly better performance by using <b>String.Empty</b>. Note that in some cases, e.g. in a <b>switch/case</b> statement, you cannot use a field, so <b>""</b> must be used instead of <b>String.Empty</b>. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">string</span> s <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;&quot;</span><span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">string</span> s <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule"> UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule </span></h3>
+<p>This rule will fire if a type implements <b>System.IDisposable</b> and has a finalizer (called a destructor in C#), but the Dispose method does not call <b>System.GC.SuppressFinalize</b>. Failing to do this should not cause properly written code to fail, but it does place a non-trivial amount of extra pressure on the garbage collector and on the finalizer thread. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> BadClass <span style="color: #008000;">:</span> IDisposable <span style="color: #008000;">&#123;</span>
+    ~BadClass <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Dispose <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// GC.SuppressFinalize is missing so the finalizer will be called</span>
+        <span style="color: #008080; font-style: italic;">// which puts needless extra pressure on the garbage collector.</span>
+        Dispose <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">bool</span> disposing<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>ptr <span style="color: #008000;">!=</span> IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Free <span style="color: #008000;">&#40;</span>ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            ptr <span style="color: #008000;">=</span> IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;somelib&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">void</span> Free <span style="color: #008000;">&#40;</span>IntPtr ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> IntPtr ptr<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> GoodClass <span style="color: #008000;">:</span> IDisposable <span style="color: #008000;">&#123;</span>
+    ~GoodClass <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Dispose <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Dispose <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        GC<span style="color: #008000;">.</span><span style="color: #0000FF;">SuppressFinalize</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">bool</span> disposing<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>ptr <span style="color: #008000;">!=</span> IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Free <span style="color: #008000;">&#40;</span>ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            ptr <span style="color: #008000;">=</span> IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;somelib&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">void</span> Free <span style="color: #008000;">&#40;</span>IntPtr ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> IntPtr ptr<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.2 this rule was named IDisposableWithDestructorWithoutSuppressFinalizeRule
+</li></ul>
+<h3> <span class="mw-headline" id="UseTypeEmptyTypesRule"> UseTypeEmptyTypesRule </span></h3>
+<p>This rule fires if a zero length array of <b>System.Type</b> is created. This value is so often required by the framework API that the <b>System.Type</b> includes an <b>EmptyTypes</b> field. Using this field avoids the memory allocation (and GC tracking) of your own array. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;">ConstructorInfo ci <span style="color: #008000;">=</span> type<span style="color: #008000;">.</span><span style="color: #0000FF;">GetConstructor</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Type<span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;">ConstructorInfo ci <span style="color: #008000;">=</span> type<span style="color: #008000;">.</span><span style="color: #0000FF;">GetConstructor</span> <span style="color: #008000;">&#40;</span>Type<span style="color: #008000;">.</span><span style="color: #0000FF;">EmptyTypes</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

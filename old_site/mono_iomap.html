@@ -1,0 +1,36 @@
+---
+layout: obsolete
+title: "MONO IOMAP"
+permalink: /old_site/MONO_IOMAP/
+---
+
+<h1>MONO IOMAP</h1>
+
+<p>Introduced in Mono 1.2, MONO_IOMAP allows Mono to ignore certain types of file IO errors caused by applications not properly coded to deal with differences between Windows file systems and Linux file systems.
+</p><p>The types of issues MONO_IOMAP fixes are:
+</p>
+<ul><li> Linux file systems are case sensitive, Windows is not.
+</li><li> Linux uses '/' as the path separator, Windows uses '\'.
+</li><li> Windows paths begin with a drive letter, Linux paths do not.
+</li></ul>
+<p>The options that can be passed to MONO_IOMAP are:
+</p>
+<ul><li> case: makes all file system access case insensitive.
+</li><li> drive: strips drive name from pathnames.
+</li><li> all: enables both case and drive. 
+</li></ul>
+<p>All options will trigger the directory separator mapping.
+</p><p>To run your application:
+</p>
+<pre>
+$ export MONO_IOMAP=all
+$ mono myapp.exe
+</pre>
+<p>For ASP.NET applications hosted with mod_mono, you can add the following directive to your Apache configuration file:
+</p>
+<pre>
+MonoSetEnv MONO_IOMAP=all
+</pre>
+<br /><div style="margin-left: auto; padding: 5px; margin-right: auto; background-color: #C6D8ED; border: 1px solid #5084C5; border-left-width: 10px; margin-top: 7px; margin-bottom: 20px;">
+Note: MONO_IOMAP is a shortcut to help port your application to Mono.  However, there is a performance hit that comes with using it.  For the long term, it is recommended that you change your application to be cross platform compatible without MONO_IOMAP.  For guidance, see <a href="{{site.baseurl}}/Guidelines:Application_Portability" title="Guidelines:Application Portability">Guidelines:Application_Portability</a>.</div>
+

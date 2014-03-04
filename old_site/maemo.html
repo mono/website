@@ -1,0 +1,77 @@
+---
+layout: obsolete
+title: "Maemo"
+permalink: /old_site/Maemo/
+---
+
+<h1>Maemo</h1>
+
+<p>Information on installing Mono, mono libraries and applications into your Nokia Internet Tablet devices based on the <a href="http://www.maemo.org/" class="external text" rel="nofollow">Maemo</a> platform.
+</p><p>Before installing Mono on your Nokia Internet Tablet device we strongly recommend that you flash the latest Nokia image by following these <a href="http://maemo.org/maemowiki/HOWTO_FlashLatestNokiaImageWithLinux" class="external text" rel="nofollow">instructions</a>. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Single_Install_Click"><span class="tocnumber">1</span> <span class="toctext">Single Install Click</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Packages"><span class="tocnumber">2</span> <span class="toctext">Packages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Screenshots_and_Movies"><span class="tocnumber">3</span> <span class="toctext">Screenshots and Movies</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Advanced_Topics"><span class="tocnumber">4</span> <span class="toctext">Advanced Topics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Repositories"><span class="tocnumber">4.1</span> <span class="toctext">Repositories</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Building_Mono_with_Scratchbox"><span class="tocnumber">4.2</span> <span class="toctext">Building Mono with Scratchbox</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Todo"><span class="tocnumber">4.3</span> <span class="toctext">Todo</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Single_Install_Click"> Single Install Click </span></h1>
+<p>The best and easiest way to set up Mono repository under your Nokia Internet Tablet device is to click this <a href="http://go-mono.com/maemo/install/mono.install" class="external text" rel="nofollow">link</a> in your device browser. This "Single Click Install" will add Mono apt repository.
+</p><p>After setting up the repository you will be able to install any additional Mono libraries by using the "Application Manager" on your device.
+</p><p>You could be also interested on using this links to install <a href="http://go-mono.com/maemo/install/tomboy.install" class="external text" rel="nofollow">Tomboy</a> and <a href="http://go-mono.com/maemo/install/peditgtksharp.install" class="external text" rel="nofollow">PEditGtkSharp</a>.
+</p>
+<h1> <span class="mw-headline" id="Packages"> Packages </span></h1>
+<p>The Mono scratchbox devkit includes a full Mono installation, gtk-sharp 2.4.3 and maemo-sharp 0.21.
+</p><p>The Mono apt repository for Nokia includes the mono runtime, gtk-sharp, maemo-sharp and Paco's peditgtksharp sample application. Look <a href="http://go-mono.com/maemo/packages.list" class="external text" rel="nofollow">here</a> for a full list of packages available in the repository. If you need any Mono assembly that is not available in the repository please contact us on the Mono mailing lists.
+</p><p>If you are interested in building Mono Scratchbox devkit from sources, please check our <a href="{{site.baseurl}}/Scratchbox" title="Scratchbox">Scratchbox</a> page.
+</p>
+<h1> <span class="mw-headline" id="Screenshots_and_Movies"> Screenshots and Movies </span></h1>
+<p><a href="http://www.go-mono.com/nokia/nokia-gtksharp.mov" class="external text" rel="nofollow">Gtk# app movie on Nokia</a>
+</p><p><a href="http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg" class="external text" rel="nofollow">Hello World!</a>
+</p><p><a href="http://www.mono-project.com/Image:PEditGtkSharpN800.gif" class="external text" rel="nofollow">PEditGtkSharp running on N800</a>
+</p><p><a href="http://www.mdk.org.pl/2007/1/28/clone-wars" class="external text" rel="nofollow">A single binary running on maemo and other platforms</a>
+</p>
+<h1> <span class="mw-headline" id="Advanced_Topics"> Advanced Topics </span></h1>
+<h2> <span class="mw-headline" id="Repositories"> Repositories </span></h2>
+<p>"Single Click Install" can easily set up the Mono repository for your Nokia device, but if you prefer to install it by hand or set up the repositories in the Scratchbox environment you can add this line to your /etc/apt/sources.list:
+</p><p>Maemo 2 for 770:
+</p>
+<pre class="bash" style="font-family:monospace;">deb http:<span style="color: #000000; font-weight: bold;">//</span>go-mono.com<span style="color: #000000; font-weight: bold;">/</span>maemo mistral user</pre>
+<p>Maemo 4 for N800 &amp; N810:
+</p>
+<pre class="bash" style="font-family:monospace;">deb http:<span style="color: #000000; font-weight: bold;">//</span>go-mono.com<span style="color: #000000; font-weight: bold;">/</span>maemo diablo user</pre>
+<p><br />
+You can also use "Application Manager-&gt;Tools-&gt;Application Catalog" to set it up.
+</p>
+<h2> <span class="mw-headline" id="Building_Mono_with_Scratchbox"> Building Mono with Scratchbox </span></h2>
+<p>We recommend that you use <a href="http://www.scratchbox.org/" class="external text" rel="nofollow">Scratchbox</a> to develop and test Mono applications for Maemo. You can find instructions about how to set up ScratchBox <a href="http://repository.maemo.org/stable/4.1.1/INSTALL.txt" class="external text" rel="nofollow">here</a>.
+</p><p>After setting up Scratchbox you can easily install <a href="http://go-mono.com/maemo/scratchbox-devkit-mono-2.0.1-1-i386.tar.gz" class="external text" rel="nofollow">mono-devkit</a> by running these commands outside scratchbox:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">wget</span> http:<span style="color: #000000; font-weight: bold;">//</span>go-mono.com<span style="color: #000000; font-weight: bold;">/</span>maemo<span style="color: #000000; font-weight: bold;">/</span>scratchbox-devkit-mono-2.0.1-<span style="color: #000000;">1</span>-i386.tar.gz
+$ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf scratchbox-devkit-mono-2.0.1-<span style="color: #000000;">1</span>-i386.tar.gz <span style="color: #660033;">-C</span> <span style="color: #000000; font-weight: bold;">/</span></pre>
+<p>If you want to enable devkit for your ARMEL and/or X86 targets just type:
+</p>
+<pre> [sbox-DIABLO_HOST: ~] &gt; sb-conf setup DIABLO_ARMEL -f -d perl:debian-etch:maemo3-tools:cputransp:mono
+ [sbox-DIABLO_HOST: ~] &gt; sb-conf setup DIABLO_X86 -f -d perl:debian-etch:maemo3-tools:mono
+</pre>
+<p>Now that the devkit is installed, a target that uses it must be created (or an existing target must be reconfigured). You can follow the instructions in <a href="http://www.scratchbox.org/documentation/user/scratchbox-1.0/html/installdoc.html#cctarget" class="external text" rel="nofollow">Section 2.4 of Scratchbox's Install guide</a> but select 'mono' in the devkit selection menu.
+</p><p>You could be also interested in create devkit from sources, the instructions can be found <a href="http://www.mono-project.com/Scratchbox" class="external text" rel="nofollow">here</a>.
+</p>
+<h2> <span class="mw-headline" id="Todo"> Todo </span></h2>
+<p>You can develop powerful applications for Nokia using Mono right now, but some tasks should be done to improve the Mono Maemo/Nokia experience. If you want to contribute one of the following tasks please contact us:
+</p>
+<ul><li> Improving Mono startup performance on the device.
+</li><li> Finishing and testing maemo-sharp bindings. At the moment only a few classes are unfinished. Some documentation and samples would be nice too.
+</li><li> Porting some Mono applications to Maemo. Basically what you would need to do is to change small classes to use the hildon libraries (included in maemo-sharp). This work was done in Paco's PEditGtkSharp by changing fewer than 20 lines of code. Documentation about this process is coming soon.
+</li><li> Documentation and porting guide.
+</li><li> MonoDevelop plugin to ease development. A good way would be to integrate Scratchbox and Maemo in the same way as the <a href="http://www.cs.tut.fi/~laika/" class="external text" rel="nofollow">Laika Eclipse plugin</a>. This <a href="http://www.scratchbox.org/download/files/sbox-releases/1.0/doc/ideintegration.html" class="external text" rel="nofollow">link</a> also provides information about IDE integration, more information can be also founded <a href="http://www.scratchbox.org/documentation/general/tutorials/idetools.html" class="external text" rel="nofollow">here</a>.
+</li></ul>
+

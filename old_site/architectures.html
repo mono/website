@@ -1,0 +1,89 @@
+---
+layout: obsolete
+title: "Architectures"
+permalink: /old_site/Architectures/
+---
+
+<h1>Architectures</h1>
+
+<p>Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime. The interpreter runtime is far less complex and is primarily used in the early stages before a JIT version for that architecture is constructed. The interpreter is not supported on architectures where the JIT has been ported.  
+</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Supported Architectures </th>
+<th> Runtime </th>
+<th> Operating system
+</th></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:S390" title="Mono:S390">s390, s390x (32 and 64 bits)</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:SPARC" title="Mono:SPARC">SPARC (32)</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> Solaris, Linux
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:PowerPC" title="Mono:PowerPC">PowerPC</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux, Mac OSX, Wii, PlayStation 3
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:X86" title="Mono:X86">x86</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux, FreeBSD, OpenBSD, NetBSD, <br /> Microsoft Windows, Solaris, OS X, Android
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:AMD64" title="Mono:AMD64">x86-64</a>: AMD64 and EM64T (64 bit)
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux, FreeBSD, OpenBSD, <br />Solaris, OS X
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:IA64" title="Mono:IA64">IA64</a> Itanium2 (64 bit)
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:ARM" title="Mono:ARM">ARM</a>: little and big endian
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux (both old and new ABI), iPhone, Android
+</td></tr>
+<tr>
+<td> <a href="/index.php?title=Mono:Alpha&amp;action=edit&amp;redlink=1" class="new" title="Mono:Alpha (page does not exist)">Alpha</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> <b>not maintained</b>. Linux
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/Mono:MIPS" title="Mono:MIPS">MIPS</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> Linux
+</td></tr>
+<tr>
+<td> <a href="/index.php?title=Mono:HPPA&amp;action=edit&amp;redlink=1" class="new" title="Mono:HPPA (page does not exist)">HPPA</a>
+</td>
+<td align="center"> JIT
+</td>
+<td> <b>not maintained</b> Linux
+</td></tr></table>
+<p>Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-supported and may not be as complete as the other architectures.
+</p><p>Support for SPARC64 works in older versions of Mono, but not in the recent versions.
+</p>

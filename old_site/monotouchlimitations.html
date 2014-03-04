@@ -1,0 +1,106 @@
+---
+layout: obsolete
+title: "MonoTouch:Limitations"
+permalink: /old_site/MonoTouch:Limitations/
+---
+
+<h1>MonoTouch:Limitations</h1>
+
+<p>Since applications on the iPhone using MonoTouch are compiled to static code, it is not possible to use any facilities that require code generation at runtime.
+</p><p>These are the MonoTouch limitations compared to desktop Mono/Moonlight:
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Limited_Debugging_Support"><span class="tocnumber">1</span> <span class="toctext">Limited Debugging Support</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Limited_Generics_Support"><span class="tocnumber">2</span> <span class="toctext">Limited Generics Support</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Generic_Virtual_Methods"><span class="tocnumber">2.1</span> <span class="toctext">Generic Virtual Methods</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#P.2FInvokes_in_Generic_Types"><span class="tocnumber">2.2</span> <span class="toctext">P/Invokes in Generic Types</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Value_types_as_Dictionary_Keys"><span class="tocnumber">2.3</span> <span class="toctext">Value types as Dictionary Keys</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#No_Dynamic_Code_Generation"><span class="tocnumber">3</span> <span class="toctext">No Dynamic Code Generation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#System.Reflection.Emit"><span class="tocnumber">3.1</span> <span class="toctext">System.Reflection.Emit</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Reverse_Callbacks"><span class="tocnumber">3.2</span> <span class="toctext">Reverse Callbacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#No_Remoting"><span class="tocnumber">4</span> <span class="toctext">No Remoting</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Runtime_Disabled_Features"><span class="tocnumber">5</span> <span class="toctext">Runtime Disabled Features</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Only_tested_with_iPhoneOS_3.0"><span class="tocnumber">6</span> <span class="toctext">Only tested with iPhoneOS 3.0</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Limited_Debugging_Support"> Limited Debugging Support </span></h1>
+<p>There is no support for debugging in MonoTouch, except for low-level debugging with GDB of the runtime.   
+</p><p>To learn how to use GDB to debug the runtime you can read <a href="{{site.baseurl}}/Debugging" title="Debugging">Debugging</a>
+</p><p>Most of the debugging is done with Console.WriteLine.
+</p>
+<h1> <span class="mw-headline" id="Limited_Generics_Support"> Limited Generics Support </span></h1>
+<p>Mono's <a href="{{site.baseurl}}/AOT#Full_AOT" title="AOT">Full AOT</a> support has the following limitations with respect to generics:
+</p>
+<h2> <span class="mw-headline" id="Generic_Virtual_Methods"> Generic Virtual Methods </span></h2>
+<p>Generic virtual methods aren't supported, as it isn't possible to determine statically what method will be called in all circumstances.  (Which is why C++ doesn't support virtual template methods, either.)
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> HasGenericVirtualMethod <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> PrintValues<span style="color: #008000;">&lt;</span>T<span style="color: #008000;">&gt;</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">params</span> T<span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> values<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// ...</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #0600FF; font-weight: bold;">var</span> a <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HasGenericVirtualMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+a<span style="color: #008000;">.</span><span style="color: #0000FF;">PrintValues</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#123;</span><span style="color: #FF0000;">1</span>, <span style="color: #FF0000;">2</span>, <span style="color: #FF0000;">3</span>, <span style="color: #FF0000;">4</span><span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h2> <span class="mw-headline" id="P.2FInvokes_in_Generic_Types"> P/Invokes in Generic Types </span></h2>
+<p>P/Invokes in generic methods aren't supported:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> GenericType<span style="color: #008000;">&lt;</span>T<span style="color: #008000;">&gt;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;System&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">int</span> getpid <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Value_types_as_Dictionary_Keys"> Value types as Dictionary Keys </span></h2>
+<p>Using a value type as a Dictionary&lt;TKey, TValue&gt; key is problematic, as the default Dictionary constructor attempts to use EqualityComparer&lt;TKey&gt;.Default.  EqualityComparer&lt;TKey&gt;.Default, in turn, attempts to use Reflection to instantiate a new type which implements the IEqualityComparer&lt;TKey&gt; interface.
+</p><p>This works for reference types (as the reflection+create a new type step is skipped), but for value types it crashes and burns rather quickly once you attempt to use it on the device.
+</p><p><b>Workaround</b>: Manually implement the <a href="http://www.go-mono.com/docs/index.aspx?link=T%3aSystem.Collections.Generic.IEqualityComparer%601" class="external text" rel="nofollow">IEqualityComparer&lt;TKey&gt;</a> interface in a new type and provide an instance of that type to the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=C%3aSystem.Collections.Generic.Dictionary%602(System.Collections.Generic.IEqualityComparer%7b%600%7d)" class="external text" rel="nofollow">Dictionary&lt;TKey, TValue&gt;(IEqualityComparer&lt;TKey&gt;) constructor</a>.
+</p>
+<h1> <span class="mw-headline" id="No_Dynamic_Code_Generation"> No Dynamic Code Generation </span></h1>
+<p>Since the iPhone's kernel prevents an application from generating code dynamically Mono on the iPhone does not support any form of dynamic code generation.   These include:
+</p>
+<ul><li> The System.Reflection.Emit is not available.
+</li><li> No support for System.Runtime.Remoting.
+</li><li> No support for creating types dynamically (no Type.GetType ("MyType")).
+</li><li> Reverse callbacks must be registered with the runtime at compile time.
+</li></ul>
+<h2> <span class="mw-headline" id="System.Reflection.Emit"> System.Reflection.Emit </span></h2>
+<p>The lack of System.Reflection.Emit means that no code that depends on runtime code generation will work.   This includes things like:
+</p>
+<ul><li> The Regular expression IL generation engine.
+</li><li> The Dynamic Language Runtime.
+</li><li> Any languages built on top of the Dynamic Language Runtime.
+</li><li> Remoting's TransparentProxy or anything else that would cause the runtime to generate code dynamically.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Reverse_Callbacks"> Reverse Callbacks </span></h2>
+<p>In standard Mono it is possible to pass C# delegate instances to unmanaged code in lieu of a function pointer.   The runtime would typically transform those function pointers into a small thunk that allows unmanaged code to call back into managed code.
+</p><p>In Mono these bridges are implemented by the Just-in-Time compiler.  When using the ahead-of-time compiler required by the iPhone there are two important limitations at this point:
+</p>
+<ul><li> You must flag all of your callback methods with the <a href="http://go-mono.com/docs/monodoc.ashx?tlink=20@ecma%3a1%23MonoPInvokeCallbackAttribute%2f" class="external text" rel="nofollow">MonoPInvokeCallbackAttribute</a>.
+</li><li> The methods have to be static methods, there is no support for instance methods (this limitation will be removed in the future).
+</li></ul>
+<h1> <span class="mw-headline" id="No_Remoting"> No Remoting </span></h1>
+<p>The Remoting stack is not available on MonoTouch.
+</p>
+<h1> <span class="mw-headline" id="Runtime_Disabled_Features"> Runtime Disabled Features </span></h1>
+<p>The following features have been disabled in Mono's iPhone Runtime:
+</p>
+<ul><li> Profiler
+</li><li> Reflection.Emit
+</li><li> Reflection.Emit.Save functionality
+</li><li> COM bindings
+</li><li> The JIT engine
+</li><li> Metadata verifier (since there is no JIT)
+</li></ul>
+<h1> <span class="mw-headline" id="Only_tested_with_iPhoneOS_3.0"> Only tested with iPhoneOS 3.0 </span></h1>
+<p>We have only tested MonoTouch with iPhoneOS 3.0 and we do not know if it would work with older versions.
+</p>

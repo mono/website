@@ -1,0 +1,125 @@
+---
+layout: obsolete
+title: "Accessibility: QA Meetings 2009 Mar 25"
+permalink: /old_site/Accessibility:_QA_Meetings_2009_Mar_25/
+---
+
+<h1>Accessibility: QA Meetings 2009 Mar 25</h1>
+
+<p>BEGIN LOGGING AT Wed Mar 25 09:48:46 2009<br />
+<br />
+Mar 25 09:48:46 *	Now talking on #mono-a11y-qa<br />
+Mar 25 09:48:46 *	morbo gives channel operator status to calen<br />
+Mar 25 10:01:04 *	bgmerrell (~bean@166-70-62-135.ip.xmission.com) has joined #mono-a11y-qa<br />
+Mar 25 10:01:05 *	morbo gives channel operator status to bgmerrell<br />
+Mar 25 10:05:27 *	felicia (~mufx@61.14.130.209) has joined #mono-a11y-qa<br />
+Mar 25 10:05:28 *	morbo gives channel operator status to felicia<br />
+Mar 25 10:05:32 &lt;calen&gt;	welcome <br />
+Mar 25 10:05:34 &lt;felicia&gt;	hi I'm in<br />
+Mar 25 10:07:31 &lt;bgmerrell&gt;	Okay, great<br />
+Mar 25 10:07:50 &lt;ray&gt;	hey there.<br />
+Mar 25 10:07:57 &lt;bgmerrell&gt;	So I just wanted to get everyone together at the same time and quickly talk about a few things<br />
+Mar 25 10:08:07 &lt;ray&gt;	great!<br />
+Mar 25 10:08:13 &lt;felicia&gt;	I'm listening<br />
+Mar 25 10:08:48 &lt;calen&gt;	sure!<br />
+Mar 25 10:09:16 &lt;bgmerrell&gt;	felicia: we usually have these QA meetings every couple of months, just to make sure we are all working together<br />
+Mar 25 10:09:49 &lt;felicia&gt;	all right , thanks. bgmerrell <br />
+Mar 25 10:09:56 &lt;bgmerrell&gt;	sometimes we establish goals, ensure that we are meeting our goals, etc.<br />
+Mar 25 10:10:29 &lt;calen&gt;	yep<br />
+Mar 25 10:10:39 &lt;bgmerrell&gt;	So First of all, congratulations on your work on the 1.0 release<br />
+Mar 25 10:10:51 &lt;ray&gt;	thank u <br />
+Mar 25 10:11:31 &lt;calen&gt;	felicia, you study hard and quick:)<br />
+Mar 25 10:11:55 &lt;felicia&gt;	thank calen, you help me much .<br />
+Mar 25 10:12:04 &lt;bgmerrell&gt;	I know that the quality isn't perfect, especially considering it is a 1.0 release, but our managers insisted that it be a 1.0 release so that it could be bundled with Mono.<br />
+Mar 25 10:12:15 &lt;felicia&gt;	ray , thank very much , you do a lot help for me.<br />
+Mar 25 10:12:33 &lt;bgmerrell&gt;	Mono wouldn't bundle us with them unless it was a "stable release," which basically forced us to call it 1.0<br />
+Mar 25 10:12:50 &lt;ray&gt;	WOOW, cool&#160;!<br />
+Mar 25 10:13:01 &lt;bgmerrell&gt;	But considering that WinForms was 100% inaccessible just a short time ago, I think we did a lot of work<br />
+Mar 25 10:13:13 &lt;ray&gt;	exactly<br />
+Mar 25 10:13:44 &lt;calen&gt;	bgmerrell, obviously&#160;:)<br />
+Mar 25 10:13:46 &lt;bgmerrell&gt;	So we did a lot of work to help people with impairments, which is very cool!<br />
+Mar 25 10:14:05 &lt;bgmerrell&gt;	and we get to continue!<br />
+Mar 25 10:14:17 *	ray nods<br />
+Mar 25 10:14:57 &lt;bgmerrell&gt;	So I just want to establish a plan for testing until the developers have some phase 2 work we can test<br />
+Mar 25 10:15:26 &lt;bgmerrell&gt;	there is still *a lot* of work we need to do on phase 1, there are still bugs obviously<br />
+Mar 25 10:15:28 &lt;calen&gt;	agree<br />
+Mar 25 10:15:50 &lt;felicia&gt;	sure<br />
+Mar 25 10:16:08 &lt;bgmerrell&gt;	So what we need to do is go through all of our tests that are not in tests.py and do the following:<br />
+Mar 25 10:17:13 &lt;bgmerrell&gt;	1.  Grep for any "BUG" references, and see if those bugs are fixed.  If they are fixed, we need up run the test and make sure that the test is working.  If it is working completely then we need to add it to tests.py. If there are more failures we need to log more bugs and/or add "BUG" references to the test.<br />
+Mar 25 10:18:00 &lt;calen&gt;	sure<br />
+Mar 25 10:19:04 &lt;bgmerrell&gt;	2.  Ensure that all the tests that are not in tests.py work completely and add them to tests.py.  If they don't work completely then we need log new bugs or add BUG references for existing bugs.<br />
+Mar 25 10:19:18 &lt;bgmerrell&gt;	(remember, we only recently started using BUG references, so all tests don't have them)<br />
+Mar 25 10:20:38 &lt;bgmerrell&gt;	felicia: BUG references are just comments in our tests so we know why a test is failing.  It is essentially a comment that says BUG&lt;bug number&gt;, e.g., BUG457479<br />
+Mar 25 10:21:13 &lt;felicia&gt;	year , I get it .<br />
+Mar 25 10:22:18 &lt;bgmerrell&gt;	Remember we should remove BUG references once the test passes.. we can change it to say something like "# this test used to fail because of bug 457479, but it shouldn't say "BUG456479" anywhere, because we don't want the reference to appear when we grep for BUG&lt;bug number&gt;<br />
+Mar 25 10:23:12 &lt;bgmerrell&gt;	You don't have to leave in a comment stating that the test failed in the past, it's optional.<br />
+Mar 25 10:23:16 &lt;bgmerrell&gt;	"used to" means "in the past"<br />
+Mar 25 10:23:19 &lt;bgmerrell&gt;	by the way&#160;:)<br />
+Mar 25 10:23:37 &lt;felicia&gt;	yep  thank good advices , bgmerrell .<br />
+Mar 25 10:23:38 &lt;ray&gt;	:)<br />
+Mar 25 10:23:53 &lt;bgmerrell&gt;	any questions about that?<br />
+Mar 25 10:24:10 &lt;calen&gt;	it's clearly&#160;:)<br />
+Mar 25 10:24:17 &lt;ray&gt;	no, actually, calen and me have done that way&#160;:)<br />
+Mar 25 10:24:36 &lt;bgmerrell&gt;	our final goal is to have all of our tests running successfully and then added to tests.py<br />
+Mar 25 10:25:07 &lt;calen&gt;	understand<br />
+Mar 25 10:25:24 &lt;bgmerrell&gt;	calen: I noticed you had added helpprovider.py to tests.py but I was still getting failures in helpprovider.py<br />
+Mar 25 10:25:31 &lt;ray&gt;	bgmerrell,  even though the test scripts were done, would we review them each other, and then add it to tests.py? <br />
+Mar 25 10:25:39 &lt;bgmerrell&gt;	calen: a lot of the tests you added were really good though, so thank you<br />
+Mar 25 10:25:55 &lt;calen&gt;	bgmerrell, oh, you are welcome.<br />
+Mar 25 10:26:17 &lt;calen&gt;	bgmerrell, i will check the failures after the meeting<br />
+Mar 25 10:26:46 &lt;bgmerrell&gt;	calen: I fixed the helpprovider failures, but there might be others.  You can try running the entire suite.<br />
+Mar 25 10:27:03 &lt;calen&gt;	bgmerrell, okay, thanks a lot<br />
+Mar 25 10:28:10 &lt;bgmerrell&gt;	ideally we would be runing all the tests daily even though they are not running successfully, but I need to work more on the dashboard before we do that.<br />
+Mar 25 10:28:32 &lt;bgmerrell&gt;	so for now, I think it is best to just add successful test scripts to tests.py so it is obvious when there is a regression<br />
+Mar 25 10:28:58 &lt;ray&gt;	bgmerrell, what can we do for you on dashboard?<br />
+Mar 25 10:29:17 &lt;bgmerrell&gt;	ray: I just need more time to work on it&#160;:) hopefully I can soon<br />
+Mar 25 10:29:35 &lt;ray&gt;	terrific&#160;:)<br />
+Mar 25 10:29:39 &lt;calen&gt;	you rock:)<br />
+Mar 25 10:30:20 &lt;felicia&gt;	cool:)<br />
+Mar 25 10:30:50 &lt;bgmerrell&gt;	So you guys should probably divide the tests that aren't in tests.py among yourselves<br />
+Mar 25 10:31:24 &lt;calen&gt;	okay, <br />
+Mar 25 10:31:26 &lt;bgmerrell&gt;	Ray and Calen already have tests assigned to them in our Strongwind status google spreadsheet, so maybe they can both share some with felicia.<br />
+Mar 25 10:31:45 &lt;bgmerrell&gt;	does that sound reasonable?<br />
+Mar 25 10:31:56 &lt;felicia&gt;	year  <br />
+Mar 25 10:32:00 &lt;calen&gt;	sounds good<br />
+Mar 25 10:32:17 &lt;ray&gt;	yeah<br />
+Mar 25 10:32:18 &lt;calen&gt;	we will share some tests with felicia <br />
+Mar 25 10:32:23 &lt;bgmerrell&gt;	Okay, and I will be working on something a bit different<br />
+Mar 25 10:32:28 &lt;felicia&gt;	welcome<br />
+Mar 25 10:33:20 &lt;calen&gt;	in fact she has been working something on combobox_simple test.<br />
+Mar 25 10:35:37 &lt;calen&gt;	bgmerrell, BTW, do we need do some investigation for phase 2 test?<br />
+Mar 25 10:35:41 &lt;bgmerrell&gt;	I will be using our code review tool to start reviewing our 75% complete tests<br />
+Mar 25 10:35:44 &lt;bgmerrell&gt;	<a href="http://code.mono-a11y.org/r/10/" class="external free" rel="nofollow">http://code.mono-a11y.org/r/10/</a><br />
+Mar 25 10:35:54 &lt;felicia&gt;	I have run some tests, and try to write some examples, but  these are just imitations<br />
+Mar 25 10:35:59 &lt;bgmerrell&gt;	that is just an example link<br />
+Mar 25 10:36:04 &lt;ray&gt;	bgmerrell, we can't access mono-a11y.org&#160;:(<br />
+Mar 25 10:36:52 &lt;ray&gt;	by the ways, what's the review board?<br />
+Mar 25 10:37:21 &lt;bgmerrell&gt;	calen: I think we will do research when the developers have a little more work done.  I have not been involved with their research, so I really don't even know what they are working on.<br />
+Mar 25 10:37:43 &lt;calen&gt;	bgmerrell, make sense!<br />
+Mar 25 10:38:39 &lt;bgmerrell&gt;	ray: it is just a web tool to show a diff and comments about the diff<br />
+Mar 25 10:39:08 &lt;ray&gt;	bgmerrell, ok, but i don't know why we in China can't access mono-a11y.org domain<br />
+Mar 25 10:39:47 &lt;bgmerrell&gt;	ray: yeah, weird, I think they are working on it, but I will mention it to Stephen<br />
+Mar 25 10:39:57 &lt;ray&gt;	bgmerrell, awesome<br />
+Mar 25 10:40:05 &lt;bgmerrell&gt;	ray: here is another example you should be able to access:  <a href="http://demo.review-board.org/r/1483/" class="external free" rel="nofollow">http://demo.review-board.org/r/1483/</a><br />
+Mar 25 10:40:27 &lt;bgmerrell&gt;	Basically it will allow me to review your code, but also give you all an opportunity to see my feedback<br />
+Mar 25 10:40:28 &lt;ray&gt;	yeah, it works<br />
+Mar 25 10:40:38 &lt;bgmerrell&gt;	so we can all make improvements<br />
+Mar 25 10:40:47 &lt;calen&gt;	yes, thanks<br />
+Mar 25 10:41:18 &lt;ray&gt;	oh, it's an open source software<br />
+Mar 25 10:41:26 &lt;bgmerrell&gt;	ray: yep!<br />
+Mar 25 10:41:38 &lt;ray&gt;	rocks<br />
+Mar 25 10:41:47 &lt;bgmerrell&gt;	I am also working on some tests that change the style of controls at run-time<br />
+Mar 25 10:42:00 &lt;bgmerrell&gt;	runtime, rather<br />
+Mar 25 10:42:13 &lt;bgmerrell&gt;	and hopefully work on the dashboard<br />
+Mar 25 10:42:27 &lt;bgmerrell&gt;	Anyway, that is all I wanted to talk about.&#160;:)<br />
+Mar 25 10:42:32 &lt;bgmerrell&gt;	anyone else have anything to discuss?<br />
+Mar 25 10:43:18 &lt;calen&gt;	no question&#160;:)<br />
+Mar 25 10:43:52 &lt;ray&gt;	even though the test scripts were done, would we review them each other, and then add it to tests.py?  or just add it in if it succeed to run?<br />
+Mar 25 10:46:15 &lt;bgmerrell&gt;	ray: I will be reviewing the actual test code line-by-line, however, if you want to do a quick review with each other (to make sure you are hitting all test cases, or make sure you have a valid bug, etc.) that is absolutely fine<br />
+Mar 25 10:47:04 &lt;ray&gt;	bgmerrell, got it<br />
+Mar 25 10:47:46 &lt;bgmerrell&gt;	continue the good work everyone&#160;:)<br />
+Mar 25 10:48:16 &lt;calen&gt;	yes sir&#160;:) thanks<br />
+Mar 25 10:48:31 &lt;ray&gt;	thank u for good organized<br />
+Mar 25 10:48:42 &lt;felicia&gt;	you rocks, thanks.<br />
+Mar 25 18:44:45 *	ray has quit (Leaving)<br />
+</p>

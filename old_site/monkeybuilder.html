@@ -1,0 +1,47 @@
+---
+layout: obsolete
+title: "MonkeyBuilder"
+permalink: /old_site/MonkeyBuilder/
+---
+
+<h1>MonkeyBuilder</h1>
+
+<p>MonkeyBuilder is an experimental way to build the Mono runtime and class libraries on Windows without cygwin or makefiles.
+</p><p>Requirements:
+</p>
+<ul><li> <a href="http://jpobst.com/temp/MonkeyBuilder.zip" class="external text" rel="nofollow">MonkeyBuilder binary pack</a>
+</li><li> <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=AB99342F-5D1A-413D-8319-81DA479AB0D7&amp;displaylang=en" class="external text" rel="nofollow">.Net Framework 3.5 SP1</a>
+</li><li> <a href="http://www.microsoft.com/express/download/#webInstall" class="external text" rel="nofollow">Visual C++ 2008 Express</a> (or Visual Studio 2008 with Visual C++ installed)
+</li><li> <a href="http://www.go-mono.com/mono-downloads/download.html" class="external text" rel="nofollow">Mono 2.6</a>
+</li></ul>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Step_1:_Set_up_Environment"><span class="tocnumber">1</span> <span class="toctext">Step 1: Set up Environment</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Step_2:_Edit_the_Configuration_File"><span class="tocnumber">2</span> <span class="toctext">Step 2: Edit the Configuration File</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Step_3:_Build"><span class="tocnumber">3</span> <span class="toctext">Step 3: Build</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Step_4:_Finished"><span class="tocnumber">4</span> <span class="toctext">Step 4: Finished</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Step_1:_Set_up_Environment"> Step 1: Set up Environment </span></h2>
+<ul><li> Create an empty folder, like C:\monobuild.  (Currently, the path cannot contain spaces.)
+</li><li> Unzip the MonkeyBuilder binary pack to this location.
+</li><li> Check out a copy of /trunk/mono to this location.
+</li><li> Check out a copy of /trunk/mcs to this location.
+</li></ul>
+<p>Your finished directory should look like this:
+</p><p><a href="http://mono-project.com/files/4/48/Filelist.png" class="external free" rel="nofollow">http://mono-project.com/files/4/48/Filelist.png</a>
+</p>
+<h2> <span class="mw-headline" id="Step_2:_Edit_the_Configuration_File"> Step 2: Edit the Configuration File </span></h2>
+<p>Open the MonkeyBuilder.exe.config file and adjust the "installedmono" setting to point to your Mono installation.
+</p>
+<h2> <span class="mw-headline" id="Step_3:_Build"> Step 3: Build </span></h2>
+<ul><li> Run MonkeyBuilder.exe by double-clicking it or running it from the command line.
+</li></ul>
+<h2> <span class="mw-headline" id="Step_4:_Finished"> Step 4: Finished </span></h2>
+<ul><li> You should now have a new folder "build" that contains the Mono runtime and the compiled class libraries.
+</li></ul>
+<div style="margin-left: auto; padding: 5px; margin-right: auto; background-color: #C6D8ED; border: 1px solid #5084C5; border-left-width: 10px; margin-top: 20px; margin-bottom: 20px;">
+<p>Currently this is experimental.  Future releases will allow for more flexibility and fix limitations.
+</p>
+Code for MonkeyBuilder.exe can be found <a href="http://anonsvn.mono-project.com/viewvc/trunk/wintools/MonkeyBuilder/" class="external text" rel="nofollow">here</a>.</div>
+

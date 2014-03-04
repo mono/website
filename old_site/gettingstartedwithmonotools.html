@@ -1,0 +1,79 @@
+---
+layout: obsolete
+title: "GettingStartedWithMonoTools"
+permalink: /old_site/GettingStartedWithMonoTools/
+---
+
+<h1>GettingStartedWithMonoTools</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Quick_Links"><span class="tocnumber">1</span> <span class="toctext">Quick Links</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Installing_Mono_Tools_for_Visual_Studio"><span class="tocnumber">2</span> <span class="toctext">Installing Mono Tools for Visual Studio</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Download_Mono_Tools"><span class="tocnumber">2.1</span> <span class="toctext">Download Mono Tools</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Download_Mono_for_Windows_to_Run.2FDebug_Locally"><span class="tocnumber">2.2</span> <span class="toctext">Download Mono for Windows to Run/Debug Locally</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Download_Servers_for_Linux_and_Mac_to_Run.2FDebug_Remotely"><span class="tocnumber">2.3</span> <span class="toctext">Download Servers for Linux and Mac to Run/Debug Remotely</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Sources"><span class="tocnumber">2.4</span> <span class="toctext">Sources</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Installing_the_Windows_Software"><span class="tocnumber">2.5</span> <span class="toctext">Installing the Windows Software</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Installing_the_Linux_Server_Component_on_openSUSE_or_SLE"><span class="tocnumber">2.6</span> <span class="toctext">Installing the Linux Server Component on openSUSE or SLE</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Quick_Links"> Quick Links </span></h1>
+<ul><li> <a href="http://mono-tools.com/download/" class="external text" rel="nofollow">Mono Tools for Visual Studio download page</a>
+</li><li> The most recent <a href="http://mono-project.com/download" class="external autonumber" rel="nofollow">[1]</a> Mono for Windows and Mono for OS X (required to debug Mono on Mac OS X)
+<ul><li> Requires the most recent <a href="http://ftp.novell.com/pub/mono/monotools/latest/MonoFramework-x86.dmg" class="external text" rel="nofollow">Mono for Mac OS X</a>
+</li></ul>
+</li><li> Linux 
+<ul><li> Use the openSUSE 1click from your existing Linux system: 
+</li></ul>
+</li></ul>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="http://go-mono.com/monotools-download/monotools.ymp" class="external text" rel="nofollow">http://mono-project.com/files/2/2b/Monovs-1click.png</a>
+</p>
+<ul><li> Other platforms will need to build from the <a href="http://ftp.novell.com/pub/mono/monotools/latest/monotools-server-2.0.tar.bz2" class="external text" rel="nofollow">Mono Tools 2.0 Server sources</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Installing_Mono_Tools_for_Visual_Studio"> Installing Mono Tools for Visual Studio </span></h1>
+<p>Requirements:
+</p>
+<ul><li> Windows XP, Vista, or 7, 32 or 64 bits
+</li><li> Visual Studio 
+<ul><li> 2008 SP1 Standard or Professional, or
+</li><li> 2010 Professional, Premium, or Ultimate
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Download_Mono_Tools"> Download Mono Tools </span></h3>
+<p>Download the Visual Studio 2008 or Visual Studio 2010 installer from the <a href="http://mono-tools.com/download/" class="external text" rel="nofollow">Mono Tools download page</a>
+</p><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="http://www.go-mono.com/monotools/download/" class="external text" rel="nofollow">http://www.go-mono.com/monotools/Images/mp-download-blue.png</a>
+</p>
+<h3> <span class="mw-headline" id="Download_Mono_for_Windows_to_Run.2FDebug_Locally"> Download Mono for Windows to Run/Debug Locally </span></h3>
+<ul><li> <a href="http://go-mono.com/monotools-download/latest/mono-windows.exe" class="external text" rel="nofollow">Mono 2.6.7 for Windows</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Download_Servers_for_Linux_and_Mac_to_Run.2FDebug_Remotely"> Download Servers for Linux and Mac to Run/Debug Remotely </span></h3>
+<p><b>Linux:</b>
+</p>
+<ul><li> Use the openSUSE 1click from your existing Linux system:
+</li></ul>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="http://go-mono.com/monotools-download/monotools.ymp" class="external text" rel="nofollow">http://mono-project.com/files/2/2b/Monovs-1click.png</a>
+</p><p><b>Note:</b> After installing on Linux, launch the "MonoTool GUI Server" from the application menu to start the server.
+</p><p><b>Mac:</b>
+</p>
+<ul><li> <a href="http://go-mono.com/monotools-download/latest/monotools-server.dmg" class="external text" rel="nofollow">MonoTools Server for Mac OS X</a> (required to debug Mono on Mac OS X)
+<ul><li> Requires <a href="http://go-mono.com/monotools-download/latest/MonoFramework-x86.dmg" class="external text" rel="nofollow">Mono 2.6.6 for Mac OS X</a>
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Sources"> Sources </span></h3>
+<p>To debug applications on other systems running Mono 2.6.7 (or later), you may need to build your own copy of the MonoTools Server from the <a href="http://go-mono.com/monotools-download/latest/monotools-server-2.0.tar.bz2" class="external text" rel="nofollow">Mono Tools 2.0 Server sources</a>.
+</p>
+<h2> <span class="mw-headline" id="Installing_the_Windows_Software"> Installing the Windows Software </span></h2>
+<ul><li> <span style="color: Red;">Make sure all copies of Visual Studio are closed!</span>
+</li><li> Double click the Windows installer (.msi or .vsix).
+</li><li> Follow the installer instructions.
+</li></ul>
+<h2> <span class="mw-headline" id="Installing_the_Linux_Server_Component_on_openSUSE_or_SLE"> Installing the Linux Server Component on openSUSE or SLE </span></h2>
+<ul><li> Use the openSUSE 1click from your Linux system:
+</li></ul>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="http://go-mono.com/monotools/monovs.ymp" class="external text" rel="nofollow">http://mono-project.com/files/2/2b/Monovs-1click.png</a>
+</p><p><b>Everything should now be ready to go!  Guides to using each feature are available from the <a href="http://mono-tools.com/" class="external text" rel="nofollow">Mono Tools homepage</a>.</b>
+</p>

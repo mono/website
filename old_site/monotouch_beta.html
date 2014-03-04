@@ -1,0 +1,87 @@
+---
+layout: obsolete
+title: "MonoTouch Beta"
+permalink: /old_site/MonoTouch_Beta/
+---
+
+<h1>MonoTouch Beta</h1>
+
+<p>This is the page for the <a href="{{site.baseurl}}/MonoTouch" title="MonoTouch">MonoTouch</a> Beta program.   If you are interested in participating on the beta, you can fill out our 
+<a href="http://spreadsheets.google.com/viewform?hl=en&amp;formkey=dHRXeFI5b1NjUWdRRkpiSmxkanh6T1E6MA.." class="external text" rel="nofollow">Beta Signup Form</a>.
+</p><p><br />
+Here are some pointers to get you started:
+</p>
+<ul><li> <a href="{{site.baseurl}}/MonoTouch_Installation" title="MonoTouch Installation">Installing MonoTouch</a>.
+</li><li> <a href="{{site.baseurl}}/MonoTouch_Tutorials" title="MonoTouch Tutorials">MonoTouch Tutorials</a>.
+</li><li> <a href="{{site.baseurl}}/MonoTouch_API" title="MonoTouch API">API design for MonoTouch</a>.
+</li><li> <a href="{{site.baseurl}}/MonoTouch_Tutorial_MonoDevelop_HelloWorld" title="MonoTouch Tutorial MonoDevelop HelloWorld">Using MonoDevelop to create a MonoTouch application</a>.
+</li></ul>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Live_Support_over_Chat"><span class="tocnumber">1</span> <span class="toctext">Live Support over Chat</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Bugs_in_MonoTouch"><span class="tocnumber">2</span> <span class="toctext">Bugs in MonoTouch</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Release_History"><span class="tocnumber">3</span> <span class="toctext">Release History</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Caveats"><span class="tocnumber">4</span> <span class="toctext">Caveats</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#The_.NET_API"><span class="tocnumber">4.1</span> <span class="toctext">The .NET API</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Limitations"><span class="tocnumber">4.2</span> <span class="toctext">Limitations</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Live_Support_over_Chat"> Live Support over Chat </span></h1>
+<p>You can get live support for MonoTouch using <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a> at server irc.gnome.org channel #monotouch.
+</p>
+<h1> <span class="mw-headline" id="Bugs_in_MonoTouch"> Bugs in MonoTouch </span></h1>
+<p>You can query or report new bugs using Bugzilla, here are some links:
+</p><p><br />
+</p>
+<table style="margin-left: 20px; margin-top: 15px;" cellspacing="1">
+<tr>
+<td style="width: 300px;">
+</td>
+<td style="width: 60px;text-align: center"> Query
+</td>
+<td style="width: 60px;text-align: center"> Add
+</td></tr>
+<tr>
+<td> <b>MonoTouch Bugs</b>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> &#160;&#160;Runtime
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/l9xfck" class="external text" rel="nofollow">http://mono-project.com/files/7/79/Magnifier.png</a>
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/lxsfrz" class="external text" rel="nofollow">http://mono-project.com/files/a/a7/Add.png</a>
+</td></tr>
+<tr>
+<td> &#160;&#160;Class Libraries
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/knzc8s" class="external text" rel="nofollow">http://mono-project.com/files/7/79/Magnifier.png</a>
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/mfcw8k" class="external text" rel="nofollow">http://mono-project.com/files/a/a7/Add.png</a>
+</td></tr>
+<tr>
+<td> &#160;&#160;Tools
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/lxc273" class="external text" rel="nofollow">http://mono-project.com/files/7/79/Magnifier.png</a>
+</td>
+<td style="text-align: center"> <a href="http://tinyurl.com/lgm6vd" class="external text" rel="nofollow">http://mono-project.com/files/a/a7/Add.png</a>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Release_History"> Release History </span></h1>
+<p><a href="{{site.baseurl}}/MonoTouch_ReleaseNotes" title="MonoTouch ReleaseNotes">MonoTouch Release History</a>
+</p>
+<h1> <span class="mw-headline" id="Caveats"> Caveats </span></h1>
+<p>We consider MonoTouch feature complete, but there will be bugs lurking in this beta release.   We will be issuing new builds every few days to correct bugs that developers will be running into, so please report these issues to the monotouch@lists.ximian.com mailing list.
+</p><p>The beta does not come with a license to redistribute the code beyond testing.   For that you will need to wait for the official release in the first two weeks of September to buy the real product version.
+</p>
+<h2> <span class="mw-headline" id="The_.NET_API"> The .NET API </span></h2>
+<p>MonoTouch is based on a hybrid .NET 2.0 and Silverlight 2 API profile, this was done to help the Mono Linker remove code to make your code smaller.   If you want to use existing C# code, you will need to compile it from scratch using our compiler and tools to make sure that the proper assemblies are referenced.
+</p>
+<h2> <span class="mw-headline" id="Limitations"> Limitations </span></h2>
+<p>Since MonoTouch is a static compiler (no JIT engine), there are some <a href="{{site.baseurl}}/MonoTouch:Limitations" title="MonoTouch:Limitations">limitations</a> that you should be aware of before you write your code.
+</p>

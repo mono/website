@@ -1,0 +1,99 @@
+---
+layout: obsolete
+title: "JScript"
+permalink: /old_site/JScript/
+---
+
+<h1>JScript</h1>
+
+<p><b>JScript.NET compiler is not currently supported in Mono</b>
+</p><p>There is no active maintainer, and there is no active development on it.   Chances are that we will focus on a new Javascript implementation based on the DLR in the future, but there are no news at this point
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Status"><span class="tocnumber">2</span> <span class="toctext">Status</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Future_Plans"><span class="tocnumber">3</span> <span class="toctext">Future Plans</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Working_with_mjs"><span class="tocnumber">4</span> <span class="toctext">Working with mjs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#How_to_get_the_compiler"><span class="tocnumber">4.1</span> <span class="toctext">How to get the compiler</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#How_mjs_is_implemented"><span class="tocnumber">4.2</span> <span class="toctext">How mjs is implemented</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#How_to_contribute"><span class="tocnumber">4.3</span> <span class="toctext">How to contribute</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Submitting_bug_reports"><span class="tocnumber">4.4</span> <span class="toctext">Submitting bug reports</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Introduction"> Introduction </span></h3>
+<p>Mono's support for <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/jscript7/html/jsorijscript.asp" class="external text" rel="nofollow">JScript .NET</a> is no longer under development
+</p><p>Originally, we were targeting the <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" class="external text" rel="nofollow">ECMAScript</a> language specification published by <a href="http://www.ecma-international.org/" class="external text" rel="nofollow">Ecma International</a>in the standard ECMA-262.
+</p><p>The JScript's support it's divided in two areas:
+</p>
+<ol><li> <b>Compiler.</b>
+</li><li> <b>Runtime support.</b>
+</li></ol>
+<h3> <span class="mw-headline" id="Status"> Status </span></h3>
+<p>We are using Mozilla's JavaScript <a href="http://www.mozilla.org/js/tests/library.html" class="external text" rel="nofollow">test suite</a> with some small modifications and a custom runner for testing. It can be found at directory <b>mcs/class/Microsoft.JScript/Test/Mozilla</b>.
+</p><p>The results are: 8640 successful tests out of 8917 (96.89%).
+</p>
+<h3> <span class="mw-headline" id="Future_Plans"> Future Plans </span></h3>
+<p>We are working toward being full ECMAScript-262 compliant at compiler and runtime level. But also we want to include MS proposed extensions for ECMAScript4:
+</p>
+<pre>       Enumerations: <a href="http://msdn2.microsoft.com/en-us/library/y94acxy2.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/y94acxy2.aspx</a>
+</pre>
+<pre>       Constants: <a href="http://msdn2.microsoft.com/en-us/library/7t07247t.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/7t07247t.aspx</a>
+</pre>
+<pre>       Class based object oriented programming:
+               class declaration: <a href="http://msdn2.microsoft.com/en-us/library/ezts5hx6.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/ezts5hx6.aspx</a>
+               interface declaration: <a href="http://msdn2.microsoft.com/en-us/library/h30d6hy0.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/h30d6hy0.aspx</a>
+               function_get: <a href="http://msdn2.microsoft.com/en-us/library/77kz8hy0.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/77kz8hy0.aspx</a>
+               function_set: <a href="http://msdn2.microsoft.com/en-us/library/6ysbstsx.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/6ysbstsx.aspx</a>
+               static statement: <a href="http://msdn2.microsoft.com/en-us/library/7k208hb5.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/7k208hb5.aspx</a>
+               expando modifier: <a href="http://msdn2.microsoft.com/en-us/library/ch149y3b.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/ch149y3b.aspx</a>
+               super modifier: <a href="http://msdn2.microsoft.com/en-us/library/f3cbk963.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/f3cbk963.aspx</a>
+               public modifier: <a href="http://msdn2.microsoft.com/en-us/library/0cs1ax5t.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/0cs1ax5t.aspx</a>
+               private modifier: <a href="http://msdn2.microsoft.com/en-us/library/52zye4wa.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/52zye4wa.aspx</a>
+               protected modifier: <a href="http://msdn2.microsoft.com/en-us/library/x35feb9t.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/x35feb9t.aspx</a>
+               internal modifier: <a href="http://msdn2.microsoft.com/en-us/library/ah1b9xxb.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/ah1b9xxb.aspx</a>
+               abstract modifier: <a href="http://msdn2.microsoft.com/en-us/library/a2fb5y72.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/a2fb5y72.aspx</a>
+               final modifier: <a href="http://msdn2.microsoft.com/en-us/library/47ezsw2s.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/47ezsw2s.aspx</a>
+               hide modifier: <a href="http://msdn2.microsoft.com/en-us/library/1k022k51.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/1k022k51.aspx</a>
+               override modifier: <a href="http://msdn2.microsoft.com/en-us/library/2wte5sx9.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/2wte5sx9.aspx</a>
+               static modifier: <a href="http://msdn2.microsoft.com/en-us/library/f4ewhdb8.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/f4ewhdb8.aspx</a>
+</pre>
+<pre>       Conditional compilation.
+               @cc_on: <a href="http://msdn2.microsoft.com/en-us/library/eb0w91wa.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/eb0w91wa.aspx</a>
+               @if and friends: <a href="http://msdn2.microsoft.com/en-us/library/ct27x3xa.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/ct27x3xa.aspx</a>
+               @set: <a href="http://msdn2.microsoft.com/en-us/library/k0h7dyd7.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/k0h7dyd7.aspx</a>
+               @debug: <a href="http://msdn2.microsoft.com/en-us/library/2a464tzs.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/2a464tzs.aspx</a>
+               @position: <a href="http://msdn2.microsoft.com/en-us/library/1fkt8wb5.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/1fkt8wb5.aspx</a>
+               Conditional compilation variables: <a href="http://msdn2.microsoft.com/en-us/library/7142yyxw(VS.80).aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/7142yyxw(VS.80).aspx</a>
+</pre>
+<p><br />
+But that should not stop you from implementing new cool features like:
+</p>
+<ul><li> <a href="http://www.ecma-international.org/publications/standards/Ecma-357.htm" class="external text" rel="nofollow">E4X</a> support (ECMAScript for XML).
+</li><li> <a href="http://wiki.apache.org/cocoon/RhinoWithContinuations" class="external text" rel="nofollow">Continuations</a> support.
+</li><li> Access to Mono's base class library.
+</li><li> Implement a <a href="http://www.monodevelop.com/" class="external text" rel="nofollow">MonoDevelop</a> add-in, which should include an interactive shell.
+</li><li> Emit debug info.
+</li><li> Microsoft extensions like typed variables.
+</li></ul>
+<h3> <span class="mw-headline" id="Working_with_mjs"> Working with mjs </span></h3>
+<h4> <span class="mw-headline" id="How_to_get_the_compiler"> How to get the compiler </span></h4>
+<p>Mono's JScript compiler is part of the 'mcs' module 
+and is built by default, it's distributed under the name of <b>mjs</b>.
+</p>
+<h4> <span class="mw-headline" id="How_mjs_is_implemented"> How mjs is implemented </span></h4>
+<p>Mono's JScript compiler is written in C#, and it's constructed under the standard compiler architecture, which means that it is separated into phases. The current phases are tokenizing, parsing, semantic analysis and code generation. 
+</p><p>We use a handcoded tokenizer and parser which was ported from Mozilla's <a href="http://www.mozilla.org/rhino/" class="external text" rel="nofollow">Rhino</a> compiler, after that we build an abstract syntax tree which is used by the semantic analyser and code generator for context analysis and the generation of the CIL image, respectively. mjs uses .NET's System.Reflection.Emit API for code generation which makes it much more understandable and readable.
+</p>
+<h4> <span class="mw-headline" id="How_to_contribute"> How to contribute </span></h4>
+<p>There are a number of ways to contribute to the JScript effort. They range from reporting bugs in <b>mjs</b> and <b>Microsoft.JScript.dll</b>, implementing JScript's object system classes as well as the embedded runtime support which involves the implementation of classes related to <b>VsaEngine</b>; those classes are located in the <b>mcs/class/Microsoft.JScript</b> directory.
+</p><p>Currently, the best way of contributing is to have a look at the failing tests in <b>mcs/class/Microsoft.JScript/Test/Mozilla</b> and fix them. Detailed instructions for how to use the test suite are in the README of that directory.
+</p><p>If you need specific details don't hesitate to send an e-mail to <a href="mailto:cesar@ciencias.unam.mx" class="external text" rel="nofollow">cesar</a> or the <a href="mailto:mono-devel-list@lists.ximian.com" class="external text" rel="nofollow">mono-devel</a> mailing list. If you have questions about the run time you can also try contacting <a href="mailto:flgr@ccan.de" class="external text" rel="nofollow">flgr</a> for help.
+</p><p>If you are generally interested in the project you might also want to join the developers at <a href="irc://irc.gimp.org/mjs" class="external text" rel="nofollow">#mjs on irc.gimp.org</a>.
+</p>
+<h4> <span class="mw-headline" id="Submitting_bug_reports"> Submitting bug reports </span></h4>
+<p><b>mjs</b> has its own <a href="http://bugzilla.ximian.com/buglist.cgi?product=Mono%3A+Compilers&amp;component=jscript&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.bug_id" class="external text" rel="nofollow">query module</a> and also you can <a href="http://bugzilla.ximian.com/enter_bug.cgi?product=Mono%3A+Compilers&amp;component=jscript" class="external text" rel="nofollow">add</a> more reports. Take a look at Mono's good practices for creating a <a href="http://mono-project.com/Bugs" class="external text" rel="nofollow">bug report</a>
+</p>

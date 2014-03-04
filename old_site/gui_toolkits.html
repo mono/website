@@ -1,0 +1,142 @@
+---
+layout: obsolete
+title: "Gui Toolkits"
+permalink: /old_site/Gui_Toolkits/
+---
+
+<h1>Gui Toolkits</h1>
+
+<p><b>Picking the Right Toolkit</b>
+</p><p>One of the hardest and most important decision to make when starting a new desktop application is which GUI "toolkit" to choose.  The toolkit is the set of API's that produce the graphical user interface your users will interact with.
+</p><p>There are a number of factors to consider when choosing the toolkit.  Different toolkits support different platforms (Linux, Windows, OSX) and have different features such as accessibility, layout engines, and looks.
+</p><p>The two main toolkits offered by Mono are GTK# and Winforms, however there are several other toolkits offered by the community which may suit your needs.
+</p><p>Both GTK# and Winforms, while being cross-platform, have clear roots in their original platforms.  Gtk+ (the root of GTK#) began life on the Linux platform, and has since been ported to Windows and OSX.  Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and OSX.  If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform.  Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users.  If you do not have a platform preference, your toolkit choice will have to rely on other factors.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Toolkits"><span class="tocnumber">1</span> <span class="toctext">Toolkits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Gtk.23"><span class="tocnumber">1.1</span> <span class="toctext">Gtk#</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#MonoMac"><span class="tocnumber">1.2</span> <span class="toctext">MonoMac</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Windows.Forms"><span class="tocnumber">1.3</span> <span class="toctext">Windows.Forms</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Qyoto"><span class="tocnumber">1.4</span> <span class="toctext">Qyoto</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Qt4Dotnet"><span class="tocnumber">1.5</span> <span class="toctext">Qt4Dotnet</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#wxNet"><span class="tocnumber">1.6</span> <span class="toctext">wxNet</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Dead_efforts"><span class="tocnumber">1.7</span> <span class="toctext">Dead efforts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Alternative_Implementation_Approaches"><span class="tocnumber">2</span> <span class="toctext">Alternative Implementation Approaches</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Toolkits"> Toolkits </span></h1>
+<h2> <span class="mw-headline" id="Gtk.23"><a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">Gtk#</a></span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/5/5e/Banshee1.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/5/5e/Banshee1.png" width="180" height="116" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/5/5e/Banshee1.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div><a href="http://banshee-project.org/Main_Page" class="external text" rel="nofollow">Banshee</a>, a GTK# app</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/9/92/Fspot1.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/9/92/Fspot1.png" width="180" height="133" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/9/92/Fspot1.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div><a href="http://f-spot.org/Main_Page" class="external text" rel="nofollow">F-Spot</a>, a GTK# app</div></div></div>
+<p>Homepage: <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">GtkSharp</a>
+</p><p>GTK# is a .NET binding for the Gtk+ toolkit.  The toolkit is written in C for speed and compatibility, while the GTK# binding provides an easy to use, object oriented API for managed use.  It is in active development by the Mono project, and there are various real-world applications available that use it (<a href="http://banshee-project.org/Main_Page" class="external text" rel="nofollow">Banshee</a>, <a href="http://f-spot.org/Main_Page" class="external text" rel="nofollow">F-Spot</a>, <a href="http://beagle-project.org/Main_Page" class="external text" rel="nofollow">Beagle</a>, <a href="http://www.monodevelop.com/Main_Page" class="external text" rel="nofollow">MonoDevelop</a>).
+</p><p>In general, GTK# applications are written using <a href="http://www.monodevelop.com/Main_Page" class="external text" rel="nofollow">MonoDevelop</a>, which provides a visual designer for creating GTK# GUIs.
+</p><p>Platforms: Unix, Windows, OSX
+</p><p>Pros:
+</p>
+<ul><li> Good support for accessibility through its Gtk+ heritage.
+</li><li> Layout engine ideal for handling internationalized environments, and adapts to font-size without breaking applications.
+</li><li> Applications integrate with the Gnome Desktop.
+</li><li> API is familiar to Gtk+ developers.
+</li><li> Large Gtk+ community.
+</li><li> A Win32 port is available, with native look on Windows XP.
+</li><li> The API is fairly stable at this point, and syntactic sugar is being added to improve it.
+</li><li> Unicode support is exceptional. 
+</li></ul>
+<p>Cons:
+</p>
+<ul><li> Gtk+ apps run like foreign applications on MacOS X.
+</li><li> Incomplete documentation.
+</li></ul>
+<h2> <span class="mw-headline" id="MonoMac"><a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a></span></h2>
+<p>Homepage: <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a>
+</p><p>MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C#, it is not limited to the AppKit GUI APIs.
+</p><p>The MonoMac APIs replaced the old <a href="{{site.baseurl}}/CocoaSharp" title="CocoaSharp" class="mw-redirect">CocoaSharp</a> binding, which is now deprecated.
+</p><p>Platforms: OSX
+</p><p>Pros:
+</p>
+<ul><li> Native look and feel on MacOS X.
+</li><li> Substrate is well documented.
+</li></ul>
+<p>Cons:
+</p>
+<ul><li> Not portable outside of MacOS X.
+</li></ul>
+<h2> <span class="mw-headline" id="Windows.Forms"><a href="{{site.baseurl}}/WinForms" title="WinForms">Windows.Forms</a></span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/7/71/Nunit1.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/7/71/Nunit1.png" width="180" height="132" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/7/71/Nunit1.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div><a href="http://www.nunit.org/" class="external text" rel="nofollow">NUnit</a>, a Winforms app</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/3/32/Screenshot-SharpChess.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/3/32/Screenshot-SharpChess.png" width="180" height="154" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/3/32/Screenshot-SharpChess.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div><a href="http://sharpchess.com/" class="external text" rel="nofollow">SharpChess</a>, a Winforms app</div></div></div>
+<p>Homepage: <a href="{{site.baseurl}}/WinForms" title="WinForms">Winforms</a>
+</p><p>Windows.Forms is a binding developed by Microsoft to the Win32 toolkit.  As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
+</p><p>Whereas the .Net implementation is a binding to the Win32 toolkit, the Mono implementation is written in C# to allow it to work on multiple platforms.  Most of the Windows.Forms API will work on Mono, however some applications (and especially third party controls) occasionally bypass the API and P/Invoke straight to the Win32 API.  These calls will likely have to changed to work on Mono.
+</p><p>In general, Winforms applications are written using Microsoft's Visual Studio or <a href="http://www.icsharpcode.net/opensource/sd/" class="external text" rel="nofollow">SharpDevelop</a>, which both provide a visual designer for creating Winforms GUIs.
+</p><p>Platforms: Windows, Unix, OSX
+</p><p>Pros:
+</p>
+<ul><li> Extensive documentation exists for it (books, tutorials, online documents).
+</li><li> Large community of active developers.
+</li><li> Easiest route to port an existing Windows.Forms application.
+</li></ul>
+<p>Cons:
+</p>
+<ul><li> Internationalization can be tricky with fixed layouts.
+</li><li> Looks alien on non-Windows platforms.
+</li><li> Code that calls the Win32 API is not portable.
+</li></ul>
+<h2> <span class="mw-headline" id="Qyoto">Qyoto</span></h2>
+<p>Homepage: <a href="http://techbase.kde.org/Development/Languages/Qyoto" class="external text" rel="nofollow">Qyoto</a>
+</p><p>The Qyoto/Kimono languages bindings allow C# and any other .NET language to be used to write Qt/KDE programs. The bindings are autogenerated directly from the Qt/KDE headers, greatly reducing the maintenance effort. KDE doxygen comments are automatically converted to the xml based C# style of comment format. Substrate is well documented and supported. Qyoto 4.0 got nice <a href="http://api.kde.org/qyoto-api/" class="external text" rel="nofollow">Documentation</a> too.
+</p><p>Platforms: Unix, Windows, OSX
+</p><p>On Debian/Ubuntu, it can be installed by installing the 'qyoto-dev' package.
+</p>
+<h2> <span class="mw-headline" id="Qt4Dotnet">Qt4Dotnet</span></h2>
+<p>Homepage: <a href="http://code.google.com/p/qt4dotnet/" class="external text" rel="nofollow">Qt4Dotnet</a>
+</p><p>This is a port of the QtJambi java bindings to .net using IKVM.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="wxNet">wxNet</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/c/cf/Linux-05.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/c/cf/Linux-05.png" width="180" height="144" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/c/cf/Linux-05.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>wx# Sample</div></div></div>
+<p>Homepage: <a href="http://wxnet.sourceforge.net/" class="external free" rel="nofollow">http://wxnet.sourceforge.net/</a>
+</p><p>wxNet is a .NET binding for the wxWindows cross-platform toolkit.
+</p><p>Platforms: Windows, Linux, OSX
+</p><p>Pros:
+</p>
+<ul><li> Native look and feel on each platform.
+</li><li> Substrate (wxWindows) is well documented, .NET binding lacks documentation. 
+</li></ul>
+<p>Cons:
+</p>
+<ul><li> Binding to non-supported extra widgets is hard.
+</li><li> Custom-authored widgets look and feel is not preserved across platforms.
+</li><li> Common denominator subset API problem.
+</li></ul>
+<h2> <span class="mw-headline" id="Dead_efforts"> Dead efforts </span></h2>
+<p>There are a couple of <a href="{{site.baseurl}}/Dead_Toolkits" title="Dead Toolkits">Dead Toolkits</a> that have been developed in the past.
+</p>
+<h1> <span class="mw-headline" id="Alternative_Implementation_Approaches"> Alternative Implementation Approaches </span></h1>
+<p>If your application is designed to be a long-running application and you have the extra resources to spare you might want to consider creating multiple operating system specific user interfaces, one for each major platform.
+</p><p>The idea is that you must split your application in parts:
+</p>
+<ul><li> Core: this contains the hearth of your application, your logic, your business process.
+</li><li> Front-end: this contains the UI front-ends for each platform.
+</li></ul>
+<p>You could even take this one step further and in addition to have a front-end per platform, you could even make a Web frontend if the Core is suitable for it. 
+</p><p>The downside is that you have to write the code more than once, but the upside is that your application will look native on each platform.
+</p><p>Although some toolkits support themes, theme engines and try to mimic the host operating system, making an application truly operating system specific goes beyond the basic look.    
+</p><p>There are a number of examples: 
+</p>
+<ul><li> The order of buttons in dialog boxes tends to be different between Windows and MacOS/Gnome.   
+</li><li> Dialog Box Layout: this tends to change across operating systems.
+</li><li> Configuration options: these tend to be radically different across different operating systems.   
+</li></ul>
+<p>As an example, consider the UI for <a href="http://snorp.net/log/tangerine" class="external text" rel="nofollow">Tangerine</a> an application used to stream music over DAAP.   Tangerine has a core engine and three user interfaces, one for each major operating system:
+</p><p>On Windows:
+</p><p><a href="{{site.baseurl}}/images/old_site/1/17/Tangerine-prefs-win32-new.png" class="image"><img alt="Tangerine-prefs-win32-new.png" src="{{site.baseurl}}/images/old_site/1/17/Tangerine-prefs-win32-new.png" width="326" height="364" /></a>
+</p><p>On Linux with Gnome:
+</p><p><a href="{{site.baseurl}}/images/old_site/e/e3/Tangerine-properties.png" class="image"><img alt="Tangerine-properties.png" src="{{site.baseurl}}/images/old_site/e/e3/Tangerine-properties.png" width="274" height="351" /></a>
+</p><p>On MacOS X:
+</p><p><a href="{{site.baseurl}}/images/old_site/a/a6/Tangerine-preferences-mac.png" class="image"><img alt="Tangerine-preferences-mac.png" src="{{site.baseurl}}/images/old_site/a/a6/Tangerine-preferences-mac.png" width="664" height="413" /></a>
+</p>

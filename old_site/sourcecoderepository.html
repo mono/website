@@ -1,0 +1,133 @@
+---
+layout: obsolete
+title: "SourceCodeRepository"
+permalink: /old_site/SourceCodeRepository/
+---
+
+<h1>SourceCodeRepository</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Git_Repository"><span class="tocnumber">1</span> <span class="toctext">Git Repository</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Browsing_the_Sources"><span class="tocnumber">1.1</span> <span class="toctext">Browsing the Sources</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Building_Mono_from_source"><span class="tocnumber">1.2</span> <span class="toctext">Building Mono from source</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Contributing_Patches"><span class="tocnumber">2</span> <span class="toctext">Contributing Patches</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Policies"><span class="tocnumber">3</span> <span class="toctext">Policies</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Coding_Guidelines"><span class="tocnumber">3.1</span> <span class="toctext">Coding Guidelines</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Code_License"><span class="tocnumber">3.2</span> <span class="toctext">Code License</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Changing_Code"><span class="tocnumber">3.3</span> <span class="toctext">Changing Code</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Owning_Code"><span class="tocnumber">3.4</span> <span class="toctext">Owning Code</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Pull-Request_Rules"><span class="tocnumber">3.5</span> <span class="toctext">Pull-Request Rules</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Getting_Help_With_Git"><span class="tocnumber">4</span> <span class="toctext">Getting Help With Git</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Branches"><span class="tocnumber">5</span> <span class="toctext">Branches</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Keeping_track_of_code_changes"><span class="tocnumber">6</span> <span class="toctext">Keeping track of code changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Via_Web.2FEmail"><span class="tocnumber">6.1</span> <span class="toctext">Via Web/Email</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Via_Email"><span class="tocnumber">6.2</span> <span class="toctext">Via Email</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Cia.Navi.Cx"><span class="tocnumber">6.3</span> <span class="toctext">Cia.Navi.Cx</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Git_Repository"> Git Repository </span></h1>
+<p>The Mono source code is hosted on <a href="http://GitHub.com" class="external text" rel="nofollow">GitHub</a> using the <a href="http://git-scm.com/" class="external text" rel="nofollow">Git</a> source code control system for all of its source code.  Although only active contributors get write access to the modules on Git, third party developers and easily fork the code on GitHub or download full copies of the repositories to their own systems.
+</p><p>Here we describe how one obtains commit access to the Mono Git repository and the responsibilities that come with that access privilege.
+</p><p>Also, you can see our list of important <a href="{{site.baseurl}}/Branches" title="Branches">branches</a>.
+</p>
+<h2> <span class="mw-headline" id="Browsing_the_Sources"> Browsing the Sources </span></h2>
+<p>If all you need is to browse the sources, you can go to <a href="http://github.com/mono" class="external text" rel="nofollow">Mono Organization page on GitHub</a>.
+</p>
+<h2> <span class="mw-headline" id="Building_Mono_from_source"> Building Mono from source </span></h2>
+<p>Once you've obtained the source code for different modules of the Mono project, you'll want to <a href="{{site.baseurl}}/Compiling_Mono" title="Compiling Mono"> build Mono from source</a>
+</p>
+<h1> <span class="mw-headline" id="Contributing_Patches"> Contributing Patches </span></h1>
+<p>Now that Mono is hosted on GitHub, contributing patches has never been easier. If you aren't yet familiar with GitHub, you may wish to read GitHub's guide on <a href="http://help.github.com/mac-set-up-git/" class="external text" rel="nofollow">getting started</a>.
+</p><p>Once you've gotten a GitHub account and gotten set up, you should read GitHub's guide to <a href="http://help.github.com/fork-a-repo/" class="external text" rel="nofollow">branching a repository</a>. Once you feel that your patch is finished and you've tested that everything still builds and works as expected, you can then issue a <a href="http://help.github.com/send-pull-requests/" class="external text" rel="nofollow">pull request</a> which alerts the active maintainers that they should examine and review your patch, merging it into the mainline source repository.
+</p>
+<h1> <span class="mw-headline" id="Policies"> Policies </span></h1>
+<p>It is important that everyone follow these policies:
+</p>
+<h3> <span class="mw-headline" id="Coding_Guidelines"> Coding Guidelines </span></h3>
+<p>We have our own <a href="{{site.baseurl}}/Coding_Guidelines" title="Coding Guidelines"> coding guidelines</a>.
+</p>
+<h3> <span class="mw-headline" id="Code_License"> Code License </span></h3>
+<p>If you are about to commit code to a module, the code that is being committed should be released under the X11 license. Mono code licenses themselves are basically: compilers, class libraries and managed code tools: X11; runtime: LGPL.
+</p><p>If in doubt, check with the maintainers of the module, or send mail to mono-devel-list@ximian.com.
+</p>
+<h3> <span class="mw-headline" id="Changing_Code"> Changing Code </span></h3>
+<p>Even if you have write access to the official Mono Project GitHub repositories, that doesn't mean you can change code at will in any directory or module. Directories and Namespaces have a sort of unofficial ownership. If you are not the owner of a piece of code and you want to make changes/fixes to it, there are two cases.
+</p>
+<ul><li> The change is a typo fix or a one-liner build or trivial fix. In this case almost anyone can commit (always remembering to add the proper changelog entry to explain the change). We say "almost anyone", because changes to certain directories almost always should be reviewed first. Such as changes to core stuff: corlib/System, System.Collections, mini/, metadata/, System.IO.
+</li></ul>
+<ul><li> The change is larger. In this case the patch <b>must</b> be sent to mono-devel-list for review by the owner of the code and by the other hackers. Always submit such patches to the list or bugzilla, although you may put the owner of the code in the CC header. Hackers come and go. Mailing a patch to only a personal address is a good way to get the patch forgotten and missed. Plus, getting the patches reviewed as well as reviewing them, is a good thing, so try to get used to it.
+</li></ul>
+<p>Note: If the patch is an addition of code and doesn't change any of the existing code, the rules are slightly relaxed: there is more freedom in committing such changes, if they don't interfere with the existing codebase.
+</p>
+<h3> <span class="mw-headline" id="Owning_Code"> Owning Code </span></h3>
+<p>Now, how do you get to be the owner of a chunk of code? The answer is simple. You wrote the code, so you're the unofficial owner. There is also another way. After sending a few patches for the code, the owner (or the core developers of mono, if the owner somehow disappeared) trusts you and tells you you're free to commit without getting his review first.
+</p><p>You can most likely find ownership by reading ChangeLogs or by using <code>git blame</code>. The entries are with emails, so feel free to ask them. If you are still unsure, post your patch to the mailing list (mono-devel-list).
+</p><p>If you are the owner of a piece of code, feel free to commit code, and delegate the work to others.
+</p><p>But, if you're not the owner of the code, committing a rewrite without getting a review first is frowned upon (especially when the rewrite claimed to fix bugs, but not a single regression test has been added to the suite).
+</p>
+<h3> <span class="mw-headline" id="Pull-Request_Rules"> Pull-Request Rules </span></h3>
+<p>There are a few rules to follow before making a pull request on GitHub: 
+</p>
+<ul><li> Always make sure to add meaningful commit logs
+</li></ul>
+<ul><li> If you fix a bug, add a regression test for it in the <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">test suite</a>
+</li></ul>
+<ul><li> Don't commit unrelated changes together with a fix: do fine-grained commits 
+</li></ul>
+<ul><li> Always check what you're committing: make sure you're only committing what you need and make sure you don't change line endings and whitespace. Do a <code>git diff</code> of the files you're going to commit and check the changes. 
+</li></ul>
+<ul><li> Don't do reformatting commits, unless you're the original author of the code 
+</li></ul>
+<ul><li> When fixing bugs, don't follow the documentation blindly, it may well be wrong. Test the behavior on the MS runtime or ask on the list for discussion if unsure. Don't be afraid of having your changes reviewed. 
+</li></ul>
+<ul><li> Never remove copyright notices from the code 
+</li></ul>
+<ul><li> Never remove licensing info from code 
+</li></ul>
+<ul><li> Never commit code you didn't write yourself or code that doesn't have a suitable license 
+</li></ul>
+<ul><li> For documentation fixes, never copy paste documentation from Visual Studio class view or MSDN.   
+</li></ul>
+<ul><li> Never use a decompiler or disassembler to look at proprietary code.  
+</li></ul>
+<ul><li> Follow the <a href="{{site.baseurl}}/Coding_Guidelines" title="Coding Guidelines">coding guidelines</a>
+</li></ul>
+<ul><li> Keep an eye on performance considerations, especially for code in core classes, ask on the list for guidance 
+</li></ul>
+<ul><li> Do a regression test run and a bootstrapping build if making changes to core functionality before committing. Do not commit code that would break the compile, because that wastes everybody's time. Two things are important in this step: trying to build your sources and making sure that you add all the new files before you do a commit.
+</li></ul>
+<p>Also, remember to pat yourself on the back after the commit, smile and think we're a step closer to a better free software world.
+</p>
+<h1> <span class="mw-headline" id="Getting_Help_With_Git"> Getting Help With Git </span></h1>
+<p>GitHub maintains some great resources for developers here:
+</p><p><a href="http://help.github.com/" class="external free" rel="nofollow">http://help.github.com/</a>
+</p>
+<h1> <span class="mw-headline" id="Branches"> Branches </span></h1>
+<p>For details on existing branches, see <a href="{{site.baseurl}}/Branches" title="Branches">Branches</a>.
+</p>
+<h1> <span class="mw-headline" id="Keeping_track_of_code_changes"> Keeping track of code changes </span></h1>
+<h3> <span class="mw-headline" id="Via_Web.2FEmail"> Via Web/Email </span></h3>
+<p>It is now possible to subscribe to a special group to track changes to the Mono SVN repository over the web using Google Groups:
+</p>
+<ul><li> <a href="http://groups-beta.google.com/group/mono-svn-patches" class="external text" rel="nofollow">mono-svn-patches group</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Via_Email"> Via Email </span></h3>
+<p>We provide an e-mail based mechanisms to keep track of changes to the code base:
+</p>
+<ul><li> <a href="http://lists.ximian.com/mailman/listinfo/mono-patches" class="external text" rel="nofollow">mono-patches</a>: This mailing list receives in patch form all the changes that are being made to the SVN. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put `subscribe' or click on the link.
+</li></ul>
+<p>This will send you an email message every time a change is made to the SVN repository, together with the information that the author of the changes submitted.
+</p>
+<h3> <span class="mw-headline" id="Cia.Navi.Cx"> Cia.Navi.Cx </span></h3>
+<p>The CIA.Navi.Cx project tracks the changes <a href="http://cia.navi.cx/stats/project/mono" class="external text" rel="nofollow">in their page</a>
+</p>

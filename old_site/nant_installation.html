@@ -1,0 +1,39 @@
+---
+layout: obsolete
+title: "NAnt Installation"
+permalink: /old_site/NAnt_Installation/
+---
+
+<h1>NAnt Installation</h1>
+
+<p>Here is a brief outline of the steps necessary to install NAnt on mono.
+</p><p>The latest release, version 0.85-rc3, had a critical build problem that caused it to fail. As such, it's suggested that users install NAnt from one of the recent nightly tarballs.
+</p><p><b>Downloading</b>
+</p>
+<hr />
+<p>The latest nightly tarball can be found on the NAnt sourceforge site <a href="http://nant.sourceforge.net/nightly/latest/nant-src.tar.gz" class="external text" rel="nofollow">here</a>. As this is a nightly snapshot, no guarantees can be made as to whether the latest tarball builds properly on mono. The most recent version known to build, from April 20th, 2005, can be downloaded <a href="http://nant.sourceforge.net/nightly/2005-04-20-0.85/nant-src.tar.gz" class="external text" rel="nofollow">here</a>.
+</p><p><b>Building</b>
+</p>
+<hr />
+<p>Building NAnt is relatively trivial. Recent tarballs include a simple Makefile that includes all the necessary pieces to build NAnt. The following commands assume the present working directory is the top level directory of the source tarball.
+</p>
+<pre>$ make
+$ make prefix=/some/prefix install
+  <b>OR</b>
+$ make install
+</pre>
+<p>If you chose not to explicitly request a prefix, the default prefix of <i>/usr/local</i> will be used. 
+</p><p><b>Known Problems</b>
+</p>
+<hr />
+<ul><li> Docs generation:
+</li></ul>
+<p>If you are using a mono version from SVN or newer than mono-1.1.6, you may experience problems building related to documentation generation. Unfortunately, there is no single convenient location to disable documentation generation, but the following tidbit of bash can be used to disable the documentation building. The script assumes your present working directory is the top level folder of the NAnt source tarball.
+</p>
+<pre>$ for file in $(find ./src -name '*.build')&#160;; do sed -i "s: doc=.*&gt;:&gt;:" ${file}&#160;; done
+</pre>
+<p><b>Basic Usage</b>
+</p>
+<hr />
+<p>After installation, the command <b>nant</b> is available for use. Information on using the nant command can be found by running <b>nant -help</b>. By default, nant will search in the present working directory for any files ending in the extension <i>.build</i>. You can specify the build file explicitly by doing <b>nant -buildfile:foo.build</b>. Further information on using nant, and creating NAnt build files can be found on the NAnt site at <a href="http://nant.sourceforge.net/release/latest/help/" class="external free" rel="nofollow">http://nant.sourceforge.net/release/latest/help/</a>.
+</p>

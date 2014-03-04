@@ -1,0 +1,55 @@
+---
+layout: obsolete
+title: "Mono:Runtime:Documentation:Other"
+permalink: /old_site/Mono:Runtime:Documentation:Other/
+---
+
+<h1>Mono:Runtime:Documentation:Other</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Faster_runtime_builds"><span class="tocnumber">1</span> <span class="toctext">Faster runtime builds</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Runtime_debugging_methods"><span class="tocnumber">2</span> <span class="toctext">Runtime debugging methods</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Debugging_crashes_which_don.27t_happen_inside_gdb.2C_or_only_happen_when_a_test_program_is_ran_in_a_loop"><span class="tocnumber">2.1</span> <span class="toctext">Debugging crashes which don't happen inside gdb, or only happen when a test program is ran in a loop</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Setting_native_breakpoints_in_managed_methods"><span class="tocnumber">2.2</span> <span class="toctext">Setting native breakpoints in managed methods</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Displaying_JIT_debug_output"><span class="tocnumber">2.3</span> <span class="toctext">Displaying JIT debug output</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Displaying_runtime_debug_output"><span class="tocnumber">2.4</span> <span class="toctext">Displaying runtime debug output</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#mono_debug_count_.28.29"><span class="tocnumber">2.5</span> <span class="toctext">mono_debug_count ()</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Faster_runtime_builds"> Faster runtime builds </span></h1>
+<p>To speed up runtime builds, use one or more of the following:
+</p>
+<ul><li> Turn off optimization by passing CFLAGS=-O0 to configure.
+</li><li> Turn off generation of libmono by passing --disable-libraries to configure.
+</li><li> Build in parallel, i.e. using make -j4.
+</li></ul>
+<h1> <span class="mw-headline" id="Runtime_debugging_methods"> Runtime debugging methods </span></h1>
+<h2> <span class="mw-headline" id="Debugging_crashes_which_don.27t_happen_inside_gdb.2C_or_only_happen_when_a_test_program_is_ran_in_a_loop"> Debugging crashes which don't happen inside gdb, or only happen when a test program is ran in a loop </span></h2>
+<p>Set the MONO_DEBUG env variable to 'suspend-to-sigsegv'. This causes the runtime native SIGSEGV handler to spin in a loop, so gdb can be attached to the running process.
+</p>
+<h2> <span class="mw-headline" id="Setting_native_breakpoints_in_managed_methods"> Setting native breakpoints in managed methods </span></h2>
+<p>Use the --break &lt;METHOD&gt; command line argument.  The JIT will generate a native breakpoint (INT on x86) into the prolog of the given method. Use --break-at-bb &lt;METHOD&gt; &lt;bb num&gt; to set a breakpoint at the start of
+a given basic block.
+</p>
+<h2> <span class="mw-headline" id="Displaying_JIT_debug_output"> Displaying JIT debug output </span></h2>
+<p>Use the -v -v -v -v command line argument. Set the MONO_VERBOSE_METHOD env variable to display output for only one method.
+</p>
+<h2> <span class="mw-headline" id="Displaying_runtime_debug_output"> Displaying runtime debug output </span></h2>
+<p>Set the MONO_LOG_LEVEL env variable to 'debug'. The log output is useful for diagnosing assembly loading/AOT/pinvoke problems.
+</p>
+<h2> <span class="mw-headline" id="mono_debug_count_.28.29"> mono_debug_count () </span></h2>
+<p>This is useful for debugging problems where a piece of code is executed many times, and we need to find out which run causes the runtime to misbehave, i.e. which method is miscompiled by the JIT etc.
+It works by changing
+</p>
+<pre class="bash" style="font-family:monospace;">do_something <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<p>To:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">if</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>mono_debug_count <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+  <span style="color: #000000; font-weight: bold;">&lt;</span><span style="color: #000000; font-weight: bold;">do</span> something<span style="color: #000000; font-weight: bold;">&gt;</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span></pre>
+<p>mono_debug_count () is controlled by the COUNT env variable, the first COUNT times it is called, it will return TRUE, after that, it will return FALSE.  This allows us to find out exactly which execution of &lt;do something&gt; causes the problem by running the application while varying the value of COUNT using a binary search.
+</p>

@@ -1,0 +1,40 @@
+---
+layout: obsolete
+title: "GtkSharp: Scale Widgets"
+permalink: /old_site/GtkSharp:_Scale_Widgets/
+---
+
+<h1>GtkSharp: Scale Widgets</h1>
+
+<p>Scale widgets are used to allow the user to visually select and manipulate a value within a specific range. You might want to use a scale widget, for example, to adjust the magnification level on a zoomed preview of a picture, or to control the brightness of a color, or to specify the number of minutes of inactivity before a screensaver takes over the screen.
+</p>
+<h1> <span class="mw-headline" id="Creating_Scale_Widgets"> Creating Scale Widgets </span></h1>
+<p>As with scrollbars, there are separate widget types for [http:/monodoc/T:Gtk.HScale horizontal] and [http:/monodoc/T:Gtk.VScale vertical] scale widgets. (Most programmers seem to favor horizontal scale widgets.) Since they work essentially the same way, there's no need to treat them separately here. The following functions create vertical and horizontal scale widgets, respectively: 
+</p>
+<pre class="csharp" style="font-family:monospace;">VScale vscale1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VScale<span style="color: #008000;">&#40;</span> adjustment <span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+VScale vscale2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VScaleWithRange<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">double</span> min,
+                                     <span style="color: #6666cc; font-weight: bold;">double</span> max,
+                                     <span style="color: #6666cc; font-weight: bold;">double</span> step <span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+HScale hscale1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HScale<span style="color: #008000;">&#40;</span> adjustment <span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+HScale hscale2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HScaleWithRange<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">double</span> min,
+                                     <span style="color: #6666cc; font-weight: bold;">double</span> max,
+                                     <span style="color: #6666cc; font-weight: bold;">double</span> step <span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The adjustment argument can either be an [http:/monodoc/T:Gtk.Adjustment adjustment] object which has already been created, or <tt>null</tt>, in which case, an anonymous adjustment is created with all of its values set to 0.0 (which isn't very useful in this case). In order to avoid confusing yourself, you probably want to create your adjustment with a pageSize of 0.0 so that its upper value actually corresponds to the highest value the user can select. The WithRange constructor variants take care of creating a suitable adjustment object. (If you're already thoroughly confused, read the section on Adjustments again for an explanation of what exactly adjustments do and how to create and manipulate them; also read the [http:/monodoc/T:Gtk.Adjustment Gtk.Adjustment] docs.) 
+</p>
+<h1> <span class="mw-headline" id="Using_Scale_Widgets"> Using Scale Widgets </span></h1>
+<p>Scale widgets can display their current value as a number beside the trough. The default behavior is to show the value, but you can change this with this function: 
+</p>
+<pre class="csharp" style="font-family:monospace;">vscale1<span style="color: #008000;">.</span><span style="color: #0000FF;">DrawValue</span> <span style="color: #008000;">=</span> true_or_false<span style="color: #008000;">;</span></pre>
+<p>The value displayed by a scale widget is rounded to one decimal point by default, as is the value field in its Adjustment. You can change this with: 
+</p>
+<pre class="csharp" style="font-family:monospace;">vscale1<span style="color: #008000;">.</span><span style="color: #0000FF;">Digits</span> <span style="color: #008000;">=</span> digits<span style="color: #008000;">;</span></pre>
+<p>where digits is the number of decimal places you want. You can set digits to anything you like, but no more than 13 decimal places will actually be drawn on screen. 
+</p><p>Finally, the value can be drawn in different positions relative to the trough: 
+</p>
+<pre class="csharp" style="font-family:monospace;">vscale1<span style="color: #008000;">.</span><span style="color: #0000FF;">ValuePos</span> <span style="color: #008000;">=</span> pos<span style="color: #008000;">;</span></pre>
+<p>The argument <i>pos</i> is of type [http:/monodoc/T:Gtk.PositionType Gtk.PositionType], which is an enumeration of Left, Right, Top, and Bottom.  If you position the value on the "side" of the trough (e.g., on the top or bottom of a horizontal scale widget), then it will follow the slider up and down the trough. 
+</p><p>For a full list of the event signals that a Range widget throws, see [http:/monodoc/T:Gtk.HScale Gtk.HScale] and [http:/monodoc/T:Gtk.VScale Gtk.VScale] .
+</p>

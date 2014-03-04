@@ -1,0 +1,202 @@
+---
+layout: obsolete
+title: "Mono:OSX"
+permalink: /old_site/Mono:OSX/
+---
+
+<h1>Mono:OSX</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction_to_Mono_on_MacOS_X"><span class="tocnumber">1</span> <span class="toctext">Introduction to Mono on MacOS X</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Installing_Mono_on_MacOS_X"><span class="tocnumber">2</span> <span class="toctext">Installing Mono on MacOS X</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Using_Mono_on_MacOS_X"><span class="tocnumber">3</span> <span class="toctext">Using Mono on MacOS X</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#32_and_64_bit_support"><span class="tocnumber">4</span> <span class="toctext">32 and 64 bit support</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Building_Client_Applications"><span class="tocnumber">5</span> <span class="toctext">Building Client Applications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Running_Mono_applications_on_MacOS_X"><span class="tocnumber">6</span> <span class="toctext">Running Mono applications on MacOS X</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Windows.Forms"><span class="tocnumber">7</span> <span class="toctext">Windows.Forms</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Third_Party_Libraries"><span class="tocnumber">8</span> <span class="toctext">Third Party Libraries</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Uninstalling_Mono_on_Mac_OS_X"><span class="tocnumber">9</span> <span class="toctext">Uninstalling Mono on Mac OS X</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction_to_Mono_on_MacOS_X"> Introduction to Mono on MacOS X </span></h2>
+<p>Mono has supported MacOS X since version 10.3 (Panther) and supports both Intel and PowerPC based versions with both 32 bits and 64 bits configuration supported.
+</p><p>You can use Mono on OSX to build server, console and GUI applications.   Read below for the options available for GUI application development.
+</p><p>If you are interested in creating native GUI applications, use the <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a> bindings and our MonoDevelop add-in.   Read the description on <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a> for more information on how to get started.
+</p>
+<h2> <span class="mw-headline" id="Installing_Mono_on_MacOS_X"> Installing Mono on MacOS X </span></h2>
+<p>You can use Mono either as a runtime to run existing application, or as an SDK to develop new applications with Mono.
+</p><p>Visit the <a href="{{site.baseurl}}/Downloads" title="Downloads">download page</a> to find the latest MacOS X package. Run it and follow the instructions there, you can either get a basic runtime, or a complete runtime plus a software development kit.
+</p><p>If you plan on developing applications with Mono, we suggest that you also <a href="http://monodevelop.com/download" class="external text" rel="nofollow">install the MonoDevelop IDE</a> after you install Mono.
+</p><p>The Mono package includes:
+</p>
+<ul><li> The Mono Runtime
+</li><li> GUI Toolkits: Windows.Forms and Gtk# for OSX.
+<ul><li> Note: the <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a> GUI toolkit for native OSX GUI development is currently a separate download.
+</li></ul>
+</li><li> SDK: C#, Visual Basic compilers, assemblers and tools
+</li><li> XSP ASP.NET server
+</li><li> Manual pages.
+</li></ul>
+<p>This package installs as a framework to /Library/Framework (the same way the Java packages are installed).  Symlinks are created for the executables in /usr/bin.  If you'd like to access the mono <i>manpages</i> you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your <i>manpath</i>.
+The MacOS X Mono package does not include <a href="http://mono-project.com/GtkSharp" class="external text" rel="nofollow">Gtk#</a>, XSP or mod_mono. These will have to be compiled from source.
+</p><p>Our packages currently require Mono OSX 10.4 or better, for older versions, you will need to build from source code.
+</p>
+<h2> <span class="mw-headline" id="Using_Mono_on_MacOS_X"> Using Mono on MacOS X </span></h2>
+<p>At this point, you must use Mono from the command line, the usual set of commands that are available on other ports of Mono are available.
+</p><p>To build applications you can use <a href="/index.php?title=CSharpCompiler&amp;action=edit&amp;redlink=1" class="new" title="CSharpCompiler (page does not exist)">"gmcs"</a>, to run then you can use <a href="/index.php?title=Runtime&amp;action=edit&amp;redlink=1" class="new" title="Runtime (page does not exist)">mono</a>.
+</p><p>From a Terminal shell, you can try it out:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">vi</span> hello.cs 
+$ gcs hello.cs
+$ mono hello.exe
+Hello, World
+$</pre>
+<p>Most users would be using the <a href="http://monodevelop.com" class="external text" rel="nofollow">MonoDevelop IDE</a> to create their projects. When you launch MonoDevelop, select File/New Solution, and you will be greeted with a screen like this:
+</p><p><a href="{{site.baseurl}}/images/old_site/f/f3/MonoDevelop-NewProject.png" class="image"><img alt="MonoDevelop-NewProject.png" src="{{site.baseurl}}/images/old_site/f/f3/MonoDevelop-NewProject.png" width="986" height="720" /></a>
+</p><p>You will have a choice of <a href="{{site.baseurl}}/Gui_Toolkits" title="Gui Toolkits">GUI toolkits</a> for building your application, from pure cross platform, to Mac-specific using <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a>.
+</p>
+<h2> <span class="mw-headline" id="32_and_64_bit_support"> 32 and 64 bit support </span></h2>
+<p>The Mono packages published on this web site provide a 32-bit Mono VM.
+</p><p>Support for 64-bit VMs as of Mono 2.10 is only available if you build Mono from source code and install your own copy of the VM.    In the future we will ship both mono and mono64 binaries for our users.
+</p><p>The 64 bit support has a few limitations today which is why we have not entirely switched to it:
+</p>
+<ul><li> Our Windows.Forms implementation uses Carbon, and as such, it would not work with a 64-bit Mono.
+</li><li> MonoDevelop uses Carbon for its menu integration so it would not run on a 64-bit VM.
+</li><li> MonoMac bindings have not been ported to 64 bits.
+</li></ul>
+<p>Supporting 64-bit Mono across the board would also require us to ship a 64-bit Gtk+ stack and that would increase the download size for most users.
+</p>
+<h2> <span class="mw-headline" id="Building_Client_Applications"> Building Client Applications </span></h2>
+<p>There are a few choices to build client applications on OSX, you should pick the technology that better fits your goals, your choices are:
+</p>
+<table border="1">
+<tr>
+<td> Toolkit
+</td>
+<td> Runs on Linux
+</td>
+<td> Runs on Windows
+</td>
+<td> Runs on Mac
+</td>
+<td> Binding Style
+</td>
+<td> License
+</td>
+<td> Status
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a>
+</td>
+<td> no
+</td>
+<td> no
+</td>
+<td> yes
+</td>
+<td> Strongly typed C# binding to Cocoa APIs
+</td>
+<td> MIT X11
+</td>
+<td> Actively developed, builds on the design lessons from <a href="http://monotouch.net" class="external text" rel="nofollow">MonoTouch</a> but still incomplete.   This will be the new default binding for Mono on OSX.  Separate download.
+</td></tr>
+<tr>
+<td> Gtk#
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> Strongly typed C# binding to the cross platform Gtk+ API.   Applications look foreign on OSX.
+</td>
+<td> LGPL v2
+</td>
+<td> Actively developed, cross platform.  Bundled with Mono.
+</td></tr>
+<tr>
+<td> Windows.Forms
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> Cross platform implementation of Microsoft's Windows.Forms.   Applications look foreign on OSX.
+</td>
+<td> MIT X11
+</td>
+<td> The Windows.Forms API was frozen in time by Microsoft.   Bundled with Mono.
+</td></tr>
+<tr>
+<td> <a href="http://www.monobjc.net" class="external text" rel="nofollow">MonObjc</a>
+</td>
+<td> no
+</td>
+<td> no
+</td>
+<td> yes
+</td>
+<td> Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.
+</td>
+<td> LGPL v3
+</td>
+<td> Actively developed. Separate download.
+</td></tr>
+<tr>
+<td> <a href="{{site.baseurl}}/CocoaSharp" title="CocoaSharp" class="mw-redirect">CocoaSharp</a>
+</td>
+<td> no
+</td>
+<td> no
+</td>
+<td> yes
+</td>
+<td> Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.
+</td>
+<td> MIT X11
+</td>
+<td> No longer developed, no longer maintained, deprecated.   Bundled with Mono.
+</td></tr>
+</table>
+<h2> <span class="mw-headline" id="Running_Mono_applications_on_MacOS_X"> Running Mono applications on MacOS X </span></h2>
+<p>Running applications on MacOS X is very similar to linux systems, from the terminal:
+</p>
+<pre>
+mono myprogram.exe
+</pre>
+<p>For GTK# applications, it's easiest to run them the same way but using <i>xterm</i> from X11.app  
+</p>
+<pre>A MacOS X specific Mono launcher was in development but its status is unclear today
+</pre>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Windows.Forms"> Windows.Forms </span></h2>
+<p>Mono's implementation of the System.Windows.Forms API is built on top of Carbon and can only run with Mono on 32 bit systems.    The look and feel of System.Windows.Forms applications mimics the Windows style and does not currently render like a native OSX application.
+</p>
+<h2> <span class="mw-headline" id="Third_Party_Libraries"> Third Party Libraries </span></h2>
+<p><a href="{{site.baseurl}}/ObjCSharp" title="ObjCSharp">ObjC#</a> is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
+</p>
+<h2> <span class="mw-headline" id="Uninstalling_Mono_on_Mac_OS_X"> Uninstalling Mono on Mac OS X </span></h2>
+<p>Run this script in a terminal:
+</p>
+<pre>
+#!/bin/sh -x
+
+#This script removes Mono from an OS X System.  It must be run as root
+
+rm -r /Library/Frameworks/Mono.framework
+
+rm -r /Library/Receipts/MonoFramework-*
+
+for dir in /usr/bin /usr/share/man/man1 /usr/share/man/man3 /usr/share/man/man5; do
+   (cd ${dir};
+    for i in `ls -al | grep /Library/Frameworks/Mono.framework/ | awk '{print $9}'`; do
+      rm ${i}
+    done);
+done
+</pre>
+

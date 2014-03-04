@@ -1,0 +1,110 @@
+---
+layout: obsolete
+title: "Cross-compiling Mono for Windows"
+permalink: /old_site/Cross-compiling_Mono_for_Windows/
+---
+
+<h1>Cross-compiling Mono for Windows</h1>
+
+<p>Starting with Mono from svn revision 109671 (or version 2.2+) it is now possible to compile Mono for Windows on your Linux machine. To do it you will need to provide a <a href="http://mingw.org/" class="external text" rel="nofollow">MinGW</a> environment for your Linux distribution and several compile and runtime dependencies for Mono. Distribution-specific instructions follow below.
+Once you have your MinGW environment set up, go to your Mono source directory and type (make sure that your directory has NO files from previous compilations):
+</p>
+<pre>./build-mingw32.sh
+</pre>
+<p>To get an overview of options available for the above script, type
+</p>
+<pre>./build-mingw32.sh -h
+</pre>
+<p>The above command assumes that your cross-compilation environment is installed in the <tt>/opt/cross/i386-mingw32msvc</tt> directory and that the MinGW target is <tt>i386-mingw32msvc</tt>. 
+</p><p>If your environment is in another directory, you can specify it by passing the full path using the <tt>-d PATH</tt> argument to the above script. If your MinGW uses a different target, please pass it to the script in the <tt>-m MINGWTARGET</tt> argument. Running the script with the <tt>-h</tt> argument will give short usage information. The above arguments work with Mono 2.8 or newer.
+</p><p>Mono 2.10 (as of Feb 8 2011, <a href="https://github.com/mono/mono/commit/9d4e229c2e5a378f3186ef6ee10a320f5d71a85d" class="external text" rel="nofollow">git commit 9d4e229</a>) or 2.11 (master on Feb 8 2011, <a href="https://github.com/mono/mono/commit/a8362f1a1469ae47ff9b21116f8272f145c115f1" class="external text" rel="nofollow">git commit a8362f1</a>) added two more command line options. First of them, <tt>-e DIR</tt>, lets you put the packages needed for cross-compiling in a location different to the one <tt>mingw32</tt> is installed in. The second new option is <tt>-p PREFIX</tt> which lets you specify the directory in which Mono will be installed on Windows. The build script will create a subdirectory at that location specific to the current build.
+</p><p>If you have an older version of Mono, you should pass the cross-compile environment path as the first argument to the script and the MINGW target as the second argument.
+</p><p>Building will take some time since the mono runtime needs to be built twice (once for the target Windows platform, the second time to build the compilers and class libraries).
+Once the process is done, you will find a zip file in the same directory where the build script lives with the name following the pattern:
+</p>
+<pre>mono-win32-X.Y-BRANCH-REVISION
+</pre>
+<p>where:
+</p>
+<pre>* X.Y - major.minor Mono version
+* BRANCH - Mono branch or <tt>tarball</tt> if svn branch could not have been detected
+* REVISION - Mono svn revision or <tt>rUNKNOWN</tt> if it wasn't possible to determine the revision number
+</pre>
+<p>The zip file must be unpacked in the root directory of any Windows disk drive and you will be able to find the Mono installation in the directory whose name follows the pattern:
+</p>
+<pre>Z:\mono-X.Y-BRANCH-REVISION
+</pre>
+<p>or, if you used the <tt>-p PREFIX</tt> option,
+</p>
+<pre>Z:\PREFIX\mono-X.Y-BRANCH-REVISION
+</pre>
+<p>where:
+</p>
+<pre>* Z - the letter identifying the Windows disk drive where you unpacked the zip
+* X.Y - major.minor mono version
+* BRANCH - Mono branch or <tt>tarball</tt> if svn branch could not have been detected
+* REVISION - Mono svn revision or <tt>rUNKNOWN</tt> if it wasn't possible to determine the revision number
+</pre>
+<p>If you want to permanently put a path to the Mono bin directory from the above package in your global <tt>PATH</tt> environment variable, but you're worried you will have to update it every time you compile new package from another Mono revision, do not despair - there is a way to create symlinks on Windows 2000 onwards if your disk is formatted with the NTFS filesystem. Install <a href="http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx" class="external text" rel="nofollow">this utility</a> and issue the following command from the cmd prompt:
+</p>
+<pre>junction Z:\mono-trunk Z:\mono-X.Y-BRANCH-REVISION
+</pre>
+<p>where the elements of the path are described above. After that you can add the <tt>z:\mono-trunk\bin</tt> path to your system <tt>PATH</tt> variable and just update the symlink every time you install new version of Mono built from trunk.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#List_of_packages_needed_for_cross-compiling"><span class="tocnumber">1</span> <span class="toctext">List of packages needed for cross-compiling</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Distribution-specific_instructions"><span class="tocnumber">2</span> <span class="toctext">Distribution-specific instructions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#openSUSE"><span class="tocnumber">2.1</span> <span class="toctext">openSUSE</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Ubuntu_.28_.2F_Debian.3F_.29"><span class="tocnumber">2.2</span> <span class="toctext">Ubuntu ( / Debian? )</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3> <span class="mw-headline" id="List_of_packages_needed_for_cross-compiling"> List of packages needed for cross-compiling </span></h3>
+<p>Not all of the packages are strictly necessary, but having them around in your mingw environment can't hurt. If you're not using any distribution-specific package, you will need to unpack the packages in the top-level directory of your MinGW installation (e.g. <tt>/opt/cross/i386-mingw32msvc</tt>):
+</p>
+<pre>* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/glib/2.24/glib_2.24.0-2_win32.zip" class="external text" rel="nofollow">glib</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/glib/2.24/glib-dev_2.24.0-2_win32.zip" class="external text" rel="nofollow">glib-dev</a> 
+* <a href="http://gnuwin32.sourceforge.net/downlinks/zlib-bin-zip.php" class="external text" rel="nofollow">zlib binaries</a>
+* <a href="http://gnuwin32.sourceforge.net/downlinks/zlib-lib-zip.php" class="external text" rel="nofollow">zlib devel package</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/pkg-config_0.23-3_win32.zip" class="external text" rel="nofollow">pkg-config</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/libpng_1.2.40-1_win32.zip" class="external text" rel="nofollow">libpng</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/libpng-dev_1.2.40-1_win32.zip" class="external text" rel="nofollow">libpng-dev</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/libtiff_3.9.1-1_win32.zip" class="external text" rel="nofollow">libtiff</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/libtiff-dev_3.9.1-1_win32.zip" class="external text" rel="nofollow">libtiff-dev</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/jpeg-6b-4.zip" class="external text" rel="nofollow">libjpeg</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/jpeg-dev-6b-4.zip" class="external text" rel="nofollow">libjpeg-dev</a>
+* <a href="http://downloads.sourceforge.net/project/gnuwin32/giflib/4.1.4/giflib-4.1.4-bin.zip?use_mirror=freefr" class="external text" rel="nofollow">giflib-bin</a>
+* <a href="http://downloads.sourceforge.net/project/gnuwin32/giflib/4.1.4/giflib-4.1.4-lib.zip?use_mirror=freefr" class="external text" rel="nofollow">giflib-lib</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/freetype_2.3.11-2_win32.zip" class="external text" rel="nofollow">freetype</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/freetype-dev_2.3.11-2_win32.zip" class="external text" rel="nofollow">freetype-dev</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/fontconfig_2.8.0-2_win32.zip" class="external text" rel="nofollow">fontconfig</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/fontconfig-dev_2.8.0-2_win32.zip" class="external text" rel="nofollow">fontconfig-dev</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/expat-2.0.0.zip" class="external text" rel="nofollow">expat</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/proxy-libintl_20090911_win32.zip" class="external text" rel="nofollow">proxy-libintl</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime-0.17-1.zip" class="external text" rel="nofollow">gettext-runtime</a>
+* <a href="http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime-dev-0.17-1.zip" class="external text" rel="nofollow">gettext-runtime-dev</a>
+</pre>
+<p>The list is valid as of <tt>April 2nd, 2010</tt>. You can substitute the above packages with newer versions (if supported by Mono).
+</p>
+<h3> <span class="mw-headline" id="Distribution-specific_instructions"> Distribution-specific instructions </span></h3>
+<h4> <span class="mw-headline" id="openSUSE"> openSUSE </span></h4>
+<p>With openSUSE all you need to do in order to satisfy all the requirements is to add two repositories using Yast:
+</p>
+<pre>* <a href="http://download.opensuse.org/repositories/Mono:/Community/" class="external free" rel="nofollow">http://download.opensuse.org/repositories/Mono:/Community/</a>
+* <a href="http://download.opensuse.org/repositories/CrossToolchain:/mingw/" class="external free" rel="nofollow">http://download.opensuse.org/repositories/CrossToolchain:/mingw/</a>
+</pre>
+<p>Note that the above URLs do <b>NOT</b> specify the final repository - you need to visit them and pick the version of openSUSE you are using (e.g. <a href="http://download.opensuse.org/repositories/Mono:/Community/openSUSE_10.3/" class="external free" rel="nofollow">http://download.opensuse.org/repositories/Mono:/Community/openSUSE_10.3/</a>)
+After configuring and refreshing the repositories in Yast, proceed to install the following packages:
+</p>
+<pre>* cross-mingw-gcc
+* cross-mono-build-dependencies
+</pre>
+<p>And that's it! You're set to compile as described above!
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="Ubuntu_.28_.2F_Debian.3F_.29"> Ubuntu ( / Debian? ) </span></h4>
+<p>Install the packages mingw32, mingw32-binutils and mingw32-runtime.
+</p>

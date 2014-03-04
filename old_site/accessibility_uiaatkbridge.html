@@ -1,0 +1,583 @@
+---
+layout: obsolete
+title: "Accessibility: UiaAtkBridge"
+permalink: /old_site/Accessibility:_UiaAtkBridge/
+---
+
+<h1>Accessibility: UiaAtkBridge</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Scope"><span class="tocnumber">2</span> <span class="toctext">Scope</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Approach"><span class="tocnumber">3</span> <span class="toctext">Approach</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Mapping_infrastructure"><span class="tocnumber">4</span> <span class="toctext">Mapping infrastructure</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Acceptance_tests"><span class="tocnumber">5</span> <span class="toctext">Acceptance tests</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Case_study:_GTK"><span class="tocnumber">6</span> <span class="toctext">Case study: GTK</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Problems_found"><span class="tocnumber">7</span> <span class="toctext">Problems found</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>This bridge is going to be implemented to allow existing AT applications using open source technologies (Atk, AT-SPI) access accessibility information from programs that implement their Accessibility features using Microsoft UIAutomation API.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Scope"> Scope </span></h2>
+<p>We will split the work in different phases:
+</p>
+<ul><li> System.Windows.Forms applications.
+</li><li> Moonlight applications
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Approach"> Approach </span></h2>
+<p>Existing technologies that use Atk and AT-SPI currently use the following components:
+</p>
+<ul><li> Atk: a C library which contains all the accessibility API's and infrastructure.
+</li><li> Atk-bridge: which is a C module (launched by demand depending if it's enabled in the environment variable GTK_MODULES) that connects the Atk domain model to the AT-SPI daemon.
+</li><li> AT-SPI: which runs on Bonobo (CORBA) but is likely to be migrated to DBUS.
+</li></ul>
+<p>These components represent the server side of the accessibility technology. For a screen reader or inspector (such as ORCA or Accerciser) to connect to these components, they need to use an AT-SPI connector (for example, Python applications use the library <a href="http://live.gnome.org/GAP/PythonATSPI" class="external text" rel="nofollow">pyatspi</a>).
+</p><p>Then, we need to implement a bridge which receives accessibility information from a .NET application (through a UIA provider) to the Atk component and send it via the Atk-bridge. The implementation will be coded in the managed world, so the translator between the unmanaged and managed layers will be held by a binding called Atk# (AtkSharp).
+</p><p>The bridge will be in its own assembly, which will talk to Atk# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
+</p><p><a href="{{site.baseurl}}/images/old_site/2/28/Uia-atk_bridge.png" class="image"><img alt="Uia-atk bridge.png" src="{{site.baseurl}}/images/old_site/2/28/Uia-atk_bridge.png" width="800" height="640" /></a>
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Mapping_infrastructure"> Mapping infrastructure </span></h2>
+<p>We will need to map UIA structures to ATK structures. More info:
+</p>
+<ul><li> ATK roles: Refer to our <a href="{{site.baseurl}}/Accessibility:_Mapping_UIA_to_ATK#Roles" title="Accessibility: Mapping UIA to ATK">table of Atk.Roles</a>, or directly from the <a href="http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup" class="external text" rel="nofollow">ATK sources</a>. 
+</li><li> <a href="{{site.baseurl}}/Accessibility:_Mapping_UIA_to_ATK" title="Accessibility: Mapping UIA to ATK">Mapping UIA to ATK</a>: <a href="{{site.baseurl}}/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType-&gt;Atk mapping draft</a>.
+</li><li> <a href="{{site.baseurl}}/Accessibility:_Control_Status" title="Accessibility: Control Status">MWF-&gt;UiaControlType-&gt;UiaProvider mappings</a>.
+</li><li> From the GTK Case study: <a href="#Case_study:_GTK">Gtk-&gt;Gail-&gt;Atk-&gt;UiaControlType</a>.
+</li><li> For historic reference: <a href="http://developer.mozilla.org/en/docs/ARIA_UA_Best_Practices#11.3.5_Role" class="external text" rel="nofollow">Mapping MSAA to ATK</a>.
+</li></ul>
+<p>NOTE!: All this work may be mergeable in a general-purpose table that wraps GtkClass-&gt;GailClass-&gt;AtkUsage(Role,GInterface,State)-&gt;BridgeClass-&gt;UiaProvider-&gt;UiaControlType-&gt;MwfClass|MoonlightWidget??
+</p>
+<h2> <span class="mw-headline" id="Acceptance_tests"> Acceptance tests </span></h2>
+<p>We have a Q1 deadline (March the 31st) in which we should have a basic test of the bridge working. We can show the progress here by just passing these acceptance tests:
+</p>
+<ol><li> Have accerciser see an unmanaged test application that uses Atk: <b>PASSED</b>.
+</li><li> Have accerciser see a managed test application that uses Atk#: <b>PASSED</b>.
+</li><li> Have accerciser see an unmanaged test application that uses Atk with at least a children component: <b>PASSED</b>.
+</li><li> Have accerciser see a managed test application that uses Atk# with at least a children component: <b>PASSED</b>.
+</li><li> Have a minimal Bridge that exposes this functionality with public methods: <b>FINISHED</b>
+</li><li> Have a basic MWF application (which holds just a window) that, thanks to the UIAProvider now, is seen by accerciser as an application and a window child (GOAL for Q1): <b>PASSED</b>
+</li></ol>
+<p>The list of steps to make this work is:
+</p>
+<ul><li> Create a folder in your computer for downloading code, e.g. /home/me/code
+</li><li> Place yourself there in a console and download Gtk#/Glib#/Atk# bindings:
+</li></ul>
+<pre>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/gtk-sharp/" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/gtk-sharp/</a>
+</pre>
+<ul><li> Now download uia2atk module:
+</li></ul>
+<pre>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/uia2atk/" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/uia2atk/</a>
+</pre>
+<ul><li> Change to Atk# dir:
+</li></ul>
+<pre>cd gtk-sharp/
+</pre>
+<ul><li> Compile the bindings:
+</li></ul>
+<pre>./bootstrap-2.12
+make
+</pre>
+<ul><li> Ok, now we have some bleeding edge DLLs in our gtk-sharp dir, let's go back:
+</li></ul>
+<pre>cd ..
+</pre>
+<ul><li> Open a MonoDevelop solution (yeah we could use <b>mdtool</b> but I'm not sure the whole solution builds, and we need only a very small part):
+</li></ul>
+<pre>monodevelop uia2atk/Uia2Atk.mds &amp;
+</pre>
+<ul><li> Try to build the project Uia2Atk&gt;tests&gt;ManagedTests&gt;TestUiaAtkBridge: you will get a compilation error telling you that you're missing glib-sharp.dll in a directory (wierd MonoDevelop bug because it's already referenced).
+</li><li> Go back to the console and copy the dll in the same dir as atkSharp:
+</li></ul>
+<pre>cp gtk-sharp/glib/glib-sharp.dll gtk-sharp/atk/
+</pre>
+<ul><li> Try to compile again and you will get a brand new exe.
+</li><li> Now copy the atk-bridge native lib into the path that will be our LD_LIBRARY_PATH:
+</li></ul>
+<pre>cp /usr/lib/gtk-2.0/modules/libatk-bridge.so gtk-sharp/atk/glue/.libs/
+</pre>
+<ul><li> Now we can launch our managed test:
+</li></ul>
+<pre>cd uia2atk/UiaAtkBridge/samples/managed/TestUiaAtkBridge/bin/Debug/
+LD_LIBRARY_PATH=/path/to/our/own/gtk-sharp/atk/glue/.libs/ mono TestUiaAtkBridge.exe
+</pre>
+<ul><li> Now run accerciser in a separate thread (for example press CTRL+SHIFT+T and launch it), and you will see a beautiful toplevel element called TestUiaAtkBridge.exe, with two windows below it.
+</li></ul>
+<p>We are now working on:
+</p>
+<ul><li> Have Mono.UIAutomation.Winforms assembly link to the UiaAtkBridge (maybe you will have to do the same thing about missing managed and unmanaged libs, but with other projects).
+</li><li> Have current Mono WindowsForms codebase call this provider by Reflection in order to get the bridge notified and complete whole chain.
+</li></ul>
+<h2> <span class="mw-headline" id="Case_study:_GTK"> Case study: GTK </span></h2>
+<p>GTK is a toolkit which is already mapped to ATK by the Gail module. We will maintain here a list of mappings for the GTK widgets as an example for our implementation for MWF widgets:
+</p>
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<th width="10%" style="background:#d9e5bf;"> Gtk class
+</th>
+<th width="10%" style="background:#d9e5bf;"> Gail class
+</th>
+<th width="10%" style="background:#d9e5bf;"> Atk usage
+</th>
+<th width="20%" style="background:#d9e5bf;">
+</th>
+<th width="10%" style="background:#d9e5bf;">
+</th>
+<th width="10%" style="background:#d9e5bf;">
+</th>
+<th width="10%" style="background:#d9e5bf;"> UiaAtkBridge class
+</th>
+<th width="10%" style="background:#d9e5bf;"> UIA Provider
+</th>
+<th width="10%" style="background:#d9e5bf;"> <a href="{{site.baseurl}}/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType</a>
+</th></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td> Hierarchy (children?)
+</td>
+<td> Role
+</td>
+<td> GInterfaces
+</td>
+<td> States
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> [Gtk# only]Application </td>
+<td> Toplevel (:AtkObject) </td>
+<td> Parent of all </td>
+<td> ATK_ROLE_APPLICATION </td>
+<td> n/a </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> ComboBox (:Bin) </td>
+<td> ComboBox (:Container) </td>
+<td> Contains a child with a menu role </td>
+<td> ATK_ROLE_COMBO_BOX </td>
+<td> Action, Selection, (Inherited:) Component </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td> ComboBoxProvider (ISelectionProvider) </td>
+<td> &#160;?? (a comboBox with DropDownStyle == DropDownList)
+</td></tr>
+<tr>
+<td> ComboBoxEntry (:ComboBox) </td>
+<td>&#160;?? </td>
+<td> contains two children: a menu role, and a text role </td>
+<td> ATK_ROLE_COMBO_BOX </td>
+<td> Action, Selection, (Inherited:) Component  </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> ComboBoxProvider (ISelectionProvider, IValueProvider) </td>
+<td>&#160;?? (a comboBox with DropDownStyle == DropDown)
+</td></tr>
+<tr>
+<td> Combo (:HBox) </td>
+<td> Combo (:Container) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_COMBO_BOX </td>
+<td> Action, Selection, (Inherited:) Component </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? (maybe a comboBox with DropDownStyle == Single?)
+</td></tr>
+<tr>
+<td> HBox (:Box) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> VBox (:Box) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> Window (:Bin) </td>
+<td> Window (:Container) </td>
+<td> contains all the children widgets </td>
+<td> ATK_ROLE_FRAME </td>
+<td> Component </td>
+<td> ATK_STATE_SHOWING, ATK_STATE_ACTIVE, ATK_STATE_ICONIFIED, ATK_STATE_MODAL, ATK_STATE_RESIZABLE </td>
+<td> Window </td>
+<td> WindowProvider (IRawElementProviderSimple) </td>
+<td> Window
+</td></tr>
+<tr>
+<td> Label (:Misc) </td>
+<td> Label (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_LABEL or ATK_ROLE_ACCEL_LABEL </td>
+<td> Component, Text </td>
+<td> ATK_STATE_MULTI_LINE </td>
+<td> TextLabel </td>
+<td> LabelProvider (IRawElementProviderSimple) </td>
+<td> Text
+</td></tr>
+<tr>
+<td> Button (:Bin) </td>
+<td> Button (:Container) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_PUSH_BUTTON </td>
+<td> Action, Component, Image, Text </td>
+<td> ATK_STATE_ARMED, ATK_STATE_SELECTABLE </td>
+<td> Button </td>
+<td> ButtonProvider (IInvokeProvider) </td>
+<td> Button
+</td></tr>
+<tr>
+<td> CheckButton (:ToggleButton) </td>
+<td> ToggleButton (:Button) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_CHECK_BOX </td>
+<td> (Inherited:) Action, Component, Image, Text </td>
+<td> ATK_STATE_CHECKED, ATK_STATE_ENABLED </td>
+<td> CheckBox </td>
+<td> CheckBoxProvider (IToggleProvider) </td>
+<td> CheckBox
+</td></tr>
+<tr>
+<td> ToggleButton (:Button) </td>
+<td> ToggleButton (:Button) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_TOGGLE_BUTTON </td>
+<td> (Inherited:) Action, Component, Image, Text </td>
+<td> ATK_STATE_CHECKED, ATK_STATE_ENABLED </td>
+<td>&#160;?? </td>
+<td> (IToggleProvider) </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> RadioButton (:CheckButton) </td>
+<td> RadioButton (:ToggleButton) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_RADIO_BUTTON </td>
+<td> (Inherited: Action, Component, Image, Text) </td>
+<td> (Inherited?:) ATK_STATE_CHECKED, ATK_STATE_ENABLED </td>
+<td> RadioButton </td>
+<td> RadioButtonProvider (ISelectionItemProvider) </td>
+<td> RadioButton
+</td></tr>
+<tr>
+<td> Statusbar (:HBox) </td>
+<td> Statusbar (:Container) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_STATUSBAR </td>
+<td> Text </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> StatusBar
+</td></tr>
+<tr>
+<td> SpinButton (:Entry) </td>
+<td> SpinButton (:Entry) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_SPIN_BUTTON </td>
+<td> Value </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> Spinner
+</td></tr>
+<tr>
+<td> Image (:Misc) </td>
+<td> Image (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_ICON </td>
+<td> Image </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> Image
+</td></tr>
+<tr>
+<td> Entry (:Widget) </td>
+<td> Entry (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_TEXT or ATK_ROLE_PASSWORD_TEXT </td>
+<td> Action, Text, EditableText </td>
+<td> ATK_STATE_EDITABLE, ATK_STATE_SINGLE_LINE </td>
+<td> EditableTextBoxEntry </td>
+<td> TextBoxProvider </td>
+<td> Edit
+</td></tr>
+<tr>
+<td> MenuBar (:MenuShell) </td>
+<td> MenuShell (:Container) </td>
+<td> container of menu role children </td>
+<td> ATK_ROLE_MENU_BAR or ATK_ROLE_UNKNOWN </td>
+<td> Selection </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> MenuBar
+</td></tr>
+<tr>
+<td> Menu (:MenuShell) </td>
+<td> Menu (:MenuShell) </td>
+<td> container of children roles: a tear off menu item, and n menu items </td>
+<td> ATK_ROLE_MENU </td>
+<td> Selection </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> Menu
+</td></tr>
+<tr>
+<td> ImageMenuItem (:Menuitem) </td>
+<td> SubMenuItem (:MenuItem) </td>
+<td> container of children roles: a tear off menu item, and n menu items </td>
+<td> ATK_ROLE_MENU </td>
+<td> Selection </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> Menu
+</td></tr>
+<tr>
+<td> Menuitem (:Item) </td>
+<td> MenuItem (:Item) (note the difference between Menuitem and MenuItem!) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_TEAR_OFF_MENU_ITEM or ATK_ROLE_SEPARATOR or ATK_ROLE_MENU_ITEM </td>
+<td> Action </td>
+<td> ATK_STATE_SELECTED </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> MenuItem
+</td></tr>
+<tr>
+<td> HSeparator (:Separator) </td>
+<td> Separator (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_SEPARATOR </td>
+<td> n/a </td>
+<td>  ATK_STATE_HORIZONTAL </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> VSeparator (:Separator) </td>
+<td> Separator (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_SEPARATOR </td>
+<td> n/a </td>
+<td> ATK_STATE_VERTICAL </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> Expander (:Bin) </td>
+<td> Expander (:Container) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_TOGGLE_BUTTON </td>
+<td> Action, Text </td>
+<td> ATK_STATE_CHECKED, ATK_STATE_EXPANDED </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> Frame (:Bin) </td>
+<td> Frame (:Container) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_PANEL </td>
+<td> n/a </td>
+<td> ATK_STATE_DEFUNCT, ATK_STATE_VISIBLE, ATK_STATE_SHOWING </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> GtkHtml? </td>
+<td> HtmlBox (:AtkGObject) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_UNKNOWN </td>
+<td> Component </td>
+<td> ATK_STATE_DEFUNCT, ATK_STATE_VISIBLE, ATK_STATE_SHOWING </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> WebControl??
+</td></tr>
+<tr>
+<td> ViewPort (:Bin) </td>
+<td> Container (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_VIEWPORT </td>
+<td> (Inherited:) Component </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> ToolBar (:Container) </td>
+<td> Container (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_TOOL_BAR </td>
+<td> (Inherited:) Component </td>
+<td> n/a </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td> ToolBar??
+</td></tr>
+<tr>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>  </td>
+<td>
+</td></tr>
+<tr>
+<td> [abs] Item (:Bin) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] MenuShell (:Container) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Bin (:Container) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Box (:Container) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Separator (:Widget) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Misc (:Widget) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Accessible (:AtkObject) </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Container (:Widget) </td>
+<td> Container (:Widget) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_PANEL </td>
+<td> (Inherited:) Component </td>
+<td> n/a </td>
+<td> ParentAdapter </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr>
+<tr>
+<td> [abs] Widget (:Object) </td>
+<td> Widget (:GtkAccessible) </td>
+<td>&#160;?? </td>
+<td> ATK_ROLE_UNKNOWN </td>
+<td> Component </td>
+<td> ATK_STATE_DEFUNCT, ATK_STATE_SENSITIVE, ATK_STATE_ENABLED, ATK_STATE_FOCUSABLE, ATK_STATE_VISIBLE, ATK_STATE_SHOWING, ATK_STATE_FOCUSED, ATK_STATE_DEFAULT </td>
+<td> Adapter </td>
+<td>&#160;?? </td>
+<td>&#160;??
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Problems_found"> Problems found </span></h2>
+<ol><li> It would be interesting to change the C API of ATK to reflect interfaces with the 'I' prefix to mimic the managed notation. Not sure if the unmanaged community will want this change (but if yes, anyway it will take time because it breaks API). <b>Severity: Minor</b>
+</li><li> Many ATK documentation states that it exposes (along with AT-SPI) a set of interfaces that are toolkit independent (<a href="http://blogs.sun.com/wwalker/entry/gail_migrated_into_gtk" class="external text" rel="nofollow">example</a>). As a result, we should push changes in these frameworks that remove magic keywords or specific names from GTK or Gnome. These changes may have some impact (because some may break API/ABI) but should be pushed upstream in order to drop the barrier for other vendors/toolkit to use these components. <b>Severity: Minor</b> Examples:
+<ol><li> Since GTK# is a non desirable dependency (because you may launch a MWF application from KDE) it's contradictory to have the atk-bridge module inside a path that belongs to Gtk (/usr/lib/gtk-2.0/modules) and to have it specified in an environment variable called GTK_MODULES. We should push the change of the name of this variable to G_MODULES(?) and use other path for the installation, upstream.
+</li><li> Module atk-bridge should not have an external symbol with the name <i>gnome_accessibility_module_init</i>, but rather something without the name 'gnome' in it. The source code of atk-bridge is part of <a href="http://svn.gnome.org/svn/at-spi/trunk/" class="external text" rel="nofollow">AT-SPI SVN</a>.
+</li></ol>
+</li><li> According to Atk philosophy, each widget type (class) is associated with a particular custom AtkObject, and both types must derive from GLib.Object (GObject) to be GType's, so maybe we'll have some incompatibility between this concept and the current MWF implementation: should we modify the base class of MWF widgets to be Glib.Object? <b>Severity: Minor (for now)</b>
+</li><li> To prevent breaking API we currently haven't done these interesting changes in ATK#:
+<ol><li> Change virtual methods to abstract methods (OnGetNChildren and OnRefChild).
+</li><li> Make both methods OnGetNChildren and OnRefChild be implemented in just one property that is more managed-friendly: Atk.Object[] Children.
+</li></ol>
+</li><li> Accerciser has a tab called 'Interfaces View' in which you can see the interfaces (<b>atk interfaces</b>) that a particular object (selected on the left pane) implements. In ATK terminology, there are two kinds of concept: interfaces and roles. And it's somewhat confusing to see the 'Application' interface in that tab while, in ATK, Application is a role. It turns out that on AT-SPI the name 'Application' is also an interface. We should change this overlap upstream if possible (use Program in replace to Application?).
+</li><li> The system of using properties setters for stablishing the AtkUtil handlers like GetRoot/GetToolkitName/GetToolkitVersion is comfortable but:
+<ol><li> It's a different way as the one used in the unmanaged world (different API), where you have to subclass AtkUtil and implement their methods.
+</li><li> Following the subclassing methods, we could make the overriding mandatory (by abstract methods) in order to prevent crashes (for example if someone stablishes GetRoot method without stablishing GetToolkit* methods, accerciser will crash when navigating through the application).
+</li></ol>
+</li><li> We call the atk-bridge unmanaged module from the UiaAtkBridge managed library. Maybe it's better to put this call in Atk# in order for other people to benefit from it. In the end, who is going to use ATK without GTK and without calling this module?
+</li><li> The unmanaged module atk-bridge seems to call n times the function hello_util_add_global_event_listener (well, the equivalent to gail_util_add_global_event_listener in Gail) with parameters that include the keyword "Gtk" in the event_type (examples: Gtk:AtkHypertext:link-selected, Gtk:AtkObject:children-changed, Gtk:AtkComponent:bounds-changed...). This should be changed to a toolkit-agnostic methodology.
+</li></ol>
+

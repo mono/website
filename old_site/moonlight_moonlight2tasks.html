@@ -1,0 +1,140 @@
+---
+layout: obsolete
+title: "Moonlight/Moonlight2Tasks"
+permalink: /old_site/Moonlight/Moonlight2Tasks/
+---
+
+<h1>Moonlight/Moonlight2Tasks</h1>
+
+<h1> <span class="mw-headline" id="Moonlight_2_Tasks"> Moonlight 2 Tasks </span></h1>
+<p>There's a lot of stuff in SL2.0, and there are many interconnected dependencies.  Let's put a list of all the discrete chunks we can think of, and try to fill in (using whatever terms we feel comfortable with) a list of dependencies for that chunk.
+</p><p>Most importantly - don't worry about formatting the list, or keeping things very consistent.  Just dump everything here and we can clean it up.  The most important thing is getting everything down.
+</p>
+<ul><li> Property "precedence"
+<ul><li> Local values [Done]
+</li><li> Bindings [Done]
+</li><li> Styles [Done]
+</li></ul>
+</li></ul>
+<ul><li> DataBinding (owner: alan, jeff)
+<ul><li> Parser changes to provide support for {Binding} syntax (owner: jeff)
+</li><li> DependencyObject changes to support looking up databindings by property (is this needed in SL?) [Done]
+</li></ul>
+</li></ul>
+<ul><li> Layout (owner: lewing)
+<ul><li> Integrating it into the dirty passes
+</li></ul>
+</li></ul>
+<ul><li> Unit test harness (owner: rolf)
+<ul><li> Silverlight Toolkit test harness was MSPL'ed.  see if we can roll it in and start using it. [Done]
+</li></ul>
+</li></ul>
+<ul><li> Application.Current
+<ul><li> Make Application.Current work with as little code change as possible in our "multiple surfaces per AppDomain" model. [Partially Done]
+</li></ul>
+</li></ul>
+<ul><li> Media changes (fer)
+<ul><li> Adaptive Streaming API (managed API to feed media packets)
+</li><li> HTTP/1.1 seeking
+<ul><li> MediaStreamSource and this require a major rewrite of the sync portions of our pipeline to be async.
+</li></ul>
+</li><li> ms-codecs support for WMA 10
+</li><li> Server-Side Playlists (.wsx files)
+</li><li> DRM
+</li><li> MediaElement changes 
+<ul><li> State changes for DRM 
+</li><li> DroppedFramesPerSecond and RenderedFramesPerSecond properties [Done]
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> Controls and related machinery -- it's unclear what's going to be MSPL'ed, and some of these are essentially either done or mostly working.
+<ul><li> Border
+</li><li> ComboBox
+</li><li> ContentPresenter
+</li><li> MultiScaleImage (owner: sde)
+</li><li> Grid
+</li><li> PasswordBox <b>Blocking on textbox</b>
+</li><li> ProgressBar (owner: sde)
+</li><li> ScrollContentPresenter
+</li><li> TextBox (owner: jeff)
+</li></ul>
+</li></ul>
+<ul><li> VisualStateManager
+<ul><li> Check out MSPL'ed release of WPF Toolkit version.  we should be able to use it. [Done]
+</li></ul>
+</li></ul>
+<ul><li> Bridge to the plugin (Web APIs)
+<ul><li> Done
+</li></ul>
+</li></ul>
+<ul><li> Bitmap Source needs to be rewritten
+<ul><li> Done
+</li></ul>
+</li></ul>
+<ul><li> Dispatcher needs to be rewritten in the way that Larry described on the Nov 17th call.
+<ul><li> Done
+</li></ul>
+</li></ul>
+<ul><li> System.Windows.Automation
+<ul><li> Required for running the SL 2 test suite.
+</li></ul>
+</li></ul>
+<ul><li> Mono Base Class Libraries (BCL) adaptation
+<ul><li> Mono Linker (jb)
+</li><li> Additions / changes to the BCL
+<ul><li> IsolatedStorage (spouliot)
+</li></ul>
+</li><li> Unit tests (port existing or new)
+</li><li> Security Review
+</li><li> Security (CoreCLR) Conformance (spouliot)
+</li></ul>
+</li></ul>
+<ul><li> Mono Runtime/JIT integration
+<ul><li> Surface Reduction (lupus)
+</li><li> Security Review
+</li></ul>
+</li></ul>
+<ul><li> Networking
+<ul><li> Complete sockets and cross-domain permission code.
+</li><li> WCF client side code and support infrastructure
+</li><li> Support the two threading models used by web clients in Silverlight.
+</li></ul>
+</li></ul>
+<h2> <span class="mw-headline" id="Specific_things_we_need_for_the_PDC_player"> Specific things we need for the PDC player </span></h2>
+<p><a href="http://channel9.msdn.com/pdc2008/PC54/" class="external text" rel="nofollow">example player url</a>
+</p>
+<ul><li> Layout
+<ul><li> larry
+</li></ul>
+</li><li> Parser fixes (for VisualStateManager, as well as in the PDC player's case referencing Application using a clr-namespace instead of the &lt;Application&gt; tag).
+<ul><li> jackson
+</li></ul>
+</li><li> Grid control
+</li><li> Border control
+</li><li> TextBox control
+</li><li> StackPanel control <b>(vertical stacking done)</b>
+<ul><li> shana
+</li></ul>
+</li><li> ToggleButton control <b>(should be completely managed.  start with b1 controls source drop)</b>
+<ul><li> This is blocked until DataTemplate is implemented
+</li><li> rolf
+</li></ul>
+</li><li> <b>Slider</b> control <b>(should be done)</b>
+<ul><li> inherits from <b>RangeBase</b>, depends on <b>RepeatButton</b> and <b>Thumb</b> primitives
+</li><li> spouliot
+</li></ul>
+</li><li> VisualStateManager, VisualStateGroup, VisualTransition, VisualState <b>(pull in from WPF Controls Toolkit)</b>
+<ul><li> sde
+</li></ul>
+</li><li> ControlTemplate <b>(should be done)</b>
+<ul><li> toshok
+</li></ul>
+</li><li> Style/Setter [Done]
+<ul><li> alan/jeff
+</li></ul>
+</li><li> StaticResource - used for templates and styles only <b>(should be done)</b>
+<ul><li> toshok
+</li></ul>
+</li><li> Missing <b>Control</b> features (should be done)
+</li></ul>
+

@@ -1,0 +1,174 @@
+---
+layout: obsolete
+title: "Accessibility: Test Log"
+permalink: /old_site/Accessibility:_Test_Log/
+---
+
+<h1>Accessibility: Test Log</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#References"><span class="tocnumber">1</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Description"><span class="tocnumber">2</span> <span class="toctext">Description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#2.0_Release_Test_Result"><span class="tocnumber">2.1</span> <span class="toctext">2.0 Release Test Result</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#WinformsAtkBridge"><span class="tocnumber">2.1.1</span> <span class="toctext">WinformsAtkBridge</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#MoonlightAtkBridge"><span class="tocnumber">2.1.2</span> <span class="toctext">MoonlightAtkBridge</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#ClientAPI-Winforms"><span class="tocnumber">2.1.3</span> <span class="toctext">ClientAPI-Winforms</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#2.1_Release_Test_Result"><span class="tocnumber">2.2</span> <span class="toctext">2.1 Release Test Result</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#WinformsAtkBridge_2"><span class="tocnumber">2.2.1</span> <span class="toctext">WinformsAtkBridge</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#MoonlightAtkBridge_2"><span class="tocnumber">2.2.2</span> <span class="toctext">MoonlightAtkBridge</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#ClientAPI"><span class="tocnumber">2.2.3</span> <span class="toctext">ClientAPI</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Bug_Report_List"><span class="tocnumber">2.2.4</span> <span class="toctext">Bug Report List</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="References">References</span></h2>
+<p><a href="{{site.baseurl}}/Accessibility:_Test_Plan" title="Accessibility: Test Plan">Product Test Case Plan</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Case_Specification" title="Accessibility: Test Case Specification">Product Test Case Specification</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Log" title="Accessibility: Test Log">Product Test Log</a> (current page)<br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Summary" title="Accessibility: Test Summary">Product Test Summary</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Bug_Specification" title="Accessibility: Bug Specification">Product Bug Specification</a><br />
+<a href="{{site.baseurl}}/Accessibility" title="Accessibility">Product Home</a><br />
+</p>
+<h2> <span class="mw-headline" id="Description">Description</span></h2>
+<p>The test log is used to log the relevant details about the execution of each release version test.  Its purpose is to share information among testers, users, developers, and others.  It also facilitates the replication of situations encountered during testing.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="2.0_Release_Test_Result">2.0 Release Test Result</span></h3>
+<h4> <span class="mw-headline" id="WinformsAtkBridge">WinformsAtkBridge</span></h4>
+<p>Test Platforms:<br />
+openSUSE 11.1,  openSUSE 11.2,  SLED 11,  Fedora 12,  Ubuntu 9.10
+</p><p>1. Closed bugs:<br />
+</p>
+<ul><li> Bug 558289 - Slider: Key Navigation Does Not Update Slider's Value with SmallChange Property
+</li></ul>
+<p>2. New bugs:<br />
+</p>
+<ul><li> Bug 589269 - PrintPreviewDialog: modal dialog is missing 'active' state
+</li></ul>
+<p><br />
+Some Winforms bugs cause test failure: <br />
+</p>
+<ul><li> Bug 575635 - ThreadExceptionDialog: modal dialog should always be actived on the top of main form
+</li><li> Bug 574257 - DataGridBoolColumn: Cells under doesn't supprot press key to check and uncheck
+</li><li> Bug 589989 - DomainUpDown: ReadOnly Property Has No Effects
+</li><li> Bug 590090 - ToolStripMenuItem: KeyCombo Has No Effect
+</li><li> Bug 590093 - NotifyIcon: notifyicon doesn't appears on panel except for openSUSE11.2
+</li></ul>
+<p>3. Bugs wait to be fixed:<br />
+<a href="https://bugzilla.novell.com/buglist.cgi?classification=Mono&amp;query_format=advanced&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=NEEDINFO&amp;bug_status=REOPENED&amp;component=Winforms%20-%20ATK&amp;component=Winforms%20-%20ATK%20Spec&amp;component=Winforms%20-%20General&amp;component=Winforms%20-%20UIA&amp;product=UI%20Automation" class="external text" rel="nofollow">Bug List</a>
+</p><p>4. Test result:<br />
+<a href="http://147.2.207.213/dashboard/winforms.xml" class="external text" rel="nofollow">Winforms test result on Dashboard</a> with VPN connection.
+<br />
+<br />
+DataGridBoolColumn: Bug 589987, Bug 574257<br />
+DomainUpDown: Bug589989<br />
+NotifyIcon: Bug 590093<br />
+ToolStripMenuItem: Bug 590090<br />
+</p>
+<h4> <span class="mw-headline" id="MoonlightAtkBridge">MoonlightAtkBridge</span></h4>
+<p>Test Platforms:<br />
+openSUSE 11.2,  Fedora 12,  Ubuntu 9.10
+</p><p>1. Closed bugs:<br />
+</p>
+<ul><li> BUG 554025  CheckBox: is missing 'indeterminate' state   
+</li><li> BUG 556463  ListBox: select or clear selection on accerciser make the firefox * BUG crashed  
+</li><li> BUG 560711  Slider: some extraneous push buttons  
+</li><li> BUG 562187  TabControlAutomationPeer does not return children from GetChildren()  
+</li><li> BUG 567650  DataGrid: view on accerciser left treeview make the app crash  
+</li><li> BUG 567651  Calendar: week labels have extraneous 'selectable' state  
+</li><li> BUG 567653  Calendar: title buttons have extraneous 'selectable' state
+</li></ul>
+<p>2. New bugs:<br />
+</p>
+<ul><li> BUG 564820  REOP  DatePicker control is missing Calendar child
+</li><li> BUG 587783  NEW   TabControl: 'page tab' has 2 extraneous labels  
+</li><li> BUG 587792  NEW   TabControl: select invisible label child make the application crashed  
+</li></ul>
+<p>3. Bugs wait to be fixed:<br />
+<a href="https://bugzilla.novell.com/buglist.cgi?bug_severity=Blocker&amp;bug_severity=Critical&amp;bug_severity=Major&amp;bug_severity=Normal&amp;bug_severity=Minor&amp;classification=Mono&amp;query_based_on=moon&amp;query_format=advanced&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;component=Moonlight%20-%20ATK&amp;component=Moonlight%20-%20General&amp;component=Moonlight%20-%20UIA&amp;product=UI%20Automation&amp;known_name=moon" class="external text" rel="nofollow">Bug list</a>
+</p><p>BUG references on strongwind tests:<br />
+</p>
+<ul><li> button-regression.py:# BUG553170: MessageBox is not accessible now.
+</li><li> button-regression.py:# BUG554017: doesn't focus the clicked button
+</li><li> checkbox-regression.py:# BUG554017: click action doesn't move focus
+</li><li> combobox-regression.py:# BUG554449: application crashed
+</li><li> hyperlinkbutton-regression.py:# BUG555714: do 'jump' action for the second link crash the app
+</li><li> radiobutton-regression.py:# BUG559133, BUG554017:missing focused states
+</li><li> scrollviewer-regression.py:# BUG572163: moonlight bug that * ScrollBarVisibility.Hidden doesn't work
+</li><li> slider-regression.py:# BUG558289: Key Navigation Does Not Update Slider's Value with SmallChange Property
+</li><li> textblock-regression.py:# BUG561268: Multi-line Name Is Parsed Incorrectly
+</li><li> togglebutton-regression.py:# BUG554017: doesn't focus to the clicked button
+</li></ul>
+<p>4. Test result:<br />
+<a href="http://147.2.207.213/dashboard/moonlight.xml" class="external text" rel="nofollow">Moonlight test result on Dashboard</a> with VPN connection.
+<br />
+<br /> 
+We are going to test ComboBox and GridSplitter on 2.0.1 since BUG554449 and BUG555165 have been fixed.
+</p>
+<h4> <span class="mw-headline" id="ClientAPI-Winforms">ClientAPI-Winforms</span></h4>
+<p>Test Platforms:<br />
+openSUSE 11.1,  openSUSE 11.2,  SLED 11,  Fedora 12,  Ubuntu 9.10
+</p><p>1. Closed bugs: <br />
+</p>
+<ul><li> BUG 569846 [uiaclient-winforms]:UIA Client matches wrong element for LabeledByproperty on Linux
+</li><li> BUG 571799 [uiaclient-Winforms]：The dialog who has parent has been found twice
+</li><li> BUG 574269 Cannot find pane control on Linux
+</li></ul>
+<p>2. New bugs: <br />
+nope
+</p><p>3. Remains of bugs<br />
+</p>
+<ul><li> BUG 574242  Can't define custom provider by using the WM_GETOBJECT message
+</li><li> BUG 573464  [uiaclient-winforms] Some dialog's name has been changed in Linux compares to in Windows.
+</li><li> BUG 574226  [uiaclient-winforms]The name of Button is "Icon" in Windows but in linux is ""
+</li><li> BUG 574620  On linux a control who's control type is "SplitButton" on Windows is "Button"
+</li><li> BUG 576050  [uiaclient-winforms]: The splitbutton's Invoke method doesn't work
+</li><li> BUG 576450  [uiaclient-winforms] The dialog's Window Pattern' WindowInteractionState will be different between Windows and Linux 
+</li><li> BUG 576455  All the "Text" controls are recognized as "Edit" on Linux
+</li><li> BUG 581625  GetText of TextPatternRange may not work
+</li><li> BUG 578244 The datagrid's GetItem method can't be run on Linux.
+</li><li> BUG 580431 [UIAClient-Winforms] Scroll bar of datagrid could not be detected on Linux
+</li><li> BUG 580433 [UIAClient-Winforms] The window is same size on Window and Linux, but the horizontal or vertical view size is not identical
+</li><li> BUG 580452 [UIAClient-Winforms] The window is same size on Window and Linux, but the horizontal or vertical scroll percentage is not identical
+</li><li> BUG 580447 The viewId is difference between on Linux and Windows
+</li></ul>
+<p>4. Test result:<br />
+The tests of Winforms applications via client api have been run successfully on all platforms.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="2.1_Release_Test_Result">2.1 Release Test Result</span></h3>
+<h4> <span class="mw-headline" id="WinformsAtkBridge_2">WinformsAtkBridge</span></h4>
+<p>Test Platforms:<br />
+In both 32bit and 64bit: openSUSE 11.1,  openSUSE 11.2,  SLED 11,  Fedora 12,  Ubuntu 9.10
+</p><p>Test result:<br />
+<a href="http://147.2.207.213/dashboard/winforms.xml" class="external text" rel="nofollow">Winforms test result on Dashboard</a> with VPN connection.
+</p><p>Explanation of the failing tests:<br />
+<a href="https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&amp;authkey=CPOZ2OAE&amp;hl=zh_CN&amp;pli=1#gid=0" class="external text" rel="nofollow">Winforms Strongwind tests with some new bugs</a>
+</p>
+<h4> <span class="mw-headline" id="MoonlightAtkBridge_2">MoonlightAtkBridge</span></h4>
+<p>Test Platforms:<br />
+In both 32bit and 64bit: openSUSE 11.2,  Fedora 12,  Ubuntu 9.10
+</p><p>Test result:<br />
+<a href="http://147.2.207.213/dashboard/moonlight.xml" class="external text" rel="nofollow">Moonlight test result on Dashboard</a> with VPN connection.
+</p><p>Explanation of the failing tests:<br />
+<a href="https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&amp;authkey=CPOZ2OAE&amp;hl=zh_CN&amp;pli=1#gid=1" class="external text" rel="nofollow">Moonlight Strongwind tests with some new bugs</a>
+</p>
+<h4> <span class="mw-headline" id="ClientAPI">ClientAPI</span></h4>
+<p>Test Platforms:<br />
+In both 32bit and 64bit: openSUSE 11.1,  openSUSE 11.2,  SLED 11,  Fedora 12,  Ubuntu 9.10
+</p><p>Test result:<br />
+</p><p>Bug List:<br />
+Product still remains more than 100 <a href="https://bugzilla.novell.com/buglist.cgi?classification=Mono&amp;query_based_on=clientAPI&amp;query_format=advanced&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;component=at-spi-dbus&amp;component=at-spi-sharp&amp;component=Client%20-%20AT-SPI&amp;component=Client%20-%20General&amp;component=Client%20-%20UIA&amp;component=Moonlight%20-%20UIA&amp;component=Winforms%20-%20UIA&amp;product=UI%20Automation&amp;known_name=clientAPI" class="external text" rel="nofollow">bugs of UIAClientAPI</a>
+</p>
+<h4> <span class="mw-headline" id="Bug_Report_List">Bug Report List</span></h4>
+<p><a href="https://bugzilla.novell.com/report.cgi?x_axis_field=bug_status&amp;y_axis_field=component&amp;z_axis_field=&amp;query_format=report-table&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;longdesc_type=fulltext&amp;longdesc=&amp;classification=Mono&amp;product=UI+Automation&amp;component=at-spi-dbus&amp;component=at-spi-sharp&amp;component=Client+-+AT-SPI&amp;component=Client+-+General&amp;component=Client+-+QA&amp;component=Client+-+UIA&amp;component=Core-Provider&amp;component=Moonlight+-+ATK&amp;component=Moonlight+-+General&amp;component=Moonlight+-+QA&amp;component=Moonlight+-+UIA&amp;component=Winforms+-+ATK&amp;component=Winforms+-+ATK+Spec&amp;component=Winforms+-+General&amp;component=Winforms+-+UIA&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=anywords&amp;keywords=&amp;deadlinefrom=&amp;deadlineto=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=NEEDINFO&amp;bug_status=REOPENED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;emailassigned_to1=1&amp;emailtype1=substring&amp;email1=&amp;emailassigned_to2=1&amp;emailreporter2=1&amp;emailqa_contact2=1&amp;emailcc2=1&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=2010-9-10&amp;chfieldvalue=&amp;format=table&amp;action=wrap&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=" class="external text" rel="nofollow">Bug report</a> of each Component in difference Status
+</p>

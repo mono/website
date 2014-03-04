@@ -1,0 +1,56 @@
+---
+layout: obsolete
+title: "Accessibility: Scrum"
+permalink: /old_site/Accessibility:_Scrum/
+---
+
+<h1>Accessibility: Scrum</h1>
+
+<p><a href="http://en.wikipedia.org/wiki/Scrum_(development)" class="external text" rel="nofollow">Scrum</a> is a lightweight Agile development process that is intended to make a project easier to track, and easier to develop for by defining periods (iterations) with a fixed amount of work and a fixed amount of time.  A great 5 minute overview is <a href="http://www.softhouse.se/Uploades/Scrum_eng_webb.pdf" class="external text" rel="nofollow">available</a> for those who haven't worked with Scrum before.
+</p><p>Some of its key points are:
+</p>
+<h2> <span class="mw-headline" id="Daily_Scrum_Meetings"> Daily Scrum Meetings </span></h2>
+<p>Traditionally, Scrum meetings are performed in person or over the phone, but given the significant geographical and timezone differences between members of the Mono Accessibility Team, we will try performing these "meetings" via e-mails to the mono-a11y mailing list.
+</p><p>Scrum emails in our team should be sent out at the end of your day (whatever time that may be) and should answer the following questions:
+</p>
+<ol><li> What have you done since your last update?
+</li><li> What do you plan to do between now and your next update?
+</li><li> Is there anything preventing you from doing what you have planned?
+</li></ol>
+<p>These emails should be short and to the point, and shouldn't take longer than 5 minutes to prepare.  Here's an example:
+</p>
+<pre>
+From: Brad Taylor &lt;btaylor@n.com&gt;
+To: mono-a11y@f.n.c
+Subject: Scrum Update for Sept 15
+
+1. What have you done since your last update?
+
+I continued working on the FooProvider for FooWidget, and also worked with Jane
+to debug some issues with IBarProvider that she was seeing.
+
+2. What do you plan to do between now and your next update?
+
+I will finish up FooProvider, and start working on the events for BazProvider.
+
+3. Is there anything preventing you from doing what you planned?
+
+I'm having hardware troubles on my laptop, but I'm working with Bob to get them
+resolved.
+</pre>
+<h2> <span class="mw-headline" id="Tracking_Work"> Tracking Work </span></h2>
+<p><b>NOTE</b>: Unfortunately, Bugzilla only supports tracking hours for one discipline, so for the time being, only developers will be asked to track hours in Bugzilla.
+</p><p>In order to understand how much work remains, we will be estimating and tracking the actual hours on the work we do.  At the same time, we will merge the two work-tracking methods (Bugzilla and the Wiki) into Novell Bugzilla to simplify our process.
+</p><p>Our Bugzilla product contains a few fields that will help us keep track of our time when estimating:
+</p>
+<ul><li> When starting work on an issue, verify that the <b>Orig. Est.</b> field is filled in.  If not, provide an estimate on the issue before you begin work.  Estimates should be rounded to the whole hour, and should include time for creating unit tests.
+</li><li> At the end of each day, update the <b>Hours Worked</b> field on all of the issues you're currently working on.
+</li><li> When you are finished with an issue, make sure the <b>Hours Worked</b> field is accurate.
+</li></ul>
+<p>Note that it's alright and perfectly normal in the beginning for the actual hours worked to be different than the estimated hours.  Producing this data and comparing the estimate versus actual over time will help us become better at estimating.
+</p>
+<h2> <span class="mw-headline" id="Iterations"> Iterations </span></h2>
+<p>Similar to the iterations that the team currently creates, Scrum iterations are typically longer (2 weeks - 4 weeks).  In our team, I'd like us to try out 2 week long iterations to reduce the project management overhead, and take a bit of the strain off the team members.
+</p><p>The Scrum Master traditionally assigns out enough work to keep each team member busy during the iteration.  For our iterations, we'll assume that (on average) team members get 6 hours out of 8 to work on their tasks.  This will give us 60 hours per person per iteration.
+</p><p>During the course of the iteration, the progress is traditionally tracked using a <a href="http://en.wikipedia.org/wiki/Burn_down_chart" class="external text" rel="nofollow">Burn-down</a> chart which has time on the X axis, and number of hours remaining on the Y axis.
+</p>

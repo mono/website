@@ -1,0 +1,322 @@
+---
+layout: obsolete
+title: "PostgreSQL"
+permalink: /old_site/PostgreSQL/
+---
+
+<h1>PostgreSQL</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Info"><span class="tocnumber">1</span> <span class="toctext">Info</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Current_Status"><span class="tocnumber">2</span> <span class="toctext">Current Status</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Action_plan"><span class="tocnumber">3</span> <span class="toctext">Action plan</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Using_Npgsql"><span class="tocnumber">4</span> <span class="toctext">Using Npgsql</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Examples"><span class="tocnumber">4.1</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Some_Connection_Example"><span class="tocnumber">4.1.1</span> <span class="toctext">Some Connection Example</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Howto_use_PostgreSQL_from_ASP.Net"><span class="tocnumber">4.1.2</span> <span class="toctext">Howto use PostgreSQL from ASP.Net</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Installation_instructions_for_PostgreSQL_DBMS"><span class="tocnumber">5</span> <span class="toctext">Installation instructions for PostgreSQL DBMS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#On_UNIX"><span class="tocnumber">5.1</span> <span class="toctext">On UNIX</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#On_Windows_using_native_PostgreSQL"><span class="tocnumber">5.2</span> <span class="toctext">On Windows using native PostgreSQL</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Info"> Info </span></h2>
+<p>Npgsql is the recommended provider to connect to PostgreSQL 7.x and 8.x databases on .NET and Mono.
+</p><p>Mono distributes the Npgsql database provider for <a href="http://postgresql.org" class="external text" rel="nofollow">PostgreSQL</a>.
+</p>
+<ul><li> Home site: <a href="http://npgsql.projects.postgresql.org/" class="external text" rel="nofollow">Npgsql</a>
+</li></ul>
+<ul><li> fully managed provider for PostgreSQL
+</li></ul>
+<ul><li> does not require a client library
+</li></ul>
+<ul><li> in namespace Npgsql and assembly Npgsql
+</li></ul>
+<h2> <span class="mw-headline" id="Current_Status"> Current Status </span></h2>
+<ul><li> Can be used with Postgresql 7.x and 8.x databases
+</li></ul>
+<ul><li> Has some support for ADO.NET 2.0 including GetSchema. 
+</li></ul>
+<ul><li> You can send insert, update, delete queries
+</li></ul>
+<p>through NpgsqlCommand.ExecuteNonQuery() method.
+</p>
+<ul><li> You can send queries like, select count(*) from table, select version() with NpgsqlCommand.ExecuteScalar() method.
+</li></ul>
+<ul><li> There is logging support. To use it, place code like that in your program:
+</li></ul>
+<pre>
+ NpgsqlEventLog.Level = LogLevel.Debug; 
+ NpgsqlEventLog.LogName = &quot;NpgsqlTests.LogFile&quot;; 
+</pre>
+<ul><li> There is a winforms test suite (Thanks Dave Page).
+</li></ul>
+<ul><li> Better support of ODBC-like ConnectionString in NpgsqlConnection (Thanks Dave Page)
+</li></ul>
+<ul><li> You can use parameter names with Npgsql (:) or SqlServer (@) prefix style. This easy porting of code from Sql server to postgresql 
+</li></ul>
+<ul><li> You can use native large object support
+</li></ul>
+<h2> <span class="mw-headline" id="Action_plan"> Action plan </span></h2>
+<ul><li> Any features or bugs for Npgsql should be implemented in Npgsql's <a href="http://pgfoundry.org/projects/npgsql/" class="external text" rel="nofollow">main source code repository</a>.  Only bugs necessary for building and running of Npgsql on Mono can be done in Mono's source code repository, but once applied they should be sent to Npgsql's mailing list for inclusion into their source code repository.
+</li></ul>
+<ul><li> Add any missing functionality to Npgsql. If this funtionality works on .NET but not on Mono, implement the missing features or fix the bugs in Mono
+</li></ul>
+<h2> <span class="mw-headline" id="Using_Npgsql"> Using Npgsql </span></h2>
+<p><b>Prerequisites</b> 
+</p>
+<ul><li> Have a working mono and mcs
+</li></ul>
+<ul><li> Get <a href="http://npgsql.projects.postgresql.org/" class="external text" rel="nofollow">Npgsql</a> and make sure the binary assembly Npgsql.dll is installed in the same place that the mono class libraries are located.
+</li></ul>
+<ul><li> Connection String Parameters:
+</li></ul>
+<table border="1" cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 1em 1em; text-align:left; border-collapse:collapse; border:1px gray solid; font-size:95%; background:#f9f9f9">
+<tr>
+<th> Parameter Definition </th>
+<th> Description </th>
+<th> Example
+</th></tr>
+<tr>
+<td> Server </td>
+<td> hostname of the PostgreSQL Server </td>
+<td> Server=localhost
+</td></tr>
+<tr>
+<td> Database </td>
+<td> name of the database </td>
+<td> Database=postgres
+</td></tr>
+<tr>
+<td> Port </td>
+<td> Network port to connect.  Optional </td>
+<td> Port=54321
+</td></tr>
+<tr>
+<td> User ID </td>
+<td> user id  </td>
+<td> User ID=postgres
+</td></tr>
+<tr>
+<td> Password </td>
+<td> password </td>
+<td> Password=mypass12
+</td></tr>
+<tr>
+<td> Encoding </td>
+<td> Encoding to be used. Possible values: ASCII(default) and UNICODE. Use UNICODE if you are getting problems with UTF-8 values </td>
+<td> Encoding=UNICODE
+</td></tr>
+<tr>
+<td> SSL </td>
+<td> True or False. Controls whether to attempt a secure connection. Default = False </td>
+<td> SSL=true
+</td></tr>
+<tr>
+<td> Pooling </td>
+<td> True or False. Controls whether connection pooling is used. Default = True </td>
+<td> Pooling=false
+</td></tr>
+<tr>
+<td> MinPoolSize </td>
+<td> Min size of connection pool. Default: 1 </td>
+<td> MinPoolSize=2
+</td></tr>
+<tr>
+<td> MaxPoolSize </td>
+<td> Max size of connection pool. Default: 20 </td>
+<td> MaxPoolSize=6
+</td></tr>
+<tr>
+<td> Timeout </td>
+<td> Time to wait for connection open in seconds </td>
+<td> Timeout=30
+</td></tr>
+<tr>
+<td> Sslmode </td>
+<td> Mode for ssl connection control. Sslmode can be one of the following values:
+<pre>           Prefer - If it is possible to connect using ssl, it will be used.
+           Require - If an ssl connection cannot be made, an exception is thrown.
+           Allow - Not supported yet, just connects without ssl.
+           Disable - No ssl connection is done.
+           Default is Disable. 
+</pre>
+</td>
+<td> Sslmode=Require
+</td></tr>
+<tr>
+<td> Protocol </td>
+<td> Protocol version to use, instead of automatic detection. First tries 3 and fallsback to 2; Integer 2 or 3. </td>
+<td> Protocol=2
+</td></tr></table>
+<p><br />     
+</p>
+<h3> <span class="mw-headline" id="Examples"> Examples </span></h3>
+<h4> <span class="mw-headline" id="Some_Connection_Example"> Some Connection Example </span></h4>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Npgsql</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Test
+ <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span>
+          <span style="color: #666666;">&quot;Server=localhost;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;Database=test;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;User ID=postgres;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;Password=fun2db;&quot;</span><span style="color: #008000;">;</span>
+       IDbConnection dbcon<span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NpgsqlConnection<span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       IDbCommand dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+       <span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+       <span style="color: #008080; font-style: italic;">// such as,</span>
+       <span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (</span>
+       <span style="color: #008080; font-style: italic;">//           firstname varchar(32),</span>
+       <span style="color: #008080; font-style: italic;">//           lastname varchar(32));</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+           <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+           <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+       IDataReader reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> FirstName <span style="color: #008000;">=</span> reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetString</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetOrdinal</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;firstname&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> LastName <span style="color: #008000;">=</span> reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetString</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">GetOrdinal</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;lastname&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: &quot;</span> <span style="color: #008000;">+</span>
+                 FirstName <span style="color: #008000;">+</span> <span style="color: #666666;">&quot; &quot;</span> <span style="color: #008000;">+</span> LastName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008000;">&#125;</span>
+       <span style="color: #008080; font-style: italic;">// clean up</span>
+       reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<ul><li> Building C# Example: 
+</li><li> Save the example to a file, such as, TestExample.cs
+</li></ul>
+<pre>
+$ mcs TestExample.cs -r:System.Data.dll -r:Npgsql.dll
+</pre>
+<ul><li> Running the Example:
+</li></ul>
+<pre>
+ mono TestExample.exe </pre>
+<h4> <span class="mw-headline" id="Howto_use_PostgreSQL_from_ASP.Net"> Howto use PostgreSQL from ASP.Net </span></h4>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&lt;%</span>@ Page Language<span style="color: #008000;">=</span><span style="color: #666666;">&quot;c#&quot;</span> Title<span style="color: #008000;">=</span><span style="color: #666666;">&quot;postgres via Npgsql&quot;</span> <span style="color: #008000;">%&gt;</span>
+<span style="color: #008000;">&lt;%</span>@ Assembly name<span style="color: #008000;">=</span><span style="color: #666666;">&quot;System&quot;</span> <span style="color: #008000;">%&gt;</span>
+<span style="color: #008000;">&lt;%</span>@ Assembly name<span style="color: #008000;">=</span><span style="color: #666666;">&quot;System.Data&quot;</span> <span style="color: #008000;">%&gt;</span>
+<span style="color: #008000;">&lt;%</span>@ Assembly name<span style="color: #008000;">=</span><span style="color: #666666;">&quot;Npgsql&quot;</span> <span style="color: #008000;">%&gt;</span>
+&#160;
+<span style="color: #008000;">&lt;</span>script runat<span style="color: #008000;">=</span><span style="color: #666666;">&quot;server&quot;</span><span style="color: #008000;">&gt;</span>
+                <span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #6666cc; font-weight: bold;">void</span> Page_Load<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> sender, EventArgs e<span style="color: #008000;">&#41;</span> 
+                <span style="color: #008000;">&#123;</span>
+                        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span>Page<span style="color: #008000;">.</span><span style="color: #0000FF;">IsPostBack</span><span style="color: #008000;">&#41;</span>
+                        <span style="color: #008000;">&#123;</span>
+                      <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span>
+                        <span style="color: #666666;">&quot;Server=localhost;&quot;</span> <span style="color: #008000;">+</span>
+                        <span style="color: #666666;">&quot;Database=test;&quot;</span> <span style="color: #008000;">+</span>
+                        <span style="color: #666666;">&quot;User ID=postgres;&quot;</span> <span style="color: #008000;">+</span>
+                        <span style="color: #666666;">&quot;Password=fun2db;&quot;</span><span style="color: #008000;">;</span>
+                        <span style="color: #000000;">System.<span style="color: #0000FF;">Data</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">IDbConnection</span> dbcon<span style="color: #008000;">;</span>
+                        dbcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Npgsql<span style="color: #008000;">.</span><span style="color: #0000FF;">NpgsqlConnection</span><span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #000000;">System.<span style="color: #0000FF;">Data</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">IDbCommand</span> dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+                                <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+                                <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+                        dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+                        <span style="color: #000000;">System.<span style="color: #0000FF;">Data</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">IDataReader</span> reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                dg<span style="color: #008000;">.</span><span style="color: #0000FF;">DataSource</span> <span style="color: #008000;">=</span> reader<span style="color: #008000;">;</span>
+                                dg<span style="color: #008000;">.</span><span style="color: #0000FF;">DataBind</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                            reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+                        dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+                        dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&lt;/</span>script<span style="color: #008000;">&gt;</span>
+&#160;
+<span style="color: #008000;">&lt;</span>html<span style="color: #008000;">&gt;</span> 
+<span style="color: #008000;">&lt;</span>body<span style="color: #008000;">&gt;</span>
+The DataGrid that follows should list employees <span style="color: #008000;">&lt;/</span> br<span style="color: #008000;">&gt;</span>
+<span style="color: #008000;">&lt;</span>asp<span style="color: #008000;">:</span>DataGrid id<span style="color: #008000;">=</span><span style="color: #666666;">&quot;dg&quot;</span> runat<span style="color: #008000;">=</span><span style="color: #666666;">&quot;server&quot;</span><span style="color: #008000;">&gt;</span>
+<span style="color: #008000;">&lt;/</span>asp<span style="color: #008000;">:</span>DataGrid<span style="color: #008000;">&gt;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+<span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+<span style="color: #008080; font-style: italic;">// such as,&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//           firstname varchar(32),&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//           lastname varchar(32));&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">// create records thus&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//        INSERT INTO employee &lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//           SELECT 'Rob','Davis';&lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//        INSERT INTO employee &lt;br /&gt;</span>
+<span style="color: #008080; font-style: italic;">//           SELECT 'Sarah','Davis';&lt;br /&gt;</span>
+&#160;
+<span style="color: #008000;">&lt;/</span>body<span style="color: #008000;">&gt;</span>
+<span style="color: #008000;">&lt;/</span>html<span style="color: #008000;">&gt;</span></pre>
+<ul><li>  More examples can be found in Npgsql Users Manual <a href="http://npgsql.projects.postgresql.org/docs/manual/UserManual.htm" class="external text" rel="nofollow">here</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Installation_instructions_for_PostgreSQL_DBMS"> Installation instructions for PostgreSQL DBMS </span></h2>
+<h3> <span class="mw-headline" id="On_UNIX"> On UNIX </span></h3>
+<ul><li> Read the PostgreSQL Installation Instructions
+</li></ul>
+<p>at /usr/doc/postgresql-x.x.x/html/installation.html
+</p>
+<ul><li> Depending on your UNIX system, PostgreSQL maybe already installed, a database user 'postgres' created, a linux user 'postgres' created and initdb ran. Or maybe not.
+</li></ul>
+<pre>
+ su
+ adduser postgres
+ mkdir /usr/local/pgsql/data
+ chown postgres /usr/local/pgsql/data
+ su - postgres
+ initdb -D /usr/local/pgsql/data
+ postmaster -i -D /usr/local/pgsql/data
+ createdb test
+ psql test
+</pre>
+<ul><li> Make sure you have a database user named postgres. It is best to install the PostgreSQL DBMS under linux user postgres. When you run the postmaster, run it under the user postgres as well. If this was not done, then you will need to create a user named postgres for the System.Data tests.
+</li></ul>
+<ul><li> If you already installed PostgeSQL and you do not have a database user named postgres, then you can create user postgres using psql: 
+</li></ul>
+<pre>
+psql test
+create user postgres with password 'fun2db';
+</pre>
+<ul><li> The postmaster must be run with -i option.
+</li></ul>
+<ul><li> In the /usr/local/pgsql/data/pg_hba.conf file, you need to have the AUTH_TYPE set to md5. You can read more on this at /usr/doc/postgresql-7.2.1/html/client-authentication.html or wherever your PostgreSQL html docs are located. See the 2nd line below, host 127.0.0.1 has an AUTH_TYPE md5 in pg_hba.conf.
+</li></ul>
+<pre>
+# # TYPE     DATABASE    IP_ADDRESS    MASK               AUTH_TYPE
+
+ local      all                                          trust
+ host       all         127.0.0.1     255.255.255.255    md5
+</pre>
+<ul><li> If you can not find your PostgreSQL documentation locally or you did not install it, then you can get it <a href="http://www.postgresql.org/idocs/" class="external text" rel="nofollow">here</a>.
+</li></ul>
+<h3> <span class="mw-headline" id="On_Windows_using_native_PostgreSQL"> On Windows using native PostgreSQL </span></h3>
+<ul><li> Starting with PostgreSQL 8.0, PostgreSQL has native Windows support
+</li></ul>
+<ul><li> <a href="http://www.postgresql.org/download/" class="external text" rel="nofollow">PostgreSQL Downloads</a>
+</li></ul>
+

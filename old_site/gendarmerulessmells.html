@@ -1,0 +1,403 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Smells"
+permalink: /old_site/Gendarme.Rules.Smells/
+---
+
+<h1>Gendarme.Rules.Smells</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s refactoring suggestion rules are located in the <b>Gendarme.Rules.Smells.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Smells/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AvoidCodeDuplicatedInSameClassRule"><span class="tocnumber">1.1</span> <span class="toctext">AvoidCodeDuplicatedInSameClassRule</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AvoidCodeDuplicatedInSiblingClassesRule"><span class="tocnumber">1.2</span> <span class="toctext">AvoidCodeDuplicatedInSiblingClassesRule</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AvoidLargeClassesRule"><span class="tocnumber">1.3</span> <span class="toctext">AvoidLargeClassesRule</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AvoidLongMethodsRule"><span class="tocnumber">1.4</span> <span class="toctext">AvoidLongMethodsRule</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AvoidLongParameterListsRule"><span class="tocnumber">1.5</span> <span class="toctext">AvoidLongParameterListsRule</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AvoidMessageChainsRule"><span class="tocnumber">1.6</span> <span class="toctext">AvoidMessageChainsRule</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AvoidSpeculativeGeneralityRule"><span class="tocnumber">1.7</span> <span class="toctext">AvoidSpeculativeGeneralityRule</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#AvoidSwitchStatementsRule"><span class="tocnumber">1.8</span> <span class="toctext">AvoidSwitchStatementsRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="AvoidCodeDuplicatedInSameClassRule"> AvoidCodeDuplicatedInSameClassRule </span></h3>
+<p>This rule checks for duplicated code in the same class. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> IList myList<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> MyClass <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        myList <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Bar&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Baz&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> <span style="color: #0600FF; font-weight: bold;">value</span> <span style="color: #0600FF; font-weight: bold;">in</span> myList<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;FooReplied&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeMoreStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> <span style="color: #0600FF; font-weight: bold;">value</span> <span style="color: #0600FF; font-weight: bold;">in</span> myList<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Remove</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;FooReplied&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> IList myList<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> MyClass <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        myList <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Bar&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Baz&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> <span style="color: #0600FF; font-weight: bold;">value</span> <span style="color: #0600FF; font-weight: bold;">in</span> myList<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;FooReplied&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeMoreStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        myList<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Remove</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;FooReplied&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidCodeDuplicatedInSiblingClassesRule"> AvoidCodeDuplicatedInSiblingClassesRule </span></h3>
+<p>This rule looks for code duplicated in sibling subclasses. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> BaseClassWithCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">protected</span> IList list<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OverriderClassWithCodeDuplicated <span style="color: #008000;">:</span> BaseClassWithCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> CodeDuplicated <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>i<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OtherOverriderWithCodeDuplicated <span style="color: #008000;">:</span> BaseClassWithCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> OtherMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>i<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Remove</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> BaseClassWithoutCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">protected</span> IList list<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #6666cc; font-weight: bold;">void</span> PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>i<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OverriderClassWithoutCodeDuplicated <span style="color: #008000;">:</span> BaseClassWithoutCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SomeCode <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OtherOverriderWithoutCodeDuplicated <span style="color: #008000;">:</span> BaseClassWithoutCodeDuplicated <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MoreCode <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        PrintValuesInList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Remove</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidLargeClassesRule"> AvoidLargeClassesRule </span></h3>
+<p>This rule allows developers to measure the classes size. When a class is trying to doing a lot of work, then you probabily have the Large Class smell. This rule will fire if a type contains too many fields (over 25 by default) or has fields with common prefixes. If the rule does fire then the type should be reviewed to see if new classes should be extracted from it. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> x, x1, x2, x3<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> s, s1, s2, s3<span style="color: #008000;">;</span>
+    DateTime bar, bar1, bar2<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> strings, strings1<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> x<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">;</span>
+    DateTime bar<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidLongMethodsRule"> AvoidLongMethodsRule </span></h3>
+<p>This rule allows developers to measure the method size. The short sized methods allows you to maintain your code better, if you have long sized methods perhaps you have the Long Method smell. The rule will skip some well known methods, because they are autogenerated: 
+</p>
+<ul><li> <b>Gtk.Bin::Build ()</b>
+</li><li> <b>Gtk.Window::Build ()</b>
+</li><li> <b>Gtk.Dialog::Build ()</b>
+</li><li> <b>System.Windows.Forms::InitializeComponents ()</b>
+</li></ul>
+<p>This will work for classes that extend those types. If debugging symbols (e.g. Mono .mdb or MS .pdb) are available then the rule will compute the number of logical source line of code (SLOC). This number represent the lines where 'SequencePoint' are present in the code. By default the maximum SLOC is defined to 40 lines. Otherwise the rule falls back onto an IL-SLOC approximation. It's quite hard to determine how many SLOC exists based on the IL (e.g. LINQ). The metric being used is based on a screen (1024 x 768) full of source code where the number of IL instructions were counted. By default the maximum number of IL instructions is defined to be 165. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> LongMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;I'm writting a test, and I will fill a screen with some useless code&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    IList list <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Foo&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">4</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">6</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    IEnumerator listEnumerator <span style="color: #008000;">=</span> list<span style="color: #008000;">.</span><span style="color: #0000FF;">GetEnumerator</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>listEnumerator<span style="color: #008000;">.</span><span style="color: #0000FF;">MoveNext</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>listEnumerator<span style="color: #008000;">.</span><span style="color: #0000FF;">Current</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Bar&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        list<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">'a'</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>NotSupportedException exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">.</span><span style="color: #0000FF;">Message</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #0600FF; font-weight: bold;">value</span> <span style="color: #0600FF; font-weight: bold;">in</span> list<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">Write</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">Write</span> <span style="color: #008000;">&#40;</span>Environment<span style="color: #008000;">.</span><span style="color: #0000FF;">NewLine</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #6666cc; font-weight: bold;">int</span> x <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> i <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">100</span><span style="color: #008000;">;</span> i<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        x<span style="color: #008000;">++;</span>
+    <span style="color: #008000;">&#125;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>x<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #6666cc; font-weight: bold;">string</span> useless <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Useless String&quot;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>useless<span style="color: #008000;">.</span><span style="color: #0000FF;">Equals</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Other useless&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        useless <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Other useless string&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    useless <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Concat</span> <span style="color: #008000;">&#40;</span>useless,<span style="color: #666666;">&quot; 1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> j <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> j <span style="color: #008000;">&lt;</span> useless<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span><span style="color: #008000;">;</span> j<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>useless<span style="color: #008000;">&#91;</span>j<span style="color: #008000;">&#93;</span> <span style="color: #008000;">==</span> <span style="color: #666666;">'u'</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;I have detected an u char&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #008000;">&#123;</span>
+                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;I have detected an useless char&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> environmentVariable <span style="color: #0600FF; font-weight: bold;">in</span> Environment<span style="color: #008000;">.</span><span style="color: #0000FF;">GetEnvironmentVariables</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Keys</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>environmentVariable<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span><span style="color: #000000;">System.<span style="color: #0000FF;">Security</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">SecurityException</span> exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">.</span><span style="color: #0000FF;">Message</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;I will add more useless code&#160;!!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span><span style="color: #008000;">&#40;</span>File<span style="color: #008000;">.</span><span style="color: #0000FF;">Exists</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                File<span style="color: #008000;">.</span><span style="color: #0000FF;">Create</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                File<span style="color: #008000;">.</span><span style="color: #0000FF;">Delete</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>IOException exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">.</span><span style="color: #0000FF;">Message</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> ShortMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> environmentVariable <span style="color: #0600FF; font-weight: bold;">in</span> Environment<span style="color: #008000;">.</span><span style="color: #0000FF;">GetEnvironmentVariables</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Keys</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>environmentVariable<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span><span style="color: #000000;">System.<span style="color: #0000FF;">Security</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">SecurityException</span> exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">.</span><span style="color: #0000FF;">Message</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>exception<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidLongParameterListsRule"> AvoidLongParameterListsRule </span></h3>
+<p>This rule allows developers to measure the parameter list size in a method. If you have methods with a lot of parameters, perhaps you have a Long Parameter List smell. This rule counts the method's parameters, and compares it against a maximum value. If you have an overloaded method, then the rule will get the shortest overload and compare the shortest overload against the maximum value. Other time, it's quite hard determine a long parameter list. By default, a method with 6 or more arguments will be flagged as a defect. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MethodWithLongParameterList <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> x, <span style="color: #6666cc; font-weight: bold;">char</span> c, <span style="color: #6666cc; font-weight: bold;">object</span> obj, <span style="color: #6666cc; font-weight: bold;">bool</span> j, <span style="color: #6666cc; font-weight: bold;">string</span> f,
+<span style="color: #6666cc; font-weight: bold;">float</span> z, <span style="color: #6666cc; font-weight: bold;">double</span> u, <span style="color: #6666cc; font-weight: bold;">short</span> s, <span style="color: #6666cc; font-weight: bold;">int</span> v, <span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> array<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// Method body ...</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MethodWithoutLongParameterList <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> x, <span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// Method body....</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidMessageChainsRule"> AvoidMessageChainsRule </span></h3>
+<p>This rule checks for the Message Chain smell. This can cause problems because it means that your code is heavily coupled to the navigation structure. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span>Person person<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    person<span style="color: #008000;">.</span><span style="color: #0000FF;">GetPhone</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GetAreaCode</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GetCountry</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Language</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToFrench</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello world&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span>Language language<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    language<span style="color: #008000;">.</span><span style="color: #0000FF;">ToFrench</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello world&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidSpeculativeGeneralityRule"> AvoidSpeculativeGeneralityRule </span></h3>
+<p>This rule allows developers to avoid the Speculative Generality smell. Be careful if you are developing a new framework or a new library, because this rule only inspects the assembly, then if you provide an abstract base class for extend by third party people, then the rule can warn you. You can ignore the message in this special case. We detect this smell by looking for: 
+</p>
+<ul><li> Abstract classes without responsibility
+</li><li> Unnecessary delegation.
+</li><li> Unused parameters.
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// An abstract class with only one subclass.</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">class</span> AbstractClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OverriderClass <span style="color: #008000;">:</span> AbstractClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>If you use Telephone class only in one client, perhaps you don't need this kind of delegation.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Person <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> age<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">;</span>
+    Telephone phone<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Telephone <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> areaCode<span style="color: #008000;">;</span>
+    <span style="color: #6666cc; font-weight: bold;">int</span> phone<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">class</span> OtherAbstractClass<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OtherOverriderClass <span style="color: #008000;">:</span> OtherAbstractClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> YetAnotherOverriderClass <span style="color: #008000;">:</span> OtherAbstractClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> MakeStuff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidSwitchStatementsRule"> AvoidSwitchStatementsRule </span></h3>
+<p>This rule checks for the Switch Statements smell. This can lead to code duplication, because the same switch could be repeated in various places in your program. Also, if need to do a little change, you may have to change every switch statement. The preferred way to do this is with virtual methods and polymorphism. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">int</span> balance <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>Movie movie <span style="color: #0600FF; font-weight: bold;">in</span> movies<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">switch</span> <span style="color: #008000;">&#40;</span>movie<span style="color: #008000;">.</span><span style="color: #0000FF;">GetTypeCode</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">case</span> MovieType<span style="color: #008000;">.</span><span style="color: #0000FF;">OldMovie</span><span style="color: #008000;">:</span> <span style="color: #008000;">&#123;</span>
+            balance <span style="color: #008000;">+=</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">DaysRented</span> <span style="color: #008000;">*</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">Price</span> <span style="color: #008000;">/</span> <span style="color: #FF0000;">2</span><span style="color: #008000;">;</span>
+            <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #0600FF; font-weight: bold;">case</span> MovieType<span style="color: #008000;">.</span><span style="color: #0000FF;">ChildMovie</span><span style="color: #008000;">:</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #008080; font-style: italic;">//its an special bargain&#160;!!</span>
+            balance <span style="color: #008000;">+=</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">Price</span><span style="color: #008000;">;</span>
+            <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #0600FF; font-weight: bold;">case</span> MovieType<span style="color: #008000;">.</span><span style="color: #0000FF;">NewMovie</span><span style="color: #008000;">:</span> <span style="color: #008000;">&#123;</span>
+            balance <span style="color: #008000;">+=</span> <span style="color: #008000;">&#40;</span>movie<span style="color: #008000;">.</span><span style="color: #0000FF;">DaysRented</span> <span style="color: #008000;">+</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">*</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">Price</span><span style="color: #008000;">;</span>
+            <span style="color: #0600FF; font-weight: bold;">break</span><span style="color: #008000;">:</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">class</span> Movie <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetPrice <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #6666cc; font-weight: bold;">class</span> OldMovie <span style="color: #008000;">:</span> Movie <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetPrice <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> DaysRented <span style="color: #008000;">*</span> Price <span style="color: #008000;">/</span> <span style="color: #FF0000;">2</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #6666cc; font-weight: bold;">class</span> ChildMovie <span style="color: #008000;">:</span> Movie <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetPrice <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">Price</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #6666cc; font-weight: bold;">class</span> NewMovie <span style="color: #008000;">:</span> Movie <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">int</span> GetPrice <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">&#40;</span>DaysRented <span style="color: #008000;">+</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">*</span> Price<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">int</span> balance <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>Movie movie <span style="color: #0600FF; font-weight: bold;">in</span> movies<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    balance <span style="color: #008000;">+=</span> movie<span style="color: #008000;">.</span><span style="color: #0000FF;">GetPrice</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.4
+</li></ul>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

@@ -1,0 +1,372 @@
+---
+layout: obsolete
+title: "Responsive Applications"
+permalink: /old_site/Responsive_Applications/
+---
+
+<h1>Responsive Applications</h1>
+
+<p><br />
+This article covers multi-threaded GTK# programing as well as how to keep your GTK# application responsive.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Background"><span class="tocnumber">1</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Approaches"><span class="tocnumber">2</span> <span class="toctext">Approaches</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Idle_Handlers"><span class="tocnumber">2.1</span> <span class="toctext">Idle Handlers</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Timeouts"><span class="tocnumber">2.2</span> <span class="toctext">Timeouts</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Gtk.Application.Invoke"><span class="tocnumber">2.3</span> <span class="toctext">Gtk.Application.Invoke</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Gtk.ThreadNotify"><span class="tocnumber">2.4</span> <span class="toctext">Gtk.ThreadNotify</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Programming_with_Threads"><span class="tocnumber">2.5</span> <span class="toctext">Programming with Threads</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Asynchronous_Mono_Programmning"><span class="tocnumber">2.6</span> <span class="toctext">Asynchronous Mono Programmning</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Manual_Event_Processing"><span class="tocnumber">2.7</span> <span class="toctext">Manual Event Processing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Alternatives"><span class="tocnumber">3</span> <span class="toctext">Alternatives</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Application.Invoke"><span class="tocnumber">3.1</span> <span class="toctext">Application.Invoke</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Other_options"><span class="tocnumber">3.2</span> <span class="toctext">Other options</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#GuiDispatch"><span class="tocnumber">3.2.1</span> <span class="toctext">GuiDispatch</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#RunOnMainThread"><span class="tocnumber">3.2.2</span> <span class="toctext">RunOnMainThread</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Background"> Background </span></h1>
+<p>The Gtk# toolkit is an event-based system.  At the core of the Gtk.Application.Run method there is a loop like this:
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">EventsPending</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">RunIteration</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The above loop basically consumes events until the method Gtk.Application.Quit() is invoked.
+</p><p>Events can come from a number of sources:
+</p>
+<ul><li> Keyboard (as the user types information).
+</li><li> Mouse (as the user moves the mouse or clicks on information).
+</li><li> Synthesized events (pressing the `enter' key and mapping that to an "activated" event on the widget).
+</li><li> X events: redrawing, resizing, respoding to cut-and-paste.
+</li><li> Timers going off.
+</li><li> Notification of idle time.
+</li></ul>
+<p>The loop that processes and dispatches events is called the "event loop".
+</p><p>The thread that happens to run the event loop is said to "own" Gtk.  This means that all Gtk operations should be perfomed from this thread and no other thread.   <b>Failure to restrict the use of Gtk to this thread will result in unpredictable behavior, and most often will lead to a crash.</b>
+</p><p>Threads are useful if you need to perform long running computations or your application complexity would increase too much if it were event driven.
+</p><p>The most important thing to keep in mind is that the thread running the Gtk main loop (the one that calls Gtk.Application.Run()) is the only thread that should make calls into Gtk.  This includes method calls and property access.
+</p><p>A typical scenario is that your thread will want to update the user interface with some status progress or notify the user when a task is completed.   The solution is to turn the notification into an event that is then dispatched from the main thread. 
+</p><p>A common problem faced by GUI application developers is keeping an application responsive while a long-running operation is running. There are a number of approaches that can be used depending on the situation and the complexity of the computation.
+</p><p>There are a number of reasons why an application might become unresponsive to a user: the application might be performing a long-running computation or it might be blocking on data to become available from the network, a file system or the operating system.
+</p><p>Threads are often used to overcome this problem, but as explained above you have to be careful when using them. In this document we explore the solutions available to Gtk# developers to keep your GUI responsive by using multiple threads and other approaches.
+</p>
+<h1> <span class="mw-headline" id="Approaches"> Approaches </span></h1>
+<p>There are a number of approaches that can be used to make your application responsive in the presence of blocking operations:
+</p>
+<ul><li> Event-based programming.
+</li><li> Explicitly threaded applications.
+</li><li> Asynchronous Mono Programming.
+</li></ul>
+<p>Event-based programming is the best option as it avoids the complexity that comes from writing multi-threaded applications.  Event-based programming requires that you architect your software in a way in which it responds to events, but this is already the case for most GUI applications: callbacks are invoked in response to user actions or signals, so this is a natural model to use.
+</p><p>You should think twice before you start using threads.  Not only because you have to be careful about the way you use Gtk# but also because it will make your code hard to debug, the bugs might be extremely hard to reproduce and you will need to become intimately familiar with a whole family of thread synchronization primitives and you must design your software in a way in which you avoid deadlocks.
+</p>
+<h2> <span class="mw-headline" id="Idle_Handlers"> Idle Handlers </span></h2>
+<p>The Gtk main loop has support for invoking routines when the application is idle.  When no events are left to process the main loop will invoke all of the idle handlers.  This technique is useful if you can break up the work that your application does into small units that take a small amount of time to process and can resume execution at any point.
+</p><p>Another use of the Idle handler is to queue work to be done when the machine is idling and not doing anything interesting.  You can use Idle handlers to perform background operations without the added complexity of having to write a multi-threaded applications 
+</p><p>For example, simple animations or status updates could be hooked up into an Idle handler.
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #6666cc; font-weight: bold;">void</span> Start <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        GLib<span style="color: #008000;">.</span><span style="color: #0000FF;">Idle</span><span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> IdleHandler <span style="color: #008000;">&#40;</span>OnIdleCreateThumbnail<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #6666cc; font-weight: bold;">bool</span> OnIdleCreateThumbnail <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+           Image img <span style="color: #008000;">=</span> GetNextImage <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+           <span style="color: #008080; font-style: italic;">// If no more images remain, stop the idle handler.</span>
+           <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>img <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span>
+                 <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span> 
+&#160;
+           CreateThumbnail <span style="color: #008000;">&#40;</span>img, img<span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;.thumbnail&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+           <span style="color: #008080; font-style: italic;">// There are more images, invoke this routine again on the next Idle moment.</span>
+           <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>           
+    <span style="color: #008000;">&#125;</span></pre>
+<p>For more details about using Idle handlers, see the [http:/monodoc/T:GLib.Idle GLib.Idle] class library documentation.
+</p>
+<h2> <span class="mw-headline" id="Timeouts"> Timeouts </span></h2>
+<p>You can use timeouts to invoke routines at specified intervals of time.  This can be used to update status at specified times for example while a background thread runs or to notify the user of an action at a given interval.
+</p><p>Those of you who have done winforms development before will notice that GLib.Timeout is similar to System.Windows.Forms.Timer.  The difference is that GLib.Timeouts are always invoked on the thread that owns the Gtk mainloop.
+</p>
+<pre class="csharp" style="font-family:monospace;">     <span style="color: #6666cc; font-weight: bold;">void</span> StartClock <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+     <span style="color: #008000;">&#123;</span>
+         <span style="color: #008080; font-style: italic;">// Every second call `update_status' (1000 milliseconds)</span>
+&#160;
+         GLib<span style="color: #008000;">.</span><span style="color: #0000FF;">Timeout</span><span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1000</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GLib<span style="color: #008000;">.</span><span style="color: #0000FF;">TimeoutHandler</span> <span style="color: #008000;">&#40;</span>update_status<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">&#125;</span>
+&#160;
+     <span style="color: #6666cc; font-weight: bold;">bool</span> update_status <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+     <span style="color: #008000;">&#123;</span>
+         time_label<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> DateTime<span style="color: #008000;">.</span><span style="color: #0000FF;">Now</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+         <span style="color: #008080; font-style: italic;">// returning true means that the timeout routine should be invoked</span>
+         <span style="color: #008080; font-style: italic;">// again after the timeout period expires.   Returning false would</span>
+         <span style="color: #008080; font-style: italic;">// terminate the timeout.</span>
+&#160;
+         <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">&#125;</span></pre>
+<p>As described on the example, the timeout routine has to return a true or false value.  Returning true will reset the timeout and invoke the method again, and returning false will prevent further invocations of the timeout routine to be called.
+</p><p>Look at the documentation for [http:/monodoc/T:GLib.Timeout GLib.Timeout] for more examples and to learn more about timeouts.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Gtk.Application.Invoke"> Gtk.Application.Invoke </span></h2>
+<p>With Gtk# 2 and C# it is possible to use Gtk.Application.Invoke and anonymous methods to request from a thread that the GUI thread should wake up and execute some code in the context of the main loop.
+</p><p>You must use this if you have a thread that needs to perform or access some GUI components during its execution:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Demo <span style="color: #008000;">&#123;</span>
+  <span style="color: #0600FF; font-weight: bold;">static</span> Label label<span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+    Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Window w <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Cray on a Window&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Busy computing&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    Thread thr <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span>ThreadRoutine<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    thr<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> ThreadRoutine <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+        LargeComputation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Invoke</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+              label<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Done&quot;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> LargeComputation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// lots of processing here</span>
+  <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Gtk.ThreadNotify"> Gtk.ThreadNotify </span></h2>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Demo <span style="color: #008000;">&#123;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> ThreadNotify notify<span style="color: #008000;">;</span>
+  <span style="color: #0600FF; font-weight: bold;">static</span> Label label<span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+    Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Window w <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Cray on a Window&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Busy computing&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    Thread thr <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span>ThreadRoutine<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    thr<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    notify <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadNotify <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ReadyEvent <span style="color: #008000;">&#40;</span>ready<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> ready <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+      label<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Done&quot;</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> ThreadRoutine <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+        LargeComputation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        notify<span style="color: #008000;">.</span><span style="color: #0000FF;">WakeupMain</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+&#160;
+  <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> LargeComputation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// lots of processing here</span>
+  <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Programming_with_Threads"> Programming with Threads </span></h2>
+<p>For certain kind of problems that are not easy to handle with event dispatching, timers or other simpler approaches, you can use threads.
+</p><p>Threads have a few downsides, for example, you need to worry about race conditions that happens when two threads need to share information.   
+</p><p>Read our <a href="{{site.baseurl}}/ThreadsBeginnersGuide" title="ThreadsBeginnersGuide">Thread Beginners Guide</a> for an introduction to using threads with Mono.
+</p>
+<h2> <span class="mw-headline" id="Asynchronous_Mono_Programmning"> Asynchronous Mono Programmning </span></h2>
+<p>Programmers that use threads have to create their own communications protocols between the thread and the main application.   Sometimes the features offered by the threads are enough, but some other times it might be useful to take advantage of a built-in protocol in the ECMA CLI for asynchronous programming.
+</p><p>In the ECMA CLI every delegate declaration creates three methods in the delegate that you can use, for example consider the following C# declaration for a BinaryOperator:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #6666cc; font-weight: bold;">int</span> BinaryOperator <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> op1, <span style="color: #6666cc; font-weight: bold;">int</span> op2<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The compiler generates something along these lines:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> BinaryOperator <span style="color: #008000;">:</span> MulticastDelegate <span style="color: #008000;">&#123;</span>
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> <span style="color: #6666cc; font-weight: bold;">int</span>          Invoke      <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> op1, <span style="color: #6666cc; font-weight: bold;">int</span> op2<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">..</span><span style="color: #008000;">&#125;</span>
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> IAsyncResult BeginInvoke <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> op1, <span style="color: #6666cc; font-weight: bold;">int</span> op2, AsyncCallback cback, <span style="color: #6666cc; font-weight: bold;">object</span> data<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">..</span><span style="color: #008000;">&#125;</span>
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> <span style="color: #6666cc; font-weight: bold;">int</span>          EndInvoke   <span style="color: #008000;">&#40;</span>IAsyncResult r<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">..</span><span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>There is actually no code generated for those methods, the virtual machine handles these specially.   Notice that incoming parameters are added to BeginInvoke, and the return type for EndInvoke is the return type for the Invoke method.   BeginInvoke/EndInvoke have split the operation in two: the startup, and the completion. 
+</p><p>You would use the above code typically like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// C# 2.0 style of coding, using an anonymous method:</span>
+BinaryOperator adder <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> op1, <span style="color: #6666cc; font-weight: bold;">int</span> op2<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> op1 <span style="color: #008000;">+</span> op2<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// C# way of invoking it:</span>
+<span style="color: #6666cc; font-weight: bold;">int</span> sum <span style="color: #008000;">=</span> adder <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">4</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// You can also call it like this:</span>
+<span style="color: #6666cc; font-weight: bold;">int</span> sum2 <span style="color: #008000;">=</span> adder<span style="color: #008000;">.</span><span style="color: #0000FF;">Invoke</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">4</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>But in addition to this invocation model, the BeginInvoke/EndInvoke pair allow you to run the method on a separate thread, notify an optional callback method when the code has executed and fetch the results when you are done.
+</p><p>For example, this is how you could invoke the previous sum in a separate thread:
+</p>
+<pre class="csharp" style="font-family:monospace;">Startup <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> ABC <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;hello&quot;</span><span style="color: #008000;">;</span>
+&#160;
+    adder<span style="color: #008000;">.</span><span style="color: #0000FF;">BeginInvoke</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">4</span>, <span style="color: #FF0000;">5</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> AysnCallback <span style="color: #008000;">&#40;</span>finished_callback<span style="color: #008000;">&#41;</span>, ABC<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">void</span> finished_callback <span style="color: #008000;">&#40;</span>IAsyncResult ar<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+     Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Addition has completed&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008080; font-style: italic;">// You can fetch the variable that was passed as the last argument</span>
+     <span style="color: #008080; font-style: italic;">// to BeginInvoke by accessing ar.AsyncState, in this case &quot;ABC&quot;</span>
+     <span style="color: #6666cc; font-weight: bold;">object</span> state <span style="color: #008000;">=</span> ar<span style="color: #008000;">.</span><span style="color: #0000FF;">AsyncState</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>If you want to fetch the actual result value, you need to call the "EndInvoke" method, and pass the IAsyncResult parameter:
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #6666cc; font-weight: bold;">int</span> result <span style="color: #008000;">=</span> adder<span style="color: #008000;">.</span><span style="color: #0000FF;">EndInvoke</span> <span style="color: #008000;">&#40;</span>ar<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Here is a full sample:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #6666cc; font-weight: bold;">int</span> BinaryOperator <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> x <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		BinaryOperator adder <span style="color: #008000;">=</span> Adder<span style="color: #008000;">;</span>
+&#160;
+		adder<span style="color: #008000;">.</span><span style="color: #0000FF;">BeginInvoke</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span>, <span style="color: #FF0000;">20</span>, Callback, adder<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> Adder <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">return</span> a <span style="color: #008000;">+</span> b<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Callback <span style="color: #008000;">&#40;</span>IAsyncResult r<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+                <span style="color: #008080; font-style: italic;">// </span>
+                <span style="color: #008080; font-style: italic;">// We pass the &quot;adder&quot; object as the &quot;data&quot; argument to</span>
+                <span style="color: #008080; font-style: italic;">// BeginInvoke, here we retrieve it:</span>
+                <span style="color: #008080; font-style: italic;">//</span>
+		BinaryOperator adder <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>BinaryOperator<span style="color: #008000;">&#41;</span> r<span style="color: #008000;">.</span><span style="color: #0000FF;">AsyncState</span><span style="color: #008000;">;</span>
+&#160;
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;  Addition completed&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;  Result was: {0}&quot;</span>, adder<span style="color: #008000;">.</span><span style="color: #0000FF;">EndInvoke</span> <span style="color: #008000;">&#40;</span>r<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Here is the same sample, but this time rewritten using anonymous methods from C# 2.0 which make the code more compact, and does not require us to pass the adder as a parameter (we could pass other data if we wanted to):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #6666cc; font-weight: bold;">int</span> BinaryOperator <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> x <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		BinaryOperator adder <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> a <span style="color: #008000;">+</span> b<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+&#160;
+		adder<span style="color: #008000;">.</span><span style="color: #0000FF;">BeginInvoke</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span>, <span style="color: #FF0000;">20</span>, <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#40;</span>IAsyncResult r<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Addition completed&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Result was: {0}&quot;</span>, adder<span style="color: #008000;">.</span><span style="color: #0000FF;">EndInvoke</span> <span style="color: #008000;">&#40;</span>r<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The above example uses the anonymous method syntax to define both the adder method and used to define the callback method that is invoked when the process is complete.   
+</p><p>As you can see, the operation result is fetched by invoking the delegate's EndInvoke method.   In the above example we call EndInvoke in our callback, so EndInvoke will return immediately with the result because the method has completed its execution.    But if you were to call EndInvoke in another place of your program and your async method had not finished, EndInvoke would block until the method completes (see below for more information on how to deal with this).
+</p><p>Both samples currently "wait" by calling ReadLine, a more advanced application would take advantage of the IAsyncResult value returned.   This is the definition of IAsyncResult:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> IAsyncResult <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// The &quot;data&quot; value passed at the end of BeginInvoke</span>
+        <span style="color: #6666cc; font-weight: bold;">object</span> AsyncState <span style="color: #008000;">&#123;</span>
+                <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">// A waithandle that can be used to monitor the async process</span>
+        <span style="color: #000000;">System.<span style="color: #0000FF;">Threading</span></span><span style="color: #008000;">.</span><span style="color: #0000FF;">WaitHandle</span> AsyncWaitHandle <span style="color: #008000;">&#123;</span>
+                <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">// Determines whether the method completed synchronously.</span>
+        <span style="color: #6666cc; font-weight: bold;">bool</span> CompletedSynchronously <span style="color: #008000;">&#123;</span>
+                <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">// Whether the method has completed.</span>
+        <span style="color: #6666cc; font-weight: bold;">bool</span> IsCompleted <span style="color: #008000;">&#123;</span>
+                <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>You can use the "IsCompleted" method if you are polling for example, you could check if the method has finished, and if so, you could invoke EndInvoke.
+</p><p>You can also use the WaitHandle that is returned by the AsyncWaitHandle to monitor async method.   You can use the WaitOne method, WaitAll or WaitAny to get finer control, they are all essentially the same operation, but it applies to the three potential conditions: single wait, waiting for all the handles to complete, or wait for any handles to complete (WaitHandles are not limited to be used with async methods, you can obtain those from other parts of the framework, like network communications, or from your own thread synchronization operations).
+</p><p>In our sample, we can replace Console.ReadLine with:
+</p>
+<pre class="csharp" style="font-family:monospace;">      IAsyncResult r <span style="color: #008000;">=</span> adder<span style="color: #008000;">.</span><span style="color: #0000FF;">BeginInvoke</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span>, <span style="color: #FF0000;">20</span>, <span style="color: #6666cc; font-weight: bold;">delegate</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> a, <span style="color: #6666cc; font-weight: bold;">int</span> b<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> a<span style="color: #008000;">+</span>b<span style="color: #008000;">;</span>
+      <span style="color: #008000;">&#125;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+      r<span style="color: #008000;">.</span><span style="color: #0000FF;">AsyncWaitHandle</span><span style="color: #008000;">.</span><span style="color: #0000FF;">WaitOne</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>In the above invocation of WaitOne() you would wait until the async thread completes.   But you can use other method overloads for more control, like only waiting for some amount of time before returning.
+</p>
+<h2> <span class="mw-headline" id="Manual_Event_Processing"> Manual Event Processing </span></h2>
+<p>You can also take control of the event loop, and instead of partitioning the problem in callback routines, put the code inline and put your computation code in the middle.   
+</p><p>This can be used for example for a file-copying operation, where the status is updated as the copy proceeds and the unit of work is discrete and easy to resume:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">void</span> LongComputation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+     <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span>done<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+         ComputationChunk <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+         <span style="color: #008080; font-style: italic;">// Flush pending events to keep the GUI reponsive</span>
+         <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">EventsPending</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+              Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">RunIteration</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Alternatives"> Alternatives </span></h1>
+<h2> <span class="mw-headline" id="Application.Invoke"> Application.Invoke </span></h2>
+<p>Gtk# 2.0 includes a new mechanism to invoke code on the main thread, this is part of the Gtk.Application class, to do this, just call the Invoke method with a delegate or anonymous method:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">void</span> UpdatingThread <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    DoSomething <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Invoke</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+          label<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Thread update&quot;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Other_options"> Other options </span></h2>
+<p>Other options of doing the same are available for Gtk# but are now outdated:
+</p>
+<h3> <span class="mw-headline" id="GuiDispatch"> GuiDispatch </span></h3>
+<p>Monodevelop has a class called GuiDispatch that automatically wraps delegates so they will be invoked on the main thread. This provides an extremely easy way to safely use threads in your application.
+</p><p>Lots more information as well as many examples at <a href="http://monodevelop.com/Thread_Management" class="external free" rel="nofollow">http://monodevelop.com/Thread_Management</a>.
+</p>
+<pre class="csharp" style="font-family:monospace;">Runtime<span style="color: #008000;">.</span><span style="color: #0000FF;">DispatchService</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GuiDispatch</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> StatefulMessageHandler <span style="color: #008000;">&#40;</span>UpdateGui<span style="color: #008000;">&#41;</span>, n<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<pre class="csharp" style="font-family:monospace;">counter<span style="color: #008000;">.</span><span style="color: #0000FF;">TimeChanged</span> <span style="color: #008000;">+=</span> <span style="color: #008000;">&#40;</span>EventHandler<span style="color: #008000;">&#41;</span> Runtime<span style="color: #008000;">.</span><span style="color: #0000FF;">DispatchService</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GuiDispatch</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> EventHandler <span style="color: #008000;">&#40;</span>UpdateTime<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h3> <span class="mw-headline" id="RunOnMainThread"> RunOnMainThread </span></h3>
+<p>A simple wrapper around GLib.Idle.Add that lets you easily run any method with arguments on the main thread.
+</p><p><a href="http://eric.extremeboredom.net/2004/12/25/113/" class="external free" rel="nofollow">http://eric.extremeboredom.net/2004/12/25/113/</a>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Example <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Go<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">/* Let's assume this method was called by another thread */</span>
+        RunOnMainThread<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span>, <span style="color: #666666;">&quot;DoSomethingToGUI&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> <span style="color: #008000;">&#123;</span> <span style="color: #666666;">&quot;some happy text!&quot;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> DoSomethingToGUI<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> someText<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">/* Do something to the GUI here */</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

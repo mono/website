@@ -1,0 +1,126 @@
+---
+layout: obsolete
+title: "MySQL"
+permalink: /old_site/MySQL/
+---
+
+<h1>MySQL</h1>
+
+<h2> <span class="mw-headline" id="Info"> Info </span></h2>
+<p>The Mono provider for <a href="http://www.mysql.com/" class="external text" rel="nofollow">MySQL</a> database is the <a href="http://dev.mysql.com/downloads/connector/net/" class="external text" rel="nofollow">MySQL Connector/Net</a>.
+</p><p>MySQL Connector/Net is a fully managed provider and does not require a client library.  You have to get it from MySQL AB.  The provider is distributed under the GPL license.  This is the recommened provider to use with Mono.
+</p><p>Support for MySQL Connector/Net can be found <a href="http://dev.mysql.com/support/" class="external text" rel="nofollow">here</a>. If you decide to compile from sources, you should define the conditional compilation variable MONO (i.e., -d:MONO when compiling from the command line).
+</p>
+<h2> <span class="mw-headline" id="Usage"> Usage </span></h2>
+<p><b>Prerequisites</b> 
+</p>
+<ul><li> MySQL database
+</li></ul>
+<ul><li> MySQL .NET Connector
+</li></ul>
+<p><b>Connection String</b> 
+</p>
+<ul><li> Format:
+</li></ul>
+<pre>
+ &quot;Server=hostname;&quot; + &quot;Database=database;&quot; + &quot;User ID=username;&quot; + &quot;Password=password;&quot; + &quot;Pooling=false&quot;
+</pre>
+<ul><li> Parameters:
+</li></ul>
+<table border="1" cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 1em 1em; text-align:left; border-collapse:collapse; border:1px gray solid; font-size:95%; background:#f9f9f9">
+<tr>
+<th> Parameter Definition </th>
+<th> Description </th>
+<th> Example
+</th></tr>
+<tr>
+<td> Server or Data Source </td>
+<td> Hostname or IP Address of the MySQL server </td>
+<td> Server=MYHOST
+</td></tr>
+<tr>
+<td> Database </td>
+<td> name of MySQL database </td>
+<td> Database=testdb
+</td></tr>
+<tr>
+<td> Port </td>
+<td> TCP/IP Port to connect.  Optional. </td>
+<td> Port=3306
+</td></tr>
+<tr>
+<td> User ID </td>
+<td> name of MySQL database user </td>
+<td> User ID=someuser
+</td></tr>
+<tr>
+<td> Password  </td>
+<td> password for MySQL database user </td>
+<td> Password=mypass12
+</td></tr>
+<tr>
+<td> Pooling  </td>
+<td> whether or not to use connection pooling. YES or TRUE to use connection pooling and NO or FALSE to not use connection pooling. </td>
+<td> Pooling=false
+</td></tr></table>
+<ul><li> Installing MySql.Data.dll in the GAC:
+</li></ul>
+<pre>  cd path_to_your MySql.Data.dll assembly
+  gacutil -i MySql.Data.dll
+</pre>
+<b>C# Example</b> <pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">MySql.Data.MySqlClient</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Test
+ <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span>
+          <span style="color: #666666;">&quot;Server=localhost;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;Database=test;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;User ID=myuserid;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;Password=mypassword;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;Pooling=false&quot;</span><span style="color: #008000;">;</span>
+       IDbConnection dbcon<span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MySqlConnection<span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       IDbCommand dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+       <span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+       <span style="color: #008080; font-style: italic;">// such as,</span>
+       <span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (</span>
+       <span style="color: #008080; font-style: italic;">//           firstname varchar(32),</span>
+       <span style="color: #008080; font-style: italic;">//           lastname varchar(32));</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+           <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+           <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+       IDataReader reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> FirstName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;firstname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> LastName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;lastname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: &quot;</span> <span style="color: #008000;">+</span>
+                  FirstName <span style="color: #008000;">+</span> <span style="color: #666666;">&quot; &quot;</span> <span style="color: #008000;">+</span> LastName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008000;">&#125;</span>
+       <span style="color: #008080; font-style: italic;">// clean up</span>
+       reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<ul><li> Building C# Example: 
+</li></ul>
+<ul><li> Save the example to a file, such as, TestExample.cs
+</li></ul>
+<pre>
+mcs TestExample.cs -r:System.Data.dll -r:/path/to/MySql.Data.dll
+</pre>
+<ul><li> Running the Example:
+</li></ul>
+<pre>
+ mono TestExample.exe </pre>
+

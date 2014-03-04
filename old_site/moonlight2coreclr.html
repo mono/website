@@ -1,0 +1,152 @@
+---
+layout: obsolete
+title: "Moonlight2CoreCLR"
+permalink: /old_site/Moonlight2CoreCLR/
+---
+
+<h1>Moonlight2CoreCLR</h1>
+
+<p>Note: due to the circular nature of the definitions you'll need some prior knowledge of the CoreCLR security model <b>or</b> reading it twice to make sense out of this&#160;;-)
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Security_levels"><span class="tocnumber">1</span> <span class="toctext">Security levels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Transparent"><span class="tocnumber">1.1</span> <span class="toctext">Transparent</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Safe_Critical"><span class="tocnumber">1.2</span> <span class="toctext">Safe Critical</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Critical"><span class="tocnumber">1.3</span> <span class="toctext">Critical</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Code_categories"><span class="tocnumber">2</span> <span class="toctext">Code categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Application_Code"><span class="tocnumber">2.1</span> <span class="toctext">Application Code</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Platform_Code"><span class="tocnumber">2.2</span> <span class="toctext">Platform Code</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Application_Developer_Shortcut"><span class="tocnumber">3</span> <span class="toctext">Application Developer Shortcut</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Special_Considerations"><span class="tocnumber">4</span> <span class="toctext">Special Considerations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#.5BInternalsVisibleTo.5D"><span class="tocnumber">4.1</span> <span class="toctext">[InternalsVisibleTo]</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Reflection"><span class="tocnumber">4.2</span> <span class="toctext">Reflection</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Reflection.Emit"><span class="tocnumber">4.3</span> <span class="toctext">Reflection.Emit</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Policies"><span class="tocnumber">4.4</span> <span class="toctext">Policies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Implementation_details"><span class="tocnumber">5</span> <span class="toctext">Implementation details</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Security_Attributes_Compatibility"><span class="tocnumber">5.1</span> <span class="toctext">Security Attributes Compatibility</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Security_levels"> Security levels </span></h1>
+<p>The CoreCLR security model divide all code into three distinct levels: <b>transparent</b>, <b>safe-critical</b> and <b>critical</b>. This model is much simpler to understand (and implement) than <a href="{{site.baseurl}}/CAS" title="CAS">CAS</a> (e.g. no stack-walk). Only a few rules can describe much of it.
+</p>
+<h2> <span class="mw-headline" id="Transparent"> Transparent </span></h2>
+<p>By default all code is <i>transparent</i> under the CoreCLR model. 
+</p>
+<ul><li> <i>Transparent</i> code is limited to what it can do. Specifically it cannot directly call <b>critical</b> code (e.g. p/invokes, unsafe code) but it can call <i>safe-critical</i> and other <i>transparent</i> code.
+</li></ul>
+<ul><li> Since it's default there's no need to add a <code>[SecurityTransparent]</code> attribute everywhere.
+</li></ul>
+<h2> <span class="mw-headline" id="Safe_Critical"> Safe Critical </span></h2>
+<p>Safe critical code is a <b>gateway</b> between <i>transparent</i> and <i>critical</i> code. As such it represent the <i>riskiest</i> code (the less, the better).
+</p>
+<ul><li> Code needed to bridge a (safe) <i>transparent</i> API to (not necessarily safe) <i>critical</i> code needs to be decorated with <code>[SecuritySafeCritical]</code> attributes.
+</li></ul>
+<ul><li> <i>Safe critical</i> code needs to make extra (pre and/or post) validations between the <i>transparent</i> and <i>critical</i> in order to make the call earn its <b>safe</b> prefix.
+</li></ul>
+<h2> <span class="mw-headline" id="Critical"> Critical </span></h2>
+<p>Critical code can do anything, like p/invoking into native code and having access to everything outside the host browser. The plugin itself could not work without critical code. However applications can (and must) do without direct access to it.
+</p>
+<ul><li> Critical code, including every visible API that does things that application code should not do (e.g. file IO), must be marked with a <code>[SecurityCritical]</code> attribute.
+</li></ul>
+<ul><li> All unsafe code, p/invoke declarations are <b>critical</b> (but still needs to be marked as such).
+</li></ul>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Code_categories"> Code categories </span></h1>
+<p>To make this even easier to understand, from an application developer point of view, all assemblies are split into two categories: the <b>application</b> (or user) code and the <b>platform</b> code.
+</p>
+<h2> <span class="mw-headline" id="Application_Code"> Application Code </span></h2>
+<p>Application code runs with <i>limited</i> trust. This makes it possible, along with other features, to safely run untrusted code inside your browser. Application code is bound by the following rules:
+</p>
+<ul><li> All <i>application</i> code is <b>transparent</b>. Using attributes to (try to) change this will compile but will be <b>ignored</b> at execution time.
+</li></ul>
+<ul><li> As <b>transparent</b> it can call other <i>application</i> code (all transparent) and <i>platform</i> code that is <b>transparent</b> (default) or decorated with the <code>[SecuritySafeCritical]</code> attribute.
+</li></ul>
+<ul><li> <i>Application</i> code cannot <b>directly</b> call <code>[SecurityCritical]</code> decorated methods/types present in <i>platform</i> code.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Platform_Code"> Platform Code </span></h2>
+<p>Platform code is a subset of the managed code provided with the plugin. This code is fully-trusted. As such it cannot expose all of its API to <i>application</i> code, instead it expose them using three different security levels (see next section).
+</p>
+<ul><li> <i>Platform</i> code is, by default, <b>transparent</b>. This means that most of it can be called directly from <i>application</i> code.
+</li></ul>
+<ul><li> <i>Platform</i> code contains <b>critical</b> code - i.e. code that do anything (like p/invoking, unsafe code). Such code is decorated with <code>[SecurityCritical]</code> attributes and <b>cannot</b> be called from <i>application</i> code.
+</li></ul>
+<ul><li> Access from <b>transparent</b> to <b>critical</b> code (e.g. using the safe, and transparent, IsolatedStorage that itself use the p/invoke, and critical, System.IO code) is possible thru code decorated with a <code>[SecuritySafeCritical]</code> attribute.
+</li></ul>
+<p>Platform Code Assemblies includes:
+</p>
+<ul><li> mscorlib
+</li><li> Microsoft.VisualBasic [1][2]
+</li><li> System
+</li><li> System.Core
+</li><li> System.Net
+</li><li> System.Runtime.Serialization
+</li><li> System.ServiceModel [1][2]
+</li><li> System.ServiceModel.Web [1]
+</li><li> System.Windows
+</li><li> System.Windows.Browser
+</li><li> System.Xml
+</li></ul>
+<p>[1] does not contain any [SecurityCritical] or [SecuritySafeCritical] attribute
+[2] has a different public key than the other assemblies
+</p><p>Both [1] and [2] may be considered platform code - but since they don't (but, I guess, eventually could) use <code>[SecurityCritical]</code> nor <code>[SecuritySafeCritical]</code> they are in effect totally transparent (like application code).
+</p><p>Where&#160;? On Windows / Silverlight 2 the platform files can be found in:
+</p>
+<ul><li> C:\Program Files\Microsoft Silverlight\2.0.31005.0
+</li><li> C:\Program Files\Microsoft SDKs\Silverlight\v2.0\Reference Assemblies
+</li></ul>
+<p>The later only exists if you have the Silverlight 2 SDK installed.
+</p>
+<h1> <span class="mw-headline" id="Application_Developer_Shortcut"> Application Developer Shortcut </span></h1>
+<p>Just remember this: under the CoreCLR an <i>application</i> can call anything (i.e. <b>transparent</b> or <b>safe-critical</b>) as long as it is not <b>critical</b>. 
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Special_Considerations"> Special Considerations </span></h1>
+<h2> <span class="mw-headline" id=".5BInternalsVisibleTo.5D"> [InternalsVisibleTo] </span></h2>
+<p>Special care is needed wrt <b>internal</b> code since most of the <b>platform</b>  assemblies include <code>[InternalsVisibleTo]</code>
+attributes - and yes, the internals are open to some <b>non-platform</b> (i.e. application code) assemblies.
+</p>
+<h2> <span class="mw-headline" id="Reflection"> Reflection </span></h2>
+<p>Reflection is possible but has some limitations.
+</p>
+<h2> <span class="mw-headline" id="Reflection.Emit"> Reflection.Emit </span></h2>
+<p>Code generation is possible (e.g. DLR) but also has some limitations.
+</p>
+<h2> <span class="mw-headline" id="Policies"> Policies </span></h2>
+<p>The <i>CoreCLR</i> security model does not deal with policies - its decisions are a boolean <b>CAN</b> or <b>CANNOT</b> do. While this works for the most basic parts it does not solve cases where more elaborate access rules are required, e.g.:
+</p>
+<ul><li> downloader policies
+</li><li> sockets policies
+</li></ul>
+<p>Special care (outside the scope of <i>CoreCLR</i>) are needed to cover them.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Implementation_details"> Implementation details </span></h1>
+<h2> <span class="mw-headline" id="Security_Attributes_Compatibility"> Security Attributes Compatibility </span></h2>
+<p>Calls from <b>application code</b> to <b>platform code</b> (that Moonlight provides) either succeed (e.g. calling transparent or <code>[SecuritySafeCritical]</code> code) or fails (e.g. calling <code>[SecurityCritical]</code> code).
+</p><p>Since there is <b>no</b> distinction from calling <b>transparent</b> or <b>safe critical</b> code our (Moonlight) <code>[SecuritySafeCritical]</code> attributes do not need to match Silverlight implementation. However we do have to match <code>[SecurityCritical]</code> attributes on the visible (public and protected) API.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="References"> References </span></h1>
+<ul><li> <a href="http://blogs.msdn.com/bclteam/archive/2007/04/30/introducing-microsoft-silverlight-1-1-alpha-justin-van-patten.aspx" class="external text" rel="nofollow">Introducing Microsoft Silverlight 1.1 Alpha</a> by Justin Van Patten
+</li><li> <a href="http://blogs.msdn.com/shawnfa/archive/2007/05/09/the-silverlight-security-model.aspx" class="external text" rel="nofollow">The Silverlight Security Model</a>,  <a href="http://blogs.msdn.com/shawnfa/archive/2007/05/10/silverlight-security-ii-what-makes-a-method-critical.aspx" class="external text" rel="nofollow">Silverlight Security II: What Makes a Method Critical</a> and <a href="http://blogs.msdn.com/shawnfa/archive/2007/05/11/silverlight-security-iii-inheritance.aspx" class="external text" rel="nofollow">Silverlight Security III: Inheritance</a> by Shawn Farkas
+</li><li> <a href="http://msdn.microsoft.com/en-us/magazine/cc765416.aspx" class="external text" rel="nofollow">CLR Inside Out: Security In Silverlight2</a> by Andrew Dai
+</li><li> <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=7cef15a8-8ae6-48eb-9621-ee35c2547773" class="external text" rel="nofollow">Security Guidance for Writing and Deploying Silverlight Applications</a>
+</li></ul>
+

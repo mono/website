@@ -1,0 +1,199 @@
+---
+layout: obsolete
+title: "COM Interop"
+permalink: /old_site/COM_Interop/
+---
+
+<h1>COM Interop</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Roadmap"><span class="tocnumber">2</span> <span class="toctext">Roadmap</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Progress"><span class="tocnumber">3</span> <span class="toctext">Progress</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Non-Windows_Platform_Support"><span class="tocnumber">5</span> <span class="toctext">Non-Windows Platform Support</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#XPCOM_Support"><span class="tocnumber">5.1</span> <span class="toctext">XPCOM Support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Tools"><span class="tocnumber">6</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#TODO"><span class="tocnumber">7</span> <span class="toctext">TODO</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
+<p>Mono 1.0 and Mono 1.1.xx do not have support for COM, it is a known missing feature of Mono. Initial work has begun on supporting MS COM on Windows. The long term goal is to support a variety of unmanaged component technologies including <a href="http://www.microsoft.com/com" class="external text" rel="nofollow">MS COM</a>, <a href="http://www.mozilla.org/projects/xpcom/" class="external text" rel="nofollow">XPCOM</a>, and <a href="http://udk.openoffice.org/" class="external text" rel="nofollow">UNO</a>.
+</p>
+<h1> <span class="mw-headline" id="Roadmap"> Roadmap </span></h1>
+<p>The first goal is to get COM Interop working on Windows. This can be broken down into two stages, corresponding to the two types of <a href="http://msdn2.microsoft.com/en-us/library/5dxz80y2(vs.80).aspx" class="external text" rel="nofollow">COM Wrappers</a>. 
+</p>
+<ol><li> Exposing a COM object as a <a href="http://msdn2.microsoft.com/en-us/library/8bwh56xe.aspx" class="external text" rel="nofollow">Runtime Callable Wrapper (RCW)</a> is the first step. 
+</li><li> The opposite is next, exposing a managed object as a <a href="http://msdn2.microsoft.com/en-us/library/f07c8z1c.aspx" class="external text" rel="nofollow">COM Callable Wrapper (CCW)</a>. Marshalling logic for additional types must be implemented for COM Interop including BSTRs, VARIANTs, SAFEARRAYs, and most importantly interface pointers. 
+</li></ol>
+<p>After COM Interop is working on Windows, the next step is to extend the mechanism for other component systems. The current idea is to reuse the COM Interop paradigm, providing extension points to handle the differences in component systems. A current prototype exists for XPCOM.
+</p>
+<h1> <span class="mw-headline" id="Progress"> Progress </span></h1>
+<p>COM Interop support includes the following:
+</p><p>Creation of COM objects via Runtime Callable Wrappers.
+&lt;span id="rcw_creation"/&gt;
+</p>
+<pre class="csharp" style="font-family:monospace;"> MyCOMObject com_object_wrapper <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyCOMObject<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>where MyCOMObject is a class marked with the <a href="http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx" class="external text" rel="nofollow">COMImportAttribute</a> and a <a href="http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx" class="external text" rel="nofollow">GuidAttribute</a> with the CLSID of the COM class. 
+&lt;span id="rcw_class_def"/&gt;
+</p>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #008000;">&#91;</span>ComImport <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+ <span style="color: #008000;">&#91;</span>Guid <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+ <span style="color: #6666cc; font-weight: bold;">class</span> MyCOMObject
+ <span style="color: #008000;">&#123;</span>
+ <span style="color: #008000;">...</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<p>COM objects can be marshalled into managed code, and managed objects can be marshalled into unmanaged code using the <a href="http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshalasattribute.aspx" class="external text" rel="nofollow">MarshalAsAttribute</a>. Also, VARIANT and BSTR marshalling is supported.
+&lt;span id="marshalasattribute"/&gt;
+</p>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #008000;">&#91;</span>ComImport <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+ <span style="color: #008000;">&#91;</span>Guid <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+ <span style="color: #6666cc; font-weight: bold;">class</span> MyCOMObject
+ <span style="color: #008000;">&#123;</span>
+     <span style="color: #6666cc; font-weight: bold;">void</span> GetMeACOMObject<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #6666cc; font-weight: bold;">Interface</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> <span style="color: #0600FF; font-weight: bold;">out</span> IFoo ifoo<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #6666cc; font-weight: bold;">void</span> SendToUnmanaged<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #6666cc; font-weight: bold;">Interface</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Foo ifoo<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #6666cc; font-weight: bold;">void</span> SetName<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">BStr</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> <span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #6666cc; font-weight: bold;">void</span> SetTag<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #6666cc; font-weight: bold;">Struct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> <span style="color: #6666cc; font-weight: bold;">object</span> tag<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<p>A large number of methods in the <a href="http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx" class="external text" rel="nofollow">Marshal Class</a> related to COM Interop have also been implemented. Methods like:
+&lt;span id="marshal_class"/&gt;
+</p>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Marshal
+ <span style="color: #008000;">&#123;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> AddRef <span style="color: #008000;">&#40;</span>IntPtr pUnk<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> CreateWrapperOfType <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, Type t<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> FinalReleaseComObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> FreeBSTR <span style="color: #008000;">&#40;</span>IntPtr ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> IntPtr GetComInterfaceForObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, Type T<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> IntPtr GetIDispatchForObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> IntPtr GetIUnknownForObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> GetNativeVariantForObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, IntPtr pDstNativeVariant<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> GetObjectForIUnknown <span style="color: #008000;">&#40;</span>IntPtr pUnk<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> GetObjectForNativeVariant <span style="color: #008000;">&#40;</span>IntPtr pSrcNativeVariant<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> GetObjectsForNativeVariants <span style="color: #008000;">&#40;</span>IntPtr aSrcNativeVariant, <span style="color: #6666cc; font-weight: bold;">int</span> cVars<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> GetTypedObjectForIUnknown <span style="color: #008000;">&#40;</span>IntPtr pUnk, Type t<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">bool</span> IsComObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> QueryInterface <span style="color: #008000;">&#40;</span>IntPtr pUnk, <span style="color: #0600FF; font-weight: bold;">ref</span> Guid iid, <span style="color: #0600FF; font-weight: bold;">out</span> IntPtr ppv<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> Release <span style="color: #008000;">&#40;</span>IntPtr pUnk<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> ReleaseComObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> IntPtr StringToBSTR <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">...</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Example"> Example </span></h1>
+<p>I have run a large number of test apps. You should be able to interact with standard COM objects such as IE, Windows Media Player, Office, etc. As for examples, most people interested in this probably already know how to generate COM interop wrapper code using MS tools, but I'll post a hand coded example in the near future. Unfortunately the code can be quite verbose, so I'll try to think of a neat little sample to demonstrate COM Interop in mono.
+</p>
+<h1> <span class="mw-headline" id="Non-Windows_Platform_Support"> Non-Windows Platform Support </span></h1>
+<p>Note that there is very little that ties COM Interop to Windows. COM is a binary standard, so anyone who follows that standard can use the COM Interop functionality in mono. XPCOM can easily be supported if anyone is interested in putting in a little work to support marshalling strings. This is <a href="http://www.mainsoft.com/products/mainwin.aspx" class="external text" rel="nofollow">MainWin</a> ported COM objects can also use mono COM Interop, with few minor adjustments.
+</p>
+<h2> <span class="mw-headline" id="XPCOM_Support"> XPCOM Support </span></h2>
+<p>Some developers embed Mozilla's XPCOM in their applications.   This is supported by Mono's runtime, all that is required is that you initialize the runtime properly.   The following is an example of how you would initialize an embedded version of XPCOM:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// File: NativeMethods.cs</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Runtime.InteropServices</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> NativeMethods
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> NativeMethods<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">&#125;</span>
+&#160;
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;libxpcomglue.so.0d&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">int</span> XPCOMGlueStartup<span style="color: #008000;">&#40;</span>IntPtr xpcomFile<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;libxpcomglue.so.0d&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">int</span> XPCOMGlueShutdown<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;MyXPCOM.so&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">int</span> NS_InitXPCOM2 <span style="color: #008000;">&#40;</span>
+                        <span style="color: #008000;">&#91;</span>MarshalAs<span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #6666cc; font-weight: bold;">Interface</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span><span style="color: #0600FF; font-weight: bold;">out</span> nsIServiceManager result,
+                        IntPtr binDirectory, IntPtr appFileLocationProvider<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;MyXPCOM.so&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">int</span> NS_ShutdownXPCOM<span style="color: #008000;">&#40;</span>
+                        <span style="color: #008000;">&#91;</span>MarshalAs<span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #6666cc; font-weight: bold;">Interface</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> nsIServiceManager aSvcManager<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The above references two shared libraries: MyXPCOM.so is the shared library that embeds the XPCOM library and the other one is part of XPCOM (libxpcomglue).
+</p><p>To use it, you can use a method like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> XPCOMTester
+<span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#91;</span>STAThread<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">int</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+   <span style="color: #6666cc; font-weight: bold;">int</span> hr <span style="color: #008000;">=</span> NativeMethods<span style="color: #008000;">.</span><span style="color: #0000FF;">XPCOMGlueStartup</span> <span style="color: #008000;">&#40;</span>IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   nsIServiceManager sm<span style="color: #008000;">;</span>
+   hr <span style="color: #008000;">=</span> NativeMethods<span style="color: #008000;">.</span><span style="color: #0000FF;">NS_InitXPCOM2</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">out</span> sm, IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span>, IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+   nsIComponentRegistrar cr <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>nsIComponentRegistrar<span style="color: #008000;">&#41;</span>sm<span style="color: #008000;">;</span>
+&#160;
+   cr<span style="color: #008000;">.</span><span style="color: #0000FF;">autoRegister</span><span style="color: #008000;">&#40;</span>IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+   Guid kEventQueueServiceCID <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Guid<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;be761f00-a3b0-11d2-996c-0080c7cb1080&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   IntPtr ptr<span style="color: #008000;">;</span>
+   sm<span style="color: #008000;">.</span><span style="color: #0000FF;">getService</span><span style="color: #008000;">&#40;</span>kEventQueueServiceCID, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span>nsIEventQueueService<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GUID</span>, <span style="color: #0600FF; font-weight: bold;">out</span> ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+   nsIEventQueueService eqs <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>nsIEventQueueService<span style="color: #008000;">&#41;</span>Marshal<span style="color: #008000;">.</span><span style="color: #0000FF;">GetObjectForIUnknown</span><span style="color: #008000;">&#40;</span>ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   eqs<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateThreadEventQueue</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+   nsIEventQueue eq <span style="color: #008000;">=</span> eqs<span style="color: #008000;">.</span><span style="color: #0000FF;">GetThreadEventQueue</span><span style="color: #008000;">&#40;</span>IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+   Guid IPC_SERVICE_CID <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Guid<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;9f12676a-5168-4a08-beb8-edf8a593a1ca&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   sm<span style="color: #008000;">.</span><span style="color: #0000FF;">getService</span><span style="color: #008000;">&#40;</span>IPC_SERVICE_CID, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span>ipcIService<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GUID</span>, <span style="color: #0600FF; font-weight: bold;">out</span> ptr<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   <span style="color: #008080; font-style: italic;">// or</span>
+   <span style="color: #008080; font-style: italic;">// sm.getServiceByContractID(&quot;@mozilla.org/ipc/service;1&quot;, typeof(ipcIService).GUID, out ptr);</span>
+&#160;
+   <span style="color: #008080; font-style: italic;">// Do more XPCOM stuff here</span>
+   <span style="color: #008080; font-style: italic;">// </span>
+&#160;
+   NativeMethods<span style="color: #008000;">.</span><span style="color: #0000FF;">NS_ShutdownXPCOM</span><span style="color: #008000;">&#40;</span>sm<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   NativeMethods<span style="color: #008000;">.</span><span style="color: #0000FF;">XPCOMGlueShutdown</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Interfaces are defined as follows (taking nsIServiceManager as an example):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Guid<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;8bb35ed9-e332-462d-9155-4a002ab5c958&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #008000;">&#91;</span>InterfaceType <span style="color: #008000;">&#40;</span>ComInterfaceType<span style="color: #008000;">.</span><span style="color: #0000FF;">InterfaceIsIUnknown</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #008000;">&#91;</span>ComImport<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> nsIServiceManager
+<span style="color: #008000;">&#123;</span>
+  <span style="color: #008000;">&#91;</span>MethodImpl<span style="color: #008000;">&#40;</span>MethodImplOptions<span style="color: #008000;">.</span><span style="color: #0000FF;">InternalCall</span>, MethodCodeType<span style="color: #008000;">=</span>MethodCodeType<span style="color: #008000;">.</span><span style="color: #0000FF;">Runtime</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+  <span style="color: #008000;">&#91;</span>PreserveSigAttribute<span style="color: #008000;">&#93;</span>
+  <span style="color: #6666cc; font-weight: bold;">void</span> getService <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid clsid,
+     <span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid iid,
+     <span style="color: #0600FF; font-weight: bold;">out</span> IntPtr result<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #008000;">&#91;</span>MethodImpl<span style="color: #008000;">&#40;</span>MethodImplOptions<span style="color: #008000;">.</span><span style="color: #0000FF;">InternalCall</span>, MethodCodeType<span style="color: #008000;">=</span>MethodCodeType<span style="color: #008000;">.</span><span style="color: #0000FF;">Runtime</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+  <span style="color: #008000;">&#91;</span>PreserveSigAttribute<span style="color: #008000;">&#93;</span>
+  <span style="color: #6666cc; font-weight: bold;">void</span> getServiceByContractID <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStr</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> <span style="color: #6666cc; font-weight: bold;">string</span> contractID,
+  <span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid iid,
+  <span style="color: #0600FF; font-weight: bold;">out</span> IntPtr result<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #008000;">&#91;</span>MethodImpl<span style="color: #008000;">&#40;</span>MethodImplOptions<span style="color: #008000;">.</span><span style="color: #0000FF;">InternalCall</span>, MethodCodeType<span style="color: #008000;">=</span>MethodCodeType<span style="color: #008000;">.</span><span style="color: #0000FF;">Runtime</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+  <span style="color: #008000;">&#91;</span>PreserveSigAttribute<span style="color: #008000;">&#93;</span>
+  PRBool isServiceInstantiated <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid clsid,
+  <span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid iid<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #008000;">&#91;</span>MethodImpl<span style="color: #008000;">&#40;</span>MethodImplOptions<span style="color: #008000;">.</span><span style="color: #0000FF;">InternalCall</span>, MethodCodeType<span style="color: #008000;">=</span>MethodCodeType<span style="color: #008000;">.</span><span style="color: #0000FF;">Runtime</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+  <span style="color: #008000;">&#91;</span>PreserveSigAttribute<span style="color: #008000;">&#93;</span>
+  PRBool isServiceInstantiatedByContractID <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStr</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> <span style="color: #6666cc; font-weight: bold;">string</span> contractID,
+  <span style="color: #008000;">&#91;</span>MarshalAs <span style="color: #008000;">&#40;</span>UnmanagedType<span style="color: #008000;">.</span><span style="color: #0000FF;">LPStruct</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> Guid iid<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Tools"> Tools </span></h1>
+<p>There is now a tool, <b>xpidl2cs</b>, that creates C# interfaces from idl files. It is available from svn, <a href="https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs" class="external autonumber" rel="nofollow">[1]</a>.
+</p><p>xpidl2cs generates a C# interface for the given idl file, and then goes up the inheritance tree, generating all parent interfaces. Since .NET interop does not support interface inheritance, whenever an interface derives from another, all the declarations from the parent interface must be included in the child - xpidl2cs recursively includes the body of the parent in the child, inside a region with the parent's name.
+</p><p>xpidl2cs also generates all dependent interfaces, i.e., all the interfaces that are used in the properties and methods of all the touched idl files. To avoid endless loops, it won't try to generate an interface for which there already exists a .cs file, so if you need to regenerate everything, you must delete the interfaces before running the tool.
+</p><p>The tool was designed originally to produce interfaces for Mono.Mozilla from the Mozilla idl files, so it is slightly biased - the namespace is (at the moment) hardcoded to Mono.Mozilla, and, when going up the inheritance tree, it stops when it encounters a parent called nsISupports.
+</p>
+<pre class="bash" style="font-family:monospace;">Usage: xpidl2cs.pl file.idl <span style="color: #7a0874; font-weight: bold;">&#91;</span><span style="color: #000000; font-weight: bold;">/</span>path<span style="color: #000000; font-weight: bold;">/</span>to<span style="color: #000000; font-weight: bold;">/</span>idl<span style="color: #000000; font-weight: bold;">/</span><span style="color: #7a0874; font-weight: bold;">&#93;</span></pre>
+<p>In the future, we will have a tool <b>xptimport</b> that will be able to import type libraries from your XPCOM components and generate the necessary C# interface declarations.
+</p>
+<h1> <span class="mw-headline" id="TODO"> TODO </span></h1>
+<ol><li><a href="http://msdn2.microsoft.com/en-us/library/ms221608.aspx" class="external text" rel="nofollow">IDispatch</a> support, both for RCWs and for CCWs
+</li><li><a href="http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.lcidconversionattribute.aspx" class="external text" rel="nofollow">LCIDConversionAttribute</a> Unfortunately, this nasty little guy is used by Office Interop Assemblies.
+</li><li>Better <a href="http://msdn2.microsoft.com/en-us/library/ms686558.aspx" class="external text" rel="nofollow">aggregation</a> support
+</li></ol>
+

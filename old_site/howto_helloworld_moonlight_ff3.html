@@ -1,0 +1,85 @@
+---
+layout: obsolete
+title: "Howto helloWorld Moonlight ff3"
+permalink: /old_site/Howto_helloWorld_Moonlight_ff3/
+---
+
+<h1>Howto helloWorld Moonlight ff3</h1>
+
+<p><br />
+This howto shows how to develop our first hello world Moonlight 1.0 application.
+</p><p>The first thing you will need is the <b>Silverlight.js</b> file.
+</p><p>A Moonlight user interface is defined using XAML.XAML is just XML and we are going to use a Canvas that contains a TextBlock:
+</p><p>Create MyCanvas.xaml file:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&lt;</span>Canvas
+        xmlns<span style="color: #008000;">=</span><span style="color: #666666;">&quot;http://schemas.microsoft.com/client/2007&quot;</span>
+        xmlns<span style="color: #008000;">:</span>x<span style="color: #008000;">=</span><span style="color: #666666;">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span>
+        width<span style="color: #008000;">=</span><span style="color: #666666;">&quot;640&quot;</span> Height<span style="color: #008000;">=</span><span style="color: #666666;">&quot;480&quot;</span>
+        Background<span style="color: #008000;">=</span><span style="color: #666666;">&quot;White&quot;</span>
+        x<span style="color: #008000;">:</span>Name<span style="color: #008000;">=</span><span style="color: #666666;">&quot;PageTextBlock&quot;</span><span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>TextBlock Width<span style="color: #008000;">=</span><span style="color: #666666;">&quot;195&quot;</span> Height<span style="color: #008000;">=</span><span style="color: #666666;">&quot;42&quot;</span> Canvas<span style="color: #008000;">.</span><span style="color: #0000FF;">Left</span><span style="color: #008000;">=</span><span style="color: #666666;">&quot;28&quot;</span> Canvas<span style="color: #008000;">.</span><span style="color: #0000FF;">Top</span><span style="color: #008000;">=</span><span style="color: #666666;">&quot;35&quot;</span>
+                   Text<span style="color: #008000;">=</span><span style="color: #666666;">&quot;Click Here!!!!&quot;</span> x<span style="color: #008000;">:</span>Name<span style="color: #008000;">=</span><span style="color: #666666;">&quot;entryHello&quot;</span> <span style="color: #008000;">/&gt;</span> 
+&#160;
+<span style="color: #008000;">&lt;/</span>Canvas<span style="color: #008000;">&gt;</span></pre>
+<p>this XAML contains two components. the Canvas which defines the overall drawing surface and the second component is the TextBlock element which renders the text "Click Here!!!".
+</p><p>Create createMoonlight.js file:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">var</span> slControl<span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">var</span> entryHello<span style="color: #008000;">;</span>
+&#160;
+function createSilverlight<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+        Silverlight<span style="color: #008000;">.</span><span style="color: #0000FF;">createObjectEx</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#123;</span>
+                source<span style="color: #008000;">:</span> <span style="color: #666666;">&quot;MyCanvas.xaml&quot;</span>,
+                parentElement<span style="color: #008000;">:</span> document<span style="color: #008000;">.</span><span style="color: #0000FF;">getElementById</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;slControl&quot;</span><span style="color: #008000;">&#41;</span>,
+                id<span style="color: #008000;">:</span> <span style="color: #666666;">&quot;slControlObj&quot;</span>,
+                properties<span style="color: #008000;">:</span> <span style="color: #008000;">&#123;</span>
+                                width<span style="color: #008000;">:</span> <span style="color: #666666;">&quot;100%&quot;</span>,
+                                height<span style="color: #008000;">:</span> <span style="color: #666666;">&quot;100%&quot;</span>,
+                                version<span style="color: #008000;">:</span> <span style="color: #666666;">&quot;1.0&quot;</span>
+                            <span style="color: #008000;">&#125;</span>,
+                            events<span style="color: #008000;">:</span> <span style="color: #008000;">&#123;</span>
+                                onLoad<span style="color: #008000;">:</span> load
+                            <span style="color: #008000;">&#125;</span>
+                        <span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+function load<span style="color: #008000;">&#40;</span>control,userContext,rootElement<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+        slControl <span style="color: #008000;">=</span> control<span style="color: #008000;">;</span>
+        entryHello <span style="color: #008000;">=</span> slControl<span style="color: #008000;">.</span><span style="color: #0000FF;">content</span><span style="color: #008000;">.</span><span style="color: #0000FF;">findName</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;entryHello&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        entryHello<span style="color: #008000;">.</span><span style="color: #0000FF;">addEventListener</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;MouseLeftButtonDown&quot;</span>,<span style="color: #666666;">&quot;entryOnClick&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+function entryOnClick<span style="color: #008000;">&#40;</span>sender,args<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+        entryHello<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Hello World Moonlight!!!!&quot;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The createSilverlight javascript function creates the object and defines some properties like source,parentElement,id and events. the event onLoad defines a load event handler. the event handler function locates the TextBlock and adds and event listener to its listener collection.
+</p><p>Create helloWorld.htm html file to test Moonlight:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&lt;</span>html<span style="color: #008000;">&gt;</span>
+  <span style="color: #008000;">&lt;</span>head<span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>script src<span style="color: #008000;">=</span><span style="color: #666666;">&quot;Silverlight.js&quot;</span><span style="color: #008000;">&gt;&lt;/</span>script<span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>script src<span style="color: #008000;">=</span><span style="color: #666666;">&quot;createMoonlight.js&quot;</span><span style="color: #008000;">&gt;&lt;/</span>script<span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>style<span style="color: #008000;">&gt;</span>
+          <span style="color: #008000;">.</span><span style="color: #0000FF;">slControl</span> <span style="color: #008000;">&#123;</span>
+                height<span style="color: #008000;">:</span> 480px<span style="color: #008000;">;</span>
+                width<span style="color: #008000;">:</span> 640px<span style="color: #008000;">;</span>
+                border<span style="color: #008000;">:</span> 1px dotted black<span style="color: #008000;">;</span>
+          <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&lt;/</span>style<span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>title<span style="color: #008000;">&gt;</span>Hello @carlitos castro Moonlight<span style="color: #008000;">/</span>Silverlight Hello World<span style="color: #008000;">!!!!&lt;/</span>title<span style="color: #008000;">&gt;</span>    
+  <span style="color: #008000;">&lt;/</span>head<span style="color: #008000;">&gt;</span>
+  <span style="color: #008000;">&lt;</span>body<span style="color: #008000;">&gt;</span>
+    Moonlight<span style="color: #008000;">/</span>Silverlight Sample<span style="color: #008000;">:&lt;</span>br<span style="color: #008000;">&gt;</span>
+    <span style="color: #008000;">&lt;</span>div id<span style="color: #008000;">=</span><span style="color: #666666;">&quot;slControl&quot;</span> <span style="color: #6666cc; font-weight: bold;">class</span><span style="color: #008000;">=</span><span style="color: #666666;">&quot;slControl&quot;</span><span style="color: #008000;">&gt;</span>
+        <span style="color: #008000;">&lt;</span>script<span style="color: #008000;">&gt;</span>
+          createSilverlight<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&lt;/</span>script<span style="color: #008000;">&gt;</span>
+    <span style="color: #008000;">&lt;/</span>div<span style="color: #008000;">&gt;</span>
+  <span style="color: #008000;">&lt;/</span>body<span style="color: #008000;">&gt;</span>
+<span style="color: #008000;">&lt;/</span>html<span style="color: #008000;">&gt;</span></pre>
+<p>Open your Web Browser and open your new helloWorld.htm html file, later clic on text.
+</p>

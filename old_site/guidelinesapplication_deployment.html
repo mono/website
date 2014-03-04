@@ -1,0 +1,283 @@
+---
+layout: obsolete
+title: "Guidelines:Application Deployment"
+permalink: /old_site/Guidelines:Application_Deployment/
+---
+
+<h1>Guidelines:Application Deployment</h1>
+
+<p>These guidelines are designed to help you plan the layout for your application or libraries and will ensure that your software is shipped in a form that is consistent with other Mono-based software projects and components.
+</p><p>This document also discusses how to distribute libraries whose APIs are not frozen: how to distribute and consume them.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Application_Layout"><span class="tocnumber">1</span> <span class="toctext">Application Layout</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Assumptions"><span class="tocnumber">1.1</span> <span class="toctext">Assumptions</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Background"><span class="tocnumber">1.2</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Layout_Recommendation"><span class="tocnumber">1.3</span> <span class="toctext">Layout Recommendation</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Relocation"><span class="tocnumber">1.4</span> <span class="toctext">Relocation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#When_to_use_the_GAC"><span class="tocnumber">1.5</span> <span class="toctext">When to use the GAC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Libraries_with_Unstable_APIs"><span class="tocnumber">2</span> <span class="toctext">Libraries with Unstable APIs</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Comparing_this_to_other_models"><span class="tocnumber">2.1</span> <span class="toctext">Comparing this to other models</span></a>
+<ul>
+<li class="toclevel-3"><a href="#How_is_this_better_than_using_the_GAC.3F"><span class="tocnumber">2.1.1</span> <span class="toctext">How is this better than using the GAC?</span></a></li>
+<li class="toclevel-3"><a href="#How_is_this_better_than_the_.22egg.22_model.3F"><span class="tocnumber">2.1.2</span> <span class="toctext">How is this better than the "egg" model?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Small_Libraries"><span class="tocnumber">3</span> <span class="toctext">Small Libraries</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Auto-tools"><span class="tocnumber">4</span> <span class="toctext">Auto-tools</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#autogen.sh"><span class="tocnumber">4.1</span> <span class="toctext">autogen.sh</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Makefile.am"><span class="tocnumber">4.2</span> <span class="toctext">Makefile.am</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#configure.in"><span class="tocnumber">4.3</span> <span class="toctext">configure.in</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#man.2FMakefile.am"><span class="tocnumber">4.4</span> <span class="toctext">man/Makefile.am</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#resources.2FMakefile.am"><span class="tocnumber">4.5</span> <span class="toctext">resources/Makefile.am</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#src.2FAssemblyInfo.cs.in"><span class="tocnumber">4.6</span> <span class="toctext">src/AssemblyInfo.cs.in</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#src.2FMakefile.am"><span class="tocnumber">4.7</span> <span class="toctext">src/Makefile.am</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Application_Layout"> Application Layout </span></h1>
+<p>This section covers some guidelines on application deployment.  They are not hard rules, but useful conventions that have grown out of various Mono applications.
+</p>
+<h2> <span class="mw-headline" id="Assumptions"> Assumptions </span></h2>
+<p>You will be distributing your software in binary or source code form to others, and the software will be installed in a specific prefix or a user-defined prefix.  Applications typically scatter a number of files relative to this prefix.  For example, if the prefix is /usr, packages tend to store their programs in /usr/bin, their libraries in /usr/lib, their data files in /usr/etc and so on.
+</p><p>The prefix is sometimes changed, for example some systems use /usr/local, or /opt/SOMETHING as a prefix for an application.  For the rest of this discussion we will refer to the prefix path with the word PREFIX.
+</p><p>We will refer to your application as "APPLICATION" in the following discussion.
+</p>
+<h2> <span class="mw-headline" id="Background"> Background </span></h2>
+<p>Mono applications have at least one executable (they typically end with the extension .exe) and possibly other components like:
+</p>
+<ul><li> managed libraries (*.dll)
+</li><li> images, bitmaps (*.png, *.jpg, *.xpm, *.gif, etc)
+</li><li> some data files (*.xml)
+</li><li> asp.net files (*.aspx, *.ashx, etc.)
+</li><li> html web pages (*.html)
+</li></ul>
+<p>Typically all these files have been scattered in multiple locations relative to the prefix.  Although this has been historically encouraged on Unix systems (in particular for system tools) this recommendation is problematic for systems where the software must be easily relocated.
+</p><p>Some developers can embed some of these data files and resources inside their executable or library by using the -resource: command line option of the compiler.
+</p>
+<h2> <span class="mw-headline" id="Layout_Recommendation"> Layout Recommendation </span></h2>
+<p>PREFIX/bin
+</p>
+<ul><li> Should contain a script to call your application, typically it contains two lines.
+</li></ul>
+<p>PREFIX/lib/APPLICATION
+</p>
+<ul><li> A directory that holds your main executable, libraries and any extra data files.
+</li></ul>
+<p>The script in PREFIX/bin typically contains the following two lines:
+</p>
+<pre class="bash" style="font-family:monospace;">  <span style="color: #666666; font-style: italic;">#!/bin/sh</span>
+  <span style="color: #7a0874; font-weight: bold;">exec</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>mono PREFIX<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>APPLICATION<span style="color: #000000; font-weight: bold;">/</span>app.exe <span style="color: #ff0000;">&quot;$@&quot;</span></pre>
+<p>This has a number of advantages:
+</p>
+<ul><li> You do not polute the system bin directory with .exe files (which can not be executed directly anyways)
+</li><li> Your application is neatly organized in a single directory.
+</li><li> It makes it simpler to write relocatable applications.
+</li><li> To relocate you just update the script at install time.
+</li></ul>
+<p>Although Linux supports a mechanism to load .NET programs directly, the problem is that this solution is not portable to other Unix systems (BSD, Solaris, MacOS).
+</p><p>Also, by doing this you can ship any third-party libraries that you need and put those into PREFIX/lib/APPLICATION as Mono will automatically lookup for needed libraries in the same directory as the directory containing the main executable.  
+</p><p>This last point is very important: it allows developers to use a snapshot of a library that they have QAed against, or using a specific version that they need without imposing these requirements on the system or in the Mono installation.
+</p><p>If your application also contains shared libraries that you are going to P/Invoke from DllImport, you might want to add to the above script the following two lines:
+</p>
+<pre class="bash" style="font-family:monospace;">  <span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">DYLD_LIBRARY_PATH</span>=PREFIX<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>APPLICATION:<span style="color: #007800;">$DYLD_LIBRARY_PATH</span>
+  <span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">LD_LIBRARY_PATH</span>=PREFIX<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>APPLICATION:<span style="color: #007800;">$LD_LIBRARY_PATH</span></pre>
+<p>This will ensure that your shared libraries are loaded from your installation directory and that there is no need to pollute the PREFIX/lib directory.
+</p>
+<h2> <span class="mw-headline" id="Relocation"> Relocation </span></h2>
+<p>As you might have noticed the only place with the above setup that hardcodes the PREFIX to the application in the source is the script.  None of the libraries or executables located in PREFIX/lib/APPLICATION have to hardcode the values.  
+</p><p>To make your software relocatable, the two-line script can be generated by your installation setup at installation time to point to the location where your program was installed without making any changes to your program.
+</p><p>Your C# should reference its data files using the following code snippet:
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #6666cc; font-weight: bold;">string</span> base_directory <span style="color: #008000;">=</span> <span style="color: #000000;">System</span><span style="color: #008000;">.</span><span style="color: #0000FF;">AppDomain</span><span style="color: #008000;">.</span><span style="color: #0000FF;">CurrentDomain</span><span style="color: #008000;">.</span><span style="color: #0000FF;">BaseDirectory</span><span style="color: #008000;">;</span></pre>
+<p>Then you can do things like:
+</p>
+<pre class="csharp" style="font-family:monospace;">   <span style="color: #6666cc; font-weight: bold;">string</span> splash_file <span style="color: #008000;">=</span> Path<span style="color: #008000;">.</span><span style="color: #0000FF;">Combine</span> <span style="color: #008000;">&#40;</span>base_directory, <span style="color: #666666;">&quot;splash.jpg&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h2> <span class="mw-headline" id="When_to_use_the_GAC"> When to use the GAC </span></h2>
+<p>The <a href="{{site.baseurl}}/Assemblies_and_the_GAC" title="Assemblies and the GAC">Global Assembly Cache</a> or "GAC" for short is a location where assemblies can be installed for system-wide use.    To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
+</p><p>This requirement is designed to ensure that the application is linked on the developer machine against a library that will be the same one available on the user's system, for example to avoid two libraries having the same name and version still providing different features (consider two companies creating a "Chat" library: one for using the IRC protocol and one for using the AOL protocol: they provide different APIs, but they have the same weak name;  Strong naming avoids this scenario).
+</p><p>But developers that install libraries into the GAC must be aware that putting something on the GAC is a commitment to API stability.  It is a commitment that should not be taken lightly.   If you are to change the API in a backwards-incompatible way, you should change the version of the library to ensure that old applications continue to work.   When the library changes its version, then two copies of the library must be distributed: one for the old applications that might depend on the old API and the new version of the library.
+</p><p>If your project is not ready to commit to API compatibility and the extra work associated with it, its best to keep these assemblies out of the GAC and encourage end users to distribute a particular snapshot alongside their applications.
+</p><p>This is where the PREFIX/lib/APPLICATION directory comes into play.  This for example would allow developers to deploy applications that use for example an under-development binding for OpenGL or the iPod for example without forcing the developers of the bindings to stabilize their API and maintain multiple versions of the library to allow old applications to run.
+</p><p>The subject of installing assemblies into the GAC is handled in more detail in the article <a href="{{site.baseurl}}/Assemblies_and_the_GAC" title="Assemblies and the GAC">Assemblies and the GAC</a>.
+</p>
+<h1> <span class="mw-headline" id="Libraries_with_Unstable_APIs"> Libraries with Unstable APIs </span></h1>
+<p>Sometimes developers might want to distribute a library to other developers but they might not have a library that is API stable or has not matured enough over time to guarantee the backwards-compatibility of their libraries or they are not willing to maintain multiple packages of the various versions for users.
+</p><p>This is a very common scenario and most libraries will go through this phase before they are considered for installation on the GAC.  
+</p><p>The problem that arises is how to allow third party developers to consume this library with minimal effort.
+</p><p>To solve this problem, we recommend that:
+</p>
+<ul><li> The library developer ships a properly configured pkg-config file.
+</li><li> The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
+</li><li> The library consumers ship this library as part of their package.
+</li><li> The consumer follow the <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines for Application Deployment</a>
+</li></ul>
+<p>Here is how this works, the library developer installs a pkg-config file like this:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">cat</span> Thing.pc
+<span style="color: #007800;">prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>usr
+<span style="color: #007800;">assemblies_dir</span>=<span style="color: #800000;">${prefix}</span><span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>thing
+<span style="color: #007800;">Libraries</span>=<span style="color: #800000;">${assemblies_dir}</span><span style="color: #000000; font-weight: bold;">/</span>Thing.dll <span style="color: #800000;">${assemblies_dir}</span><span style="color: #000000; font-weight: bold;">/</span>ThingCore.dll
+&#160;
+Name: Thing
+Description: The Thing Library
+Version: <span style="color: #000000;">0.5</span>
+Libs: -r:Thing.dll -r:ThingCore.dll</pre>
+<p>The important parts are "Libraries" a new variable that lists the full path to all of the assemblies that make up the "Thing" package, and the "Libs" line.
+</p><p>The "Libraries" line is used by the consumer like this, as part of their "update-libraries" makefile target:
+</p>
+<pre class="bash" style="font-family:monospace;">update-libraries:
+        <span style="color: #c20cb9; font-weight: bold;">cp</span> <span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--variable</span>=Libraries Thing<span style="color: #000000; font-weight: bold;">`</span> .
+        pkg-config <span style="color: #660033;">--libs</span> Thing <span style="color: #000000; font-weight: bold;">&gt;</span> thing.flags</pre>
+<p>The Libs line is used like this in your Makefile:
+</p>
+<pre class="bash" style="font-family:monospace;">Demo.exe: Demo.cs thing.flags
+       mcs -out:$<span style="color: #000000; font-weight: bold;">@</span> Demo.cs <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">cat</span> thing.flags<span style="color: #000000; font-weight: bold;">`</span></pre>
+<p>The libraries will be copied from the system installation directory into your application directory, and the --libs line will link to the local libraries, not libraries installed into the GAC.
+</p><p>This means that developers that consume unstable API libraries do not have to worry about their schedule being the same as the schedule for API stability on the libraries they consume as they will always have a private copy at development time and at runtime, and they choose when they upgrade to a new version of the library. 
+</p><p>If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
+</p><p>Note: a production-ready, detailed example of this can be found in the <a href="{{site.baseurl}}/Guidelines:Application_Deployment#Auto-tools" title="Guidelines:Application Deployment">Autotools</a> section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+</p>
+<h2> <span class="mw-headline" id="Comparing_this_to_other_models"> Comparing this to other models </span></h2>
+<h3> <span class="mw-headline" id="How_is_this_better_than_using_the_GAC.3F"> How is this better than using the GAC? </span></h3>
+<p>This model requires a minimal amount of work on various parts. 
+</p><p>The library developer benefits in these ways:
+</p>
+<ul><li> It releases the library developer from the requirement to keep the API backwards compatible.
+</li><li> The library developer does not have to ship old and new versions of his library.
+</li><li> The library developer can update, change, refactor his code with freedom without worrying about breaking third party applications.
+</li></ul>
+<p>The distribution packager:
+</p>
+<ul><li> The packager does not have to solve naming conflicts, parallel installation and multiple versions shipping on the same OS.
+</li></ul>
+<p>The library consumer:
+</p>
+<ul><li> The library consumer does not have to add requirements for a specific version of a library.
+</li><li> The library consumer does not have to add checks for a specific version of a library.
+</li><li> The library consumer decides when to upgrade the library at his own pace.
+</li><li> The library consumer can properly test and QA his product with the library without having to retest with different versions.
+</li></ul>
+<p>The end user:
+</p>
+<ul><li> Does not have to hunt down multiple versions of the library.
+</li><li> Applications that consume under-development libraries will not break when he upgrades his system.
+</li><li> He can upgrade software at his own pace without being forced to upgrade all software at once that depends on an unstable library.
+</li></ul>
+<p>This puts the burden of fetching and distributing the correct library on the hands of the software developer consuming the library, the advantage is that there are no external requirements and the dependencies for deployment are minimized.
+</p>
+<h3> <span class="mw-headline" id="How_is_this_better_than_the_.22egg.22_model.3F"> How is this better than the "egg" model? </span></h3>
+<p>The "egg" model is a model used in Gnome, where a source code repository of useful routines is kept.   The routines and libraries live in this "egg" module until they graduate and can live in an API stable library.  Developers copy/paste this code from "egg" into their applications and distribute the result.
+</p><p>The problem is that developers must integrate the configuration system and bring the source code into their projects to effectively use the routines.   They also must do their own source code importing which is more complex than just copying the binary library.
+</p>
+<h1> <span class="mw-headline" id="Small_Libraries"> Small Libraries </span></h1>
+<p>Small libraries that can be made available as source code and that application developers are expected to integrate into their applications should ship a pkg-config file that contains the line:
+</p>
+<pre>Sources: File1.cs File.cs
+</pre>
+<p>And developers would copy those files in their project makefiles, like this:
+</p>
+<pre class="csharp" style="font-family:monospace;">File1<span style="color: #008000;">.</span><span style="color: #0000FF;">cs</span> File2<span style="color: #008000;">.</span><span style="color: #0000FF;">cs</span><span style="color: #008000;">:</span> 
+       cp `pkg<span style="color: #008000;">-</span>config <span style="color: #008000;">--</span>variable<span style="color: #008000;">=</span>Sources package` <span style="color: #008000;">.</span></pre>
+<p>And distribute the results.
+</p>
+<h1> <span class="mw-headline" id="Auto-tools"> Auto-tools </span></h1>
+<p>Autoconf and automake are two popular tools used in Unix to cope with the configuration of software in a particular platform and creating standard makefiles.  This section covers how to setup a Mono project to use the autoconf and automake tools.
+</p><p>You can browse the source code online for a sample "skeleton" application, the sample shows:
+</p>
+<ul><li> How to detect the Mono C# compiler.
+</li><li> How to test for the presence of a library (Gtk# in this case).
+</li><li> How to build C# code using autoconf/automake.
+</li><li> How to embed a sample resource file into the executable.
+</li><li> How the executables are stored in the PREFIX/lib/APPNAME
+</li><li> How a script that is installed in bin is installed
+</li><li> How to embed the version from your configure.in program into the AssemblyInfo.cs file that is compiled.
+</li></ul>
+<p>The source code is available from our SVN repository as the module "monoskel", you can browse the source  code <a href="http://anonsvn.mono-project.com/viewvc/trunk/monoskel" class="external text" rel="nofollow">here</a>. You may also want to explore the "<a href="http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib" class="external text" rel="nofollow">monoskel-lib</a>" module, which is an example of deploying an <a href="{{site.baseurl}}/Guidelines:Application_Deployment#Libraries_with_Unstable_APIs" title="Guidelines:Application Deployment">unstable library</a> (<b>Note</b>: If you are planning to create and deploy a GAPI wrapped library, see <a href="{{site.baseurl}}/GAPI#Putting_it_all_together" title="GAPI">this section</a> of the <a href="{{site.baseurl}}/GAPI" title="GAPI">GAPI</a> page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh</pre>
+<p>On a checked out copy of the source.
+</p><p>The tarball can be found here: <a href="http://www.go-mono.com/archive/monoskel-0.1.tar.gz" class="external free" rel="nofollow">http://www.go-mono.com/archive/monoskel-0.1.tar.gz</a>
+</p><p>The contents of the tarball are:
+</p>
+<pre>
+monoskel-0.1/
+monoskel-0.1/src/
+monoskel-0.1/src/AssemblyInfo.cs.in
+monoskel-0.1/src/Makefile.am
+monoskel-0.1/src/Makefile.in
+monoskel-0.1/src/main.cs
+monoskel-0.1/README
+monoskel-0.1/configure.in
+monoskel-0.1/aclocal.m4
+monoskel-0.1/Makefile.am
+monoskel-0.1/Makefile.in
+monoskel-0.1/configure
+monoskel-0.1/AUTHORS
+monoskel-0.1/COPYING
+monoskel-0.1/ChangeLog
+monoskel-0.1/INSTALL
+monoskel-0.1/NEWS
+monoskel-0.1/config.guess
+monoskel-0.1/config.sub
+monoskel-0.1/install-sh
+monoskel-0.1/missing
+monoskel-0.1/script.in
+monoskel-0.1/man/
+monoskel-0.1/man/Makefile.am
+monoskel-0.1/man/Makefile.in
+monoskel-0.1/man/monoskel.1
+monoskel-0.1/resources/
+monoskel-0.1/resources/Makefile.am
+monoskel-0.1/resources/Makefile.in
+monoskel-0.1/resources/dummy.txt
+</pre>
+<p><br />
+The following files play important roles:
+</p>
+<h3> <span class="mw-headline" id="autogen.sh"> autogen.sh </span></h3>
+<p>This file is a shell script that is used to create and run the configure script, which will generate all the output files we need. Don't run anything yet.
+</p>
+<h3> <span class="mw-headline" id="Makefile.am"> Makefile.am </span></h3>
+<p>In this file, we tell automake which subdirectories to process. They will be processed in the same order as they appear in the SUBDIRS variable.
+</p>
+<h3> <span class="mw-headline" id="configure.in"> configure.in </span></h3>
+<p>This is the main file that autoconf looks for.
+</p><p>The first line in this file (AC_INIT) initializes autoconf. The argument in parenthesis must be an existing file in the project.
+</p><p>In AM_INIT_AUTOMAKE, we initialize automake, providing the project name and version. AM_MAINTAINER_MODE will allow us to run configure with the --enable-maintainer-mode option. This is useful while you're modifying any Makefile.am or configure.in, as it will rebuild every Makefile without the need of running autogen.sh.
+</p><p>After that, we check for pkg-config and a C# compiler. If they are not available, configure will error out. We also provide the variables PKG_CONFIG and INSTALL containing the paths of the respective programs, which we will use later.
+</p><p>Then we use the PKG_CHECK_MODULES macro to check for Gtk# (at least version 0.18). We get in GTKSHARP_LIBS the command line options that we need to pass to the C# compiler to use Gtk#.
+</p><p>Similarly PKG_CHECK_MODULES is used to ensure that superstring-sharp is installed (check out and install the monoskel-lib module from Mono SVN), and we tell configure to substitute the library link option for the compiler to link against superstring-sharp.
+</p><p>Finally, we tell configure to substitute the variable MCS with the path to the executable we found before and provide the list of files that will be generated.
+</p>
+<h3> <span class="mw-headline" id="man.2FMakefile.am"> man/Makefile.am </span></h3>
+<p>Here we use man_MANS to tell automake to install the manual page. We also put that manual page in EXTRA_DIST so that the file is included in source tarballs
+</p>
+<h3> <span class="mw-headline" id="resources.2FMakefile.am"> resources/Makefile.am </span></h3>
+<p>This directory contains resources that are embedded into the executable.
+</p><p>This dummy.txt file here will not be installed, but it has to be included in the EXTRA_DIST target so that its distributed with the resulting tarball.
+</p>
+<h3> <span class="mw-headline" id="src.2FAssemblyInfo.cs.in"> src/AssemblyInfo.cs.in </span></h3>
+<p>This file is a template in which configure will perform substitutions. We use it to get the VERSION variable replaced by the version we provided in AM_INIT_AUTOMAKE, which will be 0.0.1 for the first time.
+src/Makefile.am
+</p>
+<h3> <span class="mw-headline" id="src.2FMakefile.am"> src/Makefile.am </span></h3>
+<p>And last, but not least, here's the file that tells how to build the executable and where to install it.
+</p><p>monoskeldir tells that we will install 'monoskel.exe' in the package directory (pkglibdir). 
+</p><p>monoskel_SCRIPTS lists all the executables that will be built (in this case, only one: monoskel.exe)
+</p><p>In EXTRA_DIST we put the same files as we have initially, i.e., main.cs and AssemblyInfo.cs.in. CLEANFILES tells the files that will be removed when you run 'make clean'.
+</p><p>And then we setup the variables that will generate the command line to run when compiling the source files.
+</p><p>Lastly, since we wish to link against and use an <a href="{{site.baseurl}}/Guidelines:Application_Deployment#Libraries_with_Unstable_APIs" title="Guidelines:Application Deployment">unstable library</a> (one that is not installed in the GAC), we need to copy the unstable assembly that we link against (SUPERSTRINGSHARP_LIBS) to the directory where our program will be installed. This is done by asking pkg-config for the Libraries variable, which should be set to a space-delimited string of assemblies to copy. The install-data-hook rule contains the short script to do this, and uses the aforementioned INSTALL and PKG_CONFIG variables set in configure.in.
+</p><p>Now it's time to run some commands and enjoy. The first one you need to run is:
+</p><p>./autogen.sh --prefix=/usr/local --enable-maintainer-mode
+</p><p>Then try make, make clean, make install, make uninstall, make dist, make distcheck.
+</p>

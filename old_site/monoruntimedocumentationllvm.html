@@ -1,0 +1,255 @@
+---
+layout: obsolete
+title: "Mono:Runtime:Documentation:LLVM"
+permalink: /old_site/Mono:Runtime:Documentation:LLVM/
+---
+
+<h1>Mono:Runtime:Documentation:LLVM</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#LLVM_Backend"><span class="tocnumber">1</span> <span class="toctext">LLVM Backend</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Usage"><span class="tocnumber">1.1</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Architecture"><span class="tocnumber">1.2</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Sources"><span class="tocnumber">1.3</span> <span class="toctext">Sources</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_LLVM_Mono_Branch"><span class="tocnumber">1.4</span> <span class="toctext">The LLVM Mono Branch</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Changes_relative_to_stock_LLVM"><span class="tocnumber">1.4.1</span> <span class="toctext">Changes relative to stock LLVM</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Branches"><span class="tocnumber">1.4.2</span> <span class="toctext">Branches</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Maintaining_the_repository"><span class="tocnumber">1.4.3</span> <span class="toctext">Maintaining the repository</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#Restrictions"><span class="tocnumber">1.5</span> <span class="toctext">Restrictions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Exception_Handlers"><span class="tocnumber">1.5.1</span> <span class="toctext">Exception Handlers</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Generics_sharing"><span class="tocnumber">1.5.2</span> <span class="toctext">Generics sharing</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Varargs"><span class="tocnumber">1.5.3</span> <span class="toctext">Varargs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Implementation_details"><span class="tocnumber">1.6</span> <span class="toctext">Implementation details</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Virtual_calls"><span class="tocnumber">1.6.1</span> <span class="toctext">Virtual calls</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Interface_calls"><span class="tocnumber">1.6.2</span> <span class="toctext">Interface calls</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Unwind_info"><span class="tocnumber">1.6.3</span> <span class="toctext">Unwind info</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Exception_Handling"><span class="tocnumber">1.6.4</span> <span class="toctext">Exception Handling</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Generic_Sharing"><span class="tocnumber">1.7</span> <span class="toctext">Generic Sharing</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#AOT_Support"><span class="tocnumber">1.8</span> <span class="toctext">AOT Support</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Porting_the_backend_to_new_architectures"><span class="tocnumber">1.9</span> <span class="toctext">Porting the backend to new architectures</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#LLVM_problems"><span class="tocnumber">1.10</span> <span class="toctext">LLVM problems</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Future_Work"><span class="tocnumber">1.11</span> <span class="toctext">Future Work</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#Array_Bounds_Check_.28ABC.29_elimination"><span class="tocnumber">1.11.1</span> <span class="toctext">Array Bounds Check (ABC) elimination</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="LLVM_Backend"> LLVM Backend </span></h1>
+<p>Mono now includes an experimental backend which compiles methods to native code
+using LLVM instead of the built in JIT.
+</p>
+<h2> <span class="mw-headline" id="Usage"> Usage </span></h2>
+<p>The llvm back end can be enabled by passing --enable-llvm=yes to configure. LLVM
+2.6 or later is required.
+</p>
+<h2> <span class="mw-headline" id="Architecture"> Architecture </span></h2>
+<p>The backend works as follows:
+</p>
+<ul><li> first, normal mono JIT IR is generated from the IL code
+</li><li> the IR is transformed to SSA form
+</li><li> the IR is converted to the LLVM IR
+</li><li> the LLVM IR is compiled by LLVM into native code
+</li></ul>
+<p>LLVM is accessed through the LLVM C binding.
+</p><p>The backend doesn't currently support all IL features, like vararg calls. Methods using such features are compiled using the normal mono JIT. Thus LLVM compiled and JITted code can coexist in the same process.
+</p>
+<h2> <span class="mw-headline" id="Sources"> Sources </span></h2>
+<p>The backend is in the files mini-llvm.c and mini-llvm-cpp.c. The former contains the bulk of the backend, while the latter contains c++ code which is
+needed because of deficiencies in the LLVM C binding which the backend uses.
+</p>
+<h2> <span class="mw-headline" id="The_LLVM_Mono_Branch"> The LLVM Mono Branch </span></h2>
+<p>We maintain a fork/branch of LLVM with various changes to enable better integration with mono. The repo is at:
+</p><p><a href="http://github.com/mono/llvm" class="external free" rel="nofollow">http://github.com/mono/llvm</a>
+</p><p>The LLVM backend is currently only supported when using this version of LLVM. When using this version, it can compile about 99% of mscorlib methods.
+</p><p>The GIT repo is forked from the unofficial LLVM git mirror at:
+</p><p><a href="http://github.com/earl/llvm-mirror" class="external free" rel="nofollow">http://github.com/earl/llvm-mirror</a>
+</p>
+<h3> <span class="mw-headline" id="Changes_relative_to_stock_LLVM"> Changes relative to stock LLVM </span></h3>
+<p>The branch currently contains the following changes:
+</p>
+<ul><li> additional mono specific calling conventions.
+</li><li> support for loads/stores which can fault using LLVM intrinsics.
+</li><li> support for saving the stack locations of some variables into the exception handling info emitted by LLVM.
+</li><li> support for stores into TLS on x86.
+</li><li> the LLVM version string is changed to signal that this is a branch, i.e. it looks like "2.8svn-mono".
+</li><li> workarounds to force LLVM to generate direct calls on amd64.
+</li><li> support for passing a blockaddress value as a parameter.
+</li><li> emission of EH/unwind info in a mono-specific compact format.
+</li></ul>
+<p>The changes consist of about 1.5k lines of code. The majority of this is the EH table emission.
+</p><p>To view all changes, use:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git diff</span> <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">git merge-base</span> mirror<span style="color: #000000; font-weight: bold;">/</span>master mono<span style="color: #000000; font-weight: bold;">`</span>..mono</pre>
+<h3> <span class="mw-headline" id="Branches"> Branches </span></h3>
+<ul><li> 'mono' is branched off mirror/master and contains our changes
+</li><li> 'mono-&lt;VER&gt;' is a branch which work with mono version &lt;VER&gt;, i.e. 'mono-2.10' is a version which works with mono-2.10.
+</li></ul>
+<h3> <span class="mw-headline" id="Maintaining_the_repository"> Maintaining the repository </span></h3>
+<p>The 'mono' branch is maintained by regularly rebasing it on top of 'mirror/master'. This makes examining our changes easier. 
+To merge changes from llvm-mirror to this repo, do:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git remote</span> add mirror http:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>earl<span style="color: #000000; font-weight: bold;">/</span>llvm-mirror.git
+<span style="color: #c20cb9; font-weight: bold;">git checkout</span> mono
+<span style="color: #c20cb9; font-weight: bold;">git fetch</span> mirror
+<span style="color: #c20cb9; font-weight: bold;">git rebase</span> mirror<span style="color: #000000; font-weight: bold;">/</span>master
+<span style="color: #000000; font-weight: bold;">&lt;</span>fix conflicts<span style="color: #000000; font-weight: bold;">/</span>commit<span style="color: #000000; font-weight: bold;">&gt;</span>
+<span style="color: #c20cb9; font-weight: bold;">git push</span> origin mono:mono</pre>
+<p>Due to the rapid pace of development, and the frequent reorganization/refactoring of LLVM code, merge conflicts are pretty common, so maintaining our fork is time consuming. A subset of our changes can probably be submitted to upstream LLVM, but it would require some effort to clean them up, document them, etc.
+</p>
+<h2> <span class="mw-headline" id="Restrictions"> Restrictions </span></h2>
+<p>There are a number of constructs that are not supported by the LLVM backend.   In those cases the Mono code generation engine will fall back to Mono's default compilation engine. Most of the restrictions are lifted when using Mono's LLVM branch.
+</p>
+<h3> <span class="mw-headline" id="Exception_Handlers"> Exception Handlers </span></h3>
+<p>These are currently not supported when using stock LLVM, mainly because LLVM doesn't support implicit exceptions thrown by the execution of instructions.
+</p><p>An implicit exception is for example a NullReferenceException that would be raised when you access an invalid memory location, typically in Mono and .NET, an uninitialized pointer.
+</p>
+<h3> <span class="mw-headline" id="Generics_sharing"> Generics sharing </span></h3>
+<p>These are currently not supported when using stock LLVM.
+</p><p>The main problem here is the hidden rgctx argument passed to/received by generic
+shared methods. We can't force LLVM to pass this argument, which is passed in an extra non-ABI register in mono.
+</p>
+<h3> <span class="mw-headline" id="Varargs"> Varargs </span></h3>
+<p>These are implemented using a special calling convention in mono, i.e. passing a hidden 'signature cookie' argument, and passing all vararg arguments on the stack. LLVM doesn't support this calling convention.
+</p><p>It might be possible to support this using the <a href="http://llvm.org/docs/LangRef.html#int_varargs" class="external text" rel="nofollow">LLVM vararg intrinsics</a>.
+</p>
+<h2> <span class="mw-headline" id="Implementation_details"> Implementation details </span></h2>
+<h3> <span class="mw-headline" id="Virtual_calls"> Virtual calls </span></h3>
+<p>The problem here is that the trampoline handing virtual calls needs to be able to obtain the vtable address and the offset. This is currently done by an arch specific function named mono_arch_get_vcall_slot_addr (), which works by disassembling the calling code to find out which register contains the vtable address. This doesn't work for LLVM since we can't control the format of the generated code, so disassembly would be very hard. Also, sometimes the code generated by LLVM is such that the vtable address cannot be obtained at all, i.e.:
+</p>
+<pre> mov&#160;%rax, &lt;offset&gt;(%rax)
+ call&#160;%rax
+</pre>
+<p>To work around these problems, we use a separate vtable trampoline for each
+vtable slot index. The trampoline obtains the 'this' argument from the
+registers/stack, whose location is dicated by the calling convention.
+The 'this' argument plus the slot index can be used to compute the vtable
+slot and the called method.
+</p>
+<h3> <span class="mw-headline" id="Interface_calls"> Interface calls </span></h3>
+<p>The problem here is that these calls receive a hidden argument called the IMT argument which is passed in a non-ABI register by the JIT, which cannot be done with LLVM. So we call a trampoline instead, which sets the IMT argument, then makes the virtual call.
+</p>
+<h3> <span class="mw-headline" id="Unwind_info"> Unwind info </span></h3>
+<p>The JIT needs unwind info to unwind through LLVM generated methods. This is
+solved by obtaining the exception handling info generated by LLVM, then 
+extracting the unwind info from it.
+</p>
+<h3> <span class="mw-headline" id="Exception_Handling"> Exception Handling </span></h3>
+<p>Methods with exception clauses are supported, altough there are some corner cases in the class library tests which still fail when ran with LLVM.
+</p><p>LLVM uses the platform specific exception handling abi, which is the c++ ehabi on linux, while we use our home grown exception handling system. To make these two work together, we only use one LLVM EH intrinsic, the
+llvm.eh.selector intrinsic. This will force LLVM to generate exception handling tables. We decode those tables in mono_unwind_decode_fde () to obtain the addresses of the try-catch clauses, and save those to MonoJitInfo, just as with JIT compiled code.
+Finally clauses are handled differently than with JITted code. Instead of calling them from mono_handle_exception (), we save the exception handling state in TLS, then branch to them the same way we would branch to a catch handler. the code generated from ENDFINALLY will call mono_resume_unwind (), which will resume exception handling from the information saved in TLS.
+</p><p>Implicit exceptions are implemented by adding a bunch of 
+LLVM intrinsics to do loads/stores, and calling them using the LLVM 'invoke'
+instruction.
+</p><p>Instead of generating DWARF/c++ EHABI exception handling tables, we generate our own tables using a mono specific format, which the mono runtime reads during execution. This has the following advantages:
+</p>
+<ul><li> the tables are compact and take up less space.
+</li><li> we can generate a lookup table similar to .eh_frame_hdr which is normally generated by the linker, allowing us to support OSX/iOS, since the apple  linker doesn't support .eh_frame_hdr.
+</li><li> the tables are pointed to by a normal global symbol, instead of residing in a separate segment, whose address cannot be looked up under OSX.
+</li></ul>
+<h2> <span class="mw-headline" id="Generic_Sharing"> Generic Sharing </span></h2>
+<p>Generic Sharing is only supported when using the LLVM mono branch.
+</p><p>There are two problems here: passing/receiving the hidden rgctx argument passed to some shared methods, and obtaining its value/the value of 'this' during
+exception handling. 
+</p><p>The former is implemented by adding a new mono specific calling convention
+which passes the 'rgctx' argument in the non-ABI register where mono expects it,
+i.e. R10 on amd64. The latter is implemented by marking the variables where
+these are stored with a mono specific LLVM custom metadata, and modifying LLVM
+to emit the final stack location of these variables into the exception handling
+info, where the runtime can retrieve it.
+</p>
+<h2> <span class="mw-headline" id="AOT_Support"> AOT Support </span></h2>
+<p>There is some support for using LLVM for AOT compilation. This is implemented by
+emitting the LLVM IR into a LLVM bytecode file, then using the LLVM llc compiler to compile it, producing a .s file, then we append our normal AOT data structures, plus the code for methods not supported by LLVM to this file.
+</p><p>A runtime which is not configured by --enable-llvm=yes can be made to use
+LLVM compiled AOT modules by using the --llvm command line argument:
+mono --llvm hello.exe
+</p>
+<h2> <span class="mw-headline" id="Porting_the_backend_to_new_architectures"> Porting the backend to new architectures </span></h2>
+<p>The following changes has to be made to port the LLVM backend to a new
+architecture:
+</p>
+<ul><li> Define MONO_ARCH_LLVM_SUPPORTED in mini-&lt;ARCH&gt;.h.
+</li><li> Implement mono_arch_get_llvm_call_info () in mini-&lt;ARCH&gt;.h. This function is a variant of the arch specific get_call_info () function, it should return calling convention information for a signature.
+</li><li> Define MONO_CONTEXT_SET_LLVM_EXC_REG() in mini-&lt;ARCH&gt;.h to the register used to pass the exception object to LLVM compiled landing pads. This is usually defined by the platform ABI.
+</li><li> Implement the LLVM exception throwing trampolines in exceptions-&lt;ARCH&gt;.c. These trampolines differ from the normal ones because they receive the PC address of the throw site, instead of a displacement from the start of the method. See exceptions-amd64.c for an example.
+</li><li> Implement the resume_unwind () trampoline, which is similar to the throw trampolines, but instead of throwing an exception, it should call mono_resume_unwind () with the constructed MonoContext.
+</li></ul>
+<h2> <span class="mw-headline" id="LLVM_problems"> LLVM problems </span></h2>
+<p>Here is a list of problems whose solution would probably require changes
+to LLVM itself. Some of these problems are solved in various ways by changes
+on the LLVM Mono Branch.
+</p>
+<ul><li> the llvm.sqrt intrinsic doesn't work with NaNs, even through the underlying C function/machine instruction probably works with them. Worse, an optimization pass transforms sqrt(NaN) to 0.0, changing program behaviour, and masking the problem.
+</li><li> there is no fabs intrinsic, instead llc seems to replace calls to functions named 'fabs' with the corresponding assembly, even if they are not the fabs from libm&#160;?
+</li><li> There is no way to tell LLVM that a result of a load is constant, i.e. in a loop like this:
+</li></ul>
+<pre>
+  for (int i = 0; i &lt; arr.Length; ++i)
+     arr [i] = 0
+</pre>
+<p>The arr.Length load cannot be moved outside the loop, since the store inside the loop can alias it. There is a llvm.invariant.start/end intrinsic, but that seems to be only useful for marking a memory area as invariant inside a basic block, so it cannot be used to mark a load globally invariant.
+</p>
+<p>
+<a href="http://hlvm.llvm.org/bugs/show_bug.cgi?id=5441" class="external free" rel="nofollow">http://hlvm.llvm.org/bugs/show_bug.cgi?id=5441</a>
+<ul><li> LLVM has no support for implicit exceptions:
+</li></ul>
+<a href="http://llvm.org/bugs/show_bug.cgi?id=1269" class="external free" rel="nofollow">http://llvm.org/bugs/show_bug.cgi?id=1269</a>
+<ul><li> LLVM thinks that loads from a NULL address lead to undefined behaviour, while it is quite well defined on most unices (SIGSEGV signal being sent). If an optimization pass determines that the source address of a load is NULL, it changes it to undef/unreachable, changing program behaviour. The only way to work around this seems to be marking all loads as volatile, which probably doesn't help optimizations.
+</li><li> There seems to be no way to disable specific optimizations when running 'opt', i.e. do -std-compile-opts except tailcallelim.
+</li><li> The x86 JIT seems to generate normal calls as
+</li></ul>
+<pre>
+  mov reg, imm
+  call *reg
+</pre>
+<p>This makes it hard/impossible to patch the calling address after the called method has been compiled.
+&lt;p&gt;
+<a href="http://lists.cs.uiuc.edu/pipermail/llvmdev/2009-December/027999.html" class="external free" rel="nofollow">http://lists.cs.uiuc.edu/pipermail/llvmdev/2009-December/027999.html</a>
+</p>
+<ul><li> LLVM doesn't emit unwind info on arm, neither the DWARF style, or the ARM style.
+</li></ul>
+<p><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0038a/index.html" class="external text" rel="nofollow">ARM Exception Handling ABI</a>
+</p><p><a href="http://sourceware.org/binutils/docs-2.20/as/ARM-Directives.html#ARM-Directives" class="external text" rel="nofollow">GAS Directives to emit ARM unwind info</a>
+</p>
+<ul><li> LLVM Bugs: <a href="http://llvm.org/bugs/show_bug.cgi?id=6102" class="external autonumber" rel="nofollow">[1]</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Future_Work"> Future Work </span></h2>
+<h3> <span class="mw-headline" id="Array_Bounds_Check_.28ABC.29_elimination"> Array Bounds Check (ABC) elimination </span></h3>
+<p>Mono already contains a ABC elimination pass, which is fairly effective at eliminating simple bounds check, i.e. the one in:
+</p><p>for (int i = 0; i &lt; arr.Length; ++i)
+</p>
+<pre>  sum += arr [i];
+</pre>
+<p>However, it has problems with "partially redundant" check, i.e. checks which cannot be proven to be reduntant, but they are unlikely to be hit at runtime. With LLVM's extensive analysis and program transformation passes, it might be possible to eliminate these from loops, by changing them to loop-invariant checks and hoisting them out of loops, i.e. changing:
+</p>
+<pre>  for (int i = 0; i &lt; len; ++i)
+    sum += arr [i];
+</pre>
+<p>to:
+</p>
+<pre>  if (len &lt; arr.Length) {
+      &lt;loop without checks&gt;
+  } else {
+      &lt;loop with checks&gt;
+  }
+</pre>
+<p>LLVM has a LoopUnswitch pass which can do something like this for constant expressions, it needs to be extended to handle the ABC checks too. Unfortunately, this cannot be done currently because the arr.Length instruction is converted to a volatile load by mono's LLVM backend, since it can fault if arr is null. This means that the load is not loop invariant, so it cannot be hoisted out of the loop.
+</p><p>An experimental version of this optimization which can only handle simple cases is now in mono's llvm repository:
+</p>
+<a href="http://github.com/mono/llvm/tree/mono-abcrem" class="external free" rel="nofollow">http://github.com/mono/llvm/tree/mono-abcrem</a></p>
+

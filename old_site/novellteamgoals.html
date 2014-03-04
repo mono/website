@@ -1,0 +1,129 @@
+---
+layout: obsolete
+title: "NovellTeamGoals"
+permalink: /old_site/NovellTeamGoals/
+---
+
+<h1>NovellTeamGoals</h1>
+
+<p>This page documents the goals of the Mono team at Novell.
+</p><p>This is a work in progress. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Organization"><span class="tocnumber">1</span> <span class="toctext">Organization</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Communication"><span class="tocnumber">2</span> <span class="toctext">Communication</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Documentation"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Teams"><span class="tocnumber">4</span> <span class="toctext">Teams</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Runtime_Team"><span class="tocnumber">4.1</span> <span class="toctext">Runtime Team</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Runtime_Team_Goals"><span class="tocnumber">4.1.1</span> <span class="toctext">Runtime Team Goals</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Windows.Forms_Team"><span class="tocnumber">4.2</span> <span class="toctext">Windows.Forms Team</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Windows.Forms_Goals"><span class="tocnumber">4.3</span> <span class="toctext">Windows.Forms Goals</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Moonlight_Team"><span class="tocnumber">4.4</span> <span class="toctext">Moonlight Team</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#MonoDevelop_Team"><span class="tocnumber">4.5</span> <span class="toctext">MonoDevelop Team</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Other_Groups"><span class="tocnumber">4.6</span> <span class="toctext">Other Groups</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Organization"> Organization </span></h1>
+<p>Each member of the team should post a weekly status report to the internal x-m-l mailing list describing what they worked on during the week, and what are the plans for the next week.   This status report must be posted on Friday before adjourning for the weekend to give Miguel a chance to provide feedback and direction for the work in the upcoming week.
+</p><p>It is the responsibility of team leaders to update the goals set in this page for each individual team and to provide task assignments and monthly project overviews in the internal mailing lists.
+</p><p>Since Mono is a relatively small team compared to the goals of the project, developers in the team should do much more than just write code, each developer should:
+</p>
+<ul><li> Run the <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">test suite</a> for the given component.
+</li><li> Monitor the <a href="http://wrench.mono-project.com/builds" class="external text" rel="nofollow">build bots</a> for potential failures and regressions.
+</li><li> When writing code, ensure that tests exist for this new feature.
+</li><li> Make sure that proper documentation exists.
+</li><li> Write clean, maintainable code, do not skim on the comments.
+</li><li> C Runtime code should have inline API documentation for new APIs.
+</li></ul>
+<h1> <span class="mw-headline" id="Communication"> Communication </span></h1>
+<p>Communication happens mostly in public forums (<a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">mailing lists</a>, <a href="{{site.baseurl}}/IRC" title="IRC">chat rooms</a> and this web site).
+</p>
+<h1> <span class="mw-headline" id="Documentation"> Documentation </span></h1>
+<p>Developers should pay special attention when they write code to ensure that features are properly documented: if a feature is not documented, the feature should be considered non-existent and we should consider the work as wasted effort.
+</p><p>If you add a new tool, a new command line option, a new feature to a tool:
+</p>
+<ul><li> You must document on a manual page.
+</li></ul>
+<p>If you introduce a new API to Mono-developed APIs:
+</p>
+<ul><li> Ensure that there is proper coverage in Monodoc for it
+</li><li> If there is no Monodoc framework for it, make sure you <a href="{{site.baseurl}}/Generating_Documentation" title="Generating Documentation">generate it</a>.
+</li></ul>
+<p>If you improve or change the semantics of an API:
+</p>
+<ul><li> Make sure that <a href="{{site.baseurl}}/Monodoc_Contributing" title="Monodoc Contributing">you contribute the update</a>.
+</li></ul>
+<p>If you answer a public question on the forums, consider whether it would not be a good candidate for the FAQs.
+</p><p>If you notice data that is out-of-date on the Wiki, or that is incorrect, please take the time to fix it and update it.
+</p>
+<h1> <span class="mw-headline" id="Teams"> Teams </span></h1>
+<h2> <span class="mw-headline" id="Runtime_Team"> Runtime Team </span></h2>
+<p>Lead: Paolo Molaro.
+</p>
+<h3> <span class="mw-headline" id="Runtime_Team_Goals"> Runtime Team Goals </span></h3>
+<ul><li> Debugger
+<ul><li> Plans is available <a href="{{site.baseurl}}/Debugger#Plan" title="Debugger">debugger plans' here</a>.
+</li></ul>
+</li><li> Generics Support Improvements
+<ul><li> The current support needs to be audited, and cleaned up
+</li><li> Optimize memory usage of generics-relate data structures (like removing generic_container from non-generic MonoMethods).
+</li><li> Far future: code sharing optimizations.
+</li></ul>
+</li><li> Compacting Garbage Collector
+</li><li> Correctness/Bug Fixes
+<ul><li> The MonoJitInfo lookups need to be made lock-less
+</li></ul>
+</li><li> Performance Optimizations
+<ul><li> Mono Runtime vNext should use linear-ir branch.
+</li><li> New register allocator on the linear-ir branch.
+</li><li> Interface table dispatch memory reduction.
+</li><li> Review generated JIT code quality, and improve it.
+</li><li> Remove type check from generic stelemref when we store a T inside a T[] (and maybe also for ArrayList)
+</li></ul>
+</li><li> Security:
+<ul><li> Implementation of the Mono Verifier
+</li><li> Implement stack overflow clean shutdown.
+</li><li> Implement new sandboxed execution system (see <a href="{{site.baseurl}}/Moonlight#Security_Model" title="Moonlight">Moonlight</a> for details).
+</li></ul>
+</li><li> Reduce Memory Usage
+<ul><li> For all runtime data structures (MonoMethod, MonoClassField, MonoClass, exception tables).
+</li></ul>
+</li><li> IO-Layer 
+<ul><li> Towards a SHM-less world
+</li><li> Removal of shared process and thread handles
+</li></ul>
+</li></ul>
+<p>Some other ideas, not critical:
+</p>
+<ul><li> Support AOT on more platforms (PPC, ARM).
+</li><li> Support full pre-AOTing (not decided).
+</li></ul>
+<h2> <span class="mw-headline" id="Windows.Forms_Team"> Windows.Forms Team </span></h2>
+<p>Lead: Chris Toshok
+</p>
+<h2> <span class="mw-headline" id="Windows.Forms_Goals"> Windows.Forms Goals </span></h2>
+<ul><li> WebControl implemented on top of Mozilla
+<ul><li> See module mozembed for Zac's work-in-progress
+</li></ul>
+</li><li> Complete the 2.0 API
+</li></ul>
+<h2> <span class="mw-headline" id="Moonlight_Team"> Moonlight Team </span></h2>
+<p>Details about the Silverlight implementation are available on the <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> page. 
+</p>
+<h2> <span class="mw-headline" id="MonoDevelop_Team"> MonoDevelop Team </span></h2>
+<p>Lead: Lluis Sánchez
+</p><p>Ship MonoDevelop 1.0, the planning document is:
+</p>
+<ul><li> <a href="http://spreadsheets.google.com/ccc?key=pS-RZuhR9F_CaaOcopqtFOg" class="external autonumber" rel="nofollow">[1]</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Other_Groups"> Other Groups </span></h2>
+<p>Other groups include developers that do not directly belong to any of the previous groups, that own code in various places, or that on temporary loans to other projects (Mike Kestner for Gtk#)
+</p><p>Lead by default: Miguel de Icaza
+</p>

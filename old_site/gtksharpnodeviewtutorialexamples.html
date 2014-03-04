@@ -1,0 +1,174 @@
+---
+layout: obsolete
+title: "GtkSharpNodeViewTutorialExamples"
+permalink: /old_site/GtkSharpNodeViewTutorialExamples/
+---
+
+<h1>GtkSharpNodeViewTutorialExamples</h1>
+
+<h1> <span class="mw-headline" id="Example_Programs_from_the_Gtk.23_NodeView_Tutorial"> Example Programs from the Gtk# NodeView Tutorial </span></h1>
+<p>This page contains the sample applications and compile instructions for the applications described in the tutorial.
+</p>
+<h2> <span class="mw-headline" id="Simple_NodeView"> Simple NodeView </span></h2>
+<p>The first example can be compiled with the command:
+</p>
+<pre> mcs -pkg:gtk-sharp-2.0 filename.cs
+</pre>
+<p>The source for the program:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> NodeViewTutorial <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNode</span> <span style="color: #008000;">&#40;</span>ListOnly<span style="color: #008000;">=</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyTreeNode <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNode</span> <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #6666cc; font-weight: bold;">string</span> song_title<span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> artist, <span style="color: #6666cc; font-weight: bold;">string</span> song_title<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Artist <span style="color: #008000;">=</span> artist<span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">song_title</span> <span style="color: #008000;">=</span> song_title<span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNodeValue</span> <span style="color: #008000;">&#40;</span>Column<span style="color: #008000;">=</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Artist<span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNodeValue</span> <span style="color: #008000;">&#40;</span>Column<span style="color: #008000;">=</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> SongTitle <span style="color: #008000;">&#123;</span><span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> song_title<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span> <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> NodeViewExample <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> NodeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;NodeView&quot;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        SetSizeRequest <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">200</span>,<span style="color: #FF0000;">150</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">// Create our TreeView and add it as our child widget</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeView</span> view <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeView</span> <span style="color: #008000;">&#40;</span>Store<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>view<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">// Create a column with title Artist and bind its renderer to model column 0</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Artist&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">// Create a column with title 'Song Title' and bind its renderer to model column 1</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Song Title&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> OnDeleteEvent <span style="color: #008000;">&#40;</span>Gdk<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span> ev<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> store<span style="color: #008000;">;</span>
+                Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> Store <span style="color: #008000;">&#123;</span>
+                        <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+                                <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>store <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                        store <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>MyTreeNode<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The Beatles&quot;</span>, <span style="color: #666666;">&quot;Yesterday&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Peter Gabriel&quot;</span>, <span style="color: #666666;">&quot;In Your Eyes&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Rush&quot;</span>, <span style="color: #666666;">&quot;Fly By Night&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                <span style="color: #008000;">&#125;</span>
+                                <span style="color: #0600FF; font-weight: bold;">return</span> store<span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        NodeViewExample win <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NodeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        win<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Interactive_NodeView"> Interactive NodeView </span></h2>
+<p>This example can be compiled with the command:
+</p>
+<pre> mcs -pkg:gtk-sharp-2.0 filename.cs
+</pre>
+<p>The source for the program:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> NodeViewTutorial <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNode</span> <span style="color: #008000;">&#40;</span>ListOnly<span style="color: #008000;">=</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyTreeNode <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNode</span> <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #6666cc; font-weight: bold;">string</span> song_title<span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> artist, <span style="color: #6666cc; font-weight: bold;">string</span> song_title<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Artist <span style="color: #008000;">=</span> artist<span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">song_title</span> <span style="color: #008000;">=</span> song_title<span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNodeValue</span> <span style="color: #008000;">&#40;</span>Column<span style="color: #008000;">=</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Artist<span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #008000;">&#91;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeNodeValue</span> <span style="color: #008000;">&#40;</span>Column<span style="color: #008000;">=</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> SongTitle <span style="color: #008000;">&#123;</span><span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> song_title<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span> <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> NodeViewExample <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#123;</span>
+&#160;
+                Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span> label<span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> NodeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;NodeView&quot;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        SetSizeRequest <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">300</span>,<span style="color: #FF0000;">225</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Box</span> box <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">VBox</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>box<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Current Selection: &quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeView</span> view <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeView</span> <span style="color: #008000;">&#40;</span>Store<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>view, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">// Create a column with title Artist and bind its renderer to model column 0</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Artist&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">// Create a column with title 'Song Title' and bind its renderer to model column 1</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Song Title&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        view<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeSelection</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Changed</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #000000;">System</span><span style="color: #008000;">.</span><span style="color: #0000FF;">EventHandler</span> <span style="color: #008000;">&#40;</span>OnSelectionChanged<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+                <span style="color: #6666cc; font-weight: bold;">void</span> OnSelectionChanged <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, <span style="color: #000000;">System</span><span style="color: #008000;">.</span><span style="color: #0000FF;">EventArgs</span> args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeSelection</span> selection <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeSelection</span><span style="color: #008000;">&#41;</span> o<span style="color: #008000;">;</span>
+                        MyTreeNode node <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>MyTreeNode<span style="color: #008000;">&#41;</span> selection<span style="color: #008000;">.</span><span style="color: #0000FF;">SelectedNode</span><span style="color: #008000;">;</span>
+                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Current Selection: <span style="color: #008080; font-weight: bold;">\&quot;</span>&quot;</span> <span style="color: #008000;">+</span> node<span style="color: #008000;">.</span><span style="color: #0000FF;">SongTitle</span> <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;<span style="color: #008080; font-weight: bold;">\&quot;</span> by &quot;</span> <span style="color: #008000;">+</span> node<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> OnDeleteEvent <span style="color: #008000;">&#40;</span>Gdk<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span> ev<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> store<span style="color: #008000;">;</span>
+                Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> Store <span style="color: #008000;">&#123;</span>
+                        <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+                                <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>store <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                        store <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">NodeStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>MyTreeNode<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The Beatles&quot;</span>, <span style="color: #666666;">&quot;Yesterday&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Peter Gabriel&quot;</span>, <span style="color: #666666;">&quot;In Your Eyes&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNode</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyTreeNode <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Rush&quot;</span>, <span style="color: #666666;">&quot;Fly By Night&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                                <span style="color: #008000;">&#125;</span>
+                                <span style="color: #0600FF; font-weight: bold;">return</span> store<span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        NodeViewExample win <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NodeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        win<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

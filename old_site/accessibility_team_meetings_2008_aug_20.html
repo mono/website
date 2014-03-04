@@ -1,0 +1,1404 @@
+---
+layout: obsolete
+title: "Accessibility: Team Meetings 2008 Aug 20"
+permalink: /old_site/Accessibility:_Team_Meetings_2008_Aug_20/
+---
+
+<h1>Accessibility: Team Meetings 2008 Aug 20</h1>
+
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<td>
+</td>
+<td> -!- knocte changed the topic of #mono-a11y to: Mono-UIA Iteration meeting
+</td>
+<td> 07:02
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, now my clock tells me it's the time, everybody here?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> firstly I would like to ask brad if he wants to say anything before the meeting, or any question he may have?
+</td>
+<td> 07:03
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> yells speech
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> nope, I'm good... this week, I'm trying to focus on understanding the current process
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and the code base, and get feedback
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I'll just be lurking around&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> perfect, thanks, we usually start with sandy, so, sandy? go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> hi
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (nothing to copy/paste today, sorry)
+</td>
+<td> 07:04
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> hi sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> So I got the NumericUpDownProvider and its tests finally checked in
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and the implementation of LabeledBy
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I seem to recall that if a control had a non-null value for LabeledBy, it would affect the Name property
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but my VM has been giving me problems so I need to test that and update the Name property impelmentation and associated tests if necessary
+</td>
+<td> 07:05
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I did not get far enough with recursive property changes to commit it, unfortunately
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I had forgotten that I needed to spend time this iteration on the talk Brian and I are giving at UTOSC next week
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we've had a few discussions about it, and have developed our initial slides
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll be continuing to polish it this week, and then rehearse at Hack week
+</td>
+<td> 07:06
+</td></tr>
+<tr>
+<td>
+</td>
+<td> yes we are so nerdy that we need to rehearse
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (or is it so cool that you have to SEE IT TO BELIEVE IT?)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: how are we doing next iteration?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> is it a short iteration?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh good question
+</td>
+<td> 07:07
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> or will it continue after hack week?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I haven't planned my tasks for next iteration, really
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I would say that we should count these two days of the week, and then join them with the next days of the week after hackweek
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so it's an iteration with a break&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> okay
+</td></tr>
+<tr>
+<td>
+</td>
+<td> well in that case
+</td>
+<td> 07:08
+</td></tr>
+<tr>
+<td>
+</td>
+<td> before hack week
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I will work with Brian a bit
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I will figure out the Name property issue
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and I will work on recursive properties
+</td></tr>
+<tr>
+<td>
+</td>
+<td> after hack week
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I will work on a whole new control
+</td></tr>
+<tr>
+<td>
+</td>
+<td> because I think we have a handle on bugs
+</td></tr>
+<tr>
+<td>
+</td>
+<td> especially with brad
+</td>
+<td> 07:09
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks sandy, there are no bugs filed yet that affect the providers, right?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: I will double-check
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> do you mean unfiled bugs?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: previously I had been helping with bridge bugs
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yes, I know, good job!
+</td>
+<td> 07:10
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> that's what I was referring to
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, ok now let's talk with mario
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> hello!
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, here I go
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> just to rudely interrupt.. "next iteration" will just be tomorrow and the next day for most of us, right?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> or are we going to tie it together with next monday and tues?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> "I would say that we should count these two days of the week, and then join them with the next days of the week after hackweek"
+</td>
+<td> 07:11
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> bgmerrell: we just commented about it, monday and tuesday of next week after hackweek will be part of the iteration as well
+</td></tr>
+<tr>
+<td>
+</td>
+<td>&#160;;)
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> oopsy
+</td></tr>
+<tr>
+<td>
+</td>
+<td> well mario should be about ready now...
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> heh
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> don't worry, mario?
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> ok, here I go..
+</td></tr>
+<tr>
+<td>
+</td>
+<td> in this iteration I finished ErrorProvider. ToolTip provider is working again, I disabled in previous iteration
+</td>
+<td> 07:12
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I spent some time reviewing the patches in SWF, jpobst reviewed them and... I need to update and send them again
+</td>
+<td> 07:13
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm missing ErrorProvider unitary tests
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration: I'll update the patches and finish unitary tests, and I'll start working in the HelpProvider provider
+</td>
+<td> 07:14
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done!
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks mario! which providers are dependent on the SWF patches to work correctly in case at the bridge someone wants to query them?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> are they likely be committed soon?
+</td>
+<td> 07:15
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> ListBox, ScrollBar (both V and H), ComboBox, ToolTip and ErrorProvider
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh, sounds like a lot, we will worry about the patches more then
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> I think they are, I need to "beautify" the patches
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> mario: are you aware of <a href="http://bugzilla.gnome.org/show_bug.cgi?i" class="external free" rel="nofollow">http://bugzilla.gnome.org/show_bug.cgi?i</a> d=542873&#160;?  have you seen this?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> bgmerrell: yes, I installed that version, but I can't see the tooltips anyway
+</td>
+<td> 07:16
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> that's gail related right? maybe mgorse knows more about it?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> oh I forgot to mention!
+</td>
+<td> 07:17
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I have a dr appointment at 2 PM today
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I'll be gone for a bit
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy: it's ok, thanks for notifying
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, let's rather switch to ngao now
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> OK
+</td>
+<td> 07:18
+</td></tr>
+<tr>
+<td>
+</td>
+<td> last iteration, i implement statusBarPanel, subclass from TextBox
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and i patched StatusBar control to support PanelAdded event, because StatusBarPanel is not added by Controls.Add, StatusBar couldn't navigate it. after i patched winforms and connected the event, statusBar still couldn't navigate children, i dont know what the problem is now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration, i'd like to solve this problem and finish unit test for status bar panel
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok,thanks ngao; mario: do you suggest ngao to work in a new control as well?
+</td>
+<td> 07:19
+</td></tr>
+<tr>
+<td>
+</td>
+<td> s/control/provider
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> I think he should send me the updated progressbar and statusbar as soon as he finished them to commit them, before choosing a new control
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, fine, thanks mario
+</td>
+<td> 07:20
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll talk now with mgorse, you ready?
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I mapped a GroupBox to a Pane class in the automation bridge (which was trivial).  This works except that it doesn't implement IExpandCollapseProvider, so I think that I should check for that before instantiating the Pane
+</td>
+<td> 07:21
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I ported one of the cspi test programs to atspi-dbus and added a couple more interfaces to the dbus port of cspi
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but I've had trouble running/debugging the test program
+</td></tr>
+<tr>
+<td>
+</td>
+<td> also worked on several bridge bugs
+</td>
+<td> 07:22
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and spent a bit more time investigating intercepting keys (tried hooking up a PreviewKeyDown event listener to a Form, but tha tdidn't help).  I mentioned that in the channel last night and filed a bug for it
+</td>
+<td> 07:23
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> were there any bugs opened against new dbus at-spi? how's sync with the packagers?
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> I committed code in the bridge test to make it use real objects, which makes it work with the new navigation code, tests the code to map providers to adapters, and generally makes it act more like the real world (ie, widgets have a form as their parent)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah I saw that patch for "real" objs, good job
+</td>
+<td> 07:24
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> knocte: We don't have a bugzilla or something set up for it yet.  That reminds me that I should talk to Mark and/or Rob about that
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Next iteration I plan to map NumericUpDownProvider in the bridge
+</td>
+<td> 07:25
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and look more at passing keys
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, that sounds good, I'll help you on that, but in the meantime, do we already have the "general" component in bugzilla? we could use that
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> you mean for our project?  There is a general component for it
+</td>
+<td> 07:26
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, then let's use that if QA start to try the dbus work
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte, brad: this reminds me, mgorse mentioned that we have all of these pointless versions for our bugzilla products...can we delete them and add "SVN", and then new versions as appropriate?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, thanks mgorse
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> (I have no idea who has admin rights to our bugzilla products)
+</td>
+<td> 07:27
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> sandy: I'd be happy to do that once I get admin rights on bugzilla
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy: yes, I'll add that to my todo list, thanks sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> brad: I think you have to kill someone for that&#160;:P
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> brad: I don't think we'll be able to get admin rights&#160;;), I'll ask for it
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> knocte: thanks&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, next one should be... me
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> I would be surprised if they wouldn't give admin rights to the product... gnome does
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> ha, gnome's not a company
+</td>
+<td> 07:28
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> fair
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> so well, it would be my turn now, in theory I'm not a "dev" anymore but as you all know I'll continue with development as time permits and
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> gekker has rights to our product
+</td>
+<td> 07:29
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte should be able to get it as a pm
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> also I will be finishing the missing bits I had uncommitted and until I finally switch my role entirely to PjM
+</td></tr>
+<tr>
+<td>
+</td>
+<td> oh thanks bgmerrell, I'll talk with him
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> he'll at least know who to talk to
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i don't think he can give you rights, though
+</td>
+<td> 07:30
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> so in my dev part of the iteration I think I finished all the pending tests I wanted to commit and next iteration I'll commit: a) fixes to combobox, b) fixes to menu, c) the textbox bridge class
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: fine thanks for the info; ok,so let's switch to QA now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and, btw, bgmerrell, your turn&#160;:)
+</td>
+<td> 07:31
+</td></tr>
+<tr>
+<td>
+</td>
+<td> BTW, could you move the test we talked earlier (from mario) to your test suite?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> can it be moved without translating it to py code? just leaving it as is?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (  <a href="http://anonsvn.mono-project.com/source/t" class="external free" rel="nofollow">http://anonsvn.mono-project.com/source/t</a> runk/uia2atk/src/UiaAtkBridge/UiaAtkBrid geTest/Bug416602.cs  )
+</td>
+<td> 07:32
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> what test?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> shouldn't we be running unit tests when we build?
+</td>
+<td> 07:33
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> he's more a regression test than a unit test I believe, unless brad gives us another idea, well just add that to your plan for next iteration...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> yes, why?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> s/he's/it's/
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> well, we definitely need to establish some sort of unit/regression/whatever suite
+</td>
+<td> 07:34
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok maybe we should talk about this after the iteration&#160;:) you can start with your summary
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> okay, here i go
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> and running that at build time, if not too time intensitve, is a good idea
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> I actually have working orca tests against gtk samples now, yipee!  this is mostly what i worked on during this iteration.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i also worked on fixing a crashing problem with our winforms tests.  evidently, our code and/or WinForms takes a little longer than Gtk for the application to launch and applications list to settle; this was causing the crashes.
+</td>
+<td> 07:35
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> i did spend some time preparing for utosc, but tried to to do most of that over the weekend
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration i need to come up with a good plan to test using orca.. i haven't decide what the best way to approach this will be...
+</td>
+<td> 07:36
+</td></tr>
+<tr>
+<td>
+</td>
+<td> because it's a lot more complicated to know exactly what Orca should read
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i've thought about maybe writing an app in Gtk and WinForms and making them as similar as possible and making sure that Orca reads them about the same..
+</td>
+<td> 07:37
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but that's just an idea
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so any ideas are welcome&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and like sandy said, utosc stuff
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok I guess brad and/or mgorse will have good ideas for the orca testing as well!
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks bgmerrell
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll talk now with calen
+</td>
+<td> 07:38
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> the good news is that orca has it's own test harness that is pretty nice, so we can just use it.
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> okay
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> sorry
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> np&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> last iteration I have finished new strongwind test code for picturebox, statusbar, listbox, groupbox controls.
+</td>
+<td> 07:39
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but I should mention when running GroupBox test that after bug411882 is been fixed we can't use 'button.click' do the action (but need change to 'button._doAction('click')). another problem is when the test do click action, we should move the mouse through the application window otherwise the label can't get the new info just like bug415320.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>ListBox control]', and can't use 'click' action to select listitem.
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> (is that #411882?)
+</td>
+<td> 07:40
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> i think developers haven't finish those controls, i will wait then to check them again.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> brad: yeah
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I have run form and RadioButton test again that form test can be run completely now. Brian would like to review it and then add it to our test harness.
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> calen: ok, thanks
+</td>
+<td> 07:41
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> I also have modified some old test code and gave comment info for bug411328.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> in the coming iteration, i will code for checkedlistbox, tooltip, progressbar, and verify some bugs those will been fixed in new rpms.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> calen: Button should be finished, please file bugs against it
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, thanks calen, be sure to file all problems in bugzilla (and reopen old ones), and annotate all this info (if the bug arised since fixing another one, and this kind of stuff)
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> sandy: okay, i will
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> calen: same for listbox, open your bug.
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine thanks, so, ray's turn!
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> here i am, can't wait&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> QA first, packaging second&#160;;)
+</td>
+<td> 07:42
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> mario: okay
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> sorry for this slack week, in this iteration. i have read lots of rpm stuffs, spend some time to read lots of strongwind stuffs, learnt some winforms sample "style"
+</td></tr>
+<tr>
+<td>
+</td>
+<td> from bgmerrell's opinion, when rpms being built, i was starting to do some "smoke test",   and also thanks for decriptor's effort.(the rpms)
+</td>
+<td> 07:43
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but, most of the time, i was struggling with winform controls. and i have many problems and errors with DataGrid*,  PageSetupDialog, HelpProvider and WebBrowser,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> finially i asked some questions in mono-devel mailing list, and someone told me that there might be some issues with WebBrowser, will fix it later before Mono 2.0 is released.
+</td>
+<td> 07:44
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, webbrowser seems the most unstable widget
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> so, in the next week,  i will start to work on strongwind. we all will come back to the offfice, so i can chat with calen more about that. &#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte, ok, thanks
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> ray: if you write winforms code that runs fine in Windows and doesn't work in Mono, filing bugs is a good idea&#160;:-)
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> and done )
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sandy's right
+</td>
+<td> 07:45
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> sandy, sure, i will&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I woudln't be surprised if there are a lot of bugs in datagrid*, for example
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> ray: did you get a chance to look into deb stuff at all?
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> decriptor, oops, i nearly forgot, will see&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor, do you mean to build deb package on build1?
+</td>
+<td> 07:46
+</td></tr>
+<tr>
+<td>
+</td>
+<td> sandy, yes, datagrid* seems more complex which i run into
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> ray: uia2atk for now
+</td>
+<td> 07:47
+</td></tr>
+<tr>
+<td>
+</td>
+<td> just on a weekly basis
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> decriptor, ok , will finish it within this week&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, let's switch to my (most likely) mentor in hackweek: decriptor&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> lol
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: then you're in trouble&#160;:P
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> admits that he is a big fan of OBS
+</td>
+<td> 07:48
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> x)   go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> fixed the at-spi dbus rpms (can't remember if that was before this iteration or if it was this one)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> then, can QA start looking at them?
+</td>
+<td> 07:49
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> talked with jared about putting out rpms about the start of the work day for ray and calen since they are ahead of us
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: no
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: I'll explain
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> as well as starting to do weekly snapshots for the public
+</td></tr>
+<tr>
+<td>
+</td>
+<td> which will be in OBS
+</td>
+<td> 07:50
+</td></tr>
+<tr>
+<td>
+</td>
+<td> <a href="https://build.opensuse.org/project/show" class="external free" rel="nofollow">https://build.opensuse.org/project/show</a>? project=home%3Auia2atk
+</td></tr>
+<tr>
+<td>
+</td>
+<td> spent about a day getting that sorted out and building correctly
+</td></tr>
+<tr>
+<td>
+</td>
+<td> fixed up my script so that it sends out emails notify of new rpms (if you want on the list, let me know)
+</td>
+<td> 07:51
+</td></tr>
+<tr>
+<td>
+</td>
+<td> this iteration I'll work on automating that script so that it runs at a set hour and maybe scripting the weekly obs stuff
+</td>
+<td> 07:52
+</td></tr>
+<tr>
+<td>
+</td>
+<td> also if i get a chance, I'll look at getting the tests running after the build
+</td></tr>
+<tr>
+<td>
+</td>
+<td> still want to look at cruise control .NET as I heard some really good things about it from our friends over in germany
+</td>
+<td> 07:53
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> cool, so the problem with at-spi dbus?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> oh ooops
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td>&#160;:)
+</td>
+<td> 07:54
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> from what I understand, its not quite there yet and it would, i think, be a waste of time at the moment.  I'm going to continue to build it so that it stays in a buildable state
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, well, if you think it's not there yet, file bugs to mgorse&#160;:)
+</td>
+<td> 07:55
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> right , when will at-spi-dbus would replace currently atspi&#160;?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ray: you mean on production?
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> knocte, emmm , might e
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mighg be
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> ray: I think they are hoping for gnome 2.26 or 2.28
+</td>
+<td> 07:56
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> it's a work that in theory has no deadline, but I guess not earlier than 2009
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> We're going to need C# bindings for next year's work, so I'm hoping that it will be somewhat usable by the end of the year
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> are they conflict&#160;?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> but anyway it's good to move it forward, or else mgorse will forget the impl details&#160;:P
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> ray: atspi-dbus will eventually replace at-spi; you'd use one or the other but not both
+</td>
+<td> 07:57
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> mgorse: would the C api be the same?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> mgorse: really? shouldn't we use dbus# for at-spi and still atk (but with a new lib-atkbridge that uses dbus)?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> (just a binding to dbus?)
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> mgorse, ok, make sense
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> sandy: for cspi?  It is an abstraction, so it's the same except that some headers are in different places
+</td>
+<td> 07:58
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> almost forgot, I got the new accerciser pushed into factory for 11.1 this iteration&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@ray&gt;&#160;</b>
+</td>
+<td> decriptor, oh, really? good news!
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor, who did that?
+</td>
+<td> 07:59
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh, good job decriptor, well thanks all for attending the meeting, I would like to offer brad again a chance to speak, if he wants
+</td></tr>
+<tr>
+<td>
+</td>
+<td> any questions or comments?
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> knocte: sorry, i need add something,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i mentioned there is one problem when running groupbox test by doing 'button.click', that is not button's issue but because frame can't get its parent ipy(bug #411882). all of the winforms apps have this problem except form.py. so its a biggest one to block our test now.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done, thanks^^
+</td>
+<td> 08:00
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, thanks calen, do you think you should file a new bug or reopen anyone about the click action?
+</td></tr>
+<tr>
+<td> <b>&lt;@brad&gt;&#160;</b>
+</td>
+<td> knocte: I'm good, thanks
+</td>
+<td> 08:01
+</td></tr>
+<tr>
+<td> <b>&lt;@calen&gt;&#160;</b>
+</td>
+<td> knocte: i will file a new bug for listbox about lost click action
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> calen: cool, thanks
+</td></tr>
+<tr>
+<td>
+</td>
+<td> well, did I miss anybody? any other comments?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> if not, we'll consider the meeting finished for now, so good evening for some of you&#160;:)
+</td>
+<td> 08:02
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- knocte changed the topic of #mono-a11y to: Accessibility: <a href="http://www.mono-project.com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project.com/Accessibilit</a> y
+</td></tr>
+</table>
+

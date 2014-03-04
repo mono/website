@@ -1,0 +1,37 @@
+---
+layout: obsolete
+title: "Config system.web globalization"
+permalink: /old_site/Config_system.web_globalization/
+---
+
+<h1>Config system.web globalization</h1>
+
+<p>An example of this <a href="{{site.baseurl}}/Config_system.web" title="Config system.web">&lt;system.web&gt;</a> section is:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;globalization</span></span>
+<span style="color: #009900;">                        <span style="color: #000066;">requestEncoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span></span>
+<span style="color: #009900;">                        <span style="color: #000066;">responseEncoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span></span>
+<span style="color: #009900;">                        <span style="color: #000066;">fileEncoding</span>=<span style="color: #ff0000;">&quot;iso-8859-15&quot;</span></span>
+<span style="color: #009900;">                <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The &lt;globalization&gt; section can not have child nodes, it is only used to configure the following settings
+</p>
+<h4> <span class="mw-headline" id="Encodings"> Encodings </span></h4>
+<p>The encoding is any encoding that can be recognized by [http:/monodoc/M:System.Text.Encoding.GetEncoding(string) System.Text.Encoding.GetEncoding()].   In addition to all the string recognized there, the following shortcuts are recognized: 
+</p>
+<ul><li> ucs-2, utf-16, utf-16le, unicode, iso-10646-ucs-2: UnicodeEncoding Little Endian.
+</li><li> utf-16be, unicodefffe: UnicodeEncoding Big Endian.
+</li><li> utf-8, unicode-1-1-utf-8, unicode-2-0-utf-8, x-unicode-1-1-utf-8, 
+</li></ul>
+<p>x-unicode-2-0-utf-8: UTF8 Encoding.
+</p><p><i>requestEncoding</i> if set, the encoding for parsing the request.
+</p><p><i>responseEncoding</i> if set, the encoding used to generate the response.
+</p><p><i>fileEncoding</i> if set, the encoding used by the source code.
+</p>
+<h4> <span class="mw-headline" id="Culture_Configurations"> Culture Configurations </span></h4>
+<p><i>culture</i>: The culture used during page processing.
+</p><p><i>uiCulture</i> The UI Culture used during page processing.
+</p>

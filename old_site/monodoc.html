@@ -1,0 +1,70 @@
+---
+layout: obsolete
+title: "Monodoc"
+permalink: /old_site/Monodoc/
+---
+
+<h1>Monodoc</h1>
+
+<p>Monodoc is a set of libraries and applications for viewing and editing Mono class library documentation. Monodoc is part of the <a href="{{site.baseurl}}/Documentation" title="Documentation">Mono Documentation Project</a>. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Viewing_The_Documentation"><span class="tocnumber">1</span> <span class="toctext">Viewing The Documentation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#The_Gtk.23_Documentation_Browser"><span class="tocnumber">1.1</span> <span class="toctext">The Gtk# Documentation Browser</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Online_Documentation"><span class="tocnumber">1.2</span> <span class="toctext">Online Documentation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Mod_.28Command-Line_Documentation_Viewer.29"><span class="tocnumber">1.3</span> <span class="toctext">Mod (Command-Line Documentation Viewer)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Creating_Documentation.2C_Contributing"><span class="tocnumber">2</span> <span class="toctext">Creating Documentation, Contributing</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#My_Documentation_in_Monodoc"><span class="tocnumber">3</span> <span class="toctext">My Documentation in Monodoc</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Viewing_The_Documentation"> Viewing The Documentation </span></h1>
+<h2> <span class="mw-headline" id="The_Gtk.23_Documentation_Browser"> The Gtk# Documentation Browser </span></h2>
+<p>The doc browser is part of the <a href="/index.php?title=Mono-tools&amp;action=edit&amp;redlink=1" class="new" title="Mono-tools (page does not exist)">mono-tools</a> package, avaliable from the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> page.
+</p><p>Once installed, you can launch it from the "Programing" section of the Applications menu, as shown in the image below, or by typing <i>monodoc</i> in a terminal window.
+</p><p><a href="{{site.baseurl}}/images/old_site/1/1d/Gnome_menu-monodoc-1.png" class="image"><img alt="Gnome menu-monodoc-1.png" src="{{site.baseurl}}/images/old_site/1/1d/Gnome_menu-monodoc-1.png" width="352" height="298" /></a>
+</p><p>The browser lets you navigate through different types of documentation installed on your system. Usually, it shows the documentation of:
+</p>
+<ul><li> Core Framework API
+</li><li> Mono libraries
+</li><li> Novell libraries
+</li><li> C# Language Specification 
+</li><li> Compiler error reference
+</li></ul>
+<p>Depending on the libraries installed on your system it can show additionally:
+</p>
+<ul><li> Gnome libraries
+</li><li> Mozilla library
+</li><li> Monkeyguide (Mono guide)
+</li></ul>
+<p>Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in <a href="{{site.baseurl}}/Generating_Documentation" title="Generating Documentation">Generating Documentation</a>. Also, from inside the browser, you can <a href="{{site.baseurl}}/Monodoc_Contributing" title="Monodoc Contributing"> contribute</a> to the documentation of the Mono project.
+</p>
+<h2> <span class="mw-headline" id="Online_Documentation"> Online Documentation </span></h2>
+<p>You can view the complete documentation library online (only API documentation) at <a href="http://www.go-mono.com/docs/" class="external free" rel="nofollow">http://www.go-mono.com/docs/</a>.
+</p>
+<h2> <span class="mw-headline" id="Mod_.28Command-Line_Documentation_Viewer.29"> Mod (Command-Line Documentation Viewer) </span></h2>
+<p>To browse API documentation from a shell terminal, you can use the `mod' command. Use it to lookup types, or see the members of a type. You get the same information as the Monodoc graphical application, but displayed in a text-only web browser.
+</p><p>To get all the types in a namespace: 
+</p>
+<pre class="bash" style="font-family:monospace;">mod N:System
+mod N:Gtk</pre>
+<p>To see the members of a type, run mod like:
+</p>
+<pre class="bash" style="font-family:monospace;">mod T:System.Collections.ArrayList</pre>
+<p>You can restrict the output to just members by adding <tt>/M</tt>:
+</p>
+<pre class="bash" style="font-family:monospace;">mod T:System.Collections.ArrayList<span style="color: #000000; font-weight: bold;">/</span>M</pre>
+<p>You can also use C, P, F, and E for constructors, properties, fields, and events.
+</p><p>To get one method, copy-and-paste the URL from the output in the above: 
+</p>
+<pre class="bash" style="font-family:monospace;">mod <span style="color: #ff0000;">'M:System.Collections.ArrayList.ToArray(System.Type)'</span></pre>
+<h1> <span class="mw-headline" id="Creating_Documentation.2C_Contributing"> Creating Documentation, Contributing </span></h1>
+<ul><li> For information on how to document your own class libraries using monodoc, see  <a href="{{site.baseurl}}/Generating_Documentation" title="Generating Documentation">Generating Documentation</a>.
+</li><li> If you would like to contribute to the mono class library documentation (and we would love it if you did!), see <a href="{{site.baseurl}}/Monodoc_Contributing" title="Monodoc Contributing">Monodoc Contributing</a>.
+</li></ul>
+<h1> <span class="mw-headline" id="My_Documentation_in_Monodoc"> My Documentation in Monodoc </span></h1>
+<p>See the <a href="{{site.baseurl}}/Assembler" title="Assembler">assembler</a> page for a description how to add your documentation to monodoc permanently.
+</p>

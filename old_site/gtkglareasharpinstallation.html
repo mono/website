@@ -1,0 +1,117 @@
+---
+layout: obsolete
+title: "GtkGlAreaSharp:Installation"
+permalink: /old_site/GtkGlAreaSharp:Installation/
+---
+
+<h1>GtkGlAreaSharp:Installation</h1>
+
+<p>// Download tao
+</p>
+<pre>$ wget <a href="http://colliertech.com/downloads/tao/tao-current.tbz" class="external free" rel="nofollow">http://colliertech.com/downloads/tao/tao-current.tbz</a>
+</pre>
+<p>// Download gtkglarea-sharp
+</p>
+<pre>$ wget <a href="http://colliertech.com/downloads/gtkglarea-sharp/gtkglarea-sharp-current.tbz" class="external free" rel="nofollow">http://colliertech.com/downloads/gtkglarea-sharp/gtkglarea-sharp-current.tbz</a>
+</pre>
+<p>// Download gtkglarea
+</p>
+<pre>$ wget <a href="ftp://ftp.gnome.org/mirror/gnome.org/sources/gtkglarea/1.99/gtkglarea-1.99.0.tar.bz2" class="external free" rel="nofollow">ftp://ftp.gnome.org/mirror/gnome.org/sources/gtkglarea/1.99/gtkglarea-1.99.0.tar.bz2</a>
+</pre>
+<p>// Check out gtkglarea-sharp from svn
+</p>
+<pre>$ svn co <a href="svn://anonsvn.mono-project.com/source/trunk/gtkglarea-sharp" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/gtkglarea-sharp</a> 
+</pre>
+<p>// You should see something like this:
+</p>
+<pre>
+$ ls -l
+total 892
+-rw-r--r--  1 cjcollier cjcollier 210089 2006-01-24 09:41 gtkglarea-1.99.0.tar.bz2
+drwxr-xr-x  9 cjcollier cjcollier   4096 2006-01-24 09:42 gtkglarea-sharp
+-rw-r--r--  1 cjcollier cjcollier 126456 2006-01-20 17:17 gtkglarea-sharp-current.tbz
+-rw-r--r--  1 cjcollier cjcollier 554694 2006-01-20 17:25 tao-current.tbz
+</pre>
+<p>// Unpack Tao
+</p>
+<pre>$ tar xvjf tao-current.tbz
+</pre>
+<p>// Create a convenience link (symbolic):
+</p>
+<pre>$ ln -s tao-*/ tao-current
+</pre>
+<p>// change working directory to the unpacked directory
+</p>
+<pre>$ cd tao-current
+</pre>
+<p>// The --prefix argument to configure tells the build tools where to install binaries, libraries and scripts.  The default is /usr/local. Mono's default is often /usr/lib/mono.  You might want to specify this argument to the configure script as I have done below.  It is recommended that you use a directory under your $HOME, since it interferes less with your operating system's directory structure.
+</p><p>// First, make the directory:
+</p>
+<pre>$ mkdir -p $HOME/opt
+</pre>
+<p>// Now configure the package with a prefix in your home directory:
+</p>
+<pre>$ ./configure --prefix=$HOME/opt
+</pre>
+<p>// You are now ready to build the source.  It takes a while.  Get a cup of coffee or something while it's running.  Ignore the XML warnings
+</p>
+<pre>$ make
+</pre>
+<p>// You can now install the package to $HOME/opt:
+</p>
+<pre>$ make install
+</pre>
+<p>// You can now find the Tao libraries under $HOME/opt/lib/mono/tao
+</p><p>// Now lets install gtkglarea
+</p>
+<pre>$ cd ..
+$ tar xvjf gtkglarea-1.99.0.tar.bz2
+</pre>
+<pre>$ cd gtkglarea-1.99.0
+</pre>
+<p>// Once again configure with the correct prefix, make and checkinstall.
+</p>
+<pre>$ ./configure --prefix=$HOME/opt
+$ make
+$ checkinstall
+</pre>
+<p>// Now onto Gtkglarea-sharp
+</p>
+<pre>$ cd ../gtkglarea-sharp
+$ ./autogen.sh --prefix=$HOME/opt
+$ make
+</pre>
+<p>// I can't get checkinstall to run.
+// dpkg: error processing gtkglarea-sharp_0.0.2-1_i386.deb (--install):
+//   trying to overwrite `/root/.wapi/shared_data-camel-6-0', which is also in package tao-0.0.3
+</p>
+<pre>$ make install
+</pre>
+<p>// Test using sample apps.  You can run the examples by issuing the "make run" command from the example's directory
+</p>
+<pre>
+$ cd examples/trackball
+$ make run
+
+$ cd ../rotate-buttons
+$ make run
+
+$ cd ../pick-object
+$ make run
+
+$ cd ../NeHe/Lessons/01
+$ make run
+
+$ cd ../02
+$ make run
+
+$ cd ../03
+$ make run
+
+$ cd ../04
+$ make run
+
+$ cd ../05
+$ make run
+</pre>
+

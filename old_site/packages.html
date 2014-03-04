@@ -1,0 +1,47 @@
+---
+layout: obsolete
+title: "Packages"
+permalink: /old_site/Packages/
+---
+
+<h1>Packages</h1>
+
+<h1> <span class="mw-headline" id="ASP.Net_Starter_Kits">ASP.Net Starter Kits</span></h1>
+<p>The following starter kits have been packaged for Mono:
+</p>
+<ul><li> BlogStarterKit
+</li><li> Classifieds Starter Kit
+</li><li> Club Web Sit
+</li></ul>
+<h2> <span class="mw-headline" id="Installing_and_running_the_applications"> Installing and running the applications </span></h2>
+<p>Note: All the commands below must be run as root
+</p><p>All the applications come configured with one user account:
+</p>
+<pre class="bash" style="font-family:monospace;">       Login: <span style="color: #7a0874; font-weight: bold;">test</span>
+    Password: <span style="color: #7a0874; font-weight: bold;">test</span></pre>
+<p>After installation of the chosen RPMs, the following command may be issued to list all the available applications:
+</p>
+<pre class="bash" style="font-family:monospace;">    <span style="color: #666666; font-style: italic;"># mono-asp-apps list</span>
+    Installed apps:
+    Mono_ASP.NET_BlogStarterKit-1.0.0
+    Mono_ASP.NET_ClassifiedsStarterKit-1.0.0
+    Mono_ASP.NET_ClubWebSite-1.0.0</pre>
+<p>The names shown are used with all the mono-asp-apps operations that require an application name.
+</p><p>Some applications may require initialization (e.g. creation of a PostgreSQL database). In such cases, the following command must be issued before running the application for the first time:
+</p>
+<pre class="bash" style="font-family:monospace;">    <span style="color: #666666; font-style: italic;"># mono-asp-apps init APPLICATION_NAME</span></pre>
+<p>If everything works fine, you should be prompted to enter the database user password (all the starter kits use the test/test pair as the user login/password). If the PostgreSQL configuration is not valid, you will be informed about the fact and given instructions on how to modify the configuration.
+</p><p>After applications are initialized, the following command should be issued in order to launch the application(s) (bash shell is assumed):
+</p>
+<pre class="bash" style="font-family:monospace;">    <span style="color: #007800;">MONO_IOMAP</span>=all xsp2 <span style="color: #660033;">--root</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>share<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>asp.net<span style="color: #000000; font-weight: bold;">/</span>apps<span style="color: #000000; font-weight: bold;">/</span> <span style="color: #660033;">--appconfigdir</span> <span style="color: #000000; font-weight: bold;">/</span>etc<span style="color: #000000; font-weight: bold;">/</span>xsp<span style="color: #000000; font-weight: bold;">/</span><span style="color: #000000;">2.0</span><span style="color: #000000; font-weight: bold;">/</span>applications-available<span style="color: #000000; font-weight: bold;">/</span></pre>
+<p>After the above command executes successfully, the packaged applications can be accessed with the following URLs:
+</p>
+<ul><li> Blog Starter Kit: <a href="http://localhost:8080/BlogStarterKit/" class="external free" rel="nofollow">http://localhost:8080/BlogStarterKit/</a>
+</li><li> Classifieds Starter Kit: <a href="http://localhost:8080/ClassifiedsStarterKit" class="external free" rel="nofollow">http://localhost:8080/ClassifiedsStarterKit</a>
+</li><li> Club Web Site: <a href="http://localhost:8080/ClubWebSite" class="external free" rel="nofollow">http://localhost:8080/ClubWebSite</a> 
+</li></ul>
+<h2> <span class="mw-headline" id="Download_Repository">Download Repository</span></h2>
+<ul><li> <a href="http://download.opensuse.org/repositories/Mono:/apps" class="external free" rel="nofollow">http://download.opensuse.org/repositories/Mono:/apps</a>
+</li></ul>
+<p>Follow the above link, open distro folder, and then click on noarch.  The rpms are named according to the following convention: Mono_ASP.NET_&lt;name&gt;StarterKit.
+</p>

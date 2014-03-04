@@ -1,0 +1,145 @@
+---
+layout: obsolete
+title: "SystemXamlHacking"
+permalink: /old_site/SystemXamlHacking/
+---
+
+<h1>SystemXamlHacking</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#System.Xaml.dll"><span class="tocnumber">1</span> <span class="toctext">System.Xaml.dll</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Scope"><span class="tocnumber">1.1</span> <span class="toctext">Scope</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Status"><span class="tocnumber">1.2</span> <span class="toctext">Status</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#High_level_status"><span class="tocnumber">1.2.1</span> <span class="toctext">High level status</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#by_tasks"><span class="tocnumber">1.2.2</span> <span class="toctext">by tasks</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#by_language_features"><span class="tocnumber">1.2.3</span> <span class="toctext">by language features</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Code"><span class="tocnumber">1.3</span> <span class="toctext">Code</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Classlib"><span class="tocnumber">1.3.1</span> <span class="toctext">Classlib</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Tests"><span class="tocnumber">1.3.2</span> <span class="toctext">Tests</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="System.Xaml.dll"> System.Xaml.dll </span></h1>
+<p>This page describes our .NET 4 System.Xaml effort.
+</p>
+<h2> <span class="mw-headline" id="Scope"> Scope </span></h2>
+<p>We have System.Xaml.dll which was introduced in the .NET 4.0 API.
+</p><p>Note that there is another effort for managed XAML parser in <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> land (in <a href="http://github.com/mono/moon/tree/master/class/System.Windows/Mono.Xaml/" class="external text" rel="nofollow">Mono.Xaml namespace in System.Windows.dll</a> in its own API.
+</p><p>System.Xaml.dll in .NET 4 is used by WF4 and WPF, but we don't have them yet. Hence supporting WF4 or WPF XAML by this library is out of scope.
+</p>
+<h2> <span class="mw-headline" id="Status"> Status </span></h2>
+<h3> <span class="mw-headline" id="High_level_status"> High level status </span></h3>
+<p>Note that this page describes current status for the latest git HEAD. They don't apply to mono 2.8 or 2.10. Old implementation in 2.8 only had basic type system implementation without read/write support. In 2.10, XAML readers and writers are functional. In post-2-10 implementation, we have added a couple of missing bits and made some bugfixes.
+</p><p>We are almost done with it within current scope of the task. Things like ambient properties are left not implemented (are they useful without WPF?).
+</p><p>See also our <a href="http://go-mono.com/status/status.aspx?reference=4.0&amp;profile=4.0&amp;assembly=System.Xaml" class="external text" rel="nofollow">class library status page for System.Xaml.dll</a>.
+</p>
+<h3> <span class="mw-headline" id="by_tasks"> by tasks </span></h3>
+<p>Since full System.Xaml is not small, I split the tasks into a set of features to make hacking achievable:
+</p>
+<ul><li> tasks already done
+<ul><li> type system foundation: XamlLanguage, XamlType and XamlMember
+</li><li> xaml reader and writer API:
+<ul><li> XamlObjectReader
+</li><li> XamlObjectWriter
+</li><li> XamlXmlReader
+</li><li> XamlXmlWriter
+</li></ul>
+</li><li> read/write of primitive types, Array and Dictionary
+</li><li> Name resolution support - somewhat hacky
+</li><li> markup extension support
+</li><li> XData/IXmlSerializable support
+</li><li> Attachable property support
+</li><li> XamlBackgroundReader (post-2.10)
+</li><li> XamlNodeQueue (post-2.10)
+</li><li> Event support (post-2.10)
+</li><li> ValueSerializer implementation - probably done.
+</li><li> StaticExtension support - probably done (I believe it is not serializable into xml)
+</li></ul>
+</li><li> optional tasks
+<ul><li> Ambient property support
+</li><li> XamlDeferringLoader
+</li><li> XamlNodeList (could be done only after we find it actually used)
+</li><li> XamlLoadPermissions (almost out of scope)
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="by_language_features"> by language features </span></h3>
+<p>All XamlLanguage types are there.
+</p><p>These XamlLanguage directives are supported:
+</p>
+<ul><li> Arguments
+</li><li> Base
+</li><li> FactoryMethod
+</li><li> _Initialization
+</li><li> _Items
+</li><li> Key
+</li><li> Lang
+</li><li> Name
+</li><li> PositionalParameters
+</li><li> TypeArguments
+</li></ul>
+<p>These XamlLanguage directives are not, but not sure if they are really used in terms of XAML readers and writers:
+</p>
+<ul><li> AsyncRecords
+</li><li> ClassAttributes
+</li><li> ClassModifier
+</li><li> Code
+</li><li> ConnectionId
+</li><li> FieldModifier
+</li><li> Members
+</li><li> Subclass
+</li><li> SynchronousMode
+</li><li> Shared
+</li><li> Space
+</li><li> Uid
+</li><li> _UnknownContent
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Code"> Code </span></h2>
+<h3> <span class="mw-headline" id="Classlib"> Classlib </span></h3>
+<p>I have implemented things in certain order: read objects (XamlObjectReader), write to xml (XamlXmlWriter), read back from xml (XamlXmlReader) and write to objects (XamlObjectWriter). This will apply to further XAML tests.
+</p><p>XamlReaderSettings, XamlWriterSettings and their derivatives are not supported much, and there is so far no plan to work on them. We'll do it per request basis.
+</p>
+<h3> <span class="mw-headline" id="Tests"> Tests </span></h3>
+<p>Since we don't have testable WF4 foundation, we only have our own NUnit tests so far.
+</p><p>Both readers and writers differ in their behaviors in some details, we cannot make all the tests common between those readers and writers. But most of basic read/write operations can be common.
+</p><p>Test XmlFiles are originally generated by .NET (XamlServices.Save()) so that we can assume .NET interoperability is somewhat achieved as far as being tested (and now we can generate almost identical xml files).
+</p><p>The tested types are shared (see Test/System.Xaml/TestedTypes.cs). There are already fair amount of tests that strictly (often too strictly) examines reader behaviors, and such tests reside in each test class. Reader tests are shared in XamlReaderTestBase class. For writers, there is nothing much to share. Writer tests are fairly simple anyways.
+</p><p>Types that should be (or actually are) tested include:
+</p>
+<ul><li> primitive types exposed as XamlLanguage's static members, namely:
+<ul><li> Array and ArrayExtension
+</li><li> Type and TypeExtension
+</li><li> NullExtension
+</li><li> Reference and cross-referenced objects, as well as x:Name
+</li><li> MemberDefinition and PropertyDefinition - not really done
+</li><li> StaticExtension - needs some work
+</li><li> XData and IXmlSerializable
+<ul><li> contained by another type
+</li><li> contained by List (that disables special serialization)
+</li></ul>
+</li></ul>
+</li><li> types that are often primitive: Guid, DBNull, DateTime
+</li><li> List and Dictionary
+<ul><li> simple ones
+</li><li> contains Type
+</li><li> contains Array
+</li></ul>
+</li><li> other generic types
+</li><li> custom MarkupExtension
+<ul><li> with working PositionalParameters, non-top-level
+</li><li> with working PositionalParameters, top-level
+</li></ul>
+</li><li> constructor-less types i.e. with FactoryMethod
+</li><li> type and member attributed by TypeConverter
+</li></ul>
+

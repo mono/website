@@ -1,0 +1,21 @@
+---
+layout: obsolete
+title: "Command Line MoMA"
+permalink: /old_site/Command_Line_MoMA/
+---
+
+<h1>Command Line MoMA</h1>
+
+<p>Beginning with version 1.9 of <a href="{{site.baseurl}}/MoMA" title="MoMA">MoMA</a>, you can now run MoMA without showing a GUI.  This is helpful for people who wish to add MoMA scans to their automated builds.  For example, you may have a policy that only Mono supported methods should be used in your application.
+</p><p>To run MoMA from the command line, use:
+</p>
+<pre class="bash" style="font-family:monospace;">MoMA.exe <span style="color: #660033;">--nogui</span> C:\app\myapp.exe</pre>
+<p>If you have several assemblies to scan, you can enter them all:
+</p>
+<pre class="bash" style="font-family:monospace;">MoMA.exe <span style="color: #660033;">--nogui</span> C:\app\myapp.exe C:\app\myapp.dll C:\app\myapp2.dll</pre>
+<p>If you want to specify where the output report goes:
+</p>
+<pre class="bash" style="font-family:monospace;">MoMA.exe <span style="color: #660033;">--nogui</span> <span style="color: #660033;">--out</span> C:\app\momareport\report.html C:\app\myapp.exe</pre>
+<p><br />
+If you encounter bugs, or need additional functionality, you can file a bug in Mono -&gt; Mono: Tools -&gt; MOMA category of bugzilla.  See <a href="{{site.baseurl}}/Bugs" title="Bugs">Bugs</a>.
+</p>

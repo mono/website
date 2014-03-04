@@ -1,0 +1,157 @@
+---
+layout: obsolete
+title: "Workflow"
+permalink: /old_site/Workflow/
+---
+
+<h1>Workflow</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Status"><span class="tocnumber">2</span> <span class="toctext">Status</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Contributions"><span class="tocnumber">3</span> <span class="toctext">Contributions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Roadmap"><span class="tocnumber">4</span> <span class="toctext">Roadmap</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Getting_a_copy"><span class="tocnumber">5</span> <span class="toctext">Getting a copy</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Compiling_samples"><span class="tocnumber">6</span> <span class="toctext">Compiling samples</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Resources"><span class="tocnumber">7</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Other_open_source_workflow_projects"><span class="tocnumber">8</span> <span class="toctext">Other open source workflow projects</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>Welcome to Windows Workflow Foundation Mono implementation.
+</p><p>Windows Workflow Foundation (WF) has been introduced as part of Microsoft .Net 3.0 framework (formerly called WinFX). It is a namespace and a set of tools designed for building workflow enabled applications on .Net.
+</p><p>The WF is implemented using three assemblies: System.Workflow.Activities, System.Workflow.ComponentModel and System.Workflow.Runtime.
+</p><p>Microsoft WF is a very sophisticated workflow engine that supports persistence (hydratation, dehydratation), tracking, visual design, compiling, communications, timer and rules services and it is highly extensible from new activities to new hosts. Windows Workflow Foundation also provides an extensible model and designer to build custom activities which encapsulate workflow functionality for end-users. WWF it is heavily object oriented designed and a bit overbloatted.
+</p><p>Microsoft also allows to define workflows using XOML (Extensible Object Markup Language) and provides a compiler for it. 
+</p>
+<h2> <span class="mw-headline" id="Status"> Status </span></h2>
+<p>This library is in pre-alpha state. Development is still in the very early stages. Bug reports are welcome, provided they don't just point out missing
+classes. Please use <a href="http://bugzilla.ximian.com/" class="external free" rel="nofollow">http://bugzilla.ximian.com/</a>.
+</p><p>This table describes the main features provided by WF and its level of implementation.
+</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Feature
+</th>
+<th> Description
+</th>
+<th> Status
+</th></tr>
+<tr>
+<td> Activities
+</td>
+<td> Collection of different tasks that a workflow can perform.
+</td>
+<td> About 70% of activities are implemented
+</td></tr>
+<tr>
+<td> Communication
+</td>
+<td> Different communications services from Queues to data activities
+</td>
+<td> Queues and some basic communication are implemented.
+</td></tr>
+<tr>
+<td> Compensation
+</td>
+<td> Role back the changes in a not finished workflow.
+</td>
+<td> Not implemented
+</td></tr>
+<tr>
+<td> Compiler services
+</td>
+<td> Services to build compilers from XOML
+</td>
+<td> Not implemented
+</td></tr>
+<tr>
+<td> Dynamic update
+</td>
+<td> Allows updating a workflow that has been already started in run-time
+</td>
+<td> Not implemented
+</td></tr>
+<tr>
+<td> Persistence
+</td>
+<td> Persistence with different providers including databases
+</td>
+<td> Not implemented
+</td></tr>
+<tr>
+<td> Rules
+</td>
+<td> Provide policy execution and CodeDOM condition evaluation
+</td>
+<td> Basic rules and the main CodeDOM rules are implemented
+</td></tr>
+<tr>
+<td> Tracking
+</td>
+<td>
+</td>
+<td> Not implemented
+</td></tr>
+<tr>
+<td> Visual designers
+</td>
+<td> Allow to draw the representation of a workflows on a System.Drawing surface.
+</td>
+<td> Not implemented
+</td></tr></table>
+<h2> <span class="mw-headline" id="Contributions"> Contributions </span></h2>
+<p>Some indications when contributing to this namespace:
+</p>
+<ul><li> Contributions providing only stubs are not useful at this point. Our goal is to have a consistent and complete working implementation. New classes, enumerator or interfaces should be defined as they are need it as progress is made in the implementation.
+</li></ul>
+<ul><li> For every new class or behavior added to a class provide a clear test case to verify its functionality and it to the test case suite for the assembly.
+</li></ul>
+<ul><li> Before committing a change or propose a patch please verify that it does not break any existing test case for any of the three assemblies used to implement WF.
+</li></ul>
+<ul><li> Check the Mono <a href="http://www.mono-project.com/Coding_Guidelines" class="external text" rel="nofollow">Coding Guidelines</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Roadmap"> Roadmap </span></h2>
+<p>Tentative roadmap for WF:
+</p>
+<ul><li> Finish all the activities (including custom ones) and rules. Been able to run the Microsoft technology samples for activities, basic workflows and the OrderStateMachine application.
+</li></ul>
+<ul><li> Complete all the communication services. 
+</li></ul>
+<ul><li> Complete persistence support.
+</li></ul>
+<p>If you are interested in helping in this effort please join the mono-devel-list@lists.ximian.com mailing list, explain your experiencie and how you can help.
+</p>
+<h2> <span class="mw-headline" id="Getting_a_copy"> Getting a copy </span></h2>
+<p>Currently Windows Workflow Foundation (WF) lives in the olive SVN module at mono-cvs.ximian.com subversion.
+</p><p>You can get a copy using an anonymous access:
+</p><p>$ svn co <a href="svn://anonsvn.mono-project.com/source/trunk/olive" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/olive</a>
+</p>
+<h2> <span class="mw-headline" id="Compiling_samples"> Compiling samples </span></h2>
+<p>You can find some samples at class/System.Workflow.Runtime/Samples/. To compile them you should use:
+</p>
+<pre>gmcs sample.cs -pkg:olive</pre>
+<h2> <span class="mw-headline" id="Resources"> Resources </span></h2>
+<ul><li> <a href="http://wf.netfx3.com/" class="external text" rel="nofollow">Microsoft Windows.Workflow community site</a>
+</li></ul>
+<ul><li> <a href="http://msdn.microsoft.com/winfx/technologies/workflow/default.aspx" class="external text" rel="nofollow">Microsoft official site</a>
+</li></ul>
+<ul><li> The book Presenting Windows Workflow Foundation. (<a href="{{site.baseurl}}/Special:BookSources/0672328488" class="internal mw-magiclink-isbn">ISBN 0672328488</a>)
+</li></ul>
+<ul><li> The book Essential Windows Workflow Foundation. (<a href="{{site.baseurl}}/Special:BookSources/0321399838" class="internal mw-magiclink-isbn">ISBN 0321399838</a>)
+</li></ul>
+<ul><li> Microsoft Windows Workflow Foundation Step by Step (<a href="{{site.baseurl}}/Special:BookSources/073562335X" class="internal mw-magiclink-isbn">ISBN 073562335X</a>)
+</li></ul>
+<ul><li> Pro WF:  Windows Workflow in .NET 3.0 (<a href="{{site.baseurl}}/Special:BookSources/1590597788" class="internal mw-magiclink-isbn">ISBN 1590597788</a>)
+</li></ul>
+<h2> <span class="mw-headline" id="Other_open_source_workflow_projects"> Other open source workflow projects </span></h2>
+<ul><li> <a href="http://www.openwfe.org" class="external text" rel="nofollow">OpenWFE</a> is an open source workflow engine. It is implemented in Java and is available under the BSD license.
+</li></ul>
+<ul><li> <a href="http://www.netbpm.org./" class="external text" rel="nofollow">NetBpm</a> is an open source platform for building, executing and managing workflows
+</li></ul>
+<ul><li> <a href="http://www.bigbross.com/bossa/" class="external text" rel="nofollow">Bossa</a> is a workflow engine written in Java
+</li></ul>
+

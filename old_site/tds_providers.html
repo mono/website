@@ -1,0 +1,120 @@
+---
+layout: obsolete
+title: "TDS Providers"
+permalink: /old_site/TDS_Providers/
+---
+
+<h1>TDS Providers</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Design_of_the_Microsoft_SQL_Server.2C_Sybase.2C_and_TDS_Data_Providers_in_Mono"><span class="tocnumber">1</span> <span class="toctext">Design of the Microsoft SQL Server, Sybase, and TDS Data Providers in Mono</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#New_ADO.NET_Providers"><span class="tocnumber">2</span> <span class="toctext">New ADO.NET Providers</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Building_The_New_Providers"><span class="tocnumber">3</span> <span class="toctext">Building The New Providers</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Classes_in_Mono.Data.TdsClient.Internal_will:"><span class="tocnumber">4</span> <span class="toctext">Classes in Mono.Data.TdsClient.Internal will:</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Implementation_Details_of_the_TDS_Protocol"><span class="tocnumber">5</span> <span class="toctext">Implementation Details of the TDS Protocol</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#More_Information"><span class="tocnumber">6</span> <span class="toctext">More Information</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Contribute"><span class="tocnumber">7</span> <span class="toctext">Contribute</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Design_of_the_Microsoft_SQL_Server.2C_Sybase.2C_and_TDS_Data_Providers_in_Mono"> Design of the Microsoft SQL Server, Sybase, and TDS Data Providers in Mono </span></h2>
+<ul><li> After much discussion among the Mono ADO.NET developers,
+</li></ul>
+<p>we have come up with the design of implementing a Sybase, Microsoft SQL Server, and TDS Generic ADO.NET providers. These providers have been created and are actively developed by Tim Coleman.
+</p>
+<ul><li> Since Sybase and Microsoft SQL Server databases both
+</li></ul>
+<p>use the TDS protocol for data access, and other implementations of TDS (FreeTDS and jTDS) have included support for multiple versions of the TDS, we have decided to do the same.
+</p>
+<ul><li> The TdsClient ADO.NET provider will be Mono's first provider
+</li></ul>
+<p>written completely in C# without any dependencies except the usual suspects: corlib.dll, System.dll, and System.Xml.dll.
+</p>
+<h2> <span class="mw-headline" id="New_ADO.NET_Providers"> New ADO.NET Providers </span></h2>
+<ul><li> Mono.Data.SybaseClient namepace and assembly will hold the ADO.NET provider for Sybase SQL Server database. This provider uses TDS version 5.0 which can only be used with Sybase databases.
+</li></ul>
+<ul><li> System.Data.SqlClient namespace and System.Data assembly will hold the ADO.NET provider
+</li></ul>
+<p>for Microsoft SQL Server 7.0/2000 databases. This provider is to be compatible with SqlClient in Microsoft .NET and uses TDS version 7.0 which only supports Microsoft SQL Server 7.0/2000. There is TDS version 8.0 which we will need to support as well, but it is used for Microsoft SQL Server 2000 databases.
+</p>
+<ul><li> Mono.Data.TdsClient namespace and assembly is a generic provider for older TDS databases. This provider will default to using TDS version 4.2 which can be used by older Sybase and Microsoft SQL Server databases.
+</li></ul>
+<h2> <span class="mw-headline" id="Building_The_New_Providers"> Building The New Providers </span></h2>
+<p>All three providers will use common internal code at Mono.Data.TdsClient.Internal. Any classes in Mono.Data.TdsClient.Internal will have the internal keyword and will be built with the assembly of that provider.
+</p>
+<ul><li> SqlClient will build its assembly System.Data using files
+</li></ul>
+<p>from System.Data, System.Data.SqlClient, System.Data.SqlTypes, System.Data.Common, and Mono.Data.TdsClient.Internal.
+</p><p>SqlClient will only reference the usual suspects: corlib.dll, System.dll, and System.Xml.dll. SqlClient will be a wrapper around TdsClient.Internal, but provide specific functionality to Microsoft SQL Server 7.0/2000 databases.
+</p><p>SqlClient build example:
+</p>
+<pre>
+mcs -target:library -out:System.Data.dll \
+System.Data.SqlClient/
+*.cs \ ..\Mono.Data.TdsClient\Mono.Data.TdsClient.Internal\
+*.cs \ [any other classes in System.Data assembly...] \ -r corlib.dll -r System.dll -r System.Xml.dll
+</pre>
+<ul><li> SybaseClient will build its assembly Mono.Data.SybaseClient using files from Mono.Data.SybaseClient and Mono.Data.TdsClient.Internal. SybaseClient will reference the usual suspects plus System.Data.dll SybaseClient will be a wrapper around TdsClient.Internal, but provide specific functionality to Sybase.
+</li></ul>
+<p>SybaseClient build example:
+</p>
+<pre>
+mcs -target:library -out:Mono.Data.SybaseClient.dll \
+Mono.Data.SybaseClient\
+*.cs \ ..\Mono.Data.TdsClient\Mono.Data.TdsClient.Internal\
+*.cs -r corlib.dll -r System.dll -r System.Xml.dll -r System.Data.dll
+</pre>
+<ul><li> TdsClient will build its assembly Mono.Data.TdsClient
+</li></ul>
+<p>using files from Mono.Data.TdsClient
+and Mono.Data.TdsClient.Internal. TdsClient will reference the usual suspects plus System.Data.dll TdsClient is a wrapper provider around TdsClient.Internal used for generic unit tests. TdsClient will a wrapper around TdsClient.Internal as a generic TDS provider and allow TDS configuration options not exposed in SqlClient nor SybaseClient, such as, TdsVersion will be exposed in TdsClient but not in SqlClient nor SybaseClient.
+</p><p>TdsClient build example:
+</p>
+<pre>
+ mcs -target:library -out:Mono.Data.TdsClient.dll \
+Mono.Data.TdsClient\
+*.cs \ Mono.Data.TdsClient.Internal\
+*.cs \ -r corlib.dll -r System.dll -r System.Xml.dll -r System.Data.dll
+</pre>
+<p>&lt;/ol&gt;
+</p>
+<h2> <span class="mw-headline" id="Classes_in_Mono.Data.TdsClient.Internal_will:"> Classes in Mono.Data.TdsClient.Internal will: </span></h2>
+<ul><li> use the internal keyword to prevent exposing these classes to the System.Data.dll assembly.
+</li></ul>
+<ul><li>  implement the ADO.NET interfaces just like any other ADO.NET provider, such as, IDbConnection, IDbCommand, IDataReader, IDataRecord, IDataAdapter, etc...
+</li></ul>
+<ul><li>  be sealed just like other providers
+</li></ul>
+<ul><li>  provide features to be directly used by the SqlClient and SybaseClient providers, such as, setting the default TDS version: SqlClient to 7.0 and SybaseClient to 5.0 and TdsClient to 4.2.
+</li></ul>
+<ul><li>  be written completely in C# or IL assembly language (if need be).
+</li></ul>
+<ul><li>  implement the TDS protocol version 4.2, 5.0, 7.0, and 8.0. This
+</li></ul>
+<p>is where most of the work will take place.
+</p>
+<ul><li>  be an internal ADO.NET provider to the public ADO.NET providers:
+</li></ul>
+<p>System.Data.SqlClient, Mono.Data.SybaseClient, and Mono.Data.TdsClient.
+</p>
+<h2> <span class="mw-headline" id="Implementation_Details_of_the_TDS_Protocol"> Implementation Details of the TDS Protocol </span></h2>
+<ul><li> will be implemented in pure C# from scratch
+</li></ul>
+<ul><li> will reside in Mono.Data.TdsClient.Internal
+</li></ul>
+<ul><li> will use FreeTDS and jTDS as rerferences.
+</li></ul>
+<h2> <span class="mw-headline" id="More_Information"> More Information </span></h2>
+<ul><li> <a href="http://www.freetds.org/" class="external text" rel="nofollow">FreeTDS</a> is C API that implements
+</li></ul>
+<p>the TDS protocol. Has libraries for tds, ctlib, and dblib. It builds and runs on Windows, Linux, and other platforms. FreeTDS provides data access to Microsoft SQL Server and Sybase databases.
+</p>
+<ul><li> <a href="http://jtds.sf.net/" class="external text" rel="nofollow">jTDS</a> is a 100% Java JDBC provider
+</li></ul>
+<p>for Microsoft SQL Server and Sybase databases.
+</p>
+<ul><li> <a href="http://www.freetds.org/tds.html" class="external text" rel="nofollow">TDS Protocol</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Contribute"> Contribute </span></h2>
+<p>Anybody willing to help? If so, contact any of the people working on the ADO.NET support in Mono: Rodrigo Moya, Tim Coleman, Daniel Morgan, Brian Ritchie, Vladimir Vukicevic, Ville Palo, Franklin Wise, and others.
+</p>

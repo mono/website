@@ -1,0 +1,545 @@
+---
+layout: obsolete
+title: "GtkSharpBeginnersGuide"
+permalink: /old_site/GtkSharpBeginnersGuide/
+---
+
+<h1>GtkSharpBeginnersGuide</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Preface"><span class="tocnumber">1</span> <span class="toctext">Preface</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What_is_Gtk.23.3F"><span class="tocnumber">1.1</span> <span class="toctext">What is Gtk#?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Getting_Set_Up"><span class="tocnumber">2</span> <span class="toctext">Getting Set Up</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Download.2FInstall_GTK.23"><span class="tocnumber">2.1</span> <span class="toctext">Download/Install GTK#</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Inside_the_GTK.23_libraries"><span class="tocnumber">2.2</span> <span class="toctext">Inside the GTK# libraries</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Choosing_Gtk.23_or_Glade.23"><span class="tocnumber">2.3</span> <span class="toctext">Choosing Gtk# or Glade#</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Your_first_GTK.23_application"><span class="tocnumber">3</span> <span class="toctext">Your first GTK# application</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Step_1:_Get_Comfortable"><span class="tocnumber">3.1</span> <span class="toctext">Step 1: Get Comfortable</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Step_2:_Create_our_folder_and_files"><span class="tocnumber">3.2</span> <span class="toctext">Step 2: Create our folder and files</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Step_3:_Laying_it_out"><span class="tocnumber">3.3</span> <span class="toctext">Step 3: Laying it out</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Step_4:_Adding_the_GUI"><span class="tocnumber">3.4</span> <span class="toctext">Step 4: Adding the GUI</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Step_5:_Laying_out_the_window"><span class="tocnumber">3.5</span> <span class="toctext">Step 5: Laying out the window</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Step_6:_Adding_Events"><span class="tocnumber">3.6</span> <span class="toctext">Step 6: Adding Events</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Your_First_Glade.23_Application"><span class="tocnumber">4</span> <span class="toctext">Your First Glade# Application</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Step_1:_What_is_Glade.23"><span class="tocnumber">4.1</span> <span class="toctext">Step 1: What is Glade#</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#What_are_glade_files.3F"><span class="tocnumber">4.1.1</span> <span class="toctext">What are glade files?</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#What_does_a_.glade_file_look_like.3F"><span class="tocnumber">4.1.2</span> <span class="toctext">What does a .glade file look like?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href="#Step_2:_Integrating_Glade_files_with_our_program"><span class="tocnumber">4.2</span> <span class="toctext">Step 2:  Integrating Glade files with our program</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#How_to_compile.3F"><span class="tocnumber">4.2.1</span> <span class="toctext">How to compile?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Step_3:_How_to_use_Glade.23_in_my_code"><span class="tocnumber">4.3</span> <span class="toctext">Step 3: How to use Glade# in my code</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#How_to_refer_to_widgets_defined_in_gui.glade"><span class="tocnumber">4.4</span> <span class="toctext">How to refer to widgets defined in gui.glade</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#How_to_Adding_Events"><span class="tocnumber">4.5</span> <span class="toctext">How to Adding Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#References_and_Further_Reading.2FViewing"><span class="tocnumber">4.5.1</span> <span class="toctext">References and Further Reading/Viewing</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Preface">Preface</span></h1>
+<p>This article is a beginners guide to Gtk# programming.  It will help those who have never programmed a Gtk+ GUI before to get started.  Programmers familiar with the Gtk+ API from other languages (e.g. C, C++, perl, python) will also find it useful as it  explains the basic process under Mono/C#.  The article also introduces the use of Glade and libglade as a process for rapidly implementing graphic user interfaces.
+</p>
+<h2> <span class="mw-headline" id="What_is_Gtk.23.3F">What is Gtk#?</span></h2>
+<p><a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">Gtk#</a> put simply is a wrapper on <a href="http://www.gtk.org" class="external text" rel="nofollow">gtk+</a>, a cross platform GUI framework. 
+</p><p>Adapted from the <a href="http://www.gtk.org/" class="external text" rel="nofollow">gtk+ website</a>: <i>gtk+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, gtk+ is suitable for projects ranging from small one-off toys to Enterprise application suites.</i>
+</p><p>Currently gtk+ works natively on any X server, Direct Framebuffer system and Microsoft Windows NT derivitives. The library originates from Linux where it provides a basis for the popular <a href="http://www.gnome.org/" class="external text" rel="nofollow">GNOME</a> desktop environment.  gtk+ is routinely included in most Linux distributions, and has been stable on Windows NT derivitives for quite a while now (probably roughly around 2000, if my memory serves me correctly).
+</p><p>A native port to Mac OSX is planned but needs warm bodies.  This is a call for participation.
+</p><p>One common misconception is that GTK# requires Mono to work. This is far from the truth. GTK# will run on any .NET compatible runtime. GTK# is regularly tested on MS.NET and Mono but should run on any fully compliant runtime.  This means if you write your applications in GTK# and wished to run on Windows as well, you can choose to deploy with just GTK# and use Microsoft's runtime, or alternately deploy with Mono's runtime for Windows.
+</p>
+<h1> <span class="mw-headline" id="Getting_Set_Up">Getting Set Up</span></h1>
+<h2> <span class="mw-headline" id="Download.2FInstall_GTK.23">Download/Install GTK#</span></h2>
+<p>First thing you will want to do is get your GTK# install up and running. 
+</p><p><b>Linux, MacOSX, FreeBSD, and others:</b> 
+See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> to find a package that works for you. In the worst case, you may be forced to build yourself from source. 
+</p><p><b>Windows:</b>
+If you are using Windows, pick yourself up a copy of the integrated installer from that <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> page. You might also like to grab a copy of the Gtk# integration package for Visual Studio which will allow you to use GTK# with Microsoft's Visual Studio without installing the rest of Mono.
+</p>
+<h2> <span class="mw-headline" id="Inside_the_GTK.23_libraries">Inside the GTK# libraries</span></h2>
+<table border="0" cellpadding="5" cellspacing="0">
+   <tr>
+    <td colspan="2"><b>Gtk# Components</b><br />Gtk# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.  
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gtk-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Glib" class="external text" rel="nofollow">glib-sharp</a></td>
+      <td>Portions of the glib 2.x libraries which provide a low-level non-GUI core library for gtk+.</td>
+   </tr> 
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Pango" class="external text" rel="nofollow">pango-sharp</a></td>
+      <td>The <a href="http://www.pango.org" class="external text" rel="nofollow">Pango</a> international text layout and rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Atk" class="external text" rel="nofollow">atk-sharp</a></td>
+      <td>The atk Accessibility framework.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gdk" class="external text" rel="nofollow">gdk-sharp</a></td>
+      <td>Drawing Kit using by gtk+.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gtk" class="external text" rel="nofollow">gtk-sharp</a></td>
+      <td>The Gtk 2.x toolkit, a cross-platform toolkit for creating graphical user interfaces</td>
+   </tr> 
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Glade" class="external text" rel="nofollow">glade-sharp</a></td>
+      <td>Supports dynamic loading of <a href="http://glade.gnome.org" class="external text" rel="nofollow">Glade</a> interface builder files.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gtk.DotNet" class="external text" rel="nofollow">gtk-dotnet</a></td>
+      <td>Integration of the Gtk# namespace with System.Drawing.</td>
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gnome-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Art" class="external text" rel="nofollow">art-sharp</a></td>
+      <td>A vector and rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gnome" class="external text" rel="nofollow">gnome-sharp</a><font color="red"><b>*</b></font></td>
+      <td><a href="http://www.gnome.org" class="external text" rel="nofollow">GNOME</a> program initialization, printing, panel access, and assorted widgets.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:GnomeVfs" class="external text" rel="nofollow">gnomevfs-sharp</a><font color="red"><b>*</b></font></td>
+      <td>File, MIME type, icon, and various GNOME file system interaction functionality. </td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:GConf" class="external text" rel="nofollow">gconf-sharp</a><font color="red"><b>*</b></font></td>
+      <td>Configuration storage system on Gnome</td>
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gnome-desktop-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/T:Gtk.HTML" class="external text" rel="nofollow">gtkhtml-sharp</a><font color="red"><b>*</b></font></td>
+      <td>A lightweight HTML widget.</td>
+    </tr>
+   <tr>
+      <td>gtksourceview2-sharp<font color="red"><b>*</b></font></td>
+      <td>A source code editing and viewing widget library.</td>
+    </tr>
+    <tr>
+      <td>nautilusburn-sharp<font color="red"><b>*</b></font></td>
+      <td>GNOME CD/DVD burning library.</td>
+   </tr>
+    <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Rsvg" class="external text" rel="nofollow">rsvg-sharp</a></td>
+      <td>SVG rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Vte" class="external text" rel="nofollow">vte-sharp</a><font color="red"><b>*</b></font></td>
+      <td>The VTE terminal emulator.</td>
+   </tr>
+    <tr>
+      <td>wnck-sharp<font color="red"><b>*</b></font></td>
+      <td>Window navigator construction kit library.</td>
+   </tr>
+</table>
+<p><font color="red"><b>*</b></font> <i>Not not available on the Windows GTK# package</i>
+</p>
+<h2> <span class="mw-headline" id="Choosing_Gtk.23_or_Glade.23">Choosing Gtk# or Glade#</span></h2>
+<p>When people start out they sometimes get confused on what to use, Gtk# or Glade#. For that you need to understand what Glade# is and what Gtk# is. Gtk# is the core of the windowing and widget system (a widget is like a control in SWF).  Glade# inherits Gtk# so its a subset of Gtk# and usually compatible, but it automatically layouts out the widgets with an XML based resource file. The XML to layout your GUI can be generated with the Glade tool, a WYSIWYG GUI designer studio.
+</p><p>For most windows, Glade# is perfect. It saves time by cutting out all the code to generate the UI and makes it very easy to change in the future. The problem is, depending on what you are doing, Glade# can get annoying and sometimes its impossible to do what you want to do sometimes when your window does something special (hide elements, dynamically load new parts, re-parent widgets, etc. ). Only experience can help you understand which is best for each use.
+</p><p>For a quick introduction to Glade# you might wish to take a look at <a href="http://nat.org/demos/gtksharp.html" class="external text" rel="nofollow">this screencast</a> by <a href="http://nat.org" class="external text" rel="nofollow">Nat Friedman</a> in which hey creates a simple graphical application in just a couple of minutes.
+</p>
+<h1> <span class="mw-headline" id="Your_first_GTK.23_application">Your first GTK# application</span></h1>
+<h2> <span class="mw-headline" id="Step_1:_Get_Comfortable">Step 1: Get Comfortable</span></h2>
+<p>We need to get comfortable. Get a Dr. Pepper and turn on some music. Good, now we are ready.
+</p>
+<h2> <span class="mw-headline" id="Step_2:_Create_our_folder_and_files">Step 2: Create our folder and files</span></h2>
+<p>The first part we need to do is create a new folder for our little project. (Windows users: Lets avoid spaces in the folder name just to take out any headaches). 
+</p><p>You will then want to open a shell (if you are on windows, open the Start menu and go to "Programs-&gt;Mono 1.x.x-&gt;Mono Command Prompt" and will set up your paths so you don't have to do anything extra). You will want to cd to that directory we just created. We are going to be using this window a lot, so leave it running in the background.
+</p><p>Now go ahead, open up your favorite editor (MonoDevelop, vi, emacs, notepad, etc.) and set up a new blank project (if applicable) and create a new blank file. Go ahead and save this file as "helloworld.cs". 
+</p>
+<h2> <span class="mw-headline" id="Step_3:_Laying_it_out">Step 3: Laying it out</span></h2>
+<p>I'm assuming that you are familiar with C#, so most of this will look normal. We will need to create a new to reference Gtk# and create a new class and entry point for out application. It should look something like this.
+</p><p><br />
+</p>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GtkHelloWorld <span style="color: #008000;">&#123;</span>
+&#160;
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+     Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;HelloWorld&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>    
+   <span style="color: #008000;">&#125;</span>
+&#160;
+ <span style="color: #008000;">&#125;</span></pre>
+<p>That should look pretty familiar to you. Just so we can get used to using the command compiler lets go ahead and save this. Then switch back to our shell window and go ahead and run:
+</p>
+<pre>mcs -pkg:gtk-sharp-2.0 helloword.cs
+</pre>
+<p>To some of you that have used the csc compiler on windows may notice the "-pkg:" as a little odd. This doesn't exist in csc because Mono comes from the world of Linux. What that does is lookup for a package config file under that name. In the package config folder exists a file name "gtk-sharp-2.0.pc" which contains (amongst other information) on the location of the libraries for that package. That way we don't have to type out "-r:gtk-sharp-2.0.dll -r:atk-sharp-2.0.dll -r:pango-sharp-2.0.dll ...." all by hand.
+</p>
+<h2> <span class="mw-headline" id="Step_4:_Adding_the_GUI">Step 4: Adding the GUI</span></h2>
+<p>Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" statement. The first thing we are going to do is create a new window. We do this by adding a new Window statement and an application block (to start the main thread loop). Like so:
+</p>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GtkHelloWorld <span style="color: #008000;">&#123;</span>
+&#160;
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+     Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+     <span style="color: #008080; font-style: italic;">//Create the Window</span>
+     Window myWin <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;My first GTK# Application! &quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     myWin<span style="color: #008000;">.</span><span style="color: #0000FF;">Resize</span><span style="color: #008000;">&#40;</span><span style="color: #FF0000;">200</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+     <span style="color: #008080; font-style: italic;">//Create a label and put some text in it.     </span>
+     Label myLabel <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     myLabel<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Hello World!!!!&quot;</span><span style="color: #008000;">;</span>
+&#160;
+     <span style="color: #008080; font-style: italic;">//Add the label to the form     </span>
+     myWin<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>myLabel<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+     <span style="color: #008080; font-style: italic;">//Show Everything     </span>
+     myWin<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+     Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>   
+   <span style="color: #008000;">&#125;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<p>Now just compile like we did before and run it using `mono HelloWorld.exe` and you should get something like this:
+</p><p><a href="{{site.baseurl}}/images/old_site/9/9d/Screenshot-MyfirstGTKApp.png" class="image" title="HelloWorld.exe running..."><img alt="HelloWorld.exe running..." src="{{site.baseurl}}/images/old_site/9/9d/Screenshot-MyfirstGTKApp.png" width="224" height="239" /></a>
+</p><p>Pretty easy, isn't it?"
+</p><p>The first thing that you might notice, if you have used System.Windows.Forms is that we didn't add any layout code for our label. For example we didn't say 'myLabel.Left = 100' or 'myLabel.Width = 200' or anything that to add the label to the form, and just simply said 'myWin.Add(...)'. This is because a 'Gtk.Window' is a widget that inherits from a '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Box" class="external text" rel="nofollow">Bin</a>', or single widget hosting '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Container" class="external text" rel="nofollow">Container</a>'. 
+</p><p>The other part you may be interested in is what the "Application.Init()" and "Application.Run()" statements are for. If you have ever used System.Windows.Forms, its similar to "Application.Run()" in many ways. Normally, when the application gets done processing any code on its main thread the application will stop. Since "ShowAll()" doesn't block the code would continue on and shut down. The "Application.Init()" command tells the runtime to listen for any Gtk.Windows launched and when you run the run command it starts a the main loop on those windows. This keeps the application running until all the windows are closed. For more information check out the Monodoc information on the <a href="http://www.go-mono.com/docs/index.aspx?tlink=6@ecma%3a830%23Application%2f" class="external text" rel="nofollow">Application</a> object.
+</p>
+<h2> <span class="mw-headline" id="Step_5:_Laying_out_the_window">Step 5: Laying out the window</span></h2>
+<p>Now you maybe asking yourself, "How do you then add more then one widget to a window if it can only contain one widget?". Well like before how we said that a Window was a widget with a single widget container, well we have other widgets that have the ability to contain multiple widgets at the same time. Some of those widgets will inherit from a '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Box" class="external text" rel="nofollow">Gtk.Box</a>' container widget or from the container widget directly in some cases. A Bin container widget inherits form the container widget directly as well, just like all other widget containers, but a Bin can only contain one control. 
+</p><p>In order to have multiple widgets on our Window (since its a Bin) we need to add one of these widgets that can contain multiple widgets. There are tons of controls that can do this but we will concern ourselves at this point with a few of the basic ones like '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.HBox" class="external text" rel="nofollow">HBox</a>', '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.VBox" class="external text" rel="nofollow">VBox</a>', and maybe a '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Table" class="external text" rel="nofollow">Table</a>'. 
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Step_6:_Adding_Events">Step 6: Adding Events</span></h2>
+<p>All the classes that derive from '<a href="http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Box" class="external text" rel="nofollow">Widget</a>' provide the following events:
+</p>
+<ul><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ButtonPressEvent" class="external text" rel="nofollow">ButtonPressEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ButtonReleaseEvent" class="external text" rel="nofollow">ButtonReleaseEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ScrollEvent" class="external text" rel="nofollow">ScrollEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.MotionNotifyEvent" class="external text" rel="nofollow">MotionNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.DeleteEvent" class="external text" rel="nofollow">DeleteEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.DestroyEvent" class="external text" rel="nofollow">DestroyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ExposeEvent" class="external text" rel="nofollow">ExposeEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.KeyPressEvent" class="external text" rel="nofollow">KeyPressEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.KeyReleaseEvent" class="external text" rel="nofollow">KeyReleaseEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.EnterNotifyEvent" class="external text" rel="nofollow">EnterNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.LeaveNotifyEvent" class="external text" rel="nofollow">LeaveNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ConfigureEvent" class="external text" rel="nofollow">ConfigureEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.FocusInEvent" class="external text" rel="nofollow">FocusInEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.FocusOutEvent" class="external text" rel="nofollow">FocusOutEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.MapEvent" class="external text" rel="nofollow">MapEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.UnmapEvent" class="external text" rel="nofollow">UnmapEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.PropertyNotifyEvent" class="external text" rel="nofollow">PropertyNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionClearEvent" class="external text" rel="nofollow">SelectionClearEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionRequestEvent" class="external text" rel="nofollow">SelectionRequestEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionNotifyEvent" class="external text" rel="nofollow">SelectionNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ProximityInEvent" class="external text" rel="nofollow">ProximityInEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ProximityOutEvent" class="external text" rel="nofollow">ProximityOutEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.VisibilityNotifyEvent" class="external text" rel="nofollow">VisibilityNotifyEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ClientEvent" class="external text" rel="nofollow">ClientEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.NoExposeEvent" class="external text" rel="nofollow">NoExposeEvent</a>
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.WindowStateEvent" class="external text" rel="nofollow">WindowStateEvent</a>
+</li></ul>
+<p><br />
+Many of these events can be handled with a standard event handler. For example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> HandlerMethod<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span></pre>  
+<p>For example, to handle a button click event:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> ButtonPressHandler<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, ButtonPressEventArgs args<span style="color: #008000;">&#41;</span></pre>
+<p>ButtonPressEventArgs is a class derived from EventArgs.  The class ButtonPressEventArgs, like many others in Gtk#, adds a the property Gtk.Event (or something derived from Gtk.Event) to EventArgs.
+</p><p>Gdk.Event types are:
+</p>
+<ul><li> EventType.Nothing
+</li><li> EventType.Delete
+</li><li> EventType.Destroy
+</li><li> EventType.Expose
+</li><li> EventType.MotionNotify
+</li><li> EventType.ButtonPress
+</li><li> EventType.TwoButtonPress
+</li><li> EventType.ThreeButtonPress
+</li><li> EventType.ButtonRelease
+</li><li> EventType.KeyPress
+</li><li> EventType.KeyRelease
+</li><li> EventType.EnterNotify
+</li><li> EventType.LeaveNotify
+</li><li> EventType.FocusChange
+</li><li> EventType.Configure
+</li><li> EventType.Map
+</li><li> EventType.Unmap
+</li><li> EventType.PropertyNotify
+</li><li> EventType.SelectionClear
+</li><li> EventType.SelectionRequest
+</li><li> EventType.SelectionNotify
+</li><li> EventType.ProximityIn
+</li><li> EventType.ProximityOut
+</li><li> EventType.DragEnter
+</li><li> EventType.DragLeave
+</li><li> EventType.DragMotion
+</li><li> EventType.DragStatus
+</li><li> EventType.DropStart
+</li><li> EventType.DropFinished
+</li><li> EventType.ClientEvent
+</li><li> EventType.VisibilityNotify
+</li><li> EventType.NoExpose
+</li><li> EventType.Scroll
+</li><li> EventType.WindowState
+</li><li> EventType.Setting
+</li></ul>
+<p>For example, to use the event Gdk.Event, we could use something like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gdk</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">...</span>
+    <span style="color: #0000FF;">widget</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ButtonPressEvent</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ButtonPressEventHandler<span style="color: #008000;">&#40;</span>ButtonPressHandler<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">...</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> ButtonPressHandler<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, ButtonPressEventArgs args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// single click</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Type</span> <span style="color: #008000;">==</span> EventType<span style="color: #008000;">.</span><span style="color: #0000FF;">ButtonPress</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #008000;">...</span>
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #008080; font-style: italic;">// double click</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Type</span> <span style="color: #008000;">==</span> EventType<span style="color: #008000;">.</span><span style="color: #0000FF;">TwoButtonPress</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #008000;">...</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">// the left button was used</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Button</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #008000;">...</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span></pre>
+<p>In the above example you can see how we can determine whether the mouse was clicked only once or if it was double clicked.
+</p>
+<h1> <span class="mw-headline" id="Your_First_Glade.23_Application">Your First Glade# Application</span></h1>
+<h2> <span class="mw-headline" id="Step_1:_What_is_Glade.23">Step 1: What is Glade#</span></h2>
+<p>Glade# is a libglade binding in C# to allow us to easily design GUI applications using visual tools and save them to in a format which the application can use at run time to create the interface.  Two tools exist at the present for generating glade-format files: <a href="http://glade.gnome.org/" class="external text" rel="nofollow">Glade</a> and of course <a href="http://mysterion.org/~danw/blog/2005/03/stetic" class="external text" rel="nofollow">Stetic</a>.
+</p>
+<h3> <span class="mw-headline" id="What_are_glade_files.3F">What are glade files?</span></h3>
+<p>Files written in an XML format that represent designs for Gtk+ graphical interfaces; saving all its attributes and properties.
+</p>
+<h3> <span class="mw-headline" id="What_does_a_.glade_file_look_like.3F">What does a .glade file look like?</span></h3>
+<p>file: gui.glade
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">standalone</span>=<span style="color: #ff0000;">&quot;no&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span> <span style="color: #808080; font-style: italic;">&lt;!--*- mode: xml -*--&gt;</span>
+<span style="color: #00bbdd;">&lt;!DOCTYPE glade-interface SYSTEM &quot;http://glade.gnome.org/glade-2.0.dtd&quot;&gt;</span>
+&#160;
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;glade-interface<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;widget</span> <span style="color: #000066;">class</span>=<span style="color: #ff0000;">&quot;GtkWindow&quot;</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;window1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;visible&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;title&quot;</span> <span style="color: #000066;">translatable</span>=<span style="color: #ff0000;">&quot;yes&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>Glade Window<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;type&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_WINDOW_TOPLEVEL<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;window_position&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_WIN_POS_CENTER<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;modal&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;default_width&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>256<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;default_height&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>256<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;resizable&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;destroy_with_parent&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;decorated&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;skip_taskbar_hint&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;skip_pager_hint&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;type_hint&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GDK_WINDOW_TYPE_HINT_NORMAL<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;gravity&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GDK_GRAVITY_NORTH_WEST<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;focus_on_map&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;widget</span> <span style="color: #000066;">class</span>=<span style="color: #ff0000;">&quot;GtkScrolledWindow&quot;</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;scrolledwindow1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;visible&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;can_focus&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;hscrollbar_policy&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_POLICY_ALWAYS<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;vscrollbar_policy&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_POLICY_ALWAYS<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;shadow_type&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_SHADOW_IN<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;window_placement&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_CORNER_TOP_LEFT<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;widget</span> <span style="color: #000066;">class</span>=<span style="color: #ff0000;">&quot;GtkLayout&quot;</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;layout1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;visible&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;width&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>400<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;height&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>400<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;hadjustment&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0 0 400 10 212.4 236<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;vadjustment&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0 0 400 10 212.4 236<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;widget</span> <span style="color: #000066;">class</span>=<span style="color: #ff0000;">&quot;GtkLabel&quot;</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;label1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;width_request&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>38<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;height_request&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>17<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;visible&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;label&quot;</span> <span style="color: #000066;">translatable</span>=<span style="color: #ff0000;">&quot;yes&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>label1<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;use_underline&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;use_markup&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;justify&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_JUSTIFY_LEFT<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;wrap&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;selectable&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;xalign&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0.5<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;yalign&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0.5<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;xpad&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;ypad&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;ellipsize&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>PANGO_ELLIPSIZE_NONE<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;width_chars&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>-1<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;single_line_mode&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>False<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;angle&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>0<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/widget<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;packing<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;x&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>96<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;y&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>88<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/packing<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;widget</span> <span style="color: #000066;">class</span>=<span style="color: #ff0000;">&quot;GtkButton&quot;</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;button1&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;width_request&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>60<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;height_request&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>27<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;visible&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;can_focus&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;label&quot;</span> <span style="color: #000066;">translatable</span>=<span style="color: #ff0000;">&quot;yes&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>button1<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;use_underline&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;relief&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>GTK_RELIEF_NORMAL<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;focus_on_click&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>True<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/widget<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;packing<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;x&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>88<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;property</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;y&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>168<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/property<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/packing<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/widget<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/widget<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/child<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/widget<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/glade-interface<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The .glade file provides all of the information that the libglade library needs  to be able to recreate your GUI design.
+</p>
+<h2> <span class="mw-headline" id="Step_2:_Integrating_Glade_files_with_our_program">Step 2:  Integrating Glade files with our program</span></h2>
+<p>It is assumed that a .glade has already been generated in some way, whether with Glade or with Stetic, a video about Stetic can be seen <a href="http://mysterion.org/~danw/blog/2005/03/steticzilla.html" class="external text" rel="nofollow">here</a>.
+</p><p>For purposes of this example we assumed that the GUI was saved to a file called gui.glade, it should contain the definition of a window called <i>window1</i>, a button called <i>button1</i> and a label called <i>label1</i>.
+</p><p>We will need to create a new reference to Gtk# and Glade# and then create a new class and entry point for our application. Something like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// file: glade.cs</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Glade</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GladeApp
+<span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+                <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GladeApp <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> GladeApp <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> 
+        <span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> gxml <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">null</span>, <span style="color: #666666;">&quot;gui.glade&quot;</span>, <span style="color: #666666;">&quot;window1&quot;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                gxml<span style="color: #008000;">.</span><span style="color: #0000FF;">Autoconnect</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h3> <span class="mw-headline" id="How_to_compile.3F">How to compile?</span></h3>
+<p>Now we need to compile our source file glade.cs referring to the namespace for glade which is in the glade-sharp DLL, the compilation command is the following:
+</p><p>$ mcs -pkg:glade-sharp-2.0 -resource:gui.glade glade.cs
+</p><p>With this command we create a program called glade.exe, the <i>-resource</i> option embeds our gui.glade file into the executable.
+</p><p>By passing <i>null</i> as the first parameter to the Glade.XML constructor we are telling libglade to load the glade file from a resource, alternate uses of the the constructor allow the file to be loaded from the file system, this can be especially useful whilst developing your GUI as it means you don't have to recompile each time you make a change in your .glade file.
+</p><p>If we execute the program our GUI should pop up, however, clicking the button will have no effect as we haven't assigned any events to the widgets defined in the gui.glade file, go to the next section to learn how to do this.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Step_3:_How_to_use_Glade.23_in_my_code">Step 3: How to use Glade# in my code</span></h2>
+<h2> <span class="mw-headline" id="How_to_refer_to_widgets_defined_in_gui.glade">How to refer to widgets defined in gui.glade</span></h2>
+To access an object defined in our gui.glade file you should know the name of the object and its type, and then add it to your C# code in the following way, note the <pre class="nowiki" style="font-family:monospace;">[Widget]</pre> attribute.
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Widget<span style="color: #008000;">&#93;</span>
+Type name<span style="color: #008000;">;</span></pre>
+<p>We apply these definitions to our example as follows:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Glade</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GladeApp
+<span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+                <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GladeApp <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> GladeApp <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> 
+        <span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> gxml <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">null</span>, <span style="color: #666666;">&quot;gui.glade&quot;</span>, <span style="color: #666666;">&quot;window1&quot;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                gxml<span style="color: #008000;">.</span><span style="color: #0000FF;">Autoconnect</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>                                                          
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+       <span style="color: #008000;">&#91;</span>Widget<span style="color: #008000;">&#93;</span>
+       Button button1<span style="color: #008000;">;</span>
+&#160;
+       <span style="color: #008000;">&#91;</span>Widget<span style="color: #008000;">&#93;</span>
+       Label label1<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="How_to_Adding_Events">How to Adding Events</span></h2>
+<p>For adding events you need to follow the same steps for any other event, you can also add events from Glade.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Glade</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GladeApp
+<span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+                <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GladeApp <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> GladeApp <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> 
+        <span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> gxml <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">null</span>, <span style="color: #666666;">&quot;gui.glade&quot;</span>, <span style="color: #666666;">&quot;window1&quot;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                gxml<span style="color: #008000;">.</span><span style="color: #0000FF;">Autoconnect</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                button1<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> OnPressButtonEvent<span style="color: #008000;">;</span>
+&#160;
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+       <span style="color: #008000;">&#91;</span>Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">Widget</span><span style="color: #008000;">&#93;</span>
+       Button button1<span style="color: #008000;">;</span>
+&#160;
+       <span style="color: #008000;">&#91;</span>Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">Widget</span><span style="color: #008000;">&#93;</span>
+       Label label1<span style="color: #008000;">;</span>
+&#160;
+       <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> OnPressButtonEvent<span style="color: #008000;">&#40;</span> <span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs e<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+           Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Button press&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+           label1<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Mono&quot;</span><span style="color: #008000;">;</span>  
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Subsequently we will see the complete code to use events for defined objects in our gui.glade file. The code above will solve the crashing from the code used more lines above.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="References_and_Further_Reading.2FViewing">References and Further Reading/Viewing</span></h3>
+<ul><li> <a href="http://nat.org/demos/gtksharp.html" class="external text" rel="nofollow">Gtk# Screencast</a> - A screencast video by Nat Friedman that clearly demonstrates the use of Glade with C#/Mono
+</li><li> <a href="http://gtk-sharp.sourceforge.net/" class="external text" rel="nofollow">Gtk# website</a> - Official website of Gtk#
+</li><li> <a href="http://glade.gnome.org/" class="external text" rel="nofollow">Glade website</a> - Official website of Glade
+</li><li> <a href="http://developer.novell.com/wiki/index.php/Glade-Sharp_and_Gecko-Sharp" class="external text" rel="nofollow">Glade# and Gecko#</a> - Sample application showing how to make a simple web-browser using Gtk#, Glade# and Gecko#
+</li><li> <a href="http://mysterion.org/~danw/blog/2005/03/steticzilla.html" class="external text" rel="nofollow">Steticzilla</a> - Screencast video by <a href="http://mysterion.org/~danw/blog/" class="external text" rel="nofollow">danw</a> showing the construction of a simple Mozilla based browser using Stetic
+</li><li> <a href="http://www.gotmono.com/docs/gnome/bindings/glade/glade.html" class="external text" rel="nofollow">Glade - Rapid Application Development with Gnome 2</a> - Another tutorial on Glade#, includes details on how to embed .glade files into your .exe
+</li></ul>
+

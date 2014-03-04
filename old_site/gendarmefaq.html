@@ -1,0 +1,118 @@
+---
+layout: obsolete
+title: "Gendarme.FAQ"
+permalink: /old_site/Gendarme.FAQ/
+---
+
+<h1>Gendarme.FAQ</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General"><span class="tocnumber">1</span> <span class="toctext">General</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Is_Gendarme_a_C.23_source_checking_tool_.3F"><span class="tocnumber">1.1</span> <span class="toctext">Is Gendarme a C# source checking tool&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Which_versions_of_the_.NET_framework_are_supported_.3F"><span class="tocnumber">1.2</span> <span class="toctext">Which versions of the .NET framework are supported&#160;?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#When_should_I_use_Gendarme_.3F"><span class="tocnumber">2.1</span> <span class="toctext">When should I use Gendarme&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#I_maintain_of_old_code_base._Is_it_too_late_to_start_using_Gendarme_.3F"><span class="tocnumber">2.2</span> <span class="toctext">I maintain of old code base. Is it too late to start using Gendarme&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#I.27m_scripting_Gendarme.2C_what_are_the_different_exit_code_of_the_console_runner_.3F"><span class="tocnumber">2.3</span> <span class="toctext">I'm scripting Gendarme, what are the different exit code of the console runner&#160;?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Features"><span class="tocnumber">3</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Do_I_need_debugging_symbols_to_use_Gendarme_.3F"><span class="tocnumber">3.1</span> <span class="toctext">Do I need debugging symbols to use Gendarme&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Which_symbols_format_are_supported_.3F"><span class="tocnumber">3.2</span> <span class="toctext">Which symbols format are supported&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Why_are_source_line_numbers_imprecise_.3F"><span class="tocnumber">3.3</span> <span class="toctext">Why are source line numbers imprecise&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Why_can.27t_I_see_the_source_file_names_or_line_numbers_associated_with_a_defect_.3F"><span class="tocnumber">3.4</span> <span class="toctext">Why can't I see the source file names or line numbers associated with a defect&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Why_are_defects_decorated_using_.5BSuppressMessage.5D_attributes_still_showing_in_my_reports_.3F"><span class="tocnumber">3.5</span> <span class="toctext">Why are defects decorated using [SuppressMessage] attributes still showing in my reports&#160;?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Rules"><span class="tocnumber">4</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#What_are_rules"><span class="tocnumber">4.1</span> <span class="toctext">What are rules</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Rule_X_checks_for_something_that_can.27t_happen_using_C.23"><span class="tocnumber">4.2</span> <span class="toctext">Rule X checks for something that can't happen using C#</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Results"><span class="tocnumber">5</span> <span class="toctext">Results</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Can_I_reduce_false_positives_.3F"><span class="tocnumber">5.1</span> <span class="toctext">Can I reduce false positives&#160;?</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="General"> General </span></h1>
+<h2> <span class="mw-headline" id="Is_Gendarme_a_C.23_source_checking_tool_.3F"> Is Gendarme a C# source checking tool&#160;? </span></h2>
+<p>Not directly. <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> does <b>not</b> work on source code but on compiled assemblies. Once compiled (into Intermediate Language, <b>IL</b>) C# code looks identical to any other (compiled) .NET language. Hence <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> is a .NET static assembly analyzer and is not language specific.
+</p>
+<h2> <span class="mw-headline" id="Which_versions_of_the_.NET_framework_are_supported_.3F"> Which versions of the .NET framework are supported&#160;? </span></h2>
+<p>For analysis <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> can process any .NET assembly (that <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a> can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
+</p><p>However in order to <b>execute</b> <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> you'll need either Mono (same version) or the .NET framework 3.5 since <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> use some recent (C# 3) features such as LINQ.
+</p>
+<h1> <span class="mw-headline" id="Usage"> Usage </span></h1>
+<h2> <span class="mw-headline" id="When_should_I_use_Gendarme_.3F"> When should I use Gendarme&#160;? </span></h2>
+<p>Some of <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> early but you can still benefit from it anytime.
+</p>
+<h2> <span class="mw-headline" id="I_maintain_of_old_code_base._Is_it_too_late_to_start_using_Gendarme_.3F"> I maintain of old code base. Is it too late to start using Gendarme&#160;? </span></h2>
+<p>No, but at this stage you might want to consider using a subset of the rules that won't break binary compatibility of your assemblies.
+</p>
+<h2> <span class="mw-headline" id="I.27m_scripting_Gendarme.2C_what_are_the_different_exit_code_of_the_console_runner_.3F"> I'm scripting Gendarme, what are the different exit code of the console runner&#160;? </span></h2>
+<p><b>0</b>&#160;: The runner returns 0 when no error has occurred. If some code was analyzed then this also means that no defects were found and reported.
+</p><p><b>1</b>&#160;: The runner execution was successful but either some defects where found or no assembly was specified.
+</p><p><b>2</b>&#160;: The runner execution was interrupted by I/O errors (e.g. missing files).
+</p><p><b>3</b>&#160;: The runner founds errors in the (default or user supplied) configuration files. Specific error messages should be printed on the console.
+</p><p><b>4</b>&#160;: The runner execution was interrupted by a non-handled exception. This is likely a bug inside Gendarme and should be reported on Novell's
+bugzilla (<a href="http://bugzilla.novell.com" class="external free" rel="nofollow">http://bugzilla.novell.com</a>) or on the mailing-list.
+</p>
+<h1> <span class="mw-headline" id="Features"> Features </span></h1>
+<h2> <span class="mw-headline" id="Do_I_need_debugging_symbols_to_use_Gendarme_.3F"> Do I need debugging symbols to use Gendarme&#160;? </span></h2>
+<p>No, debugging symbols are not required to use <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>. The most useful aspect of debugging symbols is that, when available, reports can include the source file and line numbers (when applicable) for defects found during the analysis.
+</p><p>A few rules (e.g. <code>RemoveUnusedLocalVariables</code>) might turn themselves off if debugging symbols are not available. Others will use the extra information provided (e.g. variable names) and, in a few cases, it could also affect the number of false positives.
+</p>
+<h2> <span class="mw-headline" id="Which_symbols_format_are_supported_.3F"> Which symbols format are supported&#160;? </span></h2>
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s end users.
+</p>
+<h2> <span class="mw-headline" id="Why_are_source_line_numbers_imprecise_.3F"> Why are source line numbers imprecise&#160;? </span></h2>
+<p>Line numbers, like source file names, are not part of an assembly metadata. 
+They are part of the debugging symbols that you can, optionally, generate when compiling your assemblies.
+</p><p>The symbols files structure is based on <b>sequence points</b>. 
+Each <b>sequence point</b> is related to an IL instructions. 
+When <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> finds a defect, and debugging symbols are available, it will find the corresponding <b>sequence point</b> and extract the source file, line and column numbers.
+</p><p>Now many IL instructions do not have their own <b>sequence point</b>. 
+Also several defects are not related to IL instructions (e.g. methods, type, assemblies-level defects). 
+In such case <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> will <i>try to approximate</i> the location of the defect.
+But since <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> never reads source files (or even requires them to be available) the result will be more or less precise.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Why_can.27t_I_see_the_source_file_names_or_line_numbers_associated_with_a_defect_.3F"> Why can't I see the source file names or line numbers associated with a defect&#160;? </span></h2>
+<p>There can be several reasons for this. 
+First make sure the debugging symbols are available for the assemblies being analyzed.
+<a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> requires either a <b>.mdb</b> or <b>.pdb</b> to be located in the same directory as the matching <b>.exe</b> or <b>.dll</b> files.
+Without them <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> won't be able to report the source files (or line numbers) for any defect.
+</p><p>If debugging symbols are present then ensure that <b>Mono.Cecil.Pdb.dll</b> (under Windows for .pdb support) or <b>Mono.Cecil.Mdb.dll</b> (under Linux or Windows for .mdb support) is present in the <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> installation directory.
+The installer should have provided them automatically - but a manual installation (or compiling from source code) could be missing them.
+</p><p>If some defects, located in the same assembly, have source file names (or line numbers) then your setup should be correct. What's happening is likely a lack of a matching <b>sequence point</b> in the debugging symbols (see previous answer about them). In some rare circumstances it could be possible that no <b>sequence point</b> could be found.
+This can occurs on types without any methods (or only abstract methods) since <b>sequence points</b> are associated with IL. 
+</p><p>Finally it could be a bug (e.g. the rule does not report the <i>right</i> target as the defect). 
+If you believe this is the case then fill a bug report including both assembly and the debugging symbols.
+Also provide the defect location (e.g. method name) and rule where this occurs so we can track it down.
+</p>
+<h2> <span class="mw-headline" id="Why_are_defects_decorated_using_.5BSuppressMessage.5D_attributes_still_showing_in_my_reports_.3F"> Why are defects decorated using <code>[SuppressMessage]</code> attributes still showing in my reports&#160;? </span></h2>
+<p>Make sure your project was compiled with the <b>CODE_ANALYSIS</b> symbol defined. 
+Otherwise the <code>[SuppressMessage]</code> attribute wont be compiled inside the assembly binary (i.e. there's a <code>[Conditional]</code> attribute on the type.).
+That would makes it impossible for <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> to ignore the defects.
+</p>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h2> <span class="mw-headline" id="What_are_rules"> What are rules </span></h2>
+<p>Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. <a href="{{site.baseurl}}/Gendarme.Rules.Performance" title="Gendarme.Rules.Performance">performance rules</a>).
+</p>
+<h2> <span class="mw-headline" id="Rule_X_checks_for_something_that_can.27t_happen_using_C.23"> Rule X checks for something that can't happen using C# </span></h2>
+<p>Some rules (e.g. <code>FinalizersShouldCallBaseClassFinalizerRule</code>) checks for condition that cannot occurs in C# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>. In other words C#&#160;!= .NET&#160;:-)
+</p>
+<h1> <span class="mw-headline" id="Results"> Results </span></h1>
+<h2> <span class="mw-headline" id="Can_I_reduce_false_positives_.3F"> Can I reduce false positives&#160;? </span></h2>
+<p>Yes. The first and easiest way applies to MS compilers users (at least CSC). When used without <code>/o</code> (optimize) the compilers can emit very ugly (but still legal) IL. This includes additional variables (that can be reported as unused), unneeded cast (also reported as defects) and complex branches that can be misinterpreted.
+</p><p>The second way is to ignore some results.This can be done using ignore lists (see <a href="https://github.com/mono/mono-tools/blob/master/gendarme/self-test.ignore" class="external text" rel="nofollow">example</a>) and used with the console runner (<code>--ignore ignore-file</code>). It's also possible to filter defects based on their severity (<code>--severity=*</code>) and confidence levels (<code>--confidence=*</code>).
+</p>

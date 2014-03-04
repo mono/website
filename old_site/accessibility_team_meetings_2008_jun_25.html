@@ -1,0 +1,970 @@
+---
+layout: obsolete
+title: "Accessibility: Team Meetings 2008 Jun 25"
+permalink: /old_site/Accessibility:_Team_Meetings_2008_Jun_25/
+---
+
+<h1>Accessibility: Team Meetings 2008 Jun 25</h1>
+
+<h2> <span class="mw-headline" id="Meeting_Log"> Meeting Log </span></h2>
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well guys, today I run the meeting again, as calvin told me he was going to be late
+</td>
+<td> 07:01
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so we'll use the same technique as usual
+</td></tr>
+<tr>
+<td>
+</td>
+<td> first the devs, then build&amp;QA
+</td></tr>
+<tr>
+<td>
+</td>
+<td> sandy: you want to start? you know, tell when you're done
+</td>
+<td> 07:02
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- bgmerrell [~bean@snout.provo.novell.com] has joined #mono-a11y
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I worked again on the olive infrastructure patch, but due to the boston meeting it has yet to be reviewed
+</td></tr>
+<tr>
+<td>
+</td>
+<td> hopefully we'll here about it early next week
+</td>
+<td> 07:03
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I wrote up a little documentation on the wiki for setting up a parallel mono dev environment
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and helped everybody get that set up
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and then just spent a lot of time wrestling with makefiles
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I didn't actually get to any *real* development
+</td></tr>
+<tr>
+<td>
+</td>
+<td> which was disappointing
+</td></tr>
+<tr>
+<td>
+</td>
+<td> today I'll commit the makefiles I'm finishing
+</td>
+<td> 07:04
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and then I'll finish the many testing tasks I have for some providers
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and I think I may have work to do to adapt them to MarioC's new base classes, but I haven't looked yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, what was the provider(s) assigned for this iteration?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: nothing new
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td>
+<td> 07:05
+</td></tr>
+<tr>
+<td>
+</td>
+<td>wiki , in order to do it without conflicting other's changes)
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> Form, GroupBox, Button, RadioButton
+</td></tr>
+<tr>
+<td>
+</td>
+<td> just finishing testing on them
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'll pick up another provider if I have time
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> done done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> MarioC: you go?
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td>
+</td>
+<td> this time, I decided to start implementing ComboBox to test both the bridge and the providers at the same time, and I did
+</td>
+<td> 07:06
+</td></tr>
+<tr>
+<td>
+</td>
+<td> however, to test navigation we need the ListBox provider
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so, I decided to implement it as well, but.. in order to support navigation in ListBox we need to support Scrollbars, so now I'm missing ScrollBar provider
+</td>
+<td> 07:07
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and also need TextBox,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> the good news is that when finishing ComboBox, we'll also have the following providers done: TextBox, ListBox, Scrollbar and Button
+</td>
+<td> 07:08
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm also adding new logic to support logic
+</td></tr>
+<tr>
+<td>
+</td>
+<td> s/support logic/support navigation
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and the preview of the Winfors implementation is done: <a href="http://www.mono-project.com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project.com/Accessibilit</a> y:_Winforms_Implementation
+</td>
+<td> 07:09
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> beautiful!
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> I'll be updating it as soon as I have more things to add
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm sure sandy, will add more information
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td>&#160;:-)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, done?
+</td>
+<td> 07:10
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> not yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration I'm planning to finish Navigation for ComboBox, this includes the internal navigation for ListBox and ScrollBar
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks MarioC
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> MarioC, sandy: do you guys know a brief summary of what ngao was planning for the following iteration&#160;? any missing provider?
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> He needs to finish the tests first
+</td>
+<td> 07:11
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> in case you have, just name it, for the sake of the meeting log
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> and... his new provider: CheckedListBox
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, next would be calvin, who's not here
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> I t hink will be implemented as soon as the ListBox is already done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> cool, thanks MarioC
+</td>
+<td> 07:12
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'll paste here calvin's plans
+</td></tr>
+<tr>
+<td>
+</td>
+<td> [Calvin] I think we need to look at doing a lot more helper type classes to flush out the different providers.  I noticed in your ComboBox, you have all of the SelectionProvider stuff stubbed in.  Well, I just implemented all of that for the list class and it will be EXACTLY the same code.  We'll also need to do some rework on the way the hierarchy is being built up in the bridge so I'm not going to add any more work to this ne
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and now I'll go
+</td>
+<td> 07:13
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: it was cut off
+</td></tr>
+<tr>
+<td> <b>&lt; bgmerrell&gt;&#160;</b>
+</td>
+<td> I'm not going to add any more work to this ne[snip]
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it finished "to this next iteration."
+</td>
+<td> 07:14
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and that's it
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> heh
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks for noticing bgmerrell and sandy
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'll tell my status now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I have completed the more important bits of RadioButton and ComboBox that were lacking, though still not passing the tests because of some mysterious behaviour I have to investigate
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- jpallen [~jpallen@ariadne.provo.novell.com] has quit [used jmIrc]
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> Window class is almost there, as we just need the events to be implemented. My new mono env is almost ready too. I've also spent some time in this iteration for creating the presentation to show at Guadec.
+</td>
+<td> 07:15
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and, well, my plan is still not clear, maybe I'll just do refactoring of the bridge upon the info we got on the MS email
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- jpallen [~jpallen@137.65.132.45] has joined #mono-a11y
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> and I'll finish the rest of things that are not complete in past iterations
+</td>
+<td> 07:16
+</td></tr>
+<tr>
+<td>
+</td>
+<td> now let's go with build guys
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: you ready?
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> Knocte: want me to go first?  I haven't gone yet
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oohhh, sorry mgorse
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: yup
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yes, go ahead mike
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> ok
+</td>
+<td> 07:17
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> decriptor: wait a bit please&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> Tested cspi registration and event passing some more.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Added action, editableText, hyperlink, hypertext, and table interfaces.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> It now builds against gok for me, with a minor patch to gok to remove some #includes.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also set up a parallel Mono environment, with help from Sandy and others, and discovered that monodevelop from svn is inaccessible.  Looks like I need to file a bug if one hasn't already been filed.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Next iteration I'm going to hopefully finish testing registration and event passing for now.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm also going to try to look at the test template developed by George Kraft's group at IBM, to see about testing cspi.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm unsure as to how much time I should take to create cspi tests, since the Open A11y group may seek a grant for someone to devise tests for the lsb.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> cool news mgorse
+</td></tr>
+<tr>
+<td>
+</td>
+<td> BTW, the MD issue seems strange to me, MD is visible for accerciser
+</td>
+<td> 07:18
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (in my system)
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> knocte: md from svn? Okay.  I haven't tried with accerciser.  Was trying with Orca.  I'll see if Accerciser sees it
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: where are you putting your code? any repository?
+</td>
+<td> 07:19
+</td></tr>
+<tr>
+<td>
+</td>
+<td> how do you coordinate with Mark?
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> knocte: <a href="git://git.codethink.co.uk/git/atspi-dbus" class="external free" rel="nofollow">git://git.codethink.co.uk/git/atspi-dbus</a>
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh, cool to know, thanks
+</td></tr>
+<tr>
+<td> <b>&lt; mgorse&gt;&#160;</b>
+</td>
+<td> some of it is in the mgorse branch currently and not in master
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> perfect, thanks for the info
+</td></tr>
+<tr>
+<td>
+</td>
+<td> now we'll let decriptor actually start&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: ^^
+</td>
+<td> 07:20
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok I finally update the wiki page&#160;:) ok just barely
+</td></tr>
+<tr>
+<td>
+</td>
+<td> been working on getting autotools to work with our stuff, which seems to be mostly finished
+</td>
+<td> 07:21
+</td></tr>
+<tr>
+<td>
+</td>
+<td> huge thanks to sandy for helping on that
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> perfect, maybe it's interesting for you to have a SVN account as well?
+</td>
+<td> 07:22
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> working on getting the rpms built now which I haven't completely figured out the best way to do that, but I'm hoping to have them very soon
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte:&#160;:(
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, any bits you miss from the devs that could help on that?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: I really really wish I did, but because of meetings and other things, my email I'm sure is at the bottom of the todo list
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I see
+</td>
+<td> 07:23
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> so hopefully this week or next, so far I've just been creating patches and sending them to sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok we'll talk after the meeting about all this
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> its more the 30 minute delay in syncing trunk that makes this take longer
+</td>
+<td> 07:24
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so anyways,
+</td></tr>
+<tr>
+<td> <b>* knocte&#160;</b>
+</td>
+<td> nods
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, and any special plan apart from finishing the rpms?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> plan is to get rpm soon and some sort of build system/methodology in place for building
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, you done?
+</td>
+<td> 07:25
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> I want to get that some what automated so that we can build on demand
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's go with Ray now
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> OK
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> Ray: could you do build stuff first and then QA?
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> knocte: ok, this iteration, i didn't do much work on build stuff
+</td>
+<td> 07:26
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> (just to keep us on subject&#160;;) )
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, just switch to QA then
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> and I'll spent some time in next iteration to handle UiaAtkBridge and UIAutomation te be package into rpms with decriptor
+</td>
+<td> 07:27
+</td></tr>
+<tr>
+<td>
+</td>
+<td> that's the building plan
+</td></tr>
+<tr>
+<td>
+</td>
+<td> as QA
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I was continuing to implement the control test samples.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> get the benifit from the practice in last iteration,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm more and more familiar with that, and have implemented 19 controls.
+</td>
+<td> 07:28
+</td></tr>
+<tr>
+<td> <b>&lt;@MarioC&gt;&#160;</b>
+</td>
+<td> decriptor, you "broke" the next iteration table, you added a new column.
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> MarioC:&#160;:( sorry
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> all of them are very simple, i feeled a little worry about whether those samples could fulfill the need or not.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so i asked bgmerrell to have a look at them a bit in his spare time.
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> MarioC: my browser was small and didn't even notice that&#160;:(
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> in the up-coming iteration, i'll continue to implement the rest of them unless there is something interrupt
+</td>
+<td> 07:29
+</td></tr>
+<tr>
+<td>
+</td>
+<td> personally, I was starting to learn autotool for the preparation of future build work use.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> over
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td>whatever methodology)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks Ray
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> knocte:&#160;:D
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, let's continue with QA then
+</td>
+<td> 07:30
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Calen: you here?
+</td></tr>
+<tr>
+<td> <b>&lt; Calen&gt;&#160;</b>
+</td>
+<td> yes
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> can you go?
+</td></tr>
+<tr>
+<td> <b>&lt; Calen&gt;&#160;</b>
+</td>
+<td> of course
+</td></tr>
+<tr>
+<td>
+</td>
+<td> after discuss with Brian, i have finished one strongwind test
+</td>
+<td> 07:31
+</td></tr>
+<tr>
+<td> <b>&lt; bgmerrell&gt;&#160;</b>
+</td>
+<td> Hooray!
+</td></tr>
+<tr>
+<td> <b>&lt; Calen&gt;&#160;</b>
+</td>
+<td> for treeview control(gtk) as practice to check the status when expand&amp;contract the TableCell.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> now i think i make sence what should and will be checked when we test a winforms control,thanks bgmerrell&#160;:) .
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but i am also have some technology questions should ask Brian.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so in next iteration, i will discuss Brian for some technology problems and practice to test other controls.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> BTW i have spent some time to update my laptop to openSUSE11&#160;:)
+</td>
+<td> 07:32
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> cool
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks Calen
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: hi! you next?
+</td></tr>
+<tr>
+<td> <b>&lt; bgmerrell&gt;&#160;</b>
+</td>
+<td> i think so!
+</td>
+<td> 07:33
+</td></tr>
+<tr>
+<td> <b>&lt; Calen&gt;&#160;</b>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt; bgmerrell&gt;&#160;</b>
+</td>
+<td> Last week I mostly spent upgrading all my work machines and dealing with bugs un
+</td></tr>
+<tr>
+<td>
+</td>
+<td> oh.  nice.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Last week I mostly spent upgrading all my work machines and dealing with bugs unfortunately.  This week I was able to upgrade our QA virtual machines to openSUSE11 and get the test environment  setup and the tests running on them.
+</td>
+<td> 07:34
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also went over Strongwind testing with Calen and reviewed a little bit of Ray's code.
+</td></tr>
+<tr>
+<td> <b>&lt; Ray&gt;&#160;</b>
+</td>
+<td> bgmerrell: GREAT! thanks&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt; bgmerrell&gt;&#160;</b>
+</td>
+<td> This next iteration I play on consuming the packages decriptor is building assuming they are available.  I also have a lot of tasks that involve documentation, HOWTOs for QA, updating the test plan, etc., that I would liek to get out of the way this iteration
+</td></tr>
+<tr>
+<td>
+</td>
+<td> And review Calen's Strongwind test and Ray's samples
+</td>
+<td> 07:35
+</td></tr>
+<tr>
+<td>
+</td>
+<td> of course&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Last night I was chatting with Ray and Calen and my computer rebooted itself and now I can't get into X at all anymore--the screen just goes completely black and i can't do anything but ctrl+alt+del.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> So that was weird and I'm sure I'll get to deal with that today.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td>
+<td> 07:36
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok sounds good
+</td></tr>
+<tr>
+<td>
+</td>
+<td> did I miss anybody?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it doesn't seem so I'll upload the log to the wiki
+</td></tr>
+</table>
+

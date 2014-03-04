@@ -1,0 +1,163 @@
+---
+layout: obsolete
+title: "MoonlightHostingNotes"
+permalink: /old_site/MoonlightHostingNotes/
+---
+
+<h1>MoonlightHostingNotes</h1>
+
+<p>These are some notes on Silverlight Hosting APIs and how the plugin works / should work. They are likely incorrect
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Moonlight_plugin"><span class="tocnumber">1</span> <span class="toctext">Moonlight plugin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#How_it_works"><span class="tocnumber">1.1</span> <span class="toctext">How it works</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#First_step:_create_an_.3Cobject.3E_element_of_type_application.2Fag-plugin."><span class="tocnumber">1.1.1</span> <span class="toctext">First step: create an &lt;object&gt; element of type application/ag-plugin.</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Second_step:_bootstrapping_Silverlight_control"><span class="tocnumber">1.1.2</span> <span class="toctext">Second step: bootstrapping Silverlight control</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Hosting_APIs"><span class="tocnumber">2</span> <span class="toctext">Hosting APIs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#ScriptableObject"><span class="tocnumber">2.1</span> <span class="toctext">ScriptableObject</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#How_to_enable_ScriptableObject_in_managed_code"><span class="tocnumber">2.1.1</span> <span class="toctext">How to enable ScriptableObject in managed code</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#How_to_use_ScriptableObject_in_client_Javascript"><span class="tocnumber">2.1.2</span> <span class="toctext">How to use ScriptableObject in client Javascript</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Hosted_environment"><span class="tocnumber">2.1.3</span> <span class="toctext">Hosted environment</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#ScriptableObject_injection"><span class="tocnumber">2.2</span> <span class="toctext">ScriptableObject injection</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Error_handling"><span class="tocnumber">2.3</span> <span class="toctext">Error handling</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Misc_notes"><span class="tocnumber">2.4</span> <span class="toctext">Misc notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Implementation_status_notes"><span class="tocnumber">3</span> <span class="toctext">Implementation status notes</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Moonlight_plugin"> Moonlight plugin </span></h2>
+<h3> <span class="mw-headline" id="How_it_works"> How it works </span></h3>
+<h4> <span class="mw-headline" id="First_step:_create_an_.3Cobject.3E_element_of_type_application.2Fag-plugin."> First step: create an &lt;object&gt; element of type application/ag-plugin. </span></h4>
+<p>This is not mandatory unless you run silverlight apps written in Microsoft ways:
+</p>
+<ul><li> The web browser loads HTML, which contains "SilverlightControlHost" element.
+</li><li> SilverlightControlHost invokes "createSilverlight()" which is defined in the HTML's bound Javascript.
+</li><li> createSilverlight() invokes createObjectEx() which is defined in silverlight.js.
+</li><li> createObjectEx() either creates an &lt;object&gt; element of type application/ag-plugin, or download/support links.
+</li><li> &lt;object&gt; element of type application/ag-plugin is recognized by the moonlight plugin.
+</li></ul>
+<p>We could just directly include such an &lt;object&gt; element in the HTML instead.
+</p>
+<h4> <span class="mw-headline" id="Second_step:_bootstrapping_Silverlight_control"> Second step: bootstrapping Silverlight control </span></h4>
+<p>It is done by moonlight plugin.
+</p>
+<ul><li> The plugin is triggered by the &lt;object&gt; element.
+</li><li> It loads the "source" XAML file. If there isn't, then nothing is warned.
+</li><li> It looks for the implementation class from "x:class", which looks like&#160;: "SilverlightProject1.Page;assembly=ClientBin/SilverlightProject1.dll"
+<ul><li> If there isn't, then Javascript warning is raised.
+</li><li> If the referenced type is not an expected type (only Canvas?), then Javascript warning is raised.
+</li></ul>
+</li><li> Create a GTK+ canvas for Silverlight object (indicated by "source")
+</li></ul>
+<h2> <span class="mw-headline" id="Hosting_APIs"> Hosting APIs </span></h2>
+<p>System.Silverlight.dll and Microsoft.Scripting.Silverlight.dll are involved.
+</p><p>Microsoft.Scripting.Silverlight is smaller:
+</p>
+<ul><li> ErrorHandler&#160;: static aggregated class of error handling which dispatch managed exceptions to browser.
+</li><li> HtmlDocumentMemberInjector
+</li><li> HtmlElementMemberInjector
+</li><li> IDlrNameScope
+</li><li> SilverlightPAL
+</li><li> SilverlightScriptHost
+</li><li> XamlDlrScriptHost
+</li></ul>
+<h3> <span class="mw-headline" id="ScriptableObject"> ScriptableObject </span></h3>
+<ul><li> it is nothing to do with JavaScriptSerializer (methods and events are ignored in the serializer).
+</li><li> For now simple string and primitive types are supported as method parameters. (See below for details.)
+</li></ul>
+<h4> <span class="mw-headline" id="How_to_enable_ScriptableObject_in_managed_code"> How to enable ScriptableObject in managed code </span></h4>
+<ul><li> Add ScriptableAttribute on the class, and property, method and events.
+</li><li> Call WebApplication.Current.RegisterScriptableObject(nameOnJS, instance).
+</li></ul>
+<h4> <span class="mw-headline" id="How_to_use_ScriptableObject_in_client_Javascript"> How to use ScriptableObject in client Javascript </span></h4>
+<ul><li> registered scriptable objects are accessible via document.getElementById ("SilverlightControl").Content as its properties.
+</li><li> Properties are created as Javascript objects.
+</li><li> Events are created as event triggers which expects two arguments (sender, eargs).
+</li><li> functions are created as functions as they are.
+</li><li> Types are strictly limited: bool, string, char, numeric types except for Decimal are OK. No other types are allowed (object, Guid, DateTime, IDictionary&lt;string,object&gt;, any custom types). Only In parameters allowed.
+</li></ul>
+<h4> <span class="mw-headline" id="Hosted_environment"> Hosted environment </span></h4>
+<ul><li> Every ScriptableObject seems to check its hosting environment. For example, HtmlPage.Document causes an error (NRE at alpha1) outside hosted environment (for example console app).
+</li></ul>
+<h3> <span class="mw-headline" id="ScriptableObject_injection"> ScriptableObject injection </span></h3>
+<p>See also: <a href="http://www.silverlight.net/QuickStarts/Dom/ManagedCodeAccess.aspx" class="external free" rel="nofollow">http://www.silverlight.net/QuickStarts/Dom/ManagedCodeAccess.aspx</a>
+</p><p>List for some objects/methods that need interaction from managed code to DOM:
+</p>
+<ul><li> ScriptableObject.GetProperty&lt;T&gt;(string name)
+<ul><li> T must be derived from ScriptableObject. For example, HtmlPage.Document.GetProperty&lt;object&gt;("documentElement") 
+</li></ul>
+</li><li> ScriptableObject.SetProperty(string,object)
+</li><li> HtmlObject.AttachEvent(string name,EventHandler handler)
+</li><li> HtmlObject.DetachEvent(string name,EventHandler handler)
+</li><li> generic way to invoke methods (e.g. getElementByTagName(), createElement() etc.)
+</li></ul>
+<h3> <span class="mw-headline" id="Error_handling"> Error handling </span></h3>
+<p>In agclr, System.Windows.ErrorEventHandler and ErrorEventArgs are used to handle errors at managed side.
+</p><p>Microsoft.Scripting.Silverlight.ErrorHandler is (in a sense) the closest API to the browser. It is tied to ErrorEventArgs in agclr and "default_error_handler" in silverlight.js, which
+</p>
+<ul><li> expects ParserError and RuntimeError as errorType (ParserErrorEventArgs/RuntimeErrorEventArgs in agclr)
+</li><li> expects errorCode, errorType and errorMessage (ErrorEventArgs properties)
+</li></ul>
+<h3> <span class="mw-headline" id="Misc_notes"> Misc notes </span></h3>
+<ul><li> WebApplication.Current is created and used to serve RegisterScriptableObject().
+<ul><li> NPN_CreateObject() is likely used.
+</li></ul>
+</li><li> I'm not sure if SilverlightScriptHost and SilverlightPAL are created on silverlight apps. ScriptDomainManager.CurrentManager.PAL is not an instance of SilverlightPAL on silverlight apps.
+</li><li> static property HtmlPage.Document accesses to the document. It somehow causes NRE on non-silverlight app.
+</li></ul>
+<h2> <span class="mw-headline" id="Implementation_status_notes"> Implementation status notes </span></h2>
+<p>Already written as DllImport (note that they are not in moon/plugin yet):
+</p>
+<ul><li> WebApplication
+<ul><li> InvokeMethodInternal(IntPtr xpp, IntPtr obj, string name,object[] args)
+</li><li> GetPropertyInternal(IntPtr xpp,IntPtr obj, string name)
+</li><li> SetPropertyInternal(IntPtr xpp,IntPtr obj, string name, object value); They are commonized accessors and used by several classes such as HtmlElement.AppendChild().
+</li></ul>
+</li><li> BrowserInformation
+<ul><li> LoadBrowserInformation(BrowserInformation)
+</li></ul>
+</li><li> BrowserRuntimeSettings
+<ul><li> LoadBrowserRuntimeSettings(BrowserRuntimeSettings)
+</li></ul>
+</li><li> HtmlObject
+<ul><li> AttachEvent(IntPtr xpp, IntPtr obj, string name, EventHandler h)
+</li><li> AttachEvent(IntPtr xpp, IntPtr obj, string name, EventHandler&lt;HtmlEventArgs&gt; h)
+</li><li> DetachEvent(IntPtr xpp, IntPtr obj, string name, EventHandler h)
+</li><li> DetachEvent(IntPtr xpp, IntPtr obj, string name, EventHandler&lt;HtmlEventArgs&gt; h)
+</li></ul>
+</li><li> HtmlPage
+<ul><li> Navigate (IntPtr npp, string uri)
+</li><li> Navigate (IntPtr npp, string uri, string target, string features) (returns a handle)
+</li><li> NavigateToBookmark (IntPtr xpp, string bookmark)
+</li><li> Submit (IntPtr xpp, string formId)
+</li></ul>
+</li></ul>
+<p>Just rough ideas:
+</p>
+<ul><li> WebApplication.Current is likely hold a pointer to NPP instance, a pointer to PluginInstance, and so on. Use AppDomain.GetData() to return pointers here.
+</li><li> WebApplication.RegisterScriptableObject() has to create a NPObject. Also, access to the members must be reflected to the managed object (and vice versa).
+</li><li> WebApplication.StartupArguments. Not sure what should be set here.
+</li><li> HtmlTimer. Probably it generates call to setTimeout() and calls Javascript eval(), depending on Enabled and Interval. Not sure where it is used.
+</li><li> HtmlPage properties:
+<ul><li> Cookies, string
+</li><li> CurrentBookmark, string
+</li><li> Document, IntPtr to NPObject?
+</li><li> DocumentUri, string
+</li><li> QueryString, string or dictionary
+</li><li> Window, IntPtr to PluginInstance-&gt;window
+</li></ul>
+</li><li> HtmlElement.SetStyleAttribute() and RemoveStyleAttribute()&#160;; not sure how it is done.
+</li></ul>
+

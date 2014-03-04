@@ -1,0 +1,778 @@
+---
+layout: obsolete
+title: "Mono Performance Counters"
+permalink: /old_site/Mono_Performance_Counters/
+---
+
+<h1>Mono Performance Counters</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Mono_performance_counters"><span class="tocnumber">1</span> <span class="toctext">Mono performance counters</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Category:_Processor"><span class="tocnumber">1.1</span> <span class="toctext">Category: Processor</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Category:_Process"><span class="tocnumber">1.2</span> <span class="toctext">Category: Process</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Category:_Mono_Memory"><span class="tocnumber">1.3</span> <span class="toctext">Category: Mono Memory</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Category:_ASP.NET"><span class="tocnumber">1.4</span> <span class="toctext">Category: ASP.NET</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Category:_.NET_CLR_JIT"><span class="tocnumber">1.5</span> <span class="toctext">Category: .NET CLR JIT</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Category:_.NET_CLR_Exceptions"><span class="tocnumber">1.6</span> <span class="toctext">Category: .NET CLR Exceptions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Category:_.NET_CLR_Memory"><span class="tocnumber">1.7</span> <span class="toctext">Category: .NET CLR Memory</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Category:_.NET_CLR_Remoting"><span class="tocnumber">1.8</span> <span class="toctext">Category: .NET CLR Remoting</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Category:_.NET_CLR_Loading"><span class="tocnumber">1.9</span> <span class="toctext">Category: .NET CLR Loading</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Category:_.NET_CLR_LocksAndThreads"><span class="tocnumber">1.10</span> <span class="toctext">Category: .NET CLR LocksAndThreads</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Category:_.NET_CLR_Interop"><span class="tocnumber">1.11</span> <span class="toctext">Category: .NET CLR Interop</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Category:_.NET_CLR_Security"><span class="tocnumber">1.12</span> <span class="toctext">Category: .NET CLR Security</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Category:_Mono_Threadpool"><span class="tocnumber">1.13</span> <span class="toctext">Category: Mono Threadpool</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Category:_Network_Interface"><span class="tocnumber">1.14</span> <span class="toctext">Category: Network Interface</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Accessing_performance_counters"><span class="tocnumber">2</span> <span class="toctext">Accessing performance counters</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Mono_performance_counters"> Mono performance counters </span></h1>
+<p>This page lists the performance counters currently implemented in the Mono runtime. 
+</p><p><b>Note:</b> despite being implemented and present in the runtime, not all counters are being updated as of the time of this writing (April 16 2010).
+</p><p>The list is based on the trunk version of the runtime, so not all of them might be present in your version of Mono.
+</p><p>Each category is listed in a section of its own, to facilitate navigation.
+</p>
+<h2> <span class="mw-headline" id="Category:_Processor"> Category: Processor </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th>&#160;% User Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Privileged Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Interrupt Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% DCP Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Processor Time
+</th>
+<td> Timer 100ns inverse </td>
+<td>
+</td></tr>
+</table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_Process"> Category: Process </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th>&#160;% User Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Privileged Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Processor Time
+</th>
+<td> Timer 100ns </td>
+<td>
+</td></tr>
+<tr>
+<th> Thread Count
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Virtual Bytes
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Working Set
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Private Bytes
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_Mono_Memory"> Category: Mono Memory </span></h2>
+<p>This category is Mono-specific
+</p>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Allocated Objects
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total Physical Memory
+</th>
+<td> Number of items, 64bit </td>
+<td> Physical memory installed in the machine, in bytes
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_ASP.NET"> Category: ASP.NET </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Requests Queued
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Requests Total
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Requests/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_JIT"> Category: .NET CLR JIT </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> # of IL Bytes JITted
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of IL Methods JITted
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Time in JIT
+</th>
+<td> Raw fraction </td>
+<td>
+</td></tr>
+<tr>
+<th> IL Bytes Jitted/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Standard Jit Failures
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+</table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Exceptions"> Category: .NET CLR Exceptions </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> # of Exceps Thrown
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Exceps Thrown/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Filters/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Finallys/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Throw to Catch Depth/Sec
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Memory"> Category: .NET CLR Memory </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> # Gen 0 Collections
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Gen 1 Collections
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Gen 2 Collections
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Promoted Memory from Gen 0
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Promoted Memory from Gen 1
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Gen 0 Promoted Bytes/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Gen 1 Promoted Bytes/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Promoted Finalization-Memory from Gen 0
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Gen 0 heap size
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Gen 1 heap size
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Gen 2 heap size
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Large Object Heap size
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Finalization Survivors
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # GC Handles
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Allocated Bytes/sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Induced GC
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Time in GC
+</th>
+<td> Raw fraction </td>
+<td>
+</td></tr>
+<tr>
+<th> # Bytes in all Heaps
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Total committed Bytes
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Total reserved Bytes
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Pinned Objects
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Sink Blocks in use
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Remoting"> Category: .NET CLR Remoting </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Remote Calls/sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total Remote Calls
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Channels
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Context Proxies
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Context-Bound Classes Loaded
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Context-Bound Objects Alloc / sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Contexts
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Loading"> Category: .NET CLR Loading </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Current Classes Loaded
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total Classes Loaded
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Rate of Classes Loaded
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Current appdomains
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total Appdomains
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Rate of appdomains
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Current Assemblies
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total Assemblies
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Rate of Assemblies
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total # of Load Failures
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Rate of Load Failures
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Bytes in Loader Heap
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Total appdomains unloaded
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Rate of appdomains unloaded
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_LocksAndThreads"> Category: .NET CLR LocksAndThreads </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Total # of Contentions
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Contention Rate / sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Current Queue Length
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Queue Length Peak
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Queue Length / sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of current logical Threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of current physical Threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of current recognized threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of total recognized threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> rate of recognized threads / sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Interop"> Category: .NET CLR Interop </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> # of CCWs
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Stubs
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of marshalling
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_.NET_CLR_Security"> Category: .NET CLR Security </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Total Runtime Checks
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # Link Time Checks
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th>&#160;% Time in RT checks
+</th>
+<td> Raw fraction </td>
+<td>
+</td></tr>
+<tr>
+<th> Stack Walk Depth
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_Mono_Threadpool"> Category: Mono Threadpool </span></h2>
+<p>This category is Mono-specific
+</p>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Work Items Added
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Work Items Added/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> IO Work Items Added
+</th>
+<td> Number of items, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> IO Work Items Added/Sec
+</th>
+<td> Rate of counts per second, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of Threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr>
+<tr>
+<th> # of IO Threads
+</th>
+<td> Number of items, 32bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Category:_Network_Interface"> Category: Network Interface </span></h2>
+<table style="text-align: left;" border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th> Name </th>
+<th> Type </th>
+<th> Description
+</th></tr>
+<tr>
+<th> Bytes Received/sec
+</th>
+<td> Rate of counts per second, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Bytes Sent/sec
+</th>
+<td> Rate of counts per second, 64bit </td>
+<td>
+</td></tr>
+<tr>
+<th> Bytes Total/sec
+</th>
+<td> Rate of counts per second, 64bit </td>
+<td>
+</td></tr></table>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Accessing_performance_counters"> Accessing performance counters </span></h1>
+<p>The code snippet below shows you how to read a counter from the current process. Note that the <b>Mono Memory</b> category name will throw an exception on .NET since that category doesn't exist there - replace it with any other non-Mono specific category+counter name pair and it will work:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Diagnostics</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> app
+<span style="color: #008000;">&#123;</span>
+   <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+   <span style="color: #008000;">&#123;</span>
+	   <span style="color: #6666cc; font-weight: bold;">string</span> categoryName<span style="color: #008000;">;</span>
+	   <span style="color: #6666cc; font-weight: bold;">string</span> counterName<span style="color: #008000;">;</span>
+&#160;
+	   <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">&gt;=</span> <span style="color: #FF0000;">2</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		   categoryName <span style="color: #008000;">=</span> args <span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+		   counterName <span style="color: #008000;">=</span> args <span style="color: #008000;">&#91;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+	   <span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #008000;">&#123;</span>
+		   categoryName <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Mono Memory&quot;</span><span style="color: #008000;">;</span>
+		   counterName <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Total Physical Memory&quot;</span><span style="color: #008000;">;</span>
+	   <span style="color: #008000;">&#125;</span>
+&#160;
+	   <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+		   <span style="color: #0600FF; font-weight: bold;">var</span> pc <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> PerformanceCounter <span style="color: #008000;">&#40;</span>categoryName, counterName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		   Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Value of performance counter '{0}/{1}': {2}&quot;</span>,
+				      categoryName,
+				      counterName,
+				      pc<span style="color: #008000;">.</span><span style="color: #0000FF;">RawValue</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	   <span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>InvalidOperationException ex<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		   Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Category name '{0}' does not exist. {1}&quot;</span>, categoryName, ex<span style="color: #008000;">.</span><span style="color: #0000FF;">Message</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	   <span style="color: #008000;">&#125;</span>
+   <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

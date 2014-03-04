@@ -1,0 +1,288 @@
+---
+layout: obsolete
+title: "MoonlightNotes"
+permalink: /old_site/MoonlightNotes/
+---
+
+<h1>MoonlightNotes</h1>
+
+<p>Notes on the Moonlight implementation and notes on bringing Silverlight to Linux.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Testing"><span class="tocnumber">1</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Debugging_Tricks"><span class="tocnumber">2</span> <span class="toctext">Debugging Tricks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Using_an_Alternate_Firefox"><span class="tocnumber">2.1</span> <span class="toctext">Using an Alternate Firefox</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Debugging_JIT_issues"><span class="tocnumber">2.2</span> <span class="toctext">Debugging JIT issues</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Resources"><span class="tocnumber">3</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Silverlight_SDKs"><span class="tocnumber">4</span> <span class="toctext">Silverlight SDKs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#For_Developing_on_non-Microsoft_Systems"><span class="tocnumber">4.1</span> <span class="toctext">For Developing on non-Microsoft Systems</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Moonlight_IDE"><span class="tocnumber">4.2</span> <span class="toctext">Moonlight IDE</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#The_Moonlight_Engine"><span class="tocnumber">4.3</span> <span class="toctext">The Moonlight Engine</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Security_Model"><span class="tocnumber">4.3.1</span> <span class="toctext">Security Model</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Other_Security_Requirements"><span class="tocnumber">4.3.2</span> <span class="toctext">Other Security Requirements</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Media_Codecs"><span class="tocnumber">4.3.3</span> <span class="toctext">Media Codecs</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Assemblies"><span class="tocnumber">4.3.4</span> <span class="toctext">Assemblies</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href="#Dependencies"><span class="tocnumber">4.3.4.1</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="#New_versioned_Libraries"><span class="tocnumber">4.3.4.2</span> <span class="toctext">New versioned Libraries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-16"><a href="#API_Implementation"><span class="tocnumber">4.3.5</span> <span class="toctext">API Implementation</span></a>
+<ul>
+<li class="toclevel-4 tocsection-17"><a href="#System.ServiceModel.Web"><span class="tocnumber">4.3.5.1</span> <span class="toctext">System.ServiceModel.Web</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="#System.Windows.dll"><span class="tocnumber">4.3.5.2</span> <span class="toctext">System.Windows.dll</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-19"><a href="#Compiler_Fixes"><span class="tocnumber">4.3.6</span> <span class="toctext">Compiler Fixes</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#LINQ"><span class="tocnumber">4.3.7</span> <span class="toctext">LINQ</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Rendering"><span class="tocnumber">4.3.8</span> <span class="toctext">Rendering</span></a>
+<ul>
+<li class="toclevel-4 tocsection-22"><a href="#Cairo"><span class="tocnumber">4.3.8.1</span> <span class="toctext">Cairo</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="#AntiGrain_2.4"><span class="tocnumber">4.3.8.2</span> <span class="toctext">AntiGrain 2.4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-24"><a href="#Rendering_Pipeline"><span class="tocnumber">4.3.9</span> <span class="toctext">Rendering Pipeline</span></a>
+<ul>
+<li class="toclevel-4 tocsection-25"><a href="#Integration_with_Compiz"><span class="tocnumber">4.3.9.1</span> <span class="toctext">Integration with Compiz</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-26"><a href="#The_Plugin_and_the_DOM"><span class="tocnumber">4.3.10</span> <span class="toctext">The Plugin and the DOM</span></a>
+<ul>
+<li class="toclevel-4 tocsection-27"><a href="#Plugin_Loading"><span class="tocnumber">4.3.10.1</span> <span class="toctext">Plugin Loading</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-28"><a href="#Hosting_API"><span class="tocnumber">4.3.11</span> <span class="toctext">Hosting API</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#JavaScript_compiler"><span class="tocnumber">4.3.12</span> <span class="toctext">JavaScript compiler</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Testing"> Testing </span></h1>
+<ul><li> For a simple self contained html file with embedded Silverlight, <a href="{{site.baseurl}}/Moonlight_Standalone_File" title="Moonlight Standalone File">Moonlight_Standalone_File</a>
+</li><li> We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. #ifdef versus tools);
+</li><li> We need to run (parts of) the tests under the new security model - not just under Mono/Linux but also under MS Silverlight under Windows;
+</li><li> We need to expand those tests, e.g. new classes, more coverage;
+</li><li> <a href="{{site.baseurl}}/Moonlight_Test_Harness" title="Moonlight Test Harness">Instructions for Jackson's new test harness</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Debugging_Tricks"> Debugging Tricks </span></h1>
+<h2> <span class="mw-headline" id="Using_an_Alternate_Firefox"> Using an Alternate Firefox </span></h2>
+<p>If you are using Firefox on the desktop at the same time as you debug Moonlight, you will want to create a separate profile that you can use to debug Moonlight.
+</p><p>To do this, start firefox from the command line with the option:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>firefox <span style="color: #660033;">-ProfileManager</span> <span style="color: #660033;">-no-remote</span></pre>
+<p>Create a new profile, give it a name, and then in future invocations, use:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>firefox <span style="color: #660033;">-P</span> debug <span style="color: #660033;">-no-remote</span></pre>
+<h2> <span class="mw-headline" id="Debugging_JIT_issues"> Debugging JIT issues </span></h2>
+<p>Since there is no way of passing command line options to the Mono VM embedded in the plugin, you can always wait inside gdb for the first time you get a breakpoint (it happens when the GC scans memory for the bottom of the stack) and you can set some o the debugging variables like this:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> run <span style="color: #660033;">-no-remote</span> <span style="color: #660033;">-P</span> debug default.html
+...
+Program received signal SIGSEGV, Segmentation fault.
+<span style="color: #7a0874; font-weight: bold;">&#91;</span>Switching to Thread <span style="color: #660033;">-1223038608</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>LWP <span style="color: #000000;">19647</span><span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#93;</span>
+0xb2068da7 <span style="color: #000000; font-weight: bold;">in</span> GC_find_limit <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #007800;">p</span>=0x89c6f8c <span style="color: #ff0000;">&quot;&quot;</span>, <span style="color: #007800;">up</span>=<span style="color: #000000;">0</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> at os_dep.c:<span style="color: #000000;">813</span>
+<span style="color: #000000;">813</span>                     GC_noop1<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#40;</span>word<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000; font-weight: bold;">*</span>result<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> p debug_options
+<span style="color: #007800;">$1</span> = <span style="color: #7a0874; font-weight: bold;">&#123;</span>handle_sigint = <span style="color: #000000;">0</span>, keep_delegates = <span style="color: #000000;">0</span>, collect_pagefault_stats = <span style="color: #000000;">0</span>, break_on_unverified = <span style="color: #000000;">0</span><span style="color: #7a0874; font-weight: bold;">&#125;</span>
+<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> p debug_options.break_on_unverified = <span style="color: #000000;">1</span>
+<span style="color: #007800;">$2</span> = <span style="color: #000000;">1</span>
+<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> cont</pre>
+<p>In the above case, I set the break-on-unverified debugging option that will break into the debugger when unverifiable code is found.
+</p>
+<h1> <span class="mw-headline" id="Resources"> Resources </span></h1>
+<p>Books on WPF are good resources, although they cover the "larger" API of which Silverlight is merely a subset.
+</p><p>Some notes that are relevant to WPF have been moved to the <a href="{{site.baseurl}}/WPF" title="WPF">WPF</a> page.
+</p><p><a href="http://blogs.msdn.com/adam_nathan/" class="external text" rel="nofollow">Adam Nathan's</a> book on WPF is very good, and it goes into some of the technical details that other books merely skim on.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Silverlight_SDKs"> Silverlight SDKs </span></h1>
+<p>Developers can create Silverlight 1.0 applications without any extra dependencies in MacOS and Linux.    Silverlight 2.0 can optionally use C# and the .NET framework to create applications.   
+</p><p>For users of Silverlight 2.0 we are creating an SDK that developers can use to create applications on Linux, Unix and MacOS.
+</p>
+<h2> <span class="mw-headline" id="For_Developing_on_non-Microsoft_Systems"> For Developing on non-Microsoft Systems </span></h2>
+<p>If you install Mono as described in the <a href="#GettingStarted">Getting Started</a> section you will get an SDK that you can use to develop against Microsoft Silverlight and Mono Moonlight APIs.
+</p><p>Instead of using the <b>mcs</b> or <b>gmcs</b> compilers as you do regularly with Mono you need to use the <b>smcs</b> compiler that will generate and reference the proper assembly versions that are suitable for Silverlight development.
+</p>
+<h2> <span class="mw-headline" id="Moonlight_IDE"> Moonlight IDE </span></h2>
+<p>Since Linux and MacOS developers will not be able to run Blend on their operating systems, we have created a XAML designer.   This XAML designer is located on <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> in the module "lunareclipse".  
+</p><p>Lunar Eclipse currently is a standalone desktop application but we want to build a MonoDevelop add-in to have a full Silverlight development experience and possible also port it to the web to provide a designer that MacOS users to use. 
+</p><p>It also looks like the current VS.NET Orcas <a href="http://silverlight.net/quickstarts/Start/BrowseApi.aspx" class="external text" rel="nofollow">can't help</a> much to create Silverlight code based on the security attributes:
+</p>
+<blockquote>
+<div class="note-box">
+<p>The Silverlight assemblies include both members that can be used in  Silverlight-based applications and members that can be referenced only by .NET Framework code. The members that cannot be used in Silverlight-based applications are identified by the presence of the SecurityCriticalAttribute attribute. The presence of this attribute is not visible in the Object Browser, so you cannot discern which members can be used for Silverlight-based applications. However, you will get an exception when you attempt to execute a security-critical member in a Silverlight-based application.
+</p>
+</div>
+</blockquote>
+<p>We should look into building such support into <a href="http://www.monodevelop.org" class="external text" rel="nofollow">MonoDevelop</a> code completion.
+</p>
+<h2> <span class="mw-headline" id="The_Moonlight_Engine"> The Moonlight Engine </span></h2>
+<p>Currently Moonlight supports the 1.0 engine (no runtime engine, purely exposed as Javascript) and the 2.0 engine (the runtime engine exposed to .NET).
+</p>
+<h3> <span class="mw-headline" id="Security_Model"> Security Model </span></h3>
+<p>Mono has not historically been used to run untrusted code inside the virtual machine.   Although we have done some work towards the implementation of the <a href="{{site.baseurl}}/CAS" title="CAS">CAS</a> this work has not been completed.
+</p><p>Silverlight 2.0 introduce a new security model to replace <a href="{{site.baseurl}}/CAS" title="CAS">CAS</a> for it's applications. This model is discussed in details <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR"> here</a>.
+</p><p>Details about how Moonlight implement this features can be found <a href="{{site.baseurl}}/MoonlightSecurity" title="MoonlightSecurity"> here</a>.
+</p>
+<h3> <span class="mw-headline" id="Other_Security_Requirements"> Other Security Requirements </span></h3>
+<p>While this new security model looks easier to implement, wrt to the stackwalk-based <a href="{{site.baseurl}}/CAS" title="CAS">CAS</a>, most of the requirements for the <a href="{{site.baseurl}}/MonoSandbox" title="MonoSandbox">MonoSandbox</a> are still needed to provide a safe execution environment.
+</p><p>A few other things must be completed:
+</p>
+<ul><li> Complete the Mono verifier
+</li><li> <a href="http://bugzilla.ximian.com/show_bug.cgi?id=81685" class="external text" rel="nofollow">New Stack overflow prevention</a>
+</li><li> The previous section security infrastructure.
+</li><li> Code audit
+</li><li> Harden the runtime to prevent crashes from ill-formed assemblies.
+</li></ul>
+<h3> <span class="mw-headline" id="Media_Codecs"> Media Codecs </span></h3>
+<p>Currently Moonlight implements its own media pipeline (fetching, streaming, demultiplexing) and uses ffmpeg codecs to decode audio and video.   This is the default when you compile the source code yourself.
+</p><p>For the official release we will be using Microsoft's MediaPack a package that will provide Microsoft's own codecs for Moonlight.   This code is currently under development.
+</p>
+<h3> <span class="mw-headline" id="Assemblies"> Assemblies </span></h3>
+<p>Silverlight is an extended subset of the 2.0 .NET framework. Existing assemblies (ECMA) are versioned as 2.1.0.0 which are reduced versions of the 2.0 libraries and have been annotated with the security attributes and have been expanded in a few areas.
+</p><p><a href="{{site.baseurl}}/images/old_site/2/2a/20-to-21.png" class="image"><img alt="20-to-21.png" src="{{site.baseurl}}/images/old_site/2/2a/20-to-21.png" width="681" height="163" /></a>
+</p><p>Silverlight introduce new assemblies, all signed by the Microsoft key and versioned at 1.0.0.0 - except for <b>AGCLR.DLL</b> which isn't versioned in 1.1 Alpha (bug?).
+</p>
+<h4> <span class="mw-headline" id="Dependencies"> Dependencies </span></h4>
+<p>As we can see in next figures Silverlight doesn't have any circular dependencies between it's assemblies, unlike Fx 2.0, which is good news and will reduce our build time (no special loops in the Makefiles like we have today).
+</p><p><a href="{{site.baseurl}}/images/old_site/9/95/Agclr.png" class="image"><img alt="Agclr.png" src="{{site.baseurl}}/images/old_site/9/95/Agclr.png" width="864" height="669" /></a>
+<a href="{{site.baseurl}}/images/old_site/b/b3/Sxc.png" class="image"><img alt="Sxc.png" src="{{site.baseurl}}/images/old_site/b/b3/Sxc.png" width="568" height="456" /></a>
+</p><p><b>Legend</b>
+</p>
+<ul><li> Assemblies in red are compiled with /unsafe;
+</li><li> "Trusted Callers" means that all assemblies can only be used from assemblies running at FullTrust. From a build point of view this means none of them have the AllowPartiallyTrustedCallers attribute;
+</li></ul>
+<h4> <span class="mw-headline" id="New_versioned_Libraries"> New versioned Libraries </span></h4>
+<p>We introduced a new NET_2_1 define and a new net_2_1 profile in the build system.   The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the <a href="{{site.baseurl}}/Linker" title="Linker">Cecil Linker</a> to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
+</p><p><a href="{{site.baseurl}}/images/old_site/d/da/Mono20-to-21.png" class="image"><img alt="Mono20-to-21.png" src="{{site.baseurl}}/images/old_site/d/da/Mono20-to-21.png" width="706" height="462" /></a>
+</p><p>In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a>-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
+</p><p>Tasks:
+</p>
+<ul><li> Setup the build for 2.1.0.0 versioned libraries
+</li><li> Setup configure for it.
+</li><li> Setup the key signing setup, and our shoehorning-signer for it.
+</li><li> Setup mono-api-info, mono-api-compare, corcompare pages for it.
+</li><li> Integrate into the build system.
+</li></ul>
+<p>A peer project of this is <a href="{{site.baseurl}}/Completing2.0Profile" title="Completing2.0Profile">Completing the 2.0 Profile</a> effort.   As both 2.1.0.0 and 2.0.0.0 share a lot in common.
+</p><p>I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET_2_1 that would be a superset of NET_2_0.   The result would be a larger assembly than we need to have.
+</p><p>At that point, we should use the Cecil-based linker (which will have to be modified) and have the linker strip out all the public code that is not necessary in the 2.1 profile.
+</p><p><b>Note:</b> I generated the corcompare output, but it is hard to read because many issues boil down to the missing attributes, so a first step might be to write the injection library to reduce some of the noise.
+</p><p><b>Note:</b> For the curious the Microsoft <a href="http://blogs.msdn.com/bclteam/archive/2007/04/30/introducing-microsoft-silverlight-1-1-alpha-justin-van-patten.aspx" class="external text" rel="nofollow">BCL Blog Team</a> has published a list of the <a href="http://blogs.msdn.com/bclteam/attachment/2338963.ashx" class="external text" rel="nofollow">BCL classes available in SL 1.1 Alpha</a>. Note that this is not complete (BCL only) and subject to changes.
+</p>
+<h3> <span class="mw-headline" id="API_Implementation"> API Implementation </span></h3>
+<p>Since there is no SDK documentation shipping with Silverlight 1.1, one way of getting a list of APIs to implement is to use the procedure described in this document: <a href="http://silverlight.net/quickstarts/Start/BrowseApi.aspx" class="external text" rel="nofollow">Explore Silverlight Assemblies with Visual Studio Object Browser</a>.
+</p><p>Alternatively, you can use `monop2 -d assemblyname.dll' to get a list of classes and APIs from the Silverlight installation.
+</p>
+<h4> <span class="mw-headline" id="System.ServiceModel.Web"> System.ServiceModel.Web </span></h4>
+<p>As part of the Google Summer of Code some of the APIs in this assembly will be implemented, but there are some areas that will not be implemented as part of it.   There is currently nobody signed up for working on the Syndication APIs.  And although these are not part of the Silverlight 1.1 release, they are on the roadmap.
+</p>
+<h4> <span class="mw-headline" id="System.Windows.dll"> System.Windows.dll </span></h4>
+<p>This contains the interface to the rendering engine and lives in two parts:
+</p>
+<ul><li> moon/src module on SVN (the C++ code)
+</li><li> moon/class/System.Windows on SVN (the C# code)
+</li></ul>
+<p>The class hierarchy for instance (on the <a href="{{site.baseurl}}/WPFNotes" title="WPFNotes">WPFNotes</a> page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not.   The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
+</p><p>It is probably simple for those that want to contribute to start work on the classes that do not derive from DependencyObject.  We should follow the regular process: write nunit test cases to understand the API, and then write the API.
+</p><p>One thing that seems clear to me is that the rendering should be done in the unmanaged world.  Just like the full WPF does, it seems like the managed code is merely a front-end that communicates with the backend and creates the object in the unmanaged world.  The unmanaged world actually does all the rendering.  There are a couple of questions as to how much needs to go in the unmanaged world, but at least it is clear that anything that derives from Visual as well as the majority of the things references from them (Brushes and Transforms at least, and maybe also PathSegments?)
+</p><p>Currently the plan is to have the C++ code mirror the C# class hierarchy, and it will be responsible for rendering and for loading XAML files into memory.
+</p><p>There are some stubbed out some classes in olive/class/agclr, but they are not complete and no real work has happened, there are just bits to see how pieces fit together.
+</p>
+<h3> <span class="mw-headline" id="Compiler_Fixes"> Compiler Fixes </span></h3>
+<p>Mono 1.2.4 is not able to build the DLR, you can either use SVN of mcs, or you can use Seo's patches for the IronPython/DLR distribution from <a href="https://fepy.svn.sourceforge.net/svnroot/fepy/trunk/patches/2.0a1/" class="external text" rel="nofollow">here</a>
+</p>
+<h3> <span class="mw-headline" id="LINQ"> LINQ </span></h3>
+<p>Mono currently does not have a complete LINQ implementation, we need to complete those.   They currently live in the mcs/class/System.Core directory.
+</p><p>There are plenty of things left to implement in the LINQ namespace.
+</p><p>Current developments:
+</p>
+<ul><li> Antonello contributed recently various core bits to LINQ.
+</li><li> Atsushi has been working on the XML Linq support.
+</li><li> Marek Safar has been working on the C# 3 linq syntax.
+</li></ul>
+<h3> <span class="mw-headline" id="Rendering"> Rendering </span></h3>
+<p>We are currently using Cairo for rendering, but every once in a while we consider the use of AntiGrain, there are pros and cons to each one, and we have not really done any real work to compare one against the other in terms of performance yet.
+</p><p>Antigrain 2.4 is licensed under the MIT X11 license, which would be very good for embedded vendors, while Cairo is LGPL/MPL which is less friendly in some settings.   Sadly Antigrain 2.5 is now dual-licensed under the GPL/commercial so we could potentially be stuck maintaining a 2.4-based codebase.
+</p>
+<div class="split-half">
+<h4> <span class="mw-headline" id="Cairo"> Cairo </span></h4>
+<p>Pros:
+</p>
+<ul><li> Potential for hardware acceleration in the future.
+</li><li> Maintained and used by multiple open source projects (Mozilla, Gtk+)
+</li><li> Well known in the Mono community
+</li><li> It is able to offload work to the X server.
+</li><li> Interaction between Cairo and X server is well understood and actively worked on.
+</li></ul>
+<p>Cons:
+</p>
+<ul><li> API is context-bound instead of parametrized: so there is an API overhead to switch from one set of brushes, patterns to another one while drawing two different objects.
+</li><li> License: LGPL/MPL, this might prevent its use on certain embedded scenarios (gaming consoles for example).
+</li><li> Not yet tuned for performance. 
+</li></ul>
+</div>
+<div class="split-half">
+<h4> <span class="mw-headline" id="AntiGrain_2.4"> AntiGrain 2.4 </span></h4>
+<p>Pros: 
+</p>
+<ul><li> Very fast today.
+</li><li> Software.
+</li><li> Composable stack.
+</li><li> Template-based Parametrized API.
+</li><li> Good cross platform story (Win32, X11, Linux).
+</li></ul>
+<p>Cons: 
+</p>
+<ul><li> C++
+</li></ul>
+<p>Agg 2.5 will ship with a libsigc++ license that will allow us to treat the code as MIT X11 unless the code is pulled out, allowing Antigrain to be used internally for Silverlight and allowing them to license Antigrain for other customers. 
+</p>
+</div>
+<p><br />
+<br style="clear:both;" />
+</p>
+<h3> <span class="mw-headline" id="Rendering_Pipeline"> Rendering Pipeline </span></h3>
+<p>Silverlight is a small subset of WPF.
+</p><p>Both the "real" WPF and Silverlight have two components: a managed component that provides the API, that exposes the dependency property system and provides the high-level interface to the rendering engine and an unmanaged component that renders the "scene".
+</p><p>There are also at least two threads: one that responds to redraw requests (to ensure that the content is always rendered regardless of whether the application is busy) and another that drives the process.
+</p><p><br />
+</p>
+<h4> <span class="mw-headline" id="Integration_with_Compiz"> Integration with Compiz </span></h4>
+<p>In some early discussions with David Reveman (the designer of Xgl and Compiz), we are considering the definition of a rendering scene protocol that would allow in the presence of Compiz offload the work to the compositing manager and take advantage of the direct hardware interface that Compiz has.
+</p>
+<h3> <span class="mw-headline" id="The_Plugin_and_the_DOM"> The Plugin and the DOM </span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:520px;"><a href="{{site.baseurl}}/images/old_site/b/b7/Plugin.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/b/b7/Plugin.png" width="518" height="426" class="thumbimage" /></a>  <div class="thumbcaption">Plugin relation to the Browser</div></div></div>
+<p>There are two directions of communication: the browser talking to the plugin, and the plugin talking to the browser.
+</p><p>The plugin will have to expose the internal tree structure to its host, this is  simple to do, documentation on how to write Mozilla plugins is available <a href="http://www.mozilla.org/projects/plugins/" class="external text" rel="nofollow">here</a>.   Work on this will probably have to wait until we get the API to a reasonable state.
+</p><p>The other direction (plugin communicating with the browser) can be started right away.   This is the System.Windows.Browser and System.Windows.Hosting namespaces (they live in System.Silverlight.dll).
+</p><p>Our initial goal is to support Mozilla so this should not be too hard.
+</p>
+<h4> <span class="mw-headline" id="Plugin_Loading"> Plugin Loading </span></h4>
+<p>Currently only one instance of the Mono virtual machine can live in a single process (the GC, signal handling, segfault handling all are controlled by the Mono runtime).
+</p><p>Open questions:
+</p>
+<ul><li> How should various plugins be isolated from each other?
+</li><li> Are AppDomains enough to isolate different plugins?
+</li><li> Should Mono be modified to support completely different applications?
+</li></ul>
+<p><br style="clear:both;" />
+</p>
+<h3> <span class="mw-headline" id="Hosting_API"> Hosting API </span></h3>
+<p>System.Silverlight.dll and Microsoft.Scripting.dll are involved.
+</p><p>Some notes at <a href="{{site.baseurl}}/MoonlightHostingNotes" title="MoonlightHostingNotes">MoonlightHostingNotes</a>.
+</p>
+<h3> <span class="mw-headline" id="JavaScript_compiler"> JavaScript compiler </span></h3>
+<p>The JavaScript compiler does not look like it will be open sourced, but some comments from the Mix conference indicate that it is probably a small compiler (scanning and parsing) that defers most of the work to the DLR (already open source).
+</p><p>The size of the Javascript compiler in Silverlight and the runtime are 114,688 and 299,008 bytes respectively.   Extrapolating this from the size of our C# 1.0 compiler means that their Javascript compiler is roughly 9,000 lines of code, and the supporting runtime is roughly 22,000 lines of code.
+</p><p>We have a runtime we could start from already, but it will likely require some changes, while the Javascript compiler seems relatively trivial to implement.
+</p><p><br style="clear:both;" />
+</p>

@@ -1,0 +1,51 @@
+---
+layout: obsolete
+title: "MonoMacPackager"
+permalink: /old_site/MonoMacPackager/
+---
+
+<h1>MonoMacPackager</h1>
+
+<p>With the new release of the <a href="{{site.baseurl}}/MonoMac" title="MonoMac">MonoMac</a> add-in for MonoDevelop, you can easily turn your Mono application into a Mac bundle, and you can also get a Mac installer for your application.
+</p><p>If you want to create self-contained Mac bundles or publish your software to the Mac AppStore, you should get <a href="http://xamarin.com/mac" class="external text" rel="nofollow">Xamarin.Mac</a> which is a strict superset of MonoMac.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Getting_Started"><span class="tocnumber">1</span> <span class="toctext">Getting Started</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_your_Mac_application"><span class="tocnumber">2</span> <span class="toctext">Creating your Mac application</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Bundles_and_Mono"><span class="tocnumber">2.1</span> <span class="toctext">Bundles and Mono</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Creating_an_Installer_package"><span class="tocnumber">3</span> <span class="toctext">Creating an Installer package</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Getting_Started"> Getting Started </span></h1>
+<p>You will need the following components installed:
+</p>
+<ul><li> From Apple:
+<ul><li> At least XCode 4.5, this contains the developer tools to build Mac apps
+</li><li> Apple's Application Tools (login to developer.apple.com/mac)
+<ul><li> <b>Yes, you need this.   No, you can't ignore this.   You wont be able to publish to the AppStore without it.  Yes, we mean it.</b>
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> From Mono:
+<ul><li> Mono 2.10.9
+</li><li> MonoDevelop 3.1.0 (released on December 12th)
+</li></ul>
+</li></ul>
+<h1> <span class="mw-headline" id="Creating_your_Mac_application"> Creating your Mac application </span></h1>
+<p>Mac bundles are directories with the .app extension that contain all of the components necessary for your application to run.   They contain your executable, any images, UI definitions, pdfs, graphics, data files, internationalization resources and any other resource that your application needs at runtime.   If you want to learn more about what goes in a bundle, you can read Apple's <a href="http://developer.apple.com/library/mac/#documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html" class="external text" rel="nofollow">Bundle Programming Guide</a>.
+</p><p>To create native Mac bundles, you should create a new project based on any of the MonoMac profiles: the document-based application, the empty-application, or the window-based application.   This will configure your project to be compiled as a Mac bundle.
+</p><p>When you compile your application, MonoDevelop will create a Mac bundle that integrated with the operating system.   You will want to provide a custom icon, and tune the launch parameters in the Info.plist file that MonoDevelop generates for you.
+</p>
+<h2> <span class="mw-headline" id="Bundles_and_Mono"> Bundles and Mono </span></h2>
+<p>By default, MonoDevelop creates application bundles that require the Mono framework to be installed (it is typically installed in /Library/Frameworks/Mono.framework).   This creates small bundles, as only your code and your resources are packaged, the entire Mono stack is shared across all of the Mono applications on the System.   
+</p><p>But sometimes you want to distribute your application without requiring end users to install Mono on their own, distribute your app on the Mac App Store, or you might want to take a dependency on a particular version of Mono that you have tested and QAed on site.   For those scenarios, you should obtain a license to <a href="http://xamarin.com/mac" class="external text" rel="nofollow">Xamarin.Mac</a>.
+</p>
+<h1> <span class="mw-headline" id="Creating_an_Installer_package"> Creating an Installer package </span></h1>
+<p>Even if your bundle is completely self-contained into the .app directory, if you are planning on distributing your app in the Mac AppStore, you must create an installer package.  Or you might want to create an installer to give your users an installer, instead of having them drag-and-drop the application into their /Applications folder.
+</p><p>You can distribute this .pkg file to your users, and it will guide them through the process of installing your application, this is what the generated installer looks like if you check this option:
+</p><p><a href="{{site.baseurl}}/images/old_site/a/ad/Md-monomac-installer.png" class="image"><img alt="Md-monomac-installer.png" src="{{site.baseurl}}/images/old_site/a/ad/Md-monomac-installer.png" width="700" height="520" /></a>
+</p>

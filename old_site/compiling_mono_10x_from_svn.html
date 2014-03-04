@@ -1,0 +1,37 @@
+---
+layout: obsolete
+title: "Compiling Mono 1.0.x From SVN"
+permalink: /old_site/Compiling_Mono_1.0.x_From_SVN/
+---
+
+<h1>Compiling Mono 1.0.x From SVN</h1>
+
+<p>Note: Mono 1.0 has been deprecated.
+</p>
+<h3> <span class="mw-headline" id="Checking_out_for_the_first_time"> Checking out for the first time </span></h3>
+<p>If you are checking out Mono 1.0.x from SVN for the first time, use the following command:
+</p>
+<pre>
+ $ svn co svn+ssh://USER@mono-cvs.ximian.com/source/branches/mono-1-0
+</pre>
+<p>If you do not have an account on the main Subversion repository, you can use anonymous access:
+</p>
+<pre>
+  $ svn co svn://anonsvn.mono-project.com/source/branches/mono-1-0
+</pre>
+<h3> <span class="mw-headline" id="Updating_an_existing_checkout"> Updating an existing checkout </span></h3>
+<pre>
+ $ (cd mono-1-0; svn update) 
+</pre>
+<h3> <span class="mw-headline" id="Compiling_your_Mono_1.0.x_from_SVN"> Compiling your Mono 1.0.x from SVN </span></h3>
+<p>Then you can run:
+</p>
+<pre>
+ (cd mono-1-0/mono; make bootstrap) </pre>
+<p><br />
+Now you can install the result:
+</p>
+<pre>
+ (cd mono; make install) </pre>
+<p>Notice that following the above procedure does not require you to manually install the software in the `mcs' directory, as the relevant files will be copied by the `mono' makefiles.
+</p>

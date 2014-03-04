@@ -1,0 +1,57 @@
+---
+layout: obsolete
+title: "ObjCSharp"
+permalink: /old_site/ObjCSharp/
+---
+
+<h1>ObjCSharp</h1>
+
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>ObjC# is a two way bridge to leverage the CLR into the ObjectiveC programming language and expose your ObjectiveC classes to the CLR.  ObjC# is currently only support on Mac OS X.  There are a few simple rules to remember when translating a CLR method into a ObjC selector:
+</p>
+<ul><li> All method names with arguments are appended based on the argument type.  That is MyMethod (int a, float b) would become MyMethodWithInt32:Single:
+</li><li> The parameterless constructor are mapped to init
+</li><li> Constructors with parameters are mapped like methods but prefaced with init (eg; initWithInt32:)
+</li></ul>
+<p>You also need to remember that if your method is returning a primitive type it is returned as a pointer to the result; so if you had:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> MyMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+  <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Then your objc# code would be:
+</p><p><code>
+NSLog (*(int *)[yourinstance MyMethod]);
+</code>
+</p>
+<h2> <span class="mw-headline" id="Tutorials"> Tutorials </span></h2>
+<p>The beginning of every ObjC# invokation involves initializing the bridge:
+</p><p>Allocate a new instance of the bridge:
+</p><p><code>
+ObjCSharpBridge bridge = [ObjCSharpBridge alloc];
+</code>
+</p><p>Initialize the bridge:
+</p><p><code>
+[bridge init];
+</code>
+</p><p>After you have a working instance of the bridge you need to load the assembly you wish to interact with:
+</p><p><code>
+[bridge loadAssembly: "test-library.dll"]
+</code>
+</p><p>You are now ready to load a class representation of any class in the loaded assembly (or its referenced assemblies).
+</p><p><code>
+Class yourClass = [bridge getClass: "YourNameSpace.YourClass"];
+</code>
+</p><p>If you wanted to call a static method; you do so directly on the class representation:
+</p><p><code>
+[yourClass YourStaticMethod];
+</code>
+</p><p>You now of course need to initialize the class (mapped to the constructor in the CLR):
+</p><p><code>
+id instance = [yourClass initWithInt32:-2];
+</code>
+</p><p>You may now call methods according to the rules stated above.
+</p><p>Make sure you look at the test/ directory in SVN for more examples of different code/call paths.
+</p>
+<h2> <span class="mw-headline" id="Versions_.26_Status"> Versions &amp; Status </span></h2>
+<p>ObjC# is currently at v0.1 and only available from SVN.  It can successfully represent classes both ways across the bridge.  It can also invoke events through the bridge.  Marshalling of primitives works.
+</p>

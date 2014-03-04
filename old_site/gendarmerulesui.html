@@ -1,0 +1,87 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Ui"
+permalink: /old_site/Gendarme.Rules.Ui/
+---
+
+<h1>Gendarme.Rules.Ui</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s user interface rules are located in the <b>Gendarme.Rules.Ui.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Ui/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#GtkSharpExecutableTargetRule"><span class="tocnumber">1.1</span> <span class="toctext">GtkSharpExecutableTargetRule</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#SystemWindowsFormsExecutableTargetRule"><span class="tocnumber">1.2</span> <span class="toctext">SystemWindowsFormsExecutableTargetRule</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#UseSTAThreadAttributeOnSWFEntryPointsRule"><span class="tocnumber">1.3</span> <span class="toctext">UseSTAThreadAttributeOnSWFEntryPointsRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="GtkSharpExecutableTargetRule"> GtkSharpExecutableTargetRule </span></h3>
+<p>An executable assembly, i.e. an .exe, refers to the gtk-sharp assembly but isn't compiled using <b>-target:winexe</b>. A console window will be created and shown under Windows (MS runtime) when the application is executed. 
+</p><p><b>Bad</b> example:
+</p>
+<pre>gmcs gtk.cs -pkg:gtk-sharp
+</pre>
+<p><b>Good</b> example:
+</p>
+<pre>gmcs gtk.cs -pkg:gtk-sharp -target:winexe
+</pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="SystemWindowsFormsExecutableTargetRule"> SystemWindowsFormsExecutableTargetRule </span></h3>
+<p>An executable assembly, i.e. an .exe, refers to the System.Windows.Forms assembly but isn't compiled using <b>-target:winexe</b>. A console window will be created and shown under Windows (MS runtime) when the application is executed which is probably not desirable for a winforms application. 
+</p><p><b>Bad</b> example:
+</p>
+<pre>gmcs swf.cs -pkg:dotnet
+</pre>
+<p><b>Good</b> example:
+</p>
+<pre>gmcs swf.cs -pkg:dotnet -target:winexe
+</pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseSTAThreadAttributeOnSWFEntryPointsRule"> UseSTAThreadAttributeOnSWFEntryPointsRule </span></h3>
+<p>This rule checks executable assemblies, i.e. *.exe's, that reference System.Windows.Forms to ensure that their entry point is decorated with <b>[System.STAThread]</b> attribute and is not decorated with <b>[System.MTAThread]</b> attribute to ensure that Windows Forms work properly. 
+</p><p><b>Bad</b> example #1 (no attributes):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> WindowsFormsEntryPoint <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Bad</b> example #2 (MTAThread)
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> WindowsFormsEntryPoint <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>MTAThread<span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example #1 (STAThread):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> WindowsFormsEntryPoint <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>STAThread<span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example #2 (not Windows Forms):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ConsoleAppEntryPoint <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

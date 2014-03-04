@@ -1,0 +1,1363 @@
+---
+layout: obsolete
+title: "Accessibility: Team Meetings 2008 Jul 23"
+permalink: /old_site/Accessibility:_Team_Meetings_2008_Jul_23/
+---
+
+<h1>Accessibility: Team Meetings 2008 Jul 23</h1>
+
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<td>
+</td>
+<td> -!- knocte changed the topic of #mono-a11y to: Iteration meeting  ( <a href="http://www.mono-project.com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project.com/Accessibilit</a> y )
+</td>
+<td> 07:05
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well I guess we can start
+</td></tr>
+<tr>
+<td>
+</td>
+<td> calvin told me to run the meeting, he was not going to be able to join
+</td></tr>
+<tr>
+<td>
+</td>
+<td> as usual we will be asking for the status report of everyone and plan for next iteration
+</td>
+<td> 07:06
+</td></tr>
+<tr>
+<td>
+</td>
+<td> anything that anybody want to arise before we start? everyone is ok with the usual order of people reporting?
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> yep
+</td>
+<td> 07:07
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I guess it's ok so let's start with the first in the class&#160;:) ermmm, sandy?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> how was your iteration?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> Alright, the main thing I worked on this iteration was getting our StructureChangedEvents in order
+</td></tr>
+<tr>
+<td>
+</td>
+<td> which involved some refactoring in UIAutomationWinforms and in the bridge, too
+</td>
+<td> 07:08
+</td></tr>
+<tr>
+<td>
+</td>
+<td> the bridge now at least notices when removals occur, but atk is not being notified properly yet (it seems to be...something must be getting lost)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> anyway, I also got to my tests
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but I haven't committed them yet
+</td></tr>
+<tr>
+<td>
+</td>
+<td> they will be committed today...I had some minor threading issues on the Form test
+</td>
+<td> 07:09
+</td></tr>
+<tr>
+<td>
+</td>
+<td> of course, still waiting to hear on the Olive patch
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I really want to make our contributor guidelines more solid
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we never documented that our coding standards are different than the rest of Mono
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and this has caused some confusion
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and I think it's important that we get this and the rest of our practices clearly documented
+</td>
+<td> 07:10
+</td></tr>
+<tr>
+<td>
+</td>
+<td> this will probably take me at least a day to do right
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and then hopefully mario can advise me on what provider is best to work on
+</td></tr>
+<tr>
+<td>
+</td>
+<td> or if there is other architectural work I should focus on
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td>
+<td> 07:11
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks sandy, about the olive's patch, my fault that I wasn't paying attention to it, still didn't subscribe to olive's list, so no replies on the thread at all?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: I pinged again the other day on the list
+</td></tr>
+<tr>
+<td> <b>&lt; kangaroo&gt;&#160;</b>
+</td>
+<td> why are you guys patching olive?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> kangaroo: it's just a pc file
+</td></tr>
+<tr>
+<td> <b>&lt; kangaroo&gt;&#160;</b>
+</td>
+<td> oh
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> but miguel wanted to review it
+</td></tr>
+<tr>
+<td> <b>&lt; kangaroo&gt;&#160;</b>
+</td>
+<td> monoport the change?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> miguel is travelling this week
+</td></tr>
+<tr>
+<td>
+</td>
+<td> expect delays
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> yeah, it's been a busy month
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> kangaroo: I guess the change is on the mailing list
+</td>
+<td> 07:12
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and about the contributor guidelines, sorry but I didn't look into them very deeply, but I guess our main differences are one glitch about the coding style and the .py files headers and... anymore?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: I don't know, I will have to review
+</td>
+<td> 07:13
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> maybe it's worth resyncing ourselves again to Mono conventions
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok we'll talk about this later
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's switch to mario, thanks again sandy
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> kangaroo: <a href="http://monoport.com/36522" class="external free" rel="nofollow">http://monoport.com/36522</a>
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> mario: ready there?
+</td>
+<td> 07:14
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> this iteration: I finished the unitary tests for ListBox and ComboBox
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I started working with the winform Components
+</td></tr>
+<tr>
+<td>
+</td>
+<td> such as ToolTip, HelpProvider, ErrorProvider
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and some changes were committed to update the implementation
+</td>
+<td> 07:15
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I'm still missing the Scrollbar navigation in ComboBox.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so, next iteration is: winfor components: "ToolTip, HelpProvider, ErrorProvider". Write CheckedListBox unitary tests. Update winform patches.
+</td>
+<td> 07:16
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine, that seems to be a very complete iteration, thanks mario
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's see if we can keep on with neville
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ngao: ready?
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> yes
+</td>
+<td> 07:17
+</td></tr>
+<tr>
+<td>
+</td>
+<td> last iteration, i spent a little time on struggling with monodevelop...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> read some Navigation docs and codes, and implemented Griditem that is for the items in status bar, and finished unit test
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration, since status bar has three leafs, i would like to implement progress bar provider,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i think that would be a part of status bar navigation
+</td>
+<td> 07:18
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks ngao, so finally using MD 1.0 right?
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> yeah, but still some trivial problems
+</td>
+<td> 07:19
+</td></tr>
+<tr>
+<td> <b>&lt; kangaroo&gt;&#160;</b>
+</td>
+<td> sandy: looks fine, but if miguel wanted to review thats up to him
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> kangaroo: thanks for the follow-up
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, I wanted to be the last one of the devs to give my status because I wanted to ask you how did you feel about a slight change on how we structure some things in the wiki (the project schedule)
+</td>
+<td> 07:20
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> knocte: I should go first?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh sorry mgorse, dumb of me!
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: please
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> I've been working on mapping the StatusBar control type to atk
+</td>
+<td> 07:21
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I have a bunch of code that I'm close to being ready to commit.  I mailed the list, then made some changes to the tests per knocte's request
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I've only tested simple status bars.  Haven't tried testing StatusBarPanels, so the code may or may not need changes to support them.  I plan on trying that when UI.Automation.WinForms supports them.
+</td>
+<td> 07:22
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also wrote a bunch of code for IGridProvider, and much of it should be reusable to implement tables, but it isn't really tested yet, either
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and I fixed a couple of issues with the text implementor in the bridge that I found while testing the statusbar.  Going to commit those later
+</td>
+<td> 07:23
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Next iteration I plan on working on mapping the ScrollBar control type to atk
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> maybe you'll reuse some Panel class stuff for StatusBarPanels?
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> I also talked to Mark Doffman about collections in atspi-dbus and realized that I should finish the work that I started on them, so I plan on doing that as well
+</td>
+<td> 07:24
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh yeah please, tell us when you think the dbus side needs more attention
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks mgorse
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> knocte: I consider myself to be in maintenance mode with that code
+</td>
+<td> 07:25
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok perfect, I'll ask you some more questions about that later
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok so what I wanted to arise is 2 proposal for change: firstly try to figure out percentages of work done before having the meeting, in order to reflect them on the meeting log, and , regarding the project schedule:
+</td></tr>
+<tr>
+<td>
+</td>
+<td> first a question, how are you guys handling the case when there is a delay of what was *originally* planned in the first version of the project plan?
+</td>
+<td> 07:26
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I guess you're just adding the elements to the next iteration right?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> sandy: I noticed you were doing that?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: well, we aren't actually planned in advance
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we randomly tossed things into future iterations
+</td>
+<td> 07:27
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> I'm moving to last iteration, then I move to current when the controls are alike, for example right now, the "component-controls" (tooltip, helpprovider, etc)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I did the same with the scrollbars
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I see, ok what I meant with this is, maybe you already noticed...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> last week I added an extra "meta-iteration" on the page
+</td></tr>
+<tr>
+<td>
+</td>
+<td> called "elements delayed"
+</td>
+<td> 07:28
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I think there are 2 types of delays
+</td></tr>
+<tr>
+<td>
+</td>
+<td> firstly a delay that you know before the iteration takes place, like my guadec travel
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and secondly a delay because you have needed more time to finish more things or got stuck with something
+</td>
+<td> 07:29
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I was thinking about specifying this kind of stuff here
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> knocte: if something is delayed, it shows in iteration X as "not done"
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and there are notes to specify why
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and it gets bumped to the next iteration
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah but what I noticed is that it's not easy to see all the delayed elements
+</td>
+<td> 07:30
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> is that a problem?
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> maybe for project planning, well, maybe we just have to agree on some keywords to distinguish between these types of delays I've talked about
+</td>
+<td> 07:31
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll talk about this later.. and I'll give my status report now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it turns out I've had a delay, but not planned delay, in this iteration, because I started to have threading issues with the GailTester project
+</td></tr>
+<tr>
+<td>
+</td>
+<td> precisely when mgorse was joining development on this side, so I considered it pretty important
+</td>
+<td> 07:32
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I discovered some bug in NUnit and tried to use a more recent version
+</td></tr>
+<tr>
+<td>
+</td>
+<td> that led me to more problems... until I figured out some command line options I should use...
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it's all in some emails I exchanged with mkestner and a thread in the nunit-user list if you're curious
+</td>
+<td> 07:33
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I had only time to finish a bit more the combobox and entry classes, but without committing until I get more progress
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I hope that my next iteration means finishing those and also finishing my delayed Menu mapping
+</td>
+<td> 07:34
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so let's switch to QA guys if no one has anything more to say?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: you ready? I'm glad you've started submitting bugs, I forgot to say I was going to dedicate time to them also
+</td>
+<td> 07:35
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: ping?
+</td>
+<td> 07:36
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll switch to Calen in 3, 2, 1...&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> hehe..
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> Calen: ready?
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> i am ready
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> in last Iteration i upgraded some winforms application to not use '&amp;' in form's text, beauce it cause an error with accerciser can't get correct frame's name
+</td>
+<td> 07:37
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: weird he just emailed the list
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> i also have scripted a strongwind test for winforms button control application.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but fased some problems, so i spent many times to search solution and log bug:
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> decriptor: thanks for pointing out, we'll wait for him in the last slot&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> first one is strongwind couldn't run cache.launchApplication(args=args), solved by add name='ipy'
+</td>
+<td> 07:38
+</td></tr>
+<tr>
+<td>
+</td>
+<td> second is strongwind couldn't find Frame beause program doesn't support 'showing' state for winforms app items, but strongwind base on 'x.showing' to run findFrame(), so if we want to run the test before it's be supported we need change 'x.showing' to 'not x.showing' in strongwind.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> third is strongwind test for winforms button control run false beause accerciser can't get new label text that has been changed by click button.
+</td>
+<td> 07:39
+</td></tr>
+<tr>
+<td>
+</td>
+<td> another problem is strongwind can't find a new frame window that be rised by click a button (actually accerciser can find it). i have no idea about this problem now,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so in this Iteration i will look at it. and also will continue to script strongwind test for a new winforms control
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done&#160;:)
+</td>
+<td> 07:40
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> thanks Calen, where's strongwind bug tracking tool?
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- bgm [~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined #mono-a11y
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I mean, is there a bugzilla for strongwind?
+</td></tr>
+<tr>
+<td> <b>&lt; bgm&gt;&#160;</b>
+</td>
+<td> yes
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> knocte: strongwind have a bugzilla
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> is it public? you have the URL?
+</td>
+<td> 07:41
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgm: hey
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> sorry my VPN got disconnected again, i just thought mgorse was taking a long time&#160;:)
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- bgm [~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has quit [leaving]
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> wait, let me see
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> bgmerrell: doesn't matter, you'll go next to Calen now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> BTW, in which language is strongwind tool developed?
+</td>
+<td> 07:42
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> python!
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> python
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td>&#160;;)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> haha..
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> remains unsurprised&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well then if you've submitted bugs, I'd love to see their URLs! just for the sake of the log, as soon as you find them
+</td>
+<td> 07:43
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrell: you can go ahead with your report
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> <a href="http://bugzilla.gnome.org/browse.cgi?pro" class="external free" rel="nofollow">http://bugzilla.gnome.org/browse.cgi?pro</a> duct=strongwind
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ohh it's a gnome module, I didn't know that, thanks guys
+</td>
+<td> 07:44
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> I have gotten patches accepted to Strongwind, so we should be able to tackle any problems on that end.
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> fine fine
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> okay, my report..
+</td>
+<td> 07:45
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i was kind of all over the place this iteration, i wanted to get the test harness and gtk examples polished up so we had some pristine examples to go by now that we have started the WinForms testing
+</td>
+<td> 07:46
+</td></tr>
+<tr>
+<td>
+</td>
+<td> So i did that.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Worked with decriptor quite a bit on making sure his packages were what QA needed
+</td></tr>
+<tr>
+<td>
+</td>
+<td> wrote a tiny script to download and updates all the appropriate RPMs to get our stuff running
+</td>
+<td> 07:47
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thats checked in to uia2atk/test/drivers if anyone cares
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (anyone outside of QA i mean)
+</td>
+<td> 07:48
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I also continued my slow-but-sure work on getting a good Strongwind tutorial up on our wiki
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Next iteration I hope to finish that
+</td>
+<td> 07:49
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and continue to make sure we get any problems resolved for using Strongwind to test the WinForms apps
+</td>
+<td> 07:50
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> that sounded as really fun hacking (except the wiki part&#160;:) ), so done?
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> and i still hope to get started on Orca testing (this has been planned for a while now)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td>
+<td> 07:51
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh yes, orca sounds like a plan to start finding tons of bugs&#160;:) thanks bgmerrell
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll get to the QA&amp;build man, Ray?
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> yeah, here i come.
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, QA first please (if you did any QA)
+</td>
+<td> 07:52
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> this time, i have nearly all the sample scripts to be changed to suite the needs for testing except webbrowser.py
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i'm stuck by WebBrowser control. and ask the question in mono-olive google groups. but no answer yet.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I would figure things out in this iteration.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I just have learnt some package, python, autotools knowledge for a little time.
+</td>
+<td> 07:53
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but not touch building stuff yet.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so in the next iteration,
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I should start to do some codes for the rest of controls.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and keep walking.&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok, although WebBrowser seems to be a ton of work by just one widget, it's fine you start dealing with it early
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks Ray
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> you're welcome
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> and before decriptor starts I wanted to ask you first
+</td>
+<td> 07:54
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> (both of you)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> if you could start, wrt packaging, looking at the CORBA-&gt;DBUS stuff
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> where is the source code?
+</td>
+<td> 07:55
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I don't know if the location of the code is going to be definitive, well this stuff will need just to talk with mgorse
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: are you very busy to start looking briefly at this?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: I can start looking at it
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> ok, so we have to package what mgorse code?
+</td>
+<td> 07:56
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, mgorse will guide you about all that stuff
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> The code is currently at <a href="git://git.codethink.co.uk/git/atspi-dbus" class="external free" rel="nofollow">git://git.codethink.co.uk/git/atspi-dbus</a>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but it might eventually get moved to freedesktop.org
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> oh, I get to learn git&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> mgorse: thanks for pointing out
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> knocte, sure, i will .&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well then we can finish with decriptor report
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> disappears for a week&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> decriptor: Yeah.  You should jus tneed to clone the repository, though.  We can talk about it later
+</td>
+<td> 07:57
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> decriptor, so do i .&#160;:D
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> sorry, taking notes
+</td></tr>
+<tr>
+<td>
+</td>
+<td> now I'm ready
+</td>
+<td> 07:58
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> perfect, go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> so as bgmerrell mentioned we worked on getting the rpms right as far as whats needed
+</td></tr>
+<tr>
+<td>
+</td>
+<td> they will be at <a href="http://build1.sled.lan.novell.com/uia" class="external free" rel="nofollow">http://build1.sled.lan.novell.com/uia</a>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I created a script that would dig through monobuild and collect out the packages of interest.  I can post that script if anyone is interested
+</td>
+<td> 07:59
+</td></tr>
+<tr>
+<td> <b>* Ray&#160;</b>
+</td>
+<td> is interested in that.
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> they why that I've set it up is it cleans out the current stuff on build1 and uploads the new stuff
+</td></tr>
+<tr>
+<td>
+</td>
+<td> the old stuff remains on the build.mono.lab.novell.com
+</td>
+<td> 08:00
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> yeah, maybe it's interesting to commit it, check it with mono packagers as well
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> <a href="http://build1.sled.lab.novell.com/uia" class="external free" rel="nofollow">http://build1.sled.lab.novell.com/uia</a> btw
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> bgmerrell: thanks
+</td>
+<td> 08:01
+</td></tr>
+<tr>
+<td>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> s/lan/lab, right, thanks
+</td></tr>
+<tr>
+<td> <b>&lt;@bgmerrell&gt;&#160;</b>
+</td>
+<td> sandy will fix it in editing..&#160;;)
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: they might go a different way.  the reason for the script is to handle mono packages that need patches
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh I see
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> so as for the build stuff, we are going to go with a hybrid of monobuild and OBS
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> nice to know
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> knocte: if we end up not patching over time, then we might change that up
+</td>
+<td> 08:02
+</td></tr>
+<tr>
+<td>
+</td>
+<td> but for now
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> oh I thought monobuild was based on OBS, I should learn more about this stuff
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> both systems come with limitations&#160;:(
+</td></tr>
+<tr>
+<td>
+</td>
+<td> no
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte: monobuild is completely written by wade solely for mono stuff
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I've taken the code and done a friendly branch of it and try to learn it
+</td>
+<td> 08:03
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> I see
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> no one knew the code other than wade&#160;:(
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well, then, next thing is your plan for next it.?
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> its going to be an embrass and extend thing I think
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> aha, sounds good
+</td>
+<td> 08:04
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> go over the code some more and see where we can improve it and take advantage of obs for the actual building (jails) which will give us multi-distro capabilities
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> sidenote  I got access to the provo build system (new obs stuff)
+</td>
+<td> 08:05
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> start looking into the  corba-&gt;dbus stuff
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> ok that sounds very good too
+</td></tr>
+<tr>
+<td> <b>&lt;@decriptor&gt;&#160;</b>
+</td>
+<td> btw I created a google doc in hopes to keep ray and myself and [yet to be hired]&#160;:)   in sync with the build stuff
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (not sure if other want access to that)
+</td>
+<td> 08:06
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I think that's it...  done
+</td></tr>
+<tr>
+<td> <b>&lt;@knocte&gt;&#160;</b>
+</td>
+<td> well, if anyone's interested, just ask decriptor!
+</td></tr>
+<tr>
+<td>
+</td>
+<td> thanks very much decriptor, and all
+</td></tr>
+<tr>
+<td>
+</td>
+<td> hugh, 1 hour meeting!
+</td></tr>
+<tr>
+<td> <b>* decriptor&#160;</b>
+</td>
+<td> oh and promote a11y stuff at the LWE&#160;:)
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- knocte changed the topic of #mono-a11y to:  <a href="http://www.mono-project.com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project.com/Accessibilit</a> y
+</td>
+<td> 08:07
+</td></tr>
+</table>
+

@@ -1,0 +1,138 @@
+---
+layout: obsolete
+title: "Git Submodule Maintenance"
+permalink: /old_site/Git_Submodule_Maintenance/
+---
+
+<h1>Git Submodule Maintenance</h1>
+
+<p>One way of doing work on submodules is described in <a href="http://help.github.com/submodules/" class="external text" rel="nofollow">GitHub help on submodules</a>, however the workflow described below is preferred for Mono.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Git_submodules_in_Mono"><span class="tocnumber">1</span> <span class="toctext">Git submodules in Mono</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Adding_a_submodule"><span class="tocnumber">1.1</span> <span class="toctext">Adding a submodule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Submodule_repository_of_origin_maintenance"><span class="tocnumber">2</span> <span class="toctext">Submodule repository of origin maintenance</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Submodule_maintenance_in_Mono_repository"><span class="tocnumber">3</span> <span class="toctext">Submodule maintenance in Mono repository</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Submodule_modifications_workflow"><span class="tocnumber">4</span> <span class="toctext">Submodule modifications workflow</span></a></li>
+</ul>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Git_submodules_in_Mono"> Git submodules in Mono </span></h3>
+<p>These instructions are for developers working on code in this repository. End users do not need to be concerned with the procedures described below. The description applies to each of the submodules used by mono. To list the submodules in use run:
+</p>
+<pre>   git submodule
+</pre>
+<h4> <span class="mw-headline" id="Adding_a_submodule"> Adding a submodule </span></h4>
+<p>If you have write access to the submodule repository do your work on it in a separate location, do not ever do any work in the mono copy of the submodule.
+</p><p>All submodules should reside under the external/ directory off the top level Mono directory. If you want to add
+a new submodule, issue the following command from the Mono topmost directory:
+</p>
+<pre>  git submodule add REPOSITORY_URL external/MODULE_NAME
+</pre>
+<p>After that commit and push the changes to .gitmodule and the submodule itself.
+</p>
+<h3> <span class="mw-headline" id="Submodule_repository_of_origin_maintenance"> Submodule repository of origin maintenance </span></h3>
+<p>The submodule repository of origin (at the REPOSITORY_URL above) must always be modified outside the Mono directory.
+The repository may be a fork or clone of yet another GIT repository, either on github or elsewhere. If this is the case,
+you must configure your clone of it by adding a remote reference to the upstream repository:
+</p>
+<pre>   git remote add upstream UPSTREAM_URL
+</pre>
+<p>When there exist upstream changes you need to merge, the following command needs to be used:
+</p>
+<pre>   git fetch upstream/master
+</pre>
+<p>followed by
+</p>
+<pre>   git merge upstream/BRANCH_NAME
+</pre>
+<p>and as soon as all the possible confilits are resolved, push the freshly integrated changes back to our repository
+</p>
+<pre>   git push origin/BRANCH_NAME
+</pre>
+<h3> <span class="mw-headline" id="Submodule_maintenance_in_Mono_repository"> Submodule maintenance in Mono repository </span></h3>
+<p>When the submodule repository of origin is ready to be used by Mono, you need to go to the top level directory of
+Mono repository clone and make sure the submodules are checked out and up to date:
+</p>
+<pre>   git submodule init
+   git submodule update --recursive
+</pre>
+<p>Then in order to integrate changes from the submodule repository of origin:
+</p>
+<pre>   cd external/MODULE_NAME
+   git pull
+</pre>
+<p>you can, of course, use a a specific commit in the 'git pull' above instead of the default HEAD. When the changes are
+checked out, commit the changes to the Mono repository:
+</p>
+<pre>   cd ../..
+   git add external/MODULE_NAME
+   git commit -m "Module MODULE_NAME updated"
+   git push
+</pre>
+<p>It is <b>extremely</b> important not to end the <tt>external/MODULE_NAME</tt> reference above with a / since that will make git remove the submodule reference and commit all its contents as normal files to Mono directory. It is also required that you <b>always</b> push the submodule changes <b>before</b> any and all work requiring the changes is done in the Mono repository.
+</p>
+<h2> <span class="mw-headline" id="Submodule_modifications_workflow"> Submodule modifications workflow </span></h2>
+<p>If you work both on the submodule itself and Mono, here's a workflow you need to follow in order to maintain a healthy relationship between Mono and the submodule.
+</p><p>Let's assume the following directory hierarchy:
+</p>
+<pre>   |vc
+   |----FOO_LIBRARY [your clone of FOO_LIBRARY repository]
+   |----Mono
+   |-------external
+   \----------FOO_LIBRARY [submodule copy of FOO_LIBRARY repository]
+</pre>
+<p>We have two scenarios to consider when working with FOO_LIBRARY: 
+</p>
+<ul><li> it is a fork of some upstream repository
+</li><li> it is the orignal repository
+</li></ul>
+<p>What follows is a workflow which covers both cases above. The only difference is the first step - in the former case you pull changes from upstream, in the latter you make your own changes. You can, of course, combine the two. One thing to keep in mind is that if the submodule is a fork it is a good idea to keep your commits as finely grained as possible. That will make merging easier when you pull changes from the submodule's upstream.
+</p><p>FOO_LIBRARY upstream has made changes to their repository and you need those changes integrated in Mono. For brevity let's assume you make no further changes to the upstream code. 
+</p><p>Let's assume our current directory is <tt>vc</tt> in the hierarchy above.
+</p>
+<ul><li> Pull upstream changes from upstream <b>master</b> branch
+</li></ul>
+<pre>  cd FOO_LIBRARY
+  git checkout master
+  git fetch upstream/master
+  git merge upstream/master
+</pre>
+<ul><li> Resolve merge conflicts, if any
+</li><li> Push merged changes to our clone of FOO_LIBRARY
+</li></ul>
+<pre>  git push origin/master
+</pre>
+<ul><li> Test changes with Mono
+</li></ul>
+<pre>  cd ../Mono
+  git pull
+  git submodule update --init --recursive
+  rsync -a --delete-after ../FOO_LIBRARY external/FOO_LIBRARY
+  ./configure
+  make
+</pre>
+<ul><li> Run all necessary tests in Mono
+</li><li> Reset submodule to its original state
+</li></ul>
+<pre>  rm -rf external/FOO_LIBRARY
+  git submodule update --init --recursive
+</pre>
+<ul><li> Update submodule with changes in FOO_LIBRARY repository
+</li></ul>
+<pre>  cd external/FOO_LIBRARY
+  git pull
+</pre>
+<ul><li> Update Mono reference to the new submodule commit
+</li></ul>
+<pre>  cd ../../
+  git add external/FOO_LIBRARY
+  git commit -m "FOO_LIBRARY submodule updated"
+  git push
+</pre>
+<ul><li> Do other work which depends on the new code in FOO_LIBRARY
+</li></ul>
+

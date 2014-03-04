@@ -1,0 +1,95 @@
+---
+layout: obsolete
+title: "Howto IpInfobyDns"
+permalink: /old_site/Howto_IpInfobyDns/
+---
+
+<h1>Howto IpInfobyDns</h1>
+
+<p>This sample shows how to get the local system ip information using a Dns Class.
+</p><p>networkDNSIP.cs
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Collections</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Net</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ClsDnsIp <span style="color: #008000;">&#123;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">//declare hostname variable to save the machine hostname</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">string</span> hostname<span style="color: #008000;">;</span>  
+&#160;
+    <span style="color: #008080; font-style: italic;">//declare iparraylist variable to save the ip addresses</span>
+    <span style="color: #008080; font-style: italic;">//this is a ArrayList Collection object </span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> ArrayList iparraylist<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">//we define a constructor class</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> ClsDnsIp<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">//assign a string empty value  </span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hostname</span> <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">//to create arraylist object </span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">iparraylist</span> <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">//call the private method to determine the hostname and ip address</span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">getHostnameIpAdress</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">//define a string property to get the hostname</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Hostname
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span>
+        <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hostname</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">//define a Arraylist property to get a ip address list </span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> ArrayList IpAddress
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span>
+        <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">iparraylist</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">//define the private method that to determine hostname and ip address</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> getHostnameIpAdress<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">//call Dns's GetHostName method to get the computer hostname </span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hostname</span> <span style="color: #008000;">=</span> Dns<span style="color: #008000;">.</span><span style="color: #0000FF;">GetHostName</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">//to create IPHostEntry object that contain</span>
+        <span style="color: #008080; font-style: italic;">//Internet host address information by Dns's GetHotsByName method         </span>
+        IPHostEntry iphost <span style="color: #008000;">=</span> Dns<span style="color: #008000;">.</span><span style="color: #0000FF;">GetHostByName</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">hostname</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">//we use a try-catch instructions for posible runtime errors </span>
+        <span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #008080; font-style: italic;">//we add every ip address founded to arraylist collection</span>
+            <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>IPAddress someip <span style="color: #0600FF; font-weight: bold;">in</span> iphost<span style="color: #008000;">.</span><span style="color: #0000FF;">AddressList</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">iparraylist</span><span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>someip<span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>                
+        <span style="color: #008000;">&#125;</span>
+        <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>Exception e<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+            <span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>      
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">//this class is used to test ClsDnsIp class</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TestClsDnsIp <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        ClsDnsIp objtest <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ClsDnsIp<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hostname--&gt;&quot;</span> <span style="color: #008000;">+</span> objtest<span style="color: #008000;">.</span><span style="color: #0000FF;">Hostname</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>       
+        <span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> i <span style="color: #008000;">&lt;</span> objtest<span style="color: #008000;">.</span><span style="color: #0000FF;">IpAddress</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span><span style="color: #008000;">;</span> i<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span>         
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Ip Adresses--&gt;&quot;</span> <span style="color: #008000;">+</span> objtest<span style="color: #008000;">.</span><span style="color: #0000FF;">IpAddress</span><span style="color: #008000;">&#91;</span>i<span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008000;">&#125;</span></pre>
+<p>now compile with: 
+</p>
+<pre>mcs networkDNSIP.cs</pre>
+<p>and run:
+</p>
+<pre>mono networkDNSIP.exe</pre>
+

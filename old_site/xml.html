@@ -1,0 +1,280 @@
+---
+layout: obsolete
+title: "XML"
+permalink: /old_site/XML/
+---
+
+<h1>XML</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Mono_1.0_Features"><span class="tocnumber">2</span> <span class="toctext">Mono 1.0 Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#System.Xml_namespace"><span class="tocnumber">2.1</span> <span class="toctext">System.Xml namespace</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Document_Object_Model_.28Core.29"><span class="tocnumber">2.1.1</span> <span class="toctext">Document Object Model (Core)</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Xml_Writer"><span class="tocnumber">2.1.2</span> <span class="toctext">Xml Writer</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#XmlResolver"><span class="tocnumber">2.1.3</span> <span class="toctext">XmlResolver</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#XmlNameTable"><span class="tocnumber">2.1.4</span> <span class="toctext">XmlNameTable</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#XML_Reader"><span class="tocnumber">2.1.5</span> <span class="toctext">XML Reader</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Some_Advantages"><span class="tocnumber">2.1.6</span> <span class="toctext">Some Advantages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#System.Xml.Schema_namespace"><span class="tocnumber">2.2</span> <span class="toctext">System.Xml.Schema namespace</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Schema_Object_Model"><span class="tocnumber">2.2.1</span> <span class="toctext">Schema Object Model</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Validating_Reader"><span class="tocnumber">2.2.2</span> <span class="toctext">Validating Reader</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#System.Xml.Serialization_namespace"><span class="tocnumber">2.3</span> <span class="toctext">System.Xml.Serialization namespace</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#System.Xml.XPath_and_System.Xml.Xsl_namespaces"><span class="tocnumber">2.4</span> <span class="toctext">System.Xml.XPath and System.Xml.Xsl namespaces</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#RELAX_NG"><span class="tocnumber">2.5</span> <span class="toctext">RELAX NG</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Forthcoming_Mono_1.2_Features"><span class="tocnumber">3</span> <span class="toctext">Forthcoming Mono 1.2 Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Summary"><span class="tocnumber">3.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Current_Status"><span class="tocnumber">3.2</span> <span class="toctext">Current Status</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#System.Xml_2.0"><span class="tocnumber">3.3</span> <span class="toctext">System.Xml 2.0</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="#XmlReader_and_XmlWrier"><span class="tocnumber">3.3.1</span> <span class="toctext">XmlReader and XmlWrier</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#System.Xml.Schema_2.0"><span class="tocnumber">3.4</span> <span class="toctext">System.Xml.Schema 2.0</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#System.Xml.XPath_and_System.Xml.Xsl_2.0"><span class="tocnumber">3.5</span> <span class="toctext">System.Xml.XPath and System.Xml.Xsl 2.0</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Mono.Xml.Ext"><span class="tocnumber">3.6</span> <span class="toctext">Mono.Xml.Ext</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Relax_NG_and_DSDL_in_Mono_1.2"><span class="tocnumber">3.7</span> <span class="toctext">Relax NG and DSDL in Mono 1.2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Tools"><span class="tocnumber">4</span> <span class="toctext">Tools</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#xsd.exe"><span class="tocnumber">4.1</span> <span class="toctext">xsd.exe</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#genxs.exe"><span class="tocnumber">4.2</span> <span class="toctext">genxs.exe</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#sgen.exe"><span class="tocnumber">4.3</span> <span class="toctext">sgen.exe</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#dtd2xsd.exe_.2F_dtd2rng.exe"><span class="tocnumber">4.4</span> <span class="toctext">dtd2xsd.exe / dtd2rng.exe</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Beyond_Mono_1.2"><span class="tocnumber">5</span> <span class="toctext">Beyond Mono 1.2</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#XML_functionality_in_WinFX"><span class="tocnumber">5.1</span> <span class="toctext">XML functionality in WinFX</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#XLinq"><span class="tocnumber">5.2</span> <span class="toctext">XLinq</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Miscellaneous"><span class="tocnumber">6</span> <span class="toctext">Miscellaneous</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#Mutual_assembly_dependency"><span class="tocnumber">6.1</span> <span class="toctext">Mutual assembly dependency</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
+<p>The XML library is used in several areas of Mono such as ADO.NET and XML Digital Signature (xmldsig).  In this document we discuss System.Xml.dll and related tools. 
+</p><p>This page does not include any ADO.NET classes which are available in other assemblies such as  XmlDataDocument.  Also, note that current corlib has its own XML parser class (Mono.Xml.MiniParser).
+</p><p>The System.XML.dll assembly is feature complete, this document tracks bugs or ideas for improving it.
+</p>
+<h1> <span class="mw-headline" id="Mono_1.0_Features"> Mono 1.0 Features </span></h1>
+<h2> <span class="mw-headline" id="System.Xml_namespace"> System.Xml namespace </span></h2>
+<h3> <span class="mw-headline" id="Document_Object_Model_.28Core.29"> Document Object Model (Core) </span></h3>
+<p>The DOM implementation is complete and our DOM implementation scores better than MS.NET as to the NIST DOM test results (which was ported by the Mainsoft hackers and is part of our unit tests).
+</p>
+<h3> <span class="mw-headline" id="Xml_Writer"> Xml Writer </span></h3>
+<p>In System.Xml.dll, XmlWriter is almost equivalent to XmlTextWriter. If you want to see another implementation, check XmlNodeWriter.cs and DTMXPathDocumentWriter.cs in System.XML sources. XmlTextWriter is completed, though it looks a bit slower than MS.NET (I tried 1.1).
+</p>
+<h3> <span class="mw-headline" id="XmlResolver"> XmlResolver </span></h3>
+<p>XmlUrlResolver is implemented.
+XmlSecureResolver, which is introduced in MS .NET Framework 1.1 is basically implemented, but it requires <a href="{{site.baseurl}}/CAS" title="CAS">CAS (code access security)</a> feature. We need to fixup this class after ongoing CAS effort works.
+You might also be interested in some improved implementations which resides in Mono.Xml.Ext.dll.
+</p>
+<h3> <span class="mw-headline" id="XmlNameTable"> XmlNameTable </span></h3>
+<p>NameTable is implemented, but also needs performance improvement. Optimization hackings are welcome. There is also a <a href="http://bugzilla.ximian.com/show_bug.cgi?id=59537" class="external text" rel="nofollow">bugzilla entry</a> for this matter.
+</p>
+<h3> <span class="mw-headline" id="XML_Reader"> XML Reader </span></h3>
+<p>XmlTextReader, XmlNodeReader and XmlValidatingReader are almost finished.
+</p>
+<ul><li> All OASIS conformance test passes as Microsoft does. Some W3C tests fail, but it looks better than Microsoft.
+</li></ul>
+<ul><li> Entity expansion and its well-formedness check is incomplete. It incorrectly allows divided content models. It incorrectly treats its Base URI, so some dtd parse fails.
+</li></ul>
+<ul><li> I won't add any XDR support on XmlValidatingReader. (I haven't ever seen XDR used other than Microsoft's BizTalk Server 2000, and Now they have 2002 with XML Schema support). If anyone contributes an implementation, it would be still nice. XmlTextReader and XmlValidatingReader should be faster than now. Currently XmlTextReader looks nearly twice as slow as MS.NET, and XmlValidatingReader (which uses this slow XmlTextReader) looks nearly three times slower. (Note that XmlValidatingReader wouldn't be so slow as itself. It uses schema validating reader and dtd validating reader.)
+</li></ul>
+<h3> <span class="mw-headline" id="Some_Advantages"> Some Advantages </span></h3>
+<p>The design of Mono's XmlValidatingReader is radically different from that of Microsoft's implementation. Under MS.NET, DTD content validation engine is in fact simple replacement of XML Schema validation engine. Mono's DTD validation is designed fully separate and does validation as normal XML parser does. For example, Mono allows non-deterministic DTD.
+Another advantage of this XmlValidatingReader is support for <i>any</i> XmlReader. Microsoft supports only XmlTextReader (this bug is fixed in .NET 2.0, taking shape of XmlReader.Create()).
+<del>I added extra support interface named "IHasXmlParserContext", which is considered in XmlValidatingReader.ResolveEntity(). </del><ins>This is now made as internal interface.</ins> Microsoft failed to design XmlReader so that XmlReader cannot be subtree-pluggable (i.e. wrapping use of other XmlReader) since XmlParserContext shoud be supplied for DTD information support (e.g. entity references cannot be expanded) and namespace manager. This design bug seems fixed in XmlDictionaryReader in WinFX (In .NET 2.0, Microsoft also supported similar to IHasXmlParserContext, named IXmlNamespaceResolver, but it still does not provide DTD information.)
+</p><p>We also have RELAX NG validating reader (described later).
+</p>
+<h2> <span class="mw-headline" id="System.Xml.Schema_namespace"> System.Xml.Schema namespace </span></h2>
+<p>Basically it is completed. You can test how current schema validation engine is complete (incomplete) by using standalone test module (see mcs/class/System.XML/Test/System.Xml.Schema/standalone_tests). At least in my box, msxsdtest fails only 30 cases with bugfixed catalog - this score is better than that of Microsoft implementation. But instead, we need performance boost. There should be many points to improve schema compilation and validation.
+</p>
+<h3> <span class="mw-headline" id="Schema_Object_Model"> Schema Object Model </span></h3>
+<p>Completed, except for some things to be fixed:
+</p>
+<ul><li> ContentTypeParticle for pointless xs:choice is incomplete (fixing this arose another bugs in compilation. Interestingly, MS.NET also fails around here, so it might be nature of ContentTypeParticle design)
+</li></ul>
+<ul><li> Some derivation by restriction (DBR) handling is incorrect.
+</li></ul>
+<h3> <span class="mw-headline" id="Validating_Reader"> Validating Reader </span></h3>
+<p>Basically this is implemented and actually its feature is complete, but I have only did validation feature testing. So we have to write more tests on properties, methods, and events (validation errors).
+</p>
+<h2> <span class="mw-headline" id="System.Xml.Serialization_namespace"> System.Xml.Serialization namespace </span></h2>
+<p>Lluis Sanchez is the maintainer of this namespace (as well as System.Web.Services). 
+XmlSerializer is almost finished and is on bugfix phase. However, we appreciate more tests.
+</p>
+<ul><li> System.Web.Services to invoke SOAP services.
+</li></ul>
+<ul><li> xsd.exe and wsdl.exe to create classes.
+</li></ul>
+<p>If you find any problems, please file a bug in to <a href="http://bugzilla.ximian.com" class="external text" rel="nofollow">bugzilla</a>
+</p><p>Lluis also has built an interesting standalone system test.  It is located in mcs/class/System.Web.Services/Test/standalone.
+</p><p>You might also interested in "genxs", which enables you to create custom XML serializer. See "tools" section  discussed later. There is also "sgen" that is introduced in .NET 2.0.
+</p>
+<h2> <span class="mw-headline" id="System.Xml.XPath_and_System.Xml.Xsl_namespaces"> System.Xml.XPath and System.Xml.Xsl namespaces </span></h2>
+<p>XslTransform is finished work. Historically we had "unmanaged XSLT" which used libxslt, but now we only have managed implementation.
+</p><p>msxsl:script is supported. It would be nice if we can support <a href="http://www.exslt.org/" class="external text" rel="nofollow">EXSLT</a>. <a href="http://msdn.microsoft.com/WebServices/default.aspx?pull=/library/en-us/dnexxml/html/xml05192003.asp" class="external text" rel="nofollow">Microsoft has tried to do some of them</a>, but it is not successful because of System.Xml.Xsl design problem:
+</p>
+<ul><li> In general, .NET's "extension objects" (including msxsl:script) is not useful to return node-sets. (MS XSLT implementation rejects just overriden XPathNodeIterator, but accepts only their hidden classes. And the same thing applies to Mono though classes are different.)
+</li></ul>
+<ul><li> In .NET's extension object design, extension function name is a valid method name that cannot contain some characters such as '-'. That is, implementing EXSLT in C# is impossible. So if we support EXSLT, it has to be done inside our System.XML.dll. Microsoft developers are also aware of this problem and some of them wish to have EXSLT support in WinFX (not whidbey). If anyone is interested in it, it would be nice.
+</li></ul>
+<p>Our managed XSLT implementation is slower than MS XSLT for some kind of stylesheets, and faster for some.
+</p>
+<h2> <span class="mw-headline" id="RELAX_NG"> RELAX NG </span></h2>
+<p>Atsushi implemented an experimental RelaxngValidatingReader. It is completed, except for some remaining simplification bugs. See mcs/class/Commons.Xml.Relaxng/README for details.
+Currently we have:
+</p>
+<ul><li> Custom datatype support. Right now, you can use XML schema datatypes ( <a href="http://www.w3.org/2001/XMLSchema-datatypes" class="external free" rel="nofollow">http://www.w3.org/2001/XMLSchema-datatypes</a> ) as well as RELAX NG default datatypes (as used in relaxng.rng).
+</li></ul>
+<ul><li> RELAX NG Compact Syntax support, though not solid yet. See Commons.Xml.Relaxng.Rnc.RncParser class.
+</li></ul>
+<h1> <span class="mw-headline" id="Forthcoming_Mono_1.2_Features"> Forthcoming Mono 1.2 Features </span></h1>
+<h2> <span class="mw-headline" id="Summary"> Summary </span></h2>
+<p>NOTE: some of the description is now obsoleted.  
+</p><p>Microsoft released the RTM version of .NET Framework 2.0, so we are catching up with the latest API.
+</p><p>System.Xml 2.0 contains several features such as:
+</p>
+<ul><li> new XPathNavigator members that supports editing XmlDocument 
+</li></ul>
+<ul><li> XmlReaderSettings, XmlWriterSettings and factory methods 
+</li></ul>
+<ul><li> Strongly typed XmlReader, XmlWriter and XPathNavigator. 
+</li></ul>
+<ul><li> XML Schema design changes 
+</li></ul>
+<ul><li> XSD Inference 
+</li></ul>
+<ul><li> Well-documented and improved XmlSerializer. 
+</li></ul>
+<ul><li> Compiled XSLT transformer
+</li></ul>
+<h2> <span class="mw-headline" id="Current_Status"> Current Status </span></h2>
+<p><a href="http://mono.ximian.com/class-status/mono-HEAD-vs-fx-2/class-status-System.Xml.html" class="external text" rel="nofollow">Here</a> is the latest status of mono's System.Xml 2.0.
+In general, System.Xml 2.0 bits are mostly implemented, except for upcoming XslCompiledTransform. However, they are highly untested. MonoTODO classes mostly means "waiting for tests".
+</p>
+<h2> <span class="mw-headline" id="System.Xml_2.0"> System.Xml 2.0 </span></h2>
+<h3> <span class="mw-headline" id="XmlReader_and_XmlWrier"> XmlReader and XmlWrier </span></h3>
+<p>In .NET 2.0, XmlTextReader and XmlValidatingReader are obsolete and XmlReader.Create() is recommended. Similarly, there are XmlWriter.Create() overloads. They are mostly done.
+</p><p>XmlReader is supposed to support strongly-typed data reading. They are based on W3C "XML Schema Datatypes" Recommendation and "XQuery 1.0 and XPath 2.0 Data Model" Working Draft.
+</p><p>Note that this W3C specification is just a Working Draft and there might be incompatible changes for those strongly-typed API. For example, in the latest version of the spec (as of November 2004), xs:QName is specified as to have prefix, local name and namespace URI, while .NET XML classes just treat it as XmlQualifiedName which does not contain prefix. So this part of API might become obsolete or useless.
+</p><p>Most of XmlReader.ReadContentAsXxx() and XmlWriter.WriteValue() overloads are implemented, based on internal XQueryConvert (it is a historical implementation in 2.0 beta versions).
+</p><p>XmlReader.ReadSubtree(), XmlWriter.WriteSubtree() and XPathNavigator.ReadSubtree() are implemented, though not well-tested. They are based on Mono.Xml.SubtreeXmlReader and Mono.Xml.XPath.XPathNavigatorReader classes.
+</p>
+<h2> <span class="mw-headline" id="System.Xml.Schema_2.0"> System.Xml.Schema 2.0 </span></h2>
+<p>Since .NET 1.x is not so compliant with W3C XML Schema specification, Microsoft had to redesign System.Xml.Schema classes. We also have to change many things.
+</p>
+<ul><li> There are ElementSchemaType and AttributeSchemaType. They do not expose XmlSchemaDatatype unlike ElementType and AttributeType. Primitive types are represented as XmlSchemaSimpleType instances. Similarly, there is BaseXmlSchemaType instead of BaseSchemaType. Note that XmlSchemaDatatype itself is not deprecated.
+</li></ul>
+<ul><li> "XQuery 1.0 and XPath 2.0 Data Model" datatypes (such as xdt:dayTimeDuration) are newly supported. They are partially implemented.
+</li></ul>
+<ul><li> schema structures are now bound in parent-child relationship. With related to it, there seems bunch of schema compilation bugfixes.
+</li></ul>
+<ul><li> XmlSchemaCollection is not used anymore to represent effective set of schemas. Instead, new XmlSchemaSet class is used. It should affect on schema compilation design.
+</li></ul>
+<p>In .NET 2.0, there is an XML Schema inference implementation. The API (or implementation design) is not cool and Microsoft will make changes in later version of beta or .NET Framework.
+</p><p>It is (somewhat) exposed XML Schema validation functionality. It enables developers to get expected particles and attributes. Actually it is internally used to implement XmlReader.Create() with XmlSchemaSet.
+</p>
+<h2> <span class="mw-headline" id="System.Xml.XPath_and_System.Xml.Xsl_2.0"> System.Xml.XPath and System.Xml.Xsl 2.0 </span></h2>
+<p>In System.Xml 2.0, XPathNavigator has many editing API. It enables developers to edit XmlDocument (not for XPathDocument; it is read-only).
+</p><p>In .NET 2.0 Microsoft brought a fresh XSLT implementation named XslCompiledTransform. It is almost the same as System.Xml.Xsl.XslTransform from the API aspect, but this class transforms documents faster than XslTransform. Instead, stylesheet compilation is slower, because it generates compiled stylesheet dynamically.
+</p><p>We don't have XslCompiledTransform, and will not be available in Mono 1.2.
+</p>
+<h2> <span class="mw-headline" id="Mono.Xml.Ext"> Mono.Xml.Ext </span></h2>
+<p>(<strong>IMPORTANT</strong>: There used to be System.Xml.Query.XQueryCommand class that implemented XQuery, but now Microsoft dropped it for .NET 2.0. So we moved them out to external assembly named Mono.Xml.Ext.dll, but I haven't changed thing so much when I just extracted them. Thus, this section is kept as is, and basically old stuff.)
+Mono.Xml.Ext.dll contains mainly XQuery implementation, and some utility classes.
+XQueryCommand implements XQuery. XQuery is a new face XML document manipulation language (at least new face in .NET world). It is similar to XSLT 1.0, but extended to support XML Schema based datatypes (and it is not XML based language). It is similar to XPath 1.0, but it can construct XML nodes. It has no complicated template resolution, but works like functional languages. Under MS.NET, XQuery implementation is mainly in System.Xml.Query and MS.Internal.Xml.
+</p>
+<ul><li> namespaces. The implementation is mostly in System.Xml.dll. It is also true to our System.Xml.dll. Our XQueryCommand in System.Data.SqlXml.dll just invokes the actual XQuery processor (Mono.Xml.XPath2.XQueryCommandImpl) which resides in System.Xml.dll via reflection. Currently we are not implementing MS.Internal.Xml.
+</li></ul>
+<ul><li> classes. MS implementation is based on an old version of the W3C specification, and our implementation is currently based on <a href="http://www.w3.org/TR/2004/WD-xquery-20040723/" class="external text" rel="nofollow">23 July 2004 version</a> (latest as of now) of the working draft. 
+</li></ul>
+<p>XQuery implementation tasks are:
+</p>
+<ul><li> XQuery syntax parser that parses xquery string to AST (abstract syntax tree). -&gt; partly not done.
+</li></ul>
+<ul><li> XQuery AST compiler into static context -&gt; partly not done.  
+</li></ul>
+<ul><li> XQuery (dynamic context) runtime = XQuery expression evaluator + sequence iterator. -&gt; partly not done.
+</li></ul>
+<ul><li> XPathItem data model and (mainly) conversion support. -&gt; partly done.
+</li></ul>
+<ul><li> Applied expression classes for XQuery/XPath 2.0 functions and operators. -&gt; partly done.
+</li></ul>
+<ul><li> Optimization, and design per-query assembly code generator (later)
+</li></ul>
+<p>It already handles some queries, while major part implementation is missing or buggy (like FLWOR, expressions for sequence type handling, built-in function support etc.).
+</p>
+<h2> <span class="mw-headline" id="Relax_NG_and_DSDL_in_Mono_1.2"> Relax NG and DSDL in Mono 1.2 </span></h2>
+<p>Currently we support those ISO DSDL effort:
+</p>
+<ul><li> Part 2: RELAX NG (Structures/Compact Syntax)
+</li><li> Part 4: Namespace-based Validation Dispatch Language (NVDL)
+</li></ul>
+<p>There is existing Schematron implementation, namely <a href="http://sourceforge.net/projects/dotnetopensrc/" class="external text" rel="nofollow">NMatrix Project</a>. With a few changes, it can be used with mono.
+</p><p>In Mono 2.0, there are some improvements:
+</p>
+<ul><li> RelaxngPattern.Compile() now provides error location. 
+</li></ul>
+<ul><li> RelaxngValidatingReader now supports "expected label collector" API; You can get name list of expected element names and attribute names by simulating validation.  In Mono 2.0, there might be improvements on Commons.Xml.Relaxng.
+</li></ul>
+<ul><li> We now supports NVDL, multi-schema based validation support. The final committee draft of NVDL is <a href="http://www.asahi-net.or.jp/~eb2m-mrt/dsdl/" class="external text" rel="nofollow">here</a>. Thre are some discussions related to NVDL on <a href="http://lists.w3.org/Archives/Public/public-schemata-users/" class="external text" rel="nofollow">W3C public-schemata-users</a> mailing list.
+</li></ul>
+<p>There are still missing bits:
+</p>
+<ul><li> The type of simplification error should be kind of RelaxngGrammarException. 
+</li></ul>
+<ul><li> Right now there is no ambiguity detection implementation that would be useful for RelaxngPattern based xml serialization (if there is need).
+</li></ul>
+<ul><li> Because of lack of ambiguity detection, there is no way to provide XmlMapping XmlTypeMapping/XmlMemberMapping). But If anyone is interested in such effort, integration with XmlSerializer would be interesting task.
+</li></ul>
+<h1> <span class="mw-headline" id="Tools"> Tools </span></h1>
+<h2> <span class="mw-headline" id="xsd.exe"> xsd.exe </span></h2>
+<p>See <a href="{{site.baseurl}}/ADO.NET" title="ADO.NET">ADO.NET page</a>.
+Note that xsd.exe does not support XmlSchemaInference in System.Xml 2.0.
+</p>
+<h2> <span class="mw-headline" id="genxs.exe"> genxs.exe </span></h2>
+<p>genxs.exe is a custom XmlSerializer code generator. This is Mono exclusive advantage. See <a href="http://primates.ximian.com/~lluis/blog/pivot/entry.php?id=6" class="external text" rel="nofollow">Lluis's description</a> and manpages for details. Code files are in mcs/tools/genxs.
+</p>
+<h2> <span class="mw-headline" id="sgen.exe"> sgen.exe </span></h2>
+<p>sgen.exe is an alternative XmlSerializer code generator which is based on XmlSerializer.GenerateSerializer() introduced in .NET 2.0, written by Lluis. Code files are in mcs/tools/sgen.
+</p>
+<h2> <span class="mw-headline" id="dtd2xsd.exe_.2F_dtd2rng.exe"> dtd2xsd.exe / dtd2rng.exe </span></h2>
+<p>It is a tiny tool that enables conversion from DTD structure to XML Schema. It runs only under mono, since it depends on our XmlTextReader internals.
+</p><p>Based on dtd2xsd internal, we also support conversion from DTD to RELAX NG.
+</p>
+<h1> <span class="mw-headline" id="Beyond_Mono_1.2"> Beyond Mono 1.2 </span></h1>
+<h2> <span class="mw-headline" id="XML_functionality_in_WinFX"> XML functionality in WinFX </span></h2>
+<p>There seems some improved XML libraries in WinFX, taking shape of System.Runtime.Serialization.dll. The functionality seems mainly for Windows Communication Foundation (Indigo). We have almost-stubbed sources of this library, but it is not actively developed yet.
+</p>
+<h2> <span class="mw-headline" id="XLinq"> XLinq </span></h2>
+<p>In C# 3.0, the next development version of C#, includes a new feature named "Linq". Linq brings language-integrated data query functionality to C#. The bindings are "DLinq" for databases and "XLinq" for XML documents.
+</p><p>We have a simple hacky XLinq implementation, but since the core of Linq (such as Sequence) are not implemented, it is practically not working. This development might resume when the related class libraries got documented.
+</p><p>Though C# 3.0 is the most related language to Linq, there are other languages (for example, Nemerle has own macro functionality) that would be useful to realize Linq feature.
+</p><p>You might also want to learn about PHP5 simpleXML API for its automatic structure inference.
+</p>
+<h1> <span class="mw-headline" id="Miscellaneous"> Miscellaneous </span></h1>
+<h2> <span class="mw-headline" id="Mutual_assembly_dependency"> Mutual assembly dependency </span></h2>
+<p>Sometimes I hear complain about System.dll and System.Xml.dll mutual dependency: System.dll references to System.Xml.dll (e.g. System.Configuration.ConfigXmlDocument extended from XmlDocument), while System.Xml.dll vice versa (e.g. XmlUrlResolver.ResolveUri takes System.Uri). Since they are in public method signatures, so at least we cannot get rid of these mutual references.
+Nowadays System.Xml.dll is built using incomplete System.dll (lacking System.Xml dependent classes such as ConfigXmlDocument). Full System.dll is built after System.Xml.dll is done.
+Note that you still need System.dll to run mcs.
+</p><p>Atsushi Eno (atsushi@ximian.com) latest update: 12/22/2005
+</p>

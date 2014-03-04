@@ -1,0 +1,230 @@
+---
+layout: obsolete
+title: "RuntimeRequests"
+permalink: /old_site/RuntimeRequests/
+---
+
+<h1>RuntimeRequests</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#SIMD"><span class="tocnumber">1</span> <span class="toctext">SIMD</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Alignment"><span class="tocnumber">1.1</span> <span class="toctext">Alignment</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#ABI"><span class="tocnumber">1.2</span> <span class="toctext">ABI</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Ports"><span class="tocnumber">1.3</span> <span class="toctext">Ports</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Per-arch_Method_Implementations"><span class="tocnumber">1.4</span> <span class="toctext">Per-arch Method Implementations</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Struct_as_SIMD_Wrappers"><span class="tocnumber">1.5</span> <span class="toctext">Struct as SIMD Wrappers</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Ref_overloads_in_Mono.Simd"><span class="tocnumber">1.6</span> <span class="toctext">Ref overloads in Mono.Simd</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#SSE_Floating_Point_on_x86"><span class="tocnumber">1.7</span> <span class="toctext">SSE Floating Point on x86</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Optimization_Hinting"><span class="tocnumber">2</span> <span class="toctext">Optimization Hinting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#ABC_disabling"><span class="tocnumber">2.1</span> <span class="toctext">ABC disabling</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Branch_hinting"><span class="tocnumber">2.2</span> <span class="toctext">Branch hinting</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Data_Prefetch"><span class="tocnumber">2.3</span> <span class="toctext">Data Prefetch</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Byref_attributes"><span class="tocnumber">2.4</span> <span class="toctext">Byref attributes</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Optimization_Level"><span class="tocnumber">2.5</span> <span class="toctext">Optimization Level</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Inliner"><span class="tocnumber">3</span> <span class="toctext">Inliner</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Force_Inline_Attribute"><span class="tocnumber">3.1</span> <span class="toctext">Force Inline Attribute</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Intrinsics"><span class="tocnumber">3.2</span> <span class="toctext">Intrinsics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#P.2FInvoke_Inlining"><span class="tocnumber">4</span> <span class="toctext">P/Invoke Inlining</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Why_the_simple_solution_is_not_possible"><span class="tocnumber">4.1</span> <span class="toctext">Why the simple solution is not possible</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#What_can_be_done"><span class="tocnumber">4.2</span> <span class="toctext">What can be done</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#ICALL_performance"><span class="tocnumber">4.3</span> <span class="toctext">ICALL performance</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Support_for_NSString"><span class="tocnumber">5</span> <span class="toctext">Support for NSString</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="SIMD"> SIMD </span></h1>
+<h2> <span class="mw-headline" id="Alignment"> Alignment </span></h2>
+<p>Handle SIMD objects in structures better, so they get properly aligned by default, otherwise we suffer some performance problems, such as use of unaligned loads, and confusing 10x perf differences caused by random alignment.
+</p>
+<h2> <span class="mw-headline" id="ABI">ABI</span></h2>
+<p>Would it be possible to pass SIMD arguments in the SIMD registers on Intel?
+</p><p>=&gt; This is possible, but largely useless until we rewrite the register allocator.
+</p>
+<h2> <span class="mw-headline" id="Ports"> Ports </span></h2>
+<p>Would like to have LLVM/ARM support SIMD (NEON), as this would help us in MonoTouch. Perhaps we need the same on MonoJIT/ARM for other platforms like Android.
+</p><p>It would be good to support PowerPC SIMD (AltiVec) for platforms like PS3.
+</p><p>Newer x86 processors (Intel Sandy Bridge &amp; AMD Bulldozer) introduce another SIMD extension called AVX, and it would be good to support that too.
+</p>
+<h2> <span class="mw-headline" id="Per-arch_Method_Implementations">Per-arch Method Implementations</span></h2>
+<p>Since many SIMD instructions on exist in one specific instruction set or instruction set extension, it would be useful to have a way to have different versions of a method for different architectures, for example one for SSE1, another for SSE2, and another for NEON. Perhaps this could be done with an attribute and an encoded method name suffix, for example
+</p>
+<pre> [MonoMethodImpl(MethodImplOptions.ArchSpecific)] void Foo ()
+</pre>
+<p>then if the processor supports SSE2 and the method
+</p>
+<pre> void Foo_Sse2 ()
+</pre>
+<p>exists, it would be used instead.
+</p>
+<h2> <span class="mw-headline" id="Struct_as_SIMD_Wrappers">Struct as SIMD Wrappers</span></h2>
+<p>When producing nice APIs, it's often useful to wrap the SIMD intrinsic types structs with a cleaner and more specific API for a specific use, for example a Quaternion that wraps a Vector4f field. Unfortunately, the JIT currently generates horrible code for such cases, as it does not deal well with the indirection, especially when combined with the SSE intrinsics.
+</p><p>For examples of the code generated, see <a href="https://bugzilla.novell.com/show_bug.cgi?id=662127" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi?id=662127</a>
+</p>
+<h2> <span class="mw-headline" id="Ref_overloads_in_Mono.Simd">Ref overloads in Mono.Simd</span></h2>
+<p>Provide ref overloads for all the methods in Mono.Simd, since when it falls back to non-intrinsic implementations, passing large structs by ref is usually much faster than passing them by value.
+</p>
+<h2> <span class="mw-headline" id="SSE_Floating_Point_on_x86">SSE Floating Point on x86</span></h2>
+<p>We should use SSE for floating-point math on x86, like we do on x86-64, instead of using the x87 FPU as we do now.
+</p>
+<h1> <span class="mw-headline" id="Optimization_Hinting">Optimization Hinting</span></h1>
+<h2> <span class="mw-headline" id="ABC_disabling">ABC disabling</span></h2>
+<p>Add an attribute (maybe MonoMethodImpl) to disable array bounds checking in specific methods. This would allow it to be disabled in audited library code while still keeping it in user code. Obviously this would only be permitted for unsafe methods.
+</p>
+<h2> <span class="mw-headline" id="Branch_hinting">Branch hinting</span></h2>
+<p>Add JIT intrinsics for branch hinting, for tuning code such as that which uses Mono.Simd.
+</p>
+<h2> <span class="mw-headline" id="Data_Prefetch">Data Prefetch</span></h2>
+<p>JIT intrinsics for data prefetch instructions. Useful combined with Mono.Simd.
+</p>
+<h2> <span class="mw-headline" id="Byref_attributes">Byref attributes</span></h2>
+<p>Add an attribute to be applied to struct method parameters to indicate that the JIT should pass them by reference, while retaining a by-value API in the CIL. This would allow byref args for operator overloads, and would remove the need to create byval and byref overloads for perf.
+</p>
+<h2> <span class="mw-headline" id="Optimization_Level">Optimization Level</span></h2>
+<p>Allow using MonoMethodImpl attribute to hint that a method is important and should be optimized more heavily, maybe even using LLVM.
+</p>
+<h1> <span class="mw-headline" id="Inliner"> Inliner </span></h1>
+<h2> <span class="mw-headline" id="Force_Inline_Attribute"> Force Inline Attribute </span></h2>
+<p>Perhaps we can steal one of the attributes in the MethodImpl to force inlining for certain methods. If not, perhaps we could add a new MonoMethodImpl attribute for our own JIT optimization control.   
+</p><p>Not sure if Mono can inline any method, or if there are limitations on what we can inline, even when forced to inline. Apparently .NET 3.5 can't inline methods with struct parameters, which hurts perf of math vector APIs really badly - maybe this is somewhere we could do much better?
+</p>
+<h2> <span class="mw-headline" id="Intrinsics"> Intrinsics </span></h2>
+<p>Would it be possible to inline certain common code patterns like List&lt;T&gt;.this [int idx]?
+</p><p>Is the inliner still limited in cases where there is a compare and branch code? Could this limitation be removed?
+</p><p>This would <b>really</b> improve inlining of common patterns such as properties with argument checking, since in many cases the JIT (or LLVM) could do dead code elimination of the argument checks. For example, in the case 
+</p>
+<pre class="csharp" style="font-family:monospace;">a <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Foo <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+b<span style="color: #008000;">.</span><span style="color: #0000FF;">Property</span> <span style="color: #008000;">=</span> a<span style="color: #008000;">;</span></pre>
+<p>where b.Property is:
+</p>
+<pre class="csharp" style="font-family:monospace;">Foo Property <span style="color: #008000;">&#123;</span> 
+   <span style="color: #0600FF; font-weight: bold;">set</span> <span style="color: #008000;">&#123;</span> 
+      <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">value</span> <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+      x <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">;</span>
+   <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>then LLVM can do dead-code elimination on the "if value==null"
+</p>
+<h1> <span class="mw-headline" id="P.2FInvoke_Inlining"> P/Invoke Inlining </span></h1>
+<p>Would it be possible to have an attribute to P/Invoke that would flag "this is a simple method that should be treated as an internalcall, do not setup any expensive wrappers", like for methods that just call into C and are known to not throw exceptions and have a finite execution time (so we do not need to handle Thread.Interrupt there).
+</p><p>This would help us improve the speed of calling P/Invoke methods.
+</p><p>What is determined "safe" I am not sure, would love to figure out what we can do about this.
+</p><p>The concern is not as much the size of the generated wrappers, but the need to execute those wrappers.
+</p>
+<h2> <span class="mw-headline" id="Why_the_simple_solution_is_not_possible"> Why the simple solution is not possible </span></h2>
+<p>icall wrappers are needed to be able to do stack walks too. Plus for handling async exceptions. i.e. if a thread gets a signal while it executes an icall, the icall wrapper will throw the ThreadAbortException or such when the icall returns.
+</p><p>To be able to do stack walks, we need to save some state before calling native code, to be able to handle async exceptions, we need to do a check after each native call.
+</p><p>Some of this could be inlined at the call site, but calling a native method will never be equivalent to 'call sin', it will always have some overhead.
+</p>
+<h2> <span class="mw-headline" id="What_can_be_done"> What can be done </span></h2>
+<p>We need either the wrappers or the functionality they contain.
+</p><p>We could inline some parts of it, its tricky but doable, that would save the call+parameter passing overhead.
+</p><p>Its not worth it for common icalls like allocators, since they blow up the size of call sites, but might be worth for icalls which are called from 1 place.
+</p>
+<h2> <span class="mw-headline" id="ICALL_performance"> ICALL performance </span></h2>
+<p>Here is a benchmark to test icall performance:
+</p>
+<pre class="bash" style="font-family:monospace;">using System;
+using System.Diagnostics;
+&#160;
+public class Tests
+<span style="color: #7a0874; font-weight: bold;">&#123;</span>
+	public static void Main <span style="color: #7a0874; font-weight: bold;">&#40;</span>String<span style="color: #7a0874; font-weight: bold;">&#91;</span><span style="color: #7a0874; font-weight: bold;">&#93;</span> args<span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+		<span style="color: #000000; font-weight: bold;">for</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>int i = <span style="color: #000000;">0</span>; i <span style="color: #000000; font-weight: bold;">&lt;</span> <span style="color: #000000;">10</span>; ++i<span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+			int k = <span style="color: #7a0874; font-weight: bold;">&#40;</span>i + <span style="color: #000000;">1</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #000000; font-weight: bold;">/</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>i + <span style="color: #000000;">1</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+		<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+		var s = Stopwatch.StartNew <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+		int niter = <span style="color: #000000;">10000000</span>;
+		<span style="color: #000000; font-weight: bold;">for</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>int i = <span style="color: #000000;">0</span>; i <span style="color: #000000; font-weight: bold;">&lt;</span> niter; ++i<span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+			int k = <span style="color: #7a0874; font-weight: bold;">&#40;</span>i + <span style="color: #000000;">1</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #000000; font-weight: bold;">/</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>i + <span style="color: #000000;">1</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+		<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+		TimeSpan t = s.Elapsed;
+		Console.WriteLine <span style="color: #7a0874; font-weight: bold;">&#40;</span>t.Milliseconds<span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+		Console.WriteLine <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #ff0000;">&quot;&quot;</span> + <span style="color: #7a0874; font-weight: bold;">&#40;</span>niter <span style="color: #000000; font-weight: bold;">/</span> t.Milliseconds<span style="color: #7a0874; font-weight: bold;">&#41;</span> + <span style="color: #ff0000;">&quot; iterations per ms&quot;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+	<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span></pre>
+<p>On an NVIDIA TEGRA, this runs in:
+</p>
+<ul><li> normal case: 824ms.
+</li><li> normal case, calling mono_get_lmf_addr instead of an inline TLS get sequence: 873ms.
+</li><li> normal case, save_lmf=FALSE: 490ms.
+</li><li> normal case, create the LMF structure, but don't push/pop it: 590ms.
+</li><li> without any wrappers at all: 372ms.
+</li></ul>
+<p>Here is the assembly for the wrapper:
+</p>
+<pre class="bash" style="font-family:monospace;">   -<span style="color: #000000; font-weight: bold;">&gt;</span> save registers and allocate stack frame
+   <span style="color: #000000;">0</span>:   e1a0c00d        mov     <span style="color: #c20cb9; font-weight: bold;">ip</span>, sp
+   <span style="color: #000000;">4</span>:   e92d5ff0        push    <span style="color: #7a0874; font-weight: bold;">&#123;</span>r4, r5, r6, r7, r8, r9, sl, fp, <span style="color: #c20cb9; font-weight: bold;">ip</span>, lr<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+   <span style="color: #000000;">8</span>:   e24dd030        sub     sp, sp, <span style="color: #666666; font-style: italic;">#48    &#160;; 0x30</span>
+   -<span style="color: #000000; font-weight: bold;">&gt;</span> save arguments to stack<span style="color: #000000; font-weight: bold;">/</span>registers
+   c:   e58d0000        str     r0, <span style="color: #7a0874; font-weight: bold;">&#91;</span>sp<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">10</span>:   e1a07001        mov     r7, r1
+   -<span style="color: #000000; font-weight: bold;">&gt;</span> load lmf_addr TLS variable
+  <span style="color: #000000;">14</span>:   ebfff322        bl      0xffffcca4
+  <span style="color: #000000;">18</span>:   e590000c        ldr     r0, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r0, <span style="color: #666666; font-style: italic;">#12]</span>
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> create LMF structure on the stack
+  1c:   e28d100c        add     r1, sp, <span style="color: #666666; font-style: italic;">#12</span>
+  <span style="color: #000000;">20</span>:   e5810004        str     r0, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r1, <span style="color: #666666; font-style: italic;">#4]</span>
+  <span style="color: #000000;">24</span>:   e5902000        ldr     r2, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r0<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">28</span>:   e5812000        str     r2, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r1<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  2c:   e5801000        str     r1, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r0<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">30</span>:   e581d00c        str     sp, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r1, <span style="color: #666666; font-style: italic;">#12]</span>
+  <span style="color: #000000;">34</span>:   e1a0200f        mov     r2, pc
+  <span style="color: #000000;">38</span>:   e5812010        str     r2, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r1, <span style="color: #666666; font-style: italic;">#16]</span>
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> load arguments and <span style="color: #c20cb9; font-weight: bold;">make</span> the call
+  3c:   e59d0000        ldr     r0, <span style="color: #7a0874; font-weight: bold;">&#91;</span>sp<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">40</span>:   e1a01007        mov     r1, r7
+  <span style="color: #000000;">44</span>:   ebfff31c        bl      0xffffccbc
+  <span style="color: #000000;">48</span>:   e1a01000        mov     r1, r0
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> load interruption flag
+  4c:   e30000a8        movw    r0, <span style="color: #666666; font-style: italic;">#168       &#160;; 0xa8</span>
+  <span style="color: #000000;">50</span>:   e340003c        movt    r0, <span style="color: #666666; font-style: italic;">#60&#160;; 0x3c</span>
+  <span style="color: #000000;">54</span>:   e5900000        ldr     r0, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r0<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">58</span>:   e1a07001        mov     r7, r1
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> check it, and branch to interruption code <span style="color: #000000; font-weight: bold;">if</span> needed
+  5c:   e3500000        <span style="color: #c20cb9; font-weight: bold;">cmp</span>     r0, <span style="color: #666666; font-style: italic;">#0</span>
+  <span style="color: #000000;">60</span>:   1a000006        bne     0x80
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> load <span style="color: #7a0874; font-weight: bold;">return</span> value
+  <span style="color: #000000;">64</span>:   e1a00007        mov     r0, r7
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> restore LMF
+  <span style="color: #000000;">68</span>:   e28d200c        add     r2, sp, <span style="color: #666666; font-style: italic;">#12</span>
+  6c:   e592c000        ldr     <span style="color: #c20cb9; font-weight: bold;">ip</span>, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r2<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  <span style="color: #000000;">70</span>:   e592e004        ldr     lr, <span style="color: #7a0874; font-weight: bold;">&#91;</span>r2, <span style="color: #666666; font-style: italic;">#4]</span>
+  <span style="color: #000000;">74</span>:   e58ec000        str     <span style="color: #c20cb9; font-weight: bold;">ip</span>, <span style="color: #7a0874; font-weight: bold;">&#91;</span>lr<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> pop stack frame and <span style="color: #7a0874; font-weight: bold;">return</span>
+  <span style="color: #000000;">78</span>:   e282d030        add     sp, r2, <span style="color: #666666; font-style: italic;">#48    &#160;; 0x30</span>
+  7c:   e8bd9f80        pop     <span style="color: #7a0874; font-weight: bold;">&#123;</span>r7, r8, r9, sl, fp, <span style="color: #c20cb9; font-weight: bold;">ip</span>, pc<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+  -<span style="color: #000000; font-weight: bold;">&gt;</span> interruption code
+  <span style="color: #000000;">80</span>:   ebfffeac        bl      0xfffffb38
+  <span style="color: #000000;">84</span>:   eafffff6        b       0x64</pre>
+<h1> <span class="mw-headline" id="Support_for_NSString"> Support for NSString </span></h1>
+<p>Wondering if we could add built-in knowledge to turn a Mono String into an Objective-C NSString in the same way that we do instrinsics for SIMD.   The idea would be to just create a simple shell structure for NSString that is initialized to point to the UTF16 data in Mono's string.
+</p><p>GCC compiled a regular NSString constant as something like:
+</p>
+<pre>
+void *classptr;
+intxx flags;
+void *ucs2data
+</pre>
+<p>The idea would be to have a mechanism that allocates this in the stack, and allows us to pass a pointer to this blob to the Objective-C code.  In C# this would look like this:
+</p>
+<pre>
+string a = &quot;hello&quot;;
+Some_PInvoke_to_objective_C (Mono.Rutnime.AsNsString (a));
+</pre>
+<p>The above would do something like a stackalloc, fill in the class pointer, the flags and the dta pointer to point to Mono's string.
+</p><p>I don't see why this would need stackalloc or special JIT support.
+You should be able to just define a C# struct and fill the ucs2data field with a fixed expression. All this would happen in an autogenerated wrapper of the P/Invoke call. There would be no speed or memory advantage at doing this specially in the JIT.
+</p>

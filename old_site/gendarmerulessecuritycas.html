@@ -1,0 +1,196 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Security.Cas"
+permalink: /old_site/Gendarme.Rules.Security.Cas/
+---
+
+<h1>Gendarme.Rules.Security.Cas</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s Code Access Security (CAS) rules are located in the <b>Gendarme.Rules.Security.Cas.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security.Cas/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AddMissingTypeInheritanceDemandRule"><span class="tocnumber">1.1</span> <span class="toctext">AddMissingTypeInheritanceDemandRule</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#DoNotExposeFieldsInSecuredTypeRule"><span class="tocnumber">1.2</span> <span class="toctext">DoNotExposeFieldsInSecuredTypeRule</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#DoNotExposeMethodsProtectedByLinkDemandRule"><span class="tocnumber">1.3</span> <span class="toctext">DoNotExposeMethodsProtectedByLinkDemandRule</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#DoNotReduceTypeSecurityOnMethodsRule"><span class="tocnumber">1.4</span> <span class="toctext">DoNotReduceTypeSecurityOnMethodsRule</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#ReviewSealedTypeWithInheritanceDemandRule"><span class="tocnumber">1.5</span> <span class="toctext">ReviewSealedTypeWithInheritanceDemandRule</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#ReviewSuppressUnmanagedCodeSecurityUsageRule"><span class="tocnumber">1.6</span> <span class="toctext">ReviewSuppressUnmanagedCodeSecurityUsageRule</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#SecureGetObjectDataOverridesRule"><span class="tocnumber">1.7</span> <span class="toctext">SecureGetObjectDataOverridesRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="AddMissingTypeInheritanceDemandRule"> AddMissingTypeInheritanceDemandRule </span></h3>
+<p>The rule checks for types that are not <b>sealed</b> but have a <b>LinkDemand</b>. In this case the type should also have an <b>InheritanceDemand</b> for the same permissions. An alternative is to seal the type. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (InheritanceDemand):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">InheritanceDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Correct <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (sealed):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> Correct <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeLinkDemandRule.
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotExposeFieldsInSecuredTypeRule"> DoNotExposeFieldsInSecuredTypeRule </span></h3>
+<p>The rule checks for types that are secured by <b>Demand</b> or <b>LinkDemand</b>but also expose visible fields. Access to these fields is not covered by the declarative demands, opening potential security holes. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (InheritanceDemand):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">InheritanceDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Correct <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (sealed):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> Correct <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeExposeFieldsRule.
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotExposeMethodsProtectedByLinkDemandRule"> DoNotExposeMethodsProtectedByLinkDemandRule </span></h3>
+<p>This rule checks for visible methods that are less protected (i.e. lower security requirements) than the method they call. If the called methods are protected by a <b>LinkDemand</b> then the caller can be used to bypass security checks. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> BaseClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> <span style="color: #6666cc; font-weight: bold;">void</span> VirtualMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> <span style="color: #6666cc; font-weight: bold;">Class</span> <span style="color: #008000;">:</span> BaseClass  <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// bad since a caller with only ControlAppDomain will be able to call the base method</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlAppDomain <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> VirtualMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">.</span><span style="color: #0000FF;">VirtualMethod</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (InheritanceDemand):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> BaseClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, ControlAppDomain <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> <span style="color: #6666cc; font-weight: bold;">void</span> VirtualMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> <span style="color: #6666cc; font-weight: bold;">Class</span> <span style="color: #008000;">:</span> BaseClass  <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ok since this permission cover the base class permission</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> VirtualMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">.</span><span style="color: #0000FF;">VirtualMethod</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named MethodCallWithSubsetLinkDemandRule.
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotReduceTypeSecurityOnMethodsRule"> DoNotReduceTypeSecurityOnMethodsRule </span></h3>
+<p>This rule checks for types that have declarative security permission which aren't a subset of the security permission of some of their methods. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">Assert</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> NotSubset <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>EnvironmentPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">Assert</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">Assert</span>, ControlThread <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Subset <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">Assert</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Method <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeIsNotSubsetOfMethodSecurityRule.
+</li></ul>
+<h3> <span class="mw-headline" id="ReviewSealedTypeWithInheritanceDemandRule"> ReviewSealedTypeWithInheritanceDemandRule </span></h3>
+<p>This rule checks for sealed types that have <b>InheritanceDemand</b> declarative security applied to them. Since those types cannot be inherited from the <b>InheritanceDemand</b> will never be executed by the runtime. Check if the permission is required and, if so, change the <b>SecurityAction</b> to the correct one. Otherwise remove the permission. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">InheritanceDemand</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (non sealed):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">InheritanceDemand</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (LinkDemand):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, Unrestricted <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named SealedTypeWithInheritanceDemandRule.
+</li></ul>
+<h3> <span class="mw-headline" id="ReviewSuppressUnmanagedCodeSecurityUsageRule"> ReviewSuppressUnmanagedCodeSecurityUsageRule </span></h3>
+<p>This rule fires if a type or method is decorated with the <b>[SuppressUnmanagedCodeSecurity]</b>attribute. This attribute reduces the security checks done when executing unmanaged code and its usage should be reviewed to confirm that no exploitable security holes are present. 
+</p><p>Example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>SuppressUnmanagedCodeSecurity<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Safe <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;User32.dll&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> Boolean MessageBeep <span style="color: #008000;">&#40;</span>UInt32 beepType<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This is an Audit rule. As such it does not check for valid or invalid patterns but warns about a specific problem that needs to be reviewed by someone.
+</li></ul>
+<h3> <span class="mw-headline" id="SecureGetObjectDataOverridesRule"> SecureGetObjectDataOverridesRule </span></h3>
+<p>This rule fires if a type implements <b>System.Runtime.Serialization.ISerializable</b>but the <b>GetObjectData</b> method is not protected with a <b>Demand</b> or <b>LinkDemand</b> for <b>SerializationFormatter</b>. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">:</span> ISerializable <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> GetObjectData <span style="color: #008000;">&#40;</span>SerializationInfo info, StreamingContext context<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">:</span> ISerializable <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#91;</span>SecurityPermission <span style="color: #008000;">&#40;</span>SecurityAction<span style="color: #008000;">.</span><span style="color: #0000FF;">LinkDemand</span>, SerializationFormatter <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> GetObjectData <span style="color: #008000;">&#40;</span>SerializationInfo info, StreamingContext context<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security.
+</li></ul>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

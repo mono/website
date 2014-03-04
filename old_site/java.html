@@ -1,0 +1,119 @@
+---
+layout: obsolete
+title: "Java"
+permalink: /old_site/Java/
+---
+
+<h1>Java</h1>
+
+<p>Mono is able to run Java code side-by-side with .NET as well as having Java and .NET object interoperate with each other. This is done with <a href="http://www.ikvm.net" class="external text" rel="nofollow">IKVM</a> the Java VM implementation that runs on top of .NET and Mono.  IKVM was developed by Jeroen Frijters for the .NET Framework.  Zoltan Varga ported it to Mono and fixed the Mono runtime to support the features required by IKVM.  The class library runtime for IKVM is the <a href="http://www.gnu.org/software/classpath/classpath.html" class="external text" rel="nofollow">GNU Classpath</a>, which is rapidly advancing but not entirely complete. IKVM is fully supported by Mono and its part of the standard Mono package distribution. As it stands today, it is able to run popular applications like Eclipse and Derby.
+</p><p>There are two possible ways of using IKVM: one is to use it as a Just-in-Time compiler which translates the Java bytecodes into .NET Intermediate Language as it goes. But this means that at runtime you are compiling things twice: the Java-to-CIL JIT and the CIL-to-Native JIT. 
+</p><p>We are going to build some samples using Gtk# 
+</p><p>Gtk# is really a bad name. Because Gtk# is not limited to C#, any programming language in the .NET framework can use it today and because it covers more than only the Gtk API, it covers various other components of the GNOME Development Platform. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Exposing_.NET_Libraries_to_Java"><span class="tocnumber">1</span> <span class="toctext">Exposing .NET Libraries to Java</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Compiling_Our_Program"><span class="tocnumber">2</span> <span class="toctext">Compiling Our Program</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Running_Our_Java_Code_in_Mono"><span class="tocnumber">3</span> <span class="toctext">Running Our Java Code in Mono</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Compiling_Java_Code_to_x86_Code"><span class="tocnumber">4</span> <span class="toctext">Compiling Java Code to x86 Code</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#How_Complete_is_Mono.2FIKVM.3F"><span class="tocnumber">5</span> <span class="toctext">How Complete is Mono/IKVM?</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Exposing_.NET_Libraries_to_Java"> Exposing .NET Libraries to Java </span></h1>
+<p>Now, Gtk# is a .NET assembly (this is the ECMA lingo for "library"), and Java does not know anything about this. It is necessary first to generate some stubs for these classes to let the Java compiler knows about the types defined in the C# world. This is done using the <tt>netexp.exe </tt>program from IKVM, like this: 
+</p>
+<pre class="bash" style="font-family:monospace;">$ ikvmstub <span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>mscorlib.dll
+$ ikvmstub <span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>gtk-sharp<span style="color: #000000; font-weight: bold;">/</span>gtk-sharp.dll
+$ ikvmstub <span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>gtk-sharp<span style="color: #000000; font-weight: bold;">/</span>glib-sharp.dll
+$ ikvmstub <span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>gtk-sharp<span style="color: #000000; font-weight: bold;">/</span>atk-sharp.dll</pre>
+<p>The above commands basically "imports" all of the types and their definitions into something suitable for Java to consume, the result is: 
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">ls</span> <span style="color: #000000; font-weight: bold;">*</span>.jar
+atk-sharp.jar  glib-sharp.jar  gtk-sharp.jar  mscorlib.jar</pre>
+<p>The <tt>ikvmstub </tt>program will import all of the types into the "cli" namespace. So if you had a class called "Gtk.Window", it will be exposed to Java as "cli.Gtk.Window".
+</p>
+<h1> <span class="mw-headline" id="Compiling_Our_Program"> Compiling Our Program </span></h1>
+<p>This is a very basic Java program that initializes Gtk#: 
+</p>
+<pre class="csharp" style="font-family:monospace;">import cli<span style="color: #008000;">.</span><span style="color: #0000FF;">Gtk</span><span style="color: #008000;">.*;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Demo <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>To compile the above program type: 
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>javac <span style="color: #660033;">-classpath</span> gtk-sharp.jar Demo.java</pre>
+<p>This produces a <tt>Demo.class </tt>file that contains the Java bytecodes. The -classpath file instructs the Java compiler to find the type definitions on the <tt>gtk-sharp.jar </tt>file that we had previously produced with <tt>ikvmstub </tt>.
+</p>
+<h1> <span class="mw-headline" id="Running_Our_Java_Code_in_Mono"> Running Our Java Code in Mono </span></h1>
+<p>Now, it is not possible to run this directly in Java, since the jar files produced by netexp.exe are only stubs, so we will need to run this in the Mono world using IKVM in JIT mode: 
+</p>
+<pre>
+$ ikvm -classpath .:gtk-sharp.jar Demo
+</pre>
+<p>The above just sits there waiting for events, so feel free to kill that. We will now add some meat to the program, this is a slightly more interesting sample: 
+</p>
+<pre class="csharp" style="font-family:monospace;">import cli<span style="color: #008000;">.</span><span style="color: #0000FF;">Gtk</span><span style="color: #008000;">.*;</span>
+import cli<span style="color: #008000;">.</span><span style="color: #0000FF;">GLib</span><span style="color: #008000;">.*;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Demo <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Window w <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello Mono with Java#&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Button b <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Click me&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		w<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		w<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>To compile, you will need to reference the libraries we created before: 
+</p>
+<pre>
+$ javac -classpath 'gtk-sharp.jar:glib-sharp.jar:atk-sharp.jar:
+mscorlib.jar:.' Demo.java
+</pre>
+<p>This will produce <tt>Demo.class</tt>.  Now run it: 
+</p>
+<pre>
+$ ikvm -classpath .:gtk-sharp.jar Demo
+</pre>
+<p>The result is shown here: 
+</p><p><a href="{{site.baseurl}}/images/old_site/2/26/Java.png" class="image"><img alt="Java.png" src="{{site.baseurl}}/images/old_site/2/26/Java.png" width="243" height="178" /></a>
+</p><p>The above is basically translating Demo.class from JVM bytecodes to ECMA CIL, then the Mono JIT translates that into native x86 code. The next step is to precompile the Java code directly into .NET code, which will skip the double JIT process: 
+</p>
+<pre>
+$ ikvmc -reference:`pwd`/classpath.dll Demo.class gtk-sharp.jar
+$ ls *exe
+Demo.exe
+</pre>
+<p>The above compiled the code directly into a a Mono/.NET executable.  To run it, just do: 
+</p>
+<pre>
+$ mono Demo.exe
+</pre>
+<h1> <span class="mw-headline" id="Compiling_Java_Code_to_x86_Code"> Compiling Java Code to x86 Code </span></h1>
+<p>But we can go one step further. We can avoid completely the JIT process by precompiling the .exe file which contains instructions in the ECMA Common Intermediate Language into native x86 code using Mono's Ahead-of-Time compiler, to do this, type: 
+</p>
+<pre>
+$ mono --aot Demo.exe
+$ ls Demo.*
+Demo.class  Demo.dll  Demo.exe  Demo.exe.so
+</pre>
+<p>The <tt>Demo.exe.so </tt>contains the native x86 code. Mono still requires the Demo.exe file to be around to extract metadata, but the Just-in-Time compiler will not be used in that case: 
+</p>
+<pre>
+$ mono Demo.exe
+</pre>
+<p>Mono detects the shared object file and resolves methods to those contained in the image file. You can see the native code generated by using the objdump command: 
+</p>
+<pre>
+$ objdump -d Demo.exe.so
+   ...
+</pre>
+<h1> <span class="mw-headline" id="How_Complete_is_Mono.2FIKVM.3F"> How Complete is Mono/IKVM? </span></h1>
+<p>Mono and IKVM depend on the GNU Classpath, so it is as complete as open source Java, but you get the added advantage of accessing any Mono/.NET libraries as well. 
+</p><p>Today Mono/IKVM can run large applications like Eclipse, Jython and JBoss. Screenshot of <a href="http://primates.ximian.com/~miguel/images/eclipse-mono.png" class="external text" rel="nofollow">Eclipse running on Mono</a> .
+</p>

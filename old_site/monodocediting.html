@@ -1,0 +1,58 @@
+---
+layout: obsolete
+title: "MonodocEditing"
+permalink: /old_site/MonodocEditing/
+---
+
+<h1>MonodocEditing</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_Restructuring_Plan_for_Mono_Documentation_Production_Tools"><span class="tocnumber">1</span> <span class="toctext">A Restructuring Plan for Mono Documentation Production Tools</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Milestone_Hydrogen"><span class="tocnumber">2</span> <span class="toctext">Milestone Hydrogen</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Milestone_Helium"><span class="tocnumber">3</span> <span class="toctext">Milestone Helium</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Milestone_Lithium"><span class="tocnumber">4</span> <span class="toctext">Milestone Lithium</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Milestone_Beryllium"><span class="tocnumber">5</span> <span class="toctext">Milestone Beryllium</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="A_Restructuring_Plan_for_Mono_Documentation_Production_Tools"> A Restructuring Plan for Mono Documentation Production Tools </span></h2>
+<p>The tool set available for stubbing, editing, validating, and assembling Mono documentation catalogs has evolved in a traditional linux style, with standalone tools implementing a focused portion of the process which must be linked together to produce a consumable documentation catalog.  
+</p><p>I (Mike Kestner) have commented on the state of the documentation tools as of early 2008 <a href="http://lists.ximian.com/pipermail/mono-docs-list/2008-January/001868.html" class="external text" rel="nofollow">on the mailing list</a>, and am embarking on a process to integrate the capabilities into a Graphical WYSISYG editing environment for start-to-finish document catalog maintenance.  
+</p><p>The project will be developed as a standalone widget library, named Monodoc.Widgets.dll exposing the Monodoc.Widgets namespace.  This is to facilitate the implementation of a standalone browser application to replace the existing monodoc browser, in addition to a new editor application and possibly a plugin for browsing and editing catalogs in MonoDevelop at some point in the future.
+</p><p>This document is intended as a planning tool to describe the milestones and features for the proposed system.  
+</p><p>Note: The milestones are not necessarily in order, beyond the first one.
+</p>
+<h2> <span class="mw-headline" id="Milestone_Hydrogen"> Milestone Hydrogen </span></h2>
+<p>The first milestone is the ability to browse, edit, and assemble an existing documentation tree on disk as produced by monodocer.  The primary test case will be the documentation for the new widget library I'll be producing.  The existing Gtk# documentation catalog will serve as a "release-ready" test case.
+</p><p>Specific features of this milestone include:
+</p>
+<ul><li> A tree browser to browse through the on-disk catalog hierarchy.
+</li><li> A WYSIWYG editing/viewing widget for Catalog, Namespace, Type, and Member nodes.
+</li><li> Integrated document validation and binary catalog assembling functions.
+</li></ul>
+<h2> <span class="mw-headline" id="Milestone_Helium"> Milestone Helium </span></h2>
+<p>Catalog updating capabilities, including dynamic stubbing and versioning.  Integration with and refactoring of monodocer will be necessary to avoid duplication of complex updating functionality.  Features planned for this milestone include:
+</p>
+<ul><li> Identification/Selection of target library assemblies.
+</li><li> Dynamic stub generation at assemble-time.
+</li><li> Explicit stubbing to disk.
+</li><li> Browsing of pre-stubbed API in the catalog tree.
+</li><li> Identification of historical API version info and enhanced Since element support.
+</li></ul>
+<h2> <span class="mw-headline" id="Milestone_Lithium"> Milestone Lithium </span></h2>
+<p>Patch management capabilities.  The current tool set is limited from a document review standpoint.  This milestone aims to change that with the following features:
+</p>
+<ul><li> Integrated difference/patch highlighting
+</li><li> off-line documentation review support (eg, pdf generation and printing).  
+</li><li> Patch contribution support (webservice?).
+</li><li> Patch application and approval admin (webservice?).
+</li></ul>
+<h2> <span class="mw-headline" id="Milestone_Beryllium"> Milestone Beryllium </span></h2>
+<p>Enhanced editing capabilities, beefing up the new editor.  Potential features include:
+</p>
+<ul><li> dynamic lint checking/validation.
+</li><li> see cref validation/autocompletion.
+</li><li> See Also Support for non-ecma-provider documents.
+</li><li> Extending beyond ecma document catalog editing?
+</li></ul>
+

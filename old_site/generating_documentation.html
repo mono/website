@@ -1,0 +1,263 @@
+---
+layout: obsolete
+title: "Generating Documentation"
+permalink: /old_site/Generating_Documentation/
+---
+
+<h1>Generating Documentation</h1>
+
+<p><br />
+Documenting your API is an important component of creating reusable libraries, and Mono provides a few tools for creating class library documentation of your own. This article explains how to generate documentation for your library using <a href="{{site.baseurl}}/Monodoc" title="Monodoc">monodoc</a>, the Mono documentation framework.
+</p>
+<ul><li> This page is about generating documentation for the first time for a new library. If you are interested in contributing to existing Mono API Documentation, see <a href="{{site.baseurl}}/Monodoc_Contributing" title="Monodoc Contributing">Monodoc Contributing</a>.
+</li></ul>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Methods_of_Generating_Documentation"><span class="tocnumber">1</span> <span class="toctext">Methods of Generating Documentation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Monodoc_Documentation"><span class="tocnumber">2</span> <span class="toctext">Monodoc Documentation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Generate_the_inital_stubs"><span class="tocnumber">2.1</span> <span class="toctext">Generate the inital stubs</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Edit_and_write_documentation"><span class="tocnumber">2.2</span> <span class="toctext">Edit and write documentation</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Synchronize_Documentation_with_source_code"><span class="tocnumber">2.3</span> <span class="toctext">Synchronize Documentation with source code</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Assemble_the_generated_Documentation"><span class="tocnumber">2.4</span> <span class="toctext">Assemble the generated Documentation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Merging_assembled_documentation_changes"><span class="tocnumber">2.4.1</span> <span class="toctext">Merging assembled documentation changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Other_utilities"><span class="tocnumber">2.5</span> <span class="toctext">Other utilities</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Generating_static_HTML_Documentation"><span class="tocnumber">2.5.1</span> <span class="toctext">Generating static HTML Documentation</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Validate_Monodoc_XML_format"><span class="tocnumber">2.5.2</span> <span class="toctext">Validate Monodoc XML format</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Inline_XML_Documentation"><span class="tocnumber">3</span> <span class="toctext">Inline XML Documentation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Converting_Inline_XML_Documentation_to_Monodoc_format"><span class="tocnumber">3.1</span> <span class="toctext">Converting Inline XML Documentation to Monodoc format</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Converting_Monodoc_format_XML_into_inline_XML_documentation"><span class="tocnumber">3.2</span> <span class="toctext">Converting Monodoc format XML into inline XML documentation</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Methods_of_Generating_Documentation"> Methods of Generating Documentation </span></h1>
+<p>There are two ways to create documentation for your libraries:
+</p>
+<ul><li> Using a <a href="#Monodoc_Documentation">separate set of tools</a> for maintaining documenation files outside of your source code and which produce ECMA-styled documentation.
+</li></ul>
+<ul><li> Using <a href="#Inline_XML_Documentation">the /doc option of mcs</a>, which takes documentation comments from within your source code files and compiles them into a Visual Studio-format XML documentation file.  
+</li></ul>
+<p><b>Documentation in the Mono project uses the first approach</b>, as it allows for a clean split between documentation and source code and allows us to provide examples outside of the source code as well as using our collaboration system
+</p><p>The underlying reason is that, while using inline XML tags to document classes is certainly convenient, properly verbose documentation quickly overwhelms the code, making the source quite difficult to read. Furthermore, multilingual documentation makes for significant additional text and the various attempts to address this problem are poor.
+</p>
+<h1> <span class="mw-headline" id="Monodoc_Documentation"> Monodoc Documentation </span></h1>
+<p>The process for generating the documentation can be splitted in several parts.
+</p>
+<h2> <span class="mw-headline" id="Generate_the_inital_stubs"> Generate the inital stubs </span></h2>
+<p>The initial stubs for the documentation are generated with <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a>. After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
+</p><p>For example, if we had these two files:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// source file A.cs</span>
+<span style="color: #0600FF; font-weight: bold;">namespace</span> A <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> SomeAClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SomeAmethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+&#160;
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OtherAClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> x,y<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// source file B.cs</span>
+<span style="color: #0600FF; font-weight: bold;">namespace</span> B <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ImportantBClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> BBMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> AnotherBClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> x, xx<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+	<span style="color: #6666cc; font-weight: bold;">class</span> InternalClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #6666cc; font-weight: bold;">int</span> nothingPublic<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>compiled in a library <i>lib.dll</i>:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mcs -t:library -out:lib.dll A.cs B.cs</pre>
+<p>running monodocer:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodocer -assembly:lib.dll -path:en <span style="color: #660033;">-pretty</span></pre>
+<p>or mdoc-update:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mdoc update <span style="color: #660033;">-o</span> en lib.dll</pre>
+<p>will give us the following directory content:
+</p>
+<pre>
+index.xml
+A.xml
+B.xml
+A-
+ |- SomeAClass.xml
+ |- OtherAClass.xml
+B-
+ |- ImportantBClass.xml
+ |- AnotherBClass.xml
+</pre>
+<p>As the documentation is an <a href="http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)" class="external text" rel="nofollow">XML format</a>,  you can edit it directly, though it is easier to use the <a href="{{site.baseurl}}/Monodoc" title="Monodoc">Monodoc</a> browser. Just after creating the documentation with <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a>, you can start navigating or <a href="#Edit_and_write_documentation">editing</a> it by typing:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodoc <span style="color: #660033;">--edit</span> docfiles</pre>
+<p>Where <i>docfiles</i> is the name of the directory containing the documentation files. 
+</p><p>When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained <a href="{{site.baseurl}}/Generating_Documentation#Assemble_the_generated_Documentation" title="Generating Documentation">here</a>.
+</p>
+<h2> <span class="mw-headline" id="Edit_and_write_documentation"> Edit and write documentation </span></h2>
+<p>After starting <a href="{{site.baseurl}}/Monodoc" title="Monodoc">Monodoc</a> browser you can navigate to the parts of the documentation to be edited. Those are labeled as <i>To be added</i> or as <i>Documentation for this section has not yet been entered</i>. Look <a href="{{site.baseurl}}/Monodoc_Editing" title="Monodoc Editing">here</a> for more information regarding the editing process or the XML format of the documentation.
+</p>
+<h2> <span class="mw-headline" id="Synchronize_Documentation_with_source_code"> Synchronize Documentation with source code </span></h2>
+<p>If your source code changes the documentation should be updated. You only need to run <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a> again and the documentation files will be updated without removing the already written documentation and adding the parts that were not missing from the XML files.
+</p><p>If you remove some classes from your source code a .remove extension will be added to the old documentation files, so you do not lose the already written documentation. Of course, new stubs for your new classes will be created.
+</p><p>In <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> 1.1.18 or later or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc</a>, you can provide the <tt>-since:SINCE</tt> command-line argument to insert a <tt>&lt;since/&gt;</tt> element for each <i>added</i> type and member within the assembly.  The <tt>SINCE</tt> text will be inserted as the <i>version</i> attribute of the <tt>&lt;since/&gt;</tt> element, thus:
+</p>
+<pre class="bash" style="font-family:monospace;">$ monodocer -path:en -assembly:lib.dll -since:<span style="color: #000000;">2.0</span>
+<span style="color: #666666; font-style: italic;"># or</span>
+$ mdoc update <span style="color: #660033;">-o</span> en <span style="color: #660033;">--since</span>=<span style="color: #000000;">2.0</span> lib.dll</pre>
+<p>will insert a <tt>&lt;since version="2.0" /&gt;</tt> element for <i>every</i> type and member that is added to the documentation XML files.
+</p><p>This is useful when you need to distinguish which members were added in later versions of an assembly.
+</p><p>Both <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> and <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a> insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within <a href="{{site.baseurl}}/Monodoc" title="Monodoc">monodoc</a> and <a href="http://www.go-mono.com/docs" class="external free" rel="nofollow">http://www.go-mono.com/docs</a>, for example the <b>Requirements</b> section at the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Environment" class="external text" rel="nofollow">System.Environment documentation</a>.
+</p>
+<h2> <span class="mw-headline" id="Assemble_the_generated_Documentation"> Assemble the generated Documentation </span></h2>
+<p>For distributing our documentation, it is preferable to assemble all the files, so you don't have to deal with an entire directory. That way we achieve also a better integration with the monodoc browser.
+</p><p>To bundle together all our docs, we should use the <a href="{{site.baseurl}}/Assembler" title="Assembler">mdassembler</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-assemble</a> programs.  These programs create .zip and a .tree files which include all our generated documentation. In addition, you will have to create a .sources file to tell the <a href="{{site.baseurl}}/Monodoc" title="Monodoc">monodoc browser</a> what kind of documentation you have created.
+</p><p>To create the <i>.zip</i> and <i>.tree</i> files, we can use <a href="{{site.baseurl}}/Assembler" title="Assembler">mdassembler</a>:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mdassembler <span style="color: #660033;">--ecma</span> en <span style="color: #660033;">--out</span> lib</pre>
+<p>or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-assemble</a>:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mdoc assemble <span style="color: #660033;">-o</span> lib en</pre>
+<p>The above two commands will create the files <i>lib.tree</i> and <i>lib.zip</i>.  Now, we create a <i>lib.source</i> file:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;monodoc<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;node</span> <span style="color: #000066;">label</span>=<span style="color: #ff0000;">&quot;My Library Name&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;mydocs-lib&quot;</span> <span style="color: #000066;">parent</span>=<span style="color: #ff0000;">&quot;libraries&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;source</span> <span style="color: #000066;">provider</span>=<span style="color: #ff0000;">&quot;ecma&quot;</span> <span style="color: #000066;">basefile</span>=<span style="color: #ff0000;">&quot;lib&quot;</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;mydocs-lib&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/monodoc<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The <i>provider</i> attribute tells the browser which kind of documentation is within the <i>lib.zip</i> file. When editing library documentation it should always be <i>ecma</i>.  The <i>provider</i> attribute MUST match the format provided to <a href="{{site.baseurl}}/Assembler" title="Assembler">mdassembler</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-assemble</a>.
+</p><p>Other documentation formats are supported as well; see <a href="http://www.go-mono.com/docs/monodoc.ashx?link=man:mdoc-assemble(1)" class="external text" rel="nofollow">mdoc-assemble(1)</a> for details.
+</p><p>The <i>basefile</i> attribute tells the browser where to find that documentation; it is the base name of your .zip and .tree files.
+</p><p>The <i>path</i> attribute is a tag that lets the browser group the different documentation sources in sections (showed in the tree view). If we make two different set of documentations (from two different libraries we have written) they could be grouped together as long as we use the same path. This is, for example, the way used to group the GtkSourceView and Gtk-Sharp documentation together. You can look for more examples in the <i>sources</i> directory of monodoc.
+</p><p>The <i>//node</i> element(s) allow you to declare paths that can be used by the <i>//source/@path</i> attribute.  The value of <i>//source/@path</i> <i>must</i> come from one of two locations: the .source file, or the "global" monodoc.xml file, which only contains the paths <i>libraries</i>, <i>man</i>, <i>languages</i>, <i>tools</i>, and <i>various</i>.  The <i>//node</i> element can have an optional <i>//node/@parent</i> attribute, which follows the same rules as <i>//source/@path</i>.  You can nest <i>//node</i> elements in order to create additional structure underneath the global nodes.
+</p><p>For example, if you wanted to create a tree structure of <i>Languages -&gt; C# -&gt; Language Specification</i> and <i>Languages -&gt; C# -&gt; Error Reference</i> (that is, a common "C#" parent to the Language Specification and Error Reference nodes), you could do:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;monodoc<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;node</span> <span style="color: #000066;">label</span>=<span style="color: #ff0000;">&quot;C#&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;lang-cs&quot;</span> <span style="color: #000066;">parent</span>=<span style="color: #ff0000;">&quot;languages&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;node</span> <span style="color: #000066;">label</span>=<span style="color: #ff0000;">&quot;C# Compiler Error Reference&quot;</span> name<span style="color: #ff0000;">&quot;cs-errors&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;node</span> <span style="color: #000066;">label</span>=<span style="color: #ff0000;">&quot;C# Language Specification&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;ecmaspec&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/node<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;source</span> <span style="color: #000066;">provider</span>=<span style="color: #ff0000;">&quot;error&quot;</span> <span style="color: #000066;">basefile</span>=<span style="color: #ff0000;">&quot;cs-errors&quot;</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;cs-errors&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;source</span> <span style="color: #000066;">provider</span>=<span style="color: #ff0000;">&quot;ecmaspec&quot;</span> <span style="color: #000066;">basefile</span>=<span style="color: #ff0000;">&quot;ecma334&quot;</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;ecmaspec&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/monodoc<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>(This also shows that a single .source file can specify multiple sources.)
+</p><p>The next step is to move the generated documentation files (sources, zip and tree) to the <i>sources</i> directory of monodoc. That directory can be found with one of the following commands:
+</p>
+<pre class="bash" style="font-family:monospace;">$ pkg-config monodoc <span style="color: #660033;">--variable</span>=sourcesdir
+$ monodoc <span style="color: #660033;">--get-sourcesdir</span> <span style="color: #666666; font-style: italic;">#(deprecated)</span></pre>
+<h3> <span class="mw-headline" id="Merging_assembled_documentation_changes"> Merging assembled documentation changes </span></h3>
+<p>The changes you made to your assembled library documentation will be stored in an XML file in <tt>~/.config/monodoc/changeset.xml</tt>. Thus, they are not created directly in the XML documentation files. To bring back those changes to the XML files you will need to merge them:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodoc <span style="color: #660033;">--merge-changes</span> ~<span style="color: #000000; font-weight: bold;">/</span>.config<span style="color: #000000; font-weight: bold;">/</span>monodoc<span style="color: #000000; font-weight: bold;">/</span>changeset.xml docdir</pre>
+<p>where <i>docdir</i> is the directory containing the .source file and the directory structure of your documentation. It is important to note that <b>the changes will be merged to the unassembled xml sources</b>, so you will have to reassemble the documentation after the process.
+</p><p>However it is recommended to not edit files once being assembled, but when they are in XML form. The reason is that <a href="/index.php?title=Monodoc_contributing&amp;action=edit&amp;redlink=1" class="new" title="Monodoc contributing (page does not exist)">contributions</a> are stored also in the <i>changeset.xml</i>, so contributions and your own library changes will be mixed.
+</p>
+<h2> <span class="mw-headline" id="Other_utilities"> Other utilities </span></h2>
+<h3> <span class="mw-headline" id="Generating_static_HTML_Documentation"> Generating static HTML Documentation </span></h3>
+<p>You can tranform documentation written with <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a> into HTML documentation with the <tt>monodocs2html</tt> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-export-html</a> programs:
+</p>
+<pre class="bash" style="font-family:monospace;">$ monodocs2html <span style="color: #660033;">--source</span> docfiles <span style="color: #660033;">--dest</span> htmldocs
+&#160;
+<span style="color: #666666; font-style: italic;"># -OR-</span>
+&#160;
+$ mdoc export-html <span style="color: #660033;">-o</span> htmldocs docfiles</pre>
+<p>These commands will convert the <tt>monodocer</tt>-generated files within <tt>docfiles</tt> into HTML files in the <tt>htmldocs</tt> directory.  Open <tt>index.html</tt> in that directory with your web browser to view the documentation.
+</p><p>The layout of the HTML output can be customized by overriding the XSLT stylesheet used by the tool.  To do this, first get a copy of the default stylesheet by running:
+</p>
+<pre class="bash" style="font-family:monospace;">$ monodocs2html <span style="color: #660033;">--dumptemplate</span> <span style="color: #000000; font-weight: bold;">&gt;</span> doctemplate.xsl
+&#160;
+<span style="color: #666666; font-style: italic;"># -OR-</span>
+&#160;
+$ mdoc export-html <span style="color: #660033;">--default-template</span> <span style="color: #000000; font-weight: bold;">&gt;</span> doctemplate.xsl</pre>
+<p>That will place the XSLT template in <tt>doctemplate.xsl</tt>.  Now modify the template as you like, for instance by changing the CSS styles or the layout.  Then, create your HTML documentation by specifying your new template:
+</p>
+<pre class="bash" style="font-family:monospace;">$ monodocs2html <span style="color: #660033;">--source</span> docfiles <span style="color: #660033;">--dest</span> htmldocs <span style="color: #660033;">--template</span> doctemplate.xsl
+&#160;
+<span style="color: #666666; font-style: italic;"># -OR-</span>
+&#160;
+$ mdoc export-html <span style="color: #660033;">--template</span> doctemplate.xsl <span style="color: #660033;">-o</span> htmldocs docfiles</pre>
+<h3> <span class="mw-headline" id="Validate_Monodoc_XML_format"> Validate Monodoc XML format </span></h3>
+<p>There is a tool for validating the correction of the XML format of every XML documenation file of a class. To use it:
+</p>
+<pre class="bash" style="font-family:monospace;">$ mdvalidater ecma path-to-xml-file
+&#160;
+<span style="color: #666666; font-style: italic;"># -OR-</span>
+&#160;
+$ monodoc <span style="color: #660033;">--validate</span> ecma path-to-xml-file
+&#160;
+<span style="color: #666666; font-style: italic;"># -OR-</span>
+&#160;
+$ mdoc validate path-to-xml-file</pre>
+<p>Where <i>path-to-xml-file</i> is a path to a documentation file of a class. In the example above could be <tt>doc/A/OtherAClass.xml</tt>
+</p><p><tt>mdvalidator</tt> and <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-validate</a> also accept directories as arguments, in which case all files underneath the specified directories will be validated.
+</p>
+<h1> <span class="mw-headline" id="Inline_XML_Documentation"> Inline XML Documentation </span></h1>
+<p>The <tt>/doc</tt> option of <a href="{{site.baseurl}}/Mcs" title="Mcs" class="mw-redirect">mcs</a> provides the same functionality as the <tt>/doc</tt> command of csc, Microsoft's C# compiler (and it's an option in Visual Studio too).  It looks for XML documentation comments within source code (comments that start with three slashes, ///), and puts them all into a single XML file.  Here's an example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> MyLibrary <span style="color: #008000;">&#123;</span>
+  <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">/// &lt;summary&gt;This method does something.&lt;/summary&gt;</span>
+    <span style="color: #008080; font-style: italic;">/// &lt;remarks&gt;&lt;para&gt;I can put documentation about</span>
+    <span style="color: #008080; font-style: italic;">/// this method in my source code.&lt;/para&gt;</span>
+    <span style="color: #008080; font-style: italic;">/// &lt;para&gt;That makes it easy to maintain, but some</span>
+    <span style="color: #008080; font-style: italic;">/// find it gets in the way.&lt;/para&gt;&lt;/remarks&gt;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> DoSomething<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+  <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Compiling this with:
+</p>
+<pre class="bash" style="font-family:monospace;">mcs test.cs <span style="color: #000000; font-weight: bold;">/</span>doc:doc.xml -t:library</pre>
+<p>Yields a file named "doc.xml" that contains:
+</p>
+<pre>
+&lt;doc&gt;
+    &lt;assembly&gt;
+        &lt;name&gt;test&lt;/name&gt;
+    &lt;/assembly&gt;
+    &lt;members&gt;
+        &lt;member name=&quot;M:MyLibrary.MyClass.DoSomething&quot;&gt;
+            &lt;summary&gt;This method does something.&lt;/summary&gt;
+            &lt;remarks&gt;
+                &lt;para&gt;I can put documentation about
+            this method in my source code.&lt;/para&gt;
+                &lt;para&gt;That makes it easy to maintain, but some
+            find it gets in the way.&lt;/para&gt;
+            &lt;/remarks&gt;&lt;/member&gt;
+    &lt;/members&gt;
+&lt;/doc&gt;
+</pre>
+<p>Since this feature is modeled after Microsoft's compiler, please refer to <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csref/html/vclrfTagsForDocumentationComments.asp" class="external text" rel="nofollow">their reference</a> for documentation comments for a list of what XML tags can be used.
+</p><p>Now, what you do with that XML file is up to you.  <a href="http://ndoc.sourceforge.net/" class="external text" rel="nofollow">NDoc</a>, a project separate from Mono, is an application that will take this XML file and render it in various formats, including CHM, JavaDoc-style HTML, and MSDN-style HTML.  (In the past I've had trouble running NDoc under Mono.  If you can run it in Windows, NDoc is very nice.)
+</p>
+<h3> <span class="mw-headline" id="Converting_Inline_XML_Documentation_to_Monodoc_format"> Converting Inline XML Documentation to Monodoc format </span></h3>
+<p>If you have already some documentation generated from inline XML code and you want to convert it to the format used by Monodoc, you can use <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a>'s <i>-importslashdoc</i> argument:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodocer <span style="color: #660033;">-pretty</span> -importslashdoc:doc.xml -assembly:A.dll -path:A<span style="color: #000000; font-weight: bold;">/</span>en</pre>
+<p>or you can use <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a>'s <i>--import</i> argument:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mdoc update <span style="color: #660033;">-i</span> doc.xml <span style="color: #660033;">-o</span> A<span style="color: #000000; font-weight: bold;">/</span>en A.dll</pre>
+<p>The <i>A/en</i> directory will contain documentation for each type within <i>A.dll</i> containing the documentation imported from <i>doc.xml</i>.
+</p>
+<h3> <span class="mw-headline" id="Converting_Monodoc_format_XML_into_inline_XML_documentation"> Converting Monodoc format XML into inline XML documentation </span></h3>
+<p><a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-export-msxdoc</a> exports Monodoc XML to Microsoft XML Documentation:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mdoc export-msxdoc A<span style="color: #000000; font-weight: bold;">/</span>en</pre>
+<p>will convert all Monodoc XML within <i>A/en</i> into Microsoft XML documentation.  The file created is controlled by <i>A/en/index.xml</i> -- files will be created with the basenames of <b>/Overview//Assembly[@Name]]</b> and the file extension <b>.xml</b>.
+</p>

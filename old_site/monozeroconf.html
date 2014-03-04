@@ -1,0 +1,217 @@
+---
+layout: obsolete
+title: "Mono.Zeroconf"
+permalink: /old_site/Mono.Zeroconf/
+---
+
+<h1>Mono.Zeroconf</h1>
+
+<p>Mono.Zeroconf is a cross platform Zero Configuration Networking library for Mono and .NET.  It provides a unified API for performing the most common zeroconf operations on a variety of platforms and subsystems: all the operating systems supported by Mono and both the <a href="http://avahi.org/" class="external text" rel="nofollow">Avahi</a> and <a href="http://developer.apple.com/networking/bonjour/index.html" class="external text" rel="nofollow">Bonjour/mDNSResponder</a> transports.
+</p><p>By using Mono.Zeroconf developers can use a single API that will work regardless of the underlying implementation that a particular operating system uses. 
+</p><p>Developers can publish services that will be exposed to other computers on the network and also query the local machines on the network for services that could have been exposed.   
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What.27s_Included"><span class="tocnumber">1</span> <span class="toctext">What's Included</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Where_to_get_it"><span class="tocnumber">2</span> <span class="toctext">Where to get it</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Sources_and_Windows_Binaries"><span class="tocnumber">2.1</span> <span class="toctext">Sources and Windows Binaries</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Linux_Packages"><span class="tocnumber">2.2</span> <span class="toctext">Linux Packages</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Git"><span class="tocnumber">2.3</span> <span class="toctext">Git</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Documentation"><span class="tocnumber">3</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Things_a_developer_should_know"><span class="tocnumber">4</span> <span class="toctext">Things a developer should know</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#API_Stability"><span class="tocnumber">4.1</span> <span class="toctext">API Stability</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#API_coverage_of_Zeroconf_operations"><span class="tocnumber">4.2</span> <span class="toctext">API coverage of Zeroconf operations</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Compatibility_with_.NET"><span class="tocnumber">4.3</span> <span class="toctext">Compatibility with .NET</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Implementation_Details"><span class="tocnumber">4.4</span> <span class="toctext">Implementation Details</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Known_Workarounds"><span class="tocnumber">4.5</span> <span class="toctext">Known Workarounds</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Bug_Reports_and_Support"><span class="tocnumber">4.6</span> <span class="toctext">Bug Reports and Support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#How_to_use_it"><span class="tocnumber">5</span> <span class="toctext">How to use it</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Listen_for_and_resolve_services"><span class="tocnumber">5.1</span> <span class="toctext">Listen for and resolve services</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Publish_a_service"><span class="tocnumber">5.2</span> <span class="toctext">Publish a service</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Providers"><span class="tocnumber">6</span> <span class="toctext">Providers</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Future"><span class="tocnumber">7</span> <span class="toctext">Future</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="What.27s_Included"> What's Included </span></h2>
+<p>Most developers will make use of:
+</p>
+<ul><li> A base namespace, <code>Mono.Zeroconf</code>. This is the namespace that applications and libraries should use to use zeroconf networking.
+</li><li> A command line tool, <code>mzclient</code>. This tool can be used to query/browse and publish services from the command line.
+</li></ul>
+<p>In addition, some backend-specific namespaces exist:
+</p>
+<ul><li> A provider namespace <code>Mono.Zeroconf.Providers</code>. This namespace can be used to implement new zeroconf providers. Most applications and libraries will never need to use this namespace.
+</li><li> A provider for mDNSResponder (Bonjour). This provider works on Windows, Mac OS X, and Linux.
+</li><li> A provider for Avahi. This provider is preferred on Linux over mDNSResponder. Most Linux distributions ship Avahi these days.
+</li></ul>
+<p>It is important to note that Mono.Zeroconf abstracts away the differences between providers (mDNSResponder/Avahi).  Because of this, some of the more detailed, seldom used features of each provider stack are not exposed through Mono.Zeroconf. If you require such specificity from a zeroconf stack, you probably need to use that provider's API directly. Mono.Zeroconf is not for you.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Where_to_get_it"> Where to get it </span></h2>
+<p>Mono.Zeroconf is available in both source and binary tarball/zip form as "upstream" sources. It is maintained separately from Mono itself, but will be included as a module in the Mono release suite soon.
+</p>
+<h3> <span class="mw-headline" id="Sources_and_Windows_Binaries"> Sources and Windows Binaries </span></h3>
+<p>Currently the releases are being managed by the <a href="http://banshee-project.org" class="external text" rel="nofollow">Banshee Project</a>, but will soon be moved to the same location as all other <a href="http://go-mono.com/sources-stable/" class="external text" rel="nofollow">Mono sources</a>.
+</p>
+<ul><li> <a href="http://download.banshee-project.org/mono-zeroconf/mono-zeroconf-0.9.0.tar.bz2" class="external text" rel="nofollow">Source code for Linux/OS X (tar.bz2)</a>
+</li><li> <a href="http://download.banshee-project.org/mono-zeroconf/mono-zeroconf-0.9.0.zip" class="external text" rel="nofollow">Source code for Windows (zip)</a> - includes Visual Studio 2005 solution
+</li><li> <a href="http://download.banshee-project.org/mono-zeroconf/mono-zeroconf-0.9.0-binary.zip" class="external text" rel="nofollow">Windows Binaries</a>
+</li></ul>
+<p><i><b>Note:</b> Windows users must install <a href="http://www.apple.com/support/downloads/bonjourforwindows.html" class="external text" rel="nofollow">Apple's Bonjour</a> before using Mono.Zeroconf.</i>
+</p>
+<h3> <span class="mw-headline" id="Linux_Packages"> Linux Packages </span></h3>
+<p>Packages for many Linux distributions are available through the Mono project in the <a href="http://build.opensuse.org/" class="external text" rel="nofollow">openSUSE Build Service</a>. Subscribe to any of the repositories below to obtain the latest Mono suite releases, including the latest Mono.Zeroconf:
+</p>
+<ul><li> <a href="http://download.opensuse.org/repositories/Mono/openSUSE_Factory" class="external text" rel="nofollow">openSUSE Factory</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/openSUSE_11.1" class="external text" rel="nofollow">openSUSE 11.1</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/openSUSE_11.0" class="external text" rel="nofollow">openSUSE 11.0</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/openSUSE_10.3" class="external text" rel="nofollow">openSUSE 10.3</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/openSUSE_10.2" class="external text" rel="nofollow">openSUSE 10.2</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/SUSE_Linux_10.1" class="external text" rel="nofollow">SUSE Linux 10.1</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/SLE_10" class="external text" rel="nofollow">SUSE Linux Enterprise 10</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/Fedora_8" class="external text" rel="nofollow">Fedora 8</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/Fedora_7" class="external text" rel="nofollow">Fedora 7</a>
+</li><li> <a href="http://download.opensuse.org/repositories/Mono/Fedora_Extras_6" class="external text" rel="nofollow">Fedora Core 6</a>
+</li><li> <a href="http://packages.debian.org/testing/libmono-zeroconf1.0-cil" class="external text" rel="nofollow">Debian/Testing</a>
+</li><li> <a href="http://packages.debian.org/unstable/libmono-zeroconf1.0-cil" class="external text" rel="nofollow">Debian/Unstable</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Git"> Git </span></h3>
+<p>Mono.Zeroconf can be checked out from <a href="https://github.com/mono/Mono.Zeroconf" class="external text" rel="nofollow">Mono's github repo</a>:
+</p>
+<pre>git clone <a href="https://github.com/mono/Mono.Zeroconf.git" class="external free" rel="nofollow">https://github.com/mono/Mono.Zeroconf.git</a>
+</pre>
+<h2> <span class="mw-headline" id="Documentation"> Documentation </span></h2>
+<ul><li> <a href="http://download.banshee-project.org/mono-zeroconf/docs/" class="external text" rel="nofollow">View online API documentation</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Things_a_developer_should_know"> Things a developer should know </span></h2>
+<h3> <span class="mw-headline" id="API_Stability"> API Stability </span></h3>
+<p>Mono.Zeroconf has been around for a few years, but has gone largely unnoticed outside a few specific projects (namely, Banshee). The project started specifically to target mDNSResponder. Later, support for other providers was added. The primary Mono.Zeroconf API however caters more towards mDNSResponder, though the Avahi implementation is full featured. 
+</p><p>While Mono.Zeroconf is functionally complete and stable, the API is currently subject to change. However, it is not expected to change much, if at all. 
+</p><p>When Mono.Zeroconf 1.0 is released, the API will be frozen. This should happen fairly soon.
+</p>
+<h3> <span class="mw-headline" id="API_coverage_of_Zeroconf_operations"> API coverage of Zeroconf operations </span></h3>
+<p>Today Mono.Zeroconf provides an easy to use API that covers the most common operations for Zeroconf networking (Browsing, Publishing, full TXT record support). It works either against Avahi (via the avahi-sharp bindings) or Bonjour on Linux, Windows, and Mac.
+</p><p>It should be noted that Mono.Zeroconf does not support many of the more advanced Zeroconf features that Avahi in particular exposes. It is an intersection of the most common operations supported by both Bonjour and Avahi.
+</p><p>If your application needs advanced Zeroconf features, you most likely will care about the Zeroconf provider that you actually use. Therefore, we do not expect the functionality of Mono.Zeroconf to expand much and the current API is considered stable and complete. We may however add domain enumeration support in the future if it becomes a requested feature.
+</p>
+<h3> <span class="mw-headline" id="Compatibility_with_.NET"> Compatibility with .NET </span></h3>
+<p>Mono.Zeroconf references only <code>System</code> and <code>System.Web</code> assemblies. Therefore, it both builds and runs equally as well on Mono and .NET.
+</p><p>Mono.Zeroconf works out of the box on Windows against Bonjour on both Mono and .NET. All Mono.Zeroconf binaries, compiled either with Mono on Linux or Windows, or on Windows with .NET work on any operating system that runs either Mono or .NET and at least Bonjour.
+</p><p>The Avahi provider works on any platform that provides both a working Avahi daemon and the avahi-sharp bindings. The Bonjour provider works on Linux, Windows, and Mac.
+</p>
+<h3> <span class="mw-headline" id="Implementation_Details"> Implementation Details </span></h3>
+<p>All Mono.Zeroconf operations are asynchronous. As such, events are how Mono.Zeroconf communicates with applications. Ensure you connect to any necessary events before starting a Zeroconf operation.
+</p><p><b>Bad Example</b> <i>(never do this)</i>
+</p>
+<pre class="csharp" style="font-family:monospace;">ServiceBrowser browser <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ServiceBrowser <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">Browse</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>              <span style="color: #008080; font-style: italic;">// Note the order of these two operations</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">ServiceAdded</span> <span style="color: #008000;">+=</span> <span style="color: #008000;">...</span> <span style="color: #008000;">;</span></pre>
+<p><b>Good Example</b> <i>(always do this)</i>
+</p>
+<pre class="csharp" style="font-family:monospace;">ServiceBrowser browser <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ServiceBrowser <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">ServiceAdded</span> <span style="color: #008000;">+=</span> <span style="color: #008000;">...</span> <span style="color: #008000;">;</span>   <span style="color: #008080; font-style: italic;">// Note the order of these two operations</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">Browse</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h3> <span class="mw-headline" id="Known_Workarounds"> Known Workarounds </span></h3>
+<p>There is a bug in older Mono.Zeroconf releases (0.8.0 and older) that makes it difficult to register services whose port lies outside the range of the <code>Int16</code> data type. 
+</p><p>The Mono.Zeroconf API defines Port as:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">short</span> IRegisterService<span style="color: #008000;">.</span><span style="color: #0000FF;">Port</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span> <span style="color: #0600FF; font-weight: bold;">set</span><span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span></pre>
+<p>If you need to use a port value that is greater than <code>Int16.MaxValue</code>, you can do the following:
+</p>
+<pre class="csharp" style="font-family:monospace;">service<span style="color: #008000;">.</span><span style="color: #0000FF;">Port</span> <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=unchecked+msdn.microsoft.com"><span style="color: #008000;">unchecked</span></a> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">short</span><span style="color: #008000;">&#41;</span>my_ushort_port_value<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Mono.Zeroconf version 0.9.0 addresses this by adding the following API (the existing Port property cannot be changed for API stability reasons):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">ushort</span> IRegisterService<span style="color: #008000;">.</span><span style="color: #0000FF;">UPort</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span> <span style="color: #0600FF; font-weight: bold;">set</span><span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span></pre>
+<p>Since both <code>UInt16</code> and <code>Int16</code> are of the same size, the unchecked cast is legal, and internally the high value port will be passed bit-for-bit to the underlying Zeroconf provider.
+</p>
+<h3> <span class="mw-headline" id="Bug_Reports_and_Support"> Bug Reports and Support </span></h3>
+<p>If you run into any issues with Mono.Zeroconf or would like help getting started, the usual Mono support channels including <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a> or an <a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">appropriate mailing list</a>. 
+</p><p>Additionally, if you think you have found a bug in Mono.Zeroconf, please feel free to file it in <a href="https://bugzilla.novell.com/enter_bug.cgi?classification=6841&amp;product=Mono%3A+Class+Libraries+&amp;component=Mono.Zeroconf" class="external text" rel="nofollow">Mono's Bugzilla</a>.
+</p>
+<h2> <span class="mw-headline" id="How_to_use_it"> How to use it </span></h2>
+<p>First, it should be noted that <code>mzclient</code> is a simple command line tool that consumes all APIs in the <code>Mono.Zeroconf</code> namespace. This means that mzclient's source code is an excellent, easy to follow, example of how to use Mono.Zeroconf.
+</p>
+<ul><li> <a href="http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/src/MZClient/ZeroconfClient.cs?view=markup" class="external text" rel="nofollow">View mzclient source code</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Listen_for_and_resolve_services"> Listen for and resolve services </span></h3>
+<p>The following example illustrates how to browse for services available on the network:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Mono.Zeroconf</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">ServiceBrowser</span> browser <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ServiceBrowser <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// Configure the code that will be called back when the information</span>
+<span style="color: #008080; font-style: italic;">// becomes available</span>
+<span style="color: #008080; font-style: italic;">//</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">ServiceAdded</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, ServiceBrowseEventArgs args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Found Service: {0}&quot;</span>, args<span style="color: #008000;">.</span><span style="color: #0000FF;">Service</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    args<span style="color: #008000;">.</span><span style="color: #0000FF;">Service</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Resolved</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, ServiceResolvedEventArgs args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        IResolvableService s <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>IResolvableService<span style="color: #008000;">&#41;</span>args<span style="color: #008000;">.</span><span style="color: #0000FF;">Service</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Resolved Service: {0} - {1}:{2} ({3} TXT record entries)&quot;</span>, 
+            s<span style="color: #008000;">.</span><span style="color: #0000FF;">FullName</span>, s<span style="color: #008000;">.</span><span style="color: #0000FF;">HostEntry</span><span style="color: #008000;">.</span><span style="color: #0000FF;">AddressList</span><span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span>, s<span style="color: #008000;">.</span><span style="color: #0000FF;">Port</span>, s<span style="color: #008000;">.</span><span style="color: #0000FF;">TxtRecord</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Count</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+    args<span style="color: #008000;">.</span><span style="color: #0000FF;">Service</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Resolve</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// </span>
+<span style="color: #008080; font-style: italic;">// Trigger the request</span>
+<span style="color: #008080; font-style: italic;">//</span>
+browser<span style="color: #008000;">.</span><span style="color: #0000FF;">Browse</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;_daap._tcp&quot;</span>, <span style="color: #666666;">&quot;local&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h3> <span class="mw-headline" id="Publish_a_service"> Publish a service </span></h3>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Mono.Zeroconf</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">RegisterService</span> service <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> RegisterService <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Aaron's DAAP Share&quot;</span><span style="color: #008000;">;</span>
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">RegType</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;_daap._tcp&quot;</span><span style="color: #008000;">;</span>
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">ReplyDomain</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;local.&quot;</span><span style="color: #008000;">;</span>
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">Port</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">3689</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// TxtRecords are optional</span>
+TxtRecord txt_record <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TxtRecord <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+txt_record<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Password&quot;</span>, <span style="color: #666666;">&quot;false&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">TxtRecord</span> <span style="color: #008000;">=</span> txt_record<span style="color: #008000;">;</span>
+&#160;
+service<span style="color: #008000;">.</span><span style="color: #0000FF;">Register</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Providers"> Providers </span></h2>
+<p>Mono.Zeroconf supports the concept of <i>providers</i>. The core Mono.Zeroconf API is provided by the <code>Mono.Zeroconf.dll</code> assembly which is simply a wrapper layer around interfaces that provider assemblies must implement. This core assembly does not actually perform any Zeroconf operations itself. 
+</p><p>Provider assemblies (such as <code>Mono.Zeroconf.Providers.Bonjour.dll</code>) implement the Mono.Zeroconf API and actually perform the underlying Zeroconf operations described by the API.
+</p><p>Providers are essentially plugins to Mono.Zeroconf and are resolved at runtime in a number of ways (in the following order):
+</p>
+<ul><li> Scan for assemblies in the paths specified by the <code>MONO_ZEROCONF_PROVIDERS</code> environment variable. Multiple paths may be specified, separated by the standard ':' character.
+</li><li> Scan for assemblies in the same directory as the entry assembly.
+</li><li> Scan for assemblies in the Global Assembly Cache (GAC).
+</li></ul>
+<p>It is very important to note that the provider factory will perform the following call against all of the directories resolved in the above three steps in order to locate assemblies which may contain a provider:
+</p>
+<pre class="csharp" style="font-family:monospace;">Directory<span style="color: #008000;">.</span><span style="color: #0000FF;">GetFiles</span> <span style="color: #008000;">&#40;</span>directory, <span style="color: #666666;">&quot;Mono.Zeroconf.Providers.*.dll&quot;</span><span style="color: #008000;">&#41;</span></pre>
+<p>Therefore, in order for a provider assembly to be loaded it <b>must</b> satisfy the naming convention <i>Mono.Zeroconf.Providers.*.dll</i>. This is to reduce the overhead of loading unnecessary assemblies.
+</p><p>Also, each provider assembly must provide the assembly level attribute, <code>Mono.Zeroconf.Providers.ZeroconfProviderAttribute</code>, which informs the provider factory which type in the assembly contains the actual provider implementation details. For example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>assembly<span style="color: #008000;">:</span>Mono<span style="color: #008000;">.</span><span style="color: #0000FF;">Zeroconf</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Providers</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ZeroconfProvider</span> <span style="color: #008000;">&#40;</span>
+    <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>Mono<span style="color: #008000;">.</span><span style="color: #0000FF;">Zeroconf</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Providers</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Avahi</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ZeroconfProvider</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> Mono<span style="color: #008000;">.</span><span style="color: #0000FF;">Zeroconf</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Providers</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Avahi</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ZeroconfProvider <span style="color: #008000;">:</span> IZeroconfProvider
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// Implement IZeroconfProvider</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Finally, when an assembly is loaded by the provider factory and it contains the <code>ZeroconfProvider</code> type as outlined above, the type will be instantiated and its <code>Initialize</code> method will be executed. The first provider to <i>not</i> throw an exception in this method will be used as the provider throughout the lifetime of the process.
+</p>
+<h2> <span class="mw-headline" id="Future"> Future </span></h2>
+<p>Mono.Zeroconf includes support for both mDNSResponder and Avahi, though it is possible to write new providers for Mono.Zeroconf, which are just plugins to the Mono.Zeroconf system.
+</p><p>At this time however, we consider Mono.Zeroconf to be API stable and mostly feature complete. The only feature we may consider adding is support for domain enumeration.
+</p>

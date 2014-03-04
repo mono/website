@@ -1,0 +1,193 @@
+---
+layout: obsolete
+title: "ODBC"
+permalink: /old_site/ODBC/
+---
+
+<h1>ODBC</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Info"><span class="tocnumber">1</span> <span class="toctext">Info</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Current_Status"><span class="tocnumber">2</span> <span class="toctext">Current Status</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Action_plan"><span class="tocnumber">3</span> <span class="toctext">Action plan</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Missing_Features"><span class="tocnumber">4</span> <span class="toctext">Missing Features</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Testing_ODBC_Providers"><span class="tocnumber">5</span> <span class="toctext">Testing ODBC Providers</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Testing_ODBC_provider_with_IBM_DB2_Universal_Database"><span class="tocnumber">6</span> <span class="toctext">Testing ODBC provider with IBM DB2 Universal Database</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Testing_ODBC_provider_with_MySQL"><span class="tocnumber">7</span> <span class="toctext">Testing ODBC provider with MySQL</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Info"> Info </span></h2>
+<ul><li> ADO.NET Data Provider for Data Sources that have <a href="http://www.microsoft.com/data/odbc/" class="external text" rel="nofollow">ODBC</a> driver support.  It is recommended to use a managed provider other than ODBC to access a database.  For example, it is better to use Npgsql to connect to PostgreSQL instead of using ODBC.
+</li></ul>
+<ul><li> Exists in namespace System.Data.Odbc and assembly System.Data
+</li></ul>
+<ul><li> Works on Windows, Linux, and Unix.
+</li></ul>
+<ul><li> Works on Windows via the native Windows odbc32.dll
+</li></ul>
+<ul><li> Works on Linux/Unix via:
+<ul><li> <a href="http://www.unixodbc.org/" class="external text" rel="nofollow">unixODBC</a> which has commercial support from <a href="http://www.easysoft.com/" class="external text" rel="nofollow">Easysoft</a>
+</li><li> <a href="http://www.iodbc.org/" class="external text" rel="nofollow">iODBC</a> which has commercial support from <a href="http://oplweb.openlinksw.com:8080/download/" class="external text" rel="nofollow">OpenLink Software</a>
+</li></ul>
+</li></ul>
+<ul><li> List of unixODBC <a href="http://www.unixodbc.org/drivers.html" class="external text" rel="nofollow">drivers</a>
+</li></ul>
+<ul><li> List of <a href="http://www.sqlsummit.com/odbcvend.htm" class="external text" rel="nofollow">ODBC Vendors</a>
+</li></ul>
+<ul><li> ODBC can connect to various databases which has an ODBC driver installed: 
+<ul><li> <a href="http://www.mysql.com/" class="external text" rel="nofollow">MySQL</a>  Note: the MySQL Connector/Net from MySQL AB is the best way to connect to MySQL on Mono
+</li><li> <a href="http://www.postgresql.org/" class="external text" rel="nofollow">PostgreSQL</a>  Note: ODBC support for PostgreSQL is poor; please use the Managed provider <a href="http://www.mono-project.com/PostgreSQL" class="external text" rel="nofollow">Npgsql</a> instead.
+</li><li> <a href="http://www.oracle.com/" class="external text" rel="nofollow">Oracle</a>
+</li><li> <a href="http://www.borland.com/products/downloads/download_interbase.html" class="external text" rel="nofollow">Interbase</a>
+</li><li> <a href="http://www.sybase.com/downloads" class="external text" rel="nofollow">Sybase</a> ( via <a href="http://www.freetds.org/" class="external text" rel="nofollow">FreeTDS</a> on UNIX)
+</li><li> <a href="http://www.microsoft.com/sql/default.asp" class="external text" rel="nofollow">Microsoft SQL Server</a> ( via <a href="http://www.freetds.org/" class="external text" rel="nofollow">FreeTDS</a> on UNIX)
+</li><li> <a href="http://www-3.ibm.com/software/data/db2/" class="external text" rel="nofollow">IBM DB2 Universal Database</a>
+</li><li> <a href="http://www.microsoft.com/office/access" class="external text" rel="nofollow">MS Access</a> (via <a href="http://mdbtools.sourceforge.net/" class="external text" rel="nofollow">MDB Tools</a> on UNIX)
+</li></ul>
+</li></ul>
+<ul><li> Microsoft did not add System.Data.Odbc to the System.Data.dll assembly until Dot NET 1.1 (Visual Studio.net 2003).  For Dot NET 1.0 (Visual Studio.net 2002), ODBC was available as Microsoft.Data.Odbc.dll as a separate download from MSDN
+</li></ul>
+<h2> <span class="mw-headline" id="Current_Status"> Current Status </span></h2>
+<ul><li> OdbcCommandBuilder has been implemented.
+</li></ul>
+<ul><li> Can connect on Windows via native Windows odbc32.dll
+</li></ul>
+<ul><li> Can connect on Linux via unixODBC's libodbc.so or iODBC's libiodbc.so
+</li></ul>
+<ul><li> Various databases have been tested using their ODBC drivers: MySQL, PostgreSQL, Oracle, IBM DB2, and Microsoft SQL Server.  Please note, some drivers maybe good while others may not be.  If a managed provider is available, it recommend to use that managed provider.
+</li></ul>
+<ul><li> Can execute non-query commands via ExecuteNonQuery of a OdbcCommand
+</li></ul>
+<ul><li> Can execute aggreates and retrieve a single row single column result via ExecuteScalar of a OdbcCommand
+</li></ul>
+<ul><li> Can execute queries via ExecuteReader of a OdbcCommand and retrieve results using an OdbcDataReader
+</li></ul>
+<ul><li> Can get a DataTable containing schema info via GetSchemaTable() in a OdbcDataReader
+</li></ul>
+<ul><li> Can Fill a DataTable in a DataSet via an OdbcDataAdapter
+</li></ul>
+<h2> <span class="mw-headline" id="Action_plan"> Action plan </span></h2>
+<ul><li> Need to create more test cases to find and fix bugs
+</li></ul>
+<ul><li> Test more ODBC drivers
+</li></ul>
+<ul><li> Test other setups
+</li></ul>
+<h2> <span class="mw-headline" id="Missing_Features"> Missing Features </span></h2>
+<ul><li> Odbc Output Parameters
+</li></ul>
+<ul><li> Complex Parameter Types (Binary, Numeric, Guid)
+</li></ul>
+<h2> <span class="mw-headline" id="Testing_ODBC_Providers"> Testing ODBC Providers </span></h2>
+<p>You can test a native odbc provider with ADO.NET Odbc classes. There is a possiblity of bugs in either Managed code or the native odbc providers. Before filing a bug, make sure your native provider works with other languages (C, perl, etc).
+</p><p>To test a odbc provider
+</p>
+<ul><li> Create a DSN entry at /etc/unixODBC/odbc.ini and /etc/unixODBC/odbcinst.ini.
+</li></ul>
+<ul><li> Provide the connection string information in odbc.config file under mcs/class/System.Data/Test/ProviderTests. The app settings name should be "ConnString".
+</li></ul>
+<ul><li> Go to the source director mcs/class/System.Data/Test/ProviderTest.
+</li></ul>
+<ul><li> In a shell, enter "make run-test DATABASE=odbc". 
+</li></ul>
+<p>The following topics are for running tests for individual providers as stand-alone tests.
+</p>
+<h2> <span class="mw-headline" id="Testing_ODBC_provider_with_IBM_DB2_Universal_Database"> Testing ODBC provider with IBM DB2 Universal Database </span></h2>
+<ul><li> You need a working mono and mcs
+</li></ul>
+<ul><li> For UNIX, you will need unixODBC or iODBC installed
+</li></ul>
+<ul><li> Have acess to a <a href="http://www-306.ibm.com/software/data/db2/" class="external text" rel="nofollow">IBM DB2 Universal Database</a> or you can download from IBM
+</li></ul>
+<ul><li> Read these web pages about UNIX, ODBC, and IBM DB2 
+</li></ul>
+<ul><li> <a href="http://www.unixodbc.com/doc/db2.html" class="external text" rel="nofollow">unixODBC web page about IBM DB2</a>
+</li></ul>
+<ul><li> <a href="http://www-306.ibm.com/software/data/db2/udb/ad/v8/cli/t0010406.htm" class="external text" rel="nofollow">IBM web page about unixODBC and DB2</a>
+</li></ul>
+<ul><li> The ODBC provider is similar to the <a href="{{site.baseurl}}/IBM_DB2" title="IBM DB2">IBM DB2</a> provider.
+</li></ul>
+<h2> <span class="mw-headline" id="Testing_ODBC_provider_with_MySQL"> Testing ODBC provider with MySQL </span></h2>
+<p><b>Prerequisites</b> 
+You can test Mono's ODBC provider System.Data.Odbc with the MySQL ODBC driver MyODBC 
+</p>
+<ul><li> Take a look at OdbcTest.cs in mcs/class/System.Data/Test
+</li></ul>
+<p><b>Connection String Format</b> 
+</p>
+<ul><li> Here is a ConnectionString format if you have a DSN setup:
+</li></ul>
+<pre>
+ &quot;DSN=dataSetName;&quot; +
+ &quot;UID=myuserid;&quot; + 
+ &quot;PWD=mypassword&quot; 
+</pre>
+<ul><li> Here is a ConnectionString format if you do not have a DSN (also called DSN-less connection). Note the use of DRIVER and SERVER parameters:
+</li></ul>
+<pre>
+ &quot;DRIVER={MySQL ODBC 3.51 Driver};&quot; + 
+ &quot;SERVER=localhost;DATABASE=test;&quot; + 
+ &quot;UID=myuserid;PASSWORD=mypassword;&quot; + 
+ &quot;OPTION=3&quot;
+</pre>
+<b>C# Example</b> <pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+ <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data.Odbc</span><span style="color: #008000;">;</span>
+&#160;
+ <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Test
+ <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// have an ODBC DSN setup named MYSQLDSN</span>
+		<span style="color: #008080; font-style: italic;">// that accesses a MySQL database via</span>
+		<span style="color: #008080; font-style: italic;">// MyODBC driver for ODBC with a</span>
+		<span style="color: #008080; font-style: italic;">// hostname of localhost and database test</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span>
+          <span style="color: #666666;">&quot;DSN=MYSQLDSN;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;UID=myuserid;&quot;</span> <span style="color: #008000;">+</span>
+          <span style="color: #666666;">&quot;PWD=mypassword&quot;</span><span style="color: #008000;">;</span>
+       IDbConnection dbcon<span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> OdbcConnection<span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       IDbCommand dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+       <span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+       <span style="color: #008080; font-style: italic;">// such as,</span>
+       <span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (</span>
+       <span style="color: #008080; font-style: italic;">//           firstname varchar(32),</span>
+       <span style="color: #008080; font-style: italic;">//           lastname varchar(32));</span>
+       <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+           <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+           <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+       IDataReader reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> FirstName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;firstname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+            <span style="color: #6666cc; font-weight: bold;">string</span> LastName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;lastname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: &quot;</span> <span style="color: #008000;">+</span>
+                FirstName <span style="color: #008000;">+</span> <span style="color: #666666;">&quot; &quot;</span> <span style="color: #008000;">+</span> LastName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       <span style="color: #008000;">&#125;</span>
+       <span style="color: #008080; font-style: italic;">// clean up</span>
+       reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+       dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+       dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+ <span style="color: #008000;">&#125;</span></pre>
+<ul><li> Building C# Example: 
+</li></ul>
+<ul><li> Save the example to a file, such as, TestExample.cs
+</li></ul>
+<ul><li> To build on Mono:
+</li></ul>
+<pre>
+ mcs TestExample.cs -r:System.Data.dll
+</pre>
+<ul><li> Running the Example:
+</li></ul>
+<pre>
+ mono TestExample.exe </pre>
+

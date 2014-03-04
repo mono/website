@@ -1,0 +1,123 @@
+---
+layout: obsolete
+title: "Consuming a WebService"
+permalink: /old_site/Consuming_a_WebService/
+---
+
+<h1>Consuming a WebService</h1>
+
+<p>A web service makes it easy to access data and services offered by other people or running on a different machine.  For example, Google provides a web service that allows your application to access many of the services it provides.
+</p><p>One capability provided by Google is the spell checker they use when you enter a search term.  By consuming the web service, you can add a spell check function to your own application.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#First_Steps:_Creating_the_Local_Stub"><span class="tocnumber">1</span> <span class="toctext">First Steps: Creating the Local Stub</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Google_License_key"><span class="tocnumber">2</span> <span class="toctext">Google License key</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Example_1:_A_Console_Application"><span class="tocnumber">3</span> <span class="toctext">Example 1: A Console Application</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example_2:_A_Webpage"><span class="tocnumber">4</span> <span class="toctext">Example 2: A Webpage</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Documentation"><span class="tocnumber">5</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Contributors"><span class="tocnumber">6</span> <span class="toctext">Contributors</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="First_Steps:_Creating_the_Local_Stub"> First Steps: Creating the Local Stub </span></h2>
+<p>To create the local library that will invoke Google's web service, we'll use their WSDL file. You can get the Google WSDL files at <a href="http://api.google.com/GoogleSearch.wsdl" class="external free" rel="nofollow">http://api.google.com/GoogleSearch.wsdl</a>. To generate the C# stub source type: 
+</p>
+<pre class="bash" style="font-family:monospace;">wsdl http:<span style="color: #000000; font-weight: bold;">//</span>api.google.com<span style="color: #000000; font-weight: bold;">/</span>GoogleSearch.wsdl</pre>
+<p>This will create a file called <tt>GoogleSearchService.cs</tt>, which contains the behind the scenes code needed to access the web service. Compile this file with: 
+</p>
+<pre class="bash" style="font-family:monospace;">mcs <span style="color: #000000; font-weight: bold;">/</span>target:library GoogleSearchService.cs -r:System.Web.Services</pre>
+<p>The above command line instructs the compiler to generate a library, and to reference (-r:) the System.Web.Services library.
+</p><p>Now you have the final stub assembly: <tt>GoogleSearchService.dll</tt>
+</p>
+<h2> <span class="mw-headline" id="Google_License_key"> Google License key </span></h2>
+<p>Google locks the web service with a special key to prevent misuse. You can obtain a key at <a href="https://www.google.com/accounts/NewAccount" class="external free" rel="nofollow">https://www.google.com/accounts/NewAccount</a>. This key allows ~50 actions per day. You must replace the sample key with yours. 
+</p>
+<h2> <span class="mw-headline" id="Example_1:_A_Console_Application"> Example 1: A Console Application </span></h2>
+<p>Now that you have an assembly for the web service, you can use it just like any other assembly.
+</p><p>The Code: 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> SpellChecker
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> <span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Your license key</span>
+		<span style="color: #0600FF; font-weight: bold;">const</span> <span style="color: #6666cc; font-weight: bold;">string</span> licensekey <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;FCszK/FQFHJWQE1n5OkeGmZAWzCFY5+7&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a Google Search object</span>
+		GoogleSearchService Service1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GoogleSearchService <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Ask for spelling suggestion</span>
+		<span style="color: #008080; font-style: italic;">// The first argument is your key</span>
+		<span style="color: #008080; font-style: italic;">// The second one, the text the user should enter.</span>
+&#160;
+		<span style="color: #6666cc; font-weight: bold;">String</span> suggestion <span style="color: #008000;">=</span> Service1<span style="color: #008000;">.</span><span style="color: #0000FF;">doSpellingSuggestion</span> <span style="color: #008000;">&#40;</span>licensekey, args<span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>	
+&#160;
+		<span style="color: #008080; font-style: italic;">// Display the suggestion, if any</span>
+		<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>suggestion <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;[No suggestion]&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">else</span>	
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span>suggestion<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Compile it like this:
+</p>
+<pre class="bash" style="font-family:monospace;">mcs <span style="color: #000000; font-weight: bold;">/</span>r:GoogleSearchService.dll spellchecker.cs</pre>
+<p>Run it like this:
+</p>
+<pre class="bash" style="font-family:monospace;">mono spellchecker.exe pupy</pre>
+<p>And it should print out the corrected word:
+</p>
+<pre class="bash" style="font-family:monospace;">puppy</pre>
+<h2> <span class="mw-headline" id="Example_2:_A_Webpage"> Example 2: A Webpage </span></h2>
+<p>You can also call a web service from a web page. First you will have to drop the stub GoogleSearchService.dll in your ASP.Net bin directory. The example is very simple to understand. 
+</p>
+<pre>
+&lt;%@ Page Language=&quot;C#&quot;&#160;%&gt;
+&lt;script runat=&quot;Server&quot;&gt;
+
+void Page_Load (object sender, EventArgs e) {
+    
+	// Put your license key here
+	const string licensekey = &quot;FCszK/FQFHJWQE1n5OkeGmZAWzCFY5+7&quot;;
+	
+	// Create a Google Search object
+	GoogleSearchService Service1 = new GoogleSearchService ();
+	
+	// Ask for spelling suggestion
+	// The first argument is your key
+	// The second one, the text the user should enter.
+	
+	String suggestion = Service1.doSpellingSuggestion (licensekey, TextBox1.Text);	
+	
+	// Display the suggestion, if any
+	if (suggestion == null)
+		Label1.Text = &quot;[No suggestion]&quot;;
+	else	
+		Label1.Text = suggestion;
+}
+&lt;/script&gt;
+
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;Hello WebService!&lt;/h2&gt;
+&lt;form runat=&quot;server&quot;&gt;
+&lt;p&gt;&lt;asp:TextBox id=&quot;TextBox1&quot; runat=&quot;server&quot;&gt;&lt;/asp:TextBox&gt;&lt;/p&gt;
+&lt;p&gt;&lt;asp:Label id=&quot;Label1&quot; runat=&quot;server&quot;&gt;&lt;/asp:Label&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; runat=&quot;server&quot;&gt;&lt;/input&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>This will look like this: 
+</p><p>[Image:google.png]  
+</p><p>The code where the web service is accessed is marked red. To test the service enter "spelll checker" for example, and watch it correct your spelling. 
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Documentation"> Documentation </span></h2>
+<p>If you want to do more, you will require documentation of the web service. For Google's API, one place to look is in the comments of the WSDL file. Individual web service providers are responsible for providing good documentation, though you may be able to use the C# introspection tools or read the source generated by <tt>wsdl</tt> for a slightly better idea of how any given web service works. 
+</p>
+<h1> <span class="mw-headline" id="Contributors"> Contributors </span></h1>
+<p>Johannes Roith, Shane Landrum
+</p>

@@ -1,0 +1,67 @@
+---
+layout: obsolete
+title: "Accessibility: Provider From Scratch"
+permalink: /old_site/Accessibility:_Provider_From_Scratch/
+---
+
+<h1>Accessibility: Provider From Scratch</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Quick_Steps_List"><span class="tocnumber">2</span> <span class="toctext">Quick Steps List</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Generating_UI_Automation_Tree"><span class="tocnumber">3</span> <span class="toctext">Generating UI Automation Tree</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Implementing_Automation_Events"><span class="tocnumber">4</span> <span class="toctext">Implementing Automation Events</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>Notice this page does not explain how to implement a custom provider for Windows Forms or Moonlight Controls, instead explains how to implement a provider for the mono-a11y implementation.
+</p><p>If you want to support accessibility using UIA in your custom controls then you should follow <a href="http://msdn.microsoft.com/en-us/library/ms747229.aspx" class="external text" rel="nofollow">Microsoft documentation</a>: 
+</p><p>This page is complementary to <a href="{{site.baseurl}}/Accessibility:_Winforms_Implementation" title="Accessibility: Winforms Implementation"> Windows Forms Implementation</a>.
+</p>
+<h2> <span class="mw-headline" id="Quick_Steps_List"> Quick Steps List </span></h2>
+<p>Basically to implement a new mono-a11y provider you should use the following list of steps:
+</p>
+<ol><li> Select your not-implemented provider. Read <a href="{{site.baseurl}}/Accessibility:_Control_Status" title="Accessibility: Control Status"> Winform Control Status</a>.
+</li><li> Write a simple Winform Application that includes your selected Winform Control and run it in Windows Vista to examine it using <a href="http://msdn.microsoft.com/en-us/library/ms727247.aspx" class="external text" rel="nofollow">UISpy</a>. (Note: UISpy isn't included in MS VS 2008, so you need to download "Windows Vista SDK" from MSDN)
+</li><li> In UISpy look for the Automation Property labeled as "Control Type", then read the <a href="http://msdn.microsoft.com/en-us/library/ms743581.aspx" class="external text" rel="nofollow">documentation</a> associated.
+</li><li> In your Control Type documentation read the table under the section "Required UI Automation Tree Structure", don't forget to verify UISpy information to match the implementation. If your provider supports navigation you must subclass FragmentRootControlProvider, otherwise you must subclass FragmentControlProvider. This is important to generate a valid <a href="http://msdn.microsoft.com/en-us/library/ms741931.aspx" class="external text" rel="nofollow">UI Automation Tree</a>. The difference between FragmentRootControlProvider and FragmentControlProvider is that FragmentRootControlProvider should add/remove children and generate events to keep navigation updated.
+</li><li> Both specializations (either subclassing from FragmentRootControlProvider or FragmentControlProvider) must support the following:
+<ol><li> Automation Properties, defined in the table "Required UI Automation Properties", and
+</li><li> Provider Interfaces, defined in the table "Required UI Automation Control Patterns",
+</li></ol>
+</li><li> In your Provider Interface Specialization you have to generate your Automation Events and Automation Property Event.
+</li></ol>
+<h2> <span class="mw-headline" id="Generating_UI_Automation_Tree"> Generating UI Automation Tree </span></h2>
+<p>Two methods defined in FragmentRootControlProvider are used to initialize and finalize children: InitializeChildControlStructure and FinalizeChildControlStructure. By default FragmentRootControlProvider uses Control.ControlAdded and Control.ControlRemoved events to do so, if your provider's Control does not use those events then, you need to override the methods to generate the valid tree by using the following protected methods:
+</p>
+<ul><li> OnNavigationChildAdded: Adds child to. Use true as first argument if you want to generate your Automation Structure Changed Child Added Event.
+</li><li> OnNavigationChildRemoved: Removes child. Use true as first argument if you want to generate your Automation Structure Changed Child Removed Event.
+</li><li> OnNavigationChildrenCleared: Clears children. Use true as argument if you want to generate your Automation Structure Changed Children Removed Event.
+</li></ul>
+<p>Also, you can use the following public methods:
+</p>
+<ul><li> AddChildProvider
+</li><li> RemoveChildProvider
+</li></ul>
+<p>both methods are wrappers to OnNavigationChildAdded and OnNavigationChildRemoved.
+</p><p>If you override InitializeChildControlStructure don't forget to add your already added children.
+</p>
+<h2> <span class="mw-headline" id="Implementing_Automation_Events"> Implementing Automation Events </span></h2>
+<p>There are 3 basic types of Automation Events, read <a href="http://msdn.microsoft.com/en-us/library/ms748252.aspx" class="external text" rel="nofollow">UI Automation Events Overview</a> for detailed explanation:
+</p>
+<ul><li> Structure Changed Events. Generated when calling FragmentRootControlProvider methods: OnNavigationChildAdded, OnNavigationChildRemoved, OnNavigationChildrenCleared, AddChildProvider and RemoveChildProvider.
+</li><li> Automation Events: Generated by your Control depending on internal states.
+</li><li> Automation Property Events: Generated by your Control depending on internal states.
+</li></ul>
+<p>There are Automation Events and Automation Property Events always generated (does not matter the specialized provider), those are defined in the <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.automationelementidentifiers.aspx" class="external text" rel="nofollow">AutomationElementIdentifiers</a>, most of the events are already defined in the base class of FragmentRootControlProvider and FragmentControlProvider: SimpleControlProvider, however depending on your Control and Pattern supported you may need to enable or disable it. For example to enable IsEnabledProperty you should do the following:
+</p>
+<pre class="csharp" style="font-family:monospace;">SetEvent <span style="color: #008000;">&#40;</span>ProviderEventType<span style="color: #008000;">.</span><span style="color: #0000FF;">AutomationElementIsEnabledProperty</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> AutomationIsEnabledPropertyEvent <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>and to disable it
+</p>
+<pre class="csharp" style="font-family:monospace;">SetEvent <span style="color: #008000;">&#40;</span>ProviderEventType<span style="color: #008000;">.</span><span style="color: #0000FF;">AutomationElementIsEnabledProperty</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>			
+<p>To set AutomationElementIdentifiers you should override InitializeEvents, however don't forget to call base implementation.
+</p><p>However, you must implement your Automation Events and Automation Property Events for each provider specialized, depending on the pattern. For example, if your provider support Range Value Pattern by specializing IRangeValueProvider, then you should generate the events for each of their properties (see <a href="http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/UIAutomationWinforms/UIAutomationWinforms/Mono.UIAutomation.Winforms.Behaviors/ScrollBar/RangeValueProviderBehavior.cs?view=markup" class="external text" rel="nofollow">Range Value Provider specialization</a> in ScrollBar for a working example).
+</p><p>To implement your Automation Events you have to either subclass from BaseAutomationEvent if your event is Automation Event and subclass from BaseAutomationPropertyEvent if your event is Automation Property Event. In both classes you have to override Connect and Disconnect methods to associate/disassociate your Control events that should generate the Automation Event. When your Control Event is generated you have to either call BaseAutomationPropertyEvent.RaiseAutomationPropertyChangedEvent if you are subclassing from BaseAutomationPropertyEvent or BaseAutomationEvent.RaiseAutomationEvent if you are subclass from BaseAutomationEvent.
+</p><p>For example <a href="http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/UIAutomationWinforms/UIAutomationWinforms/Mono.UIAutomation.Winforms.Events/ScrollBar/RangeValuePatternValueEvent.cs?view=markup" class="external text" rel="nofollow">RangeValuePattern.ValueProperty</a> in ScrollBar implementation subclasses BaseAutomationPropertyEvent, and <a href="http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/UIAutomationWinforms/UIAutomationWinforms/Mono.UIAutomation.Winforms.Events/ScrollBar/ButtonInvokePatternInvokedEvent.cs?view=markup" class="external text" rel="nofollow">InvokePattern.InvokedEvent</a> in ScrollBar subclasses BaseAutomationEvent.
+</p>

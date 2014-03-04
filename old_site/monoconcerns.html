@@ -1,0 +1,66 @@
+---
+layout: obsolete
+title: "MonoConcerns"
+permalink: /old_site/MonoConcerns/
+---
+
+<h1>MonoConcerns</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Concerns_about_Mono"><span class="tocnumber">1</span> <span class="toctext">Concerns about Mono</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Patents"><span class="tocnumber">1.1</span> <span class="toctext">Patents</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Background"><span class="tocnumber">1.1.1</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Our_position"><span class="tocnumber">1.1.2</span> <span class="toctext">Our position</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Calls_for_Microsoft_patent_protection"><span class="tocnumber">1.1.3</span> <span class="toctext">Calls for Microsoft patent protection</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Mark_Shuttleworth_On_Mono_Patents"><span class="tocnumber">1.1.4</span> <span class="toctext">Mark Shuttleworth On Mono Patents</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Our_Conclusion"><span class="tocnumber">1.1.5</span> <span class="toctext">Our Conclusion</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Frequent_questions"><span class="tocnumber">1.2</span> <span class="toctext">Frequent questions</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Concerns_about_Mono"> Concerns about Mono </span></h2>
+<p>Mono has attracted attention from those in the F/OSS community because of its origins as a Microsoft technology. While we believe Mono and .Net are useful tools, we respect the opinions of others that disagree and would rather use alternative languages and development frameworks. There are several common concerns, beyond that of personal choice, that we would like to answer.
+</p><p>If you have a concern that you would like us to consider addressing, please feel free to email chmorgan@gmail.com.
+</p>
+<h3> <span class="mw-headline" id="Patents"> Patents </span></h3>
+<h4> <span class="mw-headline" id="Background"> Background </span></h4>
+<p>Patents are a lightning rod of attention in the area of software development. The fact that .NET is a Microsoft created technology has caused concern about Mono, given Microsoft's history of tough, and sometimes monopolistic business practices. <a href="http://www.mono-project.com/Licensing#Patents" class="external text" rel="nofollow">Mono's Licensing page</a> addresses some of the issues with how any potential patent infringement would be delt with, via rewriting infringing portions of the code, as well as the basic issue of whether replicating the .Net languages is infringement.
+</p><p>Microsoft has made some <a href="http://www.youtube.com/watch?v=5B0GTYfPoMo" class="external text" rel="nofollow">claims of intellectual property violations by Linux companies</a>. Some have suggested that because .NET is Microsoft technology, that there are patents that Mono is infringing upon that will be brought out at an opportune time to take Mono and any Mono applications down.
+</p>
+<h4> <span class="mw-headline" id="Our_position"> Our position </span></h4>
+<p>Our position is one of measured concern about patents in .NET. In our opinion, nothing about Mono is different than other projects like Samba or Wine, that also substantially reproduce a Microsoft created technology or protocol. Let us consider several potential patent related scenarios.
+</p><p>Microsoft may have patents that cover .NET API and/or implementation. At this point we know of no patents that Mono infringes upon. Any knowledge of such patents would be welcome as it may allow us to modify Mono in a way that reduces or eliminates the concern over infringement.
+</p><p>Assuming that Microsoft does have patents for .NET API and/or implementation, the question becomes whether these patents are enforcable. Some of these patents may have prior art that would render them un-enforcable. In any case, without knowing about specific patents, we can't really know either way.
+</p><p>Assuming that there are enforcable patents that can be used against Mono, what happens if Microsoft attempts to do so? There are several costs to using patents against Mono, including accusations of Monopolistic practices and negative press coverage. On the flip side, people may be pressured to license their Mono usage. Microsoft has already <a href="http://www.youtube.com/watch?v=5B0GTYfPoMo" class="external text" rel="nofollow">claimed intellectual property violations by Linux companies</a>.
+</p><p>Mono has routes to recover from patent infringement by altering specific implementation details that the patent covers. The FreeType project encountered <a href="http://freetype.sourceforge.net/patents.html" class="external text" rel="nofollow">patent related issues</a> after Apple's legal department contacted the FreeType project about use of proprietary hinting data in TrueType fonts. FreeType continues to exist today because they altered their implementation to avoid the specific method that Apple claimed was infringing. The change in implementation has likely resulted in a depredation of font quality for particular font faces at particular sizes but the FreeType auto-hinter <a href="http://freetype.sourceforge.net/autohinting/hinter.html#screenshots" class="external text" rel="nofollow">appears to do a reasonable job</a>. We can't speculate about whether Mono's functionality will be negatively affected by working around a patent issue but its possible.
+</p><p>The layering of escape routes is extensive in Mono, especially Mono in Debian/Ubuntu. In the first instance, the contentious Microsoft-sourced non-ISO libraries such as System.Windows.Forms are not included by default, and are rarely used in Free applications anyway (because WinForms looks like ass, amongst other things). If a reason is found to remove these non-standardised libraries, then bam, they're gone - without harming Free apps. Secondly, if a more severe change is required, then the Mono packages can be patched to remove the infringement. If more drastic changes are required, as mentioned above, then the applications can also be patched to support any core changes. And, taking it one step further, if the whole of Mono needs to be pulled, then applications can be ported. The porting process would potentially be slow and painful, and cause great harm to an application's future rate of development (although no worse than if the app was written in the target language from day one), but nobody who has written an app they care about would simply throw their hands in the air and say "never mind, it was fun, but the Man says I have to stop now". 
+</p>
+<h4> <span class="mw-headline" id="Calls_for_Microsoft_patent_protection"> Calls for Microsoft patent protection </span></h4>
+<p>There have been some calls for Microsoft to issue patent protection to all Mono users. This is unlikely to happen, either because Microsoft would like to license .NET technologies to those that would pay for it, see the above YouTube video, and or to protect themselves against any potential patent suits brought by others. In any case, 
+the absence of "patent protection" is not the same thing as "patent violation". If I offer to sell somebody a promise not to sue them using any of my patents, their taking me up on my offer is no guarantee that I even have anything valid to sell them - merely that they are willing to buy it. If Jim buys protection from any patents I hold, it does not mean that Jim is infringing on anything specific - nor that if Ted does the same thing, that Ted is violating anything either. If a house insurance policy includes flood protection, it does not mean that your house will be flooded - and not buying flood protection does not mean that you will be flooded either.
+</p>
+<h4> <span class="mw-headline" id="Mark_Shuttleworth_On_Mono_Patents"> Mark Shuttleworth On Mono Patents </span></h4>
+<p>While Mark Shuttleworth can't protect the FOSS community from patents, his company could be directly affected by any patent issues in Mono. It is also likely that Canonical would want to distance themselves from any perceived patent risks, so it is notable that he has expressed his <a href="http://boycottnovell.com/2008/02/22/mark-shuttleworth-on-patents/" class="external text" rel="nofollow">lack</a> of <a href="http://d0od.blogspot.com/2009/04/mark-shuttleworth-qa-part1-gnome-3-new.html" class="external text" rel="nofollow">concern</a> over Mono's patent risk. While we don't ask that you defer to Mark Shuttleworth's opinion of Mono's patent risk, we do ask that you consider his opinion as someone who would be at risk from patent issues in Mono, the Linux kernel and other free software.
+</p>
+<h4> <span class="mw-headline" id="Our_Conclusion"> Our Conclusion </span></h4>
+<p>There are several FOSS projects that are in the same position as Mono with respect to patents held by Microsoft and other companies. Microsoft has been involved in operating systems development for approximately <a href="http://en.wikipedia.org/wiki/Windows#Early_versions" class="external text" rel="nofollow">25 years</a> and Microsoft is <a href="http://www.itjungle.com/two/two011608-story02.html" class="external text" rel="nofollow">known to file for thousands of patents per-year in recent years</a>. It is likely that Microsoft holds dozens of patents in areas that that projects like the Linux kernel, Wine, and Samba are directly involved in. It is our argument that the concern about Mono and patents should be similar to that of the Linux kernel, Samba and Wine. Like these other projects, if Mono were presented with an infringing patent we would make the required changes and the project would continue.
+</p><p><br />
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Frequent_questions"> Frequent questions </span></h3>
+<p><b>Q: Can't Microsoft change the .NET API in ways that will break Mono and Mono applications?</b>
+</p><p>A: Not without breaking existing .NET applications. Any changes to .NET that would break Mono or Mono applications would also alter behavior for hundreds or thousands of existing applications that rely on .NET behavior on Windows. Much like the Win32 API had to be carefully extended with new functions while the original ones remained unchanged, the same has to be done with .NET to avoid break existing applications. The cost of breaking backwards compatibility is high. Even if Microsoft was able to make such changes and break some or all .NET applications, Mono could still provide the older, deprecated API to users that were unable or unwilling to upgrade.
+</p><p><b>Q: Even if Microsoft can't change the .NET API to break Mono and Mono applications, won't Mono always be playing catch-up in terms of re-implementing .NET?</b>
+</p><p>A: Mono is likely to remain behind .NET in terms of implementing new language features and API that are a part of MS's .NET (Note that Mono has implemented functionality beyond that of .NET, see <a href="http://tirania.org/blog/archive/2008/Nov-03.html" class="external text" rel="nofollow">Mono.SIMD</a> as an example). For some developers this may prevent or delay their use of Mono to port applications to Linux/Mac. The <a href="http://mono-project.com/MoMA" class="external text" rel="nofollow">MoMA</a> tool was developed to check for API coverage and report the results to the Mono developers to aid in pinpointing unimplemented parts of Mono that applications are using. Today, Mono implements a wide range of the .NET API including <a href="http://www.mono-project.com/WinForms" class="external text" rel="nofollow">WinForms</a>. <a href="http://www.mono-project.com/Companies_Using_Mono" class="external text" rel="nofollow">Here</a> is a list of companies that currently find Mono useful.
+</p><p><b>Q: What if Microsoft introduces patented interfaces to the .NET API?</b>
+</p><p>A: *** I'm not sure about this one but someone should feel free to add their thoughts ***
+</p><p><br />
+</p><p>Notes:
+<a href="https://lists.ubuntu.com/archives/ubuntu-devel/2009-June/028347.html" class="external text" rel="nofollow">Ubuntu Technical Board meeting minutes, 2009-06-16</a>
+</p>

@@ -1,0 +1,120 @@
+---
+layout: obsolete
+title: "Cecil:FAQ"
+permalink: /old_site/Cecil:FAQ/
+---
+
+<h1>Cecil:FAQ</h1>
+
+<h2> <span class="mw-headline" id="Now_that_I_have_the_library.2C_how_do_I_use_it.3F"> Now that I have the library, how do I use it? </span></h2>
+<p>Here is an example of an application browsing all the types contained in a managed assembly:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//Creates an AssemblyDefinition from the &quot;MyLibrary.dll&quot; assembly</span>
+AssemblyDefinition myLibrary <span style="color: #008000;">=</span> AssemblyFactory<span style="color: #008000;">.</span><span style="color: #0000FF;">GetAssembly</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;MyLibrary.dll&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">//Gets all types which are declared in the Main Module of &quot;MyLibrary.dll&quot;</span>
+<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>TypeDefinition type <span style="color: #0600FF; font-weight: bold;">in</span> myLibrary<span style="color: #008000;">.</span><span style="color: #0000FF;">MainModule</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Types</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+	<span style="color: #008080; font-style: italic;">//Writes the full name of a type</span>
+	Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>type<span style="color: #008000;">.</span><span style="color: #0000FF;">FullName</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>We can see the result on the output console:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;</span>Module<span style="color: #000000; font-weight: bold;">&gt;</span>
+MyLibrary.Company
+MyLibrary.Employee
+MyLibrary.Person</pre>
+<p>This code creates the Mono.Cecil.AssemblyDefinition which corresponds to the MyLibrary assembly.
+You can also get one of the ModuleDefinitions (AssemblyDefinition.Modules property) which are contained into an assembly. In general, you have to work with that one named MainModule (AssemblyDefinition.MainModule property)
+</p>
+<h2> <span class="mw-headline" id="What_are_the_entities_contained_in_an_assembly_which_Cecil_provides_an_object_model_for.3F"> What are the entities contained in an assembly which Cecil provides an object model for? </span></h2>
+<p>Here is a simplified class diagram of the main entities Cecil is dealing with and their relationships all together:
+</p><p><a href="{{site.baseurl}}/images/old_site/4/47/CecilMainCD.png" class="image"><img alt="CecilMainCD.png" src="{{site.baseurl}}/images/old_site/4/47/CecilMainCD.png" width="399" height="244" /></a>
+</p><p>An AssemblyDefinition is created by an AssemblyFactory which works with an assembly file. Each of them contains a ModuleDefinitions collection. In general, you have to work with a main ModuleDefinition (you can get it by using the MainModule property).
+</p><p>A ModuleDefinition contains TypeDefinitions. Each of them contains collections of:
+</p>
+<ul><li> MethodDefinition
+</li><li> FieldDefinition
+</li><li> PropertyDefinition
+</li></ul>
+<p>You can also get the constructors of a type by using the Constructors property. A constructor is a MethodDefinition.
+A PropertyDefinition owns two MethodDefinitions which corresponds to the Get and the Set.
+</p><p>A MethodDefinition contains a MethodBody. You can get all the CIL instructions of a MethodDefinition by using the CilWorker property. In addition, the MethodDefinition contains an Instructions property.
+</p><p><a href="{{site.baseurl}}/images/old_site/1/12/CecilInstrCD.png" class="image"><img alt="CecilInstrCD.png" src="{{site.baseurl}}/images/old_site/1/12/CecilInstrCD.png" width="207" height="102" /></a>
+</p>
+<h2> <span class="mw-headline" id="I_would_like_to_add_some_tracing_functionality_to_an_assembly_I_can.E2.80.99t_debug.2C_is_it_possible_using_Cecil.3F"> I would like to add some tracing functionality to an assembly I can’t debug, is it possible using Cecil? </span></h2>
+<p>Yes it is. This technique is named <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" class="external text" rel="nofollow">AOP</a>. Here is a simple example on how to do it with Cecil. You’ll have to learn <a href="http://en.wikipedia.org/wiki/Common_Intermediate_Language" class="external text" rel="nofollow">CIL</a> if you want to make some more advanced stuff.
+</p><p>We take for this example the same assembly MyLibrary as previously. Instead of writing the name of each type, we will insert the following code into each methods of each type of the assembly:
+</p>
+<pre class="csharp" style="font-family:monospace;">Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Code added in &quot;</span>, method<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The first thing to do is getting the System.Reflection.MethodInfo which correspond to the Console.WriteLine (string value) method.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//Gets the MethodInfo of Console.WriteLine() method</span>
+MethodInfo writeLineMethod <span style="color: #008000;">=</span> 
+	<a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span>Console<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">GetMethod</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;WriteLine&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Type<span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#123;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Next, you have to get all methods of each type of the MyLibrary assembly in order to insert the MSIL instructions.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//Getting the path of the &quot;MyLibrary.dll&quot; assembly</span>
+<span style="color: #6666cc; font-weight: bold;">string</span> pathBin <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;../../../MyLibrary/bin/debug/MyLibrary.dll&quot;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">//Gets the AssemblyDefinition of &quot;MyLibrary&quot;</span>
+AssemblyDefinition assembly <span style="color: #008000;">=</span> AssemblyFactory<span style="color: #008000;">.</span><span style="color: #0000FF;">GetAssembly</span><span style="color: #008000;">&#40;</span>pathBin<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">//Gets all types of the MainModule of the assembly</span>
+<span style="color: #0600FF; font-weight: bold;">foreach</span><span style="color: #008000;">&#40;</span>TypeDefinition type <span style="color: #0600FF; font-weight: bold;">in</span> assembly<span style="color: #008000;">.</span><span style="color: #0000FF;">MainModule</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Types</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">if</span><span style="color: #008000;">&#40;</span>type<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span> <span style="color: #008000;">!=</span> <span style="color: #666666;">&quot;&lt;Module&gt;&quot;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">//Gets all methods of the current type</span>
+		<span style="color: #0600FF; font-weight: bold;">foreach</span><span style="color: #008000;">&#40;</span>MethodDefinition method <span style="color: #0600FF; font-weight: bold;">in</span> type<span style="color: #008000;">.</span><span style="color: #0000FF;">Methods</span><span style="color: #008000;">&#41;</span>
+		<span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">//Gets the CilWorker of the method for working with CIL instructions</span>
+			CilWorker worker <span style="color: #008000;">=</span> method<span style="color: #008000;">.</span><span style="color: #0000FF;">Body</span><span style="color: #008000;">.</span><span style="color: #0000FF;">CilWorker</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Creating a sentence according to the current method</span>
+			<span style="color: #6666cc; font-weight: bold;">string</span> sentence<span style="color: #008000;">;</span>
+			sentence <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Concat</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Code added in &quot;</span>, method<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Import the Console.WriteLine() method</span>
+			MethodReference writeLine<span style="color: #008000;">;</span>
+			writeLine <span style="color: #008000;">=</span> assembly<span style="color: #008000;">.</span><span style="color: #0000FF;">MainModule</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Import</span><span style="color: #008000;">&#40;</span>writeLineMethod<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Creates the MSIL instruction for inserting the sentence</span>
+			Instruction insertSentence<span style="color: #008000;">;</span>
+			insertSentence <span style="color: #008000;">=</span> worker<span style="color: #008000;">.</span><span style="color: #0000FF;">Create</span><span style="color: #008000;">&#40;</span>OpCodes<span style="color: #008000;">.</span><span style="color: #0000FF;">Ldstr</span>, sentence<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Creates the CIL instruction for calling the </span>
+			<span style="color: #008080; font-style: italic;">//Console.WriteLine(string value) method</span>
+			Instruction callWriteLine<span style="color: #008000;">;</span>
+			callWriteLine <span style="color: #008000;">=</span> worker<span style="color: #008000;">.</span><span style="color: #0000FF;">Create</span><span style="color: #008000;">&#40;</span>OpCodes<span style="color: #008000;">.</span><span style="color: #0000FF;">Call</span>, writeLine<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+			<span style="color: #008080; font-style: italic;">//Getting the first instruction of the current method</span>
+			Instruction ins <span style="color: #008000;">=</span> method<span style="color: #008000;">.</span><span style="color: #0000FF;">Body</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Instructions</span><span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Inserts the insertSentence instruction before the first //instruction</span>
+			method<span style="color: #008000;">.</span><span style="color: #0000FF;">Body</span><span style="color: #008000;">.</span><span style="color: #0000FF;">CilWorker</span><span style="color: #008000;">.</span><span style="color: #0000FF;">InsertBefore</span><span style="color: #008000;">&#40;</span>ins, insertSentence<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">//Inserts the callWriteLineMethod after the //insertSentence instruction</span>
+			worker<span style="color: #008000;">.</span><span style="color: #0000FF;">InsertAfter</span><span style="color: #008000;">&#40;</span>insertSentence, callWriteLine<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>	
+<span style="color: #008000;">&#125;</span></pre>
+<p>The last thing to do is saving the assembly which contains the modifying types:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//Save the modified &quot;MyLibrary&quot; assembly</span>
+AssemblyFactory<span style="color: #008000;">.</span><span style="color: #0000FF;">SaveAssembly</span><span style="color: #008000;">&#40;</span>assembly, pathBin<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>After executing this code, you can use the modifying assembly in a new Console project. You have to add a reference to this assembly.
+</p>
+<pre class="csharp" style="font-family:monospace;">MyLibrary<span style="color: #008000;">.</span><span style="color: #0000FF;">Person</span> p <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyLibrary<span style="color: #008000;">.</span><span style="color: #0000FF;">Person</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+p<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Harry May&quot;</span><span style="color: #008000;">;</span>
+p<span style="color: #008000;">.</span><span style="color: #0000FF;">Birthday</span> <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> DateTime<span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1982</span>, 01, <span style="color: #FF0000;">26</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #6666cc; font-weight: bold;">int</span> age <span style="color: #008000;">=</span> p<span style="color: #008000;">.</span><span style="color: #0000FF;">GetAge</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>This code produces also this result:
+</p>
+<pre class="bash" style="font-family:monospace;">set_Name was called
+set_Birthday was called
+GetAge was called</pre>
+<p>You can download the examples used in this FAQ <a href="http://evain.net/public/cecil_faq_samples.zip" class="external text" rel="nofollow">here</a>
+</p><p>Author: <a href="mailto:f.reinle_at_evaluant.com" class="external text" rel="nofollow">Fabien Reinle</a>
+</p>

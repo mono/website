@@ -1,0 +1,44 @@
+---
+layout: obsolete
+title: "VSIntegration"
+permalink: /old_site/VSIntegration/
+---
+
+<h1>VSIntegration</h1>
+
+<p>This is a plan to define what needs to be done for a Visual Studio add-in that would allow Visual Studio developers to target Linux and Mono.
+</p><p>Once the plugin is installed, the following should be possible from Visual Studio:
+</p>
+<ul><li> Deploying:
+<ul><li> Deploying an ASP.NET application to a remote Linux/Mono installation
+</li><li> Deploying a Windows.Forms application to a remote Linux/Mono installation
+</li></ul>
+</li><li> Execution
+<ul><li> Windows.Forms applications started remotely (ssh + mono app.exe)
+</li><li> ASP.NET applications started remotely (deploy + launch local web browser).
+</li></ul>
+</li><li> Debugging
+<ul><li> Debugging symbols converted from PDB to MDB (Robert Jordan's tool) during deployment (done in MonoVS/MonoAddin).
+</li><li> Executables, libraries, symbols and config files from bin/Debug transfered to the remote Linux system.
+<ul><li> Might want to use zsync, but we need to implement Content-Range: support in HttpListener.
+</li><li> A simple SCP would do, perhaps in the future "rsync" could be used.
+</li><li> This tool runs on Windows, uses the MS APIs to read PDBs, and Mono APIs to generate the MDBs
+</li></ul>
+</li><li> Run .NET applications under the debugger
+<ul><li> This can probably be done entirely in C# using the <a href="http://code.msdn.microsoft.com/debugenginesample/Release/ProjectReleases.aspx?ReleaseId=501" class="external text" rel="nofollow">DebugEngineSample</a> as a reference.
+</li><li> Write/design a protocol to communicate between VS and the remote debugger
+</li><li> Remote debugger is a thin wrapper around Mono.Debugger.dll 
+</li><li> Use the Mono.Debugger.dll library to host the process
+</li></ul>
+</li><li> Start Windows.Forms application connected to the Visual Debugger.
+</li><li> Start an ASP.NET application connected to the Visual Studio Debugger.
+</li></ul>
+</li><li> Packaging
+<ul><li> Create <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Mono-compliant deployments</a> of .NET executables
+</li><li> Create RPM and DEB packages for various distributions
+<ul><li> It could be easy to ship tools that do both on a single system
+</li><li> Alternatively, for open source software, expose the openSUSE Build Service
+</li></ul>
+</li></ul>
+</li></ul>
+

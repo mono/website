@@ -1,0 +1,165 @@
+---
+layout: obsolete
+title: "GtkSharp: Hello World"
+permalink: /old_site/GtkSharp:_Hello_World/
+---
+
+<h1>GtkSharp: Hello World</h1>
+
+<p>A Hello World program with Gtk#:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Hello <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;helloworld&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                window<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>To compile this code: 
+</p>
+<pre class="bash" style="font-family:monospace;">mcs helloworld.cs -pkg:gtk-sharp-<span style="color: #000000;">2.0</span></pre>
+<p>It's a bit longer than console hello world and needs some explanation. 
+</p><p>Every Gtk# application must import the Gtk namespace: 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span></pre>
+<p>If you don't do so, each class from one of these namespaces will need the namespace mentioned as a prefix. 
+</p><p>Now, let's walk through Main().
+</p>
+<pre class="csharp" style="font-family:monospace;">Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span></pre>
+<p>This initializes GTK and is needed in every Gtk# application. 
+</p><p>Now, create a Window object; the first parameter is the title of the window. To display it, call Show(). 
+</p>
+<pre class="csharp" style="font-family:monospace;">Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;helloworld&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+window<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Now that the window is drawn, run the main appliction loop, which displays everything and waits for events. This loop will run until Quit() is called. 
+</p>
+<pre class="csharp" style="font-family:monospace;">Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span></pre>
+<p>Note that you'll need to exit this program with CTRL-C, as it doesn't have code to handle quitting more elegantly. For how to fix this, read on. 
+</p>
+<h2> <span class="mw-headline" id="HelloWorld.2C_second_try"> HelloWorld, second try </span></h2>
+<p>Here's a more elegant version of the above. It knows how to quit elegantly, and we'll use it to introduce <i>event handling </i>in Gtk#. 
+</p>
+<pre class="csharp" style="font-family:monospace;">        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #6666cc; font-weight: bold;">class</span> Hello <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+	                <span style="color: #008080; font-style: italic;">// Set up a button object.</span>
+                        Button btn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #008080; font-style: italic;">// when this button is clicked, it'll run hello()</span>
+                        btn<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> EventHandler <span style="color: #008000;">&#40;</span>hello<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;helloworld&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	                <span style="color: #008080; font-style: italic;">// when this window is deleted, it'll run delete_event()</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span>
+&#160;
+	                <span style="color: #008080; font-style: italic;">// Add the button to the window and display everything</span>
+	                window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>btn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+&#160;
+	        <span style="color: #008080; font-style: italic;">// runs when the user deletes the window using the &quot;close</span>
+	        <span style="color: #008080; font-style: italic;">// window&quot; widget in the window frame.</span>
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                            Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #008080; font-style: italic;">// runs when the button is clicked.</span>
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> hello <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span></pre>
+<p>Gtk# is an event driven toolkit, which means it will sleep in Application.Run() until an event occurs and control is passed to the appropriate function. Gtk# can make use of the type "event". When you close the "HelloWorld" window, the window throws an event of type DeleteEvent. To enable your application to react on the DeleteEvent, you must connect it to an event handler. 
+</p>
+<pre class="csharp" style="font-family:monospace;">window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span></pre>
+<p>An event handler gets passed four parameters: an object, the object that fired the event, the window, and an EventArgs object. In this case, the EventArgs have the special type DeleteEventArgs). 
+</p>
+<pre class="csharp" style="font-family:monospace;">                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                            Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span></pre>
+<p>This sample also adds a button to the window and connects the clicked event to "hello". 
+</p>
+<h2> <span class="mw-headline" id="An_example_in_MonoBasic"> An example in MonoBasic </span></h2>
+<p>The following MonoBasic code is similar to the above, but it has several different buttons. It also illustrates basic window layout using VBox objects.  
+</p>
+<pre class="csharp" style="font-family:monospace;">imports <span style="color: #000000;">System</span>
+imports Gtk
+&#160;
+<span style="color: #0600FF; font-weight: bold;">Public</span> Module ToggleButtons
+&#160;
+        Sub OnDeleteEvent <span style="color: #008000;">&#40;</span> ByVal obj <span style="color: #0600FF; font-weight: bold;">as</span> <span style="color: #6666cc; font-weight: bold;">object</span>, ByVal args <span style="color: #0600FF; font-weight: bold;">as</span> DeleteEventArgs <span style="color: #008000;">&#41;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+        End Sub
+&#160;
+        Sub OnExitButtonEvent <span style="color: #008000;">&#40;</span> ByVal obj <span style="color: #0600FF; font-weight: bold;">as</span> <span style="color: #6666cc; font-weight: bold;">object</span>, ByVal args <span style="color: #0600FF; font-weight: bold;">as</span> EventArgs <span style="color: #008000;">&#41;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+        End Sub
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">Public</span> Sub Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim window <span style="color: #0600FF; font-weight: bold;">as</span> Window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Toggle Buttons&quot;</span><span style="color: #008000;">&#41;</span>
+                AddHandler window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span>, AddressOf OnDeleteEvent
+                window<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span>
+&#160;
+                Dim box1 <span style="color: #0600FF; font-weight: bold;">as</span> VBox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span>
+                window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>box1<span style="color: #008000;">&#41;</span>
+                box1<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim box2 <span style="color: #0600FF; font-weight: bold;">as</span> VBox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span>
+                box2<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span>
+                box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+                box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim toggleButton <span style="color: #0600FF; font-weight: bold;">as</span> ToggleButton <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ToggleButton <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Button 1&quot;</span><span style="color: #008000;">&#41;</span>
+                box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>toggleButton, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+                toggleButton<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim toggleButton2 <span style="color: #0600FF; font-weight: bold;">as</span> ToggleButton <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ToggleButton <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Button 2&quot;</span><span style="color: #008000;">&#41;</span>
+                toggleButton2<span style="color: #008000;">.</span><span style="color: #0000FF;">Active</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span>
+                box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>toggleButton2, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+                toggleButton2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim separator <span style="color: #0600FF; font-weight: bold;">as</span> HSeparator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>separator, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+                separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim box3 <span style="color: #0600FF; font-weight: bold;">as</span> VBox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span>
+                box3<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span>
+                box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box3, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+&#160;
+                Dim button <span style="color: #0600FF; font-weight: bold;">as</span> Button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Close&quot;</span><span style="color: #008000;">&#41;</span>
+                AddHandler button<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span>, AddressOf OnExitButtonEvent
+&#160;
+                box3<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>button, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span>
+                button<span style="color: #008000;">.</span><span style="color: #0000FF;">CanDefault</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span>
+                button<span style="color: #008000;">.</span><span style="color: #0000FF;">GrabDefault</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+                button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+&#160;
+                window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> 
+&#160;
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+        End Sub
+&#160;
+End Module</pre>
+

@@ -1,0 +1,153 @@
+---
+layout: obsolete
+title: "Visual Studio Integration"
+permalink: /old_site/Visual_Studio_Integration/
+---
+
+<h1>Visual Studio Integration</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Goals"><span class="tocnumber">1</span> <span class="toctext">Goals</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Experience"><span class="tocnumber">1.1</span> <span class="toctext">Experience</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#One_Click_Execution"><span class="tocnumber">1.1.1</span> <span class="toctext">One Click Execution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Issues"><span class="tocnumber">1.2</span> <span class="toctext">Issues</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Deployment"><span class="tocnumber">1.2.1</span> <span class="toctext">Deployment</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Linux_Firewall_Configuration"><span class="tocnumber">1.2.2</span> <span class="toctext">Linux Firewall Configuration</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Locating_Linux_Hosts"><span class="tocnumber">1.2.3</span> <span class="toctext">Locating Linux Hosts</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Launching_Programs_in_Linux"><span class="tocnumber">1.2.4</span> <span class="toctext">Launching Programs in Linux</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Design_Considerations"><span class="tocnumber">2</span> <span class="toctext">Design Considerations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Questions.2C_questions"><span class="tocnumber">2.1</span> <span class="toctext">Questions, questions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Implementation_How-to"><span class="tocnumber">3</span> <span class="toctext">Implementation How-to</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Deploying_Web_Projects"><span class="tocnumber">3.1</span> <span class="toctext">Deploying Web Projects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Daemon_Actions"><span class="tocnumber">3.1.1</span> <span class="toctext">Daemon Actions</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Add-in_configuration_.2F_options"><span class="tocnumber">3.1.2</span> <span class="toctext">Add-in configuration / options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Deploying_Winforms_Projects"><span class="tocnumber">3.2</span> <span class="toctext">Deploying Winforms Projects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Add-in_configuration_.2F_options_2"><span class="tocnumber">3.2.1</span> <span class="toctext">Add-in configuration / options</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Goals"> Goals </span></h1>
+<p>See the section on <a href="#Design_Considerations">Design Considerations</a> below for more information as to what our use cases for the Visual Studio Integration should be.
+</p><p>There is also a <a href="{{site.baseurl}}/GettingStartedWithMonoVS" title="GettingStartedWithMonoVS" class="mw-redirect">Getting Started</a> guide for MonoVS.
+</p>
+<h2> <span class="mw-headline" id="Experience"> Experience </span></h2>
+<p>Some tenets:
+</p>
+<ul><li> One click execution
+</li></ul>
+<h3> <span class="mw-headline" id="One_Click_Execution"> One Click Execution </span></h3>
+<p>We need to minimize the configuration and installation process to have as few dependencies on both Windows and Linux.   We should not require the user to install a plurality of tools and packages before they can get up and running with the Mono Visual Studio Integration and Linux.
+</p><p>The configuration should consist of:
+</p>
+<ul><li> Installing the Add-In into Visual Studio
+</li><li> Hit "Run on Mono" 
+</li></ul>
+<p>If a Wizard or configuration are required they should have as few configuration steps as possible.   For example, the above "Run on Mono" should request a machine address to debug, and be done with it.
+</p>
+<h2> <span class="mw-headline" id="Issues"> Issues </span></h2>
+<h3> <span class="mw-headline" id="Deployment"> Deployment </span></h3>
+<p>Currently the MonoVS debugger requires the Windows and Linux machine to share a directory, this should be optional as the process to share files between Linux and Windows is less than ideal, each pose challenges from an administrative perspective, the setup is error prone and can be frustrating.
+</p><p>It would be ideal if the server on the Linux side could receive files uploaded by Visual Studio when they change without having to depend on a parallel configuration to share the files.   The file exchange could use the same principle behind RSync: only send files that have been modified (compare sizes, if they are the same, compare md5sums;    Upload new files, remove deleted files).
+</p>
+<h3> <span class="mw-headline" id="Linux_Firewall_Configuration"> Linux Firewall Configuration </span></h3>
+<p>openSUSE at least (and probaby other Linux Desktops) ship with firewall rules that by default block everything.   Our daemon on the Linux side should probably support probing if the ports are blocked and suggest a fix, and ideally automatically reconfigure the firewall when the user chooses to open the firewall.
+</p>
+<h3> <span class="mw-headline" id="Locating_Linux_Hosts"> Locating Linux Hosts </span></h3>
+<p>We could use Mono.ZeroConf on Windows and Linux to show a list of machines that are currently exposing a debugging service.
+</p><p>Our Linux hosts could register with ZeroConf that the debugging service is available (an this be done without running the daemon all the time, and activate-on-demand?)
+</p>
+<h3> <span class="mw-headline" id="Launching_Programs_in_Linux"> Launching Programs in Linux </span></h3>
+<p>Our current setup requires the developer to run a process on Linux, and then initiate the debugging session on Windows.   This is less than ideal, we should probably be able to control everything from Visual Studio.
+</p><p>A few options that we could consider:
+</p>
+<ul><li> The Debugger RPM installs a listener that can launch debug processes on demand.
+</li><li> Our Visual Studio Addin uses ssh to start up the process (we then need to find out an SSH implementation that would not require something as large as Cygwin to use).
+</li></ul>
+<h1> <span class="mw-headline" id="Design_Considerations"> Design Considerations </span></h1>
+<h2> <span class="mw-headline" id="Questions.2C_questions"> Questions, questions </span></h2>
+<ul><li> What types of developers would be interested in deploying apps to linux through vstudio?
+</li><li> Why?
+</li><li> What types of devs would not be interested at all?
+</li></ul>
+<p>[jpobst]
+Taken from <a href="http://lists.ximian.com/pipermail/mono-list/2006-October/033221.html" class="external text" rel="nofollow">here</a>:
+</p><p>Covering the 80/20 case, I think the following assumptions can be made:
+</p>
+<ul><li>Developers are primarily concerned with their apps running on Windows, but would like their apps to run on Mono/Linux if there is little to no additional development work required.
+</li><li>Windows developers are not interested in switching to Linux, or SharpDevelop, or MonoDevelop.  They want to program in Visual Studio on Windows, that is, using the tools they've used for years and are most productive in.
+</li><li>Windows developers are not interested in learning how to use the various Linux tools like svn, make, yast, apt-get, rpm's, etc.
+</li><li>Windows developers are not interested in Gtk#.  Since the primary concern is their apps on Windows, Gtk# is not useful.  (Gaim on Windows sticks out pretty bad.)
+</li></ul>
+<p>Obviously, there are exceptions to the above, but for the 80% case, it should work.
+</p><p>To that end, I can think of four options that would be helpful to VS developers trying to port their app to Mono.
+</p>
+<ol><li> <b>Scan 'Project/Solution' with MoMA</b> - This is probably the first step a developer should be taking to being porting to Mono.  At the least, the standard report would come up in a new VS window.  Even better would be if the items from the report would show up in the Error List window where NIEX, MISS, and PINV would be placed on the Errors tab, and TODO would be placed on the Warning tab.  Clicking any of these would take you to the place in code where you are using it.
+</li><li> <b>Run 'Project/Solution' with Mono</b> - This step would be attempting to run the developer's app in Mono on Windows.  This would work just like clicking the "Start Debugging" button in VS in that the app would run using Mono as the runtime.  (Debugging of course would not be supported.)  This allows the developer to find any differences between the MS and Mono class libraries.  (I believe this is already available in prj2make.)
+</li><li> <b>Run 'Project/Solution' with Mono on Linux</b> - This step is like the previous step, except the app would be copied over to a Linux real machine or virtual machine, and starts running there.  This allows the developer to find any issues caused by differences between Windows and Linux.
+</li><li> <b>Debugging support</b> - Use Visual Studio as the debugger for Mono on Windows or Mono on a remote machine.   Make Visual Studio a front-end to the mdb debugger.
+</li><li> <b>Compile 'Project/Solution' with Mono</b> - The next step a developer should probably take is trying to compile their app with Mono.  This menu option would do just that, with the output showing up in the Output and Error List windows, just as if the compile was done by csc.
+</li></ol>
+<p>(Porting to Mono, there may be issues that are differences between MS and Mono (Mono bugs, etc.), and differences between running on Windows and Linux (case sensitivity, permissions, etc.).  Having 2 and 3 as discrete steps breaks down the possible issues into smaller steps.)
+</p>
+<h1> <span class="mw-headline" id="Implementation_How-to"> Implementation How-to </span></h1>
+<p>A Debug Engine now exists that can:
+</p>
+<ul><li> Convert PDB files into MDB files.
+</li><li> Launch under the Linux debugger a Mono process and control it from VS.
+</li></ul>
+<h2> <span class="mw-headline" id="Deploying_Web_Projects"> Deploying Web Projects </span></h2>
+<p>Deploying web projects is essentially copying the entire project tree and all the files contained within, except source code files (unless the user wants to copy those too by selecting the appropriate option in the add-in). 
+</p><p>Before doing any deployments, the user needs to configure the directory on the linux side that will receive the projects. The daemon should have a configuration mode that will create the directory and configure (optionally) a samba share.
+</p>
+<h3> <span class="mw-headline" id="Daemon_Actions"> Daemon Actions </span></h3>
+<ul><li>Samba configuration - root directory where the web project tree will reside
+</li><li>Apache configuration (vhosts)(?)
+</li></ul>
+<p><br />
+When the add-in is run, the following options should be available to the user:
+</p>
+<h3> <span class="mw-headline" id="Add-in_configuration_.2F_options"> Add-in configuration / options </span></h3>
+<ul><li>Copy method (samba, ssh)
+</li><li>Destination machine (name or ip)
+</li><li>Destination directory (by default, project name)
+</li><li>Copy source /y/n)
+</li></ul>
+<p>After the project is copied over, the add-in opens a web browser with the site.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Deploying_Winforms_Projects"> Deploying Winforms Projects </span></h2>
+<p>Deploying winforms projects means copying over the content of the output directory (all dlls, images, etc) of the main project in the solution (Startup project). 
+Optionally, the add-in can also copy the source files and project files, if the user chooses the Copy Source option.
+</p><p>An extra feature that might be interesting as well is to convert the PDB files into the MDB format (using pdb2mdb, perhaps?), and copying those as well.
+</p><p>Either the add-in or the daemon could create a wrapper script to make it easier to launch the application.
+</p><p>When the add-in is run, the following options should be available to the user:
+</p>
+<h3> <span class="mw-headline" id="Add-in_configuration_.2F_options_2"> Add-in configuration / options </span></h3>
+<ul><li>Copy method (samba, ssh)
+</li><li>Destination machine (name or ip)
+</li><li>Destination directory (by default, project name)
+</li><li>Copy source /y/n)
+</li><li>Copy debug files
+</li></ul>
+

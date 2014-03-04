@@ -1,0 +1,167 @@
+---
+layout: obsolete
+title: "Mono Project Roadmap"
+permalink: /old_site/Mono_Project_Roadmap/
+---
+
+<h1>Mono Project Roadmap</h1>
+
+<p><i>Last update: November, 2012</i>
+</p><p>Per-component <a href="{{site.baseurl}}/Plans" title="Plans">Plans</a> are available, you can also check our <a href="{{site.baseurl}}/Compatibility" title="Compatibility">Compatibility</a> page that gives an overview of what is supported as of the latest public release of Mono.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Versioning"><span class="tocnumber">1</span> <span class="toctext">Versioning</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Current_Releases"><span class="tocnumber">2</span> <span class="toctext">Current Releases</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Upcoming_Releases"><span class="tocnumber">3</span> <span class="toctext">Upcoming Releases</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Subprojects_projects"><span class="tocnumber">4</span> <span class="toctext">Subprojects projects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Mono_and_Silverlight"><span class="tocnumber">4.1</span> <span class="toctext">Mono and Silverlight</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Partial_Implementations"><span class="tocnumber">4.2</span> <span class="toctext">Partial Implementations</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Unsupported_technologies"><span class="tocnumber">4.3</span> <span class="toctext">Unsupported technologies</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Comments"><span class="tocnumber">5</span> <span class="toctext">Comments</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Roadmap_History"><span class="tocnumber">6</span> <span class="toctext">Roadmap History</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Versioning"> Versioning </span></h2>
+<p>Mono releases are versioned like this:
+</p>
+<pre>MAJOR.MINOR.SUBRELEASE
+</pre>
+<ul><li> Even-numbered <i><b>MINOR</b></i> releases are stable releases.
+</li><li> Odd-numbered <i><b>MINOR</b></i> releases are unstable releases (development/daily builds).  
+</li><li> <i><b>SUBRELEASE</b></i> indicates a minor update to a specific release.
+</li></ul>
+<h2> <span class="mw-headline" id="Current_Releases"> Current Releases </span></h2>
+<table cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 0 0; text-align:left; font-size:95%" width="100%">
+
+<tr style="background:#5084C5; color:white; border-top: 4px solid #aabcfe; font-size:105%">
+<td style="width: 425px"> <b>&#160;Mono 2.12</b>
+</td>
+<td> <b>Released: October 22nd, 2012</b>
+</td></tr>
+<tr>
+<td>
+<ul><li> C# 5.0 (Unified for all profiles)
+</li><li> IKVM Reflection or Cecil powered C# compiler
+</li><li> SGen: Precise stack scanning
+</li><li> Tuned Parallel Frameworks
+</li><li> Complete .NET 4.5 core support
+<ul><li> Async APIs in all core libraries
+</li></ul>
+</li><li> Tail call optimizations for F#
+</li><li> Ships Microsoft's open sourced stacks:
+<ul><li> ASP.NET MVC 4
+</li><li> ASP.NET WebPages
+</li><li> Entity Framework
+</li><li> Razor
+</li><li> System.Json (replaces our own)
+</li></ul>
+</li></ul>
+<p>Features that have already shipped out of band:
+</p>
+<ul><li> MonoMac and MonoMac bundler
+</li><li> IronPython, IronRuby and F# bundled with Mono
+</li></ul>
+</td>
+<td style="vertical-align: top">
+<p><a href="{{site.baseurl}}/Release_Notes_Mono_3.0" title="Release Notes Mono 3.0">Mono 3.0 Release Notes</a>
+</p><p><br />
+</p>
+</td></tr></table>
+<p><br /><br />
+</p>
+<table cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 0 0; text-align:left; font-size:95%" width="100%">
+
+<tr style="background:#5084C5; color:white; border-top: 4px solid #aabcfe; font-size:105%">
+<td style="width: 425px"> <b>&#160;Mono 2.10</b>
+</td>
+<td> <b>Released: February 15th, 2011</b>
+</td></tr>
+<tr>
+<td>
+<p>Major changes (see release notes for details):
+</p>
+<ul><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#Google_Native_Client_Support" title="Release Notes Mono 2.10">Google Native Client Support</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#New_Mono_Profiler" title="Release Notes Mono 2.10">New Profiler engine</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#Improved_Socket_and_Async_Stack" title="Release Notes Mono 2.10">Faster socket stack</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#Parallel_Framework_Updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#SGen_Garbage_Collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.
+</li><li> Unified MonoTouch/Monodroid runtime support
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#Cecil.2FLight" title="Release Notes Mono 2.10">Cecil/Light</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#New_C.23_Compiler_Backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#VB_Compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#ASP.NET_MVC3_Support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.
+</li><li> New <a href="#WebMatrix.Data">WebMatrix.Data</a> database API.
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#OSX_Updates" title="Release Notes Mono 2.10">Improved OSX Mono</a>
+</li><li> <a href="{{site.baseurl}}/Release_Notes_Mono_2.10#Languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a>
+</li></ul>
+</td>
+<td style="vertical-align: top">
+<p><a href="{{site.baseurl}}/Release_Notes_Mono_2.10" title="Release Notes Mono 2.10">Mono 2.10 Release Notes</a>
+</p>
+<ul><li> <b>Feb 15th, 2011:</b> First 2.10 release
+</li></ul>
+</td></tr></table>
+<p><br /><br />
+</p>
+<h2> <span class="mw-headline" id="Upcoming_Releases"> Upcoming Releases </span></h2>
+<p>Mono 3.0 will be delivered with incremental updates, as our master branch will remain stable.
+</p><p>For more information see: <a href="http://tirania.org/blog/archive/2011/Oct-14.html" class="external free" rel="nofollow">http://tirania.org/blog/archive/2011/Oct-14.html</a>
+</p><p><br />
+</p>
+<table cellpadding="2" cellspacing="0" align="center" style="margin: 0 0 0 0; text-align:left; font-size:95%" width="100%">
+
+<tr style="background:#5084C5; color:white; border-top: 4px solid #aabcfe; font-size:105%">
+<td style="width: 425px"> <b>&#160;Mono 3.0</b>
+</td>
+<td> <b>Planned Release: TBD</b>
+</td></tr>
+<tr>
+<td>
+<ul><li> New Generational GC becomes the default
+</li></ul>
+</td>
+<td>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Subprojects_projects"> Subprojects projects </span></h2>
+<p>Other projects like the <a href="{{site.baseurl}}/Debugger" title="Debugger">debugger</a>, the documentation browser, <a href="{{site.baseurl}}/Java" title="Java">Java</a> integration through IKVM, <a href="{{site.baseurl}}/Olive" title="Olive">Olive</a> and <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">Gtk#</a> will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+</p>
+<h3> <span class="mw-headline" id="Mono_and_Silverlight"> Mono and Silverlight </span></h3>
+<p>See our page on <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> for details on the work underway to support Silverlight with Mono.
+</p>
+<h3> <span class="mw-headline" id="Partial_Implementations"> Partial Implementations </span></h3>
+<p>The following APIs and technologies have partial implementations and are under development.
+</p>
+<ul><li> Cardspace/Infocard.
+</li></ul>
+<h3> <span class="mw-headline" id="Unsupported_technologies"> Unsupported technologies </span></h3>
+<p>Some of the .NET technologies have been either deprecated, are too Windows-specific or are very large efforts and our community is unable to produce viable implementations for them.
+</p><p>If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on.  There might be some code for these on our <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
+</p><p>Too large stacks:
+</p>
+<ul><li> Windows Presentation Foundation
+</li></ul>
+<p>We are not working on any of the following deprecated APIs:
+</p>
+<ul><li> System.EnterpriseServices 
+</li><li> <a href="{{site.baseurl}}/WSE" title="WSE">WSE</a> - Extensions to System.Web.Services.
+</li><li> Workflow Foundation 3 (WF3)
+</li><li> <a href="{{site.baseurl}}/CAS" title="CAS">Code Access Security</a> (.NET 1.0).
+</li></ul>
+<p>The following do not map to operating systems other than Windows, and we are unlike going to spend time to support them even on Windows:
+</p>
+<ul><li> System.Management
+</li></ul>
+<p>Nobody has shown enough interest in the following:
+</p>
+<ul><li> PowerShell
+</li></ul>
+<h2> <span class="mw-headline" id="Comments"> Comments </span></h2>
+<p>Feel free to <a href="{{site.baseurl}}/Contact" title="Contact">send us your comments or questions</a> about the roadmap.
+</p>
+<h2> <span class="mw-headline" id="Roadmap_History"> Roadmap History </span></h2>
+<p>For our previous roadmap information, please see <a href="{{site.baseurl}}/Roadmap_History" title="Roadmap History">Roadmap History</a>.
+</p>

@@ -1,0 +1,136 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.10.3"
+permalink: /old_site/Release_Notes_Mono_2.10.3/
+---
+
+<h1>Release Notes Mono 2.10.3</h1>
+
+<p>Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p><p>Mono 2.10.3 is a minor update to <a href="{{site.baseurl}}/Release_Notes_Mono_2.10" title="Release Notes Mono 2.10">Mono 2.10</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.1" title="Release Notes Mono 2.10.1">Mono 2.10.1</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.2" title="Release Notes Mono 2.10.2">Mono 2.10.2</a> based on the mono-2-10 branch of github.    Mono 2.10.3 was released on August 4th, 2011.
+</p><p>For more information on changes since Mono 2.10, you can also read the release notes for <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.1" title="Release Notes Mono 2.10.1">Mono 2.10.1</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.2" title="Release Notes Mono 2.10.2">Mono 2.10.2</a>.
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<p>Vastly improved Mono's WCF stack.
+</p><p>Major update to Mono's linker/tuner.
+</p><p>MacOS X Lion: We have fixed various bugs in Gtk+ that affected Lion users of MonoDevelop and other Gtk# applications.
+</p><p>This release is big and tasty service pack, with plenty of fixes all around, the diffstat shows:
+</p>
+<pre>370 files changed, 10606 insertions(+), 3452 deletions(-)
+</pre>
+<h1> <span class="mw-headline" id="Changes_Since_Mono_2.10.2"> Changes Since Mono 2.10.2 </span></h1>
+<p>General:
+</p>
+<ul><li> If a thread abort is fatal, we now show the stack trace
+</li><li> Improve stacktraces when facing a runtime invoke wrapper.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=693996" class="external text" rel="nofollow">693996</a> UriTemplate doesn't support named wildcards
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=650117" class="external text" rel="nofollow">650117</a> xsd.exe hangs on valid circular groups schema
+</li><li> Implemented #<a href="https://bugzilla.novell.com/show_bug.cgi?id=692987" class="external text" rel="nofollow">692987</a> PipeException
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=690475" class="external text" rel="nofollow">690475</a> Unexpected XmlConvert.ToDateTime(string,XmlDateTimeSerializationMode) behaviour
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=673019" class="external text" rel="nofollow">673019</a> XmlSerializer&#160;: Bad Custom serializer generated with "char" default value.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=641935" class="external text" rel="nofollow">641935</a> Select XmlNodeList from parent XmlNode returns emply list in mono but not .net.
+</li><li> Fixed #<a href="http://bugzilla.xamarin.com/show_bug.cgi?id=16" class="external text" rel="nofollow">16</a> XNode.ReplaceWith() throws exception when provided null arguments.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=703910" class="external text" rel="nofollow">703910</a> System.Xml.Serialization crash at reading of file
+</li><li> Support action parameter in SOAP 1.2 content type.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=704813" class="external text" rel="nofollow">704813</a>  InvalidOperationException: To be XML serializable, types which inherit from IEnumerable must have an implementation of Add() at all levels of their inheritance hierarchy.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=703027" class="external text" rel="nofollow">703027</a> handling of null in the non generic implementation of EqualityComparer.
+</li><li> Fixed a socket stack problem where Mono could swallow file descriptors on threadpool threads.
+</li><li> Fix queryable enumerable expression transformation
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=701187" class="external text" rel="nofollow">701187</a> Don't emit null queryable constants when rewriting linq queries.
+</li><li> Removed hard coded timeout for SslStreamBase.
+</li><li> Fixed a security issue when default-initialized ArraySegment structs are passed in sockets.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=684613" class="external text" rel="nofollow">684613</a> Allow AssemblyRef flags to have at least ECMA's values.
+</li><li> Fix Prefix selection in HttpListener
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=690887" class="external text" rel="nofollow">690887</a> Add FTP + RETR support to FtpWebRequest
+</li><li> Various Parallel FX fixes
+</li><li> Fix ICollection.CopyTo in the Stack class
+</li><li> Fix #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688353" class="external text" rel="nofollow">688353</a> HttpListener fix for matching directories
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=689670" class="external text" rel="nofollow">689670</a> Use WriteLien instead of Write for AllLines.
+</li></ul>
+<p><br />
+C# Compiler:
+</p>
+<ul><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=706877" class="external text" rel="nofollow">706877</a> handling of -checked command line argument
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=687282" class="external text" rel="nofollow">687282</a> Fixes cross references of nested anonymous methods which don't start at parameters level block
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688891" class="external text" rel="nofollow">688891</a> Copy type parameters for base proxy method
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688891" class="external text" rel="nofollow">688891</a> Keep same TypeParameter ctor syntax
+</li></ul>
+<p>JIT:
+</p>
+<ul><li> Various SGen bug fixes
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=705186" class="external text" rel="nofollow">705186</a> ARM: soft-float decompose causes segfaults under some circumstances 
+</li><li> Avoid register allocation problems when a try clause is nested inside a handler block.
+</li><li> Fix caching in mono_marshal_get_array_address ().
+</li><li> ARM cross-compilation fixes
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=696593" class="external text" rel="nofollow">696593</a> avoid inflating a generic method of a non-generic class if the context has class only vars
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=696817" class="external text" rel="nofollow">696817</a> Properly handle field RVA under moving collector
+</li><li> SGen now works under Xen
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=693894" class="external text" rel="nofollow">693894</a> Avoid a crash in Field:GetRawConstantValue () if the field type couldn't be loaded
+</li><li> Add socket timeouts to the soft debugger: 
+</li><li> Fixed some problems with Mono.Simd (related to #691057)
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=690255" class="external text" rel="nofollow">690255</a> Implement BSTR marshaling even if COM is disabled
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=691119" class="external text" rel="nofollow">691119</a> Fix support for parameters with generic constraints in Type.IsAssignableFrom ()
+</li><li> Avoid a ENOMEM when allocating across an unallocated page in Boehm
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688007" class="external text" rel="nofollow">688007</a> If there are no crendetials, the Uri might have them
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=690020" class="external text" rel="nofollow">690020</a> Fix loading from volatile base addresses in the LLVM backend.
+</li><li> Fixes a crash on Lion when exiting
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688008" class="external text" rel="nofollow">688008</a> Allow storing managed pointers into 'native int' in the JIT, fsharp generates code without a conv.i.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=687865" class="external text" rel="nofollow">687865</a> AOT support for isinst_with_cache wrappers
+</li></ul>
+<p>WCF:
+</p>
+<ul><li> New MONO_WCF_TRACE variable allows debugging WCF by logging all of the requests
+</li><li> Support WebHttpBinding configuration
+</li><li> Implement support for Stream param with WebHttpBinding raw content format
+</li><li> Implement support for generic data contract type name with "{x}"
+</li><li> Implement XmlSerializerMessageContractImporter
+</li><li> Implement WsdlContractConversionContext
+</li><li> Properly implement Message.ToString() + all related changes
+</li><li> Add message buffer support for RawMessage
+</li><li> Optimization: Full equivalence comparison is unnecessary for MessageEncoder ContentType
+</li><li> Allow DocumentType in ImportNode()
+</li><li> Add Decimal support to XmlBinaryDictionaryReader
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=696784" class="external text" rel="nofollow">696784</a> Call a wcf method with a ref DataContract as parameter, eg: ref Customer makes the parameter null after the call
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=695203" class="external text" rel="nofollow">695203</a> KnownType for Derived Class not Resolved
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=687580" class="external text" rel="nofollow">687580</a> WCF fails with '(400) Bad Request' when the calling client uses URIs that should be functionally equivalent such as IP address instead of machine name
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688414" class="external text" rel="nofollow">688414</a> Exposing IEnumberable&lt;&gt; on a WCF service fails
+</li></ul>
+<p>ASP.NET:
+</p>
+<ul><li> Added support for optional parameters to WebServices
+</li><li> Added FormsAuthentication.Timeout 4.0 property
+</li><li> TemplateCompiler: Construct properly rooted paths when assigning values from resources.
+</li><li> Support RemoteEndpointMessageProperty
+</li><li> Ignore JavaScript blocks enclosed in HTML comments
+</li><li> When shadow-copying assemblies, use the io portability function to find the file.
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=650847" class="external text" rel="nofollow">650847</a> Output both tagged and untagged UpdatePanel names in AJAX responses.
+</li><li> Fixed: Do not retrieve script's URL in RegisterScriptReference if script.Path is set
+</li><li> Implemented composite scripts support in System.Web.Extensions
+</li><li> Inform user about all exceptions thrown during HttpRuntime static initialization
+</li><li> Do nothing if null SessionStateStoreData is passed to SessionStateServerHandler.SetAndReleaseItemExclusive
+</li></ul>
+<p>OSX:
+</p>
+<ul><li> Fixed asynchronous socket connect hang on BSD and MacOS X.
+</li><li> Fixed the library mapping for Cairo
+</li><li> We now ship with debugging symbols for all of the Mono binaries, making it simpler to get good stack traces.
+</li></ul>
+<p>OSX's Gtk port:
+</p>
+<ul><li> Fixed #<a href="https://bugzilla.gnome.org/show_bug.cgi?id=655087" class="external text" rel="nofollow">655087</a> CoreGraphics "empty clip" bug on Gtk# applications. 
+</li><li> Fixed #<a href="https://bugzilla.gnome.org/show_bug.cgi?id=655122" class="external text" rel="nofollow">655122</a> Window resizing bug in Gtk# applications on Lion.
+</li></ul>
+<p>Linker:
+</p>
+<ul><li> Refactored MonoMac's MarkNSObjects substep so it can be reused in other scenarios
+</li><li> Updated the linker and tuner
+</li></ul>
+<p>ADO.NET:
+</p>
+<ul><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=688773" class="external text" rel="nofollow">688773</a> Assign default value to columns that does not exist in the row that is being imported
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=681916" class="external text" rel="nofollow">681916</a> Handle null values for parameter types varbinary(max) and/or image
+</li><li> Fixed #<a href="https://bugzilla.novell.com/show_bug.cgi?id=663287" class="external text" rel="nofollow">663287</a> Validate the type of value against underlyingtype instead of nullableType.
+</li><li> Fixes calling size_t native parameters in OracleClient by  passing UIntPtr reference types and hence, solves 32/64 bit and little/big-endian issues.
+</li><li> Fixes #<a href="https://bugzilla.novell.com/show_bug.cgi?id=663914" class="external text" rel="nofollow">663914</a> Restore original column data for  unchanged columns during deserialization.
+</li></ul>
+

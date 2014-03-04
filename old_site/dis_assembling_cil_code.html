@@ -1,0 +1,91 @@
+---
+layout: obsolete
+title: "Dis/Assembling CIL Code"
+permalink: /old_site/Dis/Assembling_CIL_Code/
+---
+
+<h1>Dis/Assembling CIL Code</h1>
+
+<h1> <span class="mw-headline" id="IL_Code"> IL Code </span></h1>
+<p>.NET compilers like mcs or mbas do not compile to native code, but to the Common Intermediate Language (CIL).   IL code looks like this: 
+</p>
+<pre>
+// hello world dissassembled with monodis
+
+.assembly extern mscorlib
+{
+  .ver 0:0:0:0
+}
+.assembly 'hello'
+{
+  .hash algorithm 0x00008004
+  .ver  0:0:0:0
+}
+  .class private auto ansi beforefieldinit Hello
+        extends [mscorlib]System.Object
+  {
+
+    // method line 1
+    .method public hidebysig  specialname  rtspecialname
+           instance default void .ctor()  cil managed
+    {
+        // Method begins at RVA 0x20ec
+        // Code size 7 (0x7)
+        .maxstack 8
+        IL_0000: ldarg.0
+        IL_0001: call instance void valuetype [corlib]System.Object::.ctor()
+        IL_0006: ret
+    } // end of method instance default void .ctor()
+
+    // method line 2
+    .method public static
+           default void Main()  cil managed
+    {
+        // Method begins at RVA 0x20f4
+        .entrypoint
+        // Code size 11 (0xb)
+        .maxstack 8
+        IL_0000: ldstr &quot;Hello Mono World!&quot;
+        IL_0005: call void class [corlib]System.Console::WriteLine(string)
+        IL_000a: ret
+    } // end of method default void Main()
+
+  } // end of type Hello
+
+</pre>
+<p>There are two Mono tools for using IL code:
+</p>
+<dl><dt> ilasm&#160;</dt><dd> The Mono Assembler can be given disassembled text, and it creates an assembly file. This is very important, because many compilers don't create the assembly themselves, and depend on this tool. Of course it can be also seen as a form of a compiler.  
+</dd><dt> monodis&#160;</dt><dd> The Mono Disassembler extracts code like shown above from an assembly. 
+</dd></dl>
+<h1> <span class="mw-headline" id="The_Mono_Disassembler"> The Mono Disassembler </span></h1>
+<p>The monodis program is used to dump the contents of an ECMA CIL image.  You can execute it by typing: 
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodis FILE.exe</pre>
+<p>The following options are supported: 
+</p>
+<dl><dt> --output=FILENAME&#160;</dt><dd> Write output into FILENAME. 
+</dd><dt> --mscorlib&#160;</dt><dd> For non-corlib assemblies, use "mscorlib" as the assembly name. This is useful for round-tripping the IL with ilasm. 
+</dd><dt> --assembly&#160;</dt><dd> Dumps the contents of the assembly table 
+</dd><dt> --assemblyref&#160;</dt><dd> Dumps the contents of the assemblyref table 
+</dd><dt> --classlayout&#160;</dt><dd> Dumps the contents of the classlayout table 
+</dd><dt> --constant&#160;</dt><dd> Dumps the contents of the constant table 
+</dd><dt> --event&#160;</dt><dd> Dumps the contents of the event table 
+</dd><dt> --exported&#160;</dt><dd> Dumps the contents of the ExportedTypes table 
+</dd><dt> --fields&#160;</dt><dd> Dumps the contents of the fields table 
+</dd><dt> --file&#160;</dt><dd> Dumps the contents of the file table 
+</dd><dt> --interface&#160;</dt><dd> Dumps the contents of the interface table 
+</dd><dt> --manifest&#160;</dt><dd> Dumps the contents of the manifest table. 
+</dd><dt> --memberref&#160;</dt><dd> Dumps the contents of the memberref table 
+</dd><dt> --method&#160;</dt><dd> Dumps the contents of the method table 
+</dd><dt> --methodsem&#160;</dt><dd> Dumps the contents of the methodsem table 
+</dd><dt> --module&#160;</dt><dd> Dumps the contents of the module table 
+</dd><dt> --moduleref&#160;</dt><dd> Dumps the contents of the moduleref table 
+</dd><dt> --mresources&#160;</dt><dd> Dumps embedded managed resources
+</dd><dt> --param&#160;</dt><dd> Dumps the contents of the param table 
+</dd><dt> --property&#160;</dt><dd> Dumps the contents of the property table 
+</dd><dt> --propertymap&#160;</dt><dd> Dumps the contents of the propertymap table 
+</dd><dt> --typedef&#160;</dt><dd> Dumps the contents of the typedef table 
+</dd><dt> --typeref&#160;</dt><dd> Dumps the contents of the typeref table If no flags are specified the program dumps the content of the image in a format that can be used to rountrip the code.
+</dd></dl>
+

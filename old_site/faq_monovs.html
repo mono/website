@@ -1,0 +1,93 @@
+---
+layout: obsolete
+title: "FAQ: MonoVS"
+permalink: /old_site/FAQ:_MonoVS/
+---
+
+<h1>FAQ: MonoVS</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General"><span class="tocnumber">1</span> <span class="toctext">General</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Running_on_Mono"><span class="tocnumber">2</span> <span class="toctext">Running on Mono</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#-_Place_a_copy_of_the_.dll_in_the_Mono_GAC:"><span class="tocnumber">2.1</span> <span class="toctext">- Place a copy of the .dll in the Mono GAC:</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#-_Add_a_project_reference_to_the_.dll:"><span class="tocnumber">2.2</span> <span class="toctext">- Add a project reference to the .dll:</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#-_Place_a_copy_of_the_.dll_in_your_website.27s_Bin_folder"><span class="tocnumber">2.3</span> <span class="toctext">- Place a copy of the .dll in your website's Bin folder</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Packaging"><span class="tocnumber">3</span> <span class="toctext">Packaging</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="General"> General </span></h2>
+<p><b>How do I find out the IP address and port used by the server?</b>
+</p><p>Right click on the server's tray icon and select "Preferences." Then click on the networking tab. This will display the port and all of the IP addresses that the server is accessible on.
+</p><p><b>My server isn't showing up in the server browser dialog</b>
+</p><p>If your server isn't being discovered (which could be due to firewalls), you can manually enter your server's IP address.  The default port used by the server is 8805.
+</p><p><b>My server is showing up with the wrong IP address</b>
+</p><p>This is generally caused by NAT, which masks the server's true IP address.  You can manually enter your server's real IP address.
+</p><p><b>I selected "Always use this host", how do I change my host?</b>
+</p><p>This can be reset from:
+</p>
+<ul><li> Tools
+</li><li> Options
+</li><li> Mono (You may need to enable "Show all settings")
+</li><li> Check "Run host selector at startup"
+</li></ul>
+<p><b>I'm running a firewall on Linux, what ports do I need to open?</b>
+</p>
+<ul><li> 8805 - monovs-server.exe server
+</li><li> 8806-8815 - session threads
+</li><li> 8816-8872 - xsp hosting ports
+</li></ul>
+<p>If you want to use different ports, you can change them in the configuration files:
+</p>
+<ul><li> /usr/lib/monovs-gui-server.exe.config for the GUI version
+</li><li> /usr/lib/monovs-server.exe.config for the command line version
+</li></ul>
+<p><b>What are the passwords for the MonoVS virtual machine image?</b>
+</p>
+<ul><li> The default account is rupert/mono.
+</li><li> The root account is root/mono.
+</li></ul>
+<h2> <span class="mw-headline" id="Running_on_Mono"> Running on Mono </span></h2>
+<p><b>How can I see output/enter input to a console program?</b>
+</p>
+<ul><li> Go to the Linux VM
+</li><li> Right click the Mono icon in the bottom right.
+</li><li> Choose "Run in Terminal"
+</li></ul>
+<p>Now when you run your program, a console will appear on the Linux VM you can interact with.
+</p><p><b>Where does my application get put on Linux when I run/debug remotely?</b>
+</p><p>Your application gets placed in:
+/tmp/monovs-{random-guid}
+</p><p>However, it is only there until you stop running it.  Once you close it via the tray icon on windows or the application finished running, it will delete this directory (or else it would fill up your hard drive).
+</p><p>If you don't want it to get deleted on completion, you can change the "Delete_Temp_Directory" setting in the configuration files:
+</p>
+<ul><li> /usr/lib/monovs-gui-server.exe.config for the GUI version
+</li><li> /usr/lib/monovs-server.exe.config for the command line version
+</li></ul>
+<p><b>I reference a .dll in the GAC in my web.config that isn't available when I run in Mono</b>
+</p><p>There are a couple of options here.
+</p>
+<h5> <span class="mw-headline" id="-_Place_a_copy_of_the_.dll_in_the_Mono_GAC:">- Place a copy of the .dll in the Mono GAC:</span></h5>
+<p>On Windows:
+</p>
+<pre class="bash" style="font-family:monospace;">mono gacutil <span style="color: #660033;">-i</span> MyAssembly.dll</pre>
+<p>On Linux:
+</p>
+<pre class="bash" style="font-family:monospace;">gacutil <span style="color: #660033;">-i</span> MyAssembly.dll</pre>
+<h5> <span class="mw-headline" id="-_Add_a_project_reference_to_the_.dll:">- Add a project reference to the .dll:</span></h5>
+<ul><li> Right click on References.
+</li><li> Add a reference to the .dll.
+</li><li> In the properties for the .dll, set Copy Local = true.
+</li></ul>
+<h5> <span class="mw-headline" id="-_Place_a_copy_of_the_.dll_in_your_website.27s_Bin_folder">- Place a copy of the .dll in your website's Bin folder</span></h5>
+<h2> <span class="mw-headline" id="Packaging"> Packaging </span></h2>
+<p><b>Can I create packages for Ubuntu/Debian?</b>
+</p><p>At this time, we only support creating packages for SUSE Linux (.rpm).  Creating packages for Ubuntu/Debian (.deb) is something we will definitely be considering for a future release.
+</p><p><b>How can I package a precompiled version of my web site?</b>
+</p><p>If you are using the "Precompile Web Applications" option when running and debugging your ASP.NET solutions, you should package a precompiled version of your solution to ensure the same behavior within the packaged solution. This can be done in the "Files" tab of Package Configuration wizard by clicking the "Precompile this website to a temporary location and add files to list" link at the bottom of the form.
+</p>

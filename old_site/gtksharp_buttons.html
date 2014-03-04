@@ -1,0 +1,272 @@
+---
+layout: obsolete
+title: "GtkSharp: Buttons"
+permalink: /old_site/GtkSharp:_Buttons/
+---
+
+<h1>GtkSharp: Buttons</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Normal_Buttons"><span class="tocnumber">1</span> <span class="toctext">Normal Buttons</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Toggle_Buttons"><span class="tocnumber">2</span> <span class="toctext">Toggle Buttons</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Check_Buttons"><span class="tocnumber">3</span> <span class="toctext">Check Buttons</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Radio_Buttons"><span class="tocnumber">4</span> <span class="toctext">Radio Buttons</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Normal_Buttons"> Normal Buttons </span></h1>
+<p>There are two ways to create normal [http:/monodoc/T:Gtk.Button buttons]:
+</p>
+<pre class="csharp" style="font-family:monospace;">Button button1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;labeltext&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>or 
+</p>
+<pre class="csharp" style="font-family:monospace;">Button button1 <span style="color: #008000;">=</span> Button<span style="color: #008000;">.</span><span style="color: #0000FF;">NewWithMnemonic</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>After creating a button using its argument-less constructor, it's then up to you to pack a label or pixmap into this new button. To do this, create a new box, and then pack your objects into this box using the usual [http:/monodoc/M:Gtk.Box.PackStart Gtk.Box.PackStart], and then use [http:/monodoc/M:Gtk.Container.Add Gtk.Container.Add] to pack the button into the box. 
+</p><p>Here's an example of creating a button with a image and a label in it. I've broken up the code to create a box from the rest so you can use it in your programs. There are further examples of using images later in the tutorial. 
+</p><p>[Image:buttons.png] 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// /samples/tutorial/buttons/buttons.cs - Gtk# Tutorial example</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// Author: Johannes Roith &lt;johannes@jroith.de&gt;</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// (c) 2002 Johannes Roith</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> GtkSharpTutorial <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> buttons
+        <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #008080; font-style: italic;">/* Create a new hbox with an image and a label packed into it
+                 * and return the box. */</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> Widget xpm_label_box<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> xpm_filename, <span style="color: #6666cc; font-weight: bold;">string</span> label_text <span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+&#160;
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Create box for image and label */</span>
+                        HBox box <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox<span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span>  <span style="color: #FF0000;">2</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Now on to the image stuff */</span>
+                        Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Image</span> image <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Image</span><span style="color: #008000;">&#40;</span>xpm_filename<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Create a label for the button */</span>
+                        Label label <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label <span style="color: #008000;">&#40;</span>label_text<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Pack the image and label into the box */</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>image, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">3</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>label, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">3</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        image<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        label<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">return</span> box<span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+&#160;
+                <span style="color: #008080; font-style: italic;">/* Our usual callback function */</span>
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> callback<span style="color: #008000;">&#40;</span> <span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello again - cool button was pressed&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #008080; font-style: italic;">/* another callback */</span>
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Create a new window */</span>
+                        Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Pixmap'd Buttons!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* It's a good idea to do this for all windows. */</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Sets the border width of the window. */</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Create a new button */</span>
+                        Button button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Connect the &quot;clicked&quot; signal of the button to our callback */</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> callback<span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* This calls our box creating function */</span>
+                        Widget box <span style="color: #008000;">=</span> xpm_label_box <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;info.xpm&quot;</span>, <span style="color: #666666;">&quot;cool button&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Pack and show all our widgets */</span>
+                        box<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>box<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>button<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/* Rest in gtk_main and wait for the fun to begin! */</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Toggle_Buttons"> Toggle Buttons </span></h1>
+<p>ToggleButtons are similiar to normal buttons, but they keep track of their state--- up or down. When you click on one, it will be pushed down, and when you click again, it will pop back up. Click again, and it will pop back down. When popped down, the button's Active property has the value "true". 
+Toggle buttons are the basis for check buttons and radio buttons; as such, many of the calls used for toggle buttons are inherited by radio and check buttons. 
+</p>
+<pre class="csharp" style="font-family:monospace;">        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> togglebuttons
+        <span style="color: #008000;">&#123;</span>
+&#160;
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>   
+&#160;
+&#160;
+                        Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;toggle buttons&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">/* Creating a new ToggleButton*/</span>
+&#160;
+                        ToggleButton togglebutton <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ToggleButton  <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;button1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        togglebutton<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> clickedCallback<span style="color: #008000;">;</span>
+&#160;
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>togglebutton<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> clickedCallback <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+<span style="color: #008080; font-style: italic;">/* Check Active Property */</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>ToggleButton<span style="color: #008000;">&#41;</span> obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Active</span><span style="color: #008000;">&#41;</span>
+                                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;ToggleButton clicked, I'm activating&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Check_Buttons"> Check Buttons </span></h1>
+<p>Check buttons inherit many properties and functions from the the toggle buttons above, but look a little different. Rather than being buttons with text inside them, they are small squares with the text to the right of them. These are often used for toggling options on and off in applications. 
+</p><p>The creation functions are similar to those of the normal button. 
+</p>
+<pre class="csharp" style="font-family:monospace;">GtkWidget CheckButton1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CheckButton<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+GtkWidget CheckButton1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CheckButtonWithLabel<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> label<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+GtkWidget CheckButton1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CheckButtonWithMnemonic<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> label<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The CheckButtonWithLabel() function creates a check button with a label beside it. 
+Checking the state of the check button is identical to that of the toggle button. 
+</p>
+<h1> <span class="mw-headline" id="Radio_Buttons"> Radio Buttons </span></h1>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// radiobuttons.cs - Gtk# Tutorial example</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// Author: Johannes Roith &lt;johannes@jroith.de&gt;</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #008080; font-style: italic;">// (c) 2002 Johannes Roith</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> GtkSharpTutorial <span style="color: #008000;">&#123;</span>
+&#160;
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> radiobuttons
+        <span style="color: #008000;">&#123;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> GLib<span style="color: #008000;">.</span><span style="color: #0000FF;">SList</span> <span style="color: #0600FF; font-weight: bold;">group</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> exitbutton_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+                <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">&#123;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>   
+&#160;
+&#160;
+                        Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;radio buttons&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> delete_event<span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+&#160;
+                        VBox box1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>box1<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        VBox box2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span>
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box2, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        RadioButton radiobutton <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> RadioButton  <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">null</span>, <span style="color: #666666;">&quot;button1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>radiobutton, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        radiobutton<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">group</span> <span style="color: #008000;">=</span> radiobutton<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Group</span><span style="color: #008000;">;</span>
+                        RadioButton radiobutton2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> RadioButton<span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">group</span>, <span style="color: #666666;">&quot;button2&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        radiobutton2<span style="color: #008000;">.</span><span style="color: #0000FF;">Active</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>radiobutton2, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        radiobutton2<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        RadioButton  radiobutton3 <span style="color: #008000;">=</span> RadioButton<span style="color: #008000;">.</span><span style="color: #0000FF;">NewWithLabelFromWidget</span><span style="color: #008000;">&#40;</span>radiobutton, <span style="color: #666666;">&quot;button3&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box2<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>radiobutton3, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        radiobutton3<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        HSeparator separator <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HSeparator <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>separator,<span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        separator<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        VBox box3 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox<span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box3<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span>
+                        box1<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>box3,<span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        box3<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Button button <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;close&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> exitbutton_event<span style="color: #008000;">;</span>
+&#160;
+                        box3<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>button, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">CanDefault</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">GrabDefault</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        button<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

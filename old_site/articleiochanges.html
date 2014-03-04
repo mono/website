@@ -1,0 +1,96 @@
+---
+layout: obsolete
+title: "Article:IOChanges"
+permalink: /old_site/Article:IOChanges/
+---
+
+<h1>Article:IOChanges</h1>
+
+<p><a href="/index.php?title=Template:Clean_Up&amp;action=edit&amp;redlink=1" class="new" title="Template:Clean Up (page does not exist)">Template:Clean Up</a>
+</p>
+<pre>This is Work in Progress
+</pre>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Background"><span class="tocnumber">1</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#io-layer"><span class="tocnumber">2</span> <span class="toctext">io-layer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#The_Deceased_Daemon"><span class="tocnumber">2.1</span> <span class="toctext">The Deceased Daemon</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_New_IO-Layer"><span class="tocnumber">2.2</span> <span class="toctext">The New IO-Layer</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#The_Shared_Memory_Table"><span class="tocnumber">2.2.1</span> <span class="toctext">The Shared Memory Table</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Keeping_State"><span class="tocnumber">2.2.2</span> <span class="toctext">Keeping State</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#What_is_no_longer_supported"><span class="tocnumber">2.3</span> <span class="toctext">What is no longer supported</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#ThreadPool_and_asynchronous_socket_operations"><span class="tocnumber">3</span> <span class="toctext">ThreadPool and asynchronous socket operations</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Background"> Background </span></h1>
+<p>During the last few months (today is 2005-04-15) Mono has been used more and more for long-running applications on the desktop and on the server, and the applications have also grown in size.  We have isolated a few problem areas in Mono that were preventing Mono from scaling, due to memory issues, or introduce instabilities, or added too much pressure to the existing framework.
+</p><p>We have addressed many of these issues:
+</p>
+<h1> <span class="mw-headline" id="io-layer"> io-layer </span></h1>
+<p>Mono's cross platform library for isolating operating system differences for I/O, synchronization primitives and networking operations is called the "io-layer", and it serves a similar purpose to Mozilla's NSPR, or Apache's APR runtimes: they help us isolate the cross-platform details from our runtime.
+</p><p>This layer does more than IO, it provides:
+</p>
+<ul><li> Thread management.
+</li><li> File system information (directories, files)
+</li><li> I/O for files and sockets.
+</li><li> Network functionality.
+</li><li> Process management.
+</li><li> Synchronization primitives: in-process and cross-process.
+</li><li> Handle foundation (every handle used above is managed with this).
+</li></ul>
+<p>The layer is fairly small and has less than one hundred public API entry points.  These APIs mimic the Win32 primitives which allows Mono on Windows to use the Win32 calls, while using the emulation layer on non-Windows platforms. 
+</p>
+<h2> <span class="mw-headline" id="The_Deceased_Daemon"> The Deceased Daemon </span></h2>
+<p><b>This applies to old versions of Mono (pre 1.1.13)</b>
+</p><p>To emulate some of the behavior surfaced by the .NET APIs, Mono used to run a daemon process which would allow multiple Mono processes to get the same behavior as the Windows equivalents, for example it was possible for any process to Wait for their child to die.
+</p><p>The daemon was used to keep track of the information that was shared across processes, but this lead to a few problems: all the information that had to be centralized required a roundtrip to notify the daemon which degraded performance as many operations required a round trip.
+</p>
+<h2> <span class="mw-headline" id="The_New_IO-Layer"> The New IO-Layer </span></h2>
+<p>We have redesigned our IO-Layer to remove the daemon and some of the features associated with it.  This was done for the sake of stability, reliability and performance. 
+</p><p>This new implementation is a daemon-less implementation which uses a shared memory table (stored in the file ~/.wapi) to keep track of information that must be shared across processes.
+</p><p>The good news is that barely anyone ever used those features;  The bad news is that this is something else to keep in mind while porting an application from Windows to Linux.
+</p><p>With the new io-layer existing applications like ASP.NET went from 75 requests per second to 260 requests per second.
+</p>
+<h3> <span class="mw-headline" id="The_Shared_Memory_Table"> The Shared Memory Table </span></h3>
+<p>The shared memory table is used today to store the following information:
+</p>
+<ul><li> process
+</li><li> named mutex
+</li><li> named event
+</li><li> named semaphore
+</li><li> threads
+</li><li> file-share information
+</li></ul>
+<p>The biggest chunk of information is the file-share table (this is used for permission checking and file sharing modes).
+</p><p>The combinations of file share modes are in mono/docs/file-share-modes
+</p>
+<h3> <span class="mw-headline" id="Keeping_State"> Keeping State </span></h3>
+<p>The cross-process shared handles are kept now in a shared memory segment that all Mono processes share instead of being kept in a daemon.
+</p><p>This means that the various Mono processes must cooperate to keep the table up-to-date and cope with the potential of processes that might fail abruptly (unmanaged debugging, crashes that do not clean up, runtime assertions).
+</p><p>To do this, the io-layer keeps a timestap on each slot that gets refreshed by a Mono thread every N seconds.   If the handle has not been refreshed in the proper window of usage, the handle slot is considered unused by other processes.
+</p>
+<h2> <span class="mw-headline" id="What_is_no_longer_supported"> What is no longer supported </span></h2>
+<p>The following features are no longer supported:
+</p>
+<ul><li> Waiting for a process to exit from an arbitrary process.  This is now limited to Parent/Child relations.
+</li></ul>
+<h1> <span class="mw-headline" id="ThreadPool_and_asynchronous_socket_operations"> ThreadPool and asynchronous socket operations </span></h1>
+<p>An ongoing problem with Mono were the ThreadPool-related deadlocks (see our <a href="{{site.baseurl}}/Article:ThreadPool_Deadlocks" title="Article:ThreadPool Deadlocks">article describing the problem</a>).  Basically the ThreadPool is a resource that is easy to starve, and which can cause deadlocks in your applications. Mono extensive use of the ThreadPool for internal operations made this problem more notorious, ASP.NET and HttpWebRequest being hungry consumers.
+</p><p>We have redesigned the internals in the class libraries and the runtime to address this problem not using the user ThreadPool internally.
+Right now, the only noticeable consumer in the class libraries is the ASP.NET runtime.
+</p><p>As a result of the changes we now have:
+</p>
+<ul><li> An independent thread pool for asynchronous IO operations.
+</li><li> One thread waits for events on all the sockets used in a program.
+<ul><li> This will use select/poll by default but will use linux <b>epoll</b>, available at least in all 2.6 kernels, if present. epoll performance is way better than the one we got with just select/poll and scales.
+</li><li> The current infrastructure for socket asynchronous IO allows for better integration with native event polling APIs. <b>kqueue</b> support is under testing now.
+</li></ul>
+</li></ul>
+<p>If we're just receiving/sending, the actual read/write happens in a thread from the dedicated IO threadpool as soon as the socket is ready.
+</p>

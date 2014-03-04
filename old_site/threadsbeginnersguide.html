@@ -1,0 +1,487 @@
+---
+layout: obsolete
+title: "ThreadsBeginnersGuide"
+permalink: /old_site/ThreadsBeginnersGuide/
+---
+
+<h1>ThreadsBeginnersGuide</h1>
+
+<p>This guide shall give beginners in asynchronous programming an overview of when and how to use Threads. This guide contains only generic help which is independent from the GUI and other components being used and should work fine most of the time.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Big_Picture"><span class="tocnumber">1</span> <span class="toctext">The Big Picture</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Why_Threading.3F"><span class="tocnumber">1.1</span> <span class="toctext">Why Threading?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#When_not_to_use_Threading.3F"><span class="tocnumber">1.2</span> <span class="toctext">When not to use Threading?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Threads_in_Action"><span class="tocnumber">2</span> <span class="toctext">Threads in Action</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Synchronizing_Threads"><span class="tocnumber">2.1</span> <span class="toctext">Synchronizing Threads</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Common_Mistakes"><span class="tocnumber">3</span> <span class="toctext">Common Mistakes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Data_Races"><span class="tocnumber">3.1</span> <span class="toctext">Data Races</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Deadlocks"><span class="tocnumber">3.2</span> <span class="toctext">Deadlocks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#A_little_more_advanced_Threading"><span class="tocnumber">4</span> <span class="toctext">A little more advanced Threading</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Passing_Parameters_to_Threads"><span class="tocnumber">4.1</span> <span class="toctext">Passing Parameters to Threads</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#.NET_2.0"><span class="tocnumber">4.1.1</span> <span class="toctext">.NET 2.0</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#.NET_1.1"><span class="tocnumber">4.1.2</span> <span class="toctext">.NET 1.1</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Accessing_the_Main-Thread_with_Callback"><span class="tocnumber">4.2</span> <span class="toctext">Accessing the Main-Thread with Callback</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Resources_and_further_reading"><span class="tocnumber">5</span> <span class="toctext">Resources and further reading</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="The_Big_Picture"> The Big Picture </span></h1>
+<p>As you probably know, when you start a program you're a starting a <a href="http://en.wikipedia.org/wiki/Process_%28computing%29" class="external text" rel="nofollow">process</a>. By default, every application has one thread, which is called <b>main</b> or <b>primary</b> thread. In the .NET you have to specify the entry point of your application where your main-thread begins the excecution of your programm. By convention the main-thread can only start in class having a public static void method called <tt>Main</tt>. Everything within that <tt>Main</tt> method is being excecuted on your main-thread. Once if the method is completely excecuted the main-thread finishes and your application dies.
+</p><p>The following example shows a very small application. When you run that sample whatch your running processes, because a new Mono process will appear writing some lines on your console. After you press enter that main-thread will be completely excecuted and that process will die and disappear again.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MainClass <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello main-thread&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Press Enter and my process dies.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadLine</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;After that line I'm dead&#160;:-(&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<div class="floatright"><a href="{{site.baseurl}}/images/old_site/d/d9/Process-AppDomain-Thread.png" class="image"><img alt="Process-AppDomain-Thread.png" src="{{site.baseurl}}/images/old_site/d/d9/Process-AppDomain-Thread.png" width="420" height="300" /></a></div> That's it in general, however the .NET Framework does not simply create a thread  within the mono-process. It creates the thread within a <b>[http:/monodoc/T:System.AppDomain Application Domain]</b> as the picture shows. Within this article the first Application Domain that has automatically been created by the runtime is called the "main-domain". A Application Domain (or short: AppDomain) is an isolated code excecution environment within your main process running your application. It can be regarded as a "process within a process" or "lightweight process" since the code and memory occupied by each AppDomain can not be directly accessed by other Application Domains.
+<p>If a new Application Domain is being created it contains one new thread by default but applications can consist of multiple Application Domains each of them can have multiple threads. While threads only control the excecution of code Application Domain can do a little more. [http:/monodoc/T:System.Assembly Assemblys] can be loaded into a Application Domain during runtime and even Culture and Security settings can be set for each Domain. If an exception is being thrown and not caught within one of the threads, the whole Domain owning the thread dies. In cases where the application is being run within only one Domain the application dies. On the other hand processes containing multiple Domains will continue to live as long as the main-domain is still alive.
+</p>
+<h2> <span class="mw-headline" id="Why_Threading.3F"> Why Threading? </span></h2>
+<p>The use of several threads in an application domains has several advantages over applications that only use one thread and application domain. First of all, threading keeps applications responsive. Think of an GUI application which does a lot of computing once you open a certain window or click a button. If this computing is done on the main-thread the whole thread would freeze until that long running operation has finished. You wouldn't even have the chance to move the window or do some other work within your program while waiting for the results. By separating the application into threads, one thread could work on the UI keep it responsible, and allow to do other stuff on the UI while the second thread does all his computing in the background. Once the background-thread is finished it informs the UI-thread about the results which are then being displayed to the user.
+</p><p>To make this concept more bulletproof against uncaught exceptions, multiple AppDomains could be used. In applications where the functionality is being extended by adding modules to it this concept could prevent that an unstable module would crash the whole program, only the crashed domain would be unloaded.
+</p>
+<h2> <span class="mw-headline" id="When_not_to_use_Threading.3F"> When not to use Threading? </span></h2>
+<p>Rule of thumb: <b>Whenever possible try to avoid using multiple application domains and threads.</b> Threading means a lot more work for the development and debugging/testing of applications since developers have to become extremely familiar with concurring resource access and locking mechanisms. In addition it makes reproducing bugs very hard and often unpredictable. In fact some operations can even be slowed if processed in several threads since allocating rssources between multiple threads and domains costs processor power as well.
+</p>
+<h1> <span class="mw-headline" id="Threads_in_Action"> Threads in Action </span></h1>
+<p>This small Application shows how an integer var is being incremented using two Threads.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> FirstUnsyncThreads <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			FirstUnsyncThreads myThreads <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> FirstUnsyncThreads <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> FirstUnsyncThreads <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// Creating our two threads. The ThreadStart delegate is points to</span>
+			<span style="color: #008080; font-style: italic;">// the method being run in a new thread.</span>
+			Thread firstRunner <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">firstRun</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Thread secondRunner <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">secondRun</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">// Starting our two threads. Thread.Sleep(10) gives the first Thread</span>
+			<span style="color: #008080; font-style: italic;">// 10 miliseconds more time.</span>
+			firstRunner<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			secondRunner<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// This method is being excecuted on the first thread.</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> firstRun <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+				Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;First runner incrementing i from &quot;</span> <span style="color: #008000;">+</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">+</span>
+				                  <span style="color: #666666;">&quot; to &quot;</span> <span style="color: #008000;">+</span> <span style="color: #008000;">++</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #008080; font-style: italic;">// This avoids that the first runner does all the work before</span>
+				<span style="color: #008080; font-style: italic;">// the second one has even started. (Happens on high performance</span>
+				<span style="color: #008080; font-style: italic;">// machines sometimes.)</span>
+				Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">100</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// This method is being excecuted on the second thread.</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> secondRun <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+				Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Second runner incrementing i from &quot;</span> <span style="color: #008000;">+</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">+</span>
+				                  <span style="color: #666666;">&quot; to &quot;</span> <span style="color: #008000;">+</span> <span style="color: #008000;">++</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">100</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>It's output may be something like this:
+</p>
+<pre>
+First runner incrementing i from 0 to 1
+Second runner incrementing i from 1 to 2
+Second runner incrementing i from 3 to 4
+First runner incrementing i from 2 to 3
+Second runner incrementing i from 5 to 6
+First runner incrementing i from 4 to 5
+First runner incrementing i from 6 to 7
+Second runner incrementing i from 7 to 8
+Second runner incrementing i from 9 to 10
+First runner incrementing i from 8 to 9
+</pre>
+<p>It's very obvious that this is a mess. What should have happened is that each runner increments <tt>i</tt> by 1 and then sleeps for one round. But that is not going to happen since there is no guarantee that a thread will sleep the exact same time. Instead the runner and incrementing gets mixed up because the two threads access <tt>i</tt> at the same time. This behavior is also being called <b><a href="#Data_Races">Data Races</a></b>.
+</p>
+<h2> <span class="mw-headline" id="Synchronizing_Threads"> Synchronizing Threads </span></h2>
+<p>To avoid <b>Data Races</b> access to <tt>i</tt> must be limited to only one thread at a time. This can be done by using the <tt><a href="http://msdn2.microsoft.com/en-us/library/c5kehkcz.aspx" class="external text" rel="nofollow">lock</a></tt> statement. <tt>lock</tt> takes an object as an token or monitor, that monitor can only be used by one <tt>lock</tt> statement at a time. If a thread reaches a <tt>lock</tt> statement it tries to gain access to the monitor and execution of that thread will be stopped at the statement until the monitor could be acquired. If the monitor could be acquired successfully program execution will continue and at the end of the <tt>lock</tt> block the monitor will be released again.
+</p><p>The monitor can be any object but it is recommended to create a new [http:/monodoc/T:System.Object Object] for each code that is being protected by an <tt>lock</tt> statement and accesses the same resources. It is possible to use multiple locks in one instance of a class (for example a multi-threaded Que can have one lock for the input and one for the output) and to use static monitors for <tt>lock</tt> statements.
+</p><p>The next example shows the first program that has been extended to use <tt>lock</tt> statements to avoid <b><a href="#Data_Races">Data Races</a></b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> SecondSyncThreads <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// This is the lock for i, it must be an instance of any class.</span>
+		<span style="color: #008080; font-style: italic;">// By convinience a new object is being used.</span>
+		<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">object</span> lock_i <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			SecondSyncThreads myThreads <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SecondSyncThreads <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> SecondSyncThreads <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// Creating our two threads. The ThreadStart delegate is points to</span>
+			<span style="color: #008080; font-style: italic;">// the method being run in a new thread.</span>
+			Thread firstRunner <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">firstRun</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Thread secondRunner <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">secondRun</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">// Starting our two threads. Thread.Sleep(10) gives the first Thread</span>
+			<span style="color: #008080; font-style: italic;">// 10 miliseconds more time.</span>
+			firstRunner<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			secondRunner<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// This method is being excecuted on the first thread.</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> firstRun <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">do</span> <span style="color: #008000;">&#123;</span>
+				<span style="color: #008080; font-style: italic;">// Here we are getting the lock</span>
+				<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_i</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+					<span style="color: #0600FF; font-weight: bold;">if</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">&gt;=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span>
+						<span style="color: #0600FF; font-weight: bold;">return</span><span style="color: #008000;">;</span>
+&#160;
+					Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;First runner incrementing i from &quot;</span> <span style="color: #008000;">+</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">+</span>
+					                  <span style="color: #666666;">&quot; to &quot;</span> <span style="color: #008000;">+</span> <span style="color: #008000;">++</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+					<span style="color: #008080; font-style: italic;">// And here is it being released.</span>
+				<span style="color: #008000;">&#125;</span>
+				<span style="color: #008080; font-style: italic;">// This avoids that the first runner does all the work before</span>
+				<span style="color: #008080; font-style: italic;">// the second one has even started. (Happens on high performance</span>
+				<span style="color: #008080; font-style: italic;">// machines sometimes.)</span>
+				Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">100</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// This method is being excecuted on the second thread.</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> secondRun <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">do</span> <span style="color: #008000;">&#123;</span>
+				<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_i</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+					<span style="color: #0600FF; font-weight: bold;">if</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">&gt;=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span>
+						<span style="color: #0600FF; font-weight: bold;">return</span><span style="color: #008000;">;</span>
+&#160;
+					Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Second runner incrementing i from &quot;</span> <span style="color: #008000;">+</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span> <span style="color: #008000;">+</span>
+					                  <span style="color: #666666;">&quot; to &quot;</span> <span style="color: #008000;">+</span> <span style="color: #008000;">++</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">i</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #008000;">&#125;</span>
+				Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">100</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">while</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>This will result in the following output:
+</p>
+<pre>
+First runner incrementing i from 0 to 1
+Second runner incrementing i from 1 to 2
+First runner incrementing i from 2 to 3
+Second runner incrementing i from 3 to 4
+First runner incrementing i from 4 to 5
+Second runner incrementing i from 5 to 6
+First runner incrementing i from 6 to 7
+Second runner incrementing i from 7 to 8
+First runner incrementing i from 8 to 9
+Second runner incrementing i from 9 to 10
+</pre>
+<p>However this could still be improved by using a thread safe property like the following:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> MyType Prop <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_prop</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">prop</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Common_Mistakes"> Common Mistakes </span></h1>
+<p>Here is a small list of the most common mistakes when writing threaded applications and how to avoid them.
+</p>
+<h2> <span class="mw-headline" id="Data_Races"> Data Races </span></h2>
+<p>If multiple threads compete to access the same resource (e.g. a variable) that's called a <i>data race</i>. To avoid data races, threads must be <a href="#Synchronizing_Threads">synchronized</a>. The <a href="#Threads_in_Action">"Threads in Action"</a> part in this article contains more information on that topic.
+</p>
+<h2> <span class="mw-headline" id="Deadlocks"> Deadlocks </span></h2>
+<p>A deadlock is what is happening when thread 1 holds lock 1 and tries to get lock 2, while thread 2 holds lock 2 and tries to get lock 1. The following code illustrates this problem.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Deadlock <span style="color: #008000;">&#123;</span>
+		<span style="color: #6666cc; font-weight: bold;">object</span> lock_1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #6666cc; font-weight: bold;">object</span> lock_2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Deadlock myDeadlock <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Deadlock <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> Deadlock <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Thread t1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">method1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Thread t2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">method2</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			t1<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008080; font-style: italic;">// Again, giving the thread t1 some time to get the lock.</span>
+			Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">100</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			t2<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> method1 <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 1 trying to get lock_1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+				Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 1 got lock_1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #008080; font-style: italic;">// Now sleep to ensure that t2 gets lock_2 before t1 finishes.</span>
+				Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span><span style="color: #008000;">&#40;</span><span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 1 trying to get lock_2&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_2</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+					Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 1 got lock_2&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #008000;">&#125;</span>
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> method2 <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 2 trying to get lock_2&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_2</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 2 got lock_2&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 2 trying to get lock_1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #0600FF; font-weight: bold;">lock</span><span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">lock_1</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+					Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Thread 2 got lock_1&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #008000;">&#125;</span>
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The console will display this and the program will hang:
+</p>
+<pre>
+Thread 1 trying to get lock_1
+Thread 1 got lock_1
+Thread 2 trying to get lock_2
+Thread 2 got lock_2
+Thread 2 trying to get lock_1
+Thread 1 trying to get lock_2
+</pre>
+<p>Unfortunately there is no role solution for avoiding deadlocks. However keeping track what locks are being used where will help finding the reason for deadlocks.
+</p>
+<h1> <span class="mw-headline" id="A_little_more_advanced_Threading"> A little more advanced Threading </span></h1>
+<p>As this article has been written with complete beginners in mind it does not cover any extremely complicated material however there are some little more advanced techniques which beginners should be aware of.
+</p>
+<h2> <span class="mw-headline" id="Passing_Parameters_to_Threads"> Passing Parameters to Threads </span></h2>
+<p>In cases where a new thread is used to accomplish some background work it is useful to pass information to the method being executed on a new thread. Although this is possible in .Net it requires a different approach on how to achieve this in .Net 1.1 and 2.0.
+</p><p>As Mono now has complete support for 2.0, it is best to use this method.
+</p>
+<h3> <span class="mw-headline" id=".NET_2.0"> .NET 2.0 </span></h3>
+<p>With new Thread constructors and language features, passing parameters to a thread has become very simple:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> ThreadCaller <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> 
+        <span style="color: #008000;">&#123;</span>
+		ThreadCaller myCaller <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadCaller<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> ThreadCaller <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> 
+        <span style="color: #008000;">&#123;</span>
+		Thread myThread <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> myValue<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+		        Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1000</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Format</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The parameter have&quot;</span> <span style="color: #008000;">+</span>
+			                                <span style="color: #666666;">&quot; a {0} in it's value&quot;</span>,
+			                                myValue<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	        <span style="color: #008000;">&#125;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Passing the start-argument to the thread (10 in this case)</span>
+		myThread<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadKey</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>If you prefer to use a separate method, and not use anonymous methods, you would  be writing something like this.   The Start method now takes an object parameters that is passed:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #6666cc; font-weight: bold;">class</span> ThreadCaller <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			ThreadCaller myCaller <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadCaller<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> ThreadCaller <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Thread myThread <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> 
+			                             ParameterizedThreadStart <span style="color: #008000;">&#40;</span>
+			                             	<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">SecondThread</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">// Passing the start-argument to the thread (10 in this case)</span>
+			myThread<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">10</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadKey</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SecondThread <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> myValue<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1000</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Format</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The parameter have&quot;</span> <span style="color: #008000;">+</span>
+			                                <span style="color: #666666;">&quot; a {0} in it's value&quot;</span>,
+			                                myValue<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The console will display this:
+</p>
+<pre>
+The parameter have 10 in it's value
+</pre>
+<h3> <span class="mw-headline" id=".NET_1.1"> .NET 1.1 </span></h3>
+<p>The ThreadStart delegate doesn't take any parameters, so the parameters must be stored somewhere else. A good way to do this, is to create a new object which should be executed on a different thread, and store the parameters in some of it properties. 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #6666cc; font-weight: bold;">class</span> ThreadCaller <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			ThreadCaller myCaller <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadCaller<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> ThreadCaller <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// Constructor gets the first parameter</span>
+			SecondThreadObject myThreadObject <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> 
+					SecondThreadObject <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Test Param&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">// Setting another property of the new Thread-Object</span>
+			myThreadObject<span style="color: #008000;">.</span><span style="color: #0000FF;">Parameter2</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span> 
+			Thread myThread <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span>
+						myThreadObject<span style="color: #008000;">.</span><span style="color: #0000FF;">MyAsyncMethod</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			myThread<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #6666cc; font-weight: bold;">class</span> SecondThreadObject <span style="color: #008000;">&#123;</span>
+		<span style="color: #6666cc; font-weight: bold;">string</span> my_param1<span style="color: #008000;">;</span>
+		<span style="color: #6666cc; font-weight: bold;">int</span> my_param2<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> SecondThreadObject <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> parameter1<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">my_param1</span> <span style="color: #008000;">=</span> parameter1<span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> Parameter2 <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">set</span> <span style="color: #008000;">&#123;</span> 
+				<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">my_param2</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">;</span> 
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MyAsyncMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The value passed in &quot;</span> <span style="color: #008000;">+</span>
+			                   <span style="color: #666666;">&quot;the Constructor is '{0}'&quot;</span>, 
+			                   <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">my_param1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The value passed in &quot;</span> <span style="color: #008000;">+</span>
+			                   <span style="color: #666666;">&quot;the Property is '{0}'&quot;</span>, 
+			                   <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">my_param2</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> x <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> x <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">50</span><span style="color: #008000;">;</span> x<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span>
+				Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>x<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadKey</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The console will display this:
+</p>
+<pre>
+The value passed in the Constructor is 'Test Param'
+The value passed in the Property is '10'
+0
+1
+.
+.
+.
+49
+</pre>
+<h2> <span class="mw-headline" id="Accessing_the_Main-Thread_with_Callback"> Accessing the Main-Thread with Callback </span></h2>
+<p>In some applications you need to access to the caller thread (the main thread). In this case you can use a callback delegate to access to it, like this: 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> ThreadGuideSamples <span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #6666cc; font-weight: bold;">void</span> MyCallBack <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> Response<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #6666cc; font-weight: bold;">class</span> ThreadCaller <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			ThreadCaller myCaller <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadCaller <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> ThreadCaller <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// Passing an MyCallBack-Delegate to the object executed on the </span>
+			<span style="color: #008080; font-style: italic;">// different thread.</span>
+			SecondThreadObject myThreadObject <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> 
+					SecondThreadObject <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MyCallBack<span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">OnResponse</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+			<span style="color: #008080; font-style: italic;">// Starting the thread as usual</span>
+			Thread myThread <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> 
+				ThreadStart <span style="color: #008000;">&#40;</span>myThreadObject<span style="color: #008000;">.</span><span style="color: #0000FF;">MyAsyncMethod</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			myThread<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Target-Destination for messages from our thread</span>
+		<span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #6666cc; font-weight: bold;">void</span> OnResponse <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> response<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Value returned to &quot;</span> <span style="color: #008000;">+</span>
+			                  <span style="color: #666666;">&quot;main thread {0}&quot;</span>, response<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #6666cc; font-weight: bold;">class</span> SecondThreadObject <span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">protected</span> MyCallBack On_Response <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> SecondThreadObject <span style="color: #008000;">&#40;</span>MyCallBack callback<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">On_Response</span> <span style="color: #008000;">=</span> callback<span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MyAsyncMethod <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> i <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">50</span><span style="color: #008000;">;</span> i<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span>
+				<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">On_Response</span> <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span>
+					<span style="color: #008080; font-style: italic;">// Invoke the call back delegate</span>
+					<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">On_Response</span> <span style="color: #008000;">&#40;</span>i<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadKey</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The console will display this:
+</p>
+<pre>
+Value returned to main thread 0
+Value returned to main thread 1
+Value returned to main thread .
+Value returned to main thread .
+Value returned to main thread 48
+Value returned to main thread 49
+</pre>
+<h1> <span class="mw-headline" id="Resources_and_further_reading"> Resources and further reading </span></h1>
+<ol><li> Multi-threading in .NET: Introduction and suggestions (<a href="http://www.yoda.arachsys.com/csharp/threads/" class="external free" rel="nofollow">http://www.yoda.arachsys.com/csharp/threads/</a>)
+</li><li> Microsoft MSDN Library (<a href="http://msdn2.microsoft.com/en-us/library/default.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/default.aspx</a>)
+</li><li> Threading in C# by Joseph Albahari (<a href="http://www.albahari.com/threading/index.html" class="external free" rel="nofollow">http://www.albahari.com/threading/index.html</a>)
+</li></ol>
+

@@ -1,0 +1,35 @@
+---
+layout: obsolete
+title: "NewClassesForEcma"
+permalink: /old_site/NewClassesForEcma/
+---
+
+<h1>NewClassesForEcma</h1>
+
+<p>New classes that we would like to see in ECMA:
+</p><p><br />
+</p>
+<ul><li> System.Array:
+<ul><li> Any Array.Get/Set method signatures that we might need to support 64-bit arrays (Mono feature)
+</li></ul>
+</li></ul>
+<ul><li> System.Reflection.Emit:
+<ul><li> All of them.
+</li></ul>
+</li></ul>
+<ul><li> System.Data interfaces
+<ul><li> All interfaces
+</li></ul>
+</li><li> System.Data.Common typed
+<ul><li> The .NET 2.0 "replacement" for the above interfaces
+</li></ul>
+</li></ul>
+<ul><li> System.Linq
+<ul><li> Everything LINQ
+</li></ul>
+</li></ul>
+<h1> <span class="mw-headline" id="Changes_that_we_would_like_to_see:"> Changes that we would like to see: </span></h1>
+<ul><li> Charset Encoding (UTF8) for P/Invoke
+</li><li> Add: System.Runtime.InteropServices/UnmanagedType.Long define that matches sizeof C's (long). This would help with pinvoking API's which use long arguments or struct members, since long is 32 bit on win32/win64, but 64 bit on unix.
+</li></ul>
+

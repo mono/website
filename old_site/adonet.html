@@ -1,0 +1,107 @@
+---
+layout: obsolete
+title: "ADO.NET"
+permalink: /old_site/ADO.NET/
+---
+
+<h1>ADO.NET</h1>
+
+<p>See our <a href="{{site.baseurl}}/Database_Access" title="Database Access">Database_Access</a> page for more details.
+</p><p>Status and tests for ADO.NET 2.0 are available in our <a href="{{site.baseurl}}/ADOTests" title="ADOTests">ADOTests</a> page.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tools"><span class="tocnumber">1</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Generic_Database_access_in_Mono_ADO.NET"><span class="tocnumber">2</span> <span class="toctext">Generic Database access in Mono ADO.NET</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Database_Access_from_ASP.NET"><span class="tocnumber">3</span> <span class="toctext">Database Access from ASP.NET</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Testing"><span class="tocnumber">4</span> <span class="toctext">Testing</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Tools"> Tools </span></h2>
+<p>Some tools that can be used for ADO.NET and other technologies (ASP.NET, XML, etc). 
+</p>
+<ul><li> sqlsharp.exe
+<ul><li> SQL# is a command line query tool included with Mono to enter and execute SQL statements
+</li></ul>
+</li></ul>
+<ul><li> xsd.exe
+<ul><li> XML Schema Definition tool
+</li><li> XML to XSD - used to generate an XML schema from an XML file
+</li><li> XSD to DataSet - used to generate DataSet classes from an XSD schema file. The DataSet classes created can then be used with XML data
+</li><li> XSD to Classes - used to generate classes from an XSD schema file. The classes created can be used with System.XML.Serialization.XMLSerializer to read and write XML code that follows the schema
+</li><li> Classes to XSD - used to generate an XML schema from types in a assembly file. The XML schema created by the tool defines the XML format used by System.XML.Serialization.XMLSerializer
+</li></ul>
+</li></ul>
+<h2> <span class="mw-headline" id="Generic_Database_access_in_Mono_ADO.NET"> Generic Database access in Mono ADO.NET </span></h2>
+<p>An ADO.NET <a href="{{site.baseurl}}/Provider_Factory" title="Provider Factory">Provider Factory</a>
+was created by Brian Ritchie. The
+Provider Factory is a way to dynamically create connections, commands, parameters, and data adapters based on configuration information.  This implmentation is based on the interfaces exposed in ADO.NET provider classes.
+</p><p><a href="{{site.baseurl}}/BaseClass_Provider_Factory" title="BaseClass Provider Factory">Another Provider Factory</a> implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
+</p>
+<ul><li> System.Data.SqlClient
+</li><li> System.Data.Odbc
+</li></ul>
+<h2> <span class="mw-headline" id="Database_Access_from_ASP.NET"> Database Access from ASP.NET </span></h2>
+<ul><li> Take a look at xsp in cvs and look at the examples in test: dbpage1.aspx and dbpage2.aspx:
+</li></ul>
+<ul><li> Notice that the namespace System.Data is imported via <b>import</b>
+</li></ul>
+<ul><li> A NameValueCollection is gotten using ConfigurationSettings.AppSetings. These settings are gotten from the file server.exe.config which is a XML file. The XML file has a section appSettings. In the appSettings section, you have keys for DBProviderAssembly, DBConnectionType, and DBConnectionString. 
+</li></ul>
+<ul><li> <b>DBProviderAssembly</b> is the assembly of the ADO.NET provider. For example: "Npgsql"
+</li></ul>
+<ul><li> <b>DBConnectionType</b> is the System.Type of the class that implements System.Data.IDbConnection that is found in the DBProviderAssembly. For example: "Npgsql.NpgsqlConnection"
+</li></ul>
+<ul><li> <b>DBConnectionString</b> is the ConnectionString to set to the IDbConnection object to use in opening a connection to a data source. For Example: "server=127.0.0.1;user id=monotest;password=monotest; database=monotest"
+</li></ul>
+<ul><li> The function GetConnectionData() gets the database provider assembly, connection type, and connection string parameters if they exist; otherwise, it uses default values. This is done during the loading of the web page.
+</li></ul>
+<ul><li> With the connection parameters, the assembly is loaded, the connection type is verified that it implements IDbConnection and an instance of the class can be created, creates a instance of the class, sets the connection string, and opens the connection.
+</li></ul>
+<h2> <span class="mw-headline" id="Testing"> Testing </span></h2>
+<ul><li> Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests.  The following table shows the stand alone test files for specific providers. Refer <a href="{{site.baseurl}}/Writing_Connected_Mode_Testcases" title="Writing Connected Mode Testcases">Writing Connected Mode Testcases</a> also for testing specific Data Providers. 
+</li></ul>
+<p>&lt;/br&gt;
+</p>
+					<table border="1">	
+						<tr>
+							<td><b>Name</b></td>
+							<td><b>Assembly /&lt;/br&gt; Namespace</b></td>
+							<td><b>Test</b></td>	
+						</tr>		
+						
+						<tr>
+							<td>Microsoft&lt;/br&gt; SQL&lt;/br&gt; Server&lt;/br&gt;</td>
+							<td>System.Data /&lt;/br&gt; System.Data.SqlClient</td>
+							<td>SqlTest.cs at&lt;/br&gt; System.Data/Test</td>
+						</tr>
+			
+						<tr>
+							<td>PostgreSQL&lt;/br&gt; (Npgsql)</td>
+							<td>Npgsql /&lt;/br&gt; Npgsql</td>
+							<td>*.cs at&lt;/br&gt; Npgsql/Test</td>
+						</tr>
+			
+						<tr>
+							<td>Oracle&lt;/br&gt; (Mono)</td>
+							<td>System.Data.OracleClient /&lt;/br&gt; System.Data.OracleClient</td>
+							<td>TestOracleClient.cs at&lt;/br&gt; System.Data.OracleClient/Test</td>
+						</tr>
+			
+						<tr>
+							<td>ODBC&lt;/br&gt; (Mono)</td>
+							<td>System.Data.Odbc /&lt;/br&gt; System.Data</td>
+							<td>OdbcTest.cs (to connect to MS SQL Server)at&lt;/br&gt; System.Data/Test</td>
+						</tr>
+					</table>
+<ul><li> <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">Testing non-connection classes</a> are done via mono's modified version of NUnit.
+</li></ul>
+<ul><li> To run all the NUnit tests for Mono, you need the mcs source. cd to the root of the mcs source. To run it:
+</li></ul>
+<ul><li> make test
+</li></ul>
+<ul><li> If you just want to run the NUnit tests for System.Data, you would cd into the mcs source at class/System.Data/Test and run it:
+</li></ul>
+<ul><li> make test
+</li></ul>
+

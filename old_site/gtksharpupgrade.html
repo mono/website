@@ -1,0 +1,36 @@
+---
+layout: obsolete
+title: "GtkSharpUpgrade"
+permalink: /old_site/GtkSharpUpgrade/
+---
+
+<h1>GtkSharpUpgrade</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Upgrading_to_the_Latest_Gtk.23_Version"><span class="tocnumber">1</span> <span class="toctext">Upgrading to the Latest Gtk# Version</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Upgrading_from_1.0_to_2.4"><span class="tocnumber">1.1</span> <span class="toctext">Upgrading from 1.0 to 2.4</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#How_do_I_update_my_1.0_application_to_compile_against_2.x.3F"><span class="tocnumber">1.1.1</span> <span class="toctext">How do I update my 1.0 application to compile against 2.x?</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#How_do_I_use_the_newest_GAPI_parser.2Fgenerator.3F"><span class="tocnumber">1.1.2</span> <span class="toctext">How do I use the newest GAPI parser/generator?</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#What_happened_to_Gda.23_and_GnomeDb.23.3F"><span class="tocnumber">1.1.3</span> <span class="toctext">What happened to Gda# and GnomeDb#?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Upgrading_to_the_Latest_Gtk.23_Version"> Upgrading to the Latest Gtk# Version </span></h1>
+<p>This page is a repository of answers to typical upgrading related questions between major Gtk# releases.
+</p>
+<h2> <span class="mw-headline" id="Upgrading_from_1.0_to_2.4"> Upgrading from 1.0 to 2.4 </span></h2>
+<h3> <span class="mw-headline" id="How_do_I_update_my_1.0_application_to_compile_against_2.x.3F"> How do I update my 1.0 application to compile against 2.x? </span></h3>
+<p>Most applications use pkg-config to detect Gtk# and obtain the reference arguments for their compilations.  If you are using the PKG_CONFIG_CHECK macro during configure or the -pkg: switch on mcs, you will need to make them look for gtk-sharp-2.0.pc instead of gtk-sharp.pc (e.g. -pkg:gtk-sharp-2.0).
+</p>
+<h3> <span class="mw-headline" id="How_do_I_use_the_newest_GAPI_parser.2Fgenerator.3F"> How do I use the newest GAPI parser/generator? </span></h3>
+<p>The 2.x versions of the parser/generator are named gapi2-parser and gapi2-codegen.  They are parallel installable with the 1.0 versions, so they had to be renamed.  You should strongly consider upgrading, as many parser/generator enhancements have been added which could not realistically be backported to the stable 1.0 releases.  Using GAPI 2.x will also effectively add a glib-sharp 2.x dependency though, so you can not use GAPI 2.x with the Gtk# 1.0 assemblies.  You will have to upgrade both.
+</p>
+<h3> <span class="mw-headline" id="What_happened_to_Gda.23_and_GnomeDb.23.3F"> What happened to Gda# and GnomeDb#? </span></h3>
+<p>We aren't aware of anyone who was actually using them, and it is not clear that they were even usable based on some fundamental broken-ness like Gda.Value. We have provided a patch to the gnomedb project to integrate the bindings directly into gda/gnomedb where they will hopefully receive much more attention than we were able to give them in Gtk# .
+</p>

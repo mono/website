@@ -1,0 +1,86 @@
+---
+layout: obsolete
+title: "Gtk:HelloWorld"
+permalink: /old_site/Gtk:HelloWorld/
+---
+
+<h1>Gtk:HelloWorld</h1>
+
+<p><br />
+Here is a basic Gtk# application, written in C#.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// helloworld.cs - Gtk# Tutorial example</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">GtkSharp</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> HelloWorld <span style="color: #008000;">&#123;</span>
+	<span style="color: #008080; font-style: italic;">// This is a callback function. The data arguments are ignored</span>
+	<span style="color: #008080; font-style: italic;">// in this example. More on callbacks below.</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> hello <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, EventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> delete_event <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// If you return FALSE in the &quot;delete_event&quot; signal handler,</span>
+		<span style="color: #008080; font-style: italic;">// GTK will emit the &quot;destroy&quot; signal. Returning TRUE means</span>
+		<span style="color: #008080; font-style: italic;">// you don't want the window to be destroyed.</span>
+		<span style="color: #008080; font-style: italic;">// This is useful for popping up 'are you sure you want to quit?'</span>
+		<span style="color: #008080; font-style: italic;">// type dialogs.</span>
+&#160;
+		    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;delete event occurred<span style="color: #008080; font-weight: bold;">\n</span>&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		    Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// This is called in all GTK applications. Arguments are parsed</span>
+		<span style="color: #008080; font-style: italic;">// from the command line and are returned to the application. */</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// create a new window</span>
+		Window window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;helloworld&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// When the window is given the &quot;delete_event&quot; signal (this is given</span>
+		<span style="color: #008080; font-style: italic;">// by the window manager, usually by the &quot;close&quot; option, or on the</span>
+		<span style="color: #008080; font-style: italic;">// titlebar), we ask it to call the delete_event () function</span>
+		<span style="color: #008080; font-style: italic;">// as defined above. The data passed to the callback</span>
+		<span style="color: #008080; font-style: italic;">// function is NULL and is ignored in the callback function.</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> DeleteEventHandler <span style="color: #008000;">&#40;</span>delete_event<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Sets the border width of the window.</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Creates a new button with the label &quot;Hello World&quot;.</span>
+		Button btn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// When the button receives the &quot;clicked&quot; signal, it will call the</span>
+		<span style="color: #008080; font-style: italic;">// function hello() passing it null as its argument.  The hello()</span>
+		<span style="color: #008080; font-style: italic;">// function is defined above.</span>
+		btn<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> EventHandler <span style="color: #008000;">&#40;</span>hello<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// This packs the button into the window (a gtk container).</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>btn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// The final step is to display this newly created </span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// All GTK applications must call the main loop: Application.Run</span>
+		<span style="color: #008080; font-style: italic;">// Events are processed and dispatched here.</span>
+&#160;
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>To compile with Mono, type 
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mcs hello.cs</pre>
+<p>This results in a file hello.exe, that you can execute with mono: 
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mono hello.exe</pre>
+

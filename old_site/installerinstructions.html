@@ -1,0 +1,91 @@
+---
+layout: obsolete
+title: "InstallerInstructions"
+permalink: /old_site/InstallerInstructions/
+---
+
+<h1>InstallerInstructions</h1>
+
+<p>First, ensure the integrity of your download.  Go to a terminal window and type:
+</p>
+<pre>md5sum mono-1.2.3.1_2-installer.bin
+</pre>
+<p>You should see the following output:
+</p>
+<pre>bdef093eedcf5eef0f09ba36d3522ba9  mono-1.2.3.1_2-installer.bin
+</pre>
+<p>If you don't get this exact output, download the installer file and try again.
+</p><p>Now launch the installer after ensuring the integrity:
+</p>
+<pre>chmod +x mono-1.2.3.1_2-installer.bin
+./mono-1.2.3.1_2-installer.bin
+</pre>
+<p>The Mono version included in the installer should work in all supported Linux versions, including Debian. The installer contains MonoDevelop, but it requires that you have gtk 2.4 or greater installed, as well as the Gnome libraries.
+</p><p>If the installer fails to run in the default GTK graphics mode, try starting it with: 
+</p>
+<pre>./mono-1.2.3.1_2-installer.bin --mode xwindow
+</pre>
+<p>or
+</p>
+<pre>./mono-1.2.3.1_2-installer.bin --mode text
+</pre>
+<p>If you find any issues with the installer itself (not Mono), please email me at daniel //at// bitrock //dot// com
+</p><p>Please CC wberrier //at// novell //dot// com as he will be maintaining the installer.
+</p>
+<h2> <span class="mw-headline" id="Mini_FAQ"> Mini FAQ </span></h2>
+<p><b>What is in the Mono installer?</b>
+</p><p>The Mono installer you can download here contains a binary distribution of Mono and a number of third-party library dependencies (for example, libgtkhtml). This all adds up to over 60Mb, but it allows the same runtime to run out-of-the-box in most Linux distributions.
+</p><p><b>What is the purpose of the installer?</b>
+</p><p>The installer provides an alternate way for installing Mono. It is particularly useful when you have trouble installing from RPMs or  compiling from source. It is also a good way for people coming from a Windows/.NET background to try Mono on Linux with minimal effort (so we can take them over to this side of the force&#160;;)
+</p><p><b>Does the installer interfere with other Mono installations&#160;?</b>
+</p><p>No, the Mono installer creates installations that are self-contained. You can even have multiple Mono installations, just run the installer multiple times and select different destination directories.
+</p><p><b>Does the installer register with the RPM database?</b>
+</p><p>Not currently, but it will be an option in the future
+</p><p><b>Why don't the MonoDoc and MonoDevelop Nautilus icons work?</b>
+</p><p>As long as you have the necessary libraries installed, this is no longer a problem in version 1.2.3.1.  If you're using an older version, you need to restart your desktop for the .bashrc/.profile settings to take effect.  See below about running Monodevelop if you're still having problems.
+</p><p><b>Why doesn't MonoDevelop run on NLD9?</b>
+</p><p>You probably have Firefox installed, but not Mozilla.  Install the Mozilla package and this should fix the problem.  This requirement will not be necessary with future versions of MonoDevelop.
+</p><p><b>The installer crashes/segfaults</b>
+</p><p>This seems to occur ramdomly on newer distributions (Kernel 2.6) when using GTK2-QT engine. This will be fixed in future releases. For now, please invoke the installer like this:
+</p>
+<pre>./mono-1.2.3.1_2-installer.bin --mode xwindow
+</pre>
+<p><b>Why doesn't the gacutil tool work in the 1.1.8.2-1 Linux installer?</b>
+</p><p>There is a mistype in the /installationdir/bin/gacutil file. You may receive error messages such as:
+</p>
+<pre>$ gacutil -l
+cannot open assembly /installationdir/lib/mono/1.0/gacutil.exe -gacdir /installationdir
+</pre>
+<p>Change the /installationdir/bin/gacutil file to read (note position of double quotes):
+</p>
+<pre>#!/bin/sh
+exec /installationdir/bin/mono "/installationdir/lib/mono/1.0/gacutil.exe"
+-gacdir /installationdir "$@"
+</pre>
+<p><b>I decided to not have the install modify my environment.  How do I modify it myself?</b>
+</p><p>If you're using 1.2.3.1 or later, you can add "source &lt;installdir&gt;/bin/setup.sh" to either ~/.bashrc or /etc/profile (replace &lt;installdir&gt; with your install location).  If you're using a previous version, add this to either of those files instead:
+</p>
+<pre>export PATH=&lt;installdir&gt;/bin:$PATH
+export PKG_CONFIG_PATH=&lt;installdir&gt;/lib/pkgconfig:$PKG_CONFIG_PATH
+export MANPATH=&lt;installdir&gt;/share/man:$MANPATH
+export LD_LIBRARY_PATH=&lt;installdir&gt;/lib:$LD_LIBRARY_PATH
+</pre>
+<p>This will alleviate DllNotFoundExceptions as well as put the installed programs in your path.
+</p><p><b>Why do I get System.DllNotFoundException when running MonoDevelop?</b>
+</p><p>MonoDevelop is included in the installer even though it won't work on all distros.  Possible reasons for failure:
+</p>
+<ul><li>  The gtk libraries on your distro are too old.  MonoDevelop (and gtk-sharp2) requires gtk+ 2.4 or later.  
+</li><li>  The natives gtk-sharp2 libraries have unresolved symbols.
+</li><li>  The environment necessary for runtime has not been loaded.
+</li></ul>
+<p>The solution: run a distro that has gtk+ 2.4 or above, make sure Gnome is installed, and make sure you load the settings from .bashrc which were created by the installer.  (They are also listed in the above faq question).  You can try to run "&lt;install dir&gt;/bin/.installer_post_libscan &lt;install dir&gt;" to see why libraries you are missing (of course, replace &lt;install dir&gt; with the path where you installed Mono).
+</p><p>If you're still getting this Exception, running monodevelop from the command line with:
+</p>
+<pre>MONO_LOG_LEVEL=debug monodevelop
+</pre>
+<p>can give some clues.  Seriously though, if you're still having problems at this point, you'd be better off using a supported distribution and installing MonoDevelop from the rpms.
+</p><p><b>Will the installer work on x86_64?</b>
+</p><p>No, this installer is only built to run on 32 bit systems.  Some distributions have both 32 bit and 64 bit libraries and programs installed.  If a 64 bit system has all the necessary 32 bit components installed, it should work, although this is not a tested scenario.
+</p><p><b>Towards the end of the install I get this message: Syntax error: "(" unexpected</b>
+</p><p>This is a warning while detecting whether MonoDevelop has the necessary libraries.  It can safely be ignored, although you may have troubles running MonoDevelop.  Newer versions of Debian/Ubuntu use 'dash' instead of 'bash' for /bin/sh.  The post install script that runs is bash specific, and thus fails when running under dash.  This will be fixed in 1.2.6.
+</p>

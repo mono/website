@@ -1,0 +1,43 @@
+---
+layout: obsolete
+title: "Using Databases"
+permalink: /old_site/Using_Databases/
+---
+
+<h1>Using Databases</h1>
+
+<p>Mono can interact with a variety of commercial and open source databases using ADO.NET. The project's current goal for data access is to be compatible with the APIs exposed in .NET
+</p><p>Mono supports the System.Data stack, an extensive set of providers as well as <a href="http://msdn.microsoft.com/en-us/library/bb386976.aspx" class="external text" rel="nofollow">LINQ to SQL</a> (largely through the DbLinq project).
+</p><p>This document does not aim to be a tutorial on ADO.NET, since there are many fine books and online resources that can help you, only a guide to using databases with Mono. 
+</p>
+<h1> <span class="mw-headline" id="Database_Providers"> Database Providers </span></h1>
+<p>The following database providers are available for Mono applications:
+</p>
+<ul><li> <a href="{{site.baseurl}}/MySQL" title="MySQL">MySQL</a>   
+</li><li> <a href="{{site.baseurl}}/ODBC" title="ODBC">ODBC</a>   
+</li><li> <a href="{{site.baseurl}}/SQLClient" title="SQLClient">SQLClient</a>
+</li><li> <a href="{{site.baseurl}}/Oracle" title="Oracle">Oracle</a>   
+</li><li> <a href="{{site.baseurl}}/PostgreSQL" title="PostgreSQL">PostgreSQL</a>   
+</li><li> <a href="{{site.baseurl}}/Firebird_Interbase" title="Firebird Interbase">Firebird and Interbase</a>   
+</li><li> <a href="{{site.baseurl}}/IBM_DB2" title="IBM DB2">IBM DB2</a>   
+</li><li> <a href="{{site.baseurl}}/OLE_DB" title="OLE DB">OLE DB</a>   
+</li><li> <a href="{{site.baseurl}}/SQLite" title="SQLite">SQLite</a>   
+</li><li> <a href="{{site.baseurl}}/Sybase" title="Sybase">Sybase</a>   
+</li><li> <a href="{{site.baseurl}}/TDS_Providers" title="TDS Providers">TDS Providers</a>   
+</li><li> <a href="{{site.baseurl}}/TDS_Generic" title="TDS Generic">TDS Generic</a>
+</li><li> <a href="{{site.baseurl}}/MaxDB" title="MaxDB">MaxDB</a>
+</li><li> <a href="http://www.vistadb.com" class="external text" rel="nofollow">VistaDB</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Tools"> Tools </span></h1>
+<p>The following Mono tools are useful when working with ADO.NET: 
+</p>
+<ul><li>sqlsharp.exe (SQL#), a command line query tool included with Mono to enter and execute SQL statements.   
+</li><li>xsd.exe , XML Schema Definition tool  
+<ul><li><b>XDR to XSD </b>- used to generate an XML schema from an XDR (XML Data Reduced schema) file. XDR was used by Microsoft prior to XSD becoming a W3C recommendation, and it needs to be supported for legacy reasons.  
+</li><li><b>XML to XSD </b>- used to generate an XML schema from an XML file.  
+</li><li><b>XSD to DataSet </b>- used to generate DataSet classes from an XSD schema file. The DataSet classes created can then be used with XML data.  
+</li><li><b>XSD to Classes </b>- used to generate classes from an XSD schema file. The classes created can be used with System.XML.Serialization.XMLSerializer to read and write XML code that follows the schema.  
+</li><li><b>Classes to XSD </b>- used to generate an XML schema from type(s) in a assembly file. The XML schema created by the tool defines the XML format used by System.XML.Serialization.XMLSerializer.
+</li></ul>
+</li></ul>
+

@@ -1,0 +1,259 @@
+---
+layout: obsolete
+title: "Provider Factory"
+permalink: /old_site/Provider_Factory/
+---
+
+<h1>Provider Factory</h1>
+
+<p>The assembly Mono.Data.dll has classes for a Provider Factory and Data Tools for Mono ADO.NET.  This gives us a foundation for abstract data provider access within Mono.
+</p><p>Sure ADO.NET 2.0 has this functionality, but Mono.Data provides some of this ability for .net 1.0, .net 1.1, .net 2.0, mono 1.0, and mono 1.1.  Also, many of the ADO.NET 2.0 features still need to be implemented in Mono and the providers may not have these ADO.NET 2.0 features implemented.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Here_are_the_details:"><span class="tocnumber">1</span> <span class="toctext">Here are the details:</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Overview_of_the_ProviderFactory_object_model:"><span class="tocnumber">2</span> <span class="toctext">Overview of the ProviderFactory object model:</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#C.23_source_code_samples_for_creating_a_connection:"><span class="tocnumber">3</span> <span class="toctext">C# source code samples for creating a connection:</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Recent_Additions_to_Mono.Data"><span class="tocnumber">4</span> <span class="toctext">Recent Additions to Mono.Data</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#About_Configuration_Files"><span class="tocnumber">5</span> <span class="toctext">About Configuration Files</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Here_are_the_details:"> Here are the details: </span></h2>
+<ul><li> The Provider information is seperate from the connection string information. This allows the list of providers to be stored in the machine.config file.
+</li></ul>
+<ul><li> Provider and ProviderCollection objects are available to access the list of providers and modify them at runtime.
+</li></ul>
+<ul><li> The ProviderFactory object is used to create new connections, commands, dataadapters, parameters, etc.
+</li></ul>
+<h2> <span class="mw-headline" id="Overview_of_the_ProviderFactory_object_model:"> Overview of the ProviderFactory object model: </span></h2>
+<ul><li> <b>ProviderFactory</b>: used to create new Connections, Commands, DataAdapters, or Commands. All objects are returned using the provider interfaces such as IDbConnection, IDbCommand, IDbDataAdapter, or IDataParamter
+</li></ul>
+<ul><li> <b>DataTools</b>: static methods for doing common tasks like filling a DataSet with the contents of a select statement.
+</li></ul>
+<ul><li> <b>ProviderCollection</b>: list of providers configured in the system. Initially loaded from app.config, but can be modified at run-time.
+</li></ul>
+<ul><li> <b>Provider</b>: represents a given provider (factory) and holds information needed to create the types.
+</li></ul>
+<ul><li> <b>ProviderSectionHandler</b>: works behind the scenes to load the list of providers from the app.config into a ProviderCollection.
+</li></ul>
+<h2> <span class="mw-headline" id="C.23_source_code_samples_for_creating_a_connection:"> C# source code samples for creating a connection: </span></h2>
+<pre>
+ // Create connection using enhanced connection string
+ // The factory attribute specifies which provider
+ // to use. The factory attribute is parsed out, the
+ // object is created, and then the rest of the
+ // connection string is passed into the provider. The
+ // providers are defined in
+ // the app.config (or machine.config).
+ IDbConnection conn;
+ string connectionString =
+	&quot;factory=System.Data.SqlClient;&quot; +
+	&quot;server=speedy;database=pubs;uid=sa&quot;;
+ conn = ProviderFactory.CreateConnection(connectionString);
+</pre>
+<pre>
+ // Create connection specifying provider
+ // and standard connection string
+ IDbConnection conn;
+ string provider = &quot;System.Data.SqlClient&quot;;
+ string connectionString = &quot;server=speedy;database=pubs;uid=sa&quot;;
+ conn = ProviderFactory.CreateConnection(provider,connectionString);
+</pre>
+<pre>
+ // Create connection using connection string stored
+ // in app.config under &lt;appSettings&gt;
+ IDbConnection conn;
+ string appSetting = &quot;PubsConnStr&quot;;
+ conn = ProviderFactory.CreateConnectionFromConfig(appSetting);
+</pre>
+<p>C# Sample for Creating a DataAdapter and filling a DataSet. 
+</p>
+<pre>
+// Create Connection
+IDbConnection conn =
+ProviderFactory.CreateConnectionFromConfig(&quot;PubsConnStr&quot;);
+
+// Select command
+IDbCommand cmd=conn.CreateCommand();
+cmd.Text=&quot;select * from author&quot;;
+
+// Data Adapter
+DataSet ds=new DataSet();
+IDbDataAdapter adapter=ProviderFactory.CreateDataAdapter(cmd);
+adapter.Fill(ds, &quot;Table1&quot;);
+</pre>
+<p>Here's some sample code on displaying a list 
+</p><p>of configured ADO.NET providers:
+</p>
+<pre>
+Console.WriteLine(&quot;Configured Providers:&quot;);
+foreach (Provider p in ProviderFactory.Providers)
+	Console.WriteLine(p.Description);
+
+</pre>
+<p>A Super lazy overload to the FillDataSet method (in DataTools.cs) that will fill a dataset in one line of code. 
+</p>
+<pre>
+ DataSet ds=DataTools.FillDataSet(&quot;PubsConnStr&quot;, &quot;select * from authors&quot;); 
+</pre>
+<p><br />
+Example of using CreateCommandBuilder
+</p>
+<pre>
+string providerName = &quot;System.Data.SqlClient&quot;;
+string connectionString = &quot;server=localhost;database=pubs;uid=sa&quot;;
+Provider provider = ProviderFactory.Providers[providerName];
+IDbConnection conn;
+conn = Provider.CreateConnection();
+conn.Open();
+IDbCommand cmd;
+IDbTransaction trans = conn.BeginTransaction();
+cmd = new con.CreateCommand();
+cmd.CommandText = &quot;SELECT * FROM sometable&quot;;
+cmd.Transaction = trans;
+IDbDataAdapter adapter = new CreateDataAdapter();
+adapter.SelectCommand = cmd;
+provider.CreateCommandBuilder(adapter);
+// CreateCommandBuilder looks for commandbuilder in app.config file
+DataSet ds = new DataSet();
+adapter.Fill(ds);
+DataRow row = ds.Tables[0].NewRow();
+row[0] = &quot;test&quot;;
+row[1] = 123;
+ds.Tables[0].Rows.Add(row);
+adapter.Update(ds);
+conn.Commit();
+</pre>
+<h2> <span class="mw-headline" id="Recent_Additions_to_Mono.Data"> Recent Additions to Mono.Data </span></h2>
+<pre>  These additions will appear in the next release of Mono (maybe 1.1.14?)
+  
+  Exceptions are thrown for missing arguments.
+</pre>
+<pre>  Warning message is displayed in the console if there 
+  are no providers defined in your app.config file.
+</pre>
+<pre>  Property ParameterPrefix in Provider: allows you to
+  figure out what parameter prefix to use when adding parameters.
+  What is defined for parameterfix in the app.config file will show up 
+  as a character using the property ParameterPrefix.
+  
+  at will be @ for a prefix for a named parameter
+</pre>
+<pre>  colon will be&#160;: for a prefix for a named parameter
+</pre>
+<pre>  questionmark will be&#160;? for a positional parameter
+</pre>
+<pre>  GetCommandBuilder() will allow you to create 
+  a CommandBuilder add set an IDbAdapter to it.  
+  It uses the commandbuilder attribute from the app.config file
+</pre>
+<h2> <span class="mw-headline" id="About_Configuration_Files"> About Configuration Files </span></h2>
+<p>Information about <a href="http://msdn.microsoft.com/library/en-us/vbcon/html/vboriintroductiontoapplicationsettingstorage.asp?frame=true" class="external text" rel="nofollow">app.config</a> files can be found at <a href="http://msdn.microsoft.com/" class="external text" rel="nofollow">MSDN</a>. 
+See the mcs/class/Mono.Data/app.config for sample configuration file in the mcs source. Basically, if your application is named blah.exe, you would create an app.config file named blah.exe.config 
+Here's a sample app.config file showing the provider declarations along with sample connection strings:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configSections<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;sectionGroup</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;mono.data&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;section</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;providers&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;Mono.Data.ProviderSectionHandler,Mono.Data&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/sectionGroup<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configSections<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;PubsConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=System.Data.SqlClient;server=localhost;database=pubs;uid=sa;pwd=mypassword&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;OraConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=System.Data.OracleClient;data source=testdb;user id=scott;password=tiger&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;PgConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=Npgsql;Server=localhost;Database=monotest;User ID=monotest;Password=monotest&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;MySqlByteFXConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=ByteFX.Data.MySqlClient;Database=test&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;FireConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=FirebirdSql.Data.Firebird;Database=C:\FIREBIRD\EXAMPLES\EMPLOYEE.FDB;User=SYSDBA;Password=masterkey;Dialect=3;Server=localhost&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;Sqlite2ConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=Mono.Data.SqliteClient;URI=file:sqlitetest2.db&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;Sqlite3ConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=Mono.Data.SqliteClient;URI=file:sqlitetest3.db,Version=3&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;SybaseConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=Mono.Data.SybaseClient;Server=MYSERVER,5000;Database=testdb;User ID=sa;Password=;&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;MySqlConnStr&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;factory=MySql.Data;server=localhost;user id=user;password=pass;database=mysql;pooling=false&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>		
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;mono.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient.SqlConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient.SqlDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient.SqlCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;System.Data, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;Microsoft SQL Server 7.0/2000/2005&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">parameterprefix</span>=<span style="color: #ff0000;">&quot;at&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">commandbuilder</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient.SqlCommandBulder&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.OleDb&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;System.Data.OleDb.OleDbConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;System.Data.OleDb.OleDbDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;System.Data.OleDb.OleDbCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;System.Data, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;OLE DB&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.Odbc&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;System.Data.Odbc.OdbcConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;System.Data.Odbc.OdbcDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;System.Data.Odbc.OdbcCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;System.Data, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;ODBC&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient.OracleConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient.OracleDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient.OracleCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;Oracle&quot;</span></span>
+<span style="color: #009900;">	<span style="color: #000066;">parameterprefix</span>=<span style="color: #ff0000;">&quot;colon&quot;</span></span>
+<span style="color: #009900;">	<span style="color: #000066;">commandbuilder</span>=<span style="color: #ff0000;">&quot;System.Data.OracleClient.OracleCommandBuilder&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;ByteFX.Data.MySqlClient&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;ByteFX.Data.MySqlClient.MySqlConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;ByteFX.Data.MySqlClient.MySqlDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;ByteFX.Data.MySqlClient.MySqlCommand&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;ByteFX.Data, Version=0.7.6.1, Culture=neutral, PublicKeyToken=0738eb9f132ed756&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;MySQL (ByteFX)&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Npgsql&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;Npgsql.NpgsqlConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;Npgsql.NpgsqlDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;Npgsql.NpgsqlCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;Npgsql, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;PostgreSQL&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Mono.Data.SqliteClient&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;Mono.Data.SqliteClient.SqliteConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;Mono.Data.SqliteClient.SqliteDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;Mono.Data.SqliteClient.SqliteCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;Mono.Data.SqliteClient, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;SQL Lite&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Mono.Data.SybaseClient&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;Mono.Data.SybaseClient.SybaseConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;Mono.Data.SybaseClient.SybaseDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;Mono.Data.SybaseClient.SybaseCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;Mono.Data.SybaseClient, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;Sybase&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;FirebirdSql.Data.Firebird&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;FirebirdSql.Data.Firebird.FbConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;FirebirdSql.Data.Firebird.FbDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;FirebirdSql.Data.Firebird.FbCommand&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;FirebirdSql.Data.Firebird, Version=1.6.3.0, Culture=neutral, PublicKeyToken=e1b4f92304d7b12f&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;Firebird&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;IBM.Data.DB2&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;IBM.Data.DB2.DB2Connection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;IBM.Data.DB2.DB2DataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;IBM.Data.DB2.DB2Command&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;IBM.Data.DB2, Version=1.0.1728.9997, Culture=neutral, PublicKeyToken=7c307b91aa13d208&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;IBM DB2 Universal Database&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;provider</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;MySql.Data&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">connection</span>=<span style="color: #ff0000;">&quot;MySql.Data.MySqlClient.MySqlConnection&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">adapter</span>=<span style="color: #ff0000;">&quot;MySql.Data.MySqlClient.MySqlDataAdapter&quot;</span> </span>
+<span style="color: #009900;">				<span style="color: #000066;">command</span>=<span style="color: #ff0000;">&quot;MySql.Data.MySqlClient.MySqlCommand&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;MySql.Data, Version=1.0.7.30073, Culture=neutral, PublicKeyToken=8e323390df8d9ed4&quot;</span></span>
+<span style="color: #009900;">				<span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;MySQL (MySQL AB)&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>						
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/mono.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+

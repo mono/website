@@ -1,0 +1,65 @@
+---
+layout: obsolete
+title: "WinForms Getting Started Guide"
+permalink: /old_site/WinForms_Getting_Started_Guide/
+---
+
+<h1>WinForms Getting Started Guide</h1>
+
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="Installation"> Installation </span></h3>
+<p>Windows.Forms is part of a standard Mono installation.  Since Windows.Forms is under active development you might be interested in using the latest version available from the SVN repository to test.
+</p><p>To use the very latest version, you have to build mcs from svn. You can get the latest sources from one of our anonymous svn servers, for example from: <a href="svn://anonsvn.mono-project.com/source/trunk/mcs" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/mcs</a>.
+</p><p>To build Windows.Forms from source, you need:
+</p>
+<ul><li>  The latest <a href="http://www.go-mono.com/download.html" class="external text" rel="nofollow">Mono</a> package.
+</li></ul>
+<ul><li>  The latest <a href="http://www.go-mono.com/download.html" class="external text" rel="nofollow">libgdiplus</a> library.  Not needed on Windows XP since it includes gdiplus.dll and for Windows 2000 it can be downloaded from MSDN.
+</li></ul>
+<p>[Paul Johnson provides a nice writup on how to build from source <a href="http://www.all-the-johnsons.co.uk/mono/mono-compiling.shtml" class="external text" rel="nofollow">here</a>]
+</p>
+<h3> <span class="mw-headline" id="Winforms_Example"> Winforms Example </span></h3>
+<p>As there are plenty of great articles and books on Windows Forms programming, the topic will not be covered in-depth.  The following is just a simple Winforms program to test with.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Drawing</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Forms</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> HelloWorld <span style="color: #008000;">:</span> Form
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HelloWorld <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> HelloWorld <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Button b <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		b<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Click Me!&quot;</span><span style="color: #008000;">;</span>
+		b<span style="color: #008000;">.</span><span style="color: #0000FF;">Click</span> <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> EventHandler <span style="color: #008000;">&#40;</span>Button_Click<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Controls<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>b<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> Button_Click <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> sender, EventArgs e<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		MessageBox<span style="color: #008000;">.</span><span style="color: #0000FF;">Show</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Button Clicked!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>If you save this code as hello.cs, you would compile it like this:
+</p>
+<pre>
+mcs -pkg:dotnet hello.cs
+</pre>
+<p>Using mcs to compile produces a .Net 1.1 assembly.  To create a .Net 2.0 assembly, use gmcs:
+</p>
+<pre>
+gmcs -pkg:dotnet hello.cs
+</pre>
+<p>Either compiler will create "hello.exe", which you can run using:
+</p>
+<pre>
+mono hello.exe
+</pre>
+<div class="thumb tright"><div class="thumbinner" style="width:312px;"><a href="{{site.baseurl}}/images/old_site/f/f5/Helloworld.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/f/f5/Helloworld.png" width="310" height="307" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/f/f5/Helloworld.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Results running on openSUSE 10.2</div></div></div> And this will be the results.
+

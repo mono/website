@@ -1,0 +1,40 @@
+---
+layout: obsolete
+title: "ASP.NET Batch Compilation"
+permalink: /old_site/ASP.NET_Batch_Compilation/
+---
+
+<h1>ASP.NET Batch Compilation</h1>
+
+<p><b>Note: this document applies to Mono from SVN starting from revision 96982 or Mono 2.0 and newer</b>
+</p>
+<h1> <span class="mw-headline" id="What_is_it.3F"> What is it? </span></h1>
+<p>Mono 1.9 will ship with support for batch compilation of the ASP.NET applications. Batch compilation is a process in which the ASP.NET runtime, when a virtual path of a site is visited, collects several files of the same type into one "batch" and compiles them into a single assembly. This is in contrast to the old, .NET 1.x, way of compiling ASP.NET applications in which every file would be compiled into a separate assembly.
+</p><p>The purpose of this article is to introduce the users to a slight difference between the MS.NET and Mono implementations. The difference lies in the way Mono selects the files for batch compilation. Whenever it builds a list of files to compile, it consults the contents of two Mono-specific AppSettings entries:
+</p>
+<dl><dt> <b>MonoAspnetBatchCompileIgnorePaths</b></dt><dd> contains a comma-separated list of <b>virtual</b> paths of virtual paths which are to be ignored when batch-building.
+</dd><dt> <b>MonoAspnetBatchCompileFromFile</b></dt><dd> contains a virtual path of a file which contains, one per line, a list of virtual paths which are to be ignored when batch-building.
+</dd></dl>
+<p>The paths from both sources are merged, duplicate entries are silently ignored.
+</p>
+<h1> <span class="mw-headline" id="Why_is_it_useful.3F"> Why is it useful? </span></h1>
+<p>Ability to ignore certain files may be useful when your application contains files that will compile fine on Microsoft .NET but will fail, for some reason, under Mono.
+</p><p>An example of such application is MojoPortal - it contains several user controls (.ascx files) and pages which utilize features not available on Mono/Unix (like WebParts, COM+ bindings). Without support for ignoring the files, batch compile would fail with an error.
+</p>
+<h1> <span class="mw-headline" id="Examples"> Examples </span></h1>
+<p>An example of a Web.config file which shows how to use the settings:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;MonoAspnetBatchCompileIgnorePaths&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;~/SomeFile.aspx,~/Controls/SomeOtherFile.ascx&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;MonoAspnetBatchCompileFromFile&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;~/ignorePaths.conf&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The <tt>~/ignorePaths.conf</tt> file, located at the root of the aplication, may contain:
+</p>
+<pre>
+/SomeFileToIgnore.ascx
+~/SubDir/IgnoreThisFile.aspx
+</pre>
+

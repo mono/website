@@ -1,0 +1,424 @@
+---
+layout: obsolete
+title: "Accessibility: Mapping UIA to ATK"
+permalink: /old_site/Accessibility:_Mapping_UIA_to_ATK/
+---
+
+<h1>Accessibility: Mapping UIA to ATK</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#UIA_Provider"><span class="tocnumber">1</span> <span class="toctext">UIA Provider</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#UIA_Control_Types"><span class="tocnumber">1.1</span> <span class="toctext">UIA Control Types</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#UIA_Provider_Interfaces"><span class="tocnumber">1.2</span> <span class="toctext">UIA Provider Interfaces</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="UIA_Provider"> UIA Provider </span></h2>
+<p>A page to show the mapping being used between UI Automation and ATK.
+</p><p>For an overview of the architecture see the <a href="{{site.baseurl}}/Accessibility:_Architecture" title="Accessibility: Architecture">Architecture</a> page.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="UIA_Control_Types"> UIA Control Types </span></h3>
+<p><a href="http://msdn.microsoft.com/en-us/library/ms749005.aspx" class="external text" rel="nofollow">UIA Control Types overview</a> (MSDN)
+</p>
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<th width="20%" style="background:#d9e5bf;"> UIA Control Type
+</th>
+<th width="10%" style="background:#d9e5bf;"> Status
+</th>
+<th width="20%" style="background:#d9e5bf;"> Providers
+</th>
+<th width="30%" style="background:#d9e5bf;"> ATK Roles
+</th>
+<th width="40%" style="background:#d9e5bf;"> Notes
+</th></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742153.aspx" class="external text" rel="nofollow">Button</a>
+</td>
+<th style="background:#f8f6c3;"> Almost finished<br />(Calvin &amp; Andres)
+</th>
+<td>
+<p><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iinvokeprovider.aspx" class="external text" rel="nofollow">IInvokeProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itoggleprovider.aspx" class="external text" rel="nofollow">IToggleProvider</a>
+</p>
+</td>
+<td> ATK_ROLE_PUSH_BUTTON
+</td>
+<td> Work is still needed with states and updating FramingRect from UIA.
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms753925.aspx" class="external text" rel="nofollow">Calendar</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.igridprovider.aspx" class="external text" rel="nofollow">IGridProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iscrollprovider.aspx" class="external text" rel="nofollow">IScrollProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iselectionprovider.aspx" class="external text" rel="nofollow">ISelectionProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itableprovider.aspx" class="external text" rel="nofollow">ITableProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.ivalueprovider.aspx" class="external text" rel="nofollow">IValueProvider</a>
+</td>
+<td> ATK_ROLE_CALENDAR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms751693.aspx" class="external text" rel="nofollow">CheckBox</a>
+</td>
+<th style="background:#8CDD81;"> Done (Andres)
+</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itoggleprovider.aspx" class="external text" rel="nofollow">IToggleProvider</a>
+</td>
+<td> ATK_ROLE_CHECK_BOX
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752305.aspx" class="external text" rel="nofollow">ComboBox</a>
+</td>
+<th style="background:#8CDD81;"> Almost done (Andres)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_COMBO_BOX
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752044.aspx" class="external text" rel="nofollow">DataGrid</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TABLE
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742561.aspx" class="external text" rel="nofollow">DataItem</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752058.aspx" class="external text" rel="nofollow">Document</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_DOCUMENT_FRAME
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms748367.aspx" class="external text" rel="nofollow">Edit</a>
+</td>
+<th style="background:#f8f6c3;"> In progress (Andres)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_ENTRY
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742689.aspx" class="external text" rel="nofollow">Group</a>
+</td>
+<th style="background:#e1a0a0;"> In Progress<br />(Mike)
+</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iexpandcollapseprovider.aspx" class="external text" rel="nofollow">IExpandCollapseProvider</a>
+</td>
+<td> ATK_ROLE_PANEL
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms753110.aspx" class="external text" rel="nofollow">Header</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742202.aspx" class="external text" rel="nofollow">HeaderItem</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TABLE_COLUMN_HEADER ATK_ROLE_TABLE_ROW_HEADER
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742530.aspx" class="external text" rel="nofollow">Hyperlink</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_LINK
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms746603.aspx" class="external text" rel="nofollow">Image</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_IMAGE
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742462.aspx" class="external text" rel="nofollow">List</a>
+</td>
+<th style="background:#f8f6c3;"> In Progress<br />(Calvin)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_LIST
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms744765.aspx" class="external text" rel="nofollow">ListItem</a>
+</td>
+<th style="background:#8CDD81;"> Done (Mike)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_LIST_ITEM
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms741841.aspx" class="external text" rel="nofollow">Menu</a>
+</td>
+<th style="background:#f8f6c3;;"> In progress (Andres)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_MENU
+</td>
+<td> We lack the provider yet
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752322.aspx" class="external text" rel="nofollow">MenuBar</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_MENU_BAR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms746680.aspx" class="external text" rel="nofollow">MenuItem</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_MENU_ITEM
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms749129.aspx" class="external text" rel="nofollow">Pane</a>
+</td>
+<th style="background:#f8f6c3;"> In Progress<br />(Calvin)
+</th>
+<td> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itransformprovider.aspx" class="external text" rel="nofollow">ITransformProvider</a> <a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.idockprovider.aspx" class="external text" rel="nofollow">IDockProvider</a>
+</td>
+<td> ATK_ROLE_PANEL
+</td>
+<td> Work is still needed with states and updating FramingRect from UIA.
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms743681.aspx" class="external text" rel="nofollow">ProgressBar</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_PROGRESS_BAR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms750484.aspx" class="external text" rel="nofollow">RadioButton</a>
+</td>
+<th style="background:#8CDD81;"> Done (Andres)
+</th>
+<td>
+</td>
+<td> ATK_ROLE_RADIO_BUTTON
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms743712.aspx" class="external text" rel="nofollow">ScrollBar</a>
+</td>
+<th style="background:#e1a0a0;"> In Progress<br />(Mike)
+</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irangevalueprovider.aspx" class="external text" rel="nofollow">IRangeValueProvider</a>
+</td>
+<td> ATK_ROLE_SCROLL_BAR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms750550.aspx" class="external text" rel="nofollow">Separator</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_SEPARATOR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742106.aspx" class="external text" rel="nofollow">Slider</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_SLIDER
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms744847.aspx" class="external text" rel="nofollow">Spinner</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_DIAL
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742545.aspx" class="external text" rel="nofollow">SplitButton</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms745809.aspx" class="external text" rel="nofollow">StatusBar</a>
+</td>
+<th style="background:#8CDD81;"> Done (Mike)
+</th>
+<td><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.igridprovider.aspx" class="external text" rel="nofollow">IGridProvider</a>
+</td>
+<td> ATK_ROLE_STATUSBAR
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms754207.aspx" class="external text" rel="nofollow">Tab</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_PAGE_TAB_LIST
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms751611.aspx" class="external text" rel="nofollow">TabItem</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_PAGE_TAB
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms750608.aspx" class="external text" rel="nofollow">Table</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TABLE
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752073.aspx" class="external text" rel="nofollow">Text</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TEXT
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms742539.aspx" class="external text" rel="nofollow">Thumb</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms744939.aspx" class="external text" rel="nofollow">TitleBar</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_CAPTION
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms750425.aspx" class="external text" rel="nofollow">ToolBar</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TOOL_BAR
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms752335.aspx" class="external text" rel="nofollow">ToolTip</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TOOL_TIP
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms743706.aspx" class="external text" rel="nofollow">Tree</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TREE
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms743384.aspx" class="external text" rel="nofollow">TreeItem</a>
+</td>
+<th style="background:#e1a0a0;"> Not Started
+</th>
+<td>
+</td>
+<td> ATK_ROLE_TREE_TABLE
+</td></tr>
+<tr>
+<td> <a href="http://msdn.microsoft.com/en-us/library/ms746673.aspx" class="external text" rel="nofollow">Window</a>
+</td>
+<th style="background:#f8f6c3;"> In Progress
+</th>
+<td>
+</td>
+<td> ATK_ROLE_WINDOW
+</td></tr></table>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UIA_Provider_Interfaces"> UIA Provider Interfaces </span></h3>
+<p>The following is a list of UIA Provider interfaces to be used in the table above.
+</p><p><a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iexpandcollapseprovider.aspx" class="external text" rel="nofollow">IExpandCollapseProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.igriditemprovider.aspx" class="external text" rel="nofollow">IGridItemProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iinvokeprovider.aspx" class="external text" rel="nofollow">IInvokeProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.imultipleviewprovider.aspx" class="external text" rel="nofollow">IMultipleViewProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irangevalueprovider.aspx" class="external text" rel="nofollow">IRangeValueProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irawelementprovideradviseevents.aspx" class="external text" rel="nofollow">IRawElementProviderAdviseEvents</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irawelementproviderfragment.aspx" class="external text" rel="nofollow">IRawElementProviderFragment</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irawelementproviderfragmentroot.aspx" class="external text" rel="nofollow">IRawElementProviderFragmentRoot</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irawelementproviderhwndoverride.aspx" class="external text" rel="nofollow">IRawElementProviderHwndOverride</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irawelementprovidersimple.aspx" class="external text" rel="nofollow">IRawElementProviderSimple</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iscrollitemprovider.aspx" class="external text" rel="nofollow">IScrollItemProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iscrollprovider.aspx" class="external text" rel="nofollow">IScrollProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iselectionitemprovider.aspx" class="external text" rel="nofollow">ISelectionItemProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iselectionprovider.aspx" class="external text" rel="nofollow">ISelectionProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itableitemprovider.aspx" class="external text" rel="nofollow">ITableItemProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itableprovider.aspx" class="external text" rel="nofollow">ITableProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itextprovider.aspx" class="external text" rel="nofollow">ITextProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itextrangeprovider.aspx" class="external text" rel="nofollow">ITextRangeProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itransformprovider.aspx" class="external text" rel="nofollow">ITransformProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.ivalueprovider.aspx" class="external text" rel="nofollow">IValueProvider</a>
+<a href="http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iwindowprovider.aspx" class="external text" rel="nofollow">IWindowProvider</a>
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="See_also"> See also </span></h2>
+<p>Interesting as well are the <a href="{{site.baseurl}}/Accessibility:_Control_Status" title="Accessibility: Control Status">MWF-&gt;UIA mappings</a> and the <a href="{{site.baseurl}}/Accessibility:_UiaAtkBridge#Case_study:_GTK" title="Accessibility: UiaAtkBridge">GTK-&gt;Gail-&gt;ATK-&gt;UIA mappings+candidates</a>.
+</p>

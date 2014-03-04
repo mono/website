@@ -1,0 +1,215 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.4.2"
+permalink: /old_site/Release_Notes_Mono_2.4.2/
+---
+
+<h1>Release Notes Mono 2.4.2</h1>
+
+<p>Mono 2.4.2 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Major_Highlights"><span class="tocnumber">1</span> <span class="toctext">Major Highlights</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Changes_in_Mono_2.4"><span class="tocnumber">2</span> <span class="toctext">Changes in Mono 2.4</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Bugs_fixed_since_Mono_2.4"><span class="tocnumber">3</span> <span class="toctext">Bugs fixed since Mono 2.4</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Installing_Mono_2.4.2"><span class="tocnumber">4</span> <span class="toctext">Installing Mono 2.4.2</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<p>Mono 2.4.2 is a bugfix release for Mono 2.4, which is the foundation for Novell's own long-term support Mono-based product.
+</p><p>In addition to bug fixes, this release includes the following major changes from 2.4.0:
+</p>
+<ul><li> We now ship Microsoft's <a href="http://www.asp.net/mvc" class="external text" rel="nofollow">ASP.NET MVC</a> stack and ASP.NET MVC applications can run with Mono.
+</li><li> xbuild has been updated
+</li><li> Removed non-free amqp0-8.xml documentation.
+</li></ul>
+<h1> <span class="mw-headline" id="Changes_in_Mono_2.4"> Changes in Mono 2.4 </span></h1>
+<p>XSP now has Silverlight mime types registered.
+</p><p>Updated the browser database.
+</p><p>The C# Shell (csharp) will now accept C# scripts specified on the command line, like:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>csharp demo.cs</pre>
+<p>A major bug was fixed for multi-threaded applications using XPath, if you are using XPath in a multithreaded application, we strongly recommend that you upgrade to this version.
+</p>
+<h1> <span class="mw-headline" id="Bugs_fixed_since_Mono_2.4"> Bugs fixed since Mono 2.4 </span></h1>
+<p>Between Mono 2.4 and Mono 2.4.2, more than 140 bugs were fixed, this is a partial list (since not all bugs had tracking numbers):
+</p>
+<ul><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=315816" class="external text" rel="nofollow">315816</a> - [Regression] One crippled DLL leads to a failure of a complete website
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=325464" class="external text" rel="nofollow">325464</a> - xsd is unable to generate correct classes from certain input files
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=328036" class="external text" rel="nofollow">328036</a> - [PATCH]Casting bug with generic collections
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=342073" class="external text" rel="nofollow">342073</a> - WebServices default WebForm does not work
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=345448" class="external text" rel="nofollow">345448</a> - Default binding name is wrong, when declared in WebServiceBindingAttribute, but not used.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=349688" class="external text" rel="nofollow">349688</a> - SocketFlags.Partial is not implemented correctly in Linux
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=382589" class="external text" rel="nofollow">382589</a> - Passing either Decimal.Max or Decimal.Min to a SQL Server 2005 stored procedure that takes a decimal(29,0) results in a SqlException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=382589" class="external text" rel="nofollow">382589</a> - Passing either Decimal.Max or Decimal.Min to a SQL Server 2005 stored procedure that takes a decimal(29,0) results in a SqlException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=409583" class="external text" rel="nofollow">409583</a> - ToString of methods with pointers in their signature is wrong
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=417398" class="external text" rel="nofollow">417398</a> - [PATCH] System.Data.DataRowComparer.Default doesn't compare by row contents
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=421827" class="external text" rel="nofollow">421827</a> - [PATCH] CookieContainer.GetCookie skips cookie when domain has no leading dot
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=424908" class="external text" rel="nofollow">424908</a> - Oracle - stored procedure returning string throws exception - Size must be set
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=431039" class="external text" rel="nofollow">431039</a> - First Run of IsolatedStorageFile is not threadsafe
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=436592" class="external text" rel="nofollow">436592</a> - Error in  the CustomizableFileSettingsProvider.Reset method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=449092" class="external text" rel="nofollow">449092</a> - [Regression] Sockets Novell c# LDAP api, LdapConnection.Disconnect() throws "The socket is not connected" exception
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=449683" class="external text" rel="nofollow">449683</a> - MD throws NotImplementedException when parsing DLR project
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=458916" class="external text" rel="nofollow">458916</a> - Implemetation errors on Copy.cs
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=459790" class="external text" rel="nofollow">459790</a> - SoapRpcMethod based webservices return HTTP 500 error with Mono 2.0.1 Runtime
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=462947" class="external text" rel="nofollow">462947</a> - TDS: not enough state reset when executing a query/stored procedure
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=463011" class="external text" rel="nofollow">463011</a> - [Regression] Pooled connection is no longer reset
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=465613" class="external text" rel="nofollow">465613</a> - HttpWebRequest.BeginGetRequestStream throws ProtocolViolationException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=466031" class="external text" rel="nofollow">466031</a> - Socket.EndReceive buglet
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=468570" class="external text" rel="nofollow">468570</a> - Arithmatic overflow in System.Diagnostics.Stopwatch causes Elapsed property to return a negative timespan after the 25'th hour of running
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=469135" class="external text" rel="nofollow">469135</a> - Issues with glue-less gtk-sharp running MonoDevelop
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=470336" class="external text" rel="nofollow">470336</a> - crash while compiling on SLE_10/ppc
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=470336" class="external text" rel="nofollow">470336</a> - crash while compiling on SLE_10/ppc
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=471305" class="external text" rel="nofollow">471305</a> - Control lifecycle inconsistency between Mono and MS.NET implementations
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=471747" class="external text" rel="nofollow">471747</a> - [FreeBSD x86] Failure of pinvoke2 test
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=471751" class="external text" rel="nofollow">471751</a> - [FreeBSD x86] Failure of winx64structs test
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=475438" class="external text" rel="nofollow">475438</a> - xbuild dies badly if gmcs not installed
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=476138" class="external text" rel="nofollow">476138</a> - Win32 Socket behaviour changed.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=476289" class="external text" rel="nofollow">476289</a> - mod_mono report "(13)Permission denied: Failed to attach to existing dashboard"
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=477383" class="external text" rel="nofollow">477383</a> - MaskedTextBox: Backspace doesn't work
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=477388" class="external text" rel="nofollow">477388</a> - MaskedTextBox: Delete key deletes masked fields
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=477395" class="external text" rel="nofollow">477395</a> - MaskedTextBox: Able to overwrite characters with L mask
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=477408" class="external text" rel="nofollow">477408</a> - MaskedTextBox: Doesn't handle invalid input correctly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=480377" class="external text" rel="nofollow">480377</a> - System.Data.OracleClient&#160;: DataReader does not support System.TimeSpan
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=480856" class="external text" rel="nofollow">480856</a> - xbuild don't recognize Multiple DEFINE
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=481336" class="external text" rel="nofollow">481336</a> - xbuild don't compile IronPython.sln
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=481622" class="external text" rel="nofollow">481622</a> - Exception when using layout template
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=481687" class="external text" rel="nofollow">481687</a> - System.Convert.ChangeType(someIConvertibleObject, typeof(Image) Throws exception on mono. .Net difference
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=483268" class="external text" rel="nofollow">483268</a> - Precompiled application can only be solved from original virtual path
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=483852" class="external text" rel="nofollow">483852</a> - TypeBuilder should be resolved when used in a generic type instance
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484244" class="external text" rel="nofollow">484244</a> - [Regression] nunit-console.exe requires /noshadow
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484294" class="external text" rel="nofollow">484294</a> - Type.GetMethod does not find methods with nullable parameters when expected
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484294" class="external text" rel="nofollow">484294</a> - Type.GetMethod does not find methods with nullable parameters when expected
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484384" class="external text" rel="nofollow">484384</a> - Duplicate key in assembly resolving
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484649" class="external text" rel="nofollow">484649</a> - Mono.XBuild.CommandLine.LoggerInfo argument parsing is broken
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484773" class="external text" rel="nofollow">484773</a> - WorkingDictionary outside of the project file breaks the build
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=484795" class="external text" rel="nofollow">484795</a> - [PATCH]WebClient.UploadValues using UTF-8 encoding and "POST" method do not upload accented characters properly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=485377" class="external text" rel="nofollow">485377</a> - Regression in Convert.ChangeType()
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=485377" class="external text" rel="nofollow">485377</a> - Regression in Convert.ChangeType()
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=485435" class="external text" rel="nofollow">485435</a> - JSON proxy class generator errors out when any webmethod signature takes a GUID parameter
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=485458" class="external text" rel="nofollow">485458</a> - CustomValidator incorrectly requires ControlToValidate to be set for client side scripting to work.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=485557" class="external text" rel="nofollow">485557</a> - Response.ClearHeaders reset HttpCacheability to private
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=486234" class="external text" rel="nofollow">486234</a> - System.String.LastIndexOf(string, StringComparison) crashes when using StringComparison.Ordinal on empty strings
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=486303" class="external text" rel="nofollow">486303</a> - Type.IsGenericTypeDefinition crashes for user defined Type
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=486703" class="external text" rel="nofollow">486703</a> - FtpWebRequest Send PrintWorkingDirectory Command Failed!
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=486904" class="external text" rel="nofollow">486904</a> - System.Net.NetworkInformation.Ping throws InvalidOperationException "Process has not been started" on OSX
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=487155" class="external text" rel="nofollow">487155</a> - ILASM does not work with octal values in QSTRINGS
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=487518" class="external text" rel="nofollow">487518</a> - SIGSEGV in mono_arch_emit_call on amd64; running F# nunit unit tests
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=487625" class="external text" rel="nofollow">487625</a> - ExtensionMethodAttribute and CS1685
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=487659" class="external text" rel="nofollow">487659</a> - VUL-0: Mono sanbox breakout in IsolatedStorage {}
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=487758" class="external text" rel="nofollow">487758</a> - Marshaling a native function pointer to native function call throws assertion
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=488630" class="external text" rel="nofollow">488630</a> - mod-mono-server is broken using HTTPS
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=488670" class="external text" rel="nofollow">488670</a> - Marshal.GetFunctionPtrFromDelegate crashes the runtime if the delegate signature includes an object type.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=488960" class="external text" rel="nofollow">488960</a> - Invalid CS0663 error with generics ('overloaded function cannot differ on use of parameter modifiers only')
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=489019" class="external text" rel="nofollow">489019</a> - mono throwing exception while closing file descriptor 0
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=489687" class="external text" rel="nofollow">489687</a> - Code render tag not working
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=490497" class="external text" rel="nofollow">490497</a> - "watch for changes to web.config also in the subdirectories" causes problems
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=490753" class="external text" rel="nofollow">490753</a> - HtmlInputFile doesn't work on pages with EnableViewState=false
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=491508" class="external text" rel="nofollow">491508</a> - SessionSQLServerHandler&#160;: InitializeConnection -&gt; NullReferenceException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=491531" class="external text" rel="nofollow">491531</a> - Settings in Web.config not being read
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=491590" class="external text" rel="nofollow">491590</a> - The FTPWebRequest class doesn't properly resume file downloads
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=491828" class="external text" rel="nofollow">491828</a> - xbuild hides important error information
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=492252" class="external text" rel="nofollow">492252</a> - error runing an ASP.net page with validators
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=492329" class="external text" rel="nofollow">492329</a> - gmcs generated invalid IL code for storing a new object in a generic out/ref parameters (regression from 2.2).
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=492666" class="external text" rel="nofollow">492666</a> - NullReferenceException when binding a list to the ListView
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=493263" class="external text" rel="nofollow">493263</a> - Using custom resource provider crashes application
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=493639" class="external text" rel="nofollow">493639</a> - Invalid "Bind invocation wasn't formatted properly" in TemplateControlCompiler
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=493873" class="external text" rel="nofollow">493873</a> - Multiple assemblies with same type name in precompiled updatable site
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=493874" class="external text" rel="nofollow">493874</a> - Missing column in BlogEngine.NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=493887" class="external text" rel="nofollow">493887</a> - Switch selects wrong branch when default is not last case
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=494221" class="external text" rel="nofollow">494221</a> - IL Compiles but generates wrong code
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=494245" class="external text" rel="nofollow">494245</a> - ASP.NET Pages not accepting base class with generic type
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=494567" class="external text" rel="nofollow">494567</a> - r131501 breaks compilation of System.Windows.Forms_test_net_1_1.dll
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=495011" class="external text" rel="nofollow">495011</a> - Application restarts when touching a folder
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=495112" class="external text" rel="nofollow">495112</a> - Can't compile cyclic structs with mono-2.4
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=496758" class="external text" rel="nofollow">496758</a> - Xsp2 hides internal errors making it difficult to debug tricky web service issues
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=496905" class="external text" rel="nofollow">496905</a> - Using Peek() after a short Read() returns -1 instead of trying to read more.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=496951" class="external text" rel="nofollow">496951</a> - The 'NoStore' attribute is not supported by the 'Outputcache' directive.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497174" class="external text" rel="nofollow">497174</a> - ASP.NET 1.1 is broken with the recent changes made to templateParser.cs
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497220" class="external text" rel="nofollow">497220</a> - assertion in mono_local_regalloc when a local not initialized is used
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497715" class="external text" rel="nofollow">497715</a> - SqlParameter not handling SqlDbType.Xml / DbType.Xml ("No mapping exists ...")
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497720" class="external text" rel="nofollow">497720</a> - System.Collections.Generic.KeyCollection.CopyTo(TKey [] array, int arrayIndex) behaves different on Mono / .NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497775" class="external text" rel="nofollow">497775</a> - ASP.NET MVC's Html.TextBox()/etc. do nothing.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=497839" class="external text" rel="nofollow">497839</a> - xbuild don't recognize  $(SolutionDir)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=498118" class="external text" rel="nofollow">498118</a> - Revision 131768 breaks UserControls added in web.config
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=498154" class="external text" rel="nofollow">498154</a> - Xbuild does not recognize **-Wildcard
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=498637" class="external text" rel="nofollow">498637</a> - HTML link tag in ASP.NET MVC render bug
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=498692" class="external text" rel="nofollow">498692</a> - many problems cross-building with gcc 4.2.x mingw cross
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=498853" class="external text" rel="nofollow">498853</a> - Cannot configure ConsoleTraceListener to use standard error through configuration
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=499013" class="external text" rel="nofollow">499013</a> - Appdomain.GetAssemblies() returns assemblies loaded for reflection only, not just for execution. Different behaviour than .NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=499851" class="external text" rel="nofollow">499851</a> - Need notification for UIA when a PopupButton gains focus
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=499864" class="external text" rel="nofollow">499864</a> - Dispose-Method of Mono.Data.SqliteClient.SqliteConnection doesn't close the connection.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=499887" class="external text" rel="nofollow">499887</a> - TabControl.GotFocus event not fired when SelectionIndex is set
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=500019" class="external text" rel="nofollow">500019</a> - SSE2 used on system without SSE2
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=500075" class="external text" rel="nofollow">500075</a> - &lt;%Page%&gt; Inherits doesn't support C# syntax
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=500385" class="external text" rel="nofollow">500385</a> - GetMethod fails to find private methods up the class hierarchy when using BindingFlags.NonPublic
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=500739" class="external text" rel="nofollow">500739</a> - Error when accessing anything but default route using system.web.routing
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=501589" class="external text" rel="nofollow">501589</a> - XElement Seems to Break
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=502029" class="external text" rel="nofollow">502029</a> - DateTimePicker: some children are not accessible by orca
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=502274" class="external text" rel="nofollow">502274</a> - HttpConnection does not unbind HttpListenerContext when KeepAlive is true
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=502555" class="external text" rel="nofollow">502555</a> - Routing problems related to default parameters
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=502866" class="external text" rel="nofollow">502866</a> - UDPClient.Receive does not honor Socket.ReceiveTimeout
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=503728" class="external text" rel="nofollow">503728</a> - misused Type.GetInterfaceMap() causes runtime crash
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504378" class="external text" rel="nofollow">504378</a> - Routes in System.Web.Routing don't handle "Variable Number of Segments" correctly (Catchall)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504391" class="external text" rel="nofollow">504391</a> - WebService.EnableDecompression crash
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504411" class="external text" rel="nofollow">504411</a> - Mprotect fails with ENOMEM in GC_remap
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504615" class="external text" rel="nofollow">504615</a> - [PATCH] Global.asax of precompiled sites not loaded
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504667" class="external text" rel="nofollow">504667</a> - [gmcs] compilation error when using partial static classes
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=505375" class="external text" rel="nofollow">505375</a> - JIT does not optimize do-while loop correctly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=505678" class="external text" rel="nofollow">505678</a> - mono.bin crashes for System.Xml.XPath.AxisIterator.MoveNextCore
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=506144" class="external text" rel="nofollow">506144</a> - Structs that contain Mono.Simd.Vector4f fields have broken sequential layout
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=506757" class="external text" rel="nofollow">506757</a> - CS0507 when overriding public method in class generated by ikvmc
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=506915" class="external text" rel="nofollow">506915</a> - Use of tertiary operator results in runtime stack trace but equivalent if/else code does not
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=507003" class="external text" rel="nofollow">507003</a> - Error in Assembly.DoAssemblyResolve
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=507666" class="external text" rel="nofollow">507666</a> - url-decode failed with encoded shift_jis query
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=507836" class="external text" rel="nofollow">507836</a> - ListItem attributes aren't stored in view state
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508167" class="external text" rel="nofollow">508167</a> - RegisterHiddenField should not put a "id" in the input field in 1.1 profile
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508389" class="external text" rel="nofollow">508389</a> - Mono 2.4 crashes due to accessing freed data structures
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508538" class="external text" rel="nofollow">508538</a> - System.Reflection.TargetInvocationException when calling MethodInfo.invoke
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508570" class="external text" rel="nofollow">508570</a> - Generic MVC ViewMasterPage does not respect type
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508649" class="external text" rel="nofollow">508649</a> - 404 not found errors should be displayed even when custom errors are on (and there is no redirect)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=508888" class="external text" rel="nofollow">508888</a> - MonoVS version of mono breaks Graffiti
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509069" class="external text" rel="nofollow">509069</a> - Can't set different handlers for subdirectories
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509092" class="external text" rel="nofollow">509092</a> - 403 errors should be handled specially as well
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509163" class="external text" rel="nofollow">509163</a> - '*' and ':' are not supported in ASP.NET virtual paths
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509450" class="external text" rel="nofollow">509450</a> - Web.config file modification is not detected
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509475" class="external text" rel="nofollow">509475</a> - Unclosed  when &lt;customErrors mode="On"/&gt;
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=509998" class="external text" rel="nofollow">509998</a> - Web.config changes in subdirectories are not detected
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=510302" class="external text" rel="nofollow">510302</a> - Theming asp.net application seems not work
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=510735" class="external text" rel="nofollow">510735</a> - Location path is not verified to be a relative path
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=511414" class="external text" rel="nofollow">511414</a> - Can't print from winforms
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=512028" class="external text" rel="nofollow">512028</a> - [Regression] asp.net framework includetest fails on mono-2.4.2 using xsp2
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=512037" class="external text" rel="nofollow">512037</a> - OutputCache directive Location parameter handling is broken
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=512485" class="external text" rel="nofollow">512485</a> - [PATCH] deadlock in ReaderWriterLockSlim.EnterWriteLock
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=512535" class="external text" rel="nofollow">512535</a> - Can't concatenate Item list error when compiling non-standard project with xbuild
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=513849" class="external text" rel="nofollow">513849</a> - HttpListener does not release the specified port by listener prefixes.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=513965" class="external text" rel="nofollow">513965</a> - Please Add IE8.0 to browscap.ini
+</li></ul>
+<h1> <span class="mw-headline" id="Installing_Mono_2.4.2">Installing Mono 2.4.2 </span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-2.4.2.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-2.4.2
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-2.4.2.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-2.4.2
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+

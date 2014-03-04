@@ -1,0 +1,39 @@
+---
+layout: obsolete
+title: "Continuations"
+permalink: /old_site/Continuations/
+---
+
+<h1>Continuations</h1>
+
+<p>Starting with Mono 2.6 the Mono runtime supports a continuation framework that allows for a number of high-level abstractions like co-routines and cooperative multi-threading to be implemented on top of it.
+</p><p>The API is contained in the Mono.Tasklets assemblies, and it is the Mono-team supported mechanism for doing continuations, microthreading and coroutines in the ISO CLI. It is based on <a href="http://www.bat.org/~tomba/" class="external text" rel="nofollow">Tomi Valkeinen's excellent work on co-routines</a> for Mono.
+</p><p>Unlike the work that we typically do in Mono which is pure C# and will work out of the box in .NET (even our Mono.SIMD code will work on .NET, it will just run a lot slower) Mono.Tasklets requires changes to the VM that are not portable to other ISO CLI implementations. 
+</p><p>An introduction that describes various frameworks and the evolution of the Mono.Tasklet.Continuation framework is available in the <a href="http://tirania.org/blog/archive/2009/Apr-09.html" class="external text" rel="nofollow">announcement post</a> in Miguel's blog.   That post also discusses some scenarios where continuations and co-routines are useful.
+</p>
+<h1> <span class="mw-headline" id="The_API"> The API </span></h1>
+<p>The Mono.Tasklet.Continuation is based on Tomi's Microthreading library, but it only provides the core primitive: the continuation. None of the high-level features from Tomi's library are included.
+</p><p>This is the API:
+</p>
+<pre class="csharp" style="font-family:monospace;">     <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Continuation <span style="color: #008000;">&#123;</span>
+          <span style="color: #0600FF; font-weight: bold;">public</span> Continuation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+          <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Mark <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+          <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> Store <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> state<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+          <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Restore <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> state<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">&#125;</span></pre>
+<p>When you call Store the current state of execution is recorded and it is possible to go back to this state by invoking Restore. The caller to Store tells whether it is the initial store or a restore point based on the result from Store:
+</p>
+<pre class="csharp" style="font-family:monospace;">     <span style="color: #0600FF; font-weight: bold;">var</span> c <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Continuation <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+     <span style="color: #008000;">...</span>
+&#160;
+     <span style="color: #0600FF; font-weight: bold;">switch</span> <span style="color: #008000;">&#40;</span>c<span style="color: #008000;">.</span><span style="color: #0000FF;">Store</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+     <span style="color: #0600FF; font-weight: bold;">case</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">:</span>
+          <span style="color: #008080; font-style: italic;">// First invocation</span>
+     <span style="color: #0600FF; font-weight: bold;">case</span> <span style="color: #FF0000;">1</span><span style="color: #008000;">:</span>
+          <span style="color: #008080; font-style: italic;">// Restored from the point ahead.</span>
+     <span style="color: #008000;">&#125;</span>
+     <span style="color: #008000;">...</span>
+     <span style="color: #008080; font-style: italic;">// Jump back to the switch statement.</span>
+     c<span style="color: #008000;">.</span><span style="color: #0000FF;">Restore</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Tomi implemented a Microthreading library on top of this abstraction, this library has been <a href="http://tirania.org/tmp/monoco-tasklets.tar.gz" class="external text" rel="nofollow">ported to Mono.Tasklets.Continuation</a>.
+</p>

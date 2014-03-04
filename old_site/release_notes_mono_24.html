@@ -1,0 +1,114 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.4"
+permalink: /old_site/Release_Notes_Mono_2.4/
+---
+
+<h1>Release Notes Mono 2.4</h1>
+
+<p>Mono 2.4 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Major_Highlights"><span class="tocnumber">1</span> <span class="toctext">Major Highlights</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Changes_since_Mono_2.2"><span class="tocnumber">2</span> <span class="toctext">Changes since Mono 2.2</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Runtime"><span class="tocnumber">2.1</span> <span class="toctext">Runtime</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#SIMD_support_in_Mono"><span class="tocnumber">2.1.1</span> <span class="toctext">SIMD support in Mono</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#No_more_polling"><span class="tocnumber">2.1.2</span> <span class="toctext">No more polling</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Other_Changes"><span class="tocnumber">2.1.3</span> <span class="toctext">Other Changes</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Behavioral_Changes"><span class="tocnumber">2.1.4</span> <span class="toctext">Behavioral Changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Mono.Posix"><span class="tocnumber">2.2</span> <span class="toctext">Mono.Posix</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Performance"><span class="tocnumber">2.3</span> <span class="toctext">Performance</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ASP.NET"><span class="tocnumber">2.4</span> <span class="toctext">ASP.NET</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Precompiled_Web_Sites"><span class="tocnumber">2.4.1</span> <span class="toctext">Precompiled Web Sites</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Performance:_Single_Domain_Support"><span class="tocnumber">2.4.2</span> <span class="toctext">Performance: Single Domain Support</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Winforms"><span class="tocnumber">2.5</span> <span class="toctext">Winforms</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Installing_Mono_2.4"><span class="tocnumber">3</span> <span class="toctext">Installing Mono 2.4</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<p>This is a release focused on stability and performance and it is also the foundation for Novell's own long-term support Mono-based product.
+</p>
+<h1> <span class="mw-headline" id="Changes_since_Mono_2.2"> Changes since Mono 2.2 </span></h1>
+<p>This documents the changes since <a href="{{site.baseurl}}/Release_Notes_Mono_2.2" title="Release Notes Mono 2.2">Mono 2.2</a>.   
+</p>
+<h2> <span class="mw-headline" id="Runtime"> Runtime </span></h2>
+<h3> <span class="mw-headline" id="SIMD_support_in_Mono"> SIMD support in Mono </span></h3>
+<p>SIMD constructors are now optimized.    A few APIs have been renamed to better suit the Design Guidelines.
+</p>
+<h3> <span class="mw-headline" id="No_more_polling"> No more polling </span></h3>
+<p>One of the most challenging components of Mono was supporting Thread.Interrupt in a way that worked across multiple operating systems.   In previous versions of Mono, the only solution we found that was portable was to poll every 100ms for potential interruptions requested by another thread.
+</p><p>Starting with Mono 2.4, that polling code is no longer present and instead a cross-platform solution to the problem is being used that provides both support for Thread.Interrupt() and does not consume CPU cycles.
+</p>
+<h3> <span class="mw-headline" id="Other_Changes"> Other Changes </span></h3>
+<ul><li> The old JIT has been removed, and only the new linear IR based JIT is available.
+</li><li> The --enable-parallel-mark=yes argument to configure is now the default, this speeds up garbage collections on multi-core machines.
+</li><li> WaitHandle now supports SignalAndWait.
+</li><li> MarshalByRefObject supports MemberwiseClone
+</li><li> COM: support NULLs IDispatch and IUnknown.
+</li></ul>
+<h3> <span class="mw-headline" id="Behavioral_Changes"> Behavioral Changes </span></h3>
+<p>Our System.Diagnostics.Process implementation will now properly raise the termination event on OutputDataReceived and ErrorDataReceived.   See <a href="https://bugzilla.novell.com/show_bug.cgi?id=459450" class="external text" rel="nofollow">bug 459450</a> for details.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Mono.Posix"> Mono.Posix </span></h2>
+<p>Support for Real Time Signals, it is now possible to fetch the list of real-time signals in a cross-platform way.
+</p>
+<h2> <span class="mw-headline" id="Performance"> Performance </span></h2>
+<p>Optimized the XPath code which reduces memory consumption in our own tests by 15%.
+</p><p>DateTime.TryParse does no longer depend on internal try/catches.
+</p><p>Loading resources from a satellite assembly does not internally throw exceptions.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="ASP.NET"> ASP.NET </span></h2>
+<h3> <span class="mw-headline" id="Precompiled_Web_Sites"> Precompiled Web Sites </span></h3>
+<p>Mono's ASP.NET stack can now run precompiled ASP.NET web sites generated with Visual Studio or using the aspnet_compiler.   This allows Mono to support ASP.NET applications written in languages other than C# or applications that take advantage of new VB.NET features not available on Mono's VB compiler.
+</p><p>Typically web sites are compiled like this from the command line:
+</p>
+<pre class="bash" style="font-family:monospace;">c:\<span style="color: #7a0874; font-weight: bold;">test</span>\<span style="color: #000000; font-weight: bold;">&gt;</span>aspnet_compiler <span style="color: #660033;">-f</span> <span style="color: #660033;">-p</span> c:\<span style="color: #7a0874; font-weight: bold;">test</span>\BlogEngine.Web <span style="color: #660033;">-v</span> <span style="color: #000000; font-weight: bold;">/</span>blog c:\<span style="color: #7a0874; font-weight: bold;">test</span>\output</pre>
+<p>Alternatively, this can be done with Visual Studio using the "Publish" feature.
+</p>
+<h3> <span class="mw-headline" id="Performance:_Single_Domain_Support"> Performance: Single Domain Support </span></h3>
+<p>If only one application is configured in <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a> or Mono's XSP Mono will eliminate the intermediate multiplexor/demultiplexor for requests and instead send and receive the data straight from one domain to the kernel.
+</p><p>This eliminates a number of calls into Mono's Remoting stack that is required when multiple applications are running.
+</p>
+<h2> <span class="mw-headline" id="Winforms"> Winforms </span></h2>
+<p>Many improvements to the DataGridView control to better support DataBinding.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Installing_Mono_2.4">Installing Mono 2.4 </span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-<span style="color: #000000;">2.4</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-<span style="color: #000000;">2.4</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-<span style="color: #000000;">2.4</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-<span style="color: #000000;">2.4</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+

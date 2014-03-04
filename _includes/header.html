@@ -2,7 +2,7 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/img/mono-gorilla.svg" id="logo"/>Mono</a></h1>
+        <h1><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/mono-gorilla.svg" id="logo"/>Mono</a></h1>
       </li>
       <li class="toggle-topbar"><a href="#">Menu</a></li>
     </ul>
@@ -15,6 +15,20 @@
         <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="{{site.baseurl}}/docs"><i class="fa fa-book"></i> Documentation</a></li>
         <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="{{site.baseurl}}/news"><i class="fa fa-bullhorn"></i> News</a></li>
         <li {% if page.navgroup == "contribute" %}class="active"{% endif %}><a href="{{site.baseurl}}/contribute"><i class="fa fa-github"></i> Contribute</a></li>
+        <li id="searchbox" class="has-form">
+          <form action="http://www.google.com/search?" method="get">
+            <div class="row collapse">
+              <div class=" small-11 medium-9 large-10 columns">
+                <input name="sitesearch" id="sitesearch" type="hidden" value="www.mono-project.com"></input>
+                <input name="domains" id="domains" type="hidden" value="www.mono-project.com"></input>
+                <input name="q" type="text" placeholder="Search..."></input>
+              </div>
+              <div class="small-1 medium-3 large-2 columns">
+               <button type="submit" class="postfix button"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </li>
       </ul>
     </section>
   </nav>

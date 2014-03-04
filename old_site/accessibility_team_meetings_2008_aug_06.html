@@ -1,0 +1,745 @@
+---
+layout: obsolete
+title: "Accessibility: Team Meetings 2008 Aug 06"
+permalink: /old_site/Accessibility:_Team_Meetings_2008_Aug_06/
+---
+
+<h1>Accessibility: Team Meetings 2008 Aug 06</h1>
+
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<td>
+</td>
+<td> -!- calvin changed the topic of #mono-a11y to: *** Iteration 12 Planning Meeting in progress **** -  <a href="http://www.mono-project.com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project.com/Accessibilit</a> y
+</td>
+<td> 07:01
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> there are a number of people out of the office today
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so this might go rather quick
+</td>
+<td> 07:02
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> calvin: Brian asked me to give his report&#160;:)
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> Calen: ok, I was going to ask you about that
+</td></tr>
+<tr>
+<td>
+</td>
+<td> good
+</td></tr>
+<tr>
+<td>
+</td>
+<td> let's go through our reports first and then I'll have jpallen review anything additional he has
+</td>
+<td> 07:03
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok, so top of the iteration is Sandy, go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> I've mostly finished the NumericUpDownProvider, but its tests are not yet complete.  I realized for it to work properly, I needed to get the LabeledBy property working.  I spent quite some time trying to figure out how Microsoft was determining which label went with which control.  Finally I decided that there was no decent logic to it, and started to implement a simple distance algorithm.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Then Calvin asked me to look into the open UIA bugs, so I put that on hold (will finish it up today and tomorrow).  I resolved two majors bugs and one minor one.  There are two other bugs (411882 and 411444) that I think are pretty important, so unless somebody else was planning on fixing them I think I'll work on those this iteration, too.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> So this iteration I'll work on bugs, finish the NumericUpDownProvider tests, implement proper LabeledBy property support, improve our notifications when controls move on the screen (or move off of it), and start on a new control: PrintPreviewDialog.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (and I just realized my wiki changes got overwritten so I'll fix that after the meeting)
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> sandy: wow, that was either prepared or you type super fast!
+</td>
+<td> 07:04
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td>&#160;:-)
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> thanks
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Mario, go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> Calen: I think your changes got overwritten, too
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> In this iteration I fixed some bugs in ScrollBar, most of them because of a confusion in the MSDN documentation
+</td>
+<td> 07:05
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> sandy: oh..thanks, i will  fix
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> tried to finish ErrorProvider, but I found that the component has a "special" behavior, because add controls that represent the error
+</td>
+<td> 07:06
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (you know the&#160;! mark)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> however, all those "new added controls" are "one big control", this affects navigation
+</td>
+<td> 07:07
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so, now, I'm updating Navigation to support his kind of weird behavior
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I finish, PictureBox provider, (Pane control type)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> s/finish/finished
+</td>
+<td> 07:08
+</td></tr>
+<tr>
+<td>
+</td>
+<td> my plans for next iteration is to finish Navigation, fix some bugs found by mgorse in Scrollbar navigation and send the patches to review
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> mario: thanks
+</td>
+<td> 07:09
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ngao: go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td>
+</td>
+<td> last iteration, i finished ProgressBar test and StatusBar navigation, also fixed some TODO fields.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> there are some troubles then implementing Image, since there are no image type controls, we couldn't construct or get image provider from a control. i'm still looking for controls in uispy.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration, i will implement edit and StatusBarPanel, by then i think the whole StatusBar will complete.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> great!
+</td>
+<td> 07:10
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> It wasn't a very productive iteration for me
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I was trying to work on scrollbar tests but have been running into issues
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I've wrapped up an a11y issue with ORBit that Jared had me work on (not directly related to our project)
+</td></tr>
+<tr>
+<td>
+</td>
+<td>  I made some more scrollbar changes to handle scrollbars that don't implement IRangeValueProvider, but haven't tested or committed
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Yesterday I reworked the code to add a child in the bridge to use Navigate.GetDirection(NavigateDirection. Parent) to get the parent rather than using HostRawElementProvider, so now it's better able to add things where they should be added
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I figured out that Orca doesn't see keys sent from apps using the bridge because it is the responsibility of the app (ie, the bridge) to pass them on to the at-spi registry
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I asked about this on #a11y, if there was a reason that the registry daemon didn't do a key grab, and was told that popups and the screen saver won't come up if a program is doing a key grab
+</td>
+<td> 07:11
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so I guess that means that it is up to the app to pass keys on, in the current design anyway.  Not sure right now if there's a good way to do that in the uia-atk bridge.  It's a bit odd since UIA isn't involved in passing keys on, as far as I know, so, if there were an event for it, then it wouldn't be part of UIA
+</td>
+<td> 07:12
+</td></tr>
+<tr>
+<td>
+</td>
+<td> next iteration I plan to finish working on scrollbars and map ProgressBar in the bridge
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> mgorse: yeah, when I first came on the desktop team I did some work on the screensaver and logout dialogs, and the key grab code was a mess in there!
+</td>
+<td> 07:13
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: anything of significance from the open a11y meeting yesterday?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> well, I'll go ahead while waiting for a response from mgorse
+</td>
+<td> 07:15
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> calvin: That reminds me that I need to post minutes.  It was a short meeting; there weren't many people there.  People were talking about modifying their statement on at-spi to mention CodeThink.  I suggested that Novell should be mentioned, too.  So we'll work on that and vote on the new statement next week
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> I didn't get much done on my UIA plans due to a combination of some non-related UIA Novell work and some administrative work
+</td>
+<td> 07:16
+</td></tr>
+<tr>
+<td>
+</td>
+<td> So I asked sandy to start looking into the bugs in my place
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: good call
+</td></tr>
+<tr>
+<td>
+</td>
+<td> I will be out of pretty much all of the upcoming iteration so I'm not going to schedule anything other than some work with knocte when he returns tomorrow and some other team stuff
+</td>
+<td> 07:17
+</td></tr>
+<tr>
+<td>
+</td>
+<td> knocte is still on vacation and I don't have a report from him so perhaps he can inject his plans in here when he returns from vacation
+</td>
+<td> 07:18
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> calvin: That reminds me that I have a work-around for bug 411444, but it involves a hack in at-spi, so it isn't really ideal.  Better if we can fix the issues with the glib mainloop, but I'm not relaly sure how to do that.  I added a comment that explains the issue
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> thanks mgorse
+</td>
+<td> 07:19
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> mgorse: ok, I'll review your comment  (sandy, probably good to look at it too)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Calen: why don't you go ahead with both your report and Brian's
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> calvin: okay
+</td>
+<td> 07:20
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Brian:
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Mostly worked on documentation.  I did some cleanup of the
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Strongwind documentation, but mostly focused on documentation
+</td></tr>
+<tr>
+<td>
+</td>
+<td> specific to using and understanding our test harness, adding tests
+</td></tr>
+<tr>
+<td>
+</td>
+<td> to the test suite, the "official" test machines in Provo, etc.  This
+</td></tr>
+<tr>
+<td>
+</td>
+<td> documentation is almost finished
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (<a href="http://www.mono-project.com/Accessibili" class="external free" rel="nofollow">http://www.mono-project.com/Accessibili</a> ty:_Testing_Howto)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> This should basically finish up our basic automated framework for
+</td></tr>
+<tr>
+<td>
+</td>
+<td> testing apps directly through pyatspi (using Strongwind), so next
+</td></tr>
+<tr>
+<td>
+</td>
+<td> iteration I want to finally get into Orca testing and evaluate what
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we need to set up a similar automated framework
+</td></tr>
+<tr>
+<td>
+</td>
+<td> calvin: that is Brian's report. now is mine
+</td>
+<td> 07:21
+</td></tr>
+<tr>
+<td>
+</td>
+<td> this iteration i have commited three new strongwind test code for scrollbar control against vscrollbar.py hscrollbar.py checkedlistbox.py. and loged two bugs.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i have modified picturebox.py sample with giving a path to invoke the jpg picture.
+</td>
+<td> 07:22
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and have modified some error in our test codes which i commited before.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> in next iteration i hope i can start to script for groupbox, picturebox, or listbox, checkedlistbox.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> actuality my script plan schedule base on Accessibility:_Control_Status and Accessibility:_Mapping_UIA_to_ATK wiki page with which one is marked 'done',
+</td></tr>
+<tr>
+<td>
+</td>
+<td> so i hope every one can update them promptly.  many many thanks&#160;:)
+</td>
+<td> 07:23
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> good point calen
+</td>
+<td> 07:24
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> and thanks sandy and mgorse fixed bugs in time ^ ^
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> thanks
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> that is where we're doing our project tracking
+</td></tr>
+<tr>
+<td>
+</td>
+<td> (high level project tracking)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> in other words
+</td></tr>
+<tr>
+<td>
+</td>
+<td> when MS comes to me and asks how things are going and are we on schedule
+</td>
+<td> 07:25
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it is these two wiki pages that i will turn to
+</td></tr>
+<tr>
+<td>
+</td>
+<td> right now
+</td></tr>
+<tr>
+<td>
+</td>
+<td> it appears that we are behind schedule
+</td></tr>
+<tr>
+<td>
+</td>
+<td> is the UIA to ATK mapping wiki up to date?
+</td>
+<td> 07:26
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> jpallen: no, it's not
+</td>
+<td> 07:27
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@mgorse&gt;&#160;</b>
+</td>
+<td> StatusBar is done, and ScrollBar is 50% done.  I'll update the wiki to say that after the meeting
+</td>
+<td> 07:28
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> jpallen: I'll chat with knocte and make sure it gets up to date (oh, and mgorse)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> mgorse: thanks
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Ray: go ahead
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> sure
+</td></tr>
+<tr>
+<td>
+</td>
+<td> for my Build part:
+</td></tr>
+<tr>
+<td>
+</td>
+<td>  played with at-spi-dbus for a bit time, and succeeded to build at-spi-dbus on my laptop, but failed on OBS with same spec file, i don't know why,  so i'll check it out later.
+</td>
+<td> 07:29
+</td></tr>
+<tr>
+<td>
+</td>
+<td> if someone interested in that, look into <a href="https://build.opensuse.org/package/show" class="external free" rel="nofollow">https://build.opensuse.org/package/show</a>? package=at-spi-dbus&amp;project=home%3Auia2a tk
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and for my QA part:
+</td></tr>
+<tr>
+<td>
+</td>
+<td>  I have implemented ErrorProvider and DomainUpDown controls, and there are 10+ controls left, i will have them finished as soon as possible.
+</td>
+<td> 07:30
+</td></tr>
+<tr>
+<td>
+</td>
+<td> bgmerrel suggests me switching to write Strongwind test samples after i finish all the controls. so in the coming week, i'm still going to keep on playing with winform control samples.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> and to see what's the problem about at-spi-dbus on OBS.
+</td></tr>
+<tr>
+<td>
+</td>
+<td> done
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> Ray: nice, that sounds great
+</td>
+<td> 07:31
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: don't want to miss you, are you here?
+</td></tr>
+<tr>
+<td>
+</td>
+<td> decriptor: is at a conference and I'm not sure if he is really sitting in front of his computer
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> he's probably standing in the lab talking to a customer&#160;:)
+</td>
+<td> 07:32
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> it would appear that he is not there, so we can wrap up
+</td></tr>
+<tr>
+<td>
+</td>
+<td> jpallen: do you have more to add?
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> just my normal rant about project tracking, which you already covered&#160;:)
+</td>
+<td> 07:33
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> heh
+</td></tr>
+<tr>
+<td>
+</td>
+<td> ok
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> i think we're farther along than our wiki pages show
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll get those updated
+</td></tr>
+<tr>
+<td>
+</td>
+<td> we'll talk more about this tomorrow in our team meeting
+</td>
+<td> 07:34
+</td></tr>
+<tr>
+<td>
+</td>
+<td> i'm assuming everyone will be there?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> yup
+</td></tr>
+<tr>
+<td> <b>&lt;@ngao&gt;&#160;</b>
+</td>
+<td> yes
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> yes!
+</td></tr>
+<tr>
+<td> <b>&lt;@Calen&gt;&#160;</b>
+</td>
+<td> jpallen: yeah.
+</td></tr>
+<tr>
+<td> <b>&lt;@mario&gt;&#160;</b>
+</td>
+<td> y!
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> yes
+</td></tr>
+<tr>
+<td> <b>&lt;@jpallen&gt;&#160;</b>
+</td>
+<td> good
+</td></tr>
+<tr>
+<td>
+</td>
+<td>&#160;:)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> that's all
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> ok, sandy will you do your normal IRC log magic to the wiki?
+</td></tr>
+<tr>
+<td> <b>&lt;@sandy&gt;&#160;</b>
+</td>
+<td> sure thing
+</td>
+<td> 07:35
+</td></tr>
+<tr>
+<td> <b>&lt;@calvin&gt;&#160;</b>
+</td>
+<td> great!  thanks everyone... have a good morning, good afternoon, and good night!
+</td></tr>
+<tr>
+<td> <b>&lt;@Ray&gt;&#160;</b>
+</td>
+<td> thank you
+</td></tr>
+<tr>
+<td> <b>&#160;</b>
+</td>
+<td> -!- calvin changed the topic of #mono-a11y to: <a href="http://www.mono-project/com/Accessibilit" class="external free" rel="nofollow">http://www.mono-project/com/Accessibilit</a> y
+</td></tr>
+</table>
+

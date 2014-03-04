@@ -1,0 +1,451 @@
+---
+layout: obsolete
+title: "Debugging"
+permalink: /old_site/Debugging/
+---
+
+<h1>Debugging</h1>
+
+<p><br />
+Debugging a problem in an application is like solving a puzzle.   There are certain tools that can help you solve the puzzle.   This page documents some of the strategies, tools and tricks that you can use in solving these puzzles.
+</p><p>You can find bugs by using a debugger: setting breakpoints, running the code line-by-line, examining variables, changing its state, exploring what other threads are doing, and see what the call stacks for each routines are.   See the sections <a href="{{site.baseurl}}/Debugging#Mono_Debugger" title="Debugging">Mono Debugger</a>, <a href="{{site.baseurl}}/Debugging#Debugging_with_GDB" title="Debugging">Debugging with GDB</a> and <a href="{{site.baseurl}}/Debugging#Debugging_with_LLDB" title="Debugging">Debugging with LLDB</a> for more information on this. 
+</p><p>You can also debug an application by looking at stack traces.  These are typically the result of an exception being thrown, or are the result of the code containing explicit calls to <tt>Console.WriteLine(Environment.StackTrace)</tt>.   This helps you understand what the call frames were at the point of the stack traces and you can use this to understand what could have lead to the particular state that you are exploring (the crash, the exception, the report).
+</p><p>Debuggers and stack traces are not enough, sometimes you want to see what is happening as the application runs, "trace" its execution and look at parameters and return values that are being passed around.   See the <a href="{{site.baseurl}}/Debugging#Tracing_Program_Execution" title="Debugging">Tracing Programing Execution</a> section for details on this technique.
+</p><p>Another diagnostics mechanism is exploring which exceptions are being thrown (you might be accidentally capturing exceptions that should be propagated, or your program might be performing suboptimally).   See the section on <a href="{{site.baseurl}}/Debugging#Exceptions" title="Debugging">Exceptions</a> to understand how to see these.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Debugging_information"><span class="tocnumber">1</span> <span class="toctext">Debugging information</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Debugging_with_GDB"><span class="tocnumber">2</span> <span class="toctext">Debugging with GDB</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Debugging_with_LLDB"><span class="tocnumber">3</span> <span class="toctext">Debugging with LLDB</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Debugging_With_Visual_Studio_on_Windows"><span class="tocnumber">4</span> <span class="toctext">Debugging With Visual Studio on Windows</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Debugging_Managed_Lock_Deadlocks"><span class="tocnumber">5</span> <span class="toctext">Debugging Managed Lock Deadlocks</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Debugging_Unmanaged_Deadlocks"><span class="tocnumber">6</span> <span class="toctext">Debugging Unmanaged Deadlocks</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Debugging_Pinned_Objects"><span class="tocnumber">7</span> <span class="toctext">Debugging Pinned Objects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Triggering_the_Debugger"><span class="tocnumber">7.1</span> <span class="toctext">Triggering the Debugger</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Debugging_with_GDB_in_XDEBUG_mode"><span class="tocnumber">8</span> <span class="toctext">Debugging with GDB in XDEBUG mode</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#For_gdb_7.0"><span class="tocnumber">8.1</span> <span class="toctext">For gdb 7.0</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#For_older_gdb_versions"><span class="tocnumber">8.2</span> <span class="toctext">For older gdb versions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Exceptions"><span class="tocnumber">9</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Tracing_Program_Execution"><span class="tocnumber">10</span> <span class="toctext">Tracing Program Execution</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Runtime_Logging"><span class="tocnumber">11</span> <span class="toctext">Runtime Logging</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Using_Valgrind_on_Mono"><span class="tocnumber">12</span> <span class="toctext">Using Valgrind on Mono</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#libgdiplus"><span class="tocnumber">12.1</span> <span class="toctext">libgdiplus</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Debugging_information"> Debugging information </span></h2>
+<p>To debug applications or obtain line number information in stack traces, it is necessary to compile your programs with debugging information.   This is achieved using the -debug command line option to the C# compiler.  In Mono 1.0.x this embeds the debugging information in the resulting assembly, in Mono 1.1.x a separate file with the extension .mdb is produced. 
+</p><p>To get stack traces with line number information, you need to run your program like this:
+</p>
+<pre>mono --debug program.exe</pre>
+<p>Notice that the program will need to be compiled with the -debug flag and that running with --debug will slow down the execution.
+</p>
+<h2> <span class="mw-headline" id="Debugging_with_GDB"> Debugging with GDB </span></h2>
+<p>Until the Mono Debugger is ready for production, GDB can be used to obtain some information about your application and debug some problems.  This section covers the details on debugging your Mono application with GDB.
+</p><p>First and foremost, Mono support libraries use a couple of signals internally that confuse gdb, to work around this, put this in your .gdbinit file (in your $HOME path):
+</p>
+<pre>
+handle SIGXCPU SIG33 SIG35 SIGPWR nostop noprint
+</pre>
+<p>If you use GDB to debug your mono process, you can use the function <tt>print_method_from_ip</tt> (which takes an address) to obtain the name of a method given an address.   This is particularly useful when examining stack traces.   The function was renamed to <tt>mono_pmip</tt> in the Mono 1.1.x serie s (For a while the function was called <tt>mono_print_method_from_ip</tt>).
+</p><p>For example, when faced with a stack trace, like this:
+</p>
+<pre>
+(gdb) where
+#0  ves_icall_System_String_GetHashCode (me=0x80795d0) at string-icalls.c:861
+#1  0x0817f490 in&#160;?? ()
+#2  0x0817f42a in&#160;?? ()
+#3  0x0817f266 in&#160;?? ()
+#4  0x0817f1a5 in&#160;?? ()
+</pre>
+<p>You can find out what methods are at each address using the print_method_from_ip function (or mono_pmip if you are using Mono 1.1.x):
+</p>
+<pre>
+(gdb) p mono_pmip (0x0817f490)
+IP 0x817f490 at offset 0x28 of method (wrapper managed-to-native) System.String:GetHashCode () (0x817f468 0x817f4a4)
+$1 = void
+(gdb) p mono_pmip (0x0817f42a)
+IP 0x817f42a at offset 0x52 of method System.Collections.Hashtable:GetHash (object) (0x817f3d8 0x817f43b)
+$2 = void
+</pre>
+<p>Sometimes you will want to produce a complete dump of all the managed names from within gdb, this can be achived with a gdb macro, put this in your .gdbinit file in your HOME directory:
+</p>
+<pre>
+define mono_backtrace
+ select-frame 0
+ set $i = 0
+ while ($i &lt; $arg0)
+   set $foo = (char*) mono_pmip ($pc)
+   if ($foo)
+     printf &quot;#%d&#160;%p in&#160;%s\n&quot;, $i, $pc, $foo
+   else
+     frame
+   end
+   up-silently
+   set $i = $i + 1
+ end
+end
+</pre>
+<p>Then you can issue the "mono_backtrace 15" from the gdb prompt to obtain a trace  of the last 15 frames.
+</p><p>If you use P/Invoke often, it is often helpful to set a breakpoint in an unmanaged function and then print a managed stack trace.  Starting with 1.1.13.4, you can add the following gdb macro to your .gdbinit file.  (Note, this has only been tested on x86):
+</p>
+<pre>
+define mono_stack
+ set $mono_thread = mono_thread_current ()
+ if ($mono_thread == 0x00)
+   printf &quot;No mono thread associated with this thread\n&quot;
+ else
+   set $ucp = malloc (sizeof (ucontext_t))
+   call (void) getcontext ($ucp)
+   call (void) mono_print_thread_dump ($ucp)
+   call (void) free ($ucp)
+ end
+end
+</pre>
+<p>Using "mono_stack" from gdb will print a managed stack trace <i>to the program's stdout</i>.  It will not print out in your gdb console!  You can also use "thread apply all mono_stack" to print stacks for all threads.
+</p><p>Output will look something like this:
+</p>
+<pre>
+Breakpoint 1, g_mime_init (flags=0) at gmime.c:49
+49              if (initialized++)
+(gdb) mono_stack
+
+&quot;&quot; tid=0x0xb7d1c6c0 this=0x0x21e40:
+in (wrapper managed-to-native) GMime.Global:g_mime_init (int) &lt;0x4&gt;
+in (wrapper managed-to-native) GMime.Global:g_mime_init (int) &lt;0xffffffe9&gt;
+in GMime.Global:Init () &lt;0x9&gt;
+in Beagle.Filters.FilterMail:DoOpen (System.IO.FileInfo) (at /home/joe/cvs/beagle/Filters/FilterMail.cs:60)
+[...]
+in ExtractContentTool:Display (Beagle.Indexable) (at /home/joe/cvs/beagle/beagled/ExtractContent.cs:76)
+in ExtractContentTool:Main (string[]) (at /home/joe/cvs/beagle/beagled/ExtractContent.cs:233)
+in (wrapper runtime-invoke) System.Object:runtime_invoke_int_string[] (object,intptr,intptr,intptr) &lt;0x50730316&gt;
+</pre>
+<p>In versions after Mono 1.1.18, a few new functions are available to assist in debugging applications from within GDB.
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #993333;">void</span> mono_object_describe        <span style="color: #009900;">&#40;</span>MonoObject <span style="color: #339933;">*</span>obj<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">void</span> mono_object_describe_fields <span style="color: #009900;">&#40;</span>MonoObject <span style="color: #339933;">*</span>obj<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">void</span> mono_value_describe_fields  <span style="color: #009900;">&#40;</span>MonoClass<span style="color: #339933;">*</span> klass<span style="color: #339933;">,</span> <span style="color: #993333;">const</span> <span style="color: #993333;">char</span><span style="color: #339933;">*</span> addr<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">void</span> mono_class_describe_statics <span style="color: #009900;">&#40;</span>MonoClass<span style="color: #339933;">*</span> klass<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">void</span> mono_debug_print_vars       <span style="color: #009900;">&#40;</span>gpointer ip<span style="color: #339933;">,</span> gboolean only_arguments<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<p>Use <tt>mono_object_describe</tt> to get a small description of the object obj.
+</p><p>Use <tt>mono_object_describe_fields</tt> to get a small description of all the fields on the given object.
+</p><p>Use <tt>mono_value_describe_fields</tt> to prints to stdout a small description of each field of the value type stored at @addr of type @klass.
+</p><p>Use <tt>mono_class_describe_statics</tt> to prints to stdout a small description of each static field of the type @klass in the current application domain.
+</p><p>Use <tt>mono_debug_print_vars</tt> to prints to stdout the information about the local variables in a method (if @only_arguments is false) or about the arguments.
+</p><p>The information includes the storage info (where the variable lives, in a register or in memory).  The method is found by looking up what method has been emitted at the instruction address @ip.
+</p><p>Here is an example session:
+</p>
+<pre>
+gdb mono
+[...]
+(gdb) run --debug --break 'System.Buffer:BlockCopy' tests/console.exe
+We can now write to the console
+Program received signal SIGTRAP, Trace/breakpoint trap.
+[Switching to Thread -1210435904 (LWP 634)]
+0xb7a2b97f in&#160;?? ()
+(gdb) call mono_pmip ($eip)
+$1 = 0x8279750 &quot; System.Buffer:BlockCopy (System.Array,int,System.Array,int,int) + 0x17 (0xb7a04968 0xb7a04b93) [0x21f00 - console.exe]&quot;
+(gdb) call mono_debug_print_vars ($eip, 1)
+Arg src (0) in memory: base register&#160;%ebp + 8
+Arg srcOffset (1) in memory: base register&#160;%ebp + 12
+Arg dest (2) in register&#160;%ebx
+Arg destOffset (3) in register&#160;%esi
+Arg count (4) in register&#160;%edi
+(gdb) call mono_object_describe (*(char**)($ebp+8))
+System.Char[] at 0x43e58, rank: 1, length: 1
+(gdb) call mono_object_describe ($ebx)
+System.Char[] at 0x55000, rank: 1, length: 1024
+
+</pre>
+<h2> <span class="mw-headline" id="Debugging_with_LLDB"> Debugging with LLDB </span></h2>
+<p>You can use the following LLDB python script to get backtraces in lldb:
+</p>
+<pre>
+import lldb
+
+def monobt(debugger, command, result, dict):
+	target = debugger.GetSelectedTarget()
+	process = target.GetProcess()
+	thread = process.GetSelectedThread()
+	for frame in thread:
+		pc = str(frame.GetPCAddress())
+		if pc[0] == '0':
+			try:
+				print 'frame #' + str(frame.GetFrameID()) + ': ' + pc + frame.EvaluateExpression('(char*)mono_pmip((void*)' + pc + ')').GetSummary()[1:-1]
+			except:
+				print frame
+		else:
+			print frame
+
+	return None
+
+def __lldb_init_module (debugger, dict):
+    # This initializer is being run from LLDB in the embedded command interpreter
+    # Add any commands contained in this module to LLDB
+    debugger.HandleCommand('command script add -f monobt.monobt monobt')
+    print '&quot;monobt&quot; command installed'
+</pre>
+<p>Assuming the above script is saved in ~/Library/lldb/monobt.py, you can load it automatically in every lldb session by putting the following into .lldbinit (in your $HOME directory):
+</p>
+<pre>
+command script import ~/Library/lldb/monobt.py
+</pre>
+<p>Once the script is loaded, you can type `monobt' to get a backtrace of the currently selected thread with managed frames symbolicated.
+</p>
+<h2> <span class="mw-headline" id="Debugging_With_Visual_Studio_on_Windows"> Debugging With Visual Studio on Windows </span></h2>
+<p>Most of the techniques that you can use in GDB can also be used on Windows using the Visual Studio debugger. You can use the Immediate Window to enter your commands. if the gdb command is:
+</p>
+<pre>p mono_pmip(0xdeadbeef)</pre>
+<p>the equivalent command for the immediate window is the same without the p, and explictely casting the argument to a void*
+</p>
+<pre>mono_pmip((void*)0xdeadbeef)</pre>
+<p>When mono was loaded from a dynamic library, and the above command doesn't work, you can tell visual studio more explicitely where to find the function. Assuming mono was loaded from "mono.dll", the somewhat cryptic command is:
+</p>
+<pre>{,,mono}mono_pmip((void*)0xdeadbeef)</pre>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Debugging_Managed_Lock_Deadlocks"> Debugging Managed Lock Deadlocks </span></h2>
+<p>Managed locks (implemented in the Monitor class and usually invoked with the lock () construct in C#) are subject to the same incorrect uses of normal locks, though they can be safely taken recursively by the same thread.
+</p><p>One of the obviously incorrect way to use locks is to have multiple locks and acquire them in different orders in different codepaths. Here is an example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> TestDeadlock <span style="color: #008000;">&#123;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> lockA <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">object</span> lockB <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> normal_order <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>lockA<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;took lock A&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #008080; font-style: italic;">// make the deadlock more likely</span>
+             Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>lockB<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                  Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;took lock B&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> reverse_order <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>lockB<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;took lock B&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #008080; font-style: italic;">// make the deadlock more likely</span>
+             Thread<span style="color: #008000;">.</span><span style="color: #0000FF;">Sleep</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>lockA<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                  Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;took lock A&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        TestDeadlock td <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TestDeadlock <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>td<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">lock</span> <span style="color: #008000;">&#40;</span>td<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span> <span style="color: #008080; font-style: italic;">// twice for testing the nest level</span>
+                 Thread t1 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span>
+                       <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span>normal_order<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                 Thread t2 <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Thread <span style="color: #008000;">&#40;</span>
+                       <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ThreadStart <span style="color: #008000;">&#40;</span>reverse_order<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                 t1<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                 t2<span style="color: #008000;">.</span><span style="color: #0000FF;">Start</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                 t1<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Join</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                 t2<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Join</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+       <span style="color: #008000;">&#125;</span>
+   <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>There is an explicit Sleep () call to make the race condition happen almost every time you run such a program. The issue with such deadlocks is that usually the race time window is very small and it will go unnoticed during testing. The new feature in the mono runtime is designed to help find the issue when a process is stuck and we don't know why.
+</p><p>Now you can attach to the stuck process using gdb and issue the following command:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> call mono_locks_dump <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">0</span><span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<p>which results in output like this:
+</p>
+<pre class="bash" style="font-family:monospace;">Lock 0x824f108 <span style="color: #000000; font-weight: bold;">in</span> object 0x2ffd8 held by thread 0xb7d496c0,
+nest level: <span style="color: #000000;">2</span>
+Lock 0x824f150 <span style="color: #000000; font-weight: bold;">in</span> object 0x2ffe8 held by thread 0xb7356bb0,
+nest level: <span style="color: #000000;">1</span>
+        Waiting on semaphore 0x40e: <span style="color: #000000;">1</span>
+Lock 0x824f1b0 <span style="color: #000000; font-weight: bold;">in</span> object 0x2ffe0 held by thread 0xb7255bb0,
+nest level: <span style="color: #000000;">1</span>
+        Waiting on semaphore 0x40d: <span style="color: #000000;">1</span>
+Total locks <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000;">1</span> array<span style="color: #7a0874; font-weight: bold;">&#40;</span>s<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: <span style="color: #000000;">16</span>, used: <span style="color: #000000;">8</span>, on freelist: <span style="color: #000000;">8</span>, to
+recycle: <span style="color: #000000;">0</span></pre>
+<p>You can see that there are three locks currently held by three different threads. The first has been recursively acquired 2 times. The other two are more interesting because they each have a thread waiting on a semaphore associated with the lock structure: they must be the ones involved in the deadlock.
+</p><p>Once we know the threads that are deadlocking and the objects that hold the lock we might have a better idea of where exactly to look in the code for incorrect ordering of lock statements.
+</p><p>In this particular case it's pretty easy since the objects used for locking are static fields. The easy way to get the class is to notice that the object which is locked twice (0x2ffd8) is of the same class as the static fields:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> call mono_object_describe <span style="color: #7a0874; font-weight: bold;">&#40;</span>0x2ffd8<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+TestDeadlock object at 0x2ffd8 <span style="color: #7a0874; font-weight: bold;">&#40;</span>klass: 0x820922c<span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<p>Now we know the class (0x820922c) and we can get a list of the static fields and their values and correlate with the objects locked in the mono_locks_dump () list:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> call mono_class_describe_statics <span style="color: #7a0874; font-weight: bold;">&#40;</span>0x820922c<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+At 0x26fd0 <span style="color: #7a0874; font-weight: bold;">&#40;</span>ofs:  <span style="color: #000000;">0</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> lockA: System.Object object at 0x2ffe8
+<span style="color: #7a0874; font-weight: bold;">&#40;</span>klass: 0x820beac<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+At 0x26fd4 <span style="color: #7a0874; font-weight: bold;">&#40;</span>ofs:  <span style="color: #000000;">4</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> lockB: System.Object object at 0x2ffe0
+<span style="color: #7a0874; font-weight: bold;">&#40;</span>klass: 0x820beac<span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<p>Note that the lockA and lockB objects are the ones listed above as deadlocking.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Debugging_Unmanaged_Deadlocks"> Debugging Unmanaged Deadlocks </span></h2>
+<p>If the deadlock you're experiencing is not caused by your code, it might be a Mono runtime issue. To find out, get some backtraces with these steps:
+</p>
+<ul><li> Get your application to deadlock.
+</li><li> Launch gdb from the command line.
+</li><li> Execute "attach &lt;the-mono-process-id&gt;" (to find the process, pursue "ps -A | grep mono").
+</li><li> Execute "thread apply all bt".
+</li></ul>
+<p><br />
+The output you got with the last step is good to diagnose the problem or to attach to a bug.
+</p>
+<h2> <span class="mw-headline" id="Debugging_Pinned_Objects"> Debugging Pinned Objects </span></h2>
+<p>The Mono GC will conservatively scan part of the stacks of the threads to find if they reference objects that thus
+would need to be kept alive. Sometimes the stack, though, contains intergers or other data that look like a pointer
+to an object, but it isn't really used to hold a reference to managed memory. When using the SGen GC, to help
+debug those cases, you can call the function find_pinning_ref_from_thread(obj, obj_size) to check whether the object
+obj is being pinned from some thread locations. Make sure you have a mono debug build, as the linker could optimize away this function from production builds.
+</p>
+<h3> <span class="mw-headline" id="Triggering_the_Debugger"> Triggering the Debugger  </span></h3>
+<p>From managed code, you can invoke the System.Diagnostics.Debugger.Break ()  method in your code to break execution and get to the GDB prompt.  
+</p><p>From unmanaged code, you can use the G_BREAKPOINT() macro in your code.
+</p>
+<h2> <span class="mw-headline" id="Debugging_with_GDB_in_XDEBUG_mode"> Debugging with GDB in XDEBUG mode </span></h2>
+<p>With mono 2.6 or later, it is now possible to ask the runtime to generate
+debugging information which can be used by gdb. This currently only works on
+amd64/x86/arm linux. To use it:
+</p>
+<h3> <span class="mw-headline" id="For_gdb_7.0"> For gdb 7.0 </span></h3>
+<ul><li> No setup is needed, gdb will automatically load the mono mode written in python, and the the runtime will register debugging information with gdb using the new JIT interface in gdb 7.0.
+</li></ul>
+<p>gdb is not designed to handle 1000s of symbol files (one per JITted method), so
+the runtime groups them into fewer symbol files. This can lead to debug info
+missing for recently JITted methods. Typing 'xdb' will flush the debug info
+collected by the runtime.
+</p>
+<h3> <span class="mw-headline" id="For_older_gdb_versions"> For older gdb versions </span></h3>
+<ul><li> Set the MONO_XDEBUG env variable to '1'.
+</li><li> Add the following to your .gdbinit:
+</li></ul>
+<pre>
+  define xdb
+  shell rm -f xdb.so &amp;&amp; as -o xdb.o xdb.s &amp;&amp; ld -shared -o xdb.so xdb.o
+  add-symbol-file xdb.so 0
+  end
+</pre>
+<ul><li> Run mono under gdb with --debug (if you want to run moon, just launch 'firefox -d gdb', or 'firefox -g -d gdb' in case you're using Firefox &gt; 3.5). Having .mdb files available helps a lot.
+</li><li> When the program is stopped, type 'xdb'. This will cause the runtime to generate the debugging info, and gdb to load it. 
+</li></ul>
+<p>The output will now look like this:
+</p>
+<pre>
+(gdb) bt
+#0  0x0000000040cd707e in Tests:pass_floats_doubles (a=100, b=101, c=102, d=103, e=104, f=105, g=106)
+#1  0x0000000040cd6fd8 in Tests:test_721_sparc_float_argument_passing ()
+#2  0x0000000040a6228a in (wrapper runtime-invoke) Tests:runtime_invoke_int (param0=0x0, param1=0x7fc05e5b0e00,
+    param2=0x0, param3=0x40cd6f80)
+#3  0x00000000004219f7 in mono_jit_runtime_invoke (method=0x9daa70, obj=0x0, params=0x0, exc=0x0) at mini.c:4253
+#4  0x00000000005c1d2c in mono_runtime_invoke (method=0x9daa70, obj=0x0, params=0x0, exc=0x0) at object.c:2399
+#5  0x00000000005c39d7 in mono_runtime_invoke_array (method=0x9daa70, obj=0x0, params=0x0, exc=0x0) at object.c:3488
+#6  0x00000000005cdc31 in ves_icall_InternalInvoke (method=0x7fc05c371be0, this=0x0, params=0x0, exc=0x7fff66729368)
+    at icall.c:3038
+#7  0x0000000040cd6bee in (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (
+    this=0x7fc05c371be0, param0=0x0, param1=0x0, param2=0x7fff66729368)
+#8  0x0000000040cd690c in System.Reflection.MonoMethod:Invoke (this=0x7fc05c371be0, obj=0x0, invokeAttr=0x0,
+    binder=0x0, parameters=0x0, culture=0x0)
+#9  0x0000000040cd683b in System.Reflection.MethodBase:Invoke (this=0x7fc05c371be0, obj=0x0, parameters=0x0)
+#10 0x0000000040a6275c in TestDriver:RunTests (type=0x7fc05e5b6dc8, args=0x0)
+#11 0x0000000040a62380 in TestDriver:RunTests (type=0x7fc05e5b6dc8)
+#12 0x0000000040a62354 in Tests:Main ()
+#13 0x0000000040a6228a in (wrapper runtime-invoke) Tests:runtime_invoke_int (param0=0x0, param1=0x7fc05e5b0e00,
+    param2=0x0, param3=0x40a62340)
+#14 0x00000000004219f7 in mono_jit_runtime_invoke (method=0x9576f0, obj=0x0, params=0x7fff66729600, exc=0x0)
+    at mini.c:4253
+</pre>
+<p>The XDEBUG support in mono is modeled after the similar functionality in
+Kaffe.
+</p>
+<h2> <span class="mw-headline" id="Exceptions"> Exceptions </span></h2>
+<p>Sometimes try/catch sequences can hide underlying problems in your code, you might want to look at the exceptions produced by your program using Mono's trace facility, to use this, try:
+</p>
+<pre class="bash" style="font-family:monospace;">    mono <span style="color: #660033;">--trace</span>=N:nothing application.exe</pre>
+<p>That will display the exceptions that you program is throwing.
+</p><p>If you want to look into where those exceptions are being produced using gdb, you can use the following trick:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> b mono_handle_exception_internal</pre>
+<p>This requires a Mono with symbols to be installed though.  Then you can inspect various aspects of your program:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#0  mono_handle_exception_internal (ctx=0xbfbc6d94, obj=0xac390, original_ip=0x454dcfc1, test_only=0, out_filter_idx=0x0)</span>
+<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> p mono_print_method_from_ip <span style="color: #7a0874; font-weight: bold;">&#40;</span>0x454dcfc1<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+IP 0x454dcfb5 at offset 0x75 of method Banshee.PlaylistView:RipCellInd <span style="color: #7a0874; font-weight: bold;">&#40;</span>Gtk.TreeViewColumn,Gtk.CellRenderer,Gtk.TreeModel,Gtk.TreeIter<span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>0x454dcf40 0x454dd059<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #7a0874; font-weight: bold;">&#91;</span>domain 0x21f00 - banshee.exe<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #c20cb9; font-weight: bold;">gdb</span><span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<h2> <span class="mw-headline" id="Tracing_Program_Execution"> Tracing Program Execution </span></h2>
+<p>Tracing allows developers to see when methods are entered/left as their application runs.  This is enabled by passing the --trace command line argument to mono.  The output can be quite verbose:
+</p>
+<pre class="bash" style="font-family:monospace;"> $ mono <span style="color: #660033;">--trace</span> program.exe</pre>
+<p>The default will output traces for all methods invoked in your application which can be a lot of data.  It is possible to pass filter the routines that will be traced by passing options to the trace command line to limit its scope, for example:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ mono <span style="color: #660033;">--trace</span>=N:MyApplication program.exe</pre>
+<p>The above example will limit the tracing to methods in the MyApplication namespace.
+</p><p>Or to trace multiple namespaces:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ mono <span style="color: #660033;">--trace</span>=N:MyApplication,System.Math program.exe</pre>
+<p>The full options available are:
+</p>
+<pre class="bash" style="font-family:monospace;">Tracing options:
+   --trace<span style="color: #7a0874; font-weight: bold;">&#91;</span>=EXPR<span style="color: #7a0874; font-weight: bold;">&#93;</span>        Trace every call, optional EXPR controls the scope
+&#160;
+EXPR is composed of:
+    all                  All assemblies
+    none                 No assemblies
+    program              Entry point assembly
+    assembly             Specifies an assembly
+    M:Type:Method        Specifies a method
+    N:Namespace          Specifies a namespace
+    T:Type               Specifies a <span style="color: #7a0874; font-weight: bold;">type</span>
+    +EXPR                Includes expression
+    <span style="color: #660033;">-EXPR</span>                Excludes expression
+    disabled             Do not print any output <span style="color: #000000; font-weight: bold;">until</span> toggled via SIGUSR2</pre>
+<p>For example, to trace a namespace but ignore some types:
+</p>
+<pre class="bash" style="font-family:monospace;">   $ mono <span style="color: #660033;">--trace</span>=N:System,-T:System.Int32 program.exe</pre>
+<p>You can toggle the trace output by sending the SIGUSR2 signal to the mono process.  And you might also want to start your application with the tracing output turned off until your application reaches the point that you are interested in debugging:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ mono <span style="color: #660033;">--trace</span>=disabled program.exe</pre>
+<p>Then from another console, you can turn on the output:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ <span style="color: #c20cb9; font-weight: bold;">kill</span> <span style="color: #660033;">-USR2</span> pid</pre>
+<p>Where `pid' is the process ID of the Mono process that is being traced.
+</p><p>You can turn off the output by sending the USR2 signal again to the process.
+</p>
+<h2> <span class="mw-headline" id="Runtime_Logging"> Runtime Logging </span></h2>
+<p>You can ask the runtime to log various message to stdout using:
+MONO_LOG_LEVEL=debug
+</p>
+<h2> <span class="mw-headline" id="Using_Valgrind_on_Mono"> Using Valgrind on Mono </span></h2>
+<p>Sometimes it might be useful to run Mono with Valgrind to track problems in the application.  This is particularly helpful when debugging problems with P/Invoked libraries or bindings.
+</p><p>Historically Mono and Valgrind didn't always played well together. If this has discouraged you in the past then it's time to try it again!
+</p><p>Recent valgrind versions are able to deal with for self-modifying programs (which is what the mono JIT does) by using the --smc-check=all option.
+</p><p>As an extra bonus, Paolo (lupus) has shared his suppression file for Mono. This removes a lot, but not all, false positives (or unimportant) logs coming from the Mono runtime. This makes it easier and faster to find what you're looking for. The suppression file is available in Mono's SVN as /mono/data/mono.supp
+</p><p>Sample usage:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">sh$ </span><span style="color: #c20cb9; font-weight: bold;">valgrind</span> <span style="color: #660033;">--tool</span>=memcheck <span style="color: #660033;">-v</span> <span style="color: #660033;">--leak-check</span>=full \
+<span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #660033;">--log-file</span>=log <span style="color: #660033;">--smc-check</span>=all <span style="color: #660033;">--suppressions</span>=mono.supp \
+<span style="color: #000000; font-weight: bold;">&gt;</span>  mono app.exe</pre>
+<p>This will run the app.exe application using mono and create a log file named "log.####" (where #### is the process id). The log file will indicates what leaked (and from where), what was (badly) reused after being freed
+</p>
+<h3> <span class="mw-headline" id="libgdiplus"> libgdiplus </span></h3>
+<p><a href="http://www.cairographics.org/" class="external text" rel="nofollow">Cairo</a> supplies it's own suppression file that is useful to add if your application depends on System.Drawing (or System.Windows.Forms).
+</p><p>The file is located under <code>libgdiplus/cairo/test/.valgrind-suppressions</code> and can be used simultaneously with the one provided for Mono.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">sh$ </span><span style="color: #c20cb9; font-weight: bold;">valgrind</span> <span style="color: #660033;">--tool</span>=memcheck <span style="color: #660033;">-v</span> <span style="color: #660033;">--leak-check</span>=full \
+<span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #660033;">--log-file</span>=log <span style="color: #660033;">--smc-check</span>=all <span style="color: #660033;">--suppressions</span>=mono.supp \
+<span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #660033;">--suppressions</span>=libgdiplus<span style="color: #000000; font-weight: bold;">/</span>cairo<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>.valgrind-suppressions \
+<span style="color: #000000; font-weight: bold;">&gt;</span>  mono app.exe</pre>
+

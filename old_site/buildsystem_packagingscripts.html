@@ -1,0 +1,95 @@
+---
+layout: obsolete
+title: "BuildSystem/PackagingScripts"
+permalink: /old_site/BuildSystem/PackagingScripts/
+---
+
+<h1>BuildSystem/PackagingScripts</h1>
+
+<p>The core of the build system is the packaging scripts. These live in <tt>release/packaging</tt>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Configuration_files"><span class="tocnumber">1</span> <span class="toctext">Configuration files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#release.2Fpackaging.2Fdefs"><span class="tocnumber">1.1</span> <span class="toctext">release/packaging/defs</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#release.2Fpackaging.2Fconf"><span class="tocnumber">1.2</span> <span class="toctext">release/packaging/conf</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#release.2Fconf"><span class="tocnumber">1.3</span> <span class="toctext">release/conf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Scripts"><span class="tocnumber">2</span> <span class="toctext">Scripts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#mktarball"><span class="tocnumber">2.1</span> <span class="toctext">mktarball</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#build"><span class="tocnumber">2.2</span> <span class="toctext">build</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Steps_to_Build_Everything"><span class="tocnumber">3</span> <span class="toctext">Steps to Build Everything</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Configuration_files"> Configuration files </span></h1>
+<p>There are a few sets of config files for this setup:
+</p>
+<h2> <span class="mw-headline" id="release.2Fpackaging.2Fdefs"> release/packaging/defs </span></h2>
+<p>These define specific products. This is the current set of rpms we build, so you might have a stable and an unstable version, etc.
+</p><p>Example:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">BUILD_HOSTS</span>=<span style="color: #7a0874; font-weight: bold;">&#40;</span>
+        redhat-<span style="color: #000000;">9</span>-i386
+        sles-<span style="color: #000000;">9</span>-x86_64
+<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+&#160;
+<span style="color: #007800;">USE_HOSTS</span>=<span style="color: #7a0874; font-weight: bold;">&#40;</span>
+	fedora-<span style="color: #000000;">3</span>-i386
+	nld-<span style="color: #000000;">9</span>-i586
+	nld-<span style="color: #000000;">9</span>-x86_64
+	redhat-<span style="color: #000000;">9</span>-i386
+	rhel-<span style="color: #000000;">3</span>-i386
+	rhel-<span style="color: #000000;">4</span>-i386
+	sles-<span style="color: #000000;">9</span>-i586
+	sles-<span style="color: #000000;">9</span>-x86_64
+	suse-<span style="color: #000000;">92</span>-i586
+	suse-<span style="color: #000000;">93</span>-i586
+	suse-<span style="color: #000000;">93</span>-x86_64
+<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+&#160;
+get_destroot <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+	<span style="color: #007800;">DEST_ROOT</span>=<span style="color: #007800;">$ARCH</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span>
+&#160;
+<span style="color: #007800;">HEAD_PATH</span>=<span style="color: #ff0000;">&quot;trunk&quot;</span>
+<span style="color: #007800;">RELEASE_PATH</span>=<span style="color: #ff0000;">&quot;tags/mono-[[version]]&quot;</span>
+&#160;
+get_tarball <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span>
+	msvn_tar <span style="color: #007800;">$1</span>
+<span style="color: #7a0874; font-weight: bold;">&#125;</span></pre>
+<p>A breakdown of the file:
+</p>
+<dl><dt> <tt>BUILD_HOSTS</tt>&#160;</dt><dd> machines on which the package gets built and rpms get created
+</dd><dt> <tt>USE_HOSTS</tt>&#160;</dt><dd> all distros that will <i>use</i> the package -- might be different than <tt>BUILD_HOSTS</tt> if packages are shared
+</dd><dt> <tt>get_destroot</tt>&#160;</dt><dd> the prefix where the packages go. This is how we find out how to share packages. For all distros in <tt>USE_HOSTS</tt> exactly one distro in <tt>BUILD_HOSTS</tt> must have the same <tt>get_destroot</tt>
+</dd><dt> <tt>HEAD_PATH, RELEASE_PATH</tt>&#160;</dt><dd> custom variables for our tarball creation method
+</dd><dt> <tt>get_tarball</tt>&#160;</dt><dd> the method we use to get tarballs
+</dd></dl>
+<h2> <span class="mw-headline" id="release.2Fpackaging.2Fconf"> release/packaging/conf </span></h2>
+<p>These are little configurations for each of our jails
+</p>
+<h2> <span class="mw-headline" id="release.2Fconf"> release/conf </span></h2>
+<p>These contain build-buddy .conf files.
+</p>
+<h1> <span class="mw-headline" id="Scripts"> Scripts </span></h1>
+<p>Various scripts exist to run builds:
+</p>
+<h2> <span class="mw-headline" id="mktarball"> mktarball </span></h2>
+<p>makes a tarball. Run like <tt>mktarball &lt;target jail&gt; &lt;package&gt; &lt;version|snap&gt; [svn rev]</tt>
+</p>
+<ul><li>Ex: <tt>mktarball suse-93-i586 gtk-sharp 1.1.7</tt>
+</li><li>Ex: <tt>mktarball suse-93-i586 xsp snap 44717</tt>
+</li></ul>
+<h2> <span class="mw-headline" id="build"> build </span></h2>
+<p>Builds something run like <tt>build &lt;target jail&gt; &lt;package&gt; &lt;version&gt; [&lt;rev&gt;]</tt>
+</p>
+<ul><li>Ex: <tt>build suse-92-i386 mono-1.1 1.1.7</tt>
+</li></ul>
+<h1> <span class="mw-headline" id="Steps_to_Build_Everything"> Steps to Build Everything </span></h1>
+<p>TODO
+</p>

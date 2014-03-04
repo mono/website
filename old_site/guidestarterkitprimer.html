@@ -1,0 +1,48 @@
+---
+layout: obsolete
+title: "Guide:StarterKitPrimer"
+permalink: /old_site/Guide:StarterKitPrimer/
+---
+
+<h1>Guide:StarterKitPrimer</h1>
+
+<p><br />
+This page contains guides to installing and running various Micosoft ASP.NET Starter Kit applications with Mono.
+</p>
+<h2> <span class="mw-headline" id="Personal_Web_Site_Starter_Kit">Personal Web Site Starter Kit</span></h2>
+<p>Below are instructions on how to run the <b>Personal Web Site Starter Kit</b> on Mono. 
+</p>
+<ul><li> Download the kit from <a href="http://asp.net/downloads/starterkits/default.aspx?tabid=62" class="external free" rel="nofollow">http://asp.net/downloads/starterkits/default.aspx?tabid=62</a>
+</li><li> Make sure you have the installvst utility available on your system (it will be available with Mono starting from the 1.2.4 release, or current from current SVN)
+</li><li> Unpack the PWS zip file to some directory
+</li><li> Run the following command:
+</li></ul>
+<pre class="bash" style="font-family:monospace;">installvst PATH_TO_PWS_DIRECTORY<span style="color: #000000; font-weight: bold;">/</span> PersonalWebSite.vstemplate PATH_TO_TARGET_DIRECTORY</pre>
+<ul><li> Go to the  PATH_TO_TARGET_DIRECTORY/PersonalWebSite/ directory, edit the  web.config file you find there find the Personal and LocalSqlServer connection strings and replace their connectionString attributes with, respectively, the following values:
+</li></ul>
+<pre class="bash" style="font-family:monospace;">Data <span style="color: #007800;">Source</span>=XXX.YYY.VVV.ZZZ;Integrated <span style="color: #007800;">Security</span>=False;<span style="color: #007800;">Database</span>=startkit_personal;User <span style="color: #007800;">ID</span>=sktest;<span style="color: #007800;">Password</span>=sktest
+Data <span style="color: #007800;">Source</span>=XXX.YYY.VVV.ZZZ;Integrated <span style="color: #007800;">Security</span>=False;<span style="color: #007800;">Database</span>=aspnetdb;User <span style="color: #007800;">ID</span>=sktest;<span style="color: #007800;">Password</span>=sktest</pre>
+<p>Substitute the XXX.YYY.VVV.ZZZ strings with the IP number of your SQL server
+</p><p>Having completed the above steps, you need to prepare your Microsoft SQL server (either the full version or SQLExpress) for use with the starter kit. Follow the instructions below: 
+</p>
+<ul><li> Make sure your SQL server uses mixed SQL + Windows authentication, allow connections over TCP/IP (server port 1433)
+</li><li> Create an SQL user named 'sktest' with the password 'sktest'
+</li><li> Create an empty database named aspnetdb, then fill it with required schema using the aspnet_regsql utility that comes with Microsoft .Net 2.0 SDK. This database can be shared among all the starter kits ported to Mono. Add the 'sktest' user to this database users and make it the database owner.
+</li><li>Create an empty database named  startkit_personal, then use  personal-add.sql script found in the PWS zip archive to populate it with the necessary schema and data. Add the 'sktest' user to this database users and make it the database owner.
+</li></ul>
+At this point you are ready to run the application. To do so, issue the following command on your mono machine:<blockquote><code>MONO_IOMAP=all xsp2 --root PATH_TO_TARGET_DIRECTORY/PersonalWebSite/</code></blockquote> and then point your browser to <a href="http://localhost:8080/" class="external free" rel="nofollow">http://localhost:8080/</a> (replace 8080 with the port number your xsp is configured for). 
+<p>If everything went well, here's what you should see in your browser: 
+</p><p><br />
+<b>The welcome screen</b>
+</p><p><a href="{{site.baseurl}}/images/old_site/d/d3/Pws_welcome_screen.png" class="image" title="abc"><img alt="abc" src="{{site.baseurl}}/images/old_site/d/d3/Pws_welcome_screen.png" width="640" height="503" /></a>
+</p><p><b>The welcome screen after logging in</b>
+</p><p><a href="{{site.baseurl}}/images/old_site/6/6b/Pws_logged_in_screen.png" class="image" title="abc"><img alt="abc" src="{{site.baseurl}}/images/old_site/6/6b/Pws_logged_in_screen.png" width="640" height="503" /></a>
+</p><p>One thing should be noted about the user registration with this starter kit. The application is configured so that every new user is created in the disabled state - that is, you will not be able to log in even though the user has been created successfully.  
+</p><p>To remedy that, you have two options:
+</p>
+<ol><li> Edit the  Register.aspx file and remove (or set to <b>false</b>) the  DisableCreatedUser attribute to the  &lt;asp:CreateUserWizard&gt; tag in that file.
+</li><li> On your Windows machine launch the  SQL Server Management application, connect to the  aspnetdb database and issue the following query:
+</li></ol>
+<pre class="sql" style="font-family:monospace;"><span style="color: #993333; font-weight: bold;">UPDATE</span> dbo<span style="color: #66cc66;">.</span>aspnet_Membership <span style="color: #993333; font-weight: bold;">SET</span> IsApproved<span style="color: #66cc66;">=</span><span style="color: #cc66cc;">1</span></pre>
+<p>It will approve all the users you have registered (if you want to do it for individual users, you need to consult the dbo.aspnet_Users table, look up your user, note its ID and append <b>WHERE UserId=YOUR_USER_ID</b> clause to the above query)
+</p>

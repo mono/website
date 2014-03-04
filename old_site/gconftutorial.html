@@ -1,0 +1,254 @@
+---
+layout: obsolete
+title: "GConfTutorial"
+permalink: /old_site/GConfTutorial/
+---
+
+<h1>GConfTutorial</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_is_GConf.3F"><span class="tocnumber">1</span> <span class="toctext">What is GConf?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_is_it_not.3F"><span class="tocnumber">2</span> <span class="toctext">What is it not?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Some_Theory"><span class="tocnumber">3</span> <span class="toctext">Some Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Theory"><span class="tocnumber">3.1</span> <span class="toctext">Theory</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Screenshots"><span class="tocnumber">3.2</span> <span class="toctext">Screenshots</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Our_Application"><span class="tocnumber">3.2.1</span> <span class="toctext">Our Application</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#GConf-Editor"><span class="tocnumber">3.2.2</span> <span class="toctext">GConf-Editor</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Sample_Code"><span class="tocnumber">4</span> <span class="toctext">Sample Code</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="What_is_GConf.3F"> What is GConf? </span></h1>
+<dl><dd><a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> is the system for storing application preferences in Gnome. It is intended for user preferences.
+</dd></dl>
+<dl><dd>What makes GConf different than other configuration databases is that GConf is "live" and will notify interested parties of changes in the configuration values.  This allows developers to build more modern applications: changes can always be applied immediately and the user will get a chance of preview the visual effects immediately.
+</dd></dl>
+<h1> <span class="mw-headline" id="What_is_it_not.3F"> What is it not? </span></h1>
+<dl><dd><a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> is not a place to store configuration of something like <a href="http://www.apache.org/" class="external text" rel="nofollow">Apache</a>, or arbitrary data storage.
+</dd></dl>
+<h1> <span class="mw-headline" id="Some_Theory"> Some Theory </span></h1>
+<h2> <span class="mw-headline" id="Theory"> Theory </span></h2>
+<dl><dd>The root motivation for <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> is to make application preferences more manageable for system administrators.
+</dd></dl>
+<dl><dd>Another important motivation for <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> is that it's "process transparent." This means that if I change a setting from one application, it instantly updates in all other applications that are interested in that setting. This technology is vital for the snazzy "instant apply" UI of <a href="http://www.gnome.org/" class="external text" rel="nofollow">GNOME 2</a>, and vital for writing applications made up of multiple out-of-process components.
+</dd><dd><a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a>attempts to leapfrog the registry concept. It's a library which provides a simple configuration data storage interface to applications, and also an architecture that tries to make things easy for system administrators.
+</dd><dd>Here are some of the features of <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a>:
+<dl><dd><ul><li>Replaceable backend architecture. <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> currently has a single backend that stores configuration data in <a href="http://www.w3.org/XML/" class="external text" rel="nofollow">XML-format</a> text files; however, the architecture allows a Registry-like binary database backend, an <a href="http://www.openldap.org/" class="external text" rel="nofollow">LDAP</a> backend, or even a full-blown SQL database backend. The backend used is configurable by the system administrator. This is a valuable feature for IS deparatments managing large numbers of computers.
+</li><li>Configuration key documentation. Applications can install documentation along with their configuration data, explaining the possible settings and the effect of each configuration key. A regedit-style tool can display this documentation, making it much easier to customize applications without breaking them. The <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> database also stores useful meta-information such as the application that owns a key, when the key was last changed, etc.
+</li><li>Data change notification service. If configuration data is changed, all interested applications are notified. The notification service works across the network, affecting all login sessions for a single user.
+</li></ul>
+<dl><dd>This means that programs built from components (where each component may be in a separate process) are much easier to write, because if one component changes a setting the others can discover the change and update themselves. For example, <a href="http://www.gnome.org/" class="external text" rel="nofollow">GNOME's</a> <a href="http://www.gnome.org/projects/nautilus/" class="external text" rel="nofollow">Nautilus</a> file manager is actually a collection of applications, including an embedded web browser, and various navigation components. The components communicate via <a href="http://www.omg.org/" class="external text" rel="nofollow">CORBA</a>. However, you want a single preferences dialog located in the top-level "shell" component. Without <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a>, a custom protocol would have to be invented for each preferences setting, to notify embedded components of changes to user preferences.
+</dd><dd>Notification is also useful if multiple application instances are running. <a href="http://www.gnome.org/" class="external text" rel="nofollow">GNOME</a> uses this feature to let user interface configuration take effect on-the-fly without restarting any applications; if you turn off toolbar icons, for example, toolbar icons will immediately disappear in all running apps.
+</dd></dl>
+<ul><li>The client API is very abstract, which allows us to change its implementation at a later time without a big headache. Because a good implementation is a complex problem, this is important. I also like to think the API is simple to use.
+</li><li><a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> does proper locking so that the configuration data doesn't get corrupted when multiple applications try to use it.
+</li></ul>
+</dd></dl>
+</dd><dd>Most nontrivial applications will need to store user preferences. Traditionally, on most Unix-like systems user prefs have been stored in so called <a href="http://www.comedia.com/hot/jargon-4.2.3/html/entry/dot-file.html" class="external text" rel="nofollow">"dot files"</a> which don't provide a flexible and convenient way of dealing with settings. GConf tries to clear up the mess of "dot files". It provides a tree-structured repository of keys and corresponding values. Data types supported include integers, floats, strings, boolean values and lists composed of the previous ones. Applications can set and get values and also listen for changes. If some values change, your application will be notified accordingly.
+</dd></dl>
+<dl><dd>What are we going to do in this tutorial?:
+<dl><dd><ul><li>Create a <a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=6@ecma%3a877%23CheckButton%2f" class="external text" rel="nofollow">checkbox</a> and an <a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=6@ecma%3a980%23Entry%2f" class="external text" rel="nofollow">editbox</a>
+</li><li>Link them with <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a>
+</li><li>Test live notification with <a href="http://cvs.gnome.org/viewcvs/gconf-editor/" class="external text" rel="nofollow">GConf-Editor</a>
+</li></ul>
+</dd></dl>
+</dd></dl>
+<h2> <span class="mw-headline" id="Screenshots"> Screenshots </span></h2>
+<h3> <span class="mw-headline" id="Our_Application"> Our Application </span></h3>
+<dl><dd><div class="floatleft"><a href="{{site.baseurl}}/images/old_site/a/a1/Gconftutorial-app.png" class="image"><img alt="Gconftutorial-app.png" src="{{site.baseurl}}/images/old_site/a/a1/Gconftutorial-app.png" width="294" height="192" /></a></div><br style="clear: left;" />
+</dd></dl>
+<h3> <span class="mw-headline" id="GConf-Editor"> GConf-Editor </span></h3>
+<dl><dd><div class="floatleft"><a href="{{site.baseurl}}/images/old_site/7/7a/Gconftutorial-gconf-editor.png" class="image"><img alt="Gconftutorial-gconf-editor.png" src="{{site.baseurl}}/images/old_site/7/7a/Gconftutorial-gconf-editor.png" width="710" height="579" /></a></div><br style="clear: left;" />
+</dd></dl>
+<h1> <span class="mw-headline" id="Sample_Code"> Sample Code </span></h1>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// GConf.cs</span>
+<span style="color: #008080; font-style: italic;">// GConf Tutorial</span>
+<span style="color: #008080; font-style: italic;">// mcs GConf.cs -out:GConf.exe -pkg:gtk-sharp -pkg:gconf-sharp</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">GConf</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> GConfTutorial <span style="color: #008000;">&#123;</span>
+	<span style="color: #008080; font-style: italic;">// defining global constants for later use in the program</span>
+	GConf<span style="color: #008000;">.</span><span style="color: #0000FF;">Client</span> client<span style="color: #008000;">;</span> <span style="color: #008080; font-style: italic;">// gconf client</span>
+	<span style="color: #008080; font-style: italic;">// these strings represent our gconf paths</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">string</span> GCONF_APP_PATH <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;/apps/gconf-tutorial&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">string</span> NAME_KEY <span style="color: #008000;">=</span> GCONF_APP_PATH <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;/name&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">string</span> EMAIL_KEY <span style="color: #008000;">=</span> GCONF_APP_PATH <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;/email&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">string</span> SN_KEY <span style="color: #008000;">=</span> GCONF_APP_PATH <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;/serialno&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">string</span> MARRIED_KEY <span style="color: #008000;">=</span> GCONF_APP_PATH <span style="color: #008000;">+</span> <span style="color: #666666;">&quot;/married&quot;</span><span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #008080; font-style: italic;">// defines our edit boxes and our checkbox</span>
+	Entry name<span style="color: #008000;">;</span>
+	Entry email<span style="color: #008000;">;</span>
+	Entry sn<span style="color: #008000;">;</span>
+	CheckButton married<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GConfTutorial <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> GConfTutorial<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates new window with the given title </span>
+		Window w <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;GConf Tutorial&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// creates all edit boxes</span>
+		name <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Entry<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		email <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Entry<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		sn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Entry<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// creates our checkbox</span>
+		married <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CheckButton<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Married&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// we create a big vertical box where we will place other widgets</span>
+		VBox globvbox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// setting up the box so we look more HIGish</span>
+		globvbox<span style="color: #008000;">.</span><span style="color: #0000FF;">BorderWidth</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">12</span><span style="color: #008000;">;</span>
+		globvbox<span style="color: #008000;">.</span><span style="color: #0000FF;">Spacing</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">6</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// adding the vbox to our window</span>
+		w<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>globvbox<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// we set up our label</span>
+		Label info <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;&lt;span weight=<span style="color: #008080; font-weight: bold;">\&quot;</span>bold<span style="color: #008080; font-weight: bold;">\&quot;</span> size=<span style="color: #008080; font-weight: bold;">\&quot;</span>large<span style="color: #008080; font-weight: bold;">\&quot;</span>&gt; Your Information&lt;/span&gt;&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		info<span style="color: #008000;">.</span><span style="color: #0000FF;">UseMarkup</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// and add it to the vertical box</span>
+		globvbox<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>info, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates a new horizontal box</span>
+		HBox horz <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> HBox<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		horz<span style="color: #008000;">.</span><span style="color: #0000FF;">Spacing</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">6</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// adds the horizontal box the the global vertical</span>
+		globvbox<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>horz<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creating another vbox which will hold our labels</span>
+		VBox lblcnt <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		lblcnt<span style="color: #008000;">.</span><span style="color: #0000FF;">Spacing</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">6</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// adds the vbox to the horizontal one</span>
+		horz<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>lblcnt, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates label</span>
+		Label lbl <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name:&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		lbl<span style="color: #008000;">.</span><span style="color: #0000FF;">Xalign</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> <span style="color: #008080; font-style: italic;">// aligns it to the left</span>
+		lblcnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>lbl, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates label</span>
+		lbl <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Email:&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		lbl<span style="color: #008000;">.</span><span style="color: #0000FF;">Xalign</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> <span style="color: #008080; font-style: italic;">// aligns it to the left</span>
+		lblcnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>lbl, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates label</span>
+		lbl <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Label<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Serial Number:&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		lbl<span style="color: #008000;">.</span><span style="color: #0000FF;">Xalign</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> <span style="color: #008080; font-style: italic;">// aligns it to the left</span>
+		lblcnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>lbl, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// another vbox to hold the edit boxes</span>
+		VBox ntrycnt <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> VBox<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		ntrycnt<span style="color: #008000;">.</span><span style="color: #0000FF;">Spacing</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">6</span><span style="color: #008000;">;</span> <span style="color: #008080; font-style: italic;">// HIGying</span>
+		<span style="color: #008080; font-style: italic;">// adds the vbox containing the edit boxes to the horizontal one</span>
+		horz<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>ntrycnt, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// adding all the edit boxes</span>
+		ntrycnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>name, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		ntrycnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>email, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		ntrycnt<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>sn, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// last, but not least - the check box</span>
+		globvbox<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>married, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+&#160;
+		<span style="color: #008080; font-style: italic;">// creates our link to gconf</span>
+		client <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> GConf<span style="color: #008000;">.</span><span style="color: #0000FF;">Client</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// tries to grab values from gconf and update the GUI</span>
+		UpdateFromGConf<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// sets the function to be called if some key changes</span>
+		client<span style="color: #008000;">.</span><span style="color: #0000FF;">AddNotify</span> <span style="color: #008000;">&#40;</span>GCONF_APP_PATH, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NotifyEventHandler <span style="color: #008000;">&#40;</span>GConf_Changed<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// hooks events</span>
+		w<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> on_close_app<span style="color: #008000;">;</span>
+		married<span style="color: #008000;">.</span><span style="color: #0000FF;">Toggled</span> <span style="color: #008000;">+=</span> on_married_toggled<span style="color: #008000;">;</span>
+		name<span style="color: #008000;">.</span><span style="color: #0000FF;">Changed</span> <span style="color: #008000;">+=</span> on_name_activate<span style="color: #008000;">;</span>
+		email<span style="color: #008000;">.</span><span style="color: #0000FF;">Changed</span> <span style="color: #008000;">+=</span> on_email_activate<span style="color: #008000;">;</span>
+		sn<span style="color: #008000;">.</span><span style="color: #0000FF;">Changed</span> <span style="color: #008000;">+=</span> on_sn_activate<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// shows the window</span>
+		w<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// runs the application</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #008080; font-style: italic;">// function to grab values from gconf and update the GUI</span>
+	<span style="color: #6666cc; font-weight: bold;">void</span> UpdateFromGConf <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+			name<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span> <span style="color: #008000;">&#40;</span>NAME_KEY<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			email<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span> <span style="color: #008000;">&#40;</span>EMAIL_KEY<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			sn<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span> client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span> <span style="color: #008000;">&#40;</span>SN_KEY<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			married<span style="color: #008000;">.</span><span style="color: #0000FF;">Active</span> <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">bool</span><span style="color: #008000;">&#41;</span> client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span> <span style="color: #008000;">&#40;</span>MARRIED_KEY<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>GConf<span style="color: #008000;">.</span><span style="color: #0000FF;">NoSuchKeyException</span> e<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Error: A key with that name doesn't exist.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008080; font-style: italic;">// add your exception handling here</span>
+		<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span><span style="color: #000000;">System</span><span style="color: #008000;">.</span><span style="color: #0000FF;">InvalidCastException</span> e<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Error: Cannot typecast.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008080; font-style: italic;">// add your exception handling here</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> on_married_toggled <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// sets the corresponding value in gconf</span>
+		client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Set</span> <span style="color: #008000;">&#40;</span>MARRIED_KEY, married<span style="color: #008000;">.</span><span style="color: #0000FF;">Active</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> on_name_activate <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// sets the corresponding value in gconf</span>
+		client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Set</span> <span style="color: #008000;">&#40;</span>NAME_KEY, name<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> on_email_activate <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// sets the corresponding value in gconf</span>
+		client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Set</span> <span style="color: #008000;">&#40;</span>EMAIL_KEY, email<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> on_sn_activate <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// sets the corresponding value in gconf</span>
+		client<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Set</span> <span style="color: #008000;">&#40;</span>SN_KEY, sn<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> GConf_Changed <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> sender, NotifyEventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// sets the corresponding value in gconf</span>
+		UpdateFromGConf<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> on_close_app<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, DeleteEventArgs args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// quits the application</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<dl><dd><ul><li>All the settings are set/retrieved in real-time so any change would affect your application immediatelly
+</li><li>Try running the application and GConf-Editor in parallel. Place them so they don't overlap and start typing your name or editing some other checkbox - you'll see that the values in <a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf</a> change immediatelly. Now try it the other way around - it will immediatelly change your values in your application.
+</li></ul>
+</dd></dl>
+<h1> <span class="mw-headline" id="References"> References </span></h1>
+<dl><dd><ul><li><a href="http://www.gnome.org/projects/gconf/" class="external text" rel="nofollow">GConf Web Site</a><br />
+</li><li><a href="http://www.go-mono.com/docs/index.aspx?link=N:GConf" class="external text" rel="nofollow">GConf# Documentation</a>
+</li><li><a href="http://developer.gnome.org/projects/gup/hig/" class="external text" rel="nofollow">GNOME HIG</a>
+</li></ul>
+</dd></dl>
+

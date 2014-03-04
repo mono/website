@@ -1,0 +1,103 @@
+---
+layout: obsolete
+title: "LibrariesWithUnstableAPIs"
+permalink: /old_site/LibrariesWithUnstableAPIs/
+---
+
+<h1>LibrariesWithUnstableAPIs</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Libraries_with_Unstable_APIs"><span class="tocnumber">1</span> <span class="toctext">Libraries with Unstable APIs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Comparing_this_to_other_models"><span class="tocnumber">1.1</span> <span class="toctext">Comparing this to other models</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#How_is_this_better_than_using_the_GAC.3F"><span class="tocnumber">1.1.1</span> <span class="toctext">How is this better than using the GAC?</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#How_is_this_better_than_the_.22egg.22_model.3F"><span class="tocnumber">1.1.2</span> <span class="toctext">How is this better than the "egg" model?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Small_Libraries"><span class="tocnumber">2</span> <span class="toctext">Small Libraries</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Libraries_with_Unstable_APIs"> Libraries with Unstable APIs </span></h1>
+<p>Sometimes developers might want to distribute a library to other developers but they might not have a library that is API stable or has not matured enough over time to guarantee the backwards-compatibility of their libraries or they are not willing to maintain multiple packages of the various versions for users.
+</p><p>This is a very common scenario and most libraries will go through this phase before they are considered for installation on the GAC.  
+</p><p>The problem that arises is how to allow third party developers to consume this library with minimal effort.
+</p><p>To solve this problem, we recommend that:
+</p>
+<ul><li> The library developer ships a properly configured pkg-config file.
+</li><li> The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
+</li><li> The library consumers ship this library as part of their package.
+</li><li> The consumer follow the <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines for Application Deployment</a>
+</li></ul>
+<p>Here is how this works, the library developer installs a pkg-config file like this:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">cat</span> Thing.pc
+<span style="color: #007800;">prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>usr
+<span style="color: #007800;">assemblies_dir</span>=<span style="color: #800000;">${prefix}</span><span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>thing
+<span style="color: #007800;">Libraries</span>=<span style="color: #800000;">${assemblies_dir}</span><span style="color: #000000; font-weight: bold;">/</span>Thing.dll <span style="color: #800000;">${assemblies_dir}</span><span style="color: #000000; font-weight: bold;">/</span>ThingCore.dll
+&#160;
+Name: Thing
+Description: The Thing Library
+Version: <span style="color: #000000;">0.5</span>
+Libs: -r:Thing.dll -r:ThingCore.dll</pre>
+<p>The important parts are "Libraries" a new variable that lists the full path to all of the assemblies that make up the "Thing" package, and the "Libs" line.
+</p><p>The "Libraries" line is used by the consumer like this, as part of their "update-libraries" makefile target:
+</p>
+<pre class="bash" style="font-family:monospace;">update-libraries:
+        <span style="color: #c20cb9; font-weight: bold;">cp</span> <span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--variable</span>=Libraries Thing<span style="color: #000000; font-weight: bold;">`</span> .
+        pkg-config <span style="color: #660033;">--libs</span> Thing <span style="color: #000000; font-weight: bold;">&gt;</span> thing.flags</pre>
+<p>The Libs line is used like this in your Makefile:
+</p>
+<pre class="bash" style="font-family:monospace;">Demo.exe: Demo.cs thing.flags
+       mcs -out:$<span style="color: #000000; font-weight: bold;">@</span> Demo.cs <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">cat</span> thing.flags<span style="color: #000000; font-weight: bold;">`</span></pre>
+<p>The libraries will be copied from the system installation directory into your application directory, and the --libs line will link to the local libraries, not libraries installed into the GAC.
+</p><p>This means that developers that consume unstable API libraries do not have to worry about their schedule being the same as the schedule for API stability on the libraries they consume as they will always have a private copy at development time and at runtime, and they choose when they upgrade to a new version of the library. 
+</p><p>If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
+</p><p>Note: a production-ready, detailed example of this can be found in the <a href="{{site.baseurl}}/Guidelines:Application_Deployment#Auto-tools" title="Guidelines:Application Deployment">Autotools</a> section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+</p>
+<h2> <span class="mw-headline" id="Comparing_this_to_other_models"> Comparing this to other models </span></h2>
+<h3> <span class="mw-headline" id="How_is_this_better_than_using_the_GAC.3F"> How is this better than using the GAC? </span></h3>
+<p>This model requires a minimal amount of work on various parts. 
+</p><p>The library developer benefits in these ways:
+</p>
+<ul><li> It releases the library developer from the requirement to keep the API backwards compatible.
+</li><li> The library developer does not have to ship old and new versions of his library.
+</li><li> The library developer can update, change, refactor his code with freedom without worrying about breaking third party applications.
+</li></ul>
+<p>The distribution packager:
+</p>
+<ul><li> The packager does not have to solve naming conflicts, parallel installation and multiple versions shipping on the same OS.
+</li></ul>
+<p>The library consumer:
+</p>
+<ul><li> The library consumer does not have to add requirements for a specific version of a library.
+</li><li> The library consumer does not have to add checks for a specific version of a library.
+</li><li> The library consumer decides when to upgrade the library at his own pace.
+</li><li> The library consumer can properly test and QA his product with the library without having to retest with different versions.
+</li></ul>
+<p>The end user:
+</p>
+<ul><li> Does not have to hunt down multiple versions of the library.
+</li><li> Applications that consume under-development libraries will not break when he upgrades his system.
+</li><li> He can upgrade software at his own pace without being forced to upgrade all software at once that depends on an unstable library.
+</li></ul>
+<p>This puts the burden of fetching and distributing the correct library on the hands of the software developer consuming the library, the advantage is that there are no external requirements and the dependencies for deployment are minimized.
+</p>
+<h3> <span class="mw-headline" id="How_is_this_better_than_the_.22egg.22_model.3F"> How is this better than the "egg" model? </span></h3>
+<p>The "egg" model is a model used in Gnome, where a source code repository of useful routines is kept.   The routines and libraries live in this "egg" module until they graduate and can live in an API stable library.  Developers copy/paste this code from "egg" into their applications and distribute the result.
+</p><p>The problem is that developers must integrate the configuration system and bring the source code into their projects to effectively use the routines.   They also must do their own source code importing which is more complex than just copying the binary library.
+</p>
+<h1> <span class="mw-headline" id="Small_Libraries"> Small Libraries </span></h1>
+<p>Small libraries that can be made available as source code and that application developers are expected to integrate into their applications should ship a pkg-config file that contains the line:
+</p>
+<pre>Sources: File1.cs File.cs
+</pre>
+<p>And developers would copy those files in their project makefiles, like this:
+</p>
+<pre class="csharp" style="font-family:monospace;">File1<span style="color: #008000;">.</span><span style="color: #0000FF;">cs</span> File2<span style="color: #008000;">.</span><span style="color: #0000FF;">cs</span><span style="color: #008000;">:</span> 
+       cp `pkg<span style="color: #008000;">-</span>config <span style="color: #008000;">--</span>variable<span style="color: #008000;">=</span>Sources package` <span style="color: #008000;">.</span></pre>
+<p>And distribute the results.
+</p>

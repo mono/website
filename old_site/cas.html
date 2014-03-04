@@ -1,0 +1,169 @@
+---
+layout: obsolete
+title: "CAS"
+permalink: /old_site/CAS/
+---
+
+<h1>CAS</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Code_Access_Security"><span class="tocnumber">1</span> <span class="toctext">Code Access Security</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Security_Manager"><span class="tocnumber">1.1</span> <span class="toctext">Security Manager</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Testing"><span class="tocnumber">1.1.1</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Status"><span class="tocnumber">1.1.2</span> <span class="toctext">Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Class_libraries"><span class="tocnumber">1.2</span> <span class="toctext">Class libraries</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Testing_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Status_2"><span class="tocnumber">1.2.2</span> <span class="toctext">Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Tools"><span class="tocnumber">1.3</span> <span class="toctext">Tools</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#caspol"><span class="tocnumber">1.3.1</span> <span class="toctext">caspol</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#permview"><span class="tocnumber">1.3.2</span> <span class="toctext">permview</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#storeadm"><span class="tocnumber">1.3.3</span> <span class="toctext">storeadm</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Code_Access_Security"> Code Access Security </span></h1>
+<p>Code Access Security (CAS) is a new <b>experimental</b> (i.e. unsupported) feature in the Mono 1.2 release. It is complete enough to play with it but <b>should not be used</b> in production (incomplete and unaudited). The security manager is <b>off</b> by default. 
+</p><p>There is no planned release date to support <b>CAS</b> in Mono, see <a href="{{site.baseurl}}/Mono_Project_Roadmap" title="Mono Project Roadmap">roadmap</a> for details. Security efforts are now oriented to support the Silverlight security model in <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a>.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Security_Manager"> Security Manager </span></h2>
+<p>The security manager is a collection of security features to implement every security actions defined in the .NET framework. The security manager resides in the JIT (e.g. code generation for Demands, security checks for <code>LinkDemand</code>, stack walk), the runtime (e.g. security checks for <code>InheritanceDemand</code> in the class loader) and in the class library (mscorlib.dll).
+</p>
+<h3> <span class="mw-headline" id="Testing"> Testing </span></h3>
+<p>Sadly not every parts of the security manager cannot be tested using <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">NUnit</a>. In particular some security actions, like <code>LinkDemand</code> and <code>InheritanceDemand</code>, throws unhandled exceptions. While it is possible to promote <code>LinkDemand</code> into full <code>Demand</code> by using reflection, <code>InheritanceDemand</code> are still not testable using <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">NUnit</a>.
+</p><p>Some tests for those hard-to-test features are present in directories under <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/" class="external text" rel="nofollow">/mono/mono/tests/cas/</a> in <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a>. They can be executed by doing a <code>make test</code> in each directory.
+</p>
+<h3> <span class="mw-headline" id="Status"> Status </span></h3>
+<p>Since version 1.1.4 Mono supports the --security option to enable it's security manager. E.g.
+</p>
+<pre>mono --security sample.exe
+</pre>
+<p>New features in <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> (unreleased as of 1.1.10) includes:
+</p>
+<ul><li> none;
+</li></ul>
+<p>Previously supported (released as of 1.1.10) features includes:
+</p>
+<ul><li> System.Drawing.dll doesn't require UnmanagedCode permission to execute;
+</li><li> Support for FullTrustAssemblies in policy resolution;
+</li><li> IsolatedStorage now supports user quotas (when the security manager is enabled);
+</li><li> PermissionRequestEvidence is now part of the evidences during policy resolution;
+</li><li> Stack propagation for Threads, ThreadPool, Async operations, SWF's <code>Control.BeginInvoke</code> using <code>CompressedStack</code>;
+</li><li> Cross-AppDomain support enabling appdomain based sandboxes (limited by #74411);
+</li><li> Unification (policies, permissions) between framework version numbers;
+</li><li> more security permissions present in <code>mscorlib.dll</code> (still unaudited);
+</li><li> <code>Demand</code> for unmanaged code for P/Invoke including support for <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.SuppressUnmanagedCodeSecurityAttribute" class="external text" rel="nofollow">SuppressUnmanagedCodeSecurity</a> attribute;
+</li><li> <code>LinkDemand</code> (JIT time) and it's special cases:
+<ul><li> internal calls (into the runtime);
+</li><li> P/Invoke to unmanaged libraries; and
+</li><li> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.AllowPartiallyTrustedCallersAttribute" class="external text" rel="nofollow">AllowPartiallyTrustedCallers</a> attribute;
+</li></ul>
+</li><li> <code>InheritanceDemand</code> (load time) for class inheritance, method overriding and interface implementations;
+</li><li> Support for the new 2.0 security actions. Note that the Mono runtime doesn't (yet) encode them properly.
+<ul><li> <code>DemandChoice</code>;
+</li><li> <code>LinkDemandChoice</code>; and 
+</li><li> <code>InheritanceDemandChoice</code>. 
+</li></ul>
+</li><li> Policy resolution - including <code>RequestMinimum</code>, <code>RequestOptional</code> and <code>RequestRefuse</code> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAction" class="external text" rel="nofollow">SecurityAction</a>s;
+</li><li> Declarative/Imperative demands;
+</li><li> Declarative stack modifiers (<code>Assert</code>, <code>Deny</code> and <code>PermitOnly</code>);
+</li></ul>
+<p><br />
+What's not (yet) supported:
+</p>
+<ul><li> Imperative stack modifiers (<code>Assert</code>, <code>Deny</code> and <code>PermitOnly</code>);
+</li><li> <code>RequestMinimum</code> is only evaluated at policy resolution - not at assembly load time;
+</li><li> Runtime encoding of the declarative security attributes in the new binary metadata format present in 2.0;
+</li><li> Special code groups in security policies;
+</li><li> Lots of small fixes/TODO;
+</li></ul>
+<h2> <span class="mw-headline" id="Class_libraries"> Class libraries </span></h2>
+<p>The class librairies plays a dual role in <b>CAS</b>. First they supply the basic security objects (i.e. evidences, policies, permissions) and, second, they also represents <i>resources</i> (e.g. files, sockets...) that requires protection.
+</p><p>Adding the required security protections to an existing class can be tricky as it will often requires some refactoring (e.g. to avoid looping over security checks). It's much easier to do when there are existing unit tests (i.e. refactoring can lead to mistakes). Be extra careful if no unit tests exists (or if their coverage is incomplete) and don't hesitate to add <i>normal</i> unit tests before protecting the resources. Also adding any code (resource protection or not) should be reviewed by the maintainer of the class/namespace/assembly.
+</p>
+<h3> <span class="mw-headline" id="Testing_2"> Testing </span></h3>
+<p>Testing each class, security related or not, is done with <i>classic</i> <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">unit tests</a>. However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
+</p>
+<ul><li> The unit test namespace starts with <code>MonoCasTests</code> instead of <code>MonoTests</code>;
+</li></ul>
+<pre>namespace MonoCas.<i>Namespaces</i> {
+</pre>
+<ul><li> All CAS unit tests classes must have the <b>"CAS"</b> category so they can be excluded from the default test execution (e.g. when mono is being used without <code>--security</code>.
+</li></ul>
+<pre><code>[Category ("CAS")]</code>
+</pre>
+<ul><li> The unit test class name ends with <code>Cas</code> instead of <code>Test</code>;
+</li></ul>
+<pre>public class <i>ClassName</i>Cas {
+</pre>
+<ul><li> As a safeguard (from manual execution of <code>nunit</code>) a <code>SetUp</code> method/attribute is also used to <b>ignore</b> all tests if the security manager isn't enabled.
+</li></ul>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">namespace</span> MonoCasTests<span style="color: #008000;">.</span><span style="color: #000000;">System</span> <span style="color: #008000;">&#123;</span>
+&#160;
+ 	<span style="color: #008000;">&#91;</span>TestFixture<span style="color: #008000;">&#93;</span>
+ 	<span style="color: #008000;">&#91;</span>Category <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;CAS&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+ 	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> EnvironmentCas <span style="color: #008000;">&#123;</span>
+&#160;
+ 		<span style="color: #008000;">&#91;</span>SetUp<span style="color: #008000;">&#93;</span>
+ 		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SetUp <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+ 		<span style="color: #008000;">&#123;</span>
+ 			<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span>SecurityManager<span style="color: #008000;">.</span><span style="color: #0000FF;">SecurityEnabled</span><span style="color: #008000;">&#41;</span>
+ 				Assert<span style="color: #008000;">.</span><span style="color: #0000FF;">Ignore</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;SecurityManager.SecurityEnabled is OFF&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+ 		<span style="color: #008000;">&#125;</span></pre>
+<p>You can see a complete example in the <a href="http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/corlib/Test/System/EnvironmentCas.cs?view=markup" class="external text" rel="nofollow">EnvironmentCas.cs</a> file.
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Status_2"> Status </span></h3>
+<ul><li> Most of the security classes required by the runtime (e.g. evidences, policies) and to express security conditions (e.g. permissions) are complete and have their normal (e.g. not CAS) unit tests. This includes most classes under the namespaces:
+<ul><li> <code><a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=9@N%3aSystem.Security" class="external text" rel="nofollow">System.Security</a></code>;
+</li><li> <code><a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=9@N%3aSystem.Security.Permissions" class="external text" rel="nofollow">System.Security.Permissions</a></code>; and
+</li><li> <code><a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=9@N%3aSystem.Security.Policy" class="external text" rel="nofollow">System.Security.Policy</a></code>.
+</li></ul>
+</li><li> Current priority is to test the security manager by creating partial trust unit tests for the class libraries;
+</li><li> Further testing, in particular real-life complex security policies, are welcome;
+</li></ul>
+<h2> <span class="mw-headline" id="Tools"> Tools </span></h2>
+<p>The framework supplies some basic tools to configure, inspect and manage <b>CAS</b>.
+</p>
+<h3> <span class="mw-headline" id="caspol"> caspol </span></h3>
+<p>Caspol is a tool to manage security policy files that affects the security manager (i.e. the policy resolution step done for each assembly loaded in an appdomain). There are different policy levels for:
+</p>
+<ul><li> Enterprise;
+</li><li> Machine;
+</li><li> User; and
+</li><li> AppDomain.
+</li></ul>
+<p>All but the last one (AppDomain) keeps it's configuration in an XML file that can be configured using <code>caspol</code>.
+</p><p>The tool itself is a thin wrapper on top of the security classes in both <a href="http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.Security.Permissions" class="external text" rel="nofollow">System.Security.Permissions</a> and <a href="http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.Security.Policy" class="external text" rel="nofollow">System.Security.Policy</a> namespaces.
+</p><p><b>Status</b>
+</p>
+<ul><li> Caspol is fairly complete. Any missing feature is probably a bug in one of the security classes;
+</li><li> It would be nice to have a GUI version of the tool;
+</li></ul>
+<h3> <span class="mw-headline" id="permview"> permview </span></h3>
+<p>Permview is a tool that can extract the declarative security permission sets from a compiled assembly. This is handy for developers to know what are the minimum security permissions requirements for loading an assembly, creating a class or calling a method. Note that before Fx 2.0 there was no managed API to obtain those informations.
+</p><p><b>Status</b>
+</p>
+<ul><li> The current version (i.e. the one part of the Mono 1.1.x releases) is limited to show the assembly-level permissions (e.g. <code>RequestMinimum</code>, <code>RequestOptional</code> and <code>RequestRefuse</code>) and works only on the Mono runtime;
+</li><li> A new version, based on <a href="{{site.baseurl}}/Cecil" title="Cecil">Mono.Cecil</a>, is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the <b>mcs</b> <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> trunk. Until then the source code is available <a href="http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup" class="external text" rel="nofollow">here</a>.
+</li></ul>
+<h3> <span class="mw-headline" id="storeadm"> storeadm </span></h3>
+<p>Storeadm is a tool to manage isolated storage on a computer. It's handly for sysadmins to manage (and reclaim) disk space used for isolated storage. The tool is mainly built on top of the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.IO.IsolatedStorage" class="external text" rel="nofollow">System.IO.IsolatedStorage</a> classes;
+</p><p><b>Status</b>
+</p>
+<ul><li> This tool doesn't yet exists;
+</li><li> It would be nice to have both a CLI and GUI versions of the tool;
+</li></ul>
+

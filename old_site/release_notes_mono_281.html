@@ -1,0 +1,97 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.8.1"
+permalink: /old_site/Release_Notes_Mono_2.8.1/
+---
+
+<h1>Release Notes Mono 2.8.1</h1>
+
+<p>Mono 2.8.1 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Important_Information_About_Mono_2.8.1"><span class="tocnumber">1</span> <span class="toctext">Important Information About Mono 2.8.1</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Major_Highlights"><span class="tocnumber">2</span> <span class="toctext">Major Highlights</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Changes_since_Mono_2.8"><span class="tocnumber">3</span> <span class="toctext">Changes since Mono 2.8</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Installing_Mono_2.8.1"><span class="tocnumber">4</span> <span class="toctext">Installing Mono 2.8.1</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Important_Information_About_Mono_2.8.1"> Important Information About Mono 2.8.1 </span></h1>
+<p>Mono 2.8.1 is a bug fix release for <a href="{{site.baseurl}}/Release_Notes_Mono_2.8.1" title="Release Notes Mono 2.8.1">Mono 2.8</a> that contains the major fixes for bugs that were identified in Mono 2.8, it also contains a few security fixes.
+</p><p>Mono's Long Term Supported release continues to be Mono 2.6, the next long-term support release will be Mono 3.0.   Mono 2.8 ships the latest and greatest and updates and they have not received as much testing as they should.   Users seeking absolute stability should stay on Mono 2.6.   Users switching to Mono 2.8, should expect a faster bug turn around time, but they should also plan on upgrading to the upcoming 2.xx series as we fix bugs in our stack.
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<h1> <span class="mw-headline" id="Changes_since_Mono_2.8"> Changes since Mono 2.8 </span></h1>
+<p>This documents the changes since <a href="{{site.baseurl}}/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8</a>, the list was obtained by using:
+</p>
+<pre>git log 2.8..origin/mono-2-8
+</pre>
+<ul><li> Fix DateTime's from binary representation #648252 (gonzalo)
+</li><li> Fixed Nullable's serialization in Remoting's binary serializer #646556 (gonzalo)
+</li><li> Logging profiler build fix (zoltan)
+</li><li> Fixed an assert for localalloc (long) when using LLVM (zoltan)
+</li><li> Disabled cardtables on SGen on 64bit configurations, will be re-enabled in Mono 2.10
+</li><li> Fixes a crash when using the embedded API
+</li><li> Add new mono-dl-fallback API for registering P/Invoke lookup hooks (mostly for PS3 and Wii, but useful for embedders in general) (miguel).
+</li><li> Allow ordinal entry points on Windows 636966 (gonzalo)
+</li><li> Fixes file system scanning for Linux systems 637078 (gonzalo)
+</li><li> Fixes GetLocalicalDriveString (gonzalo)
+</li><li> UDP sockets allow connections to Any 639098 (gonzalo)
+</li><li> GetProcessById now works on Mac (gonzalo)
+</li><li> Map SO_EXCLUSIVEADDRUSE to&#160;!SO_REUSEADDR 643475 (gonzalo)
+</li><li> Timers: fix collision handling code (gonzalo)
+</li><li> Support unloading System assemblies when sockets are used (zoltan)
+</li><li> Fix to utf8 to utf16 decoding (gonzalo)
+</li><li> Fix WCF proxy names (marek)
+</li><li> Fix WCF dispatchers (marek)
+</li><li> No longer closes WCF response prematurely (marek)
+</li><li> Fix some WCF hosting scenarios (Atsushi)
+</li><li> Add support for EnableSSL on smtp configuration 644816 (gonzalo)
+</li><li> Fixes socket bug #645675.
+</li><li> Prevents old AOT images from crashing new Mono's 647918 (zoltan)
+</li><li> Exceptions are now propagated when embedding on Windows (tak/unity)
+</li><li> BSD fix for thread attach 647248 (zoltan)
+</li><li> Reset thread pool state (gonzalo)
+</li><li> Fixes AOT compiler when LLVM is used 646314 (zoltan)
+</li><li> Updated SPARC IMT code for .NET 4 (zoltan)
+</li><li> Prevents a crash if your iconv setup is broken or incomplete on your system (zoltan)
+</li><li> Add pretty-printing support to Json objects (jb)
+</li><li> Adds null values to Json objects (jb)
+</li><li> C# compiler can compile multiple interface event declarators 646298 (marek)
+</li><li> Fixes initializers in C# for partially static multi-dimensional arrays 642975 (marek)
+</li><li> X509Chain now always uses both the local machine store and the user store, regression from 2.6 (gonzalo)
+</li><li> SPARC is now supported again (vargaz)
+</li><li> xbuild updated to our latest release (ankit)
+</li><li> Fixed named Mutexes (gonzalo)
+</li></ul>
+<p>To obtain the full list of changes in diff form from 2.8, use:
+</p>
+<pre>git diff 2.8..origin/mono-2-8
+</pre>
+<h1> <span class="mw-headline" id="Installing_Mono_2.8.1">Installing Mono 2.8.1 </span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-2.8.1.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-2.8.1
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-2.8.1.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-2.8.1
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+

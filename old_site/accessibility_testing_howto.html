@@ -1,0 +1,1101 @@
+---
+layout: obsolete
+title: "Accessibility: Testing Howto"
+permalink: /old_site/Accessibility:_Testing_Howto/
+---
+
+<h1>Accessibility: Testing Howto</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#WinForms"><span class="tocnumber">1</span> <span class="toctext">WinForms</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Strongwind"><span class="tocnumber">1.1</span> <span class="toctext">Strongwind</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Introduction"><span class="tocnumber">1.1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Requirements"><span class="tocnumber">1.1.2</span> <span class="toctext">Requirements</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Strongwind_Introduction"><span class="tocnumber">1.1.3</span> <span class="toctext">Strongwind Introduction</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Strongwind_Test_Harness"><span class="tocnumber">1.1.4</span> <span class="toctext">Strongwind Test Harness</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="#local_run.py"><span class="tocnumber">1.1.4.1</span> <span class="toctext">local_run.py</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="#remote_run.py"><span class="tocnumber">1.1.4.2</span> <span class="toctext">remote_run.py</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="#.22Official_Tests.22"><span class="tocnumber">1.1.4.3</span> <span class="toctext">"Official Tests"</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="#Official_Test_Machine_Configuration"><span class="tocnumber">1.1.4.4</span> <span class="toctext">Official Test Machine Configuration</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="#QA_Architecture_Diagram"><span class="tocnumber">1.1.4.5</span> <span class="toctext">QA Architecture Diagram</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-12"><a href="#Example_Sample_Application"><span class="tocnumber">1.1.5</span> <span class="toctext">Example Sample Application</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Example_Application_Wrapper"><span class="tocnumber">1.1.6</span> <span class="toctext">Example Application Wrapper</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href="#init_.py"><span class="tocnumber">1.1.6.1</span> <span class="toctext">__init__.py</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="#gtktutorialframe.py"><span class="tocnumber">1.1.6.2</span> <span class="toctext">gtktutorialframe.py</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-16"><a href="#Example_Test_Script"><span class="tocnumber">1.1.7</span> <span class="toctext">Example Test Script</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#Orca"><span class="tocnumber">1.2</span> <span class="toctext">Orca</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Requirements_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Requirements</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Testing"><span class="tocnumber">1.2.2</span> <span class="toctext">Testing</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Test_Writing"><span class="tocnumber">1.2.3</span> <span class="toctext">Test Writing</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Moonlight"><span class="tocnumber">2</span> <span class="toctext">Moonlight</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="#Create_Moonlight_Sample"><span class="tocnumber">2.1</span> <span class="toctext">Create Moonlight Sample</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Build_Test_Environment"><span class="tocnumber">2.2</span> <span class="toctext">Build Test Environment</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="#Install_Mono"><span class="tocnumber">2.2.1</span> <span class="toctext">Install Mono</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#mxap_to_compile_Silverlight_samples"><span class="tocnumber">2.2.2</span> <span class="toctext">mxap to compile Silverlight samples</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Manage_Firefox"><span class="tocnumber">2.2.3</span> <span class="toctext">Manage Firefox</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#Install_MoonAtkBridge_to_Make_accessible"><span class="tocnumber">2.2.4</span> <span class="toctext">Install MoonAtkBridge to Make accessible</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#UIAutomation_Client_API"><span class="tocnumber">3</span> <span class="toctext">UIAutomation Client API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#White"><span class="tocnumber">3.1</span> <span class="toctext">White</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Introduction_2"><span class="tocnumber">3.1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Example_of_start_White"><span class="tocnumber">3.1.2</span> <span class="toctext">Example of start White</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="#UIA_Verify"><span class="tocnumber">3.2</span> <span class="toctext">UIA Verify</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="#Introduction_3"><span class="tocnumber">3.2.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Automation_Test_Suit"><span class="tocnumber">3.2.2</span> <span class="toctext">Automation Test Suit</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#UIA_Client_Api_Testing_How_To"><span class="tocnumber">3.3</span> <span class="toctext">UIA Client Api Testing How To</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="#What_is_the_UI_Automaiton.3F"><span class="tocnumber">3.3.1</span> <span class="toctext">What is the UI Automaiton?</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#What_is_the_uiaclient_used_for.3F"><span class="tocnumber">3.3.2</span> <span class="toctext">What is the uiaclient used for?</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#Requirements_3"><span class="tocnumber">3.3.3</span> <span class="toctext">Requirements</span></a>
+<ul>
+<li class="toclevel-4 tocsection-39"><a href="#Keepass.exe:"><span class="tocnumber">3.3.3.1</span> <span class="toctext">Keepass.exe:</span></a></li>
+<li class="toclevel-4 tocsection-40"><a href="#DockPatternProvider.exe:"><span class="tocnumber">3.3.3.2</span> <span class="toctext">DockPatternProvider.exe:</span></a></li>
+<li class="toclevel-4 tocsection-41"><a href="#WindowAndTransformPatternProvider.exe:"><span class="tocnumber">3.3.3.3</span> <span class="toctext">WindowAndTransformPatternProvider.exe:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-42"><a href="#QA_Architecture_Diagram_2"><span class="tocnumber">3.3.4</span> <span class="toctext">QA Architecture Diagram</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#Example_Application_Wrapper_2"><span class="tocnumber">3.3.5</span> <span class="toctext">Example Application Wrapper</span></a>
+<ul>
+<li class="toclevel-4 tocsection-44"><a href="#TestBase.cs"><span class="tocnumber">3.3.5.1</span> <span class="toctext">TestBase.cs</span></a></li>
+<li class="toclevel-4 tocsection-45"><a href="#Config.cs"><span class="tocnumber">3.3.5.2</span> <span class="toctext">Config.cs</span></a></li>
+<li class="toclevel-4 tocsection-46"><a href="#Config.xml"><span class="tocnumber">3.3.5.3</span> <span class="toctext">Config.xml</span></a></li>
+<li class="toclevel-4 tocsection-47"><a href="#Element.cs"><span class="tocnumber">3.3.5.4</span> <span class="toctext">Element.cs</span></a></li>
+<li class="toclevel-4 tocsection-48"><a href="#ScrollBar.cs"><span class="tocnumber">3.3.5.5</span> <span class="toctext">ScrollBar.cs</span></a></li>
+<li class="toclevel-4 tocsection-49"><a href="#ProcedureLogger.cs"><span class="tocnumber">3.3.5.6</span> <span class="toctext">ProcedureLogger.cs</span></a></li>
+<li class="toclevel-4 tocsection-50"><a href="#Utils.cs"><span class="tocnumber">3.3.5.7</span> <span class="toctext">Utils.cs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-51"><a href="#Example_Test_script_2"><span class="tocnumber">3.3.6</span> <span class="toctext">Example Test script</span></a>
+<ul>
+<li class="toclevel-4 tocsection-52"><a href="#Keepass.cs"><span class="tocnumber">3.3.6.1</span> <span class="toctext">Keepass.cs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-53"><a href="#OUTPUT"><span class="tocnumber">3.3.7</span> <span class="toctext">OUTPUT</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-54"><a href="#Logging_Bugs"><span class="tocnumber">4</span> <span class="toctext">Logging Bugs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-55"><a href="#General_Guidelines"><span class="tocnumber">4.1</span> <span class="toctext">General Guidelines</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#Bug_References"><span class="tocnumber">4.2</span> <span class="toctext">Bug References</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-57"><a href="#Official_Test_Machine_Setup"><span class="tocnumber">5</span> <span class="toctext">Official Test Machine Setup</span></a></li>
+<li class="toclevel-1 tocsection-58"><a href="#Csharp_Introduction"><span class="tocnumber">6</span> <span class="toctext">Csharp Introduction</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="WinForms">WinForms</span></h1>
+<p>The purpose of this Strongwind example is to familiarize the reader with the specific testing practices of the UIA Mono Accessibility team.
+</p><p>This tutorial demonstrates the writing of tests for a Gtk application.  In practice, of course, we write our tests for WinForms applications.  Using a Gtk application in this tutorial allow us to demonstrate testing techniques effectively, without having to worry about the early stage of the WinForms providers implementation at the time this tutorial was written.
+</p>
+<h2> <span class="mw-headline" id="Strongwind">Strongwind</span></h2>
+<h3> <span class="mw-headline" id="Introduction">Introduction</span></h3>
+<p>This tutorial will <i>not</i> have in-depth explanations about the Strongwind-specific parts of the code in our test.  This information is covered in <a href="http://medsphere.org/projects/strongwind/getting_started.html" class="external text" rel="nofollow">Getting Started with Strongwind</a> and <a href="{{site.baseurl}}/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a>.  In this tutorial, our focus will be on how our Mono accessibility tests and environment are unique.
+</p>
+<h3> <span class="mw-headline" id="Requirements">Requirements</span></h3>
+<ul><li><a href="http://www.gnome.org" class="external text" rel="nofollow">GNOME</a>
+</li><li><a href="http://www.python.org" class="external text" rel="nofollow">Python</a> (&gt;=2.5, &lt;3.0)
+</li><li>Enable "Assistive Technologies" from the GNOME Control Center
+</li><li>pyatspi (packaged with <a href="http://ftp.gnome.org/pub/GNOME/sources/at-spi" class="external text" rel="nofollow">AT-SPI</a>)
+</li><li><a href="http://live.gnome.org/Accerciser" class="external text" rel="nofollow">Accerciser</a> (1.4.0 or later)
+</li><li><a href="http://medsphere.org/projects/strongwind" class="external text" rel="nofollow">Strongwind</a> (installing from SVN trunk is highly recommended)
+</li><li><a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython" class="external text" rel="nofollow">IronPython</a> (the package name in openSUSE is IPCE).  Our sample applications are written in IronPython, so it must be installed for them to run successfully.
+</li><li><a href="{{site.baseurl}}/Accessibility:_Getting_Started_With_Development#Getting_the_Code" title="Accessibility: Getting Started With Development"> uia2atk code</a>.  The QA-related code is in the test directory.  There are short README files in the test directory and each of its subdirectories.  Read these README files if you are confused about the files and directories you are seeing.  The code can also be checked out anonymously (using subversion) by running <i>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/uia2atk" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/uia2atk</a></i>.
+</li></ul>
+<h3> <span class="mw-headline" id="Strongwind_Introduction">Strongwind Introduction</span></h3>
+<p>This tutorial assumes the reader already has at least a basic understanding of Strongwind and can comfortably write non-trivial tests using it.  If you are already familiar with writing Strongwind tests, please skip this introduction.  Otherwise, a brief introduction to is needed before we can begin.
+</p><p>First of all, read <a href="http://medsphere.org/projects/strongwind/getting_started.html" class="external text" rel="nofollow">Getting Started with Strongwind</a> to get a basic idea of what it's all about.  Also notice there are several Gtk tests in uia2atk/test/testers that can be used as additional examples.
+</p><p>Next, read the <a href="{{site.baseurl}}/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a> page.
+</p><p>After reading these two documents, you will be ready to proceed with this tutorial.
+</p>
+<h3> <span class="mw-headline" id="Strongwind_Test_Harness">Strongwind Test Harness</span></h3>
+<p>We have developed a test harness for our Strongwind test harness.  The purpose of the test harness is to facilitate the execution and logging of multiple Strongwind tests on multiple machines.  Using the Strongwind test harness we are able to execute one command that runs all of our tests--either on your local machine or on all of our test machines simultaneously--and stores all of the logs to their proper locations.
+</p><p>The test harness files are located in uia2atk/test/harness; here is a list of the files with their descriptions:
+</p>
+<ul><li><i>tests.py</i>:  A list of "enabled tests," that is, tests that should be executed when running <i>remote_run.py</i> or <i>local_run.py</i>.
+</li><li><i>machines.py</i>:  A dictionary of machines on which the enabled tests should be run.  This file also contains the directory where the tests reside on the machines in <i>machines.py</i>, directory where logs should be stored on the machines in <i>machines.py</i>, and the username for the machines in <i>machines.py</i>.
+</li><li><i>remote_run.py</i>:  Run the enabled tests on the machines specified in <i>machines.py</i>.
+</li><li><i>local_run.py</i>:  Run the enabled tests on the local machine.
+</li></ul>
+<p>Here is a brief overview of how tests are executed using our Strongwind test harness:
+</p>
+<h4> <span class="mw-headline" id="local_run.py">local_run.py</span></h4>
+<p>When using <i>local_run.py</i> to execute tests, the following occurs:
+</p>
+<ol><li>The list of enabled tests is retrieved from <i>tests.py</i>
+</li><li>If a test is specified in <i>tests.py</i>, but it cannot be found on the machine, a warning is issued and that test will not be run.
+</li><li>Each test from <i>tests.py</i> is execute in order
+</li><li>Logs are stored in uia2atk/test/logs unless otherwise specified (by using the [-l|--log=] option.
+</li></ol>
+<p>Information is also printed to the terminal at each step unless the [-q|--quiet] option is used.
+</p>
+<h4> <span class="mw-headline" id="remote_run.py">remote_run.py</span></h4>
+<p>When using <i>remote_run.py</i> to execute tests, the following occurs:
+</p>
+<ol><li>The list of test machines is retrieved from <i>machines.py</i>
+</li><li>If a machine is specified in <i>machines.py</i>, but it cannot be pinged successfully, a warning is issues and the test(s) will not run on that machine.
+</li><li><i>remote_run.py</i> is executed via SSH on each available machine from <i>machines.py</i>.  There are three <b>important</b> things to remember:
+<ol><li><i>remote_run.py'</i>s default log directory is overridden and logs are stored in LOG_DIR as defined by <i>machines.py</i>.
+</li><li>The user used to perform the SSH operation is defined by USERNAME in <i>machines.py</i>
+</li><li><i>remote_run.py</i> looks for the <i>test</i> directory (i.e., uia2atk/test)  in TEST_DIR as defined by <i>machines.py</i>
+</li></ol>
+</li></ol>
+<p>Information is also printed to the terminal unless the [-q|--quiet] option is used.
+</p><p>The information normally displayed to the terminal by local_run.py is dumped in /tmp/uiaqa unless otherwise specified using the [-l|--log] option.
+</p>
+<h4> <span class="mw-headline" id=".22Official_Tests.22">"Official Tests"</span></h4>
+<p>Currently, the "official tests" are run on the "official" test machines, which are located at Novell in Provo.  These are the machines that are found in the <i>machines.py</i> in our source code and are only available internally to Novell employees.
+</p><p>We encourage anyone to help us write tests!  If you want to submit a test to be added to the official tests and you have not received permission from a <a href="{{site.baseurl}}/Accessibility:_Team" title="Accessibility: Team">QA hacker</a> to check patches into our Subversion repository, please e-mail our mailing list (mono-a11y@forge.novell.com) and attach a patch with the following:
+</p>
+<ul><li> Sample application modifications (recommended) or new sample application.  Not applicable if you are writing a test for an already existing application that does not need modified.  <i>NOTE:</i> If you are modifying a sample application, make sure it doesn't break any of the existing tests.
+</li><li> New or modified Application wrapper.  Not applicable if you are writing a test for an already existing application wrapper that does not need modified.
+</li><li> Test script
+</li><li> Your new test added to <i>tests.py</i>
+</li></ul>
+<p>Please only submit one test per e-mail, and begin the subject line with [QA PATCH].  
+</p>
+<h4> <span class="mw-headline" id="Official_Test_Machine_Configuration">Official Test Machine Configuration</span></h4>
+<p>The official tests are run on the official test machines in the official lab&#160;:), which is located at Novell in Provo.  Thus, this information is probably only useful to Novell employees.
+</p><p>The test machines are actually virtual machines (running on VMware Workstation) and are hosted on the physical machines in Provo.  Here is a list of the test machines and the physical machines on which they are hosted:
+</p>
+<table class="wikitable" border="1" style="text-align:left">
+
+<tr>
+<th> Platform
+</th>
+<th> Address
+</th>
+<th> VMware Host
+</th></tr>
+<tr>
+<td> openSUSE 11 32-bit
+</td>
+<td> suse32v0.sled.lab.novell.com
+</td>
+<td> d755a.sled.lab.novell.com
+</td></tr>
+<tr>
+<td> openSUSE 11 64-bit
+</td>
+<td> suse64v0.sled.lab.novell.com
+</td>
+<td> d755b.sled.lab.novell.com
+</td></tr>
+<tr>
+<td> Ubuntu 8.04 32-bit
+</td>
+<td> ubuntu32v0.sled.lab.novell.com
+</td>
+<td> d755c.sled.lab.novell.com
+</td></tr>
+<tr>
+<td> Ubuntu 8.04 64-bit
+</td>
+<td> ubuntu32v0.sled.lab.novell.com
+</td>
+<td> d755d.sled.lab.novell.com
+</td></tr>
+<tr>
+<td> Fedora 9 32-bit
+</td>
+<td> fedora32v0.sled.lab.novell.com
+</td>
+<td> d755e.sled.lab.novell.com
+</td></tr>
+<tr>
+<td> Fedora 9 64-bit
+</td>
+<td> fedora64v0.sled.lab.novell.com
+</td>
+<td> d755f.sled.lab.novell.com
+</td></tr>
+</table>
+<p>All of the test machines have a VNC server installed.  The host machines have <a href="http://www.nomachine.com" class="external text" rel="nofollow">NX Server</a> installed, which can be connected to using <a href="http://www.nomachine.com/download.php" class="external text" rel="nofollow">NX Client</a>; VMware could be running in the background.  Running <i>vmware</i> will open the backgrounded session.  Both the test machines and the VMware hosts have a user <i>a11y</i>.  For more login details contact a <a href="{{site.baseurl}}/Accessibility:_Team" title="Accessibility: Team">QA hacker</a>.
+</p><p>Each official test machine has a <i>tests</i> directory and a <i>logs</i> directory.  <i>TEST_DIR</i> in <i>machines.py</i> is set to the <i>tests</i> directory and <i>LOG_DIR</i> in <i>machines.py</i> is set to the <i>logs</i> directory.
+</p><p>These directories are, in truth, mounted directories on uiaqa.sled.lab.novell.com.
+</p>
+<table class="wikitable" border="1" style="text-align:left">
+<caption> <b>uiaqa.sled.lab.novell.com</b>
+</caption>
+<tr>
+<th> Directory </th>
+<th> CIFS Share Path </th>
+<th> Description
+</th></tr>
+<tr>
+<td><i>/var/qa/code/test</i>
+</td>
+<td><i>//uiaqa.sled.lab.novell.com/test</i>
+</td>
+<td>The uia2atk test code is checked out at this location
+</td></tr>
+<tr>
+<td><i>/var/qa/logs</i>
+</td>
+<td><i>//uiaqa.sled.lab.novell.com/logs</i>
+</td>
+<td>QA logs, which can be accessed from <a href="http://uiaqa.sled.lab.novell.com/logs/" class="external free" rel="nofollow">http://uiaqa.sled.lab.novell.com/logs/</a>
+</td></tr>
+</table>
+<p><i>//uiaqa.sled.lab.novell.com/test</i> is mounted by <i>TEST_DIR</i> and <i>//uiaqa.sled.lab.novell.com/logs</i> is mounted by <i>LOG_DIR</i>.  As the above table states, the test code (<i>uia2atk/test</i>) is checked out at <i>/var/qa/code/test</i>.  This means that the test code can be updated on all test machines by simply running <i>svn up</i> at <i>/var/qa/code/test</i> on <i>uiaqa.sled.lab.novell.com</i>.  The QA logs for our project are stored in <i>/var/qa/logs,</i> which is also pointed to by <a href="http://uiaqa.sled.lab.novell.com/logs" class="external free" rel="nofollow">http://uiaqa.sled.lab.novell.com/logs</a>.  This is where all the "official" logs are stored when our tests are run on the official test machines.
+</p>
+<h4> <span class="mw-headline" id="QA_Architecture_Diagram">QA Architecture Diagram</span></h4>
+<p>This diagram summarizes how WinForms testing is performed using Strongwind and the UI Automation test harness.
+</p><p><a href="{{site.baseurl}}/images/old_site/7/75/Qa_arch.png" class="image"><img alt="Qa arch.png" src="{{site.baseurl}}/images/old_site/7/75/Qa_arch.png" width="900" height="632" /></a>
+</p>
+<h3> <span class="mw-headline" id="Example_Sample_Application">Example Sample Application</span></h3>
+<p>Our team does not test a specific application.  Instead, our developers are writing code to make sure that Mono WinForms applications are accessible.  This means that we can writer our testing against whatever application(s) we wish.  The approach we take is to create small and simple "sample applications."  Our sample applications can be found in our code repository in the <i>test/samples</i> directory.
+</p><p>At this point you should <a href="{{site.baseurl}}/Accessibility:_Getting_Started_With_Development#Getting_the_Code" title="Accessibility: Getting Started With Development">check out the uia2atk code</a> if you haven't already.
+</p><p>After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples.  For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
+</p><p>Take a moment to run the gtktutorial and familiarize yourself with the it; start to think of how you could write its application wrapper.  You will notice that the main window (or frame) has two buttons.  The first button opens a tree view window with several parents and children.  The second button opens a window with check boxes and a quit button, just like the application from the <a href="{{site.baseurl}}/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a> tutorial.  
+</p>
+<h3> <span class="mw-headline" id="Example_Application_Wrapper">Example Application Wrapper</span></h3>
+<p>As usual, we will begin by writing the application wrapper for our testable application.  In this case our testable application will be <i>gtktutorial.py</i>.  We will begin by writing our __init.py__ file which describes how to open the testable application and then returns an object of it.  After completing the __init__.py piece of the application wrapper we will code the second piece (gtktutorialframe.py), which describes how we can interact with the widgets of the testable application. 
+</p>
+<h4> <span class="mw-headline" id="init_.py">__init__.py</span></h4>
+<p>This __init__.py file is very similar to previous ones we have created, and it has the same function: launch the testable application and return an object of it.  We begin just like we have in other <i>__init__.py</i> examples:
+</p>
+<pre class="python" style="font-family:monospace;"><span style="color: #ff7700;font-weight:bold;">from</span> strongwind <span style="color: #ff7700;font-weight:bold;">import</span> *
+&#160;
+<span style="color: #ff7700;font-weight:bold;">from</span> <span style="color: #dc143c;">os</span>.<span style="color: black;">path</span> <span style="color: #ff7700;font-weight:bold;">import</span> exists
+<span style="color: #ff7700;font-weight:bold;">from</span> <span style="color: #dc143c;">sys</span> <span style="color: #ff7700;font-weight:bold;">import</span> path
+&#160;
+<span style="color: #ff7700;font-weight:bold;">def</span> launchTreeView<span style="color: black;">&#40;</span>exe<span style="color: #66cc66;">=</span><span style="color: #008000;">None</span><span style="color: black;">&#41;</span>:
+    <span style="color: #483d8b;">&quot;&quot;&quot;Launch gtktreeview with accessibility enabled and return a TreeView
+    object.  Log an error and return None if something goes wrong&quot;&quot;&quot;</span></pre>
+<p>There is one part, however, that is unique to our UIA QA team.  This code is shown below.  The purpose of this portion of code is the same as in other examples:  make sure we can find the sample application and that it exists.  The difference is that now we find the sample application based on where the test file is being run.
+</p><p>path[0] is using sys.path[0], which is "the directory containing
+the script that was used to invoke the Python interpreter."
+</p><p>So if we execute a test from /home/a11y/uia2atk/test/testers, we
+know to look for the sample app in ../samples (i.e., /home/a11y/uia2atk/test/samples).
+</p>
+<pre class="python" style="font-family:monospace;">    <span style="color: #ff7700;font-weight:bold;">if</span> exe <span style="color: #ff7700;font-weight:bold;">is</span> <span style="color: #008000;">None</span>:
+        <span style="color: #808080; font-style: italic;"># make sure we can find the sample application</span>
+        harness_dir <span style="color: #66cc66;">=</span> path<span style="color: black;">&#91;</span><span style="color: #ff4500;">0</span><span style="color: black;">&#93;</span>
+        i <span style="color: #66cc66;">=</span> harness_dir.<span style="color: black;">rfind</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">&quot;/&quot;</span><span style="color: black;">&#41;</span>
+        uiaqa_path <span style="color: #66cc66;">=</span> harness_dir<span style="color: black;">&#91;</span>:i<span style="color: black;">&#93;</span>
+        exe <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'%s/samples/gtktreeview.py'</span>&#160;% uiaqa_path
+        <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #ff7700;font-weight:bold;">not</span> exists<span style="color: black;">&#40;</span>exe<span style="color: black;">&#41;</span>:
+          <span style="color: #ff7700;font-weight:bold;">raise</span> <span style="color: #008000;">IOError</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">&quot;Could not find file&#160;%s&quot;</span>&#160;% exe</pre>
+<p>The remainder of the <i>__init__.py</i> code is the same as always:
+</p>
+<pre class="python" style="font-family:monospace;">    args <span style="color: #66cc66;">=</span> <span style="color: black;">&#91;</span>exe<span style="color: black;">&#93;</span>
+&#160;
+    <span style="color: black;">&#40;</span>app<span style="color: #66cc66;">,</span> subproc<span style="color: black;">&#41;</span> <span style="color: #66cc66;">=</span> cache.<span style="color: black;">launchApplication</span><span style="color: black;">&#40;</span>args<span style="color: #66cc66;">=</span>args<span style="color: black;">&#41;</span>
+&#160;
+    treeview <span style="color: #66cc66;">=</span> GtkTreeView<span style="color: black;">&#40;</span>app<span style="color: #66cc66;">,</span> subproc<span style="color: black;">&#41;</span>
+    cache.<span style="color: black;">addApplication</span><span style="color: black;">&#40;</span>treeview<span style="color: black;">&#41;</span>
+&#160;
+    treeview.<span style="color: black;">gtkTreeViewFrame</span>.<span style="color: black;">app</span> <span style="color: #66cc66;">=</span> treeview
+&#160;
+    <span style="color: #ff7700;font-weight:bold;">return</span> treeview
+&#160;
+<span style="color: #808080; font-style: italic;"># class to represent the application</span>
+<span style="color: #ff7700;font-weight:bold;">class</span> GtkTreeView<span style="color: black;">&#40;</span>accessibles.<span style="color: black;">Application</span><span style="color: black;">&#41;</span>:
+    <span style="color: #ff7700;font-weight:bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> accessible<span style="color: #66cc66;">,</span> subproc<span style="color: #66cc66;">=</span><span style="color: #008000;">None</span><span style="color: black;">&#41;</span>:
+        <span style="color: #483d8b;">'Get a reference to the Tree View window'</span>
+        <span style="color: #008000;">super</span><span style="color: black;">&#40;</span>GtkTreeView<span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span><span style="color: black;">&#41;</span>.<span style="color: #0000cd;">__init__</span><span style="color: black;">&#40;</span>accessible<span style="color: #66cc66;">,</span> subproc<span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">findFrame</span><span style="color: black;">&#40;</span><span style="color: #dc143c;">re</span>.<span style="color: #008000;">compile</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'^Tree View'</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">,</span> logName<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'Gtk Tree View'</span><span style="color: black;">&#41;</span></pre>
+<p><br />
+</p>
+<h4> <span class="mw-headline" id="gtktutorialframe.py">gtktutorialframe.py</span></h4>
+<p>The second portion of the application wrapper (<i>gtktutoriaframe.py</i>) is no different than previous examples.  The code below is aggressively documented:
+</p>
+<pre class="python" style="font-family:monospace;"><span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">sys</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">os</span>
+&#160;
+<span style="color: #ff7700;font-weight:bold;">from</span> strongwind <span style="color: #ff7700;font-weight:bold;">import</span> *
+<span style="color: #ff7700;font-weight:bold;">from</span> gtktreeview <span style="color: #ff7700;font-weight:bold;">import</span> *
+&#160;
+&#160;
+<span style="color: #808080; font-style: italic;"># class to represent the main window.</span>
+<span style="color: #ff7700;font-weight:bold;">class</span> GtkTreeViewFrame<span style="color: black;">&#40;</span>accessibles.<span style="color: black;">Frame</span><span style="color: black;">&#41;</span>:
+&#160;
+    <span style="color: #808080; font-style: italic;"># constants</span>
+    <span style="color: #808080; font-style: italic;"># the available widgets on the window</span>
+    COLUMN_ZERO <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;Column 0&quot;</span>
+    PARENT_ONE <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;parent 0&quot;</span>
+    PARENT_TWO <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;parent 1&quot;</span>
+    PARENT_TREE <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;parent 2&quot;</span>
+    PARENT_FOUR <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;parent 3&quot;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># the ordering of table cell names we expect when we call the</span>
+    <span style="color: #808080; font-style: italic;"># findAllTableCells method</span>
+    ASCENDING <span style="color: #66cc66;">=</span> <span style="color: black;">&#40;</span><span style="color: #483d8b;">'parent 0'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 2'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 3'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 0 of parent 0'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 1 of parent 0'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 2 of parent 0'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 0 of parent 1'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 1 of parent 1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 2 of parent 1'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 0 of parent 2'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 1 of parent 2'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 2 of parent 2'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 0 of parent 3'</span><span style="color: #66cc66;">,</span>
+                 <span style="color: #483d8b;">'child 1 of parent 3'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 2 of parent 3'</span><span style="color: black;">&#41;</span>
+    DESCENDING <span style="color: #66cc66;">=</span> <span style="color: black;">&#40;</span><span style="color: #483d8b;">'parent 3'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 2'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'parent 0'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 2 of parent 3'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 1 of parent 3'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 0 of parent 3'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 2 of parent 2'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 1 of parent 2'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 0 of parent 2'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 2 of parent 1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 1 of parent 1'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 0 of parent 1'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 2 of parent 0'</span><span style="color: #66cc66;">,</span>
+                  <span style="color: #483d8b;">'child 1 of parent 0'</span><span style="color: #66cc66;">,</span> <span style="color: #483d8b;">'child 0 of parent 0'</span><span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># Use the constructor to find some of the accessibles we will be testing</span>
+    <span style="color: #808080; font-style: italic;"># and store an object for each accessible in a variable that can be used</span>
+    <span style="color: #808080; font-style: italic;"># from the test script.</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> <span style="color: #0000cd;">__init__</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> accessible<span style="color: black;">&#41;</span>:
+        <span style="color: #008000;">super</span><span style="color: black;">&#40;</span>GtkTreeViewFrame<span style="color: #66cc66;">,</span> <span style="color: #008000;">self</span><span style="color: black;">&#41;</span>.<span style="color: #0000cd;">__init__</span><span style="color: black;">&#40;</span>accessible<span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">column0</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findTableColumnHeader</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">COLUMN_ZERO</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">parent0</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findTableCell</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">PARENT_ONE</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">parent1</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findTableCell</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">PARENT_TWO</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">parent2</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findTableCell</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">PARENT_TREE</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">parent3</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findTableCell</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">PARENT_FOUR</span><span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># expand accessible by performing an &quot;expand or contract&quot; action.</span>
+    <span style="color: #808080; font-style: italic;"># this method will also contract the accessible if used out of order</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> expand<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> parent<span style="color: black;">&#41;</span>:
+        procedurelogger.<span style="color: black;">action</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'expand&#160;%s.'</span>&#160;% parent<span style="color: black;">&#41;</span>
+        parent.<span style="color: black;">expandOrContract</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># contract accessible by performing an &quot;expand or contract&quot; action.</span>
+    <span style="color: #808080; font-style: italic;"># this method will also expand the accessible if used out of order</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> contract<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> parent<span style="color: black;">&#41;</span>:
+        procedurelogger.<span style="color: black;">action</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'contract&#160;%s.'</span>&#160;% parent<span style="color: black;">&#41;</span>
+        parent.<span style="color: black;">expandOrContract</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># perform a click action for TableColumnHeader</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> tchClick <span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> thc<span style="color: black;">&#41;</span>:
+        procedurelogger.<span style="color: black;">action</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'click&#160;%s.'</span>&#160;% thc<span style="color: black;">&#41;</span>
+        thc.<span style="color: black;">click</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># assert that the accessible has the &quot;contracted&quot; state after performing</span>
+    <span style="color: #808080; font-style: italic;"># the &quot;expand or contract&quot; action.  states can be found on the &quot;status&quot; list</span>
+    <span style="color: #808080; font-style: italic;"># on the &quot;interface viewer&quot; tab in Accerciser.</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> assertContracted<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> accessible<span style="color: black;">&#41;</span>:
+        <span style="color: #483d8b;">'Raise exception if accessible does not match the given result'</span>   
+        procedurelogger.<span style="color: black;">expectedResult</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'%s is&#160;%s.'</span>&#160;% <span style="color: black;">&#40;</span>accessible<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">&quot;contracted&quot;</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>
+        <span style="color: #ff7700;font-weight:bold;">def</span> resultMatches<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:
+            <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #ff7700;font-weight:bold;">not</span> accessible.<span style="color: black;">expanded</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">assert</span> retryUntilTrue<span style="color: black;">&#40;</span>resultMatches<span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># assert that the accessible has the &quot;expanded&quot; state after performing</span>
+    <span style="color: #808080; font-style: italic;"># the &quot;expand or contract&quot; action.</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> assertExpanded<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: #66cc66;">,</span> accessible<span style="color: black;">&#41;</span>:
+        <span style="color: #483d8b;">'Raise exception if accessible does not match the given result'</span>   
+        procedurelogger.<span style="color: black;">expectedResult</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'%s is&#160;%s.'</span>&#160;% <span style="color: black;">&#40;</span>accessible<span style="color: #66cc66;">,</span> <span style="color: #483d8b;">&quot;expanded&quot;</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>
+        <span style="color: #ff7700;font-weight:bold;">def</span> resultMatches<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:
+            <span style="color: #ff7700;font-weight:bold;">return</span> accessible.<span style="color: black;">expanded</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">assert</span> retryUntilTrue<span style="color: black;">&#40;</span>resultMatches<span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># assert that the sorting of the TreeView is ascending by comparing the </span>
+    <span style="color: #808080; font-style: italic;"># order in which the table cells are found to the order we expect them</span>
+    <span style="color: #808080; font-style: italic;"># to be in (self.ASCENDING).</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> assertAscending<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:
+        <span style="color: #483d8b;">'Raise exception if the sorting of the tree view is not ascending'</span>   
+        procedurelogger.<span style="color: black;">expectedResult</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'TreeView sorting is ascending'</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findAllTableCells</span><span style="color: black;">&#40;</span><span style="color: #008000;">None</span><span style="color: #66cc66;">,</span> checkShowing<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: black;">&#41;</span>
+        tcs <span style="color: #66cc66;">=</span> <span style="color: black;">&#91;</span>table_cell.<span style="color: black;">name</span> <span style="color: #ff7700;font-weight:bold;">for</span> table_cell <span style="color: #ff7700;font-weight:bold;">in</span>  <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span><span style="color: black;">&#93;</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">def</span> resultMatches<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:
+            <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findAllTableCells</span><span style="color: black;">&#40;</span><span style="color: #008000;">None</span><span style="color: #66cc66;">,</span> checkShowing<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: black;">&#41;</span>
+            <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">tuple</span><span style="color: black;">&#40;</span>tcs<span style="color: black;">&#41;</span> <span style="color: #66cc66;">==</span> <span style="color: #008000;">self</span>.<span style="color: black;">ASCENDING</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">assert</span> retryUntilTrue<span style="color: black;">&#40;</span>resultMatches<span style="color: black;">&#41;</span>
+&#160;
+    <span style="color: #808080; font-style: italic;"># assert that the sorting of the TreeView is descending by comparing the </span>
+    <span style="color: #808080; font-style: italic;"># order in which the table cells are found to the order we expect them</span>
+    <span style="color: #808080; font-style: italic;"># to be in (self.DESCENDING).</span>
+    <span style="color: #ff7700;font-weight:bold;">def</span> assertDescending<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:
+        <span style="color: #483d8b;">'Raise exception if the sorting of the tree view is not descending'</span>   
+        procedurelogger.<span style="color: black;">expectedResult</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'TreeView sorting is descending'</span><span style="color: black;">&#41;</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findAllTableCells</span><span style="color: black;">&#40;</span><span style="color: #008000;">None</span><span style="color: #66cc66;">,</span> checkShowing<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: black;">&#41;</span>
+        tcs <span style="color: #66cc66;">=</span> <span style="color: black;">&#91;</span>table_cell.<span style="color: black;">name</span> <span style="color: #ff7700;font-weight:bold;">for</span> table_cell <span style="color: #ff7700;font-weight:bold;">in</span>  <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span><span style="color: black;">&#93;</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">def</span> resultMatches<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:
+            <span style="color: #008000;">self</span>.<span style="color: black;">table_cells</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">findAllTableCells</span><span style="color: black;">&#40;</span><span style="color: #008000;">None</span><span style="color: #66cc66;">,</span> checkShowing<span style="color: #66cc66;">=</span><span style="color: #008000;">False</span><span style="color: black;">&#41;</span>
+            <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">tuple</span><span style="color: black;">&#40;</span>tcs<span style="color: black;">&#41;</span> <span style="color: #66cc66;">==</span> <span style="color: #008000;">self</span>.<span style="color: black;">DESCENDING</span>
+&#160;
+        <span style="color: #ff7700;font-weight:bold;">assert</span> retryUntilTrue<span style="color: black;">&#40;</span>resultMatches<span style="color: black;">&#41;</span></pre>
+<h3> <span class="mw-headline" id="Example_Test_Script">Example Test Script</span></h3>
+<p>The test script is also no different than previous examples.  The code below is aggressively documented and should be fairly easy to follow:
+</p>
+<pre class="python" style="font-family:monospace;"><span style="color: #ff7700;font-weight:bold;">from</span> strongwind <span style="color: #ff7700;font-weight:bold;">import</span> *
+<span style="color: #ff7700;font-weight:bold;">from</span> gtktreeview <span style="color: #ff7700;font-weight:bold;">import</span> *
+<span style="color: #ff7700;font-weight:bold;">from</span> <span style="color: #dc143c;">sys</span> <span style="color: #ff7700;font-weight:bold;">import</span> argv
+<span style="color: #ff7700;font-weight:bold;">from</span> <span style="color: #dc143c;">os</span> <span style="color: #ff7700;font-weight:bold;">import</span> path
+&#160;
+app_path <span style="color: #66cc66;">=</span> <span style="color: #008000;">None</span> 
+<span style="color: #ff7700;font-weight:bold;">try</span>:
+  app_path <span style="color: #66cc66;">=</span> argv<span style="color: black;">&#91;</span><span style="color: #ff4500;">1</span><span style="color: black;">&#93;</span>
+<span style="color: #ff7700;font-weight:bold;">except</span> <span style="color: #008000;">IndexError</span>:
+  <span style="color: #ff7700;font-weight:bold;">pass</span> <span style="color: #808080; font-style: italic;">#expected</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># open the treeview sample application</span>
+<span style="color: #ff7700;font-weight:bold;">try</span>:
+  app <span style="color: #66cc66;">=</span> launchTreeView<span style="color: black;">&#40;</span>app_path<span style="color: black;">&#41;</span>
+<span style="color: #ff7700;font-weight:bold;">except</span> <span style="color: #008000;">IOError</span><span style="color: #66cc66;">,</span> msg:
+  <span style="color: #ff7700;font-weight:bold;">print</span> <span style="color: #483d8b;">&quot;ERROR: &#160;%s&quot;</span>&#160;% msg
+  exit<span style="color: black;">&#40;</span><span style="color: #ff4500;">2</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># make sure we got the app back</span>
+<span style="color: #ff7700;font-weight:bold;">if</span> app <span style="color: #ff7700;font-weight:bold;">is</span> <span style="color: #008000;">None</span>:
+  exit<span style="color: black;">&#40;</span><span style="color: #ff4500;">4</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># just an alias to make things shorter</span>
+tvFrame <span style="color: #66cc66;">=</span> app.<span style="color: black;">gtkTreeViewFrame</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#expand parent 0</span>
+tvFrame.<span style="color: black;">expand</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent0</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertExpanded</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent0</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#contract parent0</span>
+tvFrame.<span style="color: black;">contract</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent0</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertContracted</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent0</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#expand parent 1</span>
+tvFrame.<span style="color: black;">expand</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent1</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertExpanded</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent1</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#contract parent1</span>
+tvFrame.<span style="color: black;">contract</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent1</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertContracted</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent1</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#expand parent 2</span>
+tvFrame.<span style="color: black;">expand</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent2</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertExpanded</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent2</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#contract parent2</span>
+tvFrame.<span style="color: black;">contract</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent2</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertContracted</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent2</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#expand parent 3</span>
+tvFrame.<span style="color: black;">expand</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent3</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertExpanded</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent3</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">#contract parent3</span>
+tvFrame.<span style="color: black;">contract</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent3</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertContracted</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">parent3</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># we should also make sure that clicking on the table header column reorders</span>
+<span style="color: #808080; font-style: italic;"># the tree view</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># evidently, in Gtk the first click just enables ordering</span>
+tvFrame.<span style="color: black;">tchClick</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">column0</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+<span style="color: #808080; font-style: italic;"># the treeview should still be ascending at this point</span>
+tvFrame.<span style="color: black;">assertAscending</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># next time we click the sorting should change to descending</span>
+tvFrame.<span style="color: black;">tchClick</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">column0</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertDescending</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># and now the sorting should go back to ascending</span>
+tvFrame.<span style="color: black;">tchClick</span><span style="color: black;">&#40;</span>tvFrame.<span style="color: black;">column0</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+tvFrame.<span style="color: black;">assertAscending</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+&#160;
+<span style="color: #ff7700;font-weight:bold;">print</span> <span style="color: #483d8b;">&quot;INFO:  Log written to:&#160;%s&quot;</span>&#160;% config.<span style="color: black;">OUTPUT_DIR</span>
+&#160;
+<span style="color: #808080; font-style: italic;"># close the app using Strongwind's altF4 method (from accessibles.py).</span>
+<span style="color: #808080; font-style: italic;"># this is the standard way of closing an application that doesn't have a</span>
+<span style="color: #808080; font-style: italic;"># clickable &quot;quit&quot; option., </span>
+tvFrame.<span style="color: black;">altF4</span><span style="color: black;">&#40;</span>tvFrame<span style="color: black;">&#41;</span></pre>
+<h2> <span class="mw-headline" id="Orca">Orca</span></h2>
+<h3> <span class="mw-headline" id="Requirements_2">Requirements</span></h3>
+<p>It is recommended that you use a Virtual Machine (VM) for testing.  You should take VM snapshots before and after you have it set up for testing Orca so you can easily revert if something goes wrong later.
+</p>
+<ul><li><a href="http://www.gnome.org" class="external text" rel="nofollow">GNOME</a>
+</li><li><a href="http://www.python.org" class="external text" rel="nofollow">Python</a>
+</li><li>Enable "Assistive Technologies" from the GNOME Control Center
+</li><li>pyatspi (packaged with <a href="http://ftp.gnome.org/pub/GNOME/sources/at-spi" class="external text" rel="nofollow">AT-SPI</a>)
+</li><li><a href="{{site.baseurl}}/Accessibility:_Getting_Started_With_Development#Getting_the_Code" title="Accessibility: Getting Started With Development"> uia2atk code</a>.  The QA-related code is in the test directory.  There are short README files in the test directory and each of its subdirectories.  Read these README files if you are confused about the files and directories you are seeing.  The code can also be checked out anonymously (using subversion) by running <i>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/uia2atk" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/uia2atk</a></i>.
+</li><li>Install intltool &gt;=0.40.0 (<a href="http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz" class="external free" rel="nofollow">http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz</a>).
+</li><li>Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 <a href="http://svn.gnome.org/svn/orca/trunk" class="external free" rel="nofollow">http://svn.gnome.org/svn/orca/trunk</a> orca) so you can follow along with the examples.  We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages.  Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
+</li><li>Set <i>orca.debug.debugLevel = orca.debug.LEVEL_INFO</i> in your ~/.orca/user-settings.py file.  This is explained in <a href="http://live.gnome.org/Orca/RegressionTesting/WritingTests" class="external text" rel="nofollow">Writing Orca Tests</a>, which is mentioned below and should be read prior to writing tests for Orca.
+</li><li>Install <a href="http://live.gnome.org/Accerciser" class="external text" rel="nofollow">Accerciser</a> from source.  <a href="http://bgmerrell.blogspot.com/2008/07/buildling-accerciser-from-source-on.html" class="external text" rel="nofollow">Here</a> are some instructions to do this easily.
+</li><li>Install Macaroon by running <i>configure</i>, <i>make</i>, and <i>make install</i> in <i>accerciser/macaroon</i>.
+</li><li>Add the <i>uia2atk/test/samples/winforms</i> (explained later) directory to PATH.  You can do this by running <i>export PATH=/home/a11y/code/uia2atk/test/samples/winforms:$PATH</i>.  Add it to your profile script (e.g., /etc/profile.local in openSUSE) and log out for universal and permanent affect.
+</li></ul>
+<h3> <span class="mw-headline" id="Testing">Testing</span></h3>
+<p>Orca already has its own test harness that the Orca team uses to perform regression tests on Orca itself.  We will use their harness to execute tests on our own sample WinForms applications to ensure that they are accessible.  The documents linked below will help you get familiar with Orca testing.  Read them first.
+</p>
+<ul><li><a href="http://live.gnome.org/Orca/RegressionTesting" class="external text" rel="nofollow">Orca Regression Testing</a>
+</li><li><a href="http://live.gnome.org/Orca/RegressionTesting/WritingTests" class="external text" rel="nofollow">Writing Orca Tests</a>
+</li></ul>
+<p>In the <i>uia2atk/test</i> directory we have created a directory named <i>keystrokes</i>.  This is where the Orca test scripts for our WinForms sample applications will reside.
+</p><p>It is fairly simple to use Orca's test harness to execute our test scripts.  Logs are stored in a directory whose name is of the form YY-MM-DD_HH:MM:SS (e.g., 2006-11-29_20:21:41)
+</p><p>The code below will execute all our test scripts inside the the <i>uia2atk/test/keystrokes/gtk</i> directory.  To execute all our WinForms test scripts, that path <i>uia2atk/test/keystrokes/winforms</i> would be used instead.
+</p><p>Results (as explained in the <a href="http://live.gnome.org/Orca/RegressionTesting" class="external text" rel="nofollow">Orca Regression Testing</a> document) will be stored in the current/working directory unless otherwise specific with the -r option.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>a11y<span style="color: #000000; font-weight: bold;">/</span>code<span style="color: #000000; font-weight: bold;">/</span>orca<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>harness; .<span style="color: #000000; font-weight: bold;">/</span>runall.sh \
+<span style="color: #660033;">-k</span> <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>a11y<span style="color: #000000; font-weight: bold;">/</span>code<span style="color: #000000; font-weight: bold;">/</span>uia2atk<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>keystrokes<span style="color: #000000; font-weight: bold;">/</span>gtk <span style="color: #000000; font-weight: bold;">&gt;</span> runall.out <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&gt;&amp;</span><span style="color: #000000;">1</span></pre>
+<p><b>Important:</b> Each directory name inside of the <i>uia2atk/test/keystrokes/gtk</i> and <i>uia2atk/test/keystrokes/winforms</i> directory is used to execute the application to be tested.  Because of this, each directory in the <i>uia2atk/test/keystrokes/gtk</i> and <i>uia2atk/test/keystrokes/winforms</i> directories should have the same name as the sample application that will be tested.  Thus, the keystroke test scripts for that sample application are then stored in the directory that has the same name as the sample application that will be tested by that test script.  This is required because Orca runs each application to be tested by issuing the name of each directory in <i>uia2atk/test/keystrokes/gtk</i> or <i>uia2atk/test/keystrokes/winforms</i> as a command.  That is, the <i><b>directory</b></i> <i>uia2atk/test/keystrokes/gtk/gtktutorial.py</i> means that Orca will executed the command <i>gtktutorial.py</i> when the runall.sh is used and the <i>uia2atk/test/keystrokes/gtk</i> is passed as the keystrokes directory argument (-k).  This is why we needed to add <i>uia2atk/test/samples</i> to PATH (as discussed in the Requirements section).
+</p><p>Additionally, the following code can be used to execute a single Orca tests.  Logs are stored in the current/working directory.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>a11y<span style="color: #000000; font-weight: bold;">/</span>code<span style="color: #000000; font-weight: bold;">/</span>orca<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>harness; .<span style="color: #000000; font-weight: bold;">/</span>runone.sh \
+<span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>a11y<span style="color: #000000; font-weight: bold;">/</span>code<span style="color: #000000; font-weight: bold;">/</span>uia2atk<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>keystrokes<span style="color: #000000; font-weight: bold;">/</span>gtk<span style="color: #000000; font-weight: bold;">/</span>gtktutorial<span style="color: #000000; font-weight: bold;">/</span>gtktutorial_example_1.py \
+<span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>a11y<span style="color: #000000; font-weight: bold;">/</span>code<span style="color: #000000; font-weight: bold;">/</span>uia2atk<span style="color: #000000; font-weight: bold;">/</span>test<span style="color: #000000; font-weight: bold;">/</span>samples<span style="color: #000000; font-weight: bold;">/</span>gtk<span style="color: #000000; font-weight: bold;">/</span>gtktutorial.py <span style="color: #000000;">0</span> <span style="color: #000000; font-weight: bold;">&gt;</span> runone.out <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&gt;&amp;</span><span style="color: #000000;">1</span></pre>
+<p>For the sake of completeness, it should be noted that Orca's runone.sh script does not require that each directory in the <i>uia2atk/test/keystrokes/gtk</i> <i>uia2atk/test/keystrokes/winforms</i> directory have the same name as the sample application that will be tested.  This is because the application to be tested is specified explicitly.  However, we should always give each directory in <i>uia2atk/test/keystrokes/gtk</i> and <i>uia2atk/test/keystrokes/winforms</i> the name of the sample application to be tested, so runall.sh always runs successfully.
+</p><p>In the above commands, the test output, which is what we are interested to see test results, is redirected using the "&gt;" character.  This is optional.  On the official test machines we redirect the test output to the appropriate directory, so it can be viewed easily after the test has been run.
+</p><p>As explained in the <a href="http://live.gnome.org/Orca/RegressionTesting" class="external text" rel="nofollow">Orca Regression Testing</a> document, the 0 that follows gtktutorial.py means that Orca is not running at the time the test is run.  Therefore, using the above command, Orca will be started and the test will run.  Replacing the 0 with a 1 will execute the test if Orca is already running, however, there are some Orca peculiarities (related to settings) that make this approach more difficult.  Using 0 should be fine for all of our tests.
+</p>
+<h3> <span class="mw-headline" id="Test_Writing"> Test Writing </span></h3>
+<p>Gtk applications are already accessible in Linux.  Our approach to testing WinForms via Orca will be to:
+</p>
+<ol><li> Create a Gtk application
+</li><li> Create a WinForms application that mirrors the Gtk application.  That is, create a WinForms application that uses the same controls (or at least controls that are very similar and have the same accessible roles), text, title, etc., as the Gtk application
+</li><li> Create a keystrokes test (e.g., uia2atk/test/keystrokes/gtk/gtktutorial/gtktutorial_example_1.py) for the Gtk application.
+</li><li> Use the keystrokes test to test the WinForms application to ensure that the WinForms application is accessible in the same way that the Gtk application is accessible. 
+</li></ol>
+<p>Two directories have been created for this purpose:
+</p><p><b>uia2atk/test/keystrokes/gtk:</b>  keystroke tests for Gtk applications<br />
+<b>uia2atk/test/keystrokes/winforms:</b>  keystroke tests for WinForms applications that mirror the Gtk applications.
+</p><p>Of course, when we run our tests, we will only run the WinForms keystroke tests.  We are only saving the Gtk keystroke tests for references, comparison, and examples.
+</p>
+<h1> <span class="mw-headline" id="Moonlight">Moonlight</span></h1>
+<h2> <span class="mw-headline" id="Create_Moonlight_Sample">Create Moonlight Sample</span></h2>
+<p>We will use Microsoft Visual Studio Silverlight Tools to create test samples in C#, The steps are:
+</p>
+<ol><li>New a Project with "Silverlight" type, select "Silverlight Application", give project Name to be "control's name + sample" (ButtonSample as example).
+</li><li>Select "Add a new ASP.NET Web project to the solution to host Silverlight", click "OK" button, "ButtonSample" and "ButtonSample.Web" will be created, we will draw page in Page.xaml and write managed code in Page.xaml.cs.
+</li><li>After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser <a href="{{site.baseurl}}/images/old_site/c/c7/Silverlight_sample.jpg" class="image"><img alt="Silverlight sample.jpg" src="{{site.baseurl}}/images/old_site/c/c7/Silverlight_sample.jpg" width="540" height="509" /></a>
+</li></ol>
+<p>Example of create Canvas and Button sample:<br />
+Page.xaml
+</p>
+<pre class="python" style="font-family:monospace;"><span style="color: #66cc66;">&lt;</span>UserControl x:Class<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;DiggSample.Page&quot;</span>
+    xmlns<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span> 
+    xmlns:x<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span> 
+    Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;400&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;300&quot;</span><span style="color: #66cc66;">&gt;</span>
+    <span style="color: #66cc66;">&lt;</span>Canvas x:Name<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Canvas1&quot;</span> Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;300&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;300&quot;</span>  Background<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Blue&quot;</span><span style="color: #66cc66;">&gt;</span>
+&#160;
+        <span style="color: #66cc66;">&lt;</span>Canvas x:Name<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Canvas2&quot;</span> Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;260&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;150&quot;</span> Canvas.<span style="color: black;">Left</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;20&quot;</span>
+ Canvas.<span style="color: black;">Top</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;20&quot;</span> Background<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Chartreuse&quot;</span><span style="color: #66cc66;">&gt;</span>
+            <span style="color: #66cc66;">&lt;</span>Button x:Name<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button1&quot;</span> Content<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button 1&quot;</span> Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;100&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;50&quot;</span> 
+Canvas.<span style="color: black;">Left</span> <span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;50&quot;</span> Canvas.<span style="color: black;">ZIndex</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;1&quot;</span> Click<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;MyButton_Click&quot;</span><span style="color: #66cc66;">&gt;</span>
+            <span style="color: #66cc66;">&lt;</span>/Button<span style="color: #66cc66;">&gt;</span>
+            <span style="color: #66cc66;">&lt;</span>Button x:Name<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button2&quot;</span> Content<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button 2&quot;</span> Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;100&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;50&quot;</span> 
+Canvas.<span style="color: black;">Left</span> <span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;50&quot;</span> Canvas.<span style="color: black;">Top</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;100&quot;</span><span style="color: #66cc66;">&gt;&lt;</span>/Button<span style="color: #66cc66;">&gt;</span>
+        <span style="color: #66cc66;">&lt;</span>/Canvas<span style="color: #66cc66;">&gt;</span>
+&#160;
+        <span style="color: #66cc66;">&lt;</span>Button x:Name<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button3&quot;</span> Content<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;Button 3&quot;</span> Width<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;100&quot;</span> Height<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;50&quot;</span>
+ Canvas.<span style="color: black;">Left</span> <span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;70&quot;</span> Canvas.<span style="color: black;">Top</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;200&quot;</span><span style="color: #66cc66;">&gt;&lt;</span>/Button<span style="color: #66cc66;">&gt;</span>
+    <span style="color: #66cc66;">&lt;</span>/Canvas<span style="color: #66cc66;">&gt;</span>
+<span style="color: #66cc66;">&lt;</span>/UserControl<span style="color: #66cc66;">&gt;</span></pre>
+<p><br />
+Page.xaml.cs
+</p>
+<pre class="python" style="font-family:monospace;">using System<span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Collections</span>.<span style="color: black;">Generic</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Linq</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Net</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Controls</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Documents</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Input</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Media</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Media</span>.<span style="color: black;">Animation</span><span style="color: #66cc66;">;</span>
+using System.<span style="color: black;">Windows</span>.<span style="color: black;">Shapes</span><span style="color: #66cc66;">;</span>
+&#160;
+namespace DiggSample
+<span style="color: black;">&#123;</span>
+    public partial <span style="color: #ff7700;font-weight:bold;">class</span> Page&#160;: UserControl
+    <span style="color: black;">&#123;</span>
+        public Page<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+        <span style="color: black;">&#123;</span>
+            InitializeComponent<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">;</span>
+        <span style="color: black;">&#125;</span>
+        //give click action to change Button1<span style="color: #483d8b;">'s content
+        void MyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button1.Content = &quot;Pushed!&quot;;
+        }
+    }
+}</span></pre>
+<p><br />
+More details plase see <a href="http://msdn.microsoft.com/en-us/library/cc838218%28VS.95%29.aspx" class="external text" rel="nofollow">Creating Your First Silverlight Application</a>
+</p>
+<h2> <span class="mw-headline" id="Build_Test_Environment">Build Test Environment</span></h2>
+<h3> <span class="mw-headline" id="Install_Mono">Install Mono</span></h3>
+<ul><li>SVN download Mono and Mcs from svn+ssh://&lt;username&gt;@mono-cvs.ximian.com/source/branches/mono-2-6/
+</li><li>Build and install Mono
+</li><li>SVN download Moon from <a href="svn://anonsvn.mono-project.com/source/trunk/moon" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/moon</a>
+</li></ul>
+<h3> <span class="mw-headline" id="mxap_to_compile_Silverlight_samples">mxap to compile Silverlight samples</span></h3>
+<ul><li>Build and install Moon
+</li><li>Run "mxap" on the sample's folder, assign "--application-name" argument to the class's name, for example: "mxap --application-name=ButtonSample", *.xap and *.html will be created
+</li><li>You also can run 'make' and 'make clean' on the sample's folder to compile samples
+</li></ul>
+<h3> <span class="mw-headline" id="Manage_Firefox">Manage Firefox</span></h3>
+<ul><li>Download Firefox from <a href="http://151.155.248.179:8010/job/moonatkbridge_trunk_firefox/" class="external free" rel="nofollow">http://151.155.248.179:8010/job/moonatkbridge_trunk_firefox/</a> that is 3.6 version
+</li><li>Extract to /var/lib/hudson/workspace/
+</li><li>Run "./configure" that will install firefox to /usr/local/
+</li></ul>
+<h3> <span class="mw-headline" id="Install_MoonAtkBridge_to_Make_accessible">Install MoonAtkBridge to Make accessible</span></h3>
+<ul><li>Install moonlight extension from <a href="http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi" class="external free" rel="nofollow">http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi</a>
+</li><li>Install moonlight-a11y extension from <a href="http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi" class="external free" rel="nofollow">http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi</a>
+</li><li>Run silverlight sample *.html by /usr/local/bin/firefox
+</li><li>Run accerciser, on the left treeview, you may see Sliverlight elements under "Sliverlight Control" are accessibled
+</li></ul>
+<h1> <span class="mw-headline" id="UIAutomation_Client_API">UIAutomation Client API</span></h1>
+<h2> <span class="mw-headline" id="White">White</span></h2>
+<h3> <span class="mw-headline" id="Introduction_2">Introduction</span></h3>
+<p>White supports all rich client applications, It is .NET based and hence you wouldn't have use proprietary scripting language. You can use your favourite .NET language, IDE and tools for developing tests/automation programs.
+White provides consistent object oriented API for all kinds of applications. Also it hides all the complexity of Microsoft's UIAutomation library and windows messages.<br />
+White is a thin wrapper of UIAutomationClient API on Windows that is similar to Strongwind wrap pyatspi on Linux that will be posted to Linux. We will use it to write tests for ClientAPI testing against WinForms, Moonlight and Gtk+ applications.
+</p>
+<h3> <span class="mw-headline" id="Example_of_start_White">Example of start White</span></h3>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Collections.Generic</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Core</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Core.UIItems.WindowItems</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Core.UIItems</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Core.Factory</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Core.UIItems.Finders</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Automation</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Nunit</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> WindowsFormsApplication1
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">class</span> Program
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">/// &lt;summary&gt;</span>
+        <span style="color: #008080; font-style: italic;">/// The main entry point for the application.</span>
+        <span style="color: #008080; font-style: italic;">/// &lt;/summary&gt;</span>
+&#160;
+        <span style="color: #008000;">&#91;</span>STAThread<span style="color: #008000;">&#93;</span>
+        <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+            Application application <span style="color: #008000;">=</span> Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Launch</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;calc.exe&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Window window <span style="color: #008000;">=</span> application<span style="color: #008000;">.</span><span style="color: #0000FF;">GetWindow</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;calculator&quot;</span>, InitializeOption<span style="color: #008000;">.</span><span style="color: #0000FF;">NoCache</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Assert<span style="color: #008000;">.</span><span style="color: #0000FF;">IsNotNull</span><span style="color: #008000;">&#40;</span>window<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            Button button <span style="color: #008000;">=</span> window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span><span style="color: #008000;">&lt;</span>Button<span style="color: #008000;">&gt;</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;9&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            button<span style="color: #008000;">.</span><span style="color: #0000FF;">Click</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+            List<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> btnNames <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> List<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+            <span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> i <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">20</span><span style="color: #008000;">;</span> i<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span>
+            <span style="color: #008000;">&#123;</span>
+                SearchCriteria searchCriteria <span style="color: #008000;">=</span>
+                    SearchCriteria<span style="color: #008000;">.</span><span style="color: #0000FF;">ByControlType</span><span style="color: #008000;">&#40;</span>ControlType<span style="color: #008000;">.</span><span style="color: #0000FF;">Button</span><span style="color: #008000;">&#41;</span>
+                    <span style="color: #008000;">.</span><span style="color: #0000FF;">AndIndex</span><span style="color: #008000;">&#40;</span>i<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                IUIItem btn <span style="color: #008000;">=</span> window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Get</span><span style="color: #008000;">&#40;</span>searchCriteria<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                btnNames<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>btn<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span>btn<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+&#160;
+            application<span style="color: #008000;">.</span><span style="color: #0000FF;">Kill</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<ul><li>use "Application.Launch("app")" to run an application
+</li><li>use "Get&lt;ControlType&gt;("Name")" to get element
+</li><li>use "SearchCriteria" with some identification to get element
+</li><li>use Nunit "Assert" to make sure the implementation is correct
+</li><li>More deatils you can see <a href="http://white.codeplex.com/" class="external text" rel="nofollow">White Project</a>
+</li><li>Here is a wide used guide from Ben Hall's blog <a href="http://blog.benhall.me.uk/2008/02/project-white-automated-ui-testing.html/" class="external text" rel="nofollow">White:Automated UI Testing</a>
+</li></ul>
+<h2> <span class="mw-headline" id="UIA_Verify">UIA Verify</span></h2>
+<h3> <span class="mw-headline" id="Introduction_3">Introduction</span></h3>
+<p>UIA Verify is a test automation framework that features the User Interface Automation Test Library (UIA Test Library) and Visual UI Automation Verify (Visual UIA Verify), the graphical user interface tool. The framework facilitates manual and automated testing of the Microsoft (R) User Interface (UI) Automation Provider implementation of a control or application. The majority of the UIA Verify functionality is provided through a dynamic link library (e.g., UIATestLibrary.dll) that contains the code for testing specific UI Automation functionality and supports logging of the test results.<br />
+</p><p>UIA verify is similar as Accerciser and UISpy that will be ported on Linux, UIA verify and UISpy can get automation properties and control patterns of controls base on UIAutomation Client API, but Accerciser base on AT-SPI API and it can't do this.<br />
+</p><p>We will use UIA Verify to verify Client API by runing its automation test suits on Linux and Windows to make sure the results are the same for each application(WinForms application for example).
+</p>
+<h3> <span class="mw-headline" id="Automation_Test_Suit">Automation Test Suit</span></h3>
+<p>UIA Verify provides three part of test suits which are "Automation Element Tests", "Control Tests", "Pattern Tests". Here is a simple user guide of using Automation test suit of UIA verify application:
+</p>
+<ul><li>Download the lastest UIA verify from <a href="http://uiautomationverify.codeplex.com/SourceControl/ListDownloadableCommits.aspx" class="external text" rel="nofollow">UI Automation Verify</a>, and extract the zip
+</li><li>Run VisualUIAVerify.exe to get <a href="{{site.baseurl}}/images/old_site/d/d2/UIAVerify01.jpg" class="image"><img alt="UIAVerify01.jpg" src="{{site.baseurl}}/images/old_site/d/d2/UIAVerify01.jpg" width="704" height="547" /></a>
+</li><li>Expand and select element or control what you want to test from left side under "Automation Elements Tree"; Select "Tests" or expand it to select test suits what you want to run&#160;; Then, click "Run Selected Test(s)" or "Run Selected Test(s) On Selected Element and All Children Element(s)" on toolbar under "Texts" to run tests <a href="{{site.baseurl}}/images/old_site/e/e1/UIAVerify02.jpg" class="image"><img alt="UIAVerify02.jpg" src="{{site.baseurl}}/images/old_site/e/e1/UIAVerify02.jpg" width="702" height="546" /></a>
+</li><li>After complete running the selected tests, test results is been showing under "Test Results" panel <a href="{{site.baseurl}}/images/old_site/c/c8/UIAVerify03.jpg" class="image"><img alt="UIAVerify03.jpg" src="{{site.baseurl}}/images/old_site/c/c8/UIAVerify03.jpg" width="703" height="548" /></a>
+</li></ul>
+<h2> <span class="mw-headline" id="UIA_Client_Api_Testing_How_To">UIA Client Api Testing How To</span></h2>
+<h3> <span class="mw-headline" id="What_is_the_UI_Automaiton.3F">What is the UI Automaiton?</span></h3>
+<p>Microsoft UI Automation is the new accessibility model for Microsoft Windows and is intended to address the needs of assistive technology products and automated testing tools. UI Automation offers many improvements over Microsoft Active Accessibility.
+</p><p><a href="{{site.baseurl}}/images/old_site/e/ea/Uia1.jpeg" class="image"><img alt="Uia1.jpeg" src="{{site.baseurl}}/images/old_site/e/ea/Uia1.jpeg" width="647" height="476" /></a>
+</p>
+<h3> <span class="mw-headline" id="What_is_the_uiaclient_used_for.3F">What is the uiaclient used for?</span></h3>
+<p>In UI Automation, a core service lies between the server (provider) and the client, The core service makes calls to the interfaces implemented by providers, Client applications gain access to this core service by creating a CUIAutomation object. This object supports a set of client interfaces by which we can access the application by uia client, and test every control's pattern works well.
+</p><p><a href="{{site.baseurl}}/images/old_site/8/82/Uia.GIF" class="image"><img alt="Uia.GIF" src="{{site.baseurl}}/images/old_site/8/82/Uia.GIF" width="437" height="294" /></a>
+</p>
+<h3> <span class="mw-headline" id="Requirements_3">Requirements</span></h3>
+<ul><li><b>C#</b>: the client API was limited to managed code.
+</li><li><b>White assemblies</b>: Bricks.dll    Bricks.RuntimeFramework.dll Castle.Core.dll Castle.DynamicProxy2.dll log4net.dll  nunit.framework.dll  White.Core.dll  Xstream.Core.dll. (these dlls from <a href="http://white.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=16371" class="external text" rel="nofollow">white-0.18-bin</a>)
+</li><li><b>UI Verify 1.0, UISpy v6.0</b>: the managed ATs tools.
+</li><li><b>UIA Client code</b>: git@github.com:raywang/UIAClientAPI.git.
+</li><li><b>Testable Application</b>: the following application include all the patterns we want to test. You should locate the testable application (Keepass.exe ,DockPatternProvider.exe ,WindowAndTransformPatternProvider.exe )in the project's <b>bin/debug/</b> directory which also include the test script executable program, then if you run the executable program it will launch the testable application. 
+</li></ul>
+<h5> <span class="mw-headline" id="Keepass.exe:">Keepass.exe:  </span></h5>
+<p><a href="http://dl.dropbox.com/u/3874045/KeePass-2.09.zip" class="external free" rel="nofollow">http://dl.dropbox.com/u/3874045/KeePass-2.09.zip</a>
+</p>
+<h5> <span class="mw-headline" id="DockPatternProvider.exe:">DockPatternProvider.exe:</span></h5>
+<p>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/DockProviderTest.cs" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/DockProviderTest.cs</a>
+</p>
+<h5> <span class="mw-headline" id="WindowAndTransformPatternProvider.exe:">WindowAndTransformPatternProvider.exe: </span></h5>
+<p>svn co <a href="svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs" class="external free" rel="nofollow">svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs</a>
+</p><p>(you can use the C# compiler to make the .cs file to a binary.) 
+</p><p>Keepass.exe 
+</p><p><a href="{{site.baseurl}}/images/old_site/c/c9/Keepass.png" class="image"><img alt="Keepass.png" src="{{site.baseurl}}/images/old_site/c/c9/Keepass.png" width="358" height="317" /></a>
+</p><p>DockPatternProvider.exe
+</p><p><a href="{{site.baseurl}}/images/old_site/1/1b/DockPatternProvider.png" class="image"><img alt="DockPatternProvider.png" src="{{site.baseurl}}/images/old_site/1/1b/DockPatternProvider.png" width="301" height="301" /></a>
+</p><p>WindowAndTransformPatternProvider.exe
+</p><p><a href="{{site.baseurl}}/images/old_site/4/4a/TransformPattern.png" class="image"><img alt="TransformPattern.png" src="{{site.baseurl}}/images/old_site/4/4a/TransformPattern.png" width="301" height="301" /></a>
+</p>
+<h3> <span class="mw-headline" id="QA_Architecture_Diagram_2">QA Architecture Diagram</span></h3>
+<p>We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows:
+<a href="{{site.baseurl}}/images/old_site/1/15/Uiaclient1.png" class="image"><img alt="Uiaclient1.png" src="{{site.baseurl}}/images/old_site/1/15/Uiaclient1.png" width="921" height="579" /></a>
+</p>
+<h3> <span class="mw-headline" id="Example_Application_Wrapper_2">Example Application Wrapper</span></h3>
+<h4> <span class="mw-headline" id="TestBase.cs">TestBase.cs</span></h4>
+<pre class="c" style="font-family:monospace;"><span style="color: #009900;">&#91;</span>TestFixture<span style="color: #009900;">&#93;</span>
+public class TestBase</pre>
+<p>it tells nunit this class include the test code, so this is the program's entry point for the Nunit .
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #009900;">&#91;</span>SetUp<span style="color: #009900;">&#93;</span>
+	public <span style="color: #993333;">void</span> Init <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		ProcedureLogger.<span style="color: #202020;">Init</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		LaunchSample <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">MediumDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		OnSetup <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<p>[SetUp]:Every test method will share a group of test objects,we will extract their initialized codes into a Setup method and reuse it in all tests.
+Init (): do some initiation things and launch sample.
+</p>
+<pre class="c" style="font-family:monospace;">	<span style="color: #009900;">&#91;</span>TearDown<span style="color: #009900;">&#93;</span>
+	public <span style="color: #993333;">void</span> Quit <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		OnQuit <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span>
+        protected virtual <span style="color: #993333;">void</span> OnQuit <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+	        procedureLogger.<span style="color: #202020;">Action</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Close the application.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		procedureLogger.<span style="color: #202020;">Save</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<p>[TearDown]:When the test method is done, it will clean up the resource.
+OnQuit (): save the screen shot to a xml file.
+</p>
+<pre class="c" style="font-family:monospace;">        public Window GetWindow <span style="color: #009900;">&#40;</span>String title<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		var ae <span style="color: #339933;">=</span> AutomationElement.<span style="color: #202020;">RootElement</span>.<span style="color: #202020;">FindFirst</span><span style="color: #009900;">&#40;</span>TreeScope.<span style="color: #202020;">Children</span><span style="color: #339933;">,</span> new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">NameProperty</span><span style="color: #339933;">,</span> title<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #b1b100;">return</span> new Window <span style="color: #009900;">&#40;</span>ae<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<p>GetWindow (String title): we find the testwindow by the RootElement(Desktop).
+</p>
+<pre class="c" style="font-family:monospace;">        protected <span style="color: #993333;">void</span> Run <span style="color: #009900;">&#40;</span>System.<span style="color: #202020;">Action</span> action<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		try <span style="color: #009900;">&#123;</span>
+			action <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span> catch <span style="color: #009900;">&#40;</span>Exception ex<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+			HandleException <span style="color: #009900;">&#40;</span>ex<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			throw<span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+	<span style="color: #009900;">&#125;</span>
+        public <span style="color: #993333;">void</span> HandleException <span style="color: #009900;">&#40;</span>Exception ex<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		procedureLogger.<span style="color: #202020;">Action</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Error: &quot;</span> <span style="color: #339933;">+</span> ex.<span style="color: #202020;">ToString</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		procedureLogger.<span style="color: #202020;">ExpectedResult</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;A Exception has been thrown.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		procedureLogger.<span style="color: #202020;">Save</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<p>Run (System.Action action): the Run action is used to run the appointed test method.
+</p>
+<h4> <span class="mw-headline" id="Config.cs">Config.cs</span></h4>
+<p>get the default configuration from config.xml
+</p>
+<h4> <span class="mw-headline" id="Config.xml">Config.xml</span></h4>
+<p>the default configuration saved in a xml file
+</p>
+<pre class="python" style="font-family:monospace;"><span style="color: #66cc66;">&lt;</span>?<span style="color: #dc143c;">xml</span> version<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;1.0&quot;</span> encoding<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;utf-8&quot;</span>&#160;?<span style="color: #66cc66;">&gt;</span>
+<span style="color: #66cc66;">&lt;</span>Config xmlns:xsi<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> xmlns:xsd<span style="color: #66cc66;">=</span><span style="color: #483d8b;">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>KeePassPath<span style="color: #66cc66;">&gt;</span>keePass-<span style="color: #ff4500;">2.09</span>\\KeePass.<span style="color: black;">exe</span><span style="color: #66cc66;">&lt;</span>/KeePassPath<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>DockPatternProviderPath<span style="color: #66cc66;">&gt;</span>DockPatternProvider.<span style="color: black;">exe</span><span style="color: #66cc66;">&lt;</span>/DockPatternProviderPath<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>WindowAndTransformPatternProviderPath<span style="color: #66cc66;">&gt;</span>WindowAndTransformPatternProvider.<span style="color: black;">exe</span><span style="color: #66cc66;">&lt;</span>/WindowAndTransformPatternProviderPath<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>RetryTimes<span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">20</span><span style="color: #66cc66;">&lt;</span>/RetryTimes<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>RetryInterval<span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">500</span><span style="color: #66cc66;">&lt;</span>/RetryInterval<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>TakeScreenShots<span style="color: #66cc66;">&gt;</span>true<span style="color: #66cc66;">&lt;</span>/TakeScreenShots<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>OutputDir<span style="color: #66cc66;">&gt;&lt;</span>/OutputDir<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>ShortDelay<span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">500</span><span style="color: #66cc66;">&lt;</span>/ShortDelay<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>MediumDelay<span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">4000</span><span style="color: #66cc66;">&lt;</span>/MediumDelay<span style="color: #66cc66;">&gt;</span>
+  <span style="color: #66cc66;">&lt;</span>LongDelay<span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">10000</span><span style="color: #66cc66;">&lt;</span>/LongDelay<span style="color: #66cc66;">&gt;</span>
+<span style="color: #66cc66;">&lt;</span>/Config<span style="color: #66cc66;">&gt;</span></pre>
+<h4> <span class="mw-headline" id="Element.cs">Element.cs</span></h4>
+<p>find all controls by ControlType &amp; name &amp; automationId , To promote a AutomationElement to a certain instance of a class,  in order to get more specific methods.=
+</p>
+<pre class="c" style="font-family:monospace;">        <span style="color: #666666; font-style: italic;">//Find a Element by type.  </span>
+        public Element FindByType <span style="color: #009900;">&#40;</span>ControlType type<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		var cond <span style="color: #339933;">=</span> new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ControlTypeProperty</span><span style="color: #339933;">,</span> type<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		AutomationElement control <span style="color: #339933;">=</span> element.<span style="color: #202020;">FindFirst</span> <span style="color: #009900;">&#40;</span>TreeScope.<span style="color: #202020;">Descendants</span><span style="color: #339933;">,</span> cond<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>control <span style="color: #339933;">==</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span>
+			<span style="color: #b1b100;">return</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+		<span style="color: #b1b100;">else</span>
+			<span style="color: #b1b100;">return</span> Promote <span style="color: #009900;">&#40;</span>control<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span>
+&#160;
+        <span style="color: #666666; font-style: italic;">//Find a Element by name.</span>
+        protected Element Find <span style="color: #009900;">&#40;</span>ControlType type<span style="color: #339933;">,</span> string name<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		<span style="color: #b1b100;">return</span> Find <span style="color: #009900;">&#40;</span>type<span style="color: #339933;">,</span> name<span style="color: #339933;">,</span> string.<span style="color: #202020;">Empty</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span>
+&#160;
+        <span style="color: #666666; font-style: italic;">//Find a Element by automationId.</span>
+        protected Element Find <span style="color: #009900;">&#40;</span>ControlType type<span style="color: #339933;">,</span> string name<span style="color: #339933;">,</span> string automationId<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		AndCondition cond<span style="color: #339933;">;</span>
+&#160;
+		<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>automationId <span style="color: #339933;">==</span> string.<span style="color: #202020;">Empty</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+			cond <span style="color: #339933;">=</span> new AndCondition <span style="color: #009900;">&#40;</span>new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ControlTypeProperty</span><span style="color: #339933;">,</span> type<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>
+			       new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">NameProperty</span><span style="color: #339933;">,</span> name<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>name <span style="color: #339933;">==</span> string.<span style="color: #202020;">Empty</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+			cond <span style="color: #339933;">=</span> new AndCondition <span style="color: #009900;">&#40;</span>new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ControlTypeProperty</span><span style="color: #339933;">,</span> type<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>
+			new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">AutomationIdProperty</span><span style="color: #339933;">,</span> automationId<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span>
+			cond <span style="color: #339933;">=</span> new AndCondition <span style="color: #009900;">&#40;</span>new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ControlTypeProperty</span><span style="color: #339933;">,</span> type<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>
+			       new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">NameProperty</span><span style="color: #339933;">,</span> name<span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span>
+			       new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">AutomationIdProperty</span><span style="color: #339933;">,</span> automationId<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span>
+&#160;
+		<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> i <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">RetryTimes</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+			AutomationElement control <span style="color: #339933;">=</span> element.<span style="color: #202020;">FindFirst</span> <span style="color: #009900;">&#40;</span>TreeScope.<span style="color: #202020;">Descendants</span><span style="color: #339933;">,</span> cond<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>control <span style="color: #339933;">!=</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span>
+				<span style="color: #b1b100;">return</span> Promote <span style="color: #009900;">&#40;</span>control<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">RetryInterval</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span>
+&#160;
+        <span style="color: #666666; font-style: italic;">//FindAll Element method</span>
+        protected T <span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span> FindAll<span style="color: #339933;">&lt;</span>T<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span>ControlType type<span style="color: #009900;">&#41;</span> where T <span style="color: #339933;">:</span> Element
+	<span style="color: #009900;">&#123;</span>
+		<span style="color: #b1b100;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> i <span style="color: #339933;">=</span> <span style="color: #0000dd;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">RetryTimes</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+			var cond <span style="color: #339933;">=</span> new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ControlTypeProperty</span><span style="color: #339933;">,</span> type<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			AutomationElementCollection controls <span style="color: #339933;">=</span> element.<span style="color: #202020;">FindAll</span> <span style="color: #009900;">&#40;</span>TreeScope.<span style="color: #202020;">Descendants</span><span style="color: #339933;">,</span> cond<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>controls <span style="color: #339933;">!=</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span>
+				<span style="color: #b1b100;">return</span> Promote<span style="color: #339933;">&lt;</span>T<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span>controls<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">RetryInterval</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+		<span style="color: #b1b100;">return</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span>
+&#160;
+        <span style="color: #666666; font-style: italic;">//Find the control by the control's type and its name</span>
+        public Window FindWindow <span style="color: #009900;">&#40;</span>string name<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		<span style="color: #b1b100;">return</span> <span style="color: #009900;">&#40;</span>Window<span style="color: #009900;">&#41;</span> Find <span style="color: #009900;">&#40;</span>ControlType.<span style="color: #202020;">Window</span><span style="color: #339933;">,</span> name<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span>
+&#160;
+       <span style="color: #666666; font-style: italic;">//To promote a AutomationElement to a certain instance of a class, in order to get more specific methods.</span>
+       protected Element Promote <span style="color: #009900;">&#40;</span>AutomationElement elm<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>elm.<span style="color: #202020;">Current</span>.<span style="color: #202020;">ControlType</span> <span style="color: #339933;">==</span> ControlType.<span style="color: #202020;">Window</span><span style="color: #009900;">&#41;</span>
+			<span style="color: #b1b100;">return</span> new Window <span style="color: #009900;">&#40;</span>elm<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #b1b100;">else</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>elm.<span style="color: #202020;">Current</span>.<span style="color: #202020;">ControlType</span> <span style="color: #339933;">==</span> ControlType.<span style="color: #202020;">Button</span><span style="color: #009900;">&#41;</span>
+			<span style="color: #b1b100;">return</span> new Button <span style="color: #009900;">&#40;</span>elm<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span></pre>
+<pre class="c" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">//add a Finder property you can find the AutomationElement by it.</span>
+        public Finder ByAutomationId <span style="color: #009900;">&#40;</span>string automationId<span style="color: #009900;">&#41;</span>
+	<span style="color: #009900;">&#123;</span>
+		conditions.<span style="color: #202020;">Add</span> <span style="color: #009900;">&#40;</span>new PropertyCondition <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">AutomationIdProperty</span><span style="color: #339933;">,</span> automationId<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #b1b100;">return</span> this<span style="color: #339933;">;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<p>the usage of find mehtod:
+</p>
+<pre class="c" style="font-family:monospace;">var itemViewList <span style="color: #339933;">=</span> newPassDialog.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>MyList<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Items View&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+var masterPasswdEdit <span style="color: #339933;">=</span> createMasterKeyWindow.<span style="color: #202020;">Finder</span>.<span style="color: #202020;">ByName</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Repeat password:&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #202020;">ByAutomationId</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;m_tbPassword&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>Edit<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h4> <span class="mw-headline" id="ScrollBar.cs">ScrollBar.cs</span></h4>
+<p>there are many control, take ScrollBar for example
+The ScrollBar class wrap its RangeValuePattern's SetValue method and IsReadOnly property. 
+</p>
+<pre class="c" style="font-family:monospace;">        public class ScrollBar <span style="color: #339933;">:</span> Element
+	<span style="color: #009900;">&#123;</span>
+		public ScrollBar <span style="color: #009900;">&#40;</span>AutomationElement elm<span style="color: #009900;">&#41;</span>
+			<span style="color: #339933;">:</span> base <span style="color: #009900;">&#40;</span>elm<span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		<span style="color: #666666; font-style: italic;">//the RangeValuePattern's method</span>
+		public <span style="color: #993333;">void</span> SetValue <span style="color: #009900;">&#40;</span><span style="color: #993333;">double</span> value<span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			RangeValuePattern rp <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>RangeValuePattern<span style="color: #009900;">&#41;</span> element.<span style="color: #202020;">GetCurrentPattern</span> <span style="color: #009900;">&#40;</span>RangeValuePattern.<span style="color: #202020;">Pattern</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			rp.<span style="color: #202020;">SetValue</span> <span style="color: #009900;">&#40;</span>value<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		<span style="color: #666666; font-style: italic;">//the RangeValuePattern's property</span>
+		public bool IsReadOnly<span style="color: #009900;">&#123;</span>
+			get <span style="color: #009900;">&#123;</span> <span style="color: #b1b100;">return</span> <span style="color: #009900;">&#40;</span>bool<span style="color: #009900;">&#41;</span> element.<span style="color: #202020;">GetCurrentPropertyValue</span> <span style="color: #009900;">&#40;</span>RangeValuePattern.<span style="color: #202020;">IsReadOnlyProperty</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #009900;">&#125;</span>
+		<span style="color: #009900;">&#125;</span>
+         <span style="color: #009900;">&#125;</span></pre>
+<h4> <span class="mw-headline" id="ProcedureLogger.cs">ProcedureLogger.cs</span></h4>
+<p>ouput the info to screen and write it into a xml file
+</p>
+<h4> <span class="mw-headline" id="Utils.cs">Utils.cs</span></h4>
+<p>Takes a screenshot of the current action.
+</p>
+<h3> <span class="mw-headline" id="Example_Test_script_2">Example Test script</span></h3>
+<h4> <span class="mw-headline" id="Keepass.cs">Keepass.cs</span></h4>
+<p>derive from the Testbase class
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #009900;">&#91;</span>TestFixture<span style="color: #009900;">&#93;</span>
+	public class KeePassTests <span style="color: #339933;">:</span> TestBase
+	<span style="color: #009900;">&#123;</span>
+		Window window <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+&#160;
+		protected override <span style="color: #993333;">void</span> LaunchSample <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			string sample <span style="color: #339933;">=</span> Path.<span style="color: #202020;">Combine</span> <span style="color: #009900;">&#40;</span>System.<span style="color: #202020;">AppDomain</span>.<span style="color: #202020;">CurrentDomain</span>.<span style="color: #202020;">BaseDirectory</span><span style="color: #339933;">,</span> Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">KeePassPath</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			procedureLogger.<span style="color: #202020;">Action</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Launch &quot;</span> <span style="color: #339933;">+</span> sample<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			try <span style="color: #009900;">&#123;</span>
+				Process.<span style="color: #202020;">Start</span> <span style="color: #009900;">&#40;</span>sample<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+				procedureLogger.<span style="color: #202020;">ExpectedResult</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;The KeePass window appears.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span> catch <span style="color: #009900;">&#40;</span>Exception e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+				Console.<span style="color: #202020;">WriteLine</span> <span style="color: #009900;">&#40;</span>e.<span style="color: #202020;">Message</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+				Process.<span style="color: #202020;">GetCurrentProcess</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #202020;">Kill</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #009900;">&#125;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		protected override <span style="color: #993333;">void</span> OnSetup <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			base.<span style="color: #202020;">OnSetup</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			window <span style="color: #339933;">=</span> GetWindow<span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;KeePass Password Safe&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		protected override <span style="color: #993333;">void</span> OnQuit <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			base.<span style="color: #202020;">OnQuit</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #993333;">int</span> pid <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span><span style="color: #009900;">&#41;</span> window.<span style="color: #202020;">AutomationElement</span>.<span style="color: #202020;">GetCurrentPropertyValue</span> <span style="color: #009900;">&#40;</span>AutomationElementIdentifiers.<span style="color: #202020;">ProcessIdProperty</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Process.<span style="color: #202020;">GetProcessById</span> <span style="color: #009900;">&#40;</span>pid<span style="color: #009900;">&#41;</span>.<span style="color: #202020;">Kill</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		<span style="color: #666666; font-style: italic;">//TestCase101 Init Sample, create a new account</span>
+		<span style="color: #009900;">&#91;</span>Test<span style="color: #009900;">&#93;</span>
+		public <span style="color: #993333;">void</span> RunTestCase101 <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			Run <span style="color: #009900;">&#40;</span>TestCase101<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		private <span style="color: #993333;">void</span> TestCase101 <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			<span style="color: #666666; font-style: italic;">//101.1 Click the &quot;New...&quot; button on the toolbar.</span>
+			var toolBar <span style="color: #339933;">=</span> window.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>ToolBar<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			toolBar.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>Button<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;New...&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #202020;">Click</span> <span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			procedureLogger.<span style="color: #202020;">ExpectedResult</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;The <span style="color: #000099; font-weight: bold;">\&quot;</span>Create New Password Database<span style="color: #000099; font-weight: bold;">\&quot;</span> dialog opens.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Thread.<span style="color: #202020;">Sleep</span><span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">ShortDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			<span style="color: #666666; font-style: italic;">//101.2 Enter &quot;TestCase101&quot; in the &quot;File Name&quot; combo box of the dailog.</span>
+			var newPassDialog <span style="color: #339933;">=</span> window.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>Window<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Create New Password Database&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			var fileNameEdit <span style="color: #339933;">=</span> newPassDialog.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>Edit<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;File name:&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			fileNameEdit.<span style="color: #202020;">SetValue</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;TestCase101&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">ShortDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			procedureLogger.<span style="color: #202020;">ExpectedResult</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;<span style="color: #000099; font-weight: bold;">\&quot;</span>TestCase101<span style="color: #000099; font-weight: bold;">\&quot;</span> entered in the <span style="color: #000099; font-weight: bold;">\&quot;</span>File Name<span style="color: #000099; font-weight: bold;">\&quot;</span> box.&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Assert.<span style="color: #202020;">AreEqual</span> <span style="color: #009900;">&#40;</span>fileNameEdit.<span style="color: #202020;">Value</span><span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;TestCase101&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Thread.<span style="color: #202020;">Sleep</span><span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">ShortDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			<span style="color: #666666; font-style: italic;">//101.3 Change the view of list to &quot;Extra Large Icons&quot;</span>
+			var itemViewList <span style="color: #339933;">=</span> newPassDialog.<span style="color: #202020;">Find</span><span style="color: #339933;">&lt;</span>MyList<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Items View&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			<span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span>itemViewList.<span style="color: #202020;">GetSupportedViews</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #202020;">Contains</span><span style="color: #339933;">&lt;</span>int<span style="color: #339933;">&gt;</span> <span style="color: #009900;">&#40;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
+				itemViewList.<span style="color: #202020;">SetCurrentView</span> <span style="color: #009900;">&#40;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">ShortDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			procedureLogger.<span style="color: #202020;">ExpectedResult</span> <span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;The current view of the dialog is <span style="color: #000099; font-weight: bold;">\&quot;</span>Extra Large Icons<span style="color: #000099; font-weight: bold;">\&quot;</span>&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Assert.<span style="color: #202020;">AreEqual</span> <span style="color: #009900;">&#40;</span>itemViewList.<span style="color: #202020;">GetViewName</span><span style="color: #009900;">&#40;</span>itemViewList.<span style="color: #202020;">CurrentView</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;Extra Large Icons&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+			Thread.<span style="color: #202020;">Sleep</span> <span style="color: #009900;">&#40;</span>Config.<span style="color: #202020;">Instance</span>.<span style="color: #202020;">ShortDelay</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+			...........................
+		<span style="color: #009900;">&#125;</span>
+&#160;
+		<span style="color: #666666; font-style: italic;">//TestCase102 Organize the group</span>
+		<span style="color: #009900;">&#91;</span>Test<span style="color: #009900;">&#93;</span>
+		public <span style="color: #993333;">void</span> RunTestCase102 <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+			Run <span style="color: #009900;">&#40;</span>TestCase102<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+		<span style="color: #009900;">&#125;</span>
+&#160;
+                private <span style="color: #993333;">void</span> TestCase102 <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+		<span style="color: #009900;">&#123;</span>
+                     ...........
+                <span style="color: #009900;">&#125;</span>
+	<span style="color: #009900;">&#125;</span></pre>
+<h3> <span class="mw-headline" id="OUTPUT">OUTPUT</span></h3>
+<p>The default output directory is bin/debug, but you can Set the output path "D:/temp/ " (for example) in "Project --&gt;XXXXX Properties" , the project 's output is as follows:
+</p><p><a href="{{site.baseurl}}/images/old_site/6/62/Output1.png" class="image"><img alt="Output1.png" src="{{site.baseurl}}/images/old_site/6/62/Output1.png" width="555" height="330" /></a>
+</p><p>If you open the procedures.xml file you can see the test output shown as
+html page
+<a href="{{site.baseurl}}/images/old_site/e/e3/Output2.png" class="image"><img alt="Output2.png" src="{{site.baseurl}}/images/old_site/e/e3/Output2.png" width="555" height="347" /></a>
+</p>
+<h1> <span class="mw-headline" id="Logging_Bugs">Logging Bugs</span></h1>
+<h2> <span class="mw-headline" id="General_Guidelines">General Guidelines</span></h2>
+<ul><li> Remember to log bugs for our product under the "Mono" classification and "UI Automation" product.
+</li><li> Set the priority after logging the bug.  Use your best estimate, it can be changed later.
+</li><li> Do a quick search for duplicates before logging your bug if someone else has worked on the control you are testing.
+</li><li> Remember to add a comment with a bug reference (see below) where the bug occurs in your test. 
+</li></ul>
+<h2> <span class="mw-headline" id="Bug_References">Bug References</span></h2>
+<p>Bug references are a very important way to keep track of bugs that we find while writing our automated tests.  A bug reference is simply a comment in our test, where the bug occurs, that has the format BUG[0-9][0-9][0-9][0-9][0-9][0-9]. If the bug affect the test to run successfully, remenber to comment that test case out. For example, here is a code snipped showing a valid bug reference together with test code that finds a bug:
+</p>
+<pre class="python" style="font-family:monospace;">mtbFrame.<span style="color: black;">phone_text</span>.<span style="color: black;">deleteText</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+sleep<span style="color: black;">&#40;</span>config.<span style="color: black;">SHORT_DELAY</span><span style="color: black;">&#41;</span>
+<span style="color: #808080; font-style: italic;"># two deletes should not crash the application BUG465467</span>
+<span style="color: #808080; font-style: italic;">#mtbFrame.phone_text.deleteText()</span>
+<span style="color: #808080; font-style: italic;">#sleep(config.SHORT_DELAY)</span></pre>
+<p>The purpose of bug references is to allow us to easily find our tests that were affected by the bug.  We do this by simply grepping for the bug reference when verifying and closing bugs after that bug has been fixed.  This is useful because when the bug has been fixed, we are able to verify that our test runs successfully and uncomment the test case and correct any deficiencies or problems in our tests that existed because of the bug.
+</p>
+<h1> <span class="mw-headline" id="Official_Test_Machine_Setup">Official Test Machine Setup</span></h1>
+<p>Here are some things that should be done to prepare the official Novell test machines for use.  These machines should all be virtual machines.  We currently use VMware Workstation 6 to host the VMs.  This is only required for the machines in a test lab, not your own personal test machine(s).
+</p>
+<ul><li> Turn off the screensaver (using gnome-control-center)
+</li><li> Auto login for 'a11y' user
+</li><li> Add 'a11y' user to the 'wheel' group
+</li><li> Enable use of sudo without a password (see /etc/sudoers)
+</li><li> Mount uiaqa.sled.lab.novell.com's "logs" and "tests" directories at boot time (see /etc/fstab on a previous test VM) as described in the Strongwind test harness section above
+</li><li> Mount uiaqa.sled.lab.novell.com's "strongwind" directory at boot time.  (see /etc/fstab on a previous test VM.)  This allows us to keep the Strongwind code up-to-date in a single location instead of having to constantly 'svn up' on the test machines.  NOTE:  We still need to install Strongwind on the test machines after the code is updated.
+</li><li> Install Orca specified in the Orca testing requirements above
+</li><li> Install Iron Python (IPCE)
+</li><li> Configure static IP and DNS
+</li><li> Allow passwordless SSH from qa@uiaqa.sled.lab.novell.com (see /home/a11y/.ssh/authorized_keys on a previous test VM)
+</li><li> Disable all automatic updates and automatic update notifications (this can be done from the control panel)
+</li><li> Append "xhost +" to the /home/a11y/.profile file.
+</li><li> Install a printer (so the print-related controls tests will run properly)
+</li><li> Disable Firefox's "resume from crash" feature.  This can be done my browsing to about:config and setting the value of browser.sessionstore.resume_from_crash to false.
+</li><li> <i>add more...</i>
+</li></ul>
+<p>After preparing the machine, take a single snapshot.  Name the snapshot after the hostname of the machine (e.g., suse32v0).
+</p>
+<h1> <span class="mw-headline" id="Csharp_Introduction">Csharp Introduction</span></h1>
+<p>We will use C# to write our samples and tests in Moonlight and ClientAPI test, so What we need to do the first is to study C#.
+</p><p>Here is a link of a <a href="http://www.ecma-international.org/activities/Languages/Introduction%20to%20Csharp.pdf" class="external text" rel="nofollow">C# Introduction PDF</a>, please download and study it if you need.
+</p>

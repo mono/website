@@ -1,0 +1,23 @@
+---
+layout: obsolete
+title: "Mono:Wii"
+permalink: /old_site/Mono:Wii/
+---
+
+<h1>Mono:Wii</h1>
+
+<p>The Mono runtime has been ported to the Wii, and a commercial port is available to Official Nintendo Licensed Wii Developers.   If you want to evaluate Mono for the Wii, you must use Nintendo's third party validation tool to request access to the code.
+</p>
+<h1> <span class="mw-headline" id="Installation"> Installation </span></h1>
+<p>To build Mono on the Wii, you will need a Mono 2.4 set of class libraries, and in addition to that, you will need to check out the Mono/Wii branch and the special wii support system (obtain this URL from Novell after filling out your request in the middleware portal at Warioworld)
+</p>
+<pre class="bash" style="font-family:monospace;"> $ <span style="color: #c20cb9; font-weight: bold;">svn co</span> ...<span style="color: #000000; font-weight: bold;">/</span>branches<span style="color: #000000; font-weight: bold;">/</span>wii
+ $ <span style="color: #c20cb9; font-weight: bold;">svn co</span> ...<span style="color: #000000; font-weight: bold;">/</span>trunk<span style="color: #000000; font-weight: bold;">/</span>wii 
+ $ <span style="color: #7a0874; font-weight: bold;">cd</span> wii
+ $ <span style="color: #c20cb9; font-weight: bold;">make</span></pre>
+<p>This will produce the Mono runtime for the Wii and build the samples in wii/samples.
+</p>
+<h1> <span class="mw-headline" id="Licensing"> Licensing </span></h1>
+<p>Both the Mono runtime and the Mono C# Compiler are available under proprietary license for those who cannot, or choose not to, use LGPL and GPL code in their projects.
+</p><p>For licensing details, <a href="{{site.baseurl}}/Contact" title="Contact">Contact the Mono team at Novell</a>.
+</p>

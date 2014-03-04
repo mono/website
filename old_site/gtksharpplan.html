@@ -1,0 +1,63 @@
+---
+layout: obsolete
+title: "GtkSharpPlan"
+permalink: /old_site/GtkSharpPlan/
+---
+
+<h1>GtkSharpPlan</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Stable_Releases"><span class="tocnumber">1</span> <span class="toctext">Stable Releases</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Plans_for_Gtk.23_2.x"><span class="tocnumber">2</span> <span class="toctext">Plans for Gtk# 2.x</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#2.4.2F2.6.2F2.8.2F2.10_Bindings"><span class="tocnumber">2.1</span> <span class="toctext">2.4/2.6/2.8/2.10 Bindings</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#2.12_bindings"><span class="tocnumber">2.2</span> <span class="toctext">2.12 bindings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Release_plan"><span class="tocnumber">3</span> <span class="toctext">Release plan</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Future_Plans"><span class="tocnumber">4</span> <span class="toctext">Future Plans</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Documentation"><span class="tocnumber">4.1</span> <span class="toctext">Documentation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Gtk.23_for_64-bit_Windows"><span class="tocnumber">4.2</span> <span class="toctext">Gtk# for 64-bit Windows</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Databinding"><span class="tocnumber">4.3</span> <span class="toctext">Databinding</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Indexer_Autogeneration"><span class="tocnumber">4.4</span> <span class="toctext">Indexer Autogeneration</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#GUI_Designer_Support_Improvements"><span class="tocnumber">4.5</span> <span class="toctext">GUI Designer Support Improvements</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Stable_Releases"> Stable Releases </span></h2>
+<p>Gtk# 2.4.3, 2.6.3, 2.8.5, and 2.10.4 and 2.12.9 have been released.
+</p>
+<h2> <span class="mw-headline" id="Plans_for_Gtk.23_2.x"> Plans for Gtk# 2.x </span></h2>
+<h3> <span class="mw-headline" id="2.4.2F2.6.2F2.8.2F2.10_Bindings"> 2.4/2.6/2.8/2.10 Bindings </span></h3>
+<p>We are now in stable bugfixing mode for the 2.4, 2.6, 2.8 and 2.10 bindings. There are no current plans to add new features for these releases. 
+</p>
+<h3> <span class="mw-headline" id="2.12_bindings"> 2.12 bindings </span></h3>
+<p>Gtk# 2.12 bindings are in stable release.  Gnome# 2.20 and the new GnomeDesktop# unstable library bindings package have been released as well.  Source tarballs are available from <a href="http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12" class="external text" rel="nofollow">GNOME FTP</a>. See <a href="{{site.baseurl}}/GtkSharpNewInVersion2x" title="GtkSharpNewInVersion2x">GtkSharpNewInVersion2x</a> for a list of enhancements and new features that were delivered in 2.12, along with newly bound API members from Gtk+ 2.12 and GNOME 2.20.
+</p>
+<h2> <span class="mw-headline" id="Release_plan"> Release plan </span></h2>
+<p>As the Gtk+ 2.14, 2.16 and 2.18 releases did not add any significant API except of GIO, we decided to focus on creating bindings for Gtk+ 3. Currently, trunk still targets Gtk+ 2.14, but we will switch to version 3 as soon as it is usable.
+</p><p>Gtk# 3.0 will be built against the .net 2.0 profile, but it will be possible to install 2.12 and 3.0 in parallel for compatibility.
+</p><p>If Gtk 3 were to languish unreleased, we might release a binding for Gtk+ 2.18 first.
+</p><p>GIO bindings are availiable in the gio-sharp module from Mono's <a href="{{site.baseurl}}/AnonSVN" title="AnonSVN" class="mw-redirect">AnonSVN</a> repository. Alternativly, you can build Gtk# from trunk.
+</p>
+<h2> <span class="mw-headline" id="Future_Plans"> Future Plans </span></h2>
+<p>The following list is a prioritized view of the planned feature additions:
+</p>
+<h3> <span class="mw-headline" id="Documentation"> Documentation </span></h3>
+<p>We have already invested substantial effort into completing the API documentation and will continue to improve the state of the API documentation.  Our goal is to introduce no new undocumented APIs going forward, and to improve the existing documentation coverage, filling in stubbed API documentation.
+</p>
+<h3> <span class="mw-headline" id="Gtk.23_for_64-bit_Windows"> Gtk# for 64-bit Windows </span></h3>
+<p>We want to ship a 64-bit version of the Gtk# installer for .net.
+</p>
+<h3> <span class="mw-headline" id="Databinding"> Databinding </span></h3>
+<p>We want to build on some existing efforts to provide an integrated databinding capability similar to the .Net databinding capability in winforms.
+</p>
+<h3> <span class="mw-headline" id="Indexer_Autogeneration"> Indexer Autogeneration </span></h3>
+<p>We want to provide autogeneration of indexers and enumerators for types which expose foreach methods.  This feature is in the feasibility-study category.
+</p>
+<h3> <span class="mw-headline" id="GUI_Designer_Support_Improvements"> GUI Designer Support Improvements </span></h3>
+<p>We want to provide an attribute system to make it easier for Stetic to interface with not only the Gtk# widgets, but third party super-widgets.
+</p>

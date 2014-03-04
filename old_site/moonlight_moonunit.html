@@ -1,0 +1,61 @@
+---
+layout: obsolete
+title: "Moonlight/moon-unit"
+permalink: /old_site/Moonlight/moon-unit/
+---
+
+<h1>Moonlight/moon-unit</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Task"><span class="tocnumber">1</span> <span class="toctext">The Task</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#How_To_Do_It"><span class="tocnumber">2</span> <span class="toctext">How To Do It</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#How_To_Report_It"><span class="tocnumber">3</span> <span class="toctext">How To Report It</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Results"><span class="tocnumber">4</span> <span class="toctext">Results</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="The_Task"> The Task </span></h2>
+<p>Our moon-unit testsuite was originally written against Silverlight 2. It now needs to be updated so that the tests accurately reflect the behaviour of Silverlight 4. This isn't particularly difficult but is time consuming.
+</p>
+<h2> <span class="mw-headline" id="How_To_Do_It"> How To Do It </span></h2>
+<p>Simplest thing to do is open each test file and modify it so that the set of tests in that file are executed first. For example if I open Grid.cs the file starts with
+</p>
+<pre>
+namespace MoonTest.System.Windows.Controls
+{
+	[TestClass]
+	public partial class GridTest&#160;: SilverlightTest
+	{
+		// Tests go here
+	}
+}
+</pre>
+<p>To make this run first just subclass the test and prepend the name with underscores
+</p>
+<pre>
+namespace MoonTest.System.Windows.Controls
+{
+	[TestClass]
+	public partial class ___GridTest&#160;: GridTest {
+		// Now all the normal grid tests will execute first
+	}
+
+	[TestClass]
+	public partial class GridTest&#160;: SilverlightTest {
+		// Tests go here
+	}
+}
+</pre>
+<p>This means you don't have to wait for 1000's of tests to run before reaching your chosen block of tests.
+</p>
+<h2> <span class="mw-headline" id="How_To_Report_It"> How To Report It </span></h2>
+<p>As you start working on a directory, add the directory name here. When you've completed the directory, also add it here. For example if i were working on moon-unit/System.Windows.Controls/*, I would add "System.Windows.Controls" here.
+</p>
+<h2> <span class="mw-headline" id="Results"> Results </span></h2>
+<pre>
+System.Windows - Done
+System.Windows.Controls - Done
+System.Windows.Controls.Primitives - Done
+System.Windows.Data - Done
+</pre>
+

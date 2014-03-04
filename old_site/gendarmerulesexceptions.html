@@ -1,0 +1,363 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Exceptions"
+permalink: /old_site/Gendarme.Rules.Exceptions/
+---
+
+<h1>Gendarme.Rules.Exceptions</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s rules about exceptions are located in the <b>Gendarme.Rules.Exceptions.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Exceptions/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AvoidArgumentExceptionDefaultConstructorRule"><span class="tocnumber">1.1</span> <span class="toctext">AvoidArgumentExceptionDefaultConstructorRule</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AvoidThrowingBasicExceptionsRule"><span class="tocnumber">1.2</span> <span class="toctext">AvoidThrowingBasicExceptionsRule</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#DoNotDestroyStackTraceRule"><span class="tocnumber">1.3</span> <span class="toctext">DoNotDestroyStackTraceRule</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#DoNotSwallowErrorsCatchingNonSpecificExceptionsRule"><span class="tocnumber">1.4</span> <span class="toctext">DoNotSwallowErrorsCatchingNonSpecificExceptionsRule</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#DoNotThrowInUnexpectedLocationRule"><span class="tocnumber">1.5</span> <span class="toctext">DoNotThrowInUnexpectedLocationRule</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#DoNotThrowReservedExceptionRule"><span class="tocnumber">1.6</span> <span class="toctext">DoNotThrowReservedExceptionRule</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#ExceptionShouldBeVisibleRule"><span class="tocnumber">1.7</span> <span class="toctext">ExceptionShouldBeVisibleRule</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#InstantiateArgumentExceptionCorrectlyRule"><span class="tocnumber">1.8</span> <span class="toctext">InstantiateArgumentExceptionCorrectlyRule</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#MissingExceptionConstructorsRule"><span class="tocnumber">1.9</span> <span class="toctext">MissingExceptionConstructorsRule</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#UseObjectDisposedExceptionRule"><span class="tocnumber">1.10</span> <span class="toctext">UseObjectDisposedExceptionRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="AvoidArgumentExceptionDefaultConstructorRule"> AvoidArgumentExceptionDefaultConstructorRule </span></h3>
+<p>This rule checks that every <b>System.ArgumentException</b>, <b>System.ArgumentNullException</b>, <b>System.ArgumentOutOfRangeException</b>, or <b>System.DuplicateWaitObjectException</b> exception created is provided with some useful information about the exception being thrown, minimally the parameter name. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> key, <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">||</span> <span style="color: #008000;">&#40;</span>key <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>key, <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> key, <span style="color: #6666cc; font-weight: bold;">object</span> <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>key <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;key&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;value&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>key, <span style="color: #0600FF; font-weight: bold;">value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidThrowingBasicExceptionsRule"> AvoidThrowingBasicExceptionsRule </span></h3>
+<p>This rule checks for methods that create basic exceptions like <b>System.Exception</b>, <b>System.ApplicationException</b> or <b>System.SystemException</b>. Those exceptions do not provide enough information about the error to be helpful to the consumer of the library. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Exception <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;obj&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotDestroyStackTraceRule"> DoNotDestroyStackTraceRule </span></h3>
+<p>This rule will fire if a catch handler throws the exception it caught. What it should do instead is rethrow the original exception (e.g. use <b>throw</b> instead of <b>throw ex</b>). This is helpful because rethrow preserves the stacktrace of the original exception. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+    Int32<span style="color: #008000;">.</span><span style="color: #0000FF;">Parse</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Broken!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>Exception ex<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    Assert<span style="color: #008000;">.</span><span style="color: #0000FF;">IsNotNull</span> <span style="color: #008000;">&#40;</span>ex<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">throw</span> ex<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+    Int32<span style="color: #008000;">.</span><span style="color: #0000FF;">Parse</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Broken!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>Exception ex<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    Assert<span style="color: #008000;">.</span><span style="color: #0000FF;">IsNotNull</span> <span style="color: #008000;">&#40;</span>ex<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">throw</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.0 this rule was named  DontDestroyStackTraceRule.
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotSwallowErrorsCatchingNonSpecificExceptionsRule"> DoNotSwallowErrorsCatchingNonSpecificExceptionsRule </span></h3>
+<p>This rule will fire if a catch block catches <b>System.Exception</b> or <b>System.SystemException</b> but does not rethrow the original exception. This is problematic because you don't know what went wrong so it's difficult to know that the error was handled correctly. It is better to catch a more specific set of exceptions so that you do know what went wrong and do know that it is handled correctly. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+    File<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span>, FileMode<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>Exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">//Ooops  what's failed&#160;??? UnauthorizedException, FileNotFoundException&#160;???</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (catch a specific exception):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+    File<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span>, FileMode<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#40;</span>FileNotFoundException exception<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">//I know that the system can't find the file.</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (catch all and rethrow):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">try</span> <span style="color: #008000;">&#123;</span>
+    File<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;foo.txt&quot;</span>, FileMode<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #0600FF; font-weight: bold;">catch</span> <span style="color: #008000;">&#123;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;An error has happened.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">throw</span><span style="color: #008000;">;</span>  <span style="color: #008080; font-style: italic;">// You don't swallow the error, because you rethrow the original exception.</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.0 this rule was named DontSwallowErrorsCatchingNonspecificExceptionsRule.
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotThrowInUnexpectedLocationRule"> DoNotThrowInUnexpectedLocationRule </span></h3>
+<p>There are a number of methods which have constraints on the exceptions which they may throw. This rule checks the following methods: 
+</p>
+<ul><li> Property getters - properties should work very much like fields: they should execute very quickly and, in general, should not throw exceptions. However they may throw System.InvalidOperationException, System.NotSupportedException, or an exception derived from these. Indexed getters may also throw System.ArgumentException or System.Collections.Generic.KeyNotFoundException.
+</li><li> Event accessors - in general events should not throw when adding or removing a handler. However they may throw System.InvalidOperationException, System.NotSupportedException, System.ArgumentException, or an exception derived from these.
+</li><li> Object.Equals and IEqualityComparer&lt;T&gt;.Equals - should not throw. In particular they should do something sensible when passed null arguments or unexpected types.
+</li><li> Object.GetHashCode - should not throw or the object will not work properly with dictionaries and hash sets.
+</li><li> IEqualityComparer&lt;T&gt;.GetHashCode - may throw System.ArgumentException.
+</li><li> Object.ToString - these are called by the debugger to display objects and are also often used with printf style debugging so they should not change the object's state and should not throw.
+</li><li> static constructors - should very rarely throw. If they do throw then the type will not be useable within that application domain.
+</li><li> finalizers - should not throw. If they do (as of .NET 2.0) the process will be torn down.
+</li><li> IDisposable.Dispose - should not throw. If they do it's much harder to guarantee that objects clean up properly.
+</li><li> Dispose (bool) - should not throw because that makes it very difficult to clean up objects and because they are often called from a finalizer.
+</li><li> operator== and operator!= - should not throw. In particular they should do something sensible when passed null arguments or unexpected types.
+</li><li> implicit cast operators - should not throw. These methods are called implicitly so it tends to be quite surprising if they throw exceptions.
+</li></ul>
+<p>Note that the rule does not complain if a method throws System.NotImplementedException because DoNotForgetNotImplementedMethodsRule will flag them. Also the rule may fire with anonymous types with gmcs versions prior to 2.2, see <a href="https://bugzilla.novell.com/show_bug.cgi?id=462622" class="external autonumber" rel="nofollow">[1]</a> for more details. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    Customer rhs <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Customer<span style="color: #008000;">&#41;</span> obj<span style="color: #008000;">;</span>	<span style="color: #008080; font-style: italic;">// throws if obj is not a Customer</span>
+    <span style="color: #0600FF; font-weight: bold;">return</span> name <span style="color: #008000;">==</span> rhs<span style="color: #008000;">.</span><span style="color: #0000FF;">name</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Equals <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    Customer rhs <span style="color: #008000;">=</span> obj <span style="color: #0600FF; font-weight: bold;">as</span> Customer<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>rhs <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">return</span> name <span style="color: #008000;">==</span> rhs<span style="color: #008000;">.</span><span style="color: #0000FF;">name</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.4
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotThrowReservedExceptionRule"> DoNotThrowReservedExceptionRule </span></h3>
+<p>This rule will fire if an <b>System.ExecutionEngineException</b>, <b>System.IndexOutOfRangeException</b>, <b>NullReferenceException</b>, or <b>System.OutOfMemoryException</b> class is instantiated. These exceptions are for use by the runtime and should not be thrown by user code. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NullReferenceException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;obj&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> <span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>obj <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;obj&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Inner<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>obj<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="ExceptionShouldBeVisibleRule"> ExceptionShouldBeVisibleRule </span></h3>
+<p>This rule checks for non-visible exceptions which derive directly from the most basic exceptions: <b>System.Exception</b>, <b>System.ApplicationException</b>or <b>System.SystemException</b>. Those basic exceptions, being visible, will be the only information available to the API consumer - but do not contain enough data to be useful. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> GeneralException <span style="color: #008000;">:</span> Exception <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (visibility):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GeneralException <span style="color: #008000;">:</span> Exception <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (base class):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> GeneralException <span style="color: #008000;">:</span> ArgumentException <span style="color: #008000;">&#123;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="InstantiateArgumentExceptionCorrectlyRule"> InstantiateArgumentExceptionCorrectlyRule </span></h3>
+<p>This rule will fire if the arguments to the <b>System.ArgumentException</b>, <b>System.ArgumentNullException</b>, <b>System.ArgumentOutOfRangeException</b>, and <b>System.DuplicateWaitObjectException</b> constructors are used incorrectly. This is a common mistake because the position of the <b>parameterName</b> argument is not consistent across these types. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Show <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// the first argument should be the parameter name</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;string is null&quot;</span>, <span style="color: #666666;">&quot;s&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">// the second argument should be the parameter name</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;s&quot;</span>, <span style="color: #666666;">&quot;string is empty&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Show <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> s<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentNullException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;s&quot;</span>, <span style="color: #666666;">&quot;string is null&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArgumentException <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;string is empty&quot;</span>, <span style="color: #666666;">&quot;s&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>s<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.2
+</li></ul>
+<h3> <span class="mw-headline" id="MissingExceptionConstructorsRule"> MissingExceptionConstructorsRule </span></h3>
+<p>This rule will fire if an exception class is missing one or more of the following constructors: 
+</p>
+<ul><li> <b>public E ()</b> is required for XML serialization. Public access is required in case the assembly uses CAS to prevent reflection on non-public members.
+</li><li> <b>public E (string message)</b> is a .NET convention.
+</li><li> <b>public E (string message, ..., Exception inner)</b> is a .NET convention.
+</li><li> <b>(non)public E (SerializationInfo info, StreamingContext context)</b> is required for binary serialization.
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GeneralException <span style="color: #008000;">:</span> Exception <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// access should be public</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> GeneralException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> GeneralException <span style="color: #008000;">:</span> Exception <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> GeneralException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> GeneralException <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> message<span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span>message<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> GeneralException <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> message, Exception inner<span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span>message, inner<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">protected</span> GeneralException <span style="color: #008000;">&#40;</span>SerializationInfo info, StreamingContext context<span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span>info, context<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.0
+</li></ul>
+<h3> <span class="mw-headline" id="UseObjectDisposedExceptionRule"> UseObjectDisposedExceptionRule </span></h3>
+<p>It's usually a very bad idea to attempt to use an object after it has been disposed. Doing so may lead to crashes in native code or any number of other problems. In order to prevent this, and to report the problem in a clear way, classes should throw System.ObjectDisposedException from public methods if the object has been disposed. Note that there are some methods which should not throw ObjectDisposedException. This includes constructors, finalizers, Equals, GetHashCode, ToString, and Dispose. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> WriteStuff <span style="color: #008000;">:</span> IDisposable
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> WriteStuff <span style="color: #008000;">&#40;</span>TextWriter writer<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">writer</span> <span style="color: #008000;">=</span> writer<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">// Objects are generally not in a useable state after being disposed so</span>
+    <span style="color: #008080; font-style: italic;">// their public methods should throw ObjectDisposedException.</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> message<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        writer<span style="color: #008000;">.</span><span style="color: #0000FF;">Write</span> <span style="color: #008000;">&#40;</span>message<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span>disposed<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            writer<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            disposed <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">bool</span> disposed<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> TextWriter writer<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> WriteStuff <span style="color: #008000;">:</span> IDisposable
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> WriteStuff <span style="color: #008000;">&#40;</span>TextWriter writer<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">writer</span> <span style="color: #008000;">=</span> writer<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #008080; font-style: italic;">// In general all public methods should throw ObjectDisposedException</span>
+    <span style="color: #008080; font-style: italic;">// if Dispose has been called.</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> message<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>disposed<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ObjectDisposedException <span style="color: #008000;">&#40;</span>GetType <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        writer<span style="color: #008000;">.</span><span style="color: #0000FF;">Write</span> <span style="color: #008000;">&#40;</span>message<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Dispose <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">!</span>disposed<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+            writer<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            disposed <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">bool</span> disposed<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">private</span> TextWriter writer<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.6
+</li></ul>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

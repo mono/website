@@ -1,0 +1,137 @@
+---
+layout: obsolete
+title: "AutoConfiguration"
+permalink: /old_site/AutoConfiguration/
+---
+
+<h1>AutoConfiguration</h1>
+
+<p>Automatic configuration of ASP.NET applications with <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a>
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Motivation"><span class="tocnumber">1</span> <span class="toctext">Motivation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_is_it.3F"><span class="tocnumber">2</span> <span class="toctext">What is it?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#How_do_I_enable_it.3F"><span class="tocnumber">3</span> <span class="toctext">How do I enable it?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Uses"><span class="tocnumber">4</span> <span class="toctext">Uses</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Deploying_an_application"><span class="tocnumber">4.1</span> <span class="toctext">Deploying an application</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Standalone_pages"><span class="tocnumber">4.2</span> <span class="toctext">Standalone pages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#ASP.NET_MVC_and_AutoConfiguration"><span class="tocnumber">5</span> <span class="toctext">ASP.NET MVC and AutoConfiguration</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Internals_of_AutoConfiguration"><span class="tocnumber">6</span> <span class="toctext">Internals of AutoConfiguration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Detailed_examples"><span class="tocnumber">6.1</span> <span class="toctext">Detailed examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Automatic_hosting_and_virtual_hosts"><span class="tocnumber">7</span> <span class="toctext">Automatic hosting and virtual hosts</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Motivation">Motivation</span></h2>
+<p>In the past mod_mono required each application deployed to be configured on the Apache configuration files, this followed closely the model from Windows where applications exposed to the public are manually registered.
+</p><p>The auto-configuration capability is a mechanism to minimize the configuration required and to have a simple experience in deploying ASP.NET based applications on Apache systems with Mono.
+</p><p>Deploying an application does not require any special sysadmin intervention to register the known applications with mod_mono, it only requires the data to be exposed with any of the Apache directives.  
+</p><p>With autohosting it is possible to allow all the accounts on a machine to deploy an ASP.NET application without having to do any manual configuration.  Just having the ASP.NET pages will automatically serve them (.aspx, .ashx, .ascx, .asmx files).
+</p>
+<h2> <span class="mw-headline" id="What_is_it.3F">What is it?</span></h2>
+<p>Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a>), but still, it would be better if you could just copy your application and it worked without further action required.
+</p><p>This is what mod_mono automatic hosting provides: zero configuration for your applications.
+</p>
+<h2> <span class="mw-headline" id="How_do_I_enable_it.3F">How do I enable it?</span></h2>
+<p>If you've never configured mod_mono before, <b>just loading mod_mono.conf will do</b>.
+</p>
+<pre>        Include /etc/apache2/mod_mono.conf
+</pre>
+<p>The actual path to mod_mono.conf might vary depending on the distribution you use or the path where you installed apache.
+</p><p><b>Note:</b> Firefox typically caches a request, so you might need to restart your firefox if you are experiencing problems when aspx pages are not recognized.   Try testing with curl or another cache-less http client.
+</p><p>The configuration defaults to running the 1.0 runtime for applications, if you want to use the 2.0 runtime, you can just use the MonoServerPath directive to point to the 2.0 server, like this:
+</p>
+<pre>        MonoServerPath "/usr/bin/mod-mono-server2"
+</pre>
+<p>For those of you that have an existing configuration, you'll have to enable the feature by adding
+</p>
+<pre>        MonoAutoApplication enabled
+</pre>
+<p>Be aware that if the application is handling any file extension not present in the list of <i>AddType</i>s in mod_mono.conf, you have to add those extension to mod_mono.conf manually. Ie., if the application has something like:
+</p>
+<pre>&lt;httpHandlers&gt;
+   &lt;add verb="*" path="*.m" type="Maverick.Dispatcher, Maverick" /&gt;
+ &lt;/httpHandlers&gt;
+</pre>
+<p>you need to add:
+</p>
+<pre> AddType application/x-asp-net .m
+</pre>
+<p>to your mod_mono.conf.
+</p>
+<h2> <span class="mw-headline" id="Uses"> Uses </span></h2>
+<h3> <span class="mw-headline" id="Deploying_an_application">Deploying an application</span></h3>
+<p>This new functionality means that you can unpack on your web root various applications, for example:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ <span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">/</span>var<span style="color: #000000; font-weight: bold;">/</span>www<span style="color: #000000; font-weight: bold;">/</span>
+  $ <span style="color: #c20cb9; font-weight: bold;">unzip</span> CommunityServer.zip
+  $ <span style="color: #c20cb9; font-weight: bold;">unzip</span> nGallery.zip
+  $ <span style="color: #c20cb9; font-weight: bold;">unzip</span> MyPage.zip</pre>
+<p>and, assuming some simple names and a default Apache configuration, the applications would be available at:
+</p>
+<pre><a href="http://localhost/CommunityServer/" class="external free" rel="nofollow">http://localhost/CommunityServer/</a>
+<a href="http://localhost/nGallery/" class="external free" rel="nofollow">http://localhost/nGallery/</a>
+<a href="http://localhost/MyPage/" class="external free" rel="nofollow">http://localhost/MyPage/</a>
+</pre>
+<p>without having to register them with mod_mono in any way. Three ASP.NET application will be created with the proper physical and virtual paths.
+</p>
+<h3> <span class="mw-headline" id="Standalone_pages">Standalone pages</span></h3>
+<p>As a user this means that you can now easily use ASP.NET in your account by just creating files with any of the ASP.NET extensions (.aspx, .ashx, .asmx,...). It makes writing ASP.NET applications as easy as authoring a PHP script.
+</p><p>For example:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #007800;">$USER</span>
+  rupert
+  $ <span style="color: #7a0874; font-weight: bold;">cd</span>
+  $ <span style="color: #7a0874; font-weight: bold;">cd</span> public_html
+  $ <span style="color: #c20cb9; font-weight: bold;">mkdir</span> demo
+  $ <span style="color: #7a0874; font-weight: bold;">cd</span> demo
+  $ edit hello.aspx</pre>
+<p>And then
+</p>
+<pre><a href="http://localhost/~rupert/demo/hello.aspx" class="external free" rel="nofollow">http://localhost/~rupert/demo/hello.aspx</a>
+</pre>
+<p>will just work.
+</p>
+<h2> <span class="mw-headline" id="ASP.NET_MVC_and_AutoConfiguration"> ASP.NET MVC and AutoConfiguration </span></h2>
+<p>Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions.  For simple configuration of Apache <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a>, consider using the <a href="http://go-mono.com/config-mod-mono/" class="external text" rel="nofollow">Apache mod_mono configuration tool</a>.  
+</p><p>That said, if you absolutely must use AutoConfiguration, you could add the following to your mod_mono.conf file to set all content for the server to be served as x-asp-net content:
+</p>
+<pre>    ForceType application/x-asp-net
+</pre>
+<h2> <span class="mw-headline" id="Internals_of_AutoConfiguration"> Internals of AutoConfiguration </span></h2>
+<p>There is a small but important difference between the packaged applications and a trivial sample that we showed: the prepackaged applications have a <i>global.asax</i> and/or a <i>bin</i> directory, while our <i>demo</i> directory has none of those.
+</p><p>For the prepackaged applications, the physical base directory will be set to the directory that contains the <i>global.asax</i> (or <i>Global.asax</i>) file and the virtual path will be /CommunityServer/, /nGallery/...
+</p><p>For the standalone file, the physical path will be determined comparing the physical and virtual paths, starting from the last directory and going up. The first non-matching path will determine the virtual and physical base paths. So, in our case, the application created would map the virtual path /~rupert/ to /home/rupert/public_html/.
+</p><p>The information about the physical root path of an application is important because ASP.NET will load your libraries from the "bin" directory at the base of the application, which is where you would have any third-party controls or assemblies required by your application.
+</p>
+<h3> <span class="mw-headline" id="Detailed_examples">Detailed examples</span></h3>
+<p>When no configured ASP.NET application is found, mod_mono will guess the physical and virtual paths base on the presence or not of a <i>bin</i> directory or <i>global.asax</i> file.
+</p><p>Here are some examples of how it is done when there's no <i>global.asax</i> or <i>bin </i>directory:
+</p>
+<pre>    Request: /~gonzalo/Gallery/index.aspx
+    Virtual directory:  /~gonzalo/Gallery/
+    Physical directory: /home/gonzalo/public_html/Gallery/
+    Global.asax or bin: <b>no</b>
+    ASP.NET application virtual path: /~gonzalo/
+    ASP.NET application physical path: /home/gonzalo/public_html/
+</pre>
+<p><br />
+XSP will compare the directories in the virtual and physical paths starting from the end until they stop matching or until it finds a <i>bin</i> directory or a <i>global.asax</i> file, whichever happens first.
+</p><p>For the same request, but this time we have a <i>global.asax</i> in the Gallery directory:
+</p>
+<pre>    Request: /~gonzalo/Gallery/index.aspx
+    Virtual directory:  /~gonzalo/Gallery/
+    Physical directory: /home/gonzalo/public_html/Gallery/
+    Global.asax or bin: <b>yes</b>
+    ASP.NET application virtual path: /~gonzalo/Gallery/
+    ASP.NET application physical path: /home/gonzalo/public_html/Gallery/
+</pre>
+<h2> <span class="mw-headline" id="Automatic_hosting_and_virtual_hosts">Automatic hosting and virtual hosts</span></h2>
+<p>As of today, all the virtual hosts hosted in the server share the same instance of mod-mono-server. You can enable/disable automatic hosting for every virtual host.
+</p>

@@ -1,0 +1,36 @@
+---
+layout: obsolete
+title: "Accessibility: Release Checklist"
+permalink: /old_site/Accessibility:_Release_Checklist/
+---
+
+<h1>Accessibility: Release Checklist</h1>
+
+<h1> <span class="mw-headline" id="Release_Checklist"> Release Checklist </span></h1>
+<ol><li> Come up with <a href="http://en.wikipedia.org/wiki/List_of_Futurama_characters" class="external text" rel="nofollow">release codename</a>
+</li><li> Edit NEWS
+</li><li> Update ChangeLog and double-check version in configure.ac
+</li><li> Distcheck
+<ol><li> <code>make distcheck</code>
+</li></ol>
+</li><li> <b>COMMIT CHANGES</b>
+</li><li> Run automated QA scripts, get QA sign-off.  Test on openSUSE 11.0/11.1 for 32 and 64 bit.
+</li><li> Tag release
+<ol><li> <code>svn cp svn+ssh://mono-cvs.ximian.com/source/branches/uia2atk/1.0 svn+ssh://mono-cvs.ximian.com/source/tags/uia2atk/$VERSION</code>
+</li><li> Commit Message: "Tag for $VERSION release"
+</li><li> Double check it worked: <a href="http://anonsvn.mono-project.com/viewvc/tags/" class="external free" rel="nofollow">http://anonsvn.mono-project.com/viewvc/tags/</a>
+</li></ol>
+</li><li> Build tarballs and RPMs for openSUSE 11.0/11.1 for 32 and 64 bit.
+</li><li> Increment version in configure.ac on trunk/branch (wherever the tag was made from)
+</li><li> Upload the release
+<ol><li> TODO:
+</li></ol>
+</li><li> Edit <a href="http://www.mono-project.com/Accessibility:_Releases?action=edit" class="external text" rel="nofollow">releases</a> wiki page
+</li><li> Add Release Notes wiki page (e.g.: Accessibility:_Release_Notes_0.9.1)
+</li><li> Update <a href="http://www.mono-project.com/Accessibility?action=edit" class="external text" rel="nofollow">homepage</a>
+<ol><li> Use data from the <a href="http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/NEWS" class="external text" rel="nofollow">NEWS page</a> to populate the page
+</li></ol>
+</li><li> Email <a href="mailto:mono-a11y@forge.novell.com" class="external text" rel="nofollow">mono-a11y list</a>, <a href="mailto:mono-announce-list@lists.ximian.com" class="external text" rel="nofollow">mono-announce list</a> and <a href="mailto:gnome-announce-list@lists.gnome.org" class="external text" rel="nofollow">gnome-announce list</a>
+</li><li> Change #mono-a11y's topic
+</li></ol>
+

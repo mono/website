@@ -1,0 +1,63 @@
+---
+layout: obsolete
+title: "Howto Generics"
+permalink: /old_site/Howto_Generics/
+---
+
+<h1>Howto Generics</h1>
+
+<p>This sample shows how to use a parametrized types over a class
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//compile with gmcs sample.cs /out:generics.exe</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Generics<span style="color: #008000;">&lt;</span>T<span style="color: #008000;">&gt;</span> <span style="color: #008000;">&#123;</span>
+&#160;
+    T obj<span style="color: #008000;">;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> Generics <span style="color: #008000;">&#40;</span>T o<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+         obj <span style="color: #008000;">=</span> o<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span> 
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> T GetObj <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> obj<span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span> 
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> ShowType <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;T type is:&quot;</span> <span style="color: #008000;">+</span> <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span>T<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TestGenerics <span style="color: #008000;">&#123;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+         <span style="color: #6666cc; font-weight: bold;">int</span> integer_value<span style="color: #008000;">;</span>
+         <span style="color: #6666cc; font-weight: bold;">string</span> string_value<span style="color: #008000;">;</span>
+&#160;
+         <span style="color: #008080; font-style: italic;">//check for some command line arguments</span>
+         <span style="color: #0600FF; font-weight: bold;">if</span><span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">==</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> 
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Usage: mono generics.exe integer string&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+         <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #008000;">&#123;</span>
+&#160;
+             <span style="color: #008080; font-style: italic;">//apply to integer argument/type          </span>
+             Generics<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">int</span><span style="color: #008000;">&gt;</span> integer_obj <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Generics<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">int</span><span style="color: #008000;">&gt;</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Parse</span><span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             integer_obj<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowType</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             integer_value <span style="color: #008000;">=</span> integer_obj<span style="color: #008000;">.</span><span style="color: #0000FF;">GetObj</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;value:&quot;</span> <span style="color: #008000;">+</span> integer_value<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;----------------------&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+             <span style="color: #008080; font-style: italic;">//apply to string argument/type</span>
+             Generics<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span> string_obj <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Generics<span style="color: #008000;">&lt;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&gt;</span><span style="color: #008000;">&#40;</span>args<span style="color: #008000;">&#91;</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             string_obj<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowType</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             string_value <span style="color: #008000;">=</span> string_obj<span style="color: #008000;">.</span><span style="color: #0000FF;">GetObj</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+             Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;value:&quot;</span> <span style="color: #008000;">+</span> string_value<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+         <span style="color: #008000;">&#125;</span>         
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

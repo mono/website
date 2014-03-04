@@ -1,0 +1,186 @@
+---
+layout: obsolete
+title: "MaxDB"
+permalink: /old_site/MaxDB/
+---
+
+<h1>MaxDB</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Info"><span class="tocnumber">1</span> <span class="toctext">Info</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using"><span class="tocnumber">2</span> <span class="toctext">Using</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Connection_String"><span class="tocnumber">2.1</span> <span class="toctext">Connection String</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Connection_String_Format"><span class="tocnumber">2.1.1</span> <span class="toctext">Connection String Format</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Connection_String_Parameters"><span class="tocnumber">2.1.2</span> <span class="toctext">Connection String Parameters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#C.23_Example"><span class="tocnumber">2.2</span> <span class="toctext">C# Example</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Source_code"><span class="tocnumber">2.2.1</span> <span class="toctext">Source code</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Building_Example"><span class="tocnumber">2.2.2</span> <span class="toctext">Building Example</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Running_the_Example"><span class="tocnumber">2.2.3</span> <span class="toctext">Running the Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Info"> Info </span></h2>
+<p>MaxDBProvider is ADO.NET data provider on .NET and Mono for the 
+SAP-certified open source database MaxDB 7.5/7.6
+(see <a href="http://www.mysql.com/products/maxdb" class="external text" rel="nofollow">MaxDB</a>).
+</p>
+<ul><li> Home site is [<a href="http://www.sourceforge.net/projects/maxdbprovider" class="external free" rel="nofollow">http://www.sourceforge.net/projects/maxdbprovider</a> 
+</li></ul>
+<p>MaxDBProvider]
+</p>
+<ul><li> Can access MaxDB server either using native network protocol directly or 
+</li></ul>
+<p>through corresponding client library
+</p>
+<ul><li> Namespace MaxDB.Data and assembly MaxDB.Data.dll
+</li></ul>
+<h2> <span class="mw-headline" id="Using"> Using </span></h2>
+<h3> <span class="mw-headline" id="Connection_String"> Connection String </span></h3>
+<h4> <span class="mw-headline" id="Connection_String_Format"> Connection String Format </span></h4>
+<p><code>Server=localhost;Database=Test;User ID=MyLogin;Password=MyPwd;</code>
+</p>
+<h4> <span class="mw-headline" id="Connection_String_Parameters"> Connection String Parameters </span></h4>
+<table class="wikitable">
+
+<tr>
+<th> Parameter Definition </th>
+<th> Description </th>
+<th> Example
+</th></tr>
+<tr>
+<th> Data Source or Server or Address or <br />Addr or Network Address
+</th>
+<td> Hostname or IP Address of the MaxDB server </td>
+<td> Server=myhost
+</td></tr>
+<tr>
+<th> Initial Catalog or Database
+</th>
+<td> Name of MaxDB database </td>
+<td> Database=testdb
+</td></tr>
+<tr>
+<th> User ID or Login
+</th>
+<td> Name of MaxDB database user </td>
+<td> Login=MyLogin
+</td></tr>
+<tr>
+<th> Password or PWD
+</th>
+<td> Password of MaxDB database user </td>
+<td> Password=MyPass
+</td></tr>
+<tr>
+<th> Mode
+</th>
+<td> Internal or Oracle. MaxDB database mode. Default = Internal </td>
+<td> Mode=Oracle
+</td></tr>
+<tr>
+<th> Pooling
+</th>
+<td> True or False. Controls whether connection pooling is used. Default = True
+</td>
+<td> Pooling=True
+</td></tr>
+<tr>
+<th> Min Pool Size
+</th>
+<td> Min size of connection pool. Default: 1 </td>
+<td> Min Pool Size=1
+</td></tr>
+<tr>
+<th> Max Pool Size
+</th>
+<td> Max size of connection pool. Default: 20 </td>
+<td> Max Pool Size=20
+</td></tr>
+<tr>
+<th> Connection Lifetime or <br />Load Balance Timeout
+</th>
+<td> Connection lifetime in the connection pool (in seconds). Default: 0 </td>
+<td>
+<p>Connection Lifetime=20
+</p>
+</td></tr></table>
+<p>The Server connection string parameter can be used in two different ways:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> Server Definition </th>
+<th> Example
+</th></tr>
+<tr>
+<th> hostname </th>
+<th> Server=localhost
+</th></tr>
+<tr>
+<th> hostname:port </th>
+<th> Server=localhost:7210
+</th></tr></table>
+<h3> <span class="mw-headline" id="C.23_Example"> C# Example </span></h3>
+<h4> <span class="mw-headline" id="Source_code"> Source code </span></h4>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">MaxDB.Data</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Test
+<span style="color: #008000;">&#123;</span>
+  <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+  <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> connectionString <span style="color: #008000;">=</span>
+      <span style="color: #666666;">&quot;Server=localhost;&quot;</span> <span style="color: #008000;">+</span>
+      <span style="color: #666666;">&quot;Database=test;&quot;</span> <span style="color: #008000;">+</span>
+      <span style="color: #666666;">&quot;User ID=scott;&quot;</span> <span style="color: #008000;">+</span>
+      <span style="color: #666666;">&quot;Password=tiger;&quot;</span><span style="color: #008000;">;</span>
+    IDbConnection dbcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MaxDBConnection<span style="color: #008000;">&#40;</span>connectionString<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    IDbCommand dbcmd <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008080; font-style: italic;">// requires a table to be created named employee</span>
+    <span style="color: #008080; font-style: italic;">// with columns firstname and lastname</span>
+    <span style="color: #008080; font-style: italic;">// such as,</span>
+    <span style="color: #008080; font-style: italic;">//        CREATE TABLE employee (</span>
+    <span style="color: #008080; font-style: italic;">//           firstname varchar(32),</span>
+    <span style="color: #008080; font-style: italic;">//           lastname varchar(32));</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> sql <span style="color: #008000;">=</span>
+      <span style="color: #666666;">&quot;SELECT firstname, lastname &quot;</span> <span style="color: #008000;">+</span>
+      <span style="color: #666666;">&quot;FROM employee&quot;</span><span style="color: #008000;">;</span>
+    dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> sql<span style="color: #008000;">;</span>
+    dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Connection</span> <span style="color: #008000;">=</span> dbcon<span style="color: #008000;">;</span>
+    IDataReader reader <span style="color: #008000;">=</span> dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+      <span style="color: #6666cc; font-weight: bold;">string</span> FirstName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;firstname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+      <span style="color: #6666cc; font-weight: bold;">string</span> LastName <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>reader<span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;lastname&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+      Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Name: &quot;</span> <span style="color: #008000;">+</span>
+        FirstName <span style="color: #008000;">+</span> <span style="color: #666666;">&quot; &quot;</span> <span style="color: #008000;">+</span> LastName<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #008080; font-style: italic;">// clean up</span>
+    reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    reader <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    dbcmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    dbcmd <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+    dbcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    dbcon <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">;</span>
+  <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h4> <span class="mw-headline" id="Building_Example"> Building Example </span></h4>
+<p>Save the example to the file TestExample.cs and compile it <br />
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mcs TestExample.cs -r:System.Data.dll -r:MaxDB.Data.dll</pre>
+<h4> <span class="mw-headline" id="Running_the_Example"> Running the Example </span></h4>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mono TestExample.exe</pre>
+

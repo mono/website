@@ -1,0 +1,135 @@
+---
+layout: obsolete
+title: "BaseClass Provider Factory"
+permalink: /old_site/BaseClass_Provider_Factory/
+---
+
+<h1>BaseClass Provider Factory</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Generic_Database_Access"><span class="tocnumber">1</span> <span class="toctext">Generic Database Access</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Configuartion_Entries"><span class="tocnumber">2</span> <span class="toctext">Configuartion Entries</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Sample_Code"><span class="tocnumber">3</span> <span class="toctext">Sample Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Provider_Support"><span class="tocnumber">4</span> <span class="toctext">Provider Support</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Generic_Database_Access"> Generic Database Access </span></h2>
+<p>Generic database access provides a way to access the database in a database independant manner. That is, the layer available in the System.Data provides the necessary abstraction to the user so that he can write database component code irrespective of the databases and the user can change the underlying database without affecting the other layers of the system.
+</p><p>In the previous releases, the developer has to explicitly create the database classes specific to the databases. Developers found their own way to abstract these and the new API availble with the latest release gives a way to do that. 
+</p><p>The features of this factory implementation are
+</p>
+<ul><li> The provider information is stored in configuration files so that the providers can be changed dynamically at runtime.
+</li></ul>
+<ul><li> The connection string information is stored in configuration files.
+</li></ul>
+<ul><li> The developer can iterate through the available providers.
+</li></ul>
+<ul><li> Many of the database independant implemenations are provided by the provider base classes and the provider writers could only implement the database dependant features.
+</li></ul>
+<h2> <span class="mw-headline" id="Configuartion_Entries"> Configuartion Entries </span></h2>
+<p>The followiing configuration section entries are needed to be added to either machine.config or your application configuration files.
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configSections<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;section</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;connectionStrings&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;System.Data.Common.ConnectionStringsSectionHandler, System, Version=2.0, Culture=neutral&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>    
+&#160;
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;section</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;system.data&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;System.Data.Common.DbProviderFactoriesConfigurationHandler, System, Version=2.0, Culture=neutral&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>    
+&#160;
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configSections<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DbProviderFactories<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+           <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient&quot;</span>         </span>
+<span style="color: #009900;">               <span style="color: #000066;">invariant</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient&quot;</span>         </span>
+<span style="color: #009900;">               <span style="color: #000066;">support</span>=<span style="color: #ff0000;">&quot;FF&quot;</span> </span>
+<span style="color: #009900;">               <span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;SqlClient Provider Factory&quot;</span>      </span>
+<span style="color: #009900;">               <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.3600.0, Culture=neutral&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+           <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;System.Data.OdbcFactory&quot;</span>         </span>
+<span style="color: #009900;">               <span style="color: #000066;">invariant</span>=<span style="color: #ff0000;">&quot;System.Data.OdbcFactory&quot;</span>         </span>
+<span style="color: #009900;">               <span style="color: #000066;">support</span>=<span style="color: #ff0000;">&quot;FF&quot;</span> </span>
+<span style="color: #009900;">               <span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;Odbc Provider Factory&quot;</span>      </span>
+<span style="color: #009900;">               <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;System.Data.Odbc.OdbcFactory, System.Data, Version=2.0.3600.0, Culture=neutral&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/DbProviderFactories<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;connectionStrings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;MonoTest&quot;</span> <span style="color: #000066;">providerName</span>=<span style="color: #ff0000;">&quot;System.Data.SqlClient&quot;</span> </span>
+<span style="color: #009900;">         <span style="color: #000066;">connectionString</span>=<span style="color: #ff0000;">&quot;Data Source=&lt;SERVER&gt;</span></span>;Initial Catalog=<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Database<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>;User Id=<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;uid<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>;Password=<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;pwd<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>;&quot; /&gt;
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;MonoTestOdbc&quot;</span> <span style="color: #000066;">providerName</span>=<span style="color: #ff0000;">&quot;System.Data.OdbcFactory&quot;</span> </span>
+<span style="color: #009900;">         <span style="color: #000066;">connectionString</span>=<span style="color: #ff0000;">&quot;DSN=&lt;ODBC DSN&gt;</span></span>;UID=<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;uid<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>;PWD=<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;pwd<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>;&quot; /&gt;
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/connectionStrings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<h2> <span class="mw-headline" id="Sample_Code"> Sample Code </span></h2>
+<p>The following sample code shows how to use the provider factories for various model of execution in mono.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">//  factory.cs</span>
+<span style="color: #008080; font-style: italic;">//       compile with gmcs -r:System.Data.dll factory.cs</span>
+<span style="color: #008080; font-style: italic;">//</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Configuration</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data.Common</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data.ProviderBase</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MainClass
+<span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> <span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+                ConnectionStringSettings cs <span style="color: #008000;">=</span> ConfigurationSettings<span style="color: #008000;">.</span><span style="color: #0000FF;">ConnectionStrings</span> <span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;MonoTest&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+                <span style="color: #6666cc; font-weight: bold;">string</span> connString <span style="color: #008000;">=</span> cs<span style="color: #008000;">.</span><span style="color: #0000FF;">ConnectionString</span><span style="color: #008000;">;</span>
+                DbProviderFactory factory <span style="color: #008000;">=</span> DbProviderFactories<span style="color: #008000;">.</span><span style="color: #0000FF;">GetFactory</span> <span style="color: #008000;">&#40;</span>cs<span style="color: #008000;">.</span><span style="color: #0000FF;">ProviderName</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                DbConnection conn <span style="color: #008000;">=</span> factory<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateConnection</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008000;">&#40;</span>conn<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+                        <span style="color: #008080; font-style: italic;">/********************* ExecuteReader  ***************************/</span>
+                        conn<span style="color: #008000;">.</span><span style="color: #0000FF;">ConnectionString</span> <span style="color: #008000;">=</span> connString<span style="color: #008000;">;</span>
+                        conn<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        DbCommand cmd <span style="color: #008000;">=</span> conn<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateCommand</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #008080; font-style: italic;">//DbCommand cmd = factory.CreateCommand ();</span>
+                        <span style="color: #008080; font-style: italic;">//cmd.Connection = conn;</span>
+                        cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;select * from test&quot;</span><span style="color: #008000;">;</span>
+                        DbDataReader reader <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>DbDataReader<span style="color: #008000;">&#41;</span> cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>reader <span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                        reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/********************* ExecuteNonQuery ***************************/</span>
+                        conn<span style="color: #008000;">.</span><span style="color: #0000FF;">ConnectionString</span> <span style="color: #008000;">=</span> connString<span style="color: #008000;">;</span>
+                        <span style="color: #6666cc; font-weight: bold;">int</span> ret <span style="color: #008000;">=</span> cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteNonQuery</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;ExecuteNonQuery returned&#160;: {0}&quot;</span>, ret<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/********************* ExecuteScalar *****************************/</span>
+                        cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;select COUNT(*) from test;&quot;</span><span style="color: #008000;">;</span>
+                        <span style="color: #6666cc; font-weight: bold;">int</span> count <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span><span style="color: #008000;">&#41;</span> cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteScalar</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;ExecuteScalar returned&#160;: {0}&quot;</span>, count<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #008080; font-style: italic;">/********************* Query with parameters ********************/</span>
+                        cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">CommandText</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;select * from test where pk_tint &gt;&#160;?&quot;</span><span style="color: #008000;">;</span>
+                        DbParameter param <span style="color: #008000;">=</span> factory<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateParameter</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        param<span style="color: #008000;">.</span><span style="color: #0000FF;">ParameterName</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;id&quot;</span><span style="color: #008000;">;</span>
+                        param<span style="color: #008000;">.</span><span style="color: #0000FF;">DbType</span> <span style="color: #008000;">=</span> DbType<span style="color: #008000;">.</span><span style="color: #0000FF;">Int32</span><span style="color: #008000;">;</span>
+                        param<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Value</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">3</span><span style="color: #008000;">;</span>
+                        cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Parameters</span><span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>param<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        reader <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>DbDataReader<span style="color: #008000;">&#41;</span> cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                        <span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Read</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                                Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>reader <span style="color: #008000;">&#91;</span><span style="color: #FF0000;">0</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        <span style="color: #008000;">&#125;</span>
+                        reader<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                        conn<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Provider_Support"> Provider Support </span></h2>
+<p>Currently, following providers can be accessed through this factory model.
+</p>
+<ul><li> System.Data.SqlClient
+</li><li> System.Data.Odbc
+</li></ul>
+

@@ -1,0 +1,78 @@
+---
+layout: obsolete
+title: "Config DllMap"
+permalink: /old_site/Config_DllMap/
+---
+
+<h1>Config DllMap</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Children"><span class="tocnumber">1.1</span> <span class="toctext">Children</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Common_Problems"><span class="tocnumber">3.1</span> <span class="toctext">Common Problems</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Overview"> Overview </span></h2>
+<p>DllMaps are used to map windows library names (.dll) to linux/unix library names (usually .so).
+</p><p>DllMaps are specfied in either the mono configuration file, or in assembly configuration files.
+</p><p>The &lt;dllmap&gt; is a directive that can be used directly in the <a href="{{site.baseurl}}/Config" title="Config">&lt;configuration&gt;</a> section.
+</p>
+<h3> <span class="mw-headline" id="Children"> Children </span></h3>
+<p>The &lt;dllmap&gt; directive can be further tuned using the &lt;dllentry&gt; directive.
+</p><p>The &lt;dllentry&gt;  directive  can be used to map a specific dll/function pair to a different library and also a different function name. It should appear inside a dllmap element with only the dll attribute specified.
+</p><p>The dllentry element takes 3 attributes:
+</p>
+<ul><li> dll: This is the target library, where the function can be found.
+</li></ul>
+<ul><li> name: This is the name of the fuction as it appears in the metadata: it is the name of the P/Invoke method.
+</li></ul>
+<ul><li> target: This is the name of the function to lookup instead of the name specified in the P/Invoke method.
+</li></ul>
+<h2> <span class="mw-headline" id="Usage"> Usage </span></h2>
+<p>You use the dllmap directive to map shared libraries referenced by P/Invoke in your assemblies to a different shared library.
+</p><p>This is typically used to map Windows libraries to Unix library names.  The dllmap element takes two attributes:
+</p>
+<ul><li> dll:    This should be the same string used in the DllImport attribute.  This can be prefixed with <b>i:</b> to specify that name matching should be done in a case-insensitive fashion.
+</li><li> target: This should be the name of the library where the function can be found: this name should be suitable for  use with the platform native shared library loading routines (dlopen etc.).
+</li></ul>
+<p>Note that later entries will override the entries defined earlier in the file.
+</p><p>In Mono releases after 1.1.18, both the dllmap and dllentry elements  allow the following two attributes which make it easy to use a single configuration file and support multiple operating systems and architectures with different mapping requirements:
+</p>
+<ul><li> <b>os</b>: This is the name of the operating system for which the mapping should be applied.  Allowed values are: linux, osx, solaris, freebsd, openbsd, netbsd, windows, aix, hpux.
+</li><li> <b>cpu</b> This is the name of the architecture for which the mapping should be applied.  Allowed values are: x86, x86-64, sparc, ppc, s390, s390x, arm, mips, alpha, hppa, ia64.
+</li><li> <b>wordsize</b> you can use this to differentiate between 32 and 64 bit systems.   The possible values are&#160;: 32 and 64.
+</li></ul>
+<p>The attribute value for both attributes can be a comma-separated list of the allowed values. Additionally, the first character may be a '!' to reverse the meaning. An attribute value of "!windows,osx", for example, would mean that the entry is considered on all operating systems, except on Windows and OS X.
+</p><p>No spaces are allowed in any part of the value.
+</p>
+<h1> <span class="mw-headline" id="Example"> Example </span></h1>
+<p>The following example maps references to the `cygwin1.dll' shared library to the `libc.so.6' file:
+</p>
+<pre class="xml" style="font-family:monospace;">    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dllmap</span> <span style="color: #000066;">dll</span>=<span style="color: #ff0000;">&quot;cygwin1.dll&quot;</span> <span style="color: #000066;">target</span>=<span style="color: #ff0000;">&quot;libc.so.6&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>This one maps the following C# method:
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #008000;">&#91;</span>DllImport <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;libc&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">extern</span> <span style="color: #6666cc; font-weight: bold;">void</span> somefunction <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>to a different function in libdifferent.so, but to the same function in the library <b>libanother.so</b> when running under the Solaris and FreeBSD operating systems.
+</p>
+<pre class="xml" style="font-family:monospace;">    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dllmap</span> <span style="color: #000066;">dll</span>=<span style="color: #ff0000;">&quot;libc&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dllentry</span> <span style="color: #000066;">dll</span>=<span style="color: #ff0000;">&quot;libdifferent.so&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;somefunction&quot;</span> <span style="color: #000066;">target</span>=<span style="color: #ff0000;">&quot;differentfunction&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;dllentry</span> <span style="color: #000066;">os</span>=<span style="color: #ff0000;">&quot;solaris,freebsd&quot;</span> <span style="color: #000066;">dll</span>=<span style="color: #ff0000;">&quot;libanother.so&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;somefunction&quot;</span> <span style="color: #000066;">target</span>=<span style="color: #ff0000;">&quot;differentfunction&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/dllmap<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<h2> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h2>
+<ul><li> <a href="{{site.baseurl}}/DllNotFoundException" title="DllNotFoundException">DllNotFoundException</a>
+</li></ul>
+

@@ -1,0 +1,183 @@
+---
+layout: obsolete
+title: "XML Reader"
+permalink: /old_site/XML_Reader/
+---
+
+<h1>XML Reader</h1>
+
+<p>Reading XML Documents with XMLReader, by Atsushi Enomoto
+</p><p>Here I start XML guide from "XML Reader" interface. It is used to read XML and to provide XML information set. And then? It depends on you what could be done. 
+</p><p>If you just want to look into document structure easily, this "XML reader" won't be convenient. You can use XmlDocument or XPathNavigator. They are much easier to use. XmlReader is used widely as an XML input, so you will have to create these instances, but you won't have to "use" it unless you need good performance related to XML processing. XmlReader leaves behind almost all information what it has read, so it is suitable if you would like to handle huge XML documents. 
+</p><p>Well, to understand why I don't recommend XmlReader for easy usage, let's dive into some live code. Here is an example case that gets the latest RSS entry from Mono Website. (Note that the code might not in sync with the latest web site.) 
+</p>
+<pre>
+XmlTextReader reader = new XmlTextReader (&quot;http://www.mono-project.com/news/index.rss2&quot;);
+reader.Read ();
+Console.WriteLine (reader.NodeType); // It prints &quot;XmlDeclaration&quot;
+
+reader.MoveToContent ();
+Console.WriteLine (reader.NodeType); // It prints &quot;Element&quot;
+Console.WriteLine (reader.Name); // &quot;rss&quot;
+Console.WriteLine (reader.GetAttribute (&quot;version&quot;)); // Maybe &quot;0.92&quot;
+
+// proceed content until we reach &quot;item&quot; element
+while (!reader.EOF &amp;&amp; reader.Name&#160;!= &quot;item&quot;)
+	reader.Read ();
+
+reader.Read (); // Move from &quot;item&quot; to &quot;title&quot;
+while (reader.NodeType == XmlNodeType.Whitespace)
+	reader.Read ();
+Console.WriteLine (&quot;Title&#160;: &quot; + reader.ReadString ());
+
+reader.Read (); // from &quot;&lt;/title&gt;&quot; to whitespace
+reader.Read (); // from whitespace to &lt;link&gt;
+Console.WriteLine (&quot;Link &#160;: &quot; + reader.ReadString ());
+
+reader.Read (); // from &quot;&lt;/link&gt;&quot; to whitespace
+reader.Read (); // from whitespace to &lt;pubDate&gt;
+Console.WriteLine (&quot;Date &#160;: &quot; + reader.ReadString ());
+
+reader.Read (); // from &quot;&lt;/pubDate&gt;&quot; to whitespace
+reader.Read (); // from whitespace to &lt;description&gt;
+Console.WriteLine (&quot;Description&#160;: &quot; + reader.ReadString ());
+</pre>
+<p>Such long?? Should I really write such long code for that simple task?? No, you don't have to write such long code if you simply want to get the summary without any resouce constraints. Use XmlDocument or XPathNavigator. And yes - if you want to use XmlReader. 
+</p><p>(Well, this code is only an example and in fact it is bad code, so don't mimick it. For example, you should not rely on whitespaces existence.) 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_XmlReader_Classes"><span class="tocnumber">1</span> <span class="toctext">The XmlReader Classes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#XmlTextReader"><span class="tocnumber">1.1</span> <span class="toctext">XmlTextReader</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#XmlNodeReader"><span class="tocnumber">1.2</span> <span class="toctext">XmlNodeReader</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#XmlValidatingReader"><span class="tocnumber">1.3</span> <span class="toctext">XmlValidatingReader</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Using_XmlReader"><span class="tocnumber">2</span> <span class="toctext">Using XmlReader</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Node_information_properties"><span class="tocnumber">2.1</span> <span class="toctext">Node information properties</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Reader_methods"><span class="tocnumber">2.2</span> <span class="toctext">Reader methods</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Attribute_handling"><span class="tocnumber">2.3</span> <span class="toctext">Attribute handling</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Important_Note"><span class="tocnumber">2.4</span> <span class="toctext">Important Note</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#XML_Reader_Tips"><span class="tocnumber">3</span> <span class="toctext">XML Reader Tips</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Parsing_documents_without_namespaces"><span class="tocnumber">3.1</span> <span class="toctext">Parsing documents without namespaces</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Constructors"><span class="tocnumber">3.2</span> <span class="toctext">Constructors</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#XmlReader_and_DTD"><span class="tocnumber">3.3</span> <span class="toctext">XmlReader and DTD</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="The_XmlReader_Classes"> The XmlReader Classes </span></h1>
+<p>XmlReader is an abstract class, so you can't use it directly.  There are a few classes that extend XmlReader to provide reading functionality over streams, and over already-read documents.
+</p>
+<h2> <span class="mw-headline" id="XmlTextReader"> XmlTextReader </span></h2>
+<p>XML is tagged text markup language. You can write your custom text parser to read the content, but there is much more easy way to parse XML. You can use XmlTextReader to parse XML text data. 
+</p><p>Possible you can understand what XmlTextReader is, if you know some keywords I list here: SAX, XMLPull and StAX. XmlTextReader is kind of "pull parser." 
+</p><p>It is constructed with a file name or URI string, a Stream or a TextReader. When we haven't ever met any errors yet, it holds "current node." You can get node information from several properties such as Name, Prefix, NamespaceURI and Value. When you call Read() method, it proceeds current node to the next node. 
+</p>
+<h2> <span class="mw-headline" id="XmlNodeReader"> XmlNodeReader </span></h2>
+<p>You don't have to "read" XML documents from its text representation. It is natural that once we parsed an XML document into the document object (XmlDocument), we don't have to parse the same XML infoset again. If you want to do the similar task like such one for XmlTextReader over XmlDocument, you can use XmlNodeReader. It is created with an XmlNode, and you can get Name, Prefix, NamespaceURI and Value the same as XmlTextReader (of course, they are already available by each node's properties). 
+</p>
+<h2> <span class="mw-headline" id="XmlValidatingReader"> XmlValidatingReader </span></h2>
+<p>Mono and Microsoft.NET supports some XML "validation" feature. Mono supports DTD, XML Schema and RELAX NG as validation languages. Microsoft.NET supports DTD, XML Schema and XDR (XML Data Reduced). As for DTD and XML Schema (and XDR in Microsoft.NET), the validation feature is implemented in XmlValidatingReader. If you want to validate with RELAX NG grammar, find about RelaxngValidatingReader. 
+</p><p>== XmlReader as a common XML Reading API
+</p><p>Since these classes are very common at infoset properties and reading methods, they have common base class named XmlReader. Once you mastered XmlTextReader, you will be able to use XmlNodeReader and XmlValidatingReader. 
+</p>
+<h1> <span class="mw-headline" id="Using_XmlReader"> Using XmlReader </span></h1>
+<h2> <span class="mw-headline" id="Node_information_properties"> Node information properties </span></h2>
+<p>This section starts with its node infoset properties (somewhat boring, but it needs to be described). 
+</p><p>These properties are available for current node: 
+</p>
+<ul><li>Name: markup name (e.g. "xsl:template")  
+</li><li>LocalName: local part of the name (e.g. "template")  
+</li><li>Prefix: namespace prefix ("xsl")  
+</li><li>NamespaceURI: namespace URI declared or premised in the document ("<a href="http://www.w3.org/1999/XSL/Transform" class="external free" rel="nofollow">http://www.w3.org/1999/XSL/Transform</a>")  
+</li><li>NodeType: one of the enumerated node kind. It is described immediate below.  
+</li></ul>
+<p>Note that they are somewhat different from the W3C DOM API. For example, it never returns "#document" for the Value of a document node. 
+</p><p>Since CLI supports enum types, so node type is represented as an enum type, not likely W3C Document Object Model represents as integer. The type name is XmlNodeType. (Note that there is another XML node type named XPathNodeType.) 
+</p><p>The enumerated values are: 
+</p>
+<ul><li>None  
+</li><li>Element  
+</li><li>Attribute  
+</li><li>Text  
+</li><li>CDATA  
+</li><li>EntityReference  
+</li><li>Entity (document type definition content)  
+</li><li>ProcessingInstruction  
+</li><li>Comment  
+</li><li>Document  
+</li><li>DocumentType  
+</li><li>DocumentFragment  
+</li><li>Notation  
+</li><li>Whitespace  
+</li><li>SignificantWhitespace  
+</li><li>EndElement  
+</li><li>EndEntity  
+</li><li>XmlDeclaration  
+</li></ul>
+<p>(Looks curious? Yes, it is not compatible with W3C DOM - DOM does not contain EndElement, XmlDeclaration, Whitespace nor SignificantWhitespace. And also, it is not "Infoset" - XML Infoset is not aware of difference between Text and CDATA section.) 
+</p>
+<h2> <span class="mw-headline" id="Reader_methods"> Reader methods </span></h2>
+<p>Read() moves to the next node. Here the "next node" means: 
+</p>
+<ul><li>If current node is either a document or an element and there are one or more child nodes, then moves to the first child.  
+</li><li>Otherwise when it just reached the end of an element, then it moves to the EndElement of the node.  
+</li><li>Otherwise when it just reached the end of an expanded entity, then it moves to the EndEntity of the node.  
+</li><li>Otherwise if there is a next sibling nodes, then it moves to the next sibling.  
+</li><li>Otherwise if it is on the end of an element and there is a parent node, then it moves to the parent and goes two steps of this list back and go on.  
+</li><li>Otherwise it does not proceed.  
+</li></ul>
+<p>Note that attribute nodes are not children of the owner element node, so it never moves to attributes by Read(). If the reader is on attributes, then first it moves to the owner element and then moves to the next node above. As for how to move to attributes, it is described later. 
+</p><p>If the reader is on the Element, or on the text content, ReadString() reads its content up and return it as a string value (on the other kind of node, it does nothing). It proceeds the reader to the next node (for text content) or to the next node excluding the matching EndElement if any (for Element). 
+</p><p>ReadInnerXml() returns the markup string which represents the current node's content. ReadOuterXml() returns the markup string which represents the current node and its content. 
+</p><p>MoveToContent() is a shortcut method to reach Element, Text, CDATA, or EndElement. Skip() skips to the next node (skipping the matching EndElement of current element node if any) of the current node. 
+</p>
+<h2> <span class="mw-headline" id="Attribute_handling"> Attribute handling </span></h2>
+<p>We left attributes behind in the previous chapter. Here I describe how attributes are handled. 
+</p><p>Before starting introducing several methods, we have to describe how attributes are structured. An element node contains zero ore more attribute nodes. an attribute node contains zero or more attribute value nodes. 
+</p><p>To access attributes, there are two ways in general: 
+</p>
+<ul><li>Get attribute value string from the owner element.  
+</li><li>Navigate to an attribute node and use properties on the reader, and read attribute value string by attribue value token.  
+</li></ul>
+<p>For the first category, they simply handle attributes as containing one string value. For the second ones, they access attributes more in depth. 
+</p><p>Speaking more concretely, there are four ways to access attributes: 
+</p>
+<ul><li>Use GetAttribute() to get attribute value string from the owner element.  
+</li><li>Use indexer for XmlReader. It returns the same as GetAttribute()  
+</li><li>Use MoveToFirstAttribute() or MoveToNextAttribute() to navigate attributes in order  
+</li><li>Use MoveToAttribute() to navigate directly to the specified attribute.  
+</li></ul>
+<p>With MoveToXXX() methods, we can get several properties from XmlReader itself. And it can read each attribute value node with ReadAttributeValue() method. Actually, ReadAttributeValue() just moves to attribute value nodes, like other MoveToXXX() methods. 
+</p><p>Only Text, and EntityReference are possible to be a value node of an attribute. Inside attributes, Whitespaces are merely treated as Text. Even an empty attribute is also treated as it contains an empty string Text node. 
+</p><p>GetAttribute(), indexer and MoveToAttribute() are overloaded as to take three set of arguments. 
+</p>
+<ul><li>int index to specify ordered attribute items. (Yes, attributes are "unordered" in XML Infoset Recommendation, but XmlReader has its mandatory "order" between attributes.)  
+</li><li>a string name to specify an attribute whose markup name is identical to the argument.  
+</li><li>a pair of two string to specify local part of the name and mapped namespace URI.  
+</li></ul>
+<p>When the attribute specified by name(s) was not found, then GetAttribute() and indexer returns null, and MoveToXXX() returns false (they return a boolean value). As for int argument, they throws an exception. 
+</p>
+<h2> <span class="mw-headline" id="Important_Note"> Important Note </span></h2>
+<p>After using the reader, you have to call Close(). Especially, when you created XmlTextReader and XmlValidatingReader with file name argument, don't forget doing this. 
+</p>
+<h1> <span class="mw-headline" id="XML_Reader_Tips"> XML Reader Tips </span></h1>
+<h2> <span class="mw-headline" id="Parsing_documents_without_namespaces"> Parsing documents without namespaces </span></h2>
+<p>Sometimes (mainly for legacy documents), you might want to parse XML documents without correct namespaces. In such case, you can specify Namespaces = false on XmlTextReader. 
+</p>
+<h2> <span class="mw-headline" id="Constructors"> Constructors </span></h2>
+<p>There are many constructor overroads for XmlTextReader. As for entire XML document, it can be created from string URI, Stream or TextReader, with optional XmlNameTable and optional BaseURI (it is mainly useful with Stream or TextReader). 
+</p><p>Alternatively, it can be created from XML content string, with NodeType and XmlParserContext arguments. XmlTextReader can be used to parse XML fragments. This constructor provides easy ways to parse an attribute or element content. It is actually used internally for DOM value setters. 
+</p>
+<h2> <span class="mw-headline" id="XmlReader_and_DTD"> XmlReader and DTD </span></h2>
+<p>DTD (Document Type Definition) is used to constrain xml structure. It is not namespace-aware so it is not so recommended way to use it, but it had been commonly-used (since SGML, one of the ancestor of XML, have required DTD by design). 
+</p><p>You might not know, but DTD does not only affect to "validity", but also to "well-formedness", so XmlTextReader which only supports well formedness check also consumes DTD. 
+</p><p>If you don't want to read external DTD resources which might affect to the parser performance, you can set XmlResolver = null. 
+</p><p>If you don't want to be reported any validation errors, you can specify ValidationEventHandler to XmlValidatingReader, or ValidationType = ValidationType.None. When you set the handler, it will never throw more validation errors unless you re-throw that error in your delegated method. Note that you cannot recover from any well-formedness errors.
+</p>

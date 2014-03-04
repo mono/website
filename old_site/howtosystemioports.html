@@ -1,0 +1,108 @@
+---
+layout: obsolete
+title: "HowToSystemIOPorts"
+permalink: /old_site/HowToSystemIOPorts/
+---
+
+<h1>HowToSystemIOPorts</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Limitations"><span class="tocnumber">2</span> <span class="toctext">Limitations</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Example_Code"><span class="tocnumber">3</span> <span class="toctext">Example Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Related_Links"><span class="tocnumber">4</span> <span class="toctext">Related Links</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Further_Questions"><span class="tocnumber">5</span> <span class="toctext">Further Questions</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>This is to show people how to use System.IO.Ports in older versions of Mono, such as 1.2.x. It *is* possible to read and write to a serial port (RS-232) with Mono.
+</p>
+<h2> <span class="mw-headline" id="Limitations"> Limitations </span></h2>
+<p>At the time of this writing, there are a a few limitations that one must take note:
+</p><p>1) <b>There is no event notification for received serial data</b>. 
+If you want to receive data, one must set a timeout and watch for received data by polling ReadByte() when you think there might be data.
+</p><p>2) <b>One must Read data in <i>byte[]</i> format only -- there is no <i>char[]</i>  support</b>. 
+You must do your own reading of bytes and translate that into your encoding.
+</p><p>3) <b>DiscardNull, ParityReplace, ReceivedBytesThreshold</b> are not implemented.
+</p>
+<h2> <span class="mw-headline" id="Example_Code"> Example Code </span></h2>
+<p>This example code can be used to test a connection with a serial modem connected to /dev/ttyS0
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.IO.Ports</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> SerialPortTest
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		SerialPortTest myTest <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SerialPortTest<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		myTest<span style="color: #008000;">.</span><span style="color: #0000FF;">Test</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> SerialPort mySerial<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #008080; font-style: italic;">// Constructor</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> SerialPortTest<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Test<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>mySerial <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span>
+			<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">IsOpen</span><span style="color: #008000;">&#41;</span>
+				mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">Close</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		mySerial <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SerialPort<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/dev/ttyS0&quot;</span>, <span style="color: #FF0000;">38400</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">Open</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadTimeout</span> <span style="color: #008000;">=</span> <span style="color: #FF0000;">400</span><span style="color: #008000;">;</span>
+		SendData<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;ATI3<span style="color: #008080; font-weight: bold;">\r</span>&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                <span style="color: #008080; font-style: italic;">// Should output some information about your modem firmware</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span><span style="color: #008000;">&#40;</span>ReadData<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>  
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> ReadData<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #6666cc; font-weight: bold;">byte</span> tmpByte<span style="color: #008000;">;</span>
+		<span style="color: #6666cc; font-weight: bold;">string</span> rxString <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		tmpByte <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#41;</span> mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadByte</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">while</span> <span style="color: #008000;">&#40;</span>tmpByte <span style="color: #008000;">!=</span> <span style="color: #FF0000;">255</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			rxString <span style="color: #008000;">+=</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">char</span><span style="color: #008000;">&#41;</span> tmpByte<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			tmpByte <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">byte</span><span style="color: #008000;">&#41;</span> mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadByte</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>			
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">return</span> rxString<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">bool</span> SendData<span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> Data<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		mySerial<span style="color: #008000;">.</span><span style="color: #0000FF;">Write</span><span style="color: #008000;">&#40;</span>Data<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>		
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Save this code to a file (such as SerialExample.cs).
+</p><p>Then, you can type:
+</p>
+<pre class="bash" style="font-family:monospace;">gmcs SerialExample.cs</pre>
+<p>and then
+</p>
+<pre class="bash" style="font-family:monospace;">mono SerialExample.exe</pre>
+<p>Provided you are properly connected to an active serial modem, you should see output similar to the following:
+</p>
+<pre class="bash" style="font-family:monospace;">$ mono SerialExample.exe 
+&#160;
+Sportster <span style="color: #000000;">14</span>,<span style="color: #000000;">400</span><span style="color: #000000; font-weight: bold;">/</span>FAX RS Rev. <span style="color: #000000;">1.5</span>
+&#160;
+OK</pre>
+<p>Congratulations! You have now accessed your first serial device on Linux with Mono!
+</p>
+<h2> <span class="mw-headline" id="Related_Links"> Related Links </span></h2>
+<p>Here are some links that I have found helpful, and you might as well.
+</p><p><a href="http://sourceforge.net/projects/serialportnet/" class="external text" rel="nofollow">.NET Serial Port Library</a> This project aims to implement the complete System.IO.Ports namespace for .NET 1.1. Note: currently it doesn't play very nicely with Mono, but it may be worth checking out. I think Yurocheck has a great thing going with this.
+</p>
+<h2> <span class="mw-headline" id="Further_Questions"> Further Questions </span></h2>
+<p>I spent a fair bit of time learning how to do this and collecting little bits of information. I'm by no means an expert, but if you need further help, you can sometimes find me (HanClinto) hanging out on the chatroom #mono on ircd.gimp.org. Cheers!
+</p>

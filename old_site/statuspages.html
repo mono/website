@@ -1,0 +1,33 @@
+---
+layout: obsolete
+title: "StatusPages"
+permalink: /old_site/StatusPages/
+---
+
+<h1>StatusPages</h1>
+
+<p>We keep track of the differences between the major APIs between Mono and .NET in our class status pages, check:
+</p><p><a href="http://go-mono.com/status/" class="external free" rel="nofollow">http://go-mono.com/status/</a>
+</p><p>The above web site compares the results from our <a href="http://wrench.mono-project.com/builds" class="external text" rel="nofollow">continuous builds</a> against the public definitions of various APIs available in .NET.
+</p>
+<h2> <span class="mw-headline" id="Comparing_Locally"> Comparing Locally </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a href="{{site.baseurl}}/images/old_site/e/e9/Screenshot24.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/e/e9/Screenshot24.png" width="240" height="222" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/e/e9/Screenshot24.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Native Client GUI Compare</div></div></div>
+<p>You can compare the API status on your system (for example, if you are a developer) using the tool `gui-compare' that is shipped with the mono-tools package.   
+</p><p><b>gui-compare</b> will download the reference API description from Mono's site, and compare those against any assemblies that you have installed on your system.
+</p><p>In addition, it is possible to use <b>gui-compare</b> to compare assemblies against assemblies (for example to determine the changes from 1.0 to 2.0 for example) or to use it to compare an assembly against a masterinfo (a masterinfo is a description of a public API in XML form) or to compare two masterinfo definitions (again, to compare two public descriptions of an API).
+</p>
+<h2> <span class="mw-headline" id="Generating_class_status_pages_for_your_own_assemblies"> Generating class status pages for your own assemblies</span></h2>
+<p>See <a href="{{site.baseurl}}/Generating_class_status_pages" title="Generating class status pages">Generating class status pages</a> for instructions.
+</p>
+<h2> <span class="mw-headline" id="MasterInfos"> MasterInfos </span></h2>
+<p>These are the files we compare to when generating our class status pages (we call them "masterinfos") and they represent the Microsoft API for each one of the official releases (2.0, 3.0, 3.5sp1, 4.0, 4.5 and Silverlight 2.0)
+</p>
+<ul><li> <a href="http://go-mono.com/masterinfos/2.8/masterinfos-2.0.tar.gz" class="external text" rel="nofollow">masterinfos-2.0.tar.gz</a>
+</li><li> <a href="http://go-mono.com/masterinfos/2.8/masterinfos-3.0.tar.gz" class="external text" rel="nofollow">masterinfos-3.0.tar.gz</a>
+</li><li> <a href="http://go-mono.com/masterinfos/2.8/masterinfos-3.5.tar.gz" class="external text" rel="nofollow">masterinfos-3.5.tar.gz</a>
+</li><li> <a href="http://go-mono.com/masterinfos/2.8/masterinfos-4.0.tar.gz" class="external text" rel="nofollow">masterinfos-4.0.tar.gz</a>
+</li><li> <a href="http://go-mono.com/masterinfos/2.8/masterinfos-4.5.tar.gz" class="external text" rel="nofollow">masterinfos-4.5.tar.gz</a>
+</li></ul>
+<ul><li> <a href="http://mono.ximian.com/masterinfos/2.4/masterinfos-SL2.tar.gz" class="external text" rel="nofollow">masterinfos-SL2.tar.gz</a>
+</li></ul>
+

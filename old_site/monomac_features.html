@@ -1,0 +1,97 @@
+---
+layout: obsolete
+title: "MonoMac/Features"
+permalink: /old_site/MonoMac/Features/
+---
+
+<h1>MonoMac/Features</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Features"><span class="tocnumber">1</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Automatic_Memory_Management"><span class="tocnumber">1.1</span> <span class="toctext">Automatic Memory Management</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Type_Safety"><span class="tocnumber">1.2</span> <span class="toctext">Type Safety</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C.23_3.0"><span class="tocnumber">1.3</span> <span class="toctext">C# 3.0</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Use_Mac_OS_X_APIs"><span class="tocnumber">1.4</span> <span class="toctext">Use Mac OS X APIs</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Access_to_third_party_iPhone.2FObjective-C_Libraries"><span class="tocnumber">1.5</span> <span class="toctext">Access to third party iPhone/Objective-C Libraries</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#MonoDevelop_Integration"><span class="tocnumber">1.6</span> <span class="toctext">MonoDevelop Integration</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Interface_Builder_Integration"><span class="tocnumber">1.7</span> <span class="toctext">Interface Builder Integration</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Features">Features</span></h1>
+<h2> <span class="mw-headline" id="Automatic_Memory_Management">Automatic Memory Management</span></h2>
+<p>Mono comes with a garbage collector that allows developers to focus on their software and let the runtime take care of the bookkeeping required to release objects. This avoids common memory leaks and reduces the amount of code that needs to be written to avoid these leaks.
+</p>
+<h2> <span class="mw-headline" id="Type_Safety">Type Safety</span></h2>
+<p>The C# language in combination with the ECMA runtime prevent a whole class of errors from your application. With C# the common errors of reusing disposed objects accidentally, overflowing a buffer, casting an object into the wrong type (leading to corruption), releasing the memory twice or keeping dangling objects are a thing of the past.
+</p>
+<h2> <span class="mw-headline" id="C.23_3.0">C# 3.0</span></h2>
+<p>The C# 3.0 language is a rich high-level language that brings many constructs that improve programmer productivity.
+</p><p>In addition to traditional object oriented languages, C# offers many interesting new constructs: type safe generic types, automatic state machines created with iterators, lambda functions and anonymous methods, built-in properties and built-in event systems as well as the System.Linq namespace that allows developers to create functional programming constructs.
+</p><p>The terse syntax allows configurations of objects in one pass:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">var</span> slider <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> UISlider <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> RectangleF <span style="color: #008000;">&#40;</span>174f, 12f, 120f, 7f<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+	BackgroundColor <span style="color: #008000;">=</span> UIColor<span style="color: #008000;">.</span><span style="color: #0000FF;">Clear</span>,
+	MinValue <span style="color: #008000;">=</span> 0f,
+	MaxValue <span style="color: #008000;">=</span> 100f,
+	Continuous <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span>,
+	<span style="color: #0600FF; font-weight: bold;">Value</span> <span style="color: #008000;">=</span> 50f,
+	Tag <span style="color: #008000;">=</span> kViewTag
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+slider<span style="color: #008000;">.</span><span style="color: #0000FF;">ValueChanged</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+	Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;New value {0}&quot;</span>, slider<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Value</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span></pre>
+<h2> <span class="mw-headline" id="Use_Mac_OS_X_APIs">Use Mac OS X APIs</span></h2>
+<p>MonoMac binds the Objective-C APIs that developers use on the Mac into <a href="/index.php?title=MonoMac/API_C&amp;action=edit&amp;redlink=1" class="new" title="MonoMac/API C (page does not exist)">MonoMac/API C# APIs</a> that expose the functionality and map this to any ECMA CIL powered language. Objective-C delegates are exposed to C# applications <a href="/index.php?title=MonoMac/API&amp;action=edit&amp;redlink=1" class="new" title="MonoMac/API (page does not exist)">MonoMac/API#Delegates in a number of ways</a> giving developers complete control of how to consume and integrate with native APIs.
+</p><p>MonoMac provides a C#/ECMA binding for:
+</p>
+<ul>
+    <li>Addressbook and AddressbookUI</li>
+    <li>AudioToolbox</li>
+    <li>AVFoundation</li>
+    <li>CoreAnimation/Quartz</li>
+    <li>CoreGraphics/Quartz</li>
+    <li>CoreLocation</li>
+    <li>CoreMotion</li>
+    <li>EventKit and EventKitUI</li>
+    <li>ExternalAccessory</li>
+    <li>Foundation and CoreFoundation</li>
+    <li>GameKit</li>
+    <li>OpenGL ES 1.1 and OpenGL&#160;ES 2.0</li>
+    <li>QuickLook</li>
+    <li>MediaPlayer</li>
+    <li>MessageUI</li>
+    <li>SystemConfiguration</li>
+</ul>
+<p>From the pure C#-based event model to the native Objective-C system, the two mechanisms are supported.
+</p><p>For example, to respond to events, programmers can just connect to the events they are interested in:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">var</span> page <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> UIPageControl <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> RectangleF <span style="color: #008000;">&#40;</span>120f, 14f, 178f, 20f<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+	BackgroundColor <span style="color: #008000;">=</span> UIColor<span style="color: #008000;">.</span><span style="color: #0000FF;">Gray</span>,
+	Pages <span style="color: #008000;">=</span> <span style="color: #FF0000;">10</span>,
+	Tag <span style="color: #008000;">=</span> kViewTag
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+&#160;
+page<span style="color: #008000;">.</span><span style="color: #0000FF;">TouchUpInside</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+	Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Current page: {0}&quot;</span>, page<span style="color: #008000;">.</span><span style="color: #0000FF;">CurrentPage</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span></pre>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Access_to_third_party_iPhone.2FObjective-C_Libraries">Access to third party iPhone/Objective-C Libraries</span></h2>
+<p>MonoMac allows you to access libraries created in the Objective-C language for the Mac easily and to create C#/.NET bindings to Objective-C libraries.
+</p><p>This process is described in detail in our <a href="/index.php?title=MonoMac/Binding_New_Objective-C_Types_Binding_Objective-C&amp;action=edit&amp;redlink=1" class="new" title="MonoMac/Binding New Objective-C Types Binding Objective-C (page does not exist)">MonoMac/Binding_New_Objective-C_Types Binding Objective-C</a> libraries.
+</p>
+<h2> <span class="mw-headline" id="MonoDevelop_Integration">MonoDevelop Integration</span></h2>
+<p>MonoMac is an SDK that can be used with your favorite editor, be it a full integrated development environment or a simple text editor.
+</p><p>MonoDevelop's code completion helps you quickly explore the API as you write your application:
+&lt;img src="<a href="http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png" class="external free" rel="nofollow">http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png</a>" style="width: 644px; height: 267px;" alt="Md_hw_iphone19.png" class="internal default" /&gt;
+</p><p>Our tutorial <a href="/index.php?title=MonoMac/Tutorials/MonoDevelop_HelloWorld_walks_you_through_creating_your_first_MonoMac_application&amp;action=edit&amp;redlink=1" class="new" title="MonoMac/Tutorials/MonoDevelop HelloWorld walks you through creating your first MonoMac application (page does not exist)">MonoMac/Tutorials/MonoDevelop_HelloWorld walks you through creating your first MonoMac application</a>.
+</p>
+<h2> <span class="mw-headline" id="Interface_Builder_Integration">Interface Builder Integration</span></h2>
+<p>Both MonoDevelop and the MonoMac SDK allow you to use Interface Builder to create and customize your UIs.
+</p><p>We take Interface Builder one step further than XCode does by making MonoMac automatically bind any outlets you define on your interface and any methods that you define in your interface to your C# code.
+</p><p>You will never have to manually bind any outlets from Interface Builder to your code as MonoMac takes care of this.
+</p>

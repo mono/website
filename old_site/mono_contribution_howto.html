@@ -1,0 +1,121 @@
+---
+layout: obsolete
+title: "Mono Contribution HOWTO"
+permalink: /old_site/Mono_Contribution_HOWTO/
+---
+
+<h1>Mono Contribution HOWTO</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_little_help_for_mono_newbie_coders"><span class="tocnumber">1</span> <span class="toctext">A little help for mono newbie coders</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_NUnit_Tests_Guidelines_document"><span class="tocnumber">2</span> <span class="toctext">The NUnit Tests Guidelines document</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Getting_Started"><span class="tocnumber">3</span> <span class="toctext">Getting Started</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Provide_an_unique_error_message_for_Assert.28.29"><span class="tocnumber">4</span> <span class="toctext">Provide an unique error message for Assert()</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Use_AssertEquals.28.29_to_compare_things.2C_not_Assert.28.29"><span class="tocnumber">5</span> <span class="toctext">Use AssertEquals() to compare things, not Assert()</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Constructors"><span class="tocnumber">6</span> <span class="toctext">Constructors</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Namespace"><span class="tocnumber">7</span> <span class="toctext">Namespace</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Test_your_test_with_the_microsoft_runtime"><span class="tocnumber">8</span> <span class="toctext">Test your test with the microsoft runtime</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Miscellaneous_Tips"><span class="tocnumber">9</span> <span class="toctext">Miscellaneous Tips</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="A_little_help_for_mono_newbie_coders"> A little help for mono newbie coders </span></h2>
+<p>For those who are new to Mono and are impatient to contribute with code (uhh... you are brave!!) here is the document you should read.
+</p><p>You will see all Mono hackers say the same (great minds have similar way of thinking): First, DO WRITE TESTS!!!. In order to do that:
+</p>
+<ul><li> Start with the NUnit Tests Guidelines. In the mono source tree they are located at: mcs/class/doc/NUnitGuideli...
+</li></ul>
+<ul><li> But wait, this is a document for impatient people. So EVERYTHING should be here. Well, it is.
+</li></ul>
+<h2> <span class="mw-headline" id="The_NUnit_Tests_Guidelines_document"> The NUnit Tests Guidelines document </span></h2>
+<p><i>Mono NUnit Test Guidelines and Best Practices
+</p><p>Authors: Nick Drochak &lt;ndrochak@gol.com&gt; Martin Baulig &lt;martin@gnome.org&gt; Last Update: 2002-03-02 Rev: 0.3</i>
+</p><p><b>Purpose</b>
+</p><p>This document captures all the good ideas people have had about writing NUnit tests for the mono project. This document will be useful for anyone who writes or maintains unit tests. 
+</p><p><b>Other resources</b>
+</p>
+<ul><li> mcs/class/README has an explanation of the build process and how it relates to the tests. 
+</li><li> <a href="http://nunit.sourceforge.net" class="external free" rel="nofollow">http://nunit.sourceforge.net</a> is the place to find out about NUnit
+</li></ul>
+<h2> <span class="mw-headline" id="Getting_Started"> Getting Started </span></h2>
+<ul><li> If you are new to writing NUnit tests, there is a template you may use to help get started. The file is: <a href="{{site.baseurl}}/TemplateTest.cs" title="TemplateTest.cs">TemplateTest.cs</a>
+</li></ul>
+<ul><li> Just a reminder to copy/paste this file it in another buffer. And keep reading. You can get it here or at the end of the guidelines in the Testing Tips section)
+</li></ul>
+<p>Save a copy of this file in the appropriate test subdirecty (see below), and replace all the [text] markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them.
+</p><p><a href="{{site.baseurl}}/CollectionBaseTest.cs" title="CollectionBaseTest.cs">CollectionBaseTest.cs</a>
+</p><p>The directory that will contain your new file depends on the assembly/namespace of the class for which you are creating the tests. Under mcs/class there is a directory for each assembly. In each assembly there is a Test directory, e.g. mcs/class/corlib/Test. In the Test directory there are sub-directories for each namespace in the assembly, e.g. mcs/class/corlib/Test/Sytem. Put your new test file in the appropriate sub-directory under Test for the class you are testing.
+</p><p>Once your test class is complete, you need to add it to the AllTests.cs file in the same directory as your new test. Add a call to "suite.AddTest()" passing the name of your new test class's suite property as the parameter. You will see examples in the AllTests.cs file, so just copy and paste inside there. 
+</p><p>Once all of that is done, you can do a 'make test' from the top mcs directory. Your test class will be automagically included in the build and the tests will be run along with all the others.
+</p>
+<h2> <span class="mw-headline" id="Provide_an_unique_error_message_for_Assert.28.29"> Provide an unique error message for Assert() </span></h2>
+<p>Include an unique message for each Assert() so that when the assert fails, it is trivial to locate the failing one. Otherwise, it may be difficult to determine which part of the test is failing. A good way to ensure unique messages is to use something like #A01, #A02 etc.
+</p><p>Bad:
+</p>
+<pre>
+AssertEquals(&quot;array match&quot;, compare[0], i1[0]);
+AssertEquals(&quot;array match&quot;, compare[1], i1[1]);
+AssertEquals(&quot;array match&quot;, compare[2], i1[2]);
+AssertEquals(&quot;array match&quot;, compare[3], i1[3]);
+</pre>
+<p>Good:
+</p>
+<pre>
+AssertEquals(&quot;#A01&quot;, compare[0], i1[0]); 
+AssertEquals(&quot;#A02&quot;, compare[1], i1[1]); 
+AssertEquals(&quot;#A03&quot;, compare[2], i1[2]); 
+AssertEquals(&quot;#A04&quot;, compare[3], i1[3]);
+</pre>
+<p>Once you used such a number in an Assert(), don't change it later on - people might use it it identify the test in bug reports or in mailing lists.
+</p>
+<h2> <span class="mw-headline" id="Use_AssertEquals.28.29_to_compare_things.2C_not_Assert.28.29"> Use AssertEquals() to compare things, not Assert() </span></h2>
+<p>Never compare two values with Assert() - if the test fails, people have no idea what went wrong while AssertEquals() reports the failed value.
+</p><p>Bad:
+</p>
+<pre>
+Assert (&quot;A01&quot;, myTicks[0] == t1.Ticks);
+</pre>
+<p>Good:
+</p>
+<pre>
+AssertEquals (&quot;A01&quot;, myTicks[0], t1.Ticks);
+</pre>
+<h2> <span class="mw-headline" id="Constructors"> Constructors </span></h2>
+<p>When writing your testcase, please make sure to provide a constructor which takes no arguments:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> DateTimeTest <span style="color: #008000;">:</span> TestCase <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> DateTimeTest<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;[MonoTests.System.DateTimeTest]&quot;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">&#125;</span> 
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> DateTimeTest <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">&#41;</span><span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">base</span><span style="color: #008000;">&#40;</span>name<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span><span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> ITest Suite <span style="color: #008000;">&#123;</span>
+       <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+           TestSuite suite <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TestSuite <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+           <span style="color: #0600FF; font-weight: bold;">return</span> suite<span style="color: #008000;">;</span>
+       <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Namespace"> Namespace </span></h2>
+<p>Please keep the namespace within each test directory consistent - all tests which are referenced in the same AllTests.cs must be in the same namespace. Of course you can use subnamespaces as you like - especially for subdirectories of your testsuite.
+For instance, if your AllTests.cs is in namespace "MonoTests" and you have a subdirectory called "System", you can put all the tests in that dir into namespace "MonoTests.System".
+</p>
+<h2> <span class="mw-headline" id="Test_your_test_with_the_microsoft_runtime"> Test your test with the microsoft runtime </span></h2>
+<p>If possible, try to run your testsuite with the Microsoft runtime on Windows and make sure all tests in it pass. This is especially important if you're writing a totally new testcase - without this check you can never be sure that your testcase contains no bugs 
+</p><p>Don't worry if you're writing your test on Linux, other people can test it for you on Windows.
+</p><p>Sometimes you may discover that a test doesn't show the expected result when run with the Microsoft runtime - either because there is a bug in their runtime or something is misleading or wrong in their documentation. In this case, please put a detailed description of the problem to mcs/class/doc/API-notes and do also report it to the list - we'll forward this to the Microsoft people from time to time to help them fix their documentation and runtime.
+</p><p>On Windows, you can simply use "make run-test-ondotnet" to run class libraries tests under Microsoft runtime.
+</p>
+<h2> <span class="mw-headline" id="Miscellaneous_Tips"> Miscellaneous Tips </span></h2>
+<ul><li> If you use Emacs, you might want to use the .emacs file and the package developed by Brad Merrill <a href="mailto:zbrad@cybercom.net" class="external free" rel="nofollow">mailto:zbrad@cybercom.net</a>. It will allow you to highlight and indent in C# style in your Emacs editor. (XEmacs will still work but it'll also complain).
+</li></ul>
+<ul><li> <a href="http://monodevelop.com" class="external text" rel="nofollow">MonoDevelop</a> is a GPLed IDE developed by IC#Code (SharpDevelop) and ported to Mono/Gtk#.
+</li></ul>
+<ul><li> For those who Java: <a href="http://www.25hoursaday.com/CsharpVsJava.html" class="external text" rel="nofollow">A comparison of Microsoft's C# programming language to Sun Microsystem's Java Programming language</a> by Dare Obasanjo is a really good (very complete) text to read.
+</li></ul>
+<ul><li> Suggest this point and more, now I can't think of anything more.
+</li></ul>
+<p>Enjoy!!.
+</p><p><i>(c) 2002, <a href="mailto:jaime@geneura.ugr.es" class="external text" rel="nofollow">Jaime Anguiano Olarra</a>.</i>
+</p><p><i>The parts included in this document are property of their respective authors.</i>
+</p><p><i>Note: The identation of the source code has been changed a bit so it could fit better in the website. Anyway, as nothing more changed, the files should work as expected.</i>
+</p>

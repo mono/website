@@ -1,0 +1,307 @@
+---
+layout: obsolete
+title: "Linear IR"
+permalink: /old_site/Linear_IR/
+---
+
+<h1>Linear IR</h1>
+
+<p>This document describes Mono's new JIT engine based on a rewrite to use a linear Intermediate Representation instead of the tree-based intermediate representation that was used up to Mono 2.0.    
+</p><p><br />
+You might also want to check <a href="{{site.baseurl}}/Mono:Runtime:Documentation" title="Mono:Runtime:Documentation">Mono's Runtime Documentation</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Intermediate_Representation_.28IR.29"><span class="tocnumber">1</span> <span class="toctext">Intermediate Representation (IR)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Opcodes"><span class="tocnumber">1.1</span> <span class="toctext">Opcodes</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#High.2Flow_level_IR"><span class="tocnumber">1.2</span> <span class="toctext">High/low level IR</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Representation_of_IR_instructions"><span class="tocnumber">1.3</span> <span class="toctext">Representation of IR instructions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Virtual_Registers_.28Vregs.29"><span class="tocnumber">2</span> <span class="toctext">Virtual Registers (Vregs)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Local_Vregs_.28lvreg.29"><span class="tocnumber">2.1</span> <span class="toctext">Local Vregs (lvreg)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Global_Vregs"><span class="tocnumber">2.2</span> <span class="toctext">Global Vregs</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Motivation"><span class="tocnumber">2.3</span> <span class="toctext">Motivation</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Transitioning_between_the_two_states"><span class="tocnumber">2.4</span> <span class="toctext">Transitioning between the two states</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#JIT_Passes"><span class="tocnumber">3</span> <span class="toctext">JIT Passes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Method-to-IR"><span class="tocnumber">3.1</span> <span class="toctext">Method-to-IR</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Decompose-Long-Opts"><span class="tocnumber">3.2</span> <span class="toctext">Decompose-Long-Opts</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Local_Copy.2FConstant_Propagation"><span class="tocnumber">3.3</span> <span class="toctext">Local Copy/Constant Propagation</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Branch_Optimizations"><span class="tocnumber">3.4</span> <span class="toctext">Branch Optimizations</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Handle-Global-Vregs"><span class="tocnumber">3.5</span> <span class="toctext">Handle-Global-Vregs</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Local_Dead_Code_Elimination"><span class="tocnumber">3.6</span> <span class="toctext">Local Dead Code Elimination</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Decompose_VType_Opts"><span class="tocnumber">3.7</span> <span class="toctext">Decompose VType Opts</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#SSA_Optimizations"><span class="tocnumber">3.8</span> <span class="toctext">SSA Optimizations</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Liveness_Analysis"><span class="tocnumber">3.9</span> <span class="toctext">Liveness Analysis</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Global_Register_Allocation"><span class="tocnumber">3.10</span> <span class="toctext">Global Register Allocation</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Allocate_Vars"><span class="tocnumber">3.11</span> <span class="toctext">Allocate Vars</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Spill_Global_Vars"><span class="tocnumber">3.12</span> <span class="toctext">Spill Global Vars</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Handling_longs_on_32_bit_machines"><span class="tocnumber">4</span> <span class="toctext">Handling longs on 32 bit machines</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#Handling_valuetypes"><span class="tocnumber">5</span> <span class="toctext">Handling valuetypes</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Porting_an_existing_backend_to_the_new_IR"><span class="tocnumber">6</span> <span class="toctext">Porting an existing backend to the new IR</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Benchmark_results"><span class="tocnumber">7</span> <span class="toctext">Benchmark results</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#Improvements_compared_to_the_Mono_1.x_and_Mono_2.0_JITs"><span class="tocnumber">8</span> <span class="toctext">Improvements compared to the Mono 1.x and Mono 2.0 JITs</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Intermediate_Representation_.28IR.29"> Intermediate Representation (IR) </span></h2>
+<p>The IR used by the JIT is standard three address code:
+</p><p>OP dreg &lt;- sreg1 sreg2
+</p><p>Here dreg, sreg1, sreg2 are virtual registers (vregs). OP is an opcode. For example:
+</p>
+<pre>int_add R5 &lt;- R6 R7</pre>
+<h3> <span class="mw-headline" id="Opcodes"> Opcodes </span></h3>
+<p>The opcodes used by the JIT are defined in the <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/mini/mini-ops.h?view=markup" class="external text" rel="nofollow">mini-ops.h</a> file. Each opcode has a value which is a C constant, a name, and some metadata containing information about the opcode like the type of its arguments and its return value. An example:
+</p>
+<pre>MINI_OP(OP_IADD, &quot;int_add&quot;, IREG, IREG, IREG)</pre>
+<p>The opcodes conform to the following naming conventions:
+</p>
+<ul><li> CEE_... opcodes are the original opcodes defined in the IL stream. The first pass of the JIT transforms these opcodes to the corresponding OP_ opcodes so CEE_ opcodes do not occur in the intermediate code. Correspondingly, they have no opcode metadata, and are not listed in mini-ops.h.
+</li><li> OP_&lt;XX&gt; opcodes are either size agnostic, like OP_THROW, or operate on the natural pointer size of the machine, ie. OP_ADD adds two pointer size integers.
+</li><li> OP_I&lt;XXX&gt; opcodes work on 32 bit integers, ie. vregs of type STACK_I4.
+</li><li> OP_L&lt;XXX&gt; opcodes work on 64 bit integers, ie. vregs of type STACK_I8.
+</li><li> OP_F&lt;XXX&gt; opcodes work on 64 bit floats, i.e. vregs of type STACK_R8.
+</li><li> OP_V&lt;XXX&gt; opcodes work on valuetypes.
+</li><li> OP_P&lt;XXX&gt; opcodes are macros which map to either OP_I&lt;XXX&gt; or OP_L&lt;XXX&gt; opcodes depending on whenever the architecture is 32 or 64 bits.
+</li></ul>
+<h3> <span class="mw-headline" id="High.2Flow_level_IR"> High/low level IR </span></h3>
+<p>&lt;......&gt;
+</p>
+<h3> <span class="mw-headline" id="Representation_of_IR_instructions"> Representation of IR instructions </span></h3>
+<p>Each IR instruction is represented by a MonoInst structure. The fields of the structure are used as follows:
+</p>
+<ul><li> ins-&gt;opcode contains the opcode of the instruction. It is always set.
+</li></ul>
+<ul><li> ins-&gt;dreg, ins-&gt;sreg1, ins-&gt;sreg2 contain the the destination and source vregs of the instruction. If the instruction doesn't have a destination/and our source, the corresponding field is set to -1.
+</li></ul>
+<ul><li> ins-&gt;backend is used for various purposes:
+<ul><li> for MonoInst's representing vtype variables, it indicates that the variable is in unmanaged format (used during marshalling)
+</li><li> instructions which operate on a register pair use it for storing the third input register of the instruction.
+</li><li> some opcodes, like X86_LEA use it for storing auxiliary information
+</li></ul>
+</li></ul>
+<ul><li> ins-&gt;next and ins-&gt;prev are used for linking the instructions.
+</li></ul>
+<ul><li> ins-&gt;ssa_op -&gt; not used anymore
+</li></ul>
+<ul><li> ins-&gt;cil_code -&gt; Points to the IL instructions this ins belongs to. Used for generating native offset-&gt; IL offset maps for debugging support.
+</li></ul>
+<ul><li> ins-&gt;flags is used for storing various flags
+</li></ul>
+<ul><li> ins-&gt;type and ins-&gt;klass contain type information for the result of the instruction. These fields are only used during the method_to_ir () pass.
+</li></ul>
+<p>In addition to the fields above, each MonoInst structure contains two pointer sized fields which can be used by the instruction for storing arbitrary data. They can be accessed using a set of inst_&lt;XXX&gt; macros.
+</p><p>Some guidelines for their usage are as follows:
+</p>
+<ul><li> OP_&lt;XXX&gt;_IMM macros store their immediate argument in inst_imm.
+</li><li> OP_&lt;XXX&gt;_MEMBASE macros store the basereg in inst_basereg (sreg1), and the displacement in inst_offset.
+</li><li> OP_STORE&lt;XXX&gt;_MEMBASE macros store the basereg in inst_destbasereg (dreg), and the displacement in inst_offset. This has historical reasons since the dreg is not modified by the instruction.
+</li></ul>
+<h2> <span class="mw-headline" id="Virtual_Registers_.28Vregs.29"> Virtual Registers (Vregs) </span></h2>
+<p>All IR instructions work on vregs. A vreg is identified by an index. A vreg also has a type, which is one of the MonoStackType enumeration values. This type is implicit, i.e. it is not stored anywhere. Rather, the type can be deduced from the opcodes which work on the vreg, i.e. the arguments of the OP_IADD opcode are of type STACK_I4. 
+</p><p>There are two types of vregs used inside the JIT: Local and Global. They have the following differences:
+</p>
+<h3> <span class="mw-headline" id="Local_Vregs_.28lvreg.29"> Local Vregs (lvreg) </span></h3>
+<ul><li> are local to a basic block
+</li><li> are lightweight: allocating an lvreg is equivalent to increasing a counter, and they don't consume any memory.
+</li><li> some optimization passes like local_deadce operate only on local vregs
+</li><li> local vregs are assigned to hard registers (hregs) by the local register allocator. They do not participate in liveness analysis, and in global register allocation.
+</li><li> they have no address, i.e. it is not possible to take their address
+</li><li> they cannot be volatile
+</li></ul>
+<h3> <span class="mw-headline" id="Global_Vregs"> Global Vregs </span></h3>
+<ul><li> are heavyweight: allocating them is slower, and they consume memory. Each global vreg has an entry in the cfg-&gt;varinfo and cfg-&gt;vars arrays.
+</li><li> global vregs are either allocated to hard registers during global register allocation, or are allocated to stack slots.
+</li><li> they have an address, so it is possible to apply the LDADDR operator to them.
+</li><li> The mapping between global vregs and their associated entry in the cfg-&gt;varinfo array is done by the cfg-&gt;vreg_to_inst array. There is a macro called get_vreg_to_inst () which indexes into this array. A vreg vr is global if get_vreg_to_inst (cfg, vr) returns non NULL.
+</li></ul>
+<h3> <span class="mw-headline" id="Motivation"> Motivation </span></h3>
+<p>The JIT allocates a large number of vregs. Most of these are created during the MSIL-&gt;IR phase, and represent the contents of the evaluation stack. By treating these vregs  specially, we don't need to allocate memory for them, and don't need to include them in expensive optimization passes like liveness analysis. Also, lvregs enable the use of local versions of classic optimization passes, like copy/constant propagation and dead code elimination, which are much faster than their global counterparts, and thus can be included in the default optimization set of a JIT compiler.
+</p>
+<h3> <span class="mw-headline" id="Transitioning_between_the_two_states"> Transitioning between the two states </span></h3>
+<ul><li> Most vregs start out being local. Others, like the ones representing the arguments and locals of a method, start out being global.
+</li><li> Some transformations done by the JIT can break the invariant that an lvreg is local to a basic block. There is a separate pass, mono_handle_global_vregs (), which verifies this invariant and transforms lvregs into global vregs if neccesary. This pass also does the opposite transformation, by transforming global vregs used only in one bblock into an lvreg.
+</li><li> If an address of a vreg needs to be taken, the vreg is transformed into a global vreg.
+</li></ul>
+<h2> <span class="mw-headline" id="JIT_Passes"> JIT Passes </span></h2>
+<h3> <span class="mw-headline" id="Method-to-IR"> Method-to-IR </span></h3>
+<p>This is the first pass of the JIT, and also the largest. Its job is to convert the IL code of the method to our intermediate representation. Complex opcodes like isinst are decomposed immediately. It also performs verification in parallel. The code is in the  function method_to_ir () in method-to-ir.c.
+</p>
+<h3> <span class="mw-headline" id="Decompose-Long-Opts"> Decompose-Long-Opts </span></h3>
+<p>This pass is responsible for decomposing instructions operating on longs on 32 bit platforms as described in the section 'Handling longs on 32 bit machines'. This pass changes the CFG of the method by introducing new bblocks. It resides in the mono_decompose_long_opts () function in decompose.c.
+</p>
+<h3> <span class="mw-headline" id="Local_Copy.2FConstant_Propagation"> Local Copy/Constant Propagation </span></h3>
+<p>This pass performs copy and constant propagation on single bblocks. It works by making a linear pass over the instructions inside a basic block, remembering the instruction where each vreg was defined, and using this knowledge to replace references to vregs by their definition if possible. It resides in the mono_local_cprop2 () function in local-propagation.c.
+This pass can run anytime. Currently, it is executed twice:
+</p>
+<ul><li> Just after the method-to-ir pass to clean up the many redundant copies generated during the initial conversion to IR.
+</li><li> After the spill-global-vars pass to optimize the loads/stores created by that pass.
+</li></ul>
+<h3> <span class="mw-headline" id="Branch_Optimizations"> Branch Optimizations </span></h3>
+<p>This pass performs a variety of simple branch optimizations. It resides in the  optimize_branches () function in mini.c.
+</p><p>This pass runs after local-cprop since it can use the transformations generated in that pass to eliminate conditional branches.
+</p>
+<h3> <span class="mw-headline" id="Handle-Global-Vregs"> Handle-Global-Vregs </span></h3>
+<p>This pass is responsible for promoting vregs used in more than one basic block into global vregs. It can also do the opposite transformation, i.e. it can denote global vregs used in only one basic block into local ones. It resides in the mono_handle_global_vregs () function in method-to-ir.c.
+</p><p>This pass must be run before passes that need to distinguish between global and local vregs, i.e. local-deadce.
+</p>
+<h3> <span class="mw-headline" id="Local_Dead_Code_Elimination"> Local Dead Code Elimination </span></h3>
+<p>This pass performs dead code elimination on single basic blocks. The instructions inside a basic block are processed in reverse order, and instructions whose target is a local vreg which is not used later in the bblock are eliminated.
+</p><p>This pass mostly exists to get rid of the instructions made unnecessary by the local-cprop pass.
+</p><p>This pass must be run after the handle-global-vregs pass since it needs to distinguish between global and local vregs.
+</p>
+<h3> <span class="mw-headline" id="Decompose_VType_Opts"> Decompose VType Opts </span></h3>
+<p>This pass is responsible for decomposing valuetype operations into simpler operations, as described in the section 'Handling valuetypes'. It resides in the  mono_decompose_vtype_opts () function in decompose.c.
+</p><p>This pass can be run anytime, but it should be run as late as possible to enable vtype opcodes to be optimized by the local and SSA optimizations.
+</p>
+<h3> <span class="mw-headline" id="SSA_Optimizations"> SSA Optimizations </span></h3>
+<p>These optimizations consists of:
+</p>
+<ul><li> transformation of the IR to SSA form
+</li><li> optimizations: deadce, copy/constant propagation
+</li><li> transformation out of SSA form
+</li></ul>
+<h3> <span class="mw-headline" id="Liveness_Analysis"> Liveness Analysis </span></h3>
+<p>This pass is responsible for calculating the liveness intervals for all global vregs using a classical backward dataflow analysis. It is usually the most expensive pass of the JIT especially for large methods with lots of variables and basic blocks. It resides in the liveness.c file.
+</p>
+<h3> <span class="mw-headline" id="Global_Register_Allocation"> Global Register Allocation </span></h3>
+<p>This pass is responsible for allocating some vregs to one of the hard registers available for global register allocation. It uses a linear scan algorithm. It resides in the linear-scan.c file.
+</p>
+<h3> <span class="mw-headline" id="Allocate_Vars"> Allocate Vars </span></h3>
+<p>This arch-specific function is responsible for allocating all variables (or global vregs) to either a hard reg (as determined during global register allocation) or to a stack location. It depends on the mono_allocate_stack_slots () function to allocate stack slots using a linear scan algorithm.
+</p>
+<h3> <span class="mw-headline" id="Spill_Global_Vars"> Spill Global Vars </span></h3>
+<p>This pass is responsible for processing global vregs in the IR. Vregs which are assigned to hard registers are replaced with the given registers. Vregs which are assigned to stack slots are replaced by local vregs and loads/stores are generated between the local vreg and the stack location. In addition, this pass also performs some optimizations to minimalize the number of loads/stores added, and to fold them into the instructions themselves on x86/amd64. It resides in the mono_spill_global_vars () function in method-to-ir.c.
+</p><p>This pass must be run after the allocate_vars () pass.
+</p>
+<h2> <span class="mw-headline" id="Handling_longs_on_32_bit_machines"> Handling longs on 32 bit machines </span></h2>
+<p>On 32 bit platforms like x86, the JIT needs to decompose opcodes operating on longs into opcodes operating on ints. This is done as follows:
+</p>
+<ul><li> When a vreg of type 'long' is allocated, two consecutive vregs of type 'int' are allocated. These two vregs represent the most significant and less-significant word of the long value.
+</li><li> In the decompose-long-opts pass, all opcodes operating on longs are replaced with opcodes operating on the component vregs of the original long vregs. I.e. 
+</li></ul>
+<pre>  R11 &lt;- LOR R21 R31
+ is replaced with:
+  R12 &lt;- IOR R22 R32
+  R13 &lt;- IOR R23 R33
+</pre>
+<ul><li> Some opcodes, like OP_LCALL can't be decomposed so they are retained in the IR. This leads to some complexity since other parts of the JIT has to be prepared to deal with long vregs.
+</li></ul>
+<h2> <span class="mw-headline" id="Handling_valuetypes"> Handling valuetypes </span></h2>
+<p>Valuetypes are first class citizens in the IR, i.e. there are opcodes operating on valuetypes, there are vtype vregs etc. This is done to allow the local and SSA optimizations to be able to work on valuetypes too, and to simplify other parts of the JIT. The decompose-vtype-opts pass is responsible for decomposing vtype opcodes into simpler ones. One of the most common operations on valuetypes is taking their address. Taking the address of a variable causes it to be ignored by most optimizations, so the JIT tries to avoid it if possible, for example using a VZERO opcode for initialization instead of LDADDR+INITOBJ etc. LDADDR opcodes are generated during the decompose-vtype-opts pass, but that pass is executed after all the other optimizations, so it is no longer a problem. Another complication is the fact the vregs have no type, which means that vtype opcodes have to have their ins-&gt;klass fields filled in to indicate the type which they operate on.
+</p>
+<h2> <span class="mw-headline" id="Porting_an_existing_backend_to_the_new_IR"> Porting an existing backend to the new IR </span></h2>
+<ul><li> Add the following new functions:
+<ul><li> mono_arch_emit_call (). Same as mono_arch_call_opcode (), but emits IR for pushing arguments to the stack. All the stuff in mono_arch_emit_this_vret_args () should be done in emit_call () too.
+</li><li> mono_arch_emit_outarg_vt (). Emits IR to push a vtype to the stack
+</li><li> mono_arch_emit_setret (). Emits IR to move its argument to the proper return register
+</li><li> mono_arch_emit_inst_for_method (). Same as mono_arch_get_inst_for_method, but also emits the instructions.
+</li></ul>
+</li></ul>
+<ul><li> Add new opcodes to cpu-&lt;ARCH&gt;.md and mono_arch_output_basic_block ():
+<ul><li> dummy_use, dummy_store, not_reached
+</li><li> long_bCC and long_cCC opcodes
+</li><li> cond_exc_iCC opcodes
+</li><li> lcompare_imm == op_compare_imm
+</li><li> int_neg == neg
+</li><li> int_not == not
+</li><li> int_convXX == conv.iXX 
+</li><li> op_jump_table
+</li><li> long_add == cee_add (on 64 bit platforms)
+</li><li> op_start_handler, op_endfinally, op_endfilter
+</li></ul>
+</li><li> In mono_arch_create_vars, when the result is a valuetype, it needs to create a new variable to represent the hidden argument holding the vtype return address and store this variable into cfg-&gt;vret_addr.
+</li><li> Also, in mono_arch_allocate_vars, when the result is a valuetype, it needs to setup cfg-&gt;vret_addr instead of cfg-&gt;ret.
+</li></ul>
+<p>For more info, compare the already converted backends like  x86/amd64/ia64 with
+their original versions in HEAD. For example:
+<a href="http://lists.ximian.com/pipermail/mono-patches/2006-April/073170.html" class="external autonumber" rel="nofollow">[1]</a>
+</p>
+<h2> <span class="mw-headline" id="Benchmark_results"> Benchmark results </span></h2>
+<p>All the benchmarks were run on an amd64 machine in 64 bit mode.
+</p>
+<ul><li> pnetmark score:
+</li></ul>
+<pre>    current JIT: 19725
+    linear IR: 24970 (25% faster)
+</pre>
+<ul><li> mini/bench.exe:
+</li></ul>
+<pre>    current JIT: 2.183 secs
+    linear IR: 1.972 secs (10% faster)
+</pre>
+<ul><li> corlib 2.0 compile:
+</li></ul>
+<pre>    current JIT: 9.421 secs
+    linear IR: 9.223 secs (2% faster)
+</pre>
+<ul><li> ziptest.exe from <a href="https://bugzilla.novell.com/show_bug.cgi?id=342190" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi?id=342190</a> on the zerofile.bin input file:
+</li></ul>
+<pre>    current JIT: 18.648 secs
+    linear IR: 9.934 secs (50% faster)
+</pre>
+<ul><li> decimal arithmetic benchmark from <a href="http://lists.ximian.com/pipermail/mono-devel-list/2008-May/028061.html" class="external free" rel="nofollow">http://lists.ximian.com/pipermail/mono-devel-list/2008-May/028061.html</a>:
+</li></ul>
+<pre>   current JIT:
+     addition 3774.094 ms
+     substraction 3644.657 ms
+     multiplication 2959.355 ms
+     division 61897.441 ms
+   linear IR:
+     addition 3096.526 ms
+     substraction 3065.364 ms
+     multiplication 2270.676 ms
+     division 60514.169 ms
+</pre>
+<ul><li> IronPython pystone.py 5000000 iterations:
+</li></ul>
+<pre>   current JIT: 69255.7 pystones/second
+   linear IR: 83187.8 pystones/second (20% faster)
+</pre>
+<p><br />
+All the code size tests were measured using <code>mono --stats --compile-all &lt;ASSEMBLY NAME&gt;</code>
+</p>
+<ul><li> corlib 1.0 native code size:
+</li></ul>
+<pre>    current JIT: 2100173 bytes
+    linear IR: 1851966 bytes (12% smaller)
+</pre>
+<ul><li> mcs.exe native code size:
+</li></ul>
+<pre>    current JIT: 1382372 bytes
+    linear IR: 1233707 bytes (11% smaller)
+</pre>
+<ul><li> all 1.0 assemblies combined:
+</li></ul>
+<pre>    current JIT: 15816800 bytes
+    linear IR: 12774991 bytes (20% smaller)
+</pre>
+<h2> <span class="mw-headline" id="Improvements_compared_to_the_Mono_1.x_and_Mono_2.0_JITs"> Improvements compared to the Mono 1.x and Mono 2.0 JITs </span></h2>
+<ul><li> The old JIT used trees as its internal representation, and the only thing which was easy with trees was code generation, everything else is hard. With the linear IR, most things are easy, and only a few things are hard, like optimizations which transform multiple operations into one, like transforming a load+operation+store into an operation taking a memory operand on x86.
+</li></ul>
+<ul><li> Since there is only one IR instead of two, the new JIT is (hopefully) easier to understand and modify.
+</li></ul>
+<ul><li> There is an if-conversion pass which can convert simple if-then-else statements to predicated instructions on x86/64, eliminating branches.
+</li></ul>
+<ul><li> Due to various changes, the ABCREM pass can eliminate about twice as many array bound checks in corlib as the current JIT. It was also extended to eliminate redundant null checks.
+</li></ul>
+<ul><li> Handling of valuetypes is drastically improved, including:
+<ul><li> allowing most optimization passes like constant and copy propagation to work on valuetypes.
+</li><li> elimination of redundant initialization code inserted because of the initlocals flag.
+</li><li> elimination of many redundant copies when the result of a call is passed as an argument to another call.
+</li><li> passing and returning small valuetypes in registers on x86/amd64.
+</li></ul>
+</li></ul>
+<ul><li> Due to the elimination of the tree format, it is much easier to generate IR code for complex IL instructions. Some things, like branches, which are almost impossible to generate in the current JIT in the method_to_ir () pass, can be generated easily.
+</li></ul>
+<ul><li> The handling of soft-float on ARM is done in a separate pass instead of in a miriad places, hopefully getting rid of bugs in this area.
+</li></ul>
+<ul><li> In the old representation the tree to code transformations were easy only if the "expression" to transform was represented as a tree.  If, for some reason, the operation was "linearized", using local variables as intermediate results instead of the tree nodes, then the optimization simply did not take place. Or the jit developer had to code twice: once for the tree case and once for the "linear" case.
+</li></ul>
+

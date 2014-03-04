@@ -1,0 +1,131 @@
+---
+layout: obsolete
+title: "CsharpRepl"
+permalink: /old_site/CsharpRepl/
+---
+
+<h1>CsharpRepl</h1>
+
+<div class="thumb tright"><div class="thumbinner" style="width:322px;"><a href="{{site.baseurl}}/images/old_site/9/9c/Xbyhja.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/9/9c/Xbyhja.png" width="320" height="281" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/9/9c/Xbyhja.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>C# GUI Shell</div></div></div>
+<p>This documents the features available in the C# interactive shell that is part of Mono's C# compiler.   An interactive shell is usually referred to as a read eval print loop or repl.   The C# interactive shell is built on top of the [http:/monodoc/N:Mono.CSharp Mono.CSharp] library, a library that provides a C# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).
+</p>
+<h1> <span class="mw-headline" id="Using_it"> Using it </span></h1>
+<p>To use the C# compiler in interactive mode, you need to start it with the  the "csharp" command from the command line:
+</p>
+<pre class="bash" style="font-family:monospace;">$ csharp
+Mono C<span style="color: #666666; font-style: italic;"># Shell, type &quot;help;&quot; for help</span>
+&#160;
+Enter statements below.
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span></pre>
+<p>Statements and expression can take multiple lines, for example, consider this LINQ query that displays all the files modified in the /etc directory in the last week.   The prompt changes from "csharp" to "     &gt;" to indicate that new input is expected:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> using System.IO;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> from f <span style="color: #000000; font-weight: bold;">in</span> Directory.GetFiles <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #ff0000;">&quot;/etc&quot;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>
+      <span style="color: #000000; font-weight: bold;">&gt;</span>   <span style="color: #7a0874; font-weight: bold;">let</span> <span style="color: #000000; font-weight: bold;">fi</span> = new FileInfo <span style="color: #7a0874; font-weight: bold;">&#40;</span>f<span style="color: #7a0874; font-weight: bold;">&#41;</span>  
+      <span style="color: #000000; font-weight: bold;">&gt;</span>   where fi.LastWriteTime <span style="color: #000000; font-weight: bold;">&gt;</span> DateTime.Now-TimeSpan.FromDays<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">7</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> <span style="color: #000000; font-weight: bold;">select</span> f; 
+<span style="color: #7a0874; font-weight: bold;">&#123;</span> <span style="color: #ff0000;">&quot;/etc/adjtime&quot;</span>, <span style="color: #ff0000;">&quot;/etc/asound.state&quot;</span>, <span style="color: #ff0000;">&quot;/etc/mtab&quot;</span>, <span style="color: #ff0000;">&quot;/etc/printcap&quot;</span>, <span style="color: #ff0000;">&quot;/etc/resolv.conf&quot;</span> <span style="color: #7a0874; font-weight: bold;">&#125;</span>
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span></pre>
+<p>A GUI version of this tool is called <tt>gsharp</tt> and is available when you install the <tt>mono-tools</tt> package:
+</p><p><a href="{{site.baseurl}}/images/old_site/9/9c/Xbyhja.png" class="image"><img alt="Xbyhja.png" src="{{site.baseurl}}/images/old_site/9/9c/Xbyhja.png" width="618" height="543" /></a>
+</p>
+<h1> <span class="mw-headline" id="Details"> Details </span></h1>
+<h3> <span class="mw-headline" id="Presets"> Presets </span></h3>
+<p>When you startup the interactive shell, the System, System.Linq and System.Collections and System.Collections.Generic namespaces have already been imported for you.
+</p>
+<h3> <span class="mw-headline" id="Command_line_editing"> Command line editing </span></h3>
+<p>The interactive shell supports an Emacs-like command line editor, just like the Bash shell or other Unix tools so it should integrate naturally into your shell experience.
+</p><p>In Mono 2.6 the csharp shell also includes auto-completion.   This is triggered by using the tab key.
+</p>
+<h3> <span class="mw-headline" id="Using_Declarations"> Using Declarations </span></h3>
+<p>Unlike compile mode when the using statement are only allowed before any declarations have been parsed, in interactive mode you can enter using statements as you go.   The using statements only will have an effect for any future uses.
+</p><p>The using declarations must appear on their own and can not be mixed with regular statements in a single line, for example:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> using System;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> Console.WriteLine <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #ff0000;">&quot;hello&quot;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+hello
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span></pre>
+<p>Is a valid use of the using statement, but the following is invalid:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> using System; Console.WriteLine <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #ff0000;">&quot;hello&quot;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;</pre>
+<h3> <span class="mw-headline" id="Local_Variable_Declarations"> Local Variable Declarations </span></h3>
+<p>You can use the local variable declaration in the interactive shell, but the compiler will turn all top-level declarations into static class fields.   This is necessary as every statement is actually hosted in an individual class and an individual method. 
+</p><p>The semantics have been extended to allow <code>var</code> declarations, so it is possible to write:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var a = <span style="color: #ff0000;">&quot;hello, world&quot;</span>;</pre>
+<p>And have <tt>a</tt>'s type be resolved to string.
+</p><p>When using the interpreter, it is possible to redeclare variables to have different meaning than the one they had previously on the session, the following for example is valid:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var a = <span style="color: #ff0000;">&quot;hello world&quot;</span>;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var a = <span style="color: #000000;">1</span>;</pre>
+<p>The new declaration of a will override the older declaration.
+</p>
+<h3> <span class="mw-headline" id="Multi-line_input"> Multi-line input </span></h3>
+<p>If your code does not fit in a single line, you can enter expressions in multiple lines.  The shell will not execute the code until a valid expression has been entered or a syntax error is flagged.
+</p><p>A special prompt is shown to indicate that ics is waiting for input:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var list = new int <span style="color: #7a0874; font-weight: bold;">&#91;</span><span style="color: #7a0874; font-weight: bold;">&#93;</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span><span style="color: #000000;">1</span>,<span style="color: #000000;">2</span>,<span style="color: #000000;">3</span><span style="color: #7a0874; font-weight: bold;">&#125;</span>;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var b = from x <span style="color: #000000; font-weight: bold;">in</span> list
+   <span style="color: #000000; font-weight: bold;">&gt;</span>    where x <span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #000000;">1</span>
+   <span style="color: #000000; font-weight: bold;">&gt;</span>    <span style="color: #000000; font-weight: bold;">select</span> x;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> b;</pre>
+<h3> <span class="mw-headline" id="Built-in_Methods"> Built-in Methods </span></h3>
+<p>A few static methods and public fields can be used from the shell, these are:
+</p>
+<ul><li> LoadAssembly (string): Loads the given assembly, equivalent to passing the -r:NAME to the compiler.
+</li><li> LoadPackage(string): Loads the given package, equivalent to passing the -pkg:NAME to the compiler.
+</li><li> ShowVars (): shows all the current variable declarations in scope.
+</li><li> ShowUsing (): show the current using statements in effect.
+</li><li> Describe (object o): Shows the type definition for an object.
+</li></ul>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var a = <span style="color: #000000;">1</span>;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> var b = <span style="color: #ff0000;">&quot;hello&quot;</span>;
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span> ShowVars <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>;
+int a
+string b
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span></pre>
+<p>The GUI version includes a handful of other methods:
+</p>
+<ul><li> Plot (DoubleFunc f1 [,f2 [,f3 [,f4]]]): Plots one or more functions in the buffer.
+</li></ul>
+<p><a href="{{site.baseurl}}/images/old_site/7/75/GSharpPlot.png" class="image"><img alt="GSharpPlot.png" src="{{site.baseurl}}/images/old_site/7/75/GSharpPlot.png" width="606" height="532" /></a>
+</p><p>In the GUI it is also possible to register your own custom transformation objects for rendering the expression results.   This allows you to render objects differently:
+</p>
+<ul><li> RegisterTransformHandler (RenderHandler rh): Use this to register a custom transformer for an object.
+</li><li> UnregisterTransformHandler (RenderHandler rh): Use this to unregister a trasformer handler.
+</li></ul>
+<p>The GUI version is able to embed Gtk.Widgets when a rendering handler has been registered.   The shell will call all registered methods and pass the result of an operation, and if the operation returns a [http:/monodoc/Gtk.Widget Gtk.Widget] that is used instead of the string representation.    
+</p><p>This can be layered multiple times, the following example shows how to register a handler to render true and false:
+</p><p><a href="{{site.baseurl}}/images/old_site/b/bf/GSharpRenderHandler.png" class="image"><img alt="GSharpRenderHandler.png" src="{{site.baseurl}}/images/old_site/b/bf/GSharpRenderHandler.png" width="653" height="541" /></a>
+</p><p>Notice that a simple call that returns a widget will not embed the widget itself:
+</p>
+<pre class="csharp" style="font-family:monospace;">   csharp<span style="color: #008000;">&gt;</span> LoadPackage <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;gtk-sharp-2.0&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   csharp<span style="color: #008000;">&gt;</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Click me&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   <span style="color: #008000;">&#123;</span>  <span style="color: #008000;">&#125;</span>
+   csharp<span style="color: #008000;">&gt;</span></pre>
+<p>This is to avoid having your widgets automatically parented into the shell.   
+</p><p>At least one transformation step must be applied before a [http:/monodoc/T:Gtk.Widget Gtk.Widget] will be considered for embedding.
+</p>
+<h3> <span class="mw-headline" id="Built-in_Properties"> Built-in Properties </span></h3>
+<ul><li> object quit {get;} terminates the program.
+</li><li> string help {get;} shows the help for available commands.
+</li><li> string Prompt {get;set} a variable that holds the current primary prompt.
+</li><li> string ContinuationPrompt {get;set} a variable that holds the current continuation prompt.
+</li></ul>
+<p>The GUI version introduces a few more:
+</p>
+<ul><li> bool Attached {get;} if the code is running attached to another process.
+</li><li> Gtk.Widget MainWindow {get;} the Gtk.Widget representing the toplevel GUI shell.
+</li></ul>
+<h3> <span class="mw-headline" id="Grammar"> Grammar </span></h3>
+<p>The Interactive Shell allows valid C# statements as well as expressions to be entered interactively.   Unlike the batch-compiled C#, plain expressions are allowed, for example, this is valid input in the interactive mode that is invalid on batch mode:
+</p>
+<pre class="bash" style="font-family:monospace;">csharp<span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #000000;">1</span> == <span style="color: #000000;">2</span>;
+False
+csharp<span style="color: #000000; font-weight: bold;">&gt;</span></pre>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Startup_Files"> Startup Files </span></h1>
+<p>On startup the csharp shell will load any C# script files and pre-compiled libraries (ending with .dll) that are located in the ~/.config/csharp directory (on Windows this is the value of Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData)).
+</p><p>The assemblies are loaded first, and then the scripts are executed.   This allows your scripts to depend on the code defined in the assemblies.
+</p><p>C# script files are merely files that contains statements and expressions, they can not contain full class definitions, those should be stored and precompiled in DLL files.
+</p>

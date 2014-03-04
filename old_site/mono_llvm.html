@@ -1,0 +1,60 @@
+---
+layout: obsolete
+title: "Mono LLVM"
+permalink: /old_site/Mono_LLVM/
+---
+
+<h1>Mono LLVM</h1>
+
+<p>Mono from SVN is now able to use LLVM as a backend for code generation in addition to Mono's built-in JIT compiler.
+</p><p>This allows Mono to benefit from all of the compiler optimizations done in LLVM.  For example the SciMark score goes from 482 to 610.
+</p><p>This extra performance comes at a cost: it consumes more time and more memory to JIT compile using LLVM than using Mono's built-in JIT, so it is not a solution for everyone. 
+</p><p>Long running desktop applications like Banshee and Gnome-Do want to keep memory usage low and also would most likely not benefit from better code generation.  Our own tests show that  ASP.NET applications do not seem to benefit very much (but web apps are inherently IO-bound). 
+</p><p>But computationally intensive applications will definitely benefit from this.   Financial and scientific users will surely appreciate this performance boost.
+</p>
+<h1> <span class="mw-headline" id="Taking_it_out_for_a_spin"> Taking it out for a spin </span></h1>
+<p>You need to install both LLVM and Mono from SVN, as follows:
+</p>
+<ul><li> Mono 2.6 requires LLVM 2.6
+</li><li> Mono trunk (post 2.6) works with LLVM 2.6 or LLVM trunk.
+</li></ul>
+<p>Get and install LLVM like this:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">svn co</span> http:<span style="color: #000000; font-weight: bold;">//</span>llvm.org<span style="color: #000000; font-weight: bold;">/</span>svn<span style="color: #000000; font-weight: bold;">/</span>llvm-project<span style="color: #000000; font-weight: bold;">/</span>llvm<span style="color: #000000; font-weight: bold;">/</span>trunk llvm
+$ <span style="color: #7a0874; font-weight: bold;">cd</span> llvm
+$ .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>mono <span style="color: #660033;">--enable-optimized</span> <span style="color: #660033;">--enable-targets</span>=<span style="color: #ff0000;">&quot;x86 x86_64&quot;</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Alternatively, you can try our LLVM branch which removes some restrictions
+so more methods can be compiled with LLVM:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">git clone</span> git:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>llvm.git
+$ <span style="color: #7a0874; font-weight: bold;">cd</span> llvm
+$ <span style="color: #c20cb9; font-weight: bold;">git checkout</span> mono-<span style="color: #000000;">2</span>-<span style="color: #000000;">8</span>
+$ .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>mono <span style="color: #660033;">--enable-optimized</span> <span style="color: #660033;">--enable-targets</span>=<span style="color: #ff0000;">&quot;x86 x86_64&quot;</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Note that on OSX mono is a 32 bit app, so you need to configure llvm with the --target=i386-apple-darwin10.8.0 flag as by default
+it will build a 64 bit version of the libraries.
+</p><p>Use 'git checkout mono' when compiling against mono HEAD.
+</p><p>Then get Mono as usual:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">git clone</span> git:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>mono
+$ <span style="color: #7a0874; font-weight: bold;">cd</span> mono</pre>
+<p>Since I am using the non-standard prefix for the LLVM installation (/mono), we need to make sure that we add /mono/bin to the PATH so that the configure script can detect the llvm installation:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">MONO_USE_LLVM</span>=<span style="color: #000000;">1</span>
+$ <span style="color: #007800;">PATH</span>=<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>bin:<span style="color: #007800;">$PATH</span></pre>
+<p>The next step is to run the configure script, the one flag that matters here is one of:
+</p>
+<ul><li> --enable-llvm
+</li><li> --enable-loadedllvm
+</li></ul>
+<p>You can either link LLVM into your mono executable, or you can split it in a separate shared library (for example for Linux distributions that might want to ship both a slim Mono by default).
+</p>
+<pre class="bash" style="font-family:monospace;">$ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh <span style="color: #660033;">--prefix</span>=<span style="color: #000000; font-weight: bold;">/</span>mono <span style="color: #660033;">--enable-llvm</span>=<span style="color: #c20cb9; font-weight: bold;">yes</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Now you have an LLVM-powered Mono. By default, the mono JIT is used to compile code, to make the runtime use LLVM, pass the '--llvm' command line option, or add it to the MONO_ENV_OPTIONS environment variable.
+</p><p>LLVM generates better code at runtime, but also takes longer to execute.   This is why you need to explicitly tell Mono's runtime to use the LLVM backend.   This is achieved by either setting the environment variable MONO_USE_LLVM or by passing the --llvm command line option to Mono.
+</p>
+<h1> <span class="mw-headline" id="Limitations"> Limitations </span></h1>
+<p>LLVM is not able to support some of the features that Mono needs, so in those cases the JIT compiler will still fall back to Mono's JIT engine (methods that contain try/catch clauses or methods that do interface calls).
+</p>

@@ -1,0 +1,100 @@
+---
+layout: obsolete
+title: "MoonlightQuirks"
+permalink: /old_site/MoonlightQuirks/
+---
+
+<h1>MoonlightQuirks</h1>
+
+<p>This page is meant to list various undocumented (or unclear) features/properties of Silverlight and their respective implementations details in Moonlight. Information here comes from experimentation, tests and bits found over the web.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Animations"><span class="tocnumber">1</span> <span class="toctext">Animations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#One_animation_per_property"><span class="tocnumber">1.1</span> <span class="toctext">One animation per property</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Animations_inherit_base_value"><span class="tocnumber">1.2</span> <span class="toctext">Animations inherit base value</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Filling_clocks_and_updating_values"><span class="tocnumber">1.3</span> <span class="toctext">Filling clocks and updating values</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Timespan-based_RepeatBehavior"><span class="tocnumber">1.4</span> <span class="toctext">Timespan-based RepeatBehavior</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Keysplines"><span class="tocnumber">1.5</span> <span class="toctext">Keysplines</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Media"><span class="tocnumber">2</span> <span class="toctext">Media</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Setting_the_Source_property_to_empty"><span class="tocnumber">2.1</span> <span class="toctext">Setting the Source property to empty</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Text"><span class="tocnumber">3</span> <span class="toctext">Text</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#TextDecorations_Property"><span class="tocnumber">3.1</span> <span class="toctext">TextDecorations Property</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#FontWeighs_Property"><span class="tocnumber">3.2</span> <span class="toctext">FontWeighs Property</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Plugin_detection"><span class="tocnumber">4</span> <span class="toctext">Plugin detection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#GreaseMonkey"><span class="tocnumber">4.1</span> <span class="toctext">GreaseMonkey</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Animations"> Animations </span></h2>
+<h3> <span class="mw-headline" id="One_animation_per_property"> One animation per property </span></h3>
+<p>Silverlight has a mechanism were there can be only one animation attached and animating a property on an object. It's (not surprisingly) the last one started. The previous animation(s) stop updating the property value as soon as the new storyboard is Begin'ed. 
+</p><p>Reasons for doing this on SL side are unclear (performance?) but it definitely makes it easier to manage animations -- since you don't have to care about stopping previous animations and keeping track of SB's running. 
+</p><p>In Moonlight we implement this by storing a hash table for each <i>DependencyProperty</i> with <i>DependencyObject</i> =&gt; <i>AnimationStorage</i> (key =&gt; value) relationship. For a given property on a given object (key) we store the currently active <i>AnimationStorage</i>. When a new <i>AnimationStorage</i> is attached for same params we mark the previous one as non-updating and detach the update handlers for it.
+</p>
+<h3> <span class="mw-headline" id="Animations_inherit_base_value"> Animations inherit base value </span></h3>
+<p>This is closely related to the previous feature described (one animation per property). When a new animation is started on a property/object that already has an animation, the new animation inherits it's base value from the previous one -- as opposed to using the current property value as the base value. Therefore stopping this second animation will reset the object's property value to the base value of the first animation. 
+</p><p>This is best described by example. Let's assume we've got an object which has an initial position <i>(Canvas.Left)</i> of 10. We've got first animation which animates this property <i>To</i> 100. A second storyboard animates this property <i>To</i> 200. In this case:
+</p>
+<ul><li> We start first animation, object moves to a <i>(Canvas.Left)</i> of 100
+</li><li> We start second animation, object moves to a <i>(Canvas.Left)</i> of 200
+</li><li> We stop the second animation, object returns to a <i>(Canvas.Left)</i> of 10. 
+</li></ul>
+<p>Without base value inheriting, the object would return to a <i>(Canvas.Left)</i> of 100 (the value of the property when second animation was started). This feature essentially makes it easier to create continuous self-expanding animations that terminate/reflow at some point.
+</p><p>In Moonlight we implement this by fetching the base value from the <i>AnimationStorage</i> obtained from property hash table (as described above) -- if available. There is one extra quirk involved in this: since the <i>AnimationStorage</i> is owned by the parent <i>AnimationClock</i> (animation) it can (in some corner js cases) get destroyed before we get a chance to obtain the base value. We detect those cases and make sure the <i>AnimationStorage</i> (detached from original parent) floats on the property hash table. 
+</p>
+<h3> <span class="mw-headline" id="Filling_clocks_and_updating_values"> Filling clocks and updating values </span></h3>
+<p>Silverlight documentations describes filling clocks (<i>FillBehavior="HoldEnd"</i>) as infinitely running and updating (resetting) the target property value. MSDN even warns (need quote here) that you should be aware of a situation where a filling clock is running and you're manually trying to update the prop value -- seeing no effect of your change since the property is reset by the clock.
+</p><p>This is, however, not true at the implementation level. It seems that in Silverlight filling clocks are not being ticked anymore. To be precise: <i>ClockGroup's</i> that are filling and have only filling clocks as children are not being ticked anymore. 
+</p><p>In Moonlight we implement this behavior by setting an <b>idle_hint</b> on <i>ClockGroup's</i> that are filling and contain only filling children. Idle hinted groups are not being ticked by parent groups. 
+</p><p>The reason for doing so is clearly performance. Since the <i>HoldEnd</i> behavior is the most common/popular one, dumbly ticking/resetting values over themselves all the time (and possibly triggering huge expose chains) is a huge performance hit. Actually, enabling this MSDN-described behavior in Moonlight makes most of the bigger sites (ie. Showcase) absolutely unusable because of performance problems.
+</p>
+<h3> <span class="mw-headline" id="Timespan-based_RepeatBehavior"> Timespan-based RepeatBehavior </span></h3>
+<p>Silverlight allows the <i>RepeatBehavior</i> to be specified as a timespan ie. <i>RepeatBehavior="00:00:06"</i> (as opposed to standard multiplier specification, ie. <i>RepeatBehavior="3x"</i>). In this case a 2 second long animation will be repeated 3 times (6 seconds / 2 seconds = 3). 
+</p><p>However, Silverlight 1.0 has a bug and timespan-based <i>RepeatBehavior</i> is not processed correctly (it looks like the timespan specified as <i>RepeatBehavior</i> is always equal to animation duration, except for 0:0:0 which is interpreted correctly as 0). This is fixed in Silverlight 2.0. In Moonlight we currently stick to the Silverlight 1.0 implementation (we simulate the bug). 
+</p><p>It's possible to build Moonlight without the bug simulation (doing the proper Silverlight 2.0 implementation) by passing <i>--with-compatibility-bugs=no</i> to the configure script.
+</p><p>The differences between the two implementations can be seen in <i>clock14.xaml</i> and <i>clock31.xaml</i> tests in the <i>test/xaml/clock</i> directory. Also the <i>AnimationMatrix2</i> test uses a timespan-based <i>RepeatBehavior</i>.
+</p>
+<h3> <span class="mw-headline" id="Keysplines"> Keysplines </span></h3>
+<p>One of the Silverlight animation capabilities is the possibility to specify spline keyframes with a custom <i>KeySpline</i> interpolation method. This way various value-transition effects can be achieved - such as ease-in/ease-out, sharp-in etc. This is achieved by defining a <i>KeySpline</i> property. It takes two parameters which define the two control points (the second and third) of the bezier curve representing the animation dynamics. The first and last points of the curve are respectively hard-fixed to x=0, y=0 and x=1 and y=1. 
+</p><p>The way this bezier curve maps to animation dynamics can be explained by quoting the <a href="http://msdn2.microsoft.com/en-us/library/ms533119(VS.85).aspx" class="external text" rel="nofollow">MSDN documentation</a>:
+</p><p><i>"...think of the horizontal axis as the pace with which the interpolation proceeds along the timing interval. The vertical axis is the resulting value for the animation's progress, yielded by the function that underlies the keySplines property. Another way of describing this is that the horizontal axis is the input unit time for the interval, and the vertical axis is the output unit time..."</i>
+</p><p>This means that the implementation needs to do a "Y for given X" bezier lookup. From the pov of the maths and the nature of the bezier (cubic) curves such a lookup is very hard to perform. In the land of cubics (third-degree parametric curves) there is no functional "Y for X" expression to evaluate since it's a third-degree equation which can have more than one solution (ie. a curve can have multiple Y values for one X). In other words, it's not trivial to resolve X into Y without doing complex (slow) computations and essentially solving a third-degree equation for every frame. 
+</p><p>In Moonlight we first tried to solve the problem by using lookup tables - one per each KeySpline. This was fine for short animations (less than 1-2s) but failed for longer animations due to finite resolution of the lookup table. It was causing the animation to be non-smooth (continuous) but rather step-based (<i>test-animation-slow-keyspline.xaml</i> exposes this problem). Additionally it wasted memory per each KeySpline. 
+</p><p>Another approach used a two-step curve approximation routine. It was a very fast and simple implementation but (depending on the curve type) it produced slightly off (simplified) results. 
+</p><p>We're currently using a joint approach -- upon creation the curve is subdivided into 16 smaller curves using De Casteljau's algorithm. Those curves are approximated then to quadratic (second-degree) curves and stored as such within the KeySpline. Given an X, we can quickly figure out the first quadratic segment that covers it. Given a quadratic segment, we can do a very quick Y for X lookup using standard second-degree equation.
+</p><p>This solution is very accurate and extremally fast.
+</p>
+<h2> <span class="mw-headline" id="Media"> Media </span></h2>
+<h3> <span class="mw-headline" id="Setting_the_Source_property_to_empty"> Setting the Source property to empty </span></h3>
+<p>Setting the <i>Source</i> property on an <i>Image</i> or <i>MediaElement</i> element to an empty string or <i>null</i> will  make the element render nothing as opposed to continuing to render the previous source (if an <i>Image</i>) or most recently rendered video frame (if a <i>MediaElement</i>).
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Text"> Text </span></h2>
+<h3> <span class="mw-headline" id="TextDecorations_Property"> TextDecorations Property </span></h3>
+<p>It would appear that the <i>TextDecorations</i> properties on <i>TextBlock</i> and <i>Inline</i> are a bit field as opposed to an enumeration. This isn't immediately apparent because, currently, <i>TextDecorations</i> only has two values: <i>None</i> (which has a value of 0) and <i>Underline</i> (which has a value of 1). The true behavior of <i>TextDecorations</i> can be seen in <i>tests/xaml/enums/textdecorations-inline.html</i> and <i>tests/xaml/enums/textdecorations-textblock.html</i>.
+</p>
+<h3> <span class="mw-headline" id="FontWeighs_Property"> FontWeighs Property </span></h3>
+<p>In addition to the defined <i>FontWeights</i> ranges, Silverlight treats the range from -475 to 0 as <i>Bold</i> and any value over 1023 as <i>Normal</i>.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Plugin_detection"> Plugin detection </span></h2>
+<p>Some sites using a custom version of Silverlight.js are not detecting moonlight correctly, however, after some reloads they do. Examples:
+</p>
+<ul><li> <a href="http://channel9.msdn.com" class="external free" rel="nofollow">http://channel9.msdn.com</a>
+</li><li> <a href="http://sessions.visitmix.com" class="external free" rel="nofollow">http://sessions.visitmix.com</a>
+</li></ul>
+<h3> <span class="mw-headline" id="GreaseMonkey"> GreaseMonkey </span></h3>
+<p>Some sites are still using an outdated method of detecting the Silverlight/Moonlight plugin. This bug was published in Microsoft's early versions of Silverlight.js.  It has since been fixed but some sites have not updated their file. To work around this, you can install the <a href="https://addons.mozilla.org/en-US/firefox/addon/748" class="external text" rel="nofollow">GreaseMonkey</a> plugin and <a href="http://anonsvn.mono-project.com/viewvc/trunk/moon/data/silverlight-ff3-quirks.user.js" class="external text" rel="nofollow">our script</a> to get these sites to work.
+</p>

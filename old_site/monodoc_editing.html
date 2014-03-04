@@ -1,0 +1,93 @@
+---
+layout: obsolete
+title: "Monodoc Editing"
+permalink: /old_site/Monodoc_Editing/
+---
+
+<h1>Monodoc Editing</h1>
+
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Writing_XML_Documentation"> Writing XML Documentation </span></h1>
+<p>See the <a href="http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)" class="external text" rel="nofollow">mdoc(5)</a> man page for more details about monodoc XML file format and document markup.
+</p><p>The following tags can be used inside the &lt;summary&gt; and &lt;remarks&gt; sections of your documentation.
+</p>
+<b><pre>
+ &lt;para&gt; &lt;/para&gt; </pre></b>
+<p>Used to separate paragraphs.
+</p>
+<b><pre>
+ &lt;paramref name=&quot;param_name&quot;/&gt; </pre></b>
+<p>Used to reference a formal parameter to a function.
+</p>
+<b><pre>
+ &lt;see cref=&quot;destination&quot;/&gt; </pre></b>
+<p>Use this to create a link in your documentation to the sections for types, namespaces, methods, etc. where destination has one of the following formats:
+</p>
+<ul><li>N:MyLibrary (to link to a namespace)
+</li><li>T:MyLibrary.MyType (to link to a type)
+</li><li>C:MyLibrary.MyType(System.String) (to link to a constructor)
+<ul><li>Constructor links may also be written as: M:MyLibrary.MyType.#ctor(System.String)
+</li></ul>
+</li><li>M:MyLibrary.MyType.MethodName(System.String,MyLibray.MyOtherType) (to link to a method; for <tt>ref</tt> and <tt>out</tt> parameters, add an &amp; to the end of the type name)
+</li><li>P:MyLibrary.MyType.IsDefined (to link to a property)
+</li><li>F:MyLibrary.MyType.COUNTER (to link to a field)
+</li><li>E:MyLibrary.MyType.OnChange (to link to an event)
+</li></ul>
+<p>So your links might look like:
+</p>
+<pre>&lt;see cref="M:MyLibrary.MyType.MethodName(System.String,MyLibray.MyOtherType)"/&gt;
+</pre>
+<b><pre>
+ &lt;see langword=&quot;keyword&quot;/&gt; </pre></b>
+<p>Use this to link to a keyword in the C# language, for example to link to `true', do:
+</p>
+<pre>&lt;see langword=&quot;true&quot;/&gt;</pre>
+<b><pre>
+ &lt;example&gt; ... &lt;/example&gt; </pre></b>
+<p>Use example to insert an example. The example can contain explanatory text and code.
+</p>
+<b><pre>
+ &lt;code lang=&quot;C#&quot;&gt;.. &lt;/code&gt; </pre></b>
+<p>Use this to provide a sample C# program, typically used within the &lt;example&gt; tags.
+</p><p>You can link to an example like this:
+</p>
+ <pre>
+&lt;code lang=&quot;C#&quot; source=&quot;file.cs&quot;&gt; &lt;/code&gt;
+</pre>
+<p>When the <b>source</b> attribute is provided, the contents of the file <i>file.cs</i> will be inserted within the &lt;code/&gt; element by <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodocer</a> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a> the next time they are run.  <i>file.cs</i> MUST be located in the base directory of the XML documentation, i.e. the <a href="{{site.baseurl}}/Monodocer" title="Monodocer">monodoc</a> <i>-path</i> or <a href="{{site.baseurl}}/Mdoc" title="Mdoc">mdoc-update</a> <i>--out</i> directory.  <i>file.cs</i> may contain relative directory information as well, e.g. <b>&lt;code lang="C#" source="examples/file.cs" /&gt;.</b>
+</p>
+<b><pre>
+ &lt;list type=&quot;bullet&quot;&gt; &lt;/list&gt; </pre></b>
+<p>Use this to create lists. Lists contains &lt;item&gt;
+elements which have to contain &lt;term&gt; containers.
+</p>
+<pre>
+ &lt;list type=&quot;table&quot;&gt; &lt;/lits&gt;
+&lt;listheader&gt;
+&lt;term&gt;YOUR FIRST COLUMN&lt;/term&gt;
+&lt;description&gt;YOUR DESCRIPTION&lt;/description&gt;
+&lt;/listheader&gt;
+</pre>
+<p>For two-column tables. Inside use:
+</p>
+<pre>
+ &lt;item&gt;
+&lt;term&gt;First&lt;/term&gt;
+&lt;description&gt;First description&lt;/description&gt;
+&lt;/item&gt; &lt;item&gt;
+&lt;term&gt;Second&lt;/term&gt; &lt;description&gt;Second descirption&lt;/description&gt;
+&lt;/item&gt; </pre>
+<p>To embed images you use the &lt;img&gt; tag.There are two different ways to use that tag depending on the name of the attribute you use:
+</p>
+<ul><li> If your picture is hosted on an external host, use the <tt>src</tt> attribute like you would normally do in HTML.
+</li><li> If you want to bundle your image inside the documentation bundle (i.e. the documentation zipball), simply drop the files in an <tt>_images</tt> folder inside your source documentation tree (that is where the <tt>ns-*.xml</tt> files are). You can then refer to these pictures in the XML by its filename in a <tt>href</tt> attribute (notice how this is not the same attribute as before).
+</li></ul>
+<p>For example, if you want to link the following image <tt><a href="http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png" class="external free" rel="nofollow">http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png</a></tt>, use <tt>&lt;img src="<a href="http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png" class="external free" rel="nofollow">http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png</a>" /&gt;</tt>. If you want to link to the <tt>monkey.png</tt> you dropped in your <tt>_images</tt> folder, simply write tt&gt;&lt;img href="monkey.png" /&gt;&lt;/tt&gt;
+</p>
+<h1> <span class="mw-headline" id="Monodoc_browser_editing"> Monodoc browser editing </span></h1>
+<p>Editing from inside the <a href="{{site.baseurl}}/Monodoc" title="Monodoc">Monodoc</a> browser is simple. You have to navigate through the documentation and find where is the label <i>To be added</i> or <i>Documentation for this section has not yet been entered</i> and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
+</p><p>After clicking on an [Edit] link, monodoc will show an aspect similar to this one: 
+</p><p><a href="{{site.baseurl}}/images/old_site/4/41/Monodoc-edit.png" class="image"><img alt="Monodoc-edit.png" src="{{site.baseurl}}/images/old_site/4/41/Monodoc-edit.png" width="717" height="507" /></a>
+</p><p>Where you can see the window is divided in two panels. The upper panel is where you type the <a href="#Writing_XML_Documentation">XML Documentation code</a>. Some buttons in the middle will help you with the most important tags. In the lower panel you can see a preview of the documentation as it is being typed. Finally, at the lowest part of the window you can see three buttons, <i>Close</i> for canceling the actual editing, <i>Save</i> for saving the changes and <i>Restore</i> to remove all your changes and restore the node as it was originally.
+</p>

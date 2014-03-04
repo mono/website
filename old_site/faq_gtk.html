@@ -1,0 +1,204 @@
+---
+layout: obsolete
+title: "FAQ: Gtk"
+permalink: /old_site/FAQ:_Gtk/
+---
+
+<h1>FAQ: Gtk</h1>
+
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General_Questions"><span class="tocnumber">1</span> <span class="toctext">General Questions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Gtk.23_widget_questions"><span class="tocnumber">2</span> <span class="toctext">Gtk# widget questions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Custom_Widgets"><span class="tocnumber">3</span> <span class="toctext">Custom Widgets</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Common_Questions"><span class="tocnumber">4</span> <span class="toctext">Common Questions</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Gecko.23_and_Mozilla"><span class="tocnumber">5</span> <span class="toctext">Gecko# and Mozilla</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Migration"><span class="tocnumber">6</span> <span class="toctext">Migration</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Common_Problems"><span class="tocnumber">7</span> <span class="toctext">Common Problems</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="General_Questions"> General Questions </span></h1>
+<p><b> How is Gtk# related to Gtk+? </b>
+</p><p>Gtk# is a managed binding for CIL-based languages to the Gtk+ library.  The binding features a number of mappings from Gtk+ features into CIL-features like mapping signals to events and allowing developers to use C# constructs to alter the behavior of C-based widgets (for example, overwriting methods).
+</p><p>GTK+ is a graphical user interface toolkit for Unix and Windows and is written in C while the Gtk# binding is written in C#.
+</p><p><b> Can I use Gtk# on Windows? </b>
+</p><p>Yes, Gtk# is available for Windows developers.
+</p><p>In addition, when you install Gtk# for .NET if Visual Studio is installed templates for VB.NET and C# are installed, so you can create Gtk# based applications right from Visual Studio.
+</p><p><b> What is Glade? </b>
+</p><p>Glade is a GUI designer for Gtk+ applications that stores your designs in an XML file (the file name ends in ".glade").   User interfaces created with Glade can are dynamically loaded at runtime using the Glade.XML class.
+</p><p>For example, if you have created a dialog box for entering some personal information, you could load it like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> PersonalDataDialog <span style="color: #008000;">&#123;</span>
+     <span style="color: #008000;">&#91;</span>Widget<span style="color: #008000;">&#93;</span> Entry name<span style="color: #008000;">;</span>
+     <span style="color: #008000;">&#91;</span>Widget<span style="color: #008000;">&#93;</span> Entry telephone<span style="color: #008000;">;</span>
+&#160;
+     PersonalDataDialog <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+         <span style="color: #008080; font-style: italic;">// This loads the UI from the &quot;mygui.glade&quot; file</span>
+         <span style="color: #008080; font-style: italic;">// it loads the &quot;personaldata&quot; dialog from there.</span>
+         Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> ui <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Glade<span style="color: #008000;">.</span><span style="color: #0000FF;">XML</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;mygui.glade&quot;</span>, <span style="color: #666666;">&quot;personaldata&quot;</span>, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+         <span style="color: #008080; font-style: italic;">// This connects fields and event handlers automatically</span>
+         <span style="color: #008080; font-style: italic;">// for example &quot;name&quot; and &quot;telephone&quot; entries that are declared</span>
+         <span style="color: #008080; font-style: italic;">// with the [Widget] attribute above are bound to the widgets</span>
+         <span style="color: #008080; font-style: italic;">// defined in the UI.</span>
+         ui<span style="color: #008000;">.</span><span style="color: #0000FF;">Autoconnect</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+         <span style="color: #008080; font-style: italic;">// At this point you can read data from &quot;name&quot; and &quot;telephone&quot;</span>
+         <span style="color: #008080; font-style: italic;">// widgets.</span>
+     <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b> Can I embed Glade files in my executable? </b>
+</p><p>Yes, just bundle your glade files as resources (using the -resource: option in the compiler) and change your constructor call or use the Glade.XML.FromAssembly () method to create your Glade.XML ui.
+</p>
+<h1> <span class="mw-headline" id="Gtk.23_widget_questions"> Gtk# widget questions </span></h1>
+<p><b> Can I use absolute positioning for my dialogs? </b>
+</p><p>Yes, use the Gtk.Fixed or Gtk.Layout widgets if you need to use absolute positioning for your widgets.
+</p><p><b> How do I fill a Gtk.ComboBox? </b>
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #6666cc; font-weight: bold;">void</span> FillCombo <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ComboBox</span> cb<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        cb<span style="color: #008000;">.</span><span style="color: #0000FF;">Clear</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        CellRendererText cell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CellRendererText<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        cb<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span><span style="color: #008000;">&#40;</span>cell, <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        cb<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span><span style="color: #008000;">&#40;</span>cell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        ListStore store <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ListStore<span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        cb<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> store<span style="color: #008000;">;</span>
+&#160;
+        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Gtk&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        store<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;ComboBox&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span></pre>
+<p><b> How can I change the colors of a widget? </b>
+</p><p>You can use the ModifyBase and ModifyText routines which are part of the Widget subclass, like this:
+</p>
+<pre class="csharp" style="font-family:monospace;">myEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">ModifyBase</span><span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Color</span><span style="color: #008000;">&#40;</span><span style="color: #FF0000;">255</span>,<span style="color: #FF0000;">0</span>,<span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+myEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">ModifyText</span><span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Color</span><span style="color: #008000;">&#40;</span><span style="color: #FF0000;">0</span>,<span style="color: #FF0000;">255</span>,<span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h1> <span class="mw-headline" id="Custom_Widgets"> Custom Widgets </span></h1>
+<p><b> How do I create a custom widget? </b>
+</p><p>You can create custom widgets by inheriting from a base class that is appropriate.   If you plan to do a custom widget that will display itself, a good starting point is the Gtk.DrawingArea widget.
+</p><p><b> Do I need to create a custom widget to respond to events? </b>
+</p><p>Gtk# exposes a number of events that allow developers to customize existing widgets without resorting to subclassing.   It is possible to attach arbitrary code to be executed by a handler, for example:
+</p>
+<pre class="csharp" style="font-family:monospace;">    Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Button</span> b <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Button <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Print&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    b<span style="color: #008000;">.</span><span style="color: #0000FF;">Clicked</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+         document<span style="color: #008000;">.</span><span style="color: #0000FF;">Print</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span></pre>
+<p><b> Should I hook up to events, or override methods to create a custom widget? </b>
+</p><p>Gtk# supports both models. 
+</p><p>There is some overhead in signal emission. You are also relinquishing some control over whether your users see events before your control is updated.  There are no guarantees that your event handler will run first even though it is added to the event before any user handlers.  That's the nature of .Net events.
+</p><p>For those reasons it is probably best to override the VM instead of connecting to the event.  Don't forget to chain to the base method where appropriate.
+</p><p>For example, compare:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> MyWidget <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">DrawingArea</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> MyWidget <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+          ExposeEvent <span style="color: #008000;">+=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ExposeEventHandler <span style="color: #008000;">&#40;</span>ExposeHandler<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #6666cc; font-weight: bold;">void</span> ExposeHandler <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> obj, ExposeEventArgs args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> win <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span><span style="color: #008000;">;</span>
+        Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Rectangle</span> area <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Event</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Area</span><span style="color: #008000;">;</span>
+&#160;
+        win<span style="color: #008000;">.</span><span style="color: #0000FF;">DrawRectangle</span> <span style="color: #008000;">&#40;</span>Style<span style="color: #008000;">.</span><span style="color: #0000FF;">BaseGC</span> <span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span><span style="color: #008000;">&#41;</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, area<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">//Important: the next line flags that the event was processed:</span>
+        args<span style="color: #008000;">.</span><span style="color: #0000FF;">RetVal</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The same code using the overwrite mechanism would look like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> MyWidget <span style="color: #008000;">:</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">DrawingArea</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> MyWidget <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">protected</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> OnExposeEvent <span style="color: #008000;">&#40;</span>Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">EventExpose</span> args<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> win <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span><span style="color: #008000;">;</span>
+        Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Rectangle</span> area <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0000FF;">Area</span><span style="color: #008000;">;</span>
+&#160;
+        win<span style="color: #008000;">.</span><span style="color: #0000FF;">DrawRectangle</span> <span style="color: #008000;">&#40;</span>Style<span style="color: #008000;">.</span><span style="color: #0000FF;">BaseGC</span> <span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span><span style="color: #008000;">&#41;</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, area<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span> 
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Common_Questions"> Common Questions </span></h1>
+<p>Some frequently asked questions about <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">GtkSharp</a>.
+</p><p>For a list of varios pages dealing with Gtk# on this site see <a href="http://www.mono-project.com/Category:GtkSharp" class="external text" rel="nofollow">GtkSharp Articles</a>.
+</p><p><b> Common Problems </b>
+</p><p><b>= On Windows, Idle times are not being called </b>=
+</p><p>Make sure you call GLib.Thread.Init ()
+</p><p><b>= My application crashes with threads </b>=
+</p><p>If your application crashes with a message like this:
+</p>
+<pre class="bash" style="font-family:monospace;">Xlib: unexpected async reply <span style="color: #7a0874; font-weight: bold;">&#40;</span>sequence 0x146<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #000000; font-weight: bold;">!</span></pre>
+<p>It means that you are trying to invoke methods in Gtk# from a thread that is not the one that has invoked Application.Run ().     This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run.  This is done by either just hooking up to signals, using GLib timers or events and not threads.
+</p><p>This topic is covered in more detail in these two pages: <a href="{{site.baseurl}}/Best_Practices" title="Best Practices">Best_Practices</a> and <a href="{{site.baseurl}}/Responsive_Applications" title="Responsive Applications">Responsive Applications</a> pages for details on how to solve this issue.
+</p>
+<h1> <span class="mw-headline" id="Gecko.23_and_Mozilla"> Gecko# and Mozilla </span></h1>
+<p><b> How do I use Gecko or Mozilla with Gtk#? </b>
+</p><p>You can use pkg-config to auto-detect whether the Mozilla development libraries are installed, the pkg-config module name is: gecko-sharp-2.0
+</p><p>To test it, you can write:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">if</span> pkg-config gecko-sharp-<span style="color: #000000;">2.0</span>; <span style="color: #000000; font-weight: bold;">then</span>
+    <span style="color: #7a0874; font-weight: bold;">echo</span> Gecko<span style="color: #666666; font-style: italic;"># is installed</span>
+<span style="color: #000000; font-weight: bold;">else</span>
+    <span style="color: #7a0874; font-weight: bold;">echo</span> Gecko<span style="color: #666666; font-style: italic;"># is not installed</span>
+<span style="color: #000000; font-weight: bold;">fi</span></pre>
+<p>To compile your applications to use Gecko# you should do this:
+</p>
+<pre class="bash" style="font-family:monospace;">mcs demo.cs -pkg:gecko-sharp-<span style="color: #000000;">2.0</span></pre>
+<p>To run the applications, you should set the environment variable, run the application like this:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">MOZILLA_HOME</span>=<span style="color: #ff0000;">&quot;<span style="color: #780078;">`pkg-config --variable=libdir mozilla-gtkmozembed`</span>&quot;</span>
+mono demo.exe</pre>
+<p>Those are usually set on scripts, as recommended on our <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Application Deployment Guidelines</a>.
+</p><p><br />
+<b> Mozilla and Plugins </b>
+</p><p>If you are having trouble embedding Flash content (or any other plugin) into your Gecko# application, make sure you have set the MOZ_PLUGIN_PATH to the directory holding mozilla, like this:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">MOZ_PLUGIN_PATH</span>=<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>mozilla<span style="color: #000000; font-weight: bold;">/</span>plugins</pre>
+<p>Alternatively, you can programatically set this variable from C#:
+</p>
+<pre class="csharp" style="font-family:monospace;">WebControl<span style="color: #008000;">.</span><span style="color: #0000FF;">CompPath</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;/usr/lib/mozilla-firefox&quot;</span><span style="color: #008000;">;</span></pre>
+<h1> <span class="mw-headline" id="Migration"> Migration </span></h1>
+<p><b> How do I migrate a Gtk# 1.0 to Gtk# 2.0 application? </b>
+</p><p>The steps are described in <a href="{{site.baseurl}}/GtkSharpUpgrade" title="GtkSharpUpgrade">Gtk# Upgrade page</a>.
+</p>
+<h1> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h1>
+<p><b> I can not build Gtk# on my system </b>
+</p><p>If you are getting errors like this:
+</p>
+<pre class="bash" style="font-family:monospace;">generated<span style="color: #000000; font-weight: bold;">/</span>PangoHelper.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">17</span>,<span style="color: #000000;">55</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS0039: Cannot convert <span style="color: #7a0874; font-weight: bold;">type</span> <span style="color: #000000; font-weight: bold;">`</span>GLib.Object<span style="color: #ff0000;">'
+ to `Pango.Context'</span> via a built-in conversion
+generated<span style="color: #000000; font-weight: bold;">/</span>PangoHelper.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">52</span>,<span style="color: #000000;">55</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS0039: Cannot convert <span style="color: #7a0874; font-weight: bold;">type</span> <span style="color: #000000; font-weight: bold;">`</span>GLib.Object<span style="color: #ff0000;">'
+ to `Pango.Context'</span> via a built-in conversion
+generated<span style="color: #000000; font-weight: bold;">/</span>PangoRenderer.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">19</span>,<span style="color: #000000;">47</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS1502: The best overloaded method 
+match <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #000000; font-weight: bold;">`</span>Pango.Renderer.Renderer<span style="color: #7a0874; font-weight: bold;">&#40;</span>GLib.GType<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #ff0000;">' has some invalid arguments
+generated/PangoRenderer.cs(19,47): error CS1503: Argument 1: Cannot convert from
+ `GLib.GType'</span> to <span style="color: #000000; font-weight: bold;">`</span>GLib.GType<span style="color: #ff0000;">'
+generated/PangoRenderer.cs(34,5): error CS1502: The best overloaded method match
+ for `GLib.Object.CreateNativeObject(string[], GLib.Value[])'</span> has some invalid 
+arguments
+generated<span style="color: #000000; font-weight: bold;">/</span>PangoRenderer.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">34</span>,<span style="color: #000000;">5</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS1503: Argument <span style="color: #000000;">2</span>: Cannot convert from 
+<span style="color: #000000; font-weight: bold;">`</span>GLib.Value<span style="color: #7a0874; font-weight: bold;">&#91;</span><span style="color: #7a0874; font-weight: bold;">&#93;</span><span style="color: #ff0000;">' to `GLib.Value[]'</span></pre>
+<p>Or like this:
+</p>
+<pre class="bash" style="font-family:monospace;">generated<span style="color: #000000; font-weight: bold;">/</span>PangoHelper.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">17</span>,<span style="color: #000000;">55</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS0039: Cannot convert <span style="color: #7a0874; font-weight: bold;">type</span> <span style="color: #000000; font-weight: bold;">`</span>GLib.Object<span style="color: #ff0000;">'
+ to `Pango.Context'</span> via a built-in conversion
+generated<span style="color: #000000; font-weight: bold;">/</span>PangoHelper.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">52</span>,<span style="color: #000000;">55</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS0039: Cannot convert <span style="color: #7a0874; font-weight: bold;">type</span> <span style="color: #000000; font-weight: bold;">`</span>GLib.Object<span style="color: #ff0000;">'
+ to `Pango.Context'</span> via a built-in conversion
+generated<span style="color: #000000; font-weight: bold;">/</span>PangoRenderer.cs<span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">19</span>,<span style="color: #000000;">47</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>: error CS1502: The best overloaded method 
+match <span style="color: #000000; font-weight: bold;">for</span> <span style="color: #000000; font-weight: bold;">`</span>Pango.Renderer.Renderer<span style="color: #7a0874; font-weight: bold;">&#40;</span>GLib.GType<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #ff0000;">' has some invalid arguments
+generated/PangoRenderer.cs(19,47): error CS1503: Argument GLib.GType: Cannot 
+conver from equally named types from different assemblies GLib.GType (from 
+glib-sharp, Version=2.6.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f) 
+and GLib.GType (from glib-sharp, Version=2.8.0.0, Culture=neutral, 
+PublicKeyToken=35e10195dab3c99f)</span></pre>
+<p>This is caused because you have a newer version of Gtk# installed on your system, and you are trying to compile an older version.  
+</p><p>This is a limitation of the policy loading code.   The only way of solving this is by removing the installed Gtk# (or the policy directories in the GAC) to build Mono or build the appropriate Gtk# version.
+</p><p>An upcoming version of Mono will fix this by not loading indirectly referenced policy-versioned libraries.
+</p>

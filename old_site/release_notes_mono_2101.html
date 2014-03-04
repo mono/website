@@ -1,0 +1,79 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.10.1"
+permalink: /old_site/Release_Notes_Mono_2.10.1/
+---
+
+<h1>Release Notes Mono 2.10.1</h1>
+
+<p>Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p><p>Mono 2.10.1 is a minor update to <a href="{{site.baseurl}}/Release_Notes_Mono_2.10" title="Release Notes Mono 2.10">Mono 2.10</a> based on the mono-2-10 branch of github.    Mono 2.10.1 was released on February 25, 2011.
+</p>
+<h1> <span class="mw-headline" id="Important_Information_About_Mono_2.10"> Important Information About Mono 2.10 </span></h1>
+<p>Mono's Long Term Supported release continues to be Mono 2.6, the next long-term support release will be Mono 3.0.  
+</p><p>Mono 2.10 ships the latest and greatest and updates and they have not received as much testing as they should.   Users seeking absolute stability should stay on Mono 2.6.   Users switching to Mono 2.10, should expect a faster bug turn around time, but they should also plan on upgrading to the upcoming 2.10.xx series as we fix bugs in our stack.
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<p>This release can run Microsoft's OrchardCMS, an open source CMS system built using the best .NET practices, and uses the delightful Razor engine.
+</p><p>We added support for PostgreSQL to Orchard and <a href="http://orchard.codeplex.com/discussions/247340" class="external text" rel="nofollow">submitted our patches to the OrchardCMS community</a>.
+</p>
+<h1> <span class="mw-headline" id="Changes_Since_Mono_2.10"> Changes Since Mono 2.10 </span></h1>
+<p>ASP.NET MVC:
+</p>
+<ul><li> Bug preventing MVC3 apps from running has been fixed
+</li><li> Fix 668655: MVC3: error accessing the query variables collection
+</li><li> OrchardCMS should work with Mono
+</li><li> 671753: Route.GetVirtualPath must take ambient values into account.
+</li></ul>
+<p>Parallel FX:
+</p>
+<ul><li> The default task scheduler now uses the runtime ThreadPool, instead of its own pool
+</li></ul>
+<p>OSX:
+</p>
+<ul><li> Fixes 594642, problem with GetAllInterfaces
+</li><li> Performance Counters are now supported on OSX
+</li><li> Respects signal handlers when reporting crashes
+</li><li> CSDK pkg now contains .dSYM and .mdb files for debugging
+</li></ul>
+<p>HttpListener:
+</p>
+<ul><li> Fix regression on HTTP Authentication
+</li></ul>
+<p>Xbuild:
+</p>
+<ul><li> Allow MSBuildExtensionsPath to be overridden by setting the environment variable $MSBuildExtensionsPath
+</li><li> Use the correct path separator for handling environment variable MSBuildExtensionsPath, fixes xbuild on windows. Bug #674337.
+</li><li> #674630: Handle errors in trying to create AssemblyName from invalid full names.
+</li></ul>
+<p>WCF:
+</p>
+<ul><li> System.ServiceModel: extensive serialization bug fixes.
+</li><li> Simple InstanceContext.Extensions implementation by David Schmitt (#674057)
+</li></ul>
+<p>Bug fixes:
+</p>
+<ul><li> 672907: List&lt;T&gt;: Properly check the array argument to match MS semantics
+</li><li> 672446: Generic sharing bugfix
+</li><li> 673592: Soft debugger was crashing the runtime on Windows
+</li><li> 673828: Fix ARM thunk creation in dynamic methods.
+</li><li> Transactions: do deep copies of transaction (required for Orchard/NHibernate)
+</li><li> 669807: Cache session item locks as the item might be cleared before the lock needs to be released.
+</li><li> Fix ARM/darwin lookup of Thread Specific Data/Descriptors
+</li><li> Implement memory barriers for ARM
+</li><li> 672939: fixes missing methods while running MonoDevelop
+</li><li> 669815: Fixes crash on IronRuby test suite
+</li><li> 661461: Fixes a case where Assembly.Load(AssemblyName) did not work with some partial names
+</li><li> 662867: Attribute.GetCustomAttributes was failing in searching inheritance chain against overridden method ToString()
+</li><li> Workaround Linux/gcc/ARM bug
+</li><li> 665893: Fixes a crash when a generic method that calls another generic method was called
+</li><li> Fix infinite loop in DiscoveryMessageSequence equality comparison
+</li><li> 667921: Fix crash in multi-threaded LINQ
+</li><li> System.IO.TextReader now provides a default implementation for ReadLine and ReadToEnd
+</li><li> Console:TerminfoDriver is now more tolerant to failures
+</li><li> 656468: Console, avoid throwing exceptions for unsupported console features on Unix
+</li><li> Fix stop_debugger_thread () on windows.
+</li><li> #669836: Treat exceptions that are caught by mono_runtime_invoke() as unhandled in SDB
+</li><li> Enabled UDP stack on Mobile platforms.
+</li></ul>
+

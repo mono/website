@@ -1,0 +1,82 @@
+---
+layout: obsolete
+title: "GtkGLAreaSharp"
+permalink: /old_site/GtkGLAreaSharp/
+---
+
+<h1>GtkGLAreaSharp</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Installing"><span class="tocnumber">2</span> <span class="toctext">Installing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Tutorial"><span class="tocnumber">2.1</span> <span class="toctext">Tutorial</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Dependencies"><span class="tocnumber">3</span> <span class="toctext">Dependencies</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Testing_and_Development"><span class="tocnumber">4</span> <span class="toctext">Testing and Development</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#MonoDevelop"><span class="tocnumber">5</span> <span class="toctext">MonoDevelop</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Support"><span class="tocnumber">6</span> <span class="toctext">Support</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Help_Wanted"><span class="tocnumber">7</span> <span class="toctext">Help Wanted</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#TODO"><span class="tocnumber">8</span> <span class="toctext">TODO</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Examples"><span class="tocnumber">9</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Release_Notes"><span class="tocnumber">10</span> <span class="toctext">Release Notes</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/8/8a/Gtkglext-sharp1.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/8/8a/Gtkglext-sharp1.png" width="180" height="206" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/8/8a/Gtkglext-sharp1.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>A view of a 3d Teapot generated using GtkGLAreaSharp</div></div></div>
+<p>GtkGLAreaSharp is an OpenGL development platform build on the Mono stack.
+</p><p>Our code is hosted in subversion here:
+<a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/" class="external free" rel="nofollow">http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/</a>
+</p><p>We also keep stable release tarballs here:
+<a href="http://www.colliertech.org/downloads/gtkglarea-sharp/" class="external free" rel="nofollow">http://www.colliertech.org/downloads/gtkglarea-sharp/</a>
+</p>
+<h2> <span class="mw-headline" id="Installing"> Installing </span></h2>
+<h3> <span class="mw-headline" id="Tutorial"> Tutorial </span></h3>
+<p>Remy has made a great <a href="{{site.baseurl}}/GtkGlAreaSharp:Installation" title="GtkGlAreaSharp:Installation">GtkGlAreaSharp:Installation</a> tutorial.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Dependencies"> Dependencies </span></h2>
+<p>GtkGLAreaSharp is a wrapper around the C <a href="{{site.baseurl}}/GtkGLArea" title="GtkGLArea">GtkGLArea</a> gtk+ widget.  Hence, it depends on that library.  It is in the GNOME cvs repository as "gtkglarea."  C.J. is now maintainer of this package.  Future plans include OS platform independence and use of glitz.
+</p><p>The widget doesn't <b>require</b> <a href="{{site.baseurl}}/Tao" title="Tao">Tao</a>, but it is the most well-maintained C# wrapper around OpenGL that I have found.  Plus, the tao developers hang out in the same places as the gtkglarea-sharp developers.  The examples in the repository use Tao as the OpenGL interface.
+</p><p>C.J. has created an autotooled build system for tao and hosted it on his server, listed below.  You may read more about it on the <a href="{{site.baseurl}}/Tao_autotools" title="Tao autotools">Tao autotools</a> page
+</p><p><a href="https://www.colliertech.org/downloads/tao/" class="external free" rel="nofollow">https://www.colliertech.org/downloads/tao/</a>
+</p><p>The patch has been applied to the official release, so you no longer need to get it from the above link.
+</p>
+<h2> <span class="mw-headline" id="Testing_and_Development"> Testing and Development </span></h2>
+<p>If you wish to beta test the wrapper, check the code out from subversion here:
+</p><p><a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/" class="external free" rel="nofollow">http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/</a>
+</p>
+<h2> <span class="mw-headline" id="MonoDevelop"> MonoDevelop </span></h2>
+<p>If you would like to download GtkAreaGLSharp and use it within MonoDevelop, you can see this <a href="{{site.baseurl}}/GtkGLAreaSharp:With_MonoDevelop" title="GtkGLAreaSharp:With MonoDevelop"> rough guide</a>.
+</p>
+<h2> <span class="mw-headline" id="Support"> Support </span></h2>
+<p>For support with GtkGLAreaSharp, catch me on IRC.  My nickname is cj on Freenode and GIMPNet.  You can catch me on #mono on GIMPNet or by using my web interface to the #mono channel:
+</p><p><a href="http://www.colliertech.org/cgi-bin/cgiirc/irc.cgi" class="external free" rel="nofollow">http://www.colliertech.org/cgi-bin/cgiirc/irc.cgi</a>
+</p><p>I will walk you through the process of getting gtkglarea-sharp installed.
+</p><p>You can also speak with remy on #mono for support.  He's in a different time zone than me.
+</p>
+<h2> <span class="mw-headline" id="Help_Wanted"> Help Wanted </span></h2>
+<dl><dd>API  documentation would be great.
+</dd><dd>Testing the examples would be useful!
+</dd><dd>Feedback regarding namespace clarity would be very nice.
+</dd></dl>
+<h2> <span class="mw-headline" id="TODO"> TODO </span></h2>
+<ul><li> Get the autotools bits working under cygwin with -no-cygwin
+</li><li> Make Alp's managed replacement for gtkglarea work
+</li></ul>
+<h2> <span class="mw-headline" id="Examples"> Examples </span></h2>
+<p>I have written a number of examples using the widget and taken screen shots.
+</p><p>With the help of Alp Toker, I created a rotating teapot demo, which is included in the examples/ directory of the distribution:
+</p><p><a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/" class="external free" rel="nofollow">http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/</a>
+</p><p><br />
+<a href="{{site.baseurl}}/images/old_site/8/8a/Gtkglext-sharp1.png" class="image"><img alt="Gtkglext-sharp1.png" src="{{site.baseurl}}/images/old_site/8/8a/Gtkglext-sharp1.png" width="310" height="355" /></a> <a href="{{site.baseurl}}/images/old_site/b/b7/Gtkglext-sharp2.png" class="image"><img alt="Gtkglext-sharp2.png" src="{{site.baseurl}}/images/old_site/b/b7/Gtkglext-sharp2.png" width="310" height="355" /></a>
+</p><p><br />
+This code is poorly documented.  However, I used this code to create a partial implementation of <a href="http://nehe.gamedev.net/" class="external text" rel="nofollow">Neon Helium</a>'s OpenGL lessons.  You can find the NeHe documentation on the <a href="{{site.baseurl}}/GtkGLAreaSharp:NeHe" title="GtkGLAreaSharp:NeHe">GtkGLAreaSharp:NeHe</a> wiki entry.
+</p>
+<h2> <span class="mw-headline" id="Release_Notes"> Release Notes </span></h2>
+<ul><li> <a href="{{site.baseurl}}/GtkGLAreaSharp:0.0.17" title="GtkGLAreaSharp:0.0.17">GtkGLAreaSharp:0.0.17</a> - April 2007
+</li><li> <a href="{{site.baseurl}}/GtkGLAreaSharp:0.0.8" title="GtkGLAreaSharp:0.0.8">GtkGLAreaSharp:0.0.8</a>
+</li></ul>
+

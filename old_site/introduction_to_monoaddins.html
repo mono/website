@@ -1,0 +1,346 @@
+---
+layout: obsolete
+title: "Introduction to Mono.Addins"
+permalink: /old_site/Introduction_to_Mono.Addins/
+---
+
+<h1>Introduction to Mono.Addins</h1>
+
+<p>Mono.Addins is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
+</p><p>This framework is derived from the add-in engine used by MonoDevelop, although it has been completely rewritten and improved in many ways to make it more generic and easier to use. The MonoDevelop add-in engine was an improvement over the SharpDevelop engine, which took many ideas from the Eclipse add-in engine.
+</p><p>Mono.Addins has been designed to be useful for a wide range of applications: from simple applications with small extensibility needs, to complex applications (such as MonoDevelop itself) which need support for large add-in structures.
+</p><p>This document explains the basic concepts behind Mono.Addins, so you can get an idea of what the library is able to do. If you are interested in a more detailed explanation of all features see the document <a href="{{site.baseurl}}/Mono.Addins" title="Mono.Addins">Mono.Addins</a>.
+</p><p>If you have questions or suggestions about Mono.Addins, please subscribe to the <a href="http://groups.google.com/group/mono-addins" class="external text" rel="nofollow">Mono.Addins mailing list</a>. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Extension_Model"><span class="tocnumber">1</span> <span class="toctext">The Extension Model</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#A_simple_example"><span class="tocnumber">2</span> <span class="toctext">A simple example</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Description_of_an_add-in"><span class="tocnumber">3</span> <span class="toctext">Description of an add-in</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Extension_Paths"><span class="tocnumber">4</span> <span class="toctext">Extension Paths</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Querying_Extension_Points"><span class="tocnumber">5</span> <span class="toctext">Querying Extension Points</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Custom_Extension_Node_Types"><span class="tocnumber">6</span> <span class="toctext">Custom Extension Node Types</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Conditions"><span class="tocnumber">7</span> <span class="toctext">Conditions</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Loading_Add-ins"><span class="tocnumber">8</span> <span class="toctext">Loading Add-ins</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Add-in_Discovery"><span class="tocnumber">9</span> <span class="toctext">Add-in Discovery</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Creating_Extensible_Libraries"><span class="tocnumber">10</span> <span class="toctext">Creating Extensible Libraries</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Add-in_Management_Tools"><span class="tocnumber">11</span> <span class="toctext">Add-in Management Tools</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Licensing"><span class="tocnumber">12</span> <span class="toctext">Licensing</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="The_Extension_Model">The Extension Model</span></h1>
+<p>The extension model used by Mono.Addins is based on four concepts:
+</p>
+<ul><li> <b>Add-in host</b>: an application or library which can be extended by add-ins. Extension possibilities are declared using extension points.
+</li><li> <b>Extension point</b>: a placeholder where add-ins can register extension nodes to provide extra functionality. Extension points are identified using extension paths.
+</li><li> <b>Extension node</b>: an attribute-decorated element that describes an extension. Extension nodes are <i>typed</i>. Extension points may declare which types of extension nodes do they accept.
+</li><li> <b>Add-in</b>: A set of files which register new nodes in one or several extension points defined by add-in hosts. An add-in can also act as an add-in host, and as such it can be extended by other add-ins.
+</li></ul>
+<p>Mono.Addins also defines an <b>Add-in Description Model</b>, which is used by add-ins and add-in hosts to declare all extensibility information. Add-in descriptions can be represented either using an XML manifest, or by applying custom attributes to assemblies and types.
+</p><p>Finally, Mono.Addins provides an <b>API</b> (implemented in Mono.Addins.dll) which can be used at run-time to query and handle add-in extensions. The API is composed by three assemblies:
+</p>
+<ul><li> <b>Mono.Addins.dll</b>: implements the add-in engine.
+</li><li> <b>Mono.Addins.Setup.dll</b>: provides classes for managing add-in repositories. Needed only if applications want to offer add-in management options to users.
+</li><li> <b>Mono.Addins.Gui.dll</b>: GTK# frontend for Mono.Addins.Setup.
+</li></ul>
+<p>In order to clarify all those concepts, let's see a very simple example of an application based on Mono.Addins.
+</p>
+<h1> <span class="mw-headline" id="A_simple_example">A simple example</span></h1>
+<p>The idea is to implement a Text Editor which can be extended by add-ins. The following diagram shows the extension points that the editor will offer, and how they are extended by several add-ins:
+</p>
+<div class="center"><div class="floatnone"><a href="{{site.baseurl}}/images/old_site/e/e3/Mono-addins-sample.png" class="image"><img alt="Mono-addins-sample.png" src="{{site.baseurl}}/images/old_site/e/e3/Mono-addins-sample.png" width="500" height="345" /></a></div></div>
+<p>A complete description of how this extensible editor could be implemented is out of the scope of this document, but this example will be used to explain how Mono.Addins works and which features does it provide. 
+</p><p>Now let's start with the skeleton of the application and a very simple extension. We want to allow add-ins to run a custom command at application startup. Add-ins could use it, for example, to subscribe to editor events so they will perform custom actions when something happens, or to do any other kind of initialization work. 
+</p><p>The Text Editor application is composed by two assemblies:
+</p>
+<ul><li> TextEditor.exe is the editor application.
+</li><li> TextEditorLib.dll will define several interfaces to be implemented by extensions
+</li></ul>
+<p>We'll also implement an add-in which will extend the application:
+</p>
+<ul><li> SampleAddin.dll
+</li></ul>
+<p>Let's see a basic implementation of those:
+</p><p><b>ICommand library (TextEditorLib.dll)</b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>assembly<span style="color: #008000;">:</span>AddinRoot <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TextEditor&quot;</span>, <span style="color: #666666;">&quot;1.0&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+&#160;
+<span style="color: #008000;">&#91;</span>TypeExtensionPoint<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> ICommand
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #6666cc; font-weight: bold;">void</span> Run <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>An add-in (SampleAddin.dll)</b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>assembly<span style="color: #008000;">:</span>Addin<span style="color: #008000;">&#93;</span>
+<span style="color: #008000;">&#91;</span>assembly<span style="color: #008000;">:</span>AddinDependency <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TextEditor&quot;</span>, <span style="color: #666666;">&quot;1.0&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+&#160;
+<span style="color: #008000;">&#91;</span>Extension<span style="color: #008000;">&#93;</span>
+<span style="color: #6666cc; font-weight: bold;">class</span> HelloWorldExtension<span style="color: #008000;">:</span> ICommand
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Run <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>The host application (TextEditor.exe)</b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Application
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Initialize the add-in engine</span>
+		AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">Initialize</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Detect changes in add-ins</span>
+		AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">Registry</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Update</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>ICommand cmd <span style="color: #0600FF; font-weight: bold;">in</span> AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">GetExtensionObjects</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a><span style="color: #008000;">&#40;</span>ICommand<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+			cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Some comments about the example:
+</p>
+<ul><li> The <b>AddinRoot</b> attribute can be used to mark an assembly as being an add-in host. Add-in roots must specify an identifier and a version.
+</li><li> The <b>TypeExtensionPoint</b> marks a class as being an extension point, that is, that add-ins can create new implementations of this class.
+</li><li> The <b>Addin</b> attribute indicates that an assembly is an add-in.
+</li><li> The <b>AddinDependency</b> attribute specifies which add-in root is being extended.
+</li><li> The <b>Extension</b> attribute marks a class as being an extension. This class will be registered in the extension point defined by the library.
+</li><li> The <b>AddinManager.Initialize()</b> method must be called by any host application to initialize the add-in engine.
+</li><li> The <b>AddinManager.Registry.Update()</b> can be called to detect changes in add-ins. It will detect and include new add-ins, exclude deleted add-ins and will regenerate the add-in relations if there is any other change.
+</li><li> The <b>AddinManager.GetExtensionObjects()</b> method can be used to get the objects of a given type implemented in any of the add-ins. The type must be registered as an extension point.
+</li></ul>
+<h1> <span class="mw-headline" id="Description_of_an_add-in">Description of an add-in</span></h1>
+<p>Mono.Addins's extension system is based on a tree of extension points. Applications define which extension points are available, and add-ins specify which extension points do they extend. An extension point is just a placeholder where add-ins can add new items to provide extra functionality. Add-ins which extend applications can at the same time define new extension points, so add-ins can be extended by other add-ins.
+</p><p>Every add-in and add-in host has to declare which extensions (or extension points) does it provide. There are two ways of doing this:
+</p>
+<ul><li> <b>Using custom attributes</b>: as shown in the first example, Mono.Addins provides several attributes which can be used to mark classes as extensions or extension points. Attributes can also be used to declare add-in information and dependencies.
+</li><li> <b>Using an add-in manifest</b>: a manifest is an XML description of an add-in. Attributes are very easy to use, but not all extensibility features that Mono.Addins provides can be expressed using attributes. Any declaration that can be done using custom attributes can also be done in a manifest, but not everything that can be declared in a manifest can also be expressed using custom attributes. Manifests can be deployed as standalone files, or they can be embedded as a resource in assemblies.
+</li></ul>
+<p>It is allowed to use a mix of both approaches to describe an add-in. That is, an add-in could declare simple extensions using attributes, and more complex extensions in a manifest embedded as a resource.
+</p><p>The ICommand example shown in the previous section could also be implemented using manifests. This is what the manifest for the TextEditor host would look like:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;TextEditor&quot;</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">isroot</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+&#160;
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Runtime<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Import</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;TextEditor.exe&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Import</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;TextEditorLib.dll&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Runtime<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionPoint</span> path = <span style="color: #ff0000;">&quot;/TextEditor/TypeExtensions/ICommand&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionNode</span> <span style="color: #000066;">objectType</span>=<span style="color: #ff0000;">&quot;ICommand&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ExtensionPoint<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>And this could be the manifest for the add-in:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Runtime<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Import</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;SampleAddin.dll&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Runtime<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Dependencies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;TextEditor&quot;</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Dependencies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Extension</span> path = <span style="color: #ff0000;">&quot;/TextEditor/TypeExtensions/ICommand&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Type</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;HelloWorldExtension&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Extension<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>	
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<h1> <span class="mw-headline" id="Extension_Paths">Extension Paths</span></h1>
+<p>Extension points are defined by hosts or add-ins, so other add-ins can register extensions on them. Every extension point is identified using a <b>path</b>. The add-in ecosystem of an application can be seen as a tree of extension points, each of which can be reached using a path, like a file path in a file system.
+</p><p>Mono.Addins can assign a default path in some cases, such as in the initial example, where the ICommand extension point was assigned to the "/TextEditor/TypeExtensions/ICommand" path.
+</p><p>However, in general extension points will have an explicit path since it helps developers understand what's goal of the extension point. The TypeExtensionPoint attribute allows specifying a path in the constructor:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>TypeExtensionPoint <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/TextEditor/StartupCommands&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> ICommand
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #6666cc; font-weight: bold;">void</span> Run <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>This attribute declaration is equivalent to:
+</p>
+<pre class="xml" style="font-family:monospace;"> 	...
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionPoint</span> path = <span style="color: #ff0000;">&quot;/TextEditor/StartupCommands&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionNode</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;Mono.Addins.TypeExtensionNode&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ExtensionPoint<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ 	...</pre>
+<p>In this case, add-ins would need to specify the extension path in their extensions. For example, the following declaration registers a new extension in that extension point:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Extension <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/TextEditor/StartupCommands&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+<span style="color: #6666cc; font-weight: bold;">class</span> HelloWorldExtension<span style="color: #008000;">:</span> ICommand
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Run <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Querying_Extension_Points">Querying Extension Points</span></h1>
+<p>Add-ins extend applications by registering new extension nodes in extension points. An <b>extension node</b> is the most basic extensibility element that an add-in can provide. In the initial example, extension nodes are used to declare new ICommand implementations. However, extension nodes are not limited to describing <i>types</i>. An extension node can be used to describe any kind of extensible element, such as a menu item, a document template, or whatever. It is up to the host application to define the kind of elements that each extension point accepts. 
+</p><p>The <b>AddinManager</b> class offers several methods for getting nodes registered in an extension point. One of them is <b>GetExtensionNodes</b>, which can be used like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>ExtensionNode node <span style="color: #0600FF; font-weight: bold;">in</span> AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">GetExtensionNodes</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/some/path&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+	Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Node: &quot;</span> <span style="color: #008000;">+</span> node<span style="color: #008000;">.</span><span style="color: #0000FF;">Id</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The <b>Mono.Addins.ExtensionNode</b> class is the base class for all kinds of extension nodes. Hosts applications can create new types of nodes to which describe application extensible specific elements.
+</p><p>There is a kind of extension node which is the most commonly used by applications: <b>Mono.Addins.TypeExtensionNode</b>. This ExtensionNode subclass can be used to specify a type, and it is the default extension node type used when none is specified, so, that's the type being used under the hoods in the ICommand example. For example, the initial example application could be rewritten like this: 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">...</span>
+<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>TypeExtensionNode node <span style="color: #0600FF; font-weight: bold;">in</span> AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">GetExtensionNodes</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/TextEditor/StartupCommands&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+	ICommand cmd <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>ICommand<span style="color: #008000;">&#41;</span> node<span style="color: #008000;">.</span><span style="color: #0000FF;">CreateInstance</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	cmd<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">...</span></pre>
+<p>Since type extensions are very common, AddinManager offers several method overloads for getting objects created out of TypeExtensionNode nodes, such as GetExtensionObjects(). Those methods avoid the work of getting the node and explicitly creating the instance.
+</p>
+<h1> <span class="mw-headline" id="Custom_Extension_Node_Types">Custom Extension Node Types</span></h1>
+<p>Every extension point has to declare the type of extension node that it accepts. Add-ins can register new extension nodes to that extension point. At run-time, extension nodes are represented by instances of the class <b>Mono.Addins.ExtensionNode</b> or instances of a subclass of it. Hosts can query extension points and get instances of ExtensionNode to extract whatever extension information is needed from them.
+</p><p>The class Mono.Addins.TypeExtensionNode allows specifying a type, and it may be enough for simple applications, but more complex applications will need to define new extension node types, so more complex extension information can be declared in extension points. Also, extension nodes don't always need to represent type implementations. In those cases, a host will need to implement custom extension node types.
+</p><p>Creating extension node types is very simple. Let's see an example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> TextEditor
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> FileTemplateNode<span style="color: #008000;">:</span> ExtensionNode
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008000;">&#91;</span>NodeAttribute<span style="color: #008000;">&#93;</span>
+		<span style="color: #6666cc; font-weight: bold;">string</span> resource<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008000;">&#91;</span>NodeAttribute<span style="color: #008000;">&#93;</span>
+		<span style="color: #6666cc; font-weight: bold;">string</span> name<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Name <span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span> <span style="color: #0600FF; font-weight: bold;">return</span> name <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span> <span style="color: #008000;">?</span> name <span style="color: #008000;">:</span> Id<span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">virtual</span> <span style="color: #6666cc; font-weight: bold;">string</span> GetContent <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+		<span style="color: #008000;">&#123;</span>
+			<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008000;">&#40;</span>StreamReader sr <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> StreamReader<span style="color: #008000;">&#40;</span>Addin<span style="color: #008000;">.</span><span style="color: #0000FF;">GetResource</span> <span style="color: #008000;">&#40;</span>resource<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+				<span style="color: #0600FF; font-weight: bold;">return</span> sr<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadToEnd</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> 
+			<span style="color: #008000;">&#125;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>This extension node type would be used in the Text Editor example to register file templates. When creating a new file, the user would choose a file template, so the new file would include the content provided by the template.
+</p><p>This class does several interesing things:
+</p>
+<ul><li> It inherits from Mono.Addins.ExtensionNode. All extension node types must be a subclass of this type.
+</li><li> It declares a field named <b>resource</b> and marks it with the <b>NodeAttribute</b> custom attribute. When creating a node instance, all fields marked with this attribute will be initialized using attribute values taken from the node. 
+</li><li> It implements a <b>GetContent</b> method which gets the content of a template using Addin.GetResource. The <b>Addin</b> property is declared in ExtensionNode and provides access to add-in resources and types.
+</li></ul>
+<p>This node type might be used by an extension point like this:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin</span> 	<span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;TextEditor&quot;</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">isroot</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	...
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionPoint</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;/TextEditor/Templates&quot;</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;...&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Description<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Templates that allow creating files with a default content<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Description<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ExtensionNode</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;FileTemplate&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;TextEditor.FileTemplateNode&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/ExtensionPoint<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	...
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>Add-ins might be able to register new nodes to this extension like this:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin</span> ...<span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	...
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Extension</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;/TextEditor/Templates&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;FileTemplate</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;README&quot;</span> <span style="color: #000066;">resource</span>=<span style="color: #ff0000;">&quot;readme-template.txt&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;FileTemplate</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;ChangeLog&quot;</span> <span style="color: #000066;">resource</span>=<span style="color: #ff0000;">&quot;changelog-template.txt&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Extension<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	...
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>When calling AddinManager.GetExtensionNodes(), the add-in engine will read all registered elements and will create the corresponding ExtensionNode subclass instance for each of them. It will also transfer attribute values to fields marked with [NodeAttribute].
+</p><p>Extension nodes are not just data containers, but they can also implement some logic. In this example the host application doesn't need to know where does a FileTemplateNode get the template content from. This logic is hidden in FileTemplateNode. FileTemplateNode happens to get the content from a resource, but it might allow getting it from other places in the future.
+</p>
+<h1> <span class="mw-headline" id="Conditions">Conditions</span></h1>
+<p>Add-ins may use <i>conditions</i> to register nodes in an extension point which are only visible under some contexts.
+</p><p>For example, an add-in registering a custom menu option to the main menu of our sample text editor might want to make that option visible only for some kind of files. To allow add-ins to do this kind of check, the host application needs to define a new condition. Conditions are defined like this:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;TextEditor&quot;</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	...
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;ConditionType</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;Openfile&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;TextEditor.OpenFileCondition&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	...
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p><b>id</b>is the identifier of the condition type, the ID to be used in extensions to reference this condition. <b>type</b> is the CLR type that implements the condition.
+</p><p>This condition defined in the add-in host can be referenced by add-ins like this:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	...
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Extension</span> path = <span style="color: #ff0000;">&quot;/TextEditor/MainMenu/Edit&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Condition</span> <span style="color: #000066;">id</span>=<span style="color: #ff0000;">&quot;OpenFile&quot;</span> <span style="color: #000066;">extension</span>=<span style="color: #ff0000;">&quot;xml,config&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;MenuSeparator</span> <span style="color: #000066;">insertafter</span>=<span style="color: #ff0000;">&quot;Paste&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+			<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;MenuItem</span> <span style="color: #000066;">label</span>=<span style="color: #ff0000;">&quot;Format XML&quot;</span> <span style="color: #000066;">commandType</span>=<span style="color: #ff0000;">&quot;TextEditor.Xml.FormatXmlCommand&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+		<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Condition<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Extension<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+	...
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Addin<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>Meaning that a separator and new "Format XML" command will be added after the "Paste" command, but only if the current open file has the extension ".xml" or ".config".
+</p><p>Extension points are dynamically updated when the status of a condition changes. Nodes matching the new condition status will be added, and nodes which do not match the condition will be removed.
+</p><p>Conditions are implemented using a subclass of Mono.Addins.ConditionType. For example, OpenFileCondition might be implemented like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> TextEditor
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> OpenFileCondition<span style="color: #008000;">:</span> ConditionType
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">public</span> OpenFileCondition <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+		<span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// It's important to notify changes in the status of a condition,</span>
+			<span style="color: #008080; font-style: italic;">// to make sure the extension points are properly updated.</span>
+			TextEditorApp<span style="color: #008000;">.</span><span style="color: #0000FF;">OpenFileChanged</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span>
+				<span style="color: #008080; font-style: italic;">// The NotifyChanged method must be called when the status</span>
+				<span style="color: #008080; font-style: italic;">// of a condition changes.</span>
+				NotifyChanged <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">bool</span> Evaluate <span style="color: #008000;">&#40;</span>NodeElement conditionNode<span style="color: #008000;">&#41;</span>
+		<span style="color: #008000;">&#123;</span>
+			<span style="color: #008080; font-style: italic;">// Get the required extension value from an attribute,</span>
+			<span style="color: #008080; font-style: italic;">// and check againts the extension of the currently open document</span>
+			<span style="color: #6666cc; font-weight: bold;">string</span> val <span style="color: #008000;">=</span> conditionNode<span style="color: #008000;">.</span><span style="color: #0000FF;">GetAttribute</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;extension&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+			<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>val<span style="color: #008000;">.</span><span style="color: #0000FF;">Length</span> <span style="color: #008000;">&gt;</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+				<span style="color: #6666cc; font-weight: bold;">string</span> ext <span style="color: #008000;">=</span> Path<span style="color: #008000;">.</span><span style="color: #0000FF;">GetExtension</span> <span style="color: #008000;">&#40;</span>TextEditorApp<span style="color: #008000;">.</span><span style="color: #0000FF;">OpenFileName</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+				<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> requiredExtension <span style="color: #0600FF; font-weight: bold;">in</span> val<span style="color: #008000;">.</span><span style="color: #0000FF;">Split</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">','</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+					<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>ext <span style="color: #008000;">==</span> <span style="color: #666666;">&quot;.&quot;</span> <span style="color: #008000;">+</span> requiredExtension<span style="color: #008000;">&#41;</span>
+						<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+			<span style="color: #008000;">&#125;</span>
+			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The add-in engine will create an instance of OpenFileCondition when needed, and will call <b>Evaluate</b> to get the result for a specific condition node.
+</p>
+<h1> <span class="mw-headline" id="Loading_Add-ins">Loading Add-ins</span></h1>
+<p>Mono.Addins supports lazy loading of add-ins. In fact, add-ins are never explicitly loaded. The add-in engine takes care of loading add-ins, and will only do it when strictly necessary.
+</p><p>For example, the following code:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>TypeExtensionNode node <span style="color: #0600FF; font-weight: bold;">in</span> AddinManager<span style="color: #008000;">.</span><span style="color: #0000FF;">GetExtensionNodes</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;/TextEditor/StartupCommands&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+	Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span>node<span style="color: #008000;">.</span><span style="color: #0000FF;">Id</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>will not load any add-in in memory. In general add-ins don't need to be loaded to get the extension nodes they declare (the add-in registry can provide the information needed to create the nodes). Add-ins will only be loaded when an assembly resource or type has to be used, for example when calling node.CreateInstance ().
+</p>
+<h1> <span class="mw-headline" id="Add-in_Discovery">Add-in Discovery</span></h1>
+<p>An application can define which directories should be scanned when looking for add-ins. However, add-ins copied to those directories won't be detected until an explicit add-in scan is requested to the add-in engine. That's because Mono.Addins keeps all add-in information in a <b>registry</b> which needs to be updated if there is any change. The registry can be updated by an application by calling <b>AddinManager.Registry.Update()</b>, or by a user by running the add-in setup tool.
+</p><p>The registry has information about the location of every add-in and a timestamp of the last check, so the Update method will only scan new or modified add-ins. An application might add a call to AddinManager.Registry.Update() in the Main method to detect all new add-ins every time the app is started.
+</p><p>Every add-in added to the registry is parsed and validated, and if there is any error it will be rejected. The registry is also in charge of scanning the add-in assemblies and look for extensions and other information declared using custom attributes. That information is merged with the manifest information (if there is one) to create a complete add-in description ready to be used at run-time.
+</p><p>It's important to notice that Mono.Addins allows <b>sharing an add-in registry among several applications</b>. In this context, all applications sharing the registry share the same extension point tree, and it is possible to implement add-ins which extend several hosts.
+</p>
+<h1> <span class="mw-headline" id="Creating_Extensible_Libraries">Creating Extensible Libraries</span></h1>
+<p>Using Mono.Addins it is possible to create not only extensible applications, but also extensible libraries. 
+</p><p>For example, let's say somebody implements a generic library for parsing source code files called NParser. NParser would provide:
+</p>
+<ul><li> A common API for parsing files.
+</li><li> An extension point to be used by add-ins to add support for new languages.
+</li></ul>
+<p>Any application might be able to use NParser by just linking to it and distributing it as a private assembly, or using it from the GAC. In this case, add-ins for the library would be loaded from the global registry, unless the application specified a different add-in registry.
+</p>
+<h1> <span class="mw-headline" id="Add-in_Management_Tools">Add-in Management Tools</span></h1>
+<p>In addition to the add-in engine, Mono.Addins provides an API which applications can use to offer basic add-in setup tools to users. This API is implemented in the Mono.Addins.Setup assembly, and provides the following features:
+</p>
+<ul><li> Installing/uninstalling add-in packages.
+</li><li> Subscribing to on-line add-in repositories.
+</li><li> Downloading and installing add-ins from repositories.
+</li><li> Creating add-in packages, to be published in on-line repositories.
+</li><li> Creating the files needed to publish add-ins on-line.
+</li></ul>
+<p>Mono.Addins also provides the tool <b>mautil</b> which can be used to perform all those operations.
+</p>
+<h1> <span class="mw-headline" id="Licensing">Licensing</span></h1>
+<p>Mono.Addins is open source available under the terms of the <a href="http://www.opensource.org/osi3.0/licenses/mit-license.php" class="external text" rel="nofollow">MIT X11</a> license.
+</p>

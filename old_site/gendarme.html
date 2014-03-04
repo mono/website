@@ -1,0 +1,142 @@
+---
+layout: obsolete
+title: "Gendarme"
+permalink: /old_site/Gendarme/
+---
+
+<h1>Gendarme</h1>
+
+<p>Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. 
+Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, 
+problems that compiler do not typically check or have not historically checked.
+</p><p>Gendarme uses the <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a> library to introspect code.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why_.3F"><span class="tocnumber">1</span> <span class="toctext">Why&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Runners"><span class="tocnumber">3</span> <span class="toctext">Runners</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Console"><span class="tocnumber">3.1</span> <span class="toctext">Console</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Wizard"><span class="tocnumber">3.2</span> <span class="toctext">Wizard</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#CruiseControl.NET"><span class="tocnumber">3.3</span> <span class="toctext">CruiseControl.NET</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#NAnt"><span class="tocnumber">3.4</span> <span class="toctext">NAnt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Rules"><span class="tocnumber">4</span> <span class="toctext">Rules</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Download"><span class="tocnumber">5</span> <span class="toctext">Download</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Linux"><span class="tocnumber">5.1</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Windows"><span class="tocnumber">5.2</span> <span class="toctext">Windows</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Binaries_only_.28multi-platform.29"><span class="tocnumber">5.3</span> <span class="toctext">Binaries only (multi-platform)</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Source_Code"><span class="tocnumber">5.4</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Other_Cool_Stuff"><span class="tocnumber">5.5</span> <span class="toctext">Other Cool Stuff</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Resources"><span class="tocnumber">6</span> <span class="toctext">Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Getting_Help"><span class="tocnumber">6.1</span> <span class="toctext">Getting Help</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Feedback"><span class="tocnumber">7</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Why_.3F"> Why&#160;? </span></h1>
+<ol><li> Because we often repeat our mistakes. The biggest one being not to review things we <i>know</i>;
+</li><li> Because it's a lot funnier (and safer) to write a rule than to review millions of source lines of code (SLOC) to ensure it's being followed.
+</li></ol>
+<h1> <span class="mw-headline" id="History"> History </span></h1>
+<p>Gendarme was originally created by Sebastien Pouliot to assist in the security auditing process in Mono. 
+Aaron Tomb later integrated his .NET bug-finding code (supported by the 2005 Google Summer of Code, GSoC) into the same framework. 
+Since then the number of <a href="http://anonsvn.mono-project.com/source/trunk/mono-tools/gendarme/AUTHORS" class="external text" rel="nofollow">contributors</a> and rules has been growing. 
+</p><p>Many Gendarme tasks have been realized in <a href="http://code.google.com/soc/2008/" class="external text" rel="nofollow">Google Summer Of Code</a> (GSoC): three projects in 2007, one in 2008 - and in the <a href="http://code.google.com/opensource/ghop/2007-8/" class="external text" rel="nofollow">Google Highly Open Participation</a> (GHOP): 17 tasks providing 40 rules (2007/2008), renamed <a href="http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono" class="external text" rel="nofollow">Google Code In</a> (2010/2011)&#160;: 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the <a href="{{site.baseurl}}/StudentProjects" title="StudentProjects">StudentProjects</a> page.
+</p>
+<h1> <span class="mw-headline" id="Runners"> Runners </span></h1>
+<p>Gendarme's rules are executed against user code by using a 'runner'. 
+This is the application responsible to load the rules, user assemblies, analysis and finally reporting defects.
+Gendarme currently ships with two different runners.
+</p>
+<h2> <span class="mw-headline" id="Console"> Console </span></h2>
+<p>A console-based runner is available to use Gendarme, and the rules, on your own compiled assemblies. 
+It is capable to output its results directly on the console, into XML files or into nice looking HTML reports.
+</p><p>This runner is the one that includes the most features. To see every options just type the following command in your terminal:
+</p>
+<pre>man gendarme
+</pre>
+<h2> <span class="mw-headline" id="Wizard"> Wizard </span></h2>
+<p>A System.Windows.Forms-based GUI runner is also part of the Gendarme distribution. 
+This is a step-by-step, wizard-based, runner that allows you to select assemblies, rules, options and report the analysis results 
+just like the console runner does (i.e. text, xml or html reports). 
+However it has fewer options (to remain simple) than the console runner.
+</p>
+<h2> <span class="mw-headline" id="CruiseControl.NET"> CruiseControl.NET </span></h2>
+<p><a href="http://www.mono-project.de/" class="external text" rel="nofollow">Daniel Nauck</a> (dna on <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a>) contributed Gendarme support for 
+<a href="http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET" class="external text" rel="nofollow">CC.NET</a>. 
+You can find the documentation <a href="http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme" class="external text" rel="nofollow">here</a>.
+Note: The Gendarme task is available since CC.NET version 1.4.3.
+</p>
+<h2> <span class="mw-headline" id="NAnt"> NAnt </span></h2>
+<p><a href="http://nestor.babuine.net/" class="external text" rel="nofollow">Néstor Salceda</a>, a long time Gendarme contributor, has released a first preview version of a 
+<a href="http://nant.sourceforge.net/" class="external text" rel="nofollow">NAnt</a> task-based runner. A <a href="http://nestor.babuine.net/wp-content/uploads/2008/10/gendarme-nant.ogg" class="external text" rel="nofollow">screencast</a> 
+showing it in action is available. The preview can be downloaded from Gendarme's Google Group 
+<a href="http://groups.google.com/group/gendarme/files" class="external text" rel="nofollow">files section</a>.
+</p><p>Daniel Nauck (dna) also created a NAnt task for Gendarme. Unlike the previous one this is not a runner itself but calls the 
+console runner, which reduce the build dependencies.
+</p>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<p>Gendarme is modular and load all of it's rules from assemblies, i.e. there are no hard-coded, static, rules. 
+</p><p>For the console runner the list of assemblies to load rules from is defined in the <b>rules.xml</b> configuration file 
+and can be adapted to different needs (e.g. project specific rules). 
+The wizard runner will display all rules from every assemblies present in it's installation directory.
+</p><p>Current rules are divided into the following categories/assemblies:
+</p>
+<ul><li> <a href="{{site.baseurl}}/Gendarme.Rules.BadPractice" title="Gendarme.Rules.BadPractice">Gendarme.Rules.BadPractice</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Concurrency" title="Gendarme.Rules.Concurrency">Gendarme.Rules.Concurrency</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Correctness" title="Gendarme.Rules.Correctness">Gendarme.Rules.Correctness</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Design" title="Gendarme.Rules.Design">Gendarme.Rules.Design</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Design.Generic" title="Gendarme.Rules.Design.Generic">Gendarme.Rules.Design.Generic</a> (new in 2.2)
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Design.Linq" title="Gendarme.Rules.Design.Linq">Gendarme.Rules.Design.Linq</a> (new in 2.2)
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Exceptions" title="Gendarme.Rules.Exceptions">Gendarme.Rules.Exceptions</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Interoperability" title="Gendarme.Rules.Interoperability">Gendarme.Rules.Interoperability</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Maintainability" title="Gendarme.Rules.Maintainability">Gendarme.Rules.Maintainability</a> (new in 2.0)
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Naming" title="Gendarme.Rules.Naming">Gendarme.Rules.Naming</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Performance" title="Gendarme.Rules.Performance">Gendarme.Rules.Performance</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Portability" title="Gendarme.Rules.Portability">Gendarme.Rules.Portability</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Security" title="Gendarme.Rules.Security">Gendarme.Rules.Security</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Security.Cas" title="Gendarme.Rules.Security.Cas">Gendarme.Rules.Security.Cas</a> (new in 2.2)
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Serialization" title="Gendarme.Rules.Serialization">Gendarme.Rules.Serialization</a> (new in 2.0)
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Smells" title="Gendarme.Rules.Smells">Gendarme.Rules.Smells</a>
+</li><li> <a href="{{site.baseurl}}/Gendarme.Rules.Ui" title="Gendarme.Rules.Ui">Gendarme.Rules.Ui</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Download"> Download </span></h1>
+<h2> <span class="mw-headline" id="Linux"> Linux </span></h2>
+<ul><li> Gendarme is part of <b>mono-tools</b> and is available on most recent Linux distributions
+</li><li> Packages for many distributions and, from time to time, preview versions are also available from the <a href="http://software.opensuse.org/search?baseproject=ALL&amp;p=1&amp;q=mono-tools" class="external text" rel="nofollow">openSUSE Build Service</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Windows"> Windows </span></h2>
+<ul><li> Win32 installers (msi) are available on <a href="https://github.com/spouliot/gendarme/downloads" class="external text" rel="nofollow">github</a> web site. The .NET framework version 3.5 (or later) needs to be installed prior to running the setup.
+</li></ul>
+<h2> <span class="mw-headline" id="Binaries_only_.28multi-platform.29"> Binaries only (multi-platform) </span></h2>
+<ul><li> ZIP files that contains Gendarme's binaries and configuration files are also available on the <a href="https://github.com/spouliot/gendarme/downloads" class="external text" rel="nofollow">github</a> web site. They requires Mono 2.8 or the .NET framework 3.5 to be installed to execute properly.
+</li></ul>
+<h2> <span class="mw-headline" id="Source_Code"> Source Code </span></h2>
+<ul><li> From GIT (master): <code>git clone <a href="https://github.com/mono/mono-tools.git" class="external free" rel="nofollow">https://github.com/mono/mono-tools.git</a></code>
+</li><li> Browse <a href="https://github.com/mono/mono-tools/tree/master/gendarme" class="external text" rel="nofollow">GIT</a> for individual files
+</li></ul>
+<h2> <span class="mw-headline" id="Other_Cool_Stuff"> Other Cool Stuff </span></h2>
+<ul><li> <a href="http://groups.google.com/group/gendarme/files" class="external text" rel="nofollow">NAnt task runner</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Resources"> Resources </span></h1>
+<ul><li> What's planned&#160;? <a href="{{site.baseurl}}/Gendarme.Roadmap" title="Gendarme.Roadmap">Gendarme.Roadmap</a>
+</li><li> What's happening&#160;? You can read real-time news on Gendarme's development on its <a href="http://www.ohloh.net/projects/gendarme/messages" class="external text" rel="nofollow">Ohloh's journal</a>.
+</li></ul>
+<h2> <span class="mw-headline" id="Getting_Help"> Getting Help </span></h2>
+<ul><li> A list of frequently asked questions can be found in <a href="{{site.baseurl}}/Gendarme.FAQ" title="Gendarme.FAQ">Gendarme.FAQ</a>.
+</li><li> You can find some basic answers about developing rules, or hacking on Gendarme itself, in the <a href="{{site.baseurl}}/Gendarme.Development.FAQ" title="Gendarme.Development.FAQ">FAQ</a>.
+</li><li> You are welcome to participate in Gendarme's discussions on <a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">it's Google Group</a>. This group is used for both users and developers of Gendarme.
+</li><li> Gendarme's fans are also present on <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a> (#gendarme on GIMPnet).
+</li></ul>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

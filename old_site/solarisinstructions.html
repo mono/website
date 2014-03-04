@@ -1,0 +1,41 @@
+---
+layout: obsolete
+title: "SolarisInstructions"
+permalink: /old_site/SolarisInstructions/
+---
+
+<h1>SolarisInstructions</h1>
+
+<p>Uncompress and install the package as usual (substitute &lt;mono_package_download&gt; with the filename):
+</p>
+<pre>gunzip &lt;mono_package_download&gt;
+pkgadd -d &lt;mono_package_download&gt;
+</pre>
+<p>Example:
+</p>
+<pre>gunzip mono-1.1.13.2_1.sunos8.novell.sparc.pkg.gz
+pkgadd -d mono-1.1.13.2_1.sunos8.novell.sparc.pkg
+</pre>
+<p>This will install Mono to /opt/mono
+</p><p>You'll need to run an environment script whenever you want to run Mono:
+</p>
+<pre>. /opt/mono/setup.sh
+</pre>
+<p>Or, if you're using a csh type shell:
+</p>
+<pre>source /opt/mono/setup.csh
+</pre>
+<p>You can also copy the contents of setup.sh or setup.csh to the correct login profile scripts.
+</p><p>If you find any issues with the Solaris packaging, please email the mono mailing lists.
+</p><p>CC wberrier //at// novell //dot// com as he will be maintaining the package.
+</p>
+<h2> <span class="mw-headline" id="Mini_FAQ"> Mini FAQ </span></h2>
+<p><b>Why is the package so big?</b>
+</p><p>The package contains Mono, libgdiplus, monodoc, xsp, boo, and ikvm, as well as all of their dependencies.  This is nearly double the size of a package containing just Mono, but doing so makes it easy to install.
+</p><p><b>Can I use this package on Solaris 10 Sparc?</b>
+</p><p>Most likely, yes, but this has not been tested much.  Expect to see a Solaris 10 package in the future.
+</p><p><b>Can I use this package on Solaris 10 x86?</b>
+</p><p>No, but expect to see a Solaris 10 x86 package in the future.
+</p><p><b>Why does my program crash saying it can't get access to a random source?</b>
+</p><p>You need to have patch #112438 installed on Solaris 8.  This enables the /dev/random and /dev/urandom devices.
+</p>

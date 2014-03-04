@@ -1,0 +1,181 @@
+---
+layout: obsolete
+title: "Accessibility: QA Meetings 2008 Aug 13"
+permalink: /old_site/Accessibility:_QA_Meetings_2008_Aug_13/
+---
+
+<h1>Accessibility: QA Meetings 2008 Aug 13</h1>
+
+<p>10:15 &lt;bgmerrell&gt; are either of you familiar with the term "smoke test?"<br />
+10:15 &lt;calen&gt; have any adjustment?<br />
+10:16 &lt;ray&gt; do i need a cigarette? joking&#160;:P<br />
+10:16 &lt;bgmerrell&gt; hehe<br />
+10:16 &lt;calen&gt; i hear that, but i don't know how to do<br />
+10:16 &lt;ray&gt; does it means stress test?<br />
+10:16 &lt;bgmerrell&gt; okay,... first of all..<br />
+10:16 &lt;calen&gt; heard<br />
+10:16 &lt;bgmerrell&gt; from Wikipedia "Smoke testing is done by developers before the build is released or by testers before accepting a build for further testing."<br />
+10:17 &lt;bgmerrell&gt; we will do the second part, i.e., QA will perform a smoke test before accepting a build for further testing.<br />
+10:18 &lt;bgmerrell&gt; it's like a sanity test.<br />
+10:18 &lt;bgmerrell&gt; the idea will be for one of us to validate that new build and/or RPMs are not broken <br />
+10:19 &lt;bgmerrell&gt; and that we can all test effectively with the new RPMs before we all try to download and use them<br />
+10:19 &lt;bgmerrell&gt; does that make sense?<br />
+10:19 &lt;calen&gt; bgmerrell: yes<br />
+10:19 &lt;ray&gt; yes<br />
+10:19 &lt;ray&gt; actually, calen already did it&#160;:)<br />
+10:19 &lt;calen&gt; bgmerrell: that is what i had said in our test plan befor i think:)<br />
+10:19 &lt;bgmerrell&gt; excellent&#160;:)<br />
+10:20 &lt;calen&gt; ray: not exactly&#160;:)<br />
+10:20 &lt;bgmerrell&gt; calen: do we have any winforms tests that are 100% finished and not waiting for some bug?<br />
+10:20 &lt;calen&gt; bgmerrell: no<br />
+10:20 &lt;bgmerrell&gt; okay, i didn't think so<br />
+10:21 &lt;bgmerrell&gt; when we do, we will want to make sure it is added to the test suite (tests.py)<br />
+10:21 &lt;bgmerrell&gt; then we can start doing our smoke tests<br />
+10:22 &lt;bgmerrell&gt; then we will designate one person to download the newest RPMs and update a wiki page to inform others if they should update or not<br />
+10:22 &lt;calen&gt; bgmerrell: do you mean use our strongwind test code to do smoke tests<br />
+10:22 &lt;calen&gt;&#160;?<br />
+10:23 &lt;bgmerrell&gt; calen: for now yes, if they start to take too long, maybe we will have a smoke-tests.py to perform only a few tests<br />
+10:23 &lt;bgmerrell&gt; instead of tests.py which will have all the tests<br />
+10:23 &lt;ray&gt; calen, i think bgmerrell means we could download the rpms which is newly built, and install them to see if there are some prolbems<br />
+10:24 &lt;bgmerrell&gt; ray: right, but to see if there are some problems we can use our strongwind tests<br />
+10:24 &lt;ray&gt; ah , o k<br />
+10:24 &lt;bgmerrell&gt; if the most/all of the tests fail, when they were successful before, we know there are problems&#160;:)<br />
+10:24 &lt;bgmerrell&gt; calen: does that sound okay?  or did you have a different idea?<br />
+10:25 &lt;calen&gt; bgmerrell: but my idea is if we should check if all patches which &lt;decriptor&gt; want to build into have been included, and all rpms can be install the first, than run our test<br />
+10:25 &lt;bgmerrell&gt; calen: yeah, sounds perfect<br />
+10:25 &lt;calen&gt; then to make sure new rpms is ready<br />
+10:27 &lt;bgmerrell&gt; How would we "check if all patches which &lt;decriptor&gt; want to build into have been included?" <br />
+10:29 &lt;calen&gt; i think it need decriptor give us a list <br />
+10:30  * ray is looking for some details about smoke test<br />
+10:30 &lt;calen&gt; and extra rpms to give a diff&#160;:)<br />
+10:31 &lt;calen&gt; i don't know if it can be done like that ^^<br />
+10:32 &lt;bgmerrell&gt; <a href="http://build1.sled.lab.novell.com/uia/" class="external free" rel="nofollow">http://build1.sled.lab.novell.com/uia/</a> has previous rpms<br />
+10:32 &lt;bgmerrell&gt; if we know the revision numbers that were used to create the RPMs we can look at the ChangeLog differences<br />
+10:32 &lt;calen&gt; sorry, i mean get patches from rpms<br />
+10:32 &lt;ray&gt; i got it, smoke test is something like sanity check, then people could do the next <br />
+10:33 &lt;bgmerrell&gt; ray: right, <a href="http://en.wikipedia.org/wiki/Smoke_test#Smoke_testing_in_software_development" class="external free" rel="nofollow">http://en.wikipedia.org/wiki/Smoke_test#Smoke_testing_in_software_development</a><br />
+10:34 &lt;calen&gt; that is name "?????" in china. hehe<br />
+10:36 &lt;calen&gt; bgmerrell: sorry, there is no way to check out patches from rpm&#160;:(<br />
+10:37 &lt;calen&gt; how can we know new patch has been include into rpm?<br />
+10:38 &lt;ray&gt; bgmerrell, so when we install new rpms and no one is broken, then we can test in strongwind?<br />
+10:38 &lt;bgmerrell&gt; calen: the only thing we can do is look at the changelog<br />
+10:38 &lt;bgmerrell&gt; decriptor would have to do the same thing<br />
+10:39 &lt;bgmerrell&gt; changelogs*<br />
+10:39 &lt;ray&gt; calen, i think best way is to see the rpm's changelog or revision<br />
+10:41 &lt;calen&gt; according changelogs to run samples which has been mentioned in changelogs, then run our strongwind test?<br />
+10:41 &lt;bgmerrell&gt; i'm trying to think about the changelogs.. because there will be a lot of changelogs to look at<br />
+10:42 &lt;bgmerrell&gt; i think our bugs will be the best indicators<br />
+10:42 &lt;calen&gt; because sometimes some control's application cann't be invoked after update the rpms<br />
+10:42 &lt;ray&gt; bgmerrell, what about to see the rpms's changelog , <br />
+10:42 &lt;bgmerrell&gt; ray: where is that?<br />
+10:43 &lt;ray&gt; rpm -q --changelog, do we talk about the one thing&#160;?&#160;:)<br />
+10:43 &lt;ray&gt; rpm  -qp --changelog xxx.rpm<br />
+10:44 &lt;bgmerrell&gt; let me download the new RPMs<br />
+10:45 &lt;calen&gt; there is no changelog by use rpm  -qp --changelog ***.rpm now<br />
+10:46 &lt;bgmerrell&gt; okay<br />
+10:46 &lt;bgmerrell&gt; I will talk to jared and decriptor about this<br />
+10:46 &lt;bgmerrell&gt; and see what we can do<br />
+10:46 &lt;bgmerrell&gt; we don't have to solve it now<br />
+10:46 &lt;calen&gt; it return (none), maybe descriptor will add it&#160;??<br />
+10:47 &lt;bgmerrell&gt; the problem is we have lots and lots of rpms<br />
+10:47 &lt;bgmerrell&gt; I think the best thing to do would be to have the builders add a comment to a bug when its patch has been built<br />
+10:48 &lt;bgmerrell&gt; does that sound reasonable?<br />
+10:48 &lt;bgmerrell&gt; i think that is how other teams do it<br />
+10:48 &lt;bgmerrell&gt; but i will need to discuss that with jared and stephen<br />
+10:49 &lt;calen&gt; but  they also would add something new except for bugs<br />
+10:50 &lt;bgmerrell&gt; yes, true, but is it necessary to monitor *everything* in each rpm?<br />
+10:50 &lt;bgmerrell&gt; the wiki pages are supposed to abstract that for us so we can see the progress<br />
+10:53 &lt;bgmerrell&gt; i don't think it is necessary, but maybe i'm dumb&#160;:)<br />
+10:53 &lt;calen&gt; i still have problem:( i think the best way is from builder, because just builder have the exactly idea which has been build<br />
+10:54 &lt;bgmerrell&gt; i don't know anything about building.. does he know exactly what is being built?<br />
+10:54 &lt;bgmerrell&gt; maybe ray knows<br />
+10:54 &lt;calen&gt; if a developer make 'done' for one control or one bridge, but builder never include, we also can't do test for it<br />
+10:56 &lt;bgmerrell&gt; but the builds are created at each revision automatically<br />
+10:56 &lt;ray&gt; when devs commited the code, svn will add a revision number, then the build machine will build all the source code i think<br />
+10:56 &lt;bgmerrell&gt; so any code that is checked it *should* be built<br />
+10:56 &lt;calen&gt; oh..that make sense<br />
+10:57 &lt;bgmerrell&gt; so maybe the developers just adding the revision number when they mark a bugged as fixed will be good enough<br />
+10:57 &lt;bgmerrell&gt; and we can make sure that revision is built<br />
+10:57 &lt;bgmerrell&gt; does that sound okay?<br />
+10:57 &lt;calen&gt; great<br />
+10:57 &lt;bgmerrell&gt; okay awesome, i will talk to knocte about that<br />
+10:58 &lt;bgmerrell&gt; but i also wanted to talk about who should do the smoke tests...<br />
+10:59 &lt;bgmerrell&gt; i think ray is a good candidate because he is also involved with the builds so he can troubleshoot any problems that are build related<br />
+10:59 &lt;ray&gt; no problem <br />
+10:59 &lt;bgmerrell&gt; and also he will allow the full-time QA people (calen and I) to focus on testing<br />
+11:00 &lt;bgmerrell&gt; what do you think <br />
+11:00 &lt;bgmerrell&gt; Calen?<br />
+11:00 &lt;calen&gt; agree<br />
+11:00 &lt;bgmerrell&gt; great<br />
+11:00 &lt;ray&gt; so when rpms updated, i download all of them, install them to see if there are some broken one? or how to do that&#160;?<br />
+11:00 &lt;calen&gt; before i join novell, builder do this job in my before company...<br />
+11:01 &lt;calen&gt; then he give our QA a test list..hehe<br />
+11:01 &lt;bgmerrell&gt; calen: cool, on my previous team the QA automation team did it<br />
+11:02 &lt;ray&gt; hehe, you work for Dale?<br />
+11:03 &lt;bgmerrell&gt; ray: yeah.. when rpms are updated, you will (1) install them and make sure they all install properly (2) run the smoke tests using the test harness<br />
+11:03 &lt;bgmerrell&gt; for now the smoke tests will just be tests.py, but that might change <br />
+11:03 &lt;calen&gt; because builder should check all of the patches has been commit. sometimes developer say they have commit a patch in bugzilla but actuality they lost<br />
+11:03 &lt;bgmerrell&gt; but we don't have any tests ready yet<br />
+11:04 &lt;bgmerrell&gt; ray: yeah, he was me previous boss&#160;:)<br />
+11:04 &lt;ray&gt; bgmerrell, just run tests.py <br />
+11:04 &lt;ray&gt; just run that script&#160;?<br />
+11:04 &lt;bgmerrell&gt; ray: well, you will run local_run.py or remote_run.py, which rely on tests.py<br />
+11:05 &lt;bgmerrell&gt; ray: do you have extra test/lab  machines in china?<br />
+11:05 &lt;ray&gt; yeah, i think i can use my desktop&#160;:)<br />
+11:05 &lt;calen&gt; bgmerrell: yes, after they fix app closing issue, we can add form test into tests.py<br />
+11:06 &lt;bgmerrell&gt; it would be good to run a test on each platform<br />
+11:06 &lt;bgmerrell&gt; suse, ubuntu, and fedora.. but maybe we lack hardware<br />
+11:06 &lt;bgmerrell&gt; you could run them in Provo and view the logs<br />
+11:07 &lt;ray&gt; bgmerrell, for now, we only have suse package from monobuild&#160;:)<br />
+11:08 &lt;bgmerrell&gt; ray: right, but for the future<br />
+11:08 &lt;ray&gt; bgmerrell, oh exactly <br />
+11:08 &lt;bgmerrell&gt; ray: maybe in the future i will set up smoke test vms in provo<br />
+11:08 &lt;bgmerrell&gt; and you can just run your tests and look at the logs<br />
+11:09 &lt;ray&gt; bgmerrell, no matter, i have those VM installed&#160;:) , i can test them for now&#160;:)<br />
+11:09 &lt;bgmerrell&gt; for now you can just make sure the RPMs install, and you can just check to make sure some of the controls that are marked "done" appear in Accerciser<br />
+11:10 &lt;ray&gt; ok<br />
+11:10 &lt;ray&gt; that's clear <br />
+11:10 &lt;bgmerrell&gt; but hopefully Calen's form test can be put into tests.py soon!<br />
+11:10 &lt;calen&gt; hehe..i hope <br />
+11:10 &lt;ray&gt; nice&#160;:)<br />
+11:11 &lt;bgmerrell&gt; ray: then you can just send out an e-mail to the mailing list<br />
+11:11 &lt;bgmerrell&gt; ray: Smoke tests pass! | Smoke tests fail!&#160;:)<br />
+11:11 &lt;calen&gt; it can't be run but can't be exited<br />
+11:12 &lt;bgmerrell&gt; yeah, so ray could even run it manually if he wanted<br />
+11:12 &lt;bgmerrell&gt; when do you both go back to the office?<br />
+11:12 &lt;ray&gt; ah,  sound interesting&#160;:)<br />
+11:12 &lt;calen&gt; Aug.26<br />
+11:13 &lt;bgmerrell&gt; calen: do you understand how local_run.py and remote_run.py work?<br />
+11:13 &lt;ray&gt; 25 i guess<br />
+11:13 &lt;calen&gt; 25, yeah<br />
+11:13 &lt;ray&gt; oops, from 25th, we have hack week <br />
+11:13 &lt;calen&gt; bgmerrell: i think i understand<br />
+11:13 &lt;bgmerrell&gt; calen: have you tried running remote_run.py before?<br />
+11:14 &lt;calen&gt; bgmerrell: i just have tried one or two times<br />
+11:14 &lt;bgmerrell&gt; calen: cool&#160;:) maybe you can show ray how they work when you get back to the office<br />
+11:15 &lt;calen&gt; bgmerrell: np&#160;:)<br />
+11:21 &lt;bgmerrell&gt; ray: so when you see an e-mail from stephen you can try to do smoke tests immediately, depending on the time of day of course&#160;:)<br />
+11:22 &lt;ray&gt; bgmerrell, sure <br />
+11:26 &lt;calen&gt; i have sent test howto to ray, it would be more helpful to him yet<br />
+11:26 &lt;bgmerrell&gt; it looks like the developers are already adding the revision number to comments when they fix the bugs<br />
+11:26 &lt;bgmerrell&gt; <a href="https://bugzilla.novell.com/show_bug.cgi?id=412206" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi?id=412206</a><br />
+11:27 &lt;bgmerrell&gt; <a href="https://bugzilla.novell.com/show_bug.cgi?id=411345" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi?id=411345</a><br />
+11:27 &lt;bgmerrell&gt; <a href="https://bugzilla.novell.com/show_bug.cgi?id=416602" class="external free" rel="nofollow">https://bugzilla.novell.com/show_bug.cgi?id=416602</a><br />
+11:27 &lt;calen&gt; yeah..i noticed it<br />
+11:27 &lt;bgmerrell&gt; so we can just make sure those revisions are built if we need to<br />
+11:27 &lt;ray&gt; yep<br />
+11:27 &lt;bgmerrell&gt; calen: great, thanks calen (for sending test howto to ray)<br />
+11:31 &lt;bgmerrell&gt; i forgot<br />
+11:31 &lt;bgmerrell&gt; one more thing<br />
+11:31 &lt;bgmerrell&gt; i already talked to Calvin about this, but i don't think we will use testopia<br />
+11:31 &lt;bgmerrell&gt; testopia is used to track test cases<br />
+11:32 &lt;ray&gt; oh due to we have svn&#160;?<br />
+11:32 &lt;calen&gt; yeah<br />
+11:32 &lt;bgmerrell&gt; but i think we can consider each of our test scripts as test cases<br />
+11:32 &lt;bgmerrell&gt; what do you think calen?<br />
+11:32 &lt;calen&gt; i agree<br />
+11:32 &lt;bgmerrell&gt; i think testopia will create too much "overhead"--additional work<br />
+11:32 &lt;bgmerrell&gt; okay, awesome.<br />
+11:33 &lt;bgmerrell&gt; we will need to update our test plan accordingly<br />
+11:33 &lt;bgmerrell&gt; i can do that
+</p>

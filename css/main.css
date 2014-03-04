@@ -34,15 +34,23 @@
   margin-top: 8px;
 }
 
+#searchbox {
+  margin-top: -3px;
+}
+
 .meta {
   margin-left: 2px;
   color: #999;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .meta .date:before { 
   font: 1.0em FontAwesome;
   content: "\f073"
+}
+
+.meta a {
+  color: #999
 }
 
 #mono-download.tabs dd > a {
@@ -56,6 +64,10 @@
 
 #mono-download.tabs dd {
   line-height: 1em;
+}
+
+h1 small {
+  font-size: 40%;
 }
 
 footer ul {

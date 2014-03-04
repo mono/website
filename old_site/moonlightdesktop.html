@@ -1,0 +1,170 @@
+---
+layout: obsolete
+title: "MoonlightDesktop"
+permalink: /old_site/MoonlightDesktop/
+---
+
+<h1>MoonlightDesktop</h1>
+
+<p>As of today, <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a>'s engine is used in two scenarios:
+</p>
+<ul><li> As part of the Moonlight Web Plugin, to render online Silverlight content.
+</li><li> As a standalone library to create desktop applications that can use the Silverlight API.
+</li></ul>
+<p>Using the former is discussed extensively on any site that discussed Silverlight development and represents the core of our work.  
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#API_differences"><span class="tocnumber">1</span> <span class="toctext">API differences</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using_Moonlight_on_the_Desktop"><span class="tocnumber">2</span> <span class="toctext">Using Moonlight on the Desktop</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Setting_Moonlight_on_the_Desktop"><span class="tocnumber">3</span> <span class="toctext">Setting Moonlight on the Desktop</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Verifying_Your_Installation"><span class="tocnumber">3.1</span> <span class="toctext">Verifying Your Installation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Building_Moonlight_for_the_Desktop"><span class="tocnumber">4</span> <span class="toctext">Building Moonlight for the Desktop</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Building_Moonlight"><span class="tocnumber">4.1</span> <span class="toctext">Building Moonlight</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Using_Moonlight_on_the_Desktop_-_Alternate_Prefix"><span class="tocnumber">4.2</span> <span class="toctext">Using Moonlight on the Desktop - Alternate Prefix</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="API_differences"> API differences </span></h1>
+<p>While Moonlight on the web exposes the same functionality that Silverlight and uses the same assembly versions, APIs and signatures, the desktop edition is not bound by those requirements.
+</p><p>When you develop applications with Moonlight/Desktop you get access to all of the standard .NET 3.5 APIs that are available in Mono.   Think of Moonlight/Desktop as extending your standard .NET developer APIs with the following assemblies:
+</p>
+<ul><li> System.Windows.dll
+</li><li> System.Windows.Browser.dll
+</li><li> System.Windows.Controls.dll
+</li><li> System.Windows.Controls.Data.dll
+</li></ul>
+<p>and our Gtk integration library:
+</p>
+<ul><li> Moonlight.Gtk.dll
+</li></ul>
+<p><br />
+Today Moonlight on the desktop is currently limited to the Gtk+ toolkit as that is the only bridge that we have built, but we expect to create bridges for other toolkits and platforms in the future.
+</p>
+<h1> <span class="mw-headline" id="Using_Moonlight_on_the_Desktop"> Using Moonlight on the Desktop </span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:324px;"><a href="{{site.baseurl}}/images/old_site/7/77/Screenshot597.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/7/77/Screenshot597.png" width="322" height="405" class="thumbimage" /></a>  <div class="thumbcaption">Sample Solution Layout</div></div></div>
+<p>To create desktop applications, create a Gtk# project, and add to your project the following assemblies:
+</p>
+<ul><li> System.Windows.dll
+</li><li> Moonlight.Gtk.dll
+</li></ul>
+<p>The first assembly contains the Silverlight API, the second contains the glue that hosts your Silverlight content inside a Gtk# application.
+</p><p>The solution should look like the image on the sidebar.
+</p><p>Then, you need to import the namespaces into your application, like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Controls</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Media</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Moonlight.Gtk</span><span style="color: #008000;">;</span></pre>
+<p>Then you need to initialized Moonlight, do this by calling MoonlightRuntime.Init(), just after Gtk.Application.Init():
+</p><p>You then need to create a Gtk.Widget that will host your Silverlight control.   This is done with the MoonlightHost class, use it like this:
+</p>
+<pre class="csharp" style="font-family:monospace;">    <span style="color: #0600FF; font-weight: bold;">var</span> host <span style="color: #008000;">=</span>  <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MoonlightHost <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>You can add that to any Gtk.Container, in this case, we will add it to the window:
+</p>
+<pre class="csharp" style="font-family:monospace;">    window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>host<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>You will want to create your Silverlight components, for example this creates a canvas:
+</p>
+<pre class="csharp" style="font-family:monospace;">Canvas container <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Canvas <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+    Width <span style="color: #008000;">=</span> width,
+    Height <span style="color: #008000;">=</span> height,
+    Background <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SolidColorBrush <span style="color: #008000;">&#40;</span>Color<span style="color: #008000;">.</span><span style="color: #0000FF;">FromArgb</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">255</span>, 0x4c, 0x4c, 0x4c<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span></pre>
+<p>You then must add the canvas into your host, do this with:
+</p>
+<pre class="csharp" style="font-family:monospace;">	h<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">RootVisual</span> <span style="color: #008000;">=</span> container<span style="color: #008000;">;</span></pre>
+<p>The full sample should look like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Media</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Windows.Controls</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Moonlight.Gtk</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> SilverDesktop
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">class</span> MainClass
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#91;</span><span style="color: #008000;">&#93;</span> args<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+            Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            MoonlightRuntime<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+            MainWindow win <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MainWindow <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+            <span style="color: #0600FF; font-weight: bold;">var</span> host <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> MoonlightHost <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #0600FF; font-weight: bold;">var</span> canvas <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Canvas <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                Width <span style="color: #008000;">=</span> <span style="color: #FF0000;">300</span>, Height <span style="color: #008000;">=</span> <span style="color: #FF0000;">300</span>,
+                Background <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> SolidColorBrush <span style="color: #008000;">&#40;</span>Colors<span style="color: #008000;">.</span><span style="color: #0000FF;">DarkGray</span><span style="color: #008000;">&#41;</span>
+            <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+            host<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">RootVisual</span> <span style="color: #008000;">=</span> canvas<span style="color: #008000;">;</span>
+&#160;
+            win<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>host<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            win<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+            Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Setting_Moonlight_on_the_Desktop"> Setting Moonlight on the Desktop </span></h1>
+<p>Ideally, your distribution will have the proper packages for Moonlight on the desktop.   If it is not available, you will need to build Mono and Moonlight from source code.  The following sections explain how to get this ready.
+</p>
+<h2> <span class="mw-headline" id="Verifying_Your_Installation"> Verifying Your Installation </span></h2>
+<p>You first need to make sure that you have the Moonlight for the desktop libraries installed on your system.   
+</p><p>If you are using MonoDevelop
+To do this, use the following command:
+</p>
+<pre class="bash" style="font-family:monospace;">$ pkg-config <span style="color: #660033;">--modversion</span> silverdesktop
+1.9.0.99</pre>
+<p>If the result is something like:
+</p>
+<pre class="bash" style="font-family:monospace;">Package foo was not found <span style="color: #000000; font-weight: bold;">in</span> the pkg-config search path.
+Perhaps you should add the directory containing <span style="color: #000000; font-weight: bold;">`</span>silverdesktop.pc<span style="color: #ff0000;">'
+to the PKG_CONFIG_PATH environment variable
+No package '</span>silverdesktop<span style="color: #ff0000;">' found</span></pre>
+<p>It means that you do not have Moonlight/desktop installed.
+</p>
+<h1> <span class="mw-headline" id="Building_Moonlight_for_the_Desktop"> Building Moonlight for the Desktop </span></h1>
+<h2> <span class="mw-headline" id="Building_Moonlight"> Building Moonlight </span></h2>
+<p>Please carefully read the <a href="http://github.com/mono/moon/raw/master/README" class="external text" rel="nofollow">README</a> file on github for the latest Moonlight build instructions.
+</p><p>Make sure that you pass the flag: --enable-desktop-support to configure, to ensure that the Moonlight Desktop assemblies are compiled.
+</p><p>For private installation use:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #7a0874; font-weight: bold;">cd</span> ..<span style="color: #000000; font-weight: bold;">/</span>moon
+$ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$HOME</span><span style="color: #000000; font-weight: bold;">/</span>build <span style="color: #660033;">--enable-desktop-support</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>For a system installation use:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #7a0874; font-weight: bold;">cd</span> ..<span style="color: #000000; font-weight: bold;">/</span>moon
+$ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh <span style="color: #660033;">--enable-desktop-support</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> 
+$ <span style="color: #c20cb9; font-weight: bold;">su</span>
+Password: <span style="color: #000000; font-weight: bold;">&lt;</span>enter-your-root-password<span style="color: #000000; font-weight: bold;">&gt;</span>
+<span style="color: #666666; font-style: italic;"># make install</span></pre>
+<p>The output after configuration should look like this:
+</p>
+<pre class="bash" style="font-family:monospace;">Moonlight configuration
+=======================
+<span style="color: #7a0874; font-weight: bold;">&#91;</span>...<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+  Silverlight Support:
+	Silverlight <span style="color: #000000;">1.0</span>: <span style="color: #c20cb9; font-weight: bold;">yes</span>
+	Silverlight <span style="color: #000000;">2.0</span>: <span style="color: #c20cb9; font-weight: bold;">yes</span>
+          Browser plugin assemblies: <span style="color: #c20cb9; font-weight: bold;">yes</span> 
+            Path to mcs tree: .<span style="color: #000000; font-weight: bold;">/</span>..<span style="color: #000000; font-weight: bold;">/</span>mcs
+            Path to mono-basic tree: .<span style="color: #000000; font-weight: bold;">/</span>..<span style="color: #000000; font-weight: bold;">/</span>mono-basic
+          Desktop application assemblies: <span style="color: #c20cb9; font-weight: bold;">yes</span></pre>
+<h2> <span class="mw-headline" id="Using_Moonlight_on_the_Desktop_-_Alternate_Prefix"> Using Moonlight on the Desktop - Alternate Prefix </span></h2>
+<p>If you chose to install Moonlight in the private prefix instead of the system, you need to set a few environment variables that are required by MonoDevelop to find Moonlight and for the system to find the libraries.
+</p><p>Use these settings in your shell: 
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">MONO_GAC_PREFIX</span>=<span style="color: #000000; font-weight: bold;">/</span>usr:<span style="color: #007800;">$HOME</span><span style="color: #000000; font-weight: bold;">/</span>build
+<span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">PKG_CONFIG_PATH</span>=<span style="color: #007800;">$PKG_CONFIG_PATH</span>:<span style="color: #007800;">$HOME</span><span style="color: #000000; font-weight: bold;">/</span>build<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>pkgconfig 
+<span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">LD_LIBRARY_PATH</span>=<span style="color: #007800;">$LD_LIBRARY_PATH</span>:<span style="color: #007800;">$HOME</span><span style="color: #000000; font-weight: bold;">/</span>build<span style="color: #000000; font-weight: bold;">/</span>lib</pre>
+<p>At that point you can run MonoDevelop and your application, they will automatically pick up your new assemblies.
+</p>

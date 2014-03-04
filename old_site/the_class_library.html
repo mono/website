@@ -1,0 +1,100 @@
+---
+layout: obsolete
+title: "The Class Library"
+permalink: /old_site/The_Class_Library/
+---
+
+<h1>The Class Library</h1>
+
+<p>The Class Library is be compatible with Microsoft's .NET implementation.
+Please see the <a href="/index.php?title=Class_Libraries&amp;action=edit&amp;redlink=1" class="new" title="Class Libraries (page does not exist)">Class Status</a> page for a status of who is working on which classes.
+We will write as much code as possible in C#. We may need to interface with code written in C to gain access to the functionality of libraries like libart, Gtk+, and libc.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Contributing"><span class="tocnumber">1</span> <span class="toctext">Contributing</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Layout"><span class="tocnumber">2</span> <span class="toctext">Layout</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Licensing"><span class="tocnumber">3</span> <span class="toctext">Licensing</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Class_Library_testing"><span class="tocnumber">4</span> <span class="toctext">Class Library testing</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Coding_conventions"><span class="tocnumber">5</span> <span class="toctext">Coding conventions</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Missing_implementation_bits"><span class="tocnumber">6</span> <span class="toctext">Missing implementation bits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Tagging_buggy_code"><span class="tocnumber">6.1</span> <span class="toctext">Tagging buggy code</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Tagging_Incomplete_Specifications"><span class="tocnumber">6.2</span> <span class="toctext">Tagging Incomplete Specifications</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Namespaces"><span class="tocnumber">6.3</span> <span class="toctext">Namespaces</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#FAQ"><span class="tocnumber">6.4</span> <span class="toctext">FAQ</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Contributing"> Contributing </span></h2>
+<p>We welcome contributions to the the Class Library. To get started, check the status page for information about which APIs are being worked on, and how to get in touch with individual maintainers.
+</p><p>If you want to work on a class, first check the <a href="{{site.baseurl}}/Downloads" title="Downloads">Classes Distribution</a> to see if it is not implemented yet, if not, check the <a href="{{site.baseurl}}/Resources#Class_status_pages_for_Mono" title="Resources">class status pages</a> to see if someone is already working on it, and maybe contact them.
+</p><p>If nobody is working on it, mail <a href="mailto:mono-list@ximian.com" class="external text" rel="nofollow">mono-list@ximian.com</a> with the class you want to implement and CC <a href="mailto:miguel@ximian.com" class="external text" rel="nofollow">miguel@ximian.com</a>.
+</p><p>You can also track live the activities of the Mono SVN module by subscribing to the <a href="http://lists.ximian.com/mailman/listinfo/mono-cvs-list" class="external text" rel="nofollow">mono-cvs-list</a>
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Layout"> Layout </span></h2>
+<p>The Class Library resides in the `mcs' module in the directoy `class'.
+</p><p>Each directory in the directory represents the assembly where the code belongs to, and inside each directory we divide the code based on the namespace they implement.
+</p><p>For example, the "corlib" directory contains mscorlib:
+</p>
+<pre>mcs/class/corlib
+</pre>
+<p>Inside that directory the namespaces appear:
+</p>
+<pre>mcs/class/corlib/System
+mcs/class/corlib/System.IO
+mcs/class/corlib/System.Security
+</pre>
+<p>And we use a file per class in each of those directories.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Licensing"> Licensing </span></h2>
+<p>The class library is being licensed under the terms of the <a href="http://www.opensource.org/licenses/mit-license.html" class="external text" rel="nofollow">MIT license.</a> This is the same license used by the X11 window system.
+</p>
+<h2> <span class="mw-headline" id="Class_Library_testing"> Class Library testing </span></h2>
+<p>We need to write regression tests that will verify the correctness of the class library, compiler, and JIT engine.
+</p><p>Please write your regression tests using <a href="http://nunit.sourceforge.net" class="external text" rel="nofollow">NUnit</a>
+</p>
+<h2> <span class="mw-headline" id="Coding_conventions"> Coding conventions </span></h2>
+<p>See our <a href="{{site.baseurl}}/Coding_Guidelines" title="Coding Guidelines">Coding Guidelines</a> document for details on the coding conventions.
+</p>
+<h1> <span class="mw-headline" id="Missing_implementation_bits"> Missing implementation bits </span></h1>
+<p>If you implement a class and you are missing implementation bits, pleaseusre the MonoTODO attribute and a description of what is missing to be implemented, for example:
+</p>
+<pre class="csharp" style="font-family:monospace;">   <span style="color: #008000;">&#91;</span>MonoTODO <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Finish this routine&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+   <span style="color: #6666cc; font-weight: bold;">string</span> Greet <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+       <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NotImplementedException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+   <span style="color: #008000;">&#125;</span></pre>
+<h2> <span class="mw-headline" id="Tagging_buggy_code"> Tagging buggy code </span></h2>
+<p>If there is a bug in your implementation tag the problem by using the word "FIXME" in the code, together with a description of the problem.
+Do not use XXX or obscure descriptions, because otherwise people will not be able to understand what you mean.
+</p>
+<h2> <span class="mw-headline" id="Tagging_Incomplete_Specifications"> Tagging Incomplete Specifications </span></h2>
+<p>Sometimes the specification will be lame (consider Version.ToString (fieldCount) where there is no way of knowing how many fields are available, making the API not only stupid, but leading to unreliable code).
+In those cases, use the keyword "LAMESPEC".
+</p>
+<h2> <span class="mw-headline" id="Namespaces"> Namespaces </span></h2>
+<p>We are using a number of namespaces in the class libraries for private classes when we need them, you are encouraged to use these:
+</p>
+<pre>
+Mono
+ .Languages     // General Compiler classes
+   .CSharp      // Specific C# parsing/tokenizing classes
+   .MonoBASIC   // Specific VB.NET/MonoBASIC parsing/tokenizing classes
+   .Python      // Specific Python parsing/tokenizing classes
+ .Runtime
+   .LateBind    // General latebinding-support for MonoBASIC/Python
+   .MonoBASIC   // Specific runtime classes for MonoBASIC programs
+   .Python      // Specific runtime classes for Python programs
+ .Web
+   .UI
+     .Utils     // Gaurav utility classes
+</pre>
+<h2> <span class="mw-headline" id="FAQ"> FAQ </span></h2>
+<p>Frequently asked questions about the class library: 
+</p><p>I am writing a new class that overrides one of the system classes, and I am getting a 1595 warning from the compiler. Should we use a different namespace?
+</p><p>There is a quick solution to the problem, you can pass the command
+line argument /nowarn:1595 and this will effectively let you use your implementation of the code, while overriding the ones from the system assemblies
+</p>

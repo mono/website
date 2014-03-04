@@ -1,0 +1,164 @@
+---
+layout: obsolete
+title: "XPathNavigator"
+permalink: /old_site/XPathNavigator/
+---
+
+<h1>XPathNavigator</h1>
+
+<p>Traversing XML documents using XPathNavigator, by Atsushi Enomoto
+</p><p>XPathNavigator enables you to navigate XML document using XPath, but it is more than that. It holds its own XPath data model, which is more simplified than XmlDocument. XPathNavigator is mainly for input to XSL Transformation, but it might be useful for general purpose document navigation. 
+</p><p>XPathNavigator and related classes are in System.Xml.XPath namespace. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using_XPathNavigator"><span class="tocnumber">2</span> <span class="toctext">Using XPathNavigator</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#XPathNavigator_and_XPath_Data_Model"><span class="tocnumber">2.1</span> <span class="toctext">XPathNavigator and XPath Data Model</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Primitive_Navigation_Methods"><span class="tocnumber">2.2</span> <span class="toctext">Primitive Navigation Methods</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#XPathNodeIterator_and_Selection_methods"><span class="tocnumber">2.3</span> <span class="toctext">XPathNodeIterator and Selection methods</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Evaluation_Methods"><span class="tocnumber">2.4</span> <span class="toctext">Evaluation Methods</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Comparison_Methods"><span class="tocnumber">2.5</span> <span class="toctext">Comparison Methods</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
+<p>XPathNavigator is an abstract class. It can be created by classes that implements IXPathNavigable interface. There are two concrete implementation classes&#160;: XPathDocument and XmlDocument. 
+</p><p>You can extend XPathNavigator and create your own implementation. Some members are virtual, so you don't have to implement such members. Some members are abstract, so you will have to implement them by yourself. 
+</p><p>Usually XPathNavigator loads the entire document into the memory, while XmlReader does not. XPathNavigator is not a part of ECMA CLI specification, nor any standard API. Some Microsoft people says that they are going XPathNavigator way. 
+</p>
+<h1> <span class="mw-headline" id="Using_XPathNavigator"> Using XPathNavigator </span></h1>
+<h2> <span class="mw-headline" id="XPathNavigator_and_XPath_Data_Model"> XPathNavigator and XPath Data Model </span></h2>
+<p>XPathNavigator is based on its own data model. It is based on the data model specified in XPath W3C Recommendation. It is closer to XMLInfoset than literal xml document structure. For example, There is no difference between normal text and CDATA section. Note that XPath data model is not XML Infoset, however. For example, it has no document type node. 
+</p><p>XPathNavigator's programming model is not similar to that of XmlDocument. When we use XmlDocument and XmlNode, we usually let a variable to point to a certain XmlNode. When we use XPathNavigator, there is no class that represents an XPath node. 
+</p><p>So the node's property is indirectly shown by XPathNavigator's properties. The properties are similar to XmlDocument or XmlReader: Name, LocalName, NamespaceURI, Value and NodeType. 
+</p><p>Node types are defined in XPathNodeType enumerator: 
+</p>
+<ul><li>All  
+</li><li>Attribute  
+</li><li>Comment  
+</li><li>Element  
+</li><li>Namespace  
+</li><li>ProcessingInstruction  
+</li><li>Root  
+</li><li>SignificantWhitespace  
+</li><li>Text  
+</li><li>Whitespace
+</li></ul>
+<p>Node type "Namespace" is to represent "namespace node" as used in XPath (e.g. represented in such XPath like "namespace::*"). Note that attribute "xmlns" and "xmlns:*" are not regarded as attribute nodes, unlike XmlDocument. 
+</p><p>Node type "Root" is to represent document node (In XPath expression it is "/"). Node type "All" is not to represent a node. 
+</p><p>You can use some similar functionality to those of XmlReader: GetAttribute(), GetNamespace(), BaseURI, XmlLang and IsEmptyElement. GetNamepace() is similar to GetAttribute() but returns the namespace URI. 
+</p><p>It always indicates only one node. It can be cloned using Clone() method. You will have to use this method for example when you would like to compare two nodes. 
+</p>
+<h2> <span class="mw-headline" id="Primitive_Navigation_Methods"> Primitive Navigation Methods </span></h2>
+<p>There are several navigation methods. Most of them return boolean result indicating the operation succeeded or not. 
+</p>
+<ul><li>MoveToRoot() always moves to the document root. It never fails.  
+</li><li>MoveToFirstChild() tries to move to its first child node.  
+</li><li>MoveToFirstAttribute() tries to move to its first attribute node  
+</li><li>MoveToFirstNamespace() tries to move to its first namespace node  
+</li><li>MoveToPrevious () tries to move its previous sibling. It failes if the navigator is positioned at the first of its sibling nodes.  
+</li><li>MoveToNext() tries to move its next sibling. It failes if the navigator is positioned at the last of its sibling nodes.  
+</li><li>MoveToNextAttribute() tries to move to its next attribute node. It always fails when the navigator is not positioned at an attribute node.  
+</li><li>MoveToNextNamespace() tries to move to its next namespace node. It always fails when the navigator is not positioned at a namespace node.  
+</li><li>MoveToFirst() tries to move to the first sibling node. It fails if the navigator is already positioned at the first node.  
+</li><li>MoveToParent() tries to move to the parent node.  
+</li><li>MoveToId() tries to move to the element which contains the specified ID .  
+</li><li>MoveTo() tries to move to the argument XPathNavigator (it may fail because the argument XPathNavigator might be different document).  
+</li></ul>
+<p>When moving to namespace nodes, you can specify the optional parameter "XPathNamespaceScope" to limit the navigation target. For example, "ExcludeXml" means that it will never be navigated to "xml" namespace node. 
+</p>
+<h2> <span class="mw-headline" id="XPathNodeIterator_and_Selection_methods"> XPathNodeIterator and Selection methods </span></h2>
+<p>When we handle XPath "node-set", we use XPathNodeIterator class. The design of this class is simple; Once you get an XPathNodeIterator, firstly you will have to call MoveNext() to iterate the next node, and use Current property (of type XPathNavigator) that points to the iterated nodes. MoveNext() returns false if there is no more matched nodes. 
+</p>
+<pre>
+XPathNavigator nav = 
+    new XPathDocument (&quot;my_document.xml&quot;).CreateNavigator ();
+XPathNodeIterator links = nav.Select (&quot;//a[@href]&quot;);
+while (links.MoveNext ()) {
+	Console.WriteLine (links.Current.Value);
+}
+</pre>
+<p>Note that XPathNodeIterator is one-way iterator. You cannot move back. 
+</p>
+<ul><li>SelectChildren() returns its children filtered by the argument node type or qualified name.  
+</li><li>SelectDescendants() returns its descendants similarly.  
+</li><li>SelectAncestors() returns its ancestors similarly.  
+</li><li>Select() returns the resulting node-set for the specified XPath expression.  
+</li></ul>
+<p>When specifying XPath for Select() method, you can use either an expression string or compiled XPathExpression object. XPathExpression object can be created through Compile() method. XPath compilation is somewhat slow (at least slower than using pre-compiled XPathExpression), so using XPathExpression might improve the performance. 
+</p>
+<h2> <span class="mw-headline" id="Evaluation_Methods"> Evaluation Methods </span></h2>
+<p>Other than these methods above, sometimes you might want to compare positions, or evaluate value based on the XPath type such as number, boolean, string, node-set and result tree fragment. These types are represented in XPathResultType enumeration and mapped to CLR types as follows: 
+</p>
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+
+<tr>
+<th> XPath type
+</th>
+<th> XPathResultType
+</th>
+<th> CLR type
+</th></tr>
+<tr>
+<td> any type
+</td>
+<td> Any
+</td>
+<td> System.Object
+</td></tr>
+<tr>
+<td> boolean
+</td>
+<td> Boolean
+</td>
+<td> System.Boolean
+</td></tr>
+<tr>
+<td> (no equivalent)
+</td>
+<td> Error
+</td>
+<td> (no equivalent)
+</td></tr>
+<tr>
+<td> result tree fragment
+</td>
+<td> Navigator
+</td>
+<td> System.Xml.XPath.XPathNavigator
+</td></tr>
+<tr>
+<td> node-set
+</td>
+<td> NodeSet
+</td>
+<td> System.Xml.XPath.XPathNodeIterator
+</td></tr>
+<tr>
+<td> number
+</td>
+<td> Number
+</td>
+<td> System.Double
+</td></tr>
+<tr>
+<td> string
+</td>
+<td> String
+</td>
+<td> System.String
+</td></tr></table>
+<p>To evaluate an XPath expression against a node, navigate to the target node and use Evaluate() with the xpath argument. 
+</p>
+<h2> <span class="mw-headline" id="Comparison_Methods"> Comparison Methods </span></h2>
+<p>The last pieces of XPathNavigator are tree node comparison methods. 
+</p>
+<ul><li>IsDescendant() checks if the node pointed by the argument XPathNavigator is its descendant or not.  
+</li><li>IsSamePosition() checks if the node pointed by the argument XPathNavigator also points the same node.  
+</li><li>ComparePosition() returns the position represented as an enumeration type of XmlNodeOrder. It the argument node (pointed by XPathNavigator) is located after this node, it returns "After". If it is before this node then "Before", and "Same" if they are on the same position. If those document sources are different, then it returns "Unknown".  
+</li></ul>
+<p>Note that XML (and of course XPath) data model is not aware of the order of attributes. So you should not rely on these "order". However, you can rely on the fact that MoveToNextAttribute() iterates all attributes anyways.
+</p>

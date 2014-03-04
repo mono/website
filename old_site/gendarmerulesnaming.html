@@ -1,0 +1,469 @@
+---
+layout: obsolete
+title: "Gendarme.Rules.Naming"
+permalink: /old_site/Gendarme.Rules.Naming/
+---
+
+<h1>Gendarme.Rules.Naming</h1>
+
+<p><a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a>'s naming rules are located in the <b>Gendarme.Rules.Naming.dll</b> assembly.
+Latest sources are available from 
+<a href="http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Naming/" class="external text" rel="nofollow">anonymous SVN</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Rules"><span class="tocnumber">1</span> <span class="toctext">Rules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AvoidDeepNamespaceHierarchyRule"><span class="tocnumber">1.1</span> <span class="toctext">AvoidDeepNamespaceHierarchyRule</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#MaxDepth"><span class="tocnumber">1.1.1</span> <span class="toctext">MaxDepth</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#AvoidNonAlphanumericIdentifierRule"><span class="tocnumber">1.2</span> <span class="toctext">AvoidNonAlphanumericIdentifierRule</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AvoidRedundancyInMethodNameRule"><span class="tocnumber">1.3</span> <span class="toctext">AvoidRedundancyInMethodNameRule</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AvoidRedundancyInTypeNameRule"><span class="tocnumber">1.4</span> <span class="toctext">AvoidRedundancyInTypeNameRule</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AvoidTypeInterfaceInconsistencyRule"><span class="tocnumber">1.5</span> <span class="toctext">AvoidTypeInterfaceInconsistencyRule</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#DoNotPrefixEventsWithAfterOrBeforeRule"><span class="tocnumber">1.6</span> <span class="toctext">DoNotPrefixEventsWithAfterOrBeforeRule</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#DoNotPrefixValuesWithEnumNameRule"><span class="tocnumber">1.7</span> <span class="toctext">DoNotPrefixValuesWithEnumNameRule</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#DoNotUseReservedInEnumValueNamesRule"><span class="tocnumber">1.8</span> <span class="toctext">DoNotUseReservedInEnumValueNamesRule</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#ParameterNamesShouldMatchOverriddenMethodRule"><span class="tocnumber">1.9</span> <span class="toctext">ParameterNamesShouldMatchOverriddenMethodRule</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#UseCorrectCasingRule"><span class="tocnumber">1.10</span> <span class="toctext">UseCorrectCasingRule</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#UseCorrectPrefixRule"><span class="tocnumber">1.11</span> <span class="toctext">UseCorrectPrefixRule</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#UseCorrectSuffixRule"><span class="tocnumber">1.12</span> <span class="toctext">UseCorrectSuffixRule</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#UsePluralNameInEnumFlagsRule"><span class="tocnumber">1.13</span> <span class="toctext">UsePluralNameInEnumFlagsRule</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#UsePreferredTermsRule"><span class="tocnumber">1.14</span> <span class="toctext">UsePreferredTermsRule</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#UseSingularNameInEnumsUnlessAreFlagsRule"><span class="tocnumber">1.15</span> <span class="toctext">UseSingularNameInEnumsUnlessAreFlagsRule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Feedback"><span class="tocnumber">2</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
+<h3> <span class="mw-headline" id="AvoidDeepNamespaceHierarchyRule"> AvoidDeepNamespaceHierarchyRule </span></h3>
+<p>This rule checks for deeply nested namespaces within an assembly. It will warn if the depth is greater than four (default value) unless the fifth (or the next) part is one of the specialized name that the framework recommends or a name like an internal namespace (something not meant to be seen outside the assembly). 
+</p>
+<ul><li> <b>Design</b>&#160;: Namespace that provides design-time support for its base namespace.
+</li><li> <b>Interop</b>&#160;: Namespace that provides all interoperability code (e.g. p./invokes) for its base namespace.
+</li><li> <b>Permissions</b>&#160;: Namespace that provides all custom permissions for its base namespace.
+</li><li> <b>Internal</b>&#160;: Namespace that provides non visible (outside the assembly) helper code for its base namespace. <b>Impl</b> while allowed by the rule is not encouraged. 
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> One<span style="color: #008000;">.</span><span style="color: #0000FF;">Two</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Three</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Four</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Five</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> Helper <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> One<span style="color: #008000;">.</span><span style="color: #0000FF;">Two</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Three</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Four</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> FiveHelper <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (exception for some namespace specialization):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> One<span style="color: #008000;">.</span><span style="color: #0000FF;">Two</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Three</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Four</span><span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Internal</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">internal</span> <span style="color: #6666cc; font-weight: bold;">class</span> Helper <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Configuration</b>
+</p><p>Some elements of this rule can be customized to better fit your needs.
+</p>
+<h4> <span class="mw-headline" id="MaxDepth"> MaxDepth </span></h4>
+<p>The depth at which namespaces may be nested without triggering a defect.
+</p>
+<h3> <span class="mw-headline" id="AvoidNonAlphanumericIdentifierRule"> AvoidNonAlphanumericIdentifierRule </span></h3>
+<p>This rule ensures that identifiers like assembly names, namespaces, types and members names don't have any non-alphanumerical characters inside them. The rule will ignore interfaces used for COM interoperability - i.e. decorated with both <b>[InterfaceType]</b> and <b>[Guid]</b> attributes. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> New_Namespace <span style="color: #008000;">&#123;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> My_Custom_Class <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> My_Field<span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> My_Method <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> my_string<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> NewNamespace <span style="color: #008000;">&#123;</span>
+&#160;
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyCustomClass <span style="color: #008000;">&#123;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> MyField<span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> MyMethod <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> myString<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> Prior to Gendarme 2.2 this rule was named DetectNonAlphanumericInTypeNamesRule
+</li></ul>
+<h3> <span class="mw-headline" id="AvoidRedundancyInMethodNameRule"> AvoidRedundancyInMethodNameRule </span></h3>
+<p>This rule will fire if a method name embeds the type name of its first parameter. Usually, removing that type name makes the API less verbose, easier to learn, and more future-proof. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> PostOffice <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SendLetter <span style="color: #008000;">&#40;</span>Letter letter<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> SendPackage <span style="color: #008000;">&#40;</span>Package package<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> PostOffice <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Send <span style="color: #008000;">&#40;</span>Letter letter<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> Send <span style="color: #008000;">&#40;</span>Package package<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> PostOffice <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">bool</span> IsPackageValid <span style="color: #008000;">&#40;</span>Package package<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">return</span> package<span style="color: #008000;">.</span><span style="color: #0000FF;">HasAddress</span> <span style="color: #008000;">&amp;&amp;</span> package<span style="color: #008000;">.</span><span style="color: #0000FF;">HasStamp</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">class</span> Package <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">bool</span> IsValid <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> HasAddress <span style="color: #008000;">&amp;&amp;</span> HasStamp<span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidRedundancyInTypeNameRule"> AvoidRedundancyInTypeNameRule </span></h3>
+<p>This rule will fire if a type is prefixed with the last component of its namespace. Using prefixes like this makes type names more verbose than they need to be and makes them harder to use with tools like auto-complete. Note that an exception is made if removal of the prefix would cause an ambiguity with another type. If this is the case the rule will not report a defect. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> Foo<span style="color: #008000;">.</span><span style="color: #0000FF;">Lang</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Compiler</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> CompilerContext <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Foo.Lang</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">Compiler</span><span style="color: #008000;">.</span><span style="color: #0000FF;">CompilerContext</span> context <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Compiler<span style="color: #008000;">.</span><span style="color: #0000FF;">CompilerContext</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Foo.Lang.Compiler</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">CompilerContext</span> context <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> CompilerContext <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> Foo<span style="color: #008000;">.</span><span style="color: #0000FF;">Lang</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Compiler</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Context <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Foo.Lang</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">Compiler</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Context</span> context <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Compiler<span style="color: #008000;">.</span><span style="color: #0000FF;">Context</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Foo.Lang.Compiler</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">...</span>
+<span style="color: #0000FF;">Context</span> context <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Context <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Another good example (more meaningful term in the context of the namespace):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> Foo<span style="color: #008000;">.</span><span style="color: #0000FF;">Lang</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Compiler</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> CompilationContext <span style="color: #008000;">&#123;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="AvoidTypeInterfaceInconsistencyRule"> AvoidTypeInterfaceInconsistencyRule </span></h3>
+<p>This rule will fire if an assembly has a namespace which contains an interface IFoo and a type Foo, but the type does not implement the interface. If an interface and a type name differ only by the <b>I</b> prefix (of the interface) then we can logically expect the type to implement this interface. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> IMember <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> Name <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Member <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Name <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> IMember <span style="color: #008000;">&#123;</span>
+    <span style="color: #6666cc; font-weight: bold;">string</span> Name <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Member <span style="color: #008000;">:</span> IMember <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Name <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+            <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Notes</b>
+</p>
+<ul><li> This rule is available since Gendarme 2.4
+</li></ul>
+<h3> <span class="mw-headline" id="DoNotPrefixEventsWithAfterOrBeforeRule"> DoNotPrefixEventsWithAfterOrBeforeRule </span></h3>
+<p>This rule ensures that event names are not prefixed with <b>After</b> or <b>Before</b>. The .NET naming conventions recommend using a verb in the present and in the past tense. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Bad <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">event</span> ResolveEventHandler BeforeResolve<span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">event</span> ResolveEventHandler AfterResolve<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Good <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">event</span> ResolveEventHandler Resolving<span style="color: #008000;">;</span>	<span style="color: #008080; font-style: italic;">// present</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">event</span> ResolveEventHandler Resolved<span style="color: #008000;">;</span>	<span style="color: #008080; font-style: italic;">// past</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="DoNotPrefixValuesWithEnumNameRule"> DoNotPrefixValuesWithEnumNameRule </span></h3>
+<p>This rule checks for <b>enum</b> values that are prefixed with the enumeration type name. This is typical in C/C++ application but unneeded in .NET since the <b>enum</b> type name must be specified anyway when used. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> Answer <span style="color: #008000;">&#123;</span>
+    AnswerYes,
+    AnswerNo,
+    AnswerMaybe,
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> Answer <span style="color: #008000;">&#123;</span>
+    Yes,
+    No,
+    Maybe
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="DoNotUseReservedInEnumValueNamesRule"> DoNotUseReservedInEnumValueNamesRule </span></h3>
+<p>This rule checks for enumerations that contain values named <b>reserved</b>. This practice, often seen in C/C++ sources, is not needed in .NET since adding new values will not normally break binary compatibility. However renaming a <b>reserved</b>enum value can since there is no way to prevent people from using the old value. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> Answer <span style="color: #008000;">&#123;</span>
+    Yes,
+    No,
+    Reserved
+    <span style="color: #008080; font-style: italic;">// ^ renaming this to 'Maybe' would be a breaking change</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> Answer <span style="color: #008000;">&#123;</span>
+    Yes,
+    No
+    <span style="color: #008080; font-style: italic;">// we can add Maybe here without causing a breaking change</span>
+    <span style="color: #008080; font-style: italic;">// (but note that we may break code if we change the values of</span>
+    <span style="color: #008080; font-style: italic;">// existing enumerations)</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="ParameterNamesShouldMatchOverriddenMethodRule"> ParameterNamesShouldMatchOverriddenMethodRule </span></h3>
+<p>This rule warns if an overriden method's parameter names does not match those of the base class or those of the implemented interface. This can be confusing because it may not always be clear that it is an override or implementation of an interface method. It also makes it more difficult to use the method with languages that support named parameters (like C# 4.0). 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> <span style="color: #0600FF; font-weight: bold;">Base</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> text<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> SubType <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">Base</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> output<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">//...</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> <span style="color: #0600FF; font-weight: bold;">Base</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> text<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> SubType <span style="color: #008000;">:</span> <span style="color: #0600FF; font-weight: bold;">Base</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">override</span> <span style="color: #6666cc; font-weight: bold;">void</span> Write <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> text<span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008080; font-style: italic;">//...</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseCorrectCasingRule"> UseCorrectCasingRule </span></h3>
+<p>This rule ensures that identifiers are correctly cased. In particular: 
+</p>
+<ul><li> namespace names are PascalCased
+</li><li> type names are PascalCased
+</li><li> method names are PascalCased
+</li><li> parameter names are camelCased
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> A <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> myClass <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> thisMethod <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> ThatParameter<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">namespace</span> Company<span style="color: #008000;">.</span><span style="color: #0000FF;">Product</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Technology</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> MyClass <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">int</span> ThisMethod <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">int</span> thatParameter<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseCorrectPrefixRule"> UseCorrectPrefixRule </span></h3>
+<p>This rule ensures that types are prefixed correctly. Interfaces should always be prefixed with a <b>I</b>, types should never be prefixed with a <b>C</b> (reminder for MFC folks) and generic parameters should be a single, uppercased letter or be prefixed with <b>T</b>. 
+</p><p><b>Bad</b> examples:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> Phone <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> CPhone <span style="color: #008000;">:</span> Phone <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Call<span style="color: #008000;">&lt;</span>Mechanism<span style="color: #008000;">&gt;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> examples:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">interface</span> IPhone <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Phone <span style="color: #008000;">:</span> IPhone <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Call<span style="color: #008000;">&lt;</span>TMechanism<span style="color: #008000;">&gt;</span> <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseCorrectSuffixRule"> UseCorrectSuffixRule </span></h3>
+<p>This rule ensure that types that inherit from certain types or implement certain interfaces have a specific suffix. It also ensures that no other types are using those suffixes without inheriting/implementing the types/interfaces. E.g. 
+</p>
+<ul><li> <b>System.Attribute</b> should end with <b>Attribute</b>
+</li><li> <b>System.EventArgs</b> should end with <b>EventArgs</b>
+</li><li> <b>System.Exception</b> should end with <b>Exception</b>
+</li><li> <b>System.Collections.Queue</b> should end with <b>Collection</b> or <b>Queue</b>
+</li><li> <b>System.Collections.Stack</b> should end with <b>Collection</b> or <b>Stack</b>
+</li><li> <b>System.Data.DataSet</b> should end with <b>DataSet</b>
+</li><li> <b>System.Data.DataTable</b> should end with <b>DataTable</b> or <b>Collection</b>
+</li><li> <b>System.IO.Stream</b> should end with <b>Stream</b>
+</li><li> <b>System.Security.IPermission</b> should end with <b>Permission</b>
+</li><li> <b>System.Security.Policy.IMembershipCondition</b> should end with <b>Condition</b>
+</li><li> <b>System.Collections.IDictionary</b> or <b>System.Collections.Generic.IDictionary</b> should end with <b>Dictionary</b>
+</li><li> <b>System.Collections.ICollection</b>, <b>System.Collections.Generic.ICollection</b> or <b>System.Collections.IEnumerable</b> should end with <b>Collection</b>
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> SpecialCode <span style="color: #008000;">:</span> Attribute <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">sealed</span> <span style="color: #6666cc; font-weight: bold;">class</span> SpecialCodeAttribute <span style="color: #008000;">:</span> Attribute <span style="color: #008000;">&#123;</span>
+    <span style="color: #008080; font-style: italic;">// ...</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UsePluralNameInEnumFlagsRule"> UsePluralNameInEnumFlagsRule </span></h3>
+<p>This rule ensures that the name of enumerations decorated with FlagsAttribute are in plural form. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Flags<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> MyCustomValue <span style="color: #008000;">&#123;</span>
+    Foo,
+    Bar,
+    AllValues <span style="color: #008000;">=</span> Foo <span style="color: #008000;">|</span> Bar
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Flags<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> MyCustomValues <span style="color: #008000;">&#123;</span>
+    Foo,
+    Bar,
+    AllValues <span style="color: #008000;">=</span> Foo <span style="color: #008000;">|</span> Bar
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UsePreferredTermsRule"> UsePreferredTermsRule </span></h3>
+<p>This rule ensures that identifiers such as assemblies, namespaces, types, and members, use the terms suggested by the .NET framework guidelines so that they are consistent with other class libraries. 
+</p>
+<ul><li> <b>Arent</b> should be replaced with <b>AreNot</b>;
+</li><li> <b>Cancelled</b> should be replaced with <b>Canceled</b>;
+</li><li> <b>Cant</b> should be replaced with <b>Cannot</b>;
+</li><li> <b>ComPlus</b> should be replaced with <b>EnterpriseServices</b>;
+</li><li> <b>Couldnt</b> should be replaced with <b>CouldNot</b>;
+</li><li> <b>Didnt</b> should be replaced with <b>DidNot</b>;
+</li><li> <b>Doesnt</b> should be replaced with <b>DoesNot</b>;
+</li><li> <b>Dont</b> should be replaced with <b>DoNot</b>;
+</li><li> <b>Hadnt</b> should be replaced with <b>HadNot</b>;
+</li><li> <b>Hasnt</b> should be replaced with <b>HasNot</b>;
+</li><li> <b>Havent</b> should be replaced with <b>HaveNot</b>;
+</li><li> <b>Indices</b> should be replaced with <b>Indexes</b>;
+</li><li> <b>Isnt</b> should be replaced with <b>IsNot</b>;
+</li><li> <b>LogIn</b> should be replaced with <b>LogOn</b>;
+</li><li> <b>LogOut</b> should be replaced with <b>LogOff</b>;
+</li><li> <b>Shouldnt</b> should be replaced with <b>ShouldNot</b>;
+</li><li> <b>SignOn</b> should be replaced with <b>SignIn</b>;
+</li><li> <b>SignOff</b> should be replaced with <b>SignOut</b>;
+</li><li> <b>Wasnt</b> should be replaced with <b>WasNot</b>;
+</li><li> <b>Werent</b> should be replaced with <b>WereNot</b>;
+</li><li> <b>Wont</b> should be replaced with <b>WillNot</b>;
+</li><li> <b>Wouldnt</b> should be replaced with <b>WouldNot</b>;
+</li><li> <b>Writeable</b> should be replaced with <b>Writable</b>;
+</li></ul>
+<p><br />
+<b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> ComPlusSecurity <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> LogIn <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> LogOut <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> EnterpriseServicesSecurity <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> LogOn <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #0600FF; font-weight: bold;">abstract</span> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">void</span> LogOff <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h3> <span class="mw-headline" id="UseSingularNameInEnumsUnlessAreFlagsRule"> UseSingularNameInEnumsUnlessAreFlagsRule </span></h3>
+<p>The rule is used for ensure that the name of enumerations are in singular form unless the enumeration is used as flags, i.e. decorated with the <b>[Flags]</b> attribute. 
+</p><p><b>Bad</b> example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> MyCustomValues <span style="color: #008000;">&#123;</span>
+    Foo,
+    Bar
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (singular):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> MyCustomValue <span style="color: #008000;">&#123;</span>
+    Foo,
+    Bar
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>Good</b> example (flags):
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>Flags<span style="color: #008000;">&#93;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">enum</span> MyCustomValues <span style="color: #008000;">&#123;</span>
+    Foo,
+    Bar,
+    AllValues <span style="color: #008000;">=</span> Foo <span style="color: #008000;">|</span> Bar
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+</p>
+<h1> <span class="mw-headline" id="Feedback"> Feedback </span></h1>
+<p>Please report any documentation errors, typos or suggestions to the 
+<a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google Group</a>. Thanks!
+</p>

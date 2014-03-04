@@ -1,0 +1,601 @@
+---
+layout: obsolete
+title: "Guide: Porting ASP.NET Applications"
+permalink: /old_site/Guide:_Porting_ASP.NET_Applications/
+---
+
+<h1>Guide: Porting ASP.NET Applications</h1>
+
+<p>by <a href="" class="new" title="User:MarekHabersack (page does not exist)">Marek Habersack</a>
+</p><p>This guide is meant to help Linux and Windows developers alike in porting ASP.NET 2.0 applications from Windows to Unix operating systems.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Getting_started"><span class="tocnumber">2</span> <span class="toctext">Getting started</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Prerequisite_software"><span class="tocnumber">2.1</span> <span class="toctext">Prerequisite software</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Porting_the_code"><span class="tocnumber">3</span> <span class="toctext">Porting the code</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Required_assemblies"><span class="tocnumber">4</span> <span class="toctext">Required assemblies</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Configuration_files"><span class="tocnumber">4.1</span> <span class="toctext">Configuration files</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#DbProviderFactory_configuration"><span class="tocnumber">4.1.1</span> <span class="toctext">DbProviderFactory configuration</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Npgsql_and_.7E.2FApp_Code"><span class="tocnumber">4.1.2</span> <span class="toctext">Npgsql and ~/App_Code</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Connection_string"><span class="tocnumber">4.1.3</span> <span class="toctext">Connection string</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Membership.2FRoles_provider_configuration"><span class="tocnumber">4.1.4</span> <span class="toctext">Membership/Roles provider configuration</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Filesystem_paths"><span class="tocnumber">4.1.5</span> <span class="toctext">Filesystem paths</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#machineKey_storage"><span class="tocnumber">4.1.6</span> <span class="toctext">machineKey storage</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#File_access_permissions"><span class="tocnumber">4.1.7</span> <span class="toctext">File access permissions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Markup"><span class="tocnumber">4.2</span> <span class="toctext">Markup</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#URL_case"><span class="tocnumber">4.2.1</span> <span class="toctext">URL case</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Code-Behind"><span class="tocnumber">4.3</span> <span class="toctext">Code-Behind</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Filesystem_path_syntax"><span class="tocnumber">4.3.1</span> <span class="toctext">Filesystem path syntax</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#File_name_case"><span class="tocnumber">4.3.2</span> <span class="toctext">File name case</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Porting_the_data"><span class="tocnumber">5</span> <span class="toctext">Porting the data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#MDF_files"><span class="tocnumber">5.1</span> <span class="toctext">MDF files</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Npgsql_data_provider"><span class="tocnumber">5.2</span> <span class="toctext">Npgsql data provider</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Membership.2FRoles.2FProfile_provider_schema"><span class="tocnumber">5.2.1</span> <span class="toctext">Membership/Roles/Profile provider schema</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#Source_code"><span class="tocnumber">5.3</span> <span class="toctext">Source code</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="#Data_provider_changes"><span class="tocnumber">5.3.1</span> <span class="toctext">Data provider changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="#XSD_files"><span class="tocnumber">5.4</span> <span class="toctext">XSD files</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#Annotated_files"><span class="tocnumber">5.4.1</span> <span class="toctext">Annotated files</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#Modifying_annotated_files"><span class="tocnumber">5.4.2</span> <span class="toctext">Modifying annotated files</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#Editing_queries"><span class="tocnumber">5.4.3</span> <span class="toctext">Editing queries</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#SQL_syntax_differences"><span class="tocnumber">5.5</span> <span class="toctext">SQL syntax differences</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#SQL_type_mapping"><span class="tocnumber">5.6</span> <span class="toctext">SQL type mapping</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Stored_procedures"><span class="tocnumber">5.7</span> <span class="toctext">Stored procedures</span></a>
+<ul>
+<li class="toclevel-3 tocsection-32"><a href="#Tips_for_porting"><span class="tocnumber">5.7.1</span> <span class="toctext">Tips for porting</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Running_the_application_on_Unix"><span class="tocnumber">6</span> <span class="toctext">Running the application on Unix</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#Supporting_Multiple_Platforms"><span class="tocnumber">7</span> <span class="toctext">Supporting Multiple Platforms</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="#More_Tutorials"><span class="tocnumber">8</span> <span class="toctext">More Tutorials</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>By their nature, Web applications tend to be more portable to other platforms than traditional desktop applications. The interaction with the user is done through the web browser the user is running, which in most cases, guarantees interface portability nearly without effort. There exist incompatibilities in the DOM (Document Object Model), JavaScript, CSS and HTML implementations in the web browsers, but for the sake of this guide we will assume that all the browsers work  in the same way in this regard.
+</p><p>In this guide we will focus on issues arising from differences between the Unix and Windows platforms, as well as between the database systems (RDBMS) in common use by developers on each of the platforms.
+</p><p>In this guide I will demonstrate the porting process based on the <b>Blog Starter Kit</b> application (you can download the original C# source from <a href="http://www.shankun.com/BlogStarterKit.aspx" class="external free" rel="nofollow">http://www.shankun.com/BlogStarterKit.aspx</a>):
+</p><p><a href="{{site.baseurl}}/images/old_site/8/83/BlogStarterKit_StartPage.png" class="image"><img alt="BlogStarterKit StartPage.png" src="{{site.baseurl}}/images/old_site/8/83/BlogStarterKit_StartPage.png" width="700" height="507" /></a>
+</p>
+<h2> <span class="mw-headline" id="Getting_started"> Getting started </span></h2>
+<p>No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
+</p>
+<blockquote>
+<b>Windows developers</b>. If you are a working in the Windows environment, it is advised that you download the <a href="{{site.baseurl}}/Downloads" title="Downloads">VMWare Virtual Image</a> to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled. 
+</blockquote>
+<p>If your application uses MS SQL then on your Unix system you will need to install the <a href="http://postgresql.org/" class="external text" rel="nofollow">PostgreSQL</a> RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
+</p>
+<h3> <span class="mw-headline" id="Prerequisite_software">Prerequisite software</span></h3>
+<ul><li> Npgsql version from <a href="http://pgfoundry.org/scm/?group_id=1000140" class="external text" rel="nofollow">CVS</a>.
+<dl><dd> The CVS version is required, since the ASP.NET 2.0 Membership classes rely on the DbProviderFactories model which is not available in Npgsql shipped with Mono.
+</dd></dl>
+</li><li> ASP.NET PostgreSQL Membership/Role providers. I recommend the version from <a href="http://dev.nauck-it.de/projects/show/aspsqlprovider" class="external text" rel="nofollow">Nauck, It</a>, which is the code I use in all the ported starter kits. Make sure that you use the version of the above provider from the <a href="http://svn.nauck-it.de/aspsqlprovider/branches/mono/" class="external text" rel="nofollow">Mono branch</a> as it contains changes necessary for the provider to work correctly with the CVS version of Npgsql.
+</li><li> <a href="http://www.postgresql.org/ftp/binary/v8.2.4/" class="external text" rel="nofollow">PostgreSQL 8.2</a>
+</li></ul>
+<h2> <span class="mw-headline" id="Porting_the_code">Porting the code</span></h2>
+<p>When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the <a href="#iomap_anchor">MONO_IOMAP</a> approach.   By using the MONO_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
+</p>
+<h2> <span class="mw-headline" id="Required_assemblies">Required assemblies</span></h2>
+<p>Put the Npgsql and PostgreSQL providers assemblies in the <tt>bin/</tt> subdirectory of your application.
+</p>
+<h3> <span class="mw-headline" id="Configuration_files">Configuration files</span></h3>
+<h4> <span class="mw-headline" id="DbProviderFactory_configuration">DbProviderFactory configuration</span></h4>
+<p>As we're using Npgsql from CVS, which is not configured for use with ADO.NET 2.0 in Mono by default, we need to add the section shown below to the <tt>Web.config</tt> file:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DbProviderFactories<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Npgsql2 Data Provider&quot;</span></span>
+<span style="color: #009900;">       <span style="color: #000066;">invariant</span>=<span style="color: #ff0000;">&quot;Npgsql2&quot;</span></span>
+<span style="color: #009900;">       <span style="color: #000066;">description</span>=<span style="color: #ff0000;">&quot;.Net Framework Data Provider for PostgreSQL&quot;</span> </span>
+<span style="color: #009900;">       <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;Npgsql.NpgsqlFactory, Npgsql2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/DbProviderFactories<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.data<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>Remember the <i>Npgsql</i> invariant name, as it will be used below.
+</p>
+<h4> <span class="mw-headline" id="Npgsql_and_.7E.2FApp_Code">Npgsql and ~/App_Code</span></h4>
+<p>Make sure that Npgsql is included in the set of assemblies to link with code compiled from <tt>~/App_Code</tt> and/or generated from your ASP.NET files by adding the following fragment to your <tt>Web.config</tt> file:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;Npgsql2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<h4> <span class="mw-headline" id="Connection_string">Connection string</span></h4>
+<p>Change the connection string to point to your PostgreSQL server and database. The code below shows the string for the Blog Starter Kit database named <tt>blogstarterkit</tt>, user login <tt>test</tt>, password <tt>test</tt>:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;connectionStrings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;Blog&quot;</span></span>
+<span style="color: #009900;">      <span style="color: #000066;">connectionString</span>=<span style="color: #ff0000;">&quot;SERVER=localhost;Database=blogstarterkit;User name=test;Password=test&quot;</span> </span>
+<span style="color: #009900;">      <span style="color: #000066;">providerName</span>=<span style="color: #ff0000;">&quot;Npgsql2&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span> <span style="color: #808080; font-style: italic;">&lt;!-- provider invariant name, configured above --&gt;</span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/connectionStrings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<h4> <span class="mw-headline" id="Membership.2FRoles_provider_configuration">Membership/Roles provider configuration</span></h4>
+<p>The Membership/Roles provider requires a few changes to the application configuration. The XML below shows the relevant segment of the <tt>&lt;system.web&gt;</tt> section for the <b>Blog Starter Kit</b>:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;roleManager</span> <span style="color: #000066;">enabled</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;clear</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;AspNetSqlRoleProvider&quot;</span> </span>
+<span style="color: #009900;">        <span style="color: #000066;">connectionStringName</span>=<span style="color: #ff0000;">&quot;Blog&quot;</span> <span style="color: #000066;">applicationName</span>=<span style="color: #ff0000;">&quot;/&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;NauckIT.PostgreSQLProvider.PgRoleProvider, PostgreSQLProviders, Version=1.0.2698.20744, Culture=neutral, PublicKeyToken=e35c7087b53d61d1&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/roleManager<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+&#160;
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;membership</span> <span style="color: #000066;">defaultProvider</span>=<span style="color: #ff0000;">&quot;AspNetSqlMembershipProvider&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;clear</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">name</span>=<span style="color: #ff0000;">&quot;AspNetSqlMembershipProvider&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;NauckIT.PostgreSQLProvider.PgMembershipProvider, PostgreSQLProviders, Version=1.0.2698.20744, Culture=neutral, PublicKeyToken=e35c7087b53d61d1&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">connectionStringName</span>=<span style="color: #ff0000;">&quot;Blog&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">enablePasswordRetrieval</span>=<span style="color: #ff0000;">&quot;false&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">enablePasswordReset</span>=<span style="color: #ff0000;">&quot;true&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">requiresQuestionAndAnswer</span>=<span style="color: #ff0000;">&quot;true&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">applicationName</span>=<span style="color: #ff0000;">&quot;/&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">requiresUniqueEmail</span>=<span style="color: #ff0000;">&quot;true&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">passwordFormat</span>=<span style="color: #ff0000;">&quot;Hashed&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">maxInvalidPasswordAttempts</span>=<span style="color: #ff0000;">&quot;5&quot;</span> </span>
+<span style="color: #009900;">        <span style="color: #000066;">minRequiredPasswordLength</span>=<span style="color: #ff0000;">&quot;7&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">minRequiredNonalphanumericCharacters</span>=<span style="color: #ff0000;">&quot;1&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">passwordAttemptWindow</span>=<span style="color: #ff0000;">&quot;10&quot;</span></span>
+<span style="color: #009900;">        <span style="color: #000066;">passwordStrengthRegularExpression</span>=<span style="color: #ff0000;">&quot;&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/providers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/membership<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>A point to note above is that we're clearing the list of providers. This is done because we're overriding the standard <tt>ASP.NET</tt> provider name string, to minimize the set of changes required to port the application.
+</p>
+<h4> <span class="mw-headline" id="Filesystem_paths">Filesystem paths</span></h4>
+<p>Avoid specifying paths to files in the .config files. If you can't avoid them, either provide a separate version for every supported platform with appropriate paths, or provider commented-out versions in a single .config file.
+</p><p>Another option is to use application relative URIs of the form:
+</p>
+<pre>
+~/App_Data/MyFile.dat
+</pre>
+<p>Alternatively, you can provide the setting versions with different names, auto-detect the platform on the runtime and choose the appropriate setting (make sure you use proper file/directory name case in the Unix version of the setting):
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration</span> <span style="color: #000066;">xmlns</span>=<span style="color: #ff0000;">&quot;http://schemas.microsoft.com/.NetConfiguration/v2.0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;Windows_KeyFile&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;c:\keys\file.key&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">key</span>=<span style="color: #ff0000;">&quot;Unix_KeyFile&quot;</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;/etc/keys/file.key&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/appSettings<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The runtime detection code could look like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Configuration</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> MyClass
+<span style="color: #008000;">&#123;</span>
+   <span style="color: #6666cc; font-weight: bold;">string</span> PlatformName <span style="color: #008000;">&#123;</span>
+      <span style="color: #0600FF; font-weight: bold;">get</span> <span style="color: #008000;">&#123;</span>
+         <span style="color: #0600FF; font-weight: bold;">switch</span> <span style="color: #008000;">&#40;</span>Environment<span style="color: #008000;">.</span><span style="color: #0000FF;">OSVersion</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Platform</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+           <span style="color: #0600FF; font-weight: bold;">case</span> PlatformID<span style="color: #008000;">.</span><span style="color: #0000FF;">Unix</span><span style="color: #008000;">:</span>
+             <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #666666;">&quot;Unix&quot;</span><span style="color: #008000;">;</span>
+&#160;
+           <span style="color: #0600FF; font-weight: bold;">default</span><span style="color: #008000;">:</span>
+             <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #666666;">&quot;Windows&quot;</span><span style="color: #008000;">;</span>
+         <span style="color: #008000;">&#125;</span>
+      <span style="color: #008000;">&#125;</span>
+   <span style="color: #008000;">&#125;</span>
+&#160;
+   <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> GetKeyFilePath <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+   <span style="color: #008000;">&#123;</span>
+      <span style="color: #0600FF; font-weight: bold;">return</span> ConfigurationManager<span style="color: #008000;">.</span><span style="color: #0000FF;">AppSettings</span><span style="color: #008000;">&#91;</span><span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Format</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;{0}_KeyFile&quot;</span>, PlatformName<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+   <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h4> <span class="mw-headline" id="machineKey_storage">machineKey storage</span></h4>
+<p>Currently (as of June 2007) no Mono version supports persisting of the auto-generated machineKey values. For that reason, if you want your user sessions/logins to survive application restarts, you need to put the key values  explicitly in the application top-level Web.config file.
+</p><p>Very useful utilities to generate the machineKey section can be found <a href="http://www.leastprivilege.com/MSDNUSWebCastAuthenticationAndAuthorizationWithASPNET20.aspx" class="external text" rel="nofollow">here</a> and <a href="http://aspnetresources.com/tools/keycreator.aspx" class="external text" rel="nofollow">here</a>
+</p><p>A sample <tt>&lt;machineKey&gt;</tt> element to put in the <tt>&lt;system.web&gt;</tt> section:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;machineKey</span> <span style="color: #000066;">validationKey</span>=<span style="color: #ff0000;">&quot;66FF84B434578C6C442D8A5E5183CBD33C02E95FF918A1BF94809AA01081D508BBDD91EBC8D7F0AE47CF3B621516C875B95CBE9051FA7C8D1C9AA09B08CC816A&quot;</span></span>
+<span style="color: #009900;"><span style="color: #000066;">decryptionKey</span>=<span style="color: #ff0000;">&quot;354A893316E7BD02297E07BD2C0E1310D6F0C40F651335C7&quot;</span> <span style="color: #000066;">validation</span>=<span style="color: #ff0000;">&quot;SHA1&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span></pre>
+<p>Make sure that you <b>generate your own set of keys</b> for your site security.
+</p>
+<h4> <span class="mw-headline" id="File_access_permissions">File access permissions</span></h4>
+<p>Make sure your files which contain sensitive information are owned by a trusted user and have safe file permissions:
+</p>
+<pre>
+chmod 600 ''FILE_NAME''
+</pre>
+<p>Note that the <tt>Web.config</tt> files should be owned by the user under which the webserver (XSP or Apache) runs.
+</p>
+<h3> <span class="mw-headline" id="Markup">Markup</span></h3>
+<h4> <span class="mw-headline" id="URL_case">URL case</span></h4>
+<p>All the markup elements that refer to resources external to a file they are in should use proper case - matching the file/directory name on disk. Mirosoft Windows and IIS are case-insensitive in that respect whereas Unix systems and webservers are not. It might be a good idea to  make all the web-accessible file names all lower case.
+</p>
+<h3> <span class="mw-headline" id="Code-Behind">Code-Behind</span></h3>
+<h4> <span class="mw-headline" id="Filesystem_path_syntax">Filesystem path syntax</span></h4>
+<p><span style="font-size: xx-small; font-style: italic">This section is based on <a href="{{site.baseurl}}/Guide:_Porting_Winforms_Applications#The_Path_Separator" title="Guide: Porting Winforms Applications">Porting Winforms Applications</a><i></span></i>
+</p><p>The issue you should pay great attention to is the platform-specific filesystem paths. Windows systems use a backslash (<tt>"\"</tt>) as path separator, while Unix systems use the forward slash (<tt>"/"</tt>) for the same purpose. 
+</p><p>There are two ways of dealing with the issue:
+</p><p><b>System.IO.Path.DirectorySeparatorChar</b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> LoadDataFile <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> filename<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+  <span style="color: #6666cc; font-weight: bold;">string</span> path <span style="color: #008000;">=</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Format</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;{0}{1}DataFiles{1}{2}&quot;</span>, HttpRuntime<span style="color: #008000;">.</span><span style="color: #0000FF;">AppDomainAppPath</span>, Path<span style="color: #008000;">.</span><span style="color: #0000FF;">DirectorySeparatorChar</span>, 
+filename<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>File<span style="color: #008000;">.</span><span style="color: #0000FF;">Exists</span> <span style="color: #008000;">&#40;</span>path<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+     <span style="color: #0600FF; font-weight: bold;">return</span> File<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadAllText</span> <span style="color: #008000;">&#40;</span>path<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #0600FF; font-weight: bold;">else</span>
+     <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><b>System.IO.Path.Combine</b>
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> LoadDataFile <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> filename<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+  <span style="color: #6666cc; font-weight: bold;">string</span> path <span style="color: #008000;">=</span> Path<span style="color: #008000;">.</span><span style="color: #0000FF;">Combine</span> <span style="color: #008000;">&#40;</span>HttpRuntime<span style="color: #008000;">.</span><span style="color: #0000FF;">AppDomainAppPath</span>, <span style="color: #666666;">&quot;DataFiles&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #6666cc; font-weight: bold;">string</span> file <span style="color: #008000;">=</span> Path<span style="color: #008000;">.</span><span style="color: #0000FF;">Combine</span> <span style="color: #008000;">&#40;</span>path, filename<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>File<span style="color: #008000;">.</span><span style="color: #0000FF;">Exists</span> <span style="color: #008000;">&#40;</span>path<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span>
+     <span style="color: #0600FF; font-weight: bold;">return</span> File<span style="color: #008000;">.</span><span style="color: #0000FF;">ReadAllText</span> <span style="color: #008000;">&#40;</span>path<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  <span style="color: #0600FF; font-weight: bold;">else</span>
+     <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #6666cc; font-weight: bold;">String</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Empty</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h4> <span class="mw-headline" id="File_name_case">File name case</span></h4>
+<p>Make sure that names of files you access from within your code-behind files are in proper case. Remember - Unix systems are case-sensitive.
+</p>
+<h2> <span class="mw-headline" id="Porting_the_data">Porting the data</span></h2>
+<p>It is assumed that your application uses MS SQL and you are porting the database to PostgreSQL. 
+</p>
+<h3> <span class="mw-headline" id="MDF_files">MDF files</span></h3>
+<p>MS SQL/SQLExpress allow the developer to attach to a database stored in a file (usually located in the <tt>~/App_Data/</tt> directory). This feature is not available with PostgreSQL so all your data must live in a database stored on the machine where the RDBMS runs.
+</p>
+<h3> <span class="mw-headline" id="Npgsql_data_provider">Npgsql data provider</span></h3>
+<p>At the time of this writing (June 2007), you will need to use the <a href="http://pgfoundry.org/scm/?group_id=1000140" class="external text" rel="nofollow">CVS</a> version of the <a href="http://npgsql.projects.postgresql.org/" class="external text" rel="nofollow">Npgsql</a> data provider, as the one shipped with Mono does not support ADO.NET 2.0.
+</p>
+<h4> <span class="mw-headline" id="Membership.2FRoles.2FProfile_provider_schema">Membership/Roles/Profile provider schema</span></h4>
+<p>The providers require specific database schema to be present in your database. Make sure you execute the script below in the context on your database before using the <b>Blog Starter Kit</b> for the first time:
+</p>
+<pre>
+CREATE TABLE Users (
+ pId                                     character(36)           NOT NULL,
+ Username                                character varying(255)  NOT NULL,
+ ApplicationName                         character varying(255)  NOT NULL,
+ Email                                   character varying(128)  NOT NULL,
+ Comment                                 character varying(128)  NULL,
+ Password                                character varying(255)  NOT NULL,
+ PasswordQuestion                        character varying(255)  NULL,
+ PasswordAnswer                          character varying(255)  NULL,
+ IsApproved                              boolean                 NULL, 
+ LastActivityDate                        timestamptz             NULL,
+ LastLoginDate                           timestamptz             NULL,
+ LastPasswordChangedDate                 timestamptz             NULL,
+ CreationDate                            timestamptz             NULL, 
+ IsOnLine                                boolean                 NULL,
+ IsLockedOut                             boolean                 NULL,
+ LastLockedOutDate                       timestamptz             NULL,
+ FailedPasswordAttemptCount              integer                 NULL,
+ FailedPasswordAttemptWindowStart        timestamptz             NULL,
+ FailedPasswordAnswerAttemptCount        integer                 NULL,
+ FailedPasswordAnswerAttemptWindowStart  timestamptz             NULL,
+ CONSTRAINT users_pkey PRIMARY KEY (pId),
+ CONSTRAINT users_username_application_unique UNIQUE (Username, ApplicationName)
+);
+
+CREATE INDEX users_email_index ON Users (Email);
+CREATE INDEX users_islockedout_index ON Users (IsLockedOut);
+
+CREATE TABLE Roles (
+ Rolename                                character varying(255)  NOT NULL,
+ ApplicationName                         character varying(255)  NOT NULL,
+ CONSTRAINT roles_pkey PRIMARY KEY (Rolename, ApplicationName)
+);
+
+CREATE TABLE UsersInRoles (
+ Username                                character varying(255)  NOT NULL,
+ Rolename                                character varying(255)  NOT NULL,
+ ApplicationName                         character varying(255)  NOT NULL,
+ CONSTRAINT usersinroles_pkey PRIMARY KEY (Username, Rolename, ApplicationName),
+ CONSTRAINT usersinroles_username_fkey FOREIGN KEY (Username, ApplicationName) REFERENCES Users (Username, ApplicationName) ON DELETE CASCADE,
+ CONSTRAINT usersinroles_rolename_fkey FOREIGN KEY (Rolename, ApplicationName) REFERENCES Roles (Rolename, ApplicationName) ON DELETE CASCADE
+);
+
+CREATE TABLE Profiles (
+ pId                                     character(36)           NOT NULL,
+ Username                                character varying(255)  NOT NULL,
+ ApplicationName                         character varying(255)  NOT NULL,
+ IsAnonymous                             boolean                 NULL,
+ LastActivityDate                        timestamptz             NULL,
+ LastUpdatedDate                         timestamptz             NULL,
+ CONSTRAINT profiles_pkey PRIMARY KEY (pId),
+ CONSTRAINT profiles_username_application_unique UNIQUE (Username, ApplicationName),
+ CONSTRAINT profiles_username_fkey FOREIGN KEY (Username, ApplicationName) REFERENCES Users (Username, ApplicationName) ON DELETE CASCADE
+);
+
+CREATE INDEX profiles_isanonymous_index ON Profiles (IsAnonymous);
+
+CREATE TABLE ProfileData (
+ pId                                     character(36)           NOT NULL,
+ Profile                                 character(36)           NOT NULL,
+ Name                                    character varying(255)  NOT NULL,
+ ValueString                             text                    NULL,
+ ValueBinary                             bytea                   NULL,
+ CONSTRAINT profiledata_pkey PRIMARY KEY (pId),
+ CONSTRAINT profiledata_profile_name_unique UNIQUE (Profile, Name),
+ CONSTRAINT profiledata_profile_fkey FOREIGN KEY (Profile) REFERENCES Profiles (pId) ON DELETE CASCADE
+);
+</pre>
+<h3> <span class="mw-headline" id="Source_code">Source code</span></h3>
+<p>Make sure that any queries issued directly from your source code use the correct syntax for PostgreSQL (modify them as described <a href="#Annotated_files">below</a>).
+</p><p>Remember to modify your <a href="#Connection_string">connection strings</a> to use Npgsql format.
+</p>
+<h4> <span class="mw-headline" id="Data_provider_changes">Data provider changes</span></h4>
+<p>Search and replace all the instances of SqlClient data access classes with their Npgsql counterparts. The code samples below come from Blog Starter Kit's <tt>~/App_Code/Utilities/SqlDatabase.cs</tt>
+</p>
+<ul><li> Make sure your code uses Npgsql.
+</li></ul>
+<p>Original code:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Data.SqlClient</span><span style="color: #008000;">;</span></pre>
+<p>Ported code:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Npgsql</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">NpgsqlTypes</span><span style="color: #008000;">;</span></pre>
+<ul><li> Use Npgsql versions of the database access classes.
+</li></ul>
+<p>Original code:
+</p>
+<pre class="csharp" style="font-family:monospace;">SqlConnection connection <span style="color: #008000;">=</span> CreateConnection<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+SqlCommand command <span style="color: #008000;">=</span> CreateCommand<span style="color: #008000;">&#40;</span>connection, query, parameters<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+SqlDataReader reader <span style="color: #008000;">=</span> command<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span>CommandBehavior<span style="color: #008000;">.</span><span style="color: #0000FF;">CloseConnection</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Ported code:
+</p>
+<pre class="csharp" style="font-family:monospace;">NpgsqlConnection connection <span style="color: #008000;">=</span> CreateConnection<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+NpgsqlCommand command <span style="color: #008000;">=</span> CreateCommand<span style="color: #008000;">&#40;</span>connection, query, parameters<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+NpgsqlDataReader reader <span style="color: #008000;">=</span> command<span style="color: #008000;">.</span><span style="color: #0000FF;">ExecuteReader</span><span style="color: #008000;">&#40;</span>CommandBehavior<span style="color: #008000;">.</span><span style="color: #0000FF;">CloseConnection</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<ul><li> Modify command parameters to use syntax understood by Npgsql by replacing the <tt>@</tt> marker character with <tt>:</tt>
+</li></ul>
+<p>Original code:
+</p>
+<pre class="csharp" style="font-family:monospace;">sb<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendFormat</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;({0} = @{0})&quot;</span>, fieldValues<span style="color: #008000;">&#91;</span>i<span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+parameters<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;@&quot;</span> <span style="color: #008000;">+</span> fieldValues<span style="color: #008000;">&#91;</span>i<span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Ported code:
+</p>
+<pre class="csharp" style="font-family:monospace;">sb<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendFormat</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;({0} =&#160;:{0})&quot;</span>, fieldValues<span style="color: #008000;">&#91;</span>i<span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+parameters<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;:&quot;</span> <span style="color: #008000;">+</span> fieldValues<span style="color: #008000;">&#91;</span>i<span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<ul><li> If you encounter references to <b>@@IDENTITY</b> in the queries made by your application, replace them with a call to the <b>lastval()</b> function.
+</li></ul>
+<p>Original code:
+</p>
+<pre class="csharp" style="font-family:monospace;">sb<span style="color: #008000;">.</span><span style="color: #0000FF;">Append</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;); SELECT @@IDENTITY&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Ported code:
+</p>
+<pre class="csharp" style="font-family:monospace;">sb<span style="color: #008000;">.</span><span style="color: #0000FF;">Append</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;); SELECT lastval()&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<h3> <span class="mw-headline" id="XSD_files">XSD files</span></h3>
+<p>XSD files define in a, theoretically, database provider independent fashion the structure of the database. The files can be placed in the <tt>~/App_Code/</tt> directory for automatic conversion into compilable code, or they can be processed from the command line with the XSD utility to produce compilable source code which contains type-safe DataSets for each table defined in the <tt>.xsd</tt> file:
+</p>
+<pre>
+xsd ''InputFile.xsd'' /d
+</pre>
+<p>The resulting <tt>.cs</tt> (or <tt>.vb</tt> if you chose VisualBasic for the output) file can be put in <tt>~/App_Code/</tt> to be automatically compiled at the application startup.
+</p>
+<h4> <span class="mw-headline" id="Annotated_files">Annotated files</span></h4>
+<p>Mono version of the <tt>xsd</tt> utility supports the standard contents of the <tt>.xsd</tt> files and generates correct code for it. However, if the input file contains a section which looks as follows, the generated code will <b>not</b> be as expected by your application:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;xs:annotation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;xs:appinfo</span> <span style="color: #000066;">source</span>=<span style="color: #ff0000;">&quot;urn:schemas-microsoft-com:xml-msdatasource&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+    ...
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/xs:appinfo<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/xs:annotation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>If this is the case with your file(s), you should generate the code using the Microsoft version of the <tt>xsd</tt> utility, put the generated code in <tt>~/App_Code</tt> and remove (or rename) the corresponding <tt>.xsd</tt> file(s) so that their extension is different.
+</p>
+<h4> <span class="mw-headline" id="Modifying_annotated_files">Modifying annotated files</span></h4>
+<p>Before processing the <tt>.xsd</tt> file on Windows you need to edit it to make sure the generated code is compatible with Npgsql. There are two sets of changes that need to be made in order to achieve the goal:
+</p>
+<ol><li> Make sure the provider mentioned in the file is Npgsql
+<dl><dd> To do so, locate the <tt>&lt;Connections&gt;</tt> section within the <tt>&lt;xs:appinfo&gt;</tt> element and modify each <tt>&lt;Connection&gt;</tt>  element's <tt>Provider</tt> attribute to say <b>Npgsql</b>
+</dd></dl>
+</li><li> Edit the queries and parameters as described <a href="#Editing_Queries">below</a>
+</li></ol>
+<h4> <span class="mw-headline" id="Editing_queries">Editing queries</span></h4>
+<p>The annotation section of the <tt>.xsd</tt> file may contain elements shown below:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">&lt;!-- attributes omitted for brevity --&gt;</span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DbSource<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DeleteCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;DbCommand</span> <span style="color: #000066;">CommandType</span>=<span style="color: #ff0000;">&quot;Text&quot;</span> <span style="color: #000066;">ModifiedByUser</span>=<span style="color: #ff0000;">&quot;False&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;CommandText<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>DELETE FROM [dbo.MemberInfo] WHERE (([memberid] = @Original_memberid))<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/CommandText<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Parameters<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Parameter</span> <span style="color: #000066;">AllowDbNull</span>=<span style="color: #ff0000;">&quot;False&quot;</span> <span style="color: #000066;">AutogeneratedName</span>=<span style="color: #ff0000;">&quot;&quot;</span> <span style="color: #000066;">DataSourceName</span>=<span style="color: #ff0000;">&quot;&quot;</span></span>
+<span style="color: #009900;">               <span style="color: #000066;">DbType</span>=<span style="color: #ff0000;">&quot;Guid&quot;</span> <span style="color: #000066;">Direction</span>=<span style="color: #ff0000;">&quot;Input&quot;</span> <span style="color: #000066;">ParameterName</span>=<span style="color: #ff0000;">&quot;@Original_memberid&quot;</span> </span>
+<span style="color: #009900;">               <span style="color: #000066;">Precision</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">ProviderType</span>=<span style="color: #ff0000;">&quot;UniqueIdentifier&quot;</span> <span style="color: #000066;">Scale</span>=<span style="color: #ff0000;">&quot;0&quot;</span> </span>
+<span style="color: #009900;">               <span style="color: #000066;">Size</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">SourceColumn</span>=<span style="color: #ff0000;">&quot;memberid&quot;</span> </span>
+<span style="color: #009900;">               <span style="color: #000066;">SourceColumnNullMapping</span>=<span style="color: #ff0000;">&quot;False&quot;</span> <span style="color: #000066;">SourceVersion</span>=<span style="color: #ff0000;">&quot;Original&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Parameter<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Parameters<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/DbCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/DeleteCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;InsertCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #808080; font-style: italic;">&lt;!-- contents similar to shown above --&gt;</span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/InsertCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;SelectCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #808080; font-style: italic;">&lt;!-- contents similar to shown above --&gt;</span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/SelectCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;UpdateCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #808080; font-style: italic;">&lt;!-- contents similar to shown above --&gt;</span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/UpdateCommand<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/DbSource<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>With the sample section shown above, you need to make several changes in order for the generated code to work properly with Npgsql:
+</p>
+<ul><li> Make sure the DbType value is a valid type in Npgsql (see <a href="/index.php?title=SQL_type_mapping&amp;action=edit&amp;redlink=1" class="new" title="SQL type mapping (page does not exist)">below</a>)
+</li><li> Change the <tt>ParameterName</tt> by replacing the <b><tt>@</tt></b> character with <b><tt>:</tt></b> which is the standard parameter quoting character for Npgsql. Also any ocurrence of the parameter name in the query text needs to be modified in the same way.
+</li><li> Remove all <b><tt>[</tt></b> and <b><tt>]</tt></b> characters from the query text.
+</li><li> Make sure the query is syntactically correct for PostgreSQL (refer to PostgreSQL documentation at <a href="http://www.postgresql.org/docs/" class="external autonumber" rel="nofollow">[1]</a>)
+</li></ul>
+<h3> <span class="mw-headline" id="SQL_syntax_differences">SQL syntax differences</span></h3>
+<p><span style="font-size: xx-small; font-style: italic">Information below is based on <a href="http://www.postgresql.org/docs/techdocs.27" class="external text" rel="nofollow">this document</a></span>
+</p><p>The information below is only an excerpt from the document referenced above containing the most commonly occurring issues. It is advised that you read the above document in addition to this guide.
+</p>
+<ol><li> Remove all the <b>[</b> and <b>]</b> characters from the table definitions and/or queries
+</li><li> Remove all the <tt>dbo.</tt> owner prefixes
+</li><li> Remove all the file group keywords (<b>ON PRIMARY</b>, <b>TEXTIMAGE_ON</b>, <b>CLUSTERED</b>
+</li><li> Remove all occurrences of <b>SET ANSI_NULLS</b> and <b>SET QUOTED_IDENTIFIERS</b>
+</li><li> Remove all occurrences of <b>WITH NOCHECK</b>
+</li><li> Replace all instances of the <b>GO</b> keyword with semicolons (<b>;</b>)
+</li></ol>
+<h3> <span class="mw-headline" id="SQL_type_mapping">SQL type mapping</span></h3>
+<p><span style="font-size: xx-small; font-style: italic">Information below is based on <a href="http://www.postgresql.org/docs/techdocs.27" class="external text" rel="nofollow">this document</a></span>
+</p><p>The information below is only an excerpt from the document referenced above containing the most commonly occurring issues. It is advised that you read the above document in addition to this guide.
+</p>
+<dl><dt> <b>nvarchar</b>&#160;</dt><dd> replace with <b>varchar</b>
+</dd><dt> <b>ntext</b>&#160;</dt><dd> replace with <b>text</b>
+</dd><dt> <b>datetime</b> and <b>smalldatetime</b>&#160;</dt><dd> replace with <b>timestamptz</b>
+</dd><dt> <b>bit</b>&#160;</dt><dd> can be replaced with either of <b>boolean</b>, <b>int2</b> or <b>smallint</b>. The difference is in the syntax when referring to the field's value in the queries (<b>boolean</b> accepts '0', '1', TRUE, FALSE, while the two integer fields accept only 0 and 1)
+</dd><dt> <b>image</b>&#160;</dt><dd> replace with <b>bytea</b>
+</dd><dt> <b>decimal</b>&#160;</dt><dd> even though PostgreSQL supports this type, it is deprecated in favor of <b>numeric</b>
+</dd><dt> <b>tinyint</b>&#160;</dt><dd> replace with <b>smallint</b>
+</dd><dt> <b>UniqueIdentifier</b>&#160;</dt><dd> replace with <b>text</b> in the SQL definition and <b>String</b> in the <tt>.xsd</tt> file. Typically, the ASP.NET apps will use this type to store the value of a Guid. If it is so in your case, make sure any and all code in your application that passes a value of type Guid to a method, first converts this value to a string (using the <tt>.ToString()</tt> method called on the Guid object). If your application does not use the field to store Guid values, you can replace the type with <b>bigint</b>. Also, see the document referenced at the start of this section for more information about the type.
+</dd><dt> <b>int IDENTITY(1,1)&#160;: replace with </b>serial<b> (or </b>bigserial<b> if you expect to have a very large number of rows)</b>
+</dt></dl>
+<h3> <span class="mw-headline" id="Stored_procedures">Stored procedures</span></h3>
+<p>Porting the stored procedures is the most time consuming and the most difficult task in the process of moving to PostgreSQL. First of all, you must make sure that your target database has the <tt>PL/pgsql</tt> language created. You must issue the command below as a PostgreSQL superuser:
+</p>
+<pre>
+CREATE LANGUAGE plpgsql;
+</pre>
+<p>PL/pgsql is the most similar to the MS SQL stored procedure language, so in theory it should be the easiest way to port the database. In practice, if you're more familiar with Perl, Tcl, Python or C, you can write your procedures from scratch in any of those languages (making sure to previously create the language in the database in the way shown above).
+</p><p>Before you start porting, please read <a href="http://www.postgresql.org/docs/8.2/interactive/plpgsql.html" class="external free" rel="nofollow">http://www.postgresql.org/docs/8.2/interactive/plpgsql.html</a>
+</p><p>Steps to port the stored procedures:
+</p>
+<ol><li> Replace all the <b>CREATE PROCEDURE</b> statements with <b>CREATE FUNCTION</b>. PostgreSQL functions need to have return types, so if you want to return no value, you need to define the procedure as follows:
+<dl><dd><pre>
+</dd><dd>CREATE FUNCTION foo () RETURNS void AS $$
+</dd><dd>BEGIN
+</dd><dd>...
+</dd><dd>END
+</dd><dd>$$ language 'plpgsql'
+</dd><dd></pre>
+</dd></dl>
+</li></ol>
+<h4> <span class="mw-headline" id="Tips_for_porting">Tips for porting</span></h4>
+<ul><li> Contrary to what the document quoted at the top of the section says, PostgreSQL 8.1 and newer stored procedures do support output parameters.
+</li><li> Default values for parameters are not supported. If you want to emulate them, overload the procedure:
+<dl><dd><pre>
+</dd><dd>CREATE FUNCTION Foo () RETURNS SETOF FooTable AS $$
+</dd><dd>DECLARE
+</dd><dd>        r RECORD;
+</dd><dd>BEGIN
+</dd><dd>        FOR r IN SELECT * FROM Foo (1, 10) LOOP
+</dd><dd>            RETURN NEXT r;
+</dd><dd>        END LOOP;
+</dd><dd>        RETURN;
+</dd><dd>END;
+</dd><dd>$$ LANGUAGE plpgsql;
+</dd><dd>
+</dd><dd>CREATE FUNCTION Foo (ppageNum int) RETURNS SETOF FooTable AS $$
+</dd><dd>DECLARE
+</dd><dd>        r RECORD;
+</dd><dd>BEGIN
+</dd><dd>        FOR r IN SELECT * FROM Foo (ppageNum, 10) LOOP
+</dd><dd>            RETURN NEXT r;
+</dd><dd>        END LOOP;
+</dd><dd>        RETURN;
+</dd><dd>END;
+</dd><dd>$$ LANGUAGE plpgsql;
+</dd><dd>
+</dd><dd>CREATE FUNCTION Foo (ppageNum int, ppageSize int) RETURNS SETOF FooTable AS $$
+</dd><dd>DECLARE
+</dd><dd>       r RECORD;
+</dd><dd>BEGIN
+</dd><dd>        FOR r IN SELECT * FROM FooTable LOOP
+</dd><dd>            RETURN NEXT r;
+</dd><dd>        END LOOP;
+</dd><dd>        RETURN;
+</dd><dd>END;
+</dd><dd>$$ LANGUAGE plpgsql;
+</dd><dd></pre>
+</dd></dl>
+</li><li> The sample procedures above show also how to return result sets. In MS SQL the operation is implicit, in PostgreSQL you need to declare a variable of type RECORD and loop over the results returned from a query, returning each set using the <b>RETURN NEXT</b> statement. This statement does <b>not</b> actually return from the function, it merely stores away the result set which is then returned to the caller when the <b>RETURN;</b> statement is parsed.
+</li><li> Also in the sample procedures above, you can see how to declare the return type if you're returning result sets.
+</li><li> If you plan to return only a subset of columns from a table, you should create a new type with only those columns and declare your function to return the new type:
+<dl><dd><pre>
+</dd><dd>CREATE TYPE FooTableSubset AS (column1 text, column2 int);
+</dd><dd>
+</dd><dd>CREATE FUNCTION Bar() RETURNS SETOF FooTableSubset AS $$
+</dd><dd>DECLARE 
+</dd><dd>        r RECORD;
+</dd><dd>BEGIN
+</dd><dd>        FOR r IN SELECT column1, CAST(COUNT(*) AS int) AS num FROM FooTable *:LOOP
+</dd><dd>           RETURN NEXT r;
+</dd><dd>        END LOOP;
+</dd><dd>        RETURN;
+</dd><dd>END;
+</dd><dd>$$ LANGUAGE plpgsql;
+</dd><dd></pre>
+</dd></dl>
+</li><li> The procedure above demonstrates another thing to pay attention to. The result of the <tt>COUNT(*)</tt> aggregate function in PostgreSQL is <b>bigint</b> (Int64 in .NET) while in MS SQL it's <b>int</b> (Int32 in .NET). Therefore you need to either modify your application to expect an Int64 value, or (preferred) cast the <tt>COUNT(*)</tt> result as shown above.
+</li><li> Try not to use temporary tables in your PostgreSQL stored procedure. MS SQL procedures can contain code like the one shown below:
+<dl><dd><pre>SELECT INTO #temptable ....</pre>
+</dd><dd>Instead of using <tt>CREATE TEMPORARY TABLE</tt>, you should rather create a new type and return result sets from a query limited to the columns you're interested in.
+</dd></dl>
+</li><li> Use <b>FOUND</b> instead of <b>@@FETCH_STATUS</b>
+</li><li> Use <b>currval(<i>sequence_name</i>)</b> instead of <b>@@IDENTITY</b>
+</li><li> Make sure to end each statement with semicolons (<b>;</b>)
+</li><li> Conditional execution blocks in PL/pgsql do not use <b>BEGIN/END</b>, instead they use the following syntax:
+<dl><dd><pre>
+</dd><dd>IF ''condition''' THEN
+</dd><dd> ....
+</dd><dd>ELSIF ''condition'' THEN
+</dd><dd> ....
+</dd><dd>END IF;
+</dd><dd></pre>
+</dd></dl>
+</li></ul>
+<h2> <span class="mw-headline" id="Running_the_application_on_Unix">Running the application on Unix</span></h2>
+<p><span id="iomap_anchor"><b>Using MONO_IOMAP</b></span>
+</p>
+<blockquote>
+On Unix systems, Mono supports an I/O compatibility mode which allows you to ignore the file name case when accessing files on disk. The mode also takes care of disk designators (e.g. <tt>c:</tt>). Enabling the translation carries, obviously, some performance penalty, but is a good way to get your application up and running quickly.
+
+To enable the compatibility mode, make sure your web server's (XSP's or Apache's) environment contains the <tt>MONO_IOMAP</tt> variable set to <b>all</b>:
+
+<pre>
+MONO_IOMAP=all
+export MONO_IOMAP
+</pre>
+<p>If you're using <tt>mod_mono</tt>, put the following line in your virtual host config file:
+</p>
+<pre>
+MonoSetEnv MONO_IOMAP=all
+</pre>
+</blockquote>
+<h2> <span class="mw-headline" id="Supporting_Multiple_Platforms"> Supporting Multiple Platforms </span></h2>
+<p>Some applications require advanced configuration settings that are OS-specific or deployment specific.     For example, Mono uses this to set the default membership and role managers on Linux to use SQLite by default, as opposed to a larger database.
+</p><p>Configuration is driven by the settings.map file, for a detailed explanation of it see the [<a href="http://mono-project.com/ASP.NET_Settings_Mapping" class="external autonumber" rel="nofollow">[2]</a>] document.
+</p>
+<h2> <span class="mw-headline" id="More_Tutorials"> More Tutorials </span></h2>
+<p>Nathan Bridgewater wrote this very nice 3-part tutorial on how to port an ASP.NET MVC application to Mono:
+</p>
+<ul><li> Part 1: <a href="http://www.integratedwebsystems.com/2010/01/installing-opensuse-11-2-with-mono-2-6-1-and-apache-using-text-mode-configuration-porting-to-mono-part-1-of-3/" class="external text" rel="nofollow">Installing  the Software</a>
+</li><li> Part 2: <a href="http://www.integratedwebsystems.com/2010/02/how-to-setup-and-configure-mysql-membership-provider-6-2-2-porting-to-mono-part-2-of-3/" class="external text" rel="nofollow">Setting up and Configuring MySQL</a>
+</li><li> Part 3: <a href="http://www.integratedwebsystems.com/2010/02/walkthrough-porting-asp-net-mvc-website-to-mono-2-6-1-and-mysql-on-linux-apache-porting-to-mono-part-3-of-3/" class="external text" rel="nofollow">Walk through porting the ASP.NET MVC website</a>.
+</li></ul>
+<p>Novell: <a href="http://www.novell.com/connectionmagazine/2010/02/mono_tools.html" class="external text" rel="nofollow">From .NET to Linux in 5 Easy Steps</a>
+</p>

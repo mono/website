@@ -1,0 +1,81 @@
+---
+layout: obsolete
+title: "GtkSharpNotificationIcon"
+permalink: /old_site/GtkSharpNotificationIcon/
+---
+
+<h1>GtkSharpNotificationIcon</h1>
+
+<h1> <span class="mw-headline" id="What_is_the_Status_Notification_Area.3F"> What is the Status Notification Area? </span></h1>
+<p><span style="float:right; vertical-align:top;"><a href="{{site.baseurl}}/images/old_site/8/8c/TrayIcon.png" class="image"><img alt="TrayIcon.png" src="{{site.baseurl}}/images/old_site/8/8c/TrayIcon.png" width="34" height="25" /></a> <a href="{{site.baseurl}}/images/old_site/3/33/TrayIconPopMenu.png" class="image"><img alt="TrayIconPopMenu.png" src="{{site.baseurl}}/images/old_site/3/33/TrayIconPopMenu.png" width="93" height="44" /></a></span> Using the status notification area applications can notify the user of non-critical events (for example, arrival of new email, or a chat 'buddy' having logged on), and expose the status of active system processes (for example, a printing document, or a laptop's battery charging). Keep in mind that the utility of the notification area decreases rapidly when more than about four icons are always present. For this reason, icons that appear only temporarily in response to events are preferable.
+</p>
+<h1> <span class="mw-headline" id="Let.27s_write_some_code.21"> Let's write some code! </span></h1>
+<p>The Sample here creates an empty GTK-Window with an tray icon. The Application can be hidden, displayed and closed with the help of the tray icon.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gdk</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Hello <span style="color: #008000;">&#123;</span>
+	<span style="color: #008080; font-style: italic;">// The tray Icon</span>
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">static</span> StatusIcon trayIcon<span style="color: #008000;">;</span>
+	<span style="color: #008080; font-style: italic;">// The Window</span>
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #0600FF; font-weight: bold;">static</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Initialize GTK#</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a Window with title</span>
+		window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello World&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Attach to the Delete Event when the window has been closed.</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span> Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Creation of the Icon</span>
+		trayIcon <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> StatusIcon<span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Pixbuf <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;theIcon.png&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		trayIcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Visible</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Show/Hide the window (even from the Panel/Taskbar) when the TrayIcon has been clicked.</span>
+		trayIcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Activate</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span> window<span style="color: #008000;">.</span><span style="color: #0000FF;">Visible</span> <span style="color: #008000;">=</span> <span style="color: #008000;">!</span>window<span style="color: #008000;">.</span><span style="color: #0000FF;">Visible</span><span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// Show a pop up menu when the icon has been right clicked.</span>
+		trayIcon<span style="color: #008000;">.</span><span style="color: #0000FF;">PopupMenu</span> <span style="color: #008000;">+=</span> OnTrayIconPopup<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// A Tooltip for the Icon</span>
+		trayIcon<span style="color: #008000;">.</span><span style="color: #0000FF;">Tooltip</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Hello World Icon&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Show the main window and start the application.</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #008080; font-style: italic;">// Create the popup menu, on right click.</span>
+	<span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> OnTrayIconPopup <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, EventArgs args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		Menu popupMenu <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Menu<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		ImageMenuItem menuItemQuit <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ImageMenuItem <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Quit&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Image</span> appimg <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Image</span><span style="color: #008000;">&#40;</span>Stock<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span>, IconSize<span style="color: #008000;">.</span><span style="color: #0000FF;">Menu</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		menuItemQuit<span style="color: #008000;">.</span><span style="color: #0000FF;">Image</span> <span style="color: #008000;">=</span> appimg<span style="color: #008000;">;</span>
+		popupMenu<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span><span style="color: #008000;">&#40;</span>menuItemQuit<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008080; font-style: italic;">// Quit the application when quit has been clicked.</span>
+		menuItemQuit<span style="color: #008000;">.</span><span style="color: #0000FF;">Activated</span> <span style="color: #008000;">+=</span> <span style="color: #6666cc; font-weight: bold;">delegate</span> <span style="color: #008000;">&#123;</span> Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span> <span style="color: #008000;">&#125;</span><span style="color: #008000;">;</span>
+		popupMenu<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		popupMenu<span style="color: #008000;">.</span><span style="color: #0000FF;">Popup</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>You can compile them with this line:
+</p>
+<pre class="bash" style="font-family:monospace;">gmcs TrayIcon.cs -pkg:gtk-sharp-<span style="color: #000000;">2.0</span></pre>
+<p>And then run it with:
+</p>
+<pre class="bash" style="font-family:monospace;">mono TrayIcon.exe</pre>
+<p>but please note that there must be an file named "theIcon.png" present in the folder of the application.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="References"> References </span></h1>
+<ul><li><a href="http://off.net/~tberman/diary/" class="external text" rel="nofollow">Todd Berman's Homepage</a>
+</li><li><a href="http://www.freedesktop.org/wiki/Standards_2fsystemtray_2dspec" class="external text" rel="nofollow">System Tray Protocol</a>
+</li><li><a href="http://developer.gnome.org/projects/gup/hig/" class="external text" rel="nofollow">GNOME HIG v2.0</a>
+</li><li><a href="http://developer.gnome.org/projects/gup/hig/2.0/desktop-notification-area.html" class="external text" rel="nofollow">Use of Notification Area in GNOME</a>
+</li></ul>
+<p>And special thanks to Suco for <a href="http://blog.wikifotos.org/2008/02/14/mono-c-y-los-iconos-en-la-bandeja-del-sistema/" class="external text" rel="nofollow">the original code sample</a>.
+</p>

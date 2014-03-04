@@ -1,0 +1,55 @@
+---
+layout: obsolete
+title: "HeapBuddy"
+permalink: /old_site/HeapBuddy/
+---
+
+<h1>HeapBuddy</h1>
+
+<p>Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented <a href="{{site.baseurl}}/Profiler" title="Profiler">here</a>.
+</p><p>HeapBuddy is a summarizing profiler.  It is part of the Mono <a href="{{site.baseurl}}/Profile" title="Profile">profiling</a> tools. 
+</p><p>HeapBuddy collects allocation statistics while the program is running and writes out the aggregate info to a file which you analyze with a command-line tool after it's finished running. 
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Collecting_the_Data"><span class="tocnumber">1</span> <span class="toctext">Collecting the Data</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examining_the_Data"><span class="tocnumber">2</span> <span class="toctext">Examining the Data</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Obtaining_HeapBuddy"><span class="tocnumber">3</span> <span class="toctext">Obtaining HeapBuddy</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Collecting_the_Data"> Collecting the Data </span></h1>
+<p>Run your application like this:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>mono <span style="color: #660033;">--profile</span>=heap-buddy:outputfile program.exe</pre>
+<p>Run your application under a regular load, and once you are done, terminate it.   You will need the application to terminate completely before you can examine the data. 
+</p><p>Once you have this data, you can examine it.
+</p>
+<h1> <span class="mw-headline" id="Examining_the_Data"> Examining the Data </span></h1>
+<p>To examine the data you use the <b>heap-buddy</b> command, for example:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>heap-buddy outfile types</pre>
+<p>The above instructs Heap Buddy to process the data using the types mode.   The tool has four basic modes: summary, history, types and backtraces.
+</p><p><b>Summary</b> provides high-level info: how many objects/bytes were allocated, the final size of the heap, the number of GCs, etc.
+</p><p><b>History</b> gives you a timeline of each heap resize and GC,  reporting the sizes of the heap, the number of objects and their size, and how it changed over time.  
+</p><p>This mode is useful for example to explore cases like: if your heap resizes 5 times in a row without a GC all within 2 seconds that you have a run away allocation pattern.
+</p><p><b>Types</b> will show you all the value types that have been created, how many total instances, the total bytes, the average size of one instance, and the average age (ie, the number of GCs) it lived for. 
+</p><p>If you're dealing with runaway memory, this will tell you what it is. The average age is good for finding memory leaks.
+</p><p><b>Backtraces</b> is similar to types but has more granularity.  It shows the
+same information as types, but it breaks the types up by the call trace that allocated them.  
+</p><p>This is good when you are trying to find out what is allocating all those  strings.
+</p>
+<h1> <span class="mw-headline" id="Obtaining_HeapBuddy"> Obtaining HeapBuddy </span></h1>
+<p>HeabBuddy is availale as an <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">Subversion</a> checkout, use the following command line to download it:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span><span style="color: #c20cb9; font-weight: bold;">svn co</span> svn:<span style="color: #000000; font-weight: bold;">//</span>anonsvn.mono-project.com<span style="color: #000000; font-weight: bold;">/</span>source<span style="color: #000000; font-weight: bold;">/</span>trunk<span style="color: #000000; font-weight: bold;">/</span>heap-buddy</pre>
+<p>To build HeapBuddy use:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #7a0874; font-weight: bold;">cd</span> heap-buddy
+$ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh 
+$ <span style="color: #c20cb9; font-weight: bold;">make</span>
+$ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h1> <span class="mw-headline" id="See_Also"> See Also </span></h1>
+<p><a href="{{site.baseurl}}/Performance_Tips" title="Performance Tips">Performance Tips</a>
+</p><p><a href="{{site.baseurl}}/HeapShot" title="HeapShot">Heap Shot Memory Profiler</a>
+</p>

@@ -1,0 +1,313 @@
+---
+layout: obsolete
+title: "GtkSharpDetails"
+permalink: /old_site/GtkSharpDetails/
+---
+
+<h1>GtkSharpDetails</h1>
+
+<p>Gtk# 2.0 has been released.
+</p><p>For a list of the new features see <a href="{{site.baseurl}}/GtkSharpNewInVersion2x" title="GtkSharpNewInVersion2x">Whats new on Gtk# 2</a> page, for a list of upcoming features see <a href="{{site.baseurl}}/GtkSharpPlan" title="GtkSharpPlan">GtkSharpPlan</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Availability"><span class="tocnumber">2</span> <span class="toctext">Availability</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tutorials"><span class="tocnumber">3</span> <span class="toctext">Tutorials</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Beginning_to_use_Gtk.23"><span class="tocnumber">3.1</span> <span class="toctext">Beginning to use Gtk#</span></a></li>
+<li class="toclevel-2"><a href="#Gtk.23_GUI_details_and_techniques"><span class="tocnumber">3.2</span> <span class="toctext">Gtk# GUI details and techniques</span></a></li>
+<li class="toclevel-2"><a href="#Advanced_Gtk.23"><span class="tocnumber">3.3</span> <span class="toctext">Advanced Gtk#</span></a></li>
+<li class="toclevel-2"><a href="#Extending_your_GUI"><span class="tocnumber">3.4</span> <span class="toctext">Extending your GUI</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Other_Gtk.23_Tutorials"><span class="tocnumber">4</span> <span class="toctext">Other Gtk# Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#User_Testimonials"><span class="tocnumber">5</span> <span class="toctext">User Testimonials</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Additional_Widgets"><span class="tocnumber">6</span> <span class="toctext">Additional Widgets</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Gnome-KeyRing-Sharp"><span class="tocnumber">6.1</span> <span class="toctext">Gnome-KeyRing-Sharp</span></a></li>
+<li class="toclevel-2"><a href="#GSF_Sharp"><span class="tocnumber">6.2</span> <span class="toctext">GSF Sharp</span></a></li>
+<li class="toclevel-2"><a href="#GtkGlArea_Sharp"><span class="tocnumber">6.3</span> <span class="toctext">GtkGlArea Sharp</span></a></li>
+<li class="toclevel-2"><a href="#WebKit_Sharp"><span class="tocnumber">6.4</span> <span class="toctext">WebKit Sharp</span></a></li>
+<li class="toclevel-2"><a href="#GtkMozEmbed_Sharp"><span class="tocnumber">6.5</span> <span class="toctext">GtkMozEmbed Sharp</span></a></li>
+<li class="toclevel-2"><a href="#GtkSourceView_Sharp"><span class="tocnumber">6.6</span> <span class="toctext">GtkSourceView Sharp</span></a></li>
+<li class="toclevel-2"><a href="#Hal_Sharp"><span class="tocnumber">6.7</span> <span class="toctext">Hal Sharp</span></a></li>
+<li class="toclevel-2"><a href="#DBus_Sharp"><span class="tocnumber">6.8</span> <span class="toctext">DBus Sharp</span></a></li>
+<li class="toclevel-2"><a href="#ipod_sharp"><span class="tocnumber">6.9</span> <span class="toctext">ipod sharp</span></a></li>
+<li class="toclevel-2"><a href="#Maemo_Sharp"><span class="tocnumber">6.10</span> <span class="toctext">Maemo Sharp</span></a></li>
+<li class="toclevel-2"><a href="#JScall_Sharp"><span class="tocnumber">6.11</span> <span class="toctext">JScall Sharp</span></a></li>
+<li class="toclevel-2"><a href="#NPlot_Gtk"><span class="tocnumber">6.12</span> <span class="toctext">NPlot Gtk</span></a></li>
+<li class="toclevel-2"><a href="#Taglib_Sharp"><span class="tocnumber">6.13</span> <span class="toctext">Taglib Sharp</span></a></li>
+<li class="toclevel-2"><a href="#Daap_Sharp"><span class="tocnumber">6.14</span> <span class="toctext">Daap Sharp</span></a></li>
+<li class="toclevel-2"><a href="#Mono.ZeroConf"><span class="tocnumber">6.15</span> <span class="toctext">Mono.ZeroConf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Gtk.23.27s_Components"><span class="tocnumber">7</span> <span class="toctext">Gtk#'s Components</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Versions_.26_Status"><span class="tocnumber">8</span> <span class="toctext">Versions &amp; Status</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Migrating_from_1.x_to_2.x"><span class="tocnumber">9</span> <span class="toctext">Migrating from 1.x to 2.x</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Future_Directions"><span class="tocnumber">10</span> <span class="toctext">Future Directions</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Additional_Resources"><span class="tocnumber">11</span> <span class="toctext">Additional Resources</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="{{site.baseurl}}/images/old_site/5/57/IFolder_Linux.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/5/57/IFolder_Linux.png" width="180" height="144" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.baseurl}}/images/old_site/5/57/IFolder_Linux.png" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>iFolder, a <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">GTK#</a> application</div></div></div>
+<p>Gtk#, a <a href="{{site.baseurl}}/Gui_Toolkits" title="Gui Toolkits">GUI Toolkit</a>, is a set of .NET bindings for the <a href="http://www.gtk.org/" class="external text" rel="nofollow">gtk+</a> toolkit and assorted <a href="http://www.gnome.org/" class="external text" rel="nofollow">GNOME</a> libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
+</p><p>Applications built using Gtk# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
+</p><p>You can use <a href="http://glade.gnome.org/" class="external text" rel="nofollow">Glade</a> along with the Glade# bindings to easily design GUI applications.  A new GUI designer called <a href="{{site.baseurl}}/Stetic" title="Stetic">Stetic</a> is being built which will be integrated with the MonoDevelop IDE.
+</p><p>In addition to support the standard Gtk/Gnome stack of development tools, the gtk-dotnet.dll assembly provides a bridge to consume functionality available on the .NET stack, at this point this includes the functionality to use System.Drawing to draw on a widget.
+</p><p>See the sample in gtk-sharp/samples/DrawingSample.cs for details.
+</p>
+<h2> <span class="mw-headline" id="Availability"> Availability </span></h2>
+<p>Gtk# is available for both Unix and Windows.
+</p>
+<ul><li> For Unix, go <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a>.
+</li><li> For Windows go <a href="http://forge.novell.com/modules/xfmod/project/?gtks-inst4win" class="external text" rel="nofollow">here</a>.
+</li></ul>
+<h2> <span class="mw-headline" id="Tutorials"> Tutorials </span></h2>
+<h3> <span class="mw-headline" id="Beginning_to_use_Gtk.23"> Beginning to use Gtk# </span></h3>
+<ul><li> <a href="{{site.baseurl}}/GtkSharpBeginnersGuide" title="GtkSharpBeginnersGuide">Beginners Guide to Gtk#</a>
+<ul><li> An overview of Gtk# and step-by-step description of a simple application.
+</li></ul>
+</li><li> <a href="{{site.baseurl}}/GtkSharp:_Hello_World" title="GtkSharp: Hello World">Gtk# "Hello World" in C# and VB.NET</a>
+<ul><li> A short 'Hello World' style introduction to Gtk#
+</li></ul>
+</li><li> <a href="http://www.monodevelop.com/Stetic_GUI_Designer" class="external text" rel="nofollow">Gtk# in MonoDevelop</a>
+<ul><li> Creating a Gtk# application with <a href="http://www.monodevelop.com/Main_Page" class="external text" rel="nofollow">Monodevelop's</a> GUI designer, Stetic.
+</li></ul>
+</li></ul>
+<h3> <span class="mw-headline" id="Gtk.23_GUI_details_and_techniques"> Gtk# GUI details and techniques </span></h3>
+<ul><li> <a href="{{site.baseurl}}/GtkSharp:_Widget_Overview" title="GtkSharp: Widget Overview">Overview of the widgets used in Gtk#</a>
+</li><li> <a href="{{site.baseurl}}/GtkSharp:_Widget_Layout_and_Packing" title="GtkSharp: Widget Layout and Packing">Widget Layout and Packing</a>
+</li><li> <a href="{{site.baseurl}}/Responsive_Applications" title="Responsive Applications"> Creating Responsive GUI applications with Gtk#</a>
+</li><li> <a href="{{site.baseurl}}/GtkSharpNotificationIcon" title="GtkSharpNotificationIcon"> Creating Notification Icons</a>
+</li><li> <a href="{{site.baseurl}}/Webservices_and_GtkSharp" title="Webservices and GtkSharp"> Gtk# used as a Web Service Interface</a>
+</li><li> <a href="{{site.baseurl}}/GConfTutorial" title="GConfTutorial"> Gtk# example used to access GConf settings</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Advanced_Gtk.23"> Advanced Gtk# </span></h3>
+<ul><li> <a href="{{site.baseurl}}/GAPI" title="GAPI"> Generating bindings to GLib/gobject libraries</a>
+</li><li> <a href="{{site.baseurl}}/Pango:Beginners" title="Pango:Beginners"> Quick guide to using Pango#</a>
+</li><li> <a href="{{site.baseurl}}/GtkSharp_TreeView_Tutorial" title="GtkSharp TreeView Tutorial"> Gtk# TreeView Tutorial</a>
+<ul><li> <a href="{{site.baseurl}}/GtkSharpNodeViewTutorial" title="GtkSharpNodeViewTutorial"> Gtk# NodeView: A Convenience API to TreeView</a>
+</li><li> <a href="{{site.baseurl}}/GtkSharpNodeViewTutorialExamples" title="GtkSharpNodeViewTutorialExamples">  Example Programs from the Gtk# NodeView Tutorial</a>
+</li></ul>
+</li><li> <a href="{{site.baseurl}}/ImplementingGInterfaces" title="ImplementingGInterfaces">Implementing GInterfaces in Gtk#</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Extending_your_GUI"> Extending your GUI </span></h3>
+<p><b>Internationalization</b>
+</p>
+<ul><li> <a href="{{site.baseurl}}/I18N_with_Mono.Unix" title="I18N with Mono.Unix" class="mw-redirect">Using Mono.Unix</a>
+</li></ul>
+<p><b>Accessibility</b>
+</p>
+<ul><li> Cross platform
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Other_Gtk.23_Tutorials"> Other Gtk# Tutorials </span></h2>
+<ul><li> Video demonstrating how to create a "Hello World" application using Gtk# and glade
+</li></ul>
+<dl><dd> <a href="http://nat.org/demos/gtksharp.html" class="external free" rel="nofollow">http://nat.org/demos/gtksharp.html</a>
+</dd></dl>
+<ul><li> Creating your first "hello world" Gtk# application using MonoDevelop
+</li></ul>
+<dl><dd> <a href="http://www.monodevelop.com/tutorials/helloworld.aspx" class="external free" rel="nofollow">http://www.monodevelop.com/tutorials/helloworld.aspx</a>
+</dd></dl>
+<ul><li> An old collection of documentation for Gtk#, it would be great if someone could go through this and insert it all into the wiki
+</li></ul>
+<dl><dd> <a href="http://www.gotmono.com/docs/gnome/bindings/gtk-sharp/gtk-sharp.html" class="external free" rel="nofollow">http://www.gotmono.com/docs/gnome/bindings/gtk-sharp/gtk-sharp.html</a>
+</dd></dl>
+<ul><li> How to build a Gtk# application in Windows using glade and Visual Studio.Net 2003
+</li></ul>
+<dl><dd> <a href="http://www.mfconsulting.com/tutorial/newgladeapp/" class="external free" rel="nofollow">http://www.mfconsulting.com/tutorial/newgladeapp/</a>
+</dd></dl>
+<h2> <span class="mw-headline" id="User_Testimonials"> User Testimonials </span></h2>
+<p>User testimonials indicate that Gtk# provides developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing&#160;: <i>"Gtk# and Mono have proven to be an outstanding combination for delivering rich client applications to the Linux desktop...Gtk# and Mono's tight integration with the GNOME/Ximian desktop enables us to deliver desktop plugins written entirely in managed code. Today, this level of integration is not possible on Windows with .NET and Windows Forms." </i> says Brady Anderson from the <a href="http://www.ifolder.com" class="external text" rel="nofollow">iFolder</a> project.
+</p>
+<h2> <span class="mw-headline" id="Additional_Widgets"> Additional Widgets </span></h2>
+<p>The following is a list of additional widgets (known as "controls" in Windows) that people have written to extend Gtk#:
+</p>
+<ul><li> <a href="http://primates.ximian.com/~miguel/tmp/NPlot-Gtk-0.9.8.5.tar.gz" class="external text" rel="nofollow">NPlot 0.9.8.5 for Gtk#</a> - A Free Graph / Chart Library for .NET (Original version: <a href="http://netcontrols.org/nplot/" class="external text" rel="nofollow">here</a>).
+</li><li> <a href="http://diacanvas.sourceforge.net/csharp.php" class="external text" rel="nofollow">DiaCanvas#</a> - Create and display diagrams and flowcharts
+</li><li> <a href="http://www.olympum.com/~bruno/gtkgl-sharp.html" class="external text" rel="nofollow">GtkGL#</a> - OpenGL and Gtk# integration. Not maintained.
+</li><li> <a href="{{site.baseurl}}/GtkGLAreaSharp" title="GtkGLAreaSharp">GtkGLAreaSharp</a> - OpenGL widget, based on the <a href="{{site.baseurl}}/GtkGLArea" title="GtkGLArea">GtkGLArea</a> widget.  Currently maintained by <a href="" class="new" title="User:CJCollier (page does not exist)">User:CJCollier</a>
+</li></ul>
+<h4> <span class="mw-headline" id="Gnome-KeyRing-Sharp"> Gnome-KeyRing-Sharp </span></h4>
+<p>This library provides access to the Gnome Keyring for managed applications.
+</p><p>Availability: <a href="http://www.github.com/mono/gnome-keyring-sharp" class="external text" rel="nofollow">GitHub</a>, <a href="http://www.go-mono.com/archive/gnome-keyring-sharp/" class="external text" rel="nofollow">Web</a>
+</p>
+<h4> <span class="mw-headline" id="GSF_Sharp"> GSF Sharp </span></h4>
+<p>This library provides access to reading and writing structured files (OLE files), this depends on the libgsf library from the GNOME project:
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/gsf-sharp/" class="external text" rel="nofollow">Web</a> 
+<a href="http://anonsvn.mono-project.com/viewvc/trunk/gsf-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="GtkGlArea_Sharp"> GtkGlArea Sharp </span></h4>
+<p>A binding for GtkGlArea, a widget that can host an OpenGL context in your Gtk# application.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="WebKit_Sharp"> WebKit Sharp </span></h4>
+<p>webkit-sharp provides access to <a href="http://live.gnome.org/WebKitGtk" class="external text" rel="nofollow">WebKit</a>, a fast, high-quality web browser engine suited for embedding in GTK+ applications. It features bleeding-edge HTML5, AJAX, SVG and JavaScript capabilities with seamless UI integration.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/webkit-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/webkit-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="GtkMozEmbed_Sharp"> GtkMozEmbed Sharp </span></h4>
+<p>This library provides access to the Mozilla rendering engine with Gtk+ using the GtkMozEmbed widget:
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkmozembed-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtkmozembed-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="GtkSourceView_Sharp"> GtkSourceView Sharp </span></h4>
+<p>Bindings to the GtkSourceView widget, this widget is typically used for writing programmer editors.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtksourceview-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtksourceview-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="Hal_Sharp"> Hal Sharp </span></h4>
+<p>This library provides access to the Hardware Abstraction Layer (HAL) from FreeDesktop.
+</p><p>This is used when you need to interact with the hardware.   For example Banshee uses this to detect new media (reading and burning).
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/hal-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/hal-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p>
+<h4> <span class="mw-headline" id="DBus_Sharp"> DBus Sharp </span></h4>
+<p>DBus Sharp is an implementation of the DBus protocol for managed languages.   DBus allows applications on the Unix desktop to communicate with each others and is part of the FreeDesktop effort.
+</p><p>Availability: <a href="http://www.ndesk.org/DBusSharp" class="external text" rel="nofollow">Web</a> <a href="http://www.ndesk.org/archive/dbus-sharp/" class="external text" rel="nofollow">downloads</a>
+</p>
+<h4> <span class="mw-headline" id="ipod_sharp"> ipod sharp </span></h4>
+<p>ipod-sharp is a library that allows manipulation of the iTunesDB used in
+Apple iPod devices.  Currently it supports adding/removing songs and
+manipulating playlists.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/ipod-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/ipod-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p>
+<h4> <span class="mw-headline" id="Maemo_Sharp"> Maemo Sharp </span></h4>
+<p>Maemo# is a Gtk# bindings for Maemo libraries.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/maemo-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/maemo-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="JScall_Sharp"> JScall Sharp </span></h4>
+<p>JSCall is a simple JavaScript bridge for Gecko#. It's an interim solution until someone writes a proper XPCOM bridge for Mono, and uses unmanaged code and P/Invoke to invoke Gecko's XPCOM components from managed code. It should work with any .NET language, but I've referred to C# for simplicity. I don't expect many people to use this, so the documentation is little more than minimal; lease contact me &lt;m.j.hutchinson@gmail.com&gt; if you need help working out how it works.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/jscall-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/jscall-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>
+</p>
+<h4> <span class="mw-headline" id="NPlot_Gtk"> NPlot Gtk </span></h4>
+<p>The first version of NPlot-Gtk was made by Miguel de Icaza, and was a wrapper of NPlot 0.9.8.5.
+</p><p>Now the wrapper of version 0.9.9.2 has just an NPlot upgrade and a few hacks over the work of Miguel (Carlos)
+</p><p>This version of NPlot has been extended to support Gtk# on Linux.
+</p><p>The version is based on NPlot 0.9.9.2
+Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/nplot-gtk/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/nplot-gtk.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p>
+<h4> <span class="mw-headline" id="Taglib_Sharp"> Taglib Sharp </span></h4>
+<p><a href="http://developer.novell.com/wiki/index.php/TagLib_Sharp" class="external text" rel="nofollow">TagLibSharp</a> is a free and Open Source library for the .NET 2.0 and Mono frameworks which will let you do what you want to do. 
+</p><p>It supports a large variety of movie and music formats which abstract away the work, handling all the different cases, so all you have to do is access file.Tag.Title, file.Tag.Lyrics, or my personal favorite file.Tag.Pictures.
+</p><p>A library for reading and writing metadata from audio files.
+</p><p>Availability: <a href="http://developer.novell.com/wiki/index.php/TagLib_Sharp" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/taglib-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p>
+<h4> <span class="mw-headline" id="Daap_Sharp"> Daap Sharp </span></h4>
+<p>daap-sharp is a DAAP (Digial Audio Access Protocol) implementation.
+It is used by Apple's iTunes software to share music.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/daap-sharp/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/daap-sharp.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p>
+<h4> <span class="mw-headline" id="Mono.ZeroConf"> Mono.ZeroConf </span></h4>
+<p>Supports the ZeroConf/Bonjour  protocol using mdnsdresponder or Avahi.
+</p><p>Availability: <a href="http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/" class="external text" rel="nofollow">Web</a> <a href="http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf.tar.gz?view=tar" class="external text" rel="nofollow">snapshot</a>.
+</p><p>If you know of anything else that should be added to this page, let someone in #mono know.
+</p>
+<h2> <span class="mw-headline" id="Gtk.23.27s_Components"> Gtk#'s Components </span></h2>
+<table border="0" cellpadding="5" cellspacing="0">
+   <tr>
+    <td colspan="2"><b>Gtk# Components</b><br />Gtk# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.  
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gtk-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Glib" class="external text" rel="nofollow">glib-sharp</a></td>
+      <td>Portions of the glib 2.x libraries which provide a low-level non-GUI core library for gtk+.</td>
+   </tr> 
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Pango" class="external text" rel="nofollow">pango-sharp</a></td>
+      <td>The <a href="http://www.pango.org" class="external text" rel="nofollow">Pango</a> international text layout and rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Atk" class="external text" rel="nofollow">atk-sharp</a></td>
+      <td>The atk Accessibility framework.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gdk" class="external text" rel="nofollow">gdk-sharp</a></td>
+      <td>Drawing Kit using by gtk+.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gtk" class="external text" rel="nofollow">gtk-sharp</a></td>
+      <td>The Gtk 2.x toolkit, a cross-platform toolkit for creating graphical user interfaces</td>
+   </tr> 
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Glade" class="external text" rel="nofollow">glade-sharp</a></td>
+      <td>Supports dynamic loading of <a href="http://glade.gnome.org" class="external text" rel="nofollow">Glade</a> interface builder files.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gtk.DotNet" class="external text" rel="nofollow">gtk-dotnet</a></td>
+      <td>Integration of the Gtk# namespace with System.Drawing.</td>
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gnome-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Art" class="external text" rel="nofollow">art-sharp</a></td>
+      <td>A vector and rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Gnome" class="external text" rel="nofollow">gnome-sharp</a><font color="red"><b>*</b></font></td>
+      <td><a href="http://www.gnome.org" class="external text" rel="nofollow">GNOME</a> program initialization, printing, panel access, and assorted widgets.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:GnomeVfs" class="external text" rel="nofollow">gnomevfs-sharp</a><font color="red"><b>*</b></font></td>
+      <td>File, MIME type, icon, and various GNOME file system interaction functionality. </td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:GConf" class="external text" rel="nofollow">gconf-sharp</a><font color="red"><b>*</b></font></td>
+      <td>Configuration storage system on Gnome</td>
+   </tr>
+   <tr>
+     <td><b>Module:</b></td><td><b><i>gnome-desktop-sharp</i></b></td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/T:Gtk.HTML" class="external text" rel="nofollow">gtkhtml-sharp</a><font color="red"><b>*</b></font></td>
+      <td>A lightweight HTML widget.</td>
+    </tr>
+   <tr>
+      <td>gtksourceview2-sharp<font color="red"><b>*</b></font></td>
+      <td>A source code editing and viewing widget library.</td>
+    </tr>
+    <tr>
+      <td>nautilusburn-sharp<font color="red"><b>*</b></font></td>
+      <td>GNOME CD/DVD burning library.</td>
+   </tr>
+    <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Rsvg" class="external text" rel="nofollow">rsvg-sharp</a></td>
+      <td>SVG rendering library.</td>
+   </tr>
+   <tr>
+      <td><a href="http://www.mono-project.com/monodoc/N:Vte" class="external text" rel="nofollow">vte-sharp</a><font color="red"><b>*</b></font></td>
+      <td>The VTE terminal emulator.</td>
+   </tr>
+    <tr>
+      <td>wnck-sharp<font color="red"><b>*</b></font></td>
+      <td>Window navigator construction kit library.</td>
+   </tr>
+</table>
+<p><font color="red"><b>*</b></font> <i>Not not available on the Windows GTK# package</i>
+</p>
+<h2> <span class="mw-headline" id="Versions_.26_Status"> Versions &amp; Status </span></h2>
+<p>You might want to <a href="http://lists.ximian.com/mailman/listinfo/gtk-sharp-list" class="external text" rel="nofollow">subscribe</a>to gtk-sharp-list@ximian.com  for status updates and general discussion.
+</p><p>The <a href="http://gtk-sharp.sourceforge.net" class="external text" rel="nofollow">Gtk# project</a> is closely associated with the Mono project.&#160; Development is proceeding in the <a href="{{site.baseurl}}/SVN_Write_Access" title="SVN Write Access" class="mw-redirect">Mono SVN</a> repository.&#160; The SVN Repository can be browsed <a href="http://anonsvn.mono-project.com/" class="external text" rel="nofollow">on the web.</a>
+</p><p><br />
+</p>
+<ul><li><b>Gtk# 2.4</b> This is the current versions of Gtk# and they bind Gtk+ 2.4 and the GNOME 2.10 platform.
+</li></ul>
+<ul><li><b>Gtk# 1.0.x</b>: this is the old version of Gtk# and it binds the GNOME 2.2 platform.
+<ul><li> SVN branch name: <a href="http://anonsvn.mono-project.com/viewvc/branches/gtk-sharp-1-0-branch/gtk-sharp/" class="external text" rel="nofollow">source/branches/gtk-sharp-1-0-branch/gtk-sharp</a>
+</li></ul>
+</li></ul>
+<p>For more details about the versions and future plans see: <a href="{{site.baseurl}}/GtkSharpPlan" title="GtkSharpPlan">GtkSharpPlan</a>. 
+</p><p>Development is occuring on svn trunk at: <a href="http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/" class="external text" rel="nofollow">source/trunk/gtk-sharp</a>
+</p>
+<h2> <span class="mw-headline" id="Migrating_from_1.x_to_2.x"> Migrating from 1.x to 2.x </span></h2>
+<p>See our page on <a href="{{site.baseurl}}/GtkSharpUpgrade" title="GtkSharpUpgrade">upgrading your Gtk# application</a>
+</p>
+<h2> <span class="mw-headline" id="Future_Directions"> Future Directions </span></h2>
+<p>We are keeping track of various ideas for Gtk# on the <a href="{{site.baseurl}}/GtkSharpIdeas" title="GtkSharpIdeas">GtkSharpIdeas</a> page
+</p><p>A place to track how <a href="{{site.baseurl}}/ImprovingGtkWin32" title="ImprovingGtkWin32">Gtk+ can be improved on Windows</a>.
+</p>
+<h2> <span class="mw-headline" id="Additional_Resources"> Additional Resources </span></h2>
+<p>For specific examples on GTK widgets, and other Gtk related topics, click on the GtkSharp category at the bottom of this page.
+</p>

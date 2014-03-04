@@ -1,0 +1,112 @@
+---
+layout: obsolete
+title: "Compiling Mono on OSX"
+permalink: /old_site/Compiling_Mono_on_OSX/
+---
+
+<h1>Compiling Mono on OSX</h1>
+
+<p>Pick an installation directory where you want your new copy of Mono to be installed.   Lets call that location PREFIX.  Your Mono installation and its dependencies will be installed there.    For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.
+</p><p>If you have more than one Mono installation (for example to keep multiple versions around), you will want to read the document on <a href="{{site.baseurl}}/Parallel_Mono_Environments" title="Parallel Mono Environments">Parallel Mono Environments</a> on how to keep your various Mono installations separate.
+</p><p><b>It is strongly advised not to install Mono from source in /usr as it might conflict with Mono as installed by the Mono package.</b>
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Building_Mono"><span class="tocnumber">1</span> <span class="toctext">Building Mono</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Building_Mono_Dependencies"><span class="tocnumber">1.1</span> <span class="toctext">Building Mono Dependencies</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Building_Mono_from_a_Release_Package"><span class="tocnumber">1.2</span> <span class="toctext">Building Mono from a Release Package</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Building_Mono_From_a_Git_Source_Code_Checkout"><span class="tocnumber">1.3</span> <span class="toctext">Building Mono From a Git Source Code Checkout</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#One_Stop_Shop_Build_Script"><span class="tocnumber">1.4</span> <span class="toctext">One Stop Shop Build Script</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Troubleshooting"><span class="tocnumber">2</span> <span class="toctext">Troubleshooting</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Building_Mono"> Building Mono </span></h1>
+<p>Building Mono is a very simple process as Mono has very few external dependencies.    
+</p><p>On Mavericks and Mountain Lion you will need to install some tools that are no longer part of the developer SDK, but luckily this is a very simple process.
+</p>
+<h2> <span class="mw-headline" id="Building_Mono_Dependencies"> Building Mono Dependencies </span></h2>
+<p>Mono use GNU autoconf, automake and libtool.   You need to install those in your path, we suggest that you install these on the same directory that you will install Mono on.   You can cut and paste the following script to get these dependencies built:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">PREFIX</span>=<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span><span style="color: #7a0874; font-weight: bold;">local</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># Ensure you have write permissions to /usr/local</span>
+<span style="color: #c20cb9; font-weight: bold;">mkdir</span> <span style="color: #007800;">$PREFIX</span>
+<span style="color: #c20cb9; font-weight: bold;">sudo</span> <span style="color: #c20cb9; font-weight: bold;">chown</span> <span style="color: #660033;">-R</span> <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">whoami</span><span style="color: #000000; font-weight: bold;">`</span> <span style="color: #007800;">$PREFIX</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># Downlaod and build dependencies</span>
+<span style="color: #c20cb9; font-weight: bold;">mkdir</span> ~<span style="color: #000000; font-weight: bold;">/</span>Build
+<span style="color: #7a0874; font-weight: bold;">cd</span> ~<span style="color: #000000; font-weight: bold;">/</span>Build
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>autoconf<span style="color: #000000; font-weight: bold;">/</span>autoconf-<span style="color: #000000;">2.69</span>.tar.gz
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>automake<span style="color: #000000; font-weight: bold;">/</span>automake-<span style="color: #000000;">1.14</span>.tar.gz
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>libtool<span style="color: #000000; font-weight: bold;">/</span>libtool-2.4.2.tar.gz
+&#160;
+<span style="color: #000000; font-weight: bold;">for</span> i <span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000; font-weight: bold;">*</span>.tar.gz; <span style="color: #000000; font-weight: bold;">do</span> <span style="color: #c20cb9; font-weight: bold;">tar</span> xzvf <span style="color: #007800;">$i</span>; <span style="color: #000000; font-weight: bold;">done</span>
+<span style="color: #000000; font-weight: bold;">for</span> i <span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000; font-weight: bold;">*/</span>configure; <span style="color: #000000; font-weight: bold;">do</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">dirname</span> <span style="color: #007800;">$i</span><span style="color: #000000; font-weight: bold;">`</span>; .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$PREFIX</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>; <span style="color: #000000; font-weight: bold;">done</span></pre>
+<h2> <span class="mw-headline" id="Building_Mono_from_a_Release_Package"> Building Mono from a Release Package </span></h2>
+<p>Mono releases are distributed as .tar.gz packages from the Mono web site.   Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xvf mono-VERSION.tar.gz
+  $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-VERSION
+  $ .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=PREFIX <span style="color: #660033;">--enable-nls</span>=no <span style="color: #660033;">--build</span>=i386-apple-darwin11.2.0
+  $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+  $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>If you wish to compile Mono in 64 bit mode instead use this:
+</p>
+<pre class="bash" style="font-family:monospace;">  $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xvf mono-XXX.tar.gz
+  $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-XXX
+  $ .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=PREFIX <span style="color: #660033;">--enable-nls</span>=no
+  $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+  $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>By the end of this process, you will have Mono installed on your PREFIX directory.
+</p>
+<h2> <span class="mw-headline" id="Building_Mono_From_a_Git_Source_Code_Checkout"> Building Mono From a Git Source Code Checkout </span></h2>
+<p>To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run.   Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">PATH</span>=<span style="color: #007800;">$PREFIX</span><span style="color: #000000; font-weight: bold;">/</span>bin:<span style="color: #007800;">$PATH</span>
+<span style="color: #c20cb9; font-weight: bold;">git clone</span> https:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>mono.git
+<span style="color: #7a0874; font-weight: bold;">cd</span> mono
+<span style="color: #007800;">CC</span>=<span style="color: #ff0000;">'cc -m32'</span> .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$PREFIX</span> <span style="color: #660033;">--disable-nls</span> 
+<span style="color: #c20cb9; font-weight: bold;">make</span>
+<span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>To build Mono in 64 bit mode instead use:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">PATH</span>=<span style="color: #007800;">$PREFIX</span><span style="color: #000000; font-weight: bold;">/</span>bin:<span style="color: #007800;">$PATH</span>
+<span style="color: #c20cb9; font-weight: bold;">git clone</span> https:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>mono.git
+<span style="color: #7a0874; font-weight: bold;">cd</span> mono
+.<span style="color: #000000; font-weight: bold;">/</span>autogen.sh <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$PREFIX</span> <span style="color: #660033;">--disable-nls</span> 
+<span style="color: #c20cb9; font-weight: bold;">make</span>
+<span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h2> <span class="mw-headline" id="One_Stop_Shop_Build_Script"> One Stop Shop Build Script </span></h2>
+<p>If you are on Mavericks and you just want to install Mono without thinking too much, just cut and paste the following script, and enter your root password when requested:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">PREFIX</span>=<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span><span style="color: #7a0874; font-weight: bold;">local</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># Ensure you have write permissions to /usr/local</span>
+<span style="color: #c20cb9; font-weight: bold;">mkdir</span> <span style="color: #007800;">$PREFIX</span>
+<span style="color: #c20cb9; font-weight: bold;">sudo</span> <span style="color: #c20cb9; font-weight: bold;">chown</span> <span style="color: #660033;">-R</span> <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">whoami</span><span style="color: #000000; font-weight: bold;">`</span> <span style="color: #007800;">$PREFIX</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># Downlaod and build dependencies</span>
+<span style="color: #c20cb9; font-weight: bold;">mkdir</span> ~<span style="color: #000000; font-weight: bold;">/</span>Build
+<span style="color: #7a0874; font-weight: bold;">cd</span> ~<span style="color: #000000; font-weight: bold;">/</span>Build
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>autoconf<span style="color: #000000; font-weight: bold;">/</span>autoconf-<span style="color: #000000;">2.69</span>.tar.gz
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>automake<span style="color: #000000; font-weight: bold;">/</span>automake-<span style="color: #000000;">1.14</span>.tar.gz
+curl <span style="color: #660033;">-O</span> ftp:<span style="color: #000000; font-weight: bold;">//</span>ftp.gnu.org<span style="color: #000000; font-weight: bold;">/</span>gnu<span style="color: #000000; font-weight: bold;">/</span>libtool<span style="color: #000000; font-weight: bold;">/</span>libtool-2.4.2.tar.gz
+&#160;
+<span style="color: #000000; font-weight: bold;">for</span> i <span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000; font-weight: bold;">*</span>.tar.gz; <span style="color: #000000; font-weight: bold;">do</span> <span style="color: #c20cb9; font-weight: bold;">tar</span> xzvf <span style="color: #007800;">$i</span>; <span style="color: #000000; font-weight: bold;">done</span>
+<span style="color: #000000; font-weight: bold;">for</span> i <span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000; font-weight: bold;">*/</span>configure; <span style="color: #000000; font-weight: bold;">do</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #7a0874; font-weight: bold;">cd</span> <span style="color: #000000; font-weight: bold;">`</span><span style="color: #c20cb9; font-weight: bold;">dirname</span> <span style="color: #007800;">$i</span><span style="color: #000000; font-weight: bold;">`</span>; .<span style="color: #000000; font-weight: bold;">/</span>configure <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$PREFIX</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span><span style="color: #7a0874; font-weight: bold;">&#41;</span>; <span style="color: #000000; font-weight: bold;">done</span>
+&#160;
+<span style="color: #007800;">PATH</span>=<span style="color: #007800;">$PREFIX</span><span style="color: #000000; font-weight: bold;">/</span>bin:<span style="color: #007800;">$PATH</span>
+<span style="color: #c20cb9; font-weight: bold;">git clone</span> https:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>mono.git
+<span style="color: #7a0874; font-weight: bold;">cd</span> mono
+<span style="color: #007800;">CC</span>=<span style="color: #ff0000;">'cc -m32'</span> .<span style="color: #000000; font-weight: bold;">/</span>autogen <span style="color: #660033;">--prefix</span>=<span style="color: #007800;">$PREFIX</span> <span style="color: #660033;">--disable-nls</span> 
+<span style="color: #c20cb9; font-weight: bold;">make</span>
+<span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h1> <span class="mw-headline" id="Troubleshooting"> Troubleshooting </span></h1>
+<p>If you receive an error like:
+</p>
+<pre class="bash" style="font-family:monospace;">ld: warning: <span style="color: #000000; font-weight: bold;">in</span> <span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>local<span style="color: #000000; font-weight: bold;">/</span>lib<span style="color: #000000; font-weight: bold;">/</span>libiconv.dylib, <span style="color: #c20cb9; font-weight: bold;">file</span> was built <span style="color: #000000; font-weight: bold;">for</span> unsupported <span style="color: #c20cb9; font-weight: bold;">file</span> format <span style="color: #c20cb9; font-weight: bold;">which</span> is not the architecture being linked <span style="color: #7a0874; font-weight: bold;">&#40;</span>i386<span style="color: #7a0874; font-weight: bold;">&#41;</span></pre>
+<p>This means that configure was able to resolve some optional dependencies in your environment (gettext or glib primarily) that have been compiled for 64-bit when you are building a 32-bit mono or vice-versa.  To resolve this either rebuild the dependency to be a universal binary or build a mono that matches your dependencies.
+</p>

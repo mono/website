@@ -1,0 +1,50 @@
+---
+layout: obsolete
+title: "Porting MSBuild Projects To XBuild"
+permalink: /old_site/Porting_MSBuild_Projects_To_XBuild/
+---
+
+<h1>Porting MSBuild Projects To XBuild</h1>
+
+<p>This will be updated as I also figure these things out. There shouldn't be a whole lot of "porting" required, but these tips can make it easier to share the same project files between msbuild and xbuild.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Paths"><span class="tocnumber">1</span> <span class="toctext">Paths</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Casing"><span class="tocnumber">2</span> <span class="toctext">Casing</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Platform_specific_items"><span class="tocnumber">3</span> <span class="toctext">Platform specific items</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Pre.2FPostBuildEvents"><span class="tocnumber">4</span> <span class="toctext">Pre/PostBuildEvents</span></a></li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="Paths"> Paths </span></h2>
+<p>You should continue to use windows style paths in the msbuild project files. They'll be converted, if required, by xbuild.
+</p>
+<h2> <span class="mw-headline" id="Casing"> Casing </span></h2>
+<p>Linux has case-sensitive filenames, so, the project files should have the correct case for file and directory names. As a temporary workaround, you could run xbuild with the environment variable "MONO_IOMAP=case"
+</p>
+<pre class="bash" style="font-family:monospace;">     $ <span style="color: #007800;">MONO_IOMAP</span>=<span style="color: #000000; font-weight: bold;">case</span> xbuild foo.sln</pre>
+<p>This might be problematic in some situations, like the OutputPath for a project says "bin", but the disk has directory called "Bin", then xbuild will use the former.
+</p>
+<h2> <span class="mw-headline" id="Platform_specific_items"> Platform specific items </span></h2>
+<p>Sometimes you'll have items that are platform specific, for example, reference to an assembly that is available only on windows or one that is required only on linux. In such cases, you can make those items/properties/references conditional. Eg.:
+</p>
+<pre class="xml" style="font-family:monospace;">   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Reference</span> <span style="color: #000066;">Include</span>=<span style="color: #ff0000;">&quot;Windows.Specific.dll&quot;</span> <span style="color: #000066;">Condition</span>=<span style="color: #ff0000;">&quot; '$(OS)' == 'Windows_NT' &quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Reference</span> <span style="color: #000066;">Include</span>=<span style="color: #ff0000;">&quot;NonWindows.Specific.dll&quot;</span> <span style="color: #000066;">Condition</span>=<span style="color: #ff0000;">&quot; '$(OS)'&#160;!= 'Windows_NT' &quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span></pre>
+<p>The default environment variable 'OS' is set to "Windows_NT" on Win2k*/WinXP/Vista/Windows7 . So, msbuild should work with this.
+xbuild sets this to "Windows_NT",  "Unix" or "OSX" depending on the platform.
+</p><p>NOTE: xbuild from Mono 2.6p1 does not set this. Since, Linux and OSX don't have a 'OS' environment variable set, it should work fine, if you are only checking against the value 'Windows_NT'.
+</p>
+<h2> <span class="mw-headline" id="Pre.2FPostBuildEvents"> Pre/PostBuildEvents</span></h2>
+<p>These events contain shell commands to be run before or after a build. These will be windows specific, so won't run on linux or mac. To solve this, you could add more conditional Pre/PostBuildEvents, like:
+</p>
+<pre class="xml" style="font-family:monospace;">   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;PreBuildEvent</span> <span style="color: #000066;">Condition</span>=<span style="color: #ff0000;">&quot; '$(OS)'&#160;!= 'Windows_NT' &quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>cp foo.txt $(OutDir)/foo.txt<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/PreBuildEvent<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;PreBuildEvent</span> <span style="color: #000066;">Condition</span>=<span style="color: #ff0000;">&quot; '$(OS)' == 'Windows_NT' &quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>copy foo.txt $(OutDir)\foo.txt<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/PreBuildEvent<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>The condition could be based on the Configuration also, for which you will have to create a new "Linux" configuration.
+</p><p>Another, way of doing this could be to use the Before/AfterBuild targets, with which you can use the built-in tasks, like "Copy", "MakeDir" etc, so no problem with portability. Eg:
+</p>
+<pre class="xml" style="font-family:monospace;"> <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Target</span> <span style="color: #000066;">Name</span>=<span style="color: #ff0000;">&quot;BeforeBuild&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+          <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Copy</span> <span style="color: #000066;">SourceFiles</span>=<span style="color: #ff0000;">&quot;foo.txt&quot;</span> <span style="color: #000066;">DestinationFolder</span>=<span style="color: #ff0000;">&quot;$(OutDir)&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+          <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;Exec</span> <span style="color: #000066;">Command</span>=<span style="color: #ff0000;">&quot;foo.exe arg1 arg2&quot;</span> <span style="color: #000066;">Condition</span>=<span style="color: #ff0000;">&quot; '$(OS)' == 'Windows_NT' &quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+ <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/Target<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>For commands that have no corresponding tasks available and you don't want to write a custom task for them, you can use the 'Exec' task, which invokes the specified 'Command'.
+</p>

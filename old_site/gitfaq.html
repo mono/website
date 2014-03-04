@@ -1,0 +1,271 @@
+---
+layout: obsolete
+title: "GitFAQ"
+permalink: /old_site/GitFAQ/
+---
+
+<h1>GitFAQ</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Availability"><span class="tocnumber">1</span> <span class="toctext">Availability</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Windows_Users"><span class="tocnumber">2</span> <span class="toctext">Windows Users</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Workflow"><span class="tocnumber">3</span> <span class="toctext">Workflow</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Workflow_1:_Working_on_master"><span class="tocnumber">3.1</span> <span class="toctext">Workflow 1: Working on master</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Workflow_2:_Use_.27master.27_as_integration_branch"><span class="tocnumber">3.2</span> <span class="toctext">Workflow 2: Use 'master' as integration branch</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Backports"><span class="tocnumber">3.2.1</span> <span class="toctext">Backports</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Workflow_3:_Long-term_projects"><span class="tocnumber">3.3</span> <span class="toctext">Workflow 3: Long-term projects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Maintaining_the_branch:_Throwaway_merges"><span class="tocnumber">3.3.1</span> <span class="toctext">Maintaining the branch: Throwaway merges</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Publishing_the_long-lived_topic:_Public_Forks_on_Github"><span class="tocnumber">3.3.2</span> <span class="toctext">Publishing the long-lived topic: Public Forks on Github</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Frequently_Asked_Questions"><span class="tocnumber">4</span> <span class="toctext">Frequently Asked Questions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#I_don.27t_see_a_mcs_module"><span class="tocnumber">4.1</span> <span class="toctext">I don't see a mcs module</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#My_commits_are_not_linked_to_my_GitHub_Account"><span class="tocnumber">4.2</span> <span class="toctext">My commits are not linked to my GitHub Account</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#What_tool_was_used_to_convert_from_SVN_to_GIT.3F"><span class="tocnumber">4.3</span> <span class="toctext">What tool was used to convert from SVN to GIT?</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#How_can_I_tell_GIT_to_push_from_my_tracking_branch_.3F"><span class="tocnumber">4.4</span> <span class="toctext">How can I tell GIT to push from my tracking branch&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#I_get_an_ambiguous_warning_when_checking_out_a_branch"><span class="tocnumber">4.5</span> <span class="toctext">I get an ambiguous warning when checking out a branch</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#After_forking_the_official_repo_and_cloning_my_fork.2C_the_branch_I_want_to_check_out_doesn.27t_seem_to_exist"><span class="tocnumber">4.6</span> <span class="toctext">After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#When_merging_between_branches.2C_there_are_frequent_conflicts_in_the_ChangeLog_files"><span class="tocnumber">4.7</span> <span class="toctext">When merging between branches, there are frequent conflicts in the ChangeLog files</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Useful_git_config_settings"><span class="tocnumber">4.8</span> <span class="toctext">Useful git config settings</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#I_am_on_Windows_and_each_commit_changes_file_mode_on_Unix_to_executable"><span class="tocnumber">4.9</span> <span class="toctext">I am on Windows and each commit changes file mode on Unix to executable</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#When_I_commit.2C_my_commit_.22repeats.22_commits_of_other_people"><span class="tocnumber">4.10</span> <span class="toctext">When I commit, my commit "repeats" commits of other people</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#How_do_I_know_what.27s_going_to_be_pushed.3F"><span class="tocnumber">4.11</span> <span class="toctext">How do I know what's going to be pushed?</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#I_can.27t_checkout_the_required_submodules_because_the_git:.2F.2F_protocol_is_blocked_by_a_firewall"><span class="tocnumber">4.12</span> <span class="toctext">I can't checkout the required submodules because the git:// protocol is blocked by a firewall</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Links"><span class="tocnumber">5</span> <span class="toctext">Links</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Availability"> Availability </span></h1>
+<p>Mono is using GitHub's <a href="http://github.com/blog/674-introducing-organizations" class="external text" rel="nofollow">Organizations</a> functionality which allows us to keep all of the Mono modules that used to be hosted on our Subversion repository as repositories of the <b>mono</b> organization on GitHub.
+</p><p>The Mono organization is available at <a href="http://github.com/mono" class="external free" rel="nofollow">http://github.com/mono</a>
+</p>
+<h1> <span class="mw-headline" id="Windows_Users"> Windows Users </span></h1>
+<p>To get started with Git on Windows, you can follow GitHub's <a href="http://help.github.com/win-git-installation/" class="external text" rel="nofollow">tutorial on Git on Windows</a>
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Workflow"> Workflow </span></h1>
+<p>Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.   
+</p><p>Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate <a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">mailing list</a>).
+</p><p>We might have missed some core contributors on the first batch that granted push access to the Mono repositories.   If we missed you, please contact us to get this fixed.
+</p><p>All git commands support a "-n" option, which will do a dry run of the command. When doing "git push", do try "-n" first to make sure what's getting pushed is correct.
+</p><p>For quick recipe to checkout, make your changes, and commit them, this <a href="http://nakedstartup.com/2010/04/simple-daily-git-workflow/" class="external text" rel="nofollow">introduction</a> is also useful.
+</p>
+<h2> <span class="mw-headline" id="Workflow_1:_Working_on_master"> Workflow 1: Working on master </span></h2>
+<p>After cloning, when working directly on the master branch, the workflow is
+pretty simple: commit your changes, update your local master with the latest
+changes from the remote repo, then push your commits.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git commit</span>
+<span style="color: #c20cb9; font-weight: bold;">git pull</span> <span style="color: #660033;">--rebase</span>
+<span style="color: #c20cb9; font-weight: bold;">make</span> check     <span style="color: #666666; font-style: italic;"># ensure that the newly pulled commits didn't cause trouble</span>
+<span style="color: #c20cb9; font-weight: bold;">git push</span></pre>
+<p>The <code>git push</code> will fail if you're not up-to-date: for instance, if there was some commit activity during your <code>make check</code>.  You might have to repeat the <code>git pull --rebase &amp;&amp; make check &amp;&amp; git push</code> cycle a couple of times if there is a lot of simultaneous commit activity. 
+</p><p><b>Note:</b> If you use <code>git pull</code> without <code>--rebase</code>, and there have been commits on the repository since you last pulled, you might end up with an extra commit that says:
+</p>
+<pre class="bash" style="font-family:monospace;">Merge branch <span style="color: #ff0000;">'master'</span> of <span style="color: #c20cb9; font-weight: bold;">git</span><span style="color: #000000; font-weight: bold;">@</span>github.com:<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>repo</pre>
+<p>This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes.  So use <code>git pull --rebase</code>, and remember to make sure you're not pushing merge commits (check this <a href="{{site.baseurl}}/GitFAQ#How_do_I_know_what.27s_going_to_be_pushed.3F" title="GitFAQ">FAQ entry</a>)
+</p>
+<h2> <span class="mw-headline" id="Workflow_2:_Use_.27master.27_as_integration_branch"> Workflow 2: Use 'master' as integration branch </span></h2>
+<p>If you have multiple small pieces that you're working on simultaneously, you can use a few local branches to maintain them independently, and switch among them when you want to switch mental context.  Since it is an useful mode of operation, it might make sense to use this workflow even if you have only one thing you're working on, so that you're comfortable with the workflow.
+</p><p>To work on a local branch based off the <code>master</code> branch:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> <span style="color: #660033;">-b</span> work-on-topic master</pre>
+<p>This creates a branch called 'work-on-topic' which sprouts from the <code>master</code> branch, and checks it out automatically.
+</p><p>In this branch, apply all the commits you want.  You can periodically ensure that it is off the latest <code>master</code> by doing:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;"># refresh master</span>
+<span style="color: #c20cb9; font-weight: bold;">git checkout</span> master
+<span style="color: #c20cb9; font-weight: bold;">git pull</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># checkout your branch and rebase to get the new commits</span>
+<span style="color: #c20cb9; font-weight: bold;">git rebase</span> master work-on-topic</pre>
+<p>When you're ready to push it out to the world:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;"># refresh master</span>
+<span style="color: #c20cb9; font-weight: bold;">git checkout</span> master
+<span style="color: #c20cb9; font-weight: bold;">git pull</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># checkout your branch and rebase to get the new commits</span>
+<span style="color: #c20cb9; font-weight: bold;">git rebase</span> master work-on-topic
+&#160;
+<span style="color: #666666; font-style: italic;"># build and test again to make sure everything is correct</span>
+<span style="color: #c20cb9; font-weight: bold;">make</span> check
+&#160;
+<span style="color: #666666; font-style: italic;"># merge topic branch</span>
+<span style="color: #c20cb9; font-weight: bold;">git checkout</span> master
+<span style="color: #c20cb9; font-weight: bold;">git merge</span> work-on-topic
+<span style="color: #c20cb9; font-weight: bold;">git push</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># delete the branch now that we're not working on it (optional)</span>
+<span style="color: #c20cb9; font-weight: bold;">git branch</span> <span style="color: #660033;">-d</span> work-on-topic</pre>
+<p>If <code>git push</code> fails, it's because your master is not up to date. Refresh it with <code> git pull --rebase </code>, do <code> make check </code> and then you can try <code>git push</code> again.
+</p><p>Branches are useful to isolate several pieces of work, so you can have some changes on one branch that relate to a certain feature, other changes on another branch for another feature, while master is left clean and pristine, just updated with the latest commits from upstream and used, in this workflow, when you're ready to push your changes.
+</p><p>Once you're working on branches instead of master, always update the branches by first going into master and updating it with git pull, then going into your branch and doing git rebase master, as detailed above. This is important to make sure no merge commits appear on your commit history. If, when you're ready to push, master is more up to date than your branch, don't forget to rebase your branch before merging into master and pushing, to avoid merge commits.
+</p><p><br />
+It is easy to extend the workflow to merge our changes onto multiple integration branches (backporting).
+</p>
+<h3> <span class="mw-headline" id="Backports"> Backports </span></h3>
+<p>Suppose you decide that your changes in the current branch need to be applied to an older maintenance branch, <code>mono-2-6</code>.  There are multiple ways to achieve this.  However, in the spirit of the rest of this workflow, we describe a merge-avoiding workflow for backports.  We can create a parallel backport branch with:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> <span style="color: #660033;">-b</span> backport-work-on-topic work-on-topic
+<span style="color: #c20cb9; font-weight: bold;">git rebase</span> <span style="color: #660033;">--onto</span> mono-<span style="color: #000000;">2</span>-<span style="color: #000000;">6</span> master</pre>
+<p>This creates a clone, <code>backport-work-on-topic</code>, of the original set of commits on <code>work-on-topic</code>, but rebased to be on <code>mono-2-6</code>, i.e., a backport.  Note that this cloned branch is independent of the original branch, and any additional changes to <code>work-on-topic</code> need to be separately applied to <code>backport-work-on-topic</code>.
+</p><p>Note also, that this is meaningful only <i>before</i> <code>work-on-topic</code> has been merged into <code>master</code>.  A bit more manual work is involved after it's been merged, since our merge-avoiding workflow hides the branch-point of the branch.  You might just need to count up the number of commits introduced in <code>work-on-topic</code> and, say you have 5 commits, use <code>work-on-topic~5</code> instead of <code>master</code> in the command above.  Or, you can use <code>git cherry-pick</code>.
+</p>
+<h2> <span class="mw-headline" id="Workflow_3:_Long-term_projects"> Workflow 3: Long-term projects </span></h2>
+<p>Suppose you're embarking on a long-term project, like working on a new GC, new IR, or other major re-architecture of the code.  In such a case, it is detrimental to productivity to always keep up-to-date on the latest changes in the tree, unless we want some crucial bug-fixes.  This workflow, like workflow 2, uses branches.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;"># start at a tag, since it is a well-tested base,</span>
+<span style="color: #666666; font-style: italic;"># rather than at some random point in history</span>
+<span style="color: #c20cb9; font-weight: bold;">git checkout</span> <span style="color: #660033;">-b</span> long-lived-topic mono-2.8.0</pre>
+<p>You then work on the <code>long-lived-topic</code> and add commits to your heart's content. 
+</p><p>Once you're ready to integrate to 'master' and push it out to the world, you do the following at a quiet time on the tree:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> master <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #c20cb9; font-weight: bold;">git pull</span>
+&#160;
+<span style="color: #c20cb9; font-weight: bold;">git merge</span> long-lived-topic
+<span style="color: #c20cb9; font-weight: bold;">make</span> check
+&#160;
+<span style="color: #c20cb9; font-weight: bold;">git push</span></pre>
+<p>If the push failed, it's not a quiet time: throw away the merge with: <code>git reset --hard HEAD^</code>
+</p><p>This procedure will create merge commits, so if you do this, make sure you're merging a large enough feature that it merits having a full merge commit: i.e., has more than a few commits, is a visible feature which merits a release note, and/or has significant testing which would be lost if you rebase.
+</p>
+<h3> <span class="mw-headline" id="Maintaining_the_branch:_Throwaway_merges"> Maintaining the branch: Throwaway merges </span></h3>
+<p>Often, you want to verify that your branch is easily merge-able into the current development branch, without actually committing it.  You can use a throwaway merge, described below.  It helps to have git configuration variable 'rerere.enabled = true' for this step.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> long-lived-topic
+<span style="color: #c20cb9; font-weight: bold;">git merge</span> master
+&#160;
+<span style="color: #666666; font-style: italic;"># at this point you've resolved any conflicts, and 'git rerere' has recorded</span>
+<span style="color: #666666; font-style: italic;"># your conflict resolution decisions.  We can throw away the merge since it </span>
+<span style="color: #666666; font-style: italic;"># would clutter history.  'git rerere' already has the relevent information</span>
+<span style="color: #666666; font-style: italic;"># from the merge attempt.</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># throw away the merge</span>
+<span style="color: #c20cb9; font-weight: bold;">git reset</span> <span style="color: #660033;">--hard</span> HEAD^</pre>
+<p>If you actually wanted a bugfix from 'master', just skip the last step, while keeping in mind that you also get tons more changes along with the bugfix.  IOW, if you choose to keep this merge, it becomes a sync point and a major event in the history of this branch.  All future merges will use this as the reference point.  So, it's suggested that you keep merges only if 'master' is in a well tested state.
+</p>
+<h3> <span class="mw-headline" id="Publishing_the_long-lived_topic:_Public_Forks_on_Github"> Publishing the long-lived topic: Public Forks on Github </span></h3>
+<p>If you want to publish the long-lived topic without integrating it into 'master', you should use a personal fork.  
+</p><p>This process is fairly efficient on Github.  Go to the repository webpage and create a fork in your personal workspace.   For instance, you take an origin repository <code><a href="git://github.com/mono/mono.git" class="external free" rel="nofollow">git://github.com/mono/mono.git</a></code> and fork it into <code>git@github.com:myrepos/mono.git</code> by going to <code><a href="http://github.com/mono/mono" class="external free" rel="nofollow">http://github.com/mono/mono</a></code> and clicking on the button marked "Fork".
+</p><p>You can add your personal fork as an additional remote with
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git remote</span> add myrepos <span style="color: #c20cb9; font-weight: bold;">git</span><span style="color: #000000; font-weight: bold;">@</span>github.com:myrepos<span style="color: #000000; font-weight: bold;">/</span>mono.git</pre>
+<p>(You can write to your personal fork, even if you can't write to the origin repository)
+</p><p>now, publish your long-lived-topic to this using
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git push</span> myrepos long-lived-topic</pre>
+<p>If you don't expect anyone else to be writing to 'myrepos', you don't need to pull from 'myrepos' at all; you just need to repeat the above <code>git push</code> at appropriate times to publish further snapshots.  So, this has fairly small impact on your day-to-day workflow.
+</p><p>On the other hand, if you have collaborators on your published branch, including yourself on another machine, you can use workflows 1 and 2 to manage this branch.
+</p>
+<h1> <span class="mw-headline" id="Frequently_Asked_Questions"> Frequently Asked Questions </span></h1>
+<h2> <span class="mw-headline" id="I_don.27t_see_a_mcs_module"> I don't see a mcs module </span></h2>
+<p>The mcs module is now part of the mono module.
+</p>
+<h2> <span class="mw-headline" id="My_commits_are_not_linked_to_my_GitHub_Account"> My commits are not linked to my GitHub Account </span></h2>
+<p>If your commits to Mono are not linked from your GitHub account, you probably have not registered a public email address with GitHub.  In such a case, if you are a Novell employee, we used your <code>@novell.com</code> address for the import.  If not, the fallback author address was <code>&lt;your-mono-svn-account&gt;@mono-cvs.ximian.com</code>.
+</p><p>Use <code>git show &lt;commit-id&gt;</code> on a commit which you know belongs to you.  Now, the e-mail id in the "author" field is the one that GitHub uses to identify committers.  So, you need to add that e-mail id as an alternative address to your GitHub account, and eventually your commits will be linked to you.
+</p>
+<h2> <span class="mw-headline" id="What_tool_was_used_to_convert_from_SVN_to_GIT.3F"> What tool was used to convert from SVN to GIT? </span></h2>
+<p>We used a <a href="http://gitorious.org/~harinath/svn2git/rrh-svn2git" class="external text" rel="nofollow">heavily-modified version</a> of the KDE project's svn2git.  Most of the modifications were to improve the fidelity of the import, and some more were to introduce a fairly convenient incremental import mode.  The tool does a fair job of handling all the varied branch-handling haps and mishaps in the mono SVN tree.
+</p>
+<h2> <span class="mw-headline" id="How_can_I_tell_GIT_to_push_from_my_tracking_branch_.3F"> How can I tell GIT to push from my tracking branch&#160;? </span></h2>
+<p>Add this to <code>.git/.config</code>:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>push<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+        default = tracking</pre>
+<p>Now when you push (without arguments) while on a tracking branch, your tracking branch will be pushed to the appropriate branch on the remote.
+</p><p>I.e. if you have
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> master-<span style="color: #000000;">2.6</span> origin<span style="color: #000000; font-weight: bold;">/</span>mono-<span style="color: #000000;">2</span>-<span style="color: #000000;">6</span></pre>
+<p>then if you are on master-2.6,
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git push</span></pre>
+<p>will push to mono-2-6 at origin.
+</p>
+<h2> <span class="mw-headline" id="I_get_an_ambiguous_warning_when_checking_out_a_branch"> I get an ambiguous warning when checking out a branch </span></h2>
+<p>When you try to checkout a local branch, you get a
+</p>
+<pre class="bash" style="font-family:monospace;">warning: refname <span style="color: #ff0000;">'branch-name'</span> is ambiguous</pre>
+<p>This can happen if you've created a local branch with the same name as a remote tag. Git should be checking out your local branch, but instead it's trying to checkout the tag, and it gets confused.
+</p><p>The initial import of several trees were problematic, since they contained identically named branches and tags.  We have since addressed a lot of these issues, by <a href="{{site.baseurl}}/GitFAQ/fixup-tags.sh" title="GitFAQ/fixup-tags.sh">renaming away</a> the tags.  
+</p><p>If you cloned the repos before Jul 23, you'll need to refresh your tags (assuming you don't want to reclone the repos).
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;"># careful!!! dangerous if you have any _local_ tags</span>
+<span style="color: #666666; font-style: italic;"># This deletes all tags on your local checkout</span>
+<span style="color: #c20cb9; font-weight: bold;">git tag</span> <span style="color: #000000; font-weight: bold;">|</span> <span style="color: #c20cb9; font-weight: bold;">xargs</span> <span style="color: #660033;">-n1</span> <span style="color: #c20cb9; font-weight: bold;">git tag</span> <span style="color: #660033;">-d</span>
+&#160;
+<span style="color: #666666; font-style: italic;"># now refresh tags from the remote</span>
+<span style="color: #c20cb9; font-weight: bold;">git fetch</span> origin <span style="color: #660033;">--tags</span></pre>
+<p>In general, when creating tags, be careful not to have names that conflict with existing (local or remote) branches.  
+</p>
+<h2> <span class="mw-headline" id="After_forking_the_official_repo_and_cloning_my_fork.2C_the_branch_I_want_to_check_out_doesn.27t_seem_to_exist"> After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist </span></h2>
+<p>A <code>git clone</code> only sets up one local branch, <code>master</code>, which tracks the origin repository.  If you try to checkout any of the other branches, you might get
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">git checkout</span> mono-<span style="color: #000000;">2</span>-<span style="color: #000000;">6</span>
+error: pathspec <span style="color: #ff0000;">'mono-2-6'</span> did not match any <span style="color: #c20cb9; font-weight: bold;">file</span><span style="color: #7a0874; font-weight: bold;">&#40;</span>s<span style="color: #7a0874; font-weight: bold;">&#41;</span> known to git.</pre>
+<p>You need to set up a local tracking branch, with:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git checkout</span> <span style="color: #660033;">-t</span> origin<span style="color: #000000; font-weight: bold;">/</span>mono-<span style="color: #000000;">2</span>-<span style="color: #000000;">6</span></pre>
+<p>This sets up a local tracking branch <code>mono-2-6</code> that tracks the <code>mono-2-6</code> branch of the remote <code>origin</code>.
+More importantly, since we spell out <code>mono-2-6</code> only once, we won't have accidental spelling errors confusing us at a later time.
+</p>
+<h2> <span class="mw-headline" id="When_merging_between_branches.2C_there_are_frequent_conflicts_in_the_ChangeLog_files"> When merging between branches, there are frequent conflicts in the ChangeLog files </span></h2>
+<p>Use <a href="http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob;f=lib/git-merge-changelog.c" class="external text" rel="nofollow">this</a> ChangeLog merger.
+</p>
+<h2> <span class="mw-headline" id="Useful_git_config_settings"> Useful git config settings </span></h2>
+<p>Git reads settings from ~/.gitconfig. Some useful ones are:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>rerere<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+	enabled = <span style="color: #c20cb9; font-weight: bold;">true</span></pre>
+<p>Activate recording of resolved conflicts, so that identical conflict hunks can be resolved automatically, should they be encountered again.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>rerere<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+	autoupdate = <span style="color: #c20cb9; font-weight: bold;">true</span></pre>
+<p>Files that have conflicts cleanly resolved via rerere are automatically marked as resolved.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>push<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+	default = tracking</pre>
+<p>When working in a local branch that tracks a remote one, you can send your changes to the remote branch by just doing <b>git push</b> with no arguments. Only the changes on the current branch will be pushed.
+</p>
+<h2> <span class="mw-headline" id="I_am_on_Windows_and_each_commit_changes_file_mode_on_Unix_to_executable"> I am on Windows and each commit changes file mode on Unix to executable </span></h2>
+<p>Please add the following to either your Mono repository's .git/config or your global git configuration file:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>core<span style="color: #7a0874; font-weight: bold;">&#93;</span>
+	fileMode = <span style="color: #c20cb9; font-weight: bold;">false</span></pre>
+<h2> <span class="mw-headline" id="When_I_commit.2C_my_commit_.22repeats.22_commits_of_other_people"> When I commit, my commit "repeats" commits of other people </span></h2>
+<p>There's nothing to worry -- you don't need to do anything, there's nothing to "fix" on that commit.  'git' probably created a merge commit when it found that independent commits occured on the repository while you were working on the  current commit/push.  In fact, it's the Github UI for displaying merges that misleads us to think that there are "repeats", and make us worry about unintended changes.
+</p><p>There's no information loss, and no duplication of work.  Using a better UI, like 'gitk' or the Github "Network" view, will help better illustrate the non-linear commit history around such a merge.
+</p><p>Of course, in the longer term, a lot of such (mostly unnecessary) non-linearity is distracting.  So, we discourage merges that involve very few commits.  Just use workflows 1 or 2 above to avoid seeing unintended or unnecessary merges.
+</p>
+<h2> <span class="mw-headline" id="How_do_I_know_what.27s_going_to_be_pushed.3F"> How do I know what's going to be pushed? </span></h2>
+<p>This will give you a log of all the changes scheduled to be pushed.
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git push</span> <span style="color: #660033;">-n</span> <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&gt;&amp;</span><span style="color: #000000;">1</span><span style="color: #000000; font-weight: bold;">|</span><span style="color: #c20cb9; font-weight: bold;">tail</span> <span style="color: #660033;">-1</span><span style="color: #000000; font-weight: bold;">|</span><span style="color: #c20cb9; font-weight: bold;">awk</span> <span style="color: #7a0874; font-weight: bold;">&#123;</span><span style="color: #ff0000;">'print $1;'</span><span style="color: #7a0874; font-weight: bold;">&#125;</span><span style="color: #000000; font-weight: bold;">|</span><span style="color: #c20cb9; font-weight: bold;">xargs</span> <span style="color: #c20cb9; font-weight: bold;">git log</span></pre>
+<p>If the result is an xargs error message (xargs: unmatched single quote), then git push -n failed, and you should check the error message. This usually happens because upstream has been changed and your local copy is out of synch, so make sure you do
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git pull</span> <span style="color: #660033;">--rebase</span></pre>
+<p>before trying to push again.
+</p>
+<h2> <span class="mw-headline" id="I_can.27t_checkout_the_required_submodules_because_the_git:.2F.2F_protocol_is_blocked_by_a_firewall"> I can't checkout the required submodules because the git:// protocol is blocked by a firewall </span></h2>
+<p>You can replace git:// with https:// globally in your user preference:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git config</span> <span style="color: #660033;">--global</span> url.<span style="color: #ff0000;">&quot;https://&quot;</span>.insteadOf git:<span style="color: #000000; font-weight: bold;">//</span></pre>
+<p>Source: <a href="http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634" class="external free" rel="nofollow">http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634</a>
+</p>
+<h1> <span class="mw-headline" id="Links"> Links </span></h1>
+<ul><li> <a href="http://book.git-scm.com/" class="external text" rel="nofollow">Git community book</a>
+</li><li> <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html" class="external text" rel="nofollow">Git User's manual</a>
+</li><li> <a href="http://git.or.cz/course/svn.html" class="external text" rel="nofollow">Git - SVN Crash Course</a>
+</li></ul>
+

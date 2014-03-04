@@ -1,0 +1,42 @@
+---
+layout: obsolete
+title: "Introduction to developing with Mono"
+permalink: /old_site/Introduction_to_developing_with_Mono/
+---
+
+<h1>Introduction to developing with Mono</h1>
+
+<h1> <span class="mw-headline" id="Assemblies"> Assemblies </span></h1>
+<p>Mono and .NET compile source code into 'assemblies'.  Assemblies, which are similar to collections of Java <tt>.class</tt> files, contain language-independent, platform-independent bytecode called CIL (Common Intermediate Language).  Because assemblies are language independent, it doesn't matter what language was used to create them.  Assemblies made with C# can mix with assemblies created with VB.NET, Java (using <a href="{{site.baseurl}}/Java" title="Java"> IKVM</a>), or any language that someone has written a CIL compiler for.
+</p><p>But, being platform independent means, of course, that assemblies need to be compiled <i>again</i> into native code before they can run on any particular machine.  It's important to distinguish the two compilations involved in Mono applications: from source code to byte code, and from byte code to native machine code.  The first compilation is performed by the developer.  The second compilation is generally performed just when the program begins executing, on the very computer that will run the application, and for this reason it's called Just-In-Time (JIT) compilation.  This second compilation and the execution of the application is performed by a Common Language Runtime (CLR).  
+</p><p>Mono also supports Ahead-Of-Time (AOT) compilation.   This is a mode that pre-compiled the code, and it is useful to reduce application startup time (by eliminating the JIT startup time) and increasing the code that can be shared across multiple applications.
+</p><p>On Windows and Linux, as well as other operating systems, assemblies are stored in files with the <tt>.dll</tt> or <tt>.exe</tt> extension.  The only difference between a <tt>.dll</tt> assembly and a  <tt>.exe</tt> assembly is that a <tt>.exe</tt> assembly contains a starting point for an application (a Main method), whereas <tt>.dll</tt> assemblies only are class libraries.
+</p>
+<h1> <span class="mw-headline" id="Classes"> Classes </span></h1>
+<p>An assembly contains the byte-code for classes.  Classes in Mono/.NET are exactly parallel to classes in Java, C++, and other object-oriented languages.  They contain constructors, methods, and fields, as with other languages, and CLR classes also contain properties and events.
+</p><p>Classes are grouped into namespaces (the Java equivalent of packages).  The namespace of the core classes in the class library is <tt>System</tt>.  Other class library namespaces include <tt>System.IO</tt>, <tt>System.Windows.Forms</tt>, and <tt>System.Xml</tt>.  The full name of a class is its namespace plus its short name.  The full name of the <tt>Stream</tt> class in <tt>System.IO</tt> is <tt>System.IO.Stream</tt>.
+</p><p>Namespaces often share their names with the names of assemblies, but don't be misled.  Although GUI classes appear in the <tt>System.Windows.Forms</tt> namespace and the <tt>System.Windows.Forms</tt> assembly, this is only an accident.  The class <tt>System.IO.Stream</tt> is in the <tt>System.IO</tt> namespace, but it is found in the <tt>mscorlib</tt> assembly.  When you write code (e.g. the <tt>using</tt> statement), you always deal with 'namespaces'.  When you invoke the compiler, you specify the 'assemblies' to load.
+</p>
+<h1> <span class="mw-headline" id="Hello_World"> Hello World </span></h1>
+<p>Here's a Hello World application written in C#.  When the program starts, it writes "Hello, World!" to the console and exits.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// Hello World!&#160;: hello.cs</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> Hello <span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hello, World!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>If you have Mono installed, you can compile this source code with the command:
+</p>
+<pre>
+mcs hello.cs
+</pre>
+<p>Mono's C# compiler, mcs, creates in an assembly named <tt>hello.exe</tt> that you can execute on any platform supporting the CLR -- using Mono on any supported platform, or using .NET on Windows.  To run the program using Mono, type:
+</p>
+<pre>
+mono hello.exe
+</pre>
+

@@ -1,0 +1,701 @@
+---
+layout: obsolete
+title: "GtkSharp TreeView Tutorial"
+permalink: /old_site/GtkSharp_TreeView_Tutorial/
+---
+
+<h1>GtkSharp TreeView Tutorial</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Model.2C_View.2C_Controller"><span class="tocnumber">2</span> <span class="toctext">Model, View, Controller</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Model"><span class="tocnumber">2.1</span> <span class="toctext">Model</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#View"><span class="tocnumber">2.2</span> <span class="toctext">View</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Controller"><span class="tocnumber">2.3</span> <span class="toctext">Controller</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Your_first_TreeView"><span class="tocnumber">3</span> <span class="toctext">Your first TreeView</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Setting_it_up"><span class="tocnumber">3.1</span> <span class="toctext">Setting it up</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Adding_some_data"><span class="tocnumber">3.2</span> <span class="toctext">Adding some data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Creating_a_Tree"><span class="tocnumber">4</span> <span class="toctext">Creating a Tree</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Filtering_Data"><span class="tocnumber">5</span> <span class="toctext">Filtering Data</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Controlling_how_the_model_is_used"><span class="tocnumber">6</span> <span class="toctext">Controlling how the model is used</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Shortcuts_-_Writing_Less_Code"><span class="tocnumber">7</span> <span class="toctext">Shortcuts - Writing Less Code</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Editable_Text_Cells"><span class="tocnumber">8</span> <span class="toctext">Editable Text Cells</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Drawing_icons_in_rows"><span class="tocnumber">9</span> <span class="toctext">Drawing icons in rows</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
+<p>The GTK TreeView widget is used to display data in one of the most basic and intuitive ways possible: a list. Each row in the list can be separated into multiple columns, and rows in the list can contain child rows to create an expandable-list, or tree.
+</p><p>The TreeView can be extremely intimidating at first, but it is extremely powerful - especially when compared to the ListBox and ListView controls from the Windows Forms toolkit.
+</p>
+<h1> <span class="mw-headline" id="Model.2C_View.2C_Controller"> Model, View, Controller </span></h1>
+<p>The TreeView uses the Model-View-Controller (MVC) design pattern. Components of the TreeView are separated into these three categories: The Model, which stores data to be displayed, the View, which controls how to display the data, and the controller, which controls what data is displayed, how it is sorted, etc.
+</p>
+<h2> <span class="mw-headline" id="Model"> Model </span></h2>
+<p>The TreeView has two basic models: ListStore, which stores a flat set of data, and TreeStore, which stores data that can contain sub-items (used for creating a Tree). All TreeView Models implement the Gtk.TreeModel interface.
+</p>
+<h2> <span class="mw-headline" id="View"> View </span></h2>
+<p>The View is made up of three different parts as well - The column, the cell renderers, and the widget itself.
+</p><p>The TreeView widget is responsible for laying out the columns and rows of data, as well as providing all the basic user-interaction functionality such as selecting items, etc.
+</p><p>Each TreeViewColumn contains at least one CellRenderer. Cell renderers are what actually display the data - items in the model are mapped to cell renderers.
+</p><p>The following cell renderers are available:
+</p>
+<ul><li> <b>CellRendererText</b> - Used to display text
+</li><li> <b>CellRendererPixbuf</b> - Used to display images
+</li><li> <b>CellRendererProgress</b> - Used to display a progress bar
+</li><li> <b>CellRendererCombo</b> - Used to display a drop-down box
+</li><li> <b>CellRendererToggle</b> - Used to display a check box
+</li></ul>
+<p>CellRenderers are separate from TreeViewColumns for added flexibility, allowing you to have an extremely fine-tuned treeview tailored to your application. For example you can pack an image and text into the same column, which often makes much more sense than creating a separate column for each.
+</p>
+<h2> <span class="mw-headline" id="Controller"> Controller </span></h2>
+<p>Controllers modify how the data in the model is passed off to the View, and let you do things such as sorting and filtering the data.
+</p>
+<h1> <span class="mw-headline" id="Your_first_TreeView"> Your first TreeView </span></h1>
+<h2> <span class="mw-headline" id="Setting_it_up"> Setting it up </span></h2>
+<p>Here is a basic example of how to use the TreeView and all its related components. In our example, we will show a simple list of song titles and artist names:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080;">#file: TreeViewExample.cs</span>
+<span style="color: #008080; font-style: italic;">//mcs -pkg:gtk-sharp TreeViewExample.cs</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Create a Window</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create our TreeView</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add our tree to the window</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the artist name</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the song title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the columns to the TreeView</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a model that will hold two strings - Artist Name and Song Title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+		<span style="color: #008080; font-style: italic;">// Assign the model to the TreeView</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Show the window and everything on it</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>Compile and run the application, and you will end up with this:
+</p><p><a href="{{site.baseurl}}/images/old_site/8/8a/GtkSharpTreeViewTutorial1.png" class="image"><img alt="GtkSharpTreeViewTutorial1.png" src="{{site.baseurl}}/images/old_site/8/8a/GtkSharpTreeViewTutorial1.png" width="510" height="226" /></a>
+</p><p>Cool! So we have our TreeView displaying our two desired columns, now lets add some data in there.
+</p>
+<h2> <span class="mw-headline" id="Adding_some_data"> Adding some data </span></h2>
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #008080; font-style: italic;">// Add some data to the store</span>
+ musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Garbage&quot;</span>, <span style="color: #666666;">&quot;Dog New Tricks&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>This inserts a new row into the Model. We specify the same number of arguments here as we defined when we constructed the Gtk.ListStore above.
+</p><p>As mentioned in the introduction, the TreeViewCells don't actually render any of your data themselves - they just contain the Cell Renderers that do, so we need to create two Cell Renderers, one for each column:
+</p>
+<pre class="csharp" style="font-family:monospace;">  <span style="color: #008080; font-style: italic;">// Create the text cell that will display the artist name</span>
+  Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #008080; font-style: italic;">// Add the cell to the column</span>
+  artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+  <span style="color: #008080; font-style: italic;">// Do the same for the song title column</span>
+  Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The TreeView doesn't automatically know which cells are supposed to display which items from the Model, so we need to link it up:
+</p>
+<pre class="csharp" style="font-family:monospace;">  <span style="color: #008080; font-style: italic;">// Tell the Cell Renderers which items in the model to display</span>
+  artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+  songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>The first argument specifies which Cell Renderer we want to assign something to, the second specifies which of the cell renderer's properties (converted to lowercase) we want to assign something to (CellRendererText.Text in our case), and the third argument specifies the position in the Model that the value should be obtained from. Above when we added a row to the model, we specified the artist first, then the song title, so we use that here. Remember the order of items in the Model is not automatically linked to the order of your columns in the TreeView in any way, so while keeping everything in the same order makes things a lot easier to manage and understand, it is not required.
+</p><p>You are not limited to assigning one property to the store per CellRenderer, you can call AddAttribute for the same CellRenderer as many times as you would like, to control the different properties of the CellRenderer.
+</p><p>WOOHOO! We now have this:
+</p><p><a href="{{site.baseurl}}/images/old_site/5/56/GtkSharpTreeViewTutorial2.png" class="image"><img alt="GtkSharpTreeViewTutorial2.png" src="{{site.baseurl}}/images/old_site/5/56/GtkSharpTreeViewTutorial2.png" width="510" height="226" /></a>
+</p><p>Here's the complete code:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Create a Window</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create our TreeView</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add our tree to the window</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the artist name</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create the text cell that will display the artist name</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the cell to the column</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the song title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Do the same for the song title column</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the columns to the TreeView</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Tell the Cell Renderers which items in the model to display</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a model that will hold two strings - Artist Name and Song Title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add some data to the store</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Garbage&quot;</span>, <span style="color: #666666;">&quot;Dog New Tricks&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Assign the model to the TreeView</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Show the window and everything on it</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Creating_a_Tree"> Creating a Tree </span></h1>
+<p>To create a tree instead of a flat list, we use a Gtk.TreeStore as our model.
+</p>
+<pre class="csharp" style="font-family:monospace;">Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Then, when we add a value into the model we specify the parent iter as the first argument:
+</p>
+<pre class="csharp" style="font-family:monospace;">Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Dance&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #666666;">&quot;Fannypack&quot;</span>, <span style="color: #666666;">&quot;Nu Nu (Yeah Yeah) (double j and haze radio edit)&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+iter <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hip-hop&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #666666;">&quot;Nelly&quot;</span>, <span style="color: #666666;">&quot;Country Grammer&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>And now we end up with this:
+</p><p><a href="{{site.baseurl}}/images/old_site/9/92/GtkSharpTreeViewTutorial-Tree1.png" class="image"><img alt="GtkSharpTreeViewTutorial-Tree1.png" src="{{site.baseurl}}/images/old_site/9/92/GtkSharpTreeViewTutorial-Tree1.png" width="510" height="226" /></a>
+</p><p>Here's the complete example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Dance&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #666666;">&quot;Fannypack&quot;</span>, <span style="color: #666666;">&quot;Nu Nu (Yeah Yeah) (double j and haze radio edit)&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		iter <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hip-hop&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #666666;">&quot;Nelly&quot;</span>, <span style="color: #666666;">&quot;Country Grammer&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Filtering_Data"> Filtering Data </span></h1>
+<p>The TreeView makes it very easy to prevent certain rows from being displayed, without having to remove them from the model.
+</p><p>Lets say we are starting out with this set of data:
+</p><p><a href="{{site.baseurl}}/images/old_site/b/b5/TreeViewExample6.png" class="image"><img alt="TreeViewExample6.png" src="{{site.baseurl}}/images/old_site/b/b5/TreeViewExample6.png" width="510" height="229" /></a>
+</p><p>We place a TreeModelFilter between the View (TreeView) and the model (ListStore) that filters what data is passed from the model to the view.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// Create the filter and tell it to use the musicListStore as it's base Model</span>
+filter <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModelFilter</span> <span style="color: #008000;">&#40;</span>musicListStore, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+&#160;
+<span style="color: #008080; font-style: italic;">// Specify the function that determines which rows to filter out and which ones to display</span>
+filter<span style="color: #008000;">.</span><span style="color: #0000FF;">VisibleFunc</span> <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModelFilterVisibleFunc</span> <span style="color: #008000;">&#40;</span>FilterTree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #008080; font-style: italic;">// Assign the filter as our tree's model</span>
+tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> filter<span style="color: #008000;">;</span></pre>
+<p>We then create the FilterTree method, which determines which rows are visible and which are hidden:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">bool</span> FilterTree <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #6666cc; font-weight: bold;">string</span> artistName <span style="color: #008000;">=</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>artistName <span style="color: #008000;">==</span> <span style="color: #666666;">&quot;BT&quot;</span><span style="color: #008000;">&#41;</span>
+		<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">else</span>
+		<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>And now we end up with this:
+</p><p><a href="{{site.baseurl}}/images/old_site/b/b3/TreeViewExample7.png" class="image"><img alt="TreeViewExample7.png" src="{{site.baseurl}}/images/old_site/b/b3/TreeViewExample7.png" width="510" height="229" /></a>
+</p><p>Here is a complete example demonstrating how you can use a text entry widget to control the filter. 
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Entry</span> filterEntry<span style="color: #008000;">;</span>
+&#160;
+	Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModelFilter</span> filter<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Create a Window</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create an Entry used to filter the tree</span>
+		filterEntry <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Entry</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Fire off an event when the text in the Entry changes</span>
+		filterEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Changed</span> <span style="color: #008000;">+=</span> OnFilterEntryTextChanged<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a nice label describing the Entry</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span> filterLabel <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Label</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Artist Search:&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Put them both into a little box so they show up side by side</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">HBox</span> filterBox <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">HBox</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		filterBox<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>filterLabel, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		filterBox<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>filterEntry, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create our TreeView</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a box to hold the Entry and Tree</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">VBox</span> box <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">VBox</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the widgets to the box</span>
+		box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>filterBox, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #0600FF; font-weight: bold;">false</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		box<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>tree, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #0600FF; font-weight: bold;">true</span>, <span style="color: #FF0000;">5</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>box<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the artist name</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create the text cell that will display the artist name</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the cell to the column</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a column for the song title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Do the same for the song title column</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add the columns to the TreeView</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Tell the Cell Renderers which items in the model to display</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">AddAttribute</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Create a model that will hold two strings - Artist Name and Song Title</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Add some data to the store</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;BT&quot;</span>, <span style="color: #666666;">&quot;Circles&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Daft Punk&quot;</span>, <span style="color: #666666;">&quot;Technologic&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Daft Punk&quot;</span>, <span style="color: #666666;">&quot;Digital Love&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The Crystal Method&quot;</span>, <span style="color: #666666;">&quot;PHD&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The Crystal Method&quot;</span>, <span style="color: #666666;">&quot;Name of the game&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;The Chemical Brothers&quot;</span>, <span style="color: #666666;">&quot;Galvanize&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Instead of assigning the ListStore model directly to the TreeStore, we create a TreeModelFilter</span>
+		<span style="color: #008080; font-style: italic;">// which sits between the Model (the ListStore) and the View (the TreeView) filtering what the model sees.</span>
+		<span style="color: #008080; font-style: italic;">// Some may say that this is a &quot;Controller&quot;, even though the name and usage suggests that it is still part of</span>
+		<span style="color: #008080; font-style: italic;">// the Model.</span>
+		filter <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModelFilter</span> <span style="color: #008000;">&#40;</span>musicListStore, <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Specify the function that determines which rows to filter out and which ones to display</span>
+		filter<span style="color: #008000;">.</span><span style="color: #0000FF;">VisibleFunc</span> <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModelFilterVisibleFunc</span> <span style="color: #008000;">&#40;</span>FilterTree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Assign the filter as our tree's model</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> filter<span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #008080; font-style: italic;">// Show the window and everything on it</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> OnFilterEntryTextChanged <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, <span style="color: #000000;">System</span><span style="color: #008000;">.</span><span style="color: #0000FF;">EventArgs</span> args<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #008080; font-style: italic;">// Since the filter text changed, tell the filter to re-determine which rows to display</span>
+		filter<span style="color: #008000;">.</span><span style="color: #0000FF;">Refilter</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">bool</span> FilterTree <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #6666cc; font-weight: bold;">string</span> artistName <span style="color: #008000;">=</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ToString</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>filterEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">==</span> <span style="color: #666666;">&quot;&quot;</span><span style="color: #008000;">&#41;</span>
+			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>artistName<span style="color: #008000;">.</span><span style="color: #0000FF;">IndexOf</span> <span style="color: #008000;">&#40;</span>filterEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&gt;</span> <span style="color: #008000;">-</span><span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span>
+			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">else</span>
+			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><a href="{{site.baseurl}}/images/old_site/8/87/GtkSharpTreeViewTutorial8.png" class="image"><img alt="GtkSharpTreeViewTutorial8.png" src="{{site.baseurl}}/images/old_site/8/87/GtkSharpTreeViewTutorial8.png" width="510" height="229" /></a>
+</p>
+<h1> <span class="mw-headline" id="Controlling_how_the_model_is_used"> Controlling how the model is used </span></h1>
+<p>The TreeView allows you write methods that extract specific data from your Model, and link your CellRenderers to them, rather than directly to the model.
+</p><p>This is one of the extremely useful features of TreeModel because it means you can store a reference any .NET object in the model that contains all the data you want your TreeView to display, instead of storing each piece of data individually as a string, so you don't have to maintain it in two places. 
+</p><p>In the preveous examples we inserted both the song and artist into each row of the ListStore. If the TreeView is displaying a large amount of data this can use a lot of memory, and if the backend data changes (song title changes, etc.) the TreeModel doesnt know about it and you have to keep it in-sync manually.
+</p><p>Lets take the following example, and say we want to create a TreeView to display the data:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Collections</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Song
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> Song <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> artist, <span style="color: #6666cc; font-weight: bold;">string</span> title<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span> <span style="color: #008000;">=</span> artist<span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> title<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Artist<span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Title<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	ArrayList songs<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		songs <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Dancing DJs vs. Roxette&quot;</span>, <span style="color: #666666;">&quot;Fading Like a Flower&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Xaiver&quot;</span>, <span style="color: #666666;">&quot;Give me the night&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Daft Punk&quot;</span>, <span style="color: #666666;">&quot;Technologic&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>Song song <span style="color: #0600FF; font-weight: bold;">in</span> songs<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>song<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The TreeView doesnt automatically know how to link up the fields in the Song class to the different CellRenderers, so instead of using AddAttribute as we did in our first example, we use <b>SetCellDataFunc</b>:
+</p>
+<pre class="csharp" style="font-family:monospace;">artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">SetCellDataFunc</span> <span style="color: #008000;">&#40;</span>artistNameCell, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeCellDataFunc</span> <span style="color: #008000;">&#40;</span>RenderArtistName<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">SetCellDataFunc</span> <span style="color: #008000;">&#40;</span>songTitleCell, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeCellDataFunc</span> <span style="color: #008000;">&#40;</span>RenderSongTitle<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>We then create two methods, which extract the information that we want from the Song object and set the appropriate property of the CellRenderer, "Text" in our case:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> RenderArtistName <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> column, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRenderer</span> cell, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> RenderSongTitle <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> column, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRenderer</span> cell, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>We now have only one item per row in the store, but we display two columns in the tree! 
+</p><p><a href="{{site.baseurl}}/images/old_site/7/72/GtkSharpTreeViewTutorial3.png" class="image"><img alt="GtkSharpTreeViewTutorial3.png" src="{{site.baseurl}}/images/old_site/7/72/GtkSharpTreeViewTutorial3.png" width="510" height="226" /></a>
+</p><p>Both of the example methods above demonstrate how to modify one property of the CellRenderer, but you are certainly not limited to only modifing one. 
+</p><p>This example is fairly pointless, but it demonstrates how to modify multiple properties. A more practical use for this would be to change the color based on the state of an object:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> RenderArtistName <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> column, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRenderer</span> cell, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">.</span><span style="color: #0000FF;">StartsWith</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;X&quot;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+		<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Foreground</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;red&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #008000;">&#123;</span>
+		<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Foreground</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;darkgreen&quot;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+	<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p><br />
+<a href="{{site.baseurl}}/images/old_site/0/07/GtkSharpTreeViewTutorial4.png" class="image"><img alt="GtkSharpTreeViewTutorial4.png" src="{{site.baseurl}}/images/old_site/0/07/GtkSharpTreeViewTutorial4.png" width="510" height="226" /></a>
+</p><p>Here is the complete example:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Collections</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> Song
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> Song <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span> artist, <span style="color: #6666cc; font-weight: bold;">string</span> title<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span> <span style="color: #008000;">=</span> artist<span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> title<span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Artist<span style="color: #008000;">;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">string</span> Title<span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	ArrayList songs<span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		songs <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ArrayList <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Dancing DJs vs. Roxette&quot;</span>, <span style="color: #666666;">&quot;Fading Like a Flower&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Xaiver&quot;</span>, <span style="color: #666666;">&quot;Give me the night&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songs<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Song <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Daft Punk&quot;</span>, <span style="color: #666666;">&quot;Technologic&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> artistColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Artist&quot;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> artistNameCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>artistNameCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> songColumn <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;Song Title&quot;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> songTitleCell <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">PackStart</span> <span style="color: #008000;">&#40;</span>songTitleCell, <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span>Song song <span style="color: #0600FF; font-weight: bold;">in</span> songs<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>song<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		artistColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">SetCellDataFunc</span> <span style="color: #008000;">&#40;</span>artistNameCell, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeCellDataFunc</span> <span style="color: #008000;">&#40;</span>RenderArtistName<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">SetCellDataFunc</span> <span style="color: #008000;">&#40;</span>songTitleCell, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeCellDataFunc</span> <span style="color: #008000;">&#40;</span>RenderSongTitle<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>artistColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span>songColumn<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> RenderArtistName <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> column, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRenderer</span> cell, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		<span style="color: #0600FF; font-weight: bold;">if</span> <span style="color: #008000;">&#40;</span>song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">.</span><span style="color: #0000FF;">StartsWith</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;X&quot;</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">==</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Foreground</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;red&quot;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span> <span style="color: #0600FF; font-weight: bold;">else</span> <span style="color: #008000;">&#123;</span>
+			<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Foreground</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;darkgreen&quot;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#125;</span>
+&#160;
+		<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> RenderSongTitle <span style="color: #008000;">&#40;</span>Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeViewColumn</span> column, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRenderer</span> cell, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeModel</span> model, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> model<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Shortcuts_-_Writing_Less_Code"> Shortcuts - Writing Less Code </span></h1>
+<p>The Gtk TreeView API provides several convinence methods that makes it possible to create a basic tree using much less code than we used above.
+</p><p>Here is the same demo as first example on this page, using these methods, note that it is <i>significantly</i> less code:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Artist&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Title&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Garbage&quot;</span>, <span style="color: #666666;">&quot;Dog New Tricks&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Editable_Text_Cells"> Editable Text Cells </span></h1>
+<p>Making an editable text cell (so the user can click on the cell and modify the value) is extremely easy.
+</p><p>First we must mark the cell as editable, and assign a method to handle the Edited event, which fires when the user is done editing:
+</p>
+<pre class="csharp" style="font-family:monospace;">artistNameCell<span style="color: #008000;">.</span><span style="color: #0000FF;">Editable</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
+artistNameCell<span style="color: #008000;">.</span><span style="color: #0000FF;">Edited</span> <span style="color: #008000;">+=</span> artistNameCell_Edited<span style="color: #008000;">;</span></pre>
+<p>Our event handler method needs to update the model with the new value that the user entered:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">private</span> <span style="color: #6666cc; font-weight: bold;">void</span> artistNameCell_Edited <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">EditedArgs</span> args<span style="color: #008000;">&#41;</span>
+<span style="color: #008000;">&#123;</span>
+	Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeIter</span> iter<span style="color: #008000;">;</span>
+	musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">GetIter</span> <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">out</span> iter, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreePath</span> <span style="color: #008000;">&#40;</span>args<span style="color: #008000;">.</span><span style="color: #0000FF;">Path</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+	Song song <span style="color: #008000;">=</span> <span style="color: #008000;">&#40;</span>Song<span style="color: #008000;">&#41;</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">GetValue</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span> <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0000FF;">NewText</span><span style="color: #008000;">;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>And that's all there is to it!
+</p><p><a href="{{site.baseurl}}/images/old_site/d/d8/TreeViewTutorial-Editing1.png" class="image"><img alt="TreeViewTutorial-Editing1.png" src="{{site.baseurl}}/images/old_site/d/d8/TreeViewTutorial-Editing1.png" width="510" height="226" /></a>
+</p>
+<h1> <span class="mw-headline" id="Drawing_icons_in_rows"> Drawing icons in rows </span></h1>
+<p>For using Pixbuf you need, first to change the ListStore constructor, (notice the Gdk.Pixbuf parameter)
+</p>
+<pre class="csharp" style="font-family:monospace;">Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Pixbuf</span><span style="color: #008000;">&#41;</span>, <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>,  <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>add the column that will render the pixbuf
+</p>
+<pre class="csharp" style="font-family:monospace;">tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Icon&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererPixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;pixbuf&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>the image to add
+</p><p><a href="{{site.baseurl}}/images/old_site/e/e5/TreeViewRupertIcon.png" class="image"><img alt="TreeViewRupertIcon.png" src="{{site.baseurl}}/images/old_site/e/e5/TreeViewRupertIcon.png" width="20" height="20" /></a>
+</p><p>and the AppendValues method with the correct parameters
+</p>
+<pre class="csharp" style="font-family:monospace;">musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Pixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeViewRupertIcon.png&quot;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;Rupert&quot;</span>, <span style="color: #666666;">&quot;Yellow bananas&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>And then
+</p><p><a href="{{site.baseurl}}/images/old_site/9/98/TreeViewTutorial-Pixbuf.png" class="image"><img alt="TreeViewTutorial-Pixbuf.png" src="{{site.baseurl}}/images/old_site/9/98/TreeViewTutorial-Pixbuf.png" width="510" height="225" /></a>
+</p><p>Complete sample
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
+<span style="color: #008000;">&#123;</span>
+	<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		<a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Application</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+&#160;
+	<span style="color: #0600FF; font-weight: bold;">public</span> TreeViewExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+	<span style="color: #008000;">&#123;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> window <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">Window</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeView Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">SetSizeRequest</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">500</span>,<span style="color: #FF0000;">200</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> tree <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">TreeView</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> musicListStore <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">ListStore</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span>Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Pixbuf</span><span style="color: #008000;">&#41;</span>, 
+			<a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span>,  <a href="http://www.google.com/search?q=typeof+msdn.microsoft.com"><span style="color: #008000;">typeof</span></a> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">string</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Icon&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererPixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;pixbuf&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>  
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Artist&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">1</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Title&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;text&quot;</span>, <span style="color: #FF0000;">2</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Pixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeViewRupertIcon.png&quot;</span><span style="color: #008000;">&#41;</span>,
+			<span style="color: #666666;">&quot;Rupert&quot;</span>, <span style="color: #666666;">&quot;Yellow bananas&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+		tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</span> <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">;</span>
+&#160;
+		window<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>tree<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		window<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+	<span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+

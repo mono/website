@@ -1,0 +1,763 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.10"
+permalink: /old_site/Release_Notes_Mono_2.10/
+---
+
+<h1>Release Notes Mono 2.10</h1>
+
+<p>Mono 2.10 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
+</p><p>Mono 2.10 is an update to <a href="{{site.baseurl}}/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8</a> based on the master branch of github, it is not a minor upgrade to 2.8.    Mono 2.10 was released on February 15th.
+</p><p>For more information on changes since Mono 2.10, you can also read the release notes for <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.1" title="Release Notes Mono 2.10.1">Mono 2.10.1</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.2" title="Release Notes Mono 2.10.2">Mono 2.10.2</a> and <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.3" title="Release Notes Mono 2.10.3">Mono 2.10.3</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.4" title="Release Notes Mono 2.10.4">Mono 2.10.4</a> and <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.5" title="Release Notes Mono 2.10.5">Mono 2.10.5</a>.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Important_Information_About_Mono_2.10"><span class="tocnumber">1</span> <span class="toctext">Important Information About Mono 2.10</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Major_Highlights"><span class="tocnumber">2</span> <span class="toctext">Major Highlights</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Changes_Since_Mono_2.8"><span class="tocnumber">3</span> <span class="toctext">Changes Since Mono 2.8</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Mono.Options"><span class="tocnumber">3.1</span> <span class="toctext">Mono.Options</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#New_C.23_Compiler_Backend"><span class="tocnumber">3.2</span> <span class="toctext">New C# Compiler Backend</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#C.23_Interactive_Shell"><span class="tocnumber">3.3</span> <span class="toctext">C# Interactive Shell</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Google_Native_Client_Support"><span class="tocnumber">3.4</span> <span class="toctext">Google Native Client Support</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#SGen_Garbage_Collector"><span class="tocnumber">3.5</span> <span class="toctext">SGen Garbage Collector</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#New_Mono_Profiler"><span class="tocnumber">3.6</span> <span class="toctext">New Mono Profiler</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#VB_Compiler"><span class="tocnumber">3.7</span> <span class="toctext">VB Compiler</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#GetFolderPath_Changes"><span class="tocnumber">3.8</span> <span class="toctext">GetFolderPath Changes</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Mono.Simd_Changes"><span class="tocnumber">3.9</span> <span class="toctext">Mono.Simd Changes</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Runtime"><span class="tocnumber">3.10</span> <span class="toctext">Runtime</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#New_GC_heap_walk_API"><span class="tocnumber">3.10.1</span> <span class="toctext">New GC heap walk API</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#New_Hooks_for_Assembly_Resolution"><span class="tocnumber">3.10.2</span> <span class="toctext">New Hooks for Assembly Resolution</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#Android_Specific_Updates"><span class="tocnumber">3.10.3</span> <span class="toctext">Android Specific Updates</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#OSX_Updates"><span class="tocnumber">3.10.4</span> <span class="toctext">OSX Updates</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Improved_Socket_and_Async_Stack"><span class="tocnumber">3.10.5</span> <span class="toctext">Improved Socket and Async Stack</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#Cecil.2FLight"><span class="tocnumber">3.11</span> <span class="toctext">Cecil/Light</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Gendarme_2.10"><span class="tocnumber">3.12</span> <span class="toctext">Gendarme 2.10</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#ASP.NET_MVC3_Support"><span class="tocnumber">3.13</span> <span class="toctext">ASP.NET MVC3 Support</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Razor_and_WebPages"><span class="tocnumber">3.13.1</span> <span class="toctext">Razor and WebPages</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Running_Razor.2C_MVC3_and_WebPages"><span class="tocnumber">3.13.2</span> <span class="toctext">Running Razor, MVC3 and WebPages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#WebMatrix.Data"><span class="tocnumber">3.14</span> <span class="toctext">WebMatrix.Data</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Languages"><span class="tocnumber">3.15</span> <span class="toctext">Languages</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Other_Changes"><span class="tocnumber">3.16</span> <span class="toctext">Other Changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Installing_Mono_2.10"><span class="tocnumber">4</span> <span class="toctext">Installing Mono 2.10</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#Bug_Fixes"><span class="tocnumber">5</span> <span class="toctext">Bug Fixes</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Important_Information_About_Mono_2.10"> Important Information About Mono 2.10 </span></h1>
+<p>As of September of 2011, Mono 2.10 became the new stable release of Mono.   Please make sure that you use the latest version of the Mono 2.10.xx series.    
+</p>
+<h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
+<ul><li> <a href="#Google_Native_Client_Support">Google Native Client Support</a>
+</li><li> <a href="#New_Mono_Profiler">New Profiler engine</a>
+</li><li> <a href="#Improved_Socket_and_Async_Stack">Faster socket stack</a>
+</li><li> <a href="#Parallel_Framework_Updates">Improved Parallel Framework</a>
+</li><li> <a href="#SGen_Garbage_Collector">SGen Precise Stack Scanning and Many performance improvements</a>.
+</li><li> Unified MonoTouch/Monodroid runtime support
+</li><li> <a href="#Cecil.2FLight">Cecil/Light</a>
+</li><li> <a href="#New_C.23_Compiler_Backend">New C# Compiler backend</a> (can now use any custom mscorlib)
+</li><li> <a href="#VB_Compiler">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.
+</li><li> <a href="#ASP.NET_MVC3_Support">Supports ASP.NET MVC3</a>, Razor and new WebPages.
+</li><li> New <a href="#WebMatrix.Data">WebMatrix.Data</a> database API.
+</li><li> <a href="#OSX_Updates">Improved OSX Mono</a>
+</li><li> <a href="#Languages">F# and IronRuby</a>
+</li></ul>
+<h1> <span class="mw-headline" id="Changes_Since_Mono_2.8"> Changes Since Mono 2.8 </span></h1>
+<h2> <span class="mw-headline" id="Mono.Options"> Mono.Options </span></h2>
+<p>The Mono.Options library now 
+</p>
+<ul><li><ul><li> Low-level argument pre-processing now available via Mono.Options.ArgumentSource.
+</li><li> CSC-style @response-file handling now available (opt-in) by adding a Mono.Options.ResponseFileSource to the Mono.Options.OptionSet initializer block.
+</li></ul>
+</li></ul>
+<h2> <span class="mw-headline" id="New_C.23_Compiler_Backend"> New C# Compiler Backend </span></h2>
+<p>We are now test-driving a new code generation back-end for the C# compiler.   We continue to support the System.Reflection.Emit backend that we have used since the start of the project in 2001, but now also provide a new backend based on <a href="http://weblog.ikvm.net/" class="external text" rel="nofollow">Jeroen Frijters'</a> <a href="http://weblog.ikvm.net/PermaLink.aspx?guid=d0dc2476-471b-45f3-96bf-a90bc2f5800b" class="external text" rel="nofollow">IKVM.Reflection API</a>.
+</p><p>This new backend allows developers to reference a third-party mscorlib.dll library, either based on Mono's mscorlib.dll, or a custom mscorlib.dll that you built for a special purpose, or obtained from another project (like Microsoft's MicroFramework).
+</p><p>To use the new compiler, use the <b>mcs</b> command.   The following table shows the current compiler setup in Mono:
+</p>
+<table border="1">
+<tr>
+<td> Tool/Library
+</td>
+<td> Purpose
+</td>
+<td> Profile
+</td>
+<td> Backend
+</td>
+<caption>
+</caption>
+<td> <b>gmcs</b>
+</td>
+<td> C# Compiler
+</td>
+<td> 2.0
+</td>
+<td> System.Reflection 2.0
+</td>
+<caption>
+</caption>
+<td> <b>dmcs</b>
+</td>
+<td> C# compiler
+</td>
+<td> 4.0
+</td>
+<td> System.Reflection 4.0
+</td>
+<caption>
+</caption>
+<td> <b>smcs</b>
+</td>
+<td> C# Compiler
+</td>
+<td> 2.1 (Silverlight, MonoTouch, MonoDroid)
+</td>
+<td> System.Reflection 2.0
+</td>
+<caption>
+</caption>
+<td> <b>mcs</b>
+</td>
+<td> C# Compiler
+</td>
+<td> Any profile, any mscorlib
+</td>
+<td> IKVM.Reflection
+</td>
+<caption>
+</caption>
+<td> <b>csharp</b>
+</td>
+<td> Interactive C# Shell/REPL
+</td>
+<td> 4.0
+</td>
+<td> System.Reflection 4.0
+</td>
+<caption>
+</caption>
+<td> <b>Mono.CSharp</b>
+</td>
+<td> C# Compiler as a Service
+</td>
+<td> 2.0, 2.1 and 4.0.
+</td>
+<td> System.Reflection
+</td></tr></table>
+<p>In the next Mono release (after 2.10) the batch compilers (gmcs, smcs and dmcs) will be switched over entirely to IKVM.Reflection.   The commands will continue to exist as a shortcut to quickly select an API profile, but they will be merely front-ends to the <b>mcs</b> command with the proper mscorlib profile.   The compiler as a service, and the interactive shell will continue to be powered by the System.Reflection backend, as this is the only way of supporting dynamic code generation.
+</p><p>To test drive the new compiler back-end, just use the <b>mcs</b> command.  If you want to specify a specific SDK use the -sdk:PROFILE option.  Where profile is one of the profile directories (2.0, 2.1, 4.0 or any other that lives under $prefix/lib/mono).   Alternatively, pass the -libdir option to the compiler to specify a full path to your base assemblies.
+</p><p>Mono's C# compiler has historically used System.Reflection.Emit as its API to generate executables.   This has worked great in Mono for years, but poses one difficult challenge: it is not easy to make the compiler use an arbitrary mscorlib.dll and build against it.   Historically the "mcs" command created executables that referenced the 1.0 profile, the "gmcs" command created executables that references the 2.0 profile and "dmcs" command created executables that references the 4.0 profile as each compiler was built against those profiles.   Additionally, we had to extend System.Reflection to support creating mscorlib libraries, as Microsoft's implementation is not complete enough.    So the Reflection.Emit API turned out to be useful for many situations but had various problems that we could not work around easily.
+</p><p>Jeroen's IKVM.Reflection allowed us to keep most of the C# compiler codebase intact, while being able to use a new code generation library, one that we could easily fix, and would work the same in Mono and Microsoft's .NET.
+</p>
+<h2> <span class="mw-headline" id="C.23_Interactive_Shell"> C# Interactive Shell </span></h2>
+<p>The <a href="/index.php?title=CSharpRepl&amp;action=edit&amp;redlink=1" class="new" title="CSharpRepl (page does not exist)">C# REPL</a> now can be used as a program to run C# scripts in Unix.  Your Unix scripts can now contain as their first line the #!/usr/bin/csharp line which allows you to create C# scripts that can be treated like programs:
+</p>
+<pre>
+$ echo '#!/usr/bin/csharp' &gt; demo
+$ echo 'System.Console.WriteLine (10+2);' &gt;&gt; demo
+$ chmod +x demo
+$ ./demo
+12
+$ 
+</pre>
+<p>The <a href="/index.php?title=CSharpRepl&amp;action=edit&amp;redlink=1" class="new" title="CSharpRepl (page does not exist)">C# REPL</a> now also supports evaluating a single expression from the command line:
+</p>
+<pre>
+$ csharp -e 'Math.Sin(0.1);'
+0.0998334166468282
+$ csharp -e 'from l in System.IO.Directory.GetFiles (&quot;/bin&quot;) where l.Length &gt; 18 select l;'
+{ &quot;/bin/dbus-cleanup-sockets&quot;, &quot;/bin/showconsolefont&quot; }
+$
+</pre>
+<h2> <span class="mw-headline" id="Google_Native_Client_Support"> Google Native Client Support </span></h2>
+<p>This release adds support for <a href="http://code.google.com/p/nativeclient/" class="external text" rel="nofollow">Google's Native Client</a>, a technology that allows native code to be executed as a web application in a secure fashion.   Google's Native Client contains a native code verifier that enforces a set of programming patterns in the native code and enforces what the code can and can not do.   This allows developers to use native code while giving users of those technologies a peace of mind, knowing that the code will be executed in a security sandbox that wont let malicious code get access to confidential data, or compromise your system.
+</p><p>The support for Native Client allows Mono's virtual machine, garbage collector and Just-in-Time compiler to be used inside a Native Client sandbox.   
+</p><p>Google added JIT support to their Native Client engine to give users greater flexibility while using Native Client.   In the past, Native Client was limited to running statically compiled code (Mono on AOT mode), but this would prevent interesting scenarios, prevent System.Reflection.Emit, scripting languages and other dynamic cases from working.    We are incredibly excited about Google's work and Elijah's contributions on this area.
+</p><p>For the full details, see the <a href="http://www.mail-archive.com/mono-devel-list@lists.ximian.com/msg25494.html" class="external text" rel="nofollow">announcement</a>.
+</p>
+<h2> <span class="mw-headline" id="SGen_Garbage_Collector"> SGen Garbage Collector </span></h2>
+<p>New technical information on how SGen works has been posted by Mark Probst in a series of blog posts:
+</p>
+<ul><li> <a href="http://schani.wordpress.com/2010/12/20/sgen/" class="external text" rel="nofollow">Introduction to SGen</a>
+</li><li> <a href="http://schani.wordpress.com/2010/12/29/sgen-the-nursery/" class="external text" rel="nofollow">SGen's Nursery</a>
+</li><li> <a href="http://schani.wordpress.com/2011/01/10/sgen-the-major-collectors/" class="external text" rel="nofollow">SGen's Major Collectors</a>
+</li></ul>
+<p>Some new features:
+</p>
+<ul><li> Sgen now supports <a href="http://schani.wordpress.com/2011/01/10/sgen-the-major-collectors/" class="external text" rel="nofollow">mark and sweep block evacuation</a>
+</li></ul>
+<ul><li> SGen now supports the card-table optimization on x86-64, in addition to the x86 platform supported in Mono 2.8.   Card scanning has also been fine tuned in this release and should reduce garbage collection times on both x86 and x86-64.
+</li></ul>
+<ul><li> SGen now supports concurrent mark and sweeping.
+</li></ul>
+<ul><li> SGen now supports scanning thread stacks in a mostly precise fashion. This can be enabled using the MONO_GC_PARAMS=stack-mark=precise env variable.  The default is still conservative scanning.   
+</li></ul>
+<p>Precise stack scanning will improve how roots are determined in the managed stack, but still scans the unmanaged stack (for example, when you P/Invoke into a C library) conservatively.
+</p>
+<h2> <span class="mw-headline" id="New_Mono_Profiler"> New Mono Profiler </span></h2>
+<p>Mono has a new <a href="{{site.baseurl}}/Profiler" title="Profiler">Profiler</a> that obsoletes the old heap-shot, heap-buddy and logging profilers that were available in previous versions of Mono and provides a reliable, new alternative.   
+</p><p>This new profiler fixes many of the problems that older profilers had with multi-threaded applications, multi-appdomain applications and large volumes of data.
+</p><p>In addition, new GC events are now raised, allowing developers to write more advance profiling tools and GC tracking tools for their own applications.   For an example, see Alan McGovern's <a href="http://monotorrent.blogspot.com/2010/12/writing-profiler-for-mono.html" class="external text" rel="nofollow">Moonlight object profiler</a>.
+</p>
+<h2> <span class="mw-headline" id="VB_Compiler"> VB Compiler </span></h2>
+<p>The VB Compiler (vbnc) has been upgraded to use cecil/light instead of Reflection, which makes it possible to create assemblies with different runtime versions using only 1 compiler.   That is very similar to the changes that we did to the Mono C# Compiler detailed above.
+</p><p>By default vbnc will now compile to the 4.0 profile, and a new script (vbnc2) has been added to compile to the 2.0 profile.
+</p>
+<h2> <span class="mw-headline" id="GetFolderPath_Changes"> GetFolderPath Changes </span></h2>
+<p>Calling GetFolderPath on OSX now returns now OSX-specific directories when previously it returned <a href="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html" class="external text" rel="nofollow">XDG-values</a>, or the empty string.   
+</p><p>The following variables have changed their meaning:
+</p>
+<table border="1">
+<caption> GetFolderPath changes on OSX
+</caption>
+<tr>
+<td>Variable
+</td>
+<td>Old Value
+</td>
+<td>New Value
+</td></tr>
+<tr>
+<td>MyMusic
+</td>
+<td>$XDG_MUSIC_DIR, fallback to ~/Music
+</td>
+<td>~/Music
+</td></tr>
+<tr>
+<td>MyPictures
+</td>
+<td>$XDG_PICTURES_DIR, fallback to ~/Pictures
+</td>
+<td>~/Pictures
+</td></tr>
+<tr>
+<td>Fonts
+</td>
+<td>~/.fonts
+</td>
+<td>~/Library/Fonts
+</td></tr>
+<tr>
+<td>Favorites
+</td>
+<td>""
+</td>
+<td>~/Library/Favorites
+</td></tr>
+<tr>
+<td>ProgramFiles
+</td>
+<td>""
+</td>
+<td>/Applications
+</td></tr>
+<tr>
+<td>InternetCache
+</td>
+<td>""
+</td>
+<td>~/Library/Caches
+</td></tr></table>
+<p>In addition the SpecialFolderOptions mode is now used on Unix.   The DoNotVerify option is a no-op as historically Mono has not thrown exception on directories that did not exist.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Mono.Simd_Changes"> Mono.Simd Changes </span></h2>
+<p>We have added a few extra methods to Mono.Simd, new Shuffle methods on all vector classes allowing you to use SIMD to swap elements in your vectors:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4f Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4f v1, Vector4f v2, ShuffleSel sel<span style="color: #008000;">&#41;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4i Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4i v1, Vector4i v2, ShuffleSel sel<span style="color: #008000;">&#41;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4ui Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4ui v1, Vector4ui v2, ShuffleSel sel<span style="color: #008000;">&#41;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector2d Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2d v1, Vector2d v2, <span style="color: #6666cc; font-weight: bold;">int</span> sel<span style="color: #008000;">&#41;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector2l Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2l v1, Vector2l v2, <span style="color: #6666cc; font-weight: bold;">int</span> sel<span style="color: #008000;">&#41;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector2ul Shuffle <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2ul v1, Vector2ul v2, <span style="color: #6666cc; font-weight: bold;">int</span> sel<span style="color: #008000;">&#41;</span></pre>
+<p>There are new SIMD-powered methods for doing Vector data type conversions:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4f ConvertToFloat <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4i v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector2d ConvertToDouble <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4i v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4i ConvertToInt <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2d v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4i ConvertToIntTruncated <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2d v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4f ConvertToFloat <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector2d v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4i ConvertToInt <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4f v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector4i ConvertToIntTruncated <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4f v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> Vector2d ConvertToDouble <span style="color: #008000;">&#40;</span><span style="color: #0600FF; font-weight: bold;">this</span> Vector4f v0<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
+<p>Some of these operators were created in response the efforts to create a cross-platform vector math library that is accelerated on Mono, safe in Silverlight and unsafe/pointer-based on .NET or systems without SIMD support.   You can check <a href="https://github.com/mhutch/Mono.GameMath" class="external text" rel="nofollow">Mono.GameMath</a> from GitHub.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Runtime"> Runtime </span></h2>
+<ul><li> Added support for Assembly Remapping.
+</li></ul>
+<ul><li> Added a public API for accessing the GC.
+</li></ul>
+<ul><li> Added RuntimeWrappedException support.
+</li></ul>
+<ul><li> Fast stelemref, 2-3% perf boost on pystones (this is the operation used for array access).
+</li></ul>
+<ul><li> Runtime will no longer load assemblies from the current directory
+</li></ul>
+<ul><li> Add support for --debug=casts to ArrayTypeMismatchException.
+</li></ul>
+<ul><li> Improved tail-call support for the F# compiler.
+</li></ul>
+<ul><li> We now support direct thread local storage with LLVM's code generator on ARM platforms that support it.
+</li></ul>
+<ul><li> Added support for the short-hand "supportedRuntime" feature of .NET 4.0 to our runtime.   In addition to the old X.Y.Z format, we also support the short forms ("v4.0") in our config files.
+</li></ul>
+<ul><li> Removed the arbitrary limit of 1024 processes in GetProcesses.
+</li></ul>
+<ul><li> Full <a href="{{site.baseurl}}/AOT" title="AOT">ahead of time compilation</a> now knows about EqualityComparer&lt;T&gt; enabling many more LINQ scenarios to work on devices that do not have JIT support.
+</li></ul>
+<ul><li> Added the new Monitor.TryEnter overloads from the 4.0 profile.
+</li></ul>
+<ul><li> Improved the Mono runtime's sandbox: better verifier checks, more fixes from fuzzing.
+</li></ul>
+<ul><li> New document on how to <a href="{{site.baseurl}}/CoreClrHowTo" title="CoreClrHowTo">configure Mono to create your own sandboxed execution system</a>.
+</li></ul>
+<ul><li> Many class library and runtime fixes to improve our compatibility with Microsoft's CLR derives from the Silverlight test suite that we received from Microsoft to improve Moonlight.
+</li></ul>
+<ul><li> Mono has better support for out-of-memory conditions.
+</li></ul>
+<ul><li> ARM backends supports frame pointer elimination.
+</li></ul>
+<h3> <span class="mw-headline" id="New_GC_heap_walk_API"> New GC heap walk API </span></h3>
+<p>The new GC heap walk API can be used by users embedding Mono or writing custom <a href="{{site.baseurl}}/Profiler" title="Profiler">Mono profilers</a>:
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">/**
+ * mono_gc_walk_heap:
+ * @flags: flags for future use
+ * @callback: a function pointer called for each object in the heap
+ * @data: a user data pointer that is passed to callback
+ *
+ * This function can be used to iterate over all the live objects in the heap:
+ * for each object, @callback is invoked, providing info about the object's
+ * location in memory, its class, its size and the objects it references.
+ * The object references may be buffered, so the callback may be invoked
+ * multiple times for the same object: in all but the first call, the size
+ * argument will be zero.
+ * Note that this function can be only called in the #MONO_GC_EVENT_PRE_START_WORLD
+ * profiler event handler.
+ *
+ * Returns: a non-zero value if the GC doesn't support heap walking
+ */</span>
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">int</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>MonoGCReferences<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span>MonoObject <span style="color: #339933;">*</span>obj<span style="color: #339933;">,</span> MonoClass <span style="color: #339933;">*</span>klass<span style="color: #339933;">,</span> 
+                                 <span style="color: #993333;">uintptr_t</span> size<span style="color: #339933;">,</span> <span style="color: #993333;">uintptr_t</span> num<span style="color: #339933;">,</span> 
+                                 MonoObject <span style="color: #339933;">**</span>refs<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+<span style="color: #993333;">int</span> mono_gc_walk_heap        <span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> flags<span style="color: #339933;">,</span> MonoGCReferences callback<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h3> <span class="mw-headline" id="New_Hooks_for_Assembly_Resolution"> New Hooks for Assembly Resolution </span></h3>
+<p>New API to hook into the DllImport library and function resolution that can be used by users embedding Mono on their application, or using it on embedded system or platforms that do not support dynamic libraries:
+</p>
+<pre class="c" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">/* mono-dl-fallback.h */</span>
+<span style="color: #000000; font-weight: bold;">enum</span> <span style="color: #009900;">&#123;</span>
+	MONO_DL_LAZY  <span style="color: #339933;">=</span> <span style="color: #0000dd;">1</span><span style="color: #339933;">,</span>
+	MONO_DL_LOCAL <span style="color: #339933;">=</span> <span style="color: #0000dd;">2</span><span style="color: #339933;">,</span>
+	MONO_DL_MASK  <span style="color: #339933;">=</span> <span style="color: #0000dd;">3</span>
+<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">/*
+ * This is the dynamic loader fallback API
+ */</span>
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">struct</span> MonoDlFallbackHandler MonoDlFallbackHandler<span style="color: #339933;">;</span>
+&#160;
+<span style="color: #808080; font-style: italic;">/*
+ * The &quot;err&quot; variable contents must be allocated using g_malloc or g_strdup
+ */</span>
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">void</span><span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>MonoDlFallbackLoad<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">const</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>name<span style="color: #339933;">,</span> <span style="color: #993333;">int</span> flags<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>err<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>user_data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">void</span><span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>MonoDlFallbackSymbol<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">void</span> <span style="color: #339933;">*</span>handle<span style="color: #339933;">,</span> <span style="color: #993333;">const</span> <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>name<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>err<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>user_data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">void</span><span style="color: #339933;">*</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">*</span>MonoDlFallbackClose<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#40;</span><span style="color: #993333;">void</span> <span style="color: #339933;">*</span>handle<span style="color: #339933;">,</span> <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>user_data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+MonoDlFallbackHandler <span style="color: #339933;">*</span>
+mono_dl_fallback_register <span style="color: #009900;">&#40;</span>MonoDlFallbackLoad load_func<span style="color: #339933;">,</span> 
+                           MonoDlFallbackSymbol symbol_func<span style="color: #339933;">,</span>
+                           MonoDlFallbackClose close_func<span style="color: #339933;">,</span> 
+                           <span style="color: #993333;">void</span> <span style="color: #339933;">*</span>user_data<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&#160;
+<span style="color: #993333;">void</span>    
+mono_dl_fallback_unregister <span style="color: #009900;">&#40;</span>MonoDlFallbackHandler <span style="color: #339933;">*</span>handler<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+<h3> <span class="mw-headline" id="Android_Specific_Updates"> Android Specific Updates </span></h3>
+<p>Several updates to Mono's runtime to support Android:
+</p>
+<ul><li> Add TLS and HTTPS support for Android by calling back into Java to fetch the system certificates.
+</li><li> Add support for bundling symbol files on embedded images.
+</li><li> Add support for Android's TimeZone "ye" file format.
+</li></ul>
+<h3> <span class="mw-headline" id="OSX_Updates"> OSX Updates </span></h3>
+<p>There were various updates specifically for MacOS X in this release of Mono, bringing Mono on OSX closer to the Linux port:
+</p>
+<ul><li> The <a href="{{site.baseurl}}/Mono_LLVM" title="Mono LLVM">Mono_LLVM</a> backend for the JIT is now enabled in our OSX builds
+</li><li> Added support for 32 bit PIDs in OSX.
+</li><li> Process lookup by ID now works on OSX.
+</li><li> Added support for --debug=casts to OSX.
+</li><li> Added AOT support to OSX.
+</li><li> Fixes guard interrupt protection on OSX (test finally_guard.exe now works)
+</li><li> DriveInfo.GetDrives returns correct values now on OSX.
+</li><li> Add support for symlinked frameworks (to support embedding Mono)
+</li></ul>
+<h3> <span class="mw-headline" id="Improved_Socket_and_Async_Stack"> Improved Socket and Async Stack </span></h3>
+<p>Socket asynchronous operations were ultimately a <i>Delegate.BeginInvoke</i> call which ran a lot of remoting-related code. Now those asynchronous operations are sent directly to the IO pool, saving memory and CPU time.
+</p><p>Until this version of Mono, SocketAsyncEventArgs support was using one thread per operation. The code has been rewritten to take full advantage of this model for doing asynchronous IO on sockets.
+</p>
+<h2> <span class="mw-headline" id="Cecil.2FLight"> Cecil/Light </span></h2>
+<p>The <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a> API has been made lighter and faster, at the expense of breaking source code compatibility.   This is not a problem for users as Cecil was never a stable API, and as such, users were encouraged to use their own copies of the Cecil library, instead of depending on the GAC, following our own <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines:Application_Deployment</a>.
+</p><p>All of the tools in Mono that used Cecil have been updated to Cecil/light, and can be used as a reference to understand what changes are necessary to your own source code.
+</p>
+<h2> <span class="mw-headline" id="Gendarme_2.10"> <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> 2.10 </span></h2>
+<ul><li> Faster than ever thanks to <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a>/light update;
+</li><li> 33 new rules (total 253), 30 from students participating in <a href="{{site.baseurl}}/GoogleCodeIn" title="GoogleCodeIn"> Google Code In 2010</a>;
+</li><li> New rule categories:
+<ul><li> Interoperability.Com (10 rules)
+</li><li> NUnit&#160;: rules for unit tests (4 rules)
+</li><li> Gendarme&#160;: rules on rules (4 rules); and 
+</li><li> Globalization (2 rules)
+</li></ul>
+</li><li> available in <b>mono-tools</b> package;
+</li><li> more details in <a href="https://github.com/Iristyle/mono-tools/raw/master/gendarme/NEWS" class="external text" rel="nofollow">NEWS</a> file.
+</li></ul>
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="ASP.NET_MVC3_Support"> ASP.NET MVC3 Support </span></h2>
+<p>See below for notes on Razor and WebPages.
+</p><p>Although ASP.NET MVC3 is open source and licensed under the terms of the MS-PL license, it takes a few dependencies on new libraries that are not open source nor are they part of the Microsoft.NET Framework.   
+</p><p>At this point we do not have open source implementations of those libraries, so we can not ship the full ASP.NET MVC3 stack with Mono (We still ship ASP.NET MVC 1 and MVC 2 with Mono for your deployment enjoyment).
+</p><p>This Mono release however has enough bug fixes and patches that you will be able to run ASP.NET MVC3 sites with it.   
+</p><p>Since these new dependencies were not part of Microsoft.NET, they typically are referenced in your project and deployed in the bin/ directory of your ASP.NET site.   Make sure that you remove the Microsoft.Web.Infrastructure.dll library from your site when deploying to Mono, to allow Mono to use its own implementation that integrates ASP.NET MVC3 with Mono.
+</p><p>To run your web sites, use our 4.0 profile programs:
+</p>
+<ul><li> xsp4 for quick testing
+</li><li> mod-mono-server4.exe for Apache hosting
+</li><li> fastcgi-mono-server4.exe for FastCGI servers
+</li></ul>
+<h3> <span class="mw-headline" id="Razor_and_WebPages"> Razor and WebPages </span></h3>
+<p>If you downloaded the Microsoft binaries for ASP.NET MVC3, you will have a few new libraries, the WebPages framework that allows simple web sites to be built and the <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx" class="external text" rel="nofollow">Razor template engine</a>.
+</p><p>You can use both of those binaries with Mono 2.10.
+</p><p>It is possible to get up and running with Razor and cshtml just by installing this release and running xsp4 on any directory that contains the bin/ assemblies and creating a .cshtml file.
+</p>
+<h3> <span class="mw-headline" id="Running_Razor.2C_MVC3_and_WebPages"> Running Razor, MVC3 and WebPages </span></h3>
+<p>To get this stack running, you will need to copy Microsoft's MVC3 libraries into your bin directory:
+</p>
+<ul><li> System.Web.Mvc.dll
+</li><li> System.Web.Razor.dll
+</li><li> System.Web.WebPages.Deployment.dll
+</li><li> System.Web.WebPages.dll
+</li></ul>
+<p>It is very important that you remove the Microsoft.Web.Infrastructure.dll from the bin directory for the above to work.
+System.Web.WebPages.Razor.dll
+</p>
+<h2> <span class="mw-headline" id="WebMatrix.Data"> WebMatrix.Data </span></h2>
+<p>An implementation of <a href="http://msdn.microsoft.com/en-us/library/webmatrix.data(v=VS.99).aspx" class="external text" rel="nofollow">WebMatrix.Data</a> is now available in Mono.   This is a crazy delicious API for accessing databases from your managed code that takes advantage of C# 4.0's dynamic features.
+</p><p>For a sample, see Jeremie's blog on <a href="http://blog.neteril.org/2011/01/22/webmatrix-data-on-mono/" class="external text" rel="nofollow">WebMatrix.Data on Mono</a>, but this allows code to access databases to be written like this:
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">WebMatrix.Data</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> WebMatrixSample
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #0600FF; font-weight: bold;">var</span> db <span style="color: #008000;">=</span> Database<span style="color: #008000;">.</span><span style="color: #0000FF;">OpenConnectionString</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Data Source=sqlite.db;Version=3;&quot;</span>, <span style="color: #666666;">&quot;Mono.Data.Sqlite&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">var</span> result <span style="color: #008000;">=</span> db<span style="color: #008000;">.</span><span style="color: #0000FF;">Query</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;select * from Phonebook where Number glob '0*'&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #0600FF; font-weight: bold;">foreach</span> <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">dynamic</span> row <span style="color: #0600FF; font-weight: bold;">in</span> result<span style="color: #008000;">&#41;</span>
+            Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;({0:D2}) {1}: [{2}]&quot;</span>, row<span style="color: #008000;">.</span><span style="color: #0000FF;">Id</span>, row<span style="color: #008000;">.</span><span style="color: #0000FF;">Name</span>, row<span style="color: #008000;">.</span><span style="color: #0000FF;">Number</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">var</span> entry <span style="color: #008000;">=</span> db<span style="color: #008000;">.</span><span style="color: #0000FF;">QuerySingle</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;select * from Phonebook where Name = @0&quot;</span>, <span style="color: #666666;">&quot;Rupert&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Rupert number is {0} with id {1}&quot;</span>, entry<span style="color: #008000;">.</span><span style="color: #0000FF;">Number</span>, entry<span style="color: #008000;">.</span><span style="color: #0000FF;">Id</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        Console<span style="color: #008000;">.</span><span style="color: #0000FF;">WriteLine</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;but really his number is just {0}&quot;</span>,
+                           db<span style="color: #008000;">.</span><span style="color: #0000FF;">QueryValue</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;select Number from Phonebook where Name = @0&quot;</span>, <span style="color: #666666;">&quot;Rupert&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #008080; font-style: italic;">// And let's add my bank number</span>
+        db<span style="color: #008000;">.</span><span style="color: #0000FF;">Execute</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;insert into Phonebook(Name, Number) values (@0, @1)&quot;</span>, <span style="color: #666666;">&quot;Bank&quot;</span>, <span style="color: #666666;">&quot;01xxxxxxx&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>This is a different style of programming than the ones provided by LINQ to SQL or Sqlite-net (with deep C# integration) or object relationship mappers like NHibernate and Entity Frameworks.   This a more bare-bones approach to database access, but also with some convenience methods like the use of C# dynamic to access column results ("row.Name" for example) and params values (the safe call to db.Execute escaping the values inserted).
+</p><p>For a terse introduction see David Fowler's <a href="http://weblogs.asp.net/davidfowler/archive/2010/08/03/microsoft-data-dll-a-re-introduction.aspx" class="external text" rel="nofollow">re-introducing WebMatrix.Data</a>.
+</p>
+<h2> <span class="mw-headline" id="Languages"> Languages </span></h2>
+<p>Starting with Mono 2.10, we are bundling the open source F# compilers and tools, and the <a href="http://ironruby.net" class="external text" rel="nofollow">IronRuby</a> and <a href="http://ironpython.net/" class="external text" rel="nofollow">IronPython</a> systems in our Linux packages as well as in our Mac installer.
+</p><p>For F# we ship the <tt>fsc</tt> command line compiler and the <tt>fsi</tt> interactive shell.
+</p><p>For IronPython and IronRuby look for the <tt>ipy</tt> and <tt>irb</tt> commands in your installation.
+</p><p><b>note:</b> as of RC2 we have not published IronPython, it will be on the final release.
+</p>
+<h2> <span class="mw-headline" id="Other_Changes"> Other Changes </span></h2>
+<ul><li> Winforms bug fixes 
+</li><li> Updates to msbuild
+</li><li> Improved Moonlight support, and faster build times for Moonlight
+</li><li> Unified MonoTouch/Monodroid runtime support
+</li><li> WCF:
+<ul><li> System.ServiceModel.Discovery
+</li><li> WCF 4.0-style configuration
+</li></ul>
+</li><li> ASP.NET 4.0:
+<ul><li> BaseMenuRenderer
+</li></ul>
+</li><li> Sytem.Xaml: significant improvements on serialization of complex types and properties in .NET compatible format. Now it can be built on mobile profiles.
+</li><li> More 4.0 APIs implemented
+</li><li> Version tolerant serialization
+</li><li> C# 4.0 significantly improved based on the Microsoft test suites for Silverlight
+</li></ul>
+<h1> <span class="mw-headline" id="Installing_Mono_2.10">Installing Mono 2.10 </span></h1>
+<p><b>Binary Packages and Source Code Downloads:</b>
+</p>
+<pre>Source code and pre-compiled packages for Linux, Solaris, 
+MacOS X and Windows is available from our web site from 
+the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+</pre>
+<p><b>Quick source code installation:</b>
+</p>
+<pre>If we have no packages for your platform, installing from 
+source code is very simple.   
+</pre>
+<p>Compile libgdiplus to support System.Drawing:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf libgdiplus-<span style="color: #000000;">2.10</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> libgdiplus-<span style="color: #000000;">2.10</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<p>Then compile Mono itself:
+</p>
+<pre class="bash" style="font-family:monospace;">    $ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf mono-<span style="color: #000000;">2.10</span>.tar.gz
+    $ <span style="color: #7a0874; font-weight: bold;">cd</span> mono-<span style="color: #000000;">2.10</span>
+    $ .<span style="color: #000000; font-weight: bold;">/</span>configure
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span>
+    $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
+<h1> <span class="mw-headline" id="Bug_Fixes"> Bug Fixes </span></h1>
+<ul><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=317488" class="external text" rel="nofollow">317488</a> problem passing abstract methods to delegates
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=318677" class="external text" rel="nofollow">318677</a> remove_block_if_useless trips on valid IL
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=318750" class="external text" rel="nofollow">318750</a> Setting thread's current culture to non-serializable CultureInfo causes SerializationException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=324144" class="external text" rel="nofollow">324144</a> [2.0] deserialization interop issue with missing members
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=384127" class="external text" rel="nofollow">384127</a> MethodBuilder.GetGenericArguments must return null if method is not generic
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=456234" class="external text" rel="nofollow">456234</a> ODBC utf8: incorrect OdbcDataReader.GetValue() result for VARCHAR  if byte size &gt;=255
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=467221" class="external text" rel="nofollow">467221</a> [PATCH] asp.net security trimming / authorization not working
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=479061" class="external text" rel="nofollow">479061</a> DateTime.TryParse fails for ISO8601 format with IFormatProvider and flags specified
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=504085" class="external text" rel="nofollow">504085</a> MCS produces invalid images for modules
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=515938" class="external text" rel="nofollow">515938</a> [SRE] Mono crashes instead of NRE when emitting wrong attribute arguments
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=516960" class="external text" rel="nofollow">516960</a> [PATCH] DataGridView MoveCurrentCell can attempt to access Column index -1
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=541815" class="external text" rel="nofollow">541815</a> Unmanaged exception when compiling and not finding a reference
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=549807" class="external text" rel="nofollow">549807</a> WaitHandle.WaitAny returns WAIT_IO_COMPLETION (an impossible return value for .NET)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=557277" class="external text" rel="nofollow">557277</a> [PATCH] WM_SETFOCUS is sent before Keyboard Focus is changed.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560200" class="external text" rel="nofollow">560200</a> [verifier] abort in type_to_eval_stack_type while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560327" class="external text" rel="nofollow">560327</a> [verifier] abort in mono_class_inflate_generic_class on bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560334" class="external text" rel="nofollow">560334</a> [verifier] abort in mono_method_get_signature_full on bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560346" class="external text" rel="nofollow">560346</a> [verifier] SIGSEGV in mono_class_inflate_generic_method_full on a bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560359" class="external text" rel="nofollow">560359</a> [verifier] abort in mono_metadata_decode_row on bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=560834" class="external text" rel="nofollow">560834</a> [verifier] SIGSEGV in method_from_methodspec on a bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=561667" class="external text" rel="nofollow">561667</a> Disposing a SqlCommand should dispose associated SqlDataReaders
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=561728" class="external text" rel="nofollow">561728</a> [verifier] SIGSEGV in find_method_in_metadata on a bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=562009" class="external text" rel="nofollow">562009</a> [verifier] SIGSEGV in mono_method_signature on a bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=562150" class="external text" rel="nofollow">562150</a> abort in compute_class_bitmap while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=562156" class="external text" rel="nofollow">562156</a> abort in mono_method_get_vtable_slot while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=562771" class="external text" rel="nofollow">562771</a> abort in mono_method_to_ir (mono_method_check_context_used) while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=563956" class="external text" rel="nofollow">563956</a> abort in mono_metadata_decode_row_col while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=568004" class="external text" rel="nofollow">568004</a> [verifier] abort in mono_marshal_get_remoting_invoke_with_check while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=568025" class="external text" rel="nofollow">568025</a> [verifier] sigsegv/infinite recursion in mono_class_implement_interface_slow
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=569542" class="external text" rel="nofollow">569542</a> [verifier] SIGSEGV in find_method_in_class on a bad assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=569543" class="external text" rel="nofollow">569543</a> SqlClient using Guid in parameter
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=572223" class="external text" rel="nofollow">572223</a> sigsegv in mono_class_get_virtual_methods while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=579837" class="external text" rel="nofollow">579837</a> System.Configuration.Save() method throws an exception when trying to add an authorization section to an existing Web.config
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=582732" class="external text" rel="nofollow">582732</a> DataSet method WriteXml fails when DataColumn has extended properties and MaxLength property is set. ReadXml does not read extended properties also.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=584833" class="external text" rel="nofollow">584833</a> SqlCommandBuilder.DeriveParameters() does not find the correct stored procedure
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=592981" class="external text" rel="nofollow">592981</a> UnixSignal.WaitAny not interrupted when exiting
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=595044" class="external text" rel="nofollow">595044</a> ERROR:method-to-ir.c:8063:mono_method_to_ir: assertion failed: (!(field-&gt;type-&gt;attrs &amp; FIELD_ATTRIBUTE_LITERAL))
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=597072" class="external text" rel="nofollow">597072</a> abort in create_jit_info while JITting a verified method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=598228" class="external text" rel="nofollow">598228</a> [verifier] SIGSEGV in mono_stringify_assembly_name
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=604218" class="external text" rel="nofollow">604218</a> SIGABRT in ERROR:class.c:6134:mono_class_get_field_default_value
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=604486" class="external text" rel="nofollow">604486</a> JIT shows no respect for DebuggableAttribute
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=605033" class="external text" rel="nofollow">605033</a> program crashes if the  App.conf contains the &lt;sharedListeners&gt; section.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=605092" class="external text" rel="nofollow">605092</a> System.Timers.Timer.TimerComparer fails to compare arguments
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=605340" class="external text" rel="nofollow">605340</a> Unexpected exception on calling String.LastIndexOf on empty strings with startIndex=-1
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=605936" class="external text" rel="nofollow">605936</a> System.InvalidProgramException: Invalid IL code in (wrapper delegate-invoke)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=606809" class="external text" rel="nofollow">606809</a> Soft debugger immediately disconnects
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=613087" class="external text" rel="nofollow">613087</a> Unable to convert SqlInt64 to SqlDecimal
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=620099" class="external text" rel="nofollow">620099</a> insert_breakpoint error on unreachable code
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=621475" class="external text" rel="nofollow">621475</a> [PATCH] TextBox and RichTextBox crash on click when text value will be set to null
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=624849" class="external text" rel="nofollow">624849</a> BlockingCollection&lt;T&gt; takes 100% cpu when blocking for an element
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=624915" class="external text" rel="nofollow">624915</a> [PATCH] calling ExpandAll() on a TreeView contain in a small panel can throw ArgumentOutOfRangeException.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=627889" class="external text" rel="nofollow">627889</a> IOMAP profiler: undefined symbol: monoeg_g_hash_table_new
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=631315" class="external text" rel="nofollow">631315</a> NTLM authentication problem with multiple simultaneous requests
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=631810" class="external text" rel="nofollow">631810</a> [PATCH] Modal Form closing event raised by button cannot be canceled
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=632224" class="external text" rel="nofollow">632224</a> MD deadlocks when debugging
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=633248" class="external text" rel="nofollow">633248</a> [verifier] SIGABRT in mono_local_regalloc
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=635335" class="external text" rel="nofollow">635335</a> Missing method System.Data.Common.DbConnection::EnlistTransaction(Transaction) when using a .NET 2.0 library and compiling with dmcs
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636219" class="external text" rel="nofollow">636219</a> WebRequest fails because it sends a Content-Length header for a GET after a redirect
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636475" class="external text" rel="nofollow">636475</a> webcontrols/web_adrotator.aspx test fails
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636500" class="external text" rel="nofollow">636500</a> [Moonlight] Web Service Reference doesn't work
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636517" class="external text" rel="nofollow">636517</a> System.Net.Dns doesn't resolve any IPv6 addresses
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636709" class="external text" rel="nofollow">636709</a> [Regression] xsp2 IDs are not created correctly.  Not unique in webcontrols/web_checkboxlist.aspx
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636794" class="external text" rel="nofollow">636794</a> Crash in mono runtime
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636841" class="external text" rel="nofollow">636841</a> [Regression] System.InvalidOperationException when accessing webservice/TestService.asmx
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=636966" class="external text" rel="nofollow">636966</a> cannot P/Invoke with ordinal EntryPoint on Windows
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=637078" class="external text" rel="nofollow">637078</a> DriveInfo.GetDrives() returns paths with escaped octal characters in them
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=637680" class="external text" rel="nofollow">637680</a> Running console or GTK apps remotely results in stack trace
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=639098" class="external text" rel="nofollow">639098</a> Application project that references library projects does not build
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=639656" class="external text" rel="nofollow">639656</a> [Regression] Blogengine hangs when accessing certain pages
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=639939" class="external text" rel="nofollow">639939</a> [PATCH] X11 keyboarding - XLookupString can sometimes return corrupt buffer.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640288" class="external text" rel="nofollow">640288</a> Missing ReflectionTypeLoadException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640377" class="external text" rel="nofollow">640377</a> Cannot do coverage analysis using monocov
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640687" class="external text" rel="nofollow">640687</a> Runtime should wrap non System.Exception derived exceptions in RuntimeWrappedException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640688" class="external text" rel="nofollow">640688</a> Serialization shouldn't call Equals/GetHashCode on objects
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640702" class="external text" rel="nofollow">640702</a> MethodBase.GetCurrentMethod doesn't work inside a DynamicMethod
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640749" class="external text" rel="nofollow">640749</a> Socket.LocalEndPoint returns null after non-blocking connect
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=640780" class="external text" rel="nofollow">640780</a> TypeLoadException when implementing interface with static method in dynamic assembly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=641449" class="external text" rel="nofollow">641449</a> Admin links missing in BlogEngine (both xsp and mod_mono)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=641535" class="external text" rel="nofollow">641535</a> Wrong Marshal.SizeOf() for structs with explicity layout
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=641590" class="external text" rel="nofollow">641590</a> Calling FieldInfo.GetValue of a void* field aborts mono
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=642130" class="external text" rel="nofollow">642130</a> Activator.CreateInstance Method (Type, Object[]) does not work with compiler service (Mono.CSharp)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=642193" class="external text" rel="nofollow">642193</a> WebResponse::get_Headers not implemented
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=642625" class="external text" rel="nofollow">642625</a> SIGSEGV when running gdb in a directory on which we have no write permission
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=642780" class="external text" rel="nofollow">642780</a> Mono debugger thread crashes when app exits quickly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=642985" class="external text" rel="nofollow">642985</a> Deadlock in io-layer when accessing files from multiple threads
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643298" class="external text" rel="nofollow">643298</a> [Regression] AspNetForums crashes when adding a thread
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643475" class="external text" rel="nofollow">643475</a> Socket.ExclusiveAddressUse not working with UDP
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643763" class="external text" rel="nofollow">643763</a> [PATCH] BuildProvider.SetVirtualPath is not called when BuildProvider has no BuildProviderAppliesToAttribute
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643847" class="external text" rel="nofollow">643847</a> RequiredFieldValidator validator incorrectly prevents postback from RadToolBar
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643890" class="external text" rel="nofollow">643890</a> DeclaringType returns incorrect value for inflated types
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=643910" class="external text" rel="nofollow">643910</a> DriveInfo.GetDrives returns incorrect values
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644648" class="external text" rel="nofollow">644648</a> CryptoStream does not call FlushFinalBlock when in CryptoStreamMode.Read
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644654" class="external text" rel="nofollow">644654</a> CryptoStream violates IDispose pattern
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644660" class="external text" rel="nofollow">644660</a> Stream.Dispose() does not call GC.SuppressFinalize
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644740" class="external text" rel="nofollow">644740</a> CryptoStream fails with CryptoTransform where the OutputBlockSize &lt; InputBlockSize
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644816" class="external text" rel="nofollow">644816</a> enableSsl is not supported in system.net/mailSettings/smtp/network section of configuration
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644915" class="external text" rel="nofollow">644915</a> Mono ignores constraint load failures
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644933" class="external text" rel="nofollow">644933</a> Mono 2.6.4 fails to compile parallel
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=644935" class="external text" rel="nofollow">644935</a> Missing constraints check
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645189" class="external text" rel="nofollow">645189</a> Assembly.LoadWithPartialName completely non-functional
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645193" class="external text" rel="nofollow">645193</a> BinaryWriter on Console standard output no longer works correctly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645217" class="external text" rel="nofollow">645217</a> ObjectMirror vs ThreadStaticAttribute
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645675" class="external text" rel="nofollow">645675</a> Socket.Complete throws InvalidOperationException on Queue.Dequeue
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645765" class="external text" rel="nofollow">645765</a> Missing support for hoisted parameters in the Expression Tree interpreter
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=645770" class="external text" rel="nofollow">645770</a> Expression Tree interpreter fails for custom delegate types
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646314" class="external text" rel="nofollow">646314</a> Unable to compile assembly with AOT
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646479" class="external text" rel="nofollow">646479</a> Dynamic control lifecycle inconsistency between Mono and MS.NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646505" class="external text" rel="nofollow">646505</a> BoundField databinding inconsistency between Mono and MS.NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646556" class="external text" rel="nofollow">646556</a> Binary serialization/deserialization do not work correctly if object contains nullable DateTime type.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646744" class="external text" rel="nofollow">646744</a> [Flow-analysis] internal error when doing flow analysis for large structs
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646810" class="external text" rel="nofollow">646810</a> Method not found: 'System.Web.Security.FormsAuthentication.EnableFormsAuthentication'.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646941" class="external text" rel="nofollow">646941</a> xbuild does not build dmcs.csproj
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=646984" class="external text" rel="nofollow">646984</a> Stylesheet inclusion inconsistency between Mono and MS.NET
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647204" class="external text" rel="nofollow">647204</a> IPC implementation doesn't delete socket file
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647248" class="external text" rel="nofollow">647248</a> SIGSEGV when calling a managed handler
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647267" class="external text" rel="nofollow">647267</a> Wrong Size of a Struct with Marshal Sizeof
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647464" class="external text" rel="nofollow">647464</a> Debugger segfaults when hitting a breakpoint on sse4.2 enabled systems
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647918" class="external text" rel="nofollow">647918</a> Mono 2.8 on openSUSE 11.3 crashes (all applications)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=647948" class="external text" rel="nofollow">647948</a> null stream.BaseStream Close/Dispose not throwing exception (unlike MS .Net)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648130" class="external text" rel="nofollow">648130</a> Calling Timer.Change(Infinite, Infinite) leaks timer objects on the scheduler
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648252" class="external text" rel="nofollow">648252</a> BinarySerialization: DateTime is off by the timezone offset between .NET and mono
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648391" class="external text" rel="nofollow">648391</a> TypeBuilder.GetConstructor does not check ctor argument
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648407" class="external text" rel="nofollow">648407</a> System.Web.HttpCachePolicy doesn't use contents of AppendCacheExtension(...)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648432" class="external text" rel="nofollow">648432</a> HttpResponse.WriteFile should MapPath filename unless is absolute
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648439" class="external text" rel="nofollow">648439</a> HttpRequest.ServerVariables[&quot;QUERY_STRING&quot;] should not be prefixed by&#160;?
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648616" class="external text" rel="nofollow">648616</a> Nested generic type field type is emitted incorrectly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648725" class="external text" rel="nofollow">648725</a> GetGenericArguments is loading to aggressively
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648828" class="external text" rel="nofollow">648828</a> Sorting arrays of unequal lengths causes unexpected exception
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648831" class="external text" rel="nofollow">648831</a> Thread.MemoryBarrier() needs to be implemented on x86 and x86-64
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648832" class="external text" rel="nofollow">648832</a> System.ArgumentException when inspecting exception strack trace text
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648833" class="external text" rel="nofollow">648833</a> GetArrayRank is loading to aggressively
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648838" class="external text" rel="nofollow">648838</a> [Regression?] error: 'SIGTRAP' undeclared when cross-compiling with mingw
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=648901" class="external text" rel="nofollow">648901</a> Routing in MVC slightly broken.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649014" class="external text" rel="nofollow">649014</a> Missing castclass type check
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649017" class="external text" rel="nofollow">649017</a> castclass emit does not work with nested types
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649034" class="external text" rel="nofollow">649034</a> UpdateProgress doesn't find UpdatePanel inside a userercontrol
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649159" class="external text" rel="nofollow">649159</a> System.Threading.Monitor does not contain TryEnter(*, ref bool) methods
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649198" class="external text" rel="nofollow">649198</a> [PATCH] Initial implementation of System.Web.UI.MasterPage.InstantiateInContentPlaceHolder
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649233" class="external text" rel="nofollow">649233</a> stfld does not work with TypeBuilderOn* instances
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649237" class="external text" rel="nofollow">649237</a> Missing The specified field must be declared on the generic type definition
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649464" class="external text" rel="nofollow">649464</a> System.IO.File.ReadLines disposes the StreamReader in the middle of reading
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649522" class="external text" rel="nofollow">649522</a> GetField is loading to aggressively
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649527" class="external text" rel="nofollow">649527</a> MethodBase::Attributes is loading to aggressively
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649546" class="external text" rel="nofollow">649546</a> RadAjaxManagerProxy in WebUserControl problem
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649551" class="external text" rel="nofollow">649551</a> RadAsyncUpload does not work under mono; Possibly a Base64 serialization problem
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649889" class="external text" rel="nofollow">649889</a> System.ArithmeticException instead of OverflowException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=649994" class="external text" rel="nofollow">649994</a> PrinterSettings.InstalledPrinters throws an exception
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650050" class="external text" rel="nofollow">650050</a> ListItem does not render non-standard Attributes
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650407" class="external text" rel="nofollow">650407</a> AOT compile asserts when dependent assemblies are not available
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650439" class="external text" rel="nofollow">650439</a> poor performance (and wrong arithmetic result) of multi-thread code
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650779" class="external text" rel="nofollow">650779</a> File.Move with a symlink with wrong or non existing target fails
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650806" class="external text" rel="nofollow">650806</a> ./configure in ./mcs/ selects default profile
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650916" class="external text" rel="nofollow">650916</a> Incorrect Error: Could not decode method header
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650936" class="external text" rel="nofollow">650936</a> [verifier] SIGABRT in compute_class_bitmap
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=650979" class="external text" rel="nofollow">650979</a> Wrong exit code returned from parent process
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651251" class="external text" rel="nofollow">651251</a> Assertion: should not be reached at debugger-agent.c:4328
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651287" class="external text" rel="nofollow">651287</a> [verifier] SIGSEGV in mono_class_is_assignable_from
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651546" class="external text" rel="nofollow">651546</a> Monitor.Enter leaves orphaned locks when threads are aborted
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651593" class="external text" rel="nofollow">651593</a> Mono differs significantly from .NET FX when processing URL routes in System.Web.Routing
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651647" class="external text" rel="nofollow">651647</a> XmlSerializer is too picky
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=651682" class="external text" rel="nofollow">651682</a> [verifier] SIGABRT in mono_metadata_decode_row
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=652188" class="external text" rel="nofollow">652188</a> init_type_builder_generics is inside of DISABLE_REFLECTION_EMIT, but is needed even when emit is disabled.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=652590" class="external text" rel="nofollow">652590</a> * Assertion at debugger-agent.c:4087, condition `sp' not met
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=652807" class="external text" rel="nofollow">652807</a> [Regression] Asp.Net app run locally throws Type does not match the valueKind error
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=652952" class="external text" rel="nofollow">652952</a> MakeGenericMethod does not work on generic type definitions
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653013" class="external text" rel="nofollow">653013</a> Ajax request problem from controls within RadGrid
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653192" class="external text" rel="nofollow">653192</a> Using a relative path for the MasterPageFile throws an exception
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653211" class="external text" rel="nofollow">653211</a> * Assertion at class.c:5583, condition `!klass-&gt;parent-&gt;exception_type' not met
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653564" class="external text" rel="nofollow">653564</a> Erroneous value returned by Environment.UserName when running as root with su
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653842" class="external text" rel="nofollow">653842</a> A case that runtime crashed if startup --llvm --gc=sgen, using generic and struct.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=653928" class="external text" rel="nofollow">653928</a> From thread-pool thread, QueueUserWorkItem schedules onto the same thread
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654058" class="external text" rel="nofollow">654058</a> FixedBufferAttribute.Length has wrong value in fixed fields.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654136" class="external text" rel="nofollow">654136</a> Insufficient validation of generic type arguments during reflection allows violation of the type system
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654322" class="external text" rel="nofollow">654322</a> Crash when throwing too many exception
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654433" class="external text" rel="nofollow">654433</a> XPathSelectElements not running correct results for simple XPath.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654460" class="external text" rel="nofollow">654460</a> Overflowing prolog buffer causing crash
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654476" class="external text" rel="nofollow">654476</a> HttpRuntime::Validate incorrectly thinks ',' is an invalid char
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654694" class="external text" rel="nofollow">654694</a> [SDB] Assertion at debugger-agent.c:4087, condition `sp' not met
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=654850" class="external text" rel="nofollow">654850</a> AOT code loader fails to load AOT code for a .exe file which references other assemblies in the same directory
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655089" class="external text" rel="nofollow">655089</a> XmlConvert.ToDateTime with simple date and XmlDateTimeSerializationMode.Local throws FormatException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655096" class="external text" rel="nofollow">655096</a> processorArchitecture is not parsed for AssemblyName
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655159" class="external text" rel="nofollow">655159</a> Verifier blocks getting custom attributes with types
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655439" class="external text" rel="nofollow">655439</a> Delegate.CreateDelegate is less strict than MS, but invocation is incorrect
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655497" class="external text" rel="nofollow">655497</a> Reflection.Emit usage causes SIGBUS from ves_icall_System_Delegate_CreateDelegate_internal
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655637" class="external text" rel="nofollow">655637</a> UnixEndPoint not deserializing correctly
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655669" class="external text" rel="nofollow">655669</a> Weak GCHandle does not work and crashes in multi-AppDomain scenario
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655741" class="external text" rel="nofollow">655741</a> 'System.InvalidProgramException: Missing or incorrect header for method Call'
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=655896" class="external text" rel="nofollow">655896</a> System.Diagnostics.Process discards escaped spaces in arguments
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656021" class="external text" rel="nofollow">656021</a> Cannot pass null to named GET parameter in code
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656058" class="external text" rel="nofollow">656058</a> * Assertion at debugger-agent.c:3553, condition `ji' not met on invalid custom attributes
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656262" class="external text" rel="nofollow">656262</a> System.Reflection.Emit.TypeBuilder.create_runtime_class crash as of git rev c66e414be18a5da230a1988ba572d2889f3d5548
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656353" class="external text" rel="nofollow">656353</a> ReaderWriterLockSlim don't lock if EnterWriteLock was called
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656787" class="external text" rel="nofollow">656787</a> type 0x20 not handled in do_mono_metadata_parse_type
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656850" class="external text" rel="nofollow">656850</a> [Regression] Deadlock on WebServiceHost.Open
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656913" class="external text" rel="nofollow">656913</a> [verifier] SIGABRT -&gt; condition `!mono_method_check_context_used (cmethod)' not met
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=656914" class="external text" rel="nofollow">656914</a> [verifier] g_assert_not_reached hit in mono_metadata_token_from_dor
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657516" class="external text" rel="nofollow">657516</a> Verifier rejects AssemblyFlagsAttribute
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657593" class="external text" rel="nofollow">657593</a> Socket.AcceptAsync causes ObjectDisposedException at the time the socket closes.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657609" class="external text" rel="nofollow">657609</a> System.TimeZoneNotFoundException when accessing TimeZoneInfo.Local in Emulator and on Device
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657694" class="external text" rel="nofollow">657694</a> Verifier rejects valid constructor access
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657745" class="external text" rel="nofollow">657745</a> [verifier] SIGSEGV in mono_is_regsize_var
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=657746" class="external text" rel="nofollow">657746</a> [verifier] SIGSEGV in mono_delegate_type_equal
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=658244" class="external text" rel="nofollow">658244</a> CountdownEvent.Reset Method (Int32) behaviour incorrect.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=658278" class="external text" rel="nofollow">658278</a> Ajaxified control nested in another ajaxified control does not update
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=658645" class="external text" rel="nofollow">658645</a> * Assertion: should not be reached at debugger-agent.c:4475
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=658945" class="external text" rel="nofollow">658945</a> [PATCH] ContextMenuStrip vertical position can be wrong.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=659056" class="external text" rel="nofollow">659056</a> Socket.EndSend and EndReceive methods with out SocketError parameter should not throw SocketException
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=659061" class="external text" rel="nofollow">659061</a> NumberFormatter should adjust the leftmost group size width to the number of remaining characters
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=659064" class="external text" rel="nofollow">659064</a> RadAjaxManager ajaxified buttons trigger postback instead of AJAX request
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=659123" class="external text" rel="nofollow">659123</a> Parameter names in CodeDomProvider.CompileAssemblyFromSource Method
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=659791" class="external text" rel="nofollow">659791</a> Client Access Policy fails when multiple domains are in the allow from (e.g. http + https)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660117" class="external text" rel="nofollow">660117</a> Replacing g_free with mono_free in samples
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660508" class="external text" rel="nofollow">660508</a> xbuild 2.6.7 fails to create a correct project file from a solution if project names contain dots
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660570" class="external text" rel="nofollow">660570</a> AssemblyName cannot be constructed (blocks mcs)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660907" class="external text" rel="nofollow">660907</a> System.IO.DriveInfo.GetDrives is unimplemented on Windows
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660911" class="external text" rel="nofollow">660911</a> System.IO.DriveInfo(string) should not require an exact match
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=660928" class="external text" rel="nofollow">660928</a> Creating a GZipStream causes a crash
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=661356" class="external text" rel="nofollow">661356</a> DllImport errors preceding DllNotFoundException printing &quot;(null)&quot; instead of actual loader error
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=661462" class="external text" rel="nofollow">661462</a> Queryable.AsQueryable(IEnumerable) breaks on Dictionary&lt;T,V&gt;.ValueCollection if T!=V
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=661787" class="external text" rel="nofollow">661787</a> Inconsitency of XmlConvert.ToDateTime() between Mono/MS.Net when parsing UTC dates
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=661917" class="external text" rel="nofollow">661917</a> UnmanagedType.VBByRefStr marshalling is unimplemented
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=662238" class="external text" rel="nofollow">662238</a> [verifier] SIGABRT condition `!sig-&gt;has_type_parameters' not met in mono_method_to_ir
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=662355" class="external text" rel="nofollow">662355</a> xbuild doesn't understand Reference Aliases
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=662741" class="external text" rel="nofollow">662741</a> Random SIGSEGV in signal handlers (mono_install_handler_block_guard)
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=662918" class="external text" rel="nofollow">662918</a> Setting Page.Title on an ASPX page does nothing.
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=663159" class="external text" rel="nofollow">663159</a> No location information for condition parsing errors
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=663180" class="external text" rel="nofollow">663180</a> MSBuildExtensionsPath should include Mac external directory
+</li><li> <a href="https://bugzilla.novell.com/show_bug.cgi?id=663182" class="external text" rel="nofollow">663182</a> MonoDoc should include Mac external directory
+</li></ul>
+

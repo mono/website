@@ -1,0 +1,197 @@
+---
+layout: obsolete
+title: "MonoMac"
+permalink: /old_site/MonoMac/
+---
+
+<h1>MonoMac</h1>
+
+<p>MonoMac, a new foundation for building Cocoa applications on OSX using Mono.
+</p><p>MonoMac 1.0 was released on March 17th, 2011.
+</p><p>MonoMac is the result of years of experimentation in blending .NET with Objective-C and is inspired by the same design principles that we used for <a href="http://monotouch.net" class="external text" rel="nofollow">MonoTouch</a>.
+</p><p>It is also the result of weekend hacking as our day to day work revolves around Mono's efforts on Linux servers, Linux desktops, Visual Studio integration and our mobile efforts. Luckily, it shares some components with MonoTouch.
+</p><p>As of December 12th 2012, Xamarin now offers a superset of MonoMac called <a href="http://xamarin.com/mac" class="external text" rel="nofollow">Xamarin.Mac</a>.   It features broader API coverage,  a commercial license for Mono's LGPL components,  Mono embedding, license to publish to the Mac AppStore and support.
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tutorials"><span class="tocnumber">1</span> <span class="toctext">Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Samples"><span class="tocnumber">2</span> <span class="toctext">Samples</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Community"><span class="tocnumber">3</span> <span class="toctext">Community</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Obtaining_MonoMac"><span class="tocnumber">4</span> <span class="toctext">Obtaining MonoMac</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#MonoMac_from_Source"><span class="tocnumber">5</span> <span class="toctext">MonoMac from Source</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Background"><span class="tocnumber">6</span> <span class="toctext">Background</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Binding_Cocoa_Types"><span class="tocnumber">7</span> <span class="toctext">Binding Cocoa Types</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Status"><span class="tocnumber">8</span> <span class="toctext">Status</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Where_we_are_going"><span class="tocnumber">9</span> <span class="toctext">Where we are going</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Contributing"><span class="tocnumber">10</span> <span class="toctext">Contributing</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="Tutorials"> Tutorials </span></h1>
+<ul><li> <a href="{{site.baseurl}}/MonoMacPackager" title="MonoMacPackager">MonoMac packaging, and AppStore distribution</a> 
+</li><li> <a href="http://www.satter.org/2010/09/net-development-for-os-x.html" class="external text" rel="nofollow">.NET Development for OSX</a>
+</li><li> Online blogs/tutorials:
+<ul><li> <a href="http://cocoa-mono.org/archives/22/chapter-1-getting-started-part-1/" class="external text" rel="nofollow">Getting Started Part 1</a>
+</li><li> <a href="http://cocoa-mono.org/archives/80/exploring-cocoa-with-monomac-and-c-chapter-1-%e2%80%93-getting-started-%e2%80%93-part-2/" class="external text" rel="nofollow">Getting Started Part 2</a>
+</li><li> <a href="http://tirania.org/monomac/archive/2010/Dec-07.html" class="external text" rel="nofollow">Using Key-Value Coding with MonoMac</a>
+</li><li> <a href="http://cocoa-mono.org/archives/153/kvc-kvo-and-cocoa-bindings-oh-my-part-1/" class="external text" rel="nofollow">Using KVC and KVO with MonoMac</a>
+</li><li> <a href="http://cocoa-mono.org/archives/212/net-timer-or-cocoa-nstimer-for-monomac/" class="external text" rel="nofollow">.NET Timer vs NSTimer on MonoMac</a>
+</li><li> <a href="http://cocoa-mono.org/archives/235/using-animator-with-frameorigin/" class="external text" rel="nofollow">Using the Animator Proxy</a>
+</li><li> <a href="http://cocoa-mono.org/archives/254/growl-my-monomac-application-says/" class="external text" rel="nofollow">Using Growl with MonoMac</a>
+</li><li> <a href="http://cocoa-mono.org/archives/329/adding-an-application-icon-to-your-monomac-application/" class="external text" rel="nofollow">Adding an Application Icon to your MonoMac app</a>
+</li><li> Getting started with OpenGL in MonoMac, posting and samples: <a href="http://lists.ximian.com/pipermail/mono-osx/2011-April/004267.html" class="external autonumber" rel="nofollow">[1]</a>
+</li></ul>
+</li></ul>
+<h1> <span class="mw-headline" id="Samples"> Samples </span></h1>
+<p>MonoMac's source code comes <a href="https://github.com/mono/monomac/tree/master/samples" class="external text" rel="nofollow">with more than 56 samples</a> showing how to use different components of the MacOS X APIs.   Each sample comes with a MonoDevelop solution that can be built by loading the IDE, or you can build all the samples in one go using Makefiles.
+</p><p>You can <a href="https://github.com/mono/monomac/tree/master/samples" class="external text" rel="nofollow">browse the individual samples online</a> or <a href="https://github.com/mono/monomac/archives/master" class="external text" rel="nofollow">download a packaged</a> version of them.
+</p><p>The samples cover basic MacOS GUI applications, AppKit applications, creating Document-based applications, Key-value programming, CoreAnimation, QuickTime, OpenGL as well as showing how to use smaller APIs in self-contained samples.
+</p>
+<h1> <span class="mw-headline" id="Community"> Community </span></h1>
+<p>A chat room to discuss MonoMac exists on the IRC server at irc.gnome.org on the channel #monomac.  You can access it on the <a href="http://wbe02.mibbit.com/index.html?server=irc.gnome.org&amp;channel=%23monomac" class="external text" rel="nofollow">web as well</a>.
+</p><p>We are using the <a href="http://lists.ximian.com/mailman/listinfo/mono-osx" class="external text" rel="nofollow">mono-osx@lists.ximian.com mailing list</a> to discuss.
+</p>
+<h1> <span class="mw-headline" id="Obtaining_MonoMac"> Obtaining MonoMac </span></h1>
+<p>MonoMac is included in a <a href="http://monodevelop.com" class="external text" rel="nofollow">MonoDevelop</a> addin that can be used to build, run and debug MonoMac apps. The addin requires  <a href="http://monodevelop.com/Download" class="external text" rel="nofollow">MonoDevelop 2.4.2</a> on a Mac.
+</p><p>Every once in a while we will update the MonoMac add-in to give users new bindings, fixes and more API love. The procedure for updating the addin is exactly the same as installing it:
+</p>
+<ol><li> Open the <b>Add-in Manager</b> from the <b>Tools-&gt;Add-in Manager</b> menu
+</li><li> Click the <i>Install add-ins</i> button to open the <b>Add-in Installation dialog</b>.
+</li><li> Click "Refresh"
+</li><li> Expand the <i>Mac development</i> category, and check the <i>MonoMac development</i> addin.
+</li><li> Press the <i>Forward</i> button. You will be shown a page confirming that the <i>MonoMac development</i> addin will be installed. Press <i>Forward</i> again, then when the installation finishes click <i>Close</i>.
+</li><li> Restart MonoDevelop
+</li></ol>
+<p>When the MonoMac addin is installed, a <i>MonoMac Project</i> template will become available in the <b>New Solution</b> dialog.
+</p>
+<h1> <span class="mw-headline" id="MonoMac_from_Source"> MonoMac from Source </span></h1>
+<p>To build MonoMac from Source, you need to get two modules from our Git respository: <a href="http://github.com/mono/monomac" class="external text" rel="nofollow">monomac</a> and <a href="http://github.com/mono/maccore" class="external text" rel="nofollow">maccore</a>
+</p>
+<h1> <span class="mw-headline" id="Background"> Background </span></h1>
+<p>Many years ago Geoff Norton produced CocoaSharp, the first set of .NET bindings to the Cocoa API. CocoaSharp was a fine first binding at the time and it was a good place to start learning about the challenges of binding Objective-C APIs to be consumed by .NET clients.
+</p><p>Over the years three other frameworks were created to integrate the Objective-C world and the Objective-C APIs with C# and other .NET languages. Each one of these new frameworks had its pros and cons, and a year ago we made a call for all three competing frameworks to be merged, but sadly nothing came out of it.
+</p><p>When we created MonoTouch, we wanted a binding for the Cocoa APIs that would fit the patterns and idioms used in the C# and .NET worlds, that would comply with the .NET Framework Design Guidelines and would allow give developers all the tools required to build full Cocoa applications.
+</p><p>We had two main requirements: the binding should just work and the code should be MIT X11 licensed. For the binding to just work, we turned to the .NET Framework Design Guidelines book as it captures years of design decisions, programming idioms and advise that would help C# and .NET developers. By following the Design Guidelines we:
+</p>
+<ul><li> Avoid surprises
+</li><li> Blend with other C# and .NET libraries
+</li><li>Reduce the room for errors
+</li><li> Increase developer joy
+</li><li> Minimizes time for the developer to be productive
+</li><li> Every bit of existing .NET knowledge translates
+</li></ul>
+<p>Luckily for us, .NET was designed from the start to be an interoperability framework. A framework that supports the most advanced requirements to make multiple runtimes and frameworks to communicate seamlessly with each other. We used these features to create our bindings.
+</p><p>The above goals turned into the following technical requirements:
+</p>
+<ul><li> Developers should be able to consume Cocoa APIs as C# APIs
+</li><li> Allow developers to subclass Objective-C classes
+<ul><li> Subclass should work with C# standard constructs
+</li><li> Derive from an existing class
+</li><li> Call base constructor
+</li><li> Overriding methods should be done with C#'s override system
+</li><li> Do not expose developers to Objective-C selectors
+</li></ul>
+</li><li> Provide a mechanism to call arbitrary Objective-C libraries
+</li><li> Make common Objective-C tasks easy, and hard Objective-C tasks possible
+</li><li> Expose Objective-C properties as C# properties
+</li><li>Expose a strongly typed API, for example instead of exposing the generic-container NSArray or individual NSObjects. This means that developers get a few benefits:
+<ul><li> MonoDevelop can flag errors as you write the code
+</li><li> MonoDevelop can present documentation popups on types, methods, properties and parameters as you type them.
+</li><li> Minimize runtime errors by catching invalid casts at compile time.
+</li><li> Encourage in-IDE API exploration without rebuilding, and without having to look up the types in the documentation.
+</li></ul>
+</li><li> Turn int and uint parameters that should have been enums as C# enumerations and C# enumerations with [Flags] attributes
+</li><li> Expose the basic Foundation as C# native types:
+<ul><li> NSString becomes string
+</li><li> NSArray becomes strongly-typed array
+</li></ul>
+</li><li> Events and notifications, give users a choice between:
+<ul><li> Support the Objective-C delegate pattern:
+<ul><li> Strongly typed version is the default
+</li><li> Weakly typed version for advance use cases
+</li></ul>
+</li><li> C# event system
+</li></ul>
+</li><li> Class libraries should be MIT X11 licensed, like the rest of Mono's class libraries.
+</li><li> Expose C# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as "blocks".
+</li><li> Curated APIs: there is no point in binding every UNIX or CoreFoundation C API available, as those are not very useful in practice. Bind only those that are required to build applications or get access to mandatory functionality.
+</li></ul>
+<p>More information about our API can be found here: 
+<a href="http://monotouch.net/Documentation/API_Design" class="external free" rel="nofollow">http://monotouch.net/Documentation/API_Design</a>
+</p>
+<h1> <span class="mw-headline" id="Binding_Cocoa_Types"> Binding Cocoa Types </span></h1>
+<p>We produced a <a href="http://monotouch.net/Documentation/Binding_New_Objective-C_Types" class="external text" rel="nofollow">comprehensive guide</a> to binding Objective-C APIs with MonoTouch that applies directly to MonoMac.
+</p><p>Since a lot of the work of binding an Objective-C API is very repetitive, we have also included a header parser that does most of the heavy lifting in producing the above API from the Objective-C header file. The parser output then needs to be then massaged a bit to produce a binding that satisfies our design requirements. For example, NSArray arguments and return types must be looked up on the documentation and the proper strong typed inserted.
+</p>
+<h1> <span class="mw-headline" id="Status"> Status </span></h1>
+<p>These are the APIs that MonoMac binds as of November 24th MonoMac binds:
+</p>
+<ul><li> AddressBook (done)
+</li><li> AudioToolbox (done)
+</li><li> AppKit (About 10% left to be done)
+</li><li> AudioToolbox (done)
+</li><li> AudioUnit (60%)
+</li><li> AVFoundation (done)
+</li><li> CoreAnimation (done)
+</li><li> CoreFoundation (the parts that are needed, see the design principles)
+</li><li> CoreText (done)
+</li><li> CoreLocation (done)
+</li><li> CoreData (done)
+</li><li> CoreGraphics (done)
+</li><li> CoreImage (done)
+</li><li> CoreMedia (done)
+</li><li> CoreText (done)
+</li><li> CoreVideo (done)
+</li><li> CoreWlan (done)
+</li><li> Foundation (the parts that are needed, and helper tools to support the rest)
+</li><li> ImageIO (done)
+</li><li> ImageKit (done)
+</li><li> OpenGL (done, using a modified OpenTK)
+</li><li> PdfKit (done)
+</li><li> QTKit (done)
+</li><li> Security (keychain access done)
+</li><li> WebKit (Missing a handful of APIs)
+</li></ul>
+<p>The commercial <a href="http://xamarin.com/mac" class="external text" rel="nofollow">Xamarin.Mac</a> extends this with:
+</p>
+<ul><li> New Lion and Mountain Lion APIs for AppKit
+</li><li> SceneKit (for loading and displaying 3D scenes)
+</li><li> StoreKit
+</li><li> EventKit
+</li></ul>
+<p>Third Party Libraries:
+</p>
+<ul><li> Growl (bundled with MonoMac)
+</li><li> CorePlot (as part of <a href="https://github.com/mono/monotouch-bindings" class="external text" rel="nofollow">monotouch-bindings</a>
+</li></ul>
+<p>The following are missing, but can be invoked manually with P/Invoke:
+</p>
+<ul><li> LaunchServices
+</li></ul>
+<p>This list is manually updated and is usually out-of-date with the actual binding that will contain more.   For actual details, look at the maccore and monomac modules on <a href="http://github.com/mono/maccore" class="external free" rel="nofollow">http://github.com/mono/maccore</a> and <a href="http://github.com/mono/monomac" class="external free" rel="nofollow">http://github.com/mono/monomac</a>
+</p><p>If you are interested in advancing the state of MonoMac, we are currently looking for contributors to help us bind the other Objective-C frameworks and help us complete AppKit.
+</p>
+<h1> <span class="mw-headline" id="Where_we_are_going"> Where we are going </span></h1>
+<p>MonoMac is merely the library that gives C# developers access to the underlying APIs on OSX, it does not include the tooling necessary to create a full application bundle.
+</p><p>Luckily, MonoDevelop has already most of the code needed in the form of the MonoTouch plugin. We will update this plugin to also support creating full application bundles for OSX.
+</p><p>A new feature that developers will be interested in is the new "Mono bundler" tool that we are hoping we can include in Mono 2.8. This bundler examines your .NET application and generates an application bundle that contains both your application code and any dependencies that it needs from Mono in a self-contained package.
+</p><p>This is the technology being used by Banshee on OSX today. The tool constructs a self-contained application based on your system installed Mono that you can distribute to your users, without requirement them to install Mono in the first place.
+</p><p>But we need your help. There are many small and medium tasks that developers can help us with that will free our already busy weekends and will allow us to have a full MonoMac experience done in a shorter period of time.
+</p><p>The more help we get, the sooner this will be done.
+</p>
+<h1> <span class="mw-headline" id="Contributing"> Contributing </span></h1>
+<p>We need contributors in the following areas:
+</p>
+<ul><li> API binding for the rest of the Frameworks
+</li><li> We need samples to be written
+</li><li> We need tutorials to be written (like the ones we did for MonoTouch)
+</li><li> We need to port existing Cocoa samples to C#:
+<ul><li> To exercise the binding
+</li><li> To serve as reference for new developers
+</li><li> To identify missing frameworks
+</li><li> To prioritize bindings
+</li></ul>
+</li><li> We need to alter MonoDevelop's plugin to produce OSX Application bundles.
+</li><li> Providing <a href="http://lists.ximian.com/pipermail/mono-osx/2010-October/003178.html" class="external text" rel="nofollow">one-line "summary" documentation</a>
+</li></ul>
+<p>Please join us on the mono-osx <a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">mailing list</a> to discuss the future of MonoMac.
+</p>

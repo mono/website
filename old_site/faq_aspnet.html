@@ -1,0 +1,416 @@
+---
+layout: obsolete
+title: "FAQ: ASP.NET"
+permalink: /old_site/FAQ:_ASP.NET/
+---
+
+<h1>FAQ: ASP.NET</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General"><span class="tocnumber">1</span> <span class="toctext">General</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Installation_and_Setup"><span class="tocnumber">2</span> <span class="toctext">Installation and Setup</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Common_Problems"><span class="tocnumber">3</span> <span class="toctext">Common Problems</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Development"><span class="tocnumber">4</span> <span class="toctext">Development</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Features"><span class="tocnumber">5</span> <span class="toctext">Features</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Portability"><span class="tocnumber">6</span> <span class="toctext">Portability</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Extra_Languages"><span class="tocnumber">7</span> <span class="toctext">Extra Languages</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Using_Mono_with_Apache"><span class="tocnumber">8</span> <span class="toctext">Using Mono with Apache</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Hosting"><span class="tocnumber">9</span> <span class="toctext">Hosting</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Memory_Usage"><span class="tocnumber">10</span> <span class="toctext">Memory Usage</span></a></li>
+</ul>
+</td></tr></table>
+<h1> <span class="mw-headline" id="General"> General </span></h1>
+<p><b> Does Mono support ASP.NET? </b>
+</p><p>Yes. 
+</p><p>Mono supports ASP.NET 1.1 and most of ASP.NET 2.0 (currently we are missing WebParts and some tiny small features).
+</p><p><b> Does Mono Support ASP? </b>
+</p><p>No.
+</p><p>Mono does not support the old style ASP pages, it only supports ASP.NET pages;   There are some tools that might help you migrate ASP pages to ASP.NET (<a href="http://netcoole.com" class="external text" rel="nofollow">netcoole.com</a>).  
+</p><p>Once you have a working ASP.NET application, you could use Mono to run it.
+</p><p><b> How can I run ASP.NET-based applications with Mono? </b>
+</p><p>You can read our <a href="{{site.baseurl}}/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Guide to port ASP.NET Applications with Mono</a>.
+</p><p>Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mono is a three part series blog that covers how to port an ASP.NET MVC website application to Mono:
+</p>
+<ul><li> Part 1: <a href="http://www.integratedwebsystems.com/2010/01/installing-opensuse-11-2-with-mono-2-6-1-and-apache-using-text-mode-configuration-porting-to-mono-part-1-of-3/" class="external text" rel="nofollow">Installing  the Software</a>
+</li><li> Part 2: <a href="http://www.integratedwebsystems.com/2010/02/how-to-setup-and-configure-mysql-membership-provider-6-2-2-porting-to-mono-part-2-of-3/" class="external text" rel="nofollow">Setting up and Configuring MySQL</a>
+</li><li> Part 3: <a href="http://www.integratedwebsystems.com/2010/02/walkthrough-porting-asp-net-mvc-website-to-mono-2-6-1-and-mysql-on-linux-apache-porting-to-mono-part-3-of-3/" class="external text" rel="nofollow">Walk through porting the ASP.NET MVC website</a>.
+</li></ul>
+<p>Novell: <a href="http://www.novell.com/connectionmagazine/2010/02/mono_tools.html" class="external text" rel="nofollow">From .NET to Linux in 5 Easy Steps</a>
+</p><p><br />
+You need the Mono runtime and use one of Apache with <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a>, a <a href="{{site.baseurl}}/CGI" title="CGI">CGI</a> or FastCGI-aware web server with Mono's <a href="{{site.baseurl}}/FastCGI" title="FastCGI">FastCGI</a> support or the <a href="{{site.baseurl}}/Xsp" title="Xsp" class="mw-redirect">xsp</a> standalone server (all available from our <a href="{{site.baseurl}}/Downloads" title="Downloads">downloads</a> page).
+</p><p>To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
+</p><p>To run ASP.NET 2.0 applications use mod-mono-server2 (for Apache), fastcgi-mono-server2 (for FastCGI servers) or xsp2 (for testing)
+</p><p><b> Does Mono support ASP.NET's web services? </b>
+</p><p>Yes, Mono supports ASP.NET-based web services (files ending in .asmx)
+</p><p><b> Does Mono have support for WSE? </b>
+</p><p>At this point Mono does not have support for the "Web Services Enhancements" package and there are no plans on supporting it.
+</p><p>See the <a href="{{site.baseurl}}/WSE" title="WSE">WSE</a> page for more details about it.
+</p><p><b> Does Mono support XHTML and Web standards? </b>
+</p><p>See the long reply on <a href="{{site.baseurl}}/WebStandards" title="WebStandards">WebStandards</a>.
+</p><p><b> Are there alternatives to ASP.NET? </b>
+</p><p>Some of these are not complete replacements for ASP.NET, but they might be useful for your particular domain:
+</p>
+<ul><li> <a href="http://www.jitsu.org/jitsu/" class="external text" rel="nofollow">Jitsu</a> is a framework for building web applications.
+</li></ul>
+<ul><li> <a href="http://doc.opengarden.org/" class="external text" rel="nofollow">Dream</a> is a framework for building the backend of web applications by providing a very complete framework for building REST applications.
+</li></ul>
+<ul><li> <a href="http://www.springframework.net/" class="external text" rel="nofollow">Spring.NET</a> is a port of the spring framework from Java to C#
+</li></ul>
+<ul><li> <a href="http://mavnet.sourceforge.net/" class="external text" rel="nofollow">Maverick.NET</a> a Model-View-Controller framework for building web applications. 
+</li></ul>
+<p>The following are built on top of the basic of ASP.NET, so they are more of a complement:
+</p>
+<ul><li> <a href="http://www.castleproject.org/" class="external text" rel="nofollow">Castle Project</a> inspired by Ruby on Rail, but this is for .NET languages
+</li></ul>
+<h1> <span class="mw-headline" id="Installation_and_Setup"> Installation and Setup </span></h1>
+<p><b> Does Mono's ASP.NET run on Linux&#160;? </b>
+</p><p>Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
+</p><p><b> Should I use mod_mono, FastCGI or XSP? </b>
+</p><p>mod_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
+</p><p>FastCGI is a lightweight protocol implement by both Apache and many other web servers.   It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like <a href="{{site.baseurl}}/FastCGI_Nginx" title="FastCGI Nginx">Nginx</a>.  Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration.   The features are usually determined by the web server that uses FastCGI.
+</p><p>XSP is a very limited web server which is used typically during development or for testing.  Although some people use it for production, but this server is not likely going to ever grow to support all the features that Apache or FastCGI servers have.
+</p><p>XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is the most important one), but no work is currently underway to support HTTP 1.1 and it is also missing features like mime-type configuration and any other features that people expect from a web server.
+</p><p><b> Does mod_mono run on Windows? </b>
+</p><p>mod_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod_mono compile work on the Windows version of Apache.
+</p><p><b> How do I restart my Mono applications without restarting Apache? </b>
+</p><p>Enable the control panel in mod_mono, see <a href="{{site.baseurl}}/Mod_mono#Control_panel" title="Mod mono">mod_mono's Control Panel section</a> for details on setting it up.
+</p><p><b> My Apache Module Is Not Recognized, what to do? </b>
+</p><p>In certain Apache configurations (SUSE 9.0), Apache is configured with large file support. This requires that every apache module has to be compiled with large file
+support as well.
+</p><p>You have to configure mod_mono as follows:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #007800;">CFLAGS</span>=<span style="color: #ff0000;">&quot;-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64&quot;</span> .<span style="color: #000000; font-weight: bold;">/</span>configure</pre>
+<p>because mod_mono's configure apparently doesn't query
+the CFLAGS from apxs. I'll fill a bug.
+</p><p>In newer versions of Mono, this is taken care of by the configure script.
+</p><p><b> mod_mono and mod_proxy </b>
+</p><p>What are the advantages/disadvantages of using mod_mono with apache versus setting up apache with mod_proxy to proxy an XSP server running on a private port?
+</p><p>The use of mod_proxy is a common practice in the Java world with Tomcat/application serves, what is the reason not to use the same setup with XSP?
+</p><p>The mod_proxy approach is not recommended for Mono for the following reasons:
+</p><p>mod_mono:
+</p>
+<ul><li> mod_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
+</li><li> faster file transfers
+</li><li> common URL namespace with Apache (if AddHandler is used)
+</li><li> autohosting: <a href="{{site.baseurl}}/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>
+</li><li> enabled for mass hosting
+</li><li> xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them.  By using mod_mono your client software is exposed to a full HTTP 1.1 implmenentation.
+</li></ul>
+<p>mod_proxy + mod_proxy_http:
+</p>
+<ul><li>ability to run the app server under a different UID  (mod_mono is supposed to support this too)
+</li><li> the app server process cannot be controlled by Apache
+</li><li> difficult mass hosting
+</li></ul>
+<p><b> How can I Run mod-mono-server as a different user? </b>
+</p><p>Due to apache's design, there is no straightforward way to start processes from inside of a apache child as a specific user. Apache's SuExec wrapper is targeting CGI and is useless for modules.
+</p><p>Mod_mono provides the MonoRunXSP option. You can set it to "False" and start mod-mono-server manually as the specific user. Some tinkering with the Unix socket's permissions might be necessary, unless MonoListenPort is used, which turns on TCP between mod_mono and mod-mono-server.
+</p><p>Another (very risky) way: use a setuid 'root' wrapper for the mono executable, inspired by the sources of Apache's SuExec.
+</p><p>And finally: drop mod_mono and use mod_proxy + mod_proxy_http + XSP instead. It's slightly easier to configure, especially if you are not used to mod_mono.
+</p><p>From <a href="http://lists.ximian.com/pipermail/mono-devel-list/2006-May/018520.html" class="external text" rel="nofollow">the mono-devel-list</a>
+</p><p><b> I get Service Unavailable </b>
+</p><p>If you are getting an error like "Service Temporary Unavailable".
+</p><p>Make sure that your MonoExecutablePath actually points to Mono, or simply delete the file, as it is redundant.
+</p><p><br />
+</p>
+<h1> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h1>
+<p><b> What are some common problems when porting applications? </b>
+</p>
+<ul><li> Place a "Bin" directory instead of "bin"
+</li><li> Not placing all the required DLLs in the bin dierctory (or GAC)
+</li><li> Running xsp[2], not configuring the --aplications parameter (or application in the root directory) 
+</li><li> Running mod-mono, not configuring the MonoApplications directive (more info with man mod_mono)
+</li></ul>
+<p><b> Performance is disappointing </b>
+Please consult <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">Mod_mono</a> for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+</p><p><b> Compilation fails with the CS0169 error message </b>
+It will happen if you configured the C# compiler in <tt>Web.config</tt> in a way similar to the one shown below:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;iso-8859-1&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilation</span> <span style="color: #000066;">defaultLanguage</span>=<span style="color: #ff0000;">&quot;C#&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compiler</span> <span style="color: #000066;">language</span>=<span style="color: #ff0000;">&quot;c#;cs;csharp&quot;</span> <span style="color: #000066;">extension</span>=<span style="color: #ff0000;">&quot;.cs&quot;</span> <span style="color: #000066;">compilerOptions</span>=<span style="color: #ff0000;">&quot;/warnaserror&quot;</span> <span style="color: #000066;">warningLevel</span>=<span style="color: #ff0000;">&quot;4&quot;</span>  </span>
+<span style="color: #009900;">          <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>    
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read <a href="{{site.baseurl}}/ASP.NET_Mono_Specific_Configuration" title="ASP.NET Mono Specific Configuration">this article for more information</a>
+</p><p><b> ProviderException from SqliteMembershipProvider </b>
+When porting an ASP.NET app to Mono, you may get an exception similar to the following:
+</p>
+<pre>
+System.Configuration.Provider.ProviderException: Operation aborted due to an exception (see Trace for details).
+at System.Web.Security.SqliteMembershipProvider.ValidateUser (string,string)
+at NerdDinner.Controllers.AccountMembershipService.ValidateUser (string,string)
+at NerdDinner.Controllers.AccountController.ValidateLogOn (string,string)
+at NerdDinner.Controllers.AccountController.LogOn (string,string,bool,string)
+at (wrapper dynamic-method) System.Runtime.CompilerServices.ExecutionScope.lambda_method (System.Runtime.CompilerServices.ExecutionScope,System.Web.Mvc.ControllerBase,object[])
+at System.Web.Mvc.ActionMethodDispatcher.Execute (System.Web.Mvc.ControllerBase,object[])
+at System.Web.Mvc.ReflectedActionDescriptor.Execute (System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary`2&lt;string, object&gt;)
+at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod (System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary`2&lt;string, object&gt;)
+at System.Web.Mvc.ControllerActionInvoker/&lt;InvokeActionMethodWithFilters&gt;c__AnonStoreyB.&lt;&gt;m__E ()
+at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1&lt;System.Web.Mvc.ActionExecutedContext&gt;) 
+</pre>
+<p>This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
+</p><p>The fix is easy: you need to create a <tt>~/App_Data/aspnetdb.sqlite</tt> SQLite database file.  You can use the <b>sqlite3</b> program and the SQL commands at <a href="{{site.baseurl}}/Guide:_Porting_ASP.NET_Applications#Membership.2FRoles.2FProfile_provider_schema" title="Guide: Porting ASP.NET Applications">Membership/Roles/Profile provider schema</a>:
+</p>
+<pre class="bash" style="font-family:monospace;">$ sqlite3 aspnetdb.sqlite
+sqlite<span style="color: #000000; font-weight: bold;">&gt;</span> CREATE TABLE Users <span style="color: #7a0874; font-weight: bold;">&#40;</span> <span style="color: #660033;">--</span> etc., from above <span style="color: #c20cb9; font-weight: bold;">link</span> page <span style="color: #7a0874; font-weight: bold;">&#41;</span>;</pre>
+<p>Once you've created the <tt>~/App_Data/apsnetdb.sqlite</tt> file, restart your ASP.NET app and things should Just Work (wrt MembershipProvider, anyway).
+</p>
+<h1> <span class="mw-headline" id="Development"> Development </span></h1>
+<p><b> I would like line numbers in my stack traces </b>
+</p><p>By default xsp and xsp2 run in "release" mode, which means that no debugging information is generated at runtime.   If you want line numbers in your stack traces, you must pass the --debug option to Mono, this is done by invoking <b>xsp</b> or <b>xsp2</b> with the MONO_OPTIONS environment variable, like this:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #007800;">MONO_OPTIONS</span>=--debug xsp
+Listening on port: <span style="color: #000000;">8080</span> <span style="color: #7a0874; font-weight: bold;">&#40;</span>non-secure<span style="color: #7a0874; font-weight: bold;">&#41;</span>
+Listening on address: 0.0.0.0
+Root directory: <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>us
+Hit Return to stop the server.</pre>
+<p>If you are running mod_mono with Apache, you must use the <b>MonoDebug</b> directive in your configuration file, like this:
+</p>
+<pre class="bash" style="font-family:monospace;">MonoDebug <span style="color: #c20cb9; font-weight: bold;">true</span></pre>
+<p><b> My application fails if I replace binaries </b>
+</p><p>Current versions of Mono use the actual libraries and dlls that you might have in your bin/ directory of your application.  
+</p><p>Although Mono will automatically pick up changes in your source code files and recompile, if you make changes to the libraries or precompiled code on a live system you might get an error as Mono will not notice this change.
+</p><p>This is due for the current lack of support for ShadowCopyFiles.   
+</p><p>To work around this issue, its important that before replacing a dll in bin, you remove the file and then copy the file over.  Do not copy the file over or it will fail (Unix semantics guarantee that this will work).
+</p><p>For example, this is the proper method of upgrading DLLs in your bin directory:
+</p>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666;">bash$ </span><span style="color: #c20cb9; font-weight: bold;">rm</span> bin<span style="color: #000000; font-weight: bold;">/</span>GraphControls.dll
+<span style="color: #666666;">bash$ </span><span style="color: #c20cb9; font-weight: bold;">cp</span> <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>myself<span style="color: #000000; font-weight: bold;">/</span>GraphControls.dll bin</pre>
+<p>Alternatively, you can use the "install" command, which has the same effect:
+</p>
+<pre class="bash" style="font-family:monospace;">&#160;
+<span style="color: #666666;">bash$ </span><span style="color: #c20cb9; font-weight: bold;">install</span> <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>myself<span style="color: #000000; font-weight: bold;">/</span>GraphControls.dll bin</pre>
+<p>The compiler takes care of this for you automatically, so you can integrate this directly into your build system:
+</p>
+<pre class="bash" style="font-family:monospace;">mcs -target:library -output:dll<span style="color: #000000; font-weight: bold;">/</span>GraphControls.dll GraphControls.cs</pre>
+<p><b> How can I set the encoding of my files? </b>
+</p><p>By default Mono will assume that the files on the file system are encoded with the encoding determined by the LANG environment variable.   If you need to change the encoding, you might want to use the globalization configuration element (see <a href="http://msdn2.microsoft.com/en-us/library/hy4kkhe0.aspx" class="external text" rel="nofollow">"globalization Element"</a>).
+</p><p>fileEncoding is the encoding of source files (.aspx, .ascx, ...)
+</p><p>responseEncoding is the encoding of input (posted data)
+</p><p>responseEncoding is the encoding of output (Content-Type: ...; charset)
+</p><p><b> Where are the various settings for System.Web documented? </b>
+</p><p>Some documentation is available on this site on <a href="{{site.baseurl}}/Config_system.web" title="Config system.web">Config_system.web</a>, but you might also use the documentation from [<a href="http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx</a> MSDN.
+</p>
+<h1> <span class="mw-headline" id="Features"> Features </span></h1>
+<p><b> Does Mono support the App_Browsers folder and the .browser files? </b>
+</p><p>Yes, they are supported starting from Mono version 2.0. However, there's one difference to the .NET support. Namely, Mono does not (and cannot) distribute the standard .NET .browser files - you can, however, copy them verbatim from your .NET distribution and drop those you need in the <tt>~/App_Browsers</tt> directory under your application root.
+</p><p><b> Does Mono support code-behind in ASP.NET? </b>
+</p><p>Yes, code-behind is supported in Mono's implementation of ASP.NET.
+</p><p><b>Be warned</b> that this has nothing to do with the <i>CodeBehind</i> attribute that VS.NET adds to the pages its generates. That attribute is ignored by MS and Mono parsing code and so you need to compile and deploy the codebehind classes to the proper folder.
+</p><p><b> How can I reference an assembly in my .aspx pages? </b>
+</p><p>By default, the ASP.NET engine will reference a few <i>default</i> assemblies and all the assemblies in the <u>bin</u> directory of your application.
+</p><p>If you want to reference any other assembly that is installed in the GAC, you can do two things, you can either list it at the top of your page:
+</p>
+<pre class="asp" style="font-family:monospace;"> <span style="color: #000000; font-weight: bold;">&lt;%</span><span style="color: #006600; font-weight: bold;">@</span> Assembly name<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;Assembly.Name&quot;</span> <span style="color: #000000; font-weight: bold;">%&gt;</span></pre>
+<p>Replacing <i>Assembly.Name</i> with your assembly name (i.e., "ByteFX.Data", "Mono.Posix", &#8230;).
+</p><p>Or better yet, registering this in your web.config file.  If you register this on the web.config file, all the files in the current directory will be compiled with those settings:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;Mono.Posix&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>For more details, see the <a href="/index.php?title=Config_system.web_compilation&amp;action=edit&amp;redlink=1" class="new" title="Config system.web compilation (page does not exist)">Config system.web compilation</a> page or the <a href="http://msdn2.microsoft.com/en-us/library/s10awwz0.aspx" class="external text" rel="nofollow">docs at Microsoft</a>
+</p><p><b> How can I reference a library in my .asmx web service? </b>
+</p><p>There are two kinds of libraries you can reference: 
+</p>
+<ul><li> GAC-installed assemblies 
+</li><li> private libraries.
+</li></ul>
+<p>To reference private libraries, just place the libraries in the "bin" directory below your application and they will be referenced automatically for you:
+</p>
+<pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">mkdir</span> bin
+$ mcs -out:bin<span style="color: #000000; font-weight: bold;">/</span>library.dll -target:library mylibrary.cs</pre>
+<p>For GAC-installed libraries to be installed, you need to add the assembly to the Web.config file, the file should look like this:
+</p>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+                <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilation</span> <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">&quot;false&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+                        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+                                <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;MyGacLibrary, Version=1.1.1.2, Culture=neutral, PublicKeyToken=asdfasdfasdfasdf&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+                        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+                <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p><b> How do I register a tag? </b>
+</p><p>If you have a tag in the file <i>MyTags.dll</i>, this file in in <u>bin</u> directory or the GAC, and you want the prefix to be <i>something</i>, add the following to the page consuming it:
+</p>
+<pre class="asp" style="font-family:monospace;"> <span style="color: #000000; font-weight: bold;">&lt;%</span><span style="color: #006600; font-weight: bold;">@</span> Register TagPrefix<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;something&quot;</span> Namespace<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;MyTags&quot;</span> assembly<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;MyTags&quot;</span> <span style="color: #000000; font-weight: bold;">%&gt;</span></pre>
+<p>Now if there's a control in MyTags.dll called <i>SuperDuper</i> you can use this in your page:
+</p>
+<pre class="asp" style="font-family:monospace;"> <span style="color: #006600; font-weight: bold;">&lt;</span>something<span style="color: #006600; font-weight: bold;">:</span>SuperDuper id<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;myid&quot;</span> otherattributes<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;go here&quot;</span> <span style="color: #006600; font-weight: bold;">/&gt;</span></pre>
+<p><b> Can I run ASP.NET 2.x applications with Mono? </b>
+</p><p>Support for 2.x ASP.NET applications is under active development, but it's not complete. If you want to try it out, use the `xsp2' command. You will need to install the 2.0 preview assemblies and compilers.
+</p><p><b> OutputCache and VarByParam </b>
+</p><p>The VaryByParam="None" semantics are not implemented in Mono, for example in:
+</p>
+<pre class="asp" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;%</span><span style="color: #006600; font-weight: bold;">@</span> OutputCache Duration<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;300&quot;</span> Location<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;Server&quot;</span> VaryByParam<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;None&quot;</span><span style="color: #000000; font-weight: bold;">%&gt;</span></pre>
+<p>Use a true parameter name or "*" instead.
+</p><p>Instead of Location="Server", use "ServerAndClient".
+</p><p><b> Does Mono's ASP.NET support SSL/TLS? </b>
+</p><p>If you are using the Apache module, https support is handled directly by Apache and all the variables are available using the System.Web APIs.  
+</p><p>If you are using XSP, read the <a href="{{site.baseurl}}/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">using client certificates with XSP</a> article which details the process.
+</p><p><b> I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong? </b>
+</p><p>Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if possible, so that no further action is needed. If they are in utf-8 (default nowadays in Linux) or any other encoding you will need to tell the compiler for the language your page will be translated into to expect this other encoding. There are two forms:
+</p><p>1 - Change each affected page to add the specific compiler option:
+</p>
+<pre class="asp" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;%</span><span style="color: #006600; font-weight: bold;">@</span>Page language<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;C#&quot;</span> compilerOptions<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;/codepage:utf8&quot;</span> <span style="color: #000000; font-weight: bold;">%&gt;</span></pre>
+<p>2 - Change things in the machine.config (for the whole installation) or web.config (for specific web apps) files:
+</p>
+<pre class="asp" style="font-family:monospace;"><span style="color: #006600; font-weight: bold;">&lt;</span>configuration<span style="color: #006600; font-weight: bold;">&gt;</span>
+...
+ <span style="color: #006600; font-weight: bold;">&lt;</span>system.<span style="color: #9900cc;">web</span><span style="color: #006600; font-weight: bold;">&gt;</span>
+ ...
+  <span style="color: #006600; font-weight: bold;">&lt;</span>compilation<span style="color: #006600; font-weight: bold;">&gt;</span>
+   <span style="color: #006600; font-weight: bold;">&lt;</span>compilers<span style="color: #006600; font-weight: bold;">&gt;</span>
+    <span style="color: #006600; font-weight: bold;">&lt;</span>compiler language<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;cs;c#;csharp&quot;</span> extension<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;.cs&quot;</span> warningLevel<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;1&quot;</span>
+              compilerOptions<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;/codepage:utf8&quot;</span>
+              type<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;Microsoft.CSharp.CSharpCodeProvider, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span style="color: #006600; font-weight: bold;">/&gt;</span>
+    <span style="color: #006600; font-weight: bold;">&lt;</span>compiler language<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;vb;vbs;visualbasic;vbscript&quot;</span> extension<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;.vb&quot;</span> warningLevel<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;1&quot;</span>
+              compilerOptions<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;/codepage:utf8&quot;</span>
+              type<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;Microsoft.VisualBasic.VBCodeProvider, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span style="color: #006600; font-weight: bold;">/&gt;</span>
+   <span style="color: #006600; font-weight: bold;">&lt;/</span>compilers<span style="color: #006600; font-weight: bold;">&gt;</span>
+  <span style="color: #006600; font-weight: bold;">&lt;/</span>compilation<span style="color: #006600; font-weight: bold;">&gt;</span>
+  ...
+  <span style="color: #006600; font-weight: bold;">&lt;</span>globalization  
+    requestEncoding<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;utf-8&quot;</span>
+    responseEncoding<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;utf-8&quot;</span>
+    fileEncoding<span style="color: #006600; font-weight: bold;">=</span><span style="color: #cc0000;">&quot;utf-8&quot;</span> <span style="color: #006600; font-weight: bold;">/&gt;</span>
+ <span style="color: #006600; font-weight: bold;">&lt;/</span>system.<span style="color: #9900cc;">web</span><span style="color: #006600; font-weight: bold;">&gt;</span>
+<span style="color: #006600; font-weight: bold;">&lt;/</span>configuration<span style="color: #006600; font-weight: bold;">&gt;</span></pre>
+<p><b> My Repeater/DataList/DataGrid events aren't firing. What's wrong? </b>
+</p><p>A common error is to <b>always</b> databind the content in the PageLoad. If you do so for PostBacks you will be recreating the child controls from the datasource and will lose any ties to the events that are encoded in the request. <b>Just make DataBinding conditional on the IsPostBack property not being true</b>. That will preserve the viewstate and so the ties for the encoded event that will be fired later in the page processing. 
+</p><p>Example:
+</p>
+<pre class="asp" style="font-family:monospace;">  <span style="color: #990099; font-weight: bold;">public</span> void Page_Load<span style="color: #006600; font-weight:bold;">&#40;</span>object sender, EventArgs e<span style="color: #006600; font-weight:bold;">&#41;</span>
+  <span style="color: #006600; font-weight:bold;">&#123;</span>
+    <span style="color: #990099; font-weight: bold;">if</span> <span style="color: #006600; font-weight:bold;">&#40;</span><span style="color: #006600; font-weight: bold;">!</span>IsPostBack<span style="color: #006600; font-weight:bold;">&#41;</span>
+      InitCustomDataBinding<span style="color: #006600; font-weight:bold;">&#40;</span><span style="color: #006600; font-weight:bold;">&#41;</span><span style="color: #006600; font-weight: bold;">;</span> <span style="color: #ff6600;">// or just DataBind(); for design-time configured databinding</span>
+  <span style="color: #006600; font-weight:bold;">&#125;</span></pre>
+<h1> <span class="mw-headline" id="Portability"> Portability </span></h1>
+<p>Portability is mostly a problem when moving an existing application from Windows/.NET to Mono on non-Windows platforms.   
+</p><p>If you are developing your application from scratch, portability problems will be kept to a minimum if you test the application regularly on both Linux and Windows during the development.
+</p><p><b> Do all ASP.NET applications run out of the box on Mono? </b>
+</p><p>Not all applications written for ASP.NET work on Mono, most of the time this is due to file system assumptions that the developers made.  In Unix filenames with different case are considered different, so for example it is possible to have both a "Login.aspx" and a "login.aspx" file.   If programmers are not consistent in their file naming practices applications will not run.
+</p><p>These are a few common problems:
+</p>
+<ul><li> The files on the ASP.NET application are themselves are camel-cased, like "Login.aspx" but the pages on the site are hard coded to reference "login.aspx".
+</li></ul>
+<ul><li> The application uses the Registry to store settings (Mono implements a emulated registry on Unix that takes some configuration to setup).
+</li></ul>
+<ul><li> The application makes use of a library not provided in Mono (EnterpriseServices for example).
+</li></ul>
+<p>Porting an application typically requires those changes to be made.
+</p><p><b> Does &lt;app&gt; run on Mono? </b>
+</p><p>Most applications will run on mono without a hassle, but others will need to be audited for the problems stated above in this section.
+</p><p>Some applications already include direct support for Mono, like <a href="http://sourceforge.net/projects/ngallery/" class="external text" rel="nofollow">nGallery</a>.
+</p><p><b> Does Mono support ASP.NET AJAX? </b>
+</p><p>Yes, Mono versions after 1.9 do support ASP.NET AJAX.
+</p><p><b> Are there other AJAX frameworks that could be used with Mono? </b>
+</p><p>There are a few Ajax libraries that developers could consider:
+</p>
+<ul><li> <a href="http://anthem-dot-net.sourceforge.net/" class="external text" rel="nofollow">Anthem.NET</a> library.
+</li><li> <a href="http://www.magicajax.net/" class="external text" rel="nofollow">Magic Ajax.NET</a>.
+</li><li> GaiaWidgets
+</li></ul>
+<p><b> Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files? </b>
+Yes, it is possible with Mono version from svn trunk or 1.2.7 or newer. This is  a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run  your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems.
+For more information see <a href="{{site.baseurl}}/ASP.NET_Settings_Mapping" title="ASP.NET Settings Mapping">ASP.NET_Settings_Mapping</a>
+</p>
+<h1> <span class="mw-headline" id="Extra_Languages"> Extra Languages </span></h1>
+<p><b> How can I use F# with ASP.NET on Mono? </b>
+</p><p>Out of the box, ASP.NET only supports pages written in C# and VB.NET. To convince it to use the F# compiler, the following extra steps are required:
+</p>
+<ul><li> Install the F# compiler and runtime. Get it from <a href="http://research.microsoft.com/fsharp/release.aspx" class="external text" rel="nofollow">here</a>. It should come with an install-mono.sh script. (On my system, I had to convert the newlines in that thing from CRLF (DOS format) to regular LF before sh would properly run it.)
+</li></ul>
+<ul><li> Set up mod_mono for apache, clx, or whichever web server you want, set up your ASP.NET page and configure the web-server to find it.
+</li></ul>
+<ul><li> Copy the FSharp.Compiler.CodeDom.dll file from the bin directory of your FSharp installation to the bin directory of your ASP.NET page.
+</li></ul>
+<ul><li> The web.conf for your page should look something like this to enable the compiling of F# code:
+</li></ul>
+<pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilation</span> <span style="color: #000066;">debug</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span></span>
+<span style="color: #009900;">           <span style="color: #000066;">assembly</span>=<span style="color: #ff0000;">&quot;FSharp.Compiler.CodeDom, Version=1.9.3.14,</span>
+<span style="color: #009900;">Culture=neutral,PublicKeyToken=a19089b1c74d0809&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/assemblies<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compilers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;compiler</span></span>
+<span style="color: #009900;">           <span style="color: #000066;">language</span>=<span style="color: #ff0000;">&quot;F#;f#;fs;fsharp&quot;</span> <span style="color: #000066;">extension</span>=<span style="color: #ff0000;">&quot;.fs&quot;</span></span>
+<span style="color: #009900;">           <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;Microsoft.FSharp.Compiler.CodeDom.FSharpAspNetCodeProvider,</span>
+<span style="color: #009900;">FSharp.Compiler.CodeDom, Version=1.9.3.14, Culture=neutral,</span>
+<span style="color: #009900;">PublicKeyToken=a19089b1c74d0809&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>Note that you might have to adjust the version numbers mentioned. There are example files for this in the samples/fsharp/Web/ASP.NET/, but for me they wouldn't work out of the box.
+</p>
+<ul><li> Make sure there is a file fsc.exe somewhere in your path that invokes the F# compiler. Since, on Unix, you can not directly run the .exe files, create a shell script named "fcs.exe" with this content:
+</li></ul>
+<pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/bin/sh</span>
+<span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>mono <span style="color: #000000; font-weight: bold;">/</span>path<span style="color: #000000; font-weight: bold;">/</span>to<span style="color: #000000; font-weight: bold;">/</span>FSharp-1.9.3.14<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>fsc.exe <span style="color: #ff0000;">&quot;$@&quot;</span></pre>
+<p>Now your ASP.NET page should load.
+</p><p>(thanks to Marijn Haverbeke for the contribution)
+</p>
+<h1> <span class="mw-headline" id="Using_Mono_with_Apache"> Using Mono with Apache </span></h1>
+<p><b> Will you support Apache 1? </b>
+</p><p>Yes, the mod_mono module works on both major versions of Apache (1.x and 2.x)
+</p><p><b> Can I run Apache 1 and Apache 2 on the same machine? </b>
+</p><p>You can always keep a copy of Apache 2 running in parallel with your Apache 1.3 (either different port or using a reverse proxy). 
+You can also bind the two servers to different IP addresses on the same physical machine.
+</p><p><b> How do I register a new extension to be processed by mod_mono? </b>
+</p><p>Consider for example turning .htm files into files processed as .aspx files.
+</p><p>You need to add to your Apache configuration the following line:
+</p>
+<pre class="csharp" style="font-family:monospace;">AddType application<span style="color: #008000;">/</span>x<span style="color: #008000;">-</span>asp<span style="color: #008000;">-</span>net <span style="color: #008000;">.</span><span style="color: #0000FF;">htm</span></pre>
+<p>And you need to inform the ASP.NET runtime how to handle the pages, add this to your web.config file:
+</p><p>You also need to inform System.Web about the .htm extension
+being now a page:
+</p><p>web.config, inside system.web and inside httpHandlers:
+</p>
+<pre class="xml" style="font-family:monospace;">  ..
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+     ..
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;httpHandlers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+       <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;add</span> <span style="color: #000066;">verb</span>=<span style="color: #ff0000;">&quot;*&quot;</span> <span style="color: #000066;">path</span>=<span style="color: #ff0000;">&quot;*.htm&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;System.Web.UI.PageHandlerFactory,</span>
+<span style="color: #009900;">System.Web, Version=1.0.5000.0, Culture=neutral, </span>
+<span style="color: #009900;">PublicKeyToken=b03f5f7f11d50a3a&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+      ...
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/httpHandlers<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+     ...
+  <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
+<p>(thanks to Marijn Haverbeke, for this contribution)
+</p><p><b> How do I setup multiple virtual hosts? </b>
+</p><p>Joe Audette has a tutorial <a href="http://www.joeaudette.com/settingupapachevirtualhostswithmod_mono.aspx" class="external text" rel="nofollow">here</a>
+</p>
+<h1> <span class="mw-headline" id="Hosting"> Hosting </span></h1>
+<p><b> Who provides Mono-based hosting of applications? </b> 
+</p>
+<ul><li> <a href="http://www.ubiquityhosting.com/" class="external text" rel="nofollow">Ubiquity Hosting</a> is provides Mono-based ASP.NET hosting.
+</li></ul>
+<h1> <span class="mw-headline" id="Memory_Usage"> Memory Usage </span></h1>
+<p><b> Why does the memory consumed by the Mono process keep growing? </b>
+</p><p>Mono currently uses a conservative, non-moving, non-compacting garbage collector.  This means that the heap is not compacted when memory is released.  This means that applications can produce memory allocation patterns that will effectively make the process grow, just like C, C++, Perl, Python applications would.  
+</p><p>It is hence important to not get into patterns that would create these holes, for example such a hole could be created if you create a block of size SIZE, release it, and then create two blocks of size SIZE/2+1.  
+</p><p>ASP.NET in Mono is particularly vulnerable to this kind of memory problems because it is easy for developers to define APIs that transfer large blobs of data like entire image files, these would allocate a lot of memory that can easily be fragmented.   
+</p><p>A simple solution is to try to write your software in a way that large data blocks are not allocated, but instead your application handles them in blocks (like writing a "copy" command).
+</p><p><b> Is there a better collector in the works? </b>
+</p><p>Yes, there is work to make a new generational collector under way, but it will not be ready for a while.   For more information on it, see the <a href="{{site.baseurl}}/Generational_GC" title="Generational GC">Generational GC</a> page.
+</p>

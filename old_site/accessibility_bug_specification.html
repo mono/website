@@ -1,0 +1,94 @@
+---
+layout: obsolete
+title: "Accessibility: Bug Specification"
+permalink: /old_site/Accessibility:_Bug_Specification/
+---
+
+<h1>Accessibility: Bug Specification</h1>
+
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#References"><span class="tocnumber">1</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Definitions"><span class="tocnumber">2</span> <span class="toctext">Definitions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Bug_Specification"><span class="tocnumber">3</span> <span class="toctext">Bug Specification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Purpose"><span class="tocnumber">3.1</span> <span class="toctext">Purpose</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Remember"><span class="tocnumber">3.2</span> <span class="toctext">Remember</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Bug_Template"><span class="tocnumber">3.3</span> <span class="toctext">Bug Template</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#PROBLEM_STATEMENT:"><span class="tocnumber">3.3.1</span> <span class="toctext">PROBLEM STATEMENT:</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#REPRO:"><span class="tocnumber">3.3.2</span> <span class="toctext">REPRO:</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#RESULTS:"><span class="tocnumber">3.3.3</span> <span class="toctext">RESULTS:</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#EXPECTED_RESULTS:"><span class="tocnumber">3.3.4</span> <span class="toctext">EXPECTED RESULTS:</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#COMMENTS:"><span class="tocnumber">3.3.5</span> <span class="toctext">COMMENTS:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Definitions_2"><span class="tocnumber">3.4</span> <span class="toctext">Definitions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#SEVERITY"><span class="tocnumber">3.4.1</span> <span class="toctext">SEVERITY</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#PRIORITY"><span class="tocnumber">3.4.2</span> <span class="toctext">PRIORITY</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2> <span class="mw-headline" id="References">References</span></h2>
+<p><a href="{{site.baseurl}}/Accessibility:_Test_Plan" title="Accessibility: Test Plan">Product Test Case Plan</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Case_Specification" title="Accessibility: Test Case Specification">Product Test Case Specification</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Log" title="Accessibility: Test Log">Product Test Log</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Test_Summary" title="Accessibility: Test Summary">Product Test Summary</a><br />
+<a href="{{site.baseurl}}/Accessibility:_Bug_Template" title="Accessibility: Bug Template" class="mw-redirect">Product Bug Specification</a>  (current page)<br />
+<a href="{{site.baseurl}}/Accessibility" title="Accessibility">Product Home</a><br />
+</p>
+<h2> <span class="mw-headline" id="Definitions">Definitions</span></h2>
+<p>FCS Release---(F)inal (C)ustomer (S)hipping Release
+</p>
+<h2> <span class="mw-headline" id="Bug_Specification">Bug Specification</span></h2>
+<h3> <span class="mw-headline" id="Purpose">Purpose</span></h3>
+<p>This is the template that should be used for all bugs when they are entered into Bugzilla.  Here is an <a href="https://bugzilla.novell.com/show_bug.cgi?id=459153" class="external text" rel="nofollow">example</a>.
+</p>
+<h3> <span class="mw-headline" id="Remember">Remember</span></h3>
+<p>Whenever you log a bug, please remember to add a comment with a <a href="{{site.baseurl}}/Accessibility:_Testing_Howto#Bug_References" title="Accessibility: Testing Howto">bug reference</a> (e.g., BUG459153) where the bug occurs in your test.  You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
+</p>
+<h3> <span class="mw-headline" id="Bug_Template">Bug Template</span></h3>
+<hr />
+<h4> <span class="mw-headline" id="PROBLEM_STATEMENT:">PROBLEM STATEMENT:</span></h4>
+<p><i>More detailed expansion of summary.  (The summary is a very abstract description of the problem required by Bugzilla to create a bug.)</i><br /><br />
+</p>
+<h4> <span class="mw-headline" id="REPRO:">REPRO:</span></h4>
+<p><i>Detailed step-by-step instructions that instruct the reader how to reproduce the bug.  The instructions should be detailed and clear enough that anyone (developer, community member, new employee) can reproduce the bug.  Remember to include any special setup steps.</i><br /><br />
+</p>
+<h4> <span class="mw-headline" id="RESULTS:">RESULTS:</span></h4>
+<p><i>What happens what the REPRO steps are followed</i><br /><br />
+</p>
+<h4> <span class="mw-headline" id="EXPECTED_RESULTS:">EXPECTED RESULTS:</span></h4>
+<p><i>What *should* happen when the REPRO steps are followed</i><br /><br />
+</p>
+<h4> <span class="mw-headline" id="COMMENTS:">COMMENTS:</span></h4>
+<p><i>Any additional information</i>
+</p>
+<hr />
+<h3> <span class="mw-headline" id="Definitions_2">Definitions</span></h3>
+<p>Here are some definitions to keep in mind when submitting a bug in Bugzilla:
+</p>
+<h4> <span class="mw-headline" id="SEVERITY">SEVERITY</span></h4>
+<p>Define defect severity value by Bugzilla default severity definition.  The severity describes the impact of a bug.
+</p>
+<ul><li>Blocker: Prevents developers or testers from performing their jobs. Impacts the development process.
+</li><li>Critical: Crash, loss of data, corruption of data, severe memory leak.
+</li><li>Major: Major loss of function, as specified in the product requirements for this release, or existing in the current
+</li><li>Normal: Non-major loss of function.
+</li><li>Minor: Issue that can be viewed as trivial (e.g. cosmetic, UI, easily documented).
+</li><li>Enhancement: Request for software enhancement, or any non-defect task or work item.
+</li></ul>
+<h4> <span class="mw-headline" id="PRIORITY">PRIORITY</span></h4>
+<p>Define defect priority value by Bugzilla default priority definition. The priority specifies the level of urgency to be resolved for the defect.
+</p>
+<ul><li>P1-Urgent: Defects are urgent issues.  Developers should try to fix P1 issues as soon as possible during the current iteration.
+</li><li>P2-High: Defects must be resolved in this release.  Developers should try to fix P2 issues during the next iteration.
+</li><li>P3-Medium: Defects would like to be fix, but won't hold shipment for them.
+</li><li>P4-Low: Defects are not as strong as desirable.
+</li></ul>
+<p>Bugzilla has many fields that provide additional information (e.g., environment details, found in version, etc.).  Please provide as much information as possible when logging bugs.
+</p>

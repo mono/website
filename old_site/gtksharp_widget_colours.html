@@ -1,0 +1,62 @@
+---
+layout: obsolete
+title: "GtkSharp: Widget Colours"
+permalink: /old_site/GtkSharp:_Widget_Colours/
+---
+
+<h1>GtkSharp: Widget Colours</h1>
+
+<p><br />
+</p>
+<h2> <span class="mw-headline" id="Colouring_Widgets_and_Windows"> Colouring Widgets and Windows </span></h2>
+<p>Colouring widgets and windows (which is itself a widget) alluded me for ages due to my basic knowledge of gtk.
+</p><p>Thanks to a <a href="http://lists.ximian.com/pipermail/gtk-sharp-list/2004-September/004820.html" class="external text" rel="nofollow">tiny example</a> I found by John Bailo on the <a href="http://lists.ximian.com/pipermail/gtk-sharp-list/" class="external text" rel="nofollow">gtk# mailing list</a> it turns out to not be such a tricky thing after all. I’ve recreated it here.
+</p><p>The following code sets up a gtk.window, a DrawingArea widget on top, colours the window and the drawing area both red, then draws a diagonal line across the page.
+</p>
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Gtk</span><span style="color: #008000;">;</span>
+&#160;
+<span style="color: #6666cc; font-weight: bold;">class</span> ColourExample
+<span style="color: #008000;">&#123;</span>
+ 	Window win<span style="color: #008000;">;</span>
+ 	DrawingArea da<span style="color: #008000;">;</span>
+&#160;
+        <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">void</span> Main <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Init</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> ColourExample <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Run</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        ColourExample<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+                win <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Window <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Colour Example&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                win<span style="color: #008000;">.</span><span style="color: #0000FF;">SetDefaultSize</span> <span style="color: #008000;">&#40;</span><span style="color: #FF0000;">400</span>, <span style="color: #FF0000;">300</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                win<span style="color: #008000;">.</span><span style="color: #0000FF;">DeleteEvent</span> <span style="color: #008000;">+=</span> OnWinDelete<span style="color: #008000;">;</span>
+&#160;
+                da <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> DrawingArea<span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                da<span style="color: #008000;">.</span><span style="color: #0000FF;">ExposeEvent</span> <span style="color: #008000;">+=</span> OnExposed<span style="color: #008000;">;</span>
+&#160;
+		Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Color</span> col <span style="color: #008000;">=</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Color</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Color</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Parse</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;red&quot;</span>, <span style="color: #0600FF; font-weight: bold;">ref</span> col<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+		win<span style="color: #008000;">.</span><span style="color: #0000FF;">ModifyBg</span><span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span>, col<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+ 		da<span style="color: #008000;">.</span><span style="color: #0000FF;">ModifyBg</span><span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span>, col<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&#160;
+                win<span style="color: #008000;">.</span><span style="color: #0600FF; font-weight: bold;">Add</span> <span style="color: #008000;">&#40;</span>da<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                win<span style="color: #008000;">.</span><span style="color: #0000FF;">ShowAll</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+        <span style="color: #6666cc; font-weight: bold;">void</span> OnExposed <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, ExposeEventArgs args<span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+                da<span style="color: #008000;">.</span><span style="color: #0000FF;">GdkWindow</span><span style="color: #008000;">.</span><span style="color: #0000FF;">DrawLine</span><span style="color: #008000;">&#40;</span>da<span style="color: #008000;">.</span><span style="color: #0000FF;">Style</span><span style="color: #008000;">.</span><span style="color: #0000FF;">BaseGC</span><span style="color: #008000;">&#40;</span>StateType<span style="color: #008000;">.</span><span style="color: #0000FF;">Normal</span><span style="color: #008000;">&#41;</span>, <span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">0</span>, <span style="color: #FF0000;">400</span>, <span style="color: #FF0000;">300</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+&#160;
+&#160;
+        <span style="color: #6666cc; font-weight: bold;">void</span> OnWinDelete <span style="color: #008000;">&#40;</span><span style="color: #6666cc; font-weight: bold;">object</span> o, DeleteEventArgs args<span style="color: #008000;">&#41;</span><span style="color: #008000;">&#123;</span>
+                Application<span style="color: #008000;">.</span><span style="color: #0000FF;">Quit</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
+<p>The code declares a global Window widget, and a global DrawingArea widget.  Then a Gdk.Color object is  created. We need to create a Color object so that this can be passed to the .ModifyBg() method of whatever widget is to be coloured. At first, just a blank Gtk.Color object is created. 
+</p><p>We still need to tell the object what colour to be. This is done using the Gtk.Color.Parse method. The first parameter is a colour to try and translate. In this example “red” is passed and the method can easily work out what red is. The second parameter is which Gtk.Color object to send the colour to. Of course, this is ‘col’. So in short, declare a Gtk.Color object called ‘col’ and inform it to be a particular colour using Gtk.Color.Parse();
+</p><p>Both widgets are going to be coloured red. I have done this is for two reasons. 
+</p><p>One: rarely, does a gtk# application contain just a Window widget and nothing else alone, so we need to put something practical in there and a drawingarea will do fine. 
+</p><p>Two: although you really only need to change the background colour in the drawingarea widget to achieve the desired effect, I have elected to colour the window widget as well so that you don’t get an annoying white/grey flick the moment before the drawingarea object appears on the window when the .Show() method is called.
+</p><p>Finally, I used the expose event of the drawingarea widget to draw a simple line to just give the program some real world practicality.
+</p>
