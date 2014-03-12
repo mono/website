@@ -6,43 +6,50 @@ permalink: /old_site/Guide:Debugger/
 
 <h1>Guide:Debugger</h1>
 
+<p><br />
+DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED DEPRECATED 
+</p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
-<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#Using_the_Hard_Debugger_with_MonoDevelop"><span class="tocnumber">2</span> <span class="toctext">Using the Hard Debugger with MonoDevelop</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Using_the_Command_Line_Debugger"><span class="tocnumber">3</span> <span class="toctext">Using the Command Line Debugger</span></a>
+<li class="toclevel-1 tocsection-1"><a href="#DEPRECATED"><span class="tocnumber">1</span> <span class="toctext">DEPRECATED</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Introduction"><span class="tocnumber">2</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Using_the_Hard_Debugger_with_MonoDevelop"><span class="tocnumber">3</span> <span class="toctext">Using the Hard Debugger with MonoDevelop</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Using_the_Command_Line_Debugger"><span class="tocnumber">4</span> <span class="toctext">Using the Command Line Debugger</span></a>
 <ul>
-<li class="toclevel-2 tocsection-4"><a href="#Preparing_your_Program"><span class="tocnumber">3.1</span> <span class="toctext">Preparing your Program</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#Debugging_Symbols"><span class="tocnumber">3.2</span> <span class="toctext">Debugging Symbols</span></a></li>
-<li class="toclevel-2 tocsection-6"><a href="#Starting_the_Debugger"><span class="tocnumber">3.3</span> <span class="toctext">Starting the Debugger</span></a></li>
-<li class="toclevel-2 tocsection-7"><a href="#Command_line_arguments"><span class="tocnumber">3.4</span> <span class="toctext">Command line arguments</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Preparing_your_Program"><span class="tocnumber">4.1</span> <span class="toctext">Preparing your Program</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Debugging_Symbols"><span class="tocnumber">4.2</span> <span class="toctext">Debugging Symbols</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Starting_the_Debugger"><span class="tocnumber">4.3</span> <span class="toctext">Starting the Debugger</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Command_line_arguments"><span class="tocnumber">4.4</span> <span class="toctext">Command line arguments</span></a></li>
 </ul>
 </li>
-<li class="toclevel-1 tocsection-8"><a href="#Commands"><span class="tocnumber">4</span> <span class="toctext">Commands</span></a>
+<li class="toclevel-1 tocsection-9"><a href="#Commands"><span class="tocnumber">5</span> <span class="toctext">Commands</span></a>
 <ul>
-<li class="toclevel-2 tocsection-9"><a href="#Quitting_and_restarting"><span class="tocnumber">4.1</span> <span class="toctext">Quitting and restarting</span></a></li>
-<li class="toclevel-2 tocsection-10"><a href="#Displaying_processes_and_threads"><span class="tocnumber">4.2</span> <span class="toctext">Displaying processes and threads</span></a></li>
-<li class="toclevel-2 tocsection-11"><a href="#Running_and_single_stepping"><span class="tocnumber">4.3</span> <span class="toctext">Running and single stepping</span></a></li>
-<li class="toclevel-2 tocsection-12"><a href="#Stack_frames_and_backtraces"><span class="tocnumber">4.4</span> <span class="toctext">Stack frames and backtraces</span></a></li>
-<li class="toclevel-2 tocsection-13"><a href="#Printing_expressions"><span class="tocnumber">4.5</span> <span class="toctext">Printing expressions</span></a></li>
-<li class="toclevel-2 tocsection-14"><a href="#Displaying_expressions"><span class="tocnumber">4.6</span> <span class="toctext">Displaying expressions</span></a></li>
-<li class="toclevel-2 tocsection-15"><a href="#Breakpoints"><span class="tocnumber">4.7</span> <span class="toctext">Breakpoints</span></a></li>
-<li class="toclevel-2 tocsection-16"><a href="#Catching_Exceptions"><span class="tocnumber">4.8</span> <span class="toctext">Catching Exceptions</span></a></li>
-<li class="toclevel-2 tocsection-17"><a href="#Displaying_a_method.27s_source_code"><span class="tocnumber">4.9</span> <span class="toctext">Displaying a method's source code</span></a></li>
-<li class="toclevel-2 tocsection-18"><a href="#Disassembling"><span class="tocnumber">4.10</span> <span class="toctext">Disassembling</span></a></li>
-<li class="toclevel-2 tocsection-19"><a href="#Exploring_the_Program_State"><span class="tocnumber">4.11</span> <span class="toctext">Exploring the Program State</span></a></li>
-<li class="toclevel-2 tocsection-20"><a href="#Examining_Memory"><span class="tocnumber">4.12</span> <span class="toctext">Examining Memory</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Quitting_and_restarting"><span class="tocnumber">5.1</span> <span class="toctext">Quitting and restarting</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Displaying_processes_and_threads"><span class="tocnumber">5.2</span> <span class="toctext">Displaying processes and threads</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Running_and_single_stepping"><span class="tocnumber">5.3</span> <span class="toctext">Running and single stepping</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Stack_frames_and_backtraces"><span class="tocnumber">5.4</span> <span class="toctext">Stack frames and backtraces</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Printing_expressions"><span class="tocnumber">5.5</span> <span class="toctext">Printing expressions</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Displaying_expressions"><span class="tocnumber">5.6</span> <span class="toctext">Displaying expressions</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Breakpoints"><span class="tocnumber">5.7</span> <span class="toctext">Breakpoints</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Catching_Exceptions"><span class="tocnumber">5.8</span> <span class="toctext">Catching Exceptions</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Displaying_a_method.27s_source_code"><span class="tocnumber">5.9</span> <span class="toctext">Displaying a method's source code</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Disassembling"><span class="tocnumber">5.10</span> <span class="toctext">Disassembling</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Exploring_the_Program_State"><span class="tocnumber">5.11</span> <span class="toctext">Exploring the Program State</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Examining_Memory"><span class="tocnumber">5.12</span> <span class="toctext">Examining Memory</span></a></li>
 </ul>
 </li>
-<li class="toclevel-1 tocsection-21"><a href="#Expressions"><span class="tocnumber">5</span> <span class="toctext">Expressions</span></a>
+<li class="toclevel-1 tocsection-22"><a href="#Expressions"><span class="tocnumber">6</span> <span class="toctext">Expressions</span></a>
 <ul>
-<li class="toclevel-2 tocsection-22"><a href="#Simple_expressions"><span class="tocnumber">5.1</span> <span class="toctext">Simple expressions</span></a></li>
-<li class="toclevel-2 tocsection-23"><a href="#Pointer_expressions"><span class="tocnumber">5.2</span> <span class="toctext">Pointer expressions</span></a></li>
-<li class="toclevel-2 tocsection-24"><a href="#Invocation_expressions"><span class="tocnumber">5.3</span> <span class="toctext">Invocation expressions</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Simple_expressions"><span class="tocnumber">6.1</span> <span class="toctext">Simple expressions</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Pointer_expressions"><span class="tocnumber">6.2</span> <span class="toctext">Pointer expressions</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Invocation_expressions"><span class="tocnumber">6.3</span> <span class="toctext">Invocation expressions</span></a></li>
 </ul>
 </li>
 </ul>
 </td></tr></table>
+<h1> <span class="mw-headline" id="DEPRECATED"> DEPRECATED </span></h1>
+<p>The Hard Debugger is no longer support in newer versions of Mono, it is only supported by older versions of Mono.   This documentation is here for the sake of users that still use the old debugger.
+</p>
 <h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
 <p>This is a guide to the Mono Hard Debugger.   Most developers will want to use instead the <a href="{{site.baseurl}}/Soft_Debugger" title="Soft Debugger" class="mw-redirect">Soft Debugger</a> support in Mono and MonoDevelop 2.2 as it supports debugging more kinds of applications and it is in general more reliable than the hard debugger.
 </p><p>The principal difference between the hard debugger (MDB) and the soft debugger is that the hard debugger can debug both managed and unmanaged applications, while the soft debugger is limited to pure managed applications.   But the soft debugger is a more reliable debugger due to its architecture.

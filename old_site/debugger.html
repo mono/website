@@ -6,23 +6,10 @@ permalink: /old_site/Debugger/
 
 <h1>Debugger</h1>
 
-<p>Mono comes with two Mono-specific debuggers: a hard debugger and a soft debugger, additionally, you can <a href="{{site.baseurl}}/Debugging" title="Debugging">use the Unix GDB debugger with Mono</a> to debug low level problems, more information on these debuggers is available here:
-</p>
-<ul><li> <a href="{{site.baseurl}}/Soft_Debugger" title="Soft Debugger" class="mw-redirect">Soft Debugger</a>
-<ul><li> Recommended debugger engine, requires Mono 2.6 + MonoDevelop 2.2
-</li><li> Only debugs pure managed applications
-</li><li> Moonlight, ASP.NET, Gtk#, iPhone and remote debugging supported
-</li></ul>
-</li><li> <a href="{{site.baseurl}}/Guide:Debugger" title="Guide:Debugger">Hard Debugger</a>
-<ul><li> Works with Mono 2.4, 2.6 and requires MonoDevelop 2.2
-</li><li> Debugs both managed and unmanaged applications
-</li><li> Only supports GUI and Console applications from Unix
-</li><li> Can debug ASP.NET applications while using Visual Studio
-</li></ul>
-</li><li> <a href="{{site.baseurl}}/Debugging" title="Debugging">Low-level debugging with GDB</a>
-</li></ul>
-<p>Both the <a href="{{site.baseurl}}/Soft_Debugger" title="Soft Debugger" class="mw-redirect">soft debugger</a> and the <a href="{{site.baseurl}}/Guide:Debugger" title="Guide:Debugger">hard debugger</a> are supported by the MonoDevelop IDE 2.2, but only the hard debugger has a Unix command-line interface (<b>mdb</b>).   If you are a Mono 2.6+ user, we strongly recommend the use of the soft debugger.
-</p><p>MonoTools for Visual Studio 1.0 supports the Hard Debugger interface, and  MonoTools for Visual Studio 2.0 introduces support for the Soft Debugger as well.
+<p><br />
+The Mono runtime implements a debugging interface that allows debuggers and IDEs to debug managed code.  This is called the <a href="{{site.baseurl}}/Soft_Debugger" title="Soft Debugger" class="mw-redirect">Soft Debugger</a> and is supported by both MonoDevelop, Xamarin Studio and Visual Studio (when the appropriate plugins are installed) as well as the command line <a href="https://github.com/mono/sdb" class="external text" rel="nofollow">SDB client</a>.
+</p><p>Mono provides an API to communicate with the debugger and create your own debugging UIs via the Mono.Debugger.Soft.dll assembly
+</p><p>In addition, if you can <a href="{{site.baseurl}}/Debugging" title="Debugging">use the Unix GDB debugger with Mono</a> to debug low level problems. 
 </p>
 <h1> <span class="mw-headline" id="Bugs"> Bugs </span></h1>
 <p>Debugger bug tracking:
