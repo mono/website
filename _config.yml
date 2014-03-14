@@ -8,6 +8,8 @@ markdown: kramdown
 safe: true
 lsi: false
 pygments: true
+gems:
+  - jekyll-redirect-from
 exclude:
   - CNAME
   - README.md
