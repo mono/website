@@ -83,7 +83,7 @@ redirect_from:
 <ul><li> Waiting for a process to exit from an arbitrary process.  This is now limited to Parent/Child relations.
 </li></ul>
 <h1> <span class="mw-headline" id="ThreadPool_and_asynchronous_socket_operations"> ThreadPool and asynchronous socket operations </span></h1>
-<p>An ongoing problem with Mono were the ThreadPool-related deadlocks (see our <a href="{{site.baseurl}}/Article:ThreadPool_Deadlocks" title="Article:ThreadPool Deadlocks">article describing the problem</a>).  Basically the ThreadPool is a resource that is easy to starve, and which can cause deadlocks in your applications. Mono extensive use of the ThreadPool for internal operations made this problem more notorious, ASP.NET and HttpWebRequest being hungry consumers.
+<p>An ongoing problem with Mono were the ThreadPool-related deadlocks (see our <a href="{{site.baseurl}}/old_site/Article:ThreadPool_Deadlocks" title="Article:ThreadPool Deadlocks">article describing the problem</a>).  Basically the ThreadPool is a resource that is easy to starve, and which can cause deadlocks in your applications. Mono extensive use of the ThreadPool for internal operations made this problem more notorious, ASP.NET and HttpWebRequest being hungry consumers.
 </p><p>We have redesigned the internals in the class libraries and the runtime to address this problem not using the user ThreadPool internally.
 Right now, the only noticeable consumer in the class libraries is the ASP.NET runtime.
 </p><p>As a result of the changes we now have:

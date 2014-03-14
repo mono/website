@@ -63,7 +63,7 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="Daily_Workflow_With_git-svn">Daily Workflow With git-svn</span></h1>
 <h2> <span class="mw-headline" id="Setup">Setup</span></h2>
-<p>Before reading this guide, make sure you set up your git repository according to the <a href="{{site.baseurl}}/Accessibility:_GitSVN#Getting_Started" title="Accessibility: GitSVN">Getting Started instructions</a>.
+<p>Before reading this guide, make sure you set up your git repository according to the <a href="{{site.baseurl}}/old_site/Accessibility:_GitSVN#Getting_Started" title="Accessibility: GitSVN">Getting Started instructions</a>.
 </p><p>Your git "master" branch will be associated with the remote git-svn/trunk branch that maps to SVN trunk.  If you need to you can create a local branch for each SVN remote branch like this:
 </p>
 <pre>git branch 1.0 git-svn/branches/1.0
@@ -144,8 +144,8 @@ git checkout myfeature
 </p><p>TODO: Use git gui to visualize uncommitted changes.  You can use this as a commit gui, which is explained later.
 </p>
 <h2> <span class="mw-headline" id="Get_Feedback_With_Reviewboard">Get Feedback With Reviewboard</span></h2>
-<p>Make sure you are familiar with our <a href="{{site.baseurl}}/Accessibility:_Reviews" title="Accessibility: Reviews">code review policy</a>.
-</p><p>When you're ready for a review, make sure all of your changes are committed in the feature branch, then run `<a href="{{site.baseurl}}/Accessibility:_Reviews#Submitting_Review_Requests" title="Accessibility: Reviews">post-review</a>` from the feature branch.  For git, only committed changes will be included in the Reviewboard diff.
+<p>Make sure you are familiar with our <a href="{{site.baseurl}}/old_site/Accessibility:_Reviews" title="Accessibility: Reviews">code review policy</a>.
+</p><p>When you're ready for a review, make sure all of your changes are committed in the feature branch, then run `<a href="{{site.baseurl}}/old_site/Accessibility:_Reviews#Submitting_Review_Requests" title="Accessibility: Reviews">post-review</a>` from the feature branch.  For git, only committed changes will be included in the Reviewboard diff.
 </p><p>If you experience any errors when running post-review, please send them to Brad or Sandy.  It would be especially helpful if you could reproduce with the "-d" (debug) option.
 </p>
 <h3> <span class="mw-headline" id="Posting_Reviews_for_SVN_Branches">Posting Reviews for SVN Branches</span></h3>

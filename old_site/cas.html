@@ -37,22 +37,22 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="Code_Access_Security"> Code Access Security </span></h1>
 <p>Code Access Security (CAS) is a new <b>experimental</b> (i.e. unsupported) feature in the Mono 1.2 release. It is complete enough to play with it but <b>should not be used</b> in production (incomplete and unaudited). The security manager is <b>off</b> by default. 
-</p><p>There is no planned release date to support <b>CAS</b> in Mono, see <a href="{{site.baseurl}}/Mono_Project_Roadmap" title="Mono Project Roadmap">roadmap</a> for details. Security efforts are now oriented to support the Silverlight security model in <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a>.
+</p><p>There is no planned release date to support <b>CAS</b> in Mono, see <a href="{{site.baseurl}}/old_site/Mono_Project_Roadmap" title="Mono Project Roadmap">roadmap</a> for details. Security efforts are now oriented to support the Silverlight security model in <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a>.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Security_Manager"> Security Manager </span></h2>
 <p>The security manager is a collection of security features to implement every security actions defined in the .NET framework. The security manager resides in the JIT (e.g. code generation for Demands, security checks for <code>LinkDemand</code>, stack walk), the runtime (e.g. security checks for <code>InheritanceDemand</code> in the class loader) and in the class library (mscorlib.dll).
 </p>
 <h3> <span class="mw-headline" id="Testing"> Testing </span></h3>
-<p>Sadly not every parts of the security manager cannot be tested using <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">NUnit</a>. In particular some security actions, like <code>LinkDemand</code> and <code>InheritanceDemand</code>, throws unhandled exceptions. While it is possible to promote <code>LinkDemand</code> into full <code>Demand</code> by using reflection, <code>InheritanceDemand</code> are still not testable using <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">NUnit</a>.
-</p><p>Some tests for those hard-to-test features are present in directories under <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/" class="external text" rel="nofollow">/mono/mono/tests/cas/</a> in <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a>. They can be executed by doing a <code>make test</code> in each directory.
+<p>Sadly not every parts of the security manager cannot be tested using <a href="{{site.baseurl}}/old_site/Test_Suite" title="Test Suite">NUnit</a>. In particular some security actions, like <code>LinkDemand</code> and <code>InheritanceDemand</code>, throws unhandled exceptions. While it is possible to promote <code>LinkDemand</code> into full <code>Demand</code> by using reflection, <code>InheritanceDemand</code> are still not testable using <a href="{{site.baseurl}}/old_site/Test_Suite" title="Test Suite">NUnit</a>.
+</p><p>Some tests for those hard-to-test features are present in directories under <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/" class="external text" rel="nofollow">/mono/mono/tests/cas/</a> in <a href="{{site.baseurl}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a>. They can be executed by doing a <code>make test</code> in each directory.
 </p>
 <h3> <span class="mw-headline" id="Status"> Status </span></h3>
 <p>Since version 1.1.4 Mono supports the --security option to enable it's security manager. E.g.
 </p>
 <pre>mono --security sample.exe
 </pre>
-<p>New features in <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> (unreleased as of 1.1.10) includes:
+<p>New features in <a href="{{site.baseurl}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> (unreleased as of 1.1.10) includes:
 </p>
 <ul><li> none;
 </li></ul>
@@ -96,7 +96,7 @@ What's not (yet) supported:
 </p><p>Adding the required security protections to an existing class can be tricky as it will often requires some refactoring (e.g. to avoid looping over security checks). It's much easier to do when there are existing unit tests (i.e. refactoring can lead to mistakes). Be extra careful if no unit tests exists (or if their coverage is incomplete) and don't hesitate to add <i>normal</i> unit tests before protecting the resources. Also adding any code (resource protection or not) should be reviewed by the maintainer of the class/namespace/assembly.
 </p>
 <h3> <span class="mw-headline" id="Testing_2"> Testing </span></h3>
-<p>Testing each class, security related or not, is done with <i>classic</i> <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">unit tests</a>. However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
+<p>Testing each class, security related or not, is done with <i>classic</i> <a href="{{site.baseurl}}/old_site/Test_Suite" title="Test Suite">unit tests</a>. However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
 </p>
 <ul><li> The unit test namespace starts with <code>MonoCasTests</code> instead of <code>MonoTests</code>;
 </li></ul>
@@ -159,7 +159,7 @@ What's not (yet) supported:
 </p><p><b>Status</b>
 </p>
 <ul><li> The current version (i.e. the one part of the Mono 1.1.x releases) is limited to show the assembly-level permissions (e.g. <code>RequestMinimum</code>, <code>RequestOptional</code> and <code>RequestRefuse</code>) and works only on the Mono runtime;
-</li><li> A new version, based on <a href="{{site.baseurl}}/Cecil" title="Cecil">Mono.Cecil</a>, is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the <b>mcs</b> <a href="{{site.baseurl}}/SVN" title="SVN" class="mw-redirect">SVN</a> trunk. Until then the source code is available <a href="http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup" class="external text" rel="nofollow">here</a>.
+</li><li> A new version, based on <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Mono.Cecil</a>, is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the <b>mcs</b> <a href="{{site.baseurl}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> trunk. Until then the source code is available <a href="http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup" class="external text" rel="nofollow">here</a>.
 </li></ul>
 <h3> <span class="mw-headline" id="storeadm"> storeadm </span></h3>
 <p>Storeadm is a tool to manage isolated storage on a computer. It's handly for sysadmins to manage (and reclaim) disk space used for isolated storage. The tool is mainly built on top of the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.IO.IsolatedStorage" class="external text" rel="nofollow">System.IO.IsolatedStorage</a> classes;

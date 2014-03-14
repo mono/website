@@ -8,10 +8,10 @@ redirect_from:
 
 <h1>CPlusPlus</h1>
 
-<p>The CLI is able to host C++ compiled code on all <a href="{{site.baseurl}}/Supported_Platforms" title="Supported Platforms">supported platforms</a> as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.
-</p><p>Mixed-mode assemblies are experimentally supported only on Windows because native code is platform specific. With the help of <a href="http://www.winehq.org/" class="external text" rel="nofollow">Wine</a> mixed-mode assemblies can be used on other platforms by the <a href="{{site.baseurl}}/Using_Mono_on_Windows" title="Using Mono on Windows">Windows version</a> of Mono.
+<p>The CLI is able to host C++ compiled code on all <a href="{{site.baseurl}}/old_site/Supported_Platforms" title="Supported Platforms">supported platforms</a> as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.
+</p><p>Mixed-mode assemblies are experimentally supported only on Windows because native code is platform specific. With the help of <a href="http://www.winehq.org/" class="external text" rel="nofollow">Wine</a> mixed-mode assemblies can be used on other platforms by the <a href="{{site.baseurl}}/old_site/Using_Mono_on_Windows" title="Using Mono on Windows">Windows version</a> of Mono.
 </p><p>There is little rationale to implement support for mixed-mode assemblies on other platforms because a different version of the same mixed-mode assembly would be required for each platform. Portable Executable format could not be used on operating systems other than Windows that would require non-standard ELF based assemblies for example.
-</p><p><a href="{{site.baseurl}}/Embedding_Mono" title="Embedding Mono">Embed Mono</a> in your application and/or use <a href="{{site.baseurl}}/Interop_with_Native_Libraries" title="Interop with Native Libraries">P/Invoke</a> to achieve the goals of mixed-mode assemblies on other platforms. IJW thunks are P/Invoke calls with predefined function pointers thus have no performance advantage over P/Invoke.
+</p><p><a href="{{site.baseurl}}/old_site/Embedding_Mono" title="Embedding Mono">Embed Mono</a> in your application and/or use <a href="{{site.baseurl}}/old_site/Interop_with_Native_Libraries" title="Interop with Native Libraries">P/Invoke</a> to achieve the goals of mixed-mode assemblies on other platforms. IJW thunks are P/Invoke calls with predefined function pointers thus have no performance advantage over P/Invoke.
 </p><p>Notice that Mono does not currently support the mixed-mode versions (there is no pure CIL version) of the Microsoft Visual C Runtime Library.
 </p><p>The following document describes the ways to produce platform independent pure CIL code using Microsoft compilers.
 </p>
@@ -60,7 +60,7 @@ Mono because managed objects are passed using P/Invoke to CRT DLL and it is not 
 </p><p>But this is not sufficient to compile C++ CLI code that targets Mono, as these extensions will require modifications to GCC to recognize this new language and emit the proper code.
 </p><p>The ideal path to support C++ is to finish the work that was started by
 Jey on the summer of code to make GCC emit CIL code.   You can get some
-links to the work-in-progress from: <a href="{{site.baseurl}}/Summer2005#GCC_CIL" title="Summer2005">Summer of Code GCC CIL project</a>
+links to the work-in-progress from: <a href="{{site.baseurl}}/old_site/Summer2005#GCC_CIL" title="Summer2005">Summer of Code GCC CIL project</a>
 </p><p>The blog linked there has some details about the progress so far.
 </p><p>Once this stage is done, there are two extra stages that are fairly
 complex:

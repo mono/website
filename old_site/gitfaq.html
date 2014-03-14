@@ -58,7 +58,7 @@ redirect_from:
 </p>
 <h1> <span class="mw-headline" id="Workflow"> Workflow </span></h1>
 <p>Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.   
-</p><p>Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate <a href="{{site.baseurl}}/Mailing_Lists" title="Mailing Lists">mailing list</a>).
+</p><p>Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate <a href="{{site.baseurl}}/old_site/Mailing_Lists" title="Mailing Lists">mailing list</a>).
 </p><p>We might have missed some core contributors on the first batch that granted push access to the Mono repositories.   If we missed you, please contact us to get this fixed.
 </p><p>All git commands support a "-n" option, which will do a dry run of the command. When doing "git push", do try "-n" first to make sure what's getting pushed is correct.
 </p><p>For quick recipe to checkout, make your changes, and commit them, this <a href="http://nakedstartup.com/2010/04/simple-daily-git-workflow/" class="external text" rel="nofollow">introduction</a> is also useful.
@@ -76,7 +76,7 @@ changes from the remote repo, then push your commits.
 </p><p><b>Note:</b> If you use <code>git pull</code> without <code>--rebase</code>, and there have been commits on the repository since you last pulled, you might end up with an extra commit that says:
 </p>
 <pre class="bash" style="font-family:monospace;">Merge branch <span style="color: #ff0000;">'master'</span> of <span style="color: #c20cb9; font-weight: bold;">git</span><span style="color: #000000; font-weight: bold;">@</span>github.com:<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>repo</pre>
-<p>This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes.  So use <code>git pull --rebase</code>, and remember to make sure you're not pushing merge commits (check this <a href="{{site.baseurl}}/GitFAQ#How_do_I_know_what.27s_going_to_be_pushed.3F" title="GitFAQ">FAQ entry</a>)
+<p>This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes.  So use <code>git pull --rebase</code>, and remember to make sure you're not pushing merge commits (check this <a href="{{site.baseurl}}/old_site/GitFAQ#How_do_I_know_what.27s_going_to_be_pushed.3F" title="GitFAQ">FAQ entry</a>)
 </p>
 <h2> <span class="mw-headline" id="Workflow_2:_Use_.27master.27_as_integration_branch"> Workflow 2: Use 'master' as integration branch </span></h2>
 <p>If you have multiple small pieces that you're working on simultaneously, you can use a few local branches to maintain them independently, and switch among them when you want to switch mental context.  Since it is an useful mode of operation, it might make sense to use this workflow even if you have only one thing you're working on, so that you're comfortable with the workflow.
@@ -201,7 +201,7 @@ It is easy to extend the workflow to merge our changes onto multiple integration
 </p>
 <pre class="bash" style="font-family:monospace;">warning: refname <span style="color: #ff0000;">'branch-name'</span> is ambiguous</pre>
 <p>This can happen if you've created a local branch with the same name as a remote tag. Git should be checking out your local branch, but instead it's trying to checkout the tag, and it gets confused.
-</p><p>The initial import of several trees were problematic, since they contained identically named branches and tags.  We have since addressed a lot of these issues, by <a href="{{site.baseurl}}/GitFAQ/fixup-tags.sh" title="GitFAQ/fixup-tags.sh">renaming away</a> the tags.  
+</p><p>The initial import of several trees were problematic, since they contained identically named branches and tags.  We have since addressed a lot of these issues, by <a href="{{site.baseurl}}/old_site/GitFAQ/fixup-tags.sh" title="GitFAQ/fixup-tags.sh">renaming away</a> the tags.  
 </p><p>If you cloned the repos before Jul 23, you'll need to refresh your tags (assuming you don't want to reclone the repos).
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;"># careful!!! dangerous if you have any _local_ tags</span>

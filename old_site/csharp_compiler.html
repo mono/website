@@ -44,22 +44,22 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
-<p>The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0 and C# 4.0 (<a href="{{site.baseurl}}/ECMA" title="ECMA">ECMA</a>).   A preview of C# 5.0 is distributed with Mono 2.11 or when building Mono from our trunk source code release.
+<p>The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0 and C# 4.0 (<a href="{{site.baseurl}}/old_site/ECMA" title="ECMA">ECMA</a>).   A preview of C# 5.0 is distributed with Mono 2.11 or when building Mono from our trunk source code release.
 </p><p>Historically, various version of same compiler existed.
 </p>
 <ul><li> <b>gmcs</b>: compiler to target the 2.0 mscorlib.
-</li><li> <b>smcs</b>: compiler to target the 2.1 mscorlib, to build <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> applications.
+</li><li> <b>smcs</b>: compiler to target the 2.1 mscorlib, to build <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> applications.
 </li><li> <b>dmcs</b>: compiler to target the 4.0 mscorlib.
 </li></ul>
 <p>Starting with Mono version 2.11 a new unified compiler <b>mcs</b> is available. It replaces all previous runtime specific compilers (gmcs, dmcs, smcs). They still exist (as scripts only) to ease the migration path to mcs but we recommend to use mcs.
-</p><p>Bug reports or any compiler issue can be <a href="{{site.baseurl}}/Bugs" title="Bugs">filed on our bug tracking system.</a> 
+</p><p>Bug reports or any compiler issue can be <a href="{{site.baseurl}}/old_site/Bugs" title="Bugs">filed on our bug tracking system.</a> 
 </p><p>The compiler is able to compile itself and many more C# programs (there is a test suite included that you can use). The compiler  is routinely used to compile Mono, roughly four million lines of C# code and a few other projects.
 </p><p>The compiler is also fairly fast. On a IBM ThinkPad t40 it compiles 18,000 lines of C# code per second. 
 </p>
 <h3> <span class="mw-headline" id="Compiler_Service"> Compiler Service </span></h3>
-<p>Starting with Mono 2.2 it supports a <a href="{{site.baseurl}}/CsharpRepl" title="CsharpRepl">Compiler Service</a> that applications can consume.
+<p>Starting with Mono 2.2 it supports a <a href="{{site.baseurl}}/old_site/CsharpRepl" title="CsharpRepl">Compiler Service</a> that applications can consume.
 </p><p>The compiler can be used as a service by using the Mono.CSharp.Evaluator class in the Mono.Sharp.dll assembly.   
-</p><p>Both a console and GUI <a href="{{site.baseurl}}/CsharpRepl" title="CsharpRepl">read-eval-print</a> shells are distributed as part of Mono 2.2 and are both built on top of the above service.
+</p><p>Both a console and GUI <a href="{{site.baseurl}}/old_site/CsharpRepl" title="CsharpRepl">read-eval-print</a> shells are distributed as part of Mono 2.2 and are both built on top of the above service.
 </p>
 <h3> <span class="mw-headline" id="State_of_the_Compiler"> State of the Compiler </span></h3>
 <p>The (<b>mcs</b>) compiler defaults to the latest language specification available.
@@ -113,7 +113,7 @@ redirect_from:
 </p>
 <h3> <span class="mw-headline" id="Working_with_MCS"> Working with MCS </span></h3>
 <h4> <span class="mw-headline" id="Obtaining_MCS"> Obtaining MCS </span></h4>
-<p>The Mono C# compiler is part of the `mono' module in the Mono Git you can get it from our <a href="{{site.baseurl}}/SourceCodeRepository" title="SourceCodeRepository">source code</a> server, or you can get nightly <a href="{{site.baseurl}}/Downloads" title="Downloads">download page</a>.
+<p>The Mono C# compiler is part of the `mono' module in the Mono Git you can get it from our <a href="{{site.baseurl}}/old_site/SourceCodeRepository" title="SourceCodeRepository">source code</a> server, or you can get nightly <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">download page</a>.
 </p><p>You can also browse or download a snapshot of the compiler alone:
 </p>
 <ul><li> <a href="http://github.com/mono/mono/tree/master/mcs/mcs/" class="external text" rel="nofollow">browse the sources</a>.
@@ -129,7 +129,7 @@ redirect_from:
 <p>MCS is written in C# and uses heavily the .NET APIs (in particular it uses System.Reflection and System.Reflection.Emit). MCS runs on Linux with the Mono runtime and on Windows with both the .NET runtime and the Mono runtime.
 </p>
 <h4> <span class="mw-headline" id="Reporting_Bugs"> Reporting Bugs </span></h4>
-<p>You can submit bugs by filing the bugs against the C# compiler in our <a href="{{site.baseurl}}/Bugs" title="Bugs">Bugs</a> page.
+<p>You can submit bugs by filing the bugs against the C# compiler in our <a href="{{site.baseurl}}/old_site/Bugs" title="Bugs">Bugs</a> page.
 </p><p>When you report a bug, try to provide a small test case that would show the error so we can include this as part of the Mono C# regression test suite. 
 If the bug is an error or a warning that we do not flag, write a sample program called `csXXXX.cs' where XXXX is the code number that is used by the Microsoft C# compiler that illustrates the problem. That way we can also do regression tests on the invalid input.
 </p>
@@ -143,7 +143,7 @@ If the bug is an error or a warning that we do not flag, write a sample program 
 </p><p>If this tool is further expanded to perform constant folding (not needed for our C# compiler, as it is already in there) and dead code elimination, other compiler authors might be able to use this generic CIL optimizer in their projects reducing their time to develop a production compiler. 
 </p>
 <h4> <span class="mw-headline" id="Open_bugs"> Open bugs </span></h4>
-<p>See the <a href="{{site.baseurl}}/Bug_Reporting" title="Bug Reporting" class="mw-redirect">bugs page</a> for more information. 
+<p>See the <a href="{{site.baseurl}}/old_site/Bug_Reporting" title="Bug Reporting" class="mw-redirect">bugs page</a> for more information. 
 A test suite is maintained to track the progress of the compiler and various programs are routinely compiled and ran.
 </p>
 <h2> <span class="mw-headline" id="Slides"> Slides </span></h2>
@@ -164,7 +164,7 @@ A test suite is maintained to track the progress of the compiler and various pro
 </p><p>Ben Maurer did a lot of profiling work on the mcs compiler and helped fixed some of the problems in it.
 </p><p>Scott Peterson contributed in 2007 many of the foundation blocks for C# 3 (var, support, anonymous types, automatic properties, variable type inference and object and collection initializers). 
 </p><p>In 2007 Marek Safar took over the maintenance of the compiler and he completed the C# 3.0 implementation, lambdas, mutators, type inferencing and LINQ expressions.  
-</p><p>In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the <a href="{{site.baseurl}}/CsharpRepl" title="CsharpRepl">Interactive C# Shell</a>.
+</p><p>In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the <a href="{{site.baseurl}}/old_site/CsharpRepl" title="CsharpRepl">Interactive C# Shell</a>.
 </p><p>In 2009 Marek Safar evolved the compiler to support C# 4.0, adding support for the dynamic data type, named parameters, default parameter values as well as co/contravariance support.
 </p><p>Many other developers contributed fixes and other small components in the compiler.
 </p>
@@ -174,6 +174,6 @@ A test suite is maintained to track the progress of the compiler and various pro
 </p>
 <ul><li> <b>dmcs</b>: references the 4.0-profile libraries (the APIs as defined in .NET 4.0) and supports C# 4.0.
 </li><li> <b>gmcs</b>: references the 2.0-profile libraries (the APIs as defined in .NET 2.0 and .NET 3.5) and exposes the full C# 3.0 language.
-</li><li> <b>smcs</b>: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C# 3.0 language.   This is the compiler used for creating Silverlight/<a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> applications.
+</li><li> <b>smcs</b>: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C# 3.0 language.   This is the compiler used for creating Silverlight/<a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> applications.
 </li></ul>
 

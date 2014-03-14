@@ -54,7 +54,7 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h1> <span class="mw-headline" id="Introduction"> Introduction </span></h1>
-<p>The <a href="{{site.baseurl}}/Mono:Runtime:Documentation:SoftDebugger" title="Mono:Runtime:Documentation:SoftDebugger">Mono Soft Debugger</a> (SDB) is a debugger implemented by the Mono runtime.   The Mono runtime exposes an interface that debugger clients can use to debug a Mono application.   Mono provides a convenience library in the form of the Mono.Debugger.Soft.dll that can be used to communicate with a running Mono process.
+<p>The <a href="{{site.baseurl}}/old_site/Mono:Runtime:Documentation:SoftDebugger" title="Mono:Runtime:Documentation:SoftDebugger">Mono Soft Debugger</a> (SDB) is a debugger implemented by the Mono runtime.   The Mono runtime exposes an interface that debugger clients can use to debug a Mono application.   Mono provides a convenience library in the form of the Mono.Debugger.Soft.dll that can be used to communicate with a running Mono process.
 </p><p>The Mono.Debugger.Soft.dll library uses a protocol over sockets to debug applications.    The wire protocol is inspired by the <a href="http://download.oracle.com/javase/1,5.0/docs/guide/jpda/jdwp-spec.html" class="external text" rel="nofollow">JDWP (Java Debug Wire Protocol)</a>. Familiarity with that specification is a good read. 
 </p><p>This document describes the wire protocol used between debugging clients and the Mono runtime.
 </p><p>Where possible, the corresponding protocol detail is linked to a function name and file location in Mono source code. These informations are based on Mono master version at revision <i>f42ba4a168e7cb9b9486b8a96c53752e4467be8a</i>.

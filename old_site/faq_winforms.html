@@ -58,7 +58,7 @@ mono myapp.exe</pre>
 </p>
 <h4> <span class="mw-headline" id="What_are_you_using_to_implement_Windows.Forms.3F"> What are you using to implement Windows.Forms? </span></h4>
 <p>Windows.Forms is implemented fully in C# managed code and uses System.Drawing to perform most of its tasks.
-</p><p>For more details see the <a href="{{site.baseurl}}/WinForms" title="WinForms">Winforms Roadmap</a>
+</p><p>For more details see the <a href="{{site.baseurl}}/old_site/WinForms" title="WinForms">Winforms Roadmap</a>
 </p><p>A small driver is required for each operating system supported. Currently we have drivers for:
 </p>
 <ul><li> X Window System
@@ -72,7 +72,7 @@ mono myapp.exe</pre>
 <p>Yes, as of Mono 1.9, Winforms has a native OSX driver that it uses by default.
 </p>
 <h4> <span class="mw-headline" id="Do_you_have_a_comparison_chart_about_the_various_toolkit_offerings.3F"> Do you have a comparison chart about the various toolkit offerings? </span></h4>
-<p>See <a href="{{site.baseurl}}/Gui_Toolkits" title="Gui Toolkits">Gui Toolkits</a>.
+<p>See <a href="{{site.baseurl}}/old_site/Gui_Toolkits" title="Gui Toolkits">Gui Toolkits</a>.
 </p>
 <h4> <span class="mw-headline" id="GDIPlus_Initializer_Exception"> GDIPlus Initializer Exception </span></h4>
 <p>If you get the following error:
@@ -98,12 +98,12 @@ System.MissingMethodException: Method not found:
 </li><li> Implement the method in Mono.
 </li><li> Wait for it to be implemented in Mono.
 </li></ul>
-<p>To see which methods are currently missing from the SVN version of Mono, see the <a href="{{site.baseurl}}/Class_Status" title="Class Status">class status pages</a>.
+<p>To see which methods are currently missing from the SVN version of Mono, see the <a href="{{site.baseurl}}/old_site/Class_Status" title="Class Status">class status pages</a>.
 </p>
 <h4> <span class="mw-headline" id="Why_not_implement_System.Windows.Forms_on_top_of_Gtk.23_or_Qt.23.3F"> Why not implement System.Windows.Forms on top of Gtk# or Qt#? </span></h4>
 <p>Compatibility.
 </p><p>Although it is possible to run simple Windows.Forms applications with the Gtk#-based backend of Windows.Forms, it is very unlikely that the implementation will ever implement everything needed for full compatibility with Windows.Forms. 
 The reason is that Windows.Forms is not a complete toolkit, and to work around this problem some of the underlying Win32 foundation is exposed to the programmer in the form of exposing the Windows message handler (WndProc). Any control can override this method. Also developers often P/Invoke into Win32 to get to functionality that was not wrapped. 
 To achieve full compatibility, we would have to emulate this, and it would take too long. 
-For more details see the <a href="{{site.baseurl}}/WinForms" title="WinForms">winforms page</a>.
+For more details see the <a href="{{site.baseurl}}/old_site/WinForms" title="WinForms">winforms page</a>.
 </p>

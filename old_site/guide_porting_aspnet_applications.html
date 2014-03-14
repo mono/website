@@ -90,7 +90,7 @@ redirect_from:
 <p>No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
 </p>
 <blockquote>
-<b>Windows developers</b>. If you are a working in the Windows environment, it is advised that you download the <a href="{{site.baseurl}}/Downloads" title="Downloads">VMWare Virtual Image</a> to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled. 
+<b>Windows developers</b>. If you are a working in the Windows environment, it is advised that you download the <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">VMWare Virtual Image</a> to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled. 
 </blockquote>
 <p>If your application uses MS SQL then on your Unix system you will need to install the <a href="http://postgresql.org/" class="external text" rel="nofollow">PostgreSQL</a> RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
 </p>
@@ -235,7 +235,7 @@ chmod 600 ''FILE_NAME''
 </p>
 <h3> <span class="mw-headline" id="Code-Behind">Code-Behind</span></h3>
 <h4> <span class="mw-headline" id="Filesystem_path_syntax">Filesystem path syntax</span></h4>
-<p><span style="font-size: xx-small; font-style: italic">This section is based on <a href="{{site.baseurl}}/Guide:_Porting_Winforms_Applications#The_Path_Separator" title="Guide: Porting Winforms Applications">Porting Winforms Applications</a><i></span></i>
+<p><span style="font-size: xx-small; font-style: italic">This section is based on <a href="{{site.baseurl}}/old_site/Guide:_Porting_Winforms_Applications#The_Path_Separator" title="Guide: Porting Winforms Applications">Porting Winforms Applications</a><i></span></i>
 </p><p>The issue you should pay great attention to is the platform-specific filesystem paths. Windows systems use a backslash (<tt>"\"</tt>) as path separator, while Unix systems use the forward slash (<tt>"/"</tt>) for the same purpose. 
 </p><p>There are two ways of dealing with the issue:
 </p><p><b>System.IO.Path.DirectorySeparatorChar</b>

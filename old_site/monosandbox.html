@@ -14,8 +14,8 @@ redirect_from:
 </p><p>Originally Mono did not have a sandbox, but Moonlight required us to create a sandbox that would allow us to run untrusted code, potentially malicious code inside the Mono runtime.   
 </p><p>For more information on the Mono sandbox, see:
 </p>
-<ul><li> <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">Moonlight2CoreCLR</a>: The CoreCLR security system, as used in Silverlight.
-</li><li> <a href="{{site.baseurl}}/SecurityValidation" title="SecurityValidation">SecurityValidation</a>: The process we used to secure the sandbox.
+<ul><li> <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">Moonlight2CoreCLR</a>: The CoreCLR security system, as used in Silverlight.
+</li><li> <a href="{{site.baseurl}}/old_site/SecurityValidation" title="SecurityValidation">SecurityValidation</a>: The process we used to secure the sandbox.
 </li></ul>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -43,12 +43,12 @@ redirect_from:
 <p>Metadata integrity ensures that assemblies (.exe or .dll) programs are well formed and that they conform to what the runtime engine expects.   The metadata verifier ensures that the JIT compiler will not try to access invalid information, or trick the JIT engine into reading or writing data that it is not supposed to.
 </p>
 <h2> <span class="mw-headline" id="CIL_Verification_and_CoreCLR_Security"> CIL Verification and CoreCLR Security </span></h2>
-<p>Mono implements the <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
+<p>Mono implements the <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
 </p><p>For example, trusted code (the code that implements the core libraries, like the String class) get access to both pointer arithmetic operations from the CIL as well as getting full access to any APIs that the system provides.
 </p><p>Untrusted code, will not get access to any CIL pointer instructions and can only use APIs that have been flagged as secure.   Any attempts to use pointer instructions or restricted APIs are turned into an exception and the code is not even JIT compiled.
 </p><p>For example, the System.IO.File.Open() routine can be called by trusted code (this is used internally for example to read configuration files) but untrusted code can not call it.   It can only reach Open through a gateway that would provide an open file from a secure location (IsolatedStorage for example).
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Audit_of_the_codebase"> Audit of the codebase </span></h2>
-<p>The <a href="{{site.baseurl}}/SecurityValidation" title="SecurityValidation">SecurityValidation</a> page describes how the <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> managed assemblies are audited to allow the safe execution of untrusted code under the <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a>.
+<p>The <a href="{{site.baseurl}}/old_site/SecurityValidation" title="SecurityValidation">SecurityValidation</a> page describes how the <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> managed assemblies are audited to allow the safe execution of untrusted code under the <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a>.
 </p>

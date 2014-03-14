@@ -128,7 +128,7 @@ myEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Modif
     <span style="color: #008000;">&#125;</span> 
 <span style="color: #008000;">&#125;</span></pre>
 <h1> <span class="mw-headline" id="Common_Questions"> Common Questions </span></h1>
-<p>Some frequently asked questions about <a href="{{site.baseurl}}/GtkSharp" title="GtkSharp">GtkSharp</a>.
+<p>Some frequently asked questions about <a href="{{site.baseurl}}/old_site/GtkSharp" title="GtkSharp">GtkSharp</a>.
 </p><p>For a list of varios pages dealing with Gtk# on this site see <a href="http://www.mono-project.com/Category:GtkSharp" class="external text" rel="nofollow">GtkSharp Articles</a>.
 </p><p><b> Common Problems </b>
 </p><p><b>= On Windows, Idle times are not being called </b>=
@@ -138,7 +138,7 @@ myEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Modif
 </p>
 <pre class="bash" style="font-family:monospace;">Xlib: unexpected async reply <span style="color: #7a0874; font-weight: bold;">&#40;</span>sequence 0x146<span style="color: #7a0874; font-weight: bold;">&#41;</span><span style="color: #000000; font-weight: bold;">!</span></pre>
 <p>It means that you are trying to invoke methods in Gtk# from a thread that is not the one that has invoked Application.Run ().     This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run.  This is done by either just hooking up to signals, using GLib timers or events and not threads.
-</p><p>This topic is covered in more detail in these two pages: <a href="{{site.baseurl}}/Best_Practices" title="Best Practices">Best_Practices</a> and <a href="{{site.baseurl}}/Responsive_Applications" title="Responsive Applications">Responsive Applications</a> pages for details on how to solve this issue.
+</p><p>This topic is covered in more detail in these two pages: <a href="{{site.baseurl}}/old_site/Best_Practices" title="Best Practices">Best_Practices</a> and <a href="{{site.baseurl}}/old_site/Responsive_Applications" title="Responsive Applications">Responsive Applications</a> pages for details on how to solve this issue.
 </p>
 <h1> <span class="mw-headline" id="Gecko.23_and_Mozilla"> Gecko# and Mozilla </span></h1>
 <p><b> How do I use Gecko or Mozilla with Gtk#? </b>
@@ -157,7 +157,7 @@ myEntry<span style="color: #008000;">.</span><span style="color: #0000FF;">Modif
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #7a0874; font-weight: bold;">export</span> <span style="color: #007800;">MOZILLA_HOME</span>=<span style="color: #ff0000;">&quot;<span style="color: #780078;">`pkg-config --variable=libdir mozilla-gtkmozembed`</span>&quot;</span>
 mono demo.exe</pre>
-<p>Those are usually set on scripts, as recommended on our <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Application Deployment Guidelines</a>.
+<p>Those are usually set on scripts, as recommended on our <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Application Deployment Guidelines</a>.
 </p><p><br />
 <b> Mozilla and Plugins </b>
 </p><p>If you are having trouble embedding Flash content (or any other plugin) into your Gecko# application, make sure you have set the MOZ_PLUGIN_PATH to the directory holding mozilla, like this:
@@ -168,7 +168,7 @@ mono demo.exe</pre>
 <pre class="csharp" style="font-family:monospace;">WebControl<span style="color: #008000;">.</span><span style="color: #0000FF;">CompPath</span> <span style="color: #008000;">=</span> <span style="color: #666666;">&quot;/usr/lib/mozilla-firefox&quot;</span><span style="color: #008000;">;</span></pre>
 <h1> <span class="mw-headline" id="Migration"> Migration </span></h1>
 <p><b> How do I migrate a Gtk# 1.0 to Gtk# 2.0 application? </b>
-</p><p>The steps are described in <a href="{{site.baseurl}}/GtkSharpUpgrade" title="GtkSharpUpgrade">Gtk# Upgrade page</a>.
+</p><p>The steps are described in <a href="{{site.baseurl}}/old_site/GtkSharpUpgrade" title="GtkSharpUpgrade">Gtk# Upgrade page</a>.
 </p>
 <h1> <span class="mw-headline" id="Common_Problems"> Common Problems </span></h1>
 <p><b> I can not build Gtk# on my system </b>

@@ -31,7 +31,7 @@ redirect_from:
 </p><p>Mono does not support the old style ASP pages, it only supports ASP.NET pages;   There are some tools that might help you migrate ASP pages to ASP.NET (<a href="http://netcoole.com" class="external text" rel="nofollow">netcoole.com</a>).  
 </p><p>Once you have a working ASP.NET application, you could use Mono to run it.
 </p><p><b> How can I run ASP.NET-based applications with Mono? </b>
-</p><p>You can read our <a href="{{site.baseurl}}/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Guide to port ASP.NET Applications with Mono</a>.
+</p><p>You can read our <a href="{{site.baseurl}}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Guide to port ASP.NET Applications with Mono</a>.
 </p><p>Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mono is a three part series blog that covers how to port an ASP.NET MVC website application to Mono:
 </p>
 <ul><li> Part 1: <a href="http://www.integratedwebsystems.com/2010/01/installing-opensuse-11-2-with-mono-2-6-1-and-apache-using-text-mode-configuration-porting-to-mono-part-1-of-3/" class="external text" rel="nofollow">Installing  the Software</a>
@@ -40,16 +40,16 @@ redirect_from:
 </li></ul>
 <p>Novell: <a href="http://www.novell.com/connectionmagazine/2010/02/mono_tools.html" class="external text" rel="nofollow">From .NET to Linux in 5 Easy Steps</a>
 </p><p><br />
-You need the Mono runtime and use one of Apache with <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">mod_mono</a>, a <a href="{{site.baseurl}}/CGI" title="CGI">CGI</a> or FastCGI-aware web server with Mono's <a href="{{site.baseurl}}/FastCGI" title="FastCGI">FastCGI</a> support or the <a href="{{site.baseurl}}/Xsp" title="Xsp" class="mw-redirect">xsp</a> standalone server (all available from our <a href="{{site.baseurl}}/Downloads" title="Downloads">downloads</a> page).
+You need the Mono runtime and use one of Apache with <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>, a <a href="{{site.baseurl}}/old_site/CGI" title="CGI">CGI</a> or FastCGI-aware web server with Mono's <a href="{{site.baseurl}}/old_site/FastCGI" title="FastCGI">FastCGI</a> support or the <a href="{{site.baseurl}}/old_site/Xsp" title="Xsp" class="mw-redirect">xsp</a> standalone server (all available from our <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">downloads</a> page).
 </p><p>To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 </p><p>To run ASP.NET 2.0 applications use mod-mono-server2 (for Apache), fastcgi-mono-server2 (for FastCGI servers) or xsp2 (for testing)
 </p><p><b> Does Mono support ASP.NET's web services? </b>
 </p><p>Yes, Mono supports ASP.NET-based web services (files ending in .asmx)
 </p><p><b> Does Mono have support for WSE? </b>
 </p><p>At this point Mono does not have support for the "Web Services Enhancements" package and there are no plans on supporting it.
-</p><p>See the <a href="{{site.baseurl}}/WSE" title="WSE">WSE</a> page for more details about it.
+</p><p>See the <a href="{{site.baseurl}}/old_site/WSE" title="WSE">WSE</a> page for more details about it.
 </p><p><b> Does Mono support XHTML and Web standards? </b>
-</p><p>See the long reply on <a href="{{site.baseurl}}/WebStandards" title="WebStandards">WebStandards</a>.
+</p><p>See the long reply on <a href="{{site.baseurl}}/old_site/WebStandards" title="WebStandards">WebStandards</a>.
 </p><p><b> Are there alternatives to ASP.NET? </b>
 </p><p>Some of these are not complete replacements for ASP.NET, but they might be useful for your particular domain:
 </p>
@@ -70,13 +70,13 @@ You need the Mono runtime and use one of Apache with <a href="{{site.baseurl}}/M
 </p><p>Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
 </p><p><b> Should I use mod_mono, FastCGI or XSP? </b>
 </p><p>mod_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
-</p><p>FastCGI is a lightweight protocol implement by both Apache and many other web servers.   It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like <a href="{{site.baseurl}}/FastCGI_Nginx" title="FastCGI Nginx">Nginx</a>.  Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration.   The features are usually determined by the web server that uses FastCGI.
+</p><p>FastCGI is a lightweight protocol implement by both Apache and many other web servers.   It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like <a href="{{site.baseurl}}/old_site/FastCGI_Nginx" title="FastCGI Nginx">Nginx</a>.  Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration.   The features are usually determined by the web server that uses FastCGI.
 </p><p>XSP is a very limited web server which is used typically during development or for testing.  Although some people use it for production, but this server is not likely going to ever grow to support all the features that Apache or FastCGI servers have.
 </p><p>XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is the most important one), but no work is currently underway to support HTTP 1.1 and it is also missing features like mime-type configuration and any other features that people expect from a web server.
 </p><p><b> Does mod_mono run on Windows? </b>
 </p><p>mod_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod_mono compile work on the Windows version of Apache.
 </p><p><b> How do I restart my Mono applications without restarting Apache? </b>
-</p><p>Enable the control panel in mod_mono, see <a href="{{site.baseurl}}/Mod_mono#Control_panel" title="Mod mono">mod_mono's Control Panel section</a> for details on setting it up.
+</p><p>Enable the control panel in mod_mono, see <a href="{{site.baseurl}}/old_site/Mod_mono#Control_panel" title="Mod mono">mod_mono's Control Panel section</a> for details on setting it up.
 </p><p><b> My Apache Module Is Not Recognized, what to do? </b>
 </p><p>In certain Apache configurations (SUSE 9.0), Apache is configured with large file support. This requires that every apache module has to be compiled with large file
 support as well.
@@ -95,7 +95,7 @@ the CFLAGS from apxs. I'll fill a bug.
 <ul><li> mod_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
 </li><li> faster file transfers
 </li><li> common URL namespace with Apache (if AddHandler is used)
-</li><li> autohosting: <a href="{{site.baseurl}}/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>
+</li><li> autohosting: <a href="{{site.baseurl}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>
 </li><li> enabled for mass hosting
 </li><li> xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them.  By using mod_mono your client software is exposed to a full HTTP 1.1 implmenentation.
 </li></ul>
@@ -125,7 +125,7 @@ the CFLAGS from apxs. I'll fill a bug.
 </li><li> Running mod-mono, not configuring the MonoApplications directive (more info with man mod_mono)
 </li></ul>
 <p><b> Performance is disappointing </b>
-Please consult <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">Mod_mono</a> for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+Please consult <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">Mod_mono</a> for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
 </p><p><b> Compilation fails with the CS0169 error message </b>
 It will happen if you configured the C# compiler in <tt>Web.config</tt> in a way similar to the one shown below:
 </p>
@@ -140,7 +140,7 @@ It will happen if you configured the C# compiler in <tt>Web.config</tt> in a way
     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/compilation<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>    
   <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/system.web<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
 <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/configuration<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre>
-<p>This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read <a href="{{site.baseurl}}/ASP.NET_Mono_Specific_Configuration" title="ASP.NET Mono Specific Configuration">this article for more information</a>
+<p>This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read <a href="{{site.baseurl}}/old_site/ASP.NET_Mono_Specific_Configuration" title="ASP.NET Mono Specific Configuration">this article for more information</a>
 </p><p><b> ProviderException from SqliteMembershipProvider </b>
 When porting an ASP.NET app to Mono, you may get an exception similar to the following:
 </p>
@@ -158,7 +158,7 @@ at System.Web.Mvc.ControllerActionInvoker/&lt;InvokeActionMethodWithFilters&gt;c
 at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1&lt;System.Web.Mvc.ActionExecutedContext&gt;) 
 </pre>
 <p>This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
-</p><p>The fix is easy: you need to create a <tt>~/App_Data/aspnetdb.sqlite</tt> SQLite database file.  You can use the <b>sqlite3</b> program and the SQL commands at <a href="{{site.baseurl}}/Guide:_Porting_ASP.NET_Applications#Membership.2FRoles.2FProfile_provider_schema" title="Guide: Porting ASP.NET Applications">Membership/Roles/Profile provider schema</a>:
+</p><p>The fix is easy: you need to create a <tt>~/App_Data/aspnetdb.sqlite</tt> SQLite database file.  You can use the <b>sqlite3</b> program and the SQL commands at <a href="{{site.baseurl}}/old_site/Guide:_Porting_ASP.NET_Applications#Membership.2FRoles.2FProfile_provider_schema" title="Guide: Porting ASP.NET Applications">Membership/Roles/Profile provider schema</a>:
 </p>
 <pre class="bash" style="font-family:monospace;">$ sqlite3 aspnetdb.sqlite
 sqlite<span style="color: #000000; font-weight: bold;">&gt;</span> CREATE TABLE Users <span style="color: #7a0874; font-weight: bold;">&#40;</span> <span style="color: #660033;">--</span> etc., from above <span style="color: #c20cb9; font-weight: bold;">link</span> page <span style="color: #7a0874; font-weight: bold;">&#41;</span>;</pre>
@@ -198,7 +198,7 @@ Hit Return to stop the server.</pre>
 </p><p>responseEncoding is the encoding of input (posted data)
 </p><p>responseEncoding is the encoding of output (Content-Type: ...; charset)
 </p><p><b> Where are the various settings for System.Web documented? </b>
-</p><p>Some documentation is available on this site on <a href="{{site.baseurl}}/Config_system.web" title="Config system.web">Config_system.web</a>, but you might also use the documentation from [<a href="http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx</a> MSDN.
+</p><p>Some documentation is available on this site on <a href="{{site.baseurl}}/old_site/Config_system.web" title="Config system.web">Config_system.web</a>, but you might also use the documentation from [<a href="http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx" class="external free" rel="nofollow">http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx</a> MSDN.
 </p>
 <h1> <span class="mw-headline" id="Features"> Features </span></h1>
 <p><b> Does Mono support the App_Browsers folder and the .browser files? </b>
@@ -263,7 +263,7 @@ $ mcs -out:bin<span style="color: #000000; font-weight: bold;">/</span>library.d
 </p><p>Instead of Location="Server", use "ServerAndClient".
 </p><p><b> Does Mono's ASP.NET support SSL/TLS? </b>
 </p><p>If you are using the Apache module, https support is handled directly by Apache and all the variables are available using the System.Web APIs.  
-</p><p>If you are using XSP, read the <a href="{{site.baseurl}}/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">using client certificates with XSP</a> article which details the process.
+</p><p>If you are using XSP, read the <a href="{{site.baseurl}}/old_site/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">using client certificates with XSP</a> article which details the process.
 </p><p><b> I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong? </b>
 </p><p>Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if possible, so that no further action is needed. If they are in utf-8 (default nowadays in Linux) or any other encoding you will need to tell the compiler for the language your page will be translated into to expect this other encoding. There are two forms:
 </p><p>1 - Change each affected page to add the specific compiler option:
@@ -329,7 +329,7 @@ $ mcs -out:bin<span style="color: #000000; font-weight: bold;">/</span>library.d
 </li></ul>
 <p><b> Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files? </b>
 Yes, it is possible with Mono version from svn trunk or 1.2.7 or newer. This is  a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run  your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems.
-For more information see <a href="{{site.baseurl}}/ASP.NET_Settings_Mapping" title="ASP.NET Settings Mapping">ASP.NET_Settings_Mapping</a>
+For more information see <a href="{{site.baseurl}}/old_site/ASP.NET_Settings_Mapping" title="ASP.NET Settings Mapping">ASP.NET_Settings_Mapping</a>
 </p>
 <h1> <span class="mw-headline" id="Extra_Languages"> Extra Languages </span></h1>
 <p><b> How can I use F# with ASP.NET on Mono? </b>
@@ -414,5 +414,5 @@ being now a page:
 </p><p>ASP.NET in Mono is particularly vulnerable to this kind of memory problems because it is easy for developers to define APIs that transfer large blobs of data like entire image files, these would allocate a lot of memory that can easily be fragmented.   
 </p><p>A simple solution is to try to write your software in a way that large data blocks are not allocated, but instead your application handles them in blocks (like writing a "copy" command).
 </p><p><b> Is there a better collector in the works? </b>
-</p><p>Yes, there is work to make a new generational collector under way, but it will not be ready for a while.   For more information on it, see the <a href="{{site.baseurl}}/Generational_GC" title="Generational GC">Generational GC</a> page.
+</p><p>Yes, there is work to make a new generational collector under way, but it will not be ready for a while.   For more information on it, see the <a href="{{site.baseurl}}/old_site/Generational_GC" title="Generational GC">Generational GC</a> page.
 </p>

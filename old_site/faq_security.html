@@ -75,7 +75,7 @@ redirect_from:
 <p></code>
 </p><p>There are three alternatives to solve this problem:
 </p>
-<ul><li> Implement a <code><a href="http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Net.ICertificatePolicy" class="external text" rel="nofollow">ICertificatePolicy</a></code> class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the <a href="{{site.baseurl}}/UsingTrustedRootsRespectfully" title="UsingTrustedRootsRespectfully">UsingTrustedRootsRespectfully</a> article.
+<ul><li> Implement a <code><a href="http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Net.ICertificatePolicy" class="external text" rel="nofollow">ICertificatePolicy</a></code> class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the <a href="{{site.baseurl}}/old_site/UsingTrustedRootsRespectfully" title="UsingTrustedRootsRespectfully">UsingTrustedRootsRespectfully</a> article.
 </li></ul>
 <ul><li> Use the <code>certmgr.exe</code> tool (included in Mono) to add the root certificates into the Mono <b>Trust</b> store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 </li></ul>
@@ -121,7 +121,7 @@ redirect_from:
 </p>
 <h2> <span class="mw-headline" id="Are_SSL_client_certificates_supported_.3F"> Are SSL client certificates supported&#160;? </span></h2>
 <p>Both SslClientStream and SslServerStream, in Mono.Security.dll, support client certificates, however HttpWebRequest doesn't due to a strange design/relationship between the 1.x framework and Windows/CryptoAPI (i.e. there is no managed API to associate a certificate with a private key). This should be fixed in the 2.0 profile as the X509Certificate class has been extended to provide this association.
-</p><p>Also recent versions of <a href="http://www.mono-project.com/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> do support SSL/TLS and client certificates. See the <a href="{{site.baseurl}}/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">UsingClientCertificatesWithXSP</a> article for more details.
+</p><p>Also recent versions of <a href="http://www.mono-project.com/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> do support SSL/TLS and client certificates. See the <a href="{{site.baseurl}}/old_site/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">UsingClientCertificatesWithXSP</a> article for more details.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Does_SSL_works_for_SMTP.2C_like_GMail_.3F"> Does SSL works for SMTP, like GMail&#160;? </span></h2>
@@ -147,7 +147,7 @@ redirect_from:
 </p><p>Alternatively, if you have a certified implementation and the wrapper, you can instruct Mono to automatically use your new implementation by using the machine.config mapping.
 </p>
 <h2> <span class="mw-headline" id="Are_there_any_efforts_to_bind_external_libraries_that_are_FIPS_certified.3F"> Are there any efforts to bind external libraries that are FIPS certified? </span></h2>
-<p>There is an ongoing effort part of Mono called the <a href="{{site.baseurl}}/Crimson" title="Crimson">Crimson</a> project, you might want to contribute to that effort.
+<p>There is an ongoing effort part of Mono called the <a href="{{site.baseurl}}/old_site/Crimson" title="Crimson">Crimson</a> project, you might want to contribute to that effort.
 </p><p><br />
 </p>
 <h1> <span class="mw-headline" id="Authenticode.28r.29_Code_Signing"> Authenticode(r) Code Signing </span></h1>
@@ -209,16 +209,16 @@ ERROR! sample.exe signature can't be traced back to a trusted root!
 </p>
 <h1> <span class="mw-headline" id="Code_Access_Security_.28CAS.29"> Code Access Security (CAS) </span></h1>
 <h2> <span class="mw-headline" id="Does_Mono_support_CAS_.3F"> Does Mono support CAS&#160;? </span></h2>
-<p>Mono 1.0.x <b>doesn't</b> support <a href="{{site.baseurl}}/CAS" title="CAS">Code Access Security</a>. Mono 1.2 has an experimental preview of the technology (turned <b>off</b> by default) with partial (and unaudited) class library support. 
+<p>Mono 1.0.x <b>doesn't</b> support <a href="{{site.baseurl}}/old_site/CAS" title="CAS">Code Access Security</a>. Mono 1.2 has an experimental preview of the technology (turned <b>off</b> by default) with partial (and unaudited) class library support. 
 </p><p>In addition, Mono currently does not have a complete verifier, which means that invalid assemblies will produce an assertion in the runtime.
 </p>
 <h2> <span class="mw-headline" id="How_can_I_activate_CAS_.3F"> How can I activate CAS&#160;? </span></h2>
-<p>By default <a href="{{site.baseurl}}/CAS" title="CAS">Code Access Security</a> is turned <b>off</b> in Mono. On Mono 1.1.4 and later you can turn on the security manager by using the <code>--security</code> option. E.g.
+<p>By default <a href="{{site.baseurl}}/old_site/CAS" title="CAS">Code Access Security</a> is turned <b>off</b> in Mono. On Mono 1.1.4 and later you can turn on the security manager by using the <code>--security</code> option. E.g.
 </p>
 <pre>mono --security sample.exe
 </pre>
 <h2> <span class="mw-headline" id="Will_Mono_have_a_complete_verifier.3F"> Will Mono have a complete verifier? </span></h2>
-<p>Mono 2.0 already has an IL verifier while the metadata verifier will be complete by the time that <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> 2.0 ships.
+<p>Mono 2.0 already has an IL verifier while the metadata verifier will be complete by the time that <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> 2.0 ships.
 </p><p>In the meantime, you can invoke Mono from the command line to test whether the metadata and code will be processed successfully by Mono, by calling Mono like this:
 </p>
 <pre class="bash" style="font-family:monospace;">   $ mono <span style="color: #660033;">--compile-all</span> myAssembly</pre>
@@ -261,5 +261,5 @@ ERROR! sample.exe signature can't be traced back to a trusted root!
 </p>
 <h1> <span class="mw-headline" id="Other_resources_on_this_site"> Other resources on this site </span></h1>
 <h2> <span class="mw-headline" id="Known_Vulnerabilities"> Known Vulnerabilities </span></h2>
-<p>A list of known <a href="{{site.baseurl}}/Vulnerabilities" title="Vulnerabilities">vulnerabilities</a> affecting older versions of Mono is available.
+<p>A list of known <a href="{{site.baseurl}}/old_site/Vulnerabilities" title="Vulnerabilities">vulnerabilities</a> affecting older versions of Mono is available.
 </p>

@@ -13,8 +13,8 @@ redirect_from:
 This document describes some practices that are useful when building software that is portable across Windows and Unix systems using .NET and Mono. 
 </p><p>In addition to this page, these are some resources that are useful when porting software to run on Mono:
 </p>
-<ul><li> <a href="{{site.baseurl}}/ASP.NET" title="ASP.NET">Mono's ASP.NET</a>
-</li><li> <a href="{{site.baseurl}}/WinForms" title="WinForms">Mono's Windows.Forms implementation</a>
+<ul><li> <a href="{{site.baseurl}}/old_site/ASP.NET" title="ASP.NET">Mono's ASP.NET</a>
+</li><li> <a href="{{site.baseurl}}/old_site/WinForms" title="WinForms">Mono's Windows.Forms implementation</a>
 </li></ul>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -83,19 +83,19 @@ This document describes some practices that are useful when building software th
 <p>If you feel comfortable using command line tools, and any of the other Unix editors, that would work as well.
 </p>
 <h1> <span class="mw-headline" id="General_Guidelines"> General Guidelines </span></h1>
-<p>Starting with Mono 1.1.18, a new <a href="{{site.baseurl}}/IOMap" title="IOMap">IO Remapping</a> functionality is provided that copes with case sensitivity in the file system and with directory separators in filenames.
-</p><p>Using the <a href="{{site.baseurl}}/IOMap" title="IOMap">IOMap</a> functionality is a quick way of porting your applications, but the practices are still useful as they will help your application not depend on this remapping (as the remapping has a slight performance penalty).
-</p><p>See the <a href="{{site.baseurl}}/IOMap" title="IOMap">IOMap</a> page for more information on how to use it.
+<p>Starting with Mono 1.1.18, a new <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IO Remapping</a> functionality is provided that copes with case sensitivity in the file system and with directory separators in filenames.
+</p><p>Using the <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IOMap</a> functionality is a quick way of porting your applications, but the practices are still useful as they will help your application not depend on this remapping (as the remapping has a slight performance penalty).
+</p><p>See the <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IOMap</a> page for more information on how to use it.
 </p>
 <h2> <span class="mw-headline" id="Case_sensitivity"> Case sensitivity </span></h2>
 <p>The Linux and Unix file systems is case sensitive
 </p><p>On Linux and Unix the files "readme" and "README" are two different files, that is, Linux has a case-sensitive file system.
 </p><p>This is an important distinction for many applications because you might have created a "Login.aspx" page, but you reference the page as "login.aspx" or "LOGIN.ASPX" from your source code.   You must make sure that all references use the same file name casing.
-</p><p>Alternatively, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "case" or "all" to eliminate these problems.  See <a href="{{site.baseurl}}/IOMap" title="IOMap">IOMap</a> for details. 
+</p><p>Alternatively, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "case" or "all" to eliminate these problems.  See <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IOMap</a> for details. 
 </p>
 <h2> <span class="mw-headline" id="Path_Separators"> Path Separators </span></h2>
 <p>On Windows, the directory path separator is "\" while on Linux it is "/", it is possible to create files that contain a "\" in their names on Linux.
-</p><p>For quickly porting applications, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "all" and it will take care of it.  See <a href="{{site.baseurl}}/IOMap" title="IOMap">IOMap</a> for more details. 
+</p><p>For quickly porting applications, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "all" and it will take care of it.  See <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IOMap</a> for more details. 
 </p><p>To write portable software, you must make sure that you use the [http:/monodoc/P:System.IO.Path.DirectorySeparatorChar System.IO.Path.DirectorySeparatorChar] character when you must concatenate paths, or even better, use the [http:/monodoc/M:System.IO.Path.Combine(string,string) System.IO.Path.Combine] method to combine pathnames.
 </p><p>In addition, code that manually scans for path separators must be changed, for example:
 </p>
@@ -138,10 +138,10 @@ Some guidelines for this:
 </p><p>See the <a href="http://en.wikipedia.org/wiki/Endianess" class="external text" rel="nofollow">endianess</a> entry in the Wikipedia for more details.
 </p>
 <h1> <span class="mw-headline" id="ASP.NET_Guidelines"> ASP.NET Guidelines </span></h1>
-<p>You might want to familiarize yourself with some of the Frequently Asked Questions about ASP.NET on Mono, they are on this page: <a href="{{site.baseurl}}/FAQ:_ASP.NET" title="FAQ: ASP.NET">FAQ: ASP.NET</a>
+<p>You might want to familiarize yourself with some of the Frequently Asked Questions about ASP.NET on Mono, they are on this page: <a href="{{site.baseurl}}/old_site/FAQ:_ASP.NET" title="FAQ: ASP.NET">FAQ: ASP.NET</a>
 </p>
 <h1> <span class="mw-headline" id="Windows.Forms_Guidelines"> Windows.Forms Guidelines </span></h1>
-<p>You might want to familiarize yourself with some of the Frequently Asked Questions about running Windows.Forms applications on Mono.  The list is on this page: <a href="{{site.baseurl}}/FAQ:_Winforms" title="FAQ: Winforms">FAQ: Winforms</a>.
+<p>You might want to familiarize yourself with some of the Frequently Asked Questions about running Windows.Forms applications on Mono.  The list is on this page: <a href="{{site.baseurl}}/old_site/FAQ:_Winforms" title="FAQ: Winforms">FAQ: Winforms</a>.
 </p>
 <h1> <span class="mw-headline" id="Database_Migration"> Database Migration </span></h1>
 <p>You can continue using your SQL Server database with Mono,
@@ -159,8 +159,8 @@ you do not have to migrate this.  But if you want to replace SQL server with ano
 </p>
 <h2> <span class="mw-headline" id="No_COM"> No COM </span></h2>
 <p>COM does not exist on Unix as part of the operating system and Mono does not currently provide support for it.
-</p><p>If your application requires COM, you need to wrap the various methods that you want to call using <a href="{{site.baseurl}}/Interop_with_Native_Libraries" title="Interop with Native Libraries">P/Invoke</a>.
-</p><p>There is currently a work in progress project to support it, see <a href="{{site.baseurl}}/COM_Interop" title="COM Interop">COM Interop</a> for more details.
+</p><p>If your application requires COM, you need to wrap the various methods that you want to call using <a href="{{site.baseurl}}/old_site/Interop_with_Native_Libraries" title="Interop with Native Libraries">P/Invoke</a>.
+</p><p>There is currently a work in progress project to support it, see <a href="{{site.baseurl}}/old_site/COM_Interop" title="COM Interop">COM Interop</a> for more details.
 </p>
 <h1> <span class="mw-headline" id="User_Interface"> User Interface </span></h1>
 <p>In this section we should cover the differences between Windows.Forms and Gtk# and show the differences and how to structure an application to have multiple UIs depending on the platform.

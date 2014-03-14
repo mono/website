@@ -46,7 +46,7 @@ redirect_from:
 <p><br />
 </p>
 <h1> <span class="mw-headline" id=".5BSecuritySafeCritical.5D_Validation"> [SecuritySafeCritical] Validation </span></h1>
-<p>The security model provided by <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> makes it easier to review the most critical parts of the managed class libraries bundled with Moonlight 2. Basically there's two types of code:
+<p>The security model provided by <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> makes it easier to review the most critical parts of the managed class libraries bundled with Moonlight 2. Basically there's two types of code:
 </p>
 <ul><li> <b>Transparent</b>: this includes application code and a large part of the class libraries. Transparent code has some limitation (e.g. no unsafe code, no p/invokes...) that makes it secure to execute untrusted, <i>transparent</i>, code inside the sandbox provided by CoreCLR.
 </li></ul>
@@ -80,7 +80,7 @@ redirect_from:
 <ul><li> Keep an eye on the math, in particular around bounds checks, since the ordering of the operations could lead to integer overflows.
 </li></ul>
 <p>Remember: From the platform (i.e. Moonlight) point of view <code>[SecuritySafeCritical]</code> is <b>not</b> safe (safety is <i>our</i> promise to application code) but is <b>critical</b> - it can do anything without being bothered by the CoreCLR restrictions.
-</p><p>Questions about the code&#160;? ping the author(s) on <a href="{{site.baseurl}}/IRC" title="IRC">IRC</a>!
+</p><p>Questions about the code&#160;? ping the author(s) on <a href="{{site.baseurl}}/old_site/IRC" title="IRC">IRC</a>!
 </p>
 <h3> <span class="mw-headline" id="Alternative_solutions"> Alternative solutions </span></h3>
 <ul><li> Large, complex methods might be refactored into smaller methods. This can allow you to move all critical code in a, simpler, method (cutting review time).
@@ -119,7 +119,7 @@ tool ensure this rule is not broken (during <b>make install</b>).
 </table>
 <h3> <span class="mw-headline" id="Legend"> Legend </span></h3>
 <ul><li> <b>Silverlight SDK</b> - Silverlight SDK assembly (transparent, needs to be part of the application XAP file)
-</li><li> <b>Desktop Only</b> - Internal access is <b>refused</b> under Moonlight's <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> (i.e. plugin) but is <b>allowed</b> for desktop usage (e.g. while compiling with <code>smcs</code>)
+</li><li> <b>Desktop Only</b> - Internal access is <b>refused</b> under Moonlight's <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR</a> (i.e. plugin) but is <b>allowed</b> for desktop usage (e.g. while compiling with <code>smcs</code>)
 </li><li> <b>Separate Plugin</b> - Considered platform code. Shipped in a separate plugin (XPI).
 </li><li> <b>Unknown Assembly</b> - Unknown origin (never seen the assembly in the <i>wild</i>)
 </li></ul>

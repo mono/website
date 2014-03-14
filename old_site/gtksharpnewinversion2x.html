@@ -97,7 +97,7 @@ redirect_from:
 <p>Structures passed to callback marshaling delegates in many cases can be NULL pointers.  We previously marshaled these parameters as "ref Foo" types, which caused crashes in the runtime marshaling code.  The generator has been enhanced to treat these parameters as IntPtr to allow for NULL checking prior to marshaling.
 </p>
 <h4> <span class="mw-headline" id="GInterface_Registration"> GInterface Registration </span></h4>
-<p>Registration of GInterface implementations is now supported.  Details on how to implement an interface with a tutorial can be found at <a href="{{site.baseurl}}/ImplementingGInterfaces" title="ImplementingGInterfaces">ImplementingGInterfaces</a>
+<p>Registration of GInterface implementations is now supported.  Details on how to implement an interface with a tutorial can be found at <a href="{{site.baseurl}}/old_site/ImplementingGInterfaces" title="ImplementingGInterfaces">ImplementingGInterfaces</a>
 </p>
 <h4> <span class="mw-headline" id="GObject_property_registration"> GObject property registration </span></h4>
 <p>Properties with a [GLib.Property ("prop_name")] attribute will now be registered with the GObject type system. This feature is especially useful when creating custom cell renderers. (since 2.12.2)

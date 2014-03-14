@@ -80,15 +80,15 @@ redirect_from:
 <ul><li> Static languages: C#, VisualBasic.NET, RemObject's Pascal.
 </li><li> Dynamic languages: <a href="http://boo.codehaus.org" class="external text" rel="nofollow">Boo</a>, IronPython, IronRuby.
 </li><li> Functional languages: Nemerle, F#
-</li><li> And of course, many more, see <a href="{{site.baseurl}}/Languages" title="Languages">Languages</a> for more details.
+</li><li> And of course, many more, see <a href="{{site.baseurl}}/old_site/Languages" title="Languages">Languages</a> for more details.
 </li></ul>
 </li><li> A native code generator to run your software as fast as possible.
 </li><li> Easy support for calling your native code
-<ul><li> <a href="{{site.baseurl}}/PInvoke" title="PInvoke" class="mw-redirect">PInvoke</a> allows you skeleton/stub-less invocation of C methods.
+<ul><li> <a href="{{site.baseurl}}/old_site/PInvoke" title="PInvoke" class="mw-redirect">PInvoke</a> allows you skeleton/stub-less invocation of C methods.
 </li><li> InternalMethod provide access to raw C/C++ methods.
 </li><li> C function pointer to scripting language transitions (a function pointer provided by Mono when invoked would trigger a transition to Mono-controlled code for execution of any scripting capability, very useful for callbacks or notifications).
 </li></ul>
-</li><li> Access to a large body of <a href="{{site.baseurl}}/Libraries" title="Libraries">libraries</a> and reusable components.
+</li><li> Access to a large body of <a href="{{site.baseurl}}/old_site/Libraries" title="Libraries">libraries</a> and reusable components.
 </li></ul>
 <h1> <span class="mw-headline" id="Scripting_an_Application"> Scripting an Application </span></h1>
 <p>Scripting an application usually exposes some of the internals of the low-level code in one way or another.   Usually there are handles or object systems that are surfaced for the scripting developer to consume.   The developer of the binding will typically have to design the system to allow for the scripting language to consume it.
@@ -103,7 +103,7 @@ redirect_from:
 </p><p>The <a href="http://unity3d.com" class="external text" rel="nofollow">Unity3D</a> game design engine uses Mono to provide scripting capabilities to the applications and games built with it by supporting Boo, C# and UnityScript (a strongly-typed version of Javascript which helps make the code faster).
 </p>
 <h2> <span class="mw-headline" id="Language_Support"> Language Support </span></h2>
-<p>By using Mono as a scripting engine, you get to pick the language that better suits your needs.   Mono's extensive <a href="{{site.baseurl}}/Languages" title="Languages">language support</a> allows developers to pick the best language or the best languages for their particular problem.
+<p>By using Mono as a scripting engine, you get to pick the language that better suits your needs.   Mono's extensive <a href="{{site.baseurl}}/old_site/Languages" title="Languages">language support</a> allows developers to pick the best language or the best languages for their particular problem.
 </p><p>Developers familiar with LUA can use the <a href="http://www.lua.inf.puc-rio.br/luanet/lua2il/" class="external text" rel="nofollow">LUA2IL</a> compiler to run their existing code, or apply existing skills to run the same LUA code under the Mono optimizing JIT compiler at increased speed.
 </p><p>In addition, developers get to reuse their experience with C# and the .NET class libraries with their game, companies get access to a larger pool of developers that are experienced with a mainstream language and they can focus on creating the best possible game play instead of spending precious resources and time implementing yet another virtual machine, another set of debugging tools and a new ad-hoc language. 
 </p><p>Mono allows code to be written in multiple languages: components can be authored in C# that is a language with strong support for best engineering practices (your core libraries, and reusable components can be authored in it) and yet allow the flexibility of a scripting language like Python or Javascript for code that you must quickly prototype or alter.
@@ -128,12 +128,12 @@ redirect_from:
 </li></ul>
 </li></ul>
 <p><a href="http://www.go-mono.com/store/#Mono_Tools_Ultimate" class="external text" rel="nofollow">Mono Tools for Visual Studio Ultimate Edition</a> includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under $2M annually. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
-</p><p>For other licensing options, <a href="{{site.baseurl}}/Contact" title="Contact">contact us</a>.
+</p><p>For other licensing options, <a href="{{site.baseurl}}/old_site/Contact" title="Contact">contact us</a>.
 </p>
 <h1> <span class="mw-headline" id="Continued_Performance_Increase"> Continued Performance Increase </span></h1>
 <p>We are committed to improving Mono's JIT performance and code generation quality.    In the last year plenty of optimizations have been done to the runtime in many areas and applications run as much as twice as fast just by upgrading to a newer version of the Mono runtime.
 </p><p>As Mono matures, and its JIT compiler evolves you can expect bigger performance improvements becoming available for your software.
 </p>
 <h1> <span class="mw-headline" id="Using_Mono_in_your_Application"> Using Mono in  your Application </span></h1>
-<p>Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the <a href="{{site.baseurl}}/Embedding_Mono" title="Embedding Mono">Embedding Mono</a> page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
+<p>Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the <a href="{{site.baseurl}}/old_site/Embedding_Mono" title="Embedding Mono">Embedding Mono</a> page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
 </p>

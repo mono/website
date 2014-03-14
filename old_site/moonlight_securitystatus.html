@@ -8,7 +8,7 @@ redirect_from:
 
 <h1>Moonlight/SecurityStatus</h1>
 
-<p>This page list the security related <b>features</b> of Moonlight. Another <a href="{{site.baseurl}}/SecurityValidation" title="SecurityValidation">page</a> list the <b>validations</b> needed to ensure <b>both</b> the <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> and Mono security features are working.
+<p>This page list the security related <b>features</b> of Moonlight. Another <a href="{{site.baseurl}}/old_site/SecurityValidation" title="SecurityValidation">page</a> list the <b>validations</b> needed to ensure <b>both</b> the <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> and Mono security features are working.
 </p><p><b>Note:</b> Simply search for <b>TODO</b> or <b>partial</b> on this page to see the current restrictions.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -104,8 +104,8 @@ redirect_from:
 </li><li> status: <b>active</b>
 </li></ul>
 </li><li> Documentation
-<ul><li> <a href="{{site.baseurl}}/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR security model</a>
-</li><li> <a href="{{site.baseurl}}/MoonlightSecurity" title="MoonlightSecurity">Moonlight Implementation Details</a>
+<ul><li> <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">CoreCLR security model</a>
+</li><li> <a href="{{site.baseurl}}/old_site/MoonlightSecurity" title="MoonlightSecurity">Moonlight Implementation Details</a>
 </li></ul>
 </li></ul>
 <h1> <span class="mw-headline" id="Plugin_Sandbox"> Plugin Sandbox </span></h1>
@@ -340,7 +340,7 @@ redirect_from:
 </li></ul>
 </li><li> Special handling of <code>[InternalsVisibleTo]</code> wrt platform code
 <ul><li> make sure we are not opening our internals to assemblies in the XAP file masquerading (name and public key token) as platform code
-</li><li> see <a href="{{site.baseurl}}/SecurityValidation" title="SecurityValidation">SecurityValidation</a> for more details
+</li><li> see <a href="{{site.baseurl}}/old_site/SecurityValidation" title="SecurityValidation">SecurityValidation</a> for more details
 </li><li> status: <b>complete</b>
 </li></ul>
 </li></ul>
@@ -351,7 +351,7 @@ redirect_from:
 </li></ul>
 </li></ul>
 <h2> <span class="mw-headline" id="Surface_reduction"> Surface reduction </span></h2>
-<p>Why&#160;? beside the standard <i>less code, less vulnerabilities</i> it is also easier and faster, in general, to remove features than to audit them (now and in the future). As a bonus <a href="{{site.baseurl}}/Moonlight" title="Moonlight">Moonlight</a> gets a smaller download size and the Mono runtime get usable in smaller embedded systems.
+<p>Why&#160;? beside the standard <i>less code, less vulnerabilities</i> it is also easier and faster, in general, to remove features than to audit them (now and in the future). As a bonus <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> gets a smaller download size and the Mono runtime get usable in smaller embedded systems.
 </p>
 <h3> <span class="mw-headline" id="Mono"> Mono </span></h3>
 <ul><li> Remove unneeded features (e.g. com support)

@@ -178,7 +178,7 @@ User should be asked to run 'arch' and 'uname -m' and provide their output.
 </p>
 <h1> <span class="mw-headline" id="Configuring_mod_mono"> Configuring mod_mono </span></h1>
 <p>The <a href="http://go-mono.com/config-mod-mono/" class="external text" rel="nofollow">Apache mod_mono configuration tool</a> can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to handle traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod_mono configuration application served at <a href="http://go-mono.com/config-mod-mono/" class="external free" rel="nofollow">http://go-mono.com/config-mod-mono/</a>
-</p><p>More details about the mod_mono configuration tool can be found on the <a href="{{site.baseurl}}/Mod_mono" title="Mod mono">Mod_mono</a> section of this site.
+</p><p>More details about the mod_mono configuration tool can be found on the <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">Mod_mono</a> section of this site.
 </p>
 <h2> <span class="mw-headline" id="Mono_Extension_specific_configuration"> Mono Extension specific configuration </span></h2>
 <p>By default, the mod_mono configuration tool will generate a config file suitable for use with the mod-mono-server2 installed in /usr/bin.  In order to use the generated configuration with the SUSE Linux Enterprise Mono Extension, the config should be updated to use the mod-mono-server2 installed in /opt/novell.  This can easily be done by uncommenting the /opt/novell MonoServerPath directive and commenting out the /usr/bin MonoServerPath directive, so that these lines read like so:

@@ -50,8 +50,8 @@ redirect_from:
 </p>
 <ul><li> NClass homepage - <a href="http://nclass.sourceforge.net/index.html" class="external free" rel="nofollow">http://nclass.sourceforge.net/index.html</a>
 </li><li> NClass download - <a href="http://nclass.sourceforge.net/downloads.html" class="external free" rel="nofollow">http://nclass.sourceforge.net/downloads.html</a>  (this guide uses the "source" version)
-</li><li> <a href="{{site.baseurl}}/Downloads" title="Downloads">Mono 1.2.4</a>
-</li><li> <a href="{{site.baseurl}}/MoMA" title="MoMA">Mono Migration Analyzer (MoMA)</a>
+</li><li> <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Mono 1.2.4</a>
+</li><li> <a href="{{site.baseurl}}/old_site/MoMA" title="MoMA">Mono Migration Analyzer (MoMA)</a>
 </li></ul>
 <p>NClass running on .Net with included example file:
 <a href="{{site.baseurl}}/images/old_site/1/1c/Msnclass.png" class="image"><img alt="Msnclass.png" src="{{site.baseurl}}/images/old_site/1/1c/Msnclass.png" width="700" height="500" /></a>
@@ -282,16 +282,16 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 </p><p><a href="{{site.baseurl}}/images/old_site/8/86/Dialog1.png" class="image"><img alt="Dialog1.png" src="{{site.baseurl}}/images/old_site/8/86/Dialog1.png" width="703" height="540" /></a>
 </p>
 <h2> <span class="mw-headline" id="Continuing_the_Port"> Continuing the Port </span></h2>
-<p>Now that the application runs, you have a good starting point to work from.  However, it needs to be thoroughly tested for issues that MoMA can't find.  When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly.  If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them.  See <a href="{{site.baseurl}}/Bugs" title="Bugs">Bugs</a> for details.  Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
+<p>Now that the application runs, you have a good starting point to work from.  However, it needs to be thoroughly tested for issues that MoMA can't find.  When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly.  If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them.  See <a href="{{site.baseurl}}/old_site/Bugs" title="Bugs">Bugs</a> for details.  Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
 </p><p>There are still many issues with the NClass port, but for the sake of brevity, we will not attempt to fix them in this guide.
 </p>
 <h2> <span class="mw-headline" id="Running_on_Linux"> Running on Linux </span></h2>
 <p>Ultimately, the goal is to run the application on Linux, so let's look at running NClass on Linux.  If you already have a Linux installation, you can look for Mono packages in your distro's package repositories.  
-</p><p>If they are not there or are out of date, there are packages for many popular distros on Mono's <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> page.  If you cannot find pre-made packages, you can also compile from the source code.  Instructions are available <a href="{{site.baseurl}}/Compiling_Mono" title="Compiling Mono">here</a>.
+</p><p>If they are not there or are out of date, there are packages for many popular distros on Mono's <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Downloads</a> page.  If you cannot find pre-made packages, you can also compile from the source code.  Instructions are available <a href="{{site.baseurl}}/old_site/Compiling_Mono" title="Compiling Mono">here</a>.
 </p><p>If you do not have a Linux installation, another option is to run the openSUSE/Mono VMWare image.  This is the method we will use, which requires the following:
 </p>
 <ul><li> Free VMWare Player - <a href="http://www.vmware.com/products/player/" class="external free" rel="nofollow">http://www.vmware.com/products/player/</a>
-</li><li> Mono 1.2.4 on openSUSE 10.2 VMWare image - <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a>
+</li><li> Mono 1.2.4 on openSUSE 10.2 VMWare image - <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Downloads</a>
 </li></ul>
 <p>After installing the VMWare player and unzipping the VMWare image, start the Mono image.  It should bring you to the openSUSE desktop:
 </p><p><a href="{{site.baseurl}}/images/old_site/b/bc/Linux1.jpg" class="image"><img alt="Linux1.jpg" src="{{site.baseurl}}/images/old_site/b/bc/Linux1.jpg" width="700" height="559" /></a>
@@ -333,7 +333,7 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
   PlaySound <span style="color: #008000;">&#40;</span>sound, IntPtr<span style="color: #008000;">.</span><span style="color: #0000FF;">Zero</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>This function exhibits all three mentioned porting issues.
-</p><p>Mono has a special execution mode that will help you get your port moving faster (if you do not want to change the filename casing or path separators, see the <a href="{{site.baseurl}}/IOMap" title="IOMap">IOMap</a> page for details. 
+</p><p>Mono has a special execution mode that will help you get your port moving faster (if you do not want to change the filename casing or path separators, see the <a href="{{site.baseurl}}/old_site/IOMap" title="IOMap">IOMap</a> page for details. 
 </p>
 <h4> <span class="mw-headline" id="Win32_P.2FInvokes"> Win32 P/Invokes </span></h4>
 <p>The PlaySound function is declared in the Win32 API dll "winmm.dll", which does not exist on Linux.  There are two ways around this.  One is to find the equivalent function in your target platform's API, and use runtime detection to determine which API to call.  If you are lucky, the easy way is to replace your API call with managed code.  In this case, we can use the System.Media.SoundPlayer class to play the sound for us, like this:
@@ -374,12 +374,12 @@ referencing it in code as "finished.wav".  Although this will work on Windows, i
   sp<span style="color: #008000;">.</span><span style="color: #0000FF;">Play</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>Either method will ensure that the correct path separator is used on the correct operating system.
-</p><p>For some more issues you might run into and a more detailed look at options for dealing with them, see <a href="{{site.baseurl}}/Guidelines:Application_Portability" title="Guidelines:Application Portability">Guidelines:Application Portability</a>.
+</p><p>For some more issues you might run into and a more detailed look at options for dealing with them, see <a href="{{site.baseurl}}/old_site/Guidelines:Application_Portability" title="Guidelines:Application Portability">Guidelines:Application Portability</a>.
 </p>
 <h2> <span class="mw-headline" id="Conclusion"> Conclusion </span></h2>
 <p>Using this guide, we have managed to port a non-trivial winforms app to start up on Mono on Linux in a couple of hours.  Although it is not complete, once the application is starting up on Mono, it's a good beginning to test and see what issues remain.
 </p>
 <h2> <span class="mw-headline" id="Advanced_Guides"> Advanced Guides </span></h2>
-<ul><li> <a href="{{site.baseurl}}/Guide:_Debugging_With_MWF" title="Guide: Debugging With MWF">Guide: Debugging With MWF</a> - Shows how to use the MWF project file from SVN to debug issues.
+<ul><li> <a href="{{site.baseurl}}/old_site/Guide:_Debugging_With_MWF" title="Guide: Debugging With MWF">Guide: Debugging With MWF</a> - Shows how to use the MWF project file from SVN to debug issues.
 </li></ul>
 

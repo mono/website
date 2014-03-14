@@ -14,7 +14,7 @@ redirect_from:
 <ul><li> <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=AAC3D722-444C-4E27-8B2E-C6157ED16B15&amp;displaylang=en" class="external text" rel="nofollow">Introducing System.Transactions in the Microsoft .NET Framework version 2.0</a>
 </li><li> <a href="http://msdn2.microsoft.com/en-us/library/w97s6fw4(en-US,VS.80).aspx" class="external text" rel="nofollow">Transaction Processing, .NET Framework documentation</a>
 </li></ul>
-<p>You might also be interested in <a href="{{site.baseurl}}/SystemMessaging" title="SystemMessaging" class="mw-redirect">SystemMessaging</a>.
+<p>You might also be interested in <a href="{{site.baseurl}}/old_site/SystemMessaging" title="SystemMessaging" class="mw-redirect">SystemMessaging</a>.
 </p><p>On Microsoft.NET, System.Transactions is a wrapper around Microsoft's  distributed transaction manager (MSDTM) with some additional optimizations.  
 </p><p>The optimizations are interesting and useful enough that we implemented them  without the MSDTM. 
 </p><p>A "distributed transaction" is a transaction that has components of the transaction in different places, each place offering a local transaction ability.  The key algorithm is the 2-phase commit: a way to conjure up a globally consistent transactional commit out of individual commits in individual pieces. Thus a distributed transaction has a different flavour as compared to an individual database transaction.  It is abstract enough that it  can be implemented without knowledge of the actual mechanisms of each local transaction -- it only matters that there's a way to prepare for a commit, do  the commit, or do a rollback.

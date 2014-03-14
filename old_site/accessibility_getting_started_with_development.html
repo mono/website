@@ -34,7 +34,7 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h2> <span class="mw-headline" id="Introduction">Introduction</span></h2>
-<p>So you've just joined the <a href="{{site.baseurl}}/Accessibility:_Team" title="Accessibility: Team">UIA team</a>, or are interested in contributing to the development effort.  Welcome!  Here are some guidelines to get started with building our software, making changes, submitting patches, and committing to SVN.
+<p>So you've just joined the <a href="{{site.baseurl}}/old_site/Accessibility:_Team" title="Accessibility: Team">UIA team</a>, or are interested in contributing to the development effort.  Welcome!  Here are some guidelines to get started with building our software, making changes, submitting patches, and committing to SVN.
 </p>
 <h2> <span class="mw-headline" id="Getting_the_Code">Getting the Code</span></h2>
 <p>The UIA code is located in Mono SVN.  It is contained in the uia2atk module.  We suggest that you keep all Mono SVN checkouts in one common directory, such as ~/mono-svn.  Change to this directory and run the following command:
@@ -48,7 +48,7 @@ svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/mcs
 svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/gtk-sharp
 </pre>
 <h2> <span class="mw-headline" id="Setting_Up_Your_Environment">Setting Up Your Environment</span></h2>
-<ul><li> You need a bunch of bleeding edge stuff in your GAC.  Easiest way to do that is to set up <a href="{{site.baseurl}}/Parallel_Mono_Environments" title="Parallel Mono Environments">Parallel Mono Environments</a>.  We recommend using a user-writable path for your prefix, so you don't have to use `sudo` whenever you `make install`.  On this page we'll use the example prefix of /home/[user]/parallel-mono
+<ul><li> You need a bunch of bleeding edge stuff in your GAC.  Easiest way to do that is to set up <a href="{{site.baseurl}}/old_site/Parallel_Mono_Environments" title="Parallel Mono Environments">Parallel Mono Environments</a>.  We recommend using a user-writable path for your prefix, so you don't have to use `sudo` whenever you `make install`.  On this page we'll use the example prefix of /home/[user]/parallel-mono
 <ul><li> Follow the wiki page exactly, installing mono/gtk-sharp/etc from latest SVN (not from tarballs).
 </li><li> Follow the same instructions but for uia2atk/UIAutomation.
 </li><li> Install <a href="http://www.go-mono.com/sources/mono-addins/mono-addins-0.3.1.tar.bz2" class="external text" rel="nofollow">Mono.Addins 0.3.1 from tarball</a> in the parallel environment.
@@ -108,7 +108,7 @@ make
 <p>We highly recommend using MonoDevelop to edit UIA code.  If you are adding any new files, MonoDevelop will automatically update our makefiles to include those files in the build.  Also, those new files will be added to your SVN working copy, so your patches will come out correctly.
 </p>
 <h3> <span class="mw-headline" id="Coding_Guidelines">Coding Guidelines</span></h3>
-<p>In general we follow the <a href="{{site.baseurl}}/Coding_Guidelines" title="Coding Guidelines">Mono Coding Guidelines</a>, with the following notable exceptions:
+<p>In general we follow the <a href="{{site.baseurl}}/old_site/Coding_Guidelines" title="Coding Guidelines">Mono Coding Guidelines</a>, with the following notable exceptions:
 </p>
 <ul><li> We use camelCase instead of names_with_underscores for all private/protected fields and local variables.
 </li><li> We put the opening curly brace ('{') for a class on the next line.
@@ -117,8 +117,8 @@ make
 </li><li> Names in UIA are so long that we often cannot avoid going over 80 characters per line.  Try your best to keep your lines short and your code readable, though.
 </li></ul>
 <h3> <span class="mw-headline" id="Good_resources">Good resources</span></h3>
-<ul><li> <a href="{{site.baseurl}}/Accessibility:_Provider_From_Scratch" title="Accessibility: Provider From Scratch"> Writing Provider from Scratch</a>
-</li><li> <a href="{{site.baseurl}}/Accessibility:_Winforms_Implementation" title="Accessibility: Winforms Implementation"> Windows Forms Implementation</a>
+<ul><li> <a href="{{site.baseurl}}/old_site/Accessibility:_Provider_From_Scratch" title="Accessibility: Provider From Scratch"> Writing Provider from Scratch</a>
+</li><li> <a href="{{site.baseurl}}/old_site/Accessibility:_Winforms_Implementation" title="Accessibility: Winforms Implementation"> Windows Forms Implementation</a>
 </li></ul>
 <h2> <span class="mw-headline" id="Testing_Your_Changes">Testing Your Changes</span></h2>
 <ol><li> Make sure your changes build by rebuilding the MonoDevelop solution.

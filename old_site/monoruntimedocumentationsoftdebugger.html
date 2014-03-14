@@ -50,14 +50,14 @@ The Mono Soft Debugger first became available with Mono 2.6 and is primarily use
 <p>The following diagram is useful in the discussion of the soft debugger:
 </p><p><a href="{{site.baseurl}}/images/old_site/2/2a/0911030528Mp6F5SHL.png" class="image"><img alt="0911030528Mp6F5SHL.png" src="{{site.baseurl}}/images/old_site/2/2a/0911030528Mp6F5SHL.png" width="579" height="374" /></a>
 </p><p>The soft debugger lives inside the Mono runtime.   Debuggers communicate with this component with a compact protocol over a socket connection.    For ease of use the protocol has been encapsulated in the Mono.Debugger.Soft.dll API which different IDEs can use to communicate with the target.
-</p><p>The soft debugger work both with Just-in-Time compiled code, and with <a href="{{site.baseurl}}/AOT" title="AOT">batch compiled code</a> allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the <a href="{{site.baseurl}}/Mono:PlayStation3" title="Mono:PlayStation3">PlayStation 3</a>.
+</p><p>The soft debugger work both with Just-in-Time compiled code, and with <a href="{{site.baseurl}}/old_site/AOT" title="AOT">batch compiled code</a> allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the <a href="{{site.baseurl}}/old_site/Mono:PlayStation3" title="Mono:PlayStation3">PlayStation 3</a>.
 </p>
 <h3> <span class="mw-headline" id="Debugger_Agent"> Debugger Agent </span></h3>
 <p>The debugger agent is a module inside the mono runtime which offers debugging
 services to client programs.
 </p>
 <h3> <span class="mw-headline" id="Wire_Protocol"> Wire Protocol </span></h3>
-<p>Clients communicate with the agent using a wire protocol over a socket transport.   Read our <a href="{{site.baseurl}}/SoftDebugger:WireFormat" title="SoftDebugger:WireFormat">Soft Debugger Wire Protocol</a> document for details about the protocol.   
+<p>Clients communicate with the agent using a wire protocol over a socket transport.   Read our <a href="{{site.baseurl}}/old_site/SoftDebugger:WireFormat" title="SoftDebugger:WireFormat">Soft Debugger Wire Protocol</a> document for details about the protocol.   
 </p><p>The wire protocol is inspired by the <a href="http://java.sun.com/j2se/1.5.0/docs/guide/jpda/jdwp-spec.html" class="external text" rel="nofollow">Java Debug Wire Protocol</a>.
 </p>
 <h3> <span class="mw-headline" id="Client_library"> Client library </span></h3>

@@ -8,8 +8,8 @@ redirect_from:
 
 <h1>ADO.NET</h1>
 
-<p>See our <a href="{{site.baseurl}}/Database_Access" title="Database Access">Database_Access</a> page for more details.
-</p><p>Status and tests for ADO.NET 2.0 are available in our <a href="{{site.baseurl}}/ADOTests" title="ADOTests">ADOTests</a> page.
+<p>See our <a href="{{site.baseurl}}/old_site/Database_Access" title="Database Access">Database_Access</a> page for more details.
+</p><p>Status and tests for ADO.NET 2.0 are available in our <a href="{{site.baseurl}}/old_site/ADOTests" title="ADOTests">ADOTests</a> page.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -35,10 +35,10 @@ redirect_from:
 </li></ul>
 </li></ul>
 <h2> <span class="mw-headline" id="Generic_Database_access_in_Mono_ADO.NET"> Generic Database access in Mono ADO.NET </span></h2>
-<p>An ADO.NET <a href="{{site.baseurl}}/Provider_Factory" title="Provider Factory">Provider Factory</a>
+<p>An ADO.NET <a href="{{site.baseurl}}/old_site/Provider_Factory" title="Provider Factory">Provider Factory</a>
 was created by Brian Ritchie. The
 Provider Factory is a way to dynamically create connections, commands, parameters, and data adapters based on configuration information.  This implmentation is based on the interfaces exposed in ADO.NET provider classes.
-</p><p><a href="{{site.baseurl}}/BaseClass_Provider_Factory" title="BaseClass Provider Factory">Another Provider Factory</a> implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
+</p><p><a href="{{site.baseurl}}/old_site/BaseClass_Provider_Factory" title="BaseClass Provider Factory">Another Provider Factory</a> implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
 </p>
 <ul><li> System.Data.SqlClient
 </li><li> System.Data.Odbc
@@ -61,7 +61,7 @@ Provider Factory is a way to dynamically create connections, commands, parameter
 <ul><li> With the connection parameters, the assembly is loaded, the connection type is verified that it implements IDbConnection and an instance of the class can be created, creates a instance of the class, sets the connection string, and opens the connection.
 </li></ul>
 <h2> <span class="mw-headline" id="Testing"> Testing </span></h2>
-<ul><li> Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests.  The following table shows the stand alone test files for specific providers. Refer <a href="{{site.baseurl}}/Writing_Connected_Mode_Testcases" title="Writing Connected Mode Testcases">Writing Connected Mode Testcases</a> also for testing specific Data Providers. 
+<ul><li> Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests.  The following table shows the stand alone test files for specific providers. Refer <a href="{{site.baseurl}}/old_site/Writing_Connected_Mode_Testcases" title="Writing Connected Mode Testcases">Writing Connected Mode Testcases</a> also for testing specific Data Providers. 
 </li></ul>
 <p>&lt;/br&gt;
 </p>
@@ -96,7 +96,7 @@ Provider Factory is a way to dynamically create connections, commands, parameter
 							<td>OdbcTest.cs (to connect to MS SQL Server)at&lt;/br&gt; System.Data/Test</td>
 						</tr>
 					</table>
-<ul><li> <a href="{{site.baseurl}}/Test_Suite" title="Test Suite">Testing non-connection classes</a> are done via mono's modified version of NUnit.
+<ul><li> <a href="{{site.baseurl}}/old_site/Test_Suite" title="Test Suite">Testing non-connection classes</a> are done via mono's modified version of NUnit.
 </li></ul>
 <ul><li> To run all the NUnit tests for Mono, you need the mcs source. cd to the root of the mcs source. To run it:
 </li></ul>

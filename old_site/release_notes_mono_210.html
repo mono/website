@@ -9,8 +9,8 @@ redirect_from:
 <h1>Release Notes Mono 2.10</h1>
 
 <p>Mono 2.10 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems. 
-</p><p>Mono 2.10 is an update to <a href="{{site.baseurl}}/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8</a> based on the master branch of github, it is not a minor upgrade to 2.8.    Mono 2.10 was released on February 15th.
-</p><p>For more information on changes since Mono 2.10, you can also read the release notes for <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.1" title="Release Notes Mono 2.10.1">Mono 2.10.1</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.2" title="Release Notes Mono 2.10.2">Mono 2.10.2</a> and <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.3" title="Release Notes Mono 2.10.3">Mono 2.10.3</a>, <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.4" title="Release Notes Mono 2.10.4">Mono 2.10.4</a> and <a href="{{site.baseurl}}/Release_Notes_Mono_2.10.5" title="Release Notes Mono 2.10.5">Mono 2.10.5</a>.
+</p><p>Mono 2.10 is an update to <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8</a> based on the master branch of github, it is not a minor upgrade to 2.8.    Mono 2.10 was released on February 15th.
+</p><p>For more information on changes since Mono 2.10, you can also read the release notes for <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.10.1" title="Release Notes Mono 2.10.1">Mono 2.10.1</a>, <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.10.2" title="Release Notes Mono 2.10.2">Mono 2.10.2</a> and <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.10.3" title="Release Notes Mono 2.10.3">Mono 2.10.3</a>, <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.10.4" title="Release Notes Mono 2.10.4">Mono 2.10.4</a> and <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.10.5" title="Release Notes Mono 2.10.5">Mono 2.10.5</a>.
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -205,7 +205,7 @@ $
 <p>Precise stack scanning will improve how roots are determined in the managed stack, but still scans the unmanaged stack (for example, when you P/Invoke into a C library) conservatively.
 </p>
 <h2> <span class="mw-headline" id="New_Mono_Profiler"> New Mono Profiler </span></h2>
-<p>Mono has a new <a href="{{site.baseurl}}/Profiler" title="Profiler">Profiler</a> that obsoletes the old heap-shot, heap-buddy and logging profilers that were available in previous versions of Mono and provides a reliable, new alternative.   
+<p>Mono has a new <a href="{{site.baseurl}}/old_site/Profiler" title="Profiler">Profiler</a> that obsoletes the old heap-shot, heap-buddy and logging profilers that were available in previous versions of Mono and provides a reliable, new alternative.   
 </p><p>This new profiler fixes many of the problems that older profilers had with multi-threaded applications, multi-appdomain applications and large volumes of data.
 </p><p>In addition, new GC events are now raised, allowing developers to write more advance profiling tools and GC tracking tools for their own applications.   For an example, see Alan McGovern's <a href="http://monotorrent.blogspot.com/2010/12/writing-profiler-for-mono.html" class="external text" rel="nofollow">Moonlight object profiler</a>.
 </p>
@@ -315,13 +315,13 @@ $
 </li></ul>
 <ul><li> Removed the arbitrary limit of 1024 processes in GetProcesses.
 </li></ul>
-<ul><li> Full <a href="{{site.baseurl}}/AOT" title="AOT">ahead of time compilation</a> now knows about EqualityComparer&lt;T&gt; enabling many more LINQ scenarios to work on devices that do not have JIT support.
+<ul><li> Full <a href="{{site.baseurl}}/old_site/AOT" title="AOT">ahead of time compilation</a> now knows about EqualityComparer&lt;T&gt; enabling many more LINQ scenarios to work on devices that do not have JIT support.
 </li></ul>
 <ul><li> Added the new Monitor.TryEnter overloads from the 4.0 profile.
 </li></ul>
 <ul><li> Improved the Mono runtime's sandbox: better verifier checks, more fixes from fuzzing.
 </li></ul>
-<ul><li> New document on how to <a href="{{site.baseurl}}/CoreClrHowTo" title="CoreClrHowTo">configure Mono to create your own sandboxed execution system</a>.
+<ul><li> New document on how to <a href="{{site.baseurl}}/old_site/CoreClrHowTo" title="CoreClrHowTo">configure Mono to create your own sandboxed execution system</a>.
 </li></ul>
 <ul><li> Many class library and runtime fixes to improve our compatibility with Microsoft's CLR derives from the Silverlight test suite that we received from Microsoft to improve Moonlight.
 </li></ul>
@@ -330,7 +330,7 @@ $
 <ul><li> ARM backends supports frame pointer elimination.
 </li></ul>
 <h3> <span class="mw-headline" id="New_GC_heap_walk_API"> New GC heap walk API </span></h3>
-<p>The new GC heap walk API can be used by users embedding Mono or writing custom <a href="{{site.baseurl}}/Profiler" title="Profiler">Mono profilers</a>:
+<p>The new GC heap walk API can be used by users embedding Mono or writing custom <a href="{{site.baseurl}}/old_site/Profiler" title="Profiler">Mono profilers</a>:
 </p>
 <pre class="c" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">/**
  * mono_gc_walk_heap:
@@ -394,7 +394,7 @@ mono_dl_fallback_unregister <span style="color: #009900;">&#40;</span>MonoDlFall
 <h3> <span class="mw-headline" id="OSX_Updates"> OSX Updates </span></h3>
 <p>There were various updates specifically for MacOS X in this release of Mono, bringing Mono on OSX closer to the Linux port:
 </p>
-<ul><li> The <a href="{{site.baseurl}}/Mono_LLVM" title="Mono LLVM">Mono_LLVM</a> backend for the JIT is now enabled in our OSX builds
+<ul><li> The <a href="{{site.baseurl}}/old_site/Mono_LLVM" title="Mono LLVM">Mono_LLVM</a> backend for the JIT is now enabled in our OSX builds
 </li><li> Added support for 32 bit PIDs in OSX.
 </li><li> Process lookup by ID now works on OSX.
 </li><li> Added support for --debug=casts to OSX.
@@ -408,12 +408,12 @@ mono_dl_fallback_unregister <span style="color: #009900;">&#40;</span>MonoDlFall
 </p><p>Until this version of Mono, SocketAsyncEventArgs support was using one thread per operation. The code has been rewritten to take full advantage of this model for doing asynchronous IO on sockets.
 </p>
 <h2> <span class="mw-headline" id="Cecil.2FLight"> Cecil/Light </span></h2>
-<p>The <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a> API has been made lighter and faster, at the expense of breaking source code compatibility.   This is not a problem for users as Cecil was never a stable API, and as such, users were encouraged to use their own copies of the Cecil library, instead of depending on the GAC, following our own <a href="{{site.baseurl}}/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines:Application_Deployment</a>.
+<p>The <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Cecil</a> API has been made lighter and faster, at the expense of breaking source code compatibility.   This is not a problem for users as Cecil was never a stable API, and as such, users were encouraged to use their own copies of the Cecil library, instead of depending on the GAC, following our own <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines:Application_Deployment</a>.
 </p><p>All of the tools in Mono that used Cecil have been updated to Cecil/light, and can be used as a reference to understand what changes are necessary to your own source code.
 </p>
-<h2> <span class="mw-headline" id="Gendarme_2.10"> <a href="{{site.baseurl}}/Gendarme" title="Gendarme">Gendarme</a> 2.10 </span></h2>
-<ul><li> Faster than ever thanks to <a href="{{site.baseurl}}/Cecil" title="Cecil">Cecil</a>/light update;
-</li><li> 33 new rules (total 253), 30 from students participating in <a href="{{site.baseurl}}/GoogleCodeIn" title="GoogleCodeIn"> Google Code In 2010</a>;
+<h2> <span class="mw-headline" id="Gendarme_2.10"> <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> 2.10 </span></h2>
+<ul><li> Faster than ever thanks to <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Cecil</a>/light update;
+</li><li> 33 new rules (total 253), 30 from students participating in <a href="{{site.baseurl}}/old_site/GoogleCodeIn" title="GoogleCodeIn"> Google Code In 2010</a>;
 </li><li> New rule categories:
 <ul><li> Interoperability.Com (10 rules)
 </li><li> NUnit&#160;: rules for unit tests (4 rules)
@@ -511,7 +511,7 @@ System.Web.WebPages.Razor.dll
 </p>
 <pre>Source code and pre-compiled packages for Linux, Solaris, 
 MacOS X and Windows is available from our web site from 
-the <a href="{{site.baseurl}}/Downloads" title="Downloads">Downloads</a> section.
+the <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Downloads</a> section.
 </pre>
 <p><b>Quick source code installation:</b>
 </p>
