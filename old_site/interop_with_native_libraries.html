@@ -1184,7 +1184,7 @@ See also: *<a href="http://msdn.microsoft.com/library/default.asp?url=/library/e
 </li><li> On ref SafeHandles, the outgoing value is ignored (must be zero) and the returned value is turned into a proper SafeHandle.
 </li><li> On structure fields, the SafeHandle's handle is passed.
 </li></ul>
-<p>For the actual implementation details in Mono, see the <a href="{{site.baseurl}}/old_site/SafeHandles" title="SafeHandles">SafeHandles</a> document.
+<p>For the actual implementation details in Mono, see the <a href="{{site.github.url}}/old_site/SafeHandles" title="SafeHandles">SafeHandles</a> document.
 </p>
 <h2> <span class="mw-headline" id="Properly_Disposing_of_Resources"> Properly Disposing of Resources </span></h2>
 <p>When avoiding marshaling, you're referencing unmanaged memory and other resources from managed code. This confers a great deal of responsibility. It also creates a great deal of concern, as more things can "go wrong" in managed code, particularly because of exceptions and related complexity. When any function can throw an exception, ensuring that resources are properly disposed of can be a tricky matter. 

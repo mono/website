@@ -8,8 +8,8 @@ redirect_from:
 
 <h1>HeapBuddy</h1>
 
-<p>Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented <a href="{{site.baseurl}}/old_site/Profiler" title="Profiler">here</a>.
-</p><p>HeapBuddy is a summarizing profiler.  It is part of the Mono <a href="{{site.baseurl}}/old_site/Profile" title="Profile">profiling</a> tools. 
+<p>Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented <a href="{{site.github.url}}/old_site/Profiler" title="Profiler">here</a>.
+</p><p>HeapBuddy is a summarizing profiler.  It is part of the Mono <a href="{{site.github.url}}/old_site/Profile" title="Profile">profiling</a> tools. 
 </p><p>HeapBuddy collects allocation statistics while the program is running and writes out the aggregate info to a file which you analyze with a command-line tool after it's finished running. 
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -42,7 +42,7 @@ same information as types, but it breaks the types up by the call trace that all
 </p><p>This is good when you are trying to find out what is allocating all those  strings.
 </p>
 <h1> <span class="mw-headline" id="Obtaining_HeapBuddy"> Obtaining HeapBuddy </span></h1>
-<p>HeabBuddy is availale as an <a href="{{site.baseurl}}/old_site/SVN" title="SVN" class="mw-redirect">Subversion</a> checkout, use the following command line to download it:
+<p>HeabBuddy is availale as an <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">Subversion</a> checkout, use the following command line to download it:
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span><span style="color: #c20cb9; font-weight: bold;">svn co</span> svn:<span style="color: #000000; font-weight: bold;">//</span>anonsvn.mono-project.com<span style="color: #000000; font-weight: bold;">/</span>source<span style="color: #000000; font-weight: bold;">/</span>trunk<span style="color: #000000; font-weight: bold;">/</span>heap-buddy</pre>
 <p>To build HeapBuddy use:
@@ -52,6 +52,6 @@ $ .<span style="color: #000000; font-weight: bold;">/</span>autogen.sh
 $ <span style="color: #c20cb9; font-weight: bold;">make</span>
 $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
 <h1> <span class="mw-headline" id="See_Also"> See Also </span></h1>
-<p><a href="{{site.baseurl}}/old_site/Performance_Tips" title="Performance Tips">Performance Tips</a>
-</p><p><a href="{{site.baseurl}}/old_site/HeapShot" title="HeapShot">Heap Shot Memory Profiler</a>
+<p><a href="{{site.github.url}}/old_site/Performance_Tips" title="Performance Tips">Performance Tips</a>
+</p><p><a href="{{site.github.url}}/old_site/HeapShot" title="HeapShot">Heap Shot Memory Profiler</a>
 </p>

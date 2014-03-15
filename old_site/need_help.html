@@ -11,26 +11,26 @@ redirect_from:
 <p><br />
 When having a more frequent problem as listed below please click the link to jump to the corresponding section:
 </p>
-<ol><li> Dealing with <a href="#Issues_compiling_Mono_itself">compilations issues when building Mono</a> or <a href="{{site.baseurl}}/old_site/Bugs" title="Bugs">bugs</a> of Mono
+<ol><li> Dealing with <a href="#Issues_compiling_Mono_itself">compilations issues when building Mono</a> or <a href="{{site.github.url}}/old_site/Bugs" title="Bugs">bugs</a> of Mono
 </li><li> Problems when using Mono
 <ol><li> <a href="#Can_not_compile_my_source">Can not compile my source</a>
 </li><li> <a href="#Works_under_.Net_but_not_on_Mono">Works under .Net but not on Mono</a>
 </li></ol>
-</li><li> Looking for <a href="{{site.baseurl}}/old_site/Support" title="Support">commercial support</a>
-</li><li> <a href="{{site.baseurl}}/old_site/SiteMap" title="SiteMap">Lost in the website</a>
+</li><li> Looking for <a href="{{site.github.url}}/old_site/Support" title="Support">commercial support</a>
+</li><li> <a href="{{site.github.url}}/old_site/SiteMap" title="SiteMap">Lost in the website</a>
 </li></ol>
 <p>If your issue has not been listed please read the <a href="#Problems_of_a_different_kind">Problems of a different kind</a>-Section.
 </p>
 <h2> <span class="mw-headline" id="Issues_compiling_Mono_itself"> Issues compiling Mono itself </span></h2>
-<p>Since Mono is a large piece of software you must strictly follow the <a href="{{site.baseurl}}/old_site/Compiling_Mono" title="Compiling Mono">Compiling Mono</a>-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. <a href="{{site.baseurl}}/old_site/Libgdiplus" title="Libgdiplus">libgdiplus</a>). If the problems still remain please send a mail to the <a href="http://lists.ximian.com/mailman/listinfo/mono-devel-list" class="external text" rel="nofollow">mono-devel-list</a>.
+<p>Since Mono is a large piece of software you must strictly follow the <a href="{{site.github.url}}/old_site/Compiling_Mono" title="Compiling Mono">Compiling Mono</a>-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. <a href="{{site.github.url}}/old_site/Libgdiplus" title="Libgdiplus">libgdiplus</a>). If the problems still remain please send a mail to the <a href="http://lists.ximian.com/mailman/listinfo/mono-devel-list" class="external text" rel="nofollow">mono-devel-list</a>.
 </p>
 <h2> <span class="mw-headline" id="Can_not_compile_my_source"> Can not compile my source </span></h2>
-<p>When compiling your sources please bear in mind that mono provides three <a href="{{site.baseurl}}/old_site/CSharp_Compiler" title="CSharp Compiler">C#-Compilers</a>,
+<p>When compiling your sources please bear in mind that mono provides three <a href="{{site.github.url}}/old_site/CSharp_Compiler" title="CSharp Compiler">C#-Compilers</a>,
 <b>mcs</b>, <b>gmcs</b> and <b>smcs</b>.
 </p>
 <ul><li> <b>mcs</b> is the standard compiler for code which is targeting the .Net Framework 1.1
-</li><li> <b>gmcs</b> is Mono's compiler for the the .Net Framework 2.0 and beyond*<br /><small><pre class="nowiki" style="font-family:monospace;">*</pre>gmcs does partly support <a href="{{site.baseurl}}/old_site/CSharp_Compiler#Under_Development_Features" title="CSharp Compiler">C# 3.0 language features</a></small>
-</li><li> <b>smcs</b>: compiler to target the 2.1 runtime, to build <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> applications.
+</li><li> <b>gmcs</b> is Mono's compiler for the the .Net Framework 2.0 and beyond*<br /><small><pre class="nowiki" style="font-family:monospace;">*</pre>gmcs does partly support <a href="{{site.github.url}}/old_site/CSharp_Compiler#Under_Development_Features" title="CSharp Compiler">C# 3.0 language features</a></small>
+</li><li> <b>smcs</b>: compiler to target the 2.1 runtime, to build <a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a> applications.
 </li></ul>
 <p>Most help request regarding the compilation of user software can be fixed by adding the proper references because only <tt>mscorlib.dll</tt> and <tt>System.dll</tt> are referenced by default.
 </p><p>To add references to additional assemblies, the <tt>-r:Assembly</tt> switch can be used:
@@ -40,8 +40,8 @@ When having a more frequent problem as listed below please click the link to jum
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">man</span> gmcs</pre>
 <h2> <span class="mw-headline" id="Works_under_.Net_but_not_on_Mono"> Works under .Net but not on Mono </span></h2>
-<p>Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read <a href="{{site.baseurl}}/old_site/Guide:_Porting_Winforms_Applications" title="Guide: Porting Winforms Applications">Guide: Porting Winforms Applications</a> or <a href="{{site.baseurl}}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Guide: Porting ASP.NET Applications</a> as they provide a good overview on how to run windows applications on Mono.
+<p>Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read <a href="{{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications" title="Guide: Porting Winforms Applications">Guide: Porting Winforms Applications</a> or <a href="{{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Guide: Porting ASP.NET Applications</a> as they provide a good overview on how to run windows applications on Mono.
 </p>
 <h2> <span class="mw-headline" id="Problems_of_a_different_kind"> Problems of a different kind </span></h2>
-<p>In general users can always turn to the <a href="{{site.baseurl}}/old_site/Mailing_Lists" title="Mailing Lists">Mailing Lists</a> when having problems but for more information on where to get Support please take also a look at the <a href="/index.php?title=Category:Support&amp;action=edit&amp;redlink=1" class="new" title="Category:Support (page does not exist)">Support-Category</a>.
+<p>In general users can always turn to the <a href="{{site.github.url}}/old_site/Mailing_Lists" title="Mailing Lists">Mailing Lists</a> when having problems but for more information on where to get Support please take also a look at the <a href="/index.php?title=Category:Support&amp;action=edit&amp;redlink=1" class="new" title="Category:Support (page does not exist)">Support-Category</a>.
 </p>

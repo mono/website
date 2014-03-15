@@ -39,7 +39,7 @@ redirect_from:
 </p><p>The .NET Winforms WebBrowser control exposes an API that allows an application to embed and control a browser rendering engine. It does this on .NET by wrapping the COM interfaces exposed by IE and exposing a subset of the features that those COM interfaces provide, enough to load and manipulate web pages.
 </p>
 <h1> <span class="mw-headline" id="The_Mono_implementation"> The Mono implementation </span></h1>
-<p><a href="{{site.baseurl}}/images/old_site/e/e2/Webbrowser_architecture.png" class="image"><img alt="Webbrowser architecture.png" src="{{site.baseurl}}/images/old_site/e/e2/Webbrowser_architecture.png" width="473" height="476" /></a>
+<p><a href="{{site.github.url}}/images/old_site/e/e2/Webbrowser_architecture.png" class="image"><img alt="Webbrowser architecture.png" src="{{site.github.url}}/images/old_site/e/e2/Webbrowser_architecture.png" width="473" height="476" /></a>
 </p><p>This is an overview of all the components that support both the Gecko and WebKit backends. Each square with a thin border represents a different library.
 </p><p>On top is the System.Windows.Forms class library. It has litle logic in itself for the WebBrowser control, and just uses the interfaces exposed by the next library, Mono.WebBrowser.
 </p><p>Mono.WebBrowser is also a class library, but a private one (i.e., it's in the gac but can't be "discovered" by pkg-config tools since it doesn't ship a .pc file. It can obviously be linked to directly). Winforms depends on it directly, and it exposes interfaces that hide browser engine implementation details. The interfaces are more in line with the DOM spec, but are not as complete, mainly because the .NET Winforms WebBrowser control is not feature-complete in itself.

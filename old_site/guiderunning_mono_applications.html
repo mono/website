@@ -32,7 +32,7 @@ mono myprogram.exe
 </p>
 <pre>$ mono --aot -O=all library.dll
 </pre>
-<p>The above will leave the native version of the code in `library.dll.so'.  See the page on <a href="{{site.baseurl}}/old_site/AOT" title="AOT">AOT</a> for more details.
+<p>The above will leave the native version of the code in `library.dll.so'.  See the page on <a href="{{site.github.url}}/old_site/AOT" title="AOT">AOT</a> for more details.
 </p>
 <h2> <span class="mw-headline" id="Shell_Scripts"> Shell Scripts </span></h2>
 <p>However, there are two things you can do to make it more convenient to run Mono applications. The first is to use a shell script instead of the EXE file. For example, if you had "myprogram.exe" you could create a shell script called "myprogram" that had the contents: 
@@ -43,11 +43,11 @@ mono myprogram.exe
 </pre>
 <p>When you run "myprogram," the shell will replace $@ with any arguments you provided. 
 </p><p>If you installed mono to a different location, substitute that for /usr/bin/mono. You can check with the "which mono" command.
-</p><p>See also <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment#Layout_Recommendation" title="Guidelines:Application Deployment">Application Deployment Layout Guidelines</a>.
+</p><p>See also <a href="{{site.github.url}}/old_site/Guidelines:Application_Deployment#Layout_Recommendation" title="Guidelines:Application Deployment">Application Deployment Layout Guidelines</a>.
 </p>
 <h2> <span class="mw-headline" id="Registering_.exe_as_non-native_binaries_.28Linux_only.29"> Registering .exe as non-native binaries (Linux only) </span></h2>
 <p>Because this is a Linux-specific feature, we do not recommend that developers deploy this solution, as it would limit the portability of their scripts.
-</p><p>In addition, this mechanism does not work as intended by the <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Application Deployment Guidelines</a>.  
+</p><p>In addition, this mechanism does not work as intended by the <a href="{{site.github.url}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Application Deployment Guidelines</a>.  
 </p><p>You can also make a systemwide change, and use binfmt to register the exe files as non-native binaries. Then, when trying to launch an exe file, the kernel will run the mono interpreter to handle the command. Binfmt can also be used to launch Windows executables using WINE, or Java .class files using a JVM. To register exe with the kernel: 
 </p>
 <ul><li>Become root and turn on the binfmt module in your kernel with this command: 
@@ -132,7 +132,7 @@ chmod +x myprogram.exe
 <p>The -z option allows you to compress the assemblies included in the bundle, and reduce the disk space consumed.
 </p><p>The -c option will create a host.c file which contains the main function of the program, which you can modify before compiling and linking the application.  
 </p><p>With -c, the further option --nomain will generate the host.c file without a main method so that you can embed it as a library in an existing native application in which you are embedding the Mono runtime yourself.  Just call mono_mkbundle_init() before initializing the JIT to make the bundled assemblies available.
-</p><p>Bundles in addition support a --static flag.   The --static flag causes mkbundle to generate a static executable that statically links the Mono runtime.   Be advised that this option will trigger the LGPL requirement that you still distribute the independent pieces to your user so he can manually upgrade his Mono runtime if he chooses to do so.    Alternatively, you can obtain a proprietary license of Mono by <a href="{{site.baseurl}}/old_site/Contact" title="Contact">contacting Xamarin</a>. 
+</p><p>Bundles in addition support a --static flag.   The --static flag causes mkbundle to generate a static executable that statically links the Mono runtime.   Be advised that this option will trigger the LGPL requirement that you still distribute the independent pieces to your user so he can manually upgrade his Mono runtime if he chooses to do so.    Alternatively, you can obtain a proprietary license of Mono by <a href="{{site.github.url}}/old_site/Contact" title="Contact">contacting Xamarin</a>. 
 </p>
 <h2> <span class="mw-headline" id="macpack_.28Mac_OS_X_only.29"> macpack (Mac OS X only) </span></h2>
 <p><i>macpack</i> is a tool that must be used to bundle Cocoa#   applications into Double-Clickable, Finder friendly, bundles on Mac OS X.  It bundles  

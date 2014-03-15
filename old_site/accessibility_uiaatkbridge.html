@@ -41,15 +41,15 @@ redirect_from:
 <p>These components represent the server side of the accessibility technology. For a screen reader or inspector (such as ORCA or Accerciser) to connect to these components, they need to use an AT-SPI connector (for example, Python applications use the library <a href="http://live.gnome.org/GAP/PythonATSPI" class="external text" rel="nofollow">pyatspi</a>).
 </p><p>Then, we need to implement a bridge which receives accessibility information from a .NET application (through a UIA provider) to the Atk component and send it via the Atk-bridge. The implementation will be coded in the managed world, so the translator between the unmanaged and managed layers will be held by a binding called Atk# (AtkSharp).
 </p><p>The bridge will be in its own assembly, which will talk to Atk# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
-</p><p><a href="{{site.baseurl}}/images/old_site/2/28/Uia-atk_bridge.png" class="image"><img alt="Uia-atk bridge.png" src="{{site.baseurl}}/images/old_site/2/28/Uia-atk_bridge.png" width="800" height="640" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/2/28/Uia-atk_bridge.png" class="image"><img alt="Uia-atk bridge.png" src="{{site.github.url}}/images/old_site/2/28/Uia-atk_bridge.png" width="800" height="640" /></a>
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Mapping_infrastructure"> Mapping infrastructure </span></h2>
 <p>We will need to map UIA structures to ATK structures. More info:
 </p>
-<ul><li> ATK roles: Refer to our <a href="{{site.baseurl}}/old_site/Accessibility:_Mapping_UIA_to_ATK#Roles" title="Accessibility: Mapping UIA to ATK">table of Atk.Roles</a>, or directly from the <a href="http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup" class="external text" rel="nofollow">ATK sources</a>. 
-</li><li> <a href="{{site.baseurl}}/old_site/Accessibility:_Mapping_UIA_to_ATK" title="Accessibility: Mapping UIA to ATK">Mapping UIA to ATK</a>: <a href="{{site.baseurl}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType-&gt;Atk mapping draft</a>.
-</li><li> <a href="{{site.baseurl}}/old_site/Accessibility:_Control_Status" title="Accessibility: Control Status">MWF-&gt;UiaControlType-&gt;UiaProvider mappings</a>.
+<ul><li> ATK roles: Refer to our <a href="{{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#Roles" title="Accessibility: Mapping UIA to ATK">table of Atk.Roles</a>, or directly from the <a href="http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup" class="external text" rel="nofollow">ATK sources</a>. 
+</li><li> <a href="{{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK" title="Accessibility: Mapping UIA to ATK">Mapping UIA to ATK</a>: <a href="{{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType-&gt;Atk mapping draft</a>.
+</li><li> <a href="{{site.github.url}}/old_site/Accessibility:_Control_Status" title="Accessibility: Control Status">MWF-&gt;UiaControlType-&gt;UiaProvider mappings</a>.
 </li><li> From the GTK Case study: <a href="#Case_study:_GTK">Gtk-&gt;Gail-&gt;Atk-&gt;UiaControlType</a>.
 </li><li> For historic reference: <a href="http://developer.mozilla.org/en/docs/ARIA_UA_Best_Practices#11.3.5_Role" class="external text" rel="nofollow">Mapping MSAA to ATK</a>.
 </li></ul>
@@ -137,7 +137,7 @@ LD_LIBRARY_PATH=/path/to/our/own/gtk-sharp/atk/glue/.libs/ mono TestUiaAtkBridge
 </th>
 <th width="10%" style="background:#d9e5bf;"> UIA Provider
 </th>
-<th width="10%" style="background:#d9e5bf;"> <a href="{{site.baseurl}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType</a>
+<th width="10%" style="background:#d9e5bf;"> <a href="{{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types" title="Accessibility: Mapping UIA to ATK">UiaControlType</a>
 </th></tr>
 <tr>
 <td>

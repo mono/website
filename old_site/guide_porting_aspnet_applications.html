@@ -84,13 +84,13 @@ redirect_from:
 <p>By their nature, Web applications tend to be more portable to other platforms than traditional desktop applications. The interaction with the user is done through the web browser the user is running, which in most cases, guarantees interface portability nearly without effort. There exist incompatibilities in the DOM (Document Object Model), JavaScript, CSS and HTML implementations in the web browsers, but for the sake of this guide we will assume that all the browsers work  in the same way in this regard.
 </p><p>In this guide we will focus on issues arising from differences between the Unix and Windows platforms, as well as between the database systems (RDBMS) in common use by developers on each of the platforms.
 </p><p>In this guide I will demonstrate the porting process based on the <b>Blog Starter Kit</b> application (you can download the original C# source from <a href="http://www.shankun.com/BlogStarterKit.aspx" class="external free" rel="nofollow">http://www.shankun.com/BlogStarterKit.aspx</a>):
-</p><p><a href="{{site.baseurl}}/images/old_site/8/83/BlogStarterKit_StartPage.png" class="image"><img alt="BlogStarterKit StartPage.png" src="{{site.baseurl}}/images/old_site/8/83/BlogStarterKit_StartPage.png" width="700" height="507" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/8/83/BlogStarterKit_StartPage.png" class="image"><img alt="BlogStarterKit StartPage.png" src="{{site.github.url}}/images/old_site/8/83/BlogStarterKit_StartPage.png" width="700" height="507" /></a>
 </p>
 <h2> <span class="mw-headline" id="Getting_started"> Getting started </span></h2>
 <p>No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
 </p>
 <blockquote>
-<b>Windows developers</b>. If you are a working in the Windows environment, it is advised that you download the <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">VMWare Virtual Image</a> to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled. 
+<b>Windows developers</b>. If you are a working in the Windows environment, it is advised that you download the <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">VMWare Virtual Image</a> to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled. 
 </blockquote>
 <p>If your application uses MS SQL then on your Unix system you will need to install the <a href="http://postgresql.org/" class="external text" rel="nofollow">PostgreSQL</a> RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
 </p>
@@ -235,7 +235,7 @@ chmod 600 ''FILE_NAME''
 </p>
 <h3> <span class="mw-headline" id="Code-Behind">Code-Behind</span></h3>
 <h4> <span class="mw-headline" id="Filesystem_path_syntax">Filesystem path syntax</span></h4>
-<p><span style="font-size: xx-small; font-style: italic">This section is based on <a href="{{site.baseurl}}/old_site/Guide:_Porting_Winforms_Applications#The_Path_Separator" title="Guide: Porting Winforms Applications">Porting Winforms Applications</a><i></span></i>
+<p><span style="font-size: xx-small; font-style: italic">This section is based on <a href="{{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications#The_Path_Separator" title="Guide: Porting Winforms Applications">Porting Winforms Applications</a><i></span></i>
 </p><p>The issue you should pay great attention to is the platform-specific filesystem paths. Windows systems use a backslash (<tt>"\"</tt>) as path separator, while Unix systems use the forward slash (<tt>"/"</tt>) for the same purpose. 
 </p><p>There are two ways of dealing with the issue:
 </p><p><b>System.IO.Path.DirectorySeparatorChar</b>

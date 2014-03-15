@@ -68,11 +68,11 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h1> <span class="mw-headline" id="Testing"> Testing </span></h1>
-<ul><li> For a simple self contained html file with embedded Silverlight, <a href="{{site.baseurl}}/old_site/Moonlight_Standalone_File" title="Moonlight Standalone File">Moonlight_Standalone_File</a>
+<ul><li> For a simple self contained html file with embedded Silverlight, <a href="{{site.github.url}}/old_site/Moonlight_Standalone_File" title="Moonlight Standalone File">Moonlight_Standalone_File</a>
 </li><li> We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. #ifdef versus tools);
 </li><li> We need to run (parts of) the tests under the new security model - not just under Mono/Linux but also under MS Silverlight under Windows;
 </li><li> We need to expand those tests, e.g. new classes, more coverage;
-</li><li> <a href="{{site.baseurl}}/old_site/Moonlight_Test_Harness" title="Moonlight Test Harness">Instructions for Jackson's new test harness</a>
+</li><li> <a href="{{site.github.url}}/old_site/Moonlight_Test_Harness" title="Moonlight Test Harness">Instructions for Jackson's new test harness</a>
 </li></ul>
 <h1> <span class="mw-headline" id="Debugging_Tricks"> Debugging Tricks </span></h1>
 <h2> <span class="mw-headline" id="Using_an_Alternate_Firefox"> Using an Alternate Firefox </span></h2>
@@ -101,7 +101,7 @@ Program received signal SIGSEGV, Segmentation fault.
 </p>
 <h1> <span class="mw-headline" id="Resources"> Resources </span></h1>
 <p>Books on WPF are good resources, although they cover the "larger" API of which Silverlight is merely a subset.
-</p><p>Some notes that are relevant to WPF have been moved to the <a href="{{site.baseurl}}/old_site/WPF" title="WPF">WPF</a> page.
+</p><p>Some notes that are relevant to WPF have been moved to the <a href="{{site.github.url}}/old_site/WPF" title="WPF">WPF</a> page.
 </p><p><a href="http://blogs.msdn.com/adam_nathan/" class="external text" rel="nofollow">Adam Nathan's</a> book on WPF is very good, and it goes into some of the technical details that other books merely skim on.
 </p><p><br />
 </p>
@@ -114,7 +114,7 @@ Program received signal SIGSEGV, Segmentation fault.
 </p><p>Instead of using the <b>mcs</b> or <b>gmcs</b> compilers as you do regularly with Mono you need to use the <b>smcs</b> compiler that will generate and reference the proper assembly versions that are suitable for Silverlight development.
 </p>
 <h2> <span class="mw-headline" id="Moonlight_IDE"> Moonlight IDE </span></h2>
-<p>Since Linux and MacOS developers will not be able to run Blend on their operating systems, we have created a XAML designer.   This XAML designer is located on <a href="{{site.baseurl}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> in the module "lunareclipse".  
+<p>Since Linux and MacOS developers will not be able to run Blend on their operating systems, we have created a XAML designer.   This XAML designer is located on <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> in the module "lunareclipse".  
 </p><p>Lunar Eclipse currently is a standalone desktop application but we want to build a MonoDevelop add-in to have a full Silverlight development experience and possible also port it to the web to provide a designer that MacOS users to use. 
 </p><p>It also looks like the current VS.NET Orcas <a href="http://silverlight.net/quickstarts/Start/BrowseApi.aspx" class="external text" rel="nofollow">can't help</a> much to create Silverlight code based on the security attributes:
 </p>
@@ -130,12 +130,12 @@ Program received signal SIGSEGV, Segmentation fault.
 <p>Currently Moonlight supports the 1.0 engine (no runtime engine, purely exposed as Javascript) and the 2.0 engine (the runtime engine exposed to .NET).
 </p>
 <h3> <span class="mw-headline" id="Security_Model"> Security Model </span></h3>
-<p>Mono has not historically been used to run untrusted code inside the virtual machine.   Although we have done some work towards the implementation of the <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a> this work has not been completed.
-</p><p>Silverlight 2.0 introduce a new security model to replace <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a> for it's applications. This model is discussed in details <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR"> here</a>.
-</p><p>Details about how Moonlight implement this features can be found <a href="{{site.baseurl}}/old_site/MoonlightSecurity" title="MoonlightSecurity"> here</a>.
+<p>Mono has not historically been used to run untrusted code inside the virtual machine.   Although we have done some work towards the implementation of the <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a> this work has not been completed.
+</p><p>Silverlight 2.0 introduce a new security model to replace <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a> for it's applications. This model is discussed in details <a href="{{site.github.url}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR"> here</a>.
+</p><p>Details about how Moonlight implement this features can be found <a href="{{site.github.url}}/old_site/MoonlightSecurity" title="MoonlightSecurity"> here</a>.
 </p>
 <h3> <span class="mw-headline" id="Other_Security_Requirements"> Other Security Requirements </span></h3>
-<p>While this new security model looks easier to implement, wrt to the stackwalk-based <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a>, most of the requirements for the <a href="{{site.baseurl}}/old_site/MonoSandbox" title="MonoSandbox">MonoSandbox</a> are still needed to provide a safe execution environment.
+<p>While this new security model looks easier to implement, wrt to the stackwalk-based <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a>, most of the requirements for the <a href="{{site.github.url}}/old_site/MonoSandbox" title="MonoSandbox">MonoSandbox</a> are still needed to provide a safe execution environment.
 </p><p>A few other things must be completed:
 </p>
 <ul><li> Complete the Mono verifier
@@ -150,22 +150,22 @@ Program received signal SIGSEGV, Segmentation fault.
 </p>
 <h3> <span class="mw-headline" id="Assemblies"> Assemblies </span></h3>
 <p>Silverlight is an extended subset of the 2.0 .NET framework. Existing assemblies (ECMA) are versioned as 2.1.0.0 which are reduced versions of the 2.0 libraries and have been annotated with the security attributes and have been expanded in a few areas.
-</p><p><a href="{{site.baseurl}}/images/old_site/2/2a/20-to-21.png" class="image"><img alt="20-to-21.png" src="{{site.baseurl}}/images/old_site/2/2a/20-to-21.png" width="681" height="163" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/2/2a/20-to-21.png" class="image"><img alt="20-to-21.png" src="{{site.github.url}}/images/old_site/2/2a/20-to-21.png" width="681" height="163" /></a>
 </p><p>Silverlight introduce new assemblies, all signed by the Microsoft key and versioned at 1.0.0.0 - except for <b>AGCLR.DLL</b> which isn't versioned in 1.1 Alpha (bug?).
 </p>
 <h4> <span class="mw-headline" id="Dependencies"> Dependencies </span></h4>
 <p>As we can see in next figures Silverlight doesn't have any circular dependencies between it's assemblies, unlike Fx 2.0, which is good news and will reduce our build time (no special loops in the Makefiles like we have today).
-</p><p><a href="{{site.baseurl}}/images/old_site/9/95/Agclr.png" class="image"><img alt="Agclr.png" src="{{site.baseurl}}/images/old_site/9/95/Agclr.png" width="864" height="669" /></a>
-<a href="{{site.baseurl}}/images/old_site/b/b3/Sxc.png" class="image"><img alt="Sxc.png" src="{{site.baseurl}}/images/old_site/b/b3/Sxc.png" width="568" height="456" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/9/95/Agclr.png" class="image"><img alt="Agclr.png" src="{{site.github.url}}/images/old_site/9/95/Agclr.png" width="864" height="669" /></a>
+<a href="{{site.github.url}}/images/old_site/b/b3/Sxc.png" class="image"><img alt="Sxc.png" src="{{site.github.url}}/images/old_site/b/b3/Sxc.png" width="568" height="456" /></a>
 </p><p><b>Legend</b>
 </p>
 <ul><li> Assemblies in red are compiled with /unsafe;
 </li><li> "Trusted Callers" means that all assemblies can only be used from assemblies running at FullTrust. From a build point of view this means none of them have the AllowPartiallyTrustedCallers attribute;
 </li></ul>
 <h4> <span class="mw-headline" id="New_versioned_Libraries"> New versioned Libraries </span></h4>
-<p>We introduced a new NET_2_1 define and a new net_2_1 profile in the build system.   The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the <a href="{{site.baseurl}}/old_site/Linker" title="Linker">Cecil Linker</a> to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
-</p><p><a href="{{site.baseurl}}/images/old_site/d/da/Mono20-to-21.png" class="image"><img alt="Mono20-to-21.png" src="{{site.baseurl}}/images/old_site/d/da/Mono20-to-21.png" width="706" height="462" /></a>
-</p><p>In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Cecil</a>-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
+<p>We introduced a new NET_2_1 define and a new net_2_1 profile in the build system.   The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the <a href="{{site.github.url}}/old_site/Linker" title="Linker">Cecil Linker</a> to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
+</p><p><a href="{{site.github.url}}/images/old_site/d/da/Mono20-to-21.png" class="image"><img alt="Mono20-to-21.png" src="{{site.github.url}}/images/old_site/d/da/Mono20-to-21.png" width="706" height="462" /></a>
+</p><p>In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Cecil</a>-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
 </p><p>Tasks:
 </p>
 <ul><li> Setup the build for 2.1.0.0 versioned libraries
@@ -174,7 +174,7 @@ Program received signal SIGSEGV, Segmentation fault.
 </li><li> Setup mono-api-info, mono-api-compare, corcompare pages for it.
 </li><li> Integrate into the build system.
 </li></ul>
-<p>A peer project of this is <a href="{{site.baseurl}}/old_site/Completing2.0Profile" title="Completing2.0Profile">Completing the 2.0 Profile</a> effort.   As both 2.1.0.0 and 2.0.0.0 share a lot in common.
+<p>A peer project of this is <a href="{{site.github.url}}/old_site/Completing2.0Profile" title="Completing2.0Profile">Completing the 2.0 Profile</a> effort.   As both 2.1.0.0 and 2.0.0.0 share a lot in common.
 </p><p>I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET_2_1 that would be a superset of NET_2_0.   The result would be a larger assembly than we need to have.
 </p><p>At that point, we should use the Cecil-based linker (which will have to be modified) and have the linker strip out all the public code that is not necessary in the 2.1 profile.
 </p><p><b>Note:</b> I generated the corcompare output, but it is hard to read because many issues boil down to the missing attributes, so a first step might be to write the injection library to reduce some of the noise.
@@ -193,7 +193,7 @@ Program received signal SIGSEGV, Segmentation fault.
 <ul><li> moon/src module on SVN (the C++ code)
 </li><li> moon/class/System.Windows on SVN (the C# code)
 </li></ul>
-<p>The class hierarchy for instance (on the <a href="{{site.baseurl}}/old_site/WPFNotes" title="WPFNotes">WPFNotes</a> page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not.   The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
+<p>The class hierarchy for instance (on the <a href="{{site.github.url}}/old_site/WPFNotes" title="WPFNotes">WPFNotes</a> page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not.   The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
 </p><p>It is probably simple for those that want to contribute to start work on the classes that do not derive from DependencyObject.  We should follow the regular process: write nunit test cases to understand the API, and then write the API.
 </p><p>One thing that seems clear to me is that the rendering should be done in the unmanaged world.  Just like the full WPF does, it seems like the managed code is merely a front-end that communicates with the backend and creates the object in the unmanaged world.  The unmanaged world actually does all the rendering.  There are a couple of questions as to how much needs to go in the unmanaged world, but at least it is clear that anything that derives from Visual as well as the majority of the things references from them (Brushes and Transforms at least, and maybe also PathSegments?)
 </p><p>Currently the plan is to have the C++ code mirror the C# class hierarchy, and it will be responsible for rendering and for loading XAML files into memory.
@@ -262,7 +262,7 @@ Program received signal SIGSEGV, Segmentation fault.
 <p>In some early discussions with David Reveman (the designer of Xgl and Compiz), we are considering the definition of a rendering scene protocol that would allow in the presence of Compiz offload the work to the compositing manager and take advantage of the direct hardware interface that Compiz has.
 </p>
 <h3> <span class="mw-headline" id="The_Plugin_and_the_DOM"> The Plugin and the DOM </span></h3>
-<div class="thumb tright"><div class="thumbinner" style="width:520px;"><a href="{{site.baseurl}}/images/old_site/b/b7/Plugin.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/b/b7/Plugin.png" width="518" height="426" class="thumbimage" /></a>  <div class="thumbcaption">Plugin relation to the Browser</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:520px;"><a href="{{site.github.url}}/images/old_site/b/b7/Plugin.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/b/b7/Plugin.png" width="518" height="426" class="thumbimage" /></a>  <div class="thumbcaption">Plugin relation to the Browser</div></div></div>
 <p>There are two directions of communication: the browser talking to the plugin, and the plugin talking to the browser.
 </p><p>The plugin will have to expose the internal tree structure to its host, this is  simple to do, documentation on how to write Mozilla plugins is available <a href="http://www.mozilla.org/projects/plugins/" class="external text" rel="nofollow">here</a>.   Work on this will probably have to wait until we get the API to a reasonable state.
 </p><p>The other direction (plugin communicating with the browser) can be started right away.   This is the System.Windows.Browser and System.Windows.Hosting namespaces (they live in System.Silverlight.dll).
@@ -280,7 +280,7 @@ Program received signal SIGSEGV, Segmentation fault.
 </p>
 <h3> <span class="mw-headline" id="Hosting_API"> Hosting API </span></h3>
 <p>System.Silverlight.dll and Microsoft.Scripting.dll are involved.
-</p><p>Some notes at <a href="{{site.baseurl}}/old_site/MoonlightHostingNotes" title="MoonlightHostingNotes">MoonlightHostingNotes</a>.
+</p><p>Some notes at <a href="{{site.github.url}}/old_site/MoonlightHostingNotes" title="MoonlightHostingNotes">MoonlightHostingNotes</a>.
 </p>
 <h3> <span class="mw-headline" id="JavaScript_compiler"> JavaScript compiler </span></h3>
 <p>The JavaScript compiler does not look like it will be open sourced, but some comments from the Mix conference indicate that it is probably a small compiler (scanning and parsing) that defers most of the work to the DLR (already open source).

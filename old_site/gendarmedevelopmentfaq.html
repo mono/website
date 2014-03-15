@@ -38,17 +38,17 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="General"> General </span></h1>
 <h2> <span class="mw-headline" id="Can_I_have_my_own.2C_private.2C_Gendarme_rules_.3F"> Can I have my own, private, Gendarme rules&#160;? </span></h2>
-<p>Of course. From the beginning <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> framework was designed for that very purpose. <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> own rules are separated from its framework (and runners) logic to ensure this scenario will always works.
+<p>Of course. From the beginning <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> framework was designed for that very purpose. <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> own rules are separated from its framework (and runners) logic to ensure this scenario will always works.
 </p>
 <h2> <span class="mw-headline" id="Can_I_use_something_other_than_C.23_to_write_rules_.3F"> Can I use something other than C# to write rules&#160;? </span></h2>
-<p>Yes you can. However such rules have a very low chance of being accepted into <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> itself since the extra dependencies (e.g. the compiler) would add a burden to our parent package, <b>mono-tools</b>, and make it difficult to build and package.
+<p>Yes you can. However such rules have a very low chance of being accepted into <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> itself since the extra dependencies (e.g. the compiler) would add a burden to our parent package, <b>mono-tools</b>, and make it difficult to build and package.
 </p>
 <h2> <span class="mw-headline" id="When_should_I_write_an_engine_.3F"> When should I write an engine&#160;? </span></h2>
 <p>Maybe never&#160;:-) Seriously engines grows from the frustration of writing <b>many</b> rules and finding too much duplication inside them. Even then we must ensure that the new engine, under normal circumstances, provide a net gain (e.g. performance) over the existing duplication. Other (simpler) solutions to the same problem are to use helpers classes and/or rocks (i.e. extension methods).
 </p>
 <h2> <span class="mw-headline" id="Where_can_I_ask_technical_questions_about_Gendarme_.3F"> Where can I ask technical questions about Gendarme&#160;? </span></h2>
-<p>Many <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> developers are on <a href="{{site.baseurl}}/old_site/IRC" title="IRC">IRC</a>, channel <b>#gendarme</b> on <b>GimpNET</b>. You can also join the <a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google group</a> and email your questions to its mailing-list.
-</p><p>If your questions are related to <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Cecil</a> then you should send them to the <a href="http://groups.google.com/group/mono-cecil?hl=en" class="external text" rel="nofollow">Cecil Google group</a>.
+<p>Many <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> developers are on <a href="{{site.github.url}}/old_site/IRC" title="IRC">IRC</a>, channel <b>#gendarme</b> on <b>GimpNET</b>. You can also join the <a href="http://groups.google.com/group/gendarme" class="external text" rel="nofollow">Gendarme Google group</a> and email your questions to its mailing-list.
+</p><p>If your questions are related to <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Cecil</a> then you should send them to the <a href="http://groups.google.com/group/mono-cecil?hl=en" class="external text" rel="nofollow">Cecil Google group</a>.
 </p>
 <h1> <span class="mw-headline" id="Building"> Building </span></h1>
 <h2> <span class="mw-headline" id="How_can_I_build_Gendarme_.3F"> How can I build Gendarme&#160;? </span></h2>
@@ -56,17 +56,17 @@ redirect_from:
 </p>
 <h2> <span class="mw-headline" id="Why_Makefiles_.3F"> Why Makefiles&#160;? </span></h2>
 <ul><li> Because it is nearly universal;
-</li><li> It's what <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> need to exists inside <b>mono-tools</b> and get packaged across several Linux distributions;
+</li><li> It's what <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> need to exists inside <b>mono-tools</b> and get packaged across several Linux distributions;
 </li><li> It's the only configuration that is automatically tested by <b>monobuild</b> (our continuous integration bots).
 </li></ul>
 <h2> <span class="mw-headline" id="Which_version_of_Mono_is_required_.3F"> Which version of Mono is required&#160;? </span></h2>
 <p>The same version of Gendarme - i.e. if you want to build Gendarme 2.2 then you need Mono 2.2. It's likely that older versions will also works but this cannot be guaranteed.
 </p>
 <h2> <span class="mw-headline" id="Can_I_use_MonoDevelop_to_build_Gendarme_.3F"> Can I use MonoDevelop to build Gendarme&#160;? </span></h2>
-<p>Yes. A <a href="{{site.baseurl}}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a> solution and project files are available in our <a href="{{site.baseurl}}/old_site/SourceCodeRepository" title="SourceCodeRepository">SourceCodeRepository</a>. However since this is <b>not</b> the main build mechanism being used its likely that some files (rules or tests) could be missing. I.e. you may have to adjust the solution / project to make it work.
+<p>Yes. A <a href="{{site.github.url}}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a> solution and project files are available in our <a href="{{site.github.url}}/old_site/SourceCodeRepository" title="SourceCodeRepository">SourceCodeRepository</a>. However since this is <b>not</b> the main build mechanism being used its likely that some files (rules or tests) could be missing. I.e. you may have to adjust the solution / project to make it work.
 </p>
 <h2> <span class="mw-headline" id="Can_I_use_Visual_Studio_to_build_Gendarme_.3F"> Can I use Visual Studio to build Gendarme&#160;? </span></h2>
-<p>Yes, but you'll need VS.NET 2010 (or later) in order to compile the solution (a C# 4 compiler is <b>required</b>). Note that, just like <a href="{{site.baseurl}}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a>, it is likely that the solution and project files in our <a href="{{site.baseurl}}/old_site/SourceCodeRepository" title="SourceCodeRepository">SourceCodeRepository</a> could be out of date (e.g. missing some files).
+<p>Yes, but you'll need VS.NET 2010 (or later) in order to compile the solution (a C# 4 compiler is <b>required</b>). Note that, just like <a href="{{site.github.url}}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a>, it is likely that the solution and project files in our <a href="{{site.github.url}}/old_site/SourceCodeRepository" title="SourceCodeRepository">SourceCodeRepository</a> could be out of date (e.g. missing some files).
 </p>
 <h1> <span class="mw-headline" id="Contribute"> Contribute </span></h1>
 <h2> <span class="mw-headline" id="How_can_I_contribute_a_new_rule_.3F"> How can I contribute a new rule&#160;? </span></h2>
@@ -87,8 +87,8 @@ redirect_from:
 </li></ol>
 </li></ol>
 <h2> <span class="mw-headline" id="Can_I_use_C.23_3_.3F"> Can I use C# 3&#160;? </span></h2>
-<p>Yes, <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> already use C# 3 features like extension methods and LINQ. This is not a problem since Mono support it* and <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can requires the (released) Fx 3.5 for Windows users. *unless there is a known issue that makes the code incompatible between Mono and MS runtimes.
+<p>Yes, <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> already use C# 3 features like extension methods and LINQ. This is not a problem since Mono support it* and <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can requires the (released) Fx 3.5 for Windows users. *unless there is a known issue that makes the code incompatible between Mono and MS runtimes.
 </p>
 <h2> <span class="mw-headline" id="Can_I_use_C.23_4_.3F"> Can I use C# 4&#160;? </span></h2>
-<p>Yes, starting with version 2.11 <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can use C#4 features as long as the new Mono C# compiler (mcs) support them. Just like C# 3 (or any other features) it is important to be able to build <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a>, for both testing and packaging, on the two .NET runtimes.
+<p>Yes, starting with version 2.11 <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can use C#4 features as long as the new Mono C# compiler (mcs) support them. Just like C# 3 (or any other features) it is important to be able to build <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a>, for both testing and packaging, on the two .NET runtimes.
 </p>

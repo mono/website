@@ -27,7 +27,7 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h1> <span class="mw-headline" id="Porting"> Porting </span></h1>
-<p>This describes how to port the generic code sharing infrastructure in Mono.   This is in addition to the <a href="{{site.baseurl}}/old_site/Mono:Runtime:Documentation:MiniPorting" title="Mono:Runtime:Documentation:MiniPorting">Mono Runtime Porting</a> instructions.
+<p>This describes how to port the generic code sharing infrastructure in Mono.   This is in addition to the <a href="{{site.github.url}}/old_site/Mono:Runtime:Documentation:MiniPorting" title="Mono:Runtime:Documentation:MiniPorting">Mono Runtime Porting</a> instructions.
 </p>
 <h2> <span class="mw-headline" id="Generic_class_init_trampoline"> Generic class init trampoline </span></h2>
 <p>The generic class init trampoline is very similar to the class init trampoline, with the exception that the VTable of the class to be inited is passed in a register, <code>MONO_ARCH_VTABLE_REG</code>.  That register can be the same as the IMT register. 

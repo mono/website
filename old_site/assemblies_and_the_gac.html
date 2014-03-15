@@ -201,7 +201,7 @@ file:///home/monkey/.mono/lib/mono/gac/gac_lib/1.2.3.4_en-us_29fba40140d13a14/ga
 <ul><li> The library developer ships a properly configured pkg-config file.
 </li><li> The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
 </li><li> The library consumers ship this library as part of their package.
-</li><li> The consumer follow the <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines for Application Deployment</a>
+</li><li> The consumer follow the <a href="{{site.github.url}}/old_site/Guidelines:Application_Deployment" title="Guidelines:Application Deployment">Guidelines for Application Deployment</a>
 </li></ul>
 <p>Here is how this works, the library developer installs a pkg-config file like this:
 </p>
@@ -227,7 +227,7 @@ Libs: -r:Thing.dll -r:ThingCore.dll</pre>
 <p>The libraries will be copied from the system installation directory into your application directory, and the --libs line will link to the local libraries, not libraries installed into the GAC.
 </p><p>This means that developers that consume unstable API libraries do not have to worry about their schedule being the same as the schedule for API stability on the libraries they consume as they will always have a private copy at development time and at runtime, and they choose when they upgrade to a new version of the library. 
 </p><p>If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
-</p><p>Note: a production-ready, detailed example of this can be found in the <a href="{{site.baseurl}}/old_site/Guidelines:Application_Deployment#Auto-tools" title="Guidelines:Application Deployment">Autotools</a> section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+</p><p>Note: a production-ready, detailed example of this can be found in the <a href="{{site.github.url}}/old_site/Guidelines:Application_Deployment#Auto-tools" title="Guidelines:Application Deployment">Autotools</a> section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
 </p>
 <h2> <span class="mw-headline" id="Comparing_this_to_other_models"> Comparing this to other models </span></h2>
 <h3> <span class="mw-headline" id="How_is_this_better_than_using_the_GAC.3F"> How is this better than using the GAC? </span></h3>
@@ -305,7 +305,7 @@ Libs: -r:Thing.dll -r:ThingCore.dll</pre>
 &lt;skip Token=&quot;b77a5c561934e089&quot; Assembly=&quot;*&quot; Users=&quot;*&quot; /&gt;
 </pre>
 <h2> <span class="mw-headline" id="Public_Key_Token_Remapping"> Public Key Token Remapping </span></h2>
-<p>The best example of remapping is the <a href="{{site.baseurl}}/old_site/ECMA" title="ECMA">ECMA</a> key. Every runtime must remap the ECMA public key token to it's own public key. This way each runtime can verify the digital signature of the <a href="/index.php?title=Standard_ECMA_assemblies&amp;action=edit&amp;redlink=1" class="new" title="Standard ECMA assemblies (page does not exist)">standard ECMA assemblies</a> . 
+<p>The best example of remapping is the <a href="{{site.github.url}}/old_site/ECMA" title="ECMA">ECMA</a> key. Every runtime must remap the ECMA public key token to it's own public key. This way each runtime can verify the digital signature of the <a href="/index.php?title=Standard_ECMA_assemblies&amp;action=edit&amp;redlink=1" class="new" title="Standard ECMA assemblies (page does not exist)">standard ECMA assemblies</a> . 
 </p><p>The same problem applies to other assemblies as well. Few people have access to the private key used to sign most of the framework assemblies (known as msfinal). However to keep the same strongname we need the same public key (and public key token). Mono's solution to this problem is to generalize the ECMA remapping mechanism to any public key token. 
 </p><p>This generic remapping mechanism is only present in Mono. This means that the assemblies using it cannot work, out-of-the-box, with a different runtime (as the signature can't be directly verified). If you need to use those assemblies (e.g. for testing or debugging purposes) then you must turn off strongname verification for the specific assembly (or for entire public key token). See <a href="/index.php?title=Delay_Signed_Assemblies&amp;action=edit&amp;redlink=1" class="new" title="Delay Signed Assemblies (page does not exist)">Delay Signed Assemblies</a> for more details. 
 </p>

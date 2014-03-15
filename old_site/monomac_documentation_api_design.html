@@ -62,7 +62,7 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="API_Design">API Design</span></h1>
 <h2> <span class="mw-headline" id="Overview">Overview</span></h2>
-<p>In addition to the core Base Class Libraries that are part of Mono, <a href="{{site.baseurl}}/old_site/MonoMac" title="MonoMac">MonoMac</a> ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
+<p>In addition to the core Base Class Libraries that are part of Mono, <a href="{{site.github.url}}/old_site/MonoMac" title="MonoMac">MonoMac</a> ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
 </p><p>At the core of MonoMac there is an interop engine that bridges the C# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and <a href="#OpenGL">OpenGL</a>.
 </p><p>The low-level runtime to communicate with Objective-C code is in the <a href="#MonoMac.ObjCRuntime">MonoMac.ObjCRuntime</a>. On top of this foundation bindings for <a href="#MonoMac.Foundation">Foundation</a>, CoreFoundation and <a href="#MonoMac.AppKit">AppKit</a> are provided.
 </p>
@@ -105,7 +105,7 @@ redirect_from:
 </li><li> Expose C# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as <i>blocks</i>.
 </li></ul>
 <h2> <span class="mw-headline" id="Unbound_Types_.26_Members">Unbound Types &amp; Members</span></h2>
-<p>At this point in time, not all Cocoa  types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via <a href="{{site.baseurl}}/old_site/DllImport" title="DllImport" class="mw-redirect">P/Invoke</a>. Other frameworks are Objective-C code, and thus require <a href="{{site.baseurl}}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types" title="MonoMac/Documentation/Binding New Objective-C Types">manual selector invocation</a>.
+<p>At this point in time, not all Cocoa  types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via <a href="{{site.github.url}}/old_site/DllImport" title="DllImport" class="mw-redirect">P/Invoke</a>. Other frameworks are Objective-C code, and thus require <a href="{{site.github.url}}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types" title="MonoMac/Documentation/Binding New Objective-C Types">manual selector invocation</a>.
 </p>
 <h2> <span class="mw-headline" id="Major_Namespaces">Major Namespaces</span></h2>
 <h3> <span class="mw-headline" id="MonoMac.ObjCRuntime">MonoMac.ObjCRuntime</span></h3>
@@ -119,7 +119,7 @@ redirect_from:
 <ol><li> Instead of dealing with <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744" class="external text" rel="nofollow">NSString</a> and <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620" class="external text" rel="nofollow">NSArray</a> the runtime instead exposes these as C# <a href="http://www.go-mono.com/docs/index.aspx?link=T:System.String" class="external text" rel="nofollow">string</a> and strongly typed <a href="http://www.go-mono.com/docs/index.aspx?link=T:System.Array" class="external text" rel="nofollow">" array</a>s throughout the API.
 </li><li> Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other OS X APIs or APIs that are not currently bound by MonoMac.
 </li></ol>
-<p>For more details on binding APIs see the <a href="{{site.baseurl}}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types" title="MonoMac/Documentation/Binding New Objective-C Types">MonoMac Binding Generator</a>  section.
+<p>For more details on binding APIs see the <a href="{{site.github.url}}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types" title="MonoMac/Documentation/Binding New Objective-C Types">MonoMac Binding Generator</a>  section.
 </p>
 <h4> <span class="mw-headline" id="NSObject">NSObject</span></h4>
 <p>The <a href="http://docs.go-mono.com/MonoMac.Foundation.NSObject" class="external text" rel="nofollow">NSObject</a> type is the foundation for all the Objective-C bindings. MonoMac types mirror two classes of types from the OS X Cocoa APIs: the C types (typically referred to as CoreFoundation types) and the Objective-C types (these all derive from the NSObject class).
@@ -146,7 +146,7 @@ redirect_from:
 </p><p>The discussion in the next few sections is not necessary for users that are creating MonoMac applications, but will help developers understand how things are done and will assist them when creating more complicated applications.
 </p>
 <h3> <span class="mw-headline" id="Types">Types</span></h3>
-<p>Where it made sense, we exposed C# types instead of low-level MonoMac.Foundation types to the C# universe. This means that <a href="{{site.baseurl}}/old_site/MonoMac/Documentation/API_Design/NSString" title="MonoMac/Documentation/API Design/NSString">the API uses the C# "string" type instead of NSString</a> and it uses strongly typed C# arrays instead of exposing NSArray.
+<p>Where it made sense, we exposed C# types instead of low-level MonoMac.Foundation types to the C# universe. This means that <a href="{{site.github.url}}/old_site/MonoMac/Documentation/API_Design/NSString" title="MonoMac/Documentation/API Design/NSString">the API uses the C# "string" type instead of NSString</a> and it uses strongly typed C# arrays instead of exposing NSArray.
 </p><p>Additionally, instead of exposing CGRect, CGPoint and CGSize from the CoreGraphics API, we replaced those with the System.Drawing implementations RectF, PointF and SizeF as they would help developers preserve existing OpenGL code that uses OpenTK.
 </p>
 <h3> <span class="mw-headline" id="Inheritance">Inheritance</span></h3>
@@ -437,7 +437,7 @@ image<span style="color: #008000;">.</span><span style="color: #0000FF;">XXX</sp
 </p>
 <h3> <span class="mw-headline" id="When_to_call_Dispose">When to call Dispose</span></h3>
 <p>You should call Dispose when you need Mono to get rid of your object. A possible use case is when Mono has no knowledge that your NSObject is actually holding a reference to an important resource like memory, or an information pool. In those cases, you should call Dispose to immediately release the reference to the memory, instead of waiting for Mono to perform a garbage collection cycle.
-</p><p>Internally, when Mono creates <a href="{{site.baseurl}}/old_site/MonoMac/Documentation/API_Design/NSString" title="MonoMac/Documentation/API Design/NSString">NSString references from C# strings</a>, it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
+</p><p>Internally, when Mono creates <a href="{{site.github.url}}/old_site/MonoMac/Documentation/API_Design/NSString" title="MonoMac/Documentation/API Design/NSString">NSString references from C# strings</a>, it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
 </p>
 <h3> <span class="mw-headline" id="When_to_Keep_References_to_Objects">When to Keep References to Objects</span></h3>
 <p>One side-effect that automatic memory management has is that the GC will get rid of unused objects as long as there are no references to them. This sometimes can have surprising side effects, for example, if you create a local variable to hold your toplevel view controller, or your toplevel window, and then having those vanish behind your back.

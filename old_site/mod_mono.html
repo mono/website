@@ -8,10 +8,10 @@ redirect_from:
 
 <h1>Mod mono</h1>
 
-<p>Mod_Mono is an Apache 2.0/2.2/2.4.3 module that provides <a href="{{site.baseurl}}/old_site/ASP.NET" title="ASP.NET">ASP.NET</a> support for the web's favorite server, <a href="http://httpd.apache.org" class="external text" rel="nofollow">Apache</a>.
+<p>Mod_Mono is an Apache 2.0/2.2/2.4.3 module that provides <a href="{{site.github.url}}/old_site/ASP.NET" title="ASP.NET">ASP.NET</a> support for the web's favorite server, <a href="http://httpd.apache.org" class="external text" rel="nofollow">Apache</a>.
 </p><p>The module passes off requests for ASP.NET pages to an external program, <b>mod-mono-server</b>, which actually handles the requests. The communication between the Apache module and mod-mono-server is established using a Unix socket or a TCP socket.
 </p><p>The most simple scenario uses Apache as the HTTP server front end which passes the requests to mod-mono-server to handle, the following diagram illustrates how this setup works:
-</p><p><a href="{{site.baseurl}}/images/old_site/c/cc/Modmono-basic-setup.PNG" class="image"><img alt="Modmono-basic-setup.PNG" src="{{site.baseurl}}/images/old_site/c/cc/Modmono-basic-setup.PNG" width="680" height="362" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/c/cc/Modmono-basic-setup.PNG" class="image"><img alt="Modmono-basic-setup.PNG" src="{{site.github.url}}/images/old_site/c/cc/Modmono-basic-setup.PNG" width="680" height="362" /></a>
 </p><p>Mod_mono is an Apache module that is hosted inside Apache.    Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process.   The mod-mono-server process in turn can host multiple independent applications.   It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
 </p><p>Although AppDomains provide an adequate level of isolation, mod_mono can also be configured to route different urls to different mod-mono-server processes.   You can use this to:
 </p>
@@ -20,7 +20,7 @@ redirect_from:
 </li><li> Allow the kernel to enforce different isolation rules for different processes (for example with AppArmor or SELinux)
 </li><li> Setup different CPU, Disk and memory quotas to different processes
 </li></ul>
-<p><a href="{{site.baseurl}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" class="image"><img alt="Modmono-multiple-servers.PNG" src="{{site.baseurl}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" width="697" height="614" /></a>
+<p><a href="{{site.github.url}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" class="image"><img alt="Modmono-multiple-servers.PNG" src="{{site.github.url}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" width="697" height="614" /></a>
 </p><p>For example, in the setup above, the various Apache workers will route requests to /forums and /support to a mod-mono-server that is used by the "community" user on the server.   This mod-mono-server will still use two separate AppDomains to isolate the forums software from the support software.
 </p><p>The /blog url will be sent to the mod-mono-server that is ran by the marketing group, the /api url will be sent to the mod-mono-server for user engineering while the application in /testing will be handled by an experimental version of Mono.
 </p>
@@ -71,7 +71,7 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="Requirements"> Requirements </span></h1>
 <p>You will need <a href="http://httpd.apache.org" class="external text" rel="nofollow">apache</a> , the web server, installed. 
-</p><p>From <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Downloads</a> you will need <b>mono</b>, <b>xsp</b> and <b>mod_mono</b>.
+</p><p>From <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">Downloads</a> you will need <b>mono</b>, <b>xsp</b> and <b>mod_mono</b>.
 </p>
 <h1> <span class="mw-headline" id="Distribution-Specific_Documentation"> Distribution-Specific Documentation </span></h1>
 <p>If you are using one of these linux distributions, you should look at the corresponding documentation before reading the rest of this page, as some things are different on every distro. It is also always recommended to use your distribution's official packages when available, rather than compiling from source.
@@ -81,14 +81,14 @@ redirect_from:
 </li></ul>
 <h1> <span class="mw-headline" id="Easy_Configuration_of_Mod_Mono"> Easy Configuration of Mod_Mono </span></h1>
 <p>When you installed XSP, a bunch of sample ASP.NET pages and web services were installed too. If the prefix used to configure XSP was /usr, the sample files are located in /usr/lib/xsp/test. 
-</p><p>If your needs are not very complicated, all you need is to use <a href="{{site.baseurl}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>, this basically means that you load the mod_mono.conf file, like this in your Apache configuration file:
+</p><p>If your needs are not very complicated, all you need is to use <a href="{{site.github.url}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>, this basically means that you load the mod_mono.conf file, like this in your Apache configuration file:
 </p>
 <pre>
 Include /etc/apache2/mod_mono.conf
 </pre>
 <p>And applications will start to be served.   To try it out, copy the /usr/lib/xsp/test directory to your Apache home (in openSUSE this is /srv/www/hdtocs).
 </p><p>It is recommended that you create a directory per application that you want served.   This will allow you to xcopy deploy your applications from Windows to Linux if you want to.
-</p><p>More on automatic configuration of mod_mono applications is in <a href="{{site.baseurl}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>.
+</p><p>More on automatic configuration of mod_mono applications is in <a href="{{site.github.url}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>.
 </p><p>mod_mono.conf loads the mod_mono module, associates ASP.NET file extensions with the ASP.NET MIME type and adds index.aspx, Default.aspx, and default.aspx as automatic directory index pages (with the DirectoryIndex directive). If you don't include mod_mono.conf in your main Apache configuration, you will at least need to have the mod_mono.so module loaded with:
 </p>
 <pre>
@@ -116,7 +116,7 @@ KeepAliveTimeout 2
 It is advisable to use the <tt>worker</tt> MPM with mod_mono. Unfortunately, PHP seems to not necessarily work with the <tt>worker</tt> MPM, so you may not be able to go this route.
 </p>
 <h1> <span class="mw-headline" id="Configuring_Mod_Mono"> Configuring Mod_Mono </span></h1>
-<p>When <a href="{{site.baseurl}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a> does not fit your needs, you will need to include several mod_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
+<p>When <a href="{{site.github.url}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a> does not fit your needs, you will need to include several mod_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
 </p>
 <h3> <span class="mw-headline" id="Mod_Mono_Configuration_Tool"> Mod_Mono Configuration Tool </span></h3>
 <p>The <a href="http://go-mono.com/config-mod-mono/" class="external text" rel="nofollow">Apache mod_mono configuration tool</a> can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod_mono configuration application served at <a href="http://go-mono.com/config-mod-mono/" class="external free" rel="nofollow">http://go-mono.com/config-mod-mono/</a>
@@ -134,7 +134,7 @@ It is advisable to use the <tt>worker</tt> MPM with mod_mono. Unfortunately, PHP
 2   AddHandler mono .aspx .ascx .asax .ashx .config .cs .asmx .axd
 3   MonoApplications &quot;/:/home/username/www&quot;
 </pre>
-<p>The first line disables the <a href="{{site.baseurl}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a> feature. (If inside a VirtualHost section, it disables it just for that virtual host).
+<p>The first line disables the <a href="{{site.github.url}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a> feature. (If inside a VirtualHost section, it disables it just for that virtual host).
 </p><p>The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod_mono (rather than Apache processing them itself as plain-text files).
 </p><p>The third line instructs mod_mono that an ASP.NET application exists at the root directory of the web site (i.e. at <a href="http://www.example.com/" class="external free" rel="nofollow">http://www.example.com/</a>), and that this virtual path corresponds to the physical path on disk of /home/username/www. Normally, the physical path will match whatever Apache would map the given virtual path to. So if the virtual path is /, as in this example, the physical path matches what is in the DocumentRoot directive for Apache. This is important because in that virtual path, Apache itself will continue to serve images, static HTML, and other files, based on the physical path it knows in DocumentRoot, while mod_mono will handle files with .aspx, etc. extensions (or whatever was specified in AddHandler) based on the physical path provided in the MonoApplications directive.
 </p><p>Here is another configuration that sets up the ASP.NET test suite that comes with mod_mono.
@@ -261,7 +261,7 @@ AddMonoApplications &quot;www.sample.com:/:/home/sampledotcom/www&quot;
 <p>As with most other mod_mono directives, the first parameter to a directive can be the name or alias of a mod-mono-server. This is always optional and is omitted in the examples above.
 </p>
 <h2> <span class="mw-headline" id="Limiting_the_number_of_concurrent_requests"> Limiting the number of concurrent requests </span></h2>
-<p>The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could <a href="{{site.baseurl}}/old_site/ThreadPool_DeadLocks" title="ThreadPool DeadLocks" class="mw-redirect">experience deadlocks</a> when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
+<p>The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could <a href="{{site.github.url}}/old_site/ThreadPool_DeadLocks" title="ThreadPool DeadLocks" class="mw-redirect">experience deadlocks</a> when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
 </p><p>mod_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
 </p><p>To adjust the limits, use these directives:
 </p>
@@ -455,5 +455,5 @@ many request as you need to get a result that excludes start up stuff.
 </dd><dt>--enable-debug&#160;</dt><dd> You will get more output in the apache error_log file. Useful when debugging.
 </dd></dl>
 <h1> <span class="mw-headline" id="Improving_mod_mono"> Improving mod_mono </span></h1>
-<p>See our <a href="{{site.baseurl}}/old_site/ImprovingModMono" title="ImprovingModMono">Improving mod_mono</a> page for details on things that could be improved in the module.
+<p>See our <a href="{{site.github.url}}/old_site/ImprovingModMono" title="ImprovingModMono">Improving mod_mono</a> page for details on things that could be improved in the module.
 </p>

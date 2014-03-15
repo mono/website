@@ -9,8 +9,8 @@ redirect_from:
 <h1>CGI</h1>
 
 <p><br />
-<a href="http://hoohoo.ncsa.illinois.edu/cgi/" class="external text" rel="nofollow">CGI</a> is the most widely supported web server application interface. <a href="{{site.baseurl}}/old_site/ASP.NET" title="ASP.NET">ASP.NET</a> (and <a href="{{site.baseurl}}/old_site/Mono" title="Mono" class="mw-redirect">Mono</a>) has a relatively long startup time and requires a relatively large amount of initial memory that makes it unsuitable to be used as a CGI application in the traditional way because CGI requires the web server to create a new application process for each request.
-</p><p>Both <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">mod_mono</a> and <a href="{{site.baseurl}}/old_site/FastCGI" title="FastCGI">fastcgi-mono-server</a> are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
+<a href="http://hoohoo.ncsa.illinois.edu/cgi/" class="external text" rel="nofollow">CGI</a> is the most widely supported web server application interface. <a href="{{site.github.url}}/old_site/ASP.NET" title="ASP.NET">ASP.NET</a> (and <a href="{{site.github.url}}/old_site/Mono" title="Mono" class="mw-redirect">Mono</a>) has a relatively long startup time and requires a relatively large amount of initial memory that makes it unsuitable to be used as a CGI application in the traditional way because CGI requires the web server to create a new application process for each request.
+</p><p>Both <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a> and <a href="{{site.github.url}}/old_site/FastCGI" title="FastCGI">fastcgi-mono-server</a> are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
 </p><p>Shared hosing environments usually use <a href="http://httpd.apache.org" class="external text" rel="nofollow">Apache</a> that only has support for CGI out of the box. Both mod_mono and FastCGI support require installing modules that can only be done by server administrators.
 </p><p><a href="http://www.fastcgi.com/" class="external text" rel="nofollow">cgi-fcgi</a> is a CGI to FastCGI bridge also capable of starting a FastCGI application that has support for a wide range of platforms. <b>cgi-fcgi</b> along with <b>fastcgi-mono-server</b> enables <b>ASP.NET</b> on any web server that has support for CGI without noticeable performance impact.
 </p>
@@ -24,7 +24,7 @@ redirect_from:
 </ul>
 </td></tr></table>
 <h2> <span class="mw-headline" id="Installing_Mono_and_cgi-fcgi"> Installing Mono and cgi-fcgi </span></h2>
-<p>For more detailed instructions on installing Mono see our <a href="{{site.baseurl}}/old_site/Getting_Mono" title="Getting Mono" class="mw-redirect">Getting Mono</a> and <a href="{{site.baseurl}}/old_site/Compiling_Mono" title="Compiling Mono">Compiling Mono</a> pages. cgi-fcgi is available for download from the  <a href="http://www.fastcgi.com/drupal/node/5" class="external text" rel="nofollow">FastCGI</a> site as part of the <b>Development Kit</b>.
+<p>For more detailed instructions on installing Mono see our <a href="{{site.github.url}}/old_site/Getting_Mono" title="Getting Mono" class="mw-redirect">Getting Mono</a> and <a href="{{site.github.url}}/old_site/Compiling_Mono" title="Compiling Mono">Compiling Mono</a> pages. cgi-fcgi is available for download from the  <a href="http://www.fastcgi.com/drupal/node/5" class="external text" rel="nofollow">FastCGI</a> site as part of the <b>Development Kit</b>.
 </p><p>The following sample configuration assumes installation prefixes used here to configure cgi-fcgi and mono. If you use different prefixes you also will have to modify the sample files:
 </p>
 <pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzf fcgi-2.4.0.tar.gz
@@ -77,7 +77,7 @@ A separate shell script (<i>/home/username/bin/mono-fcgi</i>) is required to sta
 <span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>username<span style="color: #000000; font-weight: bold;">/</span>mono<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>fastcgi-mono-server2 \
 <span style="color: #000000; font-weight: bold;">/</span><span style="color: #007800;">root</span>=<span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>username<span style="color: #000000; font-weight: bold;">/</span>public_html <span style="color: #000000; font-weight: bold;">/</span><span style="color: #007800;">applications</span>=<span style="color: #000000; font-weight: bold;">/</span>:<span style="color: #000000; font-weight: bold;">/</span>home<span style="color: #000000; font-weight: bold;">/</span>username<span style="color: #000000; font-weight: bold;">/</span>public_html</pre>
 <p>This script also logs stdout and stderr and creates a pid file.
-</p><p>You may want to use name based virtual hosts or define more applications on command line. For more information see <a href="{{site.baseurl}}/old_site/FastCGI#How_Applications_are_Handled_.28and_how_to_configure_them.29" title="FastCGI">How Applications are Handled</a>.
+</p><p>You may want to use name based virtual hosts or define more applications on command line. For more information see <a href="{{site.github.url}}/old_site/FastCGI#How_Applications_are_Handled_.28and_how_to_configure_them.29" title="FastCGI">How Applications are Handled</a>.
 </p>
 <h2> <span class="mw-headline" id="Recycling_the_FastCGI_server"> Recycling the FastCGI server </span></h2>
 <p>The FastCGI server can be recycled by removing the socket file that will allow pending requests to be processed by the existing server process while new requests will be routed to a new server process created by cgi-fcgi.
@@ -128,7 +128,7 @@ A separate shell script (<i>/home/username/bin/mono-fcgi</i>) is required to sta
 Action mono-cgi /cgi-bin/mono-cgi
 AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 </pre>
-<p>You may want to handle other extensions with ASP.NET. For more examples on configuration see <a href="{{site.baseurl}}/old_site/Mod_mono#Manual_Mod_Mono_Configuration" title="Mod mono">Manual Mod_Mono Configuration</a>.
+<p>You may want to handle other extensions with ASP.NET. For more examples on configuration see <a href="{{site.github.url}}/old_site/Mod_mono#Manual_Mod_Mono_Configuration" title="Mod mono">Manual Mod_Mono Configuration</a>.
 </p><p><br />
 To improve security you should protect ASP.NET Application Folders:
 </p>

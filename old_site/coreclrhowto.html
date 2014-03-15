@@ -8,9 +8,9 @@ redirect_from:
 
 <h1>CoreClrHowTo</h1>
 
-<p>This <i>how to</i> is intended for people who have read about <b>coreclr</b> on <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR#References" title="Moonlight2CoreCLR">MSDN</a>, 
-<a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR#References" title="Moonlight2CoreCLR">MS employees blogs</a>, Mono's <a href="{{site.baseurl}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">wiki</a> and how this applies
-to <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a>. Once the concepts are understood then you're ready to learn <i>how to</i> enable this feature for your own needs.
+<p>This <i>how to</i> is intended for people who have read about <b>coreclr</b> on <a href="{{site.github.url}}/old_site/Moonlight2CoreCLR#References" title="Moonlight2CoreCLR">MSDN</a>, 
+<a href="{{site.github.url}}/old_site/Moonlight2CoreCLR#References" title="Moonlight2CoreCLR">MS employees blogs</a>, Mono's <a href="{{site.github.url}}/old_site/Moonlight2CoreCLR" title="Moonlight2CoreCLR">wiki</a> and how this applies
+to <a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a>. Once the concepts are understood then you're ready to learn <i>how to</i> enable this feature for your own needs.
 </p><p>So what's needed&#160;? Simply a host (full trusted), some platform assemblies (partially trusted code) and applications (untrusted).
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -42,7 +42,7 @@ to <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a>
 <h1> <span class="mw-headline" id="Host"> Host </span></h1>
 <p>Hosting sounds scary&#160;? It's not, at least <b>coreclr</b>-wise and it is likely your simplest step.
 </p>
-<ol><li> <a href="{{site.baseurl}}/old_site/Embedding_Mono" title="Embedding Mono">Embed Mono</a> into your application;
+<ol><li> <a href="{{site.github.url}}/old_site/Embedding_Mono" title="Embedding Mono">Embed Mono</a> into your application;
 </li><li> Enable CoreCLR (which also enables the verifier) with a call to <b>mono_security_enable_core_clr</b>; and
 </li><li> Provide your own callback to <b>mono_security_set_core_clr_platform_callback</b> to determine if an assembly is to be considered as platform code (return <b>TRUE</b>) or not (return <b>FALSE</b>).
 </li></ol>
@@ -80,7 +80,7 @@ However it does show that creating a host and enabled coreclr are not difficult 
 Also this <b>mono</b> option is very useful to test the runtime under coreclr (e.g. it's used daily for running fuzz-ed code).
 </p>
 <h3> <span class="mw-headline" id="Moonlight"> Moonlight </span></h3>
-<p><a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a>, Mono's open source Silverlight implemention, is a complete, real-life and usable, <b>coreclr</b> host.
+<p><a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a>, Mono's open source Silverlight implemention, is a complete, real-life and usable, <b>coreclr</b> host.
 </p><p>Being a web browser plugin this may looks like a very different hosting scenario - and it is in many cases. 
 But from a <b>coreclr</b> point of view things are very similar the earlier, generic code sample.
 </p><p>In the following <a href="https://github.com/mono/moon/raw/master/src/security.cpp" class="external text" rel="nofollow">source code</a> you can see:
@@ -105,7 +105,7 @@ unless it is decorated with either [SecurityCritical] or [SecuritySafeCritical] 
 </p>
 <ol><li> Use the Moonlight profile <i>as-is</i>. It is well tested, supported and <a href="https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/audit" class="external text" rel="nofollow">audited</a>;
 </li><li> Use a <b>subset</b> of Moonlight. With a little extra work you can all the benefits of the above and a smaller footprint (which likely improves your security since it reduce the surface); or
-</li><li> Define your own profile from scratch. You're not totally on your own since Moonlight provides several <a href="https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/" class="external text" rel="nofollow">tools</a> and <a href="{{site.baseurl}}/old_site/SecurityValidation" title="SecurityValidation">guidance</a>. However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent <b>coreclr</b>.
+</li><li> Define your own profile from scratch. You're not totally on your own since Moonlight provides several <a href="https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/" class="external text" rel="nofollow">tools</a> and <a href="{{site.github.url}}/old_site/SecurityValidation" title="SecurityValidation">guidance</a>. However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent <b>coreclr</b>.
 </li></ol>
 <p><br />
 </p>
@@ -124,8 +124,8 @@ However it's hard to define a complete, useful profile using only attributes tha
 <p>How can <b>coreclr</b> be used to allow opening TCP sockets between 4502-4534&#160;?
 </p><p>Short answer: it cannot.
 </p><p>Long answer: Such checks are done by code based on policies (not coreclr). This means the socket code must be transparent (or safe critical)
-and provide it's own policy decision (e.g. a range check on the requested port). While <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a> allowed complex policies to be defined, the one
-used by <a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a> are more strictly defined (e.g. TCP and a subset between 4502-4534). 
+and provide it's own policy decision (e.g. a range check on the requested port). While <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a> allowed complex policies to be defined, the one
+used by <a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a> are more strictly defined (e.g. TCP and a subset between 4502-4534). 
 Of course your own host can define it's own policy.
 </p><p>Policy-driven examples (from Moonlight):
 </p>
@@ -137,9 +137,9 @@ Of course your own host can define it's own policy.
 <h1> <span class="mw-headline" id="FAQ"> FAQ </span></h1>
 <p>Q: Is CoreCLR new in [Moon|Silver]light 2+&#160;?
 </p><p>A: Somewhat. CoreCLR is heavily based on the transparency model which was introduced in .NET 2.0. 
-However in the <i>regular</i> framework the transparency model is used in conjunction with <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a> (and the later is not supported on Mono).
+However in the <i>regular</i> framework the transparency model is used in conjunction with <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a> (and the later is not supported on Mono).
 </p><p>Q: Does CoreCLR provides all the security for [Moon|Silver]light&#160;?
-</p><p>A: Not quite. It's a bit like saying "CAS == stack walk". Stack walks are an important part of <a href="{{site.baseurl}}/old_site/CAS" title="CAS">CAS</a> but, without all the other parts,
+</p><p>A: Not quite. It's a bit like saying "CAS == stack walk". Stack walks are an important part of <a href="{{site.github.url}}/old_site/CAS" title="CAS">CAS</a> but, without all the other parts,
 would not provide any security. In this case <b>coreclr</b> enforce the security attributes in the platform code (along with a few other rules)
 but some other features are policy-based (e.g. cross-domain web access, socket support...)
 </p>

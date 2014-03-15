@@ -36,7 +36,7 @@ redirect_from:
 </p>
 <h3> <span class="mw-headline" id="UI_Automation_on_Linux"> UI Automation on Linux </span></h3>
 <p>To make UI Automation integrate with the GNOME Desktop, UI Automation needs to integrate into the existing accessibility frameworks; namely at-spi and ATK.  The UIA Client interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to at-spi.  Similarly,  the UIA Provider interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to ATK.  The following diagram shows all of these technologies and layers put together.
-</p><p><a href="{{site.baseurl}}/images/old_site/3/37/Architecture.png" class="image"><img alt="Architecture.png" src="{{site.baseurl}}/images/old_site/3/37/Architecture.png" width="781" height="288" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/3/37/Architecture.png" class="image"><img alt="Architecture.png" src="{{site.github.url}}/images/old_site/3/37/Architecture.png" width="781" height="288" /></a>
 </p>
 <h2> <span class="mw-headline" id="Provider_Details"> Provider Details </span></h2>
 <h3> <span class="mw-headline" id="ATK"> ATK </span></h3>
@@ -58,7 +58,7 @@ redirect_from:
 </p>
 <h3> <span class="mw-headline" id="UIA.2FATK_Bridge"> UIA/ATK Bridge </span></h3>
 <p>The bridge from UIA Providers to ATK needs to map the Properties, Events, and Control Patterns from UIA Providers to ATK roles, events, and properties. A UIA element does not report back which provider interfaces it implements but it does report back the Control Type.  Since UIA Control Types are a better match for a mapping to ATK roles, they will be used as the primary means of the mapping. The UIA element's object will also be introspected for any additional provider interfaces that are implemented and accounted for in the mapping.
-</p><p>Details about the actual mapping of UIA Providers and Control Types to ATK can be found on the <a href="{{site.baseurl}}/old_site/Accessibility:_Mapping_UIA_to_ATK" title="Accessibility: Mapping UIA to ATK"> Mapping UIA to ATK</a> page.
+</p><p>Details about the actual mapping of UIA Providers and Control Types to ATK can be found on the <a href="{{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK" title="Accessibility: Mapping UIA to ATK"> Mapping UIA to ATK</a> page.
 </p>
 <h2> <span class="mw-headline" id="Definitions"> Definitions </span></h2>
 <p><a href="http://msdn2.microsoft.com/en-us/accessibility/bb892133.aspx" class="external text" rel="nofollow">UIA</a>---Microsoft UI Automation.  A managed code application programming interface (API), exposing user interface controls for test automation and assistive technology. Part of the .NET framework starting at 3.0. Successor of MSAA (Microsoft Active Accessibility)<br /><br />
@@ -70,8 +70,8 @@ ATK---Accessibility toolkit.  A developer toolkit that allows programmers to use
 GAIL---GNOME Accessbility Implementation Library.  GAIL provides accessibility support for GTK by implementing AtkObjects for widgets in GTK.  GAIL is dynamically loadable (as a module) at runtime by a GTK application.  Once loaded, those parts of your application that use standard GTK widgets will have a basic level of accessibility, without you having to modify your application at all.  (If GAIL is not loaded, GTK widgets will have a default accessibility implementation that essentially returns no information, though it nominally conforms to the ATK API.)<br /><br />
 ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.<br /><br />
 UIA/at-spi Bridge---Mapping of AT-SPI to the UIA client APIs.<br /><br />
-<a href="{{site.baseurl}}/old_site/WinForms" title="WinForms">WinForms</a>---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br /><br />
-<a href="{{site.baseurl}}/old_site/Moonlight" title="Moonlight">Moonlight</a>---The Mono-based implementation of Silverlight.<br /><br />
+<a href="{{site.github.url}}/old_site/WinForms" title="WinForms">WinForms</a>---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br /><br />
+<a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a>---The Mono-based implementation of Silverlight.<br /><br />
 <a href="http://live.gnome.org/Accerciser" class="external text" rel="nofollow">Accerciser</a>---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.<br /><br />
 <a href="http://live.gnome.org/Orca" class="external text" rel="nofollow">Orca</a>---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).<br /><br />
 <a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython" class="external text" rel="nofollow">IronPython</a>---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.<br /><br />

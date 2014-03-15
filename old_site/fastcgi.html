@@ -33,7 +33,7 @@ redirect_from:
 </p><p>This documentation contains configuration instructions for serveral web servers on Linux, with plans to expand support to Windows and Macintosh in the future. Please take the time to read all the information below before configuring your server.
 </p>
 <h3> <span class="mw-headline" id="How_Does_It_Work.3F"> How Does It Work? </span></h3>
-<div class="floatright"><a href="{{site.baseurl}}/images/old_site/3/38/Request.png" class="image"><img alt="Request.png" src="{{site.baseurl}}/images/old_site/3/38/Request.png" width="230" height="406" /></a></div>FastCGI is an interprocess communcation mechanism available
+<div class="floatright"><a href="{{site.github.url}}/images/old_site/3/38/Request.png" class="image"><img alt="Request.png" src="{{site.github.url}}/images/old_site/3/38/Request.png" width="230" height="406" /></a></div>FastCGI is an interprocess communcation mechanism available
 <p>in many web servers. A web server will receive and respond to a
 request in the following manner corresponding to the diagram on
 the right:
@@ -48,7 +48,7 @@ the right:
 </li><li>The browser displays the page.
 </li></ol>
 <h2> <span class="mw-headline" id="Installation_Basics"> Installation Basics </span></h2>
-<p>Download and install the "xsp" package from <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">our downloads page</a> or get the source code for xsp from <a href="http://go-mono.com/sources-stable/" class="external text" rel="nofollow">the source repository</a>.
+<p>Download and install the "xsp" package from <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">our downloads page</a> or get the source code for xsp from <a href="http://go-mono.com/sources-stable/" class="external text" rel="nofollow">the source repository</a>.
 </p><p>If you obtained packages, you already have everything you need, otherwise you need to use the usual Linux source code configuration setup:
 </p>
 <pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">tar</span> xzvf xsp-1.2.6.tar.gz
@@ -59,11 +59,11 @@ $ <span style="color: #c20cb9; font-weight: bold;">make</span>
 $ <span style="color: #c20cb9; font-weight: bold;">make</span> <span style="color: #c20cb9; font-weight: bold;">install</span></pre>
 <p>To install the FastCGI on Unix, follow the instructions on the <a href="/index.php?title=FastCGI_Linux&amp;action=edit&amp;redlink=1" class="new" title="FastCGI Linux (page does not exist)">FastCGI Linux</a> page.  Once you have installed the Mono FastCGI support, you have to configure your web server to use it, detailed instructions are available for the following servers:
 </p>
-<ul><li> <a href="{{site.baseurl}}/old_site/FastCGI_Abyss" title="FastCGI Abyss">Abyss Web Server</a>
-</li><li> <a href="{{site.baseurl}}/old_site/FastCGI_Cherokee" title="FastCGI Cherokee">Cherokee HTTP Server</a>
-</li><li> <a href="{{site.baseurl}}/old_site/FastCGI_Lighttpd" title="FastCGI Lighttpd">Lighttpd</a>
-</li><li> <a href="{{site.baseurl}}/old_site/FastCGI_Nginx" title="FastCGI Nginx">Nginx</a>
-</li><li> <a href="{{site.baseurl}}/old_site/CGI" title="CGI">CGI</a> via cgi-fcgi
+<ul><li> <a href="{{site.github.url}}/old_site/FastCGI_Abyss" title="FastCGI Abyss">Abyss Web Server</a>
+</li><li> <a href="{{site.github.url}}/old_site/FastCGI_Cherokee" title="FastCGI Cherokee">Cherokee HTTP Server</a>
+</li><li> <a href="{{site.github.url}}/old_site/FastCGI_Lighttpd" title="FastCGI Lighttpd">Lighttpd</a>
+</li><li> <a href="{{site.github.url}}/old_site/FastCGI_Nginx" title="FastCGI Nginx">Nginx</a>
+</li><li> <a href="{{site.github.url}}/old_site/CGI" title="CGI">CGI</a> via cgi-fcgi
 </li></ul>
 <p>The following servers support FastCGI, but we currently do not have per-server configuration information:
 </p>

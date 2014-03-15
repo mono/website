@@ -9,7 +9,7 @@ redirect_from:
 
 <h1>AutoConfiguration</h1>
 
-<p>Automatic configuration of ASP.NET applications with <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>
+<p>Automatic configuration of ASP.NET applications with <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
@@ -38,7 +38,7 @@ redirect_from:
 </p><p>With autohosting it is possible to allow all the accounts on a machine to deploy an ASP.NET application without having to do any manual configuration.  Just having the ASP.NET pages will automatically serve them (.aspx, .ashx, .ascx, .asmx files).
 </p>
 <h2> <span class="mw-headline" id="What_is_it.3F">What is it?</span></h2>
-<p>Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>), but still, it would be better if you could just copy your application and it worked without further action required.
+<p>Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>), but still, it would be better if you could just copy your application and it worked without further action required.
 </p><p>This is what mod_mono automatic hosting provides: zero configuration for your applications.
 </p>
 <h2> <span class="mw-headline" id="How_do_I_enable_it.3F">How do I enable it?</span></h2>
@@ -102,7 +102,7 @@ redirect_from:
 <p>will just work.
 </p>
 <h2> <span class="mw-headline" id="ASP.NET_MVC_and_AutoConfiguration"> ASP.NET MVC and AutoConfiguration </span></h2>
-<p>Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions.  For simple configuration of Apache <a href="{{site.baseurl}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>, consider using the <a href="http://go-mono.com/config-mod-mono/" class="external text" rel="nofollow">Apache mod_mono configuration tool</a>.  
+<p>Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions.  For simple configuration of Apache <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>, consider using the <a href="http://go-mono.com/config-mod-mono/" class="external text" rel="nofollow">Apache mod_mono configuration tool</a>.  
 </p><p>That said, if you absolutely must use AutoConfiguration, you could add the following to your mod_mono.conf file to set all content for the server to be served as x-asp-net content:
 </p>
 <pre>    ForceType application/x-asp-net

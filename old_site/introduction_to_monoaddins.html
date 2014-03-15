@@ -11,7 +11,7 @@ redirect_from:
 <p>Mono.Addins is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
 </p><p>This framework is derived from the add-in engine used by MonoDevelop, although it has been completely rewritten and improved in many ways to make it more generic and easier to use. The MonoDevelop add-in engine was an improvement over the SharpDevelop engine, which took many ideas from the Eclipse add-in engine.
 </p><p>Mono.Addins has been designed to be useful for a wide range of applications: from simple applications with small extensibility needs, to complex applications (such as MonoDevelop itself) which need support for large add-in structures.
-</p><p>This document explains the basic concepts behind Mono.Addins, so you can get an idea of what the library is able to do. If you are interested in a more detailed explanation of all features see the document <a href="{{site.baseurl}}/old_site/Mono.Addins" title="Mono.Addins">Mono.Addins</a>.
+</p><p>This document explains the basic concepts behind Mono.Addins, so you can get an idea of what the library is able to do. If you are interested in a more detailed explanation of all features see the document <a href="{{site.github.url}}/old_site/Mono.Addins" title="Mono.Addins">Mono.Addins</a>.
 </p><p>If you have questions or suggestions about Mono.Addins, please subscribe to the <a href="http://groups.google.com/group/mono-addins" class="external text" rel="nofollow">Mono.Addins mailing list</a>. 
 </p>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
@@ -50,7 +50,7 @@ redirect_from:
 <h1> <span class="mw-headline" id="A_simple_example">A simple example</span></h1>
 <p>The idea is to implement a Text Editor which can be extended by add-ins. The following diagram shows the extension points that the editor will offer, and how they are extended by several add-ins:
 </p>
-<div class="center"><div class="floatnone"><a href="{{site.baseurl}}/images/old_site/e/e3/Mono-addins-sample.png" class="image"><img alt="Mono-addins-sample.png" src="{{site.baseurl}}/images/old_site/e/e3/Mono-addins-sample.png" width="500" height="345" /></a></div></div>
+<div class="center"><div class="floatnone"><a href="{{site.github.url}}/images/old_site/e/e3/Mono-addins-sample.png" class="image"><img alt="Mono-addins-sample.png" src="{{site.github.url}}/images/old_site/e/e3/Mono-addins-sample.png" width="500" height="345" /></a></div></div>
 <p>A complete description of how this extensible editor could be implemented is out of the scope of this document, but this example will be used to explain how Mono.Addins works and which features does it provide. 
 </p><p>Now let's start with the skeleton of the application and a very simple extension. We want to allow add-ins to run a custom command at application startup. Add-ins could use it, for example, to subscribe to editor events so they will perform custom actions when something happens, or to do any other kind of initialization work. 
 </p><p>The Text Editor application is composed by two assemblies:

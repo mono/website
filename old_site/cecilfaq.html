@@ -30,7 +30,7 @@ You can also get one of the ModuleDefinitions (AssemblyDefinition.Modules proper
 </p>
 <h2> <span class="mw-headline" id="What_are_the_entities_contained_in_an_assembly_which_Cecil_provides_an_object_model_for.3F"> What are the entities contained in an assembly which Cecil provides an object model for? </span></h2>
 <p>Here is a simplified class diagram of the main entities Cecil is dealing with and their relationships all together:
-</p><p><a href="{{site.baseurl}}/images/old_site/4/47/CecilMainCD.png" class="image"><img alt="CecilMainCD.png" src="{{site.baseurl}}/images/old_site/4/47/CecilMainCD.png" width="399" height="244" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/4/47/CecilMainCD.png" class="image"><img alt="CecilMainCD.png" src="{{site.github.url}}/images/old_site/4/47/CecilMainCD.png" width="399" height="244" /></a>
 </p><p>An AssemblyDefinition is created by an AssemblyFactory which works with an assembly file. Each of them contains a ModuleDefinitions collection. In general, you have to work with a main ModuleDefinition (you can get it by using the MainModule property).
 </p><p>A ModuleDefinition contains TypeDefinitions. Each of them contains collections of:
 </p>
@@ -41,7 +41,7 @@ You can also get one of the ModuleDefinitions (AssemblyDefinition.Modules proper
 <p>You can also get the constructors of a type by using the Constructors property. A constructor is a MethodDefinition.
 A PropertyDefinition owns two MethodDefinitions which corresponds to the Get and the Set.
 </p><p>A MethodDefinition contains a MethodBody. You can get all the CIL instructions of a MethodDefinition by using the CilWorker property. In addition, the MethodDefinition contains an Instructions property.
-</p><p><a href="{{site.baseurl}}/images/old_site/1/12/CecilInstrCD.png" class="image"><img alt="CecilInstrCD.png" src="{{site.baseurl}}/images/old_site/1/12/CecilInstrCD.png" width="207" height="102" /></a>
+</p><p><a href="{{site.github.url}}/images/old_site/1/12/CecilInstrCD.png" class="image"><img alt="CecilInstrCD.png" src="{{site.github.url}}/images/old_site/1/12/CecilInstrCD.png" width="207" height="102" /></a>
 </p>
 <h2> <span class="mw-headline" id="I_would_like_to_add_some_tracing_functionality_to_an_assembly_I_can.E2.80.99t_debug.2C_is_it_possible_using_Cecil.3F"> I would like to add some tracing functionality to an assembly I can’t debug, is it possible using Cecil? </span></h2>
 <p>Yes it is. This technique is named <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" class="external text" rel="nofollow">AOP</a>. Here is a simple example on how to do it with Cecil. You’ll have to learn <a href="http://en.wikipedia.org/wiki/Common_Intermediate_Language" class="external text" rel="nofollow">CIL</a> if you want to make some more advanced stuff.

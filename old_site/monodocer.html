@@ -39,7 +39,7 @@ redirect_from:
 </p><p>Monodocer is part of monodoc.
 </p>
 <h1> <span class="mw-headline" id="Generating_Documentation"> Generating Documentation </span></h1>
-<p>The initial stubs for the documentation are generated with <a href="{{site.baseurl}}/old_site/Monodocer" title="Monodocer">monodocer</a>. After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
+<p>The initial stubs for the documentation are generated with <a href="{{site.github.url}}/old_site/Monodocer" title="Monodocer">monodocer</a>. After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 </p>
 <h2> <span class="mw-headline" id="Example_Assembly"> Example Assembly </span></h2>
 <p>For example, if we had these two files compiled into the library <i>example.dll</i>:
@@ -99,7 +99,7 @@ Members Added: <span style="color: #000000;">0</span>, Members Deleted: <span st
 <h1> <span class="mw-headline" id="Updating_Documentation"> Updating Documentation </span></h1>
 <p>When your assembly changes, run <tt>monodocer</tt> again, just as before, to update your XML documentation files.  Any documentation you wrote will be preserved in the files, and new sections for added namespaces, classes, and members are created as needed.  Deleted members that you've written documentation for won't be deleted in the XML files unless you provide the <tt>--delete</tt> option.
 </p><p>If you remove some classes from your source code a .remove extension will be added to the old documentation files, so you do not lose the already written documentation.
-</p><p>In <a href="{{site.baseurl}}/old_site/Monodocer" title="Monodocer">monodocer</a> 1.1.18 or later, you can provide the <tt>-since:SINCE</tt> command-line argument to insert a <tt>&lt;since/&gt;</tt> element for each <i>added</i> type and member within the assembly.  The <tt>SINCE</tt> text will be inserted as the <i>version</i> attribute of the <tt>&lt;since/&gt;</tt> element, thus:
+</p><p>In <a href="{{site.github.url}}/old_site/Monodocer" title="Monodocer">monodocer</a> 1.1.18 or later, you can provide the <tt>-since:SINCE</tt> command-line argument to insert a <tt>&lt;since/&gt;</tt> element for each <i>added</i> type and member within the assembly.  The <tt>SINCE</tt> text will be inserted as the <i>version</i> attribute of the <tt>&lt;since/&gt;</tt> element, thus:
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodocer -path:en -assembly:lib.dll -since:<span style="color: #000000;">2.0</span></pre>
 <p>will insert a <tt>&lt;since version="2.0" /&gt;</tt> element for <i>every</i> type and member that is added to the documentation XML files.
@@ -152,12 +152,12 @@ Members Added: <span style="color: #000000;">0</span>, Members Deleted: <span st
 <p>Every "To be added." is a place where you need to fill in documentation.  The other nodes in the document shouldn't be edited.  These are used later to render the documentation into other formats (without needing to look-up the information from the compiled assembly).
 </p>
 <h1> <span class="mw-headline" id="Editing_Documentation"> Editing Documentation </span></h1>
-<p>You can edit these files by hand, or you can use <a href="{{site.baseurl}}/old_site/Monodoc" title="Monodoc">Monodoc</a>, Mono's documentation browser to edit the files.  To edit the files in Monodoc, run:
+<p>You can edit these files by hand, or you can use <a href="{{site.github.url}}/old_site/Monodoc" title="Monodoc">Monodoc</a>, Mono's documentation browser to edit the files.  To edit the files in Monodoc, run:
 </p>
 <pre class="bash" style="font-family:monospace;"><span style="color: #666666;">$ </span>monodoc <span style="color: #660033;">--edit</span> docfiles</pre>
 <p>Your assembly will be listed last.  Open up that node in the tree on the left, and you can browse your documentation on the right.  Make sure the Editing option is checked in the Edit menu, and you'll see [Edit] links in various places.  Clicking an [Edit] link brings up an editor where you can enter the XML documentation for that section.  Some buttons for commonly used tags are available.
 </p><p>Changes made in Monodoc are saved immediately to your documentation files.
 </p>
 <h1> <span class="mw-headline" id="Installing_Documentation"> Installing Documentation </span></h1>
-<p>Documentation can be packaged for later installation with the <b>mdassembler</b> command.  See the <a href="{{site.baseurl}}/old_site/Assembler" title="Assembler">Assembler</a> page for more information.
+<p>Documentation can be packaged for later installation with the <b>mdassembler</b> command.  See the <a href="{{site.github.url}}/old_site/Assembler" title="Assembler">Assembler</a> page for more information.
 </p>

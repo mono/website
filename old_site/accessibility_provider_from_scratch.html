@@ -19,12 +19,12 @@ redirect_from:
 <h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
 <p>Notice this page does not explain how to implement a custom provider for Windows Forms or Moonlight Controls, instead explains how to implement a provider for the mono-a11y implementation.
 </p><p>If you want to support accessibility using UIA in your custom controls then you should follow <a href="http://msdn.microsoft.com/en-us/library/ms747229.aspx" class="external text" rel="nofollow">Microsoft documentation</a>: 
-</p><p>This page is complementary to <a href="{{site.baseurl}}/old_site/Accessibility:_Winforms_Implementation" title="Accessibility: Winforms Implementation"> Windows Forms Implementation</a>.
+</p><p>This page is complementary to <a href="{{site.github.url}}/old_site/Accessibility:_Winforms_Implementation" title="Accessibility: Winforms Implementation"> Windows Forms Implementation</a>.
 </p>
 <h2> <span class="mw-headline" id="Quick_Steps_List"> Quick Steps List </span></h2>
 <p>Basically to implement a new mono-a11y provider you should use the following list of steps:
 </p>
-<ol><li> Select your not-implemented provider. Read <a href="{{site.baseurl}}/old_site/Accessibility:_Control_Status" title="Accessibility: Control Status"> Winform Control Status</a>.
+<ol><li> Select your not-implemented provider. Read <a href="{{site.github.url}}/old_site/Accessibility:_Control_Status" title="Accessibility: Control Status"> Winform Control Status</a>.
 </li><li> Write a simple Winform Application that includes your selected Winform Control and run it in Windows Vista to examine it using <a href="http://msdn.microsoft.com/en-us/library/ms727247.aspx" class="external text" rel="nofollow">UISpy</a>. (Note: UISpy isn't included in MS VS 2008, so you need to download "Windows Vista SDK" from MSDN)
 </li><li> In UISpy look for the Automation Property labeled as "Control Type", then read the <a href="http://msdn.microsoft.com/en-us/library/ms743581.aspx" class="external text" rel="nofollow">documentation</a> associated.
 </li><li> In your Control Type documentation read the table under the section "Required UI Automation Tree Structure", don't forget to verify UISpy information to match the implementation. If your provider supports navigation you must subclass FragmentRootControlProvider, otherwise you must subclass FragmentControlProvider. This is important to generate a valid <a href="http://msdn.microsoft.com/en-us/library/ms741931.aspx" class="external text" rel="nofollow">UI Automation Tree</a>. The difference between FragmentRootControlProvider and FragmentControlProvider is that FragmentRootControlProvider should add/remove children and generate events to keep navigation updated.

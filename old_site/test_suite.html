@@ -83,7 +83,7 @@ $ <span style="color: #007800;">LANG</span>=en <span style="color: #c20cb9; font
 </li></ul>
 <ul><li> System.Data/Test, and some individual ADO.NET libraries:
 </li></ul>
-<p>there are some standalone tests. See the bottom of <a href="{{site.baseurl}}/old_site/ADO.NET" title="ADO.NET"> ADO.NET page</a> for detail.
+<p>there are some standalone tests. See the bottom of <a href="{{site.github.url}}/old_site/ADO.NET" title="ADO.NET"> ADO.NET page</a> for detail.
 </p>
 <ul><li> System.Web/Test/TestMonoWeb&#160;: see README 
 </li></ul>
@@ -103,7 +103,7 @@ $ <span style="color: #007800;">LANG</span>=en <span style="color: #c20cb9; font
 </li></ul>
 <p><b>Getting started</b>
 </p><p>If you are new to writing NUnit tests, there is a template you may use to help get started. The file is:
-</p><p><a href="{{site.baseurl}}/old_site/TemplateTest.cs" title="TemplateTest.cs"><b>mcs/class/doc/TemplateTest.cs</b></a>
+</p><p><a href="{{site.github.url}}/old_site/TemplateTest.cs" title="TemplateTest.cs"><b>mcs/class/doc/TemplateTest.cs</b></a>
 </p><p>Save a copy of this file in the appropriate test subdirecty (see below), and replace all the {text} markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them. <a href="https://github.com/mono/mono/blob/master/mcs/class/corlib/Test/System/StringTest.cs" class="external text" rel="nofollow">StringTest.cs</a> is a good example that might help you get started.
 </p><p>The directory that will contain your new file depends on the assembly/namespace of the class for which you are creating the tests. Under mcs/class there is a directory for each assembly. In each assembly there is a Test directory, e.g. mcs/class/corlib/Test. In the Test directory there are sub-directories for each namespace in the assembly, e.g. mcs/class/corlib/Test/Sytem. Put your new test file in the appropriate sub-directory under Test for the class you are testing.
 </p><p>Once all of that is done, you can do a 'make test' from the top mcs directory. Your test class needs also to be listed in the .sources file at the top of the Test directory.
@@ -142,14 +142,14 @@ $ <span style="color: #007800;">LANG</span>=en <span style="color: #c20cb9; font
 <h3> <span class="mw-headline" id="Test_your_test_with_the_Microsoft_runtime"> Test your test with the Microsoft runtime </span></h3>
 <p>If possible, try to run your testsuite with the Microsoft runtime on .NET on Windows and make sure all tests in it pass. This is especially important if you're writing a totally new testcase - without this check you can never be sure that your testcase contains no bugs ....
 </p><p>Don't worry if you're writing your test on Linux, other people can test it for you on Windows.
-</p><p>Sometimes you may discover that a test doesn't show the expected result when run with the Microsoft runtime - either because there is a bug in their runtime or something is misleading or wrong in their documentation. In this case, please put a detailed description of the problem to mcs/class/doc/API-notes and do also report it to the <a href="{{site.baseurl}}/old_site/Mailing_Lists" title="Mailing Lists">mailing list</a> - we'll forward this to the Microsoft people from time to time to help them fix their documentation and runtime.
+</p><p>Sometimes you may discover that a test doesn't show the expected result when run with the Microsoft runtime - either because there is a bug in their runtime or something is misleading or wrong in their documentation. In this case, please put a detailed description of the problem to mcs/class/doc/API-notes and do also report it to the <a href="{{site.github.url}}/old_site/Mailing_Lists" title="Mailing Lists">mailing list</a> - we'll forward this to the Microsoft people from time to time to help them fix their documentation and runtime.
 </p>
 <h3> <span class="mw-headline" id="Unit_tests"> Unit tests </span></h3>
 <p>Why do unit testing? It becomes simple to run automated tests for the whole library. Unit tests are a safety net - you can change part of the code and verify that you haven't broken anything. Ideally, tests are written before the actual library code itself. And every time a bug is discovered, a test should be written to demonstrate the bug and its fix. Then, if you ever reintroduce the bug, you will know immediately. For more info, read <a href="http://junit.sourceforge.net/doc/testinfected/testing.htm" class="external text" rel="nofollow">JUnit Test Infected: Programmers Love Writing Tests</a>.
 </p>
 <h3> <span class="mw-headline" id="Getting_Started"> Getting Started </span></h3>
 <p>We welcome all contributions to the Class Libary Test Suite.
-</p><p>There is information to help you get started in SVN at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to <a href="{{site.baseurl}}/old_site/Mailing_Lists" title="Mailing Lists">mono-list</a>.
+</p><p>There is information to help you get started in SVN at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to <a href="{{site.github.url}}/old_site/Mailing_Lists" title="Mailing Lists">mono-list</a>.
 </p><p>Someone will make sure to add the file or apply the patch as appropriate. If you plan to be an on-going contributor and would like to get a svn account, email <a href="mailto:miguel@ximian.com" class="external text" rel="nofollow">miguel</a>.
 </p><p>Normally, after you send a couple of well-written new files and/or patches to the list, you will be given Git access.
 </p>

@@ -47,15 +47,15 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="General"> General </span></h1>
 <h2> <span class="mw-headline" id="Is_Gendarme_a_C.23_source_checking_tool_.3F"> Is Gendarme a C# source checking tool&#160;? </span></h2>
-<p>Not directly. <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> does <b>not</b> work on source code but on compiled assemblies. Once compiled (into Intermediate Language, <b>IL</b>) C# code looks identical to any other (compiled) .NET language. Hence <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> is a .NET static assembly analyzer and is not language specific.
+<p>Not directly. <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> does <b>not</b> work on source code but on compiled assemblies. Once compiled (into Intermediate Language, <b>IL</b>) C# code looks identical to any other (compiled) .NET language. Hence <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> is a .NET static assembly analyzer and is not language specific.
 </p>
 <h2> <span class="mw-headline" id="Which_versions_of_the_.NET_framework_are_supported_.3F"> Which versions of the .NET framework are supported&#160;? </span></h2>
-<p>For analysis <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can process any .NET assembly (that <a href="{{site.baseurl}}/old_site/Cecil" title="Cecil">Cecil</a> can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
-</p><p>However in order to <b>execute</b> <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> you'll need either Mono (same version) or the .NET framework 3.5 since <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> use some recent (C# 3) features such as LINQ.
+<p>For analysis <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> can process any .NET assembly (that <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Cecil</a> can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
+</p><p>However in order to <b>execute</b> <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> you'll need either Mono (same version) or the .NET framework 3.5 since <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> use some recent (C# 3) features such as LINQ.
 </p>
 <h1> <span class="mw-headline" id="Usage"> Usage </span></h1>
 <h2> <span class="mw-headline" id="When_should_I_use_Gendarme_.3F"> When should I use Gendarme&#160;? </span></h2>
-<p>Some of <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a>'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> early but you can still benefit from it anytime.
+<p>Some of <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a>'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> early but you can still benefit from it anytime.
 </p>
 <h2> <span class="mw-headline" id="I_maintain_of_old_code_base._Is_it_too_late_to_start_using_Gendarme_.3F"> I maintain of old code base. Is it too late to start using Gendarme&#160;? </span></h2>
 <p>No, but at this stage you might want to consider using a subset of the rules that won't break binary compatibility of your assemblies.
@@ -70,30 +70,30 @@ bugzilla (<a href="http://bugzilla.novell.com" class="external free" rel="nofoll
 </p>
 <h1> <span class="mw-headline" id="Features"> Features </span></h1>
 <h2> <span class="mw-headline" id="Do_I_need_debugging_symbols_to_use_Gendarme_.3F"> Do I need debugging symbols to use Gendarme&#160;? </span></h2>
-<p>No, debugging symbols are not required to use <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a>. The most useful aspect of debugging symbols is that, when available, reports can include the source file and line numbers (when applicable) for defects found during the analysis.
+<p>No, debugging symbols are not required to use <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a>. The most useful aspect of debugging symbols is that, when available, reports can include the source file and line numbers (when applicable) for defects found during the analysis.
 </p><p>A few rules (e.g. <code>RemoveUnusedLocalVariables</code>) might turn themselves off if debugging symbols are not available. Others will use the extra information provided (e.g. variable names) and, in a few cases, it could also affect the number of false positives.
 </p>
 <h2> <span class="mw-headline" id="Which_symbols_format_are_supported_.3F"> Which symbols format are supported&#160;? </span></h2>
-<p><a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a>'s end users.
+<p><a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a>'s end users.
 </p>
 <h2> <span class="mw-headline" id="Why_are_source_line_numbers_imprecise_.3F"> Why are source line numbers imprecise&#160;? </span></h2>
 <p>Line numbers, like source file names, are not part of an assembly metadata. 
 They are part of the debugging symbols that you can, optionally, generate when compiling your assemblies.
 </p><p>The symbols files structure is based on <b>sequence points</b>. 
 Each <b>sequence point</b> is related to an IL instructions. 
-When <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> finds a defect, and debugging symbols are available, it will find the corresponding <b>sequence point</b> and extract the source file, line and column numbers.
+When <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> finds a defect, and debugging symbols are available, it will find the corresponding <b>sequence point</b> and extract the source file, line and column numbers.
 </p><p>Now many IL instructions do not have their own <b>sequence point</b>. 
 Also several defects are not related to IL instructions (e.g. methods, type, assemblies-level defects). 
-In such case <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> will <i>try to approximate</i> the location of the defect.
-But since <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> never reads source files (or even requires them to be available) the result will be more or less precise.
+In such case <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> will <i>try to approximate</i> the location of the defect.
+But since <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> never reads source files (or even requires them to be available) the result will be more or less precise.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Why_can.27t_I_see_the_source_file_names_or_line_numbers_associated_with_a_defect_.3F"> Why can't I see the source file names or line numbers associated with a defect&#160;? </span></h2>
 <p>There can be several reasons for this. 
 First make sure the debugging symbols are available for the assemblies being analyzed.
-<a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> requires either a <b>.mdb</b> or <b>.pdb</b> to be located in the same directory as the matching <b>.exe</b> or <b>.dll</b> files.
-Without them <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> won't be able to report the source files (or line numbers) for any defect.
-</p><p>If debugging symbols are present then ensure that <b>Mono.Cecil.Pdb.dll</b> (under Windows for .pdb support) or <b>Mono.Cecil.Mdb.dll</b> (under Linux or Windows for .mdb support) is present in the <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> installation directory.
+<a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> requires either a <b>.mdb</b> or <b>.pdb</b> to be located in the same directory as the matching <b>.exe</b> or <b>.dll</b> files.
+Without them <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> won't be able to report the source files (or line numbers) for any defect.
+</p><p>If debugging symbols are present then ensure that <b>Mono.Cecil.Pdb.dll</b> (under Windows for .pdb support) or <b>Mono.Cecil.Mdb.dll</b> (under Linux or Windows for .mdb support) is present in the <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> installation directory.
 The installer should have provided them automatically - but a manual installation (or compiling from source code) could be missing them.
 </p><p>If some defects, located in the same assembly, have source file names (or line numbers) then your setup should be correct. What's happening is likely a lack of a matching <b>sequence point</b> in the debugging symbols (see previous answer about them). In some rare circumstances it could be possible that no <b>sequence point</b> could be found.
 This can occurs on types without any methods (or only abstract methods) since <b>sequence points</b> are associated with IL. 
@@ -104,14 +104,14 @@ Also provide the defect location (e.g. method name) and rule where this occurs s
 <h2> <span class="mw-headline" id="Why_are_defects_decorated_using_.5BSuppressMessage.5D_attributes_still_showing_in_my_reports_.3F"> Why are defects decorated using <code>[SuppressMessage]</code> attributes still showing in my reports&#160;? </span></h2>
 <p>Make sure your project was compiled with the <b>CODE_ANALYSIS</b> symbol defined. 
 Otherwise the <code>[SuppressMessage]</code> attribute wont be compiled inside the assembly binary (i.e. there's a <code>[Conditional]</code> attribute on the type.).
-That would makes it impossible for <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a> to ignore the defects.
+That would makes it impossible for <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> to ignore the defects.
 </p>
 <h1> <span class="mw-headline" id="Rules"> Rules </span></h1>
 <h2> <span class="mw-headline" id="What_are_rules"> What are rules </span></h2>
-<p>Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. <a href="{{site.baseurl}}/old_site/Gendarme.Rules.Performance" title="Gendarme.Rules.Performance">performance rules</a>).
+<p>Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. <a href="{{site.github.url}}/old_site/Gendarme.Rules.Performance" title="Gendarme.Rules.Performance">performance rules</a>).
 </p>
 <h2> <span class="mw-headline" id="Rule_X_checks_for_something_that_can.27t_happen_using_C.23"> Rule X checks for something that can't happen using C# </span></h2>
-<p>Some rules (e.g. <code>FinalizersShouldCallBaseClassFinalizerRule</code>) checks for condition that cannot occurs in C# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">Gendarme</a>. In other words C#&#160;!= .NET&#160;:-)
+<p>Some rules (e.g. <code>FinalizersShouldCallBaseClassFinalizerRule</code>) checks for condition that cannot occurs in C# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a>. In other words C#&#160;!= .NET&#160;:-)
 </p>
 <h1> <span class="mw-headline" id="Results"> Results </span></h1>
 <h2> <span class="mw-headline" id="Can_I_reduce_false_positives_.3F"> Can I reduce false positives&#160;? </span></h2>

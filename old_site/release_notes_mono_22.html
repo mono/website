@@ -62,17 +62,17 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="Major_Highlights"> Major Highlights </span></h1>
 <h1> <span class="mw-headline" id="Changes_since_Mono_2.0"> Changes since Mono 2.0 </span></h1>
-<p>This documents the changes since <a href="{{site.baseurl}}/old_site/Release_Notes_Mono_2.0" title="Release Notes Mono 2.0">Mono 2.0</a>
+<p>This documents the changes since <a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.0" title="Release Notes Mono 2.0">Mono 2.0</a>
 </p>
 <h2> <span class="mw-headline" id="Runtime"> Runtime </span></h2>
 <h3> <span class="mw-headline" id="Performance"> Performance </span></h3>
-<p>The code generation engine has been replaced from tree-based representation that we used for 1.0.x, 1.2.x, 1.9 and 2.0 releases to a representation that is better suited for advanced optimizations, the <a href="{{site.baseurl}}/old_site/Linear_IL" title="Linear IL" class="mw-redirect">Linear IL</a> engine.
+<p>The code generation engine has been replaced from tree-based representation that we used for 1.0.x, 1.2.x, 1.9 and 2.0 releases to a representation that is better suited for advanced optimizations, the <a href="{{site.github.url}}/old_site/Linear_IL" title="Linear IL" class="mw-redirect">Linear IL</a> engine.
 </p><p>The new engine already outperforms the old engine in many computationally intensive tasks.
 </p><p>Generic sharing is now turned on in all cases.   You can control the sharing setup using the MONO_GENERIC_SHARING environment variable.
 </p><p>Generic sharing is now supported on ARM.
 </p>
 <h3> <span class="mw-headline" id="Ahead_of_Time_Compilation">Ahead of Time Compilation</span></h3>
-<p>Support for <a href="{{site.baseurl}}/old_site/AOT" title="AOT">Full Ahead of Time Compilation</a>, generic sharing, and static linking is now available.
+<p>Support for <a href="{{site.github.url}}/old_site/AOT" title="AOT">Full Ahead of Time Compilation</a>, generic sharing, and static linking is now available.
 </p>
 <h3> <span class="mw-headline" id="Monitoring">Monitoring</span></h3>
 <p>Support for monitoring the runtime internals is now available through a new  PerformanceCounters implementation. 
@@ -93,7 +93,7 @@ redirect_from:
 </p><p>This can be used to load scripts written in C# dynamically, but executing at the same speed as C# compiled pages or to add dynamic features to your application or even adding a console to debug your application on a live deployment.
 </p>
 <h3> <span class="mw-headline" id="Interactive_Shell"> Interactive Shell </span></h3>
-<p>A new interactive shell for C# is available, the command is called "csharp", more details are available on the csharp manual page and on the <a href="{{site.baseurl}}/old_site/CsharpRepl" title="CsharpRepl">CsharpRepl</a>
+<p>A new interactive shell for C# is available, the command is called "csharp", more details are available on the csharp manual page and on the <a href="{{site.github.url}}/old_site/CsharpRepl" title="CsharpRepl">CsharpRepl</a>
 page.
 </p><p>The C# shell currently requires Mono for any C# 2.0 and 3.0 support.   Version 1.0 will also run on the .NET Framework.
 </p><p>The shell has support for attaching to existing processes, so it is possible to use the csharp shell to debug live applications.
@@ -121,14 +121,14 @@ page.
 </p>
 <h2> <span class="mw-headline" id="Tools"> Tools </span></h2>
 <h3> <span class="mw-headline" id="Gendarme"> Gendarme </span></h3>
-<p>Our <a href="{{site.baseurl}}/old_site/Gendarme" title="Gendarme">static code analyzer</a> has been updated with new filtering options (severity, confidence, number of defects), 32 new rules (total 183) and many enhancements and fixes to existing rules. Full release notes are available on <a href="http://anonsvn.mono-project.com/source/trunk/mono-tools/gendarme/NEWS" class="external text" rel="nofollow">here</a>.
+<p>Our <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">static code analyzer</a> has been updated with new filtering options (severity, confidence, number of defects), 32 new rules (total 183) and many enhancements and fixes to existing rules. Full release notes are available on <a href="http://anonsvn.mono-project.com/source/trunk/mono-tools/gendarme/NEWS" class="external text" rel="nofollow">here</a>.
 </p>
 <h2> <span class="mw-headline" id="Smaller_Changes"> Smaller Changes </span></h2>
 <h3> <span class="mw-headline" id="Mono_on_Windows"> Mono on Windows </span></h3>
 <p>The Mono Windows installer has been updated to include GTK# 2.12.7.
 </p>
 <h3> <span class="mw-headline" id="Build"> Build </span></h3>
-<p>It is now possible to cross-compile Mono for Windows using Linux and MinGW.   Details are available on the <a href="{{site.baseurl}}/old_site/Compiling_Mono#Cross-compiling_on_Linux_using_MinGW" title="Compiling Mono">Compiling Mono</a> page.
+<p>It is now possible to cross-compile Mono for Windows using Linux and MinGW.   Details are available on the <a href="{{site.github.url}}/old_site/Compiling_Mono#Cross-compiling_on_Linux_using_MinGW" title="Compiling Mono">Compiling Mono</a> page.
 </p>
 <h3> <span class="mw-headline" id="Console_Implementation"> Console Implementation </span></h3>
 <p>Various upgrades to the Console implementation, it will now respond appropriately to changes on terminal sizes. 
@@ -146,7 +146,7 @@ page.
 <p>This is a command line editor that replaces Console.ReadLine() for interactive applications.  It provides editing in the command line and support for history
 </p>
 <h3> <span class="mw-headline" id="Mono.DataConvert"> Mono.DataConvert </span></h3>
-<p>The <a href="{{site.baseurl}}/old_site/Mono_DataConvert" title="Mono DataConvert">Mono DataConvert</a> library provides encoding and decoding of bytes, words, strings and other data types to and from various CPU endianness.
+<p>The <a href="{{site.github.url}}/old_site/Mono_DataConvert" title="Mono DataConvert">Mono DataConvert</a> library provides encoding and decoding of bytes, words, strings and other data types to and from various CPU endianness.
 </p>
 <h2> <span class="mw-headline" id="Documentation"> Documentation </span></h2>
 <p>The monodoc module is no longer distributed, instead the documentation has been merged directly into Mono (Jonathan)
@@ -156,7 +156,7 @@ page.
 </p>
 <pre>Source code and pre-compiled packages for Linux, Solaris, 
 MacOS X and Windows is available from our web site from 
-the <a href="{{site.baseurl}}/old_site/Downloads" title="Downloads">Downloads</a> section.
+the <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">Downloads</a> section.
 </pre>
 <p><b>Quick source code installation:</b>
 </p>

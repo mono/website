@@ -88,7 +88,7 @@ drawn on the middle layer when it is relevant. The final noun, the context,
 isn't shown.
 </p>
 <h4> <span class="mw-headline" id="Destination"> Destination </span></h4>
-<p><a href="{{site.baseurl}}/images/old_site/a/a2/Cairo_destination.png" class="image"><img alt="Cairo destination.png" src="{{site.baseurl}}/images/old_site/a/a2/Cairo_destination.png" width="160" height="120" /></a>
+<p><a href="{{site.github.url}}/images/old_site/a/a2/Cairo_destination.png" class="image"><img alt="Cairo destination.png" src="{{site.github.url}}/images/old_site/a/a2/Cairo_destination.png" width="160" height="120" /></a>
 </p><p>The destination is the <a href="http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Surface" class="external text" rel="nofollow">surface</a>
 on which you're drawing. It may be tied to an array of pixels like in this
 tutorial, or it might be tied to a SVG or PDF file, or something else.
@@ -96,7 +96,7 @@ This surface collects the elements of your graphic as you apply them,
 allowing you to build up a complex work as though painting on a canvas.
 </p>
 <h4> <span class="mw-headline" id="Source"> Source </span></h4>
-<p><a href="{{site.baseurl}}/images/old_site/6/63/Cairo_source.png" class="image"><img alt="Cairo source.png" src="{{site.baseurl}}/images/old_site/6/63/Cairo_source.png" width="160" height="120" /></a>
+<p><a href="{{site.github.url}}/images/old_site/6/63/Cairo_source.png" class="image"><img alt="Cairo source.png" src="{{site.github.url}}/images/old_site/6/63/Cairo_source.png" width="160" height="120" /></a>
 </p><p>The source is the "paint" you're about to work with. I show this as it
 is&#8212;plain black for several examples&#8212;but translucent to show
 lower layers.  Unlike real paint, it doesn't have to be a single color;
@@ -107,7 +107,7 @@ unlike real paint it can contain transparency information&#8212;the
 Alpha channel.
 </p>
 <h4> <span class="mw-headline" id="Mask"> Mask </span></h4>
-<p><a href="{{site.baseurl}}/images/old_site/9/9d/Cairo_the-mask.png" class="image"><img alt="Cairo the-mask.png" src="{{site.baseurl}}/images/old_site/9/9d/Cairo_the-mask.png" width="160" height="120" /></a>
+<p><a href="{{site.github.url}}/images/old_site/9/9d/Cairo_the-mask.png" class="image"><img alt="Cairo the-mask.png" src="{{site.github.url}}/images/old_site/9/9d/Cairo_the-mask.png" width="160" height="120" /></a>
 </p><p>The mask is the most important piece: it controls where you apply
 the source to the destination. I will show it as a yellow layer with holes
 where it lets the source through. When you apply a drawing verb, it's like you
@@ -149,7 +149,7 @@ allows it. To that extent the following five drawing verbs, or operations, are
 all similar. They differ by how they construct the mask.
 </p>
 <h4> <span class="mw-headline" id="Stroke"> Stroke </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.baseurl}}/images/old_site/b/b7/Cairo_stroke.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/b/b7/Cairo_stroke.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/stroke.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.github.url}}/images/old_site/b/b7/Cairo_stroke.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/b/b7/Cairo_stroke.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/stroke.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>The <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Stroke()" class="external text" rel="nofollow">Stroke</a>
 operation takes a virtual pen along the path. It allows the source to
 transfer through the mask in a thin (or thick) line around the path,
@@ -166,7 +166,7 @@ cr.Rectangle(0.25, 0.25, 0.5, 0.5);
 cr.Stroke();
 </pre></code>
 <h4> <span class="mw-headline" id="Fill"> Fill </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.baseurl}}/images/old_site/7/7e/Cairo_fill.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/7/7e/Cairo_fill.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/fill.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.github.url}}/images/old_site/7/7e/Cairo_fill.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/7/7e/Cairo_fill.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/fill.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>The <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Fill()" class="external text" rel="nofollow">Fill</a>
 operation instead uses the path like the lines of a coloring book, and
 allows the source through the mask within the hole whose boundaries are
@@ -184,7 +184,7 @@ cr.Rectangle(0.25, 0.25, 0.5, 0.5);
 cr.Fill();
 </pre></code>
 <h4> <span class="mw-headline" id="Show_Text_.2F_Glyphs"> Show Text / Glyphs </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.baseurl}}/images/old_site/2/2b/Cairo_showtext.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/2/2b/Cairo_showtext.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/showtext.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.github.url}}/images/old_site/2/2b/Cairo_showtext.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/2/2b/Cairo_showtext.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/showtext.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>The <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.ShowText(System.String)" class="external text" rel="nofollow">ShowText</a>
 operation forms the mask from text. It may be easier to think of
 ShowText as a shortcut for creating a path with
@@ -204,7 +204,7 @@ cr.MoveTo(0.5 - te.Width  / 2 - te.XBearing,
 cr.ShowText(&quot;a&quot;);
 </pre></code>
 <h4> <span class="mw-headline" id="Paint"> Paint </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.baseurl}}/images/old_site/8/83/Cairo_paint.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/8/83/Cairo_paint.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/paint.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.github.url}}/images/old_site/8/83/Cairo_paint.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/8/83/Cairo_paint.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/paint.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>The <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Paint()" class="external text" rel="nofollow">Paint</a>
 operation uses a mask that transfers the entire source to the
 destination. Some people consider this an infinitely large mask, and
@@ -218,7 +218,7 @@ cr.Color = new Color(0, 0, 0);
 cr.PaintWithAlpha(0.5);
 </pre></code>
 <h4> <span class="mw-headline" id="Mask_2"> Mask </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.baseurl}}/images/old_site/e/ee/Cairo_mask.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/e/ee/Cairo_mask.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/mask.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:162px;"><a href="{{site.github.url}}/images/old_site/e/ee/Cairo_mask.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/e/ee/Cairo_mask.png" width="160" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/mask.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>The <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Mask(Cairo.Pattern)" class="external text" rel="nofollow">Mask</a>
 and
 <a href="http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.MaskSurface(Cairo.Surface%2cSystem.Double%2cSystem.Double)" class="external text" rel="nofollow">MaskSurface</a>
@@ -264,7 +264,7 @@ the entire source. You can select these without any preparation by setting
 the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.Color" class="external text" rel="nofollow">Color</a>
 property.
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/c/cb/Cairo_setsourcergba.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/c/cb/Cairo_setsourcergba.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/setsourcergba.cs" class="external autonumber" rel="nofollow">[1]</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/c/cb/Cairo_setsourcergba.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/c/cb/Cairo_setsourcergba.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/setsourcergba.cs" class="external autonumber" rel="nofollow">[1]</a></div></div></div>
 <code><pre>
 cr.Color = new Color(0, 0, 0);
 cr.MoveTo(0, 0);
@@ -301,7 +301,7 @@ These methods take an offset (to indicate where it lies between the
 reference locations) and color.  The colors between adjacent stops are
 averaged over space to form a smooth blend.
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/1/19/Cairo_setsourcegradient.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/1/19/Cairo_setsourcegradient.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/setsourcegradient.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/1/19/Cairo_setsourcegradient.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/1/19/Cairo_setsourcegradient.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/setsourcegradient.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <code><pre>
 Gradient radpat = new RadialGradient(0.25, 0.25, 0.1, 0.5, 0.5, 0.5);
 radpat.AddColorStop(0, new Color(1.0, 0.8, 0.8));
@@ -362,7 +362,7 @@ Even setting the clip has a preserve variant.  Apart from choosing when
 to preserve your path, there are only a couple common operations.
 </p>
 <h4> <span class="mw-headline" id="Moving"> Moving </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/1/1c/Cairo_path-moveto.png" class="image"><img alt="Cairo path-moveto.png" src="{{site.baseurl}}/images/old_site/1/1c/Cairo_path-moveto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/1/1c/Cairo_path-moveto.png" class="image"><img alt="Cairo path-moveto.png" src="{{site.github.url}}/images/old_site/1/1c/Cairo_path-moveto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
 <p>Cairo uses a connect-the-dots style system when creating paths.  Start
 at 1, draw a line to 2, then 3, and so forth. When you start a path, or
 when you need to start a new sub-path, you want it to be like point 1:
@@ -380,7 +380,7 @@ to it in some way.
 cr.MoveTo(0.25, 0.25);
 </pre></code>
 <h4> <span class="mw-headline" id="Straight_Lines"> Straight Lines </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/a/a1/Cairo_path-lineto.png" class="image"><img alt="Cairo path-lineto.png" src="{{site.baseurl}}/images/old_site/a/a1/Cairo_path-lineto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/a/a1/Cairo_path-lineto.png" class="image"><img alt="Cairo path-lineto.png" src="{{site.github.url}}/images/old_site/a/a1/Cairo_path-lineto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
 <p>Whether with absolute coordinates
 <a href="http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15" class="external text" rel="nofollow">LineTo</a>
 (extend the path from the reference to this point), or relative coordinates
@@ -394,7 +394,7 @@ cr.LineTo(0.5, 0.375);
 cr.RelLineTo(0.25, -0.125);
 </pre></code>
 <h4> <span class="mw-headline" id="Arcs"> Arcs </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/1/1e/Cairo_path-arcto.png" class="image"><img alt="Cairo path-arcto.png" src="{{site.baseurl}}/images/old_site/1/1e/Cairo_path-arcto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/1/1e/Cairo_path-arcto.png" class="image"><img alt="Cairo path-arcto.png" src="{{site.github.url}}/images/old_site/1/1e/Cairo_path-arcto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
 <p>Arcs are parts of the outside of a circle. Unlike straight lines, the
 point you directly specify is not on the path. Instead it is the center
 of the circle that makes up the addition to the path. Both a starting
@@ -411,7 +411,7 @@ then updated to where the arc ends. There are only absolute versions.
 cr.Arc(0.5, 0.5, 0.25 * Math.Sqrt(2), -0.25 * Math.PI, 0.25 * Math.PI);
 </pre></code>
 <h4> <span class="mw-headline" id="Curves"> Curves </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/c/c4/Cairo_path-curveto.png" class="image"><img alt="Cairo path-curveto.png" src="{{site.baseurl}}/images/old_site/c/c4/Cairo_path-curveto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/c/c4/Cairo_path-curveto.png" class="image"><img alt="Cairo path-curveto.png" src="{{site.github.url}}/images/old_site/c/c4/Cairo_path-curveto.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"></div></div></div>
 <p>Curves in cairo are cubic BÃ©zier splines. They start at the current
 reference point and smoothly follow the direction of two other points
 (without going through them) to get to a third specified point. Like
@@ -427,7 +427,7 @@ preceding control point of the curve.
 cr.RelCurveTo(-0.25, -0.125, -0.25, 0.125, -0.5, 0);
 </pre></code>
 <h4> <span class="mw-headline" id="Close_the_path"> Close the path </span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/d/d0/Cairo_path-close.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/d/d0/Cairo_path-close.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/path-close.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/d/d0/Cairo_path-close.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/d/d0/Cairo_path-close.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/path-close.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>Cairo can also close the path by drawing a straight line to the
 beginning of the current sub-path. This straight line can be useful for
 the last edge of a polygon, but is not directly useful for curve-based
@@ -450,7 +450,7 @@ the verb <a href="#Show_Text_.2F_Glyphs"> ShowText</a> over TextPath and
 <a href="http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15" class="external text" rel="nofollow">Fill</a>.
 </p>
 <h2> <span class="mw-headline" id="Understanding_Text"> Understanding Text </span></h2>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/9/9d/Cairo_textextents.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/9/9d/Cairo_textextents.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/textextents.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/9/9d/Cairo_textextents.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/9/9d/Cairo_textextents.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/cairo_tut/textextents.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p>To use text effectively you need to know where it will go. The methods
 <a href="http://www.go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.FontExtents" class="external text" rel="nofollow">FontExtents</a>
 and
@@ -575,7 +575,7 @@ uniform scale before you stroke the path. In the image, the arc on the left is
 stroked under a deformation, while the arc on the right is stroked under a
 uniform scale.
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.baseurl}}/images/old_site/5/59/Cairo_tips-ellipse.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/5/59/Cairo_tips-ellipse.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-ellipse.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:122px;"><a href="{{site.github.url}}/images/old_site/5/59/Cairo_tips-ellipse.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/5/59/Cairo_tips-ellipse.png" width="120" height="120" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-ellipse.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <code><pre>
 cr.LineWidth = 0.1;
 
@@ -595,7 +595,7 @@ decide how you want to center it. For example the following code will actually
 center letters individually, leading to poor results when your letters are of
 different sizes. (Unlike most examples, here I assume a 26&#160;x&#160;1 workspace.)
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:782px;"><a href="{{site.baseurl}}/images/old_site/c/ce/Cairo_tips-letter.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/c/ce/Cairo_tips-letter.png" width="780" height="30" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-letter.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:782px;"><a href="{{site.github.url}}/images/old_site/c/ce/Cairo_tips-letter.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/c/ce/Cairo_tips-letter.png" width="780" height="30" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-letter.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p><br /><br /><br /><br /><br /><br /><br />
 </p>
 <code><pre>
@@ -614,7 +614,7 @@ thus keeping your baseline steady. Note that the exact positioning now depends
 on the metrics provided by the font itself, so the results are not necessarily
 the same from font to font.
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:782px;"><a href="{{site.baseurl}}/images/old_site/b/b8/Cairo_tips-font.png" class="image"><img alt="" src="{{site.baseurl}}/images/old_site/b/b8/Cairo_tips-font.png" width="780" height="30" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-font.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:782px;"><a href="{{site.github.url}}/images/old_site/b/b8/Cairo_tips-font.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/b/b8/Cairo_tips-font.png" width="780" height="30" class="thumbimage" /></a>  <div class="thumbcaption"><a href="http://mgsloan.nfshost.com/tips-font.cs" class="external text" rel="nofollow">View Source</a></div></div></div>
 <p><br /><br /><br /><br /><br /><br /><br />
 </p>
 <code><pre>

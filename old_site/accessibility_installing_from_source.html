@@ -8,7 +8,7 @@ redirect_from:
 
 <h1>Accessibility: Installing From Source</h1>
 
-<div style="background: #cccccc; padding: 8px; margin: 2em 4px 4px 4px; text-align: center;">The latest version of Mono Accessibility is 2.1, released on August 24, 2010.  <a href="{{site.baseurl}}/old_site/Accessibility:_Release_Notes_2.1" title="Accessibility: Release Notes 2.1">Get more info about this release.</a></div>
+<div style="background: #cccccc; padding: 8px; margin: 2em 4px 4px 4px; text-align: center;">The latest version of Mono Accessibility is 2.1, released on August 24, 2010.  <a href="{{site.github.url}}/old_site/Accessibility:_Release_Notes_2.1" title="Accessibility: Release Notes 2.1">Get more info about this release.</a></div>
 <table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Installing_Mono_Accessibility_1.0_From_Source"><span class="tocnumber">1</span> <span class="toctext">Installing Mono Accessibility 1.0 From Source</span></a>
@@ -39,7 +39,7 @@ redirect_from:
 </li><li> atk
 </li><li> nunit &gt;= 2.4.7 (if building tests)
 </li></ul>
-<p>Since the Mono UIA packages require a very recent Mono and gtk-sharp, you may have trouble finding packages for your distribution.  If that is the case, you may want to consider installing Mono and gtk-sharp from source in a <a href="{{site.baseurl}}/old_site/Parallel_Mono_Environments" title="Parallel Mono Environments">parallel Mono environment</a>.
+<p>Since the Mono UIA packages require a very recent Mono and gtk-sharp, you may have trouble finding packages for your distribution.  If that is the case, you may want to consider installing Mono and gtk-sharp from source in a <a href="{{site.github.url}}/old_site/Parallel_Mono_Environments" title="Parallel Mono Environments">parallel Mono environment</a>.
 </p>
 <h2> <span class="mw-headline" id="Getting_the_Source"> Getting the Source </span></h2>
 <p>git clone <a href="git://github.com/mono/uia2atk" class="external free" rel="nofollow">git://github.com/mono/uia2atk</a>
@@ -48,7 +48,7 @@ redirect_from:
 <p>Please download <a href="ftp://ftp.novell.com/pub/mono/sources/mono-uia" class="external text" rel="nofollow">mono-uia</a>, <a href="ftp://ftp.novell.com/pub/mono/sources/uiautomationwinforms" class="external text" rel="nofollow">uiautomationwinforms</a>, and <a href="ftp://ftp.novell.com/pub/mono/sources/uiaatkbridge" class="external text" rel="nofollow">uiaatkbridge</a> tarballs from <a href="ftp://ftp.novell.com/pub/mono/sources/" class="external free" rel="nofollow">ftp://ftp.novell.com/pub/mono/sources/</a> .
 </p>
 <h2> <span class="mw-headline" id="Building_and_Installing"> Building and Installing </span></h2>
-<p>If you have a <a href="{{site.baseurl}}/old_site/Parallel_Mono_Environments" title="Parallel Mono Environments">parallel Mono environment</a>, make sure to specify the correct prefix during the autogen.sh/configure stage.
+<p>If you have a <a href="{{site.github.url}}/old_site/Parallel_Mono_Environments" title="Parallel Mono Environments">parallel Mono environment</a>, make sure to specify the correct prefix during the autogen.sh/configure stage.
 </p><p>If you downloaded a release tarball instead of getting the code from Git, use `configure` instead of `autogen.sh`.
 </p>
 <pre>cd UIAutomation
@@ -68,5 +68,5 @@ sudo make install
 </pre>
 <h2> <span class="mw-headline" id="What_Now.3F"> What Now? </span></h2>
 <p>Make sure you have Accessibility turned on in your GNOME preferences, and everything should Just Work.
-</p><p>If you're interested in contributing to the project, see our <a href="{{site.baseurl}}/old_site/Accessibility:_Getting_Started_With_Development" title="Accessibility: Getting Started With Development">Getting Started Guide</a>.
+</p><p>If you're interested in contributing to the project, see our <a href="{{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development" title="Accessibility: Getting Started With Development">Getting Started Guide</a>.
 </p>
