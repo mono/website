@@ -121,7 +121,7 @@ redirect_from:
 </p>
 <h2> <span class="mw-headline" id="Are_SSL_client_certificates_supported_.3F"> Are SSL client certificates supported&#160;? </span></h2>
 <p>Both SslClientStream and SslServerStream, in Mono.Security.dll, support client certificates, however HttpWebRequest doesn't due to a strange design/relationship between the 1.x framework and Windows/CryptoAPI (i.e. there is no managed API to associate a certificate with a private key). This should be fixed in the 2.0 profile as the X509Certificate class has been extended to provide this association.
-</p><p>Also recent versions of <a href="http://www.mono-project.com/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> do support SSL/TLS and client certificates. See the <a href="{{site.github.url}}/old_site/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">UsingClientCertificatesWithXSP</a> article for more details.
+</p><p>Also recent versions of <a href="{{site.github.url}}/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> do support SSL/TLS and client certificates. See the <a href="{{site.github.url}}/old_site/UsingClientCertificatesWithXSP" title="UsingClientCertificatesWithXSP">UsingClientCertificatesWithXSP</a> article for more details.
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Does_SSL_works_for_SMTP.2C_like_GMail_.3F"> Does SSL works for SMTP, like GMail&#160;? </span></h2>

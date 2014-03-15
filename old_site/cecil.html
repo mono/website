@@ -38,7 +38,7 @@ redirect_from:
 <h1> <span class="mw-headline" id="Using_Cecil"> Using Cecil </span></h1>
 <p>Since Cecil's API has not yet been frozen as we want to continue improving it from the lessons learned from various consumers of the API, using Cecil requires your project to take some extra steps compared to when you use a published API.
 </p><p>The 0.9 family of Cecil, is very close to API stability.
-</p><p>The pattern used for using libraries whose API is not frozen is described in  the [<a href="http://www.mono-project.com/Guidelines:Application_Deployment%7CApplication" class="external text" rel="nofollow">Deployment</a>] guidelines.
+</p><p>The pattern used for using libraries whose API is not frozen is described in  the [<a href="{{site.github.url}}/Guidelines:Application_Deployment%7CApplication" class="external text" rel="nofollow">Deployment</a>] guidelines.
 </p><p>To summarize it, it is necessary for you to copy and bundle a version of Cecil with your project before using it.   To do this, you use the following pattern:
 </p>
 <pre class="bash" style="font-family:monospace;">$ <span style="color: #c20cb9; font-weight: bold;">cp</span> <span style="color: #000000; font-weight: bold;">`</span>pkg-config <span style="color: #660033;">--variable</span>=Libraries cecil<span style="color: #000000; font-weight: bold;">`</span> .

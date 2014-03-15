@@ -31,7 +31,7 @@ redirect_from:
 </p>
 <ul><li> The end user queues all of his work items on the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool], but the worker code calls into a piece of the class libraries that requires the use of the ThreadPool.
 </li></ul>
-<ul><li> <a href="http://www.mono-project.com/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> uses the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] to queue requests to handle ASP.NET web requests, and the underlying code internally uses HttpWebRequest, or needs to use the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool].
+<ul><li> <a href="{{site.github.url}}/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> uses the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] to queue requests to handle ASP.NET web requests, and the underlying code internally uses HttpWebRequest, or needs to use the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool].
 </li></ul>
 <p>In the above scenarios the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] could be be filled up and when one of the workers attempts to get some work done that requires the ThreadPool the system will deadlock.
 </p><p>Typically users of [http:/monodoc/T:System.Net.HttpWebRequest HttpWebRequest] will get a timeout as [http:/monodoc/T:System.Net.HttpWebRequest HttpWebRequest] eventually will timeout on the socket connection, so the behavior observed is that requests start to fail with misterious timeouts happening.
@@ -60,7 +60,7 @@ redirect_from:
 </p>
 <ul><li> Using a separate [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] for the largest consumers of the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] in our class libraries.<b>UPDATE:</b> Implemented as of 2005-04-15.
 </li></ul>
-<ul><li> Having <a href="http://www.mono-project.com/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> use its own thread pool management to benefit ASP.NET-based applications.
+<ul><li> Having <a href="{{site.github.url}}/ASP.NET#XSP" class="external text" rel="nofollow">XSP</a> use its own thread pool management to benefit ASP.NET-based applications.
 </li></ul>
 <ul><li> Using a single thread to process most of the asynchronous I/O. <b>UPDATE:</b> Implemented as of 2005-04-15.
 </li></ul>

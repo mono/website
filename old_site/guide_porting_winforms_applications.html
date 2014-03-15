@@ -157,7 +157,7 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 </p><p>The downside of this approach is that we must ship separate assemblies for different platforms.
 </p>
 <h3> <span class="mw-headline" id="Runtime_Conditionals"> Runtime Conditionals </span></h3>
-<p>In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net.  First, create a function to detect if the assembly is running on Mono (from the <a href="http://www.mono-project.com/FAQ:_Technical#How_can_I_detect_if_am_running_in_Mono.3F" class="external text" rel="nofollow">Technical FAQ</a>):
+<p>In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net.  First, create a function to detect if the assembly is running on Mono (from the <a href="{{site.github.url}}/FAQ:_Technical#How_can_I_detect_if_am_running_in_Mono.3F" class="external text" rel="nofollow">Technical FAQ</a>):
 </p>
 <pre class="csharp" style="font-family:monospace;">  <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">bool</span> IsRunningOnMono <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
   <span style="color: #008000;">&#123;</span>

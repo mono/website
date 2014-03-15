@@ -394,7 +394,7 @@ fakeroot doesn't fake the pwent functions that Mono is using
 to obtain the home directory.
 </p>
 <h2> <span class="mw-headline" id="Mono_and_ASP.NET"> Mono and ASP.NET </span></h2>
-<p>See <a href="http://www.mono-project.com/FAQ:_ASP.NET" class="external text" rel="nofollow">FAQ: ASP.NET</a>
+<p>See <a href="{{site.github.url}}/FAQ:_ASP.NET" class="external text" rel="nofollow">FAQ: ASP.NET</a>
 </p>
 <h2> <span class="mw-headline" id="Mono_and_ADO.NET"> Mono and ADO.NET </span></h2>
 <p><b> What is the status of ADO.NET support?. Could I start migrating applications from MS.NET to Mono? </b>
@@ -402,13 +402,13 @@ to obtain the home directory.
 </p><p><b> In developing the data architecture for the application are there and objects I should stay away from in order to insure the smoothest possible transition (minimum code rewrite) to Mono's ADO.NET implementation? (For example, strongly typed datasets versus untyped datasets, etc...) </b>
 </p><p>We are implementing all the classes in Microsoft .NET's System.Data, so you can be sure that things will work the same in Mono as with the Microsoft implementation.  There is strongly typed dataset support in Mono now.
 </p><p><b> Can you connect to a Sybase database using Mono? </b>
-</p><p>Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class.  See <a href="http://www.mono-project.com/Sybase" class="external text" rel="nofollow">here</a> for more info.
+</p><p>Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class.  See <a href="{{site.github.url}}/Sybase" class="external text" rel="nofollow">here</a> for more info.
 </p><p><b> Has the MySQL Connector/Net replaced ByteFX.Data </b>
-</p><p>Yes it has.  MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases.  The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now.  See <a href="http://www.mono-project.com/MySQL" class="external text" rel="nofollow">here</a> for more info.
+</p><p>Yes it has.  MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases.  The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now.  See <a href="{{site.github.url}}/MySQL" class="external text" rel="nofollow">here</a> for more info.
 </p><p><b> How do I connect to a SQLite database? </b>
 </p><p>Use Mono.Data.SqliteClient.  Make sure you are using at least Mono 1.1.4 since SQL Lite provider does not work in the Mono 1.0.x releases and prior.  Use a connection string like "URI=file:SqliteTest.db" if you are using SQL Lite version 2.x or use "version=3,URI=file:SqliteTest.db" if using SQL Lite version 3.x.  See <a href="{{site.github.url}}/old_site/SQLite" title="SQLite">SQLite</a> for more info.
 </p><p><b> What provider do I use to connect to PostgreSQL? </b>
-</p><p>You would use Npgsql which is included with Mono.  It is also included with the Win32 installer for PostgreSQL 8.0 which runs natively on Windows. See <a href="http://www.mono-project.com/PostgreSQL" class="external text" rel="nofollow">here</a> for more info.
+</p><p>You would use Npgsql which is included with Mono.  It is also included with the Win32 installer for PostgreSQL 8.0 which runs natively on Windows. See <a href="{{site.github.url}}/PostgreSQL" class="external text" rel="nofollow">here</a> for more info.
 </p><p><b> Do you have any plans to implement ObjectSpaces? </b>
 </p><p>No. Note that Microsoft dropped ObjectSpaces for .NET Framework 2.0.
 </p>
