@@ -196,26 +196,26 @@ you from debugging these, but you should know what you're doing.
 use the <b>-thread</b> argument, they all operate on the current thread
 (see <a href="#Displaying_processes_and_threads">#Displaying processes and threads</a> for details):
 </p><p><dl>
-<dt><b>continue</b>, <b>c</b>&lt;/dt&gt;
+<dt><b>continue</b>, <b>c</b></dt>
 <dd>Resume execution of the selected thread until it exists, receives a signal
-or hits a breakpoint.&lt;/dd&gt;
-<dt><b>background</b>, <b>bg</b>&lt;/dt&gt;
+or hits a breakpoint.</dd>
+<dt><b>background</b>, <b>bg</b></dt>
 <dd>Resume execution of the selected thread in the background, ie. immediately
-give control back to the user, without waiting until the target stops.&lt;/dd&gt;
+give control back to the user, without waiting until the target stops.</dd>
 <dt><b>stop</b>
-<dd>Stop execution of the selected thread by sending it a stop signal.&lt;/dd&gt;
-<dt><b>step</b>, <b>s</b>&lt;/dt&gt;
-<dd>Step one source line.&lt;/dd&gt;
-<dt><b>next</b>, <b>n</b>&lt;/dt&gt;
-<dd>Step one source line, but step over method calls.&lt;/dd&gt;
-<dt><b>finish</b>&lt;/dt&gt;
+<dd>Stop execution of the selected thread by sending it a stop signal.</dd>
+<dt><b>step</b>, <b>s</b></dt>
+<dd>Step one source line.</dd>
+<dt><b>next</b>, <b>n</b></dt>
+<dd>Step one source line, but step over method calls.</dd>
+<dt><b>finish</b></dt>
 <dd>Run until the end of the current method.  This command has two modes of operation:
 </p>
 <ul><li> Without any arguments, step until the end of the current method. This only works if the current method has source code.  Note that if the current method recursively calls itself, this will continue running until the last iteration has exited.
 </li><li> With the optional <b>-native</b> argument, continue stepping until the stack pointer reaches a value whic his higher than at the beginning of this operation.  You can use this to finish out of a method without source code or to finish just the current iteration of a recursive method.  Note that when called within a method (not at the start), this may stop several times.
 </li></ul>
-<p>&lt;/dd&gt;
-<dt><b>stepi</b>, <b>i</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>stepi</b>, <b>i</b></dt>
 <dd>Step one machine instruction.
 </p>
 <pre>(mdb) <b>frame</b>
@@ -237,10 +237,10 @@ is given:
 Process @3 stopped at #0: 0x0830f878.
 0x0830f878	push   $0x82b4398
 </pre>
-<p>&lt;/dd&gt;
-<dt><b>nexti</b>, <b>t</b>&lt;/dt&gt;
-<dd>Step one machine instruction, but step over method calls.&lt;/dd&gt;
-<dt><b>return</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>nexti</b>, <b>t</b></dt>
+<dd>Step one machine instruction, but step over method calls.</dd>
+<dt><b>return</b></dt>
 <dd>Make the current stack frame return.  This command is <i>dangerous</i>
 since it just pops off the stack frame and doesn't care about return values,
 <i>out</i> parameters etc.
@@ -255,7 +255,7 @@ signal (or exists).
 <p>When the target stopped, you normally want to see the current stack
 frame or get a backtrace:
 </p><p><dl>
-<dt><b>backtrace</b>, <b>bt</b>&lt;/dt&gt;
+<dt><b>backtrace</b>, <b>bt</b></dt>
 <dd>Prints a backtrace.
 </p>
 <pre>Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -268,8 +268,8 @@ frame or get a backtrace:
 </p>
 <pre>(mdb) <b>bt -max 8</b>
 </pre>
-<p>&lt;/dd&gt;
-<dt><b>frame</b>, <b>f</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>frame</b>, <b>f</b></dt>
 <dd>Show the current stack frame or the frame specified by the optional
 <i>-frame</i> argument:
 </p>
@@ -279,8 +279,8 @@ frame or get a backtrace:
 #1: 0x401ba448 in X.Main()+0x8 at Foo.cs:219
 219 		BoxedValueType ();
 </pre>
-<p>&lt;/dd&gt;
-<dt><b>up</b>, <b>down</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>up</b>, <b>down</b></dt>
 <dd>Walks one frame up or down in the current backtrace.  Prints the new
 stack frame.
 </p>
@@ -293,7 +293,7 @@ stack frame.
 #1: 0x401ba448 in X.Main()+0x8 at Foo.cs:219
 219 		BoxedValueType ();
 </pre>
-<p>&lt;/dd&gt;
+<p></dd>
 </dl>
 </p>
 <h2> <span class="mw-headline" id="Printing_expressions"> Printing expressions </span></h2>
@@ -301,26 +301,26 @@ stack frame.
 command.  You can also use the <i>ptype</i> command to print the type of
 an expression.
 </p><p><dl>
-<dt><b>print</b>, <b>p</b>&lt;/dt&gt;
+<dt><b>print</b>, <b>p</b></dt>
 <dd>Evaluate and print an expression.
 </p>
 <pre>(mdb) <b>print a</b>
 (System.Int32) a
 </pre>
-<p>&lt;/dd&gt;
-<dt><b>print /default</b>, <b>p /default</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>print /default</b>, <b>p /default</b></dt>
 <dd>Evaluate and print the context of an expression.  Unlike print, this will not show the ToString() representation of the object, but will instead show the values in a class or struct.
 </p>
 <pre>(mdb) <b>print /default a</b>
 </pre>
-<p>&lt;/dd&gt;
-<dt><b>ptype</b>&lt;/dt&gt;
+<p></dd>
+<dt><b>ptype</b></dt>
 <dd>Print the type of an expression
 </p>
 <pre>(mdb) <b>ptype a</b>
 System.Int32
 </pre>
-<p>&lt;/dd&gt;
+<p></dd>
 </dl>
 </p><p>See <a href="#Expressions">#Expressions</a> for details.
 </p>
@@ -552,7 +552,7 @@ source lines to display:
 </pre>
 <h2> <span class="mw-headline" id="Disassembling"> Disassembling </span></h2>
 <p><dl>
-<dt><b>dis[assemble] [-count N] [-method]</b> &lt;/dt&gt;
+<dt><b>dis[assemble] [-count N] [-method]</b> </dt>
 <dd>Disassembles code at a given location
 </dl>
 </p><p>To disassembly the current instruction or the current method,
@@ -591,7 +591,7 @@ X.Main():
 </pre>
 <h2> <span class="mw-headline" id="Exploring_the_Program_State"> Exploring the Program State </span></h2>
 <p><dl>
-<dt><b>show locals</b> &lt;/dt&gt;
+<dt><b>show locals</b> </dt>
 <dd>Shows the local variables active in the current scope
 </dl>
 </p>
@@ -600,7 +600,7 @@ ok = (System.Boolean) false
 (mdb)
 </pre>
 <p><dl>
-<dt><b>show params</b> &lt;/dt&gt;
+<dt><b>show params</b> </dt>
 <dd>Shows the parameter to the current method
 </dl>
 </p>
@@ -609,7 +609,7 @@ args = (System.String[]) [  ]
 (mdb)
 </pre>
 <p><dl>
-<dt><b>show location <i>variable</i></b> &lt;/dt&gt;
+<dt><b>show location <i>variable</i></b> </dt>
 <dd>Displays where the given local variable is stored
 </dl>
 </p>
@@ -617,7 +617,7 @@ args = (System.String[]) [  ]
 ok is a variable of type System.Boolean stored at&#160;%ebx
 </pre>
 <p><dl>
-<dt><b>show registers, show regs</b> &lt;/dt&gt;
+<dt><b>show registers, show regs</b> </dt>
 <dd>Shows the contents of the CPU registers
 </dl>
 </p>
@@ -628,7 +628,7 @@ EBP=412c6240  ESP=412c6220  EIP=40ebd7ed  EFLAGS=PF ZF IF ID
 </pre>
 <p>The flags are decoded in EFLAGS
 </p><p><dl>
-<dt><b>show modules</b> &lt;/dt&gt;
+<dt><b>show modules</b> </dt>
 <dd>Shows all the loaded modules in the current program
 </dl>
 </p>
@@ -652,7 +652,7 @@ EBP=412c6240  ESP=412c6220  EIP=40ebd7ed  EFLAGS=PF ZF IF ID
 (mdb)
 </pre>
 <p><dl>
-<dt><b>show sources <i>module_id</i></b> &lt;/dt&gt;
+<dt><b>show sources <i>module_id</i></b> </dt>
 <dd>Shows the sources for a given module.
 </dl>
 </p><p>You can use this to get a list of the source files for a given module, for instance, with the above example, you could use:
@@ -673,7 +673,7 @@ Sources for module mcs, Version=1.1.11.0, Culture=neutral,  PublicKeyToken=0907d
 </pre>
 <h2> <span class="mw-headline" id="Examining_Memory"> Examining Memory </span></h2>
 <p><dl>
-<dt><b>examine</b>, <b>x</b> [/[items][format][size]] expression&lt;/dt&gt;
+<dt><b>examine</b>, <b>x</b> [/[items][format][size]] expression</dt>
 <dd>Memory dump
 </dl>
 </p><p>The <i>examine</i> (short: <i>x</i>) command takes a pointer expression
