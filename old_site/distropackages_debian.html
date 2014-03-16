@@ -45,11 +45,24 @@ redirect_from:
 <td> Debian Sid (unstable):
 </td>
 <td> <a href="http://packages.debian.org/unstable/mono-runtime" class="external text" rel="nofollow">3.0.6</a>
+</td></tr>
+<tr>
+<td> Debian Experimental:
+</td>
+<td> <a href="http://packages.debian.org/experimental/mono-runtime" class="external text" rel="nofollow">3.2.8</a>
 </td></tr></table>
 <p>Dependencies are automatically tracked for applications in the archive such as Tomboy and F-Spot.
 </p><p>To compile your own software, install <b>mono-devel</b> on Squeeze (6.0), Wheezy (testing), Sid (unstable), or Experimental.
 </p><p>For a complete Mono, install <b>mono-complete</b> on  Squeeze (6.0), Wheezy (testing), Sid (unstable), or Experimental.
+</p><p>If you run Debian/Testing or Debian/Unstable then you can install Mono from Debian/Experimental. First you need to add the experimental repository to your /etc/apt/sources.list by running:
 </p>
+<pre>   echo "deb <a href="http://ftp.debian.org/debian" class="external free" rel="nofollow">http://ftp.debian.org/debian</a> experimental main" &gt;&gt; /etc/apt/sources.list
+   apt-get update
+</pre>
+<p>After that you can upgrade to Mono from Experimental by running:
+</p>
+<pre>   apt-get install mono-complete -t experimental
+</pre>
 <h2> <span class="mw-headline" id="Backport_Packages"> Backport Packages </span></h2>
 <h2> <span class="mw-headline" id="Unofficial_Packages_.28Mono_3.0.29"> Unofficial Packages (Mono 3.0) </span></h2>
 <p>Users of Debian Unstable (Sid) and Testing (Wheezy) can use this APT repository to install Mono and related packages that are not yet uploaded or accepted in Debian.
