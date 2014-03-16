@@ -6,37 +6,46 @@ navgroup: download
 
 <h1>Download</h1>
 
-<dl id="mono-download" class="tabs" data-tab>
+<p>The latest Mono release is: <span id="mono-version"></span>
+</p>
+<p>Please choose your operating system to view the available packages.</p>
+<div class="clearfix"></div>
+
+<dl id="mono-download" class="tabs vertical" data-tab>
   <dd class="active"><a href="#panel-mac"><i class="fa fa-apple"></i> Mac OS X</a></dd>
-  <dd><a href="#panel-lin"><i class="fa fa-linux"></i> Linux</a></dd>
-  <dd><a href="#panel-win"><i class="fa fa-windows"></i> Windows</a></dd>
+  <dd><a href="#panel-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
+  <dd><a href="#panel-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
 </dl>
-<div class="tabs-content">
-  <div class="content active" id="panel-mac">
-    <p>Download Mono for Mac OS X.</p>
+<div class="tabs-content vertical">
+  <div class="panel content active" id="panel-mac">
+    <p>Mono for Mac OS X is available as a Mac Package (.pkg).</p>
+    <p>Please refer to the <a href="docs/installing/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-mac" class="button radius disabled"><i class="fa fa-download"></i> Download</a>
+      <a id="download-mac" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
     </div>
   </div>
-  <div class="content" id="panel-lin">
-    <p>Download Mono for Linux.</p>
+  <div class="panel content" id="panel-lin">
+    <p>Mono for Linux is available as a binary package for the following distributions: Debian/Ubuntu, openSUSE.</p>
+    <p>Please refer to the <a href="docs/installing/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-lin" class="button radius disabled"><i class="fa fa-download"></i> Download</a>
+      <a id="download-lin" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
     </div>
   </div>
-  <div class="content" id="panel-win">
-    <p>Download Mono for Windows.</p>
+  <div class="panel content" id="panel-win">
+    <p>Mono for Windows is available as a Windows Installer (.msi) package.</p>
+    <p>Please refer to the <a href="docs/installing/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-win" class="button radius disabled"><i class="fa fa-download"></i> Download</a>
+      <a id="download-win" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
     </div>
   </div>
 </div>
+<div class="clearfix"></div>
 
 <h1>Release Notes</h1>
 
 <div id="release-notes">Loading ...</div>
 
-
+<!-- Script to fetch the latest Mono release info from GitHub -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"></script>
 <script type="text/javascript">
   var githubRepo = "akoeplinger/mono";
@@ -53,10 +62,11 @@ navgroup: download
     var winAsset = assets.Where(function (x) { return x.name.match(/msi$/) }).Single();
     
     var downloadUrl = "https://github.com/" + githubRepo + "/releases/download/" + latestRelease.tag_name + "/";
-    $("#download-mac").attr('href', downloadUrl + macAsset.name).removeClass("disabled");
-    $("#download-lin").attr('href', downloadUrl + linAsset.name).removeClass("disabled");
-    $("#download-win").attr('href', downloadUrl + winAsset.name).removeClass("disabled");
+    $("#download-mac").attr('href', downloadUrl + macAsset.name).removeClass("disabled").append(macAsset.name);
+    $("#download-lin").attr('href', downloadUrl + linAsset.name).removeClass("disabled").append(linAsset.name);
+    $("#download-win").attr('href', downloadUrl + winAsset.name).removeClass("disabled").append(winAsset.name);
 
+    $("#mono-version").text(latestRelease.tag_name);
     $("#release-notes").html(latestRelease.body.replace(/\r\n/g, "<br/>"));
   }
 
