@@ -30,6 +30,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation.min.js"></script>
   <script>
     $(document).foundation();
+    
+    // allow sub pages to run custom code
+    if (typeof runScripts == 'function') {
+      runScripts();
+    }
   </script>
   </body>
 </html>
