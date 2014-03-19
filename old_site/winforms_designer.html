@@ -122,8 +122,8 @@ make mono-design &amp;&amp; make run
 </p><p><i>Patches</i> can be send to the mono-devel-list or mono-winforms-list <a href="{{site.github.url}}/old_site/Mailing_Lists" title="Mailing Lists">Mailing Lists</a>. That's also the place to ask questions. Please follow the <a href="{{site.github.url}}/old_site/Coding_Guidelines" title="Coding Guidelines"> Mono Code Style Guidelines</a>.
 </p>
 <h2> <span class="mw-headline" id="Screenshots"> Screenshots </span></h2>
-<p><a href="{{site.github.url}}/images/old_site/d/df/Mwf-designer.png" class="image"><img alt="Mwf-designer.png" src="{{site.github.url}}/images/old_site/d/df/Mwf-designer.png" width="400" height="235" /></a>
-<a href="{{site.github.url}}/images/old_site/d/dd/Mwf-designer-win32.png" class="image"><img alt="Mwf-designer-win32.png" src="{{site.github.url}}/images/old_site/d/dd/Mwf-designer-win32.png" width="400" height="233" /></a>
+<p><a href="{{site.github.url}}/old_site/images/d/df/Mwf-designer.png" class="image"><img alt="Mwf-designer.png" src="{{site.github.url}}/old_site/images/d/df/Mwf-designer.png" width="400" height="235" /></a>
+<a href="{{site.github.url}}/old_site/images/d/dd/Mwf-designer-win32.png" class="image"><img alt="Mwf-designer-win32.png" src="{{site.github.url}}/old_site/images/d/dd/Mwf-designer-win32.png" width="400" height="233" /></a>
 </p>
 <h2> <span class="mw-headline" id="TODOs"> TODOs </span></h2>
 <p>The best way to find out something you want to work on is to play with the designer and see what doesn't work or you don't like. Below are some related important tasks I have sorted in groups in semi-chronological order.
@@ -439,7 +439,7 @@ make mono-design &amp;&amp; make run
 <p>The .NET Design-Time framework has a highly abstracted, extensible and complex service-oriented architecture which provides loose coupling between components, containers, services and the designer tool.
 </p><p>In the .NET Design-Time architecture components associate their Design-Time functionality independent of the design tool. A list of Design-Time services is provided, which communicate with the components, designers and between each other. The design surface is composed by those services, the designers and the components. The designer tool hosts the design surface and makes use of the available services as well as adds additional such.
 </p><p>The architecture makes use of attributes with metadata to describe behaviour for components and their members. Dynamic addition, removal and modification of the metadata of the components is possible. 
-</p><p><a href="{{site.github.url}}/images/old_site/c/c5/Dt_1.png" class="image" title="Illustration 1: .NET Design-Time Framework Architecture Overview"><img alt="Illustration 1: .NET Design-Time Framework Architecture Overview" src="{{site.github.url}}/images/old_site/c/c5/Dt_1.png" width="593" height="276" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/c/c5/Dt_1.png" class="image" title="Illustration 1: .NET Design-Time Framework Architecture Overview"><img alt="Illustration 1: .NET Design-Time Framework Architecture Overview" src="{{site.github.url}}/old_site/images/c/c5/Dt_1.png" width="593" height="276" /></a>
 </p>
 <h3> <span class="mw-headline" id="Loose_Coupling_Concepts"> Loose Coupling Concepts </span></h3>
 <p>Loose coupling is a key concept which formed the design of the Design-Time framework due to the extensibility and modularity it provides.
@@ -452,8 +452,8 @@ make mono-design &amp;&amp; make run
 </li><li> They can have a name assigned.
 </li></ol>
 <p>The first characteristic essentially allows the lifetime of the component to be controlled by the container. The second characteristic gives the component access to functionality provided by other parts of the framework and the designer tool. The third characteristics allows the container to assign unique identifier to each component. Components are design-time aware through their Site.
-</p><p><a href="{{site.github.url}}/images/old_site/9/90/Dt_2.png" class="image" title="Illustration 2: Component, Site, Container Relation"><img alt="Illustration 2: Component, Site, Container Relation" src="{{site.github.url}}/images/old_site/9/90/Dt_2.png" width="420" height="96" /></a>This is a fundamental concept as it provides full abstraction of visual and non visual components. Also the component can be a Windows Forms or an ASP.NET control and as long as it implements <i>IComponent </i>that will not be of significance to the design-time framework.
-</p><p><a href="{{site.github.url}}/images/old_site/6/65/Dt_3.png" class="image" title="Illustration 3: Component, Site, Container Class Diagram"><img alt="Illustration 3: Component, Site, Container Class Diagram" src="{{site.github.url}}/images/old_site/6/65/Dt_3.png" width="499" height="177" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/90/Dt_2.png" class="image" title="Illustration 2: Component, Site, Container Relation"><img alt="Illustration 2: Component, Site, Container Relation" src="{{site.github.url}}/old_site/images/9/90/Dt_2.png" width="420" height="96" /></a>This is a fundamental concept as it provides full abstraction of visual and non visual components. Also the component can be a Windows Forms or an ASP.NET control and as long as it implements <i>IComponent </i>that will not be of significance to the design-time framework.
+</p><p><a href="{{site.github.url}}/old_site/images/6/65/Dt_3.png" class="image" title="Illustration 3: Component, Site, Container Class Diagram"><img alt="Illustration 3: Component, Site, Container Class Diagram" src="{{site.github.url}}/old_site/images/6/65/Dt_3.png" width="499" height="177" /></a>
 </p>
 <h4> <span class="mw-headline" id="Services"> Services </span></h4>
 <p>A service is an instance of an object that implements a specific set of functionality. Services are stored in service containers and can be retrieved from service providers such as a component's Site and <i>IServiceProvider</i> implementations in general. 
@@ -509,7 +509,7 @@ make mono-design &amp;&amp; make run
 <h4> <span class="mw-headline" id="Designers_2"> Designers </span></h4>
 <p>Designers are classes that are associated with a component type via the <i>DesignerAttribute and </i>implement the <i>IDesigner</i> interface. Designers are initialized with an instance of a component, which they manage.
 </p><p>The root component, such as a Windows Forms form or an ASP.NET web page, has to implement the <i>IRootDesigner</i> interface, which is special in that it has to provide the visual representation of the component - the View. It is very important to note that the <i>GetView</i> method (Illustration 4: IDesigner and IRootDesigner ,Page 5) is explicitly designed not to return a specific type (such as a Windows Forms <i>Control</i> or an ASP.NET web page), but a generic <i>Object</i>, which can be casted to the appropriate type by the designer tool. The framework implements two Windows Forms root designers - for forms and for custom controls (<i>UserControl</i>).
-</p><p><a href="{{site.github.url}}/images/old_site/a/ac/Dt_4.png" class="image" title="Illustration 4: IDesigner and IRootDesigner"><img alt="Illustration 4: IDesigner and IRootDesigner" src="{{site.github.url}}/images/old_site/a/ac/Dt_4.png" width="379" height="193" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/a/ac/Dt_4.png" class="image" title="Illustration 4: IDesigner and IRootDesigner"><img alt="Illustration 4: IDesigner and IRootDesigner" src="{{site.github.url}}/old_site/images/a/ac/Dt_4.png" width="379" height="193" /></a>
 </p><p>The designers are responsible for:
 </p>
 <ul><li> Performing custom initialization for a component in design mode.
@@ -554,7 +554,7 @@ make mono-design &amp;&amp; make run
 </td></tr></table>
 <h3> <span class="mw-headline" id="Design-Time_Serialization"> Design-Time Serialization </span></h3>
 <p>Design-Time serialization is the process of converting an object graph into a source file (code, markup or other format) that can later be used to recover the object graph. It is based on reflection and type transformation.
-</p><p><a href="{{site.github.url}}/images/old_site/6/6f/Dt_5.png" class="image" title="Illustration 5: Object Graph Serialization"><img alt="Illustration 5: Object Graph Serialization" src="{{site.github.url}}/images/old_site/6/6f/Dt_5.png" width="237" height="251" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/6/6f/Dt_5.png" class="image" title="Illustration 5: Object Graph Serialization"><img alt="Illustration 5: Object Graph Serialization" src="{{site.github.url}}/old_site/images/6/6f/Dt_5.png" width="237" height="251" /></a>
 </p><p>The Design-Time serialization differs from the standard object serialization in the following ways:
 </p>
 <ul><li> It separates the object that is performing the serialization from the one that is being serialized. Again, the keyword here is loose coupling.
@@ -576,17 +576,17 @@ make mono-design &amp;&amp; make run
 </li><li> Provide means for editing the metadata of the components in the surface.
 </li><li> Provide a way to add components to to the surface.
 </li></ol>
-<p><a href="{{site.github.url}}/images/old_site/b/bb/Dt_6.png" class="image" title="Illustration 6: A designer tool hosting a design surface"><img alt="Illustration 6: A designer tool hosting a design surface" src="{{site.github.url}}/images/old_site/b/bb/Dt_6.png" width="629" height="431" /></a>
+<p><a href="{{site.github.url}}/old_site/images/b/bb/Dt_6.png" class="image" title="Illustration 6: A designer tool hosting a design surface"><img alt="Illustration 6: A designer tool hosting a design surface" src="{{site.github.url}}/old_site/images/b/bb/Dt_6.png" width="629" height="431" /></a>
 </p>
 <h4> <span class="mw-headline" id="Metadata_Editing"> Metadata Editing </span></h4>
 <p>With the proposed design the designer tool has access to the <i>ISeletionService, </i>offered by the design surface, which provides information about the currently selected component as well as a mechanism for notification when the selection changes.
 </p><p>The designer tool will make use of that service to monitor the surface and populate a property grid with the currently selected object's properties using reflection. It will use type transformation (Illustration 7: Type Transformation in action, Page 9) and type editing (Illustration 8: Type Editing in action, Page 9) to provide user friendly facilities for metadata customization.
-</p><p><a href="{{site.github.url}}/images/old_site/0/0c/Dt_7.png" class="image" title="Illustration 7: Type Transformation in action"><img alt="Illustration 7: Type Transformation in action" src="{{site.github.url}}/images/old_site/0/0c/Dt_7.png" width="528" height="171" /></a>
-</p><p><a href="{{site.github.url}}/images/old_site/4/48/Dt_8.png" class="image" title="Illustration 8: Type Editing in action"><img alt="Illustration 8: Type Editing in action" src="{{site.github.url}}/images/old_site/4/48/Dt_8.png" width="302" height="325" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/0/0c/Dt_7.png" class="image" title="Illustration 7: Type Transformation in action"><img alt="Illustration 7: Type Transformation in action" src="{{site.github.url}}/old_site/images/0/0c/Dt_7.png" width="528" height="171" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/48/Dt_8.png" class="image" title="Illustration 8: Type Editing in action"><img alt="Illustration 8: Type Editing in action" src="{{site.github.url}}/old_site/images/4/48/Dt_8.png" width="302" height="325" /></a>
 </p>
 <h4> <span class="mw-headline" id="Component_Toolbox"> Component Toolbox </span></h4>
 <p>Based on the powerful reflection functionality of .NET the designer tool can populate a component toolbox for a particular GUI toolkit by filtering all types that derive from the toolkit's foundation control type (e.g. <i>Control</i> for Windows Forms). The user will be able to drag and drop a component toolbox item onto the design surface which will be handled by the designer for the control under cursor to request the instantiation of the component.
-</p><p><a href="{{site.github.url}}/images/old_site/3/31/Dt_9.png" class="image" title="Illustration 9: A toolbox"><img alt="Illustration 9: A toolbox" src="{{site.github.url}}/images/old_site/3/31/Dt_9.png" width="265" height="324" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/31/Dt_9.png" class="image" title="Illustration 9: A toolbox"><img alt="Illustration 9: A toolbox" src="{{site.github.url}}/old_site/images/3/31/Dt_9.png" width="265" height="324" /></a>
 </p>
 <h2> <span class="mw-headline" id="Documentation_Resources"> Documentation Resources </span></h2>
 <ul><li> <a href="http://www.i-nz.net/files/docs/Building%20User%20Interface%20Design%20Tools%20-%20Ivan%20N.%20Zlatev.pdf" class="external text" rel="nofollow">Building User Interface Design Tools</a>

@@ -159,10 +159,10 @@ The copying major collector is a very simple copying garbage collector. Instead 
 </li><li> Allocate an object which is 4096 long. (e).
 </li></ol>
 <p>Here is how the heap would look like during each step, notice that although there are 4096 bytes available to allocate, the memory is not contiguous and the heap has to be extended.
-</p><p><a href="{{site.github.url}}/images/old_site/a/aa/Fragmentation.png" class="image"><img alt="Fragmentation.png" src="{{site.github.url}}/images/old_site/a/aa/Fragmentation.png" width="520" height="326" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/a/aa/Fragmentation.png" class="image"><img alt="Fragmentation.png" src="{{site.github.url}}/old_site/images/a/aa/Fragmentation.png" width="520" height="326" /></a>
 </p><p>Some memory allocators are able to return the "holes" back to the operating system if these holes happen to match the operating system minimum allocation sizes.   For most collectors, the complication is that these holes can be created due to smaller allocations in the address space.
 </p><p>A compacting collector would be able to move the data and not grow the heap:
-</p><p><a href="{{site.github.url}}/images/old_site/b/bc/Compacting.png" class="image"><img alt="Compacting.png" src="{{site.github.url}}/images/old_site/b/bc/Compacting.png" width="377" height="326" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/bc/Compacting.png" class="image"><img alt="Compacting.png" src="{{site.github.url}}/old_site/images/b/bc/Compacting.png" width="377" height="326" /></a>
 </p><p>This represents an ideal situation, but there are some cases when moving the objects is not possible.  In the CIL universe this can be caused because objects have been "pinned" which prevent objects from being moved.   Pinning can happen either explicitly, (when you use the "fixed" directive in C# for example, or implicitly as Mono's SGen collector treats the contents of the stack conservatively.
 </p><p>At a major collection all objects for which this is possible are copied to newly allocated blocks. Pinned objects clearly cannot be copied, so they stay in place. All blocks that have been vacated completely are freed. In the ones that still contain pinned objects we zero the regions that are now empty. We don’t actually reuse that space in those blocks but just keep them around until all their objects have become unpinned. This is clearly  an area where things can be improved.
 </p>
@@ -209,9 +209,9 @@ The copying major collector is a very simple copying garbage collector. Instead 
 <span style="color: #0000dd;">15</span><span style="color: #339933;">:</span>         <span style="color: #339933;">*</span>refp <span style="color: #339933;">=</span> new<span style="color: #339933;">;</span> 
 <span style="color: #0000dd;">16</span><span style="color: #339933;">:</span>     <span style="color: #009900;">&#125;</span> 
 <span style="color: #0000dd;">17</span><span style="color: #339933;">:</span>  <span style="color: #009900;">&#125;</span></pre>
-<p><a href="{{site.github.url}}/images/old_site/6/65/Nursery.png" class="image"><img alt="Nursery.png" src="{{site.github.url}}/images/old_site/6/65/Nursery.png" width="680" height="303" /></a>
+<p><a href="{{site.github.url}}/old_site/images/6/65/Nursery.png" class="image"><img alt="Nursery.png" src="{{site.github.url}}/old_site/images/6/65/Nursery.png" width="680" height="303" /></a>
 </p><p>In line 2 we pop an object out of the gray stack and in line 3 we loop over all the references that it contains. refp is a pointer to the reference we’re currently looking at. In line 4 we fetch the actual reference. We are only interested in collecting the nursery, so if the reference already points to the old generation we skip it (lines 5 and 6). If the object is already forwarded (line 7) we fetch its new location (line 8). Otherwise we must copy it to the major heap. To that end we allocate the space required (line 10), do the actual copying (line 11) and forward the object (line 12). That newly copied object must also be processed, so we push it on the gray stack (line 13). Finally, for both cases, we update the reference to point to the new location of the object (line 15).
-</p><p><a href="{{site.github.url}}/images/old_site/5/5e/Nursery-pinned.png" class="image"><img alt="Nursery-pinned.png" src="{{site.github.url}}/images/old_site/5/5e/Nursery-pinned.png" width="680" height="134" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/5/5e/Nursery-pinned.png" class="image"><img alt="Nursery-pinned.png" src="{{site.github.url}}/old_site/images/5/5e/Nursery-pinned.png" width="680" height="134" /></a>
 </p><p>Since the purpose of a nursery collection is to avoid scanning all the allocated memory, the collector and the VM keep track of any pointers that have changed in the old generations which might point to objects in the nursery (as this would determine objects that must be kept alive as well).   These changes are known as the remembered set.
 </p>
 <h3> <span class="mw-headline" id="Pinning"> Pinning </span></h3>
@@ -303,7 +303,7 @@ GC-tracked: it is not possible to allocate blobs of memory and have them collect
 <h2> <span class="mw-headline" id="Stopping_the_world."> Stopping the world. </span></h2>
 <p>To perform the garbage collection, it is important that all the running threads are stopped, this is called "stopping the world".  This guarantees that no changes are happening behind the GC's back and also, the compacting collector will need to move the objects, and update all pointers to the objects to point to their new locations.
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:321px;"><a href="{{site.github.url}}/images/old_site/1/1c/Thread-stacks.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/1/1c/Thread-stacks.png" width="319" height="410" class="thumbimage" /></a>  <div class="thumbcaption">The dark grey areas are scanned conservatively</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:321px;"><a href="{{site.github.url}}/old_site/images/1/1c/Thread-stacks.png" class="image"><img alt="" src="{{site.github.url}}/old_site/images/1/1c/Thread-stacks.png" width="319" height="410" class="thumbimage" /></a>  <div class="thumbcaption">The dark grey areas are scanned conservatively</div></div></div>
 <p>Stopping threads and resuming execution is done by the <code>stop_world()</code> and <code>restart_world()</code> routines, which are invoked before a major collection or a nursery collection are performed.
 </p><p>To actually implement the stop and restore, a couple of Unix signals are used: one signal is used to to notify a thread that it should stop, and another is used to notify a thread that it can resume execution.  These signals are setup when the GC is initialized.
 </p><p>Stopping is done by calling the <code>thread_handshake</code> routine, which sends the stop signal to all known threads (using <code>pthread_kill</code>).  The signal handler for the thread will in turn sleep until a signal is received to resume execution.
@@ -316,7 +316,7 @@ GC-tracked: it is not possible to allocate blobs of memory and have them collect
 <h2> <span class="mw-headline" id="Roots"> Roots </span></h2>
 <p>Roots are the initial set of object references from which all of the other objects in a program are referenced.   These root object references are made up of all static field references, CPU registers referencing objects, variables stored on all of the thread stacks, and any internal object references that the runtime holds.   
 </p><p>Objects that are no longer reachable from the roots are garbage collected.
-</p><p><a href="{{site.github.url}}/images/old_site/5/57/Roots.png" class="image"><img alt="Roots.png" src="{{site.github.url}}/images/old_site/5/57/Roots.png" width="680" height="326" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/5/57/Roots.png" class="image"><img alt="Roots.png" src="{{site.github.url}}/old_site/images/5/57/Roots.png" width="680" height="326" /></a>
 </p><p>The dark regions are the root objects, the gray regions are the objects that are referenced by any root objects or other referenced objects and the white regions represent the garbage.
 </p><p>Internally, the collector tracks two kinds of records, conservative root records and precise root records.
 </p><p>Both records are created through the <code>mono_gc_register_root</code>, its prototype is:
@@ -393,7 +393,7 @@ To do this, Mono implements write-barriers.   These are little bits of code that
 </p><p><code>pin_object_from_addresses</code> has to cope with one problem, the addresses in the <code>pin_queue</code> do not necessarily point to the beginning of the object, these pointers might very well be pointing somewhere in the middle of the object, so its necessary to map the address in the <code>pin_queue</code> to the object start.   Since objects are allocate sequentially in the memory section, it is possible to do this mapping by scanning from the beginning of the memory section, but this could be very time consuming.   
 </p><p>This process is optimized by using the <code>scan_start</code> array of pointers from the <code>GCMemSection</code>:
 </p>
-<div class="center"><div class="floatnone"><a href="{{site.github.url}}/images/old_site/2/2d/Scanstarts.png" class="image"><img alt="Scanstarts.png" src="{{site.github.url}}/images/old_site/2/2d/Scanstarts.png" width="510" height="287" /></a></div></div>
+<div class="center"><div class="floatnone"><a href="{{site.github.url}}/old_site/images/2/2d/Scanstarts.png" class="image"><img alt="Scanstarts.png" src="{{site.github.url}}/old_site/images/2/2d/Scanstarts.png" width="510" height="287" /></a></div></div>
 <p>Every 4k to 8k of objects sequentially allocated an entry in the <code>scan_starts</code> array is allocated.   This way we only have to scan between 4096 and 8096 bytes of memory to find the header of the object to pin.
 </p><p>The contents of the <code>scan_starts</code> array is maintained in the <code>mono_gc_alloc_obj</code> and the <code>copy_object</code> functions.
 </p>
@@ -437,7 +437,7 @@ To do this, Mono implements write-barriers.   These are little bits of code that
 <h2> <span class="mw-headline" id="GCMemSections"> GCMemSections </span></h2>
 <p>Major blocks of memory managed by the GC are tracked in the <code>GCMemSection</code> structure.   This structure tracks the memory allocated from the operating system and objects are allocated back-to-back in the chunk of memory obtained from the operating system.  
 </p><p>The structure looks like this:
-</p><p><a href="{{site.github.url}}/images/old_site/b/ba/Gcmemsection.png" class="image"><img alt="Gcmemsection.png" src="{{site.github.url}}/images/old_site/b/ba/Gcmemsection.png" width="600" height="371" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/ba/Gcmemsection.png" class="image"><img alt="Gcmemsection.png" src="{{site.github.url}}/old_site/images/b/ba/Gcmemsection.png" width="600" height="371" /></a>
 </p><p>The grey area represents the pieces of this particular section that have been used.   The <code>next</code> field is used to keep track of all the <code>GCMemSection</code> structures allocated in a linked list.
 </p><p>The <code>scan_starts</code> array is used as an optimization to minimize the memory that must be scanned for pinned objects, this is discussed in the <a href="#Conservative_Scanning">Conservative Scanning</a> section.
 </p><p>When a nursery collection happens, the live and movable objects from the nursery are copied into a new GCMemSection.

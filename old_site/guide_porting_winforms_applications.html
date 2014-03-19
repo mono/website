@@ -54,15 +54,15 @@ redirect_from:
 </li><li> <a href="{{site.github.url}}/old_site/MoMA" title="MoMA">Mono Migration Analyzer (MoMA)</a>
 </li></ul>
 <p>NClass running on .Net with included example file:
-<a href="{{site.github.url}}/images/old_site/1/1c/Msnclass.png" class="image"><img alt="Msnclass.png" src="{{site.github.url}}/images/old_site/1/1c/Msnclass.png" width="700" height="500" /></a>
+<a href="{{site.github.url}}/old_site/images/1/1c/Msnclass.png" class="image"><img alt="Msnclass.png" src="{{site.github.url}}/old_site/images/1/1c/Msnclass.png" width="700" height="500" /></a>
 </p>
 <h2> <span class="mw-headline" id="Getting_Started"> Getting Started </span></h2>
 <p>For the purpose of this guide, we will make the assumption that the developer is more familiar with Windows and Visual Studio than the Linux counterparts, given that the app is originally a Windows app.
 </p><p>Because we grabbed the source version, first we need to load up NClass.sln in Visual Studio and compile the solution.
-</p><p><a href="{{site.github.url}}/images/old_site/1/18/Build.png" class="image"><img alt="Build.png" src="{{site.github.url}}/images/old_site/1/18/Build.png" width="713" height="519" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/18/Build.png" class="image"><img alt="Build.png" src="{{site.github.url}}/old_site/images/1/18/Build.png" width="713" height="519" /></a>
 </p><p>Once we have a compiled executable, we can run MoMA on it to give us an idea of what kinds of issues we may run into.
-</p><p><a href="{{site.github.url}}/images/old_site/3/35/Moma1.png" class="image"><img alt="Moma1.png" src="{{site.github.url}}/images/old_site/3/35/Moma1.png" width="735" height="507" /></a>
-</p><p><a href="{{site.github.url}}/images/old_site/c/c4/Moma2.png" class="image"><img alt="Moma2.png" src="{{site.github.url}}/images/old_site/c/c4/Moma2.png" width="735" height="507" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/35/Moma1.png" class="image"><img alt="Moma1.png" src="{{site.github.url}}/old_site/images/3/35/Moma1.png" width="735" height="507" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/c/c4/Moma2.png" class="image"><img alt="Moma2.png" src="{{site.github.url}}/old_site/images/c/c4/Moma2.png" width="735" height="507" /></a>
 </p><p>The results from the MoMA scan can be seen <a href="http://jpobst.com/moma/nclassmoma.html" class="external text" rel="nofollow">here</a>.
 </p>
 <h3> <span class="mw-headline" id="MoMA_Summary"> MoMA Summary </span></h3>
@@ -91,7 +91,7 @@ redirect_from:
 mono NClass.NClass.exe
 </pre>
 <p>Unfortunately, nothing seemed to happen.
-</p><p><a href="{{site.github.url}}/images/old_site/8/8f/Cmd1.png" class="image"><img alt="Cmd1.png" src="{{site.github.url}}/images/old_site/8/8f/Cmd1.png" width="677" height="340" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/8/8f/Cmd1.png" class="image"><img alt="Cmd1.png" src="{{site.github.url}}/old_site/images/8/8f/Cmd1.png" width="677" height="340" /></a>
 </p><p>What actually happened is that the application ran, but hit an error and quit.  To see the error, we need to redirect the error output to a file, so we run:
 </p>
 <pre>
@@ -153,7 +153,7 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
   <span style="color: #0600FF; font-weight: bold;">this</span><span style="color: #008000;">.</span><span style="color: #0000FF;">printDialog</span><span style="color: #008000;">.</span><span style="color: #0000FF;">UseEXDialog</span> <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">true</span><span style="color: #008000;">;</span>
 <span style="color: #008080;">#endif</span></pre>
 <p>When compiling the version for Mono, we would specify the flag MONO in the Build tab of the GUI project properties.
-</p><p><a href="{{site.github.url}}/images/old_site/3/39/Conditional.png" class="image"><img alt="Conditional.png" src="{{site.github.url}}/images/old_site/3/39/Conditional.png" width="697" height="424" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/39/Conditional.png" class="image"><img alt="Conditional.png" src="{{site.github.url}}/old_site/images/3/39/Conditional.png" width="697" height="424" /></a>
 </p><p>The downside of this approach is that we must ship separate assemblies for different platforms.
 </p>
 <h3> <span class="mw-headline" id="Runtime_Conditionals"> Runtime Conditionals </span></h3>
@@ -275,11 +275,11 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 <span style="color: #008000;">&#125;</span></pre>
 <p>Also, make the changes to lstItems.ItemSelectionChanged and lstItems_ItemSelectionChanged outlined in the "Rewriting Code" section above.
 </p><p>With these changes made, rebuild the solution in Visual Studio.  Then run the NClass.NClass.exe executable again.  This time we get much better results:
-</p><p><a href="{{site.github.url}}/images/old_site/3/3f/Nclass1.png" class="image"><img alt="Nclass1.png" src="{{site.github.url}}/images/old_site/3/3f/Nclass1.png" width="700" height="500" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/3f/Nclass1.png" class="image"><img alt="Nclass1.png" src="{{site.github.url}}/old_site/images/3/3f/Nclass1.png" width="700" height="500" /></a>
 </p><p>Loading up the example file:
-</p><p><a href="{{site.github.url}}/images/old_site/1/10/Nclass2.png" class="image"><img alt="Nclass2.png" src="{{site.github.url}}/images/old_site/1/10/Nclass2.png" width="700" height="500" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/10/Nclass2.png" class="image"><img alt="Nclass2.png" src="{{site.github.url}}/old_site/images/1/10/Nclass2.png" width="700" height="500" /></a>
 </p><p>Class members dialog:
-</p><p><a href="{{site.github.url}}/images/old_site/8/86/Dialog1.png" class="image"><img alt="Dialog1.png" src="{{site.github.url}}/images/old_site/8/86/Dialog1.png" width="703" height="540" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/8/86/Dialog1.png" class="image"><img alt="Dialog1.png" src="{{site.github.url}}/old_site/images/8/86/Dialog1.png" width="703" height="540" /></a>
 </p>
 <h2> <span class="mw-headline" id="Continuing_the_Port"> Continuing the Port </span></h2>
 <p>Now that the application runs, you have a good starting point to work from.  However, it needs to be thoroughly tested for issues that MoMA can't find.  When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly.  If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them.  See <a href="{{site.github.url}}/old_site/Bugs" title="Bugs">Bugs</a> for details.  Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
@@ -294,9 +294,9 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 </li><li> Mono 1.2.4 on openSUSE 10.2 VMWare image - <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">Downloads</a>
 </li></ul>
 <p>After installing the VMWare player and unzipping the VMWare image, start the Mono image.  It should bring you to the openSUSE desktop:
-</p><p><a href="{{site.github.url}}/images/old_site/b/bc/Linux1.jpg" class="image"><img alt="Linux1.jpg" src="{{site.github.url}}/images/old_site/b/bc/Linux1.jpg" width="700" height="559" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/bc/Linux1.jpg" class="image"><img alt="Linux1.jpg" src="{{site.github.url}}/old_site/images/b/bc/Linux1.jpg" width="700" height="559" /></a>
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="{{site.github.url}}/images/old_site/d/db/Linux3.jpg" class="image"><img alt="" src="{{site.github.url}}/images/old_site/d/db/Linux3.jpg" width="300" height="240" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.github.url}}/images/old_site/d/db/Linux3.jpg" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Enabling User Shares</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="{{site.github.url}}/old_site/images/d/db/Linux3.jpg" class="image"><img alt="" src="{{site.github.url}}/old_site/images/d/db/Linux3.jpg" width="300" height="240" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="{{site.github.url}}/old_site/images/d/db/Linux3.jpg" class="internal" title="Enlarge"><img src="/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>Enabling User Shares</div></div></div>
 <p>To transfer the application to the Mono image, we need to create a NClass directory and turn on directory sharing.
 </p>
 <ul><li> Right click the desktop, choose Create Directory, name the directory NClass.
@@ -312,7 +312,7 @@ at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 <p>Now go back to Windows, and access your new share by typing "\\mono\nclass" into the Run dialog.  Copy your NClass project to the Mono image share.
 </p><p><br />
 </p><p>On the Mono image desktop, double click your NClass folder, and navigate to your compiled NClass.NClass.exe application.  Double click it and the application should run.
-</p><p><a href="{{site.github.url}}/images/old_site/0/02/Linux4.png" class="image"><img alt="Linux4.png" src="{{site.github.url}}/images/old_site/0/02/Linux4.png" width="700" height="559" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/0/02/Linux4.png" class="image"><img alt="Linux4.png" src="{{site.github.url}}/old_site/images/0/02/Linux4.png" width="700" height="559" /></a>
 </p>
 <h3> <span class="mw-headline" id="Linux_Platform_Differences"> Linux Platform Differences </span></h3>
 <p>There are two classes of issues you may run into during your port.  The first class are issues stemming from differences between the .Net and Mono runtime.  These can be worked out while still on Windows as shown above.  However, there is a second class of issues that you may come across.  These are issues stemming from differences between Windows and Linux (or OSX, etc.).

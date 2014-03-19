@@ -150,13 +150,13 @@ Program received signal SIGSEGV, Segmentation fault.
 </p>
 <h3> <span class="mw-headline" id="Assemblies"> Assemblies </span></h3>
 <p>Silverlight is an extended subset of the 2.0 .NET framework. Existing assemblies (ECMA) are versioned as 2.1.0.0 which are reduced versions of the 2.0 libraries and have been annotated with the security attributes and have been expanded in a few areas.
-</p><p><a href="{{site.github.url}}/images/old_site/2/2a/20-to-21.png" class="image"><img alt="20-to-21.png" src="{{site.github.url}}/images/old_site/2/2a/20-to-21.png" width="681" height="163" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/2/2a/20-to-21.png" class="image"><img alt="20-to-21.png" src="{{site.github.url}}/old_site/images/2/2a/20-to-21.png" width="681" height="163" /></a>
 </p><p>Silverlight introduce new assemblies, all signed by the Microsoft key and versioned at 1.0.0.0 - except for <b>AGCLR.DLL</b> which isn't versioned in 1.1 Alpha (bug?).
 </p>
 <h4> <span class="mw-headline" id="Dependencies"> Dependencies </span></h4>
 <p>As we can see in next figures Silverlight doesn't have any circular dependencies between it's assemblies, unlike Fx 2.0, which is good news and will reduce our build time (no special loops in the Makefiles like we have today).
-</p><p><a href="{{site.github.url}}/images/old_site/9/95/Agclr.png" class="image"><img alt="Agclr.png" src="{{site.github.url}}/images/old_site/9/95/Agclr.png" width="864" height="669" /></a>
-<a href="{{site.github.url}}/images/old_site/b/b3/Sxc.png" class="image"><img alt="Sxc.png" src="{{site.github.url}}/images/old_site/b/b3/Sxc.png" width="568" height="456" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/95/Agclr.png" class="image"><img alt="Agclr.png" src="{{site.github.url}}/old_site/images/9/95/Agclr.png" width="864" height="669" /></a>
+<a href="{{site.github.url}}/old_site/images/b/b3/Sxc.png" class="image"><img alt="Sxc.png" src="{{site.github.url}}/old_site/images/b/b3/Sxc.png" width="568" height="456" /></a>
 </p><p><b>Legend</b>
 </p>
 <ul><li> Assemblies in red are compiled with /unsafe;
@@ -164,7 +164,7 @@ Program received signal SIGSEGV, Segmentation fault.
 </li></ul>
 <h4> <span class="mw-headline" id="New_versioned_Libraries"> New versioned Libraries </span></h4>
 <p>We introduced a new NET_2_1 define and a new net_2_1 profile in the build system.   The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the <a href="{{site.github.url}}/old_site/Linker" title="Linker">Cecil Linker</a> to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
-</p><p><a href="{{site.github.url}}/images/old_site/d/da/Mono20-to-21.png" class="image"><img alt="Mono20-to-21.png" src="{{site.github.url}}/images/old_site/d/da/Mono20-to-21.png" width="706" height="462" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/d/da/Mono20-to-21.png" class="image"><img alt="Mono20-to-21.png" src="{{site.github.url}}/old_site/images/d/da/Mono20-to-21.png" width="706" height="462" /></a>
 </p><p>In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Cecil</a>-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
 </p><p>Tasks:
 </p>
@@ -262,7 +262,7 @@ Program received signal SIGSEGV, Segmentation fault.
 <p>In some early discussions with David Reveman (the designer of Xgl and Compiz), we are considering the definition of a rendering scene protocol that would allow in the presence of Compiz offload the work to the compositing manager and take advantage of the direct hardware interface that Compiz has.
 </p>
 <h3> <span class="mw-headline" id="The_Plugin_and_the_DOM"> The Plugin and the DOM </span></h3>
-<div class="thumb tright"><div class="thumbinner" style="width:520px;"><a href="{{site.github.url}}/images/old_site/b/b7/Plugin.png" class="image"><img alt="" src="{{site.github.url}}/images/old_site/b/b7/Plugin.png" width="518" height="426" class="thumbimage" /></a>  <div class="thumbcaption">Plugin relation to the Browser</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:520px;"><a href="{{site.github.url}}/old_site/images/b/b7/Plugin.png" class="image"><img alt="" src="{{site.github.url}}/old_site/images/b/b7/Plugin.png" width="518" height="426" class="thumbimage" /></a>  <div class="thumbcaption">Plugin relation to the Browser</div></div></div>
 <p>There are two directions of communication: the browser talking to the plugin, and the plugin talking to the browser.
 </p><p>The plugin will have to expose the internal tree structure to its host, this is  simple to do, documentation on how to write Mozilla plugins is available <a href="http://www.mozilla.org/projects/plugins/" class="external text" rel="nofollow">here</a>.   Work on this will probably have to wait until we get the API to a reasonable state.
 </p><p>The other direction (plugin communicating with the browser) can be started right away.   This is the System.Windows.Browser and System.Windows.Hosting namespaces (they live in System.Silverlight.dll).

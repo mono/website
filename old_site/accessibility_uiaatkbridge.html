@@ -41,7 +41,7 @@ redirect_from:
 <p>These components represent the server side of the accessibility technology. For a screen reader or inspector (such as ORCA or Accerciser) to connect to these components, they need to use an AT-SPI connector (for example, Python applications use the library <a href="http://live.gnome.org/GAP/PythonATSPI" class="external text" rel="nofollow">pyatspi</a>).
 </p><p>Then, we need to implement a bridge which receives accessibility information from a .NET application (through a UIA provider) to the Atk component and send it via the Atk-bridge. The implementation will be coded in the managed world, so the translator between the unmanaged and managed layers will be held by a binding called Atk# (AtkSharp).
 </p><p>The bridge will be in its own assembly, which will talk to Atk# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
-</p><p><a href="{{site.github.url}}/images/old_site/2/28/Uia-atk_bridge.png" class="image"><img alt="Uia-atk bridge.png" src="{{site.github.url}}/images/old_site/2/28/Uia-atk_bridge.png" width="800" height="640" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/2/28/Uia-atk_bridge.png" class="image"><img alt="Uia-atk bridge.png" src="{{site.github.url}}/old_site/images/2/28/Uia-atk_bridge.png" width="800" height="640" /></a>
 </p><p><br />
 </p>
 <h2> <span class="mw-headline" id="Mapping_infrastructure"> Mapping infrastructure </span></h2>

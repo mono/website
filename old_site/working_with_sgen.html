@@ -27,13 +27,13 @@ redirect_from:
 <h1> <span class="mw-headline" id="SGen_Basics"> SGen Basics </span></h1>
 <p>SGen is a generational collector, which is a popular technique used by garbage collectors to improve the performance of the garbage collector.   
 </p><p>SGen uses three heaps to allocate your objects: the nursery, the major heap and the large object space.   
-</p><p><a href="{{site.github.url}}/images/old_site/1/15/SGenSpaces.png" class="image"><img alt="SGenSpaces.png" src="{{site.github.url}}/images/old_site/1/15/SGenSpaces.png" width="776" height="117" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/15/SGenSpaces.png" class="image"><img alt="SGenSpaces.png" src="{{site.github.url}}/old_site/images/1/15/SGenSpaces.png" width="776" height="117" /></a>
 </p><p>For users familiar with the terminology used in other corners of the industry:   The Nursery is the "Young Generation" while our "Major Heap" corresponds to the "Old Generation".
 </p><p>During the course of execution of your program, you will create some objects with long live spans and others that are short lived.   Your objects are initially allocated in an area of memory called the nursery.
-</p><p><a href="{{site.github.url}}/images/old_site/4/43/SgenNurseryAlloc.png" class="image"><img alt="SgenNurseryAlloc.png" src="{{site.github.url}}/images/old_site/4/43/SgenNurseryAlloc.png" width="774" height="131" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/43/SgenNurseryAlloc.png" class="image"><img alt="SgenNurseryAlloc.png" src="{{site.github.url}}/old_site/images/4/43/SgenNurseryAlloc.png" width="774" height="131" /></a>
 </p><p>The size of the nursery is set to 4 megabytes.   When you run of memory in the nursery, the garbage collector process starts a nursery collection.
 </p><p>It stops your threads and moves all of the live objects from the nursery into the major generation clearing the nursery in the process.   
-</p><p><a href="{{site.github.url}}/images/old_site/5/58/SgenEvacuation.png" class="image"><img alt="SgenEvacuation.png" src="{{site.github.url}}/images/old_site/5/58/SgenEvacuation.png" width="776" height="302" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/5/58/SgenEvacuation.png" class="image"><img alt="SgenEvacuation.png" src="{{site.github.url}}/old_site/images/5/58/SgenEvacuation.png" width="776" height="302" /></a>
 </p><p>As the objects are evacuated, they are moved into the major heap.   If there is not enough memory in the major heap, then a major collection is triggered.   If the major collection fails to free up enough memory, then SGen might request more memory from the operating system (this is the default).
 </p><p>SGen considers any objects using more than than 8,000 bytes to be large objects (<code>SGEN_MAX_SMALL_OBJ_SIZE</code>).    Large objects are not actually allocated on the nursery, instead they are tracked by the Large Object Space (LOS) manager.
 </p>

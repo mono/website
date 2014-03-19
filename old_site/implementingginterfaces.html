@@ -47,7 +47,7 @@ redirect_from:
 </p><p>For example, Gtk.TreeModelAdapter implements a Foreach method which pinvokes the native gtk_tree_model_foreach method, saving the user from either implementing the method in managed code or performing the pinvoke themselves.  It also exposes RowChanged, RowInserted, RowDeleted, RowHasChildToggled, and RowsReordered events which connect into the unmanaged signal emission so that signals are forwarded properly to attached event handlers and Emit methods to properly raise all of native signals.
 </p>
 <h1> <span class="mw-headline" id="An_Example"> An Example </span></h1>
-<p><a href="{{site.github.url}}/images/old_site/f/f0/Ifaces.png" class="image"><img alt="Ifaces.png" src="{{site.github.url}}/images/old_site/f/f0/Ifaces.png" width="489" height="402" /></a>
+<p><a href="{{site.github.url}}/old_site/images/f/f0/Ifaces.png" class="image"><img alt="Ifaces.png" src="{{site.github.url}}/old_site/images/f/f0/Ifaces.png" width="489" height="402" /></a>
 </p><p>The TreeModelDemo sample application from the gtk-sharp package demonstrates implementation of a custom TreeModel in managed code.  The custom model exposes the assemblies, types, and members of the current AppDomain using reflection.  The sample source code can be viewed on-line:
 </p><p><a href="http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/sample/TreeModelDemo.cs?view=markup" class="external text" rel="nofollow">Link to Complete Tree Model Demo Source Code</a>
 </p><p>The MyTreeModel class identifies itself as a TreeModel in its declaration via the "implementor" interface:

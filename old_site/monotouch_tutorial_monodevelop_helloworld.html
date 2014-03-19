@@ -22,14 +22,14 @@ redirect_from:
 </td></tr></table>
 <h1> <span class="mw-headline" id="Basics_of_MonoDevelop_and_Interface_Builder"> Basics of MonoDevelop and Interface Builder </span></h1>
 <p>Once you start MonoDevelop, you should be greeted with its startup screen, which looks like this:
-</p><p><a href="{{site.github.url}}/images/old_site/7/7b/Md_hw_iphone5.png" class="image"><img alt="Md hw iphone5.png" src="{{site.github.url}}/images/old_site/7/7b/Md_hw_iphone5.png" width="720" height="567" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/7/7b/Md_hw_iphone5.png" class="image"><img alt="Md hw iphone5.png" src="{{site.github.url}}/old_site/images/7/7b/Md_hw_iphone5.png" width="720" height="567" /></a>
 </p><p>The first step is to create a solution for your project.   Your solution will contain your main application.   You can later add other components to your solution like libraries that you develop, unit tests, and the web site for your application.
 </p><p>To create the solution, either press Shift-Command-N or select File/New/Solution from the menu:
-</p><p><a href="{{site.github.url}}/images/old_site/4/4d/Md_hw_iphone6.png" class="image"><img alt="Md hw iphone6.png" src="{{site.github.url}}/images/old_site/4/4d/Md_hw_iphone6.png" width="543" height="138" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/4d/Md_hw_iphone6.png" class="image"><img alt="Md hw iphone6.png" src="{{site.github.url}}/old_site/images/4/4d/Md_hw_iphone6.png" width="543" height="138" /></a>
 </p><p>In the solution dialog box, select in the C# category, iPhone projects, and then select "iPhone MonoTouch Project".   Give a name to your project and select Forward to complete your solution setup:
-</p><p><a href="{{site.github.url}}/images/old_site/1/18/Md_hw_iphone8.png" class="image"><img alt="Md hw iphone8.png" src="{{site.github.url}}/images/old_site/1/18/Md_hw_iphone8.png" width="710" height="531" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/18/Md_hw_iphone8.png" class="image"><img alt="Md hw iphone8.png" src="{{site.github.url}}/old_site/images/1/18/Md_hw_iphone8.png" width="710" height="531" /></a>
 </p><p>Once your solution is created, you will see on the left side of your screen your solution pad.   If the Solution pad is not visible, select View/Solution from the menubar.    Expand the solution and the project to see what your project has:
-</p><p><a href="{{site.github.url}}/images/old_site/3/32/Md_hw_iphone9.png" class="image"><img alt="Md hw iphone9.png" src="{{site.github.url}}/images/old_site/3/32/Md_hw_iphone9.png" width="225" height="189" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/32/Md_hw_iphone9.png" class="image"><img alt="Md hw iphone9.png" src="{{site.github.url}}/old_site/images/3/32/Md_hw_iphone9.png" width="225" height="189" /></a>
 </p><p>There are a number of important pieces in this list that are worth enumerating.
 </p><p>The default template for MonoTouch applications provides a <code>Main.cs</code> file that contains your main program, it contains your <code>Main ()</code> method that starts your application and starts the application event loop.
 </p><p>As a practice, you should transfer control to <code>UIApplication.Main()</code> as soon as you startup.   This method will load your user interface from <code>MainWindow.xib</code>, create an instance of the <code>AppDelegate</code> class and start processing events.
@@ -39,25 +39,25 @@ redirect_from:
 </p>
 <h1> <span class="mw-headline" id="Using_Interface_Builder_with_MonoTouch"> Using Interface Builder with MonoTouch </span></h1>
 <p>Launch Interface Builder by double-clicking on the <code>MainWindow.xib</code> file.    Once Interface Builder starts up, you should see a surface (your window) and a Library that contains various components.   Your Library should look like the following screenshot.  If it is not there, select Library from the Tools menu:
-</p><p><a href="{{site.github.url}}/images/old_site/d/d1/Md_hw_iphone10.png" class="image"><img alt="Md hw iphone10.png" src="{{site.github.url}}/images/old_site/d/d1/Md_hw_iphone10.png" width="329" height="772" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/d/d1/Md_hw_iphone10.png" class="image"><img alt="Md hw iphone10.png" src="{{site.github.url}}/old_site/images/d/d1/Md_hw_iphone10.png" width="329" height="772" /></a>
 </p><p>Select the "Inputs and Values" as shown on the screenshot and drag both a "Round Rect Button" into the surface and a Label into it.    Double click on the button to change the text to say "Tap me!" and make sure that the label stretches and is centered.  Alignment can be configured in the "Attributes Inspector" (also in the Tools menu).
 </p><p>The result should look more or less like this:
-</p><p><a href="{{site.github.url}}/images/old_site/9/95/Md_hw_iphone11.png" class="image"><img alt="Md hw iphone11.png" src="{{site.github.url}}/images/old_site/9/95/Md_hw_iphone11.png" width="400" height="582" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/95/Md_hw_iphone11.png" class="image"><img alt="Md hw iphone11.png" src="{{site.github.url}}/old_site/images/9/95/Md_hw_iphone11.png" width="400" height="582" /></a>
 </p><p>Unlike Windows.Forms, Gtk# or ASP.NET where objects dragged into the design surface have an identifier associated that you can refer immediately from your source code, with Interface Builder a different model is used.
 </p><p>To connect components together you need to define outlets in your classes.   These outlets at runtime are mapped into C# properties that you can access.  In our sample we want to access both the label and the button from our C# code so we will need to define one outlet for each control that we want to access, and then wire up the outlet.   We will explain this next.
 </p><p>To let the application delegate access the button and the label, we are going to have to connect these controls with it.  Select the "App Delegate" in your Document Window.    And then in the Identity Inspector you should see something like the screenshot below.  If you do not see this, select "Identity Inspector" from the Tools menu:
-</p><p><a href="{{site.github.url}}/images/old_site/b/bb/Md_hw_iphone12.png" class="image"><img alt="Md hw iphone12.png" src="{{site.github.url}}/images/old_site/b/bb/Md_hw_iphone12.png" width="301" height="772" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/bb/Md_hw_iphone12.png" class="image"><img alt="Md hw iphone12.png" src="{{site.github.url}}/old_site/images/b/bb/Md_hw_iphone12.png" width="301" height="772" /></a>
 </p><p>We are going to create two class outlets in the application delegate.    Each outlet that we create in the user interface will be reflected as a property in a partial class in the <code>MainWindow.designer.xib.cs</code> file.   
 </p><p>Create one for the label, and one for the button by clicking on the [+] button in the "Class Outlet" section of that pane.   Once you are done, it should look like this:
-</p><p><a href="{{site.github.url}}/images/old_site/1/10/Md_hw_iphone13.png" class="image"><img alt="Md hw iphone13.png" src="{{site.github.url}}/images/old_site/1/10/Md_hw_iphone13.png" width="272" height="160" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/10/Md_hw_iphone13.png" class="image"><img alt="Md hw iphone13.png" src="{{site.github.url}}/old_site/images/1/10/Md_hw_iphone13.png" width="272" height="160" /></a>
 </p><p>Once these outlets have been defined, you can switch to the "Connections" tab in the Inspector.   You will see that the label and button outlets are not wired up to anything yet, it will look like this:
-</p><p><a href="{{site.github.url}}/images/old_site/3/31/Md_hw_iphone14.png" class="image"><img alt="Md hw iphone14.png" src="{{site.github.url}}/images/old_site/3/31/Md_hw_iphone14.png" width="288" height="176" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/3/31/Md_hw_iphone14.png" class="image"><img alt="Md hw iphone14.png" src="{{site.github.url}}/old_site/images/3/31/Md_hw_iphone14.png" width="288" height="176" /></a>
 </p><p>The next step is to connect the label and the button to the controls that we added to our surface before.   If you hover over the empty circles and then click and drag, a line will be drawn from this outlet to other components on the screen.   First connect the label outlet to the Label control on the designer surface, like this:
-</p><p><a href="{{site.github.url}}/images/old_site/a/ad/Md_hw_iphone15.png" class="image"><img alt="Md hw iphone15.png" src="{{site.github.url}}/images/old_site/a/ad/Md_hw_iphone15.png" width="633" height="591" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/a/ad/Md_hw_iphone15.png" class="image"><img alt="Md hw iphone15.png" src="{{site.github.url}}/old_site/images/a/ad/Md_hw_iphone15.png" width="633" height="591" /></a>
 </p><p>Repeat this process, this time with the button:
-</p><p><a href="{{site.github.url}}/images/old_site/6/69/Md_hw_iphone16.png" class="image"><img alt="Md hw iphone16.png" src="{{site.github.url}}/images/old_site/6/69/Md_hw_iphone16.png" width="632" height="594" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/6/69/Md_hw_iphone16.png" class="image"><img alt="Md hw iphone16.png" src="{{site.github.url}}/old_site/images/6/69/Md_hw_iphone16.png" width="632" height="594" /></a>
 </p><p>Once you have those two outlets wired up, you should see this:
-</p><p><a href="{{site.github.url}}/images/old_site/9/9e/Md_hw_iphone17.png" class="image"><img alt="Md hw iphone17.png" src="{{site.github.url}}/images/old_site/9/9e/Md_hw_iphone17.png" width="290" height="169" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/9e/Md_hw_iphone17.png" class="image"><img alt="Md hw iphone17.png" src="{{site.github.url}}/old_site/images/9/9e/Md_hw_iphone17.png" width="290" height="169" /></a>
 </p><p>Save your file by hitting Command-S and switch back to MonoDevelop.   
 </p>
 <h1> <span class="mw-headline" id="Adding_Behavior"> Adding Behavior </span></h1>
@@ -67,7 +67,7 @@ redirect_from:
 </p><p>The properties are stored in a partial class so the compiler will combine your <code>AppDelegate</code> in <code>Main.cs</code> with these autogenerated properties.
 </p><p>Go back to your <code>Main.cs</code> file.   We are going to add a little bit of C# code.   In the <code>AppDelegate</code> class you can now reference <code>window</code>, <code>label</code> and <code>button</code> as properties of your instance.   You can use this to customize the controls or alter their behavior. 
 </p><p>Let us attach an event handler for the TouchDown event, an event that is triggered when the user taps on the button.   MonoDevelop's code completion will help you navigate the API as you write code:
-</p><p><a href="{{site.github.url}}/images/old_site/d/dd/Md_hw_iphone19.png" class="image"><img alt="Md hw iphone19.png" src="{{site.github.url}}/images/old_site/d/dd/Md_hw_iphone19.png" width="644" height="267" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/d/dd/Md_hw_iphone19.png" class="image"><img alt="Md hw iphone19.png" src="{{site.github.url}}/old_site/images/d/dd/Md_hw_iphone19.png" width="644" height="267" /></a>
 </p><p>You should write something like this:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #6666cc; font-weight: bold;">int</span> ntaps <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
@@ -78,27 +78,27 @@ button<span style="color: #008000;">.</span><span style="color: #0000FF;">TouchD
 <p>The above uses the C# 3.0 syntax to attach a piece of code to an event handler and shows how to change the contents of the <code>MonoTouch.UILabel</code> that was created.     The <code>ntaps</code> variable is captured by the compiler and becomes the closure for the event handler, so every time the user taps on the screen, the variable will be updated accordingly.
 </p><p>Build your application using Command-B or select Build/Build and then select Run/Run to deploy your software to the iPhone emulator (or press Alt-Command-Return).
 </p><p>You should see this:
-</p><p><a href="{{site.github.url}}/images/old_site/d/d7/Md_hw_iphone20.png" class="image"><img alt="Md hw iphone20.png" src="{{site.github.url}}/images/old_site/d/d7/Md_hw_iphone20.png" width="414" height="770" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/d/d7/Md_hw_iphone20.png" class="image"><img alt="Md hw iphone20.png" src="{{site.github.url}}/old_site/images/d/d7/Md_hw_iphone20.png" width="414" height="770" /></a>
 </p>
 <h1> <span class="mw-headline" id="Using_Actions"> Using Actions </span></h1>
 <p>The style used in the previous section was the C# 3.0 style and it is suitable for a wide range of applications.    The following section is only necessary if you want to use the Objective-C style of hooking up events.
 </p><p>Actions can be defined in Interface Builder in the same tab that we used to define the outlets.    As an example of how to use Actions in your code, we are going to add another button to the screen, in my case it looks like this:
-</p><p><a href="{{site.github.url}}/images/old_site/4/43/Md_hw_iphone21.png" class="image"><img alt="Md hw iphone21.png" src="{{site.github.url}}/images/old_site/4/43/Md_hw_iphone21.png" width="400" height="582" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/43/Md_hw_iphone21.png" class="image"><img alt="Md hw iphone21.png" src="{{site.github.url}}/old_site/images/4/43/Md_hw_iphone21.png" width="400" height="582" /></a>
 </p><p>Then select the App Delegate object in your Document Window, and go to the information pane.   This time, instead of adding outlets, we are going to add actions.   Add an action named "sampleTap", it should look like this when you are done:
-</p><p><a href="{{site.github.url}}/images/old_site/5/5a/Md_hw_iphone22.png" class="image"><img alt="Md hw iphone22.png" src="{{site.github.url}}/images/old_site/5/5a/Md_hw_iphone22.png" width="272" height="166" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/5/5a/Md_hw_iphone22.png" class="image"><img alt="Md hw iphone22.png" src="{{site.github.url}}/old_site/images/5/5a/Md_hw_iphone22.png" width="272" height="166" /></a>
 </p><p>The next step is to make the button event send the message to our AppDelegate, to do this select the new button on the screen and go to the Connections tab.  Now connect the "Touch Down" event to the App Delegate:
-</p><p><a href="{{site.github.url}}/images/old_site/b/b4/Md_hw_iphone23.png" class="image"><img alt="Md hw iphone23.png" src="{{site.github.url}}/images/old_site/b/b4/Md_hw_iphone23.png" width="720" height="586" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/b4/Md_hw_iphone23.png" class="image"><img alt="Md hw iphone23.png" src="{{site.github.url}}/old_site/images/b/b4/Md_hw_iphone23.png" width="720" height="586" /></a>
 </p><p>When you select the App Delegate, you will be prompted for the action to invoke in there.   In this case it is the "sampleTap" that we defined above.   Select it:
-</p><p><a href="{{site.github.url}}/images/old_site/6/63/Md_hw_iphone24.png" class="image"><img alt="Md hw iphone24.png" src="{{site.github.url}}/images/old_site/6/63/Md_hw_iphone24.png" width="240" height="104" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/6/63/Md_hw_iphone24.png" class="image"><img alt="Md hw iphone24.png" src="{{site.github.url}}/old_site/images/6/63/Md_hw_iphone24.png" width="240" height="104" /></a>
 </p><p>This is now how your outlets and actions should look like for your AppDelegate:
-</p><p><a href="{{site.github.url}}/images/old_site/4/40/Md_hw_iphone25.png" class="image"><img alt="Md hw iphone25.png" src="{{site.github.url}}/images/old_site/4/40/Md_hw_iphone25.png" width="275" height="175" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/40/Md_hw_iphone25.png" class="image"><img alt="Md hw iphone25.png" src="{{site.github.url}}/old_site/images/4/40/Md_hw_iphone25.png" width="275" height="175" /></a>
 </p><p>Save your file and go back to MonoDevelop.
 </p><p>When connecting the action to your code, MonoTouch looks for a method  decorated with a MonoTouch.Foundation.Export attribute specifying the name of the action. MonoDevelop automatically generates a partial method in the CodeBehind designer class with this attribute applied, for example for sampleTap:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #008000;">&#91;</span>MonoTouch<span style="color: #008000;">.</span><span style="color: #0000FF;">Foundation</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Export</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;sampleTap:&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
 <span style="color: #0600FF; font-weight: bold;">partial</span> <span style="color: #6666cc; font-weight: bold;">void</span> sampleTap <span style="color: #008000;">&#40;</span>MonoTouch<span style="color: #008000;">.</span><span style="color: #0000FF;">UIKit</span><span style="color: #008000;">.</span><span style="color: #0000FF;">UIButton</span> sender<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
 <p>Then in your your <code>AppDelegate</code> class, MonoDevelop's code completion can assist in writing the partial method's implementation:
-</p><p><a href="{{site.github.url}}/images/old_site/b/b9/Md_hw_iphone26.png" class="image"><img alt="Md hw iphone26.png" src="{{site.github.url}}/images/old_site/b/b9/Md_hw_iphone26.png" width="374" height="56" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/b9/Md_hw_iphone26.png" class="image"><img alt="Md hw iphone26.png" src="{{site.github.url}}/old_site/images/b/b9/Md_hw_iphone26.png" width="374" height="56" /></a>
 </p><p>For example,
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">partial</span> <span style="color: #6666cc; font-weight: bold;">void</span> sampleTap <span style="color: #008000;">&#40;</span>UIButton sender<span style="color: #008000;">&#41;</span>
@@ -111,13 +111,13 @@ button<span style="color: #008000;">.</span><span style="color: #0000FF;">TouchD
 <h1> <span class="mw-headline" id="Deploying_to_the_device"> Deploying to the device </span></h1>
 <p>MonoDevelop can deploy a MonoTouch application to a correctly provisioned device.
 </p><p>Switch the solution configuration to one of the device configurations, for example "Debug|iPhone".
-</p><p><a href="{{site.github.url}}/images/old_site/c/c0/Md_hw_iphone27.png" class="image"><img alt="Md hw iphone27.png" src="{{site.github.url}}/images/old_site/c/c0/Md_hw_iphone27.png" width="315" height="167" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/c/c0/Md_hw_iphone27.png" class="image"><img alt="Md hw iphone27.png" src="{{site.github.url}}/old_site/images/c/c0/Md_hw_iphone27.png" width="315" height="167" /></a>
 </p><p>When you have built your project for the device configuration, the "Upload to Device" command in the "Run" menu will become enabled.
-</p><p><a href="{{site.github.url}}/images/old_site/1/13/Md_hw_iphone28.png" class="image"><img alt="Md hw iphone28.png" src="{{site.github.url}}/images/old_site/1/13/Md_hw_iphone28.png" width="351" height="215" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/1/13/Md_hw_iphone28.png" class="image"><img alt="Md hw iphone28.png" src="{{site.github.url}}/old_site/images/1/13/Md_hw_iphone28.png" width="351" height="215" /></a>
 </p><p>Running this command will then upload the application to the device.
-</p><p><a href="{{site.github.url}}/images/old_site/7/71/Md_hw_iphone30.png" class="image"><img alt="Md hw iphone30.png" src="{{site.github.url}}/images/old_site/7/71/Md_hw_iphone30.png" width="547" height="211" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/7/71/Md_hw_iphone30.png" class="image"><img alt="Md hw iphone30.png" src="{{site.github.url}}/old_site/images/7/71/Md_hw_iphone30.png" width="547" height="211" /></a>
 </p><p>In the project options there are also a number of settings for the app bundle, for example specifying the icon, or a specific code signing key.
-</p><p><a href="{{site.github.url}}/images/old_site/4/41/Md_hw_iphone29.png" class="image"><img alt="Md hw iphone29.png" src="{{site.github.url}}/images/old_site/4/41/Md_hw_iphone29.png" width="660" height="455" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/4/41/Md_hw_iphone29.png" class="image"><img alt="Md hw iphone29.png" src="{{site.github.url}}/old_site/images/4/41/Md_hw_iphone29.png" width="660" height="455" /></a>
 </p><p>Additionally, if there is an Info.plist file in your project, MonoDevelop will merge the app bundle settings into it without overwriting existing keys. This allows you to use advanced settings that are not exposed by the MonoDevelop GUI.
 </p>
 <h1> <span class="mw-headline" id="Resources"> Resources </span></h1>

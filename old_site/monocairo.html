@@ -99,7 +99,7 @@ g<span style="color: #008000;">.</span><span style="color: #0000FF;">ClosePath</
     <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>IDisposable<span style="color: #008000;">&#41;</span> g<span style="color: #008000;">.</span><span style="color: #0000FF;">Target</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>                                      
     <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>IDisposable<span style="color: #008000;">&#41;</span> g<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
-<p><a href="{{site.github.url}}/images/old_site/f/f2/CairoGtk_1.png" class="image"><img alt="CairoGtk 1.png" src="{{site.github.url}}/images/old_site/f/f2/CairoGtk_1.png" width="310" height="323" /></a>
+<p><a href="{{site.github.url}}/old_site/images/f/f2/CairoGtk_1.png" class="image"><img alt="CairoGtk 1.png" src="{{site.github.url}}/old_site/images/f/f2/CairoGtk_1.png" width="310" height="323" /></a>
 </p><p>I used <tt>FillPreserve</tt> method instead of <tt>Fill</tt> because the latter  destroys the current path. If you want to keep the path use <tt>StrokePreserve</tt> and <tt>FillPreserve</tt>.
 </p><p>Take a look at the <a href="http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2f%2a" class="external text" rel="nofollow">Graphics class members</a> for other functions used to outline paths (ie. <tt>ArcTo</tt>, <tt>Rectangle</tt>).
 </p>
@@ -196,7 +196,7 @@ add as many color stops as you need. Bear in mind that colorstops can be used as
         <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>IDisposable<span style="color: #008000;">&#41;</span> gr<span style="color: #008000;">.</span><span style="color: #0000FF;">Target</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
         <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span>IDisposable<span style="color: #008000;">&#41;</span> gr<span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Dispose</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
-<p><a href="{{site.github.url}}/images/old_site/d/d2/CairoGtk_2.png" class="image"><img alt="CairoGtk 2.png" src="{{site.github.url}}/images/old_site/d/d2/CairoGtk_2.png" width="310" height="323" /></a>
+<p><a href="{{site.github.url}}/old_site/images/d/d2/CairoGtk_2.png" class="image"><img alt="CairoGtk 2.png" src="{{site.github.url}}/old_site/images/d/d2/CairoGtk_2.png" width="310" height="323" /></a>
 </p>
 <h3> <span class="mw-headline" id="Hints"> Hints </span></h3>
 <ul><li> Don't try to keep <tt>Graphics</tt> across multiple expose events, this will not work due to double-buffering

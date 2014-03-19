@@ -83,7 +83,7 @@ mscorlib.jar:.' Demo.java
 $ ikvm -classpath .:gtk-sharp.jar Demo
 </pre>
 <p>The result is shown here: 
-</p><p><a href="{{site.github.url}}/images/old_site/2/26/Java.png" class="image"><img alt="Java.png" src="{{site.github.url}}/images/old_site/2/26/Java.png" width="243" height="178" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/2/26/Java.png" class="image"><img alt="Java.png" src="{{site.github.url}}/old_site/images/2/26/Java.png" width="243" height="178" /></a>
 </p><p>The above is basically translating Demo.class from JVM bytecodes to ECMA CIL, then the Mono JIT translates that into native x86 code. The next step is to precompile the Java code directly into .NET code, which will skip the double JIT process: 
 </p>
 <pre>

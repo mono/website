@@ -11,7 +11,7 @@ redirect_from:
 <p>Mod_Mono is an Apache 2.0/2.2/2.4.3 module that provides <a href="{{site.github.url}}/old_site/ASP.NET" title="ASP.NET">ASP.NET</a> support for the web's favorite server, <a href="http://httpd.apache.org" class="external text" rel="nofollow">Apache</a>.
 </p><p>The module passes off requests for ASP.NET pages to an external program, <b>mod-mono-server</b>, which actually handles the requests. The communication between the Apache module and mod-mono-server is established using a Unix socket or a TCP socket.
 </p><p>The most simple scenario uses Apache as the HTTP server front end which passes the requests to mod-mono-server to handle, the following diagram illustrates how this setup works:
-</p><p><a href="{{site.github.url}}/images/old_site/c/cc/Modmono-basic-setup.PNG" class="image"><img alt="Modmono-basic-setup.PNG" src="{{site.github.url}}/images/old_site/c/cc/Modmono-basic-setup.PNG" width="680" height="362" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/c/cc/Modmono-basic-setup.PNG" class="image"><img alt="Modmono-basic-setup.PNG" src="{{site.github.url}}/old_site/images/c/cc/Modmono-basic-setup.PNG" width="680" height="362" /></a>
 </p><p>Mod_mono is an Apache module that is hosted inside Apache.    Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process.   The mod-mono-server process in turn can host multiple independent applications.   It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
 </p><p>Although AppDomains provide an adequate level of isolation, mod_mono can also be configured to route different urls to different mod-mono-server processes.   You can use this to:
 </p>
@@ -20,7 +20,7 @@ redirect_from:
 </li><li> Allow the kernel to enforce different isolation rules for different processes (for example with AppArmor or SELinux)
 </li><li> Setup different CPU, Disk and memory quotas to different processes
 </li></ul>
-<p><a href="{{site.github.url}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" class="image"><img alt="Modmono-multiple-servers.PNG" src="{{site.github.url}}/images/old_site/9/9b/Modmono-multiple-servers.PNG" width="697" height="614" /></a>
+<p><a href="{{site.github.url}}/old_site/images/9/9b/Modmono-multiple-servers.PNG" class="image"><img alt="Modmono-multiple-servers.PNG" src="{{site.github.url}}/old_site/images/9/9b/Modmono-multiple-servers.PNG" width="697" height="614" /></a>
 </p><p>For example, in the setup above, the various Apache workers will route requests to /forums and /support to a mod-mono-server that is used by the "community" user on the server.   This mod-mono-server will still use two separate AppDomains to isolate the forums software from the support software.
 </p><p>The /blog url will be sent to the mod-mono-server that is ran by the marketing group, the /api url will be sent to the mod-mono-server for user engineering while the application in /testing will be handled by an experimental version of Mono.
 </p>

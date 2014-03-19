@@ -110,7 +110,7 @@ redirect_from:
 	<span style="color: #008000;">&#125;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>Compile and run the application, and you will end up with this:
-</p><p><a href="{{site.github.url}}/images/old_site/8/8a/GtkSharpTreeViewTutorial1.png" class="image"><img alt="GtkSharpTreeViewTutorial1.png" src="{{site.github.url}}/images/old_site/8/8a/GtkSharpTreeViewTutorial1.png" width="510" height="226" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png" class="image"><img alt="GtkSharpTreeViewTutorial1.png" src="{{site.github.url}}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png" width="510" height="226" /></a>
 </p><p>Cool! So we have our TreeView displaying our two desired columns, now lets add some data in there.
 </p>
 <h2> <span class="mw-headline" id="Adding_some_data"> Adding some data </span></h2>
@@ -136,7 +136,7 @@ redirect_from:
 <p>The first argument specifies which Cell Renderer we want to assign something to, the second specifies which of the cell renderer's properties (converted to lowercase) we want to assign something to (CellRendererText.Text in our case), and the third argument specifies the position in the Model that the value should be obtained from. Above when we added a row to the model, we specified the artist first, then the song title, so we use that here. Remember the order of items in the Model is not automatically linked to the order of your columns in the TreeView in any way, so while keeping everything in the same order makes things a lot easier to manage and understand, it is not required.
 </p><p>You are not limited to assigning one property to the store per CellRenderer, you can call AddAttribute for the same CellRenderer as many times as you would like, to control the different properties of the CellRenderer.
 </p><p>WOOHOO! We now have this:
-</p><p><a href="{{site.github.url}}/images/old_site/5/56/GtkSharpTreeViewTutorial2.png" class="image"><img alt="GtkSharpTreeViewTutorial2.png" src="{{site.github.url}}/images/old_site/5/56/GtkSharpTreeViewTutorial2.png" width="510" height="226" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png" class="image"><img alt="GtkSharpTreeViewTutorial2.png" src="{{site.github.url}}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png" width="510" height="226" /></a>
 </p><p>Here's the complete code:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
@@ -211,7 +211,7 @@ musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;
 iter <span style="color: #008000;">=</span> musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Hip-hop&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
 musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span>iter, <span style="color: #666666;">&quot;Nelly&quot;</span>, <span style="color: #666666;">&quot;Country Grammer&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
 <p>And now we end up with this:
-</p><p><a href="{{site.github.url}}/images/old_site/9/92/GtkSharpTreeViewTutorial-Tree1.png" class="image"><img alt="GtkSharpTreeViewTutorial-Tree1.png" src="{{site.github.url}}/images/old_site/9/92/GtkSharpTreeViewTutorial-Tree1.png" width="510" height="226" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png" class="image"><img alt="GtkSharpTreeViewTutorial-Tree1.png" src="{{site.github.url}}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png" width="510" height="226" /></a>
 </p><p>Here's the complete example:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
@@ -266,7 +266,7 @@ musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;
 <h1> <span class="mw-headline" id="Filtering_Data"> Filtering Data </span></h1>
 <p>The TreeView makes it very easy to prevent certain rows from being displayed, without having to remove them from the model.
 </p><p>Lets say we are starting out with this set of data:
-</p><p><a href="{{site.github.url}}/images/old_site/b/b5/TreeViewExample6.png" class="image"><img alt="TreeViewExample6.png" src="{{site.github.url}}/images/old_site/b/b5/TreeViewExample6.png" width="510" height="229" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/b5/TreeViewExample6.png" class="image"><img alt="TreeViewExample6.png" src="{{site.github.url}}/old_site/images/b/b5/TreeViewExample6.png" width="510" height="229" /></a>
 </p><p>We place a TreeModelFilter between the View (TreeView) and the model (ListStore) that filters what data is passed from the model to the view.
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #008080; font-style: italic;">// Create the filter and tell it to use the musicListStore as it's base Model</span>
@@ -289,7 +289,7 @@ tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</s
 		<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>And now we end up with this:
-</p><p><a href="{{site.github.url}}/images/old_site/b/b3/TreeViewExample7.png" class="image"><img alt="TreeViewExample7.png" src="{{site.github.url}}/images/old_site/b/b3/TreeViewExample7.png" width="510" height="229" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/b/b3/TreeViewExample7.png" class="image"><img alt="TreeViewExample7.png" src="{{site.github.url}}/old_site/images/b/b3/TreeViewExample7.png" width="510" height="229" /></a>
 </p><p>Here is a complete example demonstrating how you can use a text entry widget to control the filter. 
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
@@ -409,7 +409,7 @@ tree<span style="color: #008000;">.</span><span style="color: #0000FF;">Model</s
 			<span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #0600FF; font-weight: bold;">false</span><span style="color: #008000;">;</span>
 	<span style="color: #008000;">&#125;</span>
 <span style="color: #008000;">&#125;</span></pre>
-<p><a href="{{site.github.url}}/images/old_site/8/87/GtkSharpTreeViewTutorial8.png" class="image"><img alt="GtkSharpTreeViewTutorial8.png" src="{{site.github.url}}/images/old_site/8/87/GtkSharpTreeViewTutorial8.png" width="510" height="229" /></a>
+<p><a href="{{site.github.url}}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png" class="image"><img alt="GtkSharpTreeViewTutorial8.png" src="{{site.github.url}}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png" width="510" height="229" /></a>
 </p>
 <h1> <span class="mw-headline" id="Controlling_how_the_model_is_used"> Controlling how the model is used </span></h1>
 <p>The TreeView allows you write methods that extract specific data from your Model, and link your CellRenderers to them, rather than directly to the model.
@@ -498,7 +498,7 @@ songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Se
 	<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Title</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>We now have only one item per row in the store, but we display two columns in the tree! 
-</p><p><a href="{{site.github.url}}/images/old_site/7/72/GtkSharpTreeViewTutorial3.png" class="image"><img alt="GtkSharpTreeViewTutorial3.png" src="{{site.github.url}}/images/old_site/7/72/GtkSharpTreeViewTutorial3.png" width="510" height="226" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png" class="image"><img alt="GtkSharpTreeViewTutorial3.png" src="{{site.github.url}}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png" width="510" height="226" /></a>
 </p><p>Both of the example methods above demonstrate how to modify one property of the CellRenderer, but you are certainly not limited to only modifing one. 
 </p><p>This example is fairly pointless, but it demonstrates how to modify multiple properties. A more practical use for this would be to change the color based on the state of an object:
 </p>
@@ -513,7 +513,7 @@ songColumn<span style="color: #008000;">.</span><span style="color: #0000FF;">Se
 	<span style="color: #008000;">&#40;</span>cell <span style="color: #0600FF; font-weight: bold;">as</span> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererText</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">Text</span> <span style="color: #008000;">=</span> song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p><br />
-<a href="{{site.github.url}}/images/old_site/0/07/GtkSharpTreeViewTutorial4.png" class="image"><img alt="GtkSharpTreeViewTutorial4.png" src="{{site.github.url}}/images/old_site/0/07/GtkSharpTreeViewTutorial4.png" width="510" height="226" /></a>
+<a href="{{site.github.url}}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png" class="image"><img alt="GtkSharpTreeViewTutorial4.png" src="{{site.github.url}}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png" width="510" height="226" /></a>
 </p><p>Here is the complete example:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Collections</span><span style="color: #008000;">;</span>
@@ -651,7 +651,7 @@ artistNameCell<span style="color: #008000;">.</span><span style="color: #0000FF;
 	song<span style="color: #008000;">.</span><span style="color: #0000FF;">Artist</span> <span style="color: #008000;">=</span> args<span style="color: #008000;">.</span><span style="color: #0000FF;">NewText</span><span style="color: #008000;">;</span>
 <span style="color: #008000;">&#125;</span></pre>
 <p>And that's all there is to it!
-</p><p><a href="{{site.github.url}}/images/old_site/d/d8/TreeViewTutorial-Editing1.png" class="image"><img alt="TreeViewTutorial-Editing1.png" src="{{site.github.url}}/images/old_site/d/d8/TreeViewTutorial-Editing1.png" width="510" height="226" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/d/d8/TreeViewTutorial-Editing1.png" class="image"><img alt="TreeViewTutorial-Editing1.png" src="{{site.github.url}}/old_site/images/d/d8/TreeViewTutorial-Editing1.png" width="510" height="226" /></a>
 </p>
 <h1> <span class="mw-headline" id="Drawing_icons_in_rows"> Drawing icons in rows </span></h1>
 <p>For using Pixbuf you need, first to change the ListStore constructor, (notice the Gdk.Pixbuf parameter)
@@ -661,12 +661,12 @@ artistNameCell<span style="color: #008000;">.</span><span style="color: #0000FF;
 </p>
 <pre class="csharp" style="font-family:monospace;">tree<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendColumn</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Icon&quot;</span>, <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gtk<span style="color: #008000;">.</span><span style="color: #0000FF;">CellRendererPixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;pixbuf&quot;</span>, <span style="color: #FF0000;">0</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
 <p>the image to add
-</p><p><a href="{{site.github.url}}/images/old_site/e/e5/TreeViewRupertIcon.png" class="image"><img alt="TreeViewRupertIcon.png" src="{{site.github.url}}/images/old_site/e/e5/TreeViewRupertIcon.png" width="20" height="20" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/e/e5/TreeViewRupertIcon.png" class="image"><img alt="TreeViewRupertIcon.png" src="{{site.github.url}}/old_site/images/e/e5/TreeViewRupertIcon.png" width="20" height="20" /></a>
 </p><p>and the AppendValues method with the correct parameters
 </p>
 <pre class="csharp" style="font-family:monospace;">musicListStore<span style="color: #008000;">.</span><span style="color: #0000FF;">AppendValues</span> <span style="color: #008000;">&#40;</span><a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> Gdk<span style="color: #008000;">.</span><span style="color: #0000FF;">Pixbuf</span> <span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;TreeViewRupertIcon.png&quot;</span><span style="color: #008000;">&#41;</span>, <span style="color: #666666;">&quot;Rupert&quot;</span>, <span style="color: #666666;">&quot;Yellow bananas&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span></pre>
 <p>And then
-</p><p><a href="{{site.github.url}}/images/old_site/9/98/TreeViewTutorial-Pixbuf.png" class="image"><img alt="TreeViewTutorial-Pixbuf.png" src="{{site.github.url}}/images/old_site/9/98/TreeViewTutorial-Pixbuf.png" width="510" height="225" /></a>
+</p><p><a href="{{site.github.url}}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png" class="image"><img alt="TreeViewTutorial-Pixbuf.png" src="{{site.github.url}}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png" width="510" height="225" /></a>
 </p><p>Complete sample
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #6666cc; font-weight: bold;">class</span> TreeViewExample
