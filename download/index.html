@@ -2,11 +2,12 @@
 layout: default
 title: Download
 navgroup: download
+latestmono: 3.2.7
 ---
 
 <h1>Download</h1>
 
-<p>The latest Mono release is: <strong><span id="mono-version"></span></strong>
+<p>The latest Mono release is: <strong>{{page.latestmono}}</strong>
 </p>
 <p>Please choose your operating system to view the available packages.</p>
 <div class="clearfix"></div>
@@ -21,21 +22,21 @@ navgroup: download
     <p>Mono for Mac OS X is available as a Mac Package (.pkg).</p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/installing/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-mac" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
+      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono_Mac.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono_Mac.pkg</a>
     </div>
   </div>
   <div class="panel content" id="panel-lin">
     <p>Mono for Linux is available as a binary package for the following distributions: Debian/Ubuntu, openSUSE.</p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/installing/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-lin" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
+      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono-Linux.deb" class="button radius"><i class="fa fa-download"></i> Download Mono-Linux.deb</a>
     </div>
   </div>
   <div class="panel content" id="panel-win">
     <p>Mono for Windows is available as a Windows Installer (.msi) package.</p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/installing/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a id="download-win" class="button radius disabled"><i class="fa fa-download"></i> Download </a>
+      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono-Windows.msi" class="button radius"><i class="fa fa-download"></i> Download Mono-Windows.msi</a>
     </div>
   </div>
 </div>
@@ -43,44 +44,14 @@ navgroup: download
 
 <h1>Release Notes</h1>
 
-<div id="release-notes">Loading ...</div>
+<div id="release-notes">
+  <p>This is the Mono 3.2.7 release.</p>
+  Changelog:
+  <ul>
+    <li>much improved ABCREM pass</li>
+    <li>...</li>
+  </ul>
+</div>
 <hr/>
 <p>The release notes of older Mono versions are available <a href="{{site.github.url}}/docs/releases">here</a>.</p>
 
-<!-- Script to fetch the latest Mono release info from GitHub -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/linq.js/2.2.0.2/linq.min.js"></script>
-<script type="text/javascript">
-  var githubRepo = "akoeplinger/mono";
-
-  function showReleaseInfo(response) {
-    var latestRelease = Enumerable.From(response.data)
-                          .Where(function (x) { return x.draft === false })
-                          .OrderBy(function (x) { return Date.parse(x.published_at) })
-                          .First();
-    
-    var assets = Enumerable.From(latestRelease.assets);    
-    var macAsset = assets.Where(function (x) { return x.name.match(/pkg$/) }).Single();
-    var linAsset = assets.Where(function (x) { return x.name.match(/deb$/) }).Single();
-    var winAsset = assets.Where(function (x) { return x.name.match(/msi$/) }).Single();
-    
-    var downloadUrl = "https://github.com/" + githubRepo + "/releases/download/" + latestRelease.tag_name + "/";
-    $("#download-mac").attr('href', downloadUrl + macAsset.name).removeClass("disabled").append(macAsset.name);
-    $("#download-lin").attr('href', downloadUrl + linAsset.name).removeClass("disabled").append(linAsset.name);
-    $("#download-win").attr('href', downloadUrl + winAsset.name).removeClass("disabled").append(winAsset.name);
-
-    $("#mono-version").text(latestRelease.tag_name);
-    $("#release-notes").html(latestRelease.body.replace(/\r\n/g, "<br/>"));
-  }
-
-  function runScripts() {
-
-    $.ajax({
-      type: "GET",
-      url: "https://api.github.com/repos/" + githubRepo + "/releases",
-      jsonpCallback: "showReleaseInfo",
-      contentType: "application/json",
-      dataType: "jsonp",
-      cache: true
-    });
-  }
-</script>
