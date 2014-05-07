@@ -67,6 +67,10 @@
   line-height: 0.9em;
 }
 
+code {
+  font-weight: normal;
+}
+
 h1 small {
   font-size: 40%;
 }

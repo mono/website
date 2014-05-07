@@ -3,10 +3,12 @@ permalink: /news/:year/:month/:day/:title/
 paginate: 5
 paginate_path: "news/page/:num"
 markdown: kramdown
+kramdown:
+  input: GFM
 
 #safe: true  # currently doesn't work locally
 lsi: false
-pygments: true
+pygments: false
 gems:
   - jekyll-redirect-from
 exclude:

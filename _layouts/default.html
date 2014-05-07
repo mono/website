@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/normalize.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/foundation.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css" />
     <link rel="stylesheet" href="{{site.github.url}}/css/main.css" />
-    <link rel="stylesheet" href="{{site.github.url}}/css/syntax.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
   </head>
   <body>
@@ -28,8 +28,11 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+
   <script>
     $(document).foundation();
+    hljs.initHighlightingOnLoad();
     
     // allow sub pages to run custom code
     if (typeof runScripts == 'function') {
