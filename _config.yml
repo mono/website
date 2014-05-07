@@ -6,9 +6,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-#safe: true  # currently doesn't work locally
-lsi: false
-pygments: false
+#safe: true  # needs Jekyll 2.0
 gems:
   - jekyll-redirect-from
 exclude:
