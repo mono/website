@@ -45,14 +45,14 @@ redirect_from:
 </p>
 <h3> <span class="mw-headline" id="Testing"> Testing </span></h3>
 <p>Sadly not every parts of the security manager cannot be tested using <a href="{{site.github.url}}/old_site/Test_Suite" title="Test Suite">NUnit</a>. In particular some security actions, like <code>LinkDemand</code> and <code>InheritanceDemand</code>, throws unhandled exceptions. While it is possible to promote <code>LinkDemand</code> into full <code>Demand</code> by using reflection, <code>InheritanceDemand</code> are still not testable using <a href="{{site.github.url}}/old_site/Test_Suite" title="Test Suite">NUnit</a>.
-</p><p>Some tests for those hard-to-test features are present in directories under <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/" class="external text" rel="nofollow">/mono/mono/tests/cas/</a> in <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a>. They can be executed by doing a <code>make test</code> in each directory.
+</p><p>Some tests for those hard-to-test features are present in directories under <a href="http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/" class="external text" rel="nofollow">/mono/mono/tests/cas/</a> in <a href="{{site.github.url}}/old_site/SourceCodeRepository">SVN</a>. They can be executed by doing a <code>make test</code> in each directory.
 </p>
 <h3> <span class="mw-headline" id="Status"> Status </span></h3>
 <p>Since version 1.1.4 Mono supports the --security option to enable it's security manager. E.g.
 </p>
 <pre>mono --security sample.exe
 </pre>
-<p>New features in <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> (unreleased as of 1.1.10) includes:
+<p>New features in <a href="{{site.github.url}}/old_site/SourceCodeRepository">SVN</a> (unreleased as of 1.1.10) includes:
 </p>
 <ul><li> none;
 </li></ul>
@@ -159,7 +159,7 @@ What's not (yet) supported:
 </p><p><b>Status</b>
 </p>
 <ul><li> The current version (i.e. the one part of the Mono 1.1.x releases) is limited to show the assembly-level permissions (e.g. <code>RequestMinimum</code>, <code>RequestOptional</code> and <code>RequestRefuse</code>) and works only on the Mono runtime;
-</li><li> A new version, based on <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Mono.Cecil</a>, is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the <b>mcs</b> <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">SVN</a> trunk. Until then the source code is available <a href="http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup" class="external text" rel="nofollow">here</a>.
+</li><li> A new version, based on <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Mono.Cecil</a>, is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the <b>mcs</b> <a href="{{site.github.url}}/old_site/SourceCodeRepository">SVN</a> trunk. Until then the source code is available <a href="http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup" class="external text" rel="nofollow">here</a>.
 </li></ul>
 <h3> <span class="mw-headline" id="storeadm"> storeadm </span></h3>
 <p>Storeadm is a tool to manage isolated storage on a computer. It's handly for sysadmins to manage (and reclaim) disk space used for isolated storage. The tool is mainly built on top of the <a href="http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.IO.IsolatedStorage" class="external text" rel="nofollow">System.IO.IsolatedStorage</a> classes;

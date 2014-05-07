@@ -35,7 +35,7 @@ in &lt;0x0004b&gt; GdiExample:Main ()
 </p>
 <h2> <span class="mw-headline" id="Background_Information_.26_Possible_Questions"> Background Information &amp; Possible Questions </span></h2>
 <p><b>I am using Linux or OSX, why is mono looking for libraries with "win32" in their name and ending with "dll" instead of "so"/"dylib"?</b>
-</p><p>To preserve compatibility with the .NET Framework, mono uses the same library names as windows. These names are mapped to linux library names using <a href="{{site.github.url}}/old_site/DllMap" title="DllMap" class="mw-redirect">DllMaps</a>.
+</p><p>To preserve compatibility with the .NET Framework, mono uses the same library names as windows. These names are mapped to linux library names using <a href="{{site.github.url}}/old_site/Config_DllMap">DllMaps</a>.
 </p>
 <pre>&lt;dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so.0"/&gt;
 </pre>
@@ -71,7 +71,7 @@ Mono-INFO: DllImport error loading library 'libgdiplus.dll: cannot open shared o
 &lt;snip&gt;
 </pre>
 <p>What we see here is that mono is making several attemps to locate the missing library, by prepending "lib", replacing the ".dll" extension with ".so", etc, but it was still unable to find the library.
-</p><p>If a library location has not been explicitly specified in a <a href="{{site.github.url}}/old_site/DllMap" title="DllMap" class="mw-redirect">DllMap</a> entry in an application or assembly .config file, Mono will search for a library in a few places:
+</p><p>If a library location has not been explicitly specified in a <a href="{{site.github.url}}/old_site/Config_DllMap">DllMap</a> entry in an application or assembly .config file, Mono will search for a library in a few places:
 </p>
 <ul><li> The directory where the referencing image was loaded from.
 </li><li> In any place the system's dynamic loader is configured to look for shared libraries. For example on Linux this is specified in the $LD_LIBRARY_PATH environment variable and the /etc/ld.so.conf file. On windows the $PATH environment variable is used, instead.
@@ -98,7 +98,7 @@ Mono-INFO: DllImport error loading library 'libgdiplus.dll: cannot open shared o
 </p>
 <h2> <span class="mw-headline" id="Additional_Information"> Additional Information </span></h2>
 <ul><li> <a href="{{site.github.url}}/old_site/Assemblies_and_the_GAC" title="Assemblies and the GAC">Assemblies_and_the_GAC</a>
-</li><li> <a href="{{site.github.url}}/old_site/DllMap" title="DllMap" class="mw-redirect">DllMap</a>
+</li><li> <a href="{{site.github.url}}/old_site/Config_DllMap">DllMap</a>
 </li><li> <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconhowruntimelocatesassemblies.asp" class="external text" rel="nofollow">How the Runtime Locates Assemblies (MSDN)</a>
 </li></ul>
 

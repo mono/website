@@ -517,7 +517,7 @@ page&lt;/a&gt;
 </p><p>Although it is possible to run simple Windows.Forms applications with the Gtk#-based backend of Windows.Forms, it is very unlikely that the implementation will ever implement everything needed for full compatibility with Windows.Forms.
 </p><p>The reason is that Windows.Forms is not a complete toolkit, and to work around this problem some of the underlying Win32 foundation is exposed to the programmer in the form of exposing the Windows message handler (WndProc). Any control can override this method. Also developers often P/Invoke into Win32 to get to functionality that was not wrapped.
 </p><p>To achieve full compatibility, we would have to emulate this, and it would take too long.
-</p><p>For more details see the <a href="{{site.github.url}}/old_site/Windows_Forms" title="Windows Forms" class="mw-redirect">winforms page</a>
+</p><p>For more details see the <a href="{{site.github.url}}/old_site/WinForms">winforms page</a>
 </p>
 <h4> <span class="mw-headline" id="Wine_applications_do_not_look_like_native_applications.2C_what_are_you_going_to_do_about_this.3F"> Wine applications do not look like native applications, what are you going to do about this? </span></h4>
 <p>We have already a few patches into our version of Windows.Forms that makes Wine use the colors and font settings from your desktop, improving the integration a lot. In the future, we will continue to improve this interoperability scenario.
@@ -762,7 +762,7 @@ fi
 </li></ul>
 <p><br />
 </p>
-<ul><li>  <a href="{{site.github.url}}/old_site/ADO.NET" title="ADO.NET">Extensive database support</a>: Mono ships with database provides for <a href="{{site.github.url}}/old_site/Firebird_Interbase" title="Firebird Interbase">Firebird</a>, <a href="{{site.github.url}}/old_site/IBM_DB2" title="IBM DB2">IBM DB2</a>, <a href="{{site.github.url}}/old_site/Oracle" title="Oracle">Oracle</a>, <a href="{{site.github.url}}/old_site/Sybase" title="Sybase">Sybase</a>, Microsoft <a href="{{site.github.url}}/old_site/TDS_Generic" title="TDS Generic">SQL Server</a>, <a href="{{site.github.url}}/old_site/SQL_Lite" title="SQL Lite" class="mw-redirect">SQL Lite</a>, <a href="{{site.github.url}}/old_site/MySQL" title="MySQL">MySQL</a>, ="postgresql"&gt;PostgresSQL&lt;/A&gt;, <a href="{{site.github.url}}/old_site/OLE_DB" title="OLE DB">Ole DB</a> and <a href="{{site.github.url}}/old_site/ODBC" title="ODBC">ODBC</a>.
+<ul><li>  <a href="{{site.github.url}}/old_site/ADO.NET" title="ADO.NET">Extensive database support</a>: Mono ships with database provides for <a href="{{site.github.url}}/old_site/Firebird_Interbase" title="Firebird Interbase">Firebird</a>, <a href="{{site.github.url}}/old_site/IBM_DB2" title="IBM DB2">IBM DB2</a>, <a href="{{site.github.url}}/old_site/Oracle" title="Oracle">Oracle</a>, <a href="{{site.github.url}}/old_site/Sybase" title="Sybase">Sybase</a>, Microsoft <a href="{{site.github.url}}/old_site/TDS_Generic" title="TDS Generic">SQL Server</a>, <a href="{{site.github.url}}/old_site/SQLite">SQL Lite</a>, <a href="{{site.github.url}}/old_site/MySQL" title="MySQL">MySQL</a>, ="postgresql"&gt;PostgresSQL&lt;/A&gt;, <a href="{{site.github.url}}/old_site/OLE_DB" title="OLE DB">Ole DB</a> and <a href="{{site.github.url}}/old_site/ODBC" title="ODBC">ODBC</a>.
 </li></ul>
 <p><br />
 </p>
@@ -1117,7 +1117,7 @@ Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnect
 </p><p>It's possible. But there is no plan about this. So the short answer is no.
 </p>
 <h4> <span class="mw-headline" id="How_can_I_report_a_bug.3F"> How can I report a bug? </span></h4>
-<p>The best thing is to track down the bug and provide a simple test to reproduce the bug. You can then add the bug to our bug tracking system. You can use our <a href="{{site.github.url}}/old_site/Bug_Reporting" title="Bug Reporting" class="mw-redirect">Bug Form</a> to enter bugs for the appropriate component.
+<p>The best thing is to track down the bug and provide a simple test to reproduce the bug. You can then add the bug to our bug tracking system. You can use our <a href="{{site.github.url}}/old_site/Bugs">Bug Form</a> to enter bugs for the appropriate component.
 </p><p>Please provide information about what version of mono you're using and any relevant details to be able to reproduce the bug. Note that bugs reported on the mailing-list may be easily forgotten, so it's better to file them in the <a href="http://bugzilla.ximian.com/enter_bug.cgi" class="external text" rel="nofollow">bug tracking system</a>.
 </p>
 <h4> <span class="mw-headline" id="Does_mcs_support_the_same_command_line_options_as_the_MS_C.23_compiler.3F"> Does mcs support the same command line options as the MS C# compiler? </span></h4>

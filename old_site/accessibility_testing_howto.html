@@ -121,7 +121,7 @@ redirect_from:
 </p>
 <h2> <span class="mw-headline" id="Strongwind">Strongwind</span></h2>
 <h3> <span class="mw-headline" id="Introduction">Introduction</span></h3>
-<p>This tutorial will <i>not</i> have in-depth explanations about the Strongwind-specific parts of the code in our test.  This information is covered in <a href="http://medsphere.org/projects/strongwind/getting_started.html" class="external text" rel="nofollow">Getting Started with Strongwind</a> and <a href="{{site.github.url}}/old_site/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a>.  In this tutorial, our focus will be on how our Mono accessibility tests and environment are unique.
+<p>This tutorial will <i>not</i> have in-depth explanations about the Strongwind-specific parts of the code in our test.  This information is covered in <a href="http://medsphere.org/projects/strongwind/getting_started.html" class="external text" rel="nofollow">Getting Started with Strongwind</a> and <a href="{{site.github.url}}/old_site/Accessibility:_Strongwind_Basics"> Strongwind Basics</a>.  In this tutorial, our focus will be on how our Mono accessibility tests and environment are unique.
 </p>
 <h3> <span class="mw-headline" id="Requirements">Requirements</span></h3>
 <ul><li><a href="http://www.gnome.org" class="external text" rel="nofollow">GNOME</a>
@@ -136,7 +136,7 @@ redirect_from:
 <h3> <span class="mw-headline" id="Strongwind_Introduction">Strongwind Introduction</span></h3>
 <p>This tutorial assumes the reader already has at least a basic understanding of Strongwind and can comfortably write non-trivial tests using it.  If you are already familiar with writing Strongwind tests, please skip this introduction.  Otherwise, a brief introduction to is needed before we can begin.
 </p><p>First of all, read <a href="http://medsphere.org/projects/strongwind/getting_started.html" class="external text" rel="nofollow">Getting Started with Strongwind</a> to get a basic idea of what it's all about.  Also notice there are several Gtk tests in uia2atk/test/testers that can be used as additional examples.
-</p><p>Next, read the <a href="{{site.github.url}}/old_site/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a> page.
+</p><p>Next, read the <a href="{{site.github.url}}/old_site/Accessibility:_Strongwind_Basics"> Strongwind Basics</a> page.
 </p><p>After reading these two documents, you will be ready to proceed with this tutorial.
 </p>
 <h3> <span class="mw-headline" id="Strongwind_Test_Harness">Strongwind Test Harness</span></h3>
@@ -278,7 +278,7 @@ redirect_from:
 <p>Our team does not test a specific application.  Instead, our developers are writing code to make sure that Mono WinForms applications are accessible.  This means that we can writer our testing against whatever application(s) we wish.  The approach we take is to create small and simple "sample applications."  Our sample applications can be found in our code repository in the <i>test/samples</i> directory.
 </p><p>At this point you should <a href="{{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#Getting_the_Code" title="Accessibility: Getting Started With Development">check out the uia2atk code</a> if you haven't already.
 </p><p>After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples.  For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
-</p><p>Take a moment to run the gtktutorial and familiarize yourself with the it; start to think of how you could write its application wrapper.  You will notice that the main window (or frame) has two buttons.  The first button opens a tree view window with several parents and children.  The second button opens a window with check boxes and a quit button, just like the application from the <a href="{{site.github.url}}/old_site/Accessibility:_Test_Strongwind_Basics" title="Accessibility: Test Strongwind Basics" class="mw-redirect"> Strongwind Basics</a> tutorial.  
+</p><p>Take a moment to run the gtktutorial and familiarize yourself with the it; start to think of how you could write its application wrapper.  You will notice that the main window (or frame) has two buttons.  The first button opens a tree view window with several parents and children.  The second button opens a window with check boxes and a quit button, just like the application from the <a href="{{site.github.url}}/old_site/Accessibility:_Strongwind_Basics"> Strongwind Basics</a> tutorial.  
 </p>
 <h3> <span class="mw-headline" id="Example_Application_Wrapper">Example Application Wrapper</span></h3>
 <p>As usual, we will begin by writing the application wrapper for our testable application.  In this case our testable application will be <i>gtktutorial.py</i>.  We will begin by writing our __init.py__ file which describes how to open the testable application and then returns an object of it.  After completing the __init__.py piece of the application wrapper we will code the second piece (gtktutorialframe.py), which describes how we can interact with the widgets of the testable application. 

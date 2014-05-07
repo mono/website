@@ -40,7 +40,7 @@ redirect_from:
 </li></ul>
 <p>Novell: <a href="http://www.novell.com/connectionmagazine/2010/02/mono_tools.html" class="external text" rel="nofollow">From .NET to Linux in 5 Easy Steps</a>
 </p><p><br />
-You need the Mono runtime and use one of Apache with <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>, a <a href="{{site.github.url}}/old_site/CGI" title="CGI">CGI</a> or FastCGI-aware web server with Mono's <a href="{{site.github.url}}/old_site/FastCGI" title="FastCGI">FastCGI</a> support or the <a href="{{site.github.url}}/old_site/Xsp" title="Xsp" class="mw-redirect">xsp</a> standalone server (all available from our <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">downloads</a> page).
+You need the Mono runtime and use one of Apache with <a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">mod_mono</a>, a <a href="{{site.github.url}}/old_site/CGI" title="CGI">CGI</a> or FastCGI-aware web server with Mono's <a href="{{site.github.url}}/old_site/FastCGI" title="FastCGI">FastCGI</a> support or the <a href="{{site.github.url}}/old_site/ASP.NET">xsp</a> standalone server (all available from our <a href="{{site.github.url}}/old_site/Downloads" title="Downloads">downloads</a> page).
 </p><p>To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 </p><p>To run ASP.NET 2.0 applications use mod-mono-server2 (for Apache), fastcgi-mono-server2 (for FastCGI servers) or xsp2 (for testing)
 </p><p><b> Does Mono support ASP.NET's web services? </b>
@@ -95,7 +95,7 @@ the CFLAGS from apxs. I'll fill a bug.
 <ul><li> mod_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
 </li><li> faster file transfers
 </li><li> common URL namespace with Apache (if AddHandler is used)
-</li><li> autohosting: <a href="{{site.github.url}}/old_site/AutoHosting" title="AutoHosting" class="mw-redirect">AutoHosting</a>
+</li><li> autohosting: <a href="{{site.github.url}}/old_site/AutoConfiguration">AutoHosting</a>
 </li><li> enabled for mass hosting
 </li><li> xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them.  By using mod_mono your client software is exposed to a full HTTP 1.1 implmenentation.
 </li></ul>

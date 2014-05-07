@@ -259,7 +259,7 @@ $ mdb sample.exe
 </pre>
 <p>If you have binutils installed (the addr2line program specifically), you'll get detailed profiling info also on unmanaged code.
 </p><p>In addition it is possible to create custom profilers using Mono's profiling interface.   For a list of existing profilers for Mono see our <a href="{{site.github.url}}/old_site/Performance_Tips" title="Performance Tips">Performance Tips</a> page.
-</p><p>A more advanced profiler is the <a href="{{site.github.url}}/old_site/LoggingProfiler" title="LoggingProfiler" class="mw-redirect">Logging Profiler</a>
+</p><p>A more advanced profiler is the <a href="{{site.github.url}}/old_site/Profiler">Logging Profiler</a>
 </p><p><b> Does Mono have a memory profiler? </b>
 </p><p>Mono has several memory profilers: a built-in one (see manual page), <a href="{{site.github.url}}/old_site/HeapShot" title="HeapShot">HeapShot</a>  for information about the Mono live memory usage, <a href="{{site.github.url}}/old_site/HeapBuddy" title="HeapBuddy">HeapBuddy</a> for memory allocation patterns and <a href="/index.php?title=OprofileWithAnonJitData_using_OProfile_to_profile_JITed_code&amp;action=edit&amp;redlink=1" class="new" title="OprofileWithAnonJitData using OProfile to profile JITed code (page does not exist)">OprofileWithAnonJitData using OProfile to profile JITed code</a>.
 </p><p>See the <a href="{{site.github.url}}/old_site/Profile" title="Profile">Profile</a> page for more information.
@@ -287,7 +287,7 @@ $ mdb sample.exe
 </p>
 <ol><li> Remoting SOAP channels (as well as binary channels)
 </li><li> ASMX Web Services (System.Web.Services)
-</li><li> <a href="{{site.github.url}}/old_site/WCF" title="WCF" class="mw-redirect">WCF</a>, preliminary
+</li><li> <a href="{{site.github.url}}/old_site/WCF_Development">WCF</a>, preliminary
 </li></ol>
 <p>You can use Mono for remoting and ASMX web services either as client or as server (or both). ASMX Web Service client also works on MonoTouch.
 </p><p>WCF client is supported in Mono, Moonlight and MonoTouch. WCF server implementation effort is ongoing. Note that the supported WCF bindings are limited to some basic ones.
@@ -358,7 +358,7 @@ Alternatively, you can do: <pre>
 </li></ul>
 <p>The above takes care of converting the input you provide to Mono compilers and runtimes into Unicode.  Another issue is how these characters get rendered into the screen.
 </p><p>For console output Mono will use the encoding specified in your LANG environment variable to display the Unicode strings that the program has.   If your LANG variable does not allow for the full range of Unicode strings to be displayed (for example, LANG=en alone) then only the subset supported by that specific character set can be displayed.
-</p><p><b> How do I build mono/mcs on Windows from Mono's Subversion <a href="{{site.github.url}}/old_site/SVN" title="SVN" class="mw-redirect">repository</a>? </b>
+</p><p><b> How do I build mono/mcs on Windows from Mono's Subversion <a href="{{site.github.url}}/old_site/SourceCodeRepository">repository</a>? </b>
 </p><p>See this "<a href="{{site.github.url}}/old_site/Compiling_Mono_on_Windows" title="Compiling Mono on Windows">Compiling Mono on Windows</a>" page.
 </p><p><b> I just made a change in my code and am getting Segfaults, what is it? </b>
 </p><p>Segfaults are typically the result of a stack overflow, these are caused by recursive invocations of a method, and these happen frequently with OO code, as developers forget to call the "base" method, for example:
@@ -416,7 +416,7 @@ to obtain the home directory.
 <p>The following document link to the status of EnterpriseServices in Mono:
 </p>
 <ul><li> <a href="{{site.github.url}}/old_site/EnterpriseServices" title="EnterpriseServices">EnterpriseServices</a>
-</li><li> <a href="{{site.github.url}}/old_site/SystemMessaging" title="SystemMessaging" class="mw-redirect">SystemMessaging</a>
+</li><li> <a href="{{site.github.url}}/old_site/System.Messaging">SystemMessaging</a>
 </li><li> <a href="{{site.github.url}}/old_site/Transactions" title="Transactions">Transactions</a>
 </li></ul>
 <h2> <span class="mw-headline" id="Mono_and_Java"> Mono and Java </span></h2>
@@ -475,7 +475,7 @@ Currently, we are doing our work on Linux-based systems and Windows. We do not e
 </p><p><b> What about Mono on non Linux-based systems? </b>
 </p><p>Our main intention at Novell is to be able to develop GNOME applications with Mono, but if you are interested in providing a port of the Winforms classes to other platforms (frame buffer or MacOS X for example), we would gladly integrate them, as long they are under an open source license.
 </p><p><b> What operating systems/CPUs do you support? </b>
-</p><p>Mono currently runs on <a href="{{site.github.url}}/old_site/Mono:Linux" title="Mono:Linux">Linux</a>, <a href="{{site.github.url}}/old_site/Mono:Windows" title="Mono:Windows" class="mw-redirect">Windows</a>, Solaris, <a href="{{site.github.url}}/old_site/Mono:BSD" title="Mono:BSD">FreeBSD</a> and <a href="{{site.github.url}}/old_site/Mono:OSX" title="Mono:OSX">MacOS X</a>. 
+</p><p>Mono currently runs on <a href="{{site.github.url}}/old_site/Mono:Linux" title="Mono:Linux">Linux</a>, <a href="{{site.github.url}}/old_site/Using_Mono_on_Windows">Windows</a>, Solaris, <a href="{{site.github.url}}/old_site/Mono:BSD" title="Mono:BSD">FreeBSD</a> and <a href="{{site.github.url}}/old_site/Mono:OSX" title="Mono:OSX">MacOS X</a>. 
 The Just-In-Time engine (JIT) is available on <a href="{{site.github.url}}/old_site/Mono:X86" title="Mono:X86">x86</a> and <a href="{{site.github.url}}/old_site/Mono:PowerPC" title="Mono:PowerPC">PowerPC</a>, <a href="{{site.github.url}}/old_site/Mono:SPARC" title="Mono:SPARC">Sparc</a> and S390 processors and can generate code and optimizations tailored for a particular CPU. 
 Interpreters exist for the Itanium, HP-PA, StrongARM CPUs.
 </p><p><b> Does Mono run on Windows? </b>
@@ -603,7 +603,7 @@ There is no active work on this area, but Mono already provides pre-compilation 
 </p>
 <h2> <span class="mw-headline" id="Mono_and_the_Basic_Language"> Mono and the Basic Language </span></h2>
 <p><b> Does Mono implement the Basic language? </b>
-</p><p>An implementation of the VB.NET language is now available, to find out more about the current state of the compiler see the page on <a href="{{site.github.url}}/old_site/Language_BASIC" title="Language BASIC" class="mw-redirect">Basic</a>.
+</p><p>An implementation of the VB.NET language is now available, to find out more about the current state of the compiler see the page on <a href="{{site.github.url}}/old_site/VisualBasic.NET_support">Basic</a>.
 </p><p><b> What about VB6 </b>
 </p><p>Mono does not have current plans to implement VB6 at this point.
 </p><p>The major value of VB6 is reportedly its deep integration with COM-based controls which would not be available on Unix, and it seems to be generally accepted that the major value of VB6 is the availability of third party controls. 
@@ -685,7 +685,7 @@ There is no active work on this area, but Mono already provides pre-compilation 
 </li></ul>
 <ul><li> Mono has a complete Reflection and Reflection.Emit: these are important for advanced applications, compilers and dynamic code generation (Applications like IKVM and IronPython depend on this feature for example).
 </li></ul>
-<ul><li>  Mono has a <a href="{{site.github.url}}/old_site/XML_Classes" title="XML Classes" class="mw-redirect">complete managed XML stack</a>: XML, XPath, XML Serializer, XML Schema handling are fully functional, feature complete and tuned for performance. In addition to the Microsoft API, mono ships with the Mono.Xml.Ext library that contains an XQuery/XPath2 implementations.
+<ul><li>  Mono has a <a href="{{site.github.url}}/old_site/XML">complete managed XML stack</a>: XML, XPath, XML Serializer, XML Schema handling are fully functional, feature complete and tuned for performance. In addition to the Microsoft API, mono ships with the Mono.Xml.Ext library that contains an XQuery/XPath2 implementations.
 </li></ul>
 <ul><li>  Mono has a <a href="{{site.github.url}}/old_site/Cryptography" title="Cryptography">complete cryptography stack</a>: we implement the 1.0 and 1.1 APIs as well as using our fully managed stack to implement the SSL/TLS transports.
 </li></ul>

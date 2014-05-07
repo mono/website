@@ -524,7 +524,7 @@ MyHelperClass.jvm.cs
 <p>In the Mono class libraries, if a library is stubbed out, it is customary to insert the following code snippet:
 </p>
 <pre class="csharp" style="font-family:monospace;">    <span style="color: #0600FF; font-weight: bold;">throw</span> <a href="http://www.google.com/search?q=new+msdn.microsoft.com"><span style="color: #008000;">new</span></a> NotImplementedException <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span></pre>
-<p>The NotImplemented exception is used by tools like the <a href="{{site.github.url}}/old_site/Moma" title="Moma" class="mw-redirect">Mono Migration Analyzer</a> (Moma) to report potential problems for people porting their applications.
+<p>The NotImplemented exception is used by tools like the <a href="{{site.github.url}}/old_site/MoMA">Mono Migration Analyzer</a> (Moma) to report potential problems for people porting their applications.
 </p><p>Notice that in certain conditions, throwing a NotImplementedException is a pattern used in base virtual methods to force derived classes to implement the functionality.   This can lead to incorrect reports from the Moma tool, because the tool has no way of knowing that in practice the virtual base method will never be called (it would be better to have an abstract class in this case, but we have to be source and binary compatible).   In these cases, instead of throwing the exception directly, call a helper routine, so that it becomes invisible to Moma:
 </p>
 <pre class="csharp" style="font-family:monospace;">Exception GetNotImplemented <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span>
