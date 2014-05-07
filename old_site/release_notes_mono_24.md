@@ -1,0 +1,153 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.4"
+permalink: /old_site/Release_Notes_Mono_2.4/
+redirect_from:
+  - /Release_Notes_Mono_2.4/
+---
+
+Release Notes Mono 2.4
+======================
+
+Mono 2.4 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
+
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="left"><h2>Table of contents</h2>
+<ul>
+<li><a href="#Major_Highlights">1 Major Highlights</a></li>
+<li><a href="#Changes_since_Mono_2.2">2 Changes since Mono 2.2</a>
+<ul>
+<li><a href="#Runtime">2.1 Runtime</a>
+<ul>
+<li><a href="#SIMD_support_in_Mono">2.1.1 SIMD support in Mono</a></li>
+<li><a href="#No_more_polling">2.1.2 No more polling</a></li>
+<li><a href="#Other_Changes">2.1.3 Other Changes</a></li>
+<li><a href="#Behavioral_Changes">2.1.4 Behavioral Changes</a></li>
+</ul></li>
+<li><a href="#Mono.Posix">2.2 Mono.Posix</a></li>
+<li><a href="#Performance">2.3 Performance</a></li>
+<li><a href="#ASP.NET">2.4 ASP.NET</a>
+<ul>
+<li><a href="#Precompiled_Web_Sites">2.4.1 Precompiled Web Sites</a></li>
+<li><a href="#Performance:_Single_Domain_Support">2.4.2 Performance: Single Domain Support</a></li>
+</ul></li>
+<li><a href="#Winforms">2.5 Winforms</a></li>
+</ul></li>
+<li><a href="#Installing_Mono_2.4">3 Installing Mono 2.4</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+Major Highlights
+================
+
+This is a release focused on stability and performance and it is also the foundation for Novell's own long-term support Mono-based product.
+
+Changes since Mono 2.2
+======================
+
+This documents the changes since [Mono 2.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.2 "Release Notes Mono 2.2").
+
+Runtime
+-------
+
+### SIMD support in Mono
+
+SIMD constructors are now optimized. A few APIs have been renamed to better suit the Design Guidelines.
+
+### No more polling
+
+One of the most challenging components of Mono was supporting Thread.Interrupt in a way that worked across multiple operating systems. In previous versions of Mono, the only solution we found that was portable was to poll every 100ms for potential interruptions requested by another thread.
+
+Starting with Mono 2.4, that polling code is no longer present and instead a cross-platform solution to the problem is being used that provides both support for Thread.Interrupt() and does not consume CPU cycles.
+
+### Other Changes
+
+-   The old JIT has been removed, and only the new linear IR based JIT is available.
+-   The --enable-parallel-mark=yes argument to configure is now the default, this speeds up garbage collections on multi-core machines.
+-   WaitHandle now supports SignalAndWait.
+-   MarshalByRefObject supports MemberwiseClone
+-   COM: support NULLs IDispatch and IUnknown.
+
+### Behavioral Changes
+
+Our System.Diagnostics.Process implementation will now properly raise the termination event on OutputDataReceived and ErrorDataReceived. See [bug 459450](https://bugzilla.novell.com/show_bug.cgi?id=459450) for details.
+
+Mono.Posix
+----------
+
+Support for Real Time Signals, it is now possible to fetch the list of real-time signals in a cross-platform way.
+
+Performance
+-----------
+
+Optimized the XPath code which reduces memory consumption in our own tests by 15%.
+
+DateTime.TryParse does no longer depend on internal try/catches.
+
+Loading resources from a satellite assembly does not internally throw exceptions.
+
+ASP.NET
+-------
+
+### Precompiled Web Sites
+
+Mono's ASP.NET stack can now run precompiled ASP.NET web sites generated with Visual Studio or using the aspnet\_compiler. This allows Mono to support ASP.NET applications written in languages other than C\# or applications that take advantage of new VB.NET features not available on Mono's VB compiler.
+
+Typically web sites are compiled like this from the command line:
+
+``` bash
+c:\test\>aspnet_compiler -f -p c:\test\BlogEngine.Web -v /blog c:\test\output
+```
+
+Alternatively, this can be done with Visual Studio using the "Publish" feature.
+
+### Performance: Single Domain Support
+
+If only one application is configured in [mod\_mono]({{site.github.url}}/old_site/Mod_mono "Mod mono") or Mono's XSP Mono will eliminate the intermediate multiplexor/demultiplexor for requests and instead send and receive the data straight from one domain to the kernel.
+
+This eliminates a number of calls into Mono's Remoting stack that is required when multiple applications are running.
+
+Winforms
+--------
+
+Many improvements to the DataGridView control to better support DataBinding.
+
+Installing Mono 2.4
+===================
+
+**Binary Packages and Source Code Downloads:**
+
+    Source code and pre-compiled packages for Linux, Solaris, 
+    MacOS X and Windows is available from our web site from 
+    the Downloads section.
+
+**Quick source code installation:**
+
+    If we have no packages for your platform, installing from 
+    source code is very simple.   
+
+Compile libgdiplus to support System.Drawing:
+
+``` bash
+    $ tar xzf libgdiplus-2.4.tar.gz
+    $ cd libgdiplus-2.4
+    $ ./configure
+    $ make
+    $ make install
+```
+
+Then compile Mono itself:
+
+``` bash
+    $ tar xzf mono-2.4.tar.gz
+    $ cd mono-2.4
+    $ ./configure
+    $ make
+    $ make install
+```
+

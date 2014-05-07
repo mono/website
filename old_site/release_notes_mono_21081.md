@@ -1,0 +1,59 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.10.8.1"
+permalink: /old_site/Release_Notes_Mono_2.10.8.1/
+redirect_from:
+  - /Release_Notes_Mono_2.10.8.1/
+---
+
+Release Notes Mono 2.10.8.1
+===========================
+
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="left"><h2>Table of contents</h2>
+<ul>
+<li><a href="#Beta">1 Beta</a></li>
+<li><a href="#Differences_Between_Stable_and_Beta">2 Differences Between Stable and Beta</a></li>
+<li><a href="#MacOS_Updates">3 MacOS Updates</a></li>
+<li><a href="#Changes">4 Changes</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+Beta
+====
+
+Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
+
+Mono 2.10.8.1 is a beta release and update to the Mono 2.10.7 Beta, which was used mostly as a vehicle to test the upcoming Gtk+ stack on MacOS X. Mono 2.10.8.1 fixes stability and packaging issues with 2.10.7 and was released as a beta for MacOS X on December 19, 2011.
+
+If you want a stable release, use Mono [Release Notes Mono 2.10.8]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.8 "Release Notes Mono 2.10.8").
+
+Mono 2.10.8.1 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2"), [Mono 2.10.3]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.3 "Release Notes Mono 2.10.3"), [2.10.4]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.4 "Release Notes Mono 2.10.4"), [2.10.5]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.5 "Release Notes Mono 2.10.5"), [2.10.6]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.6 "Release Notes Mono 2.10.6"), and [2.10.7]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.7 "Release Notes Mono 2.10.7").
+
+Differences Between Stable and Beta
+===================================
+
+The difference between the Stable release (2.10.8) and the Beta (2.10.8.1) is that the Beta ships with an updated Gtk+ stack that has been developed with Lanedo to bring many bug fixes to Gtk+ on MacOS X.
+
+The 2.10.8.1 release is a MacOS-only release.
+
+MacOS Updates
+=============
+
+This release bundles the new version of Gtk+ 2 that has been fine tuned for MacOS X and fixes hundreds of problems that have been reported by users of MonoDevelop on Mac. In addition, it adds support for Lion's Smooth Scrolling.
+
+Changes
+=======
+
+-   Revert Pango to 1.28.4 to resolve a crash when opening the MonoDevelop about box on Snow Leopard.
+-   Fix a libgdiplus issue that had forced linking against Apple's X11 stack for text rendering.
+-   Fix issue where a native crash causes MonoDevelop to hang and neither Force Quit nor kill -9 would terminate it (Xamarin \#2548).
+-   Fix sgen failing with Assertion at sgen-gc.c:2506, condition \`mono\_sgen\_need\_bridge\_processing ()' not met.
+
+See the [Mono 2.10.7 release notes]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.7 "Release Notes Mono 2.10.7") for a full list of Mono changes since the last stable release.
+

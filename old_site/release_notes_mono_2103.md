@@ -1,0 +1,147 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.10.3"
+permalink: /old_site/Release_Notes_Mono_2.10.3/
+redirect_from:
+  - /Release_Notes_Mono_2.10.3/
+---
+
+Release Notes Mono 2.10.3
+=========================
+
+Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
+
+Mono 2.10.3 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2") based on the mono-2-10 branch of github. Mono 2.10.3 was released on August 4th, 2011.
+
+For more information on changes since Mono 2.10, you can also read the release notes for [Mono 2.10.1]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2").
+
+Major Highlights
+================
+
+Vastly improved Mono's WCF stack.
+
+Major update to Mono's linker/tuner.
+
+MacOS X Lion: We have fixed various bugs in Gtk+ that affected Lion users of MonoDevelop and other Gtk\# applications.
+
+This release is big and tasty service pack, with plenty of fixes all around, the diffstat shows:
+
+    370 files changed, 10606 insertions(+), 3452 deletions(-)
+
+Changes Since Mono 2.10.2
+=========================
+
+General:
+
+-   If a thread abort is fatal, we now show the stack trace
+-   Improve stacktraces when facing a runtime invoke wrapper.
+-   Fixed \#[693996](https://bugzilla.novell.com/show_bug.cgi?id=693996) UriTemplate doesn't support named wildcards
+-   Fixed \#[650117](https://bugzilla.novell.com/show_bug.cgi?id=650117) xsd.exe hangs on valid circular groups schema
+-   Implemented \#[692987](https://bugzilla.novell.com/show_bug.cgi?id=692987) PipeException
+-   Fixed \#[690475](https://bugzilla.novell.com/show_bug.cgi?id=690475) Unexpected XmlConvert.ToDateTime(string,XmlDateTimeSerializationMode) behaviour
+-   Fixed \#[673019](https://bugzilla.novell.com/show_bug.cgi?id=673019) XmlSerializer : Bad Custom serializer generated with "char" default value.
+-   Fixed \#[641935](https://bugzilla.novell.com/show_bug.cgi?id=641935) Select XmlNodeList from parent XmlNode returns emply list in mono but not .net.
+-   Fixed \#[16](http://bugzilla.xamarin.com/show_bug.cgi?id=16) XNode.ReplaceWith() throws exception when provided null arguments.
+-   Fixed \#[703910](https://bugzilla.novell.com/show_bug.cgi?id=703910) System.Xml.Serialization crash at reading of file
+-   Support action parameter in SOAP 1.2 content type.
+-   Fixed \#[704813](https://bugzilla.novell.com/show_bug.cgi?id=704813) InvalidOperationException: To be XML serializable, types which inherit from IEnumerable must have an implementation of Add() at all levels of their inheritance hierarchy.
+-   Fixed \#[703027](https://bugzilla.novell.com/show_bug.cgi?id=703027) handling of null in the non generic implementation of EqualityComparer.
+-   Fixed a socket stack problem where Mono could swallow file descriptors on threadpool threads.
+-   Fix queryable enumerable expression transformation
+-   Fixed \#[701187](https://bugzilla.novell.com/show_bug.cgi?id=701187) Don't emit null queryable constants when rewriting linq queries.
+-   Removed hard coded timeout for SslStreamBase.
+-   Fixed a security issue when default-initialized ArraySegment structs are passed in sockets.
+-   Fixed \#[684613](https://bugzilla.novell.com/show_bug.cgi?id=684613) Allow AssemblyRef flags to have at least ECMA's values.
+-   Fix Prefix selection in HttpListener
+-   Fixes \#[690887](https://bugzilla.novell.com/show_bug.cgi?id=690887) Add FTP + RETR support to FtpWebRequest
+-   Various Parallel FX fixes
+-   Fix ICollection.CopyTo in the Stack class
+-   Fix \#[688353](https://bugzilla.novell.com/show_bug.cgi?id=688353) HttpListener fix for matching directories
+-   Fixed \#[689670](https://bugzilla.novell.com/show_bug.cgi?id=689670) Use WriteLien instead of Write for AllLines.
+
+ C\# Compiler:
+
+-   Fixed \#[706877](https://bugzilla.novell.com/show_bug.cgi?id=706877) handling of -checked command line argument
+-   Fixed \#[687282](https://bugzilla.novell.com/show_bug.cgi?id=687282) Fixes cross references of nested anonymous methods which don't start at parameters level block
+-   Fixed \#[688891](https://bugzilla.novell.com/show_bug.cgi?id=688891) Copy type parameters for base proxy method
+-   Fixed \#[688891](https://bugzilla.novell.com/show_bug.cgi?id=688891) Keep same TypeParameter ctor syntax
+
+JIT:
+
+-   Various SGen bug fixes
+-   Fixed \#[705186](https://bugzilla.novell.com/show_bug.cgi?id=705186) ARM: soft-float decompose causes segfaults under some circumstances
+-   Avoid register allocation problems when a try clause is nested inside a handler block.
+-   Fix caching in mono\_marshal\_get\_array\_address ().
+-   ARM cross-compilation fixes
+-   Fixed \#[696593](https://bugzilla.novell.com/show_bug.cgi?id=696593) avoid inflating a generic method of a non-generic class if the context has class only vars
+-   Fixed \#[696817](https://bugzilla.novell.com/show_bug.cgi?id=696817) Properly handle field RVA under moving collector
+-   SGen now works under Xen
+-   Fixed \#[693894](https://bugzilla.novell.com/show_bug.cgi?id=693894) Avoid a crash in Field:GetRawConstantValue () if the field type couldn't be loaded
+-   Add socket timeouts to the soft debugger:
+-   Fixed some problems with Mono.Simd (related to \#691057)
+-   Fixes \#[690255](https://bugzilla.novell.com/show_bug.cgi?id=690255) Implement BSTR marshaling even if COM is disabled
+-   Fixed \#[691119](https://bugzilla.novell.com/show_bug.cgi?id=691119) Fix support for parameters with generic constraints in Type.IsAssignableFrom ()
+-   Avoid a ENOMEM when allocating across an unallocated page in Boehm
+-   Fixes \#[688007](https://bugzilla.novell.com/show_bug.cgi?id=688007) If there are no crendetials, the Uri might have them
+-   Fixes \#[690020](https://bugzilla.novell.com/show_bug.cgi?id=690020) Fix loading from volatile base addresses in the LLVM backend.
+-   Fixes a crash on Lion when exiting
+-   Fixes \#[688008](https://bugzilla.novell.com/show_bug.cgi?id=688008) Allow storing managed pointers into 'native int' in the JIT, fsharp generates code without a conv.i.
+-   Fixed \#[687865](https://bugzilla.novell.com/show_bug.cgi?id=687865) AOT support for isinst\_with\_cache wrappers
+
+WCF:
+
+-   New MONO\_WCF\_TRACE variable allows debugging WCF by logging all of the requests
+-   Support WebHttpBinding configuration
+-   Implement support for Stream param with WebHttpBinding raw content format
+-   Implement support for generic data contract type name with "{x}"
+-   Implement XmlSerializerMessageContractImporter
+-   Implement WsdlContractConversionContext
+-   Properly implement Message.ToString() + all related changes
+-   Add message buffer support for RawMessage
+-   Optimization: Full equivalence comparison is unnecessary for MessageEncoder ContentType
+-   Allow DocumentType in ImportNode()
+-   Add Decimal support to XmlBinaryDictionaryReader
+-   Fixed \#[696784](https://bugzilla.novell.com/show_bug.cgi?id=696784) Call a wcf method with a ref DataContract as parameter, eg: ref Customer makes the parameter null after the call
+-   Fixed \#[695203](https://bugzilla.novell.com/show_bug.cgi?id=695203) KnownType for Derived Class not Resolved
+-   Fixed \#[687580](https://bugzilla.novell.com/show_bug.cgi?id=687580) WCF fails with '(400) Bad Request' when the calling client uses URIs that should be functionally equivalent such as IP address instead of machine name
+-   Fixed \#[688414](https://bugzilla.novell.com/show_bug.cgi?id=688414) Exposing IEnumberable\<\> on a WCF service fails
+
+ASP.NET:
+
+-   Added support for optional parameters to WebServices
+-   Added FormsAuthentication.Timeout 4.0 property
+-   TemplateCompiler: Construct properly rooted paths when assigning values from resources.
+-   Support RemoteEndpointMessageProperty
+-   Ignore JavaScript blocks enclosed in HTML comments
+-   When shadow-copying assemblies, use the io portability function to find the file.
+-   Fixed \#[650847](https://bugzilla.novell.com/show_bug.cgi?id=650847) Output both tagged and untagged UpdatePanel names in AJAX responses.
+-   Fixed: Do not retrieve script's URL in RegisterScriptReference if script.Path is set
+-   Implemented composite scripts support in System.Web.Extensions
+-   Inform user about all exceptions thrown during HttpRuntime static initialization
+-   Do nothing if null SessionStateStoreData is passed to SessionStateServerHandler.SetAndReleaseItemExclusive
+
+OSX:
+
+-   Fixed asynchronous socket connect hang on BSD and MacOS X.
+-   Fixed the library mapping for Cairo
+-   We now ship with debugging symbols for all of the Mono binaries, making it simpler to get good stack traces.
+
+OSX's Gtk port:
+
+-   Fixed \#[655087](https://bugzilla.gnome.org/show_bug.cgi?id=655087) CoreGraphics "empty clip" bug on Gtk\# applications.
+-   Fixed \#[655122](https://bugzilla.gnome.org/show_bug.cgi?id=655122) Window resizing bug in Gtk\# applications on Lion.
+
+Linker:
+
+-   Refactored MonoMac's MarkNSObjects substep so it can be reused in other scenarios
+-   Updated the linker and tuner
+
+ADO.NET:
+
+-   Fixed \#[688773](https://bugzilla.novell.com/show_bug.cgi?id=688773) Assign default value to columns that does not exist in the row that is being imported
+-   Fixed \#[681916](https://bugzilla.novell.com/show_bug.cgi?id=681916) Handle null values for parameter types varbinary(max) and/or image
+-   Fixed \#[663287](https://bugzilla.novell.com/show_bug.cgi?id=663287) Validate the type of value against underlyingtype instead of nullableType.
+-   Fixes calling size\_t native parameters in OracleClient by passing UIntPtr reference types and hence, solves 32/64 bit and little/big-endian issues.
+-   Fixes \#[663914](https://bugzilla.novell.com/show_bug.cgi?id=663914) Restore original column data for unchanged columns during deserialization.
+
+

@@ -1,0 +1,13 @@
+---
+layout: obsolete
+title: "Mono.Addins FAQ"
+permalink: /old_site/Mono.Addins_FAQ/
+redirect_from:
+  - /Mono.Addins_FAQ/
+---
+
+Mono.Addins FAQ
+===============
+
+This page has been moved [here](http://monoaddins.codeplex.com/wikipage?title=FAQ&referringTitle=Documentation).
+

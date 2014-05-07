@@ -1,0 +1,121 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.8.1"
+permalink: /old_site/Release_Notes_Mono_2.8.1/
+redirect_from:
+  - /Release_Notes_Mono_2.8.1/
+---
+
+Release Notes Mono 2.8.1
+========================
+
+Mono 2.8.1 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
+
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="left"><h2>Table of contents</h2>
+<ul>
+<li><a href="#Important_Information_About_Mono_2.8.1">1 Important Information About Mono 2.8.1</a></li>
+<li><a href="#Major_Highlights">2 Major Highlights</a></li>
+<li><a href="#Changes_since_Mono_2.8">3 Changes since Mono 2.8</a></li>
+<li><a href="#Installing_Mono_2.8.1">4 Installing Mono 2.8.1</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+Important Information About Mono 2.8.1
+======================================
+
+Mono 2.8.1 is a bug fix release for [Mono 2.8]({{site.github.url}}/old_site/Release_Notes_Mono_2.8.1 "Release Notes Mono 2.8.1") that contains the major fixes for bugs that were identified in Mono 2.8, it also contains a few security fixes.
+
+Mono's Long Term Supported release continues to be Mono 2.6, the next long-term support release will be Mono 3.0. Mono 2.8 ships the latest and greatest and updates and they have not received as much testing as they should. Users seeking absolute stability should stay on Mono 2.6. Users switching to Mono 2.8, should expect a faster bug turn around time, but they should also plan on upgrading to the upcoming 2.xx series as we fix bugs in our stack.
+
+Major Highlights
+================
+
+Changes since Mono 2.8
+======================
+
+This documents the changes since [Mono 2.8]({{site.github.url}}/old_site/Release_Notes_Mono_2.8 "Release Notes Mono 2.8"), the list was obtained by using:
+
+    git log 2.8..origin/mono-2-8
+
+-   Fix DateTime's from binary representation \#648252 (gonzalo)
+-   Fixed Nullable's serialization in Remoting's binary serializer \#646556 (gonzalo)
+-   Logging profiler build fix (zoltan)
+-   Fixed an assert for localalloc (long) when using LLVM (zoltan)
+-   Disabled cardtables on SGen on 64bit configurations, will be re-enabled in Mono 2.10
+-   Fixes a crash when using the embedded API
+-   Add new mono-dl-fallback API for registering P/Invoke lookup hooks (mostly for PS3 and Wii, but useful for embedders in general) (miguel).
+-   Allow ordinal entry points on Windows 636966 (gonzalo)
+-   Fixes file system scanning for Linux systems 637078 (gonzalo)
+-   Fixes GetLocalicalDriveString (gonzalo)
+-   UDP sockets allow connections to Any 639098 (gonzalo)
+-   GetProcessById now works on Mac (gonzalo)
+-   Map SO\_EXCLUSIVEADDRUSE to !SO\_REUSEADDR 643475 (gonzalo)
+-   Timers: fix collision handling code (gonzalo)
+-   Support unloading System assemblies when sockets are used (zoltan)
+-   Fix to utf8 to utf16 decoding (gonzalo)
+-   Fix WCF proxy names (marek)
+-   Fix WCF dispatchers (marek)
+-   No longer closes WCF response prematurely (marek)
+-   Fix some WCF hosting scenarios (Atsushi)
+-   Add support for EnableSSL on smtp configuration 644816 (gonzalo)
+-   Fixes socket bug \#645675.
+-   Prevents old AOT images from crashing new Mono's 647918 (zoltan)
+-   Exceptions are now propagated when embedding on Windows (tak/unity)
+-   BSD fix for thread attach 647248 (zoltan)
+-   Reset thread pool state (gonzalo)
+-   Fixes AOT compiler when LLVM is used 646314 (zoltan)
+-   Updated SPARC IMT code for .NET 4 (zoltan)
+-   Prevents a crash if your iconv setup is broken or incomplete on your system (zoltan)
+-   Add pretty-printing support to Json objects (jb)
+-   Adds null values to Json objects (jb)
+-   C\# compiler can compile multiple interface event declarators 646298 (marek)
+-   Fixes initializers in C\# for partially static multi-dimensional arrays 642975 (marek)
+-   X509Chain now always uses both the local machine store and the user store, regression from 2.6 (gonzalo)
+-   SPARC is now supported again (vargaz)
+-   xbuild updated to our latest release (ankit)
+-   Fixed named Mutexes (gonzalo)
+
+To obtain the full list of changes in diff form from 2.8, use:
+
+    git diff 2.8..origin/mono-2-8
+
+Installing Mono 2.8.1
+=====================
+
+**Binary Packages and Source Code Downloads:**
+
+    Source code and pre-compiled packages for Linux, Solaris, 
+    MacOS X and Windows is available from our web site from 
+    the Downloads section.
+
+**Quick source code installation:**
+
+    If we have no packages for your platform, installing from 
+    source code is very simple.   
+
+Compile libgdiplus to support System.Drawing:
+
+``` bash
+    $ tar xzf libgdiplus-2.8.1.tar.gz
+    $ cd libgdiplus-2.8.1
+    $ ./configure
+    $ make
+    $ make install
+```
+
+Then compile Mono itself:
+
+``` bash
+    $ tar xzf mono-2.8.1.tar.gz
+    $ cd mono-2.8.1
+    $ ./configure
+    $ make
+    $ make install
+```
+

@@ -1,0 +1,349 @@
+---
+layout: obsolete
+title: "Release Notes Mono 2.4.3"
+permalink: /old_site/Release_Notes_Mono_2.4.3/
+redirect_from:
+  - /Release_Notes_Mono_2.4.3/
+---
+
+Release Notes Mono 2.4.3
+========================
+
+Mono 2.4.3 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
+
+<table>
+<col width="100%" />
+<tbody>
+<tr class="odd">
+<td align="left"><h2>Table of contents</h2>
+<ul>
+<li><a href="#Major_Highlights">1 Major Highlights</a></li>
+<li><a href="#Changes_since_Mono_2.4.2">2 Changes since Mono 2.4.2</a></li>
+<li><a href="#Bugs_fixed_since_Mono_2.4">3 Bugs fixed since Mono 2.4</a></li>
+<li><a href="#Installing_Mono_2.4.3">4 Installing Mono 2.4.3</a></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+Major Highlights
+================
+
+Mono 2.4.3 is a bugfix release for Mono 2.4, a follow up to [Release\_Notes\_Mono 2.4.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.4.2 "Release Notes Mono 2.4.2") which is the foundation for Novell's own long-term support Mono-based product.
+
+In addition to bug fixes, this release includes the following major changes from 2.4.2:
+
+Changes since Mono 2.4.2
+========================
+
+New license compiler (lc) contributed by RemObjects.
+
+Upgraded xbuild, our msbuild implementation, it should compile more projects.
+
+Fine tuned memory usage, improved performance in various server loads. This release also contains many updates to the Mono Debugger, Windows.Forms, ASP.NET and ADO.NET.
+
+The Apache module now supports disabling the protection of hidden files, and improves the mod\_mono control panel.
+
+Solaris should not get the warning "Large stack limit" anymore.
+
+Bugs fixed since Mono 2.4
+=========================
+
+-   [312968](https://bugzilla.novell.com/show_bug.cgi?id=312968) - HttpWebRequest can not handle WWW-Authenticate with POST
+-   [321718](https://bugzilla.novell.com/show_bug.cgi?id=321718) - ORACLE: Reading Unicode characters from the database is throwing a LOB form mismatch error
+-   [321949](https://bugzilla.novell.com/show_bug.cgi?id=321949) - gmcs assumes bad home directory for user 0 (often root, but sometimes not)
+-   [322330](https://bugzilla.novell.com/show_bug.cgi?id=322330) - {Regression} FileSystemWatcher events have incorrect information
+-   [322695](https://bugzilla.novell.com/show_bug.cgi?id=322695) - When passed double-byte characters as OracleParameter's value, ExecuteNonQuery throw Exception
+-   [322934](https://bugzilla.novell.com/show_bug.cgi?id=322934) - StructLayout for DateTime passed to managed code
+-   [322974](https://bugzilla.novell.com/show_bug.cgi?id=322974) - DataGrid: insert row difference
+-   [323051](https://bugzilla.novell.com/show_bug.cgi?id=323051) - DataGrid: Row selection difference
+-   [323052](https://bugzilla.novell.com/show_bug.cgi?id=323052) - DataGrid: multi-row selection not possible using mouse
+-   [323111](https://bugzilla.novell.com/show_bug.cgi?id=323111) - DataGrid: Unexpected column in DataGrid with DataGridColumnStyle
+-   [323452](https://bugzilla.novell.com/show_bug.cgi?id=323452) - WebRequest exceptions don't match MS
+-   [324182](https://bugzilla.novell.com/show_bug.cgi?id=324182) - Stream from HttpWebResponse cannot timeout
+-   [332875](https://bugzilla.novell.com/show_bug.cgi?id=332875) - Exception with ReadXmlSchema
+-   [357642](https://bugzilla.novell.com/show_bug.cgi?id=357642) - X11 Clipboard: DataObject.GetData(...) fails for custom data formats
+-   [381151](https://bugzilla.novell.com/show_bug.cgi?id=381151) - DataAdapter returns 0 rows after an SQL timeout occured
+-   [385028](https://bugzilla.novell.com/show_bug.cgi?id=385028) - DbCommandBuilder InsertCommand doesn't use default values
+-   [385029](https://bugzilla.novell.com/show_bug.cgi?id=385029) - Multple errors using Mysql Connector and DbCommandBuilder
+-   [392875](https://bugzilla.novell.com/show_bug.cgi?id=392875) - SmtpClient doesn't escape dots
+-   [393775](https://bugzilla.novell.com/show_bug.cgi?id=393775) - SaveFileDialog + richtextbox
+-   [402158](https://bugzilla.novell.com/show_bug.cgi?id=402158) - DragDrop event is not fired on form
+-   [421827](https://bugzilla.novell.com/show_bug.cgi?id=421827) - {PATCH} CookieContainer.GetCookie skips cookie when domain has no leading dot
+-   [424908](https://bugzilla.novell.com/show_bug.cgi?id=424908) - Oracle - stored procedure returning string throws exception - Size must be set
+-   [427769](https://bugzilla.novell.com/show_bug.cgi?id=427769) - Typed datasets binary serialization error
+-   [448296](https://bugzilla.novell.com/show_bug.cgi?id=448296) - DataTable.Rows.Clear does not raise DataTable.TableClear{ing,ed}
+-   [458607](https://bugzilla.novell.com/show_bug.cgi?id=458607) - DomainUpDown: text could be edit in a ReadOnly DomainUpDown control
+-   [464191](https://bugzilla.novell.com/show_bug.cgi?id=464191) - TreeView / TreeNode selection isn't cancelled properly
+-   [464765](https://bugzilla.novell.com/show_bug.cgi?id=464765) - Inconsistencie in certmgr arguments handeling
+-   [465019](https://bugzilla.novell.com/show_bug.cgi?id=465019) - DataGrid: Crash when adding a ColumnStyle and DataSource doesn't contain mapped column
+-   [465021](https://bugzilla.novell.com/show_bug.cgi?id=465021) - DataGrid: Adding a column to DataSource after setting DataSource doesn't add it.
+-   [465613](https://bugzilla.novell.com/show_bug.cgi?id=465613) - HttpWebRequest.BeginGetRequestStream throws ProtocolViolationException
+-   [465696](https://bugzilla.novell.com/show_bug.cgi?id=465696) - StaticSiteMapProvider complains about multiple nodes with the same URL 'index.aspx'
+-   [467418](https://bugzilla.novell.com/show_bug.cgi?id=467418) - ListView in VirtualMode uses too much memory and is slow
+-   [469217](https://bugzilla.novell.com/show_bug.cgi?id=469217) - Pointers can not reference marshaled structures.
+-   [469967](https://bugzilla.novell.com/show_bug.cgi?id=469967) - Mono deletes chars in a TextBox with enabled AutoCompletion
+-   [470451](https://bugzilla.novell.com/show_bug.cgi?id=470451) - null reference in TreeView/MouseMoveHandler
+-   [471094](https://bugzilla.novell.com/show_bug.cgi?id=471094) - TreeView with empty ImageList is unstable
+-   [471257](https://bugzilla.novell.com/show_bug.cgi?id=471257) - Inconsistent Reflection behavior with custom Binder on Mono versus .NET
+-   [471782](https://bugzilla.novell.com/show_bug.cgi?id=471782) - NRE in WebConnectionStream.Close()
+-   [473660](https://bugzilla.novell.com/show_bug.cgi?id=473660) - Disabled button images don't look the same as .NET (grayscale / greyed out)
+-   [473725](https://bugzilla.novell.com/show_bug.cgi?id=473725) - MessageBox.Show() makes no sound
+-   [474889](https://bugzilla.novell.com/show_bug.cgi?id=474889) - PrintPreviewDialog toolbar overlaps the PrintPreviewControl control
+-   [475581](https://bugzilla.novell.com/show_bug.cgi?id=475581) - The item text is not displaying fully in a checkedlistview/listbox when the horizontal and Vertical scrollbars are enabled
+-   [477655](https://bugzilla.novell.com/show_bug.cgi?id=477655) - ContextMenu: menu items couldn't be navigated by keyboard
+-   [478498](https://bugzilla.novell.com/show_bug.cgi?id=478498) - ListView: EnsureVisible() doesn't work correctly
+-   [478555](https://bugzilla.novell.com/show_bug.cgi?id=478555) - ColorDialog doesn't show help button when it with ";ShowHelp = True";
+-   [478689](https://bugzilla.novell.com/show_bug.cgi?id=478689) - ListView control with ListViewGroups doesn't work correctly
+-   [479397](https://bugzilla.novell.com/show_bug.cgi?id=479397) - ContextMenuStrip: ToolStripMenuItem is missing ";focused"; state when using AtkSelection.
+-   [481559](https://bugzilla.novell.com/show_bug.cgi?id=481559) - uninitialized local causes failed assertion in mono\_local\_regalloc
+-   [482181](https://bugzilla.novell.com/show_bug.cgi?id=482181) - ClassifiedsStarterKit acts like you're logged in, even though you're not (\<location\> sections ignored)
+-   [483146](https://bugzilla.novell.com/show_bug.cgi?id=483146) - ToolStripDropDown does not size properly
+-   [483985](https://bugzilla.novell.com/show_bug.cgi?id=483985) - Wrong behavior of generic SortedList compared to .Net behavior
+-   [484795](https://bugzilla.novell.com/show_bug.cgi?id=484795) - {PATCH}WebClient.UploadValues using UTF-8 encoding and ";POST"; method do not upload accented characters properly
+-   [485769](https://bugzilla.novell.com/show_bug.cgi?id=485769) - Remove element of a ToolStrip
+-   [489339](https://bugzilla.novell.com/show_bug.cgi?id=489339) - ComboBox popup suggestion box does not appear on linux
+-   [489393](https://bugzilla.novell.com/show_bug.cgi?id=489393) - Clipboard not working
+-   [489625](https://bugzilla.novell.com/show_bug.cgi?id=489625) - System.Windows.Forms.RichTextBox.SelectedText
+-   [490937](https://bugzilla.novell.com/show_bug.cgi?id=490937) - TabControl.TabPages.Clear() raise exception when TabControl.SelectedTab != null
+-   [491978](https://bugzilla.novell.com/show_bug.cgi?id=491978) - ListView: behavior when using Groups isn't consistent with Windows
+-   [492549](https://bugzilla.novell.com/show_bug.cgi?id=492549) - {PATCH} DataGridView: Clearing columns and re-adding when when CurrentCell is set throws Exception. .NET difference
+-   [492815](https://bugzilla.novell.com/show_bug.cgi?id=492815) - ContextMenuStrip Work incorrectly
+-   [493308](https://bugzilla.novell.com/show_bug.cgi?id=493308) - MaxDropDownItems property of a DropDown is ignored
+-   [494031](https://bugzilla.novell.com/show_bug.cgi?id=494031) - DataGridView: combo box list items are not updated
+-   [495957](https://bugzilla.novell.com/show_bug.cgi?id=495957) - bundled machine.config files no longer work
+-   [497175](https://bugzilla.novell.com/show_bug.cgi?id=497175) - Exceptions thrown in a method that is invoked via Control.Invoke are not propagated to the caller
+-   [499851](https://bugzilla.novell.com/show_bug.cgi?id=499851) - Need notification for UIA when a PopupButton gains focus
+-   [499887](https://bugzilla.novell.com/show_bug.cgi?id=499887) - TabControl.GotFocus event not fired when SelectionIndex is set
+-   [500213](https://bugzilla.novell.com/show_bug.cgi?id=500213) - {PATCH} Setting ScrollableControl.HScroll property when AutoScroll is true displays different behavior to .NET
+-   [500917](https://bugzilla.novell.com/show_bug.cgi?id=500917) - crash on DateTimePicker.Paint event with DateTimePicker.Value.Year \>= 9990
+-   [501276](https://bugzilla.novell.com/show_bug.cgi?id=501276) - {PATCH} implement multi byte input support for winforms
+-   [502029](https://bugzilla.novell.com/show_bug.cgi?id=502029) - DateTimePicker: some children are not accessible by orca
+-   [502567](https://bugzilla.novell.com/show_bug.cgi?id=502567) - NullReferenceException: Object reference not set to an instance of an obj ect at System.Windows.Forms.TreeNode.set\_Checked (Boolean value) {0x00066}
+-   [503064](https://bugzilla.novell.com/show_bug.cgi?id=503064) - (Open/Save) FileDialog size grows upon sequential show
+-   [503174](https://bugzilla.novell.com/show_bug.cgi?id=503174) - Can not paste or insert RTF text to a RichTextBox control.
+-   [503435](https://bugzilla.novell.com/show_bug.cgi?id=503435) - BinaryFormatter.Deserialize attempts to set stream Position (causes exception with BZip2InputStream)
+-   [503469](https://bugzilla.novell.com/show_bug.cgi?id=503469) - e.Handled ignored
+-   [503663](https://bugzilla.novell.com/show_bug.cgi?id=503663) - Default accelerator keys do not work correctly for ToolStripMenuItems of ToolStrips
+-   [503935](https://bugzilla.novell.com/show_bug.cgi?id=503935) - Certain keystrokes sent to a MessageBox will crash the application
+-   [506796](https://bugzilla.novell.com/show_bug.cgi?id=506796) - bug with DataGridViewBand.DefaultHeaderCellType
+-   [506838](https://bugzilla.novell.com/show_bug.cgi?id=506838) - DataGridView does not associate with DataTable correctly when databound
+-   [507120](https://bugzilla.novell.com/show_bug.cgi?id=507120) - GetListItemType throws NullReferenceException when dataSource's type is DataViewManager
+-   [507459](https://bugzilla.novell.com/show_bug.cgi?id=507459) - ToolStripComboBox does not conside Handled
+-   [507462](https://bugzilla.novell.com/show_bug.cgi?id=507462) - Labels on tool strip are aligned at the bottom. All other controlls are center aligned.
+-   [507663](https://bugzilla.novell.com/show_bug.cgi?id=507663) - DbDataAdapter/DbCommandBuilder and MySql not working together on Mono
+-   [508027](https://bugzilla.novell.com/show_bug.cgi?id=508027) - HttpWebRequest.BeginGetResponseStream throws ProtocolViolationException
+-   [508487](https://bugzilla.novell.com/show_bug.cgi?id=508487) - Segmentation fault when pedump --verify all on an assembly generated by smcs
+-   [508541](https://bugzilla.novell.com/show_bug.cgi?id=508541) - ComboBox useless vertical scrollbar + ComboBoxStyle.Simple issues
+-   [508586](https://bugzilla.novell.com/show_bug.cgi?id=508586) - On disposing components (Tooltip, MainMenu etc) from Form the components collection should be cleared too
+-   [509142](https://bugzilla.novell.com/show_bug.cgi?id=509142) - Keyboard navigation problems in PrintPreviewDialog
+-   [509152](https://bugzilla.novell.com/show_bug.cgi?id=509152) - Down arrow does not show the zoom menu on the PrintPreviewDialog
+-   [509199](https://bugzilla.novell.com/show_bug.cgi?id=509199) - Clipboard.SetDataObject doesn't handle objects that implement System.Windows.Forms.IDataObject correctly. .NET difference
+-   [509299](https://bugzilla.novell.com/show_bug.cgi?id=509299) - Zoom menu stays open when Alt+F4 is pressed to close the PrintPreviewDialog
+-   [509406](https://bugzilla.novell.com/show_bug.cgi?id=509406) - still a problem with System.Diagnostics.StackTrace.get\_trace at web compilation
+-   [509472](https://bugzilla.novell.com/show_bug.cgi?id=509472) - {PATCH} Splitter works wrong
+-   [509985](https://bugzilla.novell.com/show_bug.cgi?id=509985) - Pressing buttons with the keyboard does not work as expected with ToolBarButtons
+-   [510030](https://bugzilla.novell.com/show_bug.cgi?id=510030) - ToolBarButton with DropDownButton style stays impressed after being clicked
+-   [510176](https://bugzilla.novell.com/show_bug.cgi?id=510176) - Problem with DataView events not being thrown, elements not being added after RejectChanges, etc
+-   [510642](https://bugzilla.novell.com/show_bug.cgi?id=510642) - HttpWebRequest: No ProtoviolationException when writing beyond specified content-length
+-   [510661](https://bugzilla.novell.com/show_bug.cgi?id=510661) - HttpWebRequest: IOException not wrapped in WebException when request stream cannot be closed
+-   [510728](https://bugzilla.novell.com/show_bug.cgi?id=510728) - Difference in behavior of DataObject.SetData(object) compard to .NET
+-   [510852](https://bugzilla.novell.com/show_bug.cgi?id=510852) - FtpWebRequest crashes with out of range exception
+-   [511247](https://bugzilla.novell.com/show_bug.cgi?id=511247) - Adding a lot of items to a ToolStripComboBox using AddRange is SLOW
+-   [511267](https://bugzilla.novell.com/show_bug.cgi?id=511267) - RichTextBox Modified property not automatically set when text changes
+-   [511515](https://bugzilla.novell.com/show_bug.cgi?id=511515) - RichTextBox SaveToFile doesn't save linebreaks always as CRLF in Windows
+-   [511849](https://bugzilla.novell.com/show_bug.cgi?id=511849) - {PATCH} Retrieving DataObjects placed onto Clipboard doesn't preserve custom formats, when Text/String format is also placed on Clipboard .NET difference
+-   [511851](https://bugzilla.novell.com/show_bug.cgi?id=511851) - HttpWebRequest.Begin\* methods do not throw a WebException if abort has been called.
+-   [511882](https://bugzilla.novell.com/show_bug.cgi?id=511882) - ContentPanel in \<title\> not working
+-   [512115](https://bugzilla.novell.com/show_bug.cgi?id=512115) - ForeColor for selected listbox item in ownerdraw mode should be set to highlighted text
+-   [512521](https://bugzilla.novell.com/show_bug.cgi?id=512521) - Deleting colorized RichTextBox line throws an exception
+-   [512807](https://bugzilla.novell.com/show_bug.cgi?id=512807) - DataGridView poor performance for moderate number of records (1000) makes it unusable
+-   [512816](https://bugzilla.novell.com/show_bug.cgi?id=512816) - DataGridView horizontal scrolling not working with keyboard
+-   [513000](https://bugzilla.novell.com/show_bug.cgi?id=513000) - Response.Cache.SetMaxAge(TimeSpan.Zero) should be allowed
+-   [513029](https://bugzilla.novell.com/show_bug.cgi?id=513029) - HorizontalScrollbar for ListBox should show only if needed
+-   [513030](https://bugzilla.novell.com/show_bug.cgi?id=513030) - Copy and Paste in RichTextBox leads to unreadable overwritten text
+-   [513087](https://bugzilla.novell.com/show_bug.cgi?id=513087) - WebRequest has problems with non-standard methods
+-   [513849](https://bugzilla.novell.com/show_bug.cgi?id=513849) - HttpListener does not release the specified port by listener prefixes.
+-   [513931](https://bugzilla.novell.com/show_bug.cgi?id=513931) - Debug builds of assemblies compiled with .net don't run properly with Mono JIT
+-   [514096](https://bugzilla.novell.com/show_bug.cgi?id=514096) - CS0677 error on volatile IntPtr
+-   [514368](https://bugzilla.novell.com/show_bug.cgi?id=514368) - Not default font make Tabpage header text truncated
+-   [514506](https://bugzilla.novell.com/show_bug.cgi?id=514506) - IronPython 2.6 Beta 1 crashes at shutdown after zope.interface is imported
+-   [514591](https://bugzilla.novell.com/show_bug.cgi?id=514591) - HttpWebRequest.Abort on a non-responsive asynchronous HttpWebRequest, leaves the TCP socket open.
+-   [514996](https://bugzilla.novell.com/show_bug.cgi?id=514996) - HttpWebRequest: Connection not closed on error in WebConnectionStream.Close
+-   [515030](https://bugzilla.novell.com/show_bug.cgi?id=515030) - mdoc will crash if an enumeration contains two members with the same value
+-   [516455](https://bugzilla.novell.com/show_bug.cgi?id=516455) - System.Net.Mail error on alternativeviews mono 2.4
+-   [516735](https://bugzilla.novell.com/show_bug.cgi?id=516735) - Application.DoEvents does not call Application.FilterMessage like Application.Run does
+-   [517166](https://bugzilla.novell.com/show_bug.cgi?id=517166) - Generics sharing causes application to crash
+-   [517656](https://bugzilla.novell.com/show_bug.cgi?id=517656) - HTML comment in ASPX file causes ";Literal content not allowed for System.Web.UI.WebControls.ListItemCollection"; Exception
+-   [519336](https://bugzilla.novell.com/show_bug.cgi?id=519336) - Generic sharing causes cctor on parent class to be called only once for multiple generic instances
+-   [519944](https://bugzilla.novell.com/show_bug.cgi?id=519944) - {PATCH} ToolStripItemCollection Find method always throws exception
+-   [520397](https://bugzilla.novell.com/show_bug.cgi?id=520397) - App\_LocalResources is being ignored
+-   [520650](https://bugzilla.novell.com/show_bug.cgi?id=520650) - Process.Start inherits environment even when EnvironmentVariables.Clear has been used
+-   [520690](https://bugzilla.novell.com/show_bug.cgi?id=520690) - using Reflection to Invoke methods with out params throws 'MissingMethodExp 2'. .NET difference
+-   [520760](https://bugzilla.novell.com/show_bug.cgi?id=520760) - HashSet\<T\> implementation of ICollection\<T\>.Add method throws exception when item already in HashSet
+-   [520764](https://bugzilla.novell.com/show_bug.cgi?id=520764) - calling RadioButton.Select isn't setting Checked Property to true .NET difference.
+-   [521231](https://bugzilla.novell.com/show_bug.cgi?id=521231) - System.Configuration skips xml nodes when reading two ConfigurationElementCollections in a row.
+-   [521387](https://bugzilla.novell.com/show_bug.cgi?id=521387) - SplitContainer don't want to be resized
+-   [521662](https://bugzilla.novell.com/show_bug.cgi?id=521662) - invalid opcode generated for x86 SSE intruction PMINSW
+-   [521671](https://bugzilla.novell.com/show_bug.cgi?id=521671) - Ungraceful handling of invalid types in catch statment
+-   [521692](https://bugzilla.novell.com/show_bug.cgi?id=521692) - some function in Mono.Simd.ArrayExtensions class are ignoring offset parameter
+-   [521718](https://bugzilla.novell.com/show_bug.cgi?id=521718) - System.Drawing.Graphics.CopyFromScreenX11
+-   [521750](https://bugzilla.novell.com/show_bug.cgi?id=521750) - SortedList: IComparer.Compare arguments are reversed
+-   [521924](https://bugzilla.novell.com/show_bug.cgi?id=521924) - Path.GetFullPath trims white spaces before files and directories names on Windows
+-   [521951](https://bugzilla.novell.com/show_bug.cgi?id=521951) - Assigning DataTables to ComboBox DataSources causes cast execption
+-   [522017](https://bugzilla.novell.com/show_bug.cgi?id=522017) - XSP2: Modifying the web.config causes ThreadAbortExceptions
+-   [522454](https://bugzilla.novell.com/show_bug.cgi?id=522454) - PropertyGrid: PerformClick on ToolBarButtons doesn't work
+-   [522465](https://bugzilla.novell.com/show_bug.cgi?id=522465) - Inserting Double.MaxValue or Double.MinValues throws and overflow exception
+-   [522624](https://bugzilla.novell.com/show_bug.cgi?id=522624) - SQL Data Adapter issues with NULL columns
+-   [522789](https://bugzilla.novell.com/show_bug.cgi?id=522789) - Invalid IL generated for anonymous generic function
+-   [523052](https://bugzilla.novell.com/show_bug.cgi?id=523052) - Process PerformanceCounters broken
+-   [523386](https://bugzilla.novell.com/show_bug.cgi?id=523386) - Key not found exception when looking up for an action method
+-   [523418](https://bugzilla.novell.com/show_bug.cgi?id=523418) - GZipStream used as Filter for HttpResponse produces invalid gzip
+-   [523687](https://bugzilla.novell.com/show_bug.cgi?id=523687) - Aes.Create() returns null
+-   [524049](https://bugzilla.novell.com/show_bug.cgi?id=524049) - HttpWebRequest and StreamWriter ArgumentException when ContentLength set to 0
+-   [524460](https://bugzilla.novell.com/show_bug.cgi?id=524460) - CacheDuration is not used on WebMethodAttribute
+-   [524984](https://bugzilla.novell.com/show_bug.cgi?id=524984) - ASMX web service proxy call causes delay/failure to return to shell (Mono 2.4.2.2)
+-   [525002](https://bugzilla.novell.com/show_bug.cgi?id=525002) - Treeview behaviour different from .NET
+-   [525305](https://bugzilla.novell.com/show_bug.cgi?id=525305) - nm-applet fails to grant root access, policykit authorisation
+-   [525743](https://bugzilla.novell.com/show_bug.cgi?id=525743) - Disabling ValidateRequest has no effect
+-   [526069](https://bugzilla.novell.com/show_bug.cgi?id=526069) - WebClient.DownloadData / HttpWebRequest.CheckFinalStatus generates incorrect WebException on HTTP error status
+-   [526297](https://bugzilla.novell.com/show_bug.cgi?id=526297) - System.Web.Mvc.HandleErrorAttribute not working due to System.Web.HttpResponseWrapper.TrySkipIisCustomErrors being not implemented
+-   [526563](https://bugzilla.novell.com/show_bug.cgi?id=526563) - Precompiling for /foo and running as /foo doesn't work
+-   [526794](https://bugzilla.novell.com/show_bug.cgi?id=526794) - Inserting empty string saved as null in sql server
+-   [527177](https://bugzilla.novell.com/show_bug.cgi?id=527177) - missing body encoding in mail
+-   [527902](https://bugzilla.novell.com/show_bug.cgi?id=527902) - Setting Thread.CurrentUICulture causes memory leak
+-   [528055](https://bugzilla.novell.com/show_bug.cgi?id=528055) - Obfuscation of field names of anonymous types causes System.MissingFieldException
+-   [528887](https://bugzilla.novell.com/show_bug.cgi?id=528887) - DataGridView hangs on large number of rows (about 500 and more)
+-   [529353](https://bugzilla.novell.com/show_bug.cgi?id=529353) - XSP crashes when accessing 'Message Layout' for WebService
+-   [529927](https://bugzilla.novell.com/show_bug.cgi?id=529927) - TreeNodeCollection.Contains() appears to be broken
+-   [531515](https://bugzilla.novell.com/show_bug.cgi?id=531515) - menu Strip Font inherit
+-   [531587](https://bugzilla.novell.com/show_bug.cgi?id=531587) - richTextBox1.ResetText(); doesn't work
+-   [531983](https://bugzilla.novell.com/show_bug.cgi?id=531983) - Application crashes when i do undoing data in text boxes.
+-   [532180](https://bugzilla.novell.com/show_bug.cgi?id=532180) - System.Configuration.ApplicationSettingsBase not implemented in v2.4.2.3
+-   [533166](https://bugzilla.novell.com/show_bug.cgi?id=533166) - No @webservice directive found for precompiled webservice accessed from client proxy.
+-   [533430](https://bugzilla.novell.com/show_bug.cgi?id=533430) - DataGridView: CellMouseDoubleClick event not fired on a double clicking
+-   [533435](https://bugzilla.novell.com/show_bug.cgi?id=533435) - DataGridView poor performance when setting dataGridView.Columns{}.AutoSizeMode
+-   [533893](https://bugzilla.novell.com/show_bug.cgi?id=533893) - Process.GetCurrentProcess().Modules crashes on Mac OS X Snow Leopard (10.6)
+-   [535102](https://bugzilla.novell.com/show_bug.cgi?id=535102) - Timeout in HttpWebRequest.GetResponse() due to use of method HEAD
+-   [535425](https://bugzilla.novell.com/show_bug.cgi?id=535425) - Slow performance of \<string\>.Contains(), \<string\>.BeginsWith etc. Compared to MS'.NET runtime
+-   [535655](https://bugzilla.novell.com/show_bug.cgi?id=535655) - ProfileCommon class fails to generate when Profile Properties
+-   [535701](https://bugzilla.novell.com/show_bug.cgi?id=535701) - ASP.NET ListView incorrect calculate TotalRowCount, while create child controls
+-   [535884](https://bugzilla.novell.com/show_bug.cgi?id=535884) - Textbox fails to update text when it has string created from ASCIIEncoding().GetString
+-   [535889](https://bugzilla.novell.com/show_bug.cgi?id=535889) - Unable to access output parameter of stored procedure
+-   [536036](https://bugzilla.novell.com/show_bug.cgi?id=536036) - {PATCH} segfault / stack corruption when embedding a Winforms ToolStrip inside a UserControl
+-   [536138](https://bugzilla.novell.com/show_bug.cgi?id=536138) - Local Resource object not found for precompiled web sites
+-   [536143](https://bugzilla.novell.com/show_bug.cgi?id=536143) - Global resources objects do not appear in web pages using explicit localization with precompiled sites
+-   [536194](https://bugzilla.novell.com/show_bug.cgi?id=536194) - Inifite loop in DataSet.Merge() with itself
+-   [536364](https://bugzilla.novell.com/show_bug.cgi?id=536364) - Compiler fails on reference to public static string Btn:Reset
+-   [536547](https://bugzilla.novell.com/show_bug.cgi?id=536547) - DataGridView shows nonexistent columns, Binding Navigator does not worl
+-   [536757](https://bugzilla.novell.com/show_bug.cgi?id=536757) - ResourceProviderFactory CreateLocalResourceProvider method called with wrong parameter
+-   [536776](https://bugzilla.novell.com/show_bug.cgi?id=536776) - Mono crashes when creating too many threads or running too many processes
+-   [537089](https://bugzilla.novell.com/show_bug.cgi?id=537089) - Request.Url incorrect in MVC
+-   [537131](https://bugzilla.novell.com/show_bug.cgi?id=537131) - DesignSurface View property throws exception
+-   [537229](https://bugzilla.novell.com/show_bug.cgi?id=537229) - Serialization Problem with DataTable with special caracters columns
+-   [537283](https://bugzilla.novell.com/show_bug.cgi?id=537283) - Mono applications fail to access network through local squid proxy
+-   [537604](https://bugzilla.novell.com/show_bug.cgi?id=537604) - DragDrop on DesignSurface doesn't seem to work
+-   [537751](https://bugzilla.novell.com/show_bug.cgi?id=537751) - System.Web.Routing: it should not try to parse null or empty string
+-   [537921](https://bugzilla.novell.com/show_bug.cgi?id=537921) - NullReferenceException in System.Timers.Timer.StartTimer()
+-   [538013](https://bugzilla.novell.com/show_bug.cgi?id=538013) - System.Net.NetworkInformation.Ping does not time out correctly
+-   [538037](https://bugzilla.novell.com/show_bug.cgi?id=538037) - ISelectionService only available after IDesignerHost.CreateComponent
+-   [538336](https://bugzilla.novell.com/show_bug.cgi?id=538336) - PropertyGrid unusable when embedded in a MDI child window
+-   [538929](https://bugzilla.novell.com/show_bug.cgi?id=538929) - DesignSurface.Flush() thows exception
+-   [539229](https://bugzilla.novell.com/show_bug.cgi?id=539229) - {PATCH} CryptoStream.Read throws IndexOutOfRangeException for some cases
+-   [539394](https://bugzilla.novell.com/show_bug.cgi?id=539394) - mod\_mono web app hangs when a cross-appdomain call results in a ThreadAbortException
+-   [539550](https://bugzilla.novell.com/show_bug.cgi?id=539550) - native crash when handling exceptions on amd64
+-   [539791](https://bugzilla.novell.com/show_bug.cgi?id=539791) - DirectoryInfo.GetFileSystemInfos() Doesnt throw an exception if pointing to a file
+-   [540593](https://bugzilla.novell.com/show_bug.cgi?id=540593) - System.Console.CapsLock throws exception when accessed
+-   [541194](https://bugzilla.novell.com/show_bug.cgi?id=541194) - mono\_image\_close causes sigsegv on some multi-core systems
+-   [541271](https://bugzilla.novell.com/show_bug.cgi?id=541271) - Src attribute empty for image element using skinid for precompiled site
+-   [541402](https://bugzilla.novell.com/show_bug.cgi?id=541402) - DesignSurface exception when setting the Font property of the surrounding Form
+-   [541577](https://bugzilla.novell.com/show_bug.cgi?id=541577) - Function return inconsistent ulong value, which has dummy parameter of a Class and a ulong (re-occurrence of Bug 426264)
+-   [541607](https://bugzilla.novell.com/show_bug.cgi?id=541607) - securitytrimmingenabled not expected for xmlsitemapprovider
+-   [541969](https://bugzilla.novell.com/show_bug.cgi?id=541969) - {Regression} Problems with SiteMap virtual path mapping
+-   [542076](https://bugzilla.novell.com/show_bug.cgi?id=542076) - 'No data item' error for formview dropdownlist databind during page onload event
+-   [542441](https://bugzilla.novell.com/show_bug.cgi?id=542441) - asp:UpdatePanel - problem (throw System.Web.HttpUnhandledException)
+-   [542461](https://bugzilla.novell.com/show_bug.cgi?id=542461) - Assembly signing configuration properties inconsistent with MSBuild
+-   [542481](https://bugzilla.novell.com/show_bug.cgi?id=542481) - Extended TreeView control has some rendering issues
+-   [542484](https://bugzilla.novell.com/show_bug.cgi?id=542484) - Mono uses ResourceProviderFactory different way than .NET
+-   [542533](https://bugzilla.novell.com/show_bug.cgi?id=542533) - AJAX asp:UpdatePanel's do not work, if one of it is situated in container with Visible=false
+-   [542582](https://bugzilla.novell.com/show_bug.cgi?id=542582) - Postback fails if ValidatorOnSubmit() not defined
+-   [542846](https://bugzilla.novell.com/show_bug.cgi?id=542846) - System.Web.HttpResponse.Redirect doesn't use useFullyQualifiedRedirectUrl setting
+-   [542959](https://bugzilla.novell.com/show_bug.cgi?id=542959) - Incorrect IL generated when creating a delegate
+-   [543133](https://bugzilla.novell.com/show_bug.cgi?id=543133) - P/Invoke fails for out StringBuilder parameter, wrapping .dll with unicode string
+-   [543207](https://bugzilla.novell.com/show_bug.cgi?id=543207) - Garbage collection breaks Oracle client
+-   [543299](https://bugzilla.novell.com/show_bug.cgi?id=543299) - xbuild needs to handle circular imports
+-   [543717](https://bugzilla.novell.com/show_bug.cgi?id=543717) - KeyEventArgs.SuppressKeyPress Doesn't Work on TabControl with Arrow Keys
+-   [543773](https://bugzilla.novell.com/show_bug.cgi?id=543773) - ListView TopItem {set} broken
+-   [544171](https://bugzilla.novell.com/show_bug.cgi?id=544171) - Maximum value for sessionState timeout doesn't match Microsoft's ASP.NET
+-   [544357](https://bugzilla.novell.com/show_bug.cgi?id=544357) - Sponsoring an object in another appdomain does not appear to work
+-   [544446](https://bugzilla.novell.com/show_bug.cgi?id=544446) - Calling a method with generic arguments via remoting does not work
+-   [544518](https://bugzilla.novell.com/show_bug.cgi?id=544518) - certmgr crash parsing command line
+-   [544565](https://bugzilla.novell.com/show_bug.cgi?id=544565) - ToolTips not working when ShowAlways is set to false
+-   [544640](https://bugzilla.novell.com/show_bug.cgi?id=544640) - GetIProperties().GatewayAddresses not implemented for Linux
+-   [544716](https://bugzilla.novell.com/show_bug.cgi?id=544716) - Last columnheader can't be autosized
+-   [545276](https://bugzilla.novell.com/show_bug.cgi?id=545276) - ASP.NET shadow copy checks also st\_mode field
+-   [545370](https://bugzilla.novell.com/show_bug.cgi?id=545370) - MojoPortal: useless password recovery mail
+-   [545429](https://bugzilla.novell.com/show_bug.cgi?id=545429) - Redirected output of spawned process isn't received in parent process
+-   [545703](https://bugzilla.novell.com/show_bug.cgi?id=545703) - xbuild multi-line build events from vs.net fail
+-   [545979](https://bugzilla.novell.com/show_bug.cgi?id=545979) - State writer does not support TypeConverters
+-   [546009](https://bugzilla.novell.com/show_bug.cgi?id=546009) - ComboBox: Set Text property throws exception if using DropDown style and bound to data
+-   [546053](https://bugzilla.novell.com/show_bug.cgi?id=546053) - Same key already exists in the dictionary error when browsing directly to page in sub-folder for precompiled site
+-   [546173](https://bugzilla.novell.com/show_bug.cgi?id=546173) - WebColorConvertor ignores named colors
+-   [547015](https://bugzilla.novell.com/show_bug.cgi?id=547015) - 'Missing Resource' error when running Precompiled Blogengine
+-   [548417](https://bugzilla.novell.com/show_bug.cgi?id=548417) - Runtime crashes in Assembly.GetTypes()
+-   [548768](https://bugzilla.novell.com/show_bug.cgi?id=548768) - Regression : No globalization in ASP.NET project
+-   [549108](https://bugzilla.novell.com/show_bug.cgi?id=549108) - app.config with BOM not read
+-   [549173](https://bugzilla.novell.com/show_bug.cgi?id=549173) - mono\_string\_builder\_to\_utf16() returns unitialized data
+-   [549492](https://bugzilla.novell.com/show_bug.cgi?id=549492) - Gzip files with extra junk hang ReadZStream
+-   [549580](https://bugzilla.novell.com/show_bug.cgi?id=549580) - Overridden WebClient.GetWebRequest method isn't called
+-   [549942](https://bugzilla.novell.com/show_bug.cgi?id=549942) - autoyast module untranslated string ";probe";
+-   [550103](https://bugzilla.novell.com/show_bug.cgi?id=550103) - Different meaning of ";\~"; in System.Web.HttpContext.RewritePath in 2.4 compared to 2.0
+-   [550580](https://bugzilla.novell.com/show_bug.cgi?id=550580) - float expression probably optimized in wrong way
+-   [550730](https://bugzilla.novell.com/show_bug.cgi?id=550730) - Too many instances of ConfigurationSection
+-   [550960](https://bugzilla.novell.com/show_bug.cgi?id=550960) - Dataset binary serialization fails if first row contains nulls.
+-   [550964](https://bugzilla.novell.com/show_bug.cgi?id=550964) - Enum values with ulong/long base type are never equal on x86-32
+-   [550970](https://bugzilla.novell.com/show_bug.cgi?id=550970) - Modulo operation gives incorrect results on x86-32
+-   [551214](https://bugzilla.novell.com/show_bug.cgi?id=551214) - ComboBox don't show the whole letter, all in down are not drawed
+-   [551228](https://bugzilla.novell.com/show_bug.cgi?id=551228) - Race conditions despite locks with Mono 2.4 on IA-64 SGI Altix 4700
+-   [551513](https://bugzilla.novell.com/show_bug.cgi?id=551513) - System.BadImageFormatException when compiled with mono but not MS Visual Studio
+-   [551666](https://bugzilla.novell.com/show_bug.cgi?id=551666) - Gridview does not render thead in ASP.NET
+-   [552457](https://bugzilla.novell.com/show_bug.cgi?id=552457) - MVC not using Views/Web.config
+-   [553022](https://bugzilla.novell.com/show_bug.cgi?id=553022) - System.Web.Routing.RouteCollection.GetVirtualPath wrongly assumes !requestContext.HttpContext.Request.ApplicationPath.EndsWith(";/";)
+-   [553063](https://bugzilla.novell.com/show_bug.cgi?id=553063) - System.Web.HttpCookie+CookieNVC is not marked as Serializable
+-   [553150](https://bugzilla.novell.com/show_bug.cgi?id=553150) - HttpCookieCollection.Add does not allow overwriting existing cookies
+-   [554324](https://bugzilla.novell.com/show_bug.cgi?id=554324) - {REGRESSION} Can't login BlogEngine on mono-2.4.3
+
+Installing Mono 2.4.3
+=====================
+
+**Binary Packages and Source Code Downloads:**
+
+    Source code and pre-compiled packages for Linux, Solaris, 
+    MacOS X and Windows is available from our web site from 
+    the Downloads section.
+
+**Quick source code installation:**
+
+    If we have no packages for your platform, installing from 
+    source code is very simple.   
+
+Compile libgdiplus to support System.Drawing:
+
+``` bash
+    $ tar xzf libgdiplus-2.4.2.tar.gz
+    $ cd libgdiplus-2.4.2
+    $ ./configure
+    $ make
+    $ make install
+```
+
+Then compile Mono itself:
+
+``` bash
+    $ tar xzf mono-2.4.3.tar.gz
+    $ cd mono-2.4.3
+    $ ./configure
+    $ make
+    $ make install
+```
+
