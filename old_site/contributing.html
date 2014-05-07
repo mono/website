@@ -53,11 +53,15 @@ looking at ways of helping the project, you have come to the right web page.
 </ul>
 </td></tr></table>
 <h1> <span class="mw-headline" id="Important_Rules"> Important Rules </span></h1>
-<ul><li> If you have looked at Microsoft's proprietary implementation of .NET or their shared source code (which is also proprietary), you will not be able to contribute to Mono. If you would like to contribute in this area, be careful to not look into them in Visual Studio debugging experience.
+<ul><li>  <b>Microsoft .NET source code:</b> If you have looked at Microsoft's proprietary implementation of .NET or their shared source code (which is also proprietary), you will not be able to contribute to Mono. If you would like to contribute in this area, be careful to not look into them in Visual Studio debugging experience.
 </li></ul>
+<ul><li> <b>Contributing to the Mono runtime:</b> If you are submitting changes to the runtime, you must make sure to release your change under the MIT license before it is integrated. You may do so by adding this line to your commit messages:
+</li></ul>
+<pre><i>This change in released under the MIT license.</i>
+</pre>
 <ul><li> In general, be careful when you are implementing free software and you have access to proprietary code. We need to make sure that we are not using someone else's copyrighted code accidentally. 
 </li></ul>
-<ul><li> Do not use the <b>ildasm</b>, <b>reflector</b> or other equivalent tools program to disassemble proprietary code when you are planning to reimplement a class for Mono. If you have done this, we will not be able to use your code.
+<ul><li> <b>Reverse Engineering:</b> Do not use the <b>ildasm</b>, <b>reflector</b> or other equivalent tools program to disassemble proprietary code when you are planning to reimplement a class for Mono. If you have done this, we will not be able to use your code.
 </li></ul>
 <ul><li> Please stick to published documentation for implementing any classes; when in doubt, post to the mailing list and discuss the possible approaches with others.
 </li></ul>

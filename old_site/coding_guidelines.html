@@ -83,7 +83,7 @@ This document contains the coding guidelines for the Mono Project.   It contains
 </p><p>You may also wish to read the <a href="http://msdn.microsoft.com/en-us/library/ms229042.aspx" class="external text" rel="nofollow">.Net Framework Design Guidelines</a> as well, however the Mono guidelines below take precedent for Mono code if there is a conflict.
 </p>
 <h2> <span class="mw-headline" id="Indentation"> Indentation </span></h2>
-<p>Use 8 space tabs for writing your code (hopefully we can keep this consistent).  If you are modifying someone else's code, try to keep the coding style similar.
+<p>Use tabs (and configure your IDE to show a size of 8 spaces for them) for writing your code (hopefully we can keep this consistent).  If you are modifying someone else's code, try to keep the coding style similar.
 </p><p>Since we are using 8-space tabs, you might want to consider the Linus Torvalds trick to reduce code nesting.  Many times in a loop, you will find yourself doing a test, and if the test is true, you will nest. Many times this can be changed.  Example:
 </p>
 <pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">for</span> <span style="color: #008000;">&#40;</span>i <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span> i <span style="color: #008000;">&lt;</span> <span style="color: #FF0000;">10</span><span style="color: #008000;">;</span> i<span style="color: #008000;">++</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
