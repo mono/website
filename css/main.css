@@ -44,9 +44,23 @@
   margin-bottom: 20px;
 }
 
+.meta span {
+  margin-right: 10px;
+}
+
+.meta .author:before { 
+  font: 1.0em FontAwesome;
+  content: "\f007"
+}
+
 .meta .date:before { 
   font: 1.0em FontAwesome;
   content: "\f073"
+}
+
+.meta .categories:before { 
+  font: 1.0em FontAwesome;
+  content: "\f02c"
 }
 
 .meta a {
