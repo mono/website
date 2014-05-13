@@ -89,6 +89,23 @@ h1 small {
   font-size: 40%;
 }
 
+#main-wrapper {
+  min-height: 100%;
+  margin: 0 auto -100px;
+}
+
+#push {
+  height: 140px;
+}
+
+footer {
+  background-color: #EBEBEB;
+  color: #707070;
+  border-top: 1px solid #D9D8D7;
+  height: 100px;
+  padding: 25px 0;
+}
+
 footer ul {
   font-size: 0.85em;
 }
