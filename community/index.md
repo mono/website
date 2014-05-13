@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Community
-navgroup: Community
+navgroup: community
 ---
 
 ### Contribute to the Project
