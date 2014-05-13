@@ -11,7 +11,7 @@ See the [contributing guidelines](https://github.com/mono/mono/blob/master/CONTR
 
 ### Report Bugs
 
-Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report on [Xamarin's Bugzilla](https://bugzilla.xamarin.com").
+Whenever you encounter something that doesn't work as it should, we'd love it if you could file a bug report on [Xamarin's Bugzilla](https://bugzilla.xamarin.com).
 
 ### Get Help
 
