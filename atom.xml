@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Mono Project News]]></title>
+  <link href="{{ site.github.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.github.url }}/news"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.github.url }}/</id>
+  <author>
+    <name><![CDATA[Mono Project]]></name>
+  </author>
+  <generator uri="http://jekyllrb.com/">Jekyll</generator>
+
+  {% for post in site.posts limit: 20 %}
+  <entry>
+    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
+    <link href="{{ site.github.url }}{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>{{ site.github.url }}{{ post.id }}</id>
+    <content type="html"><![CDATA[{{ post.content | expand_urls: site.github.url | cdata_escape }}]]></content>
+  </entry>
+  {% endfor %}
+</feed>
