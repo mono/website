@@ -17,53 +17,53 @@ This document describes the new features in Gtk\# 2, the upgrade to Gtk+'s .NET 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Gtk.23_2.12_additions">1 Gtk# 2.12 additions</a>
+<li><a href="#gtk-212-additions">1 Gtk# 2.12 additions</a>
 <ul>
-<li><a href="#Memory_and_Reference_Management_Improvements">1.1 Memory and Reference Management Improvements</a></li>
-<li><a href="#Gtk.Object_destruction_enhancements">1.2 Gtk.Object destruction enhancements</a></li>
-<li><a href="#Revamped_the_GLib.Object_finalization_mechanism">1.3 Revamped the GLib.Object finalization mechanism</a></li>
-<li><a href="#Better_exception_handling">1.4 Better exception handling</a></li>
-<li><a href="#Structure_marshaling">1.5 Structure marshaling</a></li>
-<li><a href="#GInterface_Registration">1.6 GInterface Registration</a></li>
-<li><a href="#GObject_property_registration">1.7 GObject property registration</a></li>
+<li><a href="#memory-and-reference-management-improvements">1.1 Memory and Reference Management Improvements</a></li>
+<li><a href="#gtkobject-destruction-enhancements">1.2 Gtk.Object destruction enhancements</a></li>
+<li><a href="#revamped-the-glibobject-finalization-mechanism">1.3 Revamped the GLib.Object finalization mechanism</a></li>
+<li><a href="#better-exception-handling">1.4 Better exception handling</a></li>
+<li><a href="#structure-marshaling">1.5 Structure marshaling</a></li>
+<li><a href="#ginterface-registration">1.6 GInterface Registration</a></li>
+<li><a href="#gobject-property-registration">1.7 GObject property registration</a></li>
 </ul></li>
-<li><a href="#Gtk.23_2.6_additions">2 Gtk# 2.6 additions</a>
+<li><a href="#gtk-26-additions">2 Gtk# 2.6 additions</a>
 <ul>
-<li><a href="#AboutDialog">2.1 AboutDialog</a></li>
-<li><a href="#New_Cell_renderer_types">2.2 New Cell renderer types</a></li>
-<li><a href="#IconView">2.3 IconView</a></li>
+<li><a href="#aboutdialog">2.1 AboutDialog</a></li>
+<li><a href="#new-cell-renderer-types">2.2 New Cell renderer types</a></li>
+<li><a href="#iconview">2.3 IconView</a></li>
 </ul></li>
-<li><a href="#New_Binding_Features">3 New Binding Features</a>
+<li><a href="#new-binding-features">3 New Binding Features</a>
 <ul>
-<li><a href="#Public_Field_generation_for_Objects_and_Opaques">3.1 Public Field generation for Objects and Opaques</a></li>
-<li><a href="#Enhanced_Ref_handling_and_Memory_Management">3.2 Enhanced Ref handling and Memory Management</a></li>
-<li><a href="#Callback_Lifecycle_management">3.3 Callback Lifecycle management</a></li>
-<li><a href="#String_marshaling_overhaul">3.4 String marshaling overhaul</a></li>
-<li><a href="#CDecl_Calling_Convention_for_Delegates">3.5 CDecl Calling Convention for Delegates</a></li>
-<li><a href="#Automatic_null_handling_for_Objects.2C_Opaques.2C_and_Interfaces">3.6 Automatic null handling for Objects, Opaques, and Interfaces</a></li>
-<li><a href="#Container_Child_Property_generation">3.7 Container Child Property generation</a></li>
-<li><a href="#64_bit_marshaling_support">3.8 64 bit marshaling support</a></li>
-<li><a href="#List_to_Array_marshaling">3.9 List to Array marshaling</a></li>
-<li><a href="#Anonymous_delegate_parameter_parsing_and_generation">3.10 Anonymous delegate parameter parsing and generation</a></li>
+<li><a href="#public-field-generation-for-objects-and-opaques">3.1 Public Field generation for Objects and Opaques</a></li>
+<li><a href="#enhanced-ref-handling-and-memory-management">3.2 Enhanced Ref handling and Memory Management</a></li>
+<li><a href="#callback-lifecycle-management">3.3 Callback Lifecycle management</a></li>
+<li><a href="#string-marshaling-overhaul">3.4 String marshaling overhaul</a></li>
+<li><a href="#cdecl-calling-convention-for-delegates">3.5 CDecl Calling Convention for Delegates</a></li>
+<li><a href="#automatic-null-handling-for-objects-opaques-and-interfaces">3.6 Automatic null handling for Objects, Opaques, and Interfaces</a></li>
+<li><a href="#container-child-property-generation">3.7 Container Child Property generation</a></li>
+<li><a href="#64-bit-marshaling-support">3.8 64 bit marshaling support</a></li>
+<li><a href="#list-to-array-marshaling">3.9 List to Array marshaling</a></li>
+<li><a href="#anonymous-delegate-parameter-parsing-and-generation">3.10 Anonymous delegate parameter parsing and generation</a></li>
 </ul></li>
-<li><a href="#Gtk.2B_2.4_API_Additions">4 Gtk+ 2.4 API Additions</a>
+<li><a href="#gtk-24-api-additions">4 Gtk+ 2.4 API Additions</a>
 <ul>
-<li><a href="#Actions_and_UIManager">4.1 Actions and UIManager</a></li>
-<li><a href="#ComboBox">4.2 ComboBox</a></li>
-<li><a href="#FileChooser">4.3 FileChooser</a></li>
-<li><a href="#Toolbar">4.4 Toolbar</a></li>
+<li><a href="#actions-and-uimanager">4.1 Actions and UIManager</a></li>
+<li><a href="#combobox">4.2 ComboBox</a></li>
+<li><a href="#filechooser">4.3 FileChooser</a></li>
+<li><a href="#toolbar">4.4 Toolbar</a></li>
 </ul></li>
-<li><a href="#Newly_bound_libraries">5 Newly bound libraries</a>
+<li><a href="#newly-bound-libraries">5 Newly bound libraries</a>
 <ul>
-<li><a href="#Gnome.Vfs">5.1 Gnome.Vfs</a></li>
-<li><a href="#Gnome.PanelApplet">5.2 Gnome.PanelApplet</a></li>
+<li><a href="#gnomevfs">5.1 Gnome.Vfs</a></li>
+<li><a href="#gnomepanelapplet">5.2 Gnome.PanelApplet</a></li>
 </ul></li>
-<li><a href="#New_Extensions_to_the_Bindings">6 New Extensions to the Bindings</a>
+<li><a href="#new-extensions-to-the-bindings">6 New Extensions to the Bindings</a>
 <ul>
-<li><a href="#NodeView_and_NodeSelection">6.1 NodeView and NodeSelection</a></li>
-<li><a href="#Gtk.Dotnet">6.2 Gtk.Dotnet</a></li>
-<li><a href="#Key_Binding_Support">6.3 Key Binding Support</a></li>
-<li><a href="#Application.Invoke">6.4 Application.Invoke</a></li>
+<li><a href="#nodeview-and-nodeselection">6.1 NodeView and NodeSelection</a></li>
+<li><a href="#gtkdotnet">6.2 Gtk.Dotnet</a></li>
+<li><a href="#key-binding-support">6.3 Key Binding Support</a></li>
+<li><a href="#applicationinvoke">6.4 Application.Invoke</a></li>
 </ul></li>
 </ul></td>
 </tr>

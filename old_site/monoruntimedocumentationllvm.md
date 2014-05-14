@@ -15,37 +15,37 @@ Mono:Runtime:Documentation:LLVM
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#LLVM_Backend">1 LLVM Backend</a>
+<li><a href="#llvm-backend">1 LLVM Backend</a>
 <ul>
-<li><a href="#Usage">1.1 Usage</a></li>
-<li><a href="#Architecture">1.2 Architecture</a></li>
-<li><a href="#Sources">1.3 Sources</a></li>
-<li><a href="#The_LLVM_Mono_Branch">1.4 The LLVM Mono Branch</a>
+<li><a href="#usage">1.1 Usage</a></li>
+<li><a href="#architecture">1.2 Architecture</a></li>
+<li><a href="#sources">1.3 Sources</a></li>
+<li><a href="#the-llvm-mono-branch">1.4 The LLVM Mono Branch</a>
 <ul>
-<li><a href="#Changes_relative_to_stock_LLVM">1.4.1 Changes relative to stock LLVM</a></li>
-<li><a href="#Branches">1.4.2 Branches</a></li>
-<li><a href="#Maintaining_the_repository">1.4.3 Maintaining the repository</a></li>
+<li><a href="#changes-relative-to-stock-llvm">1.4.1 Changes relative to stock LLVM</a></li>
+<li><a href="#branches">1.4.2 Branches</a></li>
+<li><a href="#maintaining-the-repository">1.4.3 Maintaining the repository</a></li>
 </ul></li>
-<li><a href="#Restrictions">1.5 Restrictions</a>
+<li><a href="#restrictions">1.5 Restrictions</a>
 <ul>
-<li><a href="#Exception_Handlers">1.5.1 Exception Handlers</a></li>
-<li><a href="#Generics_sharing">1.5.2 Generics sharing</a></li>
-<li><a href="#Varargs">1.5.3 Varargs</a></li>
+<li><a href="#exception-handlers">1.5.1 Exception Handlers</a></li>
+<li><a href="#generics-sharing">1.5.2 Generics sharing</a></li>
+<li><a href="#varargs">1.5.3 Varargs</a></li>
 </ul></li>
-<li><a href="#Implementation_details">1.6 Implementation details</a>
+<li><a href="#implementation-details">1.6 Implementation details</a>
 <ul>
-<li><a href="#Virtual_calls">1.6.1 Virtual calls</a></li>
-<li><a href="#Interface_calls">1.6.2 Interface calls</a></li>
-<li><a href="#Unwind_info">1.6.3 Unwind info</a></li>
-<li><a href="#Exception_Handling">1.6.4 Exception Handling</a></li>
+<li><a href="#virtual-calls">1.6.1 Virtual calls</a></li>
+<li><a href="#interface-calls">1.6.2 Interface calls</a></li>
+<li><a href="#unwind-info">1.6.3 Unwind info</a></li>
+<li><a href="#exception-handling">1.6.4 Exception Handling</a></li>
 </ul></li>
-<li><a href="#Generic_Sharing">1.7 Generic Sharing</a></li>
-<li><a href="#AOT_Support">1.8 AOT Support</a></li>
-<li><a href="#Porting_the_backend_to_new_architectures">1.9 Porting the backend to new architectures</a></li>
-<li><a href="#LLVM_problems">1.10 LLVM problems</a></li>
-<li><a href="#Future_Work">1.11 Future Work</a>
+<li><a href="#generic-sharing">1.7 Generic Sharing</a></li>
+<li><a href="#aot-support">1.8 AOT Support</a></li>
+<li><a href="#porting-the-backend-to-new-architectures">1.9 Porting the backend to new architectures</a></li>
+<li><a href="#llvm-problems">1.10 LLVM problems</a></li>
+<li><a href="#future-work">1.11 Future Work</a>
 <ul>
-<li><a href="#Array_Bounds_Check_.28ABC.29_elimination">1.11.1 Array Bounds Check (ABC) elimination</a></li>
+<li><a href="#array-bounds-check-abc-elimination">1.11.1 Array Bounds Check (ABC) elimination</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

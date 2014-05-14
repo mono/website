@@ -17,18 +17,18 @@ Gendarme.Rules.Smells
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidCodeDuplicatedInSameClassRule">1.1 AvoidCodeDuplicatedInSameClassRule</a></li>
-<li><a href="#AvoidCodeDuplicatedInSiblingClassesRule">1.2 AvoidCodeDuplicatedInSiblingClassesRule</a></li>
-<li><a href="#AvoidLargeClassesRule">1.3 AvoidLargeClassesRule</a></li>
-<li><a href="#AvoidLongMethodsRule">1.4 AvoidLongMethodsRule</a></li>
-<li><a href="#AvoidLongParameterListsRule">1.5 AvoidLongParameterListsRule</a></li>
-<li><a href="#AvoidMessageChainsRule">1.6 AvoidMessageChainsRule</a></li>
-<li><a href="#AvoidSpeculativeGeneralityRule">1.7 AvoidSpeculativeGeneralityRule</a></li>
-<li><a href="#AvoidSwitchStatementsRule">1.8 AvoidSwitchStatementsRule</a></li>
+<li><a href="#avoidcodeduplicatedinsameclassrule">1.1 AvoidCodeDuplicatedInSameClassRule</a></li>
+<li><a href="#avoidcodeduplicatedinsiblingclassesrule">1.2 AvoidCodeDuplicatedInSiblingClassesRule</a></li>
+<li><a href="#avoidlargeclassesrule">1.3 AvoidLargeClassesRule</a></li>
+<li><a href="#avoidlongmethodsrule">1.4 AvoidLongMethodsRule</a></li>
+<li><a href="#avoidlongparameterlistsrule">1.5 AvoidLongParameterListsRule</a></li>
+<li><a href="#avoidmessagechainsrule">1.6 AvoidMessageChainsRule</a></li>
+<li><a href="#avoidspeculativegeneralityrule">1.7 AvoidSpeculativeGeneralityRule</a></li>
+<li><a href="#avoidswitchstatementsrule">1.8 AvoidSwitchStatementsRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

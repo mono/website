@@ -17,10 +17,10 @@ The following text refers to the Old Mono Basic compiler, an effort that has now
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Compiler">1 The Compiler</a></li>
-<li><a href="#Compiler_Status">2 Compiler Status</a></li>
-<li><a href="#Runtime_Status">3 Runtime Status</a></li>
-<li><a href="#Team">4 Team</a></li>
+<li><a href="#the-compiler">1 The Compiler</a></li>
+<li><a href="#compiler-status">2 Compiler Status</a></li>
+<li><a href="#runtime-status">3 Runtime Status</a></li>
+<li><a href="#team">4 Team</a></li>
 </ul></td>
 </tr>
 </tbody>

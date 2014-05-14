@@ -15,28 +15,28 @@ FAQ: Technical
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Runtime">1 Mono Runtime</a></li>
-<li><a href="#Mono_Platforms">2 Mono Platforms</a></li>
-<li><a href="#Compatibility">3 Compatibility</a></li>
-<li><a href="#Development_Tools">4 Development Tools</a></li>
-<li><a href="#Web_Services">5 Web Services</a></li>
-<li><a href="#MonoDoc">6 MonoDoc</a></li>
-<li><a href="#Development_Tools_and_Issues">7 Development Tools and Issues</a></li>
-<li><a href="#Mono_and_ASP.NET">8 Mono and ASP.NET</a></li>
-<li><a href="#Mono_and_ADO.NET">9 Mono and ADO.NET</a></li>
-<li><a href="#Mono_and_EnterpriseServices">10 Mono and EnterpriseServices</a></li>
-<li><a href="#Mono_and_Java">11 Mono and Java</a></li>
-<li><a href="#Mono_and_the_Enterprise_Application_Blocks">12 Mono and the Enterprise Application Blocks</a></li>
-<li><a href="#Extending_Mono">13 Extending Mono</a></li>
-<li><a href="#Portability">14 Portability</a></li>
-<li><a href="#Reusing_Existing_Code">15 Reusing Existing Code</a></li>
-<li><a href="#Operating_System_Questions">16 Operating System Questions</a></li>
-<li><a href="#Mono_and_GCC">17 Mono and GCC</a></li>
-<li><a href="#Mono_and_the_Basic_Language">18 Mono and the Basic Language</a></li>
-<li><a href="#Performance">19 Performance</a></li>
-<li><a href="#Mono_and_Portable.NET">20 Mono and Portable.NET</a></li>
-<li><a href="#Common_Problems">21 Common Problems</a></li>
-<li><a href="#Credits">22 Credits</a></li>
+<li><a href="#mono-runtime">1 Mono Runtime</a></li>
+<li><a href="#mono-platforms">2 Mono Platforms</a></li>
+<li><a href="#compatibility">3 Compatibility</a></li>
+<li><a href="#development-tools">4 Development Tools</a></li>
+<li><a href="#web-services">5 Web Services</a></li>
+<li><a href="#monodoc">6 MonoDoc</a></li>
+<li><a href="#development-tools-and-issues">7 Development Tools and Issues</a></li>
+<li><a href="#mono-and-aspnet">8 Mono and ASP.NET</a></li>
+<li><a href="#mono-and-adonet">9 Mono and ADO.NET</a></li>
+<li><a href="#mono-and-enterpriseservices">10 Mono and EnterpriseServices</a></li>
+<li><a href="#mono-and-java">11 Mono and Java</a></li>
+<li><a href="#mono-and-the-enterprise-application-blocks">12 Mono and the Enterprise Application Blocks</a></li>
+<li><a href="#extending-mono">13 Extending Mono</a></li>
+<li><a href="#portability">14 Portability</a></li>
+<li><a href="#reusing-existing-code">15 Reusing Existing Code</a></li>
+<li><a href="#operating-system-questions">16 Operating System Questions</a></li>
+<li><a href="#mono-and-gcc">17 Mono and GCC</a></li>
+<li><a href="#mono-and-the-basic-language">18 Mono and the Basic Language</a></li>
+<li><a href="#performance">19 Performance</a></li>
+<li><a href="#mono-and-portablenet">20 Mono and Portable.NET</a></li>
+<li><a href="#common-problems">21 Common Problems</a></li>
+<li><a href="#credits">22 Credits</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,12 +15,12 @@ MonoTouch Tutorial HelloIB
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Creating_a_UI_with_Interface_Builder">1 Creating a UI with Interface Builder</a></li>
-<li><a href="#Loading_Interfaces">2 Loading Interfaces</a></li>
-<li><a href="#Naming_Your_Components">3 Naming Your Components</a></li>
-<li><a href="#Responding_to_Events">4 Responding to Events</a></li>
-<li><a href="#Important">5 Important</a></li>
-<li><a href="#What_happens_behind_the_scenes">6 What happens behind the scenes</a></li>
+<li><a href="#creating-a-ui-with-interface-builder">1 Creating a UI with Interface Builder</a></li>
+<li><a href="#loading-interfaces">2 Loading Interfaces</a></li>
+<li><a href="#naming-your-components">3 Naming Your Components</a></li>
+<li><a href="#responding-to-events">4 Responding to Events</a></li>
+<li><a href="#important">5 Important</a></li>
+<li><a href="#what-happens-behind-the-scenes">6 What happens behind the scenes</a></li>
 </ul></td>
 </tr>
 </tbody>

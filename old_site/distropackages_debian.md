@@ -15,12 +15,12 @@ DistroPackages/Debian
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_for_Debian">1 Mono for Debian</a>
+<li><a href="#mono-for-debian">1 Mono for Debian</a>
 <ul>
-<li><a href="#Official_Packages">1.1 Official Packages</a></li>
-<li><a href="#Backport_Packages">1.2 Backport Packages</a></li>
-<li><a href="#Unofficial_Packages_.28Mono_3.0.29">1.3 Unofficial Packages (Mono 3.0)</a></li>
-<li><a href="#Further_Links">1.4 Further Links</a></li>
+<li><a href="#official-packages">1.1 Official Packages</a></li>
+<li><a href="#backport-packages">1.2 Backport Packages</a></li>
+<li><a href="#unofficial-packages-mono-30">1.3 Unofficial Packages (Mono 3.0)</a></li>
+<li><a href="#further-links">1.4 Further Links</a></li>
 </ul></li>
 </ul></td>
 </tr>

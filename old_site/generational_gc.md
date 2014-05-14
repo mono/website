@@ -24,77 +24,77 @@ On MacOS X SGen provides several DTrace probes, described in the document [SGen 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Garbage_Collection">1 Garbage Collection</a></li>
-<li><a href="#Copying_Collection">2 Copying Collection</a></li>
-<li><a href="#Nursery_Collection">3 Nursery Collection</a>
+<li><a href="#garbage-collection">1 Garbage Collection</a></li>
+<li><a href="#copying-collection">2 Copying Collection</a></li>
+<li><a href="#nursery-collection">3 Nursery Collection</a>
 <ul>
-<li><a href="#Allocation">3.1 Allocation</a></li>
-<li><a href="#Collection">3.2 Collection</a>
+<li><a href="#allocation">3.1 Allocation</a></li>
+<li><a href="#collection">3.2 Collection</a>
 <ul>
-<li><a href="#Coloring">3.2.1 Coloring</a></li>
-<li><a href="#The_Roots">3.2.2 The Roots</a></li>
-<li><a href="#Forwarding">3.2.3 Forwarding</a></li>
-<li><a href="#The_Loop">3.2.4 The Loop</a></li>
-<li><a href="#Pinning">3.2.5 Pinning</a></li>
-<li><a href="#Finishing_Up">3.2.6 Finishing Up</a></li>
+<li><a href="#coloring">3.2.1 Coloring</a></li>
+<li><a href="#the-roots">3.2.2 The Roots</a></li>
+<li><a href="#forwarding">3.2.3 Forwarding</a></li>
+<li><a href="#the-loop">3.2.4 The Loop</a></li>
+<li><a href="#pinning">3.2.5 Pinning</a></li>
+<li><a href="#finishing-up">3.2.6 Finishing Up</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Large_Objects">4 Large Objects</a>
+<li><a href="#large-objects">4 Large Objects</a>
 <ul>
-<li><a href="#Implementation_Details">4.1 Implementation Details</a></li>
+<li><a href="#implementation-details">4.1 Implementation Details</a></li>
 </ul></li>
-<li><a href="#Mark_And_Sweep_Collector">5 Mark And Sweep Collector</a>
+<li><a href="#mark-and-sweep-collector">5 Mark And Sweep Collector</a>
 <ul>
-<li><a href="#Blocks">5.1 Blocks</a></li>
-<li><a href="#Fixed_Heap">5.2 Fixed Heap</a></li>
-<li><a href="#Non-Reference_Objects">5.3 Non-Reference Objects</a></li>
-<li><a href="#Evacuation">5.4 Evacuation</a></li>
-<li><a href="#Parallel_Mark">5.5 Parallel Mark</a></li>
-<li><a href="#Concurrent_Sweeps">5.6 Concurrent Sweeps</a></li>
+<li><a href="#blocks">5.1 Blocks</a></li>
+<li><a href="#fixed-heap">5.2 Fixed Heap</a></li>
+<li><a href="#non-reference-objects">5.3 Non-Reference Objects</a></li>
+<li><a href="#evacuation">5.4 Evacuation</a></li>
+<li><a href="#parallel-mark">5.5 Parallel Mark</a></li>
+<li><a href="#concurrent-sweeps">5.6 Concurrent Sweeps</a></li>
 </ul></li>
-<li><a href="#Internal_mono_GC_interface">6 Internal mono GC interface</a></li>
-<li><a href="#Collection_2">7 Collection</a>
+<li><a href="#internal-mono-gc-interface">6 Internal mono GC interface</a></li>
+<li><a href="#collection_2">7 Collection</a>
 <ul>
-<li><a href="#Major_Collection">7.1 Major Collection</a></li>
-<li><a href="#Stopping_the_world.">7.2 Stopping the world.</a></li>
-<li><a href="#Roots">7.3 Roots</a></li>
-<li><a href="#Inside_the_Nursery">7.4 Inside the Nursery</a>
+<li><a href="#major-collection">7.1 Major Collection</a></li>
+<li><a href="#stopping-the-world">7.2 Stopping the world.</a></li>
+<li><a href="#roots">7.3 Roots</a></li>
+<li><a href="#inside-the-nursery">7.4 Inside the Nursery</a>
 <ul>
-<li><a href="#Implementation_Details_2">7.4.1 Implementation Details</a></li>
+<li><a href="#implementation-details_2">7.4.1 Implementation Details</a></li>
 </ul></li>
-<li><a href="#Write_Barriers">7.5 Write Barriers</a></li>
-<li><a href="#Flagging_Objects">7.6 Flagging Objects</a></li>
-<li><a href="#Conservative_Scanning">7.7 Conservative Scanning</a></li>
-<li><a href="#Scanning_Objects">7.8 Scanning Objects</a></li>
-<li><a href="#Dray_Gray_Stack">7.9 Dray Gray Stack</a></li>
-<li><a href="#Pinned_Objects">7.10 Pinned Objects</a></li>
-<li><a href="#Finalizers">7.11 Finalizers</a></li>
+<li><a href="#write-barriers">7.5 Write Barriers</a></li>
+<li><a href="#flagging-objects">7.6 Flagging Objects</a></li>
+<li><a href="#conservative-scanning">7.7 Conservative Scanning</a></li>
+<li><a href="#scanning-objects">7.8 Scanning Objects</a></li>
+<li><a href="#dray-gray-stack">7.9 Dray Gray Stack</a></li>
+<li><a href="#pinned-objects">7.10 Pinned Objects</a></li>
+<li><a href="#finalizers">7.11 Finalizers</a></li>
 </ul></li>
-<li><a href="#Implementation_Details_3">8 Implementation Details</a>
+<li><a href="#implementation-details_3">8 Implementation Details</a>
 <ul>
-<li><a href="#Low-level_Memory_Allocation">8.1 Low-level Memory Allocation</a></li>
-<li><a href="#GCMemSections">8.2 GCMemSections</a></li>
-<li><a href="#Large_Object_Allocation">8.3 Large Object Allocation</a></li>
-<li><a href="#Fragments">8.4 Fragments</a></li>
-<li><a href="#Descriptors">8.5 Descriptors</a>
+<li><a href="#low-level-memory-allocation">8.1 Low-level Memory Allocation</a></li>
+<li><a href="#gcmemsections">8.2 GCMemSections</a></li>
+<li><a href="#large-object-allocation">8.3 Large Object Allocation</a></li>
+<li><a href="#fragments">8.4 Fragments</a></li>
+<li><a href="#descriptors">8.5 Descriptors</a>
 <ul>
-<li><a href="#Creating_Root_Descriptors">8.5.1 Creating Root Descriptors</a></li>
+<li><a href="#creating-root-descriptors">8.5.1 Creating Root Descriptors</a></li>
 </ul></li>
-<li><a href="#GCVTable">8.6 GCVTable</a></li>
+<li><a href="#gcvtable">8.6 GCVTable</a></li>
 </ul></li>
-<li><a href="#Runtime_Interface">9 Runtime Interface</a>
+<li><a href="#runtime-interface">9 Runtime Interface</a>
 <ul>
-<li><a href="#MonoMList">9.1 MonoMList</a></li>
-<li><a href="#MonoGHashTable">9.2 MonoGHashTable</a></li>
+<li><a href="#monomlist">9.1 MonoMList</a></li>
+<li><a href="#monoghashtable">9.2 MonoGHashTable</a></li>
 </ul></li>
-<li><a href="#Precise_Stack_Marking">10 Precise Stack Marking</a>
+<li><a href="#precise-stack-marking">10 Precise Stack Marking</a>
 <ul>
-<li><a href="#Sources">10.1 Sources</a></li>
-<li><a href="#GC_Maps">10.2 GC Maps</a></li>
-<li><a href="#Stack_Frames">10.3 Stack Frames</a></li>
-<li><a href="#Stack_Marking">10.4 Stack Marking</a></li>
-<li><a href="#Testing">10.5 Testing</a></li>
-<li><a href="#Efficiency">10.6 Efficiency</a></li>
+<li><a href="#sources">10.1 Sources</a></li>
+<li><a href="#gc-maps">10.2 GC Maps</a></li>
+<li><a href="#stack-frames">10.3 Stack Frames</a></li>
+<li><a href="#stack-marking">10.4 Stack Marking</a></li>
+<li><a href="#testing">10.5 Testing</a></li>
+<li><a href="#efficiency">10.6 Efficiency</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -111,7 +111,7 @@ Here are some of its features:
 -   Two generations.
 -   Multi-threaded
 -   Mostly precise scanning (stacks and registers are scanned conservatively).
-    -   Upcoming versions of Mono remove this limitation, see the *[Precise Stack Marking](#Precise_Stack_Marking)* section for more information.
+    -   Upcoming versions of Mono remove this limitation, see the *[Precise Stack Marking](#precise-stack-marking)* section for more information.
 -   Two major collectors:
     -   Copying for nursery/minor collections
     -   Mark and Sweet for the old generation and major collector
@@ -628,7 +628,7 @@ The structure looks like this:
 
 The grey area represents the pieces of this particular section that have been used. The `next` field is used to keep track of all the `GCMemSection` structures allocated in a linked list.
 
-The `scan_starts` array is used as an optimization to minimize the memory that must be scanned for pinned objects, this is discussed in the [Conservative Scanning](#Conservative_Scanning) section.
+The `scan_starts` array is used as an optimization to minimize the memory that must be scanned for pinned objects, this is discussed in the [Conservative Scanning](#conservative-scanning) section.
 
 When a nursery collection happens, the live and movable objects from the nursery are copied into a new GCMemSection.
 

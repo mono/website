@@ -18,11 +18,11 @@ FAQ: Licensing
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Licensing">1 Licensing</a></li>
-<li><a href="#Patents">2 Patents</a></li>
-<li><a href="#Old_Background">3 Old Background</a>
+<li><a href="#licensing">1 Licensing</a></li>
+<li><a href="#patents">2 Patents</a></li>
+<li><a href="#old-background">3 Old Background</a>
 <ul>
-<li><a href="#Credits">3.1 Credits</a></li>
+<li><a href="#credits">3.1 Credits</a></li>
 </ul></li>
 </ul></td>
 </tr>

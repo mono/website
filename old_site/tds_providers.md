@@ -15,13 +15,13 @@ TDS Providers
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Design_of_the_Microsoft_SQL_Server.2C_Sybase.2C_and_TDS_Data_Providers_in_Mono">1 Design of the Microsoft SQL Server, Sybase, and TDS Data Providers in Mono</a></li>
-<li><a href="#New_ADO.NET_Providers">2 New ADO.NET Providers</a></li>
-<li><a href="#Building_The_New_Providers">3 Building The New Providers</a></li>
-<li><a href="#Classes_in_Mono.Data.TdsClient.Internal_will:">4 Classes in Mono.Data.TdsClient.Internal will:</a></li>
-<li><a href="#Implementation_Details_of_the_TDS_Protocol">5 Implementation Details of the TDS Protocol</a></li>
-<li><a href="#More_Information">6 More Information</a></li>
-<li><a href="#Contribute">7 Contribute</a></li>
+<li><a href="#design-of-the-microsoft-sql-server-sybase-and-tds-data-providers-in-mono">1 Design of the Microsoft SQL Server, Sybase, and TDS Data Providers in Mono</a></li>
+<li><a href="#new-adonet-providers">2 New ADO.NET Providers</a></li>
+<li><a href="#building-the-new-providers">3 Building The New Providers</a></li>
+<li><a href="#classes-in-monodatatdsclientinternal-will">4 Classes in Mono.Data.TdsClient.Internal will:</a></li>
+<li><a href="#implementation-details-of-the-tds-protocol">5 Implementation Details of the TDS Protocol</a></li>
+<li><a href="#more-information">6 More Information</a></li>
+<li><a href="#contribute">7 Contribute</a></li>
 </ul></td>
 </tr>
 </tbody>

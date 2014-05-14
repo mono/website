@@ -15,12 +15,12 @@ Accessibility: Similarities and Differences
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#System.Windows.Forms">2 System.Windows.Forms</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#systemwindowsforms">2 System.Windows.Forms</a>
 <ul>
-<li><a href="#DomainUpDown">2.1 DomainUpDown</a></li>
-<li><a href="#MonthCalendar">2.2 MonthCalendar</a></li>
-<li><a href="#DataGrid">2.3 DataGrid</a></li>
+<li><a href="#domainupdown">2.1 DomainUpDown</a></li>
+<li><a href="#monthcalendar">2.2 MonthCalendar</a></li>
+<li><a href="#datagrid">2.3 DataGrid</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -9,7 +9,7 @@ redirect_from:
 MonoMacNew
 ==========
 
-[Get MonoMac](#Getting_MonoMac)
+[Get MonoMac](#getting-monomac)
 
  
 

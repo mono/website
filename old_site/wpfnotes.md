@@ -17,11 +17,11 @@ This document tracks some notes as I explore Silverlight and WPF.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Storyboard_and_Animations">1 Storyboard and Animations</a></li>
-<li><a href="#Interception_of_Properties">2 Interception of Properties</a></li>
-<li><a href="#Simplified_Class_Hierarchy">3 Simplified Class Hierarchy</a>
+<li><a href="#storyboard-and-animations">1 Storyboard and Animations</a></li>
+<li><a href="#interception-of-properties">2 Interception of Properties</a></li>
+<li><a href="#simplified-class-hierarchy">3 Simplified Class Hierarchy</a>
 <ul>
-<li><a href="#Paths">3.1 Paths</a></li>
+<li><a href="#paths">3.1 Paths</a></li>
 </ul></li>
 </ul></td>
 </tr>

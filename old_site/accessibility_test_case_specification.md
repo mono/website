@@ -15,27 +15,27 @@ Accessibility: Test Case Specification
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Currently_this_page_does_not_apply._We_are_currently_not_using_manual_testing.2C_our_automation_scripts_are_our_test_cases._These_guidelines_should_be_followed_if_manual_test_cases_are_introduced_in_the_future">1 Currently this page does not apply. We are currently not using manual testing, our automation scripts are our test cases. These guidelines should be followed if manual test cases are introduced in the future</a>
+<li><a href="#currently-this-page-does-not-apply-we-are-currently-not-using-manual-testing-our-automation-scripts-are-our-test-cases-these-guidelines-should-be-followed-if-manual-test-cases-are-introduced-in-the-future">1 Currently this page does not apply. We are currently not using manual testing, our automation scripts are our test cases. These guidelines should be followed if manual test cases are introduced in the future</a>
 <ul>
-<li><a href="#References">1.1 References</a></li>
-<li><a href="#Test_case_specification">1.2 Test case specification</a>
+<li><a href="#references">1.1 References</a></li>
+<li><a href="#test-case-specification">1.2 Test case specification</a>
 <ul>
-<li><a href="#Purpose">1.2.1 Purpose</a></li>
-<li><a href="#Outline">1.2.2 Outline</a>
+<li><a href="#purpose">1.2.1 Purpose</a></li>
+<li><a href="#outline">1.2.2 Outline</a>
 <ul>
-<li><a href="#Summary_Description">1.2.2.1 Summary Description</a></li>
-<li><a href="#Test_case_specification_identifier">1.2.2.2 Test case specification identifier</a></li>
-<li><a href="#Test_items">1.2.2.3 Test items</a></li>
-<li><a href="#Input_specifications">1.2.2.4 Input specifications</a></li>
-<li><a href="#Output_specifications">1.2.2.5 Output specifications</a></li>
-<li><a href="#Environmental_needs">1.2.2.6 Environmental needs</a></li>
-<li><a href="#Special_procedural_requirements">1.2.2.7 Special procedural requirements</a></li>
-<li><a href="#Intercase_dependencies">1.2.2.8 Intercase dependencies</a></li>
-<li><a href="#Test_script">1.2.2.9 Test script</a></li>
-<li><a href="#Chose_component">1.2.2.10 Chose component</a></li>
+<li><a href="#summary-description">1.2.2.1 Summary Description</a></li>
+<li><a href="#test-case-specification-identifier">1.2.2.2 Test case specification identifier</a></li>
+<li><a href="#test-items">1.2.2.3 Test items</a></li>
+<li><a href="#input-specifications">1.2.2.4 Input specifications</a></li>
+<li><a href="#output-specifications">1.2.2.5 Output specifications</a></li>
+<li><a href="#environmental-needs">1.2.2.6 Environmental needs</a></li>
+<li><a href="#special-procedural-requirements">1.2.2.7 Special procedural requirements</a></li>
+<li><a href="#intercase-dependencies">1.2.2.8 Intercase dependencies</a></li>
+<li><a href="#test-script">1.2.2.9 Test script</a></li>
+<li><a href="#chose-component">1.2.2.10 Chose component</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Resources">1.3 Resources</a></li>
+<li><a href="#resources">1.3 Resources</a></li>
 </ul></li>
 </ul></td>
 </tr>

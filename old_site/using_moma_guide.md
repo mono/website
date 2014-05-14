@@ -15,11 +15,11 @@ Using MoMA Guide
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Step_1">1 Step 1</a></li>
-<li><a href="#Step_2">2 Step 2</a></li>
-<li><a href="#Step_3">3 Step 3</a></li>
-<li><a href="#Step_4">4 Step 4</a></li>
-<li><a href="#Sample_Report">5 Sample Report</a></li>
+<li><a href="#step-1">1 Step 1</a></li>
+<li><a href="#step-2">2 Step 2</a></li>
+<li><a href="#step-3">3 Step 3</a></li>
+<li><a href="#step-4">4 Step 4</a></li>
+<li><a href="#sample-report">5 Sample Report</a></li>
 </ul></td>
 </tr>
 </tbody>

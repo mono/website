@@ -15,17 +15,17 @@ Accessibility: Client API
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#UI_Automation_Client_API_Development">1 UI Automation Client API Development</a>
+<li><a href="#ui-automation-client-api-development">1 UI Automation Client API Development</a>
 <ul>
-<li><a href="#Installing_Winforms_Support">1.1 Installing Winforms Support</a>
+<li><a href="#installing-winforms-support">1.1 Installing Winforms Support</a>
 <ul>
-<li><a href="#Prerequisites">1.1.1 Prerequisites</a></li>
-<li><a href="#Installing_out_stuff">1.1.2 Installing out stuff</a></li>
+<li><a href="#prerequisites">1.1.1 Prerequisites</a></li>
+<li><a href="#installing-out-stuff">1.1.2 Installing out stuff</a></li>
 </ul></li>
-<li><a href="#Installing_at-spi_Support">1.2 Installing at-spi Support</a>
+<li><a href="#installing-at-spi-support">1.2 Installing at-spi Support</a>
 <ul>
-<li><a href="#Installing_at-spi2">1.2.1 Installing at-spi2</a></li>
-<li><a href="#Installing_our_stuff">1.2.2 Installing our stuff</a></li>
+<li><a href="#installing-at-spi2">1.2.1 Installing at-spi2</a></li>
+<li><a href="#installing-our-stuff">1.2.2 Installing our stuff</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

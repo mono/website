@@ -19,17 +19,17 @@ Current build status is [here](http://wrench.mono-project.com/builds).
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Background">2 Background</a></li>
-<li><a href="#HOWTO">3 HOWTO</a>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#background">2 Background</a></li>
+<li><a href="#howto">3 HOWTO</a>
 <ul>
-<li><a href="#Detailed_documentation">3.1 Detailed documentation</a></li>
-<li><a href="#Interacting_with_build_clients">3.2 Interacting with build clients</a></li>
-<li><a href="#Shutting_down_monobuild">3.3 Shutting down monobuild</a></li>
-<li><a href="#Setting_up_a_new_build_client">3.4 Setting up a new build client</a></li>
-<li><a href="#Removing_a_build_client">3.5 Removing a build client</a></li>
-<li><a href="#Add_new_package.2Fmodule_to_MonoBuild">3.6 Add new package/module to MonoBuild</a></li>
-<li><a href="#Configuring_Apache_for_the_MonoBuild_Webview">3.7 Configuring Apache for the MonoBuild Webview</a></li>
+<li><a href="#detailed-documentation">3.1 Detailed documentation</a></li>
+<li><a href="#interacting-with-build-clients">3.2 Interacting with build clients</a></li>
+<li><a href="#shutting-down-monobuild">3.3 Shutting down monobuild</a></li>
+<li><a href="#setting-up-a-new-build-client">3.4 Setting up a new build client</a></li>
+<li><a href="#removing-a-build-client">3.5 Removing a build client</a></li>
+<li><a href="#add-new-packagemodule-to-monobuild">3.6 Add new package/module to MonoBuild</a></li>
+<li><a href="#configuring-apache-for-the-monobuild-webview">3.7 Configuring Apache for the MonoBuild Webview</a></li>
 </ul></li>
 </ul></td>
 </tr>

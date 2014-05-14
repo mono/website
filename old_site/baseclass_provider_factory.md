@@ -15,10 +15,10 @@ BaseClass Provider Factory
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Generic_Database_Access">1 Generic Database Access</a></li>
-<li><a href="#Configuartion_Entries">2 Configuartion Entries</a></li>
-<li><a href="#Sample_Code">3 Sample Code</a></li>
-<li><a href="#Provider_Support">4 Provider Support</a></li>
+<li><a href="#generic-database-access">1 Generic Database Access</a></li>
+<li><a href="#configuartion-entries">2 Configuartion Entries</a></li>
+<li><a href="#sample-code">3 Sample Code</a></li>
+<li><a href="#provider-support">4 Provider Support</a></li>
 </ul></td>
 </tr>
 </tbody>

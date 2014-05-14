@@ -15,12 +15,12 @@ Accessibility: Mapping UIA to ATK
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#UIA_Provider">1 UIA Provider</a>
+<li><a href="#uia-provider">1 UIA Provider</a>
 <ul>
-<li><a href="#UIA_Control_Types">1.1 UIA Control Types</a></li>
-<li><a href="#UIA_Provider_Interfaces">1.2 UIA Provider Interfaces</a></li>
+<li><a href="#uia-control-types">1.1 UIA Control Types</a></li>
+<li><a href="#uia-provider-interfaces">1.2 UIA Provider Interfaces</a></li>
 </ul></li>
-<li><a href="#See_also">2 See also</a></li>
+<li><a href="#see-also">2 See also</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -301,5 +301,5 @@ The following is a list of UIA Provider interfaces to be used in the table above
 See also
 --------
 
-Interesting as well are the [MWF-\>UIA mappings]({{site.github.url}}/old_site/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates]({{site.github.url}}/old_site/Accessibility:_UiaAtkBridge#Case_study:_GTK "Accessibility: UiaAtkBridge").
+Interesting as well are the [MWF-\>UIA mappings]({{site.github.url}}/old_site/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates]({{site.github.url}}/old_site/Accessibility:_UiaAtkBridge#case-study-gtk "Accessibility: UiaAtkBridge").
 

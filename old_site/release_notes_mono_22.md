@@ -17,46 +17,46 @@ Mono 2.0 is a portable and open source implementation of the .NET framework for 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.0">2 Changes since Mono 2.0</a>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-since-mono-20">2 Changes since Mono 2.0</a>
 <ul>
-<li><a href="#Runtime">2.1 Runtime</a>
+<li><a href="#runtime">2.1 Runtime</a>
 <ul>
-<li><a href="#Performance">2.1.1 Performance</a></li>
-<li><a href="#Ahead_of_Time_Compilation">2.1.2 Ahead of Time Compilation</a></li>
-<li><a href="#Monitoring">2.1.3 Monitoring</a></li>
-<li><a href="#Attach_Functionality">2.1.4 Attach Functionality</a></li>
-<li><a href="#SIMD_support_in_Mono">2.1.5 SIMD support in Mono</a></li>
+<li><a href="#performance">2.1.1 Performance</a></li>
+<li><a href="#ahead-of-time-compilation">2.1.2 Ahead of Time Compilation</a></li>
+<li><a href="#monitoring">2.1.3 Monitoring</a></li>
+<li><a href="#attach-functionality">2.1.4 Attach Functionality</a></li>
+<li><a href="#simd-support-in-mono">2.1.5 SIMD support in Mono</a></li>
 </ul></li>
-<li><a href="#C.23_Language">2.2 C# Language</a>
+<li><a href="#c-language">2.2 C# Language</a>
 <ul>
-<li><a href="#Compiler_Service">2.2.1 Compiler Service</a></li>
-<li><a href="#Interactive_Shell">2.2.2 Interactive Shell</a></li>
-<li><a href="#Optimizations">2.2.3 Optimizations</a></li>
-<li><a href="#Other_Changes">2.2.4 Other Changes</a></li>
+<li><a href="#compiler-service">2.2.1 Compiler Service</a></li>
+<li><a href="#interactive-shell">2.2.2 Interactive Shell</a></li>
+<li><a href="#optimizations">2.2.3 Optimizations</a></li>
+<li><a href="#other-changes">2.2.4 Other Changes</a></li>
 </ul></li>
-<li><a href="#Regular_Expressions">2.3 Regular Expressions</a></li>
-<li><a href="#ASP.NET">2.4 ASP.NET</a></li>
-<li><a href="#Winforms">2.5 Winforms</a></li>
-<li><a href="#Tools">2.6 Tools</a>
+<li><a href="#regular-expressions">2.3 Regular Expressions</a></li>
+<li><a href="#aspnet">2.4 ASP.NET</a></li>
+<li><a href="#winforms">2.5 Winforms</a></li>
+<li><a href="#tools">2.6 Tools</a>
 <ul>
-<li><a href="#Gendarme">2.6.1 Gendarme</a></li>
+<li><a href="#gendarme">2.6.1 Gendarme</a></li>
 </ul></li>
-<li><a href="#Smaller_Changes">2.7 Smaller Changes</a>
+<li><a href="#smaller-changes">2.7 Smaller Changes</a>
 <ul>
-<li><a href="#Mono_on_Windows">2.7.1 Mono on Windows</a></li>
-<li><a href="#Build">2.7.2 Build</a></li>
-<li><a href="#Console_Implementation">2.7.3 Console Implementation</a></li>
+<li><a href="#mono-on-windows">2.7.1 Mono on Windows</a></li>
+<li><a href="#build">2.7.2 Build</a></li>
+<li><a href="#console-implementation">2.7.3 Console Implementation</a></li>
 </ul></li>
-<li><a href="#Source_Code_Snippets">2.8 Source Code Snippets</a>
+<li><a href="#source-code-snippets">2.8 Source Code Snippets</a>
 <ul>
-<li><a href="#Mono.Options">2.8.1 Mono.Options</a></li>
-<li><a href="#Mono.Terminal.Editor">2.8.2 Mono.Terminal.Editor</a></li>
-<li><a href="#Mono.DataConvert">2.8.3 Mono.DataConvert</a></li>
+<li><a href="#monooptions">2.8.1 Mono.Options</a></li>
+<li><a href="#monoterminaleditor">2.8.2 Mono.Terminal.Editor</a></li>
+<li><a href="#monodataconvert">2.8.3 Mono.DataConvert</a></li>
 </ul></li>
-<li><a href="#Documentation">2.9 Documentation</a></li>
+<li><a href="#documentation">2.9 Documentation</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.2">3 Installing Mono 2.2</a></li>
+<li><a href="#installing-mono-22">3 Installing Mono 2.2</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -173,7 +173,7 @@ The Mono Windows installer has been updated to include GTK\# 2.12.7.
 
 ### Build
 
-It is now possible to cross-compile Mono for Windows using Linux and MinGW. Details are available on the [Compiling Mono]({{site.github.url}}/old_site/Compiling_Mono#Cross-compiling_on_Linux_using_MinGW "Compiling Mono") page.
+It is now possible to cross-compile Mono for Windows using Linux and MinGW. Details are available on the [Compiling Mono]({{site.github.url}}/old_site/Compiling_Mono#cross-compiling-on-linux-using-mingw "Compiling Mono") page.
 
 ### Console Implementation
 

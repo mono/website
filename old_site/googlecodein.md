@@ -17,27 +17,27 @@ Here's are some initial ideas for students ... Most of them are "meta-ideas" tha
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#By_Category">1 By Category</a>
+<li><a href="#by-category">1 By Category</a>
 <ul>
-<li><a href="#Code">1.1 Code</a></li>
-<li><a href="#Documentation_.2F_Training">1.2 Documentation / Training</a></li>
-<li><a href="#Outreach_.2F_Research">1.3 Outreach / Research</a></li>
-<li><a href="#Quality_Assurance">1.4 Quality Assurance</a></li>
-<li><a href="#User_Interfaces">1.5 User Interfaces</a></li>
+<li><a href="#code">1.1 Code</a></li>
+<li><a href="#documentation--training">1.2 Documentation / Training</a></li>
+<li><a href="#outreach--research">1.3 Outreach / Research</a></li>
+<li><a href="#quality-assurance">1.4 Quality Assurance</a></li>
+<li><a href="#user-interfaces">1.5 User Interfaces</a></li>
 </ul></li>
-<li><a href="#Idea_Descriptions">2 Idea Descriptions</a>
+<li><a href="#idea-descriptions">2 Idea Descriptions</a>
 <ul>
-<li><a href="#Mono_Class_Library_Parameter_Names">2.1 Mono Class Library Parameter Names</a></li>
-<li><a href="#Port_and_fix_existing_libraries_and_applications_to_Linux">2.2 Port and fix existing libraries and applications to Linux</a></li>
-<li><a href="#Mono_Class_Library_Unit_Tests">2.3 Mono Class Library Unit Tests</a></li>
-<li><a href="#Mono_Command-Line_Tools">2.4 Mono Command-Line Tools</a></li>
-<li><a href="#Mono_API_Documentation">2.5 Mono API Documentation</a></li>
-<li><a href="#Porting_Gtk.2B_Samples_to_GtkSharp">2.6 Porting Gtk+ Samples to GtkSharp</a></li>
-<li><a href="#Gendarme_Rules">2.7 Gendarme Rules</a></li>
-<li><a href="#MonoDevelop_bugfixes_or_enhancements">2.8 MonoDevelop bugfixes or enhancements</a></li>
-<li><a href="#MonoDevelop_Source_Analysis_Rules">2.9 MonoDevelop Source Analysis Rules</a></li>
-<li><a href="#MonoDevelop_unit_tests">2.10 MonoDevelop unit tests</a></li>
-<li><a href="#MonoDevelop_documentation_and_tutorials">2.11 MonoDevelop documentation and tutorials</a></li>
+<li><a href="#mono-class-library-parameter-names">2.1 Mono Class Library Parameter Names</a></li>
+<li><a href="#port-and-fix-existing-libraries-and-applications-to-linux">2.2 Port and fix existing libraries and applications to Linux</a></li>
+<li><a href="#mono-class-library-unit-tests">2.3 Mono Class Library Unit Tests</a></li>
+<li><a href="#mono-command-line-tools">2.4 Mono Command-Line Tools</a></li>
+<li><a href="#mono-api-documentation">2.5 Mono API Documentation</a></li>
+<li><a href="#porting-gtk-samples-to-gtksharp">2.6 Porting Gtk+ Samples to GtkSharp</a></li>
+<li><a href="#gendarme-rules">2.7 Gendarme Rules</a></li>
+<li><a href="#monodevelop-bugfixes-or-enhancements">2.8 MonoDevelop bugfixes or enhancements</a></li>
+<li><a href="#monodevelop-source-analysis-rules">2.9 MonoDevelop Source Analysis Rules</a></li>
+<li><a href="#monodevelop-unit-tests">2.10 MonoDevelop unit tests</a></li>
+<li><a href="#monodevelop-documentation-and-tutorials">2.11 MonoDevelop documentation and tutorials</a></li>
 </ul></li>
 </ul></td>
 </tr>

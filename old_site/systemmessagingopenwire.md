@@ -23,18 +23,18 @@ You might also be interested in [transaction processing in Mono]({{site.github.u
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Implementing_System.Messaging.dll_over_ActiveMQ_OpenWire.NET">1 Implementing System.Messaging.dll over ActiveMQ OpenWire.NET</a>
+<li><a href="#implementing-systemmessagingdll-over-activemq-openwirenet">1 Implementing System.Messaging.dll over ActiveMQ OpenWire.NET</a>
 <ul>
-<li><a href="#Abstract">1.1 Abstract</a></li>
-<li><a href="#Build">1.2 Build</a></li>
-<li><a href="#MSMQ_Concepts">1.3 MSMQ Concepts</a>
+<li><a href="#abstract">1.1 Abstract</a></li>
+<li><a href="#build">1.2 Build</a></li>
+<li><a href="#msmq-concepts">1.3 MSMQ Concepts</a>
 <ul>
-<li><a href="#MessageQueue">1.3.1 MessageQueue</a></li>
-<li><a href="#IMessageFormatter">1.3.2 IMessageFormatter</a></li>
+<li><a href="#messagequeue">1.3.1 MessageQueue</a></li>
+<li><a href="#imessageformatter">1.3.2 IMessageFormatter</a></li>
 </ul></li>
-<li><a href="#OpenWire_Concepts">1.4 OpenWire Concepts</a></li>
-<li><a href="#Concerns">1.5 Concerns</a></li>
-<li><a href="#Sample_System.Messaging_code">1.6 Sample System.Messaging code</a></li>
+<li><a href="#openwire-concepts">1.4 OpenWire Concepts</a></li>
+<li><a href="#concerns">1.5 Concerns</a></li>
+<li><a href="#sample-systemmessaging-code">1.6 Sample System.Messaging code</a></li>
 </ul></li>
 </ul></td>
 </tr>

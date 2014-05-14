@@ -15,26 +15,26 @@ Accessibility: Test Coding Standard
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Scope">1 Scope</a></li>
-<li><a href="#References">2 References</a></li>
-<li><a href="#Standard_For_Files_Name">3 Standard For Files Name</a>
+<li><a href="#scope">1 Scope</a></li>
+<li><a href="#references">2 References</a></li>
+<li><a href="#standard-for-files-name">3 Standard For Files Name</a>
 <ul>
-<li><a href="#Files_Name_For_Application_Sample_Scripts">3.1 Files Name For Application Sample Scripts</a></li>
-<li><a href="#Files_Name_For_Test_Scripts">3.2 Files Name For Test Scripts</a></li>
-<li><a href="#Files_Name_For_Test_Harness">3.3 Files Name For Test Harness</a></li>
-<li><a href="#Files_Name_For_Test_Logs">3.4 Files Name For Test Logs</a></li>
-<li><a href="#Files.2FDirectories_Name_For_Test_Related">3.5 Files/Directories Name For Test Related</a></li>
+<li><a href="#files-name-for-application-sample-scripts">3.1 Files Name For Application Sample Scripts</a></li>
+<li><a href="#files-name-for-test-scripts">3.2 Files Name For Test Scripts</a></li>
+<li><a href="#files-name-for-test-harness">3.3 Files Name For Test Harness</a></li>
+<li><a href="#files-name-for-test-logs">3.4 Files Name For Test Logs</a></li>
+<li><a href="#filesdirectories-name-for-test-related">3.5 Files/Directories Name For Test Related</a></li>
 </ul></li>
-<li><a href="#Standard_For_Scripts_Coding">4 Standard For Scripts Coding</a>
+<li><a href="#standard-for-scripts-coding">4 Standard For Scripts Coding</a>
 <ul>
-<li><a href="#Form">4.1 Form</a></li>
-<li><a href="#Python_Style_Guidelines_Overview">4.2 Python Style Guidelines Overview</a>
+<li><a href="#form">4.1 Form</a></li>
+<li><a href="#python-style-guidelines-overview">4.2 Python Style Guidelines Overview</a>
 <ul>
-<li><a href="#Naming_Conventions">4.2.1 Naming Conventions</a></li>
-<li><a href="#Code_Layout">4.2.2 Code Layout</a></li>
+<li><a href="#naming-conventions">4.2.1 Naming Conventions</a></li>
+<li><a href="#code-layout">4.2.2 Code Layout</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Standard_For_Files_permissions">5 Standard For Files permissions</a></li>
+<li><a href="#standard-for-files-permissions">5 Standard For Files permissions</a></li>
 </ul></td>
 </tr>
 </tbody>

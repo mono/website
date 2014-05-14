@@ -15,10 +15,10 @@ MilensSandbox
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Articles_Written">1 Articles Written</a></li>
-<li><a href="#Articles_in_Progress">2 Articles in Progress</a></li>
-<li><a href="#Articles_that_I_intend_to_write">3 Articles that I intend to write</a></li>
-<li><a href="#Suggestions_for_Articles">4 Suggestions for Articles</a></li>
+<li><a href="#articles-written">1 Articles Written</a></li>
+<li><a href="#articles-in-progress">2 Articles in Progress</a></li>
+<li><a href="#articles-that-i-intend-to-write">3 Articles that I intend to write</a></li>
+<li><a href="#suggestions-for-articles">4 Suggestions for Articles</a></li>
 </ul></td>
 </tr>
 </tbody>

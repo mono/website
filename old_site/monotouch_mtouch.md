@@ -19,19 +19,19 @@ The process of turning a .NET executable into an application is mostly driven by
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Building">1 Building</a>
+<li><a href="#building">1 Building</a>
 <ul>
-<li><a href="#Building_for_the_Simulator">1.1 Building for the Simulator</a></li>
-<li><a href="#Building_for_the_Device">1.2 Building for the Device</a></li>
+<li><a href="#building-for-the-simulator">1.1 Building for the Simulator</a></li>
+<li><a href="#building-for-the-device">1.2 Building for the Device</a></li>
 </ul></li>
-<li><a href="#Running_your_Application">2 Running your Application</a>
+<li><a href="#running-your-application">2 Running your Application</a>
 <ul>
-<li><a href="#Launching_on_the_Simulator">2.1 Launching on the Simulator</a></li>
-<li><a href="#Debugging_on_the_Simulator">2.2 Debugging on the Simulator</a></li>
-<li><a href="#Debugging_on_the_Device">2.3 Debugging on the Device</a></li>
-<li><a href="#Deploying_to_a_Device">2.4 Deploying to a Device</a>
+<li><a href="#launching-on-the-simulator">2.1 Launching on the Simulator</a></li>
+<li><a href="#debugging-on-the-simulator">2.2 Debugging on the Simulator</a></li>
+<li><a href="#debugging-on-the-device">2.3 Debugging on the Device</a></li>
+<li><a href="#deploying-to-a-device">2.4 Deploying to a Device</a>
 <ul>
-<li><a href="#Troubleshooting">2.4.1 Troubleshooting</a></li>
+<li><a href="#troubleshooting">2.4.1 Troubleshooting</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -102,7 +102,7 @@ If your application fails, you can see the fiels output and error to diagnose th
 Debugging on the Simulator
 --------------------------
 
-Debugging on the simulator is currently limited to debugging at the GDB level. This debugging is described in [Debugging with GDB]({{site.github.url}}/old_site/Debugging#Debugging_with_GDB "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
+Debugging on the simulator is currently limited to debugging at the GDB level. This debugging is described in [Debugging with GDB]({{site.github.url}}/old_site/Debugging#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
 
 ``` bash
  $ mtouch -debugsim Hello.app
@@ -130,7 +130,7 @@ Reading symbols for shared libraries . done
 Debugging on the Device
 -----------------------
 
-Debugging on the device is currently provided thru the Xcode debugging mechanism and uses GDB. This debugging is described in [Debugging with GDB]({{site.github.url}}/old_site/Debugging#Debugging_with_GDB "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
+Debugging on the device is currently provided thru the Xcode debugging mechanism and uses GDB. This debugging is described in [Debugging with GDB]({{site.github.url}}/old_site/Debugging#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
 
 ``` bash
  $ mtouch -xcode Hello -res MainWindow.xib -res Icon.png hello.exe

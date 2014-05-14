@@ -11,15 +11,15 @@ Need Help
 
  When having a more frequent problem as listed below please click the link to jump to the corresponding section:
 
-1.  Dealing with [compilations issues when building Mono](#Issues_compiling_Mono_itself) or [bugs]({{site.github.url}}/old_site/Bugs "Bugs") of Mono
+1.  Dealing with [compilations issues when building Mono](#issues-compiling-mono-itself) or [bugs]({{site.github.url}}/old_site/Bugs "Bugs") of Mono
 2.  Problems when using Mono
-    1.  [Can not compile my source](#Can_not_compile_my_source)
-    2.  [Works under .Net but not on Mono](#Works_under_.Net_but_not_on_Mono)
+    1.  [Can not compile my source](#can-not-compile-my-source)
+    2.  [Works under .Net but not on Mono](#works-under-net-but-not-on-mono)
 
 3.  Looking for [commercial support]({{site.github.url}}/old_site/Support "Support")
 4.  [Lost in the website]({{site.github.url}}/old_site/SiteMap "SiteMap")
 
-If your issue has not been listed please read the [Problems of a different kind](#Problems_of_a_different_kind)-Section.
+If your issue has not been listed please read the [Problems of a different kind](#problems-of-a-different-kind)-Section.
 
 Issues compiling Mono itself
 ----------------------------
@@ -38,7 +38,7 @@ When compiling your sources please bear in mind that mono provides three [C\#-Co
     *
     ```
 
-    gmcs does partly support [C\# 3.0 language features]({{site.github.url}}/old_site/CSharp_Compiler#Under_Development_Features "CSharp Compiler")
+    gmcs does partly support [C\# 3.0 language features]({{site.github.url}}/old_site/CSharp_Compiler#under-development-features "CSharp Compiler")
 
 -   **smcs**: compiler to target the 2.1 runtime, to build [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") applications.
 

@@ -66,18 +66,18 @@ foreach (var x in DartaConverter.Unpack ("_issbbbbbbbb", guid, 0)){
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Instance_Methods">1 Instance Methods</a>
+<li><a href="#instance-methods">1 Instance Methods</a>
 <ul>
-<li><a href="#Examples_of_the_Instance_API">1.1 Examples of the Instance API</a></li>
+<li><a href="#examples-of-the-instance-api">1.1 Examples of the Instance API</a></li>
 </ul></li>
-<li><a href="#Pack_and_Unpack">2 Pack and Unpack</a>
+<li><a href="#pack-and-unpack">2 Pack and Unpack</a>
 <ul>
-<li><a href="#Pack_Instruction_Specification">2.1 Pack Instruction Specification</a></li>
-<li><a href="#Pack.2FUnpack_Examples">2.2 Pack/Unpack Examples</a></li>
+<li><a href="#pack-instruction-specification">2.1 Pack Instruction Specification</a></li>
+<li><a href="#packunpack-examples">2.2 Pack/Unpack Examples</a></li>
 </ul></li>
-<li><a href="#Static_Methods">3 Static Methods</a></li>
-<li><a href="#Obtaining_Mono.DataConvert">4 Obtaining Mono.DataConvert</a></li>
-<li><a href="#Problems_with_the_CLI.27s_System.BitConverter">5 Problems with the CLI's System.BitConverter</a></li>
+<li><a href="#static-methods">3 Static Methods</a></li>
+<li><a href="#obtaining-monodataconvert">4 Obtaining Mono.DataConvert</a></li>
+<li><a href="#problems-with-the-clis-systembitconverter">5 Problems with the CLI's System.BitConverter</a></li>
 </ul></td>
 </tr>
 </tbody>

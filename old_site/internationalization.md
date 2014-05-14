@@ -21,21 +21,21 @@ Internationalization
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Requirements">2 Requirements</a></li>
-<li><a href="#Using_Mono.Unix">3 Using Mono.Unix</a></li>
-<li><a href="#Using_Mono.Unix_with_console-based_applications">4 Using Mono.Unix with console-based applications</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#requirements">2 Requirements</a></li>
+<li><a href="#using-monounix">3 Using Mono.Unix</a></li>
+<li><a href="#using-monounix-with-console-based-applications">4 Using Mono.Unix with console-based applications</a>
 <ul>
-<li><a href="#Example_without_internationalization">4.1 Example without internationalization</a></li>
-<li><a href="#Internationalizing_our_example">4.2 Internationalizing our example</a>
+<li><a href="#example-without-internationalization">4.1 Example without internationalization</a></li>
+<li><a href="#internationalizing-our-example">4.2 Internationalizing our example</a>
 <ul>
-<li><a href="#Creating_the_Message_Catalog">4.2.1 Creating the Message Catalog</a></li>
+<li><a href="#creating-the-message-catalog">4.2.1 Creating the Message Catalog</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Using_Mono.Unix_with_Glade.23_applications">5 Using Mono.Unix with Glade# applications</a></li>
-<li><a href="#Using_Mono.Unix_with_Gtk.23_using_Stetic_applications">6 Using Mono.Unix with Gtk# using Stetic applications</a>
+<li><a href="#using-monounix-with-glade-applications">5 Using Mono.Unix with Glade# applications</a></li>
+<li><a href="#using-monounix-with-gtk-using-stetic-applications">6 Using Mono.Unix with Gtk# using Stetic applications</a>
 <ul>
-<li><a href="#References">6.1 References</a></li>
+<li><a href="#references">6.1 References</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,29 +15,29 @@ Accessibility: Reviews
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Accessibility_Team_Code_Reviews">1 Accessibility Team Code Reviews</a>
+<li><a href="#accessibility-team-code-reviews">1 Accessibility Team Code Reviews</a>
 <ul>
-<li><a href="#Review_Policies">1.1 Review Policies</a></li>
-<li><a href="#Submitting_Review_Requests">1.2 Submitting Review Requests</a>
+<li><a href="#review-policies">1.1 Review Policies</a></li>
+<li><a href="#submitting-review-requests">1.2 Submitting Review Requests</a>
 <ul>
-<li><a href="#Posting_Review_Request_Drafts">1.2.1 Posting Review Request Drafts</a></li>
-<li><a href="#Publishing_Review_Requests">1.2.2 Publishing Review Requests</a>
+<li><a href="#posting-review-request-drafts">1.2.1 Posting Review Request Drafts</a></li>
+<li><a href="#publishing-review-requests">1.2.2 Publishing Review Requests</a>
 <ul>
-<li><a href="#Summary">1.2.2.1 Summary</a></li>
-<li><a href="#Description">1.2.2.2 Description</a></li>
-<li><a href="#Bugs">1.2.2.3 Bugs</a></li>
-<li><a href="#Branch">1.2.2.4 Branch</a></li>
-<li><a href="#Reviewers">1.2.2.5 Reviewers</a>
+<li><a href="#summary">1.2.2.1 Summary</a></li>
+<li><a href="#description">1.2.2.2 Description</a></li>
+<li><a href="#bugs">1.2.2.3 Bugs</a></li>
+<li><a href="#branch">1.2.2.4 Branch</a></li>
+<li><a href="#reviewers">1.2.2.5 Reviewers</a>
 <ul>
-<li><a href="#Groups">1.2.2.5.1 Groups</a></li>
-<li><a href="#People">1.2.2.5.2 People</a></li>
+<li><a href="#groups">1.2.2.5.1 Groups</a></li>
+<li><a href="#people">1.2.2.5.2 People</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><a href="#The_Review_Process">1.3 The Review Process</a>
+<li><a href="#the-review-process">1.3 The Review Process</a>
 <ul>
-<li><a href="#Publishing_Reviews">1.3.1 Publishing Reviews</a></li>
-<li><a href="#Replying_to_Reviews">1.3.2 Replying to Reviews</a></li>
+<li><a href="#publishing-reviews">1.3.1 Publishing Reviews</a></li>
+<li><a href="#replying-to-reviews">1.3.2 Replying to Reviews</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -64,7 +64,7 @@ Submitting Review Requests
 
 Please place the "post-review" script from uia2atk/tools somewhere in your path. This script has [excellent documentation](http://review-board.org/docs/manual/dev/users/tools/post-review/) for its many features. The simplest use is to call it from within your SVN checkout or git repository.
 
-For Subversion, post-review will post the equivalent of \`svn diff\`. For git (as described in [our git workflow instructions]({{site.github.url}}/old_site/Accessibility:_GitSVN:_Workflow#Get_Feedback_With_Reviewboard "Accessibility: GitSVN: Workflow")), it will post the diff between everything you've committed on your feature branch, and the source SVN branch (trunk, 1.0, etc).
+For Subversion, post-review will post the equivalent of \`svn diff\`. For git (as described in [our git workflow instructions]({{site.github.url}}/old_site/Accessibility:_GitSVN:_Workflow#get-feedback-with-reviewboard "Accessibility: GitSVN: Workflow")), it will post the diff between everything you've committed on your feature branch, and the source SVN branch (trunk, 1.0, etc).
 
 The first time you run \`post-review\`, you will be prompted for your Reviewboard username and password, but your credentials will be cached after that.
 

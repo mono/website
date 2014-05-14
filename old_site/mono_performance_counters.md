@@ -15,24 +15,24 @@ Mono Performance Counters
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_performance_counters">1 Mono performance counters</a>
+<li><a href="#mono-performance-counters">1 Mono performance counters</a>
 <ul>
-<li><a href="#Category:_Processor">1.1 Category: Processor</a></li>
-<li><a href="#Category:_Process">1.2 Category: Process</a></li>
-<li><a href="#Category:_Mono_Memory">1.3 Category: Mono Memory</a></li>
-<li><a href="#Category:_ASP.NET">1.4 Category: ASP.NET</a></li>
-<li><a href="#Category:_.NET_CLR_JIT">1.5 Category: .NET CLR JIT</a></li>
-<li><a href="#Category:_.NET_CLR_Exceptions">1.6 Category: .NET CLR Exceptions</a></li>
-<li><a href="#Category:_.NET_CLR_Memory">1.7 Category: .NET CLR Memory</a></li>
-<li><a href="#Category:_.NET_CLR_Remoting">1.8 Category: .NET CLR Remoting</a></li>
-<li><a href="#Category:_.NET_CLR_Loading">1.9 Category: .NET CLR Loading</a></li>
-<li><a href="#Category:_.NET_CLR_LocksAndThreads">1.10 Category: .NET CLR LocksAndThreads</a></li>
-<li><a href="#Category:_.NET_CLR_Interop">1.11 Category: .NET CLR Interop</a></li>
-<li><a href="#Category:_.NET_CLR_Security">1.12 Category: .NET CLR Security</a></li>
-<li><a href="#Category:_Mono_Threadpool">1.13 Category: Mono Threadpool</a></li>
-<li><a href="#Category:_Network_Interface">1.14 Category: Network Interface</a></li>
+<li><a href="#category-processor">1.1 Category: Processor</a></li>
+<li><a href="#category-process">1.2 Category: Process</a></li>
+<li><a href="#category-mono-memory">1.3 Category: Mono Memory</a></li>
+<li><a href="#category-aspnet">1.4 Category: ASP.NET</a></li>
+<li><a href="#category-net-clr-jit">1.5 Category: .NET CLR JIT</a></li>
+<li><a href="#category-net-clr-exceptions">1.6 Category: .NET CLR Exceptions</a></li>
+<li><a href="#category-net-clr-memory">1.7 Category: .NET CLR Memory</a></li>
+<li><a href="#category-net-clr-remoting">1.8 Category: .NET CLR Remoting</a></li>
+<li><a href="#category-net-clr-loading">1.9 Category: .NET CLR Loading</a></li>
+<li><a href="#category-net-clr-locksandthreads">1.10 Category: .NET CLR LocksAndThreads</a></li>
+<li><a href="#category-net-clr-interop">1.11 Category: .NET CLR Interop</a></li>
+<li><a href="#category-net-clr-security">1.12 Category: .NET CLR Security</a></li>
+<li><a href="#category-mono-threadpool">1.13 Category: Mono Threadpool</a></li>
+<li><a href="#category-network-interface">1.14 Category: Network Interface</a></li>
 </ul></li>
-<li><a href="#Accessing_performance_counters">2 Accessing performance counters</a></li>
+<li><a href="#accessing-performance-counters">2 Accessing performance counters</a></li>
 </ul></td>
 </tr>
 </tbody>

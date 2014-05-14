@@ -15,13 +15,13 @@ Writing Connected Mode Testcases
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_this_framework_all_about.3F">1 What is this framework all about?</a></li>
-<li><a href="#What_is_Connected_Mode_.26_Disconnected_mode.3F">2 What is Connected Mode &amp; Disconnected mode?</a></li>
-<li><a href="#Where_is_it.3F">3 Where is it?</a></li>
-<li><a href="#How_to_run_these_tests.3F">4 How to run these tests?</a></li>
-<li><a href="#How_to_write_a_connected_mode_test.3F">5 How to write a connected mode test?</a></li>
-<li><a href="#How_to_add_a_new_database_provider_framework.3F">6 How to add a new database provider framework?</a></li>
-<li><a href="#Guidelines">7 Guidelines</a></li>
+<li><a href="#what-is-this-framework-all-about">1 What is this framework all about?</a></li>
+<li><a href="#what-is-connected-mode--disconnected-mode">2 What is Connected Mode &amp; Disconnected mode?</a></li>
+<li><a href="#where-is-it">3 Where is it?</a></li>
+<li><a href="#how-to-run-these-tests">4 How to run these tests?</a></li>
+<li><a href="#how-to-write-a-connected-mode-test">5 How to write a connected mode test?</a></li>
+<li><a href="#how-to-add-a-new-database-provider-framework">6 How to add a new database provider framework?</a></li>
+<li><a href="#guidelines">7 Guidelines</a></li>
 </ul></td>
 </tr>
 </tbody>

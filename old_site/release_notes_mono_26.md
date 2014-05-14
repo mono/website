@@ -17,33 +17,33 @@ Mono 2.6 is a portable and open source implementation of the .NET framework for 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.4">2 Changes since Mono 2.4</a>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-since-mono-24">2 Changes since Mono 2.4</a>
 <ul>
-<li><a href="#LINQ_to_SQL">2.1 LINQ to SQL</a></li>
-<li><a href="#Soft_Debugger">2.2 Soft Debugger</a></li>
-<li><a href="#Early_4.0_APIs">2.3 Early 4.0 APIs</a></li>
-<li><a href="#ParallelFx">2.4 ParallelFx</a></li>
-<li><a href="#Dynamic_Language_Runtime">2.5 Dynamic Language Runtime</a></li>
-<li><a href="#System.IO.Packaging">2.6 System.IO.Packaging</a></li>
-<li><a href="#WinForms">2.7 WinForms</a></li>
-<li><a href="#C.23_Language">2.8 C# Language</a></li>
-<li><a href="#XBuild">2.9 XBuild</a></li>
-<li><a href="#Runtime">2.10 Runtime</a>
+<li><a href="#linq-to-sql">2.1 LINQ to SQL</a></li>
+<li><a href="#soft-debugger">2.2 Soft Debugger</a></li>
+<li><a href="#early-40-apis">2.3 Early 4.0 APIs</a></li>
+<li><a href="#parallelfx">2.4 ParallelFx</a></li>
+<li><a href="#dynamic-language-runtime">2.5 Dynamic Language Runtime</a></li>
+<li><a href="#systemiopackaging">2.6 System.IO.Packaging</a></li>
+<li><a href="#winforms">2.7 WinForms</a></li>
+<li><a href="#c-language">2.8 C# Language</a></li>
+<li><a href="#xbuild">2.9 XBuild</a></li>
+<li><a href="#runtime">2.10 Runtime</a>
 <ul>
-<li><a href="#Verifier">2.10.1 Verifier</a></li>
-<li><a href="#Mono.Simd">2.10.2 Mono.Simd</a></li>
-<li><a href="#Embedding_API">2.10.3 Embedding API</a></li>
-<li><a href="#LLVM_backend">2.10.4 LLVM backend</a></li>
-<li><a href="#AOT">2.10.5 AOT</a></li>
-<li><a href="#Signal_Chaining">2.10.6 Signal Chaining</a></li>
-<li><a href="#Bundled_Executables">2.10.7 Bundled Executables</a></li>
-<li><a href="#Debugging_support_for_GDB">2.10.8 Debugging support for GDB</a></li>
+<li><a href="#verifier">2.10.1 Verifier</a></li>
+<li><a href="#monosimd">2.10.2 Mono.Simd</a></li>
+<li><a href="#embedding-api">2.10.3 Embedding API</a></li>
+<li><a href="#llvm-backend">2.10.4 LLVM backend</a></li>
+<li><a href="#aot">2.10.5 AOT</a></li>
+<li><a href="#signal-chaining">2.10.6 Signal Chaining</a></li>
+<li><a href="#bundled-executables">2.10.7 Bundled Executables</a></li>
+<li><a href="#debugging-support-for-gdb">2.10.8 Debugging support for GDB</a></li>
 </ul></li>
-<li><a href="#Mono.Tasklets">2.11 Mono.Tasklets</a></li>
-<li><a href="#Documentation_Tools">2.12 Documentation Tools</a></li>
+<li><a href="#monotasklets">2.11 Mono.Tasklets</a></li>
+<li><a href="#documentation-tools">2.12 Documentation Tools</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.6">3 Installing Mono 2.6</a></li>
+<li><a href="#installing-mono-26">3 Installing Mono 2.6</a></li>
 </ul></td>
 </tr>
 </tbody>

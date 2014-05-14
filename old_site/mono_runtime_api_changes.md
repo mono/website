@@ -17,13 +17,13 @@ API changes that we need to make to the Mono Runtime for Mono 2.8:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Tasks">1 Tasks</a></li>
-<li><a href="#API_incompatibilities">2 API incompatibilities</a></li>
-<li><a href="#API_improvements">3 API improvements</a></li>
-<li><a href="#API_Additions">4 API Additions</a></li>
-<li><a href="#Open_for_debate">5 Open for debate</a>
+<li><a href="#tasks">1 Tasks</a></li>
+<li><a href="#api-incompatibilities">2 API incompatibilities</a></li>
+<li><a href="#api-improvements">3 API improvements</a></li>
+<li><a href="#api-additions">4 API Additions</a></li>
+<li><a href="#open-for-debate">5 Open for debate</a>
 <ul>
-<li><a href="#Open_questions">5.1 Open questions</a></li>
+<li><a href="#open-questions">5.1 Open questions</a></li>
 </ul></li>
 </ul></td>
 </tr>

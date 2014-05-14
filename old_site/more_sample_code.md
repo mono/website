@@ -19,16 +19,16 @@ The following applications may have useful code if you'd like to see how to use 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Monumeric">1 Monumeric</a></li>
-<li><a href="#MPhoto">2 MPhoto</a></li>
-<li><a href="#Phonic">3 Phonic</a></li>
-<li><a href="#Platano_Multimedia_Player">4 Platano Multimedia Player</a></li>
-<li><a href="#GSIRC">5 GSIRC</a></li>
-<li><a href="#GnoMencoder">6 GnoMencoder</a></li>
-<li><a href="#PolarViewer">7 PolarViewer</a></li>
-<li><a href="#Jump_n_Bump_menu">8 Jump n Bump menu</a></li>
-<li><a href="#Bomb_O_Naval">9 Bomb O Naval</a></li>
-<li><a href="#ImageBrowser_and_ImageViewer">10 ImageBrowser and ImageViewer</a></li>
+<li><a href="#monumeric">1 Monumeric</a></li>
+<li><a href="#mphoto">2 MPhoto</a></li>
+<li><a href="#phonic">3 Phonic</a></li>
+<li><a href="#platano-multimedia-player">4 Platano Multimedia Player</a></li>
+<li><a href="#gsirc">5 GSIRC</a></li>
+<li><a href="#gnomencoder">6 GnoMencoder</a></li>
+<li><a href="#polarviewer">7 PolarViewer</a></li>
+<li><a href="#jump-n-bump-menu">8 Jump n Bump menu</a></li>
+<li><a href="#bomb-o-naval">9 Bomb O Naval</a></li>
+<li><a href="#imagebrowser-and-imageviewer">10 ImageBrowser and ImageViewer</a></li>
 </ul></td>
 </tr>
 </tbody>

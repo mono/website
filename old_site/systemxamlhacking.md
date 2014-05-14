@@ -15,19 +15,19 @@ SystemXamlHacking
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#System.Xaml.dll">1 System.Xaml.dll</a>
+<li><a href="#systemxamldll">1 System.Xaml.dll</a>
 <ul>
-<li><a href="#Scope">1.1 Scope</a></li>
-<li><a href="#Status">1.2 Status</a>
+<li><a href="#scope">1.1 Scope</a></li>
+<li><a href="#status">1.2 Status</a>
 <ul>
-<li><a href="#High_level_status">1.2.1 High level status</a></li>
-<li><a href="#by_tasks">1.2.2 by tasks</a></li>
-<li><a href="#by_language_features">1.2.3 by language features</a></li>
+<li><a href="#high-level-status">1.2.1 High level status</a></li>
+<li><a href="#by-tasks">1.2.2 by tasks</a></li>
+<li><a href="#by-language-features">1.2.3 by language features</a></li>
 </ul></li>
-<li><a href="#Code">1.3 Code</a>
+<li><a href="#code">1.3 Code</a>
 <ul>
-<li><a href="#Classlib">1.3.1 Classlib</a></li>
-<li><a href="#Tests">1.3.2 Tests</a></li>
+<li><a href="#classlib">1.3.1 Classlib</a></li>
+<li><a href="#tests">1.3.2 Tests</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

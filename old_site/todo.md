@@ -15,14 +15,14 @@ Todo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#JIT_Compiler">1 JIT Compiler</a></li>
-<li><a href="#Garbage_Collector">2 Garbage Collector</a></li>
-<li><a href="#VM_Runtime">3 VM Runtime</a></li>
-<li><a href="#Tools">4 Tools</a></li>
-<li><a href="#Class_Libraries">5 Class Libraries</a></li>
-<li><a href="#Documentation">6 Documentation</a></li>
-<li><a href="#Other">7 Other</a></li>
-<li><a href="#Discussion">8 Discussion</a></li>
+<li><a href="#jit-compiler">1 JIT Compiler</a></li>
+<li><a href="#garbage-collector">2 Garbage Collector</a></li>
+<li><a href="#vm-runtime">3 VM Runtime</a></li>
+<li><a href="#tools">4 Tools</a></li>
+<li><a href="#class-libraries">5 Class Libraries</a></li>
+<li><a href="#documentation">6 Documentation</a></li>
+<li><a href="#other">7 Other</a></li>
+<li><a href="#discussion">8 Discussion</a></li>
 </ul></td>
 </tr>
 </tbody>

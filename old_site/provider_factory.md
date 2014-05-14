@@ -19,11 +19,11 @@ Sure ADO.NET 2.0 has this functionality, but Mono.Data provides some of this abi
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Here_are_the_details:">1 Here are the details:</a></li>
-<li><a href="#Overview_of_the_ProviderFactory_object_model:">2 Overview of the ProviderFactory object model:</a></li>
-<li><a href="#C.23_source_code_samples_for_creating_a_connection:">3 C# source code samples for creating a connection:</a></li>
-<li><a href="#Recent_Additions_to_Mono.Data">4 Recent Additions to Mono.Data</a></li>
-<li><a href="#About_Configuration_Files">5 About Configuration Files</a></li>
+<li><a href="#here-are-the-details">1 Here are the details:</a></li>
+<li><a href="#overview-of-the-providerfactory-object-model">2 Overview of the ProviderFactory object model:</a></li>
+<li><a href="#c-source-code-samples-for-creating-a-connection">3 C# source code samples for creating a connection:</a></li>
+<li><a href="#recent-additions-to-monodata">4 Recent Additions to Mono.Data</a></li>
+<li><a href="#about-configuration-files">5 About Configuration Files</a></li>
 </ul></td>
 </tr>
 </tbody>

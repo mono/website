@@ -15,20 +15,20 @@ Monodocer
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Generating_Documentation">2 Generating Documentation</a>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#generating-documentation">2 Generating Documentation</a>
 <ul>
-<li><a href="#Example_Assembly">2.1 Example Assembly</a></li>
-<li><a href="#Generating_Documentation_Stubs">2.2 Generating Documentation Stubs</a></li>
+<li><a href="#example-assembly">2.1 Example Assembly</a></li>
+<li><a href="#generating-documentation-stubs">2.2 Generating Documentation Stubs</a></li>
 </ul></li>
-<li><a href="#Importing_Documentation">3 Importing Documentation</a>
+<li><a href="#importing-documentation">3 Importing Documentation</a>
 <ul>
-<li><a href="#Importing_XML_Documentation">3.1 Importing XML Documentation</a></li>
+<li><a href="#importing-xml-documentation">3.1 Importing XML Documentation</a></li>
 </ul></li>
-<li><a href="#Updating_Documentation">4 Updating Documentation</a></li>
-<li><a href="#Documentation_Stub_Format">5 Documentation Stub Format</a></li>
-<li><a href="#Editing_Documentation">6 Editing Documentation</a></li>
-<li><a href="#Installing_Documentation">7 Installing Documentation</a></li>
+<li><a href="#updating-documentation">4 Updating Documentation</a></li>
+<li><a href="#documentation-stub-format">5 Documentation Stub Format</a></li>
+<li><a href="#editing-documentation">6 Editing Documentation</a></li>
+<li><a href="#installing-documentation">7 Installing Documentation</a></li>
 </ul></td>
 </tr>
 </tbody>

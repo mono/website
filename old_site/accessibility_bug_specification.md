@@ -16,24 +16,24 @@ Accessibility: Bug Specification
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#References">1 References</a></li>
-<li><a href="#Definitions">2 Definitions</a></li>
-<li><a href="#Bug_Specification">3 Bug Specification</a>
+<li><a href="#references">1 References</a></li>
+<li><a href="#definitions">2 Definitions</a></li>
+<li><a href="#bug-specification">3 Bug Specification</a>
 <ul>
-<li><a href="#Purpose">3.1 Purpose</a></li>
-<li><a href="#Remember">3.2 Remember</a></li>
-<li><a href="#Bug_Template">3.3 Bug Template</a>
+<li><a href="#purpose">3.1 Purpose</a></li>
+<li><a href="#remember">3.2 Remember</a></li>
+<li><a href="#bug-template">3.3 Bug Template</a>
 <ul>
-<li><a href="#PROBLEM_STATEMENT:">3.3.1 PROBLEM STATEMENT:</a></li>
-<li><a href="#REPRO:">3.3.2 REPRO:</a></li>
-<li><a href="#RESULTS:">3.3.3 RESULTS:</a></li>
-<li><a href="#EXPECTED_RESULTS:">3.3.4 EXPECTED RESULTS:</a></li>
-<li><a href="#COMMENTS:">3.3.5 COMMENTS:</a></li>
+<li><a href="#problem-statement">3.3.1 PROBLEM STATEMENT:</a></li>
+<li><a href="#repro">3.3.2 REPRO:</a></li>
+<li><a href="#results">3.3.3 RESULTS:</a></li>
+<li><a href="#expected-results">3.3.4 EXPECTED RESULTS:</a></li>
+<li><a href="#comments">3.3.5 COMMENTS:</a></li>
 </ul></li>
-<li><a href="#Definitions_2">3.4 Definitions</a>
+<li><a href="#definitions_2">3.4 Definitions</a>
 <ul>
-<li><a href="#SEVERITY">3.4.1 SEVERITY</a></li>
-<li><a href="#PRIORITY">3.4.2 PRIORITY</a></li>
+<li><a href="#severity">3.4.1 SEVERITY</a></li>
+<li><a href="#priority">3.4.2 PRIORITY</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -65,7 +65,7 @@ This is the template that should be used for all bugs when they are entered into
 
 ### Remember
 
-Whenever you log a bug, please remember to add a comment with a [bug reference]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#Bug_References "Accessibility: Testing Howto") (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
+Whenever you log a bug, please remember to add a comment with a [bug reference]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#bug-references "Accessibility: Testing Howto") (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
 
 ### Bug Template
 

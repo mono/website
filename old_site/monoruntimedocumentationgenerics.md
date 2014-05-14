@@ -15,15 +15,15 @@ Mono:Runtime:Documentation:Generics
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Terminology">1 Terminology</a></li>
-<li><a href="#Generic_Type_Definitions">2 Generic Type Definitions</a></li>
-<li><a href="#Generic_Type_Instantiations">3 Generic Type Instantiations</a></li>
-<li><a href="#Generic_Method_Definitions">4 Generic Method Definitions</a></li>
-<li><a href="#Generic_Method_Instantiations">5 Generic Method Instantiations</a></li>
-<li><a href="#MonoGenericContext">6 MonoGenericContext</a></li>
-<li><a href="#Canonical_generic_instances">7 Canonical generic instances</a></li>
-<li><a href="#Lifetime_of_inflated_types.2Fmethods">8 Lifetime of inflated types/methods</a></li>
-<li><a href="#System.Reflection.Emit">9 System.Reflection.Emit</a></li>
+<li><a href="#terminology">1 Terminology</a></li>
+<li><a href="#generic-type-definitions">2 Generic Type Definitions</a></li>
+<li><a href="#generic-type-instantiations">3 Generic Type Instantiations</a></li>
+<li><a href="#generic-method-definitions">4 Generic Method Definitions</a></li>
+<li><a href="#generic-method-instantiations">5 Generic Method Instantiations</a></li>
+<li><a href="#monogenericcontext">6 MonoGenericContext</a></li>
+<li><a href="#canonical-generic-instances">7 Canonical generic instances</a></li>
+<li><a href="#lifetime-of-inflated-typesmethods">8 Lifetime of inflated types/methods</a></li>
+<li><a href="#systemreflectionemit">9 System.Reflection.Emit</a></li>
 </ul></td>
 </tr>
 </tbody>

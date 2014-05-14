@@ -20,17 +20,17 @@ Per-component [Plans]({{site.github.url}}/old_site/Plans "Plans") are available,
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Versioning">1 Versioning</a></li>
-<li><a href="#Current_Releases">2 Current Releases</a></li>
-<li><a href="#Upcoming_Releases">3 Upcoming Releases</a></li>
-<li><a href="#Subprojects_projects">4 Subprojects projects</a>
+<li><a href="#versioning">1 Versioning</a></li>
+<li><a href="#current-releases">2 Current Releases</a></li>
+<li><a href="#upcoming-releases">3 Upcoming Releases</a></li>
+<li><a href="#subprojects-projects">4 Subprojects projects</a>
 <ul>
-<li><a href="#Mono_and_Silverlight">4.1 Mono and Silverlight</a></li>
-<li><a href="#Partial_Implementations">4.2 Partial Implementations</a></li>
-<li><a href="#Unsupported_technologies">4.3 Unsupported technologies</a></li>
+<li><a href="#mono-and-silverlight">4.1 Mono and Silverlight</a></li>
+<li><a href="#partial-implementations">4.2 Partial Implementations</a></li>
+<li><a href="#unsupported-technologies">4.3 Unsupported technologies</a></li>
 </ul></li>
-<li><a href="#Comments">5 Comments</a></li>
-<li><a href="#Roadmap_History">6 Roadmap History</a></li>
+<li><a href="#comments">5 Comments</a></li>
+<li><a href="#roadmap-history">6 Roadmap History</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -100,19 +100,19 @@ Current Releases
 <tr class="even">
 <td align="left"><p>Major changes (see release notes for details):</p>
 <ul>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#Google_Native_Client_Support" title="Release Notes Mono 2.10">Google Native Client Support</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#New_Mono_Profiler" title="Release Notes Mono 2.10">New Profiler engine</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#Improved_Socket_and_Async_Stack" title="Release Notes Mono 2.10">Faster socket stack</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#Parallel_Framework_Updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#SGen_Garbage_Collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.</li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#google-native-client-support" title="Release Notes Mono 2.10">Google Native Client Support</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#new-mono-profiler" title="Release Notes Mono 2.10">New Profiler engine</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#improved-socket-and-async-stack" title="Release Notes Mono 2.10">Faster socket stack</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#parallel-framework-updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#sgen-garbage-collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.</li>
 <li>Unified MonoTouch/Monodroid runtime support</li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#Cecil.2FLight" title="Release Notes Mono 2.10">Cecil/Light</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#New_C.23_Compiler_Backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)</li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#VB_Compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.</li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#ASP.NET_MVC3_Support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.</li>
-<li>New <a href="#WebMatrix.Data">WebMatrix.Data</a> database API.</li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#OSX_Updates" title="Release Notes Mono 2.10">Improved OSX Mono</a></li>
-<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#Languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#cecil2flight" title="Release Notes Mono 2.10">Cecil/Light</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#new-c23-compiler-backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)</li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#vb-compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.</li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#aspnet-mvc3-support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.</li>
+<li>New <a href="#webmatrixdata">WebMatrix.Data</a> database API.</li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#osx-updates" title="Release Notes Mono 2.10">Improved OSX Mono</a></li>
+<li><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10#languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a></li>
 </ul></td>
 <td align="left"><p><a href="{{site.github.url}}/old_site/Release_Notes_Mono_2.10" title="Release Notes Mono 2.10">Mono 2.10 Release Notes</a></p>
 <ul>

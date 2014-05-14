@@ -15,12 +15,12 @@ OutputFromConsoleApp
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Preface">1 Preface</a></li>
-<li><a href="#Some_Code">2 Some Code</a>
+<li><a href="#preface">1 Preface</a></li>
+<li><a href="#some-code">2 Some Code</a>
 <ul>
-<li><a href="#A_Few_Words">2.1 A Few Words</a></li>
+<li><a href="#a-few-words">2.1 A Few Words</a></li>
 </ul></li>
-<li><a href="#References">3 References</a></li>
+<li><a href="#references">3 References</a></li>
 </ul></td>
 </tr>
 </tbody>

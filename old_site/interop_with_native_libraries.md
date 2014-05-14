@@ -22,81 +22,81 @@ By Jonathan Pryor Contributions: Hisham Mardam Bey
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Library_Handling">2 Library Handling</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#library-handling">2 Library Handling</a>
 <ul>
-<li><a href="#Windows_DLL_Search_Path">2.1 Windows DLL Search Path</a></li>
-<li><a href="#Linux_Shared_Library_Search_Path">2.2 Linux Shared Library Search Path</a></li>
-<li><a href="#Mac_OS_X_Framework_and_.dylib_Search_Path">2.3 Mac OS X Framework and .dylib Search Path</a></li>
-<li><a href="#Library_Names">2.4 Library Names</a></li>
+<li><a href="#windows-dll-search-path">2.1 Windows DLL Search Path</a></li>
+<li><a href="#linux-shared-library-search-path">2.2 Linux Shared Library Search Path</a></li>
+<li><a href="#mac-os-x-framework-and-dylib-search-path">2.3 Mac OS X Framework and .dylib Search Path</a></li>
+<li><a href="#library-names">2.4 Library Names</a></li>
 </ul></li>
-<li><a href="#Invoking_Unmanaged_Code">3 Invoking Unmanaged Code</a>
+<li><a href="#invoking-unmanaged-code">3 Invoking Unmanaged Code</a>
 <ul>
-<li><a href="#Runtime_Exception_Propagation">3.1 Runtime Exception Propagation</a></li>
+<li><a href="#runtime-exception-propagation">3.1 Runtime Exception Propagation</a></li>
 </ul></li>
-<li><a href="#Marshaling">4 Marshaling</a>
+<li><a href="#marshaling">4 Marshaling</a>
 <ul>
-<li><a href="#Memory_Boundaries">4.1 Memory Boundaries</a></li>
-<li><a href="#Blittable_Types">4.2 Blittable Types</a></li>
-<li><a href="#Strings">4.3 Strings</a>
+<li><a href="#memory-boundaries">4.1 Memory Boundaries</a></li>
+<li><a href="#blittable-types">4.2 Blittable Types</a></li>
+<li><a href="#strings">4.3 Strings</a>
 <ul>
-<li><a href="#More_Control">4.3.1 More Control</a></li>
-<li><a href="#Passing_Caller-Modifiable_Strings">4.3.2 Passing Caller-Modifiable Strings</a></li>
-<li><a href="#Strings_as_Return_Values">4.3.3 Strings as Return Values</a></li>
+<li><a href="#more-control">4.3.1 More Control</a></li>
+<li><a href="#passing-caller-modifiable-strings">4.3.2 Passing Caller-Modifiable Strings</a></li>
+<li><a href="#strings-as-return-values">4.3.3 Strings as Return Values</a></li>
 </ul></li>
-<li><a href="#Class_and_Structure_Marshaling">4.4 Class and Structure Marshaling</a>
+<li><a href="#class-and-structure-marshaling">4.4 Class and Structure Marshaling</a>
 <ul>
-<li><a href="#Class_Marshaling">4.4.1 Class Marshaling</a></li>
-<li><a href="#Structure_Marshaling">4.4.2 Structure Marshaling</a></li>
-<li><a href="#Classes_and_Structures_as_Return_Values">4.4.3 Classes and Structures as Return Values</a></li>
-<li><a href="#Memory_Management">4.4.4 Memory Management</a></li>
-<li><a href="#Choosing_between_Classes_and_Structures">4.4.5 Choosing between Classes and Structures</a></li>
+<li><a href="#class-marshaling">4.4.1 Class Marshaling</a></li>
+<li><a href="#structure-marshaling">4.4.2 Structure Marshaling</a></li>
+<li><a href="#classes-and-structures-as-return-values">4.4.3 Classes and Structures as Return Values</a></li>
+<li><a href="#memory-management">4.4.4 Memory Management</a></li>
+<li><a href="#choosing-between-classes-and-structures">4.4.5 Choosing between Classes and Structures</a></li>
 </ul></li>
-<li><a href="#Summary">4.5 Summary</a></li>
-<li><a href="#Marshaling_Class_and_Structure_Members">4.6 Marshaling Class and Structure Members</a>
+<li><a href="#summary">4.5 Summary</a></li>
+<li><a href="#marshaling-class-and-structure-members">4.6 Marshaling Class and Structure Members</a>
 <ul>
-<li><a href="#Boolean_Members">4.6.1 Boolean Members</a></li>
-<li><a href="#Unions">4.6.2 Unions</a></li>
-<li><a href="#Longs">4.6.3 Longs</a></li>
-<li><a href="#Arrays_Embedded_Within_Structures">4.6.4 Arrays Embedded Within Structures</a>
+<li><a href="#boolean-members">4.6.1 Boolean Members</a></li>
+<li><a href="#unions">4.6.2 Unions</a></li>
+<li><a href="#longs">4.6.3 Longs</a></li>
+<li><a href="#arrays-embedded-within-structures">4.6.4 Arrays Embedded Within Structures</a>
 <ul>
-<li><a href="#C.23_2.0_Functionality">4.6.4.1 C# 2.0 Functionality</a></li>
-<li><a href="#Real_World_Experience">4.6.4.2 Real World Experience</a></li>
+<li><a href="#c-20-functionality">4.6.4.1 C# 2.0 Functionality</a></li>
+<li><a href="#real-world-experience">4.6.4.2 Real World Experience</a></li>
 </ul></li>
-<li><a href="#Summary_2">4.6.5 Summary</a></li>
-<li><a href="#A_Warning_about_FieldOffset">4.6.6 A Warning about FieldOffset</a></li>
-<li><a href="#Marshaling_Pointers">4.6.7 Marshaling Pointers</a>
+<li><a href="#summary_2">4.6.5 Summary</a></li>
+<li><a href="#a-warning-about-fieldoffset">4.6.6 A Warning about FieldOffset</a></li>
+<li><a href="#marshaling-pointers">4.6.7 Marshaling Pointers</a>
 <ul>
-<li><a href="#Marshaling_Embedded_Strings">4.6.7.1 Marshaling Embedded Strings</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Custom_Marshaling">4.7 Custom Marshaling</a></li>
-<li><a href="#Manual_Marshaling">4.8 Manual Marshaling</a>
-<ul>
-<li><a href="#Marshaling_char.2A.2A">4.8.1 Marshaling char**</a></li>
+<li><a href="#marshaling-embedded-strings">4.6.7.1 Marshaling Embedded Strings</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Avoiding_Marshaling">5 Avoiding Marshaling</a>
+<li><a href="#custom-marshaling">4.7 Custom Marshaling</a></li>
+<li><a href="#manual-marshaling">4.8 Manual Marshaling</a>
 <ul>
-<li><a href="#GC-Safe_P.2FInvoke_code">5.1 GC-Safe P/Invoke code</a>
+<li><a href="#marshaling-char">4.8.1 Marshaling char**</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#avoiding-marshaling">5 Avoiding Marshaling</a>
 <ul>
-<li><a href="#.NET_2.0_and_SafeHandles">5.1.1 .NET 2.0 and SafeHandles</a></li>
-</ul></li>
-<li><a href="#Properly_Disposing_of_Resources">5.2 Properly Disposing of Resources</a></li>
-</ul></li>
-<li><a href="#Miscellaneous_Topics">6 Miscellaneous Topics</a>
+<li><a href="#gc-safe-pinvoke-code">5.1 GC-Safe P/Invoke code</a>
 <ul>
-<li><a href="#Meaning_of_.22Unsafe.22">6.1 Meaning of &quot;Unsafe&quot;</a></li>
-<li><a href="#Security">6.2 Security</a></li>
+<li><a href="#net-20-and-safehandles">5.1.1 .NET 2.0 and SafeHandles</a></li>
 </ul></li>
-<li><a href="#Troubleshooting">7 Troubleshooting</a></li>
-<li><a href="#Commentary">8 Commentary</a>
+<li><a href="#properly-disposing-of-resources">5.2 Properly Disposing of Resources</a></li>
+</ul></li>
+<li><a href="#miscellaneous-topics">6 Miscellaneous Topics</a>
 <ul>
-<li><a href="#P.2FInvoke_Specification">8.1 P/Invoke Specification</a></li>
+<li><a href="#meaning-of-unsafe">6.1 Meaning of &quot;Unsafe&quot;</a></li>
+<li><a href="#security">6.2 Security</a></li>
 </ul></li>
-<li><a href="#Thanks">9 Thanks</a></li>
-<li><a href="#Copyright">10 Copyright</a></li>
-<li><a href="#Revision_History">11 Revision History</a></li>
+<li><a href="#troubleshooting">7 Troubleshooting</a></li>
+<li><a href="#commentary">8 Commentary</a>
+<ul>
+<li><a href="#pinvoke-specification">8.1 P/Invoke Specification</a></li>
+</ul></li>
+<li><a href="#thanks">9 Thanks</a></li>
+<li><a href="#copyright">10 Copyright</a></li>
+<li><a href="#revision-history">11 Revision History</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -118,9 +118,9 @@ The above C\# function declaration would invoke the POSIX **getpid**(2) system c
 
 There are three problems with this:
 
-1.  [Specifying the library in the DllImport statement](#Library_Handling).
-2.  [Determining what function to actually invoke](#Invoking_Unmanaged_Code).
-3.  [Passing parameters](#Marshaling); most existing code is far more complex. Strings will need to be passed, structures may need to be passed, memory management practices will become involved...
+1.  [Specifying the library in the DllImport statement](#library-handling).
+2.  [Determining what function to actually invoke](#invoking-unmanaged-code).
+3.  [Passing parameters](#marshaling); most existing code is far more complex. Strings will need to be passed, structures may need to be passed, memory management practices will become involved...
 
 Existing code is a complex beast, and the interop layer needs to support this complexity.
 
@@ -179,7 +179,7 @@ The Framework and library search path is:
     -   `/lib`
     -   `/usr/lib`
 
-Note: Mono uses GLib to load libraries, and GLib has a bug on Mac OS X where it doesn't use a `.dylib` extension, but instead uses the Unix `.so` extension. While this should eventually be fixed, the current workaround is to [write a `.config` file which maps to the `.dylib` file](#Library_Names), e.g.
+Note: Mono uses GLib to load libraries, and GLib has a bug on Mac OS X where it doesn't use a `.dylib` extension, but instead uses the Unix `.so` extension. While this should eventually be fixed, the current workaround is to [write a `.config` file which maps to the `.dylib` file](#library-names), e.g.
 
 ``` xml
  <configuration>
@@ -242,7 +242,7 @@ As far as managed code is concerned, unmanaged code is invoked merely by invokin
 
 In principal, this is a straightforward process. The library specified in the **DllImport** attribute is loaded, as described above. Then, the specified function is looked up (via [GetProcAddress()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/getprocaddress.asp) or **dlsym**(3)). Finally, the function is invoked.
 
-But what string is used for the function lookup (in `GetProcAddress()` or **dlopen**(3))? By default, the name of the managed code method is used, which is why [getpid() in the above example](#Introduction) invokes **getpid**(2) from the C library.
+But what string is used for the function lookup (in `GetProcAddress()` or **dlopen**(3))? By default, the name of the managed code method is used, which is why [getpid() in the above example](#introduction) invokes **getpid**(2) from the C library.
 
 Alternatively, the **DllImport** attribute's [http:/monodoc/F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint EntryPoint] field can be set, and that string will be used instead.
 
@@ -314,7 +314,7 @@ Marshaling
 
 How does Platform Invoke work? Given a managed call site (the function call), and an unmanaged callee site (the function that's being called), each parameter in the call site is "marshaled" (converted) into an unmanaged equivalent. The marshaled data is in turn placed on the runtime stack (along with other data), and the unmanaged function is invoked.
 
-The complexity is due to the marshaling. For [simple types](#Blittable_Types), such as integers and floating-point numbers, marshaling is a bitwise-copy ("blitting"), just as would be the case for unmanaged code. In some cases, marshaling can be avoided, such as when passing structures by reference to unmanaged code (a pointer to the structure is copied instead). It's also possible to obtain more control over marshaling, through [custom marshaling](#Custom_Marshaling) and [manual marshaling](#Manual_Marshaling).
+The complexity is due to the marshaling. For [simple types](#blittable-types), such as integers and floating-point numbers, marshaling is a bitwise-copy ("blitting"), just as would be the case for unmanaged code. In some cases, marshaling can be avoided, such as when passing structures by reference to unmanaged code (a pointer to the structure is copied instead). It's also possible to obtain more control over marshaling, through [custom marshaling](#custom-marshaling) and [manual marshaling](#manual-marshaling).
 
 String types introduce additional complexity, as you need to specify the form of string conversion. The runtime stores strings as UTF-16-encoded strings, and these will likely need to be marshaled to a more appropriate form (ANSI strings, UTF-8 encoded strings, etc.). Strings get some special support.
 
@@ -334,7 +334,7 @@ During a P/Invoke call the runtime doesn't mimic the C\# `fixed` statement. Inst
 3.  The unmanaged function is invoked, passing it the unmanaged memory information instead of the managed memory information. This must be done so that if a GC occurs, the unmanaged function doesn't need to worry about it. (And yes, you need to worry about GCs, as the unmanaged function could call back into the runtime, ultimately leading to a GC. Multi-threaded code can also cause a GC while unmanaged code is executing.)
 4.  The unmanaged memory is copied back into managed memory.
 
-See [Class and Structure Marshaling](#Class_and_Structure_Marshaling) for more detailed information about marshaling classes and structures.
+See [Class and Structure Marshaling](#class-and-structure-marshaling) for more detailed information about marshaling classes and structures.
 
 There is one key point to keep in mind: the memory management specified in the above process is implicit, and there is no way to control how the runtime allocates the marshaled memory, or how long it lasts. This is crucial. If the runtime marshals a string (e.g. UTF-16 to Ansi conversion), the marshaled string will only last as long as the call. The unmanaged code *CANNOT* keep a reference to this memory, as it *WILL* be freed after the call ends. Failure to heed this restriction can result in "strange behavior", including memory access violations and process death. This is true for *any* marshaling process where the runtime allocates memory for the marshal process.
 
@@ -433,7 +433,7 @@ Many types require minimal copying into native memory. Blittable types are types
 </tr>
 <tr class="even">
 <td align="left"><code>bool</code></td>
-<td align="left"><a href="#Boolean_Members">Depends on context</a></td>
+<td align="left"><a href="#boolean-members">Depends on context</a></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -500,7 +500,7 @@ Mono uses UTF-8 encoding as the default encoding on all platforms.
 
 There are other **UnmangedType** string marshaling options, but they're primarily of interest in COM Interop ([http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.BStr BStr], [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.AnsiBStr AnsiBStr], [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.TBStr TBStr]).
 
-If **UnmanagedType** doesn't provide enough flexibility for your string marshaling needs (for example, you're wrapping GTK+ and you need to marshal strings in UTF-8 format), look at the [Custom Marshaling](#Custom_Marshaling) or [Manual Marshaling](#Manual_Marshaling) sections.
+If **UnmanagedType** doesn't provide enough flexibility for your string marshaling needs (for example, you're wrapping GTK+ and you need to marshal strings in UTF-8 format), look at the [Custom Marshaling](#custom-marshaling) or [Manual Marshaling](#manual-marshaling) sections.
 
 ### Passing Caller-Modifiable Strings
 
@@ -527,13 +527,13 @@ The solution is to use a [http:/monodoc/T:System.Text.StringBuilder System.Text.
  }
 ```
 
-Some things to note is that the return value of **strncpy**(3) was changed to *void*, as there is no way to specify that the return value will be the same pointer address as the input *dest* string buffer, and thus it doesn't need to be marshaled. If *string* were used instead, Bad Things could happen (the returned string would be freed; see [Strings as Return Values](#Strings_as_Return_Values) ). The **StringBuilder** is allocated with the correct amount of storage as a constructor parameter, and this amount of storage is passed to **strncpy**(3) to prevent buffer overflow. If you use a **StringBuilder** instance multiple times, always call [http:/monodoc/M:System.Text.StringBuilder.EnsureCapacity(System.Int32) EnsureCapacity()] before passing it into the native method, as the capacity may shrink as a memory optimization over time, leading to unexpectedly truncated results.
+Some things to note is that the return value of **strncpy**(3) was changed to *void*, as there is no way to specify that the return value will be the same pointer address as the input *dest* string buffer, and thus it doesn't need to be marshaled. If *string* were used instead, Bad Things could happen (the returned string would be freed; see [Strings as Return Values](#strings-as-return-values) ). The **StringBuilder** is allocated with the correct amount of storage as a constructor parameter, and this amount of storage is passed to **strncpy**(3) to prevent buffer overflow. If you use a **StringBuilder** instance multiple times, always call [http:/monodoc/M:System.Text.StringBuilder.EnsureCapacity(System.Int32) EnsureCapacity()] before passing it into the native method, as the capacity may shrink as a memory optimization over time, leading to unexpectedly truncated results.
 
 TODO: How does StringBuilder interact with the specified CharSet?
 
 ### Strings as Return Values
 
-The **String** type is a class, so [see the section on returning classes from functions](#Classes_and_Structures_as_Return_Values). Summary: the runtime will attempt to free the returned pointer. The usual symptom is a runtime crash like this:
+The **String** type is a class, so [see the section on returning classes from functions](#classes-and-structures-as-return-values). Summary: the runtime will attempt to free the returned pointer. The usual symptom is a runtime crash like this:
 
     =================================================================
     Got a SIGSEGV while executing native code. This usually indicates
@@ -546,7 +546,7 @@ The **String** type is a class, so [see the section on returning classes from fu
     in <0x4> (wrapper managed-to-native) System.Object:__icall_wrapper_g_free (intptr)
     in <0x6b9d0c> (wrapper managed-to-native) System.Object:__icall_wrapper_g_free (intptr)
 
-If you don't want the runtime to free the returned string, either (a) don't specify the return value ([as was done for the **strncpy**(3) function above](#Passing_Caller-Modifiable_Strings)), or (b) return an [http:/monodoc/T:System.IntPtr IntPtr] and use one of the Marshal.PtrToString\* functions, depending on the type of string returned. For example, use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi Marshal.PtrToStringAnsi] to marshal from a Ansi string, and use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringUni Marshal.PtrToStringUni] to marshal from a Unicode string.
+If you don't want the runtime to free the returned string, either (a) don't specify the return value ([as was done for the **strncpy**(3) function above](#passing-caller-modifiable-strings)), or (b) return an [http:/monodoc/T:System.IntPtr IntPtr] and use one of the Marshal.PtrToString\* functions, depending on the type of string returned. For example, use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi Marshal.PtrToStringAnsi] to marshal from a Ansi string, and use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringUni Marshal.PtrToStringUni] to marshal from a Unicode string.
 
 See also:
 
@@ -556,7 +556,7 @@ See also:
 Class and Structure Marshaling
 ------------------------------
 
-The conceptual steps that occur to marshal classes and structures is detailed above, in the [Memory Boundaries](#Memory_Boundaries) section.
+The conceptual steps that occur to marshal classes and structures is detailed above, in the [Memory Boundaries](#memory-boundaries) section.
 
 The principal difference between class and structure marshaling is which, if any, of conceptual steps actually occurs.
 
@@ -634,7 +634,7 @@ What do you do if you don't want the runtime to free the memory? Don't return a 
 
 So which should be used when wrapping unmanaged code, classes or structures?
 
-Generally, the answer to this question depends upon what the unmanaged code requires. If you require pass-by-value semantics, you must use structures. If you want to return a pointer to an unmanaged type without resorting to "unsafe" or manual code, you must use classes (assuming that the default [memory allocation rules](#Memory_Management) are appropriate).
+Generally, the answer to this question depends upon what the unmanaged code requires. If you require pass-by-value semantics, you must use structures. If you want to return a pointer to an unmanaged type without resorting to "unsafe" or manual code, you must use classes (assuming that the default [memory allocation rules](#memory-management) are appropriate).
 
 For the large intersection of unmanaged code that doesn't have pass-by-value structures or return pointers to structures from functions? Use whichever is more convenient for the end user. Not all languages support passing types by reference (Java, for example), so using classes will permit a larger body of languages to use the wrapper library. Furthermore, Microsoft suggests that structure sizes not exceed 16 bytes.
 
@@ -772,7 +772,7 @@ The general rule of advice is this: never pass classes or structures containing 
 
 The immediate net effect of this is that you can't have array members in marshaled classes, and (as we've seen before) handling strings can be "wonky" (as strings are also a reference type).
 
-Furthermore, the default string marshaling is the [platform default](#More_Control) , though this can be changed by setting the [http:/monodoc/F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet StructLayoutAttribute.CharSet] field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
+Furthermore, the default string marshaling is the [platform default](#more-control) , though this can be changed by setting the [http:/monodoc/F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet StructLayoutAttribute.CharSet] field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
 
 ### Boolean Members
 
@@ -1011,11 +1011,11 @@ See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft
 
 Didn't we start using a managed execution environment to *avoid*pointers? But I digress...
 
-Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#Avoiding_Marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [http:/monodoc/T:System.IntPtr System.IntPtr] or [http:/monodoc/T:System.UIntPtr System.UIntPtr] , and the "unsafe" way, by using `unsafe` code and pointers.
+Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#avoiding-marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [http:/monodoc/T:System.IntPtr System.IntPtr] or [http:/monodoc/T:System.UIntPtr System.UIntPtr] , and the "unsafe" way, by using `unsafe` code and pointers.
 
 #### Marshaling Embedded Strings
 
-*Behold the topic that just won't die!* "Inline" strings -- in which the storage for the string is part of the structure itself -- were covered [previously](#Arrays_Embedded_Within_Structures). Obviously, and likely more commonly, strings are not always allocated within the structure; typically a pointer to a null-terminated string is stored.
+*Behold the topic that just won't die!* "Inline" strings -- in which the storage for the string is part of the structure itself -- were covered [previously](#arrays-embedded-within-structures). Obviously, and likely more commonly, strings are not always allocated within the structure; typically a pointer to a null-terminated string is stored.
 
 The typical approach is to map the string as an IntPtr, and use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi Marshal.PtrToStringAnsi] and similar functions to manually marshal the string.
 
@@ -1049,7 +1049,7 @@ public static ICustomMarshaler GetInstance (string s);
 
 An example custom marshaler can be found in the **Mono.Unix.Native.FileNameMarshaler** ([FileNameMarshaler.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/Mono.Posix/Mono.Unix.Native/FileNameMarshaler.cs)) and in the Mono unit tests ([marshal9.cs](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/marshal9.cs)).
 
-Given all the work involved with custom marshaling, such as the required **ICustomMarshaler** class implementation and **MarshalAs** attributes, what is the advantage of custom marshaling over [manual marshaling](#Manual_Marshaling)? Maintenance. For only one method, manual marshaling is simpler:
+Given all the work involved with custom marshaling, such as the required **ICustomMarshaler** class implementation and **MarshalAs** attributes, what is the advantage of custom marshaling over [manual marshaling](#manual-marshaling)? Maintenance. For only one method, manual marshaling is simpler:
 
 ``` csharp
  // Custom Marshaling with Mono.Unix.Native.FileNameMarshaler.cs
@@ -1446,7 +1446,7 @@ Properly Disposing of Resources
 
 When avoiding marshaling, you're referencing unmanaged memory and other resources from managed code. This confers a great deal of responsibility. It also creates a great deal of concern, as more things can "go wrong" in managed code, particularly because of exceptions and related complexity. When any function can throw an exception, ensuring that resources are properly disposed of can be a tricky matter.
 
-As suggested in the [previous section](#GC-Safe_P.2FInvoke_code), a simple way to ensure that resources are eventually disposed is to wrap the resource within a class containing a finalizer. The finalizer can then free the resource.
+As suggested in the [previous section](#gc-safe-pinvoke-code), a simple way to ensure that resources are eventually disposed is to wrap the resource within a class containing a finalizer. The finalizer can then free the resource.
 
 There are two problems with that approach, both of which have to do with the garbage collector:
 

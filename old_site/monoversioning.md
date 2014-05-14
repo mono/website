@@ -19,20 +19,20 @@ See also: [http://lists.ximian.com/archives/public/mono-list/2005-March/026427.h
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono.27s_Version_Policy_Explained">1 Mono's Version Policy Explained</a>
+<li><a href="#monos-version-policy-explained">1 Mono's Version Policy Explained</a>
 <ul>
-<li><a href="#Examples">1.1 Examples</a></li>
+<li><a href="#examples">1.1 Examples</a></li>
 </ul></li>
-<li><a href="#.NET_Versioning">2 .NET Versioning</a></li>
-<li><a href="#Framework_Versioning">3 Framework Versioning</a></li>
-<li><a href="#Application_Versioning">4 Application Versioning</a></li>
-<li><a href="#Assembly_References">5 Assembly References</a>
+<li><a href="#net-versioning">2 .NET Versioning</a></li>
+<li><a href="#framework-versioning">3 Framework Versioning</a></li>
+<li><a href="#application-versioning">4 Application Versioning</a></li>
+<li><a href="#assembly-references">5 Assembly References</a>
 <ul>
-<li><a href="#If_I_use_mcs_to_compile_a_simple_program_and_then_use_mono_to_run_it.2C_which_version_of_the_assemblies_will_it_use_.28e.g._which_System.Windows.Forms.dll.29_.3F">5.1 If I use mcs to compile a simple program and then use mono to run it, which version of the assemblies will it use (e.g. which System.Windows.Forms.dll) ?</a></li>
+<li><a href="#if-i-use-mcs-to-compile-a-simple-program-and-then-use-mono-to-run-it-which-version-of-the-assemblies-will-it-use-eg-which-systemwindowsformsdll-">5.1 If I use mcs to compile a simple program and then use mono to run it, which version of the assemblies will it use (e.g. which System.Windows.Forms.dll) ?</a></li>
 </ul></li>
-<li><a href="#SVN_Installation">6 SVN Installation</a>
+<li><a href="#svn-installation">6 SVN Installation</a>
 <ul>
-<li><a href="#If_I_use_svn_update_to_get_the_latest_code_and_then_run_make_and_make_install_in_the_mono_directory_how_does_it_decide_which_version_it_is_making_and_where_to_place_the_assembly.3F">6.1 If I use svn update to get the latest code and then run make and make install in the mono directory how does it decide which version it is making and where to place the assembly?</a></li>
+<li><a href="#if-i-use-svn-update-to-get-the-latest-code-and-then-run-make-and-make-install-in-the-mono-directory-how-does-it-decide-which-version-it-is-making-and-where-to-place-the-assembly">6.1 If I use svn update to get the latest code and then run make and make install in the mono directory how does it decide which version it is making and where to place the assembly?</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -27,11 +27,11 @@ The ultimate goal can be stated as making sure Mono's Web platform:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Non-semantic_markup">1 Non-semantic markup</a></li>
-<li><a href="#id_tags">2 id tags</a></li>
-<li><a href="#Style_and_content">3 Style and content</a></li>
-<li><a href="#ASP.NET_2.0">4 ASP.NET 2.0</a></li>
-<li><a href="#Other_thoughts">5 Other thoughts</a></li>
+<li><a href="#non-semantic-markup">1 Non-semantic markup</a></li>
+<li><a href="#id-tags">2 id tags</a></li>
+<li><a href="#style-and-content">3 Style and content</a></li>
+<li><a href="#aspnet-20">4 ASP.NET 2.0</a></li>
+<li><a href="#other-thoughts">5 Other thoughts</a></li>
 </ul></td>
 </tr>
 </tbody>

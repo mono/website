@@ -15,17 +15,17 @@ Accessibility: Phase II Work Breakdown
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Phase_II_Work_Breakdown">1 Phase II Work Breakdown</a>
+<li><a href="#phase-ii-work-breakdown">1 Phase II Work Breakdown</a>
 <ul>
-<li><a href="#High_Level_Breakdown">1.1 High Level Breakdown</a>
+<li><a href="#high-level-breakdown">1.1 High Level Breakdown</a>
 <ul>
-<li><a href="#Firefox_Plugin_.28Brad.29">1.1.1 Firefox Plugin (Brad)</a></li>
-<li><a href="#Moon_Uia_Atk_Bridge_.28Andres.29">1.1.2 Moon Uia Atk Bridge (Andres)</a></li>
-<li><a href="#Moonlight_Providers_.28Mario.29">1.1.3 Moonlight Providers (Mario)</a></li>
-<li><a href="#AT-SPI-sharp_.28Mike.29">1.1.4 AT-SPI-sharp (Mike)</a></li>
-<li><a href="#AT-SPI_to_UIA_.28Mike.29">1.1.5 AT-SPI to UIA (Mike)</a></li>
-<li><a href="#UIA_to_DBus_-_UiaDbusCoreBridge_.28Sandy.29">1.1.6 UIA to DBus - UiaDbusCoreBridge (Sandy)</a></li>
-<li><a href="#UIA_Client_API_Implementation_.28Sandy.29">1.1.7 UIA Client API Implementation (Sandy)</a></li>
+<li><a href="#firefox-plugin-brad">1.1.1 Firefox Plugin (Brad)</a></li>
+<li><a href="#moon-uia-atk-bridge-andres">1.1.2 Moon Uia Atk Bridge (Andres)</a></li>
+<li><a href="#moonlight-providers-mario">1.1.3 Moonlight Providers (Mario)</a></li>
+<li><a href="#at-spi-sharp-mike">1.1.4 AT-SPI-sharp (Mike)</a></li>
+<li><a href="#at-spi-to-uia-mike">1.1.5 AT-SPI to UIA (Mike)</a></li>
+<li><a href="#uia-to-dbus---uiadbuscorebridge-sandy">1.1.6 UIA to DBus - UiaDbusCoreBridge (Sandy)</a></li>
+<li><a href="#uia-client-api-implementation-sandy">1.1.7 UIA Client API Implementation (Sandy)</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

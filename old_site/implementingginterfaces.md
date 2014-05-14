@@ -18,15 +18,15 @@ A tutorial and API description for GInterface implementors.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#The_Managed_Types">2 The Managed Types</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#the-managed-types">2 The Managed Types</a>
 <ul>
-<li><a href="#The_Consumable_interface">2.1 The Consumable interface</a></li>
-<li><a href="#The_Implementor_interface">2.2 The Implementor interface</a></li>
-<li><a href="#The_Adapter_object">2.3 The Adapter object</a></li>
+<li><a href="#the-consumable-interface">2.1 The Consumable interface</a></li>
+<li><a href="#the-implementor-interface">2.2 The Implementor interface</a></li>
+<li><a href="#the-adapter-object">2.3 The Adapter object</a></li>
 </ul></li>
-<li><a href="#An_Example">3 An Example</a></li>
-<li><a href="#Availability">4 Availability</a></li>
+<li><a href="#an-example">3 An Example</a></li>
+<li><a href="#availability">4 Availability</a></li>
 </ul></td>
 </tr>
 </tbody>

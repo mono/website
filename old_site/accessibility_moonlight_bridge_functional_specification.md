@@ -17,58 +17,58 @@ Unlike the approach that was taken for the System.Windows.Forms ATK Bridge (wher
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mapping_between_Controls_and_UIAutomation_Patterns">1 Mapping between Controls and UIAutomation Patterns</a></li>
-<li><a href="#Mapping_Control_Types_to_ATK_Roles">2 Mapping Control Types to ATK Roles</a></li>
-<li><a href="#Mapping_UIAutomation_Control_Patterns_to_ATK_interfaces">3 Mapping UIAutomation Control Patterns to ATK interfaces</a>
+<li><a href="#mapping-between-controls-and-uiautomation-patterns">1 Mapping between Controls and UIAutomation Patterns</a></li>
+<li><a href="#mapping-control-types-to-atk-roles">2 Mapping Control Types to ATK Roles</a></li>
+<li><a href="#mapping-uiautomation-control-patterns-to-atk-interfaces">3 Mapping UIAutomation Control Patterns to ATK interfaces</a>
 <ul>
-<li><a href="#Generic_Adapter">3.1 Generic Adapter</a>
+<li><a href="#generic-adapter">3.1 Generic Adapter</a>
 <ul>
-<li><a href="#Properties">3.1.1 Properties</a></li>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior">3.1.2 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#States">3.1.3 States</a>
+<li><a href="#properties">3.1.1 Properties</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior">3.1.2 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#states">3.1.3 States</a>
 <ul>
-<li><a href="#Default_states">3.1.3.1 Default states</a></li>
-<li><a href="#Pattern-specific_States">3.1.3.2 Pattern-specific States</a></li>
+<li><a href="#default-states">3.1.3.1 Default states</a></li>
+<li><a href="#pattern-specific-states">3.1.3.2 Pattern-specific States</a></li>
 </ul></li>
-<li><a href="#Relations">3.1.4 Relations</a></li>
-<li><a href="#Events">3.1.5 Events</a></li>
+<li><a href="#relations">3.1.4 Relations</a></li>
+<li><a href="#events">3.1.5 Events</a></li>
 </ul></li>
-<li><a href="#ExpandCollapse.2FInvoke.2FToggle_Pattern_Implementor">3.2 ExpandCollapse/Invoke/Toggle Pattern Implementor</a>
+<li><a href="#expandcollapseinvoketoggle-pattern-implementor">3.2 ExpandCollapse/Invoke/Toggle Pattern Implementor</a>
 <ul>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior_2">3.2.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_that_cannot_be_implemented">3.2.2 Methods that cannot be implemented</a></li>
-<li><a href="#Events_2">3.2.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior_2">3.2.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented">3.2.2 Methods that cannot be implemented</a></li>
+<li><a href="#events_2">3.2.3 Events</a></li>
 </ul></li>
-<li><a href="#Grid.2FTable_Pattern_Implementor">3.3 Grid/Table Pattern Implementor</a>
+<li><a href="#gridtable-pattern-implementor">3.3 Grid/Table Pattern Implementor</a>
 <ul>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior_3">3.3.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_to_expect_similar_GTK.2FGAIL_like_behavior">3.3.2 Methods to expect similar GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_that_cannot_be_implemented_2">3.3.3 Methods that cannot be implemented</a></li>
-<li><a href="#Events_3">3.3.4 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior_3">3.3.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-to-expect-similar-gtkgail-like-behavior">3.3.2 Methods to expect similar GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented_2">3.3.3 Methods that cannot be implemented</a></li>
+<li><a href="#events_3">3.3.4 Events</a></li>
 </ul></li>
-<li><a href="#RangeValue_Pattern_Implementor">3.4 RangeValue Pattern Implementor</a>
+<li><a href="#rangevalue-pattern-implementor">3.4 RangeValue Pattern Implementor</a>
 <ul>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior_4">3.4.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_that_cannot_be_implemented_3">3.4.2 Methods that cannot be implemented</a></li>
-<li><a href="#Events_4">3.4.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior_4">3.4.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented_3">3.4.2 Methods that cannot be implemented</a></li>
+<li><a href="#events_4">3.4.3 Events</a></li>
 </ul></li>
-<li><a href="#Selection_Pattern_Implementor">3.5 Selection Pattern Implementor</a>
+<li><a href="#selection-pattern-implementor">3.5 Selection Pattern Implementor</a>
 <ul>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior_5">3.5.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_that_cannot_be_implemented_4">3.5.2 Methods that cannot be implemented</a></li>
-<li><a href="#Events_5">3.5.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior_5">3.5.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented_4">3.5.2 Methods that cannot be implemented</a></li>
+<li><a href="#events_5">3.5.3 Events</a></li>
 </ul></li>
-<li><a href="#SelectionItem_Pattern_Implementor">3.6 SelectionItem Pattern Implementor</a>
+<li><a href="#selectionitem-pattern-implementor">3.6 SelectionItem Pattern Implementor</a>
 <ul>
-<li><a href="#Events_6">3.6.1 Events</a></li>
+<li><a href="#events_6">3.6.1 Events</a></li>
 </ul></li>
-<li><a href="#Value_Pattern_Implementor">3.7 Value Pattern Implementor</a>
+<li><a href="#value-pattern-implementor">3.7 Value Pattern Implementor</a>
 <ul>
-<li><a href="#Methods_to_expect_GTK.2FGAIL_like_behavior_6">3.7.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#Methods_that_cannot_be_implemented_5">3.7.2 Methods that cannot be implemented</a></li>
-<li><a href="#Events_7">3.7.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior_6">3.7.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented_5">3.7.2 Methods that cannot be implemented</a></li>
+<li><a href="#events_7">3.7.3 Events</a></li>
 </ul></li>
-<li><a href="#Exceptions">3.8 Exceptions</a></li>
+<li><a href="#exceptions">3.8 Exceptions</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,13 +15,13 @@ ODBC
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Current_Status">2 Current Status</a></li>
-<li><a href="#Action_plan">3 Action plan</a></li>
-<li><a href="#Missing_Features">4 Missing Features</a></li>
-<li><a href="#Testing_ODBC_Providers">5 Testing ODBC Providers</a></li>
-<li><a href="#Testing_ODBC_provider_with_IBM_DB2_Universal_Database">6 Testing ODBC provider with IBM DB2 Universal Database</a></li>
-<li><a href="#Testing_ODBC_provider_with_MySQL">7 Testing ODBC provider with MySQL</a></li>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#current-status">2 Current Status</a></li>
+<li><a href="#action-plan">3 Action plan</a></li>
+<li><a href="#missing-features">4 Missing Features</a></li>
+<li><a href="#testing-odbc-providers">5 Testing ODBC Providers</a></li>
+<li><a href="#testing-odbc-provider-with-ibm-db2-universal-database">6 Testing ODBC provider with IBM DB2 Universal Database</a></li>
+<li><a href="#testing-odbc-provider-with-mysql">7 Testing ODBC provider with MySQL</a></li>
 </ul></td>
 </tr>
 </tbody>

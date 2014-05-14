@@ -16,11 +16,11 @@ Accessibility: Bridge Functional Specification
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Functional_Specification">1 Functional Specification</a>
+<li><a href="#functional-specification">1 Functional Specification</a>
 <ul>
-<li><a href="#Functionality">1.1 Functionality</a></li>
-<li><a href="#Ideas">1.2 Ideas</a></li>
-<li><a href="#Notes">1.3 Notes</a></li>
+<li><a href="#functionality">1.1 Functionality</a></li>
+<li><a href="#ideas">1.2 Ideas</a></li>
+<li><a href="#notes">1.3 Notes</a></li>
 </ul></li>
 </ul></td>
 </tr>

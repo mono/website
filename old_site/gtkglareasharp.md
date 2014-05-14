@@ -16,19 +16,19 @@ GtkGLAreaSharp
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Installing">2 Installing</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#installing">2 Installing</a>
 <ul>
-<li><a href="#Tutorial">2.1 Tutorial</a></li>
+<li><a href="#tutorial">2.1 Tutorial</a></li>
 </ul></li>
-<li><a href="#Dependencies">3 Dependencies</a></li>
-<li><a href="#Testing_and_Development">4 Testing and Development</a></li>
-<li><a href="#MonoDevelop">5 MonoDevelop</a></li>
-<li><a href="#Support">6 Support</a></li>
-<li><a href="#Help_Wanted">7 Help Wanted</a></li>
-<li><a href="#TODO">8 TODO</a></li>
-<li><a href="#Examples">9 Examples</a></li>
-<li><a href="#Release_Notes">10 Release Notes</a></li>
+<li><a href="#dependencies">3 Dependencies</a></li>
+<li><a href="#testing-and-development">4 Testing and Development</a></li>
+<li><a href="#monodevelop">5 MonoDevelop</a></li>
+<li><a href="#support">6 Support</a></li>
+<li><a href="#help-wanted">7 Help Wanted</a></li>
+<li><a href="#todo">8 TODO</a></li>
+<li><a href="#examples">9 Examples</a></li>
+<li><a href="#release-notes">10 Release Notes</a></li>
 </ul></td>
 </tr>
 </tbody>

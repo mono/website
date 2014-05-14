@@ -18,17 +18,17 @@ Using Mono on Windows
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Installing_Mono_on_Windows">1 Installing Mono on Windows</a>
+<li><a href="#installing-mono-on-windows">1 Installing Mono on Windows</a>
 <ul>
-<li><a href="#Mono_Experimental_Installer_for_Windows">1.1 Mono Experimental Installer for Windows</a></li>
+<li><a href="#mono-experimental-installer-for-windows">1.1 Mono Experimental Installer for Windows</a></li>
 </ul></li>
-<li><a href="#Using_Mono_on_Windows">2 Using Mono on Windows</a>
+<li><a href="#using-mono-on-windows">2 Using Mono on Windows</a>
 <ul>
-<li><a href="#Gtk.23">2.1 Gtk#</a></li>
-<li><a href="#ASP.NET_with_Mono:_xsp_.26_xsp2">2.2 ASP.NET with Mono: xsp &amp; xsp2</a></li>
+<li><a href="#gtk">2.1 Gtk#</a></li>
+<li><a href="#aspnet-with-mono-xsp--xsp2">2.2 ASP.NET with Mono: xsp &amp; xsp2</a></li>
 </ul></li>
-<li><a href="#Building_Mono_on_Windows">3 Building Mono on Windows</a></li>
-<li><a href="#Contents_of_the_Mono_Packages_for_Windows">4 Contents of the Mono Packages for Windows</a></li>
+<li><a href="#building-mono-on-windows">3 Building Mono on Windows</a></li>
+<li><a href="#contents-of-the-mono-packages-for-windows">4 Contents of the Mono Packages for Windows</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -123,7 +123,7 @@ Building Mono on Windows
 
 You can compile Mono with the cygwin toolchain or with Visual Studio:
 
--   Using the [Compiling Mono with the cygwin toolchain]({{site.github.url}}/old_site/Compiling_Mono#Windows_Compilation "Compiling Mono")
+-   Using the [Compiling Mono with the cygwin toolchain]({{site.github.url}}/old_site/Compiling_Mono#windows-compilation "Compiling Mono")
 
 -   Using [Visual Studio .NET 2005]({{site.github.url}}/old_site/Compiling_Mono_VSNET "Compiling Mono VSNET")
 

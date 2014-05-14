@@ -15,17 +15,17 @@ Books
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono">1 Mono</a></li>
-<li><a href="#C.23">2 C#</a></li>
-<li><a href="#.NET_Framework">3 .NET Framework</a></li>
-<li><a href="#.NET_Design">4 .NET Design</a></li>
-<li><a href="#Remoting">5 Remoting</a></li>
-<li><a href="#Threading">6 Threading</a></li>
-<li><a href="#Web_Services">7 Web Services</a></li>
-<li><a href="#ASP.NET">8 ASP.NET</a></li>
-<li><a href="#Security">9 Security</a></li>
-<li><a href="#Compiler_Implementation">10 Compiler Implementation</a></li>
-<li><a href="#Reference_Manuals">11 Reference Manuals</a></li>
+<li><a href="#mono">1 Mono</a></li>
+<li><a href="#c">2 C#</a></li>
+<li><a href="#net-framework">3 .NET Framework</a></li>
+<li><a href="#net-design">4 .NET Design</a></li>
+<li><a href="#remoting">5 Remoting</a></li>
+<li><a href="#threading">6 Threading</a></li>
+<li><a href="#web-services">7 Web Services</a></li>
+<li><a href="#aspnet">8 ASP.NET</a></li>
+<li><a href="#security">9 Security</a></li>
+<li><a href="#compiler-implementation">10 Compiler Implementation</a></li>
+<li><a href="#reference-manuals">11 Reference Manuals</a></li>
 </ul></td>
 </tr>
 </tbody>

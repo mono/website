@@ -15,15 +15,15 @@ Papers
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Papers">1 Papers</a>
+<li><a href="#papers">1 Papers</a>
 <ul>
-<li><a href="#Register_Allocation">1.1 Register Allocation</a></li>
-<li><a href="#Loop_Transformations">1.2 Loop Transformations</a></li>
-<li><a href="#Interpreter">1.3 Interpreter</a></li>
-<li><a href="#SSA_form">1.4 SSA form</a></li>
-<li><a href="#Synchronization">1.5 Synchronization</a></li>
-<li><a href="#Garbage_Collection">1.6 Garbage Collection</a></li>
-<li><a href="#Threads">1.7 Threads</a></li>
+<li><a href="#register-allocation">1.1 Register Allocation</a></li>
+<li><a href="#loop-transformations">1.2 Loop Transformations</a></li>
+<li><a href="#interpreter">1.3 Interpreter</a></li>
+<li><a href="#ssa-form">1.4 SSA form</a></li>
+<li><a href="#synchronization">1.5 Synchronization</a></li>
+<li><a href="#garbage-collection">1.6 Garbage Collection</a></li>
+<li><a href="#threads">1.7 Threads</a></li>
 </ul></li>
 </ul></td>
 </tr>

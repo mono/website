@@ -18,34 +18,34 @@ The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [G
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Accessibility">1 Mono Accessibility</a>
+<li><a href="#mono-accessibility">1 Mono Accessibility</a>
 <ul>
-<li><a href="#Project_Goals">1.1 Project Goals</a></li>
-<li><a href="#How_do_I_get_it.3F">1.2 How do I get it?</a></li>
-<li><a href="#Participating">1.3 Participating</a></li>
-<li><a href="#Development">1.4 Development</a>
+<li><a href="#project-goals">1.1 Project Goals</a></li>
+<li><a href="#how-do-i-get-it">1.2 How do I get it?</a></li>
+<li><a href="#participating">1.3 Participating</a></li>
+<li><a href="#development">1.4 Development</a>
 <ul>
-<li><a href="#High_Level_Overview">1.4.1 High Level Overview</a></li>
-<li><a href="#Functional_Specifications">1.4.2 Functional Specifications</a></li>
+<li><a href="#high-level-overview">1.4.1 High Level Overview</a></li>
+<li><a href="#functional-specifications">1.4.2 Functional Specifications</a></li>
 </ul></li>
-<li><a href="#For_Team_Members">1.5 For Team Members</a>
+<li><a href="#for-team-members">1.5 For Team Members</a>
 <ul>
-<li><a href="#General">1.5.1 General</a></li>
-<li><a href="#Developers">1.5.2 Developers</a></li>
-<li><a href="#Quality_Assurance">1.5.3 Quality Assurance</a></li>
-<li><a href="#Build">1.5.4 Build</a></li>
+<li><a href="#general">1.5.1 General</a></li>
+<li><a href="#developers">1.5.2 Developers</a></li>
+<li><a href="#quality-assurance">1.5.3 Quality Assurance</a></li>
+<li><a href="#build">1.5.4 Build</a></li>
 </ul></li>
-<li><a href="#Related_Material">1.6 Related Material</a>
+<li><a href="#related-material">1.6 Related Material</a>
 <ul>
-<li><a href="#Mono_Winforms">1.6.1 Mono Winforms</a></li>
-<li><a href="#Other_Organizations">1.6.2 Other Organizations</a>
+<li><a href="#mono-winforms">1.6.1 Mono Winforms</a></li>
+<li><a href="#other-organizations">1.6.2 Other Organizations</a>
 <ul>
-<li><a href="#Linux_Foundation">1.6.2.1 Linux Foundation</a></li>
-<li><a href="#GNOME">1.6.2.2 GNOME</a></li>
-<li><a href="#Others">1.6.2.3 Others</a></li>
+<li><a href="#linux-foundation">1.6.2.1 Linux Foundation</a></li>
+<li><a href="#gnome">1.6.2.2 GNOME</a></li>
+<li><a href="#others">1.6.2.3 Others</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Project_Origins">1.7 Project Origins</a></li>
+<li><a href="#project-origins">1.7 Project Origins</a></li>
 </ul></li>
 </ul></td>
 </tr>

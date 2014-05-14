@@ -17,17 +17,17 @@ by Brian Nickel \<[http://kerrik.wordpress.com](http://kerrick.wordpress.com)\>
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a>
+<li><a href="#introduction">1 Introduction</a>
 <ul>
-<li><a href="#How_Does_It_Work.3F">1.1 How Does It Work?</a></li>
+<li><a href="#how-does-it-work">1.1 How Does It Work?</a></li>
 </ul></li>
-<li><a href="#Installation_Basics">2 Installation Basics</a></li>
-<li><a href="#Important_Information">3 Important Information</a>
+<li><a href="#installation-basics">2 Installation Basics</a></li>
+<li><a href="#important-information">3 Important Information</a>
 <ul>
-<li><a href="#Paths_vs._Extensions">3.1 Paths vs. Extensions</a></li>
-<li><a href="#What_are_ASP.NET_Applications.3F">3.2 What are ASP.NET Applications?</a></li>
-<li><a href="#How_Applications_are_Handled_.28and_how_to_configure_them.29">3.3 How Applications are Handled (and how to configure them)</a></li>
-<li><a href="#Running_the_Mono_Server_and_Web_Server_on_Different_Machines">3.4 Running the Mono Server and Web Server on Different Machines</a></li>
+<li><a href="#paths-vs-extensions">3.1 Paths vs. Extensions</a></li>
+<li><a href="#what-are-aspnet-applications">3.2 What are ASP.NET Applications?</a></li>
+<li><a href="#how-applications-are-handled-and-how-to-configure-them">3.3 How Applications are Handled (and how to configure them)</a></li>
+<li><a href="#running-the-mono-server-and-web-server-on-different-machines">3.4 Running the Mono Server and Web Server on Different Machines</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -110,7 +110,7 @@ To overcome these problems, the **recommended method** for processing files is t
 
 ### What are ASP.NET Applications?
 
-If you've programmed with other web language even dabbled in ASP.NET on another hosting solution, you may be unfamiliar with what ASP.NET applications actually are, how they are used, and why this matters. The most important thing to know, is that every ASP.NET page belongs to an application and that they need to be configured properly for your application to load. That said, relax, because the FastCGI Mono Server does most of the work for you and odds are you won't have to worry about how to configure them. They're be more information on this in [How Applications are Handled](#How_Applications_are_Handled_.28and_how_to_configure_them.29).
+If you've programmed with other web language even dabbled in ASP.NET on another hosting solution, you may be unfamiliar with what ASP.NET applications actually are, how they are used, and why this matters. The most important thing to know, is that every ASP.NET page belongs to an application and that they need to be configured properly for your application to load. That said, relax, because the FastCGI Mono Server does most of the work for you and odds are you won't have to worry about how to configure them. They're be more information on this in [How Applications are Handled](#how-applications-are-handled-and-how-to-configure-them).
 
 Applications are, in short, directories on a website which behave just like a traditional application or program, with pages just being different UI's in the same program. This is managed by having all ASP.NET pages handled by a continuously running server which keeps the application alive, and keeping these separate pages in their own Application Domains as to stop one application from messing with another. This yields some very powerful features.
 

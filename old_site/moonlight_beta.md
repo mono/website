@@ -15,14 +15,14 @@ Moonlight/Beta
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Moonlight_2.0_Beta">1 Moonlight 2.0 Beta</a>
+<li><a href="#moonlight-20-beta">1 Moonlight 2.0 Beta</a>
 <ul>
-<li><a href="#Downloading">1.1 Downloading</a></li>
-<li><a href="#Source_code">1.2 Source code</a></li>
-<li><a href="#Release_Notes">1.3 Release Notes</a>
+<li><a href="#downloading">1.1 Downloading</a></li>
+<li><a href="#source-code">1.2 Source code</a></li>
+<li><a href="#release-notes">1.3 Release Notes</a>
 <ul>
-<li><a href="#Beta_2">1.3.1 Beta 2</a></li>
-<li><a href="#Beta_1">1.3.2 Beta 1</a></li>
+<li><a href="#beta-2">1.3.1 Beta 2</a></li>
+<li><a href="#beta-1">1.3.2 Beta 1</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

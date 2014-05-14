@@ -15,10 +15,10 @@ What is Mono%3F
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_Mono.3F">1 What is Mono?</a></li>
-<li><a href="#The_Importance_of_a_free_implementation_of_the_ECMA_standards">2 The Importance of a free implementation of the ECMA standards</a></li>
-<li><a href="#State_of_Mono">3 State of Mono</a></li>
-<li><a href="#Mono_and_Licensing">4 Mono and Licensing</a></li>
+<li><a href="#what-is-mono">1 What is Mono?</a></li>
+<li><a href="#the-importance-of-a-free-implementation-of-the-ecma-standards">2 The Importance of a free implementation of the ECMA standards</a></li>
+<li><a href="#state-of-mono">3 State of Mono</a></li>
+<li><a href="#mono-and-licensing">4 Mono and Licensing</a></li>
 </ul></td>
 </tr>
 </tbody>

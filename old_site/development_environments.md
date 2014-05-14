@@ -19,10 +19,10 @@ The Mono project focuses on compilers and runtime libraries and does not directl
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#MonoDevelop">1 MonoDevelop</a></li>
-<li><a href="#Eclipse">2 Eclipse</a></li>
-<li><a href="#Unix_tools">3 Unix tools</a></li>
-<li><a href="#X-Develop">4 X-Develop</a></li>
+<li><a href="#monodevelop">1 MonoDevelop</a></li>
+<li><a href="#eclipse">2 Eclipse</a></li>
+<li><a href="#unix-tools">3 Unix tools</a></li>
+<li><a href="#x-develop">4 X-Develop</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,28 +15,28 @@ Index noinclude
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_Mono.3F">1 What is Mono?</a></li>
-<li><a href="#May_4th.2C_2004:_Mono_Beta_1_available">2 May 4th, 2004: Mono Beta 1 available</a>
+<li><a href="#what-is-mono">1 What is Mono?</a></li>
+<li><a href="#may-4th-2004-mono-beta-1-available">2 May 4th, 2004: Mono Beta 1 available</a>
 <ul>
-<li><a href="#May_2nd.2C_2004:_mDnsResponder.Net.3B_Global_Assembly_Cache.">2.1 May 2nd, 2004: mDnsResponder.Net; Global Assembly Cache.</a></li>
-<li><a href="#Apr_22nd.2C_2004:_XSP_0.12_released.">2.2 Apr 22nd, 2004: XSP 0.12 released.</a></li>
-<li><a href="#Apr_21st.2C_2004:_XSP_0.11_and_mod_mono_0.8_released.">2.3 Apr 21st, 2004: XSP 0.11 and mod_mono 0.8 released.</a></li>
-<li><a href="#Apr_20.2C_2004:_S390_port.3B_Interpreted_Updated.3B_Identity_classes.3B_System.Drawing.3B_Mono_Debugger.">2.4 Apr 20, 2004: S390 port; Interpreted Updated; Identity classes; System.Drawing; Mono Debugger.</a></li>
-<li><a href="#Apr_02.2C_2004:_Mono_C.23_Compiler_gets_CLS_support.3B_Basic_Runtime_Contribution_from_Mainsoft.">2.5 Apr 02, 2004: Mono C# Compiler gets CLS support; Basic Runtime Contribution from Mainsoft.</a></li>
-<li><a href="#Mar_31st.2C_2004:_Gtk.23_0.18.2C_MonoDoc_0.13.2C_MonoDevelop_0.2_released">2.6 Mar 31st, 2004: Gtk# 0.18, MonoDoc 0.13, MonoDevelop 0.2 released</a></li>
-<li><a href="#Mar_18th.2C_2004:_Mono_0.31_has_been_released">2.7 Mar 18th, 2004: Mono 0.31 has been released</a></li>
-<li><a href="#Mar_15th.2C_2004:_Async_IO_lands_on_Mono.">2.8 Mar 15th, 2004: Async IO lands on Mono.</a></li>
-<li><a href="#Mar_11th.2C_2004:_Mono_JIT_ported_to_SPARC.">2.9 Mar 11th, 2004: Mono JIT ported to SPARC.</a></li>
-<li><a href="#Feb_26th.2C_2004:_Agenda:_Mono_Meeting_in_Boston.">2.10 Feb 26th, 2004: Agenda: Mono Meeting in Boston.</a></li>
-<li><a href="#Feb_24th.2C_2004:_Mono_Meeting_in_Boston.">2.11 Feb 24th, 2004: Mono Meeting in Boston.</a></li>
-<li><a href="#Feb_13.2C_2004:_Mono_0.30.1_released">2.12 Feb 13, 2004: Mono 0.30.1 released</a></li>
-<li><a href="#Feb_13.2C_2004:_Mono_Performance_Optimization">2.13 Feb 13, 2004: Mono Performance Optimization</a></li>
-<li><a href="#Feb_2nd.2C_2004:_Mono_0.30_has_been_released">2.14 Feb 2nd, 2004: Mono 0.30 has been released</a></li>
-<li><a href="#Jan_18th.2C_2004:_LDAP_class_libraries_in_Mono_tutorial.">2.15 Jan 18th, 2004: LDAP class libraries in Mono tutorial.</a></li>
-<li><a href="#Jan_13th.2C_2004:_MonoDoc_0.9_released.">2.16 Jan 13th, 2004: MonoDoc 0.9 released.</a></li>
-<li><a href="#Jan_11th.2C_2004:_Call_for_Stories">2.17 Jan 11th, 2004: Call for Stories</a></li>
-<li><a href="#Jan_4th.2C_2004:_Windows_Installer_for_Mono_0.29">2.18 Jan 4th, 2004: Windows Installer for Mono 0.29</a></li>
-<li><a href="#Older_News">2.19 Older News</a></li>
+<li><a href="#may-2nd-2004-mdnsrespondernet-global-assembly-cache">2.1 May 2nd, 2004: mDnsResponder.Net; Global Assembly Cache.</a></li>
+<li><a href="#apr-22nd-2004-xsp-012-released">2.2 Apr 22nd, 2004: XSP 0.12 released.</a></li>
+<li><a href="#apr-21st-2004-xsp-011-and-mod-mono-08-released">2.3 Apr 21st, 2004: XSP 0.11 and mod_mono 0.8 released.</a></li>
+<li><a href="#apr-20-2004-s390-port-interpreted-updated-identity-classes-systemdrawing-mono-debugger">2.4 Apr 20, 2004: S390 port; Interpreted Updated; Identity classes; System.Drawing; Mono Debugger.</a></li>
+<li><a href="#apr-02-2004-mono-c-compiler-gets-cls-support-basic-runtime-contribution-from-mainsoft">2.5 Apr 02, 2004: Mono C# Compiler gets CLS support; Basic Runtime Contribution from Mainsoft.</a></li>
+<li><a href="#mar-31st-2004-gtk-018-monodoc-013-monodevelop-02-released">2.6 Mar 31st, 2004: Gtk# 0.18, MonoDoc 0.13, MonoDevelop 0.2 released</a></li>
+<li><a href="#mar-18th-2004-mono-031-has-been-released">2.7 Mar 18th, 2004: Mono 0.31 has been released</a></li>
+<li><a href="#mar-15th-2004-async-io-lands-on-mono">2.8 Mar 15th, 2004: Async IO lands on Mono.</a></li>
+<li><a href="#mar-11th-2004-mono-jit-ported-to-sparc">2.9 Mar 11th, 2004: Mono JIT ported to SPARC.</a></li>
+<li><a href="#feb-26th-2004-agenda-mono-meeting-in-boston">2.10 Feb 26th, 2004: Agenda: Mono Meeting in Boston.</a></li>
+<li><a href="#feb-24th-2004-mono-meeting-in-boston">2.11 Feb 24th, 2004: Mono Meeting in Boston.</a></li>
+<li><a href="#feb-13-2004-mono-0301-released">2.12 Feb 13, 2004: Mono 0.30.1 released</a></li>
+<li><a href="#feb-13-2004-mono-performance-optimization">2.13 Feb 13, 2004: Mono Performance Optimization</a></li>
+<li><a href="#feb-2nd-2004-mono-030-has-been-released">2.14 Feb 2nd, 2004: Mono 0.30 has been released</a></li>
+<li><a href="#jan-18th-2004-ldap-class-libraries-in-mono-tutorial">2.15 Jan 18th, 2004: LDAP class libraries in Mono tutorial.</a></li>
+<li><a href="#jan-13th-2004-monodoc-09-released">2.16 Jan 13th, 2004: MonoDoc 0.9 released.</a></li>
+<li><a href="#jan-11th-2004-call-for-stories">2.17 Jan 11th, 2004: Call for Stories</a></li>
+<li><a href="#jan-4th-2004-windows-installer-for-mono-029">2.18 Jan 4th, 2004: Windows Installer for Mono 0.29</a></li>
+<li><a href="#older-news">2.19 Older News</a></li>
 </ul></li>
 </ul></td>
 </tr>

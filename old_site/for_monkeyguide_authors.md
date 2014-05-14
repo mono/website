@@ -15,14 +15,14 @@ For Monkeyguide Authors
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Source_Code_Examples">1 Source Code Examples</a>
+<li><a href="#source-code-examples">1 Source Code Examples</a>
 <ul>
-<li><a href="#C.23">1.1 C#</a></li>
-<li><a href="#C">1.2 C</a></li>
-<li><a href="#Bash">1.3 Bash</a></li>
-<li><a href="#XML">1.4 XML</a></li>
+<li><a href="#c">1.1 C#</a></li>
+<li><a href="#c_2">1.2 C</a></li>
+<li><a href="#bash">1.3 Bash</a></li>
+<li><a href="#xml">1.4 XML</a></li>
 </ul></li>
-<li><a href="#Linking_to_Monodoc">2 Linking to Monodoc</a></li>
+<li><a href="#linking-to-monodoc">2 Linking to Monodoc</a></li>
 </ul></td>
 </tr>
 </tbody>

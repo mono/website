@@ -15,13 +15,13 @@ Accessibility: Winforms Implementation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Diagram">1 Diagram</a></li>
-<li><a href="#Definitions">2 Definitions</a>
+<li><a href="#diagram">1 Diagram</a></li>
+<li><a href="#definitions">2 Definitions</a>
 <ul>
-<li><a href="#Provider">2.1 Provider</a></li>
-<li><a href="#Behavior">2.2 Behavior</a></li>
-<li><a href="#Event">2.3 Event</a></li>
-<li><a href="#Navigation">2.4 Navigation</a></li>
+<li><a href="#provider">2.1 Provider</a></li>
+<li><a href="#behavior">2.2 Behavior</a></li>
+<li><a href="#event">2.3 Event</a></li>
+<li><a href="#navigation">2.4 Navigation</a></li>
 </ul></li>
 </ul></td>
 </tr>

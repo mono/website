@@ -27,10 +27,10 @@ A view of a 3D model using GtkGLArea
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Development">1 Development</a></li>
-<li><a href="#Roadmap">2 Roadmap</a></li>
-<li><a href="#Projects_using_this_package">3 Projects using this package</a></li>
-<li><a href="#Download">4 Download</a></li>
+<li><a href="#development">1 Development</a></li>
+<li><a href="#roadmap">2 Roadmap</a></li>
+<li><a href="#projects-using-this-package">3 Projects using this package</a></li>
+<li><a href="#download">4 Download</a></li>
 </ul></td>
 </tr>
 </tbody>

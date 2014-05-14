@@ -15,13 +15,13 @@ Accessibility: UiaAtkBridge
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Scope">2 Scope</a></li>
-<li><a href="#Approach">3 Approach</a></li>
-<li><a href="#Mapping_infrastructure">4 Mapping infrastructure</a></li>
-<li><a href="#Acceptance_tests">5 Acceptance tests</a></li>
-<li><a href="#Case_study:_GTK">6 Case study: GTK</a></li>
-<li><a href="#Problems_found">7 Problems found</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#scope">2 Scope</a></li>
+<li><a href="#approach">3 Approach</a></li>
+<li><a href="#mapping-infrastructure">4 Mapping infrastructure</a></li>
+<li><a href="#acceptance-tests">5 Acceptance tests</a></li>
+<li><a href="#case-study-gtk">6 Case study: GTK</a></li>
+<li><a href="#problems-found">7 Problems found</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -62,10 +62,10 @@ Mapping infrastructure
 
 We will need to map UIA structures to ATK structures. More info:
 
--   ATK roles: Refer to our [table of Atk.Roles]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#Roles "Accessibility: Mapping UIA to ATK"), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
--   [Mapping UIA to ATK]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK"): [UiaControlType-\>Atk mapping draft]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types "Accessibility: Mapping UIA to ATK").
+-   ATK roles: Refer to our [table of Atk.Roles]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#roles "Accessibility: Mapping UIA to ATK"), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
+-   [Mapping UIA to ATK]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK"): [UiaControlType-\>Atk mapping draft]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK").
 -   [MWF-\>UiaControlType-\>UiaProvider mappings]({{site.github.url}}/old_site/Accessibility:_Control_Status "Accessibility: Control Status").
--   From the GTK Case study: [Gtk-\>Gail-\>Atk-\>UiaControlType](#Case_study:_GTK).
+-   From the GTK Case study: [Gtk-\>Gail-\>Atk-\>UiaControlType](#case-study-gtk).
 -   For historic reference: [Mapping MSAA to ATK](http://developer.mozilla.org/en/docs/ARIA_UA_Best_Practices#11.3.5_Role).
 
 NOTE!: All this work may be mergeable in a general-purpose table that wraps GtkClass-\>GailClass-\>AtkUsage(Role,GInterface,State)-\>BridgeClass-\>UiaProvider-\>UiaControlType-\>MwfClass|MoonlightWidget??
@@ -165,7 +165,7 @@ UiaAtkBridge class
 
 UIA Provider
 
-[UiaControlType]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#UIA_Control_Types "Accessibility: Mapping UIA to ATK")
+[UiaControlType]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK")
 
 Hierarchy (children?)
 

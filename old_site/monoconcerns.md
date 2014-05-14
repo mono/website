@@ -15,17 +15,17 @@ MonoConcerns
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Concerns_about_Mono">1 Concerns about Mono</a>
+<li><a href="#concerns-about-mono">1 Concerns about Mono</a>
 <ul>
-<li><a href="#Patents">1.1 Patents</a>
+<li><a href="#patents">1.1 Patents</a>
 <ul>
-<li><a href="#Background">1.1.1 Background</a></li>
-<li><a href="#Our_position">1.1.2 Our position</a></li>
-<li><a href="#Calls_for_Microsoft_patent_protection">1.1.3 Calls for Microsoft patent protection</a></li>
-<li><a href="#Mark_Shuttleworth_On_Mono_Patents">1.1.4 Mark Shuttleworth On Mono Patents</a></li>
-<li><a href="#Our_Conclusion">1.1.5 Our Conclusion</a></li>
+<li><a href="#background">1.1.1 Background</a></li>
+<li><a href="#our-position">1.1.2 Our position</a></li>
+<li><a href="#calls-for-microsoft-patent-protection">1.1.3 Calls for Microsoft patent protection</a></li>
+<li><a href="#mark-shuttleworth-on-mono-patents">1.1.4 Mark Shuttleworth On Mono Patents</a></li>
+<li><a href="#our-conclusion">1.1.5 Our Conclusion</a></li>
 </ul></li>
-<li><a href="#Frequent_questions">1.2 Frequent questions</a></li>
+<li><a href="#frequent-questions">1.2 Frequent questions</a></li>
 </ul></li>
 </ul></td>
 </tr>

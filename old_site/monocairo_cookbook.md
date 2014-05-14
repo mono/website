@@ -19,11 +19,11 @@ C\# version created by Or Dvory.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Simple_Working_with_a_Cairo_Context">1 Simple Working with a Cairo Context</a></li>
-<li><a href="#Drawing_Rounded_Rects">2 Drawing Rounded Rects</a></li>
-<li><a href="#Opening_Images_.28Including_SVG.29">3 Opening Images (Including SVG)</a></li>
-<li><a href="#Transformations">4 Transformations</a></li>
-<li><a href="#Truchet_Tiling">5 Truchet Tiling</a></li>
+<li><a href="#simple-working-with-a-cairo-context">1 Simple Working with a Cairo Context</a></li>
+<li><a href="#drawing-rounded-rects">2 Drawing Rounded Rects</a></li>
+<li><a href="#opening-images-including-svg">3 Opening Images (Including SVG)</a></li>
+<li><a href="#transformations">4 Transformations</a></li>
+<li><a href="#truchet-tiling">5 Truchet Tiling</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,40 +17,40 @@ Moonlight 4 Preview 1 is the first preview of Moonlight that includes support fo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a>
+<li><a href="#major-highlights">1 Major Highlights</a>
 <ul>
-<li><a href="#API_Compatibility">1.1 API Compatibility</a></li>
-<li><a href="#New_Rendering_Engine">1.2 New Rendering Engine</a>
+<li><a href="#api-compatibility">1.1 API Compatibility</a></li>
+<li><a href="#new-rendering-engine">1.2 New Rendering Engine</a>
 <ul>
-<li><a href="#GPU-based_acceleration">1.2.1 GPU-based acceleration</a></li>
-<li><a href="#3D_Transformations">1.2.2 3D Transformations</a></li>
-<li><a href="#Shaders">1.2.3 Shaders</a></li>
+<li><a href="#gpu-based-acceleration">1.2.1 GPU-based acceleration</a></li>
+<li><a href="#3d-transformations">1.2.2 3D Transformations</a></li>
+<li><a href="#shaders">1.2.3 Shaders</a></li>
 </ul></li>
-<li><a href="#New_Platform_Abstraction_Layer">1.3 New Platform Abstraction Layer</a>
+<li><a href="#new-platform-abstraction-layer">1.3 New Platform Abstraction Layer</a>
 <ul>
-<li><a href="#Windowing_System">1.3.1 Windowing System</a></li>
-<li><a href="#Network_Status">1.3.2 Network Status</a></li>
-<li><a href="#Capture_Service">1.3.3 Capture Service</a></li>
-<li><a href="#Local_Messaging">1.3.4 Local Messaging</a></li>
-<li><a href="#OOB_Application_Installation">1.3.5 OOB Application Installation</a></li>
+<li><a href="#windowing-system">1.3.1 Windowing System</a></li>
+<li><a href="#network-status">1.3.2 Network Status</a></li>
+<li><a href="#capture-service">1.3.3 Capture Service</a></li>
+<li><a href="#local-messaging">1.3.4 Local Messaging</a></li>
+<li><a href="#oob-application-installation">1.3.5 OOB Application Installation</a></li>
 </ul></li>
-<li><a href="#Out_of_Browser_Execution">1.4 Out of Browser Execution</a></li>
-<li><a href="#Video_Capture">1.5 Video Capture</a></li>
-<li><a href="#Developer_Tools">1.6 Developer Tools</a></li>
-<li><a href="#Chrome_Support">1.7 Chrome Support</a>
+<li><a href="#out-of-browser-execution">1.4 Out of Browser Execution</a></li>
+<li><a href="#video-capture">1.5 Video Capture</a></li>
+<li><a href="#developer-tools">1.6 Developer Tools</a></li>
+<li><a href="#chrome-support">1.7 Chrome Support</a>
 <ul>
-<li><a href="#Linux_Chrome_libjpeg_issue">1.7.1 Linux Chrome libjpeg issue</a></li>
+<li><a href="#linux-chrome-libjpeg-issue">1.7.1 Linux Chrome libjpeg issue</a></li>
 </ul></li>
-<li><a href="#New_Codecs">1.8 New Codecs</a></li>
-<li><a href="#Smooth_Streaming">1.9 Smooth Streaming</a></li>
-<li><a href="#Local_Connections">1.10 Local Connections</a></li>
+<li><a href="#new-codecs">1.8 New Codecs</a></li>
+<li><a href="#smooth-streaming">1.9 Smooth Streaming</a></li>
+<li><a href="#local-connections">1.10 Local Connections</a></li>
 </ul></li>
-<li><a href="#Missing_Features">2 Missing Features</a></li>
-<li><a href="#Obtaining_Moonlight_4_Preview_1">3 Obtaining Moonlight 4 Preview 1</a></li>
-<li><a href="#Keeping_up_with_Moonlight_4">4 Keeping up with Moonlight 4</a>
+<li><a href="#missing-features">2 Missing Features</a></li>
+<li><a href="#obtaining-moonlight-4-preview-1">3 Obtaining Moonlight 4 Preview 1</a></li>
+<li><a href="#keeping-up-with-moonlight-4">4 Keeping up with Moonlight 4</a>
 <ul>
-<li><a href="#Nightly_Builds">4.1 Nightly Builds</a></li>
-<li><a href="#Source_code">4.2 Source code</a></li>
+<li><a href="#nightly-builds">4.1 Nightly Builds</a></li>
+<li><a href="#source-code">4.2 Source code</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -230,5 +230,5 @@ Source code
 
 Source code for current and previous moonlight releases is available from [our ftp site.](http://ftp.novell.com/pub/mono/sources/moon/)
 
-If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here]({{site.github.url}}/old_site/Moonlight#Developing_Moonlight "Moonlight").
+If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here]({{site.github.url}}/old_site/Moonlight#developing-moonlight "Moonlight").
 

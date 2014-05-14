@@ -15,14 +15,14 @@ Mono For Linux Developers
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Linux_Binary_Installation">1 Linux Binary Installation</a></li>
-<li><a href="#Linux_IDEs_for_Mono">2 Linux IDEs for Mono</a>
+<li><a href="#linux-binary-installation">1 Linux Binary Installation</a></li>
+<li><a href="#linux-ides-for-mono">2 Linux IDEs for Mono</a>
 <ul>
-<li><a href="#MonoDevelop">2.1 MonoDevelop</a></li>
-<li><a href="#Basic_Text_Editors">2.2 Basic Text Editors</a></li>
-<li><a href="#Eclipse_in_C.23_Mode">2.3 Eclipse in C# Mode</a></li>
+<li><a href="#monodevelop">2.1 MonoDevelop</a></li>
+<li><a href="#basic-text-editors">2.2 Basic Text Editors</a></li>
+<li><a href="#eclipse-in-c-mode">2.3 Eclipse in C# Mode</a></li>
 </ul></li>
-<li><a href="#Contributors">3 Contributors</a></li>
+<li><a href="#contributors">3 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

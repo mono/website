@@ -17,13 +17,13 @@ Mono 3.4.0 is a culmination of 825 commits since the last release. This is the w
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Revamped_HttpWebRequest.2FServicePoint_stack">1 Revamped HttpWebRequest/ServicePoint stack</a></li>
-<li><a href="#Network_stack">2 Network stack</a></li>
-<li><a href="#ARM">3 ARM</a></li>
-<li><a href="#Documentation">4 Documentation</a></li>
+<li><a href="#revamped-httpwebrequestservicepoint-stack">1 Revamped HttpWebRequest/ServicePoint stack</a></li>
+<li><a href="#network-stack">2 Network stack</a></li>
+<li><a href="#arm">3 ARM</a></li>
+<li><a href="#documentation">4 Documentation</a></li>
 <li><a href="#mono-api-html">5 mono-api-html</a></li>
-<li><a href="#Breaking_changes">6 Breaking changes</a></li>
-<li><a href="#Contributors">7 Contributors</a></li>
+<li><a href="#breaking-changes">6 Breaking changes</a></li>
+<li><a href="#contributors">7 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

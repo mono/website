@@ -17,10 +17,10 @@ Mono 2.8.1 is a portable and open source implementation of the .NET framework fo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Important_Information_About_Mono_2.8.1">1 Important Information About Mono 2.8.1</a></li>
-<li><a href="#Major_Highlights">2 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.8">3 Changes since Mono 2.8</a></li>
-<li><a href="#Installing_Mono_2.8.1">4 Installing Mono 2.8.1</a></li>
+<li><a href="#important-information-about-mono-281">1 Important Information About Mono 2.8.1</a></li>
+<li><a href="#major-highlights">2 Major Highlights</a></li>
+<li><a href="#changes-since-mono-28">3 Changes since Mono 2.8</a></li>
+<li><a href="#installing-mono-281">4 Installing Mono 2.8.1</a></li>
 </ul></td>
 </tr>
 </tbody>

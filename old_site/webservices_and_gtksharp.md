@@ -15,19 +15,19 @@ Webservices and GtkSharp
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Requirements">2 Requirements</a></li>
-<li><a href="#Gtk.23_application">3 Gtk# application</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#requirements">2 Requirements</a></li>
+<li><a href="#gtk-application">3 Gtk# application</a>
 <ul>
-<li><a href="#Glade_design">3.1 Glade design</a></li>
+<li><a href="#glade-design">3.1 Glade design</a></li>
 </ul></li>
-<li><a href="#Web_Service">4 Web Service</a>
+<li><a href="#web-service">4 Web Service</a>
 <ul>
-<li><a href="#Writing">4.1 Writing</a></li>
-<li><a href="#Testing">4.2 Testing</a></li>
+<li><a href="#writing">4.1 Writing</a></li>
+<li><a href="#testing">4.2 Testing</a></li>
 </ul></li>
-<li><a href="#Joining_both_applications">5 Joining both applications</a></li>
-<li><a href="#Contributors">6 Contributors</a></li>
+<li><a href="#joining-both-applications">5 Joining both applications</a></li>
+<li><a href="#contributors">6 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

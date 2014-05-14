@@ -17,13 +17,13 @@ Moonlight 3.0 will be the new version of Novell's Silverlight-compatible plugin,
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Downloading">1 Downloading</a></li>
-<li><a href="#Source_code">2 Source code</a></li>
-<li><a href="#Release_Notes">3 Release Notes</a></li>
-<li><a href="#Preview_1">4 Preview 1</a></li>
-<li><a href="#Preview_2">5 Preview 2</a></li>
-<li><a href="#Preview_7">6 Preview 7</a></li>
-<li><a href="#Preview_9">7 Preview 9</a></li>
+<li><a href="#downloading">1 Downloading</a></li>
+<li><a href="#source-code">2 Source code</a></li>
+<li><a href="#release-notes">3 Release Notes</a></li>
+<li><a href="#preview-1">4 Preview 1</a></li>
+<li><a href="#preview-2">5 Preview 2</a></li>
+<li><a href="#preview-7">6 Preview 7</a></li>
+<li><a href="#preview-9">7 Preview 9</a></li>
 </ul></td>
 </tr>
 </tbody>

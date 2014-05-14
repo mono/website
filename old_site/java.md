@@ -23,11 +23,11 @@ Gtk\# is really a bad name. Because Gtk\# is not limited to C\#, any programming
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Exposing_.NET_Libraries_to_Java">1 Exposing .NET Libraries to Java</a></li>
-<li><a href="#Compiling_Our_Program">2 Compiling Our Program</a></li>
-<li><a href="#Running_Our_Java_Code_in_Mono">3 Running Our Java Code in Mono</a></li>
-<li><a href="#Compiling_Java_Code_to_x86_Code">4 Compiling Java Code to x86 Code</a></li>
-<li><a href="#How_Complete_is_Mono.2FIKVM.3F">5 How Complete is Mono/IKVM?</a></li>
+<li><a href="#exposing-net-libraries-to-java">1 Exposing .NET Libraries to Java</a></li>
+<li><a href="#compiling-our-program">2 Compiling Our Program</a></li>
+<li><a href="#running-our-java-code-in-mono">3 Running Our Java Code in Mono</a></li>
+<li><a href="#compiling-java-code-to-x86-code">4 Compiling Java Code to x86 Code</a></li>
+<li><a href="#how-complete-is-monoikvm">5 How Complete is Mono/IKVM?</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,49 +17,49 @@ Notes on the Moonlight implementation and notes on bringing Silverlight to Linux
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Testing">1 Testing</a></li>
-<li><a href="#Debugging_Tricks">2 Debugging Tricks</a>
+<li><a href="#testing">1 Testing</a></li>
+<li><a href="#debugging-tricks">2 Debugging Tricks</a>
 <ul>
-<li><a href="#Using_an_Alternate_Firefox">2.1 Using an Alternate Firefox</a></li>
-<li><a href="#Debugging_JIT_issues">2.2 Debugging JIT issues</a></li>
+<li><a href="#using-an-alternate-firefox">2.1 Using an Alternate Firefox</a></li>
+<li><a href="#debugging-jit-issues">2.2 Debugging JIT issues</a></li>
 </ul></li>
-<li><a href="#Resources">3 Resources</a></li>
-<li><a href="#Silverlight_SDKs">4 Silverlight SDKs</a>
+<li><a href="#resources">3 Resources</a></li>
+<li><a href="#silverlight-sdks">4 Silverlight SDKs</a>
 <ul>
-<li><a href="#For_Developing_on_non-Microsoft_Systems">4.1 For Developing on non-Microsoft Systems</a></li>
-<li><a href="#Moonlight_IDE">4.2 Moonlight IDE</a></li>
-<li><a href="#The_Moonlight_Engine">4.3 The Moonlight Engine</a>
+<li><a href="#for-developing-on-non-microsoft-systems">4.1 For Developing on non-Microsoft Systems</a></li>
+<li><a href="#moonlight-ide">4.2 Moonlight IDE</a></li>
+<li><a href="#the-moonlight-engine">4.3 The Moonlight Engine</a>
 <ul>
-<li><a href="#Security_Model">4.3.1 Security Model</a></li>
-<li><a href="#Other_Security_Requirements">4.3.2 Other Security Requirements</a></li>
-<li><a href="#Media_Codecs">4.3.3 Media Codecs</a></li>
-<li><a href="#Assemblies">4.3.4 Assemblies</a>
+<li><a href="#security-model">4.3.1 Security Model</a></li>
+<li><a href="#other-security-requirements">4.3.2 Other Security Requirements</a></li>
+<li><a href="#media-codecs">4.3.3 Media Codecs</a></li>
+<li><a href="#assemblies">4.3.4 Assemblies</a>
 <ul>
-<li><a href="#Dependencies">4.3.4.1 Dependencies</a></li>
-<li><a href="#New_versioned_Libraries">4.3.4.2 New versioned Libraries</a></li>
+<li><a href="#dependencies">4.3.4.1 Dependencies</a></li>
+<li><a href="#new-versioned-libraries">4.3.4.2 New versioned Libraries</a></li>
 </ul></li>
-<li><a href="#API_Implementation">4.3.5 API Implementation</a>
+<li><a href="#api-implementation">4.3.5 API Implementation</a>
 <ul>
-<li><a href="#System.ServiceModel.Web">4.3.5.1 System.ServiceModel.Web</a></li>
-<li><a href="#System.Windows.dll">4.3.5.2 System.Windows.dll</a></li>
+<li><a href="#systemservicemodelweb">4.3.5.1 System.ServiceModel.Web</a></li>
+<li><a href="#systemwindowsdll">4.3.5.2 System.Windows.dll</a></li>
 </ul></li>
-<li><a href="#Compiler_Fixes">4.3.6 Compiler Fixes</a></li>
-<li><a href="#LINQ">4.3.7 LINQ</a></li>
-<li><a href="#Rendering">4.3.8 Rendering</a>
+<li><a href="#compiler-fixes">4.3.6 Compiler Fixes</a></li>
+<li><a href="#linq">4.3.7 LINQ</a></li>
+<li><a href="#rendering">4.3.8 Rendering</a>
 <ul>
-<li><a href="#Cairo">4.3.8.1 Cairo</a></li>
-<li><a href="#AntiGrain_2.4">4.3.8.2 AntiGrain 2.4</a></li>
+<li><a href="#cairo">4.3.8.1 Cairo</a></li>
+<li><a href="#antigrain-24">4.3.8.2 AntiGrain 2.4</a></li>
 </ul></li>
-<li><a href="#Rendering_Pipeline">4.3.9 Rendering Pipeline</a>
+<li><a href="#rendering-pipeline">4.3.9 Rendering Pipeline</a>
 <ul>
-<li><a href="#Integration_with_Compiz">4.3.9.1 Integration with Compiz</a></li>
+<li><a href="#integration-with-compiz">4.3.9.1 Integration with Compiz</a></li>
 </ul></li>
-<li><a href="#The_Plugin_and_the_DOM">4.3.10 The Plugin and the DOM</a>
+<li><a href="#the-plugin-and-the-dom">4.3.10 The Plugin and the DOM</a>
 <ul>
-<li><a href="#Plugin_Loading">4.3.10.1 Plugin Loading</a></li>
+<li><a href="#plugin-loading">4.3.10.1 Plugin Loading</a></li>
 </ul></li>
-<li><a href="#Hosting_API">4.3.11 Hosting API</a></li>
-<li><a href="#JavaScript_compiler">4.3.12 JavaScript compiler</a></li>
+<li><a href="#hosting-api">4.3.11 Hosting API</a></li>
+<li><a href="#javascript-compiler">4.3.12 JavaScript compiler</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -136,7 +136,7 @@ For users of Silverlight 2.0 we are creating an SDK that developers can use to c
 For Developing on non-Microsoft Systems
 ---------------------------------------
 
-If you install Mono as described in the [Getting Started](#GettingStarted) section you will get an SDK that you can use to develop against Microsoft Silverlight and Mono Moonlight APIs.
+If you install Mono as described in the [Getting Started](#gettingstarted) section you will get an SDK that you can use to develop against Microsoft Silverlight and Mono Moonlight APIs.
 
 Instead of using the **mcs** or **gmcs** compilers as you do regularly with Mono you need to use the **smcs** compiler that will generate and reference the proper assembly versions that are suitable for Silverlight development.
 

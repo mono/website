@@ -21,15 +21,15 @@ Currently, our Windows installer is not .msi, and is bloated with all kinds of t
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Proposed_Changes">1 Proposed Changes</a>
+<li><a href="#proposed-changes">1 Proposed Changes</a>
 <ul>
-<li><a href="#Use_MSVC_instead_of_gcc_to_compile_native_code">1.1 Use MSVC instead of gcc to compile native code</a></li>
-<li><a href="#Use_eglib_instead_of_glib">1.2 Use eglib instead of glib</a></li>
-<li><a href="#Do_not_ship_the_1.0_profile">1.3 Do not ship the 1.0 profile</a></li>
-<li><a href="#Do_not_ship_Gtk.23">1.4 Do not ship Gtk#</a></li>
-<li><a href="#Strip_out_things_that_not_many_people_use">1.5 Strip out things that not many people use</a></li>
-<li><a href="#What_GNU-ish.28.3F.29_stuff_do_we_still_need_to_include.3F">1.6 What GNU-ish(?) stuff do we still need to include?</a></li>
-<li><a href="#Conclusion">1.7 Conclusion</a></li>
+<li><a href="#use-msvc-instead-of-gcc-to-compile-native-code">1.1 Use MSVC instead of gcc to compile native code</a></li>
+<li><a href="#use-eglib-instead-of-glib">1.2 Use eglib instead of glib</a></li>
+<li><a href="#do-not-ship-the-10-profile">1.3 Do not ship the 1.0 profile</a></li>
+<li><a href="#do-not-ship-gtk">1.4 Do not ship Gtk#</a></li>
+<li><a href="#strip-out-things-that-not-many-people-use">1.5 Strip out things that not many people use</a></li>
+<li><a href="#what-gnu-ish-stuff-do-we-still-need-to-include">1.6 What GNU-ish(?) stuff do we still need to include?</a></li>
+<li><a href="#conclusion">1.7 Conclusion</a></li>
 </ul></li>
 </ul></td>
 </tr>

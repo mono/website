@@ -15,10 +15,10 @@ MonoTouch XCode
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Requirements">1 Requirements</a></li>
-<li><a href="#Sanity_Check">2 Sanity Check</a></li>
-<li><a href="#Using_the_MonoTouch_Framework">3 Using the MonoTouch Framework</a></li>
-<li><a href="#Embedding_the_Sample">4 Embedding the Sample</a></li>
+<li><a href="#requirements">1 Requirements</a></li>
+<li><a href="#sanity-check">2 Sanity Check</a></li>
+<li><a href="#using-the-monotouch-framework">3 Using the MonoTouch Framework</a></li>
+<li><a href="#embedding-the-sample">4 Embedding the Sample</a></li>
 </ul></td>
 </tr>
 </tbody>

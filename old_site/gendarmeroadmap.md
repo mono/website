@@ -17,14 +17,14 @@ Gendarme has synchronized it's version numbers with Mono since the 2.0 release. 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Gendarme_2.8_.28in_progress.29">1 Gendarme 2.8 (in progress)</a></li>
-<li><a href="#Gendarme_3.0.2B_.28in_planning.29">2 Gendarme 3.0+ (in planning)</a></li>
-<li><a href="#Ideas">3 Ideas</a>
+<li><a href="#gendarme-28-in-progress">1 Gendarme 2.8 (in progress)</a></li>
+<li><a href="#gendarme-30-in-planning">2 Gendarme 3.0+ (in planning)</a></li>
+<li><a href="#ideas">3 Ideas</a>
 <ul>
-<li><a href="#Mono_Build">3.1 Mono Build</a></li>
-<li><a href="#Runner-related">3.2 Runner-related</a></li>
-<li><a href="#Framework">3.3 Framework</a></li>
-<li><a href="#Rules">3.4 Rules</a></li>
+<li><a href="#mono-build">3.1 Mono Build</a></li>
+<li><a href="#runner-related">3.2 Runner-related</a></li>
+<li><a href="#framework">3.3 Framework</a></li>
+<li><a href="#rules">3.4 Rules</a></li>
 </ul></li>
 </ul></td>
 </tr>

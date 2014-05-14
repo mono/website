@@ -21,10 +21,10 @@ Mono 2.10.7 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Releas
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#MacOS_Updates">1 MacOS Updates</a></li>
-<li><a href="#Changes">2 Changes</a></li>
-<li><a href="#Bug_Fixes">3 Bug Fixes</a></li>
-<li><a href="#Mobile_Profile_Fixes">4 Mobile Profile Fixes</a></li>
+<li><a href="#macos-updates">1 MacOS Updates</a></li>
+<li><a href="#changes">2 Changes</a></li>
+<li><a href="#bug-fixes">3 Bug Fixes</a></li>
+<li><a href="#mobile-profile-fixes">4 Mobile Profile Fixes</a></li>
 </ul></td>
 </tr>
 </tbody>

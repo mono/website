@@ -15,14 +15,14 @@ MonoTouch ManualSelectorInvocation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Objective-C_Selectors">1 Objective-C Selectors</a>
+<li><a href="#objective-c-selectors">1 Objective-C Selectors</a>
 <ul>
-<li><a href="#Example">1.1 Example</a></li>
-<li><a href="#Invoking_a_Selector">1.2 Invoking a Selector</a>
+<li><a href="#example">1.1 Example</a></li>
+<li><a href="#invoking-a-selector">1.2 Invoking a Selector</a>
 <ul>
-<li><a href="#Selector_Targets">1.2.1 Selector Targets</a></li>
-<li><a href="#Selector_Names">1.2.2 Selector Names</a></li>
-<li><a href="#Calling_objc_msgSend.28.29">1.2.3 Calling objc_msgSend()</a></li>
+<li><a href="#selector-targets">1.2.1 Selector Targets</a></li>
+<li><a href="#selector-names">1.2.2 Selector Names</a></li>
+<li><a href="#calling-objc-msgsend">1.2.3 Calling objc_msgSend()</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

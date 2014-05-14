@@ -20,21 +20,21 @@ Mono's subversion repository is only available through a secure shell connection
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Install_PuttyGen">1 Install PuttyGen</a>
+<li><a href="#install-puttygen">1 Install PuttyGen</a>
 <ul>
-<li><a href="#generate_a_.ppk">1.1 generate a .ppk</a></li>
+<li><a href="#generate-a-ppk">1.1 generate a .ppk</a></li>
 </ul></li>
-<li><a href="#Install_Putty">2 Install Putty</a></li>
-<li><a href="#Install_Pageant">3 Install Pageant</a>
+<li><a href="#install-putty">2 Install Putty</a></li>
+<li><a href="#install-pageant">3 Install Pageant</a>
 <ul>
-<li><a href="#Run_the_ageant">3.1 Run the ageant</a></li>
-<li><a href="#Add_your_.ppk_to_the_ageant">3.2 Add your .ppk to the ageant</a></li>
+<li><a href="#run-the-ageant">3.1 Run the ageant</a></li>
+<li><a href="#add-your-ppk-to-the-ageant">3.2 Add your .ppk to the ageant</a></li>
 </ul></li>
-<li><a href="#Install_Plink">4 Install Plink</a></li>
-<li><a href="#Install_TortoiseSVN">5 Install TortoiseSVN</a>
+<li><a href="#install-plink">4 Install Plink</a></li>
+<li><a href="#install-tortoisesvn">5 Install TortoiseSVN</a>
 <ul>
-<li><a href="#Configure_Mr._Turtle">5.1 Configure Mr. Turtle</a></li>
-<li><a href="#Check_sumfin.27_out">5.2 Check sumfin' out</a></li>
+<li><a href="#configure-mr-turtle">5.1 Configure Mr. Turtle</a></li>
+<li><a href="#check-sumfin-out">5.2 Check sumfin' out</a></li>
 </ul></li>
 </ul></td>
 </tr>

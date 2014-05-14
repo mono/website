@@ -17,14 +17,14 @@ This site provides an overview of all available FAQ's.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#FAQ.27s_directly_about_Mono">1 FAQ's directly about Mono</a></li>
-<li><a href="#Developing_With_Mono">2 Developing With Mono</a>
+<li><a href="#faqs-directly-about-mono">1 FAQ's directly about Mono</a></li>
+<li><a href="#developing-with-mono">2 Developing With Mono</a>
 <ul>
-<li><a href="#Desktop_Applications">2.1 Desktop Applications</a></li>
-<li><a href="#Web_Programming">2.2 Web Programming</a></li>
-<li><a href="#Development_Tools">2.3 Development Tools</a></li>
+<li><a href="#desktop-applications">2.1 Desktop Applications</a></li>
+<li><a href="#web-programming">2.2 Web Programming</a></li>
+<li><a href="#development-tools">2.3 Development Tools</a></li>
 </ul></li>
-<li><a href="#Documenting_Mono_and_your_applications.">3 Documenting Mono and your applications.</a></li>
+<li><a href="#documenting-mono-and-your-applications">3 Documenting Mono and your applications.</a></li>
 </ul></td>
 </tr>
 </tbody>

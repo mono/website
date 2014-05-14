@@ -17,21 +17,21 @@ Most developers will use [MonoTouch]({{site.github.url}}/old_site/MonoTouch "Mon
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Creating_a_New_Project">1 Creating a New Project</a>
+<li><a href="#creating-a-new-project">1 Creating a New Project</a>
 <ul>
-<li><a href="#Compiling_your_Program">1.1 Compiling your Program</a></li>
-<li><a href="#Adding_Libraries_to_your_Project">1.2 Adding Libraries to your Project</a></li>
-<li><a href="#Interface_Builder_Integration">1.3 Interface Builder Integration</a></li>
+<li><a href="#compiling-your-program">1.1 Compiling your Program</a></li>
+<li><a href="#adding-libraries-to-your-project">1.2 Adding Libraries to your Project</a></li>
+<li><a href="#interface-builder-integration">1.3 Interface Builder Integration</a></li>
 </ul></li>
-<li><a href="#Testing">2 Testing</a>
+<li><a href="#testing">2 Testing</a>
 <ul>
-<li><a href="#iPhone_Simulator">2.1 iPhone Simulator</a></li>
-<li><a href="#iPhone.2FiTouch_device">2.2 iPhone/iTouch device</a></li>
+<li><a href="#iphone-simulator">2.1 iPhone Simulator</a></li>
+<li><a href="#iphoneitouch-device">2.2 iPhone/iTouch device</a></li>
 </ul></li>
-<li><a href="#Deploying_your_application">3 Deploying your application</a>
+<li><a href="#deploying-your-application">3 Deploying your application</a>
 <ul>
-<li><a href="#To_the_AppStore">3.1 To the AppStore</a></li>
-<li><a href="#Using_Ad-hoc_deployment">3.2 Using Ad-hoc deployment</a></li>
+<li><a href="#to-the-appstore">3.1 To the AppStore</a></li>
+<li><a href="#using-ad-hoc-deployment">3.2 Using Ad-hoc deployment</a></li>
 </ul></li>
 </ul></td>
 </tr>

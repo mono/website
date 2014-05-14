@@ -18,11 +18,11 @@ For full details about checking out your source code, see the [Mono page on GitH
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Checking_out_for_the_first_time">1 Checking out for the first time</a></li>
-<li><a href="#Switching_to_a_branch">2 Switching to a branch</a></li>
-<li><a href="#Updating_an_existing_checkout">3 Updating an existing checkout</a></li>
-<li><a href="#Building_the_source">4 Building the source</a></li>
-<li><a href="#Maintaining_submodules_in_Mono">5 Maintaining submodules in Mono</a></li>
+<li><a href="#checking-out-for-the-first-time">1 Checking out for the first time</a></li>
+<li><a href="#switching-to-a-branch">2 Switching to a branch</a></li>
+<li><a href="#updating-an-existing-checkout">3 Updating an existing checkout</a></li>
+<li><a href="#building-the-source">4 Building the source</a></li>
+<li><a href="#maintaining-submodules-in-mono">5 Maintaining submodules in Mono</a></li>
 </ul></td>
 </tr>
 </tbody>

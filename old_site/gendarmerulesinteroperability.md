@@ -17,17 +17,17 @@ Gendarme.Rules.Interoperability
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#DelegatesPassedToNativeCodeMustIncludeExceptionHandlingRule">1.1 DelegatesPassedToNativeCodeMustIncludeExceptionHandlingRule</a></li>
-<li><a href="#DoNotAssumeIntPtrSizeRule">1.2 DoNotAssumeIntPtrSizeRule</a></li>
-<li><a href="#GetLastErrorMustBeCalledRightAfterPInvokeRule">1.3 GetLastErrorMustBeCalledRightAfterPInvokeRule</a></li>
-<li><a href="#MarshalBooleansInPInvokeDeclarationsRule">1.4 MarshalBooleansInPInvokeDeclarationsRule</a></li>
-<li><a href="#MarshalStringsInPInvokeDeclarationsRule">1.5 MarshalStringsInPInvokeDeclarationsRule</a></li>
-<li><a href="#PInvokeShouldNotBeVisibleRule">1.6 PInvokeShouldNotBeVisibleRule</a></li>
-<li><a href="#UseManagedAlternativesToPInvokeRule">1.7 UseManagedAlternativesToPInvokeRule</a></li>
+<li><a href="#delegatespassedtonativecodemustincludeexceptionhandlingrule">1.1 DelegatesPassedToNativeCodeMustIncludeExceptionHandlingRule</a></li>
+<li><a href="#donotassumeintptrsizerule">1.2 DoNotAssumeIntPtrSizeRule</a></li>
+<li><a href="#getlasterrormustbecalledrightafterpinvokerule">1.3 GetLastErrorMustBeCalledRightAfterPInvokeRule</a></li>
+<li><a href="#marshalbooleansinpinvokedeclarationsrule">1.4 MarshalBooleansInPInvokeDeclarationsRule</a></li>
+<li><a href="#marshalstringsinpinvokedeclarationsrule">1.5 MarshalStringsInPInvokeDeclarationsRule</a></li>
+<li><a href="#pinvokeshouldnotbevisiblerule">1.6 PInvokeShouldNotBeVisibleRule</a></li>
+<li><a href="#usemanagedalternativestopinvokerule">1.7 UseManagedAlternativesToPInvokeRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

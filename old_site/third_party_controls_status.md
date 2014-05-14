@@ -21,85 +21,85 @@ Produced by AdTsai as part of the [GHOP](http://code.google.com/p/google-highly-
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Dundas">1 Dundas</a>
+<li><a href="#dundas">1 Dundas</a>
 <ul>
-<li><a href="#Dundas_Chart">1.1 Dundas Chart</a>
+<li><a href="#dundas-chart">1.1 Dundas Chart</a>
 <ul>
-<li><a href="#Dundas_Chart_for_Windows_Forms_-_Professional_.28VS2005_-_.NET_2.0.29">1.1.1 Dundas Chart for Windows Forms - Professional (VS2005 - .NET 2.0)</a></li>
-<li><a href="#Dundas_Chart_for_Windows_Forms_-_Professional_.28VS2003_-_.NET_1.1.29">1.1.2 Dundas Chart for Windows Forms - Professional (VS2003 - .NET 1.1)</a></li>
+<li><a href="#dundas-chart-for-windows-forms---professional-vs2005---net-20">1.1.1 Dundas Chart for Windows Forms - Professional (VS2005 - .NET 2.0)</a></li>
+<li><a href="#dundas-chart-for-windows-forms---professional-vs2003---net-11">1.1.2 Dundas Chart for Windows Forms - Professional (VS2003 - .NET 1.1)</a></li>
 </ul></li>
-<li><a href="#Dundas_Map">1.2 Dundas Map</a>
+<li><a href="#dundas-map">1.2 Dundas Map</a>
 <ul>
-<li><a href="#Dundas_Map_for_Windows_Forms_.28VS2005_-_.NET_2.0.29">1.2.1 Dundas Map for Windows Forms (VS2005 - .NET 2.0)</a></li>
+<li><a href="#dundas-map-for-windows-forms-vs2005---net-20">1.2.1 Dundas Map for Windows Forms (VS2005 - .NET 2.0)</a></li>
 </ul></li>
-<li><a href="#Dundas_Gauge">1.3 Dundas Gauge</a>
+<li><a href="#dundas-gauge">1.3 Dundas Gauge</a>
 <ul>
-<li><a href="#Dundas_Gauge_for_Windows_Forms_.28VS2005_-_.NET_2.0.29">1.3.1 Dundas Gauge for Windows Forms (VS2005 - .NET 2.0)</a></li>
-<li><a href="#Dundas_Gauge_for_Windows_Forms_.28VS2003_-_.NET_1.1.29">1.3.2 Dundas Gauge for Windows Forms (VS2003 - .NET 1.1)</a></li>
+<li><a href="#dundas-gauge-for-windows-forms-vs2005---net-20">1.3.1 Dundas Gauge for Windows Forms (VS2005 - .NET 2.0)</a></li>
+<li><a href="#dundas-gauge-for-windows-forms-vs2003---net-11">1.3.2 Dundas Gauge for Windows Forms (VS2003 - .NET 1.1)</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Syncfusion">2 Syncfusion</a>
+<li><a href="#syncfusion">2 Syncfusion</a>
 <ul>
-<li><a href="#Essential_Grid">2.1 Essential Grid</a></li>
-<li><a href="#Essential_Tools">2.2 Essential Tools</a></li>
-<li><a href="#Essential_Chart">2.3 Essential Chart</a></li>
-<li><a href="#Essential_Diagram">2.4 Essential Diagram</a></li>
-<li><a href="#Essential_PDF">2.5 Essential PDF</a></li>
-<li><a href="#Essential_XlsIO">2.6 Essential XlsIO</a></li>
-<li><a href="#Essential_DocIO">2.7 Essential DocIO</a></li>
-<li><a href="#Essential_Calculate">2.8 Essential Calculate</a></li>
-<li><a href="#Essential_Grouping">2.9 Essential Grouping</a></li>
-<li><a href="#Essential_HTMLUI">2.10 Essential HTMLUI</a></li>
-<li><a href="#Essential_Edit">2.11 Essential Edit</a></li>
-<li><a href="#Essential_Schedule">2.12 Essential Schedule</a></li>
+<li><a href="#essential-grid">2.1 Essential Grid</a></li>
+<li><a href="#essential-tools">2.2 Essential Tools</a></li>
+<li><a href="#essential-chart">2.3 Essential Chart</a></li>
+<li><a href="#essential-diagram">2.4 Essential Diagram</a></li>
+<li><a href="#essential-pdf">2.5 Essential PDF</a></li>
+<li><a href="#essential-xlsio">2.6 Essential XlsIO</a></li>
+<li><a href="#essential-docio">2.7 Essential DocIO</a></li>
+<li><a href="#essential-calculate">2.8 Essential Calculate</a></li>
+<li><a href="#essential-grouping">2.9 Essential Grouping</a></li>
+<li><a href="#essential-htmlui">2.10 Essential HTMLUI</a></li>
+<li><a href="#essential-edit">2.11 Essential Edit</a></li>
+<li><a href="#essential-schedule">2.12 Essential Schedule</a></li>
 </ul></li>
-<li><a href="#Infragistics">3 Infragistics</a>
+<li><a href="#infragistics">3 Infragistics</a>
 <ul>
-<li><a href="#WinGrid">3.1 WinGrid</a></li>
-<li><a href="#WinCalcManager">3.2 WinCalcManager</a></li>
-<li><a href="#WinChart">3.3 WinChart</a></li>
-<li><a href="#WinDataSource">3.4 WinDataSource</a></li>
-<li><a href="#WinDockManager">3.5 WinDockManager</a></li>
-<li><a href="#WinExplorerBar">3.6 WinExplorerBar</a></li>
-<li><a href="#WinGauge">3.7 WinGauge</a></li>
-<li><a href="#WinGridDocumentExporter">3.8 WinGridDocumentExporter</a></li>
-<li><a href="#WinGridExcelExporter">3.9 WinGridExcelExporter</a></li>
-<li><a href="#WinInkProvider">3.10 WinInkProvider</a></li>
-<li><a href="#WinListbar">3.11 WinListbar</a></li>
-<li><a href="#WinListView">3.12 WinListView</a></li>
-<li><a href="#Infragistics.Documents">3.13 Infragistics.Documents</a></li>
-<li><a href="#Infragistics.Excel">3.14 Infragistics.Excel</a></li>
-<li><a href="#WinSchedule">3.15 WinSchedule</a></li>
-<li><a href="#WinSpellChecker">3.16 WinSpellChecker</a></li>
-<li><a href="#WinTabbedMdi">3.17 WinTabbedMdi</a></li>
-<li><a href="#WinTab">3.18 WinTab</a></li>
-<li><a href="#WinToolbars">3.19 WinToolbars</a></li>
-<li><a href="#WinTree">3.20 WinTree</a></li>
+<li><a href="#wingrid">3.1 WinGrid</a></li>
+<li><a href="#wincalcmanager">3.2 WinCalcManager</a></li>
+<li><a href="#winchart">3.3 WinChart</a></li>
+<li><a href="#windatasource">3.4 WinDataSource</a></li>
+<li><a href="#windockmanager">3.5 WinDockManager</a></li>
+<li><a href="#winexplorerbar">3.6 WinExplorerBar</a></li>
+<li><a href="#wingauge">3.7 WinGauge</a></li>
+<li><a href="#wingriddocumentexporter">3.8 WinGridDocumentExporter</a></li>
+<li><a href="#wingridexcelexporter">3.9 WinGridExcelExporter</a></li>
+<li><a href="#wininkprovider">3.10 WinInkProvider</a></li>
+<li><a href="#winlistbar">3.11 WinListbar</a></li>
+<li><a href="#winlistview">3.12 WinListView</a></li>
+<li><a href="#infragisticsdocuments">3.13 Infragistics.Documents</a></li>
+<li><a href="#infragisticsexcel">3.14 Infragistics.Excel</a></li>
+<li><a href="#winschedule">3.15 WinSchedule</a></li>
+<li><a href="#winspellchecker">3.16 WinSpellChecker</a></li>
+<li><a href="#wintabbedmdi">3.17 WinTabbedMdi</a></li>
+<li><a href="#wintab">3.18 WinTab</a></li>
+<li><a href="#wintoolbars">3.19 WinToolbars</a></li>
+<li><a href="#wintree">3.20 WinTree</a></li>
 </ul></li>
-<li><a href="#Janus_Systems">4 Janus Systems</a>
+<li><a href="#janus-systems">4 Janus Systems</a>
 <ul>
-<li><a href="#GridEX">4.1 GridEX</a></li>
-<li><a href="#Schedule">4.2 Schedule</a></li>
-<li><a href="#UIControls">4.3 UIControls</a></li>
-<li><a href="#Timeline">4.4 Timeline</a></li>
+<li><a href="#gridex">4.1 GridEX</a></li>
+<li><a href="#schedule">4.2 Schedule</a></li>
+<li><a href="#uicontrols">4.3 UIControls</a></li>
+<li><a href="#timeline">4.4 Timeline</a></li>
 </ul></li>
-<li><a href="#SpreadsheetGear">5 SpreadsheetGear</a>
+<li><a href="#spreadsheetgear">5 SpreadsheetGear</a>
 <ul>
-<li><a href="#SpreadsheetGear_2">5.1 SpreadsheetGear</a></li>
+<li><a href="#spreadsheetgear_2">5.1 SpreadsheetGear</a></li>
 </ul></li>
-<li><a href="#Xceed">6 Xceed</a>
+<li><a href="#xceed">6 Xceed</a>
 <ul>
-<li><a href="#Compression">6.1 Compression</a></li>
-<li><a href="#FTP">6.2 FTP</a></li>
-<li><a href="#DataGrid">6.3 DataGrid</a></li>
-<li><a href="#DockingWindows">6.4 DockingWindows</a></li>
-<li><a href="#Editors">6.5 Editors</a></li>
-<li><a href="#Grid">6.6 Grid</a></li>
-<li><a href="#SmartUI">6.7 SmartUI</a></li>
+<li><a href="#compression">6.1 Compression</a></li>
+<li><a href="#ftp">6.2 FTP</a></li>
+<li><a href="#datagrid">6.3 DataGrid</a></li>
+<li><a href="#dockingwindows">6.4 DockingWindows</a></li>
+<li><a href="#editors">6.5 Editors</a></li>
+<li><a href="#grid">6.6 Grid</a></li>
+<li><a href="#smartui">6.7 SmartUI</a></li>
 </ul></li>
-<li><a href="#Telerik">7 Telerik</a>
+<li><a href="#telerik">7 Telerik</a>
 <ul>
-<li><a href="#RadControls">7.1 RadControls</a></li>
+<li><a href="#radcontrols">7.1 RadControls</a></li>
 </ul></li>
 </ul></td>
 </tr>

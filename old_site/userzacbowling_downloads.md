@@ -168,12 +168,12 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Regression_Tests">1 Regression Tests</a></li>
-<li><a href="#Other_Downloads">2 Other Downloads</a>
+<li><a href="#regression-tests">1 Regression Tests</a></li>
+<li><a href="#other-downloads">2 Other Downloads</a>
 <ul>
-<li><a href="#Binaries_for_other_platforms">2.1 Binaries for other platforms</a></li>
-<li><a href="#Snapshots">2.2 Snapshots</a></li>
-<li><a href="#Compilation">2.3 Compilation</a></li>
+<li><a href="#binaries-for-other-platforms">2.1 Binaries for other platforms</a></li>
+<li><a href="#snapshots">2.2 Snapshots</a></li>
+<li><a href="#compilation">2.3 Compilation</a></li>
 </ul></li>
 </ul></td>
 </tr>

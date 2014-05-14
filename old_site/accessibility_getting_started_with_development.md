@@ -15,23 +15,23 @@ Accessibility: Getting Started With Development
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Getting_the_Code">2 Getting the Code</a></li>
-<li><a href="#Setting_Up_Your_Environment">3 Setting Up Your Environment</a></li>
-<li><a href="#Building_the_Code">4 Building the Code</a></li>
-<li><a href="#Making_Changes">5 Making Changes</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#getting-the-code">2 Getting the Code</a></li>
+<li><a href="#setting-up-your-environment">3 Setting Up Your Environment</a></li>
+<li><a href="#building-the-code">4 Building the Code</a></li>
+<li><a href="#making-changes">5 Making Changes</a>
 <ul>
-<li><a href="#Coding_Guidelines">5.1 Coding Guidelines</a></li>
-<li><a href="#Good_resources">5.2 Good resources</a></li>
+<li><a href="#coding-guidelines">5.1 Coding Guidelines</a></li>
+<li><a href="#good-resources">5.2 Good resources</a></li>
 </ul></li>
-<li><a href="#Testing_Your_Changes">6 Testing Your Changes</a>
+<li><a href="#testing-your-changes">6 Testing Your Changes</a>
 <ul>
-<li><a href="#Getting_Code_Coverage">6.1 Getting Code Coverage</a></li>
+<li><a href="#getting-code-coverage">6.1 Getting Code Coverage</a></li>
 </ul></li>
-<li><a href="#Submitting_Patches">7 Submitting Patches</a></li>
-<li><a href="#Committing_Changes_to_SVN">8 Committing Changes to SVN</a>
+<li><a href="#submitting-patches">7 Submitting Patches</a></li>
+<li><a href="#committing-changes-to-svn">8 Committing Changes to SVN</a>
 <ul>
-<li><a href="#BEFORE_COMMITTING:_Setting_up_SVN_auto-props">8.1 BEFORE COMMITTING: Setting up SVN auto-props</a></li>
+<li><a href="#before-committing-setting-up-svn-auto-props">8.1 BEFORE COMMITTING: Setting up SVN auto-props</a></li>
 </ul></li>
 </ul></td>
 </tr>

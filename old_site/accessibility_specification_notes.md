@@ -15,15 +15,15 @@ Accessibility: Specification Notes
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Issues">2 Issues</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#issues">2 Issues</a>
 <ul>
-<li><a href="#UIA_Tree">2.1 UIA Tree</a></li>
-<li><a href="#MSDN">2.2 MSDN</a></li>
+<li><a href="#uia-tree">2.1 UIA Tree</a></li>
+<li><a href="#msdn">2.2 MSDN</a></li>
 </ul></li>
-<li><a href="#Feature_requests">3 Feature requests</a>
+<li><a href="#feature-requests">3 Feature requests</a>
 <ul>
-<li><a href="#Specific_to_the_Winforms_Implementation">3.1 Specific to the Winforms Implementation</a></li>
+<li><a href="#specific-to-the-winforms-implementation">3.1 Specific to the Winforms Implementation</a></li>
 </ul></li>
 </ul></td>
 </tr>

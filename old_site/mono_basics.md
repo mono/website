@@ -17,10 +17,10 @@ After you get Mono installed, it's probably a good idea to run a quick Hello Wor
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Console_Hello_World">1 Console Hello World</a></li>
-<li><a href="#Gtk.23_Hello_World">2 Gtk# Hello World</a></li>
-<li><a href="#Winforms_Hello_World">3 Winforms Hello World</a></li>
-<li><a href="#ASP.Net_Hello_World">4 ASP.Net Hello World</a></li>
+<li><a href="#console-hello-world">1 Console Hello World</a></li>
+<li><a href="#gtk-hello-world">2 Gtk# Hello World</a></li>
+<li><a href="#winforms-hello-world">3 Winforms Hello World</a></li>
+<li><a href="#aspnet-hello-world">4 ASP.Net Hello World</a></li>
 </ul></td>
 </tr>
 </tbody>

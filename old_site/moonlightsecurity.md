@@ -17,24 +17,24 @@ CoreCLR *agnostic* information is available [here]({{site.github.url}}/old_site/
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Attributes">1 Attributes</a>
+<li><a href="#attributes">1 Attributes</a>
 <ul>
-<li><a href="#Goals">1.1 Goals</a></li>
-<li><a href="#Tools">1.2 Tools</a>
+<li><a href="#goals">1.1 Goals</a></li>
+<li><a href="#tools">1.2 Tools</a>
 <ul>
-<li><a href="#Find-SC_:_Compatibility">1.2.1 Find-SC : Compatibility</a></li>
-<li><a href="#Manual_override_files">1.2.2 Manual override files</a></li>
-<li><a href="#Detect">1.2.3 Detect</a></li>
-<li><a href="#Tuner">1.2.4 Tuner</a></li>
+<li><a href="#find-sc--compatibility">1.2.1 Find-SC : Compatibility</a></li>
+<li><a href="#manual-override-files">1.2.2 Manual override files</a></li>
+<li><a href="#detect">1.2.3 Detect</a></li>
+<li><a href="#tuner">1.2.4 Tuner</a></li>
 </ul></li>
-<li><a href="#Validation">1.3 Validation</a>
+<li><a href="#validation">1.3 Validation</a>
 <ul>
-<li><a href="#API_Access_Compatibility">1.3.1 API Access Compatibility</a></li>
-<li><a href="#Unit_tests">1.3.2 Unit tests</a>
+<li><a href="#api-access-compatibility">1.3.1 API Access Compatibility</a></li>
+<li><a href="#unit-tests">1.3.2 Unit tests</a>
 <ul>
-<li><a href="#SecurityCriticalTest">1.3.2.1 SecurityCriticalTest</a></li>
-<li><a href="#ReflectionTest">1.3.2.2 ReflectionTest</a></li>
-<li><a href="#ReflectionEmitTest">1.3.2.3 ReflectionEmitTest</a></li>
+<li><a href="#securitycriticaltest">1.3.2.1 SecurityCriticalTest</a></li>
+<li><a href="#reflectiontest">1.3.2.2 ReflectionTest</a></li>
+<li><a href="#reflectionemittest">1.3.2.3 ReflectionEmitTest</a></li>
 </ul></li>
 </ul></li>
 </ul></li>

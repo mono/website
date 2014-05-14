@@ -15,15 +15,15 @@ Mono Contribution HOWTO
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#A_little_help_for_mono_newbie_coders">1 A little help for mono newbie coders</a></li>
-<li><a href="#The_NUnit_Tests_Guidelines_document">2 The NUnit Tests Guidelines document</a></li>
-<li><a href="#Getting_Started">3 Getting Started</a></li>
-<li><a href="#Provide_an_unique_error_message_for_Assert.28.29">4 Provide an unique error message for Assert()</a></li>
-<li><a href="#Use_AssertEquals.28.29_to_compare_things.2C_not_Assert.28.29">5 Use AssertEquals() to compare things, not Assert()</a></li>
-<li><a href="#Constructors">6 Constructors</a></li>
-<li><a href="#Namespace">7 Namespace</a></li>
-<li><a href="#Test_your_test_with_the_microsoft_runtime">8 Test your test with the microsoft runtime</a></li>
-<li><a href="#Miscellaneous_Tips">9 Miscellaneous Tips</a></li>
+<li><a href="#a-little-help-for-mono-newbie-coders">1 A little help for mono newbie coders</a></li>
+<li><a href="#the-nunit-tests-guidelines-document">2 The NUnit Tests Guidelines document</a></li>
+<li><a href="#getting-started">3 Getting Started</a></li>
+<li><a href="#provide-an-unique-error-message-for-assert">4 Provide an unique error message for Assert()</a></li>
+<li><a href="#use-assertequals-to-compare-things-not-assert">5 Use AssertEquals() to compare things, not Assert()</a></li>
+<li><a href="#constructors">6 Constructors</a></li>
+<li><a href="#namespace">7 Namespace</a></li>
+<li><a href="#test-your-test-with-the-microsoft-runtime">8 Test your test with the microsoft runtime</a></li>
+<li><a href="#miscellaneous-tips">9 Miscellaneous Tips</a></li>
 </ul></td>
 </tr>
 </tbody>

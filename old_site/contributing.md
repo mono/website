@@ -18,7 +18,7 @@ Users:
  Developers:
   [API Docs](http://www.go-mono.com/docs/) | [Languages]({{site.github.url}}/old_site/Languages "Languages") | [Books]({{site.github.url}}/old_site/Books "Books") | [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap) | [Plans]({{site.github.url}}/old_site/Plans "Plans")
  Contributors:
-  [Class Status]({{site.github.url}}/old_site/Resources#API_completion_status_pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{site.github.url}}/old_site/SourceCodeRepository)
+  [Class Status]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{site.github.url}}/old_site/SourceCodeRepository)
  Community:
   [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat]({{site.github.url}}/old_site/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)
  FAQ:
@@ -44,17 +44,17 @@ The project is under active development and has a vibrant community. If you are 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Important_Rules">1 Important Rules</a></li>
-<li><a href="#Work_Areas">2 Work Areas</a></li>
-<li><a href="#Contributing_to_Mono">3 Contributing to Mono</a>
+<li><a href="#important-rules">1 Important Rules</a></li>
+<li><a href="#work-areas">2 Work Areas</a></li>
+<li><a href="#contributing-to-mono">3 Contributing to Mono</a>
 <ul>
-<li><a href="#Contributing_to_the_Class_Libraries">3.1 Contributing to the Class Libraries</a></li>
-<li><a href="#Testing_on_Various_Platforms">3.2 Testing on Various Platforms</a></li>
-<li><a href="#Maintaining_Multiple_Trees">3.3 Maintaining Multiple Trees</a></li>
-<li><a href="#Maintaining_Mono_git_submodules">3.4 Maintaining Mono git submodules</a></li>
-<li><a href="#Debugging_with_Visual_Studio">3.5 Debugging with Visual Studio</a></li>
+<li><a href="#contributing-to-the-class-libraries">3.1 Contributing to the Class Libraries</a></li>
+<li><a href="#testing-on-various-platforms">3.2 Testing on Various Platforms</a></li>
+<li><a href="#maintaining-multiple-trees">3.3 Maintaining Multiple Trees</a></li>
+<li><a href="#maintaining-mono-git-submodules">3.4 Maintaining Mono git submodules</a></li>
+<li><a href="#debugging-with-visual-studio">3.5 Debugging with Visual Studio</a></li>
 </ul></li>
-<li><a href="#Ways_to_Contribute">4 Ways to Contribute</a></li>
+<li><a href="#ways-to-contribute">4 Ways to Contribute</a></li>
 </ul></td>
 </tr>
 </tbody>

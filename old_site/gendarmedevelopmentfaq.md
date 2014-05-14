@@ -15,26 +15,26 @@ Gendarme.Development.FAQ
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General">1 General</a>
+<li><a href="#general">1 General</a>
 <ul>
-<li><a href="#Can_I_have_my_own.2C_private.2C_Gendarme_rules_.3F">1.1 Can I have my own, private, Gendarme rules ?</a></li>
-<li><a href="#Can_I_use_something_other_than_C.23_to_write_rules_.3F">1.2 Can I use something other than C# to write rules ?</a></li>
-<li><a href="#When_should_I_write_an_engine_.3F">1.3 When should I write an engine ?</a></li>
-<li><a href="#Where_can_I_ask_technical_questions_about_Gendarme_.3F">1.4 Where can I ask technical questions about Gendarme ?</a></li>
+<li><a href="#can-i-have-my-own-private-gendarme-rules-">1.1 Can I have my own, private, Gendarme rules ?</a></li>
+<li><a href="#can-i-use-something-other-than-c-to-write-rules-">1.2 Can I use something other than C# to write rules ?</a></li>
+<li><a href="#when-should-i-write-an-engine-">1.3 When should I write an engine ?</a></li>
+<li><a href="#where-can-i-ask-technical-questions-about-gendarme-">1.4 Where can I ask technical questions about Gendarme ?</a></li>
 </ul></li>
-<li><a href="#Building">2 Building</a>
+<li><a href="#building">2 Building</a>
 <ul>
-<li><a href="#How_can_I_build_Gendarme_.3F">2.1 How can I build Gendarme ?</a></li>
-<li><a href="#Why_Makefiles_.3F">2.2 Why Makefiles ?</a></li>
-<li><a href="#Which_version_of_Mono_is_required_.3F">2.3 Which version of Mono is required ?</a></li>
-<li><a href="#Can_I_use_MonoDevelop_to_build_Gendarme_.3F">2.4 Can I use MonoDevelop to build Gendarme ?</a></li>
-<li><a href="#Can_I_use_Visual_Studio_to_build_Gendarme_.3F">2.5 Can I use Visual Studio to build Gendarme ?</a></li>
+<li><a href="#how-can-i-build-gendarme-">2.1 How can I build Gendarme ?</a></li>
+<li><a href="#why-makefiles-">2.2 Why Makefiles ?</a></li>
+<li><a href="#which-version-of-mono-is-required-">2.3 Which version of Mono is required ?</a></li>
+<li><a href="#can-i-use-monodevelop-to-build-gendarme-">2.4 Can I use MonoDevelop to build Gendarme ?</a></li>
+<li><a href="#can-i-use-visual-studio-to-build-gendarme-">2.5 Can I use Visual Studio to build Gendarme ?</a></li>
 </ul></li>
-<li><a href="#Contribute">3 Contribute</a>
+<li><a href="#contribute">3 Contribute</a>
 <ul>
-<li><a href="#How_can_I_contribute_a_new_rule_.3F">3.1 How can I contribute a new rule ?</a></li>
-<li><a href="#Can_I_use_C.23_3_.3F">3.2 Can I use C# 3 ?</a></li>
-<li><a href="#Can_I_use_C.23_4_.3F">3.3 Can I use C# 4 ?</a></li>
+<li><a href="#how-can-i-contribute-a-new-rule-">3.1 How can I contribute a new rule ?</a></li>
+<li><a href="#can-i-use-c-3-">3.2 Can I use C# 3 ?</a></li>
+<li><a href="#can-i-use-c-4-">3.3 Can I use C# 4 ?</a></li>
 </ul></li>
 </ul></td>
 </tr>

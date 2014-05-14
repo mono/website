@@ -15,11 +15,11 @@ RuntimeHacking
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Runtime_hacking_tips_and_tricks">1 Runtime hacking tips and tricks</a></li>
-<li><a href="#Coding_style">2 Coding style</a></li>
-<li><a href="#Testing_changes">3 Testing changes</a></li>
-<li><a href="#Profiling_and_statistics">4 Profiling and statistics</a></li>
-<li><a href="#Runtime_areas_and_their_maintainers">5 Runtime areas and their maintainers</a></li>
+<li><a href="#runtime-hacking-tips-and-tricks">1 Runtime hacking tips and tricks</a></li>
+<li><a href="#coding-style">2 Coding style</a></li>
+<li><a href="#testing-changes">3 Testing changes</a></li>
+<li><a href="#profiling-and-statistics">4 Profiling and statistics</a></li>
+<li><a href="#runtime-areas-and-their-maintainers">5 Runtime areas and their maintainers</a></li>
 </ul></td>
 </tr>
 </tbody>

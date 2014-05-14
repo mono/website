@@ -15,11 +15,11 @@ Table Football
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Table_Football_in_the_Cambridge_Office">1 Table Football in the Cambridge Office</a>
+<li><a href="#table-football-in-the-cambridge-office">1 Table Football in the Cambridge Office</a>
 <ul>
-<li><a href="#Teams">1.1 Teams</a></li>
-<li><a href="#Scores">1.2 Scores</a></li>
-<li><a href="#Implementation">1.3 Implementation</a></li>
+<li><a href="#teams">1.1 Teams</a></li>
+<li><a href="#scores">1.2 Scores</a></li>
+<li><a href="#implementation">1.3 Implementation</a></li>
 </ul></li>
 </ul></td>
 </tr>

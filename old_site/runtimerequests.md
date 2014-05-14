@@ -15,36 +15,36 @@ RuntimeRequests
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#SIMD">1 SIMD</a>
+<li><a href="#simd">1 SIMD</a>
 <ul>
-<li><a href="#Alignment">1.1 Alignment</a></li>
-<li><a href="#ABI">1.2 ABI</a></li>
-<li><a href="#Ports">1.3 Ports</a></li>
-<li><a href="#Per-arch_Method_Implementations">1.4 Per-arch Method Implementations</a></li>
-<li><a href="#Struct_as_SIMD_Wrappers">1.5 Struct as SIMD Wrappers</a></li>
-<li><a href="#Ref_overloads_in_Mono.Simd">1.6 Ref overloads in Mono.Simd</a></li>
-<li><a href="#SSE_Floating_Point_on_x86">1.7 SSE Floating Point on x86</a></li>
+<li><a href="#alignment">1.1 Alignment</a></li>
+<li><a href="#abi">1.2 ABI</a></li>
+<li><a href="#ports">1.3 Ports</a></li>
+<li><a href="#per-arch-method-implementations">1.4 Per-arch Method Implementations</a></li>
+<li><a href="#struct-as-simd-wrappers">1.5 Struct as SIMD Wrappers</a></li>
+<li><a href="#ref-overloads-in-monosimd">1.6 Ref overloads in Mono.Simd</a></li>
+<li><a href="#sse-floating-point-on-x86">1.7 SSE Floating Point on x86</a></li>
 </ul></li>
-<li><a href="#Optimization_Hinting">2 Optimization Hinting</a>
+<li><a href="#optimization-hinting">2 Optimization Hinting</a>
 <ul>
-<li><a href="#ABC_disabling">2.1 ABC disabling</a></li>
-<li><a href="#Branch_hinting">2.2 Branch hinting</a></li>
-<li><a href="#Data_Prefetch">2.3 Data Prefetch</a></li>
-<li><a href="#Byref_attributes">2.4 Byref attributes</a></li>
-<li><a href="#Optimization_Level">2.5 Optimization Level</a></li>
+<li><a href="#abc-disabling">2.1 ABC disabling</a></li>
+<li><a href="#branch-hinting">2.2 Branch hinting</a></li>
+<li><a href="#data-prefetch">2.3 Data Prefetch</a></li>
+<li><a href="#byref-attributes">2.4 Byref attributes</a></li>
+<li><a href="#optimization-level">2.5 Optimization Level</a></li>
 </ul></li>
-<li><a href="#Inliner">3 Inliner</a>
+<li><a href="#inliner">3 Inliner</a>
 <ul>
-<li><a href="#Force_Inline_Attribute">3.1 Force Inline Attribute</a></li>
-<li><a href="#Intrinsics">3.2 Intrinsics</a></li>
+<li><a href="#force-inline-attribute">3.1 Force Inline Attribute</a></li>
+<li><a href="#intrinsics">3.2 Intrinsics</a></li>
 </ul></li>
-<li><a href="#P.2FInvoke_Inlining">4 P/Invoke Inlining</a>
+<li><a href="#pinvoke-inlining">4 P/Invoke Inlining</a>
 <ul>
-<li><a href="#Why_the_simple_solution_is_not_possible">4.1 Why the simple solution is not possible</a></li>
-<li><a href="#What_can_be_done">4.2 What can be done</a></li>
-<li><a href="#ICALL_performance">4.3 ICALL performance</a></li>
+<li><a href="#why-the-simple-solution-is-not-possible">4.1 Why the simple solution is not possible</a></li>
+<li><a href="#what-can-be-done">4.2 What can be done</a></li>
+<li><a href="#icall-performance">4.3 ICALL performance</a></li>
 </ul></li>
-<li><a href="#Support_for_NSString">5 Support for NSString</a></li>
+<li><a href="#support-for-nsstring">5 Support for NSString</a></li>
 </ul></td>
 </tr>
 </tbody>

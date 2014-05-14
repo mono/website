@@ -16,33 +16,33 @@ Mono:Runtime
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Mono_runtime">1 The Mono runtime</a></li>
-<li><a href="#Supported_Platforms">2 Supported Platforms</a>
+<li><a href="#the-mono-runtime">1 The Mono runtime</a></li>
+<li><a href="#supported-platforms">2 Supported Platforms</a>
 <ul>
-<li><a href="#Supported_Operating_Systems">2.1 Supported Operating Systems</a></li>
-<li><a href="#Supported_Architectures">2.2 Supported Architectures</a></li>
-<li><a href="#Embedded_systems">2.3 Embedded systems</a></li>
+<li><a href="#supported-operating-systems">2.1 Supported Operating Systems</a></li>
+<li><a href="#supported-architectures">2.2 Supported Architectures</a></li>
+<li><a href="#embedded-systems">2.3 Embedded systems</a></li>
 </ul></li>
-<li><a href="#Compilation_Engine">3 Compilation Engine</a>
+<li><a href="#compilation-engine">3 Compilation Engine</a>
 <ul>
-<li><a href="#Ahead-of-time_compilation">3.1 Ahead-of-time compilation</a></li>
-<li><a href="#Bundles">3.2 Bundles</a></li>
-<li><a href="#Platform_for_Code_Optimizations">3.3 Platform for Code Optimizations</a></li>
-<li><a href="#Simplify_Porting">3.4 Simplify Porting</a></li>
-<li><a href="#Profiling_and_Code_Coverage">3.5 Profiling and Code Coverage</a></li>
-<li><a href="#DTrace">3.6 DTrace</a></li>
+<li><a href="#ahead-of-time-compilation">3.1 Ahead-of-time compilation</a></li>
+<li><a href="#bundles">3.2 Bundles</a></li>
+<li><a href="#platform-for-code-optimizations">3.3 Platform for Code Optimizations</a></li>
+<li><a href="#simplify-porting">3.4 Simplify Porting</a></li>
+<li><a href="#profiling-and-code-coverage">3.5 Profiling and Code Coverage</a></li>
+<li><a href="#dtrace">3.6 DTrace</a></li>
 </ul></li>
-<li><a href="#Versioning">4 Versioning</a></li>
-<li><a href="#Garbage_Collection">5 Garbage Collection</a>
+<li><a href="#versioning">4 Versioning</a></li>
+<li><a href="#garbage-collection">5 Garbage Collection</a>
 <ul>
-<li><a href="#Mono.27s_use_of_Boehm_GC">5.1 Mono's use of Boehm GC</a></li>
-<li><a href="#References">5.2 References</a></li>
+<li><a href="#monos-use-of-boehm-gc">5.1 Mono's use of Boehm GC</a></li>
+<li><a href="#references">5.2 References</a></li>
 </ul></li>
-<li><a href="#IO_and_threading">6 IO and threading</a></li>
-<li><a href="#Useful_links">7 Useful links</a></li>
-<li><a href="#Porting">8 Porting</a></li>
-<li><a href="#Projects_Under_Development">9 Projects Under Development</a></li>
-<li><a href="#COM_and_XPCOM">10 COM and XPCOM</a></li>
+<li><a href="#io-and-threading">6 IO and threading</a></li>
+<li><a href="#useful-links">7 Useful links</a></li>
+<li><a href="#porting">8 Porting</a></li>
+<li><a href="#projects-under-development">9 Projects Under Development</a></li>
+<li><a href="#com-and-xpcom">10 COM and XPCOM</a></li>
 </ul></td>
 </tr>
 </tbody>

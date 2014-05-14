@@ -15,27 +15,27 @@ Accessibility: Moonlight Sandbox
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Moonlight_Sandbox">1 Moonlight Sandbox</a>
+<li><a href="#moonlight-sandbox">1 Moonlight Sandbox</a>
 <ul>
-<li><a href="#Tasks_for_Research_Week">1.1 Tasks for Research Week</a>
+<li><a href="#tasks-for-research-week">1.1 Tasks for Research Week</a>
 <ul>
-<li><a href="#Provider">1.1.1 Provider</a>
+<li><a href="#provider">1.1.1 Provider</a>
 <ul>
-<li><a href="#Deliverables">1.1.1.1 Deliverables</a></li>
-<li><a href="#Research">1.1.1.2 Research</a></li>
-<li><a href="#Links">1.1.1.3 Links</a></li>
+<li><a href="#deliverables">1.1.1.1 Deliverables</a></li>
+<li><a href="#research">1.1.1.2 Research</a></li>
+<li><a href="#links">1.1.1.3 Links</a></li>
 </ul></li>
-<li><a href="#Bridge">1.1.2 Bridge</a>
+<li><a href="#bridge">1.1.2 Bridge</a>
 <ul>
-<li><a href="#Deliverables_2">1.1.2.1 Deliverables</a></li>
+<li><a href="#deliverables_2">1.1.2.1 Deliverables</a></li>
 </ul></li>
-<li><a href="#Plugin_integration">1.1.3 Plugin integration</a>
+<li><a href="#plugin-integration">1.1.3 Plugin integration</a>
 <ul>
-<li><a href="#Deliverables_3">1.1.3.1 Deliverables</a></li>
+<li><a href="#deliverables_3">1.1.3.1 Deliverables</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Requirements_for_Moonlight_development">1.2 Requirements for Moonlight development</a></li>
-<li><a href="#Running_the_Moonlight_2.0_unit_test_suite">1.3 Running the Moonlight 2.0 unit test suite</a></li>
+<li><a href="#requirements-for-moonlight-development">1.2 Requirements for Moonlight development</a></li>
+<li><a href="#running-the-moonlight-20-unit-test-suite">1.3 Running the Moonlight 2.0 unit test suite</a></li>
 </ul></li>
 </ul></td>
 </tr>

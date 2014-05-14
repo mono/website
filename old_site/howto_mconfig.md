@@ -15,59 +15,59 @@ Howto Mconfig
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Command_line_usage">2 Command line usage</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#command-line-usage">2 Command line usage</a>
 <ul>
-<li><a href="#Options">2.1 Options</a></li>
-<li><a href="#Commands">2.2 Commands</a></li>
+<li><a href="#options">2.1 Options</a></li>
+<li><a href="#commands">2.2 Commands</a></li>
 </ul></li>
-<li><a href="#Configuration_files">3 Configuration files</a>
+<li><a href="#configuration-files">3 Configuration files</a>
 <ul>
-<li><a href="#File_locations">3.1 File locations</a></li>
-<li><a href="#Configuration_file_syntax">3.2 Configuration file syntax</a>
+<li><a href="#file-locations">3.1 File locations</a></li>
+<li><a href="#configuration-file-syntax">3.2 Configuration file syntax</a>
 <ul>
-<li><a href="#.3Cconfiguration.3E">3.2.1 &lt;configuration&gt;</a>
+<li><a href="#configuration">3.2.1 &lt;configuration&gt;</a>
 <ul>
-<li><a href="#.3Chandlers.3E">3.2.1.1 &lt;handlers&gt;</a>
+<li><a href="#handlers">3.2.1.1 &lt;handlers&gt;</a>
 <ul>
-<li><a href="#.3Chandler.3E">3.2.1.1.1 &lt;handler&gt;</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#.3Cfeature.3E">3.2.2 &lt;feature&gt;</a>
-<ul>
-<li><a href="#.3Cdescription.3E">3.2.2.1 &lt;description&gt;</a></li>
-<li><a href="#.3Cblocks.3E">3.2.2.2 &lt;blocks&gt;</a>
-<ul>
-<li><a href="#.3Cblock.3E">3.2.2.2.1 &lt;block&gt;</a></li>
+<li><a href="#handler">3.2.1.1.1 &lt;handler&gt;</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#.3Csection.3E">3.2.3 &lt;section&gt;</a></li>
-<li><a href="#.3CconfigBlock.3E">3.2.4 &lt;configBlock&gt;</a>
+<li><a href="#feature">3.2.2 &lt;feature&gt;</a>
 <ul>
-<li><a href="#.3Crequires.3E">3.2.4.1 &lt;requires&gt;</a></li>
-<li><a href="#.3Ccontents.3E">3.2.4.2 &lt;contents&gt;</a></li>
-</ul></li>
-<li><a href="#.3Cdefault.3E">3.2.5 &lt;default&gt;</a></li>
-<li><a href="#.3CdefaultConfigFile.3E">3.2.6 &lt;defaultConfigFile&gt;</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Examples">4 Examples</a>
+<li><a href="#description">3.2.2.1 &lt;description&gt;</a></li>
+<li><a href="#blocks">3.2.2.2 &lt;blocks&gt;</a>
 <ul>
-<li><a href="#Defining_a_new_feature">4.1 Defining a new feature</a>
+<li><a href="#block">3.2.2.2.1 &lt;block&gt;</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#section">3.2.3 &lt;section&gt;</a></li>
+<li><a href="#configblock">3.2.4 &lt;configBlock&gt;</a>
 <ul>
-<li><a href="#First_steps">4.1.1 First steps</a></li>
-<li><a href="#Creating_the_mconfig.xml_file">4.1.2 Creating the mconfig.xml file</a>
+<li><a href="#requires">3.2.4.1 &lt;requires&gt;</a></li>
+<li><a href="#contents">3.2.4.2 &lt;contents&gt;</a></li>
+</ul></li>
+<li><a href="#default">3.2.5 &lt;default&gt;</a></li>
+<li><a href="#defaultconfigfile">3.2.6 &lt;defaultConfigFile&gt;</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#examples">4 Examples</a>
 <ul>
-<li><a href="#Basic_file_structure">4.1.2.1 Basic file structure</a></li>
-<li><a href="#Adding_a_feature_block">4.1.2.2 Adding a feature block</a></li>
-<li><a href="#Defining_configuration_blocks">4.1.2.3 Defining configuration blocks</a></li>
-<li><a href="#Defining_default_section_contents">4.1.2.4 Defining default section contents</a></li>
+<li><a href="#defining-a-new-feature">4.1 Defining a new feature</a>
+<ul>
+<li><a href="#first-steps">4.1.1 First steps</a></li>
+<li><a href="#creating-the-mconfigxml-file">4.1.2 Creating the mconfig.xml file</a>
+<ul>
+<li><a href="#basic-file-structure">4.1.2.1 Basic file structure</a></li>
+<li><a href="#adding-a-feature-block">4.1.2.2 Adding a feature block</a></li>
+<li><a href="#defining-configuration-blocks">4.1.2.3 Defining configuration blocks</a></li>
+<li><a href="#defining-default-section-contents">4.1.2.4 Defining default section contents</a></li>
 </ul></li>
-<li><a href="#The_final_mconfig.xml_file">4.1.3 The final mconfig.xml file</a></li>
+<li><a href="#the-final-mconfigxml-file">4.1.3 The final mconfig.xml file</a></li>
 </ul></li>
-<li><a href="#Example_configuration_file">4.2 Example configuration file</a></li>
+<li><a href="#example-configuration-file">4.2 Example configuration file</a></li>
 </ul></li>
-<li><a href="#Usage_as_a_library">5 Usage as a library</a></li>
+<li><a href="#usage-as-a-library">5 Usage as a library</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -196,7 +196,7 @@ This is a shared element supported as a child of several elements defined below.
 -   **name** (required)
     Gives name of a config file section that is required by the ocntaining element. If the section doesn't exist in the target configuration file, the name is used to reference a `<default>` tag instance which contains the default contents of the section.
 -   **attachPoint** (optional)
-    Defines the place in the section hierarchy where the contents of the parent [\<configBlock\>](#.3CconfigBlock.3E) is inserted.
+    Defines the place in the section hierarchy where the contents of the parent [\<configBlock\>](#configblock) is inserted.
 -   **defaultBlockName** (optional)
     Specifies the alternative name by which to look for the appropriate *\<default\>* block. This is useful if several sections found in different places of the XML element hierarchy have the same name and it would be impossible to define two *\<default\>* blocks sharing the same name. If this attribute is absent, it defaults to the value of the **name** attribute above.
 
@@ -209,7 +209,7 @@ Defines a single feature block for use in the `<feature>` elements. The accepted
 
 ##### \<requires\>
 
-Contains a collection of nested [\<section\>](#.3Csection.3E) elements which form the hierarchy of sections required by the config block.
+Contains a collection of nested [\<section\>](#section) elements which form the hierarchy of sections required by the config block.
 
 ##### \<contents\>
 
@@ -220,7 +220,7 @@ All the child text nodes of this element are contanated to form the config block
 Defines contents of a section should it be missing from the target file, or to be used when generating a default config file. Child text nodes of the element are treated as an XML document, parsed and injected into the target document's DOM at the locations specified by other elements described above. Since the contents should be read verbatim, you must enclose it in the CDATA container. The accepted attributes are:
 
 -   **section** (required)
-    Assigns a unique name to the section definition. Used by the [\<section\>](#.3Csection.3E) element.
+    Assigns a unique name to the section definition. Used by the [\<section\>](#section) element.
 -   **target** (required)
     Specifies for wich target the section definition is valid.
 
@@ -300,7 +300,7 @@ If you attempted to add the feature to our configuration fire at this point, how
     Failed to add feature 'IronPython-Mono' to config file 'Web.config'.
       Config block 'My AppSettings' cannot be found
 
-The error is signalled because no configuration file contains a [\<configBlock\>](#.3CconfigBlock.3E) which describes the block requested by our feature.
+The error is signalled because no configuration file contains a [\<configBlock\>](#configblock) which describes the block requested by our feature.
 
 ##### Defining configuration blocks
 

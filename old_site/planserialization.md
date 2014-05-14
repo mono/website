@@ -17,11 +17,11 @@ This document describes the serialization strategies to provide compatibility ac
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Background">1 Background</a></li>
-<li><a href="#Possible_Solutions">2 Possible Solutions</a>
+<li><a href="#background">1 Background</a></li>
+<li><a href="#possible-solutions">2 Possible Solutions</a>
 <ul>
-<li><a href="#Private_Attributes">2.1 Private Attributes</a></li>
-<li><a href="#Implementing_ISerializable">2.2 Implementing ISerializable</a></li>
+<li><a href="#private-attributes">2.1 Private Attributes</a></li>
+<li><a href="#implementing-iserializable">2.2 Implementing ISerializable</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,13 +15,13 @@ Embedded-api
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Embedding_Mono">1 Embedding Mono</a>
+<li><a href="#embedding-mono">1 Embedding Mono</a>
 <ul>
-<li><a href="#Embedding_the_Mono_runtime.2C_preliminary_version">1.1 Embedding the Mono runtime, preliminary version</a></li>
-<li><a href="#Embedding_the_runtime">1.2 Embedding the runtime</a></li>
-<li><a href="#Exposing_C_code_to_the_CIL_universe">1.3 Exposing C code to the CIL universe</a></li>
-<li><a href="#Invoking_Methods_in_the_CIL_universe">1.4 Invoking Methods in the CIL universe</a></li>
-<li><a href="#Samples">1.5 Samples</a></li>
+<li><a href="#embedding-the-mono-runtime-preliminary-version">1.1 Embedding the Mono runtime, preliminary version</a></li>
+<li><a href="#embedding-the-runtime">1.2 Embedding the runtime</a></li>
+<li><a href="#exposing-c-code-to-the-cil-universe">1.3 Exposing C code to the CIL universe</a></li>
+<li><a href="#invoking-methods-in-the-cil-universe">1.4 Invoking Methods in the CIL universe</a></li>
+<li><a href="#samples">1.5 Samples</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -17,17 +17,17 @@ This describes the technology used in Mono's Virtual Machine to share code when 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Porting">1 Porting</a>
+<li><a href="#porting">1 Porting</a>
 <ul>
-<li><a href="#Generic_class_init_trampoline">1.1 Generic class init trampoline</a></li>
-<li><a href="#RGCTX_register">1.2 RGCTX register</a></li>
-<li><a href="#Method_prologue">1.3 Method prologue</a></li>
-<li><a href="#Dealing_with_types">1.4 Dealing with types</a></li>
-<li><a href="#.28M.29RGCTX_lazy_fetch_trampoline">1.5 (M)RGCTX lazy fetch trampoline</a></li>
+<li><a href="#generic-class-init-trampoline">1.1 Generic class init trampoline</a></li>
+<li><a href="#rgctx-register">1.2 RGCTX register</a></li>
+<li><a href="#method-prologue">1.3 Method prologue</a></li>
+<li><a href="#dealing-with-types">1.4 Dealing with types</a></li>
+<li><a href="#mrgctx-lazy-fetch-trampoline">1.5 (M)RGCTX lazy fetch trampoline</a></li>
 </ul></li>
-<li><a href="#Getting_generics_information_about_a_stack_frame">2 Getting generics information about a stack frame</a></li>
-<li><a href="#Layout_of_the_MRGCTX">3 Layout of the MRGCTX</a></li>
-<li><a href="#Blog_posts_about_generic_code_sharing">4 Blog posts about generic code sharing</a></li>
+<li><a href="#getting-generics-information-about-a-stack-frame">2 Getting generics information about a stack frame</a></li>
+<li><a href="#layout-of-the-mrgctx">3 Layout of the MRGCTX</a></li>
+<li><a href="#blog-posts-about-generic-code-sharing">4 Blog posts about generic code sharing</a></li>
 </ul></td>
 </tr>
 </tbody>

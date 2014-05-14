@@ -17,18 +17,18 @@ Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{si
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Data_Binding">1 Data Binding</a></li>
-<li><a href="#OpenGL_integration">2 OpenGL integration</a></li>
-<li><a href="#Rendering">3 Rendering</a>
+<li><a href="#data-binding">1 Data Binding</a></li>
+<li><a href="#opengl-integration">2 OpenGL integration</a></li>
+<li><a href="#rendering">3 Rendering</a>
 <ul>
-<li><a href="#Cairo_integration">3.1 Cairo integration</a></li>
+<li><a href="#cairo-integration">3.1 Cairo integration</a></li>
 </ul></li>
-<li><a href="#TreeView">4 TreeView</a></li>
-<li><a href="#Tutorials">5 Tutorials</a></li>
-<li><a href="#Documentation">6 Documentation</a></li>
-<li><a href="#Widgets">7 Widgets</a></li>
-<li><a href="#Other_Libraries">8 Other Libraries</a></li>
-<li><a href="#Platforms">9 Platforms</a></li>
+<li><a href="#treeview">4 TreeView</a></li>
+<li><a href="#tutorials">5 Tutorials</a></li>
+<li><a href="#documentation">6 Documentation</a></li>
+<li><a href="#widgets">7 Widgets</a></li>
+<li><a href="#other-libraries">8 Other Libraries</a></li>
+<li><a href="#platforms">9 Platforms</a></li>
 </ul></td>
 </tr>
 </tbody>

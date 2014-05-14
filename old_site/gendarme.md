@@ -19,29 +19,29 @@ Gendarme uses the [Cecil]({{site.github.url}}/old_site/Cecil "Cecil") library to
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Why_.3F">1 Why ?</a></li>
-<li><a href="#History">2 History</a></li>
-<li><a href="#Runners">3 Runners</a>
+<li><a href="#why-">1 Why ?</a></li>
+<li><a href="#history">2 History</a></li>
+<li><a href="#runners">3 Runners</a>
 <ul>
-<li><a href="#Console">3.1 Console</a></li>
-<li><a href="#Wizard">3.2 Wizard</a></li>
-<li><a href="#CruiseControl.NET">3.3 CruiseControl.NET</a></li>
-<li><a href="#NAnt">3.4 NAnt</a></li>
+<li><a href="#console">3.1 Console</a></li>
+<li><a href="#wizard">3.2 Wizard</a></li>
+<li><a href="#cruisecontrolnet">3.3 CruiseControl.NET</a></li>
+<li><a href="#nant">3.4 NAnt</a></li>
 </ul></li>
-<li><a href="#Rules">4 Rules</a></li>
-<li><a href="#Download">5 Download</a>
+<li><a href="#rules">4 Rules</a></li>
+<li><a href="#download">5 Download</a>
 <ul>
-<li><a href="#Linux">5.1 Linux</a></li>
-<li><a href="#Windows">5.2 Windows</a></li>
-<li><a href="#Binaries_only_.28multi-platform.29">5.3 Binaries only (multi-platform)</a></li>
-<li><a href="#Source_Code">5.4 Source Code</a></li>
-<li><a href="#Other_Cool_Stuff">5.5 Other Cool Stuff</a></li>
+<li><a href="#linux">5.1 Linux</a></li>
+<li><a href="#windows">5.2 Windows</a></li>
+<li><a href="#binaries-only-multi-platform">5.3 Binaries only (multi-platform)</a></li>
+<li><a href="#source-code">5.4 Source Code</a></li>
+<li><a href="#other-cool-stuff">5.5 Other Cool Stuff</a></li>
 </ul></li>
-<li><a href="#Resources">6 Resources</a>
+<li><a href="#resources">6 Resources</a>
 <ul>
-<li><a href="#Getting_Help">6.1 Getting Help</a></li>
+<li><a href="#getting-help">6.1 Getting Help</a></li>
 </ul></li>
-<li><a href="#Feedback">7 Feedback</a></li>
+<li><a href="#feedback">7 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

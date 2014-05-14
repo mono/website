@@ -17,8 +17,8 @@ Here are some historical data points about Mono:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Early_Posts">1 Early Posts</a></li>
-<li><a href="#Milestones">2 Milestones</a>
+<li><a href="#early-posts">1 Early Posts</a></li>
+<li><a href="#milestones">2 Milestones</a>
 <ul>
 <li><a href="#2001">2.1 2001</a></li>
 <li><a href="#2002">2.2 2002</a></li>

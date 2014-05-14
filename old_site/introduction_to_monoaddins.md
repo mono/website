@@ -25,18 +25,18 @@ If you have questions or suggestions about Mono.Addins, please subscribe to the 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Extension_Model">1 The Extension Model</a></li>
-<li><a href="#A_simple_example">2 A simple example</a></li>
-<li><a href="#Description_of_an_add-in">3 Description of an add-in</a></li>
-<li><a href="#Extension_Paths">4 Extension Paths</a></li>
-<li><a href="#Querying_Extension_Points">5 Querying Extension Points</a></li>
-<li><a href="#Custom_Extension_Node_Types">6 Custom Extension Node Types</a></li>
-<li><a href="#Conditions">7 Conditions</a></li>
-<li><a href="#Loading_Add-ins">8 Loading Add-ins</a></li>
-<li><a href="#Add-in_Discovery">9 Add-in Discovery</a></li>
-<li><a href="#Creating_Extensible_Libraries">10 Creating Extensible Libraries</a></li>
-<li><a href="#Add-in_Management_Tools">11 Add-in Management Tools</a></li>
-<li><a href="#Licensing">12 Licensing</a></li>
+<li><a href="#the-extension-model">1 The Extension Model</a></li>
+<li><a href="#a-simple-example">2 A simple example</a></li>
+<li><a href="#description-of-an-add-in">3 Description of an add-in</a></li>
+<li><a href="#extension-paths">4 Extension Paths</a></li>
+<li><a href="#querying-extension-points">5 Querying Extension Points</a></li>
+<li><a href="#custom-extension-node-types">6 Custom Extension Node Types</a></li>
+<li><a href="#conditions">7 Conditions</a></li>
+<li><a href="#loading-add-ins">8 Loading Add-ins</a></li>
+<li><a href="#add-in-discovery">9 Add-in Discovery</a></li>
+<li><a href="#creating-extensible-libraries">10 Creating Extensible Libraries</a></li>
+<li><a href="#add-in-management-tools">11 Add-in Management Tools</a></li>
+<li><a href="#licensing">12 Licensing</a></li>
 </ul></td>
 </tr>
 </tbody>

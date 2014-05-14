@@ -17,14 +17,14 @@ Gendarme.Rules.Security
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#ArrayFieldsShouldNotBeReadOnlyRule">1.1 ArrayFieldsShouldNotBeReadOnlyRule</a></li>
-<li><a href="#DoNotShortCircuitCertificateCheckRule">1.2 DoNotShortCircuitCertificateCheckRule</a></li>
-<li><a href="#NativeFieldsShouldNotBeVisibleRule">1.3 NativeFieldsShouldNotBeVisibleRule</a></li>
-<li><a href="#StaticConstructorsShouldBePrivateRule">1.4 StaticConstructorsShouldBePrivateRule</a></li>
+<li><a href="#arrayfieldsshouldnotbereadonlyrule">1.1 ArrayFieldsShouldNotBeReadOnlyRule</a></li>
+<li><a href="#donotshortcircuitcertificatecheckrule">1.2 DoNotShortCircuitCertificateCheckRule</a></li>
+<li><a href="#nativefieldsshouldnotbevisiblerule">1.3 NativeFieldsShouldNotBeVisibleRule</a></li>
+<li><a href="#staticconstructorsshouldbeprivaterule">1.4 StaticConstructorsShouldBePrivateRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

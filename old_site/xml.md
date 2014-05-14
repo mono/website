@@ -16,55 +16,55 @@ XML
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Mono_1.0_Features">2 Mono 1.0 Features</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#mono-10-features">2 Mono 1.0 Features</a>
 <ul>
-<li><a href="#System.Xml_namespace">2.1 System.Xml namespace</a>
+<li><a href="#systemxml-namespace">2.1 System.Xml namespace</a>
 <ul>
-<li><a href="#Document_Object_Model_.28Core.29">2.1.1 Document Object Model (Core)</a></li>
-<li><a href="#Xml_Writer">2.1.2 Xml Writer</a></li>
-<li><a href="#XmlResolver">2.1.3 XmlResolver</a></li>
-<li><a href="#XmlNameTable">2.1.4 XmlNameTable</a></li>
-<li><a href="#XML_Reader">2.1.5 XML Reader</a></li>
-<li><a href="#Some_Advantages">2.1.6 Some Advantages</a></li>
+<li><a href="#document-object-model-core">2.1.1 Document Object Model (Core)</a></li>
+<li><a href="#xml-writer">2.1.2 Xml Writer</a></li>
+<li><a href="#xmlresolver">2.1.3 XmlResolver</a></li>
+<li><a href="#xmlnametable">2.1.4 XmlNameTable</a></li>
+<li><a href="#xml-reader">2.1.5 XML Reader</a></li>
+<li><a href="#some-advantages">2.1.6 Some Advantages</a></li>
 </ul></li>
-<li><a href="#System.Xml.Schema_namespace">2.2 System.Xml.Schema namespace</a>
+<li><a href="#systemxmlschema-namespace">2.2 System.Xml.Schema namespace</a>
 <ul>
-<li><a href="#Schema_Object_Model">2.2.1 Schema Object Model</a></li>
-<li><a href="#Validating_Reader">2.2.2 Validating Reader</a></li>
+<li><a href="#schema-object-model">2.2.1 Schema Object Model</a></li>
+<li><a href="#validating-reader">2.2.2 Validating Reader</a></li>
 </ul></li>
-<li><a href="#System.Xml.Serialization_namespace">2.3 System.Xml.Serialization namespace</a></li>
-<li><a href="#System.Xml.XPath_and_System.Xml.Xsl_namespaces">2.4 System.Xml.XPath and System.Xml.Xsl namespaces</a></li>
-<li><a href="#RELAX_NG">2.5 RELAX NG</a></li>
+<li><a href="#systemxmlserialization-namespace">2.3 System.Xml.Serialization namespace</a></li>
+<li><a href="#systemxmlxpath-and-systemxmlxsl-namespaces">2.4 System.Xml.XPath and System.Xml.Xsl namespaces</a></li>
+<li><a href="#relax-ng">2.5 RELAX NG</a></li>
 </ul></li>
-<li><a href="#Forthcoming_Mono_1.2_Features">3 Forthcoming Mono 1.2 Features</a>
+<li><a href="#forthcoming-mono-12-features">3 Forthcoming Mono 1.2 Features</a>
 <ul>
-<li><a href="#Summary">3.1 Summary</a></li>
-<li><a href="#Current_Status">3.2 Current Status</a></li>
-<li><a href="#System.Xml_2.0">3.3 System.Xml 2.0</a>
+<li><a href="#summary">3.1 Summary</a></li>
+<li><a href="#current-status">3.2 Current Status</a></li>
+<li><a href="#systemxml-20">3.3 System.Xml 2.0</a>
 <ul>
-<li><a href="#XmlReader_and_XmlWrier">3.3.1 XmlReader and XmlWrier</a></li>
+<li><a href="#xmlreader-and-xmlwrier">3.3.1 XmlReader and XmlWrier</a></li>
 </ul></li>
-<li><a href="#System.Xml.Schema_2.0">3.4 System.Xml.Schema 2.0</a></li>
-<li><a href="#System.Xml.XPath_and_System.Xml.Xsl_2.0">3.5 System.Xml.XPath and System.Xml.Xsl 2.0</a></li>
-<li><a href="#Mono.Xml.Ext">3.6 Mono.Xml.Ext</a></li>
-<li><a href="#Relax_NG_and_DSDL_in_Mono_1.2">3.7 Relax NG and DSDL in Mono 1.2</a></li>
+<li><a href="#systemxmlschema-20">3.4 System.Xml.Schema 2.0</a></li>
+<li><a href="#systemxmlxpath-and-systemxmlxsl-20">3.5 System.Xml.XPath and System.Xml.Xsl 2.0</a></li>
+<li><a href="#monoxmlext">3.6 Mono.Xml.Ext</a></li>
+<li><a href="#relax-ng-and-dsdl-in-mono-12">3.7 Relax NG and DSDL in Mono 1.2</a></li>
 </ul></li>
-<li><a href="#Tools">4 Tools</a>
+<li><a href="#tools">4 Tools</a>
 <ul>
-<li><a href="#xsd.exe">4.1 xsd.exe</a></li>
-<li><a href="#genxs.exe">4.2 genxs.exe</a></li>
-<li><a href="#sgen.exe">4.3 sgen.exe</a></li>
-<li><a href="#dtd2xsd.exe_.2F_dtd2rng.exe">4.4 dtd2xsd.exe / dtd2rng.exe</a></li>
+<li><a href="#xsdexe">4.1 xsd.exe</a></li>
+<li><a href="#genxsexe">4.2 genxs.exe</a></li>
+<li><a href="#sgenexe">4.3 sgen.exe</a></li>
+<li><a href="#dtd2xsdexe--dtd2rngexe">4.4 dtd2xsd.exe / dtd2rng.exe</a></li>
 </ul></li>
-<li><a href="#Beyond_Mono_1.2">5 Beyond Mono 1.2</a>
+<li><a href="#beyond-mono-12">5 Beyond Mono 1.2</a>
 <ul>
-<li><a href="#XML_functionality_in_WinFX">5.1 XML functionality in WinFX</a></li>
-<li><a href="#XLinq">5.2 XLinq</a></li>
+<li><a href="#xml-functionality-in-winfx">5.1 XML functionality in WinFX</a></li>
+<li><a href="#xlinq">5.2 XLinq</a></li>
 </ul></li>
-<li><a href="#Miscellaneous">6 Miscellaneous</a>
+<li><a href="#miscellaneous">6 Miscellaneous</a>
 <ul>
-<li><a href="#Mutual_assembly_dependency">6.1 Mutual assembly dependency</a></li>
+<li><a href="#mutual-assembly-dependency">6.1 Mutual assembly dependency</a></li>
 </ul></li>
 </ul></td>
 </tr>

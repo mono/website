@@ -16,17 +16,17 @@ ASP.NET Visual Designer
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Features">2 Features</a></li>
-<li><a href="#Installation">3 Installation</a></li>
-<li><a href="#Plans">4 Plans</a></li>
-<li><a href="#Architecture">5 Architecture</a></li>
-<li><a href="#License">6 License</a></li>
-<li><a href="#Credits">7 Credits</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#features">2 Features</a></li>
+<li><a href="#installation">3 Installation</a></li>
+<li><a href="#plans">4 Plans</a></li>
+<li><a href="#architecture">5 Architecture</a></li>
+<li><a href="#license">6 License</a></li>
+<li><a href="#credits">7 Credits</a>
 <ul>
-<li><a href="#Sponsors">7.1 Sponsors</a></li>
-<li><a href="#Primary_developers">7.2 Primary developers</a></li>
-<li><a href="#Other_contributors">7.3 Other contributors</a></li>
+<li><a href="#sponsors">7.1 Sponsors</a></li>
+<li><a href="#primary-developers">7.2 Primary developers</a></li>
+<li><a href="#other-contributors">7.3 Other contributors</a></li>
 </ul></li>
 </ul></td>
 </tr>

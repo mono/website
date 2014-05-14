@@ -15,16 +15,16 @@ DistroPackages/Ubuntu
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_for_Ubuntu">1 Mono for Ubuntu</a>
+<li><a href="#mono-for-ubuntu">1 Mono for Ubuntu</a>
 <ul>
-<li><a href="#Official_Packages">1.1 Official Packages</a></li>
-<li><a href="#Backport_Packages">1.2 Backport Packages</a></li>
-<li><a href="#Unofficial_Packages">1.3 Unofficial Packages</a>
+<li><a href="#official-packages">1.1 Official Packages</a></li>
+<li><a href="#backport-packages">1.2 Backport Packages</a></li>
+<li><a href="#unofficial-packages">1.3 Unofficial Packages</a>
 <ul>
-<li><a href="#Ubuntu_Hardy_.288.04_LTS.29">1.3.1 Ubuntu Hardy (8.04 LTS)</a></li>
-<li><a href="#Ubuntu_Lucid_.2810.04_LTS.29">1.3.2 Ubuntu Lucid (10.04 LTS)</a></li>
+<li><a href="#ubuntu-hardy-804-lts">1.3.1 Ubuntu Hardy (8.04 LTS)</a></li>
+<li><a href="#ubuntu-lucid-1004-lts">1.3.2 Ubuntu Lucid (10.04 LTS)</a></li>
 </ul></li>
-<li><a href="#Further_Links">1.4 Further Links</a></li>
+<li><a href="#further-links">1.4 Further Links</a></li>
 </ul></li>
 </ul></td>
 </tr>

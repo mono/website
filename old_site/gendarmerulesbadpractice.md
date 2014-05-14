@@ -17,29 +17,29 @@ Gendarme.Rules.BadPractice
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidAssemblyVersionMismatchRule">1.1 AvoidAssemblyVersionMismatchRule</a></li>
-<li><a href="#AvoidCallingProblematicMethodsRule">1.2 AvoidCallingProblematicMethodsRule</a></li>
-<li><a href="#AvoidVisibleConstantFieldRule">1.3 AvoidVisibleConstantFieldRule</a></li>
-<li><a href="#CheckNewExceptionWithoutThrowingRule">1.4 CheckNewExceptionWithoutThrowingRule</a></li>
-<li><a href="#CheckNewThreadWithoutStartRule">1.5 CheckNewThreadWithoutStartRule</a></li>
-<li><a href="#CloneMethodShouldNotReturnNullRule">1.6 CloneMethodShouldNotReturnNullRule</a></li>
-<li><a href="#ConstructorShouldNotCallVirtualMethodsRule">1.7 ConstructorShouldNotCallVirtualMethodsRule</a></li>
-<li><a href="#DisableDebuggingCodeRule">1.8 DisableDebuggingCodeRule</a></li>
-<li><a href="#DoNotForgetNotImplementedMethodsRule">1.9 DoNotForgetNotImplementedMethodsRule</a></li>
-<li><a href="#DoNotUseEnumIsAssignableFromRule">1.10 DoNotUseEnumIsAssignableFromRule</a></li>
-<li><a href="#DoNotUseGetInterfaceToCheckAssignabilityRule">1.11 DoNotUseGetInterfaceToCheckAssignabilityRule</a></li>
-<li><a href="#EqualsShouldHandleNullArgRule">1.12 EqualsShouldHandleNullArgRule</a></li>
-<li><a href="#GetEntryAssemblyMayReturnNullRule">1.13 GetEntryAssemblyMayReturnNullRule</a></li>
-<li><a href="#ObsoleteMessagesShouldNotBeEmptyRule">1.14 ObsoleteMessagesShouldNotBeEmptyRule</a></li>
-<li><a href="#OnlyUseDisposeForIDisposableTypesRule">1.15 OnlyUseDisposeForIDisposableTypesRule</a></li>
-<li><a href="#PreferEmptyInstanceOverNullRule">1.16 PreferEmptyInstanceOverNullRule</a></li>
-<li><a href="#PreferSafeHandleRule">1.17 PreferSafeHandleRule</a></li>
-<li><a href="#ReplaceIncompleteOddnessCheckRule">1.18 ReplaceIncompleteOddnessCheckRule</a></li>
-<li><a href="#ToStringShouldNotReturnNullRule">1.19 ToStringShouldNotReturnNullRule</a></li>
+<li><a href="#avoidassemblyversionmismatchrule">1.1 AvoidAssemblyVersionMismatchRule</a></li>
+<li><a href="#avoidcallingproblematicmethodsrule">1.2 AvoidCallingProblematicMethodsRule</a></li>
+<li><a href="#avoidvisibleconstantfieldrule">1.3 AvoidVisibleConstantFieldRule</a></li>
+<li><a href="#checknewexceptionwithoutthrowingrule">1.4 CheckNewExceptionWithoutThrowingRule</a></li>
+<li><a href="#checknewthreadwithoutstartrule">1.5 CheckNewThreadWithoutStartRule</a></li>
+<li><a href="#clonemethodshouldnotreturnnullrule">1.6 CloneMethodShouldNotReturnNullRule</a></li>
+<li><a href="#constructorshouldnotcallvirtualmethodsrule">1.7 ConstructorShouldNotCallVirtualMethodsRule</a></li>
+<li><a href="#disabledebuggingcoderule">1.8 DisableDebuggingCodeRule</a></li>
+<li><a href="#donotforgetnotimplementedmethodsrule">1.9 DoNotForgetNotImplementedMethodsRule</a></li>
+<li><a href="#donotuseenumisassignablefromrule">1.10 DoNotUseEnumIsAssignableFromRule</a></li>
+<li><a href="#donotusegetinterfacetocheckassignabilityrule">1.11 DoNotUseGetInterfaceToCheckAssignabilityRule</a></li>
+<li><a href="#equalsshouldhandlenullargrule">1.12 EqualsShouldHandleNullArgRule</a></li>
+<li><a href="#getentryassemblymayreturnnullrule">1.13 GetEntryAssemblyMayReturnNullRule</a></li>
+<li><a href="#obsoletemessagesshouldnotbeemptyrule">1.14 ObsoleteMessagesShouldNotBeEmptyRule</a></li>
+<li><a href="#onlyusedisposeforidisposabletypesrule">1.15 OnlyUseDisposeForIDisposableTypesRule</a></li>
+<li><a href="#preferemptyinstanceovernullrule">1.16 PreferEmptyInstanceOverNullRule</a></li>
+<li><a href="#prefersafehandlerule">1.17 PreferSafeHandleRule</a></li>
+<li><a href="#replaceincompleteoddnesscheckrule">1.18 ReplaceIncompleteOddnessCheckRule</a></li>
+<li><a href="#tostringshouldnotreturnnullrule">1.19 ToStringShouldNotReturnNullRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

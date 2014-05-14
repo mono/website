@@ -23,11 +23,11 @@ You will see how adjustments fit in when you see the other widgets that incorpor
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Creating_Adjustments">1 Creating Adjustments</a></li>
-<li><a href="#Using_Adjustments">2 Using Adjustments</a>
+<li><a href="#creating-adjustments">1 Creating Adjustments</a></li>
+<li><a href="#using-adjustments">2 Using Adjustments</a>
 <ul>
-<li><a href="#Specific_Unit_Adjustments">2.1 Specific Unit Adjustments</a></li>
-<li><a href="#Arbitrary_Number_Adjustments">2.2 Arbitrary Number Adjustments</a></li>
+<li><a href="#specific-unit-adjustments">2.1 Specific Unit Adjustments</a></li>
+<li><a href="#arbitrary-number-adjustments">2.2 Arbitrary Number Adjustments</a></li>
 </ul></li>
 </ul></td>
 </tr>

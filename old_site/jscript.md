@@ -19,15 +19,15 @@ There is no active maintainer, and there is no active development on it. Chances
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Status">2 Status</a></li>
-<li><a href="#Future_Plans">3 Future Plans</a></li>
-<li><a href="#Working_with_mjs">4 Working with mjs</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#status">2 Status</a></li>
+<li><a href="#future-plans">3 Future Plans</a></li>
+<li><a href="#working-with-mjs">4 Working with mjs</a>
 <ul>
-<li><a href="#How_to_get_the_compiler">4.1 How to get the compiler</a></li>
-<li><a href="#How_mjs_is_implemented">4.2 How mjs is implemented</a></li>
-<li><a href="#How_to_contribute">4.3 How to contribute</a></li>
-<li><a href="#Submitting_bug_reports">4.4 Submitting bug reports</a></li>
+<li><a href="#how-to-get-the-compiler">4.1 How to get the compiler</a></li>
+<li><a href="#how-mjs-is-implemented">4.2 How mjs is implemented</a></li>
+<li><a href="#how-to-contribute">4.3 How to contribute</a></li>
+<li><a href="#submitting-bug-reports">4.4 Submitting bug reports</a></li>
 </ul></li>
 </ul></td>
 </tr>

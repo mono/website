@@ -21,14 +21,14 @@ If you have more than one Mono installation (for example to keep multiple versio
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Building_Mono">1 Building Mono</a>
+<li><a href="#building-mono">1 Building Mono</a>
 <ul>
-<li><a href="#Building_Mono_Dependencies">1.1 Building Mono Dependencies</a></li>
-<li><a href="#Building_Mono_from_a_Release_Package">1.2 Building Mono from a Release Package</a></li>
-<li><a href="#Building_Mono_From_a_Git_Source_Code_Checkout">1.3 Building Mono From a Git Source Code Checkout</a></li>
-<li><a href="#One_Stop_Shop_Build_Script_.2832-bit.29">1.4 One Stop Shop Build Script (32-bit)</a></li>
+<li><a href="#building-mono-dependencies">1.1 Building Mono Dependencies</a></li>
+<li><a href="#building-mono-from-a-release-package">1.2 Building Mono from a Release Package</a></li>
+<li><a href="#building-mono-from-a-git-source-code-checkout">1.3 Building Mono From a Git Source Code Checkout</a></li>
+<li><a href="#one-stop-shop-build-script-32-bit">1.4 One Stop Shop Build Script (32-bit)</a></li>
 </ul></li>
-<li><a href="#Troubleshooting">2 Troubleshooting</a></li>
+<li><a href="#troubleshooting">2 Troubleshooting</a></li>
 </ul></td>
 </tr>
 </tbody>

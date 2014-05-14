@@ -17,19 +17,19 @@ Some screencasts and videos of Mono in action:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Demos">1 Mono Demos</a>
+<li><a href="#mono-demos">1 Mono Demos</a>
 <ul>
-<li><a href="#MonoDevelop_and_Multiple_Language_Integration">1.1 MonoDevelop and Multiple Language Integration</a></li>
-<li><a href="#Mono_Documentation_Browser">1.2 Mono Documentation Browser</a></li>
-<li><a href="#SteticZilla">1.3 SteticZilla</a></li>
-<li><a href="#Hello_World_with_Gtk.23">1.4 Hello World with Gtk#</a></li>
+<li><a href="#monodevelop-and-multiple-language-integration">1.1 MonoDevelop and Multiple Language Integration</a></li>
+<li><a href="#mono-documentation-browser">1.2 Mono Documentation Browser</a></li>
+<li><a href="#steticzilla">1.3 SteticZilla</a></li>
+<li><a href="#hello-world-with-gtk">1.4 Hello World with Gtk#</a></li>
 </ul></li>
-<li><a href="#Beagle_Demos">2 Beagle Demos</a>
+<li><a href="#beagle-demos">2 Beagle Demos</a>
 <ul>
-<li><a href="#Simple_Searches">2.1 Simple Searches</a></li>
-<li><a href="#Live_Queries">2.2 Live Queries</a></li>
-<li><a href="#Command_Line_Tools">2.3 Command Line Tools</a></li>
-<li><a href="#Beagle_APIs">2.4 Beagle APIs</a></li>
+<li><a href="#simple-searches">2.1 Simple Searches</a></li>
+<li><a href="#live-queries">2.2 Live Queries</a></li>
+<li><a href="#command-line-tools">2.3 Command Line Tools</a></li>
+<li><a href="#beagle-apis">2.4 Beagle APIs</a></li>
 </ul></li>
 </ul></td>
 </tr>

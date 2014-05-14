@@ -15,20 +15,20 @@ GtkSharpPlan
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Stable_Releases">1 Stable Releases</a></li>
-<li><a href="#Plans_for_Gtk.23_2.x">2 Plans for Gtk# 2.x</a>
+<li><a href="#stable-releases">1 Stable Releases</a></li>
+<li><a href="#plans-for-gtk-2x">2 Plans for Gtk# 2.x</a>
 <ul>
-<li><a href="#2.4.2F2.6.2F2.8.2F2.10_Bindings">2.1 2.4/2.6/2.8/2.10 Bindings</a></li>
-<li><a href="#2.12_bindings">2.2 2.12 bindings</a></li>
+<li><a href="#242628210-bindings">2.1 2.4/2.6/2.8/2.10 Bindings</a></li>
+<li><a href="#212-bindings">2.2 2.12 bindings</a></li>
 </ul></li>
-<li><a href="#Release_plan">3 Release plan</a></li>
-<li><a href="#Future_Plans">4 Future Plans</a>
+<li><a href="#release-plan">3 Release plan</a></li>
+<li><a href="#future-plans">4 Future Plans</a>
 <ul>
-<li><a href="#Documentation">4.1 Documentation</a></li>
-<li><a href="#Gtk.23_for_64-bit_Windows">4.2 Gtk# for 64-bit Windows</a></li>
-<li><a href="#Databinding">4.3 Databinding</a></li>
-<li><a href="#Indexer_Autogeneration">4.4 Indexer Autogeneration</a></li>
-<li><a href="#GUI_Designer_Support_Improvements">4.5 GUI Designer Support Improvements</a></li>
+<li><a href="#documentation">4.1 Documentation</a></li>
+<li><a href="#gtk-for-64-bit-windows">4.2 Gtk# for 64-bit Windows</a></li>
+<li><a href="#databinding">4.3 Databinding</a></li>
+<li><a href="#indexer-autogeneration">4.4 Indexer Autogeneration</a></li>
+<li><a href="#gui-designer-support-improvements">4.5 GUI Designer Support Improvements</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -9,7 +9,7 @@ redirect_from:
 CoreClrHowTo
 ============
 
-This *how to* is intended for people who have read about **coreclr** on [MSDN]({{site.github.url}}/old_site/Moonlight2CoreCLR#References "Moonlight2CoreCLR"), [MS employees blogs]({{site.github.url}}/old_site/Moonlight2CoreCLR#References "Moonlight2CoreCLR"), Mono's [wiki]({{site.github.url}}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR") and how this applies to [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight"). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
+This *how to* is intended for people who have read about **coreclr** on [MSDN]({{site.github.url}}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), [MS employees blogs]({{site.github.url}}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), Mono's [wiki]({{site.github.url}}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR") and how this applies to [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight"). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
 
 So what's needed ? Simply a host (full trusted), some platform assemblies (partially trusted code) and applications (untrusted).
 
@@ -19,24 +19,24 @@ So what's needed ? Simply a host (full trusted), some platform assemblies (part
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Host">1 Host</a>
+<li><a href="#host">1 Host</a>
 <ul>
-<li><a href="#Examples">1.1 Examples</a>
+<li><a href="#examples">1.1 Examples</a>
 <ul>
-<li><a href="#Mono">1.1.1 Mono</a></li>
-<li><a href="#Moonlight">1.1.2 Moonlight</a></li>
+<li><a href="#mono">1.1.1 Mono</a></li>
+<li><a href="#moonlight">1.1.2 Moonlight</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Platform_Assemblies">2 Platform Assemblies</a>
+<li><a href="#platform-assemblies">2 Platform Assemblies</a>
 <ul>
-<li><a href="#Profiles">2.1 Profiles</a></li>
+<li><a href="#profiles">2.1 Profiles</a></li>
 </ul></li>
-<li><a href="#Applications">3 Applications</a></li>
-<li><a href="#Advanced">4 Advanced</a>
+<li><a href="#applications">3 Applications</a></li>
+<li><a href="#advanced">4 Advanced</a>
 <ul>
-<li><a href="#Policies">4.1 Policies</a></li>
+<li><a href="#policies">4.1 Policies</a></li>
 </ul></li>
-<li><a href="#FAQ">5 FAQ</a></li>
+<li><a href="#faq">5 FAQ</a></li>
 </ul></td>
 </tr>
 </tbody>

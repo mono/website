@@ -15,26 +15,26 @@ BuildSystem/MonoBuild/DetailedDocs
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#monobuild_documentation">1 monobuild documentation</a>
+<li><a href="#monobuild-documentation">1 monobuild documentation</a>
 <ul>
-<li><a href="#ssh_and_jails.2Fhosts_.28packaging.2Fconf_file.29">1.1 ssh and jails/hosts (packaging/conf file)</a></li>
-<li><a href="#package_info_.28def_file.29">1.2 package info (def file)</a>
+<li><a href="#ssh-and-jailshosts-packagingconf-file">1.1 ssh and jails/hosts (packaging/conf file)</a></li>
+<li><a href="#package-info-def-file">1.2 package info (def file)</a>
 <ul>
-<li><a href="#Options_specific_to_branching">1.2.1 Options specific to branching</a></li>
+<li><a href="#options-specific-to-branching">1.2.1 Options specific to branching</a></li>
 </ul></li>
-<li><a href="#tarball_creation_and_svn">1.3 tarball creation and svn</a></li>
-<li><a href="#Package_Building">1.4 Package Building</a>
+<li><a href="#tarball-creation-and-svn">1.3 tarball creation and svn</a></li>
+<li><a href="#package-building">1.4 Package Building</a>
 <ul>
-<li><a href="#rpm_packaging_.28do-build.29">1.4.1 rpm packaging (do-build)</a></li>
-<li><a href="#zip_build_system_.28do-zip-build.29">1.4.2 zip build system (do-zip-build)</a></li>
+<li><a href="#rpm-packaging-do-build">1.4.1 rpm packaging (do-build)</a></li>
+<li><a href="#zip-build-system-do-zip-build">1.4.2 zip build system (do-zip-build)</a></li>
 </ul></li>
 <li><a href="#install-deps">1.5 install-deps</a></li>
-<li><a href="#Webview">1.6 Webview</a></li>
+<li><a href="#webview">1.6 Webview</a></li>
 <li><a href="#bundles">1.7 bundles</a></li>
-<li><a href="#dependency_builder">1.8 dependency builder</a></li>
-<li><a href="#monobuild_scheduler">1.9 monobuild scheduler</a></li>
-<li><a href="#Interaction_between_zips.2C_rpms.2C_and_installers">1.10 Interaction between zips, rpms, and installers</a></li>
-<li><a href="#web_publishing_and_content_creation">1.11 web publishing and content creation</a></li>
+<li><a href="#dependency-builder">1.8 dependency builder</a></li>
+<li><a href="#monobuild-scheduler">1.9 monobuild scheduler</a></li>
+<li><a href="#interaction-between-zips-rpms-and-installers">1.10 Interaction between zips, rpms, and installers</a></li>
+<li><a href="#web-publishing-and-content-creation">1.11 web publishing and content creation</a></li>
 </ul></li>
 </ul></td>
 </tr>

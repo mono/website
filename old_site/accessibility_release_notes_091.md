@@ -15,14 +15,14 @@ Accessibility: Release Notes 0.9.1
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Accessibility_0.9.1_Release_Notes">1 Mono Accessibility 0.9.1 Release Notes</a>
+<li><a href="#mono-accessibility-091-release-notes">1 Mono Accessibility 0.9.1 Release Notes</a>
 <ul>
-<li><a href="#Supported_Controls">1.1 Supported Controls</a></li>
-<li><a href="#Notes">1.2 Notes</a></li>
-<li><a href="#Errata">1.3 Errata</a></li>
-<li><a href="#Downloading">1.4 Downloading</a></li>
-<li><a href="#Contributors">1.5 Contributors</a></li>
-<li><a href="#Reporting_Bugs">1.6 Reporting Bugs</a></li>
+<li><a href="#supported-controls">1.1 Supported Controls</a></li>
+<li><a href="#notes">1.2 Notes</a></li>
+<li><a href="#errata">1.3 Errata</a></li>
+<li><a href="#downloading">1.4 Downloading</a></li>
+<li><a href="#contributors">1.5 Contributors</a></li>
+<li><a href="#reporting-bugs">1.6 Reporting Bugs</a></li>
 </ul></li>
 </ul></td>
 </tr>

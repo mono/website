@@ -21,17 +21,17 @@ Today it is used by the Mono [Debugger]({{site.github.url}}/old_site/Debugger "D
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mailing_List">1 Mailing List</a></li>
-<li><a href="#Versions">2 Versions</a></li>
-<li><a href="#Using_Cecil">3 Using Cecil</a></li>
-<li><a href="#Download">4 Download</a></li>
-<li><a href="#Documentation">5 Documentation</a></li>
-<li><a href="#Release_notes">6 Release notes</a></li>
-<li><a href="#Differences_with_other_alternatives">7 Differences with other alternatives</a>
+<li><a href="#mailing-list">1 Mailing List</a></li>
+<li><a href="#versions">2 Versions</a></li>
+<li><a href="#using-cecil">3 Using Cecil</a></li>
+<li><a href="#download">4 Download</a></li>
+<li><a href="#documentation">5 Documentation</a></li>
+<li><a href="#release-notes">6 Release notes</a></li>
+<li><a href="#differences-with-other-alternatives">7 Differences with other alternatives</a>
 <ul>
-<li><a href="#Reflection.2FReflection.Emit">7.1 Reflection/Reflection.Emit</a></li>
+<li><a href="#reflectionreflectionemit">7.1 Reflection/Reflection.Emit</a></li>
 </ul></li>
-<li><a href="#Projects">8 Projects</a></li>
+<li><a href="#projects">8 Projects</a></li>
 </ul></td>
 </tr>
 </tbody>

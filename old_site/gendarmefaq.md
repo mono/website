@@ -15,33 +15,33 @@ Gendarme.FAQ
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General">1 General</a>
+<li><a href="#general">1 General</a>
 <ul>
-<li><a href="#Is_Gendarme_a_C.23_source_checking_tool_.3F">1.1 Is Gendarme a C# source checking tool ?</a></li>
-<li><a href="#Which_versions_of_the_.NET_framework_are_supported_.3F">1.2 Which versions of the .NET framework are supported ?</a></li>
+<li><a href="#is-gendarme-a-c-source-checking-tool-">1.1 Is Gendarme a C# source checking tool ?</a></li>
+<li><a href="#which-versions-of-the-net-framework-are-supported-">1.2 Which versions of the .NET framework are supported ?</a></li>
 </ul></li>
-<li><a href="#Usage">2 Usage</a>
+<li><a href="#usage">2 Usage</a>
 <ul>
-<li><a href="#When_should_I_use_Gendarme_.3F">2.1 When should I use Gendarme ?</a></li>
-<li><a href="#I_maintain_of_old_code_base._Is_it_too_late_to_start_using_Gendarme_.3F">2.2 I maintain of old code base. Is it too late to start using Gendarme ?</a></li>
-<li><a href="#I.27m_scripting_Gendarme.2C_what_are_the_different_exit_code_of_the_console_runner_.3F">2.3 I'm scripting Gendarme, what are the different exit code of the console runner ?</a></li>
+<li><a href="#when-should-i-use-gendarme-">2.1 When should I use Gendarme ?</a></li>
+<li><a href="#i-maintain-of-old-code-base-is-it-too-late-to-start-using-gendarme-">2.2 I maintain of old code base. Is it too late to start using Gendarme ?</a></li>
+<li><a href="#im-scripting-gendarme-what-are-the-different-exit-code-of-the-console-runner-">2.3 I'm scripting Gendarme, what are the different exit code of the console runner ?</a></li>
 </ul></li>
-<li><a href="#Features">3 Features</a>
+<li><a href="#features">3 Features</a>
 <ul>
-<li><a href="#Do_I_need_debugging_symbols_to_use_Gendarme_.3F">3.1 Do I need debugging symbols to use Gendarme ?</a></li>
-<li><a href="#Which_symbols_format_are_supported_.3F">3.2 Which symbols format are supported ?</a></li>
-<li><a href="#Why_are_source_line_numbers_imprecise_.3F">3.3 Why are source line numbers imprecise ?</a></li>
-<li><a href="#Why_can.27t_I_see_the_source_file_names_or_line_numbers_associated_with_a_defect_.3F">3.4 Why can't I see the source file names or line numbers associated with a defect ?</a></li>
-<li><a href="#Why_are_defects_decorated_using_.5BSuppressMessage.5D_attributes_still_showing_in_my_reports_.3F">3.5 Why are defects decorated using [SuppressMessage] attributes still showing in my reports ?</a></li>
+<li><a href="#do-i-need-debugging-symbols-to-use-gendarme-">3.1 Do I need debugging symbols to use Gendarme ?</a></li>
+<li><a href="#which-symbols-format-are-supported-">3.2 Which symbols format are supported ?</a></li>
+<li><a href="#why-are-source-line-numbers-imprecise-">3.3 Why are source line numbers imprecise ?</a></li>
+<li><a href="#why-cant-i-see-the-source-file-names-or-line-numbers-associated-with-a-defect-">3.4 Why can't I see the source file names or line numbers associated with a defect ?</a></li>
+<li><a href="#why-are-defects-decorated-using-suppressmessage-attributes-still-showing-in-my-reports-">3.5 Why are defects decorated using [SuppressMessage] attributes still showing in my reports ?</a></li>
 </ul></li>
-<li><a href="#Rules">4 Rules</a>
+<li><a href="#rules">4 Rules</a>
 <ul>
-<li><a href="#What_are_rules">4.1 What are rules</a></li>
-<li><a href="#Rule_X_checks_for_something_that_can.27t_happen_using_C.23">4.2 Rule X checks for something that can't happen using C#</a></li>
+<li><a href="#what-are-rules">4.1 What are rules</a></li>
+<li><a href="#rule-x-checks-for-something-that-cant-happen-using-c">4.2 Rule X checks for something that can't happen using C#</a></li>
 </ul></li>
-<li><a href="#Results">5 Results</a>
+<li><a href="#results">5 Results</a>
 <ul>
-<li><a href="#Can_I_reduce_false_positives_.3F">5.1 Can I reduce false positives ?</a></li>
+<li><a href="#can-i-reduce-false-positives-">5.1 Can I reduce false positives ?</a></li>
 </ul></li>
 </ul></td>
 </tr>

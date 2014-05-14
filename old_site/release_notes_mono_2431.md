@@ -17,11 +17,11 @@ Mono 2.4.3.1 is a portable and open source implementation of the .NET framework 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.4.3">2 Changes since Mono 2.4.3</a></li>
-<li><a href="#Changes_since_Mono_2.4.2">3 Changes since Mono 2.4.2</a></li>
-<li><a href="#Bugs_fixed_since_Mono_2.4">4 Bugs fixed since Mono 2.4</a></li>
-<li><a href="#Installing_Mono_2.4.3.1">5 Installing Mono 2.4.3.1</a></li>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-since-mono-243">2 Changes since Mono 2.4.3</a></li>
+<li><a href="#changes-since-mono-242">3 Changes since Mono 2.4.2</a></li>
+<li><a href="#bugs-fixed-since-mono-24">4 Bugs fixed since Mono 2.4</a></li>
+<li><a href="#installing-mono-2431">5 Installing Mono 2.4.3.1</a></li>
 </ul></td>
 </tr>
 </tbody>

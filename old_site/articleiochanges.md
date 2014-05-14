@@ -19,18 +19,18 @@ Article:IOChanges
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Background">1 Background</a></li>
+<li><a href="#background">1 Background</a></li>
 <li><a href="#io-layer">2 io-layer</a>
 <ul>
-<li><a href="#The_Deceased_Daemon">2.1 The Deceased Daemon</a></li>
-<li><a href="#The_New_IO-Layer">2.2 The New IO-Layer</a>
+<li><a href="#the-deceased-daemon">2.1 The Deceased Daemon</a></li>
+<li><a href="#the-new-io-layer">2.2 The New IO-Layer</a>
 <ul>
-<li><a href="#The_Shared_Memory_Table">2.2.1 The Shared Memory Table</a></li>
-<li><a href="#Keeping_State">2.2.2 Keeping State</a></li>
+<li><a href="#the-shared-memory-table">2.2.1 The Shared Memory Table</a></li>
+<li><a href="#keeping-state">2.2.2 Keeping State</a></li>
 </ul></li>
-<li><a href="#What_is_no_longer_supported">2.3 What is no longer supported</a></li>
+<li><a href="#what-is-no-longer-supported">2.3 What is no longer supported</a></li>
 </ul></li>
-<li><a href="#ThreadPool_and_asynchronous_socket_operations">3 ThreadPool and asynchronous socket operations</a></li>
+<li><a href="#threadpool-and-asynchronous-socket-operations">3 ThreadPool and asynchronous socket operations</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,49 +17,49 @@ Mono 2.6.7 is a portable and open source implementation of the .NET framework fo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.6">2 Changes since Mono 2.6</a>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-since-mono-26">2 Changes since Mono 2.6</a>
 <ul>
-<li><a href="#Tools">2.1 Tools</a>
+<li><a href="#tools">2.1 Tools</a>
 <ul>
-<li><a href="#Monodoc">2.1.1 Monodoc</a></li>
-<li><a href="#Linker">2.1.2 Linker</a></li>
+<li><a href="#monodoc">2.1.1 Monodoc</a></li>
+<li><a href="#linker">2.1.2 Linker</a></li>
 <li><a href="#xbuild">2.1.3 xbuild</a></li>
 </ul></li>
-<li><a href="#Libraries">2.2 Libraries</a>
+<li><a href="#libraries">2.2 Libraries</a>
 <ul>
-<li><a href="#LINQ_to_SQL">2.2.1 LINQ to SQL</a></li>
-<li><a href="#MVC2">2.2.2 MVC2</a></li>
+<li><a href="#linq-to-sql">2.2.1 LINQ to SQL</a></li>
+<li><a href="#mvc2">2.2.2 MVC2</a></li>
 </ul></li>
-<li><a href="#Runtime">2.3 Runtime</a></li>
-<li><a href="#Soft_Debugger">2.4 Soft Debugger</a></li>
+<li><a href="#runtime">2.3 Runtime</a></li>
+<li><a href="#soft-debugger">2.4 Soft Debugger</a></li>
 </ul></li>
-<li><a href="#Changes_since_Mono_2.4">3 Changes since Mono 2.4</a>
+<li><a href="#changes-since-mono-24">3 Changes since Mono 2.4</a>
 <ul>
-<li><a href="#LINQ_to_SQL_2">3.1 LINQ to SQL</a></li>
-<li><a href="#Soft_Debugger_2">3.2 Soft Debugger</a></li>
-<li><a href="#Early_4.0_APIs">3.3 Early 4.0 APIs</a></li>
-<li><a href="#ParallelFx">3.4 ParallelFx</a></li>
-<li><a href="#Dynamic_Language_Runtime">3.5 Dynamic Language Runtime</a></li>
-<li><a href="#System.IO.Packaging">3.6 System.IO.Packaging</a></li>
-<li><a href="#WinForms">3.7 WinForms</a></li>
-<li><a href="#C.23_Language">3.8 C# Language</a></li>
-<li><a href="#XBuild_2">3.9 XBuild</a></li>
-<li><a href="#Runtime_2">3.10 Runtime</a>
+<li><a href="#linq-to-sql_2">3.1 LINQ to SQL</a></li>
+<li><a href="#soft-debugger_2">3.2 Soft Debugger</a></li>
+<li><a href="#early-40-apis">3.3 Early 4.0 APIs</a></li>
+<li><a href="#parallelfx">3.4 ParallelFx</a></li>
+<li><a href="#dynamic-language-runtime">3.5 Dynamic Language Runtime</a></li>
+<li><a href="#systemiopackaging">3.6 System.IO.Packaging</a></li>
+<li><a href="#winforms">3.7 WinForms</a></li>
+<li><a href="#c-language">3.8 C# Language</a></li>
+<li><a href="#xbuild_2">3.9 XBuild</a></li>
+<li><a href="#runtime_2">3.10 Runtime</a>
 <ul>
-<li><a href="#Verifier">3.10.1 Verifier</a></li>
-<li><a href="#Mono.Simd">3.10.2 Mono.Simd</a></li>
-<li><a href="#Embedding_API">3.10.3 Embedding API</a></li>
-<li><a href="#LLVM_backend">3.10.4 LLVM backend</a></li>
-<li><a href="#AOT">3.10.5 AOT</a></li>
-<li><a href="#Signal_Chaining">3.10.6 Signal Chaining</a></li>
-<li><a href="#Bundled_Executables">3.10.7 Bundled Executables</a></li>
-<li><a href="#Debugging_support_for_GDB">3.10.8 Debugging support for GDB</a></li>
+<li><a href="#verifier">3.10.1 Verifier</a></li>
+<li><a href="#monosimd">3.10.2 Mono.Simd</a></li>
+<li><a href="#embedding-api">3.10.3 Embedding API</a></li>
+<li><a href="#llvm-backend">3.10.4 LLVM backend</a></li>
+<li><a href="#aot">3.10.5 AOT</a></li>
+<li><a href="#signal-chaining">3.10.6 Signal Chaining</a></li>
+<li><a href="#bundled-executables">3.10.7 Bundled Executables</a></li>
+<li><a href="#debugging-support-for-gdb">3.10.8 Debugging support for GDB</a></li>
 </ul></li>
-<li><a href="#Mono.Tasklets">3.11 Mono.Tasklets</a></li>
-<li><a href="#Documentation_Tools">3.12 Documentation Tools</a></li>
+<li><a href="#monotasklets">3.11 Mono.Tasklets</a></li>
+<li><a href="#documentation-tools">3.12 Documentation Tools</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.6.7">4 Installing Mono 2.6.7</a></li>
+<li><a href="#installing-mono-267">4 Installing Mono 2.6.7</a></li>
 </ul></td>
 </tr>
 </tbody>

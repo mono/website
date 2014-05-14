@@ -27,74 +27,74 @@ We will continue to bug fix and update Mono 2.10 for another six months for user
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#3.0.x_Series_Release_Notes">1 3.0.x Series Release Notes</a></li>
-<li><a href="#New_in_Mono_3.1.2">2 New in Mono 3.1.2</a>
+<li><a href="#30x-series-release-notes">1 3.0.x Series Release Notes</a></li>
+<li><a href="#new-in-mono-312">2 New in Mono 3.1.2</a>
 <ul>
-<li><a href="#Bugs">2.1 Bugs</a></li>
+<li><a href="#bugs">2.1 Bugs</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.1.1">3 New in Mono 3.1.1</a>
+<li><a href="#new-in-mono-311">3 New in Mono 3.1.1</a>
 <ul>
-<li><a href="#What.27s_new">3.1 What's new</a></li>
-<li><a href="#Bug_fixes">3.2 Bug fixes</a></li>
+<li><a href="#whats-new">3.1 What's new</a></li>
+<li><a href="#bug-fixes">3.2 Bug fixes</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.0.12">4 New in Mono 3.0.12</a>
+<li><a href="#new-in-mono-3012">4 New in Mono 3.0.12</a>
 <ul>
-<li><a href="#What.27s_new_2">4.1 What's new</a></li>
-<li><a href="#Bugs_2">4.2 Bugs</a></li>
+<li><a href="#whats-new_2">4.1 What's new</a></li>
+<li><a href="#bugs_2">4.2 Bugs</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.0.10">5 New in Mono 3.0.10</a></li>
-<li><a href="#New_in_Mono_3.0.9">6 New in Mono 3.0.9</a></li>
-<li><a href="#New_in_Mono_3.0.8">7 New in Mono 3.0.8</a></li>
-<li><a href="#New_in_Mono_3.0.7">8 New in Mono 3.0.7</a></li>
-<li><a href="#New_in_Mono_3.0.6">9 New in Mono 3.0.6</a></li>
-<li><a href="#New_in_Mono_3.0.5">10 New in Mono 3.0.5</a></li>
-<li><a href="#New_in_Mono_3.0.4">11 New in Mono 3.0.4</a>
+<li><a href="#new-in-mono-3010">5 New in Mono 3.0.10</a></li>
+<li><a href="#new-in-mono-309">6 New in Mono 3.0.9</a></li>
+<li><a href="#new-in-mono-308">7 New in Mono 3.0.8</a></li>
+<li><a href="#new-in-mono-307">8 New in Mono 3.0.7</a></li>
+<li><a href="#new-in-mono-306">9 New in Mono 3.0.6</a></li>
+<li><a href="#new-in-mono-305">10 New in Mono 3.0.5</a></li>
+<li><a href="#new-in-mono-304">11 New in Mono 3.0.4</a>
 <ul>
-<li><a href="#Garbage_Collector">11.1 Garbage Collector</a></li>
-<li><a href="#Async">11.2 Async</a></li>
-<li><a href="#ASP.NET">11.3 ASP.NET</a></li>
-<li><a href="#Other_improvements">11.4 Other improvements</a></li>
-<li><a href="#Packaging">11.5 Packaging</a></li>
+<li><a href="#garbage-collector">11.1 Garbage Collector</a></li>
+<li><a href="#async">11.2 Async</a></li>
+<li><a href="#aspnet">11.3 ASP.NET</a></li>
+<li><a href="#other-improvements">11.4 Other improvements</a></li>
+<li><a href="#packaging">11.5 Packaging</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.0.3">12 New in Mono 3.0.3</a>
+<li><a href="#new-in-mono-303">12 New in Mono 3.0.3</a>
 <ul>
-<li><a href="#Garbage_Collector_2">12.1 Garbage Collector</a></li>
-<li><a href="#Bug_Fixes_2">12.2 Bug Fixes</a></li>
+<li><a href="#garbage-collector_2">12.1 Garbage Collector</a></li>
+<li><a href="#bug-fixes_2">12.2 Bug Fixes</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.0.2">13 New in Mono 3.0.2</a>
+<li><a href="#new-in-mono-302">13 New in Mono 3.0.2</a>
 <ul>
-<li><a href="#Major_Features">13.1 Major Features</a></li>
-<li><a href="#Bug_fixes_in_3.0.2">13.2 Bug fixes in 3.0.2</a></li>
+<li><a href="#major-features">13.1 Major Features</a></li>
+<li><a href="#bug-fixes-in-302">13.2 Bug fixes in 3.0.2</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.0">14 New in Mono 3.0</a></li>
-<li><a href="#Major_Highlights">15 Major Highlights</a>
+<li><a href="#new-in-mono-30">14 New in Mono 3.0</a></li>
+<li><a href="#major-highlights">15 Major Highlights</a>
 <ul>
-<li><a href="#C.23_Compiler">15.1 C# Compiler</a>
+<li><a href="#c-compiler">15.1 C# Compiler</a>
 <ul>
-<li><a href="#Evaluation_can_now_Compile_Types">15.1.1 Evaluation can now Compile Types</a></li>
-<li><a href="#Instance_API">15.1.2 Instance API</a></li>
+<li><a href="#evaluation-can-now-compile-types">15.1.1 Evaluation can now Compile Types</a></li>
+<li><a href="#instance-api">15.1.2 Instance API</a></li>
 </ul></li>
-<li><a href="#C.23_Interactive_Shell">15.2 C# Interactive Shell</a></li>
-<li><a href="#4.5_Profile">15.3 4.5 Profile</a></li>
-<li><a href="#New_Microsoft_Open_Source_Stacks">15.4 New Microsoft Open Source Stacks</a></li>
-<li><a href="#Garbage_Collector_3">15.5 Garbage Collector</a></li>
-<li><a href="#Runtime_Optimizations">15.6 Runtime Optimizations</a></li>
-<li><a href="#ASP.NET_2">15.7 ASP.NET</a></li>
-<li><a href="#CodeContracts">15.8 CodeContracts</a></li>
-<li><a href="#Smaller_Updates">15.9 Smaller Updates</a></li>
-<li><a href="#MacOS_X">15.10 MacOS X</a></li>
-<li><a href="#Mono.Data.Sqlite">15.11 Mono.Data.Sqlite</a></li>
-<li><a href="#C5_Library">15.12 C5 Library</a></li>
+<li><a href="#c-interactive-shell">15.2 C# Interactive Shell</a></li>
+<li><a href="#45-profile">15.3 4.5 Profile</a></li>
+<li><a href="#new-microsoft-open-source-stacks">15.4 New Microsoft Open Source Stacks</a></li>
+<li><a href="#garbage-collector_3">15.5 Garbage Collector</a></li>
+<li><a href="#runtime-optimizations">15.6 Runtime Optimizations</a></li>
+<li><a href="#aspnet_2">15.7 ASP.NET</a></li>
+<li><a href="#codecontracts">15.8 CodeContracts</a></li>
+<li><a href="#smaller-updates">15.9 Smaller Updates</a></li>
+<li><a href="#macos-x">15.10 MacOS X</a></li>
+<li><a href="#monodatasqlite">15.11 Mono.Data.Sqlite</a></li>
+<li><a href="#c5-library">15.12 C5 Library</a></li>
 </ul></li>
-<li><a href="#Breaking_Changes_Since_Mono_2.10">16 Breaking Changes Since Mono 2.10</a>
+<li><a href="#breaking-changes-since-mono-210">16 Breaking Changes Since Mono 2.10</a>
 <ul>
-<li><a href="#GDB">16.1 GDB</a></li>
-<li><a href="#MIPS_port">16.2 MIPS port</a></li>
-<li><a href="#Soft_Debugger">16.3 Soft Debugger</a></li>
-<li><a href="#Static_Compiler_.28AOT.29">16.4 Static Compiler (AOT)</a></li>
+<li><a href="#gdb">16.1 GDB</a></li>
+<li><a href="#mips-port">16.2 MIPS port</a></li>
+<li><a href="#soft-debugger">16.3 Soft Debugger</a></li>
+<li><a href="#static-compiler-aot">16.4 Static Compiler (AOT)</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_3.0">17 Installing Mono 3.0</a></li>
-<li><a href="#Bug_Fixes_3">18 Bug Fixes</a></li>
+<li><a href="#installing-mono-30">17 Installing Mono 3.0</a></li>
+<li><a href="#bug-fixes_3">18 Bug Fixes</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -103,19 +103,19 @@ We will continue to bug fix and update Mono 2.10 for another six months for user
 3.0.x Series Release Notes
 ==========================
 
--   [New in 3.0](#New_in_Mono_3.0)
--   [New in 3.0.2](#New_in_Mono_3.0.2)
--   [New in 3.0.3](#New_in_Mono_3.0.3)
--   [New in 3.0.4](#New_in_Mono_3.0.4)
--   [New in 3.0.5](#New_in_Mono_3.0.5)
--   [New in 3.0.6](#New_in_Mono_3.0.6)
--   [New in 3.0.7](#New_in_Mono_3.0.7)
--   [New in 3.0.8](#New_in_Mono_3.0.8)
--   [New in 3.0.9](#New_in_Mono_3.0.9)
--   [New in 3.0.10](#New_in_Mono_3.0.10)
--   [New in 3.0.12](#New_in_Mono_3.0.12)
--   [New in 3.1.1](#New_in_Mono_3.1.1)
--   [New in 3.1.2](#New_in_Mono_3.1.2)
+-   [New in 3.0](#new-in-mono-30)
+-   [New in 3.0.2](#new-in-mono-302)
+-   [New in 3.0.3](#new-in-mono-303)
+-   [New in 3.0.4](#new-in-mono-304)
+-   [New in 3.0.5](#new-in-mono-305)
+-   [New in 3.0.6](#new-in-mono-306)
+-   [New in 3.0.7](#new-in-mono-307)
+-   [New in 3.0.8](#new-in-mono-308)
+-   [New in 3.0.9](#new-in-mono-309)
+-   [New in 3.0.10](#new-in-mono-3010)
+-   [New in 3.0.12](#new-in-mono-3012)
+-   [New in 3.1.1](#new-in-mono-311)
+-   [New in 3.1.2](#new-in-mono-312)
 
 New in Mono 3.1.2
 =================

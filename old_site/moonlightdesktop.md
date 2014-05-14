@@ -22,16 +22,16 @@ Using the former is discussed extensively on any site that discussed Silverlight
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#API_differences">1 API differences</a></li>
-<li><a href="#Using_Moonlight_on_the_Desktop">2 Using Moonlight on the Desktop</a></li>
-<li><a href="#Setting_Moonlight_on_the_Desktop">3 Setting Moonlight on the Desktop</a>
+<li><a href="#api-differences">1 API differences</a></li>
+<li><a href="#using-moonlight-on-the-desktop">2 Using Moonlight on the Desktop</a></li>
+<li><a href="#setting-moonlight-on-the-desktop">3 Setting Moonlight on the Desktop</a>
 <ul>
-<li><a href="#Verifying_Your_Installation">3.1 Verifying Your Installation</a></li>
+<li><a href="#verifying-your-installation">3.1 Verifying Your Installation</a></li>
 </ul></li>
-<li><a href="#Building_Moonlight_for_the_Desktop">4 Building Moonlight for the Desktop</a>
+<li><a href="#building-moonlight-for-the-desktop">4 Building Moonlight for the Desktop</a>
 <ul>
-<li><a href="#Building_Moonlight">4.1 Building Moonlight</a></li>
-<li><a href="#Using_Moonlight_on_the_Desktop_-_Alternate_Prefix">4.2 Using Moonlight on the Desktop - Alternate Prefix</a></li>
+<li><a href="#building-moonlight">4.1 Building Moonlight</a></li>
+<li><a href="#using-moonlight-on-the-desktop---alternate-prefix">4.2 Using Moonlight on the Desktop - Alternate Prefix</a></li>
 </ul></li>
 </ul></td>
 </tr>

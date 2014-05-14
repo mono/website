@@ -19,32 +19,32 @@ The amount of effort required to get an existing Winforms app running on Mono ca
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Project">1 The Project</a></li>
-<li><a href="#Getting_Started">2 Getting Started</a>
+<li><a href="#the-project">1 The Project</a></li>
+<li><a href="#getting-started">2 Getting Started</a>
 <ul>
-<li><a href="#MoMA_Summary">2.1 MoMA Summary</a></li>
+<li><a href="#moma-summary">2.1 MoMA Summary</a></li>
 </ul></li>
-<li><a href="#Trying_It_Out">3 Trying It Out</a></li>
-<li><a href="#Porting_Strategies">4 Porting Strategies</a>
+<li><a href="#trying-it-out">3 Trying It Out</a></li>
+<li><a href="#porting-strategies">4 Porting Strategies</a>
 <ul>
-<li><a href="#Remove_.2F_Comment_Code">4.1 Remove / Comment Code</a></li>
-<li><a href="#Compiler_Conditionals">4.2 Compiler Conditionals</a></li>
-<li><a href="#Runtime_Conditionals">4.3 Runtime Conditionals</a></li>
-<li><a href="#Rewriting_Code">4.4 Rewriting Code</a></li>
+<li><a href="#remove--comment-code">4.1 Remove / Comment Code</a></li>
+<li><a href="#compiler-conditionals">4.2 Compiler Conditionals</a></li>
+<li><a href="#runtime-conditionals">4.3 Runtime Conditionals</a></li>
+<li><a href="#rewriting-code">4.4 Rewriting Code</a></li>
 </ul></li>
-<li><a href="#Porting_NClass">5 Porting NClass</a></li>
-<li><a href="#Continuing_the_Port">6 Continuing the Port</a></li>
-<li><a href="#Running_on_Linux">7 Running on Linux</a>
+<li><a href="#porting-nclass">5 Porting NClass</a></li>
+<li><a href="#continuing-the-port">6 Continuing the Port</a></li>
+<li><a href="#running-on-linux">7 Running on Linux</a>
 <ul>
-<li><a href="#Linux_Platform_Differences">7.1 Linux Platform Differences</a>
+<li><a href="#linux-platform-differences">7.1 Linux Platform Differences</a>
 <ul>
-<li><a href="#Win32_P.2FInvokes">7.1.1 Win32 P/Invokes</a></li>
-<li><a href="#Case_Sensitivity">7.1.2 Case Sensitivity</a></li>
-<li><a href="#The_Path_Separator">7.1.3 The Path Separator</a></li>
+<li><a href="#win32-pinvokes">7.1.1 Win32 P/Invokes</a></li>
+<li><a href="#case-sensitivity">7.1.2 Case Sensitivity</a></li>
+<li><a href="#the-path-separator">7.1.3 The Path Separator</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Conclusion">8 Conclusion</a></li>
-<li><a href="#Advanced_Guides">9 Advanced Guides</a></li>
+<li><a href="#conclusion">8 Conclusion</a></li>
+<li><a href="#advanced-guides">9 Advanced Guides</a></li>
 </ul></td>
 </tr>
 </tbody>

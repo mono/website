@@ -26,16 +26,16 @@ As of December 12th 2012, Xamarin now offers a superset of MonoMac called [Xamar
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Tutorials">1 Tutorials</a></li>
-<li><a href="#Samples">2 Samples</a></li>
-<li><a href="#Community">3 Community</a></li>
-<li><a href="#Obtaining_MonoMac">4 Obtaining MonoMac</a></li>
-<li><a href="#MonoMac_from_Source">5 MonoMac from Source</a></li>
-<li><a href="#Background">6 Background</a></li>
-<li><a href="#Binding_Cocoa_Types">7 Binding Cocoa Types</a></li>
-<li><a href="#Status">8 Status</a></li>
-<li><a href="#Where_we_are_going">9 Where we are going</a></li>
-<li><a href="#Contributing">10 Contributing</a></li>
+<li><a href="#tutorials">1 Tutorials</a></li>
+<li><a href="#samples">2 Samples</a></li>
+<li><a href="#community">3 Community</a></li>
+<li><a href="#obtaining-monomac">4 Obtaining MonoMac</a></li>
+<li><a href="#monomac-from-source">5 MonoMac from Source</a></li>
+<li><a href="#background">6 Background</a></li>
+<li><a href="#binding-cocoa-types">7 Binding Cocoa Types</a></li>
+<li><a href="#status">8 Status</a></li>
+<li><a href="#where-we-are-going">9 Where we are going</a></li>
+<li><a href="#contributing">10 Contributing</a></li>
 </ul></td>
 </tr>
 </tbody>

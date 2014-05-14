@@ -17,12 +17,12 @@ This is the Mono Project's SoC rules page. For project ideas and other informati
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Ground_Rules">1 Ground Rules</a></li>
-<li><a href="#Applying.2C_suggestions">2 Applying, suggestions</a>
+<li><a href="#ground-rules">1 Ground Rules</a></li>
+<li><a href="#applying-suggestions">2 Applying, suggestions</a>
 <ul>
-<li><a href="#Contacting_the_Mono_Team">2.1 Contacting the Mono Team</a>
+<li><a href="#contacting-the-mono-team">2.1 Contacting the Mono Team</a>
 <ul>
-<li><a href="#Mailing_Lists">2.1.1 Mailing Lists</a></li>
+<li><a href="#mailing-lists">2.1.1 Mailing Lists</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -50,7 +50,7 @@ We would rather have a maintainable, clean and incomplete piece of code that we 
 Applying, suggestions
 =====================
 
-First off, be sure to sign up to our mailing lists and drop by IRC, we're happy to welcome all inquiries. Check the [Contacting section](#Contacting_the_Mono_Team) below.
+First off, be sure to sign up to our mailing lists and drop by IRC, we're happy to welcome all inquiries. Check the [Contacting section](#contacting-the-mono-team) below.
 
 Remember that many people will apply to work on the Summer of Code and we cannot accept them all.
 

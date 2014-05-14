@@ -15,28 +15,28 @@ SecurityValidation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General">1 General</a></li>
-<li><a href="#.5BSecuritySafeCritical.5D_Validation">2 [SecuritySafeCritical] Validation</a>
+<li><a href="#general">1 General</a></li>
+<li><a href="#securitysafecritical-validation">2 [SecuritySafeCritical] Validation</a>
 <ul>
-<li><a href="#How">2.1 How</a>
+<li><a href="#how">2.1 How</a>
 <ul>
-<li><a href="#Review">2.1.1 Review</a></li>
-<li><a href="#Alternative_solutions">2.1.2 Alternative solutions</a></li>
+<li><a href="#review">2.1.1 Review</a></li>
+<li><a href="#alternative-solutions">2.1.2 Alternative solutions</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#.5BInternalsVisibleTo.5D_Validation">3 [InternalsVisibleTo] Validation</a>
+<li><a href="#internalsvisibleto-validation">3 [InternalsVisibleTo] Validation</a>
 <ul>
-<li><a href="#2.0">3.1 2.0</a>
+<li><a href="#20">3.1 2.0</a>
 <ul>
-<li><a href="#Legend">3.1.1 Legend</a></li>
-<li><a href="#Notes">3.1.2 Notes</a></li>
+<li><a href="#legend">3.1.1 Legend</a></li>
+<li><a href="#notes">3.1.2 Notes</a></li>
 </ul></li>
-<li><a href="#3.0">3.2 3.0</a>
+<li><a href="#30">3.2 3.0</a>
 <ul>
-<li><a href="#Legend_2">3.2.1 Legend</a></li>
-<li><a href="#Notes_2">3.2.2 Notes</a></li>
+<li><a href="#legend_2">3.2.1 Legend</a></li>
+<li><a href="#notes_2">3.2.2 Notes</a></li>
 </ul></li>
-<li><a href="#4.0_.28beta.29">3.3 4.0 (beta)</a></li>
+<li><a href="#40-beta">3.3 4.0 (beta)</a></li>
 </ul></li>
 </ul></td>
 </tr>

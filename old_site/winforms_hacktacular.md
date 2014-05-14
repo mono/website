@@ -17,15 +17,15 @@ Novell's Winforms team will be meeting in Boston Oct 22nd - 26th.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Goals_for_Boston_Meeting">1 Goals for Boston Meeting</a>
+<li><a href="#goals-for-boston-meeting">1 Goals for Boston Meeting</a>
 <ul>
-<li><a href="#Mono_2.0">1.1 Mono 2.0</a></li>
-<li><a href="#Winforms_2.0">1.2 Winforms 2.0</a></li>
-<li><a href="#Bugs">1.3 Bugs</a></li>
-<li><a href="#Specific_Topics">1.4 Specific Topics</a>
+<li><a href="#mono-20">1.1 Mono 2.0</a></li>
+<li><a href="#winforms-20">1.2 Winforms 2.0</a></li>
+<li><a href="#bugs">1.3 Bugs</a></li>
+<li><a href="#specific-topics">1.4 Specific Topics</a>
 <ul>
-<li><a href="#Measurement_Discussion:_Is_Bigger_Better.3F">1.4.1 Measurement Discussion: Is Bigger Better?</a></li>
-<li><a href="#WebControl">1.4.2 WebControl</a></li>
+<li><a href="#measurement-discussion-is-bigger-better">1.4.1 Measurement Discussion: Is Bigger Better?</a></li>
+<li><a href="#webcontrol">1.4.2 WebControl</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

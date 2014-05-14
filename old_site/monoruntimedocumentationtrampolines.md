@@ -15,18 +15,18 @@ Mono:Runtime:Documentation:Trampolines
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Trampolines">1 Trampolines</a>
+<li><a href="#trampolines">1 Trampolines</a>
 <ul>
-<li><a href="#JIT_Trampolines">1.1 JIT Trampolines</a></li>
-<li><a href="#Virtual_Call_Trampolines">1.2 Virtual Call Trampolines</a></li>
-<li><a href="#Jump_Trampolines">1.3 Jump Trampolines</a></li>
-<li><a href="#Class_Init_Trampolines">1.4 Class Init Trampolines</a></li>
-<li><a href="#Generic_Class_Init_Trampoline">1.5 Generic Class Init Trampoline</a></li>
-<li><a href="#RGCTX_Lazy_Fetch_Trampolines">1.6 RGCTX Lazy Fetch Trampolines</a></li>
-<li><a href="#AOT_Trampolines">1.7 AOT Trampolines</a></li>
-<li><a href="#AOT_PLT_Trampolines">1.8 AOT PLT Trampolines</a></li>
-<li><a href="#Delegate_Trampolines">1.9 Delegate Trampolines</a></li>
-<li><a href="#Monitor_Enter.2FExit_Trampolines">1.10 Monitor Enter/Exit Trampolines</a></li>
+<li><a href="#jit-trampolines">1.1 JIT Trampolines</a></li>
+<li><a href="#virtual-call-trampolines">1.2 Virtual Call Trampolines</a></li>
+<li><a href="#jump-trampolines">1.3 Jump Trampolines</a></li>
+<li><a href="#class-init-trampolines">1.4 Class Init Trampolines</a></li>
+<li><a href="#generic-class-init-trampoline">1.5 Generic Class Init Trampoline</a></li>
+<li><a href="#rgctx-lazy-fetch-trampolines">1.6 RGCTX Lazy Fetch Trampolines</a></li>
+<li><a href="#aot-trampolines">1.7 AOT Trampolines</a></li>
+<li><a href="#aot-plt-trampolines">1.8 AOT PLT Trampolines</a></li>
+<li><a href="#delegate-trampolines">1.9 Delegate Trampolines</a></li>
+<li><a href="#monitor-enterexit-trampolines">1.10 Monitor Enter/Exit Trampolines</a></li>
 </ul></li>
 </ul></td>
 </tr>

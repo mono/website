@@ -15,46 +15,46 @@ Accessibility: GitSVN: Workflow
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Daily_Workflow_With_git-svn">1 Daily Workflow With git-svn</a>
+<li><a href="#daily-workflow-with-git-svn">1 Daily Workflow With git-svn</a>
 <ul>
-<li><a href="#Setup">1.1 Setup</a></li>
-<li><a href="#Getting_Stuff_Done_with_Feature_Branches_.28aka_Topic_Branches.29">1.2 Getting Stuff Done with Feature Branches (aka Topic Branches)</a></li>
-<li><a href="#Understanding_The_Staging_Area_.28aka_The_Index.29_and_git_status.2Fadd.2Fcommit">1.3 Understanding The Staging Area (aka The Index) and git status/add/commit</a>
+<li><a href="#setup">1.1 Setup</a></li>
+<li><a href="#getting-stuff-done-with-feature-branches-aka-topic-branches">1.2 Getting Stuff Done with Feature Branches (aka Topic Branches)</a></li>
+<li><a href="#understanding-the-staging-area-aka-the-index-and-git-statusaddcommit">1.3 Understanding The Staging Area (aka The Index) and git status/add/commit</a>
 <ul>
-<li><a href="#What_have_I_done.3F_How_to_effectively_visualize_your_changes">1.3.1 What have I done? How to effectively visualize your changes</a>
+<li><a href="#what-have-i-done-how-to-effectively-visualize-your-changes">1.3.1 What have I done? How to effectively visualize your changes</a>
 <ul>
-<li><a href="#git_diff">1.3.1.1 git diff</a></li>
-<li><a href="#gitk_and_git_gui">1.3.1.2 gitk and git gui</a></li>
+<li><a href="#git-diff">1.3.1.1 git diff</a></li>
+<li><a href="#gitk-and-git-gui">1.3.1.2 gitk and git gui</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Get_Feedback_With_Reviewboard">1.4 Get Feedback With Reviewboard</a>
+<li><a href="#get-feedback-with-reviewboard">1.4 Get Feedback With Reviewboard</a>
 <ul>
-<li><a href="#Posting_Reviews_for_SVN_Branches">1.4.1 Posting Reviews for SVN Branches</a></li>
+<li><a href="#posting-reviews-for-svn-branches">1.4.1 Posting Reviews for SVN Branches</a></li>
 </ul></li>
-<li><a href="#Sharing_Patches_With_SVN_Users">1.5 Sharing Patches With SVN Users</a></li>
-<li><a href="#Merging_Your_Feature_Branch_Back_In_Preparation_For_a_Commit_to_SVN">1.6 Merging Your Feature Branch Back In Preparation For a Commit to SVN</a></li>
-<li><a href="#Updating_ChangeLog_Files_and_Committing_to_SVN">1.7 Updating ChangeLog Files and Committing to SVN</a>
+<li><a href="#sharing-patches-with-svn-users">1.5 Sharing Patches With SVN Users</a></li>
+<li><a href="#merging-your-feature-branch-back-in-preparation-for-a-commit-to-svn">1.6 Merging Your Feature Branch Back In Preparation For a Commit to SVN</a></li>
+<li><a href="#updating-changelog-files-and-committing-to-svn">1.7 Updating ChangeLog Files and Committing to SVN</a>
 <ul>
-<li><a href="#Set_up_environment_variables">1.7.1 Set up environment variables</a></li>
-<li><a href="#ChangeLog_Wrangling">1.7.2 ChangeLog Wrangling</a></li>
-<li><a href="#Preparing_a_Commit_Message">1.7.3 Preparing a Commit Message</a></li>
-<li><a href="#Committing_Your_Change_to_git">1.7.4 Committing Your Change to git</a>
+<li><a href="#set-up-environment-variables">1.7.1 Set up environment variables</a></li>
+<li><a href="#changelog-wrangling">1.7.2 ChangeLog Wrangling</a></li>
+<li><a href="#preparing-a-commit-message">1.7.3 Preparing a Commit Message</a></li>
+<li><a href="#committing-your-change-to-git">1.7.4 Committing Your Change to git</a>
 <ul>
-<li><a href="#Using_git_gui">1.7.4.1 Using git gui</a></li>
-<li><a href="#Using_the_command_line">1.7.4.2 Using the command line</a></li>
+<li><a href="#using-git-gui">1.7.4.1 Using git gui</a></li>
+<li><a href="#using-the-command-line">1.7.4.2 Using the command line</a></li>
 </ul></li>
-<li><a href="#For_those_.22oh_crap.22_moments:_undoing_a_git_commit">1.7.5 For those &quot;oh crap&quot; moments: undoing a git commit</a></li>
-<li><a href="#DCommitting_Your_Change_to_SVN">1.7.6 DCommitting Your Change to SVN</a></li>
+<li><a href="#for-those-oh-crap-moments-undoing-a-git-commit">1.7.5 For those &quot;oh crap&quot; moments: undoing a git commit</a></li>
+<li><a href="#dcommitting-your-change-to-svn">1.7.6 DCommitting Your Change to SVN</a></li>
 </ul></li>
-<li><a href="#Appendix_A:_Branches_of_branches_of_branches_of_branches_.28why_git-cherry-pick_is_your_friend.29">1.8 Appendix A: Branches of branches of branches of branches (why git-cherry-pick is your friend)</a>
+<li><a href="#appendix-a-branches-of-branches-of-branches-of-branches-why-git-cherry-pick-is-your-friend">1.8 Appendix A: Branches of branches of branches of branches (why git-cherry-pick is your friend)</a>
 <ul>
-<li><a href="#When_to_use_git-cherry-pick">1.8.1 When to use git-cherry-pick</a>
+<li><a href="#when-to-use-git-cherry-pick">1.8.1 When to use git-cherry-pick</a>
 <ul>
-<li><a href="#Grabbing_latest_updates_from_parent_feature_branch">1.8.1.1 Grabbing latest updates from parent feature branch</a></li>
-<li><a href="#Resuming_work_on_feature2_after_feature1_has_been_merged_and_committed_to_SVN">1.8.1.2 Resuming work on feature2 after feature1 has been merged and committed to SVN</a></li>
+<li><a href="#grabbing-latest-updates-from-parent-feature-branch">1.8.1.1 Grabbing latest updates from parent feature branch</a></li>
+<li><a href="#resuming-work-on-feature2-after-feature1-has-been-merged-and-committed-to-svn">1.8.1.2 Resuming work on feature2 after feature1 has been merged and committed to SVN</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Helpful_Resources">1.9 Helpful Resources</a></li>
+<li><a href="#helpful-resources">1.9 Helpful Resources</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -67,7 +67,7 @@ Daily Workflow With git-svn
 Setup
 -----
 
-Before reading this guide, make sure you set up your git repository according to the [Getting Started instructions]({{site.github.url}}/old_site/Accessibility:_GitSVN#Getting_Started "Accessibility: GitSVN").
+Before reading this guide, make sure you set up your git repository according to the [Getting Started instructions]({{site.github.url}}/old_site/Accessibility:_GitSVN#getting-started "Accessibility: GitSVN").
 
 Your git "master" branch will be associated with the remote git-svn/trunk branch that maps to SVN trunk. If you need to you can create a local branch for each SVN remote branch like this:
 
@@ -170,7 +170,7 @@ Get Feedback With Reviewboard
 
 Make sure you are familiar with our [code review policy]({{site.github.url}}/old_site/Accessibility:_Reviews "Accessibility: Reviews").
 
-When you're ready for a review, make sure all of your changes are committed in the feature branch, then run \`[post-review]({{site.github.url}}/old_site/Accessibility:_Reviews#Submitting_Review_Requests "Accessibility: Reviews")\` from the feature branch. For git, only committed changes will be included in the Reviewboard diff.
+When you're ready for a review, make sure all of your changes are committed in the feature branch, then run \`[post-review]({{site.github.url}}/old_site/Accessibility:_Reviews#submitting-review-requests "Accessibility: Reviews")\` from the feature branch. For git, only committed changes will be included in the Reviewboard diff.
 
 If you experience any errors when running post-review, please send them to Brad or Sandy. It would be especially helpful if you could reproduce with the "-d" (debug) option.
 

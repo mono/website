@@ -16,7 +16,7 @@ Users:
  Developers:
   [API Docs](http://www.go-mono.com/docs/) | [Languages]({{site.github.url}}/old_site/Languages "Languages") | [Books]({{site.github.url}}/old_site/Books "Books") | [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap) | [Plans]({{site.github.url}}/old_site/Plans "Plans")
  Contributors:
-  [Class Status]({{site.github.url}}/old_site/Resources#API_completion_status_pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{site.github.url}}/old_site/SourceCodeRepository)
+  [Class Status]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{site.github.url}}/old_site/SourceCodeRepository)
  Community:
   [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat]({{site.github.url}}/old_site/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)
  FAQ:
@@ -28,7 +28,7 @@ Mono is positioned to be the leading platform for development of Gnome applicati
 -   [The Monkeyguide tutorial]({{site.github.url}}/old_site/Monkeyguide "Monkeyguide")
 -   [How-To pages]({{site.github.url}}/old_site/Howto "Howto")
 -   [API Documentation](http://www.go-mono.com/docs/)
--   [Class Status]({{site.github.url}}/old_site/Resources#API_completion_status_pages "Resources")
+-   [Class Status]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources")
 -   [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") to get help
 -   [Bug reporting]({{site.github.url}}/old_site/Bugs "Bugs") to help us improve the software
 -   Commercial [Support]({{site.github.url}}/old_site/Support "Support")

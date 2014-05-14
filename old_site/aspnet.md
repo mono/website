@@ -35,26 +35,26 @@ Status and tests for ASP.NET 2.0 are available in our [ASPTests]({{site.github.u
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Running_ASP.NET_applications">1 Running ASP.NET applications</a>
+<li><a href="#running-aspnet-applications">1 Running ASP.NET applications</a>
 <ul>
-<li><a href="#ASP.NET_hosting_with_Apache">1.1 ASP.NET hosting with Apache</a></li>
-<li><a href="#ASP.NET_hosting_with_Nginx">1.2 ASP.NET hosting with Nginx</a></li>
-<li><a href="#ASP.NET_hosting_with_XSP">1.3 ASP.NET hosting with XSP</a>
+<li><a href="#aspnet-hosting-with-apache">1.1 ASP.NET hosting with Apache</a></li>
+<li><a href="#aspnet-hosting-with-nginx">1.2 ASP.NET hosting with Nginx</a></li>
+<li><a href="#aspnet-hosting-with-xsp">1.3 ASP.NET hosting with XSP</a>
 <ul>
-<li><a href="#SSL_support_in_XSP">1.3.1 SSL support in XSP</a></li>
-<li><a href="#Configuration">1.3.2 Configuration</a></li>
-<li><a href="#Other_extensions">1.3.3 Other extensions</a></li>
+<li><a href="#ssl-support-in-xsp">1.3.1 SSL support in XSP</a></li>
+<li><a href="#configuration">1.3.2 Configuration</a></li>
+<li><a href="#other-extensions">1.3.3 Other extensions</a></li>
 </ul></li>
-<li><a href="#Debugging">1.4 Debugging</a></li>
+<li><a href="#debugging">1.4 Debugging</a></li>
 </ul></li>
-<li><a href="#Supported_Versions">2 Supported Versions</a>
+<li><a href="#supported-versions">2 Supported Versions</a>
 <ul>
-<li><a href="#Limitations">2.1 Limitations</a></li>
+<li><a href="#limitations">2.1 Limitations</a></li>
 </ul></li>
-<li><a href="#Work_in_Progress">3 Work in Progress</a>
+<li><a href="#work-in-progress">3 Work in Progress</a>
 <ul>
-<li><a href="#SVN_access">3.1 SVN access</a></li>
-<li><a href="#Designer">3.2 Designer</a></li>
+<li><a href="#svn-access">3.1 SVN access</a></li>
+<li><a href="#designer">3.2 Designer</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -137,7 +137,7 @@ To obtain line numbers in stack traces you need to do two things:
 
 1. Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
 
-You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option]({{site.github.url}}/old_site/Config#.3Ccompilation.3E "Config")).
+You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option]({{site.github.url}}/old_site/Config#3ccompilation3e "Config")).
 
 Use the --debug command line option to Mono, this is done by setting the MONO\_OPTIONS environment variable, like this:
 

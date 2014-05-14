@@ -16,15 +16,15 @@ Mono:OSX
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction_to_Mono_on_MacOS_X">1 Introduction to Mono on MacOS X</a></li>
-<li><a href="#Installing_Mono_on_MacOS_X">2 Installing Mono on MacOS X</a></li>
-<li><a href="#Using_Mono_on_MacOS_X">3 Using Mono on MacOS X</a></li>
-<li><a href="#32_and_64_bit_support">4 32 and 64 bit support</a></li>
-<li><a href="#Building_Client_Applications">5 Building Client Applications</a></li>
-<li><a href="#Running_Mono_applications_on_MacOS_X">6 Running Mono applications on MacOS X</a></li>
-<li><a href="#Windows.Forms">7 Windows.Forms</a></li>
-<li><a href="#Third_Party_Libraries">8 Third Party Libraries</a></li>
-<li><a href="#Uninstalling_Mono_on_Mac_OS_X">9 Uninstalling Mono on Mac OS X</a></li>
+<li><a href="#introduction-to-mono-on-macos-x">1 Introduction to Mono on MacOS X</a></li>
+<li><a href="#installing-mono-on-macos-x">2 Installing Mono on MacOS X</a></li>
+<li><a href="#using-mono-on-macos-x">3 Using Mono on MacOS X</a></li>
+<li><a href="#32-and-64-bit-support">4 32 and 64 bit support</a></li>
+<li><a href="#building-client-applications">5 Building Client Applications</a></li>
+<li><a href="#running-mono-applications-on-macos-x">6 Running Mono applications on MacOS X</a></li>
+<li><a href="#windowsforms">7 Windows.Forms</a></li>
+<li><a href="#third-party-libraries">8 Third Party Libraries</a></li>
+<li><a href="#uninstalling-mono-on-mac-os-x">9 Uninstalling Mono on Mac OS X</a></li>
 </ul></td>
 </tr>
 </tbody>

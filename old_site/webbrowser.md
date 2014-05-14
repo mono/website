@@ -15,23 +15,23 @@ WebBrowser
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Motivation:_WebBrowser_control_for_MWF">1 Motivation: WebBrowser control for MWF</a></li>
-<li><a href="#The_Mono_implementation">2 The Mono implementation</a>
+<li><a href="#motivation-webbrowser-control-for-mwf">1 Motivation: WebBrowser control for MWF</a></li>
+<li><a href="#the-mono-implementation">2 The Mono implementation</a>
 <ul>
-<li><a href="#MWF">2.1 MWF</a></li>
-<li><a href="#Mono.WebBrowser">2.2 Mono.WebBrowser</a></li>
-<li><a href="#Mono.WebBrowser_-_Gecko_support_via_gluezilla">2.3 Mono.WebBrowser - Gecko support via gluezilla</a></li>
-<li><a href="#Currently_supported_browser_engine_backends">2.4 Currently supported browser engine backends</a></li>
+<li><a href="#mwf">2.1 MWF</a></li>
+<li><a href="#monowebbrowser">2.2 Mono.WebBrowser</a></li>
+<li><a href="#monowebbrowser---gecko-support-via-gluezilla">2.3 Mono.WebBrowser - Gecko support via gluezilla</a></li>
+<li><a href="#currently-supported-browser-engine-backends">2.4 Currently supported browser engine backends</a></li>
 </ul></li>
-<li><a href="#Limitations">3 Limitations</a></li>
-<li><a href="#Architecture_of_the_IE_component_stack">4 Architecture of the IE component stack</a>
+<li><a href="#limitations">3 Limitations</a></li>
+<li><a href="#architecture-of-the-ie-component-stack">4 Architecture of the IE component stack</a>
 <ul>
-<li><a href="#SHDocVw.dll">4.1 SHDocVw.dll</a></li>
-<li><a href="#mshtml.dll">4.2 mshtml.dll</a></li>
-<li><a href="#BrowseUI.dll">4.3 BrowseUI.dll</a></li>
-<li><a href="#References">4.4 References</a></li>
+<li><a href="#shdocvwdll">4.1 SHDocVw.dll</a></li>
+<li><a href="#mshtmldll">4.2 mshtml.dll</a></li>
+<li><a href="#browseuidll">4.3 BrowseUI.dll</a></li>
+<li><a href="#references">4.4 References</a></li>
 </ul></li>
-<li><a href="#Implementation_Overview">5 Implementation Overview</a></li>
+<li><a href="#implementation-overview">5 Implementation Overview</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,10 +15,10 @@ DllNotFoundException
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Background_Information_.26_Possible_Questions">2 Background Information &amp; Possible Questions</a></li>
-<li><a href="#Troubleshooting_DllNotFoundExceptions">3 Troubleshooting DllNotFoundExceptions</a></li>
-<li><a href="#Additional_Information">4 Additional Information</a></li>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#background-information--possible-questions">2 Background Information &amp; Possible Questions</a></li>
+<li><a href="#troubleshooting-dllnotfoundexceptions">3 Troubleshooting DllNotFoundExceptions</a></li>
+<li><a href="#additional-information">4 Additional Information</a></li>
 </ul></td>
 </tr>
 </tbody>

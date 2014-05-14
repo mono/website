@@ -17,15 +17,15 @@ The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [G
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Installing_Mono_Accessibility_1.0_From_Source">1 Installing Mono Accessibility 1.0 From Source</a>
+<li><a href="#installing-mono-accessibility-10-from-source">1 Installing Mono Accessibility 1.0 From Source</a>
 <ul>
-<li><a href="#Prerequisites">1.1 Prerequisites</a></li>
-<li><a href="#Getting_the_Source">1.2 Getting the Source</a>
+<li><a href="#prerequisites">1.1 Prerequisites</a></li>
+<li><a href="#getting-the-source">1.2 Getting the Source</a>
 <ul>
-<li><a href="#Download_release_tarballs">1.2.1 Download release tarballs</a></li>
+<li><a href="#download-release-tarballs">1.2.1 Download release tarballs</a></li>
 </ul></li>
-<li><a href="#Building_and_Installing">1.3 Building and Installing</a></li>
-<li><a href="#What_Now.3F">1.4 What Now?</a></li>
+<li><a href="#building-and-installing">1.3 Building and Installing</a></li>
+<li><a href="#what-now">1.4 What Now?</a></li>
 </ul></li>
 </ul></td>
 </tr>

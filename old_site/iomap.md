@@ -19,11 +19,11 @@ The IOMap feature is available in Mono versions higher than 1.1.18
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Problem">1 The Problem</a></li>
-<li><a href="#The_Usual_Solution">2 The Usual Solution</a></li>
-<li><a href="#The_New_Solution">3 The New Solution</a>
+<li><a href="#the-problem">1 The Problem</a></li>
+<li><a href="#the-usual-solution">2 The Usual Solution</a></li>
+<li><a href="#the-new-solution">3 The New Solution</a>
 <ul>
-<li><a href="#IOMAP_reporting_utility">3.1 IOMAP reporting utility</a></li>
+<li><a href="#iomap-reporting-utility">3.1 IOMAP reporting utility</a></li>
 </ul></li>
 </ul></td>
 </tr>

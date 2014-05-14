@@ -15,29 +15,29 @@ Vulnerabilities
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Reporting_vulnerabilities">1 Reporting vulnerabilities</a></li>
-<li><a href="#Known_vulnerabilities">2 Known vulnerabilities</a>
+<li><a href="#reporting-vulnerabilities">1 Reporting vulnerabilities</a></li>
+<li><a href="#known-vulnerabilities">2 Known vulnerabilities</a>
 <ul>
-<li><a href="#Moonlight_RuntimeHelpers.InitializeArray_on_non-primitive_value_types">2.1 Moonlight RuntimeHelpers.InitializeArray on non-primitive value types</a></li>
-<li><a href="#Moonlight_Race_in_Array.Copy_.22FastCopy.22_Internal_Call">2.2 Moonlight Race in Array.Copy &quot;FastCopy&quot; Internal Call</a></li>
-<li><a href="#Moonlight_DynamicMethod_Resurrection">2.3 Moonlight DynamicMethod Resurrection</a></li>
-<li><a href="#Moonlight_Improper_Thread_Finalization">2.4 Moonlight Improper Thread Finalization</a></li>
-<li><a href="#XSP.2Fmod_mono_source_code_disclosure">2.5 XSP/mod_mono source code disclosure</a></li>
-<li><a href="#Moonlight_Generic_Constraints_Bypass_Vulnerability">2.6 Moonlight Generic Constraints Bypass Vulnerability</a></li>
-<li><a href="#mono-debugger_Insecure_Use_of_LD_LIBRARY_PATH">2.7 mono-debugger Insecure Use of LD_LIBRARY_PATH</a></li>
-<li><a href="#Mono_Runtime_Insecure_Native_Library_Loading">2.8 Mono Runtime Insecure Native Library Loading</a></li>
-<li><a href="#ASP.NET_Padding_Oracle">2.9 ASP.NET Padding Oracle</a></li>
-<li><a href="#Libgdiplus_Integer_Overflow_Vulnerabilities">2.10 Libgdiplus Integer Overflow Vulnerabilities</a></li>
-<li><a href="#ASP.NET_View_State_Cross-Site_Scripting">2.11 ASP.NET View State Cross-Site Scripting</a></li>
-<li><a href="#XML_signature_HMAC_truncation_authentication_bypass">2.12 XML signature HMAC truncation authentication bypass</a></li>
-<li><a href="#Mono_System.Web_Header_Injection_Attack">2.13 Mono System.Web Header Injection Attack</a></li>
-<li><a href="#Mono_ASP.NET_Cross-Site_Scripting">2.14 Mono ASP.NET Cross-Site Scripting</a></li>
-<li><a href="#BigInteger_unsafe_code_overflow">2.15 BigInteger unsafe code overflow</a></li>
-<li><a href="#XSP_source_code_disclosure_.5BWindows.5D">2.16 XSP source code disclosure [Windows]</a></li>
-<li><a href="#XSP.2Fmod_mono_source_code_disclosure_2">2.17 XSP/mod_mono source code disclosure</a></li>
-<li><a href="#Local_privilege_escalation_via_System.Xml.Serialization">2.18 Local privilege escalation via System.Xml.Serialization</a></li>
-<li><a href="#XSP.2Fmod_mono_directory_traversal">2.19 XSP/mod_mono directory traversal</a></li>
-<li><a href="#Mono_ASP.NET_Unicode_Conversion_Cross-Site_Scripting">2.20 Mono ASP.NET Unicode Conversion Cross-Site Scripting</a></li>
+<li><a href="#moonlight-runtimehelpersinitializearray-on-non-primitive-value-types">2.1 Moonlight RuntimeHelpers.InitializeArray on non-primitive value types</a></li>
+<li><a href="#moonlight-race-in-arraycopy-fastcopy-internal-call">2.2 Moonlight Race in Array.Copy &quot;FastCopy&quot; Internal Call</a></li>
+<li><a href="#moonlight-dynamicmethod-resurrection">2.3 Moonlight DynamicMethod Resurrection</a></li>
+<li><a href="#moonlight-improper-thread-finalization">2.4 Moonlight Improper Thread Finalization</a></li>
+<li><a href="#xspmod-mono-source-code-disclosure">2.5 XSP/mod_mono source code disclosure</a></li>
+<li><a href="#moonlight-generic-constraints-bypass-vulnerability">2.6 Moonlight Generic Constraints Bypass Vulnerability</a></li>
+<li><a href="#mono-debugger-insecure-use-of-ld-library-path">2.7 mono-debugger Insecure Use of LD_LIBRARY_PATH</a></li>
+<li><a href="#mono-runtime-insecure-native-library-loading">2.8 Mono Runtime Insecure Native Library Loading</a></li>
+<li><a href="#aspnet-padding-oracle">2.9 ASP.NET Padding Oracle</a></li>
+<li><a href="#libgdiplus-integer-overflow-vulnerabilities">2.10 Libgdiplus Integer Overflow Vulnerabilities</a></li>
+<li><a href="#aspnet-view-state-cross-site-scripting">2.11 ASP.NET View State Cross-Site Scripting</a></li>
+<li><a href="#xml-signature-hmac-truncation-authentication-bypass">2.12 XML signature HMAC truncation authentication bypass</a></li>
+<li><a href="#mono-systemweb-header-injection-attack">2.13 Mono System.Web Header Injection Attack</a></li>
+<li><a href="#mono-aspnet-cross-site-scripting">2.14 Mono ASP.NET Cross-Site Scripting</a></li>
+<li><a href="#biginteger-unsafe-code-overflow">2.15 BigInteger unsafe code overflow</a></li>
+<li><a href="#xsp-source-code-disclosure-windows">2.16 XSP source code disclosure [Windows]</a></li>
+<li><a href="#xspmod-mono-source-code-disclosure_2">2.17 XSP/mod_mono source code disclosure</a></li>
+<li><a href="#local-privilege-escalation-via-systemxmlserialization">2.18 Local privilege escalation via System.Xml.Serialization</a></li>
+<li><a href="#xspmod-mono-directory-traversal">2.19 XSP/mod_mono directory traversal</a></li>
+<li><a href="#mono-aspnet-unicode-conversion-cross-site-scripting">2.20 Mono ASP.NET Unicode Conversion Cross-Site Scripting</a></li>
 </ul></li>
 </ul></td>
 </tr>

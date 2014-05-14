@@ -13,10 +13,10 @@ Coding Guidelines
 
  This document contains the coding guidelines for the Mono Project. It contains four major sections:
 
--   [Style Guidelines](#Style_Guidelines), on how to organize your source code.
--   [Git Workflow Changes](#Git_Workflow_Changes) discusses how our workflow has changed now that Mono is hosted on GitHub.
--   [Source Code Control](#Source_Code_Control) details our source code control use.
--   [Best Practices](#Best_Practices), used in the project.
+-   [Style Guidelines](#style-guidelines), on how to organize your source code.
+-   [Git Workflow Changes](#git-workflow-changes) discusses how our workflow has changed now that Mono is hosted on GitHub.
+-   [Source Code Control](#source-code-control) details our source code control use.
+-   [Best Practices](#best-practices), used in the project.
 
 <table>
 <col width="100%" />
@@ -24,56 +24,56 @@ Coding Guidelines
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Style_Guidelines">1 Style Guidelines</a>
+<li><a href="#style-guidelines">1 Style Guidelines</a>
 <ul>
-<li><a href="#Indentation">1.1 Indentation</a></li>
-<li><a href="#Performance_and_Readability">1.2 Performance and Readability</a></li>
-<li><a href="#Where_to_put_spaces">1.3 Where to put spaces</a></li>
-<li><a href="#Where_to_put_braces">1.4 Where to put braces</a></li>
-<li><a href="#Multiline_Parameters">1.5 Multiline Parameters</a></li>
-<li><a href="#Use_whitespace_for_clarity">1.6 Use whitespace for clarity</a></li>
-<li><a href="#File_headers">1.7 File headers</a></li>
-<li><a href="#Multiline_comments">1.8 Multiline comments</a></li>
-<li><a href="#Casing">1.9 Casing</a></li>
+<li><a href="#indentation">1.1 Indentation</a></li>
+<li><a href="#performance-and-readability">1.2 Performance and Readability</a></li>
+<li><a href="#where-to-put-spaces">1.3 Where to put spaces</a></li>
+<li><a href="#where-to-put-braces">1.4 Where to put braces</a></li>
+<li><a href="#multiline-parameters">1.5 Multiline Parameters</a></li>
+<li><a href="#use-whitespace-for-clarity">1.6 Use whitespace for clarity</a></li>
+<li><a href="#file-headers">1.7 File headers</a></li>
+<li><a href="#multiline-comments">1.8 Multiline comments</a></li>
+<li><a href="#casing">1.9 Casing</a></li>
 <li><a href="#this">1.10 this</a></li>
-<li><a href="#Line_length_and_alignment">1.11 Line length and alignment</a></li>
-<li><a href="#Initializing_Instances">1.12 Initializing Instances</a></li>
-<li><a href="#Baroque_Coding">1.13 Baroque Coding</a></li>
-<li><a href="#Warnings">1.14 Warnings</a></li>
-<li><a href="#Conditional_compilation">1.15 Conditional compilation</a></li>
-<li><a href="#Missing_Implementation_Bits">1.16 Missing Implementation Bits</a></li>
-<li><a href="#NotImplementedException">1.17 NotImplementedException</a></li>
-<li><a href="#Use_of_var">1.18 Use of var</a></li>
-<li><a href="#Use_Simple_Identifiers">1.19 Use Simple Identifiers</a></li>
-<li><a href="#Examples">1.20 Examples</a></li>
+<li><a href="#line-length-and-alignment">1.11 Line length and alignment</a></li>
+<li><a href="#initializing-instances">1.12 Initializing Instances</a></li>
+<li><a href="#baroque-coding">1.13 Baroque Coding</a></li>
+<li><a href="#warnings">1.14 Warnings</a></li>
+<li><a href="#conditional-compilation">1.15 Conditional compilation</a></li>
+<li><a href="#missing-implementation-bits">1.16 Missing Implementation Bits</a></li>
+<li><a href="#notimplementedexception">1.17 NotImplementedException</a></li>
+<li><a href="#use-of-var">1.18 Use of var</a></li>
+<li><a href="#use-simple-identifiers">1.19 Use Simple Identifiers</a></li>
+<li><a href="#examples">1.20 Examples</a></li>
 </ul></li>
-<li><a href="#Source_Code_Control">2 Source Code Control</a>
+<li><a href="#source-code-control">2 Source Code Control</a>
 <ul>
-<li><a href="#Summary_Description">2.1 Summary Description</a></li>
-<li><a href="#Work_Branches">2.2 Work Branches</a></li>
-<li><a href="#RCS_and_CVS_tags">2.3 RCS and CVS tags</a></li>
-<li><a href="#Backporting_Changes">2.4 Backporting Changes</a></li>
-<li><a href="#ChangeLogs">2.5 ChangeLogs</a></li>
-<li><a href="#File_formats">2.6 File formats</a></li>
+<li><a href="#summary-description">2.1 Summary Description</a></li>
+<li><a href="#work-branches">2.2 Work Branches</a></li>
+<li><a href="#rcs-and-cvs-tags">2.3 RCS and CVS tags</a></li>
+<li><a href="#backporting-changes">2.4 Backporting Changes</a></li>
+<li><a href="#changelogs">2.5 ChangeLogs</a></li>
+<li><a href="#file-formats">2.6 File formats</a></li>
 </ul></li>
-<li><a href="#Best_Practices">3 Best Practices</a>
+<li><a href="#best-practices">3 Best Practices</a>
 <ul>
-<li><a href="#Documentation">3.1 Documentation</a></li>
-<li><a href="#Tests">3.2 Tests</a></li>
-<li><a href="#Check_all_arguments">3.3 Check all arguments</a></li>
-<li><a href="#Be_careful_about_freeing_memory">3.4 Be careful about freeing memory</a></li>
-<li><a href="#Watch_for_integer_.5Bunder.7Cover.5Dflows">3.5 Watch for integer [under|over]flows</a></li>
-<li><a href="#Locking_and_Threading">3.6 Locking and Threading</a>
+<li><a href="#documentation">3.1 Documentation</a></li>
+<li><a href="#tests">3.2 Tests</a></li>
+<li><a href="#check-all-arguments">3.3 Check all arguments</a></li>
+<li><a href="#be-careful-about-freeing-memory">3.4 Be careful about freeing memory</a></li>
+<li><a href="#watch-for-integer-underoverflows">3.5 Watch for integer [under|over]flows</a></li>
+<li><a href="#locking-and-threading">3.6 Locking and Threading</a>
 <ul>
-<li><a href="#Deadlocks">3.6.1 Deadlocks</a></li>
-<li><a href="#Don.27t_lock_on_Types_and_Strings">3.6.2 Don't lock on Types and Strings</a></li>
+<li><a href="#deadlocks">3.6.1 Deadlocks</a></li>
+<li><a href="#dont-lock-on-types-and-strings">3.6.2 Don't lock on Types and Strings</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Git_Workflow_Changes">4 Git Workflow Changes</a>
+<li><a href="#git-workflow-changes">4 Git Workflow Changes</a>
 <ul>
-<li><a href="#One_Line_Summaries">4.1 One Line Summaries</a></li>
-<li><a href="#No_more_manual_ChangeLog_editing">4.2 No more manual ChangeLog editing</a></li>
-<li><a href="#Personal_Work_Branches">4.3 Personal Work Branches</a></li>
+<li><a href="#one-line-summaries">4.1 One Line Summaries</a></li>
+<li><a href="#no-more-manual-changelog-editing">4.2 No more manual ChangeLog editing</a></li>
+<li><a href="#personal-work-branches">4.3 Personal Work Branches</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -899,7 +899,7 @@ When committing code on behalf of others use the --author option, for example:
 Work Branches
 -------------
 
-See the description of [short term branches]({{site.github.url}}/old_site/GitFAQ#Workflow_2:_Use_.27master.27_as_integration_branch "GitFAQ") and [long term branches]({{site.github.url}}/old_site/GitFAQ#Workflow_3:_Long-term_projects "GitFAQ") in [GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ").
+See the description of [short term branches]({{site.github.url}}/old_site/GitFAQ#workflow-2-use-27master27-as-integration-branch "GitFAQ") and [long term branches]({{site.github.url}}/old_site/GitFAQ#workflow-3-long-term-projects "GitFAQ") in [GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ").
 
 RCS and CVS tags
 ----------------
@@ -1163,7 +1163,7 @@ The ChangeLogs are automatically generated at distribution time from the Git com
 Personal Work Branches
 ----------------------
 
-See the description of [short term branches]({{site.github.url}}/old_site/GitFAQ#Workflow_2:_Use_.27master.27_as_integration_branch "GitFAQ") and [long term branches]({{site.github.url}}/old_site/GitFAQ#Workflow_3:_Long-term_projects "GitFAQ") in [GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ").
+See the description of [short term branches]({{site.github.url}}/old_site/GitFAQ#workflow-2-use-27master27-as-integration-branch "GitFAQ") and [long term branches]({{site.github.url}}/old_site/GitFAQ#workflow-3-long-term-projects "GitFAQ") in [GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ").
 
 If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [http://github.com/mono](http://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
 

@@ -15,14 +15,14 @@ ReleaseNotes MonoVS
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Tools_for_Visual_Studio_Release_Notes">1 Mono Tools for Visual Studio Release Notes</a>
+<li><a href="#mono-tools-for-visual-studio-release-notes">1 Mono Tools for Visual Studio Release Notes</a>
 <ul>
-<li><a href="#Beta_5_.280.7.4221.29">1.1 Beta 5 (0.7.4221)</a></li>
-<li><a href="#Beta_4_.280.6.4168.29">1.2 Beta 4 (0.6.4168)</a></li>
-<li><a href="#Beta_3_.280.5.4128.29">1.3 Beta 3 (0.5.4128)</a></li>
-<li><a href="#Beta_2_.280.4.4034.29">1.4 Beta 2 (0.4.4034)</a></li>
-<li><a href="#Beta_1_.280.3.3771.29">1.5 Beta 1 (0.3.3771)</a></li>
-<li><a href="#Release.Next">1.6 Release.Next</a></li>
+<li><a href="#beta-5-074221">1.1 Beta 5 (0.7.4221)</a></li>
+<li><a href="#beta-4-064168">1.2 Beta 4 (0.6.4168)</a></li>
+<li><a href="#beta-3-054128">1.3 Beta 3 (0.5.4128)</a></li>
+<li><a href="#beta-2-044034">1.4 Beta 2 (0.4.4034)</a></li>
+<li><a href="#beta-1-033771">1.5 Beta 1 (0.3.3771)</a></li>
+<li><a href="#releasenext">1.6 Release.Next</a></li>
 </ul></li>
 </ul></td>
 </tr>

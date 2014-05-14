@@ -15,14 +15,14 @@ FAQ: General
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Basics">1 Basics</a></li>
-<li><a href="#Availability">2 Availability</a></li>
-<li><a href="#Installation_Problems">3 Installation Problems</a></li>
-<li><a href="#Mono_and_GNOME">4 Mono and GNOME</a></li>
-<li><a href="#GUI_applications">5 GUI applications</a></li>
-<li><a href="#Languages_and_Bindings">6 Languages and Bindings</a></li>
-<li><a href="#Mono_and_Microsoft">7 Mono and Microsoft</a></li>
-<li><a href="#Credits">8 Credits</a></li>
+<li><a href="#basics">1 Basics</a></li>
+<li><a href="#availability">2 Availability</a></li>
+<li><a href="#installation-problems">3 Installation Problems</a></li>
+<li><a href="#mono-and-gnome">4 Mono and GNOME</a></li>
+<li><a href="#gui-applications">5 GUI applications</a></li>
+<li><a href="#languages-and-bindings">6 Languages and Bindings</a></li>
+<li><a href="#mono-and-microsoft">7 Mono and Microsoft</a></li>
+<li><a href="#credits">8 Credits</a></li>
 </ul></td>
 </tr>
 </tbody>

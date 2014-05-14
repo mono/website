@@ -15,11 +15,11 @@ Mysql tier1
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General_Questions">1 General Questions</a>
+<li><a href="#general-questions">1 General Questions</a>
 <ul>
-<li><a href="#Current_Status">1.1 Current Status</a></li>
-<li><a href="#Action_plan">1.2 Action plan</a></li>
-<li><a href="#Testing">1.3 Testing</a></li>
+<li><a href="#current-status">1.1 Current Status</a></li>
+<li><a href="#action-plan">1.2 Action plan</a></li>
+<li><a href="#testing">1.3 Testing</a></li>
 </ul></li>
 </ul></td>
 </tr>

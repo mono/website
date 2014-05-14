@@ -13,7 +13,7 @@ OldPage
 **32 bits:** [x86]({{site.github.url}}/old_site/Mono:X86 "Mono:X86"), [PPC]({{site.github.url}}/old_site/Mono:PowerPC "Mono:PowerPC"), [SPARC]({{site.github.url}}/old_site/Mono:SPARC "Mono:SPARC"), [S390]({{site.github.url}}/old_site/Mono:S390 "Mono:S390"), [ARM]({{site.github.url}}/old_site/Mono:ARM "Mono:ARM")
 **64 bits:** [x86-64]({{site.github.url}}/old_site/Mono:AMD64 "Mono:AMD64"), [SPARC]({{site.github.url}}/old_site/Mono:SPARC "Mono:SPARC"), [IA64]({{site.github.url}}/old_site/Mono:IA64 "Mono:IA64")
 **OS:** [Linux]({{site.github.url}}/old_site/Mono:Linux "Mono:Linux"), [Windows]({{site.github.url}}/old_site/Using_Mono_on_Windows), [OSX]({{site.github.url}}/old_site/Mono:OSX "Mono:OSX"), [BSD]({{site.github.url}}/old_site/Mono:BSD "Mono:BSD"), [Solaris]({{site.github.url}}/old_site/Mono:SPARC "Mono:SPARC")
- **Class status:**[API completion]({{site.github.url}}/old_site/Resources#API_completion_status_pages "Resources")
+ **Class status:**[API completion]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources")
 
 Mono is a platform for running and developing modern applications, based on the ECMA/ISO Standards. Mono can run existing programs targeting the .NET or Java frameworks.
 Mono is an open source effort led by Novell and is the foundation for many new applications. [more...]({{site.github.url}}/old_site/About_Mono "About Mono")

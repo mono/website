@@ -21,13 +21,13 @@ Our [MonoTouch\_Beta]({{site.github.url}}/old_site/MonoTouch_Beta "MonoTouch Bet
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Basic_Requirements">1 Basic Requirements</a></li>
-<li><a href="#Mono_Installation">2 Mono Installation</a></li>
-<li><a href="#MonoTouch_SDK_Installation">3 MonoTouch SDK Installation</a></li>
-<li><a href="#MonoDevelop_Installation">4 MonoDevelop Installation</a></li>
-<li><a href="#Downloads">5 Downloads</a></li>
-<li><a href="#Documentation">6 Documentation</a></li>
-<li><a href="#Samples">7 Samples</a></li>
+<li><a href="#basic-requirements">1 Basic Requirements</a></li>
+<li><a href="#mono-installation">2 Mono Installation</a></li>
+<li><a href="#monotouch-sdk-installation">3 MonoTouch SDK Installation</a></li>
+<li><a href="#monodevelop-installation">4 MonoDevelop Installation</a></li>
+<li><a href="#downloads">5 Downloads</a></li>
+<li><a href="#documentation">6 Documentation</a></li>
+<li><a href="#samples">7 Samples</a></li>
 </ul></td>
 </tr>
 </tbody>

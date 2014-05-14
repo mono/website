@@ -17,15 +17,15 @@ Gendarme.Rules.Design.Generic
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidMethodWithUnusedGenericTypeRule">1.1 AvoidMethodWithUnusedGenericTypeRule</a></li>
-<li><a href="#DoNotExposeNestedGenericSignaturesRule">1.2 DoNotExposeNestedGenericSignaturesRule</a></li>
-<li><a href="#ImplementGenericCollectionInterfacesRule">1.3 ImplementGenericCollectionInterfacesRule</a></li>
-<li><a href="#PreferGenericsOverRefObjectRule">1.4 PreferGenericsOverRefObjectRule</a></li>
-<li><a href="#UseGenericEventHandlerRule">1.5 UseGenericEventHandlerRule</a></li>
+<li><a href="#avoidmethodwithunusedgenerictyperule">1.1 AvoidMethodWithUnusedGenericTypeRule</a></li>
+<li><a href="#donotexposenestedgenericsignaturesrule">1.2 DoNotExposeNestedGenericSignaturesRule</a></li>
+<li><a href="#implementgenericcollectioninterfacesrule">1.3 ImplementGenericCollectionInterfacesRule</a></li>
+<li><a href="#prefergenericsoverrefobjectrule">1.4 PreferGenericsOverRefObjectRule</a></li>
+<li><a href="#usegenericeventhandlerrule">1.5 UseGenericEventHandlerRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

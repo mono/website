@@ -22,11 +22,11 @@ You can find the lesson code (which is well documented) in subversion: [http://a
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#NeHe_Lesson_01">1 NeHe Lesson 01</a></li>
-<li><a href="#NeHe_Lesson_02">2 NeHe Lesson 02</a></li>
-<li><a href="#NeHe_Lesson_03">3 NeHe Lesson 03</a></li>
-<li><a href="#NeHe_Lesson_04">4 NeHe Lesson 04</a></li>
-<li><a href="#NeHe_Lesson_05">5 NeHe Lesson 05</a></li>
+<li><a href="#nehe-lesson-01">1 NeHe Lesson 01</a></li>
+<li><a href="#nehe-lesson-02">2 NeHe Lesson 02</a></li>
+<li><a href="#nehe-lesson-03">3 NeHe Lesson 03</a></li>
+<li><a href="#nehe-lesson-04">4 NeHe Lesson 04</a></li>
+<li><a href="#nehe-lesson-05">5 NeHe Lesson 05</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,25 +15,25 @@ Mono Summit 2007 Session List
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Opening_Keynote">1 Opening Keynote</a></li>
-<li><a href="#C_Sharp_3.0_and_LINQ">2 C Sharp 3.0 and LINQ</a></li>
-<li><a href="#Developing_Applications_with_Monodevelop">3 Developing Applications with Monodevelop</a></li>
-<li><a href="#Birds_of_a_Feather_Sessions">4 Birds of a Feather Sessions</a></li>
-<li><a href="#Towards_A_Virtual_Babel:_Mono_In_Second_Life">5 Towards A Virtual Babel: Mono In Second Life</a></li>
-<li><a href="#NUnit">6 NUnit</a></li>
-<li><a href="#Mono_on_the_Mac">7 Mono on the Mac</a></li>
-<li><a href="#Greengrass">8 Greengrass</a></li>
+<li><a href="#opening-keynote">1 Opening Keynote</a></li>
+<li><a href="#c-sharp-30-and-linq">2 C Sharp 3.0 and LINQ</a></li>
+<li><a href="#developing-applications-with-monodevelop">3 Developing Applications with Monodevelop</a></li>
+<li><a href="#birds-of-a-feather-sessions">4 Birds of a Feather Sessions</a></li>
+<li><a href="#towards-a-virtual-babel-mono-in-second-life">5 Towards A Virtual Babel: Mono In Second Life</a></li>
+<li><a href="#nunit">6 NUnit</a></li>
+<li><a href="#mono-on-the-mac">7 Mono on the Mac</a></li>
+<li><a href="#greengrass">8 Greengrass</a></li>
 <li><a href="#db4o">9 db4o</a></li>
-<li><a href="#Mono_on_Embedded_Devices">10 Mono on Embedded Devices</a></li>
-<li><a href="#Developing_Desktop_applications_with_Moonlight">11 Developing Desktop applications with Moonlight</a></li>
-<li><a href="#Gaia_Ajax_Widgets_-_The_alternative_to_Ajax">12 Gaia Ajax Widgets - The alternative to Ajax</a></li>
-<li><a href="#Meet_The_Experts">13 Meet The Experts</a></li>
-<li><a href="#Debugging_Mono_Applications_with_MDB">14 Debugging Mono Applications with MDB</a></li>
-<li><a href="#Boo_.E2.80.93_A_lean_mean_DSL_Machine">15 Boo – A lean mean DSL Machine</a></li>
-<li><a href="#Mono.Cecil">16 Mono.Cecil</a></li>
-<li><a href="#Boxerp">17 Boxerp</a></li>
-<li><a href="#openSUSE_Build_Service">18 openSUSE Build Service</a></li>
-<li><a href="#Using_Mono.Addins">19 Using Mono.Addins</a></li>
+<li><a href="#mono-on-embedded-devices">10 Mono on Embedded Devices</a></li>
+<li><a href="#developing-desktop-applications-with-moonlight">11 Developing Desktop applications with Moonlight</a></li>
+<li><a href="#gaia-ajax-widgets---the-alternative-to-ajax">12 Gaia Ajax Widgets - The alternative to Ajax</a></li>
+<li><a href="#meet-the-experts">13 Meet The Experts</a></li>
+<li><a href="#debugging-mono-applications-with-mdb">14 Debugging Mono Applications with MDB</a></li>
+<li><a href="#boo--a-lean-mean-dsl-machine">15 Boo – A lean mean DSL Machine</a></li>
+<li><a href="#monocecil">16 Mono.Cecil</a></li>
+<li><a href="#boxerp">17 Boxerp</a></li>
+<li><a href="#opensuse-build-service">18 openSUSE Build Service</a></li>
+<li><a href="#using-monoaddins">19 Using Mono.Addins</a></li>
 </ul></td>
 </tr>
 </tbody>

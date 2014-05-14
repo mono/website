@@ -15,16 +15,16 @@ Hall
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Hacking_Mono_for_fame_and_glory">1 Hacking Mono for fame and glory</a></li>
-<li><a href="#Mono_Hacker.27s_Hall_of_Fame">2 Mono Hacker's Hall of Fame</a>
+<li><a href="#hacking-mono-for-fame-and-glory">1 Hacking Mono for fame and glory</a></li>
+<li><a href="#mono-hackers-hall-of-fame">2 Mono Hacker's Hall of Fame</a>
 <ul>
-<li><a href="#John_Luke">2.1 John Luke</a></li>
-<li><a href="#Dan_Morgan">2.2 Dan Morgan</a></li>
-<li><a href="#Tim_Coleman">2.3 Tim Coleman</a></li>
-<li><a href="#Todd_Berman">2.4 Todd Berman</a></li>
-<li><a href="#Zoltan_Varga">2.5 Zoltan Varga</a></li>
-<li><a href="#Sergey_Chaban">2.6 Sergey Chaban</a></li>
-<li><a href="#Nick_Drochak">2.7 Nick Drochak</a></li>
+<li><a href="#john-luke">2.1 John Luke</a></li>
+<li><a href="#dan-morgan">2.2 Dan Morgan</a></li>
+<li><a href="#tim-coleman">2.3 Tim Coleman</a></li>
+<li><a href="#todd-berman">2.4 Todd Berman</a></li>
+<li><a href="#zoltan-varga">2.5 Zoltan Varga</a></li>
+<li><a href="#sergey-chaban">2.6 Sergey Chaban</a></li>
+<li><a href="#nick-drochak">2.7 Nick Drochak</a></li>
 </ul></li>
 </ul></td>
 </tr>

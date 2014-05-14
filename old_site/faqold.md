@@ -15,222 +15,222 @@ Faq.old
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Frequently_Asked_Questions">1 Frequently Asked Questions</a>
+<li><a href="#frequently-asked-questions">1 Frequently Asked Questions</a>
 <ul>
-<li><a href="#Basics">1.1 Basics</a>
+<li><a href="#basics">1.1 Basics</a>
 <ul>
-<li><a href="#What_is_Mono_exactly.3F">1.1.1 What is Mono exactly?</a></li>
-<li><a href="#What_is_the_difference_between_Mono_and_the_.NET_Initiative.3F">1.1.2 What is the difference between Mono and the .NET Initiative?</a></li>
-<li><a href="#What_technologies_are_included_in_Mono.3F">1.1.3 What technologies are included in Mono?</a></li>
-<li><a href="#Where_can_I_find_the_specification_for_these_technologies.3F">1.1.4 Where can I find the specification for these technologies?</a></li>
-<li><a href="#Will_you_implement_the_.NET_Framework_SDK_class_libraries.3F">1.1.5 Will you implement the .NET Framework SDK class libraries?</a></li>
-<li><a href="#Will_you_offer_an_ECMA-compliant_set_of_class_libraries.3F">1.1.6 Will you offer an ECMA-compliant set of class libraries?</a></li>
-<li><a href="#What_does_the_name_.22Mono.22_mean.3F">1.1.7 What does the name &quot;Mono&quot; mean?</a></li>
-<li><a href="#Does_Mono_work_today.3F">1.1.8 Does Mono work today?</a></li>
-<li><a href="#When_will_you_ship_Mono.3F">1.1.9 When will you ship Mono?</a></li>
-<li><a href="#How_can_I_contribute.3F">1.1.10 How can I contribute?</a></li>
-<li><a href="#Aren.27t_you_just_copying_someone_else.27s_work.3F">1.1.11 Aren't you just copying someone else's work?</a></li>
-<li><a href="#Miguel_said_once_that_Mono_was_being_implemented_in_COBOL._Is_that_true.3F">1.1.12 Miguel said once that Mono was being implemented in COBOL. Is that true?</a></li>
+<li><a href="#what-is-mono-exactly">1.1.1 What is Mono exactly?</a></li>
+<li><a href="#what-is-the-difference-between-mono-and-the-net-initiative">1.1.2 What is the difference between Mono and the .NET Initiative?</a></li>
+<li><a href="#what-technologies-are-included-in-mono">1.1.3 What technologies are included in Mono?</a></li>
+<li><a href="#where-can-i-find-the-specification-for-these-technologies">1.1.4 Where can I find the specification for these technologies?</a></li>
+<li><a href="#will-you-implement-the-net-framework-sdk-class-libraries">1.1.5 Will you implement the .NET Framework SDK class libraries?</a></li>
+<li><a href="#will-you-offer-an-ecma-compliant-set-of-class-libraries">1.1.6 Will you offer an ECMA-compliant set of class libraries?</a></li>
+<li><a href="#what-does-the-name-mono-mean">1.1.7 What does the name &quot;Mono&quot; mean?</a></li>
+<li><a href="#does-mono-work-today">1.1.8 Does Mono work today?</a></li>
+<li><a href="#when-will-you-ship-mono">1.1.9 When will you ship Mono?</a></li>
+<li><a href="#how-can-i-contribute">1.1.10 How can I contribute?</a></li>
+<li><a href="#arent-you-just-copying-someone-elses-work">1.1.11 Aren't you just copying someone else's work?</a></li>
+<li><a href="#miguel-said-once-that-mono-was-being-implemented-in-cobol-is-that-true">1.1.12 Miguel said once that Mono was being implemented in COBOL. Is that true?</a></li>
 </ul></li>
-<li><a href="#The_Novell_Role_in_the_Mono_Project">1.2 The Novell Role in the Mono Project</a>
+<li><a href="#the-novell-role-in-the-mono-project">1.2 The Novell Role in the Mono Project</a>
 <ul>
-<li><a href="#Why_is_Novell_working_on_.NET.3F">1.2.1 Why is Novell working on .NET?</a></li>
-<li><a href="#Will_Novell_be_able_to_take_on_a_project_of_this_size.3F">1.2.2 Will Novell be able to take on a project of this size?</a></li>
-<li><a href="#What_pieces_is_Novell_working_on.3F">1.2.3 What pieces is Novell working on?</a></li>
-<li><a href="#Will_Novell_offer_Mono_commercially.3F">1.2.4 Will Novell offer Mono commercially?</a></li>
-<li><a href="#Does_Novell_provide_consulting_services_around_Mono.3F">1.2.5 Does Novell provide consulting services around Mono?</a></li>
-<li><a href="#Will_you_wait_until_Mono_is_finished.3F">1.2.6 Will you wait until Mono is finished?</a></li>
+<li><a href="#why-is-novell-working-on-net">1.2.1 Why is Novell working on .NET?</a></li>
+<li><a href="#will-novell-be-able-to-take-on-a-project-of-this-size">1.2.2 Will Novell be able to take on a project of this size?</a></li>
+<li><a href="#what-pieces-is-novell-working-on">1.2.3 What pieces is Novell working on?</a></li>
+<li><a href="#will-novell-offer-mono-commercially">1.2.4 Will Novell offer Mono commercially?</a></li>
+<li><a href="#does-novell-provide-consulting-services-around-mono">1.2.5 Does Novell provide consulting services around Mono?</a></li>
+<li><a href="#will-you-wait-until-mono-is-finished">1.2.6 Will you wait until Mono is finished?</a></li>
 </ul></li>
-<li><a href="#Mono_and_GNOME">1.3 Mono and GNOME</a>
+<li><a href="#mono-and-gnome">1.3 Mono and GNOME</a>
 <ul>
-<li><a href="#How_is_Mono_related_to_GNOME.3F">1.3.1 How is Mono related to GNOME?</a></li>
-<li><a href="#Has_the_GNOME_Foundation_or_the_GNOME_team_adopted_Mono.3F">1.3.2 Has the GNOME Foundation or the GNOME team adopted Mono?</a></li>
-<li><a href="#Should_GNOME_programmers_switch_over_to_Mono_now.3F">1.3.3 Should GNOME programmers switch over to Mono now?</a></li>
-<li><a href="#Will_Mono_include_compatibility_with_Bonobo_components.3F_What_is_the_relationship_between_Mono_and_Bonobo.3F">1.3.4 Will Mono include compatibility with Bonobo components? What is the relationship between Mono and Bonobo?</a></li>
-<li><a href="#Does_Mono_depend_on_GNOME.3F">1.3.5 Does Mono depend on GNOME?</a></li>
-<li><a href="#But_will_I_be_able_to_build_GNOME_applications.3F">1.3.6 But will I be able to build GNOME applications?</a></li>
-<li><a href="#Do_you_have_C.23_bindings_for_GNOME.3F">1.3.7 Do you have C# bindings for GNOME?</a></li>
+<li><a href="#how-is-mono-related-to-gnome">1.3.1 How is Mono related to GNOME?</a></li>
+<li><a href="#has-the-gnome-foundation-or-the-gnome-team-adopted-mono">1.3.2 Has the GNOME Foundation or the GNOME team adopted Mono?</a></li>
+<li><a href="#should-gnome-programmers-switch-over-to-mono-now">1.3.3 Should GNOME programmers switch over to Mono now?</a></li>
+<li><a href="#will-mono-include-compatibility-with-bonobo-components-what-is-the-relationship-between-mono-and-bonobo">1.3.4 Will Mono include compatibility with Bonobo components? What is the relationship between Mono and Bonobo?</a></li>
+<li><a href="#does-mono-depend-on-gnome">1.3.5 Does Mono depend on GNOME?</a></li>
+<li><a href="#but-will-i-be-able-to-build-gnome-applications">1.3.6 But will I be able to build GNOME applications?</a></li>
+<li><a href="#do-you-have-c-bindings-for-gnome">1.3.7 Do you have C# bindings for GNOME?</a></li>
 </ul></li>
-<li><a href="#GUI_applications">1.4 GUI applications</a>
+<li><a href="#gui-applications">1.4 GUI applications</a>
 <ul>
-<li><a href="#Will_Mono_enable_GUI_applications_to_be_authored.3F">1.4.1 Will Mono enable GUI applications to be authored?</a></li>
-<li><a href="#What_is_the_difference_between_Gtk.23_and_System.Windows.Forms.3F">1.4.2 What is the difference between Gtk# and System.Windows.Forms?</a></li>
-<li><a href="#What_are_you_using_to_implement_Windows.Forms.3F">1.4.3 What are you using to implement Windows.Forms?</a></li>
-<li><a href="#Why_not_implement_System.Windows.Forms_on_top_of_Gtk.23_or_Qt.23.3F">1.4.4 Why not implement System.Windows.Forms on top of Gtk# or Qt#?</a></li>
-<li><a href="#Wine_applications_do_not_look_like_native_applications.2C_what_are_you_going_to_do_about_this.3F">1.4.5 Wine applications do not look like native applications, what are you going to do about this?</a></li>
-<li><a href="#Will_I_be_able_to_run_my_smart_clients_on_systems_powered_by_Mono.3F">1.4.6 Will I be able to run my smart clients on systems powered by Mono?</a></li>
-<li><a href="#Where_can_I_learn_more_about_Gtk.23.3F">1.4.7 Where can I learn more about Gtk#?</a></li>
-<li><a href="#What_can_I_do_with_Gtk.23.3F">1.4.8 What can I do with Gtk#?</a></li>
-<li><a href="#How_can_I_compile_my_HelloWorld.cs_which_uses_Gtk.23.3F">1.4.9 How can I compile my HelloWorld.cs which uses Gtk#?</a></li>
-<li><a href="#Is_there_any_way_how_to_connect_DataAdapter_to_some_Gtk.23_controls.3F">1.4.10 Is there any way how to connect DataAdapter to some Gtk# controls?</a></li>
-<li><a href="#Do_you_have_an_estimate_for_when_Windows.Forms_will_be_released.3F">1.4.11 Do you have an estimate for when Windows.Forms will be released?</a></li>
-<li><a href="#Do_you_have_a_comparission_chart_about_the_various_toolkit_offerings.3F">1.4.12 Do you have a comparission chart about the various toolkit offerings?</a></li>
+<li><a href="#will-mono-enable-gui-applications-to-be-authored">1.4.1 Will Mono enable GUI applications to be authored?</a></li>
+<li><a href="#what-is-the-difference-between-gtk-and-systemwindowsforms">1.4.2 What is the difference between Gtk# and System.Windows.Forms?</a></li>
+<li><a href="#what-are-you-using-to-implement-windowsforms">1.4.3 What are you using to implement Windows.Forms?</a></li>
+<li><a href="#why-not-implement-systemwindowsforms-on-top-of-gtk-or-qt">1.4.4 Why not implement System.Windows.Forms on top of Gtk# or Qt#?</a></li>
+<li><a href="#wine-applications-do-not-look-like-native-applications-what-are-you-going-to-do-about-this">1.4.5 Wine applications do not look like native applications, what are you going to do about this?</a></li>
+<li><a href="#will-i-be-able-to-run-my-smart-clients-on-systems-powered-by-mono">1.4.6 Will I be able to run my smart clients on systems powered by Mono?</a></li>
+<li><a href="#where-can-i-learn-more-about-gtk">1.4.7 Where can I learn more about Gtk#?</a></li>
+<li><a href="#what-can-i-do-with-gtk">1.4.8 What can I do with Gtk#?</a></li>
+<li><a href="#how-can-i-compile-my-helloworldcs-which-uses-gtk">1.4.9 How can I compile my HelloWorld.cs which uses Gtk#?</a></li>
+<li><a href="#is-there-any-way-how-to-connect-dataadapter-to-some-gtk-controls">1.4.10 Is there any way how to connect DataAdapter to some Gtk# controls?</a></li>
+<li><a href="#do-you-have-an-estimate-for-when-windowsforms-will-be-released">1.4.11 Do you have an estimate for when Windows.Forms will be released?</a></li>
+<li><a href="#do-you-have-a-comparission-chart-about-the-various-toolkit-offerings">1.4.12 Do you have a comparission chart about the various toolkit offerings?</a></li>
 </ul></li>
-<li><a href="#Mono_and_Microsoft">1.5 Mono and Microsoft</a>
+<li><a href="#mono-and-microsoft">1.5 Mono and Microsoft</a>
 <ul>
-<li><a href="#Is_Microsoft_helping_Ximian_with_this_project.3F">1.5.1 Is Microsoft helping Ximian with this project?</a></li>
-<li><a href="#Are_Microsoft_or_Corel_paying_Ximian_to_do_this.3F">1.5.2 Are Microsoft or Corel paying Ximian to do this?</a></li>
-<li><a href="#Do_you_fear_that_Microsoft_will_change_the_spec_and_render_Mono_useless.3F">1.5.3 Do you fear that Microsoft will change the spec and render Mono useless?</a></li>
-<li><a href="#Are_you_writing_Mono_from_the_ECMA_specs.3F">1.5.4 Are you writing Mono from the ECMA specs?</a></li>
-<li><a href="#If_my_applications_use_Mono.2C_will_I_have_to_pay_a_service_fee.3F">1.5.5 If my applications use Mono, will I have to pay a service fee?</a></li>
-<li><a href="#Is_the_Mono_Project_is_related_to_the_Microsoft_Hailstorm_effort.3F_Is_Ximian_endorsing_Hailstorm.3F">1.5.6 Is the Mono Project is related to the Microsoft Hailstorm effort? Is Ximian endorsing Hailstorm?</a></li>
-<li><a href="#Will_Mono_or_.NET_applications_depend_on_Microsoft_Passport.3F">1.5.7 Will Mono or .NET applications depend on Microsoft Passport?</a></li>
-<li><a href="#If_Microsoft_will_release_a_port_of_their_.NET_platform_under_the_.27Shared_Source.27_license.2C_why_should_I_bother_with_anything_else.3F">1.5.8 If Microsoft will release a port of their .NET platform under the 'Shared Source' license, why should I bother with anything else?</a></li>
-<li><a href="#Is_Mono_a_free_implementation_of_Passport.3F">1.5.9 Is Mono a free implementation of Passport?</a></li>
-<li><a href="#Will_the_System.Web.Security.PassportIdentity_class_mean_that_my_software_will_depend_on_Passport.3F">1.5.10 Will the System.Web.Security.PassportIdentity class mean that my software will depend on Passport?</a></li>
-<li><a href="#Will_Mono_running_on_Linux_make_Passport_available_for_Linux.3F">1.5.11 Will Mono running on Linux make Passport available for Linux?</a></li>
-<li><a href="#Will_Mono_allow_me_to_run_Microsoft_Office_on_Linux.3F">1.5.12 Will Mono allow me to run Microsoft Office on Linux?</a></li>
-<li><a href="#Can_mono_run_the_WebMatrix.3F">1.5.13 Can mono run the WebMatrix?</a></li>
-<li><a href="#Does_mono_have_something_like_Passport.3F_Will_mono_have_a_server_side_Passport.2FSimilar_framework_for_XSP_as_well_as_client_classes.3F">1.5.14 Does mono have something like Passport? Will mono have a server side Passport/Similar framework for XSP as well as client classes?</a></li>
+<li><a href="#is-microsoft-helping-ximian-with-this-project">1.5.1 Is Microsoft helping Ximian with this project?</a></li>
+<li><a href="#are-microsoft-or-corel-paying-ximian-to-do-this">1.5.2 Are Microsoft or Corel paying Ximian to do this?</a></li>
+<li><a href="#do-you-fear-that-microsoft-will-change-the-spec-and-render-mono-useless">1.5.3 Do you fear that Microsoft will change the spec and render Mono useless?</a></li>
+<li><a href="#are-you-writing-mono-from-the-ecma-specs">1.5.4 Are you writing Mono from the ECMA specs?</a></li>
+<li><a href="#if-my-applications-use-mono-will-i-have-to-pay-a-service-fee">1.5.5 If my applications use Mono, will I have to pay a service fee?</a></li>
+<li><a href="#is-the-mono-project-is-related-to-the-microsoft-hailstorm-effort-is-ximian-endorsing-hailstorm">1.5.6 Is the Mono Project is related to the Microsoft Hailstorm effort? Is Ximian endorsing Hailstorm?</a></li>
+<li><a href="#will-mono-or-net-applications-depend-on-microsoft-passport">1.5.7 Will Mono or .NET applications depend on Microsoft Passport?</a></li>
+<li><a href="#if-microsoft-will-release-a-port-of-their-net-platform-under-the-shared-source-license-why-should-i-bother-with-anything-else">1.5.8 If Microsoft will release a port of their .NET platform under the 'Shared Source' license, why should I bother with anything else?</a></li>
+<li><a href="#is-mono-a-free-implementation-of-passport">1.5.9 Is Mono a free implementation of Passport?</a></li>
+<li><a href="#will-the-systemwebsecuritypassportidentity-class-mean-that-my-software-will-depend-on-passport">1.5.10 Will the System.Web.Security.PassportIdentity class mean that my software will depend on Passport?</a></li>
+<li><a href="#will-mono-running-on-linux-make-passport-available-for-linux">1.5.11 Will Mono running on Linux make Passport available for Linux?</a></li>
+<li><a href="#will-mono-allow-me-to-run-microsoft-office-on-linux">1.5.12 Will Mono allow me to run Microsoft Office on Linux?</a></li>
+<li><a href="#can-mono-run-the-webmatrix">1.5.13 Can mono run the WebMatrix?</a></li>
+<li><a href="#does-mono-have-something-like-passport-will-mono-have-a-server-side-passportsimilar-framework-for-xsp-as-well-as-client-classes">1.5.14 Does mono have something like Passport? Will mono have a server side Passport/Similar framework for XSP as well as client classes?</a></li>
 </ul></li>
-<li><a href="#Mono_Platforms">1.6 Mono Platforms</a>
+<li><a href="#mono-platforms">1.6 Mono Platforms</a>
 <ul>
-<li><a href="#What_operating_systems_does_Mono_run_on.3F">1.6.1 What operating systems does Mono run on?</a></li>
-<li><a href="#Can_I_run_Mono_applications_without_using_.27mono_program.exe.27.3F">1.6.2 Can I run Mono applications without using 'mono program.exe'?</a></li>
-<li><a href="#What_architectures_does_Mono_support.3F">1.6.3 What architectures does Mono support?</a></li>
-<li><a href="#Can_Mono_run_on_Windows_9x.2C_or_ME_editions.3F">1.6.4 Can Mono run on Windows 9x, or ME editions?</a></li>
-<li><a href="#Why_support_Windows.2C_when_you_can_run_the_real_thing.3F">1.6.5 Why support Windows, when you can run the real thing?</a></li>
+<li><a href="#what-operating-systems-does-mono-run-on">1.6.1 What operating systems does Mono run on?</a></li>
+<li><a href="#can-i-run-mono-applications-without-using-mono-programexe">1.6.2 Can I run Mono applications without using 'mono program.exe'?</a></li>
+<li><a href="#what-architectures-does-mono-support">1.6.3 What architectures does Mono support?</a></li>
+<li><a href="#can-mono-run-on-windows-9x-or-me-editions">1.6.4 Can Mono run on Windows 9x, or ME editions?</a></li>
+<li><a href="#why-support-windows-when-you-can-run-the-real-thing">1.6.5 Why support Windows, when you can run the real thing?</a></li>
 </ul></li>
-<li><a href="#Compatibility">1.7 Compatibility</a>
+<li><a href="#compatibility">1.7 Compatibility</a>
 <ul>
-<li><a href="#Can_Mono_run_applications_developed_with_the_Microsoft.NET_framework.3F">1.7.1 Can Mono run applications developed with the Microsoft.NET framework?</a></li>
-<li><a href="#Will_missing_API_entry_points_be_implemented.3F">1.7.2 Will missing API entry points be implemented?</a></li>
-<li><a href="#If_the_behavior_of_an_API_call_is_different.2C_will_you_fix_it.3F">1.7.3 If the behavior of an API call is different, will you fix it?</a></li>
-<li><a href="#Can_I_develop_my_applications_on_Windows.2C_and_deploy_on_a_supported_Mono_platform_.28like_Linux.29.3F">1.7.4 Can I develop my applications on Windows, and deploy on a supported Mono platform (like Linux)?</a></li>
-<li><a href="#Will_applications_run_out_the_box_with_Mono.3F">1.7.5 Will applications run out the box with Mono?</a></li>
-<li><a href="#What_is_a_100.25_.NET_application.3F">1.7.6 What is a 100% .NET application?</a></li>
-<li><a href="#Can_I_execute_my_Visual_Studio_.NET_program_.28Visual_Basic_.NET.2C_Visual_C.23.2C_Managed_Extensions_for_C.2B.2B.2C_etc..29_under_Mono.3F">1.7.7 Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C#, Managed Extensions for C++, etc.) under Mono?</a></li>
+<li><a href="#can-mono-run-applications-developed-with-the-microsoftnet-framework">1.7.1 Can Mono run applications developed with the Microsoft.NET framework?</a></li>
+<li><a href="#will-missing-api-entry-points-be-implemented">1.7.2 Will missing API entry points be implemented?</a></li>
+<li><a href="#if-the-behavior-of-an-api-call-is-different-will-you-fix-it">1.7.3 If the behavior of an API call is different, will you fix it?</a></li>
+<li><a href="#can-i-develop-my-applications-on-windows-and-deploy-on-a-supported-mono-platform-like-linux">1.7.4 Can I develop my applications on Windows, and deploy on a supported Mono platform (like Linux)?</a></li>
+<li><a href="#will-applications-run-out-the-box-with-mono">1.7.5 Will applications run out the box with Mono?</a></li>
+<li><a href="#what-is-a-100-net-application">1.7.6 What is a 100% .NET application?</a></li>
+<li><a href="#can-i-execute-my-visual-studio-net-program-visual-basic-net-visual-c-managed-extensions-for-c-etc-under-mono">1.7.7 Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C#, Managed Extensions for C++, etc.) under Mono?</a></li>
 </ul></li>
-<li><a href="#Mono_and_Portable.NET">1.8 Mono and Portable.NET</a>
+<li><a href="#mono-and-portablenet">1.8 Mono and Portable.NET</a>
 <ul>
-<li><a href="#What_are_the_differences_between_Mono_and_Portable.NET.3F">1.8.1 What are the differences between Mono and Portable.NET?</a></li>
-<li><a href="#I_hear_Mono_keeps_changing_the_P.2FInvoke_API.2C_why.3F">1.8.2 I hear Mono keeps changing the P/Invoke API, why?</a></li>
+<li><a href="#what-are-the-differences-between-mono-and-portablenet">1.8.1 What are the differences between Mono and Portable.NET?</a></li>
+<li><a href="#i-hear-mono-keeps-changing-the-pinvoke-api-why">1.8.2 I hear Mono keeps changing the P/Invoke API, why?</a></li>
 </ul></li>
-<li><a href="#Web_Services">1.9 Web Services</a>
+<li><a href="#web-services">1.9 Web Services</a>
 <ul>
-<li><a href="#How_is_Mono_related_to_Web_Services.3F">1.9.1 How is Mono related to Web Services?</a></li>
-<li><a href="#Can_I_author_Web_Services_with_Mono.3F">1.9.2 Can I author Web Services with Mono?</a></li>
-<li><a href="#If_Mono_implements_the_SDK_classes.2C_will_I_be_able_to_write_and_execute_.NET_Web_Services_with_it.3F">1.9.3 If Mono implements the SDK classes, will I be able to write and execute .NET Web Services with it?</a></li>
-<li><a href="#What_about_Soup.3F_Can_I_use_Soup_without_Mono.3F">1.9.4 What about Soup? Can I use Soup without Mono?</a></li>
-<li><a href="#Can_I_use_CORBA.3F">1.9.5 Can I use CORBA?</a></li>
-<li><a href="#Can_I_serialize_my_objects_to_other_things_other_than_XML.3F">1.9.6 Can I serialize my objects to other things other than XML?</a></li>
-<li><a href="#Will_Mono_use_ORBit.3F">1.9.7 Will Mono use ORBit?</a></li>
+<li><a href="#how-is-mono-related-to-web-services">1.9.1 How is Mono related to Web Services?</a></li>
+<li><a href="#can-i-author-web-services-with-mono">1.9.2 Can I author Web Services with Mono?</a></li>
+<li><a href="#if-mono-implements-the-sdk-classes-will-i-be-able-to-write-and-execute-net-web-services-with-it">1.9.3 If Mono implements the SDK classes, will I be able to write and execute .NET Web Services with it?</a></li>
+<li><a href="#what-about-soup-can-i-use-soup-without-mono">1.9.4 What about Soup? Can I use Soup without Mono?</a></li>
+<li><a href="#can-i-use-corba">1.9.5 Can I use CORBA?</a></li>
+<li><a href="#can-i-serialize-my-objects-to-other-things-other-than-xml">1.9.6 Can I serialize my objects to other things other than XML?</a></li>
+<li><a href="#will-mono-use-orbit">1.9.7 Will Mono use ORBit?</a></li>
 </ul></li>
-<li><a href="#MonoDoc">1.10 MonoDoc</a>
+<li><a href="#monodoc">1.10 MonoDoc</a>
 <ul>
-<li><a href="#What_is_MonoDoc.3F">1.10.1 What is MonoDoc?</a></li>
+<li><a href="#what-is-monodoc">1.10.1 What is MonoDoc?</a></li>
 </ul></li>
-<li><a href="#Development_Tools_and_Issues">1.11 Development Tools and Issues</a>
+<li><a href="#development-tools-and-issues">1.11 Development Tools and Issues</a>
 <ul>
-<li><a href="#Will_it_be_possible_to_use_the_CLI_features_without_using_byte_codes_or_the_JIT.3F">1.11.1 Will it be possible to use the CLI features without using byte codes or the JIT?</a></li>
-<li><a href="#Will_you_have_new_development_tools.3F">1.11.2 Will you have new development tools?</a></li>
-<li><a href="#What_kind_of_rules_make_the_Common_Intermediate_Language_useful_for_JITers.3F">1.11.3 What kind of rules make the Common Intermediate Language useful for JITers?</a></li>
-<li><a href="#Is_it_true_that_the_CIL_is_ideal_for_JITing_and_not_efficient_for_interpreters.3F">1.11.4 Is it true that the CIL is ideal for JITing and not efficient for interpreters?</a></li>
-<li><a href="#Isn.27t_it_a_little_bit_confusing_to_have_the_name_of_.22XSP.22_.28the_same_as_in_the_Apache_Project.29_for_the_ASP.NET_support_in_Mono.3F">1.11.5 Isn't it a little bit confusing to have the name of &quot;XSP&quot; (the same as in the Apache Project) for the ASP.NET support in Mono?</a></li>
-<li><a href="#Is_there_any_plan_to_develop_an_aspx_server_for_Mono.3F">1.11.6 Is there any plan to develop an aspx server for Mono?</a></li>
-<li><a href="#Is_there_any_way_I_can_develop_the_class_libraries_using_Linux_yet.3F">1.11.7 Is there any way I can develop the class libraries using Linux yet?</a></li>
-<li><a href="#Is_there_any_way_I_can_install_a_known_working_copy_of_mono_in_.2Fusr.2C_and_an_experimental_copy_somewhere_else.2C_and_have_both_copies_use_their_own_libraries.3F">1.11.8 Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?</a></li>
-<li><a href="#How_should_I_write_tests_or_a_tests_suite.3F">1.11.9 How should I write tests or a tests suite?</a></li>
-<li><a href="#Would_it_be_too_terrible_to_have_another_corlib_signed_as_mscorlib.3F">1.11.10 Would it be too terrible to have another corlib signed as mscorlib?</a></li>
-<li><a href="#Is_it_possible_to_build_a_C.23_file_to_some_sort_of_intermediate_format_which_can_linked_into_a_final_module.2C_like_the_traditional_.c_-.3E_.o_-.3E_.so_path.3F">1.11.11 Is it possible to build a C# file to some sort of intermediate format which can linked into a final module, like the traditional .c -&gt; .o -&gt; .so path?</a></li>
-<li><a href="#Is_there_any_plans_for_implementing_remoting_in_the_near_future.3F">1.11.12 Is there any plans for implementing remoting in the near future?</a></li>
-<li><a href="#My_C_code_uses_the_stdcall_which_is_not_availble_on_Linux.2C_how_can_I_make_the_code_portable_Windows.2FUNIX_across_platforms.3F">1.11.13 My C code uses the __stdcall which is not availble on Linux, how can I make the code portable Windows/UNIX across platforms?</a></li>
-<li><a href="#I_want_to_be_able_to_execute_Mono_binaries.2C_without_having_to_use_the_.22mono.22_command._How_can_I_do_this.3F">1.11.14 I want to be able to execute Mono binaries, without having to use the &quot;mono&quot; command. How can I do this?</a></li>
-<li><a href="#I_see_funny_characters_when_I_run_programs.2C_what_is_the_problem.3F">1.11.15 I see funny characters when I run programs, what is the problem?</a></li>
+<li><a href="#will-it-be-possible-to-use-the-cli-features-without-using-byte-codes-or-the-jit">1.11.1 Will it be possible to use the CLI features without using byte codes or the JIT?</a></li>
+<li><a href="#will-you-have-new-development-tools">1.11.2 Will you have new development tools?</a></li>
+<li><a href="#what-kind-of-rules-make-the-common-intermediate-language-useful-for-jiters">1.11.3 What kind of rules make the Common Intermediate Language useful for JITers?</a></li>
+<li><a href="#is-it-true-that-the-cil-is-ideal-for-jiting-and-not-efficient-for-interpreters">1.11.4 Is it true that the CIL is ideal for JITing and not efficient for interpreters?</a></li>
+<li><a href="#isnt-it-a-little-bit-confusing-to-have-the-name-of-xsp-the-same-as-in-the-apache-project-for-the-aspnet-support-in-mono">1.11.5 Isn't it a little bit confusing to have the name of &quot;XSP&quot; (the same as in the Apache Project) for the ASP.NET support in Mono?</a></li>
+<li><a href="#is-there-any-plan-to-develop-an-aspx-server-for-mono">1.11.6 Is there any plan to develop an aspx server for Mono?</a></li>
+<li><a href="#is-there-any-way-i-can-develop-the-class-libraries-using-linux-yet">1.11.7 Is there any way I can develop the class libraries using Linux yet?</a></li>
+<li><a href="#is-there-any-way-i-can-install-a-known-working-copy-of-mono-in-usr-and-an-experimental-copy-somewhere-else-and-have-both-copies-use-their-own-libraries">1.11.8 Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?</a></li>
+<li><a href="#how-should-i-write-tests-or-a-tests-suite">1.11.9 How should I write tests or a tests suite?</a></li>
+<li><a href="#would-it-be-too-terrible-to-have-another-corlib-signed-as-mscorlib">1.11.10 Would it be too terrible to have another corlib signed as mscorlib?</a></li>
+<li><a href="#is-it-possible-to-build-a-c-file-to-some-sort-of-intermediate-format-which-can-linked-into-a-final-module-like-the-traditional-c---o---so-path">1.11.11 Is it possible to build a C# file to some sort of intermediate format which can linked into a final module, like the traditional .c -&gt; .o -&gt; .so path?</a></li>
+<li><a href="#is-there-any-plans-for-implementing-remoting-in-the-near-future">1.11.12 Is there any plans for implementing remoting in the near future?</a></li>
+<li><a href="#my-c-code-uses-the-stdcall-which-is-not-availble-on-linux-how-can-i-make-the-code-portable-windowsunix-across-platforms">1.11.13 My C code uses the __stdcall which is not availble on Linux, how can I make the code portable Windows/UNIX across platforms?</a></li>
+<li><a href="#i-want-to-be-able-to-execute-mono-binaries-without-having-to-use-the-mono-command-how-can-i-do-this">1.11.14 I want to be able to execute Mono binaries, without having to use the &quot;mono&quot; command. How can I do this?</a></li>
+<li><a href="#i-see-funny-characters-when-i-run-programs-what-is-the-problem">1.11.15 I see funny characters when I run programs, what is the problem?</a></li>
 </ul></li>
-<li><a href="#Mono_and_ASP.NET">1.12 Mono and ASP.NET</a>
+<li><a href="#mono-and-aspnet">1.12 Mono and ASP.NET</a>
 <ul>
-<li><a href="#Does_Mono_support_ASP.NET.3F">1.12.1 Does Mono support ASP.NET?</a></li>
-<li><a href="#Do_I_need_install_cygwin_to_work_on_ASP.NET_in_mono_or_Linux_is_enough_since_it_is_self_host_right_now.3F">1.12.2 Do I need install cygwin to work on ASP.NET in mono or Linux is enough since it is self host right now?</a></li>
-<li><a href="#How_can_I_run_ASP.NET-based_applications_with_Mono.3F">1.12.3 How can I run ASP.NET-based applications with Mono?</a></li>
-<li><a href="#Any_plan_to_make_ASP.NET_in_mono_works_with_Apache_in_Linux.3F">1.12.4 Any plan to make ASP.NET in mono works with Apache in Linux?</a></li>
-<li><a href="#Will_you_support_Apache_1.3F">1.12.5 Will you support Apache 1?</a></li>
-<li><a href="#Can_I_run_Apache_1_and_Apache_2_on_the_same_machine.3F">1.12.6 Can I run Apache 1 and Apache 2 on the same machine?</a></li>
+<li><a href="#does-mono-support-aspnet">1.12.1 Does Mono support ASP.NET?</a></li>
+<li><a href="#do-i-need-install-cygwin-to-work-on-aspnet-in-mono-or-linux-is-enough-since-it-is-self-host-right-now">1.12.2 Do I need install cygwin to work on ASP.NET in mono or Linux is enough since it is self host right now?</a></li>
+<li><a href="#how-can-i-run-aspnet-based-applications-with-mono">1.12.3 How can I run ASP.NET-based applications with Mono?</a></li>
+<li><a href="#any-plan-to-make-aspnet-in-mono-works-with-apache-in-linux">1.12.4 Any plan to make ASP.NET in mono works with Apache in Linux?</a></li>
+<li><a href="#will-you-support-apache-1">1.12.5 Will you support Apache 1?</a></li>
+<li><a href="#can-i-run-apache-1-and-apache-2-on-the-same-machine">1.12.6 Can I run Apache 1 and Apache 2 on the same machine?</a></li>
 </ul></li>
-<li><a href="#Mono_and_ADO.NET">1.13 Mono and ADO.NET</a>
+<li><a href="#mono-and-adonet">1.13 Mono and ADO.NET</a>
 <ul>
-<li><a href="#What_is_the_status_of_ADO.NET_support.3F._Could_I_start_migrating_applications_from_MS.NET_to_Mono.3F">1.13.1 What is the status of ADO.NET support?. Could I start migrating applications from MS.NET to Mono?</a></li>
-<li><a href="#In_developing_the_data_architecture_for_the_application_are_there_and_objects_I_should_stay_away_from_in_order_to_insure_the_smoothest_possible_transition_.28minimum_code_rewrite.29_to_Mono.27s_ADO.NET_implementation.3F">1.13.2 In developing the data architecture for the application are there and objects I should stay away from in order to insure the smoothest possible transition (minimum code rewrite) to Mono's ADO.NET implementation?</a></li>
+<li><a href="#what-is-the-status-of-adonet-support-could-i-start-migrating-applications-from-msnet-to-mono">1.13.1 What is the status of ADO.NET support?. Could I start migrating applications from MS.NET to Mono?</a></li>
+<li><a href="#in-developing-the-data-architecture-for-the-application-are-there-and-objects-i-should-stay-away-from-in-order-to-insure-the-smoothest-possible-transition-minimum-code-rewrite-to-monos-adonet-implementation">1.13.2 In developing the data architecture for the application are there and objects I should stay away from in order to insure the smoothest possible transition (minimum code rewrite) to Mono's ADO.NET implementation?</a></li>
 </ul></li>
-<li><a href="#Mono_and_Java">1.14 Mono and Java</a>
+<li><a href="#mono-and-java">1.14 Mono and Java</a>
 <ul>
-<li><a href="#Why_don.27t_you_use_Java.3F">1.14.1 Why don't you use Java?</a></li>
-<li><a href="#Could_Java_target_the_CLI.3F">1.14.2 Could Java target the CLI?</a></li>
-<li><a href="#Is_it_possible_to_write_a_JVM_byte_code_to_CIL_converter.3F">1.14.3 Is it possible to write a JVM byte code to CIL converter?</a></li>
-<li><a href="#Could_mono_become_a_hybrid_CIL.2Fjava_platform.3F">1.14.4 Could mono become a hybrid CIL/java platform?</a></li>
-<li><a href="#Do_you_plan_to_implement_a_Javascript_compiler.3F">1.14.5 Do you plan to implement a Javascript compiler?</a></li>
-<li><a href="#Can_Mono_or_.NET_share_system_classes_.28loaded_from_mscore.dll_and_other_libs.29_or_will_it_behave_like_Sun.27s_Java_VM.3F">1.14.6 Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?</a></li>
+<li><a href="#why-dont-you-use-java">1.14.1 Why don't you use Java?</a></li>
+<li><a href="#could-java-target-the-cli">1.14.2 Could Java target the CLI?</a></li>
+<li><a href="#is-it-possible-to-write-a-jvm-byte-code-to-cil-converter">1.14.3 Is it possible to write a JVM byte code to CIL converter?</a></li>
+<li><a href="#could-mono-become-a-hybrid-ciljava-platform">1.14.4 Could mono become a hybrid CIL/java platform?</a></li>
+<li><a href="#do-you-plan-to-implement-a-javascript-compiler">1.14.5 Do you plan to implement a Javascript compiler?</a></li>
+<li><a href="#can-mono-or-net-share-system-classes-loaded-from-mscoredll-and-other-libs-or-will-it-behave-like-suns-java-vm">1.14.6 Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?</a></li>
 </ul></li>
-<li><a href="#Extending_Mono">1.15 Extending Mono</a>
+<li><a href="#extending-mono">1.15 Extending Mono</a>
 <ul>
-<li><a href="#Would_you_allow_other_classes_other_than_those_in_the_specification.3F">1.15.1 Would you allow other classes other than those in the specification?</a></li>
-<li><a href="#Do_you_plan_to_Embrace_and_Extend_.NET.3F">1.15.2 Do you plan to Embrace and Extend .NET?</a></li>
-<li><a href="#Is_there_any_way_I_can_develop_the_class_libraries_using_Linux_yet.3F_2">1.15.3 Is there any way I can develop the class libraries using Linux yet?</a></li>
-<li><a href="#Is_there_any_way_I_can_install_a_known_working_copy_of_mono_in_.2Fusr.2C_and_an_experimental_copy_somewhere_else.2C_and_have_both_copies_use_their_own_libraries.3F_2">1.15.4 Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?</a></li>
+<li><a href="#would-you-allow-other-classes-other-than-those-in-the-specification">1.15.1 Would you allow other classes other than those in the specification?</a></li>
+<li><a href="#do-you-plan-to-embrace-and-extend-net">1.15.2 Do you plan to Embrace and Extend .NET?</a></li>
+<li><a href="#is-there-any-way-i-can-develop-the-class-libraries-using-linux-yet_2">1.15.3 Is there any way I can develop the class libraries using Linux yet?</a></li>
+<li><a href="#is-there-any-way-i-can-install-a-known-working-copy-of-mono-in-usr-and-an-experimental-copy-somewhere-else-and-have-both-copies-use-their-own-libraries_2">1.15.4 Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?</a></li>
 </ul></li>
-<li><a href="#Portability">1.16 Portability</a>
+<li><a href="#portability">1.16 Portability</a>
 <ul>
-<li><a href="#Will_Mono_only_work_on_Linux.3F">1.16.1 Will Mono only work on Linux?</a></li>
-<li><a href="#What_about_Mono_on_non_Linux-based_systems.3F">1.16.2 What about Mono on non Linux-based systems?</a></li>
-<li><a href="#Does_Mono_run_on_Windows.3F">1.16.3 Does Mono run on Windows?</a></li>
-<li><a href="#Does_Mono_run_on_Linux.3F">1.16.4 Does Mono run on Linux?</a></li>
-<li><a href="#Will_I_require_Cygwin_to_run_mono.3F">1.16.5 Will I require Cygwin to run mono?</a></li>
-<li><a href="#Will_Mono_depend_on_GNOME.3F">1.16.6 Will Mono depend on GNOME?</a></li>
-<li><a href="#Do_you_plan_to_port_Rhino_to_C.23.3F">1.16.7 Do you plan to port Rhino to C#?</a></li>
-<li><a href="#Has_anyone_succeeded_in_building_a_Mac_version_of_the_C.23_environment._If_so_can_you_explain_how.3F">1.16.8 Has anyone succeeded in building a Mac version of the C# environment. If so can you explain how?</a></li>
+<li><a href="#will-mono-only-work-on-linux">1.16.1 Will Mono only work on Linux?</a></li>
+<li><a href="#what-about-mono-on-non-linux-based-systems">1.16.2 What about Mono on non Linux-based systems?</a></li>
+<li><a href="#does-mono-run-on-windows">1.16.3 Does Mono run on Windows?</a></li>
+<li><a href="#does-mono-run-on-linux">1.16.4 Does Mono run on Linux?</a></li>
+<li><a href="#will-i-require-cygwin-to-run-mono">1.16.5 Will I require Cygwin to run mono?</a></li>
+<li><a href="#will-mono-depend-on-gnome">1.16.6 Will Mono depend on GNOME?</a></li>
+<li><a href="#do-you-plan-to-port-rhino-to-c">1.16.7 Do you plan to port Rhino to C#?</a></li>
+<li><a href="#has-anyone-succeeded-in-building-a-mac-version-of-the-c-environment-if-so-can-you-explain-how">1.16.8 Has anyone succeeded in building a Mac version of the C# environment. If so can you explain how?</a></li>
 </ul></li>
-<li><a href="#Reusing_Existing_Code">1.17 Reusing Existing Code</a>
+<li><a href="#reusing-existing-code">1.17 Reusing Existing Code</a>
 <ul>
-<li><a href="#What_projects_will_you_reuse_or_build_upon.3F">1.17.1 What projects will you reuse or build upon?</a></li>
-<li><a href="#Will_I_be_able_to_use_Microsoft_SQL_Server_2000_or_will_I_need_to_switch_to_a_specific_Open_Source_Database._Will_I_need_to_recode.3F">1.17.2 Will I be able to use Microsoft SQL Server 2000 or will I need to switch to a specific Open Source Database. Will I need to recode?</a></li>
-<li><a href="#What_do_I_need_to_watch_out_for_when_programming_in_VB.NET_so_that_I.27m_sure_to_be_able_to_run_those_apps_on_Linux.3F">1.17.3 What do I need to watch out for when programming in VB.NET so that I'm sure to be able to run those apps on Linux?</a></li>
-<li><a href="#Will_built-in_reporting_be_supported_for_crystal_reports.3F">1.17.4 Will built-in reporting be supported for crystal reports?</a></li>
-<li><a href="#Who_about_writing_to_the_registry.3F_As_I_understand_it.2C_Linux_does_not_have_a_counterpart_to_the_registry._Should_I_avoid_relying_on_that_feature.3F">1.17.5 Who about writing to the registry? As I understand it, Linux does not have a counterpart to the registry. Should I avoid relying on that feature?</a></li>
-<li><a href="#System.Data.SqlClient_with_FreeTDS.2C_will_you_port_parts_of_these_to_C.23_and_use_them.3F">1.17.6 System.Data.SqlClient with FreeTDS, will you port parts of these to C# and use them?</a></li>
+<li><a href="#what-projects-will-you-reuse-or-build-upon">1.17.1 What projects will you reuse or build upon?</a></li>
+<li><a href="#will-i-be-able-to-use-microsoft-sql-server-2000-or-will-i-need-to-switch-to-a-specific-open-source-database-will-i-need-to-recode">1.17.2 Will I be able to use Microsoft SQL Server 2000 or will I need to switch to a specific Open Source Database. Will I need to recode?</a></li>
+<li><a href="#what-do-i-need-to-watch-out-for-when-programming-in-vbnet-so-that-im-sure-to-be-able-to-run-those-apps-on-linux">1.17.3 What do I need to watch out for when programming in VB.NET so that I'm sure to be able to run those apps on Linux?</a></li>
+<li><a href="#will-built-in-reporting-be-supported-for-crystal-reports">1.17.4 Will built-in reporting be supported for crystal reports?</a></li>
+<li><a href="#who-about-writing-to-the-registry-as-i-understand-it-linux-does-not-have-a-counterpart-to-the-registry-should-i-avoid-relying-on-that-feature">1.17.5 Who about writing to the registry? As I understand it, Linux does not have a counterpart to the registry. Should I avoid relying on that feature?</a></li>
+<li><a href="#systemdatasqlclient-with-freetds-will-you-port-parts-of-these-to-c-and-use-them">1.17.6 System.Data.SqlClient with FreeTDS, will you port parts of these to C# and use them?</a></li>
 </ul></li>
-<li><a href="#Mono_and_GCC">1.18 Mono and GCC</a>
+<li><a href="#mono-and-gcc">1.18 Mono and GCC</a>
 <ul>
-<li><a href="#Are_you_working_on_a_GCC_front-end_to_C.23.3F_A_GCC_back-end_that_will_generate_CIL_images.3F">1.18.1 Are you working on a GCC front-end to C#? A GCC back-end that will generate CIL images?</a></li>
-<li><a href="#What_about_making_a_front-end_to_GCC_that_takes_CIL_images_and_generates_native_code.3F">1.18.2 What about making a front-end to GCC that takes CIL images and generates native code?</a></li>
-<li><a href="#But_would_this_work_around_the_GPL_in_the_GCC_compiler_and_allow_people_to_work_on_non-free_front-ends.3F">1.18.3 But would this work around the GPL in the GCC compiler and allow people to work on non-free front-ends?</a></li>
+<li><a href="#are-you-working-on-a-gcc-front-end-to-c-a-gcc-back-end-that-will-generate-cil-images">1.18.1 Are you working on a GCC front-end to C#? A GCC back-end that will generate CIL images?</a></li>
+<li><a href="#what-about-making-a-front-end-to-gcc-that-takes-cil-images-and-generates-native-code">1.18.2 What about making a front-end to GCC that takes CIL images and generates native code?</a></li>
+<li><a href="#but-would-this-work-around-the-gpl-in-the-gcc-compiler-and-allow-people-to-work-on-non-free-front-ends">1.18.3 But would this work around the GPL in the GCC compiler and allow people to work on non-free front-ends?</a></li>
 </ul></li>
-<li><a href="#Performance">1.19 Performance</a>
+<li><a href="#performance">1.19 Performance</a>
 <ul>
-<li><a href="#How_fast_will_Mono_be.3F">1.19.1 How fast will Mono be?</a></li>
+<li><a href="#how-fast-will-mono-be">1.19.1 How fast will Mono be?</a></li>
 </ul></li>
-<li><a href="#Licensing">1.20 Licensing</a>
+<li><a href="#licensing">1.20 Licensing</a>
 <ul>
-<li><a href="#Will_I_be_able_to_write_proprietary_applications_that_run_with_Mono.3F">1.20.1 Will I be able to write proprietary applications that run with Mono?</a></li>
-<li><a href="#What_license_or_licenses_are_you_using_for_the_Mono_Project.3F">1.20.2 What license or licenses are you using for the Mono Project?</a></li>
-<li><a href="#I_would_like_to_contribute_code_to_Mono_under_a_particular_license._What_licenses_will_you_accept.3F">1.20.3 I would like to contribute code to Mono under a particular license. What licenses will you accept?</a></li>
+<li><a href="#will-i-be-able-to-write-proprietary-applications-that-run-with-mono">1.20.1 Will I be able to write proprietary applications that run with Mono?</a></li>
+<li><a href="#what-license-or-licenses-are-you-using-for-the-mono-project">1.20.2 What license or licenses are you using for the Mono Project?</a></li>
+<li><a href="#i-would-like-to-contribute-code-to-mono-under-a-particular-license-what-licenses-will-you-accept">1.20.3 I would like to contribute code to Mono under a particular license. What licenses will you accept?</a></li>
 </ul></li>
-<li><a href="#Patents">1.21 Patents</a>
+<li><a href="#patents">1.21 Patents</a>
 <ul>
-<li><a href="#Could_patents_be_used_to_completely_disable_Mono_.28either_submarine_patents_filed_now.2C_or_changes_made_by_Microsoft_specifically_to_create_patent_problems.29.3F">1.21.1 Could patents be used to completely disable Mono (either submarine patents filed now, or changes made by Microsoft specifically to create patent problems)?</a></li>
-<li><a href="#Is_Mono_only_an_implementation_of_the_.NET_Framework.3F">1.21.2 Is Mono only an implementation of the .NET Framework?</a></li>
+<li><a href="#could-patents-be-used-to-completely-disable-mono-either-submarine-patents-filed-now-or-changes-made-by-microsoft-specifically-to-create-patent-problems">1.21.1 Could patents be used to completely disable Mono (either submarine patents filed now, or changes made by Microsoft specifically to create patent problems)?</a></li>
+<li><a href="#is-mono-only-an-implementation-of-the-net-framework">1.21.2 Is Mono only an implementation of the .NET Framework?</a></li>
 </ul></li>
-<li><a href="#Obfuscation">1.22 Obfuscation</a>
+<li><a href="#obfuscation">1.22 Obfuscation</a>
 <ul>
-<li><a href="#Are_there_any_obfuscation_programs_for_Mono.2FLinux.3F">1.22.1 Are there any obfuscation programs for Mono/Linux?</a></li>
-<li><a href="#What_could_I_do_to_avoid_people_decompiling_my_program.3F">1.22.2 What could I do to avoid people decompiling my program?</a></li>
-<li><a href="#Any_other_option.3F">1.22.3 Any other option?</a></li>
+<li><a href="#are-there-any-obfuscation-programs-for-monolinux">1.22.1 Are there any obfuscation programs for Mono/Linux?</a></li>
+<li><a href="#what-could-i-do-to-avoid-people-decompiling-my-program">1.22.2 What could I do to avoid people decompiling my program?</a></li>
+<li><a href="#any-other-option">1.22.3 Any other option?</a></li>
 </ul></li>
-<li><a href="#Miscellaneous_Questions">1.23 Miscellaneous Questions</a>
+<li><a href="#miscellaneous-questions">1.23 Miscellaneous Questions</a>
 <ul>
-<li><a href="#You_say_that_the_CLI_allows_multiple_languages_to_execute_on_the_same_environment._Isn.27t_this_the_purpose_of_CORBA.3F">1.23.1 You say that the CLI allows multiple languages to execute on the same environment. Isn't this the purpose of CORBA?</a></li>
-<li><a href="#Will_you_support_COM.3F">1.23.2 Will you support COM?</a></li>
-<li><a href="#Will_Ximian_offer_certifications_on_Mono_or_related_technologies.3F">1.23.3 Will Ximian offer certifications on Mono or related technologies?</a></li>
-<li><a href="#How_can_I_report_a_bug.3F">1.23.4 How can I report a bug?</a></li>
-<li><a href="#Does_mcs_support_the_same_command_line_options_as_the_MS_C.23_compiler.3F">1.23.5 Does mcs support the same command line options as the MS C# compiler?</a></li>
-<li><a href="#How_about_getting_searchable_archives_on_lists.ximian.com.3F">1.23.6 How about getting searchable archives on lists.ximian.com?</a></li>
-<li><a href="#When_using_mono_from_cvs_or_from_a_snapshot.2C_I_get_an_error_message_saying_that_Mono_and_the_runtime_are_out_of_sync._How_do_I_fix_that.3F">1.23.7 When using mono from cvs or from a snapshot, I get an error message saying that Mono and the runtime are out of sync. How do I fix that?</a></li>
-<li><a href="#Why_are_you_going_for_a_GtkHtml_implementation.3F">1.23.8 Why are you going for a GtkHtml implementation?</a></li>
-<li><a href="#Is_there_a_command-line_tool_that_allows_me_to_access_.NET_interactively.3F">1.23.9 Is there a command-line tool that allows me to access .NET interactively?</a></li>
-<li><a href="#Is_it_possible_to_use_Visual_C.2B.2B_with_Mono.3F">1.23.10 Is it possible to use Visual C++ with Mono?</a></li>
-<li><a href="#Does_Mono_support_generics.3F">1.23.11 Does Mono support generics?</a></li>
+<li><a href="#you-say-that-the-cli-allows-multiple-languages-to-execute-on-the-same-environment-isnt-this-the-purpose-of-corba">1.23.1 You say that the CLI allows multiple languages to execute on the same environment. Isn't this the purpose of CORBA?</a></li>
+<li><a href="#will-you-support-com">1.23.2 Will you support COM?</a></li>
+<li><a href="#will-ximian-offer-certifications-on-mono-or-related-technologies">1.23.3 Will Ximian offer certifications on Mono or related technologies?</a></li>
+<li><a href="#how-can-i-report-a-bug">1.23.4 How can I report a bug?</a></li>
+<li><a href="#does-mcs-support-the-same-command-line-options-as-the-ms-c-compiler">1.23.5 Does mcs support the same command line options as the MS C# compiler?</a></li>
+<li><a href="#how-about-getting-searchable-archives-on-listsximiancom">1.23.6 How about getting searchable archives on lists.ximian.com?</a></li>
+<li><a href="#when-using-mono-from-cvs-or-from-a-snapshot-i-get-an-error-message-saying-that-mono-and-the-runtime-are-out-of-sync-how-do-i-fix-that">1.23.7 When using mono from cvs or from a snapshot, I get an error message saying that Mono and the runtime are out of sync. How do I fix that?</a></li>
+<li><a href="#why-are-you-going-for-a-gtkhtml-implementation">1.23.8 Why are you going for a GtkHtml implementation?</a></li>
+<li><a href="#is-there-a-command-line-tool-that-allows-me-to-access-net-interactively">1.23.9 Is there a command-line tool that allows me to access .NET interactively?</a></li>
+<li><a href="#is-it-possible-to-use-visual-c-with-mono">1.23.10 Is it possible to use Visual C++ with Mono?</a></li>
+<li><a href="#does-mono-support-generics">1.23.11 Does Mono support generics?</a></li>
 </ul></li>
-<li><a href="#Mono_Common_Problems">1.24 Mono Common Problems</a></li>
-<li><a href="#Credits">1.25 Credits</a></li>
+<li><a href="#mono-common-problems">1.24 Mono Common Problems</a></li>
+<li><a href="#credits">1.25 Credits</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,12 +15,12 @@ Accessibility: Sprint 4
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Tasks_for_Sprint_4_.28Dec_10_-_Dec_29.2C_2008.29">1 Tasks for Sprint 4 (Dec 10 - Dec 29, 2008)</a>
+<li><a href="#tasks-for-sprint-4-dec-10---dec-29-2008">1 Tasks for Sprint 4 (Dec 10 - Dec 29, 2008)</a>
 <ul>
-<li><a href="#High-Priority_Open_bugs">1.1 High-Priority Open bugs</a></li>
-<li><a href="#Features_slated_for_0.9_release">1.2 Features slated for 0.9 release</a></li>
-<li><a href="#Open_Bugs">1.3 Open Bugs</a></li>
-<li><a href="#1.0_Architecture_changes">1.4 1.0 Architecture changes</a></li>
+<li><a href="#high-priority-open-bugs">1.1 High-Priority Open bugs</a></li>
+<li><a href="#features-slated-for-09-release">1.2 Features slated for 0.9 release</a></li>
+<li><a href="#open-bugs">1.3 Open Bugs</a></li>
+<li><a href="#10-architecture-changes">1.4 1.0 Architecture changes</a></li>
 </ul></li>
 </ul></td>
 </tr>

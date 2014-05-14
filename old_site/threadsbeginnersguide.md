@@ -17,30 +17,30 @@ This guide shall give beginners in asynchronous programming an overview of when 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Big_Picture">1 The Big Picture</a>
+<li><a href="#the-big-picture">1 The Big Picture</a>
 <ul>
-<li><a href="#Why_Threading.3F">1.1 Why Threading?</a></li>
-<li><a href="#When_not_to_use_Threading.3F">1.2 When not to use Threading?</a></li>
+<li><a href="#why-threading">1.1 Why Threading?</a></li>
+<li><a href="#when-not-to-use-threading">1.2 When not to use Threading?</a></li>
 </ul></li>
-<li><a href="#Threads_in_Action">2 Threads in Action</a>
+<li><a href="#threads-in-action">2 Threads in Action</a>
 <ul>
-<li><a href="#Synchronizing_Threads">2.1 Synchronizing Threads</a></li>
+<li><a href="#synchronizing-threads">2.1 Synchronizing Threads</a></li>
 </ul></li>
-<li><a href="#Common_Mistakes">3 Common Mistakes</a>
+<li><a href="#common-mistakes">3 Common Mistakes</a>
 <ul>
-<li><a href="#Data_Races">3.1 Data Races</a></li>
-<li><a href="#Deadlocks">3.2 Deadlocks</a></li>
+<li><a href="#data-races">3.1 Data Races</a></li>
+<li><a href="#deadlocks">3.2 Deadlocks</a></li>
 </ul></li>
-<li><a href="#A_little_more_advanced_Threading">4 A little more advanced Threading</a>
+<li><a href="#a-little-more-advanced-threading">4 A little more advanced Threading</a>
 <ul>
-<li><a href="#Passing_Parameters_to_Threads">4.1 Passing Parameters to Threads</a>
+<li><a href="#passing-parameters-to-threads">4.1 Passing Parameters to Threads</a>
 <ul>
-<li><a href="#.NET_2.0">4.1.1 .NET 2.0</a></li>
-<li><a href="#.NET_1.1">4.1.2 .NET 1.1</a></li>
+<li><a href="#net-20">4.1.1 .NET 2.0</a></li>
+<li><a href="#net-11">4.1.2 .NET 1.1</a></li>
 </ul></li>
-<li><a href="#Accessing_the_Main-Thread_with_Callback">4.2 Accessing the Main-Thread with Callback</a></li>
+<li><a href="#accessing-the-main-thread-with-callback">4.2 Accessing the Main-Thread with Callback</a></li>
 </ul></li>
-<li><a href="#Resources_and_further_reading">5 Resources and further reading</a></li>
+<li><a href="#resources-and-further-reading">5 Resources and further reading</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -153,7 +153,7 @@ It's output may be something like this:
     Second runner incrementing i from 9 to 10
     First runner incrementing i from 8 to 9
 
-It's very obvious that this is a mess. What should have happened is that each runner increments `i` by 1 and then sleeps for one round. But that is not going to happen since there is no guarantee that a thread will sleep the exact same time. Instead the runner and incrementing gets mixed up because the two threads access `i` at the same time. This behavior is also being called **[Data Races](#Data_Races)**.
+It's very obvious that this is a mess. What should have happened is that each runner increments `i` by 1 and then sleeps for one round. But that is not going to happen since there is no guarantee that a thread will sleep the exact same time. Instead the runner and incrementing gets mixed up because the two threads access `i` at the same time. This behavior is also being called **[Data Races](#data-races)**.
 
 Synchronizing Threads
 ---------------------
@@ -162,7 +162,7 @@ To avoid **Data Races** access to `i` must be limited to only one thread at a ti
 
 The monitor can be any object but it is recommended to create a new [http:/monodoc/T:System.Object Object] for each code that is being protected by an `lock` statement and accesses the same resources. It is possible to use multiple locks in one instance of a class (for example a multi-threaded Que can have one lock for the input and one for the output) and to use static monitors for `lock` statements.
 
-The next example shows the first program that has been extended to use `lock` statements to avoid **[Data Races](#Data_Races)**
+The next example shows the first program that has been extended to use `lock` statements to avoid **[Data Races](#data-races)**
 
 ``` csharp
 using System;
@@ -261,7 +261,7 @@ Here is a small list of the most common mistakes when writing threaded applicati
 Data Races
 ----------
 
-If multiple threads compete to access the same resource (e.g. a variable) that's called a *data race*. To avoid data races, threads must be [synchronized](#Synchronizing_Threads). The ["Threads in Action"](#Threads_in_Action) part in this article contains more information on that topic.
+If multiple threads compete to access the same resource (e.g. a variable) that's called a *data race*. To avoid data races, threads must be [synchronized](#synchronizing-threads). The ["Threads in Action"](#threads-in-action) part in this article contains more information on that topic.
 
 Deadlocks
 ---------

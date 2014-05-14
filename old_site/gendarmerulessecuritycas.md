@@ -17,17 +17,17 @@ Gendarme.Rules.Security.Cas
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AddMissingTypeInheritanceDemandRule">1.1 AddMissingTypeInheritanceDemandRule</a></li>
-<li><a href="#DoNotExposeFieldsInSecuredTypeRule">1.2 DoNotExposeFieldsInSecuredTypeRule</a></li>
-<li><a href="#DoNotExposeMethodsProtectedByLinkDemandRule">1.3 DoNotExposeMethodsProtectedByLinkDemandRule</a></li>
-<li><a href="#DoNotReduceTypeSecurityOnMethodsRule">1.4 DoNotReduceTypeSecurityOnMethodsRule</a></li>
-<li><a href="#ReviewSealedTypeWithInheritanceDemandRule">1.5 ReviewSealedTypeWithInheritanceDemandRule</a></li>
-<li><a href="#ReviewSuppressUnmanagedCodeSecurityUsageRule">1.6 ReviewSuppressUnmanagedCodeSecurityUsageRule</a></li>
-<li><a href="#SecureGetObjectDataOverridesRule">1.7 SecureGetObjectDataOverridesRule</a></li>
+<li><a href="#addmissingtypeinheritancedemandrule">1.1 AddMissingTypeInheritanceDemandRule</a></li>
+<li><a href="#donotexposefieldsinsecuredtyperule">1.2 DoNotExposeFieldsInSecuredTypeRule</a></li>
+<li><a href="#donotexposemethodsprotectedbylinkdemandrule">1.3 DoNotExposeMethodsProtectedByLinkDemandRule</a></li>
+<li><a href="#donotreducetypesecurityonmethodsrule">1.4 DoNotReduceTypeSecurityOnMethodsRule</a></li>
+<li><a href="#reviewsealedtypewithinheritancedemandrule">1.5 ReviewSealedTypeWithInheritanceDemandRule</a></li>
+<li><a href="#reviewsuppressunmanagedcodesecurityusagerule">1.6 ReviewSuppressUnmanagedCodeSecurityUsageRule</a></li>
+<li><a href="#securegetobjectdataoverridesrule">1.7 SecureGetObjectDataOverridesRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -22,13 +22,13 @@ Packages in the Mono:Community project are built against the latest Mono release
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Linked_Packages">1 Linked Packages</a></li>
-<li><a href="#Other_Repositories">2 Other Repositories</a></li>
-<li><a href="#ASP.NET_Applications">3 ASP.NET Applications</a></li>
-<li><a href="#Desktop_Applications">4 Desktop Applications</a></li>
-<li><a href="#Other_Applications">5 Other Applications</a></li>
-<li><a href="#Libraries">6 Libraries</a></li>
-<li><a href="#Proposed">7 Proposed</a></li>
+<li><a href="#linked-packages">1 Linked Packages</a></li>
+<li><a href="#other-repositories">2 Other Repositories</a></li>
+<li><a href="#aspnet-applications">3 ASP.NET Applications</a></li>
+<li><a href="#desktop-applications">4 Desktop Applications</a></li>
+<li><a href="#other-applications">5 Other Applications</a></li>
+<li><a href="#libraries">6 Libraries</a></li>
+<li><a href="#proposed">7 Proposed</a></li>
 </ul></td>
 </tr>
 </tbody>

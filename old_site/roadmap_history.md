@@ -19,25 +19,25 @@ Notice that before Mono 2.0, every public release version that was available was
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Release_Archive">1 Release Archive</a>
+<li><a href="#release-archive">1 Release Archive</a>
 <ul>
-<li><a href="#Mono_2.8">1.1 Mono 2.8</a></li>
-<li><a href="#Mono_2.6">1.2 Mono 2.6</a></li>
-<li><a href="#Mono_2.4">1.3 Mono 2.4</a>
+<li><a href="#mono-28">1.1 Mono 2.8</a></li>
+<li><a href="#mono-26">1.2 Mono 2.6</a></li>
+<li><a href="#mono-24">1.3 Mono 2.4</a>
 <ul>
-<li><a href="#Mono_2.0">1.3.1 Mono 2.0</a></li>
-<li><a href="#Mono_1.9">1.3.2 Mono 1.9</a></li>
-<li><a href="#Mono_1.2">1.3.3 Mono 1.2</a></li>
+<li><a href="#mono-20">1.3.1 Mono 2.0</a></li>
+<li><a href="#mono-19">1.3.2 Mono 1.9</a></li>
+<li><a href="#mono-12">1.3.3 Mono 1.2</a></li>
 </ul></li>
-<li><a href="#Previous_Goals">1.4 Previous Goals</a>
+<li><a href="#previous-goals">1.4 Previous Goals</a>
 <ul>
-<li><a href="#Mono_1.0_goals">1.4.1 Mono 1.0 goals</a></li>
+<li><a href="#mono-10-goals">1.4.1 Mono 1.0 goals</a></li>
 </ul></li>
-<li><a href="#Roadmap_Background">1.5 Roadmap Background</a>
+<li><a href="#roadmap-background">1.5 Roadmap Background</a>
 <ul>
-<li><a href="#Background">1.5.1 Background</a></li>
-<li><a href="#Mono_release_strategy">1.5.2 Mono release strategy</a></li>
-<li><a href="#Microsoft.27s_.NET_2.0">1.5.3 Microsoft's .NET 2.0</a></li>
+<li><a href="#background">1.5.1 Background</a></li>
+<li><a href="#mono-release-strategy">1.5.2 Mono release strategy</a></li>
+<li><a href="#microsofts-net-20">1.5.3 Microsoft's .NET 2.0</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -287,9 +287,9 @@ Mono 1.2 is an incremental upgrade to Mono 1.0, and contains the following new f
 
 Mono 1.2 also include assemblies from .NET 2.0 and these are available as technology previews:
 
--   XML 2.0 ([Track Progress]({{site.github.url}}/old_site/XML#Forthcoming_Mono_1.2_Features "XML"))
+-   XML 2.0 ([Track Progress]({{site.github.url}}/old_site/XML#forthcoming-mono-12-features "XML"))
 
--   ASP.NET 2.0 ([Track Progress]({{site.github.url}}/old_site/ASP.NET#ASP.NET_2.0 "ASP.NET"))
+-   ASP.NET 2.0 ([Track Progress]({{site.github.url}}/old_site/ASP.NET#aspnet-20 "ASP.NET"))
 
 -   ADO.NET 2.0
 

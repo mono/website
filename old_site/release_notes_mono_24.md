@@ -17,26 +17,26 @@ Mono 2.4 is a portable and open source implementation of the .NET framework for 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.2">2 Changes since Mono 2.2</a>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-since-mono-22">2 Changes since Mono 2.2</a>
 <ul>
-<li><a href="#Runtime">2.1 Runtime</a>
+<li><a href="#runtime">2.1 Runtime</a>
 <ul>
-<li><a href="#SIMD_support_in_Mono">2.1.1 SIMD support in Mono</a></li>
-<li><a href="#No_more_polling">2.1.2 No more polling</a></li>
-<li><a href="#Other_Changes">2.1.3 Other Changes</a></li>
-<li><a href="#Behavioral_Changes">2.1.4 Behavioral Changes</a></li>
+<li><a href="#simd-support-in-mono">2.1.1 SIMD support in Mono</a></li>
+<li><a href="#no-more-polling">2.1.2 No more polling</a></li>
+<li><a href="#other-changes">2.1.3 Other Changes</a></li>
+<li><a href="#behavioral-changes">2.1.4 Behavioral Changes</a></li>
 </ul></li>
-<li><a href="#Mono.Posix">2.2 Mono.Posix</a></li>
-<li><a href="#Performance">2.3 Performance</a></li>
-<li><a href="#ASP.NET">2.4 ASP.NET</a>
+<li><a href="#monoposix">2.2 Mono.Posix</a></li>
+<li><a href="#performance">2.3 Performance</a></li>
+<li><a href="#aspnet">2.4 ASP.NET</a>
 <ul>
-<li><a href="#Precompiled_Web_Sites">2.4.1 Precompiled Web Sites</a></li>
-<li><a href="#Performance:_Single_Domain_Support">2.4.2 Performance: Single Domain Support</a></li>
+<li><a href="#precompiled-web-sites">2.4.1 Precompiled Web Sites</a></li>
+<li><a href="#performance-single-domain-support">2.4.2 Performance: Single Domain Support</a></li>
 </ul></li>
-<li><a href="#Winforms">2.5 Winforms</a></li>
+<li><a href="#winforms">2.5 Winforms</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.4">3 Installing Mono 2.4</a></li>
+<li><a href="#installing-mono-24">3 Installing Mono 2.4</a></li>
 </ul></td>
 </tr>
 </tbody>

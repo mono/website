@@ -15,19 +15,19 @@ MaxDB
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Using">2 Using</a>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#using">2 Using</a>
 <ul>
-<li><a href="#Connection_String">2.1 Connection String</a>
+<li><a href="#connection-string">2.1 Connection String</a>
 <ul>
-<li><a href="#Connection_String_Format">2.1.1 Connection String Format</a></li>
-<li><a href="#Connection_String_Parameters">2.1.2 Connection String Parameters</a></li>
+<li><a href="#connection-string-format">2.1.1 Connection String Format</a></li>
+<li><a href="#connection-string-parameters">2.1.2 Connection String Parameters</a></li>
 </ul></li>
-<li><a href="#C.23_Example">2.2 C# Example</a>
+<li><a href="#c-example">2.2 C# Example</a>
 <ul>
-<li><a href="#Source_code">2.2.1 Source code</a></li>
-<li><a href="#Building_Example">2.2.2 Building Example</a></li>
-<li><a href="#Running_the_Example">2.2.3 Running the Example</a></li>
+<li><a href="#source-code">2.2.1 Source code</a></li>
+<li><a href="#building-example">2.2.2 Building Example</a></li>
+<li><a href="#running-the-example">2.2.3 Running the Example</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

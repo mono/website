@@ -17,27 +17,27 @@ SourceCodeRepository
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Git_Repository">1 Git Repository</a>
+<li><a href="#git-repository">1 Git Repository</a>
 <ul>
-<li><a href="#Browsing_the_Sources">1.1 Browsing the Sources</a></li>
-<li><a href="#Building_Mono_from_source">1.2 Building Mono from source</a></li>
+<li><a href="#browsing-the-sources">1.1 Browsing the Sources</a></li>
+<li><a href="#building-mono-from-source">1.2 Building Mono from source</a></li>
 </ul></li>
-<li><a href="#Contributing_Patches">2 Contributing Patches</a></li>
-<li><a href="#Policies">3 Policies</a>
+<li><a href="#contributing-patches">2 Contributing Patches</a></li>
+<li><a href="#policies">3 Policies</a>
 <ul>
-<li><a href="#Coding_Guidelines">3.1 Coding Guidelines</a></li>
-<li><a href="#Code_License">3.2 Code License</a></li>
-<li><a href="#Changing_Code">3.3 Changing Code</a></li>
-<li><a href="#Owning_Code">3.4 Owning Code</a></li>
-<li><a href="#Pull-Request_Rules">3.5 Pull-Request Rules</a></li>
+<li><a href="#coding-guidelines">3.1 Coding Guidelines</a></li>
+<li><a href="#code-license">3.2 Code License</a></li>
+<li><a href="#changing-code">3.3 Changing Code</a></li>
+<li><a href="#owning-code">3.4 Owning Code</a></li>
+<li><a href="#pull-request-rules">3.5 Pull-Request Rules</a></li>
 </ul></li>
-<li><a href="#Getting_Help_With_Git">4 Getting Help With Git</a></li>
-<li><a href="#Branches">5 Branches</a></li>
-<li><a href="#Keeping_track_of_code_changes">6 Keeping track of code changes</a>
+<li><a href="#getting-help-with-git">4 Getting Help With Git</a></li>
+<li><a href="#branches">5 Branches</a></li>
+<li><a href="#keeping-track-of-code-changes">6 Keeping track of code changes</a>
 <ul>
-<li><a href="#Via_Web.2FEmail">6.1 Via Web/Email</a></li>
-<li><a href="#Via_Email">6.2 Via Email</a></li>
-<li><a href="#Cia.Navi.Cx">6.3 Cia.Navi.Cx</a></li>
+<li><a href="#via-webemail">6.1 Via Web/Email</a></li>
+<li><a href="#via-email">6.2 Via Email</a></li>
+<li><a href="#cianavicx">6.3 Cia.Navi.Cx</a></li>
 </ul></li>
 </ul></td>
 </tr>

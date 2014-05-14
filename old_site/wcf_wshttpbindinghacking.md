@@ -17,27 +17,27 @@ On this page I put my hacking notes for WSHttpBinding and relevant stuff which w
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#WS_HTTP_Bindings">1 WS HTTP Bindings</a>
+<li><a href="#ws-http-bindings">1 WS HTTP Bindings</a>
 <ul>
-<li><a href="#TransactionFlowBindingElement">1.1 TransactionFlowBindingElement</a></li>
-<li><a href="#ReliableSessionBindingElement">1.2 ReliableSessionBindingElement</a></li>
-<li><a href="#CompositeDuplexBindingElement_and_OneWayBindingElement">1.3 CompositeDuplexBindingElement and OneWayBindingElement</a></li>
-<li><a href="#SecurityBindingElement">1.4 SecurityBindingElement</a></li>
+<li><a href="#transactionflowbindingelement">1.1 TransactionFlowBindingElement</a></li>
+<li><a href="#reliablesessionbindingelement">1.2 ReliableSessionBindingElement</a></li>
+<li><a href="#compositeduplexbindingelement-and-onewaybindingelement">1.3 CompositeDuplexBindingElement and OneWayBindingElement</a></li>
+<li><a href="#securitybindingelement">1.4 SecurityBindingElement</a></li>
 </ul></li>
-<li><a href="#SecurityBindingElement_2">2 SecurityBindingElement</a>
+<li><a href="#securitybindingelement_2">2 SecurityBindingElement</a>
 <ul>
-<li><a href="#WSHttpBinding.Security.Message_.28NonDualMessageSecurityOverHttp.29">2.1 WSHttpBinding.Security.Message (NonDualMessageSecurityOverHttp)</a></li>
+<li><a href="#wshttpbindingsecuritymessage-nondualmessagesecurityoverhttp">2.1 WSHttpBinding.Security.Message (NonDualMessageSecurityOverHttp)</a></li>
 </ul></li>
-<li><a href="#WS-Security_implementation">3 WS-Security implementation</a>
+<li><a href="#ws-security-implementation">3 WS-Security implementation</a>
 <ul>
-<li><a href="#GetToken_.2F_AuthenticateToken">3.1 GetToken / AuthenticateToken</a></li>
+<li><a href="#gettoken--authenticatetoken">3.1 GetToken / AuthenticateToken</a></li>
 </ul></li>
-<li><a href="#WS-Trust_implementation">4 WS-Trust implementation</a>
+<li><a href="#ws-trust-implementation">4 WS-Trust implementation</a>
 <ul>
-<li><a href="#sslnego_implementation">4.1 sslnego implementation</a></li>
+<li><a href="#sslnego-implementation">4.1 sslnego implementation</a></li>
 </ul></li>
-<li><a href="#WS-SecureConversation_implementation">5 WS-SecureConversation implementation</a></li>
-<li><a href="#IssuedToken">6 IssuedToken</a></li>
+<li><a href="#ws-secureconversation-implementation">5 WS-SecureConversation implementation</a></li>
+<li><a href="#issuedtoken">6 IssuedToken</a></li>
 </ul></td>
 </tr>
 </tbody>

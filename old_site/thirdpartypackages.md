@@ -17,11 +17,11 @@ Many distributions include Mono. Each one has different requirements for the Mon
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Fedora">1 Fedora</a></li>
-<li><a href="#Debian_.2F_Ubuntu">2 Debian / Ubuntu</a>
+<li><a href="#fedora">1 Fedora</a></li>
+<li><a href="#debian--ubuntu">2 Debian / Ubuntu</a>
 <ul>
-<li><a href="#Debian">2.1 Debian</a></li>
-<li><a href="#Ubuntu">2.2 Ubuntu</a></li>
+<li><a href="#debian">2.1 Debian</a></li>
+<li><a href="#ubuntu">2.2 Ubuntu</a></li>
 </ul></li>
 </ul></td>
 </tr>

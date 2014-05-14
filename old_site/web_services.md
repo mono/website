@@ -20,18 +20,18 @@ Web services are basically a modern form of a remote procedure call (RPC) system
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#An_Example">1 An Example</a></li>
-<li><a href="#Technical_Background:_SOAP">2 Technical Background: SOAP</a></li>
-<li><a href="#Internal_Communication">3 Internal Communication</a></li>
-<li><a href="#Consuming_Web_Services">4 Consuming Web Services</a>
+<li><a href="#an-example">1 An Example</a></li>
+<li><a href="#technical-background-soap">2 Technical Background: SOAP</a></li>
+<li><a href="#internal-communication">3 Internal Communication</a></li>
+<li><a href="#consuming-web-services">4 Consuming Web Services</a>
 <ul>
-<li><a href="#First_Steps:_Creating_the_Local_Stub">4.1 First Steps: Creating the Local Stub</a></li>
-<li><a href="#Google_License_key">4.2 Google License key</a></li>
-<li><a href="#Application_1:_The_Google_Spell_Checker_on_a_Webpage">4.3 Application 1: The Google Spell Checker on a Webpage</a></li>
-<li><a href="#Application_2:_A_Console_Application">4.4 Application 2: A Console Application</a></li>
-<li><a href="#Documentation">4.5 Documentation</a></li>
+<li><a href="#first-steps-creating-the-local-stub">4.1 First Steps: Creating the Local Stub</a></li>
+<li><a href="#google-license-key">4.2 Google License key</a></li>
+<li><a href="#application-1-the-google-spell-checker-on-a-webpage">4.3 Application 1: The Google Spell Checker on a Webpage</a></li>
+<li><a href="#application-2-a-console-application">4.4 Application 2: A Console Application</a></li>
+<li><a href="#documentation">4.5 Documentation</a></li>
 </ul></li>
-<li><a href="#Contributors">5 Contributors</a></li>
+<li><a href="#contributors">5 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

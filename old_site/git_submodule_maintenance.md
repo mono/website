@@ -17,13 +17,13 @@ One way of doing work on submodules is described in [GitHub help on submodules](
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Git_submodules_in_Mono">1 Git submodules in Mono</a>
+<li><a href="#git-submodules-in-mono">1 Git submodules in Mono</a>
 <ul>
-<li><a href="#Adding_a_submodule">1.1 Adding a submodule</a></li>
+<li><a href="#adding-a-submodule">1.1 Adding a submodule</a></li>
 </ul></li>
-<li><a href="#Submodule_repository_of_origin_maintenance">2 Submodule repository of origin maintenance</a></li>
-<li><a href="#Submodule_maintenance_in_Mono_repository">3 Submodule maintenance in Mono repository</a></li>
-<li><a href="#Submodule_modifications_workflow">4 Submodule modifications workflow</a></li>
+<li><a href="#submodule-repository-of-origin-maintenance">2 Submodule repository of origin maintenance</a></li>
+<li><a href="#submodule-maintenance-in-mono-repository">3 Submodule maintenance in Mono repository</a></li>
+<li><a href="#submodule-modifications-workflow">4 Submodule modifications workflow</a></li>
 </ul></td>
 </tr>
 </tbody>

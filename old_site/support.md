@@ -15,11 +15,11 @@ Support
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Stack_Overflow">1 Stack Overflow</a></li>
-<li><a href="#Forums_.2F_Mailing_lists">2 Forums / Mailing lists</a></li>
-<li><a href="#Contact_and_Bug_Reports">3 Contact and Bug Reports</a></li>
-<li><a href="#Frequently_Asked_Questions">4 Frequently Asked Questions</a></li>
-<li><a href="#Commercial_Support">5 Commercial Support</a></li>
+<li><a href="#stack-overflow">1 Stack Overflow</a></li>
+<li><a href="#forums--mailing-lists">2 Forums / Mailing lists</a></li>
+<li><a href="#contact-and-bug-reports">3 Contact and Bug Reports</a></li>
+<li><a href="#frequently-asked-questions">4 Frequently Asked Questions</a></li>
+<li><a href="#commercial-support">5 Commercial Support</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -47,7 +47,7 @@ If you believe you have discovered a bug in Mono, Moonlight, MonoTouch, or Mono 
 Some useful resources for using Xamarin's Bugzilla bug tracking system:
 
 -   [Xamarin's bugzilla](http://bugzilla.xamarin.com/)
--   [How to make a good bug report]({{site.github.url}}/old_site/Bugs#How_to_make_a_good_bug_report "Bugs")
+-   [How to make a good bug report]({{site.github.url}}/old_site/Bugs#how-to-make-a-good-bug-report "Bugs")
 
 Frequently Asked Questions
 --------------------------

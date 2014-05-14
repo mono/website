@@ -16,18 +16,18 @@ FAQ: Winforms
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#My_forms_are_sized_improperly">1 My forms are sized improperly</a></li>
-<li><a href="#My_multithreaded_application_crashes_or_locks_up">2 My multithreaded application crashes or locks up</a></li>
-<li><a href="#How_can_I_keep_the_terminal_window_.28.22dos_prompt.22.29_from_showing_when_my_application_runs.3F">3 How can I keep the terminal window (&quot;dos prompt&quot;) from showing when my application runs?</a></li>
-<li><a href="#How_can_I_use_Visual_Styles.3F">4 How can I use Visual Styles?</a></li>
-<li><a href="#How_can_I_make_my_windows_alpha_blended.3F_.28transparent.29">5 How can I make my windows alpha blended? (transparent)</a></li>
-<li><a href="#What_are_you_using_to_implement_Windows.Forms.3F">6 What are you using to implement Windows.Forms?</a></li>
-<li><a href="#Will_I_be_able_to_run_my_smart_clients_on_systems_powered_by_Mono.3F">7 Will I be able to run my smart clients on systems powered by Mono?</a></li>
-<li><a href="#Does_Winforms_run_on_OSX.3F">8 Does Winforms run on OSX?</a></li>
-<li><a href="#Do_you_have_a_comparison_chart_about_the_various_toolkit_offerings.3F">9 Do you have a comparison chart about the various toolkit offerings?</a></li>
-<li><a href="#GDIPlus_Initializer_Exception">10 GDIPlus Initializer Exception</a></li>
-<li><a href="#Missing_Method_Exception">11 Missing Method Exception</a></li>
-<li><a href="#Why_not_implement_System.Windows.Forms_on_top_of_Gtk.23_or_Qt.23.3F">12 Why not implement System.Windows.Forms on top of Gtk# or Qt#?</a></li>
+<li><a href="#my-forms-are-sized-improperly">1 My forms are sized improperly</a></li>
+<li><a href="#my-multithreaded-application-crashes-or-locks-up">2 My multithreaded application crashes or locks up</a></li>
+<li><a href="#how-can-i-keep-the-terminal-window-dos-prompt-from-showing-when-my-application-runs">3 How can I keep the terminal window (&quot;dos prompt&quot;) from showing when my application runs?</a></li>
+<li><a href="#how-can-i-use-visual-styles">4 How can I use Visual Styles?</a></li>
+<li><a href="#how-can-i-make-my-windows-alpha-blended-transparent">5 How can I make my windows alpha blended? (transparent)</a></li>
+<li><a href="#what-are-you-using-to-implement-windowsforms">6 What are you using to implement Windows.Forms?</a></li>
+<li><a href="#will-i-be-able-to-run-my-smart-clients-on-systems-powered-by-mono">7 Will I be able to run my smart clients on systems powered by Mono?</a></li>
+<li><a href="#does-winforms-run-on-osx">8 Does Winforms run on OSX?</a></li>
+<li><a href="#do-you-have-a-comparison-chart-about-the-various-toolkit-offerings">9 Do you have a comparison chart about the various toolkit offerings?</a></li>
+<li><a href="#gdiplus-initializer-exception">10 GDIPlus Initializer Exception</a></li>
+<li><a href="#missing-method-exception">11 Missing Method Exception</a></li>
+<li><a href="#why-not-implement-systemwindowsforms-on-top-of-gtk-or-qt">12 Why not implement System.Windows.Forms on top of Gtk# or Qt#?</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,17 +15,17 @@ redirect_from:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Big_Picture">1 The Big Picture</a></li>
-<li><a href="#Class_Library">2 Class Library</a>
+<li><a href="#the-big-picture">1 The Big Picture</a></li>
+<li><a href="#class-library">2 Class Library</a>
 <ul>
-<li><a href="#Namespaces">2.1 Namespaces</a></li>
-<li><a href="#Assemblies">2.2 Assemblies</a></li>
+<li><a href="#namespaces">2.1 Namespaces</a></li>
+<li><a href="#assemblies">2.2 Assemblies</a></li>
 </ul></li>
-<li><a href="#Common_Language_Infrastructure">3 Common Language Infrastructure</a></li>
-<li><a href="#Common_Language_Specification">4 Common Language Specification</a></li>
-<li><a href="#Managed_and_Unmanaged_Code">5 Managed and Unmanaged Code</a></li>
-<li><a href="#Bibliography">6 Bibliography</a></li>
-<li><a href="#Contributors">7 Contributors</a></li>
+<li><a href="#common-language-infrastructure">3 Common Language Infrastructure</a></li>
+<li><a href="#common-language-specification">4 Common Language Specification</a></li>
+<li><a href="#managed-and-unmanaged-code">5 Managed and Unmanaged Code</a></li>
+<li><a href="#bibliography">6 Bibliography</a></li>
+<li><a href="#contributors">7 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

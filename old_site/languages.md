@@ -19,44 +19,44 @@ It's important to note that any language that compiles to pure IL should work un
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono-compatible_compilers">1 Mono-compatible compilers</a>
+<li><a href="#mono-compatible-compilers">1 Mono-compatible compilers</a>
 <ul>
-<li><a href="#C.23">1.1 C#</a></li>
-<li><a href="#F.23">1.2 F#</a></li>
-<li><a href="#Java">1.3 Java</a></li>
-<li><a href="#Scala">1.4 Scala</a></li>
-<li><a href="#Boo">1.5 Boo</a></li>
-<li><a href="#Nemerle">1.6 Nemerle</a></li>
-<li><a href="#Visual_Basic.NET">1.7 Visual Basic.NET</a></li>
-<li><a href="#Python">1.8 Python</a></li>
-<li><a href="#JavaScript">1.9 JavaScript</a></li>
-<li><a href="#Oberon">1.10 Oberon</a></li>
-<li><a href="#PHP">1.11 PHP</a></li>
-<li><a href="#Object_Pascal">1.12 Object Pascal</a></li>
-<li><a href="#LUA">1.13 LUA</a></li>
-<li><a href="#Cobra">1.14 Cobra</a></li>
-<li><a href="#Other_languages">1.15 Other languages</a></li>
+<li><a href="#c">1.1 C#</a></li>
+<li><a href="#f">1.2 F#</a></li>
+<li><a href="#java">1.3 Java</a></li>
+<li><a href="#scala">1.4 Scala</a></li>
+<li><a href="#boo">1.5 Boo</a></li>
+<li><a href="#nemerle">1.6 Nemerle</a></li>
+<li><a href="#visual-basicnet">1.7 Visual Basic.NET</a></li>
+<li><a href="#python">1.8 Python</a></li>
+<li><a href="#javascript">1.9 JavaScript</a></li>
+<li><a href="#oberon">1.10 Oberon</a></li>
+<li><a href="#php">1.11 PHP</a></li>
+<li><a href="#object-pascal">1.12 Object Pascal</a></li>
+<li><a href="#lua">1.13 LUA</a></li>
+<li><a href="#cobra">1.14 Cobra</a></li>
+<li><a href="#other-languages">1.15 Other languages</a></li>
 </ul></li>
-<li><a href="#Supporting_GCC_languages">2 Supporting GCC languages</a></li>
-<li><a href="#Missing_languages">3 Missing languages</a>
+<li><a href="#supporting-gcc-languages">2 Supporting GCC languages</a></li>
+<li><a href="#missing-languages">3 Missing languages</a>
 <ul>
-<li><a href="#C">3.1 C</a>
+<li><a href="#c_2">3.1 C</a>
 <ul>
-<li><a href="#Using_LCC">3.1.1 Using LCC</a></li>
-<li><a href="#Using_GCC">3.1.2 Using GCC</a></li>
+<li><a href="#using-lcc">3.1.1 Using LCC</a></li>
+<li><a href="#using-gcc">3.1.2 Using GCC</a></li>
 </ul></li>
-<li><a href="#Ruby">3.2 Ruby</a></li>
-<li><a href="#ADA">3.3 ADA</a></li>
-<li><a href="#Other_PHP_Efforts">3.4 Other PHP Efforts</a>
+<li><a href="#ruby">3.2 Ruby</a></li>
+<li><a href="#ada">3.3 ADA</a></li>
+<li><a href="#other-php-efforts">3.4 Other PHP Efforts</a>
 <ul>
-<li><a href="#Old_PHP_efforts">3.4.1 Old PHP efforts</a></li>
+<li><a href="#old-php-efforts">3.4.1 Old PHP efforts</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Other_Languages_2">4 Other Languages</a>
+<li><a href="#other-languages_2">4 Other Languages</a>
 <ul>
-<li><a href="#Tachy">4.1 Tachy</a></li>
+<li><a href="#tachy">4.1 Tachy</a></li>
 </ul></li>
-<li><a href="#.net-language_links">5 .net-language links</a></li>
+<li><a href="#net-language-links">5 .net-language links</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -162,7 +162,7 @@ Other languages
 Supporting GCC languages
 ========================
 
-The choosen strategy is to use the GCC4 GIMPLE backend to target CIL bytecodes, as planned in the [GCC CIL]({{site.github.url}}/old_site/Summer2006#GCC_CIL_Backend "Summer2006") SOC project (or the [2005 attempt]({{site.github.url}}/old_site/Summer2005#GCC_CIL "Summer2005")).
+The choosen strategy is to use the GCC4 GIMPLE backend to target CIL bytecodes, as planned in the [GCC CIL]({{site.github.url}}/old_site/Summer2006#gcc-cil-backend "Summer2006") SOC project (or the [2005 attempt]({{site.github.url}}/old_site/Summer2005#gcc-cil "Summer2005")).
 
 In 2006, the [Gcc4cil]({{site.github.url}}/old_site/Gcc4cil "Gcc4cil") project was publicly announced. For now it supports the C language but it could be extended to support more gcc front ends.
 

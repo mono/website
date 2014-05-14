@@ -16,34 +16,34 @@ Assemblies and the GAC
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#How_Mono_Finds_Assemblies">1 How Mono Finds Assemblies</a></li>
-<li><a href="#The_Global_Assembly_Cache_.28GAC.29">2 The Global Assembly Cache (GAC)</a></li>
-<li><a href="#GAC_Definitions">3 GAC Definitions</a></li>
-<li><a href="#Assembly_Names">4 Assembly Names</a></li>
-<li><a href="#Installing_Assemblies_to_The_GAC">5 Installing Assemblies to The GAC</a></li>
-<li><a href="#Using_Multiple_GACs">6 Using Multiple GACs</a></li>
-<li><a href="#What_Should_Be_Installed_to_the_GAC">7 What Should Be Installed to the GAC</a></li>
-<li><a href="#Libraries_with_Unstable_APIs">8 Libraries with Unstable APIs</a>
+<li><a href="#how-mono-finds-assemblies">1 How Mono Finds Assemblies</a></li>
+<li><a href="#the-global-assembly-cache-gac">2 The Global Assembly Cache (GAC)</a></li>
+<li><a href="#gac-definitions">3 GAC Definitions</a></li>
+<li><a href="#assembly-names">4 Assembly Names</a></li>
+<li><a href="#installing-assemblies-to-the-gac">5 Installing Assemblies to The GAC</a></li>
+<li><a href="#using-multiple-gacs">6 Using Multiple GACs</a></li>
+<li><a href="#what-should-be-installed-to-the-gac">7 What Should Be Installed to the GAC</a></li>
+<li><a href="#libraries-with-unstable-apis">8 Libraries with Unstable APIs</a>
 <ul>
-<li><a href="#Comparing_this_to_other_models">8.1 Comparing this to other models</a>
+<li><a href="#comparing-this-to-other-models">8.1 Comparing this to other models</a>
 <ul>
-<li><a href="#How_is_this_better_than_using_the_GAC.3F">8.1.1 How is this better than using the GAC?</a></li>
-<li><a href="#How_is_this_better_than_the_.22egg.22_model.3F">8.1.2 How is this better than the &quot;egg&quot; model?</a></li>
+<li><a href="#how-is-this-better-than-using-the-gac">8.1.1 How is this better than using the GAC?</a></li>
+<li><a href="#how-is-this-better-than-the-egg-model">8.1.2 How is this better than the &quot;egg&quot; model?</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Small_Libraries">9 Small Libraries</a></li>
-<li><a href="#Advanced_Topics">10 Advanced Topics</a>
+<li><a href="#small-libraries">9 Small Libraries</a></li>
+<li><a href="#advanced-topics">10 Advanced Topics</a>
 <ul>
-<li><a href="#Using_A_Delay_Signed_Assembly">10.1 Using A Delay Signed Assembly</a>
+<li><a href="#using-a-delay-signed-assembly">10.1 Using A Delay Signed Assembly</a>
 <ul>
-<li><a href="#Delay_Signed_Configuration">10.1.1 Delay Signed Configuration</a></li>
+<li><a href="#delay-signed-configuration">10.1.1 Delay Signed Configuration</a></li>
 </ul></li>
-<li><a href="#Public_Key_Token_Remapping">10.2 Public Key Token Remapping</a>
+<li><a href="#public-key-token-remapping">10.2 Public Key Token Remapping</a>
 <ul>
-<li><a href="#Public_Key_Token_Remapping_Configuration">10.2.1 Public Key Token Remapping Configuration</a></li>
+<li><a href="#public-key-token-remapping-configuration">10.2.1 Public Key Token Remapping Configuration</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Developers_and_Versioning">11 Developers and Versioning</a></li>
+<li><a href="#developers-and-versioning">11 Developers and Versioning</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -273,7 +273,7 @@ This means that developers that consume unstable API libraries do not have to wo
 
 If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
 
-Note: a production-ready, detailed example of this can be found in the [Autotools]({{site.github.url}}/old_site/Guidelines:Application_Deployment#Auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+Note: a production-ready, detailed example of this can be found in the [Autotools]({{site.github.url}}/old_site/Guidelines:Application_Deployment#auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
 
 Comparing this to other models
 ------------------------------

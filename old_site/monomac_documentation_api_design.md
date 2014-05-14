@@ -15,46 +15,46 @@ MonoMac/Documentation/API Design
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#API_Design">1 API Design</a>
+<li><a href="#api-design">1 API Design</a>
 <ul>
-<li><a href="#Overview">1.1 Overview</a></li>
-<li><a href="#Design_Principles">1.2 Design Principles</a></li>
-<li><a href="#Unbound_Types_.26_Members">1.3 Unbound Types &amp; Members</a></li>
-<li><a href="#Major_Namespaces">1.4 Major Namespaces</a>
+<li><a href="#overview">1.1 Overview</a></li>
+<li><a href="#design-principles">1.2 Design Principles</a></li>
+<li><a href="#unbound-types--members">1.3 Unbound Types &amp; Members</a></li>
+<li><a href="#major-namespaces">1.4 Major Namespaces</a>
 <ul>
-<li><a href="#MonoMac.ObjCRuntime">1.4.1 MonoMac.ObjCRuntime</a></li>
-<li><a href="#MonoMac.Foundation">1.4.2 MonoMac.Foundation</a>
+<li><a href="#monomacobjcruntime">1.4.1 MonoMac.ObjCRuntime</a></li>
+<li><a href="#monomacfoundation">1.4.2 MonoMac.Foundation</a>
 <ul>
-<li><a href="#NSObject">1.4.2.1 NSObject</a></li>
-<li><a href="#PreserveAttribute">1.4.2.2 PreserveAttribute</a></li>
+<li><a href="#nsobject">1.4.2.1 NSObject</a></li>
+<li><a href="#preserveattribute">1.4.2.2 PreserveAttribute</a></li>
 </ul></li>
-<li><a href="#MonoMac.AppKit">1.4.3 MonoMac.AppKit</a></li>
-<li><a href="#OpenGL">1.4.4 OpenGL</a></li>
+<li><a href="#monomacappkit">1.4.3 MonoMac.AppKit</a></li>
+<li><a href="#opengl">1.4.4 OpenGL</a></li>
 </ul></li>
-<li><a href="#Binding_Design">1.5 Binding Design</a>
+<li><a href="#binding-design">1.5 Binding Design</a>
 <ul>
-<li><a href="#Types">1.5.1 Types</a></li>
-<li><a href="#Inheritance">1.5.2 Inheritance</a></li>
-<li><a href="#Types_and_Interface_Builder">1.5.3 Types and Interface Builder</a></li>
-<li><a href="#Delegates">1.5.4 Delegates</a>
+<li><a href="#types">1.5.1 Types</a></li>
+<li><a href="#inheritance">1.5.2 Inheritance</a></li>
+<li><a href="#types-and-interface-builder">1.5.3 Types and Interface Builder</a></li>
+<li><a href="#delegates">1.5.4 Delegates</a>
 <ul>
-<li><a href="#Via_Events">1.5.4.1 Via Events</a></li>
-<li><a href="#Via_Properties">1.5.4.2 Via Properties</a></li>
-<li><a href="#Strongly_typed_via_a_Delegate_property">1.5.4.3 Strongly typed via a Delegate property</a></li>
-<li><a href="#Loosely_typed_via_the_WeakDelegate_property">1.5.4.4 Loosely typed via the WeakDelegate property</a></li>
-<li><a href="#Mapping_of_the_Objective-C_delegate_pattern_to_C.23">1.5.4.5 Mapping of the Objective-C delegate pattern to C#</a></li>
+<li><a href="#via-events">1.5.4.1 Via Events</a></li>
+<li><a href="#via-properties">1.5.4.2 Via Properties</a></li>
+<li><a href="#strongly-typed-via-a-delegate-property">1.5.4.3 Strongly typed via a Delegate property</a></li>
+<li><a href="#loosely-typed-via-the-weakdelegate-property">1.5.4.4 Loosely typed via the WeakDelegate property</a></li>
+<li><a href="#mapping-of-the-objective-c-delegate-pattern-to-c">1.5.4.5 Mapping of the Objective-C delegate pattern to C#</a></li>
 </ul></li>
-<li><a href="#Responding_to_Events">1.5.5 Responding to Events</a></li>
-<li><a href="#Models">1.5.6 Models</a></li>
-<li><a href="#Interface_Builder_Outlets_and_C.23">1.5.7 Interface Builder Outlets and C#</a></li>
-<li><a href="#Selectors">1.5.8 Selectors</a></li>
-<li><a href="#NSObject_Constructrors">1.5.9 NSObject Constructrors</a></li>
+<li><a href="#responding-to-events">1.5.5 Responding to Events</a></li>
+<li><a href="#models">1.5.6 Models</a></li>
+<li><a href="#interface-builder-outlets-and-c">1.5.7 Interface Builder Outlets and C#</a></li>
+<li><a href="#selectors">1.5.8 Selectors</a></li>
+<li><a href="#nsobject-constructrors">1.5.9 NSObject Constructrors</a></li>
 </ul></li>
-<li><a href="#Memory_Management">1.6 Memory Management</a>
+<li><a href="#memory-management">1.6 Memory Management</a>
 <ul>
-<li><a href="#NSObject_and_IDisposable">1.6.1 NSObject and IDisposable</a></li>
-<li><a href="#When_to_call_Dispose">1.6.2 When to call Dispose</a></li>
-<li><a href="#When_to_Keep_References_to_Objects">1.6.3 When to Keep References to Objects</a></li>
+<li><a href="#nsobject-and-idisposable">1.6.1 NSObject and IDisposable</a></li>
+<li><a href="#when-to-call-dispose">1.6.2 When to call Dispose</a></li>
+<li><a href="#when-to-keep-references-to-objects">1.6.3 When to Keep References to Objects</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -70,9 +70,9 @@ Overview
 
 In addition to the core Base Class Libraries that are part of Mono, [MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac") ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
 
-At the core of MonoMac there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and [OpenGL](#OpenGL).
+At the core of MonoMac there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and [OpenGL](#opengl).
 
-The low-level runtime to communicate with Objective-C code is in the [MonoMac.ObjCRuntime](#MonoMac.ObjCRuntime). On top of this foundation bindings for [Foundation](#MonoMac.Foundation), CoreFoundation and [AppKit](#MonoMac.AppKit) are provided.
+The low-level runtime to communicate with Objective-C code is in the [MonoMac.ObjCRuntime](#monomacobjcruntime). On top of this foundation bindings for [Foundation](#monomacfoundation), CoreFoundation and [AppKit](#monomacappkit) are provided.
 
 Design Principles
 -----------------
@@ -156,7 +156,7 @@ You can apply this attribute on every member of a type, or on the type itself. I
 
 The [MonoMac.AppKit](http://docs.go-mono.com/MonoMac.AppKit) namespace contains a one to one mapping to all of the UI components that make up Cocoa in the form of C\# classes. The API has been modified to follow the conventions used in the C\# language.
 
-C\# delegates are provided for common operations. See the [delegates](#Delegates) section for more information.
+C\# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
 
 ### OpenGL
 
@@ -214,9 +214,9 @@ In Objective-C classes, you will see that classes that use this programming patt
 
 In MonoMac we offer four mutually exclusive mechanisms to bind to these delegates:
 
--   [Via events](#Via_Events).
--   [Via properties](#Via_Properties).
--   [Strongly typed via a *Delegate* property](#Strongly_typed_via_a_Delegate_property).
+-   [Via events](#via-events).
+-   [Via properties](#via-properties).
+-   [Strongly typed via a *Delegate* property](#strongly-typed-via-a-delegate-property).
 -   [[\#Loosely\_typed\_via\_the\_WeakDelegate\_property|Loosely typed via a *WeakDelegate* property.
 
 For example, consider the [WebView](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) class. This dispatches to a [WebFrameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) instance which is assigned to the [frameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) property.
@@ -335,7 +335,7 @@ This instructs the language to create and construct an instance of the class *So
 foo.Delegate = new SomethingDelegate ();
 ```
 
-In MonoMac we have provided strongly-typed classes that map to the Objective-C delegate classes. To use them, you will be subclassing and overriding the methods defined by MonoMac's implementation. For more information on how they work, see the section [Models](#Models) below.
+In MonoMac we have provided strongly-typed classes that map to the Objective-C delegate classes. To use them, you will be subclassing and overriding the methods defined by MonoMac's implementation. For more information on how they work, see the section [Models](#models) below.
 
 ### Responding to Events
 

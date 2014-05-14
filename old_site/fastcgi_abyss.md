@@ -19,24 +19,24 @@ Information on how to configure the [FastCGI]({{site.github.url}}/old_site/FastC
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a>
+<li><a href="#introduction">1 Introduction</a>
 <ul>
-<li><a href="#Configuration_Tested_On...">1.1 Configuration Tested On...</a></li>
+<li><a href="#configuration-tested-on">1.1 Configuration Tested On...</a></li>
 </ul></li>
-<li><a href="#General_Warnings">2 General Warnings</a>
+<li><a href="#general-warnings">2 General Warnings</a>
 <ul>
-<li><a href="#Step_1:_Setting_Up_the_Interpreter">2.1 Step 1: Setting Up the Interpreter</a></li>
-<li><a href="#Step_2:_Extending_the_Server_Lifetime">2.2 Step 2: Extending the Server Lifetime</a></li>
-<li><a href="#Step_3:_Disabling_Directory_Listing">2.3 Step 3: Disabling Directory Listing</a></li>
+<li><a href="#step-1-setting-up-the-interpreter">2.1 Step 1: Setting Up the Interpreter</a></li>
+<li><a href="#step-2-extending-the-server-lifetime">2.2 Step 2: Extending the Server Lifetime</a></li>
+<li><a href="#step-3-disabling-directory-listing">2.3 Step 3: Disabling Directory Listing</a></li>
 </ul></li>
-<li><a href="#Using_Extensions">3 Using Extensions</a>
+<li><a href="#using-extensions">3 Using Extensions</a>
 <ul>
-<li><a href="#Warnings">3.1 Warnings</a></li>
-<li><a href="#Step_1:_Setting_Up_the_Interpreter_2">3.2 Step 1: Setting Up the Interpreter</a></li>
-<li><a href="#Step_2:_Extending_the_Server_Lifetime_2">3.3 Step 2: Extending the Server Lifetime</a></li>
-<li><a href="#Step_3:_Adding_Index_Pages">3.4 Step 3: Adding Index Pages</a></li>
+<li><a href="#warnings">3.1 Warnings</a></li>
+<li><a href="#step-1-setting-up-the-interpreter_2">3.2 Step 1: Setting Up the Interpreter</a></li>
+<li><a href="#step-2-extending-the-server-lifetime_2">3.3 Step 2: Extending the Server Lifetime</a></li>
+<li><a href="#step-3-adding-index-pages">3.4 Step 3: Adding Index Pages</a></li>
 </ul></li>
-<li><a href="#Bada_Bing.21">4 Bada Bing!</a></li>
+<li><a href="#bada-bing">4 Bada Bing!</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -57,7 +57,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read [FastCGI\#Important\_Information]({{site.github.url}}/old_site/FastCGI#Important_Information "FastCGI") section on the main FastCGI page.
+Before doing anthing else, you should read [FastCGI\#Important\_Information]({{site.github.url}}/old_site/FastCGI#important-information "FastCGI") section on the main FastCGI page.
 
 ### Step 1: Setting Up the Interpreter
 
@@ -93,7 +93,7 @@ Using Extensions
 
 ### Warnings
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI\#Paths\_vs.\_Extensions]({{site.github.url}}/old_site/FastCGI#Paths_vs._Extensions "FastCGI") on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI\#Paths\_vs.\_Extensions]({{site.github.url}}/old_site/FastCGI#paths-vs-extensions "FastCGI") on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
 ### Step 1: Setting Up the Interpreter
 

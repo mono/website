@@ -17,12 +17,12 @@ There are several command line utitlities included in Mono that constitute the d
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Main_tools">1 Main tools</a></li>
-<li><a href="#Miscellaneous_tools">2 Miscellaneous tools</a></li>
-<li><a href="#XML_.26_Web_Service">3 XML &amp; Web Service</a></li>
-<li><a href="#Project_converstion_.26_deployment">4 Project converstion &amp; deployment</a></li>
-<li><a href="#Security">5 Security</a></li>
-<li><a href="#Help_.26_Documentation">6 Help &amp; Documentation</a></li>
+<li><a href="#main-tools">1 Main tools</a></li>
+<li><a href="#miscellaneous-tools">2 Miscellaneous tools</a></li>
+<li><a href="#xml--web-service">3 XML &amp; Web Service</a></li>
+<li><a href="#project-converstion--deployment">4 Project converstion &amp; deployment</a></li>
+<li><a href="#security">5 Security</a></li>
+<li><a href="#help--documentation">6 Help &amp; Documentation</a></li>
 </ul></td>
 </tr>
 </tbody>

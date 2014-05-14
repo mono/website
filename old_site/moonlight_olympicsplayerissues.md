@@ -17,12 +17,12 @@ We've worked hard to get an Olympics capable [Moonlight/Preview]({{site.github.u
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Startup_Issues">1 Startup Issues</a></li>
-<li><a href="#Missing_Video">2 Missing Video</a></li>
-<li><a href="#Performance_Issues">3 Performance Issues</a></li>
-<li><a href="#UI_Issues">4 UI Issues</a></li>
-<li><a href="#Browser_Issues">5 Browser Issues</a></li>
-<li><a href="#Downloads">6 Downloads</a></li>
+<li><a href="#startup-issues">1 Startup Issues</a></li>
+<li><a href="#missing-video">2 Missing Video</a></li>
+<li><a href="#performance-issues">3 Performance Issues</a></li>
+<li><a href="#ui-issues">4 UI Issues</a></li>
+<li><a href="#browser-issues">5 Browser Issues</a></li>
+<li><a href="#downloads">6 Downloads</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -57,7 +57,7 @@ UI Issues
 
 -   Video App
     -   The Expore More Videos button in fullscreen mode can lead to a recursive layout problem. We are actively addressing this and will issue an update when it is resolved.
-    -   Some videos will not play correctly see [\#Missing Video](#Missing_Video).
+    -   Some videos will not play correctly see [\#Missing Video](#missing-video).
     -   On the CTV video player the fullscreen and volume buttons render offscreen.
 
 Browser Issues

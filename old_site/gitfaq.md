@@ -16,37 +16,37 @@ GitFAQ
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Availability">1 Availability</a></li>
-<li><a href="#Windows_Users">2 Windows Users</a></li>
-<li><a href="#Workflow">3 Workflow</a>
+<li><a href="#availability">1 Availability</a></li>
+<li><a href="#windows-users">2 Windows Users</a></li>
+<li><a href="#workflow">3 Workflow</a>
 <ul>
-<li><a href="#Workflow_1:_Working_on_master">3.1 Workflow 1: Working on master</a></li>
-<li><a href="#Workflow_2:_Use_.27master.27_as_integration_branch">3.2 Workflow 2: Use 'master' as integration branch</a>
+<li><a href="#workflow-1-working-on-master">3.1 Workflow 1: Working on master</a></li>
+<li><a href="#workflow-2-use-master-as-integration-branch">3.2 Workflow 2: Use 'master' as integration branch</a>
 <ul>
-<li><a href="#Backports">3.2.1 Backports</a></li>
+<li><a href="#backports">3.2.1 Backports</a></li>
 </ul></li>
-<li><a href="#Workflow_3:_Long-term_projects">3.3 Workflow 3: Long-term projects</a>
+<li><a href="#workflow-3-long-term-projects">3.3 Workflow 3: Long-term projects</a>
 <ul>
-<li><a href="#Maintaining_the_branch:_Throwaway_merges">3.3.1 Maintaining the branch: Throwaway merges</a></li>
-<li><a href="#Publishing_the_long-lived_topic:_Public_Forks_on_Github">3.3.2 Publishing the long-lived topic: Public Forks on Github</a></li>
+<li><a href="#maintaining-the-branch-throwaway-merges">3.3.1 Maintaining the branch: Throwaway merges</a></li>
+<li><a href="#publishing-the-long-lived-topic-public-forks-on-github">3.3.2 Publishing the long-lived topic: Public Forks on Github</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Frequently_Asked_Questions">4 Frequently Asked Questions</a>
+<li><a href="#frequently-asked-questions">4 Frequently Asked Questions</a>
 <ul>
-<li><a href="#I_don.27t_see_a_mcs_module">4.1 I don't see a mcs module</a></li>
-<li><a href="#My_commits_are_not_linked_to_my_GitHub_Account">4.2 My commits are not linked to my GitHub Account</a></li>
-<li><a href="#What_tool_was_used_to_convert_from_SVN_to_GIT.3F">4.3 What tool was used to convert from SVN to GIT?</a></li>
-<li><a href="#How_can_I_tell_GIT_to_push_from_my_tracking_branch_.3F">4.4 How can I tell GIT to push from my tracking branch ?</a></li>
-<li><a href="#I_get_an_ambiguous_warning_when_checking_out_a_branch">4.5 I get an ambiguous warning when checking out a branch</a></li>
-<li><a href="#After_forking_the_official_repo_and_cloning_my_fork.2C_the_branch_I_want_to_check_out_doesn.27t_seem_to_exist">4.6 After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist</a></li>
-<li><a href="#When_merging_between_branches.2C_there_are_frequent_conflicts_in_the_ChangeLog_files">4.7 When merging between branches, there are frequent conflicts in the ChangeLog files</a></li>
-<li><a href="#Useful_git_config_settings">4.8 Useful git config settings</a></li>
-<li><a href="#I_am_on_Windows_and_each_commit_changes_file_mode_on_Unix_to_executable">4.9 I am on Windows and each commit changes file mode on Unix to executable</a></li>
-<li><a href="#When_I_commit.2C_my_commit_.22repeats.22_commits_of_other_people">4.10 When I commit, my commit &quot;repeats&quot; commits of other people</a></li>
-<li><a href="#How_do_I_know_what.27s_going_to_be_pushed.3F">4.11 How do I know what's going to be pushed?</a></li>
-<li><a href="#I_can.27t_checkout_the_required_submodules_because_the_git:.2F.2F_protocol_is_blocked_by_a_firewall">4.12 I can't checkout the required submodules because the git:// protocol is blocked by a firewall</a></li>
+<li><a href="#i-dont-see-a-mcs-module">4.1 I don't see a mcs module</a></li>
+<li><a href="#my-commits-are-not-linked-to-my-github-account">4.2 My commits are not linked to my GitHub Account</a></li>
+<li><a href="#what-tool-was-used-to-convert-from-svn-to-git">4.3 What tool was used to convert from SVN to GIT?</a></li>
+<li><a href="#how-can-i-tell-git-to-push-from-my-tracking-branch-">4.4 How can I tell GIT to push from my tracking branch ?</a></li>
+<li><a href="#i-get-an-ambiguous-warning-when-checking-out-a-branch">4.5 I get an ambiguous warning when checking out a branch</a></li>
+<li><a href="#after-forking-the-official-repo-and-cloning-my-fork-the-branch-i-want-to-check-out-doesnt-seem-to-exist">4.6 After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist</a></li>
+<li><a href="#when-merging-between-branches-there-are-frequent-conflicts-in-the-changelog-files">4.7 When merging between branches, there are frequent conflicts in the ChangeLog files</a></li>
+<li><a href="#useful-git-config-settings">4.8 Useful git config settings</a></li>
+<li><a href="#i-am-on-windows-and-each-commit-changes-file-mode-on-unix-to-executable">4.9 I am on Windows and each commit changes file mode on Unix to executable</a></li>
+<li><a href="#when-i-commit-my-commit-repeats-commits-of-other-people">4.10 When I commit, my commit &quot;repeats&quot; commits of other people</a></li>
+<li><a href="#how-do-i-know-whats-going-to-be-pushed">4.11 How do I know what's going to be pushed?</a></li>
+<li><a href="#i-cant-checkout-the-required-submodules-because-the-git-protocol-is-blocked-by-a-firewall">4.12 I can't checkout the required submodules because the git:// protocol is blocked by a firewall</a></li>
 </ul></li>
-<li><a href="#Links">5 Links</a></li>
+<li><a href="#links">5 Links</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -97,7 +97,7 @@ The `git push` will fail if you're not up-to-date: for instance, if there was so
 Merge branch 'master' of git@github.com:/mono/repo
 ```
 
-This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry]({{site.github.url}}/old_site/GitFAQ#How_do_I_know_what.27s_going_to_be_pushed.3F "GitFAQ"))
+This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry]({{site.github.url}}/old_site/GitFAQ#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
 
 Workflow 2: Use 'master' as integration branch
 ----------------------------------------------

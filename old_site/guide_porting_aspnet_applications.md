@@ -19,61 +19,61 @@ This guide is meant to help Linux and Windows developers alike in porting ASP.NE
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Getting_started">2 Getting started</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#getting-started">2 Getting started</a>
 <ul>
-<li><a href="#Prerequisite_software">2.1 Prerequisite software</a></li>
+<li><a href="#prerequisite-software">2.1 Prerequisite software</a></li>
 </ul></li>
-<li><a href="#Porting_the_code">3 Porting the code</a></li>
-<li><a href="#Required_assemblies">4 Required assemblies</a>
+<li><a href="#porting-the-code">3 Porting the code</a></li>
+<li><a href="#required-assemblies">4 Required assemblies</a>
 <ul>
-<li><a href="#Configuration_files">4.1 Configuration files</a>
+<li><a href="#configuration-files">4.1 Configuration files</a>
 <ul>
-<li><a href="#DbProviderFactory_configuration">4.1.1 DbProviderFactory configuration</a></li>
-<li><a href="#Npgsql_and_.7E.2FApp_Code">4.1.2 Npgsql and ~/App_Code</a></li>
-<li><a href="#Connection_string">4.1.3 Connection string</a></li>
-<li><a href="#Membership.2FRoles_provider_configuration">4.1.4 Membership/Roles provider configuration</a></li>
-<li><a href="#Filesystem_paths">4.1.5 Filesystem paths</a></li>
-<li><a href="#machineKey_storage">4.1.6 machineKey storage</a></li>
-<li><a href="#File_access_permissions">4.1.7 File access permissions</a></li>
+<li><a href="#dbproviderfactory-configuration">4.1.1 DbProviderFactory configuration</a></li>
+<li><a href="#npgsql-and-app-code">4.1.2 Npgsql and ~/App_Code</a></li>
+<li><a href="#connection-string">4.1.3 Connection string</a></li>
+<li><a href="#membershiproles-provider-configuration">4.1.4 Membership/Roles provider configuration</a></li>
+<li><a href="#filesystem-paths">4.1.5 Filesystem paths</a></li>
+<li><a href="#machinekey-storage">4.1.6 machineKey storage</a></li>
+<li><a href="#file-access-permissions">4.1.7 File access permissions</a></li>
 </ul></li>
-<li><a href="#Markup">4.2 Markup</a>
+<li><a href="#markup">4.2 Markup</a>
 <ul>
-<li><a href="#URL_case">4.2.1 URL case</a></li>
+<li><a href="#url-case">4.2.1 URL case</a></li>
 </ul></li>
-<li><a href="#Code-Behind">4.3 Code-Behind</a>
+<li><a href="#code-behind">4.3 Code-Behind</a>
 <ul>
-<li><a href="#Filesystem_path_syntax">4.3.1 Filesystem path syntax</a></li>
-<li><a href="#File_name_case">4.3.2 File name case</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Porting_the_data">5 Porting the data</a>
-<ul>
-<li><a href="#MDF_files">5.1 MDF files</a></li>
-<li><a href="#Npgsql_data_provider">5.2 Npgsql data provider</a>
-<ul>
-<li><a href="#Membership.2FRoles.2FProfile_provider_schema">5.2.1 Membership/Roles/Profile provider schema</a></li>
-</ul></li>
-<li><a href="#Source_code">5.3 Source code</a>
-<ul>
-<li><a href="#Data_provider_changes">5.3.1 Data provider changes</a></li>
-</ul></li>
-<li><a href="#XSD_files">5.4 XSD files</a>
-<ul>
-<li><a href="#Annotated_files">5.4.1 Annotated files</a></li>
-<li><a href="#Modifying_annotated_files">5.4.2 Modifying annotated files</a></li>
-<li><a href="#Editing_queries">5.4.3 Editing queries</a></li>
-</ul></li>
-<li><a href="#SQL_syntax_differences">5.5 SQL syntax differences</a></li>
-<li><a href="#SQL_type_mapping">5.6 SQL type mapping</a></li>
-<li><a href="#Stored_procedures">5.7 Stored procedures</a>
-<ul>
-<li><a href="#Tips_for_porting">5.7.1 Tips for porting</a></li>
+<li><a href="#filesystem-path-syntax">4.3.1 Filesystem path syntax</a></li>
+<li><a href="#file-name-case">4.3.2 File name case</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Running_the_application_on_Unix">6 Running the application on Unix</a></li>
-<li><a href="#Supporting_Multiple_Platforms">7 Supporting Multiple Platforms</a></li>
-<li><a href="#More_Tutorials">8 More Tutorials</a></li>
+<li><a href="#porting-the-data">5 Porting the data</a>
+<ul>
+<li><a href="#mdf-files">5.1 MDF files</a></li>
+<li><a href="#npgsql-data-provider">5.2 Npgsql data provider</a>
+<ul>
+<li><a href="#membershiprolesprofile-provider-schema">5.2.1 Membership/Roles/Profile provider schema</a></li>
+</ul></li>
+<li><a href="#source-code">5.3 Source code</a>
+<ul>
+<li><a href="#data-provider-changes">5.3.1 Data provider changes</a></li>
+</ul></li>
+<li><a href="#xsd-files">5.4 XSD files</a>
+<ul>
+<li><a href="#annotated-files">5.4.1 Annotated files</a></li>
+<li><a href="#modifying-annotated-files">5.4.2 Modifying annotated files</a></li>
+<li><a href="#editing-queries">5.4.3 Editing queries</a></li>
+</ul></li>
+<li><a href="#sql-syntax-differences">5.5 SQL syntax differences</a></li>
+<li><a href="#sql-type-mapping">5.6 SQL type mapping</a></li>
+<li><a href="#stored-procedures">5.7 Stored procedures</a>
+<ul>
+<li><a href="#tips-for-porting">5.7.1 Tips for porting</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#running-the-application-on-unix">6 Running the application on Unix</a></li>
+<li><a href="#supporting-multiple-platforms">7 Supporting Multiple Platforms</a></li>
+<li><a href="#more-tutorials">8 More Tutorials</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -109,7 +109,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 Porting the code
 ----------------
 
-When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO\_IOMAP](#iomap_anchor) approach. By using the MONO\_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
+When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO\_IOMAP](#iomap-anchor) approach. By using the MONO\_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
 
 Required assemblies
 -------------------
@@ -278,7 +278,7 @@ All the markup elements that refer to resources external to a file they are in s
 
 #### Filesystem path syntax
 
-This section is based on [Porting Winforms Applications]({{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications#The_Path_Separator "Guide: Porting Winforms Applications")**
+This section is based on [Porting Winforms Applications]({{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications#the-path-separator "Guide: Porting Winforms Applications")**
 
 The issue you should pay great attention to is the platform-specific filesystem paths. Windows systems use a backslash (`"\"`) as path separator, while Unix systems use the forward slash (`"/"`) for the same purpose.
 
@@ -403,9 +403,9 @@ The providers require specific database schema to be present in your database. M
 
 ### Source code
 
-Make sure that any queries issued directly from your source code use the correct syntax for PostgreSQL (modify them as described [below](#Annotated_files)).
+Make sure that any queries issued directly from your source code use the correct syntax for PostgreSQL (modify them as described [below](#annotated-files)).
 
-Remember to modify your [connection strings](#Connection_string) to use Npgsql format.
+Remember to modify your [connection strings](#connection-string) to use Npgsql format.
 
 #### Data provider changes
 
@@ -502,7 +502,7 @@ Before processing the `.xsd` file on Windows you need to edit it to make sure th
 
 1.  Make sure the provider mentioned in the file is Npgsql
     To do so, locate the `<Connections>` section within the `<xs:appinfo>` element and modify each `<Connection>` element's `Provider` attribute to say **Npgsql**
-2.  Edit the queries and parameters as described [below](#Editing_Queries)
+2.  Edit the queries and parameters as described [below](#editing-queries)
 
 #### Editing queries
 

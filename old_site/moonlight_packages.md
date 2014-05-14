@@ -15,18 +15,18 @@ Moonlight Packages
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Moonlight_packages_for_your_distribution">1 Moonlight packages for your distribution</a>
+<li><a href="#moonlight-packages-for-your-distribution">1 Moonlight packages for your distribution</a>
 <ul>
-<li><a href="#Introduction">1.1 Introduction</a></li>
-<li><a href="#Official_distribution_packages">1.2 Official distribution packages</a>
+<li><a href="#introduction">1.1 Introduction</a></li>
+<li><a href="#official-distribution-packages">1.2 Official distribution packages</a>
 <ul>
-<li><a href="#openSUSE_11.1">1.2.1 openSUSE 11.1</a></li>
+<li><a href="#opensuse-111">1.2.1 openSUSE 11.1</a></li>
 </ul></li>
-<li><a href="#Third-party_packages">1.3 Third-party packages</a>
+<li><a href="#third-party-packages">1.3 Third-party packages</a>
 <ul>
-<li><a href="#Debian_Experimental">1.3.1 Debian Experimental</a></li>
-<li><a href="#Ubuntu_8.10_.22Intrepid_Ibex.22">1.3.2 Ubuntu 8.10 &quot;Intrepid Ibex&quot;</a></li>
-<li><a href="#Ubuntu_9.04_.22Jaunty_Jackalope.22">1.3.3 Ubuntu 9.04 &quot;Jaunty Jackalope&quot;</a></li>
+<li><a href="#debian-experimental">1.3.1 Debian Experimental</a></li>
+<li><a href="#ubuntu-810-intrepid-ibex">1.3.2 Ubuntu 8.10 &quot;Intrepid Ibex&quot;</a></li>
+<li><a href="#ubuntu-904-jaunty-jackalope">1.3.3 Ubuntu 9.04 &quot;Jaunty Jackalope&quot;</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

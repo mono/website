@@ -15,23 +15,23 @@ Accessibility: Moonlight
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Moonlight_Accessibility">1 Moonlight Accessibility</a>
+<li><a href="#moonlight-accessibility">1 Moonlight Accessibility</a>
 <ul>
-<li><a href="#For_Developers">1.1 For Developers</a>
+<li><a href="#for-developers">1.1 For Developers</a>
 <ul>
-<li><a href="#Building_Firefox_with_Plugin_Accessibility_.28mozilla-1.9.2.29">1.1.1 Building Firefox with Plugin Accessibility (mozilla-1.9.2)</a></li>
-<li><a href="#Building_Firefox_with_Plugin_Accessibility_.28mozilla-central.29">1.1.2 Building Firefox with Plugin Accessibility (mozilla-central)</a></li>
-<li><a href="#Useful_notes">1.1.3 Useful notes</a></li>
-<li><a href="#Development_with_Firefox">1.1.4 Development with Firefox</a></li>
-<li><a href="#Setting_up_your_Moonlight_Environment">1.1.5 Setting up your Moonlight Environment</a>
+<li><a href="#building-firefox-with-plugin-accessibility-mozilla-192">1.1.1 Building Firefox with Plugin Accessibility (mozilla-1.9.2)</a></li>
+<li><a href="#building-firefox-with-plugin-accessibility-mozilla-central">1.1.2 Building Firefox with Plugin Accessibility (mozilla-central)</a></li>
+<li><a href="#useful-notes">1.1.3 Useful notes</a></li>
+<li><a href="#development-with-firefox">1.1.4 Development with Firefox</a></li>
+<li><a href="#setting-up-your-moonlight-environment">1.1.5 Setting up your Moonlight Environment</a>
 <ul>
-<li><a href="#Supplies">1.1.5.1 Supplies</a></li>
-<li><a href="#Setting_up_the_Base_Environment">1.1.5.2 Setting up the Base Environment</a></li>
-<li><a href="#Building_for_Firefox_.28mozilla-1.9.2.29">1.1.5.3 Building for Firefox (mozilla-1.9.2)</a></li>
-<li><a href="#Building_for_Firefox_.28mozilla-central.29">1.1.5.4 Building for Firefox (mozilla-central)</a></li>
-<li><a href="#Useful_notes_2">1.1.5.5 Useful notes</a></li>
-<li><a href="#Setting_up_the_MoonAtkBridge_Environment_.28mozilla-1.9.2.29">1.1.5.6 Setting up the MoonAtkBridge Environment (mozilla-1.9.2)</a></li>
-<li><a href="#Setting_up_the_MoonAtkBridge_Environment_.28mozilla-central.29">1.1.5.7 Setting up the MoonAtkBridge Environment (mozilla-central)</a></li>
+<li><a href="#supplies">1.1.5.1 Supplies</a></li>
+<li><a href="#setting-up-the-base-environment">1.1.5.2 Setting up the Base Environment</a></li>
+<li><a href="#building-for-firefox-mozilla-192">1.1.5.3 Building for Firefox (mozilla-1.9.2)</a></li>
+<li><a href="#building-for-firefox-mozilla-central">1.1.5.4 Building for Firefox (mozilla-central)</a></li>
+<li><a href="#useful-notes_2">1.1.5.5 Useful notes</a></li>
+<li><a href="#setting-up-the-moonatkbridge-environment-mozilla-192">1.1.5.6 Setting up the MoonAtkBridge Environment (mozilla-1.9.2)</a></li>
+<li><a href="#setting-up-the-moonatkbridge-environment-mozilla-central">1.1.5.7 Setting up the MoonAtkBridge Environment (mozilla-central)</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -98,7 +98,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-1.9.2)](#Building_for_Firefox_.28mozilla-1.9.2.29)
+-   Then you can continue to [\#Building for Firefox (mozilla-1.9.2)](#building-for-firefox-mozilla-192)
 
 ### Building Firefox with Plugin Accessibility (mozilla-central)
 
@@ -110,7 +110,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-central)](#Building_for_Firefox_.28mozilla-central.29)
+-   Then you can continue to [\#Building for Firefox (mozilla-central)](#building-for-firefox-mozilla-central)
 
 ### Useful notes
 
@@ -269,7 +269,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#Setting_up_the_MoonAtkBridge_Environment_.28mozilla-1.9.2.29)
+-   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#setting-up-the-moonatkbridge-environment-mozilla-192)
 
 #### Building for Firefox (mozilla-central)
 
@@ -383,7 +383,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-central)](#Setting_up_the_MoonAtkBridge_Environment_.28mozilla-central.29)
+-   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
 
 #### Useful notes
 

@@ -22,11 +22,11 @@ The wiki is currently a pretty good mess, and we desperately need your help with
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Writing_New_Pages">1 Writing New Pages</a></li>
-<li><a href="#Cleanup">2 Cleanup</a></li>
-<li><a href="#In-Progress_Tasks_.26_Discussion">3 In-Progress Tasks &amp; Discussion</a></li>
-<li><a href="#Writing_good_Documentation">4 Writing good Documentation</a></li>
-<li><a href="#Prizes">5 Prizes</a></li>
+<li><a href="#writing-new-pages">1 Writing New Pages</a></li>
+<li><a href="#cleanup">2 Cleanup</a></li>
+<li><a href="#in-progress-tasks--discussion">3 In-Progress Tasks &amp; Discussion</a></li>
+<li><a href="#writing-good-documentation">4 Writing good Documentation</a></li>
+<li><a href="#prizes">5 Prizes</a></li>
 </ul></td>
 </tr>
 </tbody>

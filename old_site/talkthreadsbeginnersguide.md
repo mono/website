@@ -12,7 +12,7 @@ Talk:ThreadsBeginnersGuide
 We're working on the Same Thing
 ===============================
 
-Hi, I'd like to mention that I am working on [a version of that page]({{site.github.url}}/old_site/User:ValentinSawadski#ThreadsBeginnersGuide "User:ValentinSawadski") as well. But my Article is not finished yet and so I didn't post it here. Unfortionatly I don't have much time to work on the article on a regular basis so if you want to complete that article please feel free to use my content as well.
+Hi, I'd like to mention that I am working on [a version of that page]({{site.github.url}}/old_site/User:ValentinSawadski#threadsbeginnersguide "User:ValentinSawadski") as well. But my Article is not finished yet and so I didn't post it here. Unfortionatly I don't have much time to work on the article on a regular basis so if you want to complete that article please feel free to use my content as well.
 
 Uploaded my Version
 -------------------

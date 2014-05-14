@@ -15,23 +15,23 @@ Accessibility: UIA Client Sandbox
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Specific_Tasks_for_Research_Week">1 Specific Tasks for Research Week</a>
+<li><a href="#specific-tasks-for-research-week">1 Specific Tasks for Research Week</a>
 <ul>
-<li><a href="#Investigate_at-spi.2Fdbus.2C_cspi_and_cspi.2Fdbus.2C_and_all_issues_related_to_the_creation_of_managed_bindings_for_at-spi._Questions_to_answer:">1.1 Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer:</a>
+<li><a href="#investigate-at-spidbus-cspi-and-cspidbus-and-all-issues-related-to-the-creation-of-managed-bindings-for-at-spi-questions-to-answer">1.1 Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer:</a>
 <ul>
-<li><a href="#Deliverables">1.1.1 Deliverables</a></li>
+<li><a href="#deliverables">1.1.1 Deliverables</a></li>
 </ul></li>
-<li><a href="#Investigate_common_users_of_client_API.2C_to_see_how_much_work_it_would_be_to_port_them_to_Linux:">1.2 Investigate common users of client API, to see how much work it would be to port them to Linux:</a>
+<li><a href="#investigate-common-users-of-client-api-to-see-how-much-work-it-would-be-to-port-them-to-linux">1.2 Investigate common users of client API, to see how much work it would be to port them to Linux:</a>
 <ul>
-<li><a href="#Deliverables_2">1.2.1 Deliverables</a></li>
+<li><a href="#deliverables_2">1.2.1 Deliverables</a></li>
 </ul></li>
-<li><a href="#We_want_a_UISpy-alike_on_Linux_written_in_Winforms_for_testing_purposes.2C_dogfooding.2C_verification.2C_etc._Investigate_advantages.2Fdisadvantages_of_creating_our_own_tool_vs_extending_UIAVerify._Consider_these_issues:">1.3 We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues:</a>
+<li><a href="#we-want-a-uispy-alike-on-linux-written-in-winforms-for-testing-purposes-dogfooding-verification-etc-investigate-advantagesdisadvantages-of-creating-our-own-tool-vs-extending-uiaverify-consider-these-issues">1.3 We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues:</a>
 <ul>
-<li><a href="#Deliverables_3">1.3.1 Deliverables</a></li>
+<li><a href="#deliverables_3">1.3.1 Deliverables</a></li>
 </ul></li>
-<li><a href="#Investigate_how_to_perform_mapping_from_at-spi_accessibles_to_UIA_AutomationElements._Here_are_the_major_issues:">1.4 Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues:</a>
+<li><a href="#investigate-how-to-perform-mapping-from-at-spi-accessibles-to-uia-automationelements-here-are-the-major-issues">1.4 Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues:</a>
 <ul>
-<li><a href="#Deliverables_4">1.4.1 Deliverables</a></li>
+<li><a href="#deliverables_4">1.4.1 Deliverables</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

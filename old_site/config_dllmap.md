@@ -16,14 +16,14 @@ Config DllMap
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a>
+<li><a href="#overview">1 Overview</a>
 <ul>
-<li><a href="#Children">1.1 Children</a></li>
+<li><a href="#children">1.1 Children</a></li>
 </ul></li>
-<li><a href="#Usage">2 Usage</a></li>
-<li><a href="#Example">3 Example</a>
+<li><a href="#usage">2 Usage</a></li>
+<li><a href="#example">3 Example</a>
 <ul>
-<li><a href="#Common_Problems">3.1 Common Problems</a></li>
+<li><a href="#common-problems">3.1 Common Problems</a></li>
 </ul></li>
 </ul></td>
 </tr>

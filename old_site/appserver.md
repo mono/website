@@ -17,11 +17,11 @@ AppServer
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_AppServer_project">1 Mono AppServer project</a>
+<li><a href="#mono-appserver-project">1 Mono AppServer project</a>
 <ul>
-<li><a href="#Features_of_the_current_AppServer">1.1 Features of the current AppServer</a></li>
-<li><a href="#Interesting_and_possible_features">1.2 Interesting and possible features</a></li>
-<li><a href="#My_ideas">1.3 My ideas</a></li>
+<li><a href="#features-of-the-current-appserver">1.1 Features of the current AppServer</a></li>
+<li><a href="#interesting-and-possible-features">1.2 Interesting and possible features</a></li>
+<li><a href="#my-ideas">1.3 My ideas</a></li>
 </ul></li>
 </ul></td>
 </tr>

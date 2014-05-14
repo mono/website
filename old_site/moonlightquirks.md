@@ -17,26 +17,26 @@ This page is meant to list various undocumented (or unclear) features/properties
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Animations">1 Animations</a>
+<li><a href="#animations">1 Animations</a>
 <ul>
-<li><a href="#One_animation_per_property">1.1 One animation per property</a></li>
-<li><a href="#Animations_inherit_base_value">1.2 Animations inherit base value</a></li>
-<li><a href="#Filling_clocks_and_updating_values">1.3 Filling clocks and updating values</a></li>
-<li><a href="#Timespan-based_RepeatBehavior">1.4 Timespan-based RepeatBehavior</a></li>
-<li><a href="#Keysplines">1.5 Keysplines</a></li>
+<li><a href="#one-animation-per-property">1.1 One animation per property</a></li>
+<li><a href="#animations-inherit-base-value">1.2 Animations inherit base value</a></li>
+<li><a href="#filling-clocks-and-updating-values">1.3 Filling clocks and updating values</a></li>
+<li><a href="#timespan-based-repeatbehavior">1.4 Timespan-based RepeatBehavior</a></li>
+<li><a href="#keysplines">1.5 Keysplines</a></li>
 </ul></li>
-<li><a href="#Media">2 Media</a>
+<li><a href="#media">2 Media</a>
 <ul>
-<li><a href="#Setting_the_Source_property_to_empty">2.1 Setting the Source property to empty</a></li>
+<li><a href="#setting-the-source-property-to-empty">2.1 Setting the Source property to empty</a></li>
 </ul></li>
-<li><a href="#Text">3 Text</a>
+<li><a href="#text">3 Text</a>
 <ul>
-<li><a href="#TextDecorations_Property">3.1 TextDecorations Property</a></li>
-<li><a href="#FontWeighs_Property">3.2 FontWeighs Property</a></li>
+<li><a href="#textdecorations-property">3.1 TextDecorations Property</a></li>
+<li><a href="#fontweighs-property">3.2 FontWeighs Property</a></li>
 </ul></li>
-<li><a href="#Plugin_detection">4 Plugin detection</a>
+<li><a href="#plugin-detection">4 Plugin detection</a>
 <ul>
-<li><a href="#GreaseMonkey">4.1 GreaseMonkey</a></li>
+<li><a href="#greasemonkey">4.1 GreaseMonkey</a></li>
 </ul></li>
 </ul></td>
 </tr>

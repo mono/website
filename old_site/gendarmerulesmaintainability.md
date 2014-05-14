@@ -17,34 +17,34 @@ Gendarme.Rules.Maintainability
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidAlwaysNullFieldRule">1.1 AvoidAlwaysNullFieldRule</a></li>
-<li><a href="#AvoidComplexMethodsRule">1.2 AvoidComplexMethodsRule</a>
+<li><a href="#avoidalwaysnullfieldrule">1.1 AvoidAlwaysNullFieldRule</a></li>
+<li><a href="#avoidcomplexmethodsrule">1.2 AvoidComplexMethodsRule</a>
 <ul>
-<li><a href="#HighThreshold">1.2.1 HighThreshold</a></li>
-<li><a href="#LowThreshold">1.2.2 LowThreshold</a></li>
-<li><a href="#MediumThreshold">1.2.3 MediumThreshold</a></li>
-<li><a href="#SuccessThreshold">1.2.4 SuccessThreshold</a></li>
+<li><a href="#highthreshold">1.2.1 HighThreshold</a></li>
+<li><a href="#lowthreshold">1.2.2 LowThreshold</a></li>
+<li><a href="#mediumthreshold">1.2.3 MediumThreshold</a></li>
+<li><a href="#successthreshold">1.2.4 SuccessThreshold</a></li>
 </ul></li>
-<li><a href="#AvoidDeepInheritanceTreeRule">1.3 AvoidDeepInheritanceTreeRule</a>
+<li><a href="#avoiddeepinheritancetreerule">1.3 AvoidDeepInheritanceTreeRule</a>
 <ul>
-<li><a href="#CountExternalDepth">1.3.1 CountExternalDepth</a></li>
-<li><a href="#MaximumDepth">1.3.2 MaximumDepth</a></li>
+<li><a href="#countexternaldepth">1.3.1 CountExternalDepth</a></li>
+<li><a href="#maximumdepth">1.3.2 MaximumDepth</a></li>
 </ul></li>
-<li><a href="#AvoidLackOfCohesionOfMethodsRule">1.4 AvoidLackOfCohesionOfMethodsRule</a>
+<li><a href="#avoidlackofcohesionofmethodsrule">1.4 AvoidLackOfCohesionOfMethodsRule</a>
 <ul>
-<li><a href="#LowSeverityLowerLimit">1.4.1 LowSeverityLowerLimit</a></li>
-<li><a href="#MediumSeverityLowerLimit">1.4.2 MediumSeverityLowerLimit</a></li>
-<li><a href="#MinimumFieldCount">1.4.3 MinimumFieldCount</a></li>
-<li><a href="#MinimumMethodCount">1.4.4 MinimumMethodCount</a></li>
-<li><a href="#SuccessLowerLimit">1.4.5 SuccessLowerLimit</a></li>
+<li><a href="#lowseveritylowerlimit">1.4.1 LowSeverityLowerLimit</a></li>
+<li><a href="#mediumseveritylowerlimit">1.4.2 MediumSeverityLowerLimit</a></li>
+<li><a href="#minimumfieldcount">1.4.3 MinimumFieldCount</a></li>
+<li><a href="#minimummethodcount">1.4.4 MinimumMethodCount</a></li>
+<li><a href="#successlowerlimit">1.4.5 SuccessLowerLimit</a></li>
 </ul></li>
-<li><a href="#AvoidUnnecessarySpecializationRule">1.5 AvoidUnnecessarySpecializationRule</a></li>
-<li><a href="#ConsiderUsingStopwatchRule">1.6 ConsiderUsingStopwatchRule</a></li>
-<li><a href="#PreferStringIsNullOrEmptyRule">1.7 PreferStringIsNullOrEmptyRule</a></li>
+<li><a href="#avoidunnecessaryspecializationrule">1.5 AvoidUnnecessarySpecializationRule</a></li>
+<li><a href="#considerusingstopwatchrule">1.6 ConsiderUsingStopwatchRule</a></li>
+<li><a href="#preferstringisnulloremptyrule">1.7 PreferStringIsNullOrEmptyRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

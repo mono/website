@@ -17,12 +17,12 @@ These are the classes that need work to complete the 2.0 profile. **This doesn't
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Runtime">1 Runtime</a></li>
+<li><a href="#runtime">1 Runtime</a></li>
 <li><a href="#mscorlib">2 mscorlib</a></li>
-<li><a href="#System">3 System</a></li>
-<li><a href="#ADO.NET">4 ADO.NET</a></li>
-<li><a href="#ASP.NET">5 ASP.NET</a></li>
-<li><a href="#Windows.Forms">6 Windows.Forms</a></li>
+<li><a href="#system">3 System</a></li>
+<li><a href="#adonet">4 ADO.NET</a></li>
+<li><a href="#aspnet">5 ASP.NET</a></li>
+<li><a href="#windowsforms">6 Windows.Forms</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,19 +15,19 @@ GConfTutorial
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_GConf.3F">1 What is GConf?</a></li>
-<li><a href="#What_is_it_not.3F">2 What is it not?</a></li>
-<li><a href="#Some_Theory">3 Some Theory</a>
+<li><a href="#what-is-gconf">1 What is GConf?</a></li>
+<li><a href="#what-is-it-not">2 What is it not?</a></li>
+<li><a href="#some-theory">3 Some Theory</a>
 <ul>
-<li><a href="#Theory">3.1 Theory</a></li>
-<li><a href="#Screenshots">3.2 Screenshots</a>
+<li><a href="#theory">3.1 Theory</a></li>
+<li><a href="#screenshots">3.2 Screenshots</a>
 <ul>
-<li><a href="#Our_Application">3.2.1 Our Application</a></li>
-<li><a href="#GConf-Editor">3.2.2 GConf-Editor</a></li>
+<li><a href="#our-application">3.2.1 Our Application</a></li>
+<li><a href="#gconf-editor">3.2.2 GConf-Editor</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Sample_Code">4 Sample Code</a></li>
-<li><a href="#References">5 References</a></li>
+<li><a href="#sample-code">4 Sample Code</a></li>
+<li><a href="#references">5 References</a></li>
 </ul></td>
 </tr>
 </tbody>

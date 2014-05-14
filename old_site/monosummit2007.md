@@ -29,15 +29,15 @@ If you plan to attend please [register](http://www.whyfloss.com/en/summit/mono07
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Dates">1 Dates</a></li>
-<li><a href="#Information">2 Information</a>
+<li><a href="#dates">1 Dates</a></li>
+<li><a href="#information">2 Information</a>
 <ul>
-<li><a href="#Planning_Meeting">2.1 Planning Meeting</a></li>
-<li><a href="#Developer_Meeting">2.2 Developer Meeting</a></li>
+<li><a href="#planning-meeting">2.1 Planning Meeting</a></li>
+<li><a href="#developer-meeting">2.2 Developer Meeting</a></li>
 </ul></li>
-<li><a href="#Event_Planning">3 Event Planning</a></li>
-<li><a href="#Photos">4 Photos</a></li>
-<li><a href="#Blog_entries_about_Summit">5 Blog entries about Summit</a></li>
+<li><a href="#event-planning">3 Event Planning</a></li>
+<li><a href="#photos">4 Photos</a></li>
+<li><a href="#blog-entries-about-summit">5 Blog entries about Summit</a></li>
 </ul></td>
 </tr>
 </tbody>

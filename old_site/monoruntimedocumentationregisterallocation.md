@@ -15,20 +15,20 @@ Mono:Runtime:Documentation:RegisterAllocation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Register_Allocation_in_the_Mono_JIT">1 Register Allocation in the Mono JIT</a>
+<li><a href="#register-allocation-in-the-mono-jit">1 Register Allocation in the Mono JIT</a>
 <ul>
-<li><a href="#Global_Register_Allocation">1.1 Global Register Allocation</a></li>
-<li><a href="#Local_Register_Allocation">1.2 Local Register Allocation</a>
+<li><a href="#global-register-allocation">1.1 Global Register Allocation</a></li>
+<li><a href="#local-register-allocation">1.2 Local Register Allocation</a>
 <ul>
-<li><a href="#Allocator_state">1.2.1 Allocator state</a></li>
-<li><a href="#Spilling">1.2.2 Spilling</a></li>
-<li><a href="#Fixed_registers">1.2.3 Fixed registers</a></li>
-<li><a href="#Global_registers">1.2.4 Global registers</a></li>
-<li><a href="#Register_pairs">1.2.5 Register pairs</a></li>
-<li><a href="#Floating_point_stack">1.2.6 Floating point stack</a></li>
-<li><a href="#Calls">1.2.7 Calls</a></li>
-<li><a href="#Machine_description_files">1.2.8 Machine description files</a></li>
-<li><a href="#Arch_specific_macros">1.2.9 Arch specific macros</a></li>
+<li><a href="#allocator-state">1.2.1 Allocator state</a></li>
+<li><a href="#spilling">1.2.2 Spilling</a></li>
+<li><a href="#fixed-registers">1.2.3 Fixed registers</a></li>
+<li><a href="#global-registers">1.2.4 Global registers</a></li>
+<li><a href="#register-pairs">1.2.5 Register pairs</a></li>
+<li><a href="#floating-point-stack">1.2.6 Floating point stack</a></li>
+<li><a href="#calls">1.2.7 Calls</a></li>
+<li><a href="#machine-description-files">1.2.8 Machine description files</a></li>
+<li><a href="#arch-specific-macros">1.2.9 Arch specific macros</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

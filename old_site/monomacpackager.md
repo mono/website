@@ -21,12 +21,12 @@ If you want to create self-contained Mac bundles or publish your software to the
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Getting_Started">1 Getting Started</a></li>
-<li><a href="#Creating_your_Mac_application">2 Creating your Mac application</a>
+<li><a href="#getting-started">1 Getting Started</a></li>
+<li><a href="#creating-your-mac-application">2 Creating your Mac application</a>
 <ul>
-<li><a href="#Bundles_and_Mono">2.1 Bundles and Mono</a></li>
+<li><a href="#bundles-and-mono">2.1 Bundles and Mono</a></li>
 </ul></li>
-<li><a href="#Creating_an_Installer_package">3 Creating an Installer package</a></li>
+<li><a href="#creating-an-installer-package">3 Creating an Installer package</a></li>
 </ul></td>
 </tr>
 </tbody>

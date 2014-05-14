@@ -17,35 +17,35 @@ These are some infrastructure projects that we should look at implementing
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Status_Pages">1 Status Pages</a></li>
-<li><a href="#Packaging_and_Q.26A">2 Packaging and Q&amp;A</a>
+<li><a href="#status-pages">1 Status Pages</a></li>
+<li><a href="#packaging-and-qa">2 Packaging and Q&amp;A</a>
 <ul>
-<li><a href="#Windows_and_MacOS_packaging">2.1 Windows and MacOS packaging</a></li>
-<li><a href="#Ongoing_Maintenance_of_third_party_components">2.2 Ongoing Maintenance of third party components</a></li>
-<li><a href="#Including_in_the_Mono_Group_other_Packages">2.3 Including in the Mono Group other Packages</a></li>
-<li><a href="#Mono_Group_on_openSUSE_system">2.4 Mono Group on openSUSE system</a></li>
-<li><a href="#Windows-Forms_sample_applications.">2.5 Windows-Forms sample applications.</a></li>
-<li><a href="#Binary_applications.">2.6 Binary applications.</a></li>
-<li><a href="#Desktop_Applications_Considerations">2.7 Desktop Applications Considerations</a></li>
-<li><a href="#ASP.NET_based_applications">2.8 ASP.NET based applications</a></li>
-<li><a href="#Third-Party_Components_and_Libraries">2.9 Third-Party Components and Libraries</a></li>
-<li><a href="#Increase_our_porting_efforts">2.10 Increase our porting efforts</a></li>
-<li><a href="#Provide_an_Available_Mono_Software_Catalog">2.11 Provide an Available Mono Software Catalog</a></li>
-<li><a href="#Popular_Libraries_and_Components">2.12 Popular Libraries and Components</a></li>
+<li><a href="#windows-and-macos-packaging">2.1 Windows and MacOS packaging</a></li>
+<li><a href="#ongoing-maintenance-of-third-party-components">2.2 Ongoing Maintenance of third party components</a></li>
+<li><a href="#including-in-the-mono-group-other-packages">2.3 Including in the Mono Group other Packages</a></li>
+<li><a href="#mono-group-on-opensuse-system">2.4 Mono Group on openSUSE system</a></li>
+<li><a href="#windows-forms-sample-applications">2.5 Windows-Forms sample applications.</a></li>
+<li><a href="#binary-applications">2.6 Binary applications.</a></li>
+<li><a href="#desktop-applications-considerations">2.7 Desktop Applications Considerations</a></li>
+<li><a href="#aspnet-based-applications">2.8 ASP.NET based applications</a></li>
+<li><a href="#third-party-components-and-libraries">2.9 Third-Party Components and Libraries</a></li>
+<li><a href="#increase-our-porting-efforts">2.10 Increase our porting efforts</a></li>
+<li><a href="#provide-an-available-mono-software-catalog">2.11 Provide an Available Mono Software Catalog</a></li>
+<li><a href="#popular-libraries-and-components">2.12 Popular Libraries and Components</a></li>
 </ul></li>
-<li><a href="#Hosting_Services">3 Hosting Services</a>
+<li><a href="#hosting-services">3 Hosting Services</a>
 <ul>
-<li><a href="#Main_Source_Code_Instance">3.1 Main Source Code Instance</a></li>
-<li><a href="#Secondary_Source_Code_Instance">3.2 Secondary Source Code Instance</a></li>
-<li><a href="#Windows_Host_that_runs_our_test_suite_against_MS_.Net">3.3 Windows Host that runs our test suite against MS .Net</a></li>
-<li><a href="#Bugzilla_Host">3.4 Bugzilla Host</a></li>
-<li><a href="#ASP.NET_Application_Server">3.5 ASP.NET Application Server</a></li>
-<li><a href="#Buildbot_Host">3.6 Buildbot Host</a></li>
+<li><a href="#main-source-code-instance">3.1 Main Source Code Instance</a></li>
+<li><a href="#secondary-source-code-instance">3.2 Secondary Source Code Instance</a></li>
+<li><a href="#windows-host-that-runs-our-test-suite-against-ms-net">3.3 Windows Host that runs our test suite against MS .Net</a></li>
+<li><a href="#bugzilla-host">3.4 Bugzilla Host</a></li>
+<li><a href="#aspnet-application-server">3.5 ASP.NET Application Server</a></li>
+<li><a href="#buildbot-host">3.6 Buildbot Host</a></li>
 </ul></li>
-<li><a href="#Documentation">4 Documentation</a>
+<li><a href="#documentation">4 Documentation</a>
 <ul>
-<li><a href="#Tasks">4.1 Tasks</a></li>
-<li><a href="#Ongoing_Maintenance">4.2 Ongoing Maintenance</a></li>
+<li><a href="#tasks">4.1 Tasks</a></li>
+<li><a href="#ongoing-maintenance">4.2 Ongoing Maintenance</a></li>
 </ul></li>
 </ul></td>
 </tr>

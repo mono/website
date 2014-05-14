@@ -17,10 +17,10 @@ This will be updated as I also figure these things out. There shouldn't be a who
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Paths">1 Paths</a></li>
-<li><a href="#Casing">2 Casing</a></li>
-<li><a href="#Platform_specific_items">3 Platform specific items</a></li>
-<li><a href="#Pre.2FPostBuildEvents">4 Pre/PostBuildEvents</a></li>
+<li><a href="#paths">1 Paths</a></li>
+<li><a href="#casing">2 Casing</a></li>
+<li><a href="#platform-specific-items">3 Platform specific items</a></li>
+<li><a href="#prepostbuildevents">4 Pre/PostBuildEvents</a></li>
 </ul></td>
 </tr>
 </tbody>

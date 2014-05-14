@@ -23,19 +23,19 @@ In addition to the low-level curses bindings, currently MonoCurses ships with a 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Obtaining_mono-curses">1 Obtaining mono-curses</a></li>
-<li><a href="#gui.cs">2 gui.cs</a>
+<li><a href="#obtaining-mono-curses">1 Obtaining mono-curses</a></li>
+<li><a href="#guics">2 gui.cs</a>
 <ul>
-<li><a href="#Programming_with_gui.cs">2.1 Programming with gui.cs</a>
+<li><a href="#programming-with-guics">2.1 Programming with gui.cs</a>
 <ul>
-<li><a href="#The_Main_Loop">2.1.1 The Main Loop</a></li>
-<li><a href="#Containers">2.1.2 Containers</a></li>
-<li><a href="#Input">2.1.3 Input</a></li>
-<li><a href="#Rendering">2.1.4 Rendering</a></li>
-<li><a href="#Cursor_Positioning">2.1.5 Cursor Positioning</a></li>
-<li><a href="#Resizing">2.1.6 Resizing</a></li>
+<li><a href="#the-main-loop">2.1.1 The Main Loop</a></li>
+<li><a href="#containers">2.1.2 Containers</a></li>
+<li><a href="#input">2.1.3 Input</a></li>
+<li><a href="#rendering">2.1.4 Rendering</a></li>
+<li><a href="#cursor-positioning">2.1.5 Cursor Positioning</a></li>
+<li><a href="#resizing">2.1.6 Resizing</a></li>
 </ul></li>
-<li><a href="#Missing_things">2.2 Missing things</a></li>
+<li><a href="#missing-things">2.2 Missing things</a></li>
 </ul></li>
 </ul></td>
 </tr>

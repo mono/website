@@ -23,39 +23,39 @@ In addition to this page, these are some resources that are useful when porting 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Porting_Strategy">1 Porting Strategy</a>
+<li><a href="#porting-strategy">1 Porting Strategy</a>
 <ul>
-<li><a href="#Developing_on_Windows.2C_running_on_Unix">1.1 Developing on Windows, running on Unix</a></li>
-<li><a href="#Developing_Natively_on_Linux">1.2 Developing Natively on Linux</a></li>
+<li><a href="#developing-on-windows-running-on-unix">1.1 Developing on Windows, running on Unix</a></li>
+<li><a href="#developing-natively-on-linux">1.2 Developing Natively on Linux</a></li>
 </ul></li>
-<li><a href="#General_Guidelines">2 General Guidelines</a>
+<li><a href="#general-guidelines">2 General Guidelines</a>
 <ul>
-<li><a href="#Case_sensitivity">2.1 Case sensitivity</a></li>
-<li><a href="#Path_Separators">2.2 Path Separators</a></li>
-<li><a href="#Absolute_path_names">2.3 Absolute path names</a></li>
-<li><a href="#Platform_Invocation_.28P.2FInvoke.29">2.4 Platform Invocation (P/Invoke)</a></li>
-<li><a href="#Registry_Usage">2.5 Registry Usage</a></li>
-<li><a href="#Endianess">2.6 Endianess</a></li>
+<li><a href="#case-sensitivity">2.1 Case sensitivity</a></li>
+<li><a href="#path-separators">2.2 Path Separators</a></li>
+<li><a href="#absolute-path-names">2.3 Absolute path names</a></li>
+<li><a href="#platform-invocation-pinvoke">2.4 Platform Invocation (P/Invoke)</a></li>
+<li><a href="#registry-usage">2.5 Registry Usage</a></li>
+<li><a href="#endianess">2.6 Endianess</a></li>
 </ul></li>
-<li><a href="#ASP.NET_Guidelines">3 ASP.NET Guidelines</a></li>
-<li><a href="#Windows.Forms_Guidelines">4 Windows.Forms Guidelines</a></li>
-<li><a href="#Database_Migration">5 Database Migration</a></li>
-<li><a href="#Missing_Functionality">6 Missing Functionality</a>
+<li><a href="#aspnet-guidelines">3 ASP.NET Guidelines</a></li>
+<li><a href="#windowsforms-guidelines">4 Windows.Forms Guidelines</a></li>
+<li><a href="#database-migration">5 Database Migration</a></li>
+<li><a href="#missing-functionality">6 Missing Functionality</a>
 <ul>
-<li><a href="#No_Enterprise.Services">6.1 No Enterprise.Services</a></li>
-<li><a href="#No_cross-process_transactions">6.2 No cross-process transactions</a></li>
-<li><a href="#No_COM">6.3 No COM</a></li>
+<li><a href="#no-enterpriseservices">6.1 No Enterprise.Services</a></li>
+<li><a href="#no-cross-process-transactions">6.2 No cross-process transactions</a></li>
+<li><a href="#no-com">6.3 No COM</a></li>
 </ul></li>
-<li><a href="#User_Interface">7 User Interface</a>
+<li><a href="#user-interface">7 User Interface</a>
 <ul>
-<li><a href="#Using_Windows.Forms_as_a_cross-platform_API">7.1 Using Windows.Forms as a cross-platform API</a></li>
-<li><a href="#Using_a_native_UI_for_each_platform">7.2 Using a native UI for each platform</a></li>
+<li><a href="#using-windowsforms-as-a-cross-platform-api">7.1 Using Windows.Forms as a cross-platform API</a></li>
+<li><a href="#using-a-native-ui-for-each-platform">7.2 Using a native UI for each platform</a></li>
 </ul></li>
-<li><a href="#Porting_Tools">8 Porting Tools</a>
+<li><a href="#porting-tools">8 Porting Tools</a>
 <ul>
-<li><a href="#MonoDevelop">8.1 MonoDevelop</a></li>
+<li><a href="#monodevelop">8.1 MonoDevelop</a></li>
 <li><a href="#installvsts">8.2 installvsts</a></li>
-<li><a href="#Prj2make">8.3 Prj2make</a></li>
+<li><a href="#prj2make">8.3 Prj2make</a></li>
 </ul></li>
 </ul></td>
 </tr>

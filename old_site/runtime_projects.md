@@ -19,30 +19,30 @@ These track the projects for the VM team.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Ongoing_Projects">1 Ongoing Projects</a>
+<li><a href="#ongoing-projects">1 Ongoing Projects</a>
 <ul>
-<li><a href="#Soft_Debugger">1.1 Soft Debugger</a></li>
-<li><a href="#Compacting_GC">1.2 Compacting GC</a></li>
-<li><a href="#LLVM_as_a_Code_Generation_Backend">1.3 LLVM as a Code Generation Backend</a></li>
-<li><a href="#Reflection_Fixes">1.4 Reflection Fixes</a></li>
-<li><a href="#Continuations">1.5 Continuations</a></li>
-<li><a href="#Reflection.Emit_Fixes">1.6 Reflection.Emit Fixes</a></li>
-<li><a href="#Runtime_Fixes">1.7 Runtime Fixes</a></li>
-<li><a href="#Security:_Moonlight">1.8 Security: Moonlight</a></li>
-<li><a href="#Performance">1.9 Performance</a>
+<li><a href="#soft-debugger">1.1 Soft Debugger</a></li>
+<li><a href="#compacting-gc">1.2 Compacting GC</a></li>
+<li><a href="#llvm-as-a-code-generation-backend">1.3 LLVM as a Code Generation Backend</a></li>
+<li><a href="#reflection-fixes">1.4 Reflection Fixes</a></li>
+<li><a href="#continuations">1.5 Continuations</a></li>
+<li><a href="#reflectionemit-fixes">1.6 Reflection.Emit Fixes</a></li>
+<li><a href="#runtime-fixes">1.7 Runtime Fixes</a></li>
+<li><a href="#security-moonlight">1.8 Security: Moonlight</a></li>
+<li><a href="#performance">1.9 Performance</a>
 <ul>
-<li><a href="#Frameless_methods_on_x86">1.9.1 Frameless methods on x86</a></li>
-<li><a href="#Generics_code_improvements">1.9.2 Generics code improvements</a></li>
+<li><a href="#frameless-methods-on-x86">1.9.1 Frameless methods on x86</a></li>
+<li><a href="#generics-code-improvements">1.9.2 Generics code improvements</a></li>
 </ul></li>
-<li><a href="#Console_Ports">1.10 Console Ports</a></li>
-<li><a href="#Innovative_Features">1.11 Innovative Features</a>
+<li><a href="#console-ports">1.10 Console Ports</a></li>
+<li><a href="#innovative-features">1.11 Innovative Features</a>
 <ul>
-<li><a href="#API_Changes">1.11.1 API Changes</a></li>
+<li><a href="#api-changes">1.11.1 API Changes</a></li>
 </ul></li>
-<li><a href="#Cross_Compilation">1.12 Cross Compilation</a></li>
+<li><a href="#cross-compilation">1.12 Cross Compilation</a></li>
 </ul></li>
-<li><a href="#Low_Priority_Projects">2 Low Priority Projects</a></li>
-<li><a href="#Completed_Projects">3 Completed Projects</a></li>
+<li><a href="#low-priority-projects">2 Low Priority Projects</a></li>
+<li><a href="#completed-projects">3 Completed Projects</a></li>
 </ul></td>
 </tr>
 </tbody>

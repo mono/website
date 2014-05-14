@@ -15,33 +15,33 @@ MonoMac/Documentation/Binding New Objective-C Types
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Binding_Objective-C_Types">1 Binding Objective-C Types</a>
+<li><a href="#binding-objective-c-types">1 Binding Objective-C Types</a>
 <ul>
-<li><a href="#Binding_an_API">1.1 Binding an API</a></li>
-<li><a href="#The_API_definition_file">1.2 The API definition file</a>
+<li><a href="#binding-an-api">1.1 Binding an API</a></li>
+<li><a href="#the-api-definition-file">1.2 The API definition file</a>
 <ul>
-<li><a href="#Binding_Methods">1.2.1 Binding Methods</a></li>
-<li><a href="#Binding_Properties">1.2.2 Binding Properties</a></li>
-<li><a href="#Binding_Constructors">1.2.3 Binding Constructors</a></li>
-<li><a href="#Binding_Protocols">1.2.4 Binding Protocols</a></li>
-<li><a href="#Binding_Class_Extensions.">1.2.5 Binding Class Extensions.</a></li>
+<li><a href="#binding-methods">1.2.1 Binding Methods</a></li>
+<li><a href="#binding-properties">1.2.2 Binding Properties</a></li>
+<li><a href="#binding-constructors">1.2.3 Binding Constructors</a></li>
+<li><a href="#binding-protocols">1.2.4 Binding Protocols</a></li>
+<li><a href="#binding-class-extensions">1.2.5 Binding Class Extensions.</a></li>
 <li><a href="#">1.2.6</a></li>
-<li><a href="#Type_mappings">1.2.7 Type mappings</a></li>
-<li><a href="#Arrays">1.2.8 Arrays</a></li>
-<li><a href="#Selectors">1.2.9 Selectors</a></li>
-<li><a href="#Memory_management_attributes">1.2.10 Memory management attributes</a></li>
-<li><a href="#Style_Guidelines">1.2.11 Style Guidelines</a></li>
-<li><a href="#Using_.5BInternal.5D">1.2.12 Using [Internal]</a></li>
+<li><a href="#type-mappings">1.2.7 Type mappings</a></li>
+<li><a href="#arrays">1.2.8 Arrays</a></li>
+<li><a href="#selectors">1.2.9 Selectors</a></li>
+<li><a href="#memory-management-attributes">1.2.10 Memory management attributes</a></li>
+<li><a href="#style-guidelines">1.2.11 Style Guidelines</a></li>
+<li><a href="#using-internal">1.2.12 Using [Internal]</a></li>
 </ul></li>
-<li><a href="#Event_Handlers_and_Callbacks">1.3 Event Handlers and Callbacks</a></li>
-<li><a href="#Enumerations_and_Base_Types">1.4 Enumerations and Base Types</a></li>
-<li><a href="#out.2Fref_parameters">1.5 out/ref parameters</a></li>
-<li><a href="#Binding_Objective-C_Argument_Lists">1.6 Binding Objective-C Argument Lists</a></li>
-<li><a href="#Binding_Fields">1.7 Binding Fields</a></li>
-<li><a href="#Binding_Blocks">1.8 Binding Blocks</a></li>
-<li><a href="#Linking_the_Dependencies">1.9 Linking the Dependencies</a></li>
-<li><a href="#Assisted_References">1.10 Assisted References</a></li>
-<li><a href="#Inheriting_Protocols">1.11 Inheriting Protocols</a></li>
+<li><a href="#event-handlers-and-callbacks">1.3 Event Handlers and Callbacks</a></li>
+<li><a href="#enumerations-and-base-types">1.4 Enumerations and Base Types</a></li>
+<li><a href="#outref-parameters">1.5 out/ref parameters</a></li>
+<li><a href="#binding-objective-c-argument-lists">1.6 Binding Objective-C Argument Lists</a></li>
+<li><a href="#binding-fields">1.7 Binding Fields</a></li>
+<li><a href="#binding-blocks">1.8 Binding Blocks</a></li>
+<li><a href="#linking-the-dependencies">1.9 Linking the Dependencies</a></li>
+<li><a href="#assisted-references">1.10 Assisted References</a></li>
+<li><a href="#inheriting-protocols">1.11 Inheriting Protocols</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -92,7 +92,7 @@ namespace Cocos2D {
 
 The above sample defines a class called Cocos2D.Camera that derives from the NSObject base type (this type comes from MonoMac.Foundation.NSObject) and which defines a static property (ZEye), two methods that take no arguments and a method that takes three arguments.
 
-An in-depth discussion of the format of the API file and the attributes is covered in the [API definition file](#The_API_definition_file) section below.
+An in-depth discussion of the format of the API file and the attributes is covered in the [API definition file](#the-api-definition-file) section below.
 
 To produce a complete binding, you will typically deal with three sets of sources:
 
@@ -227,7 +227,7 @@ IntPtr Constructor (RectangleF frame);
 
 ### Binding Protocols
 
-As described in the API design document, in the section [discussing Models and Protocols]({{site.github.url}}/old_site/MonoMac/Documentation/API#Models "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
+As described in the API design document, in the section [discussing Models and Protocols]({{site.github.url}}/old_site/MonoMac/Documentation/API#models "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
 
 The big difference between a regular bound class and a delegate class is that the delegate class might have one or more optional methods.
 

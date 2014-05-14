@@ -15,25 +15,25 @@ Accessibility: UIATest Library Introduction
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What">1 What</a></li>
-<li><a href="#Sample_Usage">2 Sample Usage</a></li>
-<li><a href="#How_Visual_UIA_Verify_uses_UIA_Test_Library">3 How Visual UIA Verify uses UIA Test Library</a></li>
-<li><a href="#How_to_Define_Test_Cases">4 How to Define Test Cases</a>
+<li><a href="#what">1 What</a></li>
+<li><a href="#sample-usage">2 Sample Usage</a></li>
+<li><a href="#how-visual-uia-verify-uses-uia-test-library">3 How Visual UIA Verify uses UIA Test Library</a></li>
+<li><a href="#how-to-define-test-cases">4 How to Define Test Cases</a>
 <ul>
-<li><a href="#Test_Cases_by_Type">4.1 Test Cases by Type</a></li>
-<li><a href="#The_Inheritance_Relationship_of_Test_Case_Classes">4.2 The Inheritance Relationship of Test Case Classes</a></li>
-<li><a href="#TestCaseAttribute">4.3 TestCaseAttribute</a></li>
-<li><a href="#Making_Assertion">4.4 Making Assertion</a></li>
-<li><a href="#Logging">4.5 Logging</a></li>
+<li><a href="#test-cases-by-type">4.1 Test Cases by Type</a></li>
+<li><a href="#the-inheritance-relationship-of-test-case-classes">4.2 The Inheritance Relationship of Test Case Classes</a></li>
+<li><a href="#testcaseattribute">4.3 TestCaseAttribute</a></li>
+<li><a href="#making-assertion">4.4 Making Assertion</a></li>
+<li><a href="#logging">4.5 Logging</a></li>
 </ul></li>
-<li><a href="#Sample_Tests">5 Sample Tests</a>
+<li><a href="#sample-tests">5 Sample Tests</a>
 <ul>
-<li><a href="#Sample_1:_TitleBarControlTests">5.1 Sample 1: TitleBarControlTests</a></li>
-<li><a href="#Sample_2:_ValueTests">5.2 Sample 2: ValueTests</a>
+<li><a href="#sample-1-titlebarcontroltests">5.1 Sample 1: TitleBarControlTests</a></li>
+<li><a href="#sample-2-valuetests">5.2 Sample 2: ValueTests</a>
 <ul>
-<li><a href="#ValueWrapper">5.2.1 ValueWrapper</a></li>
-<li><a href="#ValueTests_Test_Steps">5.2.2 ValueTests Test Steps</a></li>
-<li><a href="#ValueTests_Test_Cases">5.2.3 ValueTests Test Cases</a></li>
+<li><a href="#valuewrapper">5.2.1 ValueWrapper</a></li>
+<li><a href="#valuetests-test-steps">5.2.2 ValueTests Test Steps</a></li>
+<li><a href="#valuetests-test-cases">5.2.3 ValueTests Test Cases</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

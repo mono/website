@@ -17,13 +17,13 @@ This document describes the state of SafeHandles and CriticalFinalizerObject and
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Resources">1 Resources</a></li>
-<li><a href="#SafeHandle">2 SafeHandle</a>
+<li><a href="#resources">1 Resources</a></li>
+<li><a href="#safehandle">2 SafeHandle</a>
 <ul>
-<li><a href="#Notes_on_Limitations">2.1 Notes on Limitations</a></li>
+<li><a href="#notes-on-limitations">2.1 Notes on Limitations</a></li>
 </ul></li>
-<li><a href="#CriticalFinalizerObject">3 CriticalFinalizerObject</a></li>
-<li><a href="#Users_of_SafeHandles">4 Users of SafeHandles</a></li>
+<li><a href="#criticalfinalizerobject">3 CriticalFinalizerObject</a></li>
+<li><a href="#users-of-safehandles">4 Users of SafeHandles</a></li>
 </ul></td>
 </tr>
 </tbody>

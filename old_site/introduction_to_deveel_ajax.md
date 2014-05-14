@@ -19,35 +19,35 @@ The objective of the project is not to replace existing enterprise frameworks, s
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Basic_Concepts">1 Basic Concepts</a></li>
-<li><a href="#Application_Contexts">2 Application Contexts</a>
+<li><a href="#basic-concepts">1 Basic Concepts</a></li>
+<li><a href="#application-contexts">2 Application Contexts</a>
 <ul>
-<li><a href="#Is_this_project_useful_for_my_scope.3F">2.1 Is this project useful for my scope?</a></li>
-<li><a href="#How_can_I_use_this_project.3F">2.2 How can I use this project?</a></li>
+<li><a href="#is-this-project-useful-for-my-scope">2.1 Is this project useful for my scope?</a></li>
+<li><a href="#how-can-i-use-this-project">2.2 How can I use this project?</a></li>
 </ul></li>
-<li><a href="#Security">3 Security</a></li>
-<li><a href="#Performances">4 Performances</a>
+<li><a href="#security">3 Security</a></li>
+<li><a href="#performances">4 Performances</a>
 <ul>
-<li><a href="#Configuring_the_Application">4.1 Configuring the Application</a></li>
-<li><a href="#Configuring_the_Code">4.2 Configuring the Code</a>
+<li><a href="#configuring-the-application">4.1 Configuring the Application</a></li>
+<li><a href="#configuring-the-code">4.2 Configuring the Code</a>
 <ul>
-<li><a href="#AjaxMethod">4.2.1 AjaxMethod</a>
+<li><a href="#ajaxmethod">4.2.1 AjaxMethod</a>
 <ul>
-<li><a href="#Duration">4.2.1.1 Duration</a></li>
-<li><a href="#MethodName">4.2.1.2 MethodName</a></li>
-<li><a href="#ResponseFormat">4.2.1.3 ResponseFormat</a></li>
+<li><a href="#duration">4.2.1.1 Duration</a></li>
+<li><a href="#methodname">4.2.1.2 MethodName</a></li>
+<li><a href="#responseformat">4.2.1.3 ResponseFormat</a></li>
 </ul></li>
-<li><a href="#AjaxType">4.2.2 AjaxType</a></li>
-<li><a href="#Require">4.2.3 Require</a></li>
+<li><a href="#ajaxtype">4.2.2 AjaxType</a></li>
+<li><a href="#require">4.2.3 Require</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Advanced_Features">5 Advanced Features</a>
+<li><a href="#advanced-features">5 Advanced Features</a>
 <ul>
-<li><a href="#Custom_Script_Rendering">5.1 Custom Script Rendering</a></li>
+<li><a href="#custom-script-rendering">5.1 Custom Script Rendering</a></li>
 </ul></li>
-<li><a href="#A_Basic_Example">6 A Basic Example</a></li>
-<li><a href="#External_References">7 External References</a></li>
-<li><a href="#Licensing">8 Licensing</a></li>
+<li><a href="#a-basic-example">6 A Basic Example</a></li>
+<li><a href="#external-references">7 External References</a></li>
+<li><a href="#licensing">8 Licensing</a></li>
 </ul></td>
 </tr>
 </tbody>

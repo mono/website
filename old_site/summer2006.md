@@ -19,30 +19,30 @@ Last year Summer projects are listed [here]({{site.github.url}}/old_site/Summer2
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#A_CIL_Linker">1 A CIL Linker</a></li>
-<li><a href="#ASP.NET_Project_Support_for_MonoDevelop">2 ASP.NET Project Support for MonoDevelop</a></li>
-<li><a href="#Assembly_Browser_Addin_for_MonoDevelop">3 Assembly Browser Addin for MonoDevelop</a>
+<li><a href="#a-cil-linker">1 A CIL Linker</a></li>
+<li><a href="#aspnet-project-support-for-monodevelop">2 ASP.NET Project Support for MonoDevelop</a></li>
+<li><a href="#assembly-browser-addin-for-monodevelop">3 Assembly Browser Addin for MonoDevelop</a>
 <ul>
-<li><a href="#New_Class_Wizard:">3.1 New Class Wizard:</a></li>
+<li><a href="#new-class-wizard">3.1 New Class Wizard:</a></li>
 </ul></li>
-<li><a href="#Bindings_for_Gstreamer">4 Bindings for Gstreamer</a></li>
-<li><a href="#Bittorrent_Class_Library:_Client.2FCore">5 Bittorrent Class Library: Client/Core</a></li>
-<li><a href="#BitTorrent_Class_Libraries.2C_GUI">6 BitTorrent Class Libraries, GUI</a></li>
-<li><a href="#BitTorrent_Class_Libraries:_Server.2FTracker">7 BitTorrent Class Libraries: Server/Tracker</a></li>
-<li><a href="#Distributed_Transactions">8 Distributed Transactions</a></li>
-<li><a href="#Elimination_of_redundant_checks_in_JITted_code">9 Elimination of redundant checks in JITted code</a>
+<li><a href="#bindings-for-gstreamer">4 Bindings for Gstreamer</a></li>
+<li><a href="#bittorrent-class-library-clientcore">5 Bittorrent Class Library: Client/Core</a></li>
+<li><a href="#bittorrent-class-libraries-gui">6 BitTorrent Class Libraries, GUI</a></li>
+<li><a href="#bittorrent-class-libraries-servertracker">7 BitTorrent Class Libraries: Server/Tracker</a></li>
+<li><a href="#distributed-transactions">8 Distributed Transactions</a></li>
+<li><a href="#elimination-of-redundant-checks-in-jitted-code">9 Elimination of redundant checks in JITted code</a>
 <ul>
-<li><a href="#Deliverables">9.1 Deliverables</a></li>
-<li><a href="#Project_Details">9.2 Project Details</a></li>
+<li><a href="#deliverables">9.1 Deliverables</a></li>
+<li><a href="#project-details">9.2 Project Details</a></li>
 </ul></li>
-<li><a href="#Further_implementation_of_MBuild_build_tool">10 Further implementation of MBuild build tool</a></li>
-<li><a href="#GCC_CIL_Backend">11 GCC CIL Backend</a></li>
-<li><a href="#MonoDevelop_Source_Code_Control_Integration">12 MonoDevelop Source Code Control Integration</a></li>
-<li><a href="#PHP.NET_Compiler_.28continuation_to_last_summer.27s_project.29">13 PHP.NET Compiler (continuation to last summer's project)</a></li>
-<li><a href="#Strip_Controls">14 Strip Controls</a></li>
-<li><a href="#Visual_Basic_Compiler">15 Visual Basic Compiler</a></li>
-<li><a href="#WebParts_Implementation">16 WebParts Implementation</a></li>
-<li><a href="#X_GL_compositing_for_Mono:_a_compiz_CLR_binding">17 X GL compositing for Mono: a compiz CLR binding</a></li>
+<li><a href="#further-implementation-of-mbuild-build-tool">10 Further implementation of MBuild build tool</a></li>
+<li><a href="#gcc-cil-backend">11 GCC CIL Backend</a></li>
+<li><a href="#monodevelop-source-code-control-integration">12 MonoDevelop Source Code Control Integration</a></li>
+<li><a href="#phpnet-compiler-continuation-to-last-summers-project">13 PHP.NET Compiler (continuation to last summer's project)</a></li>
+<li><a href="#strip-controls">14 Strip Controls</a></li>
+<li><a href="#visual-basic-compiler">15 Visual Basic Compiler</a></li>
+<li><a href="#webparts-implementation">16 WebParts Implementation</a></li>
+<li><a href="#x-gl-compositing-for-mono-a-compiz-clr-binding">17 X GL compositing for Mono: a compiz CLR binding</a></li>
 </ul></td>
 </tr>
 </tbody>

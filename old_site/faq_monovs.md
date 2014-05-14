@@ -15,14 +15,14 @@ FAQ: MonoVS
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General">1 General</a></li>
-<li><a href="#Running_on_Mono">2 Running on Mono</a>
+<li><a href="#general">1 General</a></li>
+<li><a href="#running-on-mono">2 Running on Mono</a>
 <ul>
-<li><a href="#-_Place_a_copy_of_the_.dll_in_the_Mono_GAC:">2.1 - Place a copy of the .dll in the Mono GAC:</a></li>
-<li><a href="#-_Add_a_project_reference_to_the_.dll:">2.2 - Add a project reference to the .dll:</a></li>
-<li><a href="#-_Place_a_copy_of_the_.dll_in_your_website.27s_Bin_folder">2.3 - Place a copy of the .dll in your website's Bin folder</a></li>
+<li><a href="#--place-a-copy-of-the-dll-in-the-mono-gac">2.1 - Place a copy of the .dll in the Mono GAC:</a></li>
+<li><a href="#--add-a-project-reference-to-the-dll">2.2 - Add a project reference to the .dll:</a></li>
+<li><a href="#--place-a-copy-of-the-dll-in-your-websites-bin-folder">2.3 - Place a copy of the .dll in your website's Bin folder</a></li>
 </ul></li>
-<li><a href="#Packaging">3 Packaging</a></li>
+<li><a href="#packaging">3 Packaging</a></li>
 </ul></td>
 </tr>
 </tbody>

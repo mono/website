@@ -17,14 +17,14 @@ Monodoc is a set of libraries and applications for viewing and editing Mono clas
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Viewing_The_Documentation">1 Viewing The Documentation</a>
+<li><a href="#viewing-the-documentation">1 Viewing The Documentation</a>
 <ul>
-<li><a href="#The_Gtk.23_Documentation_Browser">1.1 The Gtk# Documentation Browser</a></li>
-<li><a href="#Online_Documentation">1.2 Online Documentation</a></li>
-<li><a href="#Mod_.28Command-Line_Documentation_Viewer.29">1.3 Mod (Command-Line Documentation Viewer)</a></li>
+<li><a href="#the-gtk-documentation-browser">1.1 The Gtk# Documentation Browser</a></li>
+<li><a href="#online-documentation">1.2 Online Documentation</a></li>
+<li><a href="#mod-command-line-documentation-viewer">1.3 Mod (Command-Line Documentation Viewer)</a></li>
 </ul></li>
-<li><a href="#Creating_Documentation.2C_Contributing">2 Creating Documentation, Contributing</a></li>
-<li><a href="#My_Documentation_in_Monodoc">3 My Documentation in Monodoc</a></li>
+<li><a href="#creating-documentation-contributing">2 Creating Documentation, Contributing</a></li>
+<li><a href="#my-documentation-in-monodoc">3 My Documentation in Monodoc</a></li>
 </ul></td>
 </tr>
 </tbody>

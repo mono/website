@@ -19,14 +19,14 @@ Before installing Mono on your Nokia Internet Tablet device we strongly recommen
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Single_Install_Click">1 Single Install Click</a></li>
-<li><a href="#Packages">2 Packages</a></li>
-<li><a href="#Screenshots_and_Movies">3 Screenshots and Movies</a></li>
-<li><a href="#Advanced_Topics">4 Advanced Topics</a>
+<li><a href="#single-install-click">1 Single Install Click</a></li>
+<li><a href="#packages">2 Packages</a></li>
+<li><a href="#screenshots-and-movies">3 Screenshots and Movies</a></li>
+<li><a href="#advanced-topics">4 Advanced Topics</a>
 <ul>
-<li><a href="#Repositories">4.1 Repositories</a></li>
-<li><a href="#Building_Mono_with_Scratchbox">4.2 Building Mono with Scratchbox</a></li>
-<li><a href="#Todo">4.3 Todo</a></li>
+<li><a href="#repositories">4.1 Repositories</a></li>
+<li><a href="#building-mono-with-scratchbox">4.2 Building Mono with Scratchbox</a></li>
+<li><a href="#todo">4.3 Todo</a></li>
 </ul></li>
 </ul></td>
 </tr>

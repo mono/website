@@ -15,11 +15,11 @@ Gcc4cil
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_gcc4cil_project">1 The gcc4cil project</a></li>
-<li><a href="#The_gcc4cil_linker">2 The gcc4cil linker</a>
+<li><a href="#the-gcc4cil-project">1 The gcc4cil project</a></li>
+<li><a href="#the-gcc4cil-linker">2 The gcc4cil linker</a>
 <ul>
-<li><a href="#What_the_linker_adds_to_the_merge_tool">2.1 What the linker adds to the merge tool</a></li>
-<li><a href="#How_the_linker_handles_external_symbols">2.2 How the linker handles external symbols</a></li>
+<li><a href="#what-the-linker-adds-to-the-merge-tool">2.1 What the linker adds to the merge tool</a></li>
+<li><a href="#how-the-linker-handles-external-symbols">2.2 How the linker handles external symbols</a></li>
 </ul></li>
 </ul></td>
 </tr>

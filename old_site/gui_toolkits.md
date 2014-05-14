@@ -25,17 +25,17 @@ Both GTK\# and Winforms, while being cross-platform, have clear roots in their o
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Toolkits">1 Toolkits</a>
+<li><a href="#toolkits">1 Toolkits</a>
 <ul>
-<li><a href="#Gtk.23">1.1 Gtk#</a></li>
-<li><a href="#MonoMac">1.2 MonoMac</a></li>
-<li><a href="#Windows.Forms">1.3 Windows.Forms</a></li>
-<li><a href="#Qyoto">1.4 Qyoto</a></li>
-<li><a href="#Qt4Dotnet">1.5 Qt4Dotnet</a></li>
-<li><a href="#wxNet">1.6 wxNet</a></li>
-<li><a href="#Dead_efforts">1.7 Dead efforts</a></li>
+<li><a href="#gtk">1.1 Gtk#</a></li>
+<li><a href="#monomac">1.2 MonoMac</a></li>
+<li><a href="#windowsforms">1.3 Windows.Forms</a></li>
+<li><a href="#qyoto">1.4 Qyoto</a></li>
+<li><a href="#qt4dotnet">1.5 Qt4Dotnet</a></li>
+<li><a href="#wxnet">1.6 wxNet</a></li>
+<li><a href="#dead-efforts">1.7 Dead efforts</a></li>
 </ul></li>
-<li><a href="#Alternative_Implementation_Approaches">2 Alternative Implementation Approaches</a></li>
+<li><a href="#alternative-implementation-approaches">2 Alternative Implementation Approaches</a></li>
 </ul></td>
 </tr>
 </tbody>

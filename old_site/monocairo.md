@@ -17,12 +17,12 @@ Cairo is a low-level 2D vector drawing library. Various rendering backends (XRen
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#More_Resources">1 More Resources</a></li>
-<li><a href="#Using_Cairo_with_Gtk.2FGdk">2 Using Cairo with Gtk/Gdk</a></li>
-<li><a href="#Drawing_simple_primitives">3 Drawing simple primitives</a></li>
-<li><a href="#Saving_and_restoring_the_Cairo_state">4 Saving and restoring the Cairo state</a></li>
-<li><a href="#Filling_shapes_with_gradients">5 Filling shapes with gradients</a></li>
-<li><a href="#Hints">6 Hints</a></li>
+<li><a href="#more-resources">1 More Resources</a></li>
+<li><a href="#using-cairo-with-gtkgdk">2 Using Cairo with Gtk/Gdk</a></li>
+<li><a href="#drawing-simple-primitives">3 Drawing simple primitives</a></li>
+<li><a href="#saving-and-restoring-the-cairo-state">4 Saving and restoring the Cairo state</a></li>
+<li><a href="#filling-shapes-with-gradients">5 Filling shapes with gradients</a></li>
+<li><a href="#hints">6 Hints</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,49 +17,49 @@ This document is intended to provide a basic overview of how to configure and te
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Extension_Environment">1 Mono Extension Environment</a>
+<li><a href="#mono-extension-environment">1 Mono Extension Environment</a>
 <ul>
-<li><a href="#Setting_up_the_Mono_Extension_environment">1.1 Setting up the Mono Extension environment</a></li>
-<li><a href="#Verifying_that_the_mono_extension_environment_is_setup_correctly">1.2 Verifying that the mono extension environment is setup correctly</a></li>
-<li><a href="#Making_the_mono_extension_environment_permanent">1.3 Making the mono extension environment permanent</a></li>
+<li><a href="#setting-up-the-mono-extension-environment">1.1 Setting up the Mono Extension environment</a></li>
+<li><a href="#verifying-that-the-mono-extension-environment-is-setup-correctly">1.2 Verifying that the mono extension environment is setup correctly</a></li>
+<li><a href="#making-the-mono-extension-environment-permanent">1.3 Making the mono extension environment permanent</a></li>
 </ul></li>
-<li><a href="#Configuration_verification_.28mono-addon-check_script.29">2 Configuration verification (mono-addon-check script)</a>
+<li><a href="#configuration-verification-mono-addon-check-script">2 Configuration verification (mono-addon-check script)</a>
 <ul>
-<li><a href="#Implications_of_Warnings">2.1 Implications of Warnings</a>
+<li><a href="#implications-of-warnings">2.1 Implications of Warnings</a>
 <ul>
-<li><a href="#.22Apache_MPM_.3Cmpm_type.2C_probably_.27prefork.27.3E_is_in_use_while_.3Cmpm_type.2C_probably_.27worker.27.3E_is_recommended.22">2.1.1 &quot;Apache MPM &lt;mpm type, probably 'prefork'&gt; is in use while &lt;mpm type, probably 'worker'&gt; is recommended&quot;</a></li>
-<li><a href="#.22Unknown_Apache_MPM_.3Cmpm_type.3E_is_in_use_but_.3Cmpm_type.2C_probably_.27worker.27.3E_is_recommended.22">2.1.2 &quot;Unknown Apache MPM &lt;mpm type&gt; is in use but &lt;mpm type, probably 'worker'&gt; is recommended&quot;</a></li>
-<li><a href="#.22Found_Mono_version_.3Cmono_version.3E.2C_while_version_.3Cmono_version.3E_is_recommended.22">2.1.3 &quot;Found Mono version &lt;mono version&gt;, while version &lt;mono version&gt; is recommended&quot;</a></li>
-<li><a href="#.22Virtual_host_.3Cvirtual_host_name.3E.22">2.1.4 &quot;Virtual host &lt;virtual host name&gt;&quot;</a></li>
+<li><a href="#apache-mpm-mpm-type-probably-prefork-is-in-use-while-mpm-type-probably-worker-is-recommended">2.1.1 &quot;Apache MPM &lt;mpm type, probably 'prefork'&gt; is in use while &lt;mpm type, probably 'worker'&gt; is recommended&quot;</a></li>
+<li><a href="#unknown-apache-mpm-mpm-type-is-in-use-but-mpm-type-probably-worker-is-recommended">2.1.2 &quot;Unknown Apache MPM &lt;mpm type&gt; is in use but &lt;mpm type, probably 'worker'&gt; is recommended&quot;</a></li>
+<li><a href="#found-mono-version-mono-version-while-version-mono-version-is-recommended">2.1.3 &quot;Found Mono version &lt;mono version&gt;, while version &lt;mono version&gt; is recommended&quot;</a></li>
+<li><a href="#virtual-host-virtual-host-name">2.1.4 &quot;Virtual host &lt;virtual host name&gt;&quot;</a></li>
 </ul></li>
-<li><a href="#Correction_of_Errors">2.2 Correction of Errors</a>
+<li><a href="#correction-of-errors">2.2 Correction of Errors</a>
 <ul>
-<li><a href="#.22apache2ctl_missing.22">2.2.1 &quot;apache2ctl missing&quot;</a></li>
-<li><a href="#.22Unable_to_determine_Apache_configuration_directory.22">2.2.2 &quot;Unable to determine Apache configuration directory&quot;</a></li>
-<li><a href="#.22Apache_v2_package_missing.22">2.2.3 &quot;Apache v2 package missing&quot;</a></li>
-<li><a href="#.22Unable_to_determine_the_Apache_MPM.22">2.2.4 &quot;Unable to determine the Apache MPM&quot;</a></li>
-<li><a href="#.22Internal_error.22">2.2.5 &quot;Internal error&quot;</a></li>
-<li><a href="#.22Configuration_not_found_or_invalid_syntax_.28details_logged.29.22">2.2.6 &quot;Configuration not found or invalid syntax (details logged)&quot;</a></li>
-<li><a href="#.22The_mod_mono_Apache_module_is_not_loaded_or_configuration_syntax_error_.28details_logged.29.22">2.2.7 &quot;The mod_mono Apache module is not loaded or configuration syntax error (details logged)&quot;</a></li>
-<li><a href="#.22Unable_to_find_mod_mono_configuration.22">2.2.8 &quot;Unable to find mod_mono configuration&quot;</a></li>
-<li><a href="#.22The_mod_mono_binary_file_does_not_exist_at_.3Cpath_to_the_expected_mod_mono_binary.3E.22">2.2.9 &quot;The mod_mono binary file does not exist at &lt;path to the expected mod_mono binary&gt;&quot;</a></li>
-<li><a href="#.22Unknown_OS_architecture_.24OS_ARCH.22">2.2.10 &quot;Unknown OS architecture $OS_ARCH&quot;</a></li>
-<li><a href="#.22mod_mono_has_unresolvable_shared_library_dependencies_.28details_logged.29.22">2.2.11 &quot;mod_mono has unresolvable shared library dependencies (details logged)&quot;</a></li>
-<li><a href="#.22mod_mono_might_not_be_loadable_on_this_architecture_.28.24.7BOS_ARCH.7D-bit.2C_details_logged.29.22">2.2.12 &quot;mod_mono might not be loadable on this architecture (${OS_ARCH}-bit, details logged)&quot;</a></li>
-<li><a href="#.22Some_packages_are_missing:_.3Clist_of_missing_packages.3E.22">2.2.13 &quot;Some packages are missing: &lt;list of missing packages&gt;&quot;</a></li>
-<li><a href="#.22Unable_to_determine_mono_version.22">2.2.14 &quot;Unable to determine mono version&quot;</a></li>
-<li><a href="#.22Virtual_host_.3Cimproperly_configured_vhost.3E.22">2.2.15 &quot;Virtual host &lt;improperly configured vhost&gt;&quot;</a></li>
-<li><a href="#.22Missing_virtual_host_path_parameter.22">2.2.16 &quot;Missing virtual host path parameter&quot;</a></li>
-<li><a href="#.22Virtual_host_configuration_file_.3Cpath_to_vhost_config_file.3E_does_not_exist.22">2.2.17 &quot;Virtual host configuration file &lt;path to vhost config file&gt; does not exist&quot;</a></li>
+<li><a href="#apache2ctl-missing">2.2.1 &quot;apache2ctl missing&quot;</a></li>
+<li><a href="#unable-to-determine-apache-configuration-directory">2.2.2 &quot;Unable to determine Apache configuration directory&quot;</a></li>
+<li><a href="#apache-v2-package-missing">2.2.3 &quot;Apache v2 package missing&quot;</a></li>
+<li><a href="#unable-to-determine-the-apache-mpm">2.2.4 &quot;Unable to determine the Apache MPM&quot;</a></li>
+<li><a href="#internal-error">2.2.5 &quot;Internal error&quot;</a></li>
+<li><a href="#configuration-not-found-or-invalid-syntax-details-logged">2.2.6 &quot;Configuration not found or invalid syntax (details logged)&quot;</a></li>
+<li><a href="#the-mod-mono-apache-module-is-not-loaded-or-configuration-syntax-error-details-logged">2.2.7 &quot;The mod_mono Apache module is not loaded or configuration syntax error (details logged)&quot;</a></li>
+<li><a href="#unable-to-find-mod-mono-configuration">2.2.8 &quot;Unable to find mod_mono configuration&quot;</a></li>
+<li><a href="#the-mod-mono-binary-file-does-not-exist-at-path-to-the-expected-mod-mono-binary">2.2.9 &quot;The mod_mono binary file does not exist at &lt;path to the expected mod_mono binary&gt;&quot;</a></li>
+<li><a href="#unknown-os-architecture-os-arch">2.2.10 &quot;Unknown OS architecture $OS_ARCH&quot;</a></li>
+<li><a href="#mod-mono-has-unresolvable-shared-library-dependencies-details-logged">2.2.11 &quot;mod_mono has unresolvable shared library dependencies (details logged)&quot;</a></li>
+<li><a href="#mod-mono-might-not-be-loadable-on-this-architecture-os-arch-bit-details-logged">2.2.12 &quot;mod_mono might not be loadable on this architecture (${OS_ARCH}-bit, details logged)&quot;</a></li>
+<li><a href="#some-packages-are-missing-list-of-missing-packages">2.2.13 &quot;Some packages are missing: &lt;list of missing packages&gt;&quot;</a></li>
+<li><a href="#unable-to-determine-mono-version">2.2.14 &quot;Unable to determine mono version&quot;</a></li>
+<li><a href="#virtual-host-improperly-configured-vhost">2.2.15 &quot;Virtual host &lt;improperly configured vhost&gt;&quot;</a></li>
+<li><a href="#missing-virtual-host-path-parameter">2.2.16 &quot;Missing virtual host path parameter&quot;</a></li>
+<li><a href="#virtual-host-configuration-file-path-to-vhost-config-file-does-not-exist">2.2.17 &quot;Virtual host configuration file &lt;path to vhost config file&gt; does not exist&quot;</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Configuring_mod_mono">3 Configuring mod_mono</a>
+<li><a href="#configuring-mod-mono">3 Configuring mod_mono</a>
 <ul>
-<li><a href="#Mono_Extension_specific_configuration">3.1 Mono Extension specific configuration</a></li>
+<li><a href="#mono-extension-specific-configuration">3.1 Mono Extension specific configuration</a></li>
 </ul></li>
-<li><a href="#Publishing_a_web_site_.2F_web_application">4 Publishing a web site / web application</a></li>
-<li><a href="#MoMA_validation_of_application_compatibility.2Fsupportability">5 MoMA validation of application compatibility/supportability</a></li>
-<li><a href="#Validating_an_application_runs_with_xsp">6 Validating an application runs with xsp</a></li>
+<li><a href="#publishing-a-web-site--web-application">4 Publishing a web site / web application</a></li>
+<li><a href="#moma-validation-of-application-compatibilitysupportability">5 MoMA validation of application compatibility/supportability</a></li>
+<li><a href="#validating-an-application-runs-with-xsp">6 Validating an application runs with xsp</a></li>
 </ul></td>
 </tr>
 </tbody>

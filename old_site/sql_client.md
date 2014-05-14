@@ -15,12 +15,12 @@ SQL Client
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#MS_SQL_Client">1 MS SQL Client</a>
+<li><a href="#ms-sql-client">1 MS SQL Client</a>
 <ul>
-<li><a href="#Info">1.1 Info</a></li>
-<li><a href="#Current_Status">1.2 Current Status</a></li>
-<li><a href="#Action_Plan">1.3 Action Plan</a></li>
-<li><a href="#Testing">1.4 Testing</a></li>
+<li><a href="#info">1.1 Info</a></li>
+<li><a href="#current-status">1.2 Current Status</a></li>
+<li><a href="#action-plan">1.3 Action Plan</a></li>
+<li><a href="#testing">1.4 Testing</a></li>
 </ul></li>
 </ul></td>
 </tr>

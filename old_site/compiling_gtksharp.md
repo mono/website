@@ -15,11 +15,11 @@ Compiling GtkSharp
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Dependencies">2 Dependencies</a></li>
-<li><a href="#Build_process">3 Build process</a></li>
-<li><a href="#Troubleshooting">4 Troubleshooting</a></li>
-<li><a href="#Links_.26_Resources">5 Links &amp; Resources</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#dependencies">2 Dependencies</a></li>
+<li><a href="#build-process">3 Build process</a></li>
+<li><a href="#troubleshooting">4 Troubleshooting</a></li>
+<li><a href="#links--resources">5 Links &amp; Resources</a></li>
 </ul></td>
 </tr>
 </tbody>

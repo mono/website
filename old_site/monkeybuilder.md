@@ -24,10 +24,10 @@ Requirements:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Step_1:_Set_up_Environment">1 Step 1: Set up Environment</a></li>
-<li><a href="#Step_2:_Edit_the_Configuration_File">2 Step 2: Edit the Configuration File</a></li>
-<li><a href="#Step_3:_Build">3 Step 3: Build</a></li>
-<li><a href="#Step_4:_Finished">4 Step 4: Finished</a></li>
+<li><a href="#step-1-set-up-environment">1 Step 1: Set up Environment</a></li>
+<li><a href="#step-2-edit-the-configuration-file">2 Step 2: Edit the Configuration File</a></li>
+<li><a href="#step-3-build">3 Step 3: Build</a></li>
+<li><a href="#step-4-finished">4 Step 4: Finished</a></li>
 </ul></td>
 </tr>
 </tbody>

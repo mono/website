@@ -21,14 +21,14 @@ This document describes the options that you have available when it comes to tun
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#SGen_Basics">1 SGen Basics</a></li>
-<li><a href="#Major_Heap_Collectors">2 Major Heap Collectors</a></li>
-<li><a href="#Single_CPU_vs_Multiple_CPU_Garbage_Collection">3 Single CPU vs Multiple CPU Garbage Collection</a></li>
-<li><a href="#Controlling_Collections">4 Controlling Collections</a></li>
-<li><a href="#Nursery_Size">5 Nursery Size</a></li>
-<li><a href="#Stack_Scanning">6 Stack Scanning</a></li>
-<li><a href="#Configuring_SGen">7 Configuring SGen</a></li>
-<li><a href="#Profiling">8 Profiling</a></li>
+<li><a href="#sgen-basics">1 SGen Basics</a></li>
+<li><a href="#major-heap-collectors">2 Major Heap Collectors</a></li>
+<li><a href="#single-cpu-vs-multiple-cpu-garbage-collection">3 Single CPU vs Multiple CPU Garbage Collection</a></li>
+<li><a href="#controlling-collections">4 Controlling Collections</a></li>
+<li><a href="#nursery-size">5 Nursery Size</a></li>
+<li><a href="#stack-scanning">6 Stack Scanning</a></li>
+<li><a href="#configuring-sgen">7 Configuring SGen</a></li>
+<li><a href="#profiling">8 Profiling</a></li>
 </ul></td>
 </tr>
 </tbody>

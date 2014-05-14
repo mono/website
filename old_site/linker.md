@@ -20,14 +20,14 @@ The linker is a tool one can use to only ship the minimal possible set of functi
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Why_would_one_use_the_linker_.3F">1 Why would one use the linker ?</a>
+<li><a href="#why-would-one-use-the-linker-">1 Why would one use the linker ?</a>
 <ul>
-<li><a href="#Usage">1.1 Usage</a></li>
-<li><a href="#mkbundle.2C_the_linker.27s_best_friend">1.2 mkbundle, the linker's best friend</a></li>
+<li><a href="#usage">1.1 Usage</a></li>
+<li><a href="#mkbundle-the-linkers-best-friend">1.2 mkbundle, the linker's best friend</a></li>
 </ul></li>
-<li><a href="#Download">2 Download</a></li>
-<li><a href="#Links">3 Links</a></li>
-<li><a href="#Linker_2.0_Requirements">4 Linker 2.0 Requirements</a></li>
+<li><a href="#download">2 Download</a></li>
+<li><a href="#links">3 Links</a></li>
+<li><a href="#linker-20-requirements">4 Linker 2.0 Requirements</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -49,7 +49,7 @@ Usage
 mkbundle, the linker's best friend
 ----------------------------------
 
-The linker operates only at the assemblies level. By using the [mkbundle]({{site.github.url}}/old_site/Command-Line_Tools#Project_converstion_.26_deployment "Command-Line Tools") program, you can create a single executable which will contain the strict minimum it needs to run.
+The linker operates only at the assemblies level. By using the [mkbundle]({{site.github.url}}/old_site/Command-Line_Tools#project-converstion-26-deployment "Command-Line Tools") program, you can create a single executable which will contain the strict minimum it needs to run.
 
 See the man page for mkbundle for details on its operation.
 

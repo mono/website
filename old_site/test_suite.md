@@ -16,23 +16,23 @@ Test Suite
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Testing">1 Testing</a></li>
-<li><a href="#Class_Library_tests">2 Class Library tests</a>
+<li><a href="#testing">1 Testing</a></li>
+<li><a href="#class-library-tests">2 Class Library tests</a>
 <ul>
-<li><a href="#Running_Class_Library_Tests">2.1 Running Class Library Tests</a></li>
-<li><a href="#Other_Class_Library_Tests">2.2 Other Class Library Tests</a></li>
+<li><a href="#running-class-library-tests">2.1 Running Class Library Tests</a></li>
+<li><a href="#other-class-library-tests">2.2 Other Class Library Tests</a></li>
 </ul></li>
-<li><a href="#Tips_on_writing_Unit_tests">3 Tips on writing Unit tests</a>
+<li><a href="#tips-on-writing-unit-tests">3 Tips on writing Unit tests</a>
 <ul>
-<li><a href="#Provide_an_unique_error_message_for_Assert.28.29">3.1 Provide an unique error message for Assert()</a></li>
-<li><a href="#Use_Assert.AreEqual.28.29_to_compare_things.2C_not_Assert.IsTrue_.28.29">3.2 Use Assert.AreEqual() to compare things, not Assert.IsTrue ()</a></li>
-<li><a href="#Test_your_test_with_the_Microsoft_runtime">3.3 Test your test with the Microsoft runtime</a></li>
-<li><a href="#Unit_tests">3.4 Unit tests</a></li>
-<li><a href="#Getting_Started">3.5 Getting Started</a></li>
+<li><a href="#provide-an-unique-error-message-for-assert">3.1 Provide an unique error message for Assert()</a></li>
+<li><a href="#use-assertareequal-to-compare-things-not-assertistrue-">3.2 Use Assert.AreEqual() to compare things, not Assert.IsTrue ()</a></li>
+<li><a href="#test-your-test-with-the-microsoft-runtime">3.3 Test your test with the Microsoft runtime</a></li>
+<li><a href="#unit-tests">3.4 Unit tests</a></li>
+<li><a href="#getting-started">3.5 Getting Started</a></li>
 </ul></li>
-<li><a href="#Compiler_tests">4 Compiler tests</a></li>
-<li><a href="#Runtime_tests">5 Runtime tests</a></li>
-<li><a href="#Web_Services_tests">6 Web Services tests</a></li>
+<li><a href="#compiler-tests">4 Compiler tests</a></li>
+<li><a href="#runtime-tests">5 Runtime tests</a></li>
+<li><a href="#web-services-tests">6 Web Services tests</a></li>
 </ul></td>
 </tr>
 </tbody>

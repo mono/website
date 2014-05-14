@@ -23,30 +23,30 @@ Having a native compiler for Visual Basic not only allows developers that wish t
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#New_Visual_Basic_Framework">1 New Visual Basic Framework</a></li>
-<li><a href="#The_compiler">2 The compiler</a>
+<li><a href="#new-visual-basic-framework">1 New Visual Basic Framework</a></li>
+<li><a href="#the-compiler">2 The compiler</a>
 <ul>
-<li><a href="#Compiler_Status">2.1 Compiler Status</a></li>
-<li><a href="#Installation">2.2 Installation</a>
+<li><a href="#compiler-status">2.1 Compiler Status</a></li>
+<li><a href="#installation">2.2 Installation</a>
 <ul>
-<li><a href="#From_Packages">2.2.1 From Packages</a></li>
-<li><a href="#From_Source_Code">2.2.2 From Source Code</a></li>
+<li><a href="#from-packages">2.2.1 From Packages</a></li>
+<li><a href="#from-source-code">2.2.2 From Source Code</a></li>
 </ul></li>
-<li><a href="#FAQ_for_the_Visual_Basic_Framework">2.3 FAQ for the Visual Basic Framework</a>
+<li><a href="#faq-for-the-visual-basic-framework">2.3 FAQ for the Visual Basic Framework</a>
 <ul>
-<li><a href="#What_is_the_role_of_the_compiler_in_the_development_process.3F">2.3.1 What is the role of the compiler in the development process?</a></li>
-<li><a href="#Why_is_this_new_VB_compiler_important.3F">2.3.2 Why is this new VB compiler important?</a></li>
-<li><a href="#What_are_the_uses_of_a_native_Visual_Basic.NET_compiler_on_Unix.3F">2.3.3 What are the uses of a native Visual Basic.NET compiler on Unix?</a></li>
-<li><a href="#For_which_version_of_Visual_Basic_will_this_compiler_work_and_when_is_it_available.3F">2.3.4 For which version of Visual Basic will this compiler work and when is it available?</a></li>
-<li><a href="#If_someone_is_using_.NET_3.0.2C_will_this_work.3F">2.3.5 If someone is using .NET 3.0, will this work?</a></li>
-<li><a href="#Is_this_part_of_the_recent_Novell-Microsoft_agreement.3F">2.3.6 Is this part of the recent Novell-Microsoft agreement?</a></li>
-<li><a href="#Is_the_Visual_Basic_8_compiler_considered_stable.3F">2.3.7 Is the Visual Basic 8 compiler considered stable?</a></li>
-<li><a href="#Will_applications_compiled_using_the_VB_compiler_in_Linux_.28or_Mac.29_run_on_Windows.3F">2.3.8 Will applications compiled using the VB compiler in Linux (or Mac) run on Windows?</a></li>
-<li><a href="#Do_applications_compiled_under_Linux_require_the_VB_runtime_to_run.3F">2.3.9 Do applications compiled under Linux require the VB runtime to run?</a></li>
-<li><a href="#Will_there_be_a_performance_lag_in_compiling_and_running_VB.NET_apps_on_other_platforms.3F">2.3.10 Will there be a performance lag in compiling and running VB.NET apps on other platforms?</a></li>
+<li><a href="#what-is-the-role-of-the-compiler-in-the-development-process">2.3.1 What is the role of the compiler in the development process?</a></li>
+<li><a href="#why-is-this-new-vb-compiler-important">2.3.2 Why is this new VB compiler important?</a></li>
+<li><a href="#what-are-the-uses-of-a-native-visual-basicnet-compiler-on-unix">2.3.3 What are the uses of a native Visual Basic.NET compiler on Unix?</a></li>
+<li><a href="#for-which-version-of-visual-basic-will-this-compiler-work-and-when-is-it-available">2.3.4 For which version of Visual Basic will this compiler work and when is it available?</a></li>
+<li><a href="#if-someone-is-using-net-30-will-this-work">2.3.5 If someone is using .NET 3.0, will this work?</a></li>
+<li><a href="#is-this-part-of-the-recent-novell-microsoft-agreement">2.3.6 Is this part of the recent Novell-Microsoft agreement?</a></li>
+<li><a href="#is-the-visual-basic-8-compiler-considered-stable">2.3.7 Is the Visual Basic 8 compiler considered stable?</a></li>
+<li><a href="#will-applications-compiled-using-the-vb-compiler-in-linux-or-mac-run-on-windows">2.3.8 Will applications compiled using the VB compiler in Linux (or Mac) run on Windows?</a></li>
+<li><a href="#do-applications-compiled-under-linux-require-the-vb-runtime-to-run">2.3.9 Do applications compiled under Linux require the VB runtime to run?</a></li>
+<li><a href="#will-there-be-a-performance-lag-in-compiling-and-running-vbnet-apps-on-other-platforms">2.3.10 Will there be a performance lag in compiling and running VB.NET apps on other platforms?</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Old_Visual_Basic_Framework">3 Old Visual Basic Framework</a></li>
+<li><a href="#old-visual-basic-framework">3 Old Visual Basic Framework</a></li>
 </ul></td>
 </tr>
 </tbody>

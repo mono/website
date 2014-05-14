@@ -15,13 +15,13 @@ MoonlightBeta1
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Requirements">1 Requirements</a></li>
-<li><a href="#Known_Bugs">2 Known Bugs</a></li>
-<li><a href="#Fully_Working_Sites">3 Fully Working Sites</a></li>
-<li><a href="#Firefox_3_Issues">4 Firefox 3 Issues</a>
+<li><a href="#requirements">1 Requirements</a></li>
+<li><a href="#known-bugs">2 Known Bugs</a></li>
+<li><a href="#fully-working-sites">3 Fully Working Sites</a></li>
+<li><a href="#firefox-3-issues">4 Firefox 3 Issues</a>
 <ul>
-<li><a href="#Windowless_Cursors">4.1 Windowless Cursors</a></li>
-<li><a href="#Windowless_mouse_event_problems">4.2 Windowless mouse event problems</a></li>
+<li><a href="#windowless-cursors">4.1 Windowless Cursors</a></li>
+<li><a href="#windowless-mouse-event-problems">4.2 Windowless mouse event problems</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -31,7 +31,7 @@ MoonlightBeta1
 Requirements
 ============
 
-We are passing all of the Microsoft Silverlight 1.0 tests, have been tested with all of the sites listed in the [Fully Working Sites](#Fully_Working_Sites) section, and are able to install the Microsoft Media Pack as hosted on Microsoft.com
+We are passing all of the Microsoft Silverlight 1.0 tests, have been tested with all of the sites listed in the [Fully Working Sites](#fully-working-sites) section, and are able to install the Microsoft Media Pack as hosted on Microsoft.com
 
 Known Bugs
 ==========

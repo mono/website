@@ -15,9 +15,9 @@ Scratchbox
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Creating_Host_Target">2 Creating Host Target</a></li>
-<li><a href="#Installing_Developer_Kit">3 Installing Developer Kit</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#creating-host-target">2 Creating Host Target</a></li>
+<li><a href="#installing-developer-kit">3 Installing Developer Kit</a></li>
 </ul></td>
 </tr>
 </tbody>

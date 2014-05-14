@@ -17,22 +17,22 @@ A page to keep track of the requirements to do the SVN to GIT migration:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Timeline">1 Timeline</a></li>
-<li><a href="#Discussion_Topics">2 Discussion Topics</a>
+<li><a href="#timeline">1 Timeline</a></li>
+<li><a href="#discussion-topics">2 Discussion Topics</a>
 <ul>
-<li><a href="#Modules">2.1 Modules</a>
+<li><a href="#modules">2.1 Modules</a>
 <ul>
-<li><a href="#Proposal_1_.5Bjonp.5D">2.1.1 Proposal 1 [jonp]</a></li>
+<li><a href="#proposal-1-jonp">2.1.1 Proposal 1 [jonp]</a></li>
 </ul></li>
-<li><a href="#Action:_Moving_mcs_into_mono">2.2 Action: Moving mcs into mono</a></li>
-<li><a href="#Branches">2.3 Branches</a></li>
-<li><a href="#Policies">2.4 Policies</a></li>
-<li><a href="#History">2.5 History</a></li>
-<li><a href="#GitHub">2.6 GitHub</a></li>
-<li><a href="#MonoDevelop">2.7 MonoDevelop</a></li>
+<li><a href="#action-moving-mcs-into-mono">2.2 Action: Moving mcs into mono</a></li>
+<li><a href="#branches">2.3 Branches</a></li>
+<li><a href="#policies">2.4 Policies</a></li>
+<li><a href="#history">2.5 History</a></li>
+<li><a href="#github">2.6 GitHub</a></li>
+<li><a href="#monodevelop">2.7 MonoDevelop</a></li>
 </ul></li>
-<li><a href="#Testing">3 Testing</a></li>
-<li><a href="#Other_Dependencies">4 Other Dependencies</a></li>
+<li><a href="#testing">3 Testing</a></li>
+<li><a href="#other-dependencies">4 Other Dependencies</a></li>
 </ul></td>
 </tr>
 </tbody>

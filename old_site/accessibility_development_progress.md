@@ -18,13 +18,13 @@ Accessibility: Development Progress
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Development_Progress">1 Development Progress</a>
+<li><a href="#development-progress">1 Development Progress</a>
 <ul>
-<li><a href="#Description">1.1 Description</a></li>
-<li><a href="#Queries">1.2 Queries</a>
+<li><a href="#description">1.1 Description</a></li>
+<li><a href="#queries">1.2 Queries</a>
 <ul>
-<li><a href="#Version_1.0">1.2.1 Version 1.0</a></li>
-<li><a href="#Version_0.9">1.2.2 Version 0.9</a></li>
+<li><a href="#version-10">1.2.1 Version 1.0</a></li>
+<li><a href="#version-09">1.2.2 Version 0.9</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

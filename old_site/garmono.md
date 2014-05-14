@@ -15,25 +15,25 @@ Garmono
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Cygwin">2 Cygwin</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#cygwin">2 Cygwin</a>
 <ul>
-<li><a href="#Status">2.1 Status</a></li>
-<li><a href="#Building">2.2 Building</a></li>
+<li><a href="#status">2.1 Status</a></li>
+<li><a href="#building">2.2 Building</a></li>
 </ul></li>
-<li><a href="#Linux">3 Linux</a>
+<li><a href="#linux">3 Linux</a>
 <ul>
-<li><a href="#Status_2">3.1 Status</a></li>
-<li><a href="#Building_2">3.2 Building</a></li>
+<li><a href="#status_2">3.1 Status</a></li>
+<li><a href="#building_2">3.2 Building</a></li>
 </ul></li>
-<li><a href="#Maemo">4 Maemo</a>
+<li><a href="#maemo">4 Maemo</a>
 <ul>
-<li><a href="#Status_3">4.1 Status</a></li>
-<li><a href="#Building_3">4.2 Building</a></li>
-<li><a href="#Generating_packages_.28.deb.29">4.3 Generating packages (.deb)</a></li>
-<li><a href="#To_Do">4.4 To Do</a></li>
+<li><a href="#status_3">4.1 Status</a></li>
+<li><a href="#building_3">4.2 Building</a></li>
+<li><a href="#generating-packages-deb">4.3 Generating packages (.deb)</a></li>
+<li><a href="#to-do">4.4 To Do</a></li>
 </ul></li>
-<li><a href="#Future_Work">5 Future Work</a></li>
+<li><a href="#future-work">5 Future Work</a></li>
 </ul></td>
 </tr>
 </tbody>

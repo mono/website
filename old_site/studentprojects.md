@@ -16,27 +16,27 @@ This page lists some ideas for Mono GSoC projects that students can apply for. A
 
 You can use the following links to jump to sections that you're interested in:
 
-[Other Ideas](#Other_Ideas)
+[Other Ideas](#other-ideas)
 
 Suggest your own ideas for a project
 
-[Compilers and Tools](#Compilers_and_Tools)
+[Compilers and Tools](#compilers-and-tools)
 
 Work on Mono's tools and compilers
 
-[MonoDevelop / Xamarin Studio IDE](#MonoDevelop_.2F_Xamarin_Studio_IDE)
+[MonoDevelop / Xamarin Studio IDE](#monodevelop-2f-xamarin-studio-ide)
 
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
-[Mono Runtime](#Mono_Runtime)
+[Mono Runtime](#mono-runtime)
 
 Improve the core Mono runtime and JIT
 
-[GTK\# and Bindings](#GTK.23_and_Bindings)
+[GTK\# and Bindings](#gtk-and-bindings)
 
 GTK\# Core, Bindings and Applications
 
-[Contacting the Mono Team](#Contacting_the_Mono_Team)
+[Contacting the Mono Team](#contacting-the-mono-team)
 
 How to get in touch with us and ask questions
 
@@ -46,38 +46,38 @@ How to get in touch with us and ask questions
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Other_Ideas">1 Other Ideas</a></li>
-<li><a href="#Compilers_and_Tools">2 Compilers and Tools</a>
+<li><a href="#other-ideas">1 Other Ideas</a></li>
+<li><a href="#compilers-and-tools">2 Compilers and Tools</a>
 <ul>
-<li><a href="#C.23_Compiler_switch_statement_enhancements">2.1 C# Compiler switch statement enhancements</a></li>
+<li><a href="#c-compiler-switch-statement-enhancements">2.1 C# Compiler switch statement enhancements</a></li>
 </ul></li>
-<li><a href="#MonoDevelop_.2F_Xamarin_Studio_IDE">3 MonoDevelop / Xamarin Studio IDE</a>
+<li><a href="#monodevelop--xamarin-studio-ide">3 MonoDevelop / Xamarin Studio IDE</a>
 <ul>
-<li><a href="#Make_ASP.NET_Awesome_in_Xamarin_Studio">3.1 Make ASP.NET Awesome in Xamarin Studio</a></li>
-<li><a href="#Source_Analysis_and_Refactoring">3.2 Source Analysis and Refactoring</a></li>
-<li><a href="#Javascript_Support">3.3 Javascript Support</a></li>
-<li><a href="#TypeScript_Support">3.4 TypeScript Support</a></li>
-<li><a href="#Improve_C.2FC.2B.2B_Binding">3.5 Improve C/C++ Binding</a></li>
-<li><a href="#Improve_C.2FC.2B.2B_build_support_in_XBuild">3.6 Improve C/C++ build support in XBuild</a></li>
-<li><a href="#Windows_.NET_64-bit_debugging">3.7 Windows .NET 64-bit debugging</a></li>
-<li><a href="#Debugger_Visualizers">3.8 Debugger Visualizers</a></li>
-<li><a href="#Revamped_Syntax_Highlighting_System">3.9 Revamped Syntax Highlighting System</a></li>
-<li><a href="#Color_Scheme_Editor">3.10 Color Scheme Editor</a></li>
-<li><a href="#Xwt_Forms_Designer">3.11 Xwt Forms Designer</a></li>
-<li><a href="#GitHub_Integration">3.12 GitHub Integration</a></li>
+<li><a href="#make-aspnet-awesome-in-xamarin-studio">3.1 Make ASP.NET Awesome in Xamarin Studio</a></li>
+<li><a href="#source-analysis-and-refactoring">3.2 Source Analysis and Refactoring</a></li>
+<li><a href="#javascript-support">3.3 Javascript Support</a></li>
+<li><a href="#typescript-support">3.4 TypeScript Support</a></li>
+<li><a href="#improve-cc-binding">3.5 Improve C/C++ Binding</a></li>
+<li><a href="#improve-cc-build-support-in-xbuild">3.6 Improve C/C++ build support in XBuild</a></li>
+<li><a href="#windows-net-64-bit-debugging">3.7 Windows .NET 64-bit debugging</a></li>
+<li><a href="#debugger-visualizers">3.8 Debugger Visualizers</a></li>
+<li><a href="#revamped-syntax-highlighting-system">3.9 Revamped Syntax Highlighting System</a></li>
+<li><a href="#color-scheme-editor">3.10 Color Scheme Editor</a></li>
+<li><a href="#xwt-forms-designer">3.11 Xwt Forms Designer</a></li>
+<li><a href="#github-integration">3.12 GitHub Integration</a></li>
 </ul></li>
-<li><a href="#Mono_Runtime">4 Mono Runtime</a>
+<li><a href="#mono-runtime">4 Mono Runtime</a>
 <ul>
-<li><a href="#Push-less_X86_backend">4.1 Push-less X86 backend</a></li>
-<li><a href="#Use_IKVM.Reflection_to_implement_parts_of_System.Reflection.Emit">4.2 Use IKVM.Reflection to implement parts of System.Reflection.Emit</a></li>
+<li><a href="#push-less-x86-backend">4.1 Push-less X86 backend</a></li>
+<li><a href="#use-ikvmreflection-to-implement-parts-of-systemreflectionemit">4.2 Use IKVM.Reflection to implement parts of System.Reflection.Emit</a></li>
 </ul></li>
-<li><a href="#GTK.23_and_Bindings">5 GTK# and Bindings</a>
+<li><a href="#gtk-and-bindings">5 GTK# and Bindings</a>
 <ul>
-<li><a href="#Bindinator:_Create_bindings_for_clutter.2Fgst-clutter.2C_improve_gst">5.1 Bindinator: Create bindings for clutter/gst-clutter, improve gst</a></li>
+<li><a href="#bindinator-create-bindings-for-cluttergst-clutter-improve-gst">5.1 Bindinator: Create bindings for clutter/gst-clutter, improve gst</a></li>
 </ul></li>
-<li><a href="#Contacting_the_Mono_Team">6 Contacting the Mono Team</a>
+<li><a href="#contacting-the-mono-team">6 Contacting the Mono Team</a>
 <ul>
-<li><a href="#Mailing_Lists">6.1 Mailing Lists</a></li>
+<li><a href="#mailing-lists">6.1 Mailing Lists</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -87,7 +87,7 @@ How to get in touch with us and ask questions
 Other Ideas
 ===========
 
-If a project is not listed here, but you think you have a great idea, feel free to [contact the Mono team, mentors and org admins](#Contacting_the_Mono_Team) to discuss or suggest your own project ideas.
+If a project is not listed here, but you think you have a great idea, feel free to [contact the Mono team, mentors and org admins](#contacting-the-mono-team) to discuss or suggest your own project ideas.
 
 Over the past years we have picked projects that were not listed here because they were great ideas, and we had students that were passionate about those projects. In the end, most of these projects were a success.
 

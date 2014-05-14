@@ -17,104 +17,104 @@ Mono, a technical whitepaper
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Executive_Overview">1 Executive Overview</a>
+<li><a href="#executive-overview">1 Executive Overview</a>
 <ul>
-<li><a href="#Mono_increases_developer_productivity">1.1 Mono increases developer productivity</a></li>
-<li><a href="#Mono_brings_more_software_to_Linux">1.2 Mono brings more software to Linux</a></li>
-<li><a href="#Mono_reuses_existing_knowledge.2C_work">1.3 Mono reuses existing knowledge, work</a></li>
-<li><a href="#Mono_provides_cross-platform_development">1.4 Mono provides cross-platform development</a></li>
-<li><a href="#Mono.2C_open_source_development_platform">1.5 Mono, open source development platform</a></li>
+<li><a href="#mono-increases-developer-productivity">1.1 Mono increases developer productivity</a></li>
+<li><a href="#mono-brings-more-software-to-linux">1.2 Mono brings more software to Linux</a></li>
+<li><a href="#mono-reuses-existing-knowledge-work">1.3 Mono reuses existing knowledge, work</a></li>
+<li><a href="#mono-provides-cross-platform-development">1.4 Mono provides cross-platform development</a></li>
+<li><a href="#mono-open-source-development-platform">1.5 Mono, open source development platform</a></li>
 </ul></li>
-<li><a href="#Overview">2 Overview</a>
+<li><a href="#overview">2 Overview</a>
 <ul>
-<li><a href="#Target_Audience">2.1 Target Audience</a></li>
-<li><a href="#Introduction_to_Mono">2.2 Introduction to Mono</a>
+<li><a href="#target-audience">2.1 Target Audience</a></li>
+<li><a href="#introduction-to-mono">2.2 Introduction to Mono</a>
 <ul>
-<li><a href="#Features_and_Benefits">2.2.1 Features and Benefits</a></li>
+<li><a href="#features-and-benefits">2.2.1 Features and Benefits</a></li>
 </ul></li>
-<li><a href="#The_Mono_rationale">2.3 The Mono rationale</a>
+<li><a href="#the-mono-rationale">2.3 The Mono rationale</a>
 <ul>
-<li><a href="#Opportunities">2.3.1 Opportunities</a></li>
-<li><a href="#Solution">2.3.2 Solution</a></li>
+<li><a href="#opportunities">2.3.1 Opportunities</a></li>
+<li><a href="#solution">2.3.2 Solution</a></li>
 </ul></li>
-<li><a href="#The_Mono_community_and_open_source_projects">2.4 The Mono community and open source projects</a></li>
+<li><a href="#the-mono-community-and-open-source-projects">2.4 The Mono community and open source projects</a></li>
 </ul></li>
-<li><a href="#Developer_Personalities">3 Developer Personalities</a>
+<li><a href="#developer-personalities">3 Developer Personalities</a>
 <ul>
-<li><a href="#Microsoft_.NET_developer">3.1 Microsoft .NET developer</a>
+<li><a href="#microsoft-net-developer">3.1 Microsoft .NET developer</a>
 <ul>
-<li><a href="#ASP.NET_Web_Application_and_Web_Services_Applications">3.1.1 ASP.NET Web Application and Web Services Applications</a></li>
-<li><a href="#Desktop_Applications_with_System.Windows.Forms">3.1.2 Desktop Applications with System.Windows.Forms</a></li>
+<li><a href="#aspnet-web-application-and-web-services-applications">3.1.1 ASP.NET Web Application and Web Services Applications</a></li>
+<li><a href="#desktop-applications-with-systemwindowsforms">3.1.2 Desktop Applications with System.Windows.Forms</a></li>
 </ul></li>
-<li><a href="#IT_Developer">3.2 IT Developer</a></li>
-<li><a href="#ISV_developer">3.3 ISV developer</a></li>
-<li><a href="#Linux_Desktop_applications_developer">3.4 Linux Desktop applications developer</a></li>
-<li><a href="#Mac_OS_X_developer">3.5 Mac OS X developer</a></li>
-<li><a href="#Unix_developer">3.6 Unix developer</a></li>
-<li><a href="#Web_Applications_developer">3.7 Web Applications developer</a></li>
-<li><a href="#Embeded_system_application_developer">3.8 Embeded system application developer</a></li>
+<li><a href="#it-developer">3.2 IT Developer</a></li>
+<li><a href="#isv-developer">3.3 ISV developer</a></li>
+<li><a href="#linux-desktop-applications-developer">3.4 Linux Desktop applications developer</a></li>
+<li><a href="#mac-os-x-developer">3.5 Mac OS X developer</a></li>
+<li><a href="#unix-developer">3.6 Unix developer</a></li>
+<li><a href="#web-applications-developer">3.7 Web Applications developer</a></li>
+<li><a href="#embeded-system-application-developer">3.8 Embeded system application developer</a></li>
 </ul></li>
-<li><a href="#Mono_Technical_Overview">4 Mono Technical Overview</a>
+<li><a href="#mono-technical-overview">4 Mono Technical Overview</a>
 <ul>
-<li><a href="#Features_List">4.1 Features List</a></li>
-<li><a href="#Runtime_environment">4.2 Runtime environment</a>
+<li><a href="#features-list">4.1 Features List</a></li>
+<li><a href="#runtime-environment">4.2 Runtime environment</a>
 <ul>
-<li><a href="#Virtual_Machine">4.2.1 Virtual Machine</a></li>
-<li><a href="#Supported_Platforms">4.2.2 Supported Platforms</a>
+<li><a href="#virtual-machine">4.2.1 Virtual Machine</a></li>
+<li><a href="#supported-platforms">4.2.2 Supported Platforms</a>
 <ul>
-<li><a href="#Linux">4.2.2.1 Linux</a></li>
-<li><a href="#Mac_OS_X">4.2.2.2 Mac OS X</a></li>
-<li><a href="#Windows">4.2.2.3 Windows</a></li>
-<li><a href="#Unixes">4.2.2.4 Unixes</a></li>
+<li><a href="#linux">4.2.2.1 Linux</a></li>
+<li><a href="#mac-os-x">4.2.2.2 Mac OS X</a></li>
+<li><a href="#windows">4.2.2.3 Windows</a></li>
+<li><a href="#unixes">4.2.2.4 Unixes</a></li>
 </ul></li>
-<li><a href="#Language_Support">4.2.3 Language Support</a>
+<li><a href="#language-support">4.2.3 Language Support</a>
 <ul>
-<li><a href="#C.23">4.2.3.1 C#</a></li>
-<li><a href="#Java">4.2.3.2 Java</a></li>
-<li><a href="#VB.NET">4.2.3.3 VB.NET</a></li>
-<li><a href="#Ironpython_and_Boo">4.2.3.4 Ironpython and Boo</a></li>
-<li><a href="#Miscelaneous_languages">4.2.3.5 Miscelaneous languages</a></li>
+<li><a href="#c">4.2.3.1 C#</a></li>
+<li><a href="#java">4.2.3.2 Java</a></li>
+<li><a href="#vbnet">4.2.3.3 VB.NET</a></li>
+<li><a href="#ironpython-and-boo">4.2.3.4 Ironpython and Boo</a></li>
+<li><a href="#miscelaneous-languages">4.2.3.5 Miscelaneous languages</a></li>
 </ul></li>
-<li><a href="#Embedding_the_runtime">4.2.4 Embedding the runtime</a></li>
+<li><a href="#embedding-the-runtime">4.2.4 Embedding the runtime</a></li>
 </ul></li>
-<li><a href="#Developer_Productivity">4.3 Developer Productivity</a></li>
-<li><a href="#System_Classes">4.4 System Classes</a></li>
-<li><a href="#Web_Application_and_Web_Services">4.5 Web Application and Web Services</a>
+<li><a href="#developer-productivity">4.3 Developer Productivity</a></li>
+<li><a href="#system-classes">4.4 System Classes</a></li>
+<li><a href="#web-application-and-web-services">4.5 Web Application and Web Services</a>
 <ul>
-<li><a href="#ASP.NET">4.5.1 ASP.NET</a></li>
-<li><a href="#XSP.2C_Apache_and_mod_mono">4.5.2 XSP, Apache and mod_mono</a></li>
+<li><a href="#aspnet">4.5.1 ASP.NET</a></li>
+<li><a href="#xsp-apache-and-mod-mono">4.5.2 XSP, Apache and mod_mono</a></li>
 </ul></li>
-<li><a href="#Desktop_Applications_development">4.6 Desktop Applications development</a>
+<li><a href="#desktop-applications-development">4.6 Desktop Applications development</a>
 <ul>
-<li><a href="#System.Windows.Forms">4.6.1 System.Windows.Forms</a></li>
-<li><a href="#Gtk.23">4.6.2 Gtk#</a></li>
-<li><a href="#Cocoa.23">4.6.3 Cocoa#</a></li>
-<li><a href="#Others">4.6.4 Others</a></li>
+<li><a href="#systemwindowsforms">4.6.1 System.Windows.Forms</a></li>
+<li><a href="#gtk">4.6.2 Gtk#</a></li>
+<li><a href="#cocoa">4.6.3 Cocoa#</a></li>
+<li><a href="#others">4.6.4 Others</a></li>
 </ul></li>
-<li><a href="#Database_Connectivity">4.7 Database Connectivity</a></li>
-<li><a href="#Interactions_with_native_libraries">4.8 Interactions with native libraries</a></li>
-<li><a href="#Migration_of_existing_.NET_applications">4.9 Migration of existing .NET applications</a></li>
-<li><a href="#Compatible_libraries_and_components">4.10 Compatible libraries and components</a></li>
-<li><a href="#Mono_packaging">4.11 Mono packaging</a></li>
+<li><a href="#database-connectivity">4.7 Database Connectivity</a></li>
+<li><a href="#interactions-with-native-libraries">4.8 Interactions with native libraries</a></li>
+<li><a href="#migration-of-existing-net-applications">4.9 Migration of existing .NET applications</a></li>
+<li><a href="#compatible-libraries-and-components">4.10 Compatible libraries and components</a></li>
+<li><a href="#mono-packaging">4.11 Mono packaging</a></li>
 </ul></li>
-<li><a href="#Mono_Licensing">5 Mono Licensing</a>
+<li><a href="#mono-licensing">5 Mono Licensing</a>
 <ul>
-<li><a href="#Open_Source_license">5.1 Open Source license</a></li>
-<li><a href="#Commercial_license">5.2 Commercial license</a></li>
+<li><a href="#open-source-license">5.1 Open Source license</a></li>
+<li><a href="#commercial-license">5.2 Commercial license</a></li>
 </ul></li>
-<li><a href="#Mono_Applications">6 Mono Applications</a>
+<li><a href="#mono-applications">6 Mono Applications</a>
 <ul>
-<li><a href="#Open_Source">6.1 Open Source</a></li>
-<li><a href="#Commercial">6.2 Commercial</a></li>
+<li><a href="#open-source">6.1 Open Source</a></li>
+<li><a href="#commercial">6.2 Commercial</a></li>
 </ul></li>
-<li><a href="#Simplified_Mono_Roadmap">7 Simplified Mono Roadmap</a>
+<li><a href="#simplified-mono-roadmap">7 Simplified Mono Roadmap</a>
 <ul>
-<li><a href="#Mono_1.0">7.1 Mono 1.0</a></li>
-<li><a href="#Mono_1.2">7.2 Mono 1.2</a></li>
-<li><a href="#Mono_2.0">7.3 Mono 2.0</a></li>
+<li><a href="#mono-10">7.1 Mono 1.0</a></li>
+<li><a href="#mono-12">7.2 Mono 1.2</a></li>
+<li><a href="#mono-20">7.3 Mono 2.0</a></li>
 </ul></li>
-<li><a href="#References">8 References</a></li>
-<li><a href="#Conclusion">9 Conclusion</a></li>
+<li><a href="#references">8 References</a></li>
+<li><a href="#conclusion">9 Conclusion</a></li>
 </ul></td>
 </tr>
 </tbody>

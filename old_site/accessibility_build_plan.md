@@ -15,49 +15,49 @@ Accessibility: Build Plan
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Scope">1 Scope</a></li>
-<li><a href="#Build_Team">2 Build Team</a></li>
-<li><a href="#Build_Meetings">3 Build Meetings</a></li>
-<li><a href="#Outline">4 Outline</a>
+<li><a href="#scope">1 Scope</a></li>
+<li><a href="#build-team">2 Build Team</a></li>
+<li><a href="#build-meetings">3 Build Meetings</a></li>
+<li><a href="#outline">4 Outline</a>
 <ul>
-<li><a href="#Deliverables">4.1 Deliverables</a>
+<li><a href="#deliverables">4.1 Deliverables</a>
 <ul>
-<li><a href="#Intervals">4.1.1 Intervals</a></li>
-<li><a href="#Software">4.1.2 Software</a></li>
+<li><a href="#intervals">4.1.1 Intervals</a></li>
+<li><a href="#software">4.1.2 Software</a></li>
 </ul></li>
-<li><a href="#Other_Packages">4.2 Other Packages</a>
+<li><a href="#other-packages">4.2 Other Packages</a>
 <ul>
-<li><a href="#Possible_Packages">4.2.1 Possible Packages</a></li>
+<li><a href="#possible-packages">4.2.1 Possible Packages</a></li>
 </ul></li>
-<li><a href="#Packages_Dependencies">4.3 Packages Dependencies</a></li>
-<li><a href="#Current_Build_Systems">4.4 Current Build Systems</a></li>
-<li><a href="#Build_Distributions">4.5 Build Distributions</a></li>
-<li><a href="#Build_Architectures">4.6 Build Architectures</a></li>
-<li><a href="#Build_risk_issues">4.7 Build risk issues</a></li>
-<li><a href="#General_Guidelines">4.8 General Guidelines</a></li>
-<li><a href="#Suspension_criteria_and_Resumption_requirements">4.9 Suspension criteria and Resumption requirements</a></li>
-<li><a href="#Build_preparation_and_setup">4.10 Build preparation and setup</a></li>
-<li><a href="#Environmental_needs">4.11 Environmental needs</a>
+<li><a href="#packages-dependencies">4.3 Packages Dependencies</a></li>
+<li><a href="#current-build-systems">4.4 Current Build Systems</a></li>
+<li><a href="#build-distributions">4.5 Build Distributions</a></li>
+<li><a href="#build-architectures">4.6 Build Architectures</a></li>
+<li><a href="#build-risk-issues">4.7 Build risk issues</a></li>
+<li><a href="#general-guidelines">4.8 General Guidelines</a></li>
+<li><a href="#suspension-criteria-and-resumption-requirements">4.9 Suspension criteria and Resumption requirements</a></li>
+<li><a href="#build-preparation-and-setup">4.10 Build preparation and setup</a></li>
+<li><a href="#environmental-needs">4.11 Environmental needs</a>
 <ul>
-<li><a href="#Hardware:">4.11.1 Hardware:</a>
+<li><a href="#hardware">4.11.1 Hardware:</a>
 <ul>
-<li><a href="#Build0">4.11.1.1 Build0</a></li>
-<li><a href="#Build1">4.11.1.2 Build1</a></li>
+<li><a href="#build0">4.11.1.1 Build0</a></li>
+<li><a href="#build1">4.11.1.2 Build1</a></li>
 </ul></li>
-<li><a href="#Architectures">4.11.2 Architectures</a></li>
-<li><a href="#Software:">4.11.3 Software:</a></li>
+<li><a href="#architectures">4.11.2 Architectures</a></li>
+<li><a href="#software_2">4.11.3 Software:</a></li>
 </ul></li>
-<li><a href="#Responsibilities">4.12 Responsibilities</a></li>
-<li><a href="#Staffing_needs">4.13 Staffing needs</a></li>
-<li><a href="#Schedule">4.14 Schedule</a></li>
-<li><a href="#Ongoing_tasks">4.15 Ongoing tasks</a></li>
-<li><a href="#Risks_and_contingencies">4.16 Risks and contingencies</a></li>
+<li><a href="#responsibilities">4.12 Responsibilities</a></li>
+<li><a href="#staffing-needs">4.13 Staffing needs</a></li>
+<li><a href="#schedule">4.14 Schedule</a></li>
+<li><a href="#ongoing-tasks">4.15 Ongoing tasks</a></li>
+<li><a href="#risks-and-contingencies">4.16 Risks and contingencies</a></li>
 </ul></li>
-<li><a href="#References">5 References</a>
+<li><a href="#references">5 References</a>
 <ul>
-<li><a href="#Build_Systems">5.1 Build Systems</a></li>
+<li><a href="#build-systems">5.1 Build Systems</a></li>
 </ul></li>
-<li><a href="#Build_plan_identifier">6 Build plan identifier</a></li>
+<li><a href="#build-plan-identifier">6 Build plan identifier</a></li>
 </ul></td>
 </tr>
 </tbody>

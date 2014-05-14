@@ -15,12 +15,12 @@ BindingMoko
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#HowTo:_Create_a_Binding_for_a_GObject-based_Library">1 HowTo: Create a Binding for a GObject-based Library</a>
+<li><a href="#howto-create-a-binding-for-a-gobject-based-library">1 HowTo: Create a Binding for a GObject-based Library</a>
 <ul>
-<li><a href="#Parsing_the_Sources">1.1 Parsing the Sources</a></li>
-<li><a href="#Generating_C.23_sources">1.2 Generating C# sources</a></li>
-<li><a href="#Building_the_assembly">1.3 Building the assembly</a></li>
-<li><a href="#Summary">1.4 Summary</a></li>
+<li><a href="#parsing-the-sources">1.1 Parsing the Sources</a></li>
+<li><a href="#generating-c-sources">1.2 Generating C# sources</a></li>
+<li><a href="#building-the-assembly">1.3 Building the assembly</a></li>
+<li><a href="#summary">1.4 Summary</a></li>
 </ul></li>
 </ul></td>
 </tr>

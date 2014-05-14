@@ -15,17 +15,17 @@ FAQ: Novell Bugzilla
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Accounts">1 Accounts</a>
+<li><a href="#accounts">1 Accounts</a>
 <ul>
-<li><a href="#How_do_I_create_a_Novell_Bugzilla_account.3F">1.1 How do I create a Novell Bugzilla account?</a></li>
-<li><a href="#I_can.27t_login_because_it_says_I_need_to_validate_my_e-mail_address">1.2 I can't login because it says I need to validate my e-mail address</a></li>
-<li><a href="#How_do_I_edit_my_Novell_Account_settings.3F">1.3 How do I edit my Novell Account settings?</a></li>
+<li><a href="#how-do-i-create-a-novell-bugzilla-account">1.1 How do I create a Novell Bugzilla account?</a></li>
+<li><a href="#i-cant-login-because-it-says-i-need-to-validate-my-e-mail-address">1.2 I can't login because it says I need to validate my e-mail address</a></li>
+<li><a href="#how-do-i-edit-my-novell-account-settings">1.3 How do I edit my Novell Account settings?</a></li>
 </ul></li>
-<li><a href="#General">2 General</a>
+<li><a href="#general">2 General</a>
 <ul>
-<li><a href="#Why_is_Novell_Bugzilla_so_slow.3F">2.1 Why is Novell Bugzilla so slow?</a></li>
-<li><a href="#I_don.27t_like_the_.22My_Bugs.22_saved_search.2C_how_do_I_get_rid_of_it.3F">2.2 I don't like the &quot;My Bugs&quot; saved search, how do I get rid of it?</a></li>
-<li><a href="#Who_do_I_contact_if_I_have_problems_that_aren.27t_addressed_on_this_FAQ.3F">2.3 Who do I contact if I have problems that aren't addressed on this FAQ?</a></li>
+<li><a href="#why-is-novell-bugzilla-so-slow">2.1 Why is Novell Bugzilla so slow?</a></li>
+<li><a href="#i-dont-like-the-my-bugs-saved-search-how-do-i-get-rid-of-it">2.2 I don't like the &quot;My Bugs&quot; saved search, how do I get rid of it?</a></li>
+<li><a href="#who-do-i-contact-if-i-have-problems-that-arent-addressed-on-this-faq">2.3 Who do I contact if I have problems that aren't addressed on this FAQ?</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -23,14 +23,14 @@ This article contains detailed information on the section contents.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Section_attributes">1 Section attributes</a></li>
-<li><a href="#Child_elements">2 Child elements</a>
+<li><a href="#section-attributes">1 Section attributes</a></li>
+<li><a href="#child-elements">2 Child elements</a>
 <ul>
-<li><a href="#compilersCompatibility">2.1 compilersCompatibility</a>
+<li><a href="#compilerscompatibility">2.1 compilersCompatibility</a>
 <ul>
-<li><a href="#Current_compatibility_settings">2.1.1 Current compatibility settings</a>
+<li><a href="#current-compatibility-settings">2.1.1 Current compatibility settings</a>
 <ul>
-<li><a href="#C.23_compiler:_.2Fnowarn:0169">2.1.1.1 C# compiler: /nowarn:0169</a></li>
+<li><a href="#c-compiler-nowarn0169">2.1.1.1 C# compiler: /nowarn:0169</a></li>
 </ul></li>
 </ul></li>
 </ul></li>

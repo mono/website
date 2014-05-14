@@ -17,18 +17,18 @@ Gendarme.Rules.Portability
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#DoNotHardcodePathsRule">1.1 DoNotHardcodePathsRule</a></li>
-<li><a href="#ExitCodeIsLimitedOnUnixRule">1.2 ExitCodeIsLimitedOnUnixRule</a></li>
-<li><a href="#FeatureRequiresRootPrivilegeOnUnixRule">1.3 FeatureRequiresRootPrivilegeOnUnixRule</a></li>
-<li><a href="#MonoCompatibilityReviewRule">1.4 MonoCompatibilityReviewRule</a>
+<li><a href="#donothardcodepathsrule">1.1 DoNotHardcodePathsRule</a></li>
+<li><a href="#exitcodeislimitedonunixrule">1.2 ExitCodeIsLimitedOnUnixRule</a></li>
+<li><a href="#featurerequiresrootprivilegeonunixrule">1.3 FeatureRequiresRootPrivilegeOnUnixRule</a></li>
+<li><a href="#monocompatibilityreviewrule">1.4 MonoCompatibilityReviewRule</a>
 <ul>
-<li><a href="#Version">1.4.1 Version</a></li>
+<li><a href="#version">1.4.1 Version</a></li>
 </ul></li>
-<li><a href="#NewLineLiteralRule">1.5 NewLineLiteralRule</a></li>
+<li><a href="#newlineliteralrule">1.5 NewLineLiteralRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

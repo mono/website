@@ -17,12 +17,12 @@ There are various Mono User Groups:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Europe">1 Europe</a></li>
-<li><a href="#Latin_America">2 Latin America</a></li>
-<li><a href="#United_States">3 United States</a></li>
-<li><a href="#Spanish_Speaking_Mono_Groups">4 Spanish Speaking Mono Groups</a></li>
-<li><a href="#Mono_Meetings">5 Mono Meetings</a></li>
-<li><a href="#Team">6 Team</a></li>
+<li><a href="#europe">1 Europe</a></li>
+<li><a href="#latin-america">2 Latin America</a></li>
+<li><a href="#united-states">3 United States</a></li>
+<li><a href="#spanish-speaking-mono-groups">4 Spanish Speaking Mono Groups</a></li>
+<li><a href="#mono-meetings">5 Mono Meetings</a></li>
+<li><a href="#team">6 Team</a></li>
 </ul></td>
 </tr>
 </tbody>

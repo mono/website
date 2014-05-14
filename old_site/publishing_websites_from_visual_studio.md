@@ -19,11 +19,11 @@ The easiest way to test your ASP.Net website running on Mono on Linux is to down
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Example">1 Example</a></li>
-<li><a href="#Web_Site_vs_Web_Application">2 Web Site vs Web Application</a></li>
-<li><a href="#Publishing_a_Web_Site_Project">3 Publishing a Web Site Project</a></li>
-<li><a href="#Publishing_a_Web_Application_Project">4 Publishing a Web Application Project</a></li>
-<li><a href="#Setting_up_Applications">5 Setting up Applications</a></li>
+<li><a href="#example">1 Example</a></li>
+<li><a href="#web-site-vs-web-application">2 Web Site vs Web Application</a></li>
+<li><a href="#publishing-a-web-site-project">3 Publishing a Web Site Project</a></li>
+<li><a href="#publishing-a-web-application-project">4 Publishing a Web Application Project</a></li>
+<li><a href="#setting-up-applications">5 Setting up Applications</a></li>
 </ul></td>
 </tr>
 </tbody>

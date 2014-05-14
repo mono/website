@@ -18,20 +18,20 @@ Some of the information here is out of date. For up to date information and samp
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#About_MonoTorrent">1 About MonoTorrent</a>
+<li><a href="#about-monotorrent">1 About MonoTorrent</a>
 <ul>
-<li><a href="#Licensing">1.1 Licensing</a></li>
-<li><a href="#Source_Code_and_Binaries">1.2 Source Code and Binaries</a></li>
-<li><a href="#UIs">1.3 UIs</a></li>
+<li><a href="#licensing">1.1 Licensing</a></li>
+<li><a href="#source-code-and-binaries">1.2 Source Code and Binaries</a></li>
+<li><a href="#uis">1.3 UIs</a></li>
 </ul></li>
-<li><a href="#Client_Library">2 Client Library</a>
+<li><a href="#client-library">2 Client Library</a>
 <ul>
-<li><a href="#Features">2.1 Features</a></li>
-<li><a href="#Sample_Code">2.2 Sample Code</a></li>
+<li><a href="#features">2.1 Features</a></li>
+<li><a href="#sample-code">2.2 Sample Code</a></li>
 </ul></li>
-<li><a href="#Tracker_Library">3 Tracker Library</a>
+<li><a href="#tracker-library">3 Tracker Library</a>
 <ul>
-<li><a href="#Features_2">3.1 Features</a></li>
+<li><a href="#features_2">3.1 Features</a></li>
 </ul></li>
 </ul></td>
 </tr>

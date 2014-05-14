@@ -15,13 +15,13 @@ Howto
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Operating_System">1 Operating System</a></li>
-<li><a href="#Desktop">2 Desktop</a></li>
-<li><a href="#Graphics">3 Graphics</a></li>
-<li><a href="#Network">4 Network</a></li>
-<li><a href="#Web">5 Web</a></li>
-<li><a href="#Moonlight">6 Moonlight</a></li>
-<li><a href="#Configuration">7 Configuration</a></li>
+<li><a href="#operating-system">1 Operating System</a></li>
+<li><a href="#desktop">2 Desktop</a></li>
+<li><a href="#graphics">3 Graphics</a></li>
+<li><a href="#network">4 Network</a></li>
+<li><a href="#web">5 Web</a></li>
+<li><a href="#moonlight">6 Moonlight</a></li>
+<li><a href="#configuration">7 Configuration</a></li>
 </ul></td>
 </tr>
 </tbody>

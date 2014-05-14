@@ -17,37 +17,37 @@ During the Summer of 2005, the Mono project will be mentoring a group of student
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Members">1 The Members</a></li>
-<li><a href="#The_Objectives">2 The Objectives</a></li>
-<li><a href="#GCC_CIL">3 GCC CIL</a>
+<li><a href="#the-members">1 The Members</a></li>
+<li><a href="#the-objectives">2 The Objectives</a></li>
+<li><a href="#gcc-cil">3 GCC CIL</a>
 <ul>
-<li><a href="#Objectives">3.1 Objectives</a></li>
-<li><a href="#Notes">3.2 Notes</a></li>
+<li><a href="#objectives">3.1 Objectives</a></li>
+<li><a href="#notes">3.2 Notes</a></li>
 </ul></li>
-<li><a href="#Managed_C.2B.2B_extensions_to_GCC">4 Managed C++ extensions to GCC</a></li>
-<li><a href="#Ruby.NET">5 Ruby.NET</a>
+<li><a href="#managed-c-extensions-to-gcc">4 Managed C++ extensions to GCC</a></li>
+<li><a href="#rubynet">5 Ruby.NET</a>
 <ul>
-<li><a href="#Objectives_2">5.1 Objectives</a></li>
+<li><a href="#objectives_2">5.1 Objectives</a></li>
 </ul></li>
-<li><a href="#MSBuild_implementation">6 MSBuild implementation</a>
+<li><a href="#msbuild-implementation">6 MSBuild implementation</a>
 <ul>
-<li><a href="#Objectives_3">6.1 Objectives</a></li>
+<li><a href="#objectives_3">6.1 Objectives</a></li>
 </ul></li>
-<li><a href="#Diva">7 Diva</a>
+<li><a href="#diva">7 Diva</a>
 <ul>
-<li><a href="#Objectives_4">7.1 Objectives</a></li>
+<li><a href="#objectives_4">7.1 Objectives</a></li>
 </ul></li>
-<li><a href="#ASP.NET_GUI_Designer">8 ASP.NET GUI Designer</a>
+<li><a href="#aspnet-gui-designer">8 ASP.NET GUI Designer</a>
 <ul>
-<li><a href="#Objectives_5">8.1 Objectives</a></li>
+<li><a href="#objectives_5">8.1 Objectives</a></li>
 </ul></li>
-<li><a href="#XAML_Compiler">9 XAML Compiler</a>
+<li><a href="#xaml-compiler">9 XAML Compiler</a>
 <ul>
-<li><a href="#Objectives_6">9.1 Objectives</a></li>
+<li><a href="#objectives_6">9.1 Objectives</a></li>
 </ul></li>
-<li><a href="#MonoDoc">10 MonoDoc</a>
+<li><a href="#monodoc">10 MonoDoc</a>
 <ul>
-<li><a href="#Objectives_7">10.1 Objectives</a></li>
+<li><a href="#objectives_7">10.1 Objectives</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -57,19 +57,19 @@ During the Summer of 2005, the Mono project will be mentoring a group of student
 The Members
 ===========
 
--   Jaen Saul: [\#Ruby.NET](#Ruby.NET) implementation
+-   Jaen Saul: [\#Ruby.NET](#rubynet) implementation
 -   Jb Evain: [Cecil/Write]({{site.github.url}}/old_site/Cecil "Cecil") support
--   Jeyasankar Kottalam: [GCC CIL](#GCC_CIL) backend
--   Marek Sieradzki: [MSBuild](#MSBuild) implementation
--   Michael Hutchinson: [ASP.NET GUI Designer](#ASP.NET_GUI_Designer)
+-   Jeyasankar Kottalam: [GCC CIL](#gcc-cil) backend
+-   Marek Sieradzki: [MSBuild](#msbuild) implementation
+-   Michael Hutchinson: [ASP.NET GUI Designer](#aspnet-gui-designer)
 -   Aaron Tomb: Bug finder
--   Blagovest Dachev: [ASP.NET GUI Designer](#ASP.NET_GUI_Designer)
+-   Blagovest Dachev: [ASP.NET GUI Designer](#aspnet-gui-designer)
 -   Hans Hesse: Managed C++ front-end
--   Iain McCoy: [XAML compiler](#XAML_compiler)
--   Michael Dominic: [Diva Video Editor](#Diva)
+-   Iain McCoy: [XAML compiler](#xaml-compiler)
+-   Michael Dominic: [Diva Video Editor](#diva)
 -   Raphael Romeikat: PHP Compiler for .NET
 -   Dmitry Bobrovsky: XSLT Compiler
--   Mario Sopena Novales: [Monodoc](#Monodoc) improvements
+-   Mario Sopena Novales: [Monodoc](#monodoc) improvements
 -   Pedro Martínez Julia: Windows.Forms 2 controls
 -   Tino Morenz: QNX Port
 -   Florian Groß: Ruby.NET

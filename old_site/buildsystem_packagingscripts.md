@@ -18,18 +18,18 @@ The core of the build system is the packaging scripts. These live in `release/pa
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Configuration_files">1 Configuration files</a>
+<li><a href="#configuration-files">1 Configuration files</a>
 <ul>
-<li><a href="#release.2Fpackaging.2Fdefs">1.1 release/packaging/defs</a></li>
-<li><a href="#release.2Fpackaging.2Fconf">1.2 release/packaging/conf</a></li>
-<li><a href="#release.2Fconf">1.3 release/conf</a></li>
+<li><a href="#releasepackagingdefs">1.1 release/packaging/defs</a></li>
+<li><a href="#releasepackagingconf">1.2 release/packaging/conf</a></li>
+<li><a href="#releaseconf">1.3 release/conf</a></li>
 </ul></li>
-<li><a href="#Scripts">2 Scripts</a>
+<li><a href="#scripts">2 Scripts</a>
 <ul>
 <li><a href="#mktarball">2.1 mktarball</a></li>
 <li><a href="#build">2.2 build</a></li>
 </ul></li>
-<li><a href="#Steps_to_Build_Everything">3 Steps to Build Everything</a></li>
+<li><a href="#steps-to-build-everything">3 Steps to Build Everything</a></li>
 </ul></td>
 </tr>
 </tbody>

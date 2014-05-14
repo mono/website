@@ -15,16 +15,16 @@ COM Interop
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Roadmap">2 Roadmap</a></li>
-<li><a href="#Progress">3 Progress</a></li>
-<li><a href="#Example">4 Example</a></li>
-<li><a href="#Non-Windows_Platform_Support">5 Non-Windows Platform Support</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#roadmap">2 Roadmap</a></li>
+<li><a href="#progress">3 Progress</a></li>
+<li><a href="#example">4 Example</a></li>
+<li><a href="#non-windows-platform-support">5 Non-Windows Platform Support</a>
 <ul>
-<li><a href="#XPCOM_Support">5.1 XPCOM Support</a></li>
+<li><a href="#xpcom-support">5.1 XPCOM Support</a></li>
 </ul></li>
-<li><a href="#Tools">6 Tools</a></li>
-<li><a href="#TODO">7 TODO</a></li>
+<li><a href="#tools">6 Tools</a></li>
+<li><a href="#todo">7 TODO</a></li>
 </ul></td>
 </tr>
 </tbody>

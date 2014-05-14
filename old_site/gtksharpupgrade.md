@@ -15,13 +15,13 @@ GtkSharpUpgrade
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Upgrading_to_the_Latest_Gtk.23_Version">1 Upgrading to the Latest Gtk# Version</a>
+<li><a href="#upgrading-to-the-latest-gtk-version">1 Upgrading to the Latest Gtk# Version</a>
 <ul>
-<li><a href="#Upgrading_from_1.0_to_2.4">1.1 Upgrading from 1.0 to 2.4</a>
+<li><a href="#upgrading-from-10-to-24">1.1 Upgrading from 1.0 to 2.4</a>
 <ul>
-<li><a href="#How_do_I_update_my_1.0_application_to_compile_against_2.x.3F">1.1.1 How do I update my 1.0 application to compile against 2.x?</a></li>
-<li><a href="#How_do_I_use_the_newest_GAPI_parser.2Fgenerator.3F">1.1.2 How do I use the newest GAPI parser/generator?</a></li>
-<li><a href="#What_happened_to_Gda.23_and_GnomeDb.23.3F">1.1.3 What happened to Gda# and GnomeDb#?</a></li>
+<li><a href="#how-do-i-update-my-10-application-to-compile-against-2x">1.1.1 How do I update my 1.0 application to compile against 2.x?</a></li>
+<li><a href="#how-do-i-use-the-newest-gapi-parsergenerator">1.1.2 How do I use the newest GAPI parser/generator?</a></li>
+<li><a href="#what-happened-to-gda-and-gnomedb">1.1.3 What happened to Gda# and GnomeDb#?</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

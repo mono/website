@@ -15,19 +15,19 @@ CAS
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Code_Access_Security">1 Code Access Security</a>
+<li><a href="#code-access-security">1 Code Access Security</a>
 <ul>
-<li><a href="#Security_Manager">1.1 Security Manager</a>
+<li><a href="#security-manager">1.1 Security Manager</a>
 <ul>
-<li><a href="#Testing">1.1.1 Testing</a></li>
-<li><a href="#Status">1.1.2 Status</a></li>
+<li><a href="#testing">1.1.1 Testing</a></li>
+<li><a href="#status">1.1.2 Status</a></li>
 </ul></li>
-<li><a href="#Class_libraries">1.2 Class libraries</a>
+<li><a href="#class-libraries">1.2 Class libraries</a>
 <ul>
-<li><a href="#Testing_2">1.2.1 Testing</a></li>
-<li><a href="#Status_2">1.2.2 Status</a></li>
+<li><a href="#testing_2">1.2.1 Testing</a></li>
+<li><a href="#status_2">1.2.2 Status</a></li>
 </ul></li>
-<li><a href="#Tools">1.3 Tools</a>
+<li><a href="#tools">1.3 Tools</a>
 <ul>
 <li><a href="#caspol">1.3.1 caspol</a></li>
 <li><a href="#permview">1.3.2 permview</a></li>

@@ -15,19 +15,19 @@ Accessibility: Architecture
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a>
+<li><a href="#overview">1 Overview</a>
 <ul>
-<li><a href="#GNOME_Desktop">1.1 GNOME Desktop</a></li>
-<li><a href="#UI_Automation">1.2 UI Automation</a></li>
-<li><a href="#UI_Automation_on_Linux">1.3 UI Automation on Linux</a></li>
+<li><a href="#gnome-desktop">1.1 GNOME Desktop</a></li>
+<li><a href="#ui-automation">1.2 UI Automation</a></li>
+<li><a href="#ui-automation-on-linux">1.3 UI Automation on Linux</a></li>
 </ul></li>
-<li><a href="#Provider_Details">2 Provider Details</a>
+<li><a href="#provider-details">2 Provider Details</a>
 <ul>
-<li><a href="#ATK">2.1 ATK</a></li>
-<li><a href="#UIA_Provider">2.2 UIA Provider</a></li>
-<li><a href="#UIA.2FATK_Bridge">2.3 UIA/ATK Bridge</a></li>
+<li><a href="#atk">2.1 ATK</a></li>
+<li><a href="#uia-provider">2.2 UIA Provider</a></li>
+<li><a href="#uiaatk-bridge">2.3 UIA/ATK Bridge</a></li>
 </ul></li>
-<li><a href="#Definitions">3 Definitions</a></li>
+<li><a href="#definitions">3 Definitions</a></li>
 </ul></td>
 </tr>
 </tbody>

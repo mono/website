@@ -19,23 +19,23 @@ Information on how to configure the [FastCGI]({{site.github.url}}/old_site/FastC
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a>
+<li><a href="#introduction">1 Introduction</a>
 <ul>
-<li><a href="#Configuration_Tested_On...">1.1 Configuration Tested On...</a></li>
+<li><a href="#configuration-tested-on">1.1 Configuration Tested On...</a></li>
 </ul></li>
-<li><a href="#General_Warnings">2 General Warnings</a></li>
-<li><a href="#Using_Paths_.5BRecommended.5D">3 Using Paths [Recommended]</a>
+<li><a href="#general-warnings">2 General Warnings</a></li>
+<li><a href="#using-paths-recommended">3 Using Paths [Recommended]</a>
 <ul>
-<li><a href="#Warnings">3.1 Warnings</a></li>
-<li><a href="#Step_1:_Setting_Up_the_Handler">3.2 Step 1: Setting Up the Handler</a></li>
+<li><a href="#warnings">3.1 Warnings</a></li>
+<li><a href="#step-1-setting-up-the-handler">3.2 Step 1: Setting Up the Handler</a></li>
 </ul></li>
-<li><a href="#Using_Extensions">4 Using Extensions</a>
+<li><a href="#using-extensions">4 Using Extensions</a>
 <ul>
-<li><a href="#Warnings_2">4.1 Warnings</a></li>
-<li><a href="#Step_1:_Setting_Up_the_Handler_2">4.2 Step 1: Setting Up the Handler</a></li>
-<li><a href="#Step_2:_Adding_Index_Pages">4.3 Step 2: Adding Index Pages</a></li>
+<li><a href="#warnings_2">4.1 Warnings</a></li>
+<li><a href="#step-1-setting-up-the-handler_2">4.2 Step 1: Setting Up the Handler</a></li>
+<li><a href="#step-2-adding-index-pages">4.3 Step 2: Adding Index Pages</a></li>
 </ul></li>
-<li><a href="#Bada_Bing.21">5 Bada Bing!</a></li>
+<li><a href="#bada-bing">5 Bada Bing!</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -54,7 +54,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{site.github.url}}/old_site/FastCGI#ImportantInformation "FastCGI")" on the main page.
+Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{site.github.url}}/old_site/FastCGI#importantinformation "FastCGI")" on the main page.
 
 Using Paths [Recommended]
 -------------------------

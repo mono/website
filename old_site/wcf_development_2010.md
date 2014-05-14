@@ -15,31 +15,31 @@ WCF Development 2010
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#WCF_future_development_tasks">1 WCF future development tasks</a>
+<li><a href="#wcf-future-development-tasks">1 WCF future development tasks</a>
 <ul>
-<li><a href="#Data_transfer_technology">1.1 Data transfer technology</a></li>
-<li><a href="#Core_WCF_stack">1.2 Core WCF stack</a></li>
-<li><a href="#WCF_3.0.2F3.5_Security_stack">1.3 WCF 3.0/3.5 Security stack</a>
+<li><a href="#data-transfer-technology">1.1 Data transfer technology</a></li>
+<li><a href="#core-wcf-stack">1.2 Core WCF stack</a></li>
+<li><a href="#wcf-3035-security-stack">1.3 WCF 3.0/3.5 Security stack</a>
 <ul>
-<li><a href="#dependency_graph">1.3.1 dependency graph</a></li>
-<li><a href="#ServiceAuthorizationManager">1.3.2 ServiceAuthorizationManager</a></li>
-<li><a href="#Identity_support">1.3.3 Identity support</a></li>
-<li><a href="#SecurityBindingElements">1.3.4 SecurityBindingElements</a></li>
-<li><a href="#WSSecurityTokenSerializer">1.3.5 WSSecurityTokenSerializer</a></li>
-<li><a href="#WSFederationHttpBinding">1.3.6 WSFederationHttpBinding</a></li>
-<li><a href="#WSDualHttpBinding">1.3.7 WSDualHttpBinding</a></li>
-<li><a href="#Policy.5BImport.7CExport.5DExtension">1.3.8 Policy[Import|Export]Extension</a></li>
+<li><a href="#dependency-graph">1.3.1 dependency graph</a></li>
+<li><a href="#serviceauthorizationmanager">1.3.2 ServiceAuthorizationManager</a></li>
+<li><a href="#identity-support">1.3.3 Identity support</a></li>
+<li><a href="#securitybindingelements">1.3.4 SecurityBindingElements</a></li>
+<li><a href="#wssecuritytokenserializer">1.3.5 WSSecurityTokenSerializer</a></li>
+<li><a href="#wsfederationhttpbinding">1.3.6 WSFederationHttpBinding</a></li>
+<li><a href="#wsdualhttpbinding">1.3.7 WSDualHttpBinding</a></li>
+<li><a href="#policyimportexportextension">1.3.8 Policy[Import|Export]Extension</a></li>
 </ul></li>
-<li><a href="#Windows_Identity_Foundation_.28Microsoft.IdentityModel.dll.29">1.4 Windows Identity Foundation (Microsoft.IdentityModel.dll)</a></li>
-<li><a href="#New_.NET_4.0_stack">1.5 New .NET 4.0 stack</a>
+<li><a href="#windows-identity-foundation-microsoftidentitymodeldll">1.4 Windows Identity Foundation (Microsoft.IdentityModel.dll)</a></li>
+<li><a href="#new-net-40-stack">1.5 New .NET 4.0 stack</a>
 <ul>
-<li><a href="#Routing_.28System.ServiceModel.Routing.dll.29">1.5.1 Routing (System.ServiceModel.Routing.dll)</a></li>
-<li><a href="#Discovery_.28System.ServiceModel.Discovery.dll.29">1.5.2 Discovery (System.ServiceModel.Discovery.dll)</a></li>
-<li><a href="#Default_configuration">1.5.3 Default configuration</a></li>
-<li><a href="#More_REST_support">1.5.4 More REST support</a></li>
+<li><a href="#routing-systemservicemodelroutingdll">1.5.1 Routing (System.ServiceModel.Routing.dll)</a></li>
+<li><a href="#discovery-systemservicemodeldiscoverydll">1.5.2 Discovery (System.ServiceModel.Discovery.dll)</a></li>
+<li><a href="#default-configuration">1.5.3 Default configuration</a></li>
+<li><a href="#more-rest-support">1.5.4 More REST support</a></li>
 </ul></li>
-<li><a href="#REST_Starter_Kit_.28Microsoft.ServiceModel.Web.dll.29">1.6 REST Starter Kit (Microsoft.ServiceModel.Web.dll)</a></li>
-<li><a href="#Management_and_AppFabric">1.7 Management and AppFabric</a></li>
+<li><a href="#rest-starter-kit-microsoftservicemodelwebdll">1.6 REST Starter Kit (Microsoft.ServiceModel.Web.dll)</a></li>
+<li><a href="#management-and-appfabric">1.7 Management and AppFabric</a></li>
 </ul></li>
 </ul></td>
 </tr>

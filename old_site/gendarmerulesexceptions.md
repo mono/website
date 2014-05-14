@@ -17,20 +17,20 @@ Gendarme.Rules.Exceptions
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidArgumentExceptionDefaultConstructorRule">1.1 AvoidArgumentExceptionDefaultConstructorRule</a></li>
-<li><a href="#AvoidThrowingBasicExceptionsRule">1.2 AvoidThrowingBasicExceptionsRule</a></li>
-<li><a href="#DoNotDestroyStackTraceRule">1.3 DoNotDestroyStackTraceRule</a></li>
-<li><a href="#DoNotSwallowErrorsCatchingNonSpecificExceptionsRule">1.4 DoNotSwallowErrorsCatchingNonSpecificExceptionsRule</a></li>
-<li><a href="#DoNotThrowInUnexpectedLocationRule">1.5 DoNotThrowInUnexpectedLocationRule</a></li>
-<li><a href="#DoNotThrowReservedExceptionRule">1.6 DoNotThrowReservedExceptionRule</a></li>
-<li><a href="#ExceptionShouldBeVisibleRule">1.7 ExceptionShouldBeVisibleRule</a></li>
-<li><a href="#InstantiateArgumentExceptionCorrectlyRule">1.8 InstantiateArgumentExceptionCorrectlyRule</a></li>
-<li><a href="#MissingExceptionConstructorsRule">1.9 MissingExceptionConstructorsRule</a></li>
-<li><a href="#UseObjectDisposedExceptionRule">1.10 UseObjectDisposedExceptionRule</a></li>
+<li><a href="#avoidargumentexceptiondefaultconstructorrule">1.1 AvoidArgumentExceptionDefaultConstructorRule</a></li>
+<li><a href="#avoidthrowingbasicexceptionsrule">1.2 AvoidThrowingBasicExceptionsRule</a></li>
+<li><a href="#donotdestroystacktracerule">1.3 DoNotDestroyStackTraceRule</a></li>
+<li><a href="#donotswallowerrorscatchingnonspecificexceptionsrule">1.4 DoNotSwallowErrorsCatchingNonSpecificExceptionsRule</a></li>
+<li><a href="#donotthrowinunexpectedlocationrule">1.5 DoNotThrowInUnexpectedLocationRule</a></li>
+<li><a href="#donotthrowreservedexceptionrule">1.6 DoNotThrowReservedExceptionRule</a></li>
+<li><a href="#exceptionshouldbevisiblerule">1.7 ExceptionShouldBeVisibleRule</a></li>
+<li><a href="#instantiateargumentexceptioncorrectlyrule">1.8 InstantiateArgumentExceptionCorrectlyRule</a></li>
+<li><a href="#missingexceptionconstructorsrule">1.9 MissingExceptionConstructorsRule</a></li>
+<li><a href="#useobjectdisposedexceptionrule">1.10 UseObjectDisposedExceptionRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

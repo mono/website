@@ -21,21 +21,21 @@ XmlWriter is used widely in several XML classes.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Writer_Methods">1 Writer Methods</a>
+<li><a href="#writer-methods">1 Writer Methods</a>
 <ul>
-<li><a href="#Writing_Elements">1.1 Writing Elements</a></li>
-<li><a href="#Writing_Attributes">1.2 Writing Attributes</a></li>
-<li><a href="#Writing_Content_Strings">1.3 Writing Content Strings</a></li>
-<li><a href="#Writing_Nodes_Directly">1.4 Writing Nodes Directly</a></li>
-<li><a href="#Don.27t_Forget_to_Close">1.5 Don't Forget to Close</a></li>
+<li><a href="#writing-elements">1.1 Writing Elements</a></li>
+<li><a href="#writing-attributes">1.2 Writing Attributes</a></li>
+<li><a href="#writing-content-strings">1.3 Writing Content Strings</a></li>
+<li><a href="#writing-nodes-directly">1.4 Writing Nodes Directly</a></li>
+<li><a href="#dont-forget-to-close">1.5 Don't Forget to Close</a></li>
 </ul></li>
-<li><a href="#XmlWriter_Tips">2 XmlWriter Tips</a>
+<li><a href="#xmlwriter-tips">2 XmlWriter Tips</a>
 <ul>
-<li><a href="#Indentation">2.1 Indentation</a></li>
-<li><a href="#Namespace_Handling">2.2 Namespace Handling</a></li>
-<li><a href="#Specifying_Arbitrary_Encoding_Declaration">2.3 Specifying Arbitrary Encoding Declaration</a></li>
-<li><a href="#Allowing_multiple_top-level_element_content">2.4 Allowing multiple top-level element content</a></li>
-<li><a href="#WriteString.28.29_and_WriteCData.28.29">2.5 WriteString() and WriteCData()</a></li>
+<li><a href="#indentation">2.1 Indentation</a></li>
+<li><a href="#namespace-handling">2.2 Namespace Handling</a></li>
+<li><a href="#specifying-arbitrary-encoding-declaration">2.3 Specifying Arbitrary Encoding Declaration</a></li>
+<li><a href="#allowing-multiple-top-level-element-content">2.4 Allowing multiple top-level element content</a></li>
+<li><a href="#writestring-and-writecdata">2.5 WriteString() and WriteCData()</a></li>
 </ul></li>
 </ul></td>
 </tr>

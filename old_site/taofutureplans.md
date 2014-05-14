@@ -17,12 +17,12 @@ Set of things I'd like to do in the (very) near future:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Simplify_build_system">1 Simplify build system</a></li>
-<li><a href="#Single_Tao.OpenGl_DLL_on_all_platforms">2 Single Tao.OpenGl DLL on all platforms</a></li>
-<li><a href="#Single_Tao.Sdl_DLL_on_all_platforms">3 Single Tao.Sdl DLL on all platforms</a></li>
-<li><a href="#MacOS_X_support">4 MacOS X support</a></li>
-<li><a href="#OpenGL_documentation">5 OpenGL documentation</a></li>
-<li><a href="#Extension_support_in_OpenAL">6 Extension support in OpenAL</a></li>
+<li><a href="#simplify-build-system">1 Simplify build system</a></li>
+<li><a href="#single-taoopengl-dll-on-all-platforms">2 Single Tao.OpenGl DLL on all platforms</a></li>
+<li><a href="#single-taosdl-dll-on-all-platforms">3 Single Tao.Sdl DLL on all platforms</a></li>
+<li><a href="#macos-x-support">4 MacOS X support</a></li>
+<li><a href="#opengl-documentation">5 OpenGL documentation</a></li>
+<li><a href="#extension-support-in-openal">6 Extension support in OpenAL</a></li>
 </ul></td>
 </tr>
 </tbody>

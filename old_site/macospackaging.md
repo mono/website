@@ -17,13 +17,13 @@ Splitting up Mono's DMG for MacOS into a runtime and SDK.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Background">1 Background</a>
+<li><a href="#background">1 Background</a>
 <ul>
-<li><a href="#Mono_Runtime">1.1 Mono Runtime</a></li>
-<li><a href="#Mono_SDK">1.2 Mono SDK</a></li>
+<li><a href="#mono-runtime">1.1 Mono Runtime</a></li>
+<li><a href="#mono-sdk">1.2 Mono SDK</a></li>
 </ul></li>
-<li><a href="#Split">2 Split</a></li>
-<li><a href="#Things_to_drop">3 Things to drop</a></li>
+<li><a href="#split">2 Split</a></li>
+<li><a href="#things-to-drop">3 Things to drop</a></li>
 </ul></td>
 </tr>
 </tbody>

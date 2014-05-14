@@ -15,10 +15,10 @@ Bridges
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#ObjC.23">1 ObjC#</a></li>
-<li><a href="#IKVM">2 IKVM</a></li>
-<li><a href="#GAPI">3 GAPI</a></li>
-<li><a href="#SWIG">4 SWIG</a></li>
+<li><a href="#objc">1 ObjC#</a></li>
+<li><a href="#ikvm">2 IKVM</a></li>
+<li><a href="#gapi">3 GAPI</a></li>
+<li><a href="#swig">4 SWIG</a></li>
 </ul></td>
 </tr>
 </tbody>

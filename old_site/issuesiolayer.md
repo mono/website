@@ -23,23 +23,23 @@ Shared information like thread handles is kept in this page and this page can gr
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Disabling_SHM_features">1 Disabling SHM features</a></li>
-<li><a href="#Needs:_Test_Suite_for_IO-Layer">2 Needs: Test Suite for IO-Layer</a></li>
-<li><a href="#Questions_for_Dick">3 Questions for Dick</a></li>
-<li><a href="#Request">4 Request</a>
+<li><a href="#disabling-shm-features">1 Disabling SHM features</a></li>
+<li><a href="#needs-test-suite-for-io-layer">2 Needs: Test Suite for IO-Layer</a></li>
+<li><a href="#questions-for-dick">3 Questions for Dick</a></li>
+<li><a href="#request">4 Request</a>
 <ul>
-<li><a href="#Documentation">4.1 Documentation</a></li>
-<li><a href="#Timeouts">4.2 Timeouts</a></li>
-<li><a href="#Tuning_of_the_non-SHM_case">4.3 Tuning of the non-SHM case</a></li>
-<li><a href="#Tuning_for_embedded_systems">4.4 Tuning for embedded systems</a></li>
-<li><a href="#Challenges_for_Embedded_Systems">4.5 Challenges for Embedded Systems</a></li>
+<li><a href="#documentation">4.1 Documentation</a></li>
+<li><a href="#timeouts">4.2 Timeouts</a></li>
+<li><a href="#tuning-of-the-non-shm-case">4.3 Tuning of the non-SHM case</a></li>
+<li><a href="#tuning-for-embedded-systems">4.4 Tuning for embedded systems</a></li>
+<li><a href="#challenges-for-embedded-systems">4.5 Challenges for Embedded Systems</a></li>
 </ul></li>
-<li><a href="#Proposals">5 Proposals</a>
+<li><a href="#proposals">5 Proposals</a>
 <ul>
-<li><a href="#Process_ID_storage">5.1 Process ID storage</a></li>
-<li><a href="#Reducing_the_size_of_the_table">5.2 Reducing the size of the table</a></li>
-<li><a href="#Mono_Modes">5.3 Mono Modes</a></li>
-<li><a href="#write.2C_read_operations">5.4 _write, _read operations</a></li>
+<li><a href="#process-id-storage">5.1 Process ID storage</a></li>
+<li><a href="#reducing-the-size-of-the-table">5.2 Reducing the size of the table</a></li>
+<li><a href="#mono-modes">5.3 Mono Modes</a></li>
+<li><a href="#write-read-operations">5.4 _write, _read operations</a></li>
 </ul></li>
 </ul></td>
 </tr>

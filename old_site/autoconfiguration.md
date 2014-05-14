@@ -18,20 +18,20 @@ Automatic configuration of ASP.NET applications with [mod\_mono]({{site.github.u
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Motivation">1 Motivation</a></li>
-<li><a href="#What_is_it.3F">2 What is it?</a></li>
-<li><a href="#How_do_I_enable_it.3F">3 How do I enable it?</a></li>
-<li><a href="#Uses">4 Uses</a>
+<li><a href="#motivation">1 Motivation</a></li>
+<li><a href="#what-is-it">2 What is it?</a></li>
+<li><a href="#how-do-i-enable-it">3 How do I enable it?</a></li>
+<li><a href="#uses">4 Uses</a>
 <ul>
-<li><a href="#Deploying_an_application">4.1 Deploying an application</a></li>
-<li><a href="#Standalone_pages">4.2 Standalone pages</a></li>
+<li><a href="#deploying-an-application">4.1 Deploying an application</a></li>
+<li><a href="#standalone-pages">4.2 Standalone pages</a></li>
 </ul></li>
-<li><a href="#ASP.NET_MVC_and_AutoConfiguration">5 ASP.NET MVC and AutoConfiguration</a></li>
-<li><a href="#Internals_of_AutoConfiguration">6 Internals of AutoConfiguration</a>
+<li><a href="#aspnet-mvc-and-autoconfiguration">5 ASP.NET MVC and AutoConfiguration</a></li>
+<li><a href="#internals-of-autoconfiguration">6 Internals of AutoConfiguration</a>
 <ul>
-<li><a href="#Detailed_examples">6.1 Detailed examples</a></li>
+<li><a href="#detailed-examples">6.1 Detailed examples</a></li>
 </ul></li>
-<li><a href="#Automatic_hosting_and_virtual_hosts">7 Automatic hosting and virtual hosts</a></li>
+<li><a href="#automatic-hosting-and-virtual-hosts">7 Automatic hosting and virtual hosts</a></li>
 </ul></td>
 </tr>
 </tbody>

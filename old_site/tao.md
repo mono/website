@@ -17,19 +17,19 @@ The Tao website is now located at : [http://sourceforge.net/projects/taoframewo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Availability">1 Availability</a>
+<li><a href="#availability">1 Availability</a>
 <ul>
-<li><a href="#1.2.0_Release_.282_Nov_2005.29">1.1 1.2.0 Release (2 Nov 2005)</a></li>
-<li><a href="#SVN">1.2 SVN</a></li>
-<li><a href="#Tao_.2B_autotools">1.3 Tao + autotools</a></li>
+<li><a href="#120-release-2-nov-2005">1.1 1.2.0 Release (2 Nov 2005)</a></li>
+<li><a href="#svn">1.2 SVN</a></li>
+<li><a href="#tao--autotools">1.3 Tao + autotools</a></li>
 </ul></li>
-<li><a href="#Building_Tao">2 Building Tao</a></li>
-<li><a href="#Mailing_List">3 Mailing List</a></li>
-<li><a href="#The_Tao_Framework_for_Mono_and_.NET.">4 The Tao Framework for Mono and .NET.</a></li>
-<li><a href="#Developers.2FMaintainers">5 Developers/Maintainers</a></li>
-<li><a href="#Plans">6 Plans</a>
+<li><a href="#building-tao">2 Building Tao</a></li>
+<li><a href="#mailing-list">3 Mailing List</a></li>
+<li><a href="#the-tao-framework-for-mono-and-net">4 The Tao Framework for Mono and .NET.</a></li>
+<li><a href="#developersmaintainers">5 Developers/Maintainers</a></li>
+<li><a href="#plans">6 Plans</a>
 <ul>
-<li><a href="#Future_Plans">6.1 Future Plans</a></li>
+<li><a href="#future-plans">6.1 Future Plans</a></li>
 </ul></li>
 </ul></td>
 </tr>

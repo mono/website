@@ -18,18 +18,18 @@ BosteenMonkey Guide
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#About_Mono">1 About Mono</a></li>
-<li><a href="#Getting_Started">2 Getting Started</a></li>
-<li><a href="#Programming_with_Mono">3 Programming with Mono</a></li>
-<li><a href="#Desktop_Application_Programming">4 Desktop Application Programming</a>
+<li><a href="#about-mono">1 About Mono</a></li>
+<li><a href="#getting-started">2 Getting Started</a></li>
+<li><a href="#programming-with-mono">3 Programming with Mono</a></li>
+<li><a href="#desktop-application-programming">4 Desktop Application Programming</a>
 <ul>
-<li><a href="#GUI_Toolkits">4.1 GUI Toolkits</a></li>
+<li><a href="#gui-toolkits">4.1 GUI Toolkits</a></li>
 </ul></li>
-<li><a href="#Web_Programming">5 Web Programming</a></li>
-<li><a href="#Operating_System_Programming">6 Operating System Programming</a></li>
-<li><a href="#Developer_Tools">7 Developer Tools</a></li>
-<li><a href="#Mono_on_Windows">8 Mono on Windows</a></li>
-<li><a href="#Appendices">9 Appendices</a></li>
+<li><a href="#web-programming">5 Web Programming</a></li>
+<li><a href="#operating-system-programming">6 Operating System Programming</a></li>
+<li><a href="#developer-tools">7 Developer Tools</a></li>
+<li><a href="#mono-on-windows">8 Mono on Windows</a></li>
+<li><a href="#appendices">9 Appendices</a></li>
 </ul></td>
 </tr>
 </tbody>

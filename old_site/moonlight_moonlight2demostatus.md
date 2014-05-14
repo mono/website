@@ -15,13 +15,13 @@ Moonlight/Moonlight2DemoStatus
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Gold">1 Gold</a></li>
-<li><a href="#Silver">2 Silver</a></li>
-<li><a href="#Bronze">3 Bronze</a></li>
-<li><a href="#DLR">4 DLR</a>
+<li><a href="#gold">1 Gold</a></li>
+<li><a href="#silver">2 Silver</a></li>
+<li><a href="#bronze">3 Bronze</a></li>
+<li><a href="#dlr">4 DLR</a>
 <ul>
-<li><a href="#IronPython_WebIDE">4.1 IronPython WebIDE</a></li>
-<li><a href="#Direct_Links">4.2 Direct Links</a></li>
+<li><a href="#ironpython-webide">4.1 IronPython WebIDE</a></li>
+<li><a href="#direct-links">4.2 Direct Links</a></li>
 </ul></li>
 </ul></td>
 </tr>

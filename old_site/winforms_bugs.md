@@ -15,11 +15,11 @@ WinForms Bugs
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Prioritization">1 Prioritization</a></li>
-<li><a href="#Point_Descriptions">2 Point Descriptions</a></li>
-<li><a href="#Examples">3 Examples</a></li>
-<li><a href="#Working_with_Bugzilla">4 Working with Bugzilla</a></li>
-<li><a href="#Reference">5 Reference</a></li>
+<li><a href="#prioritization">1 Prioritization</a></li>
+<li><a href="#point-descriptions">2 Point Descriptions</a></li>
+<li><a href="#examples">3 Examples</a></li>
+<li><a href="#working-with-bugzilla">4 Working with Bugzilla</a></li>
+<li><a href="#reference">5 Reference</a></li>
 </ul></td>
 </tr>
 </tbody>

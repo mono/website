@@ -19,26 +19,26 @@ WinForms
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Quick_Resources">1 Quick Resources</a>
+<li><a href="#quick-resources">1 Quick Resources</a>
 <ul>
-<li><a href="#Code_Status">1.1 Code Status</a></li>
+<li><a href="#code-status">1.1 Code Status</a></li>
 </ul></li>
-<li><a href="#About_System.Windows.Forms">2 About System.Windows.Forms</a>
+<li><a href="#about-systemwindowsforms">2 About System.Windows.Forms</a>
 <ul>
-<li><a href="#Contributing">2.1 Contributing</a></li>
-<li><a href="#Drivers">2.2 Drivers</a></li>
-<li><a href="#Accessibility">2.3 Accessibility</a></li>
+<li><a href="#contributing">2.1 Contributing</a></li>
+<li><a href="#drivers">2.2 Drivers</a></li>
+<li><a href="#accessibility">2.3 Accessibility</a></li>
 </ul></li>
-<li><a href="#Sample_Code">3 Sample Code</a></li>
-<li><a href="#Theming">4 Theming</a>
+<li><a href="#sample-code">3 Sample Code</a></li>
+<li><a href="#theming">4 Theming</a>
 <ul>
-<li><a href="#Why_Not_Use_Native_Widgets.3F">4.1 Why Not Use Native Widgets?</a></li>
-<li><a href="#Fitting_In">4.2 Fitting In</a></li>
-<li><a href="#Maturity_of_the_Theming_Interface">4.3 Maturity of the Theming Interface</a></li>
+<li><a href="#why-not-use-native-widgets">4.1 Why Not Use Native Widgets?</a></li>
+<li><a href="#fitting-in">4.2 Fitting In</a></li>
+<li><a href="#maturity-of-the-theming-interface">4.3 Maturity of the Theming Interface</a></li>
 </ul></li>
-<li><a href="#History">5 History</a></li>
-<li><a href="#Webbrowser_Control">6 Webbrowser Control</a></li>
-<li><a href="#WinForms_Designer">7 WinForms Designer</a></li>
+<li><a href="#history">5 History</a></li>
+<li><a href="#webbrowser-control">6 Webbrowser Control</a></li>
+<li><a href="#winforms-designer">7 WinForms Designer</a></li>
 </ul></td>
 </tr>
 </tbody>

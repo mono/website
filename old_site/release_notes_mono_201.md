@@ -15,15 +15,15 @@ Release Notes Mono 2.0.1
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_2.0.1_Release_Notes">1 Mono 2.0.1 Release Notes</a></li>
-<li><a href="#Major_Highlights">2 Major Highlights</a></li>
-<li><a href="#Changes_Since_2.0">3 Changes Since 2.0</a>
+<li><a href="#mono-201-release-notes">1 Mono 2.0.1 Release Notes</a></li>
+<li><a href="#major-highlights">2 Major Highlights</a></li>
+<li><a href="#changes-since-20">3 Changes Since 2.0</a>
 <ul>
-<li><a href="#GTK.23">3.1 GTK#</a></li>
-<li><a href="#Bug_Fixes">3.2 Bug Fixes</a></li>
+<li><a href="#gtk">3.1 GTK#</a></li>
+<li><a href="#bug-fixes">3.2 Bug Fixes</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.0.1">4 Installing Mono 2.0.1</a></li>
-<li><a href="#Contributors">5 Contributors</a></li>
+<li><a href="#installing-mono-201">4 Installing Mono 2.0.1</a></li>
+<li><a href="#contributors">5 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

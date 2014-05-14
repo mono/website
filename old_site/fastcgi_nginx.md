@@ -15,10 +15,10 @@ FastCGI Nginx
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_Nginx">1 What is Nginx</a></li>
-<li><a href="#Installing_Nginx_on_Ubuntu">2 Installing Nginx on Ubuntu</a></li>
-<li><a href="#Nginx_configuration">3 Nginx configuration</a></li>
-<li><a href="#Useful_resources">4 Useful resources</a></li>
+<li><a href="#what-is-nginx">1 What is Nginx</a></li>
+<li><a href="#installing-nginx-on-ubuntu">2 Installing Nginx on Ubuntu</a></li>
+<li><a href="#nginx-configuration">3 Nginx configuration</a></li>
+<li><a href="#useful-resources">4 Useful resources</a></li>
 </ul></td>
 </tr>
 </tbody>

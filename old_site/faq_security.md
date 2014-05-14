@@ -15,50 +15,50 @@ FAQ: Security
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Secure_Socket_Layer_.28SSL.29_.2F_Transport_Layer_Security_.28TLS.29">1 Secure Socket Layer (SSL) / Transport Layer Security (TLS)</a>
+<li><a href="#secure-socket-layer-ssl--transport-layer-security-tls">1 Secure Socket Layer (SSL) / Transport Layer Security (TLS)</a>
 <ul>
-<li><a href="#WebRequest.Create_.28.22https:.2F.2Fwww.anywhere.com.22.29.3B_throws_an_exception">1.1 WebRequest.Create (&quot;https://www.anywhere.com&quot;); throws an exception</a></li>
-<li><a href="#I_imported_the_root_certificate_but_it_still_doesn.27t_work.21">1.2 I imported the root certificate but it still doesn't work!</a></li>
-<li><a href="#How_can_I_debug_https_traffic.3F">1.3 How can I debug https traffic?</a></li>
-<li><a href="#I_got_the_root_certificate_but_it_doesn.27t_install.21">1.4 I got the root certificate but it doesn't install!</a></li>
-<li><a href="#Why_does_SSL_use_certificates_.3F">1.5 Why does SSL use certificates ?</a></li>
-<li><a href="#Are_SSL_client_certificates_supported_.3F">1.6 Are SSL client certificates supported ?</a></li>
-<li><a href="#Does_SSL_works_for_SMTP.2C_like_GMail_.3F">1.7 Does SSL works for SMTP, like GMail ?</a></li>
+<li><a href="#webrequestcreate-httpswwwanywherecom-throws-an-exception">1.1 WebRequest.Create (&quot;https://www.anywhere.com&quot;); throws an exception</a></li>
+<li><a href="#i-imported-the-root-certificate-but-it-still-doesnt-work">1.2 I imported the root certificate but it still doesn't work!</a></li>
+<li><a href="#how-can-i-debug-https-traffic">1.3 How can I debug https traffic?</a></li>
+<li><a href="#i-got-the-root-certificate-but-it-doesnt-install">1.4 I got the root certificate but it doesn't install!</a></li>
+<li><a href="#why-does-ssl-use-certificates-">1.5 Why does SSL use certificates ?</a></li>
+<li><a href="#are-ssl-client-certificates-supported-">1.6 Are SSL client certificates supported ?</a></li>
+<li><a href="#does-ssl-works-for-smtp-like-gmail-">1.7 Does SSL works for SMTP, like GMail ?</a></li>
 </ul></li>
-<li><a href="#FIPS_Certification">2 FIPS Certification</a>
+<li><a href="#fips-certification">2 FIPS Certification</a>
 <ul>
-<li><a href="#Are_there_any_efforts_to_bind_external_libraries_that_are_FIPS_certified.3F">2.1 Are there any efforts to bind external libraries that are FIPS certified?</a></li>
+<li><a href="#are-there-any-efforts-to-bind-external-libraries-that-are-fips-certified">2.1 Are there any efforts to bind external libraries that are FIPS certified?</a></li>
 </ul></li>
-<li><a href="#Authenticode.28r.29_Code_Signing">3 Authenticode(r) Code Signing</a>
+<li><a href="#authenticoder-code-signing">3 Authenticode(r) Code Signing</a>
 <ul>
-<li><a href="#Does_Mono_support_Authenticode.28r.29_signatures_.3F">3.1 Does Mono support Authenticode(r) signatures ?</a></li>
-<li><a href="#Does_Mono_support_Authenticode.28r.29_signatures_on_CAB_file_.3F">3.2 Does Mono support Authenticode(r) signatures on CAB file ?</a></li>
-<li><a href="#What_does_.22signature_can.27t_be_traced_back_to_a_trusted_root.21.22_means_.3F">3.3 What does &quot;signature can't be traced back to a trusted root!&quot; means ?</a></li>
+<li><a href="#does-mono-support-authenticoder-signatures-">3.1 Does Mono support Authenticode(r) signatures ?</a></li>
+<li><a href="#does-mono-support-authenticoder-signatures-on-cab-file-">3.2 Does Mono support Authenticode(r) signatures on CAB file ?</a></li>
+<li><a href="#what-does-signature-cant-be-traced-back-to-a-trusted-root-means-">3.3 What does &quot;signature can't be traced back to a trusted root!&quot; means ?</a></li>
 </ul></li>
-<li><a href="#Public_Key_Infrastructure_.28PKI.29">4 Public Key Infrastructure (PKI)</a>
+<li><a href="#public-key-infrastructure-pki">4 Public Key Infrastructure (PKI)</a>
 <ul>
-<li><a href="#Is_Mono_fully_compatible_with_RFC2459_or_RFC3280_.3F">4.1 Is Mono fully compatible with RFC2459 or RFC3280 ?</a></li>
-<li><a href="#Why_doesn.27t_Mono_includes_root_certificates_from_X.2C_Y_and_Z_.3F">4.2 Why doesn't Mono includes root certificates from X, Y and Z ?</a></li>
-<li><a href="#So_where_can_I_download_them_.3F">4.3 So where can I download them ?</a></li>
-<li><a href="#Can_I_make_my_own_certificates_.3F">4.4 Can I make my own certificates ?</a></li>
+<li><a href="#is-mono-fully-compatible-with-rfc2459-or-rfc3280-">4.1 Is Mono fully compatible with RFC2459 or RFC3280 ?</a></li>
+<li><a href="#why-doesnt-mono-includes-root-certificates-from-x-y-and-z-">4.2 Why doesn't Mono includes root certificates from X, Y and Z ?</a></li>
+<li><a href="#so-where-can-i-download-them-">4.3 So where can I download them ?</a></li>
+<li><a href="#can-i-make-my-own-certificates-">4.4 Can I make my own certificates ?</a></li>
 </ul></li>
-<li><a href="#Code_Access_Security_.28CAS.29">5 Code Access Security (CAS)</a>
+<li><a href="#code-access-security-cas">5 Code Access Security (CAS)</a>
 <ul>
-<li><a href="#Does_Mono_support_CAS_.3F">5.1 Does Mono support CAS ?</a></li>
-<li><a href="#How_can_I_activate_CAS_.3F">5.2 How can I activate CAS ?</a></li>
-<li><a href="#Will_Mono_have_a_complete_verifier.3F">5.3 Will Mono have a complete verifier?</a></li>
-<li><a href="#How_many_checks_are_missing_to_have_a_full_verifier.3F">5.4 How many checks are missing to have a full verifier?</a></li>
+<li><a href="#does-mono-support-cas-">5.1 Does Mono support CAS ?</a></li>
+<li><a href="#how-can-i-activate-cas-">5.2 How can I activate CAS ?</a></li>
+<li><a href="#will-mono-have-a-complete-verifier">5.3 Will Mono have a complete verifier?</a></li>
+<li><a href="#how-many-checks-are-missing-to-have-a-full-verifier">5.4 How many checks are missing to have a full verifier?</a></li>
 </ul></li>
-<li><a href="#Security_related_compilation_issues">6 Security related compilation issues</a>
+<li><a href="#security-related-compilation-issues">6 Security related compilation issues</a>
 <ul>
-<li><a href="#Compiling_Mono.27s_mscorlib.dll_with_CSC_7.x_.28Fx_1.x.29">6.1 Compiling Mono's mscorlib.dll with CSC 7.x (Fx 1.x)</a></li>
-<li><a href="#System.Security.SecurityException_:_Failure_decoding_embedded_permission_set_object.">6.2 System.Security.SecurityException : Failure decoding embedded permission set object.</a></li>
-<li><a href="#How_are_Windows_roles_mapped_into_Unix_roles.3F">6.3 How are Windows roles mapped into Unix roles?</a></li>
-<li><a href="#How_can_I_make_calls_to_WindowsPrincipal.IsInRole_.28.29_work_on_Linux.3F">6.4 How can I make calls to WindowsPrincipal.IsInRole () work on Linux?</a></li>
+<li><a href="#compiling-monos-mscorlibdll-with-csc-7x-fx-1x">6.1 Compiling Mono's mscorlib.dll with CSC 7.x (Fx 1.x)</a></li>
+<li><a href="#systemsecuritysecurityexception--failure-decoding-embedded-permission-set-object">6.2 System.Security.SecurityException : Failure decoding embedded permission set object.</a></li>
+<li><a href="#how-are-windows-roles-mapped-into-unix-roles">6.3 How are Windows roles mapped into Unix roles?</a></li>
+<li><a href="#how-can-i-make-calls-to-windowsprincipalisinrole--work-on-linux">6.4 How can I make calls to WindowsPrincipal.IsInRole () work on Linux?</a></li>
 </ul></li>
-<li><a href="#Other_resources_on_this_site">7 Other resources on this site</a>
+<li><a href="#other-resources-on-this-site">7 Other resources on this site</a>
 <ul>
-<li><a href="#Known_Vulnerabilities">7.1 Known Vulnerabilities</a></li>
+<li><a href="#known-vulnerabilities">7.1 Known Vulnerabilities</a></li>
 </ul></li>
 </ul></td>
 </tr>

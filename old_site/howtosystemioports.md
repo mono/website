@@ -15,11 +15,11 @@ HowToSystemIOPorts
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Limitations">2 Limitations</a></li>
-<li><a href="#Example_Code">3 Example Code</a></li>
-<li><a href="#Related_Links">4 Related Links</a></li>
-<li><a href="#Further_Questions">5 Further Questions</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#limitations">2 Limitations</a></li>
+<li><a href="#example-code">3 Example Code</a></li>
+<li><a href="#related-links">4 Related Links</a></li>
+<li><a href="#further-questions">5 Further Questions</a></li>
 </ul></td>
 </tr>
 </tbody>

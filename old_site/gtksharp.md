@@ -26,7 +26,7 @@ References
 -   [What's New?]({{site.github.url}}/old_site/GtkSharpNewInVersion2x "GtkSharpNewInVersion2x")
 -   [Release Plans]({{site.github.url}}/old_site/GtkSharpPlan "GtkSharpPlan")
 -   [Articles and Tutorials on Gtk\#]({{site.github.url}}/old_site/GtkSharpTutorials "GtkSharpTutorials")
--   [Component Descriptions]({{site.github.url}}/old_site/GtkSharpDetails#Gtk.23.27s_Components "GtkSharpDetails")
+-   [Component Descriptions]({{site.github.url}}/old_site/GtkSharpDetails#gtk2327s-components "GtkSharpDetails")
 
 Features
 --------

@@ -15,20 +15,20 @@ Mono:Runtime:Documentation:ThreadSafety
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Thread_safety_of_metadata_structures">1 Thread safety of metadata structures</a>
+<li><a href="#thread-safety-of-metadata-structures">1 Thread safety of metadata structures</a>
 <ul>
-<li><a href="#Synchronization_of_read-only_data">1.1 Synchronization of read-only data</a></li>
-<li><a href="#Deadlock_prevention_plan">1.2 Deadlock prevention plan</a></li>
-<li><a href="#Locks">1.3 Locks</a>
+<li><a href="#synchronization-of-read-only-data">1.1 Synchronization of read-only data</a></li>
+<li><a href="#deadlock-prevention-plan">1.2 Deadlock prevention plan</a></li>
+<li><a href="#locks">1.3 Locks</a>
 <ul>
-<li><a href="#Simple_locks">1.3.1 Simple locks</a></li>
-<li><a href="#The_loader_lock">1.3.2 The loader lock</a></li>
-<li><a href="#The_domain_lock">1.3.3 The domain lock</a></li>
-<li><a href="#The_domain_jit_code_hash_lock">1.3.4 The domain jit code hash lock</a></li>
+<li><a href="#simple-locks">1.3.1 Simple locks</a></li>
+<li><a href="#the-loader-lock">1.3.2 The loader lock</a></li>
+<li><a href="#the-domain-lock">1.3.3 The domain lock</a></li>
+<li><a href="#the-domain-jit-code-hash-lock">1.3.4 The domain jit code hash lock</a></li>
 </ul></li>
-<li><a href="#The_locking_hierarchy">1.4 The locking hierarchy</a></li>
-<li><a href="#Notes">1.5 Notes</a></li>
-<li><a href="#The_Lock_Tracer">1.6 The Lock Tracer</a></li>
+<li><a href="#the-locking-hierarchy">1.4 The locking hierarchy</a></li>
+<li><a href="#notes">1.5 Notes</a></li>
+<li><a href="#the-lock-tracer">1.6 The Lock Tracer</a></li>
 </ul></li>
 </ul></td>
 </tr>

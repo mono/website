@@ -57,24 +57,24 @@ Such long?? Should I really write such long code for that simple task?? No, you 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_XmlReader_Classes">1 The XmlReader Classes</a>
+<li><a href="#the-xmlreader-classes">1 The XmlReader Classes</a>
 <ul>
-<li><a href="#XmlTextReader">1.1 XmlTextReader</a></li>
-<li><a href="#XmlNodeReader">1.2 XmlNodeReader</a></li>
-<li><a href="#XmlValidatingReader">1.3 XmlValidatingReader</a></li>
+<li><a href="#xmltextreader">1.1 XmlTextReader</a></li>
+<li><a href="#xmlnodereader">1.2 XmlNodeReader</a></li>
+<li><a href="#xmlvalidatingreader">1.3 XmlValidatingReader</a></li>
 </ul></li>
-<li><a href="#Using_XmlReader">2 Using XmlReader</a>
+<li><a href="#using-xmlreader">2 Using XmlReader</a>
 <ul>
-<li><a href="#Node_information_properties">2.1 Node information properties</a></li>
-<li><a href="#Reader_methods">2.2 Reader methods</a></li>
-<li><a href="#Attribute_handling">2.3 Attribute handling</a></li>
-<li><a href="#Important_Note">2.4 Important Note</a></li>
+<li><a href="#node-information-properties">2.1 Node information properties</a></li>
+<li><a href="#reader-methods">2.2 Reader methods</a></li>
+<li><a href="#attribute-handling">2.3 Attribute handling</a></li>
+<li><a href="#important-note">2.4 Important Note</a></li>
 </ul></li>
-<li><a href="#XML_Reader_Tips">3 XML Reader Tips</a>
+<li><a href="#xml-reader-tips">3 XML Reader Tips</a>
 <ul>
-<li><a href="#Parsing_documents_without_namespaces">3.1 Parsing documents without namespaces</a></li>
-<li><a href="#Constructors">3.2 Constructors</a></li>
-<li><a href="#XmlReader_and_DTD">3.3 XmlReader and DTD</a></li>
+<li><a href="#parsing-documents-without-namespaces">3.1 Parsing documents without namespaces</a></li>
+<li><a href="#constructors">3.2 Constructors</a></li>
+<li><a href="#xmlreader-and-dtd">3.3 XmlReader and DTD</a></li>
 </ul></li>
 </ul></td>
 </tr>

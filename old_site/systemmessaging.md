@@ -18,10 +18,10 @@ System.Messaging
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Getting_Started">1 Getting Started</a></li>
-<li><a href="#What.27s_Supported.3F">2 What's Supported?</a></li>
-<li><a href="#What.27s_In_Progress">3 What's In Progress</a></li>
-<li><a href="#Getting_Involved">4 Getting Involved</a></li>
+<li><a href="#getting-started">1 Getting Started</a></li>
+<li><a href="#whats-supported">2 What's Supported?</a></li>
+<li><a href="#whats-in-progress">3 What's In Progress</a></li>
+<li><a href="#getting-involved">4 Getting Involved</a></li>
 </ul></td>
 </tr>
 </tbody>

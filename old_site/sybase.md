@@ -15,14 +15,14 @@ Sybase
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Current_Status">2 Current Status</a></li>
-<li><a href="#Action_plan">3 Action plan</a></li>
-<li><a href="#Testing">4 Testing</a></li>
-<li><a href="#Connection_String_Format">5 Connection String Format</a></li>
-<li><a href="#C.23_Example">6 C# Example</a>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#current-status">2 Current Status</a></li>
+<li><a href="#action-plan">3 Action plan</a></li>
+<li><a href="#testing">4 Testing</a></li>
+<li><a href="#connection-string-format">5 Connection String Format</a></li>
+<li><a href="#c-example">6 C# Example</a>
 <ul>
-<li><a href="#Building_C.23_Example">6.1 Building C# Example</a></li>
+<li><a href="#building-c-example">6.1 Building C# Example</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -19,12 +19,12 @@ One capability provided by Google is the spell checker they use when you enter a
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#First_Steps:_Creating_the_Local_Stub">1 First Steps: Creating the Local Stub</a></li>
-<li><a href="#Google_License_key">2 Google License key</a></li>
-<li><a href="#Example_1:_A_Console_Application">3 Example 1: A Console Application</a></li>
-<li><a href="#Example_2:_A_Webpage">4 Example 2: A Webpage</a></li>
-<li><a href="#Documentation">5 Documentation</a></li>
-<li><a href="#Contributors">6 Contributors</a></li>
+<li><a href="#first-steps-creating-the-local-stub">1 First Steps: Creating the Local Stub</a></li>
+<li><a href="#google-license-key">2 Google License key</a></li>
+<li><a href="#example-1-a-console-application">3 Example 1: A Console Application</a></li>
+<li><a href="#example-2-a-webpage">4 Example 2: A Webpage</a></li>
+<li><a href="#documentation">5 Documentation</a></li>
+<li><a href="#contributors">6 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,11 +17,11 @@ Mono users meeting at the Microsoft 2005 PDC.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Coverage">1 Coverage</a></li>
-<li><a href="#The_Event">2 The Event</a></li>
-<li><a href="#Demonstrations">3 Demonstrations</a></li>
-<li><a href="#Summer_of_Code_Projects">4 Summer of Code Projects</a></li>
-<li><a href="#Participants">5 Participants</a></li>
+<li><a href="#coverage">1 Coverage</a></li>
+<li><a href="#the-event">2 The Event</a></li>
+<li><a href="#demonstrations">3 Demonstrations</a></li>
+<li><a href="#summer-of-code-projects">4 Summer of Code Projects</a></li>
+<li><a href="#participants">5 Participants</a></li>
 </ul></td>
 </tr>
 </tbody>

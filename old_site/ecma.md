@@ -16,17 +16,17 @@ ECMA
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#2010_Draft">1 2010 Draft</a></li>
-<li><a href="#Latest_Standards">2 Latest Standards</a></li>
-<li><a href="#Annotated_Standards">3 Annotated Standards</a></li>
-<li><a href="#The_Ecma_4th_and_ISO_2nd_Editions">4 The Ecma 4th and ISO 2nd Editions</a>
+<li><a href="#2010-draft">1 2010 Draft</a></li>
+<li><a href="#latest-standards">2 Latest Standards</a></li>
+<li><a href="#annotated-standards">3 Annotated Standards</a></li>
+<li><a href="#the-ecma-4th-and-iso-2nd-editions">4 The Ecma 4th and ISO 2nd Editions</a>
 <ul>
-<li><a href="#CLI">4.1 CLI</a></li>
-<li><a href="#C.23">4.2 C#</a></li>
+<li><a href="#cli">4.1 CLI</a></li>
+<li><a href="#c">4.2 C#</a></li>
 </ul></li>
-<li><a href="#Previous_Editions_Background">5 Previous Editions Background</a></li>
-<li><a href="#Joining_Ecma">6 Joining Ecma</a></li>
-<li><a href="#Acknowledgements">7 Acknowledgements</a></li>
+<li><a href="#previous-editions-background">5 Previous Editions Background</a></li>
+<li><a href="#joining-ecma">6 Joining Ecma</a></li>
+<li><a href="#acknowledgements">7 Acknowledgements</a></li>
 </ul></td>
 </tr>
 </tbody>

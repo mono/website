@@ -15,16 +15,16 @@ FAQ: ASP.NET
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General">1 General</a></li>
-<li><a href="#Installation_and_Setup">2 Installation and Setup</a></li>
-<li><a href="#Common_Problems">3 Common Problems</a></li>
-<li><a href="#Development">4 Development</a></li>
-<li><a href="#Features">5 Features</a></li>
-<li><a href="#Portability">6 Portability</a></li>
-<li><a href="#Extra_Languages">7 Extra Languages</a></li>
-<li><a href="#Using_Mono_with_Apache">8 Using Mono with Apache</a></li>
-<li><a href="#Hosting">9 Hosting</a></li>
-<li><a href="#Memory_Usage">10 Memory Usage</a></li>
+<li><a href="#general">1 General</a></li>
+<li><a href="#installation-and-setup">2 Installation and Setup</a></li>
+<li><a href="#common-problems">3 Common Problems</a></li>
+<li><a href="#development">4 Development</a></li>
+<li><a href="#features">5 Features</a></li>
+<li><a href="#portability">6 Portability</a></li>
+<li><a href="#extra-languages">7 Extra Languages</a></li>
+<li><a href="#using-mono-with-apache">8 Using Mono with Apache</a></li>
+<li><a href="#hosting">9 Hosting</a></li>
+<li><a href="#memory-usage">10 Memory Usage</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -118,7 +118,7 @@ mod\_mono at this point only runs on Unix systems. There is a patch (to be revie
 
 **How do I restart my Mono applications without restarting Apache?**
 
-Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{site.github.url}}/old_site/Mod_mono#Control_panel "Mod mono") for details on setting it up.
+Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{site.github.url}}/old_site/Mod_mono#control-panel "Mod mono") for details on setting it up.
 
 **My Apache Module Is Not Recognized, what to do?**
 
@@ -221,7 +221,7 @@ This is result of an incompatibility between the Microsoft .NET C\# compiler and
 
 This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
 
-The fix is easy: you need to create a `~/App_Data/aspnetdb.sqlite` SQLite database file. You can use the **sqlite3** program and the SQL commands at [Membership/Roles/Profile provider schema]({{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications#Membership.2FRoles.2FProfile_provider_schema "Guide: Porting ASP.NET Applications"):
+The fix is easy: you need to create a `~/App_Data/aspnetdb.sqlite` SQLite database file. You can use the **sqlite3** program and the SQL commands at [Membership/Roles/Profile provider schema]({{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications#membershiprolesprofile-provider-schema "Guide: Porting ASP.NET Applications"):
 
 ``` bash
 $ sqlite3 aspnetdb.sqlite

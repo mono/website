@@ -15,10 +15,10 @@ Moonlight/moon-unit
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Task">1 The Task</a></li>
-<li><a href="#How_To_Do_It">2 How To Do It</a></li>
-<li><a href="#How_To_Report_It">3 How To Report It</a></li>
-<li><a href="#Results">4 Results</a></li>
+<li><a href="#the-task">1 The Task</a></li>
+<li><a href="#how-to-do-it">2 How To Do It</a></li>
+<li><a href="#how-to-report-it">3 How To Report It</a></li>
+<li><a href="#results">4 Results</a></li>
 </ul></td>
 </tr>
 </tbody>

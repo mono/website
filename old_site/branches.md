@@ -17,55 +17,55 @@ Important Branches on Mono SVN:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Runtime_Branches">1 Mono Runtime Branches</a>
+<li><a href="#mono-runtime-branches">1 Mono Runtime Branches</a>
 <ul>
-<li><a href="#branches.2Fmono-2-8">1.1 branches/mono-2-8</a></li>
-<li><a href="#branches.2Fmono-2-6">1.2 branches/mono-2-6</a></li>
-<li><a href="#branches.2Fmoon-2-0">1.3 branches/moon-2-0</a></li>
-<li><a href="#branches.2Fmonotouch-1-0">1.4 branches/monotouch-1-0</a></li>
-<li><a href="#branches.2Fmono-2-4-2">1.5 branches/mono-2-4-2</a></li>
-<li><a href="#branches.2Fmono-2-4-1">1.6 branches/mono-2-4-1</a></li>
-<li><a href="#branches.2Fmono-2-4-0">1.7 branches/mono-2-4-0</a></li>
-<li><a href="#branches.2Fmono-2-4">1.8 branches/mono-2-4</a></li>
-<li><a href="#branches.2Fmono-2-2">1.9 branches/mono-2-2</a></li>
-<li><a href="#branches.2Fmono-2-0">1.10 branches/mono-2-0</a></li>
-<li><a href="#branches.2Fmono-1-9-1-1.2F">1.11 branches/mono-1-9-1-1/</a></li>
-<li><a href="#branches.2Fmono-1-9">1.12 branches/mono-1-9</a></li>
-<li><a href="#branches.2Fmono-1-2-5">1.13 branches/mono-1-2-5</a></li>
-<li><a href="#branches.2Fmono-1-2-4">1.14 branches/mono-1-2-4</a></li>
-<li><a href="#branches.2Fmono-1-2-3">1.15 branches/mono-1-2-3</a></li>
-<li><a href="#branches.2Fmono-1-2-2">1.16 branches/mono-1-2-2</a></li>
-<li><a href="#branches.2Fmono-1-2-1">1.17 branches/mono-1-2-1</a></li>
-<li><a href="#branches.2Fmono-1-2">1.18 branches/mono-1-2</a></li>
-<li><a href="#branches.2Fmono-1-1-18">1.19 branches/mono-1-1-18</a></li>
-<li><a href="#branches.2Fmono-1-1-17">1.20 branches/mono-1-1-17</a></li>
-<li><a href="#branches.2Fmono-1-1-16">1.21 branches/mono-1-1-16</a></li>
-<li><a href="#branches.2Fmono-1-1-13">1.22 branches/mono-1-1-13</a></li>
-<li><a href="#branches.2Fmono-1-1-10">1.23 branches/mono-1-1-10</a></li>
-<li><a href="#branches.2Fmono-1-1-9">1.24 branches/mono-1-1-9</a></li>
-<li><a href="#branches.2Fmono-1-1-8">1.25 branches/mono-1-1-8</a></li>
-<li><a href="#branches.2Fmono-1-1-7">1.26 branches/mono-1-1-7</a></li>
-<li><a href="#branches.2Fmono-1-1-6">1.27 branches/mono-1-1-6</a></li>
+<li><a href="#branchesmono-2-8">1.1 branches/mono-2-8</a></li>
+<li><a href="#branchesmono-2-6">1.2 branches/mono-2-6</a></li>
+<li><a href="#branchesmoon-2-0">1.3 branches/moon-2-0</a></li>
+<li><a href="#branchesmonotouch-1-0">1.4 branches/monotouch-1-0</a></li>
+<li><a href="#branchesmono-2-4-2">1.5 branches/mono-2-4-2</a></li>
+<li><a href="#branchesmono-2-4-1">1.6 branches/mono-2-4-1</a></li>
+<li><a href="#branchesmono-2-4-0">1.7 branches/mono-2-4-0</a></li>
+<li><a href="#branchesmono-2-4">1.8 branches/mono-2-4</a></li>
+<li><a href="#branchesmono-2-2">1.9 branches/mono-2-2</a></li>
+<li><a href="#branchesmono-2-0">1.10 branches/mono-2-0</a></li>
+<li><a href="#branchesmono-1-9-1-1">1.11 branches/mono-1-9-1-1/</a></li>
+<li><a href="#branchesmono-1-9">1.12 branches/mono-1-9</a></li>
+<li><a href="#branchesmono-1-2-5">1.13 branches/mono-1-2-5</a></li>
+<li><a href="#branchesmono-1-2-4">1.14 branches/mono-1-2-4</a></li>
+<li><a href="#branchesmono-1-2-3">1.15 branches/mono-1-2-3</a></li>
+<li><a href="#branchesmono-1-2-2">1.16 branches/mono-1-2-2</a></li>
+<li><a href="#branchesmono-1-2-1">1.17 branches/mono-1-2-1</a></li>
+<li><a href="#branchesmono-1-2">1.18 branches/mono-1-2</a></li>
+<li><a href="#branchesmono-1-1-18">1.19 branches/mono-1-1-18</a></li>
+<li><a href="#branchesmono-1-1-17">1.20 branches/mono-1-1-17</a></li>
+<li><a href="#branchesmono-1-1-16">1.21 branches/mono-1-1-16</a></li>
+<li><a href="#branchesmono-1-1-13">1.22 branches/mono-1-1-13</a></li>
+<li><a href="#branchesmono-1-1-10">1.23 branches/mono-1-1-10</a></li>
+<li><a href="#branchesmono-1-1-9">1.24 branches/mono-1-1-9</a></li>
+<li><a href="#branchesmono-1-1-8">1.25 branches/mono-1-1-8</a></li>
+<li><a href="#branchesmono-1-1-7">1.26 branches/mono-1-1-7</a></li>
+<li><a href="#branchesmono-1-1-6">1.27 branches/mono-1-1-6</a></li>
 </ul></li>
-<li><a href="#Gtk.23_Stable_Branches">2 Gtk# Stable Branches</a>
+<li><a href="#gtk-stable-branches">2 Gtk# Stable Branches</a>
 <ul>
-<li><a href="#branches.2Fgtk-sharp-1-0-branch">2.1 branches/gtk-sharp-1-0-branch</a></li>
-<li><a href="#branches.2Fgtk-sharp-2-468-branch">2.2 branches/gtk-sharp-2-468-branch</a></li>
-<li><a href="#branches.2Fgtk-sharp-2-10-branch">2.3 branches/gtk-sharp-2-10-branch</a></li>
-<li><a href="#branches.2Fgtk-sharp-2-12-branch">2.4 branches/gtk-sharp-2-12-branch</a></li>
+<li><a href="#branchesgtk-sharp-1-0-branch">2.1 branches/gtk-sharp-1-0-branch</a></li>
+<li><a href="#branchesgtk-sharp-2-468-branch">2.2 branches/gtk-sharp-2-468-branch</a></li>
+<li><a href="#branchesgtk-sharp-2-10-branch">2.3 branches/gtk-sharp-2-10-branch</a></li>
+<li><a href="#branchesgtk-sharp-2-12-branch">2.4 branches/gtk-sharp-2-12-branch</a></li>
 </ul></li>
-<li><a href="#Development_Branches">3 Development Branches</a>
+<li><a href="#development-branches">3 Development Branches</a>
 <ul>
-<li><a href="#branches.2Fvargaz.2Fmini-linear-il">3.1 branches/vargaz/mini-linear-il</a></li>
-<li><a href="#branchez.2Fvargaz.2Fmini-xp-local-regalloc">3.2 branchez/vargaz/mini-xp-local-regalloc</a></li>
+<li><a href="#branchesvargazmini-linear-il">3.1 branches/vargaz/mini-linear-il</a></li>
+<li><a href="#branchezvargazmini-xp-local-regalloc">3.2 branchez/vargaz/mini-xp-local-regalloc</a></li>
 </ul></li>
-<li><a href="#Handling_branches_and_tags_for_dummies">4 Handling branches and tags for dummies</a>
+<li><a href="#handling-branches-and-tags-for-dummies">4 Handling branches and tags for dummies</a>
 <ul>
-<li><a href="#.bashrc_settings_to_make_life_easy">4.1 .bashrc settings to make life easy</a></li>
-<li><a href="#Difference_between_a_branch_and_a_tag">4.2 Difference between a branch and a tag</a></li>
-<li><a href="#Branches">4.3 Branches</a></li>
+<li><a href="#bashrc-settings-to-make-life-easy">4.1 .bashrc settings to make life easy</a></li>
+<li><a href="#difference-between-a-branch-and-a-tag">4.2 Difference between a branch and a tag</a></li>
+<li><a href="#branches">4.3 Branches</a></li>
 </ul></li>
-<li><a href="#SUSE_Maintained_Branches">5 SUSE Maintained Branches</a></li>
+<li><a href="#suse-maintained-branches">5 SUSE Maintained Branches</a></li>
 </ul></td>
 </tr>
 </tbody>

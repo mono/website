@@ -17,18 +17,18 @@ Gendarme.Rules.Serialization
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#CallBaseMethodsOnISerializableTypesRule">1.1 CallBaseMethodsOnISerializableTypesRule</a></li>
-<li><a href="#DeserializeOptionalFieldRule">1.2 DeserializeOptionalFieldRule</a></li>
-<li><a href="#ImplementISerializableCorrectlyRule">1.3 ImplementISerializableCorrectlyRule</a></li>
-<li><a href="#MarkAllNonSerializableFieldsRule">1.4 MarkAllNonSerializableFieldsRule</a></li>
-<li><a href="#MarkEnumerationsAsSerializableRule">1.5 MarkEnumerationsAsSerializableRule</a></li>
-<li><a href="#MissingSerializableAttributeOnISerializableTypeRule">1.6 MissingSerializableAttributeOnISerializableTypeRule</a></li>
-<li><a href="#MissingSerializationConstructorRule">1.7 MissingSerializationConstructorRule</a></li>
-<li><a href="#UseCorrectSignatureForSerializationMethodsRule">1.8 UseCorrectSignatureForSerializationMethodsRule</a></li>
+<li><a href="#callbasemethodsoniserializabletypesrule">1.1 CallBaseMethodsOnISerializableTypesRule</a></li>
+<li><a href="#deserializeoptionalfieldrule">1.2 DeserializeOptionalFieldRule</a></li>
+<li><a href="#implementiserializablecorrectlyrule">1.3 ImplementISerializableCorrectlyRule</a></li>
+<li><a href="#markallnonserializablefieldsrule">1.4 MarkAllNonSerializableFieldsRule</a></li>
+<li><a href="#markenumerationsasserializablerule">1.5 MarkEnumerationsAsSerializableRule</a></li>
+<li><a href="#missingserializableattributeoniserializabletyperule">1.6 MissingSerializableAttributeOnISerializableTypeRule</a></li>
+<li><a href="#missingserializationconstructorrule">1.7 MissingSerializationConstructorRule</a></li>
+<li><a href="#usecorrectsignatureforserializationmethodsrule">1.8 UseCorrectSignatureForSerializationMethodsRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

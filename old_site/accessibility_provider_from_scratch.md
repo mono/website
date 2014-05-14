@@ -15,10 +15,10 @@ Accessibility: Provider From Scratch
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Quick_Steps_List">2 Quick Steps List</a></li>
-<li><a href="#Generating_UI_Automation_Tree">3 Generating UI Automation Tree</a></li>
-<li><a href="#Implementing_Automation_Events">4 Implementing Automation Events</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#quick-steps-list">2 Quick Steps List</a></li>
+<li><a href="#generating-ui-automation-tree">3 Generating UI Automation Tree</a></li>
+<li><a href="#implementing-automation-events">4 Implementing Automation Events</a></li>
 </ul></td>
 </tr>
 </tbody>

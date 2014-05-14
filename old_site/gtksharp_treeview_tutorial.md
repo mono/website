@@ -15,24 +15,24 @@ GtkSharp TreeView Tutorial
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Model.2C_View.2C_Controller">2 Model, View, Controller</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#model-view-controller">2 Model, View, Controller</a>
 <ul>
-<li><a href="#Model">2.1 Model</a></li>
-<li><a href="#View">2.2 View</a></li>
-<li><a href="#Controller">2.3 Controller</a></li>
+<li><a href="#model">2.1 Model</a></li>
+<li><a href="#view">2.2 View</a></li>
+<li><a href="#controller">2.3 Controller</a></li>
 </ul></li>
-<li><a href="#Your_first_TreeView">3 Your first TreeView</a>
+<li><a href="#your-first-treeview">3 Your first TreeView</a>
 <ul>
-<li><a href="#Setting_it_up">3.1 Setting it up</a></li>
-<li><a href="#Adding_some_data">3.2 Adding some data</a></li>
+<li><a href="#setting-it-up">3.1 Setting it up</a></li>
+<li><a href="#adding-some-data">3.2 Adding some data</a></li>
 </ul></li>
-<li><a href="#Creating_a_Tree">4 Creating a Tree</a></li>
-<li><a href="#Filtering_Data">5 Filtering Data</a></li>
-<li><a href="#Controlling_how_the_model_is_used">6 Controlling how the model is used</a></li>
-<li><a href="#Shortcuts_-_Writing_Less_Code">7 Shortcuts - Writing Less Code</a></li>
-<li><a href="#Editable_Text_Cells">8 Editable Text Cells</a></li>
-<li><a href="#Drawing_icons_in_rows">9 Drawing icons in rows</a></li>
+<li><a href="#creating-a-tree">4 Creating a Tree</a></li>
+<li><a href="#filtering-data">5 Filtering Data</a></li>
+<li><a href="#controlling-how-the-model-is-used">6 Controlling how the model is used</a></li>
+<li><a href="#shortcuts---writing-less-code">7 Shortcuts - Writing Less Code</a></li>
+<li><a href="#editable-text-cells">8 Editable Text Cells</a></li>
+<li><a href="#drawing-icons-in-rows">9 Drawing icons in rows</a></li>
 </ul></td>
 </tr>
 </tbody>

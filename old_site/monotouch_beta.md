@@ -24,13 +24,13 @@ This is the page for the [MonoTouch]({{site.github.url}}/old_site/MonoTouch "Mon
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Live_Support_over_Chat">1 Live Support over Chat</a></li>
-<li><a href="#Bugs_in_MonoTouch">2 Bugs in MonoTouch</a></li>
-<li><a href="#Release_History">3 Release History</a></li>
-<li><a href="#Caveats">4 Caveats</a>
+<li><a href="#live-support-over-chat">1 Live Support over Chat</a></li>
+<li><a href="#bugs-in-monotouch">2 Bugs in MonoTouch</a></li>
+<li><a href="#release-history">3 Release History</a></li>
+<li><a href="#caveats">4 Caveats</a>
 <ul>
-<li><a href="#The_.NET_API">4.1 The .NET API</a></li>
-<li><a href="#Limitations">4.2 Limitations</a></li>
+<li><a href="#the-net-api">4.1 The .NET API</a></li>
+<li><a href="#limitations">4.2 Limitations</a></li>
 </ul></li>
 </ul></td>
 </tr>

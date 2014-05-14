@@ -17,10 +17,10 @@ There are 4 types of issues that MoMA will detect and report. Here is a descript
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Missing_Methods">1 Missing Methods</a></li>
-<li><a href="#MonoTodo">2 MonoTodo</a></li>
-<li><a href="#NotImplementedException">3 NotImplementedException</a></li>
-<li><a href="#P.2FInvokes">4 P/Invokes</a></li>
+<li><a href="#missing-methods">1 Missing Methods</a></li>
+<li><a href="#monotodo">2 MonoTodo</a></li>
+<li><a href="#notimplementedexception">3 NotImplementedException</a></li>
+<li><a href="#pinvokes">4 P/Invokes</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -82,5 +82,5 @@ If you are calling into your own native library, then it depends on the cross-pl
 
 The native library that is being called is listed in the last column on MoMA's detail report.
 
-To find out at runtime which platform your application is running on, see: [FAQ:\_Technical\#How\_to\_detect\_the\_execution\_platform\_.3F]({{site.github.url}}/old_site/FAQ:_Technical#How_to_detect_the_execution_platform_.3F "FAQ: Technical")
+To find out at runtime which platform your application is running on, see: [FAQ:\_Technical\#How\_to\_detect\_the\_execution\_platform\_.3F]({{site.github.url}}/old_site/FAQ:_Technical#how-to-detect-the-execution-platform-3f "FAQ: Technical")
 

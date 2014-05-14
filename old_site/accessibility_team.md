@@ -17,14 +17,14 @@ A page to assist in getting new team members up to speed and to lay out procedur
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#VPN">1 VPN</a></li>
-<li><a href="#Team_Members">2 Team Members</a>
+<li><a href="#vpn">1 VPN</a></li>
+<li><a href="#team-members">2 Team Members</a>
 <ul>
-<li><a href="#Former_Team_Members">2.1 Former Team Members</a></li>
+<li><a href="#former-team-members">2.1 Former Team Members</a></li>
 </ul></li>
-<li><a href="#Getting_Started">3 Getting Started</a></li>
-<li><a href="#Planet">4 Planet</a></li>
-<li><a href="#Team_Meetings">5 Team Meetings</a></li>
+<li><a href="#getting-started">3 Getting Started</a></li>
+<li><a href="#planet">4 Planet</a></li>
+<li><a href="#team-meetings">5 Team Meetings</a></li>
 </ul></td>
 </tr>
 </tbody>

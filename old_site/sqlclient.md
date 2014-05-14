@@ -17,10 +17,10 @@ SQLClient
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Current_Status">2 Current Status</a></li>
-<li><a href="#Action_Plan">3 Action Plan</a></li>
-<li><a href="#Testing">4 Testing</a></li>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#current-status">2 Current Status</a></li>
+<li><a href="#action-plan">3 Action Plan</a></li>
+<li><a href="#testing">4 Testing</a></li>
 </ul></td>
 </tr>
 </tbody>

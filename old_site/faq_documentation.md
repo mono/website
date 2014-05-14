@@ -12,7 +12,7 @@ FAQ: Documentation
 Getting Documentation
 =====================
 
-**Where can I find Mono documentation?** Mono documentation can either be viewed [on line](http://www.go-mono.com/docs/) or off line using the [GTK\#]({{site.github.url}}/old_site/Monodoc#The_Gtk.23_Documentation_Browser "Monodoc") or [console based]({{site.github.url}}/old_site/Monodoc#Mod_.28Command-Line_Documentation_Viewer.29 "Monodoc") documentation browsers.
+**Where can I find Mono documentation?** Mono documentation can either be viewed [on line](http://www.go-mono.com/docs/) or off line using the [GTK\#]({{site.github.url}}/old_site/Monodoc#the-gtk23-documentation-browser "Monodoc") or [console based]({{site.github.url}}/old_site/Monodoc#mod-28command-line-documentation-viewer29 "Monodoc") documentation browsers.
 
 **Why do I read "Documentation for this section has not yet been entered." everywhere?** The mono documentation is just like the rest of mono very much based on the contribution of users. But unlike the actual code, documentation is not often contributed, therefore lots of the documentation is missing. A [Mono Documentation Improvement Project]({{site.github.url}}/old_site/Mono_Documentation_Improvement_Project "Mono Documentation Improvement Project") has been initiated to help getting more documentation.
 
@@ -25,5 +25,5 @@ Writing Documentation
 
 **How can I contribute to the Wiki?** If you have no Wiki account but still want to contribute documentation to the wiki please send your articles to the [mono-docs-list](http://lists.ximian.com/mailman/listinfo/mono-docs-list). Someone will then upload it to the Wiki.
 
-**How can I write documentation for the base class libraries?** At the moment only by using the [GTK\# documentation browser]({{site.github.url}}/old_site/Monodoc#The_Gtk.23_Documentation_Browser "Monodoc"). [Monodoc Editing]({{site.github.url}}/old_site/Monodoc_Editing "Monodoc Editing") has a short tutorial on how to do so.
+**How can I write documentation for the base class libraries?** At the moment only by using the [GTK\# documentation browser]({{site.github.url}}/old_site/Monodoc#the-gtk23-documentation-browser "Monodoc"). [Monodoc Editing]({{site.github.url}}/old_site/Monodoc_Editing "Monodoc Editing") has a short tutorial on how to do so.
 

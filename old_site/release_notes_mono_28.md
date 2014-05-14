@@ -17,88 +17,88 @@ Mono 2.8 is a portable and open source implementation of the .NET framework for 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Important_Information_About_Mono_2.8">1 Important Information About Mono 2.8</a></li>
-<li><a href="#Major_Highlights">2 Major Highlights</a></li>
-<li><a href="#Changes_since_Mono_2.6">3 Changes since Mono 2.6</a>
+<li><a href="#important-information-about-mono-28">1 Important Information About Mono 2.8</a></li>
+<li><a href="#major-highlights">2 Major Highlights</a></li>
+<li><a href="#changes-since-mono-26">3 Changes since Mono 2.6</a>
 <ul>
-<li><a href="#New_Garbage_Collector">3.1 New Garbage Collector</a>
+<li><a href="#new-garbage-collector">3.1 New Garbage Collector</a>
 <ul>
-<li><a href="#Platforms">3.1.1 Platforms</a></li>
-<li><a href="#Configuration">3.1.2 Configuration</a></li>
+<li><a href="#platforms">3.1.1 Platforms</a></li>
+<li><a href="#configuration">3.1.2 Configuration</a></li>
 </ul></li>
-<li><a href="#New_Libraries">3.2 New Libraries</a>
+<li><a href="#new-libraries">3.2 New Libraries</a>
 <ul>
-<li><a href="#Microsoft_MS-PL_or_Apache_Licensed_Libraries">3.2.1 Microsoft MS-PL or Apache Licensed Libraries</a></li>
-<li><a href="#Numerics">3.2.2 Numerics</a></li>
-<li><a href="#.NET_4.0_API_Update">3.2.3 .NET 4.0 API Update</a></li>
+<li><a href="#microsoft-ms-pl-or-apache-licensed-libraries">3.2.1 Microsoft MS-PL or Apache Licensed Libraries</a></li>
+<li><a href="#numerics">3.2.2 Numerics</a></li>
+<li><a href="#net-40-api-update">3.2.3 .NET 4.0 API Update</a></li>
 </ul></li>
-<li><a href="#System_SSL_Certificates">3.3 System SSL Certificates</a></li>
-<li><a href="#License_Manager">3.4 License Manager</a></li>
-<li><a href="#LINQ_to_SQL">3.5 LINQ to SQL</a></li>
-<li><a href="#4.0_APIs">3.6 4.0 APIs</a></li>
-<li><a href="#ParallelFx">3.7 ParallelFx</a>
+<li><a href="#system-ssl-certificates">3.3 System SSL Certificates</a></li>
+<li><a href="#license-manager">3.4 License Manager</a></li>
+<li><a href="#linq-to-sql">3.5 LINQ to SQL</a></li>
+<li><a href="#40-apis">3.6 4.0 APIs</a></li>
+<li><a href="#parallelfx">3.7 ParallelFx</a>
 <ul>
-<li><a href="#PLinq">3.7.1 PLinq</a></li>
-<li><a href="#Framework_improvements">3.7.2 Framework improvements</a>
+<li><a href="#plinq">3.7.1 PLinq</a></li>
+<li><a href="#framework-improvements">3.7.2 Framework improvements</a>
 <ul>
-<li><a href="#General">3.7.2.1 General</a></li>
-<li><a href="#System.Threading.Tasks">3.7.2.2 System.Threading.Tasks</a></li>
-<li><a href="#System.Threading">3.7.2.3 System.Threading</a></li>
-<li><a href="#System.Collections.Concurrent">3.7.2.4 System.Collections.Concurrent</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#CodeContracts">3.8 CodeContracts</a></li>
-<li><a href="#Dynamic_Language_Runtime">3.9 Dynamic Language Runtime</a></li>
-<li><a href="#System.IO.Packaging">3.10 System.IO.Packaging</a></li>
-<li><a href="#WinForms">3.11 WinForms</a></li>
-<li><a href="#ASP.NET_4.0">3.12 ASP.NET 4.0</a></li>
-<li><a href="#System.Runtime.Caching">3.13 System.Runtime.Caching</a></li>
-<li><a href="#System.ComponentModel.DataAnnotations">3.14 System.ComponentModel.DataAnnotations</a></li>
-<li><a href="#C.23_Language">3.15 C# Language</a></li>
-<li><a href="#XBuild">3.16 XBuild</a></li>
-<li><a href="#Runtime">3.17 Runtime</a>
-<ul>
-<li><a href="#ThreadPool_behavior">3.17.1 ThreadPool behavior</a></li>
-<li><a href="#MONO_ENV_OPTIONS">3.17.2 MONO_ENV_OPTIONS</a></li>
-<li><a href="#API.2FABI_change_for_embedding.">3.17.3 API/ABI change for embedding.</a>
-<ul>
-<li><a href="#Deprecated.2C_Removed_or_Modified_parts_of_the_Embedding_API">3.17.3.1 Deprecated, Removed or Modified parts of the Embedding API</a></li>
-</ul></li>
-<li><a href="#Exception_Tracing">3.17.4 Exception Tracing</a></li>
-<li><a href="#IOMAP_reporting_utility">3.17.5 IOMAP reporting utility</a></li>
-<li><a href="#S390x_Port">3.17.6 S390x Port</a></li>
-<li><a href="#Unsafe_Runtime_Execution">3.17.7 Unsafe Runtime Execution</a></li>
-<li><a href="#Improved_Support_for_obfuscated_assemblies">3.17.8 Improved Support for obfuscated assemblies</a></li>
-<li><a href="#Multiple_Profiler_Support">3.17.9 Multiple Profiler Support</a></li>
-<li><a href="#Shared_handles_are_disabled_by_default">3.17.10 Shared handles are disabled by default</a></li>
-<li><a href="#Mono.Simd">3.17.11 Mono.Simd</a></li>
-<li><a href="#Full_AOT_support_for_x86">3.17.12 Full AOT support for x86</a></li>
-<li><a href="#LLVM_Support">3.17.13 LLVM Support</a></li>
-<li><a href="#Assembly_binding_redirection_is_supported">3.17.14 Assembly binding redirection is supported</a></li>
-<li><a href="#Dropped_glib_Dependency">3.17.15 Dropped glib Dependency</a></li>
+<li><a href="#general">3.7.2.1 General</a></li>
+<li><a href="#systemthreadingtasks">3.7.2.2 System.Threading.Tasks</a></li>
+<li><a href="#systemthreading">3.7.2.3 System.Threading</a></li>
+<li><a href="#systemcollectionsconcurrent">3.7.2.4 System.Collections.Concurrent</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Removed_Libraries_and_Commands">4 Removed Libraries and Commands</a>
+<li><a href="#codecontracts">3.8 CodeContracts</a></li>
+<li><a href="#dynamic-language-runtime">3.9 Dynamic Language Runtime</a></li>
+<li><a href="#systemiopackaging">3.10 System.IO.Packaging</a></li>
+<li><a href="#winforms">3.11 WinForms</a></li>
+<li><a href="#aspnet-40">3.12 ASP.NET 4.0</a></li>
+<li><a href="#systemruntimecaching">3.13 System.Runtime.Caching</a></li>
+<li><a href="#systemcomponentmodeldataannotations">3.14 System.ComponentModel.DataAnnotations</a></li>
+<li><a href="#c-language">3.15 C# Language</a></li>
+<li><a href="#xbuild">3.16 XBuild</a></li>
+<li><a href="#runtime">3.17 Runtime</a>
 <ul>
-<li><a href="#Libraries">4.1 Libraries</a>
+<li><a href="#threadpool-behavior">3.17.1 ThreadPool behavior</a></li>
+<li><a href="#mono-env-options">3.17.2 MONO_ENV_OPTIONS</a></li>
+<li><a href="#apiabi-change-for-embedding">3.17.3 API/ABI change for embedding.</a>
 <ul>
-<li><a href="#Removed_.NET_1.1_Profile">4.1.1 Removed .NET 1.1 Profile</a></li>
-<li><a href="#Removed_Library:_ByteFX.Data">4.1.2 Removed Library: ByteFX.Data</a></li>
-<li><a href="#Removed_Library:_Mono.Data">4.1.3 Removed Library: Mono.Data</a></li>
-<li><a href="#Removed_Libraries:_Microsoft.JScript_and_Microsoft.Vsa">4.1.4 Removed Libraries: Microsoft.JScript and Microsoft.Vsa</a></li>
-<li><a href="#Removed_Library:_FirebirdSql.Data.Firebird">4.1.5 Removed Library: FirebirdSql.Data.Firebird</a></li>
-<li><a href="#Removed_Library:_Mono.Data.TdsClient">4.1.6 Removed Library: Mono.Data.TdsClient</a></li>
-<li><a href="#Removed_Library:_Mono.Data.SybaseClient">4.1.7 Removed Library: Mono.Data.SybaseClient</a></li>
-<li><a href="#Removed_Library:_Mono.Data.SqliteClient">4.1.8 Removed Library: Mono.Data.SqliteClient</a></li>
+<li><a href="#deprecated-removed-or-modified-parts-of-the-embedding-api">3.17.3.1 Deprecated, Removed or Modified parts of the Embedding API</a></li>
 </ul></li>
-<li><a href="#Removed_Commands">4.2 Removed Commands</a>
+<li><a href="#exception-tracing">3.17.4 Exception Tracing</a></li>
+<li><a href="#iomap-reporting-utility">3.17.5 IOMAP reporting utility</a></li>
+<li><a href="#s390x-port">3.17.6 S390x Port</a></li>
+<li><a href="#unsafe-runtime-execution">3.17.7 Unsafe Runtime Execution</a></li>
+<li><a href="#improved-support-for-obfuscated-assemblies">3.17.8 Improved Support for obfuscated assemblies</a></li>
+<li><a href="#multiple-profiler-support">3.17.9 Multiple Profiler Support</a></li>
+<li><a href="#shared-handles-are-disabled-by-default">3.17.10 Shared handles are disabled by default</a></li>
+<li><a href="#monosimd">3.17.11 Mono.Simd</a></li>
+<li><a href="#full-aot-support-for-x86">3.17.12 Full AOT support for x86</a></li>
+<li><a href="#llvm-support">3.17.13 LLVM Support</a></li>
+<li><a href="#assembly-binding-redirection-is-supported">3.17.14 Assembly binding redirection is supported</a></li>
+<li><a href="#dropped-glib-dependency">3.17.15 Dropped glib Dependency</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#removed-libraries-and-commands">4 Removed Libraries and Commands</a>
 <ul>
-<li><a href="#Removed_Command:_mjs">4.2.1 Removed Command: mjs</a></li>
-<li><a href="#Removed_Command:_prj2make">4.2.2 Removed Command: prj2make</a></li>
-<li><a href="#Removed_Command:_cilc">4.2.3 Removed Command: cilc</a></li>
+<li><a href="#libraries">4.1 Libraries</a>
+<ul>
+<li><a href="#removed-net-11-profile">4.1.1 Removed .NET 1.1 Profile</a></li>
+<li><a href="#removed-library-bytefxdata">4.1.2 Removed Library: ByteFX.Data</a></li>
+<li><a href="#removed-library-monodata">4.1.3 Removed Library: Mono.Data</a></li>
+<li><a href="#removed-libraries-microsoftjscript-and-microsoftvsa">4.1.4 Removed Libraries: Microsoft.JScript and Microsoft.Vsa</a></li>
+<li><a href="#removed-library-firebirdsqldatafirebird">4.1.5 Removed Library: FirebirdSql.Data.Firebird</a></li>
+<li><a href="#removed-library-monodatatdsclient">4.1.6 Removed Library: Mono.Data.TdsClient</a></li>
+<li><a href="#removed-library-monodatasybaseclient">4.1.7 Removed Library: Mono.Data.SybaseClient</a></li>
+<li><a href="#removed-library-monodatasqliteclient">4.1.8 Removed Library: Mono.Data.SqliteClient</a></li>
+</ul></li>
+<li><a href="#removed-commands">4.2 Removed Commands</a>
+<ul>
+<li><a href="#removed-command-mjs">4.2.1 Removed Command: mjs</a></li>
+<li><a href="#removed-command-prj2make">4.2.2 Removed Command: prj2make</a></li>
+<li><a href="#removed-command-cilc">4.2.3 Removed Command: cilc</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.8">5 Installing Mono 2.8</a></li>
+<li><a href="#installing-mono-28">5 Installing Mono 2.8</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -133,7 +133,7 @@ Major Highlights
     -   LLVM support has graduated to stable
         -   Use mono-llvm command to run your server loads with the LLVM backend
 -   Preview of the [Generational Garbage Collector]({{site.github.url}}/old_site/Generational_GC "Generational GC")
--   Version 2.0 of the [embedding API]({{site.github.url}}/old_site/Embedding_Mono#Updates_for_Mono_version_2.8.2B "Embedding Mono")
+-   Version 2.0 of the [embedding API]({{site.github.url}}/old_site/Embedding_Mono#updates-for-mono-version-282b "Embedding Mono")
 -   WCF Routing
 -   .NET 4.0's CodeContracts
 -   Removed the 1.1 profile and various deprecated libraries.
@@ -429,7 +429,7 @@ Compilation failed: 1 error(s), 0 warnings
 
 ### IOMAP reporting utility
 
-Mono includes a [profiler module]({{site.github.url}}/old_site/IOMap#IOMAP_reporting_utility "IOMap") to report IOMAP actions and help developers find places in code where file I/O requiring file name mapping is performed.
+Mono includes a [profiler module]({{site.github.url}}/old_site/IOMap#iomap-reporting-utility "IOMap") to report IOMAP actions and help developers find places in code where file I/O requiring file name mapping is performed.
 
 ### S390x Port
 

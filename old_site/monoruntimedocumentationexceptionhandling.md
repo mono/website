@@ -15,27 +15,27 @@ Mono:Runtime:Documentation:ExceptionHandling
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Exception_Handling_In_the_Mono_Runtime">1 Exception Handling In the Mono Runtime</a>
+<li><a href="#exception-handling-in-the-mono-runtime">1 Exception Handling In the Mono Runtime</a>
 <ul>
-<li><a href="#Introduction">1.1 Introduction</a></li>
-<li><a href="#Exceptions_throw_programmatically_from_managed_code">1.2 Exceptions throw programmatically from managed code</a></li>
-<li><a href="#Exceptions_thrown_implicitly_from_managed_code">1.3 Exceptions thrown implicitly from managed code</a></li>
-<li><a href="#Exceptions_thrown_by_runtime_code">1.4 Exceptions thrown by runtime code</a></li>
-<li><a href="#Synchronous_signals">1.5 Synchronous signals</a></li>
-<li><a href="#Synchronous_signals_in_native_code">1.6 Synchronous signals in native code</a></li>
-<li><a href="#Stack_overflow_checking">1.7 Stack overflow checking</a></li>
-<li><a href="#Asynchronous_signals">1.8 Asynchronous signals</a></li>
-<li><a href="#Stack_unwinding_during_exception_handling">1.9 Stack unwinding during exception handling</a></li>
-<li><a href="#Problems.2Ffuture_work">1.10 Problems/future work</a>
+<li><a href="#introduction">1.1 Introduction</a></li>
+<li><a href="#exceptions-throw-programmatically-from-managed-code">1.2 Exceptions throw programmatically from managed code</a></li>
+<li><a href="#exceptions-thrown-implicitly-from-managed-code">1.3 Exceptions thrown implicitly from managed code</a></li>
+<li><a href="#exceptions-thrown-by-runtime-code">1.4 Exceptions thrown by runtime code</a></li>
+<li><a href="#synchronous-signals">1.5 Synchronous signals</a></li>
+<li><a href="#synchronous-signals-in-native-code">1.6 Synchronous signals in native code</a></li>
+<li><a href="#stack-overflow-checking">1.7 Stack overflow checking</a></li>
+<li><a href="#asynchronous-signals">1.8 Asynchronous signals</a></li>
+<li><a href="#stack-unwinding-during-exception-handling">1.9 Stack unwinding during exception handling</a></li>
+<li><a href="#problemsfuture-work">1.10 Problems/future work</a>
 <ul>
-<li><a href="#Raising_exceptions_from_native_code">1.10.1 Raising exceptions from native code</a></li>
+<li><a href="#raising-exceptions-from-native-code">1.10.1 Raising exceptions from native code</a></li>
 </ul></li>
 <li><a href="#libunwind">1.11 libunwind</a></li>
-<li><a href="#Architecture_specific_functions_for_EH">1.12 Architecture specific functions for EH</a>
+<li><a href="#architecture-specific-functions-for-eh">1.12 Architecture specific functions for EH</a>
 <ul>
-<li><a href="#mono_arch_handle_exception_.28.29">1.12.1 mono_arch_handle_exception ()</a></li>
-<li><a href="#mono_arch_get_restore_context_.28.29">1.12.2 mono_arch_get_restore_context ()</a></li>
-<li><a href="#mono_arch_get_call_filter_.28.29">1.12.3 mono_arch_get_call_filter ()</a></li>
+<li><a href="#mono-arch-handle-exception-">1.12.1 mono_arch_handle_exception ()</a></li>
+<li><a href="#mono-arch-get-restore-context-">1.12.2 mono_arch_get_restore_context ()</a></li>
+<li><a href="#mono-arch-get-call-filter-">1.12.3 mono_arch_get_call_filter ()</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

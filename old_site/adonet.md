@@ -19,10 +19,10 @@ Status and tests for ADO.NET 2.0 are available in our [ADOTests]({{site.github.u
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Tools">1 Tools</a></li>
-<li><a href="#Generic_Database_access_in_Mono_ADO.NET">2 Generic Database access in Mono ADO.NET</a></li>
-<li><a href="#Database_Access_from_ASP.NET">3 Database Access from ASP.NET</a></li>
-<li><a href="#Testing">4 Testing</a></li>
+<li><a href="#tools">1 Tools</a></li>
+<li><a href="#generic-database-access-in-mono-adonet">2 Generic Database access in Mono ADO.NET</a></li>
+<li><a href="#database-access-from-aspnet">3 Database Access from ASP.NET</a></li>
+<li><a href="#testing">4 Testing</a></li>
 </ul></td>
 </tr>
 </tbody>

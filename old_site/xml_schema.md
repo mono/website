@@ -21,16 +21,16 @@ There are three parts of the specification: [primer](http://www.w3.org/TR/xmlsch
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Using_XML_Schema_with_System.Xml">1 Using XML Schema with System.Xml</a></li>
-<li><a href="#Using_XmlSchema_and_XmlSchemaCollection">2 Using XmlSchema and XmlSchemaCollection</a>
+<li><a href="#using-xml-schema-with-systemxml">1 Using XML Schema with System.Xml</a></li>
+<li><a href="#using-xmlschema-and-xmlschemacollection">2 Using XmlSchema and XmlSchemaCollection</a>
 <ul>
-<li><a href="#Reading.2C_Writing_and_Compiling_XmlSchema">2.1 Reading, Writing and Compiling XmlSchema</a></li>
-<li><a href="#XmlSchemaCollection">2.2 XmlSchemaCollection</a></li>
+<li><a href="#reading-writing-and-compiling-xmlschema">2.1 Reading, Writing and Compiling XmlSchema</a></li>
+<li><a href="#xmlschemacollection">2.2 XmlSchemaCollection</a></li>
 </ul></li>
-<li><a href="#Validating_XML_using_XML_Schema">3 Validating XML using XML Schema</a>
+<li><a href="#validating-xml-using-xml-schema">3 Validating XML using XML Schema</a>
 <ul>
-<li><a href="#General_Purpose_Use">3.1 General Purpose Use</a></li>
-<li><a href="#Handling_Validation_Errors">3.2 Handling Validation Errors</a></li>
+<li><a href="#general-purpose-use">3.1 General Purpose Use</a></li>
+<li><a href="#handling-validation-errors">3.2 Handling Validation Errors</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,97 +15,97 @@ WCFStatusOld
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#This_page_is_OLD">1 This page is OLD</a></li>
-<li><a href="#Communication_Foundation">2 Communication Foundation</a></li>
-<li><a href="#High_level_status">3 High level status</a>
+<li><a href="#this-page-is-old">1 This page is OLD</a></li>
+<li><a href="#communication-foundation">2 Communication Foundation</a></li>
+<li><a href="#high-level-status">3 High level status</a>
 <ul>
-<li><a href="#Features">3.1 Features</a>
+<li><a href="#features">3.1 Features</a>
 <ul>
-<li><a href="#Serialization">3.1.1 Serialization</a></li>
-<li><a href="#Service_contracts">3.1.2 Service contracts</a></li>
-<li><a href="#Service_features">3.1.3 Service features</a></li>
-<li><a href="#Channels">3.1.4 Channels</a></li>
-<li><a href="#Configuration">3.1.5 Configuration</a></li>
-<li><a href="#Bindings">3.1.6 Bindings</a></li>
+<li><a href="#serialization">3.1.1 Serialization</a></li>
+<li><a href="#service-contracts">3.1.2 Service contracts</a></li>
+<li><a href="#service-features">3.1.3 Service features</a></li>
+<li><a href="#channels">3.1.4 Channels</a></li>
+<li><a href="#configuration">3.1.5 Configuration</a></li>
+<li><a href="#bindings">3.1.6 Bindings</a></li>
 </ul></li>
-<li><a href="#Milestones">3.2 Milestones</a>
+<li><a href="#milestones">3.2 Milestones</a>
 <ul>
-<li><a href="#Milestone_1_-_Basic_connection_establishment_-_achieved">3.2.1 Milestone 1 - Basic connection establishment - achieved</a></li>
-<li><a href="#Milestone_2_-_Web_Services_support">3.2.2 Milestone 2 - Web Services support</a></li>
-<li><a href="#Milestone_3_-_WS-Security_and_all_relevant_stuff">3.2.3 Milestone 3 - WS-Security and all relevant stuff</a></li>
-<li><a href="#Milestone_4_-_Infocard_implementation">3.2.4 Milestone 4 - Infocard implementation</a></li>
-<li><a href="#Milestone_5_-_everything_else">3.2.5 Milestone 5 - everything else</a></li>
-<li><a href="#Not_on_the_list">3.2.6 Not on the list</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Detailed_Status">4 Detailed Status</a>
-<ul>
-<li><a href="#Core_Compare">4.1 Core Compare</a></li>
-</ul></li>
-<li><a href="#Configuration_2">5 Configuration</a></li>
-<li><a href="#Contracts">6 Contracts</a>
-<ul>
-<li><a href="#Serialization_2">6.1 Serialization</a>
-<ul>
-<li><a href="#Data_Contract">6.1.1 Data Contract</a></li>
-<li><a href="#Message_Contract">6.1.2 Message Contract</a>
-<ul>
-<li><a href="#Typed_Messages">6.1.2.1 Typed Messages</a></li>
-</ul></li>
-<li><a href="#Using_Streams">6.1.3 Using Streams</a></li>
-</ul></li>
-<li><a href="#Service_Contract">6.2 Service Contract</a>
-<ul>
-<li><a href="#Proxy_Generator">6.2.1 Proxy Generator</a></li>
-</ul></li>
-<li><a href="#Policy_.26_Binding">6.3 Policy &amp; Binding</a>
-<ul>
-<li><a href="#Binding_Element_Types">6.3.1 Binding Element Types</a>
-<ul>
-<li><a href="#Basic">6.3.1.1 Basic</a></li>
-<li><a href="#TransportBindingElement">6.3.1.2 TransportBindingElement</a></li>
-<li><a href="#StreamUpgradBindingElement">6.3.1.3 StreamUpgradBindingElement</a></li>
-<li><a href="#SecurityBindingElement">6.3.1.4 SecurityBindingElement</a></li>
-<li><a href="#MessageEncodingBindingElement">6.3.1.5 MessageEncodingBindingElement</a></li>
-<li><a href="#PeerResolverBindingElement">6.3.1.6 PeerResolverBindingElement</a></li>
-</ul></li>
-<li><a href="#Binding_Types">6.3.2 Binding Types</a>
-<ul>
-<li><a href="#BasicHttpBinding">6.3.2.1 BasicHttpBinding</a></li>
-<li><a href="#WSHttpBinding">6.3.2.2 WSHttpBinding</a></li>
-<li><a href="#WebHttpBinding">6.3.2.3 WebHttpBinding</a></li>
-<li><a href="#NetPeerTcpBinding">6.3.2.4 NetPeerTcpBinding</a></li>
-<li><a href="#NetTcpBinding">6.3.2.5 NetTcpBinding</a></li>
-<li><a href="#WSDualHttpBinding">6.3.2.6 WSDualHttpBinding</a></li>
-<li><a href="#CustomBinding">6.3.2.7 CustomBinding</a></li>
-<li><a href="#MsmqBindingBase">6.3.2.8 MsmqBindingBase</a></li>
-<li><a href="#NetNamedPipeBinding">6.3.2.9 NetNamedPipeBinding</a></li>
+<li><a href="#milestone-1---basic-connection-establishment---achieved">3.2.1 Milestone 1 - Basic connection establishment - achieved</a></li>
+<li><a href="#milestone-2---web-services-support">3.2.2 Milestone 2 - Web Services support</a></li>
+<li><a href="#milestone-3---ws-security-and-all-relevant-stuff">3.2.3 Milestone 3 - WS-Security and all relevant stuff</a></li>
+<li><a href="#milestone-4---infocard-implementation">3.2.4 Milestone 4 - Infocard implementation</a></li>
+<li><a href="#milestone-5---everything-else">3.2.5 Milestone 5 - everything else</a></li>
+<li><a href="#not-on-the-list">3.2.6 Not on the list</a></li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li><a href="#Service_Runtime_Behavior">7 Service Runtime Behavior</a>
+<li><a href="#detailed-status">4 Detailed Status</a>
 <ul>
-<li><a href="#Transaction_Behavior">7.1 Transaction Behavior</a></li>
-<li><a href="#Dispatch_Behavior">7.2 Dispatch Behavior</a></li>
-<li><a href="#Concurrency_Behavior">7.3 Concurrency Behavior</a></li>
-<li><a href="#Error_Behavior">7.4 Error Behavior</a></li>
-<li><a href="#Throttling_Behavior">7.5 Throttling Behavior</a></li>
-<li><a href="#Metadata_Behavior">7.6 Metadata Behavior</a></li>
-<li><a href="#Instance_Behavior">7.7 Instance Behavior</a></li>
-<li><a href="#Message_Inspection">7.8 Message Inspection</a></li>
-<li><a href="#Parameter_Filtering">7.9 Parameter Filtering</a></li>
+<li><a href="#core-compare">4.1 Core Compare</a></li>
 </ul></li>
-<li><a href="#Message_Encoding">8 Message Encoding</a>
+<li><a href="#configuration_2">5 Configuration</a></li>
+<li><a href="#contracts">6 Contracts</a>
 <ul>
-<li><a href="#Binary">8.1 Binary</a></li>
-<li><a href="#Text">8.2 Text</a></li>
-<li><a href="#Mtom">8.3 Mtom</a></li>
-<li><a href="#Web">8.4 Web</a></li>
+<li><a href="#serialization_2">6.1 Serialization</a>
+<ul>
+<li><a href="#data-contract">6.1.1 Data Contract</a></li>
+<li><a href="#message-contract">6.1.2 Message Contract</a>
+<ul>
+<li><a href="#typed-messages">6.1.2.1 Typed Messages</a></li>
 </ul></li>
-<li><a href="#Activation_and_hosting">9 Activation and hosting</a>
+<li><a href="#using-streams">6.1.3 Using Streams</a></li>
+</ul></li>
+<li><a href="#service-contract">6.2 Service Contract</a>
 <ul>
-<li><a href="#EXE">9.1 EXE</a></li>
-<li><a href="#IIS">9.2 IIS</a></li>
+<li><a href="#proxy-generator">6.2.1 Proxy Generator</a></li>
+</ul></li>
+<li><a href="#policy--binding">6.3 Policy &amp; Binding</a>
+<ul>
+<li><a href="#binding-element-types">6.3.1 Binding Element Types</a>
+<ul>
+<li><a href="#basic">6.3.1.1 Basic</a></li>
+<li><a href="#transportbindingelement">6.3.1.2 TransportBindingElement</a></li>
+<li><a href="#streamupgradbindingelement">6.3.1.3 StreamUpgradBindingElement</a></li>
+<li><a href="#securitybindingelement">6.3.1.4 SecurityBindingElement</a></li>
+<li><a href="#messageencodingbindingelement">6.3.1.5 MessageEncodingBindingElement</a></li>
+<li><a href="#peerresolverbindingelement">6.3.1.6 PeerResolverBindingElement</a></li>
+</ul></li>
+<li><a href="#binding-types">6.3.2 Binding Types</a>
+<ul>
+<li><a href="#basichttpbinding">6.3.2.1 BasicHttpBinding</a></li>
+<li><a href="#wshttpbinding">6.3.2.2 WSHttpBinding</a></li>
+<li><a href="#webhttpbinding">6.3.2.3 WebHttpBinding</a></li>
+<li><a href="#netpeertcpbinding">6.3.2.4 NetPeerTcpBinding</a></li>
+<li><a href="#nettcpbinding">6.3.2.5 NetTcpBinding</a></li>
+<li><a href="#wsdualhttpbinding">6.3.2.6 WSDualHttpBinding</a></li>
+<li><a href="#custombinding">6.3.2.7 CustomBinding</a></li>
+<li><a href="#msmqbindingbase">6.3.2.8 MsmqBindingBase</a></li>
+<li><a href="#netnamedpipebinding">6.3.2.9 NetNamedPipeBinding</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#service-runtime-behavior">7 Service Runtime Behavior</a>
+<ul>
+<li><a href="#transaction-behavior">7.1 Transaction Behavior</a></li>
+<li><a href="#dispatch-behavior">7.2 Dispatch Behavior</a></li>
+<li><a href="#concurrency-behavior">7.3 Concurrency Behavior</a></li>
+<li><a href="#error-behavior">7.4 Error Behavior</a></li>
+<li><a href="#throttling-behavior">7.5 Throttling Behavior</a></li>
+<li><a href="#metadata-behavior">7.6 Metadata Behavior</a></li>
+<li><a href="#instance-behavior">7.7 Instance Behavior</a></li>
+<li><a href="#message-inspection">7.8 Message Inspection</a></li>
+<li><a href="#parameter-filtering">7.9 Parameter Filtering</a></li>
+</ul></li>
+<li><a href="#message-encoding">8 Message Encoding</a>
+<ul>
+<li><a href="#binary">8.1 Binary</a></li>
+<li><a href="#text">8.2 Text</a></li>
+<li><a href="#mtom">8.3 Mtom</a></li>
+<li><a href="#web">8.4 Web</a></li>
+</ul></li>
+<li><a href="#activation-and-hosting">9 Activation and hosting</a>
+<ul>
+<li><a href="#exe">9.1 EXE</a></li>
+<li><a href="#iis">9.2 IIS</a></li>
 </ul></li>
 </ul></td>
 </tr>

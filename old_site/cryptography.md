@@ -19,14 +19,14 @@ In addition to the .NET compatible assemblies for cryptography, we are working o
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Assembly:_mscorlib.dll">1 Assembly: mscorlib.dll</a></li>
-<li><a href="#Assembly:_System">2 Assembly: System</a></li>
-<li><a href="#Assembly:_System.Security">3 Assembly: System.Security</a></li>
-<li><a href="#Assembly:_Mono.Security">4 Assembly: Mono.Security</a></li>
-<li><a href="#Assembly:_Mono.Security.Win32">5 Assembly: Mono.Security.Win32</a></li>
-<li><a href="#Tools">6 Tools</a></li>
-<li><a href="#References">7 References</a></li>
-<li><a href="#How_to_Help">8 How to Help</a></li>
+<li><a href="#assembly-mscorlibdll">1 Assembly: mscorlib.dll</a></li>
+<li><a href="#assembly-system">2 Assembly: System</a></li>
+<li><a href="#assembly-systemsecurity">3 Assembly: System.Security</a></li>
+<li><a href="#assembly-monosecurity">4 Assembly: Mono.Security</a></li>
+<li><a href="#assembly-monosecuritywin32">5 Assembly: Mono.Security.Win32</a></li>
+<li><a href="#tools">6 Tools</a></li>
+<li><a href="#references">7 References</a></li>
+<li><a href="#how-to-help">8 How to Help</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,10 +17,10 @@ Mono 2.4.2.2 is a portable and open source implementation of the .NET framework 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Major_Highlights">1 Major Highlights</a></li>
-<li><a href="#Changes_in_Mono_2.4.2.2">2 Changes in Mono 2.4.2.2</a></li>
-<li><a href="#Bugs_fixed_since_Mono_2.4">3 Bugs fixed since Mono 2.4</a></li>
-<li><a href="#Installing_Mono_2.4.2.2">4 Installing Mono 2.4.2.2</a></li>
+<li><a href="#major-highlights">1 Major Highlights</a></li>
+<li><a href="#changes-in-mono-2422">2 Changes in Mono 2.4.2.2</a></li>
+<li><a href="#bugs-fixed-since-mono-24">3 Bugs fixed since Mono 2.4</a></li>
+<li><a href="#installing-mono-2422">4 Installing Mono 2.4.2.2</a></li>
 </ul></td>
 </tr>
 </tbody>

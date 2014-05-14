@@ -17,28 +17,28 @@ Gendarme.Rules.Naming
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidDeepNamespaceHierarchyRule">1.1 AvoidDeepNamespaceHierarchyRule</a>
+<li><a href="#avoiddeepnamespacehierarchyrule">1.1 AvoidDeepNamespaceHierarchyRule</a>
 <ul>
-<li><a href="#MaxDepth">1.1.1 MaxDepth</a></li>
+<li><a href="#maxdepth">1.1.1 MaxDepth</a></li>
 </ul></li>
-<li><a href="#AvoidNonAlphanumericIdentifierRule">1.2 AvoidNonAlphanumericIdentifierRule</a></li>
-<li><a href="#AvoidRedundancyInMethodNameRule">1.3 AvoidRedundancyInMethodNameRule</a></li>
-<li><a href="#AvoidRedundancyInTypeNameRule">1.4 AvoidRedundancyInTypeNameRule</a></li>
-<li><a href="#AvoidTypeInterfaceInconsistencyRule">1.5 AvoidTypeInterfaceInconsistencyRule</a></li>
-<li><a href="#DoNotPrefixEventsWithAfterOrBeforeRule">1.6 DoNotPrefixEventsWithAfterOrBeforeRule</a></li>
-<li><a href="#DoNotPrefixValuesWithEnumNameRule">1.7 DoNotPrefixValuesWithEnumNameRule</a></li>
-<li><a href="#DoNotUseReservedInEnumValueNamesRule">1.8 DoNotUseReservedInEnumValueNamesRule</a></li>
-<li><a href="#ParameterNamesShouldMatchOverriddenMethodRule">1.9 ParameterNamesShouldMatchOverriddenMethodRule</a></li>
-<li><a href="#UseCorrectCasingRule">1.10 UseCorrectCasingRule</a></li>
-<li><a href="#UseCorrectPrefixRule">1.11 UseCorrectPrefixRule</a></li>
-<li><a href="#UseCorrectSuffixRule">1.12 UseCorrectSuffixRule</a></li>
-<li><a href="#UsePluralNameInEnumFlagsRule">1.13 UsePluralNameInEnumFlagsRule</a></li>
-<li><a href="#UsePreferredTermsRule">1.14 UsePreferredTermsRule</a></li>
-<li><a href="#UseSingularNameInEnumsUnlessAreFlagsRule">1.15 UseSingularNameInEnumsUnlessAreFlagsRule</a></li>
+<li><a href="#avoidnonalphanumericidentifierrule">1.2 AvoidNonAlphanumericIdentifierRule</a></li>
+<li><a href="#avoidredundancyinmethodnamerule">1.3 AvoidRedundancyInMethodNameRule</a></li>
+<li><a href="#avoidredundancyintypenamerule">1.4 AvoidRedundancyInTypeNameRule</a></li>
+<li><a href="#avoidtypeinterfaceinconsistencyrule">1.5 AvoidTypeInterfaceInconsistencyRule</a></li>
+<li><a href="#donotprefixeventswithafterorbeforerule">1.6 DoNotPrefixEventsWithAfterOrBeforeRule</a></li>
+<li><a href="#donotprefixvalueswithenumnamerule">1.7 DoNotPrefixValuesWithEnumNameRule</a></li>
+<li><a href="#donotusereservedinenumvaluenamesrule">1.8 DoNotUseReservedInEnumValueNamesRule</a></li>
+<li><a href="#parameternamesshouldmatchoverriddenmethodrule">1.9 ParameterNamesShouldMatchOverriddenMethodRule</a></li>
+<li><a href="#usecorrectcasingrule">1.10 UseCorrectCasingRule</a></li>
+<li><a href="#usecorrectprefixrule">1.11 UseCorrectPrefixRule</a></li>
+<li><a href="#usecorrectsuffixrule">1.12 UseCorrectSuffixRule</a></li>
+<li><a href="#usepluralnameinenumflagsrule">1.13 UsePluralNameInEnumFlagsRule</a></li>
+<li><a href="#usepreferredtermsrule">1.14 UsePreferredTermsRule</a></li>
+<li><a href="#usesingularnameinenumsunlessareflagsrule">1.15 UseSingularNameInEnumsUnlessAreFlagsRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

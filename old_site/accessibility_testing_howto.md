@@ -15,94 +15,94 @@ Accessibility: Testing Howto
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#WinForms">1 WinForms</a>
+<li><a href="#winforms">1 WinForms</a>
 <ul>
-<li><a href="#Strongwind">1.1 Strongwind</a>
+<li><a href="#strongwind">1.1 Strongwind</a>
 <ul>
-<li><a href="#Introduction">1.1.1 Introduction</a></li>
-<li><a href="#Requirements">1.1.2 Requirements</a></li>
-<li><a href="#Strongwind_Introduction">1.1.3 Strongwind Introduction</a></li>
-<li><a href="#Strongwind_Test_Harness">1.1.4 Strongwind Test Harness</a>
+<li><a href="#introduction">1.1.1 Introduction</a></li>
+<li><a href="#requirements">1.1.2 Requirements</a></li>
+<li><a href="#strongwind-introduction">1.1.3 Strongwind Introduction</a></li>
+<li><a href="#strongwind-test-harness">1.1.4 Strongwind Test Harness</a>
 <ul>
-<li><a href="#local_run.py">1.1.4.1 local_run.py</a></li>
-<li><a href="#remote_run.py">1.1.4.2 remote_run.py</a></li>
-<li><a href="#.22Official_Tests.22">1.1.4.3 &quot;Official Tests&quot;</a></li>
-<li><a href="#Official_Test_Machine_Configuration">1.1.4.4 Official Test Machine Configuration</a></li>
-<li><a href="#QA_Architecture_Diagram">1.1.4.5 QA Architecture Diagram</a></li>
+<li><a href="#local-runpy">1.1.4.1 local_run.py</a></li>
+<li><a href="#remote-runpy">1.1.4.2 remote_run.py</a></li>
+<li><a href="#official-tests">1.1.4.3 &quot;Official Tests&quot;</a></li>
+<li><a href="#official-test-machine-configuration">1.1.4.4 Official Test Machine Configuration</a></li>
+<li><a href="#qa-architecture-diagram">1.1.4.5 QA Architecture Diagram</a></li>
 </ul></li>
-<li><a href="#Example_Sample_Application">1.1.5 Example Sample Application</a></li>
-<li><a href="#Example_Application_Wrapper">1.1.6 Example Application Wrapper</a>
+<li><a href="#example-sample-application">1.1.5 Example Sample Application</a></li>
+<li><a href="#example-application-wrapper">1.1.6 Example Application Wrapper</a>
 <ul>
-<li><a href="#init_.py">1.1.6.1 __init__.py</a></li>
-<li><a href="#gtktutorialframe.py">1.1.6.2 gtktutorialframe.py</a></li>
+<li><a href="#init-py">1.1.6.1 __init__.py</a></li>
+<li><a href="#gtktutorialframepy">1.1.6.2 gtktutorialframe.py</a></li>
 </ul></li>
-<li><a href="#Example_Test_Script">1.1.7 Example Test Script</a></li>
+<li><a href="#example-test-script">1.1.7 Example Test Script</a></li>
 </ul></li>
-<li><a href="#Orca">1.2 Orca</a>
+<li><a href="#orca">1.2 Orca</a>
 <ul>
-<li><a href="#Requirements_2">1.2.1 Requirements</a></li>
-<li><a href="#Testing">1.2.2 Testing</a></li>
-<li><a href="#Test_Writing">1.2.3 Test Writing</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Moonlight">2 Moonlight</a>
-<ul>
-<li><a href="#Create_Moonlight_Sample">2.1 Create Moonlight Sample</a></li>
-<li><a href="#Build_Test_Environment">2.2 Build Test Environment</a>
-<ul>
-<li><a href="#Install_Mono">2.2.1 Install Mono</a></li>
-<li><a href="#mxap_to_compile_Silverlight_samples">2.2.2 mxap to compile Silverlight samples</a></li>
-<li><a href="#Manage_Firefox">2.2.3 Manage Firefox</a></li>
-<li><a href="#Install_MoonAtkBridge_to_Make_accessible">2.2.4 Install MoonAtkBridge to Make accessible</a></li>
+<li><a href="#requirements_2">1.2.1 Requirements</a></li>
+<li><a href="#testing">1.2.2 Testing</a></li>
+<li><a href="#test-writing">1.2.3 Test Writing</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#UIAutomation_Client_API">3 UIAutomation Client API</a>
+<li><a href="#moonlight">2 Moonlight</a>
 <ul>
-<li><a href="#White">3.1 White</a>
+<li><a href="#create-moonlight-sample">2.1 Create Moonlight Sample</a></li>
+<li><a href="#build-test-environment">2.2 Build Test Environment</a>
 <ul>
-<li><a href="#Introduction_2">3.1.1 Introduction</a></li>
-<li><a href="#Example_of_start_White">3.1.2 Example of start White</a></li>
-</ul></li>
-<li><a href="#UIA_Verify">3.2 UIA Verify</a>
-<ul>
-<li><a href="#Introduction_3">3.2.1 Introduction</a></li>
-<li><a href="#Automation_Test_Suit">3.2.2 Automation Test Suit</a></li>
-</ul></li>
-<li><a href="#UIA_Client_Api_Testing_How_To">3.3 UIA Client Api Testing How To</a>
-<ul>
-<li><a href="#What_is_the_UI_Automaiton.3F">3.3.1 What is the UI Automaiton?</a></li>
-<li><a href="#What_is_the_uiaclient_used_for.3F">3.3.2 What is the uiaclient used for?</a></li>
-<li><a href="#Requirements_3">3.3.3 Requirements</a>
-<ul>
-<li><a href="#Keepass.exe:">3.3.3.1 Keepass.exe:</a></li>
-<li><a href="#DockPatternProvider.exe:">3.3.3.2 DockPatternProvider.exe:</a></li>
-<li><a href="#WindowAndTransformPatternProvider.exe:">3.3.3.3 WindowAndTransformPatternProvider.exe:</a></li>
-</ul></li>
-<li><a href="#QA_Architecture_Diagram_2">3.3.4 QA Architecture Diagram</a></li>
-<li><a href="#Example_Application_Wrapper_2">3.3.5 Example Application Wrapper</a>
-<ul>
-<li><a href="#TestBase.cs">3.3.5.1 TestBase.cs</a></li>
-<li><a href="#Config.cs">3.3.5.2 Config.cs</a></li>
-<li><a href="#Config.xml">3.3.5.3 Config.xml</a></li>
-<li><a href="#Element.cs">3.3.5.4 Element.cs</a></li>
-<li><a href="#ScrollBar.cs">3.3.5.5 ScrollBar.cs</a></li>
-<li><a href="#ProcedureLogger.cs">3.3.5.6 ProcedureLogger.cs</a></li>
-<li><a href="#Utils.cs">3.3.5.7 Utils.cs</a></li>
-</ul></li>
-<li><a href="#Example_Test_script_2">3.3.6 Example Test script</a>
-<ul>
-<li><a href="#Keepass.cs">3.3.6.1 Keepass.cs</a></li>
-</ul></li>
-<li><a href="#OUTPUT">3.3.7 OUTPUT</a></li>
+<li><a href="#install-mono">2.2.1 Install Mono</a></li>
+<li><a href="#mxap-to-compile-silverlight-samples">2.2.2 mxap to compile Silverlight samples</a></li>
+<li><a href="#manage-firefox">2.2.3 Manage Firefox</a></li>
+<li><a href="#install-moonatkbridge-to-make-accessible">2.2.4 Install MoonAtkBridge to Make accessible</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Logging_Bugs">4 Logging Bugs</a>
+<li><a href="#uiautomation-client-api">3 UIAutomation Client API</a>
 <ul>
-<li><a href="#General_Guidelines">4.1 General Guidelines</a></li>
-<li><a href="#Bug_References">4.2 Bug References</a></li>
+<li><a href="#white">3.1 White</a>
+<ul>
+<li><a href="#introduction_2">3.1.1 Introduction</a></li>
+<li><a href="#example-of-start-white">3.1.2 Example of start White</a></li>
 </ul></li>
-<li><a href="#Official_Test_Machine_Setup">5 Official Test Machine Setup</a></li>
-<li><a href="#Csharp_Introduction">6 Csharp Introduction</a></li>
+<li><a href="#uia-verify">3.2 UIA Verify</a>
+<ul>
+<li><a href="#introduction_3">3.2.1 Introduction</a></li>
+<li><a href="#automation-test-suit">3.2.2 Automation Test Suit</a></li>
+</ul></li>
+<li><a href="#uia-client-api-testing-how-to">3.3 UIA Client Api Testing How To</a>
+<ul>
+<li><a href="#what-is-the-ui-automaiton">3.3.1 What is the UI Automaiton?</a></li>
+<li><a href="#what-is-the-uiaclient-used-for">3.3.2 What is the uiaclient used for?</a></li>
+<li><a href="#requirements_3">3.3.3 Requirements</a>
+<ul>
+<li><a href="#keepassexe">3.3.3.1 Keepass.exe:</a></li>
+<li><a href="#dockpatternproviderexe">3.3.3.2 DockPatternProvider.exe:</a></li>
+<li><a href="#windowandtransformpatternproviderexe">3.3.3.3 WindowAndTransformPatternProvider.exe:</a></li>
+</ul></li>
+<li><a href="#qa-architecture-diagram_2">3.3.4 QA Architecture Diagram</a></li>
+<li><a href="#example-application-wrapper_2">3.3.5 Example Application Wrapper</a>
+<ul>
+<li><a href="#testbasecs">3.3.5.1 TestBase.cs</a></li>
+<li><a href="#configcs">3.3.5.2 Config.cs</a></li>
+<li><a href="#configxml">3.3.5.3 Config.xml</a></li>
+<li><a href="#elementcs">3.3.5.4 Element.cs</a></li>
+<li><a href="#scrollbarcs">3.3.5.5 ScrollBar.cs</a></li>
+<li><a href="#procedureloggercs">3.3.5.6 ProcedureLogger.cs</a></li>
+<li><a href="#utilscs">3.3.5.7 Utils.cs</a></li>
+</ul></li>
+<li><a href="#example-test-script_2">3.3.6 Example Test script</a>
+<ul>
+<li><a href="#keepasscs">3.3.6.1 Keepass.cs</a></li>
+</ul></li>
+<li><a href="#output">3.3.7 OUTPUT</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#logging-bugs">4 Logging Bugs</a>
+<ul>
+<li><a href="#general-guidelines">4.1 General Guidelines</a></li>
+<li><a href="#bug-references">4.2 Bug References</a></li>
+</ul></li>
+<li><a href="#official-test-machine-setup">5 Official Test Machine Setup</a></li>
+<li><a href="#csharp-introduction">6 Csharp Introduction</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -131,7 +131,7 @@ This tutorial will *not* have in-depth explanations about the Strongwind-specifi
 -   [Accerciser](http://live.gnome.org/Accerciser) (1.4.0 or later)
 -   [Strongwind](http://medsphere.org/projects/strongwind) (installing from SVN trunk is highly recommended)
 -   [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython) (the package name in openSUSE is IPCE). Our sample applications are written in IronPython, so it must be installed for them to run successfully.
--   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#Getting_the_Code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 
 ### Strongwind Introduction
 
@@ -233,7 +233,7 @@ This diagram summarizes how WinForms testing is performed using Strongwind and t
 
 Our team does not test a specific application. Instead, our developers are writing code to make sure that Mono WinForms applications are accessible. This means that we can writer our testing against whatever application(s) we wish. The approach we take is to create small and simple "sample applications." Our sample applications can be found in our code repository in the *test/samples* directory.
 
-At this point you should [check out the uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#Getting_the_Code "Accessibility: Getting Started With Development") if you haven't already.
+At this point you should [check out the uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
 
 After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples. For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
 
@@ -525,7 +525,7 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [Python](http://www.python.org)
 -   Enable "Assistive Technologies" from the GNOME Control Center
 -   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
--   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#Getting_the_Code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 -   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
 -   Set *orca.debug.debugLevel = orca.debug.LEVEL\_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.

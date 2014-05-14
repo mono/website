@@ -20,39 +20,39 @@ This document describes Mono's new JIT engine based on a rewrite to use a linear
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Intermediate_Representation_.28IR.29">1 Intermediate Representation (IR)</a>
+<li><a href="#intermediate-representation-ir">1 Intermediate Representation (IR)</a>
 <ul>
-<li><a href="#Opcodes">1.1 Opcodes</a></li>
-<li><a href="#High.2Flow_level_IR">1.2 High/low level IR</a></li>
-<li><a href="#Representation_of_IR_instructions">1.3 Representation of IR instructions</a></li>
+<li><a href="#opcodes">1.1 Opcodes</a></li>
+<li><a href="#highlow-level-ir">1.2 High/low level IR</a></li>
+<li><a href="#representation-of-ir-instructions">1.3 Representation of IR instructions</a></li>
 </ul></li>
-<li><a href="#Virtual_Registers_.28Vregs.29">2 Virtual Registers (Vregs)</a>
+<li><a href="#virtual-registers-vregs">2 Virtual Registers (Vregs)</a>
 <ul>
-<li><a href="#Local_Vregs_.28lvreg.29">2.1 Local Vregs (lvreg)</a></li>
-<li><a href="#Global_Vregs">2.2 Global Vregs</a></li>
-<li><a href="#Motivation">2.3 Motivation</a></li>
-<li><a href="#Transitioning_between_the_two_states">2.4 Transitioning between the two states</a></li>
+<li><a href="#local-vregs-lvreg">2.1 Local Vregs (lvreg)</a></li>
+<li><a href="#global-vregs">2.2 Global Vregs</a></li>
+<li><a href="#motivation">2.3 Motivation</a></li>
+<li><a href="#transitioning-between-the-two-states">2.4 Transitioning between the two states</a></li>
 </ul></li>
-<li><a href="#JIT_Passes">3 JIT Passes</a>
+<li><a href="#jit-passes">3 JIT Passes</a>
 <ul>
-<li><a href="#Method-to-IR">3.1 Method-to-IR</a></li>
-<li><a href="#Decompose-Long-Opts">3.2 Decompose-Long-Opts</a></li>
-<li><a href="#Local_Copy.2FConstant_Propagation">3.3 Local Copy/Constant Propagation</a></li>
-<li><a href="#Branch_Optimizations">3.4 Branch Optimizations</a></li>
-<li><a href="#Handle-Global-Vregs">3.5 Handle-Global-Vregs</a></li>
-<li><a href="#Local_Dead_Code_Elimination">3.6 Local Dead Code Elimination</a></li>
-<li><a href="#Decompose_VType_Opts">3.7 Decompose VType Opts</a></li>
-<li><a href="#SSA_Optimizations">3.8 SSA Optimizations</a></li>
-<li><a href="#Liveness_Analysis">3.9 Liveness Analysis</a></li>
-<li><a href="#Global_Register_Allocation">3.10 Global Register Allocation</a></li>
-<li><a href="#Allocate_Vars">3.11 Allocate Vars</a></li>
-<li><a href="#Spill_Global_Vars">3.12 Spill Global Vars</a></li>
+<li><a href="#method-to-ir">3.1 Method-to-IR</a></li>
+<li><a href="#decompose-long-opts">3.2 Decompose-Long-Opts</a></li>
+<li><a href="#local-copyconstant-propagation">3.3 Local Copy/Constant Propagation</a></li>
+<li><a href="#branch-optimizations">3.4 Branch Optimizations</a></li>
+<li><a href="#handle-global-vregs">3.5 Handle-Global-Vregs</a></li>
+<li><a href="#local-dead-code-elimination">3.6 Local Dead Code Elimination</a></li>
+<li><a href="#decompose-vtype-opts">3.7 Decompose VType Opts</a></li>
+<li><a href="#ssa-optimizations">3.8 SSA Optimizations</a></li>
+<li><a href="#liveness-analysis">3.9 Liveness Analysis</a></li>
+<li><a href="#global-register-allocation">3.10 Global Register Allocation</a></li>
+<li><a href="#allocate-vars">3.11 Allocate Vars</a></li>
+<li><a href="#spill-global-vars">3.12 Spill Global Vars</a></li>
 </ul></li>
-<li><a href="#Handling_longs_on_32_bit_machines">4 Handling longs on 32 bit machines</a></li>
-<li><a href="#Handling_valuetypes">5 Handling valuetypes</a></li>
-<li><a href="#Porting_an_existing_backend_to_the_new_IR">6 Porting an existing backend to the new IR</a></li>
-<li><a href="#Benchmark_results">7 Benchmark results</a></li>
-<li><a href="#Improvements_compared_to_the_Mono_1.x_and_Mono_2.0_JITs">8 Improvements compared to the Mono 1.x and Mono 2.0 JITs</a></li>
+<li><a href="#handling-longs-on-32-bit-machines">4 Handling longs on 32 bit machines</a></li>
+<li><a href="#handling-valuetypes">5 Handling valuetypes</a></li>
+<li><a href="#porting-an-existing-backend-to-the-new-ir">6 Porting an existing backend to the new IR</a></li>
+<li><a href="#benchmark-results">7 Benchmark results</a></li>
+<li><a href="#improvements-compared-to-the-mono-1x-and-mono-20-jits">8 Improvements compared to the Mono 1.x and Mono 2.0 JITs</a></li>
 </ul></td>
 </tr>
 </tbody>

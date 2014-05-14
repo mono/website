@@ -15,25 +15,25 @@ Mono:FreeBSD
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#BSD.23">1 BSD#</a>
+<li><a href="#bsd">1 BSD#</a>
 <ul>
-<li><a href="#Who_Are_We.3F">1.1 Who Are We?</a>
+<li><a href="#who-are-we">1.1 Who Are We?</a>
 <ul>
-<li><a href="#Former_members">1.1.1 Former members</a></li>
+<li><a href="#former-members">1.1.1 Former members</a></li>
 </ul></li>
-<li><a href="#Mailing_list">1.2 Mailing list</a></li>
-<li><a href="#Project_hosting">1.3 Project hosting</a></li>
-<li><a href="#IRC">1.4 IRC</a></li>
-<li><a href="#Introduction">1.5 Introduction</a></li>
-<li><a href="#Volunteer.21">1.6 Volunteer!</a></li>
-<li><a href="#Using_Mono_on_FreeBSD">1.7 Using Mono on FreeBSD</a>
+<li><a href="#mailing-list">1.2 Mailing list</a></li>
+<li><a href="#project-hosting">1.3 Project hosting</a></li>
+<li><a href="#irc">1.4 IRC</a></li>
+<li><a href="#introduction">1.5 Introduction</a></li>
+<li><a href="#volunteer">1.6 Volunteer!</a></li>
+<li><a href="#using-mono-on-freebsd">1.7 Using Mono on FreeBSD</a>
 <ul>
-<li><a href="#Obtaining_Mono">1.7.1 Obtaining Mono</a>
+<li><a href="#obtaining-mono">1.7.1 Obtaining Mono</a>
 <ul>
-<li><a href="#Using_the_FreeBSD_ports_tree_.28Stability.29">1.7.1.1 Using the FreeBSD ports tree (Stability)</a></li>
-<li><a href="#Using_the_BSD.23_Ports_Tree_.28Development.29">1.7.1.2 Using the BSD# Ports Tree (Development)</a></li>
+<li><a href="#using-the-freebsd-ports-tree-stability">1.7.1.1 Using the FreeBSD ports tree (Stability)</a></li>
+<li><a href="#using-the-bsd-ports-tree-development">1.7.1.2 Using the BSD# Ports Tree (Development)</a></li>
 </ul></li>
-<li><a href="#Problems_with_Mono">1.7.2 Problems with Mono</a></li>
+<li><a href="#problems-with-mono">1.7.2 Problems with Mono</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

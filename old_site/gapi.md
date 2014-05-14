@@ -15,34 +15,34 @@ GAPI
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#GAPI_Overview">1 GAPI Overview</a></li>
-<li><a href="#Parsing_the_C_Source_Files">2 Parsing the C Source Files</a></li>
-<li><a href="#Generating_Code_from_API_files">3 Generating Code from API files</a></li>
-<li><a href="#Fixing_API_issues_and_Adding_Customizations">4 Fixing API issues and Adding Customizations</a>
+<li><a href="#gapi-overview">1 GAPI Overview</a></li>
+<li><a href="#parsing-the-c-source-files">2 Parsing the C Source Files</a></li>
+<li><a href="#generating-code-from-api-files">3 Generating Code from API files</a></li>
+<li><a href="#fixing-api-issues-and-adding-customizations">4 Fixing API issues and Adding Customizations</a>
 <ul>
-<li><a href="#Altering_and_Extending_the_API_File">4.1 Altering and Extending the API File</a>
+<li><a href="#altering-and-extending-the-api-file">4.1 Altering and Extending the API File</a>
 <ul>
-<li><a href="#Symbols">4.1.1 Symbols</a></li>
-<li><a href="#Metadata">4.1.2 Metadata</a>
+<li><a href="#symbols">4.1.1 Symbols</a></li>
+<li><a href="#metadata">4.1.2 Metadata</a>
 <ul>
-<li><a href="#Adding_nodes">4.1.2.1 Adding nodes</a></li>
-<li><a href="#Setting_Attributes">4.1.2.2 Setting Attributes</a></li>
-<li><a href="#Moving_Nodes">4.1.2.3 Moving Nodes</a></li>
-<li><a href="#Removing_Nodes">4.1.2.4 Removing Nodes</a></li>
+<li><a href="#adding-nodes">4.1.2.1 Adding nodes</a></li>
+<li><a href="#setting-attributes">4.1.2.2 Setting Attributes</a></li>
+<li><a href="#moving-nodes">4.1.2.3 Moving Nodes</a></li>
+<li><a href="#removing-nodes">4.1.2.4 Removing Nodes</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#.custom_files">4.2 .custom files</a></li>
+<li><a href="#custom-files">4.2 .custom files</a></li>
 </ul></li>
-<li><a href="#Library_name_mapping">5 Library name mapping</a></li>
-<li><a href="#Putting_it_all_together">6 Putting it all together</a></li>
-<li><a href="#Extra_Notes_and_Problem_Solving_Tips">7 Extra Notes and Problem Solving Tips</a>
+<li><a href="#library-name-mapping">5 Library name mapping</a></li>
+<li><a href="#putting-it-all-together">6 Putting it all together</a></li>
+<li><a href="#extra-notes-and-problem-solving-tips">7 Extra Notes and Problem Solving Tips</a>
 <ul>
-<li><a href="#Internal_Tools_and_Perl_Files">7.1 Internal Tools and Perl Files</a></li>
-<li><a href="#XML::LibXML">7.2 XML::LibXML</a></li>
-<li><a href="#XPath">7.3 XPath</a></li>
-<li><a href="#Win32_binding_issues">7.4 Win32 binding issues</a></li>
+<li><a href="#internal-tools-and-perl-files">7.1 Internal Tools and Perl Files</a></li>
+<li><a href="#xmllibxml">7.2 XML::LibXML</a></li>
+<li><a href="#xpath">7.3 XPath</a></li>
+<li><a href="#win32-binding-issues">7.4 Win32 binding issues</a></li>
 </ul></li>
-<li><a href="#Binding_GInterfaces">8 Binding GInterfaces</a></li>
+<li><a href="#binding-ginterfaces">8 Binding GInterfaces</a></li>
 </ul></td>
 </tr>
 </tbody>

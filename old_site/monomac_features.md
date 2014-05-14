@@ -15,15 +15,15 @@ MonoMac/Features
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Features">1 Features</a>
+<li><a href="#features">1 Features</a>
 <ul>
-<li><a href="#Automatic_Memory_Management">1.1 Automatic Memory Management</a></li>
-<li><a href="#Type_Safety">1.2 Type Safety</a></li>
-<li><a href="#C.23_3.0">1.3 C# 3.0</a></li>
-<li><a href="#Use_Mac_OS_X_APIs">1.4 Use Mac OS X APIs</a></li>
-<li><a href="#Access_to_third_party_iPhone.2FObjective-C_Libraries">1.5 Access to third party iPhone/Objective-C Libraries</a></li>
-<li><a href="#MonoDevelop_Integration">1.6 MonoDevelop Integration</a></li>
-<li><a href="#Interface_Builder_Integration">1.7 Interface Builder Integration</a></li>
+<li><a href="#automatic-memory-management">1.1 Automatic Memory Management</a></li>
+<li><a href="#type-safety">1.2 Type Safety</a></li>
+<li><a href="#c-30">1.3 C# 3.0</a></li>
+<li><a href="#use-mac-os-x-apis">1.4 Use Mac OS X APIs</a></li>
+<li><a href="#access-to-third-party-iphoneobjective-c-libraries">1.5 Access to third party iPhone/Objective-C Libraries</a></li>
+<li><a href="#monodevelop-integration">1.6 MonoDevelop Integration</a></li>
+<li><a href="#interface-builder-integration">1.7 Interface Builder Integration</a></li>
 </ul></li>
 </ul></td>
 </tr>

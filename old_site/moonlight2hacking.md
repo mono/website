@@ -19,14 +19,14 @@ Developers should install Silverlight 2.0 Beta 2 and its SDK to create samples a
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Sample_Programs">1 Sample Programs</a></li>
-<li><a href="#Project:_Integrate_Silverlight_2.0">2 Project: Integrate Silverlight 2.0</a></li>
-<li><a href="#DependendencyProperty_implementation">3 DependendencyProperty implementation</a></li>
-<li><a href="#Layout_Management">4 Layout Management</a></li>
-<li><a href="#General_API_completion">5 General API completion</a></li>
-<li><a href="#Implementing_Input_Events">6 Implementing Input Events</a></li>
-<li><a href="#New_C.2B.2B-based_widgetry">7 New C++-based widgetry</a></li>
-<li><a href="#Security">8 Security</a></li>
+<li><a href="#sample-programs">1 Sample Programs</a></li>
+<li><a href="#project-integrate-silverlight-20">2 Project: Integrate Silverlight 2.0</a></li>
+<li><a href="#dependendencyproperty-implementation">3 DependendencyProperty implementation</a></li>
+<li><a href="#layout-management">4 Layout Management</a></li>
+<li><a href="#general-api-completion">5 General API completion</a></li>
+<li><a href="#implementing-input-events">6 Implementing Input Events</a></li>
+<li><a href="#new-c-based-widgetry">7 New C++-based widgetry</a></li>
+<li><a href="#security">8 Security</a></li>
 </ul></td>
 </tr>
 </tbody>

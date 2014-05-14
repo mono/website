@@ -15,53 +15,53 @@ Release Notes Mono 2.0
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_2.0_Release_Notes">1 Mono 2.0 Release Notes</a></li>
-<li><a href="#Major_Highlights">2 Major Highlights</a>
+<li><a href="#mono-20-release-notes">1 Mono 2.0 Release Notes</a></li>
+<li><a href="#major-highlights">2 Major Highlights</a>
 <ul>
-<li><a href="#Microsoft_Compatible_APIs">2.1 Microsoft Compatible APIs</a></li>
-<li><a href="#Mono_APIs">2.2 Mono APIs</a>
+<li><a href="#microsoft-compatible-apis">2.1 Microsoft Compatible APIs</a></li>
+<li><a href="#mono-apis">2.2 Mono APIs</a>
 <ul>
-<li><a href="#Third_Party_APIs_bundled_with_Mono">2.2.1 Third Party APIs bundled with Mono</a></li>
+<li><a href="#third-party-apis-bundled-with-mono">2.2.1 Third Party APIs bundled with Mono</a></li>
 </ul></li>
-<li><a href="#Compilers">2.3 Compilers</a></li>
-<li><a href="#Tools">2.4 Tools</a></li>
+<li><a href="#compilers">2.3 Compilers</a></li>
+<li><a href="#tools">2.4 Tools</a></li>
 </ul></li>
-<li><a href="#License">3 License</a></li>
-<li><a href="#More_Detail">4 More Detail</a>
+<li><a href="#license">3 License</a></li>
+<li><a href="#more-detail">4 More Detail</a>
 <ul>
-<li><a href="#Windows.Forms:_New_Controls">4.1 Windows.Forms: New Controls</a>
+<li><a href="#windowsforms-new-controls">4.1 Windows.Forms: New Controls</a>
 <ul>
-<li><a href="#ToolStrip_and_MenuStrip">4.1.1 ToolStrip and MenuStrip</a></li>
-<li><a href="#DataGridView">4.1.2 DataGridView</a></li>
-<li><a href="#WebBrowser">4.1.3 WebBrowser</a></li>
-<li><a href="#TableLayoutPanel">4.1.4 TableLayoutPanel</a></li>
-<li><a href="#FlowLayoutPanel">4.1.5 FlowLayoutPanel</a></li>
-<li><a href="#SplitContainer">4.1.6 SplitContainer</a></li>
+<li><a href="#toolstrip-and-menustrip">4.1.1 ToolStrip and MenuStrip</a></li>
+<li><a href="#datagridview">4.1.2 DataGridView</a></li>
+<li><a href="#webbrowser">4.1.3 WebBrowser</a></li>
+<li><a href="#tablelayoutpanel">4.1.4 TableLayoutPanel</a></li>
+<li><a href="#flowlayoutpanel">4.1.5 FlowLayoutPanel</a></li>
+<li><a href="#splitcontainer">4.1.6 SplitContainer</a></li>
 </ul></li>
-<li><a href="#Windows.Forms:_Putting_it_all_together">4.2 Windows.Forms: Putting it all together</a>
+<li><a href="#windowsforms-putting-it-all-together">4.2 Windows.Forms: Putting it all together</a>
 <ul>
-<li><a href="#Paint.Net">4.2.1 Paint.Net</a></li>
-<li><a href="#NClass">4.2.2 NClass</a></li>
+<li><a href="#paintnet">4.2.1 Paint.Net</a></li>
+<li><a href="#nclass">4.2.2 NClass</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Changes_Since_1.9">5 Changes Since 1.9</a>
+<li><a href="#changes-since-19">5 Changes Since 1.9</a>
 <ul>
-<li><a href="#Runtime:_Performance">5.1 Runtime: Performance</a></li>
-<li><a href="#Runtime:_Features">5.2 Runtime: Features</a></li>
-<li><a href="#Gendarme">5.3 Gendarme</a></li>
-<li><a href="#C.23_Compiler">5.4 C# Compiler</a></li>
-<li><a href="#LINQ">5.5 LINQ</a></li>
-<li><a href="#Performance_Counters_Implementation">5.6 Performance Counters Implementation</a></li>
-<li><a href="#ASP.NET:_VirtualPathProvider">5.7 ASP.NET: VirtualPathProvider</a></li>
-<li><a href="#Support_for_Native_Methods.">5.8 Support for Native Methods.</a></li>
-<li><a href="#Big_Arrays">5.9 Big Arrays</a></li>
-<li><a href="#DTrace_Support">5.10 DTrace Support</a></li>
-<li><a href="#ASP.NET_and_ADO.NET">5.11 ASP.NET and ADO.NET</a></li>
-<li><a href="#Windows.Forms">5.12 Windows.Forms</a></li>
-<li><a href="#Monodoc">5.13 Monodoc</a></li>
+<li><a href="#runtime-performance">5.1 Runtime: Performance</a></li>
+<li><a href="#runtime-features">5.2 Runtime: Features</a></li>
+<li><a href="#gendarme">5.3 Gendarme</a></li>
+<li><a href="#c-compiler">5.4 C# Compiler</a></li>
+<li><a href="#linq">5.5 LINQ</a></li>
+<li><a href="#performance-counters-implementation">5.6 Performance Counters Implementation</a></li>
+<li><a href="#aspnet-virtualpathprovider">5.7 ASP.NET: VirtualPathProvider</a></li>
+<li><a href="#support-for-native-methods">5.8 Support for Native Methods.</a></li>
+<li><a href="#big-arrays">5.9 Big Arrays</a></li>
+<li><a href="#dtrace-support">5.10 DTrace Support</a></li>
+<li><a href="#aspnet-and-adonet">5.11 ASP.NET and ADO.NET</a></li>
+<li><a href="#windowsforms">5.12 Windows.Forms</a></li>
+<li><a href="#monodoc">5.13 Monodoc</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.0">6 Installing Mono 2.0</a></li>
-<li><a href="#Contributors">7 Contributors</a></li>
+<li><a href="#installing-mono-20">6 Installing Mono 2.0</a></li>
+<li><a href="#contributors">7 Contributors</a></li>
 </ul></td>
 </tr>
 </tbody>

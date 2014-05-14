@@ -15,39 +15,39 @@ XML Schema Inference
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#How_to_use_XmlSchemaInference">2 How to use XmlSchemaInference</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#how-to-use-xmlschemainference">2 How to use XmlSchemaInference</a>
 <ul>
-<li><a href="#Arguments_and_Options">2.1 Arguments and Options</a></li>
-<li><a href="#Entrypoint">2.2 Entrypoint</a></li>
-<li><a href="#Global_and_local_components">2.3 Global and local components</a></li>
+<li><a href="#arguments-and-options">2.1 Arguments and Options</a></li>
+<li><a href="#entrypoint">2.2 Entrypoint</a></li>
+<li><a href="#global-and-local-components">2.3 Global and local components</a></li>
 </ul></li>
-<li><a href="#Attributes">3 Attributes</a>
+<li><a href="#attributes">3 Attributes</a>
 <ul>
-<li><a href="#Targets">3.1 Targets</a></li>
-<li><a href="#Generating_xs:attribute">3.2 Generating xs:attribute</a></li>
-<li><a href="#use_.3D_.22required.22_.3F_.22optional.22_.3F">3.3 use = &quot;required&quot; ? &quot;optional&quot; ?</a></li>
+<li><a href="#targets">3.1 Targets</a></li>
+<li><a href="#generating-xsattribute">3.2 Generating xs:attribute</a></li>
+<li><a href="#use--required--optional-">3.3 use = &quot;required&quot; ? &quot;optional&quot; ?</a></li>
 <li><a href="#type">3.4 type</a></li>
-<li><a href="#complexType">3.5 complexType</a></li>
-<li><a href="#Not_supported_inference:_attributeGroup">3.6 Not supported inference: attributeGroup</a></li>
-<li><a href="#Not_supported_inference:_anyAttribute">3.7 Not supported inference: anyAttribute</a></li>
+<li><a href="#complextype">3.5 complexType</a></li>
+<li><a href="#not-supported-inference-attributegroup">3.6 Not supported inference: attributeGroup</a></li>
+<li><a href="#not-supported-inference-anyattribute">3.7 Not supported inference: anyAttribute</a></li>
 </ul></li>
-<li><a href="#Content_Type">4 Content Type</a>
+<li><a href="#content-type">4 Content Type</a>
 <ul>
-<li><a href="#kind_and_particle">4.1 kind and particle</a></li>
-<li><a href="#Empty_content">4.2 Empty content</a></li>
-<li><a href="#Text_content">4.3 Text content</a></li>
-<li><a href="#Element_content">4.4 Element content</a></li>
+<li><a href="#kind-and-particle">4.1 kind and particle</a></li>
+<li><a href="#empty-content">4.2 Empty content</a></li>
+<li><a href="#text-content">4.3 Text content</a></li>
+<li><a href="#element-content">4.4 Element content</a></li>
 </ul></li>
-<li><a href="#Particle_inference">5 Particle inference</a>
+<li><a href="#particle-inference">5 Particle inference</a>
 <ul>
-<li><a href="#Model_groups_and_particles">5.1 Model groups and particles</a></li>
-<li><a href="#Supported_patterns">5.2 Supported patterns</a></li>
-<li><a href="#Particle_inference_progress">5.3 Particle inference progress</a></li>
-<li><a href="#Element_particle_matching">5.4 Element particle matching</a></li>
+<li><a href="#model-groups-and-particles">5.1 Model groups and particles</a></li>
+<li><a href="#supported-patterns">5.2 Supported patterns</a></li>
+<li><a href="#particle-inference-progress">5.3 Particle inference progress</a></li>
+<li><a href="#element-particle-matching">5.4 Element particle matching</a></li>
 </ul></li>
-<li><a href="#Text_data_type_.28predefined_type.29_inference">6 Text data type (predefined type) inference</a></li>
-<li><a href="#That.27s_all">7 That's all</a></li>
+<li><a href="#text-data-type-predefined-type-inference">6 Text data type (predefined type) inference</a></li>
+<li><a href="#thats-all">7 That's all</a></li>
 </ul></td>
 </tr>
 </tbody>

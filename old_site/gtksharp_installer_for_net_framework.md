@@ -15,13 +15,13 @@ Gtk-Sharp Installer for .NET Framework
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a>
+<li><a href="#introduction">1 Introduction</a>
 <ul>
-<li><a href="#Gtk.23_Runtime.2FRedistributable_Installer">1.1 Gtk# Runtime/Redistributable Installer</a></li>
-<li><a href="#The_Gtk.23_SDK_Installer_for_the_.NET_Framework">1.2 The Gtk# SDK Installer for the .NET Framework</a></li>
+<li><a href="#gtk-runtimeredistributable-installer">1.1 Gtk# Runtime/Redistributable Installer</a></li>
+<li><a href="#the-gtk-sdk-installer-for-the-net-framework">1.2 The Gtk# SDK Installer for the .NET Framework</a></li>
 </ul></li>
-<li><a href="#Notes_and_Observations">2 Notes and Observations</a></li>
-<li><a href="#Obtaining_the_Installers">3 Obtaining the Installers</a></li>
+<li><a href="#notes-and-observations">2 Notes and Observations</a></li>
+<li><a href="#obtaining-the-installers">3 Obtaining the Installers</a></li>
 </ul></td>
 </tr>
 </tbody>

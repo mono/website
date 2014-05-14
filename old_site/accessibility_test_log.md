@@ -15,21 +15,21 @@ Accessibility: Test Log
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#References">1 References</a></li>
-<li><a href="#Description">2 Description</a>
+<li><a href="#references">1 References</a></li>
+<li><a href="#description">2 Description</a>
 <ul>
-<li><a href="#2.0_Release_Test_Result">2.1 2.0 Release Test Result</a>
+<li><a href="#20-release-test-result">2.1 2.0 Release Test Result</a>
 <ul>
-<li><a href="#WinformsAtkBridge">2.1.1 WinformsAtkBridge</a></li>
-<li><a href="#MoonlightAtkBridge">2.1.2 MoonlightAtkBridge</a></li>
-<li><a href="#ClientAPI-Winforms">2.1.3 ClientAPI-Winforms</a></li>
+<li><a href="#winformsatkbridge">2.1.1 WinformsAtkBridge</a></li>
+<li><a href="#moonlightatkbridge">2.1.2 MoonlightAtkBridge</a></li>
+<li><a href="#clientapi-winforms">2.1.3 ClientAPI-Winforms</a></li>
 </ul></li>
-<li><a href="#2.1_Release_Test_Result">2.2 2.1 Release Test Result</a>
+<li><a href="#21-release-test-result">2.2 2.1 Release Test Result</a>
 <ul>
-<li><a href="#WinformsAtkBridge_2">2.2.1 WinformsAtkBridge</a></li>
-<li><a href="#MoonlightAtkBridge_2">2.2.2 MoonlightAtkBridge</a></li>
-<li><a href="#ClientAPI">2.2.3 ClientAPI</a></li>
-<li><a href="#Bug_Report_List">2.2.4 Bug Report List</a></li>
+<li><a href="#winformsatkbridge_2">2.2.1 WinformsAtkBridge</a></li>
+<li><a href="#moonlightatkbridge_2">2.2.2 MoonlightAtkBridge</a></li>
+<li><a href="#clientapi">2.2.3 ClientAPI</a></li>
+<li><a href="#bug-report-list">2.2.4 Bug Report List</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

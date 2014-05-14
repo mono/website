@@ -16,23 +16,23 @@ WebTODO
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Web_Site">1 Web Site</a>
+<li><a href="#web-site">1 Web Site</a>
 <ul>
-<li><a href="#Migration">1.1 Migration</a></li>
-<li><a href="#RSS">1.2 RSS</a></li>
-<li><a href="#Layout">1.3 Layout</a></li>
-<li><a href="#Organization">1.4 Organization</a></li>
+<li><a href="#migration">1.1 Migration</a></li>
+<li><a href="#rss">1.2 RSS</a></li>
+<li><a href="#layout">1.3 Layout</a></li>
+<li><a href="#organization">1.4 Organization</a></li>
 </ul></li>
-<li><a href="#Content">2 Content</a>
+<li><a href="#content">2 Content</a>
 <ul>
-<li><a href="#Needed">2.1 Needed</a></li>
-<li><a href="#Platform_Support">2.2 Platform Support</a></li>
-<li><a href="#Database_pages">2.3 Database pages</a></li>
+<li><a href="#needed">2.1 Needed</a></li>
+<li><a href="#platform-support">2.2 Platform Support</a></li>
+<li><a href="#database-pages">2.3 Database pages</a></li>
 </ul></li>
-<li><a href="#Content_Audit">3 Content Audit</a>
+<li><a href="#content-audit">3 Content Audit</a>
 <ul>
-<li><a href="#FAQs">3.1 FAQs</a></li>
-<li><a href="#HOWTOs">3.2 HOWTOs</a></li>
+<li><a href="#faqs">3.1 FAQs</a></li>
+<li><a href="#howtos">3.2 HOWTOs</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -16,10 +16,10 @@ GtkSharp: Buttons
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Normal_Buttons">1 Normal Buttons</a></li>
-<li><a href="#Toggle_Buttons">2 Toggle Buttons</a></li>
-<li><a href="#Check_Buttons">3 Check Buttons</a></li>
-<li><a href="#Radio_Buttons">4 Radio Buttons</a></li>
+<li><a href="#normal-buttons">1 Normal Buttons</a></li>
+<li><a href="#toggle-buttons">2 Toggle Buttons</a></li>
+<li><a href="#check-buttons">3 Check Buttons</a></li>
+<li><a href="#radio-buttons">4 Radio Buttons</a></li>
 </ul></td>
 </tr>
 </tbody>

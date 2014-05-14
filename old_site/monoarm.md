@@ -25,14 +25,14 @@ Work to bind the Hildon widget set is happening [here](http://maemo.ndesk.org/)
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Packages:_Maemo">1 Packages: Maemo</a></li>
-<li><a href="#Building_Mono">2 Building Mono</a>
+<li><a href="#packages-maemo">1 Packages: Maemo</a></li>
+<li><a href="#building-mono">2 Building Mono</a>
 <ul>
-<li><a href="#With_ScratchBox">2.1 With ScratchBox</a></li>
-<li><a href="#Compiling_on_the_device">2.2 Compiling on the device</a></li>
+<li><a href="#with-scratchbox">2.1 With ScratchBox</a></li>
+<li><a href="#compiling-on-the-device">2.2 Compiling on the device</a></li>
 </ul></li>
-<li><a href="#Screenshots_and_Movies">3 Screenshots and Movies</a></li>
-<li><a href="#Techincal_Details">4 Techincal Details</a></li>
+<li><a href="#screenshots-and-movies">3 Screenshots and Movies</a></li>
+<li><a href="#techincal-details">4 Techincal Details</a></li>
 </ul></td>
 </tr>
 </tbody>

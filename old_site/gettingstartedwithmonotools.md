@@ -16,15 +16,15 @@ GettingStartedWithMonoTools
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Quick_Links">1 Quick Links</a></li>
-<li><a href="#Installing_Mono_Tools_for_Visual_Studio">2 Installing Mono Tools for Visual Studio</a>
+<li><a href="#quick-links">1 Quick Links</a></li>
+<li><a href="#installing-mono-tools-for-visual-studio">2 Installing Mono Tools for Visual Studio</a>
 <ul>
-<li><a href="#Download_Mono_Tools">2.1 Download Mono Tools</a></li>
-<li><a href="#Download_Mono_for_Windows_to_Run.2FDebug_Locally">2.2 Download Mono for Windows to Run/Debug Locally</a></li>
-<li><a href="#Download_Servers_for_Linux_and_Mac_to_Run.2FDebug_Remotely">2.3 Download Servers for Linux and Mac to Run/Debug Remotely</a></li>
-<li><a href="#Sources">2.4 Sources</a></li>
-<li><a href="#Installing_the_Windows_Software">2.5 Installing the Windows Software</a></li>
-<li><a href="#Installing_the_Linux_Server_Component_on_openSUSE_or_SLE">2.6 Installing the Linux Server Component on openSUSE or SLE</a></li>
+<li><a href="#download-mono-tools">2.1 Download Mono Tools</a></li>
+<li><a href="#download-mono-for-windows-to-rundebug-locally">2.2 Download Mono for Windows to Run/Debug Locally</a></li>
+<li><a href="#download-servers-for-linux-and-mac-to-rundebug-remotely">2.3 Download Servers for Linux and Mac to Run/Debug Remotely</a></li>
+<li><a href="#sources">2.4 Sources</a></li>
+<li><a href="#installing-the-windows-software">2.5 Installing the Windows Software</a></li>
+<li><a href="#installing-the-linux-server-component-on-opensuse-or-sle">2.6 Installing the Linux Server Component on openSUSE or SLE</a></li>
 </ul></li>
 </ul></td>
 </tr>

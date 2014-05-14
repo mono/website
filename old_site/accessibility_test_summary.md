@@ -15,20 +15,20 @@ Accessibility: Test Summary
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#References">1 References</a></li>
-<li><a href="#Test_summary_report">2 Test summary report</a>
+<li><a href="#references">1 References</a></li>
+<li><a href="#test-summary-report">2 Test summary report</a>
 <ul>
-<li><a href="#Purpose">2.1 Purpose</a></li>
-<li><a href="#Outline">2.2 Outline</a>
+<li><a href="#purpose">2.1 Purpose</a></li>
+<li><a href="#outline">2.2 Outline</a>
 <ul>
-<li><a href="#Test_summary_report_identifier">2.2.1 Test summary report identifier</a></li>
-<li><a href="#Summary">2.2.2 Summary</a></li>
-<li><a href="#Variances">2.2.3 Variances</a></li>
-<li><a href="#Comprehensiveness_assessment">2.2.4 Comprehensiveness assessment</a></li>
-<li><a href="#Summary_of_results">2.2.5 Summary of results</a></li>
-<li><a href="#Evaluation">2.2.6 Evaluation</a></li>
-<li><a href="#Summary_of_activities">2.2.7 Summary of activities</a></li>
-<li><a href="#Approvals">2.2.8 Approvals</a></li>
+<li><a href="#test-summary-report-identifier">2.2.1 Test summary report identifier</a></li>
+<li><a href="#summary">2.2.2 Summary</a></li>
+<li><a href="#variances">2.2.3 Variances</a></li>
+<li><a href="#comprehensiveness-assessment">2.2.4 Comprehensiveness assessment</a></li>
+<li><a href="#summary-of-results">2.2.5 Summary of results</a></li>
+<li><a href="#evaluation">2.2.6 Evaluation</a></li>
+<li><a href="#summary-of-activities">2.2.7 Summary of activities</a></li>
+<li><a href="#approvals">2.2.8 Approvals</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

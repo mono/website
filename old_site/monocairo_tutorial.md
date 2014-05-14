@@ -30,45 +30,45 @@ In order to follow along on your computer, you need the following things:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Cairo.27s_Drawing_Model">1 Cairo's Drawing Model</a>
+<li><a href="#cairos-drawing-model">1 Cairo's Drawing Model</a>
 <ul>
-<li><a href="#Nouns">1.1 Nouns</a>
+<li><a href="#nouns">1.1 Nouns</a>
 <ul>
-<li><a href="#Destination">1.1.1 Destination</a></li>
-<li><a href="#Source">1.1.2 Source</a></li>
-<li><a href="#Mask">1.1.3 Mask</a></li>
-<li><a href="#Path">1.1.4 Path</a></li>
-<li><a href="#Context">1.1.5 Context</a></li>
+<li><a href="#destination">1.1.1 Destination</a></li>
+<li><a href="#source">1.1.2 Source</a></li>
+<li><a href="#mask">1.1.3 Mask</a></li>
+<li><a href="#path">1.1.4 Path</a></li>
+<li><a href="#context">1.1.5 Context</a></li>
 </ul></li>
-<li><a href="#Verbs">1.2 Verbs</a>
+<li><a href="#verbs">1.2 Verbs</a>
 <ul>
-<li><a href="#Stroke">1.2.1 Stroke</a></li>
-<li><a href="#Fill">1.2.2 Fill</a></li>
-<li><a href="#Show_Text_.2F_Glyphs">1.2.3 Show Text / Glyphs</a></li>
-<li><a href="#Paint">1.2.4 Paint</a></li>
-<li><a href="#Mask_2">1.2.5 Mask</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Drawing_with_Cairo">2 Drawing with Cairo</a>
-<ul>
-<li><a href="#Preparing_and_Selecting_a_Source">2.1 Preparing and Selecting a Source</a></li>
-<li><a href="#Creating_a_Path">2.2 Creating a Path</a>
-<ul>
-<li><a href="#Moving">2.2.1 Moving</a></li>
-<li><a href="#Straight_Lines">2.2.2 Straight Lines</a></li>
-<li><a href="#Arcs">2.2.3 Arcs</a></li>
-<li><a href="#Curves">2.2.4 Curves</a></li>
-<li><a href="#Close_the_path">2.2.5 Close the path</a></li>
-<li><a href="#Text">2.2.6 Text</a></li>
+<li><a href="#stroke">1.2.1 Stroke</a></li>
+<li><a href="#fill">1.2.2 Fill</a></li>
+<li><a href="#show-text--glyphs">1.2.3 Show Text / Glyphs</a></li>
+<li><a href="#paint">1.2.4 Paint</a></li>
+<li><a href="#mask_2">1.2.5 Mask</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Understanding_Text">3 Understanding Text</a></li>
-<li><a href="#Working_with_Transforms">4 Working with Transforms</a></li>
-<li><a href="#Where_to_Go_Next">5 Where to Go Next</a></li>
-<li><a href="#Tips_and_Tricks">6 Tips and Tricks</a>
+<li><a href="#drawing-with-cairo">2 Drawing with Cairo</a>
 <ul>
-<li><a href="#Line_Width">6.1 Line Width</a></li>
-<li><a href="#Text_Alignment">6.2 Text Alignment</a></li>
+<li><a href="#preparing-and-selecting-a-source">2.1 Preparing and Selecting a Source</a></li>
+<li><a href="#creating-a-path">2.2 Creating a Path</a>
+<ul>
+<li><a href="#moving">2.2.1 Moving</a></li>
+<li><a href="#straight-lines">2.2.2 Straight Lines</a></li>
+<li><a href="#arcs">2.2.3 Arcs</a></li>
+<li><a href="#curves">2.2.4 Curves</a></li>
+<li><a href="#close-the-path">2.2.5 Close the path</a></li>
+<li><a href="#text">2.2.6 Text</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#understanding-text">3 Understanding Text</a></li>
+<li><a href="#working-with-transforms">4 Working with Transforms</a></li>
+<li><a href="#where-to-go-next">5 Where to Go Next</a></li>
+<li><a href="#tips-and-tricks">6 Tips and Tricks</a>
+<ul>
+<li><a href="#line-width">6.1 Line Width</a></li>
+<li><a href="#text-alignment">6.2 Text Alignment</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -275,7 +275,7 @@ Use `PopGroupToSource` to use it just until you select a new source, and `PopGro
 
 ### Creating a Path
 
-Cairo always has an active path. If you call [Stroke](#Stroke) it will draw the path with your line settings. If you call [Fill](#Fill) it will fill the inside of the path. But as often as not, the path is empty, and both calls will result in no change to your destination. Why is it empty so often? For one, it starts that way; but more importantly after each [Stroke](#Stroke) or [Fill](#Fill) it is emptied again to let you start building your next path.
+Cairo always has an active path. If you call [Stroke](#stroke) it will draw the path with your line settings. If you call [Fill](#fill) it will fill the inside of the path. But as often as not, the path is empty, and both calls will result in no change to your destination. Why is it empty so often? For one, it starts that way; but more importantly after each [Stroke](#stroke) or [Fill](#fill) it is emptied again to let you start building your next path.
 
 What if you want to do multiple things with the same path? For instance to draw a red rectangle with a black border, you would want to fill the rectangle path with a red source, then stroke the same path with a black source. A rectangle path is easy to create multiple times, but a lot of paths are more complex.
 
@@ -336,7 +336,7 @@ Cairo can also close the path by drawing a straight line to the beginning of the
 
 #### Text
 
-Finally text can be turned into a path with [TextPath](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f27). Paths created from text are like any other path, supporting stroke or fill operations. This path is placed anchored to the current reference point, so [MoveTo](#Moving) your desired location before turning text into a path. However there are performance concerns to doing this if you are working with a lot of text; when possible you should prefer using the verb [ShowText](#Show_Text_.2F_Glyphs) over TextPath and [Fill](http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15).
+Finally text can be turned into a path with [TextPath](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f27). Paths created from text are like any other path, supporting stroke or fill operations. This path is placed anchored to the current reference point, so [MoveTo](#moving) your desired location before turning text into a path. However there are performance concerns to doing this if you are working with a lot of text; when possible you should prefer using the verb [ShowText](#show-text--glyphs) over TextPath and [Fill](http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15).
 
 Understanding Text
 ------------------
@@ -358,7 +358,7 @@ Working with Transforms
 
 Transforms have three major uses. First they allow you to set up a coordinate system that's easy to think in and work in, yet have the output be of any size. Second they allow you to make helper functions that work at or around a (0, 0) but can be applied anywhere in the output image. Thirdly they let you deform the image, turning a circular arc into an elliptical arc, etc. Transforms are a way of setting up a relation between two coordinate systems. The device-space coordinate system is tied to the surface, and cannot change. The user-space coordinate system matches that space by default, but can be changed for the above reasons. The helper functions [TransformPoint](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f53) and [TransformDistance](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f54) tell you what the device-coordinates are for a user-coordinates position or distance. Correspondingly [InverseTransformPoint](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f55) and [InverseTransformDistance](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f56) tell you user-coordinates for a device-coordinates position or distance. Remember to send positions through the non-distance variant, and relative moves or other distances through the distance variant.
 
-I leverage all of these reasons to draw the diagrams in this document. Whether I'm drawing 120 x 120 or 600 x 600, I use [Scale](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f21) to give me a 1.0 x 1.0 workspace. To place the results along the right column, such as in the discussion of [cairo's drawing model](#Drawing_Model), I use [Translate](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f22). And to add the perspective view for the overlapping layers, I set up an arbitrary deformation with [Transform](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f52).
+I leverage all of these reasons to draw the diagrams in this document. Whether I'm drawing 120 x 120 or 600 x 600, I use [Scale](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f21) to give me a 1.0 x 1.0 workspace. To place the results along the right column, such as in the discussion of [cairo's drawing model](#drawing-model), I use [Translate](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f22). And to add the perspective view for the overlapping layers, I set up an arbitrary deformation with [Transform](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f52).
 
 To understand your transforms, read them bottom to top, applying them to the point you're drawing. To figure out which transforms to create, think through this process in reverse. For example if I want my 1.0 x 1.0 workspace to be 100 x 100 pixels in the middle of a 120 x 120 pixel surface, I can set it up one of three ways:
 

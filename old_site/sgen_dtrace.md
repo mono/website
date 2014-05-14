@@ -17,12 +17,12 @@ On MacOS X Mono's [Generational GC]({{site.github.url}}/old_site/Generational_GC
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Probes">1 The Probes</a></li>
-<li><a href="#Example_scripts">2 Example scripts</a>
+<li><a href="#the-probes">1 The Probes</a></li>
+<li><a href="#example-scripts">2 Example scripts</a>
 <ul>
-<li><a href="#Garbage_collection_times">2.1 Garbage collection times</a></li>
-<li><a href="#GC_lock">2.2 GC lock</a></li>
-<li><a href="#Objects_pinned_in_the_nursery">2.3 Objects pinned in the nursery</a></li>
+<li><a href="#garbage-collection-times">2.1 Garbage collection times</a></li>
+<li><a href="#gc-lock">2.2 GC lock</a></li>
+<li><a href="#objects-pinned-in-the-nursery">2.3 Objects pinned in the nursery</a></li>
 </ul></li>
 </ul></td>
 </tr>

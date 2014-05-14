@@ -15,10 +15,10 @@ Release Notes Mono 2.10.8.1
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Beta">1 Beta</a></li>
-<li><a href="#Differences_Between_Stable_and_Beta">2 Differences Between Stable and Beta</a></li>
-<li><a href="#MacOS_Updates">3 MacOS Updates</a></li>
-<li><a href="#Changes">4 Changes</a></li>
+<li><a href="#beta">1 Beta</a></li>
+<li><a href="#differences-between-stable-and-beta">2 Differences Between Stable and Beta</a></li>
+<li><a href="#macos-updates">3 MacOS Updates</a></li>
+<li><a href="#changes">4 Changes</a></li>
 </ul></td>
 </tr>
 </tbody>

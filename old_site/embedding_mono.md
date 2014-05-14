@@ -21,40 +21,40 @@ For a general overview of why you would like to embed Mono in your application s
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Source_Code">1 Source Code</a></li>
-<li><a href="#How_Embedding_Works">2 How Embedding Works</a></li>
-<li><a href="#Embedding_the_Runtime">3 Embedding the Runtime</a>
+<li><a href="#source-code">1 Source Code</a></li>
+<li><a href="#how-embedding-works">2 How Embedding Works</a></li>
+<li><a href="#embedding-the-runtime">3 Embedding the Runtime</a>
 <ul>
-<li><a href="#Compiling_and_Linking">3.1 Compiling and Linking</a></li>
-<li><a href="#Initializing_the_Mono_runtime">3.2 Initializing the Mono runtime</a>
+<li><a href="#compiling-and-linking">3.1 Compiling and Linking</a></li>
+<li><a href="#initializing-the-mono-runtime">3.2 Initializing the Mono runtime</a>
 <ul>
-<li><a href="#Configuring_the_Runtime">3.2.1 Configuring the Runtime</a></li>
+<li><a href="#configuring-the-runtime">3.2.1 Configuring the Runtime</a></li>
 </ul></li>
-<li><a href="#Shutting_down_the_runtime">3.3 Shutting down the runtime</a></li>
-<li><a href="#Exposing_C_code_to_the_CIL_universe">3.4 Exposing C code to the CIL universe</a></li>
-<li><a href="#Windows_Considerations">3.5 Windows Considerations</a></li>
+<li><a href="#shutting-down-the-runtime">3.3 Shutting down the runtime</a></li>
+<li><a href="#exposing-c-code-to-the-cil-universe">3.4 Exposing C code to the CIL universe</a></li>
+<li><a href="#windows-considerations">3.5 Windows Considerations</a></li>
 </ul></li>
-<li><a href="#Updates_for_Mono_version_2.8.2B">4 Updates for Mono version 2.8+</a></li>
-<li><a href="#Invoking_Methods_in_the_CIL_universe">5 Invoking Methods in the CIL universe</a>
+<li><a href="#updates-for-mono-version-28">4 Updates for Mono version 2.8+</a></li>
+<li><a href="#invoking-methods-in-the-cil-universe">5 Invoking Methods in the CIL universe</a>
 <ul>
-<li><a href="#Invoking_a_Method">5.1 Invoking a Method</a>
+<li><a href="#invoking-a-method">5.1 Invoking a Method</a>
 <ul>
-<li><a href="#Creating_objects">5.1.1 Creating objects</a></li>
-<li><a href="#Data_types">5.1.2 Data types</a></li>
-<li><a href="#Unmanaged_to_Managed_Thunks">5.1.3 Unmanaged to Managed Thunks</a></li>
-<li><a href="#C.23_to_C_delegate_registration">5.1.4 C# to C delegate registration</a></li>
+<li><a href="#creating-objects">5.1.1 Creating objects</a></li>
+<li><a href="#data-types">5.1.2 Data types</a></li>
+<li><a href="#unmanaged-to-managed-thunks">5.1.3 Unmanaged to Managed Thunks</a></li>
+<li><a href="#c-to-c-delegate-registration">5.1.4 C# to C delegate registration</a></li>
 </ul></li>
-<li><a href="#Threading_issues">5.2 Threading issues</a></li>
-<li><a href="#Signal_handling">5.3 Signal handling</a></li>
+<li><a href="#threading-issues">5.2 Threading issues</a></li>
+<li><a href="#signal-handling">5.3 Signal handling</a></li>
 </ul></li>
-<li><a href="#API_Documentation">6 API Documentation</a></li>
-<li><a href="#Common_Problems">7 Common Problems</a>
+<li><a href="#api-documentation">6 API Documentation</a></li>
+<li><a href="#common-problems">7 Common Problems</a>
 <ul>
-<li><a href="#Threads">7.1 Threads</a></li>
-<li><a href="#Missing_functionality">7.2 Missing functionality</a></li>
-<li><a href="#Chicken.2FEgg">7.3 Chicken/Egg</a></li>
+<li><a href="#threads">7.1 Threads</a></li>
+<li><a href="#missing-functionality">7.2 Missing functionality</a></li>
+<li><a href="#chickenegg">7.3 Chicken/Egg</a></li>
 </ul></li>
-<li><a href="#Samples">8 Samples</a></li>
+<li><a href="#samples">8 Samples</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -194,7 +194,7 @@ To start executing code, you must invoke a method in the assembly, or if you hav
 
 Make sure you always provide a Main() method and execute it with mono\_jit\_exec() at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
 
-If you want to invoke a different method, look at the [\`Invoking Methods in the CIL universe'](#Invoking_Methods_in_the_CIL_universe) section.
+If you want to invoke a different method, look at the [\`Invoking Methods in the CIL universe'](#invoking-methods-in-the-cil-universe) section.
 
 Certain features of the runtime like Dll remapping depend on a configuration file, to load the configuration file, just add:
 

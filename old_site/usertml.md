@@ -15,11 +15,11 @@ User:Tml
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#It.27s_a_wiki.21">1 It's a wiki!</a></li>
-<li><a href="#Tom_McLaughlin">2 Tom McLaughlin</a>
+<li><a href="#its-a-wiki">1 It's a wiki!</a></li>
+<li><a href="#tom-mclaughlin">2 Tom McLaughlin</a>
 <ul>
-<li><a href="#Who_am_I.3F">2.1 Who am I?</a></li>
-<li><a href="#FreeBSD.2C_Mono.2C_and_Me">2.2 FreeBSD, Mono, and Me</a></li>
+<li><a href="#who-am-i">2.1 Who am I?</a></li>
+<li><a href="#freebsd-mono-and-me">2.2 FreeBSD, Mono, and Me</a></li>
 </ul></li>
 </ul></td>
 </tr>

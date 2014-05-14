@@ -15,12 +15,12 @@ Accessibility: Client API Functional Specification
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#UIA_Client_API_Functional_Specification">1 UIA Client API Functional Specification</a>
+<li><a href="#uia-client-api-functional-specification">1 UIA Client API Functional Specification</a>
 <ul>
-<li><a href="#Approach">1.1 Approach</a></li>
-<li><a href="#Winforms_Apps">1.2 Winforms Apps</a></li>
-<li><a href="#Silverlight_Apps">1.3 Silverlight Apps</a></li>
-<li><a href="#Linux_Apps_.28via_at-spi.29">1.4 Linux Apps (via at-spi)</a></li>
+<li><a href="#approach">1.1 Approach</a></li>
+<li><a href="#winforms-apps">1.2 Winforms Apps</a></li>
+<li><a href="#silverlight-apps">1.3 Silverlight Apps</a></li>
+<li><a href="#linux-apps-via-at-spi">1.4 Linux Apps (via at-spi)</a></li>
 </ul></li>
 </ul></td>
 </tr>

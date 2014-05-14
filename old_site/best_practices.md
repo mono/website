@@ -17,27 +17,27 @@ Best Practices
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#C.23_2.0">1 C# 2.0</a></li>
-<li><a href="#Threading">2 Threading</a>
+<li><a href="#c-20">1 C# 2.0</a></li>
+<li><a href="#threading">2 Threading</a>
 <ul>
-<li><a href="#Gtk.23_and_Threading">2.1 Gtk# and Threading</a>
+<li><a href="#gtk-and-threading">2.1 Gtk# and Threading</a>
 <ul>
-<li><a href="#Running_code_on_the_Gtk_main_loop_thread">2.1.1 Running code on the Gtk main loop thread</a></li>
-<li><a href="#Avoid_Gdk_locking">2.1.2 Avoid Gdk locking</a></li>
+<li><a href="#running-code-on-the-gtk-main-loop-thread">2.1.1 Running code on the Gtk main loop thread</a></li>
+<li><a href="#avoid-gdk-locking">2.1.2 Avoid Gdk locking</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Platform_Invoke">3 Platform Invoke</a></li>
-<li><a href="#Execution">4 Execution</a>
+<li><a href="#platform-invoke">3 Platform Invoke</a></li>
+<li><a href="#execution">4 Execution</a>
 <ul>
-<li><a href="#MONO_PATH">4.1 MONO_PATH</a></li>
+<li><a href="#mono-path">4.1 MONO_PATH</a></li>
 </ul></li>
-<li><a href="#Cryptography">5 Cryptography</a>
+<li><a href="#cryptography">5 Cryptography</a>
 <ul>
-<li><a href="#Creating_instances_of_cryptographic_classes">5.1 Creating instances of cryptographic classes</a>
+<li><a href="#creating-instances-of-cryptographic-classes">5.1 Creating instances of cryptographic classes</a>
 <ul>
-<li><a href="#Example">5.1.1 Example</a></li>
+<li><a href="#example">5.1.1 Example</a></li>
 </ul></li>
-<li><a href="#Development_Tools">5.2 Development Tools</a></li>
+<li><a href="#development-tools">5.2 Development Tools</a></li>
 </ul></li>
 </ul></td>
 </tr>

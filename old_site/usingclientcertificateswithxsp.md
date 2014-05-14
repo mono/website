@@ -15,28 +15,28 @@ UsingClientCertificatesWithXSP
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Prerequisites">2 Prerequisites</a></li>
-<li><a href="#Creating_a_test_page">3 Creating a test page</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#prerequisites">2 Prerequisites</a></li>
+<li><a href="#creating-a-test-page">3 Creating a test page</a>
 <ul>
-<li><a href="#First_test">3.1 First test</a></li>
+<li><a href="#first-test">3.1 First test</a></li>
 </ul></li>
-<li><a href="#Setting_up_XSP_for_SSL_support">4 Setting up XSP for SSL support</a>
+<li><a href="#setting-up-xsp-for-ssl-support">4 Setting up XSP for SSL support</a>
 <ul>
-<li><a href="#Creating_the_server_certificate">4.1 Creating the server certificate</a></li>
-<li><a href="#Testing_the_SSL_connection">4.2 Testing the SSL connection</a></li>
+<li><a href="#creating-the-server-certificate">4.1 Creating the server certificate</a></li>
+<li><a href="#testing-the-ssl-connection">4.2 Testing the SSL connection</a></li>
 </ul></li>
-<li><a href="#Client_side_certificates">5 Client side certificates</a>
+<li><a href="#client-side-certificates">5 Client side certificates</a>
 <ul>
-<li><a href="#Creating_client_certificates">5.1 Creating client certificates</a></li>
-<li><a href="#Testing">5.2 Testing</a>
+<li><a href="#creating-client-certificates">5.1 Creating client certificates</a></li>
+<li><a href="#testing">5.2 Testing</a>
 <ul>
-<li><a href="#Firefox">5.2.1 Firefox</a></li>
+<li><a href="#firefox">5.2.1 Firefox</a></li>
 <li><a href="#wget">5.2.2 wget</a></li>
-<li><a href="#System.Net.HttpWebRequest">5.2.3 System.Net.HttpWebRequest</a></li>
+<li><a href="#systemnethttpwebrequest">5.2.3 System.Net.HttpWebRequest</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Conclusion">6 Conclusion</a></li>
+<li><a href="#conclusion">6 Conclusion</a></li>
 </ul></td>
 </tr>
 </tbody>

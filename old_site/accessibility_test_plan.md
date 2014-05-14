@@ -15,60 +15,60 @@ Accessibility: Test Plan
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Scope">1 Scope</a></li>
-<li><a href="#References">2 References</a></li>
-<li><a href="#QA_Meetings">3 QA Meetings</a></li>
-<li><a href="#Definitions">4 Definitions</a></li>
-<li><a href="#Test_plan">5 Test plan</a>
+<li><a href="#scope">1 Scope</a></li>
+<li><a href="#references">2 References</a></li>
+<li><a href="#qa-meetings">3 QA Meetings</a></li>
+<li><a href="#definitions">4 Definitions</a></li>
+<li><a href="#test-plan">5 Test plan</a>
 <ul>
-<li><a href="#Purpose">5.1 Purpose</a></li>
-<li><a href="#Outline">5.2 Outline</a>
+<li><a href="#purpose">5.1 Purpose</a></li>
+<li><a href="#outline">5.2 Outline</a>
 <ul>
-<li><a href="#Test_plan_identifier">5.2.1 Test plan identifier</a></li>
-<li><a href="#Introduction">5.2.2 Introduction</a></li>
-<li><a href="#Test_items">5.2.3 Test items</a></li>
-<li><a href="#Software_risk_issues">5.2.4 Software risk issues</a></li>
-<li><a href="#Features_to_be_tested">5.2.5 Features to be tested</a>
+<li><a href="#test-plan-identifier">5.2.1 Test plan identifier</a></li>
+<li><a href="#introduction">5.2.2 Introduction</a></li>
+<li><a href="#test-items">5.2.3 Test items</a></li>
+<li><a href="#software-risk-issues">5.2.4 Software risk issues</a></li>
+<li><a href="#features-to-be-tested">5.2.5 Features to be tested</a>
 <ul>
-<li><a href="#WinForms">5.2.5.1 WinForms</a></li>
-<li><a href="#Moonlight">5.2.5.2 Moonlight</a></li>
-<li><a href="#UIA_Provider">5.2.5.3 UIA Provider</a></li>
-<li><a href="#UIA.2FATK_Bridge">5.2.5.4 UIA/ATK Bridge</a></li>
-<li><a href="#UIA.2FAT-SPI_Bridge">5.2.5.5 UIA/AT-SPI Bridge</a></li>
-<li><a href="#UIA_Client_API">5.2.5.6 UIA Client API</a></li>
+<li><a href="#winforms">5.2.5.1 WinForms</a></li>
+<li><a href="#moonlight">5.2.5.2 Moonlight</a></li>
+<li><a href="#uia-provider">5.2.5.3 UIA Provider</a></li>
+<li><a href="#uiaatk-bridge">5.2.5.4 UIA/ATK Bridge</a></li>
+<li><a href="#uiaat-spi-bridge">5.2.5.5 UIA/AT-SPI Bridge</a></li>
+<li><a href="#uia-client-api">5.2.5.6 UIA Client API</a></li>
 </ul></li>
-<li><a href="#Features_not_to_be_tested">5.2.6 Features not to be tested</a></li>
-<li><a href="#Approach">5.2.7 Approach</a>
+<li><a href="#features-not-to-be-tested">5.2.6 Features not to be tested</a></li>
+<li><a href="#approach">5.2.7 Approach</a>
 <ul>
-<li><a href="#WinForms_Testing">5.2.7.1 WinForms Testing</a></li>
-<li><a href="#Moonlight_Testing">5.2.7.2 Moonlight Testing</a></li>
-<li><a href="#UIAutomation_Client_API_Testing">5.2.7.3 UIAutomation Client API Testing</a></li>
-<li><a href="#General_Guidelines">5.2.7.4 General Guidelines</a></li>
+<li><a href="#winforms-testing">5.2.7.1 WinForms Testing</a></li>
+<li><a href="#moonlight-testing">5.2.7.2 Moonlight Testing</a></li>
+<li><a href="#uiautomation-client-api-testing">5.2.7.3 UIAutomation Client API Testing</a></li>
+<li><a href="#general-guidelines">5.2.7.4 General Guidelines</a></li>
 </ul></li>
-<li><a href="#Item_pass.2Ffail_criteria">5.2.8 Item pass/fail criteria</a></li>
-<li><a href="#Suspension_criteria_and_resumption_requirements">5.2.9 Suspension criteria and resumption requirements</a></li>
-<li><a href="#Test_deliverables">5.2.10 Test deliverables</a></li>
-<li><a href="#Testing_preparation_and_setup">5.2.11 Testing preparation and setup</a></li>
-<li><a href="#Environmental_needs">5.2.12 Environmental needs</a></li>
-<li><a href="#Responsibilities">5.2.13 Responsibilities</a>
+<li><a href="#item-passfail-criteria">5.2.8 Item pass/fail criteria</a></li>
+<li><a href="#suspension-criteria-and-resumption-requirements">5.2.9 Suspension criteria and resumption requirements</a></li>
+<li><a href="#test-deliverables">5.2.10 Test deliverables</a></li>
+<li><a href="#testing-preparation-and-setup">5.2.11 Testing preparation and setup</a></li>
+<li><a href="#environmental-needs">5.2.12 Environmental needs</a></li>
+<li><a href="#responsibilities">5.2.13 Responsibilities</a>
 <ul>
-<li><a href="#Test_Suit">5.2.13.1 Test Suit</a></li>
-<li><a href="#WinForms_2">5.2.13.2 WinForms</a></li>
-<li><a href="#MoonLight_2">5.2.13.3 MoonLight</a></li>
-<li><a href="#UIAutomation_Client_API">5.2.13.4 UIAutomation Client API</a></li>
+<li><a href="#test-suit">5.2.13.1 Test Suit</a></li>
+<li><a href="#winforms_2">5.2.13.2 WinForms</a></li>
+<li><a href="#moonlight_2">5.2.13.3 MoonLight</a></li>
+<li><a href="#uiautomation-client-api">5.2.13.4 UIAutomation Client API</a></li>
 </ul></li>
-<li><a href="#Staffing_and_training_needs">5.2.14 Staffing and training needs</a>
+<li><a href="#staffing-and-training-needs">5.2.14 Staffing and training needs</a>
 <ul>
-<li><a href="#Training_Plan">5.2.14.1 Training Plan</a></li>
+<li><a href="#training-plan">5.2.14.1 Training Plan</a></li>
 </ul></li>
-<li><a href="#Schedule">5.2.15 Schedule</a>
+<li><a href="#schedule">5.2.15 Schedule</a>
 <ul>
-<li><a href="#WinForms_3">5.2.15.1 WinForms</a></li>
-<li><a href="#MoonLight_3">5.2.15.2 MoonLight</a></li>
-<li><a href="#Client_API">5.2.15.3 Client API</a></li>
+<li><a href="#winforms_3">5.2.15.1 WinForms</a></li>
+<li><a href="#moonlight_3">5.2.15.2 MoonLight</a></li>
+<li><a href="#client-api">5.2.15.3 Client API</a></li>
 </ul></li>
-<li><a href="#Risks_and_contingencies">5.2.16 Risks and contingencies</a></li>
-<li><a href="#Approvals">5.2.17 Approvals</a></li>
+<li><a href="#risks-and-contingencies">5.2.16 Risks and contingencies</a></li>
+<li><a href="#approvals">5.2.17 Approvals</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -192,7 +192,7 @@ Developers are also tracking problems they encounter:
 
 We plan to test all Functionalities of WinForms controls those have been mentioned in [Provider\_Functional\_Specification](http://monouia.wik.is/Provider_Functional_Specification) and [Bridge\_Functional\_Specification]({{site.github.url}}/Accessibility:_Bridge_Functional_Specification).
 
-According to Q2 2008 of the [Accessibility\#Roadmap roadmap]({{site.github.url}}/old_site/Accessibility#Roadmap_roadmap "Accessibility"), testing contents need relate with below info:
+According to Q2 2008 of the [Accessibility\#Roadmap roadmap]({{site.github.url}}/old_site/Accessibility#roadmap-roadmap "Accessibility"), testing contents need relate with below info:
 
 -   The WinForms sheet in [WinForms Controls list]({{site.github.url}}/Accessibility:_Test_Plan_WinForms_Controls) defines which WinForms controls will be implemented and therefore need to be tested.
 -   Create WinForms application samples to test against. These application samples should be written in IronPython. Our sample applications can be found at [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk) /test/samples. Some C\# samples (that can be translated) can be checked out via svn from [http://anonsvn.mono-project.com/viewvc/trunk/winforms](http://anonsvn.mono-project.com/viewvc/trunk/winforms).
@@ -280,15 +280,15 @@ At this time we plan to test all features exhaustively.
 
 ##### WinForms Testing
 
-The accessibility of WinForms applications will be tested using Strongwind tests and WinForms sample applications. A test harness has also been developed to facilitate the execution and logging of a suite of tests. For more information see the [WinForms portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#WinForms "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+The accessibility of WinForms applications will be tested using Strongwind tests and WinForms sample applications. A test harness has also been developed to facilitate the execution and logging of a suite of tests. For more information see the [WinForms portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#winforms "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
 
 ##### Moonlight Testing
 
-The accessibility of Moonlight applications will be tested using Strongwind tests and Moonlight sample applications. Moonlight application will be writted in C\#. For more information see the [Moonlight portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#Moonlight "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+The accessibility of Moonlight applications will be tested using Strongwind tests and Moonlight sample applications. Moonlight application will be writted in C\#. For more information see the [Moonlight portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#moonlight "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
 
 ##### UIAutomation Client API Testing
 
-WinForms, Moonlight and Gtk+ applications will be tested using White framework. For more information of how to create White test please see [ClientAPI portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#ClientAPI "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+WinForms, Moonlight and Gtk+ applications will be tested using White framework. For more information of how to create White test please see [ClientAPI portion]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#clientapi "Accessibility: Testing Howto") of the [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
 
 ##### General Guidelines
 
@@ -301,7 +301,7 @@ WinForms, Moonlight and Gtk+ applications will be tested using White framework. 
 -   Types of system testing include function, performance, security, load, reliability, usability, documentation testing.
 -   Acceptance criteria for patch acceptance: Before a patch is accepted, a QA engineer must ensure that the patch submitted from developer passes QA testing. A build engineer must ensure the patch builds properly and meets packaging standards. QA and build engineers will then create a patch acceptance report, and the patch can be included in the product.
 -   Testers may perform system testing on the product only after development has verified that they have completed a development milestone and the build team has created a stable release.
--   WinForms samples will be created in C\#, Boo, or IronPython(here we chose IronPython). Automation scripts, that test the accessibility of the WinForms apps will be created in CPython. [Strongwind]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#Strongwind "Accessibility: Testing Howto") and [Orca Regression Tests]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#Orca "Accessibility: Testing Howto") will be used for the automation scripts.
+-   WinForms samples will be created in C\#, Boo, or IronPython(here we chose IronPython). Automation scripts, that test the accessibility of the WinForms apps will be created in CPython. [Strongwind]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#strongwind "Accessibility: Testing Howto") and [Orca Regression Tests]({{site.github.url}}/old_site/Accessibility:_Testing_Howto#orca "Accessibility: Testing Howto") will be used for the automation scripts.
 -   No regularly scheduled meetings at this time
 -   Minor editing (grammar and spelling corrections) of this test plan can be done at any time. Any change to the test plan that changes how the product will be tested shall be approved by the QA team who will determine if the changes are large enough to require a change to the test plan identifier.
 -   Black box and white box testing methods are both acceptable. However, it is anticipated that black box testing will be the norm.
@@ -328,7 +328,7 @@ Criteria for Test Components:
 |ATKBridge| ?||
 |ATSPIBridge| ?||
 
-Individual test case pass/fail criterion is defined by the automated script which performs the testing. Upon failure of a test case, the script should will log the failure. For exit criteria, see [Approach]({{site.github.url}}/old_site/Accessibility:_Test_Plan#Approach "Accessibility: Test Plan").
+Individual test case pass/fail criterion is defined by the automated script which performs the testing. Upon failure of a test case, the script should will log the failure. For exit criteria, see [Approach]({{site.github.url}}/old_site/Accessibility:_Test_Plan#approach "Accessibility: Test Plan").
 
 #### Suspension criteria and resumption requirements
 

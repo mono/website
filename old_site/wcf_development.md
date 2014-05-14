@@ -17,39 +17,39 @@ WCF Development
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Brief_History">1 Brief History</a></li>
-<li><a href="#Status">2 Status</a>
+<li><a href="#brief-history">1 Brief History</a></li>
+<li><a href="#status">2 Status</a>
 <ul>
-<li><a href="#Summary">2.1 Summary</a></li>
-<li><a href="#Tasks_remaining">2.2 Tasks remaining</a></li>
+<li><a href="#summary">2.1 Summary</a></li>
+<li><a href="#tasks-remaining">2.2 Tasks remaining</a></li>
 </ul></li>
-<li><a href="#Components_with_no_plan_to_support">3 Components with no plan to support</a></li>
-<li><a href="#Known_issues">4 Known issues</a></li>
-<li><a href="#Status_Details">5 Status Details</a>
+<li><a href="#components-with-no-plan-to-support">3 Components with no plan to support</a></li>
+<li><a href="#known-issues">4 Known issues</a></li>
+<li><a href="#status-details">5 Status Details</a>
 <ul>
-<li><a href="#Other_than_System.ServiceModel.dll">5.1 Other than System.ServiceModel.dll</a></li>
-<li><a href="#System.ServiceModel.dll">5.2 System.ServiceModel.dll</a>
+<li><a href="#other-than-systemservicemodeldll">5.1 Other than System.ServiceModel.dll</a></li>
+<li><a href="#systemservicemodeldll">5.2 System.ServiceModel.dll</a>
 <ul>
-<li><a href="#Binding_Elements">5.2.1 Binding Elements</a>
+<li><a href="#binding-elements">5.2.1 Binding Elements</a>
 <ul>
-<li><a href="#Message_encodings">5.2.1.1 Message encodings</a></li>
-<li><a href="#Transports">5.2.1.2 Transports</a></li>
-<li><a href="#Everything_else">5.2.1.3 Everything else</a></li>
+<li><a href="#message-encodings">5.2.1.1 Message encodings</a></li>
+<li><a href="#transports">5.2.1.2 Transports</a></li>
+<li><a href="#everything-else">5.2.1.3 Everything else</a></li>
 </ul></li>
-<li><a href="#Communication_objects">5.2.2 Communication objects</a>
+<li><a href="#communication-objects">5.2.2 Communication objects</a>
 <ul>
-<li><a href="#Core_of_IChannelFactory.2C_IChannelListener_and_ChannelBase">5.2.2.1 Core of IChannelFactory, IChannelListener and ChannelBase</a></li>
+<li><a href="#core-of-ichannelfactory-ichannellistener-and-channelbase">5.2.2.1 Core of IChannelFactory, IChannelListener and ChannelBase</a></li>
 </ul></li>
-<li><a href="#Service_and_contract_description.2C_and_proxies">5.2.3 Service and contract description, and proxies</a>
+<li><a href="#service-and-contract-description-and-proxies">5.2.3 Service and contract description, and proxies</a>
 <ul>
-<li><a href="#ContractDescription">5.2.3.1 ContractDescription</a></li>
-<li><a href="#WSDL_support">5.2.3.2 WSDL support</a></li>
-<li><a href="#IContextChannel_.28ChannelFactory_and_ClientBase.29">5.2.3.3 IContextChannel (ChannelFactory and ClientBase)</a></li>
+<li><a href="#contractdescription">5.2.3.1 ContractDescription</a></li>
+<li><a href="#wsdl-support">5.2.3.2 WSDL support</a></li>
+<li><a href="#icontextchannel-channelfactory-and-clientbase">5.2.3.3 IContextChannel (ChannelFactory and ClientBase)</a></li>
 </ul></li>
-<li><a href="#Security_stack">5.2.4 Security stack</a></li>
-<li><a href="#Not_supported">5.2.5 Not supported</a></li>
+<li><a href="#security-stack">5.2.4 Security stack</a></li>
+<li><a href="#not-supported">5.2.5 Not supported</a></li>
 </ul></li>
-<li><a href="#Old_Milestones_and_status_.28for_reference.29">5.3 Old Milestones and status (for reference)</a></li>
+<li><a href="#old-milestones-and-status-for-reference">5.3 Old Milestones and status (for reference)</a></li>
 </ul></li>
 </ul></td>
 </tr>

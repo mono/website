@@ -25,7 +25,7 @@ We encourage developers to use our software and help us make it a stable, featur
 Quick Resources:
 
 -   [Xamarin's Bugzilla](http://bugzilla.xamarin.com/index.cgi)
--   [How to make a good bug report](#How_to_make_a_good_bug_report)
+-   [How to make a good bug report](#how-to-make-a-good-bug-report)
 
 Query
 

@@ -16,12 +16,12 @@ Small footprint
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#How_to_make_a_smaller_Mono_install">1 How to make a smaller Mono install</a>
+<li><a href="#how-to-make-a-smaller-mono-install">1 How to make a smaller Mono install</a>
 <ul>
-<li><a href="#Removing_unneeded_features">1.1 Removing unneeded features</a></li>
-<li><a href="#Removing_unneeded_data">1.2 Removing unneeded data</a></li>
-<li><a href="#Compilation_hints">1.3 Compilation hints</a></li>
-<li><a href="#Reducing_code_in_assemblies">1.4 Reducing code in assemblies</a></li>
+<li><a href="#removing-unneeded-features">1.1 Removing unneeded features</a></li>
+<li><a href="#removing-unneeded-data">1.2 Removing unneeded data</a></li>
+<li><a href="#compilation-hints">1.3 Compilation hints</a></li>
+<li><a href="#reducing-code-in-assemblies">1.4 Reducing code in assemblies</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -38,43 +38,43 @@ The /blog url will be sent to the mod-mono-server that is ran by the marketing g
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Requirements">1 Requirements</a></li>
-<li><a href="#Distribution-Specific_Documentation">2 Distribution-Specific Documentation</a></li>
-<li><a href="#Easy_Configuration_of_Mod_Mono">3 Easy Configuration of Mod_Mono</a></li>
-<li><a href="#Apache_performance_tweaks">4 Apache performance tweaks</a>
+<li><a href="#requirements">1 Requirements</a></li>
+<li><a href="#distribution-specific-documentation">2 Distribution-Specific Documentation</a></li>
+<li><a href="#easy-configuration-of-mod-mono">3 Easy Configuration of Mod_Mono</a></li>
+<li><a href="#apache-performance-tweaks">4 Apache performance tweaks</a>
 <ul>
-<li><a href="#Keep_alive">4.1 Keep alive</a></li>
-<li><a href="#MPM_worker">4.2 MPM worker</a></li>
+<li><a href="#keep-alive">4.1 Keep alive</a></li>
+<li><a href="#mpm-worker">4.2 MPM worker</a></li>
 </ul></li>
-<li><a href="#Configuring_Mod_Mono">5 Configuring Mod_Mono</a>
+<li><a href="#configuring-mod-mono">5 Configuring Mod_Mono</a>
 <ul>
-<li><a href="#Mod_Mono_Configuration_Tool">5.1 Mod_Mono Configuration Tool</a></li>
-<li><a href="#Manual_Mod_Mono_Configuration">5.2 Manual Mod_Mono Configuration</a></li>
-<li><a href="#More_on_Applications">5.3 More on Applications</a></li>
-<li><a href="#Multiple_Applications.2C_Multiple_mod-mono-servers">5.4 Multiple Applications, Multiple mod-mono-servers</a></li>
-<li><a href="#Control_panel">5.5 Control panel</a></li>
+<li><a href="#mod-mono-configuration-tool">5.1 Mod_Mono Configuration Tool</a></li>
+<li><a href="#manual-mod-mono-configuration">5.2 Manual Mod_Mono Configuration</a></li>
+<li><a href="#more-on-applications">5.3 More on Applications</a></li>
+<li><a href="#multiple-applications-multiple-mod-mono-servers">5.4 Multiple Applications, Multiple mod-mono-servers</a></li>
+<li><a href="#control-panel">5.5 Control panel</a></li>
 </ul></li>
-<li><a href="#Advanced_options">6 Advanced options</a>
+<li><a href="#advanced-options">6 Advanced options</a>
 <ul>
-<li><a href="#Automatic_restart_of_the_mod-mono-server_backend">6.1 Automatic restart of the mod-mono-server backend</a></li>
-<li><a href="#Limiting_the_number_of_concurrent_requests">6.2 Limiting the number of concurrent requests</a></li>
-<li><a href="#Setting_hard_memory_and_time_limits">6.3 Setting hard memory and time limits</a></li>
-<li><a href="#Unix_and_TCP_sockets">6.4 Unix and TCP sockets</a></li>
-<li><a href="#Paths">6.5 Paths</a></li>
+<li><a href="#automatic-restart-of-the-mod-mono-server-backend">6.1 Automatic restart of the mod-mono-server backend</a></li>
+<li><a href="#limiting-the-number-of-concurrent-requests">6.2 Limiting the number of concurrent requests</a></li>
+<li><a href="#setting-hard-memory-and-time-limits">6.3 Setting hard memory and time limits</a></li>
+<li><a href="#unix-and-tcp-sockets">6.4 Unix and TCP sockets</a></li>
+<li><a href="#paths">6.5 Paths</a></li>
 </ul></li>
-<li><a href="#Troubleshooting">7 Troubleshooting</a>
+<li><a href="#troubleshooting">7 Troubleshooting</a>
 <ul>
-<li><a href="#ASP.NET_2_applications_do_not_work">7.1 ASP.NET 2 applications do not work</a></li>
-<li><a href="#Access_forbidden">7.2 Access forbidden</a></li>
-<li><a href="#mod-mono-server_does_not_start">7.3 mod-mono-server does not start</a></li>
-<li><a href="#Restarting_apache_does_not_kill_the_spawned_mod-mono-server.exe.28s.29">7.4 Restarting apache does not kill the spawned mod-mono-server.exe(s)</a></li>
-<li><a href="#Problems_with_mod_mono_and_cookie-less_sessions">7.5 Problems with mod_mono and cookie-less sessions</a></li>
-<li><a href="#Under_high_load.2C_mono_process_consumes_a_lot_of_memory.2C_website_stops_responding">7.6 Under high load, mono process consumes a lot of memory, website stops responding</a></li>
+<li><a href="#aspnet-2-applications-do-not-work">7.1 ASP.NET 2 applications do not work</a></li>
+<li><a href="#access-forbidden">7.2 Access forbidden</a></li>
+<li><a href="#mod-mono-server-does-not-start">7.3 mod-mono-server does not start</a></li>
+<li><a href="#restarting-apache-does-not-kill-the-spawned-mod-mono-serverexes">7.4 Restarting apache does not kill the spawned mod-mono-server.exe(s)</a></li>
+<li><a href="#problems-with-mod-mono-and-cookie-less-sessions">7.5 Problems with mod_mono and cookie-less sessions</a></li>
+<li><a href="#under-high-load-mono-process-consumes-a-lot-of-memory-website-stops-responding">7.6 Under high load, mono process consumes a lot of memory, website stops responding</a></li>
 </ul></li>
-<li><a href="#mod_mono_on_Windows">8 mod_mono on Windows</a></li>
-<li><a href="#Profiling_mod-mono-server">9 Profiling mod-mono-server</a></li>
-<li><a href="#Compiling_mod_mono_From_Source">10 Compiling mod_mono From Source</a></li>
-<li><a href="#Improving_mod_mono">11 Improving mod_mono</a></li>
+<li><a href="#mod-mono-on-windows">8 mod_mono on Windows</a></li>
+<li><a href="#profiling-mod-mono-server">9 Profiling mod-mono-server</a></li>
+<li><a href="#compiling-mod-mono-from-source">10 Compiling mod_mono From Source</a></li>
+<li><a href="#improving-mod-mono">11 Improving mod_mono</a></li>
 </ul></td>
 </tr>
 </tbody>

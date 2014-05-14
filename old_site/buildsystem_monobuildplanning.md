@@ -19,16 +19,16 @@ BuildSystem/MonoBuildPlanning
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Design">1 Design</a>
+<li><a href="#design">1 Design</a>
 <ul>
-<li><a href="#Phase_2">1.1 Phase 2</a></li>
-<li><a href="#Phase_3">1.2 Phase 3</a></li>
+<li><a href="#phase-2">1.1 Phase 2</a></li>
+<li><a href="#phase-3">1.2 Phase 3</a></li>
 </ul></li>
-<li><a href="#HOWTO">2 HOWTO</a>
+<li><a href="#howto">2 HOWTO</a>
 <ul>
-<li><a href="#Configuration:_Path_to_release_Work_Area">2.1 Configuration: Path to release Work Area</a></li>
-<li><a href="#Configuring_Apache_for_MonoBuild">2.2 Configuring Apache for MonoBuild</a></li>
-<li><a href="#Working_example_of_.2Fetc.2Fapache2.2Fconf.d.2Fmod_perl.conf">2.3 Working example of /etc/apache2/conf.d/mod_perl.conf</a></li>
+<li><a href="#configuration-path-to-release-work-area">2.1 Configuration: Path to release Work Area</a></li>
+<li><a href="#configuring-apache-for-monobuild">2.2 Configuring Apache for MonoBuild</a></li>
+<li><a href="#working-example-of-etcapache2confdmod-perlconf">2.3 Working example of /etc/apache2/conf.d/mod_perl.conf</a></li>
 </ul></li>
 </ul></td>
 </tr>

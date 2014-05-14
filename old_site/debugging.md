@@ -13,13 +13,13 @@ Debugging
 
  Debugging a problem in an application is like solving a puzzle. There are certain tools that can help you solve the puzzle. This page documents some of the strategies, tools and tricks that you can use in solving these puzzles.
 
-You can find bugs by using a debugger: setting breakpoints, running the code line-by-line, examining variables, changing its state, exploring what other threads are doing, and see what the call stacks for each routines are. See the sections [Mono Debugger]({{site.github.url}}/old_site/Debugging#Mono_Debugger "Debugging"), [Debugging with GDB]({{site.github.url}}/old_site/Debugging#Debugging_with_GDB "Debugging") and [Debugging with LLDB]({{site.github.url}}/old_site/Debugging#Debugging_with_LLDB "Debugging") for more information on this.
+You can find bugs by using a debugger: setting breakpoints, running the code line-by-line, examining variables, changing its state, exploring what other threads are doing, and see what the call stacks for each routines are. See the sections [Mono Debugger]({{site.github.url}}/old_site/Debugging#mono-debugger "Debugging"), [Debugging with GDB]({{site.github.url}}/old_site/Debugging#debugging-with-gdb "Debugging") and [Debugging with LLDB]({{site.github.url}}/old_site/Debugging#debugging-with-lldb "Debugging") for more information on this.
 
 You can also debug an application by looking at stack traces. These are typically the result of an exception being thrown, or are the result of the code containing explicit calls to `Console.WriteLine(Environment.StackTrace)`. This helps you understand what the call frames were at the point of the stack traces and you can use this to understand what could have lead to the particular state that you are exploring (the crash, the exception, the report).
 
-Debuggers and stack traces are not enough, sometimes you want to see what is happening as the application runs, "trace" its execution and look at parameters and return values that are being passed around. See the [Tracing Programing Execution]({{site.github.url}}/old_site/Debugging#Tracing_Program_Execution "Debugging") section for details on this technique.
+Debuggers and stack traces are not enough, sometimes you want to see what is happening as the application runs, "trace" its execution and look at parameters and return values that are being passed around. See the [Tracing Programing Execution]({{site.github.url}}/old_site/Debugging#tracing-program-execution "Debugging") section for details on this technique.
 
-Another diagnostics mechanism is exploring which exceptions are being thrown (you might be accidentally capturing exceptions that should be propagated, or your program might be performing suboptimally). See the section on [Exceptions]({{site.github.url}}/old_site/Debugging#Exceptions "Debugging") to understand how to see these.
+Another diagnostics mechanism is exploring which exceptions are being thrown (you might be accidentally capturing exceptions that should be propagated, or your program might be performing suboptimally). See the section on [Exceptions]({{site.github.url}}/old_site/Debugging#exceptions "Debugging") to understand how to see these.
 
 <table>
 <col width="100%" />
@@ -27,25 +27,25 @@ Another diagnostics mechanism is exploring which exceptions are being thrown (yo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Debugging_information">1 Debugging information</a></li>
-<li><a href="#Debugging_with_GDB">2 Debugging with GDB</a></li>
-<li><a href="#Debugging_with_LLDB">3 Debugging with LLDB</a></li>
-<li><a href="#Debugging_With_Visual_Studio_on_Windows">4 Debugging With Visual Studio on Windows</a></li>
-<li><a href="#Debugging_Managed_Lock_Deadlocks">5 Debugging Managed Lock Deadlocks</a></li>
-<li><a href="#Debugging_Unmanaged_Deadlocks">6 Debugging Unmanaged Deadlocks</a></li>
-<li><a href="#Debugging_Pinned_Objects">7 Debugging Pinned Objects</a>
+<li><a href="#debugging-information">1 Debugging information</a></li>
+<li><a href="#debugging-with-gdb">2 Debugging with GDB</a></li>
+<li><a href="#debugging-with-lldb">3 Debugging with LLDB</a></li>
+<li><a href="#debugging-with-visual-studio-on-windows">4 Debugging With Visual Studio on Windows</a></li>
+<li><a href="#debugging-managed-lock-deadlocks">5 Debugging Managed Lock Deadlocks</a></li>
+<li><a href="#debugging-unmanaged-deadlocks">6 Debugging Unmanaged Deadlocks</a></li>
+<li><a href="#debugging-pinned-objects">7 Debugging Pinned Objects</a>
 <ul>
-<li><a href="#Triggering_the_Debugger">7.1 Triggering the Debugger</a></li>
+<li><a href="#triggering-the-debugger">7.1 Triggering the Debugger</a></li>
 </ul></li>
-<li><a href="#Debugging_with_GDB_in_XDEBUG_mode">8 Debugging with GDB in XDEBUG mode</a>
+<li><a href="#debugging-with-gdb-in-xdebug-mode">8 Debugging with GDB in XDEBUG mode</a>
 <ul>
-<li><a href="#For_gdb_7.0">8.1 For gdb 7.0</a></li>
-<li><a href="#For_older_gdb_versions">8.2 For older gdb versions</a></li>
+<li><a href="#for-gdb-70">8.1 For gdb 7.0</a></li>
+<li><a href="#for-older-gdb-versions">8.2 For older gdb versions</a></li>
 </ul></li>
-<li><a href="#Exceptions">9 Exceptions</a></li>
-<li><a href="#Tracing_Program_Execution">10 Tracing Program Execution</a></li>
-<li><a href="#Runtime_Logging">11 Runtime Logging</a></li>
-<li><a href="#Using_Valgrind_on_Mono">12 Using Valgrind on Mono</a>
+<li><a href="#exceptions">9 Exceptions</a></li>
+<li><a href="#tracing-program-execution">10 Tracing Program Execution</a></li>
+<li><a href="#runtime-logging">11 Runtime Logging</a></li>
+<li><a href="#using-valgrind-on-mono">12 Using Valgrind on Mono</a>
 <ul>
 <li><a href="#libgdiplus">12.1 libgdiplus</a></li>
 </ul></li>

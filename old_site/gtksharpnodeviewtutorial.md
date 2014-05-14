@@ -15,17 +15,17 @@ GtkSharpNodeViewTutorial
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Model.2FView_Separation">2 Model/View Separation</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#modelview-separation">2 Model/View Separation</a>
 <ul>
-<li><a href="#Model">2.1 Model</a></li>
-<li><a href="#View">2.2 View</a></li>
+<li><a href="#model">2.1 Model</a></li>
+<li><a href="#view">2.2 View</a></li>
 </ul></li>
-<li><a href="#Your_first_NodeView">3 Your first NodeView</a>
+<li><a href="#your-first-nodeview">3 Your first NodeView</a>
 <ul>
-<li><a href="#Setting_it_up">3.1 Setting it up</a></li>
+<li><a href="#setting-it-up">3.1 Setting it up</a></li>
 </ul></li>
-<li><a href="#Getting_Interactive">4 Getting Interactive</a></li>
+<li><a href="#getting-interactive">4 Getting Interactive</a></li>
 </ul></td>
 </tr>
 </tbody>

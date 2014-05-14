@@ -15,21 +15,21 @@ PostgreSQL
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Current_Status">2 Current Status</a></li>
-<li><a href="#Action_plan">3 Action plan</a></li>
-<li><a href="#Using_Npgsql">4 Using Npgsql</a>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#current-status">2 Current Status</a></li>
+<li><a href="#action-plan">3 Action plan</a></li>
+<li><a href="#using-npgsql">4 Using Npgsql</a>
 <ul>
-<li><a href="#Examples">4.1 Examples</a>
+<li><a href="#examples">4.1 Examples</a>
 <ul>
-<li><a href="#Some_Connection_Example">4.1.1 Some Connection Example</a></li>
-<li><a href="#Howto_use_PostgreSQL_from_ASP.Net">4.1.2 Howto use PostgreSQL from ASP.Net</a></li>
+<li><a href="#some-connection-example">4.1.1 Some Connection Example</a></li>
+<li><a href="#howto-use-postgresql-from-aspnet">4.1.2 Howto use PostgreSQL from ASP.Net</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Installation_instructions_for_PostgreSQL_DBMS">5 Installation instructions for PostgreSQL DBMS</a>
+<li><a href="#installation-instructions-for-postgresql-dbms">5 Installation instructions for PostgreSQL DBMS</a>
 <ul>
-<li><a href="#On_UNIX">5.1 On UNIX</a></li>
-<li><a href="#On_Windows_using_native_PostgreSQL">5.2 On Windows using native PostgreSQL</a></li>
+<li><a href="#on-unix">5.1 On UNIX</a></li>
+<li><a href="#on-windows-using-native-postgresql">5.2 On Windows using native PostgreSQL</a></li>
 </ul></li>
 </ul></td>
 </tr>

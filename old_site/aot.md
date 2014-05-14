@@ -35,22 +35,22 @@ Although the JIT mode is very fast, and the default optimizations in Mono have b
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Full_AOT">1 Full AOT</a>
+<li><a href="#full-aot">1 Full AOT</a>
 <ul>
-<li><a href="#Known_Limitations">1.1 Known Limitations</a>
+<li><a href="#known-limitations">1.1 Known Limitations</a>
 <ul>
-<li><a href="#Limitation:_Platform">1.1.1 Limitation: Platform</a></li>
-<li><a href="#Limitation:_Generic_Interface_Instantiation">1.1.2 Limitation: Generic Interface Instantiation</a></li>
-<li><a href="#Generic_ValueType_Sharing">1.1.3 Generic ValueType Sharing</a></li>
+<li><a href="#limitation-platform">1.1.1 Limitation: Platform</a></li>
+<li><a href="#limitation-generic-interface-instantiation">1.1.2 Limitation: Generic Interface Instantiation</a></li>
+<li><a href="#generic-valuetype-sharing">1.1.3 Generic ValueType Sharing</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Supported_Platforms">2 Supported Platforms</a></li>
-<li><a href="#Reduced_Startup_Time">3 Reduced Startup Time</a></li>
-<li><a href="#Increased_Memory_Sharing">4 Increased Memory Sharing</a></li>
-<li><a href="#Potential_Better_Performance">5 Potential Better Performance</a></li>
-<li><a href="#Limitations">6 Limitations</a></li>
-<li><a href="#Discussion">7 Discussion</a></li>
-<li><a href="#AOTing_all_the_system_libraries">8 AOTing all the system libraries</a></li>
+<li><a href="#supported-platforms">2 Supported Platforms</a></li>
+<li><a href="#reduced-startup-time">3 Reduced Startup Time</a></li>
+<li><a href="#increased-memory-sharing">4 Increased Memory Sharing</a></li>
+<li><a href="#potential-better-performance">5 Potential Better Performance</a></li>
+<li><a href="#limitations">6 Limitations</a></li>
+<li><a href="#discussion">7 Discussion</a></li>
+<li><a href="#aoting-all-the-system-libraries">8 AOTing all the system libraries</a></li>
 </ul></td>
 </tr>
 </tbody>

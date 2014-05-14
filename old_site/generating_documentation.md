@@ -19,26 +19,26 @@ Generating Documentation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Methods_of_Generating_Documentation">1 Methods of Generating Documentation</a></li>
-<li><a href="#Monodoc_Documentation">2 Monodoc Documentation</a>
+<li><a href="#methods-of-generating-documentation">1 Methods of Generating Documentation</a></li>
+<li><a href="#monodoc-documentation">2 Monodoc Documentation</a>
 <ul>
-<li><a href="#Generate_the_inital_stubs">2.1 Generate the inital stubs</a></li>
-<li><a href="#Edit_and_write_documentation">2.2 Edit and write documentation</a></li>
-<li><a href="#Synchronize_Documentation_with_source_code">2.3 Synchronize Documentation with source code</a></li>
-<li><a href="#Assemble_the_generated_Documentation">2.4 Assemble the generated Documentation</a>
+<li><a href="#generate-the-inital-stubs">2.1 Generate the inital stubs</a></li>
+<li><a href="#edit-and-write-documentation">2.2 Edit and write documentation</a></li>
+<li><a href="#synchronize-documentation-with-source-code">2.3 Synchronize Documentation with source code</a></li>
+<li><a href="#assemble-the-generated-documentation">2.4 Assemble the generated Documentation</a>
 <ul>
-<li><a href="#Merging_assembled_documentation_changes">2.4.1 Merging assembled documentation changes</a></li>
+<li><a href="#merging-assembled-documentation-changes">2.4.1 Merging assembled documentation changes</a></li>
 </ul></li>
-<li><a href="#Other_utilities">2.5 Other utilities</a>
+<li><a href="#other-utilities">2.5 Other utilities</a>
 <ul>
-<li><a href="#Generating_static_HTML_Documentation">2.5.1 Generating static HTML Documentation</a></li>
-<li><a href="#Validate_Monodoc_XML_format">2.5.2 Validate Monodoc XML format</a></li>
+<li><a href="#generating-static-html-documentation">2.5.1 Generating static HTML Documentation</a></li>
+<li><a href="#validate-monodoc-xml-format">2.5.2 Validate Monodoc XML format</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Inline_XML_Documentation">3 Inline XML Documentation</a>
+<li><a href="#inline-xml-documentation">3 Inline XML Documentation</a>
 <ul>
-<li><a href="#Converting_Inline_XML_Documentation_to_Monodoc_format">3.1 Converting Inline XML Documentation to Monodoc format</a></li>
-<li><a href="#Converting_Monodoc_format_XML_into_inline_XML_documentation">3.2 Converting Monodoc format XML into inline XML documentation</a></li>
+<li><a href="#converting-inline-xml-documentation-to-monodoc-format">3.1 Converting Inline XML Documentation to Monodoc format</a></li>
+<li><a href="#converting-monodoc-format-xml-into-inline-xml-documentation">3.2 Converting Monodoc format XML into inline XML documentation</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -50,9 +50,9 @@ Methods of Generating Documentation
 
 There are two ways to create documentation for your libraries:
 
--   Using a [separate set of tools](#Monodoc_Documentation) for maintaining documenation files outside of your source code and which produce ECMA-styled documentation.
+-   Using a [separate set of tools](#monodoc-documentation) for maintaining documenation files outside of your source code and which produce ECMA-styled documentation.
 
--   Using [the /doc option of mcs](#Inline_XML_Documentation), which takes documentation comments from within your source code files and compiles them into a Visual Studio-format XML documentation file.
+-   Using [the /doc option of mcs](#inline-xml-documentation), which takes documentation comments from within your source code files and compiles them into a Visual Studio-format XML documentation file.
 
 **Documentation in the Mono project uses the first approach**, as it allows for a clean split between documentation and source code and allows us to provide examples outside of the source code as well as using our collaboration system
 
@@ -127,7 +127,7 @@ will give us the following directory content:
      |- ImportantBClass.xml
      |- AnotherBClass.xml
 
-As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc]({{site.github.url}}/old_site/Monodoc "Monodoc") browser. Just after creating the documentation with [monodocer]({{site.github.url}}/old_site/Monodocer "Monodocer"), you can start navigating or [editing](#Edit_and_write_documentation) it by typing:
+As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc]({{site.github.url}}/old_site/Monodoc "Monodoc") browser. Just after creating the documentation with [monodocer]({{site.github.url}}/old_site/Monodocer "Monodocer"), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
 
 ``` bash
 $ monodoc --edit docfiles
@@ -135,7 +135,7 @@ $ monodoc --edit docfiles
 
 Where *docfiles* is the name of the directory containing the documentation files.
 
-When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained [here]({{site.github.url}}/old_site/Generating_Documentation#Assemble_the_generated_Documentation "Generating Documentation").
+When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained [here]({{site.github.url}}/old_site/Generating_Documentation#assemble-the-generated-documentation "Generating Documentation").
 
 Edit and write documentation
 ----------------------------

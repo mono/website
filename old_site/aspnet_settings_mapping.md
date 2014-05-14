@@ -31,23 +31,23 @@ This document introduces all the components of the mapping system and shows an e
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Settings_Mapping_Manager">1 Settings Mapping Manager</a></li>
-<li><a href="#Inhibiting_the_settings_mapping">2 Inhibiting the settings mapping</a></li>
-<li><a href="#The_settings.map_file">3 The settings.map file</a>
+<li><a href="#settings-mapping-manager">1 Settings Mapping Manager</a></li>
+<li><a href="#inhibiting-the-settings-mapping">2 Inhibiting the settings mapping</a></li>
+<li><a href="#the-settingsmap-file">3 The settings.map file</a>
 <ul>
-<li><a href="#The_global_settings.map_file">3.1 The global settings.map file</a></li>
-<li><a href="#settings.map_syntax">3.2 settings.map syntax</a></li>
-<li><a href="#Sample_settings.map_file">3.3 Sample settings.map file</a></li>
+<li><a href="#the-global-settingsmap-file">3.1 The global settings.map file</a></li>
+<li><a href="#settingsmap-syntax">3.2 settings.map syntax</a></li>
+<li><a href="#sample-settingsmap-file">3.3 Sample settings.map file</a></li>
 </ul></li>
-<li><a href="#Creating_a_custom_mapper">4 Creating a custom mapper</a></li>
-<li><a href="#Example_mapper_code">5 Example mapper code</a>
+<li><a href="#creating-a-custom-mapper">4 Creating a custom mapper</a></li>
+<li><a href="#example-mapper-code">5 Example mapper code</a>
 <ul>
-<li><a href="#AppSettingsMapper_source_code">5.1 AppSettingsMapper source code</a></li>
-<li><a href="#default.aspx">5.2 default.aspx</a></li>
-<li><a href="#Web.config">5.3 Web.config</a></li>
-<li><a href="#settings.map.config">5.4 settings.map.config</a></li>
+<li><a href="#appsettingsmapper-source-code">5.1 AppSettingsMapper source code</a></li>
+<li><a href="#defaultaspx">5.2 default.aspx</a></li>
+<li><a href="#webconfig">5.3 Web.config</a></li>
+<li><a href="#settingsmapconfig">5.4 settings.map.config</a></li>
 </ul></li>
-<li><a href="#Final_notes">6 Final notes</a></li>
+<li><a href="#final-notes">6 Final notes</a></li>
 </ul></td>
 </tr>
 </tbody>

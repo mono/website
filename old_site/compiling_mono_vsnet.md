@@ -38,16 +38,16 @@ The **mono.sln** solution file contains the VC projects files for:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Requirements">1 Requirements</a></li>
-<li><a href="#Optional">2 Optional</a></li>
-<li><a href="#Required_Local_Changes">3 Required Local Changes</a></li>
-<li><a href="#Building">4 Building</a></li>
-<li><a href="#Known_Issues">5 Known Issues</a></li>
-<li><a href="#Work_in_Progress">6 Work in Progress</a>
+<li><a href="#requirements">1 Requirements</a></li>
+<li><a href="#optional">2 Optional</a></li>
+<li><a href="#required-local-changes">3 Required Local Changes</a></li>
+<li><a href="#building">4 Building</a></li>
+<li><a href="#known-issues">5 Known Issues</a></li>
+<li><a href="#work-in-progress">6 Work in Progress</a>
 <ul>
-<li><a href="#How_this_works">6.1 How this works</a></li>
+<li><a href="#how-this-works">6.1 How this works</a></li>
 </ul></li>
-<li><a href="#More_informations">7 More informations</a></li>
+<li><a href="#more-informations">7 More informations</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ Requirements
 Optional
 ========
 
-1. A [working]({{site.github.url}}/old_site/Compiling_Mono#Windows_Compilation_Compiling_Mono "Compiling Mono") (i.e. where you could successfully build mono) [cygwin](http://www.cygwin.com/) setup! This is required to:
+1. A [working]({{site.github.url}}/old_site/Compiling_Mono#windows-compilation-compiling-mono "Compiling Mono") (i.e. where you could successfully build mono) [cygwin](http://www.cygwin.com/) setup! This is required to:
 
 -   build the class libraries; and
 -   test for regressions.

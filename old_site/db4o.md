@@ -16,12 +16,12 @@ DB4O
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#The_Basic_Principle_of_db4o">2 The Basic Principle of db4o</a></li>
-<li><a href="#Downloads">3 Downloads</a></li>
-<li><a href="#Current_Status">4 Current Status</a></li>
-<li><a href="#Action_plan">5 Action plan</a></li>
-<li><a href="#Testing_db4o">6 Testing db4o</a></li>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#the-basic-principle-of-db4o">2 The Basic Principle of db4o</a></li>
+<li><a href="#downloads">3 Downloads</a></li>
+<li><a href="#current-status">4 Current Status</a></li>
+<li><a href="#action-plan">5 Action plan</a></li>
+<li><a href="#testing-db4o">6 Testing db4o</a></li>
 </ul></td>
 </tr>
 </tbody>

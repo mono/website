@@ -15,19 +15,19 @@ Accessibility: Roadmap
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Current_release">2 Current release</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#current-release">2 Current release</a>
 <ul>
-<li><a href="#Release_1.0_-_March_17th_2009">2.1 Release 1.0 - March 17th 2009</a></li>
+<li><a href="#release-10---march-17th-2009">2.1 Release 1.0 - March 17th 2009</a></li>
 </ul></li>
-<li><a href="#Upcoming_releases">3 Upcoming releases</a>
+<li><a href="#upcoming-releases">3 Upcoming releases</a>
 <ul>
-<li><a href="#Release_1.1_-_Mid-late_April_2009">3.1 Release 1.1 - Mid-late April 2009</a></li>
+<li><a href="#release-11---mid-late-april-2009">3.1 Release 1.1 - Mid-late April 2009</a></li>
 </ul></li>
-<li><a href="#Past_releases">4 Past releases</a>
+<li><a href="#past-releases">4 Past releases</a>
 <ul>
-<li><a href="#Release_0.9.1_-_December_6th_2008">4.1 Release 0.9.1 - December 6th 2008</a></li>
-<li><a href="#Release_0.9_-_November_26th_2008">4.2 Release 0.9 - November 26th 2008</a></li>
+<li><a href="#release-091---december-6th-2008">4.1 Release 0.9.1 - December 6th 2008</a></li>
+<li><a href="#release-09---november-26th-2008">4.2 Release 0.9 - November 26th 2008</a></li>
 </ul></li>
 </ul></td>
 </tr>

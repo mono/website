@@ -15,11 +15,11 @@ Compiling Mono From SVN
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Compiling_from_SVN_is_obsolete">1 Compiling from SVN is obsolete</a>
+<li><a href="#compiling-from-svn-is-obsolete">1 Compiling from SVN is obsolete</a>
 <ul>
-<li><a href="#Checking_out_for_the_first_time">1.1 Checking out for the first time</a></li>
-<li><a href="#Updating_an_existing_checkout">1.2 Updating an existing checkout</a></li>
-<li><a href="#Building_the_source">1.3 Building the source</a></li>
+<li><a href="#checking-out-for-the-first-time">1.1 Checking out for the first time</a></li>
+<li><a href="#updating-an-existing-checkout">1.2 Updating an existing checkout</a></li>
+<li><a href="#building-the-source">1.3 Building the source</a></li>
 </ul></li>
 </ul></td>
 </tr>

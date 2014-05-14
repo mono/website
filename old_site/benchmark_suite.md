@@ -19,14 +19,14 @@ We have a list of explanations for [Benchmark Regressions]({{site.github.url}}/o
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Index">1 Index</a></li>
-<li><a href="#Configuration_page">2 Configuration page</a>
+<li><a href="#index">1 Index</a></li>
+<li><a href="#configuration-page">2 Configuration page</a>
 <ul>
-<li><a href="#Configuration_overview_graph">2.1 Configuration overview graph</a></li>
+<li><a href="#configuration-overview-graph">2.1 Configuration overview graph</a></li>
 </ul></li>
-<li><a href="#Individual_benchmark_page">3 Individual benchmark page</a>
+<li><a href="#individual-benchmark-page">3 Individual benchmark page</a>
 <ul>
-<li><a href="#Benchmark_graph">3.1 Benchmark graph</a></li>
+<li><a href="#benchmark-graph">3.1 Benchmark graph</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -15,12 +15,12 @@ DTrace
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Using_DTrace_with_Mono">1 Using DTrace with Mono</a></li>
-<li><a href="#The_mono_provider">2 The mono provider</a>
+<li><a href="#using-dtrace-with-mono">1 Using DTrace with Mono</a></li>
+<li><a href="#the-mono-provider">2 The mono provider</a>
 <ul>
-<li><a href="#ves-init-begin.2C_ves-init-end">2.1 ves-init-begin, ves-init-end</a></li>
-<li><a href="#method-compile-begin.2C_method-compile-end">2.2 method-compile-begin, method-compile-end</a></li>
-<li><a href="#gc-begin.2C_gc-end">2.3 gc-begin, gc-end</a></li>
+<li><a href="#ves-init-begin-ves-init-end">2.1 ves-init-begin, ves-init-end</a></li>
+<li><a href="#method-compile-begin-method-compile-end">2.2 method-compile-begin, method-compile-end</a></li>
+<li><a href="#gc-begin-gc-end">2.3 gc-begin, gc-end</a></li>
 </ul></li>
 </ul></td>
 </tr>

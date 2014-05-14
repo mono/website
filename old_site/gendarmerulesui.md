@@ -17,13 +17,13 @@ Gendarme.Rules.Ui
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#GtkSharpExecutableTargetRule">1.1 GtkSharpExecutableTargetRule</a></li>
-<li><a href="#SystemWindowsFormsExecutableTargetRule">1.2 SystemWindowsFormsExecutableTargetRule</a></li>
-<li><a href="#UseSTAThreadAttributeOnSWFEntryPointsRule">1.3 UseSTAThreadAttributeOnSWFEntryPointsRule</a></li>
+<li><a href="#gtksharpexecutabletargetrule">1.1 GtkSharpExecutableTargetRule</a></li>
+<li><a href="#systemwindowsformsexecutabletargetrule">1.2 SystemWindowsFormsExecutableTargetRule</a></li>
+<li><a href="#usestathreadattributeonswfentrypointsrule">1.3 UseSTAThreadAttributeOnSWFEntryPointsRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

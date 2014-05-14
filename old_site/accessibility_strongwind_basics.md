@@ -20,21 +20,21 @@ This tutorial is not meant to cover all Strongwind features exhaustively. This t
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Writing_Your_First_Script">2 Writing Your First Script</a>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#writing-your-first-script">2 Writing Your First Script</a>
 <ul>
-<li><a href="#Testable_Application">2.1 Testable Application</a></li>
-<li><a href="#Application_Wrapper">2.2 Application Wrapper</a>
+<li><a href="#testable-application">2.1 Testable Application</a></li>
+<li><a href="#application-wrapper">2.2 Application Wrapper</a>
 <ul>
-<li><a href="#init_.py">2.2.1 __init__.py</a></li>
-<li><a href="#gtkcheckbuttonframe.py">2.2.2 gtkcheckbuttonframe.py</a></li>
-<li><a href="#the_find.2A_functions">2.2.3 the find* functions</a></li>
+<li><a href="#init-py">2.2.1 __init__.py</a></li>
+<li><a href="#gtkcheckbuttonframepy">2.2.2 gtkcheckbuttonframe.py</a></li>
+<li><a href="#the-find-functions">2.2.3 the find* functions</a></li>
 </ul></li>
-<li><a href="#Test_Script">2.3 Test Script</a></li>
+<li><a href="#test-script">2.3 Test Script</a></li>
 </ul></li>
-<li><a href="#Running_Your_First_Script">3 Running Your First Script</a></li>
-<li><a href="#Tips_.26_Tricks">4 Tips &amp; Tricks</a></li>
-<li><a href="#What_Now.3F">5 What Now?</a></li>
+<li><a href="#running-your-first-script">3 Running Your First Script</a></li>
+<li><a href="#tips--tricks">4 Tips &amp; Tricks</a></li>
+<li><a href="#what-now">5 What Now?</a></li>
 </ul></td>
 </tr>
 </tbody>

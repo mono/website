@@ -27,11 +27,11 @@ For more information on the Mono sandbox, see:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Security_Issues">1 Security Issues</a>
+<li><a href="#security-issues">1 Security Issues</a>
 <ul>
-<li><a href="#Metadata_integrity">1.1 Metadata integrity</a></li>
-<li><a href="#CIL_Verification_and_CoreCLR_Security">1.2 CIL Verification and CoreCLR Security</a></li>
-<li><a href="#Audit_of_the_codebase">1.3 Audit of the codebase</a></li>
+<li><a href="#metadata-integrity">1.1 Metadata integrity</a></li>
+<li><a href="#cil-verification-and-coreclr-security">1.2 CIL Verification and CoreCLR Security</a></li>
+<li><a href="#audit-of-the-codebase">1.3 Audit of the codebase</a></li>
 </ul></li>
 </ul></td>
 </tr>

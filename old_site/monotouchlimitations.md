@@ -19,21 +19,21 @@ These are the MonoTouch limitations compared to desktop Mono/Moonlight:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Limited_Debugging_Support">1 Limited Debugging Support</a></li>
-<li><a href="#Limited_Generics_Support">2 Limited Generics Support</a>
+<li><a href="#limited-debugging-support">1 Limited Debugging Support</a></li>
+<li><a href="#limited-generics-support">2 Limited Generics Support</a>
 <ul>
-<li><a href="#Generic_Virtual_Methods">2.1 Generic Virtual Methods</a></li>
-<li><a href="#P.2FInvokes_in_Generic_Types">2.2 P/Invokes in Generic Types</a></li>
-<li><a href="#Value_types_as_Dictionary_Keys">2.3 Value types as Dictionary Keys</a></li>
+<li><a href="#generic-virtual-methods">2.1 Generic Virtual Methods</a></li>
+<li><a href="#pinvokes-in-generic-types">2.2 P/Invokes in Generic Types</a></li>
+<li><a href="#value-types-as-dictionary-keys">2.3 Value types as Dictionary Keys</a></li>
 </ul></li>
-<li><a href="#No_Dynamic_Code_Generation">3 No Dynamic Code Generation</a>
+<li><a href="#no-dynamic-code-generation">3 No Dynamic Code Generation</a>
 <ul>
-<li><a href="#System.Reflection.Emit">3.1 System.Reflection.Emit</a></li>
-<li><a href="#Reverse_Callbacks">3.2 Reverse Callbacks</a></li>
+<li><a href="#systemreflectionemit">3.1 System.Reflection.Emit</a></li>
+<li><a href="#reverse-callbacks">3.2 Reverse Callbacks</a></li>
 </ul></li>
-<li><a href="#No_Remoting">4 No Remoting</a></li>
-<li><a href="#Runtime_Disabled_Features">5 Runtime Disabled Features</a></li>
-<li><a href="#Only_tested_with_iPhoneOS_3.0">6 Only tested with iPhoneOS 3.0</a></li>
+<li><a href="#no-remoting">4 No Remoting</a></li>
+<li><a href="#runtime-disabled-features">5 Runtime Disabled Features</a></li>
+<li><a href="#only-tested-with-iphoneos-30">6 Only tested with iPhoneOS 3.0</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -51,7 +51,7 @@ Most of the debugging is done with Console.WriteLine.
 Limited Generics Support
 ========================
 
-Mono's [Full AOT]({{site.github.url}}/old_site/AOT#Full_AOT "AOT") support has the following limitations with respect to generics:
+Mono's [Full AOT]({{site.github.url}}/old_site/AOT#full-aot "AOT") support has the following limitations with respect to generics:
 
 Generic Virtual Methods
 -----------------------

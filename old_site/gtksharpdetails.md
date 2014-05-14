@@ -19,40 +19,40 @@ For a list of the new features see [Whats new on Gtk\# 2]({{site.github.url}}/ol
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Availability">2 Availability</a></li>
-<li><a href="#Tutorials">3 Tutorials</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#availability">2 Availability</a></li>
+<li><a href="#tutorials">3 Tutorials</a>
 <ul>
-<li><a href="#Beginning_to_use_Gtk.23">3.1 Beginning to use Gtk#</a></li>
-<li><a href="#Gtk.23_GUI_details_and_techniques">3.2 Gtk# GUI details and techniques</a></li>
-<li><a href="#Advanced_Gtk.23">3.3 Advanced Gtk#</a></li>
-<li><a href="#Extending_your_GUI">3.4 Extending your GUI</a></li>
+<li><a href="#beginning-to-use-gtk">3.1 Beginning to use Gtk#</a></li>
+<li><a href="#gtk-gui-details-and-techniques">3.2 Gtk# GUI details and techniques</a></li>
+<li><a href="#advanced-gtk">3.3 Advanced Gtk#</a></li>
+<li><a href="#extending-your-gui">3.4 Extending your GUI</a></li>
 </ul></li>
-<li><a href="#Other_Gtk.23_Tutorials">4 Other Gtk# Tutorials</a></li>
-<li><a href="#User_Testimonials">5 User Testimonials</a></li>
-<li><a href="#Additional_Widgets">6 Additional Widgets</a>
+<li><a href="#other-gtk-tutorials">4 Other Gtk# Tutorials</a></li>
+<li><a href="#user-testimonials">5 User Testimonials</a></li>
+<li><a href="#additional-widgets">6 Additional Widgets</a>
 <ul>
-<li><a href="#Gnome-KeyRing-Sharp">6.1 Gnome-KeyRing-Sharp</a></li>
-<li><a href="#GSF_Sharp">6.2 GSF Sharp</a></li>
-<li><a href="#GtkGlArea_Sharp">6.3 GtkGlArea Sharp</a></li>
-<li><a href="#WebKit_Sharp">6.4 WebKit Sharp</a></li>
-<li><a href="#GtkMozEmbed_Sharp">6.5 GtkMozEmbed Sharp</a></li>
-<li><a href="#GtkSourceView_Sharp">6.6 GtkSourceView Sharp</a></li>
-<li><a href="#Hal_Sharp">6.7 Hal Sharp</a></li>
-<li><a href="#DBus_Sharp">6.8 DBus Sharp</a></li>
-<li><a href="#ipod_sharp">6.9 ipod sharp</a></li>
-<li><a href="#Maemo_Sharp">6.10 Maemo Sharp</a></li>
-<li><a href="#JScall_Sharp">6.11 JScall Sharp</a></li>
-<li><a href="#NPlot_Gtk">6.12 NPlot Gtk</a></li>
-<li><a href="#Taglib_Sharp">6.13 Taglib Sharp</a></li>
-<li><a href="#Daap_Sharp">6.14 Daap Sharp</a></li>
-<li><a href="#Mono.ZeroConf">6.15 Mono.ZeroConf</a></li>
+<li><a href="#gnome-keyring-sharp">6.1 Gnome-KeyRing-Sharp</a></li>
+<li><a href="#gsf-sharp">6.2 GSF Sharp</a></li>
+<li><a href="#gtkglarea-sharp">6.3 GtkGlArea Sharp</a></li>
+<li><a href="#webkit-sharp">6.4 WebKit Sharp</a></li>
+<li><a href="#gtkmozembed-sharp">6.5 GtkMozEmbed Sharp</a></li>
+<li><a href="#gtksourceview-sharp">6.6 GtkSourceView Sharp</a></li>
+<li><a href="#hal-sharp">6.7 Hal Sharp</a></li>
+<li><a href="#dbus-sharp">6.8 DBus Sharp</a></li>
+<li><a href="#ipod-sharp">6.9 ipod sharp</a></li>
+<li><a href="#maemo-sharp">6.10 Maemo Sharp</a></li>
+<li><a href="#jscall-sharp">6.11 JScall Sharp</a></li>
+<li><a href="#nplot-gtk">6.12 NPlot Gtk</a></li>
+<li><a href="#taglib-sharp">6.13 Taglib Sharp</a></li>
+<li><a href="#daap-sharp">6.14 Daap Sharp</a></li>
+<li><a href="#monozeroconf">6.15 Mono.ZeroConf</a></li>
 </ul></li>
-<li><a href="#Gtk.23.27s_Components">7 Gtk#'s Components</a></li>
-<li><a href="#Versions_.26_Status">8 Versions &amp; Status</a></li>
-<li><a href="#Migrating_from_1.x_to_2.x">9 Migrating from 1.x to 2.x</a></li>
-<li><a href="#Future_Directions">10 Future Directions</a></li>
-<li><a href="#Additional_Resources">11 Additional Resources</a></li>
+<li><a href="#gtks-components">7 Gtk#'s Components</a></li>
+<li><a href="#versions--status">8 Versions &amp; Status</a></li>
+<li><a href="#migrating-from-1x-to-2x">9 Migrating from 1.x to 2.x</a></li>
+<li><a href="#future-directions">10 Future Directions</a></li>
+<li><a href="#additional-resources">11 Additional Resources</a></li>
 </ul></td>
 </tr>
 </tbody>

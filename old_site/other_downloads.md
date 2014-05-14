@@ -15,11 +15,11 @@ Other Downloads
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Binaries_for_other_platforms_.28unsupported.29">1 Binaries for other platforms (unsupported)</a>
+<li><a href="#binaries-for-other-platforms-unsupported">1 Binaries for other platforms (unsupported)</a>
 <ul>
-<li><a href="#Solaris">1.1 Solaris</a></li>
-<li><a href="#Nokia_.2F_Maemo">1.2 Nokia / Maemo</a></li>
-<li><a href="#Snapshots">1.3 Snapshots</a></li>
+<li><a href="#solaris">1.1 Solaris</a></li>
+<li><a href="#nokia--maemo">1.2 Nokia / Maemo</a></li>
+<li><a href="#snapshots">1.3 Snapshots</a></li>
 </ul></li>
 </ul></td>
 </tr>

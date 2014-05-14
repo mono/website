@@ -15,16 +15,16 @@ Mono Rationale
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Mono_Project">1 The Mono Project</a>
+<li><a href="#the-mono-project">1 The Mono Project</a>
 <ul>
-<li><a href="#Background.">1.1 Background.</a></li>
-<li><a href="#Another_explanation">1.2 Another explanation</a></li>
-<li><a href="#Microsoft.27s_.NET">1.3 Microsoft's .NET</a></li>
-<li><a href="#The_Common_Language_Infrastructure_platform.">1.4 The Common Language Infrastructure platform.</a></li>
-<li><a href="#ECMA_standards.">1.5 ECMA standards.</a></li>
-<li><a href="#Mono:_an_Open_Source_Common_Language_Infrastructure_implementation.">1.6 Mono: an Open Source Common Language Infrastructure implementation.</a></li>
-<li><a href="#What_makes_up_Mono.3F">1.7 What makes up Mono?</a></li>
-<li><a href="#Why_use_GNOME_components.3F">1.8 Why use GNOME components?</a></li>
+<li><a href="#background">1.1 Background.</a></li>
+<li><a href="#another-explanation">1.2 Another explanation</a></li>
+<li><a href="#microsofts-net">1.3 Microsoft's .NET</a></li>
+<li><a href="#the-common-language-infrastructure-platform">1.4 The Common Language Infrastructure platform.</a></li>
+<li><a href="#ecma-standards">1.5 ECMA standards.</a></li>
+<li><a href="#mono-an-open-source-common-language-infrastructure-implementation">1.6 Mono: an Open Source Common Language Infrastructure implementation.</a></li>
+<li><a href="#what-makes-up-mono">1.7 What makes up Mono?</a></li>
+<li><a href="#why-use-gnome-components">1.8 Why use GNOME components?</a></li>
 </ul></li>
 </ul></td>
 </tr>

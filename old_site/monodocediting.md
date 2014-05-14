@@ -15,11 +15,11 @@ MonodocEditing
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#A_Restructuring_Plan_for_Mono_Documentation_Production_Tools">1 A Restructuring Plan for Mono Documentation Production Tools</a></li>
-<li><a href="#Milestone_Hydrogen">2 Milestone Hydrogen</a></li>
-<li><a href="#Milestone_Helium">3 Milestone Helium</a></li>
-<li><a href="#Milestone_Lithium">4 Milestone Lithium</a></li>
-<li><a href="#Milestone_Beryllium">5 Milestone Beryllium</a></li>
+<li><a href="#a-restructuring-plan-for-mono-documentation-production-tools">1 A Restructuring Plan for Mono Documentation Production Tools</a></li>
+<li><a href="#milestone-hydrogen">2 Milestone Hydrogen</a></li>
+<li><a href="#milestone-helium">3 Milestone Helium</a></li>
+<li><a href="#milestone-lithium">4 Milestone Lithium</a></li>
+<li><a href="#milestone-beryllium">5 Milestone Beryllium</a></li>
 </ul></td>
 </tr>
 </tbody>

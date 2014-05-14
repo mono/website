@@ -21,14 +21,14 @@ XPathNavigator and related classes are in System.Xml.XPath namespace.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Using_XPathNavigator">2 Using XPathNavigator</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#using-xpathnavigator">2 Using XPathNavigator</a>
 <ul>
-<li><a href="#XPathNavigator_and_XPath_Data_Model">2.1 XPathNavigator and XPath Data Model</a></li>
-<li><a href="#Primitive_Navigation_Methods">2.2 Primitive Navigation Methods</a></li>
-<li><a href="#XPathNodeIterator_and_Selection_methods">2.3 XPathNodeIterator and Selection methods</a></li>
-<li><a href="#Evaluation_Methods">2.4 Evaluation Methods</a></li>
-<li><a href="#Comparison_Methods">2.5 Comparison Methods</a></li>
+<li><a href="#xpathnavigator-and-xpath-data-model">2.1 XPathNavigator and XPath Data Model</a></li>
+<li><a href="#primitive-navigation-methods">2.2 Primitive Navigation Methods</a></li>
+<li><a href="#xpathnodeiterator-and-selection-methods">2.3 XPathNodeIterator and Selection methods</a></li>
+<li><a href="#evaluation-methods">2.4 Evaluation Methods</a></li>
+<li><a href="#comparison-methods">2.5 Comparison Methods</a></li>
 </ul></li>
 </ul></td>
 </tr>

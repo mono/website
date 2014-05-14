@@ -17,7 +17,7 @@ Documentation for some developer branches on GitHub.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#https:.2F.2Fgithub.com.2Fvargaz.2Fmono">1 https://github.com/vargaz/mono</a>
+<li><a href="#httpsgithubcomvargazmono">1 https://github.com/vargaz/mono</a>
 <ul>
 <li><a href="#aot-direct-icalls">1.1 aot-direct-icalls</a></li>
 <li><a href="#inline-wrappers">1.2 inline-wrappers</a></li>

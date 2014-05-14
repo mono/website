@@ -17,17 +17,17 @@ The Class Library is be compatible with Microsoft's .NET implementation. Please 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Contributing">1 Contributing</a></li>
-<li><a href="#Layout">2 Layout</a></li>
-<li><a href="#Licensing">3 Licensing</a></li>
-<li><a href="#Class_Library_testing">4 Class Library testing</a></li>
-<li><a href="#Coding_conventions">5 Coding conventions</a></li>
-<li><a href="#Missing_implementation_bits">6 Missing implementation bits</a>
+<li><a href="#contributing">1 Contributing</a></li>
+<li><a href="#layout">2 Layout</a></li>
+<li><a href="#licensing">3 Licensing</a></li>
+<li><a href="#class-library-testing">4 Class Library testing</a></li>
+<li><a href="#coding-conventions">5 Coding conventions</a></li>
+<li><a href="#missing-implementation-bits">6 Missing implementation bits</a>
 <ul>
-<li><a href="#Tagging_buggy_code">6.1 Tagging buggy code</a></li>
-<li><a href="#Tagging_Incomplete_Specifications">6.2 Tagging Incomplete Specifications</a></li>
-<li><a href="#Namespaces">6.3 Namespaces</a></li>
-<li><a href="#FAQ">6.4 FAQ</a></li>
+<li><a href="#tagging-buggy-code">6.1 Tagging buggy code</a></li>
+<li><a href="#tagging-incomplete-specifications">6.2 Tagging Incomplete Specifications</a></li>
+<li><a href="#namespaces">6.3 Namespaces</a></li>
+<li><a href="#faq">6.4 FAQ</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -39,7 +39,7 @@ Contributing
 
 We welcome contributions to the the Class Library. To get started, check the status page for information about which APIs are being worked on, and how to get in touch with individual maintainers.
 
-If you want to work on a class, first check the [Classes Distribution]({{site.github.url}}/old_site/Downloads "Downloads") to see if it is not implemented yet, if not, check the [class status pages]({{site.github.url}}/old_site/Resources#Class_status_pages_for_Mono "Resources") to see if someone is already working on it, and maybe contact them.
+If you want to work on a class, first check the [Classes Distribution]({{site.github.url}}/old_site/Downloads "Downloads") to see if it is not implemented yet, if not, check the [class status pages]({{site.github.url}}/old_site/Resources#class-status-pages-for-mono "Resources") to see if someone is already working on it, and maybe contact them.
 
 If nobody is working on it, mail [mono-list@ximian.com](mailto:mono-list@ximian.com) with the class you want to implement and CC [miguel@ximian.com](mailto:miguel@ximian.com).
 

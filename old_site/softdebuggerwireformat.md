@@ -15,42 +15,42 @@ SoftDebugger:WireFormat
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Protocol_details">2 Protocol details</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#protocol-details">2 Protocol details</a>
 <ul>
-<li><a href="#Transport">2.1 Transport</a>
+<li><a href="#transport">2.1 Transport</a>
 <ul>
-<li><a href="#Bootstraping_a_connection">2.1.1 Bootstraping a connection</a></li>
+<li><a href="#bootstraping-a-connection">2.1.1 Bootstraping a connection</a></li>
 </ul></li>
-<li><a href="#Packets">2.2 Packets</a>
+<li><a href="#packets">2.2 Packets</a>
 <ul>
-<li><a href="#Packet_field_details">2.2.1 Packet field details</a>
+<li><a href="#packet-field-details">2.2.1 Packet field details</a>
 <ul>
-<li><a href="#Common_fields">2.2.1.1 Common fields</a></li>
-<li><a href="#Command_specific_fields">2.2.1.2 Command specific fields</a></li>
-<li><a href="#Reply_specific_fields">2.2.1.3 Reply specific fields</a></li>
+<li><a href="#common-fields">2.2.1.1 Common fields</a></li>
+<li><a href="#command-specific-fields">2.2.1.2 Command specific fields</a></li>
+<li><a href="#reply-specific-fields">2.2.1.3 Reply specific fields</a></li>
 </ul></li>
-<li><a href="#Data_type_marshalling">2.2.2 Data type marshalling</a></li>
-<li><a href="#Various_enumeration_value_definition">2.2.3 Various enumeration value definition</a></li>
+<li><a href="#data-type-marshalling">2.2.2 Data type marshalling</a></li>
+<li><a href="#various-enumeration-value-definition">2.2.3 Various enumeration value definition</a></li>
 </ul></li>
-<li><a href="#Command_list">2.3 Command list</a>
+<li><a href="#command-list">2.3 Command list</a>
 <ul>
-<li><a href="#Virtual_machine_commands">2.3.1 Virtual machine commands</a></li>
-<li><a href="#Events_commands">2.3.2 Events commands</a></li>
-<li><a href="#Thread_commands">2.3.3 Thread commands</a></li>
-<li><a href="#AppDomains_commands">2.3.4 AppDomains commands</a></li>
-<li><a href="#Assembly_commands">2.3.5 Assembly commands</a></li>
-<li><a href="#Module_commands">2.3.6 Module commands</a></li>
-<li><a href="#Method_commands">2.3.7 Method commands</a></li>
-<li><a href="#Type_commands">2.3.8 Type commands</a></li>
-<li><a href="#Stackframe_commands">2.3.9 Stackframe commands</a></li>
-<li><a href="#Array_commands">2.3.10 Array commands</a></li>
-<li><a href="#String_commands">2.3.11 String commands</a></li>
-<li><a href="#Object_commands">2.3.12 Object commands</a></li>
-<li><a href="#Composite_commands">2.3.13 Composite commands</a></li>
+<li><a href="#virtual-machine-commands">2.3.1 Virtual machine commands</a></li>
+<li><a href="#events-commands">2.3.2 Events commands</a></li>
+<li><a href="#thread-commands">2.3.3 Thread commands</a></li>
+<li><a href="#appdomains-commands">2.3.4 AppDomains commands</a></li>
+<li><a href="#assembly-commands">2.3.5 Assembly commands</a></li>
+<li><a href="#module-commands">2.3.6 Module commands</a></li>
+<li><a href="#method-commands">2.3.7 Method commands</a></li>
+<li><a href="#type-commands">2.3.8 Type commands</a></li>
+<li><a href="#stackframe-commands">2.3.9 Stackframe commands</a></li>
+<li><a href="#array-commands">2.3.10 Array commands</a></li>
+<li><a href="#string-commands">2.3.11 String commands</a></li>
+<li><a href="#object-commands">2.3.12 Object commands</a></li>
+<li><a href="#composite-commands">2.3.13 Composite commands</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Differences_with_JDWP">3 Differences with JDWP</a></li>
+<li><a href="#differences-with-jdwp">3 Differences with JDWP</a></li>
 </ul></td>
 </tr>
 </tbody>

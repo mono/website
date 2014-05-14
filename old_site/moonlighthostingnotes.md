@@ -17,27 +17,27 @@ These are some notes on Silverlight Hosting APIs and how the plugin works / shou
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Moonlight_plugin">1 Moonlight plugin</a>
+<li><a href="#moonlight-plugin">1 Moonlight plugin</a>
 <ul>
-<li><a href="#How_it_works">1.1 How it works</a>
+<li><a href="#how-it-works">1.1 How it works</a>
 <ul>
-<li><a href="#First_step:_create_an_.3Cobject.3E_element_of_type_application.2Fag-plugin.">1.1.1 First step: create an &lt;object&gt; element of type application/ag-plugin.</a></li>
-<li><a href="#Second_step:_bootstrapping_Silverlight_control">1.1.2 Second step: bootstrapping Silverlight control</a></li>
+<li><a href="#first-step-create-an-object-element-of-type-applicationag-plugin">1.1.1 First step: create an &lt;object&gt; element of type application/ag-plugin.</a></li>
+<li><a href="#second-step-bootstrapping-silverlight-control">1.1.2 Second step: bootstrapping Silverlight control</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Hosting_APIs">2 Hosting APIs</a>
+<li><a href="#hosting-apis">2 Hosting APIs</a>
 <ul>
-<li><a href="#ScriptableObject">2.1 ScriptableObject</a>
+<li><a href="#scriptableobject">2.1 ScriptableObject</a>
 <ul>
-<li><a href="#How_to_enable_ScriptableObject_in_managed_code">2.1.1 How to enable ScriptableObject in managed code</a></li>
-<li><a href="#How_to_use_ScriptableObject_in_client_Javascript">2.1.2 How to use ScriptableObject in client Javascript</a></li>
-<li><a href="#Hosted_environment">2.1.3 Hosted environment</a></li>
+<li><a href="#how-to-enable-scriptableobject-in-managed-code">2.1.1 How to enable ScriptableObject in managed code</a></li>
+<li><a href="#how-to-use-scriptableobject-in-client-javascript">2.1.2 How to use ScriptableObject in client Javascript</a></li>
+<li><a href="#hosted-environment">2.1.3 Hosted environment</a></li>
 </ul></li>
-<li><a href="#ScriptableObject_injection">2.2 ScriptableObject injection</a></li>
-<li><a href="#Error_handling">2.3 Error handling</a></li>
-<li><a href="#Misc_notes">2.4 Misc notes</a></li>
+<li><a href="#scriptableobject-injection">2.2 ScriptableObject injection</a></li>
+<li><a href="#error-handling">2.3 Error handling</a></li>
+<li><a href="#misc-notes">2.4 Misc notes</a></li>
 </ul></li>
-<li><a href="#Implementation_status_notes">3 Implementation status notes</a></li>
+<li><a href="#implementation-status-notes">3 Implementation status notes</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -17,38 +17,38 @@ Mono JIT porting guide. by Paolo Molaro (lupus@ximian.com) and Zoltan Varga (var
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Architecture-specific_instructions_and_instruction_selection.">2 Architecture-specific instructions and instruction selection.</a></li>
-<li><a href="#Native_code_emission">3 Native code emission</a></li>
-<li><a href="#Call_conventions_and_register_allocation">4 Call conventions and register allocation</a></li>
-<li><a href="#Method_trampolines">5 Method trampolines</a></li>
-<li><a href="#Exception_handling">6 Exception handling</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#architecture-specific-instructions-and-instruction-selection">2 Architecture-specific instructions and instruction selection.</a></li>
+<li><a href="#native-code-emission">3 Native code emission</a></li>
+<li><a href="#call-conventions-and-register-allocation">4 Call conventions and register allocation</a></li>
+<li><a href="#method-trampolines">5 Method trampolines</a></li>
+<li><a href="#exception-handling">6 Exception handling</a>
 <ul>
-<li><a href="#Code_generation_for_filter.2Ffinally_handlers">6.1 Code generation for filter/finally handlers</a></li>
-<li><a href="#Calling_finally.2Ffilter_handlers">6.2 Calling finally/filter handlers</a></li>
-<li><a href="#Calling_catch_handlers">6.3 Calling catch handlers</a></li>
-<li><a href="#Passing_Exception_objects_to_catch_handlers_and_filters">6.4 Passing Exception objects to catch handlers and filters</a></li>
+<li><a href="#code-generation-for-filterfinally-handlers">6.1 Code generation for filter/finally handlers</a></li>
+<li><a href="#calling-finallyfilter-handlers">6.2 Calling finally/filter handlers</a></li>
+<li><a href="#calling-catch-handlers">6.3 Calling catch handlers</a></li>
+<li><a href="#passing-exception-objects-to-catch-handlers-and-filters">6.4 Passing Exception objects to catch handlers and filters</a></li>
 </ul></li>
-<li><a href="#Minor_helper_methods">7 Minor helper methods</a></li>
-<li><a href="#Testing_the_port">8 Testing the port</a></li>
-<li><a href="#Writing_regression_tests">9 Writing regression tests</a></li>
-<li><a href="#Platform_specific_optimizations">10 Platform specific optimizations</a></li>
-<li><a href="#Function_descriptors">11 Function descriptors</a></li>
-<li><a href="#Emulated_opcodes">12 Emulated opcodes</a></li>
-<li><a href="#Prolog.2FEpilog">13 Prolog/Epilog</a></li>
-<li><a href="#Delegate_Invocation">14 Delegate Invocation</a></li>
-<li><a href="#Varargs">15 Varargs</a>
+<li><a href="#minor-helper-methods">7 Minor helper methods</a></li>
+<li><a href="#testing-the-port">8 Testing the port</a></li>
+<li><a href="#writing-regression-tests">9 Writing regression tests</a></li>
+<li><a href="#platform-specific-optimizations">10 Platform specific optimizations</a></li>
+<li><a href="#function-descriptors">11 Function descriptors</a></li>
+<li><a href="#emulated-opcodes">12 Emulated opcodes</a></li>
+<li><a href="#prologepilog">13 Prolog/Epilog</a></li>
+<li><a href="#delegate-invocation">14 Delegate Invocation</a></li>
+<li><a href="#varargs">15 Varargs</a>
 <ul>
-<li><a href="#Caller_side">15.1 Caller side</a></li>
-<li><a href="#Callee_side">15.2 Callee side</a></li>
+<li><a href="#caller-side">15.1 Caller side</a></li>
+<li><a href="#callee-side">15.2 Callee side</a></li>
 </ul></li>
-<li><a href="#Unwind_info">16 Unwind info</a></li>
-<li><a href="#Generic_Sharing">17 Generic Sharing</a>
+<li><a href="#unwind-info">16 Unwind info</a></li>
+<li><a href="#generic-sharing">17 Generic Sharing</a>
 <ul>
-<li><a href="#MONO_ARCH_RGCTX_REG">17.1 MONO_ARCH_RGCTX_REG</a></li>
-<li><a href="#Static_RGCTX_trampolines">17.2 Static RGCTX trampolines</a></li>
-<li><a href="#Generic_Class_Init_Trampoline">17.3 Generic Class Init Trampoline</a></li>
-<li><a href="#RGCTX_Lazy_Fetch_Trampoline">17.4 RGCTX Lazy Fetch Trampoline</a></li>
+<li><a href="#mono-arch-rgctx-reg">17.1 MONO_ARCH_RGCTX_REG</a></li>
+<li><a href="#static-rgctx-trampolines">17.2 Static RGCTX trampolines</a></li>
+<li><a href="#generic-class-init-trampoline">17.3 Generic Class Init Trampoline</a></li>
+<li><a href="#rgctx-lazy-fetch-trampoline">17.4 RGCTX Lazy Fetch Trampoline</a></li>
 </ul></li>
 </ul></td>
 </tr>

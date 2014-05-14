@@ -21,52 +21,52 @@ Support for Mono versions 3.0 and 2.10 is been discontinued. No further developm
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#3.2.x_Series_Release_Notes">1 3.2.x Series Release Notes</a></li>
-<li><a href="#New_in_Mono_3.2.8">2 New in Mono 3.2.8</a></li>
-<li><a href="#New_in_Mono_3.2.7">3 New in Mono 3.2.7</a>
+<li><a href="#32x-series-release-notes">1 3.2.x Series Release Notes</a></li>
+<li><a href="#new-in-mono-328">2 New in Mono 3.2.8</a></li>
+<li><a href="#new-in-mono-327">3 New in Mono 3.2.7</a>
 <ul>
-<li><a href="#Highlights">3.1 Highlights</a></li>
-<li><a href="#New_features">3.2 New features</a>
+<li><a href="#highlights">3.1 Highlights</a></li>
+<li><a href="#new-features">3.2 New features</a>
 <ul>
-<li><a href="#Runtime">3.2.1 Runtime</a></li>
-<li><a href="#Class_libraries">3.2.2 Class libraries</a></li>
-<li><a href="#Tools">3.2.3 Tools</a></li>
+<li><a href="#runtime">3.2.1 Runtime</a></li>
+<li><a href="#class-libraries">3.2.2 Class libraries</a></li>
+<li><a href="#tools">3.2.3 Tools</a></li>
 </ul></li>
-<li><a href="#Bug_fixes">3.3 Bug fixes</a></li>
+<li><a href="#bug-fixes">3.3 Bug fixes</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.2.6">4 New in Mono 3.2.6</a></li>
-<li><a href="#New_in_Mono_3.2.5">5 New in Mono 3.2.5</a></li>
-<li><a href="#New_in_Mono_3.2.4">6 New in Mono 3.2.4</a></li>
-<li><a href="#New_in_Mono_3.2.3">7 New in Mono 3.2.3</a>
+<li><a href="#new-in-mono-326">4 New in Mono 3.2.6</a></li>
+<li><a href="#new-in-mono-325">5 New in Mono 3.2.5</a></li>
+<li><a href="#new-in-mono-324">6 New in Mono 3.2.4</a></li>
+<li><a href="#new-in-mono-323">7 New in Mono 3.2.3</a>
 <ul>
-<li><a href="#Highlights_2">7.1 Highlights</a></li>
-<li><a href="#Bugs">7.2 Bugs</a></li>
+<li><a href="#highlights_2">7.1 Highlights</a></li>
+<li><a href="#bugs">7.2 Bugs</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.2.2">8 New in Mono 3.2.2</a>
+<li><a href="#new-in-mono-322">8 New in Mono 3.2.2</a>
 <ul>
-<li><a href="#Highlights_3">8.1 Highlights</a></li>
-<li><a href="#Bugs_2">8.2 Bugs</a></li>
+<li><a href="#highlights_3">8.1 Highlights</a></li>
+<li><a href="#bugs_2">8.2 Bugs</a></li>
 </ul></li>
-<li><a href="#New_in_Mono_3.2.1">9 New in Mono 3.2.1</a></li>
-<li><a href="#New_in_Mono_3.2.0">10 New in Mono 3.2.0</a></li>
-<li><a href="#Major_Highlights">11 Major Highlights</a>
+<li><a href="#new-in-mono-321">9 New in Mono 3.2.1</a></li>
+<li><a href="#new-in-mono-320">10 New in Mono 3.2.0</a></li>
+<li><a href="#major-highlights">11 Major Highlights</a>
 <ul>
-<li><a href="#Runtime_2">11.1 Runtime</a></li>
-<li><a href="#Garbage_Collector">11.2 Garbage Collector</a>
+<li><a href="#runtime_2">11.1 Runtime</a></li>
+<li><a href="#garbage-collector">11.2 Garbage Collector</a>
 <ul>
-<li><a href="#Low_pause_mode">11.2.1 Low pause mode</a></li>
-<li><a href="#Low_promotion_nursery">11.2.2 Low promotion nursery</a></li>
+<li><a href="#low-pause-mode">11.2.1 Low pause mode</a></li>
+<li><a href="#low-promotion-nursery">11.2.2 Low promotion nursery</a></li>
 </ul></li>
-<li><a href="#Mostly_precise_stack_scanning">11.3 Mostly precise stack scanning</a></li>
-<li><a href="#Mobile">11.4 Mobile</a>
+<li><a href="#mostly-precise-stack-scanning">11.3 Mostly precise stack scanning</a></li>
+<li><a href="#mobile">11.4 Mobile</a>
 <ul>
-<li><a href="#Size_Reduction">11.4.1 Size Reduction</a></li>
+<li><a href="#size-reduction">11.4.1 Size Reduction</a></li>
 </ul></li>
-<li><a href="#Performance">11.5 Performance</a></li>
-<li><a href="#Optimizations">11.6 Optimizations</a></li>
-<li><a href="#Other_platforms">11.7 Other platforms</a></li>
+<li><a href="#performance">11.5 Performance</a></li>
+<li><a href="#optimizations">11.6 Optimizations</a></li>
+<li><a href="#other-platforms">11.7 Other platforms</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_3.2">12 Installing Mono 3.2</a></li>
+<li><a href="#installing-mono-32">12 Installing Mono 3.2</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -75,23 +75,23 @@ Support for Mono versions 3.0 and 2.10 is been discontinued. No further developm
 3.2.x Series Release Notes
 ==========================
 
--   [New in 3.2.8](#New_in_Mono_3.2.8)
+-   [New in 3.2.8](#new-in-mono-328)
 
--   [New in 3.2.7](#New_in_Mono_3.2.7)
+-   [New in 3.2.7](#new-in-mono-327)
 
--   [New in 3.2.6](#New_in_Mono_3.2.6)
+-   [New in 3.2.6](#new-in-mono-326)
 
--   [New in 3.2.5](#New_in_Mono_3.2.5)
+-   [New in 3.2.5](#new-in-mono-325)
 
--   [New in 3.2.4](#New_in_Mono_3.2.4)
+-   [New in 3.2.4](#new-in-mono-324)
 
--   [New in 3.2.3](#New_in_Mono_3.2.3)
+-   [New in 3.2.3](#new-in-mono-323)
 
--   [New in 3.2.2](#New_in_Mono_3.2.2)
+-   [New in 3.2.2](#new-in-mono-322)
 
--   [New in 3.2.1](#New_in_Mono_3.2.1)
+-   [New in 3.2.1](#new-in-mono-321)
 
--   [New in 3.2.0](#New_in_Mono_3.2)
+-   [New in 3.2.0](#new-in-mono-32)
 
 New in Mono 3.2.8
 =================

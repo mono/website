@@ -15,54 +15,54 @@ WinForms Designer
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Installation">1 Installation</a>
+<li><a href="#installation">1 Installation</a>
 <ul>
-<li><a href="#Mono">1.1 Mono</a></li>
-<li><a href="#Visual_Studio">1.2 Visual Studio</a></li>
-<li><a href="#Mono_with_Mono.Design">1.3 Mono with Mono.Design</a></li>
+<li><a href="#mono">1.1 Mono</a></li>
+<li><a href="#visual-studio">1.2 Visual Studio</a></li>
+<li><a href="#mono-with-monodesign">1.3 Mono with Mono.Design</a></li>
 </ul></li>
-<li><a href="#Status">2 Status</a></li>
-<li><a href="#Bugs.2C_Patches.2C_Questions">3 Bugs, Patches, Questions</a></li>
-<li><a href="#Screenshots">4 Screenshots</a></li>
-<li><a href="#TODOs">5 TODOs</a>
+<li><a href="#status">2 Status</a></li>
+<li><a href="#bugs-patches-questions">3 Bugs, Patches, Questions</a></li>
+<li><a href="#screenshots">4 Screenshots</a></li>
+<li><a href="#todos">5 TODOs</a>
 <ul>
-<li><a href="#Task_Packs">5.1 Task Packs</a></li>
-<li><a href="#Support_Classes">5.2 Support Classes</a>
+<li><a href="#task-packs">5.1 Task Packs</a></li>
+<li><a href="#support-classes">5.2 Support Classes</a>
 <ul>
-<li><a href="#Serializers">5.2.1 Serializers</a></li>
-<li><a href="#Designers">5.2.2 Designers</a></li>
-<li><a href="#PropertyGrid_Editors">5.2.3 PropertyGrid Editors</a></li>
-<li><a href="#Menu_Commands">5.2.4 Menu Commands</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#Known_Limitations">6 Known Limitations</a>
-<ul>
-<li><a href="#Design_Surface">6.1 Design Surface</a></li>
-<li><a href="#CodeDom_.28De.29Serialization">6.2 CodeDom (De)Serialization</a></li>
-</ul></li>
-<li><a href="#.NET_Design-Time_Framework">7 .NET Design-Time Framework</a>
-<ul>
-<li><a href="#Loose_Coupling_Concepts">7.1 Loose Coupling Concepts</a>
-<ul>
-<li><a href="#Components.2C_Containers.2C_Sites">7.1.1 Components, Containers, Sites</a></li>
-<li><a href="#Services">7.1.2 Services</a></li>
-<li><a href="#Design-Time_Attributes">7.1.3 Design-Time Attributes</a></li>
-</ul></li>
-<li><a href="#Design_Surface_2">7.2 Design Surface</a>
-<ul>
-<li><a href="#State_Persistence">7.2.1 State Persistence</a></li>
-<li><a href="#Design-Time_Container">7.2.2 Design-Time Container</a></li>
-<li><a href="#Designers_2">7.2.3 Designers</a></li>
-<li><a href="#Design-Time_Services">7.2.4 Design-Time Services</a></li>
-</ul></li>
-<li><a href="#Design-Time_Serialization">7.3 Design-Time Serialization</a></li>
-<li><a href="#The_Designer_Tool">7.4 The Designer Tool</a>
-<ul>
-<li><a href="#Metadata_Editing">7.4.1 Metadata Editing</a></li>
-<li><a href="#Component_Toolbox">7.4.2 Component Toolbox</a></li>
+<li><a href="#serializers">5.2.1 Serializers</a></li>
+<li><a href="#designers">5.2.2 Designers</a></li>
+<li><a href="#propertygrid-editors">5.2.3 PropertyGrid Editors</a></li>
+<li><a href="#menu-commands">5.2.4 Menu Commands</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Documentation_Resources">8 Documentation Resources</a></li>
+<li><a href="#known-limitations">6 Known Limitations</a>
+<ul>
+<li><a href="#design-surface">6.1 Design Surface</a></li>
+<li><a href="#codedom-deserialization">6.2 CodeDom (De)Serialization</a></li>
+</ul></li>
+<li><a href="#net-design-time-framework">7 .NET Design-Time Framework</a>
+<ul>
+<li><a href="#loose-coupling-concepts">7.1 Loose Coupling Concepts</a>
+<ul>
+<li><a href="#components-containers-sites">7.1.1 Components, Containers, Sites</a></li>
+<li><a href="#services">7.1.2 Services</a></li>
+<li><a href="#design-time-attributes">7.1.3 Design-Time Attributes</a></li>
+</ul></li>
+<li><a href="#design-surface_2">7.2 Design Surface</a>
+<ul>
+<li><a href="#state-persistence">7.2.1 State Persistence</a></li>
+<li><a href="#design-time-container">7.2.2 Design-Time Container</a></li>
+<li><a href="#designers_2">7.2.3 Designers</a></li>
+<li><a href="#design-time-services">7.2.4 Design-Time Services</a></li>
+</ul></li>
+<li><a href="#design-time-serialization">7.3 Design-Time Serialization</a></li>
+<li><a href="#the-designer-tool">7.4 The Designer Tool</a>
+<ul>
+<li><a href="#metadata-editing">7.4.1 Metadata Editing</a></li>
+<li><a href="#component-toolbox">7.4.2 Component Toolbox</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#documentation-resources">8 Documentation Resources</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -76,9 +76,9 @@ Installation
     git clone https://github.com/mono/mwf-designer.git
     make; make run
 
-The WinForms Designer **requires** ~~[Mono SVN Head]({{site.github.url}}/old_site/Compiling_Mono#Building_Mono_from_the_Subversion_Repository "Compiling Mono").~~ Mono 2.0 or newer.
+The WinForms Designer **requires** ~~[Mono SVN Head]({{site.github.url}}/old_site/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono").~~ Mono 2.0 or newer.
 
-However if you do indeed run it on [Mono SVN Head]({{site.github.url}}/old_site/Compiling_Mono#Building_Mono_from_the_Subversion_Repository "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
+However if you do indeed run it on [Mono SVN Head]({{site.github.url}}/old_site/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
 
 ### Visual Studio
 
@@ -145,7 +145,7 @@ TODOs
 
 The best way to find out something you want to work on is to play with the designer and see what doesn't work or you don't like. Below are some related important tasks I have sorted in groups in semi-chronological order.
 
-For background information on how the designer works check [\#.NET\_Design-Time\_Framework](#.NET_Design-Time_Framework)
+For background information on how the designer works check [\#.NET\_Design-Time\_Framework](#net-design-time-framework)
 
 ### Task Packs
 

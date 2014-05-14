@@ -15,14 +15,14 @@ Mono:Runtime:Documentation:Other
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Faster_runtime_builds">1 Faster runtime builds</a></li>
-<li><a href="#Runtime_debugging_methods">2 Runtime debugging methods</a>
+<li><a href="#faster-runtime-builds">1 Faster runtime builds</a></li>
+<li><a href="#runtime-debugging-methods">2 Runtime debugging methods</a>
 <ul>
-<li><a href="#Debugging_crashes_which_don.27t_happen_inside_gdb.2C_or_only_happen_when_a_test_program_is_ran_in_a_loop">2.1 Debugging crashes which don't happen inside gdb, or only happen when a test program is ran in a loop</a></li>
-<li><a href="#Setting_native_breakpoints_in_managed_methods">2.2 Setting native breakpoints in managed methods</a></li>
-<li><a href="#Displaying_JIT_debug_output">2.3 Displaying JIT debug output</a></li>
-<li><a href="#Displaying_runtime_debug_output">2.4 Displaying runtime debug output</a></li>
-<li><a href="#mono_debug_count_.28.29">2.5 mono_debug_count ()</a></li>
+<li><a href="#debugging-crashes-which-dont-happen-inside-gdb-or-only-happen-when-a-test-program-is-ran-in-a-loop">2.1 Debugging crashes which don't happen inside gdb, or only happen when a test program is ran in a loop</a></li>
+<li><a href="#setting-native-breakpoints-in-managed-methods">2.2 Setting native breakpoints in managed methods</a></li>
+<li><a href="#displaying-jit-debug-output">2.3 Displaying JIT debug output</a></li>
+<li><a href="#displaying-runtime-debug-output">2.4 Displaying runtime debug output</a></li>
+<li><a href="#mono-debug-count-">2.5 mono_debug_count ()</a></li>
 </ul></li>
 </ul></td>
 </tr>

@@ -16,26 +16,26 @@ Mono:Runtime:Documentation:SoftDebugger
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Soft-Mode_Debugger">1 Soft-Mode Debugger</a>
+<li><a href="#soft-mode-debugger">1 Soft-Mode Debugger</a>
 <ul>
-<li><a href="#Architecture">1.1 Architecture</a>
+<li><a href="#architecture">1.1 Architecture</a>
 <ul>
-<li><a href="#Debugger_Agent">1.1.1 Debugger Agent</a></li>
-<li><a href="#Wire_Protocol">1.1.2 Wire Protocol</a></li>
-<li><a href="#Client_library">1.1.3 Client library</a></li>
+<li><a href="#debugger-agent">1.1.1 Debugger Agent</a></li>
+<li><a href="#wire-protocol">1.1.2 Wire Protocol</a></li>
+<li><a href="#client-library">1.1.3 Client library</a></li>
 </ul></li>
-<li><a href="#Implementation">1.2 Implementation</a>
+<li><a href="#implementation">1.2 Implementation</a>
 <ul>
-<li><a href="#Agent">1.2.1 Agent</a>
+<li><a href="#agent">1.2.1 Agent</a>
 <ul>
-<li><a href="#Design">1.2.1.1 Design</a></li>
-<li><a href="#The_debugger_thread">1.2.1.2 The debugger thread</a></li>
-<li><a href="#Event_handling">1.2.1.3 Event handling</a></li>
-<li><a href="#Suspend.2FResume">1.2.1.4 Suspend/Resume</a></li>
-<li><a href="#Sequence_points">1.2.1.5 Sequence points</a></li>
-<li><a href="#Single_Stepping">1.2.1.6 Single Stepping</a></li>
-<li><a href="#Breakpoints">1.2.1.7 Breakpoints</a></li>
-<li><a href="#AOT_support">1.2.1.8 AOT support</a></li>
+<li><a href="#design">1.2.1.1 Design</a></li>
+<li><a href="#the-debugger-thread">1.2.1.2 The debugger thread</a></li>
+<li><a href="#event-handling">1.2.1.3 Event handling</a></li>
+<li><a href="#suspendresume">1.2.1.4 Suspend/Resume</a></li>
+<li><a href="#sequence-points">1.2.1.5 Sequence points</a></li>
+<li><a href="#single-stepping">1.2.1.6 Single Stepping</a></li>
+<li><a href="#breakpoints">1.2.1.7 Breakpoints</a></li>
+<li><a href="#aot-support">1.2.1.8 AOT support</a></li>
 </ul></li>
 </ul></li>
 </ul></li>

@@ -15,34 +15,34 @@ Visual Studio Integration
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Goals">1 Goals</a>
+<li><a href="#goals">1 Goals</a>
 <ul>
-<li><a href="#Experience">1.1 Experience</a>
+<li><a href="#experience">1.1 Experience</a>
 <ul>
-<li><a href="#One_Click_Execution">1.1.1 One Click Execution</a></li>
+<li><a href="#one-click-execution">1.1.1 One Click Execution</a></li>
 </ul></li>
-<li><a href="#Issues">1.2 Issues</a>
+<li><a href="#issues">1.2 Issues</a>
 <ul>
-<li><a href="#Deployment">1.2.1 Deployment</a></li>
-<li><a href="#Linux_Firewall_Configuration">1.2.2 Linux Firewall Configuration</a></li>
-<li><a href="#Locating_Linux_Hosts">1.2.3 Locating Linux Hosts</a></li>
-<li><a href="#Launching_Programs_in_Linux">1.2.4 Launching Programs in Linux</a></li>
+<li><a href="#deployment">1.2.1 Deployment</a></li>
+<li><a href="#linux-firewall-configuration">1.2.2 Linux Firewall Configuration</a></li>
+<li><a href="#locating-linux-hosts">1.2.3 Locating Linux Hosts</a></li>
+<li><a href="#launching-programs-in-linux">1.2.4 Launching Programs in Linux</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Design_Considerations">2 Design Considerations</a>
+<li><a href="#design-considerations">2 Design Considerations</a>
 <ul>
-<li><a href="#Questions.2C_questions">2.1 Questions, questions</a></li>
+<li><a href="#questions-questions">2.1 Questions, questions</a></li>
 </ul></li>
-<li><a href="#Implementation_How-to">3 Implementation How-to</a>
+<li><a href="#implementation-how-to">3 Implementation How-to</a>
 <ul>
-<li><a href="#Deploying_Web_Projects">3.1 Deploying Web Projects</a>
+<li><a href="#deploying-web-projects">3.1 Deploying Web Projects</a>
 <ul>
-<li><a href="#Daemon_Actions">3.1.1 Daemon Actions</a></li>
-<li><a href="#Add-in_configuration_.2F_options">3.1.2 Add-in configuration / options</a></li>
+<li><a href="#daemon-actions">3.1.1 Daemon Actions</a></li>
+<li><a href="#add-in-configuration--options">3.1.2 Add-in configuration / options</a></li>
 </ul></li>
-<li><a href="#Deploying_Winforms_Projects">3.2 Deploying Winforms Projects</a>
+<li><a href="#deploying-winforms-projects">3.2 Deploying Winforms Projects</a>
 <ul>
-<li><a href="#Add-in_configuration_.2F_options_2">3.2.1 Add-in configuration / options</a></li>
+<li><a href="#add-in-configuration--options_2">3.2.1 Add-in configuration / options</a></li>
 </ul></li>
 </ul></li>
 </ul></td>
@@ -53,7 +53,7 @@ Visual Studio Integration
 Goals
 =====
 
-See the section on [Design Considerations](#Design_Considerations) below for more information as to what our use cases for the Visual Studio Integration should be.
+See the section on [Design Considerations](#design-considerations) below for more information as to what our use cases for the Visual Studio Integration should be.
 
 There is also a [Getting Started]({{site.github.url}}/old_site/GettingStartedWithMonoTools) guide for MonoVS.
 

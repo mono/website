@@ -19,32 +19,32 @@ This document also discusses how to distribute libraries whose APIs are not froz
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Application_Layout">1 Application Layout</a>
+<li><a href="#application-layout">1 Application Layout</a>
 <ul>
-<li><a href="#Assumptions">1.1 Assumptions</a></li>
-<li><a href="#Background">1.2 Background</a></li>
-<li><a href="#Layout_Recommendation">1.3 Layout Recommendation</a></li>
-<li><a href="#Relocation">1.4 Relocation</a></li>
-<li><a href="#When_to_use_the_GAC">1.5 When to use the GAC</a></li>
+<li><a href="#assumptions">1.1 Assumptions</a></li>
+<li><a href="#background">1.2 Background</a></li>
+<li><a href="#layout-recommendation">1.3 Layout Recommendation</a></li>
+<li><a href="#relocation">1.4 Relocation</a></li>
+<li><a href="#when-to-use-the-gac">1.5 When to use the GAC</a></li>
 </ul></li>
-<li><a href="#Libraries_with_Unstable_APIs">2 Libraries with Unstable APIs</a>
+<li><a href="#libraries-with-unstable-apis">2 Libraries with Unstable APIs</a>
 <ul>
-<li><a href="#Comparing_this_to_other_models">2.1 Comparing this to other models</a>
+<li><a href="#comparing-this-to-other-models">2.1 Comparing this to other models</a>
 <ul>
-<li><a href="#How_is_this_better_than_using_the_GAC.3F">2.1.1 How is this better than using the GAC?</a></li>
-<li><a href="#How_is_this_better_than_the_.22egg.22_model.3F">2.1.2 How is this better than the &quot;egg&quot; model?</a></li>
+<li><a href="#how-is-this-better-than-using-the-gac">2.1.1 How is this better than using the GAC?</a></li>
+<li><a href="#how-is-this-better-than-the-egg-model">2.1.2 How is this better than the &quot;egg&quot; model?</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Small_Libraries">3 Small Libraries</a></li>
-<li><a href="#Auto-tools">4 Auto-tools</a>
+<li><a href="#small-libraries">3 Small Libraries</a></li>
+<li><a href="#auto-tools">4 Auto-tools</a>
 <ul>
-<li><a href="#autogen.sh">4.1 autogen.sh</a></li>
-<li><a href="#Makefile.am">4.2 Makefile.am</a></li>
-<li><a href="#configure.in">4.3 configure.in</a></li>
-<li><a href="#man.2FMakefile.am">4.4 man/Makefile.am</a></li>
-<li><a href="#resources.2FMakefile.am">4.5 resources/Makefile.am</a></li>
-<li><a href="#src.2FAssemblyInfo.cs.in">4.6 src/AssemblyInfo.cs.in</a></li>
-<li><a href="#src.2FMakefile.am">4.7 src/Makefile.am</a></li>
+<li><a href="#autogensh">4.1 autogen.sh</a></li>
+<li><a href="#makefileam">4.2 Makefile.am</a></li>
+<li><a href="#configurein">4.3 configure.in</a></li>
+<li><a href="#manmakefileam">4.4 man/Makefile.am</a></li>
+<li><a href="#resourcesmakefileam">4.5 resources/Makefile.am</a></li>
+<li><a href="#srcassemblyinfocsin">4.6 src/AssemblyInfo.cs.in</a></li>
+<li><a href="#srcmakefileam">4.7 src/Makefile.am</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -207,7 +207,7 @@ This means that developers that consume unstable API libraries do not have to wo
 
 If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
 
-Note: a production-ready, detailed example of this can be found in the [Autotools]({{site.github.url}}/old_site/Guidelines:Application_Deployment#Auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+Note: a production-ready, detailed example of this can be found in the [Autotools]({{site.github.url}}/old_site/Guidelines:Application_Deployment#auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
 
 Comparing this to other models
 ------------------------------
@@ -278,7 +278,7 @@ You can browse the source code online for a sample "skeleton" application, the s
 -   How a script that is installed in bin is installed
 -   How to embed the version from your configure.in program into the AssemblyInfo.cs file that is compiled.
 
-The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#Libraries_with_Unstable_APIs "Guidelines:Application Deployment") (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section]({{site.github.url}}/old_site/GAPI#Putting_it_all_together "GAPI") of the [GAPI]({{site.github.url}}/old_site/GAPI "GAPI") page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
+The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section]({{site.github.url}}/old_site/GAPI#putting-it-all-together "GAPI") of the [GAPI]({{site.github.url}}/old_site/GAPI "GAPI") page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
 
 ``` bash
   $ ./autogen.sh
@@ -373,7 +373,7 @@ In EXTRA\_DIST we put the same files as we have initially, i.e., main.cs and Ass
 
 And then we setup the variables that will generate the command line to run when compiling the source files.
 
-Lastly, since we wish to link against and use an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#Libraries_with_Unstable_APIs "Guidelines:Application Deployment") (one that is not installed in the GAC), we need to copy the unstable assembly that we link against (SUPERSTRINGSHARP\_LIBS) to the directory where our program will be installed. This is done by asking pkg-config for the Libraries variable, which should be set to a space-delimited string of assemblies to copy. The install-data-hook rule contains the short script to do this, and uses the aforementioned INSTALL and PKG\_CONFIG variables set in configure.in.
+Lastly, since we wish to link against and use an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (one that is not installed in the GAC), we need to copy the unstable assembly that we link against (SUPERSTRINGSHARP\_LIBS) to the directory where our program will be installed. This is done by asking pkg-config for the Libraries variable, which should be set to a space-delimited string of assemblies to copy. The install-data-hook rule contains the short script to do this, and uses the aforementioned INSTALL and PKG\_CONFIG variables set in configure.in.
 
 Now it's time to run some commands and enjoy. The first one you need to run is:
 

@@ -9,7 +9,7 @@ redirect_from:
 New Version of the Use-Page
 ===========================
 
- Mono is positioned to be the leading platform for development of Gnome applications on Linux and is an open-source alternative for Microsoft Windows development. Mono can be used in a [variety of scenarios](#Usage_Scenarios) and this page shall give an short overview how Mono can be used.
+ Mono is positioned to be the leading platform for development of Gnome applications on Linux and is an open-source alternative for Microsoft Windows development. Mono can be used in a [variety of scenarios](#usage-scenarios) and this page shall give an short overview how Mono can be used.
 
 <table>
 <col width="100%" />
@@ -17,15 +17,15 @@ New Version of the Use-Page
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Usage_Scenarios">1 Usage Scenarios</a>
+<li><a href="#usage-scenarios">1 Usage Scenarios</a>
 <ul>
-<li><a href="#Create_a_cross-platform_application">1.1 Create a cross-platform application</a></li>
-<li><a href="#Develop_Web_Applications">1.2 Develop Web Applications</a></li>
-<li><a href="#Port_existing_Applications_from_Windows_to_Linux_or_Mac">1.3 Port existing Applications from Windows to Linux or Mac</a></li>
-<li><a href="#Embed_Mono_into_your_Application">1.4 Embed Mono into your Application</a></li>
-<li><a href="#Something_completely_different">1.5 Something completely different</a></li>
+<li><a href="#create-a-cross-platform-application">1.1 Create a cross-platform application</a></li>
+<li><a href="#develop-web-applications">1.2 Develop Web Applications</a></li>
+<li><a href="#port-existing-applications-from-windows-to-linux-or-mac">1.3 Port existing Applications from Windows to Linux or Mac</a></li>
+<li><a href="#embed-mono-into-your-application">1.4 Embed Mono into your Application</a></li>
+<li><a href="#something-completely-different">1.5 Something completely different</a></li>
 </ul></li>
-<li><a href="#Languages">2 Languages</a></li>
+<li><a href="#languages">2 Languages</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -40,7 +40,7 @@ Mono can be used in variety of applications, however there are some pieces which
 -   [C\# Compiler]({{site.github.url}}/old_site/CSharp_Compiler "CSharp Compiler") and [Mono Runtime]({{site.github.url}}/old_site/Mono:Runtime)
 -   [Debugger]({{site.github.url}}/old_site/Debugger "Debugger"), [Debugging Tutorial]({{site.github.url}}/old_site/Guide:Debugger "Guide:Debugger") and [Debugging]({{site.github.url}}/old_site/Debugging "Debugging")
 -   [Profiling]({{site.github.url}}/old_site/Profile "Profile")
--   [Class Status]({{site.github.url}}/old_site/Resources#API_completion_status_pages "Resources") and [API Documentation](http://www.go-mono.com/docs/)
+-   [Class Status]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources") and [API Documentation](http://www.go-mono.com/docs/)
 
 Create a cross-platform application
 -----------------------------------

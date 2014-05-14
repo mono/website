@@ -21,14 +21,14 @@ This assumes that you are familiar with the [compilation process for Mono]({{sit
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What.27s_the_Point.3F">1 What's the Point?</a></li>
-<li><a href="#Getting_Sources">2 Getting Sources</a>
+<li><a href="#whats-the-point">1 What's the Point?</a></li>
+<li><a href="#getting-sources">2 Getting Sources</a>
 <ul>
-<li><a href="#Source_Tarballs">2.1 Source Tarballs</a></li>
-<li><a href="#Source_from_Version_Control_.28Mono_Git.29">2.2 Source from Version Control (Mono Git)</a></li>
+<li><a href="#source-tarballs">2.1 Source Tarballs</a></li>
+<li><a href="#source-from-version-control-mono-git">2.2 Source from Version Control (Mono Git)</a></li>
 </ul></li>
-<li><a href="#Setting_up_a_Build_Environment">3 Setting up a Build Environment</a></li>
-<li><a href="#Building_Sources">4 Building Sources</a>
+<li><a href="#setting-up-a-build-environment">3 Setting up a Build Environment</a></li>
+<li><a href="#building-sources">4 Building Sources</a>
 <ul>
 <li><a href="#libgdiplus">4.1 libgdiplus</a></li>
 <li><a href="#mono">4.2 mono</a></li>
@@ -36,15 +36,15 @@ This assumes that you are familiar with the [compilation process for Mono]({{sit
 <li><a href="#gtk-sharp-2">4.4 gtk-sharp-2</a></li>
 <li><a href="#mono-tools">4.5 mono-tools</a></li>
 </ul></li>
-<li><a href="#Conclusion">5 Conclusion</a>
+<li><a href="#conclusion">5 Conclusion</a>
 <ul>
-<li><a href="#Tip:_Your_first_build">5.1 Tip: Your first build</a></li>
-<li><a href="#Tip:_Rebuilding_Class_Library_Parts">5.2 Tip: Rebuilding Class Library Parts</a></li>
-<li><a href="#Tip:_CONFIG_SITE">5.3 Tip: CONFIG_SITE</a></li>
-<li><a href="#Tip:_MONO_GAC_PREFIX">5.4 Tip: MONO_GAC_PREFIX</a></li>
-<li><a href="#BEWARE:_pkgconfig_fallback_behaviour">5.5 BEWARE: pkgconfig fallback behaviour</a></li>
+<li><a href="#tip-your-first-build">5.1 Tip: Your first build</a></li>
+<li><a href="#tip-rebuilding-class-library-parts">5.2 Tip: Rebuilding Class Library Parts</a></li>
+<li><a href="#tip-config-site">5.3 Tip: CONFIG_SITE</a></li>
+<li><a href="#tip-mono-gac-prefix">5.4 Tip: MONO_GAC_PREFIX</a></li>
+<li><a href="#beware-pkgconfig-fallback-behaviour">5.5 BEWARE: pkgconfig fallback behaviour</a></li>
 </ul></li>
-<li><a href="#Common_Problems">6 Common Problems</a></li>
+<li><a href="#common-problems">6 Common Problems</a></li>
 </ul></td>
 </tr>
 </tbody>

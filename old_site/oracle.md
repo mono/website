@@ -25,12 +25,12 @@ Some commercial providers for Mono are available:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Info">1 Info</a></li>
-<li><a href="#Current_Status_for_System.Data.OracleClient">2 Current Status for System.Data.OracleClient</a></li>
-<li><a href="#Action_plan">3 Action plan</a></li>
-<li><a href="#Testing">4 Testing</a></li>
-<li><a href="#Examples">5 Examples</a></li>
-<li><a href="#Building_C.23_Examples">6 Building C# Examples</a></li>
+<li><a href="#info">1 Info</a></li>
+<li><a href="#current-status-for-systemdataoracleclient">2 Current Status for System.Data.OracleClient</a></li>
+<li><a href="#action-plan">3 Action plan</a></li>
+<li><a href="#testing">4 Testing</a></li>
+<li><a href="#examples">5 Examples</a></li>
+<li><a href="#building-c-examples">6 Building C# Examples</a></li>
 </ul></td>
 </tr>
 </tbody>

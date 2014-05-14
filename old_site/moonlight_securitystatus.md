@@ -19,61 +19,61 @@ This page list the security related **features** of Moonlight. Another [page]({{
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#CoreCLR_Security_Model">1 CoreCLR Security Model</a></li>
-<li><a href="#Plugin_Sandbox">2 Plugin Sandbox</a>
+<li><a href="#coreclr-security-model">1 CoreCLR Security Model</a></li>
+<li><a href="#plugin-sandbox">2 Plugin Sandbox</a>
 <ul>
-<li><a href="#AllowHtmlPopupWindow">2.1 AllowHtmlPopupWindow</a></li>
-<li><a href="#EnableHtmlAccess">2.2 EnableHtmlAccess</a></li>
-<li><a href="#ExternalCallersFromCrossDomain">2.3 ExternalCallersFromCrossDomain</a></li>
-<li><a href="#Out_Of_Browser">2.4 Out Of Browser</a></li>
-<li><a href="#Elevated_Trust">2.5 Elevated Trust</a></li>
-<li><a href="#Additional_documentation">2.6 Additional documentation</a></li>
+<li><a href="#allowhtmlpopupwindow">2.1 AllowHtmlPopupWindow</a></li>
+<li><a href="#enablehtmlaccess">2.2 EnableHtmlAccess</a></li>
+<li><a href="#externalcallersfromcrossdomain">2.3 ExternalCallersFromCrossDomain</a></li>
+<li><a href="#out-of-browser">2.4 Out Of Browser</a></li>
+<li><a href="#elevated-trust">2.5 Elevated Trust</a></li>
+<li><a href="#additional-documentation">2.6 Additional documentation</a></li>
 </ul></li>
-<li><a href="#Networking">3 Networking</a>
+<li><a href="#networking">3 Networking</a>
 <ul>
-<li><a href="#Uri">3.1 Uri</a>
+<li><a href="#uri">3.1 Uri</a>
 <ul>
-<li><a href="#Deep_Linking">3.1.1 Deep Linking</a></li>
+<li><a href="#deep-linking">3.1.1 Deep Linking</a></li>
 </ul></li>
-<li><a href="#Web">3.2 Web</a>
+<li><a href="#web">3.2 Web</a>
 <ul>
-<li><a href="#Managed">3.2.1 Managed</a></li>
-<li><a href="#JavaScript">3.2.2 JavaScript</a></li>
-<li><a href="#Client_Http_Stack">3.2.3 Client Http Stack</a></li>
-<li><a href="#Http_Stack_Registration">3.2.4 Http Stack Registration</a></li>
-<li><a href="#Others">3.2.5 Others</a></li>
-<li><a href="#Security_Zones">3.2.6 Security Zones</a></li>
+<li><a href="#managed">3.2.1 Managed</a></li>
+<li><a href="#javascript">3.2.2 JavaScript</a></li>
+<li><a href="#client-http-stack">3.2.3 Client Http Stack</a></li>
+<li><a href="#http-stack-registration">3.2.4 Http Stack Registration</a></li>
+<li><a href="#others">3.2.5 Others</a></li>
+<li><a href="#security-zones">3.2.6 Security Zones</a></li>
 </ul></li>
-<li><a href="#Sockets">3.3 Sockets</a>
+<li><a href="#sockets">3.3 Sockets</a>
 <ul>
-<li><a href="#UDP_Multicast">3.3.1 UDP Multicast</a></li>
-<li><a href="#Tools">3.3.2 Tools</a></li>
+<li><a href="#udp-multicast">3.3.1 UDP Multicast</a></li>
+<li><a href="#tools">3.3.2 Tools</a></li>
 </ul></li>
-<li><a href="#XmlXapResolver">3.4 XmlXapResolver</a></li>
+<li><a href="#xmlxapresolver">3.4 XmlXapResolver</a></li>
 </ul></li>
-<li><a href="#Local_I.2FO">4 Local I/O</a>
+<li><a href="#local-io">4 Local I/O</a>
 <ul>
-<li><a href="#Isolated_Storage">4.1 Isolated Storage</a>
+<li><a href="#isolated-storage">4.1 Isolated Storage</a>
 <ul>
-<li><a href="#Quota">4.1.1 Quota</a></li>
-<li><a href="#Classes">4.1.2 Classes</a></li>
-<li><a href="#Additional_documentation_2">4.1.3 Additional documentation</a></li>
+<li><a href="#quota">4.1.1 Quota</a></li>
+<li><a href="#classes">4.1.2 Classes</a></li>
+<li><a href="#additional-documentation_2">4.1.3 Additional documentation</a></li>
 </ul></li>
-<li><a href="#OpenFileDialog">4.2 OpenFileDialog</a></li>
-<li><a href="#SaveFileDialog">4.3 SaveFileDialog</a></li>
-<li><a href="#Local_Messaging">4.4 Local Messaging</a></li>
+<li><a href="#openfiledialog">4.2 OpenFileDialog</a></li>
+<li><a href="#savefiledialog">4.3 SaveFileDialog</a></li>
+<li><a href="#local-messaging">4.4 Local Messaging</a></li>
 </ul></li>
-<li><a href="#Digital_Rights_Management">5 Digital Rights Management</a></li>
-<li><a href="#Others_2">6 Others</a>
+<li><a href="#digital-rights-management">5 Digital Rights Management</a></li>
+<li><a href="#others_2">6 Others</a>
 <ul>
-<li><a href="#Regular_Expressions">6.1 Regular Expressions</a></li>
-<li><a href="#User_Initiated_Events">6.2 User Initiated Events</a></li>
-<li><a href="#Assembly_Loading">6.3 Assembly Loading</a></li>
-<li><a href="#Shader_Effects">6.4 Shader Effects</a></li>
-<li><a href="#Surface_reduction">6.5 Surface reduction</a>
+<li><a href="#regular-expressions">6.1 Regular Expressions</a></li>
+<li><a href="#user-initiated-events">6.2 User Initiated Events</a></li>
+<li><a href="#assembly-loading">6.3 Assembly Loading</a></li>
+<li><a href="#shader-effects">6.4 Shader Effects</a></li>
+<li><a href="#surface-reduction">6.5 Surface reduction</a>
 <ul>
-<li><a href="#Mono">6.5.1 Mono</a></li>
-<li><a href="#Base_Class_Library_.28BCL.29">6.5.2 Base Class Library (BCL)</a></li>
+<li><a href="#mono">6.5.1 Mono</a></li>
+<li><a href="#base-class-library-bcl">6.5.2 Base Class Library (BCL)</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

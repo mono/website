@@ -21,40 +21,40 @@ For more information on changes since Mono 2.10, you can also read the release n
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Important_Information_About_Mono_2.10">1 Important Information About Mono 2.10</a></li>
-<li><a href="#Major_Highlights">2 Major Highlights</a></li>
-<li><a href="#Changes_Since_Mono_2.8">3 Changes Since Mono 2.8</a>
+<li><a href="#important-information-about-mono-210">1 Important Information About Mono 2.10</a></li>
+<li><a href="#major-highlights">2 Major Highlights</a></li>
+<li><a href="#changes-since-mono-28">3 Changes Since Mono 2.8</a>
 <ul>
-<li><a href="#Mono.Options">3.1 Mono.Options</a></li>
-<li><a href="#New_C.23_Compiler_Backend">3.2 New C# Compiler Backend</a></li>
-<li><a href="#C.23_Interactive_Shell">3.3 C# Interactive Shell</a></li>
-<li><a href="#Google_Native_Client_Support">3.4 Google Native Client Support</a></li>
-<li><a href="#SGen_Garbage_Collector">3.5 SGen Garbage Collector</a></li>
-<li><a href="#New_Mono_Profiler">3.6 New Mono Profiler</a></li>
-<li><a href="#VB_Compiler">3.7 VB Compiler</a></li>
-<li><a href="#GetFolderPath_Changes">3.8 GetFolderPath Changes</a></li>
-<li><a href="#Mono.Simd_Changes">3.9 Mono.Simd Changes</a></li>
-<li><a href="#Runtime">3.10 Runtime</a>
+<li><a href="#monooptions">3.1 Mono.Options</a></li>
+<li><a href="#new-c-compiler-backend">3.2 New C# Compiler Backend</a></li>
+<li><a href="#c-interactive-shell">3.3 C# Interactive Shell</a></li>
+<li><a href="#google-native-client-support">3.4 Google Native Client Support</a></li>
+<li><a href="#sgen-garbage-collector">3.5 SGen Garbage Collector</a></li>
+<li><a href="#new-mono-profiler">3.6 New Mono Profiler</a></li>
+<li><a href="#vb-compiler">3.7 VB Compiler</a></li>
+<li><a href="#getfolderpath-changes">3.8 GetFolderPath Changes</a></li>
+<li><a href="#monosimd-changes">3.9 Mono.Simd Changes</a></li>
+<li><a href="#runtime">3.10 Runtime</a>
 <ul>
-<li><a href="#New_GC_heap_walk_API">3.10.1 New GC heap walk API</a></li>
-<li><a href="#New_Hooks_for_Assembly_Resolution">3.10.2 New Hooks for Assembly Resolution</a></li>
-<li><a href="#Android_Specific_Updates">3.10.3 Android Specific Updates</a></li>
-<li><a href="#OSX_Updates">3.10.4 OSX Updates</a></li>
-<li><a href="#Improved_Socket_and_Async_Stack">3.10.5 Improved Socket and Async Stack</a></li>
+<li><a href="#new-gc-heap-walk-api">3.10.1 New GC heap walk API</a></li>
+<li><a href="#new-hooks-for-assembly-resolution">3.10.2 New Hooks for Assembly Resolution</a></li>
+<li><a href="#android-specific-updates">3.10.3 Android Specific Updates</a></li>
+<li><a href="#osx-updates">3.10.4 OSX Updates</a></li>
+<li><a href="#improved-socket-and-async-stack">3.10.5 Improved Socket and Async Stack</a></li>
 </ul></li>
-<li><a href="#Cecil.2FLight">3.11 Cecil/Light</a></li>
-<li><a href="#Gendarme_2.10">3.12 Gendarme 2.10</a></li>
-<li><a href="#ASP.NET_MVC3_Support">3.13 ASP.NET MVC3 Support</a>
+<li><a href="#cecillight">3.11 Cecil/Light</a></li>
+<li><a href="#gendarme-210">3.12 Gendarme 2.10</a></li>
+<li><a href="#aspnet-mvc3-support">3.13 ASP.NET MVC3 Support</a>
 <ul>
-<li><a href="#Razor_and_WebPages">3.13.1 Razor and WebPages</a></li>
-<li><a href="#Running_Razor.2C_MVC3_and_WebPages">3.13.2 Running Razor, MVC3 and WebPages</a></li>
+<li><a href="#razor-and-webpages">3.13.1 Razor and WebPages</a></li>
+<li><a href="#running-razor-mvc3-and-webpages">3.13.2 Running Razor, MVC3 and WebPages</a></li>
 </ul></li>
-<li><a href="#WebMatrix.Data">3.14 WebMatrix.Data</a></li>
-<li><a href="#Languages">3.15 Languages</a></li>
-<li><a href="#Other_Changes">3.16 Other Changes</a></li>
+<li><a href="#webmatrixdata">3.14 WebMatrix.Data</a></li>
+<li><a href="#languages">3.15 Languages</a></li>
+<li><a href="#other-changes">3.16 Other Changes</a></li>
 </ul></li>
-<li><a href="#Installing_Mono_2.10">4 Installing Mono 2.10</a></li>
-<li><a href="#Bug_Fixes">5 Bug Fixes</a></li>
+<li><a href="#installing-mono-210">4 Installing Mono 2.10</a></li>
+<li><a href="#bug-fixes">5 Bug Fixes</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -68,19 +68,19 @@ As of September of 2011, Mono 2.10 became the new stable release of Mono. Please
 Major Highlights
 ================
 
--   [Google Native Client Support](#Google_Native_Client_Support)
--   [New Profiler engine](#New_Mono_Profiler)
--   [Faster socket stack](#Improved_Socket_and_Async_Stack)
--   [Improved Parallel Framework](#Parallel_Framework_Updates)
--   [SGen Precise Stack Scanning and Many performance improvements](#SGen_Garbage_Collector).
+-   [Google Native Client Support](#google-native-client-support)
+-   [New Profiler engine](#new-mono-profiler)
+-   [Faster socket stack](#improved-socket-and-async-stack)
+-   [Improved Parallel Framework](#parallel-framework-updates)
+-   [SGen Precise Stack Scanning and Many performance improvements](#sgen-garbage-collector).
 -   Unified MonoTouch/Monodroid runtime support
--   [Cecil/Light](#Cecil.2FLight)
--   [New C\# Compiler backend](#New_C.23_Compiler_Backend) (can now use any custom mscorlib)
--   [VB Compiler](#VB_Compiler) can now compile to both 2.0 and 4.0 profiles.
--   [Supports ASP.NET MVC3](#ASP.NET_MVC3_Support), Razor and new WebPages.
--   New [WebMatrix.Data](#WebMatrix.Data) database API.
--   [Improved OSX Mono](#OSX_Updates)
--   [F\# and IronRuby](#Languages)
+-   [Cecil/Light](#cecil2flight)
+-   [New C\# Compiler backend](#new-c23-compiler-backend) (can now use any custom mscorlib)
+-   [VB Compiler](#vb-compiler) can now compile to both 2.0 and 4.0 profiles.
+-   [Supports ASP.NET MVC3](#aspnet-mvc3-support), Razor and new WebPages.
+-   New [WebMatrix.Data](#webmatrixdata) database API.
+-   [Improved OSX Mono](#osx-updates)
+-   [F\# and IronRuby](#languages)
 
 Changes Since Mono 2.8
 ======================

@@ -21,17 +21,17 @@ This technique has many names: application scripting, runtime hosting, runtime e
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Scripting">1 Scripting</a></li>
-<li><a href="#The_Mono_Offering">2 The Mono Offering</a></li>
-<li><a href="#Scripting_an_Application">3 Scripting an Application</a></li>
-<li><a href="#Game_Developers">4 Game Developers</a>
+<li><a href="#scripting">1 Scripting</a></li>
+<li><a href="#the-mono-offering">2 The Mono Offering</a></li>
+<li><a href="#scripting-an-application">3 Scripting an Application</a></li>
+<li><a href="#game-developers">4 Game Developers</a>
 <ul>
-<li><a href="#Performance">4.1 Performance</a></li>
-<li><a href="#Language_Support">4.2 Language Support</a></li>
-<li><a href="#Licensing">4.3 Licensing</a></li>
+<li><a href="#performance">4.1 Performance</a></li>
+<li><a href="#language-support">4.2 Language Support</a></li>
+<li><a href="#licensing">4.3 Licensing</a></li>
 </ul></li>
-<li><a href="#Continued_Performance_Increase">5 Continued Performance Increase</a></li>
-<li><a href="#Using_Mono_in_your_Application">6 Using Mono in your Application</a></li>
+<li><a href="#continued-performance-increase">5 Continued Performance Increase</a></li>
+<li><a href="#using-mono-in-your-application">6 Using Mono in your Application</a></li>
 </ul></td>
 </tr>
 </tbody>

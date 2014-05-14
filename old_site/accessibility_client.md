@@ -15,15 +15,15 @@ Accessibility: Client
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Getting_Started_With_UIAutomationClient">1 Getting Started With UIAutomationClient</a>
+<li><a href="#getting-started-with-uiautomationclient">1 Getting Started With UIAutomationClient</a>
 <ul>
-<li><a href="#For_Developers">1.1 For Developers</a>
+<li><a href="#for-developers">1.1 For Developers</a>
 <ul>
-<li><a href="#Winforms_Support">1.1.1 Winforms Support</a>
+<li><a href="#winforms-support">1.1.1 Winforms Support</a>
 <ul>
-<li><a href="#Using_UIA_Verify">1.1.1.1 Using UIA Verify</a></li>
+<li><a href="#using-uia-verify">1.1.1.1 Using UIA Verify</a></li>
 </ul></li>
-<li><a href="#GTK.2B_and_other_at-spi_Support">1.1.2 GTK+ and other at-spi Support</a></li>
+<li><a href="#gtk-and-other-at-spi-support">1.1.2 GTK+ and other at-spi Support</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

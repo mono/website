@@ -15,11 +15,11 @@ Guide:Running Mono Applications
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Basic_usage">1 Basic usage</a></li>
-<li><a href="#Shell_Scripts">2 Shell Scripts</a></li>
-<li><a href="#Registering_.exe_as_non-native_binaries_.28Linux_only.29">3 Registering .exe as non-native binaries (Linux only)</a></li>
-<li><a href="#Bundles">4 Bundles</a></li>
-<li><a href="#macpack_.28Mac_OS_X_only.29">5 macpack (Mac OS X only)</a></li>
+<li><a href="#basic-usage">1 Basic usage</a></li>
+<li><a href="#shell-scripts">2 Shell Scripts</a></li>
+<li><a href="#registering-exe-as-non-native-binaries-linux-only">3 Registering .exe as non-native binaries (Linux only)</a></li>
+<li><a href="#bundles">4 Bundles</a></li>
+<li><a href="#macpack-mac-os-x-only">5 macpack (Mac OS X only)</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -55,7 +55,7 @@ When you run "myprogram," the shell will replace \$@ with any arguments you prov
 
 If you installed mono to a different location, substitute that for /usr/bin/mono. You can check with the "which mono" command.
 
-See also [Application Deployment Layout Guidelines]({{site.github.url}}/old_site/Guidelines:Application_Deployment#Layout_Recommendation "Guidelines:Application Deployment").
+See also [Application Deployment Layout Guidelines]({{site.github.url}}/old_site/Guidelines:Application_Deployment#layout-recommendation "Guidelines:Application Deployment").
 
 Registering .exe as non-native binaries (Linux only)
 ----------------------------------------------------

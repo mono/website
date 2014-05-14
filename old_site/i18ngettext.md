@@ -15,16 +15,16 @@ I18nGettext
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Requirements">2 Requirements</a></li>
-<li><a href="#Using_GetText.23">3 Using GetText#</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#requirements">2 Requirements</a></li>
+<li><a href="#using-gettext">3 Using GetText#</a>
 <ul>
-<li><a href="#Installation">3.1 Installation</a></li>
-<li><a href="#Using_GetText.23_with_console-based_applications">3.2 Using GetText# with console-based applications</a></li>
-<li><a href="#Using_GetText.23_with_window-based_applications">3.3 Using GetText# with window-based applications</a></li>
+<li><a href="#installation">3.1 Installation</a></li>
+<li><a href="#using-gettext-with-console-based-applications">3.2 Using GetText# with console-based applications</a></li>
+<li><a href="#using-gettext-with-window-based-applications">3.3 Using GetText# with window-based applications</a></li>
 </ul></li>
-<li><a href="#Conclusions">4 Conclusions</a></li>
-<li><a href="#Frequently_Asked_Questions">5 Frequently Asked Questions</a></li>
+<li><a href="#conclusions">4 Conclusions</a></li>
+<li><a href="#frequently-asked-questions">5 Frequently Asked Questions</a></li>
 </ul></td>
 </tr>
 </tbody>

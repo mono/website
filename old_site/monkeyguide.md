@@ -17,24 +17,24 @@ Monkeyguide
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#About_Mono">1 About Mono</a></li>
-<li><a href="#Getting_Started">2 Getting Started</a></li>
-<li><a href="#Programming_with_Mono">3 Programming with Mono</a></li>
-<li><a href="#Portability">4 Portability</a></li>
-<li><a href="#Desktop_Application_Programming">5 Desktop Application Programming</a>
+<li><a href="#about-mono">1 About Mono</a></li>
+<li><a href="#getting-started">2 Getting Started</a></li>
+<li><a href="#programming-with-mono">3 Programming with Mono</a></li>
+<li><a href="#portability">4 Portability</a></li>
+<li><a href="#desktop-application-programming">5 Desktop Application Programming</a>
 <ul>
-<li><a href="#Beginners">5.1 Beginners</a></li>
-<li><a href="#Intermediate">5.2 Intermediate</a></li>
-<li><a href="#Advanced">5.3 Advanced</a></li>
-<li><a href="#Desktop_Services">5.4 Desktop Services</a></li>
-<li><a href="#Extending_your_GUI">5.5 Extending your GUI</a></li>
+<li><a href="#beginners">5.1 Beginners</a></li>
+<li><a href="#intermediate">5.2 Intermediate</a></li>
+<li><a href="#advanced">5.3 Advanced</a></li>
+<li><a href="#desktop-services">5.4 Desktop Services</a></li>
+<li><a href="#extending-your-gui">5.5 Extending your GUI</a></li>
 </ul></li>
-<li><a href="#Web_Programming">6 Web Programming</a></li>
-<li><a href="#Operating_System_Programming">7 Operating System Programming</a></li>
-<li><a href="#Developer_Tools">8 Developer Tools</a></li>
-<li><a href="#Mono_on_Windows">9 Mono on Windows</a></li>
-<li><a href="#Mono_on_MacOS_X">10 Mono on MacOS X</a></li>
-<li><a href="#Appendices">11 Appendices</a></li>
+<li><a href="#web-programming">6 Web Programming</a></li>
+<li><a href="#operating-system-programming">7 Operating System Programming</a></li>
+<li><a href="#developer-tools">8 Developer Tools</a></li>
+<li><a href="#mono-on-windows">9 Mono on Windows</a></li>
+<li><a href="#mono-on-macos-x">10 Mono on MacOS X</a></li>
+<li><a href="#appendices">11 Appendices</a></li>
 </ul></td>
 </tr>
 </tbody>

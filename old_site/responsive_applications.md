@@ -18,24 +18,24 @@ Responsive Applications
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Background">1 Background</a></li>
-<li><a href="#Approaches">2 Approaches</a>
+<li><a href="#background">1 Background</a></li>
+<li><a href="#approaches">2 Approaches</a>
 <ul>
-<li><a href="#Idle_Handlers">2.1 Idle Handlers</a></li>
-<li><a href="#Timeouts">2.2 Timeouts</a></li>
-<li><a href="#Gtk.Application.Invoke">2.3 Gtk.Application.Invoke</a></li>
-<li><a href="#Gtk.ThreadNotify">2.4 Gtk.ThreadNotify</a></li>
-<li><a href="#Programming_with_Threads">2.5 Programming with Threads</a></li>
-<li><a href="#Asynchronous_Mono_Programmning">2.6 Asynchronous Mono Programmning</a></li>
-<li><a href="#Manual_Event_Processing">2.7 Manual Event Processing</a></li>
+<li><a href="#idle-handlers">2.1 Idle Handlers</a></li>
+<li><a href="#timeouts">2.2 Timeouts</a></li>
+<li><a href="#gtkapplicationinvoke">2.3 Gtk.Application.Invoke</a></li>
+<li><a href="#gtkthreadnotify">2.4 Gtk.ThreadNotify</a></li>
+<li><a href="#programming-with-threads">2.5 Programming with Threads</a></li>
+<li><a href="#asynchronous-mono-programmning">2.6 Asynchronous Mono Programmning</a></li>
+<li><a href="#manual-event-processing">2.7 Manual Event Processing</a></li>
 </ul></li>
-<li><a href="#Alternatives">3 Alternatives</a>
+<li><a href="#alternatives">3 Alternatives</a>
 <ul>
-<li><a href="#Application.Invoke">3.1 Application.Invoke</a></li>
-<li><a href="#Other_options">3.2 Other options</a>
+<li><a href="#applicationinvoke">3.1 Application.Invoke</a></li>
+<li><a href="#other-options">3.2 Other options</a>
 <ul>
-<li><a href="#GuiDispatch">3.2.1 GuiDispatch</a></li>
-<li><a href="#RunOnMainThread">3.2.2 RunOnMainThread</a></li>
+<li><a href="#guidispatch">3.2.1 GuiDispatch</a></li>
+<li><a href="#runonmainthread">3.2.2 RunOnMainThread</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

@@ -15,39 +15,39 @@ Accessibility: Project Schedule
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Summary">1 Summary</a></li>
-<li><a href="#Current_Iterations">2 Current Iterations</a>
+<li><a href="#summary">1 Summary</a></li>
+<li><a href="#current-iterations">2 Current Iterations</a>
 <ul>
-<li><a href="#Iteration_16_-_September_10_-_16">2.1 Iteration 16 - September 10 - 16</a></li>
-<li><a href="#Iteration_17_-_September_17_-_23">2.2 Iteration 17 - September 17 - 23</a></li>
-<li><a href="#Iteration_18_-_September_24_-_30">2.3 Iteration 18 - September 24 - 30</a></li>
-<li><a href="#Iteration_19_-_October_1_-_7">2.4 Iteration 19 - October 1 - 7</a></li>
-<li><a href="#Iteration_20_-_October_8_-_14">2.5 Iteration 20 - October 8 - 14</a></li>
-<li><a href="#Iteration_21_-_October_15_-_21">2.6 Iteration 21 - October 15 - 21</a></li>
-<li><a href="#Iteration_22_-_October_22_-_28">2.7 Iteration 22 - October 22 - 28</a></li>
-<li><a href="#Iteration_23_-_October_28_-_November_4">2.8 Iteration 23 - October 28 - November 4</a></li>
-<li><a href="#Iteration_24_-_November_5_-_November_11">2.9 Iteration 24 - November 5 - November 11</a></li>
-<li><a href="#Iteration_25_-_November_12_-_18">2.10 Iteration 25 - November 12 - 18</a></li>
-<li><a href="#Iteration_26_-_November_19_-_25">2.11 Iteration 26 - November 19 - 25</a></li>
+<li><a href="#iteration-16---september-10---16">2.1 Iteration 16 - September 10 - 16</a></li>
+<li><a href="#iteration-17---september-17---23">2.2 Iteration 17 - September 17 - 23</a></li>
+<li><a href="#iteration-18---september-24---30">2.3 Iteration 18 - September 24 - 30</a></li>
+<li><a href="#iteration-19---october-1---7">2.4 Iteration 19 - October 1 - 7</a></li>
+<li><a href="#iteration-20---october-8---14">2.5 Iteration 20 - October 8 - 14</a></li>
+<li><a href="#iteration-21---october-15---21">2.6 Iteration 21 - October 15 - 21</a></li>
+<li><a href="#iteration-22---october-22---28">2.7 Iteration 22 - October 22 - 28</a></li>
+<li><a href="#iteration-23---october-28---november-4">2.8 Iteration 23 - October 28 - November 4</a></li>
+<li><a href="#iteration-24---november-5---november-11">2.9 Iteration 24 - November 5 - November 11</a></li>
+<li><a href="#iteration-25---november-12---18">2.10 Iteration 25 - November 12 - 18</a></li>
+<li><a href="#iteration-26---november-19---25">2.11 Iteration 26 - November 19 - 25</a></li>
 </ul></li>
-<li><a href="#Elements_delayed">3 Elements delayed</a></li>
-<li><a href="#Past_Iterations">4 Past Iterations</a>
+<li><a href="#elements-delayed">3 Elements delayed</a></li>
+<li><a href="#past-iterations">4 Past Iterations</a>
 <ul>
-<li><a href="#Iteration_1_-_May_19_-_27">4.1 Iteration 1 - May 19 - 27</a></li>
-<li><a href="#Iteration_2_-_May_28_-_June_3">4.2 Iteration 2 - May 28 - June 3</a></li>
-<li><a href="#Iteration_3_-_June_4_-_10">4.3 Iteration 3 - June 4 - 10</a></li>
-<li><a href="#Iteration_4_-_June_11_-_17">4.4 Iteration 4 - June 11 - 17</a></li>
-<li><a href="#Iteration_5_-_June_18_-_24">4.5 Iteration 5 - June 18 - 24</a></li>
-<li><a href="#Iteration_6_-_June_25_-_July_1">4.6 Iteration 6 - June 25 - July 1</a></li>
-<li><a href="#Iteration_7_-_July_2_-_July_8">4.7 Iteration 7 - July 2 - July 8</a></li>
-<li><a href="#Iteration_8_-_July_8_-_15">4.8 Iteration 8 - July 8 - 15</a></li>
-<li><a href="#Iteration_9_-_July_16_-_22">4.9 Iteration 9 - July 16 - 22</a></li>
-<li><a href="#Iteration_10_-_July_23_-_29">4.10 Iteration 10 - July 23 - 29</a></li>
-<li><a href="#Iteration_11_-_July_30_-_August_5">4.11 Iteration 11 - July 30 - August 5</a></li>
-<li><a href="#Iteration_12_-_August_6_-_12">4.12 Iteration 12 - August 6 - 12</a></li>
-<li><a href="#Iteration_13_-_August_13_-_19">4.13 Iteration 13 - August 13 - 19</a></li>
-<li><a href="#Iteration_14_-_August_20_-_September_2_.282_week_iteration_because_of_hackweek.29">4.14 Iteration 14 - August 20 - September 2 (2 week iteration because of hackweek)</a></li>
-<li><a href="#Iteration_15_-_September_3_-_9">4.15 Iteration 15 - September 3 - 9</a></li>
+<li><a href="#iteration-1---may-19---27">4.1 Iteration 1 - May 19 - 27</a></li>
+<li><a href="#iteration-2---may-28---june-3">4.2 Iteration 2 - May 28 - June 3</a></li>
+<li><a href="#iteration-3---june-4---10">4.3 Iteration 3 - June 4 - 10</a></li>
+<li><a href="#iteration-4---june-11---17">4.4 Iteration 4 - June 11 - 17</a></li>
+<li><a href="#iteration-5---june-18---24">4.5 Iteration 5 - June 18 - 24</a></li>
+<li><a href="#iteration-6---june-25---july-1">4.6 Iteration 6 - June 25 - July 1</a></li>
+<li><a href="#iteration-7---july-2---july-8">4.7 Iteration 7 - July 2 - July 8</a></li>
+<li><a href="#iteration-8---july-8---15">4.8 Iteration 8 - July 8 - 15</a></li>
+<li><a href="#iteration-9---july-16---22">4.9 Iteration 9 - July 16 - 22</a></li>
+<li><a href="#iteration-10---july-23---29">4.10 Iteration 10 - July 23 - 29</a></li>
+<li><a href="#iteration-11---july-30---august-5">4.11 Iteration 11 - July 30 - August 5</a></li>
+<li><a href="#iteration-12---august-6---12">4.12 Iteration 12 - August 6 - 12</a></li>
+<li><a href="#iteration-13---august-13---19">4.13 Iteration 13 - August 13 - 19</a></li>
+<li><a href="#iteration-14---august-20---september-2-2-week-iteration-because-of-hackweek">4.14 Iteration 14 - August 20 - September 2 (2 week iteration because of hackweek)</a></li>
+<li><a href="#iteration-15---september-3---9">4.15 Iteration 15 - September 3 - 9</a></li>
 </ul></li>
 </ul></td>
 </tr>

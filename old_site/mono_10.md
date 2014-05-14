@@ -22,19 +22,19 @@ Notice that these are \*assemblies\*, they are not namespaces. Each assembly nor
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Assemblies">1 Assemblies</a>
+<li><a href="#assemblies">1 Assemblies</a>
 <ul>
-<li><a href="#Stable_Assemblies">1.1 Stable Assemblies</a></li>
+<li><a href="#stable-assemblies">1.1 Stable Assemblies</a></li>
 </ul></li>
-<li><a href="#Assemblies_Under_Development">2 Assemblies Under Development</a></li>
-<li><a href="#Missing_Assemblies">3 Missing Assemblies</a></li>
-<li><a href="#Third_Party_Assemblies">4 Third Party Assemblies</a></li>
-<li><a href="#Languages">5 Languages</a>
+<li><a href="#assemblies-under-development">2 Assemblies Under Development</a></li>
+<li><a href="#missing-assemblies">3 Missing Assemblies</a></li>
+<li><a href="#third-party-assemblies">4 Third Party Assemblies</a></li>
+<li><a href="#languages">5 Languages</a>
 <ul>
-<li><a href="#Stable_Languages">5.1 Stable Languages</a></li>
-<li><a href="#Unstable_Languages">5.2 Unstable Languages</a></li>
+<li><a href="#stable-languages">5.1 Stable Languages</a></li>
+<li><a href="#unstable-languages">5.2 Unstable Languages</a></li>
 </ul></li>
-<li><a href="#Virtual_Machine">6 Virtual Machine</a></li>
+<li><a href="#virtual-machine">6 Virtual Machine</a></li>
 </ul></td>
 </tr>
 </tbody>

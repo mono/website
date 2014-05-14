@@ -19,20 +19,20 @@ This is a work in progress.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Organization">1 Organization</a></li>
-<li><a href="#Communication">2 Communication</a></li>
-<li><a href="#Documentation">3 Documentation</a></li>
-<li><a href="#Teams">4 Teams</a>
+<li><a href="#organization">1 Organization</a></li>
+<li><a href="#communication">2 Communication</a></li>
+<li><a href="#documentation">3 Documentation</a></li>
+<li><a href="#teams">4 Teams</a>
 <ul>
-<li><a href="#Runtime_Team">4.1 Runtime Team</a>
+<li><a href="#runtime-team">4.1 Runtime Team</a>
 <ul>
-<li><a href="#Runtime_Team_Goals">4.1.1 Runtime Team Goals</a></li>
+<li><a href="#runtime-team-goals">4.1.1 Runtime Team Goals</a></li>
 </ul></li>
-<li><a href="#Windows.Forms_Team">4.2 Windows.Forms Team</a></li>
-<li><a href="#Windows.Forms_Goals">4.3 Windows.Forms Goals</a></li>
-<li><a href="#Moonlight_Team">4.4 Moonlight Team</a></li>
-<li><a href="#MonoDevelop_Team">4.5 MonoDevelop Team</a></li>
-<li><a href="#Other_Groups">4.6 Other Groups</a></li>
+<li><a href="#windowsforms-team">4.2 Windows.Forms Team</a></li>
+<li><a href="#windowsforms-goals">4.3 Windows.Forms Goals</a></li>
+<li><a href="#moonlight-team">4.4 Moonlight Team</a></li>
+<li><a href="#monodevelop-team">4.5 MonoDevelop Team</a></li>
+<li><a href="#other-groups">4.6 Other Groups</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -93,7 +93,7 @@ Lead: Paolo Molaro.
 ### Runtime Team Goals
 
 -   Debugger
-    -   Plans is available [debugger plans' here]({{site.github.url}}/old_site/Debugger#Plan "Debugger").
+    -   Plans is available [debugger plans' here]({{site.github.url}}/old_site/Debugger#plan "Debugger").
 -   Generics Support Improvements
     -   The current support needs to be audited, and cleaned up
     -   Optimize memory usage of generics-relate data structures (like removing generic\_container from non-generic MonoMethods).
@@ -110,7 +110,7 @@ Lead: Paolo Molaro.
 -   Security:
     -   Implementation of the Mono Verifier
     -   Implement stack overflow clean shutdown.
-    -   Implement new sandboxed execution system (see [Moonlight]({{site.github.url}}/old_site/Moonlight#Security_Model "Moonlight") for details).
+    -   Implement new sandboxed execution system (see [Moonlight]({{site.github.url}}/old_site/Moonlight#security-model "Moonlight") for details).
 -   Reduce Memory Usage
     -   For all runtime data structures (MonoMethod, MonoClassField, MonoClass, exception tables).
 -   IO-Layer

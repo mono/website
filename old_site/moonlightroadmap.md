@@ -15,18 +15,18 @@ MoonlightRoadmap
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Current_Release">1 Current Release</a>
+<li><a href="#current-release">1 Current Release</a>
 <ul>
-<li><a href="#Moonlight_2">1.1 Moonlight 2</a></li>
+<li><a href="#moonlight-2">1.1 Moonlight 2</a></li>
 </ul></li>
-<li><a href="#Upcoming_Releases">2 Upcoming Releases</a>
+<li><a href="#upcoming-releases">2 Upcoming Releases</a>
 <ul>
-<li><a href="#Moonlight_3">2.1 Moonlight 3</a></li>
-<li><a href="#Moonlight_4">2.2 Moonlight 4</a></li>
+<li><a href="#moonlight-3">2.1 Moonlight 3</a></li>
+<li><a href="#moonlight-4">2.2 Moonlight 4</a></li>
 </ul></li>
-<li><a href="#Past_Releases">3 Past Releases</a>
+<li><a href="#past-releases">3 Past Releases</a>
 <ul>
-<li><a href="#Moonlight_1.0">3.1 Moonlight 1.0</a></li>
+<li><a href="#moonlight-10">3.1 Moonlight 1.0</a></li>
 </ul></li>
 </ul></td>
 </tr>

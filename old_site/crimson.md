@@ -15,24 +15,24 @@ Crimson
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What_is_it_.3F">1 What is it ?</a>
+<li><a href="#what-is-it-">1 What is it ?</a>
 <ul>
-<li><a href="#Target_audience">1.1 Target audience</a></li>
-<li><a href="#Support">1.2 Support</a></li>
-<li><a href="#Export_restrictions">1.3 Export restrictions</a></li>
+<li><a href="#target-audience">1.1 Target audience</a></li>
+<li><a href="#support">1.2 Support</a></li>
+<li><a href="#export-restrictions">1.3 Export restrictions</a></li>
 </ul></li>
-<li><a href="#Goals">2 Goals</a>
+<li><a href="#goals">2 Goals</a>
 <ul>
-<li><a href="#Extend">2.1 Extend</a></li>
-<li><a href="#Simplify">2.2 Simplify</a></li>
-<li><a href="#Optimize">2.3 Optimize</a></li>
+<li><a href="#extend">2.1 Extend</a></li>
+<li><a href="#simplify">2.2 Simplify</a></li>
+<li><a href="#optimize">2.3 Optimize</a></li>
 </ul></li>
-<li><a href="#Availability">3 Availability</a></li>
-<li><a href="#Current_state">4 Current state</a>
+<li><a href="#availability">3 Availability</a></li>
+<li><a href="#current-state">4 Current state</a>
 <ul>
-<li><a href="#Wrappers">4.1 Wrappers</a></li>
+<li><a href="#wrappers">4.1 Wrappers</a></li>
 </ul></li>
-<li><a href="#Plans">5 Plans</a></li>
+<li><a href="#plans">5 Plans</a></li>
 </ul></td>
 </tr>
 </tbody>

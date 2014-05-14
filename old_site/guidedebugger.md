@@ -17,36 +17,36 @@ Guide:Debugger
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#DEPRECATED">1 DEPRECATED</a></li>
-<li><a href="#Introduction">2 Introduction</a></li>
-<li><a href="#Using_the_Hard_Debugger_with_MonoDevelop">3 Using the Hard Debugger with MonoDevelop</a></li>
-<li><a href="#Using_the_Command_Line_Debugger">4 Using the Command Line Debugger</a>
+<li><a href="#deprecated">1 DEPRECATED</a></li>
+<li><a href="#introduction">2 Introduction</a></li>
+<li><a href="#using-the-hard-debugger-with-monodevelop">3 Using the Hard Debugger with MonoDevelop</a></li>
+<li><a href="#using-the-command-line-debugger">4 Using the Command Line Debugger</a>
 <ul>
-<li><a href="#Preparing_your_Program">4.1 Preparing your Program</a></li>
-<li><a href="#Debugging_Symbols">4.2 Debugging Symbols</a></li>
-<li><a href="#Starting_the_Debugger">4.3 Starting the Debugger</a></li>
-<li><a href="#Command_line_arguments">4.4 Command line arguments</a></li>
+<li><a href="#preparing-your-program">4.1 Preparing your Program</a></li>
+<li><a href="#debugging-symbols">4.2 Debugging Symbols</a></li>
+<li><a href="#starting-the-debugger">4.3 Starting the Debugger</a></li>
+<li><a href="#command-line-arguments">4.4 Command line arguments</a></li>
 </ul></li>
-<li><a href="#Commands">5 Commands</a>
+<li><a href="#commands">5 Commands</a>
 <ul>
-<li><a href="#Quitting_and_restarting">5.1 Quitting and restarting</a></li>
-<li><a href="#Displaying_processes_and_threads">5.2 Displaying processes and threads</a></li>
-<li><a href="#Running_and_single_stepping">5.3 Running and single stepping</a></li>
-<li><a href="#Stack_frames_and_backtraces">5.4 Stack frames and backtraces</a></li>
-<li><a href="#Printing_expressions">5.5 Printing expressions</a></li>
-<li><a href="#Displaying_expressions">5.6 Displaying expressions</a></li>
-<li><a href="#Breakpoints">5.7 Breakpoints</a></li>
-<li><a href="#Catching_Exceptions">5.8 Catching Exceptions</a></li>
-<li><a href="#Displaying_a_method.27s_source_code">5.9 Displaying a method's source code</a></li>
-<li><a href="#Disassembling">5.10 Disassembling</a></li>
-<li><a href="#Exploring_the_Program_State">5.11 Exploring the Program State</a></li>
-<li><a href="#Examining_Memory">5.12 Examining Memory</a></li>
+<li><a href="#quitting-and-restarting">5.1 Quitting and restarting</a></li>
+<li><a href="#displaying-processes-and-threads">5.2 Displaying processes and threads</a></li>
+<li><a href="#running-and-single-stepping">5.3 Running and single stepping</a></li>
+<li><a href="#stack-frames-and-backtraces">5.4 Stack frames and backtraces</a></li>
+<li><a href="#printing-expressions">5.5 Printing expressions</a></li>
+<li><a href="#displaying-expressions">5.6 Displaying expressions</a></li>
+<li><a href="#breakpoints">5.7 Breakpoints</a></li>
+<li><a href="#catching-exceptions">5.8 Catching Exceptions</a></li>
+<li><a href="#displaying-a-methods-source-code">5.9 Displaying a method's source code</a></li>
+<li><a href="#disassembling">5.10 Disassembling</a></li>
+<li><a href="#exploring-the-program-state">5.11 Exploring the Program State</a></li>
+<li><a href="#examining-memory">5.12 Examining Memory</a></li>
 </ul></li>
-<li><a href="#Expressions">6 Expressions</a>
+<li><a href="#expressions">6 Expressions</a>
 <ul>
-<li><a href="#Simple_expressions">6.1 Simple expressions</a></li>
-<li><a href="#Pointer_expressions">6.2 Pointer expressions</a></li>
-<li><a href="#Invocation_expressions">6.3 Invocation expressions</a></li>
+<li><a href="#simple-expressions">6.1 Simple expressions</a></li>
+<li><a href="#pointer-expressions">6.2 Pointer expressions</a></li>
+<li><a href="#invocation-expressions">6.3 Invocation expressions</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -215,7 +215,7 @@ If you look at the example above, you'll notice that some threads are marked as 
 Running and single stepping
 ---------------------------
 
-The debugger has several commands to single step the target - unless you use the **-thread** argument, they all operate on the current thread (see [\#Displaying processes and threads](#Displaying_processes_and_threads) for details):
+The debugger has several commands to single step the target - unless you use the **-thread** argument, they all operate on the current thread (see [\#Displaying processes and threads](#displaying-processes-and-threads) for details):
 
 **continue**, **c**
 
@@ -339,7 +339,7 @@ Print the type of an expression
     (mdb) ptype a
     System.Int32
 
-See [\#Expressions](#Expressions) for details.
+See [\#Expressions](#expressions) for details.
 
 Displaying expressions
 ----------------------
@@ -601,7 +601,7 @@ To disassembly the current instruction or the current method, use the *dis* comm
     0x401b747f  leave  
     0x401b7480  ret    
 
-Like the **examine** command, **dis** takes an optional pointer expression as argument (see [\#Pointer expressions](#Pointer_expressions) for details):
+Like the **examine** command, **dis** takes an optional pointer expression as argument (see [\#Pointer expressions](#pointer-expressions) for details):
 
     (mdb) dis %rip
     0x400179d6      mov    %r15,%rdi
@@ -696,7 +696,7 @@ Examining Memory
 
 Memory dump
 
-The *examine* (short: *x*) command takes a pointer expression as argument (see [\#Pointer expressions](#Pointer_expressions) for details). You can for instance use a processor register, an absolute address or the address of a variable:
+The *examine* (short: *x*) command takes a pointer expression as argument (see [\#Pointer expressions](#pointer-expressions) for details). You can for instance use a processor register, an absolute address or the address of a variable:
 
     (mdb) p %ebp
     0x40bbe880

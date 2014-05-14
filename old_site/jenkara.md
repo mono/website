@@ -15,10 +15,10 @@ Jenkara
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#History">1 History</a></li>
-<li><a href="#Roadmap">2 Roadmap</a></li>
-<li><a href="#Screenshots">3 Screenshots</a></li>
-<li><a href="#Source">4 Source</a></li>
+<li><a href="#history">1 History</a></li>
+<li><a href="#roadmap">2 Roadmap</a></li>
+<li><a href="#screenshots">3 Screenshots</a></li>
+<li><a href="#source">4 Source</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -15,33 +15,33 @@ Mono:Runtime:Documentation:AOT
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Ahead_Of_Time_Compiler">1 Mono Ahead Of Time Compiler</a>
+<li><a href="#mono-ahead-of-time-compiler">1 Mono Ahead Of Time Compiler</a>
 <ul>
-<li><a href="#The_AOT_File_Format">1.1 The AOT File Format</a></li>
-<li><a href="#Source_file_structure">1.2 Source file structure</a></li>
-<li><a href="#Compilation_process">1.3 Compilation process</a></li>
-<li><a href="#Handling_methods">1.4 Handling methods</a></li>
-<li><a href="#Handling_patches">1.5 Handling patches</a></li>
-<li><a href="#The_Procedure_Linkage_Table_.28PLT.29">1.6 The Procedure Linkage Table (PLT)</a></li>
-<li><a href="#Exception.2FDebug_info">1.7 Exception/Debug info</a></li>
-<li><a href="#Cached_metadata">1.8 Cached metadata</a></li>
-<li><a href="#Other_data">1.9 Other data</a></li>
-<li><a href="#LLVM_Support">1.10 LLVM Support</a></li>
-<li><a href="#Full_AOT_mode">1.11 Full AOT mode</a></li>
-<li><a href="#Emitting_assembly.2Fobject_code">1.12 Emitting assembly/object code</a></li>
-<li><a href="#Performance_considerations">1.13 Performance considerations</a></li>
-<li><a href="#Porting">1.14 Porting</a>
+<li><a href="#the-aot-file-format">1.1 The AOT File Format</a></li>
+<li><a href="#source-file-structure">1.2 Source file structure</a></li>
+<li><a href="#compilation-process">1.3 Compilation process</a></li>
+<li><a href="#handling-methods">1.4 Handling methods</a></li>
+<li><a href="#handling-patches">1.5 Handling patches</a></li>
+<li><a href="#the-procedure-linkage-table-plt">1.6 The Procedure Linkage Table (PLT)</a></li>
+<li><a href="#exceptiondebug-info">1.7 Exception/Debug info</a></li>
+<li><a href="#cached-metadata">1.8 Cached metadata</a></li>
+<li><a href="#other-data">1.9 Other data</a></li>
+<li><a href="#llvm-support">1.10 LLVM Support</a></li>
+<li><a href="#full-aot-mode">1.11 Full AOT mode</a></li>
+<li><a href="#emitting-assemblyobject-code">1.12 Emitting assembly/object code</a></li>
+<li><a href="#performance-considerations">1.13 Performance considerations</a></li>
+<li><a href="#porting">1.14 Porting</a>
 <ul>
-<li><a href="#Computing_the_address_of_the_GOT">1.14.1 Computing the address of the GOT</a></li>
-<li><a href="#Referencing_GOT_entries">1.14.2 Referencing GOT entries</a></li>
+<li><a href="#computing-the-address-of-the-got">1.14.1 Computing the address of the GOT</a></li>
+<li><a href="#referencing-got-entries">1.14.2 Referencing GOT entries</a></li>
 </ul></li>
-<li><a href="#Back_end_functionality">1.15 Back end functionality</a>
+<li><a href="#back-end-functionality">1.15 Back end functionality</a>
 <ul>
-<li><a href="#OP_AOTCONST">1.15.1 OP_AOTCONST</a></li>
-<li><a href="#Constants">1.15.2 Constants</a></li>
-<li><a href="#PLT_Entries">1.15.3 PLT Entries</a></li>
+<li><a href="#op-aotconst">1.15.1 OP_AOTCONST</a></li>
+<li><a href="#constants">1.15.2 Constants</a></li>
+<li><a href="#plt-entries">1.15.3 PLT Entries</a></li>
 </ul></li>
-<li><a href="#Future_Work">1.16 Future Work</a></li>
+<li><a href="#future-work">1.16 Future Work</a></li>
 </ul></li>
 </ul></td>
 </tr>

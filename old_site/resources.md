@@ -15,24 +15,24 @@ Resources
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Articles">1 Articles</a></li>
-<li><a href="#API_completion_status_pages">2 API completion status pages</a></li>
-<li><a href="#Continuous_Tasks">3 Continuous Tasks</a>
+<li><a href="#articles">1 Articles</a></li>
+<li><a href="#api-completion-status-pages">2 API completion status pages</a></li>
+<li><a href="#continuous-tasks">3 Continuous Tasks</a>
 <ul>
-<li><a href="#Build_Bot">3.1 Build Bot</a></li>
-<li><a href="#Benchmarks">3.2 Benchmarks</a>
+<li><a href="#build-bot">3.1 Build Bot</a></li>
+<li><a href="#benchmarks">3.2 Benchmarks</a>
 <ul>
-<li><a href="#Cuni_Tests">3.2.1 Cuni Tests</a></li>
-<li><a href="#Debian_Language_Shootout">3.2.2 Debian Language Shootout</a></li>
+<li><a href="#cuni-tests">3.2.1 Cuni Tests</a></li>
+<li><a href="#debian-language-shootout">3.2.2 Debian Language Shootout</a></li>
 </ul></li>
-<li><a href="#Daily_Regression_Test_Suite_Results">3.3 Daily Regression Test Suite Results</a></li>
-<li><a href="#New_Build_System">3.4 New Build System</a></li>
+<li><a href="#daily-regression-test-suite-results">3.3 Daily Regression Test Suite Results</a></li>
+<li><a href="#new-build-system">3.4 New Build System</a></li>
 </ul></li>
-<li><a href="#Browseable_Source_Code">4 Browseable Source Code</a>
+<li><a href="#browseable-source-code">4 Browseable Source Code</a>
 <ul>
-<li><a href="#Third_Party_Patches">4.1 Third Party Patches</a></li>
+<li><a href="#third-party-patches">4.1 Third Party Patches</a></li>
 </ul></li>
-<li><a href="#Security_Vulnerabilities">5 Security Vulnerabilities</a></li>
+<li><a href="#security-vulnerabilities">5 Security Vulnerabilities</a></li>
 </ul></td>
 </tr>
 </tbody>

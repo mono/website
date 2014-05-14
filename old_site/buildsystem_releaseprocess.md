@@ -17,15 +17,15 @@ Description of the Mono release process
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Branching_and_Tagging_Policy">1 Branching and Tagging Policy</a></li>
-<li><a href="#Tagging">2 Tagging</a></li>
-<li><a href="#Rolling_Source_Tarballs">3 Rolling Source Tarballs</a></li>
-<li><a href="#Builds">4 Builds</a></li>
-<li><a href="#Installers">5 Installers</a></li>
-<li><a href="#Release_Notes">6 Release Notes</a></li>
-<li><a href="#Publishing_Previews_and_final_release">7 Publishing Previews and final release</a></li>
-<li><a href="#Update_mono-project.com_wiki">8 Update mono-project.com wiki</a></li>
-<li><a href="#OBS_and_autobuild">9 OBS and autobuild</a></li>
+<li><a href="#branching-and-tagging-policy">1 Branching and Tagging Policy</a></li>
+<li><a href="#tagging">2 Tagging</a></li>
+<li><a href="#rolling-source-tarballs">3 Rolling Source Tarballs</a></li>
+<li><a href="#builds">4 Builds</a></li>
+<li><a href="#installers">5 Installers</a></li>
+<li><a href="#release-notes">6 Release Notes</a></li>
+<li><a href="#publishing-previews-and-final-release">7 Publishing Previews and final release</a></li>
+<li><a href="#update-mono-projectcom-wiki">8 Update mono-project.com wiki</a></li>
+<li><a href="#obs-and-autobuild">9 OBS and autobuild</a></li>
 </ul></td>
 </tr>
 </tbody>

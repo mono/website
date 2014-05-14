@@ -63,11 +63,11 @@ where the elements of the path are described above. After that you can add the `
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#List_of_packages_needed_for_cross-compiling">1 List of packages needed for cross-compiling</a></li>
-<li><a href="#Distribution-specific_instructions">2 Distribution-specific instructions</a>
+<li><a href="#list-of-packages-needed-for-cross-compiling">1 List of packages needed for cross-compiling</a></li>
+<li><a href="#distribution-specific-instructions">2 Distribution-specific instructions</a>
 <ul>
-<li><a href="#openSUSE">2.1 openSUSE</a></li>
-<li><a href="#Ubuntu_.28_.2F_Debian.3F_.29">2.2 Ubuntu ( / Debian? )</a></li>
+<li><a href="#opensuse">2.1 openSUSE</a></li>
+<li><a href="#ubuntu---debian-">2.2 Ubuntu ( / Debian? )</a></li>
 </ul></li>
 </ul></td>
 </tr>

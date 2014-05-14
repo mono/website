@@ -17,10 +17,10 @@ Winforms Samples
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#1.0.2F1.1_Applications">1 1.0/1.1 Applications</a></li>
-<li><a href="#2.0_Applications">2 2.0 Applications</a></li>
-<li><a href="#3.5_Applications">3 3.5 Applications</a></li>
-<li><a href="#Samples_sites">4 Samples sites</a></li>
+<li><a href="#1011-applications">1 1.0/1.1 Applications</a></li>
+<li><a href="#20-applications">2 2.0 Applications</a></li>
+<li><a href="#35-applications">3 3.5 Applications</a></li>
+<li><a href="#samples-sites">4 Samples sites</a></li>
 </ul></td>
 </tr>
 </tbody>

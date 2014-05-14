@@ -48,12 +48,12 @@ It has the following generic format
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#asyncTimeout">1 asyncTimeout</a></li>
-<li><a href="#enableSessionState">2 enableSessionState</a></li>
-<li><a href="#autoEventWireup">3 autoEventWireup</a></li>
-<li><a href="#pageBaseType">4 pageBaseType</a></li>
-<li><a href="#userControlBaseType">5 userControlBaseType</a></li>
-<li><a href="#.3CtagMapping.3E">6 &lt;tagMapping&gt;</a></li>
+<li><a href="#asynctimeout">1 asyncTimeout</a></li>
+<li><a href="#enablesessionstate">2 enableSessionState</a></li>
+<li><a href="#autoeventwireup">3 autoEventWireup</a></li>
+<li><a href="#pagebasetype">4 pageBaseType</a></li>
+<li><a href="#usercontrolbasetype">5 userControlBaseType</a></li>
+<li><a href="#tagmapping">6 &lt;tagMapping&gt;</a></li>
 </ul></td>
 </tr>
 </tbody>

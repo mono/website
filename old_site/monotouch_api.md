@@ -15,33 +15,33 @@ MonoTouch API
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Unbound_Types_.26_Members">2 Unbound Types &amp; Members</a></li>
-<li><a href="#Major_Namespaces">3 Major Namespaces</a>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#unbound-types--members">2 Unbound Types &amp; Members</a></li>
+<li><a href="#major-namespaces">3 Major Namespaces</a>
 <ul>
-<li><a href="#MonoTouch.ObjCRuntime">3.1 MonoTouch.ObjCRuntime</a></li>
-<li><a href="#MonoTouch.Foundation">3.2 MonoTouch.Foundation</a>
+<li><a href="#monotouchobjcruntime">3.1 MonoTouch.ObjCRuntime</a></li>
+<li><a href="#monotouchfoundation">3.2 MonoTouch.Foundation</a>
 <ul>
-<li><a href="#NSObject">3.2.1 NSObject</a></li>
+<li><a href="#nsobject">3.2.1 NSObject</a></li>
 </ul></li>
-<li><a href="#MonoTouch.UIKit">3.3 MonoTouch.UIKit</a></li>
-<li><a href="#OpenGLES">3.4 OpenGLES</a></li>
+<li><a href="#monotouchuikit">3.3 MonoTouch.UIKit</a></li>
+<li><a href="#opengles">3.4 OpenGLES</a></li>
 </ul></li>
-<li><a href="#Binding_Design">4 Binding Design</a>
+<li><a href="#binding-design">4 Binding Design</a>
 <ul>
-<li><a href="#Types">4.1 Types</a></li>
-<li><a href="#Delegates">4.2 Delegates</a>
+<li><a href="#types">4.1 Types</a></li>
+<li><a href="#delegates">4.2 Delegates</a>
 <ul>
-<li><a href="#Via_Events">4.2.1 Via Events</a></li>
-<li><a href="#Strongly_typed_via_a_Delegate_property">4.2.2 Strongly typed via a Delegate property</a></li>
-<li><a href="#Loosely_typed_via_the_WeakDelegate_property">4.2.3 Loosely typed via the WeakDelegate property</a></li>
-<li><a href="#Mapping_of_the_Objective-C_delegate_pattern_to_C.23">4.2.4 Mapping of the Objective-C delegate pattern to C#</a></li>
-<li><a href="#Mapping_Delegates_to_C.23">4.2.5 Mapping Delegates to C#</a></li>
+<li><a href="#via-events">4.2.1 Via Events</a></li>
+<li><a href="#strongly-typed-via-a-delegate-property">4.2.2 Strongly typed via a Delegate property</a></li>
+<li><a href="#loosely-typed-via-the-weakdelegate-property">4.2.3 Loosely typed via the WeakDelegate property</a></li>
+<li><a href="#mapping-of-the-objective-c-delegate-pattern-to-c">4.2.4 Mapping of the Objective-C delegate pattern to C#</a></li>
+<li><a href="#mapping-delegates-to-c">4.2.5 Mapping Delegates to C#</a></li>
 </ul></li>
-<li><a href="#Responding_to_Events">4.3 Responding to Events</a></li>
-<li><a href="#Models">4.4 Models</a></li>
-<li><a href="#Interface_Builder_Outlets_and_C.23">4.5 Interface Builder Outlets and C#</a></li>
-<li><a href="#Selectors">4.6 Selectors</a></li>
+<li><a href="#responding-to-events">4.3 Responding to Events</a></li>
+<li><a href="#models">4.4 Models</a></li>
+<li><a href="#interface-builder-outlets-and-c">4.5 Interface Builder Outlets and C#</a></li>
+<li><a href="#selectors">4.6 Selectors</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -53,9 +53,9 @@ Overview
 
 In addition to the core Base Class Libraries that are part of Mono, [MonoTouch]({{site.github.url}}/old_site/MonoTouch "MonoTouch") ships with bindings for various iPhone APIs to allow developers to create native iPhone applications with Mono.
 
-At the core of MonoTouch there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the iPhone C-based APIs like CoreGraphics and [OpenGLES](#OpenGLES).
+At the core of MonoTouch there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the iPhone C-based APIs like CoreGraphics and [OpenGLES](#opengles).
 
-The low-level runtime to communicate with Objective-C code is in the [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). On top of this foundation bindings for [Foundation](#MonoTouch.Foundation), CoreFoundation and [UIKit](#MonoTouch.UIKit) are provided.
+The low-level runtime to communicate with Objective-C code is in the [MonoTouch.ObjCRuntime](#monotouchobjcruntime). On top of this foundation bindings for [Foundation](#monotouchfoundation), CoreFoundation and [UIKit](#monotouchuikit) are provided.
 
 Unbound Types & Members
 =======================
@@ -95,7 +95,7 @@ MonoTouch.UIKit
 
 The [MonoTouch.UIKit](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.UIKit) namespace contains a 1 to 1 mapping to all of the UI components that make up CocoaTouch in the form of C\# classes. The API has been modified to follow the conventions used in the C\# language.
 
-C\# delegates are provided for common operations. See the [delegates](#Delegates) section for more information.
+C\# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
 
 OpenGLES
 --------
@@ -141,9 +141,9 @@ In Objective-C classes, you will see that classes that use this programming patt
 
 In MonoTouch we offer three mutually exclusive mechanisms to bind to these delegates:
 
-1.  [Via events](#Events).
-2.  [Strongly typed via a `Delegate` property](#StrongDelegate).
-3.  [Loosely typed via a `WeakDelegate` property](#WeakDelegate).
+1.  [Via events](#events).
+2.  [Strongly typed via a `Delegate` property](#strongdelegate).
+3.  [Loosely typed via a `WeakDelegate` property](#weakdelegate).
 
 For example, consider the [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) class. This dispatches to a [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) instance which is assigned to the [delegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) property.
 

@@ -19,12 +19,12 @@ The documentation in the following sections merely documents these features as t
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Minimal_Mono">1 Minimal Mono</a></li>
-<li><a href="#Alternative_Stack_during_Overflows">2 Alternative Stack during Overflows</a></li>
-<li><a href="#Static_vs_Dynamic_Mono">3 Static vs Dynamic Mono</a></li>
-<li><a href="#Thread_Local_Storage_Specification">4 Thread Local Storage Specification</a></li>
-<li><a href="#Controlling_the_Profile_to_Build">5 Controlling the Profile to Build</a></li>
-<li><a href="#Individual_Prefix_Configuation">6 Individual Prefix Configuation</a></li>
+<li><a href="#minimal-mono">1 Minimal Mono</a></li>
+<li><a href="#alternative-stack-during-overflows">2 Alternative Stack during Overflows</a></li>
+<li><a href="#static-vs-dynamic-mono">3 Static vs Dynamic Mono</a></li>
+<li><a href="#thread-local-storage-specification">4 Thread Local Storage Specification</a></li>
+<li><a href="#controlling-the-profile-to-build">5 Controlling the Profile to Build</a></li>
+<li><a href="#individual-prefix-configuation">6 Individual Prefix Configuation</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -38,11 +38,11 @@ It is possible to build a Mono virtual machine that has fewer features than a fu
 ./configure --enable-minimal=aot
 ```
 
-That would remove the [ahead of time compilation]({{site.github.url}}/old_site/Mono:Runtime#Ahead-of-time_compilation "Mono:Runtime") feature.
+That would remove the [ahead of time compilation]({{site.github.url}}/old_site/Mono:Runtime#ahead-of-time-compilation "Mono:Runtime") feature.
 
 The following features can be removed:
 
--   [aot]({{site.github.url}}/old_site/Mono:Runtime#Ahead-of-time_compilation "Mono:Runtime") ahead of time compilation.
+-   [aot]({{site.github.url}}/old_site/Mono:Runtime#ahead-of-time-compilation "Mono:Runtime") ahead of time compilation.
 -   profiler: profiler support.
 -   decimal: support for the System.Decimal (decimal type) in Mono.
 -   [pinvoke]({{site.github.url}}/old_site/Interop_with_Native_Libraries "Interop with Native Libraries"): Platform Invoke services to call into native libraries

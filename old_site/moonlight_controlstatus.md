@@ -15,31 +15,31 @@ Moonlight/ControlStatus
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Controls_in_System.Windows.dll">1 Controls in System.Windows.dll</a>
+<li><a href="#controls-in-systemwindowsdll">1 Controls in System.Windows.dll</a>
 <ul>
-<li><a href="#Containers">1.1 Containers</a></li>
-<li><a href="#Buttons">1.2 Buttons</a></li>
-<li><a href="#Dialogs">1.3 Dialogs</a></li>
-<li><a href="#Lists.2C_listboxes.2C_comboboxes.2C_etc">1.4 Lists, listboxes, comboboxes, etc</a></li>
-<li><a href="#Scrolling">1.5 Scrolling</a></li>
-<li><a href="#Slider_and_ProgressBar">1.6 Slider and ProgressBar</a></li>
-<li><a href="#Text">1.7 Text</a></li>
-<li><a href="#Control">1.8 Control</a></li>
-<li><a href="#ContentControl">1.9 ContentControl</a></li>
-<li><a href="#DeepZoom">1.10 DeepZoom</a></li>
-<li><a href="#Ink">1.11 Ink</a></li>
-<li><a href="#Media">1.12 Media</a></li>
-<li><a href="#Misc">1.13 Misc</a></li>
+<li><a href="#containers">1.1 Containers</a></li>
+<li><a href="#buttons">1.2 Buttons</a></li>
+<li><a href="#dialogs">1.3 Dialogs</a></li>
+<li><a href="#lists-listboxes-comboboxes-etc">1.4 Lists, listboxes, comboboxes, etc</a></li>
+<li><a href="#scrolling">1.5 Scrolling</a></li>
+<li><a href="#slider-and-progressbar">1.6 Slider and ProgressBar</a></li>
+<li><a href="#text">1.7 Text</a></li>
+<li><a href="#control">1.8 Control</a></li>
+<li><a href="#contentcontrol">1.9 ContentControl</a></li>
+<li><a href="#deepzoom">1.10 DeepZoom</a></li>
+<li><a href="#ink">1.11 Ink</a></li>
+<li><a href="#media">1.12 Media</a></li>
+<li><a href="#misc">1.13 Misc</a></li>
 </ul></li>
-<li><a href="#Controls_in_System.Windows.Controls.dll">2 Controls in System.Windows.Controls.dll</a>
+<li><a href="#controls-in-systemwindowscontrolsdll">2 Controls in System.Windows.Controls.dll</a>
 <ul>
-<li><a href="#Calendar">2.1 Calendar</a></li>
-<li><a href="#DatePicker">2.2 DatePicker</a></li>
-<li><a href="#TabControl">2.3 TabControl</a></li>
+<li><a href="#calendar">2.1 Calendar</a></li>
+<li><a href="#datepicker">2.2 DatePicker</a></li>
+<li><a href="#tabcontrol">2.3 TabControl</a></li>
 </ul></li>
-<li><a href="#Controls_in_System.Windows.Controls.Data.dll">3 Controls in System.Windows.Controls.Data.dll</a>
+<li><a href="#controls-in-systemwindowscontrolsdatadll">3 Controls in System.Windows.Controls.Data.dll</a>
 <ul>
-<li><a href="#DataGrid">3.1 DataGrid</a></li>
+<li><a href="#datagrid">3.1 DataGrid</a></li>
 </ul></li>
 </ul></td>
 </tr>

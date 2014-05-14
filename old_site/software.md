@@ -17,20 +17,20 @@ The following applications were developped with Mono and run on its runtime:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Applications">1 Applications</a>
+<li><a href="#applications">1 Applications</a>
 <ul>
-<li><a href="#Commercial_Applications">1.1 Commercial Applications</a></li>
-<li><a href="#Commercial_and_Open_Source_Applications">1.2 Commercial and Open Source Applications</a></li>
-<li><a href="#Open_Source_applications">1.3 Open Source applications</a>
+<li><a href="#commercial-applications">1.1 Commercial Applications</a></li>
+<li><a href="#commercial-and-open-source-applications">1.2 Commercial and Open Source Applications</a></li>
+<li><a href="#open-source-applications">1.3 Open Source applications</a>
 <ul>
-<li><a href="#GUI_Applications">1.3.1 GUI Applications</a></li>
-<li><a href="#Developer_Tools">1.3.2 Developer Tools</a></li>
-<li><a href="#Server_Applications">1.3.3 Server Applications</a></li>
+<li><a href="#gui-applications">1.3.1 GUI Applications</a></li>
+<li><a href="#developer-tools">1.3.2 Developer Tools</a></li>
+<li><a href="#server-applications">1.3.3 Server Applications</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Components_.26_Libraries">2 Components &amp; Libraries</a></li>
-<li><a href="#Mono_Users">3 Mono Users</a></li>
-<li><a href="#Other_Lists">4 Other Lists</a></li>
+<li><a href="#components--libraries">2 Components &amp; Libraries</a></li>
+<li><a href="#mono-users">3 Mono Users</a></li>
+<li><a href="#other-lists">4 Other Lists</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -22,12 +22,12 @@ SQLite has a notable oddity: table cell data does not retain what kind of data i
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#New_style_assembly_shipped_with_Mono_1.2.4">1 New style assembly shipped with Mono 1.2.4</a></li>
-<li><a href="#Prerequisites">2 Prerequisites</a></li>
-<li><a href="#Connection_String_Format">3 Connection String Format</a></li>
-<li><a href="#Storing_DateTimes">4 Storing DateTimes</a></li>
-<li><a href="#Character_Encodings">5 Character Encodings</a></li>
-<li><a href="#C.23_Example_.281.1_profile_of_the_new_assembly_and_the_old_assembly.29">6 C# Example (1.1 profile of the new assembly and the old assembly)</a></li>
+<li><a href="#new-style-assembly-shipped-with-mono-124">1 New style assembly shipped with Mono 1.2.4</a></li>
+<li><a href="#prerequisites">2 Prerequisites</a></li>
+<li><a href="#connection-string-format">3 Connection String Format</a></li>
+<li><a href="#storing-datetimes">4 Storing DateTimes</a></li>
+<li><a href="#character-encodings">5 Character Encodings</a></li>
+<li><a href="#c-example-11-profile-of-the-new-assembly-and-the-old-assembly">6 C# Example (1.1 profile of the new assembly and the old assembly)</a></li>
 </ul></td>
 </tr>
 </tbody>

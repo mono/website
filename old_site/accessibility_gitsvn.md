@@ -15,18 +15,18 @@ Accessibility: GitSVN
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Using_git_with_the_uia2atk_SVN_module">1 Using git with the uia2atk SVN module</a>
+<li><a href="#using-git-with-the-uia2atk-svn-module">1 Using git with the uia2atk SVN module</a>
 <ul>
-<li><a href="#Why_use_git-svn.3F">1.1 Why use git-svn?</a></li>
-<li><a href="#Getting_Started">1.2 Getting Started</a>
+<li><a href="#why-use-git-svn">1.1 Why use git-svn?</a></li>
+<li><a href="#getting-started">1.2 Getting Started</a>
 <ul>
-<li><a href="#Starting_from_a_bootstrap_repo_.28recommended.29">1.2.1 Starting from a bootstrap repo (recommended)</a></li>
+<li><a href="#starting-from-a-bootstrap-repo-recommended">1.2.1 Starting from a bootstrap repo (recommended)</a></li>
 </ul></li>
-<li><a href="#Daily_use">1.3 Daily use</a></li>
-<li><a href="#Maintaining_the_gitorious_repository">1.4 Maintaining the gitorious repository</a>
+<li><a href="#daily-use">1.3 Daily use</a></li>
+<li><a href="#maintaining-the-gitorious-repository">1.4 Maintaining the gitorious repository</a>
 <ul>
-<li><a href="#Create_the_git_repostory_from_scratch_.28takes_hours.29">1.4.1 Create the git repostory from scratch (takes hours)</a></li>
-<li><a href="#Pushing_to_gitorious">1.4.2 Pushing to gitorious</a></li>
+<li><a href="#create-the-git-repostory-from-scratch-takes-hours">1.4.1 Create the git repostory from scratch (takes hours)</a></li>
+<li><a href="#pushing-to-gitorious">1.4.2 Pushing to gitorious</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

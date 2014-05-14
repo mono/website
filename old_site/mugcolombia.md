@@ -15,10 +15,10 @@ MUG:Colombia
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Mono_Colombia">1 Mono Colombia</a></li>
-<li><a href="#Our_Objectives_are">2 Our Objectives are</a></li>
-<li><a href="#Members">3 Members</a></li>
-<li><a href="#Links">4 Links</a></li>
+<li><a href="#mono-colombia">1 Mono Colombia</a></li>
+<li><a href="#our-objectives-are">2 Our Objectives are</a></li>
+<li><a href="#members">3 Members</a></li>
+<li><a href="#links">4 Links</a></li>
 </ul></td>
 </tr>
 </tbody>

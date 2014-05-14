@@ -23,11 +23,11 @@ Shared hosing environments usually use [Apache](http://httpd.apache.org) that on
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Installing_Mono_and_cgi-fcgi">1 Installing Mono and cgi-fcgi</a></li>
-<li><a href="#Script_files">2 Script files</a></li>
-<li><a href="#Recycling_the_FastCGI_server">3 Recycling the FastCGI server</a></li>
-<li><a href="#ASP.NET_configuration">4 ASP.NET configuration</a></li>
-<li><a href="#Apache_configuration">5 Apache configuration</a></li>
+<li><a href="#installing-mono-and-cgi-fcgi">1 Installing Mono and cgi-fcgi</a></li>
+<li><a href="#script-files">2 Script files</a></li>
+<li><a href="#recycling-the-fastcgi-server">3 Recycling the FastCGI server</a></li>
+<li><a href="#aspnet-configuration">4 ASP.NET configuration</a></li>
+<li><a href="#apache-configuration">5 Apache configuration</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -103,7 +103,7 @@ MONO_SHARED_DIR="/home/username/tmp" \
 
 This script also logs stdout and stderr and creates a pid file.
 
-You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled]({{site.github.url}}/old_site/FastCGI#How_Applications_are_Handled_.28and_how_to_configure_them.29 "FastCGI").
+You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled]({{site.github.url}}/old_site/FastCGI#how-applications-are-handled-and-how-to-configure-them "FastCGI").
 
 Recycling the FastCGI server
 ----------------------------
@@ -166,7 +166,7 @@ A simple Apache configuration file (*/home/username/public\_html/.htaccess*):
     Action mono-cgi /cgi-bin/mono-cgi
     AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 
-You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod\_Mono Configuration]({{site.github.url}}/old_site/Mod_mono#Manual_Mod_Mono_Configuration "Mod mono").
+You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod\_Mono Configuration]({{site.github.url}}/old_site/Mod_mono#manual-mod-mono-configuration "Mod mono").
 
  To improve security you should protect ASP.NET Application Folders:
 

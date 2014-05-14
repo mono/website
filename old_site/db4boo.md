@@ -15,13 +15,13 @@ DB4BOO
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Boo">2 Boo</a></li>
-<li><a href="#Let.27s_Boo_first">3 Let's Boo first</a>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#boo">2 Boo</a></li>
+<li><a href="#lets-boo-first">3 Let's Boo first</a>
 <ul>
-<li><a href="#What_happened_.3F">3.1 What happened ?</a></li>
+<li><a href="#what-happened-">3.1 What happened ?</a></li>
 </ul></li>
-<li><a href="#Pilot_class">4 Pilot class</a></li>
+<li><a href="#pilot-class">4 Pilot class</a></li>
 </ul></td>
 </tr>
 </tbody>

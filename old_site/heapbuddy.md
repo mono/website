@@ -21,10 +21,10 @@ HeapBuddy collects allocation statistics while the program is running and writes
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Collecting_the_Data">1 Collecting the Data</a></li>
-<li><a href="#Examining_the_Data">2 Examining the Data</a></li>
-<li><a href="#Obtaining_HeapBuddy">3 Obtaining HeapBuddy</a></li>
-<li><a href="#See_Also">4 See Also</a></li>
+<li><a href="#collecting-the-data">1 Collecting the Data</a></li>
+<li><a href="#examining-the-data">2 Examining the Data</a></li>
+<li><a href="#obtaining-heapbuddy">3 Obtaining HeapBuddy</a></li>
+<li><a href="#see-also">4 See Also</a></li>
 </ul></td>
 </tr>
 </tbody>

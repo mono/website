@@ -17,20 +17,20 @@ Gendarme.Rules.Concurrency
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#DoNotLockOnThisOrTypesRule">1.1 DoNotLockOnThisOrTypesRule</a></li>
-<li><a href="#DoNotLockOnWeakIdentityObjectsRule">1.2 DoNotLockOnWeakIdentityObjectsRule</a></li>
-<li><a href="#DoNotUseLockedRegionOutsideMethodRule">1.3 DoNotUseLockedRegionOutsideMethodRule</a></li>
-<li><a href="#DoNotUseMethodImplOptionsSynchronizedRule">1.4 DoNotUseMethodImplOptionsSynchronizedRule</a></li>
-<li><a href="#DoNotUseThreadStaticWithInstanceFieldsRule">1.5 DoNotUseThreadStaticWithInstanceFieldsRule</a></li>
-<li><a href="#DoubleCheckLockingRule">1.6 DoubleCheckLockingRule</a></li>
-<li><a href="#NonConstantStaticFieldsShouldNotBeVisibleRule">1.7 NonConstantStaticFieldsShouldNotBeVisibleRule</a></li>
-<li><a href="#ProtectCallToEventDelegatesRule">1.8 ProtectCallToEventDelegatesRule</a></li>
-<li><a href="#ReviewLockUsedOnlyForOperationsOnVariablesRule">1.9 ReviewLockUsedOnlyForOperationsOnVariablesRule</a></li>
-<li><a href="#WriteStaticFieldFromInstanceMethodRule">1.10 WriteStaticFieldFromInstanceMethodRule</a></li>
+<li><a href="#donotlockonthisortypesrule">1.1 DoNotLockOnThisOrTypesRule</a></li>
+<li><a href="#donotlockonweakidentityobjectsrule">1.2 DoNotLockOnWeakIdentityObjectsRule</a></li>
+<li><a href="#donotuselockedregionoutsidemethodrule">1.3 DoNotUseLockedRegionOutsideMethodRule</a></li>
+<li><a href="#donotusemethodimploptionssynchronizedrule">1.4 DoNotUseMethodImplOptionsSynchronizedRule</a></li>
+<li><a href="#donotusethreadstaticwithinstancefieldsrule">1.5 DoNotUseThreadStaticWithInstanceFieldsRule</a></li>
+<li><a href="#doublechecklockingrule">1.6 DoubleCheckLockingRule</a></li>
+<li><a href="#nonconstantstaticfieldsshouldnotbevisiblerule">1.7 NonConstantStaticFieldsShouldNotBeVisibleRule</a></li>
+<li><a href="#protectcalltoeventdelegatesrule">1.8 ProtectCallToEventDelegatesRule</a></li>
+<li><a href="#reviewlockusedonlyforoperationsonvariablesrule">1.9 ReviewLockUsedOnlyForOperationsOnVariablesRule</a></li>
+<li><a href="#writestaticfieldfrominstancemethodrule">1.10 WriteStaticFieldFromInstanceMethodRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

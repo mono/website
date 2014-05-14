@@ -15,41 +15,41 @@ GtkSharpBeginnersGuide
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Preface">1 Preface</a>
+<li><a href="#preface">1 Preface</a>
 <ul>
-<li><a href="#What_is_Gtk.23.3F">1.1 What is Gtk#?</a></li>
+<li><a href="#what-is-gtk">1.1 What is Gtk#?</a></li>
 </ul></li>
-<li><a href="#Getting_Set_Up">2 Getting Set Up</a>
+<li><a href="#getting-set-up">2 Getting Set Up</a>
 <ul>
-<li><a href="#Download.2FInstall_GTK.23">2.1 Download/Install GTK#</a></li>
-<li><a href="#Inside_the_GTK.23_libraries">2.2 Inside the GTK# libraries</a></li>
-<li><a href="#Choosing_Gtk.23_or_Glade.23">2.3 Choosing Gtk# or Glade#</a></li>
+<li><a href="#downloadinstall-gtk">2.1 Download/Install GTK#</a></li>
+<li><a href="#inside-the-gtk-libraries">2.2 Inside the GTK# libraries</a></li>
+<li><a href="#choosing-gtk-or-glade">2.3 Choosing Gtk# or Glade#</a></li>
 </ul></li>
-<li><a href="#Your_first_GTK.23_application">3 Your first GTK# application</a>
+<li><a href="#your-first-gtk-application">3 Your first GTK# application</a>
 <ul>
-<li><a href="#Step_1:_Get_Comfortable">3.1 Step 1: Get Comfortable</a></li>
-<li><a href="#Step_2:_Create_our_folder_and_files">3.2 Step 2: Create our folder and files</a></li>
-<li><a href="#Step_3:_Laying_it_out">3.3 Step 3: Laying it out</a></li>
-<li><a href="#Step_4:_Adding_the_GUI">3.4 Step 4: Adding the GUI</a></li>
-<li><a href="#Step_5:_Laying_out_the_window">3.5 Step 5: Laying out the window</a></li>
-<li><a href="#Step_6:_Adding_Events">3.6 Step 6: Adding Events</a></li>
+<li><a href="#step-1-get-comfortable">3.1 Step 1: Get Comfortable</a></li>
+<li><a href="#step-2-create-our-folder-and-files">3.2 Step 2: Create our folder and files</a></li>
+<li><a href="#step-3-laying-it-out">3.3 Step 3: Laying it out</a></li>
+<li><a href="#step-4-adding-the-gui">3.4 Step 4: Adding the GUI</a></li>
+<li><a href="#step-5-laying-out-the-window">3.5 Step 5: Laying out the window</a></li>
+<li><a href="#step-6-adding-events">3.6 Step 6: Adding Events</a></li>
 </ul></li>
-<li><a href="#Your_First_Glade.23_Application">4 Your First Glade# Application</a>
+<li><a href="#your-first-glade-application">4 Your First Glade# Application</a>
 <ul>
-<li><a href="#Step_1:_What_is_Glade.23">4.1 Step 1: What is Glade#</a>
+<li><a href="#step-1-what-is-glade">4.1 Step 1: What is Glade#</a>
 <ul>
-<li><a href="#What_are_glade_files.3F">4.1.1 What are glade files?</a></li>
-<li><a href="#What_does_a_.glade_file_look_like.3F">4.1.2 What does a .glade file look like?</a></li>
+<li><a href="#what-are-glade-files">4.1.1 What are glade files?</a></li>
+<li><a href="#what-does-a-glade-file-look-like">4.1.2 What does a .glade file look like?</a></li>
 </ul></li>
-<li><a href="#Step_2:_Integrating_Glade_files_with_our_program">4.2 Step 2: Integrating Glade files with our program</a>
+<li><a href="#step-2-integrating-glade-files-with-our-program">4.2 Step 2: Integrating Glade files with our program</a>
 <ul>
-<li><a href="#How_to_compile.3F">4.2.1 How to compile?</a></li>
+<li><a href="#how-to-compile">4.2.1 How to compile?</a></li>
 </ul></li>
-<li><a href="#Step_3:_How_to_use_Glade.23_in_my_code">4.3 Step 3: How to use Glade# in my code</a></li>
-<li><a href="#How_to_refer_to_widgets_defined_in_gui.glade">4.4 How to refer to widgets defined in gui.glade</a></li>
-<li><a href="#How_to_Adding_Events">4.5 How to Adding Events</a>
+<li><a href="#step-3-how-to-use-glade-in-my-code">4.3 Step 3: How to use Glade# in my code</a></li>
+<li><a href="#how-to-refer-to-widgets-defined-in-guiglade">4.4 How to refer to widgets defined in gui.glade</a></li>
+<li><a href="#how-to-adding-events">4.5 How to Adding Events</a>
 <ul>
-<li><a href="#References_and_Further_Reading.2FViewing">4.5.1 References and Further Reading/Viewing</a></li>
+<li><a href="#references-and-further-readingviewing">4.5.1 References and Further Reading/Viewing</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

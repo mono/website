@@ -15,12 +15,12 @@ Related Mono Sites
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Community_sites">1 Community sites</a></li>
-<li><a href="#International_sites">2 International sites</a></li>
-<li><a href="#Browsing_the_Subversion_Repository">3 Browsing the Subversion Repository</a></li>
-<li><a href="#Projects_Using_Mono">4 Projects Using Mono</a></li>
-<li><a href="#User_sites">5 User sites</a></li>
-<li><a href="#Tutorials">6 Tutorials</a></li>
+<li><a href="#community-sites">1 Community sites</a></li>
+<li><a href="#international-sites">2 International sites</a></li>
+<li><a href="#browsing-the-subversion-repository">3 Browsing the Subversion Repository</a></li>
+<li><a href="#projects-using-mono">4 Projects Using Mono</a></li>
+<li><a href="#user-sites">5 User sites</a></li>
+<li><a href="#tutorials">6 Tutorials</a></li>
 </ul></td>
 </tr>
 </tbody>

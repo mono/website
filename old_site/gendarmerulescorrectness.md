@@ -17,36 +17,36 @@ Gendarme.Rules.Correctness
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AttributeStringLiteralsShouldParseCorrectlyRule">1.1 AttributeStringLiteralsShouldParseCorrectlyRule</a></li>
-<li><a href="#AvoidConstructorsInStaticTypesRule">1.2 AvoidConstructorsInStaticTypesRule</a></li>
-<li><a href="#AvoidFloatingPointEqualityRule">1.3 AvoidFloatingPointEqualityRule</a></li>
-<li><a href="#BadRecursiveInvocationRule">1.4 BadRecursiveInvocationRule</a></li>
-<li><a href="#CallingEqualsWithNullArgRule">1.5 CallingEqualsWithNullArgRule</a></li>
-<li><a href="#CheckParametersNullityInVisibleMethodsRule">1.6 CheckParametersNullityInVisibleMethodsRule</a></li>
-<li><a href="#DisposableFieldsShouldBeDisposedRule">1.7 DisposableFieldsShouldBeDisposedRule</a></li>
-<li><a href="#DoNotCompareWithNaNRule">1.8 DoNotCompareWithNaNRule</a></li>
-<li><a href="#DoNotRecurseInEqualityRule">1.9 DoNotRecurseInEqualityRule</a></li>
-<li><a href="#DoNotRoundIntegersRule">1.10 DoNotRoundIntegersRule</a></li>
-<li><a href="#EnsureLocalDisposalRule">1.11 EnsureLocalDisposalRule</a></li>
-<li><a href="#FinalizersShouldCallBaseClassFinalizerRule">1.12 FinalizersShouldCallBaseClassFinalizerRule</a></li>
-<li><a href="#MethodCanBeMadeStaticRule">1.13 MethodCanBeMadeStaticRule</a></li>
-<li><a href="#ProvideCorrectArgumentsToFormattingMethodsRule">1.14 ProvideCorrectArgumentsToFormattingMethodsRule</a></li>
-<li><a href="#ProvideCorrectRegexPatternRule">1.15 ProvideCorrectRegexPatternRule</a></li>
-<li><a href="#ProvideValidXmlStringRule">1.16 ProvideValidXmlStringRule</a></li>
-<li><a href="#ProvideValidXPathExpressionRule">1.17 ProvideValidXPathExpressionRule</a></li>
-<li><a href="#ReviewCastOnIntegerDivisionRule">1.18 ReviewCastOnIntegerDivisionRule</a></li>
-<li><a href="#ReviewCastOnIntegerMultiplicationRule">1.19 ReviewCastOnIntegerMultiplicationRule</a></li>
-<li><a href="#ReviewDoubleAssignmentRule">1.20 ReviewDoubleAssignmentRule</a></li>
-<li><a href="#ReviewInconsistentIdentityRule">1.21 ReviewInconsistentIdentityRule</a></li>
-<li><a href="#ReviewSelfAssignmentRule">1.22 ReviewSelfAssignmentRule</a></li>
-<li><a href="#ReviewUselessControlFlowRule">1.23 ReviewUselessControlFlowRule</a></li>
-<li><a href="#ReviewUseOfInt64BitsToDoubleRule">1.24 ReviewUseOfInt64BitsToDoubleRule</a></li>
-<li><a href="#ReviewUseOfModuloOneOnIntegersRule">1.25 ReviewUseOfModuloOneOnIntegersRule</a></li>
-<li><a href="#UseValueInPropertySetterRule">1.26 UseValueInPropertySetterRule</a></li>
+<li><a href="#attributestringliteralsshouldparsecorrectlyrule">1.1 AttributeStringLiteralsShouldParseCorrectlyRule</a></li>
+<li><a href="#avoidconstructorsinstatictypesrule">1.2 AvoidConstructorsInStaticTypesRule</a></li>
+<li><a href="#avoidfloatingpointequalityrule">1.3 AvoidFloatingPointEqualityRule</a></li>
+<li><a href="#badrecursiveinvocationrule">1.4 BadRecursiveInvocationRule</a></li>
+<li><a href="#callingequalswithnullargrule">1.5 CallingEqualsWithNullArgRule</a></li>
+<li><a href="#checkparametersnullityinvisiblemethodsrule">1.6 CheckParametersNullityInVisibleMethodsRule</a></li>
+<li><a href="#disposablefieldsshouldbedisposedrule">1.7 DisposableFieldsShouldBeDisposedRule</a></li>
+<li><a href="#donotcomparewithnanrule">1.8 DoNotCompareWithNaNRule</a></li>
+<li><a href="#donotrecurseinequalityrule">1.9 DoNotRecurseInEqualityRule</a></li>
+<li><a href="#donotroundintegersrule">1.10 DoNotRoundIntegersRule</a></li>
+<li><a href="#ensurelocaldisposalrule">1.11 EnsureLocalDisposalRule</a></li>
+<li><a href="#finalizersshouldcallbaseclassfinalizerrule">1.12 FinalizersShouldCallBaseClassFinalizerRule</a></li>
+<li><a href="#methodcanbemadestaticrule">1.13 MethodCanBeMadeStaticRule</a></li>
+<li><a href="#providecorrectargumentstoformattingmethodsrule">1.14 ProvideCorrectArgumentsToFormattingMethodsRule</a></li>
+<li><a href="#providecorrectregexpatternrule">1.15 ProvideCorrectRegexPatternRule</a></li>
+<li><a href="#providevalidxmlstringrule">1.16 ProvideValidXmlStringRule</a></li>
+<li><a href="#providevalidxpathexpressionrule">1.17 ProvideValidXPathExpressionRule</a></li>
+<li><a href="#reviewcastonintegerdivisionrule">1.18 ReviewCastOnIntegerDivisionRule</a></li>
+<li><a href="#reviewcastonintegermultiplicationrule">1.19 ReviewCastOnIntegerMultiplicationRule</a></li>
+<li><a href="#reviewdoubleassignmentrule">1.20 ReviewDoubleAssignmentRule</a></li>
+<li><a href="#reviewinconsistentidentityrule">1.21 ReviewInconsistentIdentityRule</a></li>
+<li><a href="#reviewselfassignmentrule">1.22 ReviewSelfAssignmentRule</a></li>
+<li><a href="#reviewuselesscontrolflowrule">1.23 ReviewUselessControlFlowRule</a></li>
+<li><a href="#reviewuseofint64bitstodoublerule">1.24 ReviewUseOfInt64BitsToDoubleRule</a></li>
+<li><a href="#reviewuseofmodulooneonintegersrule">1.25 ReviewUseOfModuloOneOnIntegersRule</a></li>
+<li><a href="#usevalueinpropertysetterrule">1.26 UseValueInPropertySetterRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

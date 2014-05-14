@@ -15,14 +15,14 @@ Workflow
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a></li>
-<li><a href="#Status">2 Status</a></li>
-<li><a href="#Contributions">3 Contributions</a></li>
-<li><a href="#Roadmap">4 Roadmap</a></li>
-<li><a href="#Getting_a_copy">5 Getting a copy</a></li>
-<li><a href="#Compiling_samples">6 Compiling samples</a></li>
-<li><a href="#Resources">7 Resources</a></li>
-<li><a href="#Other_open_source_workflow_projects">8 Other open source workflow projects</a></li>
+<li><a href="#introduction">1 Introduction</a></li>
+<li><a href="#status">2 Status</a></li>
+<li><a href="#contributions">3 Contributions</a></li>
+<li><a href="#roadmap">4 Roadmap</a></li>
+<li><a href="#getting-a-copy">5 Getting a copy</a></li>
+<li><a href="#compiling-samples">6 Compiling samples</a></li>
+<li><a href="#resources">7 Resources</a></li>
+<li><a href="#other-open-source-workflow-projects">8 Other open source workflow projects</a></li>
 </ul></td>
 </tr>
 </tbody>

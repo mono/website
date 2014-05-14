@@ -18,28 +18,28 @@ CSharp Compiler
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Introduction">1 Introduction</a>
+<li><a href="#introduction">1 Introduction</a>
 <ul>
-<li><a href="#Compiler_Service">1.1 Compiler Service</a></li>
-<li><a href="#State_of_the_Compiler">1.2 State of the Compiler</a></li>
-<li><a href="#Specification">1.3 Specification</a></li>
-<li><a href="#Working_with_MCS">1.4 Working with MCS</a>
+<li><a href="#compiler-service">1.1 Compiler Service</a></li>
+<li><a href="#state-of-the-compiler">1.2 State of the Compiler</a></li>
+<li><a href="#specification">1.3 Specification</a></li>
+<li><a href="#working-with-mcs">1.4 Working with MCS</a>
 <ul>
-<li><a href="#Obtaining_MCS">1.4.1 Obtaining MCS</a></li>
-<li><a href="#Running_MCS">1.4.2 Running MCS</a></li>
-<li><a href="#Reporting_Bugs">1.4.3 Reporting Bugs</a></li>
+<li><a href="#obtaining-mcs">1.4.1 Obtaining MCS</a></li>
+<li><a href="#running-mcs">1.4.2 Running MCS</a></li>
+<li><a href="#reporting-bugs">1.4.3 Reporting Bugs</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Implementation_details">2 Implementation details</a>
+<li><a href="#implementation-details">2 Implementation details</a>
 <ul>
-<li><a href="#CIL_Optimizations.">2.1 CIL Optimizations.</a>
+<li><a href="#cil-optimizations">2.1 CIL Optimizations.</a>
 <ul>
-<li><a href="#Open_bugs">2.1.1 Open bugs</a></li>
+<li><a href="#open-bugs">2.1.1 Open bugs</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#Slides">3 Slides</a></li>
-<li><a href="#History">4 History</a></li>
-<li><a href="#Common_Questions">5 Common Questions</a></li>
+<li><a href="#slides">3 Slides</a></li>
+<li><a href="#history">4 History</a></li>
+<li><a href="#common-questions">5 Common Questions</a></li>
 </ul></td>
 </tr>
 </tbody>

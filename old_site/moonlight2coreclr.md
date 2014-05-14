@@ -17,30 +17,30 @@ Note: due to the circular nature of the definitions you'll need some prior knowl
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Security_levels">1 Security levels</a>
+<li><a href="#security-levels">1 Security levels</a>
 <ul>
-<li><a href="#Transparent">1.1 Transparent</a></li>
-<li><a href="#Safe_Critical">1.2 Safe Critical</a></li>
-<li><a href="#Critical">1.3 Critical</a></li>
+<li><a href="#transparent">1.1 Transparent</a></li>
+<li><a href="#safe-critical">1.2 Safe Critical</a></li>
+<li><a href="#critical">1.3 Critical</a></li>
 </ul></li>
-<li><a href="#Code_categories">2 Code categories</a>
+<li><a href="#code-categories">2 Code categories</a>
 <ul>
-<li><a href="#Application_Code">2.1 Application Code</a></li>
-<li><a href="#Platform_Code">2.2 Platform Code</a></li>
+<li><a href="#application-code">2.1 Application Code</a></li>
+<li><a href="#platform-code">2.2 Platform Code</a></li>
 </ul></li>
-<li><a href="#Application_Developer_Shortcut">3 Application Developer Shortcut</a></li>
-<li><a href="#Special_Considerations">4 Special Considerations</a>
+<li><a href="#application-developer-shortcut">3 Application Developer Shortcut</a></li>
+<li><a href="#special-considerations">4 Special Considerations</a>
 <ul>
-<li><a href="#.5BInternalsVisibleTo.5D">4.1 [InternalsVisibleTo]</a></li>
-<li><a href="#Reflection">4.2 Reflection</a></li>
-<li><a href="#Reflection.Emit">4.3 Reflection.Emit</a></li>
-<li><a href="#Policies">4.4 Policies</a></li>
+<li><a href="#internalsvisibleto">4.1 [InternalsVisibleTo]</a></li>
+<li><a href="#reflection">4.2 Reflection</a></li>
+<li><a href="#reflectionemit">4.3 Reflection.Emit</a></li>
+<li><a href="#policies">4.4 Policies</a></li>
 </ul></li>
-<li><a href="#Implementation_details">5 Implementation details</a>
+<li><a href="#implementation-details">5 Implementation details</a>
 <ul>
-<li><a href="#Security_Attributes_Compatibility">5.1 Security Attributes Compatibility</a></li>
+<li><a href="#security-attributes-compatibility">5.1 Security Attributes Compatibility</a></li>
 </ul></li>
-<li><a href="#References">6 References</a></li>
+<li><a href="#references">6 References</a></li>
 </ul></td>
 </tr>
 </tbody>

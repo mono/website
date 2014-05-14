@@ -19,25 +19,25 @@ The following document contains a few hints on how to improve the performance of
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Profiling">1 Profiling</a>
+<li><a href="#profiling">1 Profiling</a>
 <ul>
-<li><a href="#Using_the_Mono_profiler">1.1 Using the Mono profiler</a></li>
-<li><a href="#Heap_Profiling">1.2 Heap Profiling</a>
+<li><a href="#using-the-mono-profiler">1.1 Using the Mono profiler</a></li>
+<li><a href="#heap-profiling">1.2 Heap Profiling</a>
 <ul>
-<li><a href="#Other_Mono_profilers">1.2.1 Other Mono profilers</a></li>
+<li><a href="#other-mono-profilers">1.2.1 Other Mono profilers</a></li>
 </ul></li>
-<li><a href="#Profiling_without_JIT_instrumentation">1.3 Profiling without JIT instrumentation</a></li>
+<li><a href="#profiling-without-jit-instrumentation">1.3 Profiling without JIT instrumentation</a></li>
 </ul></li>
-<li><a href="#Memory_Management_in_the_.NET.2FMono_world.">2 Memory Management in the .NET/Mono world.</a>
+<li><a href="#memory-management-in-the-netmono-world">2 Memory Management in the .NET/Mono world.</a>
 <ul>
-<li><a href="#Boxing">2.1 Boxing</a></li>
-<li><a href="#Strings">2.2 Strings</a></li>
-<li><a href="#Assisting_the_Garbage_Collector">2.3 Assisting the Garbage Collector</a></li>
-<li><a href="#Understanding_Memory_Usage">2.4 Understanding Memory Usage</a></li>
+<li><a href="#boxing">2.1 Boxing</a></li>
+<li><a href="#strings">2.2 Strings</a></li>
+<li><a href="#assisting-the-garbage-collector">2.3 Assisting the Garbage Collector</a></li>
+<li><a href="#understanding-memory-usage">2.4 Understanding Memory Usage</a></li>
 </ul></li>
-<li><a href="#Other_problems">3 Other problems</a>
+<li><a href="#other-problems">3 Other problems</a>
 <ul>
-<li><a href="#Common_problems_with_foreach">3.1 Common problems with foreach</a></li>
+<li><a href="#common-problems-with-foreach">3.1 Common problems with foreach</a></li>
 </ul></li>
 </ul></td>
 </tr>

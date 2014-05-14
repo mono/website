@@ -22,30 +22,30 @@ Developers can publish services that will be exposed to other computers on the n
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#What.27s_Included">1 What's Included</a></li>
-<li><a href="#Where_to_get_it">2 Where to get it</a>
+<li><a href="#whats-included">1 What's Included</a></li>
+<li><a href="#where-to-get-it">2 Where to get it</a>
 <ul>
-<li><a href="#Sources_and_Windows_Binaries">2.1 Sources and Windows Binaries</a></li>
-<li><a href="#Linux_Packages">2.2 Linux Packages</a></li>
-<li><a href="#Git">2.3 Git</a></li>
+<li><a href="#sources-and-windows-binaries">2.1 Sources and Windows Binaries</a></li>
+<li><a href="#linux-packages">2.2 Linux Packages</a></li>
+<li><a href="#git">2.3 Git</a></li>
 </ul></li>
-<li><a href="#Documentation">3 Documentation</a></li>
-<li><a href="#Things_a_developer_should_know">4 Things a developer should know</a>
+<li><a href="#documentation">3 Documentation</a></li>
+<li><a href="#things-a-developer-should-know">4 Things a developer should know</a>
 <ul>
-<li><a href="#API_Stability">4.1 API Stability</a></li>
-<li><a href="#API_coverage_of_Zeroconf_operations">4.2 API coverage of Zeroconf operations</a></li>
-<li><a href="#Compatibility_with_.NET">4.3 Compatibility with .NET</a></li>
-<li><a href="#Implementation_Details">4.4 Implementation Details</a></li>
-<li><a href="#Known_Workarounds">4.5 Known Workarounds</a></li>
-<li><a href="#Bug_Reports_and_Support">4.6 Bug Reports and Support</a></li>
+<li><a href="#api-stability">4.1 API Stability</a></li>
+<li><a href="#api-coverage-of-zeroconf-operations">4.2 API coverage of Zeroconf operations</a></li>
+<li><a href="#compatibility-with-net">4.3 Compatibility with .NET</a></li>
+<li><a href="#implementation-details">4.4 Implementation Details</a></li>
+<li><a href="#known-workarounds">4.5 Known Workarounds</a></li>
+<li><a href="#bug-reports-and-support">4.6 Bug Reports and Support</a></li>
 </ul></li>
-<li><a href="#How_to_use_it">5 How to use it</a>
+<li><a href="#how-to-use-it">5 How to use it</a>
 <ul>
-<li><a href="#Listen_for_and_resolve_services">5.1 Listen for and resolve services</a></li>
-<li><a href="#Publish_a_service">5.2 Publish a service</a></li>
+<li><a href="#listen-for-and-resolve-services">5.1 Listen for and resolve services</a></li>
+<li><a href="#publish-a-service">5.2 Publish a service</a></li>
 </ul></li>
-<li><a href="#Providers">6 Providers</a></li>
-<li><a href="#Future">7 Future</a></li>
+<li><a href="#providers">6 Providers</a></li>
+<li><a href="#future">7 Future</a></li>
 </ul></td>
 </tr>
 </tbody>

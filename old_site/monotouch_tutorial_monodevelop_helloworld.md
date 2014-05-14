@@ -17,12 +17,12 @@ In this tutorial part of the [MonoTouch Tutorials]({{site.github.url}}/old_site/
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Basics_of_MonoDevelop_and_Interface_Builder">1 Basics of MonoDevelop and Interface Builder</a></li>
-<li><a href="#Using_Interface_Builder_with_MonoTouch">2 Using Interface Builder with MonoTouch</a></li>
-<li><a href="#Adding_Behavior">3 Adding Behavior</a></li>
-<li><a href="#Using_Actions">4 Using Actions</a></li>
-<li><a href="#Deploying_to_the_device">5 Deploying to the device</a></li>
-<li><a href="#Resources">6 Resources</a></li>
+<li><a href="#basics-of-monodevelop-and-interface-builder">1 Basics of MonoDevelop and Interface Builder</a></li>
+<li><a href="#using-interface-builder-with-monotouch">2 Using Interface Builder with MonoTouch</a></li>
+<li><a href="#adding-behavior">3 Adding Behavior</a></li>
+<li><a href="#using-actions">4 Using Actions</a></li>
+<li><a href="#deploying-to-the-device">5 Deploying to the device</a></li>
+<li><a href="#resources">6 Resources</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -190,7 +190,7 @@ partial void sampleTap (UIButton sender)
 
 However, you are free to ignore the partial method definition and instead write the handler signature and its Export attribute manually. The C\# compiler ignores partial methods without implementations.
 
-There is more information on the binding in the [responding to events]({{site.github.url}}/old_site/MonoTouch_API#Responding_to_Events "MonoTouch API") section of the API.
+There is more information on the binding in the [responding to events]({{site.github.url}}/old_site/MonoTouch_API#responding-to-events "MonoTouch API") section of the API.
 
 Deploying to the device
 =======================

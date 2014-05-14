@@ -17,45 +17,45 @@ Gendarme.Rules.Performance
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Rules">1 Rules</a>
+<li><a href="#rules">1 Rules</a>
 <ul>
-<li><a href="#AvoidLargeNumberOfLocalVariablesRule">1.1 AvoidLargeNumberOfLocalVariablesRule</a>
+<li><a href="#avoidlargenumberoflocalvariablesrule">1.1 AvoidLargeNumberOfLocalVariablesRule</a>
 <ul>
-<li><a href="#MaximumVariables">1.1.1 MaximumVariables</a></li>
+<li><a href="#maximumvariables">1.1.1 MaximumVariables</a></li>
 </ul></li>
-<li><a href="#AvoidLargeStructureRule">1.2 AvoidLargeStructureRule</a>
+<li><a href="#avoidlargestructurerule">1.2 AvoidLargeStructureRule</a>
 <ul>
-<li><a href="#MaxSize">1.2.1 MaxSize</a></li>
+<li><a href="#maxsize">1.2.1 MaxSize</a></li>
 </ul></li>
-<li><a href="#AvoidRepetitiveCastsRule">1.3 AvoidRepetitiveCastsRule</a></li>
-<li><a href="#AvoidReturningArraysOnPropertiesRule">1.4 AvoidReturningArraysOnPropertiesRule</a></li>
-<li><a href="#AvoidTypeGetTypeForConstantStringsRule">1.5 AvoidTypeGetTypeForConstantStringsRule</a></li>
-<li><a href="#AvoidUncalledPrivateCodeRule">1.6 AvoidUncalledPrivateCodeRule</a></li>
-<li><a href="#AvoidUninstantiatedInternalClassesRule">1.7 AvoidUninstantiatedInternalClassesRule</a></li>
-<li><a href="#AvoidUnneededCallsOnStringRule">1.8 AvoidUnneededCallsOnStringRule</a></li>
-<li><a href="#AvoidUnneededFieldInitializationRule">1.9 AvoidUnneededFieldInitializationRule</a></li>
-<li><a href="#AvoidUnneededUnboxingRule">1.10 AvoidUnneededUnboxingRule</a></li>
-<li><a href="#AvoidUnsealedConcreteAttributesRule">1.11 AvoidUnsealedConcreteAttributesRule</a></li>
-<li><a href="#AvoidUnsealedUninheritedInternalTypeRule">1.12 AvoidUnsealedUninheritedInternalTypeRule</a></li>
-<li><a href="#AvoidUnusedParametersRule">1.13 AvoidUnusedParametersRule</a></li>
-<li><a href="#AvoidUnusedPrivateFieldsRule">1.14 AvoidUnusedPrivateFieldsRule</a></li>
-<li><a href="#CompareWithEmptyStringEfficientlyRule">1.15 CompareWithEmptyStringEfficientlyRule</a></li>
-<li><a href="#ConsiderCustomAccessorsForNonVisibleEventsRule">1.16 ConsiderCustomAccessorsForNonVisibleEventsRule</a></li>
-<li><a href="#DoNotIgnoreMethodResultRule">1.17 DoNotIgnoreMethodResultRule</a></li>
-<li><a href="#ImplementEqualsTypeRule">1.18 ImplementEqualsTypeRule</a></li>
-<li><a href="#MathMinMaxCandidateRule">1.19 MathMinMaxCandidateRule</a></li>
-<li><a href="#OverrideValueTypeDefaultsRule">1.20 OverrideValueTypeDefaultsRule</a></li>
-<li><a href="#PreferCharOverloadRule">1.21 PreferCharOverloadRule</a></li>
-<li><a href="#PreferLiteralOverInitOnlyFieldsRule">1.22 PreferLiteralOverInitOnlyFieldsRule</a></li>
-<li><a href="#RemoveUnneededFinalizerRule">1.23 RemoveUnneededFinalizerRule</a></li>
-<li><a href="#RemoveUnusedLocalVariablesRule">1.24 RemoveUnusedLocalVariablesRule</a></li>
-<li><a href="#ReviewLinqMethodRule">1.25 ReviewLinqMethodRule</a></li>
-<li><a href="#UseIsOperatorRule">1.26 UseIsOperatorRule</a></li>
-<li><a href="#UseStringEmptyRule">1.27 UseStringEmptyRule</a></li>
-<li><a href="#UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule">1.28 UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule</a></li>
-<li><a href="#UseTypeEmptyTypesRule">1.29 UseTypeEmptyTypesRule</a></li>
+<li><a href="#avoidrepetitivecastsrule">1.3 AvoidRepetitiveCastsRule</a></li>
+<li><a href="#avoidreturningarraysonpropertiesrule">1.4 AvoidReturningArraysOnPropertiesRule</a></li>
+<li><a href="#avoidtypegettypeforconstantstringsrule">1.5 AvoidTypeGetTypeForConstantStringsRule</a></li>
+<li><a href="#avoiduncalledprivatecoderule">1.6 AvoidUncalledPrivateCodeRule</a></li>
+<li><a href="#avoiduninstantiatedinternalclassesrule">1.7 AvoidUninstantiatedInternalClassesRule</a></li>
+<li><a href="#avoidunneededcallsonstringrule">1.8 AvoidUnneededCallsOnStringRule</a></li>
+<li><a href="#avoidunneededfieldinitializationrule">1.9 AvoidUnneededFieldInitializationRule</a></li>
+<li><a href="#avoidunneededunboxingrule">1.10 AvoidUnneededUnboxingRule</a></li>
+<li><a href="#avoidunsealedconcreteattributesrule">1.11 AvoidUnsealedConcreteAttributesRule</a></li>
+<li><a href="#avoidunsealeduninheritedinternaltyperule">1.12 AvoidUnsealedUninheritedInternalTypeRule</a></li>
+<li><a href="#avoidunusedparametersrule">1.13 AvoidUnusedParametersRule</a></li>
+<li><a href="#avoidunusedprivatefieldsrule">1.14 AvoidUnusedPrivateFieldsRule</a></li>
+<li><a href="#comparewithemptystringefficientlyrule">1.15 CompareWithEmptyStringEfficientlyRule</a></li>
+<li><a href="#considercustomaccessorsfornonvisibleeventsrule">1.16 ConsiderCustomAccessorsForNonVisibleEventsRule</a></li>
+<li><a href="#donotignoremethodresultrule">1.17 DoNotIgnoreMethodResultRule</a></li>
+<li><a href="#implementequalstyperule">1.18 ImplementEqualsTypeRule</a></li>
+<li><a href="#mathminmaxcandidaterule">1.19 MathMinMaxCandidateRule</a></li>
+<li><a href="#overridevaluetypedefaultsrule">1.20 OverrideValueTypeDefaultsRule</a></li>
+<li><a href="#prefercharoverloadrule">1.21 PreferCharOverloadRule</a></li>
+<li><a href="#preferliteraloverinitonlyfieldsrule">1.22 PreferLiteralOverInitOnlyFieldsRule</a></li>
+<li><a href="#removeunneededfinalizerrule">1.23 RemoveUnneededFinalizerRule</a></li>
+<li><a href="#removeunusedlocalvariablesrule">1.24 RemoveUnusedLocalVariablesRule</a></li>
+<li><a href="#reviewlinqmethodrule">1.25 ReviewLinqMethodRule</a></li>
+<li><a href="#useisoperatorrule">1.26 UseIsOperatorRule</a></li>
+<li><a href="#usestringemptyrule">1.27 UseStringEmptyRule</a></li>
+<li><a href="#usesuppressfinalizeonidisposabletypewithfinalizerrule">1.28 UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule</a></li>
+<li><a href="#usetypeemptytypesrule">1.29 UseTypeEmptyTypesRule</a></li>
 </ul></li>
-<li><a href="#Feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Feedback</a></li>
 </ul></td>
 </tr>
 </tbody>

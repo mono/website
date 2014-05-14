@@ -16,11 +16,11 @@ UI Automation
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#UI_Automation">1 UI Automation</a>
+<li><a href="#ui-automation">1 UI Automation</a>
 <ul>
-<li><a href="#MSDN_References">1.1 MSDN References</a></li>
-<li><a href="#Core_Implementation">1.2 Core Implementation</a></li>
-<li><a href="#Additional_Implementation">1.3 Additional Implementation</a></li>
+<li><a href="#msdn-references">1.1 MSDN References</a></li>
+<li><a href="#core-implementation">1.2 Core Implementation</a></li>
+<li><a href="#additional-implementation">1.3 Additional Implementation</a></li>
 </ul></li>
 </ul></td>
 </tr>

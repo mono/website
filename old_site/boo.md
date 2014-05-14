@@ -15,10 +15,10 @@ Boo
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Overview">1 Overview</a></li>
-<li><a href="#Syntax_Example">2 Syntax Example</a></li>
-<li><a href="#Compilers.2FInterpreters">3 Compilers/Interpreters</a></li>
-<li><a href="#Additional_Information">4 Additional Information</a></li>
+<li><a href="#overview">1 Overview</a></li>
+<li><a href="#syntax-example">2 Syntax Example</a></li>
+<li><a href="#compilersinterpreters">3 Compilers/Interpreters</a></li>
+<li><a href="#additional-information">4 Additional Information</a></li>
 </ul></td>
 </tr>
 </tbody>

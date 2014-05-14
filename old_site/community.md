@@ -15,12 +15,12 @@ Community
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Community">1 Community</a>
+<li><a href="#community">1 Community</a>
 <ul>
-<li><a href="#Blogs">1.1 Blogs</a></li>
-<li><a href="#Stack_Overflow">1.2 Stack Overflow</a></li>
-<li><a href="#Forums_.2F_Mailing_lists">1.3 Forums / Mailing lists</a></li>
-<li><a href="#Chat_.2F_IRC">1.4 Chat / IRC</a></li>
+<li><a href="#blogs">1.1 Blogs</a></li>
+<li><a href="#stack-overflow">1.2 Stack Overflow</a></li>
+<li><a href="#forums--mailing-lists">1.3 Forums / Mailing lists</a></li>
+<li><a href="#chat--irc">1.4 Chat / IRC</a></li>
 </ul></li>
 </ul></td>
 </tr>

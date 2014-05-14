@@ -19,15 +19,15 @@ Mono has been ported to a number of architectures already, and today it is made 
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Porting_the_VM_to_a_new_architecture">1 Porting the VM to a new architecture</a>
+<li><a href="#porting-the-vm-to-a-new-architecture">1 Porting the VM to a new architecture</a>
 <ul>
-<li><a href="#Endian.2C_64_bits_and_unaligned_access_issues">1.1 Endian, 64 bits and unaligned access issues</a></li>
-<li><a href="#Generating_assembly_bytecodes_for_the_target_processor">1.2 Generating assembly bytecodes for the target processor</a></li>
-<li><a href="#Getting_the_interpreter_to_work">1.3 Getting the interpreter to work</a></li>
-<li><a href="#The_final_step:_porting_the_JIT">1.4 The final step: porting the JIT</a></li>
+<li><a href="#endian-64-bits-and-unaligned-access-issues">1.1 Endian, 64 bits and unaligned access issues</a></li>
+<li><a href="#generating-assembly-bytecodes-for-the-target-processor">1.2 Generating assembly bytecodes for the target processor</a></li>
+<li><a href="#getting-the-interpreter-to-work">1.3 Getting the interpreter to work</a></li>
+<li><a href="#the-final-step-porting-the-jit">1.4 The final step: porting the JIT</a></li>
 </ul></li>
-<li><a href="#Operating_System_Ports">2 Operating System Ports</a></li>
-<li><a href="#Licensing">3 Licensing</a></li>
+<li><a href="#operating-system-ports">2 Operating System Ports</a></li>
+<li><a href="#licensing">3 Licensing</a></li>
 </ul></td>
 </tr>
 </tbody>

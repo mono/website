@@ -16,30 +16,30 @@ Profiler
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#The_Mono_log_profiler">1 The Mono log profiler</a>
+<li><a href="#the-mono-log-profiler">1 The Mono log profiler</a>
 <ul>
-<li><a href="#Basic_profiler_usage">1.1 Basic profiler usage</a></li>
-<li><a href="#Profiler_option_documentation">1.2 Profiler option documentation</a></li>
-<li><a href="#Analyzing_the_profile_data">1.3 Analyzing the profile data</a>
+<li><a href="#basic-profiler-usage">1.1 Basic profiler usage</a></li>
+<li><a href="#profiler-option-documentation">1.2 Profiler option documentation</a></li>
+<li><a href="#analyzing-the-profile-data">1.3 Analyzing the profile data</a>
 <ul>
-<li><a href="#Trace_information_for_events">1.3.1 Trace information for events</a></li>
-<li><a href="#Sort_order_for_methods_and_allocations">1.3.2 Sort order for methods and allocations</a></li>
-<li><a href="#Selecting_what_data_to_report">1.3.3 Selecting what data to report</a></li>
-<li><a href="#Track_individual_objects">1.3.4 Track individual objects</a></li>
-<li><a href="#Saving_a_profiler_report">1.3.5 Saving a profiler report</a></li>
+<li><a href="#trace-information-for-events">1.3.1 Trace information for events</a></li>
+<li><a href="#sort-order-for-methods-and-allocations">1.3.2 Sort order for methods and allocations</a></li>
+<li><a href="#selecting-what-data-to-report">1.3.3 Selecting what data to report</a></li>
+<li><a href="#track-individual-objects">1.3.4 Track individual objects</a></li>
+<li><a href="#saving-a-profiler-report">1.3.5 Saving a profiler report</a></li>
 </ul></li>
-<li><a href="#Dealing_with_profiler_slowness">1.4 Dealing with profiler slowness</a>
+<li><a href="#dealing-with-profiler-slowness">1.4 Dealing with profiler slowness</a>
 <ul>
-<li><a href="#Use_the_statistical_sampling_mode">1.4.1 Use the statistical sampling mode</a></li>
-<li><a href="#Collect_less_data">1.4.2 Collect less data</a></li>
-<li><a href="#Reduce_the_timestamp_overhead">1.4.3 Reduce the timestamp overhead</a></li>
+<li><a href="#use-the-statistical-sampling-mode">1.4.1 Use the statistical sampling mode</a></li>
+<li><a href="#collect-less-data">1.4.2 Collect less data</a></li>
+<li><a href="#reduce-the-timestamp-overhead">1.4.3 Reduce the timestamp overhead</a></li>
 </ul></li>
-<li><a href="#Dealing_with_the_size_of_the_data_files">1.5 Dealing with the size of the data files</a>
+<li><a href="#dealing-with-the-size-of-the-data-files">1.5 Dealing with the size of the data files</a>
 <ul>
-<li><a href="#Reducing_the_amount_of_data">1.5.1 Reducing the amount of data</a></li>
-<li><a href="#Compressing_the_data">1.5.2 Compressing the data</a></li>
-<li><a href="#Generating_only_a_summary_report">1.5.3 Generating only a summary report</a></li>
-<li><a href="#Editing_this_page">1.5.4 Editing this page</a></li>
+<li><a href="#reducing-the-amount-of-data">1.5.1 Reducing the amount of data</a></li>
+<li><a href="#compressing-the-data">1.5.2 Compressing the data</a></li>
+<li><a href="#generating-only-a-summary-report">1.5.3 Generating only a summary report</a></li>
+<li><a href="#editing-this-page">1.5.4 Editing this page</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

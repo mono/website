@@ -15,13 +15,13 @@ FAQ: Gtk
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#General_Questions">1 General Questions</a></li>
-<li><a href="#Gtk.23_widget_questions">2 Gtk# widget questions</a></li>
-<li><a href="#Custom_Widgets">3 Custom Widgets</a></li>
-<li><a href="#Common_Questions">4 Common Questions</a></li>
-<li><a href="#Gecko.23_and_Mozilla">5 Gecko# and Mozilla</a></li>
-<li><a href="#Migration">6 Migration</a></li>
-<li><a href="#Common_Problems">7 Common Problems</a></li>
+<li><a href="#general-questions">1 General Questions</a></li>
+<li><a href="#gtk-widget-questions">2 Gtk# widget questions</a></li>
+<li><a href="#custom-widgets">3 Custom Widgets</a></li>
+<li><a href="#common-questions">4 Common Questions</a></li>
+<li><a href="#gecko-and-mozilla">5 Gecko# and Mozilla</a></li>
+<li><a href="#migration">6 Migration</a></li>
+<li><a href="#common-problems">7 Common Problems</a></li>
 </ul></td>
 </tr>
 </tbody>

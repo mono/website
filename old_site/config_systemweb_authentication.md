@@ -44,15 +44,15 @@ If you choose "Forms", you can customize the authentication by introducing the \
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#Forms_Authentication">1 Forms Authentication</a>
+<li><a href="#forms-authentication">1 Forms Authentication</a>
 <ul>
-<li><a href="#.22name.22">1.1 &quot;name&quot;</a></li>
-<li><a href="#.22path.22">1.2 &quot;path&quot;</a></li>
-<li><a href="#.22loginUrl.22">1.3 &quot;loginUrl&quot;</a></li>
-<li><a href="#.22protection.22">1.4 &quot;protection&quot;</a></li>
-<li><a href="#.22timeout.22">1.5 &quot;timeout&quot;</a></li>
-<li><a href="#.22requireSSL.22">1.6 &quot;requireSSL&quot;</a></li>
-<li><a href="#.22slidingExpiration.22">1.7 &quot;slidingExpiration&quot;</a></li>
+<li><a href="#name">1.1 &quot;name&quot;</a></li>
+<li><a href="#path">1.2 &quot;path&quot;</a></li>
+<li><a href="#loginurl">1.3 &quot;loginUrl&quot;</a></li>
+<li><a href="#protection">1.4 &quot;protection&quot;</a></li>
+<li><a href="#timeout">1.5 &quot;timeout&quot;</a></li>
+<li><a href="#requiressl">1.6 &quot;requireSSL&quot;</a></li>
+<li><a href="#slidingexpiration">1.7 &quot;slidingExpiration&quot;</a></li>
 </ul></li>
 </ul></td>
 </tr>
