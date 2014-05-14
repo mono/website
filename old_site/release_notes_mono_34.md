@@ -48,6 +48,8 @@ ARM
 -   Emit shorter floating point operations when possible
 -   Hard float support: Mono now should work on Linux distributions which uses a hard float (`armhf`) ABI, like the Raspberry PI.
 
+Notes: Homogeneous floating point aggregates are not yet supported on armhf.
+
 Documentation
 -------------
 
@@ -61,7 +63,7 @@ mono-api-html
 Breaking changes
 ----------------
 
--   `mkbundle` on Mac OS X now must alway link against the Objective-C Runtime (`-lobjc`, however, it is recommended to link against the Foundation framework as well (`-framework Foundation`).
+-   `mkbundle` on Mac OS X now must always link against the Objective-C Runtime (`-lobjc`, however, it is recommended to link against the Foundation framework as well (`-framework Foundation`).
 
 Contributors
 ------------

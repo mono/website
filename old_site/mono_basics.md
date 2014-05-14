@@ -46,7 +46,7 @@ public class HelloWorld
 
 To compile, use gmcs:
 
-    gmcs hello.cs
+    mcs hello.cs
 
 Either compiler will create "hello.exe", which you can run using:
 
@@ -82,7 +82,7 @@ class Hello {
 
 To compile, use gmcs with the -pkg option to tell the compiler to pull in the Gtk\# libraries:
 
-    gmcs hello.cs -pkg:gtk-sharp-2.0
+    mcs hello.cs -pkg:gtk-sharp-2.0
 
 The compiler will create "hello.exe", which you can run using:
 
@@ -113,7 +113,7 @@ public class HelloWorld : Form
 
 To compile, use gmcs with the -pkg option to tell the compiler to pull in the Winforms libraries:
 
-    gmcs hello.cs -pkg:dotnet
+    mcs hello.cs -pkg:dotnet
 
 Either compiler will create "hello.exe", which you can run using:
 
