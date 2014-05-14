@@ -1,8 +1,8 @@
 ---
 layout: docpage
-title: Install Mono on Mac OS X
+title: Install Mono on Windows
 navgroup: docs
-permalink: /docs/install/mac/
+permalink: /docs/install/windows/
 ---
 
 TODO
