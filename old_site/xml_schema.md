@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "XML Schema"
+lastmodified: '2006-05-20'
 permalink: /old_site/XML_Schema/
 redirect_from:
   - /XML_Schema/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "HowToSystemIOPorts"
+lastmodified: '2011-09-16'
 permalink: /old_site/HowToSystemIOPorts/
 redirect_from:
   - /HowToSystemIOPorts/

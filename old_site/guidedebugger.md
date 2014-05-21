@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guide:Debugger"
+lastmodified: '2014-03-12'
 permalink: /old_site/Guide:Debugger/
 redirect_from:
   - /Guide:Debugger/

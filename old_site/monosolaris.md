@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Solaris"
+lastmodified: '2008-11-05'
 permalink: /old_site/Mono:Solaris/
 redirect_from:
   - /Mono:Solaris/

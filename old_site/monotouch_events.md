@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Events"
+lastmodified: '2009-08-05'
 permalink: /old_site/MonoTouch_Events/
 redirect_from:
   - /MonoTouch_Events/

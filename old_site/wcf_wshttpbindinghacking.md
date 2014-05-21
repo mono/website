@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WCF WSHttpBindingHacking"
+lastmodified: '2011-04-18'
 permalink: /old_site/WCF_WSHttpBindingHacking/
 redirect_from:
   - /WCF_WSHttpBindingHacking/

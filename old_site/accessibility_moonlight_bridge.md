@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Moonlight Bridge"
+lastmodified: '2009-06-18'
 permalink: /old_site/Accessibility:_Moonlight_Bridge/
 redirect_from:
   - /Accessibility:_Moonlight_Bridge/

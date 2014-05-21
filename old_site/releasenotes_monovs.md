@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ReleaseNotes MonoVS"
+lastmodified: '2009-10-21'
 permalink: /old_site/ReleaseNotes_MonoVS/
 redirect_from:
   - /ReleaseNotes_MonoVS/

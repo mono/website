@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono.Addins Release Notes"
+lastmodified: '2010-05-27'
 permalink: /old_site/Mono.Addins_Release_Notes/
 redirect_from:
   - /Mono.Addins_Release_Notes/

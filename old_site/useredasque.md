@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:Edasque"
+lastmodified: '2008-01-02'
 permalink: /old_site/User:Edasque/
 redirect_from:
   - /User:Edasque/

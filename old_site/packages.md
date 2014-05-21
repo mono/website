@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Packages"
+lastmodified: '2007-09-24'
 permalink: /old_site/Packages/
 redirect_from:
   - /Packages/

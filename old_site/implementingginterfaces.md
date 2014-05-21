@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ImplementingGInterfaces"
+lastmodified: '2008-08-22'
 permalink: /old_site/ImplementingGInterfaces/
 redirect_from:
   - /ImplementingGInterfaces/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Config DllMap"
+lastmodified: '2008-09-19'
 permalink: /old_site/Config_DllMap/
 redirect_from:
   - /Config_DllMap/

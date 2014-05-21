@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WCF Development 2010"
+lastmodified: '2010-03-29'
 permalink: /old_site/WCF_Development_2010/
 redirect_from:
   - /WCF_Development_2010/

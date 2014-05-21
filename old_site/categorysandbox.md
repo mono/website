@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:Sandbox"
+lastmodified: '2007-05-17'
 permalink: /old_site/Category:Sandbox/
 redirect_from:
   - /Category:Sandbox/

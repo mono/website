@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Generational GC"
+lastmodified: '2012-09-29'
 permalink: /old_site/Generational_GC/
 redirect_from:
   - /Generational_GC/

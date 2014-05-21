@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Maintainers"
+lastmodified: '2012-04-16'
 permalink: /old_site/Maintainers/
 redirect_from:
   - /Maintainers/

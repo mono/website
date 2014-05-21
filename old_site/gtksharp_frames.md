@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Frames"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkSharp:_Frames/
 redirect_from:
   - /GtkSharp:_Frames/

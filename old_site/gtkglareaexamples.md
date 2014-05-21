@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGLArea:Examples"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGLArea:Examples/
 redirect_from:
   - /GtkGLArea:Examples/

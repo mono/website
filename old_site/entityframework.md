@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "EntityFramework"
+lastmodified: '2012-08-14'
 permalink: /old_site/EntityFramework/
 redirect_from:
   - /EntityFramework/

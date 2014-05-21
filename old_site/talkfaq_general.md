@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:FAQ: General"
+lastmodified: '2005-03-05'
 permalink: /old_site/Talk:FAQ:_General/
 redirect_from:
   - /Talk:FAQ:_General/

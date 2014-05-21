@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "OLE DB"
+lastmodified: '2005-09-06'
 permalink: /old_site/OLE_DB/
 redirect_from:
   - /OLE_DB/

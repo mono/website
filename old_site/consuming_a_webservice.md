@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Consuming a WebService"
+lastmodified: '2007-11-08'
 permalink: /old_site/Consuming_a_WebService/
 redirect_from:
   - /Consuming_a_WebService/

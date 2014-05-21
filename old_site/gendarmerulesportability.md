@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Portability"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Portability/
 redirect_from:
   - /Gendarme.Rules.Portability/

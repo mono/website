@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Crimson"
+lastmodified: '2008-02-18'
 permalink: /old_site/Crimson/
 redirect_from:
   - /Crimson/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Summer2006"
+lastmodified: '2006-05-24'
 permalink: /old_site/Summer2006/
 redirect_from:
   - /Summer2006/

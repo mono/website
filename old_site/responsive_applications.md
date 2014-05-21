@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Responsive Applications"
+lastmodified: '2008-01-28'
 permalink: /old_site/Responsive_Applications/
 redirect_from:
   - /Responsive_Applications/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono.Cairo Tutorial"
+lastmodified: '2008-06-07'
 permalink: /old_site/Mono.Cairo_Tutorial/
 redirect_from:
   - /Mono.Cairo_Tutorial/

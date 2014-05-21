@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Old Visual Basic"
+lastmodified: '2007-01-23'
 permalink: /old_site/Old_Visual_Basic/
 redirect_from:
   - /Old_Visual_Basic/

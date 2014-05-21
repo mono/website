@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Article:ThreadPool Deadlocks"
+lastmodified: '2010-12-11'
 permalink: /old_site/Article:ThreadPool_Deadlocks/
 redirect_from:
   - /Article:ThreadPool_Deadlocks/

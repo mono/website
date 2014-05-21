@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "DistroPackages/Debian"
+lastmodified: '2014-03-16'
 permalink: /old_site/DistroPackages/Debian/
 redirect_from:
   - /DistroPackages/Debian/

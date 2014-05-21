@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlighBeta1"
+lastmodified: '2008-10-09'
 permalink: /old_site/MoonlighBeta1/
 redirect_from:
   - /MoonlighBeta1/

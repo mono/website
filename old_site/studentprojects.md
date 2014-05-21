@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "StudentProjects"
+lastmodified: '2014-02-27'
 permalink: /old_site/StudentProjects/
 redirect_from:
   - /StudentProjects/

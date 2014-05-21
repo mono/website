@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Scrollbar Widgets"
+lastmodified: '2005-09-06'
 permalink: /old_site/GtkSharp:_Scrollbar_Widgets/
 redirect_from:
   - /GtkSharp:_Scrollbar_Widgets/

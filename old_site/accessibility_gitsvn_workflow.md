@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: GitSVN: Workflow"
+lastmodified: '2009-04-09'
 permalink: /old_site/Accessibility:_GitSVN:_Workflow/
 redirect_from:
   - /Accessibility:_GitSVN:_Workflow/

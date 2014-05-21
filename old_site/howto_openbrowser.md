@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto OpenBrowser"
+lastmodified: '2007-10-25'
 permalink: /old_site/Howto_OpenBrowser/
 redirect_from:
   - /Howto_OpenBrowser/

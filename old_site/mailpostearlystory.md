@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mailpost:earlystory"
+lastmodified: '2005-11-03'
 permalink: /old_site/Mailpost:earlystory/
 redirect_from:
   - /Mailpost:earlystory/

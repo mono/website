@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Upload log"
+lastmodified: '2005-08-04'
 permalink: /old_site/Mono:Upload_log/
 redirect_from:
   - /Mono:Upload_log/

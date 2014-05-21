@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch ManualSelectorInvocation"
+lastmodified: '2009-09-07'
 permalink: /old_site/MonoTouch_ManualSelectorInvocation/
 redirect_from:
   - /MonoTouch_ManualSelectorInvocation/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Control Status"
+lastmodified: '2008-10-14'
 permalink: /old_site/Accessibility:_Control_Status/
 redirect_from:
   - /Accessibility:_Control_Status/

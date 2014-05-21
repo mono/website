@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CoreClrHowTo"
+lastmodified: '2011-01-11'
 permalink: /old_site/CoreClrHowTo/
 redirect_from:
   - /CoreClrHowTo/

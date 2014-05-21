@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGL.IGLObject"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGL.IGLObject/
 redirect_from:
   - /GtkGL.IGLObject/

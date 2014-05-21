@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "XML Writer"
+lastmodified: '2006-05-20'
 permalink: /old_site/XML_Writer/
 redirect_from:
   - /XML_Writer/

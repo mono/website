@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ECMA-335-CLI-Public-Draft"
+lastmodified: '2010-04-12'
 permalink: /old_site/ECMA-335-CLI-Public-Draft/
 redirect_from:
   - /ECMA-335-CLI-Public-Draft/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: UIAutomationClient SpecIssues"
+lastmodified: '2009-06-25'
 permalink: /old_site/Accessibility:_UIAutomationClient_SpecIssues/
 redirect_from:
   - /Accessibility:_UIAutomationClient_SpecIssues/

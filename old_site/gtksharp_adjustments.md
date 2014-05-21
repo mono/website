@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Adjustments"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkSharp:_Adjustments/
 redirect_from:
   - /GtkSharp:_Adjustments/

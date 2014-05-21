@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Webservices and GtkSharp"
+lastmodified: '2005-10-05'
 permalink: /old_site/Webservices_and_GtkSharp/
 redirect_from:
   - /Webservices_and_GtkSharp/

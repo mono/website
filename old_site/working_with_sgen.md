@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Working With SGen"
+lastmodified: '2012-09-30'
 permalink: /old_site/Working_With_SGen/
 redirect_from:
   - /Working_With_SGen/

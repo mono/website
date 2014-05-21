@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Widget Hierarchy"
+lastmodified: '2005-09-06'
 permalink: /old_site/GtkSharp:_Widget_Hierarchy/
 redirect_from:
   - /GtkSharp:_Widget_Hierarchy/

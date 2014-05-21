@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoMeeting2006"
+lastmodified: '2006-10-28'
 permalink: /old_site/MonoMeeting2006/
 redirect_from:
   - /MonoMeeting2006/

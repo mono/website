@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "UsingClientCertificatesWithXSP"
+lastmodified: '2007-08-09'
 permalink: /old_site/UsingClientCertificatesWithXSP/
 redirect_from:
   - /UsingClientCertificatesWithXSP/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "NUnitHowTo"
+lastmodified: '2007-11-17'
 permalink: /old_site/NUnitHowTo/
 redirect_from:
   - /NUnitHowTo/

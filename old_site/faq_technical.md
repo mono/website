@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Technical"
+lastmodified: '2010-06-30'
 permalink: /old_site/FAQ:_Technical/
 redirect_from:
   - /FAQ:_Technical/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme"
+lastmodified: '2011-01-14'
 permalink: /old_site/Gendarme/
 redirect_from:
   - /Gendarme/

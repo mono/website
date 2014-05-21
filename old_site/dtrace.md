@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "DTrace"
+lastmodified: '2012-11-02'
 permalink: /old_site/DTrace/
 redirect_from:
   - /DTrace/

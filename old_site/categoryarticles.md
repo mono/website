@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:Articles"
+lastmodified: '2005-09-06'
 permalink: /old_site/Category:Articles/
 redirect_from:
   - /Category:Articles/

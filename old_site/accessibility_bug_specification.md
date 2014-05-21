@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Bug Specification"
+lastmodified: '2009-02-24'
 permalink: /old_site/Accessibility:_Bug_Specification/
 redirect_from:
   - /Accessibility:_Bug_Specification/

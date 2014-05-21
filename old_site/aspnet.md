@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ASP.NET"
+lastmodified: '2010-06-22'
 permalink: /old_site/ASP.NET/
 redirect_from:
   - /ASP.NET/

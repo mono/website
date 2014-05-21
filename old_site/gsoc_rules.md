@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GSoC Rules"
+lastmodified: '2014-03-10'
 permalink: /old_site/GSoC_Rules/
 redirect_from:
   - /GSoC_Rules/

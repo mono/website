@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gtk:HelloWorld"
+lastmodified: '2005-10-19'
 permalink: /old_site/Gtk:HelloWorld/
 redirect_from:
   - /Gtk:HelloWorld/

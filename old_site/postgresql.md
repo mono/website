@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "PostgreSQL"
+lastmodified: '2008-05-21'
 permalink: /old_site/PostgreSQL/
 redirect_from:
   - /PostgreSQL/

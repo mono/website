@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Packing with Boxes"
+lastmodified: '2005-10-19'
 permalink: /old_site/GtkSharp:_Packing_with_Boxes/
 redirect_from:
   - /GtkSharp:_Packing_with_Boxes/

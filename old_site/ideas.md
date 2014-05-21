@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Ideas"
+lastmodified: '2005-02-24'
 permalink: /old_site/Ideas/
 redirect_from:
   - /Ideas/

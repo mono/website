@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoSummit2007"
+lastmodified: '2008-10-05'
 permalink: /old_site/MonoSummit2007/
 redirect_from:
   - /MonoSummit2007/

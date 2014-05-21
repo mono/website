@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Coding Guidelines"
+lastmodified: '2008-09-18'
 permalink: /old_site/Talk:Coding_Guidelines/
 redirect_from:
   - /Talk:Coding_Guidelines/

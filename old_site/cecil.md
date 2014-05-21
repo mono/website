@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Cecil"
+lastmodified: '2010-04-22'
 permalink: /old_site/Cecil/
 redirect_from:
   - /Cecil/

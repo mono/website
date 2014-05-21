@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono 1 1"
+lastmodified: '2005-09-06'
 permalink: /old_site/Mono_1_1/
 redirect_from:
   - /Mono_1_1/

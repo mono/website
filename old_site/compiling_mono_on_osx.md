@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono on OSX"
+lastmodified: '2014-04-09'
 permalink: /old_site/Compiling_Mono_on_OSX/
 redirect_from:
   - /Compiling_Mono_on_OSX/

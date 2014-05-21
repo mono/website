@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Completing2.0Profile"
+lastmodified: '2007-11-13'
 permalink: /old_site/Completing2.0Profile/
 redirect_from:
   - /Completing2.0Profile/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monodoc"
+lastmodified: '2006-12-16'
 permalink: /old_site/Monodoc/
 redirect_from:
   - /Monodoc/

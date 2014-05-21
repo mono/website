@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:ThreadSafety"
+lastmodified: '2009-03-17'
 permalink: /old_site/Mono:Runtime:Documentation:ThreadSafety/
 redirect_from:
   - /Mono:Runtime:Documentation:ThreadSafety/

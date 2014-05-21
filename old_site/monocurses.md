@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoCurses"
+lastmodified: '2009-04-22'
 permalink: /old_site/MonoCurses/
 redirect_from:
   - /MonoCurses/

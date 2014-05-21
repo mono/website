@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Transactions"
+lastmodified: '2006-11-15'
 permalink: /old_site/Transactions/
 redirect_from:
   - /Transactions/

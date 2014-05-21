@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Visual Studio Integration"
+lastmodified: '2009-06-25'
 permalink: /old_site/Visual_Studio_Integration/
 redirect_from:
   - /Visual_Studio_Integration/

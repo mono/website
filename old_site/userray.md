@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:Ray"
+lastmodified: '2008-05-04'
 permalink: /old_site/User:Ray/
 redirect_from:
   - /User:Ray/

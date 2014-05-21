@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono.Cairo Cookbook"
+lastmodified: '2008-01-06'
 permalink: /old_site/Mono.Cairo_Cookbook/
 redirect_from:
   - /Mono.Cairo_Cookbook/

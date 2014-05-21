@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GConfTutorial"
+lastmodified: '2005-10-19'
 permalink: /old_site/GConfTutorial/
 redirect_from:
   - /GConfTutorial/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Introduction to Deveel AJAX"
+lastmodified: '2007-05-08'
 permalink: /old_site/Introduction_to_Deveel_AJAX/
 redirect_from:
   - /Introduction_to_Deveel_AJAX/

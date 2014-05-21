@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BuildSystem/ReleaseProcess"
+lastmodified: '2013-01-19'
 permalink: /old_site/BuildSystem/ReleaseProcess/
 redirect_from:
   - /BuildSystem/ReleaseProcess/

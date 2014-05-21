@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SystemMessagingOpenwire"
+lastmodified: '2009-07-15'
 permalink: /old_site/SystemMessagingOpenwire/
 redirect_from:
   - /SystemMessagingOpenwire/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Command Line MoMA"
+lastmodified: '2008-03-14'
 permalink: /old_site/Command_Line_MoMA/
 redirect_from:
   - /Command_Line_MoMA/

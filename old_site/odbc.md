@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ODBC"
+lastmodified: '2008-05-21'
 permalink: /old_site/ODBC/
 redirect_from:
   - /ODBC/

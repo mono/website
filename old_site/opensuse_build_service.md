@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "OpenSUSE Build Service"
+lastmodified: '2012-05-27'
 permalink: /old_site/OpenSUSE_Build_Service/
 redirect_from:
   - /OpenSUSE_Build_Service/

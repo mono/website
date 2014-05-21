@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono on Windows"
+lastmodified: '2013-09-04'
 permalink: /old_site/Compiling_Mono_on_Windows/
 redirect_from:
   - /Compiling_Mono_on_Windows/

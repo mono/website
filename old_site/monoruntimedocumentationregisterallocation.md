@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:RegisterAllocation"
+lastmodified: '2010-08-26'
 permalink: /old_site/Mono:Runtime:Documentation:RegisterAllocation/
 redirect_from:
   - /Mono:Runtime:Documentation:RegisterAllocation/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GitHubBranches"
+lastmodified: '2011-12-14'
 permalink: /old_site/GitHubBranches/
 redirect_from:
   - /GitHubBranches/

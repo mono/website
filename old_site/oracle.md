@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Oracle"
+lastmodified: '2011-11-10'
 permalink: /old_site/Oracle/
 redirect_from:
   - /Oracle/

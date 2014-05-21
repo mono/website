@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Team Meetings 2008 Oct 15"
+lastmodified: '2008-10-15'
 permalink: /old_site/Accessibility:_Team_Meetings_2008_Oct_15/
 redirect_from:
   - /Accessibility:_Team_Meetings_2008_Oct_15/

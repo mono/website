@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Eglib"
+lastmodified: '2010-08-24'
 permalink: /old_site/Eglib/
 redirect_from:
   - /Eglib/

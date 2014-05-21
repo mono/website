@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ADO.NET"
+lastmodified: '2006-11-07'
 permalink: /old_site/ADO.NET/
 redirect_from:
   - /ADO.NET/

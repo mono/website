@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Tao autotools:Installation"
+lastmodified: '2006-01-26'
 permalink: /old_site/Tao_autotools:Installation/
 redirect_from:
   - /Tao_autotools:Installation/

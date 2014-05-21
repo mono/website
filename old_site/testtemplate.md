@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "TestTemplate"
+lastmodified: '2005-02-25'
 permalink: /old_site/TestTemplate/
 redirect_from:
   - /TestTemplate/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Moonlight Bridge Functional Specification"
+lastmodified: '2009-09-03'
 permalink: /old_site/Accessibility:_Moonlight_Bridge_Functional_Specification/
 redirect_from:
   - /Accessibility:_Moonlight_Bridge_Functional_Specification/

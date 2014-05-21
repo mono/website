@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightBeta1"
+lastmodified: '2008-12-02'
 permalink: /old_site/MoonlightBeta1/
 redirect_from:
   - /MoonlightBeta1/

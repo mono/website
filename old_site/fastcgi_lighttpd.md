@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FastCGI Lighttpd"
+lastmodified: '2008-06-25'
 permalink: /old_site/FastCGI_Lighttpd/
 redirect_from:
   - /FastCGI_Lighttpd/

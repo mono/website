@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:Miguel"
+lastmodified: '2005-03-20'
 permalink: /old_site/User:Miguel/
 redirect_from:
   - /User:Miguel/

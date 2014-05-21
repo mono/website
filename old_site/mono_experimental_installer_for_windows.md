@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Experimental Installer For Windows"
+lastmodified: '2006-04-24'
 permalink: /old_site/Mono_Experimental_Installer_For_Windows/
 redirect_from:
   - /Mono_Experimental_Installer_For_Windows/

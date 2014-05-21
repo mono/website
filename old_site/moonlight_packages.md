@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Moonlight Packages"
+lastmodified: '2009-01-25'
 permalink: /old_site/Moonlight_Packages/
 redirect_from:
   - /Moonlight_Packages/

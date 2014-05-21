@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MaintainingTheWiki"
+lastmodified: '2006-01-12'
 permalink: /old_site/MaintainingTheWiki/
 redirect_from:
   - /MaintainingTheWiki/

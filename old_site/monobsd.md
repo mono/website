@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:BSD"
+lastmodified: '2009-01-31'
 permalink: /old_site/Mono:BSD/
 redirect_from:
   - /Mono:BSD/

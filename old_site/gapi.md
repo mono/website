@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GAPI"
+lastmodified: '2009-02-24'
 permalink: /old_site/GAPI/
 redirect_from:
   - /GAPI/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Maintainability"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Maintainability/
 redirect_from:
   - /Gendarme.Rules.Maintainability/

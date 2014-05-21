@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Ui"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Ui/
 redirect_from:
   - /Gendarme.Rules.Ui/

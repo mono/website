@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Interop with Native Libraries"
+lastmodified: '2013-01-07'
 permalink: /old_site/Interop_with_Native_Libraries/
 redirect_from:
   - /Interop_with_Native_Libraries/

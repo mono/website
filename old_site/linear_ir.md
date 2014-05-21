@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Linear IR"
+lastmodified: '2009-02-12'
 permalink: /old_site/Linear_IR/
 redirect_from:
   - /Linear_IR/

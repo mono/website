@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:Jpobst"
+lastmodified: '2007-04-26'
 permalink: /old_site/User:Jpobst/
 redirect_from:
   - /User:Jpobst/

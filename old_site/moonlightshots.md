@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightShots"
+lastmodified: '2007-08-11'
 permalink: /old_site/MoonlightShots/
 redirect_from:
   - /MoonlightShots/

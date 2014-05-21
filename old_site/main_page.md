@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Main Page"
+lastmodified: '2011-07-27'
 permalink: /old_site/Main_Page/
 redirect_from:
   - /Main_Page/

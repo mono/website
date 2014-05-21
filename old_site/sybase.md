@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Sybase"
+lastmodified: '2006-05-17'
 permalink: /old_site/Sybase/
 redirect_from:
   - /Sybase/

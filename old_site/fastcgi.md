@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FastCGI"
+lastmodified: '2009-09-20'
 permalink: /old_site/FastCGI/
 redirect_from:
   - /FastCGI/

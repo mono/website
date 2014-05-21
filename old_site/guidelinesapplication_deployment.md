@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guidelines:Application Deployment"
+lastmodified: '2008-08-22'
 permalink: /old_site/Guidelines:Application_Deployment/
 redirect_from:
   - /Guidelines:Application_Deployment/

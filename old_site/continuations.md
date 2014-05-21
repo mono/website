@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Continuations"
+lastmodified: '2009-04-16'
 permalink: /old_site/Continuations/
 redirect_from:
   - /Continuations/

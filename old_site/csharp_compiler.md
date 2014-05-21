@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CSharp Compiler"
+lastmodified: '2012-03-28'
 permalink: /old_site/CSharp_Compiler/
 redirect_from:
   - /CSharp_Compiler/

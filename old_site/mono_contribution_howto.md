@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Contribution HOWTO"
+lastmodified: '2011-12-01'
 permalink: /old_site/Mono_Contribution_HOWTO/
 redirect_from:
   - /Mono_Contribution_HOWTO/

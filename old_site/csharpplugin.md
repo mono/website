@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CSharpPlugin"
+lastmodified: '2007-12-03'
 permalink: /old_site/CSharpPlugin/
 redirect_from:
   - /CSharpPlugin/

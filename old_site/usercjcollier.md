@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:CJCollier"
+lastmodified: '2009-01-07'
 permalink: /old_site/User:CJCollier/
 redirect_from:
   - /User:CJCollier/

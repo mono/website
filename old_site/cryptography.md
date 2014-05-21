@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Cryptography"
+lastmodified: '2008-09-03'
 permalink: /old_site/Cryptography/
 redirect_from:
   - /Cryptography/

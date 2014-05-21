@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "InstallerInstructions"
+lastmodified: '2007-12-10'
 permalink: /old_site/InstallerInstructions/
 redirect_from:
   - /InstallerInstructions/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CollectionBaseTest.cs"
+lastmodified: '2005-02-25'
 permalink: /old_site/CollectionBaseTest.cs/
 redirect_from:
   - /CollectionBaseTest.cs/

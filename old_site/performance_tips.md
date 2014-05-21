@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Performance Tips"
+lastmodified: '2012-09-30'
 permalink: /old_site/Performance_Tips/
 redirect_from:
   - /Performance_Tips/

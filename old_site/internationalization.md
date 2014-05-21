@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Internationalization"
+lastmodified: '2008-01-19'
 permalink: /old_site/Internationalization/
 redirect_from:
   - /Internationalization/

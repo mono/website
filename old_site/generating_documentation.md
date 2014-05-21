@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Generating Documentation"
+lastmodified: '2010-04-20'
 permalink: /old_site/Generating_Documentation/
 redirect_from:
   - /Generating_Documentation/

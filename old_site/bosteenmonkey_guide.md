@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BosteenMonkey Guide"
+lastmodified: '2006-09-04'
 permalink: /old_site/BosteenMonkey_Guide/
 redirect_from:
   - /BosteenMonkey_Guide/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "DistroPackages/Ubuntu"
+lastmodified: '2012-06-26'
 permalink: /old_site/DistroPackages/Ubuntu/
 redirect_from:
   - /DistroPackages/Ubuntu/

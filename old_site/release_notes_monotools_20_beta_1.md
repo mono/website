@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Release Notes MonoTools 2.0 Beta 1"
+lastmodified: '2010-06-28'
 permalink: /old_site/Release_Notes_MonoTools_2.0_Beta_1/
 redirect_from:
   - /Release_Notes_MonoTools_2.0_Beta_1/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Dialogs"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkSharp:_Dialogs/
 redirect_from:
   - /GtkSharp:_Dialogs/

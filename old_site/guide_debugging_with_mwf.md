@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guide: Debugging With MWF"
+lastmodified: '2011-10-25'
 permalink: /old_site/Guide:_Debugging_With_MWF/
 redirect_from:
   - /Guide:_Debugging_With_MWF/

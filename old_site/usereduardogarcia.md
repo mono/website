@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:EduardoGarcia"
+lastmodified: '2005-04-29'
 permalink: /old_site/User:EduardoGarcia/
 redirect_from:
   - /User:EduardoGarcia/

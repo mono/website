@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Labels"
+lastmodified: '2005-10-19'
 permalink: /old_site/GtkSharp:_Labels/
 redirect_from:
   - /GtkSharp:_Labels/

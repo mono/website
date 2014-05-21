@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: UiaAtkBridge"
+lastmodified: '2008-11-21'
 permalink: /old_site/Accessibility:_UiaAtkBridge/
 redirect_from:
   - /Accessibility:_UiaAtkBridge/

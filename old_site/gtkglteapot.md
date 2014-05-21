@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGL.Teapot"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGL.Teapot/
 redirect_from:
   - /GtkGL.Teapot/

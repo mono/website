@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Documentation"
+lastmodified: '2008-10-05'
 permalink: /old_site/FAQ:_Documentation/
 redirect_from:
   - /FAQ:_Documentation/

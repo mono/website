@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "HSS"
+lastmodified: '2007-10-18'
 permalink: /old_site/HSS/
 redirect_from:
   - /HSS/

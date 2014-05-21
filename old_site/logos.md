@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Logos"
+lastmodified: '2005-02-24'
 permalink: /old_site/Logos/
 redirect_from:
   - /Logos/

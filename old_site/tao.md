@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Tao"
+lastmodified: '2010-09-11'
 permalink: /old_site/Tao/
 redirect_from:
   - /Tao/

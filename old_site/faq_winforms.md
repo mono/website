@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Winforms"
+lastmodified: '2009-10-16'
 permalink: /old_site/FAQ:_Winforms/
 redirect_from:
   - /FAQ:_Winforms/

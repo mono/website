@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Vulnerabilities"
+lastmodified: '2011-04-06'
 permalink: /old_site/Vulnerabilities/
 redirect_from:
   - /Vulnerabilities/

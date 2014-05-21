@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGLAreaSharp:0.0.17"
+lastmodified: '2008-08-04'
 permalink: /old_site/GtkGLAreaSharp:0.0.17/
 redirect_from:
   - /GtkGLAreaSharp:0.0.17/

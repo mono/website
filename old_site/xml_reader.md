@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "XML Reader"
+lastmodified: '2006-05-20'
 permalink: /old_site/XML_Reader/
 redirect_from:
   - /XML_Reader/

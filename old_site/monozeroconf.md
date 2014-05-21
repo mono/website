@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono.Zeroconf"
+lastmodified: '2011-10-25'
 permalink: /old_site/Mono.Zeroconf/
 redirect_from:
   - /Mono.Zeroconf/

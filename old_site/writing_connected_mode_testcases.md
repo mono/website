@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Writing Connected Mode Testcases"
+lastmodified: '2007-04-11'
 permalink: /old_site/Writing_Connected_Mode_Testcases/
 redirect_from:
   - /Writing_Connected_Mode_Testcases/

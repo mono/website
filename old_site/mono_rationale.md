@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Rationale"
+lastmodified: '2005-09-06'
 permalink: /old_site/Mono_Rationale/
 redirect_from:
   - /Mono_Rationale/

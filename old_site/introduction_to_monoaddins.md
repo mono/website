@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Introduction to Mono.Addins"
+lastmodified: '2009-06-15'
 permalink: /old_site/Introduction_to_Mono.Addins/
 redirect_from:
   - /Introduction_to_Mono.Addins/

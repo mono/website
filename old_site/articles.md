@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Articles"
+lastmodified: '2012-05-18'
 permalink: /old_site/Articles/
 redirect_from:
   - /Articles/

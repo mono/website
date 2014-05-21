@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ImprovingModMono"
+lastmodified: '2008-06-25'
 permalink: /old_site/ImprovingModMono/
 redirect_from:
   - /ImprovingModMono/

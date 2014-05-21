@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Packing with Tables"
+lastmodified: '2005-10-19'
 permalink: /old_site/GtkSharp:_Packing_with_Tables/
 redirect_from:
   - /GtkSharp:_Packing_with_Tables/

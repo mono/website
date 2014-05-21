@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Irc2Wiki"
+lastmodified: '2008-07-02'
 permalink: /old_site/Irc2Wiki/
 redirect_from:
   - /Irc2Wiki/

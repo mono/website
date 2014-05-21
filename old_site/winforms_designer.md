@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WinForms Designer"
+lastmodified: '2012-10-07'
 permalink: /old_site/WinForms_Designer/
 redirect_from:
   - /WinForms_Designer/

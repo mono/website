@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Assembler"
+lastmodified: '2010-01-06'
 permalink: /old_site/Assembler/
 redirect_from:
   - /Assembler/

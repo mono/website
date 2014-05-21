@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Windows MSI"
+lastmodified: '2009-10-01'
 permalink: /old_site/Windows_MSI/
 redirect_from:
   - /Windows_MSI/

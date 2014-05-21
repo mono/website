@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Progress Bars"
+lastmodified: '2005-09-06'
 permalink: /old_site/GtkSharp:_Progress_Bars/
 redirect_from:
   - /GtkSharp:_Progress_Bars/

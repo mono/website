@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Widget Overview"
+lastmodified: '2006-08-21'
 permalink: /old_site/GtkSharp:_Widget_Overview/
 redirect_from:
   - /GtkSharp:_Widget_Overview/

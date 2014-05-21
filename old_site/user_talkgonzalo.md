@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User talk:Gonzalo"
+lastmodified: '2005-03-03'
 permalink: /old_site/User_talk:Gonzalo/
 redirect_from:
   - /User_talk:Gonzalo/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Class Status"
+lastmodified: '2006-05-17'
 permalink: /old_site/Class_Status/
 redirect_from:
   - /Class_Status/

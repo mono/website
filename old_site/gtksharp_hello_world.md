@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Hello World"
+lastmodified: '2007-09-22'
 permalink: /old_site/GtkSharp:_Hello_World/
 redirect_from:
   - /GtkSharp:_Hello_World/

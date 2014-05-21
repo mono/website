@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Config"
+lastmodified: '2007-10-26'
 permalink: /old_site/Config/
 redirect_from:
   - /Config/

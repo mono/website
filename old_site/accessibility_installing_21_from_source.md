@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Installing 2.1 From Source"
+lastmodified: '2010-08-23'
 permalink: /old_site/Accessibility:_Installing_2.1_From_Source/
 redirect_from:
   - /Accessibility:_Installing_2.1_From_Source/

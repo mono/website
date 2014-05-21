@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "IRC"
+lastmodified: '2010-11-10'
 permalink: /old_site/IRC/
 redirect_from:
   - /IRC/

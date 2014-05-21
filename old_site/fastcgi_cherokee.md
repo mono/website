@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FastCGI Cherokee"
+lastmodified: '2008-06-25'
 permalink: /old_site/FastCGI_Cherokee/
 redirect_from:
   - /FastCGI_Cherokee/

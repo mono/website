@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto"
+lastmodified: '2008-08-11'
 permalink: /old_site/Howto/
 redirect_from:
   - /Howto/

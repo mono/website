@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mdoc"
+lastmodified: '2010-01-04'
 permalink: /old_site/Mdoc/
 redirect_from:
   - /Mdoc/

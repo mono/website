@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:ValentinSawadski"
+lastmodified: '2007-05-17'
 permalink: /old_site/User:ValentinSawadski/
 redirect_from:
   - /User:ValentinSawadski/

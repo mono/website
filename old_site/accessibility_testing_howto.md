@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Testing Howto"
+lastmodified: '2010-01-07'
 permalink: /old_site/Accessibility:_Testing_Howto/
 redirect_from:
   - /Accessibility:_Testing_Howto/

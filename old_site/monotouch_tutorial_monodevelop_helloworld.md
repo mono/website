@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Tutorial MonoDevelop HelloWorld"
+lastmodified: '2009-08-07'
 permalink: /old_site/MonoTouch_Tutorial_MonoDevelop_HelloWorld/
 redirect_from:
   - /MonoTouch_Tutorial_MonoDevelop_HelloWorld/

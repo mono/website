@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:XDEBUG"
+lastmodified: '2010-08-26'
 permalink: /old_site/Mono:Runtime:Documentation:XDEBUG/
 redirect_from:
   - /Mono:Runtime:Documentation:XDEBUG/

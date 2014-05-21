@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SQLite"
+lastmodified: '2007-05-18'
 permalink: /old_site/SQLite/
 redirect_from:
   - /SQLite/

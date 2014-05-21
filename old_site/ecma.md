@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ECMA"
+lastmodified: '2010-04-09'
 permalink: /old_site/ECMA/
 redirect_from:
   - /ECMA/

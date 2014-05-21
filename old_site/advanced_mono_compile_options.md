@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Advanced Mono Compile Options"
+lastmodified: '2008-12-03'
 permalink: /old_site/Advanced_Mono_Compile_Options/
 redirect_from:
   - /Advanced_Mono_Compile_Options/

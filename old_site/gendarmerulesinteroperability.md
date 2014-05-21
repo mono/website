@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Interoperability"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Interoperability/
 redirect_from:
   - /Gendarme.Rules.Interoperability/

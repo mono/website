@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Protection log"
+lastmodified: '2005-03-03'
 permalink: /old_site/Mono:Protection_log/
 redirect_from:
   - /Mono:Protection_log/

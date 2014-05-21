@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Embedding Mono"
+lastmodified: '2013-10-03'
 permalink: /old_site/Embedding_Mono/
 redirect_from:
   - /Embedding_Mono/

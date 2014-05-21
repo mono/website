@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WCFStatusOld"
+lastmodified: '2009-08-28'
 permalink: /old_site/WCFStatusOld/
 redirect_from:
   - /WCFStatusOld/

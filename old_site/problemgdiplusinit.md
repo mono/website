@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Problem:GDIPlusInit"
+lastmodified: '2006-10-05'
 permalink: /old_site/Problem:GDIPlusInit/
 redirect_from:
   - /Problem:GDIPlusInit/

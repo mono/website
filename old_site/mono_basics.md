@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Basics"
+lastmodified: '2014-05-13'
 permalink: /old_site/Mono_Basics/
 redirect_from:
   - /Mono_Basics/

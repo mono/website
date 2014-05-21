@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto aspnet Callbacks"
+lastmodified: '2008-01-04'
 permalink: /old_site/Howto_aspnet_Callbacks/
 redirect_from:
   - /Howto_aspnet_Callbacks/

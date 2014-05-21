@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BuildSystem/PackagingScripts"
+lastmodified: '2005-09-06'
 permalink: /old_site/BuildSystem/PackagingScripts/
 redirect_from:
   - /BuildSystem/PackagingScripts/

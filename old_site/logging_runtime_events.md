@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Logging Runtime Events"
+lastmodified: '2005-09-06'
 permalink: /old_site/Logging_Runtime_Events/
 redirect_from:
   - /Logging_Runtime_Events/

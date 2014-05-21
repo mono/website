@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: UIA Properties"
+lastmodified: '2008-05-16'
 permalink: /old_site/Accessibility:_UIA_Properties/
 redirect_from:
   - /Accessibility:_UIA_Properties/

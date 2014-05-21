@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Smells"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Smells/
 redirect_from:
   - /Gendarme.Rules.Smells/

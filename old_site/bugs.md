@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Bugs"
+lastmodified: '2012-05-27'
 permalink: /old_site/Bugs/
 redirect_from:
   - /Bugs/

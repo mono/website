@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Writing a WebService"
+lastmodified: '2007-11-16'
 permalink: /old_site/Writing_a_WebService/
 redirect_from:
   - /Writing_a_WebService/

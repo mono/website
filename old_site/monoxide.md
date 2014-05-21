@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monoxide"
+lastmodified: '2006-10-26'
 permalink: /old_site/Monoxide/
 redirect_from:
   - /Monoxide/

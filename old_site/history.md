@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "History"
+lastmodified: '2006-03-09'
 permalink: /old_site/History/
 redirect_from:
   - /History/

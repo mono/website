@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Layout Container"
+lastmodified: '2005-09-06'
 permalink: /old_site/GtkSharp:_Layout_Container/
 redirect_from:
   - /GtkSharp:_Layout_Container/

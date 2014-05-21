@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto PipeOutput"
+lastmodified: '2007-10-17'
 permalink: /old_site/Howto_PipeOutput/
 redirect_from:
   - /Howto_PipeOutput/

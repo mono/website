@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightHostingNotes"
+lastmodified: '2007-06-14'
 permalink: /old_site/MoonlightHostingNotes/
 redirect_from:
   - /MoonlightHostingNotes/

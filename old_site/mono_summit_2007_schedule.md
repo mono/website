@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Summit 2007 Schedule"
+lastmodified: '2007-11-27'
 permalink: /old_site/Mono_Summit_2007_Schedule/
 redirect_from:
   - /Mono_Summit_2007_Schedule/

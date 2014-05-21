@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Tutorial HelloIB"
+lastmodified: '2009-07-19'
 permalink: /old_site/MonoTouch_Tutorial_HelloIB/
 redirect_from:
   - /MonoTouch_Tutorial_HelloIB/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mailpost:longreply"
+lastmodified: '2005-11-03'
 permalink: /old_site/Mailpost:longreply/
 redirect_from:
   - /Mailpost:longreply/

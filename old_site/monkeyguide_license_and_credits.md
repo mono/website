@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monkeyguide License and Credits"
+lastmodified: '2005-05-26'
 permalink: /old_site/Monkeyguide_License_and_Credits/
 redirect_from:
   - /Monkeyguide_License_and_Credits/

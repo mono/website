@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Testing"
+lastmodified: '2005-03-17'
 permalink: /old_site/Talk:Testing/
 redirect_from:
   - /Talk:Testing/

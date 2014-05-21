@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGLAreaSharp:NeHe"
+lastmodified: '2008-09-03'
 permalink: /old_site/GtkGLAreaSharp:NeHe/
 redirect_from:
   - /GtkGLAreaSharp:NeHe/

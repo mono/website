@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WinForms Bugs"
+lastmodified: '2008-10-23'
 permalink: /old_site/WinForms_Bugs/
 redirect_from:
   - /WinForms_Bugs/

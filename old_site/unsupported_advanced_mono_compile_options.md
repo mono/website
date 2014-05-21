@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Unsupported Advanced Mono Compile Options"
+lastmodified: '2009-12-09'
 permalink: /old_site/Unsupported_Advanced_Mono_Compile_Options/
 redirect_from:
   - /Unsupported_Advanced_Mono_Compile_Options/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ"
+lastmodified: '2008-10-21'
 permalink: /old_site/FAQ/
 redirect_from:
   - /FAQ/

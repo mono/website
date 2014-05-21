@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "TemplateTest.cs"
+lastmodified: '2005-02-25'
 permalink: /old_site/TemplateTest.cs/
 redirect_from:
   - /TemplateTest.cs/

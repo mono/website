@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Gtk"
+lastmodified: '2008-10-05'
 permalink: /old_site/FAQ:_Gtk/
 redirect_from:
   - /FAQ:_Gtk/

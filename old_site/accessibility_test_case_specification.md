@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Test Case Specification"
+lastmodified: '2008-11-12'
 permalink: /old_site/Accessibility:_Test_Case_Specification/
 redirect_from:
   - /Accessibility:_Test_Case_Specification/

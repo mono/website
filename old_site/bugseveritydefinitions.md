@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BugSeverityDefinitions"
+lastmodified: '2007-11-01'
 permalink: /old_site/BugSeverityDefinitions/
 redirect_from:
   - /BugSeverityDefinitions/

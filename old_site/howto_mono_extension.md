@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto Mono Extension"
+lastmodified: '2010-03-26'
 permalink: /old_site/Howto_Mono_Extension/
 redirect_from:
   - /Howto_Mono_Extension/

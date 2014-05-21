@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Using MoMA Guide"
+lastmodified: '2008-10-06'
 permalink: /old_site/Using_MoMA_Guide/
 redirect_from:
   - /Using_MoMA_Guide/

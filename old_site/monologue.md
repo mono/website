@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monologue"
+lastmodified: '2008-07-01'
 permalink: /old_site/Monologue/
 redirect_from:
   - /Monologue/

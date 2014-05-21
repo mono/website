@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "COM"
+lastmodified: '2009-09-21'
 permalink: /old_site/COM/
 redirect_from:
   - /COM/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Similarities and Differences"
+lastmodified: '2008-12-25'
 permalink: /old_site/Accessibility:_Similarities_and_Differences/
 redirect_from:
   - /Accessibility:_Similarities_and_Differences/

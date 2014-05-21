@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:PlayStation3"
+lastmodified: '2009-03-11'
 permalink: /old_site/Mono:PlayStation3/
 redirect_from:
   - /Mono:PlayStation3/

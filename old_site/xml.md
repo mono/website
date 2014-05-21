@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "XML"
+lastmodified: '2006-05-20'
 permalink: /old_site/XML/
 redirect_from:
   - /XML/

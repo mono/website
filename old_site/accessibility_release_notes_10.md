@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Release Notes 1.0"
+lastmodified: '2009-03-31'
 permalink: /old_site/Accessibility:_Release_Notes_1.0/
 redirect_from:
   - /Accessibility:_Release_Notes_1.0/

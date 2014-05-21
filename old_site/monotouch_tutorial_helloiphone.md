@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Tutorial HelloiPhone"
+lastmodified: '2009-08-06'
 permalink: /old_site/MonoTouch_Tutorial_HelloiPhone/
 redirect_from:
   - /MonoTouch_Tutorial_HelloiPhone/

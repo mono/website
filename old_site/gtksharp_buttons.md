@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Buttons"
+lastmodified: '2011-08-25'
 permalink: /old_site/GtkSharp:_Buttons/
 redirect_from:
   - /GtkSharp:_Buttons/

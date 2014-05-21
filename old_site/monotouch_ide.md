@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch IDE"
+lastmodified: '2009-07-30'
 permalink: /old_site/MonoTouch_IDE/
 redirect_from:
   - /MonoTouch_IDE/

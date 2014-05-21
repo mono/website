@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: MonoVS"
+lastmodified: '2010-07-28'
 permalink: /old_site/FAQ:_MonoVS/
 redirect_from:
   - /FAQ:_MonoVS/

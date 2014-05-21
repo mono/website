@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MaxDB"
+lastmodified: '2006-09-23'
 permalink: /old_site/MaxDB/
 redirect_from:
   - /MaxDB/

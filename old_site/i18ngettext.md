@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "I18nGettext"
+lastmodified: '2006-05-17'
 permalink: /old_site/I18nGettext/
 redirect_from:
   - /I18nGettext/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Start"
+lastmodified: '2010-03-25'
 permalink: /old_site/Start/
 redirect_from:
   - /Start/

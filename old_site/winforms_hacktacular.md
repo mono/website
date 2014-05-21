@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Winforms Hacktacular"
+lastmodified: '2007-10-02'
 permalink: /old_site/Winforms_Hacktacular/
 redirect_from:
   - /Winforms_Hacktacular/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: ".NET Framework Architecture"
+lastmodified: '2007-12-19'
 permalink: /old_site/.NET_Framework_Architecture/
 redirect_from:
   - /.NET_Framework_Architecture/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoVisualProfiler"
+lastmodified: '2009-12-02'
 permalink: /old_site/MonoVisualProfiler/
 redirect_from:
   - /MonoVisualProfiler/

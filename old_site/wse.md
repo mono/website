@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WSE"
+lastmodified: '2007-03-12'
 permalink: /old_site/WSE/
 redirect_from:
   - /WSE/

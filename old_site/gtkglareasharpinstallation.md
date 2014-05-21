@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGlAreaSharp:Installation"
+lastmodified: '2008-09-03'
 permalink: /old_site/GtkGlAreaSharp:Installation/
 redirect_from:
   - /GtkGlAreaSharp:Installation/

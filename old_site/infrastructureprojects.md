@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "InfrastructureProjects"
+lastmodified: '2010-09-11'
 permalink: /old_site/InfrastructureProjects/
 redirect_from:
   - /InfrastructureProjects/

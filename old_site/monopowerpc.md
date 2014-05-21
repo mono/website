@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:PowerPC"
+lastmodified: '2009-02-12'
 permalink: /old_site/Mono:PowerPC/
 redirect_from:
   - /Mono:PowerPC/

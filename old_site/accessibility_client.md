@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Client"
+lastmodified: '2009-06-17'
 permalink: /old_site/Accessibility:_Client/
 redirect_from:
   - /Accessibility:_Client/

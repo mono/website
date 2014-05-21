@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:GtkSharp"
+lastmodified: '2006-08-17'
 permalink: /old_site/Talk:GtkSharp/
 redirect_from:
   - /Talk:GtkSharp/

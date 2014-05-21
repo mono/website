@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "HeapBuddy"
+lastmodified: '2010-11-11'
 permalink: /old_site/HeapBuddy/
 redirect_from:
   - /HeapBuddy/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SiteMap"
+lastmodified: '2007-03-12'
 permalink: /old_site/SiteMap/
 redirect_from:
   - /SiteMap/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: ASP.NET"
+lastmodified: '2012-06-20'
 permalink: /old_site/FAQ:_ASP.NET/
 redirect_from:
   - /FAQ:_ASP.NET/

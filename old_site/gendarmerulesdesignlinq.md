@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Design.Linq"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Design.Linq/
 redirect_from:
   - /Gendarme.Rules.Design.Linq/

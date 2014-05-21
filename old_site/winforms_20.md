@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Winforms 2.0"
+lastmodified: '2008-01-22'
 permalink: /old_site/Winforms_2.0/
 redirect_from:
   - /Winforms_2.0/

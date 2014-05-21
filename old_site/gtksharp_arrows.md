@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Arrows"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkSharp:_Arrows/
 redirect_from:
   - /GtkSharp:_Arrows/

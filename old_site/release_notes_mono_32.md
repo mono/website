@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Release Notes Mono 3.2"
+lastmodified: '2014-02-19'
 permalink: /old_site/Release_Notes_Mono_3.2/
 redirect_from:
   - /Release_Notes_Mono_3.2/

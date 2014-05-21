@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:GenericSharing"
+lastmodified: '2009-04-22'
 permalink: /old_site/Mono:Runtime:Documentation:GenericSharing/
 redirect_from:
   - /Mono:Runtime:Documentation:GenericSharing/

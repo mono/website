@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BuildSystem/MonoBuild/DetailedDocs"
+lastmodified: '2008-06-27'
 permalink: /old_site/BuildSystem/MonoBuild/DetailedDocs/
 redirect_from:
   - /BuildSystem/MonoBuild/DetailedDocs/

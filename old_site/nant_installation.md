@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "NAnt Installation"
+lastmodified: '2005-04-22'
 permalink: /old_site/NAnt_Installation/
 redirect_from:
   - /NAnt_Installation/

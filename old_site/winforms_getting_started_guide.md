@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WinForms Getting Started Guide"
+lastmodified: '2007-05-17'
 permalink: /old_site/WinForms_Getting_Started_Guide/
 redirect_from:
   - /WinForms_Getting_Started_Guide/

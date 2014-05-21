@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpIdeas"
+lastmodified: '2010-09-11'
 permalink: /old_site/GtkSharpIdeas/
 redirect_from:
   - /GtkSharpIdeas/

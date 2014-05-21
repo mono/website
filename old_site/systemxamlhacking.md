@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SystemXamlHacking"
+lastmodified: '2011-03-22'
 permalink: /old_site/SystemXamlHacking/
 redirect_from:
   - /SystemXamlHacking/

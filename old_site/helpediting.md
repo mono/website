@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Help:Editing"
+lastmodified: '2012-03-07'
 permalink: /old_site/Help:Editing/
 redirect_from:
   - /Help:Editing/

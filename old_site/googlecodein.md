@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GoogleCodeIn"
+lastmodified: '2013-10-28'
 permalink: /old_site/GoogleCodeIn/
 redirect_from:
   - /GoogleCodeIn/

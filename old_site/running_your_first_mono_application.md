@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Running your first Mono application"
+lastmodified: '2006-06-01'
 permalink: /old_site/Running_your_first_Mono_application/
 redirect_from:
   - /Running_your_first_Mono_application/

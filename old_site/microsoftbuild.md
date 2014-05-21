@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Microsoft.Build"
+lastmodified: '2011-02-28'
 permalink: /old_site/Microsoft.Build/
 redirect_from:
   - /Microsoft.Build/

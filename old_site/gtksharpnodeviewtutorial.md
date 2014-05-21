@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpNodeViewTutorial"
+lastmodified: '2012-04-22'
 permalink: /old_site/GtkSharpNodeViewTutorial/
 redirect_from:
   - /GtkSharpNodeViewTutorial/

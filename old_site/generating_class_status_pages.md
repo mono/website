@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Generating class status pages"
+lastmodified: '2007-05-11'
 permalink: /old_site/Generating_class_status_pages/
 redirect_from:
   - /Generating_class_status_pages/

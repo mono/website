@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BindingMoko"
+lastmodified: '2007-10-25'
 permalink: /old_site/BindingMoko/
 redirect_from:
   - /BindingMoko/

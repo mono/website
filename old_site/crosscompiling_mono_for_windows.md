@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Cross-compiling Mono for Windows"
+lastmodified: '2011-02-08'
 permalink: /old_site/Cross-compiling_Mono_for_Windows/
 redirect_from:
   - /Cross-compiling_Mono_for_Windows/

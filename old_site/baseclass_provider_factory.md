@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "BaseClass Provider Factory"
+lastmodified: '2006-05-17'
 permalink: /old_site/BaseClass_Provider_Factory/
 redirect_from:
   - /BaseClass_Provider_Factory/

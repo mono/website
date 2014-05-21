@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Faq.old"
+lastmodified: '1970-01-01'
 permalink: /old_site/Faq.old/
 redirect_from:
   - /Faq.old/

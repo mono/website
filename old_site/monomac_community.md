@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoMac/Community"
+lastmodified: '2011-05-10'
 permalink: /old_site/MonoMac/Community/
 redirect_from:
   - /MonoMac/Community/

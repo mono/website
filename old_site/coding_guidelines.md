@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Coding Guidelines"
+lastmodified: '2014-05-03'
 permalink: /old_site/Coding_Guidelines/
 redirect_from:
   - /Coding_Guidelines/

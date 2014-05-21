@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guidelines:Application Portability"
+lastmodified: '2012-05-27'
 permalink: /old_site/Guidelines:Application_Portability/
 redirect_from:
   - /Guidelines:Application_Portability/

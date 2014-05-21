@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Debugging"
+lastmodified: '2014-01-30'
 permalink: /old_site/Debugging/
 redirect_from:
   - /Debugging/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:MemoryManagement"
+lastmodified: '2010-08-26'
 permalink: /old_site/Mono:Runtime:Documentation:MemoryManagement/
 redirect_from:
   - /Mono:Runtime:Documentation:MemoryManagement/

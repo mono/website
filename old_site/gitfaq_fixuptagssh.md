@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GitFAQ/fixup-tags.sh"
+lastmodified: '2010-07-24'
 permalink: /old_site/GitFAQ/fixup-tags.sh/
 redirect_from:
   - /GitFAQ/fixup-tags.sh/

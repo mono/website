@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Novell Bugzilla"
+lastmodified: '2008-07-11'
 permalink: /old_site/FAQ:_Novell_Bugzilla/
 redirect_from:
   - /FAQ:_Novell_Bugzilla/

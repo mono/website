@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guide:StarterKitPrimer"
+lastmodified: '2007-03-09'
 permalink: /old_site/Guide:StarterKitPrimer/
 redirect_from:
   - /Guide:StarterKitPrimer/

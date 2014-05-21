@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoMA - Issue Descriptions"
+lastmodified: '2007-03-12'
 permalink: /old_site/MoMA_-_Issue_Descriptions/
 redirect_from:
   - /MoMA_-_Issue_Descriptions/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch XCode"
+lastmodified: '2009-07-30'
 permalink: /old_site/MonoTouch_XCode/
 redirect_from:
   - /MonoTouch_XCode/

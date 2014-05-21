@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:Crazycomputers"
+lastmodified: '2007-01-07'
 permalink: /old_site/User:Crazycomputers/
 redirect_from:
   - /User:Crazycomputers/

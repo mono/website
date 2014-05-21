@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Cecil"
+lastmodified: '2005-03-04'
 permalink: /old_site/Talk:Cecil/
 redirect_from:
   - /Talk:Cecil/

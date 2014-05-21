@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:X86"
+lastmodified: '2006-11-11'
 permalink: /old_site/Mono:X86/
 redirect_from:
   - /Mono:X86/

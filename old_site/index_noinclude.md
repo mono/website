@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Index noinclude"
+lastmodified: '1970-01-01'
 permalink: /old_site/Index_noinclude/
 redirect_from:
   - /Index_noinclude/

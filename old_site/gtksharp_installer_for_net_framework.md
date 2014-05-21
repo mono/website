@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gtk-Sharp Installer for .NET Framework"
+lastmodified: '2008-12-08'
 permalink: /old_site/Gtk-Sharp_Installer_for_.NET_Framework/
 redirect_from:
   - /Gtk-Sharp_Installer_for_.NET_Framework/

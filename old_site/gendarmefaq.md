@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.FAQ"
+lastmodified: '2011-01-24'
 permalink: /old_site/Gendarme.FAQ/
 redirect_from:
   - /Gendarme.FAQ/

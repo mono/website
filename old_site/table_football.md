@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Table Football"
+lastmodified: '2009-10-20'
 permalink: /old_site/Table_Football/
 redirect_from:
   - /Table_Football/

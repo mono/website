@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono"
+lastmodified: '2011-07-29'
 permalink: /old_site/Compiling_Mono/
 redirect_from:
   - /Compiling_Mono/

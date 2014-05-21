@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "PlanSerialization"
+lastmodified: '2010-07-30'
 permalink: /old_site/PlanSerialization/
 redirect_from:
   - /PlanSerialization/

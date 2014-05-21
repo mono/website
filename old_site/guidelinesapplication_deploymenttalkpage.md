@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guidelines:Application Deployment:Talkpage"
+lastmodified: '2007-04-11'
 permalink: /old_site/Guidelines:Application_Deployment:Talkpage/
 redirect_from:
   - /Guidelines:Application_Deployment:Talkpage/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "About Mono"
+lastmodified: '2009-10-25'
 permalink: /old_site/About_Mono/
 redirect_from:
   - /About_Mono/

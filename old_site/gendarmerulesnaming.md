@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Naming"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Naming/
 redirect_from:
   - /Gendarme.Rules.Naming/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightDesktop"
+lastmodified: '2010-10-19'
 permalink: /old_site/MoonlightDesktop/
 redirect_from:
   - /MoonlightDesktop/

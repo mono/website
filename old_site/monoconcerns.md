@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoConcerns"
+lastmodified: '2011-03-18'
 permalink: /old_site/MonoConcerns/
 redirect_from:
   - /MonoConcerns/

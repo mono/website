@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MUG:Denmark"
+lastmodified: '2007-01-29'
 permalink: /old_site/MUG:Denmark/
 redirect_from:
   - /MUG:Denmark/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Tooltips"
+lastmodified: '2005-09-06'
 permalink: /old_site/GtkSharp:_Tooltips/
 redirect_from:
   - /GtkSharp:_Tooltips/

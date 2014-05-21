@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Cecil:FAQ"
+lastmodified: '2008-11-11'
 permalink: /old_site/Cecil:FAQ/
 redirect_from:
   - /Cecil:FAQ/

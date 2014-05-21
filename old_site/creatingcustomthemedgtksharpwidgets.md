@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CreatingCustomThemedGtkSharpWidgets"
+lastmodified: '2009-07-10'
 permalink: /old_site/CreatingCustomThemedGtkSharpWidgets/
 redirect_from:
   - /CreatingCustomThemedGtkSharpWidgets/

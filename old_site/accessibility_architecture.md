@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Architecture"
+lastmodified: '2008-08-15'
 permalink: /old_site/Accessibility:_Architecture/
 redirect_from:
   - /Accessibility:_Architecture/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monkeyguide"
+lastmodified: '2011-07-27'
 permalink: /old_site/Monkeyguide/
 redirect_from:
   - /Monkeyguide/

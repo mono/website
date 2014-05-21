@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Python"
+lastmodified: '2007-03-12'
 permalink: /old_site/Python/
 redirect_from:
   - /Python/

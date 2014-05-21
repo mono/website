@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:Developer Resource"
+lastmodified: '2005-09-06'
 permalink: /old_site/Category:Developer_Resource/
 redirect_from:
   - /Category:Developer_Resource/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MySQL"
+lastmodified: '2010-03-25'
 permalink: /old_site/MySQL/
 redirect_from:
   - /MySQL/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpTutorials"
+lastmodified: '2008-04-04'
 permalink: /old_site/GtkSharpTutorials/
 redirect_from:
   - /GtkSharpTutorials/

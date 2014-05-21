@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:ThreadsBeginnersGuide"
+lastmodified: '2007-03-12'
 permalink: /old_site/Talk:ThreadsBeginnersGuide/
 redirect_from:
   - /Talk:ThreadsBeginnersGuide/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Google Summer of Code"
+lastmodified: '2012-03-07'
 permalink: /old_site/Google_Summer_of_Code/
 redirect_from:
   - /Google_Summer_of_Code/

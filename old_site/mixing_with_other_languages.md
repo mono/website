@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mixing with Other Languages"
+lastmodified: '2008-01-28'
 permalink: /old_site/Mixing_with_Other_Languages/
 redirect_from:
   - /Mixing_with_Other_Languages/

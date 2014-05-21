@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Winforms Samples"
+lastmodified: '2008-08-18'
 permalink: /old_site/Winforms_Samples/
 redirect_from:
   - /Winforms_Samples/

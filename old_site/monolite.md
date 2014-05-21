@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monolite"
+lastmodified: '2012-05-03'
 permalink: /old_site/Monolite/
 redirect_from:
   - /Monolite/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:WayneJohnson"
+lastmodified: '2005-11-25'
 permalink: /old_site/User:WayneJohnson/
 redirect_from:
   - /User:WayneJohnson/

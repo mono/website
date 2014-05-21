@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GettingStartedWithMonoTools"
+lastmodified: '2012-05-07'
 permalink: /old_site/GettingStartedWithMonoTools/
 redirect_from:
   - /GettingStartedWithMonoTools/

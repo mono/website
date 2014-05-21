@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monodoc Contributing"
+lastmodified: '2005-10-11'
 permalink: /old_site/Monodoc_Contributing/
 redirect_from:
   - /Monodoc_Contributing/

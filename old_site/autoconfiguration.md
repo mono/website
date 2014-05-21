@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "AutoConfiguration"
+lastmodified: '2009-04-22'
 permalink: /old_site/AutoConfiguration/
 redirect_from:
   - /AutoConfiguration/

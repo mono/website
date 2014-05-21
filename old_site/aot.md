@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "AOT"
+lastmodified: '2014-01-28'
 permalink: /old_site/AOT/
 redirect_from:
   - /AOT/

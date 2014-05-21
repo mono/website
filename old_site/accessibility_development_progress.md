@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Development Progress"
+lastmodified: '2009-08-05'
 permalink: /old_site/Accessibility:_Development_Progress/
 redirect_from:
   - /Accessibility:_Development_Progress/

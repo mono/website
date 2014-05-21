@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Design.Generic"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Design.Generic/
 redirect_from:
   - /Gendarme.Rules.Design.Generic/

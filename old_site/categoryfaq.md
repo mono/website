@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:FAQ"
+lastmodified: '2007-01-26'
 permalink: /old_site/Category:FAQ/
 redirect_from:
   - /Category:FAQ/

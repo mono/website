@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Need Help"
+lastmodified: '2007-05-30'
 permalink: /old_site/Talk:Need_Help/
 redirect_from:
   - /Talk:Need_Help/

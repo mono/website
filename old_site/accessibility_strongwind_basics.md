@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Strongwind Basics"
+lastmodified: '2010-02-12'
 permalink: /old_site/Accessibility:_Strongwind_Basics/
 redirect_from:
   - /Accessibility:_Strongwind_Basics/

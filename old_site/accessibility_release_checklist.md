@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Release Checklist"
+lastmodified: '2009-03-13'
 permalink: /old_site/Accessibility:_Release_Checklist/
 redirect_from:
   - /Accessibility:_Release_Checklist/

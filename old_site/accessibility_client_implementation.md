@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Client Implementation"
+lastmodified: '2009-03-26'
 permalink: /old_site/Accessibility:_Client_Implementation/
 redirect_from:
   - /Accessibility:_Client_Implementation/

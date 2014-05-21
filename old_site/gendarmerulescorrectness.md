@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Correctness"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Correctness/
 redirect_from:
   - /Gendarme.Rules.Correctness/

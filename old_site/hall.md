@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Hall"
+lastmodified: '2005-02-24'
 permalink: /old_site/Hall/
 redirect_from:
   - /Hall/

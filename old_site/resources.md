@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Resources"
+lastmodified: '2011-09-20'
 permalink: /old_site/Resources/
 redirect_from:
   - /Resources/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SRE"
+lastmodified: '2009-05-07'
 permalink: /old_site/SRE/
 redirect_from:
   - /SRE/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SafeHandles"
+lastmodified: '2007-03-12'
 permalink: /old_site/SafeHandles/
 redirect_from:
   - /SafeHandles/

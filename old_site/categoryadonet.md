@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:ADO.NET"
+lastmodified: '2005-09-06'
 permalink: /old_site/Category:ADO.NET/
 redirect_from:
   - /Category:ADO.NET/

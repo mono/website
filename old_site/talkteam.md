@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Team"
+lastmodified: '2005-03-10'
 permalink: /old_site/Talk:Team/
 redirect_from:
   - /Talk:Team/

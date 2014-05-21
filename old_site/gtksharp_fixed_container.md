@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Fixed Container"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkSharp:_Fixed_Container/
 redirect_from:
   - /GtkSharp:_Fixed_Container/

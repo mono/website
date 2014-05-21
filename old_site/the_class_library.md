@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "The Class Library"
+lastmodified: '2007-10-05'
 permalink: /old_site/The_Class_Library/
 redirect_from:
   - /The_Class_Library/

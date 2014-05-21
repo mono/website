@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Obtaining Mono"
+lastmodified: '2012-05-27'
 permalink: /old_site/Obtaining_Mono/
 redirect_from:
   - /Obtaining_Mono/

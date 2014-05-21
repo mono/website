@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Tutorials"
+lastmodified: '2009-08-03'
 permalink: /old_site/MonoTouch_Tutorials/
 redirect_from:
   - /MonoTouch_Tutorials/

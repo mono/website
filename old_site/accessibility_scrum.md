@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Scrum"
+lastmodified: '2008-09-16'
 permalink: /old_site/Accessibility:_Scrum/
 redirect_from:
   - /Accessibility:_Scrum/

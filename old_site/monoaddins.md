@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono.Addins"
+lastmodified: '2010-05-27'
 permalink: /old_site/Mono.Addins/
 redirect_from:
   - /Mono.Addins/

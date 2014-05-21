@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Contact"
+lastmodified: '2011-07-29'
 permalink: /old_site/Contact/
 redirect_from:
   - /Contact/

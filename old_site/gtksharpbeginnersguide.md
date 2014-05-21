@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpBeginnersGuide"
+lastmodified: '2007-12-14'
 permalink: /old_site/GtkSharpBeginnersGuide/
 redirect_from:
   - /GtkSharpBeginnersGuide/

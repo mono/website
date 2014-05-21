@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Range Widgets"
+lastmodified: '2005-10-19'
 permalink: /old_site/GtkSharp:_Range_Widgets/
 redirect_from:
   - /GtkSharp:_Range_Widgets/

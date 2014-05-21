@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CGI"
+lastmodified: '2009-09-20'
 permalink: /old_site/CGI/
 redirect_from:
   - /CGI/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GitMigration"
+lastmodified: '2009-12-16'
 permalink: /old_site/GitMigration/
 redirect_from:
   - /GitMigration/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "What is Mono%3F"
+lastmodified: '2005-04-12'
 permalink: /old_site/What_is_Mono%3F/
 redirect_from:
   - /What_is_Mono%3F/

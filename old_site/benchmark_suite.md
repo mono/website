@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Benchmark Suite"
+lastmodified: '2012-09-12'
 permalink: /old_site/Benchmark_Suite/
 redirect_from:
   - /Benchmark_Suite/

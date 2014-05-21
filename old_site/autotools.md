@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Autotools"
+lastmodified: '2008-08-29'
 permalink: /old_site/Autotools/
 redirect_from:
   - /Autotools/

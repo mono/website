@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Novell Forge"
+lastmodified: '2005-09-06'
 permalink: /old_site/Novell_Forge/
 redirect_from:
   - /Novell_Forge/

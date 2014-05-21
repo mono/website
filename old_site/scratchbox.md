@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Scratchbox"
+lastmodified: '2008-11-05'
 permalink: /old_site/Scratchbox/
 redirect_from:
   - /Scratchbox/

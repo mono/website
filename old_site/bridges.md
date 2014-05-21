@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Bridges"
+lastmodified: '2006-05-17'
 permalink: /old_site/Bridges/
 redirect_from:
   - /Bridges/

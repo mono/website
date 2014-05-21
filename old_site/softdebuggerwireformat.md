@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SoftDebugger:WireFormat"
+lastmodified: '2011-12-06'
 permalink: /old_site/SoftDebugger:WireFormat/
 redirect_from:
   - /SoftDebugger:WireFormat/

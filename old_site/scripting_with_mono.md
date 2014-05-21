@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Scripting With Mono"
+lastmodified: '2009-12-04'
 permalink: /old_site/Scripting_With_Mono/
 redirect_from:
   - /Scripting_With_Mono/

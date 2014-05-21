@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono, a technical whitepaper"
+lastmodified: '2007-03-12'
 permalink: /old_site/Mono,_a_technical_whitepaper/
 redirect_from:
   - /Mono,_a_technical_whitepaper/

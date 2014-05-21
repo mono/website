@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Drawing"
+lastmodified: '2008-08-22'
 permalink: /old_site/Drawing/
 redirect_from:
   - /Drawing/

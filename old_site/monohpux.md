@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:HPUX"
+lastmodified: '2006-05-08'
 permalink: /old_site/Mono:HPUX/
 redirect_from:
   - /Mono:HPUX/

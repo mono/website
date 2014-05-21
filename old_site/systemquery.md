@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "System.Query"
+lastmodified: '2007-03-12'
 permalink: /old_site/System.Query/
 redirect_from:
   - /System.Query/

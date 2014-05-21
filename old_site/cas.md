@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CAS"
+lastmodified: '2008-09-03'
 permalink: /old_site/CAS/
 redirect_from:
   - /CAS/

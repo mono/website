@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Widget Layout and Packing"
+lastmodified: '2006-08-22'
 permalink: /old_site/GtkSharp:_Widget_Layout_and_Packing/
 redirect_from:
   - /GtkSharp:_Widget_Layout_and_Packing/

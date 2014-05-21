@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Installation"
+lastmodified: '2006-05-17'
 permalink: /old_site/Mono_Installation/
 redirect_from:
   - /Mono_Installation/

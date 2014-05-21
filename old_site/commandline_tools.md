@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Command-Line Tools"
+lastmodified: '2007-02-05'
 permalink: /old_site/Command-Line_Tools/
 redirect_from:
   - /Command-Line_Tools/

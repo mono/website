@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.BadPractice"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.BadPractice/
 redirect_from:
   - /Gendarme.Rules.BadPractice/

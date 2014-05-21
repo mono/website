@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling GtkSharp"
+lastmodified: '2009-07-30'
 permalink: /old_site/Compiling_GtkSharp/
 redirect_from:
   - /Compiling_GtkSharp/

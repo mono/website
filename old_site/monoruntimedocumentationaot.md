@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:AOT"
+lastmodified: '2013-10-15'
 permalink: /old_site/Mono:Runtime:Documentation:AOT/
 redirect_from:
   - /Mono:Runtime:Documentation:AOT/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Build Bot Commands"
+lastmodified: '2009-01-14'
 permalink: /old_site/Accessibility:_Build_Bot_Commands/
 redirect_from:
   - /Accessibility:_Build_Bot_Commands/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono Documentation Improvement Project"
+lastmodified: '2008-10-20'
 permalink: /old_site/Mono_Documentation_Improvement_Project/
 redirect_from:
   - /Mono_Documentation_Improvement_Project/

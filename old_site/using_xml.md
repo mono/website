@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Using XML"
+lastmodified: '2011-07-27'
 permalink: /old_site/Using_XML/
 redirect_from:
   - /Using_XML/

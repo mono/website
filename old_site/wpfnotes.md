@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WPFNotes"
+lastmodified: '2007-05-21'
 permalink: /old_site/WPFNotes/
 redirect_from:
   - /WPFNotes/

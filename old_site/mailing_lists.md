@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mailing Lists"
+lastmodified: '2011-04-10'
 permalink: /old_site/Mailing_Lists/
 redirect_from:
   - /Mailing_Lists/

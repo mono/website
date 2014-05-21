@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpDetails"
+lastmodified: '2008-09-03'
 permalink: /old_site/GtkSharpDetails/
 redirect_from:
   - /GtkSharpDetails/

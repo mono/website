@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Java"
+lastmodified: '2006-04-27'
 permalink: /old_site/Java/
 redirect_from:
   - /Java/

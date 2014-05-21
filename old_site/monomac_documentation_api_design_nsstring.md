@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoMac/Documentation/API Design/NSString"
+lastmodified: '2011-05-10'
 permalink: /old_site/MonoMac/Documentation/API_Design/NSString/
 redirect_from:
   - /MonoMac/Documentation/API_Design/NSString/

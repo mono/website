@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "RaceToLinux"
+lastmodified: '2007-04-11'
 permalink: /old_site/RaceToLinux/
 redirect_from:
   - /RaceToLinux/

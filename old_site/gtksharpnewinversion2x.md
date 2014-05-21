@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharpNewInVersion2x"
+lastmodified: '2009-08-07'
 permalink: /old_site/GtkSharpNewInVersion2x/
 redirect_from:
   - /GtkSharpNewInVersion2x/

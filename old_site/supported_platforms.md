@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Supported Platforms"
+lastmodified: '2009-02-12'
 permalink: /old_site/Supported_Platforms/
 redirect_from:
   - /Supported_Platforms/

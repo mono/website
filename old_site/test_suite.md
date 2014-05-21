@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Test Suite"
+lastmodified: '2013-01-26'
 permalink: /old_site/Test_Suite/
 redirect_from:
   - /Test_Suite/

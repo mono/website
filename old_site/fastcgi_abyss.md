@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FastCGI Abyss"
+lastmodified: '2008-06-25'
 permalink: /old_site/FastCGI_Abyss/
 redirect_from:
   - /FastCGI_Abyss/

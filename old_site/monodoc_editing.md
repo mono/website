@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monodoc Editing"
+lastmodified: '2013-01-11'
 permalink: /old_site/Monodoc_Editing/
 redirect_from:
   - /Monodoc_Editing/

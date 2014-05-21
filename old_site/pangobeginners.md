@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Pango:Beginners"
+lastmodified: '2005-11-25'
 permalink: /old_site/Pango:Beginners/
 redirect_from:
   - /Pango:Beginners/

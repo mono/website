@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Jobs"
+lastmodified: '2012-07-14'
 permalink: /old_site/Jobs/
 redirect_from:
   - /Jobs/

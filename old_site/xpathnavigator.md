@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "XPathNavigator"
+lastmodified: '2006-05-20'
 permalink: /old_site/XPathNavigator/
 redirect_from:
   - /XPathNavigator/

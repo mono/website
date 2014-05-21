@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:SoftDebugger"
+lastmodified: '2013-06-15'
 permalink: /old_site/Mono:Runtime:Documentation:SoftDebugger/
 redirect_from:
   - /Mono:Runtime:Documentation:SoftDebugger/

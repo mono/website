@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WPF"
+lastmodified: '2010-07-14'
 permalink: /old_site/WPF/
 redirect_from:
   - /WPF/

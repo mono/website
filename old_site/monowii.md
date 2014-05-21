@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Wii"
+lastmodified: '2010-10-10'
 permalink: /old_site/Mono:Wii/
 redirect_from:
   - /Mono:Wii/

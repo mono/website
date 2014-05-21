@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Tao autotools"
+lastmodified: '2006-01-14'
 permalink: /old_site/Tao_autotools/
 redirect_from:
   - /Tao_autotools/

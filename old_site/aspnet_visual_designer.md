@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ASP.NET Visual Designer"
+lastmodified: '2008-08-22'
 permalink: /old_site/ASP.NET_Visual_Designer/
 redirect_from:
   - /ASP.NET_Visual_Designer/

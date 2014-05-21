@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Libgdiplus"
+lastmodified: '2009-01-02'
 permalink: /old_site/Libgdiplus/
 redirect_from:
   - /Libgdiplus/

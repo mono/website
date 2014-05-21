@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Test Coding Standard"
+lastmodified: '2009-02-24'
 permalink: /old_site/Accessibility:_Test_Coding_Standard/
 redirect_from:
   - /Accessibility:_Test_Coding_Standard/

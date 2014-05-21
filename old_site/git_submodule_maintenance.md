@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Git Submodule Maintenance"
+lastmodified: '2012-04-05'
 permalink: /old_site/Git_Submodule_Maintenance/
 redirect_from:
   - /Git_Submodule_Maintenance/

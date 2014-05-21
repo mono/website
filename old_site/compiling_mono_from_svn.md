@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono From SVN"
+lastmodified: '2010-11-11'
 permalink: /old_site/Compiling_Mono_From_SVN/
 redirect_from:
   - /Compiling_Mono_From_SVN/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoMA"
+lastmodified: '2013-01-23'
 permalink: /old_site/MoMA/
 redirect_from:
   - /MoMA/

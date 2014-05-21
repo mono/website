@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User:HubertFONGARNAND"
+lastmodified: '2005-06-19'
 permalink: /old_site/User:HubertFONGARNAND/
 redirect_from:
   - /User:HubertFONGARNAND/

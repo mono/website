@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:ExceptionHandling"
+lastmodified: '2013-10-09'
 permalink: /old_site/Mono:Runtime:Documentation:ExceptionHandling/
 redirect_from:
   - /Mono:Runtime:Documentation:ExceptionHandling/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGLArea"
+lastmodified: '2009-07-29'
 permalink: /old_site/GtkGLArea/
 redirect_from:
   - /GtkGLArea/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightJavascript"
+lastmodified: '2008-06-16'
 permalink: /old_site/MoonlightJavascript/
 redirect_from:
   - /MoonlightJavascript/

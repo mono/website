@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WebBrowser"
+lastmodified: '2009-01-30'
 permalink: /old_site/WebBrowser/
 redirect_from:
   - /WebBrowser/

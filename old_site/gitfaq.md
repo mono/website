@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GitFAQ"
+lastmodified: '2012-12-03'
 permalink: /old_site/GitFAQ/
 redirect_from:
   - /GitFAQ/

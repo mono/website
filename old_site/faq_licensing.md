@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FAQ: Licensing"
+lastmodified: '2012-02-06'
 permalink: /old_site/FAQ:_Licensing/
 redirect_from:
   - /FAQ:_Licensing/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Small footprint"
+lastmodified: '2010-03-09'
 permalink: /old_site/Small_footprint/
 redirect_from:
   - /Small_footprint/

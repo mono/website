@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Screenshots"
+lastmodified: '2010-07-12'
 permalink: /old_site/Screenshots/
 redirect_from:
   - /Screenshots/

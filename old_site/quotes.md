@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Quotes"
+lastmodified: '2006-01-13'
 permalink: /old_site/Quotes/
 redirect_from:
   - /Quotes/

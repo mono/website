@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Papers"
+lastmodified: '2006-01-24'
 permalink: /old_site/Papers/
 redirect_from:
   - /Papers/

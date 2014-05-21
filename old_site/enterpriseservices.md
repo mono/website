@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "EnterpriseServices"
+lastmodified: '2006-08-19'
 permalink: /old_site/EnterpriseServices/
 redirect_from:
   - /EnterpriseServices/

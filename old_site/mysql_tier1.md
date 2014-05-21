@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mysql tier1"
+lastmodified: '1970-01-01'
 permalink: /old_site/Mysql_tier1/
 redirect_from:
   - /Mysql_tier1/

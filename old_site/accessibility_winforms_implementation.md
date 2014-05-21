@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: Winforms Implementation"
+lastmodified: '2008-08-11'
 permalink: /old_site/Accessibility:_Winforms_Implementation/
 redirect_from:
   - /Accessibility:_Winforms_Implementation/

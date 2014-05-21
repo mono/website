@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Plans"
+lastmodified: '2010-12-24'
 permalink: /old_site/Plans/
 redirect_from:
   - /Plans/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Provider Factory"
+lastmodified: '2006-09-23'
 permalink: /old_site/Provider_Factory/
 redirect_from:
   - /Provider_Factory/

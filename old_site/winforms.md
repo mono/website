@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "WinForms"
+lastmodified: '2011-08-30'
 permalink: /old_site/WinForms/
 redirect_from:
   - /WinForms/

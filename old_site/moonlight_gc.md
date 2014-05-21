@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Moonlight/GC"
+lastmodified: '2010-06-29'
 permalink: /old_site/Moonlight/GC/
 redirect_from:
   - /Moonlight/GC/

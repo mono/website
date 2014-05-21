@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Ribbon Sharp"
+lastmodified: '2008-03-25'
 permalink: /old_site/Ribbon_Sharp/
 redirect_from:
   - /Ribbon_Sharp/

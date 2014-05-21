@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GStreamerSharpInstallingFromSource"
+lastmodified: '2009-09-16'
 permalink: /old_site/GStreamerSharpInstallingFromSource/
 redirect_from:
   - /GStreamerSharpInstallingFromSource/

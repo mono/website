@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono VSNET"
+lastmodified: '2010-08-27'
 permalink: /old_site/Compiling_Mono_VSNET/
 redirect_from:
   - /Compiling_Mono_VSNET/

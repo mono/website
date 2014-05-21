@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Monocharge"
+lastmodified: '2007-08-31'
 permalink: /old_site/Monocharge/
 redirect_from:
   - /Monocharge/

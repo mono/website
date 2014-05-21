@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Assemblies and the GAC"
+lastmodified: '2011-08-26'
 permalink: /old_site/Assemblies_and_the_GAC/
 redirect_from:
   - /Assemblies_and_the_GAC/

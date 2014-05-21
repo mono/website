@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Development.FAQ"
+lastmodified: '2011-04-12'
 permalink: /old_site/Gendarme.Development.FAQ/
 redirect_from:
   - /Gendarme.Development.FAQ/

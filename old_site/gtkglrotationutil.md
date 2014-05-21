@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGL.RotationUtil"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGL.RotationUtil/
 redirect_from:
   - /GtkGL.RotationUtil/

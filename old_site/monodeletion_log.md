@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Deletion log"
+lastmodified: '2005-08-04'
 permalink: /old_site/Mono:Deletion_log/
 redirect_from:
   - /Mono:Deletion_log/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:SPARC"
+lastmodified: '2006-05-23'
 permalink: /old_site/Mono:SPARC/
 redirect_from:
   - /Mono:SPARC/

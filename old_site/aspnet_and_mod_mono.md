@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ASP.NET and mod mono"
+lastmodified: '2006-02-26'
 permalink: /old_site/ASP.NET_and_mod_mono/
 redirect_from:
   - /ASP.NET_and_mod_mono/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ASP.NET Mono Specific Configuration"
+lastmodified: '2009-06-03'
 permalink: /old_site/ASP.NET_Mono_Specific_Configuration/
 redirect_from:
   - /ASP.NET_Mono_Specific_Configuration/

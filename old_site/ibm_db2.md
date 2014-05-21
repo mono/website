@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "IBM DB2"
+lastmodified: '2006-04-02'
 permalink: /old_site/IBM_DB2/
 redirect_from:
   - /IBM_DB2/

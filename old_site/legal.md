@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Legal"
+lastmodified: '2009-07-11'
 permalink: /old_site/Legal/
 redirect_from:
   - /Legal/

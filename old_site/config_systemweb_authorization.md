@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Config system.web authorization"
+lastmodified: '2008-06-25'
 permalink: /old_site/Config_system.web_authorization/
 redirect_from:
   - /Config_system.web_authorization/

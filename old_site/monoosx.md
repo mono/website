@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:OSX"
+lastmodified: '2011-07-27'
 permalink: /old_site/Mono:OSX/
 redirect_from:
   - /Mono:OSX/

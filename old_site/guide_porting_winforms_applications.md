@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Guide: Porting Winforms Applications"
+lastmodified: '2007-06-16'
 permalink: /old_site/Guide:_Porting_Winforms_Applications/
 redirect_from:
   - /Guide:_Porting_Winforms_Applications/

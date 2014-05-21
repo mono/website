@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Config system.web customErrors"
+lastmodified: '2008-06-25'
 permalink: /old_site/Config_system.web_customErrors/
 redirect_from:
   - /Config_system.web_customErrors/

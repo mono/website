@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Accessibility: GitSVN"
+lastmodified: '2009-03-29'
 permalink: /old_site/Accessibility:_GitSVN/
 redirect_from:
   - /Accessibility:_GitSVN/

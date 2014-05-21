@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "OutputFromConsoleApp"
+lastmodified: '2009-05-01'
 permalink: /old_site/OutputFromConsoleApp/
 redirect_from:
   - /OutputFromConsoleApp/

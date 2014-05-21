@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:FreeBSD-Problems"
+lastmodified: '2005-04-04'
 permalink: /old_site/Mono:FreeBSD-Problems/
 redirect_from:
   - /Mono:FreeBSD-Problems/

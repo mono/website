@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ImprovingGtkWin32"
+lastmodified: '2006-08-23'
 permalink: /old_site/ImprovingGtkWin32/
 redirect_from:
   - /ImprovingGtkWin32/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "IRC MonoTools"
+lastmodified: '2009-12-07'
 permalink: /old_site/IRC_MonoTools/
 redirect_from:
   - /IRC_MonoTools/

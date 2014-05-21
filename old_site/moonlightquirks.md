@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightQuirks"
+lastmodified: '2008-12-08'
 permalink: /old_site/MoonlightQuirks/
 redirect_from:
   - /MoonlightQuirks/

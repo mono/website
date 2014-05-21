@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "DB4BOO"
+lastmodified: '2005-10-19'
 permalink: /old_site/DB4BOO/
 redirect_from:
   - /DB4BOO/

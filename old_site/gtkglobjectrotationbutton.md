@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGL.ObjectRotationButton"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGL.ObjectRotationButton/
 redirect_from:
   - /GtkGL.ObjectRotationButton/

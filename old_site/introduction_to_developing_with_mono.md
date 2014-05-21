@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Introduction to developing with Mono"
+lastmodified: '2006-11-11'
 permalink: /old_site/Introduction_to_developing_with_Mono/
 redirect_from:
   - /Introduction_to_developing_with_Mono/

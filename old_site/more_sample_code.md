@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "More Sample Code"
+lastmodified: '2005-09-06'
 permalink: /old_site/More_Sample_Code/
 redirect_from:
   - /More_Sample_Code/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Security.Cas"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Security.Cas/
 redirect_from:
   - /Gendarme.Rules.Security.Cas/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Contributing"
+lastmodified: '2014-04-15'
 permalink: /old_site/Contributing/
 redirect_from:
   - /Contributing/

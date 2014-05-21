@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkGLAreaSharp:With MonoDevelop"
+lastmodified: '2007-05-25'
 permalink: /old_site/GtkGLAreaSharp:With_MonoDevelop/
 redirect_from:
   - /GtkGLAreaSharp:With_MonoDevelop/

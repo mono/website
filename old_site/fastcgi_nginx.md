@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "FastCGI Nginx"
+lastmodified: '2010-03-24'
 permalink: /old_site/FastCGI_Nginx/
 redirect_from:
   - /FastCGI_Nginx/

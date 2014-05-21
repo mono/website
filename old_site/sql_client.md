@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SQL Client"
+lastmodified: '2006-05-20'
 permalink: /old_site/SQL_Client/
 redirect_from:
   - /SQL_Client/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch ReleaseNotes"
+lastmodified: '2009-09-13'
 permalink: /old_site/MonoTouch_ReleaseNotes/
 redirect_from:
   - /MonoTouch_ReleaseNotes/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Category:FastCGI"
+lastmodified: '2008-06-25'
 permalink: /old_site/Category:FastCGI/
 redirect_from:
   - /Category:FastCGI/

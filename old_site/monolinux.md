@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Linux"
+lastmodified: '2008-10-04'
 permalink: /old_site/Mono:Linux/
 redirect_from:
   - /Mono:Linux/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GSoC Previous Years"
+lastmodified: '2013-03-20'
 permalink: /old_site/GSoC_Previous_Years/
 redirect_from:
   - /GSoC_Previous_Years/

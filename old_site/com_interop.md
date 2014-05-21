@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "COM Interop"
+lastmodified: '2011-04-23'
 permalink: /old_site/COM_Interop/
 redirect_from:
   - /COM_Interop/

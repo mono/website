@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Talk:Accessibility: Bridge Functional Specification"
+lastmodified: '2008-09-09'
 permalink: /old_site/Talk:Accessibility:_Bridge_Functional_Specification/
 redirect_from:
   - /Talk:Accessibility:_Bridge_Functional_Specification/

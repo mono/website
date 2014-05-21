@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Troubleshoot"
+lastmodified: '2009-08-10'
 permalink: /old_site/MonoTouch_Troubleshoot/
 redirect_from:
   - /MonoTouch_Troubleshoot/

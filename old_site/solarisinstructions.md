@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "SolarisInstructions"
+lastmodified: '2006-05-17'
 permalink: /old_site/SolarisInstructions/
 redirect_from:
   - /SolarisInstructions/

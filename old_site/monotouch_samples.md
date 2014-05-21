@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Samples"
+lastmodified: '2009-08-05'
 permalink: /old_site/MonoTouch_Samples/
 redirect_from:
   - /MonoTouch_Samples/

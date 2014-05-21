@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp3PortingGuide"
+lastmodified: '2011-02-12'
 permalink: /old_site/GtkSharp3PortingGuide/
 redirect_from:
   - /GtkSharp3PortingGuide/

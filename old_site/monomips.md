@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:MIPS"
+lastmodified: '2006-11-20'
 permalink: /old_site/Mono:MIPS/
 redirect_from:
   - /Mono:MIPS/

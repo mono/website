@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "VMware Image"
+lastmodified: '2009-06-25'
 permalink: /old_site/VMware_Image/
 redirect_from:
   - /VMware_Image/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:AMD64"
+lastmodified: '2007-04-19'
 permalink: /old_site/Mono:AMD64/
 redirect_from:
   - /Mono:AMD64/

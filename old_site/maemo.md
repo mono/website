@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Maemo"
+lastmodified: '2008-11-23'
 permalink: /old_site/Maemo/
 redirect_from:
   - /Maemo/

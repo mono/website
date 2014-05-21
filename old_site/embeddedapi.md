@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Embedded-api"
+lastmodified: '1970-01-01'
 permalink: /old_site/Embedded-api/
 redirect_from:
   - /Embedded-api/

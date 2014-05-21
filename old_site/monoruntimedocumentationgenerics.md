@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:Runtime:Documentation:Generics"
+lastmodified: '2010-07-25'
 permalink: /old_site/Mono:Runtime:Documentation:Generics/
 redirect_from:
   - /Mono:Runtime:Documentation:Generics/

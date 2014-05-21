@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "CPlusPlus"
+lastmodified: '2010-02-14'
 permalink: /old_site/CPlusPlus/
 redirect_from:
   - /CPlusPlus/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ASP.NET Modules"
+lastmodified: '2008-06-25'
 permalink: /old_site/ASP.NET_Modules/
 redirect_from:
   - /ASP.NET_Modules/

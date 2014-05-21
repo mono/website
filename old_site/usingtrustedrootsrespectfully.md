@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "UsingTrustedRootsRespectfully"
+lastmodified: '2010-09-15'
 permalink: /old_site/UsingTrustedRootsRespectfully/
 redirect_from:
   - /UsingTrustedRootsRespectfully/

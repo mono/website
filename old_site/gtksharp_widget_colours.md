@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "GtkSharp: Widget Colours"
+lastmodified: '2005-12-05'
 permalink: /old_site/GtkSharp:_Widget_Colours/
 redirect_from:
   - /GtkSharp:_Widget_Colours/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "User talk:ZacBowling"
+lastmodified: '2006-09-23'
 permalink: /old_site/User_talk:ZacBowling/
 redirect_from:
   - /User_talk:ZacBowling/

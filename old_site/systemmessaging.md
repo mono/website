@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "System.Messaging"
+lastmodified: '2009-12-20'
 permalink: /old_site/System.Messaging/
 redirect_from:
   - /System.Messaging/

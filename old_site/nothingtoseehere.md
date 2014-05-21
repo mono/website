@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "NothingToSeeHere"
+lastmodified: '2008-10-06'
 permalink: /old_site/NothingToSeeHere/
 redirect_from:
   - /NothingToSeeHere/

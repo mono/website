@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MeetingPDC"
+lastmodified: '2007-01-01'
 permalink: /old_site/MeetingPDC/
 redirect_from:
   - /MeetingPDC/

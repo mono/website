@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Stetic"
+lastmodified: '2010-05-24'
 permalink: /old_site/Stetic/
 redirect_from:
   - /Stetic/

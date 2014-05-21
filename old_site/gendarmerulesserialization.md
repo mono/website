@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Gendarme.Rules.Serialization"
+lastmodified: '2009-12-19'
 permalink: /old_site/Gendarme.Rules.Serialization/
 redirect_from:
   - /Gendarme.Rules.Serialization/

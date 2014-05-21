@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Mono:IA64"
+lastmodified: '2006-05-22'
 permalink: /old_site/Mono:IA64/
 redirect_from:
   - /Mono:IA64/

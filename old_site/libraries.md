@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Libraries"
+lastmodified: '2010-11-25'
 permalink: /old_site/Libraries/
 redirect_from:
   - /Libraries/

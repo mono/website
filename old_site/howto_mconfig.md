@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "Howto Mconfig"
+lastmodified: '2007-11-13'
 permalink: /old_site/Howto_Mconfig/
 redirect_from:
   - /Howto_Mconfig/

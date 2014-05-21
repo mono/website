@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MonoTouch Installation"
+lastmodified: '2009-09-13'
 permalink: /old_site/MonoTouch_Installation/
 redirect_from:
   - /MonoTouch_Installation/

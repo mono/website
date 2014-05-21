@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "VisualBasic.NET support"
+lastmodified: '2010-07-07'
 permalink: /old_site/VisualBasic.NET_support/
 redirect_from:
   - /VisualBasic.NET_support/

@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "DllNotFoundException"
+lastmodified: '2010-11-20'
 permalink: /old_site/DllNotFoundException/
 redirect_from:
   - /DllNotFoundException/

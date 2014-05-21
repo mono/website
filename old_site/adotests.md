@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "ADOTests"
+lastmodified: '2007-02-20'
 permalink: /old_site/ADOTests/
 redirect_from:
   - /ADOTests/

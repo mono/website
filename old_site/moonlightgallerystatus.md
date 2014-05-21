@@ -1,6 +1,7 @@
 ---
 layout: obsolete
 title: "MoonlightGalleryStatus"
+lastmodified: '2009-04-17'
 permalink: /old_site/MoonlightGalleryStatus/
 redirect_from:
   - /MoonlightGalleryStatus/
