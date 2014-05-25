@@ -1,7 +1,7 @@
 ---
 layout: obsolete
 title: "Compiling Mono on Windows"
-lastmodified: '2013-09-04'
+lastmodified: '2014-05-20'
 permalink: /old_site/Compiling_Mono_on_Windows/
 redirect_from:
   - /Compiling_Mono_on_Windows/
@@ -49,9 +49,13 @@ Add mono to your path. This could be either a previous build of Mono, or an inst
 
     export PATH=$PATH:<path to installed mono>/bin
 
- In the mono source directory, run the following:
+ When using the mono tarball, in the mono source directory, run the following:
 
     ./configure --host=i686-pc-mingw32
+
+If using mono from git, use:
+
+    ./autogen.sh --host=i686-pc-mingw32
 
 Feel free to use any prefix you like. Continue with:
 
@@ -59,6 +63,10 @@ Feel free to use any prefix you like. Continue with:
     make install
 
 If everything goes well, you will have a compiled mono in an hour or two.
+
+Some versions of mingw ship with broken headers which causes compilation to fail. In that case, check this post:
+
+[http://mono.1490590.n4.nabble.com/mono-from-git-will-not-build-on-cygwin-32-td4660749.html\#a4660756](http://mono.1490590.n4.nabble.com/mono-from-git-will-not-build-on-cygwin-32-td4660749.html#a4660756)
 
 Archive: a tutorial on building Mono on Windows by Andreia Gaita is available [here](http://shana.worldofcoding.com/en/mono_cygwin_tutorial.html).
 

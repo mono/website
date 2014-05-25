@@ -1,7 +1,7 @@
 ---
 layout: obsolete
 title: "Debugging"
-lastmodified: '2014-01-30'
+lastmodified: '2014-05-20'
 permalink: /old_site/Debugging/
 redirect_from:
   - /Debugging/
@@ -75,7 +75,7 @@ First and foremost, Mono support libraries use a couple of signals internally th
 
     handle SIGXCPU SIG33 SIG35 SIGPWR nostop noprint
 
-If you use GDB to debug your mono process, you can use the function `print_method_from_ip` (which takes an address) to obtain the name of a method given an address. This is particularly useful when examining stack traces. The function was renamed to `mono_pmip` in the Mono 1.1.x serie s (For a while the function was called `mono_print_method_from_ip`).
+If you use GDB to debug your mono process, you can use the function `mono_print_method_from_ip` (which takes an address) to obtain the name of a method given an address. This is particularly useful when examining stack traces. The function was renamed to `mono_pmip` in the Mono 1.1.x serie s (For a while the function was called `mono_print_method_from_ip`).
 
 For example, when faced with a stack trace, like this:
 
@@ -86,7 +86,7 @@ For example, when faced with a stack trace, like this:
     #3  0x0817f266 in ?? ()
     #4  0x0817f1a5 in ?? ()
 
-You can find out what methods are at each address using the print\_method\_from\_ip function (or mono\_pmip if you are using Mono 1.1.x):
+You can find out what methods are at each address using the mono\_print\_method\_from\_ip function (or mono\_pmip if you are using Mono 1.1.x):
 
     (gdb) p mono_pmip (0x0817f490)
     IP 0x817f490 at offset 0x28 of method (wrapper managed-to-native) System.String:GetHashCode () (0x817f468 0x817f4a4)
