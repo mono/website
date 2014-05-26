@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    {% if site.github.owner_name != 'mono' %}
+    <meta name="robots" content="noindex" />
+    {% endif %}
     <title>{{ page.title }} | Mono</title>
     <link rel="shortcut icon" href="{{site.github.url}}/favicon.ico" />
     <link rel="alternate" type="application/rss+xml" title="Mono Project News" href="{{site.github.url}}/atom.xml">
