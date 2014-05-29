@@ -1,7 +1,8 @@
 ---
 layout: docpage
-title: Mono Releases
 navgroup: docs
+title: Mono Releases
+permalink: /docs/releases/
 mono3xreleases:
  - {version: 3.4.0}
  - {version: 3.2.8}
