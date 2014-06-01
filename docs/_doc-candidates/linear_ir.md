@@ -1,1 +1,0 @@
-../../old_site/linear_ir.md

@@ -1,1 +1,1 @@
-../../../old_site/accessibility_architecture.md
+../../../../../old_site/accessibility_architecture.md
