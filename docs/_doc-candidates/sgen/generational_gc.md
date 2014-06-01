@@ -1,1 +1,0 @@
-../../../old_site/generational_gc.md

@@ -1,1 +1,0 @@
-../../../old_site/working_with_sgen.md
