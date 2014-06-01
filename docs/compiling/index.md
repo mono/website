@@ -2,7 +2,7 @@
 layout: docpage
 navgroup: docs
 title: Compiling Mono
-permalink: /docs/compile/
+permalink: /docs/compiling/
 ---
 
 **_Note:_** This describes how to compile and install Mono from its source code.
