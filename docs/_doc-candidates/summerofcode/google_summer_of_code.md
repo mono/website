@@ -1,1 +1,0 @@
-../../../old_site/google_summer_of_code.md

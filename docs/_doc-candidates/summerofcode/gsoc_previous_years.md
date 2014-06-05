@@ -1,1 +1,0 @@
-../../../old_site/gsoc_previous_years.md

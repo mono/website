@@ -1,1 +1,0 @@
-../../../old_site/summer2006.md
