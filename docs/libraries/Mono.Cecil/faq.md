@@ -1,8 +1,8 @@
 ---
 layout: docpage
 navgroup: docs
-title: Cecil FAQ
-permalink: /docs/tools/cecil/faq/
+title: Mono.Cecil FAQ
+permalink: /docs/libraries/Mono.Cecil/faq/
 ---
 
 Now that I have the library, how do I use it?
