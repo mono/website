@@ -1,1 +1,0 @@
-../../../old_site/why_mono.md
