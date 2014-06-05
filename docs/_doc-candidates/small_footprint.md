@@ -1,1 +1,0 @@
-../../old_site/small_footprint.md

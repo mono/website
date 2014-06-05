@@ -1,1 +1,0 @@
-../../old_site/scripting_with_mono.md
