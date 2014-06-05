@@ -9,7 +9,7 @@ latestmono: 3.4.0
 <h1>Download</h1>
 
 <p>The latest Mono release is: <strong>{{page.latestmono}}</strong></p>
-<p>Please choose your operating system to view the available packages.</p>
+<p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a>.</p>
 
 <dl id="mono-download" class="tabs vertical" data-tab>
   <dd class="active"><a href="#panel-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
@@ -19,27 +19,29 @@ latestmono: 3.4.0
 
 <div class="tabs-content vertical">
   <div class="panel content active" id="panel-mac">
-    <p>Mono for Mac OS X is available as a Mac Package (.pkg).</p>
+    <p><h5>Mono for Mac OS X is available as a Mac Package (.pkg)</h5></p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+    <p><i>The MDK package is for developers.</i></p>
     <div>
-      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono_Mac.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono_Mac.pkg</a>
+      <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MRE-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MRE</a>
+      <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
     </div>
   </div>
   <div class="panel content" id="panel-lin">
-    <p>Mono for Linux is available as a binary package for the following distributions: Debian/Ubuntu, openSUSE.</p>
+    <p><h5>Mono for Linux is available as a binary package in DEB and RPM format</h5></p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono-Linux.deb" class="button radius"><i class="fa fa-download"></i> Download Mono-Linux.deb</a>
+      <a href="http://download.mono-project.com/archive/3.2.3/linux/" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
     </div>
   </div>
   <div class="panel content" id="panel-win">
-    <p>Mono for Windows is available as a Windows Installer (.msi) package.</p>
+    <p><h5>Mono for Windows is available as a Windows Installer (.exe)</h5></p>
     <p>Please refer to the <a href="{{site.github.url}}/docs/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
     <div>
-      <a href="https://github.com/akoeplinger/mono/releases/download/mono-{{page.latestmono}}/Mono-Windows.msi" class="button radius"><i class="fa fa-download"></i> Download Mono-Windows.msi</a>
+      <a href="http://download.mono-project.com/archive/3.2.3/windows-installer/mono-3.2.3-gtksharp-2.12.11-win32-0.exe" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
     </div>
   </div>
 </div>
 
 <h1>Release Notes</h1>
-<p>Check out the release notes of the latest <a href="{{site.github.url}}/docs/releases/{{page.latestmono}}">Mono {{page.latestmono}}</a>, or view the release notes of older Mono versions <a href="{{site.github.url}}/docs/releases/">here</a>.</p>
+<p>Check out the release notes of <a href="{{site.github.url}}/docs/releases/{{page.latestmono}}">Mono {{page.latestmono}}</a>, or view the release notes of older Mono versions <a href="{{site.github.url}}/docs/releases/">here</a>.</p>
