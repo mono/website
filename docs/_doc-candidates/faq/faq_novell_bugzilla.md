@@ -1,1 +1,0 @@
-../../../old_site/faq_novell_bugzilla.md
