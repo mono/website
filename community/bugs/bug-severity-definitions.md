@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Bug severity definitions
 permalink: /community/bugs/bug-severity-definitions/
 ---
-
-Bug severity definitions
-========================
 
 When filing a bug against Mono, here are the guidelines for determining the severity of a bug.
 

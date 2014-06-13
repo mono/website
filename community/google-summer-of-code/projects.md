@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Projects
 permalink: /community/google-summer-of-code/projects/
 ---
-
-Projects
-========
 
 This is the Mono Project's project ideas page. For general information and rules about participating in [Google Summer of Code (GSoC)](http://code.google.com/soc/) for the Mono Project, please see our [overview page]({{site.github.url}}/community/google-summer-of-code/).
 

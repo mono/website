@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Mono Contribution HowTo
 permalink: /community/contributing/contribution-howto/
 ---
-
-Mono Contribution HowTo
-=======================
 
 A little help for mono newbie coders
 ------------------------------------

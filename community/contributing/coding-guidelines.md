@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Coding Guidelines
 permalink: /community/contributing/coding-guidelines/
 ---
-
-Coding Guidelines
-=================
 
  This document contains the coding guidelines for the Mono Project. It contains four major sections:
 

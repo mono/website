@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Test Suite
 permalink: /community/contributing/test-suite/
 ---
-
-Test Suite
-==========
 
 Testing
 -------

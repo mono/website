@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Google Summer of Code
 permalink: /community/google-summer-of-code/
 ---
-
-Google Summer of Code
-=====================
 
 [Google Summer of Code (GSoC)](http://code.google.com/soc/) is a program that offers student developers stipends to write code for various open source projects. Google will be working with several open source, free software, and technology-related groups to identify and fund several projects over a three month period.
 

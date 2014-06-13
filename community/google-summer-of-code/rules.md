@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: GSoC Rules
 permalink: /community/google-summer-of-code/rules/

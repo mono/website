@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: How to make a good bug report
 permalink: /community/bugs/make-a-good-bug-report/
 ---
-
-How to make a good bug report
------------------------------
 
 1.  Submit a **test case**, the smaller, the better. You can do this by clicking on the "Create a new attachment" link. When attaching a file, please set the correct MIME type from the list. For source code, "Plain text" is ok. For tar.gz or .gz files, you can enter "application/x-gzip" in the "Other" text box.
 2.  Run the test against Microsofts .Net to see what it does and if this is an actual bug.

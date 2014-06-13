@@ -1,13 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Bugs
 permalink: /community/bugs/
 ---
-
-
-Bugs
-====
 
 **Current Project Bug Counts**
 

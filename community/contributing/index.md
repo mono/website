@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: docpage
 navgroup: community
 title: Contributing
 permalink: /community/contributing/
 ---
-
-Contributing
-============
 
 Track our various [Development Plans]({{site.github.url}}/old_site/Plans "Plans")
 
