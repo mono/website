@@ -92,6 +92,26 @@ h1 small {
   font-size: 40%;
 }
 
+.header-link {
+  display: none;
+  color: #666;
+  font-size: 0.7em;
+  padding-left: 1%;
+}
+
+.header-link:hover {
+  color: #222;
+}
+
+h1:hover .header-link,
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  display: inline;
+}
+
 #main-wrapper {
   min-height: 100%;
   margin: 0 auto -100px;
