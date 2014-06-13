@@ -2,7 +2,7 @@
 layout: docpage
 navgroup: docs
 title: Unsupported Advanced Mono Compile Options
-permalink: /docs/compiling/advanced-compile-options/
+permalink: /docs/compiling-mono/advanced-compile-options/
 ---
 
 Most users will use the default configuration, and the Mono team will provide help and support for the standard configuration. Any use of extra configuration options is likely going to have little or no support from the team.

@@ -2,7 +2,7 @@
 layout: docpage
 navgroup: docs
 title: Compiling Mono with Visual Studio
-permalink: /docs/compiling/compiling-with-visualstudio/
+permalink: /docs/compiling-mono/compiling-with-visualstudio/
 ---
 
 [SVN]({{site.github.url}}/old_site/SourceCodeRepository) now includes a Visual Studio .NET 2005 solution **mono.sln** in the [mono/msvc directory](http://anonsvn.mono-project.com/viewvc/trunk/mono/msvc/), and some projects files to build most of the unmanaged parts in Mono.

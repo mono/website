@@ -2,7 +2,7 @@
 layout: docpage
 navgroup: docs
 title: Compiling Mono
-permalink: /docs/compiling/
+permalink: /docs/compiling-mono/
 ---
 
 **_Note:_** This describes how to compile and install Mono from its source code.
@@ -11,6 +11,6 @@ See the [download page]({{site.github.url}}/download) for packages.
 
 Take a look at these guides for compiling Mono on different platforms:
 
-- [Compiling Mono on Mac OS X]({{site.github.url}}/docs/compile/mac)
-- [Compiling Mono on Linux]({{site.github.url}}/docs/compile/linux)
-- [Compiling Mono on Windows]({{site.github.url}}/docs/compile/windows)
+- [Compiling Mono on Mac OS X]({{site.github.url}}/docs/compiling-mono/mac/)
+- [Compiling Mono on Linux]({{site.github.url}}/docs/compiling-mono/linux/)
+- [Compiling Mono on Windows]({{site.github.url}}/docs/compiling-mono/windows/)

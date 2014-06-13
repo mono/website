@@ -2,7 +2,7 @@
 layout: docpage
 title: Compiling Mono on Windows
 navgroup: docs
-permalink: /docs/compiling/windows/
+permalink: /docs/compiling-mono/windows/
 ---
 
 There are two ways of building Mono on Windows, both do require a Cygwin setup which provides some tools required by Mono at build time. First, download and install Cygwin from [www.cygwin.com](http://www.cygwin.com). Use the 32 bit installer (setup-x86.exe).

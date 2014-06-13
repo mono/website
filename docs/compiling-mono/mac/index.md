@@ -2,7 +2,7 @@
 layout: docpage
 title: Compiling Mono on Mac OS X
 navgroup: docs
-permalink: /docs/compiling/mac/
+permalink: /docs/compiling-mono/mac/
 ---
 
 Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.

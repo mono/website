@@ -2,7 +2,7 @@
 layout: docpage
 navgroup: docs
 title: Parallel Mono Environments
-permalink: /docs/compiling/parallel-mono-environments/
+permalink: /docs/compiling-mono/parallel-mono-environments/
 ---
 
 *This document details how to run multiple Mono environments on a single system where neither environment conflicts with another.*
