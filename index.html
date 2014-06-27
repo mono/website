@@ -1,10 +1,9 @@
 ---
-layout: default
+layout: base
 title: Home
 navgroup: home
 ---
-
-<div class="text-center">
+<div id="index-hero">
   <h1>Cross platform, open source .NET framework</h1>
 
   <div class="show-for-small-only">
@@ -18,19 +17,54 @@ navgroup: home
     <i class="fa fa-mobile" style="font-size: 7em; margin-left: 30px"></i>
   </div>
   <div class="show-for-large-up">
-    <i class="fa fa-desktop" style="font-size: 13em"></i>
-    <i class="fa fa-laptop" style="font-size: 11em; margin-left: 40px"></i>
-    <i class="fa fa-mobile" style="font-size: 9em; margin-left: 40px"></i>
+    <i class="fa fa-desktop" style="font-size: 12em"></i>
+    <i class="fa fa-laptop" style="font-size: 10em; margin-left: 40px"></i>
+    <i class="fa fa-mobile" style="font-size: 8em; margin-left: 40px"></i>
   </div>
 
-  <p>
+  <div id="index-teaser">
     <strong>Mono</strong> is a software platform designed to allow developers to easily create cross platform applications.
-  </p>
+  </div>
 </div>
 
-<hr/>
+<div class="row">
+  <div class="small-12 column">
+    <p>
+      Sponsored by <a href="http://www.xamarin.com">Xamarin</a>, Mono is an open source implementation of Microsoft's .NET Framework based on the <a href="{{site.github.url}}/docs/specification/ecma/">ECMA</a> standards for <a href="{{site.github.url}}/docs/languages/csharp/compiler/">C#</a> and the <a href="{{site.github.url}}/docs/internals/runtime/">Common Language Runtime</a>.
+      A growing family of solutions and an active and enthusiastic contributing community is helping position Mono to become the leading choice for development of cross platform applications.
+    </p>
+  </div>
+</div>
 
-<p>
-  Sponsored by <a href="http://www.xamarin.com">Xamarin</a>, Mono is an open source implementation of Microsoft's .NET Framework based on the <a href="{{site.github.url}}/docs/specification/ecma/">ECMA</a> standards for <a href="{{site.github.url}}/docs/languages/csharp/compiler/">C#</a> and the <a href="{{site.github.url}}/docs/internals/runtime/">Common Language Runtime</a>.
-  A growing family of solutions and an active and enthusiastic contributing community is helping position Mono to become the leading choice for development of cross platform applications.
-</p>
+<div class="row">
+  <div class="small-12 column">
+    <div class="row">
+      <div class="medium-4 column">
+        <h3>Get Mono</h3>
+        <p>The latest Mono release is waiting for you!</p>
+        <p><a href="{{site.github.url}}/download/" class="button"><i class="fa fa-download"></i> Download</a></p>
+      </div>
+
+      <div class="medium-4 column">
+        <h3>Read the docs</h3>
+        <p>
+          We cover everything you need to know, from configuring Mono to how the internals are implemented.
+          <br/>
+          <em>Our documentation is open source too, so you can help us improve it.</em>
+        </p>
+        <p><a href="{{site.github.url}}/docs/"><i class="fa fa-book"></i> Learn more</a></p>
+        
+      </div>
+
+      <div class="medium-4 column">
+        <h3>Community</h3>
+        <p>
+          As an open source project, we love getting contributions from the community.
+          <br/>
+          <em>File a bug report, add new code or chat with the developers.</em>
+        </p>
+        <p><a href="{{site.github.url}}/community/"><i class="fa fa-github"></i> Contribute to Mono</a></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #logo {
   width: 50px;
   height: 50px;
@@ -68,6 +72,28 @@
   color: #999
 }
 
+#index-hero {
+  background: #5C7280;
+  color: #E2E8EB;
+  text-align: center;
+  margin-top: -15px;
+  padding-top: 15px;
+}
+
+#index-hero h1 {
+  color: #E2E8EB;
+}
+
+#index-teaser {
+  background: #EBEBEB;
+  color: #222;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D9D8D7;
+}
+
 #mono-download.tabs dd > a {
   font-size: 1.5em;
   white-space: nowrap;
@@ -86,10 +112,6 @@ code {
   font-weight: normal;
   font-size: 0.95em;
   line-height: 1.5;
-}
-
-h1 small {
-  font-size: 40%;
 }
 
 .header-link {
