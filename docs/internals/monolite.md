@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Monolite
-permalink: /docs/internals/monolite/
 ---
 
 Monolite is a minimal binary distribution of mcs.

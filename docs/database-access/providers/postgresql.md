@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: PostgreSQL
-permalink: /docs/database-access/providers/postgresql/
 ---
 
 Info

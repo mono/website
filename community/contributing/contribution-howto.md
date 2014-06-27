@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Mono Contribution HowTo
-permalink: /community/contributing/contribution-howto/
 ---
 
 A little help for mono newbie coders

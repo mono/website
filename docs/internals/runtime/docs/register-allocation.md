@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Register allocation in the Mono JIT
-permalink: /docs/internals/runtime/docs/register-allocation/
 ---
 
 ### Global Register Allocation

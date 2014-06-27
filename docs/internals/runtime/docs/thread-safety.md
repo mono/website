@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Thread Safety/Synchronization
-permalink: /docs/internals/runtime/docs/thread-safety/
 ---
 
 Thread safety of metadata structures

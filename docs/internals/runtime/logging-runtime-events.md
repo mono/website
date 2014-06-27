@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Logging Runtime Events
-permalink: /docs/internals/runtime/logging-runtime-events/
 ---
 
 The event loging functionality in Mono displays information on runtime operations such as loading libraries, and configuration files. Loggin is useful for debugging applications and trouble shooting installation issues. When logging is enabled extra debug info is printed to both stdout and stdin while an application is running.

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: The Mono Runtime
-permalink: /docs/internals/runtime/
 ---
 
 The Mono runtime implements the [ECMA Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLI). The Mono runtime implements this virtual machine.

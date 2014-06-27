@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Mono Project Roadmap
-permalink: /docs/about/roadmap/
 ---
 
 *Last update: November, 2012*

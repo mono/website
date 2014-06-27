@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Screenshots
-permalink: /docs/showcase/screenshots/
 ---
 
 Gtk\# Applications

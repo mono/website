@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Gendarme Roadmap
-permalink: /docs/tools/gendarme/roadmap/
 ---
 
 Gendarme has synchronized it's version numbers with Mono since the 2.0 release. All future releases will share the same schedule. See Mono [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for the exact release dates planned for each version.

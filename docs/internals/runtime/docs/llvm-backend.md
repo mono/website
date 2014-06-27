@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: LLVM Backend
-permalink: /docs/internals/runtime/docs/llvm-backend/
 ---
 
 Mono now includes an experimental backend which compiles methods to native code using LLVM instead of the built in JIT.

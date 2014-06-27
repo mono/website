@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Runtime Hacking
-permalink: /docs/internals/runtime/runtime-hacking/
 ---
 
 Runtime hacking tips and tricks

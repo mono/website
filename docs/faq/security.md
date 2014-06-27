@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Security"
-permalink: /docs/faq/security/
 ---
 
 Secure Socket Layer (SSL) / Transport Layer Security (TLS)

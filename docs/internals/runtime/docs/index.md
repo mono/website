@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Mono Runtime Documentation
-permalink: /docs/internals/runtime/docs/
 ---
 
 ### Mono Runtime Developer Documentation

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Mailing Lists
-permalink: /community/help/mailing-lists/
 ---
 
 If you prefer forums over mailing lists, please see our [Forums](http://www.go-mono.org/forums/) page.

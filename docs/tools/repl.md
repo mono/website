@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: C# REPL
-permalink: /docs/tools/repl/
 ---
 
 [![]({{site.github.url}}/old_site/images/9/9c/Xbyhja.png)]({{site.github.url}}/old_site/images/9/9c/Xbyhja.png)

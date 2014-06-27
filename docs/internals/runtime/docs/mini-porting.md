@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Porting the Engine
-permalink: /docs/internals/runtime/docs/mini-porting/
 ---
 
 Introduction

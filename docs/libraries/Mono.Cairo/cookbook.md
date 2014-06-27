@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cairo Cookbook
-permalink: /docs/libraries/Mono.Cairo/cookbook/
 ---
 
 Some fun recipes to spice up your Cairo based drawing!

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: C# Compiler
-permalink: /docs/languages/csharp/compiler/
 ---
 
 Introduction

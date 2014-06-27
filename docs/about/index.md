@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: About Mono
-permalink: /docs/about/
 ---
 
 Mono, the open source development platform based on the .NET framework, allows developers to build Linux and cross-platform applications with improved developer productivity. Mono's .NET implementation is based on the ECMA standards for [C\#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).

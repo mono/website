@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Documentation"
-permalink: /docs/faq/documentation/
 ---
 
 Getting Documentation

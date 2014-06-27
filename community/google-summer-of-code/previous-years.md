@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: GSoC Previous Years
-permalink: /community/google-summer-of-code/previous-years/
 ---
 
 The Mono Project has been an active participant in previous years of [Google Summer of Code (GSoC)](http://code.google.com/soc/), spawning many successful additions to both our code and our community!

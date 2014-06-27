@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Command Line MoMA
-permalink: /docs/tools/moma/command-line-moma/
 ---
 
 Beginning with version 1.9 of [MoMA]({{site.github.url}}/docs/tools/moma/), you can now run MoMA without showing a GUI. This is helpful for people who wish to add MoMA scans to their automated builds. For example, you may have a policy that only Mono supported methods should be used in your application.

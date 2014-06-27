@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Assembler
-permalink: /docs/tools/mdassembler/
 ---
 
 The **assembler** is a tool to merge mdoc/monodocer output into three files. Since [mdoc]({{site.github.url}}/old_site/Mdoc "Mdoc") and [monodocer]({{site.github.url}}/old_site/Monodocer "Monodocer") produces tons of output files this is very unhandy to redistribute. Additionally, the documentation can not be shown in [monodoc]({{site.github.url}}/old_site/Monodoc "Monodoc") by just clicking it's icon you have to type *monodoc mydocs-folder* into your console. The **assembler** can be invoked by using [mdoc-assemble](http://www.go-mono.org/docs/index.aspx?link=man:mdoc-assemble(1)) or (for older Mono versions) with the **mdassembler** command.

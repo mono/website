@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Test Suite
-permalink: /community/contributing/test-suite/
 ---
 
 Testing

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Other
-permalink: /docs/internals/runtime/docs/other/
 ---
 
 Faster runtime builds

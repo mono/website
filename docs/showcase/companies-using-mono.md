@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Companies using Mono
-permalink: /docs/showcase/companies-using-mono/
 ---
 
 Mono is currently being used by a number of commercial software vendors and corporate enterprises to provide a rich environment for developing cross-platform applications. We'll feature cool solutions here to give you an idea of the real world power and benefits of Mono. If you have a cool Mono solution, send us an email at [support@xamarin.com](mailto:support@xamarin.com).

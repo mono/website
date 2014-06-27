@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Support
-permalink: /docs/about/support/
 ---
 
 Stack Overflow

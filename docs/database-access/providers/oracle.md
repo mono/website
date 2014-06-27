@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Oracle
-permalink: /docs/database-access/providers/oracle/
 ---
 
 Mono comes with an Oracle client in the System.Data.OracleClient assembly and tracks the Microsoft System.Data.OracleClient library. This library has been discontinued by Microsoft and is no longer maintained.

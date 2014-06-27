@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Exception Handling
-permalink: /docs/internals/runtime/docs/exception-handling/
 ---
 
 Exception Handling In the Mono Runtime

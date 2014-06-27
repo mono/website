@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Gtk"
-permalink: /docs/faq/gtk/
 ---
 
 General Questions

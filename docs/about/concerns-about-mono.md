@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Concerns about Mono
-permalink: /docs/about/concerns-about-mono/
 ---
 
 Mono has attracted attention from those in the F/OSS community because of its origins as a Microsoft technology. While we believe Mono and .Net are useful tools, we respect the opinions of others that disagree and would rather use alternative languages and development frameworks. There are several common concerns, beyond that of personal choice, that we would like to answer.

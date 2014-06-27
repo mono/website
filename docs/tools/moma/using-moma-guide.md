@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Using MoMA Guide
-permalink: /docs/tools/moma/using-moma-guide/
 ---
 
 Step 1

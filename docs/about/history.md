@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: History
-permalink: /docs/about/history/
 ---
 
 Here are some historical data points about Mono:

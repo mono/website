@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Smells"
-permalink: /docs/tools/gendarme/rules/smells/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s refactoring suggestion rules are located in the **Gendarme.Rules.Smells.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Smells/).

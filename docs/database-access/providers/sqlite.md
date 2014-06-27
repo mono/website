@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: SQLite
-permalink: /docs/database-access/providers/sqlite/
 ---
 
 The Mono.Data.SqliteClient assembly contains an ADO.NET data provider for the [SQLite](http://www.sqlite.org/) embeddable database engine (both version 2 and version 3).

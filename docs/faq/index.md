@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: FAQ
-permalink: /docs/faq/
 ---
 
 This site provides an overview of all available FAQ's.

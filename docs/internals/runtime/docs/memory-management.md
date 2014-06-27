@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Memory Management
-permalink: /docs/internals/runtime/docs/memory-management/
 ---
 
 Metadata memory management

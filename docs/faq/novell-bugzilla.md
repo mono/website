@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Novell Bugzilla"
-permalink: /docs/faq/novell-bugzilla/
 ---
 
 Accounts

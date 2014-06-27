@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: UI"
-permalink: /docs/tools/gendarme/rules/ui/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s user interface rules are located in the **Gendarme.Rules.Ui.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Ui/).

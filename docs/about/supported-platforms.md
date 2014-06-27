@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Supported Platforms
-permalink: /docs/about/supported-platforms/
 ---
 
 Mono has support for both 32 and 64 bit systems on a number of architectures as well as a number of operating systems.

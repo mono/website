@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Portability"
-permalink: /docs/tools/gendarme/rules/portability/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s portability rules are located in the **Gendarme.Rules.Portability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Portability/).

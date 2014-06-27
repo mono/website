@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Mixing with Other Languages
-permalink: /docs/languages/mixing-with-other-languages/
 ---
 
 Mixing and Matching CLR Languages

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: MonoVS"
-permalink: /docs/faq/monovs/
 ---
 
 General

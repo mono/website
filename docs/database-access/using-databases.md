@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Using Databases
-permalink: /docs/database-access/using-databases/
 ---
 
 Mono can interact with a variety of commercial and open source databases using ADO.NET. The project's current goal for data access is to be compatible with the APIs exposed in .NET

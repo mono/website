@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Interoperability"
-permalink: /docs/tools/gendarme/rules/interoperability/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s interoperability rules are located in the **Gendarme.Rules.Interoperability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Interoperability/).

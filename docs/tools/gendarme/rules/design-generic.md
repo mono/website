@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Design - Generic"
-permalink: /docs/tools/gendarme/rules/design-generic/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s rules about generic-related design issues are located in the **Gendarme.Rules.Design.Generic.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design.Generic/).

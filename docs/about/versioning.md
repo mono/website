@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Versioning
-permalink: /docs/about/versioning/
 ---
 
 Mono's version numbering policy follows the Gnome and the Linux Kernel versioning policies. Mono *does not* follow or mimic .NET versioning in any way.

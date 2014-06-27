@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Generational GC
-permalink: /docs/internals/garbage-collector/sgen/
 ---
 
 This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{site.github.url}}/docs/internals/garbage-collector/sgen/working-with-sgen/).

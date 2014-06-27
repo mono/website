@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Code Coverage
-permalink: /docs/profiling/code-coverage/
 ---
 
 Code Coverage can be used to track how many of the code paths that your program is using are actually exercised.

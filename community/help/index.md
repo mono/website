@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Help
-permalink: /community/help/
 ---
 
  When having a more frequent problem as listed below please click the link to jump to the corresponding section:

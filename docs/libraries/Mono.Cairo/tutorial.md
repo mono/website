@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cairo Tutorial
-permalink: /docs/libraries/Mono.Cairo/tutorial/
 ---
 
 This tutorial is derived from Michael Urman's [cairo tutorial](http://www.tortall.net/mu/wiki/CairoTutorial) for python. The original code snippets have been translated to C\#, the text has only been changed as much as necessary. Translation to C\# done by mgsloan.

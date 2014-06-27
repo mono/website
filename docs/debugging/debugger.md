@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Debugger
-permalink: /docs/debugging/debugger/
 ---
 
 The Mono runtime implements a debugging interface that allows debuggers and IDEs to debug managed code. This is called the [Soft Debugger]({{site.github.url}}/old_site/Mono:Runtime:Documentation:SoftDebugger) and is supported by both MonoDevelop, Xamarin Studio and Visual Studio (when the appropriate plugins are installed) as well as the command line [SDB client](https://github.com/mono/sdb).

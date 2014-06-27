@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Technical"
-permalink: /docs/faq/technical/
 ---
 
 Mono Runtime

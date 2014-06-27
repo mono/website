@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Logos
-permalink: /docs/about/logos/
 ---
 
 [Mono.Logos.zip]({{site.github.url}}/old_site/images/a/a9/Mono.Logos.zip)

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: MoMA
-permalink: /docs/tools/moma/
 ---
 
 [![]({{site.github.url}}/old_site/images/5/53/Moma2p1.png)]({{site.github.url}}/old_site/images/5/53/Moma2p1.png)

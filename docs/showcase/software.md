@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Software
-permalink: /docs/showcase/software
 ---
 
 The following applications were developped with Mono and run on its runtime:

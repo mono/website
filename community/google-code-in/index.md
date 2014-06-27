@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Google Code-in
-permalink: /community/google-code-in/
 ---
 
 Here's are some initial ideas for students ... Most of them are "meta-ideas" that needs to be further detailed and split into (many) individual tasks.

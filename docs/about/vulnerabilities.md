@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Vulnerabilities
-permalink: /docs/about/vulnerabilities/
 ---
 
 Reporting vulnerabilities

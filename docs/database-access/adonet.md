@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: ADO.NET
-permalink: /docs/database-access/adonet/
 ---
 See our [Database\_Access]({{site.github.url}}/old_site/Database_Access "Database Access") page for more details.
 

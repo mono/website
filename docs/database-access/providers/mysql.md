@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: MySQL
-permalink: /docs/database-access/providers/mysql/
 ---
 
 Info

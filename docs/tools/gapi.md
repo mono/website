@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: GAPI
-permalink: /docs/tools/gapi/
 ---
 
 GAPI Overview

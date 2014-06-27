@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: GSoC Rules
-permalink: /community/google-summer-of-code/rules/
 ---
 
 This is the Mono Project's SoC rules page. For project ideas and other information, please see our [overview page]({{site.github.url}}/community/google-summer-of-code/).

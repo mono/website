@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Licensing"
-permalink: /docs/faq/licensing/
 ---
 
 Licensing

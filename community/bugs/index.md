@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: Bugs
-permalink: /community/bugs/
 ---
 
 **Current Project Bug Counts**

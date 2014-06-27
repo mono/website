@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: What is Mono?
-permalink: /docs/about/what-is-mono/
 ---
 
 Mono is a software platform designed to allow developers to easily create cross platform applications. It is an open source implementation of Microsoft's .Net Framework based on the [ECMA]({{site.github.url}}/old_site/ECMA "ECMA") standards for C\# and the Common Language Runtime. We feel that by embracing a successful, standardized software platform, we can lower the barriers to producing great applications for Linux.

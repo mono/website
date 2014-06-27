@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: ASP.NET"
-permalink: /docs/faq/aspnet/
 ---
 
 General

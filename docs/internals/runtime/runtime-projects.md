@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Runtime projects
-permalink: /docs/internals/runtime/runtime-projects/
 ---
 
 Current Projects for the Mono Runtime

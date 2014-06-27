@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: ODBC
-permalink: /docs/database-access/providers/odbc/
 ---
 
 Info

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Generic Sharing
-permalink: /docs/internals/runtime/docs/generic-sharing/
 ---
 
 Porting

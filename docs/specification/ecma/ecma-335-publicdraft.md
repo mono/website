@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: ECMA-335 CLI Public Draft
-permalink: /docs/specification/ecma-335-publicdraft/
 ---
 
 Ecma Common Language Infrastructure (CLI) Standard - Working Draft

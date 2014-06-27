@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Tools
-permalink: /docs/tools/
 ---
 
 There are several command line utitlities included in Mono that constitute the devevelopment toolchain. These are key components which you'll want to familiarize yourself with:

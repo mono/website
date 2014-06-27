@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: SGen DTrace
-permalink: /docs/internals/garbage-collector/sgen/dtrace/
 ---
 
 On MacOS X Mono's [Generational GC]({{site.github.url}}/docs/internals/garbage-collector/sgen/) is instrumented with several [DTrace]({{site.github.url}}/old_site/DTrace "DTrace") probes that give insight into the garbage collection process and can help in finding the causes for performance problems.

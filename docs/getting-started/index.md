@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Getting Started
-permalink: /docs/getting-started/
 ---
 
 [What is Mono?]({{site.github.url}}/docs/about/what-is-mono/)

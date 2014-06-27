@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Working With SGen
-permalink: /docs/internals/garbage-collector/sgen/working-with-sgen/
 ---
 
 SGen is a new and powerful garbage collector that we implemented for Mono. This new engine can be used for a wide range of applications from server workloads to desktop and mobile workloads and near-real time applications.

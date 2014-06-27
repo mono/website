@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Contact
-permalink: /docs/about/contact/
 ---
 
 There are various ways of contacting the Mono team:

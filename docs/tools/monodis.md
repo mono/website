@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Dis/Assembling CIL Code
-permalink: /docs/tools/monodis/
 ---
 
 IL Code

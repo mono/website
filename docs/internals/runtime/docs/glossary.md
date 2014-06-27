@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Glossary
-permalink: /docs/internals/runtime/docs/glossary/
 ---
 
 This is a glossary of terms/abbreviations used in the runtime source code

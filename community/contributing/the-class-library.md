@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: community
 title: The Class Library
-permalink: /community/contributing/the-class-library/
 ---
 
 The Class Library is be compatible with Microsoft's .NET implementation. Please see the [Class Status](/index.php?title=Class_Libraries&action=edit&redlink=1 "Class Libraries (page does not exist)") page for a status of who is working on which classes. We will write as much code as possible in C\#. We may need to interface with code written in C to gain access to the functionality of libraries like libart, Gtk+, and libc.

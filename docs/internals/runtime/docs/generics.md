@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Generics
-permalink: /docs/internals/runtime/docs/generics/
 ---
 
 Terminology

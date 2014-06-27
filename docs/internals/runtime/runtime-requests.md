@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Runtime requests
-permalink: /docs/internals/runtime/runtime-requests/
 ---
 
 SIMD

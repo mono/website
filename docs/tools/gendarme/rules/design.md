@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Design"
-permalink: /docs/tools/gendarme/rules/design/
 ---
 
 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s design rules are located in the **Gendarme.Rules.Design.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design/).

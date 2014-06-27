@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Winforms"
-permalink: /docs/faq/winforms/
 ---
 
 #### My forms are sized improperly

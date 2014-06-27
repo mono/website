@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Database Access
-permalink: /docs/database-access/
 ---
 
 Mono has many ADO.NET Data Providers to get you connected. Find the database you want to connect to and follow the link for instructions on how to set it up, as well as sample code for accessing the database.

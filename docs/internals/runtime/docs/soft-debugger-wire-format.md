@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Soft Debugger Wire Format
-permalink: /docs/internals/runtime/docs/soft-debugger-wire-format/
 ---
 
 Introduction

@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Small footprint
-permalink: /docs/compiling-mono/small-footprint/
 ---
 
 How to make a smaller Mono install

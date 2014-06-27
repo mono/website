@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Compatibility
-permalink: /docs/about/compatibility/
 ---
 
 The easiest way to describe what Mono currently supports is:

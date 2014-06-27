@@ -2,7 +2,6 @@
 layout: docpage
 navgroup: docs
 title: Gendarme Development FAQ
-permalink: /docs/tools/gendarme/development-faq/
 ---
 
 General
