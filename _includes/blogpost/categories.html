@@ -1,1 +1,1 @@
- {{ page.categories | join: ', ' }}{{ blogpost.categories | join: ', ' }}
+ {{ page.categories | join: ', ' | remove: 'news,' }}{{ blogpost.categories | join: ', ' | remove: 'news,' }}
