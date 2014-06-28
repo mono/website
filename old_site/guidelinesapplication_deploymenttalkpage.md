@@ -10,7 +10,7 @@ redirect_from:
 Guidelines:Application Deployment:Talkpage
 ==========================================
 
-Cheers to the authors of [this fantastic guidebook]({{site.github.url}}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment") for writing Mono applications!
+Cheers to the authors of [this fantastic guidebook]({{ site.github.url }}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment") for writing Mono applications!
 
 Being very new to formal Linux development (using autoconf and the rest), I wanted to start with **monoskel** for my project. With the newbie disclaimer, I'd like to share the problems I had in using it below, and I welcome any feedback. I'm running the latest Gentoo, and I have a working mono installation 1.1.8.3.
 

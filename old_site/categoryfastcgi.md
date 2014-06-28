@@ -10,5 +10,5 @@ redirect_from:
 Category:FastCGI
 ================
 
-Pages containing information about [FastCGI]({{site.github.url}}/old_site/FastCGI "FastCGI")
+Pages containing information about [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI")
 

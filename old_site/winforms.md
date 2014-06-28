@@ -48,13 +48,13 @@ WinForms
 Quick Resources
 ---------------
 
--   [Guide: Getting Started]({{site.github.url}}/old_site/WinForms_Getting_Started_Guide "WinForms Getting Started Guide")
--   [Guide: Porting Winforms Applications to Mono]({{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications")
--   [Guide: Debugging Winforms Applications with Visual Studio]({{site.github.url}}/old_site/Guide:_Debugging_With_MWF "Guide: Debugging With MWF")
+-   [Guide: Getting Started]({{ site.github.url }}/old_site/WinForms_Getting_Started_Guide "WinForms Getting Started Guide")
+-   [Guide: Porting Winforms Applications to Mono]({{ site.github.url }}/old_site/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications")
+-   [Guide: Debugging Winforms Applications with Visual Studio]({{ site.github.url }}/old_site/Guide:_Debugging_With_MWF "Guide: Debugging With MWF")
 -   [Tutorial: Using Winforms with Mono/C\#](http://zetcode.com/tutorials/monowinformstutorial/)
--   [Frequently Asked Questions about WinForms]({{site.github.url}}/old_site/FAQ:_Winforms "FAQ: Winforms")
+-   [Frequently Asked Questions about WinForms]({{ site.github.url }}/old_site/FAQ:_Winforms "FAQ: Winforms")
 -   Bugs [Current](http://bugzilla.novell.com/buglist.cgi?product=Mono%3A+Class+Libraries&component=Windows.Forms&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=bugs.bug_id), [Submit New](http://bugzilla.novell.com/enter_bug.cgi?alias=&assigned_to=&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=Normal&bug_status=NEW&cf_foundby=---&cf_nts_priority=&cf_nts_support_num=&cf_partnerid=&comment=Description%20of%20Problem%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20problem%3A%0D%0A1.%20%0D%0A2.%20%0D%0A%0D%0A%0D%0AActual%20Results%3A%0D%0A%0D%0A%0D%0AExpected%20Results%3A%0D%0A%0D%0A%0D%0AHow%20often%20does%20this%20happen%3F%20%0D%0A%0D%0A%0D%0AAdditional%20Information%3A%0D%0A%0D%0A%0D%0A&component=Windows.Forms&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&deadline=&dependson=&description=&estimated_time=0.0&flag_type-2=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Other&priority=P5%20-%20None&product=Mono%3A%20Class%20Libraries%20&qa_contact=&rep_platform=Other&short_desc=&version=unspecified)
--   Some [Winforms Samples]({{site.github.url}}/old_site/Winforms_Samples "Winforms Samples")
+-   Some [Winforms Samples]({{ site.github.url }}/old_site/Winforms_Samples "Winforms Samples")
 
 ### Code Status
 
@@ -63,17 +63,17 @@ Support for Windows Forms 2.0 is complete. At this point, we are largely just fi
 About System.Windows.Forms
 --------------------------
 
-System.Windows.Forms (aka Managed.Windows.Forms, MWF, Winforms) is one of the many [GUI Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits") for use with Mono and is compatible with Microsoft's System.Windows.Forms. Support for Winforms 1.1 and 2.0 has been completed, and is now in a maintenance/bug fixing state.
+System.Windows.Forms (aka Managed.Windows.Forms, MWF, Winforms) is one of the many [GUI Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits") for use with Mono and is compatible with Microsoft's System.Windows.Forms. Support for Winforms 1.1 and 2.0 has been completed, and is now in a maintenance/bug fixing state.
 
-System.Windows.Forms in Mono is implemented using System.Drawing. All controls are natively drawn through [System.Drawing]({{site.github.url}}/old_site/Drawing "Drawing"). System.Windows.Forms implements its own driver interface to communicate with the host OS windowing system. Currently, we have drivers for X11, Win32, and OSX. These drivers translate the native window messages into WndProc compatible messages, to provide as much compatibility with native .Net as possible.
+System.Windows.Forms in Mono is implemented using System.Drawing. All controls are natively drawn through [System.Drawing]({{ site.github.url }}/old_site/Drawing "Drawing"). System.Windows.Forms implements its own driver interface to communicate with the host OS windowing system. Currently, we have drivers for X11, Win32, and OSX. These drivers translate the native window messages into WndProc compatible messages, to provide as much compatibility with native .Net as possible.
 
 In terms of integrating visually with the desktop, we currently ship with a classic Win32 theme.
 
 ### Contributing
 
-The Winforms effort is being coordinated on the Mono-Winforms-List mailing list. If you would like to contribute, or need help using Winforms, it is suggested that you subscribe to this mailing list. (See [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") for details.)
+The Winforms effort is being coordinated on the Mono-Winforms-List mailing list. If you would like to contribute, or need help using Winforms, it is suggested that you subscribe to this mailing list. (See [Mailing Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists") for details.)
 
-Currently, all of the controls are pretty much complete. We are now mainly fixing bugs in our implementation. See [Bugs]({{site.github.url}}/old_site/Bugs "Bugs").
+Currently, all of the controls are pretty much complete. We are now mainly fixing bugs in our implementation. See [Bugs]({{ site.github.url }}/old_site/Bugs "Bugs").
 
 If you would like to contribute, you can:
 
@@ -82,7 +82,7 @@ If you would like to contribute, you can:
 
 Please note there are a few rules for contributing to Winforms:
 
--   The general rules from [Contributing]({{site.github.url}}/old_site/Contributing "Contributing"), especially the Special Notes at the bottom.
+-   The general rules from [Contributing]({{ site.github.url }}/old_site/Contributing "Contributing"), especially the Special Notes at the bottom.
 -   Controls must be drawn using System.Drawing code.
 -   Drawing code must be tied into the theming interface.
 -   If your method can be tested by an automated NUnit test, please include a test as well.
@@ -101,7 +101,7 @@ Mono's Windows.Forms implementation translates the native system events such as 
 
 ### Accessibility
 
-Currently Windows.Forms does not support accessibility, this is being worked on in a separate project that started in January of 2008. See the [Accessibility]({{site.github.url}}/old_site/Accessibility "Accessibility") page for details about how this will integrate into the system.
+Currently Windows.Forms does not support accessibility, this is being worked on in a separate project that started in January of 2008. See the [Accessibility]({{ site.github.url }}/old_site/Accessibility "Accessibility") page for details about how this will integrate into the system.
 
 Sample Code
 -----------
@@ -115,7 +115,7 @@ This section discusses the theming issues in Mono's implementation of Windows Fo
 
 ### Why Not Use Native Widgets?
 
-It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp").
+It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp").
 
 ### Fitting In
 
@@ -153,10 +153,10 @@ The current approach is to implement all controls fully in managed code, and use
 Webbrowser Control
 ------------------
 
-Information about the WebBrowser control can be found on the [WebBrowser]({{site.github.url}}/old_site/WebBrowser "WebBrowser") page.
+Information about the WebBrowser control can be found on the [WebBrowser]({{ site.github.url }}/old_site/WebBrowser "WebBrowser") page.
 
 WinForms Designer
 -----------------
 
-For more information [check here]({{site.github.url}}/old_site/WinForms_Designer "WinForms Designer").
+For more information [check here]({{ site.github.url }}/old_site/WinForms_Designer "WinForms Designer").
 

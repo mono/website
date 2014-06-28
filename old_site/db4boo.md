@@ -31,14 +31,14 @@ DB4BOO
 Introduction
 ------------
 
-Doing some research to build new Mono demos for tradeshows, I decided to research [db4o]({{site.github.url}}/old_site/DB4O "DB4O"), an open source object database that works with Mono as well as [Boo](http://boo.codehaus.org/), an simple object oriented scripting language for the CLR. Boo's simple syntax is especially attractive to me as I prototype or build little applications. Also, the [Boo](http://boo.codehaus.org/) shell in [Monodevelop]({{site.github.url}}/old_site/Development_Environments) (or in a Terminal, using *booish*) makes it very easy to try things out quickly.
+Doing some research to build new Mono demos for tradeshows, I decided to research [db4o]({{ site.github.url }}/old_site/DB4O "DB4O"), an open source object database that works with Mono as well as [Boo](http://boo.codehaus.org/), an simple object oriented scripting language for the CLR. Boo's simple syntax is especially attractive to me as I prototype or build little applications. Also, the [Boo](http://boo.codehaus.org/) shell in [Monodevelop]({{ site.github.url }}/old_site/Development_Environments) (or in a Terminal, using *booish*) makes it very easy to try things out quickly.
 
-Through this short tutorial, we'll use a little bit of [Boo](http://boo.codehaus.org/) to create a simplistic little application to test out and explore [db4o]({{site.github.url}}/old_site/DB4O "DB4O")'s object persistence features.
+Through this short tutorial, we'll use a little bit of [Boo](http://boo.codehaus.org/) to create a simplistic little application to test out and explore [db4o]({{ site.github.url }}/old_site/DB4O "DB4O")'s object persistence features.
 
 Boo
 ---
 
-Boo is a very interesting dynamic scripting language compatible with Mono and the Microsoft .NET CLR. Its simple syntax make it idea for prototyping quickly and much more. Boo is now packaged with Mono and included as an interactive shell and project wizards within [Monodevelop]({{site.github.url}}/old_site/Development_Environments).
+Boo is a very interesting dynamic scripting language compatible with Mono and the Microsoft .NET CLR. Its simple syntax make it idea for prototyping quickly and much more. Boo is now packaged with Mono and included as an interactive shell and project wizards within [Monodevelop]({{ site.github.url }}/old_site/Development_Environments).
 
 While Boo is statically typed, it's [Type Inference](http://boo.codehaus.org/Type+Inference) feature make it so that you never have to declare the type of "newly declared variables and fields, properties, arrays, for statement variables, overriden methods, method return types and generators".
 

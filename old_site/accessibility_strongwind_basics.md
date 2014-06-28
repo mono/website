@@ -50,7 +50,7 @@ For example, suppose you were designing a Strongwind test for an application wit
 
 This diagram summarizes how testing is performed using Strongwind.
 
-[![Strongwind arch.png]({{site.github.url}}/old_site/images/5/5a/Strongwind_arch.png)]({{site.github.url}}/old_site/images/5/5a/Strongwind_arch.png)
+[![Strongwind arch.png]({{ site.github.url }}/old_site/images/5/5a/Strongwind_arch.png)]({{ site.github.url }}/old_site/images/5/5a/Strongwind_arch.png)
 
 Writing Your First Script
 -------------------------
@@ -61,7 +61,7 @@ Before proceeding, we need an application accessible application through AT-SPI.
 
 As an example, we can use the [checkbutton.py](http://www.pygtk.org/pygtk2tutorial/examples/checkbutton.py) example from the [PyGTK 2.0 Tutorial](http://www.pygtk.org/pygtk2tutorial/).
 
-As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser]({{site.github.url}}/old_site/images/3/35/Checkbutton-accerciser.png)]({{site.github.url}}/old_site/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
+As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser]({{ site.github.url }}/old_site/images/3/35/Checkbutton-accerciser.png)]({{ site.github.url }}/old_site/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
 
 Now we are ready proceed by writing the application wrapper.
 
@@ -312,7 +312,7 @@ self.app.findPushButton(self.BUTTON_QUIT).click()
 self.findFrame(re.compile('^Check'), logName='Gtk Check Button')
 ```
 
-*Most* find\* functions are defined on-the-fly, similar to the action methods discussed above. Therefore, you won't find most find\* functions defined explicitly in the Strongwind source code. Some find\* functions, however, are unique and are defined explicitly in the source code. Two of the find\* functions defined expliceitly in the source code are *findFrame* and *findDialog* (which is also found in *accessibles.py*), which are unique because they are used to find windows and dialog boxes respectively. Windows and dialog boxes are great candidates for application wrappers, so when we use *findFrame* and *findDialog* we can create a class, which describes the window or dialog we are finding. In fact, we have already done this! Above, we explained that when using *findFrame(re.compile('\^Check'), logName='Gtk Check Button')* we needed to create a class named GtkCheckButton (based on the *logName* string) since we were created a wrapper for that frame. Well, *findDialog* also allows us to do the same thing for an accessible with the role "dialog". That means that if our testable application had a second button that opened a new dialog, we could easily create a wrapper for that dialog by creating a new class and using the naming rules explained under the [\_\_init\_\_.py heading]({{site.github.url}}/index.php?title=Accessibility:_Strongwind_Basics#__init__.py).
+*Most* find\* functions are defined on-the-fly, similar to the action methods discussed above. Therefore, you won't find most find\* functions defined explicitly in the Strongwind source code. Some find\* functions, however, are unique and are defined explicitly in the source code. Two of the find\* functions defined expliceitly in the source code are *findFrame* and *findDialog* (which is also found in *accessibles.py*), which are unique because they are used to find windows and dialog boxes respectively. Windows and dialog boxes are great candidates for application wrappers, so when we use *findFrame* and *findDialog* we can create a class, which describes the window or dialog we are finding. In fact, we have already done this! Above, we explained that when using *findFrame(re.compile('\^Check'), logName='Gtk Check Button')* we needed to create a class named GtkCheckButton (based on the *logName* string) since we were created a wrapper for that frame. Well, *findDialog* also allows us to do the same thing for an accessible with the role "dialog". That means that if our testable application had a second button that opened a new dialog, we could easily create a wrapper for that dialog by creating a new class and using the naming rules explained under the [\_\_init\_\_.py heading]({{ site.github.url }}/index.php?title=Accessibility:_Strongwind_Basics#__init__.py).
 
 The keen observer will also notice *findAlert* is in *accesibles.py*. *findAlert* does not act like *findDialog* and *findFrame*, however. *findAlert* is unique because alerts typically have no name, so we have to search for them by their content. Other find\* functions search according to the name of the accessible, not the content.
 
@@ -414,7 +414,7 @@ cbFrame.assertUnchecked(cbFrame.checkbox2)
 cbFrame.quit()
 ```
 
-Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script]({{site.github.url}}/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
+Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script]({{ site.github.url }}/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
 
 ``` python
 # tell the user where to find the log
@@ -444,10 +444,10 @@ Tips & Tricks
 -   Using a Python interactive interpreter can be very helpful when trying to debug your problems. I like to test my application wrappers by importing them and calling their methods from the interpreter. You will want to call watchdog.stop(), however, or the watchdog will likely timeout when you're trying to work. You can also increase the WATCHDOG\_TIMEOUT in Strongwind's *config.py*.
 -   If you want to debug a test script at a certain point, it's often useful to import pdb and then call pdb.set\_trace() at the point you wish to start debugging. This basically preserves everything and drops you at an interactive python prompt where you can use strongwind function calls to poke and prod at the app (Thanks Jonathan Tai)
 
- Have your own tip or trick? Add it here or talk to one of the [QA hackers]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team") on IRC!
+ Have your own tip or trick? Add it here or talk to one of the [QA hackers]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team") on IRC!
 
 What Now?
 ---------
 
-Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto]({{ site.github.url }}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
 

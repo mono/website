@@ -72,7 +72,7 @@ The major components that will not ship in the Mono 1.0 time frame are Code Acce
 
 COM is not wildly used in Unix, only a few apps use it, and when they do, its their own version of COM (Mozilla and OpenOffice), so we have no plans at this point for that.
 
-For more information, you might want to read the [Mono Roadmap](http://www.go-mono.com/mono-roadmap.html) , which contains the precise plans for future relases of Mono, or the [FAQ]({{site.github.url}}/about/faq.html) .
+For more information, you might want to read the [Mono Roadmap](http://www.go-mono.com/mono-roadmap.html) , which contains the precise plans for future relases of Mono, or the [FAQ]({{ site.github.url }}/about/faq.html) .
 
 Mono and Licensing
 ==================

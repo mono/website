@@ -68,7 +68,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/mono-winforms-list">mono-winforms-list</a></td>
-<td align="left"><p>Used to discuss the <a href="{{site.github.url}}/old_site/WinForms" title="WinForms">Windows.Forms</a> implementation for Mono.</p></td>
+<td align="left"><p>Used to discuss the <a href="{{ site.github.url }}/old_site/WinForms" title="WinForms">Windows.Forms</a> implementation for Mono.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/gtk-sharp-list">gtk-sharp-list</a></td>
@@ -80,11 +80,11 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr class="even">
 <td align="left"><a href="http://groups.google.com/group/mono-addins">mono-addins</a></td>
-<td align="left">Discussion on the <a href="{{site.github.url}}/old_site/Mono.Addins" title="Mono.Addins">Mono.Addins</a> Framework.</td>
+<td align="left">Discussion on the <a href="{{ site.github.url }}/old_site/Mono.Addins" title="Mono.Addins">Mono.Addins</a> Framework.</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/monodevelop-list">monodevelop-list</a></td>
-<td align="left">Discussion on the <a href="{{site.github.url}}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a> IDE.</td>
+<td align="left">Discussion on the <a href="{{ site.github.url }}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a> IDE.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list">monodevelop-devel-list</a></td>
@@ -92,27 +92,27 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/mono-osx">mono-osx</a></td>
-<td align="left">Discuss Mono on <a href="{{site.github.url}}/old_site/Mono:OSX" title="Mono:OSX">Mac OS X</a>.</td>
+<td align="left">Discuss Mono on <a href="{{ site.github.url }}/old_site/Mono:OSX" title="Mono:OSX">Mac OS X</a>.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/monotouch">monotouch</a></td>
-<td align="left">Discuss <a href="{{site.github.url}}/old_site/MonoTouch" title="MonoTouch">MonoTouch</a>, the Mono for iPhone edition.</td>
+<td align="left">Discuss <a href="{{ site.github.url }}/old_site/MonoTouch" title="MonoTouch">MonoTouch</a>, the Mono for iPhone edition.</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/cocoa-sharp">cocoa-sharp</a></td>
-<td align="left">Discussion on the development of the <a href="{{site.github.url}}/old_site/MonoMac">Cocoa# API</a> bindings for Mono on Mac OS X.</td>
+<td align="left">Discussion on the development of the <a href="{{ site.github.url }}/old_site/MonoMac">Cocoa# API</a> bindings for Mono on Mac OS X.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="http://groups.google.com/group/mono-cecil">mono-cecil</a></td>
-<td align="left">Discussion on the CIL manipulation library <a href="{{site.github.url}}/old_site/Cecil" title="Cecil">Cecil</a>.</td>
+<td align="left">Discussion on the CIL manipulation library <a href="{{ site.github.url }}/old_site/Cecil" title="Cecil">Cecil</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://groups.google.com/group/gendarme">gendarme</a></td>
-<td align="left">User and developer discussions on the <a href="{{site.github.url}}/old_site/Gendarme" title="Gendarme">Gendarme</a> static code analyzer tool.</td>
+<td align="left">User and developer discussions on the <a href="{{ site.github.url }}/old_site/Gendarme" title="Gendarme">Gendarme</a> static code analyzer tool.</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="http://groups.google.com/group/mono-olive">mono-olive</a></td>
-<td align="left">Discussion on the implementation of the .NET 3.0 amd 3.5 APIs codenamed Olive. See the <a href="{{site.github.url}}/old_site/Olive" title="Olive">Olive</a> page (3.0 and 3.5) for details.</td>
+<td align="left">Discussion on the implementation of the .NET 3.0 amd 3.5 APIs codenamed Olive. See the <a href="{{ site.github.url }}/old_site/Olive" title="Olive">Olive</a> page (3.0 and 3.5) for details.</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://groups.google.com/group/dblinq">dblinq</a></td>
@@ -120,7 +120,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr class="even">
 <td align="left"><a href="http://lists.ximian.com/mailman/listinfo/moonlight-list">moonlight-list</a></td>
-<td align="left">Discussion on the development of <a href="{{site.github.url}}/old_site/Moonlight" title="Moonlight">Moonlight</a>.</td>
+<td align="left">Discussion on the development of <a href="{{ site.github.url }}/old_site/Moonlight" title="Moonlight">Moonlight</a>.</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="http://groups.google.com/group/monoxna">monoxna</a></td>

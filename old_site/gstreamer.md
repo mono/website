@@ -25,6 +25,6 @@ Tutorials
 ---------
 
 -   Getting gstreamer-sharp
-    -   [Installing from source]({{site.github.url}}/old_site/GStreamerSharpInstallingFromSource "GStreamerSharpInstallingFromSource")
+    -   [Installing from source]({{ site.github.url }}/old_site/GStreamerSharpInstallingFromSource "GStreamerSharpInstallingFromSource")
 
 

@@ -53,7 +53,7 @@ fine, thanks sandy, mario can you go now?
 I'm glad to announce that ListBox, ScrollBar and ComboBox support navigation.
 however, I'm still missing some tests, and I need to read the StructureChanged documentation in order to generate the valid events
 06:10
-I've update the wiki [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Winforms\_Implementation
+I've update the wiki [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Winforms\_Implementation
 s/update/updated
 I need to write the Navigation stuff in that page
 06:11
@@ -333,6 +333,6 @@ done
 hehe, fine!
 we'll change the topic then
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility: [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y
+-!- knocte changed the topic of \#mono-a11y to: Accessibility: [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y
 06:52
 

@@ -11,7 +11,7 @@ redirect_from:
 Config system.web authentication
 ================================
 
-The \<authentication\> directive appears inside the [\<system.web\>]({{site.github.url}}/old_site/Config_system.web "Config system.web") section of Web.config and has the following format:
+The \<authentication\> directive appears inside the [\<system.web\>]({{ site.github.url }}/old_site/Config_system.web "Config system.web") section of Web.config and has the following format:
 
 ``` xml
 <authentication mode="[None|Forms]">

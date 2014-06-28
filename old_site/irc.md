@@ -25,12 +25,12 @@ Channels:
 -   \#monodevelop: Chat related to the [MonoDevelop](http://www.monodevelop.com) IDE.
 -   \#mono-hispano: general discussion of Mono (in spanish).
 -   \#monouml: general discussion of MonoUML.
--   \#gendarme: discussion, mostly development oriented, about [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")
--   \#mono-a11y: [Accessibility]({{site.github.url}}/old_site/Accessibility "Accessibility") and [UI Automation]({{site.github.url}}/old_site/UI_Automation "UI Automation")
--   \#moonlight: discussion on the [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") implementation of Silverlight.
+-   \#gendarme: discussion, mostly development oriented, about [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")
+-   \#mono-a11y: [Accessibility]({{ site.github.url }}/old_site/Accessibility "Accessibility") and [UI Automation]({{ site.github.url }}/old_site/UI_Automation "UI Automation")
+-   \#moonlight: discussion on the [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") implementation of Silverlight.
 -   \#monotouch: Discussion on Mono for the iPhone, [MonoTouch](http://monotouch.net)
 -   \#monodroid: Discussion of Mono on the Android, [[1]](http://monodroid.net)
--   \#monomac: Discussion of the [MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac") bindings for Mono on OSX
+-   \#monomac: Discussion of the [MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac") bindings for Mono on OSX
 
 **Network:** OFTC (servers: irc.oftc.net)
 

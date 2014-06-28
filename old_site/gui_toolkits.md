@@ -45,22 +45,22 @@ Both GTK\# and Winforms, while being cross-platform, have clear roots in their o
 Toolkits
 ========
 
-[Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp")
+[Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
 ---------------------------------------------------------
 
-[![]({{site.github.url}}/old_site/images/5/5e/Banshee1.png)]({{site.github.url}}/old_site/images/5/5e/Banshee1.png)
+[![]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/5/5e/Banshee1.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png "Enlarge")
 
 [Banshee](http://banshee-project.org/Main_Page), a GTK\# app
 
-[![]({{site.github.url}}/old_site/images/9/92/Fspot1.png)]({{site.github.url}}/old_site/images/9/92/Fspot1.png)
+[![]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/9/92/Fspot1.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/9/92/Fspot1.png "Enlarge")
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK\# app
 
-Homepage: [GtkSharp]({{site.github.url}}/old_site/GtkSharp "GtkSharp")
+Homepage: [GtkSharp]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
 
 GTK\# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK\# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
 
@@ -84,14 +84,14 @@ Cons:
 -   Gtk+ apps run like foreign applications on MacOS X.
 -   Incomplete documentation.
 
-[MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac")
+[MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac")
 ---------------------------------------------------------
 
-Homepage: [MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac")
+Homepage: [MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac")
 
 MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C\#, it is not limited to the AppKit GUI APIs.
 
-The MonoMac APIs replaced the old [CocoaSharp]({{site.github.url}}/old_site/MonoMac) binding, which is now deprecated.
+The MonoMac APIs replaced the old [CocoaSharp]({{ site.github.url }}/old_site/MonoMac) binding, which is now deprecated.
 
 Platforms: OSX
 
@@ -104,22 +104,22 @@ Cons:
 
 -   Not portable outside of MacOS X.
 
-[Windows.Forms]({{site.github.url}}/old_site/WinForms "WinForms")
+[Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms")
 -----------------------------------------------------------------
 
-[![]({{site.github.url}}/old_site/images/7/71/Nunit1.png)]({{site.github.url}}/old_site/images/7/71/Nunit1.png)
+[![]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/7/71/Nunit1.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png "Enlarge")
 
 [NUnit](http://www.nunit.org/), a Winforms app
 
-[![]({{site.github.url}}/old_site/images/3/32/Screenshot-SharpChess.png)]({{site.github.url}}/old_site/images/3/32/Screenshot-SharpChess.png)
+[![]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/3/32/Screenshot-SharpChess.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png "Enlarge")
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
-Homepage: [Winforms]({{site.github.url}}/old_site/WinForms "WinForms")
+Homepage: [Winforms]({{ site.github.url }}/old_site/WinForms "WinForms")
 
 Windows.Forms is a binding developed by Microsoft to the Win32 toolkit. As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
 
@@ -162,9 +162,9 @@ This is a port of the QtJambi java bindings to .net using IKVM.
 wxNet
 -----
 
-[![]({{site.github.url}}/old_site/images/c/cf/Linux-05.png)]({{site.github.url}}/old_site/images/c/cf/Linux-05.png)
+[![]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/c/cf/Linux-05.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png "Enlarge")
 
 wx\# Sample
 
@@ -188,7 +188,7 @@ Cons:
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits]({{site.github.url}}/old_site/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits]({{ site.github.url }}/old_site/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
 
 Alternative Implementation Approaches
 =====================================
@@ -216,13 +216,13 @@ As an example, consider the UI for [Tangerine](http://snorp.net/log/tangerine) a
 
 On Windows:
 
-[![Tangerine-prefs-win32-new.png]({{site.github.url}}/old_site/images/1/17/Tangerine-prefs-win32-new.png)]({{site.github.url}}/old_site/images/1/17/Tangerine-prefs-win32-new.png)
+[![Tangerine-prefs-win32-new.png]({{ site.github.url }}/old_site/images/1/17/Tangerine-prefs-win32-new.png)]({{ site.github.url }}/old_site/images/1/17/Tangerine-prefs-win32-new.png)
 
 On Linux with Gnome:
 
-[![Tangerine-properties.png]({{site.github.url}}/old_site/images/e/e3/Tangerine-properties.png)]({{site.github.url}}/old_site/images/e/e3/Tangerine-properties.png)
+[![Tangerine-properties.png]({{ site.github.url }}/old_site/images/e/e3/Tangerine-properties.png)]({{ site.github.url }}/old_site/images/e/e3/Tangerine-properties.png)
 
 On MacOS X:
 
-[![Tangerine-preferences-mac.png]({{site.github.url}}/old_site/images/a/a6/Tangerine-preferences-mac.png)]({{site.github.url}}/old_site/images/a/a6/Tangerine-preferences-mac.png)
+[![Tangerine-preferences-mac.png]({{ site.github.url }}/old_site/images/a/a6/Tangerine-preferences-mac.png)]({{ site.github.url }}/old_site/images/a/a6/Tangerine-preferences-mac.png)
 

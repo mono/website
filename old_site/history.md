@@ -33,8 +33,8 @@ Here are some historical data points about Mono:
 Early Posts
 ===========
 
--   [Mono and GNOME, the long reply](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Local Copy]({{site.github.url}}/old_site/Mailpost:longreply "Mailpost:longreply")
--   [Mono early history](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Local Copy]({{site.github.url}}/old_site/Mailpost:earlystory "Mailpost:earlystory")
+-   [Mono and GNOME, the long reply](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Local Copy]({{ site.github.url }}/old_site/Mailpost:longreply "Mailpost:longreply")
+-   [Mono early history](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Local Copy]({{ site.github.url }}/old_site/Mailpost:earlystory "Mailpost:earlystory")
 
 Milestones
 ==========

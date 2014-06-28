@@ -6,7 +6,7 @@ title: Code Coverage
 
 Code Coverage can be used to track how many of the code paths that your program is using are actually exercised.
 
-For more information see [Profile]({{site.github.url}}/old_site/Profile "Profile").
+For more information see [Profile]({{ site.github.url }}/old_site/Profile "Profile").
 
 MonoCov
 =======

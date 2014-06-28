@@ -73,7 +73,7 @@ For example, Gtk.TreeModelAdapter implements a Foreach method which pinvokes the
 An Example
 ==========
 
-[![Ifaces.png]({{site.github.url}}/old_site/images/f/f0/Ifaces.png)]({{site.github.url}}/old_site/images/f/f0/Ifaces.png)
+[![Ifaces.png]({{ site.github.url }}/old_site/images/f/f0/Ifaces.png)]({{ site.github.url }}/old_site/images/f/f0/Ifaces.png)
 
 The TreeModelDemo sample application from the gtk-sharp package demonstrates implementation of a custom TreeModel in managed code. The custom model exposes the assemblies, types, and members of the current AppDomain using reflection. The sample source code can be viewed on-line:
 

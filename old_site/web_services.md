@@ -12,8 +12,8 @@ Web Services
 
 Web services are basically a modern form of a remote procedure call (RPC) system. They allow applications on one machine to execute operations on another machine. Systems integrators use web services to make widely differing systems talk to one another.
 
--   [Using WebServices with Gtk\# applications]({{site.github.url}}/old_site/Webservices_and_GtkSharp "Webservices and GtkSharp")
--   [See this article with Visual Basic code]({{site.github.url}}/old_site/Web_Services_(Visual_Basic) "Web Services (Visual Basic)")
+-   [Using WebServices with Gtk\# applications]({{ site.github.url }}/old_site/Webservices_and_GtkSharp "Webservices and GtkSharp")
+-   [See this article with Visual Basic code]({{ site.github.url }}/old_site/Web_Services_(Visual_Basic) "Web Services (Visual Basic)")
 
 <table>
 <col width="100%" />

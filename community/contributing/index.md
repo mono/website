@@ -4,20 +4,20 @@ navgroup: community
 title: Contributing
 ---
 
-Track our various [Development Plans]({{site.github.url}}/old_site/Plans "Plans")
+Track our various [Development Plans]({{ site.github.url }}/old_site/Plans "Plans")
 
 **Resources**
 
 Users:
-  [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") | [Bug Reporting]({{site.github.url}}/old_site/Bugs "Bugs") | [Software]({{site.github.url}}/old_site/Software "Software")
+  [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") | [Bug Reporting]({{ site.github.url }}/old_site/Bugs "Bugs") | [Software]({{ site.github.url }}/old_site/Software "Software")
  Developers:
-  [API Docs](http://www.go-mono.com/docs/) | [Languages]({{site.github.url}}/old_site/Languages "Languages") | [Books]({{site.github.url}}/old_site/Books "Books") | [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap) | [Plans]({{site.github.url}}/old_site/Plans "Plans")
+  [API Docs](http://www.go-mono.com/docs/) | [Languages]({{ site.github.url }}/old_site/Languages "Languages") | [Books]({{ site.github.url }}/old_site/Books "Books") | [Roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap) | [Plans]({{ site.github.url }}/old_site/Plans "Plans")
  Contributors:
-  [Class Status]({{site.github.url}}/old_site/Resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{site.github.url}}/old_site/SourceCodeRepository)
+  [Class Status]({{ site.github.url }}/old_site/Resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{ site.github.url }}/old_site/SourceCodeRepository)
  Community:
-  [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat]({{site.github.url}}/old_site/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)
+  [Mailing Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat]({{ site.github.url }}/old_site/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)
  FAQ:
-  [General]({{site.github.url}}/old_site/FAQ:_General "FAQ: General") | [Technical]({{site.github.url}}/old_site/FAQ:_Technical "FAQ: Technical") | [Licensing]({{site.github.url}}/old_site/FAQ:_Licensing "FAQ: Licensing") | [Asp.net]({{site.github.url}}/old_site/FAQ:_ASP.NET "FAQ: ASP.NET") | [Security]({{site.github.url}}/old_site/FAQ:_Security "FAQ: Security") | [WinForms]({{site.github.url}}/old_site/FAQ:_Winforms "FAQ: Winforms")
+  [General]({{ site.github.url }}/old_site/FAQ:_General "FAQ: General") | [Technical]({{ site.github.url }}/old_site/FAQ:_Technical "FAQ: Technical") | [Licensing]({{ site.github.url }}/old_site/FAQ:_Licensing "FAQ: Licensing") | [Asp.net]({{ site.github.url }}/old_site/FAQ:_ASP.NET "FAQ: ASP.NET") | [Security]({{ site.github.url }}/old_site/FAQ:_Security "FAQ: Security") | [WinForms]({{ site.github.url }}/old_site/FAQ:_Winforms "FAQ: Winforms")
 
 Mono shipped its first release in June 2004, and the project is moving forward in various directions:
 
@@ -27,9 +27,9 @@ Mono shipped its first release in June 2004, and the project is moving forward i
 
 If you are interested in contributing, here are some pointers:
 
--   [Bugs]({{site.github.url}}/old_site/Bugs "Bugs"): Known bugs in Mono, you can look at which issues people are reporting.
+-   [Bugs]({{ site.github.url }}/old_site/Bugs "Bugs"): Known bugs in Mono, you can look at which issues people are reporting.
 -   [MoMA Migration Reports](/index.php?title=MoMA_Migration_Reports&action=edit&redlink=1 "MoMA Migration Reports (page does not exist)"): These are report of applications that people want to run with Mono, and the APIs that are missing or pending
--   [Resources]({{site.github.url}}/old_site/Resources "Resources"): Go to this page to take a look at the status of our API classes.
+-   [Resources]({{ site.github.url }}/old_site/Resources "Resources"): Go to this page to take a look at the status of our API classes.
 
 The project is under active development and has a vibrant community. If you are looking at ways of helping the project, you have come to the right web page.
 
@@ -53,17 +53,17 @@ Microsoft also publishes a lot of code under open source licenses (MS-PL or Apac
 Work Areas
 ==========
 
-Our immediate goals are described in the [Mono Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans]({{site.github.url}}/old_site/Plans "Plans") page.
+Our immediate goals are described in the [Mono Roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans]({{ site.github.url }}/old_site/Plans "Plans") page.
 
-You might want to look at the project [To-Do]({{site.github.url}}/old_site/Todo "Todo") list, there are various medium and large projects there.
+You might want to look at the project [To-Do]({{ site.github.url }}/old_site/Todo "Todo") list, there are various medium and large projects there.
 
 Those are just broad things that need to be worked on, but something that would help tremendously would be to help with small duties in the project that need to be addressed.
 
 You can see what needs to be done in the class libraries [here](http://www.go-mono.com/status/)
 
-You can help write documentation, please see [Mono Documentation Improvement Project]({{site.github.url}}/old_site/Mono_Documentation_Improvement_Project "Mono Documentation Improvement Project").
+You can help write documentation, please see [Mono Documentation Improvement Project]({{ site.github.url }}/old_site/Mono_Documentation_Improvement_Project "Mono Documentation Improvement Project").
 
-After you have commited your patches to our [SVN]({{site.github.url}}/old_site/SourceCodeRepository) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
+After you have commited your patches to our [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 
 Contributing to Mono
 ====================
@@ -77,7 +77,7 @@ This is useful because once you submit the code it will help others not introduc
 
 You should test the NUnit test cases on the real framework and make sure that all tests pass. Then these tests can be directly integrated into our build system.
 
-When contributing to the class libraries, please have a look at our [Coding\_Guidelines]({{site.github.url}}/old_site/Coding_Guidelines "Coding Guidelines"). Note that our coding format is different from the default style from Visual Studio.
+When contributing to the class libraries, please have a look at our [Coding\_Guidelines]({{ site.github.url }}/old_site/Coding_Guidelines "Coding Guidelines"). Note that our coding format is different from the default style from Visual Studio.
 
 Testing on Various Platforms
 ----------------------------
@@ -94,7 +94,7 @@ If you find that one of your commits broke something, don't panic! Just please e
 Maintaining Multiple Trees
 --------------------------
 
-If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments]({{site.github.url}}/old_site/Parallel_Mono_Environments "Parallel Mono Environments") page.
+If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments]({{ site.github.url }}/old_site/Parallel_Mono_Environments "Parallel Mono Environments") page.
 
 Maintaining Mono git submodules
 -------------------------------
@@ -115,8 +115,8 @@ Ways to Contribute
 
 There are three different philosophical approaches to helping the Mono project:
 
--   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report]({{site.github.url}}/old_site/Bugs "Bugs"); track down the problem and provide a better [bug report]({{site.github.url}}/old_site/Bugs "Bugs"); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](http://lists.ximian.com/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test]({{site.github.url}}/old_site/Test_Suite "Test Suite") so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC]({{site.github.url}}/old_site/IRC "IRC") channels.
+-   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report]({{ site.github.url }}/old_site/Bugs "Bugs"); track down the problem and provide a better [bug report]({{ site.github.url }}/old_site/Bugs "Bugs"); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](http://lists.ximian.com/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test]({{ site.github.url }}/old_site/Test_Suite "Test Suite") so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC]({{ site.github.url }}/old_site/IRC "IRC") channels.
 
--   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class]({{site.github.url}}/old_site/The_Class_Library "The Class Library") (from our [Class\_Status]({{site.github.url}}/old_site/Class_Status "Class Status")); help with the [documentation effort]({{site.github.url}}/old_site/Documentation "Documentation") ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs]({{site.github.url}}/old_site/Bugs); help with the [tools]({{site.github.url}}/old_site/Tools "Tools") or writing [tests]({{site.github.url}}/old_site/Test_Suite "Test Suite") that help make Mono more robust.
+-   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class]({{ site.github.url }}/old_site/The_Class_Library "The Class Library") (from our [Class\_Status]({{ site.github.url }}/old_site/Class_Status "Class Status")); help with the [documentation effort]({{ site.github.url }}/old_site/Documentation "Documentation") ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs]({{ site.github.url }}/old_site/Bugs); help with the [tools]({{ site.github.url }}/old_site/Tools "Tools") or writing [tests]({{ site.github.url }}/old_site/Test_Suite "Test Suite") that help make Mono more robust.
 
--   The **educational** way is an interesting one, because you pick a technology you are interested in, and work on that technology to learn the technology. If you are interested in it, please take a look at [this list]({{site.github.url}}/old_site/StudentProjects "StudentProjects") for possible projects.
+-   The **educational** way is an interesting one, because you pick a technology you are interested in, and work on that technology to learn the technology. If you are interested in it, please take a look at [this list]({{ site.github.url }}/old_site/StudentProjects "StudentProjects") for possible projects.

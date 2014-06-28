@@ -92,7 +92,7 @@ The current svn rev of GARMONO targets Mono 1.9 for Maemo Chinook (or Nokia OS20
 Building
 --------
 
-Before create packages you must first install [Mono Scratchbox Devkit]({{site.github.url}}/old_site/Scratchbox "Scratchbox") or you ARM packages generation could fail. Assuming you have Scratchbox setup and the devkit installed follow the steps provided below:
+Before create packages you must first install [Mono Scratchbox Devkit]({{ site.github.url }}/old_site/Scratchbox "Scratchbox") or you ARM packages generation could fail. Assuming you have Scratchbox setup and the devkit installed follow the steps provided below:
 
 Generating packages (.deb)
 --------------------------
@@ -125,7 +125,7 @@ To Do
 
 Maemo apps built against OS2007 will not run out of the box on OS2008. This link outlines the differences between the SDKs: [http://maemo.org/development/sdks/api\_changes\_between\_maemo\_3\_2\_and\_maemo\_4\_0.html](http://maemo.org/development/sdks/api_changes_between_maemo_3_2_and_maemo_4_0.html) This is important because it means the mono wrappers will need to be reworked.
 
-See: [GAPI]({{site.github.url}}/old_site/GAPI "GAPI") for how to generate C\# wrappers.
+See: [GAPI]({{ site.github.url }}/old_site/GAPI "GAPI") for how to generate C\# wrappers.
 
 Future Work
 ===========

@@ -50,7 +50,7 @@ The Mono scratchbox devkit includes a full Mono installation, gtk-sharp 2.4.3 an
 
 The Mono apt repository for Nokia includes the mono runtime, gtk-sharp, maemo-sharp and Paco's peditgtksharp sample application. Look [here](http://go-mono.com/maemo/packages.list) for a full list of packages available in the repository. If you need any Mono assembly that is not available in the repository please contact us on the Mono mailing lists.
 
-If you are interested in building Mono Scratchbox devkit from sources, please check our [Scratchbox]({{site.github.url}}/old_site/Scratchbox "Scratchbox") page.
+If you are interested in building Mono Scratchbox devkit from sources, please check our [Scratchbox]({{ site.github.url }}/old_site/Scratchbox "Scratchbox") page.
 
 Screenshots and Movies
 ======================
@@ -59,7 +59,7 @@ Screenshots and Movies
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 
-[PEditGtkSharp running on N800]({{site.github.url}}/Image:PEditGtkSharpN800.gif)
+[PEditGtkSharp running on N800]({{ site.github.url }}/Image:PEditGtkSharpN800.gif)
 
 [A single binary running on maemo and other platforms](http://www.mdk.org.pl/2007/1/28/clone-wars)
 
@@ -104,7 +104,7 @@ If you want to enable devkit for your ARMEL and/or X86 targets just type:
 
 Now that the devkit is installed, a target that uses it must be created (or an existing target must be reconfigured). You can follow the instructions in [Section 2.4 of Scratchbox's Install guide](http://www.scratchbox.org/documentation/user/scratchbox-1.0/html/installdoc.html#cctarget) but select 'mono' in the devkit selection menu.
 
-You could be also interested in create devkit from sources, the instructions can be found [here]({{site.github.url}}/Scratchbox).
+You could be also interested in create devkit from sources, the instructions can be found [here]({{ site.github.url }}/Scratchbox).
 
 Todo
 ----

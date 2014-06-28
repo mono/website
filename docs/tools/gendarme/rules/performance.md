@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Performance"
 ---
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s performance rules are located in the **Gendarme.Rules.Performance.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Performance/).
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s performance rules are located in the **Gendarme.Rules.Performance.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Performance/).
 
 <table>
 <col width="100%" />

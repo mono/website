@@ -32,7 +32,7 @@ Accessibility: Winforms Implementation
 Diagram
 -------
 
-[![Uia-winform-diagram.png]({{site.github.url}}/old_site/images/4/46/Uia-winform-diagram.png)]({{site.github.url}}/old_site/images/4/46/Uia-winform-diagram.png)
+[![Uia-winform-diagram.png]({{ site.github.url }}/old_site/images/4/46/Uia-winform-diagram.png)]({{ site.github.url }}/old_site/images/4/46/Uia-winform-diagram.png)
 
 Definitions
 -----------

@@ -10,5 +10,5 @@ redirect_from:
 Compiling Mono From GIT
 =======================
 
-[Compiling Mono From Git]({{site.github.url}}/old_site/Compiling_Mono_From_Git "Compiling Mono From Git")
+[Compiling Mono From Git]({{ site.github.url }}/old_site/Compiling_Mono_From_Git "Compiling Mono From Git")
 

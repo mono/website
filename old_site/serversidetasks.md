@@ -16,7 +16,7 @@ Here is the list of what we don't have in Mono yet. [foo] refers to the version.
 
 -   ADO.NET
     -   Linq to SQL [3.5]: it depends on dblinq effort. Currently it has about 100 todos. Some of them are not easy. There's also complexity on multiple database support and connection string.
-    -   Linq to Entities (EF) [3.5+]: I wrote an analysis [here]({{site.github.url}}/EntityFramework).
+    -   Linq to Entities (EF) [3.5+]: I wrote an analysis [here]({{ site.github.url }}/EntityFramework).
 
 -   ASP.NET 3.5/SP1 data involved stuff
     -   LinqDataSource [3.5] depends on L2SQL. grendel is going to implement it based on .NET's L2SQL.

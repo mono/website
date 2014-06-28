@@ -31,12 +31,12 @@ Introduction
 
 This article describes how to build Gtk\# \>= 2.12.9 on Windows.
 
-We recommend to use Gtk\# trunk from our [AnonSVN]({{site.github.url}}/old_site/SourceCodeRepository) repository which currently targets Gtk+ 2.14 as it builds much faster.
+We recommend to use Gtk\# trunk from our [AnonSVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository which currently targets Gtk+ 2.14 as it builds much faster.
 
 Dependencies
 ------------
 
-Building GTK\# 2 uses a similar process as [Compiling\_Mono\_on\_Windows]({{site.github.url}}/old_site/Compiling_Mono_on_Windows "Compiling Mono on Windows"). First, we'll need some more dependencies:
+Building GTK\# 2 uses a similar process as [Compiling\_Mono\_on\_Windows]({{ site.github.url }}/old_site/Compiling_Mono_on_Windows "Compiling Mono on Windows"). First, we'll need some more dependencies:
 
 -   Microsoft's .NET Framework and SDK. If you're building Gtk\# 2.12, you need version 1.1 whilst trunk builds against .net 2 or any later version. Do **not** try to build Gtk\# 2.12 against .net 2.
 
@@ -99,12 +99,12 @@ Troubleshooting
 
 -   Building Gtk\# 2.12 with .net \>= 2.0 is known not to work.
 
--   If you still can't get it to work, write a mail to the Gtk\# mailing list (see [Mailing\_Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists")).
+-   If you still can't get it to work, write a mail to the Gtk\# mailing list (see [Mailing\_Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists")).
 
 Links & Resources
 -----------------
 
--   Gtk\# installer for .net from [Downloads]({{site.github.url}}/old_site/Downloads "Downloads")
+-   Gtk\# installer for .net from [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads")
 
 -   Up to date glib ([http://anonsvn.mono-project.com/viewcvs/\*checkout\*/trunk/release/packaging/defs/mono](http://anonsvn.mono-project.com/viewcvs/*checkout*/trunk/release/packaging/defs/mono)) and gtk ([http://anonsvn.mono-project.com/viewcvs/\*checkout\*/trunk/release/packaging/defs/gtk-sharp](http://anonsvn.mono-project.com/viewcvs/*checkout*/trunk/release/packaging/defs/gtk-sharp)) dependencies that are being used for the Mono Windows Combined Installer.
 

@@ -29,17 +29,17 @@ Overview of the widgets used in GTK\#
 
 **Widget Overview**
 
--   [The Button Widget]({{site.github.url}}/old_site/GtkSharp:_Buttons "GtkSharp: Buttons")
--   [Labels]({{site.github.url}}/old_site/GtkSharp:_Labels "GtkSharp: Labels")
--   [Arrows]({{site.github.url}}/old_site/GtkSharp:_Arrows "GtkSharp: Arrows")
--   [Tooltips]({{site.github.url}}/old_site/GtkSharp:_Tooltips "GtkSharp: Tooltips")
--   [Progress Bars]({{site.github.url}}/old_site/GtkSharp:_Progress_Bars "GtkSharp: Progress Bars")
--   [Adjustments]({{site.github.url}}/old_site/GtkSharp:_Adjustments "GtkSharp: Adjustments")
--   [Range Widgets]({{site.github.url}}/old_site/GtkSharp:_Range_Widgets "GtkSharp: Range Widgets")
-    -   [Scrollbar Widgets]({{site.github.url}}/old_site/GtkSharp:_Scrollbar_Widgets "GtkSharp: Scrollbar Widgets")
-    -   [Scale Widgets]({{site.github.url}}/old_site/GtkSharp:_Scale_Widgets "GtkSharp: Scale Widgets")
+-   [The Button Widget]({{ site.github.url }}/old_site/GtkSharp:_Buttons "GtkSharp: Buttons")
+-   [Labels]({{ site.github.url }}/old_site/GtkSharp:_Labels "GtkSharp: Labels")
+-   [Arrows]({{ site.github.url }}/old_site/GtkSharp:_Arrows "GtkSharp: Arrows")
+-   [Tooltips]({{ site.github.url }}/old_site/GtkSharp:_Tooltips "GtkSharp: Tooltips")
+-   [Progress Bars]({{ site.github.url }}/old_site/GtkSharp:_Progress_Bars "GtkSharp: Progress Bars")
+-   [Adjustments]({{ site.github.url }}/old_site/GtkSharp:_Adjustments "GtkSharp: Adjustments")
+-   [Range Widgets]({{ site.github.url }}/old_site/GtkSharp:_Range_Widgets "GtkSharp: Range Widgets")
+    -   [Scrollbar Widgets]({{ site.github.url }}/old_site/GtkSharp:_Scrollbar_Widgets "GtkSharp: Scrollbar Widgets")
+    -   [Scale Widgets]({{ site.github.url }}/old_site/GtkSharp:_Scale_Widgets "GtkSharp: Scale Widgets")
 
--   [Dialogs]({{site.github.url}}/old_site/GtkSharp:_Dialogs "GtkSharp: Dialogs")
+-   [Dialogs]({{ site.github.url }}/old_site/GtkSharp:_Dialogs "GtkSharp: Dialogs")
 -   [Menu Widget Example (unwritten)](/index.php?title=GtkSharp:_Menu_Widget_Example&action=edit&redlink=1 "GtkSharp: Menu Widget Example (page does not exist)")
 
 

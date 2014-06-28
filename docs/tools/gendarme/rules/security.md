@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Security"
 ---
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s security rules are located in the **Gendarme.Rules.Security.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security/).
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s security rules are located in the **Gendarme.Rules.Security.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security/).
 
 <table>
 <col width="100%" />

@@ -48,12 +48,12 @@ General
 Can I have my own, private, Gendarme rules ?
 --------------------------------------------
 
-Of course. From the beginning [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") framework was designed for that very purpose. [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") own rules are separated from its framework (and runners) logic to ensure this scenario will always works.
+Of course. From the beginning [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") framework was designed for that very purpose. [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") own rules are separated from its framework (and runners) logic to ensure this scenario will always works.
 
 Can I use something other than C\# to write rules ?
 ---------------------------------------------------
 
-Yes you can. However such rules have a very low chance of being accepted into [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") itself since the extra dependencies (e.g. the compiler) would add a burden to our parent package, **mono-tools**, and make it difficult to build and package.
+Yes you can. However such rules have a very low chance of being accepted into [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") itself since the extra dependencies (e.g. the compiler) would add a burden to our parent package, **mono-tools**, and make it difficult to build and package.
 
 When should I write an engine ?
 -------------------------------
@@ -63,9 +63,9 @@ Maybe never :-) Seriously engines grows from the frustration of writing **many*
 Where can I ask technical questions about Gendarme ?
 ----------------------------------------------------
 
-Many [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") developers are on [IRC]({{site.github.url}}/old_site/IRC "IRC"), channel **\#gendarme** on **GimpNET**. You can also join the [Gendarme Google group](http://groups.google.com/group/gendarme) and email your questions to its mailing-list.
+Many [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") developers are on [IRC]({{ site.github.url }}/old_site/IRC "IRC"), channel **\#gendarme** on **GimpNET**. You can also join the [Gendarme Google group](http://groups.google.com/group/gendarme) and email your questions to its mailing-list.
 
-If your questions are related to [Cecil]({{site.github.url}}/old_site/Cecil "Cecil") then you should send them to the [Cecil Google group](http://groups.google.com/group/mono-cecil?hl=en).
+If your questions are related to [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") then you should send them to the [Cecil Google group](http://groups.google.com/group/mono-cecil?hl=en).
 
 Building
 ========
@@ -79,7 +79,7 @@ Why Makefiles ?
 ---------------
 
 -   Because it is nearly universal;
--   It's what [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") need to exists inside **mono-tools** and get packaged across several Linux distributions;
+-   It's what [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") need to exists inside **mono-tools** and get packaged across several Linux distributions;
 -   It's the only configuration that is automatically tested by **monobuild** (our continuous integration bots).
 
 Which version of Mono is required ?
@@ -90,12 +90,12 @@ The same version of Gendarme - i.e. if you want to build Gendarme 2.2 then you n
 Can I use MonoDevelop to build Gendarme ?
 -----------------------------------------
 
-Yes. A [MonoDevelop]({{site.github.url}}/old_site/MonoDevelop "MonoDevelop") solution and project files are available in our [SourceCodeRepository]({{site.github.url}}/old_site/SourceCodeRepository "SourceCodeRepository"). However since this is **not** the main build mechanism being used its likely that some files (rules or tests) could be missing. I.e. you may have to adjust the solution / project to make it work.
+Yes. A [MonoDevelop]({{ site.github.url }}/old_site/MonoDevelop "MonoDevelop") solution and project files are available in our [SourceCodeRepository]({{ site.github.url }}/old_site/SourceCodeRepository "SourceCodeRepository"). However since this is **not** the main build mechanism being used its likely that some files (rules or tests) could be missing. I.e. you may have to adjust the solution / project to make it work.
 
 Can I use Visual Studio to build Gendarme ?
 -------------------------------------------
 
-Yes, but you'll need VS.NET 2010 (or later) in order to compile the solution (a C\# 4 compiler is **required**). Note that, just like [MonoDevelop]({{site.github.url}}/old_site/MonoDevelop "MonoDevelop"), it is likely that the solution and project files in our [SourceCodeRepository]({{site.github.url}}/old_site/SourceCodeRepository "SourceCodeRepository") could be out of date (e.g. missing some files).
+Yes, but you'll need VS.NET 2010 (or later) in order to compile the solution (a C\# 4 compiler is **required**). Note that, just like [MonoDevelop]({{ site.github.url }}/old_site/MonoDevelop "MonoDevelop"), it is likely that the solution and project files in our [SourceCodeRepository]({{ site.github.url }}/old_site/SourceCodeRepository "SourceCodeRepository") could be out of date (e.g. missing some files).
 
 Contribute
 ==========
@@ -121,10 +121,10 @@ How can I contribute a new rule ?
 Can I use C\# 3 ?
 -----------------
 
-Yes, [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") already use C\# 3 features like extension methods and LINQ. This is not a problem since Mono support it\* and [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") can requires the (released) Fx 3.5 for Windows users. \*unless there is a known issue that makes the code incompatible between Mono and MS runtimes.
+Yes, [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") already use C\# 3 features like extension methods and LINQ. This is not a problem since Mono support it\* and [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") can requires the (released) Fx 3.5 for Windows users. \*unless there is a known issue that makes the code incompatible between Mono and MS runtimes.
 
 Can I use C\# 4 ?
 -----------------
 
-Yes, starting with version 2.11 [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") can use C\#4 features as long as the new Mono C\# compiler (mcs) support them. Just like C\# 3 (or any other features) it is important to be able to build [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme"), for both testing and packaging, on the two .NET runtimes.
+Yes, starting with version 2.11 [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") can use C\#4 features as long as the new Mono C\# compiler (mcs) support them. Just like C\# 3 (or any other features) it is important to be able to build [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"), for both testing and packaging, on the two .NET runtimes.
 

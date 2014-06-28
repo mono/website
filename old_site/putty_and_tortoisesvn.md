@@ -11,7 +11,7 @@ redirect_from:
 Putty and TortoiseSVN
 =====================
 
-This section discusses how to use Subversion to access the [Mono SVN]({{site.github.url}}/old_site/SourceCodeRepository) repository.
+This section discusses how to use Subversion to access the [Mono SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository.
 
 Mono's subversion repository is only available through a secure shell connection (ssh). To access the repository, you must use TortoiseSVN as well as Putty (an SSH client).
 

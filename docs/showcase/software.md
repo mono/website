@@ -126,8 +126,8 @@ Open Source applications
 
 ### Developer Tools
 
--   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation]({{site.github.url}}/old_site/NAnt_Installation "NAnt Installation") guide.
--   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme"). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
+-   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation]({{ site.github.url }}/old_site/NAnt_Installation "NAnt Installation") guide.
+-   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C\# compiler.
 
 ### Server Applications
@@ -144,12 +144,12 @@ Open Source applications
 Components & Libraries
 ======================
 
-See our separate page on [Libraries]({{site.github.url}}/old_site/Libraries "Libraries") for more details.
+See our separate page on [Libraries]({{ site.github.url }}/old_site/Libraries "Libraries") for more details.
 
 Mono Users
 ==========
 
-[Companies Using Mono]({{site.github.url}}/old_site/Companies_Using_Mono "Companies Using Mono")
+[Companies Using Mono]({{ site.github.url }}/old_site/Companies_Using_Mono "Companies Using Mono")
 
 Other Lists
 ===========

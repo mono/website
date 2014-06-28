@@ -25,7 +25,7 @@ Info
 
 -   ODBC can connect to various databases which has an ODBC driver installed:
     -   [MySQL](http://www.mysql.com/) Note: the MySQL Connector/Net from MySQL AB is the best way to connect to MySQL on Mono
-    -   [PostgreSQL](http://www.postgresql.org/) Note: ODBC support for PostgreSQL is poor; please use the Managed provider [Npgsql]({{site.github.url}}/PostgreSQL) instead.
+    -   [PostgreSQL](http://www.postgresql.org/) Note: ODBC support for PostgreSQL is poor; please use the Managed provider [Npgsql]({{ site.github.url }}/PostgreSQL) instead.
     -   [Oracle](http://www.oracle.com/)
     -   [Interbase](http://www.borland.com/products/downloads/download_interbase.html)
     -   [Sybase](http://www.sybase.com/downloads) ( via [FreeTDS](http://www.freetds.org/) on UNIX)
@@ -104,7 +104,7 @@ Testing ODBC provider with IBM DB2 Universal Database
 
 -   [IBM web page about unixODBC and DB2](http://www-306.ibm.com/software/data/db2/udb/ad/v8/cli/t0010406.htm)
 
--   The ODBC provider is similar to the [IBM DB2]({{site.github.url}}/old_site/IBM_DB2 "IBM DB2") provider.
+-   The ODBC provider is similar to the [IBM DB2]({{ site.github.url }}/old_site/IBM_DB2 "IBM DB2") provider.
 
 Testing ODBC provider with MySQL
 --------------------------------

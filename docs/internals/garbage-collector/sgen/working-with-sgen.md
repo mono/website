@@ -17,19 +17,19 @@ SGen is a generational collector, which is a popular technique used by garbage c
 
 SGen uses three heaps to allocate your objects: the nursery, the major heap and the large object space.
 
-[![SGenSpaces.png]({{site.github.url}}/old_site/images/1/15/SGenSpaces.png)]({{site.github.url}}/old_site/images/1/15/SGenSpaces.png)
+[![SGenSpaces.png]({{ site.github.url }}/old_site/images/1/15/SGenSpaces.png)]({{ site.github.url }}/old_site/images/1/15/SGenSpaces.png)
 
 For users familiar with the terminology used in other corners of the industry: The Nursery is the "Young Generation" while our "Major Heap" corresponds to the "Old Generation".
 
 During the course of execution of your program, you will create some objects with long live spans and others that are short lived. Your objects are initially allocated in an area of memory called the nursery.
 
-[![SgenNurseryAlloc.png]({{site.github.url}}/old_site/images/4/43/SgenNurseryAlloc.png)]({{site.github.url}}/old_site/images/4/43/SgenNurseryAlloc.png)
+[![SgenNurseryAlloc.png]({{ site.github.url }}/old_site/images/4/43/SgenNurseryAlloc.png)]({{ site.github.url }}/old_site/images/4/43/SgenNurseryAlloc.png)
 
 The size of the nursery is set to 4 megabytes. When you run of memory in the nursery, the garbage collector process starts a nursery collection.
 
 It stops your threads and moves all of the live objects from the nursery into the major generation clearing the nursery in the process.
 
-[![SgenEvacuation.png]({{site.github.url}}/old_site/images/5/58/SgenEvacuation.png)]({{site.github.url}}/old_site/images/5/58/SgenEvacuation.png)
+[![SgenEvacuation.png]({{ site.github.url }}/old_site/images/5/58/SgenEvacuation.png)]({{ site.github.url }}/old_site/images/5/58/SgenEvacuation.png)
 
 As the objects are evacuated, they are moved into the major heap. If there is not enough memory in the major heap, then a major collection is triggered. If the major collection fails to free up enough memory, then SGen might request more memory from the operating system (this is the default).
 
@@ -116,5 +116,5 @@ You can learn more about the debugging options for SGen from Mono's manual page:
 Profiling
 =========
 
-On systems that have DTrace (Solaris, MacOS X), Mono is able to report the SGen Garbage Collector events to Dtrace. See the [SGen\_DTrace]({{site.github.url}}/old_site/SGen_DTrace "SGen DTrace") page for details on how to use DTrace with Sgen to profile your application.
+On systems that have DTrace (Solaris, MacOS X), Mono is able to report the SGen Garbage Collector events to Dtrace. See the [SGen\_DTrace]({{ site.github.url }}/old_site/SGen_DTrace "SGen DTrace") page for details on how to use DTrace with Sgen to profile your application.
 

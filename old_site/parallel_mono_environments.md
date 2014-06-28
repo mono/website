@@ -14,7 +14,7 @@ Parallel Mono Environments
 
 *This document details how to run multiple Mono environments on a single system where neither environment conflicts with another.*
 
-This assumes that you are familiar with the [compilation process for Mono]({{site.github.url}}/old_site/Compiling_Mono "Compiling Mono").
+This assumes that you are familiar with the [compilation process for Mono]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono").
 
 <table>
 <col width="100%" />

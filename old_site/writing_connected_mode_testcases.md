@@ -90,7 +90,7 @@ How to write a connected mode test?
 
 -   For testing any provider class, you need a database connection. Use the ConnectionManager singleton class to create,open and close connection. The best way is to copy an existing test case and change.
 
--   Write tests as normal tests and follow the guidelines given in the following section. See [Writing Nunit Testcases]({{site.github.url}}/old_site/Test_Suite).
+-   Write tests as normal tests and follow the guidelines given in the following section. See [Writing Nunit Testcases]({{ site.github.url }}/old_site/Test_Suite).
 
 -   Include a category of your database as attribute for the test. Say, if you are writing test case Microsoft Sql Server, write [Category ("sqlserver")].
 

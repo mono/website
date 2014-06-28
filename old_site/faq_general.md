@@ -36,9 +36,9 @@ Basics
 
 Yes, Mono can run binaries produced by Visual Studio, there is no need to recompile.
 
-Use our [Mono Migration Analysis]({{site.github.url}}/old_site/MoMA) tool to check if everything that your application uses has been implemented in Mono or if there are special considerations to keep in mind.
+Use our [Mono Migration Analysis]({{ site.github.url }}/old_site/MoMA) tool to check if everything that your application uses has been implemented in Mono or if there are special considerations to keep in mind.
 
-The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap) for details about what is implemented.
+The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our [Roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap) for details about what is implemented.
 
 **What is Mono™ exactly?**
 
@@ -48,11 +48,11 @@ The Mono Project has also sparked a lot of interest in developing C\#-based comp
 
 -   [Gtk\#](http://gtk-sharp.sf.net): Bindings for the popular Gtk+ GUI toolkit for UNIX and Windows systems. Other bindings are available: Diacanvas-Sharp and MrProject.
 
--   [Mono.Cecil]({{site.github.url}}/old_site/Cecil "Cecil"): A library to generate and inspect CIL assemblies.
+-   [Mono.Cecil]({{ site.github.url }}/old_site/Cecil "Cecil"): A library to generate and inspect CIL assemblies.
 
 -   [\#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
 
--   [Tao Framework]({{site.github.url}}/old_site/Tao "Tao"): bindings for OpenGL
+-   [Tao Framework]({{ site.github.url }}/old_site/Tao "Tao"): bindings for OpenGL
 
 -   Mono.Directory.LDAP / Novell.Directory.LDAP: LDAP access for .NET apps.
 
@@ -78,7 +78,7 @@ The Mono Project has also sparked a lot of interest in developing C\#-based comp
 
 -   Ginzu: An implementation on top of Remoting for the [ICE](http://www.zeroc.com) stack
 
-For a more complete list, see the [Libraries]({{site.github.url}}/old_site/Libraries "Libraries") and [Software]({{site.github.url}}/old_site/Software "Software") pages.
+For a more complete list, see the [Libraries]({{ site.github.url }}/old_site/Libraries "Libraries") and [Software]({{ site.github.url }}/old_site/Software "Software") pages.
 
 **What is the difference between Mono and the .NET Initiative?**
 
@@ -120,31 +120,31 @@ Mono is the word for 'monkey' in Spanish. We like monkeys.
 
 **Does Mono work today?**
 
-Yes, Mono is used in many [commercial and open source applications]({{site.github.url}}/old_site/Software "Software") and is used by many [companies]({{site.github.url}}/old_site/Companies_Using_Mono "Companies Using Mono").
+Yes, Mono is used in many [commercial and open source applications]({{ site.github.url }}/old_site/Software "Software") and is used by many [companies]({{ site.github.url }}/old_site/Companies_Using_Mono "Companies Using Mono").
 
-The execution engine works on many platforms (See the [detailed list]({{site.github.url}}/old_site/Supported_Platforms "Supported Platforms")) and the scope of Mono is quite comprehensive. Detailed plans are available in our [Plans]({{site.github.url}}/old_site/Plans "Plans") page.
+The execution engine works on many platforms (See the [detailed list]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms")) and the scope of Mono is quite comprehensive. Detailed plans are available in our [Plans]({{ site.github.url }}/old_site/Plans "Plans") page.
 
  **What companies are using Mono?**
 
-You can see a list of some [Companies Using Mono]({{site.github.url}}/old_site/Companies_Using_Mono "Companies Using Mono") page.
+You can see a list of some [Companies Using Mono]({{ site.github.url }}/old_site/Companies_Using_Mono "Companies Using Mono") page.
 
-A number of commercial software products are listed [here]({{site.github.url}}/old_site/Software "Software").
+A number of commercial software products are listed [here]({{ site.github.url }}/old_site/Software "Software").
 
 **When will you ship Mono?**
 
-Please see the [Mono Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for more details on the release plans.
+Please see the [Mono Roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for more details on the release plans.
 
 **How can I contribute?**
 
-Check the [contributing]({{site.github.url}}/old_site/Contributing "Contributing") section.
+Check the [contributing]({{ site.github.url }}/old_site/Contributing "Contributing") section.
 
 **Is there an online guide for Mono?**
 
-Visit the [Monkeyguide]({{site.github.url}}/old_site/Monkeyguide "Monkeyguide") page.
+Visit the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") page.
 
 **Aren't you just copying someone else's work?**
 
-We are interested in providing the best tools for programmers to develop applications for Free Operating Systems. We also want to help provide the interoperability that will allow those systems to fit in with other standards. For more background, read the [Mono Project white paper]({{site.github.url}}/old_site/Mono_Rationale "Mono Rationale").
+We are interested in providing the best tools for programmers to develop applications for Free Operating Systems. We also want to help provide the interoperability that will allow those systems to fit in with other standards. For more background, read the [Mono Project white paper]({{ site.github.url }}/old_site/Mono_Rationale "Mono Rationale").
 
 **Miguel said once that Mono was being implemented in COBOL. Is that true?**
 
@@ -152,14 +152,14 @@ No. It was a joke.
 
 **Is there a list of known vulnerabilities affecting versions of Mono ?**
 
-Yes. We have compiled a list of [vulnerabilities]({{site.github.url}}/old_site/Vulnerabilities "Vulnerabilities") for Mono and its tools.
+Yes. We have compiled a list of [vulnerabilities]({{ site.github.url }}/old_site/Vulnerabilities "Vulnerabilities") for Mono and its tools.
 
 Availability
 ------------
 
 **What architectures and operating systems does Mono support?**
 
-See our [Supported Platforms]({{site.github.url}}/old_site/Supported_Platforms "Supported Platforms") page for the complete list.
+See our [Supported Platforms]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms") page for the complete list.
 
 Although we support plenty of platforms, we do not package Mono in binary form for all of the supported platforms.
 
@@ -180,7 +180,7 @@ In the past Novell has done ports of Mono to new architectures and operating sys
 
 Novell is certainly open to adding support for new architectures, but there are a number of variables: is the port going to benefit a large segment of users, hardware requirements and adequate funding.
 
-If you want to discuss a port of Mono to a new architecture, you should [contact the Mono team at Novell]({{site.github.url}}/old_site/Contact "Contact").
+If you want to discuss a port of Mono to a new architecture, you should [contact the Mono team at Novell]({{ site.github.url }}/old_site/Contact "Contact").
 
 Installation Problems
 ---------------------
@@ -204,7 +204,7 @@ Mono and GNOME
 
 **How is Mono related to GNOME?**
 
-In a number of ways. This project was born out of the need of providing improved tools for the GNOME community, and will use existing components that have been developed for GNOME when they are available. Mono team members work actively on the [Gtk\#]({{site.github.url}}/GtkSharp) project: a binding of the GNOME class libraries for .NET and Mono.
+In a number of ways. This project was born out of the need of providing improved tools for the GNOME community, and will use existing components that have been developed for GNOME when they are available. Mono team members work actively on the [Gtk\#]({{ site.github.url }}/GtkSharp) project: a binding of the GNOME class libraries for .NET and Mono.
 
 **Has the GNOME Foundation or the GNOME team adopted Mono?**
 
@@ -212,7 +212,7 @@ Mono is too new to be adopted by those groups. We hope that the tools that we wi
 
 **Should GNOME programmers use Mono?**
 
-Yes, we believe that Mono is a great development platform for building applications for the GNOME desktop. Mono includes [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") a .NET binding for GTK+ and various GNOME libraries which together with C\# and the System libraries provide developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing.
+Yes, we believe that Mono is a great development platform for building applications for the GNOME desktop. Mono includes [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") a .NET binding for GTK+ and various GNOME libraries which together with C\# and the System libraries provide developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing.
 
 **Will Mono include compatibility with Bonobo components? What is the relationship between Mono and Bonobo?**
 
@@ -228,22 +228,22 @@ Yes, we will enable people to write GNOME applications using Mono.
 
 **Do you have C\# bindings for GNOME?**
 
-Yes, the [Gtk\# project]({{site.github.url}}/old_site/GtkSharp "GtkSharp") provides bindings for Gtk+, Gdk, Atk, libgnome, libgnomecanvas, and libgnomeui. Other libraries under the GNOME framework will be added on an as-needed (and as-requested) basis.
+Yes, the [Gtk\# project]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") provides bindings for Gtk+, Gdk, Atk, libgnome, libgnomecanvas, and libgnomeui. Other libraries under the GNOME framework will be added on an as-needed (and as-requested) basis.
 
 GUI applications
 ----------------
 
-See also our [FAQ on Windows Forms]({{site.github.url}}/old_site/FAQ:_Winforms "FAQ: Winforms") page.
+See also our [FAQ on Windows Forms]({{ site.github.url }}/old_site/FAQ:_Winforms "FAQ: Winforms") page.
 
 **Will Mono enable GUI applications to be authored?**
 
 Yes, you will be able to build GUI applications.
 
-Indeed, that was the main driver for the creation of Mono. Today you can use [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") to develop GUI applications on Windows, Linux and MacOS X.
+Indeed, that was the main driver for the creation of Mono. Today you can use [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") to develop GUI applications on Windows, Linux and MacOS X.
 
-We are also developing a complete [Windows.Forms]({{site.github.url}}/old_site/WinForms) implementation.
+We are also developing a complete [Windows.Forms]({{ site.github.url }}/old_site/WinForms) implementation.
 
-A list of pros and cons on the various APIs is available in our [Gui Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits") page.
+A list of pros and cons on the various APIs is available in our [Gui Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits") page.
 
 **Will Gtk\# applications run on Windows?**
 
@@ -255,11 +255,11 @@ Note that using the Mozilla and most Gnome libraries is not currently supported 
 
 Gtk\# is a set of bindings for the Gtk+ toolkit for C\# (and other CIL-enabled languages), it integrates natively with the Gnome desktop. System.Windows.Forms is an API defined by Microsoft to build GUI applications.
 
-For more details see the [Gui Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits") page which presents the pros and cons of using each option.
+For more details see the [Gui Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits") page which presents the pros and cons of using each option.
 
 **Where can I learn more about Gtk\#?**
 
-See the [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") page for more information about Gtk\# or jump on over to the [Gtk\# Beginners Guide]({{site.github.url}}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide") to get started.
+See the [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") page for more information about Gtk\# or jump on over to the [Gtk\# Beginners Guide]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide") to get started.
 
 **What can I do with Gtk\#?**
 
@@ -269,7 +269,7 @@ Gtk\# is becoming very usable and you can create applications and applets like t
 
 Try: mcs -pkg:gtk-sharp-2.0 HelloWorld.cs
 
-See [Gtk\# Beginners Guide]({{site.github.url}}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide") for more details.
+See [Gtk\# Beginners Guide]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide") for more details.
 
 **Is there any way how to connect DataAdapter to some Gtk\# controls?**
 
@@ -277,14 +277,14 @@ There is a sample file called "DbClient" in gtk-sharp/samples that you might to 
 
 **Do you have a comparison chart about the various toolkit offerings?**
 
-See [Gui Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits").
+See [Gui Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits").
 
 Languages and Bindings
 ----------------------
 
 **What programming languages are available for Mono?**
 
-See our [Languages]({{site.github.url}}/old_site/Languages "Languages") page for a complete list of open source and commercial compilers that are available for Mono.
+See our [Languages]({{ site.github.url }}/old_site/Languages "Languages") page for a complete list of open source and commercial compilers that are available for Mono.
 
 **Why do arrow keys and tab not work with IronPython?**
 
@@ -294,7 +294,7 @@ mono ipy.exe -X:TabCompletion
 
 **Does Mono support COM?**
 
-See [COM Interop]({{site.github.url}}/old_site/COM_Interop "COM Interop").
+See [COM Interop]({{ site.github.url }}/old_site/COM_Interop "COM Interop").
 
 **Are there bindings for Open Office?**
 

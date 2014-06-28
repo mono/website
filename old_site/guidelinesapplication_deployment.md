@@ -143,7 +143,7 @@ Then you can do things like:
 When to use the GAC
 -------------------
 
-The [Global Assembly Cache]({{site.github.url}}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC") or "GAC" for short is a location where assemblies can be installed for system-wide use. To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
+The [Global Assembly Cache]({{ site.github.url }}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC") or "GAC" for short is a location where assemblies can be installed for system-wide use. To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
 
 This requirement is designed to ensure that the application is linked on the developer machine against a library that will be the same one available on the user's system, for example to avoid two libraries having the same name and version still providing different features (consider two companies creating a "Chat" library: one for using the IRC protocol and one for using the AOL protocol: they provide different APIs, but they have the same weak name; Strong naming avoids this scenario).
 
@@ -153,7 +153,7 @@ If your project is not ready to commit to API compatibility and the extra work a
 
 This is where the PREFIX/lib/APPLICATION directory comes into play. This for example would allow developers to deploy applications that use for example an under-development binding for OpenGL or the iPod for example without forcing the developers of the bindings to stabilize their API and maintain multiple versions of the library to allow old applications to run.
 
-The subject of installing assemblies into the GAC is handled in more detail in the article [Assemblies and the GAC]({{site.github.url}}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC").
+The subject of installing assemblies into the GAC is handled in more detail in the article [Assemblies and the GAC]({{ site.github.url }}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC").
 
 Libraries with Unstable APIs
 ============================
@@ -169,7 +169,7 @@ To solve this problem, we recommend that:
 -   The library developer ships a properly configured pkg-config file.
 -   The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
 -   The library consumers ship this library as part of their package.
--   The consumer follow the [Guidelines for Application Deployment]({{site.github.url}}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment")
+-   The consumer follow the [Guidelines for Application Deployment]({{ site.github.url }}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment")
 
 Here is how this works, the library developer installs a pkg-config file like this:
 
@@ -208,7 +208,7 @@ This means that developers that consume unstable API libraries do not have to wo
 
 If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
 
-Note: a production-ready, detailed example of this can be found in the [Autotools]({{site.github.url}}/old_site/Guidelines:Application_Deployment#auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+Note: a production-ready, detailed example of this can be found in the [Autotools]({{ site.github.url }}/old_site/Guidelines:Application_Deployment#auto-tools "Guidelines:Application Deployment") section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
 
 Comparing this to other models
 ------------------------------
@@ -279,7 +279,7 @@ You can browse the source code online for a sample "skeleton" application, the s
 -   How a script that is installed in bin is installed
 -   How to embed the version from your configure.in program into the AssemblyInfo.cs file that is compiled.
 
-The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section]({{site.github.url}}/old_site/GAPI#putting-it-all-together "GAPI") of the [GAPI]({{site.github.url}}/old_site/GAPI "GAPI") page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
+The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library]({{ site.github.url }}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section]({{ site.github.url }}/old_site/GAPI#putting-it-all-together "GAPI") of the [GAPI]({{ site.github.url }}/old_site/GAPI "GAPI") page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
 
 ``` bash
   $ ./autogen.sh
@@ -374,7 +374,7 @@ In EXTRA\_DIST we put the same files as we have initially, i.e., main.cs and Ass
 
 And then we setup the variables that will generate the command line to run when compiling the source files.
 
-Lastly, since we wish to link against and use an [unstable library]({{site.github.url}}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (one that is not installed in the GAC), we need to copy the unstable assembly that we link against (SUPERSTRINGSHARP\_LIBS) to the directory where our program will be installed. This is done by asking pkg-config for the Libraries variable, which should be set to a space-delimited string of assemblies to copy. The install-data-hook rule contains the short script to do this, and uses the aforementioned INSTALL and PKG\_CONFIG variables set in configure.in.
+Lastly, since we wish to link against and use an [unstable library]({{ site.github.url }}/old_site/Guidelines:Application_Deployment#libraries-with-unstable-apis "Guidelines:Application Deployment") (one that is not installed in the GAC), we need to copy the unstable assembly that we link against (SUPERSTRINGSHARP\_LIBS) to the directory where our program will be installed. This is done by asking pkg-config for the Libraries variable, which should be set to a space-delimited string of assemblies to copy. The install-data-hook rule contains the short script to do this, and uses the aforementioned INSTALL and PKG\_CONFIG variables set in configure.in.
 
 Now it's time to run some commands and enjoy. The first one you need to run is:
 

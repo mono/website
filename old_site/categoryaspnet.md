@@ -10,5 +10,5 @@ redirect_from:
 Category:ASP.NET
 ================
 
-See [ASP.NET]({{site.github.url}}/old_site/ASP.NET "ASP.NET") page for more information related to ASP.NET.
+See [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET") page for more information related to ASP.NET.
 

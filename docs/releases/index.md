@@ -91,19 +91,19 @@ mono1xreleases:
  - {version: 1.0.0, date: '2004-06-30'}
 ---
 
-This page contains a list of all Mono releases. The latest release can be found [here]({{site.github.url}}/download).
+This page contains a list of all Mono releases. The latest release can be found [here]({{ site.github.url }}/download).
 
 ## Mono 3.x
 {% for release in page.mono3xreleases %}
-  - [Mono {{ release.version }}]({{site.github.url}}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 2.x
 {% for release in page.mono2xreleases %}
-  - [Mono {{ release.version }}]({{site.github.url}}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 1.x
 {% for release in page.mono1xreleases %}
-  - [Mono {{ release.version }}]({{site.github.url}}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}

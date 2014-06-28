@@ -12,9 +12,9 @@ C\# version created by Or Dvory.
 
 The following code draws three lines to into a .png image file.
 
-[![Antialias.png]({{site.github.url}}/old_site/images/3/30/Antialias.png)]({{site.github.url}}/old_site/images/3/30/Antialias.png)
+[![Antialias.png]({{ site.github.url }}/old_site/images/3/30/Antialias.png)]({{ site.github.url }}/old_site/images/3/30/Antialias.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/3/30/Antialias.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/30/Antialias.png "Enlarge")
 
 ``` csharp
 //    antialias.cs
@@ -69,9 +69,9 @@ mcs antialias.cs -pkg:mono-cairo
 
 The following code draws Rounded Rects on a GTK window.
 
-[![RoundedRectangles.png]({{site.github.url}}/old_site/images/3/31/RoundedRectangles.png)]({{site.github.url}}/old_site/images/3/31/RoundedRectangles.png)
+[![RoundedRectangles.png]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png)]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/3/31/RoundedRectangles.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png "Enlarge")
 
 ``` csharp
 //    roundedrects.cs
@@ -178,9 +178,9 @@ the following code opens images using GDK. The problem is that the only way to c
 
 If the image typed as SVG, Rsvg library will render it for us as a GDK surface.
 
-[![Viewer.png]({{site.github.url}}/old_site/images/1/12/Viewer.png)]({{site.github.url}}/old_site/images/1/12/Viewer.png)
+[![Viewer.png]({{ site.github.url }}/old_site/images/1/12/Viewer.png)]({{ site.github.url }}/old_site/images/1/12/Viewer.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/1/12/Viewer.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/1/12/Viewer.png "Enlarge")
 
 ``` csharp
 //    viewer.cs
@@ -290,9 +290,9 @@ mcs viewer.cs -pkg:mono-cairo -pkg:gtk-sharp-2.0 -pkg:rsvg-sharp-2.0
 
 With Cairo, you can move,rotate and scale the coordinates.
 
-[![Transform.png]({{site.github.url}}/old_site/images/4/4a/Transform.png)]({{site.github.url}}/old_site/images/4/4a/Transform.png)
+[![Transform.png]({{ site.github.url }}/old_site/images/4/4a/Transform.png)]({{ site.github.url }}/old_site/images/4/4a/Transform.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/4/4a/Transform.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/4/4a/Transform.png "Enlarge")
 
 ``` csharp
 //    transform.cs
@@ -390,9 +390,9 @@ public class CairoGraphic : DrawingArea
 
 After I saw this plugin in gimp, I wanted to make my own improved one:
 
-[![TruchetTile.png]({{site.github.url}}/old_site/images/f/f1/TruchetTile.png)]({{site.github.url}}/old_site/images/f/f1/TruchetTile.png)
+[![TruchetTile.png]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png)]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/f/f1/TruchetTile.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png "Enlarge")
 
 ``` csharp
 //    truchet.cs

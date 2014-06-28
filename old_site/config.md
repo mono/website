@@ -31,12 +31,12 @@ Subelements:
 
 For more information, see:
 
--   [Config system.web]({{site.github.url}}/old_site/Config_system.web "Config system.web").
--   [Config system.net]({{site.github.url}}/old_site/Config_system.net "Config system.net").
+-   [Config system.web]({{ site.github.url }}/old_site/Config_system.web "Config system.web").
+-   [Config system.net]({{ site.github.url }}/old_site/Config_system.net "Config system.net").
 
 The documentation on this site is not complete, but it documents some Mono-specific configuration options, the following elements can be nested inside the \<configuration\> section:
 
--   [\<dllmap\>]({{site.github.url}}/old_site/Config_DllMap "Config DllMap") - Mapping Libraries.
+-   [\<dllmap\>]({{ site.github.url }}/old_site/Config_DllMap "Config DllMap") - Mapping Libraries.
 
 \<compilation\>
 ---------------

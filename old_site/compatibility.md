@@ -10,9 +10,9 @@ redirect_from:
 Compatibility
 =============
 
-[![Moma48.png]({{site.github.url}}/old_site/images/3/36/Moma48.png)]({{site.github.url}}/old_site/images/3/36/Moma48.png)
+[![Moma48.png]({{ site.github.url }}/old_site/images/3/36/Moma48.png)]({{ site.github.url }}/old_site/images/3/36/Moma48.png)
 
-If you already have an application written in .Net, you can scan your application with the [Mono Migration Analyzer (MoMA)]({{site.github.url}}/old_site/MoMA "MoMA") to determine if your application uses anything not supported by Mono.
+If you already have an application written in .Net, you can scan your application with the [Mono Migration Analyzer (MoMA)]({{ site.github.url }}/old_site/MoMA "MoMA") to determine if your application uses anything not supported by Mono.
 
 The current stable release version of Mono is **3.2.3**. The previous stable release was **2.10.8** (released December 19th, 2011), which is not supported anymore (because its branch doesn't receive more backports).
 

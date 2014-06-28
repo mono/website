@@ -45,14 +45,14 @@ Limited Debugging Support
 
 There is no support for debugging in MonoTouch, except for low-level debugging with GDB of the runtime.
 
-To learn how to use GDB to debug the runtime you can read [Debugging]({{site.github.url}}/old_site/Debugging "Debugging")
+To learn how to use GDB to debug the runtime you can read [Debugging]({{ site.github.url }}/old_site/Debugging "Debugging")
 
 Most of the debugging is done with Console.WriteLine.
 
 Limited Generics Support
 ========================
 
-Mono's [Full AOT]({{site.github.url}}/old_site/AOT#full-aot "AOT") support has the following limitations with respect to generics:
+Mono's [Full AOT]({{ site.github.url }}/old_site/AOT#full-aot "AOT") support has the following limitations with respect to generics:
 
 Generic Virtual Methods
 -----------------------

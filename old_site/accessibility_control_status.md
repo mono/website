@@ -15,8 +15,8 @@ WinForms Control List
 
 Read the following page for more information about Windows Forms providers implementation:
 
--   [Windows Forms Implementation]({{site.github.url}}/old_site/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation")
--   [Provider Functional Specification]({{site.github.url}}/old_site/Accessibility:_Provider_Functional_Specification "Accessibility: Provider Functional Specification")
+-   [Windows Forms Implementation]({{ site.github.url }}/old_site/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation")
+-   [Provider Functional Specification]({{ site.github.url }}/old_site/Accessibility:_Provider_Functional_Specification "Accessibility: Provider Functional Specification")
 -   [Class diagram of \*Strip\* classes in System.Windows.Forms](http://armstrong-clan.net/dump/Strip.png)
 
 Control

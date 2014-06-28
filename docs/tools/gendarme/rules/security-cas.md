@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Security - CAS"
 ---
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s Code Access Security (CAS) rules are located in the **Gendarme.Rules.Security.Cas.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security.Cas/).
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s Code Access Security (CAS) rules are located in the **Gendarme.Rules.Security.Cas.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security.Cas/).
 
 <table>
 <col width="100%" />

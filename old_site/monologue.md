@@ -12,7 +12,7 @@ Monologue
 
 Monologue is the name of the blog run by members of the Mono project.
 
-It informs users about new occurences in the world of Mono such as new releases of Mono, [Applications]({{site.github.url}}/old_site/Software "Software") built using Mono and Events/News in the World that may be interesting for people (using Mono) as well as storys of the lives of the Mono community.
+It informs users about new occurences in the world of Mono such as new releases of Mono, [Applications]({{ site.github.url }}/old_site/Software "Software") built using Mono and Events/News in the World that may be interesting for people (using Mono) as well as storys of the lives of the Mono community.
 
 Monologue can be found at: [http://go-mono.org/monologue/](http://go-mono.org/monologue/) and the [RSS feed](http://en.wikipedia.org/wiki/RSS_%28file_format%29) is available at [http://go-mono.org/monologue/index.rss](http://go-mono.org/monologue/index.rss)
 

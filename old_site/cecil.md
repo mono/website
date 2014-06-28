@@ -14,7 +14,7 @@ Cecil is a library written by [Jb Evain](http://evain.net/blog/) to generate and
 
 In simple English, with Cecil, you can load existing managed assemblies, browse all the contained types, modify them on the fly and save back to the disk the modified assembly.
 
-Today it is used by the Mono [Debugger]({{site.github.url}}/old_site/Debugger "Debugger"), the bug-finding and compliance checking tool [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme"), [MoMA]({{site.github.url}}/old_site/MoMA "MoMA"), [DB4O]({{site.github.url}}/old_site/DB4O "DB4O"), as well as [many other tools](http://groups.google.com/group/mono-cecil/web/projects-using-cecil).
+Today it is used by the Mono [Debugger]({{ site.github.url }}/old_site/Debugger "Debugger"), the bug-finding and compliance checking tool [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"), [MoMA]({{ site.github.url }}/old_site/MoMA "MoMA"), [DB4O]({{ site.github.url }}/old_site/DB4O "DB4O"), as well as [many other tools](http://groups.google.com/group/mono-cecil/web/projects-using-cecil).
 
 <table>
 <col width="100%" />
@@ -57,7 +57,7 @@ Since Cecil's API has not yet been frozen as we want to continue improving it fr
 
 The 0.9 family of Cecil, is very close to API stability.
 
-The pattern used for using libraries whose API is not frozen is described in the [[Deployment]({{site.github.url}}/Guidelines:Application_Deployment%7CApplication)] guidelines.
+The pattern used for using libraries whose API is not frozen is described in the [[Deployment]({{ site.github.url }}/Guidelines:Application_Deployment%7CApplication)] guidelines.
 
 To summarize it, it is necessary for you to copy and bundle a version of Cecil with your project before using it. To do this, you use the following pattern:
 
@@ -82,7 +82,7 @@ If you want the up to date version of Mono.Cecil, you need to get it from its [g
 
 If you need a recent build of the 0.6 branch, the recommended way of quickly getting a binary of Mono.Cecil.dll, is to grab it from the last MonoCharge tarball which are part of our [daily builds](http://mono.ximian.com/daily/).
 
-If needed, you can download Cecil's last revision from the [Subversion repository]({{site.github.url}}/old_site/SourceCodeRepository) in mcs/class/Mono.Cecil.
+If needed, you can download Cecil's last revision from the [Subversion repository]({{ site.github.url }}/old_site/SourceCodeRepository) in mcs/class/Mono.Cecil.
 
 Documentation
 =============

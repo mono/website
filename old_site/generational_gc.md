@@ -11,13 +11,13 @@ redirect_from:
 Generational GC
 ===============
 
- This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{site.github.url}}/old_site/Working_With_SGen "Working With SGen").
+ This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{ site.github.url }}/old_site/Working_With_SGen "Working With SGen").
 
 For a few releases, Mono has shipped with a new garbage collector, we call this the SGen garbage collector. This garbage collector can be enabled by passing the --gc=sgen flag to Mono or if you are embedding Mono, by linking against the `libmonosgen` library instead of the `libmono` library.
 
-The [Benchmark Suite]({{site.github.url}}/old_site/Benchmark_Suite "Benchmark Suite") continuously runs benchmarks for each Mono revision to track performance regressions using MonkeyWrench. The data is automatically collected and processed on this page: [http://wrench.mono-project.com/gcbench/](http://wrench.mono-project.com/gcbench/).
+The [Benchmark Suite]({{ site.github.url }}/old_site/Benchmark_Suite "Benchmark Suite") continuously runs benchmarks for each Mono revision to track performance regressions using MonkeyWrench. The data is automatically collected and processed on this page: [http://wrench.mono-project.com/gcbench/](http://wrench.mono-project.com/gcbench/).
 
-On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace]({{site.github.url}}/old_site/SGen_DTrace "SGen DTrace").
+On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace]({{ site.github.url }}/old_site/SGen_DTrace "SGen DTrace").
 
 <table>
 <col width="100%" />
@@ -171,13 +171,13 @@ Fragmentation of the heap is a common problem faced by C and C++ applications an
 
 Here is how the heap would look like during each step, notice that although there are 4096 bytes available to allocate, the memory is not contiguous and the heap has to be extended.
 
-[![Fragmentation.png]({{site.github.url}}/old_site/images/a/aa/Fragmentation.png)]({{site.github.url}}/old_site/images/a/aa/Fragmentation.png)
+[![Fragmentation.png]({{ site.github.url }}/old_site/images/a/aa/Fragmentation.png)]({{ site.github.url }}/old_site/images/a/aa/Fragmentation.png)
 
 Some memory allocators are able to return the "holes" back to the operating system if these holes happen to match the operating system minimum allocation sizes. For most collectors, the complication is that these holes can be created due to smaller allocations in the address space.
 
 A compacting collector would be able to move the data and not grow the heap:
 
-[![Compacting.png]({{site.github.url}}/old_site/images/b/bc/Compacting.png)]({{site.github.url}}/old_site/images/b/bc/Compacting.png)
+[![Compacting.png]({{ site.github.url }}/old_site/images/b/bc/Compacting.png)]({{ site.github.url }}/old_site/images/b/bc/Compacting.png)
 
 This represents an ideal situation, but there are some cases when moving the objects is not possible. In the CIL universe this can be caused because objects have been "pinned" which prevent objects from being moved. Pinning can happen either explicitly, (when you use the "fixed" directive in C\# for example, or implicitly as Mono's SGen collector treats the contents of the stack conservatively.
 
@@ -244,11 +244,11 @@ Here is a simplified (pinning is not handled) pseudo-code implementation of the 
 17:  }
 ```
 
-[![Nursery.png]({{site.github.url}}/old_site/images/6/65/Nursery.png)]({{site.github.url}}/old_site/images/6/65/Nursery.png)
+[![Nursery.png]({{ site.github.url }}/old_site/images/6/65/Nursery.png)]({{ site.github.url }}/old_site/images/6/65/Nursery.png)
 
 In line 2 we pop an object out of the gray stack and in line 3 we loop over all the references that it contains. refp is a pointer to the reference we’re currently looking at. In line 4 we fetch the actual reference. We are only interested in collecting the nursery, so if the reference already points to the old generation we skip it (lines 5 and 6). If the object is already forwarded (line 7) we fetch its new location (line 8). Otherwise we must copy it to the major heap. To that end we allocate the space required (line 10), do the actual copying (line 11) and forward the object (line 12). That newly copied object must also be processed, so we push it on the gray stack (line 13). Finally, for both cases, we update the reference to point to the new location of the object (line 15).
 
-[![Nursery-pinned.png]({{site.github.url}}/old_site/images/5/5e/Nursery-pinned.png)]({{site.github.url}}/old_site/images/5/5e/Nursery-pinned.png)
+[![Nursery-pinned.png]({{ site.github.url }}/old_site/images/5/5e/Nursery-pinned.png)]({{ site.github.url }}/old_site/images/5/5e/Nursery-pinned.png)
 
 Since the purpose of a nursery collection is to avoid scanning all the allocated memory, the collector and the VM keep track of any pointers that have changed in the old generations which might point to objects in the nursery (as this would determine objects that must be kept alive as well). These changes are known as the remembered set.
 
@@ -398,7 +398,7 @@ Stopping the world.
 
 To perform the garbage collection, it is important that all the running threads are stopped, this is called "stopping the world". This guarantees that no changes are happening behind the GC's back and also, the compacting collector will need to move the objects, and update all pointers to the objects to point to their new locations.
 
-[![]({{site.github.url}}/old_site/images/1/1c/Thread-stacks.png)]({{site.github.url}}/old_site/images/1/1c/Thread-stacks.png)
+[![]({{ site.github.url }}/old_site/images/1/1c/Thread-stacks.png)]({{ site.github.url }}/old_site/images/1/1c/Thread-stacks.png)
 
 The dark grey areas are scanned conservatively
 
@@ -425,7 +425,7 @@ Roots are the initial set of object references from which all of the other objec
 
 Objects that are no longer reachable from the roots are garbage collected.
 
-[![Roots.png]({{site.github.url}}/old_site/images/5/57/Roots.png)]({{site.github.url}}/old_site/images/5/57/Roots.png)
+[![Roots.png]({{ site.github.url }}/old_site/images/5/57/Roots.png)]({{ site.github.url }}/old_site/images/5/57/Roots.png)
 
 The dark regions are the root objects, the gray regions are the objects that are referenced by any root objects or other referenced objects and the white regions represent the garbage.
 
@@ -545,7 +545,7 @@ Once the list of unique addresses has been created, the collector has to flag th
 
 This process is optimized by using the `scan_start` array of pointers from the `GCMemSection`:
 
-[![Scanstarts.png]({{site.github.url}}/old_site/images/2/2d/Scanstarts.png)]({{site.github.url}}/old_site/images/2/2d/Scanstarts.png)
+[![Scanstarts.png]({{ site.github.url }}/old_site/images/2/2d/Scanstarts.png)]({{ site.github.url }}/old_site/images/2/2d/Scanstarts.png)
 
 Every 4k to 8k of objects sequentially allocated an entry in the `scan_starts` array is allocated. This way we only have to scan between 4096 and 8096 bytes of memory to find the header of the object to pin.
 
@@ -625,7 +625,7 @@ Major blocks of memory managed by the GC are tracked in the `GCMemSection` struc
 
 The structure looks like this:
 
-[![Gcmemsection.png]({{site.github.url}}/old_site/images/b/ba/Gcmemsection.png)]({{site.github.url}}/old_site/images/b/ba/Gcmemsection.png)
+[![Gcmemsection.png]({{ site.github.url }}/old_site/images/b/ba/Gcmemsection.png)]({{ site.github.url }}/old_site/images/b/ba/Gcmemsection.png)
 
 The grey area represents the pieces of this particular section that have been used. The `next` field is used to keep track of all the `GCMemSection` structures allocated in a linked list.
 

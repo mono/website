@@ -31,7 +31,7 @@ Many of the organizations that are currently participating in the TC49/TG3 work 
 
 -   [Eiffel Software](http://www.dotnetexperts.com/ecma/)
 -   [Microsoft Corporation](http://msdn.microsoft.com/en-us/netframework/aa569283.aspx)
--   [Novell Corporation]({{site.github.url}}/ECMA-335-CLI-Public-Draft)
+-   [Novell Corporation]({{ site.github.url }}/ECMA-335-CLI-Public-Draft)
 -   [Kahu Research](http://kahu.zoot.net.nz/ecma/clidraft/index.html)
 -   [Twin Roots](http://twinroots.com/ecma/cli/index.html).
 

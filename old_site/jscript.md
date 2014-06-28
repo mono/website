@@ -119,5 +119,5 @@ If you are generally interested in the project you might also want to join the d
 
 #### Submitting bug reports
 
-**mjs** has its own [query module](http://bugzilla.ximian.com/buglist.cgi?product=Mono%3A+Compilers&component=jscript&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=bugs.bug_id) and also you can [add](http://bugzilla.ximian.com/enter_bug.cgi?product=Mono%3A+Compilers&component=jscript) more reports. Take a look at Mono's good practices for creating a [bug report]({{site.github.url}}/Bugs)
+**mjs** has its own [query module](http://bugzilla.ximian.com/buglist.cgi?product=Mono%3A+Compilers&component=jscript&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=bugs.bug_id) and also you can [add](http://bugzilla.ximian.com/enter_bug.cgi?product=Mono%3A+Compilers&component=jscript) more reports. Take a look at Mono's good practices for creating a [bug report]({{ site.github.url }}/Bugs)
 

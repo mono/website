@@ -56,7 +56,7 @@ Goals
 
 See the section on [Design Considerations](#design-considerations) below for more information as to what our use cases for the Visual Studio Integration should be.
 
-There is also a [Getting Started]({{site.github.url}}/old_site/GettingStartedWithMonoTools) guide for MonoVS.
+There is also a [Getting Started]({{ site.github.url }}/old_site/GettingStartedWithMonoTools) guide for MonoVS.
 
 Experience
 ----------

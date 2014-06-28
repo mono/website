@@ -139,7 +139,7 @@ public class TreeViewExample
 
 Compile and run the application, and you will end up with this:
 
-[![GtkSharpTreeViewTutorial1.png]({{site.github.url}}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png)]({{site.github.url}}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png)
+[![GtkSharpTreeViewTutorial1.png]({{ site.github.url }}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png)]({{ site.github.url }}/old_site/images/8/8a/GtkSharpTreeViewTutorial1.png)
 
 Cool! So we have our TreeView displaying our two desired columns, now lets add some data in there.
 
@@ -181,7 +181,7 @@ You are not limited to assigning one property to the store per CellRenderer, you
 
 WOOHOO! We now have this:
 
-[![GtkSharpTreeViewTutorial2.png]({{site.github.url}}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png)]({{site.github.url}}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png)
+[![GtkSharpTreeViewTutorial2.png]({{ site.github.url }}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png)]({{ site.github.url }}/old_site/images/5/56/GtkSharpTreeViewTutorial2.png)
 
 Here's the complete code:
 
@@ -269,7 +269,7 @@ musicListStore.AppendValues (iter, "Nelly", "Country Grammer");
 
 And now we end up with this:
 
-[![GtkSharpTreeViewTutorial-Tree1.png]({{site.github.url}}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png)]({{site.github.url}}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png)
+[![GtkSharpTreeViewTutorial-Tree1.png]({{ site.github.url }}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png)]({{ site.github.url }}/old_site/images/9/92/GtkSharpTreeViewTutorial-Tree1.png)
 
 Here's the complete example:
 
@@ -332,7 +332,7 @@ The TreeView makes it very easy to prevent certain rows from being displayed, wi
 
 Lets say we are starting out with this set of data:
 
-[![TreeViewExample6.png]({{site.github.url}}/old_site/images/b/b5/TreeViewExample6.png)]({{site.github.url}}/old_site/images/b/b5/TreeViewExample6.png)
+[![TreeViewExample6.png]({{ site.github.url }}/old_site/images/b/b5/TreeViewExample6.png)]({{ site.github.url }}/old_site/images/b/b5/TreeViewExample6.png)
 
 We place a TreeModelFilter between the View (TreeView) and the model (ListStore) that filters what data is passed from the model to the view.
 
@@ -363,7 +363,7 @@ private bool FilterTree (Gtk.TreeModel model, Gtk.TreeIter iter)
 
 And now we end up with this:
 
-[![TreeViewExample7.png]({{site.github.url}}/old_site/images/b/b3/TreeViewExample7.png)]({{site.github.url}}/old_site/images/b/b3/TreeViewExample7.png)
+[![TreeViewExample7.png]({{ site.github.url }}/old_site/images/b/b3/TreeViewExample7.png)]({{ site.github.url }}/old_site/images/b/b3/TreeViewExample7.png)
 
 Here is a complete example demonstrating how you can use a text entry widget to control the filter.
 
@@ -487,7 +487,7 @@ public class TreeViewExample
 }
 ```
 
-[![GtkSharpTreeViewTutorial8.png]({{site.github.url}}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png)]({{site.github.url}}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png)
+[![GtkSharpTreeViewTutorial8.png]({{ site.github.url }}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png)]({{ site.github.url }}/old_site/images/8/87/GtkSharpTreeViewTutorial8.png)
 
 Controlling how the model is used
 =================================
@@ -591,7 +591,7 @@ private void RenderSongTitle (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, 
 
 We now have only one item per row in the store, but we display two columns in the tree!
 
-[![GtkSharpTreeViewTutorial3.png]({{site.github.url}}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png)]({{site.github.url}}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png)
+[![GtkSharpTreeViewTutorial3.png]({{ site.github.url }}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png)]({{ site.github.url }}/old_site/images/7/72/GtkSharpTreeViewTutorial3.png)
 
 Both of the example methods above demonstrate how to modify one property of the CellRenderer, but you are certainly not limited to only modifing one.
 
@@ -610,7 +610,7 @@ private void RenderArtistName (Gtk.TreeViewColumn column, Gtk.CellRenderer cell,
 }
 ```
 
- [![GtkSharpTreeViewTutorial4.png]({{site.github.url}}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png)]({{site.github.url}}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png)
+ [![GtkSharpTreeViewTutorial4.png]({{ site.github.url }}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png)]({{ site.github.url }}/old_site/images/0/07/GtkSharpTreeViewTutorial4.png)
 
 Here is the complete example:
 
@@ -768,7 +768,7 @@ private void artistNameCell_Edited (object o, Gtk.EditedArgs args)
 
 And that's all there is to it!
 
-[![TreeViewTutorial-Editing1.png]({{site.github.url}}/old_site/images/d/d8/TreeViewTutorial-Editing1.png)]({{site.github.url}}/old_site/images/d/d8/TreeViewTutorial-Editing1.png)
+[![TreeViewTutorial-Editing1.png]({{ site.github.url }}/old_site/images/d/d8/TreeViewTutorial-Editing1.png)]({{ site.github.url }}/old_site/images/d/d8/TreeViewTutorial-Editing1.png)
 
 Drawing icons in rows
 =====================
@@ -787,7 +787,7 @@ tree.AppendColumn ("Icon", new Gtk.CellRendererPixbuf (), "pixbuf", 0);
 
 the image to add
 
-[![TreeViewRupertIcon.png]({{site.github.url}}/old_site/images/e/e5/TreeViewRupertIcon.png)]({{site.github.url}}/old_site/images/e/e5/TreeViewRupertIcon.png)
+[![TreeViewRupertIcon.png]({{ site.github.url }}/old_site/images/e/e5/TreeViewRupertIcon.png)]({{ site.github.url }}/old_site/images/e/e5/TreeViewRupertIcon.png)
 
 and the AppendValues method with the correct parameters
 
@@ -797,7 +797,7 @@ musicListStore.AppendValues (new Gdk.Pixbuf ("TreeViewRupertIcon.png"), "Rupert"
 
 And then
 
-[![TreeViewTutorial-Pixbuf.png]({{site.github.url}}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png)]({{site.github.url}}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png)
+[![TreeViewTutorial-Pixbuf.png]({{ site.github.url }}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png)]({{ site.github.url }}/old_site/images/9/98/TreeViewTutorial-Pixbuf.png)
 
 Complete sample
 

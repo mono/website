@@ -20,105 +20,105 @@ Articles on this Site
 February 2011
 -------------
 
--   [Profile]({{site.github.url}}/old_site/Profile "Profile") Documents the new Mono 2.10 profiler.
+-   [Profile]({{ site.github.url }}/old_site/Profile "Profile") Documents the new Mono 2.10 profiler.
 
 January 2011
 ------------
 
--   [CoreClrHowTo]({{site.github.url}}/old_site/CoreClrHowTo "CoreClrHowTo") describes how to activate the CoreCLR Security sandbox in your own application when embedding the Mono runtime.
+-   [CoreClrHowTo]({{ site.github.url }}/old_site/CoreClrHowTo "CoreClrHowTo") describes how to activate the CoreCLR Security sandbox in your own application when embedding the Mono runtime.
 
--   [MonoMacPackager]({{site.github.url}}/old_site/MonoMacPackager "MonoMacPackager") discussed how Mono can be used to package MonoMac applications.
+-   [MonoMacPackager]({{ site.github.url }}/old_site/MonoMacPackager "MonoMacPackager") discussed how Mono can be used to package MonoMac applications.
 
 2010
 ----
 
-[MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac") describes the new effort to bind all of MacOS X APIs to create OSX-native applications using Mono.
+[MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac") describes the new effort to bind all of MacOS X APIs to create OSX-native applications using Mono.
 
-[Profiler]({{site.github.url}}/old_site/Profiler "Profiler") documents the new Mono profiles that will be available in Mono 2.10.
+[Profiler]({{ site.github.url }}/old_site/Profiler "Profiler") documents the new Mono profiles that will be available in Mono 2.10.
 
-[Mono\_LLVM]({{site.github.url}}/old_site/Mono_LLVM "Mono LLVM") describes how to use LLVM as the code generation engine in Mono, starting with release 2.8
+[Mono\_LLVM]({{ site.github.url }}/old_site/Mono_LLVM "Mono LLVM") describes how to use LLVM as the code generation engine in Mono, starting with release 2.8
 
-[Mono:Runtime:Documentation]({{site.github.url}}/old_site/Mono:Runtime:Documentation "Mono:Runtime:Documentation") we moved most of our runtime documentation to the Mono Website and we are now maintaining it here.
+[Mono:Runtime:Documentation]({{ site.github.url }}/old_site/Mono:Runtime:Documentation "Mono:Runtime:Documentation") we moved most of our runtime documentation to the Mono Website and we are now maintaining it here.
 
-[GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ") Common questions about Mono's migration to Git and GitHub for source code control.
+[GitFAQ]({{ site.github.url }}/old_site/GitFAQ "GitFAQ") Common questions about Mono's migration to Git and GitHub for source code control.
 
 [CSharpRepl](/index.php?title=CSharpRepl&action=edit&redlink=1 "CSharpRepl (page does not exist)") discussed our interactive shell for our C\# Compiler as a Service.
 
 July 2007
 ---------
 
--   [Guide: Porting ASP.NET Application]({{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications") with Mono.
+-   [Guide: Porting ASP.NET Application]({{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications") with Mono.
 
 May 2007
 --------
 
--   [Guide: Porting Windows.Forms Applications]({{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications") with Mono.
+-   [Guide: Porting Windows.Forms Applications]({{ site.github.url }}/old_site/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications") with Mono.
 
 April 2007
 ----------
 
--   [Mono DataConvert]({{site.github.url}}/old_site/Mono_DataConvert "Mono DataConvert"): A new API for doing data conversion (little endian, big endian, system) that is better designed than System.BitConverter and designed to replace it within Mono and other applications.
+-   [Mono DataConvert]({{ site.github.url }}/old_site/Mono_DataConvert "Mono DataConvert"): A new API for doing data conversion (little endian, big endian, system) that is better designed than System.BitConverter and designed to replace it within Mono and other applications.
 
 March 2007
 ----------
 
--   [Introduction to Mono.Addins]({{site.github.url}}/old_site/Introduction_to_Mono.Addins "Introduction to Mono.Addins"): An article explaining the new Mono.Addins framework for creating extensible applications.
--   [Guide:StarterKitPrimer]({{site.github.url}}/old_site/Guide:StarterKitPrimer "Guide:StarterKitPrimer"): a tutorial on getting the Personal Starter Kit from ASP.NET running with Mono.
--   [ThreadsBeginnersGuide]({{site.github.url}}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide"): a short tutorial introducing the very basics of developing applications with multiple threads.
+-   [Introduction to Mono.Addins]({{ site.github.url }}/old_site/Introduction_to_Mono.Addins "Introduction to Mono.Addins"): An article explaining the new Mono.Addins framework for creating extensible applications.
+-   [Guide:StarterKitPrimer]({{ site.github.url }}/old_site/Guide:StarterKitPrimer "Guide:StarterKitPrimer"): a tutorial on getting the Personal Starter Kit from ASP.NET running with Mono.
+-   [ThreadsBeginnersGuide]({{ site.github.url }}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide"): a short tutorial introducing the very basics of developing applications with multiple threads.
 
 December 2006
 -------------
 
--   [Using Mono with X-Code on MacOS X]({{site.github.url}}/old_site/CSharpPlugin "CSharpPlugin"): a tutorial on how to set up Mono and the CSharp Plugin to develop applications on OS/X.
+-   [Using Mono with X-Code on MacOS X]({{ site.github.url }}/old_site/CSharpPlugin "CSharpPlugin"): a tutorial on how to set up Mono and the CSharp Plugin to develop applications on OS/X.
 
 August 2006
 -----------
 
--   [Guidelines:Application\_Portability]({{site.github.url}}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability") a new document to assist developers in porting their applications to Unix/Linux from Windows using Mono.
+-   [Guidelines:Application\_Portability]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability") a new document to assist developers in porting their applications to Unix/Linux from Windows using Mono.
 
 Nov 2005
 --------
 
--   [Using Client Certificates with XSP]({{site.github.url}}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP")
+-   [Using Client Certificates with XSP]({{ site.github.url }}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP")
 
 Oct 2005
 --------
 
--   [Using Trusted Roots Respectfully]({{site.github.url}}/old_site/UsingTrustedRootsRespectfully "UsingTrustedRootsRespectfully")
+-   [Using Trusted Roots Respectfully]({{ site.github.url }}/old_site/UsingTrustedRootsRespectfully "UsingTrustedRootsRespectfully")
 
 Aug 2005
 --------
 
--   [Using Boo to write database applications with DB4]({{site.github.url}}/old_site/DB4BOO "DB4BOO")
+-   [Using Boo to write database applications with DB4]({{ site.github.url }}/old_site/DB4BOO "DB4BOO")
 
 Jun 2005
 --------
 
--   [Guidelines:Application\_Deployment]({{site.github.url}}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment")
+-   [Guidelines:Application\_Deployment]({{ site.github.url }}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment")
 
 May 2005
 --------
 
--   [Notification Icons with Gtk\#]({{site.github.url}}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
--   [Tutorial on GConf]({{site.github.url}}/old_site/GConfTutorial "GConfTutorial")
+-   [Notification Icons with Gtk\#]({{ site.github.url }}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Tutorial on GConf]({{ site.github.url }}/old_site/GConfTutorial "GConfTutorial")
 
 April 2005
 ----------
 
--   [Versions in Mono]({{site.github.url}}/old_site/Mono:Versioning "Mono:Versioning")
--   [Binding Glib-based libraries]({{site.github.url}}/old_site/GAPI "GAPI")
--   [ThreadPool DeadLocks]({{site.github.url}}/old_site/Article:ThreadPool_Deadlocks)
--   [Generating class status pages]({{site.github.url}}/old_site/Generating_class_status_pages "Generating class status pages")
+-   [Versions in Mono]({{ site.github.url }}/old_site/Mono:Versioning "Mono:Versioning")
+-   [Binding Glib-based libraries]({{ site.github.url }}/old_site/GAPI "GAPI")
+-   [ThreadPool DeadLocks]({{ site.github.url }}/old_site/Article:ThreadPool_Deadlocks)
+-   [Generating class status pages]({{ site.github.url }}/old_site/Generating_class_status_pages "Generating class status pages")
 
 March 2005
 ----------
 
--   [Gtk\# Beginners Guide]({{site.github.url}}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
+-   [Gtk\# Beginners Guide]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
 
 Other
 -----
 
-[Performance Tips]({{site.github.url}}/old_site/Performance_Tips "Performance Tips")
+[Performance Tips]({{ site.github.url }}/old_site/Performance_Tips "Performance Tips")
 
 External Articles
 =================
@@ -302,7 +302,7 @@ InfoWorld: [Moonlight beaming Silverlight to Linux](http://www.infoworld.com/art
 May 2007
 --------
 
-CodeProject: [NetDasm - A tool for disassemble and patch .Net assemblies](http://www.codeproject.com/useritems/NetDasm.asp): an article describing how to use Mono's [Cecil]({{site.github.url}}/old_site/Cecil "Cecil") library.
+CodeProject: [NetDasm - A tool for disassemble and patch .Net assemblies](http://www.codeproject.com/useritems/NetDasm.asp): an article describing how to use Mono's [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") library.
 
 ComputerWorld: [Novell's de Icaza: No Mono-tony in this project](http://www.computerworld.com.au/index.php/id;1192877795;pp;2;fp;2;fpid;4)
 
@@ -323,7 +323,7 @@ DevX: [Migrating .NET Applications with Mono](http://www.devx.com/racetolinux/Ar
 February 2007
 -------------
 
-CodeProject: [Mono.Cecil, the most powerfull tool you've never heard of](http://www.codeproject.com/useritems/MonoCecilChapter1.asp): An introductory article to Mono.[Cecil]({{site.github.url}}/old_site/Cecil "Cecil") library.
+CodeProject: [Mono.Cecil, the most powerfull tool you've never heard of](http://www.codeproject.com/useritems/MonoCecilChapter1.asp): An introductory article to Mono.[Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") library.
 
 Register Developer: [Mono on the Mac: Time to look beyond Linux?](http://www.regdeveloper.co.uk/2007/02/16/uncle_mac_mono_/).
 

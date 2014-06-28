@@ -56,7 +56,7 @@ Gtk\# application
 
 This is a very simple application that uses the Web Service by calling it for adding two numbers written in the two Gtk.Entry widgets.
 
-[![Simple Gtk\# application for adding two numbers]({{site.github.url}}/old_site/images/e/e1/Gtk_webservices.png)]({{site.github.url}}/old_site/images/e/e1/Gtk_webservices.png "Simple Gtk# application for adding two numbers")
+[![Simple Gtk\# application for adding two numbers]({{ site.github.url }}/old_site/images/e/e1/Gtk_webservices.png)]({{ site.github.url }}/old_site/images/e/e1/Gtk_webservices.png "Simple Gtk# application for adding two numbers")
 
 Glade design
 ------------
@@ -458,5 +458,5 @@ Run it, write to valid numbers and click the "Add" button, everything should wor
 Contributors
 ============
 
-[Mario Carrión]({{site.github.url}}/old_site/User:MarioCarrion "User:MarioCarrion")
+[Mario Carrión]({{ site.github.url }}/old_site/User:MarioCarrion "User:MarioCarrion")
 

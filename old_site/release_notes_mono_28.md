@@ -115,7 +115,7 @@ Mono 2.8 ships the latest and greatest and updates and they have not received as
 Major Highlights
 ================
 
--   [C\# 4.0]({{site.github.url}}/old_site/CSharp_Compiler)
+-   [C\# 4.0]({{ site.github.url }}/old_site/CSharp_Compiler)
 -   Defaults to the 4.0 profile.
 -   New Garbage Collection engine
 -   New Frameworks:
@@ -133,8 +133,8 @@ Major Highlights
     -   Large performance improvements
     -   LLVM support has graduated to stable
         -   Use mono-llvm command to run your server loads with the LLVM backend
--   Preview of the [Generational Garbage Collector]({{site.github.url}}/old_site/Generational_GC "Generational GC")
--   Version 2.0 of the [embedding API]({{site.github.url}}/old_site/Embedding_Mono#updates-for-mono-version-282b "Embedding Mono")
+-   Preview of the [Generational Garbage Collector]({{ site.github.url }}/old_site/Generational_GC "Generational GC")
+-   Version 2.0 of the [embedding API]({{ site.github.url }}/old_site/Embedding_Mono#updates-for-mono-version-282b "Embedding Mono")
 -   WCF Routing
 -   .NET 4.0's CodeContracts
 -   Removed the 1.1 profile and various deprecated libraries.
@@ -145,16 +145,16 @@ Major Highlights
 Changes since Mono 2.6
 ======================
 
-This documents the changes since [Mono 2.6]({{site.github.url}}/old_site/Release_Notes_Mono_2.6 "Release Notes Mono 2.6").
+This documents the changes since [Mono 2.6]({{ site.github.url }}/old_site/Release_Notes_Mono_2.6 "Release Notes Mono 2.6").
 
 New Garbage Collector
 ---------------------
 
-Mono now comes with a new garbage collector: [SGen]({{site.github.url}}/old_site/Generational_GC), a generational, copying, heap precise, stack conservative garbage collector. This collector is able to repack the contents of memory and helps reduce heap fragmentation by moving data around when possible.
+Mono now comes with a new garbage collector: [SGen]({{ site.github.url }}/old_site/Generational_GC), a generational, copying, heap precise, stack conservative garbage collector. This collector is able to repack the contents of memory and helps reduce heap fragmentation by moving data around when possible.
 
 Our friends at [Sones](http://developers.sones.de) have a [blog entry benchmarking the Boehm GC vs the new GC](http://developers.sones.de/?p=829) while inserting 200,000 objects into their database:
 
-[![Monovsmonosgen thumb.png]({{site.github.url}}/old_site/images/5/5e/Monovsmonosgen_thumb.png)]({{site.github.url}}/old_site/images/5/5e/Monovsmonosgen_thumb.png)
+[![Monovsmonosgen thumb.png]({{ site.github.url }}/old_site/images/5/5e/Monovsmonosgen_thumb.png)]({{ site.github.url }}/old_site/images/5/5e/Monovsmonosgen_thumb.png)
 
 The blue line is the time it takes for the new GC to fulfill the request, the red line is the old GC. They have also done some more benchmarks which you can like their [Sones GraphDB on Mono's SGen vs .NET](http://developers.sones.de/2010/09/09/benchmarking-the-sones-graphdb-on-mono-sgen-and-net/). It shows that Mono has considerably improved, and that we still have work to do in some areas.
 
@@ -430,13 +430,13 @@ Compilation failed: 1 error(s), 0 warnings
 
 ### IOMAP reporting utility
 
-Mono includes a [profiler module]({{site.github.url}}/old_site/IOMap#iomap-reporting-utility "IOMap") to report IOMAP actions and help developers find places in code where file I/O requiring file name mapping is performed.
+Mono includes a [profiler module]({{ site.github.url }}/old_site/IOMap#iomap-reporting-utility "IOMap") to report IOMAP actions and help developers find places in code where file I/O requiring file name mapping is performed.
 
 ### S390x Port
 
 The S390x port now supports Mono's interface method tables (IMT) which reduces the memory usage consumed by generics.
 
-It also supports the new [SGen garbage collector]({{site.github.url}}/old_site/Generational_GC).
+It also supports the new [SGen garbage collector]({{ site.github.url }}/old_site/Generational_GC).
 
 ### Unsafe Runtime Execution
 
@@ -522,7 +522,7 @@ JIT compilation with LLVM is still very slow, which means that it is not suitabl
 
 You can use the --llvm and --nollvm flags to control which JIT engine Mono will use at runtime. Or you can set these on the MONO\_ENV\_OPTIONS environment variable.
 
-Configuring+Running with LLVM is described at: [http://www.mono-project.com/Mono\_LLVM]({{site.github.url}}/Mono_LLVM)
+Configuring+Running with LLVM is described at: [http://www.mono-project.com/Mono\_LLVM]({{ site.github.url }}/Mono_LLVM)
 
 ### Assembly binding redirection is supported
 

@@ -10,5 +10,5 @@ redirect_from:
 MoonlighBeta1
 =============
 
-All information on this page has been moved to [MoonlightBeta1]({{site.github.url}}/old_site/MoonlightBeta1 "MoonlightBeta1")
+All information on this page has been moved to [MoonlightBeta1]({{ site.github.url }}/old_site/MoonlightBeta1 "MoonlightBeta1")
 

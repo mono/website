@@ -10,5 +10,5 @@ redirect_from:
 Mono:Block log
 ==============
 
-This is a log of user blocking and unblocking actions. Automatically blocked IP addresses are not be listed. See the [IP block list]({{site.github.url}}/old_site/Special:BlockList "Special:BlockList") for the list of currently operational bans and blocks.
+This is a log of user blocking and unblocking actions. Automatically blocked IP addresses are not be listed. See the [IP block list]({{ site.github.url }}/old_site/Special:BlockList "Special:BlockList") for the list of currently operational bans and blocks.
 

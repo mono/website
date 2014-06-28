@@ -12,7 +12,7 @@ FastCGI Cherokee
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{site.github.url}}/old_site/FastCGI "FastCGI") support for the Cherokee server.
+Information on how to configure the [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") support for the Cherokee server.
 
 <table>
 <col width="100%" />
@@ -55,7 +55,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{site.github.url}}/old_site/FastCGI#importantinformation "FastCGI")" on the main page.
+Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{ site.github.url }}/old_site/FastCGI#importantinformation "FastCGI")" on the main page.
 
 Using Paths [Recommended]
 -------------------------

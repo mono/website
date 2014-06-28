@@ -52,7 +52,7 @@ MonoTouch API
 Overview
 ========
 
-In addition to the core Base Class Libraries that are part of Mono, [MonoTouch]({{site.github.url}}/old_site/MonoTouch "MonoTouch") ships with bindings for various iPhone APIs to allow developers to create native iPhone applications with Mono.
+In addition to the core Base Class Libraries that are part of Mono, [MonoTouch]({{ site.github.url }}/old_site/MonoTouch "MonoTouch") ships with bindings for various iPhone APIs to allow developers to create native iPhone applications with Mono.
 
 At the core of MonoTouch there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the iPhone C-based APIs like CoreGraphics and [OpenGLES](#opengles).
 
@@ -61,7 +61,7 @@ The low-level runtime to communicate with Objective-C code is in the [MonoTouch.
 Unbound Types & Members
 =======================
 
-At this point in time, not all CocoaTouch types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via [P/Invoke]({{site.github.url}}/old_site/Interop_with_Native_Libraries). Other frameworks are Objective-C code, and thus require [manual selector invocation]({{site.github.url}}/old_site/MonoTouch_ManualSelectorInvocation "MonoTouch ManualSelectorInvocation").
+At this point in time, not all CocoaTouch types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via [P/Invoke]({{ site.github.url }}/old_site/Interop_with_Native_Libraries). Other frameworks are Objective-C code, and thus require [manual selector invocation]({{ site.github.url }}/old_site/MonoTouch_ManualSelectorInvocation "MonoTouch ManualSelectorInvocation").
 
 Major Namespaces
 ================

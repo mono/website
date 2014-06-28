@@ -37,7 +37,7 @@ Applications developed with Gtk\# on .NET do not require Mono to run.
 
 If the application is a 100% .NET, without using P/Invoke to call into Win32 functions or using some Windows-specific assemblies, the code will run out of the box on Unix and Linux systems with Mono.
 
-The Gtk\# installers for .NET come in two variations, SDK and Runtime (Redistributable). These can be downloaded from the [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+The Gtk\# installers for .NET come in two variations, SDK and Runtime (Redistributable). These can be downloaded from the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 
 Gtk\# Runtime/Redistributable Installer
 ---------------------------------------
@@ -62,11 +62,11 @@ The SDK installer contains all the tools required to develop applications with G
 
 Once installed, when you create a new project from Visual Studio.NET 2003, this should appear:
 
-[![Gtksharp-project-template.PNG]({{site.github.url}}/old_site/images/f/ff/Gtksharp-project-template.PNG)]({{site.github.url}}/old_site/images/f/ff/Gtksharp-project-template.PNG)
+[![Gtksharp-project-template.PNG]({{ site.github.url }}/old_site/images/f/ff/Gtksharp-project-template.PNG)]({{ site.github.url }}/old_site/images/f/ff/Gtksharp-project-template.PNG)
 
 The templates contain sample programs that you can use as starting points for your application.
 
-See the [Working\_with\_Mono\_and\_Visual\_Studio]({{site.github.url}}/old_site/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio") page for more information on using Mono with Visual Studio.
+See the [Working\_with\_Mono\_and\_Visual\_Studio]({{ site.github.url }}/old_site/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio") page for more information on using Mono with Visual Studio.
 
 Notes and Observations
 ======================
@@ -76,5 +76,5 @@ One mayor difference between the Gtk\# installers for .NET and the Mono Combined
 Obtaining the Installers
 ========================
 
-The runtime and sdk installers for Gtk\# are available on the Windows platform section of the [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+The runtime and sdk installers for Gtk\# are available on the Windows platform section of the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 

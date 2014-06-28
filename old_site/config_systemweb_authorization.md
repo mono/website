@@ -10,7 +10,7 @@ redirect_from:
 Config system.web authorization
 ===============================
 
-An example of this [\<system.web\>]({{site.github.url}}/old_site/Config_system.web "Config system.web") section is:
+An example of this [\<system.web\>]({{ site.github.url }}/old_site/Config_system.web "Config system.web") section is:
 
 ``` xml
 <authorization>

@@ -25,7 +25,7 @@ Beginning with Mono
 <p>So the first step is to determine how much of your application Mono supports. There is a tool that helps you determine this called the Mono Migration Analyzer (Moma). For now, you don't need to worry about running Mono, just download Moma and run it with .Net. Select the assemblies (.exe's and .dll's) to your application, and Moma will tell you which classes, methods, etc. your application uses that Mono may not fully support. This should give you an idea of how easy or hard it is going to be to get your application running with Mono.</p></td>
 <td align="left"><p><strong>Mono Migration Analyzer (Moma)</strong></p>
 <p>Moma scans your application for compatibility with Mono, and reports potential issues. It does not require Mono to be installed, so it is a great place to start.</p>
-<p><a href="{{site.github.url}}/old_site/MoMA" title="MoMA">Moma Home Page</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/MoMA" title="MoMA">Moma Home Page</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -50,7 +50,7 @@ Getting Mono
 </ul></td>
 <td align="left"><p><strong>Mono Download Page</strong></p>
 <p>The Mono download page offers the latest version of Mono for Windows, OSX, and several distributions of Linux.</p>
-<p><a href="{{site.github.url}}/old_site/Downloads" title="Downloads">Mono Download Page</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/Downloads" title="Downloads">Mono Download Page</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -112,20 +112,20 @@ More Resources
 <tr class="odd">
 <td align="left"><p><strong>Mono Start Page</strong></p>
 <p>The Mono start page offers some of the same information available here, as well as links to many in-depth articles and guides that can help you work with Mono.</p>
-<p><a href="{{site.github.url}}/old_site/Start" title="Start">Mono Start Page</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/Start" title="Start">Mono Start Page</a></p></td>
 <td align="left"></td>
 <td align="left"><p><strong>Mailing Lists</strong></p>
 <p>The Mono mailing lists are a great way to get support for any trouble you may run into. There are many experienced people on the lists who can give you tips and help.</p>
-<p><a href="{{site.github.url}}/old_site/Mailing_Lists" title="Mailing Lists">Mono Mailing Lists</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/Mailing_Lists" title="Mailing Lists">Mono Mailing Lists</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Mono Bugzilla</strong></p>
 <p>If you run into a bug in any part of Mono, please let us know about it so we can fix it.</p>
-<p><a href="{{site.github.url}}/old_site/Bugs" title="Bugs">Mono Bugzilla</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/Bugs" title="Bugs">Mono Bugzilla</a></p></td>
 <td align="left"></td>
 <td align="left"><p><strong>Chat Rooms</strong></p>
 <p>For real time help, there are several IRC chat rooms available that deal with Mono.</p>
-<p><a href="{{site.github.url}}/old_site/IRC" title="IRC">Mono Chat Rooms</a></p></td>
+<p><a href="{{ site.github.url }}/old_site/IRC" title="IRC">Mono Chat Rooms</a></p></td>
 </tr>
 </tbody>
 </table>

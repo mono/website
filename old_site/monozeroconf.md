@@ -184,7 +184,7 @@ Since both `UInt16` and `Int16` are of the same size, the unchecked cast is lega
 
 ### Bug Reports and Support
 
-If you run into any issues with Mono.Zeroconf or would like help getting started, the usual Mono support channels including [IRC]({{site.github.url}}/old_site/IRC "IRC") or an [appropriate mailing list]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists").
+If you run into any issues with Mono.Zeroconf or would like help getting started, the usual Mono support channels including [IRC]({{ site.github.url }}/old_site/IRC "IRC") or an [appropriate mailing list]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists").
 
 Additionally, if you think you have found a bug in Mono.Zeroconf, please feel free to file it in [Mono's Bugzilla](https://bugzilla.novell.com/enter_bug.cgi?classification=6841&product=Mono%3A+Class+Libraries+&component=Mono.Zeroconf).
 

@@ -49,13 +49,13 @@ A Coding Standard for QA's efforts in coding test related scripts. This plan abi
 References
 ----------
 
-[Product Test Case Plan]({{site.github.url}}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
- [Product Test Case Specification]({{site.github.url}}/old_site/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
- [Product Test Log]({{site.github.url}}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
- [Product Test Summary]({{site.github.url}}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary")
- [Product Bug Specification]({{site.github.url}}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
- [Test Coding Standard]({{site.github.url}}/old_site/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard") (current page)
- [Product Home]({{site.github.url}}/old_site/Accessibility "Accessibility")
+[Product Test Case Plan]({{ site.github.url }}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
+ [Product Test Case Specification]({{ site.github.url }}/old_site/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
+ [Product Test Log]({{ site.github.url }}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
+ [Product Test Summary]({{ site.github.url }}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary")
+ [Product Bug Specification]({{ site.github.url }}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
+ [Test Coding Standard]({{ site.github.url }}/old_site/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard") (current page)
+ [Product Home]({{ site.github.url }}/old_site/Accessibility "Accessibility")
 
 Standard For Files Name
 -----------------------

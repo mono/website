@@ -10,7 +10,7 @@ redirect_from:
 Guide: Porting Winforms Applications
 ====================================
 
-by [Jonathan Pobst]({{site.github.url}}/old_site/User:Jpobst "User:Jpobst")
+by [Jonathan Pobst]({{ site.github.url }}/old_site/User:Jpobst "User:Jpobst")
 
 The amount of effort required to get an existing Winforms app running on Mono can vary greatly. Although many small apps will run on Mono unmodified, many apps will require some work on the developer's part to run smoothly on Mono. This guide will attempt to port a non-trivial open source application to document several of the issues a developer may run into while porting their app to Mono.
 
@@ -58,10 +58,10 @@ For this guide, the open source application NClass has been chosen. It is a UML 
 
 -   NClass homepage - [http://nclass.sourceforge.net/index.html](http://nclass.sourceforge.net/index.html)
 -   NClass download - [http://nclass.sourceforge.net/downloads.html](http://nclass.sourceforge.net/downloads.html) (this guide uses the "source" version)
--   [Mono 1.2.4]({{site.github.url}}/old_site/Downloads "Downloads")
--   [Mono Migration Analyzer (MoMA)]({{site.github.url}}/old_site/MoMA "MoMA")
+-   [Mono 1.2.4]({{ site.github.url }}/old_site/Downloads "Downloads")
+-   [Mono Migration Analyzer (MoMA)]({{ site.github.url }}/old_site/MoMA "MoMA")
 
-NClass running on .Net with included example file: [![Msnclass.png]({{site.github.url}}/old_site/images/1/1c/Msnclass.png)]({{site.github.url}}/old_site/images/1/1c/Msnclass.png)
+NClass running on .Net with included example file: [![Msnclass.png]({{ site.github.url }}/old_site/images/1/1c/Msnclass.png)]({{ site.github.url }}/old_site/images/1/1c/Msnclass.png)
 
 Getting Started
 ---------------
@@ -70,13 +70,13 @@ For the purpose of this guide, we will make the assumption that the developer is
 
 Because we grabbed the source version, first we need to load up NClass.sln in Visual Studio and compile the solution.
 
-[![Build.png]({{site.github.url}}/old_site/images/1/18/Build.png)]({{site.github.url}}/old_site/images/1/18/Build.png)
+[![Build.png]({{ site.github.url }}/old_site/images/1/18/Build.png)]({{ site.github.url }}/old_site/images/1/18/Build.png)
 
 Once we have a compiled executable, we can run MoMA on it to give us an idea of what kinds of issues we may run into.
 
-[![Moma1.png]({{site.github.url}}/old_site/images/3/35/Moma1.png)]({{site.github.url}}/old_site/images/3/35/Moma1.png)
+[![Moma1.png]({{ site.github.url }}/old_site/images/3/35/Moma1.png)]({{ site.github.url }}/old_site/images/3/35/Moma1.png)
 
-[![Moma2.png]({{site.github.url}}/old_site/images/c/c4/Moma2.png)]({{site.github.url}}/old_site/images/c/c4/Moma2.png)
+[![Moma2.png]({{ site.github.url }}/old_site/images/c/c4/Moma2.png)]({{ site.github.url }}/old_site/images/c/c4/Moma2.png)
 
 The results from the MoMA scan can be seen [here](http://jpobst.com/moma/nclassmoma.html).
 
@@ -111,7 +111,7 @@ Open "Mono-1.2.4 Command Prompt" that was created in the start menu by the Mono 
 
 Unfortunately, nothing seemed to happen.
 
-[![Cmd1.png]({{site.github.url}}/old_site/images/8/8f/Cmd1.png)]({{site.github.url}}/old_site/images/8/8f/Cmd1.png)
+[![Cmd1.png]({{ site.github.url }}/old_site/images/8/8f/Cmd1.png)]({{ site.github.url }}/old_site/images/8/8f/Cmd1.png)
 
 What actually happened is that the application ran, but hit an error and quit. To see the error, we need to redirect the error output to a file, so we run:
 
@@ -189,13 +189,13 @@ Another strategy is to create different assemblies for .Net and Mono. This can b
 
 When compiling the version for Mono, we would specify the flag MONO in the Build tab of the GUI project properties.
 
-[![Conditional.png]({{site.github.url}}/old_site/images/3/39/Conditional.png)]({{site.github.url}}/old_site/images/3/39/Conditional.png)
+[![Conditional.png]({{ site.github.url }}/old_site/images/3/39/Conditional.png)]({{ site.github.url }}/old_site/images/3/39/Conditional.png)
 
 The downside of this approach is that we must ship separate assemblies for different platforms.
 
 ### Runtime Conditionals
 
-In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ]({{site.github.url}}/FAQ:_Technical#How_can_I_detect_if_am_running_in_Mono.3F)):
+In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ]({{ site.github.url }}/FAQ:_Technical#How_can_I_detect_if_am_running_in_Mono.3F)):
 
 ``` csharp
   public static bool IsRunningOnMono ()
@@ -356,20 +356,20 @@ Also, make the changes to lstItems.ItemSelectionChanged and lstItems\_ItemSelect
 
 With these changes made, rebuild the solution in Visual Studio. Then run the NClass.NClass.exe executable again. This time we get much better results:
 
-[![Nclass1.png]({{site.github.url}}/old_site/images/3/3f/Nclass1.png)]({{site.github.url}}/old_site/images/3/3f/Nclass1.png)
+[![Nclass1.png]({{ site.github.url }}/old_site/images/3/3f/Nclass1.png)]({{ site.github.url }}/old_site/images/3/3f/Nclass1.png)
 
 Loading up the example file:
 
-[![Nclass2.png]({{site.github.url}}/old_site/images/1/10/Nclass2.png)]({{site.github.url}}/old_site/images/1/10/Nclass2.png)
+[![Nclass2.png]({{ site.github.url }}/old_site/images/1/10/Nclass2.png)]({{ site.github.url }}/old_site/images/1/10/Nclass2.png)
 
 Class members dialog:
 
-[![Dialog1.png]({{site.github.url}}/old_site/images/8/86/Dialog1.png)]({{site.github.url}}/old_site/images/8/86/Dialog1.png)
+[![Dialog1.png]({{ site.github.url }}/old_site/images/8/86/Dialog1.png)]({{ site.github.url }}/old_site/images/8/86/Dialog1.png)
 
 Continuing the Port
 -------------------
 
-Now that the application runs, you have a good starting point to work from. However, it needs to be thoroughly tested for issues that MoMA can't find. When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly. If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them. See [Bugs]({{site.github.url}}/old_site/Bugs "Bugs") for details. Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
+Now that the application runs, you have a good starting point to work from. However, it needs to be thoroughly tested for issues that MoMA can't find. When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly. If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them. See [Bugs]({{ site.github.url }}/old_site/Bugs "Bugs") for details. Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
 
 There are still many issues with the NClass port, but for the sake of brevity, we will not attempt to fix them in this guide.
 
@@ -378,20 +378,20 @@ Running on Linux
 
 Ultimately, the goal is to run the application on Linux, so let's look at running NClass on Linux. If you already have a Linux installation, you can look for Mono packages in your distro's package repositories.
 
-If they are not there or are out of date, there are packages for many popular distros on Mono's [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page. If you cannot find pre-made packages, you can also compile from the source code. Instructions are available [here]({{site.github.url}}/old_site/Compiling_Mono "Compiling Mono").
+If they are not there or are out of date, there are packages for many popular distros on Mono's [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page. If you cannot find pre-made packages, you can also compile from the source code. Instructions are available [here]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono").
 
 If you do not have a Linux installation, another option is to run the openSUSE/Mono VMWare image. This is the method we will use, which requires the following:
 
 -   Free VMWare Player - [http://www.vmware.com/products/player/](http://www.vmware.com/products/player/)
--   Mono 1.2.4 on openSUSE 10.2 VMWare image - [Downloads]({{site.github.url}}/old_site/Downloads "Downloads")
+-   Mono 1.2.4 on openSUSE 10.2 VMWare image - [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads")
 
 After installing the VMWare player and unzipping the VMWare image, start the Mono image. It should bring you to the openSUSE desktop:
 
-[![Linux1.jpg]({{site.github.url}}/old_site/images/b/bc/Linux1.jpg)]({{site.github.url}}/old_site/images/b/bc/Linux1.jpg)
+[![Linux1.jpg]({{ site.github.url }}/old_site/images/b/bc/Linux1.jpg)]({{ site.github.url }}/old_site/images/b/bc/Linux1.jpg)
 
-[![]({{site.github.url}}/old_site/images/d/db/Linux3.jpg)]({{site.github.url}}/old_site/images/d/db/Linux3.jpg)
+[![]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/d/db/Linux3.jpg "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg "Enlarge")
 
 Enabling User Shares
 
@@ -411,7 +411,7 @@ Now go back to Windows, and access your new share by typing "\\\\mono\\nclass" i
 
 On the Mono image desktop, double click your NClass folder, and navigate to your compiled NClass.NClass.exe application. Double click it and the application should run.
 
-[![Linux4.png]({{site.github.url}}/old_site/images/0/02/Linux4.png)]({{site.github.url}}/old_site/images/0/02/Linux4.png)
+[![Linux4.png]({{ site.github.url }}/old_site/images/0/02/Linux4.png)]({{ site.github.url }}/old_site/images/0/02/Linux4.png)
 
 ### Linux Platform Differences
 
@@ -438,7 +438,7 @@ public void PlayFinishedSound ()
 
 This function exhibits all three mentioned porting issues.
 
-Mono has a special execution mode that will help you get your port moving faster (if you do not want to change the filename casing or path separators, see the [IOMap]({{site.github.url}}/old_site/IOMap "IOMap") page for details.
+Mono has a special execution mode that will help you get your port moving faster (if you do not want to change the filename casing or path separators, see the [IOMap]({{ site.github.url }}/old_site/IOMap "IOMap") page for details.
 
 #### Win32 P/Invokes
 
@@ -495,7 +495,7 @@ public void PlayFinishedSound ()
 
 Either method will ensure that the correct path separator is used on the correct operating system.
 
-For some more issues you might run into and a more detailed look at options for dealing with them, see [Guidelines:Application Portability]({{site.github.url}}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability").
+For some more issues you might run into and a more detailed look at options for dealing with them, see [Guidelines:Application Portability]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability").
 
 Conclusion
 ----------
@@ -505,6 +505,6 @@ Using this guide, we have managed to port a non-trivial winforms app to start up
 Advanced Guides
 ---------------
 
--   [Guide: Debugging With MWF]({{site.github.url}}/old_site/Guide:_Debugging_With_MWF "Guide: Debugging With MWF") - Shows how to use the MWF project file from SVN to debug issues.
+-   [Guide: Debugging With MWF]({{ site.github.url }}/old_site/Guide:_Debugging_With_MWF "Guide: Debugging With MWF") - Shows how to use the MWF project file from SVN to debug issues.
 
 

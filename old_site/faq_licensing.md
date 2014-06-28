@@ -53,7 +53,7 @@ We use four open source licenses:
 
 Mono is available to be licensed commercially if the LGPL/GPL/X11 combination is not suitable for you. [Xamarin](http://xamarin.com/) offers [commercial licensing](http://xamarin.com/licensing) options to redistribute Mono under non-LGPL terms. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
 
-For other licensing options, [contact us]({{site.github.url}}/old_site/Contact "Contact").
+For other licensing options, [contact us]({{ site.github.url }}/old_site/Contact "Contact").
 
 **Why are the class libraries licensed under the MIT X11 license?**
 
@@ -73,7 +73,7 @@ For example, if you manufacture a device where the end user is not able to do an
 
 Or if you ship an application that requires to statically link the Mono runtime and you are not able to provide the object code to relink Mono, you must obtain a commercial license from Xamarin.
 
-Use our [Contact]({{site.github.url}}/old_site/Contact "Contact") form with the information about your needs to discuss this.
+Use our [Contact]({{ site.github.url }}/old_site/Contact "Contact") form with the information about your needs to discuss this.
 
 **I would like to contribute code to Mono under a particular license. What licenses will you accept?**
 
@@ -139,13 +139,13 @@ You can see Dream in action at [Wik.is](http:///mono.wik.is).
 
 **Are there alternatives to Windows.Forms?**
 
-Yes, there are plenty of alternatives, including [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") see our page on [Gui Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits") for more information.
+Yes, there are plenty of alternatives, including [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") see our page on [Gui Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits") for more information.
 
 **Is Mono only an implementation of the .NET Framework?**
 
 Mono implements both the .NET Framework, as well as plenty of class libraries that are ethier UNIX specific, [Gnome](http://www.gnome.org) specific, or that are not part of the .NET Framework but people find useful.
 
-Mono can also be used a Java Virtual Machine via [IKVM]({{site.github.url}}/old_site/IKVM "IKVM").
+Mono can also be used a Java Virtual Machine via [IKVM]({{ site.github.url }}/old_site/IKVM "IKVM").
 
 Old Background
 ==============

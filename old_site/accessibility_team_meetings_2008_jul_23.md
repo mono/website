@@ -10,7 +10,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Jul 23
 ========================================
 
--!- knocte changed the topic of \#mono-a11y to: Iteration meeting ( [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y )
+-!- knocte changed the topic of \#mono-a11y to: Iteration meeting ( [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y )
 07:05
 **\<@knocte\> **
 well I guess we can start
@@ -443,6 +443,6 @@ hugh, 1 hour meeting!
 **\* decriptor **
 oh and promote a11y stuff at the LWE :)
 ** **
--!- knocte changed the topic of \#mono-a11y to: [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y
+-!- knocte changed the topic of \#mono-a11y to: [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y
 08:07
 

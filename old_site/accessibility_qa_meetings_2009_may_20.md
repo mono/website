@@ -130,7 +130,7 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 22:52:35 \<bgmerrell\> ngao: if you have some spare time, it might be cool for you to set up a machine with two VMs (32-bit and 64-bit openSUSE 11.1 VMs) and see if you can run the test harness code against them (i.e., tests running on both VMs simultaneously) and have the dashboard update with the log results
  May 20 22:53:39 \<ngao\> bgmerrell: run test/harness/local\_run.py?
  May 20 22:54:06 \<bgmerrell\> ngao: yeah, but you would be usuing remote\_run.py (which basically calls local\_run.py on the test VMs)
- May 20 22:54:27 \<bgmerrell\> ngao: [http://www.mono-project.com/Accessibility:\_Testing\_Howto\#Strongwind\_Test\_Harness]({{site.github.url}}/Accessibility:_Testing_Howto#Strongwind_Test_Harness)
+ May 20 22:54:27 \<bgmerrell\> ngao: [http://www.mono-project.com/Accessibility:\_Testing\_Howto\#Strongwind\_Test\_Harness]({{ site.github.url }}/Accessibility:_Testing_Howto#Strongwind_Test_Harness)
  May 20 22:54:30 \<bgmerrell\> that explains how it works
  May 20 22:54:36 \<bgmerrell\> but there is some really cool code to work with there
  May 20 22:54:57 \<bgmerrell\> i use inotify to detect new logs for the dashboard to update

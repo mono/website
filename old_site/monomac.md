@@ -45,7 +45,7 @@ As of December 12th 2012, Xamarin now offers a superset of MonoMac called [Xamar
 Tutorials
 =========
 
--   [MonoMac packaging, and AppStore distribution]({{site.github.url}}/old_site/MonoMacPackager "MonoMacPackager")
+-   [MonoMac packaging, and AppStore distribution]({{ site.github.url }}/old_site/MonoMacPackager "MonoMacPackager")
 -   [.NET Development for OSX](http://www.satter.org/2010/09/net-development-for-os-x.html)
 -   Online blogs/tutorials:
     -   [Getting Started Part 1](http://cocoa-mono.org/archives/22/chapter-1-getting-started-part-1/)
@@ -236,5 +236,5 @@ We need contributors in the following areas:
 -   We need to alter MonoDevelop's plugin to produce OSX Application bundles.
 -   Providing [one-line "summary" documentation](http://lists.ximian.com/pipermail/mono-osx/2010-October/003178.html)
 
-Please join us on the mono-osx [mailing list]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists") to discuss the future of MonoMac.
+Please join us on the mono-osx [mailing list]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists") to discuss the future of MonoMac.
 

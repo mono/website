@@ -49,7 +49,7 @@ Microsoft created the UI Automation specification to enhance the existing techno
 
 To make UI Automation integrate with the GNOME Desktop, UI Automation needs to integrate into the existing accessibility frameworks; namely at-spi and ATK. The UIA Client interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to at-spi. Similarly, the UIA Provider interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to ATK. The following diagram shows all of these technologies and layers put together.
 
-[![Architecture.png]({{site.github.url}}/old_site/images/3/37/Architecture.png)]({{site.github.url}}/old_site/images/3/37/Architecture.png)
+[![Architecture.png]({{ site.github.url }}/old_site/images/3/37/Architecture.png)]({{ site.github.url }}/old_site/images/3/37/Architecture.png)
 
 Provider Details
 ----------------
@@ -82,7 +82,7 @@ Be aware that the documentation from Microsoft explains the technology from the 
 
 The bridge from UIA Providers to ATK needs to map the Properties, Events, and Control Patterns from UIA Providers to ATK roles, events, and properties. A UIA element does not report back which provider interfaces it implements but it does report back the Control Type. Since UIA Control Types are a better match for a mapping to ATK roles, they will be used as the primary means of the mapping. The UIA element's object will also be introspected for any additional provider interfaces that are implemented and accounted for in the mapping.
 
-Details about the actual mapping of UIA Providers and Control Types to ATK can be found on the [Mapping UIA to ATK]({{site.github.url}}/old_site/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK") page.
+Details about the actual mapping of UIA Providers and Control Types to ATK can be found on the [Mapping UIA to ATK]({{ site.github.url }}/old_site/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK") page.
 
 Definitions
 -----------
@@ -96,8 +96,8 @@ Definitions
  GAIL---GNOME Accessbility Implementation Library. GAIL provides accessibility support for GTK by implementing AtkObjects for widgets in GTK. GAIL is dynamically loadable (as a module) at runtime by a GTK application. Once loaded, those parts of your application that use standard GTK widgets will have a basic level of accessibility, without you having to modify your application at all. (If GAIL is not loaded, GTK widgets will have a default accessibility implementation that essentially returns no information, though it nominally conforms to the ATK API.)
  ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.
  UIA/at-spi Bridge---Mapping of AT-SPI to the UIA client APIs.
- [WinForms]({{site.github.url}}/old_site/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
- [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.
+ [WinForms]({{ site.github.url }}/old_site/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
+ [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.
  [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.
  [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).
  [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.

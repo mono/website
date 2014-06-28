@@ -11,7 +11,7 @@ redirect_from:
 Accessibility: Development Progress
 ===================================
 
-[Back to Mono Accessibility]({{site.github.url}}/Accessibility)
+[Back to Mono Accessibility]({{ site.github.url }}/Accessibility)
 
 <table>
 <col width="100%" />

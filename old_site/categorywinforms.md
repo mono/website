@@ -10,5 +10,5 @@ redirect_from:
 Category:WinForms
 =================
 
-This category contains articles about the Windows Forms GUI Toolkit. Please see [WinForms]({{site.github.url}}/old_site/WinForms "WinForms") for a general overview.
+This category contains articles about the Windows Forms GUI Toolkit. Please see [WinForms]({{ site.github.url }}/old_site/WinForms "WinForms") for a general overview.
 

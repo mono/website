@@ -179,7 +179,7 @@ mario, ipython is a interactive python shell i think
 **\<@bgmerrell\> **
 fyi, the suse package for Iron Python is IPCE
 **\<@Calen\> **
-in [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls you can find which control link to which application
+in [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls you can find which control link to which application
 **\<@mario\> **
 Ok, I'll try the samples.
 07:29
@@ -231,7 +231,7 @@ decriptor: how about you? plese go your report :)
 **\<@decriptor\> **
 Calen: ok
 07:38
-so this last iteration I worked on the build plan ([http://www.mono-project.com/Accessibili]({{site.github.url}}/Accessibili) ty:\_Build\_Plan) so if anyone has any comments on that let me know. I also implemented OBS on build0 to an extent. Hopefully we can get that fully up and running. Possibly trying to patch a bug there. Started to put monobuild on build1.
+so this last iteration I worked on the build plan ([http://www.mono-project.com/Accessibili]({{ site.github.url }}/Accessibili) ty:\_Build\_Plan) so if anyone has any comments on that let me know. I also implemented OBS on build0 to an extent. Hopefully we can get that fully up and running. Possibly trying to patch a bug there. Started to put monobuild on build1.
 07:40
 this iteration, hopefully get OBS fully up and running. Hoping get monobuild up on the other machine. Start working with the mono team and seeing where we can help each other with the build stuff
 07:41
@@ -281,7 +281,7 @@ I'll fix that
 **\<@Calen\> **
 jpallen: i posted it
 **\<@sandy\> **
-[http://mono-project.com/index.php?title=]({{site.github.url}}/index.php?title=) Accessibility:\_Team\_Meetings\_2008\_Jul\_02
+[http://mono-project.com/index.php?title=]({{ site.github.url }}/index.php?title=) Accessibility:\_Team\_Meetings\_2008\_Jul\_02
 07:51
 **\< jpallen\> **
 ah

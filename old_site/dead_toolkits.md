@@ -41,9 +41,9 @@ Cons:
 (DEAD) Qt\#
 -----------
 
-[![]({{site.github.url}}/old_site/images/9/91/Mahjongg-0.6-window.png)]({{site.github.url}}/old_site/images/9/91/Mahjongg-0.6-window.png)
+[![]({{ site.github.url }}/old_site/images/9/91/Mahjongg-0.6-window.png)]({{ site.github.url }}/old_site/images/9/91/Mahjongg-0.6-window.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{site.github.url}}/old_site/images/9/91/Mahjongg-0.6-window.png "Enlarge")
+[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/9/91/Mahjongg-0.6-window.png "Enlarge")
 
 QT\# Sample
 

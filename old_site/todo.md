@@ -170,7 +170,7 @@ If some people (or group of people) want to take on a task, they should write to
 There are different areas of interest where high-level contributions can be made:
 
 -   **JIT compiler:** tasks can be: adding more optimizations, reducing compile time, porting to different architectures.
--   **[AOT]({{site.github.url}}/old_site/AOT "AOT") compiler:** optimizing the compiler output and the AOT loader, better support for multiple application domains.
+-   **[AOT]({{ site.github.url }}/old_site/AOT "AOT") compiler:** optimizing the compiler output and the AOT loader, better support for multiple application domains.
 -   **VM runtime:**optimizing the runtime data structures, experimenting with different garbage collectors, integration with different component models.
 -   **Class library:**many opportunities in the implementation of regular expressions, Xml related technologies (XPath, XLST, etc).
 -   **Compilers:**writing compilers, interpreters and runtimes for langauges so that they run on the CLR (using Reflection.Emit support, for example).

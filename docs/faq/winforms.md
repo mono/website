@@ -61,7 +61,7 @@ The GenToo Linux Wiki has a [good description on how to setup the Xorg server](h
 
 Windows.Forms is implemented fully in C\# managed code and uses System.Drawing to perform most of its tasks.
 
-For more details see the [Winforms Roadmap]({{site.github.url}}/old_site/WinForms "WinForms")
+For more details see the [Winforms Roadmap]({{ site.github.url }}/old_site/WinForms "WinForms")
 
 A small driver is required for each operating system supported. Currently we have drivers for:
 
@@ -79,7 +79,7 @@ Yes, as of Mono 1.9, Winforms has a native OSX driver that it uses by default.
 
 #### Do you have a comparison chart about the various toolkit offerings?
 
-See [Gui Toolkits]({{site.github.url}}/old_site/Gui_Toolkits "Gui Toolkits").
+See [Gui Toolkits]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits").
 
 #### GDIPlus Initializer Exception
 
@@ -110,11 +110,11 @@ You have three options:
 -   Implement the method in Mono.
 -   Wait for it to be implemented in Mono.
 
-To see which methods are currently missing from the SVN version of Mono, see the [class status pages]({{site.github.url}}/old_site/Class_Status "Class Status").
+To see which methods are currently missing from the SVN version of Mono, see the [class status pages]({{ site.github.url }}/old_site/Class_Status "Class Status").
 
 #### Why not implement System.Windows.Forms on top of Gtk\# or Qt\#?
 
 Compatibility.
 
-Although it is possible to run simple Windows.Forms applications with the Gtk\#-based backend of Windows.Forms, it is very unlikely that the implementation will ever implement everything needed for full compatibility with Windows.Forms. The reason is that Windows.Forms is not a complete toolkit, and to work around this problem some of the underlying Win32 foundation is exposed to the programmer in the form of exposing the Windows message handler (WndProc). Any control can override this method. Also developers often P/Invoke into Win32 to get to functionality that was not wrapped. To achieve full compatibility, we would have to emulate this, and it would take too long. For more details see the [winforms page]({{site.github.url}}/old_site/WinForms "WinForms").
+Although it is possible to run simple Windows.Forms applications with the Gtk\#-based backend of Windows.Forms, it is very unlikely that the implementation will ever implement everything needed for full compatibility with Windows.Forms. The reason is that Windows.Forms is not a complete toolkit, and to work around this problem some of the underlying Win32 foundation is exposed to the programmer in the form of exposing the Windows message handler (WndProc). Any control can override this method. Also developers often P/Invoke into Win32 to get to functionality that was not wrapped. To achieve full compatibility, we would have to emulate this, and it would take too long. For more details see the [winforms page]({{ site.github.url }}/old_site/WinForms "WinForms").
 

@@ -89,14 +89,14 @@ In this guide we will focus on issues arising from differences between the Unix 
 
 In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C\# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
 
-[![BlogStarterKit StartPage.png]({{site.github.url}}/old_site/images/8/83/BlogStarterKit_StartPage.png)]({{site.github.url}}/old_site/images/8/83/BlogStarterKit_StartPage.png)
+[![BlogStarterKit StartPage.png]({{ site.github.url }}/old_site/images/8/83/BlogStarterKit_StartPage.png)]({{ site.github.url }}/old_site/images/8/83/BlogStarterKit_StartPage.png)
 
 Getting started
 ---------------
 
 No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
 
-> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image]({{site.github.url}}/old_site/Downloads "Downloads") to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
+> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image]({{ site.github.url }}/old_site/Downloads "Downloads") to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
 
 If your application uses MS SQL then on your Unix system you will need to install the [PostgreSQL](http://postgresql.org/) RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
 
@@ -279,7 +279,7 @@ All the markup elements that refer to resources external to a file they are in s
 
 #### Filesystem path syntax
 
-This section is based on [Porting Winforms Applications]({{site.github.url}}/old_site/Guide:_Porting_Winforms_Applications#the-path-separator "Guide: Porting Winforms Applications")**
+This section is based on [Porting Winforms Applications]({{ site.github.url }}/old_site/Guide:_Porting_Winforms_Applications#the-path-separator "Guide: Porting Winforms Applications")**
 
 The issue you should pay great attention to is the platform-specific filesystem paths. Windows systems use a backslash (`"\"`) as path separator, while Unix systems use the forward slash (`"/"`) for the same purpose.
 
@@ -709,7 +709,7 @@ Supporting Multiple Platforms
 
 Some applications require advanced configuration settings that are OS-specific or deployment specific. For example, Mono uses this to set the default membership and role managers on Linux to use SQLite by default, as opposed to a larger database.
 
-Configuration is driven by the settings.map file, for a detailed explanation of it see the [[[2]]({{site.github.url}}/ASP.NET_Settings_Mapping)] document.
+Configuration is driven by the settings.map file, for a detailed explanation of it see the [[[2]]({{ site.github.url }}/ASP.NET_Settings_Mapping)] document.
 
 More Tutorials
 --------------

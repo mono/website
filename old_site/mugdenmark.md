@@ -11,7 +11,7 @@ redirect_from:
 MUG:Denmark
 ===========
 
-Danish Mono User Group (DKMUG) er den første danske Mono-brugergruppe som i øjeblikket har følgende [medlemmer]({{site.github.url}}/old_site/Medlemmer "Medlemmer").
+Danish Mono User Group (DKMUG) er den første danske Mono-brugergruppe som i øjeblikket har følgende [medlemmer]({{ site.github.url }}/old_site/Medlemmer "Medlemmer").
 
 Gruppen danner fællesskab om Mono for Mono-entusiaster i hele Danmark.
 

@@ -11,7 +11,7 @@ Contributing
 
 We welcome contributions to the the Class Library. To get started, check the status page for information about which APIs are being worked on, and how to get in touch with individual maintainers.
 
-If you want to work on a class, first check the [Classes Distribution]({{site.github.url}}/old_site/Downloads "Downloads") to see if it is not implemented yet, if not, check the [class status pages]({{site.github.url}}/old_site/Resources#class-status-pages-for-mono "Resources") to see if someone is already working on it, and maybe contact them.
+If you want to work on a class, first check the [Classes Distribution]({{ site.github.url }}/old_site/Downloads "Downloads") to see if it is not implemented yet, if not, check the [class status pages]({{ site.github.url }}/old_site/Resources#class-status-pages-for-mono "Resources") to see if someone is already working on it, and maybe contact them.
 
 If nobody is working on it, mail [mono-list@ximian.com](mailto:mono-list@ximian.com) with the class you want to implement and CC [miguel@ximian.com](mailto:miguel@ximian.com).
 
@@ -51,7 +51,7 @@ Please write your regression tests using [NUnit](http://nunit.sourceforge.net)
 Coding conventions
 ------------------
 
-See our [Coding Guidelines]({{site.github.url}}/old_site/Coding_Guidelines "Coding Guidelines") document for details on the coding conventions.
+See our [Coding Guidelines]({{ site.github.url }}/old_site/Coding_Guidelines "Coding Guidelines") document for details on the coding conventions.
 
 Missing implementation bits
 ===========================

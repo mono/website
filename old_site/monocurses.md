@@ -10,7 +10,7 @@ redirect_from:
 MonoCurses
 ==========
 
-[![Screenshot1.png]({{site.github.url}}/old_site/images/8/81/Screenshot1.png)]({{site.github.url}}/old_site/images/8/81/Screenshot1.png)
+[![Screenshot1.png]({{ site.github.url }}/old_site/images/8/81/Screenshot1.png)]({{ site.github.url }}/old_site/images/8/81/Screenshot1.png)
 
 MonoCurses provides managed applications with an API to create console-based applications.
 
@@ -46,7 +46,7 @@ In addition to the low-level curses bindings, currently MonoCurses ships with a 
 Obtaining mono-curses
 =====================
 
-You can download mono-curses from the [AnonSVN]({{site.github.url}}/old_site/SourceCodeRepository) SVN repository, look for module mono-curses. Packaged tarballs are available from [http://tirania.org/software/mono-curses](http://tirania.org/software/mono-curses)
+You can download mono-curses from the [AnonSVN]({{ site.github.url }}/old_site/SourceCodeRepository) SVN repository, look for module mono-curses. Packaged tarballs are available from [http://tirania.org/software/mono-curses](http://tirania.org/software/mono-curses)
 
 You can [browse the source code](http://anonsvn.mono-project.com/viewvc/trunk/mono-curses/)
 

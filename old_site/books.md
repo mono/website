@@ -47,7 +47,7 @@ The following covers an older version of Mono (a few years old):
 
 -   English: [Mono Kickstart](http://www.amazon.com/exec/obidos/tg/detail/-/0672325799/ref=pd_sim_b_1/102-2260035-7729704?%5Fencoding=UTF8&v=glance)
 
-There is an online guide in this web site, the [Monkeyguide]({{site.github.url}}/old_site/Monkeyguide "Monkeyguide")
+There is an online guide in this web site, the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide")
 
 C\#
 ---
@@ -76,7 +76,7 @@ Remoting
 Threading
 ---------
 
-[.NET Multithreading](http://www.bookpool.com/.x/maijdy6d0n/ss/1?qs=1-930110-54-5&Go.x=0&Go.y=0&Go=Go): Alan L. Dennis ([ISBN 1-930110-54-5]({{site.github.url}}/old_site/Special:BookSources/1930110545))
+[.NET Multithreading](http://www.bookpool.com/.x/maijdy6d0n/ss/1?qs=1-930110-54-5&Go.x=0&Go.y=0&Go=Go): Alan L. Dennis ([ISBN 1-930110-54-5]({{ site.github.url }}/old_site/Special:BookSources/1930110545))
 
 Web Services
 ------------
@@ -95,7 +95,7 @@ ASP.NET
 Security
 --------
 
-[.NET Framework Security](http://www.amazon.com/exec/obidos/tg/detail/-/067232184X/qid=1110823169/sr=8-1/ref=pd_csp_1/103-9518434-1095811?v=glance&s=books&n=507846) by Brian A. LaMacchia, Sebastian Lange, Matthew Lyons, Rudi Martin & Kevin T. Price ([ISBN 067232184X]({{site.github.url}}/old_site/Special:BookSources/067232184X))
+[.NET Framework Security](http://www.amazon.com/exec/obidos/tg/detail/-/067232184X/qid=1110823169/sr=8-1/ref=pd_csp_1/103-9518434-1095811?v=glance&s=books&n=507846) by Brian A. LaMacchia, Sebastian Lange, Matthew Lyons, Rudi Martin & Kevin T. Price ([ISBN 067232184X]({{ site.github.url }}/old_site/Special:BookSources/067232184X))
 
 Compiler Implementation
 -----------------------

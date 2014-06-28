@@ -10,11 +10,11 @@ redirect_from:
 MonoSummit2007
 ==============
 
-[![Summit.png]({{site.github.url}}/old_site/images/4/42/Summit.png)]({{site.github.url}}/old_site/images/4/42/Summit.png)
+[![Summit.png]({{ site.github.url }}/old_site/images/4/42/Summit.png)]({{ site.github.url }}/old_site/images/4/42/Summit.png)
 
-[![Logo uned.gif]({{site.github.url}}/old_site/images/e/e1/Logo_uned.gif)]({{site.github.url}}/old_site/images/e/e1/Logo_uned.gif)
+[![Logo uned.gif]({{ site.github.url }}/old_site/images/e/e1/Logo_uned.gif)]({{ site.github.url }}/old_site/images/e/e1/Logo_uned.gif)
 
-[![Cindetec.png]({{site.github.url}}/old_site/images/8/86/Cindetec.png)]({{site.github.url}}/old_site/images/8/86/Cindetec.png)
+[![Cindetec.png]({{ site.github.url }}/old_site/images/8/86/Cindetec.png)]({{ site.github.url }}/old_site/images/8/86/Cindetec.png)
 
  The Mono Summit will be held in Madrid, Spain from November 26th to November 30th of 2007.
 
@@ -54,7 +54,7 @@ Developer Meeting: November 28th, 29th, 30th.
 Information
 ===========
 
--   [Agenda]({{site.github.url}}/old_site/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule")
+-   [Agenda]({{ site.github.url }}/old_site/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule")
 -   Registration: [this web site](http://www.whyfloss.com/en/summit/mono07/)
 -   Location: [here](http://www.whyfloss.com/en/summit/mono07/location)
 -   How to arrive: [Páginas Amarilla](http://engcallejero.paginasamarillas.es/flash/mapa.asp?ciudad=MADRID&x=-6415&y=5404&l1=28012,%20MADRID&l2=Calle%20Tribulete,%2014&t_act=&radio=1000&Ops=Vacio&idCalle=6349&localidadgis=MADRID&idioma=eng&site=callejero) & [Google Maps](http://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&ttype=&q=+c%2F+Tribulete,+14,+Madrid&sll=37.0625,-95.677068&sspn=30.406222,63.896484&ie=UTF8&ll=40.408317,-3.70295&spn=0.007124,0.0156&z=16&iwloc=addr&om=1)
@@ -64,7 +64,7 @@ Planning Meeting
 
 The planning meeting on Monday and Tuesday is open to contributors to the Mono project to discuss goals, roadmap, objectives and help plan and prioritize the tasks for the Mono project.
 
-This includes Mono, [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") and [Olive]({{site.github.url}}/old_site/Olive "Olive") as well as discussing future developments.
+This includes Mono, [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") and [Olive]({{ site.github.url }}/old_site/Olive "Olive") as well as discussing future developments.
 
 Developer Meeting
 -----------------
@@ -73,7 +73,7 @@ The Developer Meeting will be held from Wednesday to Friday, we will open with a
 
 This year we will be allocating more free face-to-face time for people to talk to the developers by having explicit "Meet the Experts" sessions, and dedicating the afternoons for un-conference sessions, hacking and consulting.
 
-The current agenda is available [here]({{site.github.url}}/old_site/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule"), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.ximian.com mailing list. [(Mailing List info)]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists")
+The current agenda is available [here]({{ site.github.url }}/old_site/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule"), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.ximian.com mailing list. [(Mailing List info)]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists")
 
 Event Planning
 ==============

@@ -129,7 +129,7 @@ I'm also adding new logic to support logic
 
 s/support logic/support navigation
 
-and the preview of the Winfors implementation is done: [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Winforms\_Implementation
+and the preview of the Winfors implementation is done: [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Winforms\_Implementation
 
 07:09
 

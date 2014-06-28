@@ -53,7 +53,7 @@ So we need to figure up:
 
 -   Ideally, I would like us to be 2.0 API complete for the preview. This is a great milestone to advertise, and is going to ensure everyone's app at least compiles, so they can start porting and reporting tons of bugs.
 -   Note that some features will be documented as Not Supported, but the API will still be there as stubs to allow compiling and running. (We will produce a big document of what isn't supported yet by class.)
--   This is kinda what's left: [http://www.mono-project.com/Winforms\_2.0]({{site.github.url}}/Winforms_2.0)
+-   This is kinda what's left: [http://www.mono-project.com/Winforms\_2.0]({{ site.github.url }}/Winforms_2.0)
 -   We have mainly WebControl left, and then some random methods here and there. (To be API complete, not for it to all work 100%)
 -   Andriea needs to provide estimates and a road map as to how WebControl work is going. If completeness is going to take too long, then we need to look at MoMA and pick out the most important stuff that needs to work, and stub the rest.
 

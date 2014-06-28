@@ -92,7 +92,7 @@ For each remote SVN branch you are working on, you will need a corresponding loc
 
 In these local branches ("master" and "1.0" in this case), every commit you make will eventually be mirrored in SVN when you run \`git svn dcommit\`. For that reason and others, you will actually do all of your work in feature branches, and merge them back when it is time to commit to SVN.
 
-This is all documented in our [git-svn daily workflow]({{site.github.url}}/old_site/Accessibility:_GitSVN:_Workflow "Accessibility: GitSVN: Workflow"). Please read it very carefully, as it explains how to update, edit, handle reviews, and commit.
+This is all documented in our [git-svn daily workflow]({{ site.github.url }}/old_site/Accessibility:_GitSVN:_Workflow "Accessibility: GitSVN: Workflow"). Please read it very carefully, as it explains how to update, edit, handle reviews, and commit.
 
 Maintaining the gitorious repository
 ------------------------------------

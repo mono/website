@@ -48,7 +48,7 @@ Vulnerabilities
 Reporting vulnerabilities
 =========================
 
-Please report security vulnerabilities using our [contact form]({{site.github.url}}/old_site/Contact "Contact").
+Please report security vulnerabilities using our [contact form]({{ site.github.url }}/old_site/Contact "Contact").
 
 Known vulnerabilities
 =====================
@@ -378,7 +378,7 @@ Notes
 
 Workaround
 
--   Use Apache/[Mod\_mono]({{site.github.url}}/old_site/Mod_mono "Mod mono") configured with **AddHander**.
+-   Use Apache/[Mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") configured with **AddHander**.
 
 Local privilege escalation via System.Xml.Serialization
 -------------------------------------------------------

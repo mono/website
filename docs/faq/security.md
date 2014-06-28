@@ -20,7 +20,7 @@ You can confirm this by using the [[1]](https://raw.github.com/mono/mono/master/
 
 There are three alternatives to solve this problem:
 
--   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully]({{site.github.url}}/old_site/UsingTrustedRootsRespectfully "UsingTrustedRootsRespectfully") article.
+-   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully]({{ site.github.url }}/old_site/UsingTrustedRootsRespectfully "UsingTrustedRootsRespectfully") article.
 
 -   Use the `certmgr.exe` tool (included in Mono) to add the root certificates into the Mono **Trust** store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 
@@ -74,7 +74,7 @@ Are SSL client certificates supported ?
 
 Both SslClientStream and SslServerStream, in Mono.Security.dll, support client certificates, however HttpWebRequest doesn't due to a strange design/relationship between the 1.x framework and Windows/CryptoAPI (i.e. there is no managed API to associate a certificate with a private key). This should be fixed in the 2.0 profile as the X509Certificate class has been extended to provide this association.
 
-Also recent versions of [XSP]({{site.github.url}}/ASP.NET#XSP) do support SSL/TLS and client certificates. See the [UsingClientCertificatesWithXSP]({{site.github.url}}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP") article for more details.
+Also recent versions of [XSP]({{ site.github.url }}/ASP.NET#XSP) do support SSL/TLS and client certificates. See the [UsingClientCertificatesWithXSP]({{ site.github.url }}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP") article for more details.
 
 Does SSL works for SMTP, like GMail ?
 -------------------------------------
@@ -109,7 +109,7 @@ Alternatively, if you have a certified implementation and the wrapper, you can i
 Are there any efforts to bind external libraries that are FIPS certified?
 -------------------------------------------------------------------------
 
-There is an ongoing effort part of Mono called the [Crimson]({{site.github.url}}/old_site/Crimson "Crimson") project, you might want to contribute to that effort.
+There is an ongoing effort part of Mono called the [Crimson]({{ site.github.url }}/old_site/Crimson "Crimson") project, you might want to contribute to that effort.
 
 Authenticode(r) Code Signing
 ============================
@@ -197,21 +197,21 @@ Code Access Security (CAS)
 Does Mono support CAS ?
 -----------------------
 
-Mono 1.0.x **doesn't** support [Code Access Security]({{site.github.url}}/old_site/CAS "CAS"). Mono 1.2 has an experimental preview of the technology (turned **off** by default) with partial (and unaudited) class library support.
+Mono 1.0.x **doesn't** support [Code Access Security]({{ site.github.url }}/old_site/CAS "CAS"). Mono 1.2 has an experimental preview of the technology (turned **off** by default) with partial (and unaudited) class library support.
 
 In addition, Mono currently does not have a complete verifier, which means that invalid assemblies will produce an assertion in the runtime.
 
 How can I activate CAS ?
 ------------------------
 
-By default [Code Access Security]({{site.github.url}}/old_site/CAS "CAS") is turned **off** in Mono. On Mono 1.1.4 and later you can turn on the security manager by using the `--security` option. E.g.
+By default [Code Access Security]({{ site.github.url }}/old_site/CAS "CAS") is turned **off** in Mono. On Mono 1.1.4 and later you can turn on the security manager by using the `--security` option. E.g.
 
     mono --security sample.exe
 
 Will Mono have a complete verifier?
 -----------------------------------
 
-Mono 2.0 already has an IL verifier while the metadata verifier will be complete by the time that [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") 2.0 ships.
+Mono 2.0 already has an IL verifier while the metadata verifier will be complete by the time that [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") 2.0 ships.
 
 In the meantime, you can invoke Mono from the command line to test whether the metadata and code will be processed successfully by Mono, by calling Mono like this:
 
@@ -280,5 +280,5 @@ Other resources on this site
 Known Vulnerabilities
 ---------------------
 
-A list of known [vulnerabilities]({{site.github.url}}/old_site/Vulnerabilities "Vulnerabilities") affecting older versions of Mono is available.
+A list of known [vulnerabilities]({{ site.github.url }}/old_site/Vulnerabilities "Vulnerabilities") affecting older versions of Mono is available.
 

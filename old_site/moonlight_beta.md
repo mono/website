@@ -40,7 +40,7 @@ Moonlight 2.0 will be the new version of Novell's Silverlight-compatible plugin,
 
 This release is feature complete, but as a beta there are various known bugs (mostly minor) and most assuredly unknown ones as well. We still haven't completed the security audit of the source code (mono or moonlight), so you need to be aware that there may be issues.
 
-As such we recommend that you should only use this plugin on trusted sites (e.g. internal or well-known web sites) on non-production computers. This situation will gradually evolve over the beta releases. An up to date overview of Moonlight security features status can be found on [Moonlight Security Status]({{site.github.url}}/old_site/Moonlight/SecurityStatus "Moonlight/SecurityStatus") wiki page.
+As such we recommend that you should only use this plugin on trusted sites (e.g. internal or well-known web sites) on non-production computers. This situation will gradually evolve over the beta releases. An up to date overview of Moonlight security features status can be found on [Moonlight Security Status]({{ site.github.url }}/old_site/Moonlight/SecurityStatus "Moonlight/SecurityStatus") wiki page.
 
 ### Downloading
 
@@ -62,7 +62,7 @@ To build the above, you should build the modules in this order:
 -   mono-basic
 -   moon
 
-Follow the instructions in our [Compiling Mono From SVN]({{site.github.url}}/old_site/Compiling_Mono_From_SVN "Compiling Mono From SVN") page.
+Follow the instructions in our [Compiling Mono From SVN]({{ site.github.url }}/old_site/Compiling_Mono_From_SVN "Compiling Mono From SVN") page.
 
 As always, you can get the development source from trunk:
 

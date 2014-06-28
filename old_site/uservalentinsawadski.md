@@ -20,7 +20,7 @@ Kind Regards, Valentin.
 
 **Articles I'm working on:**
 
--   **[New Version of the Use-Page]({{site.github.url}}/old_site/New_Version_of_the_Use-Page "New Version of the Use-Page")**: The Entry-Usage article is currently all about "Use this or that of Mono", while I'm trying to rewrite the article in a way that shows *what* Mono can be used for.
+-   **[New Version of the Use-Page]({{ site.github.url }}/old_site/New_Version_of_the_Use-Page "New Version of the Use-Page")**: The Entry-Usage article is currently all about "Use this or that of Mono", while I'm trying to rewrite the article in a way that shows *what* Mono can be used for.
 
 * * * * *
 

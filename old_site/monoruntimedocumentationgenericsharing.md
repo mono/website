@@ -37,7 +37,7 @@ This describes the technology used in Mono's Virtual Machine to share code when 
 Porting
 =======
 
-This describes how to port the generic code sharing infrastructure in Mono. This is in addition to the [Mono Runtime Porting]({{site.github.url}}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting") instructions.
+This describes how to port the generic code sharing infrastructure in Mono. This is in addition to the [Mono Runtime Porting]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting") instructions.
 
 Generic class init trampoline
 -----------------------------

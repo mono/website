@@ -6,7 +6,7 @@ navgroup: docs
 
 Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.
 
-If you have more than one Mono installation (for example to keep multiple versions around), you will want to read the document on [Parallel Mono Environments]({{site.github.url}}/old_site/Parallel_Mono_Environments "Parallel Mono Environments") on how to keep your various Mono installations separate.
+If you have more than one Mono installation (for example to keep multiple versions around), you will want to read the document on [Parallel Mono Environments]({{ site.github.url }}/old_site/Parallel_Mono_Environments "Parallel Mono Environments") on how to keep your various Mono installations separate.
 
 **It is strongly advised not to install Mono from source in /usr as it might conflict with Mono as installed by the Mono package.**
 

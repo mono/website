@@ -12,7 +12,7 @@ Mono:ARM
 
 Fully bootstrapping on little endian Linux system. Should also work on big endian systems.
 
-Mono today runs on the [iPhone]({{site.github.url}}/old_site/Mono:Iphone "Mono:Iphone"), Android, it is known to run on ARM desktop machines, the Nokia 770, Nokia 800 (OS version 2005 and 2006) and the Linksys NSLU2.
+Mono today runs on the [iPhone]({{ site.github.url }}/old_site/Mono:Iphone "Mono:Iphone"), Android, it is known to run on ARM desktop machines, the Nokia 770, Nokia 800 (OS version 2005 and 2006) and the Linksys NSLU2.
 
 It also supports the new ARM ABI (gnueabi also known as armel).
 
@@ -42,7 +42,7 @@ Work to bind the Hildon widget set is happening [here](http://maemo.ndesk.org/)
 Packages: Maemo
 ===============
 
-See the [Maemo]({{site.github.url}}/old_site/Maemo "Maemo") page for packages for the Maemo platform.
+See the [Maemo]({{ site.github.url }}/old_site/Maemo "Maemo") page for packages for the Maemo platform.
 
 Building Mono
 =============

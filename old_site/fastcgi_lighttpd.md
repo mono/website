@@ -12,7 +12,7 @@ FastCGI Lighttpd
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{site.github.url}}/old_site/FastCGI "FastCGI") support for the Lighttpd server.
+Information on how to configure the [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") support for the Lighttpd server.
 
 <table>
 <col width="100%" />
@@ -70,7 +70,7 @@ An earlier version of these configuration instructions was tested on the followi
 General Warnings
 ----------------
 
-Before doing anything else, you should read [FastCGI's important information]({{site.github.url}}/old_site/FastCGI#important-information "FastCGI") on the main page.
+Before doing anything else, you should read [FastCGI's important information]({{ site.github.url }}/old_site/FastCGI#important-information "FastCGI") on the main page.
 
 Basic Configuration
 -------------------

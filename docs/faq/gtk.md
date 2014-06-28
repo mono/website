@@ -156,9 +156,9 @@ class MyWidget : Gtk.DrawingArea {
 Common Questions
 ================
 
-Some frequently asked questions about [GtkSharp]({{site.github.url}}/old_site/GtkSharp "GtkSharp").
+Some frequently asked questions about [GtkSharp]({{ site.github.url }}/old_site/GtkSharp "GtkSharp").
 
-For a list of varios pages dealing with Gtk\# on this site see [GtkSharp Articles]({{site.github.url}}/Category:GtkSharp).
+For a list of varios pages dealing with Gtk\# on this site see [GtkSharp Articles]({{ site.github.url }}/Category:GtkSharp).
 
 **Common Problems**
 
@@ -176,7 +176,7 @@ Xlib: unexpected async reply (sequence 0x146)!
 
 It means that you are trying to invoke methods in Gtk\# from a thread that is not the one that has invoked Application.Run (). This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run. This is done by either just hooking up to signals, using GLib timers or events and not threads.
 
-This topic is covered in more detail in these two pages: [Best\_Practices]({{site.github.url}}/old_site/Best_Practices "Best Practices") and [Responsive Applications]({{site.github.url}}/old_site/Responsive_Applications "Responsive Applications") pages for details on how to solve this issue.
+This topic is covered in more detail in these two pages: [Best\_Practices]({{ site.github.url }}/old_site/Best_Practices "Best Practices") and [Responsive Applications]({{ site.github.url }}/old_site/Responsive_Applications "Responsive Applications") pages for details on how to solve this issue.
 
 Gecko\# and Mozilla
 ===================
@@ -208,7 +208,7 @@ export MOZILLA_HOME="`pkg-config --variable=libdir mozilla-gtkmozembed`"
 mono demo.exe
 ```
 
-Those are usually set on scripts, as recommended on our [Application Deployment Guidelines]({{site.github.url}}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment").
+Those are usually set on scripts, as recommended on our [Application Deployment Guidelines]({{ site.github.url }}/old_site/Guidelines:Application_Deployment "Guidelines:Application Deployment").
 
  **Mozilla and Plugins**
 
@@ -229,7 +229,7 @@ Migration
 
 **How do I migrate a Gtk\# 1.0 to Gtk\# 2.0 application?**
 
-The steps are described in [Gtk\# Upgrade page]({{site.github.url}}/old_site/GtkSharpUpgrade "GtkSharpUpgrade").
+The steps are described in [Gtk\# Upgrade page]({{ site.github.url }}/old_site/GtkSharpUpgrade "GtkSharpUpgrade").
 
 Common Problems
 ===============

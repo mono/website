@@ -12,8 +12,8 @@ Mono On Other Platforms
 
 Beyond Linux and Windows, Mono is also supported on the following platforms:
 
--   [Mac OS X]({{site.github.url}}/old_site/Mono:OSX "Mono:OSX")
--   [BSDs]({{site.github.url}}/old_site/Mono:BSD "Mono:BSD")
+-   [Mac OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX")
+-   [BSDs]({{ site.github.url }}/old_site/Mono:BSD "Mono:BSD")
 -   Solaris
 
 

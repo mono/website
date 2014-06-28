@@ -14,7 +14,7 @@ OldReleases
 Older releases for download
 ===========================
 
-This page contains previous releases of Mono. For the latest version, visit the [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+This page contains previous releases of Mono. For the latest version, visit the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 
 Current Branch
 --------------

@@ -49,7 +49,7 @@ It is the responsibility of team leaders to update the goals set in this page fo
 
 Since Mono is a relatively small team compared to the goals of the project, developers in the team should do much more than just write code, each developer should:
 
--   Run the [test suite]({{site.github.url}}/old_site/Test_Suite "Test Suite") for the given component.
+-   Run the [test suite]({{ site.github.url }}/old_site/Test_Suite "Test Suite") for the given component.
 -   Monitor the [build bots](http://wrench.mono-project.com/builds) for potential failures and regressions.
 -   When writing code, ensure that tests exist for this new feature.
 -   Make sure that proper documentation exists.
@@ -59,7 +59,7 @@ Since Mono is a relatively small team compared to the goals of the project, deve
 Communication
 =============
 
-Communication happens mostly in public forums ([mailing lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists"), [chat rooms]({{site.github.url}}/old_site/IRC "IRC") and this web site).
+Communication happens mostly in public forums ([mailing lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists"), [chat rooms]({{ site.github.url }}/old_site/IRC "IRC") and this web site).
 
 Documentation
 =============
@@ -73,11 +73,11 @@ If you add a new tool, a new command line option, a new feature to a tool:
 If you introduce a new API to Mono-developed APIs:
 
 -   Ensure that there is proper coverage in Monodoc for it
--   If there is no Monodoc framework for it, make sure you [generate it]({{site.github.url}}/old_site/Generating_Documentation "Generating Documentation").
+-   If there is no Monodoc framework for it, make sure you [generate it]({{ site.github.url }}/old_site/Generating_Documentation "Generating Documentation").
 
 If you improve or change the semantics of an API:
 
--   Make sure that [you contribute the update]({{site.github.url}}/old_site/Monodoc_Contributing "Monodoc Contributing").
+-   Make sure that [you contribute the update]({{ site.github.url }}/old_site/Monodoc_Contributing "Monodoc Contributing").
 
 If you answer a public question on the forums, consider whether it would not be a good candidate for the FAQs.
 
@@ -94,7 +94,7 @@ Lead: Paolo Molaro.
 ### Runtime Team Goals
 
 -   Debugger
-    -   Plans is available [debugger plans' here]({{site.github.url}}/old_site/Debugger#plan "Debugger").
+    -   Plans is available [debugger plans' here]({{ site.github.url }}/old_site/Debugger#plan "Debugger").
 -   Generics Support Improvements
     -   The current support needs to be audited, and cleaned up
     -   Optimize memory usage of generics-relate data structures (like removing generic\_container from non-generic MonoMethods).
@@ -111,7 +111,7 @@ Lead: Paolo Molaro.
 -   Security:
     -   Implementation of the Mono Verifier
     -   Implement stack overflow clean shutdown.
-    -   Implement new sandboxed execution system (see [Moonlight]({{site.github.url}}/old_site/Moonlight#security-model "Moonlight") for details).
+    -   Implement new sandboxed execution system (see [Moonlight]({{ site.github.url }}/old_site/Moonlight#security-model "Moonlight") for details).
 -   Reduce Memory Usage
     -   For all runtime data structures (MonoMethod, MonoClassField, MonoClass, exception tables).
 -   IO-Layer
@@ -138,7 +138,7 @@ Windows.Forms Goals
 Moonlight Team
 --------------
 
-Details about the Silverlight implementation are available on the [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") page.
+Details about the Silverlight implementation are available on the [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") page.
 
 MonoDevelop Team
 ----------------

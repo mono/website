@@ -10,13 +10,13 @@ redirect_from:
 Mod mono
 ========
 
-Mod\_Mono is an Apache 2.0/2.2/2.4.3 module that provides [ASP.NET]({{site.github.url}}/old_site/ASP.NET "ASP.NET") support for the web's favorite server, [Apache](http://httpd.apache.org).
+Mod\_Mono is an Apache 2.0/2.2/2.4.3 module that provides [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET") support for the web's favorite server, [Apache](http://httpd.apache.org).
 
 The module passes off requests for ASP.NET pages to an external program, **mod-mono-server**, which actually handles the requests. The communication between the Apache module and mod-mono-server is established using a Unix socket or a TCP socket.
 
 The most simple scenario uses Apache as the HTTP server front end which passes the requests to mod-mono-server to handle, the following diagram illustrates how this setup works:
 
-[![Modmono-basic-setup.PNG]({{site.github.url}}/old_site/images/c/cc/Modmono-basic-setup.PNG)]({{site.github.url}}/old_site/images/c/cc/Modmono-basic-setup.PNG)
+[![Modmono-basic-setup.PNG]({{ site.github.url }}/old_site/images/c/cc/Modmono-basic-setup.PNG)]({{ site.github.url }}/old_site/images/c/cc/Modmono-basic-setup.PNG)
 
 Mod\_mono is an Apache module that is hosted inside Apache. Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process. The mod-mono-server process in turn can host multiple independent applications. It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
 
@@ -27,7 +27,7 @@ Although AppDomains provide an adequate level of isolation, mod\_mono can also b
 -   Allow the kernel to enforce different isolation rules for different processes (for example with AppArmor or SELinux)
 -   Setup different CPU, Disk and memory quotas to different processes
 
-[![Modmono-multiple-servers.PNG]({{site.github.url}}/old_site/images/9/9b/Modmono-multiple-servers.PNG)]({{site.github.url}}/old_site/images/9/9b/Modmono-multiple-servers.PNG)
+[![Modmono-multiple-servers.PNG]({{ site.github.url }}/old_site/images/9/9b/Modmono-multiple-servers.PNG)]({{ site.github.url }}/old_site/images/9/9b/Modmono-multiple-servers.PNG)
 
 For example, in the setup above, the various Apache workers will route requests to /forums and /support to a mod-mono-server that is used by the "community" user on the server. This mod-mono-server will still use two separate AppDomains to isolate the forums software from the support software.
 
@@ -86,7 +86,7 @@ Requirements
 
 You will need [apache](http://httpd.apache.org) , the web server, installed.
 
-From [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") you will need **mono**, **xsp** and **mod\_mono**.
+From [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") you will need **mono**, **xsp** and **mod\_mono**.
 
 Distribution-Specific Documentation
 ===================================
@@ -101,7 +101,7 @@ Easy Configuration of Mod\_Mono
 
 When you installed XSP, a bunch of sample ASP.NET pages and web services were installed too. If the prefix used to configure XSP was /usr, the sample files are located in /usr/lib/xsp/test.
 
-If your needs are not very complicated, all you need is to use [AutoHosting]({{site.github.url}}/old_site/AutoConfiguration), this basically means that you load the mod\_mono.conf file, like this in your Apache configuration file:
+If your needs are not very complicated, all you need is to use [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration), this basically means that you load the mod\_mono.conf file, like this in your Apache configuration file:
 
     Include /etc/apache2/mod_mono.conf
 
@@ -109,7 +109,7 @@ And applications will start to be served. To try it out, copy the /usr/lib/xsp/t
 
 It is recommended that you create a directory per application that you want served. This will allow you to xcopy deploy your applications from Windows to Linux if you want to.
 
-More on automatic configuration of mod\_mono applications is in [AutoHosting]({{site.github.url}}/old_site/AutoConfiguration).
+More on automatic configuration of mod\_mono applications is in [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration).
 
 mod\_mono.conf loads the mod\_mono module, associates ASP.NET file extensions with the ASP.NET MIME type and adds index.aspx, Default.aspx, and default.aspx as automatic directory index pages (with the DirectoryIndex directive). If you don't include mod\_mono.conf in your main Apache configuration, you will at least need to have the mod\_mono.so module loaded with:
 
@@ -143,7 +143,7 @@ Apache 2.x comes with several processing modules (that is - servers, so-called M
 Configuring Mod\_Mono
 =====================
 
-When [AutoHosting]({{site.github.url}}/old_site/AutoConfiguration) does not fit your needs, you will need to include several mod\_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
+When [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration) does not fit your needs, you will need to include several mod\_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
 
 ### Mod\_Mono Configuration Tool
 
@@ -165,7 +165,7 @@ A basic setup is as follows (with line numbers added for convenience):
     2   AddHandler mono .aspx .ascx .asax .ashx .config .cs .asmx .axd
     3   MonoApplications "/:/home/username/www"
 
-The first line disables the [AutoHosting]({{site.github.url}}/old_site/AutoConfiguration) feature. (If inside a VirtualHost section, it disables it just for that virtual host).
+The first line disables the [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration) feature. (If inside a VirtualHost section, it disables it just for that virtual host).
 
 The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod\_mono (rather than Apache processing them itself as plain-text files).
 
@@ -312,7 +312,7 @@ As with most other mod\_mono directives, the first parameter to a directive can 
 Limiting the number of concurrent requests
 ------------------------------------------
 
-The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{site.github.url}}/old_site/Article:ThreadPool_Deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
+The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{ site.github.url }}/old_site/Article:ThreadPool_Deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
 
 mod\_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
 
@@ -550,5 +550,5 @@ You will get more output in the apache error\_log file. Useful when debugging.
 Improving mod\_mono
 ===================
 
-See our [Improving mod\_mono]({{site.github.url}}/old_site/ImprovingModMono "ImprovingModMono") page for details on things that could be improved in the module.
+See our [Improving mod\_mono]({{ site.github.url }}/old_site/ImprovingModMono "ImprovingModMono") page for details on things that could be improved in the module.
 

@@ -16,7 +16,7 @@ Some consideration has been given to create a shared substrate that could be use
 
 The following design document is from Atsushi Enomoto.
 
-You might also be interested in [transaction processing in Mono]({{site.github.url}}/old_site/Transactions "Transactions").
+You might also be interested in [transaction processing in Mono]({{ site.github.url }}/old_site/Transactions "Transactions").
 
 <table>
 <col width="100%" />

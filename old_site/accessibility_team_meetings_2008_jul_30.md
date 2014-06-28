@@ -24,7 +24,7 @@ I got my tests for Form, RadioButton, and GroupBox committed, as I said
 Form could use a few more tests, I think, but the coverage is pretty good right now
 07:06
 I did update the new contributor guidelines
-[http://mono-project.com/Accessibility:\_G]({{site.github.url}}/Accessibility:_G) etting\_Started\_With\_Development
+[http://mono-project.com/Accessibility:\_G]({{ site.github.url }}/Accessibility:_G) etting\_Started\_With\_Development
 there is now a little section about how our Coding Guidelines differ from the rest of Mono
 and some other cleanups
 like instructions for obtaining code coverage when you run unit tests
@@ -165,7 +165,7 @@ sorry, go ahead
 **\<@bgmerrell\> **
 hah!
 most of my time was spent writing some (hopefully) decent documentation for Strongwind that can be referred to by anyone who wants to work on QA
-[http://mono-project.com/Accessibility:\_S]({{site.github.url}}/Accessibility:_S) trongwind\_Basics
+[http://mono-project.com/Accessibility:\_S]({{ site.github.url }}/Accessibility:_S) trongwind\_Basics
 07:30
 Strongwind was very lacking in the documentation department, so this should help
 and as a nice side-effect I can use it as a reference for our utosc presentation
@@ -194,7 +194,7 @@ we need those fixed
 maybe I've found my tasks, then?
 07:33
 **\< jpallen\> **
-i'd like to see some pass/fail status in [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls
+i'd like to see some pass/fail status in [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls
 sandy: maybe
 **\<@bgmerrell\> **
 jpallen: yeah, we should have done that
@@ -208,12 +208,12 @@ right now some of the bugs might be filed against the wrong components because w
 **\< jpallen\> **
 i'll get that going today
 so, moving forward
-i'm going to be looking at [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Control\_Status
+i'm going to be looking at [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Control\_Status
 07:35
 and
-[http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Mapping\_UIA\_to\_ATK
+[http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Mapping\_UIA\_to\_ATK
 and
-[http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls
+[http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls
 to determine how we are tracking to finish phase 1
 this means that everyone on the team should be doing the same :)
 we need to meet our phase 1 deadline
@@ -239,7 +239,7 @@ and i spent some time to read and discussed strongwind\_basics tutorial that was
 in coming iteration
 07:40
 i am going to script strongwind test for scrollbar, and run the test if it's ready to be run test.
-and we also need update [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls wiki page Promptly. :)
+and we also need update [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Test\_Plan\_WinForms\_Controls wiki page Promptly. :)
 here i have a question:
 07:41
 how can i consider if developer have finished one control complelely (i asked it before),
@@ -248,8 +248,8 @@ done
 07:42
 **\<@sandy\> **
 Calen: if we do a good job of updating these wiki pages:
-[http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Control\_Status
-[http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y:\_Mapping\_UIA\_to\_ATK
+[http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Control\_Status
+[http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y:\_Mapping\_UIA\_to\_ATK
 the info should be there
 **\<@calvin\> **
 sandy: agreed

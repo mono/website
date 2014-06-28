@@ -11,7 +11,7 @@ redirect_from:
 Accessibility
 =============
 
-The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.]({{site.github.url}}/old_site/Accessibility:_Release_Notes_2.1 "Accessibility: Release Notes 2.1")
+The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.]({{ site.github.url }}/old_site/Accessibility:_Release_Notes_2.1 "Accessibility: Release Notes 2.1")
 
 <table>
 <col width="100%" />
@@ -60,21 +60,21 @@ The Mono Accessibility project enables many Windows applications to be fully acc
 
 Applications based upon System.Windows.Forms can take advantage of this with no extra code, and enjoy the same level of Accessibility provided by Windows on any system Mono supports.
 
-This is accomplished through two efforts -- First, implement the managed [UI Automation]({{site.github.url}}/old_site/UI_Automation "UI Automation") framework targeted towards Mono's [System.Windows.Forms]({{site.github.url}}/old_site/WinForms) project and second, implement a [bridge]({{site.github.url}}/old_site/Accessibility:_UiaAtkBridge "Accessibility: UiaAtkBridge") between our UI Automation implementation and [ATK](http://www.linuxfoundation.org/en/Accessibility/ATK), the dominant Accessibility technology on Linux.
+This is accomplished through two efforts -- First, implement the managed [UI Automation]({{ site.github.url }}/old_site/UI_Automation "UI Automation") framework targeted towards Mono's [System.Windows.Forms]({{ site.github.url }}/old_site/WinForms) project and second, implement a [bridge]({{ site.github.url }}/old_site/Accessibility:_UiaAtkBridge "Accessibility: UiaAtkBridge") between our UI Automation implementation and [ATK](http://www.linuxfoundation.org/en/Accessibility/ATK), the dominant Accessibility technology on Linux.
 
 Project Goals
 -------------
 
--   Make [System.Windows.Forms]({{site.github.url}}/old_site/WinForms "WinForms") applications accessible via ATK
--   Make [Silverlight](http://silverlight.net/) applications (using [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight")) accessible via ATK
--   Allow [UI Automation]({{site.github.url}}/old_site/UI_Automation "UI Automation") based Accessibility Technologies to read Linux applications built on at-spi
+-   Make [System.Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms") applications accessible via ATK
+-   Make [Silverlight](http://silverlight.net/) applications (using [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight")) accessible via ATK
+-   Allow [UI Automation]({{ site.github.url }}/old_site/UI_Automation "UI Automation") based Accessibility Technologies to read Linux applications built on at-spi
 
 How do I get it?
 ----------------
 
-Packages are provided for various Linux distributions, or you can [build from source]({{site.github.url}}/old_site/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
+Packages are provided for various Linux distributions, or you can [build from source]({{ site.github.url }}/old_site/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
 
-A summary of past releases are available on our [Releases]({{site.github.url}}/old_site/Accessibility:_Releases "Accessibility: Releases") page.
+A summary of past releases are available on our [Releases]({{ site.github.url }}/old_site/Accessibility:_Releases "Accessibility: Releases") page.
 
 Participating
 -------------
@@ -86,49 +86,49 @@ Development
 
 ### High Level Overview
 
--   [Architecture]({{site.github.url}}/old_site/Accessibility:_Architecture "Accessibility: Architecture") of UI Automation on Linux
--   [Project Roadmap]({{site.github.url}}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap") (High Level View)
--   [Development Schedule]({{site.github.url}}/old_site/Accessibility:_Project_Schedule "Accessibility: Project Schedule") (Detailed View)
--   [Phase II Work Breakdown]({{site.github.url}}/old_site/Accessibility:_Phase_II_Work_Breakdown "Accessibility: Phase II Work Breakdown")
--   Members of the Novell [UIA Team]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team")
+-   [Architecture]({{ site.github.url }}/old_site/Accessibility:_Architecture "Accessibility: Architecture") of UI Automation on Linux
+-   [Project Roadmap]({{ site.github.url }}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap") (High Level View)
+-   [Development Schedule]({{ site.github.url }}/old_site/Accessibility:_Project_Schedule "Accessibility: Project Schedule") (Detailed View)
+-   [Phase II Work Breakdown]({{ site.github.url }}/old_site/Accessibility:_Phase_II_Work_Breakdown "Accessibility: Phase II Work Breakdown")
+-   Members of the Novell [UIA Team]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team")
 
 ### Functional Specifications
 
--   [Provider]({{site.github.url}}/old_site/Accessibility:_Provider_Functional_Specification "Accessibility: Provider Functional Specification")
--   [Bridge]({{site.github.url}}/old_site/Accessibility:_Bridge_Functional_Specification "Accessibility: Bridge Functional Specification")
--   [Notes]({{site.github.url}}/old_site/Accessibility:_Specification_Notes "Accessibility: Specification Notes") on the UI Automation specification
--   [Similarities and Differences]({{site.github.url}}/old_site/Accessibility:_Similarities_and_Differences "Accessibility: Similarities and Differences")
+-   [Provider]({{ site.github.url }}/old_site/Accessibility:_Provider_Functional_Specification "Accessibility: Provider Functional Specification")
+-   [Bridge]({{ site.github.url }}/old_site/Accessibility:_Bridge_Functional_Specification "Accessibility: Bridge Functional Specification")
+-   [Notes]({{ site.github.url }}/old_site/Accessibility:_Specification_Notes "Accessibility: Specification Notes") on the UI Automation specification
+-   [Similarities and Differences]({{ site.github.url }}/old_site/Accessibility:_Similarities_and_Differences "Accessibility: Similarities and Differences")
 
 For Team Members
 ----------------
 
 ### General
 
--   [Development with Scrum]({{site.github.url}}/old_site/Accessibility:_Scrum "Accessibility: Scrum")
--   [Getting Started With Development]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
+-   [Development with Scrum]({{ site.github.url }}/old_site/Accessibility:_Scrum "Accessibility: Scrum")
+-   [Getting Started With Development]({{ site.github.url }}/old_site/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
 
 ### Developers
 
--   [Moonlight Main Page]({{site.github.url}}/old_site/Accessibility:_Moonlight "Accessibility: Moonlight")
--   Provider: ([Architecture]({{site.github.url}}/old_site/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation"), [Implementation Notes]({{site.github.url}}/old_site/Accessibility:_Implementation "Accessibility: Implementation"))
+-   [Moonlight Main Page]({{ site.github.url }}/old_site/Accessibility:_Moonlight "Accessibility: Moonlight")
+-   Provider: ([Architecture]({{ site.github.url }}/old_site/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation"), [Implementation Notes]({{ site.github.url }}/old_site/Accessibility:_Implementation "Accessibility: Implementation"))
 
 ### Quality Assurance
 
 -   [All Open UIAutomation Bugs](https://bugzilla.novell.com/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=fulltext&long_desc=&classification=Mono&product=UI+Automation&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=anywords&keywords=&deadlinefrom=&deadlineto=&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailqa_contact2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=)
--   [Development Progress]({{site.github.url}}/old_site/Accessibility:_Development_Progress "Accessibility: Development Progress") (Enhancement Bugs by Control)
+-   [Development Progress]({{ site.github.url }}/old_site/Accessibility:_Development_Progress "Accessibility: Development Progress") (Enhancement Bugs by Control)
 
--   [Product Test Plan]({{site.github.url}}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
--   [Test Progress]({{site.github.url}}/old_site/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls")
--   [Test Coding Standard]({{site.github.url}}/old_site/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")
--   [Test Log]({{site.github.url}}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
--   [Test Summary]({{site.github.url}}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary")
--   [Bug Specification]({{site.github.url}}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
--   [Testing Howto]({{site.github.url}}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto")
--   [Strongwind Basics Tutorial]({{site.github.url}}/old_site/Accessibility:_Strongwind_Basics "Accessibility: Strongwind Basics")
+-   [Product Test Plan]({{ site.github.url }}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
+-   [Test Progress]({{ site.github.url }}/old_site/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls")
+-   [Test Coding Standard]({{ site.github.url }}/old_site/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")
+-   [Test Log]({{ site.github.url }}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
+-   [Test Summary]({{ site.github.url }}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary")
+-   [Bug Specification]({{ site.github.url }}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
+-   [Testing Howto]({{ site.github.url }}/old_site/Accessibility:_Testing_Howto "Accessibility: Testing Howto")
+-   [Strongwind Basics Tutorial]({{ site.github.url }}/old_site/Accessibility:_Strongwind_Basics "Accessibility: Strongwind Basics")
 
 ### Build
 
--   [Product Build Plan]({{site.github.url}}/old_site/Accessibility:_Build_Plan "Accessibility: Build Plan")
+-   [Product Build Plan]({{ site.github.url }}/old_site/Accessibility:_Build_Plan "Accessibility: Build Plan")
 
 Related Material
 ----------------

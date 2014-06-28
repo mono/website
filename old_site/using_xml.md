@@ -28,12 +28,12 @@ We support all that the Microsoft.NET Framework provides in the System.XML.dll a
 
 The following are links to discussions of the XmlReader and XmlDocument:
 
--   Read and validate XML documents using [XML Reader]({{site.github.url}}/old_site/XML_Reader "XML Reader")
--   Write XML documents using [XML Writer]({{site.github.url}}/old_site/XML_Writer "XML Writer")
+-   Read and validate XML documents using [XML Reader]({{ site.github.url }}/old_site/XML_Reader "XML Reader")
+-   Write XML documents using [XML Writer]({{ site.github.url }}/old_site/XML_Writer "XML Writer")
 -   Manipulate XML document sutucture with Document Object Model
--   Build XML document sutucture with [XML Schema]({{site.github.url}}/old_site/XML_Schema "XML Schema")
+-   Build XML document sutucture with [XML Schema]({{ site.github.url }}/old_site/XML_Schema "XML Schema")
 -   Convert structured XML documents into CLR Types with XML Serializer
--   Traverse XML documents with XPath and [XPathNavigator]({{site.github.url}}/old_site/XPathNavigator "XPathNavigator"), a very powerful Query language.
+-   Traverse XML documents with XPath and [XPathNavigator]({{ site.github.url }}/old_site/XPathNavigator "XPathNavigator"), a very powerful Query language.
 -   Transform XML documents into another XML document, with an XSLT stylesheet and XslTransform
 
 Mono also supports the entire [LINQ to XML](http://msdn.microsoft.com/en-us/library/bb387098.aspx) stack. This stack provides a much simpler set of abstractions for querying and constructing XML documents.

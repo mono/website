@@ -13,7 +13,7 @@ Sandbox
 Compiling Mono
 --------------
 
-Note: This describes how to compile and install Mono from its source code. If you are only interested in running Mono, you probably want to install Mono from packages, which have been tested. See the [download page]({{site.github.url}}/old_site/Downloads "Downloads") for packages.
+Note: This describes how to compile and install Mono from its source code. If you are only interested in running Mono, you probably want to install Mono from packages, which have been tested. See the [download page]({{ site.github.url }}/old_site/Downloads "Downloads") for packages.
 
 <table>
 <col width="33%" />
@@ -24,40 +24,40 @@ Note: This describes how to compile and install Mono from its source code. If yo
 <td align="left"><table>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{site.github.url}}/files/6/6c/Linux.png">http://mono-project.com/files/6/6c/Linux.png</a></td>
-<td align="left"><a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">Compiling from a Tarball</a> <br /> <em>Guide to compiling Mono from a tarball.</em></td>
+<td align="left"><a href="{{ site.github.url }}/files/6/6c/Linux.png">http://mono-project.com/files/6/6c/Linux.png</a></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Mod_mono" title="Mod mono">Compiling from a Tarball</a> <br /> <em>Guide to compiling Mono from a tarball.</em></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="{{site.github.url}}/files/6/6c/Linux.png">http://mono-project.com/files/6/6c/Linux.png</a></td>
-<td align="left"><a href="{{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Compiling from SVN</a> <br /> <em>Guide to compiling Mono from SVN.</em></td>
+<td align="left"><a href="{{ site.github.url }}/files/6/6c/Linux.png">http://mono-project.com/files/6/6c/Linux.png</a></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Compiling from SVN</a> <br /> <em>Guide to compiling Mono from SVN.</em></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="{{site.github.url}}/files/d/d9/Vista.png">http://mono-project.com/files/d/d9/Vista.png</a></td>
-<td align="left"><a href="{{site.github.url}}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling for Windows</a> <br /> <em>Guide to compiling Mono on Windows.</em></td>
+<td align="left"><a href="{{ site.github.url }}/files/d/d9/Vista.png">http://mono-project.com/files/d/d9/Vista.png</a></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling for Windows</a> <br /> <em>Guide to compiling Mono on Windows.</em></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="{{site.github.url}}/files/d/d9/Vista.png">http://mono-project.com/files/d/d9/Vista.png</a></td>
-<td align="left"><a href="{{site.github.url}}/old_site/Writing_a_WebService" title="Writing a WebService">Cross-compiling for Windows</a> <br /> <em>Guide to compiling Mono on Linux to run on Windows.</em></td>
+<td align="left"><a href="{{ site.github.url }}/files/d/d9/Vista.png">http://mono-project.com/files/d/d9/Vista.png</a></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Writing_a_WebService" title="Writing a WebService">Cross-compiling for Windows</a> <br /> <em>Guide to compiling Mono on Linux to run on Windows.</em></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="{{site.github.url}}/files/7/7d/Apple.png">http://mono-project.com/files/7/7d/Apple.png</a></td>
-<td align="left"><a href="{{site.github.url}}/old_site/Database_Access" title="Database Access">Compiling for OS X</a> <br /> <em>Guide to compiling Mono on OSX.</em></td>
+<td align="left"><a href="{{ site.github.url }}/files/7/7d/Apple.png">http://mono-project.com/files/7/7d/Apple.png</a></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Database_Access" title="Database Access">Compiling for OS X</a> <br /> <em>Guide to compiling Mono on OSX.</em></td>
 </tr>
 </tbody>
 </table></td>
 <td align="left"><table>
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{site.github.url}}/old_site/Mod_mono" title="Mod mono">Supported Advanced Features</a> <br /> <em>Guide for some advanced Mono compile-time features.</em></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Mod_mono" title="Mod mono">Supported Advanced Features</a> <br /> <em>Guide for some advanced Mono compile-time features.</em></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="{{site.github.url}}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Unsupported Advanced Features</a> <br /> <em>Guide for some advanced <strong>unsupported</strong> Mono compile-time features.</em></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications" title="Guide: Porting ASP.NET Applications">Unsupported Advanced Features</a> <br /> <em>Guide for some advanced <strong>unsupported</strong> Mono compile-time features.</em></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="{{site.github.url}}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling Mono 1.0.x from SVN</a> <br /> <em>Mono 1.0.x had a different build system. Historical guide for building Mono 1.0.x.</em></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling Mono 1.0.x from SVN</a> <br /> <em>Mono 1.0.x had a different build system. Historical guide for building Mono 1.0.x.</em></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="{{site.github.url}}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling Gtk#</a> <br /> <em>Guide to compiling Gtk#.</em></td>
+<td align="left"><a href="{{ site.github.url }}/old_site/Writing_a_WebService" title="Writing a WebService">Compiling Gtk#</a> <br /> <em>Guide to compiling Gtk#.</em></td>
 </tr>
 </tbody>
 </table></td>
@@ -182,7 +182,7 @@ etc...
 
 \<img src="[http://www.go-mono.com/monologue/images/heads/none.png](http://www.go-mono.com/monologue/images/heads/none.png)"\>
 
-[http://www.mono-project.com/files/e/e9/Mono\_icon\_source.gif]({{site.github.url}}/files/e/e9/Mono_icon_source.gif)
+[http://www.mono-project.com/files/e/e9/Mono\_icon\_source.gif]({{ site.github.url }}/files/e/e9/Mono_icon_source.gif)
 
 index.php?title=Special:Whatlinkshere&target=1.1.7
 

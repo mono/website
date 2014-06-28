@@ -13,7 +13,7 @@ In July 2006 the General Assembly of Ecma approved edition 4 of the Standards wh
 2010 Draft
 ==========
 
-If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit the [ECMA 335 CLI Public Draft]({{site.github.url}}/docs/specification/ecma-335-publicdraft/) page. It contains links to the updated drafts and links to the various mirror sites providing access to the latest working draft.
+If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit the [ECMA 335 CLI Public Draft]({{ site.github.url }}/docs/specification/ecma-335-publicdraft/) page. It contains links to the updated drafts and links to the various mirror sites providing access to the latest working draft.
 
 Latest Standards
 ================
@@ -67,8 +67,8 @@ Annotated Standards
 
 Members of the Standard committees and others have combined to produce annotated versions of the Standards. These are:
 
--   The Common Language Infrastruture Annotated Standard, James S. Miller & Susann Ragsdale, Addison-Wesley, 2004, [ISBN 0-321-15493-2]({{site.github.url}}/old_site/Special:BookSources/0321154932) (based on Edition 2 of Ecma-335)
--   C\# Annotated Standard, Jon Jagger, Nigel Perry & Peter Sestoft, Morgan Kaufmann, 2007, [ISBN 978-0-12-372511-0]({{site.github.url}}/old_site/Special:BookSources/9780123725110) (based on Edition 4 of Ecma-334)
+-   The Common Language Infrastruture Annotated Standard, James S. Miller & Susann Ragsdale, Addison-Wesley, 2004, [ISBN 0-321-15493-2]({{ site.github.url }}/old_site/Special:BookSources/0321154932) (based on Edition 2 of Ecma-335)
+-   C\# Annotated Standard, Jon Jagger, Nigel Perry & Peter Sestoft, Morgan Kaufmann, 2007, [ISBN 978-0-12-372511-0]({{ site.github.url }}/old_site/Special:BookSources/9780123725110) (based on Edition 4 of Ecma-334)
 
 The Ecma 4th and ISO 2nd Editions
 =================================
@@ -119,4 +119,4 @@ Many of the organizations that have participated in the TC39/TG2 and TC39/TG3 wo
 -   [IT University, Copenhagen](http://www.itu.dk/people/sestoft/ecma/)
 -   [Kahu Research, New Zealand](http://kahu.zoot.net.nz/ecma)
 -   [Microsoft Corporation](http://msdn2.microsoft.com/en-us/netframework/Aa569283.aspx)
--   [Novell (Mono)]({{site.github.url}}/index.php?title=ECMA)
+-   [Novell (Mono)]({{ site.github.url }}/index.php?title=ECMA)

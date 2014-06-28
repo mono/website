@@ -35,7 +35,7 @@ Example
 
 Suppose we have a nifty little ASP.Net website that asks for two numbers, and returns them added together. Currently, we know our site works great on .Net, as we can tell from Visual Studio's built-in development web server:
 
-[![Aspexample1.png]({{site.github.url}}/old_site/images/8/8d/Aspexample1.png)]({{site.github.url}}/old_site/images/8/8d/Aspexample1.png)
+[![Aspexample1.png]({{ site.github.url }}/old_site/images/8/8d/Aspexample1.png)]({{ site.github.url }}/old_site/images/8/8d/Aspexample1.png)
 
 Now we want to run our website on Mono/Apache.
 
@@ -57,7 +57,7 @@ Publishing a web site project is easy.
     -   Copy "All files in the source project folder".
     -   Select "Include files from the App\_Data folder.
 
-[![Asppublish1.png]({{site.github.url}}/old_site/images/5/5b/Asppublish1.png)]({{site.github.url}}/old_site/images/5/5b/Asppublish1.png)
+[![Asppublish1.png]({{ site.github.url }}/old_site/images/5/5b/Asppublish1.png)]({{ site.github.url }}/old_site/images/5/5b/Asppublish1.png)
 
 -   Click Publish
 -   If you are prompted for a username/password, enter them.
@@ -65,7 +65,7 @@ Publishing a web site project is easy.
 -   When it completes, you should be able to test your website by browsing to it:
     -   <http://linux/MyWebsite/>
 
-[![Asppublish2.png]({{site.github.url}}/old_site/images/1/1f/Asppublish2.png)]({{site.github.url}}/old_site/images/1/1f/Asppublish2.png)
+[![Asppublish2.png]({{ site.github.url }}/old_site/images/1/1f/Asppublish2.png)]({{ site.github.url }}/old_site/images/1/1f/Asppublish2.png)
 
 Publishing a Web Application Project
 ------------------------------------
@@ -77,11 +77,11 @@ Publishing a Web Application Project
         -   (Replace MyWebsite with whatever path you want.)
     -   Choose Open
 
-[![Aspcopy1.png]({{site.github.url}}/old_site/images/e/e3/Aspcopy1.png)]({{site.github.url}}/old_site/images/e/e3/Aspcopy1.png)
+[![Aspcopy1.png]({{ site.github.url }}/old_site/images/e/e3/Aspcopy1.png)]({{ site.github.url }}/old_site/images/e/e3/Aspcopy1.png)
 
 -   Select all the files to your website, and click the right arrow to copy them to the Linux image.
 
-[![Aspcopy2.png]({{site.github.url}}/old_site/images/6/6d/Aspcopy2.png)]({{site.github.url}}/old_site/images/6/6d/Aspcopy2.png)
+[![Aspcopy2.png]({{ site.github.url }}/old_site/images/6/6d/Aspcopy2.png)]({{ site.github.url }}/old_site/images/6/6d/Aspcopy2.png)
 
 -   When it completes, you should be able to test your website by browsing to it:
     -   <http://linux/MyWebsite/>
@@ -91,7 +91,7 @@ Setting up Applications
 
 When you try to run your site, you may get an error like this:
 
-[![Aspcopy4.png]({{site.github.url}}/old_site/images/d/da/Aspcopy4.png)]({{site.github.url}}/old_site/images/d/da/Aspcopy4.png)
+[![Aspcopy4.png]({{ site.github.url }}/old_site/images/d/da/Aspcopy4.png)]({{ site.github.url }}/old_site/images/d/da/Aspcopy4.png)
 
 This means you need to setup an ASP.Net application for your site, just like you would on IIS.
 

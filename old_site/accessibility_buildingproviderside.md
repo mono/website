@@ -10,5 +10,5 @@ redirect_from:
 Accessibility: BuildingProviderSide
 ===================================
 
-Moved to [Accessibility:\_Getting\_Started\_With\_Development]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
+Moved to [Accessibility:\_Getting\_Started\_With\_Development]({{ site.github.url }}/old_site/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
 

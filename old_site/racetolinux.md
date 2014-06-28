@@ -10,7 +10,7 @@ redirect_from:
 RaceToLinux
 ===========
 
-[![Race to linux.jpg]({{site.github.url}}/old_site/images/c/cf/Race_to_linux.jpg)]({{site.github.url}}/old_site/images/c/cf/Race_to_linux.jpg)
+[![Race to linux.jpg]({{ site.github.url }}/old_site/images/c/cf/Race_to_linux.jpg)]({{ site.github.url }}/old_site/images/c/cf/Race_to_linux.jpg)
 
 We've made a special release for Race To Linux that has several ASP.Net fixes over 1.2.3.1.
 
@@ -24,7 +24,7 @@ We've made a special release for Race To Linux that has several ASP.Net fixes ov
 
 Mono 1.2.3.50 rtl1 on openSUSE 10.2
 
-For notes on using the VMware image, see: [Instructions for VMware image]({{site.github.url}}/old_site/VMware_Image "VMware Image").
+For notes on using the VMware image, see: [Instructions for VMware image]({{ site.github.url }}/old_site/VMware_Image "VMware Image").
 
 -   [Download Torrent](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip.torrent)
 -   [Download VM](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip)
@@ -41,7 +41,7 @@ Only Gtk\# for .NET:
 
 Mono Migration Analyzer:
 
--   [See the Mono Migration Analyzer page]({{site.github.url}}/old_site/MoMA "MoMA").
+-   [See the Mono Migration Analyzer page]({{ site.github.url }}/old_site/MoMA "MoMA").
 
 [File:Mono icon mac.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_mac.gif "File:Mono icon mac.gif")  **Mac OS X** 10.3 (Panther) and 10.4 (Tiger)
 
@@ -50,13 +50,13 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 -   [Mono 1.2.3.50\_rtl1 Framework - Universal](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/macos-10-universal/rtl1/MonoFramework-1.2.3.50_rtl1.macos10.novell.universal.dmg)
 -   [Cocoa\# 0.9.1](http://go-mono.com/sources/cocoa-sharp/cocoa-sharp-0.9.1.tar.gz) source
 
-[![Solaris]({{site.github.url}}/old_site/images/2/2f/Mono_icon_solaris.gif)]({{site.github.url}}/old_site/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
+[![Solaris]({{ site.github.url }}/old_site/images/2/2f/Mono_icon_solaris.gif)]({{ site.github.url }}/old_site/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
 
-[Solaris package instructions]({{site.github.url}}/old_site/SolarisInstructions "SolarisInstructions").
+[Solaris package instructions]({{ site.github.url }}/old_site/SolarisInstructions "SolarisInstructions").
 
 -   [Mono 1.2.3.50\_rtl1 Package](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/sunos-8-sparc/rtl1/mono-1.2.3.50_rtl1.sunos8.novell.sparc.pkg.gz)
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/x86**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/x86**
 
 <table>
 <col width="50%" />
@@ -120,7 +120,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
 
 <table>
 <col width="50%" />
@@ -169,7 +169,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/ia64**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/ia64**
 
 <table>
 <col width="50%" />
@@ -189,7 +189,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/S390**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/S390**
 
 <table>
 <col width="50%" />
@@ -209,7 +209,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/S390x**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/S390x**
 
 <table>
 <col width="50%" />
@@ -229,7 +229,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)]({{site.github.url}}/old_site/images/4/48/Mono_rpm.gif)**Linux/ppc**
+[![Mono rpm.gif]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/old_site/images/4/48/Mono_rpm.gif)**Linux/ppc**
 
 <table>
 <col width="50%" />
@@ -272,7 +272,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 
 (All distributions)
 
-For help with the installation, see: [Instructions to use the Installer]({{site.github.url}}/old_site/InstallerInstructions "InstallerInstructions").
+For help with the installation, see: [Instructions to use the Installer]({{ site.github.url }}/old_site/InstallerInstructions "InstallerInstructions").
 
 -   [Mono 1.2.3.50\_rtl1 Installer](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/linux-installer/rtl1/mono-1.2.3.50_rtl1-installer.bin)
 

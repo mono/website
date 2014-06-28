@@ -10,7 +10,7 @@ redirect_from:
 CoreClrHowTo
 ============
 
-This *how to* is intended for people who have read about **coreclr** on [MSDN]({{site.github.url}}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), [MS employees blogs]({{site.github.url}}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), Mono's [wiki]({{site.github.url}}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR") and how this applies to [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight"). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
+This *how to* is intended for people who have read about **coreclr** on [MSDN]({{ site.github.url }}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), [MS employees blogs]({{ site.github.url }}/old_site/Moonlight2CoreCLR#references "Moonlight2CoreCLR"), Mono's [wiki]({{ site.github.url }}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR") and how this applies to [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight"). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
 
 So what's needed ? Simply a host (full trusted), some platform assemblies (partially trusted code) and applications (untrusted).
 
@@ -48,7 +48,7 @@ Host
 
 Hosting sounds scary ? It's not, at least **coreclr**-wise and it is likely your simplest step.
 
-1.  [Embed Mono]({{site.github.url}}/old_site/Embedding_Mono "Embedding Mono") into your application;
+1.  [Embed Mono]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") into your application;
 2.  Enable CoreCLR (which also enables the verifier) with a call to **mono\_security\_enable\_core\_clr**; and
 3.  Provide your own callback to **mono\_security\_set\_core\_clr\_platform\_callback** to determine if an assembly is to be considered as platform code (return **TRUE**) or not (return **FALSE**).
 
@@ -85,7 +85,7 @@ As such this host, unless you provide your own **mscorlib.dll** or wish to hack 
 
 ### Moonlight
 
-[Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight"), Mono's open source Silverlight implemention, is a complete, real-life and usable, **coreclr** host.
+[Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight"), Mono's open source Silverlight implemention, is a complete, real-life and usable, **coreclr** host.
 
 Being a web browser plugin this may looks like a very different hosting scenario - and it is in many cases. But from a **coreclr** point of view things are very similar the earlier, generic code sample.
 
@@ -111,7 +111,7 @@ So what kind of profile should/can be provided ? Here's a few, simple to comple
 
 1.  Use the Moonlight profile *as-is*. It is well tested, supported and [audited](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/audit);
 2.  Use a **subset** of Moonlight. With a little extra work you can all the benefits of the above and a smaller footprint (which likely improves your security since it reduce the surface); or
-3.  Define your own profile from scratch. You're not totally on your own since Moonlight provides several [tools](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/) and [guidance]({{site.github.url}}/old_site/SecurityValidation "SecurityValidation"). However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent **coreclr**.
+3.  Define your own profile from scratch. You're not totally on your own since Moonlight provides several [tools](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/) and [guidance]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation"). However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent **coreclr**.
 
 Applications
 ============
@@ -132,7 +132,7 @@ How can **coreclr** be used to allow opening TCP sockets between 4502-4534 ?
 
 Short answer: it cannot.
 
-Long answer: Such checks are done by code based on policies (not coreclr). This means the socket code must be transparent (or safe critical) and provide it's own policy decision (e.g. a range check on the requested port). While [CAS]({{site.github.url}}/old_site/CAS "CAS") allowed complex policies to be defined, the one used by [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") are more strictly defined (e.g. TCP and a subset between 4502-4534). Of course your own host can define it's own policy.
+Long answer: Such checks are done by code based on policies (not coreclr). This means the socket code must be transparent (or safe critical) and provide it's own policy decision (e.g. a range check on the requested port). While [CAS]({{ site.github.url }}/old_site/CAS "CAS") allowed complex policies to be defined, the one used by [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") are more strictly defined (e.g. TCP and a subset between 4502-4534). Of course your own host can define it's own policy.
 
 Policy-driven examples (from Moonlight):
 
@@ -144,9 +144,9 @@ FAQ
 
 Q: Is CoreCLR new in [Moon|Silver]light 2+ ?
 
-A: Somewhat. CoreCLR is heavily based on the transparency model which was introduced in .NET 2.0. However in the *regular* framework the transparency model is used in conjunction with [CAS]({{site.github.url}}/old_site/CAS "CAS") (and the later is not supported on Mono).
+A: Somewhat. CoreCLR is heavily based on the transparency model which was introduced in .NET 2.0. However in the *regular* framework the transparency model is used in conjunction with [CAS]({{ site.github.url }}/old_site/CAS "CAS") (and the later is not supported on Mono).
 
 Q: Does CoreCLR provides all the security for [Moon|Silver]light ?
 
-A: Not quite. It's a bit like saying "CAS == stack walk". Stack walks are an important part of [CAS]({{site.github.url}}/old_site/CAS "CAS") but, without all the other parts, would not provide any security. In this case **coreclr** enforce the security attributes in the platform code (along with a few other rules) but some other features are policy-based (e.g. cross-domain web access, socket support...)
+A: Not quite. It's a bit like saying "CAS == stack walk". Stack walks are an important part of [CAS]({{ site.github.url }}/old_site/CAS "CAS") but, without all the other parts, would not provide any security. In this case **coreclr** enforce the security attributes in the platform code (along with a few other rules) but some other features are policy-based (e.g. cross-domain web access, socket support...)
 

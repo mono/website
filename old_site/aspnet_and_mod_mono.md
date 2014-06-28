@@ -14,11 +14,11 @@ Using Mono, you can build ASP web applications using Linux or Windows without lo
 
 -   XSP is a simple, standalone webserver written in C\# that hosts ASP.NET's System.Web classes.
 
--   [mod\_mono]({{site.github.url}}/old_site/Mod_mono "Mod mono") is an Apache 1.3/2.0/2.2 module that integrates Mono's ASP.NET support with the Apache HTTP server.
+-   [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") is an Apache 1.3/2.0/2.2 module that integrates Mono's ASP.NET support with the Apache HTTP server.
 
-These tools allow you to build an infrastructure for web applications (code for which the primary interface is pointing and clicking on a webpage) and for [web services]({{site.github.url}}/old_site/Web_Services "Web Services") (SOAP-based RPC systems). They work with many publicly-available .NET applications, and the underlying web services stack is used in several commercial applications.
+These tools allow you to build an infrastructure for web applications (code for which the primary interface is pointing and clicking on a webpage) and for [web services]({{ site.github.url }}/old_site/Web_Services "Web Services") (SOAP-based RPC systems). They work with many publicly-available .NET applications, and the underlying web services stack is used in several commercial applications.
 
 If you want to write your own webserver, the class libraries will support this, though that is an advanced topic out of the scope of this document.
 
-For more information, see [ASP.NET]({{site.github.url}}/old_site/ASP.NET "ASP.NET").
+For more information, see [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET").
 

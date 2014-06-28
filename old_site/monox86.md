@@ -17,7 +17,7 @@ Mono's main developers use x86 systems and its the most tuned version, currently
 -   BSD (Requires a modern version for proper thread support).
 -   Solaris/x86
 
-Mono on x86 supports both Just-in-Time (JIT) compilation as well as Ahead-of-Time ([AOT]({{site.github.url}}/old_site/AOT "AOT")) compilation, the later produces Position Independent Code.
+Mono on x86 supports both Just-in-Time (JIT) compilation as well as Ahead-of-Time ([AOT]({{ site.github.url }}/old_site/AOT "AOT")) compilation, the later produces Position Independent Code.
 
 X86 Specific Optimizations
 ==========================

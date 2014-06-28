@@ -10,5 +10,5 @@ redirect_from:
 Category:Articles
 =================
 
-See [Articles]({{site.github.url}}/old_site/Articles "Articles") for more information.
+See [Articles]({{ site.github.url }}/old_site/Articles "Articles") for more information.
 

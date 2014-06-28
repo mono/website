@@ -10,5 +10,5 @@ redirect_from:
 Category:GtkSharp
 =================
 
-Pages related to [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp")
+Pages related to [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
 

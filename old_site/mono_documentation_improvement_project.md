@@ -13,7 +13,7 @@ Mono Documentation Improvement Project
 
  Although most of the concepts from the Microsoft.NET Framework can be applied to Mono, we do need to have a complete set of free documentation written specifically for Mono.
 
-The [http://www.mono-project.com/]({{site.github.url}}/) wiki is designed to be a centralized repository for all mono-related documentation and information, to make it easy for users to find what they need.
+The [http://www.mono-project.com/]({{ site.github.url }}/) wiki is designed to be a centralized repository for all mono-related documentation and information, to make it easy for users to find what they need.
 
 The wiki is currently a pretty good mess, and we desperately need your help with cleaning up existing pages, as well as writing new ones.
 
@@ -38,19 +38,19 @@ Writing New Pages
 
 -   Think about something that you recently had a lot of trouble finding information about and create a page dedicated to it!
 
--   If you need an idea for something to write, check out [Special:Wantedpages]({{site.github.url}}/old_site/Special:WantedPages "Special:WantedPages").
+-   If you need an idea for something to write, check out [Special:Wantedpages]({{ site.github.url }}/old_site/Special:WantedPages "Special:WantedPages").
 
 Cleanup
 =======
 
 Here are some suggestions of ways to help clean the wiki up:
 
--   **Go through the [documentation table of contents]({{site.github.url}}/old_site/Start "Start") and find new things to add to it.
+-   **Go through the [documentation table of contents]({{ site.github.url }}/old_site/Start "Start") and find new things to add to it.
     **
--   Go through [Special:Shortpages]({{site.github.url}}/old_site/Special:ShortPages "Special:ShortPages") and add more content.
--   Go through [Special:Lonelypages]({{site.github.url}}/old_site/Special:LonelyPages "Special:LonelyPages"), figure out which page(s) should link back to this page, and add the link.
--   Go through the [Uncategorizedpages]({{site.github.url}}/Special:Uncategorizedpages) list and categorize the pages.
--   Go through the [Longpages]({{site.github.url}}/Special:Longpages) list and if it makes sense, split them up into seporate pages.
+-   Go through [Special:Shortpages]({{ site.github.url }}/old_site/Special:ShortPages "Special:ShortPages") and add more content.
+-   Go through [Special:Lonelypages]({{ site.github.url }}/old_site/Special:LonelyPages "Special:LonelyPages"), figure out which page(s) should link back to this page, and add the link.
+-   Go through the [Uncategorizedpages]({{ site.github.url }}/Special:Uncategorizedpages) list and categorize the pages.
+-   Go through the [Longpages]({{ site.github.url }}/Special:Longpages) list and if it makes sense, split them up into seporate pages.
 -   If you see a page that looks like a big mess, add "****
 
     ``` nowiki
@@ -58,7 +58,7 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as needing cleanup at [NeedsCleanup]({{site.github.url}}/Category:NeedsCleanup).
+    You can see every page that is marked as needing cleanup at [NeedsCleanup]({{ site.github.url }}/Category:NeedsCleanup).
 
 -   If you see a page that looks incomplete, add "****
 
@@ -67,7 +67,7 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as incomplete at [Incomplete]({{site.github.url}}/Category:Incomplete).
+    You can see every page that is marked as incomplete at [Incomplete]({{ site.github.url }}/Category:Incomplete).
 
 -   If you see a page that looks out of date, add "****
 
@@ -76,15 +76,15 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as obsolete at [Obsolete]({{site.github.url}}/Category:Obsolete).
+    You can see every page that is marked as obsolete at [Obsolete]({{ site.github.url }}/Category:Obsolete).
 
--   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ]({{site.github.url}}/old_site/FAQ "FAQ").
+-   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ]({{ site.github.url }}/old_site/FAQ "FAQ").
 
 In-Progress Tasks & Discussion
 ==============================
 
--   See the [Talk:Mono\_Documentation\_Improvement\_Project]({{site.github.url}}/old_site/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
--   All articles that are currently under construction can be found in the [Sandbox-Category]({{site.github.url}}/Category:Sandbox)
+-   See the [Talk:Mono\_Documentation\_Improvement\_Project]({{ site.github.url }}/old_site/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
+-   All articles that are currently under construction can be found in the [Sandbox-Category]({{ site.github.url }}/Category:Sandbox)
 
 Writing good Documentation
 ==========================

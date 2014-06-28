@@ -12,7 +12,7 @@ Release Notes Mono 2.10.6
 
 Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
 
-Mono 2.10.6 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2"), [Mono 2.10.3]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.3 "Release Notes Mono 2.10.3"), [2.10.4]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.4 "Release Notes Mono 2.10.4") and [2.10.5]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.5 "Release Notes Mono 2.10.5") based on the mono-2-10 branch of github. Mono 2.10.6 was released to stable on October 14th, 2011.
+Mono 2.10.6 is a minor update to [Mono 2.10]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2"), [Mono 2.10.3]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.3 "Release Notes Mono 2.10.3"), [2.10.4]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.4 "Release Notes Mono 2.10.4") and [2.10.5]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.5 "Release Notes Mono 2.10.5") based on the mono-2-10 branch of github. Mono 2.10.6 was released to stable on October 14th, 2011.
 
 Bug Fixes
 =========

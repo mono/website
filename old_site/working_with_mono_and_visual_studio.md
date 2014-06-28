@@ -12,7 +12,7 @@ Working with Mono and Visual Studio
 
  Tools and Tips for Building & Testing Visual Studio.NET Projects with Mono.
 
-Are you looking for [Debugging\_Tips\_for\_Windows]({{site.github.url}}/old_site/Http://mono-tools.com)?
+Are you looking for [Debugging\_Tips\_for\_Windows]({{ site.github.url }}/old_site/Http://mono-tools.com)?
 
 **Warning: VSPrj2Make\# is unmaintained and only supports VS2003 style solutions. If you wish to generate makefiles from VS2005 or VS2008 solutions, you should use the generation capability provided in MonoDevelop.**
 
@@ -28,7 +28,7 @@ VSPrj2Make provides an add-in to Visual Studio that offers a number of features:
 
 This is available from the tools menu in Visual Studio:
 
-[![Addin.png]({{site.github.url}}/old_site/images/6/65/Addin.png)]({{site.github.url}}/old_site/images/6/65/Addin.png)
+[![Addin.png]({{ site.github.url }}/old_site/images/6/65/Addin.png)]({{ site.github.url }}/old_site/images/6/65/Addin.png)
 
 Screencasts for:
 

@@ -97,7 +97,7 @@ In System.Xml.dll, XmlWriter is almost equivalent to XmlTextWriter. If you want 
 
 ### XmlResolver
 
-XmlUrlResolver is implemented. XmlSecureResolver, which is introduced in MS .NET Framework 1.1 is basically implemented, but it requires [CAS (code access security)]({{site.github.url}}/old_site/CAS "CAS") feature. We need to fixup this class after ongoing CAS effort works. You might also be interested in some improved implementations which resides in Mono.Xml.Ext.dll.
+XmlUrlResolver is implemented. XmlSecureResolver, which is introduced in MS .NET Framework 1.1 is basically implemented, but it requires [CAS (code access security)]({{ site.github.url }}/old_site/CAS "CAS") feature. We need to fixup this class after ongoing CAS effort works. You might also be interested in some improved implementations which resides in Mono.Xml.Ext.dll.
 
 ### XmlNameTable
 
@@ -302,7 +302,7 @@ Tools
 xsd.exe
 -------
 
-See [ADO.NET page]({{site.github.url}}/old_site/ADO.NET "ADO.NET"). Note that xsd.exe does not support XmlSchemaInference in System.Xml 2.0.
+See [ADO.NET page]({{ site.github.url }}/old_site/ADO.NET "ADO.NET"). Note that xsd.exe does not support XmlSchemaInference in System.Xml 2.0.
 
 genxs.exe
 ---------

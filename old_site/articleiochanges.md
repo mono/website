@@ -114,7 +114,7 @@ The following features are no longer supported:
 ThreadPool and asynchronous socket operations
 =============================================
 
-An ongoing problem with Mono were the ThreadPool-related deadlocks (see our [article describing the problem]({{site.github.url}}/old_site/Article:ThreadPool_Deadlocks "Article:ThreadPool Deadlocks")). Basically the ThreadPool is a resource that is easy to starve, and which can cause deadlocks in your applications. Mono extensive use of the ThreadPool for internal operations made this problem more notorious, ASP.NET and HttpWebRequest being hungry consumers.
+An ongoing problem with Mono were the ThreadPool-related deadlocks (see our [article describing the problem]({{ site.github.url }}/old_site/Article:ThreadPool_Deadlocks "Article:ThreadPool Deadlocks")). Basically the ThreadPool is a resource that is easy to starve, and which can cause deadlocks in your applications. Mono extensive use of the ThreadPool for internal operations made this problem more notorious, ASP.NET and HttpWebRequest being hungry consumers.
 
 We have redesigned the internals in the class libraries and the runtime to address this problem not using the user ThreadPool internally. Right now, the only noticeable consumer in the class libraries is the ASP.NET runtime.
 

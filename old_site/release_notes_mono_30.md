@@ -18,7 +18,7 @@ Release Notes Mono 3.0
 
 Mono 3.0 is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
 
-Mono 3.0 is an update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10") based on the master branch of github, it is not a minor upgrade to 2.10. Mono 3.0 was released on October 18th 2012.
+Mono 3.0 is an update to [Mono 2.10]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10") based on the master branch of github, it is not a minor upgrade to 2.10. Mono 3.0 was released on October 18th 2012.
 
 We will continue to bug fix and update Mono 2.10 for another six months for users that can not upgrade to Mono 3.0.
 

@@ -44,7 +44,7 @@ This documentation contains configuration instructions for serveral web servers 
 
 ### How Does It Work?
 
-[![Request.png]({{site.github.url}}/old_site/images/3/38/Request.png)]({{site.github.url}}/old_site/images/3/38/Request.png)
+[![Request.png]({{ site.github.url }}/old_site/images/3/38/Request.png)]({{ site.github.url }}/old_site/images/3/38/Request.png)
 
 FastCGI is an interprocess communcation mechanism available
 
@@ -62,7 +62,7 @@ in many web servers. A web server will receive and respond to a request in the f
 Installation Basics
 -------------------
 
-Download and install the "xsp" package from [our downloads page]({{site.github.url}}/old_site/Downloads "Downloads") or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
+Download and install the "xsp" package from [our downloads page]({{ site.github.url }}/old_site/Downloads "Downloads") or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
 
 If you obtained packages, you already have everything you need, otherwise you need to use the usual Linux source code configuration setup:
 
@@ -77,11 +77,11 @@ $ make install
 
 To install the FastCGI on Unix, follow the instructions on the [FastCGI Linux](/index.php?title=FastCGI_Linux&action=edit&redlink=1 "FastCGI Linux (page does not exist)") page. Once you have installed the Mono FastCGI support, you have to configure your web server to use it, detailed instructions are available for the following servers:
 
--   [Abyss Web Server]({{site.github.url}}/old_site/FastCGI_Abyss "FastCGI Abyss")
--   [Cherokee HTTP Server]({{site.github.url}}/old_site/FastCGI_Cherokee "FastCGI Cherokee")
--   [Lighttpd]({{site.github.url}}/old_site/FastCGI_Lighttpd "FastCGI Lighttpd")
--   [Nginx]({{site.github.url}}/old_site/FastCGI_Nginx "FastCGI Nginx")
--   [CGI]({{site.github.url}}/old_site/CGI "CGI") via cgi-fcgi
+-   [Abyss Web Server]({{ site.github.url }}/old_site/FastCGI_Abyss "FastCGI Abyss")
+-   [Cherokee HTTP Server]({{ site.github.url }}/old_site/FastCGI_Cherokee "FastCGI Cherokee")
+-   [Lighttpd]({{ site.github.url }}/old_site/FastCGI_Lighttpd "FastCGI Lighttpd")
+-   [Nginx]({{ site.github.url }}/old_site/FastCGI_Nginx "FastCGI Nginx")
+-   [CGI]({{ site.github.url }}/old_site/CGI "CGI") via cgi-fcgi
 
 The following servers support FastCGI, but we currently do not have per-server configuration information:
 

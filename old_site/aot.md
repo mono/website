@@ -109,9 +109,9 @@ Supported Platforms
 
 AOT is only available in a few platforms:
 
--   [Mono:X86]({{site.github.url}}/old_site/Mono:X86 "Mono:X86")
--   [x86-64]({{site.github.url}}/old_site/Mono:AMD64 "Mono:AMD64")
--   [Mono:ARM]({{site.github.url}}/old_site/Mono:ARM "Mono:ARM").
+-   [Mono:X86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86")
+-   [x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64")
+-   [Mono:ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM").
 
 Reduced Startup Time
 --------------------
@@ -151,12 +151,12 @@ As of Mono 2.0, AOT compilation is only supported for non-generic methods. suppo
 
 If you want to disable the use of the AOT generated code for a particular program execution, use the -O=-aot command line flag to the runtime.
 
-See the discussion on [OptimizingAOT]({{site.github.url}}/old_site/OptimizingAOT "OptimizingAOT")
+See the discussion on [OptimizingAOT]({{ site.github.url }}/old_site/OptimizingAOT "OptimizingAOT")
 
 Discussion
 ----------
 
-Documentation on the Mono AOT implementation is found in the [Mono:Runtime:Documentation:AOT]({{site.github.url}}/old_site/Mono:Runtime:Documentation:AOT "Mono:Runtime:Documentation:AOT") page.
+Documentation on the Mono AOT implementation is found in the [Mono:Runtime:Documentation:AOT]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:AOT "Mono:Runtime:Documentation:AOT") page.
 
 AOTing all the system libraries
 -------------------------------

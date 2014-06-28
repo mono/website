@@ -37,7 +37,7 @@ Some other tools that are nice:
     * openssh or PuTTY
     * vim
 
-At this point, you can do a [VisualStudio build]({{site.github.url}}/old_site/Compiling_Mono_VSNET "Compiling Mono VSNET") or you can continue reading the instructions for a cygwin build.
+At this point, you can do a [VisualStudio build]({{ site.github.url }}/old_site/Compiling_Mono_VSNET "Compiling Mono VSNET") or you can continue reading the instructions for a cygwin build.
 
 Download the Mono source code from the [released tarballs](http://www.go-mono.com/mono-downloads/download.html) or [GitHub](https://github.com/mono/mono).
 
@@ -45,7 +45,7 @@ If you download the tarball, extract it with:
 
     tar -zxvf mono-x.x.x.x.tar.gz
 
-Add mono to your path. This could be either a previous build of Mono, or an install from the Mono Windows Combined Installer from [Downloads]({{site.github.url}}/old_site/Downloads "Downloads"). Using the installer is probably the easiest for most cases.
+Add mono to your path. This could be either a previous build of Mono, or an install from the Mono Windows Combined Installer from [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads"). Using the installer is probably the easiest for most cases.
 
     export PATH=$PATH:<path to installed mono>/bin
 

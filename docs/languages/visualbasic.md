@@ -33,11 +33,11 @@ Installation
 
 ### From Packages
 
-Starting with Mono 1.2.3, packages of the Mono Visual Basic Compiler and Visual Basic Runtime are available at our [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+Starting with Mono 1.2.3, packages of the Mono Visual Basic Compiler and Visual Basic Runtime are available at our [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 
 ### From Source Code
 
-The code is currently available from SVN from the module **mono-basic**, alternatively a source code package is available from our [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+The code is currently available from SVN from the module **mono-basic**, alternatively a source code package is available from our [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 
 To install Mono Basic, use the usual:
 
@@ -69,7 +69,7 @@ It allows:
 
 ### For which version of Visual Basic will this compiler work and when is it available?
 
-The new Visual Basic compiler is an implementation of Visual Basic.NET version 8, so it has support for new features in the language such as generics. The current Mono 2.6 release (available from our [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page) includes the Visual Basic 8 compiler written in Visual Basic 8, and Mainsoft's Visual Basic runtime for 2.0. The compiler only targets the 2.0 framework API, while the runtime supports both 1.0 and 2.0 profiles.
+The new Visual Basic compiler is an implementation of Visual Basic.NET version 8, so it has support for new features in the language such as generics. The current Mono 2.6 release (available from our [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page) includes the Visual Basic 8 compiler written in Visual Basic 8, and Mainsoft's Visual Basic runtime for 2.0. The compiler only targets the 2.0 framework API, while the runtime supports both 1.0 and 2.0 profiles.
 
 ### If someone is using .NET 3.0, will this work?
 
@@ -81,7 +81,7 @@ No. The Mono project is sponsored by Novell, but it is not part of the technical
 
 ### Is the Visual Basic 8 compiler considered stable?
 
-We consider the compiler right now to be feature complete. That doesn't mean that it is bug free. Although there is enormous set of test suites that we run against it, people are still going to run into bugs, which they are encouraged to report at our [Bugs]({{site.github.url}}/old_site/Bugs "Bugs") page.
+We consider the compiler right now to be feature complete. That doesn't mean that it is bug free. Although there is enormous set of test suites that we run against it, people are still going to run into bugs, which they are encouraged to report at our [Bugs]({{ site.github.url }}/old_site/Bugs "Bugs") page.
 
 ### Will applications compiled using the VB compiler in Linux (or Mac) run on Windows?
 
@@ -98,5 +98,5 @@ There are certain API calls that are Windows-specific which we have mapped to Li
 Old Visual Basic Framework
 ==========================
 
-For information about the old visual basic framework in Mono, see our [Old Visual Basic]({{site.github.url}}/old_site/Old_Visual_Basic "Old Visual Basic") page.
+For information about the old visual basic framework in Mono, see our [Old Visual Basic]({{ site.github.url }}/old_site/Old_Visual_Basic "Old Visual Basic") page.
 

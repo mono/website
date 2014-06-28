@@ -10,7 +10,7 @@ redirect_from:
 Gendarme.Rules.BadPractice
 ==========================
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s rules that check for bad practices are located in the **Gendarme.Rules.BadPractice.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.BadPractice/).
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s rules that check for bad practices are located in the **Gendarme.Rules.BadPractice.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.BadPractice/).
 
 <table>
 <col width="100%" />

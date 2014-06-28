@@ -6,7 +6,7 @@ title: Linker
 
 The linker is a tool one can use to only ship the minimal possible set of functions that a set of programs might require to run as opposed to the full libraries.
 
-[Jb Evain](http://evain.net/blog/) started to work on the linker during the [Summer Of Code 2006]({{site.github.url}}/old_site/Summer2006 "Summer2006").
+[Jb Evain](http://evain.net/blog/) started to work on the linker during the [Summer Of Code 2006]({{ site.github.url }}/old_site/Summer2006 "Summer2006").
 
 Why would one use the linker ?
 ==============================
@@ -24,14 +24,14 @@ Usage
 mkbundle, the linker's best friend
 ----------------------------------
 
-The linker operates only at the assemblies level. By using the [mkbundle]({{site.github.url}}/old_site/Command-Line_Tools#project-converstion-26-deployment "Command-Line Tools") program, you can create a single executable which will contain the strict minimum it needs to run.
+The linker operates only at the assemblies level. By using the [mkbundle]({{ site.github.url }}/old_site/Command-Line_Tools#project-converstion-26-deployment "Command-Line Tools") program, you can create a single executable which will contain the strict minimum it needs to run.
 
 See the man page for mkbundle for details on its operation.
 
 Download
 ========
 
-For the moment, no versions has been released, but you can download the code from the [SVN]({{site.github.url}}/old_site/SourceCodeRepository), in the module [/mcs/tools/linker](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/linker)
+For the moment, no versions has been released, but you can download the code from the [SVN]({{ site.github.url }}/old_site/SourceCodeRepository), in the module [/mcs/tools/linker](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/linker)
 
 Links
 =====

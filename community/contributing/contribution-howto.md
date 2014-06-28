@@ -34,13 +34,13 @@ This document captures all the good ideas people have had about writing NUnit te
 Getting Started
 ---------------
 
--   If you are new to writing NUnit tests, there is a template you may use to help get started. The file is: [TemplateTest.cs]({{site.github.url}}/old_site/TemplateTest.cs "TemplateTest.cs")
+-   If you are new to writing NUnit tests, there is a template you may use to help get started. The file is: [TemplateTest.cs]({{ site.github.url }}/old_site/TemplateTest.cs "TemplateTest.cs")
 
 -   Just a reminder to copy/paste this file it in another buffer. And keep reading. You can get it here or at the end of the guidelines in the Testing Tips section)
 
 Save a copy of this file in the appropriate test subdirecty (see below), and replace all the [text] markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them.
 
-[CollectionBaseTest.cs]({{site.github.url}}/old_site/CollectionBaseTest.cs "CollectionBaseTest.cs")
+[CollectionBaseTest.cs]({{ site.github.url }}/old_site/CollectionBaseTest.cs "CollectionBaseTest.cs")
 
 The directory that will contain your new file depends on the assembly/namespace of the class for which you are creating the tests. Under mcs/class there is a directory for each assembly. In each assembly there is a Test directory, e.g. mcs/class/corlib/Test. In the Test directory there are sub-directories for each namespace in the assembly, e.g. mcs/class/corlib/Test/Sytem. Put your new test file in the appropriate sub-directory under Test for the class you are testing.
 

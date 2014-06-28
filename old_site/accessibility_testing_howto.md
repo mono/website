@@ -121,7 +121,7 @@ Strongwind
 
 ### Introduction
 
-This tutorial will *not* have in-depth explanations about the Strongwind-specific parts of the code in our test. This information is covered in [Getting Started with Strongwind](http://medsphere.org/projects/strongwind/getting_started.html) and [Strongwind Basics]({{site.github.url}}/old_site/Accessibility:_Strongwind_Basics). In this tutorial, our focus will be on how our Mono accessibility tests and environment are unique.
+This tutorial will *not* have in-depth explanations about the Strongwind-specific parts of the code in our test. This information is covered in [Getting Started with Strongwind](http://medsphere.org/projects/strongwind/getting_started.html) and [Strongwind Basics]({{ site.github.url }}/old_site/Accessibility:_Strongwind_Basics). In this tutorial, our focus will be on how our Mono accessibility tests and environment are unique.
 
 ### Requirements
 
@@ -132,7 +132,7 @@ This tutorial will *not* have in-depth explanations about the Strongwind-specifi
 -   [Accerciser](http://live.gnome.org/Accerciser) (1.4.0 or later)
 -   [Strongwind](http://medsphere.org/projects/strongwind) (installing from SVN trunk is highly recommended)
 -   [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython) (the package name in openSUSE is IPCE). Our sample applications are written in IronPython, so it must be installed for them to run successfully.
--   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code]({{ site.github.url }}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 
 ### Strongwind Introduction
 
@@ -140,7 +140,7 @@ This tutorial assumes the reader already has at least a basic understanding of S
 
 First of all, read [Getting Started with Strongwind](http://medsphere.org/projects/strongwind/getting_started.html) to get a basic idea of what it's all about. Also notice there are several Gtk tests in uia2atk/test/testers that can be used as additional examples.
 
-Next, read the [Strongwind Basics]({{site.github.url}}/old_site/Accessibility:_Strongwind_Basics) page.
+Next, read the [Strongwind Basics]({{ site.github.url }}/old_site/Accessibility:_Strongwind_Basics) page.
 
 After reading these two documents, you will be ready to proceed with this tutorial.
 
@@ -187,7 +187,7 @@ The information normally displayed to the terminal by local\_run.py is dumped in
 
 Currently, the "official tests" are run on the "official" test machines, which are located at Novell in Provo. These are the machines that are found in the *machines.py* in our source code and are only available internally to Novell employees.
 
-We encourage anyone to help us write tests! If you want to submit a test to be added to the official tests and you have not received permission from a [QA hacker]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team") to check patches into our Subversion repository, please e-mail our mailing list (mono-a11y@forge.novell.com) and attach a patch with the following:
+We encourage anyone to help us write tests! If you want to submit a test to be added to the official tests and you have not received permission from a [QA hacker]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team") to check patches into our Subversion repository, please e-mail our mailing list (mono-a11y@forge.novell.com) and attach a patch with the following:
 
 -   Sample application modifications (recommended) or new sample application. Not applicable if you are writing a test for an already existing application that does not need modified. *NOTE:* If you are modifying a sample application, make sure it doesn't break any of the existing tests.
 -   New or modified Application wrapper. Not applicable if you are writing a test for an already existing application wrapper that does not need modified.
@@ -211,7 +211,7 @@ The test machines are actually virtual machines (running on VMware Workstation) 
 |Fedora 9 32-bit|fedora32v0.sled.lab.novell.com|d755e.sled.lab.novell.com|
 |Fedora 9 64-bit|fedora64v0.sled.lab.novell.com|d755f.sled.lab.novell.com|
 
-All of the test machines have a VNC server installed. The host machines have [NX Server](http://www.nomachine.com) installed, which can be connected to using [NX Client](http://www.nomachine.com/download.php); VMware could be running in the background. Running *vmware* will open the backgrounded session. Both the test machines and the VMware hosts have a user *a11y*. For more login details contact a [QA hacker]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team").
+All of the test machines have a VNC server installed. The host machines have [NX Server](http://www.nomachine.com) installed, which can be connected to using [NX Client](http://www.nomachine.com/download.php); VMware could be running in the background. Running *vmware* will open the backgrounded session. Both the test machines and the VMware hosts have a user *a11y*. For more login details contact a [QA hacker]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team").
 
 Each official test machine has a *tests* directory and a *logs* directory. *TEST\_DIR* in *machines.py* is set to the *tests* directory and *LOG\_DIR* in *machines.py* is set to the *logs* directory.
 
@@ -228,17 +228,17 @@ These directories are, in truth, mounted directories on uiaqa.sled.lab.novell.co
 
 This diagram summarizes how WinForms testing is performed using Strongwind and the UI Automation test harness.
 
-[![Qa arch.png]({{site.github.url}}/old_site/images/7/75/Qa_arch.png)]({{site.github.url}}/old_site/images/7/75/Qa_arch.png)
+[![Qa arch.png]({{ site.github.url }}/old_site/images/7/75/Qa_arch.png)]({{ site.github.url }}/old_site/images/7/75/Qa_arch.png)
 
 ### Example Sample Application
 
 Our team does not test a specific application. Instead, our developers are writing code to make sure that Mono WinForms applications are accessible. This means that we can writer our testing against whatever application(s) we wish. The approach we take is to create small and simple "sample applications." Our sample applications can be found in our code repository in the *test/samples* directory.
 
-At this point you should [check out the uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
+At this point you should [check out the uia2atk code]({{ site.github.url }}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
 
 After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples. For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
 
-Take a moment to run the gtktutorial and familiarize yourself with the it; start to think of how you could write its application wrapper. You will notice that the main window (or frame) has two buttons. The first button opens a tree view window with several parents and children. The second button opens a window with check boxes and a quit button, just like the application from the [Strongwind Basics]({{site.github.url}}/old_site/Accessibility:_Strongwind_Basics) tutorial.
+Take a moment to run the gtktutorial and familiarize yourself with the it; start to think of how you could write its application wrapper. You will notice that the main window (or frame) has two buttons. The first button opens a tree view window with several parents and children. The second button opens a window with check boxes and a quit button, just like the application from the [Strongwind Basics]({{ site.github.url }}/old_site/Accessibility:_Strongwind_Basics) tutorial.
 
 ### Example Application Wrapper
 
@@ -526,7 +526,7 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [Python](http://www.python.org)
 -   Enable "Assistive Technologies" from the GNOME Control Center
 -   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
--   [uia2atk code]({{site.github.url}}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code]({{ site.github.url }}/old_site/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 -   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
 -   Set *orca.debug.debugLevel = orca.debug.LEVEL\_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.
@@ -596,7 +596,7 @@ We will use Microsoft Visual Studio Silverlight Tools to create test samples in 
 
 1.  New a Project with "Silverlight" type, select "Silverlight Application", give project Name to be "control's name + sample" (ButtonSample as example).
 2.  Select "Add a new ASP.NET Web project to the solution to host Silverlight", click "OK" button, "ButtonSample" and "ButtonSample.Web" will be created, we will draw page in Page.xaml and write managed code in Page.xaml.cs.
-3.  After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser [![Silverlight sample.jpg]({{site.github.url}}/old_site/images/c/c7/Silverlight_sample.jpg)]({{site.github.url}}/old_site/images/c/c7/Silverlight_sample.jpg)
+3.  After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser [![Silverlight sample.jpg]({{ site.github.url }}/old_site/images/c/c7/Silverlight_sample.jpg)]({{ site.github.url }}/old_site/images/c/c7/Silverlight_sample.jpg)
 
 Example of create Canvas and Button sample:
  Page.xaml
@@ -767,9 +767,9 @@ We will use UIA Verify to verify Client API by runing its automation test suits 
 UIA Verify provides three part of test suits which are "Automation Element Tests", "Control Tests", "Pattern Tests". Here is a simple user guide of using Automation test suit of UIA verify application:
 
 -   Download the lastest UIA verify from [UI Automation Verify](http://uiautomationverify.codeplex.com/SourceControl/ListDownloadableCommits.aspx), and extract the zip
--   Run VisualUIAVerify.exe to get [![UIAVerify01.jpg]({{site.github.url}}/old_site/images/d/d2/UIAVerify01.jpg)]({{site.github.url}}/old_site/images/d/d2/UIAVerify01.jpg)
--   Expand and select element or control what you want to test from left side under "Automation Elements Tree"; Select "Tests" or expand it to select test suits what you want to run ; Then, click "Run Selected Test(s)" or "Run Selected Test(s) On Selected Element and All Children Element(s)" on toolbar under "Texts" to run tests [![UIAVerify02.jpg]({{site.github.url}}/old_site/images/e/e1/UIAVerify02.jpg)]({{site.github.url}}/old_site/images/e/e1/UIAVerify02.jpg)
--   After complete running the selected tests, test results is been showing under "Test Results" panel [![UIAVerify03.jpg]({{site.github.url}}/old_site/images/c/c8/UIAVerify03.jpg)]({{site.github.url}}/old_site/images/c/c8/UIAVerify03.jpg)
+-   Run VisualUIAVerify.exe to get [![UIAVerify01.jpg]({{ site.github.url }}/old_site/images/d/d2/UIAVerify01.jpg)]({{ site.github.url }}/old_site/images/d/d2/UIAVerify01.jpg)
+-   Expand and select element or control what you want to test from left side under "Automation Elements Tree"; Select "Tests" or expand it to select test suits what you want to run ; Then, click "Run Selected Test(s)" or "Run Selected Test(s) On Selected Element and All Children Element(s)" on toolbar under "Texts" to run tests [![UIAVerify02.jpg]({{ site.github.url }}/old_site/images/e/e1/UIAVerify02.jpg)]({{ site.github.url }}/old_site/images/e/e1/UIAVerify02.jpg)
+-   After complete running the selected tests, test results is been showing under "Test Results" panel [![UIAVerify03.jpg]({{ site.github.url }}/old_site/images/c/c8/UIAVerify03.jpg)]({{ site.github.url }}/old_site/images/c/c8/UIAVerify03.jpg)
 
 UIA Client Api Testing How To
 -----------------------------
@@ -778,13 +778,13 @@ UIA Client Api Testing How To
 
 Microsoft UI Automation is the new accessibility model for Microsoft Windows and is intended to address the needs of assistive technology products and automated testing tools. UI Automation offers many improvements over Microsoft Active Accessibility.
 
-[![Uia1.jpeg]({{site.github.url}}/old_site/images/e/ea/Uia1.jpeg)]({{site.github.url}}/old_site/images/e/ea/Uia1.jpeg)
+[![Uia1.jpeg]({{ site.github.url }}/old_site/images/e/ea/Uia1.jpeg)]({{ site.github.url }}/old_site/images/e/ea/Uia1.jpeg)
 
 ### What is the uiaclient used for?
 
 In UI Automation, a core service lies between the server (provider) and the client, The core service makes calls to the interfaces implemented by providers, Client applications gain access to this core service by creating a CUIAutomation object. This object supports a set of client interfaces by which we can access the application by uia client, and test every control's pattern works well.
 
-[![Uia.GIF]({{site.github.url}}/old_site/images/8/82/Uia.GIF)]({{site.github.url}}/old_site/images/8/82/Uia.GIF)
+[![Uia.GIF]({{ site.github.url }}/old_site/images/8/82/Uia.GIF)]({{ site.github.url }}/old_site/images/8/82/Uia.GIF)
 
 ### Requirements
 
@@ -810,19 +810,19 @@ svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclie
 
 Keepass.exe
 
-[![Keepass.png]({{site.github.url}}/old_site/images/c/c9/Keepass.png)]({{site.github.url}}/old_site/images/c/c9/Keepass.png)
+[![Keepass.png]({{ site.github.url }}/old_site/images/c/c9/Keepass.png)]({{ site.github.url }}/old_site/images/c/c9/Keepass.png)
 
 DockPatternProvider.exe
 
-[![DockPatternProvider.png]({{site.github.url}}/old_site/images/1/1b/DockPatternProvider.png)]({{site.github.url}}/old_site/images/1/1b/DockPatternProvider.png)
+[![DockPatternProvider.png]({{ site.github.url }}/old_site/images/1/1b/DockPatternProvider.png)]({{ site.github.url }}/old_site/images/1/1b/DockPatternProvider.png)
 
 WindowAndTransformPatternProvider.exe
 
-[![TransformPattern.png]({{site.github.url}}/old_site/images/4/4a/TransformPattern.png)]({{site.github.url}}/old_site/images/4/4a/TransformPattern.png)
+[![TransformPattern.png]({{ site.github.url }}/old_site/images/4/4a/TransformPattern.png)]({{ site.github.url }}/old_site/images/4/4a/TransformPattern.png)
 
 ### QA Architecture Diagram
 
-We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows: [![Uiaclient1.png]({{site.github.url}}/old_site/images/1/15/Uiaclient1.png)]({{site.github.url}}/old_site/images/1/15/Uiaclient1.png)
+We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows: [![Uiaclient1.png]({{ site.github.url }}/old_site/images/1/15/Uiaclient1.png)]({{ site.github.url }}/old_site/images/1/15/Uiaclient1.png)
 
 ### Example Application Wrapper
 
@@ -1137,9 +1137,9 @@ derive from the Testbase class
 
 The default output directory is bin/debug, but you can Set the output path "D:/temp/ " (for example) in "Project --\>XXXXX Properties" , the project 's output is as follows:
 
-[![Output1.png]({{site.github.url}}/old_site/images/6/62/Output1.png)]({{site.github.url}}/old_site/images/6/62/Output1.png)
+[![Output1.png]({{ site.github.url }}/old_site/images/6/62/Output1.png)]({{ site.github.url }}/old_site/images/6/62/Output1.png)
 
-If you open the procedures.xml file you can see the test output shown as html page [![Output2.png]({{site.github.url}}/old_site/images/e/e3/Output2.png)]({{site.github.url}}/old_site/images/e/e3/Output2.png)
+If you open the procedures.xml file you can see the test output shown as html page [![Output2.png]({{ site.github.url }}/old_site/images/e/e3/Output2.png)]({{ site.github.url }}/old_site/images/e/e3/Output2.png)
 
 Logging Bugs
 ============

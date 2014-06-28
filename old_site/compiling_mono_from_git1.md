@@ -47,7 +47,7 @@ If you want to work with a branch instead of HEAD (master), you still need to cl
 
       $ (cd mono; git checkout mono-2-6) 
 
-Beware! If you wanted to work from a branch in your fork of the mono repository, you should do (as explained on the [GitFAQ]({{site.github.url}}/old_site/GitFAQ "GitFAQ")):
+Beware! If you wanted to work from a branch in your fork of the mono repository, you should do (as explained on the [GitFAQ]({{ site.github.url }}/old_site/GitFAQ "GitFAQ")):
 
       $ (cd mono; git checkout -t origin/mono-2-6) 
 
@@ -95,5 +95,5 @@ If you use a different prefix then you may need to adjust your LD\_LIBRARY\_PATH
 
 ### Maintaining submodules in Mono
 
-Please see [Git Submodule Maintenance]({{site.github.url}}/old_site/Git_Submodule_Maintenance "Git Submodule Maintenance")
+Please see [Git Submodule Maintenance]({{ site.github.url }}/old_site/Git_Submodule_Maintenance "Git Submodule Maintenance")
 

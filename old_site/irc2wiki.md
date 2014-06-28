@@ -10,7 +10,7 @@ redirect_from:
 Irc2Wiki
 ========
 
-A mutiliated version of Jamie Zawinksi's irc2html.pl that creates basic MediaWiki tables instead of HTML. Used by the [Accessibility Team]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team") to post IRC meeting logs. Works great with irssi log format; can't speak for anything else.
+A mutiliated version of Jamie Zawinksi's irc2html.pl that creates basic MediaWiki tables instead of HTML. Used by the [Accessibility Team]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team") to post IRC meeting logs. Works great with irssi log format; can't speak for anything else.
 
 ``` perl
 #!/usr/bin/perl -w

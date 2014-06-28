@@ -75,7 +75,7 @@ Build Team
 Stephen Shaw (aka decriptor)
  Ray Wang (aka Ray)
 
-[Full A11y team]({{site.github.url}}/old_site/Accessibility:_Team "Accessibility: Team")
+[Full A11y team]({{ site.github.url }}/old_site/Accessibility:_Team "Accessibility: Team")
 
 Build Meetings
 --------------
@@ -306,7 +306,7 @@ Anyone interested in learn/helping with build is welcome to join our team.
 
 #### Schedule
 
-*Built around the [roadmap]({{site.github.url}}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap")*
+*Built around the [roadmap]({{ site.github.url }}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap")*
 
 Based on Q2 in roadmap, our initial testing schedule is below:
 
@@ -340,13 +340,13 @@ Based on Q2 in roadmap, our initial testing schedule is below:
 References
 ----------
 
-The [Product roadmap]({{site.github.url}}/Accessibility:_Roadmap)
- The [Architecture overview]({{site.github.url}}/Accessibility#Architecture)
+The [Product roadmap]({{ site.github.url }}/Accessibility:_Roadmap)
+ The [Architecture overview]({{ site.github.url }}/Accessibility#Architecture)
  [The Novell & Microsoft announcement](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) to create cross-platform accessibility framework
 
 ### Build Systems
 
-[http://www.mono-project.com/BuildSystem/MonoBuild]({{site.github.url}}/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.
+[http://www.mono-project.com/BuildSystem/MonoBuild]({{ site.github.url }}/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.
  [https://build.opensuse.org/](https://build.opensuse.org/) OBS---This is a really cool build system that can handle several different distributions and architectures
 
 Build plan identifier

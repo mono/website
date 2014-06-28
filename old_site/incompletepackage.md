@@ -18,5 +18,5 @@ You must use a new tar program to decompress the Mono source code, as Mono conta
 
 You can use [GNU Tar](http://www.gnu.org/software/tar/) for this.
 
-If you are getting this error **building from source**, please see: [Compiling Mono]({{site.github.url}}/old_site/Compiling_Mono "Compiling Mono")
+If you are getting this error **building from source**, please see: [Compiling Mono]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono")
 

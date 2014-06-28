@@ -469,5 +469,5 @@ well, did I miss anybody? any other comments?
 if not, we'll consider the meeting finished for now, so good evening for some of you :)
 08:02
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility: [http://www.mono-project.com/Accessibilit]({{site.github.url}}/Accessibilit) y
+-!- knocte changed the topic of \#mono-a11y to: Accessibility: [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y
 

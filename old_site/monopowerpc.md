@@ -13,7 +13,7 @@ Mono:PowerPC
 
 The PowerPC port is complete (native code generator (JIT) and interpreter).
 
-It works on [Mac OS X]({{site.github.url}}/old_site/Mono:OSX "Mono:OSX"), [Linux/PPC]({{site.github.url}}/old_site/Mono:Linux "Mono:Linux"), [Nintendo Wii]({{site.github.url}}/old_site/Mono:Wii "Mono:Wii") and [Sony PlayStation 3]({{site.github.url}}/old_site/Mono:PlayStation3 "Mono:PlayStation3").
+It works on [Mac OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX"), [Linux/PPC]({{ site.github.url }}/old_site/Mono:Linux "Mono:Linux"), [Nintendo Wii]({{ site.github.url }}/old_site/Mono:Wii "Mono:Wii") and [Sony PlayStation 3]({{ site.github.url }}/old_site/Mono:PlayStation3 "Mono:PlayStation3").
 
 The port owner is Paolo Molaro.
 

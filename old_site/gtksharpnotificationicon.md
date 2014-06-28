@@ -13,7 +13,7 @@ GtkSharpNotificationIcon
 What is the Status Notification Area?
 =====================================
 
-[![TrayIcon.png]({{site.github.url}}/old_site/images/8/8c/TrayIcon.png)]({{site.github.url}}/old_site/images/8/8c/TrayIcon.png) [![TrayIconPopMenu.png]({{site.github.url}}/old_site/images/3/33/TrayIconPopMenu.png)]({{site.github.url}}/old_site/images/3/33/TrayIconPopMenu.png) Using the status notification area applications can notify the user of non-critical events (for example, arrival of new email, or a chat 'buddy' having logged on), and expose the status of active system processes (for example, a printing document, or a laptop's battery charging). Keep in mind that the utility of the notification area decreases rapidly when more than about four icons are always present. For this reason, icons that appear only temporarily in response to events are preferable.
+[![TrayIcon.png]({{ site.github.url }}/old_site/images/8/8c/TrayIcon.png)]({{ site.github.url }}/old_site/images/8/8c/TrayIcon.png) [![TrayIconPopMenu.png]({{ site.github.url }}/old_site/images/3/33/TrayIconPopMenu.png)]({{ site.github.url }}/old_site/images/3/33/TrayIconPopMenu.png) Using the status notification area applications can notify the user of non-critical events (for example, arrival of new email, or a chat 'buddy' having logged on), and expose the status of active system processes (for example, a printing document, or a laptop's battery charging). Keep in mind that the utility of the notification area decreases rapidly when more than about four icons are always present. For this reason, icons that appear only temporarily in response to events are preferable.
 
 Let's write some code!
 ======================

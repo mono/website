@@ -18,7 +18,7 @@ Some consideration has been given to create a shared substrate that could be use
 
 Some related components being developed and designed include:
 
--   [Transactions processing]({{site.github.url}}/old_site/Transactions "Transactions")
--   [Messaging support]({{site.github.url}}/old_site/System.Messaging)
+-   [Transactions processing]({{ site.github.url }}/old_site/Transactions "Transactions")
+-   [Messaging support]({{ site.github.url }}/old_site/System.Messaging)
 
 

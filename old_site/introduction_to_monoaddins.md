@@ -16,7 +16,7 @@ This framework is derived from the add-in engine used by MonoDevelop, although i
 
 Mono.Addins has been designed to be useful for a wide range of applications: from simple applications with small extensibility needs, to complex applications (such as MonoDevelop itself) which need support for large add-in structures.
 
-This document explains the basic concepts behind Mono.Addins, so you can get an idea of what the library is able to do. If you are interested in a more detailed explanation of all features see the document [Mono.Addins]({{site.github.url}}/old_site/Mono.Addins "Mono.Addins").
+This document explains the basic concepts behind Mono.Addins, so you can get an idea of what the library is able to do. If you are interested in a more detailed explanation of all features see the document [Mono.Addins]({{ site.github.url }}/old_site/Mono.Addins "Mono.Addins").
 
 If you have questions or suggestions about Mono.Addins, please subscribe to the [Mono.Addins mailing list](http://groups.google.com/group/mono-addins).
 
@@ -68,7 +68,7 @@ A simple example
 
 The idea is to implement a Text Editor which can be extended by add-ins. The following diagram shows the extension points that the editor will offer, and how they are extended by several add-ins:
 
-[![Mono-addins-sample.png]({{site.github.url}}/old_site/images/e/e3/Mono-addins-sample.png)]({{site.github.url}}/old_site/images/e/e3/Mono-addins-sample.png)
+[![Mono-addins-sample.png]({{ site.github.url }}/old_site/images/e/e3/Mono-addins-sample.png)]({{ site.github.url }}/old_site/images/e/e3/Mono-addins-sample.png)
 
 A complete description of how this extensible editor could be implemented is out of the scope of this document, but this example will be used to explain how Mono.Addins works and which features does it provide.
 

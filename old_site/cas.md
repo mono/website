@@ -45,7 +45,7 @@ Code Access Security
 
 Code Access Security (CAS) is a new **experimental** (i.e. unsupported) feature in the Mono 1.2 release. It is complete enough to play with it but **should not be used** in production (incomplete and unaudited). The security manager is **off** by default.
 
-There is no planned release date to support **CAS** in Mono, see [roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for details. Security efforts are now oriented to support the Silverlight security model in [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight").
+There is no planned release date to support **CAS** in Mono, see [roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for details. Security efforts are now oriented to support the Silverlight security model in [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight").
 
 Security Manager
 ----------------
@@ -54,9 +54,9 @@ The security manager is a collection of security features to implement every sec
 
 ### Testing
 
-Sadly not every parts of the security manager cannot be tested using [NUnit]({{site.github.url}}/old_site/Test_Suite "Test Suite"). In particular some security actions, like `LinkDemand` and `InheritanceDemand`, throws unhandled exceptions. While it is possible to promote `LinkDemand` into full `Demand` by using reflection, `InheritanceDemand` are still not testable using [NUnit]({{site.github.url}}/old_site/Test_Suite "Test Suite").
+Sadly not every parts of the security manager cannot be tested using [NUnit]({{ site.github.url }}/old_site/Test_Suite "Test Suite"). In particular some security actions, like `LinkDemand` and `InheritanceDemand`, throws unhandled exceptions. While it is possible to promote `LinkDemand` into full `Demand` by using reflection, `InheritanceDemand` are still not testable using [NUnit]({{ site.github.url }}/old_site/Test_Suite "Test Suite").
 
-Some tests for those hard-to-test features are present in directories under [/mono/mono/tests/cas/](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/) in [SVN]({{site.github.url}}/old_site/SourceCodeRepository). They can be executed by doing a `make test` in each directory.
+Some tests for those hard-to-test features are present in directories under [/mono/mono/tests/cas/](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/) in [SVN]({{ site.github.url }}/old_site/SourceCodeRepository). They can be executed by doing a `make test` in each directory.
 
 ### Status
 
@@ -64,7 +64,7 @@ Since version 1.1.4 Mono supports the --security option to enable it's security 
 
     mono --security sample.exe
 
-New features in [SVN]({{site.github.url}}/old_site/SourceCodeRepository) (unreleased as of 1.1.10) includes:
+New features in [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) (unreleased as of 1.1.10) includes:
 
 -   none;
 
@@ -109,7 +109,7 @@ Adding the required security protections to an existing class can be tricky as i
 
 ### Testing
 
-Testing each class, security related or not, is done with *classic* [unit tests]({{site.github.url}}/old_site/Test_Suite "Test Suite"). However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
+Testing each class, security related or not, is done with *classic* [unit tests]({{ site.github.url }}/old_site/Test_Suite "Test Suite"). However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
 
 -   The unit test namespace starts with `MonoCasTests` instead of `MonoTests`;
 
@@ -189,7 +189,7 @@ Permview is a tool that can extract the declarative security permission sets fro
 **Status**
 
 -   The current version (i.e. the one part of the Mono 1.1.x releases) is limited to show the assembly-level permissions (e.g. `RequestMinimum`, `RequestOptional` and `RequestRefuse`) and works only on the Mono runtime;
--   A new version, based on [Mono.Cecil]({{site.github.url}}/old_site/Cecil "Cecil"), is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the **mcs** [SVN]({{site.github.url}}/old_site/SourceCodeRepository) trunk. Until then the source code is available [here](http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup).
+-   A new version, based on [Mono.Cecil]({{ site.github.url }}/old_site/Cecil "Cecil"), is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the **mcs** [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) trunk. Until then the source code is available [here](http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup).
 
 ### storeadm
 

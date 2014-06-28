@@ -35,5 +35,5 @@ For ASP.NET applications hosted with mod\_mono, you can add the following direct
 
     MonoSetEnv MONO_IOMAP=all
 
-Note: MONO\_IOMAP is a shortcut to help port your application to Mono. However, there is a performance hit that comes with using it. For the long term, it is recommended that you change your application to be cross platform compatible without MONO\_IOMAP. For guidance, see [Guidelines:Application\_Portability]({{site.github.url}}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability").
+Note: MONO\_IOMAP is a shortcut to help port your application to Mono. However, there is a performance hit that comes with using it. For the long term, it is recommended that you change your application to be cross platform compatible without MONO\_IOMAP. For guidance, see [Guidelines:Application\_Portability]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability").
 

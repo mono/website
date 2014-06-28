@@ -72,7 +72,7 @@ Request
 Documentation
 -------------
 
-Our [Documentation]({{site.github.url}}/old_site/Article:IOChanges "Article:IOChanges") needs to be improved:
+Our [Documentation]({{ site.github.url }}/old_site/Article:IOChanges "Article:IOChanges") needs to be improved:
 
 -   The documentation is based on some conversations with Dick.
 -   It is not up-to-date.

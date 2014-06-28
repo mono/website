@@ -30,19 +30,19 @@ MonoMac/Documentation
 Documentation
 =============
 
-If you are new to MonoMac, read our [Installation Page]({{site.github.url}}/old_site/MonoMac#obtaining-monomac "MonoMac").
+If you are new to MonoMac, read our [Installation Page]({{ site.github.url }}/old_site/MonoMac#obtaining-monomac "MonoMac").
 
 MonoMac API
 -----------
 
 The MonoMac API binds C and Objective-C APIs from Cocoa. The documentation is avaialble at www.go-mono.com/docs\</a\>.
 
-The API design for the CIL/Objective-C binding is covered in the [MonoMac API]({{site.github.url}}/old_site/MonoMac/Documentation/API "MonoMac/Documentation/API") document.
+The API design for the CIL/Objective-C binding is covered in the [MonoMac API]({{ site.github.url }}/old_site/MonoMac/Documentation/API "MonoMac/Documentation/API") document.
 
 Samples
 -------
 
-We have ported some [sample applications](/index.php?title=MonoMac/Documentation/Samples&action=edit&redlink=1 "MonoMac/Documentation/Samples (page does not exist)") from CocoaObjective-C to [MonoMac]({{site.github.url}}/old_site/MonoMac "MonoMac"). The samples **require MonoMac to be [installed]({{site.github.url}}/old_site/MonoMac#obtaining-monomac "MonoMac")**.
+We have ported some [sample applications](/index.php?title=MonoMac/Documentation/Samples&action=edit&redlink=1 "MonoMac/Documentation/Samples (page does not exist)") from CocoaObjective-C to [MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac"). The samples **require MonoMac to be [installed]({{ site.github.url }}/old_site/MonoMac#obtaining-monomac "MonoMac")**.
 
 The MonoMac community has produced dozens of samples, visit the up-to-date [github repository](https://github.com/mono/monomac/tree/master/samples) for the latest in samples.
 

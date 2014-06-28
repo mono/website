@@ -257,7 +257,7 @@ Specific bug fixes include:
 Changes since Mono 2.4
 ======================
 
-This documents the changes since [Mono 2.4]({{site.github.url}}/old_site/Release_Notes_Mono_2.4 "Release Notes Mono 2.4").
+This documents the changes since [Mono 2.4]({{ site.github.url }}/old_site/Release_Notes_Mono_2.4 "Release Notes Mono 2.4").
 
 LINQ to SQL
 -----------
@@ -300,7 +300,7 @@ System.Data.Linq support is *not* complete. (At minimum, missing is improved sup
 Soft Debugger
 -------------
 
-Mono 2.6.1 features a new debugger engine, the Mono [Soft Debugger]({{site.github.url}}/old_site/Mono:Runtime:Documentation:SoftDebugger "Mono:Runtime:Documentation:SoftDebugger").
+Mono 2.6.1 features a new debugger engine, the Mono [Soft Debugger]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:SoftDebugger "Mono:Runtime:Documentation:SoftDebugger").
 
 This new debugger engine lives inside the Mono process and as opposed to hard debuggers it is more reliable at debugging, but does not allow developers to debug assembly-language when debugging their Mono applications.
 
@@ -330,7 +330,7 @@ The dynamic language runtime (DLR) is now distributed as part .NET 4 profile. Th
 System.IO.Packaging
 -------------------
 
-The WindowsBase assembly which was previously part of the [Olive]({{site.github.url}}/old_site/Olive "Olive") module is now part of the standard Mono distribution. This assembly sole purpose is to provide the System.IO.Packaging API, a .NET API for ZIP files that has recently become popular.
+The WindowsBase assembly which was previously part of the [Olive]({{ site.github.url }}/old_site/Olive "Olive") module is now part of the standard Mono distribution. This assembly sole purpose is to provide the System.IO.Packaging API, a .NET API for ZIP files that has recently become popular.
 
 WinForms
 --------

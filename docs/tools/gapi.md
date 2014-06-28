@@ -7,7 +7,7 @@ title: GAPI
 GAPI Overview
 -------------
 
-The GAPI tools are distributed with [Gtk\#](http://gtk-sharp.sourceforge.net/). The tools make it easy create and maintain managed bindings to native libraries which utilize [glib](http://developer.gnome.org/doc/API/glib/) and [GObject](http://developer.gnome.org/doc/API/2.0/gobject/). Some examples of libraries currently bound using the GAPI tools include [Gtk](http://www.gtk.org/), [Atk](http://developer.gnome.org/doc/API/2.0/atk/atk.html), [Pango](http://www.pango.org/), [Gdk](http://developer.gnome.org/doc/API/gdk/), [libgnome](http://developer.gnome.org/doc/API/2.0/libgnome/), [libgnomeui](http://developer.gnome.org/doc/API/2.0/libgnomeui/),[libgnomecanvas](http://directory.fsf.org/graphics/misc/libgnomecanvas.html), and [GtkGLArea]({{site.github.url}}/old_site/GtkGLArea "GtkGLArea").
+The GAPI tools are distributed with [Gtk\#](http://gtk-sharp.sourceforge.net/). The tools make it easy create and maintain managed bindings to native libraries which utilize [glib](http://developer.gnome.org/doc/API/glib/) and [GObject](http://developer.gnome.org/doc/API/2.0/gobject/). Some examples of libraries currently bound using the GAPI tools include [Gtk](http://www.gtk.org/), [Atk](http://developer.gnome.org/doc/API/2.0/atk/atk.html), [Pango](http://www.pango.org/), [Gdk](http://developer.gnome.org/doc/API/gdk/), [libgnome](http://developer.gnome.org/doc/API/2.0/libgnome/), [libgnomeui](http://developer.gnome.org/doc/API/2.0/libgnomeui/),[libgnomecanvas](http://directory.fsf.org/graphics/misc/libgnomecanvas.html), and [GtkGLArea]({{ site.github.url }}/old_site/GtkGLArea "GtkGLArea").
 
 There are 3 primary tools provided by GAPI:
 
@@ -355,7 +355,7 @@ You can run this tool on assemblies intended for mono usage if you want to provi
 Binding GInterfaces
 -------------------
 
-[GInterfaces]({{site.github.url}}/old_site/ImplementingGInterfaces "ImplementingGInterfaces") support was added recently (firstly, support for querying them in unmanaged objects from the managed side, and later, being able to use them from a managed object).
+[GInterfaces]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces") support was added recently (firstly, support for querying them in unmanaged objects from the managed side, and later, being able to use them from a managed object).
 
 But sometimes dealing with them may be tricky, as some non-public (not defined in the binding) unmanaged object may be obtained by a managed method, which supports a GInterface in theory, but in the end is not registered in the Mono object model as implementing the managed GInterface counterpart.
 

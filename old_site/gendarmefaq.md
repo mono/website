@@ -55,14 +55,14 @@ General
 Is Gendarme a C\# source checking tool ?
 ----------------------------------------
 
-Not directly. [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") does **not** work on source code but on compiled assemblies. Once compiled (into Intermediate Language, **IL**) C\# code looks identical to any other (compiled) .NET language. Hence [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") is a .NET static assembly analyzer and is not language specific.
+Not directly. [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") does **not** work on source code but on compiled assemblies. Once compiled (into Intermediate Language, **IL**) C\# code looks identical to any other (compiled) .NET language. Hence [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") is a .NET static assembly analyzer and is not language specific.
 
 Which versions of the .NET framework are supported ?
 ----------------------------------------------------
 
-For analysis [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") can process any .NET assembly (that [Cecil]({{site.github.url}}/old_site/Cecil "Cecil") can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
+For analysis [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") can process any .NET assembly (that [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
 
-However in order to **execute** [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") you'll need either Mono (same version) or the .NET framework 3.5 since [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") use some recent (C\# 3) features such as LINQ.
+However in order to **execute** [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") you'll need either Mono (same version) or the .NET framework 3.5 since [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") use some recent (C\# 3) features such as LINQ.
 
 Usage
 =====
@@ -70,7 +70,7 @@ Usage
 When should I use Gendarme ?
 ----------------------------
 
-Some of [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") early but you can still benefit from it anytime.
+Some of [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") early but you can still benefit from it anytime.
 
 I maintain of old code base. Is it too late to start using Gendarme ?
 ---------------------------------------------------------------------
@@ -96,30 +96,30 @@ Features
 Do I need debugging symbols to use Gendarme ?
 ---------------------------------------------
 
-No, debugging symbols are not required to use [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme"). The most useful aspect of debugging symbols is that, when available, reports can include the source file and line numbers (when applicable) for defects found during the analysis.
+No, debugging symbols are not required to use [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"). The most useful aspect of debugging symbols is that, when available, reports can include the source file and line numbers (when applicable) for defects found during the analysis.
 
 A few rules (e.g. `RemoveUnusedLocalVariables`) might turn themselves off if debugging symbols are not available. Others will use the extra information provided (e.g. variable names) and, in a few cases, it could also affect the number of false positives.
 
 Which symbols format are supported ?
 ------------------------------------
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s end users.
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s end users.
 
 Why are source line numbers imprecise ?
 ---------------------------------------
 
 Line numbers, like source file names, are not part of an assembly metadata. They are part of the debugging symbols that you can, optionally, generate when compiling your assemblies.
 
-The symbols files structure is based on **sequence points**. Each **sequence point** is related to an IL instructions. When [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") finds a defect, and debugging symbols are available, it will find the corresponding **sequence point** and extract the source file, line and column numbers.
+The symbols files structure is based on **sequence points**. Each **sequence point** is related to an IL instructions. When [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") finds a defect, and debugging symbols are available, it will find the corresponding **sequence point** and extract the source file, line and column numbers.
 
-Now many IL instructions do not have their own **sequence point**. Also several defects are not related to IL instructions (e.g. methods, type, assemblies-level defects). In such case [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") will *try to approximate* the location of the defect. But since [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") never reads source files (or even requires them to be available) the result will be more or less precise.
+Now many IL instructions do not have their own **sequence point**. Also several defects are not related to IL instructions (e.g. methods, type, assemblies-level defects). In such case [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") will *try to approximate* the location of the defect. But since [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") never reads source files (or even requires them to be available) the result will be more or less precise.
 
 Why can't I see the source file names or line numbers associated with a defect ?
 --------------------------------------------------------------------------------
 
-There can be several reasons for this. First make sure the debugging symbols are available for the assemblies being analyzed. [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") requires either a **.mdb** or **.pdb** to be located in the same directory as the matching **.exe** or **.dll** files. Without them [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") won't be able to report the source files (or line numbers) for any defect.
+There can be several reasons for this. First make sure the debugging symbols are available for the assemblies being analyzed. [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") requires either a **.mdb** or **.pdb** to be located in the same directory as the matching **.exe** or **.dll** files. Without them [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") won't be able to report the source files (or line numbers) for any defect.
 
-If debugging symbols are present then ensure that **Mono.Cecil.Pdb.dll** (under Windows for .pdb support) or **Mono.Cecil.Mdb.dll** (under Linux or Windows for .mdb support) is present in the [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") installation directory. The installer should have provided them automatically - but a manual installation (or compiling from source code) could be missing them.
+If debugging symbols are present then ensure that **Mono.Cecil.Pdb.dll** (under Windows for .pdb support) or **Mono.Cecil.Mdb.dll** (under Linux or Windows for .mdb support) is present in the [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") installation directory. The installer should have provided them automatically - but a manual installation (or compiling from source code) could be missing them.
 
 If some defects, located in the same assembly, have source file names (or line numbers) then your setup should be correct. What's happening is likely a lack of a matching **sequence point** in the debugging symbols (see previous answer about them). In some rare circumstances it could be possible that no **sequence point** could be found. This can occurs on types without any methods (or only abstract methods) since **sequence points** are associated with IL.
 
@@ -128,7 +128,7 @@ Finally it could be a bug (e.g. the rule does not report the *right* target as t
 Why are defects decorated using `[SuppressMessage]` attributes still showing in my reports ?
 --------------------------------------------------------------------------------------------
 
-Make sure your project was compiled with the **CODE\_ANALYSIS** symbol defined. Otherwise the `[SuppressMessage]` attribute wont be compiled inside the assembly binary (i.e. there's a `[Conditional]` attribute on the type.). That would makes it impossible for [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme") to ignore the defects.
+Make sure your project was compiled with the **CODE\_ANALYSIS** symbol defined. Otherwise the `[SuppressMessage]` attribute wont be compiled inside the assembly binary (i.e. there's a `[Conditional]` attribute on the type.). That would makes it impossible for [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme") to ignore the defects.
 
 Rules
 =====
@@ -136,12 +136,12 @@ Rules
 What are rules
 --------------
 
-Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. [performance rules]({{site.github.url}}/old_site/Gendarme.Rules.Performance "Gendarme.Rules.Performance")).
+Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. [performance rules]({{ site.github.url }}/old_site/Gendarme.Rules.Performance "Gendarme.Rules.Performance")).
 
 Rule X checks for something that can't happen using C\#
 -------------------------------------------------------
 
-Some rules (e.g. `FinalizersShouldCallBaseClassFinalizerRule`) checks for condition that cannot occurs in C\# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in [Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme"). In other words C\# != .NET :-)
+Some rules (e.g. `FinalizersShouldCallBaseClassFinalizerRule`) checks for condition that cannot occurs in C\# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"). In other words C\# != .NET :-)
 
 Results
 =======

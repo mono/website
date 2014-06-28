@@ -66,7 +66,7 @@ This article is a beginners guide to Gtk\# programming. It will help those who h
 What is Gtk\#?
 --------------
 
-[Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") put simply is a wrapper on [gtk+](http://www.gtk.org), a cross platform GUI framework.
+[Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") put simply is a wrapper on [gtk+](http://www.gtk.org), a cross platform GUI framework.
 
 Adapted from the [gtk+ website](http://www.gtk.org/): *gtk+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, gtk+ is suitable for projects ranging from small one-off toys to Enterprise application suites.*
 
@@ -84,9 +84,9 @@ Download/Install GTK\#
 
 First thing you will want to do is get your GTK\# install up and running.
 
-**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK\# development packages as well as any Mono packages first. If not, check out [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") to find a package that works for you. In the worst case, you may be forced to build yourself from source.
+**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK\# development packages as well as any Mono packages first. If not, check out [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") to find a package that works for you. In the worst case, you may be forced to build yourself from source.
 
-**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page. You might also like to grab a copy of the Gtk\# integration package for Visual Studio which will allow you to use GTK\# with Microsoft's Visual Studio without installing the rest of Mono.
+**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page. You might also like to grab a copy of the Gtk\# integration package for Visual Studio which will allow you to use GTK\# with Microsoft's Visual Studio without installing the rest of Mono.
 
 Inside the GTK\# libraries
 --------------------------
@@ -98,31 +98,31 @@ Gtk\# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sh
 
 ***gtk-sharp***
 
-[glib-sharp]({{site.github.url}}/monodoc/N:Glib)
+[glib-sharp]({{ site.github.url }}/monodoc/N:Glib)
 
 Portions of the glib 2.x libraries which provide a low-level non-GUI core library for gtk+.
 
-[pango-sharp]({{site.github.url}}/monodoc/N:Pango)
+[pango-sharp]({{ site.github.url }}/monodoc/N:Pango)
 
 The [Pango](http://www.pango.org) international text layout and rendering library.
 
-[atk-sharp]({{site.github.url}}/monodoc/N:Atk)
+[atk-sharp]({{ site.github.url }}/monodoc/N:Atk)
 
 The atk Accessibility framework.
 
-[gdk-sharp]({{site.github.url}}/monodoc/N:Gdk)
+[gdk-sharp]({{ site.github.url }}/monodoc/N:Gdk)
 
 Drawing Kit using by gtk+.
 
-[gtk-sharp]({{site.github.url}}/monodoc/N:Gtk)
+[gtk-sharp]({{ site.github.url }}/monodoc/N:Gtk)
 
 The Gtk 2.x toolkit, a cross-platform toolkit for creating graphical user interfaces
 
-[glade-sharp]({{site.github.url}}/monodoc/N:Glade)
+[glade-sharp]({{ site.github.url }}/monodoc/N:Glade)
 
 Supports dynamic loading of [Glade](http://glade.gnome.org) interface builder files.
 
-[gtk-dotnet]({{site.github.url}}/monodoc/N:Gtk.DotNet)
+[gtk-dotnet]({{ site.github.url }}/monodoc/N:Gtk.DotNet)
 
 Integration of the Gtk\# namespace with System.Drawing.
 
@@ -130,19 +130,19 @@ Integration of the Gtk\# namespace with System.Drawing.
 
 ***gnome-sharp***
 
-[art-sharp]({{site.github.url}}/monodoc/N:Art)
+[art-sharp]({{ site.github.url }}/monodoc/N:Art)
 
 A vector and rendering library.
 
-[gnome-sharp]({{site.github.url}}/monodoc/N:Gnome)**\***
+[gnome-sharp]({{ site.github.url }}/monodoc/N:Gnome)**\***
 
 [GNOME](http://www.gnome.org) program initialization, printing, panel access, and assorted widgets.
 
-[gnomevfs-sharp]({{site.github.url}}/monodoc/N:GnomeVfs)**\***
+[gnomevfs-sharp]({{ site.github.url }}/monodoc/N:GnomeVfs)**\***
 
 File, MIME type, icon, and various GNOME file system interaction functionality.
 
-[gconf-sharp]({{site.github.url}}/monodoc/N:GConf)**\***
+[gconf-sharp]({{ site.github.url }}/monodoc/N:GConf)**\***
 
 Configuration storage system on Gnome
 
@@ -150,7 +150,7 @@ Configuration storage system on Gnome
 
 ***gnome-desktop-sharp***
 
-[gtkhtml-sharp]({{site.github.url}}/monodoc/T:Gtk.HTML)**\***
+[gtkhtml-sharp]({{ site.github.url }}/monodoc/T:Gtk.HTML)**\***
 
 A lightweight HTML widget.
 
@@ -162,11 +162,11 @@ nautilusburn-sharp**\***
 
 GNOME CD/DVD burning library.
 
-[rsvg-sharp]({{site.github.url}}/monodoc/N:Rsvg)
+[rsvg-sharp]({{ site.github.url }}/monodoc/N:Rsvg)
 
 SVG rendering library.
 
-[vte-sharp]({{site.github.url}}/monodoc/N:Vte)**\***
+[vte-sharp]({{ site.github.url }}/monodoc/N:Vte)**\***
 
 The VTE terminal emulator.
 
@@ -261,7 +261,7 @@ Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" stat
 
 Now just compile like we did before and run it using \`mono HelloWorld.exe\` and you should get something like this:
 
-[![HelloWorld.exe running...]({{site.github.url}}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png)]({{site.github.url}}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png "HelloWorld.exe running...")
+[![HelloWorld.exe running...]({{ site.github.url }}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png)]({{ site.github.url }}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png "HelloWorld.exe running...")
 
 Pretty easy, isn't it?"
 

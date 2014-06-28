@@ -30,9 +30,9 @@ Compiling Mono From SVN
 Compiling from SVN is obsolete
 ==============================
 
-Since the current mono version is beeing developed on github, the instructions here are obsolete. Check the [compiling Mono from Git]({{site.github.url}}/old_site/Compiling_Mono_From_Git "Compiling Mono From Git") page instead.
+Since the current mono version is beeing developed on github, the instructions here are obsolete. Check the [compiling Mono from Git]({{ site.github.url }}/old_site/Compiling_Mono_From_Git "Compiling Mono From Git") page instead.
 
-For full details about checking out your source code, see: [SVN Write Access]({{site.github.url}}/old_site/SourceCodeRepository) and the [Anonymous SVN access]({{site.github.url}}/old_site/SourceCodeRepository) pages).
+For full details about checking out your source code, see: [SVN Write Access]({{ site.github.url }}/old_site/SourceCodeRepository) and the [Anonymous SVN access]({{ site.github.url }}/old_site/SourceCodeRepository) pages).
 
 ### Checking out for the first time
 

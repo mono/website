@@ -28,13 +28,13 @@ MilensSandbox
 Articles Written
 ================
 
--   [Notification Icon Tutorial]({{site.github.url}}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
--   [GConf Tutorial]({{site.github.url}}/old_site/GConfTutorial "GConfTutorial")
+-   [Notification Icon Tutorial]({{ site.github.url }}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [GConf Tutorial]({{ site.github.url }}/old_site/GConfTutorial "GConfTutorial")
 
 Articles in Progress
 ====================
 
--   [Threading for Beginners]({{site.github.url}}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide")
+-   [Threading for Beginners]({{ site.github.url }}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide")
 
 Articles that I intend to write
 ===============================

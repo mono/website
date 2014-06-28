@@ -14,7 +14,7 @@ Mono is a portable and open source implementation of the .NET framework for Unix
 
 Mono 2.10.7 was used mostly as a vehicle to test the upcoming Gtk+ stack on MacOS X and was released on December 6th, a complete release for Windows and Linux will be published on December 13th.
 
-Mono 2.10.7 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2"), [Mono 2.10.3]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.3 "Release Notes Mono 2.10.3"), [2.10.4]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.4 "Release Notes Mono 2.10.4"), [2.10.5]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.5 "Release Notes Mono 2.10.5") and [2.10.6]({{site.github.url}}/old_site/Release_Notes_Mono_2.10.6 "Release Notes Mono 2.10.6").
+Mono 2.10.7 is a minor update to [Mono 2.10]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10"), [Mono 2.10.1]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.1 "Release Notes Mono 2.10.1"), [Mono 2.10.2]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.2 "Release Notes Mono 2.10.2"), [Mono 2.10.3]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.3 "Release Notes Mono 2.10.3"), [2.10.4]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.4 "Release Notes Mono 2.10.4"), [2.10.5]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.5 "Release Notes Mono 2.10.5") and [2.10.6]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10.6 "Release Notes Mono 2.10.6").
 
 <table>
 <col width="100%" />

@@ -32,7 +32,7 @@ That being said, even during those peak times, it isn't slow enough to be unusab
 
 It is unfortunate that the slowness happens during login, as this is the first thing you do in Bugzilla. This seems to give the impression that all of Novell Bugzilla is slow, however, the rest of Novell Bugzilla should run at normal Bugzilla speed.
 
-If there is a repeatable procedure to show slowness, or if you have a WireShark log of your Novell login session where it was slow, please contact twiest on [IRC]({{site.github.url}}/old_site/IRC "IRC") (\#mono).
+If there is a repeatable procedure to show slowness, or if you have a WireShark log of your Novell login session where it was slow, please contact twiest on [IRC]({{ site.github.url }}/old_site/IRC "IRC") (\#mono).
 
 #### I don't like the "My Bugs" saved search, how do I get rid of it?
 
@@ -48,5 +48,5 @@ Here's how:
 
 #### Who do I contact if I have problems that aren't addressed on this FAQ?
 
-Please contact twiest on [IRC]({{site.github.url}}/old_site/IRC "IRC") (\#mono).
+Please contact twiest on [IRC]({{ site.github.url }}/old_site/IRC "IRC") (\#mono).
 

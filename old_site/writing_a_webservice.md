@@ -44,9 +44,9 @@ If you put this file on your web server directory, or if you run the command xsp
 
 For example, if you used **xsp** from the shell, you can contact [http://localhost:8080/NumberService.asmx](http://localhost:8080/NumberService.asmx) to access the test page that is automatically generated for your web service. In that page you can also get WSDL descriptions for the web service, and you can test your web service directly.
 
-If you deployed this to your web server (say, with [Mod\_mono]({{site.github.url}}/old_site/Mod_mono "Mod mono")) you should be able to access it at [http://localhost/NumberService.asmx](http://localhost/NumberService.asmx)
+If you deployed this to your web server (say, with [Mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono")) you should be able to access it at [http://localhost/NumberService.asmx](http://localhost/NumberService.asmx)
 
 (Cool screenshot goes here!)
 
-To use this web service or any other web service in your application, see [Consuming Web Services]({{site.github.url}}/old_site/Web_Services "Web Services").
+To use this web service or any other web service in your application, see [Consuming Web Services]({{ site.github.url }}/old_site/Web_Services "Web Services").
 

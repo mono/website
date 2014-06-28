@@ -40,7 +40,7 @@ Blastwave.org Blastwave is a collection of binary packages of free software that
 Nokia / Maemo
 -------------
 
--   Mono on Maemo for the Nokia 770 and 800. For help with the installation, see [Mono for Nokia]({{site.github.url}}/Maemo)
+-   Mono on Maemo for the Nokia 770 and 800. For help with the installation, see [Mono for Nokia]({{ site.github.url }}/Maemo)
     -   [Mono 1.2.5 Runtime Single Click Install](http://go-mono.com/maemo/pool/bora/mono/mono.install)
     -   [Mono 1.2.3.1 Scratchbox developer kit](http://go-mono.com/maemo/scratchbox-devkit-mono-1.2.3.1-2-i386.tar.gz)
 
@@ -49,7 +49,7 @@ Snapshots
 
 [Daily test tarballs](http://www.go-mono.com/daily/) of the SVN repository are made almost daily. These are not guaranteed to build, but have undergone a minimum sanity check in that the snapshot of the SVN repository from which they were generated was buildable on the test machine. The time when they become available is not predictable, and there are sometimes gaps of several days.
 
-The [AnonSVN]({{site.github.url}}/AnonSVN) mirrors are updated in real time.
+The [AnonSVN]({{ site.github.url }}/AnonSVN) mirrors are updated in real time.
 
 [Snapshot RPMs](http://mono.ximian.com/monobuild/snapshot/download-trunk/) built from trunk get updated every hour. These contain most of the packages we ship but very well may be broken.
 

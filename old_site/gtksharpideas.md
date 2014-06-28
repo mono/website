@@ -10,7 +10,7 @@ redirect_from:
 GtkSharpIdeas
 =============
 
-Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") API.
+Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") API.
 
 <table>
 <col width="100%" />
@@ -43,7 +43,7 @@ We want to support Data Binding, but we need someone with experience on Data Bin
 OpenGL integration
 ==================
 
-The [Tao Framework]({{site.github.url}}/Tao) provides complete bindings to OpenGL, the issue is how to create window regions in Gtk\# that can host OpenGL areas.
+The [Tao Framework]({{ site.github.url }}/Tao) provides complete bindings to OpenGL, the issue is how to create window regions in Gtk\# that can host OpenGL areas.
 
 There is a Gtk\# widget that integrates OpenGL [here](http://www.olympum.com/~bruno/gtkgl-sharp.html)
 
@@ -79,7 +79,7 @@ A few subjects suggested:
     -   Toolbars
     -   Session management? (Better not ;-)
 
--   [Developing Responsive Applications]({{site.github.url}}/old_site/Responsive_Applications "Responsive Applications") (Work-in-Progress).
+-   [Developing Responsive Applications]({{ site.github.url }}/old_site/Responsive_Applications "Responsive Applications") (Work-in-Progress).
 
 -   Deployment: confusion about which installer to use (there are three available).
 
@@ -115,5 +115,5 @@ Other Libraries
 Platforms
 =========
 
-Discussion on [Improving Gtk+ on Windows]({{site.github.url}}/old_site/ImprovingGtkWin32 "ImprovingGtkWin32")
+Discussion on [Improving Gtk+ on Windows]({{ site.github.url }}/old_site/ImprovingGtkWin32 "ImprovingGtkWin32")
 

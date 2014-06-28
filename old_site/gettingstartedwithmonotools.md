@@ -36,7 +36,7 @@ Quick Links
 ===========
 
 -   [Mono Tools for Visual Studio download page](http://mono-tools.com/download/)
--   The most recent [[1]]({{site.github.url}}/download) Mono for Windows and Mono for OS X (required to debug Mono on Mac OS X)
+-   The most recent [[1]]({{ site.github.url }}/download) Mono for Windows and Mono for OS X (required to debug Mono on Mac OS X)
     -   Requires the most recent [Mono for Mac OS X](http://ftp.novell.com/pub/mono/monotools/latest/MonoFramework-x86.dmg)
 -   Linux
     -   Use the openSUSE 1click from your existing Linux system:

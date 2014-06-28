@@ -12,7 +12,7 @@ Release Notes Mono 2.10.2
 
 Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems.
 
-Mono 2.10.2 is a minor update to [Mono 2.10]({{site.github.url}}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10") based on the mono-2-10 branch of github. Mono 2.10.2 was released on April 25, 2011.
+Mono 2.10.2 is a minor update to [Mono 2.10]({{ site.github.url }}/old_site/Release_Notes_Mono_2.10 "Release Notes Mono 2.10") based on the mono-2-10 branch of github. Mono 2.10.2 was released on April 25, 2011.
 
 Important Information About Mono 2.10
 =====================================

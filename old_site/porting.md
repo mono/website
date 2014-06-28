@@ -37,7 +37,7 @@ Mono has been ported to a number of architectures already, and today it is made 
 Porting the VM to a new architecture
 ====================================
 
-There are a number of documents in the wiki under [Runtime documentation]({{site.github.url}}/old_site/Mono:Runtime:Documentation "Mono:Runtime:Documentation"), in particular read the document [Porting the engine]({{site.github.url}}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting")
+There are a number of documents in the wiki under [Runtime documentation]({{ site.github.url }}/old_site/Mono:Runtime:Documentation "Mono:Runtime:Documentation"), in particular read the document [Porting the engine]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting")
 
 Endian, 64 bits and unaligned access issues
 -------------------------------------------
@@ -69,7 +69,7 @@ To support delegates you'll need to write a mono\_create\_method\_pointer() func
 The final step: porting the JIT
 -------------------------------
 
-At this point you'd need to have a more complete code generation header file and you can start porting the JIT code. This process is documented in [Mono:Runtime:Documentation:MiniPorting]({{site.github.url}}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting").
+At this point you'd need to have a more complete code generation header file and you can start porting the JIT code. This process is documented in [Mono:Runtime:Documentation:MiniPorting]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:MiniPorting "Mono:Runtime:Documentation:MiniPorting").
 
 Operating System Ports
 ======================

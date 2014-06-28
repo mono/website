@@ -33,7 +33,7 @@ I18nGettext
 
 ### Introduction
 
-While the Gettext\# library allows you to internationalize your code, we advise you to use our [Mono.Posix assembly]({{site.github.url}}/old_site/Internationalization) to do so.
+While the Gettext\# library allows you to internationalize your code, we advise you to use our [Mono.Posix assembly]({{ site.github.url }}/old_site/Internationalization) to do so.
 
 ### Requirements
 

@@ -87,5 +87,5 @@ The probe arguments are class name, method name and signature, and in case of me
 
 Begin and end of Garbage Collection.
 
-SGen, Mono's [Generational GC]({{site.github.url}}/old_site/Generational_GC "Generational GC") supports many more probes, described, along with examples, on the [SGen DTrace]({{site.github.url}}/old_site/SGen_DTrace "SGen DTrace") page.
+SGen, Mono's [Generational GC]({{ site.github.url }}/old_site/Generational_GC "Generational GC") supports many more probes, described, along with examples, on the [SGen DTrace]({{ site.github.url }}/old_site/SGen_DTrace "SGen DTrace") page.
 

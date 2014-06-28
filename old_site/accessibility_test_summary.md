@@ -40,12 +40,12 @@ Accessibility: Test Summary
 References
 ----------
 
-[Product Test Case Plan]({{site.github.url}}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
- [Product Test Case Specification]({{site.github.url}}/old_site/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
- [Product Test Log]({{site.github.url}}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
- [Product Test Summary]({{site.github.url}}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary") (current page)
- [Product Bug Specification]({{site.github.url}}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
- [Product Home]({{site.github.url}}/old_site/Accessibility "Accessibility")
+[Product Test Case Plan]({{ site.github.url }}/old_site/Accessibility:_Test_Plan "Accessibility: Test Plan")
+ [Product Test Case Specification]({{ site.github.url }}/old_site/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
+ [Product Test Log]({{ site.github.url }}/old_site/Accessibility:_Test_Log "Accessibility: Test Log")
+ [Product Test Summary]({{ site.github.url }}/old_site/Accessibility:_Test_Summary "Accessibility: Test Summary") (current page)
+ [Product Bug Specification]({{ site.github.url }}/old_site/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
+ [Product Home]({{ site.github.url }}/old_site/Accessibility "Accessibility")
 
 Test summary report
 -------------------

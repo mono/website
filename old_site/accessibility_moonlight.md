@@ -44,7 +44,7 @@ Accessibility: Moonlight
 Moonlight Accessibility
 =======================
 
-As part of their second phase, the Mono Accessibility team will be implementing full UIA support for [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight").
+As part of their second phase, the Mono Accessibility team will be implementing full UIA support for [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight").
 
 The following platforms will be supported using our plugin:
 
@@ -169,7 +169,7 @@ Now, to update your local repository:
 
 #### Supplies
 
--   A working parallel development environment. See [Parallel Mono Environments]({{site.github.url}}/Parallel_Mono_Environments) or [Pulque](http://blog.carrion.mx/2010/01/25/parallel-development-environments-pulque/).
+-   A working parallel development environment. See [Parallel Mono Environments]({{ site.github.url }}/Parallel_Mono_Environments) or [Pulque](http://blog.carrion.mx/2010/01/25/parallel-development-environments-pulque/).
 -   Matching versions of `mono`, `mcs`, and `moon` from trunk
 -   A checkout of `uia2atk` from trunk
 -   Firefox trunk with plugin patch applied (see above)

@@ -44,9 +44,9 @@ Stack Overflow is a popular Q&A site where users can [ask questions](http://stac
 Forums / Mailing lists
 ----------------------
 
-The primary discussion forum for Mono community members and Mono team members at Novell are the [Mono mailing lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists").
+The primary discussion forum for Mono community members and Mono team members at Novell are the [Mono mailing lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists").
 
-If you prefer a forums interface, you can interact with other Mono users and developers through the [Forums]({{site.github.url}}/old_site/Forums "Forums") interface to our mailing lists.
+If you prefer a forums interface, you can interact with other Mono users and developers through the [Forums]({{ site.github.url }}/old_site/Forums "Forums") interface to our mailing lists.
 
 Chat / IRC
 ----------

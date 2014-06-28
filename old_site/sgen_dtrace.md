@@ -10,7 +10,7 @@ redirect_from:
 SGen DTrace
 ===========
 
-On MacOS X Mono's [Generational GC]({{site.github.url}}/old_site/Generational_GC "Generational GC") is instrumented with several [DTrace]({{site.github.url}}/old_site/DTrace "DTrace") probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
+On MacOS X Mono's [Generational GC]({{ site.github.url }}/old_site/Generational_GC "Generational GC") is instrumented with several [DTrace]({{ site.github.url }}/old_site/DTrace "DTrace") probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
 
 <table>
 <col width="100%" />

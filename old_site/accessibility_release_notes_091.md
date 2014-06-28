@@ -114,7 +114,7 @@ Errata
 -   Support for focus and selection events for ToolStripItem is incomplete ([\#443971](https://bugzilla.novell.com/show_bug.cgi?id=443971)).
 -   RadioButtons don't have a MemberOf relation yet. [\#447885](https://bugzilla.novell.com/show_bug.cgi?id=447885)
 -   Text attributes are not present in any Atk.Object yet ([\#442581](https://bugzilla.novell.com/show_bug.cgi?id=442581)) because of a bug in the Atk\# binding: [\#393565](https://bugzilla.novell.com/show_bug.cgi?id=393565).
--   Active state of a Form is not removed when switching to another application (due to a [limitation]({{site.github.url}}/Accessibility:_Specification_Notes#Feature_requests) in the Provider API) ([\#445199](https://bugzilla.novell.com/show_bug.cgi?id=445199))
+-   Active state of a Form is not removed when switching to another application (due to a [limitation]({{ site.github.url }}/Accessibility:_Specification_Notes#Feature_requests) in the Provider API) ([\#445199](https://bugzilla.novell.com/show_bug.cgi?id=445199))
 
 Downloading
 -----------
@@ -124,7 +124,7 @@ Mono Accessibility is available for a variety of Linux distributions, including:
 -   OpenSUSE 11.0 - [1-Click Install](http://download.opensuse.org/repositories/Mono:/UIA/MonoPreviewOpenSUSE_11.0/mono-uia.ymp)
 -   OpenSUSE 11.1 - [1-Click Install](http://download.opensuse.org/repositories/Mono:/UIA/MonoPreviewOpenSUSE_11.1/mono-uia.ymp)
 
-If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available]({{site.github.url}}/old_site/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
+If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available]({{ site.github.url }}/old_site/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
 
 If you just want to grab a source tarball, check out the [Novell ftp](ftp://ftp.novell.com/pub/mono/uia/) page.
 

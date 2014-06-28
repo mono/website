@@ -21,7 +21,7 @@ xbuild supports C\# and VB.NET projects out of the box. It also supports ASP.NET
 
 For a project file to work with xbuild, it should have a target called "Build". xbuild doesn't restrict based on project types. So, if you have custom project types, or projects for a language that xbuild doesn't know about, it can still work as long as you have the relevant targets defined.
 
-You can see some tips for [Porting MSBuild Projects To XBuild]({{site.github.url}}/old_site/Porting_MSBuild_Projects_To_XBuild "Porting MSBuild Projects To XBuild").
+You can see some tips for [Porting MSBuild Projects To XBuild]({{ site.github.url }}/old_site/Porting_MSBuild_Projects_To_XBuild "Porting MSBuild Projects To XBuild").
 
 TODO List
 =========

@@ -19,7 +19,7 @@ NUnit 2.2.x
 
 -   Run nunit-gui.exe
 
-Expected result: Control layout should be approximately like the following image from MS.NET: [![Nunit-gui-2.2.5-msnet.PNG]({{site.github.url}}/old_site/images/3/31/Nunit-gui-2.2.5-msnet.PNG)]({{site.github.url}}/old_site/images/3/31/Nunit-gui-2.2.5-msnet.PNG)
+Expected result: Control layout should be approximately like the following image from MS.NET: [![Nunit-gui-2.2.5-msnet.PNG]({{ site.github.url }}/old_site/images/3/31/Nunit-gui-2.2.5-msnet.PNG)]({{ site.github.url }}/old_site/images/3/31/Nunit-gui-2.2.5-msnet.PNG)
 
 -   Focus should be on the Errors and Failures tab
 
@@ -37,7 +37,7 @@ Expected result: Control layout should be approximately like the following image
 
 -   Click File-\>Open, and select nunit.framework.tests.dll
 
-Expected result: Screenshot should look approximately like the following image from MS.NET: [![Nunit-gui-2.2.5-msnet tests-loaded.PNG]({{site.github.url}}/old_site/images/0/0b/Nunit-gui-2.2.5-msnet_tests-loaded.PNG)]({{site.github.url}}/old_site/images/0/0b/Nunit-gui-2.2.5-msnet_tests-loaded.PNG)
+Expected result: Screenshot should look approximately like the following image from MS.NET: [![Nunit-gui-2.2.5-msnet tests-loaded.PNG]({{ site.github.url }}/old_site/images/0/0b/Nunit-gui-2.2.5-msnet_tests-loaded.PNG)]({{ site.github.url }}/old_site/images/0/0b/Nunit-gui-2.2.5-msnet_tests-loaded.PNG)
 
 -   Focus should remain in the Console.Error tab contents, represented by a blinking cursor in the blank space.
 
@@ -45,7 +45,7 @@ Expected result: Screenshot should look approximately like the following image f
 
 -   Press Alt+R to run the tests.
 
-Expected result: Modulo some tests ignored (yellow) due to platform, it should be similar to the following image from MS.NET: [![Nunit-gui-2.2.5-msnet tests-run.PNG]({{site.github.url}}/old_site/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)]({{site.github.url}}/old_site/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)
+Expected result: Modulo some tests ignored (yellow) due to platform, it should be similar to the following image from MS.NET: [![Nunit-gui-2.2.5-msnet tests-run.PNG]({{ site.github.url }}/old_site/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)]({{ site.github.url }}/old_site/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)
 
 -   Focus should remain on the Errors and Failures tab after the run is complete.
 

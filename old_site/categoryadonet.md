@@ -10,5 +10,5 @@ redirect_from:
 Category:ADO.NET
 ================
 
-See [ADO.NET]({{site.github.url}}/old_site/ADO.NET "ADO.NET")
+See [ADO.NET]({{ site.github.url }}/old_site/ADO.NET "ADO.NET")
 

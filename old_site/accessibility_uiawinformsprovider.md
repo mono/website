@@ -10,5 +10,5 @@ redirect_from:
 Accessibility: UiaWinformsProvider
 ==================================
 
-[![WinformsAutomationProvider.png]({{site.github.url}}/old_site/images/f/f6/WinformsAutomationProvider.png)]({{site.github.url}}/old_site/images/f/f6/WinformsAutomationProvider.png)
+[![WinformsAutomationProvider.png]({{ site.github.url }}/old_site/images/f/f6/WinformsAutomationProvider.png)]({{ site.github.url }}/old_site/images/f/f6/WinformsAutomationProvider.png)
 

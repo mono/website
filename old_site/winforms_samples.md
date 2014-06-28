@@ -39,7 +39,7 @@ Winforms Samples
 2.0 Applications
 ----------------
 
--   [MoMA]({{site.github.url}}/MoMA)
+-   [MoMA]({{ site.github.url }}/MoMA)
 -   [NClass](http://nclass.sourceforge.net/index.html)
 -   [Paint.Net 3.0](http://code.google.com/p/paint-mono/) - Paint.Net isn't fully usable on Mono yet, but provides some great code to test with. ([details](http://tirania.org/blog/archive/2007/May-15-1.html))
 -   [Internet Explorer Look and Feel](http://windowsclient.net/downloads/folders/applications/entry1335.aspx) - Winforms sample that uses the WebBrowser control to implement an IE-like browser application.
@@ -52,7 +52,7 @@ Winforms Samples
 3.5 Applications
 ----------------
 
-The 3.5 profile does not currently ship with Mono. Please see [Olive]({{site.github.url}}/old_site/Olive "Olive") for details on getting it from SVN.
+The 3.5 profile does not currently ship with Mono. Please see [Olive]({{ site.github.url }}/old_site/Olive "Olive") for details on getting it from SVN.
 
 -   [LINQPad](http://www.albahari.com/linqpad.html)
 

@@ -34,10 +34,10 @@ This site provides an overview of all available FAQ's.
 FAQ's directly about Mono
 =========================
 
--   [General Mono FAQ]({{site.github.url}}/old_site/FAQ:_General "FAQ: General")
--   [Licensing and Patents]({{site.github.url}}/old_site/FAQ:_Licensing "FAQ: Licensing")
--   [Questions about Security]({{site.github.url}}/old_site/FAQ:_Security "FAQ: Security")
--   [Technical FAQ]({{site.github.url}}/old_site/FAQ:_Technical "FAQ: Technical")
+-   [General Mono FAQ]({{ site.github.url }}/old_site/FAQ:_General "FAQ: General")
+-   [Licensing and Patents]({{ site.github.url }}/old_site/FAQ:_Licensing "FAQ: Licensing")
+-   [Questions about Security]({{ site.github.url }}/old_site/FAQ:_Security "FAQ: Security")
+-   [Technical FAQ]({{ site.github.url }}/old_site/FAQ:_Technical "FAQ: Technical")
 
 Developing With Mono
 ====================
@@ -45,23 +45,23 @@ Developing With Mono
 Desktop Applications
 --------------------
 
--   [GTK\#]({{site.github.url}}/old_site/FAQ:_Gtk "FAQ: Gtk")
--   [Windows Forms]({{site.github.url}}/old_site/FAQ:_Winforms "FAQ: Winforms")
+-   [GTK\#]({{ site.github.url }}/old_site/FAQ:_Gtk "FAQ: Gtk")
+-   [Windows Forms]({{ site.github.url }}/old_site/FAQ:_Winforms "FAQ: Winforms")
 
 Web Programming
 ---------------
 
--   [ASP.NET]({{site.github.url}}/old_site/FAQ:_ASP.NET "FAQ: ASP.NET")
+-   [ASP.NET]({{ site.github.url }}/old_site/FAQ:_ASP.NET "FAQ: ASP.NET")
 
 Development Tools
 -----------------
 
--   [Cecil]({{site.github.url}}/old_site/Cecil:FAQ "Cecil:FAQ")
--   [Gendarme]({{site.github.url}}/old_site/Gendarme.FAQ "Gendarme.FAQ")
+-   [Cecil]({{ site.github.url }}/old_site/Cecil:FAQ "Cecil:FAQ")
+-   [Gendarme]({{ site.github.url }}/old_site/Gendarme.FAQ "Gendarme.FAQ")
 
 Documenting Mono and your applications.
 =======================================
 
--   [FAQ: Documentation]({{site.github.url}}/old_site/FAQ:_Documentation "FAQ: Documentation")
+-   [FAQ: Documentation]({{ site.github.url }}/old_site/FAQ:_Documentation "FAQ: Documentation")
 
 

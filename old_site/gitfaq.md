@@ -70,7 +70,7 @@ Workflow
 
 Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.
 
-Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate [mailing list]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists")).
+Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate [mailing list]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists")).
 
 We might have missed some core contributors on the first batch that granted push access to the Mono repositories. If we missed you, please contact us to get this fixed.
 
@@ -98,7 +98,7 @@ The `git push` will fail if you're not up-to-date: for instance, if there was so
 Merge branch 'master' of git@github.com:/mono/repo
 ```
 
-This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry]({{site.github.url}}/old_site/GitFAQ#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
+This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry]({{ site.github.url }}/old_site/GitFAQ#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
 
 Workflow 2: Use 'master' as integration branch
 ----------------------------------------------
@@ -295,7 +295,7 @@ warning: refname 'branch-name' is ambiguous
 
 This can happen if you've created a local branch with the same name as a remote tag. Git should be checking out your local branch, but instead it's trying to checkout the tag, and it gets confused.
 
-The initial import of several trees were problematic, since they contained identically named branches and tags. We have since addressed a lot of these issues, by [renaming away]({{site.github.url}}/old_site/GitFAQ/fixup-tags.sh "GitFAQ/fixup-tags.sh") the tags.
+The initial import of several trees were problematic, since they contained identically named branches and tags. We have since addressed a lot of these issues, by [renaming away]({{ site.github.url }}/old_site/GitFAQ/fixup-tags.sh "GitFAQ/fixup-tags.sh") the tags.
 
 If you cloned the repos before Jul 23, you'll need to refresh your tags (assuming you don't want to reclone the repos).
 

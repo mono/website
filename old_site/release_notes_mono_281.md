@@ -30,7 +30,7 @@ Mono 2.8.1 is a portable and open source implementation of the .NET framework fo
 Important Information About Mono 2.8.1
 ======================================
 
-Mono 2.8.1 is a bug fix release for [Mono 2.8]({{site.github.url}}/old_site/Release_Notes_Mono_2.8.1 "Release Notes Mono 2.8.1") that contains the major fixes for bugs that were identified in Mono 2.8, it also contains a few security fixes.
+Mono 2.8.1 is a bug fix release for [Mono 2.8]({{ site.github.url }}/old_site/Release_Notes_Mono_2.8.1 "Release Notes Mono 2.8.1") that contains the major fixes for bugs that were identified in Mono 2.8, it also contains a few security fixes.
 
 Mono's Long Term Supported release continues to be Mono 2.6, the next long-term support release will be Mono 3.0. Mono 2.8 ships the latest and greatest and updates and they have not received as much testing as they should. Users seeking absolute stability should stay on Mono 2.6. Users switching to Mono 2.8, should expect a faster bug turn around time, but they should also plan on upgrading to the upcoming 2.xx series as we fix bugs in our stack.
 
@@ -40,7 +40,7 @@ Major Highlights
 Changes since Mono 2.8
 ======================
 
-This documents the changes since [Mono 2.8]({{site.github.url}}/old_site/Release_Notes_Mono_2.8 "Release Notes Mono 2.8"), the list was obtained by using:
+This documents the changes since [Mono 2.8]({{ site.github.url }}/old_site/Release_Notes_Mono_2.8 "Release Notes Mono 2.8"), the list was obtained by using:
 
     git log 2.8..origin/mono-2-8
 

@@ -10,5 +10,5 @@ This does not include the Mono name, logo, or icon, which are registered tradema
 
 This does not include Mono source code.
 
-[MonoTouch]({{site.github.url}}/old_site/MonoTouch "MonoTouch") documentation (anything in the site starting with MonoTouch) is licensed under a [Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License](http://creativecommons.org/licenses/by-nc-nd/3.0/us/).
+[MonoTouch]({{ site.github.url }}/old_site/MonoTouch "MonoTouch") documentation (anything in the site starting with MonoTouch) is licensed under a [Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License](http://creativecommons.org/licenses/by-nc-nd/3.0/us/).
 

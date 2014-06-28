@@ -215,7 +215,7 @@ Functionality
     5.  Actions: None
 
 22. HelpProvider
-    1.  NOTE: It's not fully implemented in Mono. See [note 1]({{site.github.url}}/old_site/Accessibility:_Bridge_Functional_Specification).
+    1.  NOTE: It's not fully implemented in Mono. See [note 1]({{ site.github.url }}/old_site/Accessibility:_Bridge_Functional_Specification).
 
 23. HScrollBar
     1.  Acts As: Scroll Bar

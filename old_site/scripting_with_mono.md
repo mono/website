@@ -45,11 +45,11 @@ In the past, software used to be written entirely in a single programming langua
 
 For example a C/C++ application would look like this:
 
-[![Text2286.png]({{site.github.url}}/old_site/images/6/6b/Text2286.png)]({{site.github.url}}/old_site/images/6/6b/Text2286.png)
+[![Text2286.png]({{ site.github.url }}/old_site/images/6/6b/Text2286.png)]({{ site.github.url }}/old_site/images/6/6b/Text2286.png)
 
 A scripted language application would look like this:
 
-[![Text2304.png]({{site.github.url}}/old_site/images/a/a7/Text2304.png)]({{site.github.url}}/old_site/images/a/a7/Text2304.png)
+[![Text2304.png]({{ site.github.url }}/old_site/images/a/a7/Text2304.png)]({{ site.github.url }}/old_site/images/a/a7/Text2304.png)
 
 Picking one or the other is a difficult choice as there are many nuances that software developers face. The high-level languages are more productive and developers get more done for each line of code written. But high-level languages come with a price, the software does not run as fast as it could and sometimes requires more cpu, more resources and in some markets might make the difference between a successful project or a failed project.
 
@@ -57,13 +57,13 @@ Developers have turned to scripting as a mechanism to balance the best of both w
 
 The result looks like this:
 
-[![Text2330.png]({{site.github.url}}/old_site/images/3/30/Text2330.png)]({{site.github.url}}/old_site/images/3/30/Text2330.png)
+[![Text2330.png]({{ site.github.url }}/old_site/images/3/30/Text2330.png)]({{ site.github.url }}/old_site/images/3/30/Text2330.png)
 
 This idea was for a long time championed by John Ousterhout. You can read some of his discussions [here](http://home.pacbell.net/ouster/scripting.html).
 
 The following figure is a slightly updated version of John's figure:
 
-[![Screenshot103.png]({{site.github.url}}/old_site/images/a/a3/Screenshot103.png)]({{site.github.url}}/old_site/images/a/a3/Screenshot103.png)
+[![Screenshot103.png]({{ site.github.url }}/old_site/images/a/a3/Screenshot103.png)]({{ site.github.url }}/old_site/images/a/a3/Screenshot103.png)
 
 From John Ousterhout's paper:
 
@@ -114,13 +114,13 @@ Mono offers:
     -   Static languages: C\#, VisualBasic.NET, RemObject's Pascal.
     -   Dynamic languages: [Boo](http://boo.codehaus.org), IronPython, IronRuby.
     -   Functional languages: Nemerle, F\#
-    -   And of course, many more, see [Languages]({{site.github.url}}/old_site/Languages "Languages") for more details.
+    -   And of course, many more, see [Languages]({{ site.github.url }}/old_site/Languages "Languages") for more details.
 -   A native code generator to run your software as fast as possible.
 -   Easy support for calling your native code
-    -   [PInvoke]({{site.github.url}}/old_site/Interop_with_Native_Libraries) allows you skeleton/stub-less invocation of C methods.
+    -   [PInvoke]({{ site.github.url }}/old_site/Interop_with_Native_Libraries) allows you skeleton/stub-less invocation of C methods.
     -   InternalMethod provide access to raw C/C++ methods.
     -   C function pointer to scripting language transitions (a function pointer provided by Mono when invoked would trigger a transition to Mono-controlled code for execution of any scripting capability, very useful for callbacks or notifications).
--   Access to a large body of [libraries]({{site.github.url}}/old_site/Libraries "Libraries") and reusable components.
+-   Access to a large body of [libraries]({{ site.github.url }}/old_site/Libraries "Libraries") and reusable components.
 
 Scripting an Application
 ========================
@@ -146,7 +146,7 @@ The [Unity3D](http://unity3d.com) game design engine uses Mono to provide script
 Language Support
 ----------------
 
-By using Mono as a scripting engine, you get to pick the language that better suits your needs. Mono's extensive [language support]({{site.github.url}}/old_site/Languages "Languages") allows developers to pick the best language or the best languages for their particular problem.
+By using Mono as a scripting engine, you get to pick the language that better suits your needs. Mono's extensive [language support]({{ site.github.url }}/old_site/Languages "Languages") allows developers to pick the best language or the best languages for their particular problem.
 
 Developers familiar with LUA can use the [LUA2IL](http://www.lua.inf.puc-rio.br/luanet/lua2il/) compiler to run their existing code, or apply existing skills to run the same LUA code under the Mono optimizing JIT compiler at increased speed.
 
@@ -176,7 +176,7 @@ Mono is an open source technology that can be used freely under the terms of the
 
 [Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
 
-For other licensing options, [contact us]({{site.github.url}}/old_site/Contact "Contact").
+For other licensing options, [contact us]({{ site.github.url }}/old_site/Contact "Contact").
 
 Continued Performance Increase
 ==============================
@@ -188,5 +188,5 @@ As Mono matures, and its JIT compiler evolves you can expect bigger performance 
 Using Mono in your Application
 ==============================
 
-Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the [Embedding Mono]({{site.github.url}}/old_site/Embedding_Mono "Embedding Mono") page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
+Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the [Embedding Mono]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
 

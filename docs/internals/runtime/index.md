@@ -5,23 +5,23 @@ title: The Mono Runtime
 ---
 
 The Mono runtime implements the [ECMA Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLI). The Mono runtime implements this virtual machine.
-If you are interested in the technical aspects of the Mono runtime check the [Runtime Documentation]({{site.github.url}}/docs/internals/runtime/docs).
+If you are interested in the technical aspects of the Mono runtime check the [Runtime Documentation]({{ site.github.url }}/docs/internals/runtime/docs).
 
 The runtime offers the following services:
 
 -   Code Execution
     -   Code loading
     -   Support for dynamically generating code
-    -   [On-the-fly marshalling to invoke native methods.]({{site.github.url}}/old_site/Interop_with_Native_Libraries "Interop with Native Libraries")
-    -   [COM Interoperability]({{site.github.url}}/old_site/COM_Interop "COM Interop")
+    -   [On-the-fly marshalling to invoke native methods.]({{ site.github.url }}/old_site/Interop_with_Native_Libraries "Interop with Native Libraries")
+    -   [COM Interoperability]({{ site.github.url }}/old_site/COM_Interop "COM Interop")
 -   Garbage Collection, using one of:
-    -   [Precise SGen Garbage Collector]({{site.github.url}}/old_site/Generational_GC "Generational GC")
+    -   [Precise SGen Garbage Collector]({{ site.github.url }}/old_site/Generational_GC "Generational GC")
     -   Conservative Boehm Garbage Collector
 -   Code Generation
-    -   Just-in-Time compilation, partial and full [Ahead-of-Time modes]({{site.github.url}}/old_site/AOT "AOT")
+    -   Just-in-Time compilation, partial and full [Ahead-of-Time modes]({{ site.github.url }}/old_site/AOT "AOT")
     -   Backend engines:
         -   Mono's own engine
-        -   [LLVM optimizing compiler backend engine]({{site.github.url}}/old_site/Mono_LLVM "Mono LLVM")
+        -   [LLVM optimizing compiler backend engine]({{ site.github.url }}/old_site/Mono_LLVM "Mono LLVM")
     -   [First-class SIMD datatypes (Mono.Simd)](http://go-mono.com/docs/index.aspx?link=N%3aMono.Simd)
 -   Exception Handling
     -   Software-triggered exceptions
@@ -38,11 +38,11 @@ The runtime offers the following services:
     -   Asynchronous method invocation
 -   Console access
 -   Security System
-    -   [CoreCLR/Transparent Security Sandbox]({{site.github.url}}/old_site/CoreClrHowTo "CoreClrHowTo")
+    -   [CoreCLR/Transparent Security Sandbox]({{ site.github.url }}/old_site/CoreClrHowTo "CoreClrHowTo")
 
-The Mono runtime can be used as a stand-alone process, or it can be [embedded into applications]({{site.github.url}}/old_site/Embedding_Mono "Embedding Mono")
+The Mono runtime can be used as a stand-alone process, or it can be [embedded into applications]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono")
 
-Embedding the Mono runtime allows applications to be extended in C\# while reusing all of the existing C and C++ code. For more details, see the [Embedding Mono]({{site.github.url}}/old_site/Embedding_Mono "Embedding Mono") page and the [Scripting With Mono]({{site.github.url}}/old_site/Scripting_With_Mono "Scripting With Mono") page.
+Embedding the Mono runtime allows applications to be extended in C\# while reusing all of the existing C and C++ code. For more details, see the [Embedding Mono]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") page and the [Scripting With Mono]({{ site.github.url }}/old_site/Scripting_With_Mono "Scripting With Mono") page.
 
 Supported Platforms
 -------------------
@@ -53,13 +53,13 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 **Operating Systems**
 
--   [Linux]({{site.github.url}}/old_site/Mono:Linux "Mono:Linux")
--   [Mac OS X]({{site.github.url}}/old_site/Mono:OSX "Mono:OSX"), [iPhone OS]({{site.github.url}}/old_site/Mono:Iphone "Mono:Iphone")
--   [Sun Solaris]({{site.github.url}}/old_site/Mono:Solaris "Mono:Solaris")
--   [BSD]({{site.github.url}}/old_site/Mono:BSD "Mono:BSD") - OpenBSD, FreeBSD, NetBSD
--   [Microsoft Windows]({{site.github.url}}/old_site/Using_Mono_on_Windows)
--   [Nintendo Wii]({{site.github.url}}/old_site/Mono:Wii "Mono:Wii")
--   [Sony PlayStation 3]({{site.github.url}}/old_site/Mono:PlayStation3 "Mono:PlayStation3")
+-   [Linux]({{ site.github.url }}/old_site/Mono:Linux "Mono:Linux")
+-   [Mac OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX"), [iPhone OS]({{ site.github.url }}/old_site/Mono:Iphone "Mono:Iphone")
+-   [Sun Solaris]({{ site.github.url }}/old_site/Mono:Solaris "Mono:Solaris")
+-   [BSD]({{ site.github.url }}/old_site/Mono:BSD "Mono:BSD") - OpenBSD, FreeBSD, NetBSD
+-   [Microsoft Windows]({{ site.github.url }}/old_site/Using_Mono_on_Windows)
+-   [Nintendo Wii]({{ site.github.url }}/old_site/Mono:Wii "Mono:Wii")
+-   [Sony PlayStation 3]({{ site.github.url }}/old_site/Mono:PlayStation3 "Mono:PlayStation3")
 
 ### Supported Architectures
 
@@ -67,28 +67,28 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 
 |Supported Architectures|Runtime|Operating system|
 |:----------------------|:------|:---------------|
-|[s390, s390x (32 and 64 bits)]({{site.github.url}}/old_site/Mono:S390 "Mono:S390")|JIT|Linux|
-|[SPARC (32)]({{site.github.url}}/old_site/Mono:SPARC "Mono:SPARC")|JIT|Solaris, Linux|
-|[PowerPC]({{site.github.url}}/old_site/Mono:PowerPC "Mono:PowerPC")|JIT|Linux, Mac OSX, Wii, PlayStation 3|
-|[x86]({{site.github.url}}/old_site/Mono:X86 "Mono:X86")|JIT|Linux, FreeBSD, OpenBSD, NetBSD, 
+|[s390, s390x (32 and 64 bits)]({{ site.github.url }}/old_site/Mono:S390 "Mono:S390")|JIT|Linux|
+|[SPARC (32)]({{ site.github.url }}/old_site/Mono:SPARC "Mono:SPARC")|JIT|Solaris, Linux|
+|[PowerPC]({{ site.github.url }}/old_site/Mono:PowerPC "Mono:PowerPC")|JIT|Linux, Mac OSX, Wii, PlayStation 3|
+|[x86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86")|JIT|Linux, FreeBSD, OpenBSD, NetBSD, 
  Microsoft Windows, Solaris, OS X, Android|
-|[x86-64]({{site.github.url}}/old_site/Mono:AMD64 "Mono:AMD64"): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, 
+|[x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64"): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, 
 Solaris, OS X|
-|[IA64]({{site.github.url}}/old_site/Mono:IA64 "Mono:IA64") Itanium2 (64 bit)|JIT|Linux|
-|[ARM]({{site.github.url}}/old_site/Mono:ARM "Mono:ARM"): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
+|[IA64]({{ site.github.url }}/old_site/Mono:IA64 "Mono:IA64") Itanium2 (64 bit)|JIT|Linux|
+|[ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM"): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
 |[Alpha](/index.php?title=Mono:Alpha&action=edit&redlink=1 "Mono:Alpha (page does not exist)")|JIT|**not maintained**. Linux|
-|[MIPS]({{site.github.url}}/old_site/Mono:MIPS "Mono:MIPS")|JIT|Linux|
+|[MIPS]({{ site.github.url }}/old_site/Mono:MIPS "Mono:MIPS")|JIT|Linux|
 |[HPPA](/index.php?title=Mono:HPPA&action=edit&redlink=1 "Mono:HPPA (page does not exist)")|JIT|**not maintained** Linux|
 
 Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-supported and may not be as complete as the other architectures.
 
 Support for SPARC64 works in older versions of Mono, but not in the recent versions.
 
- Packages for most platforms are available from the [Downloads]({{site.github.url}}/old_site/Downloads "Downloads") page.
+ Packages for most platforms are available from the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
 
 ### Embedded systems
 
-To make mono more suitable for some architectures used as embedded systems have a look at the [Small footprint]({{site.github.url}}/old_site/Small_footprint "Small footprint") page.
+To make mono more suitable for some architectures used as embedded systems have a look at the [Small footprint]({{ site.github.url }}/old_site/Small_footprint "Small footprint") page.
 
 Compilation Engine
 ------------------
@@ -125,7 +125,7 @@ Some features like Reflection.Emit and other forms of dynamic code generation ar
 
 Notice that for Mono 2.0 generics are not supported when doing full-AOT.
 
-Some optimizations are being planned: [OptimizingAOT]({{site.github.url}}/old_site/OptimizingAOT "OptimizingAOT")
+Some optimizations are being planned: [OptimizingAOT]({{ site.github.url }}/old_site/OptimizingAOT "OptimizingAOT")
 
 ### Bundles
 
@@ -154,7 +154,7 @@ Of course, you can also just embed the libraries, without the actual Mono runtim
 
 A downside of the --static flag is that it will trigger the LGPL license requirement in the runtime. If you are planning on using this feature as an obfuscation technique you must obtain a commercial license of Mono; otherwise you should distribute all the components that are necessary to comply with the LGPL with bundles.
 
-[Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. For other licensing options, [contact us]({{site.github.url}}/old_site/Contact "Contact").
+[Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. For other licensing options, [contact us]({{ site.github.url }}/old_site/Contact "Contact").
 
 ### Platform for Code Optimizations
 
@@ -170,24 +170,24 @@ We wanted to reduce the effort required to port the Mono code generator to new a
 
 For Mono to gain wide adoption in the UNIX world, it is necessary that the JIT engine works in most of today's commercial hardware platforms.
 
-The new Mono engine now supports both 32 and 64 bit systems and various architectures (See [Supported Platforms]({{site.github.url}}/old_site/Supported_Platforms "Supported Platforms")).
+The new Mono engine now supports both 32 and 64 bit systems and various architectures (See [Supported Platforms]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms")).
 
 ### Profiling and Code Coverage
 
 Mono provides a number of profiling tools and code coverage tools.
 
-See the [Performance Tips]({{site.github.url}}/old_site/Performance_Tips "Performance Tips") page for details on using the profiler, and the [Code Coverage]({{site.github.url}}/old_site/Code_Coverage "Code Coverage") page for information on how to use the code coverage functionality with your application and your test suites.
+See the [Performance Tips]({{ site.github.url }}/old_site/Performance_Tips "Performance Tips") page for details on using the profiler, and the [Code Coverage]({{ site.github.url }}/old_site/Code_Coverage "Code Coverage") page for information on how to use the code coverage functionality with your application and your test suites.
 
 ### DTrace
 
-Mono's [support for DTrace]({{site.github.url}}/old_site/DTrace "DTrace") is available on Solaris and MacOS X.
+Mono's [support for DTrace]({{ site.github.url }}/old_site/DTrace "DTrace") is available on Solaris and MacOS X.
 
 Versioning
 ----------
 
 Mono supports a Global Assembly Cache or GAC. The GAC is used to share libraries between different applications, to keep multiple versions of the same library installed at once and to avoid conflicts over the names of the libraries and they also play an important role in trust and security.
 
-See the [Assemblies\_and\_the\_GAC]({{site.github.url}}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC") document for more details.
+See the [Assemblies\_and\_the\_GAC]({{ site.github.url }}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC") document for more details.
 
 Garbage Collection
 ------------------
@@ -245,34 +245,34 @@ To achieve this, the io-layer uses a shared file mapping across multiple Mono pr
 Useful links
 ------------
 
-See our [Papers]({{site.github.url}}/old_site/Papers "Papers") section for various articles describing virtual machines and JIT compilers.
+See our [Papers]({{ site.github.url }}/old_site/Papers "Papers") section for various articles describing virtual machines and JIT compilers.
 
 Porting
 -------
 
-See the [Porting]({{site.github.url}}/old_site/Porting "Porting") page for more details on porting Mono to a new platform.
+See the [Porting]({{ site.github.url }}/old_site/Porting "Porting") page for more details on porting Mono to a new platform.
 
 Projects Under Development
 --------------------------
 
 There are a number of projects being developed in branches or on separate trees for the runtime, these are:
 
--   [Runtime Projects]({{site.github.url}}/old_site/Runtime_Projects "Runtime Projects"): General Runtime Projects.
--   [Runtime Requests]({{site.github.url}}/old_site/RuntimeRequests "RuntimeRequests"): Ideas of things that we could use to improve Mono's runtime.
--   [Compacting GC]({{site.github.url}}/old_site/Generational_GC): A generational, compacting GC for Mono.
+-   [Runtime Projects]({{ site.github.url }}/old_site/Runtime_Projects "Runtime Projects"): General Runtime Projects.
+-   [Runtime Requests]({{ site.github.url }}/old_site/RuntimeRequests "RuntimeRequests"): Ideas of things that we could use to improve Mono's runtime.
+-   [Compacting GC]({{ site.github.url }}/old_site/Generational_GC): A generational, compacting GC for Mono.
 -   [JIT Regalloc](/index.php?title=JIT_Regalloc&action=edit&redlink=1 "JIT Regalloc (page does not exist)"): A new register allocation framework.
--   [Mono\_Runtime\_API\_Changes]({{site.github.url}}/old_site/Mono_Runtime_API_Changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
+-   [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/old_site/Mono_Runtime_API_Changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
 
 Completed projects:
 
--   [Continuations]({{site.github.url}}/old_site/Continuations "Continuations"): Support for co-routines and continuations in Mono.
--   [SafeHandles]({{site.github.url}}/old_site/SafeHandles "SafeHandles"): Support for 2.0 SafeHandles.
--   [Linear]({{site.github.url}}/old_site/Linear_IR): An update to the JIT's internal representation (IR).
+-   [Continuations]({{ site.github.url }}/old_site/Continuations "Continuations"): Support for co-routines and continuations in Mono.
+-   [SafeHandles]({{ site.github.url }}/old_site/SafeHandles "SafeHandles"): Support for 2.0 SafeHandles.
+-   [Linear]({{ site.github.url }}/old_site/Linear_IR): An update to the JIT's internal representation (IR).
 
 COM and XPCOM
 -------------
 
 Mono's COM support can be used to interop with system COM components in Windows and in Linux (if you use a COM implementation). Additionally, Mono's COM support can be used to access software based on Mozilla's XPCOM.
 
-For details on the progress, see the [COM Interop]({{site.github.url}}/old_site/COM_Interop "COM Interop") page.
+For details on the progress, see the [COM Interop]({{ site.github.url }}/old_site/COM_Interop "COM Interop") page.
 

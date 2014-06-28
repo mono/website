@@ -58,7 +58,7 @@ From a application developer point of view you should never assume that a partic
 2.  new certificates are used to replace older ones (like extending the validity period of the certificate authority).
 3.  existing roots certificates are removed (i.e. you stop trusting them);
 
-So it's important for applications to check for any trust problem, on any platform, but it's even more important on Mono because it doesn't ship with any trusted root by default (see the [FAQ:\_Security]({{site.github.url}}/old_site/FAQ:_Security "FAQ: Security") for more details).
+So it's important for applications to check for any trust problem, on any platform, but it's even more important on Mono because it doesn't ship with any trusted root by default (see the [FAQ:\_Security]({{ site.github.url }}/old_site/FAQ:_Security "FAQ: Security") for more details).
 
 Approaches
 ==========

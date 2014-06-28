@@ -52,9 +52,9 @@ MonoMac/Documentation/Binding New Objective-C Types
 Binding Objective-C Types
 =========================
 
-This document describes how to bind Objective-C APIs, if you are binding just C APIs, you should use the standard .NET mechanism for this, [the P/Invoke framework]({{site.github.url}}/old_site/Interop_with_Native_Libraries). Details on how to statically link a C library are available on the [Linking Native Libraries](/index.php?title=MonoMac/Documentation/Linking_Native_Libraries&action=edit&redlink=1 "MonoMac/Documentation/Linking Native Libraries (page does not exist)") page.
+This document describes how to bind Objective-C APIs, if you are binding just C APIs, you should use the standard .NET mechanism for this, [the P/Invoke framework]({{ site.github.url }}/old_site/Interop_with_Native_Libraries). Details on how to statically link a C library are available on the [Linking Native Libraries](/index.php?title=MonoMac/Documentation/Linking_Native_Libraries&action=edit&redlink=1 "MonoMac/Documentation/Linking Native Libraries (page does not exist)") page.
 
-If you would rather bind the API manually, see the [Binding Details]({{site.github.url}}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types/Binding_Details "MonoMac/Documentation/Binding New Objective-C Types/Binding Details") page.
+If you would rather bind the API manually, see the [Binding Details]({{ site.github.url }}/old_site/MonoMac/Documentation/Binding_New_Objective-C_Types/Binding_Details "MonoMac/Documentation/Binding New Objective-C Types/Binding Details") page.
 
 Binding an API
 --------------
@@ -228,7 +228,7 @@ IntPtr Constructor (RectangleF frame);
 
 ### Binding Protocols
 
-As described in the API design document, in the section [discussing Models and Protocols]({{site.github.url}}/old_site/MonoMac/Documentation/API#models "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
+As described in the API design document, in the section [discussing Models and Protocols]({{ site.github.url }}/old_site/MonoMac/Documentation/API#models "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
 
 The big difference between a regular bound class and a delegate class is that the delegate class might have one or more optional methods.
 

@@ -10,7 +10,7 @@ redirect_from:
 Gendarme.Roadmap
 ================
 
-Gendarme has synchronized it's version numbers with Mono since the 2.0 release. All future releases will share the same schedule. See Mono [Roadmap]({{site.github.url}}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for the exact release dates planned for each version.
+Gendarme has synchronized it's version numbers with Mono since the 2.0 release. All future releases will share the same schedule. See Mono [Roadmap]({{ site.github.url }}/old_site/Mono_Project_Roadmap "Mono Project Roadmap") for the exact release dates planned for each version.
 
 <table>
 <col width="100%" />
@@ -136,7 +136,7 @@ Framework
     -   [reference 3](http://lists.ximian.com/pipermail/mono-devel-list/2006-August/020166.html)
 
 -   Statistics
-    -   [Keep useful/debugging statistics in gendarme]({{site.github.url}}/StudentProjects#Statistics_.26_Performance_Analysis)
+    -   [Keep useful/debugging statistics in gendarme]({{ site.github.url }}/StudentProjects#Statistics_.26_Performance_Analysis)
 
 Rules
 -----

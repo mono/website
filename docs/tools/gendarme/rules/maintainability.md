@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Maintainability"
 ---
 
-[Gendarme]({{site.github.url}}/old_site/Gendarme "Gendarme")'s maintainability rules are located in the **Gendarme.Rules.Maintainability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Maintainability/).
+[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s maintainability rules are located in the **Gendarme.Rules.Maintainability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Maintainability/).
 
 <table>
 <col width="100%" />

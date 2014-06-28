@@ -37,7 +37,7 @@ The Big Picture
 
 When approaching something as complex as .NET, it helps to have some idea of how it relates to your work. The following diagram provides some context for where your application fits into the Mono/.NET framework.
 
-[![Figure 1]({{site.github.url}}/old_site/images/4/43/Context.png)]({{site.github.url}}/old_site/images/4/43/Context.png "Figure 1")
+[![Figure 1]({{ site.github.url }}/old_site/images/4/43/Context.png)]({{ site.github.url }}/old_site/images/4/43/Context.png "Figure 1")
 
  NOTE: This is a greatly simplified view; we're ignoring ASP.NET and ADO.NET for now.
 
@@ -95,7 +95,7 @@ The ECMA standard formally defines a library that conforms to the CLS as a frame
 Managed and Unmanaged Code
 ==========================
 
-Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices `libraries to create C\# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk\#]({{site.github.url}}/old_site/GtkSharp "GtkSharp") libraries are C\# wrappers around the underlying C libraries.
+Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices `libraries to create C\# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") libraries are C\# wrappers around the underlying C libraries.
 
 Bibliography
 ============

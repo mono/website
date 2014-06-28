@@ -10,7 +10,7 @@ redirect_from:
 GSoC Rules
 ==========
 
-This is the Mono Project's SoC rules page. For project ideas and other information, please see our [overview page]({{site.github.url}}/old_site/Google_Summer_of_Code).
+This is the Mono Project's SoC rules page. For project ideas and other information, please see our [overview page]({{ site.github.url }}/old_site/Google_Summer_of_Code).
 
 <table>
 <col width="100%" />
@@ -61,7 +61,7 @@ Hence, it is very important that you tell us in your application why you should 
 
     I would like to work on project XYZ
 
-Do not cut-and-paste the text from our [project ideas page]({{site.github.url}}/old_site/StudentProjects "StudentProjects") in your application. We know full well what the text there is. Instead, explain to us your take on the problem, like "I could implement this using this and that", "I would need to research these areas", "I might need help sorting this out", etc.
+Do not cut-and-paste the text from our [project ideas page]({{ site.github.url }}/old_site/StudentProjects "StudentProjects") in your application. We know full well what the text there is. Instead, explain to us your take on the problem, like "I could implement this using this and that", "I would need to research these areas", "I might need help sorting this out", etc.
 
 We especially want to see:
 
@@ -89,5 +89,5 @@ For any questions you may have about the program itself and to talk to the Mono 
 
 [http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list) Discussion on the development/implementation of MonoDevelop.
 
-A complete breakdown of all Mono mailing lists is available at [Mailing Lists]({{site.github.url}}/old_site/Mailing_Lists "Mailing Lists").
+A complete breakdown of all Mono mailing lists is available at [Mailing Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists").
 

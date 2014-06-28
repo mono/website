@@ -113,7 +113,7 @@ Structures passed to callback marshaling delegates in many cases can be NULL poi
 
 #### GInterface Registration
 
-Registration of GInterface implementations is now supported. Details on how to implement an interface with a tutorial can be found at [ImplementingGInterfaces]({{site.github.url}}/old_site/ImplementingGInterfaces "ImplementingGInterfaces")
+Registration of GInterface implementations is now supported. Details on how to implement an interface with a tutorial can be found at [ImplementingGInterfaces]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces")
 
 #### GObject property registration
 
@@ -128,7 +128,7 @@ The Gtk\# 2.6.x releases expose the following new API elements and more.
 
 ### AboutDialog
 
-[![GtkSharpAbout.png]({{site.github.url}}/old_site/images/b/b6/GtkSharpAbout.png)]({{site.github.url}}/old_site/images/b/b6/GtkSharpAbout.png)
+[![GtkSharpAbout.png]({{ site.github.url }}/old_site/images/b/b6/GtkSharpAbout.png)]({{ site.github.url }}/old_site/images/b/b6/GtkSharpAbout.png)
 
 The Gnome About dialog has been cleaned up and integrated directly into Gtk.
 
@@ -144,7 +144,7 @@ A new icon list widget which utilizes the existing List/Tree model.
 
 See the API here: [http:/monodoc/T:Gtk.IconView Gtk.IconView].
 
-[![GtkSharpIconView.png]({{site.github.url}}/old_site/images/1/12/GtkSharpIconView.png)]({{site.github.url}}/old_site/images/1/12/GtkSharpIconView.png)
+[![GtkSharpIconView.png]({{ site.github.url }}/old_site/images/1/12/GtkSharpIconView.png)]({{ site.github.url }}/old_site/images/1/12/GtkSharpIconView.png)
 
 New Binding Features
 --------------------
@@ -236,7 +236,7 @@ A complete sample application utilizing Actions and the UI manager can be found 
 
 ### ComboBox
 
-[![GtkSharpCombo.png]({{site.github.url}}/old_site/images/0/04/GtkSharpCombo.png)]({{site.github.url}}/old_site/images/0/04/GtkSharpCombo.png)
+[![GtkSharpCombo.png]({{ site.github.url }}/old_site/images/0/04/GtkSharpCombo.png)]({{ site.github.url }}/old_site/images/0/04/GtkSharpCombo.png)
 
 The old Gtk Combo widget was long a sore point for developers. The new ComboBox widgets utilize the power of the Tree/List Model API and provide a nice clean look.
 
@@ -244,7 +244,7 @@ See the API here: [http:/monodoc/T:Gtk.ComboBox Gtk.ComboBox].
 
 ### FileChooser
 
-[![GtkSharpFileChooser.png]({{site.github.url}}/old_site/images/8/8a/GtkSharpFileChooser.png)]({{site.github.url}}/old_site/images/8/8a/GtkSharpFileChooser.png)
+[![GtkSharpFileChooser.png]({{ site.github.url }}/old_site/images/8/8a/GtkSharpFileChooser.png)]({{ site.github.url }}/old_site/images/8/8a/GtkSharpFileChooser.png)
 
 The new FileChooser interface is implemented by FileChooserDialog to provide an attractive and powerful way for your application to interface with the file system.
 
@@ -252,7 +252,7 @@ See the API here: [http:/monodoc/T:Gtk.FileChooser Gtk.FileChooser].
 
 ### Toolbar
 
-[![GtkSharpToolbar.png]({{site.github.url}}/old_site/images/b/b5/GtkSharpToolbar.png)]({{site.github.url}}/old_site/images/b/b5/GtkSharpToolbar.png)
+[![GtkSharpToolbar.png]({{ site.github.url }}/old_site/images/b/b5/GtkSharpToolbar.png)]({{ site.github.url }}/old_site/images/b/b5/GtkSharpToolbar.png)
 
 The new Toolbar widget comes complete with all the typical buttons and separators and provides a more attractive API to expose Toolbar User Interface elements either programatically or via the UIManager API.
 
@@ -282,7 +282,7 @@ New Extensions to the Bindings
 
 The NodeStore is now interactive with new selection and view objects. Use NodeStore, NodeSelection, and NodeView to simplify the TreeView API with a nice attribute driven C\# friendly syntax.
 
-[![GtkSharpNodeViewSimple.png]({{site.github.url}}/old_site/images/0/04/GtkSharpNodeViewSimple.png)]({{site.github.url}}/old_site/images/0/04/GtkSharpNodeViewSimple.png)
+[![GtkSharpNodeViewSimple.png]({{ site.github.url }}/old_site/images/0/04/GtkSharpNodeViewSimple.png)]({{ site.github.url }}/old_site/images/0/04/GtkSharpNodeViewSimple.png)
 
 There is a [http:/GtkSharpNodeViewTutorial tutorial article] available showing how to use the NodeView convenience APIs to implement tree and list views like the one above in your application.
 

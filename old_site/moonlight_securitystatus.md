@@ -10,7 +10,7 @@ redirect_from:
 Moonlight/SecurityStatus
 ========================
 
-This page list the security related **features** of Moonlight. Another [page]({{site.github.url}}/old_site/SecurityValidation "SecurityValidation") list the **validations** needed to ensure **both** the [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") and Mono security features are working.
+This page list the security related **features** of Moonlight. Another [page]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation") list the **validations** needed to ensure **both** the [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") and Mono security features are working.
 
 **Note:** Simply search for **TODO** or **partial** on this page to see the current restrictions.
 
@@ -102,8 +102,8 @@ CoreCLR Security Model
     -   Based on the output of tools located inside [moon/class/tuning/SecurityAttributes/](http://anonsvn.mono-project.com/viewvc/trunk/moon/class/tuning/SecurityAttributes/)
     -   status: **active**
 -   Documentation
-    -   [CoreCLR security model]({{site.github.url}}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR")
-    -   [Moonlight Implementation Details]({{site.github.url}}/old_site/MoonlightSecurity "MoonlightSecurity")
+    -   [CoreCLR security model]({{ site.github.url }}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR")
+    -   [Moonlight Implementation Details]({{ site.github.url }}/old_site/MoonlightSecurity "MoonlightSecurity")
 
 Plugin Sandbox
 ==============
@@ -385,7 +385,7 @@ Assembly Loading
     -   status: **complete**
 -   Special handling of `[InternalsVisibleTo]` wrt platform code
     -   make sure we are not opening our internals to assemblies in the XAP file masquerading (name and public key token) as platform code
-    -   see [SecurityValidation]({{site.github.url}}/old_site/SecurityValidation "SecurityValidation") for more details
+    -   see [SecurityValidation]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation") for more details
     -   status: **complete**
 
 Shader Effects
@@ -398,7 +398,7 @@ Silverlight 3 feature
 Surface reduction
 -----------------
 
-Why ? beside the standard *less code, less vulnerabilities* it is also easier and faster, in general, to remove features than to audit them (now and in the future). As a bonus [Moonlight]({{site.github.url}}/old_site/Moonlight "Moonlight") gets a smaller download size and the Mono runtime get usable in smaller embedded systems.
+Why ? beside the standard *less code, less vulnerabilities* it is also easier and faster, in general, to remove features than to audit them (now and in the future). As a bonus [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") gets a smaller download size and the Mono runtime get usable in smaller embedded systems.
 
 ### Mono
 

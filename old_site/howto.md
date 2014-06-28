@@ -31,37 +31,37 @@ Howto
 Operating System
 ================
 
--   [Obtain the output of a child process]({{site.github.url}}/old_site/Howto_PipeOutput "Howto PipeOutput")
+-   [Obtain the output of a child process]({{ site.github.url }}/old_site/Howto_PipeOutput "Howto PipeOutput")
 
 Desktop
 =======
 
--   [Open a url in a cross-platform fashion]({{site.github.url}}/old_site/Howto_OpenBrowser "Howto OpenBrowser")
--   [Use the parametrized types over a class]({{site.github.url}}/old_site/Howto_Generics "Howto Generics")
+-   [Open a url in a cross-platform fashion]({{ site.github.url }}/old_site/Howto_OpenBrowser "Howto OpenBrowser")
+-   [Use the parametrized types over a class]({{ site.github.url }}/old_site/Howto_Generics "Howto Generics")
 
 Graphics
 ========
 
--   [Use Cairo to draw graphics]({{site.github.url}}/old_site/Mono.Cairo_Cookbook "Mono.Cairo Cookbook").
+-   [Use Cairo to draw graphics]({{ site.github.url }}/old_site/Mono.Cairo_Cookbook "Mono.Cairo Cookbook").
 
 Network
 =======
 
--   [Use Dns classes to determine local system IP information]({{site.github.url}}/old_site/Howto_IpInfobyDns "Howto IpInfobyDns")
+-   [Use Dns classes to determine local system IP information]({{ site.github.url }}/old_site/Howto_IpInfobyDns "Howto IpInfobyDns")
 
 Web
 ===
 
--   [Getting data from asp.net callbacks without a visible postback]({{site.github.url}}/old_site/Howto_aspnet_Callbacks "Howto aspnet Callbacks")
+-   [Getting data from asp.net callbacks without a visible postback]({{ site.github.url }}/old_site/Howto_aspnet_Callbacks "Howto aspnet Callbacks")
 
 Moonlight
 =========
 
--   [Shows how to develop a simple hello world]({{site.github.url}}/old_site/Howto_helloWorld_Moonlight_ff3 "Howto helloWorld Moonlight ff3")
+-   [Shows how to develop a simple hello world]({{ site.github.url }}/old_site/Howto_helloWorld_Moonlight_ff3 "Howto helloWorld Moonlight ff3")
 
 Configuration
 =============
 
--   [Configuring your applications using mconfig]({{site.github.url}}/old_site/Howto_Mconfig "Howto Mconfig")
+-   [Configuring your applications using mconfig]({{ site.github.url }}/old_site/Howto_Mconfig "Howto Mconfig")
 
 

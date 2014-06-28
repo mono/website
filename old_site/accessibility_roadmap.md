@@ -38,9 +38,9 @@ Accessibility: Roadmap
 Introduction
 ------------
 
-This page contains a high level view of the UI Automation accessibility project. If you are looking for a detailed view of the project schedule, you can view the [project schedule]({{site.github.url}}/old_site/Accessibility:_Project_Schedule "Accessibility: Project Schedule") page.
+This page contains a high level view of the UI Automation accessibility project. If you are looking for a detailed view of the project schedule, you can view the [project schedule]({{ site.github.url }}/old_site/Accessibility:_Project_Schedule "Accessibility: Project Schedule") page.
 
-The big picture of the [roadmap]({{site.github.url}}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap") can be broken down into two phases with target dates as follows:
+The big picture of the [roadmap]({{ site.github.url }}/old_site/Accessibility:_Roadmap "Accessibility: Roadmap") can be broken down into two phases with target dates as follows:
 
 -   Phase 1 - Q1 2009 - UIA Provider and WinForms integration
     -   The UIA Provider interfaces will be implemented to support Windows Forms on Mono.
@@ -55,7 +55,7 @@ The big picture of the [roadmap]({{site.github.url}}/old_site/Accessibility:_Roa
 Current release
 ---------------
 
-### [Release 1.0 - March 17th 2009]({{site.github.url}}/old_site/Accessibility:_Release_Notes_1.0 "Accessibility: Release Notes 1.0")
+### [Release 1.0 - March 17th 2009]({{ site.github.url }}/old_site/Accessibility:_Release_Notes_1.0 "Accessibility: Release Notes 1.0")
 
 100% of the System.Windows.Forms controls supported.
 
@@ -69,11 +69,11 @@ Bugfix follow-up to 1.0.
 Past releases
 -------------
 
-### [Release 0.9.1 - December 6th 2008]({{site.github.url}}/old_site/Accessibility:_Release_Notes_0.9.1 "Accessibility: Release Notes 0.9.1")
+### [Release 0.9.1 - December 6th 2008]({{ site.github.url }}/old_site/Accessibility:_Release_Notes_0.9.1 "Accessibility: Release Notes 0.9.1")
 
 Bugfix release for 0.9.
 
-### [Release 0.9 - November 26th 2008]({{site.github.url}}/old_site/Accessibility:_Release_Notes_0.9 "Accessibility: Release Notes 0.9")
+### [Release 0.9 - November 26th 2008]({{ site.github.url }}/old_site/Accessibility:_Release_Notes_0.9 "Accessibility: Release Notes 0.9")
 
 Initial preview release, not all controls covered.
 

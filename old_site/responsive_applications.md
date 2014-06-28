@@ -244,7 +244,7 @@ For certain kind of problems that are not easy to handle with event dispatching,
 
 Threads have a few downsides, for example, you need to worry about race conditions that happens when two threads need to share information.
 
-Read our [Thread Beginners Guide]({{site.github.url}}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide") for an introduction to using threads with Mono.
+Read our [Thread Beginners Guide]({{ site.github.url }}/old_site/ThreadsBeginnersGuide "ThreadsBeginnersGuide") for an introduction to using threads with Mono.
 
 Asynchronous Mono Programmning
 ------------------------------

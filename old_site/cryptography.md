@@ -12,7 +12,7 @@ Cryptography
 
  In the .NET framework cryptography can be found under a number of namespaces in several assemblies. Mono also has it's own assemblies to provide missing security functionalities from the .NET framework.
 
-In addition to the .NET compatible assemblies for cryptography, we are working on an additional stack of functionality, available in the [Crimson]({{site.github.url}}/old_site/Crimson "Crimson") module.
+In addition to the .NET compatible assemblies for cryptography, we are working on an additional stack of functionality, available in the [Crimson]({{ site.github.url }}/old_site/Crimson "Crimson") module.
 
 <table>
 <col width="100%" />
