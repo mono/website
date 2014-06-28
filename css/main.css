@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #index-hero h1 {
   color: #E2E8EB;
+  margin-bottom: 15px;
 }
 
 #index-teaser {
