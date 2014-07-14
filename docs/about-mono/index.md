@@ -1,10 +1,12 @@
 ---
 layout: docpage
 navgroup: docs
-title: What is Mono?
+title: About Mono
 ---
 
-Mono is a software platform designed to allow developers to easily create cross platform applications. It is an open source implementation of Microsoft's .Net Framework based on the [ECMA]({{ site.github.url }}/old_site/ECMA "ECMA") standards for C\# and the Common Language Runtime. We feel that by embracing a successful, standardized software platform, we can lower the barriers to producing great applications for Linux.
+Mono, the open source development platform based on the .NET framework, allows developers to build cross-platform applications with improved developer productivity. Mono's .NET implementation is based on the ECMA standards for [C\#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).
+
+Sponsored by Novell, the Mono project has an active and enthusiastic contributing community. Mono includes both developer tools and the infrastructure needed to run .NET client and server applications.
 
 The Components
 --------------
@@ -18,6 +20,27 @@ There are several components that make up Mono:
 **Base Class Library** - The Mono platform provides a comprehensive set of classes that provide a solid foundation to build applications on. These classes are compatible with Microsoft's .Net Framework classes.
 
 **Mono Class Library** - Mono also provides many classes that go above and beyond the Base Class Library provided by Microsoft. These provide additional functionality that are useful, especially in building Linux applications. Some examples are classes for Gtk+, Zip files, LDAP, OpenGL, Cairo, POSIX, etc.
+
+Mono Feature Highlights
+-----------------------
+
+[Multi-Platform]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms")  
+Runs on [Linux](/index.php?title=Linux&action=edit&redlink=1 "Linux (page does not exist)"), [OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX"), [BSD]({{ site.github.url }}/old_site/Mono:BSD "Mono:BSD"), and [Microsoft Windows]({{ site.github.url }}/old_site/Using_Mono_on_Windows), including [x86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86"), [x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64"), [ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM"), [s390]({{ site.github.url }}/old_site/Mono:S390 "Mono:S390"), [PowerPC]({{ site.github.url }}/old_site/Mono:PowerPC "Mono:PowerPC") and much more
+
+[Multi-Language]({{ site.github.url }}/old_site/Languages "Languages")  
+Develop in [C\# 4.0]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8]({{ site.github.url }}/old_site/VisualBasic.NET_support), [Java]({{ site.github.url }}/old_site/Java "Java"), [Python]({{ site.github.url }}/old_site/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
+
+Binary Compatible  
+Built on an implementation of the [ECMA]({{ site.github.url }}/old_site/ECMA "ECMA")'s [Common Language Infrastructure]({{ site.github.url }}/old_site/Mono:Runtime "Mono:Runtime") and [C\#]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler")
+
+[Microsoft Compatible API]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability")  
+Run [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET"), [ADO.NET]({{ site.github.url }}/old_site/ADO.NET "ADO.NET"), [Silverlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") and [Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms") applications without recompilation
+
+[Open Source, Free Software]({{ site.github.url }}/old_site/FAQ:_Licensing)  
+Mono's runtime, compilers, and libraries are distributed under OSI approved licenses and are available for dual-licensing
+
+[Comprehensive Technology Coverage]({{ site.github.url }}/old_site/Plans "Plans")  
+Bindings and managed implementations of many popular libraries and protocols
 
 The Benefits
 ------------

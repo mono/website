@@ -355,7 +355,7 @@ You can run this tool on assemblies intended for mono usage if you want to provi
 Binding GInterfaces
 -------------------
 
-[GInterfaces]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces") support was added recently (firstly, support for querying them in unmanaged objects from the managed side, and later, being able to use them from a managed object).
+[GInterfaces]({{ site.github.url }}/docs/gui/gtksharp/implementing-ginterfaces/) support was added recently (firstly, support for querying them in unmanaged objects from the managed side, and later, being able to use them from a managed object).
 
 But sometimes dealing with them may be tricky, as some non-public (not defined in the binding) unmanaged object may be obtained by a managed method, which supports a GInterface in theory, but in the end is not registered in the Mono object model as implementing the managed GInterface counterpart.
 
