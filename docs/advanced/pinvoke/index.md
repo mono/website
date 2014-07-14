@@ -7,16 +7,16 @@ title: Interop with Native Libraries
 Introduction
 ============
 
-The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principal, all you need to do is create a [http:/monodoc/T:System.Runtime.InteropServices.DllImportAttribute DllImport] function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
+The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principal, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
 
 ``` csharp
  [DllImport ("libc.so")]
  private static extern int getpid ();
 ```
 
-Please note that most of the classes and enumerations mentioned in this document reside in the [http:/monodoc/N:System.Runtime.InteropServices System.Runtime.InteropServices] namespace.
+Please note that most of the classes and enumerations mentioned in this document reside in the [System.Runtime.InteropServices](http://docs.go-mono.com/index.aspx?link=N:System.Runtime.InteropServices) namespace.
 
-The above C\# function declaration would invoke the POSIX **getpid**(2) system call on platforms that have the `libc.so` library. If `libc.so` exists but doesn't have the **getpid** export, an [http:/monodoc/T:System.EntryPointNotFoundException EntryPointNotFoundException] exception is thrown. If `libc.so` can't be loaded, a [http:/monodoc/T:System.DllNotFoundException DllNotFoundException] exception is thrown. Simple. Straightforward. What could be easier?
+The above C\# function declaration would invoke the POSIX **getpid**(2) system call on platforms that have the `libc.so` library. If `libc.so` exists but doesn't have the **getpid** export, an [EntryPointNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.EntryPointNotFoundException) exception is thrown. If `libc.so` can't be loaded, a [DllNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.DllNotFoundException) exception is thrown. Simple. Straightforward. What could be easier?
 
 There are three problems with this:
 
@@ -146,17 +146,17 @@ In principal, this is a straightforward process. The library specified in the **
 
 But what string is used for the function lookup (in `GetProcAddress()` or **dlopen**(3))? By default, the name of the managed code method is used, which is why [getpid() in the above example](#introduction) invokes **getpid**(2) from the C library.
 
-Alternatively, the **DllImport** attribute's [http:/monodoc/F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint EntryPoint] field can be set, and that string will be used instead.
+Alternatively, the **DllImport** attribute's [EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint) field can be set, and that string will be used instead.
 
 Either way, the string used is assumed to refer to a C ABI-compatible function exported by the specified library. On some platforms, this may cause a leading underscore to be prefixed to the symbol name. Other platforms generate no mangling.
 
-Note that a C ABI is assumed. This makes it nearly impossible to directly invoke functions that are not C ABI compatible, such as C++ library functions that are not `extern "C"`. Some variation on the C ABI is permitted, such as variation in the function's [http:/monodoc/T:System.Runtime.InteropServices.CallingConvention CallingConvention]. The default CallingConvention is platform-specific. Under Windows, [http:/monodoc/F:System.Runtime.InteropServices.CallingConvention.Winapi Winapi] is the default, as this is used for most Win32 API functions. (**Winapi** is equivalent to **Stdcall** for Windows 9x and Windows NT.) Under Unix platforms, [http:/monodoc/F:System.Runtime.InteropServices.CallingConvention.Cdecl Cdecl] is the default.
+Note that a C ABI is assumed. This makes it nearly impossible to directly invoke functions that are not C ABI compatible, such as C++ library functions that are not `extern "C"`. Some variation on the C ABI is permitted, such as variation in the function's [CallingConvention](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.CallingConvention). The default CallingConvention is platform-specific. Under Windows, [Winapi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Winapi) is the default, as this is used for most Win32 API functions. (**Winapi** is equivalent to **Stdcall** for Windows 9x and Windows NT.) Under Unix platforms, [Cdecl](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Cdecl) is the default.
 
 Calling convention can be specified in C code by using the `__stdcall` and `__cdecl `compiler intrinsics under Microsoft Visual C++, and by using the `__attribute__((stdcall)) `and `__attribute__((cdecl)) `compiler intrinsics under GCC.
 
 Does having the default CallingConvention vary between platforms cause portability problems? Yes. All the more reason to write as much code as possible as managed code, avoiding the whole P/Invoke/marshaling conundrum in the first place.
 
-If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function, and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses a known calling convention. If you use option (2), you'll need to set the [http:/monodoc/F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint DllImport.EntryPoint] field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
+If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function, and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses a known calling convention. If you use option (2), you'll need to set the [DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
 
 1.  make your .NET assembly platform specific (you'll need a different assembly for each different platform);
 2.  require updating the .NET assembly every time you change C++ compilers (as the C++ name mangling scheme varies by compiler and can -- and frequently will -- change); and
@@ -220,7 +220,7 @@ The complexity is due to the marshaling. For [simple types](#blittable-types), s
 
 String types introduce additional complexity, as you need to specify the form of string conversion. The runtime stores strings as UTF-16-encoded strings, and these will likely need to be marshaled to a more appropriate form (ANSI strings, UTF-8 encoded strings, etc.). Strings get some special support.
 
-Default marshaling behavior is controlled through the [http:/monodoc/T:System.Runtime.InteropServices.DllImportAttribute DllImport] and [http:/monodoc/T:System.Runtime.InteropServices.MarshalAsAttribute MarshalAs] attributes.
+Default marshaling behavior is controlled through the [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute and [MarshalAs](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.MarshalAsAttribute attributes.
 
 Memory Boundaries
 -----------------
@@ -345,9 +345,9 @@ Many types require minimal copying into native memory. Blittable types are types
 Strings
 -------
 
-[http:/monodoc/T:System.String String]s are special. String marshaling behavior is also highly platform dependent.
+(http://docs.go-mono.com/index.aspx?link=T:System.String String]s are special. String marshaling behavior is also highly platform dependent.
 
-String marshaling for a function call can be specified in the function declaration with the **DllImport** attribute, by setting the [http:/monodoc/F:System.Runtime.InteropServices.DllImportAttribute.CharSet CharSet] field. The default value for this field is [http:/monodoc/F:System.Runtime.InteropServices.CharSet.Auto CharSet.Ansi] . The [http:/monodoc/F:System.Runtime.InteropServices.CharSet.Auto CharSet.Auto] value implies "magic."
+String marshaling for a function call can be specified in the function declaration with the **DllImport** attribute, by setting the [CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.CharSet) field. The default value for this field is [CharSet.Ansi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Ansi) . The [CharSet.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Auto) value implies "magic."
 
 Some background. The Microsoft Win32 API supports two forms of strings: "ANSI" strings, the native character set, such as ASCII, ISO-8859-1, or a Double Byte Character Set such as Shift-JIS; and Unicode strings, originally UCS-2, and now UTF-16. Windows supports these string formats by appending an "A" for Ansi string APIs and a "W" ("wide") for Unicode string APIs.
 
@@ -380,11 +380,11 @@ Mono on all platforms currently uses UTF-8 encoding for all string marshaling op
 
 If you don't want the runtime to search for the alternate unmanaged functions, specify a CharSet value other than CharSet.Auto. This will cause the runtime to look only for the specified function. Note that if you pass a wrongly encoded string (e.g. calling MessageBoxW when the CharSet is CharSet.Ansi, the default), you are crossing into "undefined" territory. The unmanaged function will receive data encoded in ways it wasn't expecting, so you may get such bizarre things as Asian text when displaying "Hello, World".
 
-Perhaps in the future the [http:/monodoc/T:System.Runtime.InteropServices.CharSet CharSet] enumeration will contain more choices, such as UnicodeLE (little-endian), UnicodeBE (big-endian), Utf7, Utf8, and other common choices. Additionally, making such a change would also likely require changing the UnmanagedType enumeration. However, these would need to go through ECMA, so it won't happen next week. (Unless some time has passed since this was originally written, in which case it may very well be next week. But don't count on it.)
+Perhaps in the future the [CharSet](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.CharSet) enumeration will contain more choices, such as UnicodeLE (little-endian), UnicodeBE (big-endian), Utf7, Utf8, and other common choices. Additionally, making such a change would also likely require changing the UnmanagedType enumeration. However, these would need to go through ECMA, so it won't happen next week. (Unless some time has passed since this was originally written, in which case it may very well be next week. But don't count on it.)
 
 ### More Control
 
-Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more control? You would need more control if a string is a member of a structure, or if the function uses multiple different types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the [http:/monodoc/P:System.Runtime.InteropServices.MarshalAsAttribute.Value Value] property (which is set in the constructor) to a value from the [http:/monodoc/T:System.Runtime.InteropServices.UnmanagedType UnmanagedType] enumeration. For example:
+Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more control? You would need more control if a string is a member of a structure, or if the function uses multiple different types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the [Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value property (which is set in the constructor) to a value from the [UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration. For example:
 
 ``` csharp
  [DllImport ("does-not-exist")]
@@ -394,13 +394,13 @@ Using the **DllImport** attribute works if you want to control all the strings i
       [MarshalAs(UnmanagedType.LPTStr)] string platformString);
 ```
 
-As you can guess by reading the example, [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.LPStr UnmanagedType.LPStr] will marshal the input string into an Ansi string, [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.LPWStr UnmanagedType.LPWStr] will marshal the input string into a Unicode string (effectively doing nothing), and [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.LPTStr UnmanagedType.LPTStr] will convert the string to the platform's default string encoding.
+As you can guess by reading the example, [UnmanagedType.LPStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.LPStr) will marshal the input string into an Ansi string, [UnmanagedType.LPWStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.LPWStr) will marshal the input string into a Unicode string (effectively doing nothing), and [UnmanagedType.LPTStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.LPTStr) will convert the string to the platform's default string encoding.
 
 The default platform encoding for all flavors of Windows NT (including Windows NT 3.51 and 4.0, Windows 2000, Windows XP, Windows Server 2003) is Unicode, while for all Windows 9x flavors (Windows 95, 98, ME) the platform default encoding is Ansi.
 
 Mono uses UTF-8 encoding as the default encoding on all platforms.
 
-There are other **UnmangedType** string marshaling options, but they're primarily of interest in COM Interop ([http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.BStr BStr], [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.AnsiBStr AnsiBStr], [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.TBStr TBStr]).
+There are other **UnmangedType** string marshaling options, but they're primarily of interest in COM Interop ([BStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.BStr), [AnsiBStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.AnsiBStr), [TBStr](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.TBStr)).
 
 If **UnmanagedType** doesn't provide enough flexibility for your string marshaling needs (for example, you're wrapping GTK+ and you need to marshal strings in UTF-8 format), look at the [Custom Marshaling](#custom-marshaling) or [Manual Marshaling](#manual-marshaling) sections.
 
@@ -414,7 +414,7 @@ A common C language idiom is for the caller to provide the callee a buffer to fi
 
 We can't use **System.String** for both parameters, as strings are immutable. This is OK for *src*, but *dest* will be modified, and the caller should be able to see the modification.
 
-The solution is to use a [http:/monodoc/T:System.Text.StringBuilder System.Text.StringBuilder] , which gets special marshaling support from the runtime. This would allow **strncpy**(3) to be wrapped and used as:
+The solution is to use a [System.Text.StringBuilder](http://docs.go-mono.com/index.aspx?link=T:System.Text.StringBuilder) , which gets special marshaling support from the runtime. This would allow **strncpy**(3) to be wrapped and used as:
 
 ``` csharp
  [DllImport ("libc.so")]
@@ -429,7 +429,7 @@ The solution is to use a [http:/monodoc/T:System.Text.StringBuilder System.Text.
  }
 ```
 
-Some things to note is that the return value of **strncpy**(3) was changed to *void*, as there is no way to specify that the return value will be the same pointer address as the input *dest* string buffer, and thus it doesn't need to be marshaled. If *string* were used instead, Bad Things could happen (the returned string would be freed; see [Strings as Return Values](#strings-as-return-values) ). The **StringBuilder** is allocated with the correct amount of storage as a constructor parameter, and this amount of storage is passed to **strncpy**(3) to prevent buffer overflow. If you use a **StringBuilder** instance multiple times, always call [http:/monodoc/M:System.Text.StringBuilder.EnsureCapacity(System.Int32) EnsureCapacity()] before passing it into the native method, as the capacity may shrink as a memory optimization over time, leading to unexpectedly truncated results.
+Some things to note is that the return value of **strncpy**(3) was changed to *void*, as there is no way to specify that the return value will be the same pointer address as the input *dest* string buffer, and thus it doesn't need to be marshaled. If *string* were used instead, Bad Things could happen (the returned string would be freed; see [Strings as Return Values](#strings-as-return-values) ). The **StringBuilder** is allocated with the correct amount of storage as a constructor parameter, and this amount of storage is passed to **strncpy**(3) to prevent buffer overflow. If you use a **StringBuilder** instance multiple times, always call [EnsureCapacity()](http://docs.go-mono.com/index.aspx?link=M:System.Text.StringBuilder.EnsureCapacity(System.Int32)) before passing it into the native method, as the capacity may shrink as a memory optimization over time, leading to unexpectedly truncated results.
 
 TODO: How does StringBuilder interact with the specified CharSet?
 
@@ -448,7 +448,7 @@ The **String** type is a class, so [see the section on returning classes from fu
     in <0x4> (wrapper managed-to-native) System.Object:__icall_wrapper_g_free (intptr)
     in <0x6b9d0c> (wrapper managed-to-native) System.Object:__icall_wrapper_g_free (intptr)
 
-If you don't want the runtime to free the returned string, either (a) don't specify the return value ([as was done for the **strncpy**(3) function above](#passing-caller-modifiable-strings)), or (b) return an [http:/monodoc/T:System.IntPtr IntPtr] and use one of the Marshal.PtrToString\* functions, depending on the type of string returned. For example, use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi Marshal.PtrToStringAnsi] to marshal from a Ansi string, and use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringUni Marshal.PtrToStringUni] to marshal from a Unicode string.
+If you don't want the runtime to free the returned string, either (a) don't specify the return value ([as was done for the **strncpy**(3) function above](#passing-caller-modifiable-strings)), or (b) return an [IntPtr](http://docs.go-mono.com/index.aspx?link=T:System.IntPtr) and use one of the Marshal.PtrToString\* functions, depending on the type of string returned. For example, use [Marshal.PtrToStringAnsi](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi) to marshal from a Ansi string, and use [Marshal.PtrToStringUni](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStringUni) to marshal from a Unicode string.
 
 See also:
 
@@ -480,9 +480,9 @@ Remember that classes are heap-allocated and garbage-collected in the CLI. As su
 
 This means that you cannot use classes to invoke unmanaged functions that expect pass-by-value variables (such as the *WRONG* function, above).
 
-There are two other issues with classes. First of all, classes by default use [http:/monodoc/F:System.Runtime.InteropServices.LayoutKind.Auto LayoutKind.Auto] layout. This means that the ordering of class data members is unknown, and won't be determined until runtime. The runtime can rearrange the order of members in any way it chooses, to optimize for access time or data layout space. As such, you *MUST* use the [http:/monodoc/T:System.Runtime.InteropServices.StructLayoutAttribute StructLayout] attribute and specify a [http:/monodoc/E:System.Runtime.InteropServices.LayoutKind LayoutKind] value of [http:/monodoc/F:System.Runtime.InteropServices.LayoutKind.Sequential LayoutKind.Sequential] or [http:/monodoc/F:System.Runtime.InteropServices.LayoutKind.Explicit LayoutKind.Explicit].
+There are two other issues with classes. First of all, classes by default use [LayoutKind.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Auto) layout. This means that the ordering of class data members is unknown, and won't be determined until runtime. The runtime can rearrange the order of members in any way it chooses, to optimize for access time or data layout space. As such, you *MUST* use the [StructLayout](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.StructLayoutAttribute) attribute and specify a [LayoutKind](http://docs.go-mono.com/index.aspx?link=E:System.Runtime.InteropServices.LayoutKind) value of [LayoutKind.Sequential](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Sequential) or [LayoutKind.Explicit](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Explicit).
 
-Secondly, classes (again, by default) only have in-bound marshaling. That is, [Step 4](#marshal-step-4) (copying the unmanaged memory representation back into managed memory) is ommitted. If you need the unmanaged memory to be copied back into managed memory, you must addorn the **DllImport** function declaration argument with an [http:/monodoc/T:System.Runtime.InteropServices.OutAttribute Out] attribute. You will also need to use the [http:/monodoc/T:System.Runtime.InteropServices.InAttribute In] attribute if you want copy-in and copy-out behavior. To summarize:
+Secondly, classes (again, by default) only have in-bound marshaling. That is, [Step 4](#marshal-step-4) (copying the unmanaged memory representation back into managed memory) is ommitted. If you need the unmanaged memory to be copied back into managed memory, you must addorn the **DllImport** function declaration argument with an [Out](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.OutAttribute) attribute. You will also need to use the [In](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.InAttribute) attribute if you want copy-in and copy-out behavior. To summarize:
 
 -   Using `[In]` is equivalent to not specifying any parameter attributes, and will skip Step 4 (copying unmanaged memory into managed memory).
 -   Using `[Out]` will skip Step 2 (copying managed memory into unmanaged memory).
@@ -510,7 +510,7 @@ The differences in allocation behavior between classes and structures also affec
 
 Classes can be used as the return value of a function when the unmanaged function returns a pointer to an unmanaged structure. Classes cannot be used for by-value return types.
 
-Structures can be used when the unmanaged function returns the structure by-value. It is not possible to return structures with "ref" or "out", so if an unmanaged function returns a pointer to a structure, **IntPtr** must be used for "safe" code, or a pointer to the structure can be used for "unsafe" code. If **IntPtr** is used as the return type, [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStructure Marshal.PtrToStructure] can be used to convert the unmanaged pointer into a managed structure.
+Structures can be used when the unmanaged function returns the structure by-value. It is not possible to return structures with "ref" or "out", so if an unmanaged function returns a pointer to a structure, **IntPtr** must be used for "safe" code, or a pointer to the structure can be used for "unsafe" code. If **IntPtr** is used as the return type, [Marshal.PtrToStructure](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStructure) can be used to convert the unmanaged pointer into a managed structure.
 
 Memory management is also heavily involved.
 
@@ -520,7 +520,7 @@ It's easy to skim over memory management for most of Platform Invoke and marshal
 
 The CLI runtime assumes that, under certain circumstances, the CLI runtime is responsible for freeing memory allocated by unmanaged code. Return values are one of those circumstances, causing the return value to be a memory boundary for control of memory (de)allocation.
 
-The CLI assumes that all memory that is passed between the CLI/unmanaged code boundary is allocated via a common memory allocator. The developer does not get a choice in which memory allocator is used. For managed code, the [http:/monodoc/M:System.Runtime.InteropServices.Marshal.AllocCoTaskMem Marshal.AllocCoTaskMem] method can be used to allocate memory, [http:/monodoc/M:System.Runtime.InteropServices.Marshal.FreeCoTaskMem Marshal.FreeCoTaskMem] is used to free the memory allocated by **Marshal.AllocCoTaskMem**, and [http:/monodoc/M:System.Runtime.InteropServices.Marshal.ReAllocCoTaskMem Marshal.ReAllocCoTaskMem] is used to resize a memory region originally allocated by **Marshal.AllocCoTaskMem**.
+The CLI assumes that all memory that is passed between the CLI/unmanaged code boundary is allocated via a common memory allocator. The developer does not get a choice in which memory allocator is used. For managed code, the [Marshal.AllocCoTaskMem](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.AllocCoTaskMem) method can be used to allocate memory, [Marshal.FreeCoTaskMem](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.FreeCoTaskMem) is used to free the memory allocated by **Marshal.AllocCoTaskMem**, and [Marshal.ReAllocCoTaskMem](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.ReAllocCoTaskMem) is used to resize a memory region originally allocated by **Marshal.AllocCoTaskMem**.
 
 Since classes are passed by reference, a pointer is returned, and the runtime assumes that it must free this memory to avoid a memory leak. The chain of events is thus:
 
@@ -530,7 +530,7 @@ Since classes are passed by reference, a pointer is returned, and the runtime as
 
 How is **Marshal.AllocCoTaskMem**, **Marshal.ReAllocCoTaskMem**, and **Marshal.FreeCoTaskMem** implemented? That's platform-dependent. (So much for portable platform-dependent code.) Under Windows, the COM Task Memory allocator is used (via [CoTaskMemAlloc()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp), [CoTaskMemReAlloc()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp), and [CoTaskMemFree()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp)). Under Unix, the GLib memory functions [g\_malloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-malloc) , [g\_realloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-realloc) , and [g\_free()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-free) functions are used. Typically, these correspond to the ANSI C functions **malloc**(3), **realloc**(3), and **free**(3), but this is not necessarily the case as GLib can use different memory allocators; see [g\_mem\_set\_vtable()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-mem-set-vtable) and [g\_mem\_is\_system\_malloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-mem-is-system-malloc) .
 
-What do you do if you don't want the runtime to free the memory? Don't return a class. Instead, return an IntPtr (the moral equivalent of a C `void*` pointer), and then use the **Marshal** class methods to manipulate that pointer, such as [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStructure Marshal.PtrToStructure], which works for both C\# **struct** types and **class** types marked `[StructLayout(LayoutKind.Sequential)]`.
+What do you do if you don't want the runtime to free the memory? Don't return a class. Instead, return an IntPtr (the moral equivalent of a C `void*` pointer), and then use the **Marshal** class methods to manipulate that pointer, such as [Marshal.PtrToStructure](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStructure), which works for both C\# **struct** types and **class** types marked `[StructLayout(LayoutKind.Sequential)]`.
 
 ### Choosing between Classes and Structures
 
@@ -674,13 +674,13 @@ The general rule of advice is this: never pass classes or structures containing 
 
 The immediate net effect of this is that you can't have array members in marshaled classes, and (as we've seen before) handling strings can be "wonky" (as strings are also a reference type).
 
-Furthermore, the default string marshaling is the [platform default](#more-control) , though this can be changed by setting the [http:/monodoc/F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet StructLayoutAttribute.CharSet] field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
+Furthermore, the default string marshaling is the [platform default](#more-control) , though this can be changed by setting the [StructLayoutAttribute.CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet) field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
 
 ### Boolean Members
 
-The [http:/monodoc/T:System.Boolean System.Boolean] (**bool** in C\#) type is special. (FUBAR might be more appropriate.) A `bool` within a structure is marshaled as an `int` (a 4-byte integer), with 0 being `false `and non-zero being `true`; see [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.Bool UnmanagedType.Bool] . A `bool` passed as an argument to a function is marshaled as a `short` (a 2-byte integer), with 0 being `false` and -1 being `true` (as all bits are set); see [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.VariantBool UnmanagedType.VariantBool] .
+The [System.Boolean](http://docs.go-mono.com/index.aspx?link=T:System.Boolean) (**bool** in C\#) type is special. (FUBAR might be more appropriate.) A `bool` within a structure is marshaled as an `int` (a 4-byte integer), with 0 being `false `and non-zero being `true`; see [UnmanagedType.Bool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.Bool) . A `bool` passed as an argument to a function is marshaled as a `short` (a 2-byte integer), with 0 being `false` and -1 being `true` (as all bits are set); see [UnmanagedType.VariantBool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.VariantBool) .
 
-You can always explicitly specify the marshaling to use by using the **MarshalAsAttribute** on the boolean member, but there are only three legal UnmanagedType values: **UnmanagedType.Bool**, **UnmanagedType.VariantBool**, and [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.U1 UnmanagedType.U1]. **UnmanagedType.U1** , the only un-discussed type, is a 1-byte integer where 1 represents `true` and 0 represents `false`.
+You can always explicitly specify the marshaling to use by using the **MarshalAsAttribute** on the boolean member, but there are only three legal UnmanagedType values: **UnmanagedType.Bool**, **UnmanagedType.VariantBool**, and [UnmanagedType.U1](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.U1). **UnmanagedType.U1** , the only un-discussed type, is a 1-byte integer where 1 represents `true` and 0 represents `false`.
 
 If you need to marshal as another data type, you should overload the method accepting the boolean parameter, and manually convert the boolean to your desired type:
 
@@ -704,7 +704,7 @@ See also: [Default Marshaling for Boolean Types](http://msdn.microsoft.com/libra
 
 ### Unions
 
-A C union (in which multiple members share the same offset into a structure) can be simulated by using the [http:/monodoc/T:System.Runtime.InteropServices.FieldOffsetAttribute FieldOffset] attribute and specifying the same offset for the union members.
+A C union (in which multiple members share the same offset into a structure) can be simulated by using the [FieldOffset](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.FieldOffsetAttribute) attribute and specifying the same offset for the union members.
 
 ### Longs
 
@@ -715,7 +715,7 @@ The C 'long' type is difficult to marshal as a struct member, since there is no 
 
 ### Arrays Embedded Within Structures
 
-Inline arrays can be marshaled by using a **MarshalAs** attribute with **UnmanagedType.ByValArray** and specifying the [http:/monodoc/F:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst MarshalAsAttribute.SizeConst] field to the size of the array to marshal. Inline arrays which contain strings can use **UnmanagedType.ByValTStr** for a string.
+Inline arrays can be marshaled by using a **MarshalAs** attribute with **UnmanagedType.ByValArray** and specifying the [MarshalAsAttribute.SizeConst](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst) field to the size of the array to marshal. Inline arrays which contain strings can use **UnmanagedType.ByValTStr** for a string.
 
 However, the runtime doesn't automatically allocate arrays specified as **UnmanagedType.ByValArray**. The programmer is still responsible for allocating the managed array. See the [summary](#marshaling-members-summary) for more information.
 
@@ -757,7 +757,7 @@ Of course, the managed structure can be declared in other ways, with varying per
  }
 ```
 
-Yet another alternative is to directly specify the size of the structure, instead of letting the structure contents dictate the structure size. This is done via the [http:/monodoc/F:System.Runtime.InteropServices.StructLayout.Size StructLayout.Size] field. This makes the structure terribly annoying to deal with, as pointer arithmetic must be used to deal with the `name` member:
+Yet another alternative is to directly specify the size of the structure, instead of letting the structure contents dictate the structure size. This is done via the [StructLayout.Size](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.StructLayout.Size) field. This makes the structure terribly annoying to deal with, as pointer arithmetic must be used to deal with the `name` member:
 
 ``` csharp
  [StructLayout(LayoutKind.Sequential, Size=72)]
@@ -913,20 +913,20 @@ See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft
 
 Didn't we start using a managed execution environment to *avoid*pointers? But I digress...
 
-Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#avoiding-marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [http:/monodoc/T:System.IntPtr System.IntPtr] or [http:/monodoc/T:System.UIntPtr System.UIntPtr] , and the "unsafe" way, by using `unsafe` code and pointers.
+Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#avoiding-marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [System.IntPtr](http://docs.go-mono.com/index.aspx?link=T:System.IntPtr) or [System.UIntPtr](http://docs.go-mono.com/index.aspx?link=T:System.UIntPtr) , and the "unsafe" way, by using `unsafe` code and pointers.
 
 #### Marshaling Embedded Strings
 
 *Behold the topic that just won't die!* "Inline" strings -- in which the storage for the string is part of the structure itself -- were covered [previously](#arrays-embedded-within-structures). Obviously, and likely more commonly, strings are not always allocated within the structure; typically a pointer to a null-terminated string is stored.
 
-The typical approach is to map the string as an IntPtr, and use [http:/monodoc/M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi Marshal.PtrToStringAnsi] and similar functions to manually marshal the string.
+The typical approach is to map the string as an IntPtr, and use [Marshal.PtrToStringAnsi](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStringAnsi) and similar functions to manually marshal the string.
 
 Why manually marshal? Because you typically use a custom memory allocator (such as **malloc**(3)), and don't want the runtime incorrectly freeing the memory that the string references. In this case, it's *essential* that you manually marshal the string to avoid memory corruption.
 
 Custom Marshaling
 -----------------
 
-The [http:/monodoc/T:System.Runtime.InteropServices.ICustomMarshaler ICustomMarshaler] interface allows the CLI to invoke custom code as part of the P/Invoke call. Normal P/Invoke calls follow the structure:
+The [ICustomMarshaler](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.ICustomMarshaler) interface allows the CLI to invoke custom code as part of the P/Invoke call. Normal P/Invoke calls follow the structure:
 
 > Method invocation → CLI P/Invoke Default Marshaler → Unmanaged method call
 
@@ -945,9 +945,9 @@ In order for the custom marshaler to be invoked,
 public static ICustomMarshaler GetInstance (string s);
 ```
 
-1.  The **DllImport** declaration must have a parameter with a **MarshalAs** attribute specifying [http:/monodoc/F:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler UnmanagedType.CustomMarshaler] and:
-    -   The [http:/monodoc/F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalTypeRef MarshalTypeRef] or [http:/monodoc/F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType MarshalType] fields.
-    -   (Optionally) The [http:/monodoc/F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalCookie MarshalCookie] field. This string is passed to **GetInstance**.
+1.  The **DllImport** declaration must have a parameter with a **MarshalAs** attribute specifying [UnmanagedType.CustomMarshaler](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler) and:
+    -   The [MarshalTypeRef](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalTypeRef) or [MarshalType](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType) fields.
+    -   (Optionally) The [MarshalCookie](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalCookie) field. This string is passed to **GetInstance**.
 
 An example custom marshaler can be found in the **Mono.Unix.Native.FileNameMarshaler** ([FileNameMarshaler.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/Mono.Posix/Mono.Unix.Native/FileNameMarshaler.cs)) and in the Mono unit tests ([marshal9.cs](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/marshal9.cs)).
 
@@ -991,7 +991,7 @@ However, as the number of methods that require essentially identical marshaling 
 Manual Marshaling
 -----------------
 
-What do you do when the default marshaling rules (amid all the variations that the **DllImport** and **MarshalAs** attributes permit) don't allow you to invoke a given function? You do it manually by making extensive use of the [http:/monodoc/T:System.Runtime.InteropServices.Marshal Marshal] class methods.
+What do you do when the default marshaling rules (amid all the variations that the **DllImport** and **MarshalAs** attributes permit) don't allow you to invoke a given function? You do it manually by making extensive use of the [Marshal](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.Marshal) class methods.
 
 TODO: finish.
 
@@ -1134,7 +1134,7 @@ Another example is when using "opaque" data types; that is, types through which 
 
 There are two ways to handle this in C\#: the "type-safe" way, which involves using pointers and the "unsafe" C\# language features, and the CLS-compliant way, which uses System.IntPtr to stand in for a void pointer.
 
-In both cases, the separation between managed and unmanaged memory is made explicit. Managed memory remains type-safe, while unmanaged memory is not (since [http:/monodoc/T:System.IntPtr System.IntPtr] is used to point into unmanaged memory, and there is no way to ensure the actual type of what the System.IntPtr refers to).
+In both cases, the separation between managed and unmanaged memory is made explicit. Managed memory remains type-safe, while unmanaged memory is not (since [System.IntPtr](http://docs.go-mono.com/index.aspx?link=T:System.IntPtr) is used to point into unmanaged memory, and there is no way to ensure the actual type of what the System.IntPtr refers to).
 
 Be warned that this may not be safe, if the "unmanaged" memory is itself garbage collected. This may be the case if the unmanaged memory is handled by a different runtime system (Python, Ruby, Lisp, etc.) or a garbage collector is being used (Boehm). If the unmanaged memory is garbage collected, then the System.IntPtr won't be updated when unmanaged memory undergoes a garbage collection, resulting in memory corruption.
 
@@ -1178,7 +1178,7 @@ The "type-safe" C\# wrapper (using "unsafe" code) is:
 
 This is "type-safe" in that you can't pass arbitrary memory locations to the static Item functions, you must pass a pointer to an Item structure. This isn't a strict amount of type safety, but it is likely to minimize accidental memory corruption. It's biggest problem is that it uses "unsafe" code, and thus may not be usable from other .NET languages, such as Visual Basic .NET and JavaScript.
 
-The CLS compliant version uses System.IntPtr to refer to unmanaged memory. This is similar to what the [http:/monodoc/T:System.Runtime.InteropServices.Marshal Marshal] class does to interoperate with unmanaged memory.
+The CLS compliant version uses System.IntPtr to refer to unmanaged memory. This is similar to what the [Marshal](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.Marshal) class does to interoperate with unmanaged memory.
 
 ``` csharp
  class Item {
@@ -1274,7 +1274,7 @@ In fact, a bug very similar to this exists in .NET v1.0, in one of the Registry 
 
 How do you avoid this problem? Don't use raw IntPtrs. With the IntPtr being used, the GC has no way of knowing that the class still needs to hang around. To avoid the bug, we avoid IntPtrs.
 
-Instead of using IntPtr, we use [http:/monodoc/T:System.Runtime.InteropServices.HandleRef HandleRef] . This is a structure which holds both a reference to the containing class, as well as the pointer value.
+Instead of using IntPtr, we use [HandleRef](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.HandleRef) . This is a structure which holds both a reference to the containing class, as well as the pointer value.
 
 Next, instead of having the P/Invoke code accept IntPtr parameters, the P/Invoke code accepts HandleRefs. HandleRefs are special to the runtime and GC system, and during a marshal operation they "collapse" into an IntPtr.
 
@@ -1330,7 +1330,7 @@ See also: [Chris Brumme's Blog: Lifetime, GC.KeepAlive, handle recycling](http:/
 
 ### .NET 2.0 and SafeHandles
 
-In .NET 2.0, a new mechanism for wrapping unmanaged handles was introduced. This new mechanism is exposed by the [http:/monodoc/T:System.Runtime.InteropServices.SafeHandle SafeHandle] class. SafeHandles encapsulate a handle in the form of an IntPtr, but by exposing it as a subclass of the SafeHandle class (for example [http:/monodoc/T:Microsoft.Win32.SafeFileHandle SafeFileHandle] or [http:/monodoc/T:Microsoft.Win32.SafeWaitHandle SafeWaitHandle]) developers gain type safety.
+In .NET 2.0, a new mechanism for wrapping unmanaged handles was introduced. This new mechanism is exposed by the [SafeHandle](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.SafeHandle) class. SafeHandles encapsulate a handle in the form of an IntPtr, but by exposing it as a subclass of the SafeHandle class (for example [SafeFileHandle](http://docs.go-mono.com/index.aspx?link=T:Microsoft.Win32.SafeFileHandle) or [SafeWaitHandle](http://docs.go-mono.com/index.aspx?link=T:Microsoft.Win32.SafeWaitHandle)) developers gain type safety.
 
 SafeHandles in addition provide a mechanism to avoid inadvertent handle recycling (for references [[1]](http://blogs.msdn.com/cbrumme/archive/2004/02/20/77460.aspx) [[2]](http://blogs.msdn.com/bclteam/archive/2005/03/15/396335.aspx)).
 
@@ -1341,7 +1341,7 @@ The runtime treats SafeHandles specially and will automatically provide marshall
 -   On ref SafeHandles, the outgoing value is ignored (must be zero) and the returned value is turned into a proper SafeHandle.
 -   On structure fields, the SafeHandle's handle is passed.
 
-For the actual implementation details in Mono, see the [SafeHandles]({{ site.github.url }}/old_site/SafeHandles "SafeHandles") document.
+For the actual implementation details in Mono, see the [SafeHandles]({{ site.github.url }}/docs/advanced/safehandles/) document.
 
 Properly Disposing of Resources
 -------------------------------
@@ -1366,10 +1366,10 @@ Given that the soonest a finalizer is collected is after two collections, one fo
 
 Fortunately, there is a simple pattern used throughout the .NET Class Libraries to help ensure that resources are disposed of quickly:
 
--   Implement the [http:/monodoc/T:System.IDisposable System.IDisposable] interface.
--   Call [http:/monodoc/M:System.IDisposable.Dispose Dispose] when finished with the resource. The implementation for **Dispose** does two things:
+-   Implement the [System.IDisposable](http://docs.go-mono.com/index.aspx?link=T:System.IDisposable) interface.
+-   Call [Dispose](http://docs.go-mono.com/index.aspx?link=M:System.IDisposable.Dispose) when finished with the resource. The implementation for **Dispose** does two things:
     1.  dispose of the resource, and
-    2.  call [http:/monodoc/M:System.GC.SuppressFinalize GC.SuppressFinalize] .
+    2.  call [GC.SuppressFinalize](http://docs.go-mono.com/index.aspx?link=M:System.GC.SuppressFinalize) .
 
 **SuppressFinalize** informs the GC that the object's finalizer doesn't need to be invoked, allowing the object to be freed during the first collection, and not after a considerable delay. A sample implementation is:
 
@@ -1475,7 +1475,7 @@ Security
 
 You can get lots of security exceptions for various things, actually. Opening files can generate a security exception, for example.
 
-[http:/monodoc/T:System.Security.Permissions.SecurityPermission System.Security.Permissions.SecurityPermission] is needed with [http:/monodoc/F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode SecurityPermissionFlag.UnmanagedCode] specified in order to perform a P/Invoke.
+[System.Security.Permissions.SecurityPermission](http://docs.go-mono.com/index.aspx?link=T:System.Security.Permissions.SecurityPermission) is needed with [SecurityPermissionFlag.UnmanagedCode](http://docs.go-mono.com/index.aspx?link=F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode) specified in order to perform a P/Invoke.
 
 Programs can't specify this permission; they can only request it (or demand it, and if they can't get it, a SecurityException is thrown).
 

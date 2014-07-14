@@ -12,7 +12,7 @@ If you've worked a lot with Windows GUI programming, you're probably used to pos
 HBox and VBox
 =============
 
-[http:/monodoc/T:Gtk.HBox HBox] and [http:/monodoc/T:Gtk.VBox VBox] objects work similarly to Button objects or any other widget. After you've layed out an HBox or VBox, be sure to call one of the packing methods to set up the box.
+[HBox](http://docs.go-mono.com/index.aspx?link=T:Gtk.HBox) and [VBox](http://docs.go-mono.com/index.aspx?link=T:Gtk.VBox) objects work similarly to Button objects or any other widget. After you've layed out an HBox or VBox, be sure to call one of the packing methods to set up the box.
 
 For a VBox, PackStart will pack the box starting at the top, and PackEnd will pack it starting at the bottom. For an HBox, PackStart will pack the box from left to right, and PackEnd will pack it right to left.
 

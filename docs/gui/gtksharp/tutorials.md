@@ -7,9 +7,9 @@ title: GtkSharpTutorials
 Beginning to use Gtk\#
 ----------------------
 
--   [Beginners Guide to Gtk\#]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
+-   [Beginners Guide to Gtk\#]({{ site.github.url }}/gui/gtksharp/beginners-guide/)
     -   An overview of Gtk\# and step-by-step description of a simple application.
--   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/old_site/GtkSharp:_Hello_World "GtkSharp: Hello World")
+-   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/gui/gtksharp/hello-world/)
     -   A short 'Hello World' style introduction to Gtk\#
 -   [Gtk\# in MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
     -   Creating a Gtk\# application with [Monodevelop's](http://www.monodevelop.com/Main_Page) GUI designer, Stetic.
@@ -17,22 +17,22 @@ Beginning to use Gtk\#
 Gtk\# GUI details and techniques
 --------------------------------
 
--   [Overview of the widgets used in Gtk\#]({{ site.github.url }}/old_site/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview")
--   [Widget Layout and Packing]({{ site.github.url }}/old_site/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
--   [Creating Responsive GUI applications with Gtk\#]({{ site.github.url }}/old_site/Responsive_Applications "Responsive Applications")
--   [Creating Notification Icons]({{ site.github.url }}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Overview of the widgets used in Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-overview/)
+-   [Widget Layout and Packing]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
+-   [Creating Responsive GUI applications with Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/responsive-applications/)
+-   [Creating Notification Icons]({{ site.github.url }}/docs/gui/gtksharp/widgets/notification-icon/)
 -   [Gtk\# used as a Web Service Interface]({{ site.github.url }}/old_site/Webservices_and_GtkSharp "Webservices and GtkSharp")
 -   [Gtk\# example used to access GConf settings]({{ site.github.url }}/old_site/GConfTutorial "GConfTutorial")
 
 Advanced Gtk\#
 --------------
 
--   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/old_site/GAPI "GAPI")
+-   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/docs/gui/gtksharp/gapi/)
 -   [Quick guide to using Pango\#]({{ site.github.url }}/old_site/Pango:Beginners "Pango:Beginners")
--   [Gtk\# TreeView Tutorial]({{ site.github.url }}/old_site/GtkSharp_TreeView_Tutorial "GtkSharp TreeView Tutorial")
-    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/old_site/GtkSharpNodeViewTutorial "GtkSharpNodeViewTutorial")
-    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/old_site/GtkSharpNodeViewTutorialExamples "GtkSharpNodeViewTutorialExamples")
--   [Implementing GInterfaces in Gtk\#]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces")
+-   [Gtk\# TreeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/treeview-tutorial/)
+    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial/)
+    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial-examples/)
+-   [Implementing GInterfaces in Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/implementing-ginterfaces/)
 
 Extending your GUI
 ------------------

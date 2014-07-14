@@ -9,7 +9,7 @@ Scale widgets are used to allow the user to visually select and manipulate a val
 Creating Scale Widgets
 ======================
 
-As with scrollbars, there are separate widget types for [http:/monodoc/T:Gtk.HScale horizontal] and [http:/monodoc/T:Gtk.VScale vertical] scale widgets. (Most programmers seem to favor horizontal scale widgets.) Since they work essentially the same way, there's no need to treat them separately here. The following functions create vertical and horizontal scale widgets, respectively:
+As with scrollbars, there are separate widget types for [horizontal](http://docs.go-mono.com/index.aspx?link=T:Gtk.HScale) and [vertical](http://docs.go-mono.com/index.aspx?link=T:Gtk.VScale) scale widgets. (Most programmers seem to favor horizontal scale widgets.) Since they work essentially the same way, there's no need to treat them separately here. The following functions create vertical and horizontal scale widgets, respectively:
 
 ``` csharp
 VScale vscale1 = new VScale( adjustment );
@@ -25,7 +25,7 @@ HScale hscale2 = new HScaleWithRange(double min,
                                      double step );
 ```
 
-The adjustment argument can either be an [http:/monodoc/T:Gtk.Adjustment adjustment] object which has already been created, or `null`, in which case, an anonymous adjustment is created with all of its values set to 0.0 (which isn't very useful in this case). In order to avoid confusing yourself, you probably want to create your adjustment with a pageSize of 0.0 so that its upper value actually corresponds to the highest value the user can select. The WithRange constructor variants take care of creating a suitable adjustment object. (If you're already thoroughly confused, read the section on Adjustments again for an explanation of what exactly adjustments do and how to create and manipulate them; also read the [http:/monodoc/T:Gtk.Adjustment Gtk.Adjustment] docs.)
+The adjustment argument can either be an [adjustment](http://docs.go-mono.com/index.aspx?link=T:Gtk.Adjustment) object which has already been created, or `null`, in which case, an anonymous adjustment is created with all of its values set to 0.0 (which isn't very useful in this case). In order to avoid confusing yourself, you probably want to create your adjustment with a pageSize of 0.0 so that its upper value actually corresponds to the highest value the user can select. The WithRange constructor variants take care of creating a suitable adjustment object. (If you're already thoroughly confused, read the section on Adjustments again for an explanation of what exactly adjustments do and how to create and manipulate them; also read the [Gtk.Adjustment](http://docs.go-mono.com/index.aspx?link=T:Gtk.Adjustment) docs.)
 
 Using Scale Widgets
 ===================
@@ -50,7 +50,7 @@ Finally, the value can be drawn in different positions relative to the trough:
 vscale1.ValuePos = pos;
 ```
 
-The argument *pos* is of type [http:/monodoc/T:Gtk.PositionType Gtk.PositionType], which is an enumeration of Left, Right, Top, and Bottom. If you position the value on the "side" of the trough (e.g., on the top or bottom of a horizontal scale widget), then it will follow the slider up and down the trough.
+The argument *pos* is of type [Gtk.PositionType](http://docs.go-mono.com/index.aspx?link=T:Gtk.PositionType), which is an enumeration of Left, Right, Top, and Bottom. If you position the value on the "side" of the trough (e.g., on the top or bottom of a horizontal scale widget), then it will follow the slider up and down the trough.
 
-For a full list of the event signals that a Range widget throws, see [http:/monodoc/T:Gtk.HScale Gtk.HScale] and [http:/monodoc/T:Gtk.VScale Gtk.VScale] .
+For a full list of the event signals that a Range widget throws, see [Gtk.HScale](http://docs.go-mono.com/index.aspx?link=T:Gtk.HScale) and [Gtk.VScale](http://docs.go-mono.com/index.aspx?link=T:Gtk.VScale) .
 

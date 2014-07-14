@@ -6,7 +6,7 @@ title: Linear IR
 
 This document describes Mono's new JIT engine based on a rewrite to use a linear Intermediate Representation instead of the tree-based intermediate representation that was used up to Mono 2.0.
 
-You might also want to check [Mono's Runtime Documentation]({{ site.github.url }}/old_site/Mono:Runtime:Documentation "Mono:Runtime:Documentation").
+You might also want to check [Mono's Runtime Documentation]({{ site.github.url }}/docs/advanced/runtime/docs/).
 
 
 Intermediate Representation (IR)

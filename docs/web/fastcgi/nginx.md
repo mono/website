@@ -1,29 +1,8 @@
 ---
-layout: obsolete
-title: "FastCGI Nginx"
-lastmodified: '2010-03-24'
-permalink: /old_site/FastCGI_Nginx/
-redirect_from:
-  - /FastCGI_Nginx/
+layout: docpage
+navgroup: docs
+title: Nginx
 ---
-
-FastCGI Nginx
-=============
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#what-is-nginx">1 What is Nginx</a></li>
-<li><a href="#installing-nginx-on-ubuntu">2 Installing Nginx on Ubuntu</a></li>
-<li><a href="#nginx-configuration">3 Nginx configuration</a></li>
-<li><a href="#useful-resources">4 Useful resources</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
 
 ### What is Nginx
 

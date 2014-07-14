@@ -21,9 +21,9 @@ in many web servers. A web server will receive and respond to a request in the f
 
 1.  The browser tries accessing a page. It finds the host and sends it HTTP GET request.
 2.  The web server receives the request, recognizes that it is supposted to send it to a given socket, in this case `"/tmp/fastcgi-mono-server-0"`, connects to it, and sends the request in the CGI format using FastCGI records.
-3.  `fastcgi-mono-server receives` the request and creates a `Mono.WebServer.FastCgi.WorkerRequest` (a subclass of [http:/monodoc/T:System.Web.Hosting.SimpleWorkerRequest System.Web.Hosting.SimpleWorkerRequest]) and processes the request.
-4.  [http:/monodoc/T:System.Web.Hosting.SimpleWorkerRequest SimpleWorkerRequest] checks for an existing compiled version of the requested page. If it does not exist, the page is converted into C\# (or the specified language) and compiled. It then invokes Render on the compiled representation of the page.
-5.  The page is rendered and sent back to the [http:/monodoc/T:System.Web.Hosting.SimpleWorkerRequest SimpleWorkerRequest]
+3.  `fastcgi-mono-server receives` the request and creates a `Mono.WebServer.FastCgi.WorkerRequest` (a subclass of [System.Web.Hosting.SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest) and processes the request.
+4.  [SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest) checks for an existing compiled version of the requested page. If it does not exist, the page is converted into C\# (or the specified language) and compiled. It then invokes Render on the compiled representation of the page.
+5.  The page is rendered and sent back to the [SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest)
 6.  Overwritten method calls in the FastCGI WorkerRequest send the response back to the web server using FastCGI records.
 7.  The web server sends the response back to the browser.
 8.  The browser displays the page.
@@ -31,7 +31,7 @@ in many web servers. A web server will receive and respond to a request in the f
 Installation Basics
 -------------------
 
-Download and install the "xsp" package from [our downloads page]({{ site.github.url }}/old_site/Downloads "Downloads") or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
+Download and install the "xsp" package from [our downloads page]({{ site.github.url }}/download/) or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
 
 If you obtained packages, you already have everything you need, otherwise you need to use the usual Linux source code configuration setup:
 
@@ -44,12 +44,12 @@ $ make
 $ make install
 ```
 
-To install the FastCGI on Unix, follow the instructions on the [FastCGI Linux](/index.php?title=FastCGI_Linux&action=edit&redlink=1 "FastCGI Linux (page does not exist)") page. Once you have installed the Mono FastCGI support, you have to configure your web server to use it, detailed instructions are available for the following servers:
+To install the FastCGI on Unix, follow the instructions on the FastCGI Linux page. Once you have installed the Mono FastCGI support, you have to configure your web server to use it, detailed instructions are available for the following servers:
 
--   [Abyss Web Server]({{ site.github.url }}/old_site/FastCGI_Abyss "FastCGI Abyss")
--   [Cherokee HTTP Server]({{ site.github.url }}/old_site/FastCGI_Cherokee "FastCGI Cherokee")
--   [Lighttpd]({{ site.github.url }}/old_site/FastCGI_Lighttpd "FastCGI Lighttpd")
--   [Nginx]({{ site.github.url }}/old_site/FastCGI_Nginx "FastCGI Nginx")
+-   [Abyss Web Server]({{ site.github.url }}/docs/web/fastcgi/abyss/)
+-   [Cherokee HTTP Server]({{ site.github.url }}/docs/web/fastcgi/cherokee/)
+-   [Lighttpd]({{ site.github.url }}/docs/web/fastcgi/lighthttpd/)
+-   [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)
 -   [CGI]({{ site.github.url }}/old_site/CGI "CGI") via cgi-fcgi
 
 The following servers support FastCGI, but we currently do not have per-server configuration information:

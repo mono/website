@@ -62,7 +62,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/mono-winforms-list">mono-winforms-list</a></td>
-  <td><p>Used to discuss the <a href="{{ site.github.url }}/old_site/WinForms" title="WinForms">Windows.Forms</a> implementation for Mono.</p></td>
+  <td><p>Used to discuss the <a href="{{ site.github.url }}/docs/gui/winforms/">Windows.Forms</a> implementation for Mono.</p></td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/gtk-sharp-list">gtk-sharp-list</a></td>
@@ -98,11 +98,11 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-cecil">mono-cecil</a></td>
-  <td>Discussion on the CIL manipulation library <a href="{{ site.github.url }}/old_site/Cecil" title="Cecil">Cecil</a>.</td>
+  <td>Discussion on the CIL manipulation library <a href="{{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/>Cecil</a>.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/gendarme">gendarme</a></td>
-  <td>User and developer discussions on the <a href="{{ site.github.url }}/old_site/Gendarme" title="Gendarme">Gendarme</a> static code analyzer tool.</td>
+  <td>User and developer discussions on the <a href="{{ site.github.url }}/docs/tools+libraries/tools/gendarme/>Gendarme</a> static code analyzer tool.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-olive">mono-olive</a></td>
@@ -114,7 +114,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/moonlight-list">moonlight-list</a></td>
-  <td>Discussion on the development of <a href="{{ site.github.url }}/old_site/Moonlight" title="Moonlight">Moonlight</a>.</td>
+  <td>Discussion on the development of <a href="{{ site.github.url }}/docs/web/moonlight/">Moonlight</a>.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/monoxna">monoxna</a></td>

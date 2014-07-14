@@ -10,7 +10,7 @@ title: HeapShot
 
 HeapShot in action
 
-Heap Shot is a graphical UI used to explore memory allocation patterns in an application. It processes log files generated using the standard [profiling]({{ site.github.url }}/old_site/Profile "Profile") tools.
+Heap Shot is a graphical UI used to explore memory allocation patterns in an application. It processes log files generated using the standard [profiling]({{ site.github.url }}/docs/debug+profile/profile/) tools.
 
 HeapShot can either explore one snapshot of the heap, or it can be used to compare the objects in two separate snapshots from different points in time.
 
@@ -19,12 +19,12 @@ Obtaining Heap Shot
 
 If Heap Shot does not have an installer or package for your operating system, it is relatively easy to build. The source code is located on github at [https://github.com/mono/heap-shot](https://github.com/mono/heap-shot) . Once it has been checked out, you can simply run 'xbuild' in the heap-shot directory or you can open the solution file in either MonoDevelop or VisualStudio and build it there.
 
-If you are unfamiliar with Git, you should read the [Git Faq]({{ site.github.url }}/old_site/GitFAQ "GitFAQ") for information on how to check out the code.
+If you are unfamiliar with Git, you should read the [Git Faq]({{ site.github.url }}/community/contributing/gitfaq/) for information on how to check out the code.
 
 Enabling the profiler
 =====================
 
-Heap Shot relies on the [Log Profiler]({{ site.github.url }}/old_site/Profiler "Profiler") shipped as part of Mono 2.10+ and also the sgen garbage collector to generate the required profiling data. To enable the profiler in heapshot mode you must run the application to be examined with the following command line:
+Heap Shot relies on the [Log Profiler]({{ site.github.url }}/docs/debug+profile/profile/profiler/) shipped as part of Mono 2.10+ and also the sgen garbage collector to generate the required profiling data. To enable the profiler in heapshot mode you must run the application to be examined with the following command line:
 
 ``` bash
 mono --gc=sgen --profile=log:heapshot MyProgram.exe
@@ -32,7 +32,7 @@ mono --gc=sgen --profile=log:heapshot MyProgram.exe
 
 This activates the sgen garbage collector and also the profiler in 'heapshot' mode. This will result in the profiler writing a dump of every live object at the end of every garbage collection to a log file called 'output.mldp'.
 
-Note: By default the log profiler will not overwrite an existing log file. You must either specify a different filename when launching the profiler, as described in the [documentation]({{ site.github.url }}/old_site/Profiler#profiler-option-documentation "Profiler") or you must delete/rename existing logs before running the profiler.
+Note: By default the log profiler will not overwrite an existing log file. You must either specify a different filename when launching the profiler, as described in the [documentation](/docs/debug+profile/profile/profiler/#profiler-option-documentation "Profiler") or you must delete/rename existing logs before running the profiler.
 
 Using the GUI for HeapShot
 ==========================

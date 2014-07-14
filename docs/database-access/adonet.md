@@ -3,7 +3,7 @@ layout: docpage
 navgroup: docs
 title: ADO.NET
 ---
-See our [Database\_Access]({{ site.github.url }}/old_site/Database_Access "Database Access") page for more details.
+See our [Database\_Access]({{ site.github.url }}/docs/database-access/) page for more details.
 
 Status and tests for ADO.NET 2.0 are available in our [ADOTests]({{ site.github.url }}/old_site/ADOTests "ADOTests") page.
 
@@ -65,7 +65,7 @@ Testing
 |Oracle\</br\> (Mono)|System.Data.OracleClient /\</br\> System.Data.OracleClient|TestOracleClient.cs at\</br\> System.Data.OracleClient/Test|
 |ODBC\</br\> (Mono)|System.Data.Odbc /\</br\> System.Data|OdbcTest.cs (to connect to MS SQL Server)at\</br\> System.Data/Test|
 
--   [Testing non-connection classes]({{ site.github.url }}/old_site/Test_Suite "Test Suite") are done via mono's modified version of NUnit.
+-   [Testing non-connection classes]({{ site.github.url }}/community/contributing/test-suite/) are done via mono's modified version of NUnit.
 
 -   To run all the NUnit tests for Mono, you need the mcs source. cd to the root of the mcs source. To run it:
 

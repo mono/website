@@ -11,7 +11,7 @@ DllMaps are used to map windows library names (.dll) to linux/unix library names
 
 DllMaps are specfied in either the mono configuration file, or in assembly configuration files.
 
-The \<dllmap\> is a directive that can be used directly in the [\<configuration\>]({{ site.github.url }}/old_site/Config "Config") section.
+The \<dllmap\> is a directive that can be used directly in the \<configuration\> section.
 
 ### Children
 
@@ -81,6 +81,6 @@ to a different function in libdifferent.so, but to the same function in the libr
 Common Problems
 ---------------
 
--   [DllNotFoundException]({{ site.github.url }}/old_site/DllNotFoundException "DllNotFoundException")
+-   [DllNotFoundException]({{ site.github.url }}/docs/advanced/pinvoke/dllnotfoundexception/)
 
 

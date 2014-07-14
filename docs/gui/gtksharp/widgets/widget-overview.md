@@ -23,17 +23,17 @@ Overview of the widgets used in GTK\#
 
 **Widget Overview**
 
--   [The Button Widget]({{ site.github.url }}/old_site/GtkSharp:_Buttons "GtkSharp: Buttons")
--   [Labels]({{ site.github.url }}/old_site/GtkSharp:_Labels "GtkSharp: Labels")
--   [Arrows]({{ site.github.url }}/old_site/GtkSharp:_Arrows "GtkSharp: Arrows")
--   [Tooltips]({{ site.github.url }}/old_site/GtkSharp:_Tooltips "GtkSharp: Tooltips")
--   [Progress Bars]({{ site.github.url }}/old_site/GtkSharp:_Progress_Bars "GtkSharp: Progress Bars")
--   [Adjustments]({{ site.github.url }}/old_site/GtkSharp:_Adjustments "GtkSharp: Adjustments")
--   [Range Widgets]({{ site.github.url }}/old_site/GtkSharp:_Range_Widgets "GtkSharp: Range Widgets")
-    -   [Scrollbar Widgets]({{ site.github.url }}/old_site/GtkSharp:_Scrollbar_Widgets "GtkSharp: Scrollbar Widgets")
-    -   [Scale Widgets]({{ site.github.url }}/old_site/GtkSharp:_Scale_Widgets "GtkSharp: Scale Widgets")
+-   [The Button Widget]({{ site.github.url }}/docs/gui/gtksharp/widgets/buttons/)
+-   [Labels]({{ site.github.url }}/docs/gui/gtksharp/widgets/labels/)
+-   [Arrows]({{ site.github.url }}/docs/gui/gtksharp/widgets/arrows/)
+-   [Tooltips]({{ site.github.url }}/docs/gui/gtksharp/widgets/tooltips/)
+-   [Progress Bars]({{ site.github.url }}/docs/gui/gtksharp/widgets/progress-bars/)
+-   [Adjustments]({{ site.github.url }}/docs/gui/gtksharp/widgets/adjustments/)
+-   [Range Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/range-widgets/)
+    -   [Scrollbar Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/scrollbar-widgets/)
+    -   [Scale Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/scale-widgets/)
 
--   [Dialogs]({{ site.github.url }}/old_site/GtkSharp:_Dialogs "GtkSharp: Dialogs")
--   [Menu Widget Example (unwritten)](/index.php?title=GtkSharp:_Menu_Widget_Example&action=edit&redlink=1 "GtkSharp: Menu Widget Example (page does not exist)")
+-   [Dialogs]({{ site.github.url }}/docs/gui/gtksharp/widgets/dialogs/)
+-   Menu Widget Example (unwritten)
 
 

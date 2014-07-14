@@ -4,13 +4,13 @@ navgroup: docs
 title: Generational GC
 ---
 
-This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{ site.github.url }}/docs/internals/garbage-collector/sgen/working-with-sgen/).
+This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/working-with-sgen/).
 
 For a few releases, Mono has shipped with a new garbage collector, we call this the SGen garbage collector. This garbage collector can be enabled by passing the --gc=sgen flag to Mono or if you are embedding Mono, by linking against the `libmonosgen` library instead of the `libmono` library.
 
-The [Benchmark Suite]({{ site.github.url }}/docs/internals/garbage-collector/benchmark-suite/) continuously runs benchmarks for each Mono revision to track performance regressions using MonkeyWrench. The data is automatically collected and processed on this page: [http://wrench.mono-project.com/gcbench/](http://wrench.mono-project.com/gcbench/).
+The [Benchmark Suite]({{ site.github.url }}/docs/advanced/garbage-collector/benchmark-suite/) continuously runs benchmarks for each Mono revision to track performance regressions using MonkeyWrench. The data is automatically collected and processed on this page: [http://wrench.mono-project.com/gcbench/](http://wrench.mono-project.com/gcbench/).
 
-On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace]({{ site.github.url }}/docs/internals/garbage-collector/sgen/dtrace/).
+On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/dtrace/).
 
 Garbage Collection
 ==================
@@ -96,7 +96,7 @@ At a major collection all objects for which this is possible are copied to newly
 Nursery Collection
 ==================
 
-The nursery is the generation where objects are initially. In SGen, it is a contiguous region of memory that is allocated on starts up, and it does not change size. The default size is 4 MB, but a different size can be specified via the environment variable `MONO_GC_PARAMS` when invoking Mono. See the man page for details or [Working with SGen](/index.php?title=Working_with_SGen&action=edit&redlink=1 "Working with SGen (page does not exist)").
+The nursery is the generation where objects are initially. In SGen, it is a contiguous region of memory that is allocated on starts up, and it does not change size. The default size is 4 MB, but a different size can be specified via the environment variable `MONO_GC_PARAMS` when invoking Mono. See the man page for details or Working with SGen.
 
 Allocation
 ----------

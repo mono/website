@@ -6,13 +6,13 @@ title: MonoSandbox
 
 Starting with Mono 2.6, we have a security sandbox that allows executing untrusted code side-by-side with trusted code.
 
-This work was part of the [Moonlight project](/index.php?title=Moonlight_project&action=edit&redlink=1 "Moonlight project (page does not exist)") to create an open source and cross platform Silverlight implementation and to help projects like Second Life.
+This work was part of the [Moonlight project]({{ site.github.url }}/docs/web/moonlight/) to create an open source and cross platform Silverlight implementation and to help projects like Second Life.
 
 Originally Mono did not have a sandbox, but Moonlight required us to create a sandbox that would allow us to run untrusted code, potentially malicious code inside the Mono runtime.
 
 For more information on the Mono sandbox, see:
 
--   [Moonlight2CoreCLR]({{ site.github.url }}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR"): The CoreCLR security system, as used in Silverlight.
+-   [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/): The CoreCLR security system, as used in Silverlight.
 -   [SecurityValidation]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation"): The process we used to secure the sandbox.
 
 Security Issues
@@ -36,7 +36,7 @@ Metadata integrity ensures that assemblies (.exe or .dll) programs are well form
 CIL Verification and CoreCLR Security
 -------------------------------------
 
-Mono implements the [CoreCLR]({{ site.github.url }}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR") security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
+Mono implements the [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/) security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
 
 For example, trusted code (the code that implements the core libraries, like the String class) get access to both pointer arithmetic operations from the CIL as well as getting full access to any APIs that the system provides.
 
@@ -47,5 +47,5 @@ For example, the System.IO.File.Open() routine can be called by trusted code (th
 Audit of the codebase
 ---------------------
 
-The [SecurityValidation]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation") page describes how the [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR]({{ site.github.url }}/old_site/Moonlight2CoreCLR "Moonlight2CoreCLR").
+The [SecurityValidation]({{ site.github.url }}/old_site/SecurityValidation "SecurityValidation") page describes how the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/).
 

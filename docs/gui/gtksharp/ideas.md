@@ -4,7 +4,7 @@ navgroup: docs
 title: GtkSharpIdeas
 ---
 
-Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") API.
+Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) API.
 
 Data Binding
 ============
@@ -50,7 +50,7 @@ A few subjects suggested:
     -   Toolbars
     -   Session management? (Better not ;-)
 
--   [Developing Responsive Applications]({{ site.github.url }}/old_site/Responsive_Applications "Responsive Applications") (Work-in-Progress).
+-   [Developing Responsive Applications]({{ site.github.url }}/docs/gui/gtksharp/responsive-applications/) (Work-in-Progress).
 
 -   Deployment: confusion about which installer to use (there are three available).
 

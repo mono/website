@@ -11,7 +11,7 @@ MonoDevelop
 
 [Monodevelop](http://www.monodevelop.org) is a Mono/C\# Integrated Developement Environment for Linux and MacOS X.
 
-In late 2003, a few developers from the Mono community began migrating SharpDevelop, a successful .NET open source IDE from System.Windows.Forms on Windows to Gtk\# on Linux. Since Mono 1.0 Beta 2, MonoDevelop is bundled with Mono releases and is available from the [Mono download page]({{ site.github.url }}/old_site/Downloads "Downloads")
+In late 2003, a few developers from the Mono community began migrating SharpDevelop, a successful .NET open source IDE from System.Windows.Forms on Windows to Gtk\# on Linux. Since Mono 1.0 Beta 2, MonoDevelop is bundled with Mono releases and is available from the [Mono download page]({{ site.github.url }}/download/)
 
 MonoDevelop parses your C\# and VB programs as you type them and is able to provide contextual completion of methods.
 

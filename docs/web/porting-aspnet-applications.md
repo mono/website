@@ -1,84 +1,12 @@
 ---
-layout: obsolete
-title: "Guide: Porting ASP.NET Applications"
-lastmodified: '2011-07-16'
-permalink: /old_site/Guide:_Porting_ASP.NET_Applications/
-redirect_from:
-  - /Guide:_Porting_ASP.NET_Applications/
+layout: docpage
+navgroup: docs
+title: Porting ASP.NET Applications
 ---
 
-Guide: Porting ASP.NET Applications
-===================================
-
-by [Marek Habersack](/index.php?title=User:MarekHabersack&action=edit&redlink=1 "User:MarekHabersack (page does not exist)")
+by Marek Habersack
 
 This guide is meant to help Linux and Windows developers alike in porting ASP.NET 2.0 applications from Windows to Unix operating systems.
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#introduction">1 Introduction</a></li>
-<li><a href="#getting-started">2 Getting started</a>
-<ul>
-<li><a href="#prerequisite-software">2.1 Prerequisite software</a></li>
-</ul></li>
-<li><a href="#porting-the-code">3 Porting the code</a></li>
-<li><a href="#required-assemblies">4 Required assemblies</a>
-<ul>
-<li><a href="#configuration-files">4.1 Configuration files</a>
-<ul>
-<li><a href="#dbproviderfactory-configuration">4.1.1 DbProviderFactory configuration</a></li>
-<li><a href="#npgsql-and-app-code">4.1.2 Npgsql and ~/App_Code</a></li>
-<li><a href="#connection-string">4.1.3 Connection string</a></li>
-<li><a href="#membershiproles-provider-configuration">4.1.4 Membership/Roles provider configuration</a></li>
-<li><a href="#filesystem-paths">4.1.5 Filesystem paths</a></li>
-<li><a href="#machinekey-storage">4.1.6 machineKey storage</a></li>
-<li><a href="#file-access-permissions">4.1.7 File access permissions</a></li>
-</ul></li>
-<li><a href="#markup">4.2 Markup</a>
-<ul>
-<li><a href="#url-case">4.2.1 URL case</a></li>
-</ul></li>
-<li><a href="#code-behind">4.3 Code-Behind</a>
-<ul>
-<li><a href="#filesystem-path-syntax">4.3.1 Filesystem path syntax</a></li>
-<li><a href="#file-name-case">4.3.2 File name case</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#porting-the-data">5 Porting the data</a>
-<ul>
-<li><a href="#mdf-files">5.1 MDF files</a></li>
-<li><a href="#npgsql-data-provider">5.2 Npgsql data provider</a>
-<ul>
-<li><a href="#membershiprolesprofile-provider-schema">5.2.1 Membership/Roles/Profile provider schema</a></li>
-</ul></li>
-<li><a href="#source-code">5.3 Source code</a>
-<ul>
-<li><a href="#data-provider-changes">5.3.1 Data provider changes</a></li>
-</ul></li>
-<li><a href="#xsd-files">5.4 XSD files</a>
-<ul>
-<li><a href="#annotated-files">5.4.1 Annotated files</a></li>
-<li><a href="#modifying-annotated-files">5.4.2 Modifying annotated files</a></li>
-<li><a href="#editing-queries">5.4.3 Editing queries</a></li>
-</ul></li>
-<li><a href="#sql-syntax-differences">5.5 SQL syntax differences</a></li>
-<li><a href="#sql-type-mapping">5.6 SQL type mapping</a></li>
-<li><a href="#stored-procedures">5.7 Stored procedures</a>
-<ul>
-<li><a href="#tips-for-porting">5.7.1 Tips for porting</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#running-the-application-on-unix">6 Running the application on Unix</a></li>
-<li><a href="#supporting-multiple-platforms">7 Supporting Multiple Platforms</a></li>
-<li><a href="#more-tutorials">8 More Tutorials</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
 
 Introduction
 ------------
@@ -96,7 +24,7 @@ Getting started
 
 No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
 
-> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image]({{ site.github.url }}/old_site/Downloads "Downloads") to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
+> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image]({{ site.github.url }}/download/) to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
 
 If your application uses MS SQL then on your Unix system you will need to install the [PostgreSQL](http://postgresql.org/) RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
 

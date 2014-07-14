@@ -8,12 +8,12 @@ Mono has an implementation of ASP.NET 2.0, ASP.NET MVC and ASP.NET AJAX.
 
 Quick Resources:
 
--   [ASP.NET FAQ]({{ site.github.url }}/old_site/FAQ:_ASP.NET "FAQ: ASP.NET") for common questions on ASP.NET.
--   [Hosting on Apache servers]({{ site.github.url }}/old_site/Mod_mono "Mod mono").
--   [Hosting with FastCGI-based servers]({{ site.github.url }}/old_site/FastCGI "FastCGI").
+-   [ASP.NET FAQ]({{ site.github.url }}/docs/faq/aspnet/) for common questions on ASP.NET.
+-   [Hosting on Apache servers]({{ site.github.url }}/docs/web/mod_mono/).
+-   [Hosting with FastCGI-based servers]({{ site.github.url }}/docs/web/fastcgi/).
 -   [Hosting with CGI-based servers]({{ site.github.url }}/old_site/CGI "CGI").
--   [Hosting with Nginx]({{ site.github.url }}/old_site/FastCGI_Nginx "FastCGI Nginx").
--   [Porting ASP.NET applications]({{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications").
+-   [Hosting with Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/).
+-   [Porting ASP.NET applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/).
 
 Mono's ASP.NET implementations supports two kinds of applications:
 
@@ -27,11 +27,11 @@ Running ASP.NET applications
 
 To run your ASP.NET applications with Mono, you have three classes of options:
 
--   Apache hosting: use [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono"), a module that allows Apache to serve ASP.NET applications.
--   FastCGI hosting: use the [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") hosting if you have a web server that supports the FastCGI protocol (for example [Nginx]({{ site.github.url }}/old_site/FastCGI_Nginx "FastCGI Nginx")) for extending the server. You also may use a web server that only has support for [CGI]({{ site.github.url }}/old_site/CGI "CGI") using **cgi-fcgi**.
+-   Apache hosting: use [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/), a module that allows Apache to serve ASP.NET applications.
+-   FastCGI hosting: use the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) hosting if you have a web server that supports the FastCGI protocol (for example [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)) for extending the server. You also may use a web server that only has support for [CGI]({{ site.github.url }}/old_site/CGI "CGI") using **cgi-fcgi**.
 -   XSP: this is a simple way to get started, a lightweight and simple webserver written in C\#.
 
-For deploying applications, we recommend the use of the [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") or [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") approaches, as that will give you all the configuration options and flexibility that come with using Apache or a FastCGI server.
+For deploying applications, we recommend the use of the [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) or [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) approaches, as that will give you all the configuration options and flexibility that come with using Apache or a FastCGI server.
 
 For quickly getting started, get familiar with Mono and ASP.NET, XSP is the ideal solution. Keep in mind that XSP is a very limited server and is only useful to get acquainted with ASP.NET and Mono, it only support HTTP 1.0 and does not provide much extensibility or configuration.
 
@@ -40,13 +40,13 @@ More advaned users can use the HttpListener and the ASP.NET hosting to create th
 ASP.NET hosting with Apache
 ---------------------------
 
-The [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") Apache module is used to run ASP.NET applications within the [Apache](http://httpd.apache.org) web server.
+The [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) Apache module is used to run ASP.NET applications within the [Apache](http://httpd.apache.org) web server.
 
 The mod\_mono module runs within an Apache process and passes all the requests to ASP.NET applications to an external Mono process that actually hosts your ASP.NET applications. The external ASP.NET host is called "mod-mono-server" and is part of the XSP module.
 
-To use this, you must download and install the mod\_mono and xsp components of Mono. mod\_mono contains the actual Apache module, and xsp contains the actual ASP.NET hosting engine, both are available from our [download page]({{ site.github.url }}/old_site/Downloads "Downloads").
+To use this, you must download and install the mod\_mono and xsp components of Mono. mod\_mono contains the actual Apache module, and xsp contains the actual ASP.NET hosting engine, both are available from our [download page]({{ site.github.url }}/download/).
 
-See the [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") page for details on installation and configuration.
+See the [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) page for details on installation and configuration.
 
 ASP.NET hosting with Nginx
 --------------------------
@@ -56,7 +56,7 @@ ASP.NET hosting with Nginx
 ASP.NET hosting with XSP
 ------------------------
 
-XSP is a standalone web server written in C\# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page]({{ site.github.url }}/old_site/Downloads "Downloads") (look for XSP web server) or from the [Anonymous SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository (module name: xsp).
+XSP is a standalone web server written in C\# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page]({{ site.github.url }}/download/) (look for XSP web server) or from the [Anonymous SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository (module name: xsp).
 
 The easiest way to start XSP is to run it from within the root directory of your application. It will serve requests on port 8080. Place additional assemblies in the bin directory. Other XSP options can be set on the command line, such as the application directory and the port to listen on.
 
@@ -77,7 +77,7 @@ You can now browse to <http://localhost:8080> and see various sample programs
 
 ### SSL support in XSP
 
-XSP supports SSL and TLS Client Certificates. For further details about setting it up, see the [UsingClientCertificatesWithXSP]({{ site.github.url }}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP") document.
+XSP supports SSL and TLS Client Certificates. For further details about setting it up, see the [UsingClientCertificatesWithXSP]({{ site.github.url }}/docs/web/using-clientcertificates-with-xsp/) document.
 
 ### Configuration
 
@@ -131,10 +131,10 @@ Work in Progress
 SVN access
 ----------
 
-Users interested in the latest version of mod\_mono and xsp can retrieve these from our public [anonymous SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository. The module names are **mod\_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
+Users interested in the latest version of mod\_mono and xsp can retrieve these from our public [anonymous SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository. The module names are **mod\_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
 
 Designer
 --------
 
-There is work in progress on an [ASP.NET Designer]({{ site.github.url }}/old_site/ASP.NET_Visual_Designer) the designer will eventually be integrated into the [MonoDevelop IDE]({{ site.github.url }}/old_site/Development_Environments).
+There is work in progress on an [ASP.NET Designer]({{ site.github.url }}/old_site/ASP.NET_Visual_Designer) the designer will eventually be integrated into the [MonoDevelop IDE]({{ site.github.url }}/docs/getting-started/development-environments/).
 

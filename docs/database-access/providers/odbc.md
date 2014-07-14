@@ -104,7 +104,7 @@ Testing ODBC provider with IBM DB2 Universal Database
 
 -   [IBM web page about unixODBC and DB2](http://www-306.ibm.com/software/data/db2/udb/ad/v8/cli/t0010406.htm)
 
--   The ODBC provider is similar to the [IBM DB2]({{ site.github.url }}/old_site/IBM_DB2 "IBM DB2") provider.
+-   The ODBC provider is similar to the [IBM DB2]({{ site.github.url }}/docs/database-access/providers/db2/) provider.
 
 Testing ODBC provider with MySQL
 --------------------------------

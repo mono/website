@@ -4,7 +4,7 @@ navgroup: docs
 title: Monodoc
 ---
 
-Monodoc is a set of libraries and applications for viewing and editing Mono class library documentation. Monodoc is part of the [Mono Documentation Project]({{ site.github.url }}/old_site/Documentation "Documentation").
+Monodoc is a set of libraries and applications for viewing and editing Mono class library documentation. Monodoc is part of the [Mono Documentation Project]({{ site.github.url }}/docs/).
 
 Viewing The Documentation
 =========================
@@ -12,7 +12,7 @@ Viewing The Documentation
 The Gtk\# Documentation Browser
 -------------------------------
 
-The doc browser is part of the [mono-tools](/index.php?title=Mono-tools&action=edit&redlink=1 "Mono-tools (page does not exist)") package, avaliable from the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page.
+The doc browser is part of the mono-tools package, avaliable from the [Downloads]({{ site.github.url }}/download/) page.
 
 Once installed, you can launch it from the "Programing" section of the Applications menu, as shown in the image below, or by typing *monodoc* in a terminal window.
 
@@ -32,7 +32,7 @@ Depending on the libraries installed on your system it can show additionally:
 -   Mozilla library
 -   Monkeyguide (Mono guide)
 
-Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in [Generating Documentation]({{ site.github.url }}/old_site/Generating_Documentation "Generating Documentation"). Also, from inside the browser, you can [contribute]({{ site.github.url }}/old_site/Monodoc_Contributing "Monodoc Contributing") to the documentation of the Mono project.
+Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in [Generating Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/). Also, from inside the browser, you can [contribute]({{ site.github.url }}/docs/tools+libraries/monodoc/contributing/) to the documentation of the Mono project.
 
 Online Documentation
 --------------------
@@ -74,11 +74,11 @@ mod 'M:System.Collections.ArrayList.ToArray(System.Type)'
 Creating Documentation, Contributing
 ====================================
 
--   For information on how to document your own class libraries using monodoc, see [Generating Documentation]({{ site.github.url }}/old_site/Generating_Documentation "Generating Documentation").
--   If you would like to contribute to the mono class library documentation (and we would love it if you did!), see [Monodoc Contributing]({{ site.github.url }}/old_site/Monodoc_Contributing "Monodoc Contributing").
+-   For information on how to document your own class libraries using monodoc, see [Generating Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/).
+-   If you would like to contribute to the mono class library documentation (and we would love it if you did!), see [Monodoc Contributing]({{ site.github.url }}/docs/tools+libraries/monodoc/contributing/).
 
 My Documentation in Monodoc
 ===========================
 
-See the [assembler]({{ site.github.url }}/old_site/Assembler "Assembler") page for a description how to add your documentation to monodoc permanently.
+See the [assembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) page for a description how to add your documentation to monodoc permanently.
 

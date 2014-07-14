@@ -1,46 +1,12 @@
 ---
-layout: obsolete
-title: "FastCGI Cherokee"
-lastmodified: '2008-06-25'
-permalink: /old_site/FastCGI_Cherokee/
-redirect_from:
-  - /FastCGI_Cherokee/
+layout: docpage
+navgroup: docs
+title: Cherokee
 ---
-
-FastCGI Cherokee
-================
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") support for the Cherokee server.
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#introduction">1 Introduction</a>
-<ul>
-<li><a href="#configuration-tested-on">1.1 Configuration Tested On...</a></li>
-</ul></li>
-<li><a href="#general-warnings">2 General Warnings</a></li>
-<li><a href="#using-paths-recommended">3 Using Paths [Recommended]</a>
-<ul>
-<li><a href="#warnings">3.1 Warnings</a></li>
-<li><a href="#step-1-setting-up-the-handler">3.2 Step 1: Setting Up the Handler</a></li>
-</ul></li>
-<li><a href="#using-extensions">4 Using Extensions</a>
-<ul>
-<li><a href="#warnings_2">4.1 Warnings</a></li>
-<li><a href="#step-1-setting-up-the-handler_2">4.2 Step 1: Setting Up the Handler</a></li>
-<li><a href="#step-2-adding-index-pages">4.3 Step 2: Adding Index Pages</a></li>
-</ul></li>
-<li><a href="#bada-bing">5 Bada Bing!</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Cherokee server.
 
 Introduction
 ------------
@@ -55,7 +21,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{ site.github.url }}/old_site/FastCGI#importantinformation "FastCGI")" on the main page.
+Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{ site.github.url }}/docs/web/fastcgi/#importantinformation)" on the main page.
 
 Using Paths [Recommended]
 -------------------------

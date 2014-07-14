@@ -6,7 +6,7 @@ title: Gendarme
 
 Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.
 
-Gendarme uses the [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") library to introspect code.
+Gendarme uses the [Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/) library to introspect code.
 
 Why ?
 =====
@@ -19,7 +19,7 @@ History
 
 Gendarme was originally created by Sebastien Pouliot to assist in the security auditing process in Mono. Aaron Tomb later integrated his .NET bug-finding code (supported by the 2005 Google Summer of Code, GSoC) into the same framework. Since then the number of [contributors](http://anonsvn.mono-project.com/source/trunk/mono-tools/gendarme/AUTHORS) and rules has been growing.
 
-Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](http://code.google.com/opensource/ghop/2007-8/) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects]({{ site.github.url }}/old_site/StudentProjects "StudentProjects") page.
+Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](http://code.google.com/opensource/ghop/2007-8/) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects]({{ site.github.url }}/community/google-summer-of-code/projects/) page.
 
 Runners
 =======
@@ -43,7 +43,7 @@ A System.Windows.Forms-based GUI runner is also part of the Gendarme distributio
 CruiseControl.NET
 -----------------
 
-[Daniel Nauck](http://www.mono-project.de/) (dna on [IRC]({{ site.github.url }}/old_site/IRC "IRC")) contributed Gendarme support for [CC.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET). You can find the documentation [here](http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme). Note: The Gendarme task is available since CC.NET version 1.4.3.
+[Daniel Nauck](http://www.mono-project.de/) (dna on [IRC]({{ site.github.url }}/community/help/irc/)) contributed Gendarme support for [CC.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET). You can find the documentation [here](http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme). Note: The Gendarme task is available since CC.NET version 1.4.3.
 
 NAnt
 ----
@@ -112,16 +112,16 @@ Other Cool Stuff
 Resources
 =========
 
--   What's planned ? [Gendarme.Roadmap]({{ site.github.url }}/old_site/Gendarme.Roadmap "Gendarme.Roadmap")
+-   What's planned ? [Gendarme.Roadmap]({{ site.github.url }}/docs/tools/gendarme/roadmap/)
 -   What's happening ? You can read real-time news on Gendarme's development on its [Ohloh's journal](http://www.ohloh.net/projects/gendarme/messages).
 
 Getting Help
 ------------
 
--   A list of frequently asked questions can be found in [Gendarme.FAQ]({{ site.github.url }}/old_site/Gendarme.FAQ "Gendarme.FAQ").
--   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ]({{ site.github.url }}/old_site/Gendarme.Development.FAQ "Gendarme.Development.FAQ").
+-   A list of frequently asked questions can be found in [Gendarme.FAQ]({{ site.github.url }}/docs/tools/gendarme/faq/).
+-   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ]({{ site.github.url }}/docs/tools/gendarme/development-faq/).
 -   You are welcome to participate in Gendarme's discussions on [it's Google Group](http://groups.google.com/group/gendarme). This group is used for both users and developers of Gendarme.
--   Gendarme's fans are also present on [IRC]({{ site.github.url }}/old_site/IRC "IRC") (\#gendarme on GIMPnet).
+-   Gendarme's fans are also present on [IRC]({{ site.github.url }}/community/help/irc/) (\#gendarme on GIMPnet).
 
 Feedback
 ========

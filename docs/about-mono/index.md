@@ -13,9 +13,9 @@ The Components
 
 There are several components that make up Mono:
 
-**[C\# Compiler]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler")** - Mono's C\# compiler is feature complete for C\# 1.0, 2.0, 3.0, and 4.0 (ECMA). A good description of the feature of the various versions is available on [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
+**[C\# Compiler]({{ site.github.url }}/docs/about-mono/languages/csharp/)** - Mono's C\# compiler is feature complete for C\# 1.0, 2.0, 3.0, and 4.0 (ECMA). A good description of the feature of the various versions is available on [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
 
-**[Mono Runtime]({{ site.github.url }}/old_site/Mono:Runtime "Mono:Runtime")** - The runtime implements the ECMA Common Language Infrastructure (CLI). The runtime provides a Just-in-Time (JIT) compiler, an Ahead-of-Time compiler (AOT), a library loader, the garbage collector, a threading system and interoperability functionality.
+**[Mono Runtime]({{ site.github.url }}/docs/advanced/runtime/)** - The runtime implements the ECMA Common Language Infrastructure (CLI). The runtime provides a Just-in-Time (JIT) compiler, an Ahead-of-Time compiler (AOT), a library loader, the garbage collector, a threading system and interoperability functionality.
 
 **Base Class Library** - The Mono platform provides a comprehensive set of classes that provide a solid foundation to build applications on. These classes are compatible with Microsoft's .Net Framework classes.
 
@@ -24,22 +24,22 @@ There are several components that make up Mono:
 Mono Feature Highlights
 -----------------------
 
-[Multi-Platform]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms")  
-Runs on [Linux](/index.php?title=Linux&action=edit&redlink=1 "Linux (page does not exist)"), [OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX"), [BSD]({{ site.github.url }}/old_site/Mono:BSD "Mono:BSD"), and [Microsoft Windows]({{ site.github.url }}/old_site/Using_Mono_on_Windows), including [x86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86"), [x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64"), [ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM"), [s390]({{ site.github.url }}/old_site/Mono:S390 "Mono:S390"), [PowerPC]({{ site.github.url }}/old_site/Mono:PowerPC "Mono:PowerPC") and much more
+[Multi-Platform]({{ site.github.url }}/docs/about-mono/supported-platforms/)  
+Runs on [Linux]({{ site.github.url }}/docs/about-mono/platforms/linux/), [OS X]({{ site.github.url }}/docs/about-mono/platforms/osx/), [BSD]({{ site.github.url }}/docs/about-mono/platforms/bsd/), and [Microsoft Windows]({{ site.github.url }}/docs/getting-started/install/windows/), including [x86]({{ site.github.url }}/docs/about-mono/platforms/x86/), [x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/), [ARM]({{ site.github.url }}/docs/about-mono/platforms/arm/), [s390]({{ site.github.url }}/docs/about-mono/platforms/s390/), [PowerPC]({{ site.github.url }}/docs/about-mono/platforms/powerpc/) and much more
 
-[Multi-Language]({{ site.github.url }}/old_site/Languages "Languages")  
-Develop in [C\# 4.0]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8]({{ site.github.url }}/old_site/VisualBasic.NET_support), [Java]({{ site.github.url }}/old_site/Java "Java"), [Python]({{ site.github.url }}/old_site/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
+[Multi-Language]({{ site.github.url }}/docs/about-mono/languages/)  
+Develop in [C\# 4.0]({{ site.github.url }}/docs/about-mono/languages/csharp/) (including LINQ and `dynamic`), [VB 8]({{ site.github.url }}/docs/about-mono/languages/visualbasic/), [Java]({{ site.github.url }}/docs/about-mono/languages/java/), [Python]({{ site.github.url }}/old_site/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
 
 Binary Compatible  
-Built on an implementation of the [ECMA]({{ site.github.url }}/old_site/ECMA "ECMA")'s [Common Language Infrastructure]({{ site.github.url }}/old_site/Mono:Runtime "Mono:Runtime") and [C\#]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler")
+Built on an implementation of the [ECMA]({{ site.github.url }}/docs/about-mono/languages/ecma/)'s [Common Language Infrastructure]({{ site.github.url }}/docs/advanced/runtime/) and [C\#]({{ site.github.url }}/docs/about-mono/languages/csharp/)
 
-[Microsoft Compatible API]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability")  
-Run [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET"), [ADO.NET]({{ site.github.url }}/old_site/ADO.NET "ADO.NET"), [Silverlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") and [Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms") applications without recompilation
+[Microsoft Compatible API]({{ site.github.url }}/docs/getting-started/application-portability/)  
+Run [ASP.NET]({{ site.github.url }}/docs/web/aspnet/), [ADO.NET]({{ site.github.url }}/docs/database-access/adonet/), [Silverlight]({{ site.github.url }}/docs/web/moonlight/) and [Windows.Forms]({{ site.github.url }}/docs/gui/winforms/) applications without recompilation
 
-[Open Source, Free Software]({{ site.github.url }}/old_site/FAQ:_Licensing)  
+[Open Source, Free Software]({{ site.github.url }}/docs/faq/licensing/)  
 Mono's runtime, compilers, and libraries are distributed under OSI approved licenses and are available for dual-licensing
 
-[Comprehensive Technology Coverage]({{ site.github.url }}/old_site/Plans "Plans")  
+[Comprehensive Technology Coverage]({{ site.github.url }}/docs/about-mono/plans/)  
 Bindings and managed implementations of many popular libraries and protocols
 
 The Benefits
@@ -53,16 +53,16 @@ There are many benefits to choosing Mono for application development:
 
 **Base Class Library** - Having a comprehensive class library provides thousands of built in classes to increase productivity. Need socket code or a hashtable? There's no need to write your own as it's built into the platform.
 
-**Cross Platform** - Mono is built to be cross platform. Mono runs on [Linux]({{ site.github.url }}/old_site/Mono:Linux "Mono:Linux"), [Microsoft Windows]({{ site.github.url }}/old_site/Using_Mono_on_Windows), [Mac OS X]({{ site.github.url }}/old_site/Mono:OSX "Mono:OSX"), [BSD]({{ site.github.url }}/old_site/Mono:BSD "Mono:BSD"), and [Sun Solaris]({{ site.github.url }}/old_site/Mono:Solaris "Mono:Solaris"), [Nintendo Wii]({{ site.github.url }}/old_site/Mono:Wii "Mono:Wii"), [Sony PlayStation 3]({{ site.github.url }}/old_site/Mono:PlayStation3 "Mono:PlayStation3"), [Apple iPhone]({{ site.github.url }}/old_site/Mono:Iphone "Mono:Iphone"). It also runs on [x86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86"), [x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64"), [IA64]({{ site.github.url }}/old_site/Mono:IA64 "Mono:IA64"), [PowerPC]({{ site.github.url }}/old_site/Mono:PowerPC "Mono:PowerPC"), [SPARC (32)]({{ site.github.url }}/old_site/Mono:SPARC "Mono:SPARC"), [ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM"), [Alpha](/index.php?title=Mono:Alpha&action=edit&redlink=1 "Mono:Alpha (page does not exist)"), [s390, s390x (32 and 64 bits)]({{ site.github.url }}/old_site/Mono:S390 "Mono:S390") and more. Developing your application with Mono allows you to run on nearly any computer in existance ([details](/index.php?title=Platforms&action=edit&redlink=1 "Platforms (page does not exist)")).
+**Cross Platform** - Mono is built to be cross platform. Mono runs on [Linux]({{ site.github.url }}/docs/about-mono/platforms/linux/), [Microsoft Windows]({{ site.github.url }}/docs/getting-started/install/windows/), [Mac OS X]({{ site.github.url }}/docs/about-mono/platforms/osx/), [BSD]({{ site.github.url }}/docs/about-mono/platforms/bsd/), and [Sun Solaris]({{ site.github.url }}/docs/about-mono/platforms/solaris/), [Nintendo Wii]({{ site.github.url }}/docs/about-mono/platforms/wii/), [Sony PlayStation 3]({{ site.github.url }}/docs/about-mono/platforms/playstation3/), [Apple iPhone]({{ site.github.url }}/docs/about-mono/platforms/iphone/). It also runs on [x86]({{ site.github.url }}/docs/about-mono/platforms/x86/), [x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/), [IA64]({{ site.github.url }}/docs/about-mono/platforms/ia64/), [PowerPC]({{ site.github.url }}/docs/about-mono/platforms/powerpc/), [SPARC (32)]({{ site.github.url }}/docs/about-mono/platforms/sparc/), [ARM]({{ site.github.url }}/docs/about-mono/platforms/arm/), Alpha, [s390, s390x (32 and 64 bits)]({{ site.github.url }}/docs/about-mono/platforms/s390/) and more. Developing your application with Mono allows you to run on nearly any computer in existance.
 
-**Common Language Runtime (CLR)** - The CLR allows you to choose the programming language you like best to work with, and it can interoperate with code written in any other CLR language. For example, you can write a class in C\#, inherit from it in VB.Net, and use it in Eiffel. You can choose to write code in Mono in a [variety of programming languages]({{ site.github.url }}/old_site/Languages "Languages").
+**Common Language Runtime (CLR)** - The CLR allows you to choose the programming language you like best to work with, and it can interoperate with code written in any other CLR language. For example, you can write a class in C\#, inherit from it in VB.Net, and use it in Eiffel. You can choose to write code in Mono in a [variety of programming languages]({{ site.github.url }}/docs/about-mono/languages/).
 
 Other Uses
 ----------
 
-[Scripting]({{ site.github.url }}/old_site/Scripting_With_Mono "Scripting With Mono") and [Embedding]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") - The Mono runtime can also be used to script your applications by embedding it inside other applications, to allow managed code and scripts to run in a native application.
+[Scripting]({{ site.github.url }}/docs/advanced/embedding/scripting/) and [Embedding]({{ site.github.url }}/docs/advanced/embedding/) - The Mono runtime can also be used to script your applications by embedding it inside other applications, to allow managed code and scripts to run in a native application.
 
-See [Embedding Mono]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") for details on how to embed Mono.
+See [Embedding Mono]({{ site.github.url }}/docs/advanced/embedding/) for details on how to embed Mono.
 
-See [Scripting With Mono]({{ site.github.url }}/old_site/Scripting_With_Mono "Scripting With Mono") for strategies on how to script your application using the Mono runtime.
+See [Scripting With Mono]({{ site.github.url }}/docs/advanced/embedding/scripting/) for strategies on how to script your application using the Mono runtime.
 

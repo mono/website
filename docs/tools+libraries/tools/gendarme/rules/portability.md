@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Portability"
 ---
 
-[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s portability rules are located in the **Gendarme.Rules.Portability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Portability/).
+[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s portability rules are located in the **Gendarme.Rules.Portability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Portability/).
 
 <table>
 <col width="100%" />

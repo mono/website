@@ -6,7 +6,7 @@ title: GtkSharpDetails
 
 Gtk\# 2.0 has been released.
 
-For a list of the new features see [Whats new on Gtk\# 2]({{ site.github.url }}/old_site/GtkSharpNewInVersion2x "GtkSharpNewInVersion2x") page, for a list of upcoming features see [GtkSharpPlan]({{ site.github.url }}/old_site/GtkSharpPlan "GtkSharpPlan").
+For a list of the new features see [Whats new on Gtk\# 2]({{ site.github.url }}/docs/gui/gtksharp/new-in-version-2x/) page, for a list of upcoming features see [GtkSharpPlan]({{ site.github.url }}/docs/gui/gtksharp/plan/).
 
 Introduction
 ------------
@@ -15,9 +15,9 @@ Introduction
 
 [![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png "Enlarge")
 
-iFolder, a [GTK\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") application
+iFolder, a [GTK\#]({{ site.github.url }}/docs/gui/gtksharp/) application
 
-Gtk\#, a [GUI Toolkit]({{ site.github.url }}/old_site/Gui_Toolkits "Gui Toolkits"), is a set of .NET bindings for the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK\# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
+Gtk\#, a [GUI Toolkit]({{ site.github.url }}/docs/gui/gui-toolkits/), is a set of .NET bindings for the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK\# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
 
 Applications built using Gtk\# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk\# and the native theme to make your applications look like native Windows applications. At this point, running Gtk\# applications on MacOS requires the user to run the X11 server.
 
@@ -32,7 +32,7 @@ Availability
 
 Gtk\# is available for both Unix and Windows.
 
--   For Unix, go [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads").
+-   For Unix, go [Downloads]({{ site.github.url }}/download/).
 -   For Windows go [here](http://forge.novell.com/modules/xfmod/project/?gtks-inst4win).
 
 Tutorials
@@ -40,30 +40,30 @@ Tutorials
 
 ### Beginning to use Gtk\#
 
--   [Beginners Guide to Gtk\#]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
+-   [Beginners Guide to Gtk\#]({{ site.github.url }}/gui/gtksharp/beginners-guide/)
     -   An overview of Gtk\# and step-by-step description of a simple application.
--   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/old_site/GtkSharp:_Hello_World "GtkSharp: Hello World")
+-   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/gui/gtksharp/hello-world/)
     -   A short 'Hello World' style introduction to Gtk\#
 -   [Gtk\# in MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
     -   Creating a Gtk\# application with [Monodevelop's](http://www.monodevelop.com/Main_Page) GUI designer, Stetic.
 
 ### Gtk\# GUI details and techniques
 
--   [Overview of the widgets used in Gtk\#]({{ site.github.url }}/old_site/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview")
--   [Widget Layout and Packing]({{ site.github.url }}/old_site/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
--   [Creating Responsive GUI applications with Gtk\#]({{ site.github.url }}/old_site/Responsive_Applications "Responsive Applications")
--   [Creating Notification Icons]({{ site.github.url }}/old_site/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Overview of the widgets used in Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-overview/)
+-   [Widget Layout and Packing]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
+-   [Creating Responsive GUI applications with Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/responsive-applications/)
+-   [Creating Notification Icons]({{ site.github.url }}/docs/gui/gtksharp/widgets/notification-icon/)
 -   [Gtk\# used as a Web Service Interface]({{ site.github.url }}/old_site/Webservices_and_GtkSharp "Webservices and GtkSharp")
 -   [Gtk\# example used to access GConf settings]({{ site.github.url }}/old_site/GConfTutorial "GConfTutorial")
 
 ### Advanced Gtk\#
 
--   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/old_site/GAPI "GAPI")
+-   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/docs/gui/gtksharp/gapi/)
 -   [Quick guide to using Pango\#]({{ site.github.url }}/old_site/Pango:Beginners "Pango:Beginners")
--   [Gtk\# TreeView Tutorial]({{ site.github.url }}/old_site/GtkSharp_TreeView_Tutorial "GtkSharp TreeView Tutorial")
-    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/old_site/GtkSharpNodeViewTutorial "GtkSharpNodeViewTutorial")
-    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/old_site/GtkSharpNodeViewTutorialExamples "GtkSharpNodeViewTutorialExamples")
--   [Implementing GInterfaces in Gtk\#]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces")
+-   [Gtk\# TreeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/treeview-tutorial/)
+    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial/)
+    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial-examples/)
+-   [Implementing GInterfaces in Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/implementing-ginterfaces/)
 
 ### Extending your GUI
 
@@ -107,7 +107,7 @@ The following is a list of additional widgets (known as "controls" in Windows) t
 -   [NPlot 0.9.8.5 for Gtk\#](http://primates.ximian.com/~miguel/tmp/NPlot-Gtk-0.9.8.5.tar.gz) - A Free Graph / Chart Library for .NET (Original version: [here](http://netcontrols.org/nplot/)).
 -   [DiaCanvas\#](http://diacanvas.sourceforge.net/csharp.php) - Create and display diagrams and flowcharts
 -   [GtkGL\#](http://www.olympum.com/~bruno/gtkgl-sharp.html) - OpenGL and Gtk\# integration. Not maintained.
--   [GtkGLAreaSharp]({{ site.github.url }}/old_site/GtkGLAreaSharp "GtkGLAreaSharp") - OpenGL widget, based on the [GtkGLArea]({{ site.github.url }}/old_site/GtkGLArea "GtkGLArea") widget. Currently maintained by [User:CJCollier]({{ site.github.url }}/old_site/User:CJCollier "User:CJCollier")
+-   [GtkGLAreaSharp]({{ site.github.url }}/old_site/GtkGLAreaSharp "GtkGLAreaSharp") - OpenGL widget, based on the [GtkGLArea]({{ site.github.url }}/old_site/GtkGLArea "GtkGLArea") widget. Currently maintained by CJCollier.
 
 #### Gnome-KeyRing-Sharp
 
@@ -221,31 +221,31 @@ Gtk\# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sh
 
 ***gtk-sharp***
 
-[glib-sharp]({{ site.github.url }}/monodoc/N:Glib)
+[glib-sharp](http://docs.go-mono.com/index.aspx?link=N:Glib)
 
 Portions of the glib 2.x libraries which provide a low-level non-GUI core library for gtk+.
 
-[pango-sharp]({{ site.github.url }}/monodoc/N:Pango)
+[pango-sharp](http://docs.go-mono.com/index.aspx?link=N:Pango)
 
 The [Pango](http://www.pango.org) international text layout and rendering library.
 
-[atk-sharp]({{ site.github.url }}/monodoc/N:Atk)
+[atk-sharp](http://docs.go-mono.com/index.aspx?link=N:Atk)
 
 The atk Accessibility framework.
 
-[gdk-sharp]({{ site.github.url }}/monodoc/N:Gdk)
+[gdk-sharp](http://docs.go-mono.com/index.aspx?link=N:Gdk)
 
 Drawing Kit using by gtk+.
 
-[gtk-sharp]({{ site.github.url }}/monodoc/N:Gtk)
+[gtk-sharp](http://docs.go-mono.com/index.aspx?link=N:Gtk)
 
 The Gtk 2.x toolkit, a cross-platform toolkit for creating graphical user interfaces
 
-[glade-sharp]({{ site.github.url }}/monodoc/N:Glade)
+[glade-sharp](http://docs.go-mono.com/index.aspx?link=N:Glade)
 
 Supports dynamic loading of [Glade](http://glade.gnome.org) interface builder files.
 
-[gtk-dotnet]({{ site.github.url }}/monodoc/N:Gtk.DotNet)
+[gtk-dotnet](http://docs.go-mono.com/index.aspx?link=N:Gtk.DotNet)
 
 Integration of the Gtk\# namespace with System.Drawing.
 
@@ -253,19 +253,19 @@ Integration of the Gtk\# namespace with System.Drawing.
 
 ***gnome-sharp***
 
-[art-sharp]({{ site.github.url }}/monodoc/N:Art)
+[art-sharp](http://docs.go-mono.com/index.aspx?link=N:Art)
 
 A vector and rendering library.
 
-[gnome-sharp]({{ site.github.url }}/monodoc/N:Gnome)**\***
+[gnome-sharp](http://docs.go-mono.com/index.aspx?link=N:Gnome)**\***
 
 [GNOME](http://www.gnome.org) program initialization, printing, panel access, and assorted widgets.
 
-[gnomevfs-sharp]({{ site.github.url }}/monodoc/N:GnomeVfs)**\***
+[gnomevfs-sharp](http://docs.go-mono.com/index.aspx?link=N:GnomeVfs)**\***
 
 File, MIME type, icon, and various GNOME file system interaction functionality.
 
-[gconf-sharp]({{ site.github.url }}/monodoc/N:GConf)**\***
+[gconf-sharp](http://docs.go-mono.com/index.aspx?link=N:GConf)**\***
 
 Configuration storage system on Gnome
 
@@ -273,7 +273,7 @@ Configuration storage system on Gnome
 
 ***gnome-desktop-sharp***
 
-[gtkhtml-sharp]({{ site.github.url }}/monodoc/T:Gtk.HTML)**\***
+[gtkhtml-sharp](http://docs.go-mono.com/index.aspx?link=T:Gtk.HTML)**\***
 
 A lightweight HTML widget.
 
@@ -285,11 +285,11 @@ nautilusburn-sharp**\***
 
 GNOME CD/DVD burning library.
 
-[rsvg-sharp]({{ site.github.url }}/monodoc/N:Rsvg)
+[rsvg-sharp](http://docs.go-mono.com/index.aspx?link=N:Rsvg)
 
 SVG rendering library.
 
-[vte-sharp]({{ site.github.url }}/monodoc/N:Vte)**\***
+[vte-sharp](http://docs.go-mono.com/index.aspx?link=N:Vte)**\***
 
 The VTE terminal emulator.
 
@@ -304,28 +304,26 @@ Versions & Status
 
 You might want to [subscribe](http://lists.ximian.com/mailman/listinfo/gtk-sharp-list)to gtk-sharp-list@ximian.com for status updates and general discussion.
 
-The [Gtk\# project](http://gtk-sharp.sourceforge.net) is closely associated with the Mono project.  Development is proceeding in the [Mono SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository.  The SVN Repository can be browsed [on the web.](http://anonsvn.mono-project.com/)
+The [Gtk\# project](http://gtk-sharp.sourceforge.net) is closely associated with the Mono project.  Development is proceeding in the [Mono SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository.  The SVN Repository can be browsed [on the web.](http://anonsvn.mono-project.com/)
 
 -   **Gtk\# 2.4** This is the current versions of Gtk\# and they bind Gtk+ 2.4 and the GNOME 2.10 platform.
 
 -   **Gtk\# 1.0.x**: this is the old version of Gtk\# and it binds the GNOME 2.2 platform.
     -   SVN branch name: [source/branches/gtk-sharp-1-0-branch/gtk-sharp](http://anonsvn.mono-project.com/viewvc/branches/gtk-sharp-1-0-branch/gtk-sharp/)
 
-For more details about the versions and future plans see: [GtkSharpPlan]({{ site.github.url }}/old_site/GtkSharpPlan "GtkSharpPlan").
+For more details about the versions and future plans see: [GtkSharpPlan]({{ site.github.url }}/docs/gui/gtksharp/plan/).
 
 Development is occuring on svn trunk at: [source/trunk/gtk-sharp](http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/)
 
 Migrating from 1.x to 2.x
 -------------------------
 
-See our page on [upgrading your Gtk\# application]({{ site.github.url }}/old_site/GtkSharpUpgrade "GtkSharpUpgrade")
+See our page on [upgrading your Gtk\# application]({{ site.github.url }}/docs/gui/gtksharp/upgrade/)
 
 Future Directions
 -----------------
 
-We are keeping track of various ideas for Gtk\# on the [GtkSharpIdeas]({{ site.github.url }}/old_site/GtkSharpIdeas "GtkSharpIdeas") page
-
-A place to track how [Gtk+ can be improved on Windows]({{ site.github.url }}/old_site/ImprovingGtkWin32 "ImprovingGtkWin32").
+We are keeping track of various ideas for Gtk\# on the [GtkSharpIdeas]({{ site.github.url }}/docs/gui/gtksharp/ideas/) page
 
 Additional Resources
 --------------------

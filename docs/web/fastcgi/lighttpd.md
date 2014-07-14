@@ -1,55 +1,12 @@
 ---
-layout: obsolete
-title: "FastCGI Lighttpd"
-lastmodified: '2008-06-25'
-permalink: /old_site/FastCGI_Lighttpd/
-redirect_from:
-  - /FastCGI_Lighttpd/
+layout: docpage
+navgroup: docs
+title: Lighttpd
 ---
-
-FastCGI Lighttpd
-================
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") support for the Lighttpd server.
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#introduction">1 Introduction</a>
-<ul>
-<li><a href="#configuration-tested-on">1.1 Configuration Tested On...</a></li>
-</ul></li>
-<li><a href="#general-warnings">2 General Warnings</a></li>
-<li><a href="#basic-configuration">3 Basic Configuration</a>
-<ul>
-<li><a href="#step-1-enabling-the-fastcgi-module">3.1 Step 1: Enabling the FastCGI Module</a></li>
-<li><a href="#step-2-configuring-the-fastcgi-module">3.2 Step 2: Configuring the FastCGI Module</a>
-<ul>
-<li><a href="#part-a-adding-the-module">3.2.1 Part A: Adding the Module</a></li>
-<li><a href="#part-b-adding-the-server">3.2.2 Part B: Adding the Server</a>
-<ul>
-<li><a href="#automatically-spawning-a-new-server">3.2.2.1 Automatically spawning a new server</a></li>
-<li><a href="#connecting-to-an-existing-server-via-tcp">3.2.2.2 Connecting to an existing server via TCP</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><a href="#advanced-topics">4 Advanced Topics</a>
-<ul>
-<li><a href="#excluding-paths-from-aspnet">4.1 Excluding Paths from ASP.NET</a></li>
-<li><a href="#limiting-aspnet-to-specific-virtual-hosts">4.2 Limiting ASP.NET to Specific Virtual Hosts</a></li>
-<li><a href="#allowing-php-to-run-in-parallel">4.3 Allowing PHP to Run in Parallel</a></li>
-<li><a href="#using-extensions">4.4 Using Extensions</a></li>
-</ul></li>
-<li><a href="#bada-bing">5 Bada Bing!</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Lighttpd server.
 
 Introduction
 ------------
@@ -70,7 +27,7 @@ An earlier version of these configuration instructions was tested on the followi
 General Warnings
 ----------------
 
-Before doing anything else, you should read [FastCGI's important information]({{ site.github.url }}/old_site/FastCGI#important-information "FastCGI") on the main page.
+Before doing anything else, you should read [FastCGI's important information]({{ site.github.url }}/docs/web/fastcgi/#important-information) on the main page.
 
 Basic Configuration
 -------------------

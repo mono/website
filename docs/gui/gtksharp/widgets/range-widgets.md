@@ -4,7 +4,7 @@ navgroup: docs
 title: "GtkSharp: Range Widgets"
 ---
 
-The category of range widgets includes the ubiquitous [http:/monodoc/T:Gtk.Scrollbar scrollbar] widget and the less common [http:/monodoc/T:Gtk.Scale scale] widget. Though these two types of widgets are generally used for different purposes, they are quite similar in function and implementation. All range widgets share a set of common graphic elements, each of which has its own X window and receives events. They all contain a "trough" and a "slider" (what is sometimes called a "thumbwheel" in other GUI environments). Dragging the slider with the pointer moves it back and forth within the trough, while clicking in the trough advances the slider towards the location of the click, either completely, or by a designated amount, depending on which mouse button is used.
+The category of range widgets includes the ubiquitous [scrollbar](http://docs.go-mono.com/index.aspx?link=T:Gtk.Scrollbar) widget and the less common [scale](http://docs.go-mono.com/index.aspx?link=T:Gtk.Scale) widget. Though these two types of widgets are generally used for different purposes, they are quite similar in function and implementation. All range widgets share a set of common graphic elements, each of which has its own X window and receives events. They all contain a "trough" and a "slider" (what is sometimes called a "thumbwheel" in other GUI environments). Dragging the slider with the pointer moves it back and forth within the trough, while clicking in the trough advances the slider towards the location of the click, either completely, or by a designated amount, depending on which mouse button is used.
 
 As mentioned in Adjustments above, all range widgets are associated with an adjustment object, from which they calculate the length of the slider and its position within the trough. When the user manipulates the slider, the range widget will change the value of the adjustment.
 
@@ -13,7 +13,7 @@ The Range widget class is fairly complicated internally, but, like all the "base
 Update Policy
 =============
 
-The [http:/monodoc/P:Gtk.Range.UpdatePolicy update policy] of a range widget defines at what points during user interaction it will change the value field of its Adjustment and emit the [http:/monodoc/E:Gtk.Adjustment.ValueChanged Gtk.Adjustment.ValueChanged] event for this Adjustment. The update policies are held in the [http:/monodoc/T:Gtk.UpdateType Gtk.UpdateType] enumeration and can have one of three values.
+The [update policy](http://docs.go-mono.com/index.aspx?link=P:Gtk.Range.UpdatePolicy) of a range widget defines at what points during user interaction it will change the value field of its Adjustment and emit the [Gtk.Adjustment.ValueChanged](http://docs.go-mono.com/index.aspx?link=E:Gtk.Adjustment.ValueChanged) event for this Adjustment. The update policies are held in the [Gtk.UpdateType](http://docs.go-mono.com/index.aspx?link=T:Gtk.UpdateType) enumeration and can have one of three values.
 
  Gtk.UpdateType.Continuous (default)   
 The ValueChanged event is emitted continuously, i.e., whenever the slider is moved by even the tiniest amount.

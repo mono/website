@@ -103,9 +103,9 @@ Supported Platforms
 
 AOT is only available in a few platforms:
 
--   [Mono:X86]({{ site.github.url }}/old_site/Mono:X86 "Mono:X86")
--   [x86-64]({{ site.github.url }}/old_site/Mono:AMD64 "Mono:AMD64")
--   [Mono:ARM]({{ site.github.url }}/old_site/Mono:ARM "Mono:ARM").
+-   [Mono:X86]({{ site.github.url }}/docs/about-mono/platforms/x86/)
+-   [x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/)
+-   [Mono:ARM]({{ site.github.url }}/docs/about-mono/platforms/arm/).
 
 Reduced Startup Time
 --------------------
@@ -150,7 +150,7 @@ See the discussion on [OptimizingAOT]({{ site.github.url }}/old_site/OptimizingA
 Discussion
 ----------
 
-Documentation on the Mono AOT implementation is found in the [Mono:Runtime:Documentation:AOT]({{ site.github.url }}/old_site/Mono:Runtime:Documentation:AOT "Mono:Runtime:Documentation:AOT") page.
+Documentation on the Mono AOT implementation is found in the [Mono:Runtime:Documentation:AOT]({{ site.github.url }}/docs/advanced/runtime/docs/aot/) page.
 
 AOTing all the system libraries
 -------------------------------

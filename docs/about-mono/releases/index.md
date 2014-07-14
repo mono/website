@@ -92,6 +92,7 @@ mono1xreleases:
 ---
 
 This page contains a list of all Mono releases. The latest release can be found [here]({{ site.github.url }}/download).
+Mono version numbers follow a specific policy, more [here]({{ site.github.url }}/docs/about-mono/versioning/).
 
 ## Mono 3.x
 {% for release in page.mono3xreleases %}

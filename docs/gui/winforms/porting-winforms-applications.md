@@ -452,7 +452,7 @@ public void PlayFinishedSound ()
 
 Either method will ensure that the correct path separator is used on the correct operating system.
 
-For some more issues you might run into and a more detailed look at options for dealing with them, see [Guidelines:Application Portability]({{ site.github.url }}/old_site/Guidelines:Application_Portability "Guidelines:Application Portability").
+For some more issues you might run into and a more detailed look at options for dealing with them, see [Guidelines:Application Portability]({{ site.github.url }}/docs/getting-started/application-portability/).
 
 Conclusion
 ----------
@@ -462,6 +462,6 @@ Using this guide, we have managed to port a non-trivial winforms app to start up
 Advanced Guides
 ---------------
 
--   [Guide: Debugging With MWF]({{ site.github.url }}/old_site/Guide:_Debugging_With_MWF "Guide: Debugging With MWF") - Shows how to use the MWF project file from SVN to debug issues.
+-   [Guide: Debugging With MWF]({{ site.github.url }}/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from SVN to debug issues.
 
 

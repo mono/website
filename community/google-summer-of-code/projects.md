@@ -281,5 +281,5 @@ Mailing Lists
 
 [http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list) Discussion on the development/implementation of MonoDevelop.
 
-A complete breakdown of all Mono mailing lists is available at [Mailing Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists").
+A complete breakdown of all Mono mailing lists is available at [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/).
 

@@ -4,13 +4,13 @@ navgroup: docs
 title: C++
 ---
 
-The CLI is able to host C++ compiled code on all [supported platforms]({{ site.github.url }}/old_site/Supported_Platforms "Supported Platforms") as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.
+The CLI is able to host C++ compiled code on all [supported platforms]({{ site.github.url }}/docs/about-mono/supported-platforms/) as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.
 
-Mixed-mode assemblies are experimentally supported only on Windows because native code is platform specific. With the help of [Wine](http://www.winehq.org/) mixed-mode assemblies can be used on other platforms by the [Windows version]({{ site.github.url }}/old_site/Using_Mono_on_Windows "Using Mono on Windows") of Mono.
+Mixed-mode assemblies are experimentally supported only on Windows because native code is platform specific. With the help of [Wine](http://www.winehq.org/) mixed-mode assemblies can be used on other platforms by the [Windows version]({{ site.github.url }}/docs/getting-started/install/windows/) of Mono.
 
 There is little rationale to implement support for mixed-mode assemblies on other platforms because a different version of the same mixed-mode assembly would be required for each platform. Portable Executable format could not be used on operating systems other than Windows that would require non-standard ELF based assemblies for example.
 
-[Embed Mono]({{ site.github.url }}/old_site/Embedding_Mono "Embedding Mono") in your application and/or use [P/Invoke]({{ site.github.url }}/old_site/Interop_with_Native_Libraries "Interop with Native Libraries") to achieve the goals of mixed-mode assemblies on other platforms. IJW thunks are P/Invoke calls with predefined function pointers thus have no performance advantage over P/Invoke.
+[Embed Mono]({{ site.github.url }}/docs/advanced/embedding/) in your application and/or use [P/Invoke]({{ site.github.url }}/docs/advanced/pinvoke/) to achieve the goals of mixed-mode assemblies on other platforms. IJW thunks are P/Invoke calls with predefined function pointers thus have no performance advantage over P/Invoke.
 
 Notice that Mono does not currently support the mixed-mode versions (there is no pure CIL version) of the Microsoft Visual C Runtime Library.
 

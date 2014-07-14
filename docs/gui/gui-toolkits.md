@@ -17,7 +17,7 @@ Both GTK\# and Winforms, while being cross-platform, have clear roots in their o
 Toolkits
 ========
 
-[Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
+[Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
 [![]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)
@@ -32,7 +32,7 @@ Toolkits
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK\# app
 
-Homepage: [GtkSharp]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
+Homepage: [GtkSharp]({{ site.github.url }}/docs/gui/gtksharp/)
 
 GTK\# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK\# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
 
@@ -56,14 +56,14 @@ Cons:
 -   Gtk+ apps run like foreign applications on MacOS X.
 -   Incomplete documentation.
 
-[MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac")
+[MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/)
 ---------------------------------------------------------
 
-Homepage: [MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac")
+Homepage: [MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/)
 
 MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C\#, it is not limited to the AppKit GUI APIs.
 
-The MonoMac APIs replaced the old [CocoaSharp]({{ site.github.url }}/old_site/MonoMac) binding, which is now deprecated.
+The MonoMac APIs replaced the old CocoaSharp binding, which is now deprecated.
 
 Platforms: OSX
 
@@ -76,7 +76,7 @@ Cons:
 
 -   Not portable outside of MacOS X.
 
-[Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms")
+[Windows.Forms]({{ site.github.url }}/docs/gui/winforms/)
 -----------------------------------------------------------------
 
 [![]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)
@@ -91,7 +91,7 @@ Cons:
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
-Homepage: [Winforms]({{ site.github.url }}/old_site/WinForms "WinForms")
+Homepage: [Winforms]({{ site.github.url }}/docs/gui/winforms/)
 
 Windows.Forms is a binding developed by Microsoft to the Win32 toolkit. As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
 

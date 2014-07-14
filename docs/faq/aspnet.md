@@ -23,7 +23,7 @@ Once you have a working ASP.NET application, you could use Mono to run it.
 
 **How can I run ASP.NET-based applications with Mono?**
 
-You can read our [Guide to port ASP.NET Applications with Mono]({{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications").
+You can read our [Guide to port ASP.NET Applications with Mono]({{ site.github.url }}/docs/web/porting-aspnet-applications/).
 
 Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mono is a three part series blog that covers how to port an ASP.NET MVC website application to Mono:
 
@@ -33,7 +33,7 @@ Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mon
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
 
- You need the Mono runtime and use one of Apache with [mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono"), a [CGI]({{ site.github.url }}/old_site/CGI "CGI") or FastCGI-aware web server with Mono's [FastCGI]({{ site.github.url }}/old_site/FastCGI "FastCGI") support or the [xsp]({{ site.github.url }}/old_site/ASP.NET) standalone server (all available from our [downloads]({{ site.github.url }}/old_site/Downloads "Downloads") page).
+ You need the Mono runtime and use one of Apache with [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/), a [CGI]({{ site.github.url }}/old_site/CGI "CGI") or FastCGI-aware web server with Mono's [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support or the [xsp]({{ site.github.url }}/docs/web/aspnet/) standalone server (all available from our [downloads]({{ site.github.url }}/download/) page).
 
 To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 
@@ -80,7 +80,7 @@ Yes. And on all the platoforms on which mono runs. In Windows you must use XSP a
 
 mod\_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
 
-FastCGI is a lightweight protocol implement by both Apache and many other web servers. It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like [Nginx]({{ site.github.url }}/old_site/FastCGI_Nginx "FastCGI Nginx"). Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration. The features are usually determined by the web server that uses FastCGI.
+FastCGI is a lightweight protocol implement by both Apache and many other web servers. It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/). Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration. The features are usually determined by the web server that uses FastCGI.
 
 XSP is a very limited web server which is used typically during development or for testing. Although some people use it for production, but this server is not likely going to ever grow to support all the features that Apache or FastCGI servers have.
 
@@ -92,7 +92,7 @@ mod\_mono at this point only runs on Unix systems. There is a patch (to be revie
 
 **How do I restart my Mono applications without restarting Apache?**
 
-Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{ site.github.url }}/old_site/Mod_mono#control-panel "Mod mono") for details on setting it up.
+Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{ site.github.url }}/docs/web/mod-mono/#control-panel "Mod mono") for details on setting it up.
 
 **My Apache Module Is Not Recognized, what to do?**
 
@@ -121,7 +121,7 @@ mod\_mono:
 -   mod\_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
 -   faster file transfers
 -   common URL namespace with Apache (if AddHandler is used)
--   autohosting: [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration)
+-   autohosting: [AutoHosting]({{ site.github.url }}/docs/web/mod_mono-autoconfiguration/)
 -   enabled for mass hosting
 -   xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them. By using mod\_mono your client software is exposed to a full HTTP 1.1 implmenentation.
 
@@ -159,7 +159,7 @@ Common Problems
 -   Running xsp[2], not configuring the --aplications parameter (or application in the root directory)
 -   Running mod-mono, not configuring the MonoApplications directive (more info with man mod\_mono)
 
-**Performance is disappointing** Please consult [Mod\_mono]({{ site.github.url }}/old_site/Mod_mono "Mod mono") for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+**Performance is disappointing** Please consult [Mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
 
 **Compilation fails with the CS0169 error message** It will happen if you configured the C\# compiler in `Web.config` in a way similar to the one shown below:
 
@@ -195,7 +195,7 @@ This is result of an incompatibility between the Microsoft .NET C\# compiler and
 
 This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
 
-The fix is easy: you need to create a `~/App_Data/aspnetdb.sqlite` SQLite database file. You can use the **sqlite3** program and the SQL commands at [Membership/Roles/Profile provider schema]({{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications#membershiprolesprofile-provider-schema "Guide: Porting ASP.NET Applications"):
+The fix is easy: you need to create a `~/App_Data/aspnetdb.sqlite` SQLite database file. You can use the **sqlite3** program and the SQL commands at [Membership/Roles/Profile provider schema]({{ site.github.url }}/docs/web/porting-aspnet-applications/#membershiprolesprofile-provider-schema):
 
 ``` bash
 $ sqlite3 aspnetdb.sqlite
@@ -308,7 +308,7 @@ Or better yet, registering this in your web.config file. If you register this on
 </configuration>
 ```
 
-For more details, see the [Config system.web compilation](/index.php?title=Config_system.web_compilation&action=edit&redlink=1 "Config system.web compilation (page does not exist)") page or the [docs at Microsoft](http://msdn2.microsoft.com/en-us/library/s10awwz0.aspx)
+For more details, see the Config system.web compilation page or the [docs at Microsoft](http://msdn2.microsoft.com/en-us/library/s10awwz0.aspx)
 
 **How can I reference a library in my .asmx web service?**
 
@@ -373,7 +373,7 @@ Instead of Location="Server", use "ServerAndClient".
 
 If you are using the Apache module, https support is handled directly by Apache and all the variables are available using the System.Web APIs.
 
-If you are using XSP, read the [using client certificates with XSP]({{ site.github.url }}/old_site/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP") article which details the process.
+If you are using XSP, read the [using client certificates with XSP]({{ site.github.url }}/docs/web/using-clientcertificates-with-xsp/) article which details the process.
 
 **I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong?**
 
@@ -589,5 +589,5 @@ A simple solution is to try to write your software in a way that large data bloc
 
 **Is there a better collector in the works?**
 
-Yes, there is work to make a new generational collector under way, but it will not be ready for a while. For more information on it, see the [Generational GC]({{ site.github.url }}/old_site/Generational_GC "Generational GC") page.
+Yes, there is work to make a new generational collector under way, but it will not be ready for a while. For more information on it, see the [Generational GC]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/) page.
 

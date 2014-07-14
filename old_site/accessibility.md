@@ -65,7 +65,7 @@ This is accomplished through two efforts -- First, implement the managed [UI Aut
 Project Goals
 -------------
 
--   Make [System.Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms") applications accessible via ATK
+-   Make [System.Windows.Forms]({{ site.github.url }}/docs/gui/winforms/) applications accessible via ATK
 -   Make [Silverlight](http://silverlight.net/) applications (using [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight")) accessible via ATK
 -   Allow [UI Automation]({{ site.github.url }}/old_site/UI_Automation "UI Automation") based Accessibility Technologies to read Linux applications built on at-spi
 

@@ -30,13 +30,13 @@ Cairo's nouns are somewhat abstract. To make them concrete I'm including diagram
 
 [![Cairo destination.png]({{ site.github.url }}/old_site/images/a/a2/Cairo_destination.png)]({{ site.github.url }}/old_site/images/a/a2/Cairo_destination.png)
 
-The destination is the [surface](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Surface) on which you're drawing. It may be tied to an array of pixels like in this tutorial, or it might be tied to a SVG or PDF file, or something else. This surface collects the elements of your graphic as you apply them, allowing you to build up a complex work as though painting on a canvas.
+The destination is the [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface) on which you're drawing. It may be tied to an array of pixels like in this tutorial, or it might be tied to a SVG or PDF file, or something else. This surface collects the elements of your graphic as you apply them, allowing you to build up a complex work as though painting on a canvas.
 
 #### Source
 
 [![Cairo source.png]({{ site.github.url }}/old_site/images/6/63/Cairo_source.png)]({{ site.github.url }}/old_site/images/6/63/Cairo_source.png)
 
-The source is the "paint" you're about to work with. I show this as it is—plain black for several examples—but translucent to show lower layers. Unlike real paint, it doesn't have to be a single color; it can be a [pattern](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Pattern) or even a previously created destination [surface](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Surface). Also unlike real paint it can contain transparency information—the Alpha channel.
+The source is the "paint" you're about to work with. I show this as it is—plain black for several examples—but translucent to show lower layers. Unlike real paint, it doesn't have to be a single color; it can be a [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or even a previously created destination [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). Also unlike real paint it can contain transparency information—the Alpha channel.
 
 #### Mask
 
@@ -52,14 +52,14 @@ The path is somewhere between part of the mask and part of the context. I will s
 
 The context keeps track of everything that verbs affect. It tracks one source, one destination, and one mask. It also tracks several helper variables like your line width and style, your font face and size, and more. Most importantly it tracks the path, which is turned into a mask by drawing verbs.
 
-Before you can start to draw something with cairo, you need to create the [Context](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Context). When you create a cairo context, it must be tied to a specific [Surface](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Surface) —for example, an [ImageSurface](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.ImageSurface) if you want to create a PNG file. You can initialize your cairo context like this:
+Before you can start to draw something with cairo, you need to create the [Context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context). When you create a cairo context, it must be tied to a specific [Surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface) —for example, an [ImageSurface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.ImageSurface) if you want to create a PNG file. You can initialize your cairo context like this:
 
 ``
 
     ImageSurface surface = new ImageSurface(Format.RGV24, 120, 120);
     Context cr = new Context(surface);
 
-The cairo context in this example is tied to an image surface of dimension 120 x 120 and 32 bits per pixel to store RGB and Alpha information. Surfaces can be created specific to most cairo backends, see the [manual](http://go-mono.com/docs/monodoc.ashx?tlink=0%40N%3aCairo) for details.
+The cairo context in this example is tied to an image surface of dimension 120 x 120 and 32 bits per pixel to store RGB and Alpha information. Surfaces can be created specific to most cairo backends, see the [manual](http://docs.go-mono.com/index.aspx?tlink=0%40N%3aCairo) for details.
 
 ### Verbs
 
@@ -71,7 +71,7 @@ The reason you are using cairo in a program is to draw. Cairo internally draws w
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/stroke.cs)
 
-The [Stroke](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Stroke()) operation takes a virtual pen along the path. It allows the source to transfer through the mask in a thin (or thick) line around the path, according to the pen's [line width](http://go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.LineWidth), [line caps](http://go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.LineCap), [line join](http://go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.LineJoin), and [dash style](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.SetDash(System.Double%5b%5d%2cSystem.Double)).
+The [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) operation takes a virtual pen along the path. It allows the source to transfer through the mask in a thin (or thick) line around the path, according to the pen's [line width](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineWidth), [line caps](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineCap), [line join](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineJoin), and [dash style](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.SetDash(System.Double%5b%5d%2cSystem.Double)).
 
 ``
 
@@ -86,7 +86,7 @@ The [Stroke](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Stroke(
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/fill.cs)
 
-The [Fill](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Fill()) operation instead uses the path like the lines of a coloring book, and allows the source through the mask within the hole whose boundaries are the path. For complex paths (paths with multiple closed sub-paths—like a donut—or paths that self-intersect) this is influenced by the [fill rule](http://go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.FillRule). Note that while stroking the path transfers the source for half of the line width on each side of the path, filling a path fills directly up to the edge of the path and no further.
+The [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) operation instead uses the path like the lines of a coloring book, and allows the source through the mask within the hole whose boundaries are the path. For complex paths (paths with multiple closed sub-paths—like a donut—or paths that self-intersect) this is influenced by the [fill rule](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.FillRule). Note that while stroking the path transfers the source for half of the line width on each side of the path, filling a path fills directly up to the edge of the path and no further.
 
 ``
 
@@ -101,7 +101,7 @@ The [Fill](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Fill()) o
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/showtext.cs)
 
-The [ShowText](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.ShowText(System.String)) operation forms the mask from text. It may be easier to think of ShowText as a shortcut for creating a path with [TextPath](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.TextPath(System.String)) and then using [Fill](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Fill()) to transfer it. Be aware that ShowText caches glyphs so is much more efficient if you work with a lot of text.
+The [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) operation forms the mask from text. It may be easier to think of ShowText as a shortcut for creating a path with [TextPath](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.TextPath(System.String)) and then using [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) to transfer it. Be aware that ShowText caches glyphs so is much more efficient if you work with a lot of text.
 
 ``
 
@@ -119,7 +119,7 @@ The [ShowText](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.ShowT
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/paint.cs)
 
-The [Paint](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Paint()) operation uses a mask that transfers the entire source to the destination. Some people consider this an infinitely large mask, and others consider it no mask; the result is the same. The related operation [PaintWithAlpha](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.PaintWithAlpha(System.Double)) similarly allows transfer of the full source to destination, but it transfers only the provided percentage of the color.
+The [Paint](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()) operation uses a mask that transfers the entire source to the destination. Some people consider this an infinitely large mask, and others consider it no mask; the result is the same. The related operation [PaintWithAlpha](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.PaintWithAlpha(System.Double)) similarly allows transfer of the full source to destination, but it transfers only the provided percentage of the color.
 
 ``
 
@@ -132,7 +132,7 @@ The [Paint](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Paint())
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/mask.cs)
 
-The [Mask](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) and [MaskSurface](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.MaskSurface(Cairo.Surface%2cSystem.Double%2cSystem.Double)) operations allow transfer according to the transparency/opacity of a second source pattern or surface. Where the pattern or surface is opaque, the current source is transferred to the destination. Where the pattern or surface is transparent, nothing is transferred.
+The [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) and [MaskSurface](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.MaskSurface(Cairo.Surface%2cSystem.Double%2cSystem.Double)) operations allow transfer according to the transparency/opacity of a second source pattern or surface. Where the pattern or surface is opaque, the current source is transferred to the destination. Where the pattern or surface is transparent, nothing is transferred.
 
 ``
 
@@ -150,7 +150,7 @@ The [Mask](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Mask(Cair
 Drawing with Cairo
 ------------------
 
-In order to create an image you desire, you have to prepare the [context](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Stroke()) or [Fill](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Pattern) or [surface](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo\_paint()](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.Paint()), you need a primary source.
+In order to create an image you desire, you have to prepare the [context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) or [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo\_paint()](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()), you need a primary source.
 
 ### Preparing and Selecting a Source
 
@@ -182,7 +182,7 @@ There are three main kinds of sources in cairo: colors, gradients, and images. C
     cr.Color = new Color(0, 0, 0, 0.40);
     cr.Fill();
 
-Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. [Linear gradients](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.LinearGradient) are built from two points which pass through parallel lines to define the start and stop locations. [Radial gradients](http://go-mono.com/docs/monodoc.ashx?link=T%3aCairo.RadialGradient) are also built from two points, but each has an associated radius of the circle on which to define the start and stop locations. Stops are added to the gradient with [AddColorStop](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Gradient.AddColorStop(System.Double%2cCairo.Color)) and [AddColorStopRgb](http://go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Gradient.AddColorStopRgb(System.Double%2cCairo.Color)). These methods take an offset (to indicate where it lies between the reference locations) and color. The colors between adjacent stops are averaged over space to form a smooth blend.
+Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. [Linear gradients](http://docs.go-mono.com/index.aspx?link=T%3aCairo.LinearGradient) are built from two points which pass through parallel lines to define the start and stop locations. [Radial gradients](http://docs.go-mono.com/index.aspx?link=T%3aCairo.RadialGradient) are also built from two points, but each has an associated radius of the circle on which to define the start and stop locations. Stops are added to the gradient with [AddColorStop](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Gradient.AddColorStop(System.Double%2cCairo.Color)) and [AddColorStopRgb](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Gradient.AddColorStopRgb(System.Double%2cCairo.Color)). These methods take an offset (to indicate where it lies between the reference locations) and color. The colors between adjacent stops are averaged over space to form a smooth blend.
 
 [![]({{ site.github.url }}/old_site/images/1/19/Cairo_setsourcegradient.png)]({{ site.github.url }}/old_site/images/1/19/Cairo_setsourcegradient.png)
 

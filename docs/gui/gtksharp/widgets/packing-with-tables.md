@@ -7,7 +7,7 @@ title: "GtkSharp: Packing with Tables"
 Using Tables
 ============
 
-In addition to packing using HBox and VBox, you can pack using the [http:/monodoc/T:Gtk.Table Table] object; this lets you create a grid for placing widgets. The first thing to look at is the Table constructor:
+In addition to packing using HBox and VBox, you can pack using the [Table](http://docs.go-mono.com/index.aspx?link=T:Gtk.Table) object; this lets you create a grid for placing widgets. The first thing to look at is the Table constructor:
 
 ``` csharp
 Table table1 = new Table(int rows, int columns, bool homogeneous);

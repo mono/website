@@ -48,7 +48,7 @@ Structures passed to callback marshaling delegates in many cases can be NULL poi
 
 #### GInterface Registration
 
-Registration of GInterface implementations is now supported. Details on how to implement an interface with a tutorial can be found at [ImplementingGInterfaces]({{ site.github.url }}/old_site/ImplementingGInterfaces "ImplementingGInterfaces")
+Registration of GInterface implementations is now supported. Details on how to implement an interface with a tutorial can be found at [ImplementingGInterfaces]({{ site.github.url }}/docs/gui/gtksharp/implementing-ginterfaces/)
 
 #### GObject property registration
 
@@ -69,15 +69,15 @@ The Gnome About dialog has been cleaned up and integrated directly into Gtk.
 
 ### New Cell renderer types
 
-Gtk\# 1.0.x came with Cell Renderers for [http:/monodoc/T:Gtk.CellRendererText text], [http:/monodoc/T:Gtk.CellRendererPixbuf images], and [http:/monodoc/T:Gtk.CellRendererToggle checkboxes].
+Gtk\# 1.0.x came with Cell Renderers for [text](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererText), [images](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererPixbuf), and [checkboxes](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererToggle).
 
-Starting in 2.6, we have the popular new [http:/monodoc/T:Gtk.CellRendererProgress Gtk.CellRendererProgress] and [http:/monodoc/T:Gtk.CellRendererCombo Gtk.CellRendererCombo] renderers. Use them to expose ProgressBar cells and dropdown ComboBox cells in your TreeViews and NodeViews.
+Starting in 2.6, we have the popular new [Gtk.CellRendererProgress](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererProgress) and [Gtk.CellRendererCombo](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererCombo] renderers. Use them to expose ProgressBar cells and dropdown ComboBox cells in your TreeViews and NodeViews.
 
 ### IconView
 
 A new icon list widget which utilizes the existing List/Tree model.
 
-See the API here: [http:/monodoc/T:Gtk.IconView Gtk.IconView].
+See the API here: [Gtk.IconView](http://docs.go-mono.com/index.aspx?link=T:Gtk.IconView).
 
 [![GtkSharpIconView.png]({{ site.github.url }}/old_site/images/1/12/GtkSharpIconView.png)]({{ site.github.url }}/old_site/images/1/12/GtkSharpIconView.png)
 
@@ -175,7 +175,7 @@ A complete sample application utilizing Actions and the UI manager can be found 
 
 The old Gtk Combo widget was long a sore point for developers. The new ComboBox widgets utilize the power of the Tree/List Model API and provide a nice clean look.
 
-See the API here: [http:/monodoc/T:Gtk.ComboBox Gtk.ComboBox].
+See the API here: [Gtk.ComboBox](http://docs.go-mono.com/index.aspx?link=T:Gtk.ComboBox).
 
 ### FileChooser
 
@@ -183,7 +183,7 @@ See the API here: [http:/monodoc/T:Gtk.ComboBox Gtk.ComboBox].
 
 The new FileChooser interface is implemented by FileChooserDialog to provide an attractive and powerful way for your application to interface with the file system.
 
-See the API here: [http:/monodoc/T:Gtk.FileChooser Gtk.FileChooser].
+See the API here: [Gtk.FileChooser](http://docs.go-mono.com/index.aspx?link=T:Gtk.FileChooser).
 
 ### Toolbar
 
@@ -191,7 +191,7 @@ See the API here: [http:/monodoc/T:Gtk.FileChooser Gtk.FileChooser].
 
 The new Toolbar widget comes complete with all the typical buttons and separators and provides a more attractive API to expose Toolbar User Interface elements either programatically or via the UIManager API.
 
-See the API here: [http:/monodoc/T:Gtk.Toolbar Gtk.Toolbar].
+See the API here: [Gtk.Toolbar](http://docs.go-mono.com/index.aspx?link=T:Gtk.Toolbar).
 
 Newly bound libraries
 ---------------------
@@ -200,13 +200,13 @@ Newly bound libraries
 
 Use the Gnome.Vfs namespace in the new gnome-vfs-sharp.dll assembly for virtual file system operations.
 
-See the API here: [Gnome.Vfs](http://monodoc/N:Gnome.Vfs).
+See the API here: [Gnome.Vfs](http://docs.go-mono.com/index.aspx?link=N:Gnome.Vfs).
 
 #### Gnome.PanelApplet
 
 Use the PanelApplet object now exposed by gnome-sharp.dll to implement new Panel applets.
 
-See the API here: [http:/monodoc/T:Gnome.PanelApplet Gnome.PanelApplet].
+See the API here: [Gnome.PanelApplet](http://docs.go-mono.com/index.aspx?link=T:Gnome.PanelApplet).
 
 A full sample can be seen [here](http://anonsvn.mono-project.com/viewvc/trunk/gnome-sharp/sample/panelapplet/).
 
@@ -225,7 +225,7 @@ There is a [http:/GtkSharpNodeViewTutorial tutorial article] available showing h
 
 Use the new gtk-dotnet.dll assembly to open up the power of System.Drawing to your new application, or to port your existing custom controls to Gtk.
 
-See the API here: [http:/monodoc/T:Gtk.DotNet.Graphics Gtk.DotNet.Graphics].
+See the API here: [Gtk.DotNet.Graphics](http://docs.go-mono.com/index.aspx?link=T:Gtk.DotNet.Graphics).
 
 You can find a sample with various patterns in the Gtk\# distribution in the samples directory as "DrawingSample.cs"
 

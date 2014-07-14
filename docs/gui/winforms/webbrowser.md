@@ -98,7 +98,7 @@ Implementation Overview
 
 The WebBrowser implimentation is made up of several parts:
 
--   [libmozembed](/index.php?title=WebBrowser/libmozembed&action=edit&redlink=1 "WebBrowser/libmozembed (page does not exist)") - The native wrapper that wraps Mozilla. Built to satisfy the requirements of the MWF control, it remains versatile enough to be reusable for other embedding projects that require a simple and static C based interface.
+-   libmozembed - The native wrapper that wraps Mozilla. Built to satisfy the requirements of the MWF control, it remains versatile enough to be reusable for other embedding projects that require a simple and static C based interface.
     -   Source: [http://anonsvn.mono-project.com/viewvc/trunk/mozembed/src/](http://anonsvn.mono-project.com/viewvc/trunk/mozembed/src/)
 
 -   **Mono.Mozilla.dll** - This managed code wrapper is the core interface between libmozembed and managed code. It's abstract to all implementations and windowing toolkits.

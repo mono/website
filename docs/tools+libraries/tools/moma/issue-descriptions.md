@@ -50,7 +50,7 @@ P/Invokes (platform invokes) are used to call functions that are written in unma
 
 **What to do:**
 
-The long answer is available here: [Interop\_with\_Native\_Libraries]({{ site.github.url }}/old_site/Interop_with_Native_Libraries "Interop with Native Libraries").
+The long answer is available here: [Interop\_with\_Native\_Libraries]({{ site.github.url }}/docs/advanced/pinvoke/).
 
 The summary:
 
@@ -62,5 +62,5 @@ If you are calling into your own native library, then it depends on the cross-pl
 
 The native library that is being called is listed in the last column on MoMA's detail report.
 
-To find out at runtime which platform your application is running on, see: [FAQ:\_Technical\#How\_to\_detect\_the\_execution\_platform\_.3F]({{ site.github.url }}/old_site/FAQ:_Technical#how-to-detect-the-execution-platform-3f "FAQ: Technical")
+To find out at runtime which platform your application is running on, see: [FAQ:\_Technical\#How\_to\_detect\_the\_execution\_platform\_.3F]({{ site.github.url }}/docs/faq/technical/#how-to-detect-the-execution-platform-3f)
 

@@ -18,7 +18,7 @@ We are now in stable bugfixing mode for the 2.4, 2.6, 2.8 and 2.10 bindings. The
 
 ### 2.12 bindings
 
-Gtk\# 2.12 bindings are in stable release. Gnome\# 2.20 and the new GnomeDesktop\# unstable library bindings package have been released as well. Source tarballs are available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12). See [GtkSharpNewInVersion2x]({{ site.github.url }}/old_site/GtkSharpNewInVersion2x "GtkSharpNewInVersion2x") for a list of enhancements and new features that were delivered in 2.12, along with newly bound API members from Gtk+ 2.12 and GNOME 2.20.
+Gtk\# 2.12 bindings are in stable release. Gnome\# 2.20 and the new GnomeDesktop\# unstable library bindings package have been released as well. Source tarballs are available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12). See [GtkSharpNewInVersion2x]({{ site.github.url }}/docs/gui/gtksharp/new-in-version-2x/) for a list of enhancements and new features that were delivered in 2.12, along with newly bound API members from Gtk+ 2.12 and GNOME 2.20.
 
 Release plan
 ------------
@@ -29,7 +29,7 @@ Gtk\# 3.0 will be built against the .net 2.0 profile, but it will be possible to
 
 If Gtk 3 were to languish unreleased, we might release a binding for Gtk+ 2.18 first.
 
-GIO bindings are availiable in the gio-sharp module from Mono's [AnonSVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository. Alternativly, you can build Gtk\# from trunk.
+GIO bindings are availiable in the gio-sharp module from Mono's [AnonSVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository. Alternativly, you can build Gtk\# from trunk.
 
 Future Plans
 ------------

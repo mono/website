@@ -4,7 +4,7 @@ navgroup: docs
 title: mod_mono
 ---
 
-mod_mono is an Apache 2.0/2.2/2.4.3 module that provides [ASP.NET]({{ site.github.url }}/old_site/ASP.NET "ASP.NET") support for the web's favorite server, [Apache](http://httpd.apache.org).
+mod_mono is an Apache 2.0/2.2/2.4.3 module that provides [ASP.NET]({{ site.github.url }}/docs/web/aspnet/) support for the web's favorite server, [Apache](http://httpd.apache.org).
 
 The module passes off requests for ASP.NET pages to an external program, **mod-mono-server**, which actually handles the requests. The communication between the Apache module and mod-mono-server is established using a Unix socket or a TCP socket.
 
@@ -32,7 +32,7 @@ Requirements
 
 You will need [apache](http://httpd.apache.org) , the web server, installed.
 
-From [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads") you will need **mono**, **xsp** and **mod\_mono**.
+From [Downloads]({{ site.github.url }}/download/) you will need **mono**, **xsp** and **mod\_mono**.
 
 Distribution-Specific Documentation
 ===================================
@@ -47,7 +47,7 @@ Easy Configuration of Mod\_Mono
 
 When you installed XSP, a bunch of sample ASP.NET pages and web services were installed too. If the prefix used to configure XSP was /usr, the sample files are located in /usr/lib/xsp/test.
 
-If your needs are not very complicated, all you need is to use [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration), this basically means that you load the mod\_mono.conf file, like this in your Apache configuration file:
+If your needs are not very complicated, all you need is to use [AutoHosting]({{ site.github.url }}/docs/web/mod_mono-autoconfiguration/), this basically means that you load the mod\_mono.conf file, like this in your Apache configuration file:
 
     Include /etc/apache2/mod_mono.conf
 
@@ -55,7 +55,7 @@ And applications will start to be served. To try it out, copy the /usr/lib/xsp/t
 
 It is recommended that you create a directory per application that you want served. This will allow you to xcopy deploy your applications from Windows to Linux if you want to.
 
-More on automatic configuration of mod\_mono applications is in [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration).
+More on automatic configuration of mod\_mono applications is in [AutoHosting]({{ site.github.url }}/docs/web/mod_mono-autoconfiguration/).
 
 mod\_mono.conf loads the mod\_mono module, associates ASP.NET file extensions with the ASP.NET MIME type and adds index.aspx, Default.aspx, and default.aspx as automatic directory index pages (with the DirectoryIndex directive). If you don't include mod\_mono.conf in your main Apache configuration, you will at least need to have the mod\_mono.so module loaded with:
 
@@ -89,7 +89,7 @@ Apache 2.x comes with several processing modules (that is - servers, so-called M
 Configuring Mod\_Mono
 =====================
 
-When [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration) does not fit your needs, you will need to include several mod\_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
+When [AutoHosting]({{ site.github.url }}/docs/web/mod_mono-autoconfiguration/) does not fit your needs, you will need to include several mod\_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
 
 ### Mod\_Mono Configuration Tool
 
@@ -111,7 +111,7 @@ A basic setup is as follows (with line numbers added for convenience):
     2   AddHandler mono .aspx .ascx .asax .ashx .config .cs .asmx .axd
     3   MonoApplications "/:/home/username/www"
 
-The first line disables the [AutoHosting]({{ site.github.url }}/old_site/AutoConfiguration) feature. (If inside a VirtualHost section, it disables it just for that virtual host).
+The first line disables the [AutoHosting]({{ site.github.url }}/docs/web/mod_mono-autoconfiguration/) feature. (If inside a VirtualHost section, it disables it just for that virtual host).
 
 The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod\_mono (rather than Apache processing them itself as plain-text files).
 

@@ -15,15 +15,15 @@ Database Providers
 
 The following database providers are available for Mono applications:
 
--   [MySQL]({{ site.github.url }}/old_site/MySQL "MySQL")
--   [ODBC]({{ site.github.url }}/old_site/ODBC "ODBC")
--   [SQLClient]({{ site.github.url }}/old_site/SQLClient "SQLClient")
--   [Oracle]({{ site.github.url }}/old_site/Oracle "Oracle")
--   [PostgreSQL]({{ site.github.url }}/old_site/PostgreSQL "PostgreSQL")
+-   [MySQL]({{ site.github.url }}/docs/database-access/providers/mysql/)
+-   [ODBC]({{ site.github.url }}/docs/database-access/providers/odbc/)
+-   [SQLClient]({{ site.github.url }}{{ site.github.url }}/docs/database-access/providers/sqlclient/)
+-   [Oracle]({{ site.github.url }}/docs/database-access/providers/oracle/)
+-   [PostgreSQL]({{ site.github.url }}/docs/database-access/providers/postgresql/)
 -   [Firebird and Interbase]({{ site.github.url }}/old_site/Firebird_Interbase "Firebird Interbase")
--   [IBM DB2]({{ site.github.url }}/old_site/IBM_DB2 "IBM DB2")
+-   [IBM DB2]({{ site.github.url }}/docs/database-access/providers/db2/)
 -   [OLE DB]({{ site.github.url }}/old_site/OLE_DB "OLE DB")
--   [SQLite]({{ site.github.url }}/old_site/SQLite "SQLite")
+-   [SQLite]({{ site.github.url }}/docs/database-access/providers/sqlite/)
 -   [Sybase]({{ site.github.url }}/old_site/Sybase "Sybase")
 -   [TDS Providers]({{ site.github.url }}/old_site/TDS_Providers "TDS Providers")
 -   [TDS Generic]({{ site.github.url }}/old_site/TDS_Generic "TDS Generic")

@@ -4,7 +4,7 @@ navgroup: docs
 title: "Gendarme Rules: Design"
 ---
 
-[Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme")'s design rules are located in the **Gendarme.Rules.Design.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design/).
+[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s design rules are located in the **Gendarme.Rules.Design.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design/).
 
 <table>
 <col width="100%" />

@@ -119,7 +119,7 @@ As you have already noticed, most of the drawing parameters are controlled in a 
 -   [LineWidth](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f7) -- to control the width of the stroke line.
 -   [LineCap](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f8) -- controls the line capping (round, square, etc.)
 
-This state-based approach is far more convenient than specifying all drawing parameters in a single function call (like it's done ie. in the low-level [Gdk](/index.php?title=Gdk&action=edit&redlink=1 "Gdk (page does not exist)") drawing methods). However, once you started creating your own custom drawing functions, you'll notice that it's hard to control all the state modifications spanned across multiple methods. In most cases you will not want to care about certain state modifiers assuming they're unset.
+This state-based approach is far more convenient than specifying all drawing parameters in a single function call (like it's done ie. in the low-level Gdk drawing methods). However, once you started creating your own custom drawing functions, you'll notice that it's hard to control all the state modifications spanned across multiple methods. In most cases you will not want to care about certain state modifiers assuming they're unset.
 
 Cairo provides us with methods to control the state stack. The respective `Graphics` members are [Save](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f2) and [Restore](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f3).
 
@@ -216,7 +216,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 -   Don't try to keep `Graphics` across multiple expose events, this will not work due to double-buffering
 -   Don't try to use Cairo in threads other than the main (Gdk) thread.
 -   If you need to draw sharp (crisp) 1 pixel lines, add 0.5 to the coordinates. This is related to how the anti-aliasing works. Normally a 1px line is drawn "between" two pixels, which means that two points get 1/2 of the color value (blur)
--   Don't assume Cairo is the ultimate answer to every drawing need. Raw [Gdk](/index.php?title=Gdk&action=edit&redlink=1 "Gdk (page does not exist)") pixbuf blitting is still much faster than Cairo drawing and [Pango](/index.php?title=Pango&action=edit&redlink=1 "Pango (page does not exist)") is a better choice if you need to perform advanced text rendering (wrapping, ellipsizing, etc.) Gdk and Pango routines can be used along with Cairo without any special tricks.
+-   Don't assume Cairo is the ultimate answer to every drawing need. Raw Gdk pixbuf blitting is still much faster than Cairo drawing and Pango is a better choice if you need to perform advanced text rendering (wrapping, ellipsizing, etc.) Gdk and Pango routines can be used along with Cairo without any special tricks.
 -   Color (and Alpha) values are expressed in a 0-1 range not 0-255 range.
 -   Don't forget to manually dispose the `Graphics` and the target `Surface` at the end of the expose event. Automatic garbage collecting is not yet 100% working in Cairo.
 

@@ -29,7 +29,7 @@ Background Information & Possible Questions
 
 **I am using Linux or OSX, why is mono looking for libraries with "win32" in their name and ending with "dll" instead of "so"/"dylib"?**
 
-To preserve compatibility with the .NET Framework, mono uses the same library names as windows. These names are mapped to linux library names using [DllMaps]({{ site.github.url }}/old_site/Config_DllMap).
+To preserve compatibility with the .NET Framework, mono uses the same library names as windows. These names are mapped to linux library names using [DllMaps]({{ site.github.url }}/docs/advanced/pinvoke/dllmap/).
 
     <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>
 
@@ -67,7 +67,7 @@ A good first step is to set up the log level so you can see what file names mono
 
 What we see here is that mono is making several attemps to locate the missing library, by prepending "lib", replacing the ".dll" extension with ".so", etc, but it was still unable to find the library.
 
-If a library location has not been explicitly specified in a [DllMap]({{ site.github.url }}/old_site/Config_DllMap) entry in an application or assembly .config file, Mono will search for a library in a few places:
+If a library location has not been explicitly specified in a [DllMap]({{ site.github.url }}/docs/advanced/pinvoke/dllmap/) entry in an application or assembly .config file, Mono will search for a library in a few places:
 
 -   The directory where the referencing image was loaded from.
 -   In any place the system's dynamic loader is configured to look for shared libraries. For example on Linux this is specified in the \$LD\_LIBRARY\_PATH environment variable and the /etc/ld.so.conf file. On windows the \$PATH environment variable is used, instead.
@@ -99,8 +99,8 @@ NOTE: As mentioned above you can also set the \$LD\_LIBRARY\_PATH environment va
 Additional Information
 ----------------------
 
--   [Assemblies\_and\_the\_GAC]({{ site.github.url }}/old_site/Assemblies_and_the_GAC "Assemblies and the GAC")
--   [DllMap]({{ site.github.url }}/old_site/Config_DllMap)
+-   [Assemblies\_and\_the\_GAC]({{ site.github.url }}/docs/advanced/assemblies-and-the-gac/)
+-   [DllMap]({{ site.github.url }}/docs/advanced/pinvoke/dllmap/)
 -   [How the Runtime Locates Assemblies (MSDN)](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconhowruntimelocatesassemblies.asp)
 
 

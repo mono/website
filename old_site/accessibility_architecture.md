@@ -96,7 +96,7 @@ Definitions
  GAIL---GNOME Accessbility Implementation Library. GAIL provides accessibility support for GTK by implementing AtkObjects for widgets in GTK. GAIL is dynamically loadable (as a module) at runtime by a GTK application. Once loaded, those parts of your application that use standard GTK widgets will have a basic level of accessibility, without you having to modify your application at all. (If GAIL is not loaded, GTK widgets will have a default accessibility implementation that essentially returns no information, though it nominally conforms to the ATK API.)
  ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.
  UIA/at-spi Bridge---Mapping of AT-SPI to the UIA client APIs.
- [WinForms]({{ site.github.url }}/old_site/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
+ [WinForms]({{ site.github.url }}/docs/gui/winforms/)---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
  [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.
  [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.
  [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).

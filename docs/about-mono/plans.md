@@ -23,8 +23,8 @@ Here we are tracking some plans to particular pieces of technology that are part
 <li><a href="{{ site.github.url }}/docs/debug+profile/debug/debugger/">Debugger</a></li>
 <li><a href="{{ site.github.url }}/docs/">Documentation</a></li>
 <li><a href="{{ site.github.url }}/docs/about-mono/roadmap/">Mono Project Roadmap</a></li>
-<li><a href="{{ site.github.url }}/old_site/COM_Interop" title="COM Interop">COM Interop</a></li>
-<li><a href="{{ site.github.url }}/old_site/MonoSandbox" title="MonoSandbox">MonoSandbox</a></li>
+<li><a href="{{ site.github.url }}/docs/advanced/com-interop/">COM Interop</a></li>
+<li><a href="{{ site.github.url }}/docs/advanced/sandbox/">MonoSandbox</a></li>
 <li><a href="{{ site.github.url }}/old_site/Continuations" title="Continuations">Continuations</a></li>
 </ul></li>
 </ul>
@@ -99,7 +99,7 @@ Here we are tracking some plans to particular pieces of technology that are part
 <li>MacOS X
 <ul>
 <li><a href="{{ site.github.url }}/docs/tools+libraries/libraries/monomac/">MonoMac</a> comprehensive MacOS X bindings.</li>
-<li><a href="{{ site.github.url }}/old_site/MonoTouch" title="MonoTouch">MonoTouch</a> Mono on iPhone/iPad/iOS</li>
+<li><a href="http://xamarin.com/platform">MonoTouch</a> Mono on iPhone/iPad/iOS</li>
 </ul></li>
 </ul>
 <ul>

@@ -7,18 +7,18 @@ title: Libraries
 GUI Development
 ===============
 
-[Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
+[Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
 [![]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)
 
 [![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png "Enlarge")
 
-[GTK\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") action with iFolder
+[GTK\#]({{ site.github.url }}/docs/gui/gtksharp/) action with iFolder
 
 Hompepage: [http://gtk-sharp.sf.net](http://gtk-sharp.sf.net)
 
-Wiki: [GtkSharp]({{ site.github.url }}/old_site/GtkSharp "GtkSharp")
+Wiki: [GtkSharp]({{ site.github.url }}/docs/gui/gtksharp/)
 
 This toolkit is a .NET binding for the Gtk+ toolkit. It is in active development, and there are various applications in the Mono world that use it (Monodoc, Monocov, Mono's Debugger and various smaller applications, a more complete list is available on the Gtk\# Wiki. Platforms: Unix, Windows, GPE, MacOS X (using the X server).
 
@@ -142,16 +142,16 @@ Supports the ZeroConf/Bonjour protocol using mdnsdresponder or Avahi.
 
 Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf.tar.gz?view=tar).
 
-[Windows.Forms]({{ site.github.url }}/old_site/WinForms "WinForms")
+[Windows.Forms]({{ site.github.url }}/docs/gui/winforms/)
 -----------------------------------------------------------------
 
 [![]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)
 
 [![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png "Enlarge")
 
-[MWF]({{ site.github.url }}/old_site/WinForms "WinForms")'s color dialog box
+[MWF]({{ site.github.url }}/docs/gui/winforms/)'s color dialog box
 
-Wiki: [WinForms]({{ site.github.url }}/old_site/WinForms "WinForms")
+Wiki: [WinForms]({{ site.github.url }}/docs/gui/winforms/)
 
 This is part of the standard Mono distribution.
 
@@ -192,8 +192,6 @@ Cons:
 
 Cocoa\#
 -------
-
-Homepage: [CocoaSharp]({{ site.github.url }}/old_site/MonoMac)
 
 Native MacOSX toolkit.
 
@@ -564,7 +562,7 @@ Cecil
 
 Cecil is a library under development to generate and inspect programs and libraries in the ECMA CIL format.
 
-Read the [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") on this site for more information.
+Read the [Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/) on this site for more information.
 
 Mono.Reflection
 ---------------
@@ -574,12 +572,12 @@ Mono.Reflection
 Bittorrent Libraries
 --------------------
 
-You can use [BitSharp]({{ site.github.url }}/old_site/MonoTorrent), the Bittorrent libraries created my Alan McGovern, available from our [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository in the module "bitsharp".
+You can use [BitSharp]({{ site.github.url }}/old_site/MonoTorrent), the Bittorrent libraries created my Alan McGovern, available from our [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository in the module "bitsharp".
 
 Data Conversion
 ---------------
 
-Mono provides [Mono DataConvert]({{ site.github.url }}/old_site/Mono_DataConvert "Mono DataConvert") as a replacement for [http:/monodoc/T:System.BitConverter System.BitConverter] that is more versatile and does not have the design flaws in BitConverter
+Mono provides [Mono DataConvert]({{ site.github.url }}/old_site/Mono_DataConvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
 
 Curses
 ------
@@ -600,7 +598,7 @@ D-Bus is an inter-process communication framework that lets applications interfa
 PEWRAPI
 -------
 
-[PEWRAPI](http://www.plas.fit.qut.edu.au/perwapi/Default.aspx) is a library for reading and producing CIL images, very much in the same spirit as our [Cecil]({{ site.github.url }}/old_site/Cecil "Cecil") library.
+[PEWRAPI](http://www.plas.fit.qut.edu.au/perwapi/Default.aspx) is a library for reading and producing CIL images, very much in the same spirit as our [Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/) library.
 
 Indy.Sockets
 ------------
@@ -768,7 +766,7 @@ Exiv2Sharp
 
 This poject, created by Stephane Delcroix during Novell's HackWeek III, is a managed binding of the popular exiv2 ([http://exiv2.org](http://exiv2.org)) metadata editor.
 
-The code is available from Mono's [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/exiv2-sharp/).
+The code is available from Mono's [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/exiv2-sharp/).
 
 * * * * *
 
@@ -854,21 +852,21 @@ GoogleSharp and PicassaSharp
 
 These modules created by Gonzalo Paniagua live in Mono's SVN repository and are used to provide applications with authentication facilities to a Google account (GoogleSharp) and access to the Picassa features for exporting, listing and accessing albums.
 
-The code is available from Mono's [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/google-sharp/src/).
+The code is available from Mono's [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/google-sharp/src/).
 
 FacebookSharp
 -------------
 
 This library lets you access the Facebook Platform services from within a Mono/.NET application or an ASP.NET web application.
 
-The code is available from Mono's [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/facebook-sharp/).
+The code is available from Mono's [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/facebook-sharp/).
 
 SmugMugSharp
 ------------
 
 A library created by Thomas Van Machelen provides an API for managing pictures collections at the [SmugMug](http://www.smugmug.com/) photo-sharing site.
 
-The code is available from Mono's [SVN]({{ site.github.url }}/old_site/SourceCodeRepository) repository and can be browsed and downloaded [here](http://anonsvn.mono-project.com/viewvc/trunk/smugmug-sharp/)
+The code is available from Mono's [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository and can be browsed and downloaded [here](http://anonsvn.mono-project.com/viewvc/trunk/smugmug-sharp/)
 
 FlickrNet
 ---------

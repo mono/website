@@ -10,7 +10,7 @@ title: C# REPL
 
 C\# GUI Shell
 
-This documents the features available in the C\# interactive shell that is part of Mono's C\# compiler. An interactive shell is usually referred to as a read eval print loop or repl. The C\# interactive shell is built on top of the [http:/monodoc/N:Mono.CSharp Mono.CSharp] library, a library that provides a C\# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).
+This documents the features available in the C\# interactive shell that is part of Mono's C\# compiler. An interactive shell is usually referred to as a read eval print loop or repl. The C\# interactive shell is built on top of the [Mono.CSharp](http://docs.go-mono.com/index.aspx?link=N:Mono.CSharp) library, a library that provides a C\# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).
 
 Using it
 ========
@@ -139,7 +139,7 @@ In the GUI it is also possible to register your own custom transformation object
 -   RegisterTransformHandler (RenderHandler rh): Use this to register a custom transformer for an object.
 -   UnregisterTransformHandler (RenderHandler rh): Use this to unregister a trasformer handler.
 
-The GUI version is able to embed Gtk.Widgets when a rendering handler has been registered. The shell will call all registered methods and pass the result of an operation, and if the operation returns a [http:/monodoc/Gtk.Widget Gtk.Widget] that is used instead of the string representation.
+The GUI version is able to embed Gtk.Widgets when a rendering handler has been registered. The shell will call all registered methods and pass the result of an operation, and if the operation returns a [Gtk.Widget](http://docs.go-mono.com/index.aspx?link=Gtk.Widget) that is used instead of the string representation.
 
 This can be layered multiple times, the following example shows how to register a handler to render true and false:
 
@@ -156,7 +156,7 @@ Notice that a simple call that returns a widget will not embed the widget itself
 
 This is to avoid having your widgets automatically parented into the shell.
 
-At least one transformation step must be applied before a [http:/monodoc/T:Gtk.Widget Gtk.Widget] will be considered for embedding.
+At least one transformation step must be applied before a [Gtk.Widget](http://docs.go-mono.com/index.aspx?link=T:Gtk.Widget) will be considered for embedding.
 
 ### Built-in Properties
 

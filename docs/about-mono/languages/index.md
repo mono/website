@@ -4,7 +4,7 @@ navgroup: docs
 title: Languages
 ---
 
-Multiple languages can be used with the Mono platform. The Mono project provides [C\#]({{ site.github.url }}/Mcs), [Basic]({{ site.github.url }}/Language_BASIC), and [Ilasm]({{ site.github.url }}/Dis/Assembling_CIL_Code) compilers, and there are both open source and commercial compilers that can be used with Mono.
+Multiple languages can be used with the Mono platform. The Mono project provides [C\#]({{ site.github.url }}/docs/about-mono/languages/csharp/), [Basic]({{ site.github.url }}/docs/about-mono/languages/visualbasic/), and [Ilasm]({{ site.github.url }}/docs/tools+libraries/tools/monodis/) compilers, and there are both open source and commercial compilers that can be used with Mono.
 
 It's important to note that any language that compiles to pure IL should work under Mono. Some languages such as Microsoft's Managed C++ do not always compile to pure IL, so they will not always work as expected, since they are not truly platform independent.
 
@@ -15,7 +15,7 @@ Mono-compatible compilers
 C\#
 ---
 
-The main C\# compiler of the Mono Project is [**mcs**]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler"). It covers all the features in C\# 3.0 (2.6) and 4.0 (preview), including 3.0 Linq and 4.0 dynamic. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
+The main C\# compiler of the Mono Project is [**mcs**]({{ site.github.url }}/docs/about-mono/languages/csharp/). It covers all the features in C\# 3.0 (2.6) and 4.0 (preview), including 3.0 Linq and 4.0 dynamic. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
 
 C\# is specified in the ISO/IEC 23271:2006 and ECMA 334 standards. Microsoft has [granted access to their patents](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) under their [Community Promise](http://www.microsoft.com/interop/cp/default.mspx).
 
@@ -27,7 +27,7 @@ F\#
 Java
 ----
 
-Java applications can run in Mono, see the [Java]({{ site.github.url }}/old_site/Java "Java") page for more details.
+Java applications can run in Mono, see the [Java]({{ site.github.url }}/docs/about-mono/languages/java/) page for more details.
 
 Scala
 -----
@@ -47,7 +47,7 @@ Nemerle is a new hybrid (functional, object-oriented and imperative) programming
 Visual Basic.NET
 ----------------
 
-See our [BASIC Language]({{ site.github.url }}/old_site/VisualBasic.NET_support) page for more details.
+See our [BASIC Language]({{ site.github.url }}/docs/about-mono/languages/visualbasic/) page for more details.
 
 Python
 ------

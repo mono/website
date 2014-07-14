@@ -86,7 +86,7 @@ For example, simple animations or status updates could be hooked up into an Idle
     }
 ```
 
-For more details about using Idle handlers, see the [http:/monodoc/T:GLib.Idle GLib.Idle] class library documentation.
+For more details about using Idle handlers, see the [GLib.Idle](http://docs.go-mono.com/index.aspx?link=T:GLib.Idle) class library documentation.
 
 Timeouts
 --------
@@ -117,7 +117,7 @@ Those of you who have done winforms development before will notice that GLib.Tim
 
 As described on the example, the timeout routine has to return a true or false value. Returning true will reset the timeout and invoke the method again, and returning false will prevent further invocations of the timeout routine to be called.
 
-Look at the documentation for [http:/monodoc/T:GLib.Timeout GLib.Timeout] for more examples and to learn more about timeouts.
+Look at the documentation for [GLib.Timeout](http://docs.go-mono.com/index.aspx?link=T:GLib.Timeout) for more examples and to learn more about timeouts.
 
 Gtk.Application.Invoke
 ----------------------

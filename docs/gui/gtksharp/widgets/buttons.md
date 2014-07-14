@@ -7,7 +7,7 @@ title: "GtkSharp: Buttons"
 Normal Buttons
 ==============
 
-There are two ways to create normal [http:/monodoc/T:Gtk.Button buttons]:
+There are two ways to create normal [buttons](http://docs.go-mono.com/index.aspx?link=T:Gtk.Button):
 
 ``` csharp
 Button button1 = new Button("labeltext");
@@ -19,7 +19,7 @@ or
 Button button1 = Button.NewWithMnemonic("Hello World");
 ```
 
-After creating a button using its argument-less constructor, it's then up to you to pack a label or pixmap into this new button. To do this, create a new box, and then pack your objects into this box using the usual [http:/monodoc/M:Gtk.Box.PackStart Gtk.Box.PackStart], and then use [http:/monodoc/M:Gtk.Container.Add Gtk.Container.Add] to pack the button into the box.
+After creating a button using its argument-less constructor, it's then up to you to pack a label or pixmap into this new button. To do this, create a new box, and then pack your objects into this box using the usual [Gtk.Box.PackStart](http://docs.go-mono.com/index.aspx?link=M:Gtk.Box.PackStart), and then use [Gtk.Container.Add](http://docs.go-mono.com/index.aspx?link=M:Gtk.Container.Add) to pack the button into the box.
 
 Here's an example of creating a button with a image and a label in it. I've broken up the code to create a box from the rest so you can use it in your programs. There are further examples of using images later in the tutorial.
 

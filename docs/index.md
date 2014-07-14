@@ -14,7 +14,7 @@ Getting Started
 ---------------
 
  - [Overview]({{ site.github.url }}/docs/getting-started/)
- - Install Mono on [Mac OS X]({{ site.github.url }}/docs/gettings-started/install/mac/), [Linux]({{ site.github.url }}/docs/gettings-started/install/linux/) or [Windows]({{ site.github.url }}/docs/gettings-started/install/windows/)
+ - Install Mono on [Mac OS X]({{ site.github.url }}/docs/getting-started/install/mac/), [Linux]({{ site.github.url }}/docs/getting-started/install/linux/) or [Windows]({{ site.github.url }}/docs/getting-started/install/windows/)
  - [Mono Basics]({{ site.github.url }}/docs/getting-started/mono-basics/)
  - [Development Environments]({{ site.github.url }}/docs/getting-started/development-environments/)
 
@@ -27,7 +27,7 @@ About Mono
  - [Compatibility]({{ site.github.url }}/docs/about-mono/compatibility/) and [Class Status]({{ site.github.url }}/docs/about-mono/class-status/) 
  - [Releases]({{ site.github.url }}/docs/about-mono/releases/) and [Versioning]({{ site.github.url }}/docs/about-mono/versioning/) 
  - [Maintainers]({{ site.github.url }}/docs/about-mono/maintainers/)
- - [History]({{ site.github.url }}/docs/about-mono/history/), [Concerns about Mono]({{ site.github.url }}/docs/about-mono/concerns-about-mono/), 
+ - [History]({{ site.github.url }}/docs/about-mono/history/), [Concerns about Mono]({{ site.github.url }}/docs/about-mono/concerns-about-mono/)
  - [Roadmap]({{ site.github.url }}/docs/about-mono/roadmap/)
  - [Vulnerabilities]({{ site.github.url }}/docs/about-mono/vulnerabilities/)
  - Showcase: [Screenshots]({{ site.github.url }}/docs/about-mono/showcase/screenshots/), [Software]({{ site.github.url }}/docs/about-mono/showcase/software/), [Companies using Mono]({{ site.github.url }}/docs/about-mono/showcase/companies-using-mono/), [Mono Logos]({{ site.github.url }}/docs/about-mono/logos/)

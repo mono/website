@@ -6,7 +6,7 @@ title: Monodoc Contributing
 
 **This article is incomplete, please add to it.**
 
-This article is about contributing to the class library documentation. If you are looking to contribute to the Documentation on the Wiki, look in [Mono Documentation Improvement Project]({{ site.github.url }}/old_site/Mono_Documentation_Improvement_Project "Mono Documentation Improvement Project")
+This article is about contributing to the class library documentation.
 
 Mono-specific API Documentation
 ===============================

@@ -9,7 +9,7 @@ Mono runs on Windows, this page describes the various features available for use
 Installing Mono on Windows
 ==========================
 
-1.  Download the latest Windows installer from the [Downloads]({{ site.github.url }}/old_site/Downloads "Downloads")
+1.  Download the latest Windows installer from the [Downloads]({{ site.github.url }}/download/)
 2.  Run the downloaded executable as administrator. During the installation, you will be asked to accept the terms of the license, presented with an information page, and then asked to answer a few standard questions, including:
     1.  What directory to install Mono to
     2.  What optional components to install
@@ -63,7 +63,7 @@ If you get this far, you have a working Mono installation.
 Gtk\#
 -----
 
-[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/old_site/GtkSharp "GtkSharp") page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/old_site/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide").
+[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/gui/gtksharp/beginners-guide/).
 
 The combined installer creates an "Applications" folder under the main Mono program group with two sample Gtk\# applications which can be run to test your Gtk\# installation.
 
@@ -74,7 +74,7 @@ These are:
 -   Prj2Make\# GTK - This is a graphical interface to the prj2make library which can be used to generate Makefiles from Visual Studio.NET C\# projects and solutions. You can find out more about this application in the article [Working with Mono and Visual Studio]({{ site.github.url }}/old_site/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio").
 -   Sql\# GTK - A Graphical "Query Analyzer" style tool which supports several different databases.
 
-Alternatively, if you only want to use Gtk\# on Windows, without Mono, you can use the [Gtk\# installer for the .NET Framework]({{ site.github.url }}/old_site/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework").
+Alternatively, if you only want to use Gtk\# on Windows, without Mono, you can use the [Gtk\# installer for the .NET Framework]({{ site.github.url }}/docs/gui/gtksharp/installer-for-net-framework/).
 
 ASP.NET with Mono: xsp & xsp2
 -----------------------------
@@ -87,9 +87,6 @@ To test XSP, simply start the Web Server with:
 
 -   The "XSP Test Web Server" or "XSP 2.0 Test Web Server" shortcut, and browse to the server using
 -   The corresponding "XSP Index Page" or "XSP 2.0 Index Page" shortcut.
-
-(For more information about taking advantage of the XSP Web Server, check out [Working with Mono and Visual Studio]({{ site.github.url }}/old_site/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio").
-
 
 Contents of the Mono Packages for Windows
 =========================================

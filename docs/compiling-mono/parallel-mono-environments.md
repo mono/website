@@ -6,7 +6,7 @@ title: Parallel Mono Environments
 
 *This document details how to run multiple Mono environments on a single system where neither environment conflicts with another.*
 
-This assumes that you are familiar with the [compilation process for Mono]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono").
+This assumes that you are familiar with the [compilation process for Mono]({{ site.github.url }}/docs/compiling-mono/).
 
 What's the Point?
 -----------------
@@ -30,7 +30,7 @@ First, download the [Released Source Mono Tarballs](http://go-mono.com/sources-s
 
 ### Source from Version Control (Mono Git)
 
-Modules in [Mono Git](/index.php?title=Git&action=edit&redlink=1 "Git (page does not exist)") correspond to the source tarballs above. Respective modules are: *mono, libgdiplus,* and *gtk-sharp*. If you are using Git rather than released tarballs, you must run the ./autogen.sh script to generate the autotools build system before you will be able to run ./configure commands.
+Modules in Mono Git correspond to the source tarballs above. Respective modules are: *mono, libgdiplus,* and *gtk-sharp*. If you are using Git rather than released tarballs, you must run the ./autogen.sh script to generate the autotools build system before you will be able to run ./configure commands.
 
 Setting up a Build Environment
 ------------------------------

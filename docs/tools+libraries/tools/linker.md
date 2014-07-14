@@ -24,14 +24,14 @@ Usage
 mkbundle, the linker's best friend
 ----------------------------------
 
-The linker operates only at the assemblies level. By using the [mkbundle]({{ site.github.url }}/old_site/Command-Line_Tools#project-converstion-26-deployment "Command-Line Tools") program, you can create a single executable which will contain the strict minimum it needs to run.
+The linker operates only at the assemblies level. By using the [mkbundle]({{ site.github.url }}/docs/tools+libraries/tools/#project-converstion-26-deployment) program, you can create a single executable which will contain the strict minimum it needs to run.
 
 See the man page for mkbundle for details on its operation.
 
 Download
 ========
 
-For the moment, no versions has been released, but you can download the code from the [SVN]({{ site.github.url }}/old_site/SourceCodeRepository), in the module [/mcs/tools/linker](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/linker)
+For the moment, no versions has been released, but you can download the code from the [SVN]({{ site.github.url }}/community/contributing/source-code-repository/), in the module [/mcs/tools/linker](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/linker)
 
 Links
 =====

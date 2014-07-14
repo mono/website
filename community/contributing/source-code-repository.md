@@ -8,8 +8,6 @@ The Mono source code is hosted on [GitHub](http://GitHub.com) using the [Git](ht
 
 Here we describe how one obtains commit access to the Mono Git repository and the responsibilities that come with that access privilege.
 
-Also, you can see our list of important [branches]({{ site.github.url }}/old_site/Branches "Branches").
-
 Browsing the Sources
 --------------------
 
@@ -18,7 +16,7 @@ If all you need is to browse the sources, you can go to [Mono Organization page 
 Building Mono from source
 -------------------------
 
-Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono")
+Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source]({{ site.github.url }}/docs/compiling-mono/)
 
 Contributing Patches
 ====================
@@ -34,7 +32,7 @@ It is important that everyone follow these policies:
 
 ### Coding Guidelines
 
-We have our own [coding guidelines]({{ site.github.url }}/old_site/Coding_Guidelines "Coding Guidelines").
+We have our own [coding guidelines]({{ site.github.url }}/community/contributing/coding-guidelines/).
 
 ### Code License
 
@@ -68,7 +66,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 -   Always make sure to add meaningful commit logs
 
--   If you fix a bug, add a regression test for it in the [test suite]({{ site.github.url }}/old_site/Test_Suite "Test Suite")
+-   If you fix a bug, add a regression test for it in the [test suite]({{ site.github.url }}/community/contributing/test-suite/)
 
 -   Don't commit unrelated changes together with a fix: do fine-grained commits
 
@@ -88,7 +86,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 -   Never use a decompiler or disassembler to look at proprietary code.
 
--   Follow the [coding guidelines]({{ site.github.url }}/old_site/Coding_Guidelines "Coding Guidelines")
+-   Follow the [coding guidelines]({{ site.github.url }}/community/contributing/coding-guidelines/)
 
 -   Keep an eye on performance considerations, especially for code in core classes, ask on the list for guidance
 
@@ -102,11 +100,6 @@ Getting Help With Git
 GitHub maintains some great resources for developers here:
 
 [http://help.github.com/](http://help.github.com/)
-
-Branches
-========
-
-For details on existing branches, see [Branches]({{ site.github.url }}/old_site/Branches "Branches").
 
 Keeping track of code changes
 =============================

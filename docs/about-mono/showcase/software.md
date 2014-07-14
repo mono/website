@@ -6,31 +6,6 @@ title: Software
 
 The following applications were developped with Mono and run on its runtime:
 
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#applications">1 Applications</a>
-<ul>
-<li><a href="#commercial-applications">1.1 Commercial Applications</a></li>
-<li><a href="#commercial-and-open-source-applications">1.2 Commercial and Open Source Applications</a></li>
-<li><a href="#open-source-applications">1.3 Open Source applications</a>
-<ul>
-<li><a href="#gui-applications">1.3.1 GUI Applications</a></li>
-<li><a href="#developer-tools">1.3.2 Developer Tools</a></li>
-<li><a href="#server-applications">1.3.3 Server Applications</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#components--libraries">2 Components &amp; Libraries</a></li>
-<li><a href="#mono-users">3 Mono Users</a></li>
-<li><a href="#other-lists">4 Other Lists</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
 Applications
 ============
 
@@ -127,7 +102,7 @@ Open Source applications
 ### Developer Tools
 
 -   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation]({{ site.github.url }}/old_site/NAnt_Installation "NAnt Installation") guide.
--   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme]({{ site.github.url }}/old_site/Gendarme "Gendarme"). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
+-   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C\# compiler.
 
 ### Server Applications
@@ -144,12 +119,12 @@ Open Source applications
 Components & Libraries
 ======================
 
-See our separate page on [Libraries]({{ site.github.url }}/old_site/Libraries "Libraries") for more details.
+See our separate page on [Libraries]({{ site.github.url }}/docs/tools+libraries/libraries/) for more details.
 
 Mono Users
 ==========
 
-[Companies Using Mono]({{ site.github.url }}/old_site/Companies_Using_Mono "Companies Using Mono")
+[Companies Using Mono]({{ site.github.url }}/docs/about-mono/showcase/companies-using-mono/)
 
 Other Lists
 ===========

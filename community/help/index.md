@@ -6,7 +6,7 @@ title: Help
 
  When having a more frequent problem as listed below please click the link to jump to the corresponding section:
 
-1.  Dealing with [compilations issues when building Mono](#issues-compiling-mono-itself) or [bugs]({{ site.github.url }}/old_site/Bugs "Bugs") of Mono
+1.  Dealing with [compilations issues when building Mono](#issues-compiling-mono-itself) or [bugs]({{ site.github.url }}/community/bugs/) of Mono
 2.  Problems when using Mono
     1.  [Can not compile my source](#can-not-compile-my-source)
     2.  [Works under .Net but not on Mono](#works-under-net-but-not-on-mono)
@@ -19,12 +19,12 @@ If your issue has not been listed please read the [Problems of a different kind]
 Issues compiling Mono itself
 ----------------------------
 
-Since Mono is a large piece of software you must strictly follow the [Compiling Mono]({{ site.github.url }}/old_site/Compiling_Mono "Compiling Mono")-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. [libgdiplus]({{ site.github.url }}/old_site/Libgdiplus "Libgdiplus")). If the problems still remain please send a mail to the [mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list).
+Since Mono is a large piece of software you must strictly follow the [Compiling Mono]({{ site.github.url }}/docs/compiling-mono/)-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. [libgdiplus]({{ site.github.url }}/docs/gui/libgdiplus/)). If the problems still remain please send a mail to the [mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list).
 
 Can not compile my source
 -------------------------
 
-When compiling your sources please bear in mind that mono provides three [C\#-Compilers]({{ site.github.url }}/old_site/CSharp_Compiler "CSharp Compiler"), **mcs**, **gmcs** and **smcs**.
+When compiling your sources please bear in mind that mono provides three [C\#-Compilers]({{ site.github.url }}/docs/about-mono/languages/csharp/), **mcs**, **gmcs** and **smcs**.
 
 -   **mcs** is the standard compiler for code which is targeting the .Net Framework 1.1
 -   **gmcs** is Mono's compiler for the the .Net Framework 2.0 and beyond\*
@@ -33,9 +33,9 @@ When compiling your sources please bear in mind that mono provides three [C\#-Co
     *
     ```
 
-    gmcs does partly support [C\# 3.0 language features]({{ site.github.url }}/old_site/CSharp_Compiler#under-development-features "CSharp Compiler")
+    gmcs does partly support [C\# 3.0 language features]({{ site.github.url }}/docs/about-mono/languages/csharp/#under-development-features "CSharp Compiler")
 
--   **smcs**: compiler to target the 2.1 runtime, to build [Moonlight]({{ site.github.url }}/old_site/Moonlight "Moonlight") applications.
+-   **smcs**: compiler to target the 2.1 runtime, to build [Moonlight]({{ site.github.url }}/docs/web/moonlight/) applications.
 
 Most help request regarding the compilation of user software can be fixed by adding the proper references because only `mscorlib.dll` and `System.dll` are referenced by default.
 
@@ -59,5 +59,5 @@ Naturally this question is very hard to answer since it relies on the specific a
 Problems of a different kind
 ----------------------------
 
-In general users can always turn to the [Mailing Lists]({{ site.github.url }}/old_site/Mailing_Lists "Mailing Lists") when having problems but for more information on where to get Support please take also a look at the [Support-Category]({{ site.github.url }}/old_site/Category:Support "Category:Support").
+In general users can always turn to the [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/) when having problems.
 
