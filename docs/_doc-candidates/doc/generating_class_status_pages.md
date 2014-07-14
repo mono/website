@@ -1,1 +1,0 @@
-../../../old_site/generating_class_status_pages.md

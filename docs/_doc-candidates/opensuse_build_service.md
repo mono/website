@@ -1,1 +1,0 @@
-../../old_site/opensuse_build_service.md

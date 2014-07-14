@@ -1,1 +1,0 @@
-../../../old_site/monkeyguide_license_and_credits.md

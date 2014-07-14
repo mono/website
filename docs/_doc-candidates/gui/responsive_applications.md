@@ -1,1 +1,0 @@
-../../../old_site/responsive_applications.md

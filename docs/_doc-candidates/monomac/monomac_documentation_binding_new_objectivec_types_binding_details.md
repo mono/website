@@ -1,1 +1,0 @@
-../../../old_site/monomac_documentation_binding_new_objectivec_types_binding_details.md

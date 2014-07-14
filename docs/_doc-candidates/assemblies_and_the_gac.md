@@ -1,1 +1,0 @@
-../../old_site/assemblies_and_the_gac.md

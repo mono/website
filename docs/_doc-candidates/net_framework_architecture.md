@@ -1,1 +1,0 @@
-../../old_site/net_framework_architecture.md

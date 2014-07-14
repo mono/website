@@ -1,1 +1,0 @@
-../../../old_site/bosteenmonkey_guide.md
