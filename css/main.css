@@ -153,6 +153,15 @@ footer {
   padding: 25px 0;
 }
 
+#footer-notes {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+#footer-notes a {
+  color: #969696;
+}
+
 footer ul {
   font-size: 0.85em;
 }
