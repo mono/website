@@ -116,7 +116,6 @@ In addition, the following are Mono project management plans:
 
 -   [Infrastructure Projects]({{ site.github.url }}/old_site/InfrastructureProjects "InfrastructureProjects")
 -   Visual Studio Projects
-    -   [Mono Tools for Visual Studio Main Page]({{ site.github.url }}/MonoTools)
     -   [Mono Tools Getting Started Guide]({{ site.github.url }}/old_site/GettingStartedWithMonoTools "GettingStartedWithMonoTools")
     -   [Visual Studio Integration]({{ site.github.url }}/old_site/Visual_Studio_Integration "Visual Studio Integration")
 

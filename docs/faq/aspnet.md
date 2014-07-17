@@ -92,7 +92,7 @@ mod\_mono at this point only runs on Unix systems. There is a patch (to be revie
 
 **How do I restart my Mono applications without restarting Apache?**
 
-Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{ site.github.url }}/docs/web/mod-mono/#control-panel "Mod mono") for details on setting it up.
+Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section]({{ site.github.url }}/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
 
 **My Apache Module Is Not Recognized, what to do?**
 

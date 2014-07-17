@@ -6,8 +6,6 @@ title: HeapShot
 
 [![]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/6/69/Heapshot.png "Enlarge")
-
 HeapShot in action
 
 Heap Shot is a graphical UI used to explore memory allocation patterns in an application. It processes log files generated using the standard [profiling]({{ site.github.url }}/docs/debug+profile/profile/) tools.

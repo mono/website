@@ -12,8 +12,6 @@ GUI Development
 
 [![]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png "Enlarge")
-
 [GTK\#]({{ site.github.url }}/docs/gui/gtksharp/) action with iFolder
 
 Hompepage: [http://gtk-sharp.sf.net](http://gtk-sharp.sf.net)
@@ -147,8 +145,6 @@ Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/)
 
 [![]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png "Enlarge")
-
 [MWF]({{ site.github.url }}/docs/gui/winforms/)'s color dialog box
 
 Wiki: [WinForms]({{ site.github.url }}/docs/gui/winforms/)
@@ -218,8 +214,6 @@ wxNet
 -----
 
 [![]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png "Enlarge")
 
 wx\# Sample
 
@@ -341,8 +335,6 @@ fyiReporting
 
 [![]({{ site.github.url }}/old_site/images/c/ca/Fyireporting.jpg)]({{ site.github.url }}/old_site/images/c/ca/Fyireporting.jpg)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/c/ca/Fyireporting.jpg "Enlarge")
-
 Designer screenshot
 
 [fyiReporting](http://www.fyireporting.com/) includes a report designer, and support for the [RDL Specification](http://www.microsoft.com/sql/reporting/techinfo/rdlspec.mspx).
@@ -362,8 +354,6 @@ FlexCelNet
 ----------
 
 [![]({{ site.github.url }}/old_site/images/b/bb/FlexCelPreview.gif)]({{ site.github.url }}/old_site/images/b/bb/FlexCelPreview.gif)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/b/bb/FlexCelPreview.gif "Enlarge")
 
 An Excel report rendered
 

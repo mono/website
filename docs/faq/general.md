@@ -234,7 +234,7 @@ For more details see the [Gui Toolkits]({{ site.github.url }}/docs/gui/gui-toolk
 
 **Where can I learn more about Gtk\#?**
 
-See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more information about Gtk\# or jump on over to the [Gtk\# Beginners Guide]({{ site.github.url }}/gui/gtksharp/beginners-guide/) to get started.
+See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more information about Gtk\# or jump on over to the [Gtk\# Beginners Guide]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/) to get started.
 
 **What can I do with Gtk\#?**
 
@@ -244,7 +244,7 @@ Gtk\# is becoming very usable and you can create applications and applets like t
 
 Try: mcs -pkg:gtk-sharp-2.0 HelloWorld.cs
 
-See [Gtk\# Beginners Guide]({{ site.github.url }}/gui/gtksharp/beginners-guide/) for more details.
+See [Gtk\# Beginners Guide]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/) for more details.
 
 **Is there any way how to connect DataAdapter to some Gtk\# controls?**
 

@@ -109,8 +109,6 @@ For Linux server and desktop development, we only need the ECMA components, and 
 
 Yes, there are a number of alternatives that people have been using for developing Web applications that do not use the ASP.NET model: [Jitsu](http://www.jitsu.org) and [Dream](http://developer.mindtouch.com/Dream).
 
-You can see Dream in action at [Wik.is](http:///mono.wik.is).
-
 **Are there alternatives to Windows.Forms?**
 
 Yes, there are plenty of alternatives, including [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) see our page on [Gui Toolkits]({{ site.github.url }}/docs/gui/gui-toolkits/) for more information.

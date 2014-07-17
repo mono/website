@@ -29,7 +29,7 @@ Since Cecil's API has not yet been frozen as we want to continue improving it fr
 
 The 0.9 family of Cecil, is very close to API stability.
 
-The pattern used for using libraries whose API is not frozen is described in the [[Deployment]({{ site.github.url }}/Guidelines:Application_Deployment%7CApplication)] guidelines.
+The pattern used for using libraries whose API is not frozen is described in the [[Deployment]({{ site.github.url }}/docs/getting-started/application-deployment/)] guidelines.
 
 To summarize it, it is necessary for you to copy and bundle a version of Cecil with your project before using it. To do this, you use the following pattern:
 

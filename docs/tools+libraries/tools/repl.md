@@ -6,8 +6,6 @@ title: C# REPL
 
 [![]({{ site.github.url }}/old_site/images/9/9c/Xbyhja.png)]({{ site.github.url }}/old_site/images/9/9c/Xbyhja.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/9/9c/Xbyhja.png "Enlarge")
-
 C\# GUI Shell
 
 This documents the features available in the C\# interactive shell that is part of Mono's C\# compiler. An interactive shell is usually referred to as a read eval print loop or repl. The C\# interactive shell is built on top of the [Mono.CSharp](http://docs.go-mono.com/index.aspx?link=N:Mono.CSharp) library, a library that provides a C\# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).

@@ -61,23 +61,23 @@ For the console runner the list of assemblies to load rules from is defined in t
 
 Current rules are divided into the following categories/assemblies:
 
--   [Gendarme.Rules.BadPractice]({{ site.github.url }}/docs/tools/gendarme/rules/bad-practice/)
--   [Gendarme.Rules.Concurrency]({{ site.github.url }}/docs/tools/gendarme/rules/concurrency/)
--   [Gendarme.Rules.Correctness]({{ site.github.url }}/docs/tools/gendarme/rules/correctness/)
--   [Gendarme.Rules.Design]({{ site.github.url }}/docs/tools/gendarme/rules/design/)
--   [Gendarme.Rules.Design.Generic]({{ site.github.url }}/docs/tools/gendarme/rules/design-generic/)
--   [Gendarme.Rules.Design.Linq]({{ site.github.url }}/docs/tools/gendarme/rules/design-linq/) (new in 2.2)
--   [Gendarme.Rules.Exceptions]({{ site.github.url }}/docs/tools/gendarme/rules/exceptions/)
--   [Gendarme.Rules.Interoperability]({{ site.github.url }}/docs/tools/gendarme/rules/interoperability/)
--   [Gendarme.Rules.Maintainability]({{ site.github.url }}/docs/tools/gendarme/rules/maintainability/) (new in 2.0)
--   [Gendarme.Rules.Naming]({{ site.github.url }}/docs/tools/gendarme/rules/naming/)
--   [Gendarme.Rules.Performance]({{ site.github.url }}/docs/tools/gendarme/rules/performance/)
--   [Gendarme.Rules.Portability]({{ site.github.url }}/docs/tools/gendarme/rules/portability/)
--   [Gendarme.Rules.Security]({{ site.github.url }}/docs/tools/gendarme/rules/security/)
--   [Gendarme.Rules.Security.Cas]({{ site.github.url }}/docs/tools/gendarme/rules/security-cas/) (new in 2.2)
--   [Gendarme.Rules.Serialization]({{ site.github.url }}/docs/tools/gendarme/rules/serialization/) (new in 2.0)
--   [Gendarme.Rules.Smells]({{ site.github.url }}/docs/tools/gendarme/rules/smells/)
--   [Gendarme.Rules.Ui]({{ site.github.url }}/docs/tools/gendarme/rules/ui/)
+-   [Gendarme.Rules.BadPractice]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/bad-practice/)
+-   [Gendarme.Rules.Concurrency]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/concurrency/)
+-   [Gendarme.Rules.Correctness]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/correctness/)
+-   [Gendarme.Rules.Design]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design/)
+-   [Gendarme.Rules.Design.Generic]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design-generic/)
+-   [Gendarme.Rules.Design.Linq]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design-linq/) (new in 2.2)
+-   [Gendarme.Rules.Exceptions]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/exceptions/)
+-   [Gendarme.Rules.Interoperability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/interoperability/)
+-   [Gendarme.Rules.Maintainability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/maintainability/) (new in 2.0)
+-   [Gendarme.Rules.Naming]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/naming/)
+-   [Gendarme.Rules.Performance]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/performance/)
+-   [Gendarme.Rules.Portability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/portability/)
+-   [Gendarme.Rules.Security]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/security/)
+-   [Gendarme.Rules.Security.Cas]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/security-cas/) (new in 2.2)
+-   [Gendarme.Rules.Serialization]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/serialization/) (new in 2.0)
+-   [Gendarme.Rules.Smells]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/smells/)
+-   [Gendarme.Rules.Ui]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/ui/)
 
 Download
 ========
@@ -112,14 +112,14 @@ Other Cool Stuff
 Resources
 =========
 
--   What's planned ? [Gendarme.Roadmap]({{ site.github.url }}/docs/tools/gendarme/roadmap/)
+-   What's planned ? [Gendarme.Roadmap]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/roadmap/)
 -   What's happening ? You can read real-time news on Gendarme's development on its [Ohloh's journal](http://www.ohloh.net/projects/gendarme/messages).
 
 Getting Help
 ------------
 
--   A list of frequently asked questions can be found in [Gendarme.FAQ]({{ site.github.url }}/docs/tools/gendarme/faq/).
--   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ]({{ site.github.url }}/docs/tools/gendarme/development-faq/).
+-   A list of frequently asked questions can be found in [Gendarme.FAQ]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/faq/).
+-   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/development-faq/).
 -   You are welcome to participate in Gendarme's discussions on [it's Google Group](http://groups.google.com/group/gendarme). This group is used for both users and developers of Gendarme.
 -   Gendarme's fans are also present on [IRC]({{ site.github.url }}/community/help/irc/) (\#gendarme on GIMPnet).
 

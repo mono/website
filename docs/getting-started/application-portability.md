@@ -40,7 +40,7 @@ Developing Natively on Linux
 There are a couple of IDEs that can be used on Linux, with various degrees of functionality:
 
 -   [X-Develop](http://www.omnicore.com/xdevelop.htm) from Omnicore is a commercial product that provides auto-complete, a cross-platform GUI designer and works on Windows, Linux and OS/X.
--   [MonoDevelop](http:///www.monodevelop.com) is an IDE produced by the Mono community that has support for developing graphical applications with Gtk\# but currently lacks support for Windows.Forms or ASP.NET
+-   [MonoDevelop](http://www.monodevelop.com) is an IDE produced by the Mono community that has support for developing graphical applications with Gtk\# but currently lacks support for Windows.Forms or ASP.NET
 
 If you feel comfortable using command line tools, and any of the other Unix editors, that would work as well.
 

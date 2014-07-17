@@ -38,8 +38,6 @@ Gtk\# in the Real World
 
 [![Md2.png]({{ site.github.url }}/old_site/images/3/3d/Md2.png)]({{ site.github.url }}/old_site/images/3/3d/Md2.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/3d/Md2.png "Enlarge")
-
 Want to know how Gtk\# is being used in the real world?
 
 Check out [some screenshots]({{ site.github.url }}/docs/about-mono/showcase/screenshots/) of Gtk\# Applications. Some of our more prominent users include:

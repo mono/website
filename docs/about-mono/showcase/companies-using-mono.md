@@ -13,8 +13,6 @@ Feature Mono Success Stories
 
 [![Stylizer-both-platforms.png]({{ site.github.url }}/old_site/images/b/b3/Stylizer-both-platforms.png)]({{ site.github.url }}/old_site/images/b/b3/Stylizer-both-platforms.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/b/b3/Stylizer-both-platforms.png "Enlarge")
-
 [Skybound Software](http://www.skybound.ca/), based out of Waterloo in Ontario, Canada, is the creator of Stylizer, a powerful CSS editor designed to help web designers of all skill levels produce higher quality CSS in less time. Stylizer has a loyal user base, with many thousands of users spanning the entire range of web designer skill levels. The product is heavily focused on using interface in clever ways to automate and abstract the trivial technical details of the Cascading Style Sheet language. For a cross-platform application running from a single code base, the UI delivers a surprising level of native operating system look and feel, on both Mac OS X and Windows.
 
 [Read more...](http://www.go-mono.com/pdfs/SkyboundSoftware_Stylizer_v2.pdf)
@@ -22,8 +20,6 @@ Feature Mono Success Stories
 ### Unity Technologies Implements Award-Winning 3D Game Development System Using Mono
 
 [![Editorshot.jpg]({{ site.github.url }}/old_site/images/6/68/Editorshot.jpg)]({{ site.github.url }}/old_site/images/6/68/Editorshot.jpg)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/6/68/Editorshot.jpg "Enlarge")
 
 [Unity Technologies](http://unity3d.com/), based in Copenhagen, Denmark, is the creator of the product Unity, a game development system built around their own powerful 3D engine. Unity is used by leading game development studios worldwide, and was recently awarded a runner-up Apple Design Award for "Best Use of Mac OS X Graphics" at Apple's World Wide Developer Conference. This is the first time that a game development tool has reached the level of quality and ease of use required to win this prestigious award. Unity developers used Mono to achieve their cross-platform requirement of having Unity run on Windows and Mac OSx.
 

@@ -7,9 +7,9 @@ title: GtkSharpTutorials
 Beginning to use Gtk\#
 ----------------------
 
--   [Beginners Guide to Gtk\#]({{ site.github.url }}/gui/gtksharp/beginners-guide/)
+-   [Beginners Guide to Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/)
     -   An overview of Gtk\# and step-by-step description of a simple application.
--   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/gui/gtksharp/hello-world/)
+-   [Gtk\# "Hello World" in C\# and VB.NET]({{ site.github.url }}/docs/gui/gtksharp/hello-world/)
     -   A short 'Hello World' style introduction to Gtk\#
 -   [Gtk\# in MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
     -   Creating a Gtk\# application with [Monodevelop's](http://www.monodevelop.com/Main_Page) GUI designer, Stetic.
@@ -29,9 +29,9 @@ Advanced Gtk\#
 
 -   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/docs/gui/gtksharp/gapi/)
 -   [Quick guide to using Pango\#]({{ site.github.url }}/old_site/Pango:Beginners "Pango:Beginners")
--   [Gtk\# TreeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/treeview-tutorial/)
-    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial/)
-    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/gapi/widgets/nodeview-tutorial-examples/)
+-   [Gtk\# TreeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/widgets/treeview-tutorial/)
+    -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/docs/gui/gtksharp/widgets/nodeview-tutorial/)
+    -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)
 -   [Implementing GInterfaces in Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/implementing-ginterfaces/)
 
 Extending your GUI

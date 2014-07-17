@@ -31,8 +31,8 @@ Web Programming
 Development Tools
 -----------------
 
--   [Cecil]({{ site.github.url }}/docs/libraries/Mono.Cecil/faq/)
--   [Gendarme]({{ site.github.url }}/docs/tools/gendarme/faq/)
+-   [Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/faq/)
+-   [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/faq/)
 
 Documenting Mono and your applications.
 =======================================

@@ -15,8 +15,6 @@ Comparing Locally
 
 [![]({{ site.github.url }}/old_site/images/e/e9/Screenshot24.png)]({{ site.github.url }}/old_site/images/e/e9/Screenshot24.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/e/e9/Screenshot24.png "Enlarge")
-
 Native Client GUI Compare
 
 You can compare the API status on your system (for example, if you are a developer) using the tool \`gui-compare' that is shipped with the mono-tools package.

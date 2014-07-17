@@ -14,8 +14,6 @@ The following code draws three lines to into a .png image file.
 
 [![Antialias.png]({{ site.github.url }}/old_site/images/3/30/Antialias.png)]({{ site.github.url }}/old_site/images/3/30/Antialias.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/30/Antialias.png "Enlarge")
-
 ``` csharp
 //    antialias.cs
 using System;
@@ -70,8 +68,6 @@ mcs antialias.cs -pkg:mono-cairo
 The following code draws Rounded Rects on a GTK window.
 
 [![RoundedRectangles.png]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png)]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/31/RoundedRectangles.png "Enlarge")
 
 ``` csharp
 //    roundedrects.cs
@@ -179,8 +175,6 @@ the following code opens images using GDK. The problem is that the only way to c
 If the image typed as SVG, Rsvg library will render it for us as a GDK surface.
 
 [![Viewer.png]({{ site.github.url }}/old_site/images/1/12/Viewer.png)]({{ site.github.url }}/old_site/images/1/12/Viewer.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/1/12/Viewer.png "Enlarge")
 
 ``` csharp
 //    viewer.cs
@@ -292,8 +286,6 @@ With Cairo, you can move,rotate and scale the coordinates.
 
 [![Transform.png]({{ site.github.url }}/old_site/images/4/4a/Transform.png)]({{ site.github.url }}/old_site/images/4/4a/Transform.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/4/4a/Transform.png "Enlarge")
-
 ``` csharp
 //    transform.cs
 using System;
@@ -391,8 +383,6 @@ public class CairoGraphic : DrawingArea
 After I saw this plugin in gimp, I wanted to make my own improved one:
 
 [![TruchetTile.png]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png)]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/f/f1/TruchetTile.png "Enlarge")
 
 ``` csharp
 //    truchet.cs

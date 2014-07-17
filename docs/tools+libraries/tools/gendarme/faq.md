@@ -91,7 +91,7 @@ Rules
 What are rules
 --------------
 
-Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. [performance rules]({{ site.github.url }}/docs/tools/gendarme/rules/performance/)).
+Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. [performance rules]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/performance/)).
 
 Rule X checks for something that can't happen using C\#
 -------------------------------------------------------

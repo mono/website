@@ -23,7 +23,7 @@ Miscellaneous tools
 -   monop: command line class display.
 -   sn: StrongName (code signing) utility for signing IL assemblies
 -   sqlsharp: command line SQL client for most of the the System.Data based DB Connectors
--   [Gendarme]({{ site.github.url }}/docs/tools/gendarme/): Rule-based assembly analyser for developpers.
+-   [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/): Rule-based assembly analyser for developpers.
 -   [Monoxide]({{ site.github.url }}/old_site/Monoxide "Monoxide"): Interactive assembly analyser.
 
 XML & Web Service

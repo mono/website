@@ -48,7 +48,7 @@ To install the FastCGI on Unix, follow the instructions on the FastCGI Linux pag
 
 -   [Abyss Web Server]({{ site.github.url }}/docs/web/fastcgi/abyss/)
 -   [Cherokee HTTP Server]({{ site.github.url }}/docs/web/fastcgi/cherokee/)
--   [Lighttpd]({{ site.github.url }}/docs/web/fastcgi/lighthttpd/)
+-   [Lighttpd]({{ site.github.url }}/docs/web/fastcgi/lighttpd/)
 -   [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)
 -   [CGI]({{ site.github.url }}/old_site/CGI "CGI") via cgi-fcgi
 

@@ -28,7 +28,7 @@ Mono shipped its first release in June 2004, and the project is moving forward i
 If you are interested in contributing, here are some pointers:
 
 -   [Bugs]({{ site.github.url }}/community/bugs/): Known bugs in Mono, you can look at which issues people are reporting.
--   [MoMA Migration Reports](/index.php?title=MoMA_Migration_Reports&action=edit&redlink=1 "MoMA Migration Reports (page does not exist)"): These are report of applications that people want to run with Mono, and the APIs that are missing or pending
+-   MoMA Migration Reports: These are report of applications that people want to run with Mono, and the APIs that are missing or pending
 -   [Resources]({{ site.github.url }}/old_site/Resources "Resources"): Go to this page to take a look at the status of our API classes.
 
 The project is under active development and has a vibrant community. If you are looking at ways of helping the project, you have come to the right web page.
@@ -95,11 +95,6 @@ Maintaining Multiple Trees
 --------------------------
 
 If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/) page.
-
-Maintaining Mono git submodules
--------------------------------
-
-Please read [Git Submodule Maintance](/index.php?title=Git_Submodule_Maintance&action=edit&redlink=1 "Git Submodule Maintance (page does not exist)")
 
 Debugging with Visual Studio
 ----------------------------

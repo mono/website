@@ -63,7 +63,7 @@ If you get this far, you have a working Mono installation.
 Gtk\#
 -----
 
-[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/gui/gtksharp/beginners-guide/).
+[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/).
 
 The combined installer creates an "Applications" folder under the main Mono program group with two sample Gtk\# applications which can be run to test your Gtk\# installation.
 

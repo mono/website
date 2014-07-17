@@ -22,13 +22,9 @@ Toolkits
 
 [![]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png "Enlarge")
-
 [Banshee](http://banshee-project.org/Main_Page), a GTK\# app
 
 [![]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/9/92/Fspot1.png "Enlarge")
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK\# app
 
@@ -81,13 +77,9 @@ Cons:
 
 [![]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png "Enlarge")
-
 [NUnit](http://www.nunit.org/), a Winforms app
 
 [![]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png "Enlarge")
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
@@ -135,8 +127,6 @@ wxNet
 -----
 
 [![]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png "Enlarge")
 
 wx\# Sample
 

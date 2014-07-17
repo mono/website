@@ -8,8 +8,8 @@ Cairo is a low-level 2D vector drawing library. Various rendering backends (XRen
 
 ### More Resources
 
--   [Mono.Cairo Tutorial]({{ site.github.url }}/docs/libraries/Mono.Cairo/tutorial/) - An in-depth guide to getting started with Cairo and Mono.
--   [Mono.Cairo Cookbook]({{ site.github.url }}/docs/libraries/Mono.Cairo/cookbook) - Some short recipes to help spice up your Cairo usage.
+-   [Mono.Cairo Tutorial]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cairo/tutorial/) - An in-depth guide to getting started with Cairo and Mono.
+-   [Mono.Cairo Cookbook]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cairo/cookbook) - Some short recipes to help spice up your Cairo usage.
 
 ### Using Cairo with Gtk/Gdk
 

@@ -467,7 +467,7 @@ The annotation section of the `.xsd` file may contain elements shown below:
 
 With the sample section shown above, you need to make several changes in order for the generated code to work properly with Npgsql:
 
--   Make sure the DbType value is a valid type in Npgsql (see [below](/index.php?title=SQL_type_mapping&action=edit&redlink=1 "SQL type mapping (page does not exist)"))
+-   Make sure the DbType value is a valid type in Npgsql
 -   Change the `ParameterName` by replacing the **`@`** character with **`:`** which is the standard parameter quoting character for Npgsql. Also any ocurrence of the parameter name in the query text needs to be modified in the same way.
 -   Remove all **`[`** and **`]`** characters from the query text.
 -   Make sure the query is syntactically correct for PostgreSQL (refer to PostgreSQL documentation at [[1]](http://www.postgresql.org/docs/))

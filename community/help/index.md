@@ -51,7 +51,7 @@ man gmcs
 Works under .Net but not on Mono
 --------------------------------
 
-Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read [Guide: Porting Winforms Applications]({{ site.github.url }}/docs/winforms/porting-winforms-applications/) or [Guide: Porting ASP.NET Applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/) as they provide a good overview on how to run windows applications on Mono.
+Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read [Guide: Porting Winforms Applications]({{ site.github.url }}/docs/gui/winforms/porting-winforms-applications/) or [Guide: Porting ASP.NET Applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/) as they provide a good overview on how to run windows applications on Mono.
 
 Problems of a different kind
 ----------------------------

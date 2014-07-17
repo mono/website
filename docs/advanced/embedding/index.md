@@ -40,8 +40,6 @@ The result looks like this:
 
 [Image:exposing.png] Now your existing C code can trigger methods in the managed world, and the managed world can react and notify of any interesting changes to the C code:
 
-[File:Callback.png](/index.php?title=Special:Upload&wpDestFile=Callback.png "File:Callback.png")
-
 The loaded assembly can be as simple as you want, some common things that developers have done:
 
 -   Load a library of methods that are wired to the user interface of an application: GUI elements, dialog boxes are then handled on the managed world, while core processing remains in C.

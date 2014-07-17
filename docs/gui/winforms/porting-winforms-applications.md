@@ -348,8 +348,6 @@ After installing the VMWare player and unzipping the VMWare image, start the Mon
 
 [![]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg "Enlarge")
-
 Enabling User Shares
 
 To transfer the application to the Mono image, we need to create a NClass directory and turn on directory sharing.

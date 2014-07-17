@@ -96,15 +96,15 @@ Mono version numbers follow a specific policy, more [here]({{ site.github.url }}
 
 ## Mono 3.x
 {% for release in page.mono3xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 2.x
 {% for release in page.mono2xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 1.x
 {% for release in page.mono1xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}

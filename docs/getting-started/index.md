@@ -79,7 +79,7 @@ Working with Mono
 <li><a href="{{ site.github.url }}/community/help/irc/">Chat Rooms</a></li>
 <li><a href="{{ site.github.url }}/old_site/Related_Mono_Sites" title="Related Mono Sites">Related Sites</a></li>
 <li><a href="{{ site.github.url }}/old_site/User_Groups" title="User Groups">User Groups</a></li>
-<li><a href="{{ site.github.url }}/docs/tools+libraries/moma/">Mono Migration Analyzer</a></li>
+<li><a href="{{ site.github.url }}/docs/tools+libraries/tools/moma/">Mono Migration Analyzer</a></li>
 </ul></td>
 <td align="left">Mono 1.0 was released in June 2004. Since then, Mono has been taken up as the platform of choice for many open-source and commercial projects. See Mono in action:
 <ul>

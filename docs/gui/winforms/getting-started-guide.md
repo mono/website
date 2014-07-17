@@ -63,8 +63,6 @@ Either compiler will create "hello.exe", which you can run using:
 
 [![]({{ site.github.url }}/old_site/images/f/f5/Helloworld.png)]({{ site.github.url }}/old_site/images/f/f5/Helloworld.png)
 
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/old_site/images/f/f5/Helloworld.png "Enlarge")
-
 Results running on openSUSE 10.2
 
 And this will be the results.
