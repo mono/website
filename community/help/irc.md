@@ -24,7 +24,7 @@ Channels:
 - **#moonlight**: discussion on the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) implementation of Silverlight.
 - **#monotouch**: Discussion on Mono for the iPhone, [MonoTouch](http://monotouch.net)
 - **#monodroid**: Discussion of Mono on the Android, [[1]](http://monodroid.net)
-- **#monomac**: Discussion of the [MonoMac]({{ site.github.url }}/old_site/MonoMac "MonoMac") bindings for Mono on OSX
+- **#monomac**: Discussion of the [MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/) bindings for Mono on OSX
 
 **Network:** OFTC (servers: irc.oftc.net)
 

@@ -86,15 +86,15 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/mono-osx">mono-osx</a></td>
-  <td>Discuss Mono on <a href="{{ site.github.url }}/old_site/Mono:OSX" title="Mono:OSX">Mac OS X</a>.</td>
+  <td>Discuss Mono on <a href="{{ site.github.url }}/docs/about-mono/platforms/osx/" title="Mono:OSX">Mac OS X</a>.</td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/monotouch">monotouch</a></td>
-  <td>Discuss <a href="{{ site.github.url }}/old_site/MonoTouch" title="MonoTouch">MonoTouch</a>, the Mono for iPhone edition.</td>
+  <td>Discuss <a href="http://xamarin.com/platform">MonoTouch</a>, the Mono for iPhone edition.</td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/cocoa-sharp">cocoa-sharp</a></td>
-  <td>Discussion on the development of the <a href="{{ site.github.url }}/old_site/MonoMac">Cocoa# API</a> bindings for Mono on Mac OS X.</td>
+  <td>Discussion on the development of the <a href="{{ site.github.url }}/docs/tools+libraries/libraries/monomac/">Cocoa# API</a> bindings for Mono on Mac OS X.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-cecil">mono-cecil</a></td>

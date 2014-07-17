@@ -11,9 +11,6 @@ title: Help
     1.  [Can not compile my source](#can-not-compile-my-source)
     2.  [Works under .Net but not on Mono](#works-under-net-but-not-on-mono)
 
-3.  Looking for [commercial support]({{ site.github.url }}/old_site/Support "Support")
-4.  [Lost in the website]({{ site.github.url }}/old_site/SiteMap "SiteMap")
-
 If your issue has not been listed please read the [Problems of a different kind](#problems-of-a-different-kind)-Section.
 
 Issues compiling Mono itself
@@ -54,7 +51,7 @@ man gmcs
 Works under .Net but not on Mono
 --------------------------------
 
-Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read [Guide: Porting Winforms Applications]({{ site.github.url }}/old_site/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications") or [Guide: Porting ASP.NET Applications]({{ site.github.url }}/old_site/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications") as they provide a good overview on how to run windows applications on Mono.
+Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read [Guide: Porting Winforms Applications]({{ site.github.url }}/docs/winforms/porting-winforms-applications/) or [Guide: Porting ASP.NET Applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/) as they provide a good overview on how to run windows applications on Mono.
 
 Problems of a different kind
 ----------------------------
