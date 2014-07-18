@@ -36,74 +36,66 @@ Command packet are used by either side (client or server) to request information
 
 Both type of packet contains a header. The header is always 11 bytes long. Their descriptions are given afterwards:
 
-Command packet header
-
-byte 1
-
-byte 2
-
-byte 3
-
-byte 4
-
-byte 5
-
-byte 6
-
-byte 7
-
-byte 8
-
-byte 9
-
-byte 10
-
-byte 11
-
-length
-
-id
-
-flags
-
-command set
-
-command
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="12" style="text-align: center">Command packet header</th>
+    </tr>
+    <tr>
+      <th>byte 1</th>
+      <th>byte 2</th>
+      <th>byte 3</th>
+      <th>byte 4</th>
+      <th>byte 5</th>
+      <th>byte 6</th>
+      <th>byte 7</th>
+      <th>byte 8</th>
+      <th>byte 9</th>
+      <th>byte 10</th>
+      <th>byte 11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="4">length</td>
+      <td colspan="4">id</td>
+      <td>flags</td>
+      <td>command set</td>
+      <td>command</td>
+    </tr>
+  </tbody>
+</table>
 
 In Mono SDB source code, the command header is decoded in the server thread `debugger_thread` function at `debugger-agent.c:7583`.
 
-Reply packet header
-
-byte 1
-
-byte 2
-
-byte 3
-
-byte 4
-
-byte 5
-
-byte 6
-
-byte 7
-
-byte 8
-
-byte 9
-
-byte 10
-
-byte 11
-
-length
-
-id
-
-flags
-
-error code
-
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="12" style="text-align: center">Reply packet header</th>
+    </tr>
+    <tr>
+      <th>byte 1</th>
+      <th>byte 2</th>
+      <th>byte 3</th>
+      <th>byte 4</th>
+      <th>byte 5</th>
+      <th>byte 6</th>
+      <th>byte 7</th>
+      <th>byte 8</th>
+      <th>byte 9</th>
+      <th>byte 10</th>
+      <th>byte 11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="4">length</td>
+      <td colspan="4">id</td>
+      <td>flags</td>
+      <td colspan="2">error code</td>
+    </tr>
+  </tbody>
+</table>
 In Mono SDB source code, a reply packet is constructed and sent by the `send_reply_packet` function in `debugger-agent:1514`.
 
 ### Packet field details
@@ -111,76 +103,56 @@ In Mono SDB source code, a reply packet is constructed and sent by the `send_rep
 #### Common fields
 
 length
-
-> The total length in byte of the packet including header i.e. this value will be 11 if the packet only consists of header with no other data
+: The total length in byte of the packet including header i.e. this value will be 11 if the packet only consists of header with no other data
 
 id
-
-> Uniquely identify sent packet command/reply pair so that they can be asynchronously matched. This is in practise a simple monotonic integer counter. Note that client and server may use the same id value when sending their packets as the uniqueness property is only with respect to a specific source.
+: Uniquely identify sent packet command/reply pair so that they can be asynchronously matched. This is in practise a simple monotonic integer counter. Note that client and server may use the same id value when sending their packets as the uniqueness property is only with respect to a specific source.
 
 flags
-
-> At the moment this value is only used with a reply packet in which case its value is set to `0x80`. A command packet should have this value set to 0.
+: At the moment this value is only used with a reply packet in which case its value is set to `0x80`. A command packet should have this value set to 0.
 
 #### Command specific fields
 
 command set
+: This value allows grouping commands into similar blocks for quicker processing. The different command sets with their values are given below:
 
-> This value allows grouping commands into similar blocks for quicker processing. The different command sets with their values are given below:
-> |Command set|Value|
-> |:----------|:----|
-> |Virtual Machine|1|
-> |Object reference|9|
-> |String reference|10|
-> |Threads|11|
-> |Array reference|13|
-> |Event request|15|
-> |Stack frame|16|
-> |AppDomain|20|
-> |Assembly|21|
-> |Method|22|
-> |Type|23|
-> |Module|24|
-> |Events|64|
->
+  |Command set|Value|
+  |:----------|:----|
+  |Virtual Machine|1|
+  |Object reference|9|
+  |String reference|10|
+  |Threads|11|
+  |Array reference|13|
+  |Event request|15|
+  |Stack frame|16|
+  |AppDomain|20|
+  |Assembly|21|
+  |Method|22|
+  |Type|23|
+  |Module|24|
+  |Events|64|
+
 command
-
-> Tell what command this packet corresponds to. This value is relative to the previously defined command set so the values are reused across different command sets. Definition of each command is given in a later chapter.
+: Tell what command this packet corresponds to. This value is relative to the previously defined command set so the values are reused across different command sets. Definition of each command is given in a later chapter.
 
 #### Reply specific fields
 
 error code
+: Define which error occured or if the command was successful. Error code definition is given below:
 
-> Define which error occured or if the command was successful. Error code definition is given below:
-> Error name
-> Value
-> Mono specific notes
-> Success
-> 0
-> Invalid object
-> 20
-> Invalid field ID
-> 25
-> Invalid frame ID
-> 30
-> Not Implemented
-> 100
-> Not Suspended
-> 101
-> Invalid argument
-> 102
-> Unloaded
-> 103
-> AppDomain has been unloaded
-> No Invocation
-> 104
-> Returned when trying to abort a thread which isn't in a runtime invocation
-> Absent information
-> 105
-> Returned when a requested method debug information isn't available
-> No seq point at IL Offset
-> 106
-> Returned when a breakpoint couldn't be set
+  |Error name|Value|Mono specific notes|
+  |:----------|:-----|:-------------------|
+  |Success|0||
+  |Invalid object|20||
+  |Invalid field ID|25||
+  |Invalid frame ID|30||
+  |Not Implemented|100||
+  |Not Suspended|101||
+  |Invalid argument|102||
+  |Unloaded|103|AppDomain has been unloaded|
+  |No Invocation|104|Returned when trying to abort a thread which isn't in a runtime invocation|
+  |Absent information|105|Returned when a requested method debug information isn't available|
+  |No seq point at IL Offset|106|Returned when a breakpoint couldn't be set|
 
 ### Data type marshalling
 
@@ -203,7 +175,7 @@ A lot command returns or accepts fixed-length list of value. In these case, such
 
 For the record, the following C enumerations define the values used for flags, kind, ... parameters in some commands.
 
-``` nowiki
+``` c
 typedef enum {
     EVENT_KIND_VM_START = 0,
     EVENT_KIND_VM_DEATH = 1,

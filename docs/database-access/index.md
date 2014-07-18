@@ -10,7 +10,7 @@ Providers for Open Source databases:
 
 -   [PostgreSQL]({{ site.github.url }}/docs/database-access/providers/postgresql/): Npgsql is a managed provider for PostgreSQL
 -   [SQLite]({{ site.github.url }}/docs/database-access/providers/sqlite/): provider for [SQLite](http://www.sqlite.org) versions 2 and 3. Requires native sqlite library.
--   [Firebird Interbase]({{ site.github.url }}/old_site/Firebird_Interbase "Firebird Interbase"): managed provider for Firebird
+-   [Firebird Interbase]({{ site.github.url }}/docs/database-access/providers/firebird-interbase/): managed provider for Firebird
 -   [MySQL]({{ site.github.url }}/docs/database-access/providers/mysql/): [MySQL Connector/Net](http://dev.mysql.com/downloads/connector/net/) is the recommended provider for MySQL from [MySQL](http://www.mysql.com/). ByteFX.Data.MySqlClient is no longer maintained.
 
 Providers for commercial databases:
@@ -19,7 +19,7 @@ Providers for commercial databases:
 -   [ODBC]({{ site.github.url }}/docs/database-access/providers/odbc/) requires ODBC software which is available for Unix and Windows
 -   [Oracle]({{ site.github.url }}/docs/database-access/providers/oracle/) provider for Oracle 8i, 9i, 10g, and 11g and requires Oracle client software
 -   [Microsoft SQL Server]({{ site.github.url }}{{ site.github.url }}/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000 and 2005 databases
--   [Sybase]({{ site.github.url }}/old_site/Sybase "Sybase") managed provider for Sybase ASE 12.0 and up databases
+-   [Sybase]({{ site.github.url }}/docs/database-access/providers/sybase/) managed provider for Sybase ASE 12.0 and up databases
 
 Commercially Supported Providers:
 
