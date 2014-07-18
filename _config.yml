@@ -2,6 +2,7 @@ relative_permalinks: false
 permalink: pretty
 paginate: 5
 paginate_path: "news/page/:num"
+highlighter: null   # we use a javascript based highlighter
 markdown: kramdown
 kramdown:
   input: GFM
