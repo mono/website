@@ -102,7 +102,7 @@ Areas where can can improve:
 Console Ports
 -------------
 
-Work to port and support Mono on the [Mono:Wii]({{ site.github.url }}/docs/about-mono/platforms/wii/) and the [Mono:PlayStation3]({{ site.github.url }}/docs/about-mono/platforms/playstation3/).
+Work to port and support Mono on the [Mono:Wii]({{ site.github.url }}/docs/about-mono/supported-platforms/wii/) and the [Mono:PlayStation3]({{ site.github.url }}/docs/about-mono/supported-platforms/playstation3/).
 
 The Wii port is ready; The PlayStation3 port is finished, but requires some work to package and polish the sharp edges.
 

@@ -4,7 +4,7 @@ navgroup: docs
 title: Solaris
 ---
 
-Mono supports Solaris on [SPARC]({{ site.github.url }}/docs/about-mono/platforms/sparc/), [x86]({{ site.github.url }}/docs/about-mono/platforms/x86/) and [x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/) architectures.
+Mono supports Solaris on [SPARC]({{ site.github.url }}/docs/about-mono/supported-platforms/sparc/), [x86]({{ site.github.url }}/docs/about-mono/supported-platforms/x86/) and [x86-64]({{ site.github.url }}/docs/about-mono/supported-platforms/amd64/) architectures.
 
 Packages for Mono on Solaris/SPARC are available from our [Download]({{ site.github.url }}/download/) page.
 

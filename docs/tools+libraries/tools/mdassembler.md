@@ -4,7 +4,7 @@ navgroup: docs
 title: Assembler
 ---
 
-The **assembler** is a tool to merge mdoc/monodocer output into three files. Since [mdoc]({{ site.github.url }}/docs/tools+libraries/mdoc/) and [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) produces tons of output files this is very unhandy to redistribute. Additionally, the documentation can not be shown in [monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) by just clicking it's icon you have to type *monodoc mydocs-folder* into your console. The **assembler** can be invoked by using [mdoc-assemble](http://www.go-mono.org/docs/index.aspx?link=man:mdoc-assemble(1)) or (for older Mono versions) with the **mdassembler** command.
+The **assembler** is a tool to merge mdoc/monodocer output into three files. Since [mdoc]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) and [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) produces tons of output files this is very unhandy to redistribute. Additionally, the documentation can not be shown in [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) by just clicking it's icon you have to type *monodoc mydocs-folder* into your console. The **assembler** can be invoked by using [mdoc-assemble](http://www.go-mono.org/docs/index.aspx?link=man:mdoc-assemble(1)) or (for older Mono versions) with the **mdassembler** command.
 
 Usage
 =====
@@ -27,7 +27,7 @@ After that a .sources file must be created with the same name as the .tree and .
  </monodoc>
 ```
 
-The */monodoc/node* element tells the browser where in the documentation tree the documentation should be shown. See [Generating\_Documentation\#Assemble\_the\_generated\_Documentation]({{ site.github.url }}/docs/tools+libraries/monodoc/generating-documentation/#assemble-the-generated-documentation) for more information.
+The */monodoc/node* element tells the browser where in the documentation tree the documentation should be shown. See [Generating\_Documentation\#Assemble\_the\_generated\_Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/#assemble-the-generated-documentation) for more information.
 
 The */monodoc/source/@provider* attribute tells the browser which kind of documentation is showing. When editing library documentation it should always be *ecma* (writing other types of documentation, like man pages, tutorial, etc. means changing that provider attribute).
 
@@ -44,5 +44,5 @@ pkg-config monodoc --variable=sourcesdir
 monodoc --get-sourcesdir #(deprecated)
 ```
 
-You can start [Monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) and a new item named *My Library Documentation* will be shown. You can now navigate or [edit]({{ site.github.url }}/docs/tools+libraries/monodoc/generating-documentation/#edit-and-write-documentation) it.
+You can start [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) and a new item named *My Library Documentation* will be shown. You can now navigate or [edit]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/#edit-and-write-documentation) it.
 

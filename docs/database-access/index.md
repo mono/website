@@ -10,7 +10,7 @@ Providers for Open Source databases:
 
 -   [PostgreSQL]({{ site.github.url }}/docs/database-access/providers/postgresql/): Npgsql is a managed provider for PostgreSQL
 -   [SQLite]({{ site.github.url }}/docs/database-access/providers/sqlite/): provider for [SQLite](http://www.sqlite.org) versions 2 and 3. Requires native sqlite library.
--   [Firebird Interbase]({{ site.github.url }}/docs/database-access/providers/firebird-interbase/): managed provider for Firebird
+-   [Firebird]({{ site.github.url }}/docs/database-access/providers/firebird/): managed provider for Firebird
 -   [MySQL]({{ site.github.url }}/docs/database-access/providers/mysql/): [MySQL Connector/Net](http://dev.mysql.com/downloads/connector/net/) is the recommended provider for MySQL from [MySQL](http://www.mysql.com/). ByteFX.Data.MySqlClient is no longer maintained.
 
 Providers for commercial databases:

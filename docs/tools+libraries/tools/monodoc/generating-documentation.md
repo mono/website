@@ -4,9 +4,9 @@ navgroup: docs
 title: Generating Documentation
 ---
 
-Documenting your API is an important component of creating reusable libraries, and Mono provides a few tools for creating class library documentation of your own. This article explains how to generate documentation for your library using [monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/), the Mono documentation framework.
+Documenting your API is an important component of creating reusable libraries, and Mono provides a few tools for creating class library documentation of your own. This article explains how to generate documentation for your library using [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/), the Mono documentation framework.
 
-This page is about generating documentation for the first time for a new library. If you are interested in contributing to existing Mono API Documentation, see [Monodoc Contributing]({{ site.github.url }}/docs/tools+libraries/monodoc/contributing/).
+This page is about generating documentation for the first time for a new library. If you are interested in contributing to existing Mono API Documentation, see [Monodoc Contributing]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/contributing/).
 
 Methods of Generating Documentation
 ===================================
@@ -29,7 +29,7 @@ The process for generating the documentation can be splitted in several parts.
 Generate the inital stubs
 -------------------------
 
-The initial stubs for the documentation are generated with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
+The initial stubs for the documentation are generated with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 
 For example, if we had these two files:
 
@@ -90,7 +90,7 @@ will give us the following directory content:
      |- ImportantBClass.xml
      |- AnotherBClass.xml
 
-As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) browser. Just after creating the documentation with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
+As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) browser. Just after creating the documentation with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
 
 ``` bash
 $ monodoc --edit docfiles
@@ -98,21 +98,21 @@ $ monodoc --edit docfiles
 
 Where *docfiles* is the name of the directory containing the documentation files.
 
-When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained [here]({{ site.github.url }}/docs/tools+libraries/monodoc/generating-documentation/#assemble-the-generated-documentation).
+When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained [here]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/#assemble-the-generated-documentation).
 
 Edit and write documentation
 ----------------------------
 
-After starting [Monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) browser you can navigate to the parts of the documentation to be edited. Those are labeled as *To be added* or as *Documentation for this section has not yet been entered*. Look [here]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/editing/) for more information regarding the editing process or the XML format of the documentation.
+After starting [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) browser you can navigate to the parts of the documentation to be edited. Those are labeled as *To be added* or as *Documentation for this section has not yet been entered*. Look [here]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/editing/) for more information regarding the editing process or the XML format of the documentation.
 
 Synchronize Documentation with source code
 ------------------------------------------
 
-If your source code changes the documentation should be updated. You only need to run [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/) again and the documentation files will be updated without removing the already written documentation and adding the parts that were not missing from the XML files.
+If your source code changes the documentation should be updated. You only need to run [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) again and the documentation files will be updated without removing the already written documentation and adding the parts that were not missing from the XML files.
 
 If you remove some classes from your source code a .remove extension will be added to the old documentation files, so you do not lose the already written documentation. Of course, new stubs for your new classes will be created.
 
-In [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) 1.1.18 or later or [mdoc]({{ site.github.url }}/docs/tools+libraries/mdoc/), you can provide the `-since:SINCE` command-line argument to insert a `<since/>` element for each *added* type and member within the assembly. The `SINCE` text will be inserted as the *version* attribute of the `<since/>` element, thus:
+In [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) 1.1.18 or later or [mdoc]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/), you can provide the `-since:SINCE` command-line argument to insert a `<since/>` element for each *added* type and member within the assembly. The `SINCE` text will be inserted as the *version* attribute of the `<since/>` element, thus:
 
 ``` bash
 $ monodocer -path:en -assembly:lib.dll -since:2.0
@@ -124,14 +124,14 @@ will insert a `<since version="2.0" />` element for *every* type and member that
 
 This is useful when you need to distinguish which members were added in later versions of an assembly.
 
-Both [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) and [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/) insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within [monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) and [http://www.go-mono.com/docs](http://www.go-mono.com/docs), for example the **Requirements** section at the [System.Environment documentation](http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Environment).
+Both [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) and [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) and [http://www.go-mono.com/docs](http://www.go-mono.com/docs), for example the **Requirements** section at the [System.Environment documentation](http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Environment).
 
 Assemble the generated Documentation
 ------------------------------------
 
 For distributing our documentation, it is preferable to assemble all the files, so you don't have to deal with an entire directory. That way we achieve also a better integration with the monodoc browser.
 
-To bundle together all our docs, we should use the [mdassembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/mdoc/) programs. These programs create .zip and a .tree files which include all our generated documentation. In addition, you will have to create a .sources file to tell the [monodoc browser]({{ site.github.url }}/docs/tools+libraries/monodoc/) what kind of documentation you have created.
+To bundle together all our docs, we should use the [mdassembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) programs. These programs create .zip and a .tree files which include all our generated documentation. In addition, you will have to create a .sources file to tell the [monodoc browser]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) what kind of documentation you have created.
 
 To create the *.zip* and *.tree* files, we can use [mdassembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/):
 
@@ -139,7 +139,7 @@ To create the *.zip* and *.tree* files, we can use [mdassembler]({{ site.github.
 $ mdassembler --ecma en --out lib
 ```
 
-or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/mdoc/):
+or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/):
 
 ``` bash
 $ mdoc assemble -o lib en
@@ -155,7 +155,7 @@ The above two commands will create the files *lib.tree* and *lib.zip*. Now, we c
 </monodoc>
 ```
 
-The *provider* attribute tells the browser which kind of documentation is within the *lib.zip* file. When editing library documentation it should always be *ecma*. The *provider* attribute MUST match the format provided to [mdassembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/mdoc/).
+The *provider* attribute tells the browser which kind of documentation is within the *lib.zip* file. When editing library documentation it should always be *ecma*. The *provider* attribute MUST match the format provided to [mdassembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) or [mdoc-assemble]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/).
 
 Other documentation formats are supported as well; see [mdoc-assemble(1)](http://www.go-mono.com/docs/monodoc.ashx?link=man:mdoc-assemble(1)) for details.
 
@@ -205,7 +205,7 @@ Other utilities
 
 ### Generating static HTML Documentation
 
-You can tranform documentation written with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/) into HTML documentation with the `monodocs2html` or [mdoc-export-html]({{ site.github.url }}/docs/tools+libraries/mdoc/) programs:
+You can tranform documentation written with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) into HTML documentation with the `monodocs2html` or [mdoc-export-html]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) programs:
 
 ``` bash
 $ monodocs2html --source docfiles --dest htmldocs
@@ -255,7 +255,7 @@ $ mdoc validate path-to-xml-file
 
 Where *path-to-xml-file* is a path to a documentation file of a class. In the example above could be `doc/A/OtherAClass.xml`
 
-`mdvalidator` and [mdoc-validate]({{ site.github.url }}/docs/tools+libraries/mdoc/) also accept directories as arguments, in which case all files underneath the specified directories will be validated.
+`mdvalidator` and [mdoc-validate]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) also accept directories as arguments, in which case all files underneath the specified directories will be validated.
 
 Inline XML Documentation
 ========================
@@ -312,7 +312,7 @@ If you have already some documentation generated from inline XML code and you wa
 $ monodocer -pretty -importslashdoc:doc.xml -assembly:A.dll -path:A/en
 ```
 
-or you can use [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/)'s *--import* argument:
+or you can use [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/)'s *--import* argument:
 
 ``` bash
 $ mdoc update -i doc.xml -o A/en A.dll
@@ -322,7 +322,7 @@ The *A/en* directory will contain documentation for each type within *A.dll* con
 
 ### Converting Monodoc format XML into inline XML documentation
 
-[mdoc-export-msxdoc]({{ site.github.url }}/docs/tools+libraries/mdoc/) exports Monodoc XML to Microsoft XML Documentation:
+[mdoc-export-msxdoc]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) exports Monodoc XML to Microsoft XML Documentation:
 
 ``` bash
 $ mdoc export-msxdoc A/en

@@ -10,13 +10,13 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 **Operating Systems**
 
--   [Linux]({{ site.github.url }}/docs/about-mono/platforms/linux/)
--   [Mac OS X]({{ site.github.url }}/docs/about-mono/platforms/osx/), [iPhone OS]({{ site.github.url }}/docs/about-mono/platforms/iphone/)
--   [Sun Solaris]({{ site.github.url }}/docs/about-mono/platforms/solaris/)
--   [BSD]({{ site.github.url }}/docs/about-mono/platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
+-   [Linux]({{ site.github.url }}/docs/about-mono/supported-platforms/linux/)
+-   [Mac OS X]({{ site.github.url }}/docs/about-mono/supported-platforms/osx/), [iPhone OS]({{ site.github.url }}/docs/about-mono/supported-platforms/iphone/)
+-   [Sun Solaris]({{ site.github.url }}/docs/about-mono/supported-platforms/solaris/)
+-   [BSD]({{ site.github.url }}/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
 -   [Microsoft Windows]({{ site.github.url }}/docs/getting-started/install/windows/)
--   [Nintendo Wii]({{ site.github.url }}/docs/about-mono/platforms/wii/)
--   [Sony PlayStation 3]({{ site.github.url }}/docs/about-mono/platforms/playstation3/)
+-   [Nintendo Wii]({{ site.github.url }}/docs/about-mono/supported-platforms/wii/)
+-   [Sony PlayStation 3]({{ site.github.url }}/docs/about-mono/supported-platforms/playstation3/)
 
 ### Supported Architectures
 
@@ -24,17 +24,17 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 
 |Supported Architectures|Runtime|Operating system|
 |:----------------------|:------|:---------------|
-|[s390, s390x (32 and 64 bits)]({{ site.github.url }}/docs/about-mono/platforms/s390/)|JIT|Linux|
-|[SPARC (32)]({{ site.github.url }}/docs/about-mono/platforms/sparc/)|JIT|Solaris, Linux|
-|[PowerPC]({{ site.github.url }}/docs/about-mono/platforms/powerpc/)|JIT|Linux, Mac OSX, Wii, PlayStation 3|
-|[x86]({{ site.github.url }}/docs/about-mono/platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, 
+|[s390, s390x (32 and 64 bits)]({{ site.github.url }}/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
+|[SPARC (32)]({{ site.github.url }}/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
+|[PowerPC]({{ site.github.url }}/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, Mac OSX, Wii, PlayStation 3|
+|[x86]({{ site.github.url }}/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, 
  Microsoft Windows, Solaris, OS X, Android|
-|[x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, 
+|[x86-64]({{ site.github.url }}/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, 
 Solaris, OS X|
-|[IA64]({{ site.github.url }}/docs/about-mono/platforms/ia64/) Itanium2 (64 bit)|JIT|Linux|
-|[ARM]({{ site.github.url }}/docs/about-mono/platforms/arm/): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
+|[IA64]({{ site.github.url }}/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|JIT|Linux|
+|[ARM]({{ site.github.url }}/docs/about-mono/supported-platforms/arm/): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
 |Alpha|JIT|**not maintained**. Linux|
-|[MIPS]({{ site.github.url }}/docs/about-mono/platforms/mips/)|JIT|Linux|
+|[MIPS]({{ site.github.url }}/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
 |HPPA|JIT|**not maintained** Linux|
 
 Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-supported and may not be as complete as the other architectures.

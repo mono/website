@@ -86,7 +86,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/mono-osx">mono-osx</a></td>
-  <td>Discuss Mono on <a href="{{ site.github.url }}/docs/about-mono/platforms/osx/" title="Mono:OSX">Mac OS X</a>.</td>
+  <td>Discuss Mono on <a href="{{ site.github.url }}/docs/about-mono/supported-platforms/osx/" title="Mono:OSX">Mac OS X</a>.</td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/monotouch">monotouch</a></td>

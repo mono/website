@@ -19,7 +19,7 @@ The following diagram is useful in the discussion of the soft debugger:
 
 The soft debugger lives inside the Mono runtime. Debuggers communicate with this component with a compact protocol over a socket connection. For ease of use the protocol has been encapsulated in the Mono.Debugger.Soft.dll API which different IDEs can use to communicate with the target.
 
-The soft debugger work both with Just-in-Time compiled code, and with [batch compiled code]({{ site.github.url }}/docs/advanced/aot/) allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the [PlayStation 3]({{ site.github.url }}/docs/about-mono/platforms/playstation3/).
+The soft debugger work both with Just-in-Time compiled code, and with [batch compiled code]({{ site.github.url }}/docs/advanced/aot/) allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the [PlayStation 3]({{ site.github.url }}/docs/about-mono/supported-platforms/playstation3/).
 
 ### Debugger Agent
 

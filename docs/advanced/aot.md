@@ -103,9 +103,9 @@ Supported Platforms
 
 AOT is only available in a few platforms:
 
--   [Mono:X86]({{ site.github.url }}/docs/about-mono/platforms/x86/)
--   [x86-64]({{ site.github.url }}/docs/about-mono/platforms/amd64/)
--   [Mono:ARM]({{ site.github.url }}/docs/about-mono/platforms/arm/).
+-   [Mono:X86]({{ site.github.url }}/docs/about-mono/supported-platforms/x86/)
+-   [x86-64]({{ site.github.url }}/docs/about-mono/supported-platforms/amd64/)
+-   [Mono:ARM]({{ site.github.url }}/docs/about-mono/supported-platforms/arm/).
 
 Reduced Startup Time
 --------------------

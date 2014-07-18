@@ -37,7 +37,7 @@ Compiling Mono
 
  - [Overview]({{ site.github.url }}/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
  - [Advanced compile options]({{ site.github.url }}/docs/compiling-mono/advanced-compile-options/)
- - [Compiling with Visual Studio]({{ site.github.url }}/docs/compiling-mono/compiling-with-visual-studio/)
+ - [Compiling with Visual Studio]({{ site.github.url }}/docs/compiling-mono/compiling-with-visualstudio/)
  - [Cross-compiling Mono for Windows]({{ site.github.url }}/docs/compiling-mono/cross-compiling-mono-for-windows/)
  - [Parallel Mono environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/)
  - [Small footprint]({{ site.github.url }}/docs/compiling-mono/small-footprint/)
@@ -57,7 +57,7 @@ FAQ
 Database Access
 ---------------
 
- - [Overview]({{ site.github.url }}/docs/database-access/overview/)
+ - [Overview]({{ site.github.url }}/docs/database-access/)
  - [ADO.NET]({{ site.github.url }}/docs/database-access/adonet/)
  - [EntityFramework]({{ site.github.url }}/docs/database-access/entityframework/)
  
@@ -110,7 +110,8 @@ Advanced Topics
 ---------------
 
  - [Runtime]({{ site.github.url }}/docs/advanced/runtime/)
- - [Garbage Collector]({{ site.github.url }}/docs/advanced/garbage-collector/)
+ - [Garbage Collector - SGEN]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/)
+   - [GC Benchmark Suite]({{ site.github.url }}/docs/advanced/garbage-collector/benchmark-suite/)
  - [AOT]({{ site.github.url }}/docs/advanced/aot/)
  - [Embedding]({{ site.github.url }}/docs/advanced/embedding/)
  - [Assemblies and the GAC]({{ site.github.url }}/docs/advanced/assemblies-and-the-gac/)

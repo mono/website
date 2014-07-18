@@ -66,7 +66,7 @@ You can link to an example like this:
 
     <code lang="C#" source="file.cs"> </code>
 
-When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C\#" source="examples/file.cs" /\>.**
+When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C\#" source="examples/file.cs" /\>.**
 
 ****
 
@@ -99,7 +99,7 @@ For example, if you want to link the following image `http://www.mono-project.co
 Monodoc browser editing
 =======================
 
-Editing from inside the [Monodoc]({{ site.github.url }}/docs/tools+libraries/monodoc/) browser is simple. You have to navigate through the documentation and find where is the label *To be added* or *Documentation for this section has not yet been entered* and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
+Editing from inside the [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) browser is simple. You have to navigate through the documentation and find where is the label *To be added* or *Documentation for this section has not yet been entered* and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
 
 After clicking on an [Edit] link, monodoc will show an aspect similar to this one:
 

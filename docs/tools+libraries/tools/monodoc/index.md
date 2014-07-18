@@ -32,7 +32,7 @@ Depending on the libraries installed on your system it can show additionally:
 -   Mozilla library
 -   Monkeyguide (Mono guide)
 
-Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in [Generating Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/). Also, from inside the browser, you can [contribute]({{ site.github.url }}/docs/tools+libraries/monodoc/contributing/) to the documentation of the Mono project.
+Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in [Generating Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/). Also, from inside the browser, you can [contribute]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/contributing/) to the documentation of the Mono project.
 
 Online Documentation
 --------------------
@@ -75,7 +75,7 @@ Creating Documentation, Contributing
 ====================================
 
 -   For information on how to document your own class libraries using monodoc, see [Generating Documentation]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/generating-documentation/).
--   If you would like to contribute to the mono class library documentation (and we would love it if you did!), see [Monodoc Contributing]({{ site.github.url }}/docs/tools+libraries/monodoc/contributing/).
+-   If you would like to contribute to the mono class library documentation (and we would love it if you did!), see [Monodoc Contributing]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/contributing/).
 
 My Documentation in Monodoc
 ===========================

@@ -11,13 +11,13 @@ This article is about contributing to the class library documentation.
 Mono-specific API Documentation
 ===============================
 
-The Documentation of the libraries is not complete and your contribution would be greatly apreciated. For contributing you will need the [Gtk\# Documentation Browser]({{ site.github.url }}/docs/tools+libraries/monodoc/).
+The Documentation of the libraries is not complete and your contribution would be greatly apreciated. For contributing you will need the [Gtk\# Documentation Browser]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/).
 
-The procedure is easy, browse to the part of the documentation you want to contribute and click on the [Edit] link to start writing the documentation. You can also look for the parts that are listed as *To be added* or as *Documentation for this section has not yet been entered*. You can find information about editing documentation [here]({{ site.github.url }}/docs/tools+libraries/monodoc/editing/).
+The procedure is easy, browse to the part of the documentation you want to contribute and click on the [Edit] link to start writing the documentation. You can also look for the parts that are listed as *To be added* or as *Documentation for this section has not yet been entered*. You can find information about editing documentation [here]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/editing/).
 
 The contributions you are writting will be listed as links at the home page in a red panel called *Contributions*. If you are not happy with a contribution, you can delete it using the *Restore* button when editing it.
 
-Once you are done, you can submit your contributions directly from the [Gtk\# Documentation Browser]({{ site.github.url }}/docs/tools+libraries/monodoc/). Use the menu File --\> Contributions --\> Upload contributions. If you had never contributed before, you will have to register in our server. The process can be performed inside the program. You will recieve an email with a password the program will remember once you enter it. All the process lasts only a couple of minutes.
+Once you are done, you can submit your contributions directly from the [Gtk\# Documentation Browser]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/). Use the menu File --\> Contributions --\> Upload contributions. If you had never contributed before, you will have to register in our server. The process can be performed inside the program. You will recieve an email with a password the program will remember once you enter it. All the process lasts only a couple of minutes.
 
 Aside from the core libraries, we also have a large body of class libraries that are specific to Mono, for example the documentation for Gtk\#.
 
