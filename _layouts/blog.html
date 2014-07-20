@@ -1,20 +1,24 @@
 ---
-layout: default
+layout: base
 navgroup: news
 ---
 
-<article itemscope itemtype="http://schema.org/BlogPosting">{% include blogpost.html %}</article>
+<div class="row">
+  <div class="small-12 columns">
+      <article itemscope itemtype="http://schema.org/BlogPosting">{% include blogpost.html %}</article>
 
-<div>
-  <div class="left">
-  {% if page.previous.url %}
-    <a href="{{ site.github.url }}{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
-  {% endif %}
-  </div>
+      <div>
+        <div class="left">
+        {% if page.previous.url %}
+          <a href="{{ site.github.url }}{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+        {% endif %}
+        </div>
 
-  <div class="right">
-  {% if page.next.url %}
-    <a href="{{ site.github.url }}{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}} &raquo;</a>
-  {% endif %}
+        <div class="right">
+        {% if page.next.url %}
+          <a href="{{ site.github.url }}{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+        </div>
+      </div> 
   </div>
-</div> 
+</div>
