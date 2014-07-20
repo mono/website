@@ -27,7 +27,7 @@
   </head>
   <body>
     <div id="main-wrapper">
-      <div id="header_nav" class="contain-to-grid">
+      <div id="header-nav" class="contain-to-grid">
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
@@ -95,25 +95,13 @@
     <script src="//cdn.jsdelivr.net/highlight.js/8.0/highlight.min.js"></script>
 
     <script>
-      $(document).foundation();
-      hljs.initHighlightingOnLoad();
-
-      // add anchor char to each heading, for easier linking
-      $(function() {
-        return $("h1, h2, h3, h4, h5, h6").each(function(i, el) {
-          var $el, id;
-          $el = $(el);
-          id = $el.attr('id');
-          if (id) {
-            return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html('#'));
-          }
-        });
-      });
-
       // allow sub pages to run custom code
       if (typeof runScripts == 'function') {
         runScripts();
       }
+
+      $(document).foundation();
+      hljs.initHighlightingOnLoad();
     </script>
   </body>
 </html>

@@ -1,13 +1,70 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<div class="meta">
-  <span data-tooltip class="has-tip" title="Help us improve the Mono website by fixing mistakes on GitHub.<br/>This link will take you directly to this page in our GitHub repository.">
-     <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><i class="fa fa-github"></i> Edit page on GitHub</a>
-  </span>
+<div class="row toc-container">
+  <div class="small-12 columns">
+    <div id="toc-nav" data-magellan-expedition="fixed">
+      <a class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
+      <ul id="toc-dropdown" data-dropdown-content class="f-dropdown">
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="doc-content small-12 columns">
+    <h1 id="page-title">{{ page.title }}</h1>
+    <div class="meta">
+      <span data-tooltip class="has-tip" title="Help us improve the Mono website by fixing mistakes on GitHub.<br/>This link will take you directly to this page in our GitHub repository.">
+        <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><i class="fa fa-github"></i> Edit page on GitHub</a>
+      </span>
+    </div>
+    <p></p>
+
+    {{ content }}
+
+  </div>
 </div>
 
-<p></p>
+<script>
+function runScripts() {
+  addHeadingAnchorChar();
+  addToc();
+}
 
-{{ content }}
+function addHeadingAnchorChar() {
+  // add anchor char to each heading, for easier linking
+  $("h1, h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el = $(el);
+    var id = $el.attr('id');
+    if (id && id != "page-title") {
+      $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html('#'));
+    }
+  });
+}
+
+function addToc() {
+  var headings = $("h1, h2, h3, h4");
+
+  // don't add TOC if there aren't enough headings on the page
+  if (headings.length <= 2) {
+    return;
+  }
+
+  var toc = $("#toc-dropdown");
+
+  headings.each(function(i, el) {
+    var $el = $(el);
+    var id = $el.attr('id');
+    if (id) {
+      toc.append($("<li />").addClass("toc-indent-" + $el.get(0).localName).append($("<a />").attr("href", "#" + id).html($el.contents()[0].wholeText)));
+    }
+  })
+  .promise().done(function() {
+    toc.find('li').click(function () {
+        Foundation.libs.dropdown.close(toc);
+    });
+
+    $(".toc-container").show();
+  });
+}
+</script>
