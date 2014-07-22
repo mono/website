@@ -172,6 +172,14 @@ h6:hover .header-link {
 #toc-nav .f-dropdown {
   top: 40px !important;
   max-width: 270px !important;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 40.063em) {
+  #toc-nav .f-dropdown {
+    max-width: 400px !important;
+  }
 }
 
 #toc-nav .f-dropdown.open {
@@ -192,11 +200,6 @@ h6:hover .header-link {
   line-height: 8px;
   font-size: 10px;
   text-indent: 30px;
-}
-
-#toc-dropdown {
-  max-height: 400px;
-  overflow-y: auto;
 }
 
 /* trick to make anchor links not jump to top of screen */
