@@ -143,79 +143,37 @@ h6:hover .header-link {
   margin: 0 auto -100px;
 }
 
-.toc-container {
-  display: none;
-}
-
-#toc-nav[data-magellan-expedition] {
-  padding-left: 0px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(20%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
-}
-
-#toc-nav[data-magellan-expedition-clone] {
-  visibility:hidden;
-}
-
-#toc-nav button.tiny, #toc-nav .tiny.button {
+#toc-dropdown-button {
+  margin-top: 10px;
   margin-bottom: 0px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.53rem;
 }
 
-#toc-nav .f-dropdown {
-  top: 40px !important;
-  max-width: 270px !important;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-@media only screen and (min-width: 40.063em) {
-  #toc-nav .f-dropdown {
-    max-width: 400px !important;
-  }
-}
-
-#toc-nav .f-dropdown.open {
-  left: 8px !important;
-}
-
-#toc-nav li.toc-indent-h2 {
+#toc-dropdown li.toc-indent-h2 {
   text-indent: 10px;
 }
 
-#toc-nav li.toc-indent-h3 {
+#toc-dropdown li.toc-indent-h3 {
   line-height: 10px;
   font-size: 12px;
   text-indent: 20px;
 }
 
-#toc-nav li.toc-indent-h4 {
+#toc-dropdown li.toc-indent-h4 {
   line-height: 8px;
-  font-size: 10px;
+  font-size: 11px;
   text-indent: 30px;
 }
 
-/* trick to make anchor links not jump to top of screen */
+/* trick to make anchor links not jump to the very top of screen */
 .doc-content h1:not(#page-title):before,
 .doc-content h2:before,
 .doc-content h3:before,
 .doc-content h4:before { 
   display: block; 
   content: " "; 
-  margin-top: -40px; 
-  height: 40px; 
+  margin-top: -15px; 
+  height: 15px; 
   visibility: hidden;
-}
-
-#page-title {
-  margin-top: -5px;
 }
 
 #push {

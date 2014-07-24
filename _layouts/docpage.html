@@ -1,13 +1,10 @@
 ---
 layout: base
 ---
-<div class="row toc-container">
+<div class="row">
   <div class="small-12 columns">
-    <div id="toc-nav" data-magellan-expedition="fixed">
-      <a class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
-      <ul id="toc-dropdown" data-dropdown-content class="f-dropdown">
-      </ul>
-    </div>
+    <a id="toc-dropdown-button" class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
+    <ul id="toc-dropdown" data-dropdown-content class="medium f-dropdown"></ul>
   </div>
 </div>
 <div class="row">
@@ -52,19 +49,18 @@ function addToc() {
 
   var toc = $("#toc-dropdown");
 
+  // add each heading to the TOC
   headings.each(function(i, el) {
     var $el = $(el);
     var id = $el.attr('id');
     if (id) {
       toc.append($("<li />").addClass("toc-indent-" + $el.get(0).localName).append($("<a />").attr("href", "#" + id).html($el.contents()[0].wholeText)));
     }
-  })
-  .promise().done(function() {
-    toc.find('li').click(function () {
-        Foundation.libs.dropdown.close(toc);
-    });
-
-    $(".toc-container").show();
+  });
+  
+  // close dropdown when one of the TOC links is clicked
+  toc.find('li').click(function () {
+      Foundation.libs.dropdown.close(toc);
   });
 }
 </script>
