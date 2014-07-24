@@ -42,8 +42,9 @@ function addHeadingAnchorChar() {
 function addToc() {
   var headings = $("h1, h2, h3, h4");
 
-  // don't add TOC if there aren't enough headings on the page
+  // hide TOC if there aren't enough headings on the page
   if (headings.length <= 2) {
+    $("#toc-dropdown-button").hide();
     return;
   }
 
