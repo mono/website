@@ -75,7 +75,7 @@ Working with Mono
 <li><a href="{{ site.github.url }}/old_site/Books" title="Books">Books</a></li>
 <li><a href="{{ site.github.url }}/old_site/Articles" title="Articles">Articles</a></li>
 <li><a href="{{ site.github.url }}/community/help/mailing-lists/">Mailing Lists</a></li>
-<li><a href="http://www.go-mono.com/forums/">Forums</a></li>
+<li><a href="http://mono.1490590.n4.nabble.com/">Forums</a></li>
 <li><a href="{{ site.github.url }}/community/help/irc/">Chat Rooms</a></li>
 <li><a href="{{ site.github.url }}/old_site/Related_Mono_Sites" title="Related Mono Sites">Related Sites</a></li>
 <li><a href="{{ site.github.url }}/old_site/User_Groups" title="User Groups">User Groups</a></li>

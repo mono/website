@@ -176,6 +176,24 @@ h6:hover .header-link {
   visibility: hidden;
 }
 
+.panel.info {
+  background: #F2FAFC;
+  border-left-color: #258FAF;
+  border-left-width: 5px;  
+}
+
+.panel.success {
+  background: #E0FFE6;
+  border-left-color: #43AC6A;
+  border-left-width: 5px;  
+}
+
+.panel.alert {
+  background: #F0D6C4;
+  border-left-color: #F04124;
+  border-left-width: 5px;
+}
+
 #push {
   height: 140px;
 }

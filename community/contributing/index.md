@@ -15,7 +15,7 @@ Users:
  Contributors:
   [Class Status]({{ site.github.url }}/old_site/Resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{ site.github.url }}/community/contributing/source-code-repository/)
  Community:
-  [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/) | [Forums](http://www.go-mono.com/forums/) | [Chat]({{ site.github.url }}/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)
+  [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat]({{ site.github.url }}/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)
  FAQ:
   [General]({{ site.github.url }}/docs/faq/general/) | [Technical]({{ site.github.url }}/docs/faq/technical/) | [Licensing]({{ site.github.url }}/docs/faq/licensing/) | [Asp.net]({{ site.github.url }}/docs/faq/aspnet/) | [Security]({{ site.github.url }}/docs/faq/security/) | [WinForms]({{ site.github.url }}/docs/faq/winforms/)
 

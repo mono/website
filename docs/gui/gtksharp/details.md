@@ -219,7 +219,7 @@ Gtk\# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sh
 
 ***gtk-sharp***
 
-[glib-sharp](http://docs.go-mono.com/index.aspx?link=N:Glib)
+[glib-sharp](http://docs.go-mono.com/index.aspx?link=N:GLib)
 
 Portions of the glib 2.x libraries which provide a low-level non-GUI core library for gtk+.
 
