@@ -12,22 +12,22 @@ Contributing to the website
 If you want to edit a page, the easiest way is to click the ![Edit page on GitHub](https://cloud.githubusercontent.com/assets/1376924/3712375/a6d7bc42-150f-11e4-9ceb-5230cbbfba3f.png) link under the page title on the website.
 
 This will open the source file on GitHub where you can click the pencil button to start editing:
-![Arrow to pencil](https://cloud.githubusercontent.com/assets/1376924/3712365/121866e2-150f-11e4-90d8-0a65c2b346d4.png)
+![Arrow to pencil](https://cloud.githubusercontent.com/assets/1376924/3712474/1d2fe57a-1517-11e4-86b2-d083dbeaa4ae.png)
 
 GitHub's editor shows you both the [Markdown](https://guides.github.com/features/mastering-markdown/) source as well as a preview of the rendered page:
 ![Code editor](https://cloud.githubusercontent.com/assets/1376924/3712360/c669c088-150e-11e4-9bc3-d979b0669924.png)
 
-After you've finished your changes, enter a proper summary and description and click the "Propose file changes" button to open a pull request:
-![Change details](https://cloud.githubusercontent.com/assets/1376924/3712364/ed7570aa-150e-11e4-83ca-ec6b90ba6b9b.png)
+After you've finished your changes, enter a proper summary and description and click the "Propose file change" button to open a pull request:
+![Propose file change](https://cloud.githubusercontent.com/assets/1376924/3712481/52423448-1517-11e4-8aa8-9c9f9befb6bc.png)
 
-**Note** When editing or adding links, make sure to prefix them with `{{ site.github.url }}`. This is a special variable that is populated by GitHub Pages with the domain name and ensures the links work even on forks.
+**Note:** When editing or adding links, make sure to prefix them with `{{ site.github.url }}`. This is a special variable that is populated by GitHub Pages with the domain name and ensures the links work even on forks of the repository.
 
 Setting up a local copy of the website
 --------------------------------------
 For larger changes, using the web-based editor on GitHub is not really convenient. A better way is to setup a local copy of the website where you can experiment.
 
 ###Dependencies:
- - [Ruby](https://www.ruby-lang.org/) - Jekyll requires Ruby, so you need to install it.
+ - [Ruby](https://www.ruby-lang.org/) - Jekyll is written in Ruby
  - [Bundler](http://bundler.io/) - a package manager for Ruby. Install it by running `gem install bundler`
 
 After you've forked and cloned the repository, run the following commands:
