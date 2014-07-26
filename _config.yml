@@ -13,4 +13,5 @@ gems:
 exclude:
   - CNAME
   - README.md
+  - CONTRIBUTING.md
   - Gemfile*
