@@ -143,9 +143,55 @@ h6:hover .header-link {
   margin: 0 auto -100px;
 }
 
-#toc-dropdown-button {
+ul.breadcrumbs {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+
+ul.breadcrumbs > *:before {
+  margin-right: 0.4rem;
+  margin-left: 0.4rem;
+}
+
+ul.breadcrumbs li {
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
+ul.breadcrumbs li.toc {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ul.breadcrumbs li.toc:before{
+  display: none;
+}
+
+ul.breadcrumbs li.toc a:hover {
+  text-decoration: none;
+}
+
+ul.breadcrumbs .here-note {
+  text-transform: none;
+  color: #000;
+}
+
+#toc-dropdown-button-inline {
+  padding: 5px 20px 5px 5px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#toc-dropdown-button-inline:after {
+  right: 5px;
+}
+
+#toc-dropdown-button-separate {
   margin-top: 10px;
   margin-bottom: 0px;
+  text-transform: uppercase;
 }
 
 #toc-dropdown li.toc-indent-h2 {

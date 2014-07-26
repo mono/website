@@ -3,7 +3,20 @@ layout: base
 ---
 <div class="row">
   <div class="small-12 columns">
-    <a id="toc-dropdown-button" class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
+    <ul class="breadcrumbs">
+      {% assign breadcrumbs = page.url | split: '/' %}
+      {% assign url = '' %}
+      {% for crumb in breadcrumbs offset:1 %}
+        {% capture url %}{{ url }}/{{ crumb }}{% endcapture %}
+        {% assign title = crumb | replace: "-", " " %}
+        <li class="{% if forloop.last %}current{% endif %}">{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ site.github.url }}{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
+      {% endfor %}
+      <li class="toc right hidden-for-small-only">
+        <a id="toc-dropdown-button-inline" class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
+      </li>
+    </ul>
+
+    <a id="toc-dropdown-button-separate" class="show-for-small-only tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
     <ul id="toc-dropdown" data-dropdown-content class="medium f-dropdown"></ul>
   </div>
 </div>
@@ -41,13 +54,6 @@ function addHeadingAnchorChar() {
 
 function addToc() {
   var headings = $("h1, h2, h3, h4");
-
-  // hide TOC if there aren't enough headings on the page
-  if (headings.length <= 2) {
-    $("#toc-dropdown-button").hide();
-    return;
-  }
-
   var toc = $("#toc-dropdown");
 
   // add each heading to the TOC
