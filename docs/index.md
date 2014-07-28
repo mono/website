@@ -38,8 +38,6 @@ Compiling Mono
 
  - [Overview]({{ site.github.url }}/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
  - [Advanced compile options]({{ site.github.url }}/docs/compiling-mono/advanced-compile-options/)
- - [Compiling with Visual Studio]({{ site.github.url }}/docs/compiling-mono/compiling-with-visualstudio/)
- - [Cross-compiling Mono for Windows]({{ site.github.url }}/docs/compiling-mono/cross-compiling-mono-for-windows/)
  - [Parallel Mono environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/)
  - [Small footprint]({{ site.github.url }}/docs/compiling-mono/small-footprint/)
 

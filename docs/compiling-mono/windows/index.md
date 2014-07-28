@@ -31,7 +31,7 @@ Some other tools that are nice:
     * openssh or PuTTY
     * vim
 
-At this point, you can do a [VisualStudio build]({{ site.github.url }}/docs/compiling-mono/compiling-with-visualstudio/) or you can continue reading the instructions for a cygwin build.
+At this point, you can do a [VisualStudio build]({{ site.github.url }}/docs/compiling-mono/windows/compiling-with-visualstudio/) or you can continue reading the instructions for a cygwin build.
 
 Download the Mono source code from the [released tarballs](http://www.go-mono.com/mono-downloads/download.html) or [GitHub](https://github.com/mono/mono).
 
@@ -64,3 +64,6 @@ Some versions of mingw ship with broken headers which causes compilation to fail
 
 Archive: a tutorial on building Mono on Windows by Andreia Gaita is available [here](http://shana.worldofcoding.com/en/mono_cygwin_tutorial.html).
 
+See also these articles:
+ - [Compiling with Visual Studio]({{ site.github.url }}/docs/compiling-mono/windows/compiling-with-visualstudio/)
+ - [Cross-compiling Mono for Windows]({{ site.github.url }}/docs/compiling-mono/windows/cross-compiling-mono-for-windows/)
