@@ -17,7 +17,7 @@ Here we are tracking some plans to particular pieces of technology that are part
 <ul>
 <li><a href="{{ site.github.url }}/docs/advanced/runtime/">Mono:Runtime</a></li>
 <li><a href="{{ site.github.url }}/docs/advanced/runtime/runtime-projects/">Runtime_Projects</a></li>
-<li><a href="{{ site.github.url }}/docs/advanced/runtime/docs/>Runtime Internals</a>.</li>
+<li><a href="{{ site.github.url }}/docs/advanced/runtime/docs/">Runtime Internals</a></li>
 <li><a href="{{ site.github.url }}/docs/advanced/runtime/porting/">Porting</a></li>
 <li><a href="{{ site.github.url }}/community/contributing/test-suite/">Test Suite</a></li>
 <li><a href="{{ site.github.url }}/docs/debug+profile/debug/debugger/">Debugger</a></li>
