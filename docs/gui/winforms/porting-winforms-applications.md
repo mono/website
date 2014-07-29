@@ -20,7 +20,7 @@ For this guide, the open source application NClass has been chosen. It is a UML 
 -   [Mono 1.2.4]({{ site.github.url }}/download/)
 -   [Mono Migration Analyzer (MoMA)]({{ site.github.url }}/docs/tools+libraries/tools/moma/)
 
-NClass running on .Net with included example file: [![Msnclass.png]({{ site.github.url }}/old_site/images/1/1c/Msnclass.png)]({{ site.github.url }}/old_site/images/1/1c/Msnclass.png)
+NClass running on .Net with included example file: [![Msnclass.png]({{ site.github.url }}/archived/images/1/1c/Msnclass.png)]({{ site.github.url }}/archived/images/1/1c/Msnclass.png)
 
 Getting Started
 ---------------
@@ -29,13 +29,13 @@ For the purpose of this guide, we will make the assumption that the developer is
 
 Because we grabbed the source version, first we need to load up NClass.sln in Visual Studio and compile the solution.
 
-[![Build.png]({{ site.github.url }}/old_site/images/1/18/Build.png)]({{ site.github.url }}/old_site/images/1/18/Build.png)
+[![Build.png]({{ site.github.url }}/archived/images/1/18/Build.png)]({{ site.github.url }}/archived/images/1/18/Build.png)
 
 Once we have a compiled executable, we can run MoMA on it to give us an idea of what kinds of issues we may run into.
 
-[![Moma1.png]({{ site.github.url }}/old_site/images/3/35/Moma1.png)]({{ site.github.url }}/old_site/images/3/35/Moma1.png)
+[![Moma1.png]({{ site.github.url }}/archived/images/3/35/Moma1.png)]({{ site.github.url }}/archived/images/3/35/Moma1.png)
 
-[![Moma2.png]({{ site.github.url }}/old_site/images/c/c4/Moma2.png)]({{ site.github.url }}/old_site/images/c/c4/Moma2.png)
+[![Moma2.png]({{ site.github.url }}/archived/images/c/c4/Moma2.png)]({{ site.github.url }}/archived/images/c/c4/Moma2.png)
 
 The results from the MoMA scan can be seen [here](http://jpobst.com/moma/nclassmoma.html).
 
@@ -70,7 +70,7 @@ Open "Mono-1.2.4 Command Prompt" that was created in the start menu by the Mono 
 
 Unfortunately, nothing seemed to happen.
 
-[![Cmd1.png]({{ site.github.url }}/old_site/images/8/8f/Cmd1.png)]({{ site.github.url }}/old_site/images/8/8f/Cmd1.png)
+[![Cmd1.png]({{ site.github.url }}/archived/images/8/8f/Cmd1.png)]({{ site.github.url }}/archived/images/8/8f/Cmd1.png)
 
 What actually happened is that the application ran, but hit an error and quit. To see the error, we need to redirect the error output to a file, so we run:
 
@@ -148,7 +148,7 @@ Another strategy is to create different assemblies for .Net and Mono. This can b
 
 When compiling the version for Mono, we would specify the flag MONO in the Build tab of the GUI project properties.
 
-[![Conditional.png]({{ site.github.url }}/old_site/images/3/39/Conditional.png)]({{ site.github.url }}/old_site/images/3/39/Conditional.png)
+[![Conditional.png]({{ site.github.url }}/archived/images/3/39/Conditional.png)]({{ site.github.url }}/archived/images/3/39/Conditional.png)
 
 The downside of this approach is that we must ship separate assemblies for different platforms.
 
@@ -315,15 +315,15 @@ Also, make the changes to lstItems.ItemSelectionChanged and lstItems\_ItemSelect
 
 With these changes made, rebuild the solution in Visual Studio. Then run the NClass.NClass.exe executable again. This time we get much better results:
 
-[![Nclass1.png]({{ site.github.url }}/old_site/images/3/3f/Nclass1.png)]({{ site.github.url }}/old_site/images/3/3f/Nclass1.png)
+[![Nclass1.png]({{ site.github.url }}/archived/images/3/3f/Nclass1.png)]({{ site.github.url }}/archived/images/3/3f/Nclass1.png)
 
 Loading up the example file:
 
-[![Nclass2.png]({{ site.github.url }}/old_site/images/1/10/Nclass2.png)]({{ site.github.url }}/old_site/images/1/10/Nclass2.png)
+[![Nclass2.png]({{ site.github.url }}/archived/images/1/10/Nclass2.png)]({{ site.github.url }}/archived/images/1/10/Nclass2.png)
 
 Class members dialog:
 
-[![Dialog1.png]({{ site.github.url }}/old_site/images/8/86/Dialog1.png)]({{ site.github.url }}/old_site/images/8/86/Dialog1.png)
+[![Dialog1.png]({{ site.github.url }}/archived/images/8/86/Dialog1.png)]({{ site.github.url }}/archived/images/8/86/Dialog1.png)
 
 Continuing the Port
 -------------------
@@ -346,9 +346,9 @@ If you do not have a Linux installation, another option is to run the openSUSE/M
 
 After installing the VMWare player and unzipping the VMWare image, start the Mono image. It should bring you to the openSUSE desktop:
 
-[![Linux1.jpg]({{ site.github.url }}/old_site/images/b/bc/Linux1.jpg)]({{ site.github.url }}/old_site/images/b/bc/Linux1.jpg)
+[![Linux1.jpg]({{ site.github.url }}/archived/images/b/bc/Linux1.jpg)]({{ site.github.url }}/archived/images/b/bc/Linux1.jpg)
 
-[![]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)]({{ site.github.url }}/old_site/images/d/db/Linux3.jpg)
+[![]({{ site.github.url }}/archived/images/d/db/Linux3.jpg)]({{ site.github.url }}/archived/images/d/db/Linux3.jpg)
 
 Enabling User Shares
 
@@ -368,7 +368,7 @@ Now go back to Windows, and access your new share by typing "\\\\mono\\nclass" i
 
 On the Mono image desktop, double click your NClass folder, and navigate to your compiled NClass.NClass.exe application. Double click it and the application should run.
 
-[![Linux4.png]({{ site.github.url }}/old_site/images/0/02/Linux4.png)]({{ site.github.url }}/old_site/images/0/02/Linux4.png)
+[![Linux4.png]({{ site.github.url }}/archived/images/0/02/Linux4.png)]({{ site.github.url }}/archived/images/0/02/Linux4.png)
 
 ### Linux Platform Differences
 

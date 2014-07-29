@@ -12,7 +12,7 @@ The module passes off requests for ASP.NET pages to an external program, **mod-m
 
 The most simple scenario uses Apache as the HTTP server front end which passes the requests to mod-mono-server to handle, the following diagram illustrates how this setup works:
 
-[![Modmono-basic-setup.PNG]({{ site.github.url }}/old_site/images/c/cc/Modmono-basic-setup.PNG)]({{ site.github.url }}/old_site/images/c/cc/Modmono-basic-setup.PNG)
+[![Modmono-basic-setup.PNG]({{ site.github.url }}/archived/images/c/cc/Modmono-basic-setup.PNG)]({{ site.github.url }}/archived/images/c/cc/Modmono-basic-setup.PNG)
 
 Mod\_mono is an Apache module that is hosted inside Apache. Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process. The mod-mono-server process in turn can host multiple independent applications. It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
 
@@ -23,7 +23,7 @@ Although AppDomains provide an adequate level of isolation, mod\_mono can also b
 -   Allow the kernel to enforce different isolation rules for different processes (for example with AppArmor or SELinux)
 -   Setup different CPU, Disk and memory quotas to different processes
 
-[![Modmono-multiple-servers.PNG]({{ site.github.url }}/old_site/images/9/9b/Modmono-multiple-servers.PNG)]({{ site.github.url }}/old_site/images/9/9b/Modmono-multiple-servers.PNG)
+[![Modmono-multiple-servers.PNG]({{ site.github.url }}/archived/images/9/9b/Modmono-multiple-servers.PNG)]({{ site.github.url }}/archived/images/9/9b/Modmono-multiple-servers.PNG)
 
 For example, in the setup above, the various Apache workers will route requests to /forums and /support to a mod-mono-server that is used by the "community" user on the server. This mod-mono-server will still use two separate AppDomains to isolate the forums software from the support software.
 
@@ -260,7 +260,7 @@ As with most other mod\_mono directives, the first parameter to a directive can 
 Limiting the number of concurrent requests
 ------------------------------------------
 
-The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{ site.github.url }}/old_site/Article:ThreadPool_Deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
+The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{ site.github.url }}/archived/Article:ThreadPool_Deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
 
 mod\_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
 
@@ -498,5 +498,5 @@ You will get more output in the apache error\_log file. Useful when debugging.
 Improving mod\_mono
 ===================
 
-See our [Improving mod\_mono]({{ site.github.url }}/old_site/ImprovingModMono "ImprovingModMono") page for details on things that could be improved in the module.
+See our [Improving mod\_mono]({{ site.github.url }}/archived/ImprovingModMono "ImprovingModMono") page for details on things that could be improved in the module.
 

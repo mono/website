@@ -78,7 +78,7 @@ Through Google's Summer of Code funding work has been done to modify GCC to prod
 
 But this is not sufficient to compile C++ CLI code that targets Mono, as these extensions will require modifications to GCC to recognize this new language and emit the proper code.
 
-The ideal path to support C++ is to finish the work that was started by Jey on the summer of code to make GCC emit CIL code. You can get some links to the work-in-progress from: [Summer of Code GCC CIL project]({{ site.github.url }}/old_site/Summer2005#gcc-cil "Summer2005")
+The ideal path to support C++ is to finish the work that was started by Jey on the summer of code to make GCC emit CIL code. You can get some links to the work-in-progress from: [Summer of Code GCC CIL project]({{ site.github.url }}/archived/Summer2005#gcc-cil "Summer2005")
 
 The blog linked there has some details about the progress so far.
 

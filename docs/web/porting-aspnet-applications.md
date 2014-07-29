@@ -19,7 +19,7 @@ In this guide we will focus on issues arising from differences between the Unix 
 
 In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C\# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
 
-[![BlogStarterKit StartPage.png]({{ site.github.url }}/old_site/images/8/83/BlogStarterKit_StartPage.png)]({{ site.github.url }}/old_site/images/8/83/BlogStarterKit_StartPage.png)
+[![BlogStarterKit StartPage.png]({{ site.github.url }}/archived/images/8/83/BlogStarterKit_StartPage.png)]({{ site.github.url }}/archived/images/8/83/BlogStarterKit_StartPage.png)
 
 Getting started
 ---------------

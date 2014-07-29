@@ -15,16 +15,16 @@ Quick Resources:
 -   [ASP.NET FAQ]({{ site.github.url }}/docs/faq/aspnet/) for common questions on ASP.NET.
 -   [Hosting on Apache servers]({{ site.github.url }}/docs/web/mod_mono/).
 -   [Hosting with FastCGI-based servers]({{ site.github.url }}/docs/web/fastcgi/).
--   [Hosting with CGI-based servers]({{ site.github.url }}/old_site/CGI "CGI").
+-   [Hosting with CGI-based servers]({{ site.github.url }}/archived/CGI "CGI").
 -   [Hosting with Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/).
 -   [Porting ASP.NET applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/).
 
 Mono's ASP.NET implementations supports two kinds of applications:
 
 -   Web Forms (Web Applications infrastructure).
--   [Web Services]({{ site.github.url }}/old_site/Web_Services "Web Services") (the SOAP-based RPC system).
+-   [Web Services]({{ site.github.url }}/archived/Web_Services "Web Services") (the SOAP-based RPC system).
 
-Status and tests for ASP.NET 2.0 are available in our [ASPTests]({{ site.github.url }}/old_site/ASPTests "ASPTests") page.
+Status and tests for ASP.NET 2.0 are available in our [ASPTests]({{ site.github.url }}/archived/ASPTests "ASPTests") page.
 
 Running ASP.NET applications
 ============================
@@ -32,7 +32,7 @@ Running ASP.NET applications
 To run your ASP.NET applications with Mono, you have three classes of options:
 
 -   Apache hosting: use [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/), a module that allows Apache to serve ASP.NET applications.
--   FastCGI hosting: use the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) hosting if you have a web server that supports the FastCGI protocol (for example [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)) for extending the server. You also may use a web server that only has support for [CGI]({{ site.github.url }}/old_site/CGI "CGI") using **cgi-fcgi**.
+-   FastCGI hosting: use the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) hosting if you have a web server that supports the FastCGI protocol (for example [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)) for extending the server. You also may use a web server that only has support for [CGI]({{ site.github.url }}/archived/CGI "CGI") using **cgi-fcgi**.
 -   XSP: this is a simple way to get started, a lightweight and simple webserver written in C\#.
 
 For deploying applications, we recommend the use of the [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) or [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) approaches, as that will give you all the configuration options and flexibility that come with using Apache or a FastCGI server.
@@ -85,13 +85,13 @@ XSP supports SSL and TLS Client Certificates. For further details about setting 
 
 ### Configuration
 
-Applications can be configured through the web.config file, the full documentation is available from [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), and also a Mono-specific version is available on this site [here]({{ site.github.url }}/old_site/Config_system.web "Config system.web").
+Applications can be configured through the web.config file, the full documentation is available from [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), and also a Mono-specific version is available on this site [here]({{ site.github.url }}/archived/Config_system.web "Config system.web").
 
-Additionally, you can configure Mono-specific ASP.NET settings (to have applications that behave differently depending on the operating system they are deployed in) using the [ASP.NET Settings Mapping]({{ site.github.url }}/old_site/ASP.NET_Settings_Mapping "ASP.NET Settings Mapping") engine.
+Additionally, you can configure Mono-specific ASP.NET settings (to have applications that behave differently depending on the operating system they are deployed in) using the [ASP.NET Settings Mapping]({{ site.github.url }}/archived/ASP.NET_Settings_Mapping "ASP.NET Settings Mapping") engine.
 
 ### Other extensions
 
-Check out [ASP.NET Modules]({{ site.github.url }}/old_site/ASP.NET_Modules "ASP.NET Modules") for details on how to support deflate/gzip encodings and authentication.
+Check out [ASP.NET Modules]({{ site.github.url }}/archived/ASP.NET_Modules "ASP.NET Modules") for details on how to support deflate/gzip encodings and authentication.
 
 Debugging
 ---------
@@ -102,7 +102,7 @@ To obtain line numbers in stack traces you need to do two things:
 
 1. Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
 
-You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option]({{ site.github.url }}/old_site/Config#3ccompilation3e "Config")).
+You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option]({{ site.github.url }}/archived/Config#3ccompilation3e "Config")).
 
 Use the --debug command line option to Mono, this is done by setting the MONO\_OPTIONS environment variable, like this:
 
@@ -140,5 +140,5 @@ Users interested in the latest version of mod\_mono and xsp can retrieve these f
 Designer
 --------
 
-There is work in progress on an [ASP.NET Designer]({{ site.github.url }}/old_site/ASP.NET_Visual_Designer) the designer will eventually be integrated into the [MonoDevelop IDE]({{ site.github.url }}/docs/getting-started/development-environments/).
+There is work in progress on an [ASP.NET Designer]({{ site.github.url }}/archived/ASP.NET_Visual_Designer) the designer will eventually be integrated into the [MonoDevelop IDE]({{ site.github.url }}/docs/getting-started/development-environments/).
 

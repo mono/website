@@ -107,7 +107,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 }
 ```
 
-[![CairoGtk 1.png]({{ site.github.url }}/old_site/images/f/f2/CairoGtk_1.png)]({{ site.github.url }}/old_site/images/f/f2/CairoGtk_1.png)
+[![CairoGtk 1.png]({{ site.github.url }}/archived/images/f/f2/CairoGtk_1.png)]({{ site.github.url }}/archived/images/f/f2/CairoGtk_1.png)
 
 I used `FillPreserve` method instead of `Fill` because the latter destroys the current path. If you want to keep the path use `StrokePreserve` and `FillPreserve`.
 
@@ -211,7 +211,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 }
 ```
 
-[![CairoGtk 2.png]({{ site.github.url }}/old_site/images/d/d2/CairoGtk_2.png)]({{ site.github.url }}/old_site/images/d/d2/CairoGtk_2.png)
+[![CairoGtk 2.png]({{ site.github.url }}/archived/images/d/d2/CairoGtk_2.png)]({{ site.github.url }}/archived/images/d/d2/CairoGtk_2.png)
 
 ### Hints
 

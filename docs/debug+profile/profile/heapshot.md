@@ -6,7 +6,7 @@ redirect_from:
   - /HeapShot/
 ---
 
-[![]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)
+[![]({{ site.github.url }}/archived/images/6/69/Heapshot.png)]({{ site.github.url }}/archived/images/6/69/Heapshot.png)
 
 HeapShot in action
 
@@ -39,11 +39,11 @@ Using the GUI for HeapShot
 
 When you are happy that your application has run long enough to generate useful statistics, open the log file in Heap Shot. This can be done by clicking on 'Open' in Heap Shot and navigating to the file:
 
-[![Heapshot open file.png]({{ site.github.url }}/old_site/images/b/b8/Heapshot_open_file.png)]({{ site.github.url }}/old_site/images/b/b8/Heapshot_open_file.png)
+[![Heapshot open file.png]({{ site.github.url }}/archived/images/b/b8/Heapshot_open_file.png)]({{ site.github.url }}/archived/images/b/b8/Heapshot_open_file.png)
 
 Once a log file has been opened, you will be presented by a screen similar to this:
 
-[![Heapshot opened file.png]({{ site.github.url }}/old_site/images/4/4f/Heapshot_opened_file.png)]({{ site.github.url }}/old_site/images/4/4f/Heapshot_opened_file.png)
+[![Heapshot opened file.png]({{ site.github.url }}/archived/images/4/4f/Heapshot_opened_file.png)]({{ site.github.url }}/archived/images/4/4f/Heapshot_opened_file.png)
 
 The left hand side of the screen contains an entry for every heap snapshot. In this case there were two garbage collections before the application exited. By clicking on one of these snapshots and viewing the 'All objects' tab, you can quickly inspect a number of metrics such as:
 
@@ -52,7 +52,7 @@ The left hand side of the screen contains an entry for every heap snapshot. In t
 -   Memory used by these instances.
 -   Average size of these objects.
 
-[![Heapshot all objects.png]({{ site.github.url }}/old_site/images/c/cf/Heapshot_all_objects.png)]({{ site.github.url }}/old_site/images/c/cf/Heapshot_all_objects.png)
+[![Heapshot all objects.png]({{ site.github.url }}/archived/images/c/cf/Heapshot_all_objects.png)]({{ site.github.url }}/archived/images/c/cf/Heapshot_all_objects.png)
 
 There are two ways to view the information in the heap:
 
@@ -61,13 +61,13 @@ There are two ways to view the information in the heap:
 
 The default mode is to display a list of types and as you expand each type you can see what objects are being referenced by that type and also the quantity of each object. You can also use the "Filter" function at the bottom to limit the display of types to a given type name or namespace.
 
-[![Heapshot hashtable referencing.png]({{ site.github.url }}/old_site/images/5/53/Heapshot_hashtable_referencing.png)]({{ site.github.url }}/old_site/images/5/53/Heapshot_hashtable_referencing.png)
+[![Heapshot hashtable referencing.png]({{ site.github.url }}/archived/images/5/53/Heapshot_hashtable_referencing.png)]({{ site.github.url }}/archived/images/5/53/Heapshot_hashtable_referencing.png)
 
 As you can see, the mono System.HashTable class references both System.Int32[] types and System.Collections.HashTable.Slot[] types. As the quantities of these three types are all the same, it'd be safe to assume that every System.HashTable creates one Slot[] and one Int32[] object.
 
 To view the objects that keep references to a given type, click on "Inverse references" at the bottom of the screen. This will allow you to see what types reference the current type so you can figure out why something is being retained in memory. The best way to do this is to double click on the type you are interested in and then click on "Inverse References".
 
-[![Heapshot reverse references.png]({{ site.github.url }}/old_site/images/f/fc/Heapshot_reverse_references.png)]({{ site.github.url }}/old_site/images/f/fc/Heapshot_reverse_references.png)
+[![Heapshot reverse references.png]({{ site.github.url }}/archived/images/f/fc/Heapshot_reverse_references.png)]({{ site.github.url }}/archived/images/f/fc/Heapshot_reverse_references.png)
 
 From this screenshot you can see which types store reference to System.String objects and the quantity of System.Strings that each type retains. This mode is invaluable when trying to figure out why objects you expect to have been GC'ed are actually still in memory. You can keep expanding the toggles to see why other objects are being kept alive. For example System.String is being kept alive by GLib.Signal. To see why GLib.Signal is kept alive you can simply expand that node. Alternatively you can double click on GLib.Signal and once again click on 'Inverse References' for that view.
 

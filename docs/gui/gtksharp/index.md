@@ -39,7 +39,7 @@ Features
 Gtk\# in the Real World
 -----------------------
 
-[![Md2.png]({{ site.github.url }}/old_site/images/3/3d/Md2.png)]({{ site.github.url }}/old_site/images/3/3d/Md2.png)
+[![Md2.png]({{ site.github.url }}/archived/images/3/3d/Md2.png)]({{ site.github.url }}/archived/images/3/3d/Md2.png)
 
 Want to know how Gtk\# is being used in the real world?
 

@@ -31,7 +31,7 @@ See [Mono Experimental Installer for Windows]({{ site.github.url }}/Mono_Experim
 Using Mono on Windows
 =====================
 
-The combined installer creates a "Mono Command Prompt" shortcut under the main Mono program group which starts a command shell with mono-relevant path information already configured. [![WinMonoCmdStart.png]({{ site.github.url }}/old_site/images/9/92/WinMonoCmdStart.png)]({{ site.github.url }}/old_site/images/9/92/WinMonoCmdStart.png)
+The combined installer creates a "Mono Command Prompt" shortcut under the main Mono program group which starts a command shell with mono-relevant path information already configured. [![WinMonoCmdStart.png]({{ site.github.url }}/archived/images/9/92/WinMonoCmdStart.png)]({{ site.github.url }}/archived/images/9/92/WinMonoCmdStart.png)
 
 To test the mcs compiler and the mono runtime, launch this command prompt, from there create a simple C\# file:
 
@@ -66,15 +66,15 @@ If you get this far, you have a working Mono installation.
 Gtk\#
 -----
 
-[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/old_site/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/).
+[[GtkSharp|Gtk\#] is included as part of the Mono installation, this will allow you to create Gtk\# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide]({{ site.github.url }}/archived/Monkeyguide "Monkeyguide") to check the [Gtk\# beginner's guide]({{ site.github.url }}/docs/gui/gtksharp/beginners-guide/).
 
 The combined installer creates an "Applications" folder under the main Mono program group with two sample Gtk\# applications which can be run to test your Gtk\# installation.
 
-[![WinMonoGtkStart.png]({{ site.github.url }}/old_site/images/8/81/WinMonoGtkStart.png)]({{ site.github.url }}/old_site/images/8/81/WinMonoGtkStart.png)
+[![WinMonoGtkStart.png]({{ site.github.url }}/archived/images/8/81/WinMonoGtkStart.png)]({{ site.github.url }}/archived/images/8/81/WinMonoGtkStart.png)
 
 These are:
 
--   Prj2Make\# GTK - This is a graphical interface to the prj2make library which can be used to generate Makefiles from Visual Studio.NET C\# projects and solutions. You can find out more about this application in the article [Working with Mono and Visual Studio]({{ site.github.url }}/old_site/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio").
+-   Prj2Make\# GTK - This is a graphical interface to the prj2make library which can be used to generate Makefiles from Visual Studio.NET C\# projects and solutions. You can find out more about this application in the article [Working with Mono and Visual Studio]({{ site.github.url }}/archived/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio").
 -   Sql\# GTK - A Graphical "Query Analyzer" style tool which supports several different databases.
 
 Alternatively, if you only want to use Gtk\# on Windows, without Mono, you can use the [Gtk\# installer for the .NET Framework]({{ site.github.url }}/docs/gui/gtksharp/installer-for-net-framework/).
@@ -84,7 +84,7 @@ ASP.NET with Mono: xsp & xsp2
 
 The combined installer also creates an "XSP" folder under the main Mono program group with links to run XSP and XSP2, the Mono ASP.NET and ASP.NET 2.0 Web Servers.
 
-[![WinMonoXspStart.png]({{ site.github.url }}/old_site/images/5/54/WinMonoXspStart.png)]({{ site.github.url }}/old_site/images/5/54/WinMonoXspStart.png)
+[![WinMonoXspStart.png]({{ site.github.url }}/archived/images/5/54/WinMonoXspStart.png)]({{ site.github.url }}/archived/images/5/54/WinMonoXspStart.png)
 
 To test XSP, simply start the Web Server with:
 

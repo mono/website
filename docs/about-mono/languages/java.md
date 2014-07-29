@@ -94,7 +94,7 @@ This will produce `Demo.class`. Now run it:
 
 The result is shown here:
 
-[![Java.png]({{ site.github.url }}/old_site/images/2/26/Java.png)]({{ site.github.url }}/old_site/images/2/26/Java.png)
+[![Java.png]({{ site.github.url }}/archived/images/2/26/Java.png)]({{ site.github.url }}/archived/images/2/26/Java.png)
 
 The above is basically translating Demo.class from JVM bytecodes to ECMA CIL, then the Mono JIT translates that into native x86 code. The next step is to precompile the Java code directly into .NET code, which will skip the double JIT process:
 

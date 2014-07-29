@@ -139,7 +139,7 @@ If we haven't already built it, we create a NodeStore which will contain MyTreeN
 
 The whole sample named "Simple NodeView" can be found [http:/GtkSharpNodeViewTutorialExamples here] and when compiled and executed it looks like this:
 
-[![GtkSharpNodeViewSimple.png]({{ site.github.url }}/old_site/images/0/04/GtkSharpNodeViewSimple.png)]({{ site.github.url }}/old_site/images/0/04/GtkSharpNodeViewSimple.png)
+[![GtkSharpNodeViewSimple.png]({{ site.github.url }}/archived/images/0/04/GtkSharpNodeViewSimple.png)]({{ site.github.url }}/archived/images/0/04/GtkSharpNodeViewSimple.png)
 
 Getting Interactive
 ===================
@@ -167,5 +167,5 @@ Note that all the complexity of TreeIters and GValues is removed and you can acc
 
 The complete source for this sample, Interactive NodeView, can be found [http:/GtkSharpNodeViewTutorialExamples here] and when compiled and executed, it produces the following application:
 
- [![GtkSharpNodeViewInteractive.png]({{ site.github.url }}/old_site/images/9/96/GtkSharpNodeViewInteractive.png)]({{ site.github.url }}/old_site/images/9/96/GtkSharpNodeViewInteractive.png)
+ [![GtkSharpNodeViewInteractive.png]({{ site.github.url }}/archived/images/9/96/GtkSharpNodeViewInteractive.png)]({{ site.github.url }}/archived/images/9/96/GtkSharpNodeViewInteractive.png)
 

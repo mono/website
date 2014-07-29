@@ -18,7 +18,7 @@ The doc browser is part of the mono-tools package, avaliable from the [Downloads
 
 Once installed, you can launch it from the "Programing" section of the Applications menu, as shown in the image below, or by typing *monodoc* in a terminal window.
 
-[![Gnome menu-monodoc-1.png]({{ site.github.url }}/old_site/images/1/1d/Gnome_menu-monodoc-1.png)]({{ site.github.url }}/old_site/images/1/1d/Gnome_menu-monodoc-1.png)
+[![Gnome menu-monodoc-1.png]({{ site.github.url }}/archived/images/1/1d/Gnome_menu-monodoc-1.png)]({{ site.github.url }}/archived/images/1/1d/Gnome_menu-monodoc-1.png)
 
 The browser lets you navigate through different types of documentation installed on your system. Usually, it shows the documentation of:
 

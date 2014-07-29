@@ -105,7 +105,7 @@ Editing from inside the [Monodoc]({{ site.github.url }}/docs/tools+libraries/too
 
 After clicking on an [Edit] link, monodoc will show an aspect similar to this one:
 
-[![Monodoc-edit.png]({{ site.github.url }}/old_site/images/4/41/Monodoc-edit.png)]({{ site.github.url }}/old_site/images/4/41/Monodoc-edit.png)
+[![Monodoc-edit.png]({{ site.github.url }}/archived/images/4/41/Monodoc-edit.png)]({{ site.github.url }}/archived/images/4/41/Monodoc-edit.png)
 
 Where you can see the window is divided in two panels. The upper panel is where you type the [XML Documentation code](#writing-xml-documentation). Some buttons in the middle will help you with the most important tags. In the lower panel you can see a preview of the documentation as it is being typed. Finally, at the lowest part of the window you can see three buttons, *Close* for canceling the actual editing, *Save* for saving the changes and *Restore* to remove all your changes and restore the node as it was originally.
 

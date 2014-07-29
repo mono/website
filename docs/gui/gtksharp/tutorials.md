@@ -23,14 +23,14 @@ Gtk\# GUI details and techniques
 -   [Widget Layout and Packing]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
 -   [Creating Responsive GUI applications with Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/responsive-applications/)
 -   [Creating Notification Icons]({{ site.github.url }}/docs/gui/gtksharp/widgets/notification-icon/)
--   [Gtk\# used as a Web Service Interface]({{ site.github.url }}/old_site/Webservices_and_GtkSharp "Webservices and GtkSharp")
--   [Gtk\# example used to access GConf settings]({{ site.github.url }}/old_site/GConfTutorial "GConfTutorial")
+-   [Gtk\# used as a Web Service Interface]({{ site.github.url }}/archived/Webservices_and_GtkSharp "Webservices and GtkSharp")
+-   [Gtk\# example used to access GConf settings]({{ site.github.url }}/archived/GConfTutorial "GConfTutorial")
 
 Advanced Gtk\#
 --------------
 
 -   [Generating bindings to GLib/gobject libraries]({{ site.github.url }}/docs/gui/gtksharp/gapi/)
--   [Quick guide to using Pango\#]({{ site.github.url }}/old_site/Pango:Beginners "Pango:Beginners")
+-   [Quick guide to using Pango\#]({{ site.github.url }}/archived/Pango:Beginners "Pango:Beginners")
 -   [Gtk\# TreeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/widgets/treeview-tutorial/)
     -   [Gtk\# NodeView: A Convenience API to TreeView]({{ site.github.url }}/docs/gui/gtksharp/widgets/nodeview-tutorial/)
     -   [Example Programs from the Gtk\# NodeView Tutorial]({{ site.github.url }}/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)
@@ -41,7 +41,7 @@ Extending your GUI
 
 **Internationalization**
 
--   [Using Mono.Unix]({{ site.github.url }}/old_site/Internationalization)
+-   [Using Mono.Unix]({{ site.github.url }}/archived/Internationalization)
 
 **Accessibility**
 

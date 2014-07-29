@@ -38,7 +38,7 @@ What are the entities contained in an assembly which Cecil provides an object mo
 
 Here is a simplified class diagram of the main entities Cecil is dealing with and their relationships all together:
 
-[![CecilMainCD.png]({{ site.github.url }}/old_site/images/4/47/CecilMainCD.png)]({{ site.github.url }}/old_site/images/4/47/CecilMainCD.png)
+[![CecilMainCD.png]({{ site.github.url }}/archived/images/4/47/CecilMainCD.png)]({{ site.github.url }}/archived/images/4/47/CecilMainCD.png)
 
 An AssemblyDefinition is created by an AssemblyFactory which works with an assembly file. Each of them contains a ModuleDefinitions collection. In general, you have to work with a main ModuleDefinition (you can get it by using the MainModule property).
 
@@ -52,7 +52,7 @@ You can also get the constructors of a type by using the Constructors property. 
 
 A MethodDefinition contains a MethodBody. You can get all the CIL instructions of a MethodDefinition by using the CilWorker property. In addition, the MethodDefinition contains an Instructions property.
 
-[![CecilInstrCD.png]({{ site.github.url }}/old_site/images/1/12/CecilInstrCD.png)]({{ site.github.url }}/old_site/images/1/12/CecilInstrCD.png)
+[![CecilInstrCD.png]({{ site.github.url }}/archived/images/1/12/CecilInstrCD.png)]({{ site.github.url }}/archived/images/1/12/CecilInstrCD.png)
 
 I would like to add some tracing functionality to an assembly I can’t debug, is it possible using Cecil?
 --------------------------------------------------------------------------------------------------------

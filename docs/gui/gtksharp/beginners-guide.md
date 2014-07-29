@@ -209,7 +209,7 @@ Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" stat
 
 Now just compile like we did before and run it using \`mono HelloWorld.exe\` and you should get something like this:
 
-[![HelloWorld.exe running...]({{ site.github.url }}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png)]({{ site.github.url }}/old_site/images/9/9d/Screenshot-MyfirstGTKApp.png "HelloWorld.exe running...")
+[![HelloWorld.exe running...]({{ site.github.url }}/archived/images/9/9d/Screenshot-MyfirstGTKApp.png)]({{ site.github.url }}/archived/images/9/9d/Screenshot-MyfirstGTKApp.png "HelloWorld.exe running...")
 
 Pretty easy, isn't it?"
 

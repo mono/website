@@ -22,11 +22,11 @@ Toolkits
 [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)]({{ site.github.url }}/old_site/images/5/5e/Banshee1.png)
+[![]({{ site.github.url }}/archived/images/5/5e/Banshee1.png)]({{ site.github.url }}/archived/images/5/5e/Banshee1.png)
 
 [Banshee](http://banshee-project.org/Main_Page), a GTK\# app
 
-[![]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)]({{ site.github.url }}/old_site/images/9/92/Fspot1.png)
+[![]({{ site.github.url }}/archived/images/9/92/Fspot1.png)]({{ site.github.url }}/archived/images/9/92/Fspot1.png)
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK\# app
 
@@ -77,11 +77,11 @@ Cons:
 [Windows.Forms]({{ site.github.url }}/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)]({{ site.github.url }}/old_site/images/7/71/Nunit1.png)
+[![]({{ site.github.url }}/archived/images/7/71/Nunit1.png)]({{ site.github.url }}/archived/images/7/71/Nunit1.png)
 
 [NUnit](http://www.nunit.org/), a Winforms app
 
-[![]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)]({{ site.github.url }}/old_site/images/3/32/Screenshot-SharpChess.png)
+[![]({{ site.github.url }}/archived/images/3/32/Screenshot-SharpChess.png)]({{ site.github.url }}/archived/images/3/32/Screenshot-SharpChess.png)
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
@@ -128,7 +128,7 @@ This is a port of the QtJambi java bindings to .net using IKVM.
 wxNet
 -----
 
-[![]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)
+[![]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)
 
 wx\# Sample
 
@@ -152,7 +152,7 @@ Cons:
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits]({{ site.github.url }}/old_site/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits]({{ site.github.url }}/archived/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
 
 Alternative Implementation Approaches
 =====================================
@@ -180,13 +180,13 @@ As an example, consider the UI for [Tangerine](http://snorp.net/log/tangerine) a
 
 On Windows:
 
-[![Tangerine-prefs-win32-new.png]({{ site.github.url }}/old_site/images/1/17/Tangerine-prefs-win32-new.png)]({{ site.github.url }}/old_site/images/1/17/Tangerine-prefs-win32-new.png)
+[![Tangerine-prefs-win32-new.png]({{ site.github.url }}/archived/images/1/17/Tangerine-prefs-win32-new.png)]({{ site.github.url }}/archived/images/1/17/Tangerine-prefs-win32-new.png)
 
 On Linux with Gnome:
 
-[![Tangerine-properties.png]({{ site.github.url }}/old_site/images/e/e3/Tangerine-properties.png)]({{ site.github.url }}/old_site/images/e/e3/Tangerine-properties.png)
+[![Tangerine-properties.png]({{ site.github.url }}/archived/images/e/e3/Tangerine-properties.png)]({{ site.github.url }}/archived/images/e/e3/Tangerine-properties.png)
 
 On MacOS X:
 
-[![Tangerine-preferences-mac.png]({{ site.github.url }}/old_site/images/a/a6/Tangerine-preferences-mac.png)]({{ site.github.url }}/old_site/images/a/a6/Tangerine-preferences-mac.png)
+[![Tangerine-preferences-mac.png]({{ site.github.url }}/archived/images/a/a6/Tangerine-preferences-mac.png)]({{ site.github.url }}/archived/images/a/a6/Tangerine-preferences-mac.png)
 

@@ -147,7 +147,7 @@ As of Mono 2.0, AOT compilation is only supported for non-generic methods. suppo
 
 If you want to disable the use of the AOT generated code for a particular program execution, use the -O=-aot command line flag to the runtime.
 
-See the discussion on [OptimizingAOT]({{ site.github.url }}/old_site/OptimizingAOT "OptimizingAOT")
+See the discussion on [OptimizingAOT]({{ site.github.url }}/archived/OptimizingAOT "OptimizingAOT")
 
 Discussion
 ----------

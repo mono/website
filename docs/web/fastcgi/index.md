@@ -15,7 +15,7 @@ This documentation contains configuration instructions for serveral web servers 
 
 ### How Does It Work?
 
-[![Request.png]({{ site.github.url }}/old_site/images/3/38/Request.png)]({{ site.github.url }}/old_site/images/3/38/Request.png)
+[![Request.png]({{ site.github.url }}/archived/images/3/38/Request.png)]({{ site.github.url }}/archived/images/3/38/Request.png)
 
 FastCGI is an interprocess communcation mechanism available
 
@@ -52,7 +52,7 @@ To install the FastCGI on Unix, follow the instructions on the FastCGI Linux pag
 -   [Cherokee HTTP Server]({{ site.github.url }}/docs/web/fastcgi/cherokee/)
 -   [Lighttpd]({{ site.github.url }}/docs/web/fastcgi/lighttpd/)
 -   [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)
--   [CGI]({{ site.github.url }}/old_site/CGI "CGI") via cgi-fcgi
+-   [CGI]({{ site.github.url }}/archived/CGI "CGI") via cgi-fcgi
 
 The following servers support FastCGI, but we currently do not have per-server configuration information:
 

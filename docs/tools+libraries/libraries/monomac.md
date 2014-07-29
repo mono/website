@@ -20,7 +20,7 @@ As of December 12th 2012, Xamarin now offers a superset of MonoMac called [Xamar
 Tutorials
 =========
 
--   [MonoMac packaging, and AppStore distribution]({{ site.github.url }}/old_site/MonoMacPackager "MonoMacPackager")
+-   [MonoMac packaging, and AppStore distribution]({{ site.github.url }}/archived/MonoMacPackager "MonoMacPackager")
 -   [.NET Development for OSX](http://www.satter.org/2010/09/net-development-for-os-x.html)
 -   Online blogs/tutorials:
     -   [Getting Started Part 1](http://cocoa-mono.org/archives/22/chapter-1-getting-started-part-1/)

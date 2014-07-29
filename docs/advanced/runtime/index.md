@@ -128,7 +128,7 @@ Some features like Reflection.Emit and other forms of dynamic code generation ar
 
 Notice that for Mono 2.0 generics are not supported when doing full-AOT.
 
-Some optimizations are being planned: [OptimizingAOT]({{ site.github.url }}/old_site/OptimizingAOT "OptimizingAOT")
+Some optimizations are being planned: [OptimizingAOT]({{ site.github.url }}/archived/OptimizingAOT "OptimizingAOT")
 
 ### Bundles
 
@@ -248,7 +248,7 @@ To achieve this, the io-layer uses a shared file mapping across multiple Mono pr
 Useful links
 ------------
 
-See our [Papers]({{ site.github.url }}/old_site/Papers "Papers") section for various articles describing virtual machines and JIT compilers.
+See our [Papers]({{ site.github.url }}/archived/Papers "Papers") section for various articles describing virtual machines and JIT compilers.
 
 Porting
 -------
@@ -264,11 +264,11 @@ There are a number of projects being developed in branches or on separate trees 
 -   [Runtime Requests]({{ site.github.url }}/docs/advanced/runtime/runtime-requests/): Ideas of things that we could use to improve Mono's runtime.
 -   [Compacting GC]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/): A generational, compacting GC for Mono.
 -   JIT Regalloc: A new register allocation framework.
--   [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/old_site/Mono_Runtime_API_Changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
+-   [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/archived/Mono_Runtime_API_Changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
 
 Completed projects:
 
--   [Continuations]({{ site.github.url }}/old_site/Continuations "Continuations"): Support for co-routines and continuations in Mono.
+-   [Continuations]({{ site.github.url }}/archived/Continuations "Continuations"): Support for co-routines and continuations in Mono.
 -   [SafeHandles]({{ site.github.url }}/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
 -   [Linear]({{ site.github.url }}/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
 

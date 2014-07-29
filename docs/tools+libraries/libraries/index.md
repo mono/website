@@ -12,7 +12,7 @@ GUI Development
 [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)]({{ site.github.url }}/old_site/images/5/57/IFolder_Linux.png)
+[![]({{ site.github.url }}/archived/images/5/57/IFolder_Linux.png)]({{ site.github.url }}/archived/images/5/57/IFolder_Linux.png)
 
 [GTK\#]({{ site.github.url }}/docs/gui/gtksharp/) action with iFolder
 
@@ -145,7 +145,7 @@ Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/)
 [Windows.Forms]({{ site.github.url }}/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)]({{ site.github.url }}/old_site/images/e/ec/Colordialog.png)
+[![]({{ site.github.url }}/archived/images/e/ec/Colordialog.png)]({{ site.github.url }}/archived/images/e/ec/Colordialog.png)
 
 [MWF]({{ site.github.url }}/docs/gui/winforms/)'s color dialog box
 
@@ -215,7 +215,7 @@ Vanilla DotNet
 wxNet
 -----
 
-[![]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)]({{ site.github.url }}/old_site/images/c/cf/Linux-05.png)
+[![]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)
 
 wx\# Sample
 
@@ -237,7 +237,7 @@ Cons:
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits]({{ site.github.url }}/old_site/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits]({{ site.github.url }}/archived/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
 
 * * * * *
 
@@ -309,7 +309,7 @@ MonoRail differs from the standard WebForms way of development as it enforces se
 Deveel Ajax
 -----------
 
-[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX]({{ site.github.url }}/old_site/Introduction_to_Deveel_AJAX "Introduction to Deveel AJAX") on [Mono Project]({{ site.github.url }}).
+[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX]({{ site.github.url }}/archived/Introduction_to_Deveel_AJAX "Introduction to Deveel AJAX") on [Mono Project]({{ site.github.url }}).
 
 Magic Ajax
 ----------
@@ -335,7 +335,7 @@ Reporting
 fyiReporting
 ------------
 
-[![]({{ site.github.url }}/old_site/images/c/ca/Fyireporting.jpg)]({{ site.github.url }}/old_site/images/c/ca/Fyireporting.jpg)
+[![]({{ site.github.url }}/archived/images/c/ca/Fyireporting.jpg)]({{ site.github.url }}/archived/images/c/ca/Fyireporting.jpg)
 
 Designer screenshot
 
@@ -355,7 +355,7 @@ ReportMan is open source software.
 FlexCelNet
 ----------
 
-[![]({{ site.github.url }}/old_site/images/b/bb/FlexCelPreview.gif)]({{ site.github.url }}/old_site/images/b/bb/FlexCelPreview.gif)
+[![]({{ site.github.url }}/archived/images/b/bb/FlexCelPreview.gif)]({{ site.github.url }}/archived/images/b/bb/FlexCelPreview.gif)
 
 An Excel report rendered
 
@@ -410,7 +410,7 @@ Axiom 3D
 
 [Axiom 3D Engine](http://axiomengine.sourceforge.net/wiki/index.php/Main_Page) is an open-source, cross-platform 3D graphics rendering engine for .NET and Mono. The engine is a high-performance C\# port of the powerful OGRE engine. Its flexible component-oriented architecture allows easy extension and provides full support for both DirectX and OpenGL. The engine is also cross platform supporting both Windows and Linux operating systems.
 
-[GtkGLAreaSharp]({{ site.github.url }}/old_site/GtkGLAreaSharp "GtkGLAreaSharp")
+[GtkGLAreaSharp]({{ site.github.url }}/archived/GtkGLAreaSharp "GtkGLAreaSharp")
 ------------------------------------------------------------------------------
 
 Still in its infancy, this library provides an OpenGL interface to the GTK\# UI platform
@@ -431,7 +431,7 @@ Charting
 NPlot
 -----
 
-[![Nplot-gtk.gif]({{ site.github.url }}/old_site/images/9/9f/Nplot-gtk.gif)]({{ site.github.url }}/old_site/images/9/9f/Nplot-gtk.gif)
+[![Nplot-gtk.gif]({{ site.github.url }}/archived/images/9/9f/Nplot-gtk.gif)]({{ site.github.url }}/archived/images/9/9f/Nplot-gtk.gif)
 
 [NPlot](http://netcontrols.org/nplot/wiki/) is a free charting library for .NET and supports various kinds of graphic modes.
 
@@ -440,7 +440,7 @@ It boasts an elegant and flexible API. NPlot includes controls for Windows.Forms
 ZedGraph
 --------
 
-[![Combo400.png]({{ site.github.url }}/old_site/images/0/0f/Combo400.png)]({{ site.github.url }}/old_site/images/0/0f/Combo400.png)
+[![Combo400.png]({{ site.github.url }}/archived/images/0/0f/Combo400.png)]({{ site.github.url }}/archived/images/0/0f/Combo400.png)
 
 [ZedGraph](http://zedgraph.org) ZedGraph is a set of classes, written in C\#, for creating 2D line and bar graphs of arbitrary datasets. The classes provide a high degree of flexibility -- almost every aspect of the graph can be user-modified. At the same time, usage of the classes is kept simple by providing default values for all of the graph attributes. The classes include code for choosing appropriate scale ranges and step sizes based on the range of data values being plotted.
 
@@ -524,7 +524,7 @@ System Programming
 Mono.Addins
 -----------
 
-[Mono.Addins]({{ site.github.url }}/old_site/Introduction_to_Mono.Addins "Introduction to Mono.Addins") is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
+[Mono.Addins]({{ site.github.url }}/archived/Introduction_to_Mono.Addins "Introduction to Mono.Addins") is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
 
 This framework is derived from the add-in engine used by MonoDevelop, although it has been completely rewritten and improved in many ways to make it more generic and easier to use. The MonoDevelop add-in engine was an improvement over the SharpDevelop engine, which took many ideas from the Eclipse add-in engine.
 
@@ -564,12 +564,12 @@ Mono.Reflection
 Bittorrent Libraries
 --------------------
 
-You can use [BitSharp]({{ site.github.url }}/old_site/MonoTorrent), the Bittorrent libraries created my Alan McGovern, available from our [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository in the module "bitsharp".
+You can use [BitSharp]({{ site.github.url }}/archived/MonoTorrent), the Bittorrent libraries created my Alan McGovern, available from our [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository in the module "bitsharp".
 
 Data Conversion
 ---------------
 
-Mono provides [Mono DataConvert]({{ site.github.url }}/old_site/Mono_DataConvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
+Mono provides [Mono DataConvert]({{ site.github.url }}/archived/Mono_DataConvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
 
 Curses
 ------
@@ -578,7 +578,7 @@ You can use Curses to build portable console-based applications.
 
 [Curses\#](http://home.nedlinux.nl/~florian/downloads/) uses PDCurses on Windows and NCurses on Linux. It's almost crossplatform on an binary level.
 
-[MonoCurses]({{ site.github.url }}/old_site/MonoCurses "MonoCurses") is an MIT-X11 licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
+[MonoCurses]({{ site.github.url }}/archived/MonoCurses "MonoCurses") is an MIT-X11 licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
 
 DBus
 ----
@@ -659,9 +659,9 @@ The [Divan](http://github.com/gokr/Divan/tree/master) library can be used to acc
 DB4O
 ----
 
-[DB4O]({{ site.github.url }}/old_site/DB4O "DB4O") is a non-intrusive persistence system that stores any complex object with one single line of code. The class schema of your application classes is analysed and adjusted in real time when objects are stored. Object-oriented querying functionality is provided through Native Queries (NQ), the ability to query the database using .NET syntax and semantics (similar in concept to LINQ/DLINQ), Query by Example (QbE) and other APIs. High performance is achieved with indexed fields and by reducing database-file-internal redirections to the absolute minimum. db4o features ACID transactions, fast embedded single-user mode and multi-transactional Client/Server access, locally and through TCP, object-oriented replication, and the ObjectManager to browse database files.
+[DB4O]({{ site.github.url }}/archived/DB4O "DB4O") is a non-intrusive persistence system that stores any complex object with one single line of code. The class schema of your application classes is analysed and adjusted in real time when objects are stored. Object-oriented querying functionality is provided through Native Queries (NQ), the ability to query the database using .NET syntax and semantics (similar in concept to LINQ/DLINQ), Query by Example (QbE) and other APIs. High performance is achieved with indexed fields and by reducing database-file-internal redirections to the absolute minimum. db4o features ACID transactions, fast embedded single-user mode and multi-transactional Client/Server access, locally and through TCP, object-oriented replication, and the ObjectManager to browse database files.
 
-For more information see the Mono's [DB4O]({{ site.github.url }}/old_site/DB4O "DB4O") page.
+For more information see the Mono's [DB4O]({{ site.github.url }}/archived/DB4O "DB4O") page.
 
 EntitySpaces
 ------------

@@ -17,11 +17,11 @@ In the past, software used to be written entirely in a single programming langua
 
 For example a C/C++ application would look like this:
 
-[![Text2286.png]({{ site.github.url }}/old_site/images/6/6b/Text2286.png)]({{ site.github.url }}/old_site/images/6/6b/Text2286.png)
+[![Text2286.png]({{ site.github.url }}/archived/images/6/6b/Text2286.png)]({{ site.github.url }}/archived/images/6/6b/Text2286.png)
 
 A scripted language application would look like this:
 
-[![Text2304.png]({{ site.github.url }}/old_site/images/a/a7/Text2304.png)]({{ site.github.url }}/old_site/images/a/a7/Text2304.png)
+[![Text2304.png]({{ site.github.url }}/archived/images/a/a7/Text2304.png)]({{ site.github.url }}/archived/images/a/a7/Text2304.png)
 
 Picking one or the other is a difficult choice as there are many nuances that software developers face. The high-level languages are more productive and developers get more done for each line of code written. But high-level languages come with a price, the software does not run as fast as it could and sometimes requires more cpu, more resources and in some markets might make the difference between a successful project or a failed project.
 
@@ -29,13 +29,13 @@ Developers have turned to scripting as a mechanism to balance the best of both w
 
 The result looks like this:
 
-[![Text2330.png]({{ site.github.url }}/old_site/images/3/30/Text2330.png)]({{ site.github.url }}/old_site/images/3/30/Text2330.png)
+[![Text2330.png]({{ site.github.url }}/archived/images/3/30/Text2330.png)]({{ site.github.url }}/archived/images/3/30/Text2330.png)
 
 This idea was for a long time championed by John Ousterhout. You can read some of his discussions [here](http://home.pacbell.net/ouster/scripting.html).
 
 The following figure is a slightly updated version of John's figure:
 
-[![Screenshot103.png]({{ site.github.url }}/old_site/images/a/a3/Screenshot103.png)]({{ site.github.url }}/old_site/images/a/a3/Screenshot103.png)
+[![Screenshot103.png]({{ site.github.url }}/archived/images/a/a3/Screenshot103.png)]({{ site.github.url }}/archived/images/a/a3/Screenshot103.png)
 
 From John Ousterhout's paper:
 

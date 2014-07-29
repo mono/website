@@ -49,9 +49,9 @@ This is a very time intensive task as it requires to test all entry points in co
 Continuations
 -------------
 
-Support for [Continuations]({{ site.github.url }}/old_site/Continuations "Continuations") is supported in versions of Mono after April 16th (to be publicly available in Mono 2.6).
+Support for [Continuations]({{ site.github.url }}/archived/Continuations "Continuations") is supported in versions of Mono after April 16th (to be publicly available in Mono 2.6).
 
-Read more about [Continuations]({{ site.github.url }}/old_site/Continuations "Continuations") here.
+Read more about [Continuations]({{ site.github.url }}/archived/Continuations "Continuations") here.
 
 Reflection.Emit Fixes
 ---------------------
@@ -117,7 +117,7 @@ Innovative Features
 
 As part of Mono 2.8, we will be breaking the embedding API to clean up many issues that have cropped over the years.
 
-You can read more about them in the [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/old_site/Mono_Runtime_API_Changes "Mono Runtime API Changes") page.
+You can read more about them in the [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/archived/Mono_Runtime_API_Changes "Mono Runtime API Changes") page.
 
 Cross Compilation
 -----------------

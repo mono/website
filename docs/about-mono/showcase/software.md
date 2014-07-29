@@ -103,7 +103,7 @@ Open Source applications
 
 ### Developer Tools
 
--   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation]({{ site.github.url }}/old_site/NAnt_Installation "NAnt Installation") guide.
+-   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation]({{ site.github.url }}/archived/NAnt_Installation "NAnt Installation") guide.
 -   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C\# compiler.
 

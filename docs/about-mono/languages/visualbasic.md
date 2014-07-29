@@ -104,5 +104,5 @@ There are certain API calls that are Windows-specific which we have mapped to Li
 Old Visual Basic Framework
 ==========================
 
-For information about the old visual basic framework in Mono, see our [Old Visual Basic]({{ site.github.url }}/old_site/Old_Visual_Basic "Old Visual Basic") page.
+For information about the old visual basic framework in Mono, see our [Old Visual Basic]({{ site.github.url }}/archived/Old_Visual_Basic "Old Visual Basic") page.
 

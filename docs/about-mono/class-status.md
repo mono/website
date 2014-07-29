@@ -15,7 +15,7 @@ The above web site compares the results from our [continuous builds](http://wren
 Comparing Locally
 -----------------
 
-[![]({{ site.github.url }}/old_site/images/e/e9/Screenshot24.png)]({{ site.github.url }}/old_site/images/e/e9/Screenshot24.png)
+[![]({{ site.github.url }}/archived/images/e/e9/Screenshot24.png)]({{ site.github.url }}/archived/images/e/e9/Screenshot24.png)
 
 Native Client GUI Compare
 
@@ -28,7 +28,7 @@ In addition, it is possible to use **gui-compare** to compare assemblies against
 Generating class status pages for your own assemblies
 -----------------------------------------------------
 
-See [Generating class status pages]({{ site.github.url }}/old_site/Generating_class_status_pages "Generating class status pages") for instructions.
+See [Generating class status pages]({{ site.github.url }}/archived/Generating_class_status_pages "Generating class status pages") for instructions.
 
 MasterInfos
 -----------

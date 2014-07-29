@@ -79,11 +79,11 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-addins">mono-addins</a></td>
-  <td>Discussion on the <a href="{{ site.github.url }}/old_site/Mono.Addins" title="Mono.Addins">Mono.Addins</a> Framework.</td>
+  <td>Discussion on the <a href="{{ site.github.url }}/archived/Mono.Addins" title="Mono.Addins">Mono.Addins</a> Framework.</td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/monodevelop-list">monodevelop-list</a></td>
-  <td>Discussion on the <a href="{{ site.github.url }}/old_site/MonoDevelop" title="MonoDevelop">MonoDevelop</a> IDE.</td>
+  <td>Discussion on the <a href="{{ site.github.url }}/archived/MonoDevelop" title="MonoDevelop">MonoDevelop</a> IDE.</td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list">monodevelop-devel-list</a></td>
@@ -111,7 +111,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-olive">mono-olive</a></td>
-  <td>Discussion on the implementation of the .NET 3.0 amd 3.5 APIs codenamed Olive. See the <a href="{{ site.github.url }}/old_site/Olive" title="Olive">Olive</a> page (3.0 and 3.5) for details.</td>
+  <td>Discussion on the implementation of the .NET 3.0 amd 3.5 APIs codenamed Olive. See the <a href="{{ site.github.url }}/archived/Olive" title="Olive">Olive</a> page (3.0 and 3.5) for details.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/dblinq">dblinq</a></td>

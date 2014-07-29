@@ -9,7 +9,7 @@ redirect_from:
 
 The linker is a tool one can use to only ship the minimal possible set of functions that a set of programs might require to run as opposed to the full libraries.
 
-[Jb Evain](http://evain.net/blog/) started to work on the linker during the [Summer Of Code 2006]({{ site.github.url }}/old_site/Summer2006 "Summer2006").
+[Jb Evain](http://evain.net/blog/) started to work on the linker during the [Summer Of Code 2006]({{ site.github.url }}/archived/Summer2006 "Summer2006").
 
 Why would one use the linker ?
 ==============================

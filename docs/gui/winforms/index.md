@@ -19,7 +19,7 @@ Quick Resources
 -   [Tutorial: Using Winforms with Mono/C\#](http://zetcode.com/tutorials/monowinformstutorial/)
 -   [Frequently Asked Questions about WinForms]({{ site.github.url }}/docs/faq/winforms/)
 -   Bugs [Current](http://bugzilla.novell.com/buglist.cgi?product=Mono%3A+Class+Libraries&component=Windows.Forms&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=bugs.bug_id), [Submit New](http://bugzilla.novell.com/enter_bug.cgi?alias=&assigned_to=&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=Normal&bug_status=NEW&cf_foundby=---&cf_nts_priority=&cf_nts_support_num=&cf_partnerid=&comment=Description%20of%20Problem%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20problem%3A%0D%0A1.%20%0D%0A2.%20%0D%0A%0D%0A%0D%0AActual%20Results%3A%0D%0A%0D%0A%0D%0AExpected%20Results%3A%0D%0A%0D%0A%0D%0AHow%20often%20does%20this%20happen%3F%20%0D%0A%0D%0A%0D%0AAdditional%20Information%3A%0D%0A%0D%0A%0D%0A&component=Windows.Forms&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&deadline=&dependson=&description=&estimated_time=0.0&flag_type-2=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Other&priority=P5%20-%20None&product=Mono%3A%20Class%20Libraries%20&qa_contact=&rep_platform=Other&short_desc=&version=unspecified)
--   Some [Winforms Samples]({{ site.github.url }}/old_site/Winforms_Samples "Winforms Samples")
+-   Some [Winforms Samples]({{ site.github.url }}/archived/Winforms_Samples "Winforms Samples")
 
 ### Code Status
 
@@ -66,7 +66,7 @@ Mono's Windows.Forms implementation translates the native system events such as 
 
 ### Accessibility
 
-Currently Windows.Forms does not support accessibility, this is being worked on in a separate project that started in January of 2008. See the [Accessibility]({{ site.github.url }}/old_site/Accessibility) page for details about how this will integrate into the system.
+Currently Windows.Forms does not support accessibility, this is being worked on in a separate project that started in January of 2008. See the [Accessibility]({{ site.github.url }}/archived/Accessibility) page for details about how this will integrate into the system.
 
 Sample Code
 -----------
@@ -123,5 +123,5 @@ Information about the WebBrowser control can be found on the [WebBrowser]({{ sit
 WinForms Designer
 -----------------
 
-For more information [check here]({{ site.github.url }}/old_site/WinForms_Designer "WinForms Designer").
+For more information [check here]({{ site.github.url }}/archived/WinForms_Designer "WinForms Designer").
 

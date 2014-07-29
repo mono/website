@@ -11,7 +11,7 @@ At this point, no group in the Mono project has plans to implement Windows Prese
 
 We do not have any plans because the project is too large and there has not been any serious interest from the community to make this effort move forward.
 
-Some bits have been implemented for WindowsBase and they are distributed with Mono (mostly because System.IO.Packaging is part of WindowsBase). Various classes and stubs were developed and live in the [Olive]({{ site.github.url }}/old_site/Olive "Olive") module.
+Some bits have been implemented for WindowsBase and they are distributed with Mono (mostly because System.IO.Packaging is part of WindowsBase). Various classes and stubs were developed and live in the [Olive]({{ site.github.url }}/archived/Olive "Olive") module.
 
 Anyone interested in contributing should follow the guidelines in the [Contributing]({{ site.github.url }}/community/contributing/) page and post their patches to the mono-devel-list@lists.ximian.com mailing list.
 

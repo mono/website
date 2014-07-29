@@ -8,7 +8,7 @@ redirect_from:
   - /MoMa/
 ---
 
-[![]({{ site.github.url }}/old_site/images/5/53/Moma2p1.png)]({{ site.github.url }}/old_site/images/5/53/Moma2p1.png)
+[![]({{ site.github.url }}/archived/images/5/53/Moma2p1.png)]({{ site.github.url }}/archived/images/5/53/Moma2p1.png)
 
 Mono Migration Analyzer
 
@@ -16,7 +16,7 @@ The Mono Migration Analyzer (MoMA) tool helps you identify issues you may have w
 
 While MoMA can help show potential issues, there are many complex factors that cannot be covered by a simple tool. MoMA may fail to point out areas that will cause problems, and may point out areas which will not actually be an issue.
 
-[![Momadownload.png]({{ site.github.url }}/old_site/images/c/ce/Momadownload.png)](http://www.go-mono.com/archive/moma/Moma2-8.zip)
+[![Momadownload.png]({{ site.github.url }}/archived/images/c/ce/Momadownload.png)](http://www.go-mono.com/archive/moma/Moma2-8.zip)
 
 Other Resources
 ---------------

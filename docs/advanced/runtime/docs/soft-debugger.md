@@ -18,7 +18,7 @@ Architecture
 
 The following diagram is useful in the discussion of the soft debugger:
 
-[![0911030528Mp6F5SHL.png]({{ site.github.url }}/old_site/images/2/2a/0911030528Mp6F5SHL.png)]({{ site.github.url }}/old_site/images/2/2a/0911030528Mp6F5SHL.png)
+[![0911030528Mp6F5SHL.png]({{ site.github.url }}/archived/images/2/2a/0911030528Mp6F5SHL.png)]({{ site.github.url }}/archived/images/2/2a/0911030528Mp6F5SHL.png)
 
 The soft debugger lives inside the Mono runtime. Debuggers communicate with this component with a compact protocol over a socket connection. For ease of use the protocol has been encapsulated in the Mono.Debugger.Soft.dll API which different IDEs can use to communicate with the target.
 
