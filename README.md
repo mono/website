@@ -47,13 +47,13 @@ Repository structure
  - `_layouts` - *special folder* contains the layouts that are shared between pages. Layouts can be inherited, the root layout is `base.html`.
  - `_posts` - *special folder*, contains the source pages for the blog section, see [Writing a blog post](#writing-a-blog-post)
  - `_site` - the output of the generated site is stored here by default, this folder only exists after Jekyll built the site
+ - `archived` - content that is no longer relevant but kept to keep external links working
  - `community` - contains the source pages for the `/community` website section
  - `css` - contains the main stylesheet
  - `docs` - contains the source pages for the `/docs` website section
  - `download` - contains the source pages for the `/download` website section
  - `images` - stores the images used in pages
  - `news` - lists the blog pages from the `_posts` directory
- - `old_site` - content migrated from the old MediaWiki site
 
 Writing a blog post
 -------------------

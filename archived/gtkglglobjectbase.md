@@ -1,0 +1,14 @@
+---
+layout: obsolete
+title: "GtkGL.GLObjectBase"
+lastmodified: '2007-05-25'
+permalink: /archived/GtkGL.GLObjectBase/
+redirect_from:
+  - /GtkGL.GLObjectBase/
+---
+
+GtkGL.GLObjectBase
+==================
+
+I created GtkGL.GLObjectBase in order to create default implementations of the methods required by the [GtkGL.IGLObject]({{ site.github.url }}/GtkGL.IGLObject "GtkGL.IGLObject") interface
+
