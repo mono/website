@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Glossary
+redirect_from:
+  - /Mono:Runtime:Documentation:Glossary/
 ---
 
 This is a glossary of terms/abbreviations used in the runtime source code

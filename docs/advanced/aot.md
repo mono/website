@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: AOT
+redirect_from:
+  - /AOT/
 ---
 
 Ahead of Time Compilation or AOT is a feature of the Mono runtime code generator.

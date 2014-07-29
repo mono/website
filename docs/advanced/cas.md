@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Code Access Security
+redirect_from:
+  - /CAS/
 ---
 
 Code Access Security (CAS) is a new **experimental** (i.e. unsupported) feature in the Mono 1.2 release. It is complete enough to play with it but **should not be used** in production (incomplete and unaudited). The security manager is **off** by default.

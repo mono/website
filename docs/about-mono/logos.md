@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Logos
+redirect_from:
+  - /Logos/
 ---
 
 [Mono.Logos.zip]({{ site.github.url }}/old_site/images/a/a9/Mono.Logos.zip)

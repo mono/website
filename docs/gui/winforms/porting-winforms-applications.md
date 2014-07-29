@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Porting Winforms Applications
+redirect_from:
+  - /Guide:_Porting_Winforms_Applications/
 ---
 
 by Jonathan Pobst

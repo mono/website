@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Progress Bars"
+redirect_from:
+  - /GtkSharp:_Progress_Bars/
 ---
 
 Progress bars are used to show the status of an operation. They are pretty easy to use, as you will see with the code below. But first lets start out with the calls to create a new progress bar.

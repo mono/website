@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: PlayStation3
+redirect_from:
+  - /Mono:PlayStation3/
 ---
 
 The Mono runtime runs on the PLAYSTATION®3 3 with Linux.

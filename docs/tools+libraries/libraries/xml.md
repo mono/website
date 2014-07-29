@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: XML
+redirect_from:
+  - /XML/
+  - /XML_Classes/
 ---
 
 Introduction

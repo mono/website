@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: ARM
+redirect_from:
+  - /Mono:ARM/
 ---
 
 Fully bootstrapping on little endian Linux system. Should also work on big endian systems.

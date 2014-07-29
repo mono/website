@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Ahead of Time Compilation (AOT)
+redirect_from:
+  - /Mono:Runtime:Documentation:AOT/
 ---
 
 Mono Ahead Of Time Compiler

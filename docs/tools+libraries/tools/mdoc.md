@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: MDoc
+redirect_from:
+  - /Mdoc/
 ---
 
 *mdoc* is a suite of tools much like [svn](http://subversion.tigris.org) or [git](http://git.or.cz) which provides a consistent front-end to the existing [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) related applications.

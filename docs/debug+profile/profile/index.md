@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Profiling
+redirect_from:
+  - /Profile/
 ---
 
 The Mono runtime has various tools that you can use to assist your performance tuning using various profilers.

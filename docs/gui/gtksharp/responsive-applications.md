@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Responsive Applications
+redirect_from:
+  - /Responsive_Applications/
+  - /Multi-threaded_GtkSharp_Programing_and_Keeping_your_Application_Responsive/
 ---
 
 This article covers multi-threaded GTK\# programing as well as how to keep your GTK\# application responsive.

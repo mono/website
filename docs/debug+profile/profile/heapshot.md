@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: HeapShot
+redirect_from:
+  - /HeapShot/
 ---
 
 [![]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)]({{ site.github.url }}/old_site/images/6/69/Heapshot.png)

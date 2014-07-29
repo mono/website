@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Maintainers
+redirect_from:
+  - /Maintainers/
 ---
 
 This is a list of the Mono project's maintainers, their email addresses, their IRC nicknames (if any), and what areas they are responsible for. These are the people you can go to in case you have a patch that you wish to have reviewed before you send a pull request on GitHub.

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Security"
+redirect_from:
+  - /Gendarme.Rules.Security/
 ---
 
 [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s security rules are located in the **Gendarme.Rules.Security.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Security/).

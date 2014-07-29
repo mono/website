@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono Runtime Documentation
+redirect_from:
+  - /Mono:Runtime:Documentation/
 ---
 
 ### Mono Runtime Developer Documentation

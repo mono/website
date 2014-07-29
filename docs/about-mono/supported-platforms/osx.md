@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: OSX
+redirect_from:
+  - /Mono:OSX/
+  - /Mono_on_MacOS_X/
 ---
 
 Introduction to Mono on MacOS X

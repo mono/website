@@ -2,6 +2,11 @@
 layout: docpage
 navgroup: community
 title: Mailing Lists
+redirect_from:
+  - /Mailing_Lists/
+  - /Mailing_lists/
+  - /MailingLists/
+  - /Forums/
 ---
 
 If you prefer forums over mailing lists, please see our [Forums](http://mono.1490590.n4.nabble.com/) page.

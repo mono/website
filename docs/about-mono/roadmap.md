@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Mono Project Roadmap
+redirect_from:
+  - /Mono_Project_Roadmap/
+  - /Roadmap/
 ---
 
 *Last update: November, 2012*

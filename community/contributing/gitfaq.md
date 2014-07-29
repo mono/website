@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: community
 title: GitFAQ
+redirect_from:
+  - /GitFAQ/
+  - /GitSVN/
 ---
 
 Availability

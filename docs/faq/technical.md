@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Technical"
+redirect_from:
+  - /FAQ:_Technical/
 ---
 
 Mono Runtime

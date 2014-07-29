@@ -1,14 +1,10 @@
 ---
-layout: obsolete
-title: "Advanced Mono Compile Options"
-lastmodified: '2008-12-03'
-permalink: /old_site/Advanced_Mono_Compile_Options/
+layout: docpage
+navgroup: docs
+title: Advanced Mono Compile Options
 redirect_from:
   - /Advanced_Mono_Compile_Options/
 ---
-
-Advanced Mono Compile Options
-=============================
 
 It is possible to tune your Mono configuration to your particular needs by using configure-time options.
 

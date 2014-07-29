@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Java
+redirect_from:
+  - /Java/
 ---
 
 Mono is able to run Java code side-by-side with .NET as well as having Java and .NET object interoperate with each other. This is done with [IKVM](http://www.ikvm.net) the Java VM implementation that runs on top of .NET and Mono. IKVM was developed by Jeroen Frijters for the .NET Framework. Zoltan Varga ported it to Mono and fixed the Mono runtime to support the features required by IKVM. The class library runtime for IKVM is the [GNU Classpath](http://www.gnu.org/software/classpath/classpath.html), which is rapidly advancing but not entirely complete. IKVM is fully supported by Mono and its part of the standard Mono package distribution. As it stands today, it is able to run popular applications like Eclipse and Derby.

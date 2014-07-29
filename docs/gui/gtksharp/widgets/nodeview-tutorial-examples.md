@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpNodeViewTutorialExamples
+redirect_from:
+  - /GtkSharpNodeViewTutorialExamples/
 ---
 
 Example Programs from the Gtk\# NodeView Tutorial

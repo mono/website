@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: PostgreSQL
+redirect_from:
+  - /PostgreSQL/
 ---
 
 Info

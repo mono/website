@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Embedding Mono
+redirect_from:
+  - /Embedding_Mono/
 ---
 
 This document describes how to embed the Mono runtime in your application, and how to invoke managed methods from C, and how to invoke C code from managed code.

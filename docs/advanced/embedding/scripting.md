@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Scripting
+redirect_from:
+  - /Scripting_With_Mono/
 ---
 
 In this article we will discuss how you can use Mono to increase your productivity and make your software applications extensible without having to rewrite any of your existing C or C++ code into C\#.

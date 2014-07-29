@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: DTrace
+redirect_from:
+  - /DTrace/
 ---
 
 Using DTrace with Mono

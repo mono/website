@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Naming"
+redirect_from:
+  - /Gendarme.Rules.Naming/
 ---
 
 [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s naming rules are located in the **Gendarme.Rules.Naming.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Naming/).

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: mod_mono
+redirect_from:
+  - /Mod_mono/
 ---
 
 mod_mono is an Apache 2.0/2.2/2.4.3 module that provides [ASP.NET]({{ site.github.url }}/docs/web/aspnet/) support for the web's favorite server, [Apache](http://httpd.apache.org).

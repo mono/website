@@ -89,6 +89,62 @@ mono1xreleases:
  - {version: 1.0.2, date: '2004-09-21'}
  - {version: 1.0.1, date: '2004-08-09'}
  - {version: 1.0.0, date: '2004-06-30'}
+redirect_from:
+  - /1.0/
+  - /1.0.1/
+  - /1.0.2/
+  - /1.0.4/
+  - /1.0.5/
+  - /1.0.6/
+  - /1.1.1/
+  - /1.1.2/
+  - /1.1.3/
+  - /1.1.4/
+  - /1.1.5/
+  - /1.1.6/
+  - /1.1.7/
+  - /Release_Notes_Mono_2.0/
+  - /Release_Notes_Mono_2.0.1/
+  - /Release_Notes_Mono_2.2/
+  - /Release_Notes_Mono_2.4/
+  - /Release_Notes_Mono_2.4.2/
+  - /Release_Notes_Mono_2.4.2.1/
+  - /Release_Notes_Mono_2.4.2.2/
+  - /Release_Notes_Mono_2.4.2.3/
+  - /Release_Notes_Mono_2.4.3/
+  - /Release_Notes_Mono_2.4.3.1/
+  - /Release_Notes_Mono_2.6/
+  - /Release_Notes_Mono_2.6.1/
+  - /Release_Notes_Mono_2.6.3/
+  - /Release_Notes_Mono_2.6.4/
+  - /Release_Notes_Mono_2.6.7/
+  - /Release_Notes_Mono_2.8/
+  - /Release_Notes_Mono_2.8.1/
+  - /Release_Notes_Mono_2.8.2/
+  - /Release_Notes_Mono_2.10/
+  - /Release_Notes_Mono_2.10.1/
+  - /Release_Notes_Mono_2.10.2/
+  - /Release_Notes_Mono_2.10.3/
+  - /Release_Notes_Mono_2.10.4/
+  - /Release_Notes_Mono_2.10.5/
+  - /Release_Notes_Mono_2.10.6/
+  - /Release_Notes_Mono_2.10.7/
+  - /Release_Notes_Mono_2.10.8/
+  - /Release_Notes_Mono_2.10.8.1/
+  - /Release_Notes_Mono_2.10.9/
+  - /Release_Notes_Mono_2.12/
+  - /Release_Notes_Mono_3.0.0/
+  - /Release_Notes_Mono_3.0.1/
+  - /Release_Notes_Mono_3.0/
+  - /Release_Notes_Mono_3.0.3/
+  - /Release_Notes_Mono_3.0.4/
+  - /Release_Notes_Mono_3.0.5/
+  - /Release_Notes_Mono_3.0.6/
+  - /Release_Notes_Mono_3.0.9/
+  - /Release_Notes_Mono_3.0.10/
+  - /Release_Notes_Mono_3.2/
+  - /Release_Notes_Mono_3.4/
+  - /OldReleases/
 ---
 
 This page contains a list of all Mono releases. The latest release can be found [here]({{ site.github.url }}/download).

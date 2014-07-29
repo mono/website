@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpDetails
+redirect_from:
+  - /GtkSharpDetails/
 ---
 
 Gtk\# 2.0 has been released.

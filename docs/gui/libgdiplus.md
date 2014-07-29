@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: libgdiplus
+redirect_from:
+  - /Libgdiplus/
 ---
 
 Libgdiplus is the Mono library that provide a GDI+ comptible API on non-Windows operating systems. Our implementation uses [Cairo](http://www.cairographics.org) to do most of the heavy lifting.

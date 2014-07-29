@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Screenshots
+redirect_from:
+  - /Screenshots/
+  - /Applications_ScreenShots/
 ---
 
 Gtk\# Applications

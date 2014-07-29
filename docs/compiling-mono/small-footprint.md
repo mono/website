@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Small footprint
+redirect_from:
+  - /Small_footprint/
+  - /Small/
 ---
 
 How to make a smaller Mono install

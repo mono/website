@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Iphone
+redirect_from:
+  - /Mono:Iphone/
 ---
 
 The Mono runtime has been ported to the iPhone OS and a commercial port is available for iPhone developers.

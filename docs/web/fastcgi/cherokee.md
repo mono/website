@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Cherokee
+redirect_from:
+  - /FastCGI_Cherokee/
 ---
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>

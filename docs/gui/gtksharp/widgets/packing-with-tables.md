@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Packing with Tables"
+redirect_from:
+  - /GtkSharp:_Packing_with_Tables/
 ---
 
 Using Tables

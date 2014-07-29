@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Microsoft.Build
+redirect_from:
+  - /Microsoft.Build/
+  - /Xbuild/
 ---
 
 Microsoft Build (msbuild) is a build system developed by Microsoft similar in spirit to Nant (in that it uses XML files for describing the build process) and in the same spirit as **make**.

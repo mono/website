@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Widget Colours"
+redirect_from:
+  - /GtkSharp:_Widget_Colours/
 ---
 
 Colouring Widgets and Windows

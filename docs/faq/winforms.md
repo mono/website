@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Winforms"
+redirect_from:
+  - /FAQ:_Winforms/
+  - /FAQ:_WinForms/
 ---
 
 #### My forms are sized improperly

@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Compiling Mono
+redirect_from:
+  - /Compiling_Mono/
+  - /Compiling/
 ---
 
 **_Note:_** This describes how to compile and install Mono from its source code.

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpNewInVersion2x
+redirect_from:
+  - /GtkSharpNewInVersion2x/
 ---
 
 This document describes the new features in Gtk\# 2, the upgrade to Gtk+'s .NET binding.

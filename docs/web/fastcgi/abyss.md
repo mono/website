@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Abyss
+redirect_from:
+  - /FastCGI_Abyss/
 ---
 
 Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Abyss server.

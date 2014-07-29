@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Layout Container"
+redirect_from:
+  - /GtkSharp:_Layout_Container/
 ---
 
 The Layout container is similar to the Fixed container except that it implements an infinite (where infinity is less than 2\^32) scrolling area. The X window system has a limitation where windows can be at most 32767 pixels wide or tall. The Layout container gets around this limitation by doing some exotic stuff using window and bit gravities, so that you can have smooth scrolling even when you have many child widgets in your scrolling area.

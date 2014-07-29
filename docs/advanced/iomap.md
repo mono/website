@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: IOMap
+redirect_from:
+  - /MONO_IOMAP/
+  - /IOMap/
 ---
 
 One of the most common problems that people face when porting applications from Windows to Linux using Mono are paths.

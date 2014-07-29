@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Buttons"
+redirect_from:
+  - /GtkSharp:_Buttons/
+  - /GtkSharp:_Normal_Buttons/
 ---
 
 Normal Buttons

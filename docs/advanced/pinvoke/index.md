@@ -2,6 +2,11 @@
 layout: docpage
 navgroup: docs
 title: Interop with Native Libraries
+redirect_from:
+  - /Interop_with_Native_Libraries/
+  - /Dllimport/
+  - /DllImport/
+  - /PInvoke/
 ---
 
 Introduction

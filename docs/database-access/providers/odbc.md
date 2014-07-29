@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: ODBC
+redirect_from:
+  - /ODBC/
 ---
 
 Info

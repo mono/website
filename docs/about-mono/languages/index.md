@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Languages
+redirect_from:
+  - /Languages/
 ---
 
 Multiple languages can be used with the Mono platform. The Mono project provides [C\#]({{ site.github.url }}/docs/about-mono/languages/csharp/), [Basic]({{ site.github.url }}/docs/about-mono/languages/visualbasic/), and [Ilasm]({{ site.github.url }}/docs/tools+libraries/tools/monodis/) compilers, and there are both open source and commercial compilers that can be used with Mono.

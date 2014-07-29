@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: AutoConfiguration
+redirect_from:
+  - /AutoConfiguration/
+  - /AutoHosting/
 ---
 
 Automatic configuration of ASP.NET applications with [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/)

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GAPI
+redirect_from:
+  - /GAPI/
 ---
 
 GAPI Overview

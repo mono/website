@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: community
 title: Contributing
+redirect_from:
+  - /Contributing/
 ---
 
 Track our various [Development Plans]({{ site.github.url }}/docs/about-mono/plans/)

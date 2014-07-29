@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: The Mono log profiler
+redirect_from:
+  - /Profiler/
+  - /LoggingProfiler/
 ---
 
 The Mono *log* profiler can be used to collect a lot of information about a program running in the Mono runtime. This data can be used (both while the process is running and later) to do analyses of the program behaviour, determine resource usage, performance issues or even look for particular execution patterns.

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cecil
+redirect_from:
+  - /Cecil/
 ---
 
 Cecil is a library written by [Jb Evain](http://evain.net/blog/) to generate and inspect programs and libraries in the ECMA CIL format. It has full support for generics, and support some debugging symbol format.

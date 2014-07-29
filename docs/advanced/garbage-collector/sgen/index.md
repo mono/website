@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Generational GC
+redirect_from:
+  - /Generational_GC/
+  - /Compacting_GC/
 ---
 
 This document discusses the internals of SGen. If you are interested on how to use SGen and how to tune it for your own application workloads, see the document [Working With SGen]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/working-with-sgen/).

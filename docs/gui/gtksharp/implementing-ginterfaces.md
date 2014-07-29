@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: ImplementingGInterfaces
+redirect_from:
+  - /ImplementingGInterfaces/
+  - /GInterfaces/
 ---
 
 A tutorial and API description for GInterface implementors.

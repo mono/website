@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Thread Safety/Synchronization
+redirect_from:
+  - /Mono:Runtime:Documentation:ThreadSafety/
 ---
 
 Thread safety of metadata structures

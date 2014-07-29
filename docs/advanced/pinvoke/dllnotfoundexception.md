@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: DllNotFoundException
+redirect_from:
+  - /DllNotFoundException/
 ---
 
 Overview

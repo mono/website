@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpBeginnersGuide
+redirect_from:
+  - /GtkSharpBeginnersGuide/
 ---
 
 Preface

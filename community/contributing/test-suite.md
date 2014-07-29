@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: community
 title: Test Suite
+redirect_from:
+  - /Test_Suite/
+  - /Testing/
 ---
 
 Testing

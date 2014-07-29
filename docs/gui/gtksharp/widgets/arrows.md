@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Arrows"
+redirect_from:
+  - /GtkSharp:_Arrows/
 ---
 
 The Arrow widget draws an arrowhead, facing in a number of possible directions and having a number of possible styles. It can be very useful when placed on a button in many applications. Like the Label widget, it emits no signals.

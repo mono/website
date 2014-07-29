@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: community
 title: Help
+redirect_from:
+  - /Need_Help/
 ---
 
  When having a more frequent problem as listed below please click the link to jump to the corresponding section:

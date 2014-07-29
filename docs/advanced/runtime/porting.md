@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: Porting
+redirect_from:
+  - /Porting/
+  - /Mint/
+  - /Porting_and_Hardware_Architecture/
 ---
 
 Mono has been ported to a number of architectures already, and today it is made up of about 200,000 lines of code and only a small fraction is required for porting it to a new architecture (about 5,000 lines of C code, with a little bit of assembler code)

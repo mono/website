@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Soft-Mode Debugger
+redirect_from:
+  - /Mono:Runtime:Documentation:SoftDebugger/
+  - /Soft_Debugger/
 ---
 
 The Mono Soft Debugger is a new debugging framework for Mono. Unlike regular debuggers which act as all-knowing and controlling programs that control a separate process, the Mono Soft Debugger is actually a cooperative debugger that is built into the Mono runtime.

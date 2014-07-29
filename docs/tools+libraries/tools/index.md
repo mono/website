@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Tools
+redirect_from:
+  - /Command-Line_Tools/
 ---
 
 There are several command line utitlities included in Mono that constitute the devevelopment toolchain. These are key components which you'll want to familiarize yourself with:

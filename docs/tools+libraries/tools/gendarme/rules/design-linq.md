@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Design - LINQ"
+redirect_from:
+  - /Gendarme.Rules.Design.Linq/
 ---
 
 [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s rules about LINQ-related design issues are located in the **Gendarme.Rules.Design.Linq.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design.Linq/).

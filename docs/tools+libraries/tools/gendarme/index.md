@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Gendarme
+redirect_from:
+  - /Gendarme/
 ---
 
 Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.

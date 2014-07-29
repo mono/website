@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Linear IR
+redirect_from:
+  - /Linear_IR/
+  - /Linear_IL/
 ---
 
 This document describes Mono's new JIT engine based on a rewrite to use a linear Intermediate Representation instead of the tree-based intermediate representation that was used up to Mono 2.0.

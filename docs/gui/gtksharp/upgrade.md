@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpUpgrade
+redirect_from:
+  - /GtkSharpUpgrade/
 ---
 
 Upgrading to the Latest Gtk\# Version

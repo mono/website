@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: Parallel Mono Environments
+redirect_from:
+  - /Parallel_Mono_Environments/
+  - /Parallel_Environments/
+  - /Unstable_Mono_Environment/
 ---
 
 *This document details how to run multiple Mono environments on a single system where neither environment conflicts with another.*

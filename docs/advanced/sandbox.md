@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: MonoSandbox
+redirect_from:
+  - /Sandbox/
+  - /MonoSandbox/
+  - /SecuringSecondLife/
 ---
 
 Starting with Mono 2.6, we have a security sandbox that allows executing untrusted code side-by-side with trusted code.

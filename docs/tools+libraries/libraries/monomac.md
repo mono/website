@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: MonoMac
+redirect_from:
+  - /MonoMac/
+  - /CocoaSharp/
 ---
 
 MonoMac, a new foundation for building Cocoa applications on OSX using Mono.

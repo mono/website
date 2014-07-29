@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: community
 title: IRC
+redirect_from:
+  - /IRC/
 ---
 
 Mono is a distributed effort with developers scattered around the globe, although a lot of discussion happens on the public mailing lists, some interactive discussion happen on IRC.

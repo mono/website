@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Monodoc Contributing
+redirect_from:
+  - /Monodoc_Contributing/
 ---
 
 **This article is incomplete, please add to it.**

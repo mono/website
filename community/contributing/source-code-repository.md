@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: community
 title: Source Code Repository
+redirect_from:
+  - /SourceCodeRepository/
+  - /AnonSVN/
+  - /SVN/
 ---
 
 The Mono source code is hosted on [GitHub](http://GitHub.com) using the [Git](http://git-scm.com/) source code control system for all of its source code. Although only active contributors get write access to the modules on Git, third party developers and easily fork the code on GitHub or download full copies of the repositories to their own systems.

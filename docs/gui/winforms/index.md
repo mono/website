@@ -2,6 +2,12 @@
 layout: docpage
 navgroup: docs
 title: WinForms
+redirect_from:
+  - /WinForms/
+  - /MWF/
+  - /SWF/
+  - /Windows_Forms/
+  - /Winforms/
 ---
 
 Quick Resources

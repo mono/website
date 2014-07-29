@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: Debugging
+redirect_from:
+  - /Debugging/
+  - /Debuggers/
+  - /GDB/
 ---
 
 Debugging a problem in an application is like solving a puzzle. There are certain tools that can help you solve the puzzle. This page documents some of the strategies, tools and tricks that you can use in solving these puzzles.

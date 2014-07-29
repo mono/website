@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: BSD
+redirect_from:
+  - /Mono:BSD/
 ---
 
 Mono support for BSD operating systems.

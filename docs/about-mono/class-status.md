@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Class Status
+redirect_from:
+  - /Class_Status/
 ---
 
 We keep track of the differences between the major APIs between Mono and .NET in our class status pages, check:

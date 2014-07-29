@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cairo Cookbook
+redirect_from:
+  - /Mono.Cairo_Cookbook/
 ---
 
 Some fun recipes to spice up your Cairo based drawing!

@@ -2,6 +2,11 @@
 layout: docpage
 navgroup: docs
 title: SQLClient
+redirect_from:
+  - /SQLClient/
+  - /SQL_Client/
+  - /MS_SQL_Client/
+  - /MSSQL/
 ---
 
 Info

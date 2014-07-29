@@ -2,6 +2,10 @@
 layout: docpage
 title: Documentation
 navgroup: docs
+redirect_from:
+  - /Documentation/
+  - /Class_Library_Documentation/
+  - /Docs/
 ---
 
 These docs cover Mono specific topics, like setting up and configuring Mono or information about Mono internals such as the runtime, garbage collector or various Mono-specific tools.
@@ -37,7 +41,7 @@ Compiling Mono
 --------------
 
  - [Overview]({{ site.github.url }}/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
- - [Advanced compile options]({{ site.github.url }}/docs/compiling-mono/advanced-compile-options/)
+ - [Unsupported advanced compile options]({{ site.github.url }}/docs/compiling-mono/unsupported-advanced-compile-options/)
  - [Parallel Mono environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/)
  - [Small footprint]({{ site.github.url }}/docs/compiling-mono/small-footprint/)
 

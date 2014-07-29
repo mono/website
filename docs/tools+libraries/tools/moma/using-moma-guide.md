@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Using MoMA Guide
+redirect_from:
+  - /Using_MoMA_Guide/
 ---
 
 Step 1

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono for Ubuntu
+redirect_from:
+  - /DistroPackages/Ubuntu/
 ---
 
 Official Packages

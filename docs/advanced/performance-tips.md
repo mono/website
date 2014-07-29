@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Performance Tips
+redirect_from:
+  - /Performance_Tips/
 ---
 
 **Writing better performing .NET and Mono applications**

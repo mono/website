@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: WPF
+redirect_from:
+  - /WPF/
+  - /WPF_ImplementationNotes/
 ---
 
 At this point, no group in the Mono project has plans to implement Windows Presentation Foundation APIs as part of the project.

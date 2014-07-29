@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: PowerPC
+redirect_from:
+  - /Mono:PowerPC/
+  - /Mono_PowerPC_Port/
 ---
 
 The PowerPC port is complete (native code generator (JIT) and interpreter).

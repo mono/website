@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Cross-compiling Mono for Windows
+redirect_from:
+  - /Cross-compiling_Mono_for_Windows/
+  - /Compiling_Mono_for_Windows/
 ---
 
 Starting with Mono from svn revision 109671 (or version 2.2+) it is now possible to compile Mono for Windows on your Linux machine. To do it you will need to provide a [MinGW](http://mingw.org/) environment for your Linux distribution and several compile and runtime dependencies for Mono. Distribution-specific instructions follow below. Once you have your MinGW environment set up, go to your Mono source directory and type (make sure that your directory has NO files from previous compilations):

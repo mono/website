@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Software
+redirect_from:
+  - /Software/
 ---
 
 The following applications were developped with Mono and run on its runtime:

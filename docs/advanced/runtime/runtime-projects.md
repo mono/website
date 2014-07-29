@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Runtime projects
+redirect_from:
+  - /Runtime_Projects/
 ---
 
 Current Projects for the Mono Runtime

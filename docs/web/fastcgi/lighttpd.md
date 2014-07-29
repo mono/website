@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Lighttpd
+redirect_from:
+  - /FastCGI_Lighttpd/
 ---
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>

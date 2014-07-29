@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: ECMA
+redirect_from:
+  - /ECMA/
 ---
 
 In June 2005, the General Assembly of the international standardization organization Ecma approved edition 3 of the Common Language Infrastructure (CLI) and C\# specifications, as updated Ecma-334 and Ecma-335, respectively ([see press release](http://www.ecma-international.org/news/PressReleases/PR_TC39_CSharp_CLI.htm)). The updated technical report on the CLI, Ecma TR-84, and a new technical report on the CLI, Ecma TR-89, were also ratified.

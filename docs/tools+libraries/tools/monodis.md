@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Dis/Assembling CIL Code
+redirect_from:
+  - /Dis/Assembling_CIL_Code/
 ---
 
 IL Code

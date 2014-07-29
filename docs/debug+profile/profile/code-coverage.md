@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Code Coverage
+redirect_from:
+  - /Code_Coverage/
 ---
 
 Code Coverage can be used to track how many of the code paths that your program is using are actually exercised.

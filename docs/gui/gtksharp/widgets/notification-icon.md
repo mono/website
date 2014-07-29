@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpNotificationIcon
+redirect_from:
+  - /GtkSharpNotificationIcon/
 ---
 
 What is the Status Notification Area?

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Range Widgets"
+redirect_from:
+  - /GtkSharp:_Range_Widgets/
 ---
 
 The category of range widgets includes the ubiquitous [scrollbar](http://docs.go-mono.com/index.aspx?link=T:Gtk.Scrollbar) widget and the less common [scale](http://docs.go-mono.com/index.aspx?link=T:Gtk.Scale) widget. Though these two types of widgets are generally used for different purposes, they are quite similar in function and implementation. All range widgets share a set of common graphic elements, each of which has its own X window and receives events. They all contain a "trough" and a "slider" (what is sometimes called a "thumbwheel" in other GUI environments). Dragging the slider with the pointer moves it back and forth within the trough, while clicking in the trough advances the slider towards the location of the click, either completely, or by a designated amount, depending on which mouse button is used.

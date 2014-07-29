@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono Basics
+redirect_from:
+  - /Mono_Basics/
 ---
 
 After you get Mono installed, it's probably a good idea to run a quick Hello World program to make sure everything is set up properly. That way you'll know that your Mono is working before you try writing or running a more complex application.

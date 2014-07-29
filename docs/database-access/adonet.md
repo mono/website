@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: ADO.NET
+redirect_from:
+  - /ADO.NET/
 ---
 See our [Database\_Access]({{ site.github.url }}/docs/database-access/) page for more details.
 

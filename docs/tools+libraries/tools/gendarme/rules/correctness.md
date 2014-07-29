@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "Gendarme Rules: Correctness"
+redirect_from:
+  - /Gendarme.Rules.Correctness/
 ---
 
 [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s correctness rules are located in the **Gendarme.Rules.Correctness.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Correctness/).

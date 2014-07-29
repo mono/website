@@ -2,6 +2,11 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Licensing"
+redirect_from:
+  - /FAQ:_Licensing/
+  - /FAQ_Licensing/
+  - /License/
+  - /Licensing/
 ---
 
 Licensing

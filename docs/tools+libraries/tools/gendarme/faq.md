@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Gendarme FAQ
+redirect_from:
+  - /Gendarme.FAQ/
 ---
 
 General

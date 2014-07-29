@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: Getting Started
+redirect_from:
+  - /Start/
+  - /Getting_Started_Test/
+  - /Learn/
 ---
 
 [What is Mono?]({{ site.github.url }}/docs/about-mono/)

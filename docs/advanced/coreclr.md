@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: CoreCLR
+redirect_from:
+  - /Moonlight2CoreCLR/
 ---
 
 Note: due to the circular nature of the definitions you'll need some prior knowledge of the CoreCLR security model **or** reading it twice to make sense out of this ;-)

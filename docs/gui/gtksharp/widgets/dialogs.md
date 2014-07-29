@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Dialogs"
+redirect_from:
+  - /GtkSharp:_Dialogs/
 ---
 
 Warning: Gnome.Dialog has not been implemented. This part of the wiki is alone for reference when the widget Dialog this borne in Monkey this documentation to be brought up to date

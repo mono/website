@@ -2,6 +2,11 @@
 layout: docpage
 navgroup: docs
 title: C# Compiler
+redirect_from:
+  - /CSharp_Compiler/
+  - /CSharp/
+  - /Mcs/
+  - /Mono_CSharp_Compiler/
 ---
 
 Introduction

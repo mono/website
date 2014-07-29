@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: AMD64
+redirect_from:
+  - /Mono:AMD64/
+  - /New_Custom_Page/
 ---
 
 The AMD64 port should be at the same level as the X86 port.

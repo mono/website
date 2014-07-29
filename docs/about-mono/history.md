@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: History
+redirect_from:
+  - /History/
 ---
 
 Here are some historical data points about Mono:

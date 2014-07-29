@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: WCF Development
+redirect_from:
+  - /WCF_Development/
+  - /WCF/
+  - /WCFNewPage/
 ---
 
 Brief History

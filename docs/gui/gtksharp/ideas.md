@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: GtkSharpIdeas
+redirect_from:
+  - /GtkSharpIdeas/
 ---
 
 Here we are tracking ideas that we would like to integrate into the [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) API.

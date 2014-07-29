@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono LLVM
+redirect_from:
+  - /Mono_LLVM/
 ---
 
 Mono from SVN is now able to use LLVM as a backend for code generation in addition to Mono's built-in JIT compiler.

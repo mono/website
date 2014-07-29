@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Generating Documentation
+redirect_from:
+  - /Generating_Documentation/
 ---
 
 Documenting your API is an important component of creating reusable libraries, and Mono provides a few tools for creating class library documentation of your own. This article explains how to generate documentation for your library using [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/), the Mono documentation framework.

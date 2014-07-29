@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: ASP.NET
+redirect_from:
+  - /ASP.NET/
+  - /Xsp/
+  - /XSP/
 ---
 
 Mono has an implementation of ASP.NET 2.0, ASP.NET MVC and ASP.NET AJAX.

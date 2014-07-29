@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: COM Interop
+redirect_from:
+  - /COM_Interop/
 ---
 
 Introduction

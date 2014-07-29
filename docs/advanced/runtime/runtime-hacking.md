@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Runtime Hacking
+redirect_from:
+  - /RuntimeHacking/
 ---
 
 Runtime hacking tips and tricks

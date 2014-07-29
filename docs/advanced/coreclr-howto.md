@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: CoreCLR HowTo
+redirect_from:
+  - /CoreClrHowTo/
 ---
 
 This *how to* is intended for people who have read about **coreclr** on [MSDN]({{ site.github.url }}/docs/advanced/coreclr/#references "Moonlight2CoreCLR"), [MS employees blogs]({{ site.github.url }}/docs/advanced/coreclr/#references), Mono's [wiki]({{ site.github.url }}/docs/advanced/coreclr/) and how this applies to [Moonlight]({{ site.github.url }}/docs/web/moonlight/). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.

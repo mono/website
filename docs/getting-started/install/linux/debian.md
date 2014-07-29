@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono for Debian
+redirect_from:
+  - /DistroPackages/Debian/
 ---
 
 Official Packages

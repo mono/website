@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "FAQ: Security"
+redirect_from:
+  - /FAQ:_Security/
 ---
 
 Secure Socket Layer (SSL) / Transport Layer Security (TLS)

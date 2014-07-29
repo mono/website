@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: Development Environments
+redirect_from:
+  - /Development_Environments/
+  - /Monodevelop/
+  - /Development_Environment/
 ---
 
 The Mono project focuses on compilers and runtime libraries and does not directly provide an IDE. Developers must choose from a series of available tools the one best suited for them.

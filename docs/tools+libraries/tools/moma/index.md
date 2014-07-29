@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: docs
 title: MoMA
+redirect_from:
+  - /MoMA/
+  - /Moma/
+  - /MoMa/
 ---
 
 [![]({{ site.github.url }}/old_site/images/5/53/Moma2p1.png)]({{ site.github.url }}/old_site/images/5/53/Moma2p1.png)

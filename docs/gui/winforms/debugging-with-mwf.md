@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Debugging With MWF
+redirect_from:
+  - /Guide:_Debugging_With_MWF/
 ---
 
 **This guide builds on the sample presented in [Guide: Porting Winforms Applications]({{ site.github.url }}/docs/gui/winforms/porting-winforms-applications/). Please refer to it if you need background information on the project being used.**

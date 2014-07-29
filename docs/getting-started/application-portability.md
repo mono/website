@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: Application Portability
+redirect_from:
+  - /Guidelines:Application_Portability/
+  - /Guide:Writing_Cross_Platform_applications/
 ---
 
 This document describes some practices that are useful when building software that is portable across Windows and Unix systems using .NET and Mono.

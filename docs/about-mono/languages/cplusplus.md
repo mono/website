@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: C++
+redirect_from:
+  - /CPlusPlus/
 ---
 
 The CLI is able to host C++ compiled code on all [supported platforms]({{ site.github.url }}/docs/about-mono/supported-platforms/) as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.

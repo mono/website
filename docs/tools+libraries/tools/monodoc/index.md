@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Monodoc
+redirect_from:
+  - /Monodoc/
 ---
 
 Monodoc is a set of libraries and applications for viewing and editing Mono class library documentation. Monodoc is part of the [Mono Documentation Project]({{ site.github.url }}/docs/).

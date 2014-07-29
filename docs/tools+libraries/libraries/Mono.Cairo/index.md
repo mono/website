@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cairo
+redirect_from:
+  - /Mono.Cairo/
 ---
 
 Cairo is a low-level 2D vector drawing library. Various rendering backends (XRender, Win32) are already supported and more (ie. glitz -- OpenGL hardware accelerated backend) are on the way. The Mono.Cairo.dll assembly exposes the Cairo API to managed applications. The mapping is a pretty straightforward one, and the programming model is very close to the OpenGL model (although much simpler)

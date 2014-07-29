@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: GtkSharp
+redirect_from:
+  - /GtkSharp/
+  - /Gtk/
 ---
 
 What is Gtk\#?

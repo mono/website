@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Mono.Cecil FAQ
+redirect_from:
+  - /Cecil:FAQ/
 ---
 
 Now that I have the library, how do I use it?

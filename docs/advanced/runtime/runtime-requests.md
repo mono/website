@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Runtime requests
+redirect_from:
+  - /RuntimeRequests/
 ---
 
 SIMD

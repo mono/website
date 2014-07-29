@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "Problem: GDIPlusInit"
+redirect_from:
+  - /Problem:GDIPlusInit/
 ---
 
 You are getting this error because the libgdiplus shared library can not be found on your system, this happens if you are building Mono yourself, or your operating system or packages are not properly configured.

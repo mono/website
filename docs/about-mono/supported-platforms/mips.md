@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: MIPS
+redirect_from:
+  - /Mono:MIPS/
 ---
 
 Mono 1.2.1 was the first version to support the MIPS cpu.

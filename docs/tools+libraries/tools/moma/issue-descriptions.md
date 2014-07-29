@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: MoMA - Issue Descriptions
+redirect_from:
+  - /MoMA_-_Issue_Descriptions/
 ---
 
 There are 4 types of issues that MoMA will detect and report. Here is a description of each, as well as what to do to resolve each type.

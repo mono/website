@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Compiling Mono with Visual Studio
+redirect_from:
+  - /Compiling_Mono_VSNET/
 ---
 
 [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) now includes a Visual Studio .NET 2005 solution **mono.sln** in the [mono/msvc directory](http://anonsvn.mono-project.com/viewvc/trunk/mono/msvc/), and some projects files to build most of the unmanaged parts in Mono.

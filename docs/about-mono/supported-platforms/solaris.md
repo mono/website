@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Solaris
+redirect_from:
+  - /Mono:Solaris/
 ---
 
 Mono supports Solaris on [SPARC]({{ site.github.url }}/docs/about-mono/supported-platforms/sparc/), [x86]({{ site.github.url }}/docs/about-mono/supported-platforms/x86/) and [x86-64]({{ site.github.url }}/docs/about-mono/supported-platforms/amd64/) architectures.

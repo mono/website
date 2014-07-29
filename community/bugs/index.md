@@ -2,6 +2,10 @@
 layout: docpage
 navgroup: community
 title: Bugs
+redirect_from:
+  - /Bugs/
+  - /Bug_Reporting/
+  - /Bugzilla/
 ---
 
 |**Current Project Bug Counts**|

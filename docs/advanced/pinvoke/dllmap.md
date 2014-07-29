@@ -2,6 +2,9 @@
 layout: docpage
 navgroup: docs
 title: DllMaps
+redirect_from:
+  - /Config_DllMap/
+  - /DllMap/
 ---
 
 Overview

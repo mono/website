@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: Other
+redirect_from:
+  - /Mono:Runtime:Documentation:Other/
 ---
 
 Faster runtime builds

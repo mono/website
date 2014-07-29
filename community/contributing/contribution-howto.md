@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: community
 title: Mono Contribution HowTo
+redirect_from:
+  - /Mono_Contribution_HOWTO/
 ---
 
 A little help for mono newbie coders

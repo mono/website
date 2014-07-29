@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: WebBrowser
+redirect_from:
+  - /WebBrowser/
 ---
 
 Motivation: WebBrowser control for MWF

@@ -2,6 +2,8 @@
 layout: docpage
 title: Firebird Interbase
 navgroup: docs
+redirect_from:
+  - /Firebird_Interbase/
 ---
 
 Mono versions up to Mono 2.6 shipped a provider for the Firebird database. As of Mono 2.8, this provider is no longer distributed by Mono since the code in Mono's source tree was never updated by the Firebird maintainers.

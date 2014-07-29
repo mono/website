@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: FAQ
+redirect_from:
+  - /FAQ/
 ---
 
 This site provides an overview of all available FAQ's.

@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: "GtkSharp: Packing with Boxes"
+redirect_from:
+  - /GtkSharp:_Packing_with_Boxes/
 ---
 
 If you've worked a lot with Windows GUI programming, you're probably used to positioning widgets using coordinates. Although this is possible with Gtk\#, the preferred way of aligning widgets is with boxes. Boxes are invisible widget containers. They come in two forms: horizontal (HBox) and vertical (VBox). While this is more difficult for a newcomer, it has some advantages:

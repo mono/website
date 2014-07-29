@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: C# REPL
+redirect_from:
+  - /CsharpRepl/
 ---
 
 [![]({{ site.github.url }}/old_site/images/9/9c/Xbyhja.png)]({{ site.github.url }}/old_site/images/9/9c/Xbyhja.png)

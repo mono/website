@@ -2,6 +2,8 @@
 layout: docpage
 navgroup: docs
 title: SafeHandles
+redirect_from:
+  - /SafeHandles/
 ---
 
 This document describes the state of SafeHandles and CriticalFinalizerObject and their supporting requirements in the Mono Runtime.
