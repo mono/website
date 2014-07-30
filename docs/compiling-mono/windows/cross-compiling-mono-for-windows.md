@@ -117,3 +117,6 @@ And that's it! You're set to compile as described above!
 
 Install the packages mingw32, mingw32-binutils and mingw32-runtime.
 
+### Cross compiling from OSX
+
+See this blog post: http://blog.worldofcoding.com/2014/05/cross-compiling-c11-without-going-madder.html#windows
