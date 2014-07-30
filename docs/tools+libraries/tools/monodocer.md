@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Monodocer
 redirect_from:
   - /Monodocer/

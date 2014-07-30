@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "HSS"
 lastmodified: '2007-10-18'
 permalink: /archived/HSS/

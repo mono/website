@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: HeapShot
 redirect_from:
   - /HeapShot/

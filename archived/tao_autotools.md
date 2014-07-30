@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Tao autotools"
 lastmodified: '2006-01-14'
 permalink: /archived/Tao_autotools/

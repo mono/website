@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MoonlightRoadmap"
 lastmodified: '2011-08-25'
 permalink: /archived/MoonlightRoadmap/

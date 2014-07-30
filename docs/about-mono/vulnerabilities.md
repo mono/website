@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Vulnerabilities
 redirect_from:
   - /Vulnerabilities/

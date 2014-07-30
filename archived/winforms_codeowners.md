@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WinForms CodeOwners"
 lastmodified: '2008-05-05'
 permalink: /archived/WinForms_CodeOwners/

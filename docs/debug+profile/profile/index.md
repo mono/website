@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Profiling
 redirect_from:
   - /Profile/

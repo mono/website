@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Installation"
 lastmodified: '2009-09-13'
 permalink: /archived/MonoTouch_Installation/

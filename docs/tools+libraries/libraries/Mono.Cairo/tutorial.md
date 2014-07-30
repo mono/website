@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono.Cairo Tutorial
 redirect_from:
   - /Mono.Cairo_Tutorial/

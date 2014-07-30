@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMeeting2006"
 lastmodified: '2006-10-28'
 permalink: /archived/MonoMeeting2006/

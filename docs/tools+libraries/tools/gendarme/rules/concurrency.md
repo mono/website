@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Concurrency"
 redirect_from:
   - /Gendarme.Rules.Concurrency/

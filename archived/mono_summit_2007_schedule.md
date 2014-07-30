@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Summit 2007 Schedule"
 lastmodified: '2007-11-27'
 permalink: /archived/Mono_Summit_2007_Schedule/

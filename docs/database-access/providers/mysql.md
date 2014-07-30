@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MySQL
 redirect_from:
   - /MySQL/

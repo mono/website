@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: CoreCLR
 redirect_from:
   - /Moonlight2CoreCLR/

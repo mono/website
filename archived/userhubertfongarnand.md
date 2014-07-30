@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:HubertFONGARNAND"
 lastmodified: '2005-06-19'
 permalink: /archived/User:HubertFONGARNAND/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GitMigration"
 lastmodified: '2009-12-16'
 permalink: /archived/GitMigration/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: SGen DTrace
 redirect_from:
   - /SGen_DTrace/

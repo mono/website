@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono 1.0"
 lastmodified: '2005-09-06'
 permalink: /archived/Mono_1.0/

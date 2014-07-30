@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Client API"
 lastmodified: '2009-11-20'
 permalink: /archived/Accessibility:_Client_API/

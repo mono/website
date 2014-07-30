@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGLAreaSharp"
 lastmodified: '2010-04-01'
 permalink: /archived/GtkGLAreaSharp/

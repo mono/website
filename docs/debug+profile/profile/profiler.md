@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: The Mono log profiler
 redirect_from:
   - /Profiler/

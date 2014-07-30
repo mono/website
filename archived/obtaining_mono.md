@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Obtaining Mono"
 lastmodified: '2012-05-27'
 permalink: /archived/Obtaining_Mono/

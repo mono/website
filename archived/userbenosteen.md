@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:BenOSteen"
 lastmodified: '2006-08-22'
 permalink: /archived/User:BenOSteen/

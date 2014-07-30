@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Stetic"
 lastmodified: '2010-05-24'
 permalink: /archived/Stetic/

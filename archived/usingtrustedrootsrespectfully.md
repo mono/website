@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "UsingTrustedRootsRespectfully"
 lastmodified: '2010-09-15'
 permalink: /archived/UsingTrustedRootsRespectfully/

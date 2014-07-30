@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Performance"
 redirect_from:
   - /Gendarme.Rules.Performance/

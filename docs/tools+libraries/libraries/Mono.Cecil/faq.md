@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono.Cecil FAQ
 redirect_from:
   - /Cecil:FAQ/

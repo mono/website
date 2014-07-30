@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: GSoC Previous Years
 redirect_from:
   - /GSoC_Previous_Years/

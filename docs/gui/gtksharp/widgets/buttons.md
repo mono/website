@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Buttons"
 redirect_from:
   - /GtkSharp:_Buttons/

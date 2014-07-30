@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono Runtime Documentation
 redirect_from:
   - /Mono:Runtime:Documentation/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Trampolines
 redirect_from:
   - /Mono:Runtime:Documentation:Trampolines/

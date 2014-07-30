@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Tutorial HelloiPhone"
 lastmodified: '2009-08-06'
 permalink: /archived/MonoTouch_Tutorial_HelloiPhone/

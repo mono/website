@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto Mconfig"
 lastmodified: '2007-11-13'
 permalink: /archived/Howto_Mconfig/

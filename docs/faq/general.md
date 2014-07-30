@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: General"
 redirect_from:
   - /FAQ:_General/

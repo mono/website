@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Installing 2.1 From Source"
 lastmodified: '2010-08-23'
 permalink: /archived/Accessibility:_Installing_2.1_From_Source/

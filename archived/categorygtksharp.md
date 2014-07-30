@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:GtkSharp"
 lastmodified: '2005-09-06'
 permalink: /archived/Category:GtkSharp/

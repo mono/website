@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono.Addins Release Notes"
 lastmodified: '2010-05-27'
 permalink: /archived/Mono.Addins_Release_Notes/

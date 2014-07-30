@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MaintainingTheWiki"
 lastmodified: '2006-01-12'
 permalink: /archived/MaintainingTheWiki/

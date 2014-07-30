@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mimer SQL"
 lastmodified: '2006-05-20'
 permalink: /archived/Mimer_SQL/

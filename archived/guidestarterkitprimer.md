@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Guide:StarterKitPrimer"
 lastmodified: '2007-03-09'
 permalink: /archived/Guide:StarterKitPrimer/

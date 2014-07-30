@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Memory Management
 redirect_from:
   - /Mono:Runtime:Documentation:MemoryManagement/

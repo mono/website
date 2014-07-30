@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Bugs
 redirect_from:
   - /Bugs/

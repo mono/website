@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UIAutomationClient SpecIssues"
 lastmodified: '2009-06-25'
 permalink: /archived/Accessibility:_UIAutomationClient_SpecIssues/

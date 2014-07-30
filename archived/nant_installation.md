@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "NAnt Installation"
 lastmodified: '2005-04-22'
 permalink: /archived/NAnt_Installation/

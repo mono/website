@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Porting
 redirect_from:
   - /Porting/

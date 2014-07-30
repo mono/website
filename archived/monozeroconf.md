@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono.Zeroconf"
 lastmodified: '2011-10-25'
 permalink: /archived/Mono.Zeroconf/

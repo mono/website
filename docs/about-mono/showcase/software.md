@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Software
 redirect_from:
   - /Software/

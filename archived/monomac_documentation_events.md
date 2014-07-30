@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMac/Documentation/Events"
 lastmodified: '2011-05-11'
 permalink: /archived/MonoMac/Documentation/Events/

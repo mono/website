@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UiaWinformsProvider"
 lastmodified: '2008-03-24'
 permalink: /archived/Accessibility:_UiaWinformsProvider/

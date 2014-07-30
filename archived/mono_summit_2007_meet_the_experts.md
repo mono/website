@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Summit 2007 Meet the Experts"
 lastmodified: '2007-11-19'
 permalink: /archived/Mono_Summit_2007_Meet_the_Experts/

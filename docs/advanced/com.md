@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: COM
 redirect_from:
   - /COM/

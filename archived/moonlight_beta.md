@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/Beta"
 lastmodified: '2009-08-26'
 permalink: /archived/Moonlight/Beta/

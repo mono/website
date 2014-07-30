@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Reviews"
 lastmodified: '2009-06-10'
 permalink: /archived/Accessibility:_Reviews/

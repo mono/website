@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Mailing Lists
 redirect_from:
   - /Mailing_Lists/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "FAQ: MonoVS"
 lastmodified: '2010-07-28'
 permalink: /archived/FAQ:_MonoVS/

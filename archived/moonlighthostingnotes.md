@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MoonlightHostingNotes"
 lastmodified: '2007-06-14'
 permalink: /archived/MoonlightHostingNotes/

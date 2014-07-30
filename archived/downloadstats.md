@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "DownloadStats"
 lastmodified: '2008-07-02'
 permalink: /archived/DownloadStats/

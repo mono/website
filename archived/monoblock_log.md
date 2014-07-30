@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Block log"
 lastmodified: '2005-02-24'
 permalink: /archived/Mono:Block_log/

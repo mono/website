@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMacPackager"
 lastmodified: '2012-12-12'
 permalink: /archived/MonoMacPackager/

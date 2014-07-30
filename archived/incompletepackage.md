@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "IncompletePackage"
 lastmodified: '2009-10-20'
 permalink: /archived/IncompletePackage/

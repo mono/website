@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: IOMap
 redirect_from:
   - /MONO_IOMAP/

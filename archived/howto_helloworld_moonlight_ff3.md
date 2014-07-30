@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto helloWorld Moonlight ff3"
 lastmodified: '2009-09-11'
 permalink: /archived/Howto_helloWorld_Moonlight_ff3/

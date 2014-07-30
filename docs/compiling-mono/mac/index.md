@@ -1,7 +1,5 @@
 ---
-layout: docpage
 title: Compiling Mono on Mac OS X
-navgroup: docs
 redirect_from:
   - /Compiling_Mono_on_OSX/
 ---

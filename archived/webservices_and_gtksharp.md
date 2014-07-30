@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Webservices and GtkSharp"
 lastmodified: '2005-10-05'
 permalink: /archived/Webservices_and_GtkSharp/

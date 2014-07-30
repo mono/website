@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Tao autotools:Installation"
 lastmodified: '2006-01-26'
 permalink: /archived/Tao_autotools:Installation/

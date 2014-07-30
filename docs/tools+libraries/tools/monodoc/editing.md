@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Monodoc Editing
 redirect_from:
   - /Monodoc_Editing/

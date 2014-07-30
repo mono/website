@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: SQLClient
 redirect_from:
   - /SQLClient/

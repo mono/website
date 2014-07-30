@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Packing with Boxes"
 redirect_from:
   - /GtkSharp:_Packing_with_Boxes/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Responsive Applications
 redirect_from:
   - /Responsive_Applications/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Consuming a WebService"
 lastmodified: '2007-11-08'
 permalink: /archived/Consuming_a_WebService/

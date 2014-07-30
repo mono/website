@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: IBM DB2
 redirect_from:
   - /IBM_DB2/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Compiling Mono From GIT"
 lastmodified: '2010-07-28'
 permalink: /archived/Compiling_Mono_From_GIT/

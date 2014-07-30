@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: Gtk"
 redirect_from:
   - /FAQ:_Gtk/

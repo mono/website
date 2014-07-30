@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: WinForms
 redirect_from:
   - /WinForms/

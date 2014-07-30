@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: PowerPC
 redirect_from:
   - /Mono:PowerPC/

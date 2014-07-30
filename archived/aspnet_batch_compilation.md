@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASP.NET Batch Compilation"
 lastmodified: '2008-02-29'
 permalink: /archived/ASP.NET_Batch_Compilation/

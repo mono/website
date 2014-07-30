@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: History
 redirect_from:
   - /History/

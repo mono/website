@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "SiteMap"
 lastmodified: '2007-03-12'
 permalink: /archived/SiteMap/

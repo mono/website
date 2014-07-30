@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Drawing
 redirect_from:
   - /Drawing/

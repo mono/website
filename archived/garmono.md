@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Garmono"
 lastmodified: '2008-03-22'
 permalink: /archived/Garmono/

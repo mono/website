@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Hall"
 lastmodified: '2005-02-24'
 permalink: /archived/Hall/

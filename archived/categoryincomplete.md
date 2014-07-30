@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Incomplete"
 lastmodified: '2005-09-20'
 permalink: /archived/Category:Incomplete/

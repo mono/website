@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Bridges"
 lastmodified: '2006-05-17'
 permalink: /archived/Bridges/

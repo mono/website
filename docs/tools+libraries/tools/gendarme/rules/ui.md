@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: UI"
 redirect_from:
   - /Gendarme.Rules.Ui/

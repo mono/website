@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto IpInfobyDns"
 lastmodified: '2008-03-23'
 permalink: /archived/Howto_IpInfobyDns/

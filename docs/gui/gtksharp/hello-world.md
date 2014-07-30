@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Hello World"
 redirect_from:
   - /GtkSharp:_Hello_World/

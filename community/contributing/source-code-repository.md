@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Source Code Repository
 redirect_from:
   - /SourceCodeRepository/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Generic Sharing
 redirect_from:
   - /Mono:Runtime:Documentation:GenericSharing/

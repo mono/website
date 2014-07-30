@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Support"
 lastmodified: '2005-09-08'
 permalink: /archived/Category:Support/

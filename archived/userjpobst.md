@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:Jpobst"
 lastmodified: '2007-04-26'
 permalink: /archived/User:Jpobst/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Gtk-Sharp Installer for .NET Framework
 redirect_from:
   - /Gtk-Sharp_Installer_for_.NET_Framework/

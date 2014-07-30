@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Gendarme
 redirect_from:
   - /Gendarme/

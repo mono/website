@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Compiling Mono
 redirect_from:
   - /Compiling_Mono/

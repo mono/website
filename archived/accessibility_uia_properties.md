@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UIA Properties"
 lastmodified: '2008-05-16'
 permalink: /archived/Accessibility:_UIA_Properties/

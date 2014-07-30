@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Roadmap"
 lastmodified: '2009-03-16'
 permalink: /archived/Accessibility:_Roadmap/

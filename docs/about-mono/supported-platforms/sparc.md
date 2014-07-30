@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: SPARC
 redirect_from:
   - /Mono:SPARC/

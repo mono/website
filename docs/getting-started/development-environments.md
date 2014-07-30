@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Development Environments
 redirect_from:
   - /Development_Environments/

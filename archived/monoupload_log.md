@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Upload log"
 lastmodified: '2005-08-04'
 permalink: /archived/Mono:Upload_log/

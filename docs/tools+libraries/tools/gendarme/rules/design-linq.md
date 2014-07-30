@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Design - LINQ"
 redirect_from:
   - /Gendarme.Rules.Design.Linq/

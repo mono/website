@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Introduction to Mono.Addins"
 lastmodified: '2009-06-15'
 permalink: /archived/Introduction_to_Mono.Addins/

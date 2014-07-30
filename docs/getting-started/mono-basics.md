@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono Basics
 redirect_from:
   - /Mono_Basics/

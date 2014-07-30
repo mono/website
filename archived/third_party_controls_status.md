@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Third Party Controls Status"
 lastmodified: '2009-04-03'
 permalink: /archived/Third_Party_Controls_Status/

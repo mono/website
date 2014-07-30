@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Scripting
 redirect_from:
   - /Scripting_With_Mono/

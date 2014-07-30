@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: ARM
 redirect_from:
   - /Mono:ARM/

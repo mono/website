@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Todo"
 lastmodified: '2009-11-23'
 permalink: /archived/Todo/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "More Sample Code"
 lastmodified: '2005-09-06'
 permalink: /archived/More_Sample_Code/

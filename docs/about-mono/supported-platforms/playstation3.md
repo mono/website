@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: PlayStation3
 redirect_from:
   - /Mono:PlayStation3/

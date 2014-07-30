@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: OSX
 redirect_from:
   - /Mono:OSX/

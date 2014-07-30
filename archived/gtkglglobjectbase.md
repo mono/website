@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGL.GLObjectBase"
 lastmodified: '2007-05-25'
 permalink: /archived/GtkGL.GLObjectBase/

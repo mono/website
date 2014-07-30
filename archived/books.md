@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Books"
 lastmodified: '2012-02-11'
 permalink: /archived/Books/

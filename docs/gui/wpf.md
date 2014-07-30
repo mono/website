@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: WPF
 redirect_from:
   - /WPF/

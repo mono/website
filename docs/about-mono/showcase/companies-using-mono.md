@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Companies using Mono
 redirect_from:
   - /Companies_Using_Mono/

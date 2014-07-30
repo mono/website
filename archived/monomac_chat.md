@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMac/Chat"
 lastmodified: '2011-05-10'
 permalink: /archived/MonoMac/Chat/

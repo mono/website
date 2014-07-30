@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: IRC
 redirect_from:
   - /IRC/

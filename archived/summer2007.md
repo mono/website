@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Summer2007"
 lastmodified: '2008-04-01'
 permalink: /archived/Summer2007/

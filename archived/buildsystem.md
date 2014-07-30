@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "BuildSystem"
 lastmodified: '2007-10-09'
 permalink: /archived/BuildSystem/

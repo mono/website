@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Gendarme Roadmap
 redirect_from:
   - /Gendarme.Roadmap/

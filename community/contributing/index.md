@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Contributing
 redirect_from:
   - /Contributing/

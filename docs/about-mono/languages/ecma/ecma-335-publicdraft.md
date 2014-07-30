@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: ECMA-335 CLI Public Draft
 redirect_from:
   - /ECMA-335-CLI-Public-Draft/

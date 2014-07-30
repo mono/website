@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Adjustments"
 redirect_from:
   - /GtkSharp:_Adjustments/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight4 OpenGL Status"
 lastmodified: '2011-03-24'
 permalink: /archived/Moonlight4_OpenGL_Status/

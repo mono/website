@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight Standalone File"
 lastmodified: '2007-12-14'
 permalink: /archived/Moonlight_Standalone_File/

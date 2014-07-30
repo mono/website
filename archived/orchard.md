@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Orchard"
 lastmodified: '2011-03-14'
 permalink: /archived/Orchard/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "IssuesIOLayer"
 lastmodified: '2007-04-20'
 permalink: /archived/IssuesIOLayer/

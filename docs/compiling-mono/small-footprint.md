@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Small footprint
 redirect_from:
   - /Small_footprint/

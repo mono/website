@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Sprint 4"
 lastmodified: '2008-12-10'
 permalink: /archived/Accessibility:_Sprint_4/

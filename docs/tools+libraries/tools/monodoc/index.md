@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Monodoc
 redirect_from:
   - /Monodoc/

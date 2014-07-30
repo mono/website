@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Smells"
 redirect_from:
   - /Gendarme.Rules.Smells/

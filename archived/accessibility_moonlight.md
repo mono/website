@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Moonlight"
 lastmodified: '2010-07-26'
 permalink: /archived/Accessibility:_Moonlight/

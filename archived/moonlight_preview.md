@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/Preview"
 lastmodified: '2010-10-26'
 permalink: /archived/Moonlight/Preview/

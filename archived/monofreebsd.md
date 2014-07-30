@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:FreeBSD"
 lastmodified: '2010-02-04'
 permalink: /archived/Mono:FreeBSD/

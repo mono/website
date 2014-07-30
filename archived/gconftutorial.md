@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GConfTutorial"
 lastmodified: '2005-10-19'
 permalink: /archived/GConfTutorial/

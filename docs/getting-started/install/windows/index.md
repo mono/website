@@ -1,7 +1,5 @@
 ---
-layout: docpage
 title: Install Mono on Windows
-navgroup: docs
 redirect_from:
   - /Using_Mono_on_Windows/
   - /Mono:Windows/

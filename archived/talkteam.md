@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Talk:Team"
 lastmodified: '2005-03-10'
 permalink: /archived/Talk:Team/

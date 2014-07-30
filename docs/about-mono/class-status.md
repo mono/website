@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Class Status
 redirect_from:
   - /Class_Status/

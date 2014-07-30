@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono, a technical whitepaper"
 lastmodified: '2007-03-12'
 permalink: /archived/Mono,_a_technical_whitepaper/

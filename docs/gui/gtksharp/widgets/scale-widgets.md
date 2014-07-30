@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Scale Widgets"
 redirect_from:
   - /GtkSharp:_Scale_Widgets/

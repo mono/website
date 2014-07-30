@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Correctness"
 redirect_from:
   - /Gendarme.Rules.Correctness/

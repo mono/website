@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "FAQ: Novell Bugzilla"
 lastmodified: '2008-07-11'
 permalink: /archived/FAQ:_Novell_Bugzilla/

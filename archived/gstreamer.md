@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Gstreamer"
 lastmodified: '2009-09-16'
 permalink: /archived/Gstreamer/

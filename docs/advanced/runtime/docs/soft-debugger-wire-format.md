@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Soft Debugger Wire Format
 redirect_from:
   - /SoftDebugger:WireFormat/

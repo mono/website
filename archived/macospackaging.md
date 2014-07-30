@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MacOSPackaging"
 lastmodified: '2008-10-19'
 permalink: /archived/MacOSPackaging/

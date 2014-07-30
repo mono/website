@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ServerSideTasks"
 lastmodified: '2008-11-12'
 permalink: /archived/ServerSideTasks/

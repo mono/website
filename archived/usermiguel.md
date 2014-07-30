@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:Miguel"
 lastmodified: '2005-03-20'
 permalink: /archived/User:Miguel/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Application Portability
 redirect_from:
   - /Guidelines:Application_Portability/

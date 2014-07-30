@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch ManualSelectorInvocation"
 lastmodified: '2009-09-07'
 permalink: /archived/MonoTouch_ManualSelectorInvocation/

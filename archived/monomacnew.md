@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMacNew"
 lastmodified: '2010-10-17'
 permalink: /archived/MonoMacNew/

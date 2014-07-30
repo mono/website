@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "System.Messaging"
 lastmodified: '2009-12-20'
 permalink: /archived/System.Messaging/

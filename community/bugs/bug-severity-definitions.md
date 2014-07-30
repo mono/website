@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Bug severity definitions
 redirect_from:
   - /BugSeverityDefinitions/

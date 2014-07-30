@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "TDS Generic"
 lastmodified: '2006-01-15'
 permalink: /archived/TDS_Generic/

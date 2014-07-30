@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Development Progress"
 lastmodified: '2009-08-05'
 permalink: /archived/Accessibility:_Development_Progress/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Tutorial MonoDevelop HelloWorld"
 lastmodified: '2009-08-07'
 permalink: /archived/MonoTouch_Tutorial_MonoDevelop_HelloWorld/

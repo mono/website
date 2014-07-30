@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Abyss
 redirect_from:
   - /FastCGI_Abyss/

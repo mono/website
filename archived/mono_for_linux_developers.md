@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono For Linux Developers"
 lastmodified: '2007-05-14'
 permalink: /archived/Mono_For_Linux_Developers/

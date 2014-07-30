@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "CGI"
 lastmodified: '2009-09-20'
 permalink: /archived/CGI/

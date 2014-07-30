@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "HeapBuddy"
 lastmodified: '2010-11-11'
 permalink: /archived/HeapBuddy/

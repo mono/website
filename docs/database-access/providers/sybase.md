@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Sybase
 redirect_from:
   - /Sybase/

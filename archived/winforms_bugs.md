@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WinForms Bugs"
 lastmodified: '2008-10-23'
 permalink: /archived/WinForms_Bugs/

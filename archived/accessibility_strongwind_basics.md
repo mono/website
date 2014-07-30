@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Strongwind Basics"
 lastmodified: '2010-02-12'
 permalink: /archived/Accessibility:_Strongwind_Basics/

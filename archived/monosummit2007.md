@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoSummit2007"
 lastmodified: '2008-10-05'
 permalink: /archived/MonoSummit2007/

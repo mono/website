@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGL.IGLObject"
 lastmodified: '2007-05-25'
 permalink: /archived/GtkGL.IGLObject/

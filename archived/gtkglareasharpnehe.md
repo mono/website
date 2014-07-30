@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGLAreaSharp:NeHe"
 lastmodified: '2008-09-03'
 permalink: /archived/GtkGLAreaSharp:NeHe/

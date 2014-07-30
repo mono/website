@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto Generics"
 lastmodified: '2007-10-28'
 permalink: /archived/Howto_Generics/

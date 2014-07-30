@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OutputFromConsoleApp"
 lastmodified: '2009-05-01'
 permalink: /archived/OutputFromConsoleApp/

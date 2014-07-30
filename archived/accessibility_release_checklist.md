@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Release Checklist"
 lastmodified: '2009-03-13'
 permalink: /archived/Accessibility:_Release_Checklist/

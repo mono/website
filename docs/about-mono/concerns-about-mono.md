@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Concerns about Mono
 redirect_from:
   - /MonoConcerns/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMac/Documentation/API"
 lastmodified: '2012-07-19'
 permalink: /archived/MonoMac/Documentation/API/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:Joseloc"
 lastmodified: '2005-06-22'
 permalink: /archived/User:Joseloc/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: C++
 redirect_from:
   - /CPlusPlus/

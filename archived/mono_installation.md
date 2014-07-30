@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Installation"
 lastmodified: '2006-05-17'
 permalink: /archived/Mono_Installation/

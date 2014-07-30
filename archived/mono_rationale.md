@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Rationale"
 lastmodified: '2005-09-06'
 permalink: /archived/Mono_Rationale/

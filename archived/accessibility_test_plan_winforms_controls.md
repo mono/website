@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Test Plan WinForms Controls"
 lastmodified: '2009-08-06'
 permalink: /archived/Accessibility:_Test_Plan_WinForms_Controls/

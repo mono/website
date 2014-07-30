@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Command Line MoMA
 redirect_from:
   - /Command_Line_MoMA/

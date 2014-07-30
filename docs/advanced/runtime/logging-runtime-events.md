@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Logging Runtime Events
 redirect_from:
   - /Logging_Runtime_Events/

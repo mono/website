@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Boo"
 lastmodified: '2005-09-21'
 permalink: /archived/Boo/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Widget Layout and Packing"
 redirect_from:
   - /GtkSharp:_Widget_Layout_and_Packing/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Crimson"
 lastmodified: '2008-02-18'
 permalink: /archived/Crimson/

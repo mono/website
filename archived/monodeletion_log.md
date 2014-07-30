@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Deletion log"
 lastmodified: '2005-08-04'
 permalink: /archived/Mono:Deletion_log/

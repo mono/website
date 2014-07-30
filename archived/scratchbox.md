@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Scratchbox"
 lastmodified: '2008-11-05'
 permalink: /archived/Scratchbox/

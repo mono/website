@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Exception Handling
 redirect_from:
   - /Mono:Runtime:Documentation:ExceptionHandling/

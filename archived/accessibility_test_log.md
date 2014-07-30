@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Test Log"
 lastmodified: '2010-09-13'
 permalink: /archived/Accessibility:_Test_Log/

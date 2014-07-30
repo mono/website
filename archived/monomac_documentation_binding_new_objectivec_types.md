@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoMac/Documentation/Binding New Objective-C Types"
 lastmodified: '2011-05-11'
 permalink: /archived/MonoMac/Documentation/Binding_New_Objective-C_Types/

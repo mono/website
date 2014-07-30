@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Serialization"
 redirect_from:
   - /Gendarme.Rules.Serialization/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Build Bot Commands"
 lastmodified: '2009-01-14'
 permalink: /archived/Accessibility:_Build_Bot_Commands/

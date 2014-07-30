@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: XML
 redirect_from:
   - /XML/

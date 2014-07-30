@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "BuildSystem/MonoBuild"
 lastmodified: '2010-02-01'
 permalink: /archived/BuildSystem/MonoBuild/

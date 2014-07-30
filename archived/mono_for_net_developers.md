@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono For .Net Developers"
 lastmodified: '2013-01-19'
 permalink: /archived/Mono_For_.Net_Developers/

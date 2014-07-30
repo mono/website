@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: ASP.NET"
 redirect_from:
   - /FAQ:_ASP.NET/

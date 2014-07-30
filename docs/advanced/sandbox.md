@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MonoSandbox
 redirect_from:
   - /Sandbox/

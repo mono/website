@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Cryptography"
 lastmodified: '2008-09-03'
 permalink: /archived/Cryptography/

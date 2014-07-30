@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Compiling Mono with Visual Studio
 redirect_from:
   - /Compiling_Mono_VSNET/

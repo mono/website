@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Internal Releases"
 lastmodified: '2010-09-17'
 permalink: /archived/Accessibility:_Internal_Releases/

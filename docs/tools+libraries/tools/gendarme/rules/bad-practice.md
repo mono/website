@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Bad Practice"
 redirect_from:
   - /Gendarme.Rules.BadPractice/

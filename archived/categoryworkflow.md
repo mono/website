@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Workflow"
 lastmodified: '2007-03-12'
 permalink: /archived/Category:Workflow/

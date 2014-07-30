@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Help
 redirect_from:
   - /Need_Help/

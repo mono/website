@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Why Mono"
 lastmodified: '2005-09-06'
 permalink: /archived/Why_Mono/

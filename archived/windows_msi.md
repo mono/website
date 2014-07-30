@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Windows MSI"
 lastmodified: '2009-10-01'
 permalink: /archived/Windows_MSI/

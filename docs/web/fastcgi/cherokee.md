@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Cherokee
 redirect_from:
   - /FastCGI_Cherokee/

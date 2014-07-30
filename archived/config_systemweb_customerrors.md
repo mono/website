@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Config system.web customErrors"
 lastmodified: '2008-06-25'
 permalink: /archived/Config_system.web_customErrors/

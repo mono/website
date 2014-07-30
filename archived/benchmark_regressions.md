@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Benchmark Regressions"
 lastmodified: '2012-09-12'
 permalink: /archived/Benchmark_Regressions/

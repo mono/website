@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MaxDB"
 lastmodified: '2006-09-23'
 permalink: /archived/MaxDB/

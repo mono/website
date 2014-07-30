@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Visual Basic support
 redirect_from:
   - /VisualBasic.NET_support/

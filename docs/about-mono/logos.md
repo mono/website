@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Logos
 redirect_from:
   - /Logos/

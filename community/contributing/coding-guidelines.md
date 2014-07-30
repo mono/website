@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Coding Guidelines
 redirect_from:
   - /Coding_Guidelines/

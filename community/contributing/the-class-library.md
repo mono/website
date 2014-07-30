@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: The Class Library
 redirect_from:
   - /The_Class_Library/

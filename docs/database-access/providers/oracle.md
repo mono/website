@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Oracle
 redirect_from:
   - /Oracle/

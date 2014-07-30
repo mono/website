@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGLArea:Examples"
 lastmodified: '2007-05-25'
 permalink: /archived/GtkGLArea:Examples/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Resources"
 lastmodified: '2011-09-20'
 permalink: /archived/Resources/

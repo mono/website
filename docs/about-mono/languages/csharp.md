@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: C# Compiler
 redirect_from:
   - /CSharp_Compiler/

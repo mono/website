@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpIdeas
 redirect_from:
   - /GtkSharpIdeas/

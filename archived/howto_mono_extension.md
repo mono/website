@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto Mono Extension"
 lastmodified: '2010-03-26'
 permalink: /archived/Howto_Mono_Extension/

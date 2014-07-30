@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Fixed Container"
 redirect_from:
   - /GtkSharp:_Fixed_Container/

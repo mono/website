@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Widget Overview"
 redirect_from:
   - /GtkSharp_Widget_Overview/

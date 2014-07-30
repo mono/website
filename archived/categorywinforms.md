@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:WinForms"
 lastmodified: '2007-01-26'
 permalink: /archived/Category:WinForms/

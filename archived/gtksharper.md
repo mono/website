@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkSharper"
 lastmodified: '2008-03-27'
 permalink: /archived/GtkSharper/

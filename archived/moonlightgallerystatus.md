@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MoonlightGalleryStatus"
 lastmodified: '2009-04-17'
 permalink: /archived/MoonlightGalleryStatus/

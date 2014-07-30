@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:ZacBowling/Downloads"
 lastmodified: '2005-10-01'
 permalink: /archived/User:ZacBowling/Downloads/

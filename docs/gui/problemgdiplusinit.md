@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Problem: GDIPlusInit"
 redirect_from:
   - /Problem:GDIPlusInit/

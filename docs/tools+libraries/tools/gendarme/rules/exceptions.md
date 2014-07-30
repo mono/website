@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Exceptions"
 redirect_from:
   - /Gendarme.Rules.Exceptions/

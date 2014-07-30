@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "PerformanceTesting"
 lastmodified: '2006-05-17'
 permalink: /archived/PerformanceTesting/

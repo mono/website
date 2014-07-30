@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UIATest Library Introduction"
 lastmodified: '2009-09-17'
 permalink: /archived/Accessibility:_UIATest_Library_Introduction/

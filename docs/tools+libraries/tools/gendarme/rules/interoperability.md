@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Interoperability"
 redirect_from:
   - /Gendarme.Rules.Interoperability/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ADOTests"
 lastmodified: '2007-02-20'
 permalink: /archived/ADOTests/

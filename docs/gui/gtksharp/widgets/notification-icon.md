@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpNotificationIcon
 redirect_from:
   - /GtkSharpNotificationIcon/

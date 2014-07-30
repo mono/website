@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OprofileWithAnonJitData"
 lastmodified: '2006-01-13'
 permalink: /archived/OprofileWithAnonJitData/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Languages
 redirect_from:
   - /Languages/

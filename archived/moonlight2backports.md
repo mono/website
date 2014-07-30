@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight2Backports"
 lastmodified: '2010-02-22'
 permalink: /archived/Moonlight2Backports/

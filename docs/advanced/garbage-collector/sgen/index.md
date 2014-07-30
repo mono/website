@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Generational GC
 redirect_from:
   - /Generational_GC/

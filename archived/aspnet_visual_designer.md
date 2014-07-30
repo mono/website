@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASP.NET Visual Designer"
 lastmodified: '2008-08-22'
 permalink: /archived/ASP.NET_Visual_Designer/

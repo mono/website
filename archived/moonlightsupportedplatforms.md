@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MoonlightSupportedPlatforms"
 lastmodified: '2010-09-09'
 permalink: /archived/MoonlightSupportedPlatforms/

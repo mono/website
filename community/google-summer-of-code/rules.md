@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: GSoC Rules
 redirect_from:
   - /GSoC_Rules/

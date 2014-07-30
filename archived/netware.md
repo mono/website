@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Netware"
 lastmodified: '2005-04-13'
 permalink: /archived/Netware/

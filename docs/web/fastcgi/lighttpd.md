@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Lighttpd
 redirect_from:
   - /FastCGI_Lighttpd/

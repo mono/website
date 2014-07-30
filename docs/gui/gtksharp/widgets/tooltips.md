@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Tooltips"
 redirect_from:
   - /GtkSharp:_Tooltips/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Arrows"
 redirect_from:
   - /GtkSharp:_Arrows/

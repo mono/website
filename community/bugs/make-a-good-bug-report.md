@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: How to make a good bug report
 ---
 

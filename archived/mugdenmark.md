@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MUG:Denmark"
 lastmodified: '2007-01-29'
 permalink: /archived/MUG:Denmark/

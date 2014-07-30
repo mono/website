@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User Groups"
 lastmodified: '2008-03-01'
 permalink: /archived/User_Groups/

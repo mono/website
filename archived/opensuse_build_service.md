@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OpenSUSE Build Service"
 lastmodified: '2012-05-27'
 permalink: /archived/OpenSUSE_Build_Service/

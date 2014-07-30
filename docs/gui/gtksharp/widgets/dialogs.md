@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Dialogs"
 redirect_from:
   - /GtkSharp:_Dialogs/

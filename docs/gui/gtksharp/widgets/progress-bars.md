@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Progress Bars"
 redirect_from:
   - /GtkSharp:_Progress_Bars/

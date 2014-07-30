@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Erik GtkSharp Toc"
 lastmodified: '2005-05-04'
 permalink: /archived/Erik_GtkSharp_Toc/

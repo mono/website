@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Branches"
 lastmodified: '2010-11-13'
 permalink: /archived/Branches/

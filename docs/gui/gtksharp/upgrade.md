@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpUpgrade
 redirect_from:
   - /GtkSharpUpgrade/

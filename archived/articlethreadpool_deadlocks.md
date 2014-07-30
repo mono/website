@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Article:ThreadPool Deadlocks"
 lastmodified: '2010-12-11'
 permalink: /archived/Article:ThreadPool_Deadlocks/

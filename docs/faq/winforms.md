@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: Winforms"
 redirect_from:
   - /FAQ:_Winforms/

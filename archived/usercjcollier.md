@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:CJCollier"
 lastmodified: '2009-01-07'
 permalink: /archived/User:CJCollier/

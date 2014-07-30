@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GtkGLAreaSharp:With MonoDevelop"
 lastmodified: '2007-05-25'
 permalink: /archived/GtkGLAreaSharp:With_MonoDevelop/

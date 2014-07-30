@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:Tml"
 lastmodified: '2005-04-30'
 permalink: /archived/User:Tml/

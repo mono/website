@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "IKVM"
 lastmodified: '2005-09-08'
 permalink: /archived/IKVM/

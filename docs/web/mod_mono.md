@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: mod_mono
 redirect_from:
   - /Mod_mono/

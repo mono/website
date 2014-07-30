@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "VMware Image"
 lastmodified: '2009-06-25'
 permalink: /archived/VMware_Image/

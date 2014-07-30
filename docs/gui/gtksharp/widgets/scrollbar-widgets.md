@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Scrollbar Widgets"
 redirect_from:
   - /GtkSharp:_Scrollbar_Widgets/

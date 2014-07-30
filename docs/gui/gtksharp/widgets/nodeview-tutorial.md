@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpNodeViewTutorial
 redirect_from:
   - /GtkSharpNodeViewTutorial/

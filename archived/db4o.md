@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "DB4O"
 lastmodified: '2007-11-23'
 permalink: /archived/DB4O/

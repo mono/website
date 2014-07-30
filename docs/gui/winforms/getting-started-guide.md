@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: WinForms Getting Started Guide
 redirect_from:
   - /WinForms_Getting_Started_Guide/

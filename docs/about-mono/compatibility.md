@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Compatibility
 redirect_from:
   - /Compatibility/

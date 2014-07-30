@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Debugging
 redirect_from:
   - /Debugging/

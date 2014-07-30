@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WPFNotes"
 lastmodified: '2007-05-21'
 permalink: /archived/WPFNotes/

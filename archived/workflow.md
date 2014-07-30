@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Workflow"
 lastmodified: '2010-12-14'
 permalink: /archived/Workflow/

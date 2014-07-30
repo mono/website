@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Gtk# 3.0 Porting Guide
 redirect_from:
   - /GtkSharp3PortingGuide/

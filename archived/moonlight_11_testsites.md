@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight 1.1 TestSites"
 lastmodified: '2008-01-18'
 permalink: /archived/Moonlight_1.1_TestSites/

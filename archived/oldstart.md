@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OldStart"
 lastmodified: '2007-04-19'
 permalink: /archived/OldStart/

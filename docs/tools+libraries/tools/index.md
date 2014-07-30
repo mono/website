@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Tools
 redirect_from:
   - /Command-Line_Tools/

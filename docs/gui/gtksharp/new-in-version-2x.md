@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpNewInVersion2x
 redirect_from:
   - /GtkSharpNewInVersion2x/

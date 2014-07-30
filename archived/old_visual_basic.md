@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Old Visual Basic"
 lastmodified: '2007-01-23'
 permalink: /archived/Old_Visual_Basic/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Test Summary"
 lastmodified: '2008-04-03'
 permalink: /archived/Accessibility:_Test_Summary/

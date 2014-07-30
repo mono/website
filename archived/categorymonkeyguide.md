@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Monkeyguide"
 lastmodified: '2005-09-06'
 permalink: /archived/Category:Monkeyguide/

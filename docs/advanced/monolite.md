@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Monolite
 redirect_from:
   - /Monolite/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:FastCGI"
 lastmodified: '2008-06-25'
 permalink: /archived/Category:FastCGI/

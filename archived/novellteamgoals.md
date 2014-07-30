@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "NovellTeamGoals"
 lastmodified: '2010-02-01'
 permalink: /archived/NovellTeamGoals/

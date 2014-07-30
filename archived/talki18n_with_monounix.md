@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Talk:I18N with Mono.Unix"
 lastmodified: '2006-08-10'
 permalink: /archived/Talk:I18N_with_Mono.Unix/

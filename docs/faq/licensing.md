@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: Licensing"
 redirect_from:
   - /FAQ:_Licensing/

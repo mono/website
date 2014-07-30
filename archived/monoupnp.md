@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono.Upnp"
 lastmodified: '2009-03-12'
 permalink: /archived/Mono.Upnp/

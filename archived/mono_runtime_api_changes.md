@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Runtime API Changes"
 lastmodified: '2009-08-18'
 permalink: /archived/Mono_Runtime_API_Changes/

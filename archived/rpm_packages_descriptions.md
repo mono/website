@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "RPM Packages Descriptions"
 lastmodified: '2007-03-12'
 permalink: /archived/RPM_Packages_Descriptions/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OptimizingAOT"
 lastmodified: '2006-11-11'
 permalink: /archived/OptimizingAOT/

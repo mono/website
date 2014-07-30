@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Linear IR
 redirect_from:
   - /Linear_IR/

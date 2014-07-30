@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/SecurityStatus"
 lastmodified: '2010-02-18'
 permalink: /archived/Moonlight/SecurityStatus/

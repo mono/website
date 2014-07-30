@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Application Deployment
 redirect_from:
   - /Guidelines:Application_Deployment/

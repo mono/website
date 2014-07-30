@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: QA Meetings 2009 Mar 25"
 lastmodified: '2009-06-01'
 permalink: /archived/Accessibility:_QA_Meetings_2009_Mar_25/

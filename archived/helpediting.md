@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Help:Editing"
 lastmodified: '2012-03-07'
 permalink: /archived/Help:Editing/

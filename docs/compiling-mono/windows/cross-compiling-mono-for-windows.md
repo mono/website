@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Cross-compiling Mono for Windows
 redirect_from:
   - /Cross-compiling_Mono_for_Windows/

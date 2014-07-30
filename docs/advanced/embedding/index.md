@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Embedding Mono
 redirect_from:
   - /Embedding_Mono/

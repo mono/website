@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Widget Hierarchy"
 redirect_from:
   - /GtkSharp:_Widget_Hierarchy/

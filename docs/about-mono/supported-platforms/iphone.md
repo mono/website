@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Iphone
 redirect_from:
   - /Mono:Iphone/

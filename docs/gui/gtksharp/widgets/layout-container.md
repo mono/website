@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Layout Container"
 redirect_from:
   - /GtkSharp:_Layout_Container/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Legal
 redirect_from:
   - /Legal/

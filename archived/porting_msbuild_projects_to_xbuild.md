@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Porting MSBuild Projects To XBuild"
 lastmodified: '2014-04-18'
 permalink: /archived/Porting_MSBuild_Projects_To_XBuild/

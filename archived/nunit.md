@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "NUnit"
 lastmodified: '2007-11-16'
 permalink: /archived/NUnit/

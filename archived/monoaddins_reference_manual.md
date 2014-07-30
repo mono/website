@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono.Addins Reference Manual"
 lastmodified: '2010-05-27'
 permalink: /archived/Mono.Addins_Reference_Manual/

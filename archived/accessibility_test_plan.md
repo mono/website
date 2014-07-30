@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Test Plan"
 lastmodified: '2010-01-27'
 permalink: /archived/Accessibility:_Test_Plan/

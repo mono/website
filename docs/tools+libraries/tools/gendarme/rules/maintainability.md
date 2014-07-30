@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Maintainability"
 redirect_from:
   - /Gendarme.Rules.Maintainability/

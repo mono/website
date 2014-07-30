@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Unsupported Advanced Mono Compile Options
 redirect_from:
   - /Unsupported_Advanced_Mono_Compile_Options/

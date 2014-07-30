@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Publishing Websites From Visual Studio"
 lastmodified: '2009-02-17'
 permalink: /archived/Publishing_Websites_From_Visual_Studio/

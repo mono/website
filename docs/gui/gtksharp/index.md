@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharp
 redirect_from:
   - /GtkSharp/

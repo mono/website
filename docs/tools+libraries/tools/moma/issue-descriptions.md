@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MoMA - Issue Descriptions
 redirect_from:
   - /MoMA_-_Issue_Descriptions/

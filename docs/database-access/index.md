@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Database Access
 redirect_from:
   - /Database_Access/

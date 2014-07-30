@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: AutoConfiguration
 redirect_from:
   - /AutoConfiguration/

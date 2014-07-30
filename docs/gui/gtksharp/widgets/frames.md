@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Frames"
 redirect_from:
   - /GtkSharp:_Frames/

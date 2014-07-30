@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: LLVM Backend
 redirect_from:
   - /Mono:Runtime:Documentation:LLVM/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Google Summer of Code
 redirect_from:
   - /Google_Summer_of_Code/

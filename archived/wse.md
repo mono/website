@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WSE"
 lastmodified: '2007-03-12'
 permalink: /archived/WSE/

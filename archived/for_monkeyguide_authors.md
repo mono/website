@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "For Monkeyguide Authors"
 lastmodified: '2007-05-26'
 permalink: /archived/For_Monkeyguide_Authors/

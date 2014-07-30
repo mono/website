@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Other Downloads"
 lastmodified: '2009-09-30'
 permalink: /archived/Other_Downloads/

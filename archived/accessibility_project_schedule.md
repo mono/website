@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Project Schedule"
 lastmodified: '2008-09-17'
 permalink: /archived/Accessibility:_Project_Schedule/

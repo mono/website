@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Talk:Guide: Debugging With MWF"
 lastmodified: '2007-05-30'
 permalink: /archived/Talk:Guide:_Debugging_With_MWF/

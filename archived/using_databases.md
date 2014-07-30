@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Using Databases"
 lastmodified: '2011-07-27'
 permalink: /archived/Using_Databases/

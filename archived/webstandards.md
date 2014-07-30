@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WebStandards"
 lastmodified: '2005-09-06'
 permalink: /archived/WebStandards/

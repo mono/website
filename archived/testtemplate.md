@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "TestTemplate"
 lastmodified: '2005-02-25'
 permalink: /archived/TestTemplate/

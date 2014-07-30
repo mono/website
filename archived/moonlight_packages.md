@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight Packages"
 lastmodified: '2009-01-25'
 permalink: /archived/Moonlight_Packages/

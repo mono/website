@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Google Code-in
 redirect_from:
   - /GoogleCodeIn/

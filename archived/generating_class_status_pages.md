@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Generating class status pages"
 lastmodified: '2007-05-11'
 permalink: /archived/Generating_class_status_pages/

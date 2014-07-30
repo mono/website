@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Medlemmer"
 lastmodified: '2007-01-29'
 permalink: /archived/Medlemmer/

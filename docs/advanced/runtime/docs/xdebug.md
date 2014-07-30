@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GDB Debugging Support (XDEBUG)
 redirect_from:
   - /Mono:Runtime:Documentation:XDEBUG/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Architecture"
 lastmodified: '2008-08-15'
 permalink: /archived/Accessibility:_Architecture/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Team"
 lastmodified: '2011-04-21'
 permalink: /archived/Team/

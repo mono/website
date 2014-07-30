@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/Moonlight2DemoStatus"
 lastmodified: '2009-02-08'
 permalink: /archived/Moonlight/Moonlight2DemoStatus/

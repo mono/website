@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "OLE DB"
 lastmodified: '2005-09-06'
 permalink: /archived/OLE_DB/

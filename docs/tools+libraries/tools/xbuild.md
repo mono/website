@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Microsoft.Build
 redirect_from:
   - /Microsoft.Build/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MoMA
 redirect_from:
   - /MoMA/

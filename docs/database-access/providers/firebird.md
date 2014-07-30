@@ -1,7 +1,5 @@
 ---
-layout: docpage
 title: Firebird Interbase
-navgroup: docs
 redirect_from:
   - /Firebird_Interbase/
 ---

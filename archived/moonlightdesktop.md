@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MoonlightDesktop"
 lastmodified: '2010-10-19'
 permalink: /archived/MoonlightDesktop/

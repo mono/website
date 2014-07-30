@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Linux
 redirect_from:
   - /Mono:Linux/

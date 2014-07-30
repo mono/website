@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "CreatingCustomThemedGtkSharpWidgets"
 lastmodified: '2009-07-10'
 permalink: /archived/CreatingCustomThemedGtkSharpWidgets/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Use"
 lastmodified: '2007-10-17'
 permalink: /archived/Use/

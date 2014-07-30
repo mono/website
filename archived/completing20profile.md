@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Completing2.0Profile"
 lastmodified: '2007-11-13'
 permalink: /archived/Completing2.0Profile/

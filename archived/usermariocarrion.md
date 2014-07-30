@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:MarioCarrion"
 lastmodified: '2005-10-22'
 permalink: /archived/User:MarioCarrion/

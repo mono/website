@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Samples"
 lastmodified: '2009-08-05'
 permalink: /archived/MonoTouch_Samples/

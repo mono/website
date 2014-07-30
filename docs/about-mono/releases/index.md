@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono Releases
 mono3xreleases:
  - {version: 3.4.0}

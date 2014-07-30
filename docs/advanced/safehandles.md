@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: SafeHandles
 redirect_from:
   - /SafeHandles/

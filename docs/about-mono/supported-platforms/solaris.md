@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Solaris
 redirect_from:
   - /Mono:Solaris/

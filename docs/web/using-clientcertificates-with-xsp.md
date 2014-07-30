@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: UsingClientCertificatesWithXSP
 redirect_from:
   - /UsingClientCertificatesWithXSP/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MIPS
 redirect_from:
   - /Mono:MIPS/

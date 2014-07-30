@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Monologue"
 lastmodified: '2008-07-01'
 permalink: /archived/Monologue/

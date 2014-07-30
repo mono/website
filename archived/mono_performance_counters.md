@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Performance Counters"
 lastmodified: '2010-04-19'
 permalink: /archived/Mono_Performance_Counters/

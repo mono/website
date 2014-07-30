@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Howto aspnet Callbacks"
 lastmodified: '2008-01-04'
 permalink: /archived/Howto_aspnet_Callbacks/

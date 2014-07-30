@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Assembler
 redirect_from:
   - /Assembler/

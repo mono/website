@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Working With SGen
 redirect_from:
   - /Working_With_SGen/

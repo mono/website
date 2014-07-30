@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:EduardoGarcia"
 lastmodified: '2005-04-29'
 permalink: /archived/User:EduardoGarcia/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Tao"
 lastmodified: '2010-09-11'
 permalink: /archived/Tao/

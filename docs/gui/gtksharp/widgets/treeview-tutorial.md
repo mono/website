@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp TreeView Tutorial"
 redirect_from:
   - /GtkSharp_TreeView_Tutorial/

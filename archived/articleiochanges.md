@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Article:IOChanges"
 lastmodified: '2007-04-20'
 permalink: /archived/Article:IOChanges/

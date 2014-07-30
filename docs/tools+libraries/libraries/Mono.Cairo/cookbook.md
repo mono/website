@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono.Cairo Cookbook
 redirect_from:
   - /Mono.Cairo_Cookbook/

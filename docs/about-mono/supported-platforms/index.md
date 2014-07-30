@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Supported Platforms
 redirect_from:
   - /Supported_Platforms/

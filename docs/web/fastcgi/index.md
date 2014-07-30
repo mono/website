@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: FastCGI
 redirect_from:
   - /FastCGI/

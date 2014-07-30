@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "CSharpPlugin"
 lastmodified: '2007-12-03'
 permalink: /archived/CSharpPlugin/

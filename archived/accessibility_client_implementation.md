@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Client Implementation"
 lastmodified: '2009-03-26'
 permalink: /archived/Accessibility:_Client_Implementation/

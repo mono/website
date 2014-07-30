@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Monodoc Contributing
 redirect_from:
   - /Monodoc_Contributing/

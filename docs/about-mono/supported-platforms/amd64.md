@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: AMD64
 redirect_from:
   - /Mono:AMD64/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Runtime:mono-llvm.diff"
 lastmodified: '2009-09-28'
 permalink: /archived/Mono:Runtime:mono-llvm.diff/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Table Football"
 lastmodified: '2009-10-20'
 permalink: /archived/Table_Football/

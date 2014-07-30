@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASP.NET Modules"
 lastmodified: '2008-06-25'
 permalink: /archived/ASP.NET_Modules/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: community
 title: Projects
 redirect_from:
   - /StudentProjects/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Bridge Functional Specification"
 lastmodified: '2009-07-14'
 permalink: /archived/Accessibility:_Bridge_Functional_Specification/

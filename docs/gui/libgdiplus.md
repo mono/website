@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: libgdiplus
 redirect_from:
   - /Libgdiplus/

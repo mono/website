@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Guide:Debugger"
 lastmodified: '2014-03-12'
 permalink: /archived/Guide:Debugger/

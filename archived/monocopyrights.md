@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Copyrights"
 lastmodified: '2005-03-05'
 permalink: /archived/Mono:Copyrights/

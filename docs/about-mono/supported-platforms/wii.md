@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Wii
 redirect_from:
   - /Mono:Wii/

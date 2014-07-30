@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Events"
 lastmodified: '2009-08-05'
 permalink: /archived/MonoTouch_Events/

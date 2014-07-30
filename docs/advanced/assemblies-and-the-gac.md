@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Assemblies and the GAC
 redirect_from:
   - /Assemblies_and_the_GAC/

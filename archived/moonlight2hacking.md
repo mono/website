@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight2Hacking"
 lastmodified: '2009-04-17'
 permalink: /archived/Moonlight2Hacking/

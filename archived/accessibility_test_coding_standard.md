@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Test Coding Standard"
 lastmodified: '2009-02-24'
 permalink: /archived/Accessibility:_Test_Coding_Standard/

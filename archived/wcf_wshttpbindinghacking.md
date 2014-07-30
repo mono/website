@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WCF WSHttpBindingHacking"
 lastmodified: '2011-04-18'
 permalink: /archived/WCF_WSHttpBindingHacking/

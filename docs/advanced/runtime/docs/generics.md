@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Generics
 redirect_from:
   - /Mono:Runtime:Documentation:Generics/

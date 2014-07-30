@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ThreadRelatedArticles"
 lastmodified: '2007-03-12'
 permalink: /archived/ThreadRelatedArticles/

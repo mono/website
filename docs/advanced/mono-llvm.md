@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono LLVM
 redirect_from:
   - /Mono_LLVM/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Release Notes MonoTools 2.0 Beta 2"
 lastmodified: '2010-07-30'
 permalink: /archived/Release_Notes_MonoTools_2.0_Beta_2/

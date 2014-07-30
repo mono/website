@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASP.NET Mono Specific Configuration"
 lastmodified: '2009-06-03'
 permalink: /archived/ASP.NET_Mono_Specific_Configuration/

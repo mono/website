@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Release Notes Moonlight4 Preview"
 lastmodified: '2011-02-15'
 permalink: /archived/Release_Notes_Moonlight4_Preview/

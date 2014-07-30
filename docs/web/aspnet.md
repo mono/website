@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: ASP.NET
 redirect_from:
   - /ASP.NET/

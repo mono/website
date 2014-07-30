@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Runtime Hacking
 redirect_from:
   - /RuntimeHacking/

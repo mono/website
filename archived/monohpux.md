@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:HPUX"
 lastmodified: '2006-05-08'
 permalink: /archived/Mono:HPUX/

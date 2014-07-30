@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Screenshots
 redirect_from:
   - /Screenshots/

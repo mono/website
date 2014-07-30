@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Compiling Mono From SVN"
 lastmodified: '2010-11-11'
 permalink: /archived/Compiling_Mono_From_SVN/

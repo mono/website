@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Code Access Security
 redirect_from:
   - /CAS/

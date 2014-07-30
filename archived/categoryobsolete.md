@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Obsolete"
 lastmodified: '2007-05-14'
 permalink: /archived/Category:Obsolete/

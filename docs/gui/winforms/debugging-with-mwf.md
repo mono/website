@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Debugging With MWF
 redirect_from:
   - /Guide:_Debugging_With_MWF/

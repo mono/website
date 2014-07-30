@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: SQLite
 redirect_from:
   - /SQLite/

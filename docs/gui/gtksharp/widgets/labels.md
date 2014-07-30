@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Labels"
 redirect_from:
   - /GtkSharp:_Labels/

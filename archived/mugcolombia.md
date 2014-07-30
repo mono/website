@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MUG:Colombia"
 lastmodified: '2005-09-08'
 permalink: /archived/MUG:Colombia/

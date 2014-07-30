@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UiaAtkBridge"
 lastmodified: '2008-11-21'
 permalink: /archived/Accessibility:_UiaAtkBridge/

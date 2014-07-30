@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "BosteenMonkey Guide"
 lastmodified: '2006-09-04'
 permalink: /archived/BosteenMonkey_Guide/

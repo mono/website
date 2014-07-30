@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Libraries
 redirect_from:
   - /Libraries/

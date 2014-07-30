@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: AOT
 redirect_from:
   - /AOT/

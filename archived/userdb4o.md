@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "User:Db4o"
 lastmodified: '2005-05-09'
 permalink: /archived/User:Db4o/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Benchmark Suite
 redirect_from:
   - /Benchmark_Suite/

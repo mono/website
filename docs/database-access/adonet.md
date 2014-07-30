@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: ADO.NET
 redirect_from:
   - /ADO.NET/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WCF Development 2010"
 lastmodified: '2010-03-29'
 permalink: /archived/WCF_Development_2010/

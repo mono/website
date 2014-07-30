@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Maintainers
 redirect_from:
   - /Maintainers/

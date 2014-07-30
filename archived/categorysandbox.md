@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Category:Sandbox"
 lastmodified: '2007-05-17'
 permalink: /archived/Category:Sandbox/

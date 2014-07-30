@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "New Version of the Use-Page"
 lastmodified: '2007-09-13'
 permalink: /archived/New_Version_of_the_Use-Page/

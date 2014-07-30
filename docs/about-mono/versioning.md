@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Versioning
 redirect_from:
   - /Mono:Versioning/

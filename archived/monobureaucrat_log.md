@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono:Bureaucrat log"
 lastmodified: '2005-05-26'
 permalink: /archived/Mono:Bureaucrat_log/

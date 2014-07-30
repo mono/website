@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Parallel Mono Environments
 redirect_from:
   - /Parallel_Mono_Environments/

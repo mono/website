@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "WebTODO"
 lastmodified: '2005-03-03'
 permalink: /archived/WebTODO/

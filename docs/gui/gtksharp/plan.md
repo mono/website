@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GtkSharpPlan
 redirect_from:
   - /GtkSharpPlan/

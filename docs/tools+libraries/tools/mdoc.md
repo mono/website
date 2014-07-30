@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MDoc
 redirect_from:
   - /Mdoc/

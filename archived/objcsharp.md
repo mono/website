@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ObjCSharp"
 lastmodified: '2005-11-09'
 permalink: /archived/ObjCSharp/

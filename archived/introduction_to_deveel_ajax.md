@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Introduction to Deveel AJAX"
 lastmodified: '2007-05-08'
 permalink: /archived/Introduction_to_Deveel_AJAX/

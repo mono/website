@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Plans
 redirect_from:
   - /Plans/

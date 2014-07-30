@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Glossary
 redirect_from:
   - /Mono:Runtime:Documentation:Glossary/

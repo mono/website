@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: UIA Client Sandbox"
 lastmodified: '2009-02-27'
 permalink: /archived/Accessibility:_UIA_Client_Sandbox/

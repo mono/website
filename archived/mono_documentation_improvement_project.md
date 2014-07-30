@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Mono Documentation Improvement Project"
 lastmodified: '2008-10-20'
 permalink: /archived/Mono_Documentation_Improvement_Project/

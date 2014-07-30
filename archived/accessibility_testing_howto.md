@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Testing Howto"
 lastmodified: '2010-01-07'
 permalink: /archived/Accessibility:_Testing_Howto/

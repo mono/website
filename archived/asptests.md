@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASPTests"
 lastmodified: '2007-06-20'
 permalink: /archived/ASPTests/

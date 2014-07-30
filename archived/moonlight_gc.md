@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/GC"
 lastmodified: '2010-06-29'
 permalink: /archived/Moonlight/GC/

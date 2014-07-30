@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Advanced Mono Compile Options
 redirect_from:
   - /Advanced_Mono_Compile_Options/

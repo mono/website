@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: EntityFramework
 redirect_from:
   - /EntityFramework/

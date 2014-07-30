@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: GUI Toolkits
 redirect_from:
   - /Gui_Toolkits/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "GStreamerSharpInstallingFromSource"
 lastmodified: '2009-09-16'
 permalink: /archived/GStreamerSharpInstallingFromSource/

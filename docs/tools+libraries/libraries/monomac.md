@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: MonoMac
 redirect_from:
   - /MonoMac/

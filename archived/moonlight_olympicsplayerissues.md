@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Moonlight/OlympicsPlayerIssues"
 lastmodified: '2010-02-17'
 permalink: /archived/Moonlight/OlympicsPlayerIssues/

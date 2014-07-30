@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "TDS Providers"
 lastmodified: '2006-05-17'
 permalink: /archived/TDS_Providers/

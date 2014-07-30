@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: CoreCLR HowTo
 redirect_from:
   - /CoreClrHowTo/

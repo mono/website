@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "XPathNavigator"
 lastmodified: '2006-05-20'
 permalink: /archived/XPathNavigator/

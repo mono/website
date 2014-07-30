@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ThreadsBeginnersGuide"
 lastmodified: '2010-08-19'
 permalink: /archived/ThreadsBeginnersGuide/

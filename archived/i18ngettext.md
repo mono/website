@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "I18nGettext"
 lastmodified: '2006-05-17'
 permalink: /archived/I18nGettext/

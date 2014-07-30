@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ASP.NET Settings Mapping"
 lastmodified: '2008-03-01'
 permalink: /archived/ASP.NET_Settings_Mapping/

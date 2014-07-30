@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Monkeyguide"
 lastmodified: '2011-07-27'
 permalink: /archived/Monkeyguide/

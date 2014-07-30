@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Team Meetings 2008 Oct 15"
 lastmodified: '2008-10-15'
 permalink: /archived/Accessibility:_Team_Meetings_2008_Oct_15/

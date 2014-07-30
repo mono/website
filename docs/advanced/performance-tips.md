@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Performance Tips
 redirect_from:
   - /Performance_Tips/

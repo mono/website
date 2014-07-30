@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Ribbon Sharp"
 lastmodified: '2008-03-25'
 permalink: /archived/Ribbon_Sharp/

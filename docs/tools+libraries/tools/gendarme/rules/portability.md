@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "Gendarme Rules: Portability"
 redirect_from:
   - /Gendarme.Rules.Portability/

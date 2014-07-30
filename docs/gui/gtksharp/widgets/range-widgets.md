@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "GtkSharp: Range Widgets"
 redirect_from:
   - /GtkSharp:_Range_Widgets/

@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Articles"
 lastmodified: '2012-05-18'
 permalink: /archived/Articles/

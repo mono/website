@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "MonoTouch Tutorial HelloIB"
 lastmodified: '2009-07-19'
 permalink: /archived/MonoTouch_Tutorial_HelloIB/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Java
 redirect_from:
   - /Java/

@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Mono.Cecil
 redirect_from:
   - /Cecil/

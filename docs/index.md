@@ -1,7 +1,5 @@
 ---
-layout: docpage
 title: Documentation
-navgroup: docs
 redirect_from:
   - /Documentation/
   - /Class_Library_Documentation/

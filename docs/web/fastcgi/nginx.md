@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Nginx
 redirect_from:
   - /FastCGI_Nginx/

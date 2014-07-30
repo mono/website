@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Porting ASP.NET Applications
 redirect_from:
   - /Guide:_Porting_ASP.NET_Applications/

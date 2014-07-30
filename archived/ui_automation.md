@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "UI Automation"
 lastmodified: '2008-11-24'
 permalink: /archived/UI_Automation/

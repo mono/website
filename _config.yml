@@ -6,6 +6,24 @@ highlighter: null   # we use a javascript based highlighter
 markdown: kramdown
 kramdown:
   input: GFM
+defaults:
+  -
+    scope:
+      path: "archived"
+    values:
+      layout: "obsolete"
+  -
+    scope:
+      path: "community"
+    values:
+      layout: "docpage"
+      navgroup: "community"
+  -
+    scope:
+      path: "docs"
+    values:
+      layout: "docpage"
+      navgroup: "docs"
 
 #safe: true  # needs Jekyll 2.0
 gems:

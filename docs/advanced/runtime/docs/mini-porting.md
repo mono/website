@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Porting the Engine
 redirect_from:
   - /Mono:Runtime:Documentation:MiniPorting/

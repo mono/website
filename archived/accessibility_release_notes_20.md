@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Accessibility: Release Notes 2.0"
 lastmodified: '2010-02-26'
 permalink: /archived/Accessibility:_Release_Notes_2.0/

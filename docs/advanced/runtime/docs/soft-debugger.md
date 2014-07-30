@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Soft-Mode Debugger
 redirect_from:
   - /Mono:Runtime:Documentation:SoftDebugger/

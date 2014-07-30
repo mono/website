@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Code Coverage
 redirect_from:
   - /Code_Coverage/

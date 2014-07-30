@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Best Practices"
 lastmodified: '2007-01-27'
 permalink: /archived/Best_Practices/

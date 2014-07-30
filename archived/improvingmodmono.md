@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "ImprovingModMono"
 lastmodified: '2008-06-25'
 permalink: /archived/ImprovingModMono/

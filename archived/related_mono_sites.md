@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Related Mono Sites"
 lastmodified: '2008-03-01'
 permalink: /archived/Related_Mono_Sites/

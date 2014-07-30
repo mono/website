@@ -1,5 +1,4 @@
 ---
-layout: obsolete
 title: "Gcc4cil"
 lastmodified: '2007-03-15'
 permalink: /archived/Gcc4cil/

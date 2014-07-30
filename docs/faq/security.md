@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: "FAQ: Security"
 redirect_from:
   - /FAQ:_Security/

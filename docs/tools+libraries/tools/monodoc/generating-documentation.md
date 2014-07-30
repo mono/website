@@ -1,6 +1,4 @@
 ---
-layout: docpage
-navgroup: docs
 title: Generating Documentation
 redirect_from:
   - /Generating_Documentation/
