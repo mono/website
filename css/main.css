@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "\f073"
 }
 
-.meta .categories:before { 
+.meta .tags:before { 
   font: 1.0em FontAwesome;
   content: "\f02c"
 }

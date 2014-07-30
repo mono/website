@@ -2,7 +2,7 @@
 layout: blog
 title: "New Mono Releases!"
 author: Miguel de Icaza
-categories: [news, releases]
+tags: [releases]
 ---
 
 The Mono team has been busy working on Mono, and we have done seven releases since our last blog post.   Our latest Mono 3.0.12 contains a load of new features:

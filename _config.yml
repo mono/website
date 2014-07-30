@@ -1,7 +1,9 @@
-relative_permalinks: false
-permalink: pretty
-paginate: 5
+# Blog specific settings
 paginate_path: "news/page/:num"
+paginate: 5
+
+# General settings
+permalink: pretty
 highlighter: null   # we use a javascript based highlighter
 markdown: kramdown
 kramdown:
@@ -24,8 +26,12 @@ defaults:
     values:
       layout: "docpage"
       navgroup: "docs"
-
-#safe: true  # needs Jekyll 2.0
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      categories: [news]  # this is a slight hack so Jekyll generates the blog posts in /news
 gems:
   - jekyll-redirect-from
 exclude:
