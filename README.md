@@ -15,12 +15,13 @@ This will open the source file on GitHub where you can click the pencil button t
 ![Arrow to pencil](https://cloud.githubusercontent.com/assets/1376924/3712474/1d2fe57a-1517-11e4-86b2-d083dbeaa4ae.png)
 
 GitHub's editor shows you both the [Markdown](https://guides.github.com/features/mastering-markdown/) source as well as a preview of the rendered page:
-![Code editor](https://cloud.githubusercontent.com/assets/1376924/3712360/c669c088-150e-11e4-9bc3-d979b0669924.png)
+![Code editor](https://cloud.githubusercontent.com/assets/1376924/3769433/0f0ca2ee-18e1-11e4-97fc-3493683b853d.png)
 
 After you've finished your changes, enter a proper summary and description and click the "Propose file change" button to open a pull request:
 ![Propose file change](https://cloud.githubusercontent.com/assets/1376924/3712481/52423448-1517-11e4-8aa8-9c9f9befb6bc.png)
 
-**Note:** When editing or adding links, make sure to prefix them with `{{ site.github.url }}`. This is a special variable that is populated by GitHub Pages with the domain name and ensures the links work even on forks of the repository.
+**Note:** When editing or adding internal links (i.e. links that point to other parts of the website), make sure to prefix them with `{{ site.github.url }}`.
+This is a special variable that is populated by GitHub Pages with the domain name and ensures the links work even on forks of the repository.
 
 Setting up a local copy of the website
 --------------------------------------
