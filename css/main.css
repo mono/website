@@ -240,6 +240,10 @@ ul.breadcrumbs .here-note {
   border-left-width: 5px;
 }
 
+.mfp-figure > figure {
+  margin: 0px;
+}
+
 #push {
   height: 140px;
 }
