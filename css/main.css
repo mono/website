@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
-#logo {
+#header-logo {
   width: 50px;
   height: 50px;
   margin-top: -6px;
@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .top-bar {
   height: 60px;
+  line-height: 60px;
 }
 
 .top-bar .name {
@@ -41,8 +42,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 8px;
 }
 
-#searchbox {
+.top-bar #header-searchform {
   margin-top: -3px;
+}
+
+@media only screen and (max-width: 56.875em) and (min-width: 40.063em) {
+  .top-bar-section li:not(.has-form) a:not(.button),
+  .top-bar-section li.active:not(.has-form) a:not(.button) {
+    padding: 0 5px;
+  }
+
+  .top-bar-section li.has-form {
+    max-width: 100px;
+    padding: 0 5px;
+  }
+  
+  .top-bar .name h1 a  {
+    padding: 0 5px;
+  }
 }
 
 .meta {
@@ -118,23 +135,23 @@ code {
   line-height: 1.5;
 }
 
-.header-link {
+.heading-anchor-link {
   display: none;
   color: #666;
   font-size: 0.7em;
   padding-left: 1%;
 }
 
-.header-link:hover {
+.heading-anchor-link:hover {
   color: #222;
 }
 
-h1:hover .header-link,
-h2:hover .header-link,
-h3:hover .header-link,
-h4:hover .header-link,
-h5:hover .header-link,
-h6:hover .header-link {
+h1:hover .heading-anchor-link,
+h2:hover .heading-anchor-link,
+h3:hover .heading-anchor-link,
+h4:hover .heading-anchor-link,
+h5:hover .heading-anchor-link,
+h6:hover .heading-anchor-link {
   display: inline;
 }
 
@@ -143,37 +160,37 @@ h6:hover .header-link {
   margin: 0 auto -100px;
 }
 
-ul.breadcrumbs {
+ul.doc-breadcrumbs-nav {
   margin-top: 5px;
   margin-bottom: 0px;
   padding-top: 0px;
   padding-bottom: 5px;
 }
 
-ul.breadcrumbs > *:before {
+ul.doc-breadcrumbs-nav > *:before {
   margin-right: 0.4rem;
   margin-left: 0.4rem;
 }
 
-ul.breadcrumbs li {
+ul.doc-breadcrumbs-nav li {
   margin-top: 12px;
   margin-bottom: 5px;
 }
 
-ul.breadcrumbs li.toc {
+ul.doc-breadcrumbs-nav li.toc {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-ul.breadcrumbs li.toc:before{
+ul.doc-breadcrumbs-nav li.toc:before{
   display: none;
 }
 
-ul.breadcrumbs li.toc a:hover {
+ul.doc-breadcrumbs-nav li.toc a:hover {
   text-decoration: none;
 }
 
-ul.breadcrumbs .here-note {
+ul.doc-breadcrumbs-nav .here-note {
   text-transform: none;
   color: #000;
 }

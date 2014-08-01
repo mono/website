@@ -3,7 +3,7 @@ layout: base
 ---
 <div class="row">
   <div class="small-12 columns">
-    <ul class="breadcrumbs">
+    <ul class="doc-breadcrumbs-nav breadcrumbs">
       {% assign breadcrumbs = page.url | split: '/' %}
       {% assign url = '' %}
       {% for crumb in breadcrumbs offset:1 %}
@@ -47,7 +47,7 @@ function addHeadingAnchorChar() {
     var $el = $(el);
     var id = $el.attr('id');
     if (id && id != "page-title") {
-      $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html('#'));
+      $el.append($("<a />").addClass("heading-anchor-link").attr("href", "#" + id).html('#'));
     }
   });
 }

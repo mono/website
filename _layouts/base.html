@@ -32,7 +32,7 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="{{ site.github.url }}/"><img src="{{ site.github.url }}/images/mono-gorilla.svg" onerror="this.src='{{ site.github.url }}/images/mono-gorilla.png'; this.onerror=null;" id="logo"/>Mono</a></h1>
+              <h1><a href="{{ site.github.url }}/"><img src="{{ site.github.url }}/images/mono-gorilla.svg" onerror="this.src='{{ site.github.url }}/images/mono-gorilla.png'; this.onerror=null;" id="header-logo"/>Mono</a></h1>
             </li>
             <li class="toggle-topbar"><a href="#">Menu</a></li>
           </ul>
@@ -45,10 +45,10 @@
               <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="{{ site.github.url }}/docs"><i class="fa fa-book"></i> Documentation</a></li>
               <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="{{ site.github.url }}/news"><i class="fa fa-bullhorn"></i> News</a></li>
               <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="{{ site.github.url }}/community"><i class="fa fa-github"></i> Community</a></li>
-              <li id="searchbox" class="has-form">
-                <form action="https://www.google.com/search" method="get">
+              <li class="has-form">
+                <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
-                    <div class=" small-11 medium-9 large-10 columns">
+                    <div class="small-11 medium-9 large-10 columns">
                       <input name="as_sitesearch" type="hidden" value="www.mono-project.com" />
                       <input name="q" type="text" placeholder="Search..." />
                     </div>
