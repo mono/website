@@ -1,7 +1,74 @@
+/* ### GLOBAL STYLES ### */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
+code {
+  font-weight: normal;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+#main-wrapper {
+  min-height: 100%;
+  margin: 0 auto -100px;
+}
+
+.panel.info {
+  background: #F2FAFC;
+  border-left-color: #258FAF;
+  border-left-width: 5px;  
+}
+
+.panel.success {
+  background: #E0FFE6;
+  border-left-color: #43AC6A;
+  border-left-width: 5px;  
+}
+
+.panel.alert {
+  background: #F0D6C4;
+  border-left-color: #F04124;
+  border-left-width: 5px;
+}
+
+.mfp-figure > figure {
+  margin: 0px;
+}
+
+#push {
+  height: 140px;
+}
+
+footer {
+  background-color: #EBEBEB;
+  color: #707070;
+  border-top: 1px solid #D9D8D7;
+  height: 100px;
+  padding: 25px 0;
+}
+
+#footer-notes {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+#footer-notes a {
+  color: #969696;
+}
+
+footer ul {
+  font-size: 0.85em;
+}
+
+footer h6 a {
+  color: #000;
+}
+
+/* ### ### */
+
+/* ### HEADER STYLES ### */
 #header-logo {
   width: 50px;
   height: 50px;
@@ -61,7 +128,57 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 5px;
   }
 }
+/* ### ### */
 
+/* ### PAGE-SPECIFIC STYLES ### */
+
+/* --- Index page --- */
+#index-hero {
+  background: #5C7280;
+  color: #E2E8EB;
+  text-align: center;
+  margin-top: -5px;
+  padding-top: 15px;
+}
+
+#index-hero h1 {
+  color: #E2E8EB;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+#index-teaser {
+  background: #EBEBEB;
+  color: #222;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D9D8D7;
+}
+/* --- --- */
+
+/* --- Download page --- */
+#mono-download.tabs dd > a {
+  font-size: 1.5em;
+  white-space: nowrap;
+}
+
+#mono-download.tabs dd.active a {
+  background-color: #333;
+  color: #fff;
+}
+
+#mono-download.tabs dd {
+  line-height: 0.9em;
+}
+/* --- --- */
+
+/* ### ### */
+
+/* ### SECTION-SPECIFIC STYLES ### */
+
+/* --- Blog post --- */
 .meta {
   margin-left: 2px;
   color: #999;
@@ -90,51 +207,9 @@ h1, h2, h3, h4, h5, h6 {
 .meta a {
   color: #999
 }
+/* --- --- */
 
-#index-hero {
-  background: #5C7280;
-  color: #E2E8EB;
-  text-align: center;
-  margin-top: -5px;
-  padding-top: 15px;
-}
-
-#index-hero h1 {
-  color: #E2E8EB;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-#index-teaser {
-  background: #EBEBEB;
-  color: #222;
-  margin-top: 10px;
-  padding-top: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #D9D8D7;
-}
-
-#mono-download.tabs dd > a {
-  font-size: 1.5em;
-  white-space: nowrap;
-}
-
-#mono-download.tabs dd.active a {
-  background-color: #333;
-  color: #fff;
-}
-
-#mono-download.tabs dd {
-  line-height: 0.9em;
-}
-
-code {
-  font-weight: normal;
-  font-size: 0.95em;
-  line-height: 1.5;
-}
-
+/* --- Doc page --- */
 .heading-anchor-link {
   display: none;
   color: #666;
@@ -153,11 +228,6 @@ h4:hover .heading-anchor-link,
 h5:hover .heading-anchor-link,
 h6:hover .heading-anchor-link {
   display: inline;
-}
-
-#main-wrapper {
-  min-height: 100%;
-  margin: 0 auto -100px;
 }
 
 ul.doc-breadcrumbs-nav {
@@ -239,53 +309,6 @@ ul.doc-breadcrumbs-nav .here-note {
   visibility: hidden;
 }
 
-.panel.info {
-  background: #F2FAFC;
-  border-left-color: #258FAF;
-  border-left-width: 5px;  
-}
+/* --- --- */
 
-.panel.success {
-  background: #E0FFE6;
-  border-left-color: #43AC6A;
-  border-left-width: 5px;  
-}
-
-.panel.alert {
-  background: #F0D6C4;
-  border-left-color: #F04124;
-  border-left-width: 5px;
-}
-
-.mfp-figure > figure {
-  margin: 0px;
-}
-
-#push {
-  height: 140px;
-}
-
-footer {
-  background-color: #EBEBEB;
-  color: #707070;
-  border-top: 1px solid #D9D8D7;
-  height: 100px;
-  padding: 25px 0;
-}
-
-#footer-notes {
-  margin-top: 5px;
-  font-size: 15px;
-}
-
-#footer-notes a {
-  color: #969696;
-}
-
-footer ul {
-  font-size: 0.85em;
-}
-
-footer h6 a {
-  color: #000;
-}
+/* ### ### */
