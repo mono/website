@@ -5,9 +5,10 @@ redirect_from:
   - /Compiling/
 ---
 
-**_Note:_** This describes how to compile and install Mono from its source code.
-If you are only interested in running Mono, you probably want to install Mono from packages, which have been tested.
-See the [download page]({{ site.github.url }}/download) for packages.
+{% capture compileNote %}
+This describes how to compile and install Mono from its source code. If you are only interested in running Mono, you probably want to install Mono from packages, which have been tested. See the [download page]({{ site.github.url }}/download/) for packages.
+{% endcapture %}
+{% include note.html type='info' message=compileNote %}
 
 Take a look at these guides for compiling Mono on different platforms:
 

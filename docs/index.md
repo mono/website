@@ -10,7 +10,10 @@ These docs cover Mono specific topics, like setting up and configuring Mono or i
 
 For general information about the .NET framework and the class libraries you can refer to Microsoft's [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
-{% include note.html type='info' message='Our documentation is open source on <a href="https://github.com/mono/website/docs">GitHub</a>. If you find errors or think a page could be improved, just click the "Edit page on GitHub" link beneath the page title. This will take you directly to the correct spot in our GitHub repository where you can edit the page and submit your changes as a pull request. See <a href="https://github.com/mono/website#contributing-to-the-website">contributing to the website</a> for more details.' %}
+{% capture docNote %}
+Our documentation is open source on [GitHub](https://github.com/mono/website/docs). If you find errors or think a page could be improved, just click the "Edit page on GitHub" link beneath the page title. This will take you directly to the correct spot in our GitHub repository where you can edit the page and submit your changes as a pull request. See [contributing to the website](https://github.com/mono/website#contributing-to-the-website) for more details.
+{% endcapture %}
+{% include note.html type='info' message=docNote %}
 
 Getting Started
 ---------------
