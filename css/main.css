@@ -172,6 +172,11 @@ footer h6 a {
 #mono-download.tabs dd {
   line-height: 0.9em;
 }
+
+#panel-mac, #panel-lin, #panel-win {
+  padding-top: 10px;
+}
+
 /* --- --- */
 
 /* ### ### */
