@@ -16,4 +16,4 @@ title: How to make a good bug report
 
 Please include at least 6 items from the list in your bug report. Incomplete bug reports are very hard to understand, reproduce and fix.
 
-See also [bug severity definitions]({{ site.github.url }}/commmunity/bugs/bug-severity-definitions/).
+See also [bug severity definitions]({{ site.github.url }}/community/bugs/bug-severity-definitions/).
