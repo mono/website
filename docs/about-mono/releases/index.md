@@ -1,6 +1,7 @@
 ---
 title: Mono Releases
 mono3xreleases:
+ - {version: 3.6.0}
  - {version: 3.4.0}
  - {version: 3.2.8}
  - {version: 3.2.7, date: '2014-02-24'}
