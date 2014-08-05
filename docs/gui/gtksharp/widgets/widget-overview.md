@@ -37,5 +37,5 @@ Overview of the widgets used in GTK\#
 
 -   [Dialogs]({{ site.github.url }}/docs/gui/gtksharp/widgets/dialogs/)
 -   Menu Widget Example (unwritten)
--   [Widget Colours]({{ site.github.url }}/docs/gui/gtksharp/widgets/widgets-colours/)
+-   [Widget Colours]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-colours/)
 
