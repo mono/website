@@ -51,7 +51,7 @@ MonoMac/Documentation/Binding New Objective-C Types
 Binding Objective-C Types
 =========================
 
-This document describes how to bind Objective-C APIs, if you are binding just C APIs, you should use the standard .NET mechanism for this, [the P/Invoke framework]({{ site.github.url }}/Interop_with_Native_Libraries). Details on how to statically link a C library are available on the [Linking Native Libraries](/index.php?title=MonoMac/Documentation/Linking_Native_Libraries&action=edit&redlink=1 "MonoMac/Documentation/Linking Native Libraries (page does not exist)") page.
+This document describes how to bind Objective-C APIs, if you are binding just C APIs, you should use the standard .NET mechanism for this, [the P/Invoke framework]({{ site.github.url }}/Interop_with_Native_Libraries). Details on how to statically link a C library are available on the Linking Native Libraries page.
 
 If you would rather bind the API manually, see the [Binding Details]({{ site.github.url }}/MonoMac/Documentation/Binding_New_Objective-C_Types/Binding_Details "MonoMac/Documentation/Binding New Objective-C Types/Binding Details") page.
 

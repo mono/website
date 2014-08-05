@@ -82,7 +82,7 @@ Although this namespace provides bindings for the underlying Objective-C Foundat
 -   Instead of dealing with [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) and [NSArray](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html) the runtime instead exposes these as C\# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String)s and strongly typed [array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
 -   Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other iPhone APIs or APIs that are not currently bound by MonoTouch.
 
-For more details on binding APIs see the [MonoTouch Binding Generator](/index.php?title=MonoTouch_Binding_Generator&action=edit&redlink=1 "MonoTouch Binding Generator (page does not exist)") section.
+For more details on binding APIs see the MonoTouch Binding Generator section.
 
 ### NSObject
 

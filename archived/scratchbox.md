@@ -30,7 +30,7 @@ Introduction
 
 Scratchbox is used by Maemo development platform (Nokia Internet Tablets). But it is not restricted to that use.
 
-Scratchbox uses [QEMU](http://fabrice.bellard.free.fr/qemu/) for ARM emulation, the problem is that some ARM syscalls (242, 264, 299) are not yet implemented in QEMU. These missing syscalls can cause problems in [MCS](/index.php?title=MCS&action=edit&redlink=1 "MCS (page does not exist)"), making it impossible to compile assemblies for ARM.
+Scratchbox uses [QEMU](http://fabrice.bellard.free.fr/qemu/) for ARM emulation, the problem is that some ARM syscalls (242, 264, 299) are not yet implemented in QEMU. These missing syscalls can cause problems in MCS, making it impossible to compile assemblies for ARM.
 
 [Scratchbox devkits](http://www.scratchbox.org/documentation/user/scratchbox-1.0/html/devkit.html) provide a set of tools that can be executed on the host instead of target device and thus it reduces time that is used to build packages.
 

@@ -55,10 +55,10 @@ Spanish Speaking Mono Groups
 Mono Meetings
 =============
 
--   [MeetingPDC Mono Users Meeting at the 2005 Microsoft PDC](/index.php?title=MeetingPDC_Mono_Users_Meeting_at_the_2005_Microsoft_PDC&action=edit&redlink=1 "MeetingPDC Mono Users Meeting at the 2005 Microsoft PDC (page does not exist)")
+-   MeetingPDC Mono Users Meeting at the 2005 Microsoft PDC
 
 Team
 ====
 
-Description of some members of the [Team Mono Team](/index.php?title=Team_Mono_Team&action=edit&redlink=1 "Team Mono Team (page does not exist)").
+Description of some members of the Team Mono Team.
 

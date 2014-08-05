@@ -107,16 +107,16 @@ Other runtimes have not been tested, but will most likely work. The libraries ar
 
 Use our [Anonymous SVN repository]({{ site.github.url }}/SourceCodeRepository) to download it. The module name is \`tao'.
 
-You can browse the source at [http://anonsvn.mono-project.com/viewcvs/trunk/tao/](/index.php?title=ViewCVS&action=edit&redlink=1 "ViewCVS (page does not exist)")
+You can browse the source at http://anonsvn.mono-project.com/viewcvs/trunk/tao/
 
 Developers/Maintainers
 ======================
 
--   [Randy Ridge](/index.php?title=RandyRidge&action=edit&redlink=1 "RandyRidge (page does not exist)") (original author, "I'm not dead yet")
--   [Vladimir Vukicevic](/index.php?title=VladimirVukicevic&action=edit&redlink=1 "VladimirVukicevic (page does not exist)") (current maintainer)
--   [Dave Hudson](/index.php?title=DaveHudson&action=edit&redlink=1 "DaveHudson (page does not exist)") (Tao.Sdl)
--   [Terry Triplett](/index.php?title=TerryTriplett&action=edit&redlink=1 "TerryTriplett (page does not exist)") (Tao.Ode)
--   [Rob Loach](/index.php?title=RobLoach&action=edit&redlink=1 "RobLoach (page does not exist)") (Tao.PhysFs)
+-   Randy Ridge (original author, "I'm not dead yet")
+-   Vladimir Vukicevic (current maintainer)
+-   Dave Hudson (Tao.Sdl)
+-   Terry Triplett (Tao.Ode)
+-   Rob Loach (Tao.PhysFs)
 -   *If you're a maintainer of one of the Tao packages, please add yourself to this list, or send mail to the mailing list so I can add you here!*
 
 Plans

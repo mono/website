@@ -41,7 +41,7 @@ January 2011
 
 [GitFAQ]({{ site.github.url }}/GitFAQ "GitFAQ") Common questions about Mono's migration to Git and GitHub for source code control.
 
-[CSharpRepl](/index.php?title=CSharpRepl&action=edit&redlink=1 "CSharpRepl (page does not exist)") discussed our interactive shell for our C\# Compiler as a Service.
+CSharpRepl discussed our interactive shell for our C\# Compiler as a Service.
 
 July 2007
 ---------

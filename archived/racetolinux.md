@@ -13,11 +13,9 @@ RaceToLinux
 
 We've made a special release for Race To Linux that has several ASP.Net fixes over 1.2.3.1.
 
-[File:Mono icon source.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_source.gif "File:Mono icon source.gif")  **Source Code**
+**Source Code**
 
 -   [Sources](http://mono.ximian.com/monobuild/rtl/sources-rtl)
-
-[File:Mono icon suse.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_suse.gif "File:Mono icon suse.gif")
 
 **VMware Virtual Image**
 
@@ -28,7 +26,7 @@ For notes on using the VMware image, see: [Instructions for VMware image]({{ sit
 -   [Download Torrent](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip.torrent)
 -   [Download VM](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip)
 
-[File:Mono icon windows.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_windows.gif "File:Mono icon windows.gif")  **Windows Installer** Windows 2000 and above
+**Windows Installer** Windows 2000 and above
 
 Mono for Windows, Gtk\# and XSP:
 
@@ -42,7 +40,7 @@ Mono Migration Analyzer:
 
 -   [See the Mono Migration Analyzer page]({{ site.github.url }}/MoMA "MoMA").
 
-[File:Mono icon mac.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_mac.gif "File:Mono icon mac.gif")  **Mac OS X** 10.3 (Panther) and 10.4 (Tiger)
+**Mac OS X** 10.3 (Panther) and 10.4 (Tiger)
 
 Includes Mono, Cocoa\#, installs in /Library/Frameworks
 
@@ -62,7 +60,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -91,7 +89,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </table></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_redhat.gif" title="File:Mono icon redhat.gif">File:Mono icon redhat.gif</a>  <strong>Red Hat</strong></td>
+<td align="left"><strong>Red Hat</strong></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -126,7 +124,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -152,7 +150,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </table></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_redhat.gif" title="File:Mono icon redhat.gif">File:Mono icon redhat.gif</a>  <strong>Red Hat</strong></td>
+<td align="left"><strong>Red Hat</strong></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -175,7 +173,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -195,7 +193,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -215,7 +213,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -235,7 +233,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -252,7 +250,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </table></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_redhat.gif" title="File:Mono icon redhat.gif">File:Mono icon redhat.gif</a>  <strong>Red Hat</strong></td>
+<td align="left"><strong>Red Hat</strong></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -264,8 +262,6 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tr>
 </tbody>
 </table>
-
-[File:Mono icon linux.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_linux.gif "File:Mono icon linux.gif")
 
 **Linux Installer for x86**
 

@@ -11,7 +11,7 @@ Mono:Deletion log
 
 Below is a list of the most recent deletions. All times shown are server time (UTC).
 
--   19:22, 4 Aug 2005 [Jbevain](/index.php?title=User:Jbevain&action=edit&redlink=1 "User:Jbevain (page does not exist)") deleted "Image:Jbthumb.png" *(too orange)*
+-   19:22, 4 Aug 2005 Jbevain deleted "Image:Jbthumb.png" *(too orange)*
 -   15:52, 18 May 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Supported Platforms" *(redundant)*
 -   18:44, 28 Apr 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Man:gacutil" *(needs to be constantly updated)*
 -   18:44, 28 Apr 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Man:mono" *(needs to be constantly updated)*
@@ -22,7 +22,7 @@ Below is a list of the most recent deletions. All times shown are server time (U
 -   19:41, 13 Apr 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Microsoft SQL Server" *(Redundant page)*
 -   19:27, 13 Apr 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "VB.NET" *(content was: 'MonoBASIC (mbas) is a CIL compiler for the VisualBasic.NET language, an extended version of Visual Basic. It's based on the MCS compiler and still in ...')*
 -   19:41, 6 Apr 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Erik D" *(it was just a draft page)*
--   21:18, 1 Apr 2005 [Gonzalo](/index.php?title=User:Gonzalo&action=edit&redlink=1 "User:Gonzalo (page does not exist)") deleted "Class Libraries" *(Links do not work and the class status page is the right one)*
+-   21:18, 1 Apr 2005 Gonzalo deleted "Class Libraries" *(Links do not work and the class status page is the right one)*
 -   22:57, 30 Mar 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Image:RPM.gif" *(grrr)*
 -   22:39, 30 Mar 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Image:RPM.gif" *(better version)*
 -   18:44, 21 Mar 2005 [Edasque]({{ site.github.url }}/User:Edasque "User:Edasque") deleted "Tutorials" *(content was: '\* O'Reilly has a beginner tutorial on [http://www.onlamp.com/pub/a/onlamp/excerpt/MonoTDN\_chap1/index.html how to write a basic Gtk\# program with Mono...')*
@@ -35,7 +35,7 @@ Below is a list of the most recent deletions. All times shown are server time (U
 -   21:58, 26 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Other Languages" *(redundant)*
 -   21:16, 26 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "SVN Checkouts" *(not needed)*
 -   20:23, 26 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Main" *(Moved to main page.)*
--   15:07, 25 Feb 2005 [Monoman](/index.php?title=User:Monoman&action=edit&redlink=1 "User:Monoman (page does not exist)") deleted "NUnit Test Template" *(page was empty)*
+-   15:07, 25 Feb 2005 Monoman deleted "NUnit Test Template" *(page was empty)*
 -   23:31, 24 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Mono Roadmap" *(dup)*
 -   21:28, 24 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "Invoking a MonoMethod" *(page was empty)*
 -   20:35, 24 Feb 2005 [Miguel]({{ site.github.url }}/User:Miguel "User:Miguel") deleted "JIT Debug" *(dup)*

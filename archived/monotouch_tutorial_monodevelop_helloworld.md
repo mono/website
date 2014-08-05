@@ -111,7 +111,7 @@ Adding Behavior
 
 For the sake of demystifying what is happening behind the scenes, double click on the `MainWindow.designer.xib.cs` file you will see that behind the scenes MonoDevelop has generated one property accessor for each outlet:
 
-[File:Md hw iphone18.png](/index.php?title=Special:Upload&wpDestFile=Md_hw_iphone18.png "File:Md hw iphone18.png")
+Md hw iphone18.png
 
 This file is automatically updated every time you modify your XIB file using Interface Builder. Do not make any changes to this file as any changes that you make will be lost the next time you update your XIB file. This is a MonoDevelop generated file, you can completely ignore it while developing.
 

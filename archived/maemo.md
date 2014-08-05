@@ -58,7 +58,7 @@ Screenshots and Movies
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 
-[PEditGtkSharp running on N800]({{ site.github.url }}/Image:PEditGtkSharpN800.gif)
+[PEditGtkSharp running on N800]({{ site.github.url }}/archived/images/1/15/PEditGtkSharpN800.gif)
 
 [A single binary running on maemo and other platforms](http://www.mdk.org.pl/2007/1/28/clone-wars)
 

@@ -11,13 +11,13 @@ Prebuild
 
 Prebuild is a meta-build-system. A prebuild XML file is used to generate one (or more) of the following:
 
-[NAnt](/index.php?title=NAnt&action=edit&redlink=1 "NAnt (page does not exist)") build system
+NAnt build system
 
 [Autotools]({{ site.github.url }}/Autotools "Autotools") build system
 
-[VS2k5](/index.php?title=VS2k5&action=edit&redlink=1 "VS2k5 (page does not exist)") build system
+VS2k5 build system
 
-[VS2k3](/index.php?title=VS2k3&action=edit&redlink=1 "VS2k3 (page does not exist)") build system
+VS2k3 build system
 
 [Monodevelop]({{ site.github.url }}/Development_Environments) build system
 

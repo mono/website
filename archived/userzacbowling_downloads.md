@@ -17,11 +17,9 @@ Please refer to our [Runtime]({{ site.github.url }}/Mono:Runtime "Mono:Runtime")
 
 -   [Older releases]({{ site.github.url }}/OldReleases "OldReleases")
 
-[File:Mono icon source.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_source.gif "File:Mono icon source.gif")  **Source Code**
+**Source Code**
 
 [Latest sources](http://go-mono.com/sources)
-
-[File:Mono icon linux.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_linux.gif "File:Mono icon linux.gif")
 
 **Linux Installer for x86**
 
@@ -31,13 +29,13 @@ For help with the installation, see: [Instructions to use the Installer]({{ site
 
 -   [Mono 1.1.10\_1 Installer](http://www.go-mono.com/archive/1.1.10_1/installer/mono-1.1.10_1-installer.bin)
 
-[File:Mono icon windows.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_windows.gif "File:Mono icon windows.gif")  **Windows Installer** Windows 2000 and above
+**Windows Installer** Windows 2000 and above
 
 Includes Mono, Gtk\# and XSP:
 
 -   [Mono Setup (1.1.10)](http://www.go-mono.com/archive/1.1.10_1/windows/mono-1.1.10-gtksharp-1.0.10-2.3.91-win32-0.exe)
 
-[File:Mono icon mac.gif](/index.php?title=Special:Upload&wpDestFile=Mono_icon_mac.gif "File:Mono icon mac.gif")  **Mac OS X**
+**Mac OS X**
 
 Includes Mono, Cocoa\#, installs in /Library/Frameworks
 
@@ -50,7 +48,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -70,7 +68,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </table></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_redhat.gif" title="File:Mono icon redhat.gif">File:Mono icon redhat.gif</a>  <strong>Red Hat</strong></td>
+<td align="left"><strong>Red Hat</strong></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -99,7 +97,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -125,7 +123,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>
@@ -145,7 +143,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="/index.php?title=Special:Upload&amp;wpDestFile=Mono_icon_suse.gif" title="File:Mono icon suse.gif">File:Mono icon suse.gif</a>  <strong>SuSE Linux</strong></p></td>
+<td align="left"><p><strong>SuSE Linux</strong></p></td>
 <td align="left"><table>
 <col width="100%" />
 <tbody>

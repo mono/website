@@ -1130,7 +1130,7 @@ Map UIA Provider interfaces to ATK|Planned|Andres||
 |**Example Code**
 Code Gtk example to show how we can test the sorting order of certain controle. e.g., ensure that clicking a column header reorders the table cells in a treeview|Done|Brian|Code added to the gtktreeview tests|
 |**Create QA Architecture Diagrams**
-Create architecture diagrams for Strongwind by itself and Strongwind together with our test harness.|Done|Brian|[1]({{ site.github.url }}/Image:Strongwind_arch.png) and [2]({{ site.github.url }}/Image:Qa_arch.png)|
+Create architecture diagrams for Strongwind by itself and Strongwind together with our test harness.|Done|Brian|[1]({{ site.github.url }}/archived/images/5/5a/Strongwind_arch.png) and [2]({{ site.github.url }}/archived/images/7/75/Qa_arch.png)|
 |**Plan testing of other "styles"**
 Discuss and come up with a plan to test different styles/subelements of WinForms controls|Done|Brian|[https://bugzilla.novell.com/show\_bug.cgi?id=418916](https://bugzilla.novell.com/show_bug.cgi?id=418916)|
 |**Implement Samples**

@@ -251,7 +251,7 @@ One of the easiest ways to see if an application is compatible with Mono is to s
 
 You can scan a web project on either Windows or Linux (MoMA runs on both), but it is assumed you are doing this on Windows. To scan a website with MoMA, follow these steps:
 
-1.  Download [MOMA](/index.php?title=MOMA&action=edit&redlink=1 "MOMA (page does not exist)").
+1.  Download MOMA.
 2.  Unzip MoMA
 3.  Execute moma.exe.
 4.  Follow the wizard, and point MoMA at the entire web project folder. After scanning through the entire folder, MoMA will give you a report.

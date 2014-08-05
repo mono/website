@@ -74,7 +74,7 @@ Mono 2.8
 <ul>
 <li>Allows the compiler to be embedded in Silverlight</li>
 <li>Enables the use of Mono.CSharp.dll to be used on Windows</li>
-<li>Run our <a href="/index.php?title=CSharpRepl&amp;action=edit&amp;redlink=1" title="CSharpRepl (page does not exist)">CSharpRepl</a> on .NET's runtime.</li>
+<li>Run our CSharpRepl on .NET's runtime.</li>
 </ul></li>
 </ul></li>
 <li>LINQ to SQL Beta</li>
@@ -391,7 +391,7 @@ The Mono project has been tracking some of the improvements available in those r
 
 -   Compilers: C\# 1 and 2 as well as bits of 3, VB.NET 8 and various command line tools that are part of the SDK.
 
--   [Transaction](/index.php?title=Transaction&action=edit&redlink=1 "Transaction (page does not exist)") support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes]({{ site.github.url }}/Transactions "Transactions") on its implementation and limitations).
+-   Transaction support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes]({{ site.github.url }}/Transactions "Transactions") on its implementation and limitations).
 
 -   Open Source, Unix and Gnome specific libraries, see our [Plans]({{ site.github.url }}/Plans "Plans") page for more details.
 

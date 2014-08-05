@@ -37,7 +37,7 @@ Writing New Pages
 
 -   Think about something that you recently had a lot of trouble finding information about and create a page dedicated to it!
 
--   If you need an idea for something to write, check out [Special:Wantedpages]({{ site.github.url }}/Special:WantedPages "Special:WantedPages").
+-   If you need an idea for something to write, check out Special:Wantedpages.
 
 Cleanup
 =======
@@ -46,10 +46,10 @@ Here are some suggestions of ways to help clean the wiki up:
 
 -   **Go through the [documentation table of contents]({{ site.github.url }}/Start "Start") and find new things to add to it.
     **
--   Go through [Special:Shortpages]({{ site.github.url }}/Special:ShortPages "Special:ShortPages") and add more content.
--   Go through [Special:Lonelypages]({{ site.github.url }}/Special:LonelyPages "Special:LonelyPages"), figure out which page(s) should link back to this page, and add the link.
--   Go through the [Uncategorizedpages]({{ site.github.url }}/Special:Uncategorizedpages) list and categorize the pages.
--   Go through the [Longpages]({{ site.github.url }}/Special:Longpages) list and if it makes sense, split them up into seporate pages.
+-   Go through Special:Shortpages and add more content.
+-   Go through Special:Lonelypages, figure out which page(s) should link back to this page, and add the link.
+-   Go through the Uncategorizedpages list and categorize the pages.
+-   Go through the Longpages list and if it makes sense, split them up into seporate pages.
 -   If you see a page that looks like a big mess, add "****
 
     ``` nowiki

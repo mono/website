@@ -19,12 +19,12 @@ To me it's all about finding answers and as I've associated with a lot of other 
 
 Last thought, the main main manuals & docs link on the main toolbar should go into a documention section, as described, not just the API reference provided by monodoc.
 
---[ClarkEndrizzi](/index.php?title=User:ClarkEndrizzi&action=edit&redlink=1 "User:ClarkEndrizzi (page does not exist)") 00:36, 11 Apr 2006 (EDT)
+--ClarkEndrizzi 00:36, 11 Apr 2006 (EDT)
 
 New Version of this page.
 -------------------------
 
 After a little discussion on the mono-docs-list to check if this little project is wanted I'm now trying to write a new version of this page under [New Version of the Use-Page]({{ site.github.url }}/New_Version_of_the_Use-Page "New Version of the Use-Page"). Please check it once in a while to give me some feedback (or contributions). For discussion about whether it makes sense to rewrite this page please answer to this Talk-Page or the docs list. If you have comments about my new Version of the page please write them down [here]({{ site.github.url }}/Talk:New_Version_of_the_Use-Page "Talk:New Version of the Use-Page"). Thanks
 
---[Valentin]({{ site.github.url }}/User:ValentinSawadski "User:ValentinSawadski") 14:10, 17 May 2007 (EDT)
+--Valentin 14:10, 17 May 2007 (EDT)
 

@@ -40,7 +40,7 @@ This should support all the configurations that the current NAnt-system supports
 
 #### Single Tao.OpenGl DLL on all platforms
 
-Building Tao.OpenGl fully right now depends on the ILMerge tool, which is a Windows-only binary tool. We should be able to replace both the stub generator and ILMerge with [http://www.plas.fit.qut.edu.au/perwapi/Default.aspx](/index.php?title=PERWAPI&action=edit&redlink=1 "PERWAPI (page does not exist)"). There are still some calling convention issues in some of the bindings that will make it difficult to ship a single binary for all platforms, but we should be able to identify these and provide a set of reccomended libraries to use that don't have any calling convention issues, making it possible to ship a single app that uses Tao that would run on all platforms.
+Building Tao.OpenGl fully right now depends on the ILMerge tool, which is a Windows-only binary tool. We should be able to replace both the stub generator and ILMerge with http://www.plas.fit.qut.edu.au/perwapi/Default.aspx. There are still some calling convention issues in some of the bindings that will make it difficult to ship a single binary for all platforms, but we should be able to identify these and provide a set of reccomended libraries to use that don't have any calling convention issues, making it possible to ship a single app that uses Tao that would run on all platforms.
 
 #### Single Tao.Sdl DLL on all platforms
 

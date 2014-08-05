@@ -36,7 +36,7 @@ The Mono Accessibility project enables Winforms and Silverlight applications to 
 
 This is our second stable release, and includes:
 
--   UIA Provider and ATK support for [System.Windows.Forms](/index.php?title=System.Windows.Forms&action=edit&redlink=1 "System.Windows.Forms (page does not exist)") controls
+-   UIA Provider and ATK support for System.Windows.Forms controls
 -   UIA Provider and ATK support for Silverlight Controls
 -   A complete implementation of the UIA Client API, allowing access to Winforms, Silverlight, and native GTK+ applications on Linux
 

@@ -145,7 +145,7 @@ Things that each member needs to have set up
 -   Send [Andrés](mailto:aaragoneses@novell.com) your [hackergotchi](http://en.wikipedia.org/wiki/Hackergotchi) for this page
 -   Join accessibility mailing lists
     -   [mono-a11y](http://forge.novell.com/mailman/listinfo/mono-a11y) - this is the team mailing list
-    -   [Accessibility]({{ site.github.url }}/index.php?title=Accessibility#Reference) lists of interest
+    -   Accessibility lists of interest
 -   Live on IRC
     -   \#mono-a11y on irc.gimp.org. [Direct link](irc://irc.gnome.org/mono-a11y)
 -   Review everything on the [Accessibility]({{ site.github.url }}/Accessibility) wiki page
@@ -162,7 +162,7 @@ In the meantime, we'll request to the [LinuxFoundation](http://www.linuxfoundati
 ### Team Meetings
 
 -   [2009, Feb 09]({{ site.github.url }}/Accessibility:_Team_Meetings_2009_Feb_09 "Accessibility: Team Meetings 2009 Feb 09") IRC - 1.0 Feature Freeze Planning
--   [2009, Jan 07](/index.php?title=Accessibility:_Team_Meetings_2009_Jan_07&action=edit&redlink=1 "Accessibility: Team Meetings 2009 Jan 07 (page does not exist)") IRC - Sprint 5 Planning
+-   2009, Jan 07 IRC - Sprint 5 Planning
 -   [2008, Dec 10]({{ site.github.url }}/Accessibility:_Team_Meetings_2008_Dec_10 "Accessibility: Team Meetings 2008 Dec 10") IRC - Sprint 4 Planning
 -   [2008, Nov 26]({{ site.github.url }}/Accessibility:_Team_Meetings_2008_Nov_26 "Accessibility: Team Meetings 2008 Nov 26") IRC - Sprint 3 Planning
 -   [2008, Nov 12]({{ site.github.url }}/Accessibility:_Team_Meetings_2008_Nov_12 "Accessibility: Team Meetings 2008 Nov 12") IRC - Sprint 2 Planning

@@ -45,5 +45,5 @@ ContextMenuStrip has ToolStripMenuItems as children. How should we indicate the 
 
 For a research on Mono.WebBrowser, I've investigated monodoc in accerciser. For the web widget, it has a strange hierarchy layout like this (number of children in parenthesis): Page tab list (1) -\> page tab (1) -\> page tab list (2) -\> [1st child:] page tab (1) -\> scroll pane (1) -\> viewport (1) -\> frame (17). The rest of elements below frame are actually the real contents of the web page (a text role element, some list items, etc.). How should we mimic this? It seems that focusing on a viewport or frame widget is the way to go. Please give feedback.
 
-It looks like we can get the AtkAccessible object directly from Mozilla (if that WebBrowser backend is enabled) with [GetAtkObjectForCurrentDocument](http://mxr.mozilla.org/seamonkey/source/embedding/browser/gtk/src/EmbedPrivate.cpp#936) --[BradTaylor](/index.php?title=User:BradTaylor&action=edit&redlink=1 "User:BradTaylor (page does not exist)") 15:06, 9 Sep 2008 (EDT)
+It looks like we can get the AtkAccessible object directly from Mozilla (if that WebBrowser backend is enabled) with [GetAtkObjectForCurrentDocument](http://mxr.mozilla.org/seamonkey/source/embedding/browser/gtk/src/EmbedPrivate.cpp#936) --BradTaylor 15:06, 9 Sep 2008 (EDT)
 

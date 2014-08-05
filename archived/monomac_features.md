@@ -69,7 +69,7 @@ slider.ValueChanged += delegate {
 Use Mac OS X APIs
 -----------------
 
-MonoMac binds the Objective-C APIs that developers use on the Mac into [MonoMac/API C\# APIs](/index.php?title=MonoMac/API_C&action=edit&redlink=1 "MonoMac/API C (page does not exist)") that expose the functionality and map this to any ECMA CIL powered language. Objective-C delegates are exposed to C\# applications [MonoMac/API\#Delegates in a number of ways](/index.php?title=MonoMac/API&action=edit&redlink=1 "MonoMac/API (page does not exist)") giving developers complete control of how to consume and integrate with native APIs.
+MonoMac binds the Objective-C APIs that developers use on the Mac into MonoMac/API C\# APIs that expose the functionality and map this to any ECMA CIL powered language. Objective-C delegates are exposed to C\# applications MonoMac/API\#Delegates in a number of ways giving developers complete control of how to consume and integrate with native APIs.
 
 MonoMac provides a C\#/ECMA binding for:
 
@@ -111,7 +111,7 @@ Access to third party iPhone/Objective-C Libraries
 
 MonoMac allows you to access libraries created in the Objective-C language for the Mac easily and to create C\#/.NET bindings to Objective-C libraries.
 
-This process is described in detail in our [MonoMac/Binding\_New\_Objective-C\_Types Binding Objective-C](/index.php?title=MonoMac/Binding_New_Objective-C_Types_Binding_Objective-C&action=edit&redlink=1 "MonoMac/Binding New Objective-C Types Binding Objective-C (page does not exist)") libraries.
+This process is described in detail in our MonoMac/Binding\_New\_Objective-C\_Types Binding Objective-C libraries.
 
 MonoDevelop Integration
 -----------------------
@@ -120,7 +120,7 @@ MonoMac is an SDK that can be used with your favorite editor, be it a full integ
 
 MonoDevelop's code completion helps you quickly explore the API as you write your application: \<img src="[http://monotouch.net/@api/deki/files/19/=Md\_hw\_iphone19.png](http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png)" style="width: 644px; height: 267px;" alt="Md\_hw\_iphone19.png" class="internal default" /\>
 
-Our tutorial [MonoMac/Tutorials/MonoDevelop\_HelloWorld walks you through creating your first MonoMac application](/index.php?title=MonoMac/Tutorials/MonoDevelop_HelloWorld_walks_you_through_creating_your_first_MonoMac_application&action=edit&redlink=1 "MonoMac/Tutorials/MonoDevelop HelloWorld walks you through creating your first MonoMac application (page does not exist)").
+Our tutorial MonoMac/Tutorials/MonoDevelop\_HelloWorld walks you through creating your first MonoMac application.
 
 Interface Builder Integration
 -----------------------------

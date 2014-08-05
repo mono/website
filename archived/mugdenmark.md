@@ -14,7 +14,7 @@ Danish Mono User Group (DKMUG) er den første danske Mono-brugergruppe som i øj
 
 Gruppen danner fællesskab om Mono for Mono-entusiaster i hele Danmark.
 
-For at blive medlem skal du blot skrive til [Martin](mailto:mwh(at)sysrq.dk) med lidt information om hvem du er.
+For at blive medlem skal du blot skrive til Martin (mwh(at)sysrq.dk) med lidt information om hvem du er.
 
 Der findes en IRC-kanal for DKMUG på irc.gnome.org, \#dkmug.
 

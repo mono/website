@@ -11,7 +11,7 @@ User talk:ZacBowling
 
 Heya Zac,
 
-Can you tell me why you deleted [WayneJohnson](/index.php?title=WayneJohnson&action=edit&redlink=1 "WayneJohnson (page does not exist)")'s user page?
+Can you tell me why you deleted WayneJohnson's user page?
 
 Cheers,
 

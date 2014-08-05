@@ -9,8 +9,6 @@ redirect_from:
 Article:IOChanges
 =================
 
-[Template:Clean Up](/index.php?title=Template:Clean_Up&action=edit&redlink=1 "Template:Clean Up (page does not exist)")
-
     This is Work in Progress
 
 <table>

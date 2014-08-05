@@ -36,5 +36,5 @@ Visit [this page]({{ site.github.url }}/Downloads "Downloads") to download the M
 MacOS X Installation (MacOS X 10.3)
 -----------------------------------
 
-Visit [the download page]({{ site.github.url }}/Downloads "Downloads") to find the latest MacOS X package. Run it and follow the instructions it supplies. This includes Mono-core. You'll find more information about Mono on MacOS X [here](/index.php?title=Mono_on_Mac_OS_X&action=edit&redlink=1 "Mono on Mac OS X (page does not exist)").
+Visit [the download page]({{ site.github.url }}/Downloads "Downloads") to find the latest MacOS X package. Run it and follow the instructions it supplies. This includes Mono-core. You'll find more information about Mono on MacOS X here.
 

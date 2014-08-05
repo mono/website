@@ -9,7 +9,7 @@ redirect_from:
 ASP.NET Mono Specific Configuration
 ===================================
 
-by [Marek Habersack](/index.php?title=User:MarekHabersack&action=edit&redlink=1 "User:MarekHabersack (page does not exist)")
+by Marek Habersack
 
 **Note: this document applies to the SVN trunk version of Mono (as of 10 October 2008) and to Mono 2.1 and newer**
 
@@ -52,7 +52,7 @@ The following table describes all the attributes currently defined for the secti
 
 useCompilersCompatibility 
 
-a boolean which tells ASP.NET whether or not to augment compiler information read from either `<system.codeDom/compilers>` or `<system.web/compilation>` configuration sections. Defaults to **true**. For more details about the compiler settings available see [below](/index.php?title=CompilersCompatibility&action=edit&redlink=1 "CompilersCompatibility (page does not exist)")
+a boolean which tells ASP.NET whether or not to augment compiler information read from either `<system.codeDom/compilers>` or `<system.web/compilation>` configuration sections. Defaults to **true**. For more details about the compiler settings available see below
 
 ****
 

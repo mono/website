@@ -13,7 +13,7 @@ MonoMacNew
 
  
 
-[Getting Started](/index.php?title=MonoMacGettingStarted&action=edit&redlink=1 "MonoMacGettingStarted (page does not exist)")
+Getting Started
 
  
 

@@ -25,7 +25,7 @@ What I'd like to see happening is someone checkout the MWF folder, load up the p
 2.  If we do, do we change the version on Consts.cs?
 3.  What about people that are building MWF on visual studio but who have the mono tree (and have the files in their proper place)? Might it be a problem for them that now the files are referenced from somewhere else? Will they notice at all? :)
 
---[Shana](/index.php?title=User:Shana&action=edit&redlink=1 "User:Shana (page does not exist)") 06:55, 30 May 2007 (EDT)
+--Shana 06:55, 30 May 2007 (EDT)
 
 I think placing static versions in the MWF directory should be fine for this purpose. We can update these when they change (which is rare), just like we update the SWF2K project.
 
@@ -41,7 +41,7 @@ And of course "real" Mono is built from the .sources file, so we aren't screwing
 
 For the sake of argument: None of the other libraries are able to be dropped into Visual Studio and built standalone, why should MWF be special? Without the rest of the build tree, would people be able to run the unit tests? If not, should we be making it easier for people to develop on MWF without writing and running tests?
 
-[Jackson](/index.php?title=User:Jackson&action=edit&redlink=1 "User:Jackson (page does not exist)") 11:44, 30 May 2007 (EDT)
+Jackson 11:44, 30 May 2007 (EDT)
 
 MWF is slightly special in that its target users are probably hardcore VS users. (Think winforms designer.) I think the issue here isn't to really help them "develop on MWF" as is it to help them debug their applications on MWF. I would agree with you if we really had to jump through hoops to make this happen, but it seems like these changes are small and harmless.
 

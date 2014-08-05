@@ -102,7 +102,7 @@ get\_destroot: function to determine what time of package this is. Options are: 
 
 HEAD\_PATH: relative svn path of where trunk is located. This is a list, and if there are more than one, they are checked out side by side. The base path is located in pyutils/config.py. The first module listed is the one entered before creating the tarball. Or, BUILD\_DIR is specified as the directory to be entered (either relative or absolute).
 
-RELEASE\_PATH: relative svn paths of tagged sources. [version](/index.php?title=Version&action=edit&redlink=1 "Version (page does not exist)") is translated from x.x.x on the command line to x-x-x in the svn path. [versiondot](/index.php?title=Versiondot&action=edit&redlink=1 "Versiondot (page does not exist)") does not perform this translation.
+RELEASE\_PATH: relative svn paths of tagged sources. version is translated from x.x.x on the command line to x-x-x in the svn path. versiondot does not perform this translation.
 
 BUILD\_DIR: the name of the directory that the source is located in if it can't be deduced from HEAD\_PATH or RELEASE\_PATh (using dirname). (This really isn't used in favor of EXTERNAL\_SOURCE).
 

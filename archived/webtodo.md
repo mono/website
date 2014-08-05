@@ -52,7 +52,7 @@ Migration
 -   Add a redirect for eliminating the "base" url.
 
 -   Sanitize the naming conventions (move each file to its proper name)
-    -   See list of pages [ImportedPages](/index.php?title=ImportedPages&action=edit&redlink=1 "ImportedPages (page does not exist)") here
+    -   See list of pages ImportedPages here
 
 RSS
 ---
@@ -71,7 +71,7 @@ Replace the links of \`navigation' with the common Mono destinations: Downloads,
 Organization
 ------------
 
-Need to find a way of linking all the pages in [ImportedPages](/index.php?title=ImportedPages&action=edit&redlink=1 "ImportedPages (page does not exist)").
+Need to find a way of linking all the pages in ImportedPages].
 
 Content
 =======
@@ -111,7 +111,7 @@ Currently the database pages follow more or less the same format, we should audi
 Content Audit
 =============
 
-The content on many of these pages is fairly outdated, we must review each page, and track the audited pages, with a time stamp of the last audit on a centralized location (we could use the [ImportedPages](/index.php?title=ImportedPages&action=edit&redlink=1 "ImportedPages (page does not exist)") for this).
+The content on many of these pages is fairly outdated, we must review each page, and track the audited pages, with a time stamp of the last audit on a centralized location (we could use the ImportedPages for this).
 
 FAQs
 ----

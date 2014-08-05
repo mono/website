@@ -25,7 +25,7 @@ Here are some steps:
 2.  Always load style on Expose
 3.  Always resolve respective colors from that style
 
-[Step 1)](/index.php?title=Step_1)&action=edit&redlink=1 "Step 1) (page does not exist)")
+Step 1
 
 As simple as this...
 
@@ -60,7 +60,7 @@ public static class Fakes
 
 With this you get two fake widgets. One for button and one for entry. Initialization should not be done in private part so you delay its initialization to as late as possible. First reason are resources used by application, but second is more important. You need to make sure to delay any widget initialization until Gtk.Application.Init() has been called. And since the only time these will be touched are during expose event of another widget, initialization already happened.
 
-[Step 2 and 3)](/index.php?title=Step_2_and_3)&action=edit&redlink=1 "Step 2 and 3) (page does not exist)")
+Step 2 and 3
 
 Faking widget to look like normal Gtk+ entry widget. Using expose like that will survive any on the fly theme change and so on.
 

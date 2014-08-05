@@ -14,7 +14,7 @@ Binding Details
 
 These are the details of how the binding takes place.
 
-It is possible to use the [[Register](http://docs.go-mono.com/MonoMac.Foundation.RegisterAttribute)] attribute, [[Export](http://docs.go-mono.com/MonoMac.Foundation.ExportAttribute)] attribute, and [manual Objective-C selector invocation](/index.php?title=MonoMac/Documentation/Objective-C_Selectors&action=edit&redlink=1 "MonoMac/Documentation/Objective-C Selectors (page does not exist)") together to manually bind new (previously unbound) Objective-C types.
+It is possible to use the [[Register](http://docs.go-mono.com/MonoMac.Foundation.RegisterAttribute)] attribute, [[Export](http://docs.go-mono.com/MonoMac.Foundation.ExportAttribute)] attribute, and manual Objective-C selector invocation together to manually bind new (previously unbound) Objective-C types.
 
 First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
 

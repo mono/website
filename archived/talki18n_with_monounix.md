@@ -9,5 +9,5 @@ redirect_from:
 Talk:I18N with Mono.Unix
 ========================
 
-Removed content since this was a precursor to [Internationalization]({{ site.github.url }}/Internationalization "Internationalization").--[Ghe22](/index.php?title=User:Ghe22&action=edit&redlink=1 "User:Ghe22 (page does not exist)") 21:23, 9 Aug 2006 (EDT)
+Removed content since this was a precursor to [Internationalization]({{ site.github.url }}/Internationalization "Internationalization").--Ghe22 21:23, 9 Aug 2006 (EDT)
 

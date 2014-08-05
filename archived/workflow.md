@@ -109,13 +109,13 @@ Resources
 
 -   [Microsoft official site](http://msdn.microsoft.com/winfx/technologies/workflow/default.aspx)
 
--   The book Presenting Windows Workflow Foundation. ([ISBN 0672328488]({{ site.github.url }}/Special:BookSources/0672328488))
+-   The book Presenting Windows Workflow Foundation: ISBN 0672328488
 
--   The book Essential Windows Workflow Foundation. ([ISBN 0321399838]({{ site.github.url }}/Special:BookSources/0321399838))
+-   The book Essential Windows Workflow Foundation: ISBN 0321399838
 
--   Microsoft Windows Workflow Foundation Step by Step ([ISBN 073562335X]({{ site.github.url }}/Special:BookSources/073562335X))
+-   Microsoft Windows Workflow Foundation Step by Step: ISBN 073562335X
 
--   Pro WF: Windows Workflow in .NET 3.0 ([ISBN 1590597788]({{ site.github.url }}/Special:BookSources/1590597788))
+-   Pro WF: Windows Workflow in .NET 3.0: ISBN 1590597788
 
 Other open source workflow projects
 -----------------------------------

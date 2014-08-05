@@ -34,7 +34,7 @@ Mono Accessibility 1.0 Release Notes
 
 The Mono Accessibility project enables Windows applications to be fully accessible on Linux.
 
-This is our first stable release including UIA Provider and ATK support for all of the [System.Windows.Forms](/index.php?title=System.Windows.Forms&action=edit&redlink=1 "System.Windows.Forms (page does not exist)") controls.
+This is our first stable release including UIA Provider and ATK support for all of the System.Windows.Forms controls.
 
 Our next phase, the 2.0 release, will encompass a UIA Client implementation that targets both System.Windows.Forms and ATK applications, and UIA Provider support for [Moonlight]({{ site.github.url }}/Moonlight "Moonlight").
 

@@ -9,7 +9,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Aug 06
 ========================================
 
--!- calvin changed the topic of \#mono-a11y to: \*\*\* Iteration 12 Planning Meeting in progress \*\*\*\* - [http://www.mono-project.com/Accessibilit]({{ site.github.url }}/Accessibilit) y
+-!- calvin changed the topic of \#mono-a11y to: \*\*\* Iteration 12 Planning Meeting in progress \*\*\*\* - Accessibility
 07:01
 **\<@calvin\> **
 there are a number of people out of the office today
@@ -117,7 +117,7 @@ Strongwind documentation, but mostly focused on documentation
 specific to using and understanding our test harness, adding tests
 to the test suite, the "official" test machines in Provo, etc. This
 documentation is almost finished
-([http://www.mono-project.com/Accessibili]({{ site.github.url }}/Accessibili) ty:\_Testing\_Howto)
+(Accessibility:\_Testing\_Howto)
 This should basically finish up our basic automated framework for
 testing apps directly through pyatspi (using Strongwind), so next
 iteration I want to finally get into Orca testing and evaluate what
@@ -224,5 +224,5 @@ great! thanks everyone... have a good morning, good afternoon, and good night!
 **\<@Ray\> **
 thank you
 ** **
--!- calvin changed the topic of \#mono-a11y to: [http://www.mono-project/com/Accessibilit]({{ site.github.url }}/Accessibilit) y
+-!- calvin changed the topic of \#mono-a11y to: Accessibility
 

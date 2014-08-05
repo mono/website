@@ -102,8 +102,8 @@ Install Plink
 
 [plink.exe](http://the.earth.li/~sgtatham/putty/latest/x86/plink.exe)
 
-Install [TortoiseSVN](/index.php?title=TortoiseSVN&action=edit&redlink=1 "TortoiseSVN (page does not exist)")
--------------------------------------------------------------------------------------------------------------
+Install TortoiseSVN
+-------------------
 
 [TortoiseSVN download page](http://tortoisesvn.net/downloads)
 

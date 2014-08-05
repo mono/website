@@ -41,12 +41,12 @@ The API design for the CIL/Objective-C binding is covered in the [MonoMac API]({
 Samples
 -------
 
-We have ported some [sample applications](/index.php?title=MonoMac/Documentation/Samples&action=edit&redlink=1 "MonoMac/Documentation/Samples (page does not exist)") from CocoaObjective-C to [MonoMac]({{ site.github.url }}/MonoMac "MonoMac"). The samples **require MonoMac to be [installed]({{ site.github.url }}/MonoMac#obtaining-monomac "MonoMac")**.
+We have ported some sample applications from CocoaObjective-C to [MonoMac]({{ site.github.url }}/MonoMac "MonoMac"). The samples **require MonoMac to be [installed]({{ site.github.url }}/MonoMac#obtaining-monomac "MonoMac")**.
 
 The MonoMac community has produced dozens of samples, visit the up-to-date [github repository](https://github.com/mono/monomac/tree/master/samples) for the latest in samples.
 
 Tutorials
 ---------
 
-The [tutorials](/index.php?title=MonoMac/Tutorials&action=edit&redlink=1 "MonoMac/Tutorials (page does not exist)") on this site will guide you through the steps of getting your sample applications running from the command line.
+The tutorials on this site will guide you through the steps of getting your sample applications running from the command line.
 

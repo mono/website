@@ -15,7 +15,7 @@ Mono Feature Highlights
 -----------------------
 
 [Multi-Platform]({{ site.github.url }}/Supported_Platforms "Supported Platforms")  
-Runs on [Linux](/index.php?title=Linux&action=edit&redlink=1 "Linux (page does not exist)"), [OS X]({{ site.github.url }}/Mono:OSX "Mono:OSX"), [BSD]({{ site.github.url }}/Mono:BSD "Mono:BSD"), and [Microsoft Windows]({{ site.github.url }}/Using_Mono_on_Windows), including [x86]({{ site.github.url }}/Mono:X86 "Mono:X86"), [x86-64]({{ site.github.url }}/Mono:AMD64 "Mono:AMD64"), [ARM]({{ site.github.url }}/Mono:ARM "Mono:ARM"), [s390]({{ site.github.url }}/Mono:S390 "Mono:S390"), [PowerPC]({{ site.github.url }}/Mono:PowerPC "Mono:PowerPC") and much more
+Runs on Linux, [OS X]({{ site.github.url }}/Mono:OSX "Mono:OSX"), [BSD]({{ site.github.url }}/Mono:BSD "Mono:BSD"), and [Microsoft Windows]({{ site.github.url }}/Using_Mono_on_Windows), including [x86]({{ site.github.url }}/Mono:X86 "Mono:X86"), [x86-64]({{ site.github.url }}/Mono:AMD64 "Mono:AMD64"), [ARM]({{ site.github.url }}/Mono:ARM "Mono:ARM"), [s390]({{ site.github.url }}/Mono:S390 "Mono:S390"), [PowerPC]({{ site.github.url }}/Mono:PowerPC "Mono:PowerPC") and much more
 
 [Multi-Language]({{ site.github.url }}/Languages "Languages")  
 Develop in [C\# 4.0]({{ site.github.url }}/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8]({{ site.github.url }}/VisualBasic.NET_support), [Java]({{ site.github.url }}/Java "Java"), [Python]({{ site.github.url }}/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more

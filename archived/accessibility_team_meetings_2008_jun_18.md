@@ -516,7 +516,7 @@ sandy: do you want to briefly cover the parallel mono environment stuff and then
 
 sure thing
 
-okay, so I've updated this wiki page: \<A HREF="[http://mono-project.com/Accessibility]({{ site.github.url }}/Accessibility)"\>[http://mono-project.com/Accessibility]({{ site.github.url }}/Accessibility)\</A\>:\_B uildingProviderSide
+okay, so I've updated this wiki page: Accessibility:\_B uildingProviderSide
 
 I plan to keep instructions there
 
@@ -526,7 +526,7 @@ Basically, anybody who is actually going to build our code needs to have some mo
 
 and the safest way to do that is by installing Mono into a completely separate area, and having a completely different environment that you run whenever you want to use that mono installation
 
-the instructions for doing that are here: \<A HREF="[http://mono-project.com/index.php?title=Parallel\_Mono\_Environments.&action=edit]({{ site.github.url }}/index.php?title=Parallel_Mono_Environments.&action=edit)"\>[http://mono-project.com/index.php?title=]({{ site.github.url }}/index.php?title=) Parallel\_Mono\_Environments.&action=edit\</A\>
+the instructions for doing that are here: Parallel\_Mono\_Environments
 
 07:45
 
