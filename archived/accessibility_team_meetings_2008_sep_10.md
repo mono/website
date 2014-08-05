@@ -35,7 +35,7 @@ Accessibility: Team Meetings 2008 Sep 10
     (04:07:07 PM) mario: I'll spend my next iteration in bugzilla, fixing, opening and closing bugs.
     (04:07:26 PM) mario: btw
     (04:07:39 PM) mario: there's a new page
-    (04:07:39 PM) mario: http://www.mono-project.com/Accessibility:_Implementation
+    (04:07:39 PM) mario: Accessibility:_Implementation
     (04:07:45 PM) mario: that shows the missing events in the providers
     (04:08:12 PM) mario: we (and ngao and sandy) should implement missing events
     (04:08:23 PM) mario: done
@@ -87,7 +87,7 @@ Accessibility: Team Meetings 2008 Sep 10
     (04:21:14 PM) bgmerrell: This iteration I wrote a couple of Gtk Orca example tests.  They are in uia2atk/test/keystrokes.
     (04:21:52 PM) bgmerrell: I struggled with some oddness that occurs when testing with Orca's flat review keyboard commands, but I got those issued cleared up on the Orca mailing list.
     (04:22:03 PM) bgmerrell: I also wrote the documentation on how we will use Orca's existing test harness to perform our tests.
-    (04:22:15 PM) bgmerrell: http://www.mono-project.com/Accessibility:_Testing_Howto#Orca
+    (04:22:15 PM) bgmerrell: Accessibility:_Testing_Howto#Orca
     (04:23:16 PM) bgmerrell: this iteration i will be focused on getting the automated smoke tests put together
     (04:23:42 PM) bgmerrell: I have a lot of code that i need to review, too, but I am guessing I won't get to that this iteration ... maybe i will
     (04:23:45 PM) bgmerrell: done
@@ -162,6 +162,6 @@ Accessibility: Team Meetings 2008 Sep 10
     (04:45:20 PM) jpallen: keep it up! :-)
     (04:45:22 PM) jpallen: done
     (04:45:27 PM) knocte: thanks jpallen!
-    (04:46:01 PM) knocte has changed the topic to: Accessibility: http://www.mono-project.com/Accessibility
+    (04:46:01 PM) knocte has changed the topic to: Accessibility: Accessibility
     (04:46:18 PM) brad: thanks guys!  as usual, please send any feedback to the ideas i've proposed
 

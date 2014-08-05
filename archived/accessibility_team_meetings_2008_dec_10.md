@@ -10,7 +10,7 @@ Accessibility: Team Meetings 2008 Dec 10
 ========================================
 
 ``` nowiki
--!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | http://www.mono-project.com/Accessibilit y | Iteration Meeting in progress
+-!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | Accessibility | Iteration Meeting in progress
 ```
 
 07:03
@@ -170,7 +170,7 @@ I have a wiki page prepared that should help a bit
 ```
 
 ``` nowiki
-http://mono-project.com/Accessibility:_S print_4
+Accessibility:_Sprint_4
 ```
 
 ``` nowiki
@@ -1038,7 +1038,7 @@ knocte, that will be cool :)
 ```
 
 ``` nowiki
-everybody, refresh http://mono-project.com/Accessibility:_S print_4
+everybody, refresh Accessibility:_Sprint_4
 ```
 
 07:34
@@ -2120,6 +2120,6 @@ brad, ok, that makes clear, thanks ;)
 ```
 
 ``` nowiki
--!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | http://www.mono-project.com/Accessibilit y | Latest release is 0.9.0
+-!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | Accessibility | Latest release is 0.9.0
 ```
 

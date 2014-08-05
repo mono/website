@@ -1290,7 +1290,7 @@ Map UIA Provider interfaces to ATK|Planned|Mike||
 |**Gtk Orca test**
 Finish a complete orca test for our code that utilizes their test harness to execute it|Done|Brian|uia2atk/test/keystrokes|
 |**Orca test docs**
-Add information about how we will use Orca to test to the [Accessibility:\_Testing\_Howto]({{ site.github.url }}/Accessibility:_Testing_Howto "Accessibility: Testing Howto")|Done|Brian|[http://www.mono-project.com/Accessibility:\_Testing\_Howto\#Orca]({{ site.github.url }}/Accessibility:_Testing_Howto#Orca)|
+Add information about how we will use Orca to test to the [Accessibility:\_Testing\_Howto]({{ site.github.url }}/Accessibility:_Testing_Howto "Accessibility: Testing Howto")|Done|Brian|[Accessibility:\_Testing\_Howto\#Orca]({{ site.github.url }}/Accessibility:_Testing_Howto#Orca)|
 |**Implement Winforms Samples**
 Continue to implement winforms test samples|90%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls]({{ site.github.url }}/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (65/72)|
 |**Work on Strongwind**

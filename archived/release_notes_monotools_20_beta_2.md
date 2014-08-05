@@ -42,11 +42,11 @@ Profile-Based Deployment
 
 MonoTools 2.0 introduces MonoTools Server Profiles. Profiles allow you to save your frequently used servers (and local Mono instances) so you can easily switch between them. Think of them like "bookmarks" for your servers, saving you the effort of keying server names/ip addresses, or waiting on Mono Tools to find nearby servers.
 
-[http://mono-project.com/files/4/4e/Profiles.png]({{ site.github.url }}/files/4/4e/Profiles.png)
+[Profiles.png]({{ site.github.url }}/archived/images/4/4e/Profiles.png)
 
 However, profiles can store more than just the server address. Each profile can have completely independent settings, allowing you to set up things like IOMAP, so you can quickly switch between profiles with case-sensitivity enabled or disabled.
 
-[http://mono-project.com/files/f/f9/Advanced.png]({{ site.github.url }}/files/f/f9/Advanced.png)
+[Advanced.png]({{ site.github.url }}/archived/images/f/f9/Advanced.png)
 
 You may also note a few new settings are available. We got several feature requests for allowing applications to be run with arbitrary environment variables or arguments passed to Mono, which can now be assigned per-profile.
 
@@ -122,7 +122,7 @@ The beta is public, so download it now and let us know how it goes!
 
 -   Use the openSUSE 1click from your existing Linux system:
 
-[http://mono-project.com/files/2/2b/Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
+[Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
 
 **Note:** After installing on Linux, launch the "MonoTool GUI Server" from the application menu to start the server.
 

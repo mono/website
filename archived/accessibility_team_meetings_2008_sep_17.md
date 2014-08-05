@@ -242,7 +242,7 @@ oh, I have a question
 07:05
 
 ``` nowiki
-will we keep using this, too? http://mono-project.com/Accessibility:_P roject_Schedule#Current_Iterations
+will we keep using this, too? Accessibility:_Project_Schedule#Current_Iterations
 ```
 
 ****
@@ -372,7 +372,7 @@ okay, well I have been doing a lot of catch-up
 ```
 
 ``` nowiki
-mgorse: http://mono-project.com/Accessibility:_B ridge_Functional_Specification
+mgorse: Accessibility:_Bridge_Functional_Specification
 ```
 
 ****
@@ -722,7 +722,7 @@ so, I wrote a table showing the missing and already-implemented:
 ```
 
 ``` nowiki
-http://www.mono-project.com/Accessibilit y:_Implementation
+Accessibility:_Implementation
 ```
 
 07:19
@@ -2314,7 +2314,7 @@ lol
 ```
 
 ``` nowiki
--!- Accessibility changed the topic of #mono-a11y to: Accessibility: http://www.mono-project.com/Accessibilit y
+-!- Accessibility changed the topic of #mono-a11y to: Accessibility: Accessibility
 ```
 
 ****

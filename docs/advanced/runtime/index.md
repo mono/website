@@ -141,7 +141,7 @@ bash$ mcs hello.cs
 bash$ mkbundle --static hello.exe -o hello
  OS is: Linux
  Note that statically linking the LGPL Mono runtime has more licensing restrictions than dynamically linking.
- See http://www.mono-project.com/Licensing for details on licensing.
+ See [Licensing]({{ site.github.url }}/docs/faq/licensing/) for details on licensing.
  Sources: 1 Auto-dependencies: False
    embedding: /tmp/hello.exe
  Compiling:

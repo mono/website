@@ -10,7 +10,7 @@ Accessibility: Team Meetings 2008 Nov 26
 ========================================
 
 ``` nowiki
--!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | http://www.mono-project.com/Accessibilit y | Iteration meeting in progress
+-!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | Accessibility | Iteration meeting in progress
 ```
 
 07:01
@@ -1782,7 +1782,7 @@ decriptor|brb: mind if I create an account for myself on build0?  I'm tired of l
 08:18
 
 ``` nowiki
--!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono | http://www.mono-project.com/Accessibilit y | Latest release is 0.9.0
+-!- sandy changed the topic of #mono-a11y to: Accessibility &amp; Mono |Accessibility | Latest release is 0.9.0
 ```
 
 08:24

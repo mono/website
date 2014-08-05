@@ -912,7 +912,7 @@ I followed with my delayed developments&amp;tests (a bit stuck also because of r
 ```
 
 ``` nowiki
-invested some time on documentation: updated the page http://www.mono-project.com/Accessibilit y:_Mapping_UIA_to_ATK which was outdated, prior to merging it with http://www.mono-project.com/Accessibilit y:_Control_Status as I talked with brian; work on bugs 418909 and 418916 with brad; updated http://www.mono-project.com/Accessibilit y:_Getting_Started_With_Development with some hints, and http://www.mono-project.com/Accessibilit y:_T
+invested some time on documentation: updated the page Accessibility:_Mapping_UIA_to_ATK which was outdated, prior to merging it with Accessibility:_Control_Status as I talked with brian; work on bugs 418909 and 418916 with brad; updated Accessibility:_Getting_Started_With_Development with some hints, and Accessibility:_T
 ```
 
 ``` nowiki

@@ -114,7 +114,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'us know'+'<\/'+'a'+'>');
 <li><a href="http://www.go-mono.com/archive/1.0.6/">Release notes</a> for Mono 1.0.6, xsp, mod_mono, monodoc</li>
 <li><a href="http://www.go-mono.com/archive/1.1.4/">Release notes</a> for Mono 1.1.4</li>
 </ul>
-<p>pre-built packages for Linux, MacOS and Windows, are available from: <a href="{{ site.github.url }}/downloads">http://www.mono-project.com/downloads</a></p></td>
+<p>pre-built packages for Linux, MacOS and Windows, are available from: <a href="{{ site.github.url }}/downloads">downloads</a></p></td>
 <td align="left"><h3>Web Site Migration</h3>
 <h2>Mono Web Developers</h2>
 <p>Learning how to edit the Wiki: <a href="http://meta.wikimedia.org/wiki/Help:Editing#The_wiki_markup">Wiki Markup</a></p>

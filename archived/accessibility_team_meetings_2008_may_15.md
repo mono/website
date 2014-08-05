@@ -24,8 +24,8 @@ Meeting Summary
         there are various responsibilities that are common between both of them, but a devmgr has direct reports and a prjmgr does not
 
     Topic--detailed breakdown of phase 1 architecture (calvin)
-    the main page: http://www.mono-project.com/Accessibility (have a bit of changed)
-    Architecture document: http://www.mono-project.com/Accessibility:_Architecture (have expanded)
+    the main page: Accessibility (have a bit of changed)
+    Architecture document: Accessibility:_Architecture (have expanded)
         In phase 1: focus on the Provider side->
             Four logical sections of work to be done:
                    1.mgorse: is doing on port at-spi to DBUS, we will be investigation moving all of our work over to use it and perhaps extend it once mgorse done that work. (that is not part of agreement with Microsoft)
@@ -40,8 +40,8 @@ Meeting Summary
                         Brian and Calen: need to consider how testing is going to integrate into testing and verifying the UIA Provider interfaces? test all of the classes to make sure their enums  and such were valid. (will discuss it in a later meeting)
 
     Topic--phase 1 development roadmap (calvin)
-    roadmap: http://www.mono-project.com/Accessibility:_Roadmap
-    schedule: http://www.mono-project.com/Accessibility:_Project_Schedule 
+    roadmap: Accessibility:_Roadmap
+    schedule: Accessibility:_Project_Schedule 
             1.notes: the iterative schedule is fluid: you should adjust the next iteration if you take longer than a weed, you should move on to next week's stuff if you take less than a week, you should change sequence of winforms controls and UIA control types if there is work that needs to be done in a specific order.
             2.task: MarioC and Sandy would talk and swap some controls in the iteration,
                         All people take a look at the schedule and do a planning on their own,
@@ -184,10 +184,10 @@ RAW IRC Capture
     <jpallen> i'll let calvin take this one
     --- jpallen has changed the topic to: ** UI Automation Team Meeting in Progress ** Topic:  detailed breakdown of phase 1 architecture (calvin)
     <calvin> I've done a bit of Wiki work the last week or two on getting things cleaned up
-    The main page is organized now in a way that make sense I hope: http://www.mono-project.com/Accessibility
+    The main page is organized now in a way that make sense I hope: Accessibility
     Please look through it and either make changes or suggest them
     but on to the Architecture....
-    I've also expanded the Architecture document: http://www.mono-project.com/Accessibility:_Architecture
+    I've also expanded the Architecture document: Accessibility:_Architecture
     Most of you are now familiar with this but perhaps the extra documentation will help explain the details
     I think I'll just give an overview of the way we are going to map from UIA to ATK and allow you to ask questions
     Many of you are familiar with this because you are working on it but I want to review for the rest of the team
@@ -241,14 +241,14 @@ RAW IRC Capture
     <jpallen> let's move on to: phase 1 development roadmap (calvin)
     --- jpallen has changed the topic to: ** UI Automation Team Meeting in Progress ** Topic:  phase 1 development roadmap (calvin)
     <calvin> So I've had a roadmap out there on the wiki for some time now
-    http://www.mono-project.com/Accessibility:_Roadmap
+    Accessibility:_Roadmap
     and it hasn't really changed
     most of that roadmap comes from our agreement with Microsoft
     so it's a fixed thing
     What we haven't had is a real schedule
     one that really breaks down the work
     So starting on Monday, we are going to begin to work in 1 week iterations
-    http://www.mono-project.com/Accessibility:_Project_Schedule
+    Accessibility:_Project_Schedule
     For those that have not worked in iterations, they are basically a period of time where each member of the team will have tasks assigned to them
     So if you look at that page, you'll see we have 26 iterations defined
     <jpallen> i have a couple of comments about iterative development
@@ -353,10 +353,10 @@ RAW IRC Capture
     <bgmerrell> will qa have code that can actually be packaged, installed, and tested against by iteration 1?
     <calvin> bgmerrell: packaged?  not sure about packaged, but installed and tested yes
     But if we could do packaging, that's what RayWang would do
-    <sandy> bgmerrell: see http://www.mono-project.com/Accessibility:_BuildingProviderSide
+    <sandy> bgmerrell: see Accessibility:_BuildingProviderSide
     <RayWang> yes, 
     <calvin> What does everyone think?
-    <MarioC> calvin, It's listed in http://www.mono-project.com/Accessibility:_Control_Status, however we can list it again
+    <MarioC> calvin, It's listed in Accessibility:_Control_Status, however we can list it again
     <calvin> knocte: I brought this up earlier and you seemed to think it was too early
     <bgmerrell> okay, so we'll need to adjust our iteration 1.. we'll probably use it to set up a test framework and maybe start playing with controls that are done, like Label.
     <calvin> the packages would only be used for testing to install our stuff and run automated tests on it
@@ -451,6 +451,6 @@ RAW IRC Capture
     mgorse: was there anything else you wanted to bring up about the Linux Foundation?
     <mgorse> calvin: no
     <calvin> ok, then I'm going to officially end the meeting
-    --- calvin has changed the topic to: http://www.mono-project.com/Accessibility
+    --- calvin has changed the topic to: Accessibility
     <calvin> Thanks everyone
 

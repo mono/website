@@ -50,9 +50,9 @@ You can query or report new bugs using Bugzilla, here are some links:
 ||
 ||Query|Add|
 |**MonoTouch Bugs**|||
-|  Runtime|[http://mono-project.com/files/7/79/Magnifier.png](http://tinyurl.com/l9xfck)|[http://mono-project.com/files/a/a7/Add.png](http://tinyurl.com/lxsfrz)|
-|  Class Libraries|[http://mono-project.com/files/7/79/Magnifier.png](http://tinyurl.com/knzc8s)|[http://mono-project.com/files/a/a7/Add.png](http://tinyurl.com/mfcw8k)|
-|  Tools|[http://mono-project.com/files/7/79/Magnifier.png](http://tinyurl.com/lxc273)|[http://mono-project.com/files/a/a7/Add.png](http://tinyurl.com/lgm6vd)|
+|  Runtime|[View](http://tinyurl.com/l9xfck)|[Add](http://tinyurl.com/lxsfrz)|
+|  Class Libraries|[View](http://tinyurl.com/knzc8s)|[Add](http://tinyurl.com/mfcw8k)|
+|  Tools|[View](http://tinyurl.com/lxc273)|[Add](http://tinyurl.com/lgm6vd)|
 
 Release History
 ===============

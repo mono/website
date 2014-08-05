@@ -43,7 +43,7 @@ Step 1: Set up Environment
 
 Your finished directory should look like this:
 
-[http://mono-project.com/files/4/48/Filelist.png]({{ site.github.url }}/files/4/48/Filelist.png)
+[Filelist.png]({{ site.github.url }}/archived/images/4/48/Filelist.png)
 
 Step 2: Edit the Configuration File
 -----------------------------------

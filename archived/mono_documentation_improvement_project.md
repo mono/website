@@ -12,7 +12,7 @@ Mono Documentation Improvement Project
 
  Although most of the concepts from the Microsoft.NET Framework can be applied to Mono, we do need to have a complete set of free documentation written specifically for Mono.
 
-The [http://www.mono-project.com/]({{ site.github.url }}/) wiki is designed to be a centralized repository for all mono-related documentation and information, to make it easy for users to find what they need.
+The wiki is designed to be a centralized repository for all mono-related documentation and information, to make it easy for users to find what they need.
 
 The wiki is currently a pretty good mess, and we desperately need your help with cleaning up existing pages, as well as writing new ones.
 

@@ -702,7 +702,7 @@ Mono currently runs on [Linux]({{ site.github.url }}/docs/about-mono/supported-p
 
 **Does Mono run on Windows?**
 
-Yes. You can get pre-compiled binaries from [http://www.mono-project.com/downloads/index.html]({{ site.github.url }}/download/)
+Yes. You can get pre-compiled binaries from [downloads]({{ site.github.url }}/download/)
 
 **What is WAPI?**
 
@@ -720,7 +720,7 @@ Deleting this shared data can have bad effects on mono applications. :-)
 
 **Does Mono run on Linux?**
 
-Yes. You can get pre-compiled binaries from [http://www.mono-project.com/downloads/index.html]({{ site.github.url }}/download/)
+Yes. You can get pre-compiled binaries from [downloads]({{ site.github.url }}/download/)
 
 **Will I require Cygwin to run mono?**
 

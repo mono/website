@@ -2778,7 +2778,7 @@ haha
 ```
 
 ``` nowiki
--!- knocte changed the topic of #mono-a11y to: Accessibility: http://www.mono-project.com/Accessibilit y
+-!- knocte changed the topic of #mono-a11y to: Accessibility: Accessibility
 ```
 
 ****

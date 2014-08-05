@@ -55,7 +55,7 @@ RAW IRC Capture
     [11:03] <jpallen> brian, do you want to go ahead and post the agenda and take us through it?
     [11:03] <Ray> sure, thanks
     [11:04] <bgmerrell> Sure, let me paste it somewhere
-    [11:05] <bgmerrell> http://www.mono-project.com/Accessibility:_QA_Meetings_2008_Jun_5
+    [11:05] <bgmerrell> Accessibility:_QA_Meetings_2008_Jun_5
     [11:05] <Ray> nice :)
     [11:06] <bgmerrell> jpallen: I wanted to get your input on what you had in mind for Ray's role.  Is he 1/2 QA and 1/2 build?
     [11:06] <jpallen> yes, that is the plan.  i was think half and half
@@ -230,7 +230,7 @@ RAW IRC Capture
     [11:53] <bgmerrell> Calen:  That is a good point, as long as we are all consistent we can use any naming convention you want :)
     [11:55] <bgmerrell> So you can define the standards you think are best, then Ray and I and the community can check them before we name files and write tests :)
     [11:55] <bgmerrell> Calen: ^
-    [11:55] <Calen> i noticed it's not easy to give a long name, so i notify them in http://www.mono-project.com/Accessibility:_Test_Plan_WinForms_Controls
+    [11:55] <Calen> i noticed it's not easy to give a long name, so i notify them in Accessibility:_Test_Plan_WinForms_Controls
     [11:55] <bgmerrell> Calen: great!
     [11:56] <bgmerrell> Calen:  I really like that page, by the way
     [11:56] <bgmerrell> Calen: you did a good job on it
@@ -296,7 +296,7 @@ RAW IRC Capture
     [12:19] <Ray> bgmerrell: oh yeah, that's what i want to know.
     [12:21] <jpallen> bye all.  brian, get some some sleep.  calen and ray have a nice afternoon
     [12:21] <-- jpallen has left this server (Leaving).
-    [12:22] *** bgmerrell sets the channel topic to "http://www.mono-project.com/Accessibility".
+    [12:22] *** bgmerrell sets the channel topic to "Accessibility".
     [12:22] <bgmerrell> Calen:  Oh, right!  using together with accerciser...
     [12:22] <Calen> dose it mentioned in assertResult in checkbuttonframe.py? when we check a Button control, we shall get a "push button" RoleName except "checked/unchecked"?
     [12:23] <bgmerrell> Calen: sorry, i didn't understand

@@ -22,7 +22,7 @@ To open a standard Gtk\# window, put a drawing area on it, and then some pango t
 
 Start a new Gtk\# 2.0 project using monodevelop. You will see in the References section of the Solution the following references: gdk-sharp, gtk-sharp, glib-sharp, glade-sharp and pango-sharp. So we don't need to make any more references because the project we created did it for us already. For other sorts of projects, you would need to add these yourself - just so you know.
 
-I assume that you know how to create a basic Gtk\# window and that your Main.cs file calls an instance of a Gtk application. See the standard tutorial at: [http://www.mono-project.com/GtkSharpBeginnersGuide]({{ site.github.url }}/GtkSharpBeginnersGuide) first if you don't understand this.
+I assume that you know how to create a basic Gtk\# window and that your Main.cs file calls an instance of a Gtk application. See the standard tutorial at: [GtkSharpBeginnersGuide]({{ site.github.url }}/GtkSharpBeginnersGuide) first if you don't understand this.
 
 Change the MyWindow.cs file so that it looks like this:
 

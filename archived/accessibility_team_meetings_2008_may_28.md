@@ -48,7 +48,7 @@ RAW IRC Capture
 
     <calvin> I'll post the entire log to the wiki
      sandy: but that would be good
-     I've modified the wiki with our schedule: http://www.mono-project.com/Accessibility:_Project_Schedule
+     I've modified the wiki with our schedule: Accessibility:_Project_Schedule
      and moved Iteration 1 to the past iterations
      so iteration 2 is now at the top
      You'll all note that several people have updated the status of iteration 1
@@ -174,7 +174,7 @@ RAW IRC Capture
     <mgorse> I had that for iteration 2, but, now that I've looked at it a bit more, I'm realizing that it draws in a lot more symbols than what I was thinking.  So I might want to move the part about testing the registry into the future and move up things that I was planning on doing in the future (ie, the component and text interfaces) into this iteration
      over
     <calvin> mgorse: thanks
-     So I'd like everyone to update their status in the table here: http://www.mono-project.com/Accessibility:_Project_Schedule
+     So I'd like everyone to update their status in the table here: Accessibility:_Project_Schedule
      or at least the status for their tasks in iteration 1
     <knocte> calvin: my turn?
     <calvin> knocte: yes, sorry

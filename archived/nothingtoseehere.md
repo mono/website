@@ -32,12 +32,6 @@ Mono's runtime, compilers, and libraries are distributed under OSI approved lice
 [Comprehensive Technology Coverage]({{ site.github.url }}/Plans "Plans")  
 Bindings and managed implementations of many popular libraries and protocols
 
-<!-- -->
-
-``` rss
-http://www.mono-project.com/news/index.rss2|short
-```
-
 [View more news items]({{ site.github.url }}/news)
 
 [Subscribe to Mono news feed]({{ site.github.url }}/news/index.rss2)

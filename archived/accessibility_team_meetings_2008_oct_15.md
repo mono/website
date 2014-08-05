@@ -1274,7 +1274,7 @@ then we all (calen, ray, me) did some work on estimation
 07:53
 
 ``` nowiki
-http://www.mono-project.com/Accessibilit y:_Test_Plan_WinForms_Controls
+Accessibility:_Test_Plan_WinForms_Controls
 ```
 
 ``` nowiki
@@ -1530,7 +1530,7 @@ ok, then to finish the meeting, I would like to thank all the people for coming,
 08:04
 
 ``` nowiki
-please try to focus well on our roadmap ( http://www.mono-project.com/Accessibilit y:_Roadmap ), I'm sure we will be on time for the releases with this hard work
+please try to focus well on our roadmap ( Accessibility:_Roadmap ), I'm sure we will be on time for the releases with this hard work
 ```
 
 ``` nowiki
@@ -1544,7 +1544,7 @@ thanks!
 ```
 
 ``` nowiki
--!- knocte changed the topic of #mono-a11y to: Accessibility: http://www.mono-project.com/Accessibilit y
+-!- knocte changed the topic of #mono-a11y to: Accessibility: Accessibility
 ```
 
 08:05

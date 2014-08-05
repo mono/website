@@ -24,7 +24,7 @@ Meeting Summary
     (03:48:02 PM) knocte: guys I'm wondering: is it a good idea idea to update that wiki page everybody at the same time? I think that you can overwrite other's changes if you do it at the same time
     (03:48:19 PM) sandy: knocte: thanks, I'll change the topic now that it's closer to the meeting
     (03:48:21 PM) mode (+o knocte ) by sandy
-    (03:48:30 PM) sandy has changed the topic to: Iteration 3-4 Wrap-up/Planning Meeting begins in less than 20 minutes: http://mono-project.com/Accessibility:_Project_Schedule
+    (03:48:30 PM) sandy has changed the topic to: Iteration 3-4 Wrap-up/Planning Meeting begins in less than 20 minutes: Accessibility:_Project_Schedule
     (03:48:56 PM) MarioC: sandy, I think we should stop adding new providers to our plans, I think that because doesn't make any sense adding "planned" to each new provider...
     (03:48:59 PM) sandy: knocte: I had that message up when it was an hour before, too
     (03:49:06 PM) MarioC: sandy, every provider is "planned", indeed
@@ -46,7 +46,7 @@ Meeting Summary
     (03:53:07 PM) knocte: hi mgorse
     (03:53:12 PM) sandy: knocte: I don't recall exactly, but I know there have been formatting feature I've wanted to use but can't because they exist in newer versions of MW
     (03:53:21 PM) knocte: I see
-    (03:53:25 PM) sandy has changed the topic to: Iteration 3-4 Wrap-up/Planning Meeting begins in less than 10 minutes: http://mono-project.com/Accessibility:_Project_Schedule
+    (03:53:25 PM) sandy has changed the topic to: Iteration 3-4 Wrap-up/Planning Meeting begins in less than 10 minutes: Accessibility:_Project_Schedule
     (03:53:34 PM) knocte: well anyway I think they wanted to switch to dekiwiki
     (03:53:53 PM) sandy: well, it's good to put more pressure on them to do *something*
     (03:54:00 PM) knocte: yes
@@ -84,7 +84,7 @@ Meeting Summary
 
 
 
-    (04:00:16 PM) knocte has changed the topic to: http://www.mono-project.com/Accessibility | Iteration 4 Planning Meeting | http://mono-project.com/Accessibility:_Project_Schedule#Current_Iterations
+    (04:00:16 PM) knocte has changed the topic to: Accessibility | Iteration 4 Planning Meeting | Accessibility:_Project_Schedule#Current_Iterations
     (04:00:30 PM) knocte: Calvin asked me to run the meeting
     (04:00:41 PM) knocte: I don't know if you all received the schedule annotation
     (04:01:17 PM) knocte: I actually did a mistake and wrote "weekend" instead of "week", so I meant he was not going to be there for the week
@@ -193,7 +193,7 @@ Meeting Summary
     (04:22:00 PM) Calen: sandy: you can take them from svn
     (04:22:03 PM) knocte: Calen: your turn, after you answer sandy :)
     (04:22:17 PM) Calen: knocte: okay
-    (04:22:26 PM) Calen: I have created a wiki page for test coding standards posted in http://www.mono-project.com/Accessibility:_Test_Coding_Standard. but it should be reviewed with Brian.
+    (04:22:26 PM) Calen: I have created a wiki page for test coding standards posted in Accessibility:_Test_Coding_Standard. but it should be reviewed with Brian.
     (04:22:59 PM) Calen: in next Iteration, i will review and finish test coding standards.
     (04:23:27 PM) Calen: and update winforms application samples to abidy by the test coding standards.
     (04:24:04 PM) Calen: and start to create strongwind test scripts for winforms according to Brian's help :)
@@ -289,7 +289,7 @@ Meeting Summary
     (04:41:27 PM) knocte: oh yeah, maybe it's a good idea to research about the makefile generation feature of MonoDevelop
     (04:41:28 PM) decriptor: that and I noticed that the dlls are in svn
     (04:41:35 PM) sandy: because our MD solution makes a lot of assumptions about our setup
-    (04:41:35 PM) bgmerrell: sandy: we have this showing our WinForms samples thus far  http://www.mono-project.com/Accessibility:_Test_Plan_WinForms_Controls
+    (04:41:35 PM) bgmerrell: sandy: we have this showing our WinForms samples thus far  Accessibility:_Test_Plan_WinForms_Controls
     (04:41:44 PM) knocte: yeah, I just told what MarioC pointed
     (04:41:52 PM) decriptor: knocte: it worked great for my litle project I did a while ago
     (04:42:11 PM) sandy: decriptor: I will work on it
@@ -302,7 +302,7 @@ Meeting Summary
     (04:43:09 PM) bgmerrell: knocte: you're probably interested in what i was just telling sandy, too.
     (04:43:37 PM) knocte: yeah, sounds good
     (04:43:51 PM) knocte: well first, let's say we can consider the meeting finished, thanks to all!
-    (04:44:04 PM) knocte has changed the topic to: http://www.mono-project.com/Accessibility
+    (04:44:04 PM) knocte has changed the topic to: Accessibility
     (04:44:05 PM) sandy: thank you knocte for doing such a great job leading it
     (04:44:15 PM) Ray: thanks you! 
     (04:44:26 PM) knocte: thanks sandy, you all have helped me much too

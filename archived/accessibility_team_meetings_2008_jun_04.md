@@ -22,7 +22,7 @@ Meeting Summary
 
     <calvin> (1)did a bit more work on the Button class and Pane.
 
-    <Calen> (1)have finished 34% winforms sample applications, and have imported them into mono test suite.  (2) changed the status of "http://www.mono-project.com/Accessibility:_Test_Plan_WinForms_Controls" and to notify each control link to which sample app
+    <Calen> (1)have finished 34% winforms sample applications, and have imported them into mono test suite.  (2) changed the status of "Accessibility:_Test_Plan_WinForms_Controls" and to notify each control link to which sample app
 
     <bgmerrell> (1)got Mono SVN access. (2)got a fully functional automated test for strongwind tests. (3)document for running tests. (4)have a method to automate the testing on all the lab machine
 
@@ -64,7 +64,7 @@ Meeting Summary
 RAW IRC Capture
 ---------------
 
-    *   sandy has changed the topic to: http://www.mono-project.com/Accessibility | Iteration 3 Planning Meeting @ 1400 UTC (nowish) | http://mono-project.com/Accessibility:_Project_Schedule#Current_Iterations
+    *   sandy has changed the topic to: Accessibility | Iteration 3 Planning Meeting @ 1400 UTC (nowish) | Accessibility:_Project_Schedule#Current_Iterations
     *   bgmerrell stumbles in
     <calvin>  sandy: thanks, and right on time!
     <Ray> yes, we are on time. :)
@@ -102,7 +102,7 @@ RAW IRC Capture
     <calvin>  sandy: yes, but wait
     <mgorse>  One go-round, or two?
     *   sandy folds his hands in his lap, waits patiently
-    <calvin>  http://www.mono-project.com/Accessibility:_Project_Schedule
+    <calvin>  Accessibility:_Project_Schedule
     <calvin>  There is a link to the Schedule
     <calvin>  In the future, I would like everyone to update their current status in the at table BEFORE this meeting
     <calvin>  that way when you go through your status, you're just adding detail to the information already provided
@@ -173,7 +173,7 @@ RAW IRC Capture
     <calvin>  ok, done
     <calvin>  Calen, go
     <Calen>   i have finished 34% winforms sample applications, and have imported them into mono test suite.
-    <Calen>   i also changed the status of "http://www.mono-project.com/Accessibility:_Test_Plan_WinForms_Controls" and to notify each control link to which sample app
+    <Calen>   i also changed the status of "Accessibility:_Test_Plan_WinForms_Controls" and to notify each control link to which sample app
     <Calen>   beacuse something app include more controls.
     <Calen>   so in next iteration, i will continue to write winforms applications
     <Calen>   done

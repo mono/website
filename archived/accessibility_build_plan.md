@@ -345,7 +345,7 @@ The [Product roadmap]({{ site.github.url }}/Accessibility:_Roadmap)
 
 ### Build Systems
 
-[http://www.mono-project.com/BuildSystem/MonoBuild]({{ site.github.url }}/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.
+[BuildSystem/MonoBuild]({{ site.github.url }}/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.
  [https://build.opensuse.org/](https://build.opensuse.org/) OBS---This is a really cool build system that can handle several different distributions and architectures
 
 Build plan identifier

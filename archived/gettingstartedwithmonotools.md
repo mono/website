@@ -40,7 +40,7 @@ Quick Links
 -   Linux
     -   Use the openSUSE 1click from your existing Linux system:
 
-          [http://mono-project.com/files/2/2b/Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
+          [Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
 
 -   Other platforms will need to build from the [Mono Tools 2.0 Server sources](http://ftp.novell.com/pub/mono/monotools/latest/monotools-server-2.0.tar.bz2)
 
@@ -70,7 +70,7 @@ Download the Visual Studio 2008 or Visual Studio 2010 installer from the [Mono T
 
 -   Use the openSUSE 1click from your existing Linux system:
 
-          [http://mono-project.com/files/2/2b/Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
+          [Monovs-1click.png](http://go-mono.com/monotools-download/monotools.ymp)
 
 **Note:** After installing on Linux, launch the "MonoTool GUI Server" from the application menu to start the server.
 
@@ -95,7 +95,7 @@ Installing the Linux Server Component on openSUSE or SLE
 
 -   Use the openSUSE 1click from your Linux system:
 
-          [http://mono-project.com/files/2/2b/Monovs-1click.png](http://go-mono.com/monotools/monovs.ymp)
+          [Monovs-1click.png](http://go-mono.com/monotools/monovs.ymp)
 
 **Everything should now be ready to go! Guides to using each feature are available from the [Mono Tools homepage](http://mono-tools.com/).**
 
