@@ -27,6 +27,7 @@ Mono shipped its first release in June 2004, and the project is moving forward i
 
 If you are interested in contributing, here are some pointers:
 
+-   [Contribution HowTo]({{ site.github.url }}/community/contributing/contribution-howto/)
 -   [Bugs]({{ site.github.url }}/community/bugs/): Known bugs in Mono, you can look at which issues people are reporting.
 -   MoMA Migration Reports: These are report of applications that people want to run with Mono, and the APIs that are missing or pending
 -   [Resources]({{ site.github.url }}/archived/Resources "Resources"): Go to this page to take a look at the status of our API classes.

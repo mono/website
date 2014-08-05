@@ -21,7 +21,7 @@ References
 -   [What's New?]({{ site.github.url }}/docs/gui/gtksharp/new-in-version-2x/)
 -   [Release Plans]({{ site.github.url }}/docs/gui/gtksharp/plan/)
 -   [Articles and Tutorials on Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/tutorials/)
--   [Component Descriptions]({{ site.github.url }}/docs/gui/gtksharp/details/#gtk2327s-components)
+-   [Component Descriptions]({{ site.github.url }}/docs/gui/gtksharp/details/#gtks-components)
 
 Features
 --------
@@ -64,3 +64,6 @@ Current Source Releases:
 
 Sources for older releases can be downloaded from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp).
 
+### GTK#3 porting guide
+
+See [GTK#3 porting guide]({{ site.github.url }}/docs/gui/gtksharp/gtksharp3-porting-guide/)

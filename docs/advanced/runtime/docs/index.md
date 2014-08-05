@@ -28,3 +28,5 @@ Additionally, Jambunathan K has a very interesting blog that talks about [Mono R
 
 For information on project planning see [Runtime\_Projects]({{ site.github.url }}/docs/advanced/runtime/runtime-projects/).
 
+For runtime hacking see [Runtime Hacking]({{ site.github.url }}/docs/advanced/runtime/runtime-hacking/).
+

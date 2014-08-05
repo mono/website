@@ -166,6 +166,11 @@ Tachy
 
 A subset of Scheme language called [Tachy](http://www.kenrawlings.com/pages/Tachy)
 
+Mixing with other languages
+---------------------------
+
+See [Mixing with other languages]({{ site.github.url }}/docs/about-mono/languages/mixing-with-other-languages/).
+
 .net-language links
 ===================
 

@@ -15,3 +15,5 @@ title: How to make a good bug report
 11. Do not expect us to debug your software. We can not debug every application that is submitted to us, to improve the response time, you should create a self-contained test case that isolates the problem.
 
 Please include at least 6 items from the list in your bug report. Incomplete bug reports are very hard to understand, reproduce and fix.
+
+See also [bug severity definitions]({{ site.github.url }}/commmunity/bugs/bug-severity-definitions/).

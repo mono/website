@@ -8,6 +8,8 @@ Libgdiplus is the Mono library that provide a GDI+ comptible API on non-Windows 
 
 Mono's implementation of GDI+ lives in the [libgdiplus SVN module](http://anonsvn.mono-project.com/viewvc/trunk/libgdiplus/) and includes it's own internal copy of Cairo (version 1.6.4) but will use a newer system version when available (since Mono 2.4).
 
+See [here]({{ site.github.url }}/docs/gui/problemgdiplusinit/) if you're having problems initializing libgdiplus.
+
 Plans
 =====
 

@@ -183,6 +183,10 @@ See the [Performance Tips]({{ site.github.url }}/docs/advanced/performance-tips/
 
 Mono's [support for DTrace]({{ site.github.url }}/docs/debug+profile/profile/dtrace/) is available on Solaris and MacOS X.
 
+### Logging runtime events
+
+See [Logging runtime events]({{ site.github.url }}/docs/advanced/runtime/logging-runtime-events/).
+
 Versioning
 ----------
 

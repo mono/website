@@ -24,6 +24,7 @@ Overview of the widgets used in GTK\#
 
 **Widget Overview**
 
+-   [Widget Hierarchy]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-hierarchy/)
 -   [The Button Widget]({{ site.github.url }}/docs/gui/gtksharp/widgets/buttons/)
 -   [Labels]({{ site.github.url }}/docs/gui/gtksharp/widgets/labels/)
 -   [Arrows]({{ site.github.url }}/docs/gui/gtksharp/widgets/arrows/)
@@ -36,5 +37,5 @@ Overview of the widgets used in GTK\#
 
 -   [Dialogs]({{ site.github.url }}/docs/gui/gtksharp/widgets/dialogs/)
 -   Menu Widget Example (unwritten)
-
+-   [Widget Colours]({{ site.github.url }}/docs/gui/gtksharp/widgets/widgets-colours/)
 
