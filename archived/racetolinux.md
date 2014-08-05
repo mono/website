@@ -9,7 +9,7 @@ redirect_from:
 RaceToLinux
 ===========
 
-[![Race to linux.jpg]({{ site.github.url }}/images/c/cf/Race_to_linux.jpg)]({{ site.github.url }}/images/c/cf/Race_to_linux.jpg)
+[![Race to linux.jpg]({{ site.github.url }}/archived/images/c/cf/Race_to_linux.jpg)]({{ site.github.url }}/archived/images/c/cf/Race_to_linux.jpg)
 
 We've made a special release for Race To Linux that has several ASP.Net fixes over 1.2.3.1.
 
@@ -49,13 +49,13 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 -   [Mono 1.2.3.50\_rtl1 Framework - Universal](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/macos-10-universal/rtl1/MonoFramework-1.2.3.50_rtl1.macos10.novell.universal.dmg)
 -   [Cocoa\# 0.9.1](http://go-mono.com/sources/cocoa-sharp/cocoa-sharp-0.9.1.tar.gz) source
 
-[![Solaris]({{ site.github.url }}/images/2/2f/Mono_icon_solaris.gif)]({{ site.github.url }}/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
+[![Solaris]({{ site.github.url }}/archived/images/2/2f/Mono_icon_solaris.gif)]({{ site.github.url }}/archived/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
 
 [Solaris package instructions]({{ site.github.url }}/SolarisInstructions "SolarisInstructions").
 
 -   [Mono 1.2.3.50\_rtl1 Package](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/sunos-8-sparc/rtl1/mono-1.2.3.50_rtl1.sunos8.novell.sparc.pkg.gz)
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/x86**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/x86**
 
 <table>
 <col width="50%" />
@@ -119,7 +119,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
 
 <table>
 <col width="50%" />
@@ -168,7 +168,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/ia64**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/ia64**
 
 <table>
 <col width="50%" />
@@ -188,7 +188,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/S390**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/S390**
 
 <table>
 <col width="50%" />
@@ -208,7 +208,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/S390x**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/S390x**
 
 <table>
 <col width="50%" />
@@ -228,7 +228,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/ppc**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/ppc**
 
 <table>
 <col width="50%" />

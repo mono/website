@@ -9,9 +9,7 @@ redirect_from:
 Stetic
 ======
 
-[![]({{ site.github.url }}/images/b/b1/Steticinmonodevelop_s.png)]({{ site.github.url }}/images/b/b1/Steticinmonodevelop_s.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/images/b/b1/Steticinmonodevelop_s.png "Enlarge")
+[![]({{ site.github.url }}/archived/images/b/b1/Steticinmonodevelop_s.png)]({{ site.github.url }}/archived/images/b/b1/Steticinmonodevelop_s.png)
 
 Stetic integrated into MonoDevelop
 

@@ -51,19 +51,19 @@ You can see a list of hackergotchis here along with their corresponding roles on
 
  
 
-[![Calen.png]({{ site.github.url }}/images/5/59/Calen.png)]({{ site.github.url }}/images/5/59/Calen.png)
+[![Calen.png]({{ site.github.url }}/archived/images/5/59/Calen.png)]({{ site.github.url }}/archived/images/5/59/Calen.png)
 
 **Calen Chen**
 *a11y QA Hacker*
 *[Calen in Novell](http://calen-innovell.blogspot.com)*
 
-[![Hackergotchi-mario.png]({{ site.github.url }}/images/b/b5/Hackergotchi-mario.png)]({{ site.github.url }}/images/b/b5/Hackergotchi-mario.png)
+[![Hackergotchi-mario.png]({{ site.github.url }}/archived/images/b/b5/Hackergotchi-mario.png)]({{ site.github.url }}/archived/images/b/b5/Hackergotchi-mario.png)
 
 **Mario Carrion**
 *a11y Technical Lead & Hacker*
 *[it's gotta be smooth](http://blog.carrion.ws/)*
 
-[![None.png]({{ site.github.url }}/images/e/e3/None.png)]({{ site.github.url }}/images/e/e3/None.png)
+[![None.png]({{ site.github.url }}/archived/images/e/e3/None.png)]({{ site.github.url }}/archived/images/e/e3/None.png)
 
 **Mike Gorse**
 *a11y Hacker*
@@ -71,13 +71,13 @@ You can see a list of hackergotchis here along with their corresponding roles on
 
  
 
-[![Ngao.png]({{ site.github.url }}/images/e/e9/Ngao.png)]({{ site.github.url }}/images/e/e9/Ngao.png)
+[![Ngao.png]({{ site.github.url }}/archived/images/e/e9/Ngao.png)]({{ site.github.url }}/archived/images/e/e9/Ngao.png)
 
 **Neville Gao**
 *a11y Hacker*
 *[Neville's Blog](http://figod.blogspot.com/)*
 
-[![Ray.png]({{ site.github.url }}/images/3/34/Ray.png)]({{ site.github.url }}/images/3/34/Ray.png)
+[![Ray.png]({{ site.github.url }}/archived/images/3/34/Ray.png)]({{ site.github.url }}/archived/images/3/34/Ray.png)
 
 **Ray Wang**
 *a11y Build Hacker*
@@ -85,19 +85,19 @@ You can see a list of hackergotchis here along with their corresponding roles on
 
  
 
-[![None.png]({{ site.github.url }}/images/e/e3/None.png)]({{ site.github.url }}/images/e/e3/None.png)
+[![None.png]({{ site.github.url }}/archived/images/e/e3/None.png)]({{ site.github.url }}/archived/images/e/e3/None.png)
 
 **Stephen Shaw**
 *a11y Build Hacker*
 *[Decriptor's Blog](http://www.decriptor.com)*
 
-[![None.png]({{ site.github.url }}/images/e/e3/None.png)]({{ site.github.url }}/images/e/e3/None.png)
+[![None.png]({{ site.github.url }}/archived/images/e/e3/None.png)]({{ site.github.url }}/archived/images/e/e3/None.png)
 
 **FengXia Mu**
 *a11y QA Hacker*
 *[FengXia Mu](http://fengxiamu.spaces.live.com/)*
 
-[![Matt.png]({{ site.github.url }}/images/0/0a/Matt.png)]({{ site.github.url }}/images/0/0a/Matt.png)
+[![Matt.png]({{ site.github.url }}/archived/images/0/0a/Matt.png)]({{ site.github.url }}/archived/images/0/0a/Matt.png)
 
 **Matt Guo**
 *a11y Hacker*
@@ -107,19 +107,19 @@ You can see a list of hackergotchis here along with their corresponding roles on
 
 #### Former Team Members
 
-[![Knocte.png]({{ site.github.url }}/images/5/54/Knocte.png)]({{ site.github.url }}/images/5/54/Knocte.png)
+[![Knocte.png]({{ site.github.url }}/archived/images/5/54/Knocte.png)]({{ site.github.url }}/archived/images/5/54/Knocte.png)
 
 **Andrés G. Aragoneses**
 *a11y Prj Manager and Hacker*
 *[knocte::MonoTema](http://knocte.blogspot.com)*
 
-[![None.png]({{ site.github.url }}/images/e/e3/None.png)]({{ site.github.url }}/images/e/e3/None.png)
+[![None.png]({{ site.github.url }}/archived/images/e/e3/None.png)]({{ site.github.url }}/archived/images/e/e3/None.png)
 
 **Brad Taylor**
 *a11y Team Lead*
 *[the chronicles of me](http://brad.getcoded.net)*
 
-[![Bgmerrell0.png]({{ site.github.url }}/images/1/17/Bgmerrell0.png)]({{ site.github.url }}/images/1/17/Bgmerrell0.png)
+[![Bgmerrell0.png]({{ site.github.url }}/archived/images/1/17/Bgmerrell0.png)]({{ site.github.url }}/archived/images/1/17/Bgmerrell0.png)
 
 **Brian Merrell**
 *a11y QA Hacker*
@@ -127,7 +127,7 @@ You can see a list of hackergotchis here along with their corresponding roles on
 
  
 
-[![Sandy.png]({{ site.github.url }}/images/4/4e/Sandy.png)]({{ site.github.url }}/images/4/4e/Sandy.png)
+[![Sandy.png]({{ site.github.url }}/archived/images/4/4e/Sandy.png)]({{ site.github.url }}/archived/images/4/4e/Sandy.png)
 
 **Sandy Armstrong**
 *a11y Hacker*

@@ -9,11 +9,11 @@ redirect_from:
 MonoSummit2007
 ==============
 
-[![Summit.png]({{ site.github.url }}/images/4/42/Summit.png)]({{ site.github.url }}/images/4/42/Summit.png)
+[![Summit.png]({{ site.github.url }}/archived/images/4/42/Summit.png)]({{ site.github.url }}/archived/images/4/42/Summit.png)
 
-[![Logo uned.gif]({{ site.github.url }}/images/e/e1/Logo_uned.gif)]({{ site.github.url }}/images/e/e1/Logo_uned.gif)
+[![Logo uned.gif]({{ site.github.url }}/archived/images/e/e1/Logo_uned.gif)]({{ site.github.url }}/archived/images/e/e1/Logo_uned.gif)
 
-[![Cindetec.png]({{ site.github.url }}/images/8/86/Cindetec.png)]({{ site.github.url }}/images/8/86/Cindetec.png)
+[![Cindetec.png]({{ site.github.url }}/archived/images/8/86/Cindetec.png)]({{ site.github.url }}/archived/images/8/86/Cindetec.png)
 
  The Mono Summit will be held in Madrid, Spain from November 26th to November 30th of 2007.
 

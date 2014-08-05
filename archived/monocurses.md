@@ -9,7 +9,7 @@ redirect_from:
 MonoCurses
 ==========
 
-[![Screenshot1.png]({{ site.github.url }}/images/8/81/Screenshot1.png)]({{ site.github.url }}/images/8/81/Screenshot1.png)
+[![Screenshot1.png]({{ site.github.url }}/archived/images/8/81/Screenshot1.png)]({{ site.github.url }}/archived/images/8/81/Screenshot1.png)
 
 MonoCurses provides managed applications with an API to create console-based applications.
 

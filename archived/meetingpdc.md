@@ -39,7 +39,7 @@ We held a Mono meeting at the Microsoft PDC 2005, some coverage is here:
 The Event
 =========
 
-[![Mono.fire.gif]({{ site.github.url }}/images/0/03/Mono.fire.gif)]({{ site.github.url }}/images/0/03/Mono.fire.gif)
+[![Mono.fire.gif]({{ site.github.url }}/archived/images/0/03/Mono.fire.gif)]({{ site.github.url }}/archived/images/0/03/Mono.fire.gif)
 
 **Date:** Tuesday September 13th.
 

@@ -49,7 +49,7 @@ For example, suppose you were designing a Strongwind test for an application wit
 
 This diagram summarizes how testing is performed using Strongwind.
 
-[![Strongwind arch.png]({{ site.github.url }}/images/5/5a/Strongwind_arch.png)]({{ site.github.url }}/images/5/5a/Strongwind_arch.png)
+[![Strongwind arch.png]({{ site.github.url }}/archived/images/5/5a/Strongwind_arch.png)]({{ site.github.url }}/archived/images/5/5a/Strongwind_arch.png)
 
 Writing Your First Script
 -------------------------
@@ -60,7 +60,7 @@ Before proceeding, we need an application accessible application through AT-SPI.
 
 As an example, we can use the [checkbutton.py](http://www.pygtk.org/pygtk2tutorial/examples/checkbutton.py) example from the [PyGTK 2.0 Tutorial](http://www.pygtk.org/pygtk2tutorial/).
 
-As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser]({{ site.github.url }}/images/3/35/Checkbutton-accerciser.png)]({{ site.github.url }}/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
+As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser]({{ site.github.url }}/archived/images/3/35/Checkbutton-accerciser.png)]({{ site.github.url }}/archived/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
 
 Now we are ready proceed by writing the application wrapper.
 

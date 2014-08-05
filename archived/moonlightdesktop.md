@@ -59,7 +59,7 @@ and our Gtk integration library:
 Using Moonlight on the Desktop
 ==============================
 
-[![]({{ site.github.url }}/images/7/77/Screenshot597.png)]({{ site.github.url }}/images/7/77/Screenshot597.png)
+[![]({{ site.github.url }}/archived/images/7/77/Screenshot597.png)]({{ site.github.url }}/archived/images/7/77/Screenshot597.png)
 
 Sample Solution Layout
 

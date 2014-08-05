@@ -36,7 +36,7 @@ The Big Picture
 
 When approaching something as complex as .NET, it helps to have some idea of how it relates to your work. The following diagram provides some context for where your application fits into the Mono/.NET framework.
 
-[![Figure 1]({{ site.github.url }}/images/4/43/Context.png)]({{ site.github.url }}/images/4/43/Context.png "Figure 1")
+[![Figure 1]({{ site.github.url }}/archived/images/4/43/Context.png)]({{ site.github.url }}/archived/images/4/43/Context.png "Figure 1")
 
  NOTE: This is a greatly simplified view; we're ignoring ASP.NET and ADO.NET for now.
 

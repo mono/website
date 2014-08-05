@@ -55,7 +55,7 @@ Then, we need to implement a bridge which receives accessibility information fro
 
 The bridge will be in its own assembly, which will talk to Atk\# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
 
-[![Uia-atk bridge.png]({{ site.github.url }}/images/2/28/Uia-atk_bridge.png)]({{ site.github.url }}/images/2/28/Uia-atk_bridge.png)
+[![Uia-atk bridge.png]({{ site.github.url }}/archived/images/2/28/Uia-atk_bridge.png)]({{ site.github.url }}/archived/images/2/28/Uia-atk_bridge.png)
 
 Mapping infrastructure
 ----------------------

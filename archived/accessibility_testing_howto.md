@@ -227,7 +227,7 @@ These directories are, in truth, mounted directories on uiaqa.sled.lab.novell.co
 
 This diagram summarizes how WinForms testing is performed using Strongwind and the UI Automation test harness.
 
-[![Qa arch.png]({{ site.github.url }}/images/7/75/Qa_arch.png)]({{ site.github.url }}/images/7/75/Qa_arch.png)
+[![Qa arch.png]({{ site.github.url }}/archived/images/7/75/Qa_arch.png)]({{ site.github.url }}/archived/images/7/75/Qa_arch.png)
 
 ### Example Sample Application
 
@@ -595,7 +595,7 @@ We will use Microsoft Visual Studio Silverlight Tools to create test samples in 
 
 1.  New a Project with "Silverlight" type, select "Silverlight Application", give project Name to be "control's name + sample" (ButtonSample as example).
 2.  Select "Add a new ASP.NET Web project to the solution to host Silverlight", click "OK" button, "ButtonSample" and "ButtonSample.Web" will be created, we will draw page in Page.xaml and write managed code in Page.xaml.cs.
-3.  After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser [![Silverlight sample.jpg]({{ site.github.url }}/images/c/c7/Silverlight_sample.jpg)]({{ site.github.url }}/images/c/c7/Silverlight_sample.jpg)
+3.  After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser [![Silverlight sample.jpg]({{ site.github.url }}/archived/images/c/c7/Silverlight_sample.jpg)]({{ site.github.url }}/archived/images/c/c7/Silverlight_sample.jpg)
 
 Example of create Canvas and Button sample:
  Page.xaml
@@ -766,9 +766,9 @@ We will use UIA Verify to verify Client API by runing its automation test suits 
 UIA Verify provides three part of test suits which are "Automation Element Tests", "Control Tests", "Pattern Tests". Here is a simple user guide of using Automation test suit of UIA verify application:
 
 -   Download the lastest UIA verify from [UI Automation Verify](http://uiautomationverify.codeplex.com/SourceControl/ListDownloadableCommits.aspx), and extract the zip
--   Run VisualUIAVerify.exe to get [![UIAVerify01.jpg]({{ site.github.url }}/images/d/d2/UIAVerify01.jpg)]({{ site.github.url }}/images/d/d2/UIAVerify01.jpg)
--   Expand and select element or control what you want to test from left side under "Automation Elements Tree"; Select "Tests" or expand it to select test suits what you want to run ; Then, click "Run Selected Test(s)" or "Run Selected Test(s) On Selected Element and All Children Element(s)" on toolbar under "Texts" to run tests [![UIAVerify02.jpg]({{ site.github.url }}/images/e/e1/UIAVerify02.jpg)]({{ site.github.url }}/images/e/e1/UIAVerify02.jpg)
--   After complete running the selected tests, test results is been showing under "Test Results" panel [![UIAVerify03.jpg]({{ site.github.url }}/images/c/c8/UIAVerify03.jpg)]({{ site.github.url }}/images/c/c8/UIAVerify03.jpg)
+-   Run VisualUIAVerify.exe to get [![UIAVerify01.jpg]({{ site.github.url }}/archived/images/d/d2/UIAVerify01.jpg)]({{ site.github.url }}/archived/images/d/d2/UIAVerify01.jpg)
+-   Expand and select element or control what you want to test from left side under "Automation Elements Tree"; Select "Tests" or expand it to select test suits what you want to run ; Then, click "Run Selected Test(s)" or "Run Selected Test(s) On Selected Element and All Children Element(s)" on toolbar under "Texts" to run tests [![UIAVerify02.jpg]({{ site.github.url }}/archived/images/e/e1/UIAVerify02.jpg)]({{ site.github.url }}/archived/images/e/e1/UIAVerify02.jpg)
+-   After complete running the selected tests, test results is been showing under "Test Results" panel [![UIAVerify03.jpg]({{ site.github.url }}/archived/images/c/c8/UIAVerify03.jpg)]({{ site.github.url }}/archived/images/c/c8/UIAVerify03.jpg)
 
 UIA Client Api Testing How To
 -----------------------------
@@ -777,13 +777,13 @@ UIA Client Api Testing How To
 
 Microsoft UI Automation is the new accessibility model for Microsoft Windows and is intended to address the needs of assistive technology products and automated testing tools. UI Automation offers many improvements over Microsoft Active Accessibility.
 
-[![Uia1.jpeg]({{ site.github.url }}/images/e/ea/Uia1.jpeg)]({{ site.github.url }}/images/e/ea/Uia1.jpeg)
+[![Uia1.jpeg]({{ site.github.url }}/archived/images/e/ea/Uia1.jpeg)]({{ site.github.url }}/archived/images/e/ea/Uia1.jpeg)
 
 ### What is the uiaclient used for?
 
 In UI Automation, a core service lies between the server (provider) and the client, The core service makes calls to the interfaces implemented by providers, Client applications gain access to this core service by creating a CUIAutomation object. This object supports a set of client interfaces by which we can access the application by uia client, and test every control's pattern works well.
 
-[![Uia.GIF]({{ site.github.url }}/images/8/82/Uia.GIF)]({{ site.github.url }}/images/8/82/Uia.GIF)
+[![Uia.GIF]({{ site.github.url }}/archived/images/8/82/Uia.GIF)]({{ site.github.url }}/archived/images/8/82/Uia.GIF)
 
 ### Requirements
 
@@ -809,19 +809,19 @@ svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclie
 
 Keepass.exe
 
-[![Keepass.png]({{ site.github.url }}/images/c/c9/Keepass.png)]({{ site.github.url }}/images/c/c9/Keepass.png)
+[![Keepass.png]({{ site.github.url }}/archived/images/c/c9/Keepass.png)]({{ site.github.url }}/archived/images/c/c9/Keepass.png)
 
 DockPatternProvider.exe
 
-[![DockPatternProvider.png]({{ site.github.url }}/images/1/1b/DockPatternProvider.png)]({{ site.github.url }}/images/1/1b/DockPatternProvider.png)
+[![DockPatternProvider.png]({{ site.github.url }}/archived/images/1/1b/DockPatternProvider.png)]({{ site.github.url }}/archived/images/1/1b/DockPatternProvider.png)
 
 WindowAndTransformPatternProvider.exe
 
-[![TransformPattern.png]({{ site.github.url }}/images/4/4a/TransformPattern.png)]({{ site.github.url }}/images/4/4a/TransformPattern.png)
+[![TransformPattern.png]({{ site.github.url }}/archived/images/4/4a/TransformPattern.png)]({{ site.github.url }}/archived/images/4/4a/TransformPattern.png)
 
 ### QA Architecture Diagram
 
-We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows: [![Uiaclient1.png]({{ site.github.url }}/images/1/15/Uiaclient1.png)]({{ site.github.url }}/images/1/15/Uiaclient1.png)
+We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows: [![Uiaclient1.png]({{ site.github.url }}/archived/images/1/15/Uiaclient1.png)]({{ site.github.url }}/archived/images/1/15/Uiaclient1.png)
 
 ### Example Application Wrapper
 
@@ -1136,9 +1136,9 @@ derive from the Testbase class
 
 The default output directory is bin/debug, but you can Set the output path "D:/temp/ " (for example) in "Project --\>XXXXX Properties" , the project 's output is as follows:
 
-[![Output1.png]({{ site.github.url }}/images/6/62/Output1.png)]({{ site.github.url }}/images/6/62/Output1.png)
+[![Output1.png]({{ site.github.url }}/archived/images/6/62/Output1.png)]({{ site.github.url }}/archived/images/6/62/Output1.png)
 
-If you open the procedures.xml file you can see the test output shown as html page [![Output2.png]({{ site.github.url }}/images/e/e3/Output2.png)]({{ site.github.url }}/images/e/e3/Output2.png)
+If you open the procedures.xml file you can see the test output shown as html page [![Output2.png]({{ site.github.url }}/archived/images/e/e3/Output2.png)]({{ site.github.url }}/archived/images/e/e3/Output2.png)
 
 Logging Bugs
 ============

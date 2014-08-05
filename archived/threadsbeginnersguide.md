@@ -68,7 +68,7 @@ namespace ThreadGuideSamples {
 }
 ```
 
-[![Process-AppDomain-Thread.png]({{ site.github.url }}/images/d/d9/Process-AppDomain-Thread.png)]({{ site.github.url }}/images/d/d9/Process-AppDomain-Thread.png)
+[![Process-AppDomain-Thread.png]({{ site.github.url }}/archived/images/d/d9/Process-AppDomain-Thread.png)]({{ site.github.url }}/archived/images/d/d9/Process-AppDomain-Thread.png)
 
 That's it in general, however the .NET Framework does not simply create a thread within the mono-process. It creates the thread within a **[http:/monodoc/T:System.AppDomain Application Domain]** as the picture shows. Within this article the first Application Domain that has automatically been created by the runtime is called the "main-domain". A Application Domain (or short: AppDomain) is an isolated code excecution environment within your main process running your application. It can be regarded as a "process within a process" or "lightweight process" since the code and memory occupied by each AppDomain can not be directly accessed by other Application Domains.
 

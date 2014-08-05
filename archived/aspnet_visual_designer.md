@@ -43,9 +43,7 @@ Features
 
 AspNetEdit does not aim to be a complete IDE. After being developed as a proof-of-concept standalone editor, it now has been integrated into [MonoDevelop](http://monodevelop.com), where it is intended to be part of a complete ASP.NET editing solution.
 
-[![]({{ site.github.url }}/images/3/30/Aspnetedit.png)]({{ site.github.url }}/images/3/30/Aspnetedit.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/images/3/30/Aspnetedit.png "Enlarge")
+[![]({{ site.github.url }}/archived/images/3/30/Aspnetedit.png)]({{ site.github.url }}/archived/images/3/30/Aspnetedit.png)
 
 The ASP.NET Visual Designer embedded in MonoDevelop
 

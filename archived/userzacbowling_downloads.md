@@ -43,7 +43,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 
 -   [MonoFramework-1.1.10.dmg](http://www.go-mono.com/archive/1.1.10_0/macosx/MonoFramework-1.1.10.dmg), for Mac OS X 10.3 (Panther) and Mac OS X 10.4 (Tiger)
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/x86**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/x86**
 
 <table>
 <col width="50%" />
@@ -92,7 +92,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
 
 <table>
 <col width="50%" />
@@ -118,7 +118,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/ia64**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/ia64**
 
 <table>
 <col width="50%" />
@@ -138,7 +138,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif]({{ site.github.url }}/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/images/4/48/Mono_rpm.gif)**Linux/S390**
+[![Mono rpm.gif]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)]({{ site.github.url }}/archived/images/4/48/Mono_rpm.gif)**Linux/S390**
 
 <table>
 <col width="50%" />

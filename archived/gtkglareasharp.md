@@ -37,9 +37,7 @@ GtkGLAreaSharp
 Introduction
 ------------
 
-[![]({{ site.github.url }}/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/images/8/8a/Gtkglext-sharp1.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/images/8/8a/Gtkglext-sharp1.png "Enlarge")
+[![]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)
 
 A view of a 3d Teapot generated using GtkGLAreaSharp
 
@@ -116,7 +114,7 @@ With the help of Alp Toker, I created a rotating teapot demo, which is included 
 
 [http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/)
 
- [![Gtkglext-sharp1.png]({{ site.github.url }}/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/images/8/8a/Gtkglext-sharp1.png) [![Gtkglext-sharp2.png]({{ site.github.url }}/images/b/b7/Gtkglext-sharp2.png)]({{ site.github.url }}/images/b/b7/Gtkglext-sharp2.png)
+ [![Gtkglext-sharp1.png]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png) [![Gtkglext-sharp2.png]({{ site.github.url }}/archived/images/b/b7/Gtkglext-sharp2.png)]({{ site.github.url }}/archived/images/b/b7/Gtkglext-sharp2.png)
 
  This code is poorly documented. However, I used this code to create a partial implementation of [Neon Helium](http://nehe.gamedev.net/)'s OpenGL lessons. You can find the NeHe documentation on the [GtkGLAreaSharp:NeHe]({{ site.github.url }}/GtkGLAreaSharp:NeHe "GtkGLAreaSharp:NeHe") wiki entry.
 

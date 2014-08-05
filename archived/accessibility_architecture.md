@@ -48,7 +48,7 @@ Microsoft created the UI Automation specification to enhance the existing techno
 
 To make UI Automation integrate with the GNOME Desktop, UI Automation needs to integrate into the existing accessibility frameworks; namely at-spi and ATK. The UIA Client interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to at-spi. Similarly, the UIA Provider interfaces will be written on a bridge that will act as the UIA Core and provide a translation layer to ATK. The following diagram shows all of these technologies and layers put together.
 
-[![Architecture.png]({{ site.github.url }}/images/3/37/Architecture.png)]({{ site.github.url }}/images/3/37/Architecture.png)
+[![Architecture.png]({{ site.github.url }}/archived/images/3/37/Architecture.png)]({{ site.github.url }}/archived/images/3/37/Architecture.png)
 
 Provider Details
 ----------------

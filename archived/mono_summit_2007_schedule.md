@@ -165,5 +165,5 @@ Lluis Sanchez
 
 **Wrap Up**
 
- [![Logo uned.gif]({{ site.github.url }}/images/e/e1/Logo_uned.gif)]({{ site.github.url }}/images/e/e1/Logo_uned.gif) [![Cindetec.png]({{ site.github.url }}/images/8/86/Cindetec.png)]({{ site.github.url }}/images/8/86/Cindetec.png)
+ [![Logo uned.gif]({{ site.github.url }}/archived/images/e/e1/Logo_uned.gif)]({{ site.github.url }}/archived/images/e/e1/Logo_uned.gif) [![Cindetec.png]({{ site.github.url }}/archived/images/8/86/Cindetec.png)]({{ site.github.url }}/archived/images/8/86/Cindetec.png)
 

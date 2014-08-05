@@ -12,7 +12,7 @@ GtkGLArea:Examples
 Rotate Buttons
 --------------
 
-[![90-180-360.png]({{ site.github.url }}/images/2/27/90-180-360.png)]({{ site.github.url }}/images/2/27/90-180-360.png) [![Teapot-90-180-360.png]({{ site.github.url }}/images/b/b1/Teapot-90-180-360.png)]({{ site.github.url }}/images/b/b1/Teapot-90-180-360.png)
+[![90-180-360.png]({{ site.github.url }}/archived/images/2/27/90-180-360.png)]({{ site.github.url }}/archived/images/2/27/90-180-360.png) [![Teapot-90-180-360.png]({{ site.github.url }}/archived/images/b/b1/Teapot-90-180-360.png)]({{ site.github.url }}/archived/images/b/b1/Teapot-90-180-360.png)
 
 This example expands on many of the other examples written so far. Some of the things that I find interesting about this example that were not previously in the others follow:
 

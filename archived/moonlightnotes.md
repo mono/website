@@ -188,7 +188,7 @@ For the official release we will be using Microsoft's MediaPack a package that w
 
 Silverlight is an extended subset of the 2.0 .NET framework. Existing assemblies (ECMA) are versioned as 2.1.0.0 which are reduced versions of the 2.0 libraries and have been annotated with the security attributes and have been expanded in a few areas.
 
-[![20-to-21.png]({{ site.github.url }}/images/2/2a/20-to-21.png)]({{ site.github.url }}/images/2/2a/20-to-21.png)
+[![20-to-21.png]({{ site.github.url }}/archived/images/2/2a/20-to-21.png)]({{ site.github.url }}/archived/images/2/2a/20-to-21.png)
 
 Silverlight introduce new assemblies, all signed by the Microsoft key and versioned at 1.0.0.0 - except for **AGCLR.DLL** which isn't versioned in 1.1 Alpha (bug?).
 
@@ -196,7 +196,7 @@ Silverlight introduce new assemblies, all signed by the Microsoft key and versio
 
 As we can see in next figures Silverlight doesn't have any circular dependencies between it's assemblies, unlike Fx 2.0, which is good news and will reduce our build time (no special loops in the Makefiles like we have today).
 
-[![Agclr.png]({{ site.github.url }}/images/9/95/Agclr.png)]({{ site.github.url }}/images/9/95/Agclr.png) [![Sxc.png]({{ site.github.url }}/images/b/b3/Sxc.png)]({{ site.github.url }}/images/b/b3/Sxc.png)
+[![Agclr.png]({{ site.github.url }}/archived/images/9/95/Agclr.png)]({{ site.github.url }}/archived/images/9/95/Agclr.png) [![Sxc.png]({{ site.github.url }}/archived/images/b/b3/Sxc.png)]({{ site.github.url }}/archived/images/b/b3/Sxc.png)
 
 **Legend**
 
@@ -207,7 +207,7 @@ As we can see in next figures Silverlight doesn't have any circular dependencies
 
 We introduced a new NET\_2\_1 define and a new net\_2\_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker]({{ site.github.url }}/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
 
-[![Mono20-to-21.png]({{ site.github.url }}/images/d/da/Mono20-to-21.png)]({{ site.github.url }}/images/d/da/Mono20-to-21.png)
+[![Mono20-to-21.png]({{ site.github.url }}/archived/images/d/da/Mono20-to-21.png)]({{ site.github.url }}/archived/images/d/da/Mono20-to-21.png)
 
 In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another [Cecil]({{ site.github.url }}/Cecil "Cecil")-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
 
@@ -324,7 +324,7 @@ In some early discussions with David Reveman (the designer of Xgl and Compiz), w
 
 ### The Plugin and the DOM
 
-[![]({{ site.github.url }}/images/b/b7/Plugin.png)]({{ site.github.url }}/images/b/b7/Plugin.png)
+[![]({{ site.github.url }}/archived/images/b/b7/Plugin.png)]({{ site.github.url }}/archived/images/b/b7/Plugin.png)
 
 Plugin relation to the Browser
 

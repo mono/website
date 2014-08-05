@@ -37,9 +37,7 @@ With the advent of [GtkGLAreaSharp]({{ site.github.url }}/GtkGLAreaSharp "GtkGLA
 Screenshots
 -----------
 
-[![]({{ site.github.url }}/images/6/64/Jenkara-20020317-a.png)]({{ site.github.url }}/images/6/64/Jenkara-20020317-a.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/images/6/64/Jenkara-20020317-a.png "Enlarge")
+[![]({{ site.github.url }}/archived/images/6/64/Jenkara-20020317-a.png)]({{ site.github.url }}/archived/images/6/64/Jenkara-20020317-a.png)
 
 2002 screen shot
 

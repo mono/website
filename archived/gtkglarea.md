@@ -9,9 +9,7 @@ redirect_from:
 GtkGLArea
 =========
 
-[![]({{ site.github.url }}/images/7/72/Gtkgl.png)]({{ site.github.url }}/images/7/72/Gtkgl.png)
-
-[![](/skins/common/images/magnify-clip.png)]({{ site.github.url }}/images/7/72/Gtkgl.png "Enlarge")
+[![]({{ site.github.url }}/archived/images/7/72/Gtkgl.png)]({{ site.github.url }}/archived/images/7/72/Gtkgl.png)
 
 A view of a 3D model using GtkGLArea
 

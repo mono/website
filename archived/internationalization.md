@@ -254,7 +254,7 @@ Using Mono.Unix with Glade\# applications
 
 Starting with this Glade\# application
 
-[![Default language]({{ site.github.url }}/images/0/0a/I18n_en.png)]({{ site.github.url }}/images/0/0a/I18n_en.png "Default language")
+[![Default language]({{ site.github.url }}/archived/images/0/0a/I18n_en.png)]({{ site.github.url }}/archived/images/0/0a/I18n_en.png "Default language")
 
 and based on this Glade definition
 
@@ -371,7 +371,7 @@ and based on this Glade definition
 
 we will translate it to this
 
-[![En español]({{ site.github.url }}/images/9/9c/I18n_es.png)]({{ site.github.url }}/images/9/9c/I18n_es.png "En español")
+[![En español]({{ site.github.url }}/archived/images/9/9c/I18n_es.png)]({{ site.github.url }}/archived/images/9/9c/I18n_es.png "En español")
 
 using the [Gettext](http://www.gnu.org/software/gettext/) package.
 
@@ -502,7 +502,7 @@ Try
 
 And you should see the translated Glade\# application.
 
-[![En español]({{ site.github.url }}/images/9/9c/I18n_es.png)]({{ site.github.url }}/images/9/9c/I18n_es.png "En español")
+[![En español]({{ site.github.url }}/archived/images/9/9c/I18n_es.png)]({{ site.github.url }}/archived/images/9/9c/I18n_es.png "En español")
 
 *Note* For some distributions you should install extra packages for seeing the translated stock icons, such as [Ubuntu](http://www.ubuntulinux.org), you need to install the *language-pack* packages. If you want to do this by an automatic way (using autotools), read the [gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html) for learning how to integrate to your Makefile.am file.
 

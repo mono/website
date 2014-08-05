@@ -27,7 +27,7 @@ VSPrj2Make provides an add-in to Visual Studio that offers a number of features:
 
 This is available from the tools menu in Visual Studio:
 
-[![Addin.png]({{ site.github.url }}/images/6/65/Addin.png)]({{ site.github.url }}/images/6/65/Addin.png)
+[![Addin.png]({{ site.github.url }}/archived/images/6/65/Addin.png)]({{ site.github.url }}/archived/images/6/65/Addin.png)
 
 Screencasts for:
 
