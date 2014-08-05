@@ -1,7 +1,6 @@
 ---
 title: "Writing Connected Mode Testcases"
 lastmodified: '2007-04-11'
-permalink: /archived/Writing_Connected_Mode_Testcases/
 redirect_from:
   - /Writing_Connected_Mode_Testcases/
 ---

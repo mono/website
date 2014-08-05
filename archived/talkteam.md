@@ -1,7 +1,6 @@
 ---
 title: "Talk:Team"
 lastmodified: '2005-03-10'
-permalink: /archived/Talk:Team/
 redirect_from:
   - /Talk:Team/
   - /Talk:Team-Unmaintained/

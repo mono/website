@@ -20,7 +20,7 @@ Channels:
 - **#mono-hispano**: general discussion of Mono (in spanish).
 - **#monouml**: general discussion of MonoUML.
 - **#gendarme**: discussion, mostly development oriented, about [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)
-- **#mono-a11y**: [Accessibility]({{ site.github.url }}/archived/Accessibility) and [UI Automation]({{ site.github.url }}/archived/UI_Automation)
+- **#mono-a11y**: [Accessibility]({{ site.github.url }}/archived/accessibility) and [UI Automation]({{ site.github.url }}/archived/ui_automation)
 - **#moonlight**: discussion on the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) implementation of Silverlight.
 - **#monotouch**: Discussion on Mono for the iPhone, [MonoTouch](http://monotouch.net)
 - **#monodroid**: Discussion of Mono on the Android, [[1]](http://monodroid.net)

@@ -1,7 +1,6 @@
 ---
 title: "Config system.web"
 lastmodified: '2008-06-25'
-permalink: /archived/Config_system.web/
 redirect_from:
   - /Config_system.web/
   - /System.Web_configuration/

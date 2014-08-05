@@ -1,7 +1,6 @@
 ---
 title: "Todo"
 lastmodified: '2009-11-23'
-permalink: /archived/Todo/
 redirect_from:
   - /Todo/
 ---

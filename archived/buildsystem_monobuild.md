@@ -1,7 +1,6 @@
 ---
 title: "BuildSystem/MonoBuild"
 lastmodified: '2010-02-01'
-permalink: /archived/BuildSystem/MonoBuild/
 redirect_from:
   - /BuildSystem/MonoBuild/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Talk:New Version of the Use-Page"
 lastmodified: '2007-05-20'
-permalink: /archived/Talk:New_Version_of_the_Use-Page/
 redirect_from:
   - /Talk:New_Version_of_the_Use-Page/
 ---

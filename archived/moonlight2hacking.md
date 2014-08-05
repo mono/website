@@ -1,7 +1,6 @@
 ---
 title: "Moonlight2Hacking"
 lastmodified: '2009-04-17'
-permalink: /archived/Moonlight2Hacking/
 redirect_from:
   - /Moonlight2Hacking/
 ---

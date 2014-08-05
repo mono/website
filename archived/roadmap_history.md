@@ -1,7 +1,6 @@
 ---
 title: "Roadmap History"
 lastmodified: '2012-11-02'
-permalink: /archived/Roadmap_History/
 redirect_from:
   - /Roadmap_History/
 ---

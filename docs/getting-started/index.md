@@ -34,8 +34,8 @@ Working with Mono
 <td align="left"><p><a href="{{ site.github.url }}/docs/web/mod_mono/">Apache and Mono</a> <br /> Guide for setting up mod_mono to run on Apache.</p>
 <p><a href="{{ site.github.url }}/docs/web/fastcgi/nginx/">Nginx and Mono</a> <br /> Guide for Nginx configuration to run ASP.NET and ASP.NET MVC web applications.</p>
 <p><a href="{{ site.github.url }}/docs/web/porting-aspnet-applications/">Porting ASP.Net Applications</a> <br /> Guide to porting an ASP.Net application to run on Mono. Also see <a href="http://www.integratedwebsystems.com/2010/02/walkthrough-porting-asp-net-mvc-website-to-mono-2-6-1-and-mysql-on-linux-apache-porting-to-mono-part-3-of-3/">Walk through porting the ASP.NET MVC website</a>.</p>
-<p><a href="{{ site.github.url }}/archived/Writing_a_WebService" title="Writing a WebService">Writing a WebService</a> <br /> Guide to creating a web service to run on Mono.</p>
-<p><a href="{{ site.github.url }}/archived/Consuming_a_WebService" title="Consuming a WebService">Consuming a WebService</a> <br /> How to consume a web service in your application.</p>
+<p><a href="{{ site.github.url }}/archived/writing_a_webservice" title="Writing a WebService">Writing a WebService</a> <br /> Guide to creating a web service to run on Mono.</p>
+<p><a href="{{ site.github.url }}/archived/consuming_a_webservice" title="Consuming a WebService">Consuming a WebService</a> <br /> How to consume a web service in your application.</p>
 <p><a href="{{ site.github.url }}/docs/database-access/" title="Database Access">Connecting to Databases</a> <br /> How to write code to communicate with various databases.</p></td>
 <td align="left"><p><a href="{{ site.github.url }}/docs/gui/gui-toolkits/" title="Gui Toolkits">Choosing a GUI Toolkit</a> <br /> There are many GUI toolkits to choose from for Mono, this guide explains the pros and cons of each.</p>
 <p><a href="http://www.monodevelop.com/Stetic_GUI_Designer">Writing a Gtk# Application</a> <br /> Tutorial that shows how to write a Gtk# application using MonoDevelop and its visual Gtk# designer.</p>
@@ -44,8 +44,8 @@ Working with Mono
 <td align="left"><p><a href="http://www.go-mono.com/docs/">API Reference</a> <br /> Mono Documentation Library</p>
 <p><a href="{{ site.github.url }}/docs/getting-started/application-portability/">Portability Guidelines</a> <br /> How to write your application to work on multiple platforms.</p>
 <p><a href="{{ site.github.url }}/docs/getting-started/application-deployment/">Deployment Guidelines</a> <br /> How to package and deploy your application to various platforms.</p>
-<p><a href="{{ site.github.url }}/archived/Howto" title="Howto">HowTo Guides</a> <br /> Short, specific guides for various topics.</p>
-<p><a href="{{ site.github.url }}/archived/Monkeyguide" title="Monkeyguide">Monkeyguide</a> <br /> Detailed guide to using Mono.</p>
+<p><a href="{{ site.github.url }}/archived/howto" title="Howto">HowTo Guides</a> <br /> Short, specific guides for various topics.</p>
+<p><a href="{{ site.github.url }}/archived/monkeyguide" title="Monkeyguide">Monkeyguide</a> <br /> Detailed guide to using Mono.</p>
 <p><a href="{{ site.github.url }}/community/help/">Need Help</a> <br /> Some common questions.</p></td>
 </tr>
 </tbody>
@@ -74,19 +74,19 @@ Working with Mono
 </ul></td>
 <td align="left"><ul>
 <li><a href="{{ site.github.url }}/community/bugs/">Bugs</a></li>
-<li><a href="{{ site.github.url }}/archived/Books" title="Books">Books</a></li>
-<li><a href="{{ site.github.url }}/archived/Articles" title="Articles">Articles</a></li>
+<li><a href="{{ site.github.url }}/archived/books" title="Books">Books</a></li>
+<li><a href="{{ site.github.url }}/archived/articles" title="Articles">Articles</a></li>
 <li><a href="{{ site.github.url }}/community/help/mailing-lists/">Mailing Lists</a></li>
 <li><a href="http://mono.1490590.n4.nabble.com/">Forums</a></li>
 <li><a href="{{ site.github.url }}/community/help/irc/">Chat Rooms</a></li>
-<li><a href="{{ site.github.url }}/archived/Related_Mono_Sites" title="Related Mono Sites">Related Sites</a></li>
-<li><a href="{{ site.github.url }}/archived/User_Groups" title="User Groups">User Groups</a></li>
+<li><a href="{{ site.github.url }}/archived/related_mono_sites" title="Related Mono Sites">Related Sites</a></li>
+<li><a href="{{ site.github.url }}/archived/user_groups" title="User Groups">User Groups</a></li>
 <li><a href="{{ site.github.url }}/docs/tools+libraries/tools/moma/">Mono Migration Analyzer</a></li>
 </ul></td>
 <td align="left">Mono 1.0 was released in June 2004. Since then, Mono has been taken up as the platform of choice for many open-source and commercial projects. See Mono in action:
 <ul>
 <li><a href="{{ site.github.url }}/docs/about-mono/showcase/screenshots/">Screenshots</a></li>
-<li><a href="{{ site.github.url }}/archived/Videos" title="Videos">Videos</a></li>
+<li><a href="{{ site.github.url }}/archived/videos" title="Videos">Videos</a></li>
 <li><a href="{{ site.github.url }}/docs/about-mono/showcase/software/">Applications</a> that use Mono</li>
 </ul></td>
 </tr>

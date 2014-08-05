@@ -1,7 +1,6 @@
 ---
 title: "MonoMacPackager"
 lastmodified: '2012-12-12'
-permalink: /archived/MonoMacPackager/
 redirect_from:
   - /MonoMacPackager/
   - /MonomacPackager/

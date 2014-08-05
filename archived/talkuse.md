@@ -1,7 +1,6 @@
 ---
 title: "Talk:Use"
 lastmodified: '2007-05-17'
-permalink: /archived/Talk:Use/
 redirect_from:
   - /Talk:Use/
 ---

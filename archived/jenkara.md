@@ -1,7 +1,6 @@
 ---
 title: "Jenkara"
 lastmodified: '2010-04-01'
-permalink: /archived/Jenkara/
 redirect_from:
   - /Jenkara/
 ---

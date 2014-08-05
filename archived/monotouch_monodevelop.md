@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch MonoDevelop"
 lastmodified: '2009-06-29'
-permalink: /archived/MonoTouch_MonoDevelop/
 redirect_from:
   - /MonoTouch_MonoDevelop/
 ---

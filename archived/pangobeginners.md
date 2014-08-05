@@ -1,7 +1,6 @@
 ---
 title: "Pango:Beginners"
 lastmodified: '2005-11-25'
-permalink: /archived/Pango:Beginners/
 redirect_from:
   - /Pango:Beginners/
 ---

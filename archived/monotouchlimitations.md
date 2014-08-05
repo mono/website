@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch:Limitations"
 lastmodified: '2009-09-04'
-permalink: /archived/MonoTouch:Limitations/
 redirect_from:
   - /MonoTouch:Limitations/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Mono Documentation Improvement Project"
 lastmodified: '2008-10-20'
-permalink: /archived/Mono_Documentation_Improvement_Project/
 redirect_from:
   - /Mono_Documentation_Improvement_Project/
   - /Mono_Documentation_Improvment_Project/

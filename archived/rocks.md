@@ -1,7 +1,6 @@
 ---
 title: "Rocks"
 lastmodified: '2013-03-22'
-permalink: /archived/Rocks/
 redirect_from:
   - /Rocks/
 ---

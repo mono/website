@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: UIA Properties"
 lastmodified: '2008-05-16'
-permalink: /archived/Accessibility:_UIA_Properties/
 redirect_from:
   - /Accessibility:_UIA_Properties/
 ---

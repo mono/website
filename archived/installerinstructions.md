@@ -1,7 +1,6 @@
 ---
 title: "InstallerInstructions"
 lastmodified: '2007-12-10'
-permalink: /archived/InstallerInstructions/
 redirect_from:
   - /InstallerInstructions/
 ---

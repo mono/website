@@ -1,7 +1,6 @@
 ---
 title: "System.Query"
 lastmodified: '2007-03-12'
-permalink: /archived/System.Query/
 redirect_from:
   - /System.Query/
 ---

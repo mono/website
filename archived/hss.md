@@ -1,7 +1,6 @@
 ---
 title: "HSS"
 lastmodified: '2007-10-18'
-permalink: /archived/HSS/
 redirect_from:
   - /HSS/
 ---

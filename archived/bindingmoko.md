@@ -1,7 +1,6 @@
 ---
 title: "BindingMoko"
 lastmodified: '2007-10-25'
-permalink: /archived/BindingMoko/
 redirect_from:
   - /BindingMoko/
 ---

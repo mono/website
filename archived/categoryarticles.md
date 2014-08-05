@@ -1,7 +1,6 @@
 ---
 title: "Category:Articles"
 lastmodified: '2005-09-06'
-permalink: /archived/Category:Articles/
 redirect_from:
   - /Category:Articles/
 ---

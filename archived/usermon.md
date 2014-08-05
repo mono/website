@@ -1,7 +1,6 @@
 ---
 title: "User:Mon"
 lastmodified: '2008-08-23'
-permalink: /archived/User:Mon/
 redirect_from:
   - /User:Mon/
 ---

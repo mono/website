@@ -1,7 +1,6 @@
 ---
 title: "Cryptography"
 lastmodified: '2008-09-03'
-permalink: /archived/Cryptography/
 redirect_from:
   - /Cryptography/
 ---

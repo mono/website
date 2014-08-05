@@ -1,7 +1,6 @@
 ---
 title: "Talk:Testing"
 lastmodified: '2005-03-17'
-permalink: /archived/Talk:Testing/
 redirect_from:
   - /Talk:Testing/
 ---

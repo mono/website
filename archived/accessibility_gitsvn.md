@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: GitSVN"
 lastmodified: '2009-03-29'
-permalink: /archived/Accessibility:_GitSVN/
 redirect_from:
   - /Accessibility:_GitSVN/
 ---

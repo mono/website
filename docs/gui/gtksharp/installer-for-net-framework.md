@@ -42,7 +42,7 @@ Once installed, when you create a new project from Visual Studio.NET 2003, this 
 
 The templates contain sample programs that you can use as starting points for your application.
 
-See the [Working\_with\_Mono\_and\_Visual\_Studio]({{ site.github.url }}/archived/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio") page for more information on using Mono with Visual Studio.
+See the [Working\_with\_Mono\_and\_Visual\_Studio]({{ site.github.url }}/archived/working_with_mono_and_visual_studio "Working with Mono and Visual Studio") page for more information on using Mono with Visual Studio.
 
 Notes and Observations
 ======================

@@ -258,7 +258,7 @@ As with most other mod\_mono directives, the first parameter to a directive can 
 Limiting the number of concurrent requests
 ------------------------------------------
 
-The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{ site.github.url }}/archived/Article:ThreadPool_Deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
+The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks]({{ site.github.url }}/archived/articlethreadpool_deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
 
 mod\_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
 
@@ -496,5 +496,5 @@ You will get more output in the apache error\_log file. Useful when debugging.
 Improving mod\_mono
 ===================
 
-See our [Improving mod\_mono]({{ site.github.url }}/archived/ImprovingModMono "ImprovingModMono") page for details on things that could be improved in the module.
+See our [Improving mod\_mono]({{ site.github.url }}/archived/improvingmodmono "ImprovingModMono") page for details on things that could be improved in the module.
 

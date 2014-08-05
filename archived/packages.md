@@ -1,7 +1,6 @@
 ---
 title: "Packages"
 lastmodified: '2007-09-24'
-permalink: /archived/Packages/
 redirect_from:
   - /Packages/
 ---

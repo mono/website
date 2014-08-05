@@ -1,7 +1,6 @@
 ---
 title: "GtkGLAreaSharp"
 lastmodified: '2010-04-01'
-permalink: /archived/GtkGLAreaSharp/
 redirect_from:
   - /GtkGLAreaSharp/
   - /GtkGLSharp/

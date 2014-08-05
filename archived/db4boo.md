@@ -1,7 +1,6 @@
 ---
 title: "DB4BOO"
 lastmodified: '2005-10-19'
-permalink: /archived/DB4BOO/
 redirect_from:
   - /DB4BOO/
 ---

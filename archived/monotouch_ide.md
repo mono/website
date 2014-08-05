@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch IDE"
 lastmodified: '2009-07-30'
-permalink: /archived/MonoTouch_IDE/
 redirect_from:
   - /MonoTouch_IDE/
 ---

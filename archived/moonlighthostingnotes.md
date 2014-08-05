@@ -1,7 +1,6 @@
 ---
 title: "MoonlightHostingNotes"
 lastmodified: '2007-06-14'
-permalink: /archived/MoonlightHostingNotes/
 redirect_from:
   - /MoonlightHostingNotes/
 ---

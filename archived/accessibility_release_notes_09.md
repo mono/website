@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Release Notes 0.9"
 lastmodified: '2008-11-26'
-permalink: /archived/Accessibility:_Release_Notes_0.9/
 redirect_from:
   - /Accessibility:_Release_Notes_0.9/
 ---

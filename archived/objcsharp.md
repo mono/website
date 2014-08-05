@@ -1,7 +1,6 @@
 ---
 title: "ObjCSharp"
 lastmodified: '2005-11-09'
-permalink: /archived/ObjCSharp/
 redirect_from:
   - /ObjCSharp/
   - /ObjC/

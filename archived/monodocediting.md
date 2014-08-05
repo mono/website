@@ -1,7 +1,6 @@
 ---
 title: "MonodocEditing"
 lastmodified: '2008-03-15'
-permalink: /archived/MonodocEditing/
 redirect_from:
   - /MonodocEditing/
 ---

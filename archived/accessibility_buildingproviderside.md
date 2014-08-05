@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: BuildingProviderSide"
 lastmodified: '2008-08-18'
-permalink: /archived/Accessibility:_BuildingProviderSide/
 redirect_from:
   - /Accessibility:_BuildingProviderSide/
 ---

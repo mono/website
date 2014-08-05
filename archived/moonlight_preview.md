@@ -1,7 +1,6 @@
 ---
 title: "Moonlight/Preview"
 lastmodified: '2010-10-26'
-permalink: /archived/Moonlight/Preview/
 redirect_from:
   - /Moonlight/Preview/
 ---

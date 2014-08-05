@@ -1,7 +1,6 @@
 ---
 title: "Accessibility"
 lastmodified: '2011-02-14'
-permalink: /archived/Accessibility/
 redirect_from:
   - /Accessibility/
   - /A11y/

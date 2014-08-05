@@ -1,7 +1,6 @@
 ---
 title: "XML Writer"
 lastmodified: '2006-05-20'
-permalink: /archived/XML_Writer/
 redirect_from:
   - /XML_Writer/
 ---

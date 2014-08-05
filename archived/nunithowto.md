@@ -1,7 +1,6 @@
 ---
 title: "NUnitHowTo"
 lastmodified: '2007-11-17'
-permalink: /archived/NUnitHowTo/
 redirect_from:
   - /NUnitHowTo/
 ---

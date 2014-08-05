@@ -1,7 +1,6 @@
 ---
 title: "SRE"
 lastmodified: '2009-05-07'
-permalink: /archived/SRE/
 redirect_from:
   - /SRE/
 ---

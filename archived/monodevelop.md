@@ -1,7 +1,6 @@
 ---
 title: "MonoDevelop"
 lastmodified: '2007-10-03'
-permalink: /archived/MonoDevelop/
 redirect_from:
   - /MonoDevelop/
 ---

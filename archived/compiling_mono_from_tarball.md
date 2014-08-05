@@ -1,7 +1,6 @@
 ---
 title: "Compiling Mono From Tarball"
 lastmodified: '2013-01-22'
-permalink: /archived/Compiling_Mono_From_Tarball/
 redirect_from:
   - /Compiling_Mono_From_Tarball/
 ---

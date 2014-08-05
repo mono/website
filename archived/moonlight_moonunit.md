@@ -1,7 +1,6 @@
 ---
 title: "Moonlight/moon-unit"
 lastmodified: '2010-07-05'
-permalink: /archived/Moonlight/moon-unit/
 redirect_from:
   - /Moonlight/moon-unit/
 ---

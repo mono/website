@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch XCode"
 lastmodified: '2009-07-30'
-permalink: /archived/MonoTouch_XCode/
 redirect_from:
   - /MonoTouch_XCode/
 ---

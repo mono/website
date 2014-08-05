@@ -1,7 +1,6 @@
 ---
 title: "Introduction to developing with Mono"
 lastmodified: '2006-11-11'
-permalink: /archived/Introduction_to_developing_with_Mono/
 redirect_from:
   - /Introduction_to_developing_with_Mono/
   - /Basic_Mono_Programming/

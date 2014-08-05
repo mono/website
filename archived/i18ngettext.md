@@ -1,7 +1,6 @@
 ---
 title: "I18nGettext"
 lastmodified: '2006-05-17'
-permalink: /archived/I18nGettext/
 redirect_from:
   - /I18nGettext/
 ---

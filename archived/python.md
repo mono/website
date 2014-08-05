@@ -1,7 +1,6 @@
 ---
 title: "Python"
 lastmodified: '2007-03-12'
-permalink: /archived/Python/
 redirect_from:
   - /Python/
 ---

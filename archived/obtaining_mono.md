@@ -1,7 +1,6 @@
 ---
 title: "Obtaining Mono"
 lastmodified: '2012-05-27'
-permalink: /archived/Obtaining_Mono/
 redirect_from:
   - /Obtaining_Mono/
   - /Getting_Mono/

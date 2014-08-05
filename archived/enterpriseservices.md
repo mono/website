@@ -1,7 +1,6 @@
 ---
 title: "EnterpriseServices"
 lastmodified: '2006-08-19'
-permalink: /archived/EnterpriseServices/
 redirect_from:
   - /EnterpriseServices/
 ---

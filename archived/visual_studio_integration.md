@@ -1,7 +1,6 @@
 ---
 title: "Visual Studio Integration"
 lastmodified: '2009-06-25'
-permalink: /archived/Visual_Studio_Integration/
 redirect_from:
   - /Visual_Studio_Integration/
 ---

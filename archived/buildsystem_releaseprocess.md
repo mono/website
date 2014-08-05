@@ -1,7 +1,6 @@
 ---
 title: "BuildSystem/ReleaseProcess"
 lastmodified: '2013-01-19'
-permalink: /archived/BuildSystem/ReleaseProcess/
 redirect_from:
   - /BuildSystem/ReleaseProcess/
 ---

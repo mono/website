@@ -1,7 +1,6 @@
 ---
 title: "Working with Mono and Visual Studio"
 lastmodified: '2009-02-27'
-permalink: /archived/Working_with_Mono_and_Visual_Studio/
 redirect_from:
   - /Working_with_Mono_and_Visual_Studio/
 ---

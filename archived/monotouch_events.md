@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch Events"
 lastmodified: '2009-08-05'
-permalink: /archived/MonoTouch_Events/
 redirect_from:
   - /MonoTouch_Events/
 ---

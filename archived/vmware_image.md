@@ -1,7 +1,6 @@
 ---
 title: "VMware Image"
 lastmodified: '2009-06-25'
-permalink: /archived/VMware_Image/
 redirect_from:
   - /VMware_Image/
   - /VMWare_Image/

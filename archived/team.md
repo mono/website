@@ -1,7 +1,6 @@
 ---
 title: "Team"
 lastmodified: '2011-04-21'
-permalink: /archived/Team/
 redirect_from:
   - /Team/
   - /Team-Unmaintained/

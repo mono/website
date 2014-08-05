@@ -150,7 +150,7 @@ Cons:
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits]({{ site.github.url }}/archived/Dead_Toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits]({{ site.github.url }}/archived/dead_toolkits "Dead Toolkits") that have been developed in the past.
 
 Alternative Implementation Approaches
 =====================================

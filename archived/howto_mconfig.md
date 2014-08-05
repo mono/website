@@ -1,7 +1,6 @@
 ---
 title: "Howto Mconfig"
 lastmodified: '2007-11-13'
-permalink: /archived/Howto_Mconfig/
 redirect_from:
   - /Howto_Mconfig/
 ---

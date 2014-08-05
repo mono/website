@@ -1,7 +1,6 @@
 ---
 title: "Category:Developer Resource"
 lastmodified: '2005-09-06'
-permalink: /archived/Category:Developer_Resource/
 redirect_from:
   - /Category:Developer_Resource/
 ---

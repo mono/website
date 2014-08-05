@@ -1,7 +1,6 @@
 ---
 title: "Using Databases"
 lastmodified: '2011-07-27'
-permalink: /archived/Using_Databases/
 redirect_from:
   - /Using_Databases/
 ---

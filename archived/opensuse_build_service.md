@@ -1,7 +1,6 @@
 ---
 title: "OpenSUSE Build Service"
 lastmodified: '2012-05-27'
-permalink: /archived/OpenSUSE_Build_Service/
 redirect_from:
   - /OpenSUSE_Build_Service/
   - /OBS/

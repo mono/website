@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Getting Started With Development"
 lastmodified: '2009-02-02'
-permalink: /archived/Accessibility:_Getting_Started_With_Development/
 redirect_from:
   - /Accessibility:_Getting_Started_With_Development/
 ---

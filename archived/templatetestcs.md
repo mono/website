@@ -1,7 +1,6 @@
 ---
 title: "TemplateTest.cs"
 lastmodified: '2005-02-25'
-permalink: /archived/TemplateTest.cs/
 redirect_from:
   - /TemplateTest.cs/
 ---

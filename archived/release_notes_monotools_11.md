@@ -1,7 +1,6 @@
 ---
 title: "Release Notes MonoTools 1.1"
 lastmodified: '2010-03-31'
-permalink: /archived/Release_Notes_MonoTools_1.1/
 redirect_from:
   - /Release_Notes_MonoTools_1.1/
 ---

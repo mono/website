@@ -1,7 +1,6 @@
 ---
 title: "OldPage"
 lastmodified: '2005-09-02'
-permalink: /archived/OldPage/
 redirect_from:
   - /OldPage/
 ---

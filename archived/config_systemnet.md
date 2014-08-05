@@ -1,7 +1,6 @@
 ---
 title: "Config system.net"
 lastmodified: '2006-12-27'
-permalink: /archived/Config_system.net/
 redirect_from:
   - /Config_system.net/
 ---

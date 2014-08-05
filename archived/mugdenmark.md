@@ -1,7 +1,6 @@
 ---
 title: "MUG:Denmark"
 lastmodified: '2007-01-29'
-permalink: /archived/MUG:Denmark/
 redirect_from:
   - /MUG:Denmark/
   - /MUG:%C3%85rhus/

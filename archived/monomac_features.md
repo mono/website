@@ -1,7 +1,6 @@
 ---
 title: "MonoMac/Features"
 lastmodified: '2011-05-10'
-permalink: /archived/MonoMac/Features/
 redirect_from:
   - /MonoMac/Features/
 ---

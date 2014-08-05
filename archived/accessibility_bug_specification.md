@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Bug Specification"
 lastmodified: '2009-02-24'
-permalink: /archived/Accessibility:_Bug_Specification/
 redirect_from:
   - /Accessibility:_Bug_Specification/
   - /Accessibility:_Bug_Template/

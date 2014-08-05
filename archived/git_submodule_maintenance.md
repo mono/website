@@ -1,7 +1,6 @@
 ---
 title: "Git Submodule Maintenance"
 lastmodified: '2012-04-05'
-permalink: /archived/Git_Submodule_Maintenance/
 redirect_from:
   - /Git_Submodule_Maintenance/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Howto aspnet Callbacks"
 lastmodified: '2008-01-04'
-permalink: /archived/Howto_aspnet_Callbacks/
 redirect_from:
   - /Howto_aspnet_Callbacks/
 ---

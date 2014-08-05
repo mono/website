@@ -1,7 +1,6 @@
 ---
 title: "NothingToSeeHere"
 lastmodified: '2008-10-06'
-permalink: /archived/NothingToSeeHere/
 redirect_from:
   - /NothingToSeeHere/
 ---

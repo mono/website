@@ -1,7 +1,6 @@
 ---
 title: "For Monkeyguide Authors"
 lastmodified: '2007-05-26'
-permalink: /archived/For_Monkeyguide_Authors/
 redirect_from:
   - /For_Monkeyguide_Authors/
 ---

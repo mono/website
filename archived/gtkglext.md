@@ -1,7 +1,6 @@
 ---
 title: "GtkGLExt"
 lastmodified: '2007-03-12'
-permalink: /archived/GtkGLExt/
 redirect_from:
   - /GtkGLExt/
 ---

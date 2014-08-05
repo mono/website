@@ -25,14 +25,14 @@ Here we are tracking some plans to particular pieces of technology that are part
 <li><a href="{{ site.github.url }}/docs/about-mono/roadmap/">Mono Project Roadmap</a></li>
 <li><a href="{{ site.github.url }}/docs/advanced/com-interop/">COM Interop</a></li>
 <li><a href="{{ site.github.url }}/docs/advanced/sandbox/">MonoSandbox</a></li>
-<li><a href="{{ site.github.url }}/archived/Continuations" title="Continuations">Continuations</a></li>
+<li><a href="{{ site.github.url }}/archived/continuations" title="Continuations">Continuations</a></li>
 </ul></li>
 </ul>
 <ul>
 <li>Core Class Libraries:
 <ul>
 <li><a href="{{ site.github.url }}/docs/advanced/cas/">CAS</a></li>
-<li><a href="{{ site.github.url }}/archived/Cryptography" title="Cryptography">Cryptography</a>, <a href="{{ site.github.url }}/archived/Crimson" title="Crimson">Crimson</a></li>
+<li><a href="{{ site.github.url }}/archived/cryptography" title="Cryptography">Cryptography</a>, <a href="{{ site.github.url }}/archived/crimson" title="Crimson">Crimson</a></li>
 <li><a href="{{ site.github.url }}/docs/tools+libraries/libraries/xml/">XML</a></li>
 <li><a href="{{ site.github.url }}/docs/database-access/">Database Access</a></li>
 </ul></li>
@@ -48,8 +48,8 @@ Here we are tracking some plans to particular pieces of technology that are part
 <li>Gtk#
 <ul>
 <li><a href="{{ site.github.url }}/docs/gui/gtksharp/">Gtk#</a> GUI toolkit.</li>
-<li><a href="{{ site.github.url }}/archived/Stetic" title="Stetic">Stetic</a> GUI designer</li>
-<li><a href="{{ site.github.url }}/archived/GeckoSharp" title="GeckoSharp">Gecko# Bindings (Mozilla)</a></li>
+<li><a href="{{ site.github.url }}/archived/stetic" title="Stetic">Stetic</a> GUI designer</li>
+<li><a href="{{ site.github.url }}/archived/geckosharp" title="GeckoSharp">Gecko# Bindings (Mozilla)</a></li>
 </ul></li>
 </ul>
 <ul>
@@ -58,23 +58,23 @@ Here we are tracking some plans to particular pieces of technology that are part
 <li><a href="{{ site.github.url }}/docs/about-mono/languages/csharp/">C# Compiler</a></li>
 <li>C# Compiler Service (2.2)</li>
 <li><a href="{{ site.github.url }}/docs/about-mono/languages/java/">Java</a> support</li>
-<li><a href="{{ site.github.url }}/archived/JScript" title="JScript">JavaScript/ECMAscript</a> support</li>
-<li><a href="{{ site.github.url }}/archived/Python" title="Python">Python</a> support</li>
+<li><a href="{{ site.github.url }}/archived/jscript" title="JScript">JavaScript/ECMAscript</a> support</li>
+<li><a href="{{ site.github.url }}/archived/python" title="Python">Python</a> support</li>
 <li><a href="{{ site.github.url }}/docs/about-mono/languages/visualbasic/">VisualBasic.NET support</a></li>
 </ul></li>
 </ul>
 <ul>
 <li>OpenGL
 <ul>
-<li><a href="{{ site.github.url }}/archived/Tao" title="Tao">Tao Framework</a></li>
-<li><a href="{{ site.github.url }}/archived/GtkGLAreaSharp">Gtk# and GL integration</a></li>
+<li><a href="{{ site.github.url }}/archived/tao" title="Tao">Tao Framework</a></li>
+<li><a href="{{ site.github.url }}/archived/gtkglareasharp">Gtk# and GL integration</a></li>
 </ul></li>
 </ul>
 <ul>
 <li>Accessibility
 <ul>
-<li><a href="{{ site.github.url }}/archived/Accessibility" title="Accessibility">Accessibility</a></li>
-<li><a href="{{ site.github.url }}/archived/UI_Automation" title="UI Automation">UI Automation</a></li>
+<li><a href="{{ site.github.url }}/archived/accessibility" title="Accessibility">Accessibility</a></li>
+<li><a href="{{ site.github.url }}/archived/ui_automation" title="UI Automation">UI Automation</a></li>
 </ul></li>
 </ul></td>
 <td align="left"><ul>
@@ -82,16 +82,16 @@ Here we are tracking some plans to particular pieces of technology that are part
 <ul>
 <li><a href="{{ site.github.url }}/docs/database-access/adonet/">ADO.NET</a></li>
 <li><a href="{{ site.github.url }}/docs/web/aspnet/">ASP.NET</a></li>
-<li><a href="{{ site.github.url }}/archived/ASP.NET_Visual_Designer">ASP.NET Designer</a></li>
+<li><a href="{{ site.github.url }}/archived/aspnet_visual_designer">ASP.NET Designer</a></li>
 <li><a href="{{ site.github.url }}/docs/gui/winforms/">WinForms</a></li>
-<li><a href="{{ site.github.url }}/archived/WinForms_Designer" title="WinForms Designer">WinForms Designer</a></li>
-<li><a href="{{ site.github.url }}/archived/EnterpriseServices" title="EnterpriseServices">EnterpriseServices</a></li>
-<li><a href="{{ site.github.url }}/archived/System.Messaging">SystemMessaging</a></li>
-<li><a href="{{ site.github.url }}/archived/Transactions" title="Transactions">Transactions</a></li>
-<li><a href="{{ site.github.url }}/archived/WSE" title="WSE">WSE</a></li>
-<li><a href="{{ site.github.url }}/archived/Olive" title="Olive">Olive</a> - Beyond 2.0</li>
+<li><a href="{{ site.github.url }}/archived/winforms_designer" title="WinForms Designer">WinForms Designer</a></li>
+<li><a href="{{ site.github.url }}/archived/enterpriseservices" title="EnterpriseServices">EnterpriseServices</a></li>
+<li><a href="{{ site.github.url }}/archived/systemmessaging">SystemMessaging</a></li>
+<li><a href="{{ site.github.url }}/archived/transactions" title="Transactions">Transactions</a></li>
+<li><a href="{{ site.github.url }}/archived/wse" title="WSE">WSE</a></li>
+<li><a href="{{ site.github.url }}/archived/olive" title="Olive">Olive</a> - Beyond 2.0</li>
 <li><a href="{{ site.github.url }}/docs/tools+libraries/tools/xbuild/">Microsoft.Build</a></li>
-<li><a href="{{ site.github.url }}/archived/System.Query" title="System.Query">System.Query</a></li>
+<li><a href="{{ site.github.url }}/archived/systemquery" title="System.Query">System.Query</a></li>
 <li><a href="{{ site.github.url }}/docs/web/moonlight/">Silverlight</a> and <a href="{{ site.github.url }}/docs/gui/wpf/">WPF</a></li>
 </ul></li>
 </ul>
@@ -114,9 +114,9 @@ Here we are tracking some plans to particular pieces of technology that are part
 
 In addition, the following are Mono project management plans:
 
--   [Infrastructure Projects]({{ site.github.url }}/archived/InfrastructureProjects "InfrastructureProjects")
+-   [Infrastructure Projects]({{ site.github.url }}/archived/infrastructureprojects "InfrastructureProjects")
 -   Visual Studio Projects
-    -   [Mono Tools Getting Started Guide]({{ site.github.url }}/archived/GettingStartedWithMonoTools "GettingStartedWithMonoTools")
-    -   [Visual Studio Integration]({{ site.github.url }}/archived/Visual_Studio_Integration "Visual Studio Integration")
+    -   [Mono Tools Getting Started Guide]({{ site.github.url }}/archived/gettingstartedwithmonotools "GettingStartedWithMonoTools")
+    -   [Visual Studio Integration]({{ site.github.url }}/archived/visual_studio_integration "Visual Studio Integration")
 
 

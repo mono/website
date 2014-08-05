@@ -1,7 +1,6 @@
 ---
 title: "Repository"
 lastmodified: '2009-01-12'
-permalink: /archived/Repository/
 redirect_from:
   - /Repository/
 ---

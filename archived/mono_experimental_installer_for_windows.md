@@ -1,7 +1,6 @@
 ---
 title: "Mono Experimental Installer For Windows"
 lastmodified: '2006-04-24'
-permalink: /archived/Mono_Experimental_Installer_For_Windows/
 redirect_from:
   - /Mono_Experimental_Installer_For_Windows/
 ---

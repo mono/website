@@ -1,7 +1,6 @@
 ---
 title: "Mono 1.0"
 lastmodified: '2005-09-06'
-permalink: /archived/Mono_1.0/
 redirect_from:
   - /Mono_1.0/
   - /Mono_1.0_Assemblies/

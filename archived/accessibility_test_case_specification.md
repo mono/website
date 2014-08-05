@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Test Case Specification"
 lastmodified: '2008-11-12'
-permalink: /archived/Accessibility:_Test_Case_Specification/
 redirect_from:
   - /Accessibility:_Test_Case_Specification/
 ---

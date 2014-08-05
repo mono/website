@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch Roadmap"
 lastmodified: '2009-08-03'
-permalink: /archived/MonoTouch_Roadmap/
 redirect_from:
   - /MonoTouch_Roadmap/
 ---

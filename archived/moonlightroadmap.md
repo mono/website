@@ -1,7 +1,6 @@
 ---
 title: "MoonlightRoadmap"
 lastmodified: '2011-08-25'
-permalink: /archived/MoonlightRoadmap/
 redirect_from:
   - /MoonlightRoadmap/
 ---

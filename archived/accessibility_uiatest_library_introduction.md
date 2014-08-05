@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: UIATest Library Introduction"
 lastmodified: '2009-09-17'
-permalink: /archived/Accessibility:_UIATest_Library_Introduction/
 redirect_from:
   - /Accessibility:_UIATest_Library_Introduction/
 ---

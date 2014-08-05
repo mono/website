@@ -1,7 +1,6 @@
 ---
 title: "Putty and TortoiseSVN"
 lastmodified: '2007-03-12'
-permalink: /archived/Putty_and_TortoiseSVN/
 redirect_from:
   - /Putty_and_TortoiseSVN/
   - /Putty_and_TortoiseSvn/

@@ -1,7 +1,6 @@
 ---
 title: "PlanSerialization"
 lastmodified: '2010-07-30'
-permalink: /archived/PlanSerialization/
 redirect_from:
   - /PlanSerialization/
 ---

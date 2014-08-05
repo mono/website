@@ -1,7 +1,6 @@
 ---
 title: "MonoMac/Community"
 lastmodified: '2011-05-10'
-permalink: /archived/MonoMac/Community/
 redirect_from:
   - /MonoMac/Community/
 ---

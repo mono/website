@@ -1,7 +1,6 @@
 ---
 title: "Mono.Upnp"
 lastmodified: '2009-03-12'
-permalink: /archived/Mono.Upnp/
 redirect_from:
   - /Mono.Upnp/
 ---

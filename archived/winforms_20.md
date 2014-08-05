@@ -1,7 +1,6 @@
 ---
 title: "Winforms 2.0"
 lastmodified: '2008-01-22'
-permalink: /archived/Winforms_2.0/
 redirect_from:
   - /Winforms_2.0/
 ---

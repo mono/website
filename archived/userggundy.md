@@ -1,7 +1,6 @@
 ---
 title: "User:Ggundy"
 lastmodified: '2005-03-03'
-permalink: /archived/User:Ggundy/
 redirect_from:
   - /User:Ggundy/
 ---

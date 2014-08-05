@@ -1,7 +1,6 @@
 ---
 title: "Garmono"
 lastmodified: '2008-03-22'
-permalink: /archived/Garmono/
 redirect_from:
   - /Garmono/
 ---

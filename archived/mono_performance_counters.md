@@ -1,7 +1,6 @@
 ---
 title: "Mono Performance Counters"
 lastmodified: '2010-04-19'
-permalink: /archived/Mono_Performance_Counters/
 redirect_from:
   - /Mono_Performance_Counters/
 ---

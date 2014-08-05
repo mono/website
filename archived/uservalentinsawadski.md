@@ -1,7 +1,6 @@
 ---
 title: "User:ValentinSawadski"
 lastmodified: '2007-05-17'
-permalink: /archived/User:ValentinSawadski/
 redirect_from:
   - /User:ValentinSawadski/
 ---

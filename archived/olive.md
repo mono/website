@@ -1,7 +1,6 @@
 ---
 title: "Olive"
 lastmodified: '2010-06-25'
-permalink: /archived/Olive/
 redirect_from:
   - /Olive/
 ---

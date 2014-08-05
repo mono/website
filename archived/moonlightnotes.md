@@ -1,7 +1,6 @@
 ---
 title: "MoonlightNotes"
 lastmodified: '2009-02-27'
-permalink: /archived/MoonlightNotes/
 redirect_from:
   - /MoonlightNotes/
 ---

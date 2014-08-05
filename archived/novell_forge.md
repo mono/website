@@ -1,7 +1,6 @@
 ---
 title: "Novell Forge"
 lastmodified: '2005-09-06'
-permalink: /archived/Novell_Forge/
 redirect_from:
   - /Novell_Forge/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Talk:FAQ: General"
 lastmodified: '2005-03-05'
-permalink: /archived/Talk:FAQ:_General/
 redirect_from:
   - /Talk:FAQ:_General/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Gstreamer"
 lastmodified: '2009-09-16'
-permalink: /archived/Gstreamer/
 redirect_from:
   - /Gstreamer/
   - /GStreamer/

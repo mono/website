@@ -1,7 +1,6 @@
 ---
 title: "Monoxide"
 lastmodified: '2006-10-26'
-permalink: /archived/Monoxide/
 redirect_from:
   - /Monoxide/
 ---

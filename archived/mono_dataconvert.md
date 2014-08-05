@@ -1,7 +1,6 @@
 ---
 title: "Mono DataConvert"
 lastmodified: '2010-11-11'
-permalink: /archived/Mono_DataConvert/
 redirect_from:
   - /Mono_DataConvert/
 ---

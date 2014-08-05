@@ -1,7 +1,6 @@
 ---
 title: "Mailpost:longreply"
 lastmodified: '2005-11-03'
-permalink: /archived/Mailpost:longreply/
 redirect_from:
   - /Mailpost:longreply/
 ---

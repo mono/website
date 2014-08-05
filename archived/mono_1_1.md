@@ -1,7 +1,6 @@
 ---
 title: "Mono 1 1"
 lastmodified: '2005-09-06'
-permalink: /archived/Mono_1_1/
 redirect_from:
   - /Mono_1_1/
 ---

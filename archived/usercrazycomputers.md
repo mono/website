@@ -1,7 +1,6 @@
 ---
 title: "User:Crazycomputers"
 lastmodified: '2007-01-07'
-permalink: /archived/User:Crazycomputers/
 redirect_from:
   - /User:Crazycomputers/
 ---

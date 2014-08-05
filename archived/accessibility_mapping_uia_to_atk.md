@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Mapping UIA to ATK"
 lastmodified: '2008-08-22'
-permalink: /archived/Accessibility:_Mapping_UIA_to_ATK/
 redirect_from:
   - /Accessibility:_Mapping_UIA_to_ATK/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "ThirdPartyPackages"
 lastmodified: '2006-04-12'
-permalink: /archived/ThirdPartyPackages/
 redirect_from:
   - /ThirdPartyPackages/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "ImprovingGtkWin32"
 lastmodified: '2006-08-23'
-permalink: /archived/ImprovingGtkWin32/
 redirect_from:
   - /ImprovingGtkWin32/
 ---

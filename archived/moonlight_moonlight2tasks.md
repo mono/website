@@ -1,7 +1,6 @@
 ---
 title: "Moonlight/Moonlight2Tasks"
 lastmodified: '2009-02-08'
-permalink: /archived/Moonlight/Moonlight2Tasks/
 redirect_from:
   - /Moonlight/Moonlight2Tasks/
 ---

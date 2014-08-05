@@ -1,7 +1,6 @@
 ---
 title: "Prebuild"
 lastmodified: '2007-04-11'
-permalink: /archived/Prebuild/
 redirect_from:
   - /Prebuild/
 ---

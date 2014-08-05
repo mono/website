@@ -1,7 +1,6 @@
 ---
 title: "BosteenMonkey Guide"
 lastmodified: '2006-09-04'
-permalink: /archived/BosteenMonkey_Guide/
 redirect_from:
   - /BosteenMonkey_Guide/
   - /BosteenSand/

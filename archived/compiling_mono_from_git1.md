@@ -1,7 +1,6 @@
 ---
 title: "Compiling Mono From Git"
 lastmodified: '2012-04-05'
-permalink: /archived/Compiling_Mono_From_Git/
 redirect_from:
   - /Compiling_Mono_From_Git/
   - /Compiling_Mono_From_git/

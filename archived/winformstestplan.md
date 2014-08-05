@@ -1,7 +1,6 @@
 ---
 title: "WinFormsTestPlan"
 lastmodified: '2007-03-12'
-permalink: /archived/WinFormsTestPlan/
 redirect_from:
   - /WinFormsTestPlan/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Client API Functional Specification"
 lastmodified: '2009-09-10'
-permalink: /archived/Accessibility:_Client_API_Functional_Specification/
 redirect_from:
   - /Accessibility:_Client_API_Functional_Specification/
 ---

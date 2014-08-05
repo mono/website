@@ -1,7 +1,6 @@
 ---
 title: "Moonlight/ControlStatus"
 lastmodified: '2009-04-09'
-permalink: /archived/Moonlight/ControlStatus/
 redirect_from:
   - /Moonlight/ControlStatus/
 ---

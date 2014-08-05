@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch Tutorials"
 lastmodified: '2009-08-03'
-permalink: /archived/MonoTouch_Tutorials/
 redirect_from:
   - /MonoTouch_Tutorials/
 ---

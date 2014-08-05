@@ -1,7 +1,6 @@
 ---
 title: "Howto"
 lastmodified: '2008-08-11'
-permalink: /archived/Howto/
 redirect_from:
   - /Howto/
 ---

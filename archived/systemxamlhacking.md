@@ -1,7 +1,6 @@
 ---
 title: "SystemXamlHacking"
 lastmodified: '2011-03-22'
-permalink: /archived/SystemXamlHacking/
 redirect_from:
   - /SystemXamlHacking/
 ---

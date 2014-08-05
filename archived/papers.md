@@ -1,7 +1,6 @@
 ---
 title: "Papers"
 lastmodified: '2006-01-24'
-permalink: /archived/Papers/
 redirect_from:
   - /Papers/
 ---

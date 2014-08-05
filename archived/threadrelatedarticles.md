@@ -1,7 +1,6 @@
 ---
 title: "ThreadRelatedArticles"
 lastmodified: '2007-03-12'
-permalink: /archived/ThreadRelatedArticles/
 redirect_from:
   - /ThreadRelatedArticles/
 ---

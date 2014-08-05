@@ -1,7 +1,6 @@
 ---
 title: "UsingTrustedRootsRespectfully"
 lastmodified: '2010-09-15'
-permalink: /archived/UsingTrustedRootsRespectfully/
 redirect_from:
   - /UsingTrustedRootsRespectfully/
   - /UsingTrustedRootsRespectfully_trust/

@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch API"
 lastmodified: '2009-08-29'
-permalink: /archived/MonoTouch_API/
 redirect_from:
   - /MonoTouch_API/
 ---

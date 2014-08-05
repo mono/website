@@ -1,7 +1,6 @@
 ---
 title: "SiteMap"
 lastmodified: '2007-03-12'
-permalink: /archived/SiteMap/
 redirect_from:
   - /SiteMap/
 ---

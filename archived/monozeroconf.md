@@ -1,7 +1,6 @@
 ---
 title: "Mono.Zeroconf"
 lastmodified: '2011-10-25'
-permalink: /archived/Mono.Zeroconf/
 redirect_from:
   - /Mono.Zeroconf/
   - /Mono_Zeroconf/

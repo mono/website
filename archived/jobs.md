@@ -1,7 +1,6 @@
 ---
 title: "Jobs"
 lastmodified: '2012-07-14'
-permalink: /archived/Jobs/
 redirect_from:
   - /Jobs/
 ---

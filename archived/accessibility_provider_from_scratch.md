@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Provider From Scratch"
 lastmodified: '2008-11-21'
-permalink: /archived/Accessibility:_Provider_From_Scratch/
 redirect_from:
   - /Accessibility:_Provider_From_Scratch/
 ---

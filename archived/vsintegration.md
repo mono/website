@@ -1,7 +1,6 @@
 ---
 title: "VSIntegration"
 lastmodified: '2008-12-05'
-permalink: /archived/VSIntegration/
 redirect_from:
   - /VSIntegration/
 ---

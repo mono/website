@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Scrum"
 lastmodified: '2008-09-16'
-permalink: /archived/Accessibility:_Scrum/
 redirect_from:
   - /Accessibility:_Scrum/
 ---

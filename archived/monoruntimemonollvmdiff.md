@@ -1,7 +1,6 @@
 ---
 title: "Mono:Runtime:mono-llvm.diff"
 lastmodified: '2009-09-28'
-permalink: /archived/Mono:Runtime:mono-llvm.diff/
 redirect_from:
   - /Mono:Runtime:mono-llvm.diff/
 ---

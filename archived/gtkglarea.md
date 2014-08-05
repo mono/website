@@ -1,7 +1,6 @@
 ---
 title: "GtkGLArea"
 lastmodified: '2009-07-29'
-permalink: /archived/GtkGLArea/
 redirect_from:
   - /GtkGLArea/
 ---

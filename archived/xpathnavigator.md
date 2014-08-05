@@ -1,7 +1,6 @@
 ---
 title: "XPathNavigator"
 lastmodified: '2006-05-20'
-permalink: /archived/XPathNavigator/
 redirect_from:
   - /XPathNavigator/
 ---

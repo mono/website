@@ -1,7 +1,6 @@
 ---
 title: "ASPTests"
 lastmodified: '2007-06-20'
-permalink: /archived/ASPTests/
 redirect_from:
   - /ASPTests/
 ---

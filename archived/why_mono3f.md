@@ -1,7 +1,6 @@
 ---
 title: "Why Mono%3F"
 lastmodified: '2005-04-12'
-permalink: /archived/Why_Mono%3F/
 redirect_from:
   - /Why_Mono%3F/
 ---

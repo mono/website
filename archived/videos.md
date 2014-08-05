@@ -1,7 +1,6 @@
 ---
 title: "Videos"
 lastmodified: '2005-05-20'
-permalink: /archived/Videos/
 redirect_from:
   - /Videos/
 ---

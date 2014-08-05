@@ -1,7 +1,6 @@
 ---
 title: "Help:Editing"
 lastmodified: '2012-03-07'
-permalink: /archived/Help:Editing/
 redirect_from:
   - /Help:Editing/
 ---

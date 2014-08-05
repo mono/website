@@ -1,7 +1,6 @@
 ---
 title: "Dead Toolkits"
 lastmodified: '2006-01-02'
-permalink: /archived/Dead_Toolkits/
 redirect_from:
   - /Dead_Toolkits/
 ---

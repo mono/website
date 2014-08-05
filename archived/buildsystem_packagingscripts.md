@@ -1,7 +1,6 @@
 ---
 title: "BuildSystem/PackagingScripts"
 lastmodified: '2005-09-06'
-permalink: /archived/BuildSystem/PackagingScripts/
 redirect_from:
   - /BuildSystem/PackagingScripts/
   - /Buildsystem-packagingscripts/

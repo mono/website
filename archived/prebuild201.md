@@ -1,7 +1,6 @@
 ---
 title: "Prebuild:2.0.1"
 lastmodified: '2007-04-11'
-permalink: /archived/Prebuild:2.0.1/
 redirect_from:
   - /Prebuild:2.0.1/
 ---

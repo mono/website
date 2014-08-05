@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Specification Notes"
 lastmodified: '2009-07-31'
-permalink: /archived/Accessibility:_Specification_Notes/
 redirect_from:
   - /Accessibility:_Specification_Notes/
 ---

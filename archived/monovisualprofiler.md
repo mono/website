@@ -1,7 +1,6 @@
 ---
 title: "MonoVisualProfiler"
 lastmodified: '2009-12-02'
-permalink: /archived/MonoVisualProfiler/
 redirect_from:
   - /MonoVisualProfiler/
 ---

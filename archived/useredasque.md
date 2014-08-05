@@ -1,7 +1,6 @@
 ---
 title: "User:Edasque"
 lastmodified: '2008-01-02'
-permalink: /archived/User:Edasque/
 redirect_from:
   - /User:Edasque/
 ---

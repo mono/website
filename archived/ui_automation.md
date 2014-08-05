@@ -1,7 +1,6 @@
 ---
 title: "UI Automation"
 lastmodified: '2008-11-24'
-permalink: /archived/UI_Automation/
 redirect_from:
   - /UI_Automation/
   - /Automation/

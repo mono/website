@@ -1,7 +1,6 @@
 ---
 title: "GtkGLAreaSharp:0.0.8"
 lastmodified: '2007-05-25'
-permalink: /archived/GtkGLAreaSharp:0.0.8/
 redirect_from:
   - /GtkGLAreaSharp:0.0.8/
 ---

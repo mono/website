@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Moonlight Sandbox"
 lastmodified: '2009-04-08'
-permalink: /archived/Accessibility:_Moonlight_Sandbox/
 redirect_from:
   - /Accessibility:_Moonlight_Sandbox/
 ---

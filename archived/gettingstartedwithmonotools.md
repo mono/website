@@ -1,7 +1,6 @@
 ---
 title: "GettingStartedWithMonoTools"
 lastmodified: '2012-05-07'
-permalink: /archived/GettingStartedWithMonoTools/
 redirect_from:
   - /GettingStartedWithMonoTools/
   - /GettingStartedWithMonoVS/

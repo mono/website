@@ -1,7 +1,6 @@
 ---
 title: "DB4O"
 lastmodified: '2007-11-23'
-permalink: /archived/DB4O/
 redirect_from:
   - /DB4O/
   - /Db4o/

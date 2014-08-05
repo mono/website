@@ -1,7 +1,6 @@
 ---
 title: "WPF Notes"
 lastmodified: '2010-07-14'
-permalink: /archived/WPF_Notes/
 redirect_from:
   - /WPF_Notes/
 ---

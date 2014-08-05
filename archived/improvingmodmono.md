@@ -1,7 +1,6 @@
 ---
 title: "ImprovingModMono"
 lastmodified: '2008-06-25'
-permalink: /archived/ImprovingModMono/
 redirect_from:
   - /ImprovingModMono/
 ---

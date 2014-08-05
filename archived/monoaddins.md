@@ -1,7 +1,6 @@
 ---
 title: "Mono.Addins"
 lastmodified: '2010-05-27'
-permalink: /archived/Mono.Addins/
 redirect_from:
   - /Mono.Addins/
   - /MonoAddins/

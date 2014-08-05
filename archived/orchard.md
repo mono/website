@@ -1,7 +1,6 @@
 ---
 title: "Orchard"
 lastmodified: '2011-03-14'
-permalink: /archived/Orchard/
 redirect_from:
   - /Orchard/
 ---

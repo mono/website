@@ -1,7 +1,6 @@
 ---
 title: "Continuations"
 lastmodified: '2009-04-16'
-permalink: /archived/Continuations/
 redirect_from:
   - /Continuations/
 ---

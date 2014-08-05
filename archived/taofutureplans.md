@@ -1,7 +1,6 @@
 ---
 title: "Tao:FuturePlans"
 lastmodified: '2005-05-20'
-permalink: /archived/Tao:FuturePlans/
 redirect_from:
   - /Tao:FuturePlans/
 ---

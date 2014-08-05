@@ -1,7 +1,6 @@
 ---
 title: "Maemo"
 lastmodified: '2008-11-23'
-permalink: /archived/Maemo/
 redirect_from:
   - /Maemo/
 ---

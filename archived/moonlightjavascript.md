@@ -1,7 +1,6 @@
 ---
 title: "MoonlightJavascript"
 lastmodified: '2008-06-16'
-permalink: /archived/MoonlightJavascript/
 redirect_from:
   - /MoonlightJavascript/
 ---

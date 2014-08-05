@@ -122,7 +122,7 @@ For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](htt
 Subprojects projects
 --------------------
 
-Other projects like the [debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/), the documentation browser, [Java]({{ site.github.url }}/docs/about-mono/languages/java/) integration through IKVM, [Olive]({{ site.github.url }}/archived/Olive "Olive") and [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Other projects like the [debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/), the documentation browser, [Java]({{ site.github.url }}/docs/about-mono/languages/java/) integration through IKVM, [Olive]({{ site.github.url }}/archived/olive "Olive") and [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
 
 ### Mono and Silverlight
 
@@ -147,7 +147,7 @@ Too large stacks:
 We are not working on any of the following deprecated APIs:
 
 -   System.EnterpriseServices
--   [WSE]({{ site.github.url }}/archived/WSE "WSE") - Extensions to System.Web.Services.
+-   [WSE]({{ site.github.url }}/archived/wse "WSE") - Extensions to System.Web.Services.
 -   Workflow Foundation 3 (WF3)
 -   [Code Access Security]({{ site.github.url }}/docs/advanced/cas/) (.NET 1.0).
 
@@ -167,5 +167,5 @@ Feel free to [send us your comments or questions](http://www.go-mono.com/contact
 Roadmap History
 ---------------
 
-For our previous roadmap information, please see [Roadmap History]({{ site.github.url }}/archived/Roadmap_History "Roadmap History").
+For our previous roadmap information, please see [Roadmap History]({{ site.github.url }}/archived/roadmap_history "Roadmap History").
 

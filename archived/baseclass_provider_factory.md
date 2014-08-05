@@ -1,7 +1,6 @@
 ---
 title: "BaseClass Provider Factory"
 lastmodified: '2006-05-17'
-permalink: /archived/BaseClass_Provider_Factory/
 redirect_from:
   - /BaseClass_Provider_Factory/
 ---

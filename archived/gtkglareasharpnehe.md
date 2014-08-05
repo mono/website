@@ -1,7 +1,6 @@
 ---
 title: "GtkGLAreaSharp:NeHe"
 lastmodified: '2008-09-03'
-permalink: /archived/GtkGLAreaSharp:NeHe/
 redirect_from:
   - /GtkGLAreaSharp:NeHe/
   - /GtkGLSharp:NeHe/

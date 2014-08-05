@@ -1,7 +1,6 @@
 ---
 title: "MonoTorrent"
 lastmodified: '2009-09-30'
-permalink: /archived/MonoTorrent/
 redirect_from:
   - /MonoTorrent/
   - /Bitsharp/

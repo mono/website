@@ -1,7 +1,6 @@
 ---
 title: "Category:Porting"
 lastmodified: '2007-03-12'
-permalink: /archived/Category:Porting/
 redirect_from:
   - /Category:Porting/
 ---

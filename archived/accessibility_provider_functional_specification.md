@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Provider Functional Specification"
 lastmodified: '2008-09-11'
-permalink: /archived/Accessibility:_Provider_Functional_Specification/
 redirect_from:
   - /Accessibility:_Provider_Functional_Specification/
 ---

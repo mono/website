@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch ReleaseNotes"
 lastmodified: '2009-09-13'
-permalink: /archived/MonoTouch_ReleaseNotes/
 redirect_from:
   - /MonoTouch_ReleaseNotes/
 ---

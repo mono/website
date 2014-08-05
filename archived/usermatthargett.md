@@ -1,7 +1,6 @@
 ---
 title: "User:MattHargett"
 lastmodified: '2006-01-08'
-permalink: /archived/User:MattHargett/
 redirect_from:
   - /User:MattHargett/
 ---

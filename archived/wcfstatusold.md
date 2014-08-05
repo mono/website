@@ -1,7 +1,6 @@
 ---
 title: "WCFStatusOld"
 lastmodified: '2009-08-28'
-permalink: /archived/WCFStatusOld/
 redirect_from:
   - /WCFStatusOld/
 ---

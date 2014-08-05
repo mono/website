@@ -1,7 +1,6 @@
 ---
 title: "Provider Factory"
 lastmodified: '2006-09-23'
-permalink: /archived/Provider_Factory/
 redirect_from:
   - /Provider_Factory/
 ---

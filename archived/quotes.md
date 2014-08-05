@@ -1,7 +1,6 @@
 ---
 title: "Quotes"
 lastmodified: '2006-01-13'
-permalink: /archived/Quotes/
 redirect_from:
   - /Quotes/
 ---

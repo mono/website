@@ -1,7 +1,6 @@
 ---
 title: "Talk:GtkSharp"
 lastmodified: '2006-08-17'
-permalink: /archived/Talk:GtkSharp/
 redirect_from:
   - /Talk:GtkSharp/
 ---

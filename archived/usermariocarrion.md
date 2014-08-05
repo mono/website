@@ -1,7 +1,6 @@
 ---
 title: "User:MarioCarrion"
 lastmodified: '2005-10-22'
-permalink: /archived/User:MarioCarrion/
 redirect_from:
   - /User:MarioCarrion/
 ---

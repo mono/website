@@ -1,7 +1,6 @@
 ---
 title: "Mimer SQL"
 lastmodified: '2006-05-20'
-permalink: /archived/Mimer_SQL/
 redirect_from:
   - /Mimer_SQL/
 ---

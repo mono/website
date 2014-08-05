@@ -1,7 +1,6 @@
 ---
 title: "MaintainingTheWiki"
 lastmodified: '2006-01-12'
-permalink: /archived/MaintainingTheWiki/
 redirect_from:
   - /MaintainingTheWiki/
 ---

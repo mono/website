@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch Beta"
 lastmodified: '2009-08-11'
-permalink: /archived/MonoTouch_Beta/
 redirect_from:
   - /MonoTouch_Beta/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "MilensSandbox"
 lastmodified: '2005-05-09'
-permalink: /archived/MilensSandbox/
 redirect_from:
   - /MilensSandbox/
 ---

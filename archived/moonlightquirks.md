@@ -1,7 +1,6 @@
 ---
 title: "MoonlightQuirks"
 lastmodified: '2008-12-08'
-permalink: /archived/MoonlightQuirks/
 redirect_from:
   - /MoonlightQuirks/
 ---

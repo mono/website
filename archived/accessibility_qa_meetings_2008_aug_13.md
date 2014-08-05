@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: QA Meetings 2008 Aug 13"
 lastmodified: '2008-08-13'
-permalink: /archived/Accessibility:_QA_Meetings_2008_Aug_13/
 redirect_from:
   - /Accessibility:_QA_Meetings_2008_Aug_13/
 ---

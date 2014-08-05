@@ -1,7 +1,6 @@
 ---
 title: "WinForms Designer"
 lastmodified: '2012-10-07'
-permalink: /archived/WinForms_Designer/
 redirect_from:
   - /WinForms_Designer/
 ---

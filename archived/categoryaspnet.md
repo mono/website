@@ -1,7 +1,6 @@
 ---
 title: "Category:ASP.NET"
 lastmodified: '2005-09-06'
-permalink: /archived/Category:ASP.NET/
 redirect_from:
   - /Category:ASP.NET/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "MoonlightSecurity"
 lastmodified: '2011-04-11'
-permalink: /archived/MoonlightSecurity/
 redirect_from:
   - /MoonlightSecurity/
 ---

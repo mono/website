@@ -1,7 +1,6 @@
 ---
 title: "InfrastructureProjects"
 lastmodified: '2010-09-11'
-permalink: /archived/InfrastructureProjects/
 redirect_from:
   - /InfrastructureProjects/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Mono:FreeBSD-Problems"
 lastmodified: '2005-04-04'
-permalink: /archived/Mono:FreeBSD-Problems/
 redirect_from:
   - /Mono:FreeBSD-Problems/
 ---

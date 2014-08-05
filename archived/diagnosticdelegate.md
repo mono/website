@@ -1,7 +1,6 @@
 ---
 title: "Diagnostic:Delegate"
 lastmodified: '2005-10-29'
-permalink: /archived/Diagnostic:Delegate/
 redirect_from:
   - /Diagnostic:Delegate/
 ---

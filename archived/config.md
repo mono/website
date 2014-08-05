@@ -1,7 +1,6 @@
 ---
 title: "Config"
 lastmodified: '2007-10-26'
-permalink: /archived/Config/
 redirect_from:
   - /Config/
 ---

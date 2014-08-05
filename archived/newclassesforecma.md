@@ -1,7 +1,6 @@
 ---
 title: "NewClassesForEcma"
 lastmodified: '2009-09-02'
-permalink: /archived/NewClassesForEcma/
 redirect_from:
   - /NewClassesForEcma/
 ---

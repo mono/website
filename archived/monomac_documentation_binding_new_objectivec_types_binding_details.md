@@ -1,7 +1,6 @@
 ---
 title: "MonoMac/Documentation/Binding New Objective-C Types/Binding Details"
 lastmodified: '2011-05-11'
-permalink: /archived/MonoMac/Documentation/Binding_New_Objective-C_Types/Binding_Details/
 redirect_from:
   - /MonoMac/Documentation/Binding_New_Objective-C_Types/Binding_Details/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "MeetingPDC"
 lastmodified: '2007-01-01'
-permalink: /archived/MeetingPDC/
 redirect_from:
   - /MeetingPDC/
 ---

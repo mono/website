@@ -1,7 +1,6 @@
 ---
 title: "MoonlighBeta1"
 lastmodified: '2008-10-09'
-permalink: /archived/MoonlighBeta1/
 redirect_from:
   - /MoonlighBeta1/
 ---

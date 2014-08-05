@@ -1,7 +1,6 @@
 ---
 title: "Gtk:HelloWorld"
 lastmodified: '2005-10-19'
-permalink: /archived/Gtk:HelloWorld/
 redirect_from:
   - /Gtk:HelloWorld/
 ---

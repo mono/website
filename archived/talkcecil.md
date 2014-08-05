@@ -1,7 +1,6 @@
 ---
 title: "Talk:Cecil"
 lastmodified: '2005-03-04'
-permalink: /archived/Talk:Cecil/
 redirect_from:
   - /Talk:Cecil/
 ---

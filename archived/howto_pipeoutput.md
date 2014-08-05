@@ -1,7 +1,6 @@
 ---
 title: "Howto PipeOutput"
 lastmodified: '2007-10-17'
-permalink: /archived/Howto_PipeOutput/
 redirect_from:
   - /Howto_PipeOutput/
 ---

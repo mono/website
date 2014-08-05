@@ -1,7 +1,6 @@
 ---
 title: "Moonlight Standalone File"
 lastmodified: '2007-12-14'
-permalink: /archived/Moonlight_Standalone_File/
 redirect_from:
   - /Moonlight_Standalone_File/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "User talk:ZacBowling"
 lastmodified: '2006-09-23'
-permalink: /archived/User_talk:ZacBowling/
 redirect_from:
   - /User_talk:ZacBowling/
 ---

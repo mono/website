@@ -15,7 +15,7 @@ Originally Mono did not have a sandbox, but Moonlight required us to create a sa
 For more information on the Mono sandbox, see:
 
 -   [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/): The CoreCLR security system, as used in Silverlight.
--   [SecurityValidation]({{ site.github.url }}/archived/SecurityValidation "SecurityValidation"): The process we used to secure the sandbox.
+-   [SecurityValidation]({{ site.github.url }}/archived/securityvalidation "SecurityValidation"): The process we used to secure the sandbox.
 
 Security Issues
 ===============
@@ -49,5 +49,5 @@ For example, the System.IO.File.Open() routine can be called by trusted code (th
 Audit of the codebase
 ---------------------
 
-The [SecurityValidation]({{ site.github.url }}/archived/SecurityValidation "SecurityValidation") page describes how the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/).
+The [SecurityValidation]({{ site.github.url }}/archived/securityvalidation "SecurityValidation") page describes how the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/).
 

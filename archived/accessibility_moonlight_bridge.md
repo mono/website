@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Moonlight Bridge"
 lastmodified: '2009-06-18'
-permalink: /archived/Accessibility:_Moonlight_Bridge/
 redirect_from:
   - /Accessibility:_Moonlight_Bridge/
 ---

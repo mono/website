@@ -1,7 +1,6 @@
 ---
 title: "Monkeyguide"
 lastmodified: '2011-07-27'
-permalink: /archived/Monkeyguide/
 redirect_from:
   - /Monkeyguide/
 ---

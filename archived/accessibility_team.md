@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Team"
 lastmodified: '2010-07-15'
-permalink: /archived/Accessibility:_Team/
 redirect_from:
   - /Accessibility:_Team/
 ---

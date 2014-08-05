@@ -1,7 +1,6 @@
 ---
 title: "ReleaseNotes MonoVS"
 lastmodified: '2009-10-21'
-permalink: /archived/ReleaseNotes_MonoVS/
 redirect_from:
   - /ReleaseNotes_MonoVS/
 ---

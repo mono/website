@@ -1,7 +1,6 @@
 ---
 title: "ADOTests"
 lastmodified: '2007-02-20'
-permalink: /archived/ADOTests/
 redirect_from:
   - /ADOTests/
 ---

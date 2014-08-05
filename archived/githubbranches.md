@@ -1,7 +1,6 @@
 ---
 title: "GitHubBranches"
 lastmodified: '2011-12-14'
-permalink: /archived/GitHubBranches/
 redirect_from:
   - /GitHubBranches/
 ---

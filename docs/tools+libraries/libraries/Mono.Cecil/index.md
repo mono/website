@@ -8,7 +8,7 @@ Cecil is a library written by [Jb Evain](http://evain.net/blog/) to generate and
 
 In simple English, with Cecil, you can load existing managed assemblies, browse all the contained types, modify them on the fly and save back to the disk the modified assembly.
 
-Today it is used by the Mono [Debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/), the bug-finding and compliance checking tool [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/), [MoMA]({{ site.github.url }}/docs/tools+libraries/tools/moma/), [DB4O]({{ site.github.url }}/archived/DB4O "DB4O"), as well as [many other tools](http://groups.google.com/group/mono-cecil/web/projects-using-cecil).
+Today it is used by the Mono [Debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/), the bug-finding and compliance checking tool [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/), [MoMA]({{ site.github.url }}/docs/tools+libraries/tools/moma/), [DB4O]({{ site.github.url }}/archived/db4o "DB4O"), as well as [many other tools](http://groups.google.com/group/mono-cecil/web/projects-using-cecil).
 
 Mailing List
 ============

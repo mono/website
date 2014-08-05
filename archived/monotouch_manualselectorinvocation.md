@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch ManualSelectorInvocation"
 lastmodified: '2009-09-07'
-permalink: /archived/MonoTouch_ManualSelectorInvocation/
 redirect_from:
   - /MonoTouch_ManualSelectorInvocation/
 ---

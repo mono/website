@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: White%27s white list"
 lastmodified: '2009-09-11'
-permalink: /archived/Accessibility:_White%27s_white_list/
 redirect_from:
   - /Accessibility:_White%27s_white_list/
 ---

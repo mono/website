@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Control Status"
 lastmodified: '2008-10-14'
-permalink: /archived/Accessibility:_Control_Status/
 redirect_from:
   - /Accessibility:_Control_Status/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch Troubleshoot"
 lastmodified: '2009-08-10'
-permalink: /archived/MonoTouch_Troubleshoot/
 redirect_from:
   - /MonoTouch_Troubleshoot/
 ---

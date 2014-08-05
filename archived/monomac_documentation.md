@@ -1,7 +1,6 @@
 ---
 title: "MonoMac/Documentation"
 lastmodified: '2011-05-10'
-permalink: /archived/MonoMac/Documentation/
 redirect_from:
   - /MonoMac/Documentation/
 ---

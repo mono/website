@@ -1,7 +1,6 @@
 ---
 title: "Talk:Downloads"
 lastmodified: '2006-05-23'
-permalink: /archived/Talk:Downloads/
 redirect_from:
   - /Talk:Downloads/
 ---

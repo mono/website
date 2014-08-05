@@ -1,7 +1,6 @@
 ---
 title: "Moonlight 1.0 TestSites"
 lastmodified: '2008-04-04'
-permalink: /archived/Moonlight_1.0_TestSites/
 redirect_from:
   - /Moonlight_1.0_TestSites/
 ---

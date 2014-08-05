@@ -1,7 +1,6 @@
 ---
 title: "Internationalization"
 lastmodified: '2008-01-19'
-permalink: /archived/Internationalization/
 redirect_from:
   - /Internationalization/
   - /GetText/

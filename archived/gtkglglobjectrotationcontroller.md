@@ -1,7 +1,6 @@
 ---
 title: "GtkGL.GLObjectRotationController"
 lastmodified: '2007-05-25'
-permalink: /archived/GtkGL.GLObjectRotationController/
 redirect_from:
   - /GtkGL.GLObjectRotationController/
 ---

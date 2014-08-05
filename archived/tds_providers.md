@@ -1,7 +1,6 @@
 ---
 title: "TDS Providers"
 lastmodified: '2006-05-17'
-permalink: /archived/TDS_Providers/
 redirect_from:
   - /TDS_Providers/
 ---

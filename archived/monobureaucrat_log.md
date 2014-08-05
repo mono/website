@@ -1,7 +1,6 @@
 ---
 title: "Mono:Bureaucrat log"
 lastmodified: '2005-05-26'
-permalink: /archived/Mono:Bureaucrat_log/
 redirect_from:
   - /Mono:Bureaucrat_log/
 ---

@@ -27,7 +27,7 @@ The Mono Project has also sparked a lot of interest in developing C\#-based comp
 
 -   [\#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
 
--   [Tao Framework]({{ site.github.url }}/archived/Tao "Tao"): bindings for OpenGL
+-   [Tao Framework]({{ site.github.url }}/archived/tao "Tao"): bindings for OpenGL
 
 -   Mono.Directory.LDAP / Novell.Directory.LDAP: LDAP access for .NET apps.
 
@@ -115,7 +115,7 @@ Check the [contributing]({{ site.github.url }}/community/contributing/) section.
 
 **Is there an online guide for Mono?**
 
-Visit the [Monkeyguide]({{ site.github.url }}/archived/Monkeyguide "Monkeyguide") page.
+Visit the [Monkeyguide]({{ site.github.url }}/archived/monkeyguide "Monkeyguide") page.
 
 **Aren't you just copying someone else's work?**
 

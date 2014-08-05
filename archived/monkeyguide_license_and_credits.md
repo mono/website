@@ -1,7 +1,6 @@
 ---
 title: "Monkeyguide License and Credits"
 lastmodified: '2005-05-26'
-permalink: /archived/Monkeyguide_License_and_Credits/
 redirect_from:
   - /Monkeyguide_License_and_Credits/
 ---

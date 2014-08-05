@@ -1,7 +1,6 @@
 ---
 title: "FAQ: MonoVS"
 lastmodified: '2010-07-28'
-permalink: /archived/FAQ:_MonoVS/
 redirect_from:
   - /FAQ:_MonoVS/
 ---

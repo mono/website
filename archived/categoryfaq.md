@@ -1,7 +1,6 @@
 ---
 title: "Category:FAQ"
 lastmodified: '2007-01-26'
-permalink: /archived/Category:FAQ/
 redirect_from:
   - /Category:FAQ/
 ---

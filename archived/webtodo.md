@@ -1,7 +1,6 @@
 ---
 title: "WebTODO"
 lastmodified: '2005-03-03'
-permalink: /archived/WebTODO/
 redirect_from:
   - /WebTODO/
   - /WebTODO_Web_Site_TODO_list/

@@ -1,7 +1,6 @@
 ---
 title: "SecurityValidation"
 lastmodified: '2010-02-10'
-permalink: /archived/SecurityValidation/
 redirect_from:
   - /SecurityValidation/
 ---

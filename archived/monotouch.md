@@ -1,7 +1,6 @@
 ---
 title: "MonoTouch"
 lastmodified: '2009-09-14'
-permalink: /archived/MonoTouch/
 redirect_from:
   - /MonoTouch/
 ---

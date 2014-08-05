@@ -1,7 +1,6 @@
 ---
 title: "RaceToLinux"
 lastmodified: '2007-04-11'
-permalink: /archived/RaceToLinux/
 redirect_from:
   - /RaceToLinux/
 ---

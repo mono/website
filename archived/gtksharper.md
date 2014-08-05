@@ -1,7 +1,6 @@
 ---
 title: "GtkSharper"
 lastmodified: '2008-03-27'
-permalink: /archived/GtkSharper/
 redirect_from:
   - /GtkSharper/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Hall"
 lastmodified: '2005-02-24'
-permalink: /archived/Hall/
 redirect_from:
   - /Hall/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Category:FastCGI"
 lastmodified: '2008-06-25'
-permalink: /archived/Category:FastCGI/
 redirect_from:
   - /Category:FastCGI/
 ---

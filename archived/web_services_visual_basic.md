@@ -1,7 +1,6 @@
 ---
 title: "Web Services (Visual Basic)"
 lastmodified: '2007-10-30'
-permalink: /archived/Web_Services_(Visual_Basic)/
 redirect_from:
   - /Web_Services_(Visual_Basic)/
 ---

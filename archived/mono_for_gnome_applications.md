@@ -1,7 +1,6 @@
 ---
 title: "Mono for Gnome Applications"
 lastmodified: '2005-10-19'
-permalink: /archived/Mono_for_Gnome_Applications/
 redirect_from:
   - /Mono_for_Gnome_Applications/
 ---

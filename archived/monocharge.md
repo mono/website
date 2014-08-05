@@ -1,7 +1,6 @@
 ---
 title: "Monocharge"
 lastmodified: '2007-08-31'
-permalink: /archived/Monocharge/
 redirect_from:
   - /Monocharge/
 ---

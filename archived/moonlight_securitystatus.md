@@ -1,7 +1,6 @@
 ---
 title: "Moonlight/SecurityStatus"
 lastmodified: '2010-02-18'
-permalink: /archived/Moonlight/SecurityStatus/
 redirect_from:
   - /Moonlight/SecurityStatus/
 ---

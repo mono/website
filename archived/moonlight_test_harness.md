@@ -1,7 +1,6 @@
 ---
 title: "Moonlight Test Harness"
 lastmodified: '2008-10-27'
-permalink: /archived/Moonlight_Test_Harness/
 redirect_from:
   - /Moonlight_Test_Harness/
 ---

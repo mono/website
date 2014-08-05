@@ -1,7 +1,6 @@
 ---
 title: "XML Schema Inference"
 lastmodified: '2006-05-20'
-permalink: /archived/XML_Schema_Inference/
 redirect_from:
   - /XML_Schema_Inference/
 ---

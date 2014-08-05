@@ -1,7 +1,6 @@
 ---
 title: "JScript"
 lastmodified: '2008-02-10'
-permalink: /archived/JScript/
 redirect_from:
   - /JScript/
 ---

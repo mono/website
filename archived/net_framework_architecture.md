@@ -1,7 +1,6 @@
 ---
 title: ".NET Framework Architecture"
 lastmodified: '2007-12-19'
-permalink: /archived/.NET_Framework_Architecture/
 redirect_from:
   - /.NET_Framework_Architecture/
 ---

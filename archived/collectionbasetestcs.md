@@ -1,7 +1,6 @@
 ---
 title: "CollectionBaseTest.cs"
 lastmodified: '2005-02-25'
-permalink: /archived/CollectionBaseTest.cs/
 redirect_from:
   - /CollectionBaseTest.cs/
 ---

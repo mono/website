@@ -1,7 +1,6 @@
 ---
 title: "Mailpost:earlystory"
 lastmodified: '2005-11-03'
-permalink: /archived/Mailpost:earlystory/
 redirect_from:
   - /Mailpost:earlystory/
 ---

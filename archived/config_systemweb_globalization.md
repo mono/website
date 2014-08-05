@@ -1,7 +1,6 @@
 ---
 title: "Config system.web globalization"
 lastmodified: '2008-06-25'
-permalink: /archived/Config_system.web_globalization/
 redirect_from:
   - /Config_system.web_globalization/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "ASP.NET Settings Mapping"
 lastmodified: '2008-03-01'
-permalink: /archived/ASP.NET_Settings_Mapping/
 redirect_from:
   - /ASP.NET_Settings_Mapping/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Web Services"
 lastmodified: '2010-06-22'
-permalink: /archived/Web_Services/
 redirect_from:
   - /Web_Services/
 ---

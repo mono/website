@@ -1,7 +1,6 @@
 ---
 title: "Compiling GtkSharp"
 lastmodified: '2009-07-30'
-permalink: /archived/Compiling_GtkSharp/
 redirect_from:
   - /Compiling_GtkSharp/
 ---

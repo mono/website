@@ -1,7 +1,6 @@
 ---
 title: "Netware"
 lastmodified: '2005-04-13'
-permalink: /archived/Netware/
 redirect_from:
   - /Netware/
 ---

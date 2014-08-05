@@ -1,7 +1,6 @@
 ---
 title: "MonoMac/Documentation/API Design"
 lastmodified: '2011-05-11'
-permalink: /archived/MonoMac/Documentation/API_Design/
 redirect_from:
   - /MonoMac/Documentation/API_Design/
 ---

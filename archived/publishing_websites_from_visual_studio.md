@@ -1,7 +1,6 @@
 ---
 title: "Publishing Websites From Visual Studio"
 lastmodified: '2009-02-17'
-permalink: /archived/Publishing_Websites_From_Visual_Studio/
 redirect_from:
   - /Publishing_Websites_From_Visual_Studio/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Certificate of Origin"
 lastmodified: '2006-10-10'
-permalink: /archived/Certificate_of_Origin/
 redirect_from:
   - /Certificate_of_Origin/
 ---

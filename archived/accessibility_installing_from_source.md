@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Installing From Source"
 lastmodified: '2011-02-14'
-permalink: /archived/Accessibility:_Installing_From_Source/
 redirect_from:
   - /Accessibility:_Installing_From_Source/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Branches"
 lastmodified: '2010-11-13'
-permalink: /archived/Branches/
 redirect_from:
   - /Branches/
 ---

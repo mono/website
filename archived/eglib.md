@@ -1,7 +1,6 @@
 ---
 title: "Eglib"
 lastmodified: '2010-08-24'
-permalink: /archived/Eglib/
 redirect_from:
   - /Eglib/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "SystemMessagingOpenwire"
 lastmodified: '2009-07-15'
-permalink: /archived/SystemMessagingOpenwire/
 redirect_from:
   - /SystemMessagingOpenwire/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Config system.web authorization"
 lastmodified: '2008-06-25'
-permalink: /archived/Config_system.web_authorization/
 redirect_from:
   - /Config_system.web_authorization/
 ---

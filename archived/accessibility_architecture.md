@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Architecture"
 lastmodified: '2008-08-15'
-permalink: /archived/Accessibility:_Architecture/
 redirect_from:
   - /Accessibility:_Architecture/
 ---

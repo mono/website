@@ -1,7 +1,6 @@
 ---
 title: "Irc2Wiki"
 lastmodified: '2008-07-02'
-permalink: /archived/Irc2Wiki/
 redirect_from:
   - /Irc2Wiki/
 ---

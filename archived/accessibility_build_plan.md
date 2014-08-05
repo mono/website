@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Build Plan"
 lastmodified: '2010-05-06'
-permalink: /archived/Accessibility:_Build_Plan/
 redirect_from:
   - /Accessibility:_Build_Plan/
 ---

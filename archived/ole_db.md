@@ -1,7 +1,6 @@
 ---
 title: "OLE DB"
 lastmodified: '2005-09-06'
-permalink: /archived/OLE_DB/
 redirect_from:
   - /OLE_DB/
 ---

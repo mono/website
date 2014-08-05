@@ -1,7 +1,6 @@
 ---
 title: "MoonlightDesktop"
 lastmodified: '2010-10-19'
-permalink: /archived/MoonlightDesktop/
 redirect_from:
   - /MoonlightDesktop/
 ---

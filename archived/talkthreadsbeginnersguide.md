@@ -1,7 +1,6 @@
 ---
 title: "Talk:ThreadsBeginnersGuide"
 lastmodified: '2007-03-12'
-permalink: /archived/Talk:ThreadsBeginnersGuide/
 redirect_from:
   - /Talk:ThreadsBeginnersGuide/
 ---

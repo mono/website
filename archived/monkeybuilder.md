@@ -1,7 +1,6 @@
 ---
 title: "MonkeyBuilder"
 lastmodified: '2010-04-07'
-permalink: /archived/MonkeyBuilder/
 redirect_from:
   - /MonkeyBuilder/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "HowToSystemIOPorts"
 lastmodified: '2011-09-16'
-permalink: /archived/HowToSystemIOPorts/
 redirect_from:
   - /HowToSystemIOPorts/
 ---

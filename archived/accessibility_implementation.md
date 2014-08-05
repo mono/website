@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Implementation"
 lastmodified: '2008-11-21'
-permalink: /archived/Accessibility:_Implementation/
 redirect_from:
   - /Accessibility:_Implementation/
 ---

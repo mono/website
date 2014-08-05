@@ -1,7 +1,6 @@
 ---
 title: "Mono:Protection log"
 lastmodified: '2005-03-03'
-permalink: /archived/Mono:Protection_log/
 redirect_from:
   - /Mono:Protection_log/
 ---

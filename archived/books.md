@@ -1,7 +1,6 @@
 ---
 title: "Books"
 lastmodified: '2012-02-11'
-permalink: /archived/Books/
 redirect_from:
   - /Books/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Guide:StarterKitPrimer"
 lastmodified: '2007-03-09'
-permalink: /archived/Guide:StarterKitPrimer/
 redirect_from:
   - /Guide:StarterKitPrimer/
 ---

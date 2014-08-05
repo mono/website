@@ -1,7 +1,6 @@
 ---
 title: "AppServer"
 lastmodified: '2006-12-12'
-permalink: /archived/AppServer/
 redirect_from:
   - /AppServer/
 ---

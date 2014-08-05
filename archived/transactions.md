@@ -1,7 +1,6 @@
 ---
 title: "Transactions"
 lastmodified: '2006-11-15'
-permalink: /archived/Transactions/
 redirect_from:
   - /Transactions/
 ---

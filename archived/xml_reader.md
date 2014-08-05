@@ -1,7 +1,6 @@
 ---
 title: "XML Reader"
 lastmodified: '2006-05-20'
-permalink: /archived/XML_Reader/
 redirect_from:
   - /XML_Reader/
 ---

@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Team Meetings 2009 Feb 09"
 lastmodified: '2009-02-09'
-permalink: /archived/Accessibility:_Team_Meetings_2009_Feb_09/
 redirect_from:
   - /Accessibility:_Team_Meetings_2009_Feb_09/
 ---

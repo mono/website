@@ -1,7 +1,6 @@
 ---
 title: "ASP.NET Modules"
 lastmodified: '2008-06-25'
-permalink: /archived/ASP.NET_Modules/
 redirect_from:
   - /ASP.NET_Modules/
 ---

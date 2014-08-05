@@ -1,7 +1,6 @@
 ---
 title: "Mono On Other Platforms"
 lastmodified: '2005-09-06'
-permalink: /archived/Mono_On_Other_Platforms/
 redirect_from:
   - /Mono_On_Other_Platforms/
 ---

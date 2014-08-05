@@ -1,7 +1,6 @@
 ---
 title: "MoonlightShots"
 lastmodified: '2007-08-11'
-permalink: /archived/MoonlightShots/
 redirect_from:
   - /MoonlightShots/
   - /MoonlightShot/

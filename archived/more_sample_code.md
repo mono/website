@@ -1,7 +1,6 @@
 ---
 title: "More Sample Code"
 lastmodified: '2005-09-06'
-permalink: /archived/More_Sample_Code/
 redirect_from:
   - /More_Sample_Code/
 ---

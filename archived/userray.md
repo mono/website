@@ -1,7 +1,6 @@
 ---
 title: "User:Ray"
 lastmodified: '2008-05-04'
-permalink: /archived/User:Ray/
 redirect_from:
   - /User:Ray/
 ---

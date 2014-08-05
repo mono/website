@@ -1,7 +1,6 @@
 ---
 title: "Category:Windows"
 lastmodified: '2007-03-12'
-permalink: /archived/Category:Windows/
 redirect_from:
   - /Category:Windows/
 ---

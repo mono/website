@@ -1,7 +1,6 @@
 ---
 title: "AtkSharp"
 lastmodified: '2008-03-17'
-permalink: /archived/AtkSharp/
 redirect_from:
   - /AtkSharp/
 ---

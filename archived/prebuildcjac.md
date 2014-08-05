@@ -1,7 +1,6 @@
 ---
 title: "Prebuild:cjac"
 lastmodified: '2007-04-05'
-permalink: /archived/Prebuild:cjac/
 redirect_from:
   - /Prebuild:cjac/
 ---

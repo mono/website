@@ -1,7 +1,6 @@
 ---
 title: "Article:IOChanges"
 lastmodified: '2007-04-20'
-permalink: /archived/Article:IOChanges/
 redirect_from:
   - /Article:IOChanges/
 ---

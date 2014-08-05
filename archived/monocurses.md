@@ -1,7 +1,6 @@
 ---
 title: "MonoCurses"
 lastmodified: '2009-04-22'
-permalink: /archived/MonoCurses/
 redirect_from:
   - /MonoCurses/
 ---

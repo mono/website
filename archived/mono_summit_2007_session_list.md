@@ -1,7 +1,6 @@
 ---
 title: "Mono Summit 2007 Session List"
 lastmodified: '2007-11-22'
-permalink: /archived/Mono_Summit_2007_Session_List/
 redirect_from:
   - /Mono_Summit_2007_Session_List/
 ---

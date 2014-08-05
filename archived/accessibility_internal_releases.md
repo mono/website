@@ -1,7 +1,6 @@
 ---
 title: "Accessibility: Internal Releases"
 lastmodified: '2010-09-17'
-permalink: /archived/Accessibility:_Internal_Releases/
 redirect_from:
   - /Accessibility:_Internal_Releases/
   - /Accessibility:_Potential_Internal_Release_Codenames/

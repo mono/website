@@ -1,7 +1,6 @@
 ---
 title: "Winforms Samples"
 lastmodified: '2008-08-18'
-permalink: /archived/Winforms_Samples/
 redirect_from:
   - /Winforms_Samples/
 ---
