@@ -12,15 +12,14 @@ The following official versions are available in the standard Debian repositorie
 ||
 |Debian 6.0 (Squeeze):|[2.6.7](http://packages.debian.org/squeeze/mono-runtime)|
 |Debian 7.0 (Wheezy):|[2.10.8.1](http://packages.debian.org/squeeze/mono-runtime)|
-|Debian Jessie (testing):|[2.10.8.1](http://packages.debian.org/testing/mono-runtime)|
-|Debian Sid (unstable):|[3.0.6](http://packages.debian.org/unstable/mono-runtime)|
-|Debian Experimental:|[3.2.8](http://packages.debian.org/experimental/mono-runtime)|
+|Debian Jessie (testing):|[3.2.8](http://packages.debian.org/testing/mono-runtime)|
+|Debian Sid (unstable):|[3.2.8](http://packages.debian.org/unstable/mono-runtime)|
 
 Dependencies are automatically tracked for applications in the archive such as Tomboy and F-Spot.
 
-To compile your own software, install **mono-devel** on Squeeze (6.0), Wheezy (testing), Sid (unstable), or Experimental.
+To compile your own software, install **mono-devel**.
 
-For a complete Mono, install **mono-complete** on Squeeze (6.0), Wheezy (testing), Sid (unstable), or Experimental.
+For a complete Mono, install **mono-complete**.
 
 If you run Debian/Testing or Debian/Unstable then you can install Mono from Debian/Experimental. First you need to add the experimental repository to your /etc/apt/sources.list by running:
 
@@ -60,5 +59,4 @@ Further Links
 -   The Debian Mono Group can be contacted via IRC: [[1]](irc://irc.oftc.net/#debian-cli)
 -   The Debian Mono Group can be contacted via their mailing list, [pkg-mono-devel@lists.alioth.debian.org](http://lists.alioth.debian.org/mailman/listinfo/pkg-mono-devel) - general questions relating to Mono on Debian should go to the end-user mailing list [debian-cli@lists.debian.org](http://lists.debian.org/debian-cli/)
 -   The Debian Mono Group has a website on [Alioth](http://pkg-mono.alioth.debian.org/)
-
 
