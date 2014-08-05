@@ -42,6 +42,7 @@ Compiling Mono
 --------------
 
  - [Overview]({{ site.github.url }}/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
+ - [Compiling from Git]({{ site.github.url }}/docs/compiling-mono/compiling-from-git/) and [Compiling from Tarball]({{ site.github.url }}/docs/compiling-mono/compiling-from-tarball/)
  - [Advanced compile options]({{ site.github.url }}/docs/compiling-mono/advanced-mono-compile-options/)
  - [Unsupported advanced compile options]({{ site.github.url }}/docs/compiling-mono/unsupported-advanced-compile-options/)
  - [Parallel Mono environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/)

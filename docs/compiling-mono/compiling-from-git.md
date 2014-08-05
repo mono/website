@@ -1,31 +1,12 @@
 ---
-title: "Compiling Mono From Git"
-lastmodified: '2012-04-05'
+title: Compiling Mono From Git
 redirect_from:
   - /Compiling_Mono_From_Git/
   - /Compiling_Mono_From_git/
+  - /Compiling_Mono_From_GIT/
 ---
 
-Compiling Mono From Git
-=======================
-
 For full details about checking out your source code, see the [Mono page on GitHub](http://github.com/mono) page.
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#checking-out-for-the-first-time">1 Checking out for the first time</a></li>
-<li><a href="#switching-to-a-branch">2 Switching to a branch</a></li>
-<li><a href="#updating-an-existing-checkout">3 Updating an existing checkout</a></li>
-<li><a href="#building-the-source">4 Building the source</a></li>
-<li><a href="#maintaining-submodules-in-mono">5 Maintaining submodules in Mono</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
 
 ### Checking out for the first time
 
@@ -45,7 +26,7 @@ If you want to work with a branch instead of HEAD (master), you still need to cl
 
       $ (cd mono; git checkout mono-2-6) 
 
-Beware! If you wanted to work from a branch in your fork of the mono repository, you should do (as explained on the [GitFAQ]({{ site.github.url }}/GitFAQ "GitFAQ")):
+Beware! If you wanted to work from a branch in your fork of the mono repository, you should do:
 
       $ (cd mono; git checkout -t origin/mono-2-6) 
 
@@ -90,8 +71,3 @@ Also to get the latest changes in System.Drawing.dll and System.Windows.Forms.dl
 If you use a different prefix then you may need to adjust your LD\_LIBRARY\_PATH environment variable to ensure libgdiplus.so can be loaded.
 
       export LD_LIBRARY_PATH=/your/own/prefix:$LD_LIBRARY_PATH
-
-### Maintaining submodules in Mono
-
-Please see [Git Submodule Maintenance]({{ site.github.url }}/Git_Submodule_Maintenance "Git Submodule Maintenance")
-

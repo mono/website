@@ -1,12 +1,8 @@
 ---
-title: "Compiling Mono From Tarball"
-lastmodified: '2013-01-22'
+title: Compiling Mono From Tarball
 redirect_from:
   - /Compiling_Mono_From_Tarball/
 ---
-
-Compiling Mono From Tarball
-===========================
 
 If you are building versions of Mono prior to 2.8, you will need to obtain the Mono dependencies first: [glib 2.x](http://www.gtk.org) and [pkg-config](http://www.freedesktop.org/software/pkgconfig). With Mono 2.8 it is no longer necessary to have either one of those.
 
