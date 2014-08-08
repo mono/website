@@ -14,14 +14,14 @@ redirect_from:
     <h5>The latest Mono release is: <strong>{{page.latestmono}}</strong></h5>
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a>.</p>
 
-    <dl id="mono-download" class="tabs vertical" data-tab>
-      <dd class="active"><a href="#panel-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
-      <dd><a href="#panel-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
-      <dd><a href="#panel-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
+    <dl id="mono-download" class="tabs vertical" data-tab data-options="deep_linking: true; scroll_to_content: false">
+      <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
+      <dd><a href="#download-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
+      <dd><a href="#download-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
     </dl>
 
     <div class="tabs-content vertical">
-      <div class="panel content active" id="panel-mac">
+      <div class="panel content active" id="download-mac">
         <h4>Mono for Mac OS X is available as a Mac Package (.pkg)</h4>
         <p>Please refer to the <a href="{{ site.github.url }}/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <p><i>The MDK package is for developers.</i></p>
@@ -30,7 +30,7 @@ redirect_from:
           <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
         </div>
       </div>
-      <div class="panel content" id="panel-lin">
+      <div class="panel content" id="download-lin">
         <h4>Mono for Linux is available for various distributions</h4>
         <p>Please refer to the <a href="{{ site.github.url }}/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <h5>Xamarin packages</h5>
@@ -58,7 +58,7 @@ redirect_from:
           </ul>
         </p>
       </div>
-      <div class="panel content" id="panel-win">
+      <div class="panel content" id="download-win">
         <h4>Mono for Windows is available as a Windows Installer (.exe)</h4>
         <p>Please refer to the <a href="{{ site.github.url }}/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
