@@ -36,7 +36,7 @@ GtkGLAreaSharp
 Introduction
 ------------
 
-[![]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)
+[![](/archived/images/8/8a/Gtkglext-sharp1.png)](/archived/images/8/8a/Gtkglext-sharp1.png)
 
 A view of a 3d Teapot generated using GtkGLAreaSharp
 
@@ -51,16 +51,16 @@ Installing
 
 ### Tutorial
 
-Remy has made a great [GtkGlAreaSharp:Installation]({{ site.github.url }}/GtkGlAreaSharp:Installation "GtkGlAreaSharp:Installation") tutorial.
+Remy has made a great [GtkGlAreaSharp:Installation](/GtkGlAreaSharp:Installation "GtkGlAreaSharp:Installation") tutorial.
 
 Dependencies
 ------------
 
-GtkGLAreaSharp is a wrapper around the C [GtkGLArea]({{ site.github.url }}/GtkGLArea "GtkGLArea") gtk+ widget. Hence, it depends on that library. It is in the GNOME cvs repository as "gtkglarea." C.J. is now maintainer of this package. Future plans include OS platform independence and use of glitz.
+GtkGLAreaSharp is a wrapper around the C [GtkGLArea](/GtkGLArea "GtkGLArea") gtk+ widget. Hence, it depends on that library. It is in the GNOME cvs repository as "gtkglarea." C.J. is now maintainer of this package. Future plans include OS platform independence and use of glitz.
 
-The widget doesn't **require** [Tao]({{ site.github.url }}/Tao "Tao"), but it is the most well-maintained C\# wrapper around OpenGL that I have found. Plus, the tao developers hang out in the same places as the gtkglarea-sharp developers. The examples in the repository use Tao as the OpenGL interface.
+The widget doesn't **require** [Tao](/Tao "Tao"), but it is the most well-maintained C\# wrapper around OpenGL that I have found. Plus, the tao developers hang out in the same places as the gtkglarea-sharp developers. The examples in the repository use Tao as the OpenGL interface.
 
-C.J. has created an autotooled build system for tao and hosted it on his server, listed below. You may read more about it on the [Tao autotools]({{ site.github.url }}/Tao_autotools "Tao autotools") page
+C.J. has created an autotooled build system for tao and hosted it on his server, listed below. You may read more about it on the [Tao autotools](/Tao_autotools "Tao autotools") page
 
 [https://www.colliertech.org/downloads/tao/](https://www.colliertech.org/downloads/tao/)
 
@@ -76,7 +76,7 @@ If you wish to beta test the wrapper, check the code out from subversion here:
 MonoDevelop
 -----------
 
-If you would like to download GtkAreaGLSharp and use it within MonoDevelop, you can see this [rough guide]({{ site.github.url }}/GtkGLAreaSharp:With_MonoDevelop "GtkGLAreaSharp:With MonoDevelop").
+If you would like to download GtkAreaGLSharp and use it within MonoDevelop, you can see this [rough guide](/GtkGLAreaSharp:With_MonoDevelop "GtkGLAreaSharp:With MonoDevelop").
 
 Support
 -------
@@ -113,14 +113,14 @@ With the help of Alp Toker, I created a rotating teapot demo, which is included 
 
 [http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/trackball/)
 
- [![Gtkglext-sharp1.png]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png)]({{ site.github.url }}/archived/images/8/8a/Gtkglext-sharp1.png) [![Gtkglext-sharp2.png]({{ site.github.url }}/archived/images/b/b7/Gtkglext-sharp2.png)]({{ site.github.url }}/archived/images/b/b7/Gtkglext-sharp2.png)
+ [![Gtkglext-sharp1.png](/archived/images/8/8a/Gtkglext-sharp1.png)](/archived/images/8/8a/Gtkglext-sharp1.png) [![Gtkglext-sharp2.png](/archived/images/b/b7/Gtkglext-sharp2.png)](/archived/images/b/b7/Gtkglext-sharp2.png)
 
- This code is poorly documented. However, I used this code to create a partial implementation of [Neon Helium](http://nehe.gamedev.net/)'s OpenGL lessons. You can find the NeHe documentation on the [GtkGLAreaSharp:NeHe]({{ site.github.url }}/GtkGLAreaSharp:NeHe "GtkGLAreaSharp:NeHe") wiki entry.
+ This code is poorly documented. However, I used this code to create a partial implementation of [Neon Helium](http://nehe.gamedev.net/)'s OpenGL lessons. You can find the NeHe documentation on the [GtkGLAreaSharp:NeHe](/GtkGLAreaSharp:NeHe "GtkGLAreaSharp:NeHe") wiki entry.
 
 Release Notes
 -------------
 
--   [GtkGLAreaSharp:0.0.17]({{ site.github.url }}/GtkGLAreaSharp:0.0.17 "GtkGLAreaSharp:0.0.17") - April 2007
--   [GtkGLAreaSharp:0.0.8]({{ site.github.url }}/GtkGLAreaSharp:0.0.8 "GtkGLAreaSharp:0.0.8")
+-   [GtkGLAreaSharp:0.0.17](/GtkGLAreaSharp:0.0.17 "GtkGLAreaSharp:0.0.17") - April 2007
+-   [GtkGLAreaSharp:0.0.8](/GtkGLAreaSharp:0.0.8 "GtkGLAreaSharp:0.0.8")
 
 

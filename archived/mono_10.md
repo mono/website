@@ -11,7 +11,7 @@ Mono 1.0
 
 The following components make up the Mono 1.0 release.
 
-For information about the new Mono see [Mono\_1\_1]({{ site.github.url }}/Mono_1_1 "Mono 1 1").
+For information about the new Mono see [Mono\_1\_1](/Mono_1_1 "Mono 1 1").
 
 Notice that these are \*assemblies\*, they are not namespaces. Each assembly normally contains code that spans multiple namespaces (mscorlib contains 37 namespaces), but there are a lot of people who seem confused about this.
 

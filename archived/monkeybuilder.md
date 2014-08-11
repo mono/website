@@ -42,7 +42,7 @@ Step 1: Set up Environment
 
 Your finished directory should look like this:
 
-[Filelist.png]({{ site.github.url }}/archived/images/4/48/Filelist.png)
+[Filelist.png](/archived/images/4/48/Filelist.png)
 
 Step 2: Edit the Configuration File
 -----------------------------------

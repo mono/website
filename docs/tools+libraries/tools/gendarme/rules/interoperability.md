@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Interoperability/
 ---
 
-[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s interoperability rules are located in the **Gendarme.Rules.Interoperability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Interoperability/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s interoperability rules are located in the **Gendarme.Rules.Interoperability.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Interoperability/).
 
 <table>
 <col width="100%" />

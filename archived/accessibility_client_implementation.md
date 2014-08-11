@@ -14,7 +14,7 @@ Draft Description of Client API internal architecture
 Relevant Assemblies
 -------------------
 
-[![Diagram showing dependencies between assemblies related to UIA Client API implementation]({{ site.github.url }}/archived/images/2/2a/ClientAssemblies.png)]({{ site.github.url }}/archived/images/2/2a/ClientAssemblies.png "Diagram showing dependencies between assemblies related to UIA Client API implementation")
+[![Diagram showing dependencies between assemblies related to UIA Client API implementation](/archived/images/2/2a/ClientAssemblies.png)](/archived/images/2/2a/ClientAssemblies.png "Diagram showing dependencies between assemblies related to UIA Client API implementation")
 
 Our work during the client phase will focus mainly on four assemblies:
 
@@ -26,7 +26,7 @@ Our work during the client phase will focus mainly on four assemblies:
 UIAutomationSource Interfaces
 -----------------------------
 
-[![Diagram relation between basic classes from UIAutomationClient, the corresponding interfaces in UIAutomationSource, and a sample implementation from DbusCoreUiaSource]({{ site.github.url }}/archived/images/d/d6/UIASourceInterfaces.png)]({{ site.github.url }}/archived/images/d/d6/UIASourceInterfaces.png "Diagram relation between basic classes from UIAutomationClient, the corresponding interfaces in UIAutomationSource, and a sample implementation from DbusCoreUiaSource")
+[![Diagram relation between basic classes from UIAutomationClient, the corresponding interfaces in UIAutomationSource, and a sample implementation from DbusCoreUiaSource](/archived/images/d/d6/UIASourceInterfaces.png)](/archived/images/d/d6/UIASourceInterfaces.png "Diagram relation between basic classes from UIAutomationClient, the corresponding interfaces in UIAutomationSource, and a sample implementation from DbusCoreUiaSource")
 
 Our UIAutomationClient implementation supports using multiple a11y infrastructures as UIA Sources. Therefore, many of the basic classes in the Client API like AutomationElement, TreeWalker, and the \*Pattern classes will ultimately be wrappers around some arbitrary UIA Source. So, in our UIAutomationSource assembly, we define several interfaces to abstract this functionality:
 

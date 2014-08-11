@@ -8,7 +8,7 @@ redirect_from:
 Stetic
 ======
 
-[![]({{ site.github.url }}/archived/images/b/b1/Steticinmonodevelop_s.png)]({{ site.github.url }}/archived/images/b/b1/Steticinmonodevelop_s.png)
+[![](/archived/images/b/b1/Steticinmonodevelop_s.png)](/archived/images/b/b1/Steticinmonodevelop_s.png)
 
 Stetic integrated into MonoDevelop
 
@@ -31,7 +31,7 @@ Features
 Source Code
 -----------
 
-The source code for Stetic is currently it is available from the Mono [SVN repository]({{ site.github.url }}/SourceCodeRepository) as the module 'stetic'
+The source code for Stetic is currently it is available from the Mono [SVN repository](/SourceCodeRepository) as the module 'stetic'
 
 Blogs
 -----

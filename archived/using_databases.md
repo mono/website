@@ -19,19 +19,19 @@ Database Providers
 
 The following database providers are available for Mono applications:
 
--   [MySQL]({{ site.github.url }}/MySQL "MySQL")
--   [ODBC]({{ site.github.url }}/ODBC "ODBC")
--   [SQLClient]({{ site.github.url }}/SQLClient "SQLClient")
--   [Oracle]({{ site.github.url }}/Oracle "Oracle")
--   [PostgreSQL]({{ site.github.url }}/PostgreSQL "PostgreSQL")
--   [Firebird and Interbase]({{ site.github.url }}/Firebird_Interbase "Firebird Interbase")
--   [IBM DB2]({{ site.github.url }}/IBM_DB2 "IBM DB2")
--   [OLE DB]({{ site.github.url }}/OLE_DB "OLE DB")
--   [SQLite]({{ site.github.url }}/SQLite "SQLite")
--   [Sybase]({{ site.github.url }}/Sybase "Sybase")
--   [TDS Providers]({{ site.github.url }}/TDS_Providers "TDS Providers")
--   [TDS Generic]({{ site.github.url }}/TDS_Generic "TDS Generic")
--   [MaxDB]({{ site.github.url }}/MaxDB "MaxDB")
+-   [MySQL](/MySQL "MySQL")
+-   [ODBC](/ODBC "ODBC")
+-   [SQLClient](/SQLClient "SQLClient")
+-   [Oracle](/Oracle "Oracle")
+-   [PostgreSQL](/PostgreSQL "PostgreSQL")
+-   [Firebird and Interbase](/Firebird_Interbase "Firebird Interbase")
+-   [IBM DB2](/IBM_DB2 "IBM DB2")
+-   [OLE DB](/OLE_DB "OLE DB")
+-   [SQLite](/SQLite "SQLite")
+-   [Sybase](/Sybase "Sybase")
+-   [TDS Providers](/TDS_Providers "TDS Providers")
+-   [TDS Generic](/TDS_Generic "TDS Generic")
+-   [MaxDB](/MaxDB "MaxDB")
 -   [VistaDB](http://www.vistadb.com)
 
 Tools

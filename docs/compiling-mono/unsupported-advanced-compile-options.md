@@ -16,18 +16,18 @@ It is possible to build a Mono virtual machine that has fewer features than a fu
 ./configure --enable-minimal=aot
 ```
 
-That would remove the [ahead of time compilation]({{ site.github.url }}/docs/advanced/runtime/#ahead-of-time-compilation) feature.
+That would remove the [ahead of time compilation](/docs/advanced/runtime/#ahead-of-time-compilation) feature.
 
 The following features can be removed:
 
--   [aot]({{ site.github.url }}/docs/advanced/runtime/#ahead-of-time-compilation) ahead of time compilation.
+-   [aot](/docs/advanced/runtime/#ahead-of-time-compilation) ahead of time compilation.
 -   profiler: profiler support.
 -   decimal: support for the System.Decimal (decimal type) in Mono.
--   [pinvoke]({{ site.github.url }}/docs/advanced/pinvoke/): Platform Invoke services to call into native libraries
+-   [pinvoke](/docs/advanced/pinvoke/): Platform Invoke services to call into native libraries
 -   debug: debugging support (line number information, debuggability of applications.
 -   reflection\_emit: generating code with the System.Reflection.Emit API
 -   logging: a handful of routines used for debugging the JIT.
--   [com]({{ site.github.url }}/docs/advanced/com-interop/): Support for COM Interop.
+-   [com](/docs/advanced/com-interop/): Support for COM Interop.
 -   ssa: the SSA-family of optimizations.
 -   generics: support for the 2.0 generics in the runtime.
 

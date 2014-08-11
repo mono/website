@@ -8,8 +8,8 @@ Cairo is a low-level 2D vector drawing library. Various rendering backends (XRen
 
 ### More Resources
 
--   [Mono.Cairo Tutorial]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cairo/tutorial/) - An in-depth guide to getting started with Cairo and Mono.
--   [Mono.Cairo Cookbook]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cairo/cookbook) - Some short recipes to help spice up your Cairo usage.
+-   [Mono.Cairo Tutorial](/docs/tools+libraries/libraries/Mono.Cairo/tutorial/) - An in-depth guide to getting started with Cairo and Mono.
+-   [Mono.Cairo Cookbook](/docs/tools+libraries/libraries/Mono.Cairo/cookbook) - Some short recipes to help spice up your Cairo usage.
 
 ### Using Cairo with Gtk/Gdk
 
@@ -105,7 +105,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 }
 ```
 
-[![CairoGtk 1.png]({{ site.github.url }}/archived/images/f/f2/CairoGtk_1.png)]({{ site.github.url }}/archived/images/f/f2/CairoGtk_1.png)
+[![CairoGtk 1.png](/archived/images/f/f2/CairoGtk_1.png)](/archived/images/f/f2/CairoGtk_1.png)
 
 I used `FillPreserve` method instead of `Fill` because the latter destroys the current path. If you want to keep the path use `StrokePreserve` and `FillPreserve`.
 
@@ -209,7 +209,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 }
 ```
 
-[![CairoGtk 2.png]({{ site.github.url }}/archived/images/d/d2/CairoGtk_2.png)]({{ site.github.url }}/archived/images/d/d2/CairoGtk_2.png)
+[![CairoGtk 2.png](/archived/images/d/d2/CairoGtk_2.png)](/archived/images/d/d2/CairoGtk_2.png)
 
 ### Hints
 

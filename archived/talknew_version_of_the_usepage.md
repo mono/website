@@ -16,7 +16,7 @@ For example: Use case 1: Develop Cross Plattform Apps. Use case 2: Develop Web A
 
 Each of those use cases should contain a link to a page which summarizes the use case and gives hints and shortcuts how to achieve the goal. (Okay the last one should point to a place where for example research projects based on mono can publish what they've done so far and how they have achieved it...)
 
---[Valentin]({{ site.github.url }}/User:ValentinSawadski "User:ValentinSawadski") 14:20, 17 May 2007 (EDT)
+--[Valentin](/User:ValentinSawadski "User:ValentinSawadski") 14:20, 17 May 2007 (EDT)
 
 Preconditions of using something?
 ---------------------------------
@@ -25,7 +25,7 @@ While writing the article the thought crossed my mind that it might be useful to
 
 Therefore the Support and Getting Mono Paragraph. Or is this unnecessary? Any Comments?
 
---[Valentin]({{ site.github.url }}/User:ValentinSawadski "User:ValentinSawadski") 15:05, 17 May 2007 (EDT)
+--[Valentin](/User:ValentinSawadski "User:ValentinSawadski") 15:05, 17 May 2007 (EDT)
 
 I think the Getting Mono part is fine. The Support part is probably not needed. I really like the idea of breaking this down by use case. In my notes, I had broken it down into the same categories as your first three. However, I hadn't really gotten much further than that. I think Embedding may be obscure enough to go under Other, but that's just my opinion.
 
@@ -35,5 +35,5 @@ I've written the support part with the thought in mind that safety always comes 
 
 As for the rest of the page: I'm done so far and now waiting for reviews.
 
---[Valentin]({{ site.github.url }}/User:ValentinSawadski "User:ValentinSawadski") 12:43, 20 May 2007 (EDT)
+--[Valentin](/User:ValentinSawadski "User:ValentinSawadski") 12:43, 20 May 2007 (EDT)
 

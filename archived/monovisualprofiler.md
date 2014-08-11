@@ -11,7 +11,7 @@ MonoVisualProfiler
 Mono Visual Profiler
 ====================
 
-[![Mvp-start.png]({{ site.github.url }}/archived/images/0/0e/Mvp-start.png)]({{ site.github.url }}/archived/images/0/0e/Mvp-start.png)
+[![Mvp-start.png](/archived/images/0/0e/Mvp-start.png)](/archived/images/0/0e/Mvp-start.png)
 
 Overview
 --------
@@ -61,7 +61,7 @@ A simple two level allocation tree view is available with Class root nodes and A
 
 #### Calls/Instrumented Mode Tree View
 
-[![Mvp call tree filtered.png]({{ site.github.url }}/archived/images/9/92/Mvp_call_tree_filtered.png)]({{ site.github.url }}/archived/images/9/92/Mvp_call_tree_filtered.png)
+[![Mvp call tree filtered.png](/archived/images/9/92/Mvp_call_tree_filtered.png)](/archived/images/9/92/Mvp_call_tree_filtered.png)
 
 For instrumented/calls mode profiles, a call flow tree view with library based flattening is available. Currently, the only supported flattening option is the flattening of System library methods. For example, if a System Library method such as Gtk.Application.Run is called, the tree is flattened until a non-system method child node is found. A "Show System Nodes" menu item can be switched on to disable this flattening which is on by default.
 

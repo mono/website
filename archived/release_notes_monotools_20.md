@@ -22,7 +22,7 @@ One of the biggest changes for MonoTools 2.0 (at least under the hood) is that w
 
 The soft debugger was originally released for MonoTouch, allowing developers to remotely debug applications running on Mono on the iPhone. Unlike our traditional "hard debugger" (mdb), which operates outside of the Mono runtime to start and pause an application and poke at memory contents, the soft debugger is built into the Mono runtime and cooperates with the runtime to provide the necessary functionality to the debugger.
 
-[More Information about the Soft Debugger]({{ site.github.url }}/Soft_Debugger)
+[More Information about the Soft Debugger](/Soft_Debugger)
 
 #### Platform Support
 
@@ -39,11 +39,11 @@ Profile-Based Deployment
 
 MonoTools 2.0 introduces MonoTools Server Profiles. Profiles allow you to save your frequently used servers (and local Mono instances) so you can easily switch between them. Think of them like "bookmarks" for your servers, saving you the effort of keying server names/ip addresses, or waiting on Mono Tools to find nearby servers.
 
-[Profiles.png]({{ site.github.url }}/archived/images/4/4e/Profiles.png)
+[Profiles.png](/archived/images/4/4e/Profiles.png)
 
 However, profiles can store more than just the server address. Each profile can have completely independent settings, allowing you to set up things like IOMAP, so you can quickly switch between profiles with case-sensitivity enabled or disabled.
 
-[Advanced.png]({{ site.github.url }}/archived/images/f/f9/Advanced.png)
+[Advanced.png](/archived/images/f/f9/Advanced.png)
 
 You may also note a few new settings are available. We got several feature requests for allowing applications to be run with arbitrary environment variables or arguments passed to Mono, which can now be assigned per-profile.
 
@@ -116,7 +116,7 @@ Links
 
 ### Other useful resources
 
--   [Submit a Bug]({{ site.github.url }}/Bugs#Mono_Tools)
+-   [Submit a Bug](/Bugs#Mono_Tools)
 -   [Discuss in Forums](http://forums.mono-tools.com/)
 
 

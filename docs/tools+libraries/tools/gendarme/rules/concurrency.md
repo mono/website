@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Concurrency/
 ---
 
-[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s concurrency rules are located in the **Gendarme.Rules.Concurrency.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Concurrency/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s concurrency rules are located in the **Gendarme.Rules.Concurrency.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Concurrency/).
 
 <table>
 <col width="100%" />

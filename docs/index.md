@@ -18,118 +18,118 @@ Our documentation is open source on [GitHub](https://github.com/mono/website/doc
 Getting Started
 ---------------
 
- - [Overview]({{ site.github.url }}/docs/getting-started/)
- - Install Mono on [Mac OS X]({{ site.github.url }}/docs/getting-started/install/mac/), [Linux]({{ site.github.url }}/docs/getting-started/install/linux/) or [Windows]({{ site.github.url }}/docs/getting-started/install/windows/)
- - [Mono Basics]({{ site.github.url }}/docs/getting-started/mono-basics/)
- - [Development Environments]({{ site.github.url }}/docs/getting-started/development-environments/)
- - [Application Portability]({{ site.github.url }}/docs/getting-started/application-portability/) and [Application Deployment]({{ site.github.url }}/docs/getting-started/application-deployment/)
+ - [Overview](/docs/getting-started/)
+ - Install Mono on [Mac OS X](/docs/getting-started/install/mac/), [Linux](/docs/getting-started/install/linux/) or [Windows](/docs/getting-started/install/windows/)
+ - [Mono Basics](/docs/getting-started/mono-basics/)
+ - [Development Environments](/docs/getting-started/development-environments/)
+ - [Application Portability](/docs/getting-started/application-portability/) and [Application Deployment](/docs/getting-started/application-deployment/)
 
 About Mono
 ----------
 
- - [Overview]({{ site.github.url }}/docs/about-mono/)
- - [Supported Platforms]({{ site.github.url }}/docs/about-mono/supported-platforms/)
- - [Languages]({{ site.github.url }}/docs/about-mono/languages/)
- - [Compatibility]({{ site.github.url }}/docs/about-mono/compatibility/) and [Class Status]({{ site.github.url }}/docs/about-mono/class-status/) 
- - [Releases]({{ site.github.url }}/docs/about-mono/releases/) and [Versioning]({{ site.github.url }}/docs/about-mono/versioning/) 
- - [Maintainers]({{ site.github.url }}/docs/about-mono/maintainers/)
- - [History]({{ site.github.url }}/docs/about-mono/history/), [Concerns about Mono]({{ site.github.url }}/docs/about-mono/concerns-about-mono/)
- - [Roadmap]({{ site.github.url }}/docs/about-mono/roadmap/) and [Plans]({{ site.github.url }}/docs/about-mono/plans/)
- - [Vulnerabilities]({{ site.github.url }}/docs/about-mono/vulnerabilities/)
- - Showcase: [Screenshots]({{ site.github.url }}/docs/about-mono/showcase/screenshots/), [Software]({{ site.github.url }}/docs/about-mono/showcase/software/), [Companies using Mono]({{ site.github.url }}/docs/about-mono/showcase/companies-using-mono/), [Mono Logos]({{ site.github.url }}/docs/about-mono/logos/)
+ - [Overview](/docs/about-mono/)
+ - [Supported Platforms](/docs/about-mono/supported-platforms/)
+ - [Languages](/docs/about-mono/languages/)
+ - [Compatibility](/docs/about-mono/compatibility/) and [Class Status](/docs/about-mono/class-status/) 
+ - [Releases](/docs/about-mono/releases/) and [Versioning](/docs/about-mono/versioning/) 
+ - [Maintainers](/docs/about-mono/maintainers/)
+ - [History](/docs/about-mono/history/), [Concerns about Mono](/docs/about-mono/concerns-about-mono/)
+ - [Roadmap](/docs/about-mono/roadmap/) and [Plans](/docs/about-mono/plans/)
+ - [Vulnerabilities](/docs/about-mono/vulnerabilities/)
+ - Showcase: [Screenshots](/docs/about-mono/showcase/screenshots/), [Software](/docs/about-mono/showcase/software/), [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/), [Mono Logos](/docs/about-mono/logos/)
 
 Compiling Mono
 --------------
 
- - [Overview]({{ site.github.url }}/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
- - [Compiling from Git]({{ site.github.url }}/docs/compiling-mono/compiling-from-git/) and [Compiling from Tarball]({{ site.github.url }}/docs/compiling-mono/compiling-from-tarball/)
- - [Advanced compile options]({{ site.github.url }}/docs/compiling-mono/advanced-mono-compile-options/)
- - [Unsupported advanced compile options]({{ site.github.url }}/docs/compiling-mono/unsupported-advanced-compile-options/)
- - [Parallel Mono environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/)
- - [Small footprint]({{ site.github.url }}/docs/compiling-mono/small-footprint/)
+ - [Overview](/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
+ - [Compiling from Git](/docs/compiling-mono/compiling-from-git/) and [Compiling from Tarball](/docs/compiling-mono/compiling-from-tarball/)
+ - [Advanced compile options](/docs/compiling-mono/advanced-mono-compile-options/)
+ - [Unsupported advanced compile options](/docs/compiling-mono/unsupported-advanced-compile-options/)
+ - [Parallel Mono environments](/docs/compiling-mono/parallel-mono-environments/)
+ - [Small footprint](/docs/compiling-mono/small-footprint/)
 
 FAQ
 ---
 
- - [General]({{ site.github.url }}/docs/faq/general/)
- - [Security]({{ site.github.url }}/docs/faq/security/)
- - [Technical]({{ site.github.url }}/docs/faq/technical/)
- - [Licensing]({{ site.github.url }}/docs/faq/licensing/)
- - [Documentation]({{ site.github.url }}/docs/faq/documentation/)
- - [ASP.NET]({{ site.github.url }}/docs/faq/aspnet/)
- - [GTK]({{ site.github.url }}/docs/faq/gtk/)
- - [WinForms]({{ site.github.url }}/docs/faq/winforms/)
+ - [General](/docs/faq/general/)
+ - [Security](/docs/faq/security/)
+ - [Technical](/docs/faq/technical/)
+ - [Licensing](/docs/faq/licensing/)
+ - [Documentation](/docs/faq/documentation/)
+ - [ASP.NET](/docs/faq/aspnet/)
+ - [GTK](/docs/faq/gtk/)
+ - [WinForms](/docs/faq/winforms/)
 
 Database Access
 ---------------
 
- - [Overview]({{ site.github.url }}/docs/database-access/)
- - [ADO.NET]({{ site.github.url }}/docs/database-access/adonet/)
- - [EntityFramework]({{ site.github.url }}/docs/database-access/entityframework/)
+ - [Overview](/docs/database-access/)
+ - [ADO.NET](/docs/database-access/adonet/)
+ - [EntityFramework](/docs/database-access/entityframework/)
  
 Debug and Profile
 -----------------
 
- - [Debug - Overview]({{ site.github.url }}/docs/debug+profile/debug/)
-   - [Debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/)
- - [Profile - Overview]({{ site.github.url }}/docs/debug+profile/profile/)
-   - [Profiler]({{ site.github.url }}/docs/debug+profile/profile/profiler/)
-   - [HeapShot]({{ site.github.url }}/docs/debug+profile/profile/heapshot/)
-   - [DTrace]({{ site.github.url }}/docs/debug+profile/profile/dtrace/)
-   - [Code Coverage]({{ site.github.url }}/docs/debug+profile/profile/code-coverage/)
+ - [Debug - Overview](/docs/debug+profile/debug/)
+   - [Debugger](/docs/debug+profile/debug/debugger/)
+ - [Profile - Overview](/docs/debug+profile/profile/)
+   - [Profiler](/docs/debug+profile/profile/profiler/)
+   - [HeapShot](/docs/debug+profile/profile/heapshot/)
+   - [DTrace](/docs/debug+profile/profile/dtrace/)
+   - [Code Coverage](/docs/debug+profile/profile/code-coverage/)
 
 GUI
 ---
 
- - [GUI Toolkits]({{ site.github.url }}/docs/gui/gui-toolkits/)
- - [WinForms]({{ site.github.url }}/docs/gui/winforms/)
- - [Gtk#]({{ site.github.url }}/docs/gui/gtksharp/)
- - [Drawing]({{ site.github.url }}/docs/gui/drawing/)
- - [libgdiplus]({{ site.github.url }}/docs/gui/libgdiplus/)
- - [WPF]({{ site.github.url }}/docs/gui/wpf/)
+ - [GUI Toolkits](/docs/gui/gui-toolkits/)
+ - [WinForms](/docs/gui/winforms/)
+ - [Gtk#](/docs/gui/gtksharp/)
+ - [Drawing](/docs/gui/drawing/)
+ - [libgdiplus](/docs/gui/libgdiplus/)
+ - [WPF](/docs/gui/wpf/)
 
 Web
 ---
 
- - [ASP.NET]({{ site.github.url }}/docs/web/aspnet/)
- - [WCF]({{ site.github.url }}/docs/web/wcf/)
- - [FastCGI]({{ site.github.url }}/docs/web/fastcgi/)
- - [mod_mono]({{ site.github.url }}/docs/web/mod_mono/)
- - [Moonlight]({{ site.github.url }}/docs/web/moonlight/)
- - [Porting ASP.NET applications]({{ site.github.url }}/docs/web/porting-aspnet-applications/)
- - [Using client certificates with XSP]({{ site.github.url }}/docs/web/using-clientcertificates-with-xsp/)
+ - [ASP.NET](/docs/web/aspnet/)
+ - [WCF](/docs/web/wcf/)
+ - [FastCGI](/docs/web/fastcgi/)
+ - [mod_mono](/docs/web/mod_mono/)
+ - [Moonlight](/docs/web/moonlight/)
+ - [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
+ - [Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
 
 Tools and Libraries
 -------------------
 
- - [Tools - Overview]({{ site.github.url }}/docs/tools+libraries/tools/)
-   - [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)
-   - [MoMA]({{ site.github.url }}/docs/tools+libraries/tools/moma/)
-   - [XBuild]({{ site.github.url }}/docs/tools+libraries/tools/xbuild/)
- - [Libraries - Overview]({{ site.github.url }}/docs/tools+libraries/libraries/)
-   - [MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/)
-   - [XML]({{ site.github.url }}/docs/tools+libraries/libraries/xml/)
-   - [Mono.Cairo]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cairo/)
-   - [Mono.Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/)
+ - [Tools - Overview](/docs/tools+libraries/tools/)
+   - [Gendarme](/docs/tools+libraries/tools/gendarme/)
+   - [MoMA](/docs/tools+libraries/tools/moma/)
+   - [XBuild](/docs/tools+libraries/tools/xbuild/)
+ - [Libraries - Overview](/docs/tools+libraries/libraries/)
+   - [MonoMac](/docs/tools+libraries/libraries/monomac/)
+   - [XML](/docs/tools+libraries/libraries/xml/)
+   - [Mono.Cairo](/docs/tools+libraries/libraries/Mono.Cairo/)
+   - [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/)
 
 Advanced Topics
 ---------------
 
- - [Runtime]({{ site.github.url }}/docs/advanced/runtime/)
- - [Garbage Collector - SGEN]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/)
-   - [GC Benchmark Suite]({{ site.github.url }}/docs/advanced/garbage-collector/benchmark-suite/)
- - [AOT]({{ site.github.url }}/docs/advanced/aot/)
- - [Embedding]({{ site.github.url }}/docs/advanced/embedding/)
- - [Assemblies and the GAC]({{ site.github.url }}/docs/advanced/assemblies-and-the-gac/)
- - [P/Invoke]({{ site.github.url }}/docs/advanced/pinvoke/)
- - [IOMap]({{ site.github.url }}/docs/advanced/iomap/)
- - [monolite]({{ site.github.url }}/docs/advanced/monolite/)
- - [Mono LLVM]({{ site.github.url }}/docs/advanced/mono-llvm/)
- - [CAS]({{ site.github.url }}/docs/advanced/cas/)
- - [COM]({{ site.github.url }}/docs/advanced/com/)
-   - [COM-Interop]({{ site.github.url }}/docs/advanced/com-interop/)
- - [CoreCLR]({{ site.github.url }}/docs/advanced/coreclr/)
-   - [CoreCLR HowTo]({{ site.github.url }}/docs/advanced/coreclr-howto/)
- - [Performance Tips]({{ site.github.url }}/docs/advanced/performance-tips/)
- - [SafeHandles]({{ site.github.url }}/docs/advanced/safehandles/)
- - [Sandbox]({{ site.github.url }}/docs/advanced/sandbox/)
+ - [Runtime](/docs/advanced/runtime/)
+ - [Garbage Collector - SGEN](/docs/advanced/garbage-collector/sgen/)
+   - [GC Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)
+ - [AOT](/docs/advanced/aot/)
+ - [Embedding](/docs/advanced/embedding/)
+ - [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/)
+ - [P/Invoke](/docs/advanced/pinvoke/)
+ - [IOMap](/docs/advanced/iomap/)
+ - [monolite](/docs/advanced/monolite/)
+ - [Mono LLVM](/docs/advanced/mono-llvm/)
+ - [CAS](/docs/advanced/cas/)
+ - [COM](/docs/advanced/com/)
+   - [COM-Interop](/docs/advanced/com-interop/)
+ - [CoreCLR](/docs/advanced/coreclr/)
+   - [CoreCLR HowTo](/docs/advanced/coreclr-howto/)
+ - [Performance Tips](/docs/advanced/performance-tips/)
+ - [SafeHandles](/docs/advanced/safehandles/)
+ - [Sandbox](/docs/advanced/sandbox/)

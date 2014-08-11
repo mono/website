@@ -9,15 +9,15 @@
     <meta name="robots" content="noindex" />
     {% endif %}
     <title>{{ page.title }} | Mono</title>
-    <link rel="shortcut icon" href="{{ site.github.url }}/favicon.ico" />
-    <link rel="alternate"  href="{{ site.github.url }}/atom.xml" type="application/rss+xml" title="Mono Project News" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate"  href="/atom.xml" type="application/rss+xml" title="Mono Project News" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/normalize.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/magnific-popup.css" />
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans' />
-    <link rel="stylesheet" href="{{ site.github.url }}/css/main.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/css/main.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
@@ -32,7 +32,7 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="{{ site.github.url }}/"><img src="{{ site.github.url }}/images/mono-gorilla.svg" onerror="this.src='{{ site.github.url }}/images/mono-gorilla.png'; this.onerror=null;" id="header-logo"/>Mono</a></h1>
+              <h1><a href="/"><img src="/images/mono-gorilla.svg" onerror="this.src='/images/mono-gorilla.png'; this.onerror=null;" id="header-logo"/>Mono</a></h1>
             </li>
             <li class="toggle-topbar"><a href="#">Menu</a></li>
           </ul>
@@ -40,11 +40,11 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li {% if page.navgroup == "home" %}class="active"{% endif %}><a href="{{ site.github.url }}/"><i class="fa fa-home"></i> Home</a></li>
-              <li {% if page.navgroup == "download" %}class="active"{% endif %}><a href="{{ site.github.url }}/download/"><i class="fa fa-download"></i> Download</a></li>
-              <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="{{ site.github.url }}/docs/"><i class="fa fa-book"></i> Documentation</a></li>
-              <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="{{ site.github.url }}/news/"><i class="fa fa-bullhorn"></i> News</a></li>
-              <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="{{ site.github.url }}/community/"><i class="fa fa-github"></i> Community</a></li>
+              <li {% if page.navgroup == "home" %}class="active"{% endif %}><a href="/"><i class="fa fa-home"></i> Home</a></li>
+              <li {% if page.navgroup == "download" %}class="active"{% endif %}><a href="/download/"><i class="fa fa-download"></i> Download</a></li>
+              <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fa fa-book"></i> Documentation</a></li>
+              <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fa fa-bullhorn"></i> News</a></li>
+              <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fa fa-github"></i> Community</a></li>
               <li class="has-form">
                 <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
@@ -75,11 +75,11 @@
             <strong>&copy; {{site.time | date: '%Y'}} Mono Project</strong>
             <br/>
             <div id="footer-notes">
-              <a href="{{ site.github.url }}/docs/about-mono/legal/">Legal Notices</a>
+              <a href="/docs/about-mono/legal/">Legal Notices</a>
             </div>
           </div>
           <div class="right">
-            <a href="{{ site.github.url }}/atom.xml" title="RSS feed">
+            <a href="/atom.xml" title="RSS feed">
               <i class="fa fa-rss fa-2x"></i>
             </a>
             &nbsp;

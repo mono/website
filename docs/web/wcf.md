@@ -17,7 +17,7 @@ WCF development was started in 2005 and has been suspended and resumed various t
 -   Google Sumemr of Code development for P2P binding development by Marcos Cobena Morian. Seealso: [Mono Olive: Introducing Windows Communication Foundation notebook](http://www.youcannoteatbits.org/Files/Documents/Mono%20Olive%20Notebook%20-%2018-09-07.pdf)
 -   Development led by Mainsoft team. See [Noam Lampert's blog](http://noamlampert.blogspot.com/search/label/Mono)
 -   Current phase, originally started as part of Moonlight 2.0 effort since 2009.
-    -   We were working on WSHttpBinding support, which is mostly for the security stack (WS-Security, WS-Trust, WS-SecureConversation). It is left incomplete. For details, see [WCF\_WSHttpBindingHacking]({{ site.github.url }}/archived/wcf_wshttpbindinghacking "WCF WSHttpBindingHacking") page.
+    -   We were working on WSHttpBinding support, which is mostly for the security stack (WS-Security, WS-Trust, WS-SecureConversation). It is left incomplete. For details, see [WCF\_WSHttpBindingHacking](/archived/wcf_wshttpbindinghacking "WCF WSHttpBindingHacking") page.
 
 Status
 ======
@@ -174,5 +174,5 @@ Incomplete work. WS-Trust authenticator hash was not clear at the development a 
 Old Milestones and status (for reference)
 -----------------------------------------
 
-For older status of WCF, see [WCFStatusOld]({{ site.github.url }}/archived/wcfstatusold "WCFStatusOld").
+For older status of WCF, see [WCFStatusOld](/archived/wcfstatusold "WCFStatusOld").
 

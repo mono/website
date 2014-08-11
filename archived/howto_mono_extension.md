@@ -218,7 +218,7 @@ Configuring mod\_mono
 
 The [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to handle traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod\_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
 
-More details about the mod\_mono configuration tool can be found on the [Mod\_mono]({{ site.github.url }}/Mod_mono "Mod mono") section of this site.
+More details about the mod\_mono configuration tool can be found on the [Mod\_mono](/Mod_mono "Mod mono") section of this site.
 
 Mono Extension specific configuration
 -------------------------------------

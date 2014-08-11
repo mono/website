@@ -4,7 +4,7 @@ redirect_from:
   - /Compiling_Mono_VSNET/
 ---
 
-[SVN]({{ site.github.url }}/community/contributing/source-code-repository/) now includes a Visual Studio .NET 2005 solution **mono.sln** in the [mono/msvc directory](http://anonsvn.mono-project.com/viewvc/trunk/mono/msvc/), and some projects files to build most of the unmanaged parts in Mono.
+[SVN](/community/contributing/source-code-repository/) now includes a Visual Studio .NET 2005 solution **mono.sln** in the [mono/msvc directory](http://anonsvn.mono-project.com/viewvc/trunk/mono/msvc/), and some projects files to build most of the unmanaged parts in Mono.
 
 There is an ongoing effort to build the class libraries with Visual Studio as well, see the section "Work in Progress" below for more information.
 
@@ -35,7 +35,7 @@ Requirements
 Optional
 ========
 
-1. A [working]({{ site.github.url }}/docs/compiling-mono/windows/) (i.e. where you could successfully build mono) [cygwin](http://www.cygwin.com/) setup! This is required to:
+1. A [working](/docs/compiling-mono/windows/) (i.e. where you could successfully build mono) [cygwin](http://www.cygwin.com/) setup! This is required to:
 
 -   build the class libraries; and
 -   test for regressions.

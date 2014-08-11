@@ -12,7 +12,7 @@ If you have a concern that you would like us to consider addressing, please feel
 
 #### Background
 
-Patents are a lightning rod of attention in the area of software development. The fact that .NET is a Microsoft created technology has caused concern about Mono, given Microsoft's history of tough, and sometimes monopolistic business practices. [Mono's Licensing page]({{ site.github.url }}/Licensing#Patents) addresses some of the issues with how any potential patent infringement would be delt with, via rewriting infringing portions of the code, as well as the basic issue of whether replicating the .Net languages is infringement.
+Patents are a lightning rod of attention in the area of software development. The fact that .NET is a Microsoft created technology has caused concern about Mono, given Microsoft's history of tough, and sometimes monopolistic business practices. [Mono's Licensing page](/Licensing#Patents) addresses some of the issues with how any potential patent infringement would be delt with, via rewriting infringing portions of the code, as well as the basic issue of whether replicating the .Net languages is infringement.
 
 Microsoft has made some [claims of intellectual property violations by Linux companies](http://www.youtube.com/watch?v=5B0GTYfPoMo). Some have suggested that because .NET is Microsoft technology, that there are patents that Mono is infringing upon that will be brought out at an opportune time to take Mono and any Mono applications down.
 
@@ -50,7 +50,7 @@ A: Not without breaking existing .NET applications. Any changes to .NET that wou
 
 **Q: Even if Microsoft can't change the .NET API to break Mono and Mono applications, won't Mono always be playing catch-up in terms of re-implementing .NET?**
 
-A: Mono is likely to remain behind .NET in terms of implementing new language features and API that are a part of MS's .NET (Note that Mono has implemented functionality beyond that of .NET, see [Mono.SIMD](http://tirania.org/blog/archive/2008/Nov-03.html) as an example). For some developers this may prevent or delay their use of Mono to port applications to Linux/Mac. The [MoMA]({{ site.github.url }}/MoMA) tool was developed to check for API coverage and report the results to the Mono developers to aid in pinpointing unimplemented parts of Mono that applications are using. Today, Mono implements a wide range of the .NET API including [WinForms]({{ site.github.url }}/WinForms). [Here]({{ site.github.url }}/Companies_Using_Mono) is a list of companies that currently find Mono useful.
+A: Mono is likely to remain behind .NET in terms of implementing new language features and API that are a part of MS's .NET (Note that Mono has implemented functionality beyond that of .NET, see [Mono.SIMD](http://tirania.org/blog/archive/2008/Nov-03.html) as an example). For some developers this may prevent or delay their use of Mono to port applications to Linux/Mac. The [MoMA](/MoMA) tool was developed to check for API coverage and report the results to the Mono developers to aid in pinpointing unimplemented parts of Mono that applications are using. Today, Mono implements a wide range of the .NET API including [WinForms](/WinForms). [Here](/Companies_Using_Mono) is a list of companies that currently find Mono useful.
 
 **Q: What if Microsoft introduces patented interfaces to the .NET API?**
 

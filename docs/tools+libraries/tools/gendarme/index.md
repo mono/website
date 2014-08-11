@@ -6,7 +6,7 @@ redirect_from:
 
 Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.
 
-Gendarme uses the [Cecil]({{ site.github.url }}/docs/tools+libraries/libraries/Mono.Cecil/) library to introspect code.
+Gendarme uses the [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/) library to introspect code.
 
 Why ?
 =====
@@ -19,7 +19,7 @@ History
 
 Gendarme was originally created by Sebastien Pouliot to assist in the security auditing process in Mono. Aaron Tomb later integrated his .NET bug-finding code (supported by the 2005 Google Summer of Code, GSoC) into the same framework. Since then the number of [contributors](http://anonsvn.mono-project.com/source/trunk/mono-tools/gendarme/AUTHORS) and rules has been growing.
 
-Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](http://code.google.com/opensource/ghop/2007-8/) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects]({{ site.github.url }}/community/google-summer-of-code/projects/) page.
+Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](http://code.google.com/opensource/ghop/2007-8/) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects](/community/google-summer-of-code/projects/) page.
 
 Runners
 =======
@@ -43,7 +43,7 @@ A System.Windows.Forms-based GUI runner is also part of the Gendarme distributio
 CruiseControl.NET
 -----------------
 
-[Daniel Nauck](http://www.mono-project.de/) (dna on [IRC]({{ site.github.url }}/community/help/irc/)) contributed Gendarme support for [CC.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET). You can find the documentation [here](http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme). Note: The Gendarme task is available since CC.NET version 1.4.3.
+[Daniel Nauck](http://www.mono-project.de/) (dna on [IRC](/community/help/irc/)) contributed Gendarme support for [CC.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET). You can find the documentation [here](http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme). Note: The Gendarme task is available since CC.NET version 1.4.3.
 
 NAnt
 ----
@@ -61,23 +61,23 @@ For the console runner the list of assemblies to load rules from is defined in t
 
 Current rules are divided into the following categories/assemblies:
 
--   [Gendarme.Rules.BadPractice]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/bad-practice/)
--   [Gendarme.Rules.Concurrency]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/concurrency/)
--   [Gendarme.Rules.Correctness]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/correctness/)
--   [Gendarme.Rules.Design]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design/)
--   [Gendarme.Rules.Design.Generic]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design-generic/)
--   [Gendarme.Rules.Design.Linq]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/design-linq/) (new in 2.2)
--   [Gendarme.Rules.Exceptions]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/exceptions/)
--   [Gendarme.Rules.Interoperability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/interoperability/)
--   [Gendarme.Rules.Maintainability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/maintainability/) (new in 2.0)
--   [Gendarme.Rules.Naming]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/naming/)
--   [Gendarme.Rules.Performance]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/performance/)
--   [Gendarme.Rules.Portability]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/portability/)
--   [Gendarme.Rules.Security]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/security/)
--   [Gendarme.Rules.Security.Cas]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/security-cas/) (new in 2.2)
--   [Gendarme.Rules.Serialization]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/serialization/) (new in 2.0)
--   [Gendarme.Rules.Smells]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/smells/)
--   [Gendarme.Rules.Ui]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/rules/ui/)
+-   [Gendarme.Rules.BadPractice](/docs/tools+libraries/tools/gendarme/rules/bad-practice/)
+-   [Gendarme.Rules.Concurrency](/docs/tools+libraries/tools/gendarme/rules/concurrency/)
+-   [Gendarme.Rules.Correctness](/docs/tools+libraries/tools/gendarme/rules/correctness/)
+-   [Gendarme.Rules.Design](/docs/tools+libraries/tools/gendarme/rules/design/)
+-   [Gendarme.Rules.Design.Generic](/docs/tools+libraries/tools/gendarme/rules/design-generic/)
+-   [Gendarme.Rules.Design.Linq](/docs/tools+libraries/tools/gendarme/rules/design-linq/) (new in 2.2)
+-   [Gendarme.Rules.Exceptions](/docs/tools+libraries/tools/gendarme/rules/exceptions/)
+-   [Gendarme.Rules.Interoperability](/docs/tools+libraries/tools/gendarme/rules/interoperability/)
+-   [Gendarme.Rules.Maintainability](/docs/tools+libraries/tools/gendarme/rules/maintainability/) (new in 2.0)
+-   [Gendarme.Rules.Naming](/docs/tools+libraries/tools/gendarme/rules/naming/)
+-   [Gendarme.Rules.Performance](/docs/tools+libraries/tools/gendarme/rules/performance/)
+-   [Gendarme.Rules.Portability](/docs/tools+libraries/tools/gendarme/rules/portability/)
+-   [Gendarme.Rules.Security](/docs/tools+libraries/tools/gendarme/rules/security/)
+-   [Gendarme.Rules.Security.Cas](/docs/tools+libraries/tools/gendarme/rules/security-cas/) (new in 2.2)
+-   [Gendarme.Rules.Serialization](/docs/tools+libraries/tools/gendarme/rules/serialization/) (new in 2.0)
+-   [Gendarme.Rules.Smells](/docs/tools+libraries/tools/gendarme/rules/smells/)
+-   [Gendarme.Rules.Ui](/docs/tools+libraries/tools/gendarme/rules/ui/)
 
 Download
 ========
@@ -112,16 +112,16 @@ Other Cool Stuff
 Resources
 =========
 
--   What's planned ? [Gendarme.Roadmap]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/roadmap/)
+-   What's planned ? [Gendarme.Roadmap](/docs/tools+libraries/tools/gendarme/roadmap/)
 -   What's happening ? You can read real-time news on Gendarme's development on its [Ohloh's journal](http://www.ohloh.net/projects/gendarme/messages).
 
 Getting Help
 ------------
 
--   A list of frequently asked questions can be found in [Gendarme.FAQ]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/faq/).
--   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/development-faq/).
+-   A list of frequently asked questions can be found in [Gendarme.FAQ](/docs/tools+libraries/tools/gendarme/faq/).
+-   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ](/docs/tools+libraries/tools/gendarme/development-faq/).
 -   You are welcome to participate in Gendarme's discussions on [it's Google Group](http://groups.google.com/group/gendarme). This group is used for both users and developers of Gendarme.
--   Gendarme's fans are also present on [IRC]({{ site.github.url }}/community/help/irc/) (\#gendarme on GIMPnet).
+-   Gendarme's fans are also present on [IRC](/community/help/irc/) (\#gendarme on GIMPnet).
 
 Feedback
 ========

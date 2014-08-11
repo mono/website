@@ -47,13 +47,13 @@ A Coding Standard for QA's efforts in coding test related scripts. This plan abi
 References
 ----------
 
-[Product Test Case Plan]({{ site.github.url }}/Accessibility:_Test_Plan "Accessibility: Test Plan")
- [Product Test Case Specification]({{ site.github.url }}/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
- [Product Test Log]({{ site.github.url }}/Accessibility:_Test_Log "Accessibility: Test Log")
- [Product Test Summary]({{ site.github.url }}/Accessibility:_Test_Summary "Accessibility: Test Summary")
- [Product Bug Specification]({{ site.github.url }}/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
- [Test Coding Standard]({{ site.github.url }}/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard") (current page)
- [Product Home]({{ site.github.url }}/Accessibility "Accessibility")
+[Product Test Case Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
+ [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")
+ [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")
+ [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
+ [Test Coding Standard](/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard") (current page)
+ [Product Home](/Accessibility "Accessibility")
 
 Standard For Files Name
 -----------------------

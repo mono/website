@@ -40,7 +40,7 @@ With the mono JIT default, not all optimizations are turned on, since some of th
 
     $ mono --aot -O=all library.dll
 
-The above will leave the native version of the code in \`library.dll.so'. See the page on [AOT]({{ site.github.url }}/AOT "AOT") for more details.
+The above will leave the native version of the code in \`library.dll.so'. See the page on [AOT](/AOT "AOT") for more details.
 
 Shell Scripts
 -------------
@@ -54,14 +54,14 @@ When you run "myprogram," the shell will replace \$@ with any arguments you prov
 
 If you installed mono to a different location, substitute that for /usr/bin/mono. You can check with the "which mono" command.
 
-See also [Application Deployment Layout Guidelines]({{ site.github.url }}/Guidelines:Application_Deployment#layout-recommendation "Guidelines:Application Deployment").
+See also [Application Deployment Layout Guidelines](/Guidelines:Application_Deployment#layout-recommendation "Guidelines:Application Deployment").
 
 Registering .exe as non-native binaries (Linux only)
 ----------------------------------------------------
 
 Because this is a Linux-specific feature, we do not recommend that developers deploy this solution, as it would limit the portability of their scripts.
 
-In addition, this mechanism does not work as intended by the [Application Deployment Guidelines]({{ site.github.url }}/Guidelines:Application_Deployment "Guidelines:Application Deployment").
+In addition, this mechanism does not work as intended by the [Application Deployment Guidelines](/Guidelines:Application_Deployment "Guidelines:Application Deployment").
 
 You can also make a systemwide change, and use binfmt to register the exe files as non-native binaries. Then, when trying to launch an exe file, the kernel will run the mono interpreter to handle the command. Binfmt can also be used to launch Windows executables using WINE, or Java .class files using a JVM. To register exe with the kernel:
 
@@ -157,7 +157,7 @@ The -c option will create a host.c file which contains the main function of the 
 
 With -c, the further option --nomain will generate the host.c file without a main method so that you can embed it as a library in an existing native application in which you are embedding the Mono runtime yourself. Just call mono\_mkbundle\_init() before initializing the JIT to make the bundled assemblies available.
 
-Bundles in addition support a --static flag. The --static flag causes mkbundle to generate a static executable that statically links the Mono runtime. Be advised that this option will trigger the LGPL requirement that you still distribute the independent pieces to your user so he can manually upgrade his Mono runtime if he chooses to do so. Alternatively, you can obtain a proprietary license of Mono by [contacting Xamarin]({{ site.github.url }}/Contact "Contact").
+Bundles in addition support a --static flag. The --static flag causes mkbundle to generate a static executable that statically links the Mono runtime. Be advised that this option will trigger the LGPL requirement that you still distribute the independent pieces to your user so he can manually upgrade his Mono runtime if he chooses to do so. Alternatively, you can obtain a proprietary license of Mono by [contacting Xamarin](/Contact "Contact").
 
 macpack (Mac OS X only)
 -----------------------

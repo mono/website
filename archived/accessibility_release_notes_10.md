@@ -35,7 +35,7 @@ The Mono Accessibility project enables Windows applications to be fully accessib
 
 This is our first stable release including UIA Provider and ATK support for all of the System.Windows.Forms controls.
 
-Our next phase, the 2.0 release, will encompass a UIA Client implementation that targets both System.Windows.Forms and ATK applications, and UIA Provider support for [Moonlight]({{ site.github.url }}/Moonlight "Moonlight").
+Our next phase, the 2.0 release, will encompass a UIA Client implementation that targets both System.Windows.Forms and ATK applications, and UIA Provider support for [Moonlight](/Moonlight "Moonlight").
 
 Codename: Leela
 
@@ -133,7 +133,7 @@ Mono Accessibility is available for a variety of Linux distributions, including:
 -   OpenSUSE 11.0 - [1-Click Install](http://download.opensuse.org/repositories/Mono:/UIA/MonoOpenSUSE_11.0/mono-uia.ymp)
 -   OpenSUSE 11.1 - [1-Click Install](http://download.opensuse.org/repositories/Mono:/UIA/MonoOpenSUSE_11.1/mono-uia.ymp)
 
-If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available]({{ site.github.url }}/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
+If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available](/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
 
 If you just want to grab a source tarball, check out the [Novell FTP](ftp://ftp.novell.com/pub/mono/sources/) page. You will want [mono-uia](ftp://ftp.novell.com/pub/mono/sources/mono-uia), [uiautomationwinforms](ftp://ftp.novell.com/pub/mono/sources/uiautomationwinforms), and [uiaatkbridge](ftp://ftp.novell.com/pub/mono/sources/uiaatkbridge).
 

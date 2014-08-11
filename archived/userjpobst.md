@@ -15,7 +15,7 @@ Affectionately known in the winforms world as "Mr. 2.0", Jonathan is tasked with
 
 So far, this has led him to implement SplitContainer, TableLayoutPanel, FlowLayoutPanel, ToolStrip, MenuStrip, StatusStrip, and ContextMenuStrip, as well as a smattering of random methods from all across winforms.
 
-He is also currently riding a ginormous ego "high" due to his apparently useful [MoMA]({{ site.github.url }}/MoMA "MoMA") tool that allows people to automate telling him what he has not done yet in 2.0.
+He is also currently riding a ginormous ego "high" due to his apparently useful [MoMA](/MoMA "MoMA") tool that allows people to automate telling him what he has not done yet in 2.0.
 
 Although a lifelong Nashville native, Jonathan has recently decided to become migratory, and will be spending winters living in a fort constructed from Everaldo's couch cushions in Brazil. He will also consider couch offers from Europe, Japan, and especially New Zealand or Australia.
 

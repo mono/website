@@ -109,7 +109,7 @@ Integrating the BSD\# Ports Tree with your own is done through the portshaker sc
 
 ### Problems with Mono
 
-Before reporting problems with Mono on FreeBSD to the regular [Mono mailing lists]({{ site.github.url }}/Mailing_Lists "Mailing Lists") it is better to report them to our [mono@FreeBSD.org](http://lists.freebsd.org/mailman/listinfo/freebsd-mono) so we can take a look at the issue first. We have a few unresolved FreeBSD issues that do crop up from time to time.
+Before reporting problems with Mono on FreeBSD to the regular [Mono mailing lists](/Mailing_Lists "Mailing Lists") it is better to report them to our [mono@FreeBSD.org](http://lists.freebsd.org/mailman/listinfo/freebsd-mono) so we can take a look at the issue first. We have a few unresolved FreeBSD issues that do crop up from time to time.
 
-Please see our [problem reporting page]({{ site.github.url }}/Mono:FreeBSD-Problems "Mono:FreeBSD-Problems") to help give us enough information to solve your problem.
+Please see our [problem reporting page](/Mono:FreeBSD-Problems "Mono:FreeBSD-Problems") to help give us enough information to solve your problem.
 

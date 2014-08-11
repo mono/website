@@ -9,8 +9,8 @@ This document describes some practices that are useful when building software th
 
 In addition to this page, these are some resources that are useful when porting software to run on Mono:
 
--   [Mono's ASP.NET]({{ site.github.url }}/docs/web/aspnet/)
--   [Mono's Windows.Forms implementation]({{ site.github.url }}/docs/gui/winforms/)
+-   [Mono's ASP.NET](/docs/web/aspnet/)
+-   [Mono's Windows.Forms implementation](/docs/gui/winforms/)
 
 Porting Strategy
 ================
@@ -48,11 +48,11 @@ If you feel comfortable using command line tools, and any of the other Unix edit
 General Guidelines
 ==================
 
-Starting with Mono 1.1.18, a new [IO Remapping]({{ site.github.url }}/docs/advanced/iomap/) functionality is provided that copes with case sensitivity in the file system and with directory separators in filenames.
+Starting with Mono 1.1.18, a new [IO Remapping](/docs/advanced/iomap/) functionality is provided that copes with case sensitivity in the file system and with directory separators in filenames.
 
-Using the [IOMap]({{ site.github.url }}/docs/advanced/iomap/) functionality is a quick way of porting your applications, but the practices are still useful as they will help your application not depend on this remapping (as the remapping has a slight performance penalty).
+Using the [IOMap](/docs/advanced/iomap/) functionality is a quick way of porting your applications, but the practices are still useful as they will help your application not depend on this remapping (as the remapping has a slight performance penalty).
 
-See the [IOMap]({{ site.github.url }}/docs/advanced/iomap/) page for more information on how to use it.
+See the [IOMap](/docs/advanced/iomap/) page for more information on how to use it.
 
 Case sensitivity
 ----------------
@@ -63,14 +63,14 @@ On Linux and Unix the files "readme" and "README" are two different files, that 
 
 This is an important distinction for many applications because you might have created a "Login.aspx" page, but you reference the page as "login.aspx" or "LOGIN.ASPX" from your source code. You must make sure that all references use the same file name casing.
 
-Alternatively, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "case" or "all" to eliminate these problems. See [IOMap]({{ site.github.url }}/docs/advanced/iomap/) for details.
+Alternatively, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "case" or "all" to eliminate these problems. See [IOMap](/docs/advanced/iomap/) for details.
 
 Path Separators
 ---------------
 
 On Windows, the directory path separator is "\\" while on Linux it is "/", it is possible to create files that contain a "\\" in their names on Linux.
 
-For quickly porting applications, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "all" and it will take care of it. See [IOMap]({{ site.github.url }}/docs/advanced/iomap/) for more details.
+For quickly porting applications, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "all" and it will take care of it. See [IOMap](/docs/advanced/iomap/) for more details.
 
 To write portable software, you must make sure that you use the [http:/monodoc/P:System.IO.Path.DirectorySeparatorChar System.IO.Path.DirectorySeparatorChar] character when you must concatenate paths, or even better, use the [http:/monodoc/M:System.IO.Path.Combine(string,string) System.IO.Path.Combine] method to combine pathnames.
 
@@ -140,12 +140,12 @@ See the [endianess](http://en.wikipedia.org/wiki/Endianess) entry in the Wikiped
 ASP.NET Guidelines
 ==================
 
-You might want to familiarize yourself with some of the Frequently Asked Questions about ASP.NET on Mono, they are on this page: [FAQ: ASP.NET]({{ site.github.url }}/docs/faq/aspnet/)
+You might want to familiarize yourself with some of the Frequently Asked Questions about ASP.NET on Mono, they are on this page: [FAQ: ASP.NET](/docs/faq/aspnet/)
 
 Windows.Forms Guidelines
 ========================
 
-You might want to familiarize yourself with some of the Frequently Asked Questions about running Windows.Forms applications on Mono. The list is on this page: [FAQ: Winforms]({{ site.github.url }}/docs/faq/winforms/).
+You might want to familiarize yourself with some of the Frequently Asked Questions about running Windows.Forms applications on Mono. The list is on this page: [FAQ: Winforms](/docs/faq/winforms/).
 
 Database Migration
 ==================
@@ -174,9 +174,9 @@ No COM
 
 COM does not exist on Unix as part of the operating system and Mono does not currently provide support for it.
 
-If your application requires COM, you need to wrap the various methods that you want to call using [P/Invoke]({{ site.github.url }}/docs/advanced/pinvoke/).
+If your application requires COM, you need to wrap the various methods that you want to call using [P/Invoke](/docs/advanced/pinvoke/).
 
-There is currently a work in progress project to support it, see [COM Interop]({{ site.github.url }}/docs/advanced/com-interop/) for more details.
+There is currently a work in progress project to support it, see [COM Interop](/docs/advanced/com-interop/) for more details.
 
 User Interface
 ==============

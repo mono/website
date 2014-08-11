@@ -13,7 +13,7 @@ Profiling
 
 So, how does one measure what methods are running slowly? A profiler helps with this task. Mono includes a profiler that is built into the runtime system. You can invoke this profiler on your program by running with the --profile flag.
 
-You can also use Instruments to get some information. In particular, you can use DTrace and Instruments to [monitor the SGen GC]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/dtrace).
+You can also use Instruments to get some information. In particular, you can use DTrace and Instruments to [monitor the SGen GC](/docs/advanced/garbage-collector/sgen/dtrace).
 
 Using the Mono profiler
 -----------------------
@@ -26,7 +26,7 @@ The execution time profiling will instrument your code and record entry and leav
  $ mono --profile=default:stat program.exe
 ```
 
-For other uses we have a better profiler in development that is documented [here]({{ site.github.url }}/docs/debug+profile/profile/profiler/).
+For other uses we have a better profiler in development that is documented [here](/docs/debug+profile/profile/profiler/).
 
 Memory usage is a major driver in performance in managed applications: the more memory you use, the more work the GC has to do. Also it is a very noticeable to users when applications consume a lot of memory. To profile you application only with memory profilng (and skip the default that also does execution time) do:
 
@@ -64,11 +64,11 @@ First, the profiler has an overhead associated with it. As such, a high number o
 Heap Profiling
 --------------
 
-Performance in Mono-based applications often is linked to memory usage patterns. To better understand the memory allocation patterns of your application, you should use the [HeapShot]({{ site.github.url }}/docs/debug+profile/profile/heapshot/) memory profiler.
+Performance in Mono-based applications often is linked to memory usage patterns. To better understand the memory allocation patterns of your application, you should use the [HeapShot](/docs/debug+profile/profile/heapshot/) memory profiler.
 
 HeapShot includes both visual and command line tools to explore the memory allocation patterns and live objects in an application over time and helps developers pin point memory consumption and.
 
-See the separate page on [HeapShot]({{ site.github.url }}/docs/debug+profile/profile/heapshot/) for details on using the HeapShot memory profiler for Mono.
+See the separate page on [HeapShot](/docs/debug+profile/profile/heapshot/) for details on using the HeapShot memory profiler for Mono.
 
 ### Other Mono profilers
 
@@ -84,7 +84,7 @@ It does this by asking the JIT to insert a call to the profiler every time a met
 
 There are a few other profilers authored by different people to look into programs from other angles:
 
--   Lluis Sanchez [Heap Shot]({{ site.github.url }}/docs/debug+profile/profile/heapshot/) profiler, for exploring memory usage in an application.
+-   Lluis Sanchez [Heap Shot](/docs/debug+profile/profile/heapshot/) profiler, for exploring memory usage in an application.
 -   Jon Trowbridge Heap Allocation profiler: [svn://svn.trowbridge.org/heap-buddy](svn://svn.trowbridge.org/heap-buddy)
 -   Nemerle's profiler [here](http://nemerle.org/svn/nemerle/trunk/misc/profiler/)
 -   AOT profiler: mono-profiler-aot
@@ -102,7 +102,7 @@ Use the MONO\_NO\_UNLOAD=1 environment variable to make those work.
 Profiling without JIT instrumentation
 -------------------------------------
 
-You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData]({{ site.github.url }}/archived/oprofilewithanonjitdata "OprofileWithAnonJitData")
+You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData](/archived/oprofilewithanonjitdata "OprofileWithAnonJitData")
 
 Memory Management in the .NET/Mono world.
 =========================================

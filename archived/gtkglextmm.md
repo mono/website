@@ -8,5 +8,5 @@ redirect_from:
 GtkGLExtMM
 ==========
 
-c++ wrapper around [GtkGLExt]({{ site.github.url }}/GtkGLExt "GtkGLExt")
+c++ wrapper around [GtkGLExt](/GtkGLExt "GtkGLExt")
 

@@ -31,14 +31,14 @@ Europe
 ======
 
 -   [Czech Mono Users Group](http://www.czmug.net/)]
--   [Danish Mono User Group]({{ site.github.url }}/MUG:Denmark "MUG:Denmark")
+-   [Danish Mono User Group](/MUG:Denmark "MUG:Denmark")
 -   [Germany Users Group](http://www.mono-project.de/)
 
 Latin America
 =============
 
 -   [Mexican Mono User Group](http://mx.groups.yahoo.com/group/monomx/)
--   [Colombian Mono User Group]({{ site.github.url }}/MUG:Colombia "MUG:Colombia")
+-   [Colombian Mono User Group](/MUG:Colombia "MUG:Colombia")
 
 United States
 =============

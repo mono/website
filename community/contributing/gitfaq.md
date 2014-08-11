@@ -22,7 +22,7 @@ Workflow
 
 Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.
 
-Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate [mailing list]({{ site.github.url }}/community/help/mailing-lists/)).
+Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.ximian.com mailing list (or the appropriate [mailing list](/community/help/mailing-lists/)).
 
 We might have missed some core contributors on the first batch that granted push access to the Mono repositories. If we missed you, please contact us to get this fixed.
 
@@ -50,7 +50,7 @@ The `git push` will fail if you're not up-to-date: for instance, if there was so
 Merge branch 'master' of git@github.com:/mono/repo
 ```
 
-This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry]({{ site.github.url }}/community/contributing/gitfaq/#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
+This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry](/community/contributing/gitfaq/#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
 
 Workflow 2: Use 'master' as integration branch
 ----------------------------------------------

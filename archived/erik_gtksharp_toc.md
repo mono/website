@@ -24,20 +24,20 @@ This is a new TOC for the Gtk\# section of the Mono guide
     -   Treeview
     -   Open and save dialogs
     -   Gecko\#
--   [Notification Icons]({{ site.github.url }}/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Notification Icons](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
 -   Selection and Clipboard
 -   Graphics
     -   Painting and drawing (2D)
     -   3D graphics
 -   Writing custom widgets
 -   One GUI for all
-    -   [Internationalization]({{ site.github.url }}/Internationalization)
+    -   [Internationalization](/Internationalization)
     -   Localization
     -   Accesibility
     -   Cross platform
 -   Working with threads
 -   Application configuration
-    -   [GConf]({{ site.github.url }}/GConfTutorial "GConfTutorial")
+    -   [GConf](/GConfTutorial "GConfTutorial")
 -   GUI builders
     -   Glade
     -   Stetic

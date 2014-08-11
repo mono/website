@@ -190,7 +190,7 @@ To solve this problem, we recommend that:
 -   The library developer ships a properly configured pkg-config file.
 -   The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
 -   The library consumers ship this library as part of their package.
--   The consumer follow the [Guidelines for Application Deployment]({{ site.github.url }}/docs/getting-started/application-deployment/)
+-   The consumer follow the [Guidelines for Application Deployment](/docs/getting-started/application-deployment/)
 
 Here is how this works, the library developer installs a pkg-config file like this:
 
@@ -229,7 +229,7 @@ This means that developers that consume unstable API libraries do not have to wo
 
 If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
 
-Note: a production-ready, detailed example of this can be found in the [Autotools]({{ site.github.url }}/docs/getting-started/application-deployment/#auto-tools) section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+Note: a production-ready, detailed example of this can be found in the [Autotools](/docs/getting-started/application-deployment/#auto-tools) section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
 
 Comparing this to other models
 ------------------------------
@@ -329,7 +329,7 @@ For example an entry to ignore all ECMA assemblies signatures for all users woul
 Public Key Token Remapping
 --------------------------
 
-The best example of remapping is the [ECMA]({{ site.github.url }}/docs/about-mono/languages/ecma/) key. Every runtime must remap the ECMA public key token to it's own public key. This way each runtime can verify the digital signature of the standard ECMA assemblies.
+The best example of remapping is the [ECMA](/docs/about-mono/languages/ecma/) key. Every runtime must remap the ECMA public key token to it's own public key. This way each runtime can verify the digital signature of the standard ECMA assemblies.
 
 The same problem applies to other assemblies as well. Few people have access to the private key used to sign most of the framework assemblies (known as msfinal). However to keep the same strongname we need the same public key (and public key token). Mono's solution to this problem is to generalize the ECMA remapping mechanism to any public key token.
 

@@ -42,7 +42,7 @@ Features
 
 AspNetEdit does not aim to be a complete IDE. After being developed as a proof-of-concept standalone editor, it now has been integrated into [MonoDevelop](http://monodevelop.com), where it is intended to be part of a complete ASP.NET editing solution.
 
-[![]({{ site.github.url }}/archived/images/3/30/Aspnetedit.png)]({{ site.github.url }}/archived/images/3/30/Aspnetedit.png)
+[![](/archived/images/3/30/Aspnetedit.png)](/archived/images/3/30/Aspnetedit.png)
 
 The ASP.NET Visual Designer embedded in MonoDevelop
 
@@ -58,7 +58,7 @@ Prospective users are recommended not to install AspNetEdit at this early point 
 
 Nevertheless, AspNetEdit can be downloaded as part of the MonoDevelop codebase; it is in the extras/AspNetEdit subdirectory. It can be built against the system MonoDevelop installation by using the configure script (./configure; make; make install). Alternatively it can be hooked into the MonoDevelop build by running the top-level MonoDevelop configure script using a profile that contains AspNetEdit.
 
-The standalone editor code is still available from the Mono [SVN]({{ site.github.url }}/SourceCodeRepository) repository, module *aspeditor*, or can be [viewed online](http://anonsvn.mono-project.com/viewvc/trunk/aspeditor/). Please follow the instructions in the INSTALL file to build and run the program.
+The standalone editor code is still available from the Mono [SVN](/SourceCodeRepository) repository, module *aspeditor*, or can be [viewed online](http://anonsvn.mono-project.com/viewvc/trunk/aspeditor/). Please follow the instructions in the INSTALL file to build and run the program.
 
 Plans
 -----

@@ -24,18 +24,18 @@ Overview of the widgets used in GTK\#
 
 **Widget Overview**
 
--   [Widget Hierarchy]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-hierarchy/)
--   [The Button Widget]({{ site.github.url }}/docs/gui/gtksharp/widgets/buttons/)
--   [Labels]({{ site.github.url }}/docs/gui/gtksharp/widgets/labels/)
--   [Arrows]({{ site.github.url }}/docs/gui/gtksharp/widgets/arrows/)
--   [Tooltips]({{ site.github.url }}/docs/gui/gtksharp/widgets/tooltips/)
--   [Progress Bars]({{ site.github.url }}/docs/gui/gtksharp/widgets/progress-bars/)
--   [Adjustments]({{ site.github.url }}/docs/gui/gtksharp/widgets/adjustments/)
--   [Range Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/range-widgets/)
-    -   [Scrollbar Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/scrollbar-widgets/)
-    -   [Scale Widgets]({{ site.github.url }}/docs/gui/gtksharp/widgets/scale-widgets/)
+-   [Widget Hierarchy](/docs/gui/gtksharp/widgets/widget-hierarchy/)
+-   [The Button Widget](/docs/gui/gtksharp/widgets/buttons/)
+-   [Labels](/docs/gui/gtksharp/widgets/labels/)
+-   [Arrows](/docs/gui/gtksharp/widgets/arrows/)
+-   [Tooltips](/docs/gui/gtksharp/widgets/tooltips/)
+-   [Progress Bars](/docs/gui/gtksharp/widgets/progress-bars/)
+-   [Adjustments](/docs/gui/gtksharp/widgets/adjustments/)
+-   [Range Widgets](/docs/gui/gtksharp/widgets/range-widgets/)
+    -   [Scrollbar Widgets](/docs/gui/gtksharp/widgets/scrollbar-widgets/)
+    -   [Scale Widgets](/docs/gui/gtksharp/widgets/scale-widgets/)
 
--   [Dialogs]({{ site.github.url }}/docs/gui/gtksharp/widgets/dialogs/)
+-   [Dialogs](/docs/gui/gtksharp/widgets/dialogs/)
 -   Menu Widget Example (unwritten)
--   [Widget Colours]({{ site.github.url }}/docs/gui/gtksharp/widgets/widget-colours/)
+-   [Widget Colours](/docs/gui/gtksharp/widgets/widget-colours/)
 

@@ -19,12 +19,12 @@ Channels:
 - **#monodevelop**: Chat related to the [MonoDevelop](http://www.monodevelop.com) IDE.
 - **#mono-hispano**: general discussion of Mono (in spanish).
 - **#monouml**: general discussion of MonoUML.
-- **#gendarme**: discussion, mostly development oriented, about [Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)
-- **#mono-a11y**: [Accessibility]({{ site.github.url }}/archived/accessibility) and [UI Automation]({{ site.github.url }}/archived/ui_automation)
-- **#moonlight**: discussion on the [Moonlight]({{ site.github.url }}/docs/web/moonlight/) implementation of Silverlight.
+- **#gendarme**: discussion, mostly development oriented, about [Gendarme](/docs/tools+libraries/tools/gendarme/)
+- **#mono-a11y**: [Accessibility](/archived/accessibility) and [UI Automation](/archived/ui_automation)
+- **#moonlight**: discussion on the [Moonlight](/docs/web/moonlight/) implementation of Silverlight.
 - **#monotouch**: Discussion on Mono for the iPhone, [MonoTouch](http://monotouch.net)
 - **#monodroid**: Discussion of Mono on the Android, [[1]](http://monodroid.net)
-- **#monomac**: Discussion of the [MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/) bindings for Mono on OSX
+- **#monomac**: Discussion of the [MonoMac](/docs/tools+libraries/libraries/monomac/) bindings for Mono on OSX
 
 **Network:** OFTC (servers: irc.oftc.net)
 

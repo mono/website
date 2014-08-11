@@ -80,7 +80,7 @@ Here I list them up as long as I know. If you are going to add another standalon
 
 -   System.Data/Test, and some individual ADO.NET libraries:
 
-there are some standalone tests. See the bottom of [ADO.NET page]({{ site.github.url }}/docs/database-access/adonet/) for detail.
+there are some standalone tests. See the bottom of [ADO.NET page](/docs/database-access/adonet/) for detail.
 
 -   System.Web/Test/TestMonoWeb : see README
 
@@ -153,7 +153,7 @@ If possible, try to run your testsuite with the Microsoft runtime on .NET on Win
 
 Don't worry if you're writing your test on Linux, other people can test it for you on Windows.
 
-Sometimes you may discover that a test doesn't show the expected result when run with the Microsoft runtime - either because there is a bug in their runtime or something is misleading or wrong in their documentation. In this case, please put a detailed description of the problem to mcs/class/doc/API-notes and do also report it to the [mailing list]({{ site.github.url }}/community/help/mailing-lists/) - we'll forward this to the Microsoft people from time to time to help them fix their documentation and runtime.
+Sometimes you may discover that a test doesn't show the expected result when run with the Microsoft runtime - either because there is a bug in their runtime or something is misleading or wrong in their documentation. In this case, please put a detailed description of the problem to mcs/class/doc/API-notes and do also report it to the [mailing list](/community/help/mailing-lists/) - we'll forward this to the Microsoft people from time to time to help them fix their documentation and runtime.
 
 ### Unit tests
 
@@ -163,7 +163,7 @@ Why do unit testing? It becomes simple to run automated tests for the whole libr
 
 We welcome all contributions to the Class Libary Test Suite.
 
-There is information to help you get started in SVN at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to [mono-list]({{ site.github.url }}/community/help/mailing-lists/).
+There is information to help you get started in SVN at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to [mono-list](/community/help/mailing-lists/).
 
 Someone will make sure to add the file or apply the patch as appropriate. If you plan to be an on-going contributor and would like to get a svn account, email [miguel](mailto:miguel@ximian.com).
 

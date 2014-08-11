@@ -76,7 +76,7 @@ We need to sort out the distribution for Windows.
 
 Distribution of Gtk+ and Gtk\# for MacOS X.
 
-Plans on how to [split the MacOS installer]({{ site.github.url }}/MacOSPackaging "MacOSPackaging") into Runtime and SDK
+Plans on how to [split the MacOS installer](/MacOSPackaging "MacOSPackaging") into Runtime and SDK
 
 ### Ongoing Maintenance of third party components
 
@@ -84,7 +84,7 @@ We currently ship a few packages, and we should make the re-packaging a standard
 
 Our own Technologies:
 
--   We need to ship the [HeapShot]({{ site.github.url }}/HeapShot "HeapShot") profiler.
+-   We need to ship the [HeapShot](/HeapShot "HeapShot") profiler.
 
 WinForms Apps:
 
@@ -111,7 +111,7 @@ Web Libraries:
 
 Applications:
 
--   [Winforms Samples]({{ site.github.url }}/Winforms_Samples)
+-   [Winforms Samples](/Winforms_Samples)
 -   Nant
 -   **done:** nunit
 -   IKVM (0.34 is the latest, SLED ships 0.28)

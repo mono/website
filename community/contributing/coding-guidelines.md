@@ -435,7 +435,7 @@ void Method (string lpstrArgument)
 void Method (string my_string)
 ```
 
-(There is an exception to this rule: [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) codebase, in which you should use under\_score.)
+(There is an exception to this rule: [Gtk\#](/docs/gui/gtksharp/) codebase, in which you should use under\_score.)
 
 Instance fields should use underline as a separator:
 
@@ -650,7 +650,7 @@ int MyFunction ()
 
 Ideally, write a human description of the reason why there is a MonoTODO, this will be useful in the future for our automated tools that can assist in developers porting their code.
 
-Do not use MonoTODO attributes for reminding yourself of internal changes that must be done. Use FIXMEs or other kinds of comments in the source code for that purpose, and if the problem requires to be followed up on, [file a bug]({{ site.github.url }}/community/bugs/).
+Do not use MonoTODO attributes for reminding yourself of internal changes that must be done. Use FIXMEs or other kinds of comments in the source code for that purpose, and if the problem requires to be followed up on, [file a bug](/community/bugs/).
 
 NotImplementedException
 -----------------------
@@ -661,7 +661,7 @@ In the Mono class libraries, if a library is stubbed out, it is customary to ins
     throw new NotImplementedException ()
 ```
 
-The NotImplemented exception is used by tools like the [Mono Migration Analyzer]({{ site.github.url }}/docs/tools+libraries/tools/moma/) (Moma) to report potential problems for people porting their applications.
+The NotImplemented exception is used by tools like the [Mono Migration Analyzer](/docs/tools+libraries/tools/moma/) (Moma) to report potential problems for people porting their applications.
 
 Notice that in certain conditions, throwing a NotImplementedException is a pattern used in base virtual methods to force derived classes to implement the functionality. This can lead to incorrect reports from the Moma tool, because the tool has no way of knowing that in practice the virtual base method will never be called (it would be better to have an abstract class in this case, but we have to be source and binary compatible). In these cases, instead of throwing the exception directly, call a helper routine, so that it becomes invisible to Moma:
 
@@ -772,7 +772,7 @@ class X : Y {
 Source Code Control
 ===================
 
-Many of us in the Mono team are still getting used to using Git. Some very useful hints are available in our [GitFAQ]({{ site.github.url }}/community/contributing/gitfaq/) that is geared specifically to the Mono team.
+Many of us in the Mono team are still getting used to using Git. Some very useful hints are available in our [GitFAQ](/community/contributing/gitfaq/) that is geared specifically to the Mono team.
 
 Summary Description
 -------------------
@@ -813,7 +813,7 @@ When committing code on behalf of others use the --author option, for example:
 Work Branches
 -------------
 
-See the description of [short term branches]({{ site.github.url }}/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches]({{ site.github.url }}/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ]({{ site.github.url }}/community/contributing/gitfaq/).
+See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
 RCS and CVS tags
 ----------------
@@ -951,7 +951,7 @@ Code should never be checked into the repository that breaks the build, or break
 Check all arguments
 -------------------
 
-Public functions must check their arguments in exactly the same was as Microsoft's framework. It is important to throw exceptions such as ArgumentNullException rather than NullReferenceException. Adding test to the [Test Suite]({{ site.github.url }}/community/contributing/test-suite/) is important for these.
+Public functions must check their arguments in exactly the same was as Microsoft's framework. It is important to throw exceptions such as ArgumentNullException rather than NullReferenceException. Adding test to the [Test Suite](/community/contributing/test-suite/) is important for these.
 
 Be careful about freeing memory
 -------------------------------
@@ -1077,7 +1077,7 @@ The ChangeLogs are automatically generated at distribution time from the Git com
 Personal Work Branches
 ----------------------
 
-See the description of [short term branches]({{ site.github.url }}/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches]({{ site.github.url }}/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ]({{ site.github.url }}/community/contributing/gitfaq/).
+See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
 If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [http://github.com/mono](http://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
 
@@ -1087,4 +1087,4 @@ It is good practice to publish a long-term feature branch early so as to encoura
 
 When you are satisfied your feature is ready to be included in the next release of the project, you will need to integrate your feature into the `master` branch. Submit a pull request to the appropriate project or sub-module maintainer: this involves going to the webpage of your fork at github.com, using the "Switch Branch" drop-down-list to select the branch to be released, and clicking on the "Pull Request" button.
 
-If you do have write access to the main mono repository, you might be asked to commit to it directly. At this point you should follow the [GitFAQ]({{ site.github.url }}/community/contributing/gitfaq/) suggestions on how to merge branches onto `master`.
+If you do have write access to the main mono repository, you might be asked to commit to it directly. At this point you should follow the [GitFAQ](/community/contributing/gitfaq/) suggestions on how to merge branches onto `master`.

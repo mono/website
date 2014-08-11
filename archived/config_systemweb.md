@@ -9,7 +9,7 @@ redirect_from:
 Config system.web
 =================
 
-The \<system.web\> section is a component of the [configuration]({{ site.github.url }}/Config "Config") of an application. Usually part of the Web.config application that can be used to configure the various components of the System.Web assembly.
+The \<system.web\> section is a component of the [configuration](/Config "Config") of an application. Usually part of the Web.config application that can be used to configure the various components of the System.Web assembly.
 
 It can appear inside a \<configuration\> section or inside a \<location\> section. If it is found alone, it will apply to all the urls accessed by System.Web:
 
@@ -50,14 +50,14 @@ Child elements
 
 The following child elements can be used to configure different modules of System.Web:
 
--   [\<authentication\>]({{ site.github.url }}/Config_system.web_authentication "Config system.web authentication")
--   [\<authorization\>]({{ site.github.url }}/Config_system.web_authorization "Config system.web authorization")
--   [\<customErrors\>]({{ site.github.url }}/Config_system.web_customErrors "Config system.web customErrors")
--   [\<globalization\>]({{ site.github.url }}/Config_system.web_globalization "Config system.web globalization")
--   [\<pages\>]({{ site.github.url }}/Config_system.web_pages "Config system.web pages")
+-   [\<authentication\>](/Config_system.web_authentication "Config system.web authentication")
+-   [\<authorization\>](/Config_system.web_authorization "Config system.web authorization")
+-   [\<customErrors\>](/Config_system.web_customErrors "Config system.web customErrors")
+-   [\<globalization\>](/Config_system.web_globalization "Config system.web globalization")
+-   [\<pages\>](/Config_system.web_pages "Config system.web pages")
 
 Other settings
 ==============
 
-When you use the Mono.Http assembly, there is a set of configuration options that can be used. These are part of the \<mono.aspnet\> space, for details see the [ASP.NET Modules]({{ site.github.url }}/ASP.NET_Modules "ASP.NET Modules") page.
+When you use the Mono.Http assembly, there is a set of configuration options that can be used. These are part of the \<mono.aspnet\> space, for details see the [ASP.NET Modules](/ASP.NET_Modules "ASP.NET Modules") page.
 

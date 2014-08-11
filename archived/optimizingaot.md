@@ -8,7 +8,7 @@ redirect_from:
 OptimizingAOT
 =============
 
- See also the [AOT]({{ site.github.url }}/AOT "AOT") page for an introduction.
+ See also the [AOT](/AOT "AOT") page for an introduction.
 
 ### Prelinking
 

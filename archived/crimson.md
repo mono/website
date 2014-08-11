@@ -82,7 +82,7 @@ Crimson can **optimize** .NET cryptography because it let you choose the best im
 Availability
 ============
 
-The source code for Crimson is available in [SVN]({{ site.github.url }}/SourceCodeRepository) under the module name **crimson**.
+The source code for Crimson is available in [SVN](/SourceCodeRepository) under the module name **crimson**.
 
 Current state
 =============

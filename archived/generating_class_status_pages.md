@@ -22,7 +22,7 @@ The differences can then be rendered into an DHTML page that allows the develope
 Using our tools
 ---------------
 
-If you want to use our tools to compare your own libraries you will need to build the tools using SVN (see [AnonSVN]({{ site.github.url }}/SourceCodeRepository)).
+If you want to use our tools to compare your own libraries you will need to build the tools using SVN (see [AnonSVN](/SourceCodeRepository)).
 
 Once you check out the *mcs* module:
 

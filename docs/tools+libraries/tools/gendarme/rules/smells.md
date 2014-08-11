@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Smells/
 ---
 
-[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s refactoring suggestion rules are located in the **Gendarme.Rules.Smells.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Smells/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s refactoring suggestion rules are located in the **Gendarme.Rules.Smells.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Smells/).
 
 <table>
 <col width="100%" />

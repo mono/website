@@ -29,7 +29,7 @@ Therefore, the only points of entrance in the assembly (which will be in System.
 Areas of work which are in progress:
 
 -   We have to prevent the moon tuning process to strip possible API that the bridge needs to use. We have [created](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/tuner/Mono.Tuner/MoonlightA11yDescriptorGenerator.cs?view=markup) a linker step that generates linker descriptors but we haven't proposed it yet for the build.
--   GLibSharp also makes heavy use of Marshalling API and non-generic collections which are no longer present in the 2.1 profile, so we need an InternalsVisibleTo attribute in mscorlib for this, as well as another one in System.Windows.dll for the bridge itself to be able to access, examine or hook into UIA structures. For now, these attributes will be included only in the build with an environment variable until they are correctly [audited]({{ site.github.url }}/Moonlight/SecurityStatus#Assembly_Loading).
+-   GLibSharp also makes heavy use of Marshalling API and non-generic collections which are no longer present in the 2.1 profile, so we need an InternalsVisibleTo attribute in mscorlib for this, as well as another one in System.Windows.dll for the bridge itself to be able to access, examine or hook into UIA structures. For now, these attributes will be included only in the build with an environment variable until they are correctly [audited](/Moonlight/SecurityStatus#Assembly_Loading).
 -   The only scenario supported right now for a11y is having installed moonlight via XPI, and the bridge by the same means. In the future we will consider the rest of the scenarios:
     -   Moon-native + Moon-a11y XPI
     -   Moon-native + Moon-a11y native

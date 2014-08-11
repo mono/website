@@ -16,7 +16,7 @@ The .NET Winforms WebBrowser control exposes an API that allows an application t
 The Mono implementation
 =======================
 
-[![Webbrowser architecture.png]({{ site.github.url }}/archived/images/e/e2/Webbrowser_architecture.png)]({{ site.github.url }}/archived/images/e/e2/Webbrowser_architecture.png)
+[![Webbrowser architecture.png](/archived/images/e/e2/Webbrowser_architecture.png)](/archived/images/e/e2/Webbrowser_architecture.png)
 
 This is an overview of all the components that support both the Gecko and WebKit backends. Each square with a thin border represents a different library.
 

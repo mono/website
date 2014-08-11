@@ -22,7 +22,7 @@ Monodocer is part of monodoc.
 Generating Documentation
 ========================
 
-The initial stubs for the documentation are generated with [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
+The initial stubs for the documentation are generated with [monodocer](/docs/tools+libraries/tools/monodocer/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 
 Example Assembly
 ----------------
@@ -106,7 +106,7 @@ When your assembly changes, run `monodocer` again, just as before, to update you
 
 If you remove some classes from your source code a .remove extension will be added to the old documentation files, so you do not lose the already written documentation.
 
-In [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) 1.1.18 or later, you can provide the `-since:SINCE` command-line argument to insert a `<since/>` element for each *added* type and member within the assembly. The `SINCE` text will be inserted as the *version* attribute of the `<since/>` element, thus:
+In [monodocer](/docs/tools+libraries/tools/monodocer/) 1.1.18 or later, you can provide the `-since:SINCE` command-line argument to insert a `<since/>` element for each *added* type and member within the assembly. The `SINCE` text will be inserted as the *version* attribute of the `<since/>` element, thus:
 
 ``` bash
 $ monodocer -path:en -assembly:lib.dll -since:2.0
@@ -167,7 +167,7 @@ Every "To be added." is a place where you need to fill in documentation. The oth
 Editing Documentation
 =====================
 
-You can edit these files by hand, or you can use [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/), Mono's documentation browser to edit the files. To edit the files in Monodoc, run:
+You can edit these files by hand, or you can use [Monodoc](/docs/tools+libraries/tools/monodoc/), Mono's documentation browser to edit the files. To edit the files in Monodoc, run:
 
 ``` bash
 $ monodoc --edit docfiles
@@ -180,5 +180,5 @@ Changes made in Monodoc are saved immediately to your documentation files.
 Installing Documentation
 ========================
 
-Documentation can be packaged for later installation with the **mdassembler** command. See the [Assembler]({{ site.github.url }}/docs/tools+libraries/tools/mdassembler/) page for more information.
+Documentation can be packaged for later installation with the **mdassembler** command. See the [Assembler](/docs/tools+libraries/tools/mdassembler/) page for more information.
 

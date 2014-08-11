@@ -14,12 +14,12 @@ Ongoing Projects
 Soft Debugger
 -------------
 
-The [Soft Debugger]({{ site.github.url }}/docs/advanced/runtime/docs/soft-debugger/) is a new debugger technology, used primarily by Mono on the iPhone.
+The [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) is a new debugger technology, used primarily by Mono on the iPhone.
 
 Compacting GC
 -------------
 
-Work towards the [Generational GC]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/).
+Work towards the [Generational GC](/docs/advanced/garbage-collector/sgen/).
 
 Our current plan is:
 
@@ -33,7 +33,7 @@ Lead: Paolo
 LLVM as a Code Generation Backend
 ---------------------------------
 
-Use the LLVM code optimized as a backend for Mono's JIT. For more information see the [Mono LLVM]({{ site.github.url }}/docs/advanced/mono-llvm/) page.
+Use the LLVM code optimized as a backend for Mono's JIT. For more information see the [Mono LLVM](/docs/advanced/mono-llvm/) page.
 
 Lead: Zoltan
 
@@ -47,9 +47,9 @@ This is a very time intensive task as it requires to test all entry points in co
 Continuations
 -------------
 
-Support for [Continuations]({{ site.github.url }}/archived/continuations "Continuations") is supported in versions of Mono after April 16th (to be publicly available in Mono 2.6).
+Support for [Continuations](/archived/continuations "Continuations") is supported in versions of Mono after April 16th (to be publicly available in Mono 2.6).
 
-Read more about [Continuations]({{ site.github.url }}/archived/continuations "Continuations") here.
+Read more about [Continuations](/archived/continuations "Continuations") here.
 
 Reflection.Emit Fixes
 ---------------------
@@ -102,7 +102,7 @@ Areas where can can improve:
 Console Ports
 -------------
 
-Work to port and support Mono on the [Mono:Wii]({{ site.github.url }}/docs/about-mono/supported-platforms/wii/) and the [Mono:PlayStation3]({{ site.github.url }}/docs/about-mono/supported-platforms/playstation3/).
+Work to port and support Mono on the [Mono:Wii](/docs/about-mono/supported-platforms/wii/) and the [Mono:PlayStation3](/docs/about-mono/supported-platforms/playstation3/).
 
 The Wii port is ready; The PlayStation3 port is finished, but requires some work to package and polish the sharp edges.
 
@@ -115,7 +115,7 @@ Innovative Features
 
 As part of Mono 2.8, we will be breaking the embedding API to clean up many issues that have cropped over the years.
 
-You can read more about them in the [Mono\_Runtime\_API\_Changes]({{ site.github.url }}/archived/mono_runtime_api_changes "Mono Runtime API Changes") page.
+You can read more about them in the [Mono\_Runtime\_API\_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes") page.
 
 Cross Compilation
 -----------------
@@ -133,7 +133,7 @@ Low Priority Projects
 Completed Projects
 ==================
 
--   [Linear]({{ site.github.url }}/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
+-   [Linear](/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
 -   JIT Regalloc: A new register allocation framework.
--   [SafeHandles]({{ site.github.url }}/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
+-   [SafeHandles](/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
 

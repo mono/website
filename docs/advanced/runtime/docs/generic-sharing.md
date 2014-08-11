@@ -7,7 +7,7 @@ redirect_from:
 Porting
 =======
 
-This describes how to port the generic code sharing infrastructure in Mono. This is in addition to the [Mono Runtime Porting]({{ site.github.url }}/docs/advanced/runtime/docs/mini-porting/) instructions.
+This describes how to port the generic code sharing infrastructure in Mono. This is in addition to the [Mono Runtime Porting](/docs/advanced/runtime/docs/mini-porting/) instructions.
 
 Generic class init trampoline
 -----------------------------

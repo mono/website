@@ -79,7 +79,7 @@ Mapping between Controls and UIAutomation Patterns
 
 To understand how a control should look in ATK, you must first understand two things: what is the control's UIAutomation Control Type, and what patterns does it implement. The table below shows both for all the Silverlight 2 controls.
 
-[![]({{ site.github.url }}/archived/images/d/d2/Control-to-pattern.png)]({{ site.github.url }}/archived/images/d/d2/Control-to-pattern.png)
+[![](/archived/images/d/d2/Control-to-pattern.png)](/archived/images/d/d2/Control-to-pattern.png)
 
 Silverlight 2 Control to UIAutomation Control Pattern mapping; for the original OpenOffice Calc document, see [[1]](http://www.mono-a11y.org/documentation/control-to-pattern.ods).
 

@@ -271,7 +271,7 @@ All the `mconfig` configuration settings have to be contained within the root el
 
 ##### Adding a feature block
 
-Since our goal is to define a new feature (we could just restrict ourselves to overriding several **\<default\>** blocks, for instance, to affect the creation of default configuration files or modify the contents of some sections forming part of other features), we need to define it in the configuration file. Our new feature will be adding support for using IronPython in ASP.NET applications, using the Mono distribution of IronPyton (available for several distributions from [Downloads]({{ site.github.url }}/Downloads) in the IPCE package), therefore we will name it *IronPython-Mono*. Let's modify the freshly created `mconfig.xml` file by adding the following XML code just below the **\<mconfig\>** element at the top of the file:
+Since our goal is to define a new feature (we could just restrict ourselves to overriding several **\<default\>** blocks, for instance, to affect the creation of default configuration files or modify the contents of some sections forming part of other features), we need to define it in the configuration file. Our new feature will be adding support for using IronPython in ASP.NET applications, using the Mono distribution of IronPyton (available for several distributions from [Downloads](/Downloads) in the IPCE package), therefore we will name it *IronPython-Mono*. Let's modify the freshly created `mconfig.xml` file by adding the following XML code just below the **\<mconfig\>** element at the top of the file:
 
 ``` xml
 <feature name="IronPython-Mono" target="Web">

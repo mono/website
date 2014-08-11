@@ -6,7 +6,7 @@ redirect_from:
 
 Code Coverage can be used to track how many of the code paths that your program is using are actually exercised.
 
-For more information see [Profile]({{ site.github.url }}/docs/debug+profile/profile/).
+For more information see [Profile](/docs/debug+profile/profile/).
 
 MonoCov
 =======

@@ -8,5 +8,5 @@ redirect_from:
 Category:FAQ
 ============
 
-FAQ pages. For a categorized list of available FAQs see the [main FAQ Article]({{ site.github.url }}/FAQ "FAQ").
+FAQ pages. For a categorized list of available FAQs see the [main FAQ Article](/FAQ "FAQ").
 

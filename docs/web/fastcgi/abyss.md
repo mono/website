@@ -4,7 +4,7 @@ redirect_from:
   - /FastCGI_Abyss/
 ---
 
-Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Abyss server.
+Information on how to configure the [FastCGI](/docs/web/fastcgi/) support for the Abyss server.
 
 Introduction
 ------------
@@ -21,7 +21,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read [FastCGI\#Important\_Information]({{ site.github.url }}/docs/web/fastcgi/#important-information) section on the main FastCGI page.
+Before doing anthing else, you should read [FastCGI\#Important\_Information](/docs/web/fastcgi/#important-information) section on the main FastCGI page.
 
 ### Step 1: Setting Up the Interpreter
 
@@ -57,7 +57,7 @@ Using Extensions
 
 ### Warnings
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI\#Paths\_vs.\_Extensions]({{ site.github.url }}/docs/web/fastcgi/#paths-vs-extensions) on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI\#Paths\_vs.\_Extensions](/docs/web/fastcgi/#paths-vs-extensions) on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
 ### Step 1: Setting Up the Interpreter
 

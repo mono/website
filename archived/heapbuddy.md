@@ -8,9 +8,9 @@ redirect_from:
 HeapBuddy
 =========
 
-Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented [here]({{ site.github.url }}/Profiler "Profiler").
+Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented [here](/Profiler "Profiler").
 
-HeapBuddy is a summarizing profiler. It is part of the Mono [profiling]({{ site.github.url }}/Profile "Profile") tools.
+HeapBuddy is a summarizing profiler. It is part of the Mono [profiling](/Profile "Profile") tools.
 
 HeapBuddy collects allocation statistics while the program is running and writes out the aggregate info to a file which you analyze with a command-line tool after it's finished running.
 
@@ -70,7 +70,7 @@ This is good when you are trying to find out what is allocating all those string
 Obtaining HeapBuddy
 ===================
 
-HeabBuddy is availale as an [Subversion]({{ site.github.url }}/SourceCodeRepository) checkout, use the following command line to download it:
+HeabBuddy is availale as an [Subversion](/SourceCodeRepository) checkout, use the following command line to download it:
 
 ``` bash
 $ svn co svn://anonsvn.mono-project.com/source/trunk/heap-buddy
@@ -88,7 +88,7 @@ $ make install
 See Also
 ========
 
-[Performance Tips]({{ site.github.url }}/Performance_Tips "Performance Tips")
+[Performance Tips](/Performance_Tips "Performance Tips")
 
-[Heap Shot Memory Profiler]({{ site.github.url }}/HeapShot "HeapShot")
+[Heap Shot Memory Profiler](/HeapShot "HeapShot")
 

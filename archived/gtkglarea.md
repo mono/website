@@ -8,7 +8,7 @@ redirect_from:
 GtkGLArea
 =========
 
-[![]({{ site.github.url }}/archived/images/7/72/Gtkgl.png)]({{ site.github.url }}/archived/images/7/72/Gtkgl.png)
+[![](/archived/images/7/72/Gtkgl.png)](/archived/images/7/72/Gtkgl.png)
 
 A view of a 3D model using GtkGLArea
 
@@ -53,8 +53,8 @@ The use of [Cairo](http://cairographics.org/introduction) and [Glitz](http://www
 Projects using this package
 ---------------------------
 
--   [Jenkara]({{ site.github.url }}/Jenkara "Jenkara")
--   [GtkGLAreaSharp]({{ site.github.url }}/GtkGLAreaSharp "GtkGLAreaSharp")
+-   [Jenkara](/Jenkara "Jenkara")
+-   [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp")
 
 Download
 --------

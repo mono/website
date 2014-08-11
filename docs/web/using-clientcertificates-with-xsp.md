@@ -17,7 +17,7 @@ Prerequisites
 In order to start executing the various steps in this article you'll need to have the following software installed:
 
 1.  [Mono 1.1.10](http://www.go-mono.com/archive/1.1.10/) (or later)
-2.  [XSP]({{ site.github.url }}/ASP.NET#XSP) 1.1.10 (or later)
+2.  [XSP](/ASP.NET#XSP) 1.1.10 (or later)
 3.  An SSL enabled client like [FireFox](http://www.mozilla.org/products/firefox/), IE and/or wget
 4.  [Wireshark](http://www.wireshark.org/) (optional as a debugging/learning tool)
 

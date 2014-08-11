@@ -32,7 +32,7 @@ Once the plugin is installed, the following should be possible from Visual Studi
     -   Start Windows.Forms application connected to the Visual Debugger.
     -   Start an ASP.NET application connected to the Visual Studio Debugger.
 -   Packaging
-    -   Create [Mono-compliant deployments]({{ site.github.url }}/Guidelines:Application_Deployment "Guidelines:Application Deployment") of .NET executables
+    -   Create [Mono-compliant deployments](/Guidelines:Application_Deployment "Guidelines:Application Deployment") of .NET executables
     -   Create RPM and DEB packages for various distributions
         -   It could be easy to ship tools that do both on a single system
         -   Alternatively, for open source software, expose the openSUSE Build Service

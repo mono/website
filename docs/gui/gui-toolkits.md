@@ -17,18 +17,18 @@ Both GTK\# and Winforms, while being cross-platform, have clear roots in their o
 Toolkits
 ========
 
-[Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/)
+[Gtk\#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![]({{ site.github.url }}/archived/images/5/5e/Banshee1.png)]({{ site.github.url }}/archived/images/5/5e/Banshee1.png)
+[![](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
 
 [Banshee](http://banshee-project.org/Main_Page), a GTK\# app
 
-[![]({{ site.github.url }}/archived/images/9/92/Fspot1.png)]({{ site.github.url }}/archived/images/9/92/Fspot1.png)
+[![](/archived/images/9/92/Fspot1.png)](/archived/images/9/92/Fspot1.png)
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK\# app
 
-Homepage: [GtkSharp]({{ site.github.url }}/docs/gui/gtksharp/)
+Homepage: [GtkSharp](/docs/gui/gtksharp/)
 
 GTK\# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK\# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
 
@@ -52,10 +52,10 @@ Cons:
 -   Gtk+ apps run like foreign applications on MacOS X.
 -   Incomplete documentation.
 
-[MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/)
+[MonoMac](/docs/tools+libraries/libraries/monomac/)
 ---------------------------------------------------------
 
-Homepage: [MonoMac]({{ site.github.url }}/docs/tools+libraries/libraries/monomac/)
+Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
 MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C\#, it is not limited to the AppKit GUI APIs.
 
@@ -72,18 +72,18 @@ Cons:
 
 -   Not portable outside of MacOS X.
 
-[Windows.Forms]({{ site.github.url }}/docs/gui/winforms/)
+[Windows.Forms](/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![]({{ site.github.url }}/archived/images/7/71/Nunit1.png)]({{ site.github.url }}/archived/images/7/71/Nunit1.png)
+[![](/archived/images/7/71/Nunit1.png)](/archived/images/7/71/Nunit1.png)
 
 [NUnit](http://www.nunit.org/), a Winforms app
 
-[![]({{ site.github.url }}/archived/images/3/32/Screenshot-SharpChess.png)]({{ site.github.url }}/archived/images/3/32/Screenshot-SharpChess.png)
+[![](/archived/images/3/32/Screenshot-SharpChess.png)](/archived/images/3/32/Screenshot-SharpChess.png)
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
-Homepage: [Winforms]({{ site.github.url }}/docs/gui/winforms/)
+Homepage: [Winforms](/docs/gui/winforms/)
 
 Windows.Forms is a binding developed by Microsoft to the Win32 toolkit. As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
 
@@ -126,7 +126,7 @@ This is a port of the QtJambi java bindings to .net using IKVM.
 wxNet
 -----
 
-[![]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)]({{ site.github.url }}/archived/images/c/cf/Linux-05.png)
+[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
 wx\# Sample
 
@@ -150,7 +150,7 @@ Cons:
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits]({{ site.github.url }}/archived/dead_toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits](/archived/dead_toolkits "Dead Toolkits") that have been developed in the past.
 
 Alternative Implementation Approaches
 =====================================
@@ -178,13 +178,13 @@ As an example, consider the UI for [Tangerine](http://snorp.net/log/tangerine) a
 
 On Windows:
 
-[![Tangerine-prefs-win32-new.png]({{ site.github.url }}/archived/images/1/17/Tangerine-prefs-win32-new.png)]({{ site.github.url }}/archived/images/1/17/Tangerine-prefs-win32-new.png)
+[![Tangerine-prefs-win32-new.png](/archived/images/1/17/Tangerine-prefs-win32-new.png)](/archived/images/1/17/Tangerine-prefs-win32-new.png)
 
 On Linux with Gnome:
 
-[![Tangerine-properties.png]({{ site.github.url }}/archived/images/e/e3/Tangerine-properties.png)]({{ site.github.url }}/archived/images/e/e3/Tangerine-properties.png)
+[![Tangerine-properties.png](/archived/images/e/e3/Tangerine-properties.png)](/archived/images/e/e3/Tangerine-properties.png)
 
 On MacOS X:
 
-[![Tangerine-preferences-mac.png]({{ site.github.url }}/archived/images/a/a6/Tangerine-preferences-mac.png)]({{ site.github.url }}/archived/images/a/a6/Tangerine-preferences-mac.png)
+[![Tangerine-preferences-mac.png](/archived/images/a/a6/Tangerine-preferences-mac.png)](/archived/images/a/a6/Tangerine-preferences-mac.png)
 

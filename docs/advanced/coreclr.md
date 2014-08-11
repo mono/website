@@ -9,7 +9,7 @@ Note: due to the circular nature of the definitions you'll need some prior knowl
 Security levels
 ===============
 
-The CoreCLR security model divide all code into three distinct levels: **transparent**, **safe-critical** and **critical**. This model is much simpler to understand (and implement) than [CAS]({{ site.github.url }}/docs/advanced/cas/) (e.g. no stack-walk). Only a few rules can describe much of it.
+The CoreCLR security model divide all code into three distinct levels: **transparent**, **safe-critical** and **critical**. This model is much simpler to understand (and implement) than [CAS](/docs/advanced/cas/) (e.g. no stack-walk). Only a few rules can describe much of it.
 
 Transparent
 -----------

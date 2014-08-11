@@ -54,16 +54,16 @@ Then, we need to implement a bridge which receives accessibility information fro
 
 The bridge will be in its own assembly, which will talk to Atk\# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
 
-[![Uia-atk bridge.png]({{ site.github.url }}/archived/images/2/28/Uia-atk_bridge.png)]({{ site.github.url }}/archived/images/2/28/Uia-atk_bridge.png)
+[![Uia-atk bridge.png](/archived/images/2/28/Uia-atk_bridge.png)](/archived/images/2/28/Uia-atk_bridge.png)
 
 Mapping infrastructure
 ----------------------
 
 We will need to map UIA structures to ATK structures. More info:
 
--   ATK roles: Refer to our [table of Atk.Roles]({{ site.github.url }}/Accessibility:_Mapping_UIA_to_ATK#roles "Accessibility: Mapping UIA to ATK"), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
--   [Mapping UIA to ATK]({{ site.github.url }}/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK"): [UiaControlType-\>Atk mapping draft]({{ site.github.url }}/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK").
--   [MWF-\>UiaControlType-\>UiaProvider mappings]({{ site.github.url }}/Accessibility:_Control_Status "Accessibility: Control Status").
+-   ATK roles: Refer to our [table of Atk.Roles](/Accessibility:_Mapping_UIA_to_ATK#roles "Accessibility: Mapping UIA to ATK"), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
+-   [Mapping UIA to ATK](/Accessibility:_Mapping_UIA_to_ATK "Accessibility: Mapping UIA to ATK"): [UiaControlType-\>Atk mapping draft](/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK").
+-   [MWF-\>UiaControlType-\>UiaProvider mappings](/Accessibility:_Control_Status "Accessibility: Control Status").
 -   From the GTK Case study: [Gtk-\>Gail-\>Atk-\>UiaControlType](#case-study-gtk).
 -   For historic reference: [Mapping MSAA to ATK](http://developer.mozilla.org/en/docs/ARIA_UA_Best_Practices#11.3.5_Role).
 
@@ -164,7 +164,7 @@ UiaAtkBridge class
 
 UIA Provider
 
-[UiaControlType]({{ site.github.url }}/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK")
+[UiaControlType](/Accessibility:_Mapping_UIA_to_ATK#uia-control-types "Accessibility: Mapping UIA to ATK")
 
 Hierarchy (children?)
 

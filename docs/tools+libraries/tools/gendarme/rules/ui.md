@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Ui/
 ---
 
-[Gendarme]({{ site.github.url }}/docs/tools+libraries/tools/gendarme/)'s user interface rules are located in the **Gendarme.Rules.Ui.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Ui/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s user interface rules are located in the **Gendarme.Rules.Ui.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Ui/).
 
 Rules
 =====

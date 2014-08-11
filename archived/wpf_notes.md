@@ -10,7 +10,7 @@ WPF Notes
 
 Notes on implementation strategies for a Mono-based WPF.
 
-For details on Moonlight (a subset of WPF) see [Moonlight]({{ site.github.url }}/Moonlight "Moonlight").
+For details on Moonlight (a subset of WPF) see [Moonlight](/Moonlight "Moonlight").
 
 WPF
 ===
@@ -26,7 +26,7 @@ Rendering Engine
 
 Neither Cairo or Antigrain come with an open source polygon clipping library, so we will have to implement one.
 
-Although [Libgdiplus]({{ site.github.url }}/Libgdiplus "Libgdiplus") does have a clipping implementation it is based on bitmasks and this might not be fast enough for our needs.
+Although [Libgdiplus](/Libgdiplus "Libgdiplus") does have a clipping implementation it is based on bitmasks and this might not be fast enough for our needs.
 
 Although there are various polygon clipping libraries available in the net, nothing exists as open source that takes care of all the corner cases. A complete solution to the problem is described in [Bala R. Vatti's "A Generic Solution to Polygon Clipping"](http://portal.acm.org/citation.cfm?doid=129902.129906) available from the ACM. We need the polygon clipping library to support complement, exclude, intersection, xor and union (covered in the later parts of the paper).
 

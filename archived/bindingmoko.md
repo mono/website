@@ -95,7 +95,7 @@ This was a very simple example, because the libmokoui2 sources were very clean f
 
 Parser warnings can sometimes be worked around by patching the source files to make them more standardized. If the source code seems reasonable, it is entirely reasonable to file bugs against Gtk\# to extend the parser to deal with the code. Generation warnings can identify problems with unexpected parameter types. Most generation warnings just result in unbound API.
 
-Compile errors can occur because of name conflicts in the bound api. Often, C methods with collide with signal names, for example. These sorts of issues can be worked around using gapi2-fixup and a metadata rule file. The fixup tool is a highly flexible way to markup the api.xml file. More information on metadata rules is available on the [GAPI]({{ site.github.url }}/GAPI "GAPI") reference wiki page.
+Compile errors can occur because of name conflicts in the bound api. Often, C methods with collide with signal names, for example. These sorts of issues can be worked around using gapi2-fixup and a metadata rule file. The fixup tool is a highly flexible way to markup the api.xml file. More information on metadata rules is available on the [GAPI](/GAPI "GAPI") reference wiki page.
 
 The sample files for this example are [available for download](http://downloads.sourceforge.net/gtk-sharp/moko-sharp-0.1.tar.gz).
 

@@ -70,7 +70,7 @@ Some indications when contributing to this namespace:
 
 -   Before committing a change or propose a patch please verify that it does not break any existing test case for any of the three assemblies used to implement WF.
 
--   Check the Mono [Coding Guidelines]({{ site.github.url }}/Coding_Guidelines)
+-   Check the Mono [Coding Guidelines](/Coding_Guidelines)
 
 Roadmap
 -------

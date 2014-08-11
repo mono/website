@@ -4,7 +4,7 @@ redirect_from:
   - /CsharpRepl/
 ---
 
-[![]({{ site.github.url }}/archived/images/9/9c/Xbyhja.png)]({{ site.github.url }}/archived/images/9/9c/Xbyhja.png)
+[![](/archived/images/9/9c/Xbyhja.png)](/archived/images/9/9c/Xbyhja.png)
 
 C\# GUI Shell
 
@@ -36,7 +36,7 @@ csharp>
 
 A GUI version of this tool is called `gsharp` and is available when you install the `mono-tools` package:
 
-[![test.png]({{ site.github.url }}/archived/images/9/9c/Xbyhja.png)]({{ site.github.url }}/archived/images/9/9c/Xbyhja.png)
+[![test.png](/archived/images/9/9c/Xbyhja.png)](/archived/images/9/9c/Xbyhja.png)
 
 Details
 =======
@@ -130,7 +130,7 @@ The GUI version includes a handful of other methods:
 
 -   Plot (DoubleFunc f1 [,f2 [,f3 [,f4]]]): Plots one or more functions in the buffer.
 
-[![GSharpPlot.png]({{ site.github.url }}/archived/images/7/75/GSharpPlot.png)]({{ site.github.url }}/archived/images/7/75/GSharpPlot.png)
+[![GSharpPlot.png](/archived/images/7/75/GSharpPlot.png)](/archived/images/7/75/GSharpPlot.png)
 
 In the GUI it is also possible to register your own custom transformation objects for rendering the expression results. This allows you to render objects differently:
 
@@ -141,7 +141,7 @@ The GUI version is able to embed Gtk.Widgets when a rendering handler has been r
 
 This can be layered multiple times, the following example shows how to register a handler to render true and false:
 
-[![GSharpRenderHandler.png]({{ site.github.url }}/archived/images/b/bf/GSharpRenderHandler.png)]({{ site.github.url }}/archived/images/b/bf/GSharpRenderHandler.png)
+[![GSharpRenderHandler.png](/archived/images/b/bf/GSharpRenderHandler.png)](/archived/images/b/bf/GSharpRenderHandler.png)
 
 Notice that a simple call that returns a widget will not embed the widget itself:
 

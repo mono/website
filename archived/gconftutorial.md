@@ -82,11 +82,11 @@ Screenshots
 
 ### Our Application
 
-[![Gconftutorial-app.png]({{ site.github.url }}/archived/images/a/a1/Gconftutorial-app.png)]({{ site.github.url }}/archived/images/a/a1/Gconftutorial-app.png)
+[![Gconftutorial-app.png](/archived/images/a/a1/Gconftutorial-app.png)](/archived/images/a/a1/Gconftutorial-app.png)
 
 ### GConf-Editor
 
-[![Gconftutorial-gconf-editor.png]({{ site.github.url }}/archived/images/7/7a/Gconftutorial-gconf-editor.png)]({{ site.github.url }}/archived/images/7/7a/Gconftutorial-gconf-editor.png)
+[![Gconftutorial-gconf-editor.png](/archived/images/7/7a/Gconftutorial-gconf-editor.png)](/archived/images/7/7a/Gconftutorial-gconf-editor.png)
 
 Sample Code
 ===========

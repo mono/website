@@ -82,6 +82,6 @@ to a different function in libdifferent.so, but to the same function in the libr
 Common Problems
 ---------------
 
--   [DllNotFoundException]({{ site.github.url }}/docs/advanced/pinvoke/dllnotfoundexception/)
+-   [DllNotFoundException](/docs/advanced/pinvoke/dllnotfoundexception/)
 
 

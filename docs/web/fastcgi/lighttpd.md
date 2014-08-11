@@ -6,7 +6,7 @@ redirect_from:
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Lighttpd server.
+Information on how to configure the [FastCGI](/docs/web/fastcgi/) support for the Lighttpd server.
 
 Introduction
 ------------
@@ -27,7 +27,7 @@ An earlier version of these configuration instructions was tested on the followi
 General Warnings
 ----------------
 
-Before doing anything else, you should read [FastCGI's important information]({{ site.github.url }}/docs/web/fastcgi/#important-information) on the main page.
+Before doing anything else, you should read [FastCGI's important information](/docs/web/fastcgi/#important-information) on the main page.
 
 Basic Configuration
 -------------------

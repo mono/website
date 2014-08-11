@@ -50,7 +50,7 @@ General
 [SecuritySafeCritical] Validation
 =================================
 
-The security model provided by [CoreCLR]({{ site.github.url }}/Moonlight2CoreCLR "Moonlight2CoreCLR") makes it easier to review the most critical parts of the managed class libraries bundled with Moonlight 2. Basically there's two types of code:
+The security model provided by [CoreCLR](/Moonlight2CoreCLR "Moonlight2CoreCLR") makes it easier to review the most critical parts of the managed class libraries bundled with Moonlight 2. Basically there's two types of code:
 
 -   **Transparent**: this includes application code and a large part of the class libraries. Transparent code has some limitation (e.g. no unsafe code, no p/invokes...) that makes it secure to execute untrusted, *transparent*, code inside the sandbox provided by CoreCLR.
 
@@ -86,7 +86,7 @@ How
 
 Remember: From the platform (i.e. Moonlight) point of view `[SecuritySafeCritical]` is **not** safe (safety is *our* promise to application code) but is **critical** - it can do anything without being bothered by the CoreCLR restrictions.
 
-Questions about the code ? ping the author(s) on [IRC]({{ site.github.url }}/IRC "IRC")!
+Questions about the code ? ping the author(s) on [IRC](/IRC "IRC")!
 
 ### Alternative solutions
 
@@ -195,7 +195,7 @@ Silverlight SDK
 ### Legend
 
 -   **Silverlight SDK** - Silverlight SDK assembly (transparent, needs to be part of the application XAP file)
--   **Desktop Only** - Internal access is **refused** under Moonlight's [CoreCLR]({{ site.github.url }}/Moonlight2CoreCLR "Moonlight2CoreCLR") (i.e. plugin) but is **allowed** for desktop usage (e.g. while compiling with `smcs`)
+-   **Desktop Only** - Internal access is **refused** under Moonlight's [CoreCLR](/Moonlight2CoreCLR "Moonlight2CoreCLR") (i.e. plugin) but is **allowed** for desktop usage (e.g. while compiling with `smcs`)
 -   **Separate Plugin** - Considered platform code. Shipped in a separate plugin (XPI).
 -   **Unknown Assembly** - Unknown origin (never seen the assembly in the *wild*)
 

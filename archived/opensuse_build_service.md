@@ -69,7 +69,7 @@ Desktop Applications
 -   [gbrainy](http://live.gnome.org/gbrainy) a brain training game.
 -   [GNOME Do](http://do.davebsd.com/) a power-user launcher tool.
 -   [GTwitter](http://code.google.com/p/gtwitter/) a Twitter client.
--   [MoMA]({{ site.github.url }}/MoMA "MoMA") - Mono Migration Analyzer
+-   [MoMA](/MoMA "MoMA") - Mono Migration Analyzer
 -   [monoosc](http://sourceforge.net/projects/monoosc/) a tool to create packages on the OpenSUSE Build System as well as a managed API for controlling the OBS.
 -   [Smuxi IRC Client](http://www.smuxi.org/)
 

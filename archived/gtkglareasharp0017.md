@@ -10,7 +10,7 @@ GtkGLAreaSharp:0.0.17
 
 This release substantially updates the example build system, using Include.am files to organize library, target generation, dependencies, etc.
 
-This release follows closely on the release of [Prebuild]({{ site.github.url }}/Prebuild "Prebuild")'s greatly updated GNU Autotools target and the subsequent [Tao]({{ site.github.url }}/Tao "Tao") packages. v0.0.17 makes use of the .pc files created by the new Tao package and will build only the library (and not the examples) if Tao is not found on the build system.
+This release follows closely on the release of [Prebuild](/Prebuild "Prebuild")'s greatly updated GNU Autotools target and the subsequent [Tao](/Tao "Tao") packages. v0.0.17 makes use of the .pc files created by the new Tao package and will build only the library (and not the examples) if Tao is not found on the build system.
 
 The object selection example is now functioning correctly as well.
 

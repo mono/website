@@ -38,7 +38,7 @@ We held a Mono meeting at the Microsoft PDC 2005, some coverage is here:
 The Event
 =========
 
-[![Mono.fire.gif]({{ site.github.url }}/archived/images/0/03/Mono.fire.gif)]({{ site.github.url }}/archived/images/0/03/Mono.fire.gif)
+[![Mono.fire.gif](/archived/images/0/03/Mono.fire.gif)](/archived/images/0/03/Mono.fire.gif)
 
 **Date:** Tuesday September 13th.
 
@@ -64,7 +64,7 @@ We will showcase some of the Mono-based applications we have built for Linux:
 -   [F-Spot](http://www.gnome.org/projects/f-spot) our new photo management software,
 -   [the desktop search](http://www.beagle-project.org),
 -   the [MonoDevelop](http://www.monodevelop.com) IDE and
--   the [GTK\# GUI]({{ site.github.url }}/GtkSharp "GtkSharp") toolkit which is the API we use to create all of these applications.
+-   the [GTK\# GUI](/GtkSharp "GtkSharp") toolkit which is the API we use to create all of these applications.
 
 We will also showcase the new vector-based rendering APIs available for developers (completely cross-platform) as well as the new OpenGL-based windowing system.
 

@@ -8,7 +8,7 @@ redirect_from:
 Roadmap History
 ===============
 
-This page contains the history of the [Roadmap]({{ site.github.url }}/Mono_Project_Roadmap) page. It is left here for historical purposes. For our current roadmap, please see [Roadmap]({{ site.github.url }}/Mono_Project_Roadmap).
+This page contains the history of the [Roadmap](/Mono_Project_Roadmap) page. It is left here for historical purposes. For our current roadmap, please see [Roadmap](/Mono_Project_Roadmap).
 
 Notice that before Mono 2.0, every public release version that was available was a stable release (1.9, 1.9.1, 1.2.6, 1.2.6.1 and so on).
 
@@ -65,7 +65,7 @@ Mono 2.8
 <li>Default to 4.0 Profile</li>
 <li>Moonlight 3 Preview</li>
 <li>MonoDevelop 2.4: <a href="http://monodevelop.com/Download/MonoDevelop_2.4_Released">released on June 16th, 2010</a></li>
-<li><a href="{{ site.github.url }}/Generational_GC" title="Generational GC">Generation Garbage Collector</a> goes into Beta.</li>
+<li><a href="/Generational_GC" title="Generational GC">Generation Garbage Collector</a> goes into Beta.</li>
 <li>C# Compiler
 <ul>
 <li>Full C# 4.0 support</li>
@@ -107,7 +107,7 @@ Mono 2.8
 </ul></li>
 <li>ASP.NET 4.0 API supported</li>
 </ul></td>
-<td align="left"><p><a href="{{ site.github.url }}/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8 Release Notes</a></p>
+<td align="left"><p><a href="/Release_Notes_Mono_2.8" title="Release Notes Mono 2.8">Mono 2.8 Release Notes</a></p>
 <ul>
 <li><strong>Oct 6th, 2010:</strong> First 2.8 release</li>
 </ul></td>
@@ -142,11 +142,11 @@ Mono 2.6
 <li>Mono debuts a full metadata and IL verifier</li>
 </ul></li>
 <li>Moonlight 2.0 released</li>
-<li>Core <a href="{{ site.github.url }}/WCF_Development">WCF</a> support.</li>
+<li>Core <a href="/WCF_Development">WCF</a> support.</li>
 </ul>
 <p>The 2.6 series replaced 2.4 as our Long Term Supported version in the <a href="http://www.novell.com/products/mono/">SUSE Linux Enterprise Mono Extension</a> product.</p></td>
-<td align="left"><p><a href="{{ site.github.url }}/Release_Notes_Mono_2.6" title="Release Notes Mono 2.6">Mono 2.6 Release Notes</a></p>
-<p><a href="{{ site.github.url }}/Release_Notes_Mono_2.6.7" title="Release Notes Mono 2.6.7">Mono 2.6-2.6.7 release notes</a></p>
+<td align="left"><p><a href="/Release_Notes_Mono_2.6" title="Release Notes Mono 2.6">Mono 2.6 Release Notes</a></p>
+<p><a href="/Release_Notes_Mono_2.6.7" title="Release Notes Mono 2.6.7">Mono 2.6-2.6.7 release notes</a></p>
 <ul>
 <li><strong>Dec 14th, 2009:</strong> First 2.6 release</li>
 <li><strong>Jul 20th, 2010:</strong> 2.6.7 released.</li>
@@ -172,7 +172,7 @@ Mono 2.4
 <li>Upgraded xbuild, our msbuild implementation</li>
 <li>Fine tuned memory usage</li>
 </ul></td>
-<td align="left"><p><a href="{{ site.github.url }}/Release_Notes_Mono_2.4.3" title="Release Notes Mono 2.4.3">Mono 2.4.3 Release Notes</a></p>
+<td align="left"><p><a href="/Release_Notes_Mono_2.4.3" title="Release Notes Mono 2.4.3">Mono 2.4.3 Release Notes</a></p>
 <ul>
 <li><strong>Nov 17th:</strong> Branched from the 2.4.x branch.<br /></li>
 <li><strong>Dec 8th:</strong> Final release</li>
@@ -218,12 +218,12 @@ This release was part of our long-term maintenance release for [SUSE Linux Enter
 </ul></li>
 <li>Tools for Windows Developers
 <ul>
-<li><a href="{{ site.github.url }}/MoMA">Moma</a></li>
-<li><a href="{{ site.github.url }}/Gendarme" title="Gendarme">Gendarme</a></li>
+<li><a href="/MoMA">Moma</a></li>
+<li><a href="/Gendarme" title="Gendarme">Gendarme</a></li>
 </ul></li>
 <li>Mono Debugger, command line interface.</li>
 </ul></td>
-<td align="left"><p><a href="{{ site.github.url }}/Release_Notes_Mono_2.0" title="Release Notes Mono 2.0">Mono 2.0 Release Notes</a></p></td>
+<td align="left"><p><a href="/Release_Notes_Mono_2.0" title="Release Notes Mono 2.0">Mono 2.0 Release Notes</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -237,7 +237,7 @@ Since the release in November 9th of 2006 of Mono 1.2, we have made seven increm
 -   2.0 support completed for Web Services (Generics).
 -   ASP.NET WebForms are complete (except for WebParts).
     -   Support for ASP.NET AJAX.
--   Release of [Mono Migration Assistant]({{ site.github.url }}/MoMA).
+-   Release of [Mono Migration Assistant](/MoMA).
 -   C\# 3.0 support and System.Core assembly
 -   LINQ to Objects
 -   LINQ to XML.
@@ -274,21 +274,21 @@ Mono 1.2 is an incremental upgrade to Mono 1.0, and contains the following new f
 
 -   Generic types support: C\# compiler, execution system and core class libraries (C\# 2.0)
 
--   System.Windows.Forms 1.1 support ([Track Progress]({{ site.github.url }}/WinForms "WinForms"))
+-   System.Windows.Forms 1.1 support ([Track Progress](/WinForms "WinForms"))
 
--   [Mono Debugger]({{ site.github.url }}/Debugger "Debugger") (new alpha available soon - see release notes)
+-   [Mono Debugger](/Debugger "Debugger") (new alpha available soon - see release notes)
 
--   [gtk\# 2.0]({{ site.github.url }}/GtkSharp "GtkSharp") (includes support for gtk 2.12)
+-   [gtk\# 2.0](/GtkSharp "GtkSharp") (includes support for gtk 2.12)
 
--   New platforms: [ARM]({{ site.github.url }}/Mono:ARM "Mono:ARM"), [Itanium]({{ site.github.url }}/Mono:IA64 "Mono:IA64"), [s390]({{ site.github.url }}/Mono:S390 "Mono:S390"), [s390x]({{ site.github.url }}/Mono:S390 "Mono:S390").
+-   New platforms: [ARM](/Mono:ARM "Mono:ARM"), [Itanium](/Mono:IA64 "Mono:IA64"), [s390](/Mono:S390 "Mono:S390"), [s390x](/Mono:S390 "Mono:S390").
 
 -   Numerous scalability and performance enhancements
 
 Mono 1.2 also include assemblies from .NET 2.0 and these are available as technology previews:
 
--   XML 2.0 ([Track Progress]({{ site.github.url }}/XML#forthcoming-mono-12-features "XML"))
+-   XML 2.0 ([Track Progress](/XML#forthcoming-mono-12-features "XML"))
 
--   ASP.NET 2.0 ([Track Progress]({{ site.github.url }}/ASP.NET#aspnet-20 "ASP.NET"))
+-   ASP.NET 2.0 ([Track Progress](/ASP.NET#aspnet-20 "ASP.NET"))
 
 -   ADO.NET 2.0
 
@@ -298,7 +298,7 @@ Mono 1.2 also include assemblies from .NET 2.0 and these are available as techno
 
 **Released on:** November 9, 2006.
 
-There are various milestone branches in this release, see our [Branches]({{ site.github.url }}/Branches "Branches") page for more details.
+There are various milestone branches in this release, see our [Branches](/Branches "Branches") page for more details.
 
 Previous Goals
 --------------
@@ -374,41 +374,41 @@ In addition, an "add-on" to the core of .NET has been released, called ".NET 3.0
 
 The Mono project has been tracking some of the improvements available in those releases, some of the highlights of our work so far are:
 
--   Core: mscorlib, System and System.XML assemblies. These support both the 1.x and 2.0 profiles. Work is underway to complete the [2.0 profile]({{ site.github.url }}/Completing2.0Profile "Completing2.0Profile").
+-   Core: mscorlib, System and System.XML assemblies. These support both the 1.x and 2.0 profiles. Work is underway to complete the [2.0 profile](/Completing2.0Profile "Completing2.0Profile").
 
--   [ADO.NET]({{ site.github.url }}/ADO.NET "ADO.NET"): System.Data and various other database providers, they are 1.x complete, and most of 2.x is complete
+-   [ADO.NET](/ADO.NET "ADO.NET"): System.Data and various other database providers, they are 1.x complete, and most of 2.x is complete
 
--   [ASP.NET]({{ site.github.url }}/ASP.NET "ASP.NET") 1.x and 2.x: WebForms and Web Services are supported. Only WebParts are missing from our 2.x support.
+-   [ASP.NET](/ASP.NET "ASP.NET") 1.x and 2.x: WebForms and Web Services are supported. Only WebParts are missing from our 2.x support.
 
 -   System.Security support 1.1 features and has partial support for 2.0 (like XML encryption) but the S.S.C.Pkcs namespace is still imcomplete.
 
 -   DirectoryServices implemented on top of Novell.LDAP
 
--   [Windows.Forms]({{ site.github.url }}/WinForms "WinForms") 1.1 with almost complete 2.0 support.
+-   [Windows.Forms](/WinForms "WinForms") 1.1 with almost complete 2.0 support.
 
--   [System.Drawing]({{ site.github.url }}/Drawing "Drawing") supports both 1.x and 2.0 profiles.
+-   [System.Drawing](/Drawing "Drawing") supports both 1.x and 2.0 profiles.
 
 -   Compilers: C\# 1 and 2 as well as bits of 3, VB.NET 8 and various command line tools that are part of the SDK.
 
--   Transaction support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes]({{ site.github.url }}/Transactions "Transactions") on its implementation and limitations).
+-   Transaction support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes](/Transactions "Transactions") on its implementation and limitations).
 
--   Open Source, Unix and Gnome specific libraries, see our [Plans]({{ site.github.url }}/Plans "Plans") page for more details.
+-   Open Source, Unix and Gnome specific libraries, see our [Plans](/Plans "Plans") page for more details.
 
 There are certain features that we are not planning on supporting and are available either as stubs (to allow other code to compile or to satisfy dependencies) or are not even present in Mono, these include:
 
 -   EnterpriseServices
--   [Web Services Enhancements (WSE)]({{ site.github.url }}/WSE "WSE")
+-   [Web Services Enhancements (WSE)](/WSE "WSE")
 -   System.Management: too Windows specific
--   [System.Messaging]({{ site.github.url }}/System.Messaging).
+-   [System.Messaging](/System.Messaging).
 
 Support for designers in Windows.Forms and ASP.NET for the majority of Mono provided controls does not exist. This is due to the lack of tools for designing Windows.Forms and ASP.NET components in Mono today. When designer surfaces are completed (there are work in progress for both of them) work on this areas will resume.
 
-Designer support is only needed at development-time, this is not something that is required to run the applications on Unix. Many applications that are reported through the [Mono Migration Analysis]({{ site.github.url }}/MoMA) tool reports these problems and can be safely ignored.
+Designer support is only needed at development-time, this is not something that is required to run the applications on Unix. Many applications that are reported through the [Mono Migration Analysis](/MoMA) tool reports these problems and can be safely ignored.
 
 Some components exist that were once developed but are no longer actively developed, these include:
 
--   [Transactions]({{ site.github.url }}/Transactions "Transactions")
--   [JScript]({{ site.github.url }}/JScript "JScript")
+-   [Transactions](/Transactions "Transactions")
+-   [JScript](/JScript "JScript")
 
 See the following sections for more details on plans for 2.0, 3.0 and 3.5 APIs.
 

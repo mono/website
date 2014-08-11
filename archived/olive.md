@@ -14,15 +14,15 @@ Olive is unsupported, should be considered as experimental software, and since i
 
 Currently Olive contains:
 
--   [Workflow]({{ site.github.url }}/Workflow "Workflow") 3.5 APIs
+-   [Workflow](/Workflow "Workflow") 3.5 APIs
 -   PresentationFoundation and WindowsBase (only XAML support)
 
-If you are interested in contributing see our [contributing guidelines]({{ site.github.url }}/Contributing "Contributing"). You can also get a fresh copy from our anonymous SVN repository.
+If you are interested in contributing see our [contributing guidelines](/Contributing "Contributing"). You can also get a fresh copy from our anonymous SVN repository.
 
 Getting a copy
 ==============
 
-Olive is available from our [SVN]({{ site.github.url }}/SourceCodeRepository) repository on the module "olive" and also from our [Anonymous repository]({{ site.github.url }}/SourceCodeRepository).
+Olive is available from our [SVN](/SourceCodeRepository) repository on the module "olive" and also from our [Anonymous repository](/SourceCodeRepository).
 
 You can get a copy using an anonymous access:
 

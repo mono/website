@@ -61,7 +61,7 @@ HOWTO
 Detailed documentation
 ----------------------
 
-To see more detailed documentation, check the following link: [BuildSystem/MonoBuild/DetailedDocs]({{ site.github.url }}/BuildSystem/MonoBuild/DetailedDocs "BuildSystem/MonoBuild/DetailedDocs")
+To see more detailed documentation, check the following link: [BuildSystem/MonoBuild/DetailedDocs](/BuildSystem/MonoBuild/DetailedDocs "BuildSystem/MonoBuild/DetailedDocs")
 
 Interacting with build clients
 ------------------------------
@@ -132,7 +132,7 @@ Add new package/module to MonoBuild
 
 Create a new file in release/packaging/defs to add a new package. The .def file is typically named after the svn module name, rpm package, or the tarball name.
 
-You can use another .def file as a template as well as refer to the [BuildSystem/MonoBuild/DetailedDocs]({{ site.github.url }}/BuildSystem/MonoBuild/DetailedDocs "BuildSystem/MonoBuild/DetailedDocs").
+You can use another .def file as a template as well as refer to the [BuildSystem/MonoBuild/DetailedDocs](/BuildSystem/MonoBuild/DetailedDocs "BuildSystem/MonoBuild/DetailedDocs").
 
 The main things to know are:
 

@@ -8,5 +8,5 @@ redirect_from:
 Category:Articles
 =================
 
-See [Articles]({{ site.github.url }}/Articles "Articles") for more information.
+See [Articles](/Articles "Articles") for more information.
 

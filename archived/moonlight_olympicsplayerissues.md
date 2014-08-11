@@ -8,7 +8,7 @@ redirect_from:
 Moonlight/OlympicsPlayerIssues
 ==============================
 
-We've worked hard to get an Olympics capable [Moonlight/Preview]({{ site.github.url }}/Moonlight/Preview "Moonlight/Preview") out the door, but keep in mind that it is still a preview. Here are a list of possible issues you may run into, as well as workarounds for some.
+We've worked hard to get an Olympics capable [Moonlight/Preview](/Moonlight/Preview "Moonlight/Preview") out the door, but keep in mind that it is still a preview. Here are a list of possible issues you may run into, as well as workarounds for some.
 
 <table>
 <col width="100%" />

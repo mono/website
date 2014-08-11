@@ -8,9 +8,9 @@ The Mono runtime has various tools that you can use to assist your performance t
 
 See the pages:
 
--   [Profiler]({{ site.github.url }}/docs/debug+profile/profile/profiler/) the new profiler available in git and with mono 2.9+
--   [HeapBuddy]({{ site.github.url }}/archived/heapbuddy "HeapBuddy") (obsolete)
--   [Code Coverage]({{ site.github.url }}/docs/debug+profile/profile/code-coverage/)
--   [HeapShot]({{ site.github.url }}/docs/debug+profile/profile/heapshot/)
+-   [Profiler](/docs/debug+profile/profile/profiler/) the new profiler available in git and with mono 2.9+
+-   [HeapBuddy](/archived/heapbuddy "HeapBuddy") (obsolete)
+-   [Code Coverage](/docs/debug+profile/profile/code-coverage/)
+-   [HeapShot](/docs/debug+profile/profile/heapshot/)
 
 For more information.

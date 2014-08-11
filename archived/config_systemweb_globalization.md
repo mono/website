@@ -8,7 +8,7 @@ redirect_from:
 Config system.web globalization
 ===============================
 
-An example of this [\<system.web\>]({{ site.github.url }}/Config_system.web "Config system.web") section is:
+An example of this [\<system.web\>](/Config_system.web "Config system.web") section is:
 
 ``` xml
 <configuration>

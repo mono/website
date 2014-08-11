@@ -16,5 +16,5 @@ Definition
 Examples
 --------
 
-[Jenkara]({{ site.github.url }}/Jenkara "Jenkara")
+[Jenkara](/Jenkara "Jenkara")
 

@@ -15,7 +15,7 @@ Transactions processing is described in:
 -   [Introducing System.Transactions in the Microsoft .NET Framework version 2.0](http://www.microsoft.com/downloads/details.aspx?FamilyID=AAC3D722-444C-4E27-8B2E-C6157ED16B15&displaylang=en)
 -   [Transaction Processing, .NET Framework documentation](http://msdn2.microsoft.com/en-us/library/w97s6fw4(en-US,VS.80).aspx)
 
-You might also be interested in [SystemMessaging]({{ site.github.url }}/System.Messaging).
+You might also be interested in [SystemMessaging](/System.Messaging).
 
 On Microsoft.NET, System.Transactions is a wrapper around Microsoft's distributed transaction manager (MSDTM) with some additional optimizations.
 

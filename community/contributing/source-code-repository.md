@@ -18,7 +18,7 @@ If all you need is to browse the sources, you can go to [Mono Organization page 
 Building Mono from source
 -------------------------
 
-Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source]({{ site.github.url }}/docs/compiling-mono/)
+Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source](/docs/compiling-mono/)
 
 Contributing Patches
 ====================
@@ -34,7 +34,7 @@ It is important that everyone follow these policies:
 
 ### Coding Guidelines
 
-We have our own [coding guidelines]({{ site.github.url }}/community/contributing/coding-guidelines/).
+We have our own [coding guidelines](/community/contributing/coding-guidelines/).
 
 ### Code License
 
@@ -68,7 +68,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 -   Always make sure to add meaningful commit logs
 
--   If you fix a bug, add a regression test for it in the [test suite]({{ site.github.url }}/community/contributing/test-suite/)
+-   If you fix a bug, add a regression test for it in the [test suite](/community/contributing/test-suite/)
 
 -   Don't commit unrelated changes together with a fix: do fine-grained commits
 
@@ -88,7 +88,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 -   Never use a decompiler or disassembler to look at proprietary code.
 
--   Follow the [coding guidelines]({{ site.github.url }}/community/contributing/coding-guidelines/)
+-   Follow the [coding guidelines](/community/contributing/coding-guidelines/)
 
 -   Keep an eye on performance considerations, especially for code in core classes, ask on the list for guidance
 

@@ -13,7 +13,7 @@ In July 2006 the General Assembly of Ecma approved edition 4 of the Standards wh
 2010 Draft
 ==========
 
-If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit the [ECMA 335 CLI Public Draft]({{ site.github.url }}/docs/about-mono/languages/ecma/ecma-335-publicdraft/) page. It contains links to the updated drafts and links to the various mirror sites providing access to the latest working draft.
+If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit the [ECMA 335 CLI Public Draft](/docs/about-mono/languages/ecma/ecma-335-publicdraft/) page. It contains links to the updated drafts and links to the various mirror sites providing access to the latest working draft.
 
 Latest Standards
 ================

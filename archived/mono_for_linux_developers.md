@@ -30,7 +30,7 @@ Mono For Linux Developers
 Linux Binary Installation
 -------------------------
 
-On Linux, Mono is available in various forms: through the [Red Carpet](ftp://ftp.novell.com/pub/ximian/redcarpet2) installation software, as installers, or as packages that you can install. To learn which way is best for you, consult our [Getting Mono]({{ site.github.url }}/Obtaining_Mono) page.
+On Linux, Mono is available in various forms: through the [Red Carpet](ftp://ftp.novell.com/pub/ximian/redcarpet2) installation software, as installers, or as packages that you can install. To learn which way is best for you, consult our [Getting Mono](/Obtaining_Mono) page.
 
 Linux IDEs for Mono
 ===================

@@ -266,17 +266,17 @@ Begin by starting Xcode and choosing the File-\>New Project options. Within the 
 
 You should now be looking at a window like the following:
 
-[![CSharpPlugin img 0.jpg]({{ site.github.url }}/archived/images/5/5f/CSharpPlugin_img_0.jpg)]({{ site.github.url }}/archived/images/5/5f/CSharpPlugin_img_0.jpg)
+[![CSharpPlugin img 0.jpg](/archived/images/5/5f/CSharpPlugin_img_0.jpg)](/archived/images/5/5f/CSharpPlugin_img_0.jpg)
 
 I’ve used “InstallTest” as the name of my project.
 
 As a first test, simply click the “Build and Go” button. You should see the “Build Window”:
 
-[![CSharpPlugin img 1.jpg]({{ site.github.url }}/archived/images/6/6a/CSharpPlugin_img_1.jpg)]({{ site.github.url }}/archived/images/6/6a/CSharpPlugin_img_1.jpg)
+[![CSharpPlugin img 1.jpg](/archived/images/6/6a/CSharpPlugin_img_1.jpg)](/archived/images/6/6a/CSharpPlugin_img_1.jpg)
 
 and the Run Log window:
 
-[![CSharpPlugin img 2.jpg]({{ site.github.url }}/archived/images/3/3e/CSharpPlugin_img_2.jpg)]({{ site.github.url }}/archived/images/3/3e/CSharpPlugin_img_2.jpg)
+[![CSharpPlugin img 2.jpg](/archived/images/3/3e/CSharpPlugin_img_2.jpg)](/archived/images/3/3e/CSharpPlugin_img_2.jpg)
 
 with very similar results to those shown.
 
@@ -284,17 +284,17 @@ If you have, then you have demonstrated that the project template and the plugin
 
 The next step is to right-click/control-click on the ‘Targets’ entry, and select Add-\>New Target… popup menu options. The ‘New Target’ assistant should be displayed showing a “C Sharp” top-level entry with ‘Executable’ and ‘library’ underneath it. Double-click the ‘Library’ entry and give it a name. An inspector window for the new target should appear. Click on the ‘Build’ option button at the top and the display should be like the following: I’ve used the name “TestLib” for this target. Note the ‘Architectures’ value: it should be ‘mono’.
 
-[![CSharpPlugin img 3.jpg]({{ site.github.url }}/archived/images/8/88/CSharpPlugin_img_3.jpg)]({{ site.github.url }}/archived/images/8/88/CSharpPlugin_img_3.jpg)
+[![CSharpPlugin img 3.jpg](/archived/images/8/88/CSharpPlugin_img_3.jpg)](/archived/images/8/88/CSharpPlugin_img_3.jpg)
 
 Close the inspector window, and right-click/control-click on the Sources item, selecting Add-\>New File… form the popup menu. This time, the New File assistant should only display a top-level entry of ‘C Sharp’. Clicking (once) on this entry displays a very useful description<sup>7</sup>. Double click the ‘C Sharp’ entry, give the file a name (I’ve used ‘LibSource’) and select the targets to be ‘TestLib’ (and not ‘InstallTest’ which it defaults to).
 
 Open the new source file and add in a new method like the following:
 
-[![CSharpPlugin img 4.jpg]({{ site.github.url }}/archived/images/5/52/CSharpPlugin_img_4.jpg)]({{ site.github.url }}/archived/images/5/52/CSharpPlugin_img_4.jpg)
+[![CSharpPlugin img 4.jpg](/archived/images/5/52/CSharpPlugin_img_4.jpg)](/archived/images/5/52/CSharpPlugin_img_4.jpg)
 
 Now go back to the main project window, and open the original source file. Change it to reference the library, as in the following:
 
-[![CSharpPlugin img 5.jpg]({{ site.github.url }}/archived/images/5/54/CSharpPlugin_img_5.jpg)]({{ site.github.url }}/archived/images/5/54/CSharpPlugin_img_5.jpg)
+[![CSharpPlugin img 5.jpg](/archived/images/5/54/CSharpPlugin_img_5.jpg)](/archived/images/5/54/CSharpPlugin_img_5.jpg)
 
 Before you compile anything, go back to the main project window, drag the ‘TestLib’ target to just under the ‘InstallTest’ target to tell Xcode that the main program depends on the library as well as its own source code.
 
@@ -302,11 +302,11 @@ Finally, you need to tell the plugin that there is a relationship between the li
 
 Click on the Build and Go button and you should get the following windows: and
 
-[![CSharpPlugin img 6.jpg]({{ site.github.url }}/archived/images/8/8f/CSharpPlugin_img_6.jpg)]({{ site.github.url }}/archived/images/8/8f/CSharpPlugin_img_6.jpg)
+[![CSharpPlugin img 6.jpg](/archived/images/8/8f/CSharpPlugin_img_6.jpg)](/archived/images/8/8f/CSharpPlugin_img_6.jpg)
 
-[![CSharpPlugin img 7.jpg]({{ site.github.url }}/archived/images/3/3e/CSharpPlugin_img_7.jpg)]({{ site.github.url }}/archived/images/3/3e/CSharpPlugin_img_7.jpg)
+[![CSharpPlugin img 7.jpg](/archived/images/3/3e/CSharpPlugin_img_7.jpg)](/archived/images/3/3e/CSharpPlugin_img_7.jpg)
 
-[![CSharpPlugin img 8.jpg]({{ site.github.url }}/archived/images/9/9b/CSharpPlugin_img_8.jpg)]({{ site.github.url }}/archived/images/9/9b/CSharpPlugin_img_8.jpg)
+[![CSharpPlugin img 8.jpg](/archived/images/9/9b/CSharpPlugin_img_8.jpg)](/archived/images/9/9b/CSharpPlugin_img_8.jpg)
 
 You have now built both a library and an executable assembly, and run the entire thing within Mono.
 
@@ -325,7 +325,7 @@ Both of these are very simple cases, involving only a single file in each assemb
 
 ### Passing Options To The Compiler
 
-[![CSharpPlugin img 9.jpg]({{ site.github.url }}/archived/images/1/11/CSharpPlugin_img_9.jpg)]({{ site.github.url }}/archived/images/1/11/CSharpPlugin_img_9.jpg)
+[![CSharpPlugin img 9.jpg](/archived/images/1/11/CSharpPlugin_img_9.jpg)](/archived/images/1/11/CSharpPlugin_img_9.jpg)
 
 The above picture shows the Target Inspector for the TestLib target from the ‘Testing the Installation’ section with some items highlighted.
 
@@ -508,7 +508,7 @@ In this case the project template is listed under the ‘C Sharp’ heading, and
 
 The project, as built form the template, has a number of parts to it.
 
-[![CSharpPlugin img 10.jpg]({{ site.github.url }}/archived/images/0/0c/CSharpPlugin_img_10.jpg)]({{ site.github.url }}/archived/images/0/0c/CSharpPlugin_img_10.jpg)
+[![CSharpPlugin img 10.jpg](/archived/images/0/0c/CSharpPlugin_img_10.jpg)](/archived/images/0/0c/CSharpPlugin_img_10.jpg)
 
 I have created a new project called “DemoExe” and expanded the relevant items in the ‘Groups & Files” panel.
 
@@ -516,7 +516,7 @@ I have created a new project called “DemoExe” and expanded the relevant item
 
 A trivial source file is included that provides a basic structure for your main class.
 
-[![CSharpPlugin img 11.jpg]({{ site.github.url }}/archived/images/c/c8/CSharpPlugin_img_11.jpg)]({{ site.github.url }}/archived/images/c/c8/CSharpPlugin_img_11.jpg)
+[![CSharpPlugin img 11.jpg](/archived/images/c/c8/CSharpPlugin_img_11.jpg)](/archived/images/c/c8/CSharpPlugin_img_11.jpg)
 
 The top of the file contains some comments that include the name of the name of the project, you name, the date the file was created and the copyright year.
 
@@ -561,13 +561,13 @@ Such inter-dependencies between targets must be specified explicitly at two sepa
 
 If you want to have the dependent assemblies rebuilt when another is rebuilt, then either drag the target icon to just below the icon of the dependent target, or right/control-click on the dependent target, select the ‘Get Info’ menu option and add the other target in the ‘Direct Dependencies’ panel in the General tab.
 
-[![CSharpPlugin img 12.jpg]({{ site.github.url }}/archived/images/1/11/CSharpPlugin_img_12.jpg)]({{ site.github.url }}/archived/images/1/11/CSharpPlugin_img_12.jpg)
+[![CSharpPlugin img 12.jpg](/archived/images/1/11/CSharpPlugin_img_12.jpg)](/archived/images/1/11/CSharpPlugin_img_12.jpg)
 
 The picture above comes from the InstallTest project described in the “Testing The Installation” section. The ‘TestLib’ icon just under the ‘InstallTest’ target shows the linkage just described. This type of linkage is needed if the library interface is likely to change and the dependent assemblies must be recompiled each time. When you rebuild (in this case) ‘TestLib’, ‘InstallTest’ will also be rebuilt. Without this linkage, any change in ‘TestLib’ will be picked up my ‘InstallTest’ at runtime as the assemblies are loaded, but not before. This is a ‘target-to-target’ level linkage.
 
 The other type of linkage allows the building of a dependent assembly to refer to the library assembly during its construction. Drag the ‘Products” icon of the target assembly into the 'Link…’ phase icon of the dependent target.
 
-[![CSharpPlugin img 13.jpg]({{ site.github.url }}/archived/images/2/22/CSharpPlugin_img_13.jpg)]({{ site.github.url }}/archived/images/2/22/CSharpPlugin_img_13.jpg)
+[![CSharpPlugin img 13.jpg](/archived/images/2/22/CSharpPlugin_img_13.jpg)](/archived/images/2/22/CSharpPlugin_img_13.jpg)
 
 The above picture is the same as the one above it, but with the ‘Link Binary With Libraries’ group expanded to show the ‘TestLib.dll’ reference. This shows the additional icon in the ‘Link…’ phase.
 
@@ -585,11 +585,11 @@ Xcode normally assumes that the product is an application or Unix-style executab
 
 When an executable project is created, a special Executable structure is added that sets up the ‘executable’ as the mono environment, with the name of the product as an argument.
 
-[![CSharpPlugin img 14.jpg]({{ site.github.url }}/archived/images/5/56/CSharpPlugin_img_14.jpg)]({{ site.github.url }}/archived/images/5/56/CSharpPlugin_img_14.jpg)
+[![CSharpPlugin img 14.jpg](/archived/images/5/56/CSharpPlugin_img_14.jpg)](/archived/images/5/56/CSharpPlugin_img_14.jpg)
 
 The above picture shows the inspector for the ‘InstallTest’ executable. The ‘Executable path:’ refers to the mono environment.
 
-[![CSharpPlugin img 15.jpg]({{ site.github.url }}/archived/images/3/36/CSharpPlugin_img_15.jpg)]({{ site.github.url }}/archived/images/3/36/CSharpPlugin_img_15.jpg)
+[![CSharpPlugin img 15.jpg](/archived/images/3/36/CSharpPlugin_img_15.jpg)](/archived/images/3/36/CSharpPlugin_img_15.jpg)
 
 This picture shows the ‘Arguments’ panel of the same inspector, with the executable product listed as the argument.
 
@@ -609,9 +609,9 @@ OK, so why not add an ‘executable’ target to the project, probably to act as
 
 The problem is that the default ‘executable’ object created by Xcode in this circumstance is inappropriate for a mono executable; and critical parts of it (namely the ‘Execution path:’ value) cannot be edited. You will need to create a ‘Custom Executable’ for the target, listing “/usr/bin/Mono” as the executable path: Once the new executable object has been created, add in the name of the executable assembly as an argument:
 
-[![CSharpPlugin img 16.jpg]({{ site.github.url }}/archived/images/8/8b/CSharpPlugin_img_16.jpg)]({{ site.github.url }}/archived/images/8/8b/CSharpPlugin_img_16.jpg)
+[![CSharpPlugin img 16.jpg](/archived/images/8/8b/CSharpPlugin_img_16.jpg)](/archived/images/8/8b/CSharpPlugin_img_16.jpg)
 
-[![CSharpPlugin img 17.jpg]({{ site.github.url }}/archived/images/d/d8/CSharpPlugin_img_17.jpg)]({{ site.github.url }}/archived/images/d/d8/CSharpPlugin_img_17.jpg)
+[![CSharpPlugin img 17.jpg](/archived/images/d/d8/CSharpPlugin_img_17.jpg)](/archived/images/d/d8/CSharpPlugin_img_17.jpg)
 
 Once you have this, go into the Project-\>Set Active Executable menu path and select the new object. This means that, when you click ‘Build and Go’ or the ‘Run’ buttons, the custom executable is the one that is used.
 

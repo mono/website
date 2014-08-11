@@ -77,7 +77,7 @@ If your system has a GPU with OpenGL 2.0 drivers installed for it, Moonlight can
 
 Developers can also choose to use GPU acceleration for images by using the CacheMode property and setting it to BitmapCache.
 
-Go to the [OpenGL status page]({{ site.github.url }}/Moonlight4_OpenGL_Status "Moonlight4 OpenGL Status") to find out if your driver is currently supported by Moonlight.
+Go to the [OpenGL status page](/Moonlight4_OpenGL_Status "Moonlight4 OpenGL Status") to find out if your driver is currently supported by Moonlight.
 
 ### 3D Transformations
 
@@ -229,5 +229,5 @@ Source code
 
 Source code for current and previous moonlight releases is available from [our ftp site.](http://ftp.novell.com/pub/mono/sources/moon/)
 
-If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here]({{ site.github.url }}/Moonlight#developing-moonlight "Moonlight").
+If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here](/Moonlight#developing-moonlight "Moonlight").
 

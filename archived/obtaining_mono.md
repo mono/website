@@ -19,10 +19,10 @@ If you are using Linux, there is a good chance your distro has Mono packages ava
 Mono Packages
 -------------
 
-The Mono project provides packages for a couple of Linux distributions, as well as installers for Windows, Mac OSX and Solaris. These packages are for our latest release, and have gone through our QA process. They will also be updated with bugfixes and security fixes as warrented. These are available on the [Download]({{ site.github.url }}/Downloads "Downloads") page.
+The Mono project provides packages for a couple of Linux distributions, as well as installers for Windows, Mac OSX and Solaris. These packages are for our latest release, and have gone through our QA process. They will also be updated with bugfixes and security fixes as warrented. These are available on the [Download](/Downloads "Downloads") page.
 
 Source Code
 -----------
 
-Mono is constantly under development and changes every day. If the packaged versions are not new enough, or you wish to track Mono development, you can get the source code directly and compile Mono yourself. For more details, see [Compiling Mono]({{ site.github.url }}/Compiling_Mono "Compiling Mono").
+Mono is constantly under development and changes every day. If the packaged versions are not new enough, or you wish to track Mono development, you can get the source code directly and compile Mono yourself. For more details, see [Compiling Mono](/Compiling_Mono "Compiling Mono").
 

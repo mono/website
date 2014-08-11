@@ -69,11 +69,11 @@ Notes on the Moonlight implementation and notes on bringing Silverlight to Linux
 Testing
 =======
 
--   For a simple self contained html file with embedded Silverlight, [Moonlight\_Standalone\_File]({{ site.github.url }}/Moonlight_Standalone_File "Moonlight Standalone File")
+-   For a simple self contained html file with embedded Silverlight, [Moonlight\_Standalone\_File](/Moonlight_Standalone_File "Moonlight Standalone File")
 -   We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. \#ifdef versus tools);
 -   We need to run (parts of) the tests under the new security model - not just under Mono/Linux but also under MS Silverlight under Windows;
 -   We need to expand those tests, e.g. new classes, more coverage;
--   [Instructions for Jackson's new test harness]({{ site.github.url }}/Moonlight_Test_Harness "Moonlight Test Harness")
+-   [Instructions for Jackson's new test harness](/Moonlight_Test_Harness "Moonlight Test Harness")
 
 Debugging Tricks
 ================
@@ -121,7 +121,7 @@ Resources
 
 Books on WPF are good resources, although they cover the "larger" API of which Silverlight is merely a subset.
 
-Some notes that are relevant to WPF have been moved to the [WPF]({{ site.github.url }}/WPF "WPF") page.
+Some notes that are relevant to WPF have been moved to the [WPF](/WPF "WPF") page.
 
 [Adam Nathan's](http://blogs.msdn.com/adam_nathan/) book on WPF is very good, and it goes into some of the technical details that other books merely skim on.
 
@@ -142,7 +142,7 @@ Instead of using the **mcs** or **gmcs** compilers as you do regularly with Mono
 Moonlight IDE
 -------------
 
-Since Linux and MacOS developers will not be able to run Blend on their operating systems, we have created a XAML designer. This XAML designer is located on [SVN]({{ site.github.url }}/SourceCodeRepository) in the module "lunareclipse".
+Since Linux and MacOS developers will not be able to run Blend on their operating systems, we have created a XAML designer. This XAML designer is located on [SVN](/SourceCodeRepository) in the module "lunareclipse".
 
 Lunar Eclipse currently is a standalone desktop application but we want to build a MonoDevelop add-in to have a full Silverlight development experience and possible also port it to the web to provide a designer that MacOS users to use.
 
@@ -159,15 +159,15 @@ Currently Moonlight supports the 1.0 engine (no runtime engine, purely exposed a
 
 ### Security Model
 
-Mono has not historically been used to run untrusted code inside the virtual machine. Although we have done some work towards the implementation of the [CAS]({{ site.github.url }}/CAS "CAS") this work has not been completed.
+Mono has not historically been used to run untrusted code inside the virtual machine. Although we have done some work towards the implementation of the [CAS](/CAS "CAS") this work has not been completed.
 
-Silverlight 2.0 introduce a new security model to replace [CAS]({{ site.github.url }}/CAS "CAS") for it's applications. This model is discussed in details [here]({{ site.github.url }}/Moonlight2CoreCLR "Moonlight2CoreCLR").
+Silverlight 2.0 introduce a new security model to replace [CAS](/CAS "CAS") for it's applications. This model is discussed in details [here](/Moonlight2CoreCLR "Moonlight2CoreCLR").
 
-Details about how Moonlight implement this features can be found [here]({{ site.github.url }}/MoonlightSecurity "MoonlightSecurity").
+Details about how Moonlight implement this features can be found [here](/MoonlightSecurity "MoonlightSecurity").
 
 ### Other Security Requirements
 
-While this new security model looks easier to implement, wrt to the stackwalk-based [CAS]({{ site.github.url }}/CAS "CAS"), most of the requirements for the [MonoSandbox]({{ site.github.url }}/MonoSandbox "MonoSandbox") are still needed to provide a safe execution environment.
+While this new security model looks easier to implement, wrt to the stackwalk-based [CAS](/CAS "CAS"), most of the requirements for the [MonoSandbox](/MonoSandbox "MonoSandbox") are still needed to provide a safe execution environment.
 
 A few other things must be completed:
 
@@ -187,7 +187,7 @@ For the official release we will be using Microsoft's MediaPack a package that w
 
 Silverlight is an extended subset of the 2.0 .NET framework. Existing assemblies (ECMA) are versioned as 2.1.0.0 which are reduced versions of the 2.0 libraries and have been annotated with the security attributes and have been expanded in a few areas.
 
-[![20-to-21.png]({{ site.github.url }}/archived/images/2/2a/20-to-21.png)]({{ site.github.url }}/archived/images/2/2a/20-to-21.png)
+[![20-to-21.png](/archived/images/2/2a/20-to-21.png)](/archived/images/2/2a/20-to-21.png)
 
 Silverlight introduce new assemblies, all signed by the Microsoft key and versioned at 1.0.0.0 - except for **AGCLR.DLL** which isn't versioned in 1.1 Alpha (bug?).
 
@@ -195,7 +195,7 @@ Silverlight introduce new assemblies, all signed by the Microsoft key and versio
 
 As we can see in next figures Silverlight doesn't have any circular dependencies between it's assemblies, unlike Fx 2.0, which is good news and will reduce our build time (no special loops in the Makefiles like we have today).
 
-[![Agclr.png]({{ site.github.url }}/archived/images/9/95/Agclr.png)]({{ site.github.url }}/archived/images/9/95/Agclr.png) [![Sxc.png]({{ site.github.url }}/archived/images/b/b3/Sxc.png)]({{ site.github.url }}/archived/images/b/b3/Sxc.png)
+[![Agclr.png](/archived/images/9/95/Agclr.png)](/archived/images/9/95/Agclr.png) [![Sxc.png](/archived/images/b/b3/Sxc.png)](/archived/images/b/b3/Sxc.png)
 
 **Legend**
 
@@ -204,11 +204,11 @@ As we can see in next figures Silverlight doesn't have any circular dependencies
 
 #### New versioned Libraries
 
-We introduced a new NET\_2\_1 define and a new net\_2\_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker]({{ site.github.url }}/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
+We introduced a new NET\_2\_1 define and a new net\_2\_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker](/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
 
-[![Mono20-to-21.png]({{ site.github.url }}/archived/images/d/da/Mono20-to-21.png)]({{ site.github.url }}/archived/images/d/da/Mono20-to-21.png)
+[![Mono20-to-21.png](/archived/images/d/da/Mono20-to-21.png)](/archived/images/d/da/Mono20-to-21.png)
 
-In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another [Cecil]({{ site.github.url }}/Cecil "Cecil")-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
+In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another [Cecil](/Cecil "Cecil")-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
 
 Tasks:
 
@@ -218,7 +218,7 @@ Tasks:
 -   Setup mono-api-info, mono-api-compare, corcompare pages for it.
 -   Integrate into the build system.
 
-A peer project of this is [Completing the 2.0 Profile]({{ site.github.url }}/Completing2.0Profile "Completing2.0Profile") effort. As both 2.1.0.0 and 2.0.0.0 share a lot in common.
+A peer project of this is [Completing the 2.0 Profile](/Completing2.0Profile "Completing2.0Profile") effort. As both 2.1.0.0 and 2.0.0.0 share a lot in common.
 
 I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET\_2\_1 that would be a superset of NET\_2\_0. The result would be a larger assembly than we need to have.
 
@@ -245,7 +245,7 @@ This contains the interface to the rendering engine and lives in two parts:
 -   moon/src module on SVN (the C++ code)
 -   moon/class/System.Windows on SVN (the C\# code)
 
-The class hierarchy for instance (on the [WPFNotes]({{ site.github.url }}/WPFNotes "WPFNotes") page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not. The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
+The class hierarchy for instance (on the [WPFNotes](/WPFNotes "WPFNotes") page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not. The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
 
 It is probably simple for those that want to contribute to start work on the classes that do not derive from DependencyObject. We should follow the regular process: write nunit test cases to understand the API, and then write the API.
 
@@ -323,7 +323,7 @@ In some early discussions with David Reveman (the designer of Xgl and Compiz), w
 
 ### The Plugin and the DOM
 
-[![]({{ site.github.url }}/archived/images/b/b7/Plugin.png)]({{ site.github.url }}/archived/images/b/b7/Plugin.png)
+[![](/archived/images/b/b7/Plugin.png)](/archived/images/b/b7/Plugin.png)
 
 Plugin relation to the Browser
 
@@ -349,7 +349,7 @@ Open questions:
 
 System.Silverlight.dll and Microsoft.Scripting.dll are involved.
 
-Some notes at [MoonlightHostingNotes]({{ site.github.url }}/MoonlightHostingNotes "MoonlightHostingNotes").
+Some notes at [MoonlightHostingNotes](/MoonlightHostingNotes "MoonlightHostingNotes").
 
 ### JavaScript compiler
 

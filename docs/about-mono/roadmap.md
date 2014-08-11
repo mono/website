@@ -7,7 +7,7 @@ redirect_from:
 
 *Last update: November, 2012*
 
-Per-component [Plans]({{ site.github.url }}/docs/about-mono/plans/) are available, you can also check our [Compatibility]({{ site.github.url }}/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
+Per-component [Plans](/docs/about-mono/plans/) are available, you can also check our [Compatibility](/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
 
 Versioning
 ----------
@@ -56,7 +56,7 @@ Current Releases
 <li>MonoMac and MonoMac bundler</li>
 <li>IronPython, IronRuby and F# bundled with Mono</li>
 </ul></td>
-<td align="left"><p><a href="{{ site.github.url }}/docs/about-mono/releases/3.0.0/" title="Release Notes Mono 3.0">Mono 3.0 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.0.0/" title="Release Notes Mono 3.0">Mono 3.0 Release Notes</a></p>
 <p><br /></p></td>
 </tr>
 </tbody>
@@ -73,21 +73,21 @@ Current Releases
 <tr class="even">
 <td align="left"><p>Major changes (see release notes for details):</p>
 <ul>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#google-native-client-support" title="Release Notes Mono 2.10">Google Native Client Support</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#new-mono-profiler" title="Release Notes Mono 2.10">New Profiler engine</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#improved-socket-and-async-stack" title="Release Notes Mono 2.10">Faster socket stack</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#parallel-framework-updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#sgen-garbage-collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.</li>
+<li><a href="/docs/about-mono/releases/2.10.0#google-native-client-support" title="Release Notes Mono 2.10">Google Native Client Support</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#new-mono-profiler" title="Release Notes Mono 2.10">New Profiler engine</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#improved-socket-and-async-stack" title="Release Notes Mono 2.10">Faster socket stack</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#parallel-framework-updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#sgen-garbage-collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.</li>
 <li>Unified MonoTouch/Monodroid runtime support</li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#cecil2flight" title="Release Notes Mono 2.10">Cecil/Light</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#new-c23-compiler-backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)</li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#vb-compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.</li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#aspnet-mvc3-support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.</li>
+<li><a href="/docs/about-mono/releases/2.10.0#cecil2flight" title="Release Notes Mono 2.10">Cecil/Light</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#new-c23-compiler-backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)</li>
+<li><a href="/docs/about-mono/releases/2.10.0#vb-compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.</li>
+<li><a href="/docs/about-mono/releases/2.10.0#aspnet-mvc3-support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.</li>
 <li>New <a href="#webmatrixdata">WebMatrix.Data</a> database API.</li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#osx-updates" title="Release Notes Mono 2.10">Improved OSX Mono</a></li>
-<li><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0#languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#osx-updates" title="Release Notes Mono 2.10">Improved OSX Mono</a></li>
+<li><a href="/docs/about-mono/releases/2.10.0#languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a></li>
 </ul></td>
-<td align="left"><p><a href="{{ site.github.url }}/docs/about-mono/releases/2.10.0" title="Release Notes Mono 2.10">Mono 2.10 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/2.10.0" title="Release Notes Mono 2.10">Mono 2.10 Release Notes</a></p>
 <ul>
 <li><strong>Feb 15th, 2011:</strong> First 2.10 release</li>
 </ul></td>
@@ -122,11 +122,11 @@ For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](htt
 Subprojects projects
 --------------------
 
-Other projects like the [debugger]({{ site.github.url }}/docs/debug+profile/debug/debugger/), the documentation browser, [Java]({{ site.github.url }}/docs/about-mono/languages/java/) integration through IKVM, [Olive]({{ site.github.url }}/archived/olive "Olive") and [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk\#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
 
 ### Mono and Silverlight
 
-See our page on [Moonlight]({{ site.github.url }}/docs/web/moonlight/) for details on the work underway to support Silverlight with Mono.
+See our page on [Moonlight](/docs/web/moonlight/) for details on the work underway to support Silverlight with Mono.
 
 ### Partial Implementations
 
@@ -138,7 +138,7 @@ The following APIs and technologies have partial implementations and are under d
 
 Some of the .NET technologies have been either deprecated, are too Windows-specific or are very large efforts and our community is unable to produce viable implementations for them.
 
-If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on. There might be some code for these on our [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
+If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on. There might be some code for these on our [SVN](/community/contributing/source-code-repository/) repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
 
 Too large stacks:
 
@@ -147,9 +147,9 @@ Too large stacks:
 We are not working on any of the following deprecated APIs:
 
 -   System.EnterpriseServices
--   [WSE]({{ site.github.url }}/archived/wse "WSE") - Extensions to System.Web.Services.
+-   [WSE](/archived/wse "WSE") - Extensions to System.Web.Services.
 -   Workflow Foundation 3 (WF3)
--   [Code Access Security]({{ site.github.url }}/docs/advanced/cas/) (.NET 1.0).
+-   [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
 
 The following do not map to operating systems other than Windows, and we are unlike going to spend time to support them even on Windows:
 
@@ -167,5 +167,5 @@ Feel free to [send us your comments or questions](http://www.go-mono.com/contact
 Roadmap History
 ---------------
 
-For our previous roadmap information, please see [Roadmap History]({{ site.github.url }}/archived/roadmap_history "Roadmap History").
+For our previous roadmap information, please see [Roadmap History](/archived/roadmap_history "Roadmap History").
 

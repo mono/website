@@ -2,5 +2,5 @@
 title: Garbage Collector
 ---
 
-- [SGen]({{ site.github.url }}/docs/advanced/garbage-collector/sgen/)
-- [Benchmark Suite]({{ site.github.url }}/docs/advanced/garbage-collector/benchmark-suite/)
+- [SGen](/docs/advanced/garbage-collector/sgen/)
+- [Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)

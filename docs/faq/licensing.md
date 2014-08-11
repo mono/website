@@ -114,7 +114,7 @@ Yes, there are a number of alternatives that people have been using for developi
 
 **Are there alternatives to Windows.Forms?**
 
-Yes, there are plenty of alternatives, including [Gtk\#]({{ site.github.url }}/docs/gui/gtksharp/) see our page on [Gui Toolkits]({{ site.github.url }}/docs/gui/gui-toolkits/) for more information.
+Yes, there are plenty of alternatives, including [Gtk\#](/docs/gui/gtksharp/) see our page on [Gui Toolkits](/docs/gui/gui-toolkits/) for more information.
 
 **Is Mono only an implementation of the .NET Framework?**
 

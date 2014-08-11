@@ -10,7 +10,7 @@ Config system.web customErrors
 
 Use the customErrors attribute to configure how errors must be presented
 
-An example of this [\<system.web\>]({{ site.github.url }}/Config_system.web "Config system.web") section is:
+An example of this [\<system.web\>](/Config_system.web "Config system.web") section is:
 
 ``` xml
 <customErrors mode="On|Off|RemoteOnly" defaultRedirect="somepage.aspx">

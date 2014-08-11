@@ -8,18 +8,18 @@ Mono has many ADO.NET Data Providers to get you connected. Find the database you
 
 Providers for Open Source databases:
 
--   [PostgreSQL]({{ site.github.url }}/docs/database-access/providers/postgresql/): Npgsql is a managed provider for PostgreSQL
--   [SQLite]({{ site.github.url }}/docs/database-access/providers/sqlite/): provider for [SQLite](http://www.sqlite.org) versions 2 and 3. Requires native sqlite library.
--   [Firebird]({{ site.github.url }}/docs/database-access/providers/firebird/): managed provider for Firebird
--   [MySQL]({{ site.github.url }}/docs/database-access/providers/mysql/): [MySQL Connector/Net](http://dev.mysql.com/downloads/connector/net/) is the recommended provider for MySQL from [MySQL](http://www.mysql.com/). ByteFX.Data.MySqlClient is no longer maintained.
+-   [PostgreSQL](/docs/database-access/providers/postgresql/): Npgsql is a managed provider for PostgreSQL
+-   [SQLite](/docs/database-access/providers/sqlite/): provider for [SQLite](http://www.sqlite.org) versions 2 and 3. Requires native sqlite library.
+-   [Firebird](/docs/database-access/providers/firebird/): managed provider for Firebird
+-   [MySQL](/docs/database-access/providers/mysql/): [MySQL Connector/Net](http://dev.mysql.com/downloads/connector/net/) is the recommended provider for MySQL from [MySQL](http://www.mysql.com/). ByteFX.Data.MySqlClient is no longer maintained.
 
 Providers for commercial databases:
 
--   [Mimer SQL]({{ site.github.url }}/archived/mimer_sql "Mimer SQL") Mimer Data Provider for Mimer SQL, from Mimer [[1]](http://developer.mimer.com/platforms/productinfo_39.htm)
--   [ODBC]({{ site.github.url }}/docs/database-access/providers/odbc/) requires ODBC software which is available for Unix and Windows
--   [Oracle]({{ site.github.url }}/docs/database-access/providers/oracle/) provider for Oracle 8i, 9i, 10g, and 11g and requires Oracle client software
--   [Microsoft SQL Server]({{ site.github.url }}{{ site.github.url }}/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000 and 2005 databases
--   [Sybase]({{ site.github.url }}/docs/database-access/providers/sybase/) managed provider for Sybase ASE 12.0 and up databases
+-   [Mimer SQL](/archived/mimer_sql "Mimer SQL") Mimer Data Provider for Mimer SQL, from Mimer [[1]](http://developer.mimer.com/platforms/productinfo_39.htm)
+-   [ODBC](/docs/database-access/providers/odbc/) requires ODBC software which is available for Unix and Windows
+-   [Oracle](/docs/database-access/providers/oracle/) provider for Oracle 8i, 9i, 10g, and 11g and requires Oracle client software
+-   [Microsoft SQL Server](/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000 and 2005 databases
+-   [Sybase](/docs/database-access/providers/sybase/) managed provider for Sybase ASE 12.0 and up databases
 
 Commercially Supported Providers:
 
@@ -33,7 +33,7 @@ Open Source Providers:
 -   [NPgsql](http://npgsql.projects.postgresql.org/) is a fully managed provider for PostgreSQL and is included with Mono.
 -   [Firebird](http://sourceforge.net/projects/firebird/) fully managed provider for Firebird databases and is included with Mono.
 -   [Advanced Data Provider](http://advanced-ado.sourceforge.net/) ADP, is a transparent factory for ADO.NET which loads providers dynamically.
--   [MaxDB]({{ site.github.url }}/archived/maxdb "MaxDB") MaxDB database.
+-   [MaxDB](/archived/maxdb "MaxDB") MaxDB database.
 
 Object Persistent Libraries and Object Databases
 
@@ -41,7 +41,7 @@ Object Persistent Libraries and Object Databases
 
 Commercial Object Persistent Libraries and Object Databases:
 
--   [db4o]({{ site.github.url }}/DB4O) is an open source object database for .NET and Mono, a non-intrusive persistence system that stores any complex object with one single line of code.
+-   [db4o](/DB4O) is an open source object database for .NET and Mono, a non-intrusive persistence system that stores any complex object with one single line of code.
 -   [siaqodb](http://siaqodb.com) is an object database for Mono, .NET and Silverlight.
 
 Database Tools
@@ -50,9 +50,9 @@ Database Tools
 
 Unmaintained Providers in Mono:
 
--   [OLE DB]({{ site.github.url }}/archived/ole_db "OLE DB")
--   [Ancient Microsoft SQL Server and Sybase databases]({{ site.github.url }}/archived/tds_generic "TDS Generic")
+-   [OLE DB](/archived/ole_db "OLE DB")
+-   [Ancient Microsoft SQL Server and Sybase databases](/archived/tds_generic "TDS Generic")
 -   [ByteFX.Data.MySqlClient](http://sourceforge.net/projects/mysqlnet/) is a MySQL Managed data provider. ByteFX.Data is no longer maintained, but it is included with Mono. Please use the MySQL Connector/Net provider from MySQL AB instead.
--   [IBM DB2 Universal Database]({{ site.github.url }}/docs/database-access/providers/db2/) provider for IBM DB2 requires DB2 client software
+-   [IBM DB2 Universal Database](/docs/database-access/providers/db2/) provider for IBM DB2 requires DB2 client software
 
 

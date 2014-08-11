@@ -40,7 +40,7 @@ Resources
 Articles
 ========
 
-[Articles]({{ site.github.url }}/Articles "Articles") written about Mono or covering specific parts of Mono.
+[Articles](/Articles "Articles") written about Mono or covering specific parts of Mono.
 
 [Spanish Mono Book](http://tornatmico.org/libro/LibroMono) available as a Wiki.
 
@@ -60,7 +60,7 @@ Track the status of the Mono repository (builds and regression tests) executed o
 Benchmarks
 ----------
 
-We keep a page with details on [performance testing]({{ site.github.url }}/PerformanceTesting "PerformanceTesting").
+We keep a page with details on [performance testing](/PerformanceTesting "PerformanceTesting").
 
 Any tests that are added to the mono/tests directory will become a performance test which can be reviewed a day later at [the regressions tests](http://nenya.ms.mff.cuni.cz/projects/mono/benchmarks/rtests.phtml) page.
 
@@ -84,7 +84,7 @@ Detailed reports of the regression test suite as well as graphics on progress ar
 New Build System
 ----------------
 
-[BuildSystem]({{ site.github.url }}/BuildSystem "BuildSystem")
+[BuildSystem](/BuildSystem "BuildSystem")
 
 Browseable Source Code
 ======================
@@ -94,10 +94,10 @@ The source code for Mono can be browsed in [the anonymous SVN repository](http:/
 Third Party Patches
 -------------------
 
-Distributions sometimes apply patches to Mono, you can see a list of distributions and their patches in our [ThirdPartyPackages]({{ site.github.url }}/ThirdPartyPackages "ThirdPartyPackages") page.
+Distributions sometimes apply patches to Mono, you can see a list of distributions and their patches in our [ThirdPartyPackages](/ThirdPartyPackages "ThirdPartyPackages") page.
 
 Security Vulnerabilities
 ========================
 
-A list of known [vulnerabilities]({{ site.github.url }}/Vulnerabilities "Vulnerabilities") affecting older versions of Mono is available.
+A list of known [vulnerabilities](/Vulnerabilities "Vulnerabilities") affecting older versions of Mono is available.
 

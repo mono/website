@@ -60,7 +60,7 @@ The Hard Debugger is no longer support in newer versions of Mono, it is only sup
 Introduction
 ============
 
-This is a guide to the Mono Hard Debugger. Most developers will want to use instead the [Soft Debugger]({{ site.github.url }}/Mono:Runtime:Documentation:SoftDebugger) support in Mono and MonoDevelop 2.2 as it supports debugging more kinds of applications and it is in general more reliable than the hard debugger.
+This is a guide to the Mono Hard Debugger. Most developers will want to use instead the [Soft Debugger](/Mono:Runtime:Documentation:SoftDebugger) support in Mono and MonoDevelop 2.2 as it supports debugging more kinds of applications and it is in general more reliable than the hard debugger.
 
 The principal difference between the hard debugger (MDB) and the soft debugger is that the hard debugger can debug both managed and unmanaged applications, while the soft debugger is limited to pure managed applications. But the soft debugger is a more reliable debugger due to its architecture.
 

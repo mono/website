@@ -5,10 +5,10 @@ permalink: /atom.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Mono Project News]]></title>
-  <link href="{{ site.github.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.github.url }}/news"/>
+  <link href="http://www.mono-project.com/atom.xml" rel="self"/>
+  <link href="http://www.mono-project.com/news/"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.github.url }}/</id>
+  <id>http://www.mono-project.com/</id>
   <author>
     <name><![CDATA[Mono Project]]></name>
   </author>
@@ -17,10 +17,10 @@ permalink: /atom.xml
   {% for post in site.posts limit: 20 %}
   <entry>
     <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="{{ site.github.url }}{{ post.url }}"/>
+    <link href="http://www.mono-project.com{{ post.url }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.github.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | expand_urls: site.github.url | cdata_escape }}]]></content>
+    <id>{{ post.id }}</id>
+    <content type="html"><![CDATA[{{ post.content | expand_urls: "http://www.mono-project.com" | cdata_escape }}]]></content>
   </entry>
   {% endfor %}
 </feed>

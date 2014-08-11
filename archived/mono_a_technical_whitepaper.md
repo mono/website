@@ -314,7 +314,7 @@ Mono Technical Overview
 </tr>
 <tr class="even">
 <td align="left"><p>Cross-Platform Support</p></td>
-<td align="left"><p>Optimizing compiler for x86, AMD64, PowerPC, SPARC and S390 based architectures (Just-in-Time (JIT) and Ahead-of-Time (<a href="{{ site.github.url }}/AOT" title="AOT">AOT</a>) compilation modes supported). Provides an highly optimized runtime environment to run applications on many different platforms without recompilation. Support for Linux, MacOS X, Windows and Solaris (HP-UX supported with the interpreter).</p></td>
+<td align="left"><p>Optimizing compiler for x86, AMD64, PowerPC, SPARC and S390 based architectures (Just-in-Time (JIT) and Ahead-of-Time (<a href="/AOT" title="AOT">AOT</a>) compilation modes supported). Provides an highly optimized runtime environment to run applications on many different platforms without recompilation. Support for Linux, MacOS X, Windows and Solaris (HP-UX supported with the interpreter).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>C# 1.0 Support</p></td>

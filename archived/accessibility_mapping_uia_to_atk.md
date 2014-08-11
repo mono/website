@@ -30,7 +30,7 @@ UIA Provider
 
 A page to show the mapping being used between UI Automation and ATK.
 
-For an overview of the architecture see the [Architecture]({{ site.github.url }}/Accessibility:_Architecture "Accessibility: Architecture") page.
+For an overview of the architecture see the [Architecture](/Accessibility:_Architecture "Accessibility: Architecture") page.
 
 ### UIA Control Types
 
@@ -300,5 +300,5 @@ The following is a list of UIA Provider interfaces to be used in the table above
 See also
 --------
 
-Interesting as well are the [MWF-\>UIA mappings]({{ site.github.url }}/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates]({{ site.github.url }}/Accessibility:_UiaAtkBridge#case-study-gtk "Accessibility: UiaAtkBridge").
+Interesting as well are the [MWF-\>UIA mappings](/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates](/Accessibility:_UiaAtkBridge#case-study-gtk "Accessibility: UiaAtkBridge").
 

@@ -67,7 +67,7 @@ API Design
 Overview
 --------
 
-In addition to the core Base Class Libraries that are part of Mono, [MonoMac]({{ site.github.url }}/MonoMac "MonoMac") ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
+In addition to the core Base Class Libraries that are part of Mono, [MonoMac](/MonoMac "MonoMac") ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
 
 At the core of MonoMac there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and [OpenGL](#opengl).
 
@@ -109,7 +109,7 @@ These are some of our design principles for the MonoMac binding:
 Unbound Types & Members
 -----------------------
 
-At this point in time, not all Cocoa types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via [P/Invoke]({{ site.github.url }}/Interop_with_Native_Libraries). Other frameworks are Objective-C code, and thus require [manual selector invocation]({{ site.github.url }}/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types").
+At this point in time, not all Cocoa types and members have been bound for use by managed code. Some frameworks consist solely of C code, and thus can be bound via [P/Invoke](/Interop_with_Native_Libraries). Other frameworks are Objective-C code, and thus require [manual selector invocation](/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types").
 
 Major Namespaces
 ----------------
@@ -129,7 +129,7 @@ Although this namespace provides bindings for the underlying Objective-C Foundat
 1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C\# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
 2.  Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other OS X APIs or APIs that are not currently bound by MonoMac.
 
-For more details on binding APIs see the [MonoMac Binding Generator]({{ site.github.url }}/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types") section.
+For more details on binding APIs see the [MonoMac Binding Generator](/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types") section.
 
 #### NSObject
 
@@ -172,7 +172,7 @@ The discussion in the next few sections is not necessary for users that are crea
 
 ### Types
 
-Where it made sense, we exposed C\# types instead of low-level MonoMac.Foundation types to the C\# universe. This means that [the API uses the C\# "string" type instead of NSString]({{ site.github.url }}/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString") and it uses strongly typed C\# arrays instead of exposing NSArray.
+Where it made sense, we exposed C\# types instead of low-level MonoMac.Foundation types to the C\# universe. This means that [the API uses the C\# "string" type instead of NSString](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString") and it uses strongly typed C\# arrays instead of exposing NSArray.
 
 Additionally, instead of exposing CGRect, CGPoint and CGSize from the CoreGraphics API, we replaced those with the System.Drawing implementations RectF, PointF and SizeF as they would help developers preserve existing OpenGL code that uses OpenTK.
 
@@ -568,7 +568,7 @@ But disposing an object in C\# does not mean that the object will necessarily be
 
 You should call Dispose when you need Mono to get rid of your object. A possible use case is when Mono has no knowledge that your NSObject is actually holding a reference to an important resource like memory, or an information pool. In those cases, you should call Dispose to immediately release the reference to the memory, instead of waiting for Mono to perform a garbage collection cycle.
 
-Internally, when Mono creates [NSString references from C\# strings]({{ site.github.url }}/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString"), it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
+Internally, when Mono creates [NSString references from C\# strings](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString"), it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
 
 ### When to Keep References to Objects
 

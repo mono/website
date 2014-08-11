@@ -20,9 +20,6 @@ GitHub's editor shows you both the [Markdown](https://guides.github.com/features
 After you've finished your changes, enter a proper summary and description and click the "Propose file change" button to open a pull request:
 ![Propose file change](https://cloud.githubusercontent.com/assets/1376924/3712481/52423448-1517-11e4-8aa8-9c9f9befb6bc.png)
 
-**Note:** When editing or adding internal links (i.e. links that point to other parts of the website), make sure to prefix them with `{{ site.github.url }}`.
-This is a special variable that is populated by GitHub Pages with the domain name and ensures the links work even on forks of the repository.
-
 Setting up a local copy of the website
 --------------------------------------
 For larger changes, using the web-based editor on GitHub is not really convenient. A better way is to setup a local copy of the website where you can experiment.
@@ -39,8 +36,6 @@ After you've forked and cloned the repository, run the following commands:
 
 The site should now be running locally:
 ![website](https://cloud.githubusercontent.com/assets/1376924/3712425/c1ab2e9c-1513-11e4-9df2-6e69d461c3cf.png)
-
-By pushing the changes to the `gh-pages` branch in your fork you can also view the website at `http://<yourusername>.github.io/website`.
 
 Repository structure
 --------------------

@@ -12,13 +12,13 @@ Prebuild is a meta-build-system. A prebuild XML file is used to generate one (or
 
 NAnt build system
 
-[Autotools]({{ site.github.url }}/Autotools "Autotools") build system
+[Autotools](/Autotools "Autotools") build system
 
 VS2k5 build system
 
 VS2k3 build system
 
-[Monodevelop]({{ site.github.url }}/Development_Environments) build system
+[Monodevelop](/Development_Environments) build system
 
 ### Sourceforge
 
@@ -34,6 +34,6 @@ Prebuild is a cross-platform XML-driven pre-build tool which allows developers t
 
 ### Release Notes
 
--   [Prebuild:2.0.1]({{ site.github.url }}/Prebuild:2.0.1 "Prebuild:2.0.1") April 2007
+-   [Prebuild:2.0.1](/Prebuild:2.0.1 "Prebuild:2.0.1") April 2007
 
 

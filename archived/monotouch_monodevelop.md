@@ -8,7 +8,7 @@ redirect_from:
 MonoTouch MonoDevelop
 =====================
 
-Most developers will use [MonoTouch]({{ site.github.url }}/MonoTouch "MonoTouch") using the provided [MonoDevelop](http://www.monodevelop.com) IDE with the iPhone templates, wizards and Interface Builder integration.
+Most developers will use [MonoTouch](/MonoTouch "MonoTouch") using the provided [MonoDevelop](http://www.monodevelop.com) IDE with the iPhone templates, wizards and Interface Builder integration.
 
 <table>
 <col width="100%" />

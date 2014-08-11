@@ -99,7 +99,7 @@ Then you can do things like:
 When to use the GAC
 -------------------
 
-The [Global Assembly Cache]({{ site.github.url }}/docs/advanced/assemblies-and-the-gac/) or "GAC" for short is a location where assemblies can be installed for system-wide use. To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
+The [Global Assembly Cache](/docs/advanced/assemblies-and-the-gac/) or "GAC" for short is a location where assemblies can be installed for system-wide use. To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
 
 This requirement is designed to ensure that the application is linked on the developer machine against a library that will be the same one available on the user's system, for example to avoid two libraries having the same name and version still providing different features (consider two companies creating a "Chat" library: one for using the IRC protocol and one for using the AOL protocol: they provide different APIs, but they have the same weak name; Strong naming avoids this scenario).
 
@@ -109,7 +109,7 @@ If your project is not ready to commit to API compatibility and the extra work a
 
 This is where the PREFIX/lib/APPLICATION directory comes into play. This for example would allow developers to deploy applications that use for example an under-development binding for OpenGL or the iPod for example without forcing the developers of the bindings to stabilize their API and maintain multiple versions of the library to allow old applications to run.
 
-The subject of installing assemblies into the GAC is handled in more detail in the article [Assemblies and the GAC]({{ site.github.url }}/docs/advanced/assemblies-and-the-gac/).
+The subject of installing assemblies into the GAC is handled in more detail in the article [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/).
 
 Libraries with Unstable APIs
 ============================
@@ -125,7 +125,7 @@ To solve this problem, we recommend that:
 -   The library developer ships a properly configured pkg-config file.
 -   The library consumers include an "update-libraries" target on their Makefile that will import the latest version of a library from a system directory into their application source code distribution.
 -   The library consumers ship this library as part of their package.
--   The consumer follow the [Guidelines for Application Deployment]({{ site.github.url }}/docs/getting-started/application-deployment/)
+-   The consumer follow the [Guidelines for Application Deployment](/docs/getting-started/application-deployment/)
 
 Here is how this works, the library developer installs a pkg-config file like this:
 
@@ -235,7 +235,7 @@ You can browse the source code online for a sample "skeleton" application, the s
 -   How a script that is installed in bin is installed
 -   How to embed the version from your configure.in program into the AssemblyInfo.cs file that is compiled.
 
-The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library](#libraries-with-unstable-apis) (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section]({{ site.github.url }}/docs/gui/gtksharp/gapi/#putting-it-all-together) of the [GAPI]({{ site.github.url }}/docs/gui/gtksharp/gapi/) page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
+The source code is available from our SVN repository as the module "monoskel", you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/monoskel). You may also want to explore the "[monoskel-lib](http://anonsvn.mono-project.com/viewvc/trunk/monoskel-lib)" module, which is an example of deploying an [unstable library](#libraries-with-unstable-apis) (**Note**: If you are planning to create and deploy a GAPI wrapped library, see [this section](/docs/gui/gtksharp/gapi/#putting-it-all-together) of the [GAPI](/docs/gui/gtksharp/gapi/) page for an automake example that is better suited to this purpose). monoskell will need monoskel-lib installed in order to configure and build properly. A tarball ready for distribution can be created by running:
 
 ``` bash
   $ ./autogen.sh

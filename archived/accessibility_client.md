@@ -38,11 +38,11 @@ As part of the second phase, the Mono Accessibility team is implementing full su
 For Developers
 --------------
 
-You can read about the architecture at [Accessibility:\_Client\_Implementation]({{ site.github.url }}/Accessibility:_Client_Implementation "Accessibility: Client Implementation"), if you are interested in how we are implementing this API.
+You can read about the architecture at [Accessibility:\_Client\_Implementation](/Accessibility:_Client_Implementation "Accessibility: Client Implementation"), if you are interested in how we are implementing this API.
 
 You will need to install UIAutomation from uia2atk trunk.
 
-TODO: Add content similar to [Accessibility:\_Moonlight]({{ site.github.url }}/Accessibility:_Moonlight "Accessibility: Moonlight") and [Accessibility:\_Getting\_Started\_With\_Development]({{ site.github.url }}/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
+TODO: Add content similar to [Accessibility:\_Moonlight](/Accessibility:_Moonlight "Accessibility: Moonlight") and [Accessibility:\_Getting\_Started\_With\_Development](/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
 
 ### Winforms Support
 

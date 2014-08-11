@@ -8,7 +8,7 @@ redirect_from:
 
 *This document details how to run multiple Mono environments on a single system where neither environment conflicts with another.*
 
-This assumes that you are familiar with the [compilation process for Mono]({{ site.github.url }}/docs/compiling-mono/).
+This assumes that you are familiar with the [compilation process for Mono](/docs/compiling-mono/).
 
 What's the Point?
 -----------------

@@ -54,7 +54,7 @@ Testing
 
 In order to test.
 
--   Download and install mono from [here]({{ site.github.url }}/download/)
+-   Download and install mono from [here](/download/)
 
 -   Make sure you have a working C compiler on the machine you will install DB2 on, since this will be required for compiling stored procedures
 

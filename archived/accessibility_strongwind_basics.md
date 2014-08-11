@@ -48,7 +48,7 @@ For example, suppose you were designing a Strongwind test for an application wit
 
 This diagram summarizes how testing is performed using Strongwind.
 
-[![Strongwind arch.png]({{ site.github.url }}/archived/images/5/5a/Strongwind_arch.png)]({{ site.github.url }}/archived/images/5/5a/Strongwind_arch.png)
+[![Strongwind arch.png](/archived/images/5/5a/Strongwind_arch.png)](/archived/images/5/5a/Strongwind_arch.png)
 
 Writing Your First Script
 -------------------------
@@ -59,7 +59,7 @@ Before proceeding, we need an application accessible application through AT-SPI.
 
 As an example, we can use the [checkbutton.py](http://www.pygtk.org/pygtk2tutorial/examples/checkbutton.py) example from the [PyGTK 2.0 Tutorial](http://www.pygtk.org/pygtk2tutorial/).
 
-As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser]({{ site.github.url }}/archived/images/3/35/Checkbutton-accerciser.png)]({{ site.github.url }}/archived/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
+As you can see below, checkbutton.py is an accessible application: [![checkbutton application in Accerciser](/archived/images/3/35/Checkbutton-accerciser.png)](/archived/images/3/35/Checkbutton-accerciser.png "checkbutton application in Accerciser")
 
 Now we are ready proceed by writing the application wrapper.
 
@@ -412,7 +412,7 @@ cbFrame.assertUnchecked(cbFrame.checkbox2)
 cbFrame.quit()
 ```
 
-Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script]({{ site.github.url }}/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
+Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script](/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
 
 ``` python
 # tell the user where to find the log
@@ -442,10 +442,10 @@ Tips & Tricks
 -   Using a Python interactive interpreter can be very helpful when trying to debug your problems. I like to test my application wrappers by importing them and calling their methods from the interpreter. You will want to call watchdog.stop(), however, or the watchdog will likely timeout when you're trying to work. You can also increase the WATCHDOG\_TIMEOUT in Strongwind's *config.py*.
 -   If you want to debug a test script at a certain point, it's often useful to import pdb and then call pdb.set\_trace() at the point you wish to start debugging. This basically preserves everything and drops you at an interactive python prompt where you can use strongwind function calls to poke and prod at the app (Thanks Jonathan Tai)
 
- Have your own tip or trick? Add it here or talk to one of the [QA hackers]({{ site.github.url }}/Accessibility:_Team "Accessibility: Team") on IRC!
+ Have your own tip or trick? Add it here or talk to one of the [QA hackers](/Accessibility:_Team "Accessibility: Team") on IRC!
 
 What Now?
 ---------
 
-Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto]({{ site.github.url }}/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
 

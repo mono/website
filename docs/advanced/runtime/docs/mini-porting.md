@@ -372,7 +372,7 @@ mov ebp, esp
 Generic Sharing
 ===============
 
-Generic code sharing is optional. See the document on [generic-sharing]({{ site.github.url }}/docs/advanced/runtime/docs/generic-sharing/) for information on how to support it on an architecture.
+Generic code sharing is optional. See the document on [generic-sharing](/docs/advanced/runtime/docs/generic-sharing/) for information on how to support it on an architecture.
 
 MONO\_ARCH\_RGCTX\_REG
 ----------------------

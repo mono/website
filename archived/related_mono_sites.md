@@ -70,7 +70,7 @@ Tutorials
 -   O'Reilly has a beginner tutorial on [how to write a basic Gtk\# program with Mono](http://www.onlamp.com/pub/a/onlamp/excerpt/MonoTDN_chap1/index.html).
 -   Erik Dasque wrote
     -   a tutorial showing how to develop a [Gtk\# program with Mono and the interface designer Glade](http://www.frenchguys.com/wordpress/?page_id=51).
-    -   a tutorial showing how to use [db4o with Boo]({{ site.github.url }}/DB4BOO "DB4BOO")
+    -   a tutorial showing how to use [db4o with Boo](/DB4BOO "DB4BOO")
 -   The Code project has two great tutorials from [Hello World !](http://www.codeproject.com/cpnet/introtomono1.asp) to [using ASP.NET, Mono mod\_mono and XSP](http://www.codeproject.com/cpnet/introtomono2.asp).
 
 

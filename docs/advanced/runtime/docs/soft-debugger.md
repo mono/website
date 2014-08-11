@@ -16,11 +16,11 @@ Architecture
 
 The following diagram is useful in the discussion of the soft debugger:
 
-[![0911030528Mp6F5SHL.png]({{ site.github.url }}/archived/images/2/2a/0911030528Mp6F5SHL.png)]({{ site.github.url }}/archived/images/2/2a/0911030528Mp6F5SHL.png)
+[![0911030528Mp6F5SHL.png](/archived/images/2/2a/0911030528Mp6F5SHL.png)](/archived/images/2/2a/0911030528Mp6F5SHL.png)
 
 The soft debugger lives inside the Mono runtime. Debuggers communicate with this component with a compact protocol over a socket connection. For ease of use the protocol has been encapsulated in the Mono.Debugger.Soft.dll API which different IDEs can use to communicate with the target.
 
-The soft debugger work both with Just-in-Time compiled code, and with [batch compiled code]({{ site.github.url }}/docs/advanced/aot/) allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the [PlayStation 3]({{ site.github.url }}/docs/about-mono/supported-platforms/playstation3/).
+The soft debugger work both with Just-in-Time compiled code, and with [batch compiled code](/docs/advanced/aot/) allowing it to debug both regular Mono applications on a desktop, or applications on devices like the iPhone or the [PlayStation 3](/docs/about-mono/supported-platforms/playstation3/).
 
 ### Debugger Agent
 
@@ -28,7 +28,7 @@ The debugger agent is a module inside the mono runtime which offers debugging se
 
 ### Wire Protocol
 
-Clients communicate with the agent using a wire protocol over a socket transport. Read our [Soft Debugger Wire Protocol]({{ site.github.url }}/docs/advanced/runtime/docs/soft-debugger-wire-format/) document for details about the protocol.
+Clients communicate with the agent using a wire protocol over a socket transport. Read our [Soft Debugger Wire Protocol](/docs/advanced/runtime/docs/soft-debugger-wire-format/) document for details about the protocol.
 
 The wire protocol is inspired by the [Java Debug Wire Protocol](http://java.sun.com/j2se/1.5.0/docs/guide/jpda/jdwp-spec.html).
 

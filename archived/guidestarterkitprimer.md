@@ -54,11 +54,11 @@ If everything went well, here's what you should see in your browser:
 
  **The welcome screen**
 
-[![abc]({{ site.github.url }}/archived/images/d/d3/Pws_welcome_screen.png)]({{ site.github.url }}/archived/images/d/d3/Pws_welcome_screen.png "abc")
+[![abc](/archived/images/d/d3/Pws_welcome_screen.png)](/archived/images/d/d3/Pws_welcome_screen.png "abc")
 
 **The welcome screen after logging in**
 
-[![abc]({{ site.github.url }}/archived/images/6/6b/Pws_logged_in_screen.png)]({{ site.github.url }}/archived/images/6/6b/Pws_logged_in_screen.png "abc")
+[![abc](/archived/images/6/6b/Pws_logged_in_screen.png)](/archived/images/6/6b/Pws_logged_in_screen.png "abc")
 
 One thing should be noted about the user registration with this starter kit. The application is configured so that every new user is created in the disabled state - that is, you will not be able to log in even though the user has been created successfully.
 

@@ -75,9 +75,9 @@ Installation
     git clone https://github.com/mono/mwf-designer.git
     make; make run
 
-The WinForms Designer **requires** ~~[Mono SVN Head]({{ site.github.url }}/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono").~~ Mono 2.0 or newer.
+The WinForms Designer **requires** ~~[Mono SVN Head](/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono").~~ Mono 2.0 or newer.
 
-However if you do indeed run it on [Mono SVN Head]({{ site.github.url }}/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
+However if you do indeed run it on [Mono SVN Head](/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
 
 ### Visual Studio
 
@@ -130,14 +130,14 @@ Currently the designer can:
 Bugs, Patches, Questions
 ------------------------
 
-*Bugs* can be filed on the Mono bug tracker and should be assigned to me (Ivan N. Zlatev) - contact AT i-nz.net.. For more information on how to file bugs take a look at the [Bugs]({{ site.github.url }}/Bugs "Bugs") wiki page.
+*Bugs* can be filed on the Mono bug tracker and should be assigned to me (Ivan N. Zlatev) - contact AT i-nz.net.. For more information on how to file bugs take a look at the [Bugs](/Bugs "Bugs") wiki page.
 
-*Patches* can be send to the mono-devel-list or mono-winforms-list [Mailing Lists]({{ site.github.url }}/Mailing_Lists "Mailing Lists"). That's also the place to ask questions. Please follow the [Mono Code Style Guidelines]({{ site.github.url }}/Coding_Guidelines "Coding Guidelines").
+*Patches* can be send to the mono-devel-list or mono-winforms-list [Mailing Lists](/Mailing_Lists "Mailing Lists"). That's also the place to ask questions. Please follow the [Mono Code Style Guidelines](/Coding_Guidelines "Coding Guidelines").
 
 Screenshots
 -----------
 
-[![Mwf-designer.png]({{ site.github.url }}/archived/images/d/df/Mwf-designer.png)]({{ site.github.url }}/archived/images/d/df/Mwf-designer.png) [![Mwf-designer-win32.png]({{ site.github.url }}/archived/images/d/dd/Mwf-designer-win32.png)]({{ site.github.url }}/archived/images/d/dd/Mwf-designer-win32.png)
+[![Mwf-designer.png](/archived/images/d/df/Mwf-designer.png)](/archived/images/d/df/Mwf-designer.png) [![Mwf-designer-win32.png](/archived/images/d/dd/Mwf-designer-win32.png)](/archived/images/d/dd/Mwf-designer-win32.png)
 
 TODOs
 -----
@@ -450,7 +450,7 @@ In the .NET Design-Time architecture components associate their Design-Time func
 
 The architecture makes use of attributes with metadata to describe behaviour for components and their members. Dynamic addition, removal and modification of the metadata of the components is possible.
 
-[![Illustration 1: .NET Design-Time Framework Architecture Overview]({{ site.github.url }}/archived/images/c/c5/Dt_1.png)]({{ site.github.url }}/archived/images/c/c5/Dt_1.png "Illustration 1: .NET Design-Time Framework Architecture Overview")
+[![Illustration 1: .NET Design-Time Framework Architecture Overview](/archived/images/c/c5/Dt_1.png)](/archived/images/c/c5/Dt_1.png "Illustration 1: .NET Design-Time Framework Architecture Overview")
 
 ### Loose Coupling Concepts
 
@@ -466,9 +466,9 @@ At the core of the Design-Time framework is an interface called *IComponent*. An
 
 The first characteristic essentially allows the lifetime of the component to be controlled by the container. The second characteristic gives the component access to functionality provided by other parts of the framework and the designer tool. The third characteristics allows the container to assign unique identifier to each component. Components are design-time aware through their Site.
 
-[![Illustration 2: Component, Site, Container Relation]({{ site.github.url }}/archived/images/9/90/Dt_2.png)]({{ site.github.url }}/archived/images/9/90/Dt_2.png "Illustration 2: Component, Site, Container Relation")This is a fundamental concept as it provides full abstraction of visual and non visual components. Also the component can be a Windows Forms or an ASP.NET control and as long as it implements *IComponent*that will not be of significance to the design-time framework.
+[![Illustration 2: Component, Site, Container Relation](/archived/images/9/90/Dt_2.png)](/archived/images/9/90/Dt_2.png "Illustration 2: Component, Site, Container Relation")This is a fundamental concept as it provides full abstraction of visual and non visual components. Also the component can be a Windows Forms or an ASP.NET control and as long as it implements *IComponent*that will not be of significance to the design-time framework.
 
-[![Illustration 3: Component, Site, Container Class Diagram]({{ site.github.url }}/archived/images/6/65/Dt_3.png)]({{ site.github.url }}/archived/images/6/65/Dt_3.png "Illustration 3: Component, Site, Container Class Diagram")
+[![Illustration 3: Component, Site, Container Class Diagram](/archived/images/6/65/Dt_3.png)](/archived/images/6/65/Dt_3.png "Illustration 3: Component, Site, Container Class Diagram")
 
 #### Services
 
@@ -516,7 +516,7 @@ Designers are classes that are associated with a component type via the *Designe
 
 The root component, such as a Windows Forms form or an ASP.NET web page, has to implement the *IRootDesigner* interface, which is special in that it has to provide the visual representation of the component - the View. It is very important to note that the *GetView* method (Illustration 4: IDesigner and IRootDesigner ,Page 5) is explicitly designed not to return a specific type (such as a Windows Forms *Control* or an ASP.NET web page), but a generic *Object*, which can be casted to the appropriate type by the designer tool. The framework implements two Windows Forms root designers - for forms and for custom controls (*UserControl*).
 
-[![Illustration 4: IDesigner and IRootDesigner]({{ site.github.url }}/archived/images/a/ac/Dt_4.png)]({{ site.github.url }}/archived/images/a/ac/Dt_4.png "Illustration 4: IDesigner and IRootDesigner")
+[![Illustration 4: IDesigner and IRootDesigner](/archived/images/a/ac/Dt_4.png)](/archived/images/a/ac/Dt_4.png "Illustration 4: IDesigner and IRootDesigner")
 
 The designers are responsible for:
 
@@ -541,7 +541,7 @@ The design surface provides a service container to the rest of the components of
 
 Design-Time serialization is the process of converting an object graph into a source file (code, markup or other format) that can later be used to recover the object graph. It is based on reflection and type transformation.
 
-[![Illustration 5: Object Graph Serialization]({{ site.github.url }}/archived/images/6/6f/Dt_5.png)]({{ site.github.url }}/archived/images/6/6f/Dt_5.png "Illustration 5: Object Graph Serialization")
+[![Illustration 5: Object Graph Serialization](/archived/images/6/6f/Dt_5.png)](/archived/images/6/6f/Dt_5.png "Illustration 5: Object Graph Serialization")
 
 The Design-Time serialization differs from the standard object serialization in the following ways:
 
@@ -565,7 +565,7 @@ Based on the proposed design the designer tool can be said to be just a thin fro
 3.  Provide means for editing the metadata of the components in the surface.
 4.  Provide a way to add components to to the surface.
 
-[![Illustration 6: A designer tool hosting a design surface]({{ site.github.url }}/archived/images/b/bb/Dt_6.png)]({{ site.github.url }}/archived/images/b/bb/Dt_6.png "Illustration 6: A designer tool hosting a design surface")
+[![Illustration 6: A designer tool hosting a design surface](/archived/images/b/bb/Dt_6.png)](/archived/images/b/bb/Dt_6.png "Illustration 6: A designer tool hosting a design surface")
 
 #### Metadata Editing
 
@@ -573,15 +573,15 @@ With the proposed design the designer tool has access to the *ISeletionService,*
 
 The designer tool will make use of that service to monitor the surface and populate a property grid with the currently selected object's properties using reflection. It will use type transformation (Illustration 7: Type Transformation in action, Page 9) and type editing (Illustration 8: Type Editing in action, Page 9) to provide user friendly facilities for metadata customization.
 
-[![Illustration 7: Type Transformation in action]({{ site.github.url }}/archived/images/0/0c/Dt_7.png)]({{ site.github.url }}/archived/images/0/0c/Dt_7.png "Illustration 7: Type Transformation in action")
+[![Illustration 7: Type Transformation in action](/archived/images/0/0c/Dt_7.png)](/archived/images/0/0c/Dt_7.png "Illustration 7: Type Transformation in action")
 
-[![Illustration 8: Type Editing in action]({{ site.github.url }}/archived/images/4/48/Dt_8.png)]({{ site.github.url }}/archived/images/4/48/Dt_8.png "Illustration 8: Type Editing in action")
+[![Illustration 8: Type Editing in action](/archived/images/4/48/Dt_8.png)](/archived/images/4/48/Dt_8.png "Illustration 8: Type Editing in action")
 
 #### Component Toolbox
 
 Based on the powerful reflection functionality of .NET the designer tool can populate a component toolbox for a particular GUI toolkit by filtering all types that derive from the toolkit's foundation control type (e.g. *Control* for Windows Forms). The user will be able to drag and drop a component toolbox item onto the design surface which will be handled by the designer for the control under cursor to request the instantiation of the component.
 
-[![Illustration 9: A toolbox]({{ site.github.url }}/archived/images/3/31/Dt_9.png)]({{ site.github.url }}/archived/images/3/31/Dt_9.png "Illustration 9: A toolbox")
+[![Illustration 9: A toolbox](/archived/images/3/31/Dt_9.png)](/archived/images/3/31/Dt_9.png "Illustration 9: A toolbox")
 
 Documentation Resources
 -----------------------

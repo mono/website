@@ -45,7 +45,7 @@ The following covers an older version of Mono (a few years old):
 
 -   English: [Mono Kickstart](http://www.amazon.com/exec/obidos/tg/detail/-/0672325799/ref=pd_sim_b_1/102-2260035-7729704?%5Fencoding=UTF8&v=glance)
 
-There is an online guide in this web site, the [Monkeyguide]({{ site.github.url }}/Monkeyguide "Monkeyguide")
+There is an online guide in this web site, the [Monkeyguide](/Monkeyguide "Monkeyguide")
 
 C\#
 ---

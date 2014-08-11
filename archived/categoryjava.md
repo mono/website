@@ -8,5 +8,5 @@ redirect_from:
 Category:Java
 =============
 
-See [IKVM]({{ site.github.url }}/IKVM "IKVM")
+See [IKVM](/IKVM "IKVM")
 

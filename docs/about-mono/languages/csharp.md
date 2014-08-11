@@ -10,17 +10,17 @@ redirect_from:
 Introduction
 ------------
 
-The Mono C\# compiler is considered feature complete for C\# 1.0, C\# 2.0, C\# 3.0 and C\# 4.0 ([ECMA]({{ site.github.url }}/docs/about-mono/languages/ecma/)). A preview of C\# 5.0 is distributed with Mono 2.11 or when building Mono from our trunk source code release.
+The Mono C\# compiler is considered feature complete for C\# 1.0, C\# 2.0, C\# 3.0 and C\# 4.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C\# 5.0 is distributed with Mono 2.11 or when building Mono from our trunk source code release.
 
 Historically, various version of same compiler existed.
 
 -   **gmcs**: compiler to target the 2.0 mscorlib.
--   **smcs**: compiler to target the 2.1 mscorlib, to build [Moonlight]({{ site.github.url }}/docs/web/moonlight/) applications.
+-   **smcs**: compiler to target the 2.1 mscorlib, to build [Moonlight](/docs/web/moonlight/) applications.
 -   **dmcs**: compiler to target the 4.0 mscorlib.
 
 Starting with Mono version 2.11 a new unified compiler **mcs** is available. It replaces all previous runtime specific compilers (gmcs, dmcs, smcs). They still exist (as scripts only) to ease the migration path to mcs but we recommend to use mcs.
 
-Bug reports or any compiler issue can be [filed on our bug tracking system.]({{ site.github.url }}/community/bugs/)
+Bug reports or any compiler issue can be [filed on our bug tracking system.](/community/bugs/)
 
 The compiler is able to compile itself and many more C\# programs (there is a test suite included that you can use). The compiler is routinely used to compile Mono, roughly four million lines of C\# code and a few other projects.
 
@@ -28,11 +28,11 @@ The compiler is also fairly fast. On a IBM ThinkPad t40 it compiles 18,000 lines
 
 ### Compiler Service
 
-Starting with Mono 2.2 it supports a [Compiler Service]({{ site.github.url }}/docs/tools+libraries/tools/repl/) that applications can consume.
+Starting with Mono 2.2 it supports a [Compiler Service](/docs/tools+libraries/tools/repl/) that applications can consume.
 
 The compiler can be used as a service by using the Mono.CSharp.Evaluator class in the Mono.Sharp.dll assembly.
 
-Both a console and GUI [read-eval-print]({{ site.github.url }}/docs/tools+libraries/tools/repl/) shells are distributed as part of Mono 2.2 and are both built on top of the above service.
+Both a console and GUI [read-eval-print](/docs/tools+libraries/tools/repl/) shells are distributed as part of Mono 2.2 and are both built on top of the above service.
 
 ### State of the Compiler
 
@@ -93,7 +93,7 @@ The specification shipped with Monodoc, and available on our web downloads is ba
 
 #### Obtaining MCS
 
-The Mono C\# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code]({{ site.github.url }}/community/contributing/source-code-repository/) server, or you can get nightly [download page]({{ site.github.url }}/download/).
+The Mono C\# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code](/community/contributing/source-code-repository/) server, or you can get nightly [download page](/download/).
 
 You can also browse or download a snapshot of the compiler alone:
 
@@ -113,7 +113,7 @@ MCS is written in C\# and uses heavily the .NET APIs (in particular it uses Syst
 
 #### Reporting Bugs
 
-You can submit bugs by filing the bugs against the C\# compiler in our [Bugs]({{ site.github.url }}/community/bugs/) page.
+You can submit bugs by filing the bugs against the C\# compiler in our [Bugs](/community/bugs/) page.
 
 When you report a bug, try to provide a small test case that would show the error so we can include this as part of the Mono C\# regression test suite. If the bug is an error or a warning that we do not flag, write a sample program called \`csXXXX.cs' where XXXX is the code number that is used by the Microsoft C\# compiler that illustrates the problem. That way we can also do regression tests on the invalid input.
 
@@ -134,7 +134,7 @@ If this tool is further expanded to perform constant folding (not needed for our
 
 #### Open bugs
 
-See the [bugs page]({{ site.github.url }}/community/bugs/) for more information. A test suite is maintained to track the progress of the compiler and various programs are routinely compiled and ran.
+See the [bugs page](/community/bugs/) for more information. A test suite is maintained to track the progress of the compiler and various programs are routinely compiled and ran.
 
 Slides
 ------
@@ -172,7 +172,7 @@ Scott Peterson contributed in 2007 many of the foundation blocks for C\# 3 (var,
 
 In 2007 Marek Safar took over the maintenance of the compiler and he completed the C\# 3.0 implementation, lambdas, mutators, type inferencing and LINQ expressions.
 
-In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the [Interactive C\# Shell]({{ site.github.url }}/docs/tools+libraries/tools/repl/).
+In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the [Interactive C\# Shell](/docs/tools+libraries/tools/repl/).
 
 In 2009 Marek Safar evolved the compiler to support C\# 4.0, adding support for the dynamic data type, named parameters, default parameter values as well as co/contravariance support.
 
@@ -187,4 +187,4 @@ They are the same compiler with three different set of defaults.
 
 -   **dmcs**: references the 4.0-profile libraries (the APIs as defined in .NET 4.0) and supports C\# 4.0.
 -   **gmcs**: references the 2.0-profile libraries (the APIs as defined in .NET 2.0 and .NET 3.5) and exposes the full C\# 3.0 language.
--   **smcs**: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C\# 3.0 language. This is the compiler used for creating Silverlight/[Moonlight]({{ site.github.url }}/docs/web/moonlight/) applications.
+-   **smcs**: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C\# 3.0 language. This is the compiler used for creating Silverlight/[Moonlight](/docs/web/moonlight/) applications.

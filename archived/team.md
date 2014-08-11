@@ -18,7 +18,7 @@ List of contributors to Mono and related projects:
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/1/14/Cjac.png" title="cj"><img src="{{ site.github.url }}/archived/images/1/14/Cjac.png" alt="cj" /></a></td>
+<td align="left"><a href="/archived/images/1/14/Cjac.png" title="cj"><img src="/archived/images/1/14/Cjac.png" alt="cj" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x63;&#x6f;&#108;&#108;&#x69;&#x65;&#114;&#116;&#x65;&#x63;&#104;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#x63;&#106;&#x61;&#x63;';e=n+a+h;
@@ -38,7 +38,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Adams-Collier, C.J.'+'<\/'
 <td align="left">Tasks:</td>
 <td align="left"><ul>
 <li>Disorganized Tao.OpenGL build co-ordinator</li>
-<li>Cross-platform build systems with <a href="{{ site.github.url }}/Prebuild" title="Prebuild">Prebuild</a></li>
+<li>Cross-platform build systems with <a href="/Prebuild" title="Prebuild">Prebuild</a></li>
 <li>Heckler</li>
 </ul></td>
 </tr>
@@ -50,7 +50,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Adams-Collier, C.J.'+'<\/'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x53;&#x69;&#x75;&#76;&#x75;&#110;&#x67;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#84;&#x61;&#x6d;';e=n+a+h;
@@ -82,7 +82,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alan, Siu Lung Tam'+'<\/'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x67;&#110;&#x75;&#46;&#x6f;&#114;&#x67;&#44;';a='&#64;';n='&#x61;&#x73;&#x61;&#110;&#x63;&#104;&#x65;&#122;';e=n+a+h;
@@ -116,7 +116,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alejandro Sànchez Acosta'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e2/Aleksey.png"><img src="{{ site.github.url }}/archived/images/e/e2/Aleksey.png" alt="Aleksey.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e2/Aleksey.png"><img src="/archived/images/e/e2/Aleksey.png" alt="Aleksey.png" /></a></td>
 <td align="left">Aleksey Ryabchuk</td>
 </tr>
 <tr class="even">
@@ -141,7 +141,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alejandro Sànchez Acosta'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x67;&#x6d;&#120;&#46;&#100;&#x65;&#44;';a='&#64;';n='&#112;&#x69;&#x67;&#x6f;&#108;&#x6b;&#x69;&#110;&#x65;';e=n+a+h;
@@ -171,7 +171,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alexandre Pigolkine'+'<\/'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x61;&#116;&#x6f;&#x6b;&#x65;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x61;&#108;&#112;';e=n+a+h;
@@ -203,7 +203,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alp Toker'+'<\/'+'a'+'>');
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x61;&#116;&#x73;&#x75;&#x73;&#104;&#x69;';e=n+a+h;
@@ -235,7 +235,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Atsushi Enomoto'+'<\/'+'a'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x75;&#x73;&#x65;&#114;&#x73;&#46;&#x73;&#102;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#98;&#x6d;&#x61;&#x75;&#114;&#x65;&#114;';e=n+a+h;
@@ -266,7 +266,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Ben Maurer'+'<\/'+'a'+'>')
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x75;&#110;&#x69;&#120;&#x6d;&#x65;&#120;&#x69;&#x63;&#x6f;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#x63;&#x61;&#114;&#108;&#x6f;&#x73;';e=n+a+h;
@@ -296,7 +296,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Carlos Alberto Cortez'+'<\
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#116;&#x65;&#108;&#x65;&#102;&#x6f;&#110;&#x69;&#x63;&#x61;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x63;&#x61;&#114;&#108;&#x6f;&#x73;&#x67;&#x61;';e=n+a+h;
@@ -326,7 +326,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Carlos Guzmàn Àlvarez'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/1/18/Cesar.png"><img src="{{ site.github.url }}/archived/images/1/18/Cesar.png" alt="Cesar.png" /></a></td>
+<td align="left"><a href="/archived/images/1/18/Cesar.png"><img src="/archived/images/1/18/Cesar.png" alt="Cesar.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x63;&#x69;&#x65;&#110;&#x63;&#x69;&#x61;&#x73;&#46;&#x75;&#110;&#x61;&#x6d;&#46;&#x6d;&#120;';a='&#64;';n='&#x63;&#x65;&#x73;&#x61;&#114;';e=n+a+h;
@@ -357,7 +357,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'César Octavio López Nata
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#114;&#x65;&#112;&#116;&#x69;&#108;&#x65;&#46;&#x63;&#x61;';a='&#64;';n='&#x63;&#104;&#x61;&#114;&#108;&#x65;&#x73;';e=n+a+h;
@@ -388,7 +388,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Charles Iliya Krempeaux'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#118;&#x65;&#114;&#x69;&#122;&#x6f;&#110;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#100;&#x61;&#110;&#x69;&#x65;&#108;&#x6d;&#x6f;&#114;&#x67;&#x61;&#110;';e=n+a+h;
@@ -419,7 +419,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Daniel Morgan'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x63;&#x6f;&#100;&#x69;&#x63;&#x65;&#x73;&#x6f;&#102;&#116;&#x77;&#x61;&#114;&#x65;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#100;&#112;&#x6f;&#114;&#116;&#x65;&#114;';e=n+a+h;
@@ -451,7 +451,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Dick Porter'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/a/a0/Dietmar.png"><img src="{{ site.github.url }}/archived/images/a/a0/Dietmar.png" alt="Dietmar.png" /></a></td>
+<td align="left"><a href="/archived/images/a/a0/Dietmar.png"><img src="/archived/images/a/a0/Dietmar.png" alt="Dietmar.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#100;&#x69;&#x65;&#116;&#x6d;&#x61;&#114;';e=n+a+h;
@@ -483,7 +483,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Dietmar Maurer'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e9/Duncan.png"><img src="{{ site.github.url }}/archived/images/e/e9/Duncan.png" alt="Duncan.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e9/Duncan.png"><img src="/archived/images/e/e9/Duncan.png" alt="Duncan.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#100;&#x75;&#110;&#x63;&#x61;&#110;';e=n+a+h;
@@ -515,7 +515,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Duncan Mak'+'<\/'+'a'+'>')
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x79;&#x61;&#104;&#x6f;&#x6f;&#46;&#x65;&#x73;';a='&#64;';n='&#x6b;&#x69;&#x77;&#110;&#x69;&#120;';e=n+a+h;
@@ -546,7 +546,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Eduardo Garcia Cebollero'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/c/c5/Ed-primate.png"><img src="{{ site.github.url }}/archived/images/c/c5/Ed-primate.png" alt="Ed-primate.png" /></a></td>
+<td align="left"><a href="/archived/images/c/c5/Ed-primate.png"><img src="/archived/images/c/c5/Ed-primate.png" alt="Ed-primate.png" /></a></td>
 <td align="left"><strong>[Erik Dasque]</strong></td>
 </tr>
 <tr class="even">
@@ -571,7 +571,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Eduardo Garcia Cebollero'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/b/bc/Paco.jpg"><img src="{{ site.github.url }}/archived/images/b/bc/Paco.jpg" alt="Paco.jpg" /></a></td>
+<td align="left"><a href="/archived/images/b/bc/Paco.jpg"><img src="/archived/images/b/bc/Paco.jpg" alt="Paco.jpg" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x6d;&#102;&#x63;&#x6f;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#x63;&#x6f;';e=n+a+h;
@@ -603,7 +603,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Francisco &quot;Paco&quot;
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/7/77/Gvaish.png"><img src="{{ site.github.url }}/archived/images/7/77/Gvaish.png" alt="Gvaish.png" /></a></td>
+<td align="left"><a href="/archived/images/7/77/Gvaish.png"><img src="/archived/images/7/77/Gvaish.png" alt="Gvaish.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#x73;&#112;&#x61;&#x6d;&#46;&#108;&#x79;&#x63;&#x6f;&#x73;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x67;&#118;&#x61;&#x69;&#x73;&#104;&#x5f;&#x6d;&#x6f;&#110;&#x6f;&#46;&#110;&#x6f;&#x73;&#112;&#x61;&#x6d;';e=n+a+h;
@@ -634,7 +634,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Gaurav Vaish'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/8/8e/Gonzalo.png"><img src="{{ site.github.url }}/archived/images/8/8e/Gonzalo.png" alt="Gonzalo.png" /></a></td>
+<td align="left"><a href="/archived/images/8/8e/Gonzalo.png"><img src="/archived/images/8/8e/Gonzalo.png" alt="Gonzalo.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x67;&#x6f;&#110;&#122;&#x61;&#108;&#x6f;&#x5f;&#110;&#x6f;&#x73;&#112;&#x61;&#x6d;&#110;&#x6f;&#x5f;&#110;&#x6f;&#110;&#x6f;';e=n+a+h;
@@ -668,7 +668,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Gonzalo Paniagua Javier'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/3/31/Hector.png"><img src="{{ site.github.url }}/archived/images/3/31/Hector.png" alt="Hector.png" /></a></td>
+<td align="left"><a href="/archived/images/3/31/Hector.png"><img src="/archived/images/3/31/Hector.png" alt="Hector.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#102;&#108;&#x61;&#x73;&#104;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#104;&#x67;&#x6f;&#x6d;&#x65;&#122;&#x5f;&#x33;&#54;';e=n+a+h;
@@ -699,7 +699,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Hector Gomez Morales'+'<\/
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/f/fb/Jackson.png"><img src="{{ site.github.url }}/archived/images/f/fb/Jackson.png" alt="Jackson.png" /></a></td>
+<td align="left"><a href="/archived/images/f/fb/Jackson.png"><img src="/archived/images/f/fb/Jackson.png" alt="Jackson.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#106;&#x61;&#x63;&#x6b;&#x73;&#x6f;&#110;';e=n+a+h;
@@ -731,7 +731,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Jackson Harper'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x67;&#110;&#x6f;&#x6d;&#x65;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#106;&#x61;&#x69;&#x6d;&#x65;';e=n+a+h;
@@ -761,7 +761,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Jaime Anguiano Olarra'+'<\
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/d/d5/Jbthumb2.png"><img src="{{ site.github.url }}/archived/images/d/d5/Jbthumb2.png" alt="Jbthumb2.png" /></a></td>
+<td align="left"><a href="/archived/images/d/d5/Jbthumb2.png"><img src="/archived/images/d/d5/Jbthumb2.png" alt="Jbthumb2.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#106;&#98;&#x65;&#118;&#x61;&#x69;&#110;';e=n+a+h;
@@ -792,7 +792,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Jb Evain'+'<\/'+'a'+'>');
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#112;&#x6f;&#108;&#x79;&#x6d;&#116;&#108;&#46;&#x63;&#x61;';a='&#64;';n='&#106;&#x65;&#x61;&#110;&#x2d;&#x6d;&#x61;&#114;&#x63;&#46;&#x61;&#110;&#100;&#114;&#x65;';e=n+a+h;
@@ -823,7 +823,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Jean-Marc Andre'+'<\/'+'a'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x6d;&#x77;&#x65;&#98;&#46;&#x63;&#x6f;&#46;&#122;&#x61;';a='&#64;';n='&#106;&#x73;&#116;&#114;&#x69;&#x6b;&#x65;';e=n+a+h;
@@ -853,7 +853,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Joel Basson'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/4/4d/Johannes.png"><img src="{{ site.github.url }}/archived/images/4/4d/Johannes.png" alt="Johannes.png" /></a></td>
+<td align="left"><a href="/archived/images/4/4d/Johannes.png"><img src="/archived/images/4/4d/Johannes.png" alt="Johannes.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#106;&#114;&#x6f;&#x69;&#116;&#104;&#46;&#100;&#x65;';a='&#64;';n='&#106;&#x6f;&#104;&#x61;&#110;&#110;&#x65;&#x73;';e=n+a+h;
@@ -884,7 +884,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Johannes Roith'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/2/2b/Jluke.png"><img src="{{ site.github.url }}/archived/images/2/2b/Jluke.png" alt="Jluke.png" /></a></td>
+<td align="left"><a href="/archived/images/2/2b/Jluke.png"><img src="/archived/images/2/2b/Jluke.png" alt="Jluke.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x63;&#102;&#108;&#46;&#114;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#106;&#108;&#x75;&#x6b;&#x65;';e=n+a+h;
@@ -916,7 +916,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'John Luke'+'<\/'+'a'+'>');
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/4/4c/Jonpryor.png"><img src="{{ site.github.url }}/archived/images/4/4c/Jonpryor.png" alt="Jonpryor.png" /></a></td>
+<td align="left"><a href="/archived/images/4/4c/Jonpryor.png"><img src="/archived/images/4/4c/Jonpryor.png" alt="Jonpryor.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#118;&#116;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#106;&#x6f;&#110;&#112;&#114;&#x79;&#x6f;&#114;';e=n+a+h;
@@ -948,7 +948,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Jonathan Pryor'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/3/35/Jordi.png"><img src="{{ site.github.url }}/archived/images/3/35/Jordi.png" alt="Jordi.png" /></a></td>
+<td align="left"><a href="/archived/images/3/35/Jordi.png"><img src="/archived/images/3/35/Jordi.png" alt="Jordi.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#106;&#x6f;&#114;&#100;&#x69;';e=n+a+h;
@@ -979,7 +979,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'at ximian.com Jordi Mas i 
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#70;&#114;&#x65;&#x65;&#66;&#x53;&#68;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#106;&#x6d;&#x61;&#108;&#108;&#x65;&#116;&#116;';e=n+a+h;
@@ -1010,7 +1010,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Juli Mallett'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6b;&#x73;&#x61;&#116;&#x79;&#x61;&#x73;&#x75;&#100;&#104;&#x61;';e=n+a+h;
@@ -1040,7 +1040,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'K Satyasudha'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#114;&#112;&#114;&#x6f;&#112;&#x65;&#114;';e=n+a+h;
@@ -1071,7 +1071,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Kevin Breit'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#102;&#x6f;&#110;&#x69;&#x63;&#x6d;&#x6f;&#110;&#x6b;&#x65;&#x79;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#x6d;&#x6f;&#110;&#x6f;&#x2d;&#100;&#x6f;&#x63;&#x73;';e=n+a+h;
@@ -1102,7 +1102,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Lee Mallabone'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e5/Lluis.png"><img src="{{ site.github.url }}/archived/images/e/e5/Lluis.png" alt="Lluis.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e5/Lluis.png"><img src="/archived/images/e/e5/Lluis.png" alt="Lluis.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#108;&#108;&#x75;&#x69;&#x73;';e=n+a+h;
@@ -1134,7 +1134,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Lluis Sanchez'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x6d;&#x61;&#110;&#106;&#x75;&#108;&#x61;';e=n+a+h;
@@ -1165,7 +1165,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Manjula GHM'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#118;&#x69;&#114;&#x67;&#x69;&#108;&#x69;&#x6f;&#46;&#x69;&#116;';a='&#64;';n='&#x6d;&#x61;&#114;&#x63;&#x6f;&#46;&#114;&#x69;&#100;&#x6f;&#110;&#x69;';e=n+a+h;
@@ -1196,7 +1196,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Marco Ridoni'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#116;&#104;&#x63;&#x69;&#114;&#x63;';a='&#64;';n='&#114;&#x65;&#118;&#x65;&#114;&#x73;&#x65;&#x5f;&#x67;&#114;&#x6f;&#46;&#112;&#x6d;&#x69;&#x67;';e=n+a+h;
@@ -1228,7 +1228,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Mark Crichton'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/d/d8/Martin.png"><img src="{{ site.github.url }}/archived/images/d/d8/Martin.png" alt="Martin.png" /></a></td>
+<td align="left"><a href="/archived/images/d/d8/Martin.png"><img src="/archived/images/d/d8/Martin.png" alt="Martin.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x61;&#114;&#116;&#x69;&#110;';e=n+a+h;
@@ -1259,7 +1259,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Martin Baulig'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/d/de/Mwh.png"><img src="{{ site.github.url }}/archived/images/d/de/Mwh.png" alt="Mwh.png" /></a></td>
+<td align="left"><a href="/archived/images/d/de/Mwh.png"><img src="/archived/images/d/de/Mwh.png" alt="Mwh.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#x6d;&#x77;&#104;&#x2d;&#x41;&#84;&#x2d;&#x73;&#x79;&#x73;&#114;&#x71;&#46;&#100;&#x6b;&#78;&#x4f;&#x53;&#80;&#x41;&#x4d;';e=n+a+h;
@@ -1294,7 +1294,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Martin Willemoes Hansen'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x61;&#x73;&#x73;&#x69;';e=n+a+h;
@@ -1324,7 +1324,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Massimiliano Mantione'+'<\
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/6/6a/Miguel.png"><img src="{{ site.github.url }}/archived/images/6/6a/Miguel.png" alt="Miguel.png" /></a></td>
+<td align="left"><a href="/archived/images/6/6a/Miguel.png"><img src="/archived/images/6/6a/Miguel.png" alt="Miguel.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x69;&#x67;&#x75;&#x65;&#108;';e=n+a+h;
@@ -1357,7 +1357,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Miguel de Icaza'+'<\/'+'a'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x6b;&#x65;&#x73;&#116;&#110;&#x65;&#114;';e=n+a+h;
@@ -1387,7 +1387,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Mike Kestner'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x53;&#x6f;&#102;&#116;&#x77;&#x61;&#114;&#x65;&#x41;&#x47;&#x2d;&#x75;&#x73;&#x61;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#78;&#x65;&#x61;&#108;&#x65;&#46;&#70;&#x65;&#114;&#x67;&#x75;&#x73;&#x6f;&#110;';e=n+a+h;
@@ -1417,7 +1417,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Neale Ferguson'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e7/Nickd.png"><img src="{{ site.github.url }}/archived/images/e/e7/Nickd.png" alt="Nickd.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e7/Nickd.png"><img src="/archived/images/e/e7/Nickd.png" alt="Nickd.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#110;&#100;&#114;&#x6f;&#x63;&#104;&#x61;&#x6b;&#x41;&#84;&#x69;&#x65;&#x65;&#x65;&#46;&#x6f;&#114;&#x67;';e=n+a+h;
@@ -1448,7 +1448,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Nick Drochak'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#108;&#x75;&#112;&#x75;&#x73;';e=n+a+h;
@@ -1480,7 +1480,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Paolo Molaro'+'<\/'+'a'+'>
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#80;&#x61;&#116;&#114;&#x69;&#x6b;&#46;&#84;&#x6f;&#114;&#x73;&#116;&#x65;&#110;&#x73;&#x73;&#x6f;&#110;&#x41;&#84;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';e=n+a+h;
@@ -1513,7 +1513,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Patrik Torstensson (privat
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/2/29/Pedroas.png"><img src="{{ site.github.url }}/archived/images/2/29/Pedroas.png" alt="Pedroas.png" /></a></td>
+<td align="left"><a href="/archived/images/2/29/Pedroas.png"><img src="/archived/images/2/29/Pedroas.png" alt="Pedroas.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x79;&#x61;&#104;&#x6f;&#x6f;&#46;&#x65;&#x73;';a='&#64;';n='&#112;&#x65;&#100;&#114;&#x6f;&#x61;&#98;&#x65;&#108;&#108;&#x65;&#x69;&#114;&#x61;';e=n+a+h;
@@ -1543,7 +1543,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Pedro Abelleira Seco'+'<\/
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/5/5d/Pedro.png"><img src="{{ site.github.url }}/archived/images/5/5d/Pedro.png" alt="Pedro.png" /></a></td>
+<td align="left"><a href="/archived/images/5/5d/Pedro.png"><img src="/archived/images/5/5d/Pedro.png" alt="Pedro.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x77;&#x61;&#110;&#x61;&#100;&#x6f;&#x6f;&#46;&#x65;&#x73;';a='&#64;';n='&#x79;&#x6f;&#114;&#x6f;&#x73;';e=n+a+h;
@@ -1574,7 +1574,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Pedro Martinez'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/ee/Per.png"><img src="{{ site.github.url }}/archived/images/e/ee/Per.png" alt="Per.png" /></a></td>
+<td align="left"><a href="/archived/images/e/ee/Per.png"><img src="/archived/images/e/ee/Per.png" alt="Per.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x73;&#116;&#x75;&#100;&#x65;&#110;&#116;&#46;&#98;&#116;&#104;&#46;&#x73;&#x65;';a='&#64;';n='&#112;&#116;&#x39;&#x39;&#112;&#x61;&#114;';e=n+a+h;
@@ -1605,7 +1605,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Per Arneng'+'<\/'+'a'+'>')
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/7/7e/Peterw.png"><img src="{{ site.github.url }}/archived/images/7/7e/Peterw.png" alt="Peterw.png" /></a></td>
+<td align="left"><a href="/archived/images/7/7e/Peterw.png"><img src="/archived/images/7/7e/Peterw.png" alt="Peterw.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x65;&#x77;&#116;&#x6f;&#110;&#46;&#x63;&#120;';a='&#64;';n='&#112;&#x65;&#116;&#x65;&#114;';e=n+a+h;
@@ -1635,7 +1635,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Peter Williams'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#102;&#114;&#x69;&#x73;&#x6b;&#x69;&#116;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x69;&#x65;&#114;&#x73;&#104;';e=n+a+h;
@@ -1666,7 +1666,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Piers Haken'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x75;&#108;&#108;&#x65;&#110;&#118;&#x6f;&#x69;&#100;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#114;&#x61;&#x63;&#104;&#x65;&#108;';e=n+a+h;
@@ -1697,7 +1697,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Rachel Hestilow'+'<\/'+'a'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#104;&#x6f;&#116;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#114;&#x61;&#102;&#x61;&#x65;&#108;&#116;&#x65;&#x69;&#120;&#x65;&#x69;&#114;&#x61;&#98;&#114;';e=n+a+h;
@@ -1732,7 +1732,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Rafael Teixeira'+'<\/'+'a'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/0/0d/Harinath.jpg" title="A photo"><img src="{{ site.github.url }}/archived/images/0/0d/Harinath.jpg" alt="A photo" /></a></td>
+<td align="left"><a href="/archived/images/0/0d/Harinath.jpg" title="A photo"><img src="/archived/images/0/0d/Harinath.jpg" alt="A photo" /></a></td>
 <td align="left"><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#114;&#104;&#x61;&#114;&#x69;&#110;&#x61;&#116;&#104;';e=n+a+h;
@@ -1763,7 +1763,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<strong>Raja R Harinath</s
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/c/c4/Rpratap.png"><img src="{{ site.github.url }}/archived/images/c/c4/Rpratap.png" alt="Rpratap.png" /></a></td>
+<td align="left"><a href="/archived/images/c/c4/Rpratap.png"><img src="/archived/images/c/c4/Rpratap.png" alt="Rpratap.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#114;&#x61;&#118;&#x69;';e=n+a+h;
@@ -1793,7 +1793,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Ravi Pratap'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/d/d4/Reggie.png"><img src="{{ site.github.url }}/archived/images/d/d4/Reggie.png" alt="Reggie.png" /></a></td>
+<td align="left"><a href="/archived/images/d/d4/Reggie.png"><img src="/archived/images/d/d4/Reggie.png" alt="Reggie.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#98;&#x79;&#116;&#x65;&#102;&#120;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#114;&#x65;&#x67;&#x67;&#x69;&#x65;';e=n+a+h;
@@ -1824,7 +1824,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Reggie Burnett'+'<\/'+'a'+
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#114;&#x69;&#116;&#118;&#x69;&#x6b;';e=n+a+h;
@@ -1855,7 +1855,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Ritvik Mayank'+'<\/'+'a'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x73;&#x75;&#x6d;&#x61;&#100;&#x65;&#118;&#x69;';e=n+a+h;
@@ -1885,7 +1885,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'S Umadevi'+'<\/'+'a'+'>');
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/2/20/Spouliot.png"><img src="{{ site.github.url }}/archived/images/2/20/Spouliot.png" alt="Spouliot.png" /></a></td>
+<td align="left"><a href="/archived/images/2/20/Spouliot.png"><img src="/archived/images/2/20/Spouliot.png" alt="Spouliot.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#x73;&#x65;&#98;&#x61;&#x73;&#116;&#x69;&#x65;&#110;&#x61;&#116;&#120;&#x69;&#x6d;&#x69;&#x61;&#110;&#100;&#x6f;&#116;&#x63;&#x6f;&#x6d;';e=n+a+h;
@@ -1912,7 +1912,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Sebastien Pouliot'+'<\/'+'
 </table>
 
 ||
-|[![Suresh.jpg]({{ site.github.url }}/archived/images/9/95/Suresh.jpg)]({{ site.github.url }}/archived/images/9/95/Suresh.jpg)|**[Sureshkumar T](mailto:tsureshkumar@novell.com)**|
+|[![Suresh.jpg](/archived/images/9/95/Suresh.jpg)](/archived/images/9/95/Suresh.jpg)|**[Sureshkumar T](mailto:tsureshkumar@novell.com)**|
 |Location:|Bangalore, India|
 |Description:|Mono Hacker|
 |Tasks:|\*ADO.NET|
@@ -1922,7 +1922,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Sebastien Pouliot'+'<\/'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/b/bf/Timc.png"><img src="{{ site.github.url }}/archived/images/b/bf/Timc.png" alt="Timc.png" /></a></td>
+<td align="left"><a href="/archived/images/b/bf/Timc.png"><img src="/archived/images/b/bf/Timc.png" alt="Timc.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#116;&#x69;&#x6d;&#x63;&#x6f;&#108;&#x65;&#x6d;&#x61;&#110;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#116;&#x69;&#x6d;';e=n+a+h;
@@ -1955,7 +1955,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Tim Coleman'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x6f;&#112;&#x65;&#110;&#108;&#x69;&#110;&#x6b;&#x73;&#x77;&#46;&#x63;&#x6f;&#46;&#x75;&#x6b;';a='&#64;';n='&#116;&#104;&#x61;&#x79;&#110;&#x65;&#x73;';e=n+a+h;
@@ -1985,7 +1985,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Tim Haynes'+'<\/'+'a'+'>')
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/b/b5/Tberman.png"><img src="{{ site.github.url }}/archived/images/b/b5/Tberman.png" alt="Tberman.png" /></a></td>
+<td align="left"><a href="/archived/images/b/b5/Tberman.png"><img src="/archived/images/b/b5/Tberman.png" alt="Tberman.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x6f;&#102;&#102;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#116;&#98;&#x65;&#114;&#x6d;&#x61;&#110;';e=n+a+h;
@@ -2017,7 +2017,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Todd Berman'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#118;&#x69;&#54;&#52;&#112;&#x61;&#x2d;&#x41;&#84;&#x2d;&#x6b;&#x6f;&#108;&#x75;&#x6d;&#98;&#x75;&#x73;&#46;&#102;&#x69;';e=n+a+h;
@@ -2048,7 +2048,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Ville Palo'+'<\/'+'a'+'>')
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#x6f;&#112;&#x65;&#110;&#108;&#x69;&#110;&#x6b;&#x73;&#x77;&#46;&#x63;&#x6f;&#46;&#x75;&#x6b;';a='&#64;';n='&#118;&#x6b;&#x61;&#108;&#x75;&#122;&#104;&#110;&#x79;';e=n+a+h;
@@ -2079,7 +2079,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Vladimir Kaluzhny'+'<\/'+'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='&#122;&#x61;&#x63;&#98;&#x6f;&#x77;&#108;&#x69;&#110;&#x67;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#122;&#x61;&#x63;';e=n+a+h;
@@ -2114,7 +2114,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Zac Bowling'+'<\/'+'a'+'>'
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><a href="{{ site.github.url }}/archived/images/e/e3/None.png"><img src="{{ site.github.url }}/archived/images/e/e3/None.png" alt="None.png" /></a></td>
+<td align="left"><a href="/archived/images/e/e3/None.png"><img src="/archived/images/e/e3/None.png" alt="None.png" /></a></td>
 <td align="left"><strong><script type="text/javascript">
 <!--
 h='';a='&#64;';n='&#118;&#x61;&#114;&#x67;&#x61;&#122;&#x43;&#x4f;&#78;&#x43;&#x41;&#84;&#x67;&#x6d;&#x61;&#x69;&#108;&#x43;&#x4f;&#78;&#x43;&#x41;&#84;&#x63;&#x6f;&#x6d;';e=n+a+h;

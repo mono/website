@@ -4,20 +4,20 @@ redirect_from:
   - /Contributing/
 ---
 
-Track our various [Development Plans]({{ site.github.url }}/docs/about-mono/plans/)
+Track our various [Development Plans](/docs/about-mono/plans/)
 
 **Resources**
 
 Users:
-  [Downloads]({{ site.github.url }}/download/) | [Bug Reporting]({{ site.github.url }}/community/bugs/) | [Software]({{ site.github.url }}/docs/about-mono/showcase/software/)
+  [Downloads](/download/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)
  Developers:
-  [API Docs](http://www.go-mono.com/docs/) | [Languages]({{ site.github.url }}/docs/about-mono/languages/) | [Books]({{ site.github.url }}/archived/books "Books") | [Roadmap]({{ site.github.url }}/docs/about-mono/roadmap/) | [Plans]({{ site.github.url }}/docs/about-mono/plans/)
+  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books "Books") | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)
  Contributors:
-  [Class Status]({{ site.github.url }}/archived/resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code]({{ site.github.url }}/community/contributing/source-code-repository/)
+  [Class Status](/archived/resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)
  Community:
-  [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat]({{ site.github.url }}/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)
+  [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)
  FAQ:
-  [General]({{ site.github.url }}/docs/faq/general/) | [Technical]({{ site.github.url }}/docs/faq/technical/) | [Licensing]({{ site.github.url }}/docs/faq/licensing/) | [Asp.net]({{ site.github.url }}/docs/faq/aspnet/) | [Security]({{ site.github.url }}/docs/faq/security/) | [WinForms]({{ site.github.url }}/docs/faq/winforms/)
+  [General](/docs/faq/general/) | [Technical](/docs/faq/technical/) | [Licensing](/docs/faq/licensing/) | [Asp.net](/docs/faq/aspnet/) | [Security](/docs/faq/security/) | [WinForms](/docs/faq/winforms/)
 
 Mono shipped its first release in June 2004, and the project is moving forward in various directions:
 
@@ -27,10 +27,10 @@ Mono shipped its first release in June 2004, and the project is moving forward i
 
 If you are interested in contributing, here are some pointers:
 
--   [Contribution HowTo]({{ site.github.url }}/community/contributing/contribution-howto/)
--   [Bugs]({{ site.github.url }}/community/bugs/): Known bugs in Mono, you can look at which issues people are reporting.
+-   [Contribution HowTo](/community/contributing/contribution-howto/)
+-   [Bugs](/community/bugs/): Known bugs in Mono, you can look at which issues people are reporting.
 -   MoMA Migration Reports: These are report of applications that people want to run with Mono, and the APIs that are missing or pending
--   [Resources]({{ site.github.url }}/archived/resources "Resources"): Go to this page to take a look at the status of our API classes.
+-   [Resources](/archived/resources "Resources"): Go to this page to take a look at the status of our API classes.
 
 The project is under active development and has a vibrant community. If you are looking at ways of helping the project, you have come to the right web page.
 
@@ -54,17 +54,17 @@ Microsoft also publishes a lot of code under open source licenses (MS-PL or Apac
 Work Areas
 ==========
 
-Our immediate goals are described in the [Mono Roadmap]({{ site.github.url }}/docs/about-mono/roadmap/), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans]({{ site.github.url }}/docs/about-mono/plans/) page.
+Our immediate goals are described in the [Mono Roadmap](/docs/about-mono/roadmap/), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans](/docs/about-mono/plans/) page.
 
-You might want to look at the project [To-Do]({{ site.github.url }}/archived/todo "Todo") list, there are various medium and large projects there.
+You might want to look at the project [To-Do](/archived/todo "Todo") list, there are various medium and large projects there.
 
 Those are just broad things that need to be worked on, but something that would help tremendously would be to help with small duties in the project that need to be addressed.
 
 You can see what needs to be done in the class libraries [here](http://www.go-mono.com/status/)
 
-You can help write documentation, please see [Mono Documentation Improvement Project]({{ site.github.url }}/archived/mono_documentation_improvement_project "Mono Documentation Improvement Project").
+You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project "Mono Documentation Improvement Project").
 
-After you have commited your patches to our [SVN]({{ site.github.url }}/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
+After you have commited your patches to our [SVN](/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 
 Contributing to Mono
 ====================
@@ -78,7 +78,7 @@ This is useful because once you submit the code it will help others not introduc
 
 You should test the NUnit test cases on the real framework and make sure that all tests pass. Then these tests can be directly integrated into our build system.
 
-When contributing to the class libraries, please have a look at our [Coding\_Guidelines]({{ site.github.url }}/community/contributing/coding-guidelines/). Note that our coding format is different from the default style from Visual Studio.
+When contributing to the class libraries, please have a look at our [Coding\_Guidelines](/community/contributing/coding-guidelines/). Note that our coding format is different from the default style from Visual Studio.
 
 Testing on Various Platforms
 ----------------------------
@@ -95,7 +95,7 @@ If you find that one of your commits broke something, don't panic! Just please e
 Maintaining Multiple Trees
 --------------------------
 
-If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments]({{ site.github.url }}/docs/compiling-mono/parallel-mono-environments/) page.
+If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments](/docs/compiling-mono/parallel-mono-environments/) page.
 
 Debugging with Visual Studio
 ----------------------------
@@ -111,8 +111,8 @@ Ways to Contribute
 
 There are three different philosophical approaches to helping the Mono project:
 
--   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report]({{ site.github.url }}/community/bugs/); track down the problem and provide a better [bug report]({{ site.github.url }}/community/bugs/); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](http://lists.ximian.com/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test]({{ site.github.url }}/community/contributing/test-suite/) so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC]({{ site.github.url }}/community/help/irc/) channels.
+-   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report](/community/bugs/); track down the problem and provide a better [bug report](/community/bugs/); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](http://lists.ximian.com/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test](/community/contributing/test-suite/) so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC](/community/help/irc/) channels.
 
--   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class]({{ site.github.url }}/community/contributing/the-class-library/) (from our [Class\_Status]({{ site.github.url }}/docs/about-mono/class-status/)); help with the [documentation effort]({{ site.github.url }}/docs/) ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs]({{ site.github.url }}/community/bugs/); help with the [tools]({{ site.github.url }}/docs/tools+libraries/tools/) or writing [tests]({{ site.github.url }}/community/contributing/test-suite/) that help make Mono more robust.
+-   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class](/community/contributing/the-class-library/) (from our [Class\_Status](/docs/about-mono/class-status/)); help with the [documentation effort](/docs/) ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs](/community/bugs/); help with the [tools](/docs/tools+libraries/tools/) or writing [tests](/community/contributing/test-suite/) that help make Mono more robust.
 
--   The **educational** way is an interesting one, because you pick a technology you are interested in, and work on that technology to learn the technology. If you are interested in it, please take a look at [this list]({{ site.github.url }}/community/google-summer-of-code/projects/) for possible projects.
+-   The **educational** way is an interesting one, because you pick a technology you are interested in, and work on that technology to learn the technology. If you are interested in it, please take a look at [this list](/community/google-summer-of-code/projects/) for possible projects.

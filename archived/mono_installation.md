@@ -13,11 +13,11 @@ Linux Binary Installation
 
 There are a couple of ways to install Mono, depending on your expertise:
 
--   From individual RPM packages in our [Downloads]({{ site.github.url }}/Downloads "Downloads") page.
--   Using the Linux installer (from our [Downloads]({{ site.github.url }}/Downloads "Downloads") page.
+-   From individual RPM packages in our [Downloads](/Downloads "Downloads") page.
+-   Using the Linux installer (from our [Downloads](/Downloads "Downloads") page.
 -   Using [ZENworks (formerly Red Carpet)](ftp://ftp.novell.com/pub/ximian/redcarpet2)
--   Fedora Core users: using [yum]({{ site.github.url }}/Downloads "Downloads")
--   From source code [Downloads]({{ site.github.url }}/Downloads "Downloads")
+-   Fedora Core users: using [yum](/Downloads "Downloads")
+-   From source code [Downloads](/Downloads "Downloads")
 
 **To Run Mono Applications:** If you want to run simple .NET applications, install the packages "mono" and "libgdiplus".
 
@@ -30,10 +30,10 @@ There are a couple of ways to install Mono, depending on your expertise:
 Windows Installation
 --------------------
 
-Visit [this page]({{ site.github.url }}/Downloads "Downloads") to download the Mono installer. Run it and follow the instructions it supplies.
+Visit [this page](/Downloads "Downloads") to download the Mono installer. Run it and follow the instructions it supplies.
 
 MacOS X Installation (MacOS X 10.3)
 -----------------------------------
 
-Visit [the download page]({{ site.github.url }}/Downloads "Downloads") to find the latest MacOS X package. Run it and follow the instructions it supplies. This includes Mono-core. You'll find more information about Mono on MacOS X here.
+Visit [the download page](/Downloads "Downloads") to find the latest MacOS X package. Run it and follow the instructions it supplies. This includes Mono-core. You'll find more information about Mono on MacOS X here.
 

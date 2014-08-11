@@ -337,7 +337,7 @@ Notes
 
 Workaround
 
--   Use Apache/[Mod\_mono]({{ site.github.url }}/docs/web/mod_mono/) configured with **AddHander**.
+-   Use Apache/[Mod\_mono](/docs/web/mod_mono/) configured with **AddHander**.
 
 Local privilege escalation via System.Xml.Serialization
 -------------------------------------------------------

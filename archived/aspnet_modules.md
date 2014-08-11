@@ -41,7 +41,7 @@ Add the following inside \<configuration\>...\</configuration\> in your web.conf
 </mono.aspnet>
 ```
 
-And that's it. It will load Mono.Http.dll from the [GAC]({{ site.github.url }}/Assemblies_and_the_GAC) and send compressed responses when the client supports it.
+And that's it. It will load Mono.Http.dll from the [GAC](/Assemblies_and_the_GAC) and send compressed responses when the client supports it.
 
 Basic and Digest authenticaton
 ------------------------------

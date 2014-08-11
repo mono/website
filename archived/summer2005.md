@@ -57,7 +57,7 @@ The Members
 ===========
 
 -   Jaen Saul: [\#Ruby.NET](#rubynet) implementation
--   Jb Evain: [Cecil/Write]({{ site.github.url }}/Cecil "Cecil") support
+-   Jb Evain: [Cecil/Write](/Cecil "Cecil") support
 -   Jeyasankar Kottalam: [GCC CIL](#gcc-cil) backend
 -   Marek Sieradzki: [MSBuild](#msbuild) implementation
 -   Michael Hutchinson: [ASP.NET GUI Designer](#aspnet-gui-designer)

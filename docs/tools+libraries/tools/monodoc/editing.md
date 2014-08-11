@@ -66,7 +66,7 @@ You can link to an example like this:
 
     <code lang="C#" source="file.cs"> </code>
 
-When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update]({{ site.github.url }}/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C\#" source="examples/file.cs" /\>.**
+When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc](/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update](/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C\#" source="examples/file.cs" /\>.**
 
 ****
 
@@ -99,11 +99,11 @@ For example, if you want to link the following image `http://www.mono-project.co
 Monodoc browser editing
 =======================
 
-Editing from inside the [Monodoc]({{ site.github.url }}/docs/tools+libraries/tools/monodoc/) browser is simple. You have to navigate through the documentation and find where is the label *To be added* or *Documentation for this section has not yet been entered* and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
+Editing from inside the [Monodoc](/docs/tools+libraries/tools/monodoc/) browser is simple. You have to navigate through the documentation and find where is the label *To be added* or *Documentation for this section has not yet been entered* and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
 
 After clicking on an [Edit] link, monodoc will show an aspect similar to this one:
 
-[![Monodoc-edit.png]({{ site.github.url }}/archived/images/4/41/Monodoc-edit.png)]({{ site.github.url }}/archived/images/4/41/Monodoc-edit.png)
+[![Monodoc-edit.png](/archived/images/4/41/Monodoc-edit.png)](/archived/images/4/41/Monodoc-edit.png)
 
 Where you can see the window is divided in two panels. The upper panel is where you type the [XML Documentation code](#writing-xml-documentation). Some buttons in the middle will help you with the most important tags. In the lower panel you can see a preview of the documentation as it is being typed. Finally, at the lowest part of the window you can see three buttons, *Close* for canceling the actual editing, *Save* for saving the changes and *Restore* to remove all your changes and restore the node as it was originally.
 

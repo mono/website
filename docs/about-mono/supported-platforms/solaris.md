@@ -4,9 +4,9 @@ redirect_from:
   - /Mono:Solaris/
 ---
 
-Mono supports Solaris on [SPARC]({{ site.github.url }}/docs/about-mono/supported-platforms/sparc/), [x86]({{ site.github.url }}/docs/about-mono/supported-platforms/x86/) and [x86-64]({{ site.github.url }}/docs/about-mono/supported-platforms/amd64/) architectures.
+Mono supports Solaris on [SPARC](/docs/about-mono/supported-platforms/sparc/), [x86](/docs/about-mono/supported-platforms/x86/) and [x86-64](/docs/about-mono/supported-platforms/amd64/) architectures.
 
-Packages for Mono on Solaris/SPARC are available from our [Download]({{ site.github.url }}/download/) page.
+Packages for Mono on Solaris/SPARC are available from our [Download](/download/) page.
 
 Mono is also available as part of [Nexenta](http://www.nexenta.com), the Debian-based [OpenSolaris](http://www.opensolaris.org) distribution.
 

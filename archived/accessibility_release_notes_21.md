@@ -67,7 +67,7 @@ Mono Accessibility is available for a variety of Linux distributions, including:
 -   Ubuntu Karmic Koala - [Package Archive on Launchpad](https://edge.launchpad.net/~mono-a11y/+archive/releases)
 -   Fedora 12 - [Repository on openSUSE Build Service](http://download.opensuse.org/repositories/Mono:/UIA/Fedora_12/)
 
-If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available]({{ site.github.url }}/Accessibility:_Installing_2.1_From_Source "Accessibility: Installing 2.1 From Source").
+If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available](/Accessibility:_Installing_2.1_From_Source "Accessibility: Installing 2.1 From Source").
 
 If you just want to grab a source tarball, check out the [sources](http://mono-a11y.org/releases/2.1/sources/) section of our downloads site.
 

@@ -5,7 +5,7 @@ redirect_from:
   - /AutoHosting/
 ---
 
-Automatic configuration of ASP.NET applications with [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/)
+Automatic configuration of ASP.NET applications with [mod\_mono](/docs/web/mod_mono/)
 
 Motivation
 ----------
@@ -21,7 +21,7 @@ With autohosting it is possible to allow all the accounts on a machine to deploy
 What is it?
 -----------
 
-Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/)), but still, it would be better if you could just copy your application and it worked without further action required.
+Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see [mod\_mono](/docs/web/mod_mono/)), but still, it would be better if you could just copy your application and it worked without further action required.
 
 This is what mod\_mono automatic hosting provides: zero configuration for your applications.
 
@@ -103,7 +103,7 @@ will just work.
 ASP.NET MVC and AutoConfiguration
 ---------------------------------
 
-Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions. For simple configuration of Apache [mod\_mono]({{ site.github.url }}/docs/web/mod_mono/), consider using the [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/).
+Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions. For simple configuration of Apache [mod\_mono](/docs/web/mod_mono/), consider using the [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/).
 
 That said, if you absolutely must use AutoConfiguration, you could add the following to your mod\_mono.conf file to set all content for the server to be served as x-asp-net content:
 

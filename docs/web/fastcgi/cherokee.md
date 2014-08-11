@@ -6,7 +6,7 @@ redirect_from:
 
 by Brian Nickel \<[http://kerrick.wordpress.com](http://kerrick.wordpress.com)\>
 
-Information on how to configure the [FastCGI]({{ site.github.url }}/docs/web/fastcgi/) support for the Cherokee server.
+Information on how to configure the [FastCGI](/docs/web/fastcgi/) support for the Cherokee server.
 
 Introduction
 ------------
@@ -21,7 +21,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation]({{ site.github.url }}/docs/web/fastcgi/#importantinformation)" on the main page.
+Before doing anthing else, you should read "[FastCGI\#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
 
 Using Paths [Recommended]
 -------------------------

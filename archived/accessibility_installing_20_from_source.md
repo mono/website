@@ -70,7 +70,7 @@ from [http://mono-a11y.org/releases/2.0/sources/](http://mono-a11y.org/releases/
 Building and Installing
 -----------------------
 
-If you have a [parallel Mono environment]({{ site.github.url }}/Parallel_Mono_Environments "Parallel Mono Environments"), make sure to specify the correct prefix during the *configure* stage.
+If you have a [parallel Mono environment](/Parallel_Mono_Environments "Parallel Mono Environments"), make sure to specify the correct prefix during the *configure* stage.
 
 ### mono-uia-2.0.tar.bz2
 

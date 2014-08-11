@@ -15,33 +15,33 @@ IMPORTANT
 
 The table of contents could be revisited to focus more on actual issues of applications on the Desktop: drag-and-drop, deployment (mime-types, desktop files), internationalization, use of gconf, creating user defined widgets, using OpenGL and Cairo, etc.
 
-A [new TOC]({{ site.github.url }}/Erik_GtkSharp_Toc "Erik GtkSharp Toc") has been created for a re-write of this section.
+A [new TOC](/Erik_GtkSharp_Toc "Erik GtkSharp Toc") has been created for a re-write of this section.
 
 TOC
 ===
 
--   [Hello World]({{ site.github.url }}/GtkSharp:_Hello_World "GtkSharp: Hello World")
--   [Widget Layout and Packing]({{ site.github.url }}/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
-    -   [Packing with Boxes]({{ site.github.url }}/GtkSharp:_Packing_with_Boxes "GtkSharp: Packing with Boxes")
-    -   [Packing with Tables]({{ site.github.url }}/GtkSharp:_Packing_with_Tables "GtkSharp: Packing with Tables")
--   [Widget Overview]({{ site.github.url }}/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview")
-    -   [Widget Hierarchy]({{ site.github.url }}/GtkSharp:_Widget_Hierarchy "GtkSharp: Widget Hierarchy")
-        -   [The Button Widget]({{ site.github.url }}/GtkSharp:_Buttons "GtkSharp: Buttons")
-        -   [Adjustments]({{ site.github.url }}/GtkSharp:_Adjustments "GtkSharp: Adjustments")
-        -   [Range Widgets]({{ site.github.url }}/GtkSharp:_Range_Widgets "GtkSharp: Range Widgets")
-            -   [Scrollbar Widgets]({{ site.github.url }}/GtkSharp:_Scrollbar_Widgets "GtkSharp: Scrollbar Widgets")
-            -   [Scale Widgets]({{ site.github.url }}/GtkSharp:_Scale_Widgets "GtkSharp: Scale Widgets")
+-   [Hello World](/GtkSharp:_Hello_World "GtkSharp: Hello World")
+-   [Widget Layout and Packing](/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
+    -   [Packing with Boxes](/GtkSharp:_Packing_with_Boxes "GtkSharp: Packing with Boxes")
+    -   [Packing with Tables](/GtkSharp:_Packing_with_Tables "GtkSharp: Packing with Tables")
+-   [Widget Overview](/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview")
+    -   [Widget Hierarchy](/GtkSharp:_Widget_Hierarchy "GtkSharp: Widget Hierarchy")
+        -   [The Button Widget](/GtkSharp:_Buttons "GtkSharp: Buttons")
+        -   [Adjustments](/GtkSharp:_Adjustments "GtkSharp: Adjustments")
+        -   [Range Widgets](/GtkSharp:_Range_Widgets "GtkSharp: Range Widgets")
+            -   [Scrollbar Widgets](/GtkSharp:_Scrollbar_Widgets "GtkSharp: Scrollbar Widgets")
+            -   [Scale Widgets](/GtkSharp:_Scale_Widgets "GtkSharp: Scale Widgets")
         -   Miscellaneous Widgets
-            -   [Labels]({{ site.github.url }}/GtkSharp:_Labels "GtkSharp: Labels")
-            -   [Arrows]({{ site.github.url }}/GtkSharp:_Arrows "GtkSharp: Arrows")
-            -   [Tooltips]({{ site.github.url }}/GtkSharp:_Tooltips "GtkSharp: Tooltips")
-            -   [Progress Bars]({{ site.github.url }}/GtkSharp:_Progress_Bars "GtkSharp: Progress Bars")
-            -   [Dialogs]({{ site.github.url }}/GtkSharp:_Dialogs "GtkSharp: Dialogs")
+            -   [Labels](/GtkSharp:_Labels "GtkSharp: Labels")
+            -   [Arrows](/GtkSharp:_Arrows "GtkSharp: Arrows")
+            -   [Tooltips](/GtkSharp:_Tooltips "GtkSharp: Tooltips")
+            -   [Progress Bars](/GtkSharp:_Progress_Bars "GtkSharp: Progress Bars")
+            -   [Dialogs](/GtkSharp:_Dialogs "GtkSharp: Dialogs")
         -   Container Widgets|Container Widgets
-            -   [Fixed Container]({{ site.github.url }}/GtkSharp:_Fixed_Container "GtkSharp: Fixed Container")
-            -   [Layout Container]({{ site.github.url }}/GtkSharp:_Layout_Container "GtkSharp: Layout Container")
-            -   [Frames]({{ site.github.url }}/GtkSharp:_Frames "GtkSharp: Frames")
--   [Notification Icon(System Tray)]({{ site.github.url }}/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+            -   [Fixed Container](/GtkSharp:_Fixed_Container "GtkSharp: Fixed Container")
+            -   [Layout Container](/GtkSharp:_Layout_Container "GtkSharp: Layout Container")
+            -   [Frames](/GtkSharp:_Frames "GtkSharp: Frames")
+-   [Notification Icon(System Tray)](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
 
 Note
 ----

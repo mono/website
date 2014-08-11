@@ -39,7 +39,7 @@ Cons:
 (DEAD) Qt\#
 -----------
 
-[![]({{ site.github.url }}/archived/images/9/91/Mahjongg-0.6-window.png)]({{ site.github.url }}/archived/images/9/91/Mahjongg-0.6-window.png)
+[![](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
 
 QT\# Sample
 

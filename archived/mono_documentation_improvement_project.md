@@ -43,7 +43,7 @@ Cleanup
 
 Here are some suggestions of ways to help clean the wiki up:
 
--   **Go through the [documentation table of contents]({{ site.github.url }}/Start "Start") and find new things to add to it.
+-   **Go through the [documentation table of contents](/Start "Start") and find new things to add to it.
     **
 -   Go through Special:Shortpages and add more content.
 -   Go through Special:Lonelypages, figure out which page(s) should link back to this page, and add the link.
@@ -56,7 +56,7 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as needing cleanup at [NeedsCleanup]({{ site.github.url }}/Category:NeedsCleanup).
+    You can see every page that is marked as needing cleanup at [NeedsCleanup](/Category:NeedsCleanup).
 
 -   If you see a page that looks incomplete, add "****
 
@@ -65,7 +65,7 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as incomplete at [Incomplete]({{ site.github.url }}/Category:Incomplete).
+    You can see every page that is marked as incomplete at [Incomplete](/Category:Incomplete).
 
 -   If you see a page that looks out of date, add "****
 
@@ -74,15 +74,15 @@ Here are some suggestions of ways to help clean the wiki up:
     ```
 
     " to the top.
-    You can see every page that is marked as obsolete at [Obsolete]({{ site.github.url }}/Category:Obsolete).
+    You can see every page that is marked as obsolete at [Obsolete](/Category:Obsolete).
 
--   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ]({{ site.github.url }}/FAQ "FAQ").
+-   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ](/FAQ "FAQ").
 
 In-Progress Tasks & Discussion
 ==============================
 
--   See the [Talk:Mono\_Documentation\_Improvement\_Project]({{ site.github.url }}/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
--   All articles that are currently under construction can be found in the [Sandbox-Category]({{ site.github.url }}/Category:Sandbox)
+-   See the [Talk:Mono\_Documentation\_Improvement\_Project](/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
+-   All articles that are currently under construction can be found in the [Sandbox-Category](/Category:Sandbox)
 
 Writing good Documentation
 ==========================

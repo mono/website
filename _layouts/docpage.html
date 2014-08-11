@@ -9,7 +9,7 @@ layout: base
       {% for crumb in breadcrumbs offset:1 %}
         {% capture url %}{{ url }}/{{ crumb }}{% endcapture %}
         {% assign title = crumb | replace: "-", " " %}
-        <li class="{% if forloop.last %}current{% endif %}">{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ site.github.url }}{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
+        <li class="{% if forloop.last %}current{% endif %}">{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
       {% endfor %}
       <li class="toc right hidden-for-small-only">
         <a id="toc-dropdown-button-inline" class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>

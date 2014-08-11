@@ -147,20 +147,20 @@ redirect_from:
   - /OldReleases/
 ---
 
-This page contains a list of all Mono releases. The latest release can be found [here]({{ site.github.url }}/download).
-Mono version numbers follow a specific policy, more [here]({{ site.github.url }}/docs/about-mono/versioning/).
+This page contains a list of all Mono releases. The latest release can be found [here](/download).
+Mono version numbers follow a specific policy, more [here](/docs/about-mono/versioning/).
 
 ## Mono 3.x
 {% for release in page.mono3xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 2.x
 {% for release in page.mono2xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}
 
 ## Mono 1.x
 {% for release in page.mono1xreleases %}
-  - [Mono {{ release.version }}]({{ site.github.url }}/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
 {% endfor %}

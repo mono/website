@@ -1344,7 +1344,7 @@ The runtime treats SafeHandles specially and will automatically provide marshall
 -   On ref SafeHandles, the outgoing value is ignored (must be zero) and the returned value is turned into a proper SafeHandle.
 -   On structure fields, the SafeHandle's handle is passed.
 
-For the actual implementation details in Mono, see the [SafeHandles]({{ site.github.url }}/docs/advanced/safehandles/) document.
+For the actual implementation details in Mono, see the [SafeHandles](/docs/advanced/safehandles/) document.
 
 Properly Disposing of Resources
 -------------------------------

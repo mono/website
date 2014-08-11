@@ -9,7 +9,7 @@ redirect_from:
 Accessibility: Test Plan WinForms Controls
 ==========================================
 
-[Back to Mono Accessibility]({{ site.github.url }}/Accessibility)
+[Back to Mono Accessibility](/Accessibility)
 
 WinForms Control List
 ---------------------

@@ -10,7 +10,7 @@ BuildSystem/MonoBuildPlanning
 
  Note: this is an obsolete old copy of:
 
-[BuildSystem/MonoBuild]({{ site.github.url }}/BuildSystem/MonoBuild "BuildSystem/MonoBuild")
+[BuildSystem/MonoBuild](/BuildSystem/MonoBuild "BuildSystem/MonoBuild")
 
 <table>
 <col width="100%" />

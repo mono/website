@@ -28,5 +28,5 @@ TODO
 Projects using this package
 ---------------------------
 
-[GtkGLAreaSharp]({{ site.github.url }}/GtkGLAreaSharp "GtkGLAreaSharp")
+[GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp")
 

@@ -54,12 +54,12 @@ Please direct all problems and questions to the [Tao Support](http://sourceforge
 SVN
 ---
 
-You can also get the latest code from SVN via [AnonSVN]({{ site.github.url }}/SourceCodeRepository) or [browse the sources](http://anonsvn.mono-project.com/viewvc/trunk/tao/).
+You can also get the latest code from SVN via [AnonSVN](/SourceCodeRepository) or [browse the sources](http://anonsvn.mono-project.com/viewvc/trunk/tao/).
 
 Tao + autotools
 ---------------
 
-[Tao autotools]({{ site.github.url }}/Tao_autotools "Tao autotools") has been superceeded by the addition of autotools build system generation to [Prebuild]({{ site.github.url }}/Prebuild "Prebuild"). Autotools is one of the build system targets supported by Tao and other Prebuild-based packages.
+[Tao autotools](/Tao_autotools "Tao autotools") has been superceeded by the addition of autotools build system generation to [Prebuild](/Prebuild "Prebuild"). Autotools is one of the build system targets supported by Tao and other Prebuild-based packages.
 
 Building Tao
 ============
@@ -104,7 +104,7 @@ Currently supported are:
 
 Other runtimes have not been tested, but will most likely work. The libraries are also CLS-compliant, they can be used by any .NET language, including both C\# and Visual Basic .NET, amongst others.
 
-Use our [Anonymous SVN repository]({{ site.github.url }}/SourceCodeRepository) to download it. The module name is \`tao'.
+Use our [Anonymous SVN repository](/SourceCodeRepository) to download it. The module name is \`tao'.
 
 You can browse the source at http://anonsvn.mono-project.com/viewcvs/trunk/tao/
 
@@ -121,7 +121,7 @@ Developers/Maintainers
 Plans
 =====
 
--   [Future Plans]({{ site.github.url }}/Tao:FuturePlans "Tao:FuturePlans") -- notes about upcoming changes to Tao
+-   [Future Plans](/Tao:FuturePlans "Tao:FuturePlans") -- notes about upcoming changes to Tao
 
 Future Plans
 ------------

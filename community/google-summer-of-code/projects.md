@@ -5,7 +5,7 @@ redirect_from:
   - /GSoC/
 ---
 
-This is the Mono Project's project ideas page. For general information and rules about participating in [Google Summer of Code (GSoC)](http://code.google.com/soc/) for the Mono Project, please see our [overview page]({{ site.github.url }}/community/google-summer-of-code/).
+This is the Mono Project's project ideas page. For general information and rules about participating in [Google Summer of Code (GSoC)](http://code.google.com/soc/) for the Mono Project, please see our [overview page](/community/google-summer-of-code/).
 
 This page lists some ideas for Mono GSoC projects that students can apply for. Additionally, we encourage students to submit their own interesting Mono-related project proposals. In past years, roughly 20% of the accepted proposals were original ideas from students instead of from our suggestions. You can submit more than one proposal, so you can submit your own ideas as well as apply for one from this list - but only one can be chosen, of course!
 
@@ -282,5 +282,5 @@ Mailing Lists
 
 [http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list) Discussion on the development/implementation of MonoDevelop.
 
-A complete breakdown of all Mono mailing lists is available at [Mailing Lists]({{ site.github.url }}/community/help/mailing-lists/).
+A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
 

@@ -23,7 +23,7 @@ Some tools created and maintained by the Mono community to facilitate writing an
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Mono Migration Analyzer (MoMA)</strong><br /> Homepage: <a href="{{ site.github.url }}/MoMA" title="MoMA">MoMA</a> <br /><br /> MoMA is a tool that will scan your application and report any .Net features used that Mono does not currently support. Also, it will report any places where native code is invoked, which may not be portable across platforms.</p></td>
+<td align="left"><p><strong>Mono Migration Analyzer (MoMA)</strong><br /> Homepage: <a href="/MoMA" title="MoMA">MoMA</a> <br /><br /> MoMA is a tool that will scan your application and report any .Net features used that Mono does not currently support. Also, it will report any places where native code is invoked, which may not be portable across platforms.</p></td>
 </tr>
 </tbody>
 </table>
@@ -32,7 +32,7 @@ Some tools created and maintained by the Mono community to facilitate writing an
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Gendarme</strong><br /> Homepage: <a href="{{ site.github.url }}/Gendarme" title="Gendarme">Gendarme</a> <br /><br /> Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.</p></td>
+<td align="left"><p><strong>Gendarme</strong><br /> Homepage: <a href="/Gendarme" title="Gendarme">Gendarme</a> <br /><br /> Gendarme is a extensible rule-based tool to find problems in .NET applications and libraries. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.</p></td>
 </tr>
 </tbody>
 </table>

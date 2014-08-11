@@ -13,7 +13,7 @@ This documentation contains configuration instructions for serveral web servers 
 
 ### How Does It Work?
 
-[![Request.png]({{ site.github.url }}/archived/images/3/38/Request.png)]({{ site.github.url }}/archived/images/3/38/Request.png)
+[![Request.png](/archived/images/3/38/Request.png)](/archived/images/3/38/Request.png)
 
 FastCGI is an interprocess communcation mechanism available
 
@@ -31,7 +31,7 @@ in many web servers. A web server will receive and respond to a request in the f
 Installation Basics
 -------------------
 
-Download and install the "xsp" package from [our downloads page]({{ site.github.url }}/download/) or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
+Download and install the "xsp" package from [our downloads page](/download/) or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
 
 If you obtained packages, you already have everything you need, otherwise you need to use the usual Linux source code configuration setup:
 
@@ -46,11 +46,11 @@ $ make install
 
 To install the FastCGI on Unix, follow the instructions on the FastCGI Linux page. Once you have installed the Mono FastCGI support, you have to configure your web server to use it, detailed instructions are available for the following servers:
 
--   [Abyss Web Server]({{ site.github.url }}/docs/web/fastcgi/abyss/)
--   [Cherokee HTTP Server]({{ site.github.url }}/docs/web/fastcgi/cherokee/)
--   [Lighttpd]({{ site.github.url }}/docs/web/fastcgi/lighttpd/)
--   [Nginx]({{ site.github.url }}/docs/web/fastcgi/nginx/)
--   [CGI]({{ site.github.url }}/archived/cgi "CGI") via cgi-fcgi
+-   [Abyss Web Server](/docs/web/fastcgi/abyss/)
+-   [Cherokee HTTP Server](/docs/web/fastcgi/cherokee/)
+-   [Lighttpd](/docs/web/fastcgi/lighttpd/)
+-   [Nginx](/docs/web/fastcgi/nginx/)
+-   [CGI](/archived/cgi "CGI") via cgi-fcgi
 
 The following servers support FastCGI, but we currently do not have per-server configuration information:
 

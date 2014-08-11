@@ -63,7 +63,7 @@ Submitting Review Requests
 
 Please place the "post-review" script from uia2atk/tools somewhere in your path. This script has [excellent documentation](http://review-board.org/docs/manual/dev/users/tools/post-review/) for its many features. The simplest use is to call it from within your SVN checkout or git repository.
 
-For Subversion, post-review will post the equivalent of \`svn diff\`. For git (as described in [our git workflow instructions]({{ site.github.url }}/Accessibility:_GitSVN:_Workflow#get-feedback-with-reviewboard "Accessibility: GitSVN: Workflow")), it will post the diff between everything you've committed on your feature branch, and the source SVN branch (trunk, 1.0, etc).
+For Subversion, post-review will post the equivalent of \`svn diff\`. For git (as described in [our git workflow instructions](/Accessibility:_GitSVN:_Workflow#get-feedback-with-reviewboard "Accessibility: GitSVN: Workflow")), it will post the diff between everything you've committed on your feature branch, and the source SVN branch (trunk, 1.0, etc).
 
 The first time you run \`post-review\`, you will be prompted for your Reviewboard username and password, but your credentials will be cached after that.
 
