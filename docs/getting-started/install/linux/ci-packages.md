@@ -9,7 +9,7 @@ The Mono Project hosts a [public Jenkins instance](http://jenkins.mono-project.c
 Requirements
 ------------
 
-We are building our packages twice, in the most cross-release-compatible way we can manage.
+We are building our packages twice, in the most cross-release-compatible way we can manage, for **x86-64** processors only at this point in time.
 
 For **Debian-derived** distributions (any distribution which uses .deb files), you need the **GNU C library 2.13** or above - this should cover Debian 7+, Ubuntu 11.04+, Mint 11+, Elementary 0.2+, and a huge number of other distributions.
 
