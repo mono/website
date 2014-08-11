@@ -127,6 +127,11 @@ footer h6 a {
   .top-bar .name h1 a  {
     padding: 0 5px;
   }
+  
+  #mono-download.tabs dd > a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 /* ### ### */
 
