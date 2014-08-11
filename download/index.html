@@ -2,7 +2,7 @@
 layout: base
 title: Download
 navgroup: download
-latestmono: 3.6.0
+latestmono: 3.4.0
 redirect_from:
   - /Downloads/
   - /Download/
@@ -35,17 +35,18 @@ redirect_from:
         <p>Please refer to the <a href="{{ site.github.url }}/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <h5>Xamarin packages</h5>
         <p>
+          {% include note.html type="alert" message="We're still working on getting these packages released, in the meantime you can use the Mono version that is available from your distribution's package manager." %}
           <span>These packages are built, tested and distributed by Xamarin. Use these if you want to use a stable, official version of Mono.</span>
           <ul>
-            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/debian/">Debian</a></li>
-            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/ubuntu/">Ubuntu</a></li>
-            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/centos/">CentOS</a></li>
-            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/opensuse/">OpenSUSE</a></li>
+            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/debian/"></a>Debian</li>
+            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/ubuntu/"></a>Ubuntu</li>
+            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/centos/"></a>CentOS</li>
+            <li><a href="{{ site.github.url }}/docs/getting-started/install/linux/opensuse/"></a>OpenSUSE</li>
           </ul>
         </p>
         <h5>Continuous Integration packages</h5>
         <p>
-          <span>Every commit to our repository automatically builds distribution packages. Use these if you want the bleeding edge Mono version and don't care about stability.</span>
+          <span>Every commit to our repository automatically builds distribution packages. Use these if you want a bleeding edge Mono version and don't care about stability.</span>
           <div>
             <a href="{{ site.github.url }}/docs/getting-started/install/linux/ci-packages/"><i class="fa fa-book"></i> Learn more</a>
           </div>
@@ -61,6 +62,7 @@ redirect_from:
       <div class="panel content" id="download-win">
         <h4>Mono for Windows is available as a Windows Installer (.exe)</h4>
         <p>Please refer to the <a href="{{ site.github.url }}/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+        {% include note.html type="alert" message="Currently the latest Mono for Windows version is **3.2.3**. We're working on getting a more recent version released." %}
         <div>
           <a href="http://download.mono-project.com/archive/3.2.3/windows-installer/mono-3.2.3-gtksharp-2.12.11-win32-0.exe" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
         </div>
