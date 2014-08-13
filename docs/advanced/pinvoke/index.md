@@ -159,7 +159,12 @@ Calling convention can be specified in C code by using the `__stdcall` and `__cd
 
 Does having the default CallingConvention vary between platforms cause portability problems? Yes. All the more reason to write as much code as possible as managed code, avoiding the whole P/Invoke/marshaling conundrum in the first place.
 
-If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function, and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses a known calling convention. If you use option (2), you'll need to set the [DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
+If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function,
+and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses
+a known calling convention. If you use option (2), you'll need to set the
+[DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint)
+field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's
+binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
 
 1.  make your .NET assembly platform specific (you'll need a different assembly for each different platform);
 2.  require updating the .NET assembly every time you change C++ compilers (as the C++ name mangling scheme varies by compiler and can -- and frequently will -- change); and
@@ -223,7 +228,9 @@ The complexity is due to the marshaling. For [simple types](#blittable-types), s
 
 String types introduce additional complexity, as you need to specify the form of string conversion. The runtime stores strings as UTF-16-encoded strings, and these will likely need to be marshaled to a more appropriate form (ANSI strings, UTF-8 encoded strings, etc.). Strings get some special support.
 
-Default marshaling behavior is controlled through the [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute and [MarshalAs](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.MarshalAsAttribute attributes.
+Default marshaling behavior is controlled through the
+[DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) and
+[MarshalAs](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.MarshalAsAttribute) attributes.
 
 Memory Boundaries
 -----------------
@@ -387,7 +394,13 @@ Perhaps in the future the [CharSet](http://docs.go-mono.com/index.aspx?link=T:Sy
 
 ### More Control
 
-Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more control? You would need more control if a string is a member of a structure, or if the function uses multiple different types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the [Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value property (which is set in the constructor) to a value from the [UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration. For example:
+Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more
+control? You would need more control if a string is a member of a structure, or if the function uses multiple different
+types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the
+[Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value) property
+(which is set in the constructor) to a value from the
+[UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration.
+For example:
 
 ``` csharp
  [DllImport ("does-not-exist")]
