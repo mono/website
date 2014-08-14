@@ -24,11 +24,11 @@ After committing and pushing your changes, you can send a pull request from gith
 
 If you want to work with a branch instead of HEAD (master), you still need to clone the repository in the same way as explained in the previous section, but after that you would switch to it this way:
 
-      $ (cd mono; git checkout mono-2-6) 
+      $ (cd mono; git checkout mono-2-6)
 
 Beware! If you wanted to work from a branch in your fork of the mono repository, you should do:
 
-      $ (cd mono; git checkout -t origin/mono-2-6) 
+      $ (cd mono; git checkout -t origin/mono-2-6)
 
 ### Updating an existing checkout
 
