@@ -10,7 +10,7 @@ redirect_from:
 Introduction
 ------------
 
-The Mono C\# compiler is considered feature complete for C\# 1.0, C\# 2.0, C\# 3.0 and C\# 4.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C\# 5.0 is distributed with Mono 2.11 or when building Mono from our trunk source code release.
+The Mono C\# compiler is considered feature complete for C\# 1.0, C\# 2.0, C\# 3.0, C\# 4.0 and C# 5.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C\# 6.0 is distributed with Mono 3.8 or when building Mono from our trunk source code release.
 
 Historically, various version of same compiler existed.
 
@@ -18,7 +18,7 @@ Historically, various version of same compiler existed.
 -   **smcs**: compiler to target the 2.1 mscorlib, to build [Moonlight](/docs/web/moonlight/) applications.
 -   **dmcs**: compiler to target the 4.0 mscorlib.
 
-Starting with Mono version 2.11 a new unified compiler **mcs** is available. It replaces all previous runtime specific compilers (gmcs, dmcs, smcs). They still exist (as scripts only) to ease the migration path to mcs but we recommend to use mcs.
+Starting with Mono version 2.11 a new unified compiler **mcs** is available. It replaces all previous runtime specific compilers (gmcs, dmcs, smcs). They still exist (as scripts only) to ease the migration path to mcs but we strongly recommend to use mcs.
 
 Bug reports or any compiler issue can be [filed on our bug tracking system.](/community/bugs/)
 
@@ -79,6 +79,15 @@ All C\# 5.0 feature are supported including:
 -   Asynchronous programming support
 -   Caller info attributes
 
+Many of upcomming C\# 6.0 features are supported including:
+
+-   Primary constructors
+-   Auto-property initializers
+-   Exception filters
+-   Expression bodied members
+-   Null propagating operator
+-   Nameof operator
+
 If you want to limit the mcs compiler to be a strict 2.0 compiler, use the -langversion:ISO-2 flag, further options are available for each language version.
 
 ### Specification
@@ -109,7 +118,7 @@ And then open the Visual Studio solution on mcs/tools/csharp, this will build th
 
 #### Running MCS
 
-MCS is written in C\# and uses heavily the .NET APIs (in particular it uses System.Reflection and System.Reflection.Emit). MCS runs on Linux with the Mono runtime and on Windows with both the .NET runtime and the Mono runtime.
+MCS is written in C\# and uses heavily the .NET APIs. MCS runs on Linux with the Mono runtime and on Windows with both the .NET runtime and the Mono runtime.
 
 #### Reporting Bugs
 
