@@ -10,8 +10,8 @@ There were extensive API removals and changes in Gtk3 which required breaks in t
 
 The Gtk2 mechanism for size negotiation was the OnSizeRequested virtual method and associated event. In 3.0, size negotiation got more complicated to support Height for Width layout. One easy transformation to get code compiling is to take your existing OnSizeRequested implementation and delegate to it from new overloads of:
 
-      protected virtual void OnGetPreferredHeight (out in min_height, out int natural_height)
-      protected virtual void OnGetPreferredWidth (out in min_width, out int natural_width)
+      protected virtual void OnGetPreferredHeight (out int min_height, out int natural_height)
+      protected virtual void OnGetPreferredWidth (out int min_width, out int natural_width)
 
 ### Drawing
 
