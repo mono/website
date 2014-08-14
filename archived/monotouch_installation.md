@@ -44,7 +44,7 @@ Make sure that you can launch the iPhone simulator before continuing to the next
 Mono Installation
 =================
 
-Download and install the latest version of Mono 2.4 for OSX from [the Mono downloads page](http://www.go-mono.com/mono-downloads).
+Download and install the latest version of Mono 2.4 for OSX from [the Mono downloads page](/download/).
 
 MonoTouch SDK Installation
 ==========================

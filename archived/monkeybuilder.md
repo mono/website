@@ -15,7 +15,7 @@ Requirements:
 -   [MonkeyBuilder binary pack](http://jpobst.com/temp/MonkeyBuilder.zip)
 -   [.Net Framework 3.5 SP1](http://www.microsoft.com/downloads/details.aspx?FamilyID=AB99342F-5D1A-413D-8319-81DA479AB0D7&displaylang=en)
 -   [Visual C++ 2008 Express](http://www.microsoft.com/express/download/#webInstall) (or Visual Studio 2008 with Visual C++ installed)
--   [Mono 2.6](http://www.go-mono.com/mono-downloads/download.html)
+-   [Mono 2.6](/download/)
 
 <table>
 <col width="100%" />

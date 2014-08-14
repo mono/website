@@ -33,7 +33,7 @@ Some other tools that are nice:
 
 At this point, you can do a [VisualStudio build](/docs/compiling-mono/windows/compiling-with-visualstudio/) or you can continue reading the instructions for a cygwin build.
 
-Download the Mono source code from the [released tarballs](http://www.go-mono.com/mono-downloads/download.html) or [GitHub](https://github.com/mono/mono).
+Download the Mono source code from the [released tarballs](/download/) or [GitHub](https://github.com/mono/mono).
 
 If you download the tarball, extract it with:
 

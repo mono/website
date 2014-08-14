@@ -22,7 +22,7 @@ Getting Started
 
 ### Getting MonoMac
 
-To develop applications with MonoMac, you will need to install the [Mono Runtime](http://www.go-mono.com/mono-downloads/download.html) and the [MonoDevelop IDE](http://www.monodevelop.com).
+To develop applications with MonoMac, you will need to install the [Mono Runtime](/download/) and the [MonoDevelop IDE](http://www.monodevelop.com).
 
 Since MonoMac is currently under development, you must install the add-in separately from MonoDevelop, this is how you install it:
 
