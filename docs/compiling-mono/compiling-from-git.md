@@ -14,7 +14,7 @@ If you are checking out Mono from Git for the first time, you can use anonymous 
 
       $ git clone git://github.com/mono/mono.git
 
-If you are interested in contributing back submitting changes, create an account on github, add a public key (the content of your \~/.ssh/id\_rsa.pub with any title) and fork the relevant project, and clone it:
+If you are interested in contributing back submitting changes, create an account on github, add a public key (the content of your ~/.ssh/id\_rsa.pub with any title) and fork the relevant project, and clone it:
 
      $ git clone git@github.com:username/mono.git
 
