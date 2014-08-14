@@ -22,4 +22,4 @@ The Mono team has been busy working on Mono, and we have done seven releases sin
 * LINQ optimizations
 * Many fixes to our SGen concurrent collector
 
-[New Mono Builds](http://www.go-mono.com/mono-downloads/download.html "Mono Download"), [Release Notes](http://www.mono-project.com/Release_Notes_Mono_3.0#New_in_Mono_3.0.12 "Mono 3.0 release notes.")
+[New Mono Builds](/download/), [Release Notes](/docs/about-mono/releases/3.0.12/)
