@@ -355,7 +355,7 @@ Many types require minimal copying into native memory. Blittable types are types
 Strings
 -------
 
-(http://docs.go-mono.com/index.aspx?link=T:System.String String]s are special. String marshaling behavior is also highly platform dependent.
+[String](http://docs.go-mono.com/index.aspx?link=T:System.String)s are special. String marshaling behavior is also highly platform dependent.
 
 String marshaling for a function call can be specified in the function declaration with the **DllImport** attribute, by setting the [CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.CharSet) field. The default value for this field is [CharSet.Ansi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Ansi) . The [CharSet.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Auto) value implies "magic."
 
