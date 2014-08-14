@@ -246,10 +246,6 @@ Try: mcs -pkg:gtk-sharp-2.0 HelloWorld.cs
 
 See [Gtk\# Beginners Guide](/docs/gui/gtksharp/beginners-guide/) for more details.
 
-**Is there any way how to connect DataAdapter to some Gtk\# controls?**
-
-There is a sample file called "DbClient" in gtk-sharp/samples that you might to look at. It is a sample program in Gtk\# that adds/updates/deletes information on a PostgreSQL database. When we have the new table/tree widgets, I am sure someone would write an adapter for System.Data (in Gtk2 the tree/list widgets are written using a view/model, so you only need to write a model that maps to the database). You can have a look at gtk-sharp/sample/DbClient, where there is a Gtk\# application that uses System.Data. It does not use DataAdapter, but DataReader though.
-
 **Do you have a comparison chart about the various toolkit offerings?**
 
 See [Gui Toolkits](/docs/gui/gui-toolkits/).
