@@ -14,7 +14,7 @@ If you are checking out Mono from Git for the first time, you can use anonymous 
 
       $ git clone git://github.com/mono/mono.git
 
-If you are interested in contributing back submitting changes, create an account on github, add a public key (the content of your \~/.ssh/id\_rsa.pub with any title) and fork the relevant project, and clone it:
+If you are interested in contributing back submitting changes, create an account on github, add a public key (the content of your ~/.ssh/id\_rsa.pub with any title) and fork the relevant project, and clone it:
 
      $ git clone git@github.com:username/mono.git
 
@@ -24,11 +24,11 @@ After committing and pushing your changes, you can send a pull request from gith
 
 If you want to work with a branch instead of HEAD (master), you still need to clone the repository in the same way as explained in the previous section, but after that you would switch to it this way:
 
-      $ (cd mono; git checkout mono-2-6) 
+      $ (cd mono; git checkout mono-2-6)
 
 Beware! If you wanted to work from a branch in your fork of the mono repository, you should do:
 
-      $ (cd mono; git checkout -t origin/mono-2-6) 
+      $ (cd mono; git checkout -t origin/mono-2-6)
 
 ### Updating an existing checkout
 
