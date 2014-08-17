@@ -51,56 +51,58 @@ Usage
 
 Search your package manager for **mono-snapshot** to find a number of possible packages to install:
 
-    [directhex@centossy ~]$ yum search mono-snapshot
-    Loaded plugins: fastestmirror
-    Loading mirror speeds from cached hostfile
-     * base: mirror.econdc.com
-     * extras: mirrors.clouvider.net
-     * updates: mirrors.clouvider.net
-    ========================== N/S matched: mono-snapshot ==========================
-    mono-snapshot-20140807112602.x86_64 : Mono runtime snapshot - runtime (git
-                                        : commit 76c34a1)
-    mono-snapshot-20140807112602-assemblies.noarch : Mono runtime snapshot -
-                                                   : assemblies (git commit 76c34a1)
-    mono-snapshot-20140807155904.x86_64 : Mono runtime snapshot - runtime (git
-                                        : commit 766e8c3)
-    mono-snapshot-20140807155904-assemblies.noarch : Mono runtime snapshot -
-                                                   : assemblies (git commit 766e8c3)
-    mono-snapshot-common.noarch : Common helper tools for Mono snapshot packages
-    mono-snapshot-latest.noarch : Mono runtime snapshot - latest version metapackage
+``` bash
+[directhex@centossy ~]$ yum search mono-snapshot
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.econdc.com
+ * extras: mirrors.clouvider.net
+ * updates: mirrors.clouvider.net
+========================== N/S matched: mono-snapshot ==========================
+mono-snapshot-20140807112602.x86_64 : Mono runtime snapshot - runtime (git commit 76c34a1)
+mono-snapshot-20140807112602-assemblies.noarch : Mono runtime snapshot - assemblies (git commit 76c34a1)
+mono-snapshot-20140807155904.x86_64 : Mono runtime snapshot - runtime (git commit 766e8c3)
+mono-snapshot-20140807155904-assemblies.noarch : Mono runtime snapshot - assemblies (git commit 766e8c3)
+mono-snapshot-common.noarch : Common helper tools for Mono snapshot packages
+mono-snapshot-latest.noarch : Mono runtime snapshot - latest version metapackage
 
-      Name and summary matches only, use "search all" for everything.
+  Name and summary matches only, use "search all" for everything.
+```
 
 Install the **mono-snapshot-XXXXXXXXX** package for a specific version, or **mono-snapshot-latest** to install whatever the latest available version is. With **mono-snapshot-latest**, your package manager will keep updating you to the latest available version whenever it runs.
 
 Whenever you install any snapshot package, the **`mono-snapshot`** utility will be installed alongside it. Run **`mono-snapshot`** to see which snapshot packages are available and installed:
 
-    [directhex@centossy ~]$ mono-snapshot
-    This script will help you to set up your environment to use a
-    snapshot package of Mono. To use it, run:
+``` bash
+[directhex@centossy ~]$ mono-snapshot
+This script will help you to set up your environment to use a
+snapshot package of Mono. To use it, run:
 
-        . mono-snapshot APP/VER
+	. mono-snapshot APP/VER
 
-    You have the following possible combinations of APP/VER:
+You have the following possible combinations of APP/VER:
 
-        mono/20140807112602
-        mono/20140807155904
+	mono/20140807112602
+	mono/20140807155904
 
-    Calling APP without specifying VER will load the latest version
+Calling APP without specifying VER will load the latest version
+```
 
 You can then configure your environment to use the desired version by calling **`. mono-snapshot APP/VER`** - for example, **`. mono-snapshot mono/20140807112602`** (or simply **`. mono-snapshot mono`**). Please note the leading "**`. `**":
 
-    [directhex@centossy ~]$ . mono-snapshot mono
-    [mono-20140807155904][directhex@centossy ~]$ mono --version
-    Mono JIT compiler version 3.8.1 (tarball Fri Aug  8 05:39:07 EDT 2014)
-    Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
-        TLS:           __thread
-        SIGSEGV:       altstack
-        Notifications: epoll
-        Architecture:  amd64
-        Disabled:      none
-        Misc:          softdebug 
-        LLVM:          supported, not enabled.
-        GC:            sgen
+``` bash
+[directhex@centossy ~]$ . mono-snapshot mono
+[mono-20140807155904][directhex@centossy ~]$ mono --version
+Mono JIT compiler version 3.8.1 (tarball Fri Aug  8 05:39:07 EDT 2014)
+Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
+	TLS:           __thread
+	SIGSEGV:       altstack
+	Notifications: epoll
+	Architecture:  amd64
+	Disabled:      none
+	Misc:          softdebug 
+	LLVM:          supported, not enabled.
+	GC:            sgen
+```
 
 Note: On Debian-based distributions, any distribution-provided Mono libraries (such as GTK\#) are automatically installed into your mono-snapshot GAC and are available for use. This is not automatic on Red Hat-based distributions.
