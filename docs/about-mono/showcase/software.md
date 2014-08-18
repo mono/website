@@ -42,7 +42,7 @@ Commercial Applications
 -   [SwfDotNet](http://www.swfdotnet.com/) a library to produce flash movies.
 -   [imeem](http://www.imeem.com/) is a social networking software that uses Mono on its servers and in its Mac clients.
 -   [PNUnit](http://pnunit.codicesoftware.com/opdownloads/oppnunit.aspx) PNUnit is an extension to the NUnit framework built by CodiceSoftware
--   [VistaDB](http://www.vistadb.net/) an embeddable database.
+-   [VistaDB](http://www.gibraltarsoftware.com/vistadb) an embeddable database.
 -   [OpenPGP BlackBox](http://www.eldos.com/sbb/desc-pgp2.php) interfaces for managing a PGP infrastructure.
 -   [Artisteer 2.2 beta](http://www.artisteer.com/) a tool to quickly create appealing Web design now is now powered by Mono starting with release 2.2 Beta.
 
@@ -50,7 +50,7 @@ Commercial and Open Source Applications
 ---------------------------------------
 
 -   [MapGuide's](http://mapguide.osgeo.org/) [Maestro](http://trac.osgeo.org/mapguide/wiki/maestro/Downloads) an map authoring tool for MapGuide Open Source.
--   [Banshee](http://banshee-project.org/index.php/Main_Page) (formely known as Sonance), a great application for music management and playback on Gnome.
+-   [Banshee](http://banshee.fm/) (formely known as Sonance), a great application for music management and playback on Gnome.
 -   [Beagle](http://www.gnome.org/projects/beagle) is a desktop search tool.
 -   [F-spot](http://www.gnome.org/projects/f-spot/) is a convenient photo management program.
 -   [iFolder 3](http://www.ifolder.com/) is a simple solution to sharing files and folders by using a simple peer-to-peer fashion or Novell's groupware server products.
@@ -74,7 +74,7 @@ Open Source applications
 -   [Imendio Blam!](http://www.imendio.com/projects/blam/) is a rss-news aggregator especialy good for reading [planet](http://planetplanet.org/)-feeds like [Planet Gnome](http://planet.gnome.org/).
 -   [Keepass](http://keepass.info/help/v2/setup.html#mono) is a cross-platform password manager.
 -   [MindFire](http://www.icebreaker.net/mindfire/) is a cross-platform ebook reader designed to facilitate speed reading.
--   [Monodevelop](http://monodevelop.org/) is a port of Sharpdevelop to Mono and gtk\#. The goal for monodevelop is to be en IDE for creating Mono applications.
+-   [MonoDevelop](http://monodevelop.org/) is a port of SharpDevelop to Mono and gtk\#. The goal for MonoDevelop is to be an IDE for creating Mono applications.
 -   [MonoUML](http://www.monouml.org/) is a CASE tool. Aims to be the most advanced CASE tool for mono developers.
 -   [Muine](http://muine.gooeylinux.org/) is a music player with a cool and inovative user interface developed by Jorn Baayen, founder of Rhythmbox.
 -   [OpenVPN-Admin](http://sourceforge.net/projects/openvpn-admin) is a GUI client for [OpenVPN](http://openvpn.net/) written with Gtk\#.
