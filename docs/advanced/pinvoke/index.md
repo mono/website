@@ -1013,8 +1013,6 @@ TODO: finish.
 
 ### Marshaling char\*\*
 
-Note: The original howto can be found here: [http://hisham.cc/files/howto/marshalling\_strings/](http://hisham.cc/files/howto/marshalling_strings/)
-
 The key in the following tutorial is System.Runtime.InteropServices, where we can find the Marshal class. That class is very useful because it bridges created managed objects and unmanaged ones. Its functionalities are very similar to blocks, unsafe, and more. For example, let's say that all pointer types in .NET are saved in an instance of the type IntPtr. With the Marshal class, we can perform any operation like adding a determined number of bytes in order to point to other objects, and converting things that are there in a structure or a chain (other thing is if in that memory direction is something with sense or not).
 
 Using this piece of code, we can see how to put data into an unmanaged structure through a pointer obtained from a function or an external public structure of a native library.
