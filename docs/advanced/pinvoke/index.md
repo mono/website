@@ -1113,7 +1113,7 @@ The fact that Mono is open-source helped understand that MonoUnix is merely an e
      }
 ```
 
-    After the following step, the final class is completely portable:
+After the following step, the final class is completely portable:
 
 ``` csharp
  public class EcoreEventDndEnter
