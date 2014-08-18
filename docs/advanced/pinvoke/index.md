@@ -357,7 +357,7 @@ Strings
 
 [String](http://docs.go-mono.com/index.aspx?link=T:System.String)s are special. String marshaling behavior is also highly platform dependent.
 
-String marshaling for a function call can be specified in the function declaration with the **DllImport** attribute, by setting the [CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.CharSet) field. The default value for this field is [CharSet.Ansi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Ansi) . The [CharSet.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Auto) value implies "magic."
+String marshaling for a function call can be specified in the function declaration with the **DllImport** attribute, by setting the [CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.CharSet) field. The default value for this field is [CharSet.Ansi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Ansi). The [CharSet.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CharSet.Auto) value implies "magic."
 
 Some background. The Microsoft Win32 API supports two forms of strings: "ANSI" strings, the native character set, such as ASCII, ISO-8859-1, or a Double Byte Character Set such as Shift-JIS; and Unicode strings, originally UCS-2, and now UTF-16. Windows supports these string formats by appending an "A" for Ansi string APIs and a "W" ("wide") for Unicode string APIs.
 
@@ -696,7 +696,7 @@ Furthermore, the default string marshaling is the [platform default](#more-contr
 
 The [System.Boolean](http://docs.go-mono.com/index.aspx?link=T:System.Boolean) (**bool** in C\#) type is special. (FUBAR might be more appropriate.) A `bool` within a structure is marshaled as an `int` (a 4-byte integer), with 0 being `false `and non-zero being `true`; see [UnmanagedType.Bool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.Bool) . A `bool` passed as an argument to a function is marshaled as a `short` (a 2-byte integer), with 0 being `false` and -1 being `true` (as all bits are set); see [UnmanagedType.VariantBool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.VariantBool) .
 
-You can always explicitly specify the marshaling to use by using the **MarshalAsAttribute** on the boolean member, but there are only three legal UnmanagedType values: **UnmanagedType.Bool**, **UnmanagedType.VariantBool**, and [UnmanagedType.U1](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.U1). **UnmanagedType.U1** , the only un-discussed type, is a 1-byte integer where 1 represents `true` and 0 represents `false`.
+You can always explicitly specify the marshaling to use by using the **MarshalAsAttribute** on the boolean member, but there are only three legal UnmanagedType values: **UnmanagedType.Bool**, **UnmanagedType.VariantBool** and [UnmanagedType.U1](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.U1). **UnmanagedType.U1**, the only un-discussed type, is a 1-byte integer where 1 represents `true` and 0 represents `false`.
 
 If you need to marshal as another data type, you should overload the method accepting the boolean parameter, and manually convert the boolean to your desired type:
 
@@ -801,7 +801,7 @@ Fixed array syntax is still "unsafe", and requires elevated privilege to execute
 
 #### Real World Experience
 
-This might be of use. From David Jesk ( [http://www.chat.net/\~jeske/](http://www.chat.net/~jeske/) ):
+This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.chat.net/~jeske/)):
 
 > This time I have some PInvoke information to share, so that when someone else runs into this issue they can see what I've done. In my ClearSilver (www.clearsilver.net, an HTML template system) C\# wrapper, I wanted to access this C-struct:
 >
@@ -927,7 +927,7 @@ See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft
 
 ### Marshaling Pointers
 
-Didn't we start using a managed execution environment to *avoid*pointers? But I digress...
+Didn't we start using a managed execution environment to *avoid* pointers? But I digress...
 
 Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#avoiding-marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [System.IntPtr](http://docs.go-mono.com/index.aspx?link=T:System.IntPtr) or [System.UIntPtr](http://docs.go-mono.com/index.aspx?link=T:System.UIntPtr) , and the "unsafe" way, by using `unsafe` code and pointers.
 
@@ -1276,11 +1276,11 @@ Here is an example adapted from Chris Brumme's blog:
  }
 ```
 
-Consider this: `Other.work `invokes `C.m `, which invokes the unmanaged code `C.OperateOnHandle `. Note that `Other.work `doesn't use `c `anymore, so `c `is eligible to be collected, and is placed on the GC finalization queue.
+Consider this: `Other.work `invokes `C.m`, which invokes the unmanaged code `C.OperateOnHandle`. Note that `Other.work `doesn't use `c` anymore, so `c` is eligible to be collected, and is placed on the GC finalization queue.
 
-This would normally be reasonable, except for the interplay with unmanaged code. The unmanaged code `C.OperateOnHandle `is still using a member held by the instance `c `, but the GC doesn't -- and *can't*-- know this.
+This would normally be reasonable, except for the interplay with unmanaged code. The unmanaged code `C.OperateOnHandle `is still using a member held by the instance `c`, but the GC doesn't -- and *can't* -- know this.
 
-This introduces the possibility that, although unlikely, `C.DeleteHandle `will be invoked (from the GC finalization thread) *while* `C.OperateOnHandle `is still operating.
+This introduces the possibility that, although unlikely, `C.DeleteHandle` will be invoked (from the GC finalization thread) *while* `C.OperateOnHandle` is still operating.
 
 It's fair to assume that the unmanaged code won't appreciate this. It's fair to assume that this could cause major problems for the process, including a segmentation fault.
 
@@ -1288,7 +1288,7 @@ In fact, a bug very similar to this exists in .NET v1.0, in one of the Registry 
 
 How do you avoid this problem? Don't use raw IntPtrs. With the IntPtr being used, the GC has no way of knowing that the class still needs to hang around. To avoid the bug, we avoid IntPtrs.
 
-Instead of using IntPtr, we use [HandleRef](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.HandleRef) . This is a structure which holds both a reference to the containing class, as well as the pointer value.
+Instead of using IntPtr, we use [HandleRef](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.HandleRef). This is a structure which holds both a reference to the containing class, as well as the pointer value.
 
 Next, instead of having the P/Invoke code accept IntPtr parameters, the P/Invoke code accepts HandleRefs. HandleRefs are special to the runtime and GC system, and during a marshal operation they "collapse" into an IntPtr.
 
@@ -1535,7 +1535,7 @@ Yes, the P/Invoke specification (or lack thereof) is a mess. It was done by peop
 Thanks
 ======
 
-Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html](http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html) .
+Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html](http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html).
 
 Thanks also to Paolo Molaro, Bernie Solomon, and Marcus for reviews and comments.
 
