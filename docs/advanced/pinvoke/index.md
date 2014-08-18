@@ -965,7 +965,7 @@ public static ICustomMarshaler GetInstance (string s);
     -   The [MarshalTypeRef](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalTypeRef) or [MarshalType](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType) fields.
     -   (Optionally) The [MarshalCookie](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.MarshalCookie) field. This string is passed to **GetInstance**.
 
-An example custom marshaler can be found in the **Mono.Unix.Native.FileNameMarshaler** ([FileNameMarshaler.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/Mono.Posix/Mono.Unix.Native/FileNameMarshaler.cs)) and in the Mono unit tests ([marshal9.cs](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/marshal9.cs)).
+An example custom marshaler can be found in the **Mono.Unix.Native.FileNameMarshaler** ([FileNameMarshaler.cs](https://github.com/mono/mono/blob/master/mcs/class/Mono.Posix/Mono.Unix.Native/FileNameMarshaler.cs)) and in the Mono unit tests ([marshal9.cs](https://github.com/mono/mono/blob/master/mono/tests/marshal9.cs)).
 
 Given all the work involved with custom marshaling, such as the required **ICustomMarshaler** class implementation and **MarshalAs** attributes, what is the advantage of custom marshaling over [manual marshaling](#manual-marshaling)? Maintenance. For only one method, manual marshaling is simpler:
 
