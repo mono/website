@@ -216,8 +216,8 @@ This is particularly pertinent when wrapping C++ methods. C++ exceptions will ne
 See also:
 
 -   [SWIG](http://www.swig.org/), a code generation program that easily wraps existing C and C++ code for use by a multitude of languages, including CLI languages. This makes it easier to invoke C++ code from a CLI application.
--   [Structured Exception Handling Topics at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/HTML/_core_exception_handling_topics_.28.seh.29.asp)
--   [The .NET Exception Model](http://weblogs.asp.net/cbrumme/archive/2003/10/01/51524.aspx): Another one of Chris Brumme's excellent blog entries. More information than you ever wanted to know about .NET exception handling.
+-   [Structured Exception Handling Topics at MSDN](http://msdn.microsoft.com/en-us/library/aa269603(v=vs.60).aspx)
+-   [The .NET Exception Model](http://blogs.msdn.com/b/cbrumme/archive/2003/10/01/51524.aspx): Another one of Chris Brumme's excellent blog entries. More information than you ever wanted to know about .NET exception handling.
 
 Marshaling
 ==========
@@ -510,7 +510,7 @@ TODO: When can this actually occur? If this happened for any class with **Sequen
 
 See Also:
 
--   [Directional Attributes (MSDN)](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondirectionalattributes.asp)
+-   [Directional Attributes (MSDN)](http://msdn.microsoft.com/en-us/library/77e6taeh(v=vs.110).aspx)
 
 ### Structure Marshaling
 
@@ -544,7 +544,7 @@ Since classes are passed by reference, a pointer is returned, and the runtime as
 2.  An instance of the appropriate managed class is instantiated, and the contents of the unmanaged memory is marshaled into the managed class.
 3.  The unmanaged memory is freed by the runtime "as if" by invoking **Marshal.FreeCoTaskMem()**.
 
-How is **Marshal.AllocCoTaskMem**, **Marshal.ReAllocCoTaskMem**, and **Marshal.FreeCoTaskMem** implemented? That's platform-dependent. (So much for portable platform-dependent code.) Under Windows, the COM Task Memory allocator is used (via [CoTaskMemAlloc()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp), [CoTaskMemReAlloc()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp), and [CoTaskMemFree()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/com/html/c4cb588d-9482-4f90-a92e-75b604540d5c.asp)). Under Unix, the GLib memory functions [g\_malloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-malloc) , [g\_realloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-realloc) , and [g\_free()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-free) functions are used. Typically, these correspond to the ANSI C functions **malloc**(3), **realloc**(3), and **free**(3), but this is not necessarily the case as GLib can use different memory allocators; see [g\_mem\_set\_vtable()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-mem-set-vtable) and [g\_mem\_is\_system\_malloc()](http://developer.gnome.org/doc/API/2.0/glib/glib-Memory-Allocation.html#g-mem-is-system-malloc) .
+How is **Marshal.AllocCoTaskMem**, **Marshal.ReAllocCoTaskMem**, and **Marshal.FreeCoTaskMem** implemented? That's platform-dependent. (So much for portable platform-dependent code.) Under Windows, the COM Task Memory allocator is used (via [CoTaskMemAlloc()](http://msdn.microsoft.com/en-us/library/windows/desktop/ms692727(v=vs.85).aspx), [CoTaskMemReAlloc()](http://msdn.microsoft.com/en-us/library/windows/desktop/ms687280(v=vs.85).aspx), and [CoTaskMemFree()](http://msdn.microsoft.com/en-us/library/windows/desktop/ms680722(v=vs.85).aspx)). Under Unix, the GLib memory functions [g\_malloc()](https://developer.gnome.org/glib/2.28/glib-Memory-Allocation.html#g-malloc), [g\_realloc()](https://developer.gnome.org/glib/2.28/glib-Memory-Allocation.html#g-realloc), and [g\_free()](https://developer.gnome.org/glib/2.28/glib-Memory-Allocation.html#g-free) functions are used. Typically, these correspond to the ANSI C functions **malloc**(3), **realloc**(3), and **free**(3), but this is not necessarily the case as GLib can use different memory allocators; see [g\_mem\_set\_vtable()](https://developer.gnome.org/glib/2.28/glib-Memory-Allocation.html#g-mem-set-vtable) and [g\_mem\_is\_system\_malloc()](https://developer.gnome.org/glib/2.28/glib-Memory-Allocation.html#g-mem-is-system-malloc) .
 
 What do you do if you don't want the runtime to free the memory? Don't return a class. Instead, return an IntPtr (the moral equivalent of a C `void*` pointer), and then use the **Marshal** class methods to manipulate that pointer, such as [Marshal.PtrToStructure](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStructure), which works for both C\# **struct** types and **class** types marked `[StructLayout(LayoutKind.Sequential)]`.
 
@@ -690,7 +690,7 @@ The general rule of advice is this: never pass classes or structures containing 
 
 The immediate net effect of this is that you can't have array members in marshaled classes, and (as we've seen before) handling strings can be "wonky" (as strings are also a reference type).
 
-Furthermore, the default string marshaling is the [platform default](#more-control) , though this can be changed by setting the [StructLayoutAttribute.CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet) field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
+Furthermore, the default string marshaling is the [platform default](#more-control), though this can be changed by setting the [StructLayoutAttribute.CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet) field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
 
 ### Boolean Members
 
@@ -716,7 +716,7 @@ If you need to marshal as another data type, you should overload the method acce
  }
 ```
 
-See also: [Default Marshaling for Boolean Types](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpcondefaultmarshalingforbooleans.asp)
+See also: [Default Marshaling for Boolean Types](http://msdn.microsoft.com/en-us/library/t2t3725f(v=vs.110).aspx)
 
 ### Unions
 
@@ -872,7 +872,7 @@ This might be of use. From David Jesk ( [http://www.chat.net/\~jeske/](http://ww
 
 See also:
 
--   [Eric Gunnerson's C\# Blog: Arrays inside of structures](http://weblogs.asp.net/ericgu/archive/2004/08/12/213676.aspx)
+-   [Eric Gunnerson's C\# Blog: Arrays inside of structures](http://blogs.msdn.com/b/ericgu/archive/2004/08/12/213676.aspx)
 
 ### Summary
 
@@ -923,7 +923,7 @@ The **FieldOffset** attribute has one major pitfall: it makes offsets of types e
 
 TODO: include MSDN examples using the more esotoric **MarshalAs** fields, such as **SizeParamIndex**, **ArraySubType**, etc.
 
-See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconmarshalingdatawithplatforminvoke.asp), \*[Arrays Sample at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconarrayssample.asp)
+See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft.com/en-us/library/fzhhdwae(v=vs.110).aspx), \*[Arrays Sample at MSDN](http://msdn.microsoft.com/en-us/library/hk9wyw21(v=vs.110).aspx)
 
 ### Marshaling Pointers
 
@@ -1002,7 +1002,7 @@ And the manual marshaler implementation:
 
 However, as the number of methods that require essentially identical marshaling increases, it becomes easier to maintain the custom marshaler than to maintain the *N* separate manual marshal copies that would otherwise be necessary.
 
- See also: \*[ICustomMarshal Interface at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemruntimeinteropservicesicustommarshalerclasstopic.asp)
+ See also: \*[ICustomMarshaler Interface at MSDN](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.icustommarshaler(v=vs.90).aspx)
 
 Manual Marshaling
 -----------------
@@ -1497,10 +1497,10 @@ Administrators are the people who specify what permissions an application actual
 
 That's about the limits of my knowledge -- Security isn't my forte. You might find the following topics interesting.
 
--   [Requesting Permissions at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconrequestingpermissions.asp)
--   [Security Syntax at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconsecuritysyntax.asp)
--   [Code Access Security at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconcodeaccesssecurity.asp)
--   [Inheritance Demands at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconinheritancedemands.asp)
+-   [Requesting Permissions at MSDN](http://msdn.microsoft.com/en-us/library/vstudio/yd267cce(v=vs.100).aspx)
+-   [Security Syntax at MSDN](http://msdn.microsoft.com/en-us/library/vstudio/a95batfc(v=vs.100).aspx)
+-   [Code Access Security at MSDN](http://msdn.microsoft.com/en-us/library/vstudio/c5tk9z76(v=vs.100).aspx)
+-   [Inheritance Demands at MSDN](http://msdn.microsoft.com/en-us/library/x4yx82e6(v=vs.110).aspx)
 
 See also: [Unsafe Code at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csspec/html/vclrfcsharpspec_A_2.asp)
 
