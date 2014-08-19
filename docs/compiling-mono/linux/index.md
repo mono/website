@@ -22,7 +22,7 @@ On Debian based distribution you should guarantee that some packages are install
 This can be done easily by using *apt-get*:
 
 ```bash
-  $ sudo apt-get install git autoconf libtool automake build-essential mono-devel
+  $ sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext
 ```
 
 Building Mono from a Release Package
@@ -75,7 +75,7 @@ sudo mkdir $PREFIX
 sudo chown -R `whoami` $PREFIX
 
 # Ensure that all required packages are installed.
-sudo apt-get install git autoconf libtool automake build-essential mono-devel
+sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext
 
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git
