@@ -326,8 +326,8 @@ using System;
 namespace GtkWebService
 {
     public class GtkApp
-    {          
-        public GtkApp (string[] args) 
+    {
+        public GtkApp (string[] args)
         {
             Application.Init();
             XML _xml = new XML ("gui.glade", "_window", null);
@@ -340,7 +340,7 @@ namespace GtkWebService
             _window.Show ();
         }
  
-        private void OnWindowDeleted (object o, DeleteEventArgs args) 
+        private void OnWindowDeleted (object o, DeleteEventArgs args)
         {
             Application.Quit ();
         }

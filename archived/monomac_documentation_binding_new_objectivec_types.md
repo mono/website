@@ -195,7 +195,7 @@ This then binds "isMenuVisible" and "setMenuVisible:".
 Just like methods allow some parameters to be flagged with [NullAllowed], you can apply [NullAllowed] to a property to indicate that null is a valid value for the property, for example:
 
 ``` csharp
-[Export ("text"), NullAllowed] 
+[Export ("text"), NullAllowed]
 string Text { get; set; }
 ```
 
@@ -205,16 +205,16 @@ The [NullAllowed] parameter can also be specified directly on the setter: [Expor
 
 The **bmac** tool will automatically generate fours constructors in your class, for a given class *Foo*, it generates:
 
->  Foo ()   
+>  Foo ()
 > the default constructor (maps to Objective-C's "init" constructor)
 >
-> Foo (NSCoder)   
+> Foo (NSCoder)
 > the constructor used during deserialization of NIB files (maps to Objective-C's "initWithCoder:" constructor).
 >
-> Foo (IntPtr handle)   
+> Foo (IntPtr handle)
 > the constructor for handle-based creation, this is invoked by the runtime when the runtime needs to expose a managed object from an unmanaged object.
 >
-> Foo (NSEmptyFlag)   
+> Foo (NSEmptyFlag)
 > this is used by derived classes to prevent double initialization.
 >
 For constructors that you define, they need to be declared using the following signature inside the Interface definition: they must return an IntPtr value and the name of the method should be Constructor. For example to bind the initWithFrame: constructor, this is what you would use:
@@ -283,7 +283,7 @@ interface NSImage {
 }
 ```
 
-### 
+###
 
 ### Type mappings
 
@@ -388,7 +388,7 @@ The resulting code will be:
 
 ``` csharp
 [BaseType (typeof (NSObject),
-    Delegates=new string [] {"WeakDelegate"}, 
+    Delegates=new string [] {"WeakDelegate"},
     Events=new Type [] (typeof (MyClassDelegate)))]
 interface MyClass {
     [Export ("delegate", ArgumentSemantic.Assign)][NullAllowed]
@@ -415,8 +415,8 @@ public MyClassLoadedEventArgs : EventArgs {
     public int Bytes { get; set; }
 }
  
-public event EventHandler&lt;MyClassLoadedEventArgs&gt; Loaded { 
-    add; remove; 
+public event EventHandler&lt;MyClassLoadedEventArgs&gt; Loaded {
+    add; remove;
 }
 ```
 

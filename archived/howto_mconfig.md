@@ -289,7 +289,7 @@ The new feature will be valid only for the **Web** target and will consist of tw
      AJAX (Target: Web)
 
        Adds entries to your Web.config file which are required by any AJAX.NET application.
-       
+
 
      IronPython-Mono (Target: Web)
 
@@ -485,7 +485,7 @@ This is the default configuration file as shipped with Mono.
 <mconfig>
   <configuration>
     <handlers>
-      <handler section="feature" 
+      <handler section="feature"
          type="Mono.MonoConfig.FeatureNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
          storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.FeatureNode, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
       <handler section="configBlock"

@@ -399,7 +399,7 @@ public class gui
         glade.Autoconnect (this);
     }
  
-    private void OnWindowDeleteEvent (object o, DeleteEventArgs args) 
+    private void OnWindowDeleteEvent (object o, DeleteEventArgs args)
     {
         Application.Quit ();
         args.RetVal = true;

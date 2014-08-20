@@ -58,8 +58,8 @@ I named this file sources.xml. To run the parser and produce the output api.xml 
 
 Assuming the library adheres closely to GNOME coding standards, you should see output similar to the following:
 
-     <dir ../libmokoui> 
-     structs: 8  enums: 1  callbacks: 
+     <dir ../libmokoui>
+     structs: 8  enums: 1  callbacks:
      funcs: 0 types: 0  classes: 3
      props: 9 childprops:  signals: 3
 

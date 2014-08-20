@@ -282,7 +282,7 @@ Stack frames and backtraces
 
 When the target stopped, you normally want to see the current stack frame or get a backtrace:
 
-**backtrace**, **bt**  
+**backtrace**, **bt**
 Prints a backtrace.
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -295,7 +295,7 @@ Takes an optional *-max* command specifying the maximum number of frames to prin
 
     (mdb) bt -max 8
 
-**frame**, **f**  
+**frame**, **f**
 Show the current stack frame or the frame specified by the optional *-frame* argument:
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -304,7 +304,7 @@ Show the current stack frame or the frame specified by the optional *-frame* arg
     #1: 0x401ba448 in X.Main()+0x8 at Foo.cs:219
     219         BoxedValueType ();
 
-**up**, **down**  
+**up**, **down**
 Walks one frame up or down in the current backtrace. Prints the new stack frame.
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -321,18 +321,18 @@ Printing expressions
 
 To print variables or evaluate arbitrary expressions, use the *print* command. You can also use the *ptype* command to print the type of an expression.
 
-**print**, **p**  
+**print**, **p**
 Evaluate and print an expression.
 
     (mdb) print a
     (System.Int32) a
 
-**print /default**, **p /default**  
+**print /default**, **p /default**
 Evaluate and print the context of an expression. Unlike print, this will not show the ToString() representation of the object, but will instead show the values in a class or struct.
 
     (mdb) print /default a
 
-**ptype**  
+**ptype**
 Print the type of an expression
 
     (mdb) ptype a
@@ -478,12 +478,12 @@ You can also specify a source file and line number to insert a breakpoint:
     Process @3 stopped at #0: 0x401b749a in X.Main()+0x5a at Test.cs:32.
     32      Foo (a);
     (mdb) list Hello
-    18 
+    18
     19  public static void Hello (int a)
     20  {
     21      Console.WriteLine ("Hello: {0}", a);
     22  }
-    23 
+    23
     24  public static void Main ()
     25  {
     26      int a = 5;
@@ -514,7 +514,7 @@ Whenever the target stopped because of an exception, you may use **print catch**
 
      (mdb) run
      Unhandled Exception: TestException: Boston
-       at X.Main () [0x00000] in /work/gondor/debugger/test/C.cs:18 
+       at X.Main () [0x00000] in /work/gondor/debugger/test/C.cs:18
      Thread @1 caught unhandled exception at #0: 0xb7845278 in X.Main()+0x38 at
      /work/gondor/debugger/test/C.cs:19.
        19    }
@@ -546,12 +546,12 @@ You can also view a method's source code by using the *list* command. The syntax
     35  }
     36 }
     (mdb) list Hello
-    18 
+    18
     19  public static void Hello (int a)
     20  {
     21      Console.WriteLine ("Hello: {0}", a);
     22  }
-    23 
+    23
     24  public static void Main ()
     25  {
     26      int a = 5;
@@ -597,8 +597,8 @@ To disassembly the current instruction or the current method, use the *dis* comm
     0x401b7470  call   X.InheritedClassType()
     0x401b7475  call   X.ComplexStructType()
     0x401b747a  call   X.FunctionStructType()
-    0x401b747f  leave  
-    0x401b7480  ret    
+    0x401b747f  leave
+    0x401b7480  ret
 
 Like the **examine** command, **dis** takes an optional pointer expression as argument (see [\#Pointer expressions](#pointer-expressions) for details):
 
@@ -736,13 +736,13 @@ If you want to see more data, just hit return:
     (mdb) x /32 %esp
     0x40bbe888   b0 e8 bb 40 a3 74 1b 40 - b0 e8 bb 40 e0 d7 05 40
     0x40bbe898   48 db 2a 08 8b 6b 01 00 - e0 e8 bb 40 c8 d7 05 40
-    (mdb) 
+    (mdb)
     0x40bbe8a8   d8 fe 16 08 f8 f3 19 40 - e0 e8 bb 40 84 d9 05 40
     0x40bbe8b8   00 00 00 00 30 e9 bb 40 - 00 00 00 00 40 74 1b 40
-    (mdb) 
+    (mdb)
     0x40bbe8c8   20 32 13 42 98 48 30 08 - 40 74 1b 40 88 74 1b 40
     0x40bbe8d8   60 d6 2a 08 f8 f3 19 40 - 00 e9 bb 40 c8 97 0b 40
-    (mdb) 
+    (mdb)
     0x40bbe8e8   48 db 2a 08 00 00 00 00 - 30 e9 bb 40 00 00 00 00
     0x40bbe8f8   40 1e 1e 08 f8 f3 19 40 - 40 e9 bb 40 34 a7 0b 40
 

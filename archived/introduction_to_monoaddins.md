@@ -122,7 +122,7 @@ public class Application
         AddinManager.Initialize ();
  
         // Detect changes in add-ins
-        AddinManager.Registry.Update (null); 
+        AddinManager.Registry.Update (null);
  
         foreach (ICommand cmd in AddinManager.GetExtensionObjects (typeof(ICommand)))
             cmd.Run ();
@@ -183,7 +183,7 @@ And this could be the manifest for the add-in:
  
     <Extension path = "/TextEditor/TypeExtensions/ICommand">
         <Type type="HelloWorldExtension" />
-    </Extension> 
+    </Extension>
 </Addin>
 ```
 
@@ -282,7 +282,7 @@ namespace TextEditor
         public virtual string GetContent ()
         {
             using (StreamReader sr = new StreamReader(Addin.GetResource (resource))) {
-                return sr.ReadToEnd (); 
+                return sr.ReadToEnd ();
             }
         }
     }

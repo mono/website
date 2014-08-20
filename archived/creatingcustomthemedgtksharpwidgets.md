@@ -75,38 +75,38 @@ protected override bool OnExposeEvent (Gdk.EventExpose evnt)
     // Resolve widget you want to use, it can also be null
     Gtk.Widget wgd = this;
  
-    // Load style based on fake               
+    // Load style based on fake
     Style myStyle = Rc.GetStyle (Fakes.Entry);
     base.OnExposeEvent (evnt);
  
     if (CONDITION_WIDGET_IS_SENSITIVE == false) {
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, StateType.Insensitive, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, StateType.Insensitive,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, StateType.Insensitive, 
-                              ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, StateType.Insensitive,
+                              ShadowType.In, rect, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
     }
-    else if (CONDITION_WIDGET_IS_FOCUSED == true) {                
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+    else if (CONDITION_WIDGET_IS_FOCUSED == true) {
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintFocus (myStyle, aArgs.Drawable, State, clip, wdg, "entry", 
+        Gtk.Style.PaintFocus (myStyle, aArgs.Drawable, State, clip, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry",
                                rect.X, rect.Y, rect.Width, rect.Height);
     }
     else {
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, State, 
-                              ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, State,
+                              ShadowType.In, rect, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
     }
  
-    // Dispose fake style     
+    // Dispose fake style
     myStyle.Dispose();
     myStyle = null;
 }

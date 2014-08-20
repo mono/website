@@ -35,7 +35,7 @@ Originally from:
 
        My goals with Mono are very specific, and I will address those
     shortly, but for the sake of getting things done, please forget
-    everything you have heard about .NET.  
+    everything you have heard about .NET.
 
     * First, the Facts
 
@@ -45,7 +45,7 @@ Originally from:
 
             * The headline does not reflect any statements I
               made on the interview (if you read the interview
-              you will notice this). 
+              you will notice this).
 
                 * The only future plans that have been approved by the
                       GNOME team (which has 11 voting members on its
@@ -72,7 +72,7 @@ Originally from:
             At this point on time, the GNOME team is working on shipping
         version 2.0 of the desktop and the development platform, a major
         upgrade to the desktop offering, and everyone is quite excited
-        with this.  
+        with this.
 
     * What is Mono?
 
@@ -91,11 +91,11 @@ Originally from:
 
             These are usually referred in the Microsoft world as the `.NET
         Framework' as opposed to .NET.  When I say `.NET Framework' here,
-        I am talking about these technologies.   
+        I am talking about these technologies.
 
         Seasoned industry programmers will notice that the above is
         very much like Java and the Java VM.   They are right, the above
-        is just like Java. 
+        is just like Java.
 
         The CIL has one feature not found in Java though: it is
         byte code representation that is powerful enough to be used as a
@@ -142,18 +142,18 @@ Originally from:
         we loved C as a programming language, there was a large crowd of
         people out there that would like to use the GNOME libraries from
         their favorite programming language, which might not necessarily be
-        C.  
+        C.
 
         This strategy has paid off very well.  There are healthy and
         striving Python, Perl, Guile and Ada communities out there that
         use the Gtk+ and Gnome bindings to build applications.  From rapid
         prototyping to robust applications: we wanted to empower
-        developers. 
+        developers.
 
         Keeping language bindings up to date and shipping them on time
         has always been a consuming process, because no matter how
         automated this process has turned out to be, there is still a
-        considerable amount of manual work that needs to be done. 
+        considerable amount of manual work that needs to be done.
 
         I do go into more details about this at the following places:
 
@@ -171,7 +171,7 @@ Originally from:
 
         To make things worse, an evolution of APIs, components, memory
         management contracts and patched up versions of COM have made the
-        platform horrible.  
+        platform horrible.
 
         Microsoft has injected fresh air into their platform by
         building and designing a new programming platform that addresses
@@ -184,7 +184,7 @@ Originally from:
         by disconnected groups (PNG, JPEG, Gtk+, Xml, Bonobo, CORBA spec
         apis, etc) and the end result is that a developer eventually has
         to learn more than he wanted to in the course of developing a
-        large application. 
+        large application.
 
         Ximian funded for a long time the work on the Perl bindings,
         and we had a lot of work going into Bonobo (more than we do today)
@@ -205,13 +205,13 @@ Originally from:
         Porter had been working before on ORBit and our SOAP
         implementation;  Dietmar Maurer came from the Bonobo development
         world and Paolo Molaro was working on Gtk+/Gnome/Bonobo bindings
-        for Perl.  This is the original Mono developer lineup. 
+        for Perl.  This is the original Mono developer lineup.
 
     * Evolution, Gnumeric and GNOME.
 
         I have written and maintained many lines of code as part of
         my GNOME work.  Ximian has developed Evolution which consists of
-        roughly 750,000 lines of code. 
+        roughly 750,000 lines of code.
 
         Large software projects expose a set of problems that can be
         ignored for smaller projects.  Programs that have long life times
@@ -249,7 +249,7 @@ Originally from:
         amazing.   I want to share with others this simplicity.  And I
         want to empower developers: I want to enable a whole class of
         developers to create great desktop applications that integrate
-        with GNOME. 
+        with GNOME.
 
     * Why is Mono related to GNOME?
 
@@ -265,28 +265,28 @@ Originally from:
 
         So when you copy your binary from Windows that was compiled
         with the Visual Studio.NET and run it on your Unix platform,
-        it will just integrate nicely with your GNOME desktop.  
+        it will just integrate nicely with your GNOME desktop.
 
         We are also exploring a port to MacOS X, and for that
         particular case, we will integrate with Aqua, not with Gtk+, but
-        you get the idea. 
+        you get the idea.
 
     * GNU was based on a proprietary technology.
 
         GNU is a free re-implementations of Unix.   Linux is a
         re-implementation of the Unix kernel.  Before the advent of Linux
         and the Berkeley Unix, Unix was a proprietary technology, built by
-        ATT (which back in the day, was a monopoly).  
+        ATT (which back in the day, was a monopoly).
 
         Still, developers took what was good from Unix, and
         reimplemented a free version of it.   Down to the Unix programming
         language: C (which was also invented at ATT).  Even C++ was
-        invented at ATT.  
+        invented at ATT.
 
         Think of Mono as following the same process: we are bringing
         the best technology out there to our beloved free software
         platform.  And at the same time it serves to be a magnificent
-        upgrade on the development platform. 
+        upgrade on the development platform.
 
     * I can not force anyone.
 
@@ -300,7 +300,7 @@ Originally from:
         technology: a good JIT engine, good class libraries and would be a
         useful platform for innovation: it would allow people to focus
         more on the problems at hand and worry less about the low-level
-        details of the platform. 
+        details of the platform.
 
     * Rewriting GNOME.
 
@@ -312,19 +312,19 @@ Originally from:
         The short story is: rewriting code does not pay off, and I
         agree with the thesis of the article.  Rewriting GNOME in C# with
         the CLR would be a very bad idea, if not the worst possible idea
-        ever.  
+        ever.
 
         But what makes the .NET Framework technologies interesting is
         that they are evolutionary technologies:
 
-        * The runtime can be linked into an application.  
+        * The runtime can be linked into an application.
 
            Example:
 
             bash$ cat hello.c
             #include <mono.h>
             main (int argc, char *argv [])
-            { 
+            {
                 mono_init (argc, argv);
                 mono_assembly_load ("classes.dll");
                 mono_ves_execute ("Class.Main");
@@ -338,7 +338,7 @@ Originally from:
 
           You can keep using your fav language, and gradually start
           writing new pieces of code in another language that runs
-          with all the benefits of "managed" execution. 
+          with all the benefits of "managed" execution.
 
         I go into some more detail here:
 
@@ -356,7 +356,7 @@ Originally from:
         to new applications only, or this is something used in more
         fundamental pieces of the system is an entirely different matter.
 
-        But for now, GNOME 4 is non-existant project. 
+        But for now, GNOME 4 is non-existant project.
 
     * Fighting the System.
 
@@ -370,7 +370,7 @@ Originally from:
         Microsoft is using these technologies and distributing to as many
         people as possible.  We are witnessing the creation and deployment
         of a new standard.  Sure, it has a lot of corporate support, but
-        it will become a widely deployed technology. 
+        it will become a widely deployed technology.
 
     * Other uses of Mono
 
@@ -386,8 +386,8 @@ Originally from:
 
         * Training materials, tutorials, documentation, tips and
               tricks are already available in large quantities, lets
-          leverage this. 
-         
+          leverage this.
+
     * Mono Financing.
 
         Right now Mono is financed by Ximian because we believe that
@@ -399,10 +399,10 @@ Originally from:
 
         So even in the Mono world, I do not get to make all the
         decisions: people work on what they are interested in developing.
-        
+
         The Mono community is great!  Lots of passionate programmers
         work with us, and I feel very happy that I have had a chance to
-        work with all of them. 
+        work with all of them.
 
         At this point in time Ximian has only a small team of full
         time developers working on Mono (five) and a lot of the work is
@@ -419,7 +419,7 @@ Originally from:
         I want to be able to bring more people to work full time on
         Mono.  I would like to offer the services of Ximian as a project
         manager to keep driving this project forward, and get cash
-        infusions to hire developers to work on this project.   
+        infusions to hire developers to work on this project.
 
         The only restriction is that all of our work has to be free
         software.  But other than that, I am ready to take money from
@@ -428,10 +428,10 @@ Originally from:
         Some people wonder if we have got a Microsoft investment or
         contract (because I like this Microsoft technology).  The answer
         is no.  But I would take one if they wanted to fund my free
-        software project ;-)  Man, I wonder what that would be like!  
+        software project ;-)  Man, I wonder what that would be like!
 
         Implementing the .NET Framework is a massive effort, and I
-        want to enroll as many contributors as possible.  
+        want to enroll as many contributors as possible.
 
 
     * API compatibility.
@@ -451,7 +451,7 @@ Originally from:
 
         Of course, this should not stop anyone from implementing new
         APIs.  And I even encourage people to write new classes, APIs and
-        components that will be reusable both on Unix and on Windows.   
+        components that will be reusable both on Unix and on Windows.
 
     * What if we never can keep up?
 
@@ -465,10 +465,10 @@ Originally from:
         being 100% .NET Framework compatible, it would still be an
         improvement and would still help us move forward.  So we can reuse
         all the research and development done by Microsoft on these ideas,
-        and use as much as we can.  
+        and use as much as we can.
 
         So far all it seems like everything in .NET can be emulated in
-        our environment. 
+        our environment.
 
     * Richard Stallman
 
@@ -483,8 +483,8 @@ Originally from:
         collector, news at 11".
 
         Really, programmer's lives are boring, I wish my life would be
-        as exciting as other people's life appear to be.  
-        
+        as exciting as other people's life appear to be.
+
     * Further debate.
 
         I have just scratched the surface in this email, I do like a
@@ -500,9 +500,9 @@ Originally from:
 
         I would like to thank Nat Friedman for providing moral,
         technical support all these years and his unconditional
-        friendship.  It has been a fun adventure.  
+        friendship.  It has been a fun adventure.
 
-        Without Nat I would probably have gone crazy by now.   
+        Without Nat I would probably have gone crazy by now.
 
     PS2:
 
@@ -514,12 +514,12 @@ Originally from:
         I would like to thank all the people I have worked over the
         years: every GNOME developer past and present, every Mono
         developer past and present and all my friends at Ximian who have
-        created a great place to work.  
+        created a great place to work.
 
         This community is great, and I have loved working with an
         increasing number of people as free software becomes more
         popular.   I know sometimes I have been unreasonable, but I am
-        trying to learn from my mistakes.  Am just too good at being 
+        trying to learn from my mistakes.  Am just too good at being
         mistaken.
 
     Miguel.

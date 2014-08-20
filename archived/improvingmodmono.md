@@ -32,8 +32,8 @@ From Ted Milker:
 
 When MonoDebug is present in apache's configuration file, true or false, it spams up the apache error log with:
 
-    [Fri May 04 08:33:20 2007] [error] Not running mod-mono-server.exe 
-    because no MonoApplications, MonoApplicationsConfigFile or 
+    [Fri May 04 08:33:20 2007] [error] Not running mod-mono-server.exe
+    because no MonoApplications, MonoApplicationsConfigFile or
     MonoApplicationConfigDir specified.
 
 If you remove MonoDebug, this message goes away. There is some behavior in mod\_mono that does something different when MonoDebug is present(even if set to false) that probably needs to be looked at.

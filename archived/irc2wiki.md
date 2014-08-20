@@ -22,7 +22,7 @@ A mutiliated version of Jamie Zawinksi's irc2html.pl that creates basic MediaWik
 # the above copyright notice appear in all copies and that both that
 # copyright notice and this permission notice appear in supporting
 # documentation.  No representations are made about the suitability of this
-# software for any purpose.  It is provided "as is" without express or 
+# software for any purpose.  It is provided "as is" without express or
 # implied warranty.
 #
 # Created: 11-Jun-98.
@@ -95,12 +95,12 @@ my $bg_color2 = "#EEE";
  
 $ENV{USER} = ($ENV{REMOTE_ADDR} || '?') unless defined ($ENV{USER});
  
-my $doc_head = 
+my $doc_head =
  (
   ""
  );
  
-my $stylesheet = 
+my $stylesheet =
  ("<!--   This style sheet can be omitted if you don't care\n" .
   "       about the colored text that was used below.   -->\n" .
   "<STYLE TYPE=\"text/css\">\n" .
@@ -308,8 +308,8 @@ sub convert_line($) {
   if ($separators_p && $color_changed_p && $output_lines != 0) {
     $color_style = $margin_style;
   } elsif ($colorize_p) {
-    $color_style = (" STYLE=\"color:$fg_color" . 
-                    ($bg_color eq $bg_color1 
+    $color_style = (" STYLE=\"color:$fg_color" .
+                    ($bg_color eq $bg_color1
                      ? ''
                      : "; background:$bg_color") .
                     "\"");

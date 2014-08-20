@@ -198,7 +198,7 @@ For a system installation use:
 ``` bash
 $ cd ../moon
 $ ./autogen.sh --enable-desktop-support
-$ make 
+$ make
 $ su
 Password: <enter-your-root-password>
 # make install
@@ -213,7 +213,7 @@ Moonlight configuration
   Silverlight Support:
     Silverlight 1.0: yes
     Silverlight 2.0: yes
-          Browser plugin assemblies: yes 
+          Browser plugin assemblies: yes
             Path to mcs tree: ./../mcs
             Path to mono-basic tree: ./../mono-basic
           Desktop application assemblies: yes
@@ -228,7 +228,7 @@ Use these settings in your shell:
 
 ``` bash
 export MONO_GAC_PREFIX=/usr:$HOME/build
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build/lib/pkgconfig 
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/build/lib
 ```
 

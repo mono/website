@@ -48,8 +48,8 @@ If you have an account on the main Subversion repository, use the following comm
 
 ### Updating an existing checkout
 
-     $ (cd mono; svn update) 
-     $ (cd mcs; svn update) 
+     $ (cd mono; svn update)
+     $ (cd mcs; svn update)
      $ (cd libgdiplus; svn update)
 
 ### Building the source

@@ -509,18 +509,18 @@ Most classes in MonoMac that derive from NSObject will expose constructors speci
 
 The constructors are used as follows:
 
-**public Foo (IntPtr handle)**   
+**public Foo (IntPtr handle)**
 This constructor is used to instantiate your class when the runtime needs to map your class to an unmanaged class. This happens when you load a XIB/NIB file. The Objective-C runtime will have at this point created an object in the unmanaged world and this constructor will be called to initialize the managed side.
 
 Typically all you need to do is call the base constructor with the handle parameter and in your body do any initialization that is necessary.
 
-**public Foo ()**   
+**public Foo ()**
 This is the default constructor for a class, and in MonoTouch provided classes this initializes the MonoTouch.Foundation.NSObject class and all of the classes in between and at the end chains this to Objective's C "init" method on the class.
 
-**public Foo (NSObjectFlag x)**   
+**public Foo (NSObjectFlag x)**
 This constructor is used to initialize the instance, but prevent the code from calling the Objective-C "init" method at the end. You typically use this when you already have registered for initialization (when you use [Export] on your constructor) or when you have already done your initialization through another mean.
 
-**public Foo (NSCoder coder)**   
+**public Foo (NSCoder coder)**
 This constructor is provided for the cases where the object is being initialized from an NSCoding instance. For more information see Apple's \<a href="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html\#//apple\_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" title="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html\#//apple\_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" class="external"\>Archives and Serialization Programming Guide\</a\>.
 
 The MonoMac API design does not raise Objective-C exceptions as C\# exceptions. The design enforces that no garbage be sent to the Objective-C world in the first place and that any exceptions that must be produced are produced by the binding itself before invalid data is ever passed to the Objective-C world.

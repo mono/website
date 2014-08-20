@@ -104,7 +104,7 @@ These are third party assemblies that we ship with Mono, guarantees about API st
             Npgsql
             PEAPI
             SharpZipLib.
-            
+
             Java integration with IKVM.NET
 
 Languages

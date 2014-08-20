@@ -80,19 +80,19 @@ get_tarball () {
 
 A breakdown of the file:
 
- `BUILD_HOSTS`   
+ `BUILD_HOSTS` 
 machines on which the package gets built and rpms get created
 
- `USE_HOSTS`   
+ `USE_HOSTS` 
 all distros that will *use* the package -- might be different than `BUILD_HOSTS` if packages are shared
 
- `get_destroot`   
+ `get_destroot` 
 the prefix where the packages go. This is how we find out how to share packages. For all distros in `USE_HOSTS` exactly one distro in `BUILD_HOSTS` must have the same `get_destroot`
 
- `HEAD_PATH, RELEASE_PATH`   
+ `HEAD_PATH, RELEASE_PATH` 
 custom variables for our tarball creation method
 
- `get_tarball`   
+ `get_tarball` 
 the method we use to get tarballs
 
 release/packaging/conf

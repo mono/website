@@ -22,7 +22,7 @@ GtkGlAreaSharp:Installation
 
 // Check out gtkglarea-sharp from svn
 
-    $ svn co svn://anonsvn.mono-project.com/source/trunk/gtkglarea-sharp 
+    $ svn co svn://anonsvn.mono-project.com/source/trunk/gtkglarea-sharp
 
 // You should see something like this:
 

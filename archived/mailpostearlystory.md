@@ -18,7 +18,7 @@ Originally from:
     Hello,
 
     > Forgive the ignorance but did mono start their implementation before
-    > dotGnu of .NET? I am only curious. 
+    > dotGnu of .NET? I am only curious.
 
     Well, we started working on the system about the same time.
 
@@ -34,12 +34,12 @@ Originally from:
     asking for the missing information on the metadata file format.
 
     While I waited for this, I started developing the C# compiler as an
-    exercise in C# first a tokenizer, then porting jay to write a parser. 
+    exercise in C# first a tokenizer, then porting jay to write a parser.
 
     Rhys contacted me about this time, he had been reverse engineering the
     file format and had some early code to load the files.  It was an
     interesting effort, and there was some early cooperation between a group
-    of three people: Rhys, Saurik and myself.   
+    of three people: Rhys, Saurik and myself.
 
     About this time Sam Ruby was pushing at the ECMA committee to get the
     binary file format published, something that was not part of the
@@ -55,7 +55,7 @@ Originally from:
     much pain: Saurik had already done one, and felt his code was not being
     used and Rhys had his own, which I did not personally like (for simple
     reasons: it did not follow the Linux/Gnumeric coding style I used).  At
-    this early stage there was very little in all of these projects. 
+    this early stage there was very little in all of these projects.
 
     Since December 2000, we had been amazed by the .NET Framework, and when
     we discussed internally at Ximian its benefits, what we initially did
@@ -71,7 +71,7 @@ Originally from:
     desktop and reduce our time and cost of development.
 
     The team products were positive, but still fell short from everything
-    the .NET framework could do. 
+    the .NET framework could do.
 
     But when we were done with our study, it was clear that it was possible
     to build this technology, which we consider key to the future of Gnome
@@ -81,7 +81,7 @@ Originally from:
     later open sourced).
 
     So we had some experience on building open source projects, and we had
-    a relatively important source of pain that needed to be addressed. 
+    a relatively important source of pain that needed to be addressed.
 
     Nat Friedman was highly supportive at this point of moving our efforts
     into something that would have a larger impact, and once we got the new
@@ -114,11 +114,11 @@ Originally from:
     been brewing for a very long time.
 
     Who came first is not an important question to me, because Mono to me is
-    a means to an end: a technology to help Linux succeed on the desktop. 
+    a means to an end: a technology to help Linux succeed on the desktop.
     Of course, it has taken a life on its own, because Mono is not what
     Ximian/Novell chooses it to be, it is the result of the contributions
     and opinions of its contributors and users.  So Mono has grown larger
-    and better thanks to that. 
+    and better thanks to that.
 
     Hope that answers your question,
     Miguel.

@@ -108,9 +108,9 @@ This controls the base type for user controls. The default value is the System.W
 ### \<tagMapping\>
 
 ``` xml
-<tagMapping> 
-   <add /> 
-   <remove /> 
+<tagMapping>
+   <add />
+   <remove />
    <clear/>
 </tagMapping>
 ```

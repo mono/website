@@ -43,13 +43,13 @@ The following sample configuration assumes installation prefixes used here to co
 $ tar xzf fcgi-2.4.0.tar.gz
 $ cd fcgi-2.4.0
 $ ./configure --prefix=/home/username/fcgi
-$ make 
+$ make
 $ make install
 ...
 $ tar xjf mono-2.4.tar.bz2
 $ cd mono-2.4
 $ ./configure --prefix=/home/username/mono
-$ make 
+$ make
 $ make install
 ...
 $ tar xjf xsp-2.4.tar.bz2
@@ -57,7 +57,7 @@ $ cd xsp-2.4
 $ export PATH=/home/username/mono/bin:$PATH
 $ export PKG_CONFIG_PATH=/home/username/mono/lib/pkgconfig:$PKG_CONFIG_PATH
 $ ./configure --prefix=/home/username/mono
-$ make 
+$ make
 $ make install
 ```
 

@@ -179,7 +179,7 @@ class Notifier : UIWebViewDelegate  {
     }
  
     public override LoadingFinished (UIWebView webView)
-    { 
+    {
         endTime= DateTime.Now;
     }
 }
@@ -216,7 +216,7 @@ class Notifier : NSObject  {
  
     [Export ("webViewDidFinishLoad:")]
     public void LoadingFinished (UIWebView webView)
-    { 
+    {
         endTime= DateTime.Now;
     }
 }
@@ -254,10 +254,10 @@ In the following example, we provide the UIPickerView with an implementation for
 ``` csharp
 public class SampleTitleModel : UIPickerViewTitleModel {
  
-    public override string TitleForRow (UIPickerView picker, int row, int component) 
-    { 
+    public override string TitleForRow (UIPickerView picker, int row, int component)
+    {
         return String.Format ("At {0} {1}", row, component);
-    } 
+    }
 }
  
 [...]
@@ -305,7 +305,7 @@ public class MyCallbacks : NSObject {
         return true;
     }
  
-    [Export ("webViewDidStartLoad:")] 
+    [Export ("webViewDidStartLoad:")]
     public void OnWebViewStart (UIWebView view)
     {
         Console.WriteLine ("Loading started");
@@ -415,7 +415,7 @@ This loads the user interface from the NIB. Now, to access the outlets, it is ne
 
 ``` csharp
 [Connect]
-UITextField UserName { 
+UITextField UserName {
     get {
         return (UITextField) GetNativeField ("UserName");
     }

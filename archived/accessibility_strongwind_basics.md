@@ -257,7 +257,7 @@ Next, we will define some assertion methods. These methods ensure that the actio
  
         # Assert that resultMatches returns true eventually.  retryUntilTrue is
         # a Strongwind function that tries RETRY_TIMES times every
-        # RETRY_INTERVAL seconds.  RETRY_TIMES = 20 and RETRY_INTERVAL = 0.5 
+        # RETRY_INTERVAL seconds.  RETRY_TIMES = 20 and RETRY_INTERVAL = 0.5
         # by default as defined by Strongwind's config.py file.
         assert retryUntilTrue(resultMatches)
  
@@ -294,8 +294,8 @@ The *assertClosed* method called (twice) below is Strongwind's *assertClosed* me
         # close the checkbutton window (frame)
         super(GtkCheckButtonFrame, self).assertClosed()
  
-        # if the checkbutton window closes, the entire app should close.  
-        # assert that this is true 
+        # if the checkbutton window closes, the entire app should close.
+        # assert that this is true
         self.app.assertClosed()
 ```
 

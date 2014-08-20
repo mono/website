@@ -111,23 +111,23 @@ We will start by using the spell checker on a simple web page. First you will ha
     <script runat="Server">
 
     Sub Page_Load (ByVal sender As Object, ByVal e As EventArgs)
-        
+
         // Put your license key here
         Const licensekey As String = "FCszK/FQFHJWQE1n5OkeGmZAWzCFY5+7"
-        
+
         // Create a Google Search object
         Dim Service1 As GoogleSearchService = new GoogleSearchService()
-        
+
         // Ask for spelling suggestion
         // The first argument is your key
         // The second one, the text the user should enter.
-        
+
         Dim suggestion As String = Service1.doSpellingSuggestion(licensekey, TextBox1.Text)
-        
+
         // Display the suggestion, if any
         If suggestion Is Nothing Then
             Label1.Text = "[No suggestion]"
-        Else    
+        Else
             Label1.Text = suggestion
         End If
     End Sub

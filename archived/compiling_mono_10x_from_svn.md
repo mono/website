@@ -22,17 +22,17 @@ If you do not have an account on the main Subversion repository, you can use ano
 
 ### Updating an existing checkout
 
-     $ (cd mono-1-0; svn update) 
+     $ (cd mono-1-0; svn update)
 
 ### Compiling your Mono 1.0.x from SVN
 
 Then you can run:
 
-     (cd mono-1-0/mono; make bootstrap) 
+     (cd mono-1-0/mono; make bootstrap)
 
  Now you can install the result:
 
-     (cd mono; make install) 
+     (cd mono; make install)
 
 Notice that following the above procedure does not require you to manually install the software in the \`mcs' directory, as the relevant files will be copied by the \`mono' makefiles.
 

@@ -129,7 +129,7 @@ When you get to a good stopping point, `hg commit` your code, and continue worki
 Sooner or later, you'll have to pull in the latest changes from HEAD into your branch. To make this easier, enable the Mercurial `rebase` plugin by putting
 
     [extensions]
-    hgext.rebase = 
+    hgext.rebase =
 
 into your `~/.hgrc` file.
 
@@ -228,24 +228,24 @@ Press the *Create Profile* button. Set the profile name to `dev` and the path to
     cd ../moon
     patch -p 0 < ../uia2atk/MoonAtkBridge/patches/moonlight-a11y-core-extension.diff
     patch -p 0 < ../uia2atk/MoonAtkBridge/patches/moonlight-a11y-slot-tree.diff
-    ./autogen.sh --prefix=/path/to/my/prefix --with-mcspath=../mono/mcs 
+    ./autogen.sh --prefix=/path/to/my/prefix --with-mcspath=../mono/mcs
 
 Autogen takes a little bit to run, then make sure that `./autogen.sh`'s output includes something like:
 
       Silverlight Support:
             Silverlight 1.0: yes
             Silverlight 2.0: yes
-              Browser plugin assemblies: yes 
+              Browser plugin assemblies: yes
                 Path to mcs tree: ./../mcs
                 Path to mono-basic tree: ./../mono-basic
-              Desktop application assemblies: yes 
+              Desktop application assemblies: yes
 
       Browser Support:
             Firefox: yes
               Plugin Installer (.xpi): yes
               Gecko 1.8 (Firefox 2): no (reason: missing FF2 development packages)
-              Gecko 1.9 (Firefox 3): yes 
-              Curl bridge: embedded 
+              Gecko 1.9 (Firefox 3): yes
+              Curl bridge: embedded
             Chrome (.crx): no (no chrome executable)
 
 The most important thing to notice is **Plugin Installer (.xpi): yes**.
@@ -276,7 +276,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
 <!-- -->
 
-    git clone git://github.com/mono/gtk-sharp.git && cd gtk-sharp && git branch gtk-sharp-2-12 origin/gtk-sharp-2-12-branch && git checkout gtk-sharp-2-12 
+    git clone git://github.com/mono/gtk-sharp.git && cd gtk-sharp && git branch gtk-sharp-2-12 origin/gtk-sharp-2-12-branch && git checkout gtk-sharp-2-12
 
 -   Building moon requires its own copy of mcs/mono/mono-basic so make a new directory and change to it:
 
@@ -294,7 +294,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
 <!-- -->
 
-    git clone git://github.com/mono/mono.git mono && cd mono && git reset --hard 9c8cb87fe336e678e902 
+    git clone git://github.com/mono/mono.git mono && cd mono && git reset --hard 9c8cb87fe336e678e902
     && cd .. git clone git://github.com/mono/mono-basic.git mono-basic && cd mono-basic && git reset --hard HEAD
 
 -   Copy the folders to a lower level (you can also checkout the **same modules** and **the same revisions**, copying should be faster)
@@ -349,9 +349,9 @@ Autogen takes a while to run, then make sure that `./autogen.sh`'s output includ
         Firefox: yes
               Plugin Installer (.xpi): yes
               Gecko 1.8 (Firefox 2): no (reason: missing FF2 development packages)
-              Gecko 1.9 (Firefox 3): yes 
+              Gecko 1.9 (Firefox 3): yes
         Fallback bridge support:
-              Curl bridge: embedded 
+              Curl bridge: embedded
             Chrome (.crx): no (no chrome executable)
 
       Platform abstraction layer:

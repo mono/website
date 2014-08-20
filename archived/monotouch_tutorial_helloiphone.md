@@ -81,7 +81,7 @@ class Demo {
     static void Main (string [] args)
     {
         UIApplication.Main (args, null, "AppController");
-    }     
+    }
 }
 ```
 

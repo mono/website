@@ -368,7 +368,7 @@ class GtkTreeViewFrame(accessibles.Frame):
     # the "expand or contract" action.  states can be found on the "status" list
     # on the "interface viewer" tab in Accerciser.
     def assertContracted(self, accessible):
-        'Raise exception if accessible does not match the given result'   
+        'Raise exception if accessible does not match the given result'
         procedurelogger.expectedResult('%s is %s.' % (accessible, "contracted"))
         def resultMatches():
             return not accessible.expanded
@@ -378,18 +378,18 @@ class GtkTreeViewFrame(accessibles.Frame):
     # assert that the accessible has the "expanded" state after performing
     # the "expand or contract" action.
     def assertExpanded(self, accessible):
-        'Raise exception if accessible does not match the given result'   
+        'Raise exception if accessible does not match the given result'
         procedurelogger.expectedResult('%s is %s.' % (accessible, "expanded"))
         def resultMatches():
             return accessible.expanded
  
         assert retryUntilTrue(resultMatches)
  
-    # assert that the sorting of the TreeView is ascending by comparing the 
+    # assert that the sorting of the TreeView is ascending by comparing the
     # order in which the table cells are found to the order we expect them
     # to be in (self.ASCENDING).
     def assertAscending(self):
-        'Raise exception if the sorting of the tree view is not ascending'   
+        'Raise exception if the sorting of the tree view is not ascending'
         procedurelogger.expectedResult('TreeView sorting is ascending')
         self.table_cells = self.findAllTableCells(None, checkShowing=False)
         tcs = [table_cell.name for table_cell in  self.table_cells]
@@ -400,11 +400,11 @@ class GtkTreeViewFrame(accessibles.Frame):
  
         assert retryUntilTrue(resultMatches)
  
-    # assert that the sorting of the TreeView is descending by comparing the 
+    # assert that the sorting of the TreeView is descending by comparing the
     # order in which the table cells are found to the order we expect them
     # to be in (self.DESCENDING).
     def assertDescending(self):
-        'Raise exception if the sorting of the tree view is not descending'   
+        'Raise exception if the sorting of the tree view is not descending'
         procedurelogger.expectedResult('TreeView sorting is descending')
         self.table_cells = self.findAllTableCells(None, checkShowing=False)
         tcs = [table_cell.name for table_cell in  self.table_cells]
@@ -426,7 +426,7 @@ from gtktreeview import *
 from sys import argv
 from os import path
  
-app_path = None 
+app_path = None
 try:
   app_path = argv[1]
 except IndexError:
@@ -509,7 +509,7 @@ print "INFO:  Log written to: %s" % config.OUTPUT_DIR
  
 # close the app using Strongwind's altF4 method (from accessibles.py).
 # this is the standard way of closing an application that doesn't have a
-# clickable "quit" option., 
+# clickable "quit" option.,
 tvFrame.altF4(tvFrame)
 ```
 
@@ -601,17 +601,17 @@ Example of create Canvas and Button sample:
 
 ``` python
 <UserControl x:Class="DiggSample.Page"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Width="400" Height="300">
     <Canvas x:Name="Canvas1" Width="300" Height="300"  Background="Blue">
  
         <Canvas x:Name="Canvas2" Width="260" Height="150" Canvas.Left="20"
  Canvas.Top="20" Background="Chartreuse">
-            <Button x:Name="Button1" Content="Button 1" Width="100" Height="50" 
+            <Button x:Name="Button1" Content="Button 1" Width="100" Height="50"
 Canvas.Left ="50" Canvas.ZIndex="1" Click="MyButton_Click">
             </Button>
-            <Button x:Name="Button2" Content="Button 2" Width="100" Height="50" 
+            <Button x:Name="Button2" Content="Button 2" Width="100" Height="50"
 Canvas.Left ="50" Canvas.Top="100"></Button>
         </Canvas>
  
@@ -920,7 +920,7 @@ the default configuration saved in a xml file
 find all controls by ControlType & name & automationId , To promote a AutomationElement to a certain instance of a class, in order to get more specific methods.=
 
 ``` c
-        //Find a Element by type.  
+        //Find a Element by type.
         public Element FindByType (ControlType type)
     {
         var cond = new PropertyCondition (AutomationElementIdentifiers.ControlTypeProperty, type);

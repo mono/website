@@ -24,7 +24,7 @@ Create MyCanvas.xaml file:
         Background="White"
         x:Name="PageTextBlock">
         <TextBlock Width="195" Height="42" Canvas.Left="28" Canvas.Top="35"
-                   Text="Click Here!!!!" x:Name="entryHello" /> 
+                   Text="Click Here!!!!" x:Name="entryHello" />
  
 </Canvas>
 ```
@@ -83,7 +83,7 @@ Create helloWorld.htm html file to test Moonlight:
                 border: 1px dotted black;
           }
         </style>
-        <title>Hello @carlitos castro Moonlight/Silverlight Hello World!!!!</title>    
+        <title>Hello @carlitos castro Moonlight/Silverlight Hello World!!!!</title>
   </head>
   <body>
     Moonlight/Silverlight Sample:<br>

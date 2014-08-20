@@ -113,23 +113,23 @@ We will start by using the spell checker on a simple web page. First you will ha
     <script runat="Server">
 
     void Page_Load(object sender, EventArgs e) {
-        
+
         // Put your license key here
         const string licensekey = "FCszK/FQFHJWQE1n5OkeGmZAWzCFY5+7";
-        
+
         // Create a Google Search object
         GoogleSearchService Service1 = new GoogleSearchService();
-        
+
         // Ask for spelling suggestion
         // The first argument is your key
         // The second one, the text the user should enter.
-        
-        String suggestion = Service1.doSpellingSuggestion(licensekey, TextBox1.Text);   
-        
+
+        String suggestion = Service1.doSpellingSuggestion(licensekey, TextBox1.Text);
+
         // Display the suggestion, if any
         if (suggestion == null)
             Label1.Text = "[No suggestion]";
-        else    
+        else
             Label1.Text = suggestion;
     }
     </script>
@@ -179,12 +179,12 @@ class SpellChecker {
         // The first argument is your key
         // The second one, the text the user should enter.
  
-        String suggestion = Service1.doSpellingSuggestion(licensekey, args[0]);    
+        String suggestion = Service1.doSpellingSuggestion(licensekey, args[0]);
  
         // Display the suggestion, if any
         if (suggestion == null)
             Console.WriteLine("[No suggestion]");
-        else    
+        else
             Console.WriteLine(suggestion);
     }
 }

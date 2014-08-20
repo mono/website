@@ -26,19 +26,19 @@ CollectionBaseTest.cs
         namespace MonoTests.System.Collections
         {
 
-        public class CollectionBaseTest : TestCase     
+        public class CollectionBaseTest : TestCase
         {
-            public CollectionBaseTest () : base 
-                ("System.Collection.CollectionBase testsuite") 
+            public CollectionBaseTest () : base
+                ("System.Collection.CollectionBase testsuite")
                 {}
-            public CollectionBaseTest (String name) : base (name) 
+            public CollectionBaseTest (String name) : base (name)
                 {}
 
-            // We need a concrete class to test the abstract base 
+            // We need a concrete class to test the abstract base
             // class
-            public class ConcreteCollection : CollectionBase 
+            public class ConcreteCollection : CollectionBase
             {
-                // These fields are used as markers to test 
+                // These fields are used as markers to test
                 // the On* hooks.
                 public bool onClearFired;
                 public bool onClearCompleteFired;
@@ -61,7 +61,7 @@ CollectionBaseTest.cs
                 public int onSetCompleteNewValue;
 
                 // This constructor is used to test OnValid()
-                public ConcreteCollection() 
+                public ConcreteCollection()
                 {
                     IList listObj;
                     listObj = this;
@@ -79,7 +79,7 @@ CollectionBaseTest.cs
                     }
                 }
 
-                // A helper method to look at a value in the 
+                // A helper method to look at a value in the
                 // list at a specific index
                 public int PeekAt(int index)
                 {
@@ -94,62 +94,62 @@ CollectionBaseTest.cs
                 }
 
                 // Mark the flag if this hook is fired
-                protected override void OnClearComplete() 
+                protected override void OnClearComplete()
                 {
                     this.onClearCompleteFired = true;
                 }
 
-                // Mark the flag, and save the paramter if 
+                // Mark the flag, and save the paramter if
                 // this hook is fired
-                protected override void OnInsert(int index, 
-                                object value) 
+                protected override void OnInsert(int index,
+                                object value)
                 {
                     this.onInsertFired = true;
                     this.onInsertIndex = index;
                 }
 
-                // Mark the flag, and save the paramter if 
+                // Mark the flag, and save the paramter if
                 // this hook is fired
-                protected override void OnInsertComplete(int index, 
-                                object value) 
+                protected override void OnInsertComplete(int index,
+                                object value)
                 {
                     this.onInsertCompleteFired = true;
                     this.onInsertCompleteIndex = index;
                 }
-            
-                // Mark the flag, and save the paramter if this hook 
+
+                // Mark the flag, and save the paramter if this hook
                 // is fired
-                protected override void OnRemove(int index, 
-                                object value) 
+                protected override void OnRemove(int index,
+                                object value)
                 {
                     this.onRemoveFired = true;
                     this.onRemoveIndex = index;
                 }
-            
-                // Mark the flag, and save the paramter if this hook 
+
+                // Mark the flag, and save the paramter if this hook
                 // is fired
-                protected override void OnRemoveComplete(int index, 
-                                    object value) 
+                protected override void OnRemoveComplete(int index,
+                                    object value)
                 {
                     this.onRemoveCompleteFired = true;
                     this.onRemoveCompleteIndex = index;
                 }
-            
-                // Mark the flag, and save the paramters if this hook 
+
+                // Mark the flag, and save the paramters if this hook
                 // is fired
-                protected override void OnSet(int index, object oldValue, 
-                                    object newValue) 
+                protected override void OnSet(int index, object oldValue,
+                                    object newValue)
                 {
                     this.onSetFired = true;
                     this.onSetOldValue = (int) oldValue;
                     this.onSetNewValue = (int) newValue;
                 }
-            
-                // Mark the flag, and save the paramters if this hook 
+
+                // Mark the flag, and save the paramters if this hook
                 // is fired
-                protected override void OnSetComplete(int index, 
-                                object oldValue, 
-                                object newValue) 
+                protected override void OnSetComplete(int index,
+                                object oldValue,
+                                object newValue)
                 {
                     this.onSetCompleteFired = true;
                     this.onSetCompleteOldValue = (int) oldValue;
@@ -159,7 +159,7 @@ CollectionBaseTest.cs
 
             public static ITest Suite {
                 get {
-                    return new TestSuite 
+                    return new TestSuite
                         (typeof(CollectionBaseTest));
                 }
             }
@@ -207,7 +207,7 @@ CollectionBaseTest.cs
         }
 
         // Test Clear and it's hooks
-        public void TestClear() 
+        public void TestClear()
         {
             ConcreteCollection myCollection;
             int numberOfItems;
@@ -220,7 +220,7 @@ CollectionBaseTest.cs
         }
 
         // Test RemoveAt, other removes and the hooks
-        public void TestRemove() 
+        public void TestRemove()
         {
             ConcreteCollection myCollection;
             int numberOfItems;
@@ -245,7 +245,7 @@ CollectionBaseTest.cs
         }
 
         // Test the random access feature
-        public void TestSet() 
+        public void TestSet()
         {
             ConcreteCollection myCollection;
             int numberOfItems;

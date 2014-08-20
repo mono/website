@@ -30,7 +30,7 @@ using System;
 using Gtk;
  
 public class MyWindow : Window
-{ 
+{
  
     Pango.Layout layout;
     Gtk.DrawingArea da;
@@ -44,7 +44,7 @@ public class MyWindow : Window
  
         da = new Gtk.DrawingArea();
         da.SetSizeRequest(width, height);
-        da.ExposeEvent += Expose_Event;     
+        da.ExposeEvent += Expose_Event;
  
         layout = new Pango.Layout(this.PangoContext);
         layout.Width = Pango.Units.FromPixels(width);
@@ -60,7 +60,7 @@ public class MyWindow : Window
  
     void Expose_Event(object obj, ExposeEventArgs args){
         da.GdkWindow.DrawLayout (da.Style.TextGC (StateType.Normal), 5, 5, layout);
-    } 
+    }
  
     void OnMyWindowDelete (object sender, DeleteEventArgs a)
     {

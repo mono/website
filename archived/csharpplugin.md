@@ -153,7 +153,7 @@ Three books have helped me a lot. Firstly there is “Beginning Mac OS X Program
 
 Of course, there is also the large body of code included with Xcode itself, particularly in
 
-    /System/Library/PrivateFrameworks/DevToolsCore.framework/Versions/A/Resources 
+    /System/Library/PrivateFrameworks/DevToolsCore.framework/Versions/A/Resources
 
 There is a log of great stuff here – if you can reverse-engineer and/or understand it.
 
@@ -522,7 +522,7 @@ The top of the file contains some comments that include the name of the name of 
 
 James Bucanek provides information in his “Beginning Xcode” book (Wrox) about the “\_\_MyCompanyName\_\_” item in the header comments, and how to set it. Basically it comes down to using the terminal to enter:
 
-    Defaults write com.apple.xcode PBXCustomTemplateMacroDefinitions –dict ORGANIZATIONNAME “My Company” 
+    Defaults write com.apple.xcode PBXCustomTemplateMacroDefinitions –dict ORGANIZATIONNAME “My Company”
 
 where you will need to put in something sensible for the “My Company” part.
 
@@ -658,24 +658,24 @@ All object have three basic values:
 
 Xcode’s understanding of a plugin begins with the ‘Target Template’, and this plugin has two: one for the executable assembly target and the other for a library assembly target. The Executable file is as follows:
 
-    { 
+    {
         Class = Native;
-        ProductType = "com.mono.product-type.executable"; 
+        ProductType = "com.mono.product-type.executable";
         Description = "Target for building an application that uses the Mono .NET environment";
-        CustomBuildSettings = { 
-            INSTALL_PATH = "$(HOME)/Applications"; 
-            PRODUCT_NAME = "«PRODUCTNAME».exe"; 
-            EXECUTABLE_EXTENSION = "exe"; 
+        CustomBuildSettings = {
+            INSTALL_PATH = "$(HOME)/Applications";
+            PRODUCT_NAME = "«PRODUCTNAME».exe";
+            EXECUTABLE_EXTENSION = "exe";
             TARGET_TYPE = "-target:exe";
-        }; 
+        };
 
-        BuildPhases = ( 
+        BuildPhases = (
             {
-                Class = Sources; 
-            }, 
+                Class = Sources;
+            },
             {
-                Class = Frameworks; 
-            }, 
+                Class = Frameworks;
+            },
         );
     }
 
@@ -691,24 +691,24 @@ You will notice that there is no ‘identifier’ in this file; rather there is 
 
 This file contains two ‘product specification’ object definitions. The following is the one related to the ‘executable’ product:
 
-    { 
-        // Mono Executable Assembly (.exe) Identifier = com.mono.product-type.executable; 
-        Class = MonoProductSpecificationCS; 
-        Name = "Mono Executable Builder"; 
-        Description = "Mono Executable Assembly Builder"; 
-        IconNamePrefix = "TargetExecutable"; 
-        DefaultTargetName = "Application"; 
-        SupportsZeroLink = NO; 
-        Vendor = "Mono"; 
-        AllowedBuildPhaseTypes = ( Sources, Frameworks ); 
-        DefaultBuildProperties = { 
-            ARCHS = (mono); 
-            VALID_ARCHS = (mono, i386, ppc ); 
+    {
+        // Mono Executable Assembly (.exe) Identifier = com.mono.product-type.executable;
+        Class = MonoProductSpecificationCS;
+        Name = "Mono Executable Builder";
+        Description = "Mono Executable Assembly Builder";
+        IconNamePrefix = "TargetExecutable";
+        DefaultTargetName = "Application";
+        SupportsZeroLink = NO;
+        Vendor = "Mono";
+        AllowedBuildPhaseTypes = ( Sources, Frameworks );
+        DefaultBuildProperties = {
+            ARCHS = (mono);
+            VALID_ARCHS = (mono, i386, ppc );
             FULL_PRODUCT_NAME = "$(PRODUCT_NAME).exe";
-        }; 
-        PackageTypes = ( 
-            com.mono.package-type.executable // default 
-        ); 
+        };
+        PackageTypes = (
+            com.mono.package-type.executable // default
+        );
     },
 
 As well as the standard ‘Identifier’, ‘Name’ and ‘Description’ items, the top level
@@ -731,23 +731,23 @@ The main item in this definition is ‘PackageTypes’ which links to the packag
 
 This file contains the package specifications for both the executable and library assemblies. The executable definition follows:
 
-    // Mono executable assembly 
-    { 
-        Identifier = com.mono.package-type.executable; 
-        Name = "Mono Executable Assembly"; 
-        Description = "Mono assembly that can be run"; 
+    // Mono executable assembly
+    {
+        Identifier = com.mono.package-type.executable;
+        Name = "Mono Executable Assembly";
+        Description = "Mono assembly that can be run";
         DefaultBuildSettings = {
-             PACKAGE_TYPE = EXECUTABLE; 
-             EXECUTABLE_SUFFIX = ".exe"; 
+             PACKAGE_TYPE = EXECUTABLE;
+             EXECUTABLE_SUFFIX = ".exe";
              EXECUTABLE_NAME = "$(PRODUCT_NAME)$(EXECUTABLE_SUFFIX)";
-             EXECUTABLE_PATH = "$(EXECUTABLE_NAME)"; 
+             EXECUTABLE_PATH = "$(EXECUTABLE_NAME)";
              GENERATE_PKGINFO_FILE = NO;
         };
-        ProductReference = { 
-            FileType = compiled.mono.executable; 
-            Name = "$(PRODUCT_NAME).exe"; // always assumed to be relative to $(BUILD_DIR) 
-            IsLaunchable = YES; 
-        }; 
+        ProductReference = {
+            FileType = compiled.mono.executable;
+            Name = "$(PRODUCT_NAME).exe"; // always assumed to be relative to $(BUILD_DIR)
+            IsLaunchable = YES;
+        };
     },
 
 I have found that changing the items defined within the ‘DefaultBuildSettings’
@@ -767,34 +767,34 @@ This file defines the types of files that are used within the plugin. In this ca
 The following shows the definitions for the source file and the executable assembly.
 
     {
-        // C-Sharp source code 
-        Identifier = sourcecode.csharp; 
-        BasedOn = sourcecode; 
-        Name = "C# File";     
-        Extensions = (cs, csharp); 
-        MIMETypes = ("text/C#"); 
-        ComputerLanguage = csharp; 
-        IsTextFile = YES; 
-        IsSourceCode = YES; 
-        AppliesToBuildRules = YES; 
-        ChangesCauseDependencyGraphInvalidation = YES; 
-        }, 
+        // C-Sharp source code
+        Identifier = sourcecode.csharp;
+        BasedOn = sourcecode;
+        Name = "C# File";
+        Extensions = (cs, csharp);
+        MIMETypes = ("text/C#");
+        ComputerLanguage = csharp;
+        IsTextFile = YES;
+        IsSourceCode = YES;
+        AppliesToBuildRules = YES;
+        ChangesCauseDependencyGraphInvalidation = YES;
+        },
         {
-            // Executable (.exe) file 
-            Identifier = compiled.mono.executable; 
-            BasedOn = compiled; 
-            Name = "Mono Executable File"; 
-            Extensions = (exe); 
-            TypeCodes = (APPL); 
-            IsTextFile = NO; 
-            IsSourceFile = NO; 
-            IsExecutable = YES; 
-            IsExecutableWithGUI = NO; 
-            IsTransparent = NO; 
-            IsApplication = NO; 
-            IsBundle = NO; 
-            ContainsNativeCode = NO; 
-            AppliesToBuildRules = NO; 
+            // Executable (.exe) file
+            Identifier = compiled.mono.executable;
+            BasedOn = compiled;
+            Name = "Mono Executable File";
+            Extensions = (exe);
+            TypeCodes = (APPL);
+            IsTextFile = NO;
+            IsSourceFile = NO;
+            IsExecutable = YES;
+            IsExecutableWithGUI = NO;
+            IsTransparent = NO;
+            IsApplication = NO;
+            IsBundle = NO;
+            ContainsNativeCode = NO;
+            AppliesToBuildRules = NO;
             ComputerLanguage = csharp;
     },
 
@@ -810,46 +810,46 @@ This definition file is used by the editor to allow syntax colouring and other e
 
 The beginning of the file is as follows:
 
-    { 
-        Identifier = csharp; 
-        Name = "CSharp"; 
-        Description = "CSharp source file"; 
-        BasedOn = "pbx_root_language"; 
-        SourceScannerClassName = PBXCPPSourceScanner; 
-        SupportsIndentation = YES; 
-        Indentation = { 
-        }; 
-        SyntaxColoring = { 
-            CaseSensitive = YES; 
+    {
+        Identifier = csharp;
+        Name = "CSharp";
+        Description = "CSharp source file";
+        BasedOn = "pbx_root_language";
+        SourceScannerClassName = PBXCPPSourceScanner;
+        SupportsIndentation = YES;
+        Indentation = {
+        };
+        SyntaxColoring = {
+            CaseSensitive = YES;
             UnicodeSymbols = YES;
-            UnicodeEscapes = YES; 
-            IndexedSymbols = YES; 
-            CommentsCanBeNested = YES; 
-            IdentifierStartChars = "_"; 
-            IdentifierChars = "_"; 
+            UnicodeEscapes = YES;
+            IndexedSymbols = YES;
+            CommentsCanBeNested = YES;
+            IdentifierStartChars = "_";
+            IdentifierChars = "_";
             MultiLineComment = (
-                ( "/*", "*/" ) 
-            ); 
-            String = ( 
-                ( "\"", "\"" ) 
-            ); 
+                ( "/*", "*/" )
+            );
+            String = (
+                ( "\"", "\"" )
+            );
             EscapeCharacter = "\\";
-            Character = ( 
-                ( "'", "'" ) 
-            ); 
-            SingleLineComment = ( "//" ); 
-            DocComment = "///"; 
-            DocCommentKeywords = ( 
-                "summary", 
-                "param", 
-                "returns" 
-            ); 
-            Keywords = ( 
-                "abstract", 
-                "as", 
-                "base", 
-                "bool", 
-                "break", 
+            Character = (
+                ( "'", "'" )
+            );
+            SingleLineComment = ( "//" );
+            DocComment = "///";
+            DocCommentKeywords = (
+                "summary",
+                "param",
+                "returns"
+            );
+            Keywords = (
+                "abstract",
+                "as",
+                "base",
+                "bool",
+                "break",
 
 I believe that, if you understood what the method definitions should be, that you could write a suitable class definition and reference it in the ‘SourceScannerClassName’ item and so improve the integration of the language with the editor. I’m guessing that this would overcome the issue the plugin currently has in (for example) not knowing about property accessors – the editor simply shows that the cursor is in the class definition, whereas it can understand a method definition enough to reference its name.
 
@@ -858,16 +858,16 @@ I believe that, if you understood what the method definitions should be, that yo
 This definition file defines an additional ‘architecture’ that can be referenced within Xcode. In this case it defines the ‘mono’ architecture:
 
     (
-        // Mono - architecture independent 
+        // Mono - architecture independent
         {
             Type = Architecture;
             Identifier = mono;
-            Name = "Mono IDL"; 
-            Description = "Mono architecture -independent of any hardware"; 
+            Name = "Mono IDL";
+            Description = "Mono architecture -independent of any hardware";
             ByteOrder = little;
             ShowInUI = YES;
             // SortNumber = 53;
-        }, 
+        },
     )
 
 I have no idea what the ‘SortNumber’ does, but it appears in some other architecture definitions and is commented out in others: either way this definition seems to make Xcode happy.
@@ -878,15 +878,15 @@ Architectures seem to come into their own when a source file can be compiled for
 
 This definition file links a source file with its compiler:
 
-    ( 
+    (
         {
-            // .NET V2 compatible compiler 
+            // .NET V2 compatible compiler
             // Note: The monoCompilerSpecificationCS.m doesn't actually use this
-            // It uses option values to select the V1/V2 compiler (mcs/gmcs) 
-            Name = "Mono Source rule"; 
-            FileType = sourcecode.csharp; 
+            // It uses option values to select the V1/V2 compiler (mcs/gmcs)
+            Name = "Mono Source rule";
+            FileType = sourcecode.csharp;
             CompilerSpec = com.mono.compilers.csharp.gmcs;
-        }, 
+        },
     )
 
 When Xcode wants to compile a ‘sourcecode.csharp’ file (see the .pbfilespec
@@ -899,53 +899,53 @@ definition), it will use this definition to select the
 
 This definition file tells Xcode how to compile C\# source files. The start of it is as follows: {
 
-       Type = Compiler; 
-       Identifier = com.mono.compilers.csharp.gmcs; 
-       Class = MonoCompilerSpecificationCS; 
-       Name = "Mono gmcs Compiler"; 
+       Type = Compiler;
+       Identifier = com.mono.compilers.csharp.gmcs;
+       Class = MonoCompilerSpecificationCS;
+       Name = "Mono gmcs Compiler";
        Description = "Mono development projects gmcs compiler for C# code";
-       Version = "2.0"; 
-       Vendor = "Mono"; 
-       Languages = (csharp); 
-       Architectures = ( mono, i386, ppc ); 
+       Version = "2.0";
+       Vendor = "Mono";
+       Languages = (csharp);
+       Architectures = ( mono, i386, ppc );
        FileTypes = (sourcecode.csharp);
-       ExecPath = "/usr/bin/gmcs"; 
+       ExecPath = "/usr/bin/gmcs";
        CommandOutputParser = MonoOutputParser;
        SupportsZeroLink = NO;
        SupportsPredictiveCompilation = NO;
-       Options = ( 
+       Options = (
            {
-           Name = OTHER_CSHARPFLAGS; 
+           Name = OTHER_CSHARPFLAGS;
            Type = stringlist;
            DefaultValue = "";
-           CommandLineArgs = { "" = (); 
+           CommandLineArgs = { "" = ();
            "<<otherwise>>" = ("${0}");
            };
-           Category = Building; 
+           Category = Building;
            },
            {
-           // Adds the module to the generated assembly 
-           Name = CS_ADDMODULE; 
+           // Adds the module to the generated assembly
+           Name = CS_ADDMODULE;
            Type = stringlist;
-           DefaultValue = ""; 
+           DefaultValue = "";
            CommandLineArgs = ( "--addmodule:${0}" );
            Category = Building; CommonOption = NO;
            },
-           { 
-           //Set default context to be checked 
-           Name = CS_CHECKED; 
-           Type = bool; 
-           DefaultValue = YES; 
+           {
+           //Set default context to be checked
+           Name = CS_CHECKED;
+           Type = bool;
+           DefaultValue = YES;
            CommandLineArgs = { YES = (); NO = ("-checked-"); };
-           Category = CodeGeneration; 
+           Category = CodeGeneration;
            CommonOption = NO;
            },
-           { 
+           {
            // Sets the code page
-           Name = CS_CODEPAGE; 
-           Type = enum; 
-           AllowedValues = ("", "Latin1", "utf8", "reset"); 
-           DefaultValue = ""; 
+           Name = CS_CODEPAGE;
+           Type = enum;
+           AllowedValues = ("", "Latin1", "utf8", "reset");
+           DefaultValue = "";
            CommandLineArgs = { "" = (); "<>" = ("-codepage:${0}"); };
            Category = Language;
            CommonOption = NO;
@@ -984,7 +984,7 @@ This file defines the linker to be used. Xcode locates the linker by calling the
 
     (
         {
-            Identifier = com.mono.compilers.csharp.linker; 
+            Identifier = com.mono.compilers.csharp.linker;
             Class = MonoLinkerSpecificationCS;
             Name = "CSharp Assembly Builder";
             Description = "C# Assembly Builder";
@@ -1004,9 +1004,9 @@ This file defines the linker to be used. Xcode locates the linker by calling the
                     DefaultValue = NO;
                     CommandLineArgs = { YES = ("-debug+"); NO = (); };
                     CommonOption = YES;
-                 }, 
-            ); 
-        } 
+                 },
+            );
+        }
     )
 
 I’m not at all sure if Xcode uses the ‘BinaryFormats’ and ‘InputFileTypes’ in

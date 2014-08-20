@@ -14,7 +14,7 @@ Meeting Summary
     Attendants: calvin, jpallen, knocte, marioC, mgorse, ngao, raywang, sandy, bgmerrell, calen
 
     Topic—Iteration 1 review
-    <sandy> Done CheckBox and Label, done 95% with Button (not sure how to implement some properties and if they can be implement). 
+    <sandy> Done CheckBox and Label, done 95% with Button (not sure how to implement some properties and if they can be implement).
     <MarioC> Refactored the events, LinkLabel provider is done, done 50% with TextBox.
     <calvin> Done 65% with Button UIA Control Type(Missing IScrollProvider and ITextProvider implementations.).
     <Calen> Done some simple application sample with winforms "button\label\linklabel\numericUpDown\textbox\groupBox\checkbox\radiobutton\panel" control by Ironpython.
@@ -25,7 +25,7 @@ Meeting Summary
     <knocte> (1)dealing with the implementation of Atk.TextImplementor interface. (2)was now investigating about the unique state of Label to be implemented and looking at the difference between ATK_ROLE_ACCEL_LABEL and the normal (currently used ATK_ROLE_LABEL). (3)label widget is accessible.
 
     Remind: we all need update our status and notes of what we had planned in schedule page.
-        
+
 
     Topic-- Iteration 2 plan
 
@@ -96,7 +96,7 @@ RAW IRC Capture
     <calvin> knocte: you arrived just in time to give us your status
     * knocte reads the past conversation
     <calvin> knocte: ok, let's skip knocte for now and come back so he is up to speed
-     Calen: 
+     Calen:
     <Calen> Okey
      i have finished some simple application sample with winforms "button\label\linklabel\numericUpDown\textbox\groupBox\checkbox\radiobutton\panel" control by Ironpython.
      but i am not sure if they are the exactly way to be used when we do test.
@@ -125,7 +125,7 @@ RAW IRC Capture
     <bgmerrell> Okay, the lab machines and vms are all set up and running
      https://wiki.innerweb.novell.com/index.php/UIAQA
      that is the information for the test lab in Provo
-     I have set up strongwind and written some autoated, proof-of-concept tests against GTK sample applications 
+     I have set up strongwind and written some autoated, proof-of-concept tests against GTK sample applications
      automated*
      and have a method to automate the testing on all the lab machine
      so as soon as we are ready, we can just plug the strongwind tests into the winforms apps
@@ -139,7 +139,7 @@ RAW IRC Capture
      Ray: status
     <Ray> yes
      last week, I continue to accquire the concepts and knowledges of accessibility.
-     lurk around on gnome.org etc. 
+     lurk around on gnome.org etc.
      and on the end of last week, Calen, neville and me spends some hours to discuss the Architecture and our understanding.
      second, i try to build several packages on OBS,
      such as olive, gtk-sharp. which spend some times.
@@ -147,12 +147,12 @@ RAW IRC Capture
      and continue to use those patches which are located in uia2atk directory to patch mcs and mono etc.
      I wish i could discuss the build process and more details with someone else in the near future. :)
      in iteration 2, i will patch mono, and mcs
-     over. 
+     over.
     <bgmerrell> calvin: sorry, the tasks for Calen and I on the wiki were just placeholders, i did not think to add all the setup tasks I was doing.
     <jpallen> Stephen will be starting on the team next week and he will be someone that you will be working with closely :-)
     <Ray> jpallen: great news, thanks jared. :)
     <calvin> Ray: thanks
-    <Ray> calvin: thanks 
+    <Ray> calvin: thanks
     <calvin> ngao: status
     <ngao> ok
      i reviewed the wiki to understand the architecture and the relationship between modules
@@ -218,7 +218,7 @@ RAW IRC Capture
     <calvin> Ray: go
     <knocte> (I would ask not to be the last one this time because I have an appointment with the dentist in 15 minutes) :)
     <calvin> ah, indeed
-    <Ray> 1. follow your infomation, split olive into some sub-packages, 
+    <Ray> 1. follow your infomation, split olive into some sub-packages,
     <calvin> Ray: hold on a sec
      knocte: go
     <Ray> ok
@@ -233,7 +233,7 @@ RAW IRC Capture
      done
     <Ray> it's me?
     <calvin> Ray: yep, go
-    <Ray> 1. follow your infomation, split olive into some sub-packages, 
+    <Ray> 1. follow your infomation, split olive into some sub-packages,
      2. build patched mcs and mono
      3. talk about more plan for QA according to jared's time
      4. talk to new hacker if he/she is on board.
@@ -271,7 +271,7 @@ RAW IRC Capture
      did I miss anyone?
     * decriptor I plan on starting to work next week :P
     <calvin> decriptor: go
-    <decriptor> that's it :)  
+    <decriptor> that's it :)
     <calvin> heh
     <Ray> decriptor: can't wait. :)
     <decriptor> calvin: oh and get that 24" from you

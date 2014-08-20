@@ -71,7 +71,7 @@ If you experience any errors when running post-review, please send them to Brad 
 
 Part of the output of \`post-review\` should be a URL for your review draft. You will need to visit that URL and complete your review before publishing it.
 
-    [mono] ~/mono-svn/uia2atk-1.0 @ post-review 
+    [mono] ~/mono-svn/uia2atk-1.0 @ post-review
     Review request #72 posted.
 
     http://reviews.mono-a11y.org/r/72

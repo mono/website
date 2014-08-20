@@ -143,7 +143,7 @@ Whatever output we got from apache2ctl wasn't a valid directory, so something is
 
 Searching through the rpm database, we couldn't find the apache2 rpm. Use
 
-       "rpm -qa|grep -i apache"    
+       "rpm -qa|grep -i apache"
 
 to see what apache related packages are installed on your system.
 

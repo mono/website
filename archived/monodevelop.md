@@ -8,7 +8,7 @@ redirect_from:
 MonoDevelop
 ===========
 
-    WARNING: This document is out of date, please consult the 
+    WARNING: This document is out of date, please consult the
     MonoDevelop web site: http://www.monodevelop.org
     for up-to-date information.
 

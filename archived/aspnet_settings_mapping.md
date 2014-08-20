@@ -147,8 +147,8 @@ This is the global settings.map file as currently shipped with Mono:
               The attributes to any of the above are freeform and are not processed by the mapper manager. They are stored verbatim for the
               mapper to peruse.
       -->
-      <replace name="AspNetSqlMembershipProvider" 
-               type="System.Web.Security.SqliteMembershipProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+      <replace name="AspNetSqlMembershipProvider"
+               type="System.Web.Security.SqliteMembershipProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                connectionStringName="LocalSqliteServer" />
     </what>
   </map>
@@ -170,8 +170,8 @@ This is the global settings.map file as currently shipped with Mono:
               The attributes to any of the above are freeform and are not processed by the mapper manager. They are stored verbatim for the
               mapper to peruse.
       -->
-      <replace name="AspNetSqlRoleProvider" 
-               type="System.Web.Security.SqliteRoleProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+      <replace name="AspNetSqlRoleProvider"
+               type="System.Web.Security.SqliteRoleProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                connectionStringName="LocalSqliteServer" />
     </what>
   </map>

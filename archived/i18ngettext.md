@@ -149,7 +149,7 @@ Using the **--from-code=UTF-8** parameter sets the source file format, and *es.p
 
     #: Example.cs:11
     msgid "Hello world!"
-    msgstr "" 
+    msgstr ""
 
 Do not forget to change the *CHARSET* from this line
 
@@ -163,7 +163,7 @@ See the following lines
 
     #: Example.cs:11
     msgid "Hello world!"
-    msgstr "" 
+    msgstr ""
 
 You will notice three important sections:
 
@@ -193,7 +193,7 @@ After translating the file might look something like this:
 
     #: Example.cs:11
     msgid "Hello world!"
-    msgstr "¡Hola mundo!" 
+    msgstr "¡Hola mundo!"
 
 Now we need to create the catalog, we use the following command for creating it
 

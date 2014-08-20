@@ -45,7 +45,7 @@ This message has some background:
        But one change which was particularly annoying was one dealing with
     the way that MS Color is serialized.  They have a concept of "Known
     Colors", and if a flag in the serialization is set, the color is
-    initialized from a known color index.   
+    initialized from a known color index.
 
        The idea is fine, but mixed with serialization it means that we do
     not get a chance to compute the color RGB values in advance, but have

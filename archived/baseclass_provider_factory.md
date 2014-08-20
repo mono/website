@@ -50,30 +50,30 @@ The followiing configuration section entries are needed to be added to either ma
 <configuration>
     <configSections>
         <section name="connectionStrings"
-            type="System.Data.Common.ConnectionStringsSectionHandler, System, Version=2.0, Culture=neutral"/>    
+            type="System.Data.Common.ConnectionStringsSectionHandler, System, Version=2.0, Culture=neutral"/>
  
         <section name="system.data"
-            type="System.Data.Common.DbProviderFactoriesConfigurationHandler, System, Version=2.0, Culture=neutral"/>    
+            type="System.Data.Common.DbProviderFactoriesConfigurationHandler, System, Version=2.0, Culture=neutral"/>
  
     </configSections>
      <system.data>
         <DbProviderFactories>
-           <add name="System.Data.SqlClient"         
-               invariant="System.Data.SqlClient"         
-               support="FF" 
-               description="SqlClient Provider Factory"      
+           <add name="System.Data.SqlClient"
+               invariant="System.Data.SqlClient"
+               support="FF"
+               description="SqlClient Provider Factory"
                type="System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.3600.0, Culture=neutral"/>
-           <add name="System.Data.OdbcFactory"         
-               invariant="System.Data.OdbcFactory"         
-               support="FF" 
-               description="Odbc Provider Factory"      
+           <add name="System.Data.OdbcFactory"
+               invariant="System.Data.OdbcFactory"
+               support="FF"
+               description="Odbc Provider Factory"
                type="System.Data.Odbc.OdbcFactory, System.Data, Version=2.0.3600.0, Culture=neutral"/>
         </DbProviderFactories>
     </system.data>
     <connectionStrings>
-        <add name="MonoTest" providerName="System.Data.SqlClient" 
+        <add name="MonoTest" providerName="System.Data.SqlClient"
          connectionString="Data Source=<SERVER>;Initial Catalog=<Database>;User Id=<uid>;Password=<pwd>;" />
-        <add name="MonoTestOdbc" providerName="System.Data.OdbcFactory" 
+        <add name="MonoTestOdbc" providerName="System.Data.OdbcFactory"
          connectionString="DSN=<ODBC DSN>;UID=<uid>;PWD=<pwd>;" />
     </connectionStrings>
 </configuration>

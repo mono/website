@@ -47,7 +47,7 @@ public NSEnumerator()
     Handle = Messaging.IntPtr_objc_msgSend(this.Handle, selInit.Handle);
 }
  
-// This constructor must be present so that MonoTouch 
+// This constructor must be present so that MonoTouch
 // can create instances of your type from Objective-C code.
 public NSEnumerator(IntPtr handle)
     : base(handle)

@@ -124,7 +124,7 @@ class GConfTutorial {
     {
         Application.Init ();
  
-        // creates new window with the given title 
+        // creates new window with the given title
         Window w = new Window("GConf Tutorial");
         // creates all edit boxes
         name = new Entry();
@@ -187,7 +187,7 @@ class GConfTutorial {
         ntrycnt.PackStart(email, true, true, 0);
         ntrycnt.PackStart(sn, true, true, 0);
         // last, but not least - the check box
-        globvbox.PackStart(married, false, false, 0); 
+        globvbox.PackStart(married, false, false, 0);
  
         // creates our link to gconf
         client = new GConf.Client();

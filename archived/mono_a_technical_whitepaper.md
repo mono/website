@@ -168,7 +168,7 @@ Unlike many of today's mainstream development platform such as Microsoft .NET, S
 Relying on a corporate sponsored open source development platform has many advantages amongst which:
 
 -   Large community of contributors to the platform
--   -   
+-   -
 
 Overview
 --------

@@ -236,7 +236,7 @@ using System.Net;
  
 class MainClass
 {
-    public static bool Validator (object sender, X509Certificate certificate, X509Chain chain, 
+    public static bool Validator (object sender, X509Certificate certificate, X509Chain chain,
                                       SslPolicyErrors sslPolicyErrors)
     {
         return true;
@@ -248,7 +248,7 @@ class MainClass
         WebRequest wr = WebRequest.Create (args [0]);
         Stream stream = wr.GetResponse ().GetResponseStream ();
         Console.WriteLine (new StreamReader (stream).ReadToEnd ());
-    }     
+    }
 }
 ```
 
@@ -262,13 +262,13 @@ using System.Security.Cryptography.X509Certificates;
  
 public class Program : ICertificatePolicy {
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         return true;
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         WebRequest wr = WebRequest.Create (args [0]);
@@ -297,7 +297,7 @@ using System.Net;
  
 public class Program {
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         WebRequest wr = WebRequest.Create (args [0]);
         Stream stream = wr.GetResponse ().GetResponseStream ();
@@ -326,7 +326,7 @@ using System.Net;
  
 public class Program {
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         try {
             WebRequest wr = WebRequest.Create (args [0]);
@@ -337,10 +337,10 @@ public class Program {
         catch (WebException we) {
             if (we.Status != WebExceptionStatus.TrustFailure)
                 throw;
-            Console.WriteLine ("You do not trust the people who " + 
-                "issued the certificate being used by '{0}'." + 
-                " Please see the application help file on " + 
-                "the 'trust certificate' subject to learn " + 
+            Console.WriteLine ("You do not trust the people who " +
+                "issued the certificate being used by '{0}'." +
+                " Please see the application help file on " +
+                "the 'trust certificate' subject to learn " +
                 "about how this can be fixed.", args [0]);
         }
     }
@@ -367,7 +367,7 @@ using System.Security.Cryptography.X509Certificates;
  
 public class Program : ICertificatePolicy {
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         if (error == 0)
@@ -376,13 +376,13 @@ public class Program : ICertificatePolicy {
         if (error != -2146762486)
             return false;
  
-        Console.Write ("A trust error occured while attempting to " + 
+        Console.Write ("A trust error occured while attempting to " +
             "access the web site. Do you wish to continue this " +
             "session even if we couldn't assess its security? ");
         return (Console.ReadLine ().ToLower () == "yes");
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         try {
@@ -440,7 +440,7 @@ public class Program : ICertificatePolicy {
         // TODO
     }
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         if (error == 0)
@@ -455,7 +455,7 @@ public class Program : ICertificatePolicy {
         if ((result is int) && ((int)result == error))
             return true;
  
-        Console.WriteLine ("A trust error occured while attempting " + 
+        Console.WriteLine ("A trust error occured while attempting " +
             "to access the web site. Do you wish to:");
         Console.WriteLine ("\ta) abort this untrusted session;");
         Console.WriteLine ("\tb) continue this session (only once);");
@@ -474,7 +474,7 @@ public class Program : ICertificatePolicy {
         }
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         try {

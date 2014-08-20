@@ -349,12 +349,12 @@ using System;
 using System.Threading;
  
 class ThreadCaller {
-    static void Main () 
+    static void Main ()
         {
         ThreadCaller myCaller = new ThreadCaller();
     }
  
-    public ThreadCaller () 
+    public ThreadCaller ()
         {
         Thread myThread = new Thread (delegate (object myValue){
                 Thread.Sleep (1000);
@@ -383,7 +383,7 @@ namespace ThreadGuideSamples {
         }
  
         public ThreadCaller () {
-            Thread myThread = new Thread (new 
+            Thread myThread = new Thread (new
                                          ParameterizedThreadStart (
                                             this.SecondThread));
  
@@ -422,11 +422,11 @@ namespace ThreadGuideSamples {
  
         public ThreadCaller () {
             // Constructor gets the first parameter
-            SecondThreadObject myThreadObject = new 
+            SecondThreadObject myThreadObject = new
                     SecondThreadObject ("Test Param");
  
             // Setting another property of the new Thread-Object
-            myThreadObject.Parameter2 = 10; 
+            myThreadObject.Parameter2 = 10;
             Thread myThread = new Thread (new ThreadStart (
                         myThreadObject.MyAsyncMethod));
             myThread.Start ();
@@ -442,17 +442,17 @@ namespace ThreadGuideSamples {
         }
  
         public int Parameter2 {
-            set { 
-                this.my_param2 = value; 
+            set {
+                this.my_param2 = value;
             }
         }
  
         public void MyAsyncMethod () {
             Console.WriteLine ("The value passed in " +
-                               "the Constructor is '{0}'", 
+                               "the Constructor is '{0}'",
                                this.my_param1);
             Console.WriteLine ("The value passed in " +
-                               "the Property is '{0}'", 
+                               "the Property is '{0}'",
                                this.my_param2);
             for (int x = 0; x < 50; x++)
                 Console.WriteLine (x);
@@ -491,13 +491,13 @@ namespace ThreadGuideSamples {
         }
  
         public ThreadCaller () {
-            // Passing an MyCallBack-Delegate to the object executed on the 
+            // Passing an MyCallBack-Delegate to the object executed on the
             // different thread.
-            SecondThreadObject myThreadObject = new 
+            SecondThreadObject myThreadObject = new
                     SecondThreadObject (new MyCallBack(this.OnResponse));
  
             // Starting the thread as usual
-            Thread myThread = new Thread (new 
+            Thread myThread = new Thread (new
                 ThreadStart (myThreadObject.MyAsyncMethod));
             myThread.Start ();
         }
@@ -520,7 +520,7 @@ namespace ThreadGuideSamples {
             for (int i = 0; i < 50; i++)
                 if (this.On_Response != null)
                     // Invoke the call back delegate
-                    this.On_Response (i); 
+                    this.On_Response (i);
             Console.ReadKey ();
         }
     }

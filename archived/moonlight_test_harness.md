@@ -128,7 +128,7 @@ If you are running the test harness outside of the make targets, these options a
 |- valign=&quot;top&quot;
 | -no-console-report
 |Disable reporting results to the terminal
-|- 
+|-
 | -html-report, -generate-html-report
 |Create an HTML report for the test run
 |-
@@ -139,7 +139,7 @@ If you are running the test harness outside of the make targets, these options a
 |List tests marked as known failure and their reason for failing.
 |-
 | -compare-to-moon
-|Compare to the moon master files instead of the master files specified in the 
+|Compare to the moon master files instead of the master files specified in the
 drtlist.
 |-
 | -valgrind
@@ -148,7 +148,7 @@ drtlist.
 | -gdb
 |Execute moonlight with gdb. There is currently no way to pass options to gdb. If -valgrind is specified, this flag is ignored.
 |-
-| -generate-master-files    
+| -generate-master-files
 |Generate master files to be used with the compare-to-moon option.
 |}
  
@@ -208,7 +208,7 @@ You can also specify a different drtlist.xml, this will run the drtlist in media
      $ DRTLIST=media/video/drtlist.xml make run-drtlist
  
 === Using Xvfb ===
-When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground. 
+When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground.
 Setup the virtual buffer like so:
 &lt;pre&gt;
      $ Xvfb -fp /usr/share/fonts/misc -ac -screen 0 1024x1024x24 -nolisten tcp :3

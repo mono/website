@@ -146,7 +146,7 @@ An example with a slightly more complex application (with the same mkbundle opti
                 as -o /tmp/tmp713f3cc1.o temp.s
                 cc -o eGuide -Wall temp.c `pkg-config --cflags --libs mono` /tmp/tmp713f3cc1.o
                 Done
-                
+
                 $ ls -l
                 -rwxr-xr-x  1 ed users 5022039 2005-04-29 10:52 eGuide
                 -rwxr-xr-x  1 ed users   16384 2005-04-13 16:20 eGuide.exe

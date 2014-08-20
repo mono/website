@@ -91,11 +91,11 @@ using GtkGL;
  
             glWidget.AddGLObject(pot);
  
-            win.Add(glWidget);          
+            win.Add(glWidget);
  
             win.Show();
-            glWidget.Show();           
-        } 
+            glWidget.Show();
+        }
  
         void CloseWindow(object o, DeleteEventArgs args){
             Application.Quit();
@@ -193,15 +193,15 @@ using GtkGL;
  
             glWidget.AddGLObject(pot);
  
-            win.Add(glWidget);          
+            win.Add(glWidget);
  
             GLib.Timeout.Add(10, new GLib.TimeoutHandler(Animate) );
  
             win.Show();
-            glWidget.Show();           
+            glWidget.Show();
  
  
-        } 
+        }
  
         bool Animate(){
             GtkGL.EulerRotation rot = new GtkGL.EulerRotation(0, 0.02, 0.0);

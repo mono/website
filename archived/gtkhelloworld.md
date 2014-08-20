@@ -70,7 +70,7 @@ public class HelloWorld {
         // This packs the button into the window (a gtk container).
         window.Add (btn);
  
-        // The final step is to display this newly created 
+        // The final step is to display this newly created
         window.ShowAll ();
  
         // All GTK applications must call the main loop: Application.Run

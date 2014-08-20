@@ -221,8 +221,8 @@ ValueTests's test cases are defined in the "Tests: Pattern Specific" code region
     "Precondition: Verify that this control supports 'String' types",
     "Step: Get a random valid value",
     "Step: Add event that will catch PropertyChangeEvent",
-    "Step: Set the pattern to this value", 
-    "Step: Step: Wait for event", 
+    "Step: Set the pattern to this value",
+    "Step: Step: Wait for event",
     "Verify the pattern is set to this value",
     "Verify that the PropertyChangeEvent event is not fired"
 

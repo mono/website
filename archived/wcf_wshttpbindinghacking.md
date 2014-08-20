@@ -108,13 +108,13 @@ SecurityBindingElement covers several security-related WS-\* specifications:
 
 There are three derived classes of SecurityBindingElement:
 
-SymmetricSecurityBindingElement  
+SymmetricSecurityBindingElement
 uses symmetric security key, meaning that initiator and recipient use the same security key (like HMAC-SHA1).
 
-AsymmetricSecurityBindingElement  
+AsymmetricSecurityBindingElement
 uses asymmetric security key, meaning that initiator and recipient use different security key for each (like RSA-SHA1).
 
-TransportSecurityBindingElement  
+TransportSecurityBindingElement
 supports custom "mixed mode" securirty.
 
 Message protection requirements are represented as SecurityTokenParameters (actually one of its derived classes) at binding element level.

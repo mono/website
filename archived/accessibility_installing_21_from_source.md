@@ -85,7 +85,7 @@ If you have a [parallel Mono environment](/Parallel_Mono_Environments "Parallel 
      tar xfj uiautomationwinforms-2.1.tar.bz2
      cd uiautomationwinforms-2.1/
      ./configure --prefix=/usr
-     make 
+     make
      sudo make install
 
 ### uiaatkbridge-2.1.tar.bz2
@@ -101,7 +101,7 @@ If you have a [parallel Mono environment](/Parallel_Mono_Environments "Parallel 
      tar xfj uiadbus-2.1.tar.bz2
      cd uiadbus-2.1/
      ./configure --prefix=/usr
-     make 
+     make
      sudo make install
 
 ### at-spi-sharp-1.1.0.tar.bz2

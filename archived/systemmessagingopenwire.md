@@ -64,7 +64,7 @@ OpenWire.Client is fairly unstable, so it is very likely to not work fine.
 
 <!-- -->
 
-    http://monkey.workarea.jp/tmp/2006/OpenWire.Client.mcs.tar.bz2 
+    http://monkey.workarea.jp/tmp/2006/OpenWire.Client.mcs.tar.bz2
 
 To keep it updated, just svn up. And then, run "make dll-sources" which will update OpenWire.Client.dll.sources.
 

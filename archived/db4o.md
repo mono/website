@@ -178,14 +178,14 @@ public class Pilot {
 
 <!-- -->
 
-    cd /usr/lib/db4o/ mono Db4objects.Db4o.Tests.exe 
+    cd /usr/lib/db4o/ mono Db4objects.Db4o.Tests.exe
 
 -   As the final result you should get:
 
 <!-- -->
 
     "AllTests completed."
-    "No errors detected." 
+    "No errors detected."
 
  **On Windows**
 

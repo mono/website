@@ -17,10 +17,10 @@ Mono 1.9 will ship with support for batch compilation of the ASP.NET application
 
 The purpose of this article is to introduce the users to a slight difference between the MS.NET and Mono implementations. The difference lies in the way Mono selects the files for batch compilation. Whenever it builds a list of files to compile, it consults the contents of two Mono-specific AppSettings entries:
 
- **MonoAspnetBatchCompileIgnorePaths**  
+ **MonoAspnetBatchCompileIgnorePaths**
 contains a comma-separated list of **virtual** paths of virtual paths which are to be ignored when batch-building.
 
- **MonoAspnetBatchCompileFromFile**  
+ **MonoAspnetBatchCompileFromFile**
 contains a virtual path of a file which contains, one per line, a list of virtual paths which are to be ignored when batch-building.
 
 The paths from both sources are merged, duplicate entries are silently ignored.

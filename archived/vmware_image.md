@@ -100,7 +100,7 @@ Use md5sum to verify the download:
     md5sum mono1.2.5_opensuse10.2_vmware_0.zip
     b8a3c730f0d1ee2a37b508518cb987df  mono1.2.5_opensuse10.2_vmware_0.zip
 
-    md5sum mono1.2.4_opensuse10.2_vmware_1.zip 
+    md5sum mono1.2.4_opensuse10.2_vmware_1.zip
     b8ba1e445f1d71d152b436118256c2ae  mono1.2.4_opensuse10.2_vmware_1.zip
 
     md5sum mono1.2.3.1_opensuse10.2_vmware_0.zip

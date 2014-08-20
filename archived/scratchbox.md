@@ -49,7 +49,7 @@ First you must get and install the host-gcc tool chain running these commands ou
 
 Then login into scratchbox:
 
-     /scratchbox/login 
+     /scratchbox/login
 
 And execute these commands:
 

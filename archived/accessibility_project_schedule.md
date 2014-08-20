@@ -407,7 +407,7 @@ Modify spi\_main.c and spi\_event.c to use dbus|Done (untested)|Mike||
 |**Setup Testing Lab**|Done|Brian|[https://wiki.innerweb.novell.com/index.php/UIAQA](https://wiki.innerweb.novell.com/index.php/UIAQA)|
 |**Research automated testing of WinForms actions and properties**|Done|Brian|We'll use [Strongwind](http://www.medsphere.org/projects/strongwind/)|
 |**Iteration 2 Planning Meeting**
-IRC Meeting on \#mono-a11y on Wednesday, May 28, 2008 
+IRC Meeting on \#mono-a11y on Wednesday, May 28, 2008
 [14:00:00 UTC time](http://www.timeanddate.com/worldclock/fixedtime.html?year=2008&month=5&day=28&hour=14&min=0&sec=0)||All||
 
 ### Iteration 2 - May 28 - June 3
@@ -450,7 +450,7 @@ Simplify olive package and build patched new packages. e.g. mcs, mono|Done|Ray|h
 |**StatusBar** *(StatusBar)*
 Familiarize the steps of implementing Providers & Implement needed UIA Provider interfaces|50%|Neville|No unit test|
 |**Iteration 3 Planning Meeting**
-IRC Meeting on \#mono-a11y on Wednesday, June 4, 2008 
+IRC Meeting on \#mono-a11y on Wednesday, June 4, 2008
 [14:00:00 UTC](http://www.timeanddate.com/worldclock/fixedtime.html?year=2008&month=6&day=4&hour=14&min=0&sec=0)||All||
 
 ### Iteration 3 - June 4 - 10
@@ -547,7 +547,7 @@ start to learn and practice strongwind test scripts against gtk app with Brian's
 |**winforms application samples**
 update winforms application samples base on test coding standards.|Done|Calen||
 |**Iteration 5 Planning Meeting**
-June 18, 2008 
+June 18, 2008
 [14:00:00 UTC](http://www.timeanddate.com/worldclock/fixedtime.html?month=6&day=18&year=2008&hour=8&min=0&sec=0&p1=220)|planned|All||
 
 ### Iteration 5 - June 18 - 24
@@ -996,9 +996,9 @@ Build out monobuild to handle our needs|00%|decriptor|Learn the code ( the origi
 
 |Task|Status|Owner|Notes|
 |:---|:-----|:----|:----|
-|**Commit outstanding tests** 
+|**Commit outstanding tests**
 Form, RadioButton, GroupBox|Committed, but Form tests could be improved.|Sandy||
-|**Update contributor guidelines** 
+|**Update contributor guidelines**
 Specifically, document where our coding standards, etc, deviate from the rest of Mono.|Done|Sandy||
 |**Olive Infrastructure**
 Set up deployment of UIAutomation\* assemblies|Done|Sandy|Committed.|
@@ -1109,8 +1109,8 @@ Updated Navigation to support Component-based providers.|Done|Mario||
 |**Winforms Implementation**
 Updated [wiki](/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation") page.|Done|Mario||
 |**MWF Patches**
-Bugs opened to track UIA patches in MWF controls|Done|Mario|Opened [ListBox](https://bugzilla.novell.com/show_bug.cgi?id=416663) Bug 
- Opened [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) Bug 
+Bugs opened to track UIA patches in MWF controls|Done|Mario|Opened [ListBox](https://bugzilla.novell.com/show_bug.cgi?id=416663) Bug
+ Opened [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) Bug
  Opened [HScrollBar/VScrollBar](https://bugzilla.novell.com/show_bug.cgi?id=416759) Bug|
 |**Mono-a11y Patches**
 Review of patches sent to mailing list.|Done|Mario||
@@ -1163,7 +1163,7 @@ Implement needed UIA Provider interfaces|70%|Mario|Missing methods in TextRangeP
 Implement needed UIA Provider interfaces|99%|Mario|Implement ScrollBar in internal ListBox.|
 |**MWF Patches**
 Bugs opened to track UIA patches in MWF controls|Planned|Mario|Update [ListBox](https://bugzilla.novell.com/show_bug.cgi?id=416663) patch.
- Update [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) patch. 
+ Update [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) patch.
  Update [HScrollBar/VScrollBar](https://bugzilla.novell.com/show_bug.cgi?id=416759) patch.|
 |**SWF.StatusBar Patch**|Done|Neville|Make StatusBar support PanelAdded Event.|
 |**StatusBar**
@@ -1219,7 +1219,7 @@ Implement needed UIA Provider interfaces|70%|Mario|Missing methods in TextRangeP
 Implement needed UIA Provider interfaces|99%|Mario|Implement ScrollBar in internal ListBox.|
 |**MWF Patches**
 Bugs opened to track UIA patches in MWF controls|Done|Mario|Updated [ListBox](https://bugzilla.novell.com/show_bug.cgi?id=416663) patch: Commited in mcs r111718.
- Updated [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) patch: Commited in mcs r111719. 
+ Updated [ComboBox](https://bugzilla.novell.com/show_bug.cgi?id=416640) patch: Commited in mcs r111719.
  Updated [HScrollBar/VScrollBar](https://bugzilla.novell.com/show_bug.cgi?id=416759) patch: Commited in mcs r111720.|
 |**ProgressBar**
 Implement needed UIA Provider interfaces|Done|Neville||

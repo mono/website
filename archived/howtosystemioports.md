@@ -76,7 +76,7 @@ public class SerialPortTest
         SendData("ATI3\r");
  
                 // Should output some information about your modem firmware
-        Console.WriteLine(ReadData());  
+        Console.WriteLine(ReadData());
     }
  
     public string ReadData()
@@ -88,7 +88,7 @@ public class SerialPortTest
  
         while (tmpByte != 255) {
             rxString += ((char) tmpByte);
-            tmpByte = (byte) mySerial.ReadByte();           
+            tmpByte = (byte) mySerial.ReadByte();
         }
  
         return rxString;
@@ -97,7 +97,7 @@ public class SerialPortTest
     public bool SendData(string Data)
     {
         mySerial.Write(Data);
-        return true;       
+        return true;
     }
 }
 ```
@@ -119,7 +119,7 @@ mono SerialExample.exe
 Provided you are properly connected to an active serial modem, you should see output similar to the following:
 
 ``` bash
-$ mono SerialExample.exe 
+$ mono SerialExample.exe
  
 Sportster 14,400/FAX RS Rev. 1.5
  

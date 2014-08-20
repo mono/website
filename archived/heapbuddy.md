@@ -80,7 +80,7 @@ To build HeapBuddy use:
 
 ``` bash
 $ cd heap-buddy
-$ ./autogen.sh 
+$ ./autogen.sh
 $ make
 $ make install
 ```
