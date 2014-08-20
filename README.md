@@ -31,7 +31,7 @@ For larger changes, using the web-based editor on GitHub is not really convenien
 After you've forked and cloned the repository, run the following commands:
  1. `bundle install` - downloads the required libraries
  2. `jekyll serve` - builds the website and runs a local webserver on port 4000
- 
+
 **Note:** you can add the `--watch` option when running `jekyll serve` to let Jekyll watch for file changes, which means the site will be rebuilt when a file is modified.
 
 The site should now be running locally:

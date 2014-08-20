@@ -156,7 +156,7 @@ git checkout long-lived-topic
 git merge master
  
 # at this point you've resolved any conflicts, and 'git rerere' has recorded
-# your conflict resolution decisions.  We can throw away the merge since it 
+# your conflict resolution decisions.  We can throw away the merge since it
 # would clutter history.  'git rerere' already has the relevent information
 # from the merge attempt.
  

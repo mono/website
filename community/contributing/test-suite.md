@@ -145,7 +145,7 @@ Ok:
 
 Excellent:
 
-    Assert.AreEqual (myTicks[0], t1.Ticks, "A01"); 
+    Assert.AreEqual (myTicks[0], t1.Ticks, "A01");
 
 ### Test your test with the Microsoft runtime
 

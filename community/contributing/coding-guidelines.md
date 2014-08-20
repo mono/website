@@ -80,14 +80,14 @@ Do not put a space after the opening parenthesis and the closing one, ie:
 good:
 
 ``` csharp
-method (a);   
+method (a);
 array [10];
 ```
 
 bad:
 
 ``` csharp
-method ( a ); 
+method ( a );
 array[ 10 ];
 ```
 
@@ -122,7 +122,7 @@ if (a) {
 bad:
 
 ``` csharp
-if (a) 
+if (a)
 {
     code ();
     code ();
@@ -199,7 +199,7 @@ int Property {
 bad:
 
 ``` csharp
-int Property 
+int Property
 {
     get {
         return value;
@@ -242,7 +242,7 @@ void EmptyMethod () {
 ```
 
 ``` csharp
-void EmptyMethod () 
+void EmptyMethod ()
 {}
 ```
 
@@ -254,20 +254,20 @@ good:
 if (dingus) {
         ...
 } else {
-        ... 
+        ...
 }
 ```
 
 bad:
 
 ``` csharp
-if (dingus) 
+if (dingus)
 {
         ...
-} 
-else 
+}
+else
 {
-        ... 
+        ...
 }
 ```
 
@@ -276,9 +276,9 @@ bad:
 ``` csharp
 if (dingus) {
         ...
-} 
+}
 else {
-        ... 
+        ...
 }
 ```
 
@@ -738,7 +738,7 @@ class X : Y {
  
         //
         // This sample helps keep your sanity while using 8-spaces for tabs
-        // 
+        //
         VeryLongIdentifierWhichTakesManyArguments (
             Argument1, Argument2, Argument3,
             NestedCallHere (
@@ -755,7 +755,7 @@ class X : Y {
         }
     }
  
-    void AnotherMethod () 
+    void AnotherMethod ()
     {
         if ((a + 5) != 4) {
         }

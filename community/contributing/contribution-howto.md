@@ -60,9 +60,9 @@ Bad:
 
 Good:
 
-    AssertEquals("#A01", compare[0], i1[0]); 
-    AssertEquals("#A02", compare[1], i1[1]); 
-    AssertEquals("#A03", compare[2], i1[2]); 
+    AssertEquals("#A01", compare[0], i1[0]);
+    AssertEquals("#A02", compare[1], i1[1]);
+    AssertEquals("#A03", compare[2], i1[2]);
     AssertEquals("#A04", compare[3], i1[3]);
 
 Once you used such a number in an Assert(), don't change it later on - people might use it it identify the test in bug reports or in mailing lists.
@@ -87,13 +87,13 @@ When writing your testcase, please make sure to provide a constructor which take
 
 ``` csharp
 public class DateTimeTest : TestCase {
-    public DateTimeTest() : base ("[MonoTests.System.DateTimeTest]") {} 
+    public DateTimeTest() : base ("[MonoTests.System.DateTimeTest]") {}
  
     public DateTimeTest (string name): base(name) {}
  
     public static ITest Suite {
        get {
-           TestSuite suite = new TestSuite (); 
+           TestSuite suite = new TestSuite ();
            return suite;
        }
     }
