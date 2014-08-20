@@ -66,12 +66,11 @@ Mono 3.8.0 currently available on a preview
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong> Mono 3.0</strong></td>
+<td align="left"><strong> Mono 3.8.0</strong></td>
 <td align="left"><strong>Planned Release: TBD</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>New Generational GC becomes the default</li>
 </ul></td>
 <td align="left"></td>
 </tr>
