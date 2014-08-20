@@ -78,12 +78,12 @@ Whenever you install any snapshot package, the **`mono-snapshot`** utility will 
 This script will help you to set up your environment to use a
 snapshot package of Mono. To use it, run:
 
-	. mono-snapshot APP/VER
+    . mono-snapshot APP/VER
 
 You have the following possible combinations of APP/VER:
 
-	mono/20140807112602
-	mono/20140807155904
+    mono/20140807112602
+    mono/20140807155904
 
 Calling APP without specifying VER will load the latest version
 ```
@@ -95,14 +95,14 @@ You can then configure your environment to use the desired version by calling **
 [mono-20140807155904][directhex@centossy ~]$ mono --version
 Mono JIT compiler version 3.8.1 (tarball Fri Aug  8 05:39:07 EDT 2014)
 Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
-	TLS:           __thread
-	SIGSEGV:       altstack
-	Notifications: epoll
-	Architecture:  amd64
-	Disabled:      none
-	Misc:          softdebug
-	LLVM:          supported, not enabled.
-	GC:            sgen
+    TLS:           __thread
+    SIGSEGV:       altstack
+    Notifications: epoll
+    Architecture:  amd64
+    Disabled:      none
+    Misc:          softdebug
+    LLVM:          supported, not enabled.
+    GC:            sgen
 ```
 
 Note: On Debian-based distributions, any distribution-provided Mono libraries (such as GTK\#) are automatically installed into your mono-snapshot GAC and are available for use. This is not automatic on Red Hat-based distributions.
