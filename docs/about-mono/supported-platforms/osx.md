@@ -46,7 +46,7 @@ To build applications you can use ["gmcs"](/docs/about-mono/languages/csharp/), 
 From a Terminal shell, you can try it out:
 
 ``` bash
-$ vi hello.cs 
+$ vi hello.cs
 $ gcs hello.cs
 $ mono hello.exe
 Hello, World

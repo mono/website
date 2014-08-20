@@ -152,8 +152,8 @@ That configuration uses several mono\_\* configuration variables to control the 
 
 and create conf.d/mono.conf to contain the following:
 
-    # Add index.aspx and default.aspx to the list of files to check when a 
-    # directory is requested. 
+    # Add index.aspx and default.aspx to the list of files to check when a
+    # directory is requested.
     index-file.names += ( "index.aspx", "default.aspx" )
 
     ### The directory that contains your Mono installation.

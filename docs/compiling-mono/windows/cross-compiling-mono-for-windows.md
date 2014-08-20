@@ -74,7 +74,7 @@ where the elements of the path are described above. After that you can add the `
 Not all of the packages are strictly necessary, but having them around in your mingw environment can't hurt. If you're not using any distribution-specific package, you will need to unpack the packages in the top-level directory of your MinGW installation (e.g. `/opt/cross/i386-mingw32msvc`):
 
     * glib
-    * glib-dev 
+    * glib-dev
     * zlib binaries
     * zlib devel package
     * pkg-config

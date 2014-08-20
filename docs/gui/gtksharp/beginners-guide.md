@@ -160,7 +160,7 @@ I'm assuming that you are familiar with C\#, so most of this will look normal. W
  public class GtkHelloWorld {
  
    public static void Main() {
-     Console.WriteLine("HelloWorld");    
+     Console.WriteLine("HelloWorld");
    }
  
  }
@@ -190,17 +190,17 @@ Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" stat
      Window myWin = new Window("My first GTK# Application! ");
      myWin.Resize(200,200);
  
-     //Create a label and put some text in it.     
+     //Create a label and put some text in it.
      Label myLabel = new Label();
      myLabel.Text = "Hello World!!!!";
  
-     //Add the label to the form     
+     //Add the label to the form
      myWin.Add(myLabel);
  
-     //Show Everything     
+     //Show Everything
      myWin.ShowAll();
  
-     Application.Run();   
+     Application.Run();
    }
  }
 ```
@@ -462,7 +462,7 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
@@ -517,12 +517,12 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
                 Glade.XML gxml = new Glade.XML (null, "gui.glade", "window1", null);
-                gxml.Autoconnect (this);                                                          
+                gxml.Autoconnect (this);
                 Application.Run();
         }
  
@@ -550,7 +550,7 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
@@ -571,7 +571,7 @@ public class GladeApp
        public void OnPressButtonEvent( object o, EventArgs e)
         {
            Console.WriteLine("Button press");
-           label1.Text = "Mono";  
+           label1.Text = "Mono";
         }
 }
 ```

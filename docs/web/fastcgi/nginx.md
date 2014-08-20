@@ -22,7 +22,7 @@ Nginx configuration (as of version 0.7.63) is located in **/etc/nginx/nginx.conf
              listen   80;
              server_name  www.domain1.xyz;
              access_log   /var/log/nginx/your.domain1.xyz.access.log;
-     
+
              location / {
                      root /var/www/www.domain1.xyz/;
                      index index.html index.htm default.aspx Default.aspx;

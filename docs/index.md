@@ -30,8 +30,8 @@ About Mono
  - [Overview](/docs/about-mono/)
  - [Supported Platforms](/docs/about-mono/supported-platforms/)
  - [Languages](/docs/about-mono/languages/)
- - [Compatibility](/docs/about-mono/compatibility/) and [Class Status](/docs/about-mono/class-status/) 
- - [Releases](/docs/about-mono/releases/) and [Versioning](/docs/about-mono/versioning/) 
+ - [Compatibility](/docs/about-mono/compatibility/) and [Class Status](/docs/about-mono/class-status/)
+ - [Releases](/docs/about-mono/releases/) and [Versioning](/docs/about-mono/versioning/)
  - [Maintainers](/docs/about-mono/maintainers/)
  - [History](/docs/about-mono/history/), [Concerns about Mono](/docs/about-mono/concerns-about-mono/)
  - [Roadmap](/docs/about-mono/roadmap/) and [Plans](/docs/about-mono/plans/)
@@ -66,7 +66,7 @@ Database Access
  - [Overview](/docs/database-access/)
  - [ADO.NET](/docs/database-access/adonet/)
  - [EntityFramework](/docs/database-access/entityframework/)
- 
+
 Debug and Profile
 -----------------
 

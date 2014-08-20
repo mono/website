@@ -60,9 +60,9 @@ It is useful to model locks by a locking hierarchy, which is a relation between 
 
 Our locking hierarchy so far looks like this:
 
-        <LOADER LOCK> 
+        <LOADER LOCK>
             \
-           <DOMAIN LOCK> 
+           <DOMAIN LOCK>
             \           \                                         \
            <DOMAIN JIT LOCK> <SIMPLE LOCK 1>    <SIMPLE LOCK 2>
 

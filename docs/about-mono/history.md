@@ -83,8 +83,6 @@ Milestones
 
 -   June 30: The Mono C\# compiler is able to build mscorlib, the last piece to achieve self-hosting of the Mono runtime.
 
--   
-
 2004
 ----
 

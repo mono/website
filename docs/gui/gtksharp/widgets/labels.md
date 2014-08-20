@@ -70,7 +70,7 @@ namespace GtkSharpTutorial {
                         Frame frame;
                         Label label;
  
-                        Application.Init ();   
+                        Application.Init ();
  
  
                         window = new Window ("Label sample");
@@ -105,8 +105,8 @@ namespace GtkSharpTutorial {
  
                         frame.Add (label);
                         vbox.PackStart (frame, false, false, 0);
- 
-                        frame = new Frame ("Right Justified Label");                    
+
+                        frame = new Frame ("Right Justified Label");
                         label = new Label ("This is a Right Justified\nMulti-line label.\n" + "Fourth Line, (j/k)");
                         label.Justify = Justification.Right;
                         frame.Add (label);

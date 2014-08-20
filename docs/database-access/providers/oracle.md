@@ -121,15 +121,19 @@ Testing
 
 <!-- -->
 
-     Basically, you add to your /etc/apt/sources.list
+Basically, you add to your /etc/apt/sources.list
 
-        deb http://oss.oracle.com/debian unstable main non-free 
-      
-     And then run the following:
+``` bash
+deb http://oss.oracle.com/debian unstable main non-free
+```
 
-        sudo apt-get update
-        sudo apt-get install oracle-xe-universal
-        sudo /etc/init.d/oracle-xe configure 
+And then run the following:
+
+``` bash
+sudo apt-get update
+sudo apt-get install oracle-xe-universal
+sudo /etc/init.d/oracle-xe configure
+```
 
 -   In the mcs source code, you can find tests at mcs/class/System.Data.OracleClient/Test
 
@@ -141,7 +145,9 @@ Testing
 
 <!-- -->
 
-     "Data Source=tnsname;User ID=userid;Password=password" 
+```
+"Data Source=tnsname;User ID=userid;Password=password"
+```
 
 **Connection String Format using TNS network description which does not use a tnsnames.ora file**
 
@@ -149,13 +155,15 @@ Testing
 
 <!-- -->
 
-     "User ID=SCOTT;" +
-     "Password=TIGER;" +
-     "Data Source=(" +
-     "DESCRIPTION=(" +
-     "ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.101)(PORT=1521))" +
-     "(CONNECT_DATA=(SERVER=DEDICATED)" +
-     "(SERVICE_NAME=TESTDB)))" 
+```
+"User ID=SCOTT;" +
+"Password=TIGER;" +
+"Data Source=(" +
+"DESCRIPTION=(" +
+"ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.101)(PORT=1521))" +
+"(CONNECT_DATA=(SERVER=DEDICATED)" +
+"(SERVICE_NAME=TESTDB)))"
+```
 
 **Connection String Format for External Authentication**
 
@@ -163,7 +171,9 @@ Testing
 
 <!-- -->
 
-     "Data Source=tnsname;Integrated Security=true" 
+```
+"Data Source=tnsname;Integrated Security=true"
+```
 
 -   Connection String Parameters:
 
@@ -181,11 +191,15 @@ Testing
 
 -   How-To create a Windows user named SomeUser on Windows NT/2000 Domain MyNTDomain for external authentication in Oracle: If you're not on a Windows domain, then your MachineName is the Domain. Note how the domain user is in double quotes and is upper case.
 
+``` sql
 CREATE USER "MYNTDOMAIN\\SOMEUSER" IDENTIFIED EXTERNALLY;
+```
 
 -   How-To create a Linux user named someuser in Oracle which gets authenticated externally:
 
+``` sql
 CREATE USER someuser IDENTIFIED EXTERNALLY;
+```
 
 Examples
 --------
@@ -318,7 +332,7 @@ Examples
        dbcmd.ExecuteNonQuery ();
  
        Console.WriteLine("  Create stored procedure SP_TEST2...");
-       dbcmd.CommandText = 
+       dbcmd.CommandText =
               "CREATE PROCEDURE SP_TEST2(parm1 VARCHAR2,parm2 VARCHAR2) " +
               " IS " +
               " BEGIN " +
@@ -384,12 +398,12 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
        con.Open ();
         OracleCommand cmd = con.CreateCommand();
         Console.WriteLine("  Drop procedure SP_TESTPLSQLBLOCK1...");
-        try 
+        try
         {
             cmd.CommandText = "DROP PROCEDURE SP_TESTPLSQLBLOCK1";
             cmd.ExecuteNonQuery ();
         }
-        catch(OracleException oe1) 
+        catch(OracleException oe1)
         {
             // ignore if table already exists
         }
@@ -397,7 +411,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
         Console.WriteLine("  Create stored procedure SP_TESTPLSQLBLOCK1...");
         // stored procedure add two number depending on a boolean
  
-        cmd.CommandText = 
+        cmd.CommandText =
             "CREATE OR REPLACE PROCEDURE SP_TESTPLSQLBLOCK1(PARM1 IN NUMBER,PARM2 IN BOOLEAN,PARM3 OUT NUMBER)\n" +
             "IS\n" +
             "BEGIN\n" +
@@ -416,7 +430,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
  
         Console.WriteLine("  Call stored procedure SP_TESTPLSQLBLOCK1 with 3 parameters...");
         cmd.CommandType = CommandType.Text;
-        cmd.CommandText = 
+        cmd.CommandText =
             "DECLARE " +
             "   addnum BOOLEAN := sys.diutil.int_to_bool(:P2); " +
             "BEGIN " +
@@ -451,7 +465,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
 
 **C\# Example 4 - ASP.NET DataGrid Data Binding to an Oracle database table**
 
-    First, you will need to make sure there is a table named CUSTOMERS with some data.
+First, you will need to make sure there is a table named CUSTOMERS with some data.
 
 ``` csharp
  CREATE TABLE CUSTOMERS (
@@ -489,13 +503,13 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
  
     static Type cncType = null;
  
-    void GetConnectionData (out string providerAssembly, 
+    void GetConnectionData (out string providerAssembly,
                                out string cncTypeName, out string cncString)
     {
         providerAssembly = null;
         cncTypeName = null;
         cncString = null;
-        NameValueCollection config = 
+        NameValueCollection config =
                        ConfigurationSettings.AppSettings as NameValueCollection;
         if (config != null) {
             foreach (string s in config.Keys) {
@@ -520,15 +534,15 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     }
  
     IDbConnection cnc;
-    void Page_Load (object o, EventArgs e) 
+    void Page_Load (object o, EventArgs e)
     {
         string connectionTypeName;
         string providerAssemblyName;
         string cncString;
  
-        GetConnectionData (out providerAssemblyName, 
+        GetConnectionData (out providerAssemblyName,
                        out connectionTypeName, out cncString);
-        if (cncType == null) {     
+        if (cncType == null) {
             Assembly dbAssembly = Assembly.LoadWithPartialName (
                                                       providerAssemblyName);
             cncType = dbAssembly.GetType (connectionTypeName, true);
@@ -568,7 +582,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
  <body>
  <h3>DataGrid sample</h3>
  <form runat="server">
-    <asp:datagrid id="grid" border="1" 
+    <asp:datagrid id="grid" border="1"
         EnableViewState="false" runat="server">
     </asp:datagrid>
  </form>
@@ -599,11 +613,11 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     OracleCommand cmddrop = connection.CreateCommand();
  
     cmddrop.CommandText = "DROP TABLE TESTTABLE";
-    try { 
-        cmddrop.ExecuteNonQuery(); 
-    } 
+    try {
+        cmddrop.ExecuteNonQuery();
+    }
     catch(OracleException e) {
-        Console.WriteLine("Ignore this error: " + e.Message); 
+        Console.WriteLine("Ignore this error: " + e.Message);
     }
     cmddrop.Dispose();
     cmddrop = null;
@@ -611,7 +625,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     OracleCommand cmd = connection.CreateCommand();
  
     // create table TESTTABLE
-    cmd.CommandText = 
+    cmd.CommandText =
         "create table TESTTABLE (\n" +
         " col1 numeric(18,0),\n" +
         " col2 varchar(32),\n" +
@@ -619,19 +633,19 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     cmd.ExecuteNonQuery();
  
     // insert some rows into TESTTABLE
-    cmd.CommandText = 
+    cmd.CommandText =
         "insert into TESTTABLE\n" +
         "(col1, col2, col3)\n" +
         "values(45, 'Mono', sysdate)";
     cmd.ExecuteNonQuery();
  
-    cmd.CommandText = 
+    cmd.CommandText =
         "insert into TESTTABLE\n" +
         "(col1, col2, col3)\n" +
         "values(136, 'Fun', sysdate)";
     cmd.ExecuteNonQuery();
  
-    cmd.CommandText = 
+    cmd.CommandText =
         "insert into TESTTABLE\n" +
         "(col1, col2, col3)\n" +
         "values(526, 'System.Data.OracleClient', sysdate)";
@@ -641,7 +655,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     cmd.ExecuteNonQuery();
  
     // create Oracle package TestTablePkg
-    cmd.CommandText = 
+    cmd.CommandText =
         "CREATE OR REPLACE PACKAGE TestTablePkg\n" +
         "AS\n" +
         "    TYPE T_CURSOR IS REF CURSOR;\n" +
@@ -651,9 +665,9 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
     cmd.ExecuteNonQuery();
  
     // create Oracle package body for package TestTablePkg
-    cmd.CommandText = 
+    cmd.CommandText =
         "CREATE OR REPLACE PACKAGE BODY TestTablePkg AS\n" +
-        "  PROCEDURE GetData(tableCursor OUT T_CURSOR)\n" + 
+        "  PROCEDURE GetData(tableCursor OUT T_CURSOR)\n" +
                 "  IS\n" +
         "  BEGIN\n" +
         "    OPEN tableCursor FOR\n" +
@@ -712,11 +726,14 @@ Save the example to a file, such as, TestExample.cs
 
 <!-- -->
 
-     mcs TestExample.cs /r:System.Data.dll /r:System.Data.OracleClient.dll
+``` bash
+mcs TestExample.cs /r:System.Data.dll /r:System.Data.OracleClient.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
-
+``` bash
+mono TestExample.exe
+```

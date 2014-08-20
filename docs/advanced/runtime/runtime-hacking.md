@@ -23,7 +23,7 @@ Take the following examples as a reference of how the code should look like:
 static MonoType*
 get_mono_type_from_name (char *name)
 {
-        /* 
+        /*
          * Always indent with TAB characters, never use spaces to indent code
          * Don't mix code and local declarations: older compilers don't support that.
          */
@@ -59,7 +59,7 @@ get_mono_type_from_name (char *name)
                 }
         }
  
-        /* 
+        /*
          * never use parenthesis with return unless strictly necessary to
          * force precedence rules in complex expressions.
          */

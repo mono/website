@@ -7,10 +7,9 @@ redirect_from:
 
 *Last update: August, 2014*
 
-We are adopting a new development system where new features are developed in branches 
-and merged into master after they have been completed and they pass our QA tests.   
-The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly
-after they are fixed to Mono users.   For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
+We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.
+The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.
+For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
 
 Per-component [Plans](/docs/about-mono/plans/) are available, you can also check our [Compatibility](/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
 

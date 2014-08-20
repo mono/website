@@ -4,9 +4,7 @@ redirect_from:
   - /Plans/
 ---
 
-Here we are tracking some plans to particular pieces of technology that are 
-part of Mono. This is just a repository of information that is handy for 
-contributors. Currently you can read our plans for:
+Here we are tracking some plans to particular pieces of technology that are part of Mono. This is just a repository of information that is handy for contributors. Currently you can read our plans for:
 
 <table>
 <col width="33%" />

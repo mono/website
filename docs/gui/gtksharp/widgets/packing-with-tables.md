@@ -40,13 +40,13 @@ The first argument (child) is the widget you wish to place in the table. The lef
 
 The xOptions and yOptions parameters are used to specify packing options and may be bitwise OR'ed together to allow multiple options. These options are:
 
-Gtk.AttachOptions.Fill   
+`Gtk.AttachOptions.Fill`
 If the table box is larger than the widget, and Fill is specified, the widget will expand to use all the room available.
 
-Gtk.AttachOptions.Shrink   
+`Gtk.AttachOptions.Shrink`
 If the table widget was allocated less space then was requested (usually by the user resizing the window), then the widgets would normally just be pushed off the bottom of the window and disappear. If Shrink is specified, the widgets will shrink with the table.
 
- Gtk.AttachOptions.Expand   
+`Gtk.AttachOptions.Expand`
 This will cause the table to expand to use up any remaining space in the window.
 
 Padding is just like in boxes, creating a clear area around the widget specified in pixels. Gtk.Table.Attach() has a lot of options. So, there's a shortcut:
@@ -109,7 +109,7 @@ namespace GtkSharpTutorial {
                 {
                         Button mybutton = (Button) obj;
                         Console.WriteLine("Hello again - {0} was pressed", (string) mybutton.Label);
-                        // Have to figure out, how to recieve button name 
+                        // Have to figure out, how to recieve button name
                 }
  
                 /* another event */
@@ -182,7 +182,7 @@ namespace GtkSharpTutorial {
                          * and the program exits */
                         quitbutton.Clicked += exit_event;
  
-                        /* Insert the quit button into the both 
+                        /* Insert the quit button into the both
                          * lower quadrants of the table */
                         table.Attach(quitbutton, 0, 2, 1, 2);
  

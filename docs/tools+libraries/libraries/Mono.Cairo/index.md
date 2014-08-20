@@ -37,7 +37,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
  
         // Perform some drawing
  
-        ((IDisposable) gr.Target).Dispose ();                               
+        ((IDisposable) gr.Target).Dispose ();
     }
 }
 ```
@@ -61,7 +61,7 @@ p2 = new PointD (100,10);
 p3 = new PointD (100,100);
 p4 = new PointD (10,100);
  
-// g is a Graphics object               
+// g is a Graphics object
 g.MoveTo (p1);
 g.LineTo (p2);
 g.LineTo (p3);
@@ -100,7 +100,7 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
     g.Color = new Color (1,0,0);
     g.Stroke ();
  
-    ((IDisposable) g.Target).Dispose ();                                      
+    ((IDisposable) g.Target).Dispose ();
     ((IDisposable) g).Dispose ();
 }
 ```
@@ -141,7 +141,7 @@ void DrawTriangle (Cairo.Graphics g, double x, double y, bool fill)
     g.ClosePath ();
     g.Color = new Color (1,0,0);
  
-    if (fill) 
+    if (fill)
         g.Fill ();
     else
         g.Stroke ();

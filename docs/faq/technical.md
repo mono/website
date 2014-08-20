@@ -52,7 +52,7 @@ Yes, this is possible on Linux systems, to do this, use something like:
 if [ ! -e /proc/sys/fs/binfmt_misc/register ]; then
      /sbin/modprobe binfmt_misc
      mount -t binfmt_misc none /proc/sys/fs/binfmt_misc
-fi 
+fi
 if [ -e /proc/sys/fs/binfmt_misc/register ]; then
      echo ':CLR:M::MZ::/usr/bin/mono:' > /proc/sys/fs/binfmt_misc/register
 else
@@ -100,18 +100,18 @@ There are various reasons:
 
 A reader comments:
 
-    In other words, I knew Mono would not cause 
+    In other words, I knew Mono would not cause
     any legacy enterprise applications
-    to stop working - and it hasn't. However, 
-    our CIO is against it because of the 
-    changes that would be made to Windows 2000, 
+    to stop working - and it hasn't. However,
+    our CIO is against it because of the
+    changes that would be made to Windows 2000,
     such as, affecting security.
 
 Another user comments:
 
-    By the way, the Mono libraries, 
-    including corlib, needed to support the 
-    application total 14MB so fit easily 
+    By the way, the Mono libraries,
+    including corlib, needed to support the
+    application total 14MB so fit easily
     on even the smallest memory sticks.
 
 **How to detect the execution platform ?**
@@ -147,11 +147,15 @@ While it can be argued that there are no totally reliable methods for detecting 
 
 Firstly, look for the version string stored in a certain registry key.
 
-    $version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
+``` bash
+$version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
+```
 
 Then, using this version string, check the registry again for the path prefix, \$monoprefix:
 
-    $monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
+``` bash
+$monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
+```
 
 (optional) You might wish to then check this by detecting whether or not \$mono-prefix\\bin\\mono.exe exists.
 
@@ -469,9 +473,11 @@ However, some classes from the library may have a different binary representatio
 
 Replace the \_\_stdcall attribute with the STDCALL macro, and include this in your C code for newer gcc versions:
 
-    #ifndef STDCALL 
-    #define STDCALL __attribute__((stdcall)) 
-    #endif 
+``` c
+#ifndef STDCALL
+#define STDCALL __attribute__((stdcall))
+#endif
+```
 
 **I see funny characters when I run programs, what is the problem?**
 
@@ -479,13 +485,17 @@ Replace the \_\_stdcall attribute with the STDCALL macro, and include this in yo
 
 This is Red Hat 9 (probably) using UTF8 on its console; the bytes are the UTF8 endianness markers. You can do:
 
-     LC_ALL=C mono myexe.exe 
+``` bash
+LC_ALL=C mono myexe.exe
+```
 
 And they wont show up.
 
 Alternatively, you can do:
 
-     $ echo -e "\033%G" 
+``` bash
+echo -e "\033%G"
+```
 
 to enable UTF-8 on the console.
 
@@ -513,7 +523,7 @@ Segfaults are typically the result of a stack overflow, these are caused by recu
 ``` csharp
 class Child : Parent {
      public override GetNumber ()
-     {  
+     {
            return GetNumber () + 1;
      }
 }
@@ -524,7 +534,7 @@ When the developer really wanted:
 ``` csharp
 class Child : Parent {
      public override GetNumber ()
-     {  
+     {
            return base.GetNumber () + 1;
      }
 }
@@ -815,7 +825,7 @@ Thread signal_thread = new Thread (delegate () {
     //    Write to a pipe created with UnixPipes for server apps.
     //    Use an AutoResetEvent
  
-    // For example, this works with Gtk#  
+    // For example, this works with Gtk#
     Application.Invoke (delegate () { ReceivedSignal (signal); }
     });
 ```
@@ -1058,35 +1068,43 @@ The problem with using MONO\_EXTERNAL\_ENCODINGS is that even if Mono will be ab
 
 I used Mono to create a small C\# console application that uses the ICMP class from [http://cpp.sourceforge.net/?show=17688](http://cpp.sourceforge.net/?show=17688) to ping a host.
 
-    ICMP ping = new ICMP();
-    ping.Open();
-    TimeSpan span = ping.Send("192.168.1.1", new TimeSpan(0,0,5));
+``` csharp
+ICMP ping = new ICMP();
+ping.Open();
+TimeSpan span = ping.Send("192.168.1.1", new TimeSpan(0,0,5));
+```
 
 Unfortunately there is an exception.
 
-    Unhandled Exception: System.Net.Sockets.SocketException: Access denied 
-    in <0x000b8> System.Net.Sockets.Socket:.ctor (AddressFamily family, SocketType type, ProtocolType proto)
-    in [0x00004] (at cPing.cs:41) ICMP:Open ()
-    in [0x00007] (at Main.cs:14) MainClass:Main (System.String[] args
+``` bash
+Unhandled Exception: System.Net.Sockets.SocketException: Access denied
+in <0x000b8> System.Net.Sockets.Socket:.ctor (AddressFamily family, SocketType type, ProtocolType proto)
+in [0x00004] (at cPing.cs:41) ICMP:Open ()
+in [0x00007] (at Main.cs:14) MainClass:Main (System.String[] args
+```
 
 The same code works fine when run in Visual Studio 2005 Professional or Mono on Windows. It does not work on Linux because you must run as root in order send ICMP packets. The /bin/ping program runs on Linux with the setuid bit. To ping from a Mono program you may either P/Invoke /bin/ping or setuid root your Mono program (after undertaking a thorough security audit of the runtime, the class libraries and any third party libraries that are linked, of course).
 
 Alternatively, if your Linux kernel supports the so-called **Linux capabilities** you can use the `setcap` (part of the `libcap` library) to set the raw networking capability on the mono binary. In order to do it you need to log in as root and issue the following command:
 
-    setcap cap_net_raw=iep /path/to/mono
+``` bash
+setcap cap_net_raw=iep /path/to/mono
+```
 
 Doing it does **not** give mono the same privileges as setting the uid bit on the binary - it merely lets the mono runtime construct raw ip packets which is needed for the ICMP ping to work. **How can I configure Web.config and an ASPX file to turn the trace on?**
 
-    <configuration>
-            <system.web>
-                    <trace
-                            enabled="false"
-                            requestLimit="10"
-                            pageOutput="true"
-                            traceMode="SortByTime"
-                            localOnly="false"
-                    />
-    ...
+``` xml
+<configuration>
+        <system.web>
+                <trace
+                        enabled="false"
+                        requestLimit="10"
+                        pageOutput="true"
+                        traceMode="SortByTime"
+                        localOnly="false"
+                />
+...
+```
 
 I never used pageOutput="true". If it doesn't work you may set it to "false" and get the trace from Trace.axd.
 

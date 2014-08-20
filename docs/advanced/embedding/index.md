@@ -218,7 +218,7 @@ Now, you need to declare this on the C\# side:
 
        using System;
         using System.Runtime.CompilerServices;
-        
+
         class Hello {
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         extern static string Sample ();
@@ -227,7 +227,7 @@ Now, you need to declare this on the C\# side:
 Since this routine returns a string, here is the C definition:
 
        static MonoString*
-        Sample () 
+        Sample ()
         {
             return mono_string_new (mono_domain_get (), "Hello!");
         }

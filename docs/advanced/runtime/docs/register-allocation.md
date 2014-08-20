@@ -76,7 +76,7 @@ An example:
 
       R33 <- 1
       R34 <- 2
-      call 
+      call
 
 When the call instruction is processed, R33 is assigned to RDI, and R34 is assigned to RSI. Later, when the two assignment instructions are processed, R33 and R34 are already assigned to a hreg, so they are replaced with the associated hreg leading to the following final code:
 
@@ -108,8 +108,8 @@ Beside these values, an architecture can define additional values (like the 's' 
 
 These macros usually receive a value from the machine description file (like the 's' in the example). The examples below are for x86.
 
-    /* 
-     * A bitmask selecting the caller-save registers (these are used for local 
+    /*
+     * A bitmask selecting the caller-save registers (these are used for local
      * allocation).
      */
     #define MONO_ARCH_CALLEE_REGS X86_CALLEE_REGS
@@ -148,7 +148,7 @@ These macros usually receive a value from the machine description file (like the
     #define MONO_ARCH_INST_IS_REGPAIR(desc) (desc == 'l' || desc == 'L')
 
     /*
-     * Given a descriptor value, and the first register of a regpair, return a 
+     * Given a descriptor value, and the first register of a regpair, return a
      * bitmask selecting the hregs which can be used for allocating the second
      * register of the regpair.
      */

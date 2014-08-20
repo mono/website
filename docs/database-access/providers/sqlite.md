@@ -45,34 +45,42 @@ Connection String Format
 
 The format of the connection string is:
 
-    [1.1 profile and the old assembly]
-    URI=file:/path/to/file 
+```
+[1.1 profile and the old assembly]
+URI=file:/path/to/file
 
-    [2.0 profile in the new assembly]
-    Data Source=file:/path/to/file
-    Data Source=|DataDirectory|filename
+[2.0 profile in the new assembly]
+Data Source=file:/path/to/file
+Data Source=|DataDirectory|filename
+```
 
 The latter case for the 2.0 profile references the App\_Data directory (or any other directory that's configured to contain data files for an ASP.NET 2.0 application)
 
 As an example:
 
-    [1.1 and the old assembly]
-    URI=file:SqliteTest.db 
+```
+[1.1 and the old assembly]
+URI=file:SqliteTest.db
 
-    [2.0 and the new assembly]
-    Data Source=file:SqliteTest.db
+[2.0 and the new assembly]
+Data Source=file:SqliteTest.db
+```
 
 That will use the database SqliteTest.db in the current directory. It will be created if it does not exist.
 
 Or you prefer to use SQLite as an in memory database
 
-    URI=file::memory:,version=3
+```
+URI=file::memory:,version=3
+```
 
 The `version=3` is supported, but not necessary with the new assembly.
 
 With the old assembly, the ADO.NET adapter will use SQLite version 2 by default, but if version 2 is not found and version 3 is available, it will fallback to version 3. You can force the adapter to use version 3 by adding "version=3" to the connection string:
 
-    URI=file:SqliteTest.db,version=3
+```
+URI=file:SqliteTest.db,version=3
+```
 
 The new assembly, as described above, uses only database format version 3.
 
@@ -167,9 +175,12 @@ To build the example:
 
 <!-- -->
 
-    mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SqliteClient.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SqliteClient.dll
+```
 
 To run the example:
 
-    mono TestExample.exe
-
+``` bash
+mono TestExample.exe
+```

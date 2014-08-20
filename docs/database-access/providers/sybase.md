@@ -143,9 +143,12 @@ Building C\# Example
 
 Save the example to a file, such as, TestExample.cs, then to build on Linux, do:
 
-     mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
+```
 
 To run the example:
 
-     mono TestExample.exe 
-
+``` bash
+mono TestExample.exe
+```

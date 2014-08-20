@@ -171,27 +171,27 @@ class ProgressBarSample {
  
         /* Add a check button to select displaying of the trough text*/
         check = new Gtk.CheckButton("Show text");
-        table.Attach(check, 0, 1, 0, 1, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 0, 1,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_show_text;
         check.Show();
  
         /* Add a check button to toggle activity mode */
         check = new Gtk.CheckButton("Activity mode");
-        table.Attach(check, 0, 1, 1, 2, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 1, 2,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_activity_mode;
         check.Show();
  
         /* Add a check button to toggle orientation */
         check = new Gtk.CheckButton("Right to Left");
-        table.Attach(check, 0, 1, 2, 3, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 2, 3,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_orientation;
         check.Show();

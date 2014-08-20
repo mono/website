@@ -113,8 +113,8 @@ b.Property = a;
 where b.Property is:
 
 ``` csharp
-Foo Property { 
-   set { 
+Foo Property {
+   set {
       if (value == null) throw new ArgumentNullException ();
       x = value;
    }

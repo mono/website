@@ -478,19 +478,19 @@ Before compiling mod\_mono, you need the development packages for apache install
 
 There are a few interesting options for (1) that you might want/need to use:
 
---prefix= /xxx/yyy   
+`--prefix= /xxx/yyy`
 This will set the base path for installing mod\_mono files.
 
---with-mono-prefix= /aaa/bbb   
+`--with-mono-prefix= /aaa/bbb`
 If the prefix for mod\_mono is different from the one used for mono, you should set this to the prefix used for mono in order to make the default paths to mono executable and mod-mono-server.exe be correct. It is not mandatory, but useful.
 
---with-apxs= /xxx/yyy/apxs   
+`--with-apxs= /xxx/yyy/apxs`
 If your system has different apache development files installed (ie, 1.3, 2.0 or 2.2) you might need this to choose the target version for mod\_mono. Provide the full path to the apxs executable of the version that you want.
 
---with-apr-config= /xxx/yyy   
+`--with-apr-config= /xxx/yyy`
 If you get errors when compiling for apache 2 because some headers files are not found, use this option. It takes the full path to apache 2 apr-config tool.
 
---enable-debug   
+`--enable-debug`
 You will get more output in the apache error\_log file. Useful when debugging.
 
 Improving mod\_mono

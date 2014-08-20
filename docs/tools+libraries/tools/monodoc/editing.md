@@ -13,19 +13,19 @@ The following tags can be used inside the \<summary\> and \<remarks\> sections o
 
 ****
 
-     <para> </para> 
+     <para> </para>
 
 Used to separate paragraphs.
 
 ****
 
-     <paramref name="param_name"/> 
+     <paramref name="param_name"/>
 
 Used to reference a formal parameter to a function.
 
 ****
 
-     <see cref="destination"/> 
+     <see cref="destination"/>
 
 Use this to create a link in your documentation to the sections for types, namespaces, methods, etc. where destination has one of the following formats:
 
@@ -44,7 +44,7 @@ So your links might look like:
 
 ****
 
-     <see langword="keyword"/> 
+     <see langword="keyword"/>
 
 Use this to link to a keyword in the C\# language, for example to link to \`true', do:
 
@@ -52,13 +52,13 @@ Use this to link to a keyword in the C\# language, for example to link to \`true
 
 ****
 
-     <example> ... </example> 
+     <example> ... </example>
 
 Use example to insert an example. The example can contain explanatory text and code.
 
 ****
 
-     <code lang="C#">.. </code> 
+     <code lang="C#">.. </code>
 
 Use this to provide a sample C\# program, typically used within the \<example\> tags.
 
@@ -70,7 +70,7 @@ When the **source** attribute is provided, the contents of the file *file.cs* wi
 
 ****
 
-     <list type="bullet"> </list> 
+     <list type="bullet"> </list>
 
 Use this to create lists. Lists contains \<item\> elements which have to contain \<term\> containers.
 
@@ -87,7 +87,7 @@ For two-column tables. Inside use:
     <description>First description</description>
     </item> <item>
     <term>Second</term> <description>Second descirption</description>
-    </item> 
+    </item>
 
 To embed images you use the \<img\> tag.There are two different ways to use that tag depending on the name of the attribute you use:
 

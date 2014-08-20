@@ -53,10 +53,10 @@ IL Code
 
 There are two Mono tools for using IL code:
 
- ilasm   
+ ilasm
 The Mono Assembler can be given disassembled text, and it creates an assembly file. This is very important, because many compilers don't create the assembly themselves, and depend on this tool. Of course it can be also seen as a form of a compiler.
 
- monodis   
+ monodis
 The Mono Disassembler extracts code like shown above from an assembly.
 
 The Mono Disassembler
@@ -70,73 +70,73 @@ $ monodis FILE.exe
 
 The following options are supported:
 
- --output=FILENAME   
+`--output=FILENAME`
 Write output into FILENAME.
 
- --mscorlib   
+`--mscorlib`
 For non-corlib assemblies, use "mscorlib" as the assembly name. This is useful for round-tripping the IL with ilasm.
 
- --assembly   
+`--assembly`
 Dumps the contents of the assembly table
 
- --assemblyref   
+`--assemblyref`
 Dumps the contents of the assemblyref table
 
- --classlayout   
+`--classlayout`
 Dumps the contents of the classlayout table
 
- --constant   
+`--constant`
 Dumps the contents of the constant table
 
- --event   
+`--event`
 Dumps the contents of the event table
 
- --exported   
+`--exported`
 Dumps the contents of the ExportedTypes table
 
- --fields   
+`--fields`
 Dumps the contents of the fields table
 
- --file   
+`--file`
 Dumps the contents of the file table
 
- --interface   
+`--interface`
 Dumps the contents of the interface table
 
- --manifest   
+`--manifest`
 Dumps the contents of the manifest table.
 
- --memberref   
+`--memberref`
 Dumps the contents of the memberref table
 
- --method   
+`--method`
 Dumps the contents of the method table
 
- --methodsem   
+`--methodsem`
 Dumps the contents of the methodsem table
 
- --module   
+`--module`
 Dumps the contents of the module table
 
- --moduleref   
+`--moduleref`
 Dumps the contents of the moduleref table
 
- --mresources   
+`--mresources`
 Dumps embedded managed resources
 
- --param   
+`--param`
 Dumps the contents of the param table
 
- --property   
+`--property`
 Dumps the contents of the property table
 
- --propertymap   
+`--propertymap`
 Dumps the contents of the propertymap table
 
- --typedef   
+`--typedef`
 Dumps the contents of the typedef table
 
- --typeref   
+`--typeref`
 Dumps the contents of the typeref table If no flags are specified the program dumps the content of the image in a format that can be used to rountrip the code.
 
 

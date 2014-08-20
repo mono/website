@@ -56,7 +56,7 @@ Alternatively, or additionally, you may need to do the following:
 <!-- -->
 
      #pragma warning(disable:4483)
-     
+
      void __clrcall __identifier(".cctor")()
      {
      }

@@ -55,7 +55,6 @@ Known bugs
         double d = -1;
         ulong ul = (ulong)d;
       }
-     
 
 This causes the mini/exceptions.exe regression test to fail on sol 8-9.
 

@@ -189,7 +189,7 @@ Public Module ToggleButtons
                 button.GrabDefault()
                 button.Show()
  
-                window.ShowAll() 
+                window.ShowAll()
  
                 Application.Run()
         End Sub

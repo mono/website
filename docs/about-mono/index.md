@@ -28,22 +28,22 @@ There are several components that make up Mono:
 Mono Feature Highlights
 -----------------------
 
-[Multi-Platform](/docs/about-mono/supported-platforms/)  
+[Multi-Platform](/docs/about-mono/supported-platforms/)
 Runs on [Linux](/docs/about-mono/supported-platforms/linux/), [OS X](/docs/about-mono/supported-platforms/osx/), [BSD](/docs/about-mono/supported-platforms/bsd/), and [Microsoft Windows](/docs/getting-started/install/windows/), including [x86](/docs/about-mono/supported-platforms/x86/), [x86-64](/docs/about-mono/supported-platforms/amd64/), [ARM](/docs/about-mono/supported-platforms/arm/), [s390](/docs/about-mono/supported-platforms/s390/), [PowerPC](/docs/about-mono/supported-platforms/powerpc/) and much more
 
-[Multi-Language](/docs/about-mono/languages/)  
+[Multi-Language](/docs/about-mono/languages/)
 Develop in [C\# 4.0](/docs/about-mono/languages/csharp/) (including LINQ and `dynamic`), [VB 8](/docs/about-mono/languages/visualbasic/), [Java](/docs/about-mono/languages/java/), [Python](/archived/python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
 
-Binary Compatible  
+Binary Compatible
 Built on an implementation of the [ECMA](/docs/about-mono/languages/ecma/)'s [Common Language Infrastructure](/docs/advanced/runtime/) and [C\#](/docs/about-mono/languages/csharp/)
 
-[Microsoft Compatible API](/docs/getting-started/application-portability/)  
+[Microsoft Compatible API](/docs/getting-started/application-portability/)
 Run [ASP.NET](/docs/web/aspnet/), [ADO.NET](/docs/database-access/adonet/), [Silverlight](/docs/web/moonlight/) and [Windows.Forms](/docs/gui/winforms/) applications without recompilation
 
-[Open Source, Free Software](/docs/faq/licensing/)  
+[Open Source, Free Software](/docs/faq/licensing/)
 Mono's runtime, compilers, and libraries are distributed under OSI approved licenses and are available for dual-licensing
 
-[Comprehensive Technology Coverage](/docs/about-mono/plans/)  
+[Comprehensive Technology Coverage](/docs/about-mono/plans/)
 Bindings and managed implementations of many popular libraries and protocols
 
 The Benefits

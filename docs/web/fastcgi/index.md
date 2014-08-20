@@ -40,7 +40,7 @@ $ tar xzvf xsp-1.2.6.tar.gz
 ...
 $ cd xsp-1.2.6
 $ ./configure --prefix=/usr
-$ make 
+$ make
 $ make install
 ```
 

@@ -161,7 +161,7 @@ static ActionEntry[] entries = new ActionEntry[] {
 group = new ActionGroup ("TestActions");
 group.Add (entries);
 uim = new UIManager ();
-uim.InsertActionGroup (group, 0);  
+uim.InsertActionGroup (group, 0);
 uim.AddUiFromString (ui_info);
  
 ...

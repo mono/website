@@ -100,7 +100,7 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
 	Notifications: epoll
 	Architecture:  amd64
 	Disabled:      none
-	Misc:          softdebug 
+	Misc:          softdebug
 	LLVM:          supported, not enabled.
 	GC:            sgen
 ```

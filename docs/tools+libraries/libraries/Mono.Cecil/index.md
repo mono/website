@@ -41,7 +41,7 @@ $ gmcs program.cs -r:Mono.Cecil.dll
 In a Makefile you would achieve that by doing:
 
 ``` bash
-Mono.Cecil.dll: 
+Mono.Cecil.dll:
         cp `pkg-config --variable=Libraries cecil` .
 ```
 

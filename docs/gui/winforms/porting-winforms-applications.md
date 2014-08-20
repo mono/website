@@ -83,7 +83,7 @@ Looking at the log that was created, we see this error:
     at NClass.GUI.MainForm.Init () [0x00000]
     at NClass.GUI.MainForm..ctor () [0x00000]
     at (wrapper remoting-invoke-with-check) NClass.GUI.MainForm:.ctor ()
-    at NClass.GUI.Program.Main (System.String[] args) [0x00000] 
+    at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 
 This isn't really unexpected. It is telling us that we tried to set the property PrintDialog.UseEXDialog, which MoMA already told us didn't exist in Mono. So it time to start porting our source code to work around these issues.
 
@@ -100,9 +100,9 @@ There are several approaches to porting code, depending on your goals.
 Here is the section of code that is setting PrintDialog.UseEXDialog in MainForm.Designer.cs:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   this.printDialog.UseEXDialog = true;
 ```
@@ -112,18 +112,18 @@ Here is the section of code that is setting PrintDialog.UseEXDialog in MainForm.
 If the code isn't really needed, the easiest thing to do is to remove it:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
 ```
 
 or comment it out:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   // this.printDialog.UseEXDialog = true;
 ```
@@ -135,9 +135,9 @@ However, there will be plenty of cases when this is not feasible.
 Another strategy is to create different assemblies for .Net and Mono. This can be done by wrapping all code that is not supported by Mono in conditional directives and compiling with and without the directive.
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
 #if !MONO
   this.printDialog.UseEXDialog = true;
@@ -164,9 +164,9 @@ In order to have only one assembly for all platforms, but run different code on 
 Then use the function to determine which code to run:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   if (!IsRunningOnMono ()){
     SetupPrintDialog ();
@@ -288,7 +288,7 @@ private void lstMembers_ItemSelectionChanged(object sender, EventArgs e)
     toolMoveUp.Enabled = false;
     toolMoveDown.Enabled = false;
     toolDelete.Enabled = false;
-    return;            
+    return;
   }
  
   ListViewItem lvi = lstMembers.SelectedItems[0];

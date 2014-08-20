@@ -169,10 +169,10 @@ Common Problems
   <system.web>
     <compilation defaultLanguage="C#">
       <compilers>
-        <compiler language="c#;cs;csharp" extension=".cs" compilerOptions="/warnaserror" warningLevel="4"  
+        <compiler language="c#;cs;csharp" extension=".cs" compilerOptions="/warnaserror" warningLevel="4"
           type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
       </compilers>
-    </compilation>    
+    </compilation>
   </system.web>
 </configuration>
 ```
@@ -181,6 +181,7 @@ This is result of an incompatibility between the Microsoft .NET C\# compiler and
 
 **ProviderException from SqliteMembershipProvider** When porting an ASP.NET app to Mono, you may get an exception similar to the following:
 
+``` bash
     System.Configuration.Provider.ProviderException: Operation aborted due to an exception (see Trace for details).
     at System.Web.Security.SqliteMembershipProvider.ValidateUser (string,string)
     at NerdDinner.Controllers.AccountMembershipService.ValidateUser (string,string)
@@ -191,7 +192,8 @@ This is result of an incompatibility between the Microsoft .NET C\# compiler and
     at System.Web.Mvc.ReflectedActionDescriptor.Execute (System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary`2<string, object>)
     at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod (System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary`2<string, object>)
     at System.Web.Mvc.ControllerActionInvoker/<InvokeActionMethodWithFilters>c__AnonStoreyB.<>m__E ()
-    at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1<System.Web.Mvc.ActionExecutedContext>) 
+    at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1<System.Web.Mvc.ActionExecutedContext>)
+```
 
 This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
 
@@ -387,7 +389,7 @@ Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if 
 
 2 - Change things in the machine.config (for the whole installation) or web.config (for specific web apps) files:
 
-``` asp
+``` xml
 <configuration>
 ...
  <system.web>
@@ -403,7 +405,7 @@ Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if 
    </compilers>
   </compilation>
   ...
-  <globalization  
+  <globalization
     requestEncoding="utf-8"
     responseEncoding="utf-8"
     fileEncoding="utf-8" />
@@ -553,7 +555,7 @@ web.config, inside system.web and inside httpHandlers:
      ..
      <httpHandlers>
        <add verb="*" path="*.htm" type="System.Web.UI.PageHandlerFactory,
-System.Web, Version=1.0.5000.0, Culture=neutral, 
+System.Web, Version=1.0.5000.0, Culture=neutral,
 PublicKeyToken=b03f5f7f11d50a3a" />
       ...
      </httpHandlers>

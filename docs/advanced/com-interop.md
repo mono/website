@@ -156,7 +156,7 @@ static int Main (string[] args) {
    // sm.getServiceByContractID("@mozilla.org/ipc/service;1", typeof(ipcIService).GUID, out ptr);
  
    // Do more XPCOM stuff here
-   // 
+   //
  
    NativeMethods.NS_ShutdownXPCOM(sm);
    NativeMethods.XPCOMGlueShutdown();

@@ -46,22 +46,24 @@ I got the root certificate but it doesn't install!
 
 Some Certificate Authorities (CA) still use *very old* root certificates signed with the [MD2](http://www.ietf.org/rfc/rfc1319.txt) digest algorithm. MD2 is old enough not to be part of the standard .NET framework. This makes it impossible to validate the root certificate digital signature.
 
-To correct this you must enabled MD2 support in your `machine.config` file. This is possible because the `Mono.Security.dll` assembly contains a managed MD2 implementation to ensure compatibility with older certificates. The following XML snippet must be added, inside the inside the `<configuration>` element of your `machine.config` file in order to associate the MD2 OID (object identifier) with the hash algorithm implementation. ­
+To correct this you must enabled MD2 support in your `machine.config` file. This is possible because the `Mono.Security.dll` assembly contains a managed MD2 implementation to ensure compatibility with older certificates. The following XML snippet must be added, inside the inside the `<configuration>` element of your `machine.config` file in order to associate the MD2 OID (object identifier) with the hash algorithm implementation.
 
-    <mscorlib>
-        <cryptographySettings>
-            <cryptoNameMapping>
-                <cryptoClasses>
-                    <cryptoClass monoMD2="Mono.Security.Cryptography.MD2Managed, Mono.Security,
-                        Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
-                </cryptoClasses>
-                <nameEntry name="MD2" class="monoMD2" />
-            </cryptoNameMapping>
-            <oidMap>
-                <oidEntry OID="1.2.840.113549.2.2" name="MD2" />
-            </oidMap>
-        </cryptographySettings>
-    </mscorlib>
+``` xml
+<mscorlib>
+    <cryptographySettings>
+        <cryptoNameMapping>
+            <cryptoClasses>
+                <cryptoClass monoMD2="Mono.Security.Cryptography.MD2Managed, Mono.Security,
+                    Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+            </cryptoClasses>
+            <nameEntry name="MD2" class="monoMD2" />
+        </cryptoNameMapping>
+        <oidMap>
+            <oidEntry OID="1.2.840.113549.2.2" name="MD2" />
+        </oidMap>
+    </cryptographySettings>
+</mscorlib>
+```
 
 Why does SSL use certificates ?
 -------------------------------
@@ -81,15 +83,21 @@ Does SSL works for SMTP, like GMail ?
 
 Yes it does. First you must import the root certificates using the `mozroots` tool:
 
-    mozroots --import --ask-remove 
+``` bash
+mozroots --import --ask-remove
+```
 
 Note that if you are using a web application (i.e. not the current user) you must add the `--machine` option like this:
 
-    mozroots --import --ask-remove --machine
+``` bash
+mozroots --import --ask-remove --machine
+```
 
 Next you need to import the intermediate certificates. You can do this by using the `certmgr` tool to connect to the SSL server. E.g.
 
-    certmgr -ssl smtps://smtp.gmail.com:465
+``` bash
+certmgr -ssl smtps://smtp.gmail.com:465
+```
 
 Use the `-m` option to import the certificates into the machine store if required.
 

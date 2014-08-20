@@ -78,12 +78,12 @@ For example, simple animations or status updates could be hooked up into an Idle
  
            // If no more images remain, stop the idle handler.
            if (img == null)
-                 return false; 
+                 return false;
  
            CreateThumbnail (img, img.ToString () + ".thumbnail");
  
            // There are more images, invoke this routine again on the next Idle moment.
-           return true;           
+           return true;
     }
 ```
 
@@ -295,7 +295,7 @@ class x {
  
     static void Callback (IAsyncResult r)
     {
-                // 
+                //
                 // We pass the "adder" object as the "data" argument to
                 // BeginInvoke, here we retrieve it:
                 //

@@ -214,7 +214,7 @@ Small libraries that can be made available as source code and that application d
 And developers would copy those files in their project makefiles, like this:
 
 ``` csharp
-File1.cs File2.cs: 
+File1.cs File2.cs:
        cp `pkg-config --variable=Sources package` .
 ```
 

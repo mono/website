@@ -30,25 +30,25 @@ GAC Definitions
 
 The GAC is built on the foundation of strongnames. Strongnames can be difficult to understand because they serve a dual purpose: manageability and security. Hopefully these definitions can help everyone understand the difference between the two.
 
- Strongname   
+`Strongname`
 An assembly filename with a version number, a culture and a public key token. As a strongname uniquely identifies an assembly this is the best way to reference them.
 
- Strongname Signature   
+`Strongname Signature`
 A binary blob inside an assembly that can be verified as the digital signature of the assembly (i.e. providing integrity). Because the the public key (inside the assembly) is part of the signature it is not possible to modify the assembly contents without detection (providing integrity).
 
- Strongnamed Assembly   
+`Strongnamed Assembly`
 An assembly that has a all the required informations to create a strongname (i.e. a public key). Note that this doesn't mean that the assembly is signed! (See delay signed assemblies.)
 
- Delay Signed Assembly   
+`Delay Signed Assembly`
 An assembly that has a strongname but no strongname signature. While they are a kind of strongnamed assembly the runtime will, by default, refuse to load them as they are unsigned. They are often used in development to keep the private signing key confidential.
 
- ECMA Key   
+`ECMA Key`
 The ECMA key isn't a public key (or a key at all). It is a special 16 bytes header that the runtime detect in an assembly where the assembly public key should be. If found the runtime uses it's own public key to validate the strongname signature. This hack allows an assembly to reference a standard assembly (e.g. System.dll) in a uniform way (i.e. independent of the runtime) without having ECMA (or anyone else) involved in the signing process.
 
- Standard (ECMA) Assembly   
+`Standard (ECMA) Assembly`
 Assemblies that are defined in the ECMA standards. They are signed using the ECMA key (although other assemblies are also signed with that key, like System.Windows.Forms.
 
- SNK   
+`SNK`
 Strongname Key (file extension). These are files created by the tool sn.exe. They can contains a 1024 bits RSA key pair (private and public keys) or only the public key.
 
 Assembly Names
@@ -56,17 +56,17 @@ Assembly Names
 
 The Mono Runtime uses the following components to make up unique names for the assemblies: The assembly name, the assembly culture, the assembly version, and the assembly public key token. All of those elements are used to make a unique assembly name that can be referenced from the GAC.
 
- Assembly Name   
+`Assembly Name`
 The assembly name is the human readable name you give your assembly, and is also the physical name of the assembly minus the extension. You don't need to do anything special to create an assembly name. Its added to the assemblies metadata when the assembly is compiled.
 
- Assembly Culture   
+`Assembly Culture`
 All assemblies have a culture associated with them. If you do not specify a culture the invariant (neutral) culture is associated with your assembly. By giving an assembly a culture you can create localized versions of assemblies and install them side-by-side in the GAC without them interfering with each other. The assembly culture is specified using an assembly attribute:
 
 <!-- -->
 
     [assembly: AssemblyCulture ("en-CA")]
 
- Assembly Version   
+`Assembly Version`
 The assembly version is specified as a four part number. The parts are:
 
 \<Major\>.\<Minor\>.\<Build\>.\<Revision\>. The assembly version is specified using an assembly attribute. Common practice is to update the major and minor version numbers for changes that break backwards compatibility. If you don't want to specify a build and revision number you can use a wild card and the compiler will automatically generate one for you. Examples
@@ -75,7 +75,7 @@ The assembly version is specified as a four part number. The parts are:
 
     [assembly: AssemblyVersion ("1.0.*")]
 
- Assembly Public Key Token   
+`Assembly Public Key Token`
 The assembly public key token is a short representation of the public key compiled in the assembly. The token value is the first 8 bytes of the SHA-1 hash of public key. Having a public key inside the assembly allows, once the assembly is signed, to verify it's integrity. It also ensures that there will be no naming conflicts with shared assembly names. To generate a key pair we use the sn.exe tool:
 
 <!-- -->
@@ -83,7 +83,7 @@ The assembly public key token is a short representation of the public key compil
     $ sn -k my.key
     Mono StrongName 0.30.99.0
     Copyright 2002, 2003 Motus Technologies. Copyright 2004 Novell. BSD licensed.
-     
+
     A new strong name key pair has been generated in my.key
 
 Once the key pair is generated we must then reference that key from inside of our assembly using an assembly attribute:
@@ -125,7 +125,7 @@ The above will surface the assembly on /usr/lib/mono/DEMO, which is a convenient
 
     $ mcs -lib:/usr/lib/mono/DEMO sample.cs
     Compilation succeeded
-    $ 
+    $
 
 Using Multiple GACs
 ===================
@@ -279,7 +279,7 @@ Small libraries that can be made available as source code and that application d
 And developers would copy those files in their project makefiles, like this:
 
 ``` csharp
-File1.cs File2.cs: 
+File1.cs File2.cs:
        cp `pkg-config --variable=Sources package` .
 ```
 

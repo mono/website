@@ -28,8 +28,8 @@ Statements and expression can take multiple lines, for example, consider this LI
 ``` bash
 csharp> using System.IO;
 csharp> from f in Directory.GetFiles ("/etc")
-      >   let fi = new FileInfo (f)  
-      >   where fi.LastWriteTime > DateTime.Now-TimeSpan.FromDays(7) select f; 
+      >   let fi = new FileInfo (f)
+      >   where fi.LastWriteTime > DateTime.Now-TimeSpan.FromDays(7) select f;
 { "/etc/adjtime", "/etc/asound.state", "/etc/mtab", "/etc/printcap", "/etc/resolv.conf" }
 csharp>
 ```

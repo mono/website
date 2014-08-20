@@ -39,12 +39,12 @@ When the program has finished executing, the profiler prints the data in human r
 ``` bash
 Total time spent compiling 227 methods (sec): 0.07154 Slowest method to compile
  (sec): 0.01893: System.Console::.cctor() Time(ms) Count P/call(ms) Method name ########################
-91.681 1 91.681 .DebugOne::Main() Callers (with count) that contribute at least 
+91.681 1 91.681 .DebugOne::Main() Callers (with count) that contribute at least
 for 1%:
 1 100 % .DebugOne::Main(object,intptr,intptr)
 ... Total number of calls: 3741 ... Allocation profiler Total mem Method ########################
 406 KB .DebugOne::Main()
-406 KB 1000 System.Int32[] 
+406 KB 1000 System.Int32[]
 Callers (with count) that contribute at least for 1%:
 1 100 % .DebugOne::Main(object,intptr,intptr)
 Total memory allocated: 448 KB
@@ -54,7 +54,7 @@ At the top, it shows each method that is called. The data is sorted by the total
 
 Below this, it shows the top callers of the method. This is very useful data. If you find, for example, that the method Data::Computate () takes a very long time to run, you can look to see if any of the calls can be avoided.
 
-    Two warnings must be given about the method data. 
+    Two warnings must be given about the method data.
 
 First, the profiler has an overhead associated with it. As such, a high number of calls to a method may show up as consuming lots of time, when in reality they do not consume much time at all. If you see a method that has a very high number of calls, you may be able to ignore it. However, do consider removing calls if possible, as that will sometimes help performance. This problem is often seen with the use of built in collection types.
  Secondly, due to the nature of the profiler, recursive calls have extremely large times (because the profiler double counts when the method calls itself). One easy way to see this problem is that if a method is shown as taking more time than the Main method, it is very likely recursive, and causing this problem.
@@ -119,7 +119,7 @@ The .NET framework provides a rich hierarchy of object types. Each object not on
  However, the language also must be able to treat primitives as first class datums -- in the class with objects. Languages handle this issue in different ways. Some choose to make a special class for each primitive, and force the user to do an operation such as:
 
 ``` shell
- // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ()); 
+ // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ());
 ```
 
  The C\# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
@@ -127,7 +127,7 @@ The .NET framework provides a rich hierarchy of object types. Each object not on
  You must be careful when casting a primitive to an object. Note that because it is an implicit conversion, you will not see it in your code. For example, boxing is happening here:
 
 ``` shell
- ArrayList foo = new ArrayList (); foo.Add (1); 
+ ArrayList foo = new ArrayList (); foo.Add (1);
 ```
 
  In high performance code, this operation can be very costly.

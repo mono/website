@@ -149,7 +149,7 @@ class MyWidget : Gtk.DrawingArea {
         win.DrawRectangle (Style.BaseGC (StateType.Normal), true, area);
  
         return true;
-    } 
+    }
 }
 ```
 
@@ -239,35 +239,21 @@ Common Problems
 If you are getting errors like this:
 
 ``` bash
-generated/PangoHelper.cs(17,55): error CS0039: Cannot convert type `GLib.Object'
- to `Pango.Context' via a built-in conversion
-generated/PangoHelper.cs(52,55): error CS0039: Cannot convert type `GLib.Object'
- to `Pango.Context' via a built-in conversion
-generated/PangoRenderer.cs(19,47): error CS1502: The best overloaded method 
-match for `Pango.Renderer.Renderer(GLib.GType)' has some invalid arguments
-generated/PangoRenderer.cs(19,47): error CS1503: Argument 1: Cannot convert from
- `GLib.GType' to `GLib.GType'
-generated/PangoRenderer.cs(34,5): error CS1502: The best overloaded method match
- for `GLib.Object.CreateNativeObject(string[], GLib.Value[])' has some invalid 
-arguments
-generated/PangoRenderer.cs(34,5): error CS1503: Argument 2: Cannot convert from 
-`GLib.Value[]' to `GLib.Value[]'
+generated/PangoHelper.cs(17,55): error CS0039: Cannot convert type `GLib.Object' to `Pango.Context' via a built-in conversion
+generated/PangoHelper.cs(52,55): error CS0039: Cannot convert type `GLib.Object' to `Pango.Context' via a built-in conversion
+generated/PangoRenderer.cs(19,47): error CS1502: The best overloaded method match for `Pango.Renderer.Renderer(GLib.GType)' has some invalid arguments
+generated/PangoRenderer.cs(19,47): error CS1503: Argument 1: Cannot convert from `GLib.GType' to `GLib.GType'
+generated/PangoRenderer.cs(34,5): error CS1502: The best overloaded method match for `GLib.Object.CreateNativeObject(string[], GLib.Value[])' has some invalid arguments
+generated/PangoRenderer.cs(34,5): error CS1503: Argument 2: Cannot convert from `GLib.Value[]' to `GLib.Value[]'
 ```
 
 Or like this:
 
 ``` bash
-generated/PangoHelper.cs(17,55): error CS0039: Cannot convert type `GLib.Object'
- to `Pango.Context' via a built-in conversion
-generated/PangoHelper.cs(52,55): error CS0039: Cannot convert type `GLib.Object'
- to `Pango.Context' via a built-in conversion
-generated/PangoRenderer.cs(19,47): error CS1502: The best overloaded method 
-match for `Pango.Renderer.Renderer(GLib.GType)' has some invalid arguments
-generated/PangoRenderer.cs(19,47): error CS1503: Argument GLib.GType: Cannot 
-conver from equally named types from different assemblies GLib.GType (from 
-glib-sharp, Version=2.6.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f) 
-and GLib.GType (from glib-sharp, Version=2.8.0.0, Culture=neutral, 
-PublicKeyToken=35e10195dab3c99f)
+generated/PangoHelper.cs(17,55): error CS0039: Cannot convert type `GLib.Object' to `Pango.Context' via a built-in conversion
+generated/PangoHelper.cs(52,55): error CS0039: Cannot convert type `GLib.Object' to `Pango.Context' via a built-in conversion
+generated/PangoRenderer.cs(19,47): error CS1502: The best overloaded method match for `Pango.Renderer.Renderer(GLib.GType)' has some invalid arguments
+generated/PangoRenderer.cs(19,47): error CS1503: Argument GLib.GType: Cannot conver from equally named types from different assemblies GLib.GType (from glib-sharp, Version=2.6.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f) and GLib.GType (from glib-sharp, Version=2.8.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f)
 ```
 
 This is caused because you have a newer version of Gtk\# installed on your system, and you are trying to compile an older version.

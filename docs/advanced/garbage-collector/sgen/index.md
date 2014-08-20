@@ -136,22 +136,22 @@ In a copying collector like SGen’s nursery collector, which copies reachable o
 Here is a simplified (pinning is not handled) pseudo-code implementation of the central loop for the nursery collector:
 
 ``` c
-1:  while (!gray_stack_is_empty ()) { 
-2:      object = gray_stack_pop ();  
-3:      foreach (refp in object) {  
-4:          old = *refp;  
-5:          if (!ptr_in_nursery (old))  
-6:              continue;  
-7:          if (object_is_forwarded (old)) {  
-8:              new = forwarding_destination (old);  
-9:          } else { 
-10:              new = major_alloc (object_size (old)); 
-11:              copy_object (new, old); 
-12:              forwarding_set (old, new); 
-13:              gray_stack_push (new); 
-14:         } 
-15:         *refp = new; 
-16:     } 
+1:  while (!gray_stack_is_empty ()) {
+2:      object = gray_stack_pop ();
+3:      foreach (refp in object) {
+4:          old = *refp;
+5:          if (!ptr_in_nursery (old))
+6:              continue;
+7:          if (object_is_forwarded (old)) {
+8:              new = forwarding_destination (old);
+9:          } else {
+10:              new = major_alloc (object_size (old));
+11:              copy_object (new, old);
+12:              forwarding_set (old, new);
+13:              gray_stack_push (new);
+14:         }
+15:         *refp = new;
+16:     }
 17:  }
 ```
 

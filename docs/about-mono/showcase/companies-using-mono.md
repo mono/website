@@ -169,11 +169,11 @@ Web Projects Using Mono
 
 <!-- -->
 
-    We launched a job board at www.agentka.cz in November 2008. 
-    The site runs on a Linux box and it uses Mono (currently we use version 1.9.1, 
-    but an upgrade is planned). The interesting thing is we do not use ASP.NET or 
-    Apache. The site is using a custom web server which was written in C# and also 
-    the web application is using a custom C# framework. The performance of the 
-    whole system (including full-text indexing) is really good when comparing to a 
+    We launched a job board at www.agentka.cz in November 2008.
+    The site runs on a Linux box and it uses Mono (currently we use version 1.9.1,
+    but an upgrade is planned). The interesting thing is we do not use ASP.NET or
+    Apache. The site is using a custom web server which was written in C# and also
+    the web application is using a custom C# framework. The performance of the
+    whole system (including full-text indexing) is really good when comparing to a
     "standard" LAMP solutions.
 

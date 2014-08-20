@@ -13,7 +13,7 @@ To build Mono on the Wii, you will need a Mono 2.4 set of class libraries, and i
 
 ``` bash
  $ svn co .../branches/wii
- $ svn co .../trunk/wii 
+ $ svn co .../trunk/wii
  $ cd wii
  $ make
 ```

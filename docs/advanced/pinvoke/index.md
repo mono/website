@@ -364,7 +364,7 @@ Some background. The Microsoft Win32 API supports two forms of strings: "ANSI" s
 Consider this Win32 API description:
 
 ``` csharp
- [DllImport ("gdi32.dll", CharSet=CharSet.Auto, 
+ [DllImport ("gdi32.dll", CharSet=CharSet.Auto,
       CallingConvention=CallingConvention.StdCall)]
  private static extern bool TextOut (
       System.IntPtr hdc,
@@ -434,7 +434,7 @@ The solution is to use a [System.Text.StringBuilder](http://docs.go-mono.com/ind
 
 ``` csharp
  [DllImport ("libc.so")]
- private static extern void strncpy (StringBuilder dest, 
+ private static extern void strncpy (StringBuilder dest,
       string src, uint n);
  
  private static void UseStrncpy ()
@@ -592,17 +592,17 @@ The class wrapper could be:
  
     /* PassByReferenceIn */
     [DllImport ("mylib")]
-    public static extern 
+    public static extern
        void PassByReferenceIn (ClassWrapper s);
  
     /* PassByReferenceOut */
     [DllImport ("mylib")]
-    public static extern 
+    public static extern
        void PassByReferenceOut ([Out] ClassWrapper s);
  
     /* PassByReferenceInOut */
     [DllImport ("mylib")]
-    public static extern 
+    public static extern
        void PassByReferenceInOut ([In, Out] ClassWrapper s);
  
     /* cannot wrap function ReturnByValue */
@@ -610,11 +610,11 @@ The class wrapper could be:
     /* ReturnByReference */
     [DllImport ("mylib")]
     public static extern ClassWrapper ReturnByReference ();
-       /* note: this causes returned pointer to be freed 
+       /* note: this causes returned pointer to be freed
           by runtime */
      /* DoubleIndirection */
     [DllImport ("mylib")]
-    public static extern 
+    public static extern
        void DoubeIndirection (ref ClassWrapper s);
  }
 ```
@@ -651,32 +651,32 @@ While the structure wrapper could be:
     /* ReturnByReference: CLS-compliant way */
     [DllImport ("mylib", EntryPoint="ReturnByReference")]
     public static extern IntPtr ReturnByReferenceCLS ();
-       /* note: this DOES NOT cause returned pointer to be 
+       /* note: this DOES NOT cause returned pointer to be
           freed by the runtime, so it's not identical to
           ClassWrapper.ReturnByReference.
-          Use Marshal.PtrToStructure() to access the 
+          Use Marshal.PtrToStructure() to access the
           underlying structure. */
  
     /* ReturnByReference: "unsafe" way */
     [DllImport ("mylib", EntryPoint="ReturnByReference")]
-    public static unsafe extern StructWrapper* 
+    public static unsafe extern StructWrapper*
        ReturnByReferenceUnsafe ();
-       /* note: this DOES NOT cause returned pointer to be 
+       /* note: this DOES NOT cause returned pointer to be
           freed by the runtime, so it's not identical to
           ClassWrapper.ReturnByReference */
  
     /* DoubleIndirection: CLS-compliant way */
     [DllImport ("mylib", EntryPoint="DoubleIndirection")]
-    public static extern 
+    public static extern
        void DoubeIndirectionCLS (ref IntPtr s);
        /* note: this is similar to ReturnByReferenceCLS().
           Pass a `ref IntPtr' to the function, then use
-          Marshal.PtrToStructure() to access the 
+          Marshal.PtrToStructure() to access the
           underlying structure. */
  
     /* DoubleIndirection: "unsafe" way */
     [DllImport ("mylib", EntryPoint="DoubleIndirection")]
-    public static unsafe extern 
+    public static unsafe extern
        void DoubeIndirectionUnsafe (StructWrapper **s);
  }
 ```
@@ -763,7 +763,7 @@ Of course, the managed structure can be declared in other ways, with varying per
  struct ManagedStruct_Fast_1 {
     public int  data_0, data_1, data_2, data_3, data_4,
                 data_5, data_6, data_7, data_8, data_9;
-    public byte name_00, name_01, name_02, name_03, name_04, 
+    public byte name_00, name_01, name_02, name_03, name_04,
                 name_05, name_06, name_07, name_08, name_09,
                 name_10, name_11, name_12, name_13, name_14,
                 name_15, name_16, name_17, name_18, name_19,
@@ -830,12 +830,12 @@ This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.
 >    public int error;
 >    public int err_stack;
 >    public int flags;
->    public byte[256] desc;  // this is invalid, 
+>    public byte[256] desc;  // this is invalid,
 >                            // can't contain size
->    public const byte *file; 
->    public const byte *func; 
+>    public const byte *file;
+>    public const byte *func;
 >    public int lineno;
->  
+>
 >    /* internal use only */
 >    private NEOERR *next;
 >  }
@@ -844,7 +844,7 @@ This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.
 > This dosn't work either:
 >
 > ``` csharp
->  [MarshalAs (UnmanagedType.LPStr, SizeConst=256)] 
+>  [MarshalAs (UnmanagedType.LPStr, SizeConst=256)]
 >  public string desc;
 > ```
 >
@@ -857,7 +857,7 @@ This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.
 >    [FieldOffset(4)] public int err_stack;
 >    [FieldOffset(8)] public int flags;
 >    // public byte[256] dest;  // not representable
->  
+>
 >    // use this as an address??
 >    [FieldOffset(12)] public byte dest_first_char;
 >    [FieldOffset(268)] public byte *file; // const
@@ -900,7 +900,7 @@ And the possible corresponding managed code:
  struct ManagedInformation {
     [FieldOffset (0)] int num;
     [FieldOffset (4)] string str;
-    [FieldOffset (8), 
+    [FieldOffset (8),
        MarshalAs (UnmanagedType.ByValArray, SizeConst=32)]
     int[] array;
  
@@ -973,9 +973,9 @@ Given all the work involved with custom marshaling, such as the required **ICust
  // Custom Marshaling with Mono.Unix.Native.FileNameMarshaler.cs
  [DllImport(LIB)]
  public static extern int open (
-    [MarshalAs (UnmanagedType.CustomMarshaler, 
+    [MarshalAs (UnmanagedType.CustomMarshaler,
        MarshalTypeRef=typeof(Mono.Unix.Native.FileNameMarshaler))]
-    string pathname, 
+    string pathname,
     int flags
  );
 ```
@@ -989,7 +989,7 @@ And the manual marshaler implementation:
  
  public static extern int open (string pathname, int flags)
  {
-    IntPtr _pathname = UnixMarshal.StringToHeap (pathname, 
+    IntPtr _pathname = UnixMarshal.StringToHeap (pathname,
           UnixEncoding.Instance);
     try {
        return open (_pathname, flags);
@@ -1026,8 +1026,8 @@ By default C\#, establishes the order that is most optimized for the structure f
         public IntPtr win;
         public IntPtr src;
         public IntPtr types;
-        public int num_types; 
-        public _EcoreEventDndEnter() 
+        public int num_types;
+        public _EcoreEventDndEnter()
           {}
      }
 ```
@@ -1167,7 +1167,7 @@ The "type-safe" C\# wrapper (using "unsafe" code) is:
 ``` csharp
  struct Item {
     [DllImport ("library")]
-    public static unsafe extern 
+    public static unsafe extern
        bool CreateItem (out Item* item);
  
     [DllImport ("library")]
@@ -1183,7 +1183,7 @@ The "type-safe" C\# wrapper (using "unsafe" code) is:
        Item* item;
        Item.CreateItem (out item);
        int n = Item.GetInfo (item);
-       System.Console.WriteLine ("item count: {0}", 
+       System.Console.WriteLine ("item count: {0}",
           n.ToString());
        Item.DestroyItem (item);
     }
@@ -1197,7 +1197,7 @@ The CLS compliant version uses System.IntPtr to refer to unmanaged memory. This 
 ``` csharp
  class Item {
     [DllImport ("library")]
-    public static extern bool 
+    public static extern bool
        CreateItem (out System.IntPtr item);
  
     [DllImport ("library")]
@@ -1213,7 +1213,7 @@ The CLS compliant version uses System.IntPtr to refer to unmanaged memory. This 
        System.IntPtr item = null;
        Item.CreateItem (out item);
        int n = Item.GetInfo (item);
-       System.Console.WriteLine ("item count: {0}", 
+       System.Console.WriteLine ("item count: {0}",
           n.ToString());
        Item.DestroyItem (item);
     }
@@ -1270,7 +1270,7 @@ Here is an example adapted from Chris Brumme's blog:
     {
        C c = new C();
        c.m();
-       // no further references to c.  
+       // no further references to c.
        // c is now eligable for collection.
     }
  }
@@ -1400,10 +1400,10 @@ Fortunately, there is a simple pattern used throughout the .NET Class Libraries 
     private static extern IntPtr CreateResource ();
  
     [DllImport ("...")]
-    private static extern 
+    private static extern
        void DeleteResource (HandleRef handle);
  
-    // Use a HandleRef to avoid race conditions; 
+    // Use a HandleRef to avoid race conditions;
     // see the GC-Safe P/Invoke Code section
     private HandleRef _handle;
  
@@ -1423,13 +1423,13 @@ Fortunately, there is a simple pattern used throughout the .NET Class Libraries 
     {
        Cleanup ();
  
-       // Prevent the object from being placed on the 
+       // Prevent the object from being placed on the
        // finalization queue
        System.GC.SuppressFinalize (this);
     }
  
     // Finalizer provided in case Dispose isn't called.
-    // This is a fallback mechanism, but shouldn't be 
+    // This is a fallback mechanism, but shouldn't be
     // relied upon (see previous discussion).
     ~UnmanagedResource ()
     {
@@ -1549,28 +1549,28 @@ Note that some portions of this document are quotations from others; the origina
 Revision History
 ================
 
- August 15, 2005  
+ August 15, 2005
 Added char\*\* marshalling tutorial
 
- April 12, 2005   
+ April 12, 2005
 Moved into the wiki.
 
- February 3, 2005    
+ February 3, 2005
 Revised navigation menu to show 1st and 2nd level links. Documented Mono's \_\_Internal library name extension for importing symbols from within the loading program. Added Marshaling Arrays section, which clarifies array marshaling issues and includes the David Jesk commentary (which shouldn't have been in the "Avoiding Marshaling" section anyway). Added boolean marshaling information. Added Marshaling Embedded Strings information. Minor corrections, additional links to blogs and articles.
 
- June 14, 2004    
+ June 14, 2004
 Added Properly Disposing of Resources section; changed title to clarify document's intent.
 
- June 6, 2004   
+ June 6, 2004
 Mono properly frees the memory of class-typed return values now. Remove comment stating otherwise. (miguel)
 
- May 15, 2004   
+ May 15, 2004
 Added Exception Propogation section, updated Mono's .config file handling; spelling correction: s/marshalling/marshaling/g (this matches MSDN spelling conventions).
 
- March 20, 2004   
+ March 20, 2004
 Added Memory Boundaries section based on suggestions from Marcus; formatting changes.
 
- August-October 2003    
+ August-October 2003
 Initial Version.
 
 

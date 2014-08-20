@@ -372,7 +372,7 @@ public class CairoGraphic : DrawingArea
         g.Color = new Color (1, 0.8, 0, 1);
         g.LineWidth = 8;
         g.Stroke ();
-    }     
+    }
         return true;
     }
 }

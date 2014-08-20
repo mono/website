@@ -154,7 +154,7 @@ namespace GtkSharpTutorial {
                         box1 = new VBox (false, 0);
  
                         switch (which) {
-                                case 1: 
+                                case 1:
                                         label=new Gtk.Label("gtk_hbox_new (FALSE, 0);");
  
                                         box2 = new HBox (false, 0);

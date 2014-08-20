@@ -65,7 +65,7 @@ Now build and configure the ARM code, inside the scratchbox sandbox (note the us
 ``` bash
 [sbox-ARMEL: ~] > cd arm-mono-1.xx
 [sbox-ARMEL: ~] > ./configure --disable-mcs-build
-[sbox-ARMEL: ~] > make 
+[sbox-ARMEL: ~] > make
 [sbox-ARMEL: ~] > make install DESTDIR=`pwd`/tmptree
 ```
 
