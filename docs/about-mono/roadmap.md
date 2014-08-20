@@ -33,7 +33,7 @@ Current Releases
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong> Mono 3.6</strong></td>
+<td align="left"><strong>Mono 3.6</strong></td>
 <td align="left"><strong>Released: Early August, 2014</strong></td>
 </tr>
 <tr class="even">
@@ -42,13 +42,13 @@ Current Releases
 <li>We now distribute `nuget` and `ikdasm`</li>
 <li>Performance tuning for our GC bridge</li>
 <li>Debugger supports columns and ranges</li>
-<li>Debugger can examine properties by decompiling IL, without having to resume the target to evaluate.
-<li>Major HTTP stack rewrite and test suite
-<li>System.IO.Compression implemented
-<li>System.Security.Claims implemented
+<li>Debugger can examine properties by decompiling IL, without having to resume the target to evaluate.</li>
+<li>Major HTTP stack rewrite and test suite</li>
+<li>System.IO.Compression implemented</li>
+<li>System.Security.Claims implemented</li>
 </ul>
 </td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.0 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.6.0 Release Notes</a></p>
 <p><br /></p></td>
 </tr>
 </tbody>
