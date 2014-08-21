@@ -205,7 +205,7 @@ The [NullAllowed] parameter can also be specified directly on the setter: [Expor
 
 The **bmac** tool will automatically generate fours constructors in your class, for a given class *Foo*, it generates:
 
->  Foo ()
+> Foo ()
 > the default constructor (maps to Objective-C's "init" constructor)
 >
 > Foo (NSCoder)
