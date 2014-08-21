@@ -38,8 +38,8 @@ From a discussion on the mailing list, Ankit said:
 
 Transaction.Current property (ambient transaction) refers to the "current" transaction which can be used by DbCommand etc to find out whether it is being used in a transaction.
 
-Implementation Details.
-=======================
+Implementation Details
+======================
 
 Volatile and durable resource managers are available, and work with Single Phase Commit (SPC) and 2 Phase Commit (2PC).
 

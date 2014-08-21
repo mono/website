@@ -92,8 +92,8 @@ TdsClient build example:
 
 \</ol\>
 
-Classes in Mono.Data.TdsClient.Internal will:
----------------------------------------------
+Classes in Mono.Data.TdsClient.Internal will
+--------------------------------------------
 
 -   use the internal keyword to prevent exposing these classes to the System.Data.dll assembly.
 

@@ -13,7 +13,7 @@ Introduction
 
  True to its claims of "ease of use", Abyss was the easiest server to set up thus far. This is largely due to its simple and straightforward control center.
 
-### Configuration Tested On...
+### Configuration Tested On
 
 -   [OpenSuSE 10.2](http://en.opensuse.org/OpenSUSE_News/10.2-Release) (Abyss X1)\</li\>
 -   *If you have tested an additional configuration, please email me at [brian.nickel@gmail.com](mailto:brian.nickel@gmail.com).*
@@ -96,8 +96,8 @@ Upon completion of the previous step, you should have automatically returned to 
 
 Upon completion of the previous step, you should have automatically returned to "Scripting Parameters". Click "OK" at the bottom of the page to get back to the host configuration page. Once there, click "Index Files" and proceed to add `index.aspx`, `default.aspx`, and `Default.aspx`. Click "OK" and then "Reset" to restart the web server.
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Abyss Web Server. Enjoy!
 

@@ -266,7 +266,7 @@ public interface NSTextStorage {
 }
 ```
 
-### Binding Class Extensions.
+### Binding Class Extensions
 
 In Objective-C it is possible to extend classes with new methods, similar in spirit to C\#'s extension methods. When one of these methods is present, you can use the [Target] attribute to flag the first parameter of a method as being the receiver of the Objective-C message.
 

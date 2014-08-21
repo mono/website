@@ -41,8 +41,8 @@ Accessibility: UIA Client Sandbox
 Specific Tasks for Research Week
 ================================
 
-Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer:
-----------------------------------------------------------------------------------------------------------------------------------------
+Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer
+---------------------------------------------------------------------------------------------------------------------------------------
 
 -   If we chose to bind to cspi:
     -   What problems to expect when using cspi/corba vs cspi/dbus?
@@ -55,8 +55,8 @@ Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creat
 
 -   Email report summarizing findings. Work estimates for each possible approach, along with pros/cons. Include your recommendation, if you have one.
 
-Investigate common users of client API, to see how much work it would be to port them to Linux:
------------------------------------------------------------------------------------------------
+Investigate common users of client API, to see how much work it would be to port them to Linux
+----------------------------------------------------------------------------------------------
 
 -   White
 -   UIAVerify
@@ -67,8 +67,8 @@ Investigate common users of client API, to see how much work it would be to port
 
 -   Email report summarizing findings. List of popular software already using Client API. For each product/project, include a summary of what it is, a description of work needed to port to Linux, and a ballpark estimate of hours required to do the work. Include your recommendation of which would be most valuable to have running on Linux.
 
-We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues:
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -   How well does MWF support Visual Verify's custom controls?
 -   Is upstream (Microsoft) interested in accepting contributions? There has only ever been one revision in their source control. Should we contact MS directly? Fork?
@@ -80,8 +80,8 @@ We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfood
 
 -   Email report summarizing findings. If not already done in previous task, include a description or work/hours required to port UIAVerify. Include pros/cons of starting with UIAVerify vs creating our own tool. A report of how well the custom controls work in Linux should also be included (so you need to get this running in Linux somehow). Report on any issues that may affect us regarding the upstream maintainers and the license. Include your recommendation of the course to follow, if you have one.
 
-Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues:
-----------------------------------------------------------------------------------------------------------------
+Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues
+---------------------------------------------------------------------------------------------------------------
 
 -   How to correctly determine appropriate ControlType and support Control Patterns based on roles, etc.
 -   How to emulate AutomationElement.FromHandle for non-Winforms apps, and how to make it work for Winforms apps.

@@ -93,7 +93,7 @@ If you don't want it to get deleted on completion, you can change the "Delete\_T
 
 There are a couple of options here.
 
-##### - Place a copy of the .dll in the Mono GAC:
+##### - Place a copy of the .dll in the Mono GAC
 
 On Windows:
 
@@ -107,7 +107,7 @@ On Linux:
 gacutil -i MyAssembly.dll
 ```
 
-##### - Add a project reference to the .dll:
+##### - Add a project reference to the .dll
 
 -   Right click on References.
 -   Add a reference to the .dll.

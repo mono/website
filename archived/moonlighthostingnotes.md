@@ -47,7 +47,7 @@ Moonlight plugin
 
 ### How it works
 
-#### First step: create an \<object\> element of type application/ag-plugin.
+#### First step: create an \<object\> element of type application/ag-plugin
 
 This is not mandatory unless you run silverlight apps written in Microsoft ways:
 

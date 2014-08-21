@@ -25,8 +25,8 @@ User:Tml
 </tbody>
 </table>
 
-It's a wiki!
-------------
+It's a wiki
+-----------
 
 Been a little time since I've played with a wiki. Thought I'd use this page to experiment
 

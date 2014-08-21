@@ -8,8 +8,8 @@ redirect_from:
 Mailpost:longreply
 ==================
 
-Mono and GNOME. The long reply.
-===============================
+Mono and GNOME. The long reply
+==============================
 
 Originally from:
 

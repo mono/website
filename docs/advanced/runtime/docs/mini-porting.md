@@ -30,8 +30,8 @@ I suggest a similar split for other architectures as well.
 
 Note that this document is still incomplete: some sections are only sketched and some are missing, but the important info to get a port going is already described.
 
-Architecture-specific instructions and instruction selection.
-=============================================================
+Architecture-specific instructions and instruction selection
+============================================================
 
 The JIT already provides a set of instructions that can be easily mapped to a great variety of different processor instructions. Sometimes it may be necessary or advisable to add a new instruction that represent more closely an instruction in the architecture. Note that a mini instruction can be used to represent also a short sequence of CPU low-level instructions, but note that each instruction represents the minimum amount of code the instruction scheduler will handle (i.e., the scheduler won't schedule the instructions that compose the low-level sequence as individual instructions, but just the whole sequence, as an indivisible block).
 

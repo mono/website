@@ -12,8 +12,8 @@ Is it the intention that Cecil will be feature-complete and convenient enough to
 
 Related to that I suppose, is the plan to have the Mono C\# compiler make use of Cecil at some point?
 
-Cecil as a platform for languages.
-----------------------------------
+Cecil as a platform for languages
+---------------------------------
 
 Cecil can certainly be used for that purpose (once write support is added), and hopefully we can start using it in various other tools.
 

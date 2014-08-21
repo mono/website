@@ -104,8 +104,8 @@ Profiling without JIT instrumentation
 
 You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData](/archived/oprofilewithanonjitdata "OprofileWithAnonJitData")
 
-Memory Management in the .NET/Mono world.
-=========================================
+Memory Management in the .NET/Mono world
+========================================
 
 Since Mono and .NET offer automatic garbage collection, the programmer is freed from having to track and dispose the objects it consumes (except for IDispose-like classes). This is a great productivity gain, but if you create thousands of objects, that will make the garbage collector do more work, and it might slow down your application.
  Remember, each time you allocate an object, the GC is forced to find space for the object. Each object has an 8 byte overhead (4 to tell what type it is, then 4 for a sync block). If the GC finds that it is running out of room, it will scan every object for pointers, looking for unreferenced objects. If you allocate extra objects, the GC then must take the effort to free the objects.

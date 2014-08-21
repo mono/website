@@ -792,15 +792,15 @@ In UI Automation, a core service lies between the server (provider) and the clie
 -   **UIA Client code**: git@github.com:raywang/UIAClientAPI.git.
 -   **Testable Application**: the following application include all the patterns we want to test. You should locate the testable application (Keepass.exe ,DockPatternProvider.exe ,WindowAndTransformPatternProvider.exe )in the project's **bin/debug/** directory which also include the test script executable program, then if you run the executable program it will launch the testable application.
 
-##### Keepass.exe:
+##### Keepass.exe
 
 [http://dl.dropbox.com/u/3874045/KeePass-2.09.zip](http://dl.dropbox.com/u/3874045/KeePass-2.09.zip)
 
-##### DockPatternProvider.exe:
+##### DockPatternProvider.exe
 
 svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/DockProviderTest.cs](svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/DockProviderTest.cs)
 
-##### WindowAndTransformPatternProvider.exe:
+##### WindowAndTransformPatternProvider.exe
 
 svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs](svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs)
 

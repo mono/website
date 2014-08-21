@@ -79,8 +79,8 @@ The BSD\# Project is devoted to porting and maintaining the Mono .NET framework 
 
 The BSD\# Project is hosted on [Google Code](http://code.google.com/p/bsd-sharp/). The project's [SVN repository](http://code.google.com/p/bsd-sharp/source/browse) currently contains FreeBSD ports for all Mono packages released by Novell. It also includes ports for applications and libraries from third parties as well with the intent that they be integrated into the standard FreeBSD ports tree. The project aims to act as a central testing point for porting new releases from Novell, for introducing new applications, and for testing framework wide changes that will affect all applications that rely on Mono before they reach the FreeBSD ports tree.
 
-Volunteer!
-----------
+Volunteer
+---------
 
 Mono on FreeBSD is user supported and there is a lot of work to do. Previous C\# or .NET is not even required. We have many needs that can be handled by anybody knowledgeable of FreeBSD (or is willing to learn). Most of our work is porting related and anyone that has read the [FreeBSD Porters Handbook](http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/) can easily get started with work updating the existing ports or creating new ports. The project makes a great starting point for those interested in Mono and are looking for something to do. If you are interested in volunteering just subscribe and email [mono@FreeBSD.org](http://lists.freebsd.org/mailman/listinfo/freebsd-mono) and ask what we currently need done.
 

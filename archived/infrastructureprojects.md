@@ -165,7 +165,7 @@ We now have a collection of ASP.NET applications packaged, we should get these o
 
 We will need to add other folks from the team (Marek, Miguel) to the group, so we can add new packages here.
 
-### Windows-Forms sample applications.
+### Windows-Forms sample applications
 
 We currently have done some ports of some apps that we found a long time ago in the CodeProject, these live in the
 
@@ -173,7 +173,7 @@ We currently have done some ports of some apps that we found a long time ago in 
 
 module. We typically kept track of the "original" and the modified version. We can use this to create a diff, the only trick here will be to track the original zip or tarfile.
 
-### Binary applications.
+### Binary applications
 
 There are some packages like Reflector and a handful of games that only come as binaries. Reflector is kind of useless as it insists on getting updates every once in a while, and the updating feature does not work on Linux.
 

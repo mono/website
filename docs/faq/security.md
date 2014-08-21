@@ -26,8 +26,8 @@ There are three alternatives to solve this problem:
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
 
-I imported the root certificate but it still doesn't work!
-----------------------------------------------------------
+I imported the root certificate but it still doesn't work
+---------------------------------------------------------
 
 [HTTPS](http://www.ietf.org/rfc/rfc2818.txt), like many protocols using [SSL](http://wp.netscape.com/eng/ssl3/)/[TLS](http://www.ietf.org/rfc/rfc2246.txt), doesn't requires the server to send its root certificate when negotiating the handshake. In this case it won't be possible to use `certmgr --ssl` to download automatically the root certificate into Mono's certificate stores.
 
@@ -41,8 +41,8 @@ How can I debug https traffic?
 
 Use the webscarab tool and set the http\_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
 
-I got the root certificate but it doesn't install!
---------------------------------------------------
+I got the root certificate but it doesn't install
+-------------------------------------------------
 
 Some Certificate Authorities (CA) still use *very old* root certificates signed with the [MD2](http://www.ietf.org/rfc/rfc1319.txt) digest algorithm. MD2 is old enough not to be part of the standard .NET framework. This makes it impossible to validate the root certificate digital signature.
 
@@ -253,8 +253,8 @@ From the [/mcs/class/corlib/Makefile](http://anonsvn.mono-project.com/source/tru
 -   The results of using `__SECURITY_BOOTSTRAP_DB` for other assemblies is unknown (i.e. we don't know what else in CSC may be affected by the environment variable) so it should only be used when necessary;
 -   The CLR 2.x supports a new binary format for security attributes (very much like serialization) that is make directly from the security attribute (i.e. doesn't involve the permission class).
 
-System.Security.SecurityException : Failure decoding embedded permission set object.
-------------------------------------------------------------------------------------
+System.Security.SecurityException : Failure decoding embedded permission set object
+-----------------------------------------------------------------------------------
 
 This exception can occurs when using a path/file in a declarative [FileIOPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.FileIOPermissionAttribute) attribute (or any other security attribute accepting filenames). The Mono runtime supports UNIX-style filename when compiling (e.g. MCS) but the Microsoft runtime won't be able to decode them. The solution is to use imperative security when dealing with filenames.
 

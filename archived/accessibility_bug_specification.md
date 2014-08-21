@@ -70,23 +70,23 @@ Whenever you log a bug, please remember to add a comment with a [bug reference](
 
 * * * * *
 
-#### PROBLEM STATEMENT:
+#### PROBLEM STATEMENT
 
 *More detailed expansion of summary. (The summary is a very abstract description of the problem required by Bugzilla to create a bug.)*
 
-#### REPRO:
+#### REPRO
 
 *Detailed step-by-step instructions that instruct the reader how to reproduce the bug. The instructions should be detailed and clear enough that anyone (developer, community member, new employee) can reproduce the bug. Remember to include any special setup steps.*
 
-#### RESULTS:
+#### RESULTS
 
 *What happens what the REPRO steps are followed*
 
-#### EXPECTED RESULTS:
+#### EXPECTED RESULTS
 
 *What \*should\* happen when the REPRO steps are followed*
 
-#### COMMENTS:
+#### COMMENTS
 
 *Any additional information*
 

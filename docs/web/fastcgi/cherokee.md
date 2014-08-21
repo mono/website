@@ -13,7 +13,7 @@ Introduction
 
 [Cherokee HTTP Server](http://www.cherokee-project.com/) is a very fast, flexible and easy to configure Web Server. Adding ASP.NET support through `fastcgi-mono-server` is very simple and requires modification of only one file. As late as Cherokee 0.5.6, the FastCGI extension fails to send and empty Record when the request contains no input. `fastcgi-mono-server` does not currently work around this. **This documentation is for the [0.6.0 series](http://www.cherokee-project.com/download/0.6/0.6.0/).**
 
-### Configuration Tested On...
+### Configuration Tested On
 
 1.  [OpenSuSE10.2](http://en.opensuse.org/OpenSUSE_News/10.2-Release) (Cherokee 0.6.0b700 from its YaST repository)
 2.  *If you have tested an additional configuration,please email me at [brian.nickel@gmail.com](mailto:brian.nickel@gmail.com).*
@@ -85,8 +85,8 @@ You will need to modify it so it includes "index.aspx" and "default.aspx". For e
 
     vserver!default!directory_index = index.php,index.html<b>,index.aspx,default.aspx</b>
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Cherokee. Enjoy!
 

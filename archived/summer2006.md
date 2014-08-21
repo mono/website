@@ -102,8 +102,8 @@ Additionally, embedded resources in assemblies will be viewable in the AssemblyB
 
 Lastly a stand alone application would be created that would contain just the Assembly Browser container. Thanks to the way SharpDevelop/MonoDevelop is designed, this would be a simple task.
 
-New Class Wizard:
------------------
+New Class Wizard
+----------------
 
 Similar to Visual Studio and SharpDevelop, create a 'New Class' wizard to autogenerate code for new classes. This would include choosing base type and interfaces to implement. These base types would be chosen from TreeView widgets. The generated classes would implement the stub for each inherited method, which would just throw a NotImplementedException. The generation of code would be customizable in an options panel, for example, the order of generated methods, whether documentation comments are generated, whether '\#region' comments are generated etc.
 

@@ -28,8 +28,8 @@ Sure ADO.NET 2.0 has this functionality, but Mono.Data provides some of this abi
 </tbody>
 </table>
 
-Here are the details:
----------------------
+Here are the details
+--------------------
 
 -   The Provider information is seperate from the connection string information. This allows the list of providers to be stored in the machine.config file.
 
@@ -37,8 +37,8 @@ Here are the details:
 
 -   The ProviderFactory object is used to create new connections, commands, dataadapters, parameters, etc.
 
-Overview of the ProviderFactory object model:
----------------------------------------------
+Overview of the ProviderFactory object model
+--------------------------------------------
 
 -   **ProviderFactory**: used to create new Connections, Commands, DataAdapters, or Commands. All objects are returned using the provider interfaces such as IDbConnection, IDbCommand, IDbDataAdapter, or IDataParamter
 
@@ -50,8 +50,8 @@ Overview of the ProviderFactory object model:
 
 -   **ProviderSectionHandler**: works behind the scenes to load the list of providers from the app.config into a ProviderCollection.
 
-C\# source code samples for creating a connection:
---------------------------------------------------
+C\# source code samples for creating a connection
+-------------------------------------------------
 
      // Create connection using enhanced connection string
      // The factory attribute specifies which provider

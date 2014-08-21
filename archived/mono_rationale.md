@@ -37,8 +37,8 @@ by Miguel de Icaza
 
 (This document is out-dated, it's kept here just for historic purposes).
 
-Background.
------------
+Background
+----------
 
 The GNOME project goal was to bring missing technologies to UNIX and make it competitive in the current market place for desktop applications. We also realized early on that language independence was important, and that is why GNOME APIs were coded using a standard that allowed the APIs to be easily wrapped for other languages. Our APIs are available to most programming languages on UNIX (Perl, Python, Scheme, C++, Objective-C, Ada). Later on we decided to use better methods for encapsulating our APIs, and we started to use CORBA to define interfaces to components. We complemented it with policy and a set of standard GNOME interfaces for easily creating reusable, language independent components, controls and compound documents. This technology is known as [Bonobo](http://developer.ximian.com/articles/whitepapers/bonobo). Interfaces to Bonobo exist for C, Perl, Python, and Java. CORBA is good when you define coarse interfaces, and most Bonobo interfaces are coarse. The only problem is that Bonobo/CORBA interfaces are not good for small interfaces. For example, an XML parsing Bonobo/CORBA component would be inefficient compared to a C API.
 
@@ -62,8 +62,8 @@ The Microsoft .NET initiative is confusing because it is a company wide effort t
 
 -   Hailstorm, the Passport centralized single-signon system that is being integrated into Windows XP. Mono is an implementation of the .NET development platform.
 
-The Common Language Infrastructure platform.
---------------------------------------------
+The Common Language Infrastructure platform
+-------------------------------------------
 
 Microsoft has created a new development platform. The highlights of this new development platform are:
 
@@ -83,13 +83,13 @@ What makes the Common Language Infrastructure development platform interesting i
 
 The .NET development platform is essentially a new foundation for program development that gives Microsoft a room to grow for the coming years.
 
-ECMA standards.
----------------
+ECMA standards
+--------------
 
 Microsoft has submitted the specifications of C\#, the runtime, the metadata and the other various bits of the .NET development platform to the [ECMA](http://www.ecma.ch) for standarization. You can get a copy of the specifications submitted to ECMA from: [http://www.dotnetexperts.com/ecma](http://www.dotnetexperts.com/ecma)
 
-Mono: an Open Source Common Language Infrastructure implementation.
--------------------------------------------------------------------
+Mono: an Open Source Common Language Infrastructure implementation
+------------------------------------------------------------------
 
 Ximian has begun work on Mono, a project that aims to bring the Common Language Infrastructure platform to free systems. When the GNU project was launched, they picked the best operating system that was available out there, and they began to clone it: UNIX. The .NET development platform is a very rich, powerful, and well designed platform that would help improve the free software development platform. Just like the GNU project began to clone UNIX sixteen years ago, we will be cloning the .NET development platform because it is a great platform to build on.
 

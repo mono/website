@@ -81,8 +81,8 @@ You can [subcribe](http://galactus.ximian.com/mailman/listinfo/tao-list) to the 
 
 [Search the mailing list archives](http://www.google.com/search?hl=en&q=site%3Agalactus.ximian.com+Tao)
 
-The Tao Framework for Mono and .NET.
-====================================
+The Tao Framework for Mono and .NET
+===================================
 
 The Tao Framework is a collection of bindings and libraries to facilitate cross-platform games-related development utilizing the Mono and .NET platforms.
 

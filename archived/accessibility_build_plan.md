@@ -254,7 +254,7 @@ Individual Preparation:
 
 Build Servers with root jails for each of the various architectures and distributions. This is largely taken care of by the build service and osc. osc creates jails on the fly.
 
-##### Hardware:
+##### Hardware
 
 Currently there are 2 build servers (build0 and build1) There are now several other machines
 
@@ -276,7 +276,7 @@ Currently there are 2 build servers (build0 and build1) There are now several ot
 -   i586
 -   x86\_64
 
-##### Software:
+##### Software
 
 -   Hudson
 -   OBS

@@ -131,7 +131,7 @@ Implementation details
 
 The compiler is documented in the file [mcs/docs/compiler](http://github.com/mono/mono/blob/master/mcs/docs/compiler.txt)
 
-### CIL Optimizations.
+### CIL Optimizations
 
 The compiler performs a number of simple optimizations on its input: constant folding (this is required by the C\# language spec) and can perform dead code elimination.
 

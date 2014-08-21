@@ -13,7 +13,7 @@ Introduction
 
 [Lighttpd](http://www.lighttpd.net/) (pronounced "lighty") is a popular lightweight and easy to configure HTTP server. Adding ASP.NET support through `fastcgi-mono-server` is very quick and painless and can be done by modifying only three files.
 
-### Configuration Tested On...
+### Configuration Tested On
 
 1.  [Fedora 8](http://www.fedoraproject.org) (Lighttpd 1.4.18-1, Mono 1.2.6 installed in a user account)
 
@@ -319,8 +319,8 @@ If you have it, you're going to want to add a new extension to it so it looks li
             ".dll"    => ".aspx"
     )
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Lighttpd. Enjoy!
 
