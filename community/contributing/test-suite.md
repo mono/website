@@ -34,15 +34,15 @@ In some classes, we might also provide standalone tests because of some reasons 
 To run the class library tests for a particular class library, go into the directory for the class library, and run make with \`run-test' argument. For example, to run the mscorlib tests do this:
 
 ``` bash
-$ cd mcs/class/corlib
-$ make run-test && make run-test PROFILE=net_2_0
+cd mcs/class/corlib
+make run-test && make run-test PROFILE=net_2_0
 ```
 
 This will run the mscorlib tests for the default profile and then 2.0, if you only want to run the 2.0 tests, run:
 
 ``` bash
-$ cd mcs/class/corlib
-$ make run-test PROFILE=net_2_0
+cd mcs/class/corlib
+make run-test PROFILE=net_2_0
 ```
 
 The PROFILE variable controls which profile will be used to run the tests, if you do not specify it, it will be limited to 4.5.
@@ -50,8 +50,8 @@ The PROFILE variable controls which profile will be used to run the tests, if yo
 If you want to run a single fixture, you can use the convenience parameter FIXTURE which assumes that your test is in the MonoTests namespace, like this:
 
 ``` bash
-$ cd mcs/class/corlib
-$ make run-test FIXTURE=System.DecimalTest
+cd mcs/class/corlib
+make run-test FIXTURE=System.DecimalTest
 ```
 
 That will run the fixture for MonoTests.System.DecimalTest
@@ -59,15 +59,15 @@ That will run the fixture for MonoTests.System.DecimalTest
 You can pass arbitrary command line options to nunit-console, like this:
 
 ``` bash
-$ cd mcs/class/corlib
-$ make run-test TEST_HARNESS_FLAGS=-fixture=MonoTests.System.DateTimeTest
+cd mcs/class/corlib
+make run-test TEST_HARNESS_FLAGS=-fixture=MonoTests.System.DateTimeTest
 ```
 
 If you think you're getting failures related to l10n/i18n of your system, run them with the default language setting:
 
 ``` bash
-$ cd mcs/class/corlib
-$ LANG=en make run-test && make run-test
+cd mcs/class/corlib
+LANG=en make run-test && make run-test
 ```
 
 ### Other Class Library Tests

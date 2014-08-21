@@ -38,7 +38,7 @@ Mono includes two execution systems:
 
 With the mono JIT default, not all optimizations are turned on, since some of them can be quite time consuming. However, when using it in batch mode, it is recommended that you use the `-O=all` switch to improve the code generation, for example:
 
-    $ mono --aot -O=all library.dll
+    mono --aot -O=all library.dll
 
 The above will leave the native version of the code in \`library.dll.so'. See the page on [AOT](/AOT "AOT") for more details.
 

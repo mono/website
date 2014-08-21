@@ -63,19 +63,19 @@ namespace B {
 compiled in a library *lib.dll*:
 
 ``` bash
-$ mcs -t:library -out:lib.dll A.cs B.cs
+mcs -t:library -out:lib.dll A.cs B.cs
 ```
 
 running monodocer:
 
 ``` bash
-$ monodocer -assembly:lib.dll -path:en -pretty
+monodocer -assembly:lib.dll -path:en -pretty
 ```
 
 or mdoc-update:
 
 ``` bash
-$ mdoc update -o en lib.dll
+mdoc update -o en lib.dll
 ```
 
 will give us the following directory content:
@@ -93,7 +93,7 @@ will give us the following directory content:
 As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc](/docs/tools+libraries/tools/monodoc/) browser. Just after creating the documentation with [monodocer](/docs/tools+libraries/tools/monodocer/), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
 
 ``` bash
-$ monodoc --edit docfiles
+monodoc --edit docfiles
 ```
 
 Where *docfiles* is the name of the directory containing the documentation files.
@@ -136,13 +136,13 @@ To bundle together all our docs, we should use the [mdassembler](/docs/tools+lib
 To create the *.zip* and *.tree* files, we can use [mdassembler](/docs/tools+libraries/tools/mdassembler/):
 
 ``` bash
-$ mdassembler --ecma en --out lib
+mdassembler --ecma en --out lib
 ```
 
 or [mdoc-assemble](/docs/tools+libraries/tools/mdoc/):
 
 ``` bash
-$ mdoc assemble -o lib en
+mdoc assemble -o lib en
 ```
 
 The above two commands will create the files *lib.tree* and *lib.zip*. Now, we create a *lib.source* file:
@@ -184,8 +184,8 @@ For example, if you wanted to create a tree structure of *Languages -\> C\# -\> 
 The next step is to move the generated documentation files (sources, zip and tree) to the *sources* directory of monodoc. That directory can be found with one of the following commands:
 
 ``` bash
-$ pkg-config monodoc --variable=sourcesdir
-$ monodoc --get-sourcesdir #(deprecated)
+pkg-config monodoc --variable=sourcesdir
+monodoc --get-sourcesdir #(deprecated)
 ```
 
 ### Merging assembled documentation changes
@@ -193,7 +193,7 @@ $ monodoc --get-sourcesdir #(deprecated)
 The changes you made to your assembled library documentation will be stored in an XML file in `~/.config/monodoc/changeset.xml`. Thus, they are not created directly in the XML documentation files. To bring back those changes to the XML files you will need to merge them:
 
 ``` bash
-$ monodoc --merge-changes ~/.config/monodoc/changeset.xml docdir
+monodoc --merge-changes ~/.config/monodoc/changeset.xml docdir
 ```
 
 where *docdir* is the directory containing the .source file and the directory structure of your documentation. It is important to note that **the changes will be merged to the unassembled xml sources**, so you will have to reassemble the documentation after the process.
@@ -309,13 +309,13 @@ Now, what you do with that XML file is up to you. [NDoc](http://ndoc.sourceforge
 If you have already some documentation generated from inline XML code and you want to convert it to the format used by Monodoc, you can use [monodocer](/docs/tools+libraries/tools/monodocer/)'s *-importslashdoc* argument:
 
 ``` bash
-$ monodocer -pretty -importslashdoc:doc.xml -assembly:A.dll -path:A/en
+monodocer -pretty -importslashdoc:doc.xml -assembly:A.dll -path:A/en
 ```
 
 or you can use [mdoc-update](/docs/tools+libraries/tools/mdoc/)'s *--import* argument:
 
 ``` bash
-$ mdoc update -i doc.xml -o A/en A.dll
+mdoc update -i doc.xml -o A/en A.dll
 ```
 
 The *A/en* directory will contain documentation for each type within *A.dll* containing the documentation imported from *doc.xml*.
@@ -325,7 +325,7 @@ The *A/en* directory will contain documentation for each type within *A.dll* con
 [mdoc-export-msxdoc](/docs/tools+libraries/tools/mdoc/) exports Monodoc XML to Microsoft XML Documentation:
 
 ``` bash
-$ mdoc export-msxdoc A/en
+mdoc export-msxdoc A/en
 ```
 
 will convert all Monodoc XML within *A/en* into Microsoft XML documentation. The file created is controlled by *A/en/index.xml* -- files will be created with the basenames of **/Overview//Assembly[@Name]]** and the file extension **.xml**.

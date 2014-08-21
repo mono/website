@@ -81,7 +81,7 @@ Preparing your Program
 
 To use the debugging facilities in Mono, you should compile your program with debugging information. This is achieved by passing the `-debug` option to the command line compiler.
 
-    $ gmcs -debug hello.cs
+    gmcs -debug hello.cs
 
 The debugger can debug both 1.x and 2.0 applications.
 
@@ -94,7 +94,7 @@ If your program has been compiled inside Visual Studio or with csc, the debuggin
 
 So if you have the files hello.exe and hello.pdb, you can use:
 
-    $ pdb2mdb hello.exe
+    pdb2mdb hello.exe
 
 To generate hello.exe.mdb.
 
@@ -103,11 +103,11 @@ Starting the Debugger
 
 Start the command line version of the debugger like this:
 
-    $ mdb Application.exe
+    mdb Application.exe
 
 to debug a managed application or
 
-    $ mdb nativeapplication
+    mdb nativeapplication
 
 to debug a native application.
 

@@ -234,7 +234,7 @@ You can find which native methods an assembly is using by using [MoMA](/docs/too
 or alternatively, by using monodis like this:
 
 ``` bash
-$ monodis --implmap file.exe
+monodis --implmap file.exe
 ```
 
 The above command will list all of the invocations that the application has.
@@ -357,7 +357,7 @@ See the [Profile](/docs/debug+profile/profile/) page for more information.
 Mono has a bundled code coverage tool that you can use with your applications. Use the "coverage" profiler, like this:
 
 ``` bash
-$ mono --profile=cov demo.exe
+mono --profile=cov demo.exe
 ```
 
 See the [Code Coverage](/docs/debug+profile/profile/code-coverage/) page for more information.
@@ -1057,7 +1057,7 @@ The values allowed are those returned by "iconv --list".
 This is a sample:
 
 ``` bash
-$ export MONO_EXTERNAL_ENCODINGS="utf8:latin1"
+export MONO_EXTERNAL_ENCODINGS="utf8:latin1"
 ```
 
 Notice that in older versions of Mono, the error message had a typo, and said "MONO\_EXTERNAL\_ENCODING" instead of "MONO\_EXTERNAL\_ENCODINGS"

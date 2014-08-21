@@ -36,9 +36,9 @@ We recommend that you use [ScratchBox](http://www.scratchbox.org/) to do the bui
 You should do a two-step build: one build does the unmanaged code that targets the ARM processor, while the other build takes care of all of the managed code. To do this, you will be unpacking two trees of Mono, one on the host (usually a x86 Linux box, but any other fast box will do):
 
 ``` bash
-$ mkdir host-mono
-$ cd host-mono
-$ tar xzf ../mono-1.xx.tar.gz
+mkdir host-mono
+cd host-mono
+tar xzf ../mono-1.xx.tar.gz
 ```
 
 and the other inside the scratchbox sandbox (here ARMEL is the name given inside scratchbox to the target):
@@ -52,10 +52,10 @@ and the other inside the scratchbox sandbox (here ARMEL is the name given inside
 First build is done in the the host:
 
 ``` bash
-$ cd mono-1.xx
-$ ./configure
-$ make
-$ make install DESTDIR=`pwd`/tmptree
+cd mono-1.xx
+./configure
+make
+make install DESTDIR=`pwd`/tmptree
 ```
 
 Note that if you plan to use a particular installation prefix in the embedded box, you should use the same --prefix option to configure in both builds.

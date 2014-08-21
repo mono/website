@@ -60,7 +60,7 @@ The linker should have a list of types whose fields must not be removed or reord
 For example, the following should be possible:
 
 ``` bash
-$ mkdir silverlight
-$ monolinker -profile:mscorlib.silver.info /usr/lib/mono/full/mscorlib.dll -out:silverlight/mscorlib.dll
+mkdir silverlight
+monolinker -profile:mscorlib.silver.info /usr/lib/mono/full/mscorlib.dll -out:silverlight/mscorlib.dll
 ```
 

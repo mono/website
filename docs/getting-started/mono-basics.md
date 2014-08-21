@@ -117,7 +117,7 @@ Create a text file with the extension .aspx and put on it:
 Then run the xsp2 command from that directory:
 
 ``` bash
-$ xsp2
+xsp2
 ```
 
 Use a web browser to contact [http://localhost:8080/filename.aspx](http://localhost:8080/filename.aspx)

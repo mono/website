@@ -68,7 +68,7 @@ These are discussed in detail next.
 To embed the runtime, you have to link your code against the Mono runtime libraries. To do this, you want to pass the flags returned by pkg-config to your compiler:
 
 ``` bash
-$ pkg-config --cflags --libs mono-2
+pkg-config --cflags --libs mono-2
 ```
 
 is used to get the flags for the JIT runtime.
@@ -76,7 +76,7 @@ is used to get the flags for the JIT runtime.
 Like this:
 
 ``` bash
-$ gcc sample.c `pkg-config --cflags --libs mono-2`
+gcc sample.c `pkg-config --cflags --libs mono-2`
 ```
 
 You can separate the compilation flags from the linking flags, for instance, you can use the following macros in your makefile:

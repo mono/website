@@ -322,8 +322,8 @@ There are two kinds of libraries you can reference:
 To reference private libraries, just place the libraries in the "bin" directory below your application and they will be referenced automatically for you:
 
 ``` bash
-$ mkdir bin
-$ mcs -out:bin/library.dll -target:library mylibrary.cs
+mkdir bin
+mcs -out:bin/library.dll -target:library mylibrary.cs
 ```
 
 For GAC-installed libraries to be installed, you need to add the assembly to the Web.config file, the file should look like this:

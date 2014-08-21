@@ -34,10 +34,10 @@ Some glib packages on solaris have been compiled with sun's C compiler, so they 
 To build Mono on Solaris/x86-64, you should install the latest Boehm GC from the Boehm web site and then you can build Mono like this:
 
 ``` bash
-$ export PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
-$ export CC='gcc -m64'
-$ export AS='as -64'
-$ ./configure --with-gc=system [...]
+export PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
+export CC='gcc -m64'
+export AS='as -64'
+./configure --with-gc=system [...]
 ```
 
 Similarly, depending on the build tools used some other variables (MAKE=gmake RANLIB=granlib AR=gar STRIP=gstrip) are necessary too but those are not specific to the amd64 target.

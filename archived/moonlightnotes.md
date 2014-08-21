@@ -86,13 +86,13 @@ If you are using Firefox on the desktop at the same time as you debug Moonlight,
 To do this, start firefox from the command line with the option:
 
 ``` bash
-$ firefox -ProfileManager -no-remote
+firefox -ProfileManager -no-remote
 ```
 
 Create a new profile, give it a name, and then in future invocations, use:
 
 ``` bash
-$ firefox -P debug -no-remote
+firefox -P debug -no-remote
 ```
 
 Debugging JIT issues

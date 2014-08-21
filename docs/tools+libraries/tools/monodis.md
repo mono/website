@@ -65,7 +65,7 @@ The Mono Disassembler
 The monodis program is used to dump the contents of an ECMA CIL image. You can execute it by typing:
 
 ``` bash
-$ monodis FILE.exe
+monodis FILE.exe
 ```
 
 The following options are supported:

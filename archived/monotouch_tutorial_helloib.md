@@ -38,7 +38,7 @@ Loading Interfaces
 If you are using MonoDevelop, the XIB will automatically be compiled into a binary representation with the "nib" extension. If you are building the user interface on your own you will have to compile the user interface using the `ibtool` command. For example:
 
 ``` bash
-$ ibtool SampleController.xib --compile SampleController.nib
+ibtool SampleController.xib --compile SampleController.nib
 ```
 
 The XIB files can contain:

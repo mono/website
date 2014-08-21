@@ -848,7 +848,7 @@ Switched to branch 'monotouch-2-0'
 Then to get the patch, use the hash number in the commit above:
 
 ``` bash
-$ git cherry-pick 778694e1b85416a3abfdac4952dd85c8384e1cf8
+git cherry-pick 778694e1b85416a3abfdac4952dd85c8384e1cf8
 ```
 
 You might need to fix any merge issues at this point.
@@ -856,19 +856,19 @@ You might need to fix any merge issues at this point.
 Then **git add** any new files and changed files and then before you commit, use the hash number in your commit to transfer any commit messages, author information and so on, like this:
 
 ``` bash
-$ git commit -c 778694e
+git commit -c 778694e
 ```
 
 The magic number there are the first seven digits of the large cherry-pick commit version. Alternatively, you can use the full commit version:
 
 ``` bash
-$ git commit -c 778694e1b85416a3abfdac4952dd85c8384e1cf8
+git commit -c 778694e1b85416a3abfdac4952dd85c8384e1cf8
 ```
 
 Now that your changes are committed you can push them:
 
 ``` bash
-$ git push
+git push
 ```
 
 ChangeLogs
@@ -903,8 +903,8 @@ For new files that you create, try to ensure that the line endings in your file 
 Please verify before commiting that your changes won't lose history, you can do this by examining the output of:
 
 ``` bash
-$ git diff
-$ git diff --stat
+git diff
+git diff --stat
 ```
 
 If you feel Git's automatic line-ending normalizer is kicking in inappropriately and changing too many lines, you can add a corresponding entry for that file in a nearby `.gitattributes` file, preferably in the same directory

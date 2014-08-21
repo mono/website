@@ -28,7 +28,7 @@ class Hello {
 Use your favorite text editor to create a file named hello.cs with the contents above. Then you need to compile the above with a C\# compiler, for example:
 
 ``` bash
-$ /Developer/MonoTouch/usr/bin/smcs hello.cs -r:monotouch.dll
+/Developer/MonoTouch/usr/bin/smcs hello.cs -r:monotouch.dll
 ```
 
 At this point, you have two options, one is to run the resulting program on the simulator, and the other is to deploy it to a device. To run on the simulator, all you need to do is have the iPhone SDK installed on your system. Deploying on a device requires you to be an approved Apple developer and have the tools setup to deploy to a device, since that is a more elaborate setup this is covered in a separate document, see the [MonoTouch mtouch](/MonoTouch_mtouch "MonoTouch mtouch") document for more information on this.
@@ -36,7 +36,7 @@ At this point, you have two options, one is to run the resulting program on the 
 The iPhone deployment contains not only your program but also data files, configuration files and manifests. To turn your .exe into a package you use the mtouch command, like this:
 
 ``` bash
-$ /Developer/MonoTouch/usr/bin/mtouch -sim Hello.app hello.exe
+/Developer/MonoTouch/usr/bin/mtouch -sim Hello.app hello.exe
 ```
 
 That will prepare the Hello.app for use in the simulator.
@@ -44,7 +44,7 @@ That will prepare the Hello.app for use in the simulator.
 can launch the program in the simulator with the mtouch command. Like this:
 
 ``` bash
-$ /Developer/MonoTouch/usr/bin/mtouch --launchsim=hello.exe --stdout=output
+/Developer/MonoTouch/usr/bin/mtouch --launchsim=hello.exe --stdout=output
 ```
 
 The above will run the application on your iPhone simulator and the standard output of your program will be sent to the file `output`. In this file you will see the message "Hello" which was produced by our Main method.

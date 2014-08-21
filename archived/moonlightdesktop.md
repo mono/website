@@ -188,18 +188,18 @@ Make sure that you pass the flag: --enable-desktop-support to configure, to ensu
 For private installation use:
 
 ``` bash
-$ cd ../moon
-$ ./autogen.sh --prefix=$HOME/build --enable-desktop-support
-$ make && make install
+cd ../moon
+./autogen.sh --prefix=$HOME/build --enable-desktop-support
+make && make install
 ```
 
 For a system installation use:
 
 ``` bash
-$ cd ../moon
-$ ./autogen.sh --enable-desktop-support
-$ make
-$ su
+cd ../moon
+./autogen.sh --enable-desktop-support
+make
+su
 Password: <enter-your-root-password>
 # make install
 ```

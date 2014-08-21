@@ -34,8 +34,8 @@ The pattern used for using libraries whose API is not frozen is described in the
 To summarize it, it is necessary for you to copy and bundle a version of Cecil with your project before using it. To do this, you use the following pattern:
 
 ``` bash
-$ cp `pkg-config --variable=Libraries cecil` .
-$ gmcs program.cs -r:Mono.Cecil.dll
+cp `pkg-config --variable=Libraries cecil` .
+gmcs program.cs -r:Mono.Cecil.dll
 ```
 
 In a Makefile you would achieve that by doing:

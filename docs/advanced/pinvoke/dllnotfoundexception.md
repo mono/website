@@ -81,7 +81,7 @@ Aha! There it is. So why can't mono find it?
 
 By default in basically all distributions of linux the dynamic linker only creates a cache for files in /lib and /usr/lib. Since you have placed your library in /usr/local/lib, it does not know about it. You can verify this using the following command:
 
-    $ ldconfig -p |grep libgdiplus
+    ldconfig -p |grep libgdiplus
 
 The command should produce no output, because it does not know about the file.
 

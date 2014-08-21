@@ -129,7 +129,7 @@ As you can see, the Catalog object will provide us with translations for: "My na
 
 Lets compile our example.
 
-    $ mcs -r Mono.Posix i18n.cs
+    mcs -r Mono.Posix i18n.cs
 
 and run it:
 
@@ -139,7 +139,7 @@ and run it:
 
 You'll see that the output is untranslated. Why? Because we haven't translated the string, we marked it as translatable, now we need to translate it. For doing that we need to *get* the strings from our source code using **xgettext**:
 
-    $ xgettext -a --from-code=UTF-8 i18n.cs -o es.po
+    xgettext -a --from-code=UTF-8 i18n.cs -o es.po
 
 Using the **--from-code=UTF-8** parameter sets the source file format, and *es.po* is the file which contain all the strings to translate. We will translate this sample from English to Spanish. The command used above creates a file called es.po, and its content is something like the following:
 
@@ -234,14 +234,14 @@ After translation, the file might look something like this:
 
 Now we need to create the catalog; let's use the following commands to create it
 
-    $ mkdir -p locale/es/LC_MESSAGES/
-    $ msgfmt es.po -o locale/es/LC_MESSAGES/i18n.mo
+    mkdir -p locale/es/LC_MESSAGES/
+    msgfmt es.po -o locale/es/LC_MESSAGES/i18n.mo
 
 The **mkdir** command creates the directory where the message catalog will reside. The **msgfmt** command must be in sync with the [http:/monodoc/M:Mono.Unix.Catalog.Init Catalog.Init()] call within your program. The **bindtextdomain**(3) function, which Catalog wraps, requires that message catalogs be located at *localedir/locale/category/domainname.mo*. *domainname* is the first parameter to Catalog.Init(), while *localedir* is the second parameter. *locale* is the language you're providing a translation for, in this case **es**. In general *category* will always be **LC\_MESSAGES**.
 
 Now that we have a message catalog for the Spanish language, let's try again:
 
-    $ LANGUAGE=es mono i18n.exe
+    LANGUAGE=es mono i18n.exe
 
 The output will be:
 
@@ -422,7 +422,7 @@ Then, we have
 
 We would repeat the step used for translating console-based applications
 
-    $ xgettext --from-code=UTF-8 Gui.cs gui.glade -o en.po
+    xgettext --from-code=UTF-8 Gui.cs gui.glade -o en.po
 
 A new file will be created
 
@@ -485,7 +485,7 @@ Notice that the format is the same, you need to change it to something like this
 
 Then run
 
-    $ msgfmt en.po -o myprogram.mo
+    msgfmt en.po -o myprogram.mo
 
 *myprogram* is the same name as we used in the Glade.XML constructor. We have our translated file and we need to move it to
 
@@ -493,11 +493,11 @@ Then run
 
 that (which is usually the default path for locale), in this example we are translating to spanish, so we need to move it the *es-folder*:
 
-    $ cp myprogram.mo /usr/share/locale/es/LC_MESSAGES/
+    cp myprogram.mo /usr/share/locale/es/LC_MESSAGES/
 
 Try
 
-    $ LANG=es mono gui.exe
+    LANG=es mono gui.exe
 
 And you should see the translated Glade\# application.
 
@@ -512,31 +512,31 @@ The current state of translating Mono gui apps made in stetic [is broken](http:/
 
 Enter your home directory.
 
-    $ cd ~
+    cd ~
 
 Download the patch, save as *thepatchfile.diff* in your home directory.
 
-    $ wget -O thepatchfile.diff http://bugzilla.ximian.com/showattachment.cgi?attach_id=17307
+    wget -O thepatchfile.diff http://bugzilla.ximian.com/showattachment.cgi?attach_id=17307
 
 Copy intltool-extract program to your home directory.
 
-    $ cp /usr/bin/intltool-extract ~
+    cp /usr/bin/intltool-extract ~
 
 Patch intltool-extract to give it stetic gui capability.
 
-    $ patch -p0 intltool-extract < thepatchfile.diff
+    patch -p0 intltool-extract < thepatchfile.diff
 
 Enter your project's source code directory.
 
-    $ cd project_source
+    cd project_source
 
 Compile stetic.gui into a form that intltools-extract can digest. This will create stetic.gui.h in C format (even if you wrote your code in C\#). *gtk-gui/gui.stetic* is the default location where MonoDevelop puts your stetic file.
 
-    $ ~/intltool-extract --type=gettext/stetic gtk-gui/gui.stetic
+    ~/intltool-extract --type=gettext/stetic gtk-gui/gui.stetic
 
 Create .po file. Note the language is described as C, even though the code is written in C\# with Gtk\#. This is OK. It will output en.po, or whatever filename you choose after "-o"
 
-    $ xgettext -a -T -o en.po --language=C gui.stetic.h
+    xgettext -a -T -o en.po --language=C gui.stetic.h
 
 You now have your .po file! Read above for how to edit this file.
 

@@ -84,12 +84,12 @@ public class HelloWorld {
 To compile with Mono, type
 
 ``` bash
-$ mcs hello.cs
+mcs hello.cs
 ```
 
 This results in a file hello.exe, that you can execute with mono:
 
 ``` bash
-$ mono hello.exe
+mono hello.exe
 ```
 

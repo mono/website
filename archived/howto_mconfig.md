@@ -249,7 +249,7 @@ In this example we will add a feature to a `Web.config` file that consists of th
 
 The output shows that our instance of mconfig knows one default configuration file template - `web.config`. We can use this template to generate the file by issuing the following command:
 
-    $ mconfig dc web.config
+    mconfig dc web.config
 
 A basic configuration file is created in the current directory. The output file name for this template was set to `Web.config`, and that's the file that has just been created. The other option to create the new configuration file is to simply add any feature for it without pre-generating a default file. Adding a feature if a file does not exist will create the elements required by the feature and write them to the file.
 
@@ -382,7 +382,7 @@ Each **\<default\>** element instance defines a uniquely named block, which will
 
 This fragment defines all three sections required by our configuration blocks. The other sections required by them (*system.web*, *configuration* etc.) are defined in the default configuration file shipped with Mono, so there is no need to override them unless you want to change something in their definition, in which case adding an appropriate *default* container will override the default definition. Out of the three default entries, the *connectionStrings* and *appSettings* will be valid for any feature defined in the configuration files and the *compilers* one is valid only for the web configuration files. Usually, it is a good practice for the *default* blocks to define only empty sections they are supposed to add, but in the case of our *connectionStrings* definition we can create a populated section, since it will be specific to our application anyway and is not very likely to be reused outside our context. As was the case with the *\<contents\>* element described before, it is required that the contents of concatenated child text nodes (plain text and CDATA elements) results in a well-formed XML document, which will be parsed into an XML DOM and added to the target config file at the location in the hierarchy where it is necessary. At this point, we can retry adding the newly defined feature to our target configuration file:
 
-    $ mconfig af IronPython-Mono Web.config
+    mconfig af IronPython-Mono Web.config
 
 The command completes without error, and you can look at the generated `Web.config` file:
 
