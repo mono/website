@@ -63,7 +63,7 @@ Investigate common users of client API, to see how much work it would be to port
 -   WindowCatcher
 -   Others?
 
-### Deliverables
+### Deliverables 1
 
 -   Email report summarizing findings. List of popular software already using Client API. For each product/project, include a summary of what it is, a description of work needed to port to Linux, and a ballpark estimate of hours required to do the work. Include your recommendation of which would be most valuable to have running on Linux.
 
@@ -76,7 +76,7 @@ We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfood
 -   Any licensing issues? MS-PL.
 -   How well does each option exercise the UIA Client API?
 
-### Deliverables
+### Deliverables 2
 
 -   Email report summarizing findings. If not already done in previous task, include a description or work/hours required to port UIAVerify. Include pros/cons of starting with UIAVerify vs creating our own tool. A report of how well the custom controls work in Linux should also be included (so you need to get this running in Linux somehow). Report on any issues that may affect us regarding the upstream maintainers and the license. Include your recommendation of the course to follow, if you have one.
 
@@ -97,7 +97,7 @@ Investigate how to perform mapping from at-spi accessibles to UIA AutomationElem
         -   The registerApplication and getApplications interfaces in org.freedesktop.atspi.Registry could be extended to take an interface type, or the returned bus names could be queried for the interfaces they support.
         -   May mean writing more code, since we have to write code to bridge from atk anyway for gtk applications. However, most of it should be straight-forward, and it would be less vulnerable to errors caused by round-trip translation. It would, thus, be simpler to test, and the time spent writing the code may be offset by having fewer bugs as a result of a cleaner implementation.
 
-### Deliverables
+### Deliverables 3
 
 -   Email report summarizing findings. Summarize different approaches for getting "extra" data from Provider side to Client side, including comparisons of work involved. Include your recommendation of the course to follow, if you have one.
 

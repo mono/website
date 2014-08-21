@@ -8,9 +8,6 @@ redirect_from:
 TDS Generic
 ===========
 
-TDS Generic
-===========
-
 -   ADO.NET Provider for old Sybase and Microsoft SQL Server databases
 
 -   Provider is no longer maintained

@@ -26,11 +26,11 @@ Before doing anthing else, you should read "[FastCGI\#ImportantInformation](/doc
 Using Paths [Recommended]
 -------------------------
 
-### Warnings
+### Paths Warnings
 
 **Not all the kinks of using the FastCGI Mono Server as a directory handler have been worked out.** Notably some test pages still aren't working and there appears to be some problems with running several concurrent requests.
 
-### Step 1: Setting Up the Handler
+### Paths Step 1: Setting Up the Handler
 
 All configuration is done in [file:///etc/cherokee/cherokee.conf /etc/cherokee/cherokee.conf] or [file:///usr/etc/cherokee/cherokee.conf /usr/etc/cherokee/cherokee.conf]. The following block can be inserted anywhere, but most appropriately near the bottom of the file.
 
@@ -52,11 +52,11 @@ The third and biggest change is to not spawn a host at all, but instead use an e
 Using Extensions
 ----------------
 
-### Warnings
+### Extensions Warnings
 
 **Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html\#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
-### Step 1: Setting Up the Handler
+### Extensions Step 1: Setting Up the Handler
 
 All configuration is done in [file:///etc/cherokee/cherokee.conf /etc/cherokee/cherokee.conf] or [file:///usr/etc/cherokee/cherokee.conf /usr/etc/cherokee/cherokee.conf]. The following block can be inserted anywhere, but most appropriately near the bottom of the file.
 

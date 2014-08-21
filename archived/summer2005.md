@@ -93,7 +93,7 @@ Location: [Forge Project](http://forge.novell.com/modules/xfmod/project/?gcc-cil
 
 Blog: [http://gcc-cil.blogspot.com/](http://gcc-cil.blogspot.com/)
 
-### Objectives
+### GCC CIL Objectives
 
 The new version of GCC has a new internal representation called "GENERIC" (which is later transformed into "GIMPLE") which is suitable as a representation that we can use to generate ECMA CIL byte codes.
 
@@ -129,7 +129,7 @@ The specification is available here:
 Ruby.NET
 ========
 
-### Objectives
+### Ruby.NET Objectives
 
 A compiler for the Ruby language that would JIT-compile Ruby code into CIL code.
 
@@ -146,7 +146,7 @@ Acceptance criteria: The resulting compiler should be able to run successfully t
 MSBuild implementation
 ======================
 
-### Objectives
+### MSBuild Objectives
 
 MSBuild is a new "make-like" program to compile applications.
 
@@ -180,7 +180,7 @@ Diva
 
 [Blog](http://diva.mdk.org.pl/) / [Diva Novel Forge project](http://forge.novell.com/modules/xfmod/project/?diva)
 
-### Objectives
+### Diva Objectives
 
 Create a video editing GUI tool using Mono, Gtk\# and GStreamer
 
@@ -191,7 +191,7 @@ Blago is working on the Mozilla side.
 
 Michael is working on the MonoDevelop side.
 
-### Objectives
+### ASP.NET GUI Designer Objectives
 
 Use the Mozilla editing engine to become a GUI designer where ASP.NET controls can be dragged and dropped, properties examined, text inserted, etc.
 
@@ -214,7 +214,7 @@ XAML Compiler
 
 Location: Mono SVN repository.
 
-### Objectives
+### XAML Compiler Objectives
 
 1.  A compiler, xamlc, that takes a xaml file and emits a c\# file
 2.  The bits of System.Windows.Serialization needed to support the xaml compiler

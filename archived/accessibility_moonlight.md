@@ -384,7 +384,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
 -   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
 
-#### Useful notes
+#### Useful notes 2
 
 If you're making changes to Moonlight, you'll often have to:
 

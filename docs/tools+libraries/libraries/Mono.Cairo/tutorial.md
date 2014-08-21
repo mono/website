@@ -22,33 +22,33 @@ Cairo's Drawing Model
 
 In order to explain the operations used by cairo, we first delve into a model of how cairo models drawing. There are only a few concepts involved, which are then applied over and over by the different methods. First I'll describe the [nouns](#nouns): [destination](#destination), [source](#source), [mask](#mask), [path](#path), and [context](#context). After that I'll describe the [verbs](#verbs) which offer ways to manipulate the nouns and draw the graphics you wish to create.
 
-### Nouns
+### The Nouns
 
 Cairo's nouns are somewhat abstract. To make them concrete I'm including diagrams that depict how they interact. The first three nouns are the three layers in the diagrams you see in this section. The fourth noun, the path, is drawn on the middle layer when it is relevant. The final noun, the context, isn't shown.
 
-#### Destination
+#### The Destination
 
 [![Cairo destination.png](/archived/images/a/a2/Cairo_destination.png)](/archived/images/a/a2/Cairo_destination.png)
 
 The destination is the [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface) on which you're drawing. It may be tied to an array of pixels like in this tutorial, or it might be tied to a SVG or PDF file, or something else. This surface collects the elements of your graphic as you apply them, allowing you to build up a complex work as though painting on a canvas.
 
-#### Source
+#### The Source
 
 [![Cairo source.png](/archived/images/6/63/Cairo_source.png)](/archived/images/6/63/Cairo_source.png)
 
 The source is the "paint" you're about to work with. I show this as it is—plain black for several examples—but translucent to show lower layers. Unlike real paint, it doesn't have to be a single color; it can be a [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or even a previously created destination [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). Also unlike real paint it can contain transparency information—the Alpha channel.
 
-#### Mask
+#### The Mask
 
 [![Cairo the-mask.png](/archived/images/9/9d/Cairo_the-mask.png)](/archived/images/9/9d/Cairo_the-mask.png)
 
 The mask is the most important piece: it controls where you apply the source to the destination. I will show it as a yellow layer with holes where it lets the source through. When you apply a drawing verb, it's like you stamp the source to the destination. Anywhere the mask allows, the source is copied. Anywhere the mask disallows, nothing happens.
 
-#### Path
+#### The Path
 
 The path is somewhere between part of the mask and part of the context. I will show it as thin green lines on the mask layer. It is manipulated by path verbs, then used by drawing verbs.
 
-#### Context
+#### The Context
 
 The context keeps track of everything that verbs affect. It tracks one source, one destination, and one mask. It also tracks several helper variables like your line width and style, your font face and size, and more. Most importantly it tracks the path, which is turned into a mask by drawing verbs.
 

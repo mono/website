@@ -26,9 +26,6 @@ UI Automation
 </tbody>
 </table>
 
-UI Automation
-=============
-
 The User Interface Automation (UIA) specification is an advanced accessibility framework, developed by Microsoft, and released to the community including an irrevocable pledge of patent rights for anyone implementing the specification.
 
 ### MSDN References

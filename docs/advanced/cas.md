@@ -68,7 +68,7 @@ The class librairies plays a dual role in **CAS**. First they supply the basic s
 
 Adding the required security protections to an existing class can be tricky as it will often requires some refactoring (e.g. to avoid looping over security checks). It's much easier to do when there are existing unit tests (i.e. refactoring can lead to mistakes). Be extra careful if no unit tests exists (or if their coverage is incomplete) and don't hesitate to add *normal* unit tests before protecting the resources. Also adding any code (resource protection or not) should be reviewed by the maintainer of the class/namespace/assembly.
 
-### Testing
+### ClassLib Testing
 
 Testing each class, security related or not, is done with *classic* [unit tests](/community/contributing/test-suite/). However testing the security of each class (again security related or not) is done differently (althrough very similar). The rules differences are:
 
@@ -111,7 +111,7 @@ Testing each class, security related or not, is done with *classic* [unit tests]
 
 You can see a complete example in the [EnvironmentCas.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/corlib/Test/System/EnvironmentCas.cs?view=markup) file.
 
-### Status
+### ClassLib Status
 
 -   Most of the security classes required by the runtime (e.g. evidences, policies) and to express security conditions (e.g. permissions) are complete and have their normal (e.g. not CAS) unit tests. This includes most classes under the namespaces:
     -   `System.Security`;

@@ -489,7 +489,7 @@ Design-Time attributes associate a type or type member with a class that extends
 |*EditorAttribute*|Associates a type or type member with a type editor.|
 |*DesignerSerializerAttribute*|Associates a type with a serializer|
 
-### Design Surface
+### Design Surface Description
 
 The *Design Surface* is a thin front-end to the .Net Design-Time framework and is designed to be instantiated and used by the designer tool directly.
 
@@ -510,7 +510,7 @@ At load-time the Design-Time Serialization system will process the object graph 
 
 The Design-Time container is designed to be the central storage of components in design mode. They are added by type, instantiated dynamically using reflection together with their associated designer. Each component has an unique identifier - its name, which it gets assigned after being added to the container.
 
-#### Designers
+#### Designers Description
 
 Designers are classes that are associated with a component type via the *DesignerAttribute and*implement the *IDesigner* interface. Designers are initialized with an instance of a component, which they manage.
 

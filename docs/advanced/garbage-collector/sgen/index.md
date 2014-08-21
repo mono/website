@@ -180,8 +180,8 @@ Large Objects
 
 SGen-GC also handles large objects in a special way. Since moving large objects is an expensive operation that can easily hurt performance. The SGen-GC allocates large objects directly on pages managed by the operating system, this allows the collector to release the memory back to the operating system when those blocks are no longer in use.
 
-Implementation Details
-----------------------
+LO Implementation Details
+-------------------------
 
 Note: This is an evolving piece of SGen-GC.
 
@@ -282,8 +282,8 @@ The GC also provides the following convenience function to allocate memory and r
 
 `mono_gc_alloc_obj` is used from within the Mono runtime through the following macros: `ALLOC_PTRFREE`, `ALLOC_OBJECT`, `ALLOC_TYPED`.
 
-Collection
-==========
+Collection details
+==================
 
 Major Collection
 ----------------
@@ -370,7 +370,7 @@ There are a number of complications over a simple copy collection:
 
 The nursery is a contiguous region of memory where all new objects are allocated, the region is delimited by two global variables `nursery_start` and `nursery_real_end`, the `nursery_next` pointer points to the location where the next object will be allocated.
 
-#### Implementation Details
+#### Nursery Implementation Details
 
 Segments of the nursery memory are delimited by the `nursery_next` and `nursery_temp_end`. This serves a number of purposes:
 

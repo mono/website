@@ -92,7 +92,7 @@ Whenever you log a bug, please remember to add a comment with a [bug reference](
 
 * * * * *
 
-### Definitions
+### Bug Definitions
 
 Here are some definitions to keep in mind when submitting a bug in Bugzilla:
 

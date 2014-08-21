@@ -741,9 +741,6 @@ A novel control patterned after MS Outlook’s Journal. The Janus Timeline Contr
 SpreadsheetGear
 ===============
 
-SpreadsheetGear
----------------
-
 [SpreadsheetGear Official Website](http://www.spreadsheetgear.com/products/spreadsheetgear.net.aspx)
 
 SpreadsheetGear for .NET 2007 is a royalty free Microsoft Excel compatible spreadsheet component built by industry veterans for any Microsoft .NET Framework solution, featuring the fastest and most complete Excel compatible calculation engine as well as rich Windows Forms Spreadsheet Controls.

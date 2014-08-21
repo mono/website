@@ -225,7 +225,7 @@ Since Silverlight 3 support two similar HTTP stack there are some ways to select
 
 Ref: [http://msdn.microsoft.com/en-us/library/dd920295%28VS.95%29.aspx](http://msdn.microsoft.com/en-us/library/dd920295%28VS.95%29.aspx)
 
-### Others
+### Other
 
 There are different rules for downloading special content, by type:
 
@@ -303,7 +303,7 @@ In the *classic* framework the isolation was based on the appdomain, assembly, a
 -   IsolatedStorageFileStream (mscorlib) [source](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/corlib/System.IO.IsolatedStorage/MoonIsolatedStorageFileStream.cs?view=markup), [MSDN](http://msdn.microsoft.com/en-us/library/system.io.isolatedstorage.isolatedstoragefilestream(VS.95).aspx)
 -   IsolatedStorageSettings (System.Windows) [source](http://anonsvn.mono-project.com/viewvc/trunk/moon/class/System.Windows/System.IO.IsolatedStorage/IsolatedStorageSettings.cs?view=markup), [MSDN](http://msdn.microsoft.com/en-us/library/system.io.isolatedstorage.isolatedstoragesettings(VS.95).aspx)
 
-### Additional documentation
+### Isolated Storage Additional documentation
 
 -   [CLR Inside Out: Isolated Storage In Silverlight 2](http://msdn.microsoft.com/en-us/magazine/dd458794.aspx)
 -   [Silverlight 3: Out of the Browser](http://blogs.msdn.com/jonbox/archive/2009/03/22/silverlight-3-out-of-the-browser.aspx), Mike Harsh @ MIX09 (beta)

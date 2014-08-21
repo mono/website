@@ -132,7 +132,7 @@ Using SWAPeers.AutomationPeer.RaiseXXXXEvents methods
 -   Where should the bridge reside so that it can be used by moon?
 -   How do SL2 controls map to Atk.Roles? Will any additional bridge work be required to support the SL2 controls?
 
-#### Deliverables
+#### Deliverables 2
 
 -   Email report with a plan for loading and integrating the bridge with the providers.
 -   A list of SL2 controls and which Atk.Role they map to.
@@ -143,7 +143,7 @@ Using SWAPeers.AutomationPeer.RaiseXXXXEvents methods
 -   How can a FF plugin inject an Atk.Object into the DOM tree?
 -   How will the Bridge be distributed so that it can be used by the plugin?
 
-#### Deliverables
+#### Deliverables 3
 
 -   Email to the team containing an hour estimate for integration, and a proposal for how it should be integrated and distributed.
 

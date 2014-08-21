@@ -91,9 +91,6 @@ CompositeDuplexBindingElement and OneWayBindingElement
 
 TBD
 
-SecurityBindingElement
-----------------------
-
 SecurityBindingElement provides several surfaces of the SOAP message security stack.
 
 SecurityBindingElement

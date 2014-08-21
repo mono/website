@@ -155,7 +155,7 @@ Before doing any deployments, the user needs to configure the directory on the l
 
  When the add-in is run, the following options should be available to the user:
 
-### Add-in configuration / options
+### Web: Add-in configuration / options
 
 -   Copy method (samba, ssh)
 -   Destination machine (name or ip)
@@ -175,7 +175,7 @@ Either the add-in or the daemon could create a wrapper script to make it easier 
 
 When the add-in is run, the following options should be available to the user:
 
-### Add-in configuration / options
+### Winforms: Add-in configuration / options
 
 -   Copy method (samba, ssh)
 -   Destination machine (name or ip)

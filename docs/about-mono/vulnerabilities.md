@@ -316,8 +316,8 @@ Notes:
 
 -   Mono's System.Web.dll assembly didn't consider, before version 1.2.5.2, some Win32-specific behavior affecting filenames ending with spaces or dots. Win32 operating systems ignores the trailing characters, even if the file-system supports them, and can access the similarly named files without reporting any error. This caused XSP to return ASP.NET source code, instead of rendered content, when executed with Mono under Windows
 
-XSP/mod\_mono source code disclosure
-------------------------------------
+XSP/mod\_mono source code disclosure 2
+--------------------------------------
 
 CVE: [CVE-2006-6104](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6104)
 

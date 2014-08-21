@@ -275,7 +275,7 @@ Currently there are 2 build servers (build0 and build1) There are now several ot
 -   i586
 -   x86\_64
 
-##### Software
+##### Software needs
 
 -   Hudson
 -   OBS

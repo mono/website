@@ -516,7 +516,7 @@ tvFrame.altF4(tvFrame)
 Orca
 ----
 
-### Requirements
+### Orca Requirements
 
 It is recommended that you use a Virtual Machine (VM) for testing. You should take VM snapshots before and after you have it set up for testing Orca so you can easily revert if something goes wrong later.
 
@@ -689,7 +689,7 @@ UIAutomation Client API
 White
 -----
 
-### Introduction
+### White Introduction
 
 White supports all rich client applications, It is .NET based and hence you wouldn't have use proprietary scripting language. You can use your favourite .NET language, IDE and tools for developing tests/automation programs. White provides consistent object oriented API for all kinds of applications. Also it hides all the complexity of Microsoft's UIAutomation library and windows messages.
  White is a thin wrapper of UIAutomationClient API on Windows that is similar to Strongwind wrap pyatspi on Linux that will be posted to Linux. We will use it to write tests for ClientAPI testing against WinForms, Moonlight and Gtk+ applications.
@@ -752,7 +752,7 @@ namespace WindowsFormsApplication1
 UIA Verify
 ----------
 
-### Introduction
+### UIA Verify Introduction
 
 UIA Verify is a test automation framework that features the User Interface Automation Test Library (UIA Test Library) and Visual UI Automation Verify (Visual UIA Verify), the graphical user interface tool. The framework facilitates manual and automated testing of the Microsoft (R) User Interface (UI) Automation Provider implementation of a control or application. The majority of the UIA Verify functionality is provided through a dynamic link library (e.g., UIATestLibrary.dll) that contains the code for testing specific UI Automation functionality and supports logging of the test results.
 
@@ -784,7 +784,7 @@ In UI Automation, a core service lies between the server (provider) and the clie
 
 [![Uia.GIF](/archived/images/8/82/Uia.GIF)](/archived/images/8/82/Uia.GIF)
 
-### Requirements
+### UIA Requirements
 
 -   **C\#**: the client API was limited to managed code.
 -   **White assemblies**: Bricks.dll Bricks.RuntimeFramework.dll Castle.Core.dll Castle.DynamicProxy2.dll log4net.dll nunit.framework.dll White.Core.dll Xstream.Core.dll. (these dlls from [white-0.18-bin](http://white.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=16371))
@@ -818,11 +818,11 @@ WindowAndTransformPatternProvider.exe
 
 [![TransformPattern.png](/archived/images/4/4a/TransformPattern.png)](/archived/images/4/4a/TransformPattern.png)
 
-### QA Architecture Diagram
+### QA Architecture Diagram 2
 
 We need an application accessible the three applications through UI Automation client. Our application wrapper and test scripts 's framework is shown as follows: [![Uiaclient1.png](/archived/images/1/15/Uiaclient1.png)](/archived/images/1/15/Uiaclient1.png)
 
-### Example Application Wrapper
+### Example Application Wrapper 2
 
 #### TestBase.cs
 

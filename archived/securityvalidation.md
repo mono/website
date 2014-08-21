@@ -293,13 +293,13 @@ Silverlight Only
 
 Silverlight SDK
 
-### Legend
+### Legend 2
 
 -   **Silverlight SDK** - Silverlight SDK assembly (transparent, needs to be part of the application XAP file)
 -   **Separate Plugin** - Considered platform code. Shipped in a separate plugin (XPI).
 -   **Unknown Assembly** - Unknown origin (never seen the assembly in the *wild*)
 
-### Notes
+### Notes 2
 
 -   Platform assemblies that are not listed are not allowing non-platform assemblies to access their internals.
 -   Moonlight results are subject to change. The above results for Moonlight match the mid-February 3.0 preview 2 (aka Olympics) release.

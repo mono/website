@@ -225,8 +225,8 @@ Here's included some **sample** code for each approach. The code is provided onl
 
 The code is made to work, as much as possible, on every runtime. When this isn't possible (\#4/\#5) then the source code will only works on Mono. All samples use the `ICertificatePolicy`, deprecated in Fx 2.0, to provide users with a choice of options. The same technique can be used with Mono.Security.dll `SslClientStream.ServerCertValidationDelegate` (see tlstest.cs for an example) and Fx 2.0's `ServicePointManager.ServerCertificateValidationCallback`.
 
-Approach \#-1: Actively ignore security concerns =
-==================================================
+Appendix Approach \#-1: Actively ignore security concerns =
+===========================================================
 
 Source code using the .NET 2.0 profile, which gives you better control over the certificates being examined:
 
@@ -285,8 +285,8 @@ Instructions
 
 This will show the web page content without any error.
 
-Approach \#0: Ignore the problem
---------------------------------
+Appendix Approach \#0: Ignore the problem
+-----------------------------------------
 
 Source code
 
@@ -314,8 +314,8 @@ public class Program {
     ---> System.IO.IOException: The authentication or decryption has failed.
     ---> Mono.Security.Protocol.Tls.TlsException: Invalid certificate received form server.
 
-Approach \#1: Minimalist
-------------------------
+Appendix Approach \#1: Minimalist
+---------------------------------
 
 Source code
 
@@ -354,8 +354,8 @@ Instructions
     You do not trust the people who issued the certificate being used by 'https://www.some-site.com'.
     Please see the application help file on the 'trust certificate' subject to learn about how this can be fixed.
 
-Approach \#2: Warn and offer the possibility to continue
---------------------------------------------------------
+Appendix Approach \#2: Warn and offer the possibility to continue
+-----------------------------------------------------------------
 
 Source code
 
@@ -410,8 +410,8 @@ Instructions
 
 Entering anything but **yes** results in the second message (aborted).
 
-Approach \#3: Application centric trust
----------------------------------------
+Appendix Approach \#3: Application centric trust
+------------------------------------------------
 
 Source code
 
@@ -505,8 +505,8 @@ Instructions
 
 Entering **a** (or any invalid input) will abort the operation, **b** will allow the web page to be downloaded and printed once (i.e. you'll be asked again next time you try), **c** will download and print the web page but will never ask you again trusting the web site (unless it changes its certificate **and** and the root CA that issued it).
 
-Approach \#4: Offer to trust the new root certificate
------------------------------------------------------
+Appendix Approach \#4: Offer to trust the new root certificate
+--------------------------------------------------------------
 
 Source code
 
@@ -523,8 +523,8 @@ Instructions
 
 Note: this sample code will only work using Mono's certificate stores. You can use a similar technique by either p/invoking into CryptoAPI to access the Windows' certificate stores (fx 1.x) or use the new classes introduced in fx 2.0.
 
-Approach \#5: Application or global trust
------------------------------------------
+Appendix Approach \#5: Application or global trust
+--------------------------------------------------
 
 No source code provided. You can easily merge both \#3 and \#4 source code to obtain a working sample.
 

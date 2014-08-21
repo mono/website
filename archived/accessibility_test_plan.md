@@ -433,7 +433,7 @@ Software:
 Test Harness: Brian
  DashBoard: Brian, Neville
 
-##### WinForms
+##### WinForms Responsibilities
 
 Strongwind Tests: Brian, Calen, Ray
  Orca Tests: Brian
@@ -471,7 +471,7 @@ Everyone in the open source community is encouraged to join our QA team!
 
 *Built around the [roadmap](/Accessibility:_Roadmap "Accessibility: Roadmap") but specific to testing with testing milestones*
 
-##### WinForms
+##### WinForms schedule
 
 Based on Q2 in roadmap, our initial testing schedule is below:
 
@@ -489,7 +489,7 @@ Based on Q2 in roadmap, our initial testing schedule is below:
 |Build DashBoard|May|Jun|Brian & Neville|
 |Finish test report|||Brian & Calen|
 
-##### MoonLight
+##### MoonLight schedule
 
 |Task|Start Time|End Time|Owner|
 |:---|:---------|:-------|:----|

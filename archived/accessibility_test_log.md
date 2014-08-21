@@ -160,7 +160,7 @@ Test Platforms:
 
 ### 2.1 Release Test Result
 
-#### WinformsAtkBridge
+#### WinformsAtkBridge 2
 
 Test Platforms:
  In both 32bit and 64bit: openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
@@ -171,7 +171,7 @@ Test result:
 Explanation of the failing tests:
  [Winforms Strongwind tests with some new bugs](https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&authkey=CPOZ2OAE&hl=zh_CN&pli=1#gid=0)
 
-#### MoonlightAtkBridge
+#### MoonlightAtkBridge 2
 
 Test Platforms:
  In both 32bit and 64bit: openSUSE 11.2, Fedora 12, Ubuntu 9.10

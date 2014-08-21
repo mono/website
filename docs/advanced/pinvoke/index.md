@@ -874,7 +874,7 @@ See also:
 
 -   [Eric Gunnerson's C\# Blog: Arrays inside of structures](http://blogs.msdn.com/b/ericgu/archive/2004/08/12/213676.aspx)
 
-### Summary
+### Summary 2
 
 Again, example native code...
 

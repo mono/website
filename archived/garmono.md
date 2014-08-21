@@ -50,13 +50,13 @@ GARMONO was first created to help build Mono on Cygwin, later it was extended to
 Cygwin
 ======
 
-Status
-------
+Cygwin Status
+-------------
 
 (**TODO:** Fill in this section)
 
-Building
---------
+Cygwin Building
+---------------
 
 (**TODO:** Fill in this section)
 
@@ -65,13 +65,13 @@ Building
 Linux
 =====
 
-Status
-------
+Linux Status
+------------
 
 GARMONO is currently broken on this platform
 
-Building
---------
+Linux Building
+--------------
 
 (**TODO:** Fill in this section)
 
@@ -82,13 +82,13 @@ Building
 Maemo
 =====
 
-Status
-------
+Maemo Status
+------------
 
 The current svn rev of GARMONO targets Mono 1.9 for Maemo Chinook (or Nokia OS2008). This runs on both N800 and N810 devices. GARMONO currently builds deb packages for mono and gtk-sharp2. (**TODO:** provide a list of deb files)
 
-Building
---------
+Maemo Building
+-------------
 
 Before create packages you must first install [Mono Scratchbox Devkit](/Scratchbox "Scratchbox") or you ARM packages generation could fail. Assuming you have Scratchbox setup and the devkit installed follow the steps provided below:
 

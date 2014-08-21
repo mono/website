@@ -34,9 +34,6 @@ Accessibility: White%27s white list
 </tbody>
 </table>
 
-White's white list
-==================
-
 Introduction
 ------------
 
