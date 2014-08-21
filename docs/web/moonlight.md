@@ -4,6 +4,7 @@ redirect_from:
   - /Moonlight/
   - /moonlight/
   - /moonlight/redirector.html
+  - /Moonlight/redirector.html
   - /moonlight/stable.aspx
   - /moonlight/download.aspx
   - /moonlight/prerelease.aspx
