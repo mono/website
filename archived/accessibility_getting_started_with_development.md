@@ -63,33 +63,18 @@ Setting Up Your Environment
     -   Follow the same instructions but for uia2atk/UIAutomation.
     -   Install [Mono.Addins 0.3.1 from tarball](http://www.go-mono.com/sources/mono-addins/mono-addins-0.3.1.tar.bz2) in the parallel environment.
     -   Install MonoDevelop in the parallel environment:
-        -   Checkout the latest MonoDevelop trunk (or use MonoDevelop 1.9.1 (aka 2.0 Alpha 2)):
+        -   Checkout the latest MonoDevelop trunk (or use MonoDevelop 1.9.1 (aka 2.0 Alpha 2)): `svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/monodevelop`
+        -   And build it with:
 
-<!-- -->
+            ``` bash
+            cd monodevelop
+            ./configure --profile=core --prefix=/home/[user]/parallel-mono
+            make
+            ```
 
-     svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/monodevelop
-
--   -   -   And build it with:
-
-<!-- -->
-
-    cd monodevelop
-    ./configure --profile=core --prefix=/home/[user]/parallel-mono
-    make
-
--   -   -   You can run it uninstalled if you like:
-
-<!-- -->
-
-    make run
-
--   -   -   Or install it in your parallel environment (may require sudo):
-
-<!-- -->
-
-    make install
-
--   -   -   If you have trouble starting your new MD, you may need to delete your old addin configuration by doing \`rm -rf \~/.config/MonoDevelop/addin\*\`.
+        -   You can run it uninstalled if you like: `make run`
+        -   Or install it in your parallel environment (may require sudo): `make install`
+        -   If you have trouble starting your new MD, you may need to delete your old addin configuration by doing \`rm -rf \~/.config/MonoDevelop/addin\*\`.
     -   **Whenever you deal with mono-a11y stuff, make sure you're running in the parallel environment!** You do this by doing everything from a terminal that has run \`source \~/mono-dev-env\` (replace \~/mono-dev-env with the location of your parallel mono environment script).
 
 Building the Code

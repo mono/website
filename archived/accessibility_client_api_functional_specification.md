@@ -185,10 +185,7 @@ Note that for Linux apps, we should still take the approach of writing QA tests 
     -   Control type: Slider
 -   Role: SpinButton
     -   Control type: SpinButton
-
-xx
-
--   -   Control type: Slider
+    -   Control type: Slider
 -   Role: SplitPane
     -   Control type: Pane
 -   Role: Statusbar

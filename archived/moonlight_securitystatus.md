@@ -391,7 +391,7 @@ Shader Effects
 
 Silverlight 3 feature
 
--   -   status: **TODO**
+-   status: **TODO**
 
 Surface reduction
 -----------------

@@ -65,5 +65,6 @@ Some versions of mingw ship with broken headers which causes compilation to fail
 Archive: a tutorial on building Mono on Windows by Andreia Gaita is available [here](http://shana.worldofcoding.com/en/mono_cygwin_tutorial.html).
 
 See also these articles:
+
  - [Compiling with Visual Studio](/docs/compiling-mono/windows/compiling-with-visualstudio/)
  - [Cross-compiling Mono for Windows](/docs/compiling-mono/windows/cross-compiling-mono-for-windows/)

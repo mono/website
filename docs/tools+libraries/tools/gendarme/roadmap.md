@@ -70,7 +70,7 @@ Runner-related
 
 That's pretty easy, Instruction has a ServicePoint which points to a Start/End-Line/Column.
 
--   -   Member based messages.
+-   Member based messages.
 
 <!-- -->
 
@@ -85,7 +85,7 @@ That's pretty easy, Instruction has a ServicePoint which points to a Start/End-L
 
 I've yet to find a way to get a ServicePoint out of a Method declaration so that's pretty hard to display. A solution might be taking the first instruction of a method, but what offset shall we calculate? 1 line above the instruction?
 
--   -   Type/Module or Assembly based message
+-   Type/Module or Assembly based message
 
 <!-- -->
 
@@ -99,7 +99,7 @@ I've yet to find a way to get a ServicePoint out of a Method declaration so that
 
 What to display if a type/module or assembly rule is hit and no member is specified? The class header? How to identify it (Cecil has no TypeDefinition::ServicePoint property).
 
--   -   [reference](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
+-   [reference](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
 
 Framework
 ---------
