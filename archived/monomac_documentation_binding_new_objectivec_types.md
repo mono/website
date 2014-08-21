@@ -300,6 +300,7 @@ The following table shows how you should map types from the Objective-C and Coco
 > |CoreFoundation types (CF\*)|[MonoMac.CoreFoundation](http://docs.go-mono.com/MonoMac.CoreFoundation).CF\*|
 > |Foundation Types (NS\*)|[MonoMac.Foundation](http://docs.go-mono.com/MonoMac.Foundation).NS\*|
 >
+
 ### Arrays
 
 The MonoMac runtime automatically takes care of converting C\# arrays to NSArrays and doing the conversion back, so for example the imaginary Objective-C method that returns an NSArray of NSViews:
