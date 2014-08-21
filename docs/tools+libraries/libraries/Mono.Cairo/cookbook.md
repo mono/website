@@ -523,8 +523,6 @@ public class Truchet
             gr.Arc (x, y + cellsize, radius, -Math.PI / 2, 0);
             gr.MoveTo (x + radius, y);
             gr.ArcNegative (x + cellsize, y, radius, Math.PI, Math.PI / 2);
- 
- 
         }
  
         gr.Restore ();

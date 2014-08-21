@@ -9,7 +9,6 @@ This document describes Mono's new JIT engine based on a rewrite to use a linear
 
 You might also want to check [Mono's Runtime Documentation](/docs/advanced/runtime/docs/).
 
-
 Intermediate Representation (IR)
 --------------------------------
 

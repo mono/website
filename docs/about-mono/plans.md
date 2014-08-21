@@ -119,7 +119,6 @@ The following projects are not actively being developed:
 * [Transactions](/archived/transactions)
 * [Gecko# Bindings (Mozilla)](/archived/geckosharp)
 
-
 Mono Management
 ---------------
 In addition, the following are Mono project management plans:

@@ -107,7 +107,6 @@ namespace GtkSharpTutorial {
                         Widget button4 = create_arrow_button(ArrowType.Right, ShadowType.EtchedOut);
                         box.PackStart (button4, false, false, 3);
  
- 
                         window.ShowAll ();
  
                         /* Rest in Application.Run() and wait for the fun to begin! */

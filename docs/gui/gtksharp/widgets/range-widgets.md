@@ -321,7 +321,6 @@ namespace GtkSharpTutorial {
                         window.ShowAll ();
                 }
  
- 
                 public static void Main (string [] args)
                 {
                         Application.Init ();

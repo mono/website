@@ -49,7 +49,6 @@ class ColourExample
                 da.GdkWindow.DrawLine(da.Style.BaseGC(StateType.Normal), 0, 0, 400, 300);
         }
  
- 
         void OnWinDelete (object o, DeleteEventArgs args){
                 Application.Quit ();
         }

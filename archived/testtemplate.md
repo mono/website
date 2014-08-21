@@ -8,7 +8,6 @@ redirect_from:
 TestTemplate
 ============
 
-
         // this is a template for making NUnit tests.  Text enclosed
         // in square brackets (and the brackets themselves) should be
         // replaced by appropiate code.

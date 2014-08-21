@@ -48,8 +48,6 @@ After that, to connect: Left-click on NM notification icon (systray) -\> VPN Con
 
 You can see a list of hackergotchis here along with their corresponding roles on the team, and links to their blogs:
 
- 
-
 [![Calen.png](/archived/images/5/59/Calen.png)](/archived/images/5/59/Calen.png)
 
 **Calen Chen**
@@ -68,8 +66,6 @@ You can see a list of hackergotchis here along with their corresponding roles on
 *a11y Hacker*
 *[wanderings of an aimless vortex](http://lightvortex.livejournal.com)*
 
- 
-
 [![Ngao.png](/archived/images/e/e9/Ngao.png)](/archived/images/e/e9/Ngao.png)
 
 **Neville Gao**
@@ -81,8 +77,6 @@ You can see a list of hackergotchis here along with their corresponding roles on
 **Ray Wang**
 *a11y Build Hacker*
 *[Ray Wang's Blog](http://gnuray.blogspot.com)*
-
- 
 
 [![None.png](/archived/images/e/e3/None.png)](/archived/images/e/e3/None.png)
 
@@ -101,8 +95,6 @@ You can see a list of hackergotchis here along with their corresponding roles on
 **Matt Guo**
 *a11y Hacker*
 *[Matt Guo](http://blog.mattguo.com)*
-
- 
 
 #### Former Team Members
 
@@ -124,15 +116,11 @@ You can see a list of hackergotchis here along with their corresponding roles on
 *a11y QA Hacker*
 *[Brian's lovable online gazette](http://bgmerrell.blogspot.com)*
 
- 
-
 [![Sandy.png](/archived/images/4/4e/Sandy.png)](/archived/images/4/4e/Sandy.png)
 
 **Sandy Armstrong**
 *a11y Hacker*
 *[5:55 AM](http://automorphic.blogspot.com)*
-
- 
 
 ### Getting Started
 

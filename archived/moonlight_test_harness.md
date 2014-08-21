@@ -106,7 +106,6 @@ If you are running the test harness from the moon/test directory there are a cou
 |This will run the drtlist specified in the environment variable DRTLIST with gdb, otherwise it&#39;ll work as &#39;make run-tests&#39;
 |}
  
- 
 If you are running the test harness outside of the make targets, these options are available to you:
  
 {| border=&quot;1&quot;
@@ -152,7 +151,6 @@ drtlist.
 |Generate master files to be used with the compare-to-moon option.
 |}
  
- 
 There are two ways of running a subset of the drtlist.xml tests.  You can use categories or specify the tests you would like to use:
  
 === Categories ===
@@ -183,7 +181,6 @@ If you are not using the make targets you can specify the categories you would l
 You can also exclude categories, if you want to run all tests except text and brushes tests, you could do:
  
     $ MOON_DRT_EXCLUDE_CATEGORIES=text,brushes make run-tests
- 
  
 === Specifying tests ===
  

@@ -8,7 +8,6 @@ Multiple languages can be used with the Mono platform. The Mono project provides
 
 It's important to note that any language that compiles to pure IL should work under Mono. Some languages such as Microsoft's Managed C++ do not always compile to pure IL, so they will not always work as expected, since they are not truly platform independent.
 
-
 Mono-compatible compilers
 =========================
 

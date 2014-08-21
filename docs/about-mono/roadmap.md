@@ -58,8 +58,6 @@ Upcoming Releases
 
 Mono 3.8.0 currently available on a preview
 
-
-
 <table>
 <col width="50%" />
 <col width="50%" />
