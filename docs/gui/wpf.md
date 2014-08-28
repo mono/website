@@ -24,5 +24,5 @@ Silverlight does not have all the capabilities of WPF, but both technologies are
 
 Silverlight can now be used outside of the browser, and Moonlight can be configured to be used with the full .NET API outside of the browser.
 
-[WPF\_Notes](/docs/gui/wpf/)
+[WPF_Notes](/docs/gui/wpf/)
 

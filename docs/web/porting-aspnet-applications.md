@@ -15,7 +15,7 @@ By their nature, Web applications tend to be more portable to other platforms th
 
 In this guide we will focus on issues arising from differences between the Unix and Windows platforms, as well as between the database systems (RDBMS) in common use by developers on each of the platforms.
 
-In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C\# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
+In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
 
 [![BlogStarterKit StartPage.png](/archived/images/8/83/BlogStarterKit_StartPage.png)](/archived/images/8/83/BlogStarterKit_StartPage.png)
 
@@ -38,7 +38,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 Porting the code
 ----------------
 
-When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO\_IOMAP](#iomap-anchor) approach. By using the MONO\_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
+When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO_IOMAP](#iomap-anchor) approach. By using the MONO_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
 
 Required assemblies
 -------------------
@@ -64,7 +64,7 @@ As we're using Npgsql from CVS, which is not configured for use with ADO.NET 2.0
 
 Remember the *Npgsql* invariant name, as it will be used below.
 
-#### Npgsql and \~/App\_Code
+#### Npgsql and \~/App_Code
 
 Make sure that Npgsql is included in the set of assemblies to link with code compiled from `~/App_Code` and/or generated from your ASP.NET files by adding the following fragment to your `Web.config` file:
 
@@ -480,8 +480,8 @@ The information below is only an excerpt from the document referenced above cont
 
 1.  Remove all the **[** and **]** characters from the table definitions and/or queries
 2.  Remove all the `dbo.` owner prefixes
-3.  Remove all the file group keywords (**ON PRIMARY**, **TEXTIMAGE\_ON**, **CLUSTERED**
-4.  Remove all occurrences of **SET ANSI\_NULLS** and **SET QUOTED\_IDENTIFIERS**
+3.  Remove all the file group keywords (**ON PRIMARY**, **TEXTIMAGE_ON**, **CLUSTERED**
+4.  Remove all occurrences of **SET ANSI_NULLS** and **SET QUOTED_IDENTIFIERS**
 5.  Remove all occurrences of **WITH NOCHECK**
 6.  Replace all instances of the **GO** keyword with semicolons (**;**)
 
@@ -607,8 +607,8 @@ Steps to port the stored procedures:
 
     Instead of using `CREATE TEMPORARY TABLE`, you should rather create a new type and return result sets from a query limited to the columns you're interested in.
 
--   Use **FOUND** instead of **@@FETCH\_STATUS**
--   Use **currval(*sequence\_name*)** instead of **@@IDENTITY**
+-   Use **FOUND** instead of **@@FETCH_STATUS**
+-   Use **currval(*sequence_name*)** instead of **@@IDENTITY**
 -   Make sure to end each statement with semicolons (**;**)
 -   Conditional execution blocks in PL/pgsql do not use **BEGIN/END**, instead they use the following syntax:
 
@@ -621,7 +621,7 @@ Steps to port the stored procedures:
 Running the application on Unix
 -------------------------------
 
-**Using MONO\_IOMAP**
+**Using MONO_IOMAP**
 
 > On Unix systems, Mono supports an I/O compatibility mode which allows you to ignore the file name case when accessing files on disk. The mode also takes care of disk designators (e.g. `c:`). Enabling the translation carries, obviously, some performance penalty, but is a good way to get your application up and running quickly. To enable the compatibility mode, make sure your web server's (XSP's or Apache's) environment contains the `MONO_IOMAP` variable set to **all**:
 >

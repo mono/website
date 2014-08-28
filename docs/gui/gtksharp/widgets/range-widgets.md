@@ -27,7 +27,7 @@ The ValueChanged event is emitted when the user releases the mouse button, or if
 Mouse and Key Handling
 ======================
 
-All of the range widgets react to mouse clicks in more or less the same way. Clicking button-1 in the trough will cause its adjustment's *pageIncrement* to be added or subtracted from its value, and the slider to be moved accordingly. Clicking mouse button-2 in the trough will jump the slider to the point at which the button was clicked. Clicking button-3 in the trough of a range or any button on a scrollbar's arrows will cause its adjustment's value to change by *step\_increment* at a time.
+All of the range widgets react to mouse clicks in more or less the same way. Clicking button-1 in the trough will cause its adjustment's *pageIncrement* to be added or subtracted from its value, and the slider to be moved accordingly. Clicking mouse button-2 in the trough will jump the slider to the point at which the button was clicked. Clicking button-3 in the trough of a range or any button on a scrollbar's arrows will cause its adjustment's value to change by *step_increment* at a time.
 
 Scrollbars are not focusable; thus, they have no key bindings. The key bindings for the other range widgets (which are, of course, only active when the widget has focus) do not differentiate between horizontal and vertical range widgets.
 

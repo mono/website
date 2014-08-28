@@ -77,7 +77,7 @@ Mono 3.8.0 currently available on a preview
 Subprojects projects
 --------------------
 
-Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk\#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
 
 ### Mono and Silverlight
 

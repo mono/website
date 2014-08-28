@@ -56,7 +56,7 @@ During the Summer of 2005, the Mono project will be mentoring a group of student
 The Members
 ===========
 
--   Jaen Saul: [\#Ruby.NET](#rubynet) implementation
+-   Jaen Saul: [#Ruby.NET](#rubynet) implementation
 -   Jb Evain: [Cecil/Write](/Cecil "Cecil") support
 -   Jeyasankar Kottalam: [GCC CIL](#gcc-cil) backend
 -   Marek Sieradzki: [MSBuild](#msbuild) implementation
@@ -133,7 +133,7 @@ Ruby.NET
 
 A compiler for the Ruby language that would JIT-compile Ruby code into CIL code.
 
-The compiler should be written in C\#. Since Ruby is dynamic and will require the "eval" functionality to be available at runtime, we do not want to have two runtimes loaded at the same time. Alternatively, if you think you can pull this off, you can write Ruby.NET in Ruby.NET, but this probably will require more time than you have this summer to complete
+The compiler should be written in C#. Since Ruby is dynamic and will require the "eval" functionality to be available at runtime, we do not want to have two runtimes loaded at the same time. Alternatively, if you think you can pull this off, you can write Ruby.NET in Ruby.NET, but this probably will require more time than you have this summer to complete
 
 A complete compiler is probably very hard to do, so we are willing to trade off completeness for maintainability of the code (maintainability does not mean over-engineered).
 
@@ -150,7 +150,7 @@ MSBuild implementation
 
 MSBuild is a new "make-like" program to compile applications.
 
-An MSBuild implementation in C\#.
+An MSBuild implementation in C#.
 
 Acceptance Criteria:
 
@@ -182,7 +182,7 @@ Diva
 
 ### Diva Objectives
 
-Create a video editing GUI tool using Mono, Gtk\# and GStreamer
+Create a video editing GUI tool using Mono, Gtk# and GStreamer
 
 ASP.NET GUI Designer
 ====================
@@ -207,7 +207,7 @@ Acceptance criteria:
 -   Support double-clicking on a control (simple or compound) to trigger an event.
 -   Write out the HTML with high-level descriptions (ie, if an asp.net input control is there, we need \<asp:input\> generated, not \<input\>).
 
-The GUI must be written using Gtk\#, as we plan to integrate this into MonoDevelop. But you do not need to do a stellar job there. What matters is that the previous items can be achieved.
+The GUI must be written using Gtk#, as we plan to integrate this into MonoDevelop. But you do not need to do a stellar job there. What matters is that the previous items can be achieved.
 
 XAML Compiler
 =============
@@ -216,7 +216,7 @@ Location: Mono SVN repository.
 
 ### XAML Compiler Objectives
 
-1.  A compiler, xamlc, that takes a xaml file and emits a c\# file
+1.  A compiler, xamlc, that takes a xaml file and emits a c# file
 2.  The bits of System.Windows.Serialization needed to support the xaml compiler
 3.  The bits of System.Windows.Serialization that provide useful hooks, such as the Parser class that produces an instance of the class described by a xaml file.
 

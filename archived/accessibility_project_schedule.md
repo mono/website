@@ -74,7 +74,7 @@ Development Status
 
 Testing Status
 
--   [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls")
+-   [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls")
 
 Current Iterations
 ------------------
@@ -133,7 +133,7 @@ Review code before adding to test suite|Done|Brian||
 |**Review PictureBox smoke test code**
 Review code before adding to smoke test suite|Done|Brian||
 |**Implement Winforms Samples**
-Continue to implement winforms test samples|95%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (71/75)|
+Continue to implement winforms test samples|95%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (71/75)|
 |**Work on Orca**
 Investigate and Learn Orca Test|10%|Ray||
 |**Test NotifyIcon control**
@@ -215,7 +215,7 @@ Implement DataGridTextBoxColumn WinForms sample|Planned|Brian||
 Implement DataGridView WinForms sample|Planned|Brian||
 |**Review Form test code**
 Review code before adding to smoke test suite|Planned|Brian||
-|**Review button\_label\_linklabel test code**
+|**Review button_label_linklabel test code**
 Review code before adding to test suite|50%|Brian||
 |**Review PictureBox test code**
 Review code before adding to test suite|Planned|Brian||
@@ -228,7 +228,7 @@ Review code before adding to test suite|Planned|Brian||
 |**Review ProgressBar test code**
 Review code before adding to test suite|Planned|Brian||
 |**Implement Winforms Samples**
-Continue to implement winforms test samples|95%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (71/75)|
+Continue to implement winforms test samples|95%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (71/75)|
 |**Work on Orca**
 Investigate and Learn Orca Test|10%|Ray||
 |||||
@@ -393,7 +393,7 @@ Implement needed UIA Provider interfaces|Done|Mario||
 |**Button UIA Control Type**
 Map UIA Provider interfaces to ATK|65%|Calvin|Missing base implementation of Atk.ComponentImplementor which is work needed for all control types. Also missing Atk.ImageImplementor and some Atk.TextImplementor methods related to coordinates. Also need to finish up states and events.|
 |**Text UIA Control Type**
-Map UIA Provider interfaces to ATK|65%|Andres|Missing tests: more Atk-centric for events (although Label may only have property-changed), and other non-Atk-centric ones (in BridgeTester.cs). Missing some methods implementation related to coordinates. Missing ComponentImplementor methods which may be reusable in the base class. Missing the study of the role ATK\_ROLE\_ACCEL\_LABEL and the state ATK\_STATE\_MULTI\_LINE.|
+Map UIA Provider interfaces to ATK|65%|Andres|Missing tests: more Atk-centric for events (although Label may only have property-changed), and other non-Atk-centric ones (in BridgeTester.cs). Missing some methods implementation related to coordinates. Missing ComponentImplementor methods which may be reusable in the base class. Missing the study of the role ATK_ROLE_ACCEL_LABEL and the state ATK_STATE_MULTI_LINE.|
 |**Write WinForms Sample Application**
 Implement needed WinForms sample application to be tested|13%|Calen|Finished some simple application sample with winforms "button\\label\\linklabel\\numericUpDown\\textbox\\groupBox\\checkbox\\radiobutton\\panel" control by Ironpython. the code reposit in uiaqa.sled.lab.novell.com:/var/qa/code.|
 |**Write Test Script For Button**|0%|Brian|Push|
@@ -402,12 +402,12 @@ Build packages for preparing building & testing environment.|Done|Ray|Built oliv
 |**Understand Architecture**
 Understand the architecture well & build Provider from svn.|Done|Neville||
 |**Cspi**
-Modify spi\_main.c and spi\_event.c to use dbus|Done (untested)|Mike||
+Modify spi_main.c and spi_event.c to use dbus|Done (untested)|Mike||
 |**Proof-of-Concept Automation Tests**|Done|Brian|[Strongwind](http://www.medsphere.org/projects/strongwind/) test created against sample GTK app|
 |**Setup Testing Lab**|Done|Brian|[https://wiki.innerweb.novell.com/index.php/UIAQA](https://wiki.innerweb.novell.com/index.php/UIAQA)|
 |**Research automated testing of WinForms actions and properties**|Done|Brian|We'll use [Strongwind](http://www.medsphere.org/projects/strongwind/)|
 |**Iteration 2 Planning Meeting**
-IRC Meeting on \#mono-a11y on Wednesday, May 28, 2008
+IRC Meeting on #mono-a11y on Wednesday, May 28, 2008
 [14:00:00 UTC time](http://www.timeanddate.com/worldclock/fixedtime.html?year=2008&month=5&day=28&hour=14&min=0&sec=0)||All||
 
 ### Iteration 2 - May 28 - June 3
@@ -450,7 +450,7 @@ Simplify olive package and build patched new packages. e.g. mcs, mono|Done|Ray|h
 |**StatusBar** *(StatusBar)*
 Familiarize the steps of implementing Providers & Implement needed UIA Provider interfaces|50%|Neville|No unit test|
 |**Iteration 3 Planning Meeting**
-IRC Meeting on \#mono-a11y on Wednesday, June 4, 2008
+IRC Meeting on #mono-a11y on Wednesday, June 4, 2008
 [14:00:00 UTC](http://www.timeanddate.com/worldclock/fixedtime.html?year=2008&month=6&day=4&hour=14&min=0&sec=0)||All||
 
 ### Iteration 3 - June 4 - 10
@@ -699,7 +699,7 @@ Continue to implement test samples
 
 Ray
 
-get more details from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)
+get more details from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)
 
 **Cspi**
 Finish testing and debugging application registration and event passing
@@ -803,7 +803,7 @@ Submit proposal to present at UTOSC 08|Done|Brian||
 |**Test Script**
 practice strongwind test scripts to check Button against gtk. work with Brian's help.|Done|Calen||
 |**Implement Samples**
-Continue to implement test samples|79%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
+Continue to implement test samples|79%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
 |**Cspi**
 Finish testing and debugging application registration|Done?|Mike||
 |**Cspi**
@@ -862,7 +862,7 @@ Determine methods for testing Tooltip and Treeview widgets|Done|Brian||
 |**Write another Strongwind test**
 Work with Calen on one test.|Done|Brian||
 |**Implement Samples**
-Continue to implement test samples|79%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
+Continue to implement test samples|79%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
 |**Polish samples**
 polish the samples to suite the test needs.|70%|Ray|11 samples need to be improved|
 |**strongwind Test Script**
@@ -908,17 +908,17 @@ practice strongwind test scripts for openDialog, saveDialog, update two test scr
 |**tooltip problem in openSUSE11.0**
 encountered tooltip problem,and spent some times to reseach the reason and discuss the problem with bgmerrell and other people.|Done|Calen||
 |**Implement Samples**
-Continue to implement test samples|79%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
+Continue to implement test samples|79%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
 |**Polish samples**
 polish the samples to suite the test needs.|87%|Ray||
 |**Strongwind practice**
 write strongwind tests for multiple dialogs and several strongwind widgets we haven't dealt with yet|Done|Brian||
 |**Resolve tooltip problem**
-discover why tooltips aren't accessible in openSUSE11|Done|Brian|[http://bugzilla.gnome.org/show\_bug.cgi?id=542873](http://bugzilla.gnome.org/show_bug.cgi?id=542873)|
+discover why tooltips aren't accessible in openSUSE11|Done|Brian|[http://bugzilla.gnome.org/show_bug.cgi?id=542873](http://bugzilla.gnome.org/show_bug.cgi?id=542873)|
 |**Support radio button menu items**
-Add support for radio menu items to Strongwind|Done|Brian|[http://bugzilla.gnome.org/show\_bug.cgi?id=542458](http://bugzilla.gnome.org/show_bug.cgi?id=542458)|
+Add support for radio menu items to Strongwind|Done|Brian|[http://bugzilla.gnome.org/show_bug.cgi?id=542458](http://bugzilla.gnome.org/show_bug.cgi?id=542458)|
 |**Support menu items with children**
-Add support for menu items with children to Strongwind|Done|Brian|[http://bugzilla.gnome.org/show\_bug.cgi?id=542458](http://bugzilla.gnome.org/show_bug.cgi?id=542458)|
+Add support for menu items with children to Strongwind|Done|Brian|[http://bugzilla.gnome.org/show_bug.cgi?id=542458](http://bugzilla.gnome.org/show_bug.cgi?id=542458)|
 |||||
 |**Iteration 9 Planning Meeting**||||
 
@@ -974,7 +974,7 @@ Do more abstraction in the application wrapper to make the test scripts more sim
 |**Create actions and states constants**
 setup scripts with string values for valid actions and states|Done|Brian|This didn't turn out like I had hoped, but the scripts are there. We'll add to them as we go. I had hoped to get a complete static list from the beginning.|
 |**Implement Samples**
-Continue to implement test samples|79%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
+Continue to implement test samples|79%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (57/72)|
 |**Polish samples**
 polish the samples to suite the test needs.|Done|Ray||
 |**Test Button control**
@@ -1019,7 +1019,7 @@ Map UIA Provider interfaces to ATK|Planned|Calvin||
 |**Spinner UIA Control Type**
 Map UIA Provider interfaces to ATK|Planned|Andres||
 |**Implement Samples**
-Continue to implement test samples|80%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (58/72)|
+Continue to implement test samples|80%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (58/72)|
 |**Build software**
 Promote the lastest Accerciser into openSUSE:Facctory|10%|Ray|fork a branch, wait for built and promote it.|
 |**Write uia2atk update script**
@@ -1078,7 +1078,7 @@ Setup test environment non-openSUSE VMs|Planned|Brian||
 |**Document+Blog testing techniques**
 Howto write Strongwind tests and how to add them to the test suite.|60%|Brian|Finished with sample application. Started writing howto.|
 |**Implement Samples**
-Continue to implement test samples|84%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (61/72)|
+Continue to implement test samples|84%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (61/72)|
 |**Test scrollbar control**
 script strongwind test scripts for winforms scrollbar control against checkedlistbox.py, and run test.|80%|Calen|[Bug414937](https://bugzilla.novell.com/show_bug.cgi?id=414937) is blocking the test|
 |**Test vscrollbar control**
@@ -1131,9 +1131,9 @@ Code Gtk example to show how we can test the sorting order of certain controle. 
 |**Create QA Architecture Diagrams**
 Create architecture diagrams for Strongwind by itself and Strongwind together with our test harness.|Done|Brian|[1](/archived/images/5/5a/Strongwind_arch.png) and [2](/archived/images/7/75/Qa_arch.png)|
 |**Plan testing of other "styles"**
-Discuss and come up with a plan to test different styles/subelements of WinForms controls|Done|Brian|[https://bugzilla.novell.com/show\_bug.cgi?id=418916](https://bugzilla.novell.com/show_bug.cgi?id=418916)|
+Discuss and come up with a plan to test different styles/subelements of WinForms controls|Done|Brian|[https://bugzilla.novell.com/show_bug.cgi?id=418916](https://bugzilla.novell.com/show_bug.cgi?id=418916)|
 |**Implement Samples**
-Continue to implement test samples|88%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (64/72)|
+Continue to implement test samples|88%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (64/72)|
 |**Test CheckBox control**
 script strongwind test scripts for winforms CheckBox control. and run test, verified bug|95%|Calen|test script need to be checked to add into the test suite.|
 |**Test Form control**
@@ -1183,7 +1183,7 @@ create UTOSC slides for my part of the presentation|Done|Brian|TOP SECRET!|
 |**Research Orca Automated Testing**
 Determine how we are going to test our product with Orca|Done|Brian|Have the beginnings of a functional test|
 |**Implement Samples**
-Continue to implement test samples|88%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (64/72)|
+Continue to implement test samples|88%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (64/72)|
 |**Test Form control**
 run test again|95%|Calen|test script need to be checked to add into the test suite.|
 |**Test RadioButton control**
@@ -1241,10 +1241,10 @@ Plan and prepare for UTOSC presentation with Sandy|Done|Brian||
 Log some bugs about our QA process and discuss with Brad & Andres|Done|Brian|[418916](https://bugzilla.novell.com/show_bug.cgi?id=418916), [418909](https://bugzilla.novell.com/show_bug.cgi?id=418909)|
 |**UTOSC presentation graphics**
 Finish up the architecture graphics for our utosc slides|Done|Brian|TOP SECRET!|
-|**Enhance uia2atk\_rpm\_update.sh**
+|**Enhance uia2atk_rpm_update.sh**
 Better command line argument parsing and add functionality to download and install older rpms (in case smoke tests fail)|Done|Brian||
 |**Implement Samples**
-Continue to implement test samples|90%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (65/72)|
+Continue to implement test samples|90%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (65/72)|
 |**Work on Strongwind**
 try to write my first strongwind test sample|0%|Ray||
 |**Test CheckedListBox control**
@@ -1289,9 +1289,9 @@ Map UIA Provider interfaces to ATK|Planned|Mike||
 |**Gtk Orca test**
 Finish a complete orca test for our code that utilizes their test harness to execute it|Done|Brian|uia2atk/test/keystrokes|
 |**Orca test docs**
-Add information about how we will use Orca to test to the [Accessibility:\_Testing\_Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto")|Done|Brian|[Accessibility:\_Testing\_Howto\#Orca](/Accessibility:_Testing_Howto#Orca)|
+Add information about how we will use Orca to test to the [Accessibility:_Testing_Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto")|Done|Brian|[Accessibility:_Testing_Howto#Orca](/Accessibility:_Testing_Howto#Orca)|
 |**Implement Winforms Samples**
-Continue to implement winforms test samples|90%|Ray|get more detials from [Accessibility:\_Test\_Plan\_WinForms\_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (65/72)|
+Continue to implement winforms test samples|90%|Ray|get more detials from [Accessibility:_Test_Plan_WinForms_Controls](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls") (65/72)|
 |**Work on Strongwind**
 try to write my first strongwind test sample|0%|Ray||
 |**Build Deb Package**

@@ -25,7 +25,7 @@ class Hello {
 }
 ```
 
-Use your favorite text editor to create a file named hello.cs with the contents above. Then you need to compile the above with a C\# compiler, for example:
+Use your favorite text editor to create a file named hello.cs with the contents above. Then you need to compile the above with a C# compiler, for example:
 
 ``` bash
 /Developer/MonoTouch/usr/bin/smcs hello.cs -r:monotouch.dll
@@ -53,7 +53,7 @@ iPhone applications are GUI applications that use the UIKit framework. Like othe
 
 The `UIApplication.Main` method takes three arguments: an array of strings that represents the invocation parameters, the name of your UIApplication class, and the name of your UIApplicationDelegate class as strings.
 
-The names are the names of your C\# classes and they can be `null` if you want to get the default settings. Typically you will just use the default `UIApplication` implementation but you will provide at least the name of your `UIApplicationDelegate` instance.
+The names are the names of your C# classes and they can be `null` if you want to get the default settings. Typically you will just use the default `UIApplication` implementation but you will provide at least the name of your `UIApplicationDelegate` instance.
 
 If you do not specify the parameter for the delegate in `UIApplication.Main` then the name of the class for the delegate is taken from your main XIB file.
 
@@ -85,7 +85,7 @@ class Demo {
 }
 ```
 
-In the above example we create a subclass of `UIApplicationDelegate` and we register this with the MonoTouch runtime by decorating the class with the [Register] attribute. Then we override the method `FinishedLaunching` to initialize our UI. In this method we use the C\# 3.0 syntax to create in a single statement our toplevel window (using the current screen dimensions) as well as a label that is displayed at position 50, 50 with 230 pixels of width and 100 pixels of height. The label contains the world "Hello from MonoTouch".
+In the above example we create a subclass of `UIApplicationDelegate` and we register this with the MonoTouch runtime by decorating the class with the [Register] attribute. Then we override the method `FinishedLaunching` to initialize our UI. In this method we use the C# 3.0 syntax to create in a single statement our toplevel window (using the current screen dimensions) as well as a label that is displayed at position 50, 50 with 230 pixels of width and 100 pixels of height. The label contains the world "Hello from MonoTouch".
 
 The last method call makes the window the key window and shows it on the screen.
 

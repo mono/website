@@ -100,6 +100,6 @@ Garbage Collection
 Threads
 -------
 
--   [Programming with Threads in C\#: Andrew Birrell](http://research.microsoft.com/~birrell/papers/ThreadsCSharp.pdf)
+-   [Programming with Threads in C#: Andrew Birrell](http://research.microsoft.com/~birrell/papers/ThreadsCSharp.pdf)
 
 

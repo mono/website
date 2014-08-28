@@ -62,12 +62,12 @@ Using Moonlight on the Desktop
 
 Sample Solution Layout
 
-To create desktop applications, create a Gtk\# project, and add to your project the following assemblies:
+To create desktop applications, create a Gtk# project, and add to your project the following assemblies:
 
 -   System.Windows.dll
 -   Moonlight.Gtk.dll
 
-The first assembly contains the Silverlight API, the second contains the glue that hosts your Silverlight content inside a Gtk\# application.
+The first assembly contains the Silverlight API, the second contains the glue that hosts your Silverlight content inside a Gtk# application.
 
 The solution should look like the image on the sidebar.
 

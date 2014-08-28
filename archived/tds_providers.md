@@ -39,7 +39,7 @@ use the TDS protocol for data access, and other implementations of TDS (FreeTDS 
 
 -   The TdsClient ADO.NET provider will be Mono's first provider
 
-written completely in C\# without any dependencies except the usual suspects: corlib.dll, System.dll, and System.Xml.dll.
+written completely in C# without any dependencies except the usual suspects: corlib.dll, System.dll, and System.Xml.dll.
 
 New ADO.NET Providers
 ---------------------
@@ -103,7 +103,7 @@ Classes in Mono.Data.TdsClient.Internal will
 
 -   provide features to be directly used by the SqlClient and SybaseClient providers, such as, setting the default TDS version: SqlClient to 7.0 and SybaseClient to 5.0 and TdsClient to 4.2.
 
--   be written completely in C\# or IL assembly language (if need be).
+-   be written completely in C# or IL assembly language (if need be).
 
 -   implement the TDS protocol version 4.2, 5.0, 7.0, and 8.0. This
 
@@ -116,7 +116,7 @@ System.Data.SqlClient, Mono.Data.SybaseClient, and Mono.Data.TdsClient.
 Implementation Details of the TDS Protocol
 ------------------------------------------
 
--   will be implemented in pure C\# from scratch
+-   will be implemented in pure C# from scratch
 
 -   will reside in Mono.Data.TdsClient.Internal
 

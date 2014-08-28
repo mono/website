@@ -7,17 +7,17 @@ redirect_from:
 General Questions
 =================
 
-**How is Gtk\# related to Gtk+?**
+**How is Gtk# related to Gtk+?**
 
-Gtk\# is a managed binding for CIL-based languages to the Gtk+ library. The binding features a number of mappings from Gtk+ features into CIL-features like mapping signals to events and allowing developers to use C\# constructs to alter the behavior of C-based widgets (for example, overwriting methods).
+Gtk# is a managed binding for CIL-based languages to the Gtk+ library. The binding features a number of mappings from Gtk+ features into CIL-features like mapping signals to events and allowing developers to use C# constructs to alter the behavior of C-based widgets (for example, overwriting methods).
 
-GTK+ is a graphical user interface toolkit for Unix and Windows and is written in C while the Gtk\# binding is written in C\#.
+GTK+ is a graphical user interface toolkit for Unix and Windows and is written in C while the Gtk# binding is written in C#.
 
-**Can I use Gtk\# on Windows?**
+**Can I use Gtk# on Windows?**
 
-Yes, Gtk\# is available for Windows developers.
+Yes, Gtk# is available for Windows developers.
 
-In addition, when you install Gtk\# for .NET if Visual Studio is installed templates for VB.NET and C\# are installed, so you can create Gtk\# based applications right from Visual Studio.
+In addition, when you install Gtk# for .NET if Visual Studio is installed templates for VB.NET and C# are installed, so you can create Gtk# based applications right from Visual Studio.
 
 **What is Glade?**
 
@@ -51,7 +51,7 @@ class PersonalDataDialog {
 
 Yes, just bundle your glade files as resources (using the -resource: option in the compiler) and change your constructor call or use the Glade.XML.FromAssembly () method to create your Glade.XML ui.
 
-Gtk\# widget questions
+Gtk# widget questions
 ======================
 
 **Can I use absolute positioning for my dialogs?**
@@ -94,7 +94,7 @@ You can create custom widgets by inheriting from a base class that is appropriat
 
 **Do I need to create a custom widget to respond to events?**
 
-Gtk\# exposes a number of events that allow developers to customize existing widgets without resorting to subclassing. It is possible to attach arbitrary code to be executed by a handler, for example:
+Gtk# exposes a number of events that allow developers to customize existing widgets without resorting to subclassing. It is possible to attach arbitrary code to be executed by a handler, for example:
 
 ``` csharp
     Gtk.Button b = new Button ("Print");
@@ -105,7 +105,7 @@ Gtk\# exposes a number of events that allow developers to customize existing wid
 
 **Should I hook up to events, or override methods to create a custom widget?**
 
-Gtk\# supports both models.
+Gtk# supports both models.
 
 There is some overhead in signal emission. You are also relinquishing some control over whether your users see events before your control is updated. There are no guarantees that your event handler will run first even though it is added to the event before any user handlers. That's the nature of .Net events.
 
@@ -158,7 +158,7 @@ Common Questions
 
 Some frequently asked questions about [GtkSharp](/docs/gui/gtksharp/).
 
-For a list of varios pages dealing with Gtk\# on this site see [GtkSharp Articles](/Category:GtkSharp).
+For a list of varios pages dealing with Gtk# on this site see [GtkSharp Articles](/Category:GtkSharp).
 
 **Common Problems**
 
@@ -174,14 +174,14 @@ If your application crashes with a message like this:
 Xlib: unexpected async reply (sequence 0x146)!
 ```
 
-It means that you are trying to invoke methods in Gtk\# from a thread that is not the one that has invoked Application.Run (). This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run. This is done by either just hooking up to signals, using GLib timers or events and not threads.
+It means that you are trying to invoke methods in Gtk# from a thread that is not the one that has invoked Application.Run (). This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run. This is done by either just hooking up to signals, using GLib timers or events and not threads.
 
-This topic is covered in more detail in these two pages: [Best\_Practices](/archived/best_practices "Best Practices") and [Responsive Applications](/docs/gui/gtksharp/responsive-applications/) pages for details on how to solve this issue.
+This topic is covered in more detail in these two pages: [Best_Practices](/archived/best_practices "Best Practices") and [Responsive Applications](/docs/gui/gtksharp/responsive-applications/) pages for details on how to solve this issue.
 
-Gecko\# and Mozilla
+Gecko# and Mozilla
 ===================
 
-**How do I use Gecko or Mozilla with Gtk\#?**
+**How do I use Gecko or Mozilla with Gtk#?**
 
 You can use pkg-config to auto-detect whether the Mozilla development libraries are installed, the pkg-config module name is: gecko-sharp-2.0
 
@@ -195,7 +195,7 @@ else
 fi
 ```
 
-To compile your applications to use Gecko\# you should do this:
+To compile your applications to use Gecko# you should do this:
 
 ``` bash
 mcs demo.cs -pkg:gecko-sharp-2.0
@@ -212,13 +212,13 @@ Those are usually set on scripts, as recommended on our [Application Deployment 
 
  **Mozilla and Plugins**
 
-If you are having trouble embedding Flash content (or any other plugin) into your Gecko\# application, make sure you have set the MOZ\_PLUGIN\_PATH to the directory holding mozilla, like this:
+If you are having trouble embedding Flash content (or any other plugin) into your Gecko# application, make sure you have set the MOZ_PLUGIN_PATH to the directory holding mozilla, like this:
 
 ``` bash
 export MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins
 ```
 
-Alternatively, you can programatically set this variable from C\#:
+Alternatively, you can programatically set this variable from C#:
 
 ``` csharp
 WebControl.CompPath = "/usr/lib/mozilla-firefox";
@@ -227,14 +227,14 @@ WebControl.CompPath = "/usr/lib/mozilla-firefox";
 Migration
 =========
 
-**How do I migrate a Gtk\# 1.0 to Gtk\# 2.0 application?**
+**How do I migrate a Gtk# 1.0 to Gtk# 2.0 application?**
 
-The steps are described in [Gtk\# Upgrade page](/docs/gui/gtksharp/upgrade/).
+The steps are described in [Gtk# Upgrade page](/docs/gui/gtksharp/upgrade/).
 
 Common Problems
 ===============
 
-**I can not build Gtk\# on my system**
+**I can not build Gtk# on my system**
 
 If you are getting errors like this:
 
@@ -256,9 +256,9 @@ generated/PangoRenderer.cs(19,47): error CS1502: The best overloaded method matc
 generated/PangoRenderer.cs(19,47): error CS1503: Argument GLib.GType: Cannot conver from equally named types from different assemblies GLib.GType (from glib-sharp, Version=2.6.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f) and GLib.GType (from glib-sharp, Version=2.8.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f)
 ```
 
-This is caused because you have a newer version of Gtk\# installed on your system, and you are trying to compile an older version.
+This is caused because you have a newer version of Gtk# installed on your system, and you are trying to compile an older version.
 
-This is a limitation of the policy loading code. The only way of solving this is by removing the installed Gtk\# (or the policy directories in the GAC) to build Mono or build the appropriate Gtk\# version.
+This is a limitation of the policy loading code. The only way of solving this is by removing the installed Gtk# (or the policy directories in the GAC) to build Mono or build the appropriate Gtk# version.
 
 An upcoming version of Mono will fix this by not loading indirectly referenced policy-versioned libraries.
 

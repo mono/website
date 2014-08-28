@@ -36,10 +36,10 @@ The program should run and output:
 
     Hello Mono World
 
-Gtk\# Hello World
+Gtk# Hello World
 -----------------
 
-The following program tests writing a Gtk\# application.
+The following program tests writing a Gtk# application.
 
 ``` csharp
 using Gtk;
@@ -60,7 +60,7 @@ class Hello {
 }
 ```
 
-To compile, use gmcs with the -pkg option to tell the compiler to pull in the Gtk\# libraries:
+To compile, use gmcs with the -pkg option to tell the compiler to pull in the Gtk# libraries:
 
     mcs hello.cs -pkg:gtk-sharp-2.0
 

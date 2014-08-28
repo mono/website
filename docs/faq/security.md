@@ -39,7 +39,7 @@ You'll need to either:
 How can I debug https traffic?
 ------------------------------
 
-Use the webscarab tool and set the http\_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
+Use the webscarab tool and set the http_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
 
 I got the root certificate but it doesn't install
 -------------------------------------------------
@@ -195,7 +195,7 @@ where **1.3.6.1.5.5.7.3.1** is the OID for server-side authentication and **poll
 
     makecert -eku 1.3.6.1.5.5.7.3.2 -n "CN=poupou" -p12 poupou.p12 s3kr3t
 
-where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poupou** is your name. The `-p12` option is **mono specific** and creates a PKCS\#12 file protected with the supplied password.
+where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poupou** is your name. The `-p12` option is **mono specific** and creates a PKCS#12 file protected with the supplied password.
 
 Many more options are available from `makecert`. Consult the tool's [man page](http://anonsvn.mono-project.com/source/trunk/mono/man/makecert.1) (i.e. `man makecert`) for more details.
 

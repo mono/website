@@ -50,7 +50,7 @@ Overview of the ProviderFactory object model
 
 -   **ProviderSectionHandler**: works behind the scenes to load the list of providers from the app.config into a ProviderCollection.
 
-C\# source code samples for creating a connection
+C# source code samples for creating a connection
 -------------------------------------------------
 
      // Create connection using enhanced connection string
@@ -79,7 +79,7 @@ C\# source code samples for creating a connection
      string appSetting = "PubsConnStr";
      conn = ProviderFactory.CreateConnectionFromConfig(appSetting);
 
-C\# Sample for Creating a DataAdapter and filling a DataSet.
+C# Sample for Creating a DataAdapter and filling a DataSet.
 
     // Create Connection
     IDbConnection conn =

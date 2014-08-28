@@ -7,17 +7,17 @@ redirect_from:
 General
 =======
 
-Is Gendarme a C\# source checking tool ?
+Is Gendarme a C# source checking tool ?
 ----------------------------------------
 
-Not directly. [Gendarme](/docs/tools+libraries/tools/gendarme/) does **not** work on source code but on compiled assemblies. Once compiled (into Intermediate Language, **IL**) C\# code looks identical to any other (compiled) .NET language. Hence [Gendarme](/docs/tools+libraries/tools/gendarme/) is a .NET static assembly analyzer and is not language specific.
+Not directly. [Gendarme](/docs/tools+libraries/tools/gendarme/) does **not** work on source code but on compiled assemblies. Once compiled (into Intermediate Language, **IL**) C# code looks identical to any other (compiled) .NET language. Hence [Gendarme](/docs/tools+libraries/tools/gendarme/) is a .NET static assembly analyzer and is not language specific.
 
 Which versions of the .NET framework are supported ?
 ----------------------------------------------------
 
 For analysis [Gendarme](/docs/tools+libraries/tools/gendarme/) can process any .NET assembly (that [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/) can read), back to the original 1.0 if you need. Rules are smart enough to disable themselves if the runtime targeted by the analyzed assembly does not support the feature under scrutiny (i.e. there is no performance degradation to use every rule versus a set of 1.x rules).
 
-However in order to **execute** [Gendarme](/docs/tools+libraries/tools/gendarme/) you'll need either Mono (same version) or the .NET framework 3.5 since [Gendarme](/docs/tools+libraries/tools/gendarme/) use some recent (C\# 3) features such as LINQ.
+However in order to **execute** [Gendarme](/docs/tools+libraries/tools/gendarme/) you'll need either Mono (same version) or the .NET framework 3.5 since [Gendarme](/docs/tools+libraries/tools/gendarme/) use some recent (C# 3) features such as LINQ.
 
 Usage
 =====
@@ -83,7 +83,7 @@ Finally it could be a bug (e.g. the rule does not report the *right* target as t
 Why are defects decorated using `[SuppressMessage]` attributes still showing in my reports ?
 --------------------------------------------------------------------------------------------
 
-Make sure your project was compiled with the **CODE\_ANALYSIS** symbol defined. Otherwise the `[SuppressMessage]` attribute wont be compiled inside the assembly binary (i.e. there's a `[Conditional]` attribute on the type.). That would makes it impossible for [Gendarme](/docs/tools+libraries/tools/gendarme/) to ignore the defects.
+Make sure your project was compiled with the **CODE_ANALYSIS** symbol defined. Otherwise the `[SuppressMessage]` attribute wont be compiled inside the assembly binary (i.e. there's a `[Conditional]` attribute on the type.). That would makes it impossible for [Gendarme](/docs/tools+libraries/tools/gendarme/) to ignore the defects.
 
 Rules
 =====
@@ -93,10 +93,10 @@ What are rules
 
 Basically a rule is a piece of code that a runner executes over a set of assemblies in order to find some potential defects. Rules are grouped together in assemblies that perform similar analysis (e.g. [performance rules](/docs/tools+libraries/tools/gendarme/rules/performance/)).
 
-Rule X checks for something that can't happen using C\#
+Rule X checks for something that can't happen using C#
 -------------------------------------------------------
 
-Some rules (e.g. `FinalizersShouldCallBaseClassFinalizerRule`) checks for condition that cannot occurs in C\# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in [Gendarme](/docs/tools+libraries/tools/gendarme/). In other words C\# != .NET :-)
+Some rules (e.g. `FinalizersShouldCallBaseClassFinalizerRule`) checks for condition that cannot occurs in C# (and/or other languages) compiled assemblies. However if this condition can occurs by using IL, either directly (assembler) or indirectly (generated code), or by using some other .NET languages then the rule is still useful in [Gendarme](/docs/tools+libraries/tools/gendarme/). In other words C# != .NET :-)
 
 Results
 =======

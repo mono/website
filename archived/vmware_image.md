@@ -91,7 +91,7 @@ htdocs is the apache directory where you can put asp.net files.
 
 Yes, they will.
 
-See our [Guidelines:Application\_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability") for recommendations on how to make your software port better.
+See our [Guidelines:Application_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability") for recommendations on how to make your software port better.
 
 **How do I know my torrent downloaded successfully?**
 

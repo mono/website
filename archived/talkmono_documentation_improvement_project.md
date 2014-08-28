@@ -16,7 +16,7 @@ Assigned Tasks
 |Page|Assgined To|Task Description|
 |:---|:----------|:---------------|
 |[Software](/Software "Software")|Joseph Hill (jhill)|Add an ASP.NET section and include links to Mono compatible ASP.NET projects as well as any applicable starter guides|
-|[ASP.NET](/ASP.NET "ASP.NET")|Joseph Hill (jhill)|Update the ASP.NET page to include information about mod\_mono. Update out-of-date information.|
+|[ASP.NET](/ASP.NET "ASP.NET")|Joseph Hill (jhill)|Update the ASP.NET page to include information about mod_mono. Update out-of-date information.|
 
 
 

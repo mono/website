@@ -146,7 +146,7 @@ Where you previously added "`# TO BE ADDED`", replace it with the following:
                     ),
                     "max-procs" => 1,
 
-That configuration uses several mono\_\* configuration variables to control the how the FastCGI server starts and runs. To set those configuration variables add the following line to the top of fastcgi.conf:
+That configuration uses several mono_\* configuration variables to control the how the FastCGI server starts and runs. To set those configuration variables add the following line to the top of fastcgi.conf:
 
     include "conf.d/mono.conf"
 
@@ -271,7 +271,7 @@ The following example sends `.php` requests to a PHP FastCGI server and the rest
 
 ### Using Extensions
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html\#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
 To start, change the extension that triggers the mono FastCGI server from "" to ".aspx". So that your fastcgi.conf file looks like this:
 

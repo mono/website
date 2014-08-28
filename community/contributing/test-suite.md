@@ -88,15 +88,15 @@ there are some standalone tests. See the bottom of [ADO.NET page](/docs/database
 
 -   System.Windows.Forms/SWFTest/
 
--   System.XML/Test/System.Xml/standalone\_tests : see README
+-   System.XML/Test/System.Xml/standalone_tests : see README
 
--   System.XML/Test/System.Xml.Schema/standalone\_tests : see README
+-   System.XML/Test/System.Xml.Schema/standalone_tests : see README
 
--   System.XML/System.Xml.Serialization/standalone\_tests/
+-   System.XML/System.Xml.Serialization/standalone_tests/
 
--   System.XML/Test/System.Xml.Xsl/standalone\_tests : see README
+-   System.XML/Test/System.Xml.Xsl/standalone_tests : see README
 
--   Commons.Xml.Relaxng/Test/standalone\_tests : see README
+-   Commons.Xml.Relaxng/Test/standalone_tests : see README
 
 **Getting started**
 
@@ -117,7 +117,7 @@ You should look at the [NUnit documentation](http://nunit.org), as it is a fanta
 
 ### Provide an unique error message for Assert()
 
-Include an unique message for each Assert() so that when the assert fails, it is trivial to locate it in the source. Otherwise, it may be difficult to determine which part of the test is failing. A good way to ensure unique messages is to use something like \#A01, \#A02 etc.
+Include an unique message for each Assert() so that when the assert fails, it is trivial to locate it in the source. Otherwise, it may be difficult to determine which part of the test is failing. A good way to ensure unique messages is to use something like #A01, #A02 etc.
 
 Ok:
 
@@ -172,9 +172,9 @@ Normally, after you send a couple of well-written new files and/or patches to th
 Compiler tests
 --------------
 
-Mono ships with three compilers: C\#, VB.NET and JScript. The tests are executed by running the makefile target \`make run-test-local' in the appropriate directory.
+Mono ships with three compilers: C#, VB.NET and JScript. The tests are executed by running the makefile target \`make run-test-local' in the appropriate directory.
 
-The C\# compilation tests live in mcs/tests, and the C\# error tests live in mcs/errors.
+The C# compilation tests live in mcs/tests, and the C# error tests live in mcs/errors.
 
 The VB.NET compilation tests live in mcs/btests.
 

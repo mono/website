@@ -105,4 +105,4 @@ Copyright (C) 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-proj
     GC:            sgen
 ```
 
-Note: On Debian-based distributions, any distribution-provided Mono libraries (such as GTK\#) are automatically installed into your mono-snapshot GAC and are available for use. This is not automatic on Red Hat-based distributions.
+Note: On Debian-based distributions, any distribution-provided Mono libraries (such as GTK#) are automatically installed into your mono-snapshot GAC and are available for use. This is not automatic on Red Hat-based distributions.

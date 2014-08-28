@@ -48,7 +48,7 @@ Abstract
 
 This document explains how I am planning to implement System.Messaging.dll on top of OpenWire.NET (OpenWire.Client.dll) in ActiveMQ project ( [http://www.activemq.org/](http://www.activemq.org/) ).
 
-ActiveMQ is part of Apache Geronimo project, an open source J2EE implementation from Apache Software Foundation. It could be understood as an open source implementation of JMS (Java Messaging Services). It also supports native messaging protocol called OpenWire. They provide C\# and C clients other than Java, though still in development.
+ActiveMQ is part of Apache Geronimo project, an open source J2EE implementation from Apache Software Foundation. It could be understood as an open source implementation of JMS (Java Messaging Services). It also supports native messaging protocol called OpenWire. They provide C# and C clients other than Java, though still in development.
 
 Actually any message queueing systems that support OpenWire could be a background service (though it is not likely to happen on other messaging services at least sooner).
 

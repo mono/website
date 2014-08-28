@@ -8,7 +8,7 @@ redirect_from:
 SolarisInstructions
 ===================
 
-Uncompress and install the package as usual (substitute \<mono\_package\_download\> with the filename):
+Uncompress and install the package as usual (substitute \<mono_package_download\> with the filename):
 
     gunzip <mono_package_download>
     pkgadd -d <mono_package_download>
@@ -51,5 +51,5 @@ No, but expect to see a Solaris 10 x86 package in the future.
 
 **Why does my program crash saying it can't get access to a random source?**
 
-You need to have patch \#112438 installed on Solaris 8. This enables the /dev/random and /dev/urandom devices.
+You need to have patch #112438 installed on Solaris 8. This enables the /dev/random and /dev/urandom devices.
 

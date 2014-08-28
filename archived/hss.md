@@ -24,7 +24,7 @@ Samples on how to achieve specific tasks with:
 
 -   Mono
 -   MonoDevelop IDE
--   Gtk\#
+-   Gtk#
 
 Easy bugs
 =========

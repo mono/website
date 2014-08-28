@@ -124,7 +124,7 @@ Executive Overview
 
 Mono is a comprehensive and unified open source development platform based on the .NET framework that allows IT and ISV developers to build Linux and cross-platform applications (MacOS X, S390, Sun Solaris) with unprecedented productivity.
 
-Incorporating key components from the .NET development platform: a C\# compiler, and a portable execution system Mono provides:
+Incorporating key components from the .NET development platform: a C# compiler, and a portable execution system Mono provides:
 
 -   Advanced development environment for writing Linux applications with unprecedented productivity.
 -   Comprehensive APIs for delivering rich client, web services and server-side applications.
@@ -153,7 +153,7 @@ Currently software houses have to choose carefully which platforms they will sup
 
 Developers who write code for Windows can immediately be productive on Linux. They can reduce training costs and easily add Linux to the menu of systems they support, and continue to use familiar tools and processes to produce software.
 
-Developers will be able to use the same programming languages (C\#, Visual Basic .NET, Java, Python) and Application Programing Interfaces (such as ADO.NET, XML, ASP.NET, System.Windows.Forms) they work with on Windows. They can re-use existing .NET class libraries whether created by third parties or their own, without even having to re-compile. Moreover, ASP.NET web services and applications as well as rich client software built with System.Windows.Forms will run un-modified on Linux and other platforms supported by Mono.
+Developers will be able to use the same programming languages (C#, Visual Basic .NET, Java, Python) and Application Programing Interfaces (such as ADO.NET, XML, ASP.NET, System.Windows.Forms) they work with on Windows. They can re-use existing .NET class libraries whether created by third parties or their own, without even having to re-compile. Moreover, ASP.NET web services and applications as well as rich client software built with System.Windows.Forms will run un-modified on Linux and other platforms supported by Mono.
 
 ### Mono provides cross-platform development
 
@@ -189,7 +189,7 @@ Mono includes a complete developer toolchain, a .NET compatible runtime and two 
 
 #### Features and Benefits
 
-Incorporating key .NET compliant components: a C\# compiler, class libraries and a portable execution system the Mono Project provides:
+Incorporating key .NET compliant components: a C# compiler, class libraries and a portable execution system the Mono Project provides:
 
 -   Advanced development environment for writing Linux applications with unprecedented productivity.
 -   Comprehensive APIs for delivering rich client, web services and server-side applications.
@@ -224,7 +224,7 @@ Beyond Linux, Mono's cross platform capabilities for deployment of created appli
 
 Since its creation in 2001 by Miguel de Icaza (founder of the Gnome desktop project), the Mono open source project has grown to be one of the largest open source community endeavor.
 
-Strong of more than two hundrer regular contributors, Mono is very accessible to new developers. Because of the breadth of the project and the large numbers of sub-projects under its umbrella (Gtk\#, MonoDevelop, VB.NET & JScript runtimes and compilers, Cocoa\# and many, many more), it is easy contributors to find an area that fits their expertise whether seasonned open source developers or relatevely new enthousiasts
+Strong of more than two hundrer regular contributors, Mono is very accessible to new developers. Because of the breadth of the project and the large numbers of sub-projects under its umbrella (Gtk#, MonoDevelop, VB.NET & JScript runtimes and compilers, Cocoa# and many, many more), it is easy contributors to find an area that fits their expertise whether seasonned open source developers or relatevely new enthousiasts
 
 Developer Personalities
 -----------------------
@@ -239,7 +239,7 @@ While .NET is in concept platform agnostic, before Mono, it remained a Microsoft
 
 As such they can re-use:
 
--   Programming Language expertise (C\#, VB.NET, Java, JScript, ...)
+-   Programming Language expertise (C#, VB.NET, Java, JScript, ...)
 -   Working knowledge of the many .NET APIs (System.XML, ASP.NET, ADO.NET, System.Windows.Forms, ...)
 -   their own .NET class libraries
 -   Third party controls
@@ -386,7 +386,7 @@ Some code might have to be modified as many Windows developers prefer to use har
 
 Mono's ASP.NET and ADO.NET implementation is excellent and many commercial applications now support Mono as a deployment solution on Linux and other platforms.
 
-#### XSP, Apache and mod\_mono
+#### XSP, Apache and mod_mono
 
 ### Desktop Applications development
 
@@ -394,11 +394,11 @@ Mono's ASP.NET and ADO.NET implementation is excellent and many commercial appli
 
 #### Gtk\#
 
-Gtk\#, a GUI Toolkit, is a set of .NET bindings for the gtk+ toolkit and assorted GNOME libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK\# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
+Gtk#, a GUI Toolkit, is a set of .NET bindings for the gtk+ toolkit and assorted GNOME libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
 
-Applications built using Gtk\# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk\# and the native theme to make your applications look like native Windows applications. At this point, running Gtk\# applications on MacOS requires the user to run the X11 server.
+Applications built using Gtk# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
 
-You can use Glade along with the Glade\# bindings to easily design GUI applications. A new GUI designer called Stetic is being built which will be integrated with the MonoDevelop IDE.
+You can use Glade along with the Glade# bindings to easily design GUI applications. A new GUI designer called Stetic is being built which will be integrated with the MonoDevelop IDE.
 
 In addition to support the standard Gtk/Gnome stack of development tools, the gtk-dotnet.dll assembly provides a bridge to consume functionality available on the .NET stack, at this point this includes the functionality to use System.Drawing to draw on a widget.
 
@@ -425,7 +425,7 @@ Mono is available as open source software primarily, its licensing scheme is pla
 
 The Mono project use three open source licenses:
 
--   The C\# Compiler and tools are released under the terms of the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
+-   The C# Compiler and tools are released under the terms of the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
 
 -   The runtime libraries are under the [GNU Library GPL 2.0](http://www.gnu.org/copyleft/library.html#TOC1) (LGPL 2.0).
 
@@ -437,11 +437,11 @@ Software vendors can freely use, modfify, redistribute the class libraries provi
 
 The LGPL 2.0 and MIT X11 components license has no viral clause and their use does not affect the licensing of your own commercial software even if deployed with Mono. Thus, commercial software does not become open source by being deployed, distributed or bunding Mono.
 
-However, the C\# compiler and tools are licensed under the GPL license which requires derivative works of GPL-licensed programs to also be licensed under the GPL.
+However, the C# compiler and tools are licensed under the GPL license which requires derivative works of GPL-licensed programs to also be licensed under the GPL.
 
 ### Commercial license
 
-Both the Mono runtime and the Mono C\# Compiler are also available under a proprietary license for those who can not use the LGPL and the GPL in their code.
+Both the Mono runtime and the Mono C# Compiler are also available under a proprietary license for those who can not use the LGPL and the GPL in their code.
 
 Mono Applications
 -----------------
@@ -465,10 +465,10 @@ Implements .NET 1.1 API (except for VB.NET and SWF support, planned for Mono 1.2
 
 Q1 2006
 
--   C\# 2.0 implementation
+-   C# 2.0 implementation
 -   Preview of Visual Basic compiler and .NET 2.0 enhancements (including ASP.NET 2.0, XML 2.0 and ADO.NET 2.0))
 -   Improved IO-Layer and Internationalization framework.
--   Gtk\# improvement and GUI designer.
+-   Gtk# improvement and GUI designer.
 -   Mono Debugger.
 -   System.Windows.Forms support.
 -   JIT performance work.

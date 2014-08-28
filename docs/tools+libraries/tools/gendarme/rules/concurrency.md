@@ -254,8 +254,8 @@ public void Add (object item)
 
 This rule is used to check for the double-check pattern, often used when implementing the singleton pattern (1), and warns of potential incorrect usage. The original CLR (1.x) could not guarantee that a double-check would work correctly in multithreaded applications. However the technique does work on the x86 architecture, the most common architecture, so the problem is seldom seen (e.g. IA64). The CLR 2 and later introduce a strong memory model (2) where a double check for a **lock** is correct (as long as you assign to a **volatile** variable). This rule won't report a defect for assemblies targetting the 2.0 (and later) runtime.
 
--   **1. Implementing Singleton in C\#** : [http://msdn.microsoft.com/en-us/library/ms998558.aspx](http://msdn.microsoft.com/en-us/library/ms998558.aspx)
--   **2. Understand the Impact of Low-Lock Techniques in Multithreaded Apps** : [http://msdn.microsoft.com/en-ca/magazine/cc163715.aspx\#S5](http://msdn.microsoft.com/en-ca/magazine/cc163715.aspx#S5)
+-   **1. Implementing Singleton in C#** : [http://msdn.microsoft.com/en-us/library/ms998558.aspx](http://msdn.microsoft.com/en-us/library/ms998558.aspx)
+-   **2. Understand the Impact of Low-Lock Techniques in Multithreaded Apps** : [http://msdn.microsoft.com/en-ca/magazine/cc163715.aspx#S5](http://msdn.microsoft.com/en-ca/magazine/cc163715.aspx#S5)
 
  **Bad** example:
 

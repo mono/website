@@ -4,35 +4,35 @@ redirect_from:
   - /GtkSharpTutorials/
 ---
 
-Beginning to use Gtk\#
+Beginning to use Gtk#
 ----------------------
 
--   [Beginners Guide to Gtk\#](/docs/gui/gtksharp/beginners-guide/)
-    -   An overview of Gtk\# and step-by-step description of a simple application.
--   [Gtk\# "Hello World" in C\# and VB.NET](/docs/gui/gtksharp/hello-world/)
-    -   A short 'Hello World' style introduction to Gtk\#
--   [Gtk\# in MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
-    -   Creating a Gtk\# application with [Monodevelop's](http://www.monodevelop.com/Main_Page) GUI designer, Stetic.
+-   [Beginners Guide to Gtk#](/docs/gui/gtksharp/beginners-guide/)
+    -   An overview of Gtk# and step-by-step description of a simple application.
+-   [Gtk# "Hello World" in C# and VB.NET](/docs/gui/gtksharp/hello-world/)
+    -   A short 'Hello World' style introduction to Gtk#
+-   [Gtk# in MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
+    -   Creating a Gtk# application with [Monodevelop's](http://www.monodevelop.com/Main_Page) GUI designer, Stetic.
 
-Gtk\# GUI details and techniques
+Gtk# GUI details and techniques
 --------------------------------
 
--   [Overview of the widgets used in Gtk\#](/docs/gui/gtksharp/widgets/widget-overview/)
+-   [Overview of the widgets used in Gtk#](/docs/gui/gtksharp/widgets/widget-overview/)
 -   [Widget Layout and Packing](/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
--   [Creating Responsive GUI applications with Gtk\#](/docs/gui/gtksharp/responsive-applications/)
+-   [Creating Responsive GUI applications with Gtk#](/docs/gui/gtksharp/responsive-applications/)
 -   [Creating Notification Icons](/docs/gui/gtksharp/widgets/notification-icon/)
--   [Gtk\# used as a Web Service Interface](/archived/webservices_and_gtksharp "Webservices and GtkSharp")
--   [Gtk\# example used to access GConf settings](/archived/gconftutorial "GConfTutorial")
+-   [Gtk# used as a Web Service Interface](/archived/webservices_and_gtksharp "Webservices and GtkSharp")
+-   [Gtk# example used to access GConf settings](/archived/gconftutorial "GConfTutorial")
 
-Advanced Gtk\#
+Advanced Gtk#
 --------------
 
 -   [Generating bindings to GLib/gobject libraries](/docs/gui/gtksharp/gapi/)
--   [Quick guide to using Pango\#](/archived/pangobeginners "Pango:Beginners")
--   [Gtk\# TreeView Tutorial](/docs/gui/gtksharp/widgets/treeview-tutorial/)
-    -   [Gtk\# NodeView: A Convenience API to TreeView](/docs/gui/gtksharp/widgets/nodeview-tutorial/)
-    -   [Example Programs from the Gtk\# NodeView Tutorial](/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)
--   [Implementing GInterfaces in Gtk\#](/docs/gui/gtksharp/implementing-ginterfaces/)
+-   [Quick guide to using Pango#](/archived/pangobeginners "Pango:Beginners")
+-   [Gtk# TreeView Tutorial](/docs/gui/gtksharp/widgets/treeview-tutorial/)
+    -   [Gtk# NodeView: A Convenience API to TreeView](/docs/gui/gtksharp/widgets/nodeview-tutorial/)
+    -   [Example Programs from the Gtk# NodeView Tutorial](/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)
+-   [Implementing GInterfaces in Gtk#](/docs/gui/gtksharp/implementing-ginterfaces/)
 
 Extending your GUI
 ------------------
@@ -45,22 +45,22 @@ Extending your GUI
 
 -   Tutorial needed.
 
-Other Gtk\# Tutorials
+Other Gtk# Tutorials
 ---------------------
 
--   Video demonstrating how to create a "Hello World" application using Gtk\# and glade
+-   Video demonstrating how to create a "Hello World" application using Gtk# and glade
 
 [http://nat.org/demos/gtksharp.html](http://nat.org/demos/gtksharp.html)
 
--   Creating your first "hello world" Gtk\# application using MonoDevelop
+-   Creating your first "hello world" Gtk# application using MonoDevelop
 
 [http://www.monodevelop.com/tutorials/helloworld.aspx](http://www.monodevelop.com/tutorials/helloworld.aspx)
 
--   An old collection of documentation for Gtk\#, it would be great if someone could go through this and insert it all into the wiki
+-   An old collection of documentation for Gtk#, it would be great if someone could go through this and insert it all into the wiki
 
 [http://www.gotmono.com/docs/gnome/bindings/gtk-sharp/gtk-sharp.html](http://www.gotmono.com/docs/gnome/bindings/gtk-sharp/gtk-sharp.html)
 
--   How to build a Gtk\# application in Windows using glade and Visual Studio.Net 2003
+-   How to build a Gtk# application in Windows using glade and Visual Studio.Net 2003
 
 [http://www.mfconsulting.com/tutorial/newgladeapp/](http://www.mfconsulting.com/tutorial/newgladeapp/)
 

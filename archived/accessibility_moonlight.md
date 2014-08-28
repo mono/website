@@ -85,7 +85,7 @@ Also you will need to create a .mozconfig file to help you building Firefox, use
     ac_add_options --disable-crashreporter
     ac_add_options --disable-necko-wifi
 
-Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)
+Notice latest patch is tracked in [Mozilla Bug #480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)
 
 ### Building Firefox with Plugin Accessibility (mozilla-1.9.2)
 
@@ -97,7 +97,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-1.9.2)](#building-for-firefox-mozilla-192)
+-   Then you can continue to [#Building for Firefox (mozilla-1.9.2)](#building-for-firefox-mozilla-192)
 
 ### Building Firefox with Plugin Accessibility (mozilla-central)
 
@@ -109,7 +109,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-central)](#building-for-firefox-mozilla-central)
+-   Then you can continue to [#Building for Firefox (mozilla-central)](#building-for-firefox-mozilla-central)
 
 ### Useful notes
 
@@ -268,7 +268,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#setting-up-the-moonatkbridge-environment-mozilla-192)
+-   Then you can continue to [#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#setting-up-the-moonatkbridge-environment-mozilla-192)
 
 #### Building for Firefox (mozilla-central)
 
@@ -330,7 +330,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     cd ../gtk-sharp-2-12/ && ./bootstrap-2.12 --prefix=/path/to/my/prefix && make && make install
 
--   Change to moon\_checkout/moon and apply the following patch:
+-   Change to moon_checkout/moon and apply the following patch:
 
 <!-- -->
 
@@ -382,7 +382,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
+-   Then you can continue to [#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
 
 #### Useful notes 2
 
@@ -415,7 +415,7 @@ When developing in MoonAtkBridge, just `make` after you make changes, and re-run
 
 #### Setting up the MoonAtkBridge Environment (mozilla-central)
 
--   MoonAtkBridge requires a *moon* folder in the same level, so you will have to create a symbolic link to moon\_checkout/moon/ first.
+-   MoonAtkBridge requires a *moon* folder in the same level, so you will have to create a symbolic link to moon_checkout/moon/ first.
 
 <!-- -->
 

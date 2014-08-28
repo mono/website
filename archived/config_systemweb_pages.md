@@ -83,9 +83,9 @@ When autoEventWireup is set to false, for events to be invoked, the developer mu
    this.Load += new EventHandler (Page_Load);
 ```
 
-When creating pages with Visual Studio, the default event wireup is set to false. And Visual Studio generates static code that invokes the various events (like Page\_Load) for you.
+When creating pages with Visual Studio, the default event wireup is set to false. And Visual Studio generates static code that invokes the various events (like Page_Load) for you.
 
-When autoEventWireup is set to true the runtime will bind the methods that follow the name pattern Page\_EVENTNAME to the event EVENTNAME. This introduces a bit of a startup problem, as the runtime must first find all the methods and bind them.
+When autoEventWireup is set to true the runtime will bind the methods that follow the name pattern Page_EVENTNAME to the event EVENTNAME. This introduces a bit of a startup problem, as the runtime must first find all the methods and bind them.
 
 For more details see [AutoEventWireup attribute in Microsoft ASP.NET Web Forms](http://www.codeproject.com/aspnet/AutoEventWireup.asp) article in the CodeProject.
 

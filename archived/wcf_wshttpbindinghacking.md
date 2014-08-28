@@ -212,7 +212,7 @@ If a SecurityTokenRequirement is confifured with TokenType as [http://schemas.mi
 SslSecurityTokenProvider implements ICommunicationObject, and thus before its Open() is called before GetTokenCore() is called. When opened, it processes all the WS-Trust negotiation messages. The actual negotiation is exchanged through a set of binary TLS blobs packaged in wst:BinaryExchange element, and the process flows as follows (C is client, S is server below):
 
 -   C-\>S: wst:RST (RequestSecurityToken) with TLS ClientHello
--   S-\>C: wst:RSTR (RequestSecurityTokenResponse) with TLS ServerHello, TLS \# ServerCertificate, TLS CertificateRequest if mutual negotiation, and TLS ServerHelloDone.
+-   S-\>C: wst:RSTR (RequestSecurityTokenResponse) with TLS ServerHello, TLS # ServerCertificate, TLS CertificateRequest if mutual negotiation, and TLS ServerHelloDone.
 -   C-\>S: wst:RSTR with TLS ClientKeyExchange and TLS Finished.
 -   S-\>C: wst:RSTR with TLS ChangeCipherSpec and TLS ServerFinished.
 

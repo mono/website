@@ -49,7 +49,7 @@ Once all of that is done, you can do a 'make test' from the top mcs directory. Y
 Provide an unique error message for Assert()
 --------------------------------------------
 
-Include an unique message for each Assert() so that when the assert fails, it is trivial to locate the failing one. Otherwise, it may be difficult to determine which part of the test is failing. A good way to ensure unique messages is to use something like \#A01, \#A02 etc.
+Include an unique message for each Assert() so that when the assert fails, it is trivial to locate the failing one. Otherwise, it may be difficult to determine which part of the test is failing. A good way to ensure unique messages is to use something like #A01, #A02 etc.
 
 Bad:
 
@@ -119,11 +119,11 @@ On Windows, you can simply use "make run-test-ondotnet" to run class libraries t
 Miscellaneous Tips
 ------------------
 
--   If you use Emacs, you might want to use the .emacs file and the package developed by Brad Merrill [mailto:zbrad@cybercom.net](mailto:zbrad@cybercom.net). It will allow you to highlight and indent in C\# style in your Emacs editor. (XEmacs will still work but it'll also complain).
+-   If you use Emacs, you might want to use the .emacs file and the package developed by Brad Merrill [mailto:zbrad@cybercom.net](mailto:zbrad@cybercom.net). It will allow you to highlight and indent in C# style in your Emacs editor. (XEmacs will still work but it'll also complain).
 
--   [MonoDevelop](http://monodevelop.com) is a GPLed IDE developed by IC\#Code (SharpDevelop) and ported to Mono/Gtk\#.
+-   [MonoDevelop](http://monodevelop.com) is a GPLed IDE developed by IC#Code (SharpDevelop) and ported to Mono/Gtk#.
 
--   For those who Java: [A comparison of Microsoft's C\# programming language to Sun Microsystem's Java Programming language](http://www.25hoursaday.com/CsharpVsJava.html) by Dare Obasanjo is a really good (very complete) text to read.
+-   For those who Java: [A comparison of Microsoft's C# programming language to Sun Microsystem's Java Programming language](http://www.25hoursaday.com/CsharpVsJava.html) by Dare Obasanjo is a really good (very complete) text to read.
 
 -   Suggest this point and more, now I can't think of anything more.
 

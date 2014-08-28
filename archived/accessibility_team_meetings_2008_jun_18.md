@@ -19,11 +19,11 @@ T minus 1 minute
 
 ** **
 
--!- mgorse [\~mgorse@130.57.22.201] has joined \#mono-a11y
+-!- mgorse [\~mgorse@130.57.22.201] has joined #mono-a11y
 
 07:00
 
--!- mode/\#mono-a11y [+o mgorse] by sandy
+-!- mode/#mono-a11y [+o mgorse] by sandy
 
 **\<@calvin\> **
 
@@ -203,7 +203,7 @@ calvin: I'm not sure, but I haven't come out with any other idea, as the events 
 
 **\<@knocte\> **
 
-maybe I can come out with a signal catcher in C\# from the ATK side, I didn't think about that
+maybe I can come out with a signal catcher in C# from the ATK side, I didn't think about that
 
 **\<@calvin\> **
 
@@ -223,7 +223,7 @@ ok, bgmerrell: go
 
 ** **
 
--!- jpallen [\~jpallen@137.65.132.2] has joined \#mono-a11y
+-!- jpallen [\~jpallen@137.65.132.2] has joined #mono-a11y
 
 **\<@bgmerrell\> **
 
@@ -435,7 +435,7 @@ okay, turn me
 
 i have finished "test coding standard" wiki page.
 
-have updated winforms application samples base on coding standard and also have updated Test\_Plan\_WinForms\_Controls wiki page.
+have updated winforms application samples base on coding standard and also have updated Test_Plan_WinForms_Controls wiki page.
 
 i have been writing and learning a Strongwind test against gtk application(treeview control) as practice. it can be run but still have some problems & questions should be solved by discuss with Brian.
 
@@ -515,7 +515,7 @@ sandy: do you want to briefly cover the parallel mono environment stuff and then
 
 sure thing
 
-okay, so I've updated this wiki page: Accessibility:\_B uildingProviderSide
+okay, so I've updated this wiki page: Accessibility:_B uildingProviderSide
 
 I plan to keep instructions there
 
@@ -525,7 +525,7 @@ Basically, anybody who is actually going to build our code needs to have some mo
 
 and the safest way to do that is by installing Mono into a completely separate area, and having a completely different environment that you run whenever you want to use that mono installation
 
-the instructions for doing that are here: Parallel\_Mono\_Environments
+the instructions for doing that are here: Parallel_Mono_Environments
 
 07:45
 

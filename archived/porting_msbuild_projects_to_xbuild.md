@@ -33,7 +33,7 @@ You should continue to use windows style paths in the msbuild project files. The
 Casing
 ------
 
-Linux has case-sensitive filenames, so, the project files should have the correct case for file and directory names. As a temporary workaround, you could run xbuild with the environment variable "MONO\_IOMAP=case"
+Linux has case-sensitive filenames, so, the project files should have the correct case for file and directory names. As a temporary workaround, you could run xbuild with the environment variable "MONO_IOMAP=case"
 
 ``` bash
      $ MONO_IOMAP=case xbuild foo.sln
@@ -51,7 +51,7 @@ Sometimes you'll have items that are platform specific, for example, reference t
    <Reference Include="NonWindows.Specific.dll" Condition=" '$(OS)' == 'Unix' "/>
 ```
 
-The default environment variable 'OS' is set to "Windows\_NT" on all currently supported versions on Windows. xbuild sets this to "Unix" on non-Windows platforms, even on MacOS.
+The default environment variable 'OS' is set to "Windows_NT" on all currently supported versions on Windows. xbuild sets this to "Unix" on non-Windows platforms, even on MacOS.
 
 Pre/PostBuildEvents
 -------------------

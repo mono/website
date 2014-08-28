@@ -71,7 +71,7 @@ Full AOT is a fairly straightforward process except in the case of generic insta
 
 If you depend on the full AOT option because of OS limitations, you should make sure to test your software using the "--full-aot" option to ensure that no dynamic code is used by your application.
 
- This testing is required because some of Mono's class libraries generate code dynamically (for example LINQ's Expression.Compile() method for expression ASTs) or load code at runtime (for example the default operation mode for the XML serializer, see MONO\_XML\_SERIALIZER\_THS on the manual page to configure this).
+ This testing is required because some of Mono's class libraries generate code dynamically (for example LINQ's Expression.Compile() method for expression ASTs) or load code at runtime (for example the default operation mode for the XML serializer, see MONO_XML_SERIALIZER_THS on the manual page to configure this).
 
 #### Limitation: Platform
 

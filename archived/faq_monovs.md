@@ -84,7 +84,7 @@ Your application gets placed in: /tmp/monovs-{random-guid}
 
 However, it is only there until you stop running it. Once you close it via the tray icon on windows or the application finished running, it will delete this directory (or else it would fill up your hard drive).
 
-If you don't want it to get deleted on completion, you can change the "Delete\_Temp\_Directory" setting in the configuration files:
+If you don't want it to get deleted on completion, you can change the "Delete_Temp_Directory" setting in the configuration files:
 
 -   /usr/lib/monovs-gui-server.exe.config for the GUI version
 -   /usr/lib/monovs-server.exe.config for the command line version

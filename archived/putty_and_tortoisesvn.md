@@ -47,7 +47,7 @@ Install PuttyGen
 
 ### generate a .ppk
 
-Convert your id\_[dr]sa private key to a .ppk using PuttyGen
+Convert your id_[dr]sa private key to a .ppk using PuttyGen
 
 -   run puttygen
 -   select the **Load** button

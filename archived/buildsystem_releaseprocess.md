@@ -38,7 +38,7 @@ Typically the same modules are released as a set:
 -   gluezilla
 -   libgdiplus
 -   mcs
--   mod\_mono
+-   mod_mono
 -   mono
 -   mono-basic
 -   mono-tools
@@ -49,7 +49,7 @@ Other projects usually use their own schedule:
 
 -   monodevelop
 -   moonlight
--   gtk\#
+-   gtk#
 
 Mono versions for tags and branches in subversion don't use periods in the version numbers. IE: branches/mono-1-9 and tags/mono-1-9
 
@@ -68,7 +68,7 @@ If you're building from a branch, there's a helper script to see changes:
 
     release/packaging/mono_branch_diff
 
-Before you actually create the tag, the version needs to be updated in the source. This is usually done in 'configure.in'. (For hints on how to update a specific module, you can check the module's release/packaging/def file for update\_version\_file, otherwise configure.in is updated)
+Before you actually create the tag, the version needs to be updated in the source. This is usually done in 'configure.in'. (For hints on how to update a specific module, you can check the module's release/packaging/def file for update_version_file, otherwise configure.in is updated)
 
 Make sure this version update happens in trunk or on the branch; NEVER commit to a tag.
 
@@ -102,11 +102,11 @@ To build mono 1.9 on all the platforms you can run:
 
 That will simultaneously build mono on all the distros/platforms.
 
-If several modules need to be built, you'll need to run ./build-all for each of those modules in their build dependency order. The order can be deduced from MONO\_DEPS in each of the module's .def file.
+If several modules need to be built, you'll need to run ./build-all for each of those modules in their build dependency order. The order can be deduced from MONO_DEPS in each of the module's .def file.
 
 The best way to monitor the builds is through the webview.
 
-Note: aside about build mono from a branch: If the .spec files have diverged between trunk and the mono branch, you'll need to temporarily copy packaging/rpm\_defs/mono-branch/mono-core.spec to packaging/rpm\_defs/mono . After the builds and before you enable the monobuild scheduler again, don't forget to revert this change.
+Note: aside about build mono from a branch: If the .spec files have diverged between trunk and the mono branch, you'll need to temporarily copy packaging/rpm_defs/mono-branch/mono-core.spec to packaging/rpm_defs/mono . After the builds and before you enable the monobuild scheduler again, don't forget to revert this change.
 
 Installers
 ----------
@@ -142,7 +142,7 @@ Publishing Previews and final release
 
 Once a build is done QA tests the build. In case something is found, we publish a 'preview' instead of a final release. This will give us a chance to retag and rebuild before shipping the final version.
 
-To publish the preview, first update release/packaging/bundles/PRE-RELEASE. Update 'archive\_version' as well as 'bundle\_short\_desc'. Then run from release/packaging:
+To publish the preview, first update release/packaging/bundles/PRE-RELEASE. Update 'archive_version' as well as 'bundle_short_desc'. Then run from release/packaging:
 
     ./upload-preview
 

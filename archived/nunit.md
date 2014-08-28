@@ -13,7 +13,7 @@ What Is NUnit?
 
 NUnit is a unit-testing framework for all languages running on Mono or .NET.
 
-Initially ported from JUnit, it was modified to take advantage of custom attributes, which are used to mark test classes and methods. It is now in its fifth major release. NUnit is written entirely in C\# and runs on all platforms that support Mono.
+Initially ported from JUnit, it was modified to take advantage of custom attributes, which are used to mark test classes and methods. It is now in its fifth major release. NUnit is written entirely in C# and runs on all platforms that support Mono.
 
 What About NUnitLite?
 ---------------------

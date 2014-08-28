@@ -21,7 +21,7 @@ To check if DTrace is enabled in your copy of Mono, run the following command:
 
 This will list all probes of the "mono" provider in the executable "mono" or display an error when no probes were found.
 
-Note that using the dtrace command may require additional priviledges. On Mac OS X use `sudo`. On OpenSolaris use `pfexec` or adjust the user's priviledges (/etc/user\_attr) to include `dtrace_user` and `dtrace_proc`, e.g., (as root) `usermod -K defaultpriv=basic,dtrace_user,dtrace_proc youruser`.
+Note that using the dtrace command may require additional priviledges. On Mac OS X use `sudo`. On OpenSolaris use `pfexec` or adjust the user's priviledges (/etc/user_attr) to include `dtrace_user` and `dtrace_proc`, e.g., (as root) `usermod -K defaultpriv=basic,dtrace_user,dtrace_proc youruser`.
 
 The mono provider
 -----------------

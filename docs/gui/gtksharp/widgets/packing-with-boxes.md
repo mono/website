@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp:_Packing_with_Boxes/
 ---
 
-If you've worked a lot with Windows GUI programming, you're probably used to positioning widgets using coordinates. Although this is possible with Gtk\#, the preferred way of aligning widgets is with boxes. Boxes are invisible widget containers. They come in two forms: horizontal (HBox) and vertical (VBox). While this is more difficult for a newcomer, it has some advantages:
+If you've worked a lot with Windows GUI programming, you're probably used to positioning widgets using coordinates. Although this is possible with Gtk#, the preferred way of aligning widgets is with boxes. Boxes are invisible widget containers. They come in two forms: horizontal (HBox) and vertical (VBox). While this is more difficult for a newcomer, it has some advantages:
 
 -   Independent of screensize
 -   Easier Internationalization
@@ -16,12 +16,12 @@ HBox and VBox
 
 For a VBox, PackStart will pack the box starting at the top, and PackEnd will pack it starting at the bottom. For an HBox, PackStart will pack the box from left to right, and PackEnd will pack it right to left.
 
-PackStart and PackEnd tell Gtk\# where you want to place your widgets; the library will handle automatic resizing and other nifty things. There are also a number of options as to how your widgets should be packed; read the API documentation for HBox and VBox for more details. The resulting layout system is significantly more flexible than pixel-by-pixel coordinate layouts.
+PackStart and PackEnd tell Gtk# where you want to place your widgets; the library will handle automatic resizing and other nifty things. There are also a number of options as to how your widgets should be packed; read the API documentation for HBox and VBox for more details. The resulting layout system is significantly more flexible than pixel-by-pixel coordinate layouts.
 
 Using the Boxes
 ===============
 
-Because the Gtk\# packing system is so flexible, it can be confusing at first. In the end, however, there are basically five different styles of packing.
+Because the Gtk# packing system is so flexible, it can be confusing at first. In the end, however, there are basically five different styles of packing.
 
 [Image:packbox.png]
 

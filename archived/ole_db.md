@@ -51,7 +51,7 @@ Info
 Current Status
 --------------
 
--   Not actively maintained. Please use another managed provider, System.Data.Odbc, or GDA\# instead.
+-   Not actively maintained. Please use another managed provider, System.Data.Odbc, or GDA# instead.
 
 -   The OleDb provider is working with libgda. The C-Sharp bindings to libgda currently work - meaning they can compile, run, and you can connect to a PostgreSQL database via libgda via the C-Sharp bindings to libgda.
 
@@ -89,7 +89,7 @@ providerName is the name of the Provider you use, such as, PostgreSQL, MySQL, et
 
 -   See the test TestOleDb.cs found at mcs/class/System.Data/System.Data.OleDb
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -139,7 +139,7 @@ providerName is the name of the Provider you use, such as, PostgreSQL, MySQL, et
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 -   Save the example to a file, such as, TestExample.cs
 
 -   Build:

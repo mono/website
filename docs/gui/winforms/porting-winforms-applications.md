@@ -41,17 +41,17 @@ The results from the MoMA scan can be seen [here](http://jpobst.com/moma/nclassm
 
 Methods we are using that are not in Mono 1.2.4:
 
--   void ListView.add\_ItemSelectionChanged (ListViewItemSelectionChangedEventHandler)
--   void TreeView.set\_ShowNodeToolTips (bool)
--   void TreeNode.set\_ToolTipText (string)
--   void PrintDialog.set\_UseEXDialog (bool)
+-   void ListView.add_ItemSelectionChanged (ListViewItemSelectionChangedEventHandler)
+-   void TreeView.set_ShowNodeToolTips (bool)
+-   void TreeNode.set_ToolTipText (string)
+-   void PrintDialog.set_UseEXDialog (bool)
 
 Methods that are marked with a [MonoTODO] attribute in Mono.1.2.4:
 
--   void Control.set\_AutoSize (bool) - This method currently does nothing
--   void ContainerControl.set\_AutoScaleMode (AutoScaleMode) - Call scaling method
--   void ComboBox.set\_AutoCompleteMode (AutoCompleteMode) - AutoCompletion algorithm is currently not implemented.
--   void ComboBox.set\_AutoCompleteSource (AutoCompleteSource) - AutoCompletion algorithm is currently not implemented.
+-   void Control.set_AutoSize (bool) - This method currently does nothing
+-   void ContainerControl.set_AutoScaleMode (AutoScaleMode) - Call scaling method
+-   void ComboBox.set_AutoCompleteMode (AutoCompleteMode) - AutoCompletion algorithm is currently not implemented.
+-   void ComboBox.set_AutoCompleteSource (AutoCompleteSource) - AutoCompletion algorithm is currently not implemented.
 
 Looking at the report, we can immediately see several places we will most likely need to make adjustments for our program to work.
 
@@ -93,7 +93,7 @@ Porting Strategies
 There are several approaches to porting code, depending on your goals.
 
 -   The unsupported code can simply be removed or commented out if it is not needed.
--   Compiler conditional directives (\#if) can be used to create separate executables for .Net and Mono.
+-   Compiler conditional directives (#if) can be used to create separate executables for .Net and Mono.
 -   The runtime (.Net or Mono) can be detected and use different code.
 -   The code can be rewritten to use supported methods in Mono.
 
@@ -197,7 +197,7 @@ Which can be modified to:
   this.lstItems.SelectedIndexChanged += new System.EventHandler (this.lstItems_ItemSelectionChanged);
 ```
 
-We then modify lstItems\_ItemSelectionChanged from:
+We then modify lstItems_ItemSelectionChanged from:
 
 ``` csharp
   private void lstItems_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -253,7 +253,7 @@ MembersDialog.designer.cs - Line 238
   this.lstMembers.SelectedIndexChanged += new System.EventHandler (this.lstMembers_ItemSelectionChanged);
 ```
 
-Rewriting the listMembers\_ItemSelectionChanged method takes a little bit more effort. One way is to change it from:
+Rewriting the listMembers_ItemSelectionChanged method takes a little bit more effort. One way is to change it from:
 
 ``` csharp
 private void lstMembers_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -309,7 +309,7 @@ private void lstMembers_ItemSelectionChanged(object sender, EventArgs e)
 }
 ```
 
-Also, make the changes to lstItems.ItemSelectionChanged and lstItems\_ItemSelectionChanged outlined in the "Rewriting Code" section above.
+Also, make the changes to lstItems.ItemSelectionChanged and lstItems_ItemSelectionChanged outlined in the "Rewriting Code" section above.
 
 With these changes made, rebuild the solution in Visual Studio. Then run the NClass.NClass.exe executable again. This time we get much better results:
 

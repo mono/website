@@ -33,7 +33,7 @@ This is a virtual package which depends on all the packages that constitute the 
 
 -   mono-core -- The Mono CIL runtime, suitable for running .NET code
 
-This package contains the core of the Mono runtime including its Virtual Machine, Just-in-time compiler, C\# compiler, security tools and libraries (corlib, XML, System.Security, System.Drawing, ZipLib, I18N, Cairo and Mono.\*)
+This package contains the core of the Mono runtime including its Virtual Machine, Just-in-time compiler, C# compiler, security tools and libraries (corlib, XML, System.Security, System.Drawing, ZipLib, I18N, Cairo and Mono.\*)
 
 -   mono-devel -- Development tools and headers for Mono
 
@@ -104,46 +104,46 @@ This package provides a fully managed implementation of System.Windows.Forms, th
 
 This provides an implementation of the GDI+ API, used for representing graphical objects and transmitting them to output devices such as monitors and printers including advanced features such as alpha blending, gradient shading, complex path management and intrinsic support for modern graphics-file formats.
 
-XSP/mod\_mono
+XSP/mod_mono
 -------------
 
 -   xsp -- The XSP server is a small web server that hosts ASP.NET.
 
-This package contains XSP, a standalone web server written in C\# that can be used to run ASP.NET applications as well as a set of pages, controls and web services that you can use to experience ASP.NET.
+This package contains XSP, a standalone web server written in C# that can be used to run ASP.NET applications as well as a set of pages, controls and web services that you can use to experience ASP.NET.
 
--   mod\_mono -- A module to deploy an ASP.NET application on Apache with Mono!
+-   mod_mono -- A module to deploy an ASP.NET application on Apache with Mono!
 
-This package provides mod\_mono, a package that allows Apache ([http://httpd.apache.org](http://httpd.apache.org)) to serve ASP.NET pages by proxying the requests to a slightly modified version of our XSP server, called mod-mono-server, that is installed along with XSP
+This package provides mod_mono, a package that allows Apache ([http://httpd.apache.org](http://httpd.apache.org)) to serve ASP.NET pages by proxying the requests to a slightly modified version of our XSP server, called mod-mono-server, that is installed along with XSP
 
-Gtk\# 1.x
+Gtk# 1.x
 ---------
 
 -   gtk-sharp -- set of .NET bindings for the gtk+ ([http://www.gtk.org/](http://www.gtk.org/)) toolkit and assorted GNOME ([http://www.gnome.org/](http://www.gnome.org/)) libraries
 
-This package provides a library that allows you to build fully native graphical Gnome application using Mono. GTK\# is an event-driven system, based on Gtk+, the Gnome graphical toolkit and cross-platform. Gtk\# includes bindings for Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp 1.x binds Gtk+ 2.0 and associated libraries
+This package provides a library that allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system, based on Gtk+, the Gnome graphical toolkit and cross-platform. Gtk# includes bindings for Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp 1.x binds Gtk+ 2.0 and associated libraries
 
 -   gtk-sharp-gapi -- Glib and GObject C source parser and C generator for the creation and maintenance of managed bindings for Mono and .NET
 
-This package provides developer tools for the creation and maintainance of managed bindings to native libraries which utilize glib ([http://developer.gnome.org/doc/API/glib/](http://developer.gnome.org/doc/API/glib/)) and GObject ([http://developer.gnome.org/doc/API/2.0/gobject/](http://developer.gnome.org/doc/API/2.0/gobject/)). Some examples of libraries currently bound using the GAPI tools and found in Gtk\# include Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas.
+This package provides developer tools for the creation and maintainance of managed bindings to native libraries which utilize glib ([http://developer.gnome.org/doc/API/glib/](http://developer.gnome.org/doc/API/glib/)) and GObject ([http://developer.gnome.org/doc/API/2.0/gobject/](http://developer.gnome.org/doc/API/2.0/gobject/)). Some examples of libraries currently bound using the GAPI tools and found in Gtk# include Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas.
 
 Development Tools
 -----------------
 
 -   monodoc -- Monodoc is a graphical documentation browser for Mono
 
-This package includes Monodoc, a Gtk\# based graphical documentation browser for Mono and associated libraries.
+This package includes Monodoc, a Gtk# based graphical documentation browser for Mono and associated libraries.
 
 -   gecko-sharp-2.0 -- Mono bindings for the Gecko engine
 
-This package provides Mono bindings for the Gecko engine, through an easy-to-use widget that will allow you to embed a Mozilla browser window into your Gtk\# application.
+This package provides Mono bindings for the Gecko engine, through an easy-to-use widget that will allow you to embed a Mozilla browser window into your Gtk# application.
 
 -   gtksourceview-sharp-2.0 -- a Mono bindings for GtkSourceView
 
 This package provides Mono bindings for GtkSourceview, a child of the Gtk+ text widget implementing syntax highlighting and other features typical of a source editor
 
--   monodevelop -- A full-featured IDE for Mono and Gtk\#
+-   monodevelop -- A full-featured IDE for Mono and Gtk#
 
-This package provides MonoDevelop, a full-featured IDE for Mono with syntax coloring, code completion, debugging, project management and support for C\#, VB.NET, Java, Boo, Nermerle and ILasm.
+This package provides MonoDevelop, a full-featured IDE for Mono with syntax coloring, code completion, debugging, project management and support for C#, VB.NET, Java, Boo, Nermerle and ILasm.
 
 -   boo -- A CLI scripting language for Mono
 
@@ -158,14 +158,14 @@ This package provides IKVM.NET, an open source Java compatibility module for Mon
        * A .NET implementation of the Java class libraries
        * Tools that enable Java and .NET interoperability
 
-Gtk\# 2.x
+Gtk# 2.x
 ---------
 
 -   gtk-sharp2 -- .Net language bindings for Gtk+ and GNOME
 
-This package provides a library that allows you to build fully native graphical Gnome application using Mono. GTK\# is an event-driven system, based on Gtk+, the Gnome graphical toolkit and cross-platform. Gtk\# includes bindings for Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp 2.x binds Gtk+ 2.4 and associated libraries
+This package provides a library that allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system, based on Gtk+, the Gnome graphical toolkit and cross-platform. Gtk# includes bindings for Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp 2.x binds Gtk+ 2.4 and associated libraries
 
 -   gtk-sharp2-gapi -- Glib and GObject C source parser and C generator for the creation and maintenance of managed bindings for Mono and .NET
 
-This package provides developer tools for the creation and maintainance of managed bindings to native libraries which utilize glib ([http://developer.gnome.org/doc/API/glib/](http://developer.gnome.org/doc/API/glib/)) and GObject ([http://developer.gnome.org/doc/API/2.0/gobject/](http://developer.gnome.org/doc/API/2.0/gobject/)). Some examples of libraries currently bound using the GAPI tools and found in Gtk\# include Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp2-gapi is used to bind Gtk+ 2.4 and associated libraries.
+This package provides developer tools for the creation and maintainance of managed bindings to native libraries which utilize glib ([http://developer.gnome.org/doc/API/glib/](http://developer.gnome.org/doc/API/glib/)) and GObject ([http://developer.gnome.org/doc/API/2.0/gobject/](http://developer.gnome.org/doc/API/2.0/gobject/)). Some examples of libraries currently bound using the GAPI tools and found in Gtk# include Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp2-gapi is used to bind Gtk+ 2.4 and associated libraries.
 

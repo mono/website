@@ -29,7 +29,7 @@ BindingMoko
 HowTo: Create a Binding for a GObject-based Library
 ===================================================
 
-This article is a simple look at how to produce a managed binding for a GObject library written in C. It uses the GAPI toolset to produce a set of C\# source files binding the public API of the library. The target library is libmokoui2 from the openmoko project.
+This article is a simple look at how to produce a managed binding for a GObject library written in C. It uses the GAPI toolset to produce a set of C# source files binding the public API of the library. The target library is libmokoui2 from the openmoko project.
 
 Parsing the Sources
 -------------------
@@ -63,14 +63,14 @@ Assuming the library adheres closely to GNOME coding standards, you should see o
      funcs: 0 types: 0  classes: 3
      props: 9 childprops:  signals: 3
 
-Generating C\# sources
+Generating C# sources
 ----------------------
 
 To produce a set of binding sources, you need to run the api.xml file through the code generator. For the example moko binding, I used the following command:
 
      gapi2-codegen --generate libmokoui2-api.xml `pkg-config --cflags gtk-sharp-2.0` --assembly-name=moko-sharp --outdir=generated
 
-We pass the api.xml file produced by the parse as the --generate arg. The pkg-config command gets the GAPI api.xml files associated with the gtk-sharp assemblies, because libmokoui2 depends on gtk+. The assembly-name arg specifies the output target assembly without the .dll extension, and outdir specifies a relative path to place the C\# source files. The directory will be created if it doesn't exist.
+We pass the api.xml file produced by the parse as the --generate arg. The pkg-config command gets the GAPI api.xml files associated with the gtk-sharp assemblies, because libmokoui2 depends on gtk+. The assembly-name arg specifies the output target assembly without the .dll extension, and outdir specifies a relative path to place the C# source files. The directory will be created if it doesn't exist.
 
 This command will produce output similar to the following:
 
@@ -93,7 +93,7 @@ Summary
 
 This was a very simple example, because the libmokoui2 sources were very clean from a coding standard perspective. With C allowing so much freedom, any library you bind may provide more resistance to the tools. This shows up as console spew during the parse, generate, or compile stage.
 
-Parser warnings can sometimes be worked around by patching the source files to make them more standardized. If the source code seems reasonable, it is entirely reasonable to file bugs against Gtk\# to extend the parser to deal with the code. Generation warnings can identify problems with unexpected parameter types. Most generation warnings just result in unbound API.
+Parser warnings can sometimes be worked around by patching the source files to make them more standardized. If the source code seems reasonable, it is entirely reasonable to file bugs against Gtk# to extend the parser to deal with the code. Generation warnings can identify problems with unexpected parameter types. Most generation warnings just result in unbound API.
 
 Compile errors can occur because of name conflicts in the bound api. Often, C methods with collide with signal names, for example. These sorts of issues can be worked around using gapi2-fixup and a metadata rule file. The fixup tool is a highly flexible way to markup the api.xml file. More information on metadata rules is available on the [GAPI](/GAPI "GAPI") reference wiki page.
 

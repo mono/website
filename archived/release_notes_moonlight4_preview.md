@@ -169,9 +169,9 @@ If there are chromium packages as part of your linux distribution, those might f
 
 Some other chrome issue regarding libjpeg versions are:
 
--   [chromium issue \#31427](http://code.google.com/p/chromium/issues/detail?id=31427)
--   [chromium issue \#30205](http://code.google.com/p/chromium/issues/detail?id=30205)
--   [chromium issue \#48789 (re: libjpeg-turbo)](http://code.google.com/p/chromium/issues/detail?id=48789)
+-   [chromium issue #31427](http://code.google.com/p/chromium/issues/detail?id=31427)
+-   [chromium issue #30205](http://code.google.com/p/chromium/issues/detail?id=30205)
+-   [chromium issue #48789 (re: libjpeg-turbo)](http://code.google.com/p/chromium/issues/detail?id=48789)
 
 New Codecs
 ----------

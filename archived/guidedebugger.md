@@ -214,7 +214,7 @@ If you look at the example above, you'll notice that some threads are marked as 
 Running and single stepping
 ---------------------------
 
-The debugger has several commands to single step the target - unless you use the **-thread** argument, they all operate on the current thread (see [\#Displaying processes and threads](#displaying-processes-and-threads) for details):
+The debugger has several commands to single step the target - unless you use the **-thread** argument, they all operate on the current thread (see [#Displaying processes and threads](#displaying-processes-and-threads) for details):
 
 **continue**, **c**
 
@@ -338,7 +338,7 @@ Print the type of an expression
     (mdb) ptype a
     System.Int32
 
-See [\#Expressions](#expressions) for details.
+See [#Expressions](#expressions) for details.
 
 Displaying expressions
 ----------------------
@@ -443,7 +443,7 @@ Note how similar it is to invoking a method; you cannot use the method name alon
     (mdb) b X.Test
     Breakpoint 1 at X.Test(System.Int64)
 
-Of course, this only applies if you're in static context - just like you'd do things in C\#:
+Of course, this only applies if you're in static context - just like you'd do things in C#:
 
     Process @3 stopped at #0: 0x40bc082e in X.Test(System.Int64)+0xe at Test.cs:17.
     17      Console.WriteLine ("Test: {0}", a);
@@ -600,7 +600,7 @@ To disassembly the current instruction or the current method, use the *dis* comm
     0x401b747f  leave
     0x401b7480  ret
 
-Like the **examine** command, **dis** takes an optional pointer expression as argument (see [\#Pointer expressions](#pointer-expressions) for details):
+Like the **examine** command, **dis** takes an optional pointer expression as argument (see [#Pointer expressions](#pointer-expressions) for details):
 
     (mdb) dis %rip
     0x400179d6      mov    %r15,%rdi
@@ -668,7 +668,7 @@ Shows all the loaded modules in the current program
       14    y     y  mcs, Version=1.1.11.0, Culture=neutral, PublicKeyToken=0907d8af90186095
     (mdb)
 
-**show sources *module\_id***
+**show sources *module_id***
 
 Shows the sources for a given module.
 
@@ -695,7 +695,7 @@ Examining Memory
 
 Memory dump
 
-The *examine* (short: *x*) command takes a pointer expression as argument (see [\#Pointer expressions](#pointer-expressions) for details). You can for instance use a processor register, an absolute address or the address of a variable:
+The *examine* (short: *x*) command takes a pointer expression as argument (see [#Pointer expressions](#pointer-expressions) for details). You can for instance use a processor register, an absolute address or the address of a variable:
 
     (mdb) p %ebp
     0x40bbe880
@@ -755,11 +755,11 @@ So, to inspect a double, one would use "/fg", for a single "/fw", for an IntPtr 
 Expressions
 ===========
 
-The debugger has a built-in expression evaluator which uses a C\#-like language. You can not only view simple expressions like examining a variable, but also do more complex things like accessing properties, indexers or even invoking methods in the target.
+The debugger has a built-in expression evaluator which uses a C#-like language. You can not only view simple expressions like examining a variable, but also do more complex things like accessing properties, indexers or even invoking methods in the target.
 
 ### Simple expressions
 
-Literals work just like in C\#:
+Literals work just like in C#:
 
     (mdb) print 8
     8
@@ -792,7 +792,7 @@ Some of the commands require a pointer expression (for instance **disassemble**,
 
 The most common usage for pointers is taking the address of something, like a variable for instance. You do this with the *&* (address of) expression.
 
-Note that unlike in C or C\#, this expression gives you the address of an object and not the address where a pointer to the object can be found.
+Note that unlike in C or C#, this expression gives you the address of an object and not the address where a pointer to the object can be found.
 
 Let's assume you have a variable called *x* which is stored on the stack at *%ebp-0x18*. If *x* is a reference type, *%ebp-0x18* just contains a pointer to the actual object while for value types, the object itself can be found at *%ebp-0x18*. However, when you type *print &x* in mdb, you don't need to care about these technical details - it'll always print the address where the first byte of *x*'s contents can be found.
 

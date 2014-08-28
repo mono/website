@@ -70,7 +70,7 @@ What we see here is that mono is making several attemps to locate the missing li
 If a library location has not been explicitly specified in a [DllMap](/docs/advanced/pinvoke/dllmap/) entry in an application or assembly .config file, Mono will search for a library in a few places:
 
 -   The directory where the referencing image was loaded from.
--   In any place the system's dynamic loader is configured to look for shared libraries. For example on Linux this is specified in the \$LD\_LIBRARY\_PATH environment variable and the /etc/ld.so.conf file. On windows the \$PATH environment variable is used, instead.
+-   In any place the system's dynamic loader is configured to look for shared libraries. For example on Linux this is specified in the \$LD_LIBRARY_PATH environment variable and the /etc/ld.so.conf file. On windows the \$PATH environment variable is used, instead.
 
 The next step in resolving the issue is locating the file on your system.
 
@@ -94,12 +94,12 @@ The dynamic linker should now know about all the libraries in this path. You can
 
 Yay! Your application should now run properly.
 
-NOTE: As mentioned above you can also set the \$LD\_LIBRARY\_PATH environment variable to the path containing the library, but this is not as recomended because it can cause other problems and is more difficult to maintain.
+NOTE: As mentioned above you can also set the \$LD_LIBRARY_PATH environment variable to the path containing the library, but this is not as recomended because it can cause other problems and is more difficult to maintain.
 
 Additional Information
 ----------------------
 
--   [Assemblies\_and\_the\_GAC](/docs/advanced/assemblies-and-the-gac/)
+-   [Assemblies_and_the_GAC](/docs/advanced/assemblies-and-the-gac/)
 -   [DllMap](/docs/advanced/pinvoke/dllmap/)
 -   [How the Runtime Locates Assemblies (MSDN)](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconhowruntimelocatesassemblies.asp)
 

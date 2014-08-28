@@ -40,7 +40,7 @@ There are a lot of global data structures which can be protected by a 'simple' l
 
 Simple locks include, at least, the following :
 
--   the per-image lock acquired by using mono\_image\_(un)lock functions.
+-   the per-image lock acquired by using mono_image_(un)lock functions.
 
 #### The loader lock
 
@@ -70,9 +70,9 @@ Our locking hierarchy so far looks like this:
 
 Some common scenarios:
 
--   if a function needs to access a data structure, then it should lock it itself, and do not count on its caller locking it. So for example, the image-\>class\_cache hash table would be locked by mono\_class\_get().
+-   if a function needs to access a data structure, then it should lock it itself, and do not count on its caller locking it. So for example, the image-\>class_cache hash table would be locked by mono_class_get().
 
--   there are lots of places where a runtime data structure is created and stored in a cache. In these places, care must be taken to avoid multiple threads creating the same runtime structure, for example, two threads might call mono\_class\_get () with the same class name. There are two choices here:
+-   there are lots of places where a runtime data structure is created and stored in a cache. In these places, care must be taken to avoid multiple threads creating the same runtime structure, for example, two threads might call mono_class_get () with the same class name. There are two choices here:
 
 <!-- -->
 
@@ -119,7 +119,7 @@ This solution does not present scalability problems, but the created item might 
 
 Mono now have a lock tracer that allows to record the locking behavior of the runtime during execution and later verify it's correctness.
 
-To enable lock tracer support define LOCK\_TRACER in mono/mono/metadata/lock-tracer.h and recompile mono. To enable it at runtime define the MONO\_ENABLE\_LOCK\_TRACER environment variable.
+To enable lock tracer support define LOCK_TRACER in mono/mono/metadata/lock-tracer.h and recompile mono. To enable it at runtime define the MONO_ENABLE_LOCK_TRACER environment variable.
 
 The lock tracer produces a file in the same directory of the application, it's named 'lock.ZZZ' where ZZZ is the pid of the mono process.
 

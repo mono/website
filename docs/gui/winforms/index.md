@@ -14,7 +14,7 @@ Quick Resources
 -   [Guide: Getting Started](/docs/gui/winforms/getting-started-guide/)
 -   [Guide: Porting Winforms Applications to Mono](/docs/gui/winforms/porting-winforms-applications/)
 -   [Guide: Debugging Winforms Applications with Visual Studio](/docs/gui/winforms/debugging-with-mwf/)
--   [Tutorial: Using Winforms with Mono/C\#](http://zetcode.com/tutorials/monowinformstutorial/)
+-   [Tutorial: Using Winforms with Mono/C#](http://zetcode.com/tutorials/monowinformstutorial/)
 -   [Frequently Asked Questions about WinForms](/docs/faq/winforms/)
 -   Bugs [Current](http://bugzilla.novell.com/buglist.cgi?product=Mono%3A+Class+Libraries&component=Windows.Forms&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=bugs.bug_id), [Submit New](http://bugzilla.novell.com/enter_bug.cgi?alias=&assigned_to=&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=Normal&bug_status=NEW&cf_foundby=---&cf_nts_priority=&cf_nts_support_num=&cf_partnerid=&comment=Description%20of%20Problem%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20problem%3A%0D%0A1.%20%0D%0A2.%20%0D%0A%0D%0A%0D%0AActual%20Results%3A%0D%0A%0D%0A%0D%0AExpected%20Results%3A%0D%0A%0D%0A%0D%0AHow%20often%20does%20this%20happen%3F%20%0D%0A%0D%0A%0D%0AAdditional%20Information%3A%0D%0A%0D%0A%0D%0A&component=Windows.Forms&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&deadline=&dependson=&description=&estimated_time=0.0&flag_type-2=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Other&priority=P5%20-%20None&product=Mono%3A%20Class%20Libraries%20&qa_contact=&rep_platform=Other&short_desc=&version=unspecified)
 -   Some [Winforms Samples](/archived/winforms_samples "Winforms Samples")
@@ -60,7 +60,7 @@ There is a per-windowing system driver which performs the following tasks:
 -   Window creation
 -   Event translation
 
-Mono's Windows.Forms implementation translates the native system events such as X11 into Win32 WM\_ messages and dispatches them using the WndProc mechanism. This allows applications that depend on overriding WndProc to get some features not exposed by the APIs to still run.
+Mono's Windows.Forms implementation translates the native system events such as X11 into Win32 WM_ messages and dispatches them using the WndProc mechanism. This allows applications that depend on overriding WndProc to get some features not exposed by the APIs to still run.
 
 ### Accessibility
 
@@ -78,7 +78,7 @@ This section discusses the theming issues in Mono's implementation of Windows Fo
 
 ### Why Not Use Native Widgets?
 
-It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk\#](/docs/gui/gtksharp/).
+It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk#](/docs/gui/gtksharp/).
 
 ### Fitting In
 

@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp:_Labels/
 ---
 
-Labels are used a lot in Gtk\#, and are relatively simple. Labels emit no events as they do not have an associated X window. If you need to catch events, or do clipping, place it inside a EventBox widget or a Button widget.
+Labels are used a lot in Gtk#, and are relatively simple. Labels emit no events as they do not have an associated X window. If you need to catch events, or do clipping, place it inside a EventBox widget or a Button widget.
 
 [Image:labels.png]
 

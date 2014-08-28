@@ -30,7 +30,7 @@ Creating a UI with Interface Builder
 
 User interfaces created with Interface Builder are stored in XML in files ending with the XIB extension. These XIB files contain a definition of your user interface.
 
-In Interface Builder in addition to laying out your user interface, you can flag certain components to be accessible from your C\# code and you can configure which events will be raised against your host while responding to some events.
+In Interface Builder in addition to laying out your user interface, you can flag certain components to be accessible from your C# code and you can configure which events will be raised against your host while responding to some events.
 
 Loading Interfaces
 ==================
@@ -93,7 +93,7 @@ Naming Your Components
 Responding to Events
 ====================
 
-If your user interface raises an event on the "First Responder", you can catch those events by decorating your C\# method with the Export attribute, like this:
+If your user interface raises an event on the "First Responder", you can catch those events by decorating your C# method with the Export attribute, like this:
 
 ``` csharp
 [Export ("SomeEvent:")]

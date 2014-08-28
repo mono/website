@@ -10,7 +10,7 @@ How Mono Finds Assemblies
 
 Application code is always split between many assemblies. In addition to an application's own assembly, all Mono applications reference the `mscorlib` assembly, which contains the core class libraries of the runtime. An application may use any number of assemblies, some of which may come with the runtime, some of which may be optional runtime components, and others might be written by third-party developers.
 
-At run time, Mono looks in three places for assemblies necessary to run a program. It first searches the location of the executing assembly. If your application uses assemblies not provided by the runtime, you may place them all in the same directory so that Mono may find them. If a required assembly isn't found there, Mono searches the MONO\_PATH environment variable. The environment variable should be a colon-separated list of paths to search for assemblies. To set this variable in Linux, if you use the `bash` shell, type:
+At run time, Mono looks in three places for assemblies necessary to run a program. It first searches the location of the executing assembly. If your application uses assemblies not provided by the runtime, you may place them all in the same directory so that Mono may find them. If a required assembly isn't found there, Mono searches the MONO_PATH environment variable. The environment variable should be a colon-separated list of paths to search for assemblies. To set this variable in Linux, if you use the `bash` shell, type:
 
     export MONO_PATH=/path/to/assemblies:/another/path/to/assemblies
 
@@ -114,7 +114,7 @@ The -i directive tells gacutil to install the assembly. If we want to see what a
 
 At the top of the list you can see that there are two versions of the Accessibility assembly installed. One for version 1.0.5000.0 and one for version 2.0.3600.0.
 
-At the bottom of the list you can see there are two versions of gac\_lib installed. One for the neutral, or invariant culture, and one for the en-US culture.
+At the bottom of the list you can see there are two versions of gac_lib installed. One for the neutral, or invariant culture, and one for the en-US culture.
 
 If you want to expose the assembly for developers, you should use the -package NAME option to gacutil:
 
@@ -140,7 +140,7 @@ The default GAC is located in \<prefix\>/lib/mono/gac. To install your libraries
 
 mono/gac is always appended to the path that is supplied to -gacdir. lib will be appended if the supplied path does not end with a lib directory. The reason for this is to ease package creation.
 
-To reference this new GAC the MONO\_GAC\_PREFIX environment variable is used. MONO\_GAC\_PREFIX points to the prefix directory of an install or the directory supplied to -gacdir. The runtime will append the lib/mono/gac and search for the assembly in that directory. The following source code loads gac\_lib.dll and prints out the assemblies codebase so we can see where it was loaded from:
+To reference this new GAC the MONO_GAC_PREFIX environment variable is used. MONO_GAC_PREFIX points to the prefix directory of an install or the directory supplied to -gacdir. The runtime will append the lib/mono/gac and search for the assembly in that directory. The following source code loads gac_lib.dll and prints out the assemblies codebase so we can see where it was loaded from:
 
     public class GacExe {
             public static void Main ()
@@ -150,12 +150,12 @@ To reference this new GAC the MONO\_GAC\_PREFIX environment variable is used. MO
             }
     }
 
-The first time this code is run the gac\_lib.dll will be loaded from the current directory because there is no gac\_lib.dll found in the default GAC:
+The first time this code is run the gac_lib.dll will be loaded from the current directory because there is no gac_lib.dll found in the default GAC:
 
     $ mono gac_exe.exe
     file:///home/monkey/projects/mono/tests/gac_lib.dll
 
-If the MONO\_GAC\_PREFIX is set to the gacdir that gac\_lib.dll was installed to earlier the library will be loaded from the new GAC:
+If the MONO_GAC_PREFIX is set to the gacdir that gac_lib.dll was installed to earlier the library will be loaded from the new GAC:
 
     $ export MONO_GAC_PREFIX=~/.mono
     $ mono gac_exe.exe
@@ -359,18 +359,18 @@ The compiler will automatically load assemblies that are located in the same dir
 
 In the GAC world, the assemblies are exposed in two places: in the GAC (which is what the runtime uses to load assemblies) and to the compiler in a different location, this is done with the `-package `flag to the `gacutil `command.
 
-What the `-package `option does is to expose the assembly in a different location for the compiler to pick up (by default the assembly is only exposed in a cryptic location, for example:: /usr/lib/mono/gac/monodoc/1.0.0.0\_\_0738eb9f132ed756/monodoc.dll) which is not very practical to type. The `-package NAME `option will surface the assembly (using a symbolic link) in /usr/lib/mono/NAME directory, which is a convenient assembly to pass to the compiler.
+What the `-package `option does is to expose the assembly in a different location for the compiler to pick up (by default the assembly is only exposed in a cryptic location, for example:: /usr/lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll) which is not very practical to type. The `-package NAME `option will surface the assembly (using a symbolic link) in /usr/lib/mono/NAME directory, which is a convenient assembly to pass to the compiler.
 
 To further integrate into the Unix build process, we go one step beyond, and we encourage developers to not only install their assembly into the GAC and surface it for developers with the `-package `option, but to also ship a `pkg-config `configuration file. The pkg-config configuration file has all the information required to build against a assembly.
 
-This can be used in conjunction with the compiler flag `-pkg: `to directly reference a software package, for example to compile with Gtk\# and Pango\#, this is the command line used:
+This can be used in conjunction with the compiler flag `-pkg: `to directly reference a software package, for example to compile with Gtk# and Pango#, this is the command line used:
 
     $ mcs -pkg:gtk-sharp,pango-sharp sample.cs
     Compilation succeeded
 
 The above is convenient for developers as they do not have to remember the paths, or probe for the paths, they can just use pkg-config to probe on their configuration scripts for the presence and a specific version if they need to.
 
-The gtk-sharp.pc file is a file that is installed into /usr/lib/pkgconfig directory (on most systems) or on any directory references by the PKG\_CONFIG\_PATH. This allows a developer to have multiple development versions installed at once, and have the compiler pick the right version based on the .pc file
+The gtk-sharp.pc file is a file that is installed into /usr/lib/pkgconfig directory (on most systems) or on any directory references by the PKG_CONFIG_PATH. This allows a developer to have multiple development versions installed at once, and have the compiler pick the right version based on the .pc file
 
 Here is what the gtk-sharp.pc file looks like:
 

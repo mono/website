@@ -8,7 +8,7 @@ redirect_from:
 Gtk:HelloWorld
 ==============
 
- Here is a basic Gtk\# application, written in C\#.
+ Here is a basic Gtk# application, written in C#.
 
 ``` csharp
 // helloworld.cs - Gtk# Tutorial example

@@ -90,7 +90,7 @@ Mentor: Lluis Sanchez Gual
 
 The project can be broken down as: 1) Improve Formatting in the ClassPad Component 2) Show Project References in the ClassPad Component 3) Show Base Types in the ClassPad Component 4) Create an Assembly Browser Component 5) Create Separate Assembly Browser Application 6) Create New Class Wizard 7) AssemblyInfo Front-End
 
-ClassPad Component: Firstly, the ClassPad should include support for formatting of members in a user-defined way. My current implementation relies on my own custom formatting rules. The new implementation would extend the Ambience related services so an ambience for ant particular language can be retrieved (the current services only allow for querying the ambience of individual projects). The formatting would be user defined to either the project ambience (i.e. C\#, Boo) or to a generic ambience (similar to standard UML notation). In addition to this, project references, both assembly and other projects, would be shown in the ClassPad. These would be be navigable similar to projects. Also, types in the ClassPad would show a new 'Base Types' node, which would list each type's base types (classes and interfaces).
+ClassPad Component: Firstly, the ClassPad should include support for formatting of members in a user-defined way. My current implementation relies on my own custom formatting rules. The new implementation would extend the Ambience related services so an ambience for ant particular language can be retrieved (the current services only allow for querying the ambience of individual projects). The formatting would be user defined to either the project ambience (i.e. C#, Boo) or to a generic ambience (similar to standard UML notation). In addition to this, project references, both assembly and other projects, would be shown in the ClassPad. These would be be navigable similar to projects. Also, types in the ClassPad would show a new 'Base Types' node, which would list each type's base types (classes and interfaces).
 
 With the new formatting rules in the ClassPad, the default search behaviour does not work quite as well. The existing behaviour is a straight match with the text of the node. The new proposed behaviour would search nodes based on their 'semantic' name, eg. A search for “GetI” would match both “string GetIcon(string name)” and “GetIcon(name : string) : string”.
 
@@ -105,7 +105,7 @@ Lastly a stand alone application would be created that would contain just the As
 New Class Wizard
 ----------------
 
-Similar to Visual Studio and SharpDevelop, create a 'New Class' wizard to autogenerate code for new classes. This would include choosing base type and interfaces to implement. These base types would be chosen from TreeView widgets. The generated classes would implement the stub for each inherited method, which would just throw a NotImplementedException. The generation of code would be customizable in an options panel, for example, the order of generated methods, whether documentation comments are generated, whether '\#region' comments are generated etc.
+Similar to Visual Studio and SharpDevelop, create a 'New Class' wizard to autogenerate code for new classes. This would include choosing base type and interfaces to implement. These base types would be chosen from TreeView widgets. The generated classes would implement the stub for each inherited method, which would just throw a NotImplementedException. The generation of code would be customizable in an options panel, for example, the order of generated methods, whether documentation comments are generated, whether '#region' comments are generated etc.
 
 AssemblyInfo Front-End: As a lower level priority for the project, someone on the MonoDevelop bug list [2] suggested a new panel in the project properties that would auto-generate the AssemblyInfo.cs file. This would contain the common properties such as Name, Copyright etc. and a path to a public key file for signing the assembly. It would also contain a secting for entering custom attributes if required.
 
@@ -116,7 +116,7 @@ Student: Khaled Abdul Karim Mohammed
 
 Mentor: Aaron Bockover, Mike Kestner
 
--   Create C\# binding for the GStreamer plugins.
+-   Create C# binding for the GStreamer plugins.
 -   Create NUnit Tests for testing the new formats.
 -   Try to make the library portable to windows, solaris and others.
 
@@ -148,7 +148,7 @@ Mentor: Miguel de Icaza
 
 See previous entry for details;
 
-This will be a Gtk\# based client for the Bittorrent client and server.
+This will be a Gtk# based client for the Bittorrent client and server.
 
 BitTorrent Class Libraries: Server/Tracker
 ==========================================
@@ -187,7 +187,7 @@ Add to ABCREM a system for the isinst and null pointer redundant check eliminati
 Project Details
 ---------------
 
-For the extension of ABCREM to other checks is necessary to characterize new relations for the isinst and null checks. These new types of relations must be added to those already used by ABCREM, inside the structures in abcremoval.h, integrating them or creating some new structures. We have to modify the build mechanism of 'MonoVariableRelationsEvaluationArea area' and 'MonoAdditionalVariableRelationsForBB additional\_relations', in order to hold the new relations. Then in process\_inst(), in addition to the array accesses, we look for the opcodes introducing isinst and null pointer checks. Then we execute the proper functions that, using the evaluation area and the dominator tree, verify if the check is redundant. That said, I intend to write a paper about the implementation of ABCREM, extending abcrem.txt in the Mono documentation.
+For the extension of ABCREM to other checks is necessary to characterize new relations for the isinst and null checks. These new types of relations must be added to those already used by ABCREM, inside the structures in abcremoval.h, integrating them or creating some new structures. We have to modify the build mechanism of 'MonoVariableRelationsEvaluationArea area' and 'MonoAdditionalVariableRelationsForBB additional_relations', in order to hold the new relations. Then in process_inst(), in addition to the array accesses, we look for the opcodes introducing isinst and null pointer checks. Then we execute the proper functions that, using the evaluation area and the dominator tree, verify if the check is redundant. That said, I intend to write a paper about the implementation of ABCREM, extending abcrem.txt in the Mono documentation.
 
 Further implementation of MBuild build tool
 ===========================================
@@ -198,9 +198,9 @@ Mentor: Richard Porter
 
 More information: [here](http://www.newton.cx/~peter/mbuild/handbook/whybother.xhtml)
 
-The chief deliverable for the summer will be a build specification compiler for MBuild. This will take the textual build files, process them into a fully-expanded build graph, and save the result in an efficient on-disk format. (Currently, MBuild processes the textual build files on every invocation and constructs the target graph in memory with a C\# object heirarchy.) The compiler will just be a separate stage of execution in MBuild, not a standalone program. Such a compiler will help clean up MBuild conceptually, because constructing the target graph and traversing it are completely separate steps in MBuild. I think that codifying this separation will also make it easy to implement more complex processing of the build specification; eg, creation of intermediary build targets that the developer shouldn't need to worry about (foo.c -\> foo.o -\> foo). Adding a compiler step will also make MBuild more efficient, because 1) the parsing/construction step will almost always be skipped and 2) the core build engine will be changed to work with integer target IDs instead of textual target names. (The fundamental nature of such a change makes me think that adding this compiler is not a case of premature optimization.) I think this compiler will take about seven weeks to implement: it's a somewhat large change to the codebase, but a lot of its implementation will be refactoring the current MBuild code, and I'm pretty sure that there aren't many subtleties to the compilation step.
+The chief deliverable for the summer will be a build specification compiler for MBuild. This will take the textual build files, process them into a fully-expanded build graph, and save the result in an efficient on-disk format. (Currently, MBuild processes the textual build files on every invocation and constructs the target graph in memory with a C# object heirarchy.) The compiler will just be a separate stage of execution in MBuild, not a standalone program. Such a compiler will help clean up MBuild conceptually, because constructing the target graph and traversing it are completely separate steps in MBuild. I think that codifying this separation will also make it easy to implement more complex processing of the build specification; eg, creation of intermediary build targets that the developer shouldn't need to worry about (foo.c -\> foo.o -\> foo). Adding a compiler step will also make MBuild more efficient, because 1) the parsing/construction step will almost always be skipped and 2) the core build engine will be changed to work with integer target IDs instead of textual target names. (The fundamental nature of such a change makes me think that adding this compiler is not a case of premature optimization.) I think this compiler will take about seven weeks to implement: it's a somewhat large change to the codebase, but a lot of its implementation will be refactoring the current MBuild code, and I'm pretty sure that there aren't many subtleties to the compilation step.
 
-A second deliverable will be support for build rules private to individual projects. MBuild is like automake in that it uses prepackaged build rules; however, it is obvious that many projects need custom build rules for miscellaneous tasks. At the moment, MBuild currently does not support a convenient way for specifying and using custom rules in a project. I will develop an infrastructure that supports such rules. If time permits, I will write a System.CodeDom formatter for Boo so that build rules can be written in that language. (Right now I write rules in C\#, but Boo seems like a better language for the build rule code.) This support should take about four weeks to implement. I'm pretty sure that this feature won't involve a whole lot of code when it's done, but I haven't thought about the details of its implementation much and there are a few bootstrapping-related details that may be tricky to resolve.
+A second deliverable will be support for build rules private to individual projects. MBuild is like automake in that it uses prepackaged build rules; however, it is obvious that many projects need custom build rules for miscellaneous tasks. At the moment, MBuild currently does not support a convenient way for specifying and using custom rules in a project. I will develop an infrastructure that supports such rules. If time permits, I will write a System.CodeDom formatter for Boo so that build rules can be written in that language. (Right now I write rules in C#, but Boo seems like a better language for the build rule code.) This support should take about four weeks to implement. I'm pretty sure that this feature won't involve a whole lot of code when it's done, but I haven't thought about the details of its implementation much and there are a few bootstrapping-related details that may be tricky to resolve.
 
 GCC CIL Backend
 ===============
@@ -263,7 +263,7 @@ Student: Alp Toker
 
 Mentor: Massimiliano Mantione
 
-Bindings to allow developers to create Compiz extensions with Mono, C\# and Tao.
+Bindings to allow developers to create Compiz extensions with Mono, C# and Tao.
 
 Deliverables should include a sample plugin that hooks up to all the Compiz events and does something interesting (it does not have to be useful, it has to work).
 

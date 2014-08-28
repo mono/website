@@ -10,7 +10,7 @@ Erik GtkSharp Toc
 
     Work in progress. Efforts have been undertaken to fully create articles/tutorialsbased onthis TOC. If you're planning to contribute to some topics here, please sendan email to gamehack to make sure we do not duplicate efforts.
 
-This is a new TOC for the Gtk\# section of the Mono guide
+This is a new TOC for the Gtk# section of the Mono guide
 
 -   Creating Dialogs and Windows
 -   A few basic widgets
@@ -23,7 +23,7 @@ This is a new TOC for the Gtk\# section of the Mono guide
     -   Containers
     -   Treeview
     -   Open and save dialogs
-    -   Gecko\#
+    -   Gecko#
 -   [Notification Icons](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
 -   Selection and Clipboard
 -   Graphics
@@ -41,6 +41,6 @@ This is a new TOC for the Gtk\# section of the Mono guide
 -   GUI builders
     -   Glade
     -   Stetic
--   Debugging Gtk\# applications
+-   Debugging Gtk# applications
 
 

@@ -25,7 +25,7 @@ Generic shared code needs access to type information. This information is contai
 
 1.  Non-generic non-static methods of reference types have access to the RGCTX via the "this" argument (this-\>vtable-\>rgctx).
 
-1.  Non-generic static methods of reference types and non-generic methods of value types need to be passed a pointer to the caller's class's VTable in the MONO\_ARCH\_RGCTX\_REG register.
+1.  Non-generic static methods of reference types and non-generic methods of value types need to be passed a pointer to the caller's class's VTable in the MONO_ARCH_RGCTX_REG register.
 
 1.  Generic methods need to be passed a pointer to the MRGCTX in the `MONO_ARCH_RGCTX_REG` register.
 
@@ -40,7 +40,7 @@ It's better to avoid registers used for argument passing for the RGCTX as it wou
 Method prologue
 ---------------
 
-Generic shared code that have a `RGCTX` receive it in `RGCTX_REG`. There must be a check in mono\_arch\_emit\_prolog for MonoCompile::rgctx\_var and if set store it. See mini-x86.c for reference.
+Generic shared code that have a `RGCTX` receive it in `RGCTX_REG`. There must be a check in mono_arch_emit_prolog for MonoCompile::rgctx_var and if set store it. See mini-x86.c for reference.
 
 Dealing with types
 ------------------
@@ -90,7 +90,7 @@ For fetching a slot from a RGCTX the trampoline is passed a pointer (as a normal
 
 The number of slots in the arrays must be obtained from the function `mono_class_rgctx_get_array_size()`.
 
-The MRGCTX case is different in two aspects. First, the trampoline is not passed a pointer to a VTable, but a pointer directly to the MRGCTX, which is guaranteed not to be NULL (any of the next pointers and any of the slots can be NULL, though). Second, the layout of the first array is slightly different, in that the first two slots are occupied by a pointers to the class's VTable and to the method's method\_inst. The next pointer is in the third slot and the first actual slot, "slot 0", in the fourth:
+The MRGCTX case is different in two aspects. First, the trampoline is not passed a pointer to a VTable, but a pointer directly to the MRGCTX, which is guaranteed not to be NULL (any of the next pointers and any of the slots can be NULL, though). Second, the layout of the first array is slightly different, in that the first two slots are occupied by a pointers to the class's VTable and to the method's method_inst. The next pointer is in the third slot and the first actual slot, "slot 0", in the fourth:
 
          +--------------------------------------------------------+
          | vtable | method_inst | next | slot 0 | slot 1 | slot 2 |
@@ -100,7 +100,7 @@ The MRGCTX case is different in two aspects. First, the trampoline is not passed
 
 All other arrays have the same layout as the RGCTX ones, except possibly for their length.
 
-The function to create the trampoline, mono\_arch\_create\_rgctx\_lazy\_fetch\_trampoline(), gets passed an encoded slot number. Use the macro `MONO_RGCTX_SLOT_IS_MRGCTX` to query whether a trampoline for an MRGCTX is needed, as opposed to one for a RGCTX. Use `MONO_RGCTX_SLOT_INDEX` to get the index of the slot (like 2 for "slot 2" as above). The unmanaged fetch code is yet another trampoline created via `mono_arch_create_specific_trampoline()`, of type `MONO_TRAMPOLINE_RGCTX_LAZY_FETCH`. It's given the slot number as the trampoline argument. In addition, the pointer to the VTable/MRGCTX is passed in `MONO_ARCH_VTABLE_REG` (like the VTable to the generic class init trampoline - see above).
+The function to create the trampoline, mono_arch_create_rgctx_lazy_fetch_trampoline(), gets passed an encoded slot number. Use the macro `MONO_RGCTX_SLOT_IS_MRGCTX` to query whether a trampoline for an MRGCTX is needed, as opposed to one for a RGCTX. Use `MONO_RGCTX_SLOT_INDEX` to get the index of the slot (like 2 for "slot 2" as above). The unmanaged fetch code is yet another trampoline created via `mono_arch_create_specific_trampoline()`, of type `MONO_TRAMPOLINE_RGCTX_LAZY_FETCH`. It's given the slot number as the trampoline argument. In addition, the pointer to the VTable/MRGCTX is passed in `MONO_ARCH_VTABLE_REG` (like the VTable to the generic class init trampoline - see above).
 
 Like the class init and generic class init trampolines, the RGCTX fetch trampoline code doesn't return code that must be jumped to, so, like for those trampolines (see above), the generic trampoline code must do a normal return instead.
 
@@ -109,11 +109,11 @@ Getting generics information about a stack frame
 
 If a method is compiled with generic sharing, its `MonoJitInfo` has `has_generic_jit_info` set. In that case, the `MonoJitInfo` is followed (after the `MonoJitExceptionInfo` array) by a `MonoGenericJitInfo`.
 
-The MonoGenericJitInfo contains information about the location of the this/vtable/MRGCTX variable, if the has\_this flag is set. If that is the case, there are two possibilities:
+The MonoGenericJitInfo contains information about the location of the this/vtable/MRGCTX variable, if the has_this flag is set. If that is the case, there are two possibilities:
 
-1.  this\_in\_reg is set. this\_reg is the number of the register where the variable is stored.
+1.  this_in_reg is set. this_reg is the number of the register where the variable is stored.
 
-1.  this\_in\_reg is not set. The variable is stored at offset this\_offset from the address in the register with number this\_reg.
+1.  this_in_reg is not set. The variable is stored at offset this_offset from the address in the register with number this_reg.
 
 The variable can either point to the "this" object, to a vtable or to an MRGCTX:
 

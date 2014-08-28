@@ -22,9 +22,9 @@ If you installed mono to a different location, substitute that for /usr/bin/mono
 
 Debian GNU/Linux systems also ship with the ability to launch Mono or WINE directly as appropriate when exe files are executed.
 
-On other systems, this can be achieved manually using BINFMT\_MISC to register the exe files as non-native binaries. Then, when trying to launch an exe file, the kernel will invoke the mono runtime to handle the command. BINFMT\_MISC can also be used to launch Windows executables using WINE, or Java .class files using a JVM. To register exe with the kernel:
+On other systems, this can be achieved manually using BINFMT_MISC to register the exe files as non-native binaries. Then, when trying to launch an exe file, the kernel will invoke the mono runtime to handle the command. BINFMT_MISC can also be used to launch Windows executables using WINE, or Java .class files using a JVM. To register exe with the kernel:
 
--   Become root and turn on the BINFMT\_MISC module in your kernel with this command:
+-   Become root and turn on the BINFMT_MISC module in your kernel with this command:
 
 <!-- -->
 

@@ -28,7 +28,7 @@ Gendarme 3.0+ (in planning)
 ===========================
 
 -   General
-    -   Start building against FX 4.0 and C\# 4
+    -   Start building against FX 4.0 and C# 4
     -   Update to cecil/light (latest version)
 -   Rules
     -   More (of course ;-)
@@ -49,7 +49,7 @@ Runner-related
 --------------
 
 -   New GUI-based runners, like
-    -   standalone (Gtk\#, Cocoa\#...)
+    -   standalone (Gtk#, Cocoa#...)
     -   MonoDevelop plugin
     -   VS.NET plugin, see GSoC 2008 work by Ed Ropple
 

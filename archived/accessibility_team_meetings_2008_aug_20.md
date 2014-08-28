@@ -8,7 +8,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Aug 20
 ========================================
 
--!- knocte changed the topic of \#mono-a11y to: Mono-UIA Iteration meeting
+-!- knocte changed the topic of #mono-a11y to: Mono-UIA Iteration meeting
 07:02
 **\<@knocte\> **
 ok, now my clock tells me it's the time, everybody here?
@@ -126,7 +126,7 @@ oh, sounds like a lot, we will worry about the patches more then
 **\<@mario\> **
 I think they are, I need to "beautify" the patches
 **\<@bgmerrell\> **
-mario: are you aware of [http://bugzilla.gnome.org/show\_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542873 ? have you seen this?
+mario: are you aware of [http://bugzilla.gnome.org/show_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542873 ? have you seen this?
 **\<@knocte\> **
 thanks
 **\<@mario\> **
@@ -286,10 +286,10 @@ sorry
 np :)
 last iteration I have finished new strongwind test code for picturebox, statusbar, listbox, groupbox controls.
 07:39
-but I should mention when running GroupBox test that after bug411882 is been fixed we can't use 'button.click' do the action (but need change to 'button.\_doAction('click')). another problem is when the test do click action, we should move the mouse through the application window otherwise the label can't get the new info just like bug415320.
+but I should mention when running GroupBox test that after bug411882 is been fixed we can't use 'button.click' do the action (but need change to 'button._doAction('click')). another problem is when the test do click action, we should move the mouse through the application window otherwise the label can't get the new info just like bug415320.
 ListBox control]', and can't use 'click' action to select listitem.
 **\<@brad\> **
-(is that \#411882?)
+(is that #411882?)
 07:40
 **\<@calen\> **
 i think developers haven't finish those controls, i will wait then to check them again.
@@ -421,7 +421,7 @@ it's a work that in theory has no deadline, but I guess not earlier than 2009
 **\<@ray\> **
 ok
 **\<@mgorse\> **
-We're going to need C\# bindings for next year's work, so I'm hoping that it will be somewhat usable by the end of the year
+We're going to need C# bindings for next year's work, so I'm hoping that it will be somewhat usable by the end of the year
 **\<@ray\> **
 are they conflict ?
 **\<@knocte\> **
@@ -432,7 +432,7 @@ ray: atspi-dbus will eventually replace at-spi; you'd use one or the other but n
 **\<@sandy\> **
 mgorse: would the C api be the same?
 **\<@knocte\> **
-mgorse: really? shouldn't we use dbus\# for at-spi and still atk (but with a new lib-atkbridge that uses dbus)?
+mgorse: really? shouldn't we use dbus# for at-spi and still atk (but with a new lib-atkbridge that uses dbus)?
 **\<@sandy\> **
 (just a binding to dbus?)
 **\<@ray\> **
@@ -451,7 +451,7 @@ oh, good job decriptor, well thanks all for attending the meeting, I would like 
 any questions or comments?
 **\<@calen\> **
 knocte: sorry, i need add something,
-i mentioned there is one problem when running groupbox test by doing 'button.click', that is not button's issue but because frame can't get its parent ipy(bug \#411882). all of the winforms apps have this problem except form.py. so its a biggest one to block our test now.
+i mentioned there is one problem when running groupbox test by doing 'button.click', that is not button's issue but because frame can't get its parent ipy(bug #411882). all of the winforms apps have this problem except form.py. so its a biggest one to block our test now.
 done, thanks\^\^
 08:00
 **\<@knocte\> **
@@ -467,5 +467,5 @@ well, did I miss anybody? any other comments?
 if not, we'll consider the meeting finished for now, so good evening for some of you :)
 08:02
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility: Accessibility
+-!- knocte changed the topic of #mono-a11y to: Accessibility: Accessibility
 

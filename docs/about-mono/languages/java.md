@@ -8,14 +8,14 @@ Mono is able to run Java code side-by-side with .NET as well as having Java and 
 
 There are two possible ways of using IKVM: one is to use it as a Just-in-Time compiler which translates the Java bytecodes into .NET Intermediate Language as it goes. But this means that at runtime you are compiling things twice: the Java-to-CIL JIT and the CIL-to-Native JIT.
 
-We are going to build some samples using Gtk\#
+We are going to build some samples using Gtk#
 
-Gtk\# is really a bad name. Because Gtk\# is not limited to C\#, any programming language in the .NET framework can use it today and because it covers more than only the Gtk API, it covers various other components of the GNOME Development Platform.
+Gtk# is really a bad name. Because Gtk# is not limited to C#, any programming language in the .NET framework can use it today and because it covers more than only the Gtk API, it covers various other components of the GNOME Development Platform.
 
 Exposing .NET Libraries to Java
 ===============================
 
-Now, Gtk\# is a .NET assembly (this is the ECMA lingo for "library"), and Java does not know anything about this. It is necessary first to generate some stubs for these classes to let the Java compiler knows about the types defined in the C\# world. This is done using the `netexp.exe `program from IKVM, like this:
+Now, Gtk# is a .NET assembly (this is the ECMA lingo for "library"), and Java does not know anything about this. It is necessary first to generate some stubs for these classes to let the Java compiler knows about the types defined in the C# world. This is done using the `netexp.exe `program from IKVM, like this:
 
 ``` bash
 ikvmstub /mono/lib/mscorlib.dll
@@ -36,7 +36,7 @@ The `ikvmstub `program will import all of the types into the "cli" namespace. So
 Compiling Our Program
 =====================
 
-This is a very basic Java program that initializes Gtk\#:
+This is a very basic Java program that initializes Gtk#:
 
 ``` csharp
 import cli.Gtk.*;

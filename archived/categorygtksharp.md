@@ -8,5 +8,5 @@ redirect_from:
 Category:GtkSharp
 =================
 
-Pages related to [Gtk\#](/GtkSharp "GtkSharp")
+Pages related to [Gtk#](/GtkSharp "GtkSharp")
 

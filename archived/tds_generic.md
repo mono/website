@@ -53,7 +53,7 @@ Using
 
 -   hostname,port - "Server=MYHOST,1533"
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -95,11 +95,11 @@ Using
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
--   Build using Mono C\# compiler:
+-   Build using Mono C# compiler:
 
 <!-- -->
 

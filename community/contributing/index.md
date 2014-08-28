@@ -78,7 +78,7 @@ This is useful because once you submit the code it will help others not introduc
 
 You should test the NUnit test cases on the real framework and make sure that all tests pass. Then these tests can be directly integrated into our build system.
 
-When contributing to the class libraries, please have a look at our [Coding\_Guidelines](/community/contributing/coding-guidelines/). Note that our coding format is different from the default style from Visual Studio.
+When contributing to the class libraries, please have a look at our [Coding_Guidelines](/community/contributing/coding-guidelines/). Note that our coding format is different from the default style from Visual Studio.
 
 Testing on Various Platforms
 ----------------------------
@@ -113,6 +113,6 @@ There are three different philosophical approaches to helping the Mono project:
 
 -   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report](/community/bugs/); track down the problem and provide a better [bug report](/community/bugs/); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](http://lists.ximian.com/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test](/community/contributing/test-suite/) so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC](/community/help/irc/) channels.
 
--   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class](/community/contributing/the-class-library/) (from our [Class\_Status](/docs/about-mono/class-status/)); help with the [documentation effort](/docs/) ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs](/community/bugs/); help with the [tools](/docs/tools+libraries/tools/) or writing [tests](/community/contributing/test-suite/) that help make Mono more robust.
+-   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class](/community/contributing/the-class-library/) (from our [Class_Status](/docs/about-mono/class-status/)); help with the [documentation effort](/docs/) ([mailing list for the documentation effort](http://lists.ximian.com/mailman/listinfo/mono-docs-list)); fix existing [bugs](/community/bugs/); help with the [tools](/docs/tools+libraries/tools/) or writing [tests](/community/contributing/test-suite/) that help make Mono more robust.
 
 -   The **educational** way is an interesting one, because you pick a technology you are interested in, and work on that technology to learn the technology. If you are interested in it, please take a look at [this list](/community/google-summer-of-code/projects/) for possible projects.

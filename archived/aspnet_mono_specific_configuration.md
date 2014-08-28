@@ -61,7 +61,7 @@ a boolean which tells ASP.NET whether or not to augment compiler information rea
 
 verificationCompatibility 
 
-an integer which serves the same purpose as the **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\ASP.NET\\VerificationCompatibility** Win32 registry key (described in [this article](http://support.microsoft.com/kb/932552)) - to let the user turn off virtual path validity verification. When Mono runs under Windows it will first check the value of the above registry key and then consult web.config to check for value of the property described here. See also [this bug report](https://bugzilla.novell.com/show_bug.cgi?id=509163).
+an integer which serves the same purpose as the **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\ASP.NET\\VerificationCompatibility** Win32 registry key (described in [this article](http://support.microsoft.com/kb/932552)) - to let the user turn off virtual path validity verification. When Mono runs under Windows it will first check the value of the above registry key and then consult web.config to check for value of the property described here. See also [this bug report](https://bugzilla.novell.com/show_bug.cgi?id=509163).
 
 Child elements
 --------------
@@ -72,13 +72,13 @@ This is a standard `add/clear/remove` section which follows the same syntax as t
 
 #### Current compatibility settings
 
-The current default configuration modifes the C\# compiler entry in the following ways:
+The current default configuration modifes the C# compiler entry in the following ways:
 
-##### C\# compiler: /nowarn:0169
+##### C# compiler: /nowarn:0169
 
 Appends the `/nowarn:0169` option to the compiler command line.
 
-This prevents situations when code similar to the one shown below would throw an exception if the user configured the C\# provider with the **/warnlevel:3 /warnaserror** options. The .NET csc compiler does not throw report this error in this particular situation:
+This prevents situations when code similar to the one shown below would throw an exception if the user configured the C# provider with the **/warnlevel:3 /warnaserror** options. The .NET csc compiler does not throw report this error in this particular situation:
 
     <%@ Page Language="C#" %>
     <script runat="server">
@@ -86,7 +86,7 @@ This prevents situations when code similar to the one shown below would throw an
     }
     </script>
 
-**Note:** If you plan to use `#pragma warning reset 169` anywhere in your application code, your source will fail to compile - you need to either disable the compiler compatibility settings or override the C\# compiler entry removing the `/nowarn:0169` option from the **compilerOptions** attribute.
+**Note:** If you plan to use `#pragma warning reset 169` anywhere in your application code, your source will fail to compile - you need to either disable the compiler compatibility settings or override the C# compiler entry removing the `/nowarn:0169` option from the **compilerOptions** attribute.
 
-**Note:** An easy way exists to prevent this error from happening. It's sufficient to modify the code presented above by making the Page\_Load method a `protected` one. No compiler warning will be reported then.
+**Note:** An easy way exists to prevent this error from happening. It's sufficient to modify the code presented above by making the Page_Load method a `protected` one. No compiler warning will be reported then.
 

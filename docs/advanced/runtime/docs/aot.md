@@ -33,9 +33,9 @@ The precompiled image is stored in a file next to the original assembly that is 
 
 For example: basic.exe -\> basic.exe.so; corlib.dll -\> corlib.dll.so
 
-There is one global symbol in each AOT image named 'mono\_aot\_file\_info'. This points to a MonoAotFileInfo structure which contains pointers to all the AOT data structures. In the latter parts of this document, fields of this structure are referenced using info-\>\<FIELD NAME\>.
+There is one global symbol in each AOT image named 'mono_aot_file_info'. This points to a MonoAotFileInfo structure which contains pointers to all the AOT data structures. In the latter parts of this document, fields of this structure are referenced using info-\>\<FIELD NAME\>.
 
-Binary data other than code is stored in one giant blob. Data items inside the blob can be found using several tables called 'XXX\_offsets', like 'method\_info\_offsets'. These tables contain offsets into the blob, stored in a compact format using differential encoding plus an index.
+Binary data other than code is stored in one giant blob. Data items inside the blob can be found using several tables called 'XXX_offsets', like 'method_info_offsets'. These tables contain offsets into the blob, stored in a compact format using differential encoding plus an index.
 
 ### Source file structure
 
@@ -57,22 +57,22 @@ There are two kinds of methods handled by AOT:
 -   Normal methods are methods from the METHODDEF table.
 -   'Extra' methods are either runtime generated methods (wrappers) or methods of inflated generic classes/inflated generic methods.
 
-Each method is identified by a method index. For normal methods, this is equivalent to its index in the METHOD metadata table. For extra methods, it is an arbitrary number. Compiled code is created by invoking the JIT, requesting it to created AOT code instead of normal code. This is done by the compile\_method () function. The output of the JIT is compiled code and a set of patches (relocations). Each relocation specifies an offset inside the compiled code, and a runtime object whose address is accessed at that offset. Patches are described by a MonoJumpInfo structure. From the perspective of the AOT compiler, there are two kinds of patches:
+Each method is identified by a method index. For normal methods, this is equivalent to its index in the METHOD metadata table. For extra methods, it is an arbitrary number. Compiled code is created by invoking the JIT, requesting it to created AOT code instead of normal code. This is done by the compile_method () function. The output of the JIT is compiled code and a set of patches (relocations). Each relocation specifies an offset inside the compiled code, and a runtime object whose address is accessed at that offset. Patches are described by a MonoJumpInfo structure. From the perspective of the AOT compiler, there are two kinds of patches:
 
 -   calls, which require an entry in the PLT table.
 -   everything else, which require an entry in the GOT table.
 
-How patches is handled is described in the next section. After all the method are compiled, they are emitted into the output file into a byte array called 'methods'. Each piece of compiled code is identified by the local symbol .Lm\_\<method index\>. While compiled code is emitted, all the locations which have an associated patch are rewritten using a platform specific process so the final generated code will refer to the plt and got entries belonging to the patches. This is done by the emit\_and\_reloc\_code () function. The compiled code array can be accessed using the 'methods' global symbol.
+How patches is handled is described in the next section. After all the method are compiled, they are emitted into the output file into a byte array called 'methods'. Each piece of compiled code is identified by the local symbol .Lm_\<method index\>. While compiled code is emitted, all the locations which have an associated patch are rewritten using a platform specific process so the final generated code will refer to the plt and got entries belonging to the patches. This is done by the emit_and_reloc_code () function. The compiled code array can be accessed using the 'methods' global symbol.
 
 ### Handling patches
 
-Before a piece of AOTed code can be used, the GOT entries used by it must be filled out with the addresses of runtime objects. Those objects are identified by MonoJumpInfo structures. These stuctures are saved in a serialized form in the AOT file, so the AOT loader can deconstruct them. The serialization is done by the encode\_patch () function, while the deserialization is done by the decode\_patch\_info () function. Every method has an associated method info blob stored inside the global blob. This contains all the information required to load the method at runtime:
+Before a piece of AOTed code can be used, the GOT entries used by it must be filled out with the addresses of runtime objects. Those objects are identified by MonoJumpInfo structures. These stuctures are saved in a serialized form in the AOT file, so the AOT loader can deconstruct them. The serialization is done by the encode_patch () function, while the deserialization is done by the decode_patch_info () function. Every method has an associated method info blob stored inside the global blob. This contains all the information required to load the method at runtime:
 
 -   the first got entry used by the method.
 -   the number of got entries used by the method.
 -   the indexes of the got entries used by the method
 
-Each GOT entry is described by a serialized description stored in the global blob. The 'got\_info\_offsets' table maps got offsets to the offsets of their description.
+Each GOT entry is described by a serialized description stored in the global blob. The 'got_info_offsets' table maps got offsets to the offsets of their description.
 
 ### The Procedure Linkage Table (PLT)
 
@@ -81,25 +81,25 @@ Our PLT is similar to the elf PLT, it is used to handle calls between methods. I
 -   if B is in another assembly, then it needs to be looked up, then JITted or the corresponding AOT code needs to be found.
 -   if B is in the same assembly, but has got slots, then the got slots need to be initialized.
 
-If none of these cases is true, then the PLT is not used, and the call is made directly to the native code of the target method. A PLT entry is usually implemented by a jump through a GOT entry, these entries are initially filled up with the address of a trampoline so the runtime can get control, and after the native code of the called method is created/found, the jump table entry is changed to point to the native code. All PLT entries also embed a integer offset after the jump which indexes into the 'plt\_info' table, which stores the information required to find the called method. The PLT is emitted by the emit\_plt () function.
+If none of these cases is true, then the PLT is not used, and the call is made directly to the native code of the target method. A PLT entry is usually implemented by a jump through a GOT entry, these entries are initially filled up with the address of a trampoline so the runtime can get control, and after the native code of the called method is created/found, the jump table entry is changed to point to the native code. All PLT entries also embed a integer offset after the jump which indexes into the 'plt_info' table, which stores the information required to find the called method. The PLT is emitted by the emit_plt () function.
 
 ### Exception/Debug info
 
-Each compiled method has some additional info generated by the JIT, usable for debugging (IL offset-native offset maps) and exception handling (saved registers, native offsets of try/catch clauses). These are stored in the blob, and the 'ex\_info\_offsets' table can be used to find them.
+Each compiled method has some additional info generated by the JIT, usable for debugging (IL offset-native offset maps) and exception handling (saved registers, native offsets of try/catch clauses). These are stored in the blob, and the 'ex_info_offsets' table can be used to find them.
 
 ### Cached metadata
 
-When the runtime loads a class, it needs to compute a variety of information which is not readily available in the metadata, like the instance size, vtable, whenever the class has a finalizer/type initializer etc. Computing this information requires a lot of time, causes the loading of lots of metadata, and it usually involves the creation of many runtime data structures (MonoMethod/MonoMethodSignature etc), which are long living, and usually persist for the lifetime of the app. To avoid this, we compute the required information at aot compilation time, and save it into the aot image, into an array called 'class\_info'. The runtime can query this information using the mono\_aot\_get\_cached\_class\_info () function, and if the information is available, it can avoid computing it. To speed up mono\_class\_from\_name (), a hash table mapping class names to class indexes is constructed and saved in the AOT file pointed to by the symbol 'class\_name\_table'.
+When the runtime loads a class, it needs to compute a variety of information which is not readily available in the metadata, like the instance size, vtable, whenever the class has a finalizer/type initializer etc. Computing this information requires a lot of time, causes the loading of lots of metadata, and it usually involves the creation of many runtime data structures (MonoMethod/MonoMethodSignature etc), which are long living, and usually persist for the lifetime of the app. To avoid this, we compute the required information at aot compilation time, and save it into the aot image, into an array called 'class_info'. The runtime can query this information using the mono_aot_get_cached_class_info () function, and if the information is available, it can avoid computing it. To speed up mono_class_from_name (), a hash table mapping class names to class indexes is constructed and saved in the AOT file pointed to by the symbol 'class_name_table'.
 
 ### Other data
 
 Things saved into the AOT file which are not covered elsewhere:
 
--   info-\>assembly\_guid A copy of the assembly GUID. When loading an AOT image, this GUID must match with the GUID of the assembly for the AOT image to be usable.
+-   info-\>assembly_guid A copy of the assembly GUID. When loading an AOT image, this GUID must match with the GUID of the assembly for the AOT image to be usable.
 
--   info-\>version The version of the AOT file format. This is checked against the MONO\_AOT\_FILE\_VERSION constant in mini.h before an AOT image is loaded. The version number must be incremented when an incompatible change is made to the AOT file format.
+-   info-\>version The version of the AOT file format. This is checked against the MONO_AOT_FILE_VERSION constant in mini.h before an AOT image is loaded. The version number must be incremented when an incompatible change is made to the AOT file format.
 
--   info-\>image\_table A list of assemblies referenced by this AOT module.
+-   info-\>image_table A list of assemblies referenced by this AOT module.
 
 -   info-\>plt The Program Linkage Table
 
@@ -111,8 +111,8 @@ It is possible to use LLVM in AOT mode. This is implemented by compiling methods
 
 Some platforms like the iphone prohibit JITted code, using technical and/or legal means. This is a significant problem for the mono runtime, since it generates a lot of code dynamically, using either the JIT or more low-level code generation macros. To solve this, the AOT compiler is able to function in full-aot or aot-only mode, where it generates and saves all the neccesary code in the aot image, so at runtime, no code needs to be generated. There are two kinds of code which needs to be considered:
 
--   wrapper methods, that is methods whose IL is generated dynamically by the runtime. They are handled by generating them in the add\_wrappers () function, then emitting them as 'extra' methods.
--   trampolines and other small hand generated pieces of code. They are handled in an ad-hoc way in the emit\_trampolines () function.
+-   wrapper methods, that is methods whose IL is generated dynamically by the runtime. They are handled by generating them in the add_wrappers () function, then emitting them as 'extra' methods.
+-   trampolines and other small hand generated pieces of code. They are handled in an ad-hoc way in the emit_trampolines () function.
 
 ### Emitting assembly/object code
 
@@ -141,11 +141,11 @@ Methods which need to access the GOT first need to compute its address. On the x
             add <OFFSET TO GOT>, ebx
             <save got addr to a register>
 
-The variable representing the got is stored in cfg-\>got\_var. It is allways allocated to a global register to prevent some problems with branches + basic blocks.
+The variable representing the got is stored in cfg-\>got_var. It is allways allocated to a global register to prevent some problems with branches + basic blocks.
 
 #### Referencing GOT entries
 
-Any time the native code needs to access some other runtime structure/function (i.e. any time the backend calls mono\_add\_patch\_info ()), the code pointed by the patch needs to load the value from the got. For example, instead of:
+Any time the native code needs to access some other runtime structure/function (i.e. any time the backend calls mono_add_patch_info ()), the code pointed by the patch needs to load the value from the got. For example, instead of:
 
         call <ABSOLUTE ADDR>
 
@@ -161,17 +161,17 @@ svn diff -r 37739:38213 mini-x86.c
 
 ### Back end functionality
 
-#### OP\_AOTCONST
+#### OP_AOTCONST
 
-Loading informarion from the GOT tables is done by the OP\_AOTCONST opcode. Since the opcode implementation needs to reference the GOT symbol, which is not available during JITting, the backend should emit some placeholder code in mono\_arch\_output\_basic\_block (), and emit the real implementation in arch\_emit\_got\_access () in aot-compiler.c.
+Loading informarion from the GOT tables is done by the OP_AOTCONST opcode. Since the opcode implementation needs to reference the GOT symbol, which is not available during JITting, the backend should emit some placeholder code in mono_arch_output_basic_block (), and emit the real implementation in arch_emit_got_access () in aot-compiler.c.
 
 #### Constants
 
-AOTed code cannot contain literal constants like addresses etc. All occurences of those should be replaced by an OP\_AOTCONST.
+AOTed code cannot contain literal constants like addresses etc. All occurences of those should be replaced by an OP_AOTCONST.
 
 #### PLT Entries
 
-PLT entries are emitted by arch\_emit\_plt\_entry () in aot-compiler.c. Each PLT entry has a corresponding slot in the GOT. The PLT entry should load this GOT slot, and branch to it, without clobbering any argument registers or the return value. Since the return address is not updated, the AOT code obtains the address of the PLT entry by disassembling the call site which branched to the PLT entry. This is done by the mono\_arch\_get\_call\_target () function in tramp-\<ARCH\>.c. The information needed to resolve the target of the PLT entry is in the AOT tables, and an offset into these tables should be emitted as a word after the PLT entry. The mono\_arch\_get\_plt\_info\_offset () function in tramp-\<ARCH\>.c is responsible for retrieving this offset. After the call is resolved, the GOT slot used by the PLT entry needs to be updated with the new address. This is done by the mono\_arch\_patch\_plt\_entry () function in tramp-\<ARCH\>.c.
+PLT entries are emitted by arch_emit_plt_entry () in aot-compiler.c. Each PLT entry has a corresponding slot in the GOT. The PLT entry should load this GOT slot, and branch to it, without clobbering any argument registers or the return value. Since the return address is not updated, the AOT code obtains the address of the PLT entry by disassembling the call site which branched to the PLT entry. This is done by the mono_arch_get_call_target () function in tramp-\<ARCH\>.c. The information needed to resolve the target of the PLT entry is in the AOT tables, and an offset into these tables should be emitted as a word after the PLT entry. The mono_arch_get_plt_info_offset () function in tramp-\<ARCH\>.c is responsible for retrieving this offset. After the call is resolved, the GOT slot used by the PLT entry needs to be updated with the new address. This is done by the mono_arch_patch_plt_entry () function in tramp-\<ARCH\>.c.
 
 ### Future Work
 

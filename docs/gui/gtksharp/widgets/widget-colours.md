@@ -9,7 +9,7 @@ Colouring Widgets and Windows
 
 Colouring widgets and windows (which is itself a widget) alluded me for ages due to my basic knowledge of gtk.
 
-Thanks to a [tiny example](http://lists.ximian.com/pipermail/gtk-sharp-list/2004-September/004820.html) I found by John Bailo on the [gtk\# mailing list](http://lists.ximian.com/pipermail/gtk-sharp-list/) it turns out to not be such a tricky thing after all. I’ve recreated it here.
+Thanks to a [tiny example](http://lists.ximian.com/pipermail/gtk-sharp-list/2004-September/004820.html) I found by John Bailo on the [gtk# mailing list](http://lists.ximian.com/pipermail/gtk-sharp-list/) it turns out to not be such a tricky thing after all. I’ve recreated it here.
 
 The following code sets up a gtk.window, a DrawingArea widget on top, colours the window and the drawing area both red, then draws a diagonal line across the page.
 
@@ -61,7 +61,7 @@ We still need to tell the object what colour to be. This is done using the Gtk.C
 
 Both widgets are going to be coloured red. I have done this is for two reasons.
 
-One: rarely, does a gtk\# application contain just a Window widget and nothing else alone, so we need to put something practical in there and a drawingarea will do fine.
+One: rarely, does a gtk# application contain just a Window widget and nothing else alone, so we need to put something practical in there and a drawingarea will do fine.
 
 Two: although you really only need to change the background colour in the drawingarea widget to achieve the desired effect, I have elected to colour the window widget as well so that you don’t get an annoying white/grey flick the moment before the drawingarea object appears on the window when the .Show() method is called.
 

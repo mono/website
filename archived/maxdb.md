@@ -136,7 +136,7 @@ hostname:port
 
 Server=localhost:7210
 
-### C\# Example
+### C# Example
 
 #### Source code
 

@@ -10,7 +10,7 @@ MonoTouch Installation
 
 [MonoTouch](/MonoTouch "MonoTouch") is an SDK for developing applications for the iPhone using Mono. In addition to the Unix SDK, we are also releasing an optional alpha release of MonoDevelop 2.2 that contains support for iPhone application development.
 
-Our [MonoTouch\_Beta](/MonoTouch_Beta "MonoTouch Beta") page contains other useful information for developers getting started with MonoTouch on the iPhone Beta program, and instructions for signing up for the beta program.
+Our [MonoTouch_Beta](/MonoTouch_Beta "MonoTouch Beta") page contains other useful information for developers getting started with MonoTouch on the iPhone Beta program, and instructions for signing up for the beta program.
 
 **The SDK can only be downloaded if you have received a beta invitation. Invitations are going out in waves to people who have filled out the [beta signup form](http://spreadsheets.google.com/viewform?hl=en&formkey=dHRXeFI5b1NjUWdRRkpiSmxkanh6T1E6MA..).**
 
@@ -75,7 +75,7 @@ Documentation
 
 In addition to the tutorials on this site, our web site at [www.go-mono.com/docs](http://www.go-mono.com/docs) contains the API documentation for the libraries shipped with MonoTouch. Look for the MonoTouch namespace.
 
-The API design for the CIL/Objective-C binding is covered in our [MonoTouch\_API](/MonoTouch_API "MonoTouch API") document.
+The API design for the CIL/Objective-C binding is covered in our [MonoTouch_API](/MonoTouch_API "MonoTouch API") document.
 
 Samples
 =======

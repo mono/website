@@ -43,7 +43,7 @@ The runtime offers the following services:
 
 The Mono runtime can be used as a stand-alone process, or it can be [embedded into applications](/docs/advanced/embedding/)
 
-Embedding the Mono runtime allows applications to be extended in C\# while reusing all of the existing C and C++ code. For more details, see the [Embedding Mono](/docs/advanced/embedding/) page and the [Scripting With Mono](/docs/advanced/embedding/scripting/) page.
+Embedding the Mono runtime allows applications to be extended in C# while reusing all of the existing C and C++ code. For more details, see the [Embedding Mono](/docs/advanced/embedding/) page and the [Scripting With Mono](/docs/advanced/embedding/scripting/) page.
 
 Supported Platforms
 -------------------
@@ -190,7 +190,7 @@ Versioning
 
 Mono supports a Global Assembly Cache or GAC. The GAC is used to share libraries between different applications, to keep multiple versions of the same library installed at once and to avoid conflicts over the names of the libraries and they also play an important role in trust and security.
 
-See the [Assemblies\_and\_the\_GAC](/docs/advanced/assemblies-and-the-gac/) document for more details.
+See the [Assemblies_and_the_GAC](/docs/advanced/assemblies-and-the-gac/) document for more details.
 
 Garbage Collection
 ------------------
@@ -264,7 +264,7 @@ There are a number of projects being developed in branches or on separate trees 
 -   [Runtime Requests](/docs/advanced/runtime/runtime-requests/): Ideas of things that we could use to improve Mono's runtime.
 -   [Compacting GC](/docs/advanced/garbage-collector/sgen/): A generational, compacting GC for Mono.
 -   JIT Regalloc: A new register allocation framework.
--   [Mono\_Runtime\_API\_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
+-   [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
 
 Completed projects:
 

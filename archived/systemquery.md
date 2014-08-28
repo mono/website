@@ -8,7 +8,7 @@ redirect_from:
 System.Query
 ============
 
-This libary aims the provide the neccessary set of classes in order to be able to get some features of C\# 3.0, such as extension methods and query expressions. More details of the current idea behind this can be found at [the MSDN Linq page](http://msdn.microsoft.com/netframework/future/linq/default.aspx).
+This libary aims the provide the neccessary set of classes in order to be able to get some features of C# 3.0, such as extension methods and query expressions. More details of the current idea behind this can be found at [the MSDN Linq page](http://msdn.microsoft.com/netframework/future/linq/default.aspx).
 
 The `System.Query.Sequence` class provides methods that work in `IEnumerable` objects such as arrays and lists:
 

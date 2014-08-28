@@ -15,14 +15,14 @@ Arrow arrow1 = new Arrow( arrow_type, shadow_type );
 arrow1.SetArrow(arrow_type, shadow_type );
 ```
 
-The first creates a new arrow widget with the indicated type and appearance. The second allows these values to be altered. The arrow\_type argument may take one of the following values:
+The first creates a new arrow widget with the indicated type and appearance. The second allows these values to be altered. The arrow_type argument may take one of the following values:
 
       Gtk.Arrow.Up
       Gtk.Arrow.Down
       Gtk.Arrow.Left
       Gtk.Arrow.Right
 
-These values obviously indicate the direction in which the arrow will point. The shadow\_type argument may take one of these values:
+These values obviously indicate the direction in which the arrow will point. The shadow_type argument may take one of these values:
 
       Gtk.Shadow.In
       Gtk.Shadow.Out (the default)

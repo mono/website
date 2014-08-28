@@ -10,7 +10,7 @@ Mono 1 1
 
 The following list describes the state of Mono 1.1.x.
 
-For information about the old Mono see Mono\_1\_0.
+For information about the old Mono see Mono_1_0.
 
 Notice that these are \*assemblies\*, they are not namespaces. Each assembly normally contains code that spans multiple namespaces (mscorlib contains 37 namespaces), but there are a lot of people who seem confused about this.
 
@@ -113,7 +113,7 @@ Languages
 Stable Languages
 ----------------
 
-Mono 1.1 ships with a C\# compiler that supports both the 1.0 and 2.0 specifications.
+Mono 1.1 ships with a C# compiler that supports both the 1.0 and 2.0 specifications.
 
 Unstable Languages
 ------------------

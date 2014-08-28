@@ -76,7 +76,7 @@ As attributes are used at compile time, only constants can be passed to construc
 
 ### AvoidConstructorsInStaticTypesRule
 
-This rule checks for types that contain only static members and fires if the type contains a visible instance constructor. This was a common mistake in the 1.x framework because C\# adds a default, public, constructor if no other constructors are provided. Code using the framework 2.0 (and later) should change this type, if possible, into a static type.
+This rule checks for types that contain only static members and fires if the type contains a visible instance constructor. This was a common mistake in the 1.x framework because C# adds a default, public, constructor if no other constructors are provided. Code using the framework 2.0 (and later) should change this type, if possible, into a static type.
 
 **Bad** example:
 
@@ -468,7 +468,7 @@ void Decode (Stream stream)
 
 ### FinalizersShouldCallBaseClassFinalizerRule
 
-This rule is used to warn the developer that a finalizer does not call the base class finalizer. In C\#, this is enforced by compiler but some .NET languages (like IL) may allow such behavior.
+This rule is used to warn the developer that a finalizer does not call the base class finalizer. In C#, this is enforced by compiler but some .NET languages (like IL) may allow such behavior.
 
 **Bad** example (IL):
 
@@ -487,7 +487,7 @@ This rule is used to warn the developer that a finalizer does not call the base 
 }
 ```
 
-**Good** example (C\#):
+**Good** example (C#):
 
 ``` csharp
 public class GoodFinalizer {

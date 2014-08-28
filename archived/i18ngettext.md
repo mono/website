@@ -31,23 +31,23 @@ I18nGettext
 
 ### Introduction
 
-While the Gettext\# library allows you to internationalize your code, we advise you to use our [Mono.Posix assembly](/Internationalization) to do so.
+While the Gettext# library allows you to internationalize your code, we advise you to use our [Mono.Posix assembly](/Internationalization) to do so.
 
 ### Requirements
 
 For running the samples you need the following:
 
 -   mono (\>= 1.0) for translating console-based aplications.
--   Gtk\# (\>= 1.0) for translating window-based aplications.
+-   Gtk# (\>= 1.0) for translating window-based aplications.
 -   Glade2 for creating the GUI, not really needed but very usefull
 
-All the examples were tested using mono 1.1.6, Gtk\# 1.9.3 and Gettext\# 0.14.
+All the examples were tested using mono 1.1.6, Gtk# 1.9.3 and Gettext# 0.14.
 
 ### Using GetText\#
 
 #### Installation
 
-You can download the current version from [here](http://ftp.gnu.org/gnu/gettext/gettext-0.14.tar.gz). The older version can the downloaded from [this](http://ftp.gnu.org/gnu/gettext/) site. Older versions of Gettext doesn't support C\#, so older versions doesn't work.
+You can download the current version from [here](http://ftp.gnu.org/gnu/gettext/gettext-0.14.tar.gz). The older version can the downloaded from [this](http://ftp.gnu.org/gnu/gettext/) site. Older versions of Gettext doesn't support C#, so older versions doesn't work.
 
 After downloading the package you need to uncompress it.
 
@@ -61,17 +61,17 @@ then
  $ ./configure && make
 ```
 
-within the created folder, by default the configure script allows the C\# language so you don't need any extra parameter, and finally, install using the root user
+within the created folder, by default the configure script allows the C# language so you don't need any extra parameter, and finally, install using the root user
 
 ``` bash
  # make install
 ```
 
-Now we can use the GetText\# library for translating our application.
+Now we can use the GetText# library for translating our application.
 
-#### Using GetText\# with console-based applications
+#### Using GetText# with console-based applications
 
-For using GetText\# we need to add the following namespace to our code: *GNU.Gettext*, then declare a variable that allows GetText\# to set translatable strings and finally begin to replace all the strings that we need to translate using a method from GetText\#.
+For using GetText# we need to add the following namespace to our code: *GNU.Gettext*, then declare a variable that allows GetText# to set translatable strings and finally begin to replace all the strings that we need to translate using a method from GetText#.
 
 For example, lets see the following code from a source file called **Example.cs**:
 
@@ -201,7 +201,7 @@ Now we need to create the catalog, we use the following command for creating it
  $ msgfmt --csharp -r my_class -l es es.po -d .
 ```
 
-The stament used above generates a C\# assembly due to the **--csharp** parameter, in the current directory, due to the parameter **-d .**, which is called automatically when the locale is es, due to the parameter **-l es**, the parameter *-r my\_class* calls the catalog identifier which previouslly was defined in the source code. The library is within ./es/ and is called my\_class.resources.dll.
+The stament used above generates a C# assembly due to the **--csharp** parameter, in the current directory, due to the parameter **-d .**, which is called automatically when the locale is es, due to the parameter **-l es**, the parameter *-r my_class* calls the catalog identifier which previouslly was defined in the source code. The library is within ./es/ and is called my_class.resources.dll.
 
 Lets try again
 
@@ -215,7 +215,7 @@ the output will be:
 
     ¡Hola mundo!
 
-#### Using GetText\# with window-based applications
+#### Using GetText# with window-based applications
 
 TODO
 

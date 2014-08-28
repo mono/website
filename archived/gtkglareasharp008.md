@@ -8,5 +8,5 @@ redirect_from:
 GtkGLAreaSharp:0.0.8
 ====================
 
-GtkGLArea version 0.0.8 marks the completion (I hate that word) of the rotation-buttons example. [GtkGLArea:Examples\#RotateButtons](/GtkGLArea:Examples#rotatebuttons "GtkGLArea:Examples")
+GtkGLArea version 0.0.8 marks the completion (I hate that word) of the rotation-buttons example. [GtkGLArea:Examples#RotateButtons](/GtkGLArea:Examples#rotatebuttons "GtkGLArea:Examples")
 

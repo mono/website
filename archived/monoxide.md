@@ -11,7 +11,7 @@ Monoxide
 What is it ?
 ============
 
-Monoxide is an extensible assembly viewer written using [Cecil](/Cecil "Cecil") and [Gtk\#](/GtkSharp). It's main purpose, just like it's cousin Gendarme, is to help find defects in compiled software. However Monoxide's strategy is different. Gendarme provides rules that can be used/automated without much human involvement, while Monoxide is an interactive tool to find problem for which no rules exists. If, after a while, some defect pattern emerge then it's time to turn this new knowledge into a Gendarme rule.
+Monoxide is an extensible assembly viewer written using [Cecil](/Cecil "Cecil") and [Gtk#](/GtkSharp). It's main purpose, just like it's cousin Gendarme, is to help find defects in compiled software. However Monoxide's strategy is different. Gendarme provides rules that can be used/automated without much human involvement, while Monoxide is an interactive tool to find problem for which no rules exists. If, after a while, some defect pattern emerge then it's time to turn this new knowledge into a Gendarme rule.
 
 History (pre-SVN)
 =================

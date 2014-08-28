@@ -4,24 +4,24 @@ redirect_from:
   - /Languages/
 ---
 
-Multiple languages can be used with the Mono platform. The Mono project provides [C\#](/docs/about-mono/languages/csharp/), [Basic](/docs/about-mono/languages/visualbasic/), and [Ilasm](/docs/tools+libraries/tools/monodis/) compilers, and there are both open source and commercial compilers that can be used with Mono.
+Multiple languages can be used with the Mono platform. The Mono project provides [C#](/docs/about-mono/languages/csharp/), [Basic](/docs/about-mono/languages/visualbasic/), and [Ilasm](/docs/tools+libraries/tools/monodis/) compilers, and there are both open source and commercial compilers that can be used with Mono.
 
 It's important to note that any language that compiles to pure IL should work under Mono. Some languages such as Microsoft's Managed C++ do not always compile to pure IL, so they will not always work as expected, since they are not truly platform independent.
 
 Mono-compatible compilers
 =========================
 
-C\#
+C#
 ---
 
-The main C\# compiler of the Mono Project is [**mcs**](/docs/about-mono/languages/csharp/). It covers all the features in C\# 3.0 (2.6) and 4.0 (preview), including 3.0 Linq and 4.0 dynamic. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
+The main C# compiler of the Mono Project is [**mcs**](/docs/about-mono/languages/csharp/). It covers all the features in C# 3.0 (2.6) and 4.0 (preview), including 3.0 Linq and 4.0 dynamic. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
 
-C\# is specified in the ISO/IEC 23271:2006 and ECMA 334 standards. Microsoft has [granted access to their patents](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) under their [Community Promise](http://www.microsoft.com/interop/cp/default.mspx).
+C# is specified in the ISO/IEC 23271:2006 and ECMA 334 standards. Microsoft has [granted access to their patents](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) under their [Community Promise](http://www.microsoft.com/interop/cp/default.mspx).
 
-F\#
+F#
 ---
 
-[F\#](http://msdn.microsoft.com/en-us/fsharp/default.aspx) is a hybrid language that brings flavors of functional languages and imperative languages, developed by Microsoft. They release compiler that targets mono in [some releases](http://blogs.msdn.com/b/dsyme/archive/2010/04/12/f-2-0-released-as-part-of-visual-studio-2010.aspx).
+[F#](http://msdn.microsoft.com/en-us/fsharp/default.aspx) is a hybrid language that brings flavors of functional languages and imperative languages, developed by Microsoft. They release compiler that targets mono in [some releases](http://blogs.msdn.com/b/dsyme/archive/2010/04/12/f-2-0-released-as-part-of-visual-studio-2010.aspx).
 
 Java
 ----
@@ -103,7 +103,7 @@ Other languages
 -   [Component Pascal](http://plas.fit.qut.edu.au/gpcp/NET.aspx)
 -   [Delta Forth](http://www.dataman.ro/dforth)
 -   [DotLisp](http://sourceforge.net/projects/dotlisp)
--   [\#Smalltalk](http://www.refactory.com/Software/SharpSmalltalk)
+-   [#Smalltalk](http://www.refactory.com/Software/SharpSmalltalk)
 
 Supporting GCC languages
 ========================
@@ -142,7 +142,7 @@ The compiler can be used to statically compile a Ruby source file into a verifia
 ADA
 ---
 
-A\# is an ADA compiler for the CIL platform, it can be downloaded from: [here](http://asharp.martincarlisle.com/)
+A# is an ADA compiler for the CIL platform, it can be downloaded from: [here](http://asharp.martincarlisle.com/)
 
 Other PHP Efforts
 -----------------

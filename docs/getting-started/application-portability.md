@@ -41,7 +41,7 @@ Developing Natively on Linux
 There are a couple of IDEs that can be used on Linux, with various degrees of functionality:
 
 -   [X-Develop](http://www.omnicore.com/xdevelop.htm) from Omnicore is a commercial product that provides auto-complete, a cross-platform GUI designer and works on Windows, Linux and OS/X.
--   [MonoDevelop](http://www.monodevelop.com) is an IDE produced by the Mono community that has support for developing graphical applications with Gtk\# but currently lacks support for Windows.Forms or ASP.NET
+-   [MonoDevelop](http://www.monodevelop.com) is an IDE produced by the Mono community that has support for developing graphical applications with Gtk# but currently lacks support for Windows.Forms or ASP.NET
 
 If you feel comfortable using command line tools, and any of the other Unix editors, that would work as well.
 
@@ -63,14 +63,14 @@ On Linux and Unix the files "readme" and "README" are two different files, that 
 
 This is an important distinction for many applications because you might have created a "Login.aspx" page, but you reference the page as "login.aspx" or "LOGIN.ASPX" from your source code. You must make sure that all references use the same file name casing.
 
-Alternatively, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "case" or "all" to eliminate these problems. See [IOMap](/docs/advanced/iomap/) for details.
+Alternatively, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "case" or "all" to eliminate these problems. See [IOMap](/docs/advanced/iomap/) for details.
 
 Path Separators
 ---------------
 
 On Windows, the directory path separator is "\\" while on Linux it is "/", it is possible to create files that contain a "\\" in their names on Linux.
 
-For quickly porting applications, starting with Mono 1.1.18, you can set the MONO\_IOMAP environment variable to "all" and it will take care of it. See [IOMap](/docs/advanced/iomap/) for more details.
+For quickly porting applications, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "all" and it will take care of it. See [IOMap](/docs/advanced/iomap/) for more details.
 
 To write portable software, you must make sure that you use the [http:/monodoc/P:System.IO.Path.DirectorySeparatorChar System.IO.Path.DirectorySeparatorChar] character when you must concatenate paths, or even better, use the [http:/monodoc/M:System.IO.Path.Combine(string,string) System.IO.Path.Combine] method to combine pathnames.
 
@@ -181,7 +181,7 @@ There is currently a work in progress project to support it, see [COM Interop](/
 User Interface
 ==============
 
-In this section we should cover the differences between Windows.Forms and Gtk\# and show the differences and how to structure an application to have multiple UIs depending on the platform.
+In this section we should cover the differences between Windows.Forms and Gtk# and show the differences and how to structure an application to have multiple UIs depending on the platform.
 
 Using Windows.Forms as a cross-platform API
 -------------------------------------------
@@ -189,7 +189,7 @@ Using Windows.Forms as a cross-platform API
 Using a native UI for each platform
 -----------------------------------
 
-One UI per OS, split core from UI, mention gtk\#, cocoa\#.
+One UI per OS, split core from UI, mention gtk#, cocoa#.
 
 Porting Tools
 =============

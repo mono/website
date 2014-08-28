@@ -116,7 +116,7 @@ Show the mconfig version
 
 `{addfeature, af} <feature_name> [config_file_path]`
 
-Adds the feature named *\<feature\_name\>* to the specified config file. If *config\_file\_path* is omitted, the name of the output configuration file will be chosen based on the selected target (see the `-t` option). If the specified config file exists, the feature will be injected into it at the locations specified by mconfig configuration. If the target config file does not exist, it will be created and will contain only the specified feature and all its dependencies. Default output filenames for the targets are:
+Adds the feature named *\<feature_name\>* to the specified config file. If *config_file_path* is omitted, the name of the output configuration file will be chosen based on the selected target (see the `-t` option). If the specified config file exists, the feature will be injected into it at the locations specified by mconfig configuration. If the target config file does not exist, it will be created and will contain only the specified feature and all its dependencies. Default output filenames for the targets are:
 
 -   **web** - `Web.config`
 -   **application** - `application.exe.config`.
@@ -124,9 +124,9 @@ Adds the feature named *\<feature\_name\>* to the specified config file. If *con
 
 `{defaultconfig, dc} [config_name [target_directory]]`
 
-Generates a default config file using the configuration entry named *[config\_name]* and outputs the resulting configuration file to the directory given by the *[target\_directory]* option. If *[config\_name]* is omitted, it defaults to to the names described above in the documentation for the `addfeature` command. If the *[target\_directory]* parameter is omitted, it defaults to the current directory.
+Generates a default config file using the configuration entry named *[config_name]* and outputs the resulting configuration file to the directory given by the *[target_directory]* option. If *[config_name]* is omitted, it defaults to to the names described above in the documentation for the `addfeature` command. If the *[target_directory]* parameter is omitted, it defaults to the current directory.
 
-Name of the output config file created in *[target\_directory]* is given in the config file layout definition.
+Name of the output config file created in *[target_directory]* is given in the config file layout definition.
 
 Configuration files
 -------------------
@@ -138,7 +138,7 @@ Configuration files
 -   `$prefix/etc/mono/mconfig/config.xml`
     The default configuration file, distributed with mconfig. *\$prefix* is the mconfig installation prefix specified on the compilation time.
 -   `$config_dir/mconfig/config.xml`
-    *\$config\_dir* is the directory specified in the `XDG_CONFIG_HOME` environment variable or, if it is empty, in the `.config` directory located in the user's home directory. This file is not distributed with Mono.
+    *\$config_dir* is the directory specified in the `XDG_CONFIG_HOME` environment variable or, if it is empty, in the `.config` directory located in the user's home directory. This file is not distributed with Mono.
 -   `./mconfig.xml`
     Local configuration file which can contain per-directory settings. This may be useful when shipping new versions of an application to avoid overwriting the config files possibly modified by the application user. By adding appropriate mconfig calls to your setup sequence, you can safely modify the existing config files to add the new required entries.
 

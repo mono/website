@@ -8,13 +8,13 @@ redirect_from:
 GtkSharper
 ==========
 
-What is Gtk\#?
+What is Gtk#?
 ==============
 
-Gtk\# is a Graphical User Interface Toolkit for mono and .Net. The project binds the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries, enabling fully native graphical Gnome application development using the Mono and .Net development frameworks.
+Gtk# is a Graphical User Interface Toolkit for mono and .Net. The project binds the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries, enabling fully native graphical Gnome application development using the Mono and .Net development frameworks.
 
 -   [Frequently Asked Questions](/FAQ:_General "FAQ: General")
--   [Contacting the Mono/Gtk\# Team](/Contact "Contact")
+-   [Contacting the Mono/Gtk# Team](/Contact "Contact")
 -   [Bug reporting](/Bugs "Bugs")
 
 References
@@ -23,7 +23,7 @@ References
 -   [Online API Documentation](http://www.go-mono.com/docs/monodoc.ashx?tlink=root:/classlib-gnome)
 -   [What's New?](/GtkSharpNewInVersion2x "GtkSharpNewInVersion2x")
 -   [Release Plans](/GtkSharpPlan "GtkSharpPlan")
--   [Articles and Tutorials](/Articles "Articles") on Gtk\#.
+-   [Articles and Tutorials](/Articles "Articles") on Gtk#.
 
 Features
 --------
@@ -32,18 +32,18 @@ Features
 -   Wide range of Widgets/Controls.
 -   Accessible via the ATK accessibility toolkit.
 -   Internationalization.
--   Available from C\#, Java, Python, VB.Net and [more](/Languages "Languages").
+-   Available from C#, Java, Python, VB.Net and [more](/Languages "Languages").
 -   UI Builder support.
 -   Open Source, Free Software.
 
-Gtk\# in the Real World
+Gtk# in the Real World
 -----------------------
 
 [![Md2.png](/archived/images/3/3d/Md2.png)](/archived/images/3/3d/Md2.png)
 
-Want to know how Gtk\# is being used in the real world?
+Want to know how Gtk# is being used in the real world?
 
-Check out [some screenshots](/Screenshots "Screenshots") of Gtk\# Applications. Some of our more prominent users include:
+Check out [some screenshots](/Screenshots "Screenshots") of Gtk# Applications. Some of our more prominent users include:
 
 -   [Banshee](http://banshee-project.org/Main_Page)
 -   [Beagle](http://beagle-project.org/Main_Page)

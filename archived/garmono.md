@@ -121,9 +121,9 @@ To Do
 
 1. Update maemo-sharp bindings.
 
-Maemo apps built against OS2007 will not run out of the box on OS2008. This link outlines the differences between the SDKs: [http://maemo.org/development/sdks/api\_changes\_between\_maemo\_3\_2\_and\_maemo\_4\_0.html](http://maemo.org/development/sdks/api_changes_between_maemo_3_2_and_maemo_4_0.html) This is important because it means the mono wrappers will need to be reworked.
+Maemo apps built against OS2007 will not run out of the box on OS2008. This link outlines the differences between the SDKs: [http://maemo.org/development/sdks/api_changes_between_maemo_3_2_and_maemo_4_0.html](http://maemo.org/development/sdks/api_changes_between_maemo_3_2_and_maemo_4_0.html) This is important because it means the mono wrappers will need to be reworked.
 
-See: [GAPI](/GAPI "GAPI") for how to generate C\# wrappers.
+See: [GAPI](/GAPI "GAPI") for how to generate C# wrappers.
 
 Future Work
 ===========

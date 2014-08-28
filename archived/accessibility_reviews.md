@@ -113,7 +113,7 @@ The Review Process
 
 ### Publishing Reviews
 
-Designated reviewers should receive a "Review Request" email when a review is published. In addition, morbo should announce the new review in \#mono-a11y.
+Designated reviewers should receive a "Review Request" email when a review is published. In addition, morbo should announce the new review in #mono-a11y.
 
 To comment on somebody's diff, follow the link and click the "View Diff" tab. You can add a comment on any line of the diff by clicking on the line number on the "New Change" side. A text box will appear, and you can enter a comment and click Save. You'll see a little bubble over the line number on the far left side, with a number in it representing how many comments that line has. Click to view those comments or edit your own.
 

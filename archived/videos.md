@@ -42,7 +42,7 @@ Mono Demos
 
 -   [Debugging and authoring code in three languages](http://primates.ximian.com/%7Elluis/images/md1.html)
 
--   [Writing Gtk\# applications with Java and Boo](http://primates.ximian.com/%7Elluis/images/md2.html)
+-   [Writing Gtk# applications with Java and Boo](http://primates.ximian.com/%7Elluis/images/md2.html)
 
 #### Mono Documentation Browser
 
@@ -58,7 +58,7 @@ Mono Demos
 
 #### Hello World with Gtk\#
 
-[Demo:](http://www.nat.org/demos/gtksharp.html) In this demo Nat writes a quick "Hello World" Gtk\# application using Glade. 5 minutes 50 seconds.
+[Demo:](http://www.nat.org/demos/gtksharp.html) In this demo Nat writes a quick "Hello World" Gtk# application using Glade. 5 minutes 50 seconds.
 
 [![Gtksharp-thumb.png](/archived/images/1/14/Gtksharp-thumb.png)](/archived/images/1/14/Gtksharp-thumb.png)
 

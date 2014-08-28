@@ -71,7 +71,7 @@ Microsoft has created a new development platform. The highlights of this new dev
 
 -   A comprehensive class library.
 
--   A new language, C\#. Very similar to Java, C\# allows programmers to use all the features available on the .NET runtime.
+-   A new language, C#. Very similar to Java, C# allows programmers to use all the features available on the .NET runtime.
 
 -   A language specification that compilers can follow if they want to generate classes and code that can interoperate with other programming languages (The Common Language Specification: CLS)
 
@@ -86,7 +86,7 @@ The .NET development platform is essentially a new foundation for program develo
 ECMA standards
 --------------
 
-Microsoft has submitted the specifications of C\#, the runtime, the metadata and the other various bits of the .NET development platform to the [ECMA](http://www.ecma.ch) for standarization. You can get a copy of the specifications submitted to ECMA from: [http://www.dotnetexperts.com/ecma](http://www.dotnetexperts.com/ecma)
+Microsoft has submitted the specifications of C#, the runtime, the metadata and the other various bits of the .NET development platform to the [ECMA](http://www.ecma.ch) for standarization. You can get a copy of the specifications submitted to ECMA from: [http://www.dotnetexperts.com/ecma](http://www.dotnetexperts.com/ecma)
 
 Mono: an Open Source Common Language Infrastructure implementation
 ------------------------------------------------------------------
@@ -98,7 +98,7 @@ What makes up Mono?
 
 There are various pieces that make up Mono today:
 
--   A C\# compiler.
+-   A C# compiler.
 
 -   The Virtual Execution System: that has the
 
@@ -118,13 +118,13 @@ Postgress, MySQL, DB2, TDS, Sybase, Oracle, ODBC and Gnome's GDA.
 
 -   UNIX class libraries: Mono.Posix
 
--   Gnome-specific class libraries: The Gtk\# family.
+-   Gnome-specific class libraries: The Gtk# family.
 
 -   A code pre-compiler to generate native code ahead of
 
 time.
 
--   Gtk\# a toolkit to develop GNOME applications on UNIX and Windows.
+-   Gtk# a toolkit to develop GNOME applications on UNIX and Windows.
 
 -   An implementation of the Remoting infrastructure in .NET
 

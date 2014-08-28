@@ -4,14 +4,14 @@ redirect_from:
   - /Mono.Cairo_Tutorial/
 ---
 
-This tutorial is derived from Michael Urman's [cairo tutorial](http://www.tortall.net/mu/wiki/CairoTutorial) for python. The original code snippets have been translated to C\#, the text has only been changed as much as necessary. Translation to C\# done by mgsloan.
+This tutorial is derived from Michael Urman's [cairo tutorial](http://www.tortall.net/mu/wiki/CairoTutorial) for python. The original code snippets have been translated to C#, the text has only been changed as much as necessary. Translation to C# done by mgsloan.
 
 Cairo is a powerful 2d graphics library. This document introduces you to how cairo works and many of the functions you will use to create the graphic experience you desire.
 
 In order to follow along on your computer, you need the following things:
 
 1.  Cairo itself. You will need both the library and the development files. [Download it](http://cairographics.org/download/) if you don't have it already.
-2.  [Download Mono](/Downloads), if you haven't already - you will need it to compile the C\# code, and for the Mono.Cairo library.
+2.  [Download Mono](/Downloads), if you haven't already - you will need it to compile the C# code, and for the Mono.Cairo library.
 
      If you want to see the code snippets included in this tutorial in
      action, you can try to click on some of the images. You will get a
@@ -150,7 +150,7 @@ The [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.
 Drawing with Cairo
 ------------------
 
-In order to create an image you desire, you have to prepare the [context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) or [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo\_paint()](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()), you need a primary source.
+In order to create an image you desire, you have to prepare the [context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) or [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo_paint()](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()), you need a primary source.
 
 ### Preparing and Selecting a Source
 

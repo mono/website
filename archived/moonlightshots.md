@@ -64,7 +64,7 @@ June 18th, 2007
 
 Showing Moonlight in a browser; June 18th, 2007
 
-Sebastien has been working on getting the [Surface Silverlight](http://delay.members.winisp.net/SilverlightSurface/) demonstration to work with our implementation. Here you can see it in our Gtk\# shell:
+Sebastien has been working on getting the [Surface Silverlight](http://delay.members.winisp.net/SilverlightSurface/) demonstration to work with our implementation. Here you can see it in our Gtk# shell:
 
 [![](/archived/images/5/59/SurfaceJun17.png)](/archived/images/5/59/SurfaceJun17.png)
 

@@ -5,7 +5,7 @@ redirect_from:
   - /Applications_ScreenShots/
 ---
 
-Gtk\# Applications
+Gtk# Applications
 ------------------
 
 <table>

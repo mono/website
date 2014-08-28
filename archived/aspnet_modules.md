@@ -8,7 +8,7 @@ redirect_from:
 ASP.NET Modules
 ===============
 
-Mono provides support for **gzip** encoding and **basic and digest authentication** in *xsp* as modules. These can be used with *mod\_mono* too, but as apache already has modules to do that, they are less useful.
+Mono provides support for **gzip** encoding and **basic and digest authentication** in *xsp* as modules. These can be used with *mod_mono* too, but as apache already has modules to do that, they are less useful.
 
 The modules are in the Mono.Http.dll assembly distributed with mono.
 

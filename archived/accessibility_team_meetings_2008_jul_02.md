@@ -23,7 +23,7 @@ calvin, i'll be Calen's representative, because she is going to the see doctor. 
 
 ** **
 
--!- calvin changed the topic of \#mono-a11y to: --- Iteration 7 Planning Meeting - In progress ---
+-!- calvin changed the topic of #mono-a11y to: --- Iteration 7 Planning Meeting - In progress ---
 
 07:01
 
@@ -155,7 +155,7 @@ There's a preview of our Navigation implementation, however, I need to refactor 
 
 ** **
 
--!- jpallen [\~jpallen@137.65.133.128] has joined \#mono-a11y
+-!- jpallen [\~jpallen@137.65.133.128] has joined #mono-a11y
 
 **\<@MarioC\> **
 
@@ -465,7 +465,7 @@ Most of the time was spent reviewing our Strongwind tests, fixing and suggests f
 
 ** **
 
--!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined \#mono-a11y
+-!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined #mono-a11y
 
 07:30
 
@@ -491,7 +491,7 @@ I want to write a Strongwind HowTo and put it on our wiki and a blog
 
 ** **
 
--!- peteb [\~ptbrunet@user-0vvdbck.cable.mindspring .com] has joined \#mono-a11y
+-!- peteb [\~ptbrunet@user-0vvdbck.cable.mindspring .com] has joined #mono-a11y
 
 **\< bgm\> **
 

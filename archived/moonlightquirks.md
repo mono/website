@@ -73,7 +73,7 @@ Silverlight documentations describes filling clocks (*FillBehavior="HoldEnd"*) a
 
 This is, however, not true at the implementation level. It seems that in Silverlight filling clocks are not being ticked anymore. To be precise: *ClockGroup's* that are filling and have only filling clocks as children are not being ticked anymore.
 
-In Moonlight we implement this behavior by setting an **idle\_hint** on *ClockGroup's* that are filling and contain only filling children. Idle hinted groups are not being ticked by parent groups.
+In Moonlight we implement this behavior by setting an **idle_hint** on *ClockGroup's* that are filling and contain only filling children. Idle hinted groups are not being ticked by parent groups.
 
 The reason for doing so is clearly performance. Since the *HoldEnd* behavior is the most common/popular one, dumbly ticking/resetting values over themselves all the time (and possibly triggering huge expose chains) is a huge performance hit. Actually, enabling this MSDN-described behavior in Moonlight makes most of the bigger sites (ie. Showcase) absolutely unusable because of performance problems.
 

@@ -42,7 +42,7 @@ In addition to region restrictions there is known problem with some particular v
 Performance Issues
 ------------------
 
--   The olympics player makes fairly heavy use of Effects such as Blur (and sites using different versions of the player, like universalsports.com and ctvolympics, use DropShadow.). This can have an enormous effect on performance. In order to disable effects, you must make sure the MOONLIGHT\_OVERRIDES environment variable includes "effects=no". You can either set this in whatever desktop startup script you use, or shutdown firefox and run it from the command line like so:
+-   The olympics player makes fairly heavy use of Effects such as Blur (and sites using different versions of the player, like universalsports.com and ctvolympics, use DropShadow.). This can have an enormous effect on performance. In order to disable effects, you must make sure the MOONLIGHT_OVERRIDES environment variable includes "effects=no". You can either set this in whatever desktop startup script you use, or shutdown firefox and run it from the command line like so:
 
 <!-- -->
 
@@ -56,7 +56,7 @@ UI Issues
 
 -   Video App
     -   The Expore More Videos button in fullscreen mode can lead to a recursive layout problem. We are actively addressing this and will issue an update when it is resolved.
-    -   Some videos will not play correctly see [\#Missing Video](#missing-video).
+    -   Some videos will not play correctly see [#Missing Video](#missing-video).
     -   On the CTV video player the fullscreen and volume buttons render offscreen.
 
 Browser Issues

@@ -68,13 +68,13 @@ We should use the openSUSE build system, as this would allow us to support multi
 
 Starting with one or two platforms for now is fine, we do not need to build on every platform, I rather have us jump-start the effort and get a lot of software only on openSUSE and later add more platforms (SLED, RHEL, etc).
 
-In addition to the Gtk\#-based applications that we have (and I believe we package most of this), I can think of the following classes of applications that we should package:
+In addition to the Gtk#-based applications that we have (and I believe we package most of this), I can think of the following classes of applications that we should package:
 
 ### Windows and MacOS packaging
 
 We need to sort out the distribution for Windows.
 
-Distribution of Gtk+ and Gtk\# for MacOS X.
+Distribution of Gtk+ and Gtk# for MacOS X.
 
 Plans on how to [split the MacOS installer](/MacOSPackaging "MacOSPackaging") into Runtime and SDK
 
@@ -93,7 +93,7 @@ WinForms Apps:
 
 Libraries:
 
--   [DB\_Linq](http://code.google.com/p/dblinq2007/) LINQ support for various databases.
+-   [DB_Linq](http://code.google.com/p/dblinq2007/) LINQ support for various databases.
 -   [Tao Framework](http://sourceforge.net/projects/taoframework/) (Bindings to OpenGL and the other 3D libraries)
 -   [NDesk's Dbus Sharp](http://www.ndesk.org/DBusSharp)
 -   gnome-keyring-sharp
@@ -138,7 +138,7 @@ Compilers:
 
 Extensions:
 
--   [Gimp\#](http://gimp-sharp.cvs.sourceforge.net/)
+-   [Gimp#](http://gimp-sharp.cvs.sourceforge.net/)
 
 Tools:
 

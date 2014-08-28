@@ -18,7 +18,7 @@ Yes. The licensing scheme is planned to allow proprietary developers to write ap
 
 We use four open source licenses:
 
--   The C\# compiler is dual-licensed under the MIT/X11 license and the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
+-   The C# compiler is dual-licensed under the MIT/X11 license and the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
 
 -   The tools are released under the terms of the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
 
@@ -58,7 +58,7 @@ We will have to evaluate the licenses for compatibility first, but as a general 
 
 **Why does Xamarin require a copyright assignment?**
 
-When a developer contributes code to the C\# compiler or the Mono runtime engine, we require that the author grants Xamarin the right to relicense his/her contribution under other licensing terms.
+When a developer contributes code to the C# compiler or the Mono runtime engine, we require that the author grants Xamarin the right to relicense his/her contribution under other licensing terms.
 
 This allows Xamarin to re-distribute the Mono source code to parties that might not want to use the GPL or LGPL versions of the code.
 
@@ -92,7 +92,7 @@ The Mono project has gone beyond both of those components and has developed and 
 
 The core of the .NET Framework, and what has been patented by Microsoft falls under the ECMA/ISO submission.
 
-Microsoft [has announced](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) that the ECMA standards for C\# and the CLI are covered under the [Community Promise](http://www.microsoft.com/interop/cp/default.mspx) patent license.
+Microsoft [has announced](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) that the ECMA standards for C# and the CLI are covered under the [Community Promise](http://www.microsoft.com/interop/cp/default.mspx) patent license.
 
 Basically a grant is given to anyone who want to implement those components for free and for any purpose.
 
@@ -106,7 +106,7 @@ Not providing a patented capability would weaken the interoperability, but it wo
 
 The patents do not apply in countries where software patents are not allowed.
 
-For Linux server and desktop development, we only need the ECMA components, and things that we have developed (like Gtk\#) or Apache integration.
+For Linux server and desktop development, we only need the ECMA components, and things that we have developed (like Gtk#) or Apache integration.
 
 **Are there alternatives to ASP.NET?**
 
@@ -114,7 +114,7 @@ Yes, there are a number of alternatives that people have been using for developi
 
 **Are there alternatives to Windows.Forms?**
 
-Yes, there are plenty of alternatives, including [Gtk\#](/docs/gui/gtksharp/) see our page on [Gui Toolkits](/docs/gui/gui-toolkits/) for more information.
+Yes, there are plenty of alternatives, including [Gtk#](/docs/gui/gtksharp/) see our page on [Gui Toolkits](/docs/gui/gui-toolkits/) for more information.
 
 **Is Mono only an implementation of the .NET Framework?**
 
@@ -125,7 +125,7 @@ Mono can also be used a Java Virtual Machine via [IKVM](http://www.ikvm.net).
 Old Background
 ==============
 
-This contains some old information that we are keeping here for the sake of finding it for future reference. The information below is now superseded by Microsoft's announcement on using the Community Promise for the ECMA CLI and C\#.
+This contains some old information that we are keeping here for the sake of finding it for future reference. The information below is now superseded by Microsoft's announcement on using the Community Promise for the ECMA CLI and C#.
 
  Jim Miller at Microsoft has made a statement on the patents covering ISO/ECMA, (he is one of the inventors listed in the patent): [here](http://web.archive.org/web/20030424174805/http://mailserver.di.unipi.it/pipermail/dotnet-sscli/msg00218.html). Microsoft's letter to ECMA is [here](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma%20PATENT/ECMA-334%20&%20335/2001ga-123%20&%202002ga-003.pdf).
 

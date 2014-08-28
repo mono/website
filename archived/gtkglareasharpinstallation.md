@@ -84,7 +84,7 @@ GtkGlAreaSharp:Installation
     ./autogen.sh --prefix=$HOME/opt
     make
 
-// I can't get checkinstall to run. // dpkg: error processing gtkglarea-sharp\_0.0.2-1\_i386.deb (--install): // trying to overwrite \`/root/.wapi/shared\_data-camel-6-0', which is also in package tao-0.0.3
+// I can't get checkinstall to run. // dpkg: error processing gtkglarea-sharp_0.0.2-1_i386.deb (--install): // trying to overwrite \`/root/.wapi/shared_data-camel-6-0', which is also in package tao-0.0.3
 
     make install
 

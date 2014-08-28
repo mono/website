@@ -64,7 +64,7 @@ We will showcase some of the Mono-based applications we have built for Linux:
 -   [F-Spot](http://www.gnome.org/projects/f-spot) our new photo management software,
 -   [the desktop search](http://www.beagle-project.org),
 -   the [MonoDevelop](http://www.monodevelop.com) IDE and
--   the [GTK\# GUI](/GtkSharp "GtkSharp") toolkit which is the API we use to create all of these applications.
+-   the [GTK# GUI](/GtkSharp "GtkSharp") toolkit which is the API we use to create all of these applications.
 
 We will also showcase the new vector-based rendering APIs available for developers (completely cross-platform) as well as the new OpenGL-based windowing system.
 
@@ -90,7 +90,7 @@ Participants
 -   Gonzalo Paniagua: Mono's ASP.NET maintainer.
 -   Miguel de Icaza: Mono Project manager.
 -   Peter Bartok: Mono's Windows.Forms maintainer.
--   Zac Bowling: Gecko\# developer.
+-   Zac Bowling: Gecko# developer.
 -   Joseph Hill: MonoLive CD creator.
 -   Christian Hergert: Monodevelop/Monoquery Developer.
 

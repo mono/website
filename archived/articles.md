@@ -34,13 +34,13 @@ From 2010
 
 [Profiler](/Profiler "Profiler") documents the new Mono profiles that will be available in Mono 2.10.
 
-[Mono\_LLVM](/Mono_LLVM "Mono LLVM") describes how to use LLVM as the code generation engine in Mono, starting with release 2.8
+[Mono_LLVM](/Mono_LLVM "Mono LLVM") describes how to use LLVM as the code generation engine in Mono, starting with release 2.8
 
 [Mono:Runtime:Documentation](/Mono:Runtime:Documentation "Mono:Runtime:Documentation") we moved most of our runtime documentation to the Mono Website and we are now maintaining it here.
 
 [GitFAQ](/GitFAQ "GitFAQ") Common questions about Mono's migration to Git and GitHub for source code control.
 
-CSharpRepl discussed our interactive shell for our C\# Compiler as a Service.
+CSharpRepl discussed our interactive shell for our C# Compiler as a Service.
 
 From July 2007
 --------------
@@ -72,7 +72,7 @@ From December 2006
 From August 2006
 ----------------
 
--   [Guidelines:Application\_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability") a new document to assist developers in porting their applications to Unix/Linux from Windows using Mono.
+-   [Guidelines:Application_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability") a new document to assist developers in porting their applications to Unix/Linux from Windows using Mono.
 
 From Nov 2005
 -------------
@@ -92,12 +92,12 @@ From Aug 2005
 From Jun 2005
 -------------
 
--   [Guidelines:Application\_Deployment](/Guidelines:Application_Deployment "Guidelines:Application Deployment")
+-   [Guidelines:Application_Deployment](/Guidelines:Application_Deployment "Guidelines:Application Deployment")
 
 From May 2005
 -------------
 
--   [Notification Icons with Gtk\#](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Notification Icons with Gtk#](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
 -   [Tutorial on GConf](/GConfTutorial "GConfTutorial")
 
 From April 2005
@@ -111,7 +111,7 @@ From April 2005
 From March 2005
 ---------------
 
--   [Gtk\# Beginners Guide](/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
+-   [Gtk# Beginners Guide](/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
 
 Other
 -----
@@ -124,24 +124,24 @@ External Articles
 April 2012
 ----------
 
--   [SQLite C\# Tutorial](http://zetcode.com/db/sqlitecsharp/)
+-   [SQLite C# Tutorial](http://zetcode.com/db/sqlitecsharp/)
 -   [SQLite Visual Basic Tutorial](http://zetcode.com/db/sqlitevb/)
 
 October 2011
 ------------
 
--   [MySQL C\# Tutorial](http://zetcode.com/db/mysqlcsharptutorial/)
+-   [MySQL C# Tutorial](http://zetcode.com/db/mysqlcsharptutorial/)
 
 January 2011
 ------------
 
 A few Mono-centric tutorials created by Jan Bodnar:
 
--   [C\# Tutorial](http://zetcode.com/language/csharptutorial/)
+-   [C# Tutorial](http://zetcode.com/language/csharptutorial/)
 -   [Visual Basic Tutorial](http://zetcode.com/lang/visualbasic/)
--   [Qt/Qyoto and C\# tutorial](http://zetcode.com/tutorials/qyotosharptutorial/)
+-   [Qt/Qyoto and C# tutorial](http://zetcode.com/tutorials/qyotosharptutorial/)
 -   [QT/Qyoto and Visual Basic tutorial](http://zetcode.com/gui/vbqyoto/)
--   [Visual Basic Gtk\# tutorial](http://zetcode.com/gui/vbgtk/)
+-   [Visual Basic Gtk# tutorial](http://zetcode.com/gui/vbgtk/)
 -   [Visual Basic and Windows.Forms tutorial](http://zetcode.com/gui/vbwinforms/)
 -   [MySQL and Visual Basic Tutorial](http://zetcode.com/databases/mysqlvisualbasictutorial/)
 
@@ -183,7 +183,7 @@ April 2009
 
 CodeProject [Develop Mono Applications for the XO Laptop](http://www.codeproject.com/KB/cross-platform/monosugar.aspx).
 
-DDJ's [Novell's Mono Brings SIMD support to C\#](http://www.ddj.com/go-parallel/blog/archives/2009/04/novells_mono_br.html)
+DDJ's [Novell's Mono Brings SIMD support to C#](http://www.ddj.com/go-parallel/blog/archives/2009/04/novells_mono_br.html)
 
 eWeek's [Using Moma To Port from Windows.NET to Mono on Linux.](http://www.eweek.com/c/a/Application-Development/Using-MoMA-to-Port-from-Windows-NET-to-Mono-on-Linux-184710/)
 
@@ -192,14 +192,14 @@ February 2009
 
 ZetCode's [Mono IronPython Windows.Forms Tutorial](http://zetcode.com/tutorials/ironpythontutorial/).
 
-ZetCode's [Gtk\# Tutorial](http://zetcode.com/tutorials/gtksharptutorial/).
+ZetCode's [Gtk# Tutorial](http://zetcode.com/tutorials/gtksharptutorial/).
 
 Jan 2009
 --------
 
-[Tutorial: Using Winforms with Mono/C\#](http://zetcode.com/tutorials/monowinformstutorial/)
+[Tutorial: Using Winforms with Mono/C#](http://zetcode.com/tutorials/monowinformstutorial/)
 
-Ars Technica: [Open Source Mono Framework Brings C\# to iPhone and Wii](http://arstechnica.com/news.ars/post/20090108-open-source-mono-framework-brings-c-to-iphone-and-wii.html).
+Ars Technica: [Open Source Mono Framework Brings C# to iPhone and Wii](http://arstechnica.com/news.ars/post/20090108-open-source-mono-framework-brings-c-to-iphone-and-wii.html).
 
 December 2008
 -------------
@@ -238,7 +238,7 @@ eWeek Slideshow [Mono 2.0 Project Thrives Slideshow](http://www.eweek.com/c/a/Ap
 
 NetworkWorld [Project releases version 2.0 of open source .Net](http://www.networkworld.com/news/2008/100608-mono-project.html).
 
-Ars Technica [Mono 2.0 released, brings C\# 3.0 to Linux and Mac OS X](http://arstechnica.com/news.ars/post/20081006-mono-2-0-released-brings-c-3-0-to-linux-and-other-platforms.html).
+Ars Technica [Mono 2.0 released, brings C# 3.0 to Linux and Mac OS X](http://arstechnica.com/news.ars/post/20081006-mono-2-0-released-brings-c-3-0-to-linux-and-other-platforms.html).
 
 Redmond Developer News [Mono 2.0 Takes Flight](http://reddevnews.com/news/article.aspx?editorialsid=10267).
 
@@ -264,12 +264,12 @@ August 2008
 May 2008
 --------
 
-[Custom controls with MonoDevelop and Gtk\#](http://www.codeproject.com/KB/static/customgtkcontrol.aspx): discusses how to create custom controls using Gtk\# and the MonoDevelop IDE for Linux and Windows.
+[Custom controls with MonoDevelop and Gtk#](http://www.codeproject.com/KB/static/customgtkcontrol.aspx): discusses how to create custom controls using Gtk# and the MonoDevelop IDE for Linux and Windows.
 
 April 2008
 ----------
 
-[SCM Trends](http://www.ddj.com/architect/207402384): Discusses Plastic SCM from Codice Software, and their use of C\# and Mono to bring their application to multiple platforms.
+[SCM Trends](http://www.ddj.com/architect/207402384): Discusses Plastic SCM from Codice Software, and their use of C# and Mono to bring their application to multiple platforms.
 
 February 2008
 -------------
@@ -343,7 +343,7 @@ eWeek: [Novell Updates Mono Open-Source Project](http://www.eweek.com/article2/0
 
 ComputerWorld: [Mono upgrade targets Linux desktop applications](http://www.computerworld.com.au/index.php/id;479666195;fp;4194304;fpid;1)
 
-LinuxWorld: [http://www.cio.com/blog\_view.html?CID=26531 Mono upgrade targets Linux desktop applications](http://www.linuxworld.com/news/2006/110906-mono-upgrade-targets-linux-desktop.html)
+LinuxWorld: [http://www.cio.com/blog_view.html?CID=26531 Mono upgrade targets Linux desktop applications](http://www.linuxworld.com/news/2006/110906-mono-upgrade-targets-linux-desktop.html)
 
 DesktopLinux: [Mono 1.2 brings enhanced .NET features to Linux](http://www.desktoplinux.com/news/NS7999812792.html)
 
@@ -369,7 +369,7 @@ NewsForge: [The state of Mono support on Mac OS X](http://programming.newsforge.
 August 2006
 -----------
 
-DevX: [Building Robust UIs in Mono with Gtk\#](http://www.devx.com/opensource/Article/32302?trk=DXRSS_DOTNET).
+DevX: [Building Robust UIs in Mono with Gtk#](http://www.devx.com/opensource/Article/32302?trk=DXRSS_DOTNET).
 
 DevX: [Mono IDEs: Going Beyond the Command Line](http://www.devx.com/opensource/Article/32085/0).
 
@@ -446,7 +446,7 @@ LinuxWorld.AU [Picture perfect and in tune](http://www.linuxworld.com.au/index.p
 
 CodeProject: [RAPPTOR.Persistence Transparent object persistence the easy way](http://www.codeproject.com/useritems/rapptorpersistence.asp)
 
-CodeProject: [MinosseCC: a lexer/parser generator for C\#](http://www.codeproject.com/csharp/minossecc.asp)
+CodeProject: [MinosseCC: a lexer/parser generator for C#](http://www.codeproject.com/csharp/minossecc.asp)
 
 July 2005
 ---------
@@ -476,7 +476,7 @@ In May and June 2005, Miguel de Icaza participated in many press interviews with
 March 2005
 ----------
 
-CodeProject: [Calc\# An Introduction to Gtk\#](http://www.codeproject.com/useritems/calcsharp.asp)
+CodeProject: [Calc# An Introduction to Gtk#](http://www.codeproject.com/useritems/calcsharp.asp)
 
 O'ReillyNet: [Miguel de Icaza explains how to get Mono](http://www.ondotnet.com/pub/a/dotnet/2005/03/21/interviewmiguel.html)
 
@@ -492,7 +492,7 @@ January 2005
 
 CodeProject: [Introduction to Mono](http://www.codeproject.com/cpnet/introtomono1.asp) Prize Winner, Jan 2005 the Code Project.
 
-CodeProject: [A Google Search Application using Gtk\#](http://www.codeproject.com/cpnet/googleSearch.asp)
+CodeProject: [A Google Search Application using Gtk#](http://www.codeproject.com/cpnet/googleSearch.asp)
 
 O'ReillyNet: [The Future of Mono](http://www.oreillynet.com/pub/wlg/6236)
 

@@ -62,7 +62,7 @@ mscorlib
     -   Activator (CreateInstance methods)
     -   AppDomain (Needs to implement ExecuteAssembly)
     -   AppDomainSetup
-    -   Array (need to clean up exposed InternalArray\_\*)
+    -   Array (need to clean up exposed InternalArray_\*)
     -   Console
     -   GC (internalize or remove RecordPressure)
     -   MarshalByRefObject
@@ -173,7 +173,7 @@ ADO.NET
 
 -   System.Data
     -   DataSetSchemaImporterExtension
-    -   DataSet (probably) support for importing and exporting annotated xsd files. The annotation format is not really documented anywhere, so it's a hard task, but a lot of ASP.NET 2.0 applications use xsd files which take advantage of the feature (I believe it is created by the VS2005 designers). A related bug report is [https://bugzilla.novell.com/show\_bug.cgi?id=325464](https://bugzilla.novell.com/show_bug.cgi?id=325464)
+    -   DataSet (probably) support for importing and exporting annotated xsd files. The annotation format is not really documented anywhere, so it's a hard task, but a lot of ASP.NET 2.0 applications use xsd files which take advantage of the feature (I believe it is created by the VS2005 designers). A related bug report is [https://bugzilla.novell.com/show_bug.cgi?id=325464](https://bugzilla.novell.com/show_bug.cgi?id=325464)
 -   System.Data.Odbc
     -   OdbcConnectionStringBuilder
     -   OdbcParameterCollection

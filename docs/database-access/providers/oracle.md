@@ -53,7 +53,7 @@ Current Status for System.Data.OracleClient
 
 -   You have two ways to connect to Oracle: using a User ID and Password or using external authentication using "Integrated Security=true" in your connection string
 
--   OracleCommandBuilder has been implemented and can let you do simple Inserts/Updates/Deletes with a DataSet and OracleDataAdapter. However, OracleDataReader needs more implementation for getting KeyInfo and other meta data correctly. The Oracle SQL parser is very simple and will not be able to handle complex queries. Will need a real Oracle SQL parser which would use the jay compiler-compiler. Jay is used by mcs to parse c\# files and System.Data to parse expressions in a DataColumn.
+-   OracleCommandBuilder has been implemented and can let you do simple Inserts/Updates/Deletes with a DataSet and OracleDataAdapter. However, OracleDataReader needs more implementation for getting KeyInfo and other meta data correctly. The Oracle SQL parser is very simple and will not be able to handle complex queries. Will need a real Oracle SQL parser which would use the jay compiler-compiler. Jay is used by mcs to parse c# files and System.Data to parse expressions in a DataColumn.
 
 -   REF CURSOR can be returned from a stored procedure as an OracleDataReader via an output parameter defined as OracleType.Cursor
 
@@ -204,7 +204,7 @@ CREATE USER someuser IDENTIFIED EXTERNALLY;
 Examples
 --------
 
-**C\# Example 1a - Basic Connection and Retrieval**
+**C# Example 1a - Basic Connection and Retrieval**
 
 ``` csharp
  using System;
@@ -245,7 +245,7 @@ Examples
  }
 ```
 
-**C\# Example 1b - Basic Connection and Retrieval using Integrated Security**
+**C# Example 1b - Basic Connection and Retrieval using Integrated Security**
 
 ``` csharp
  using System;
@@ -285,7 +285,7 @@ Examples
  }
 ```
 
-**C\# Example 2 - Calling Stored Procedure**
+**C# Example 2 - Calling Stored Procedure**
 
 ``` csharp
  using System;
@@ -376,7 +376,7 @@ Examples
  }
 ```
 
-**C\# Example 3 - Executing PL/SQL Block**
+**C# Example 3 - Executing PL/SQL Block**
 
 Why would I want to do that? Let's say I need to execute a stored procedure, yet there is no support for Boolean data type in OCI. I can do this via a PL/SQL block.
 
@@ -463,7 +463,7 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
  }
 ```
 
-**C\# Example 4 - ASP.NET DataGrid Data Binding to an Oracle database table**
+**C# Example 4 - ASP.NET DataGrid Data Binding to an Oracle database table**
 
 First, you will need to make sure there is a table named CUSTOMERS with some data.
 
@@ -590,7 +590,7 @@ First, you will need to make sure there is a table named CUSTOMERS with some dat
  </html>
 ```
 
- **C\# Example 5 - Returning a REF CURSOR from an Oracle stored procedure via an OracleDataReader from an out parameter**
+ **C# Example 5 - Returning a REF CURSOR from an Oracle stored procedure via an OracleDataReader from an out parameter**
 
 ``` csharp
  using System;
@@ -717,12 +717,12 @@ First, you will need to make sure there is a table named CUSTOMERS with some dat
  }
 ```
 
-Building C\# Examples
+Building C# Examples
 ---------------------
 
 Save the example to a file, such as, TestExample.cs
 
--   Build with Mono C\# compiler:
+-   Build with Mono C# compiler:
 
 <!-- -->
 

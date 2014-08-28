@@ -63,7 +63,7 @@ This time you should have the Gtk window and a teapot. You can even click and dr
 
 ### Getting a project started in MonoDevelop
 
-First things first obviously load up MonoDevelop and start a Gtk\# 2.0 project. Bring up the MyWindow.cs file and change the entire contents to the following:
+First things first obviously load up MonoDevelop and start a Gtk# 2.0 project. Bring up the MyWindow.cs file and change the entire contents to the following:
 
 ``` csharp
 using System;
@@ -148,7 +148,7 @@ The inserted entry in the config should look something like this:
 
 The libgtkgl-2.0.so.1.0.0 file was installed to \$HOME/opt/lib so therefore you need to add (for example) /home/wayne/opt/lib to your /etc/ld.so.conf file. Remember to do an ldconfig afterwards so that the path is added to the linux system permanently.
 
-Now run the program and you should get a Gtk\# Window with a GLWidget containing a teapot. To make it more interesting we can add a GLib.Timeout event to trigger some animation:
+Now run the program and you should get a Gtk# Window with a GLWidget containing a teapot. To make it more interesting we can add a GLib.Timeout event to trigger some animation:
 
 ``` csharp
 Lib.Timeout.Add(10, new GLib.TimeoutHandler(Animate) );

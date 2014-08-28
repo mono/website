@@ -12,9 +12,9 @@ The most simple scenario uses Apache as the HTTP server front end which passes t
 
 [![Modmono-basic-setup.PNG](/archived/images/c/cc/Modmono-basic-setup.PNG)](/archived/images/c/cc/Modmono-basic-setup.PNG)
 
-Mod\_mono is an Apache module that is hosted inside Apache. Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process. The mod-mono-server process in turn can host multiple independent applications. It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
+Mod_mono is an Apache module that is hosted inside Apache. Depending on your configuration the Apache box could be one or a dozen of separate processes, all of these process will send their ASP.NET requests to the mod-mono-server process. The mod-mono-server process in turn can host multiple independent applications. It does this by using Application Domains to isolate the applications from each other, while using a single Mono virtual machine.
 
-Although AppDomains provide an adequate level of isolation, mod\_mono can also be configured to route different urls to different mod-mono-server processes. You can use this to:
+Although AppDomains provide an adequate level of isolation, mod_mono can also be configured to route different urls to different mod-mono-server processes. You can use this to:
 
 -   As an ISP, isolate different customers to different processes
 -   Allow experimental code to run in one server, independent of production code.
@@ -32,22 +32,22 @@ Requirements
 
 You will need [apache](http://httpd.apache.org) , the web server, installed.
 
-From [Downloads](/download/) you will need **mono**, **xsp** and **mod\_mono**.
+From [Downloads](/download/) you will need **mono**, **xsp** and **mod_mono**.
 
 Distribution-Specific Documentation
 ===================================
 
 If you are using one of these linux distributions, you should look at the corresponding documentation before reading the rest of this page, as some things are different on every distro. It is also always recommended to use your distribution's official packages when available, rather than compiling from source.
 
--   [Mod\_Mono on Ubuntu](https://help.ubuntu.com/community/ModMono)
--   [Mod\_Mono on Fedora 9](http://www.inprose.com/articles/10-enable-aspnet-support-in-fedora-linux.html)
+-   [Mod_Mono on Ubuntu](https://help.ubuntu.com/community/ModMono)
+-   [Mod_Mono on Fedora 9](http://www.inprose.com/articles/10-enable-aspnet-support-in-fedora-linux.html)
 
-Easy Configuration of Mod\_Mono
+Easy Configuration of Mod_Mono
 ===============================
 
 When you installed XSP, a bunch of sample ASP.NET pages and web services were installed too. If the prefix used to configure XSP was /usr, the sample files are located in /usr/lib/xsp/test.
 
-If your needs are not very complicated, all you need is to use [AutoHosting](/docs/web/mod_mono-autoconfiguration/), this basically means that you load the mod\_mono.conf file, like this in your Apache configuration file:
+If your needs are not very complicated, all you need is to use [AutoHosting](/docs/web/mod_mono-autoconfiguration/), this basically means that you load the mod_mono.conf file, like this in your Apache configuration file:
 
     Include /etc/apache2/mod_mono.conf
 
@@ -55,20 +55,20 @@ And applications will start to be served. To try it out, copy the /usr/lib/xsp/t
 
 It is recommended that you create a directory per application that you want served. This will allow you to xcopy deploy your applications from Windows to Linux if you want to.
 
-More on automatic configuration of mod\_mono applications is in [AutoHosting](/docs/web/mod_mono-autoconfiguration/).
+More on automatic configuration of mod_mono applications is in [AutoHosting](/docs/web/mod_mono-autoconfiguration/).
 
-mod\_mono.conf loads the mod\_mono module, associates ASP.NET file extensions with the ASP.NET MIME type and adds index.aspx, Default.aspx, and default.aspx as automatic directory index pages (with the DirectoryIndex directive). If you don't include mod\_mono.conf in your main Apache configuration, you will at least need to have the mod\_mono.so module loaded with:
+mod_mono.conf loads the mod_mono module, associates ASP.NET file extensions with the ASP.NET MIME type and adds index.aspx, Default.aspx, and default.aspx as automatic directory index pages (with the DirectoryIndex directive). If you don't include mod_mono.conf in your main Apache configuration, you will at least need to have the mod_mono.so module loaded with:
 
     LoadModule mono_module /usr/lib/httpd/modules/mod_mono.so
 
 For more detailed configuration and manual tuning keep reading.
 
-mod\_mono will automatically launch mod-mono-server and start the web application on the first request for a page handled by mod\_mono. In the early days of mod\_mono, you had to start mod-mono-server by yourself, ensuring that it had all the parameters needed to understand the requests forwarded by the module. This is still an option for those who want mod-mono-server to have a separate life cycle from apache, but you will probably prefer to use mod\_mono built-in ability to start and stop mod-mono-server for you.
+mod_mono will automatically launch mod-mono-server and start the web application on the first request for a page handled by mod_mono. In the early days of mod_mono, you had to start mod-mono-server by yourself, ensuring that it had all the parameters needed to understand the requests forwarded by the module. This is still an option for those who want mod-mono-server to have a separate life cycle from apache, but you will probably prefer to use mod_mono built-in ability to start and stop mod-mono-server for you.
 
 Apache performance tweaks
 =========================
 
-You might want to consider modifying the apache configuration so that mod\_mono performs better.
+You might want to consider modifying the apache configuration so that mod_mono performs better.
 
 Keep alive
 ----------
@@ -84,26 +84,26 @@ If, however, you want to use keep alive, you might try decreasing the session ti
 MPM worker
 ----------
 
-Apache 2.x comes with several processing modules (that is - servers, so-called MPMs for Multi Processing Module) implementing different server models. The one installed by default by most distributions is the `prefork` MPM which implements the traditional, one OS process per server, model and is the same what in the earlier Apache versions. Another module usually available with your distribution is the `worker` MPM. That module implements a mixed process/thread model which spawns several processes as well, but each of them can create a configurable number of service threads. It is advisable to use the `worker` MPM with mod\_mono. Unfortunately, PHP seems to not necessarily work with the `worker` MPM, so you may not be able to go this route.
+Apache 2.x comes with several processing modules (that is - servers, so-called MPMs for Multi Processing Module) implementing different server models. The one installed by default by most distributions is the `prefork` MPM which implements the traditional, one OS process per server, model and is the same what in the earlier Apache versions. Another module usually available with your distribution is the `worker` MPM. That module implements a mixed process/thread model which spawns several processes as well, but each of them can create a configurable number of service threads. It is advisable to use the `worker` MPM with mod_mono. Unfortunately, PHP seems to not necessarily work with the `worker` MPM, so you may not be able to go this route.
 
-Configuring Mod\_Mono
+Configuring Mod_Mono
 =====================
 
-When [AutoHosting](/docs/web/mod_mono-autoconfiguration/) does not fit your needs, you will need to include several mod\_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
+When [AutoHosting](/docs/web/mod_mono-autoconfiguration/) does not fit your needs, you will need to include several mod_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
 
-### Mod\_Mono Configuration Tool
+### Mod_Mono Configuration Tool
 
-The [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod\_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
+The [Apache mod_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
 
-In the simplest case, you shouldn’t have to supply the tool with anything more than a server or application name; the tool will suggest a path where you can deploy your application. With the intention of making developing and porting applications as painless as possible, the default configuration will set mod\_mono to run with both mono debugging and platform abstraction enabled. These may not be the best options for production web sites, so consider disabling those features if/when you no longer need them.
+In the simplest case, you shouldn’t have to supply the tool with anything more than a server or application name; the tool will suggest a path where you can deploy your application. With the intention of making developing and porting applications as painless as possible, the default configuration will set mod_mono to run with both mono debugging and platform abstraction enabled. These may not be the best options for production web sites, so consider disabling those features if/when you no longer need them.
 
 Once you’ve completed the form, the tool will generate a configuration you can save to disk (/etc/apache2/conf.d/ on SUSE/openSUSE). To begin serving your newly configured application, simply restart apache:
 
             sudo /sbin/service apache2 restart
 
-### Manual Mod\_Mono Configuration
+### Manual Mod_Mono Configuration
 
-The following assumes you have included mod\_mono.conf in your main configuration file as described above. Further, it is important (as of Mono 1.2.5) to place the remaining mod\_mono directives after the User and Group directives. They can just go at the end, or inside VirtualHost sections.
+The following assumes you have included mod_mono.conf in your main configuration file as described above. Further, it is important (as of Mono 1.2.5) to place the remaining mod_mono directives after the User and Group directives. They can just go at the end, or inside VirtualHost sections.
 
 A basic setup is as follows (with line numbers added for convenience):
 
@@ -113,11 +113,11 @@ A basic setup is as follows (with line numbers added for convenience):
 
 The first line disables the [AutoHosting](/docs/web/mod_mono-autoconfiguration/) feature. (If inside a VirtualHost section, it disables it just for that virtual host).
 
-The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod\_mono (rather than Apache processing them itself as plain-text files).
+The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod_mono (rather than Apache processing them itself as plain-text files).
 
-The third line instructs mod\_mono that an ASP.NET application exists at the root directory of the web site (i.e. at [http://www.example.com/](http://www.example.com/)), and that this virtual path corresponds to the physical path on disk of /home/username/www. Normally, the physical path will match whatever Apache would map the given virtual path to. So if the virtual path is /, as in this example, the physical path matches what is in the DocumentRoot directive for Apache. This is important because in that virtual path, Apache itself will continue to serve images, static HTML, and other files, based on the physical path it knows in DocumentRoot, while mod\_mono will handle files with .aspx, etc. extensions (or whatever was specified in AddHandler) based on the physical path provided in the MonoApplications directive.
+The third line instructs mod_mono that an ASP.NET application exists at the root directory of the web site (i.e. at [http://www.example.com/](http://www.example.com/)), and that this virtual path corresponds to the physical path on disk of /home/username/www. Normally, the physical path will match whatever Apache would map the given virtual path to. So if the virtual path is /, as in this example, the physical path matches what is in the DocumentRoot directive for Apache. This is important because in that virtual path, Apache itself will continue to serve images, static HTML, and other files, based on the physical path it knows in DocumentRoot, while mod_mono will handle files with .aspx, etc. extensions (or whatever was specified in AddHandler) based on the physical path provided in the MonoApplications directive.
 
-Here is another configuration that sets up the ASP.NET test suite that comes with mod\_mono.
+Here is another configuration that sets up the ASP.NET test suite that comes with mod_mono.
 
 Let's say you want those file to be available under the virtual path /test. Edit your httpd.conf file (hint: /etc/httpd, /etc/apache2) and append the following lines (remove the numbers ;-):
 
@@ -127,15 +127,15 @@ Let's say you want those file to be available under the virtual path /test. Edit
     4       SetHandler mono
     5   </Location>
 
-Unlike the first example, this example assumes that the virtual path "/test" does not already correspond to the physical path /usr/share/doc/xsp/test. The Alias directive is a standard Apache directive to map a virtual path to a physical path. The second line creates an ASP.NET application in something other than the root virtual path. Lines 3-5 instruct Apache that absolutely all files in the /test virtual path are to be handled by mod\_mono. (mod\_mono can handle non-ASP.NET pages as well. It will just send other files to the client directly without special processing.)
+Unlike the first example, this example assumes that the virtual path "/test" does not already correspond to the physical path /usr/share/doc/xsp/test. The Alias directive is a standard Apache directive to map a virtual path to a physical path. The second line creates an ASP.NET application in something other than the root virtual path. Lines 3-5 instruct Apache that absolutely all files in the /test virtual path are to be handled by mod_mono. (mod_mono can handle non-ASP.NET pages as well. It will just send other files to the client directly without special processing.)
 
 Now start/restart Apache and browse [http://hostname/test/index.aspx](http://hostname/test/index.aspx) (where *hostname* is the name of the server, or 127.0.0.1 if you're running Apache locally). If you cannot see the test page, go to the troubleshooting section. Otherwise, welcome to ASP.NET!
 
-Okay, it worked. But, what happened? When you started apache, mod\_mono launched mod-mono-server. Later, when you requested any page under /test, mod\_mono connected to mod-mono-server, forwarded the request data and retrieved the response that is sent to your browser. Finally, if you stop apache, mod\_mono will tell mod-mono-server to die.
+Okay, it worked. But, what happened? When you started apache, mod_mono launched mod-mono-server. Later, when you requested any page under /test, mod_mono connected to mod-mono-server, forwarded the request data and retrieved the response that is sent to your browser. Finally, if you stop apache, mod_mono will tell mod-mono-server to die.
 
 It is possible to put these directives inside a VirtualHost section as well.
 
-If your site uses .NET 2.0 classes, you will need to instruct mod\_mono to spawn the .NET 2.0 version of mod-mono-server, instead of the default .NET 1.1 version. To do that, use the following, changing the path to mod-mono-server2 as needed:
+If your site uses .NET 2.0 classes, you will need to instruct mod_mono to spawn the .NET 2.0 version of mod-mono-server, instead of the default .NET 1.1 version. To do that, use the following, changing the path to mod-mono-server2 as needed:
 
     MonoServerPath /usr/bin/mod-mono-server2
 
@@ -153,7 +153,7 @@ If you use AddHandler you might want to let mod-mono-server know about your Dire
 More on Applications
 --------------------
 
-How do you go about making mod\_mono handle several applications? Let's try the easiest option. You will need this in your httpd.conf:
+How do you go about making mod_mono handle several applications? Let's try the easiest option. You will need this in your httpd.conf:
 
     1   Alias /test "/usr/share/doc/xsp/test"
     2   Alias /personal "/home/user/mypages"
@@ -176,7 +176,7 @@ The significant change is in line 4:
 
 This way you can keep all the configuration related to an application in a separate file (Alias, AddMonoApplications, Location,...).
 
-If you serve mod\_mono applications in multiple virtual hosts, you can use this syntax:
+If you serve mod_mono applications in multiple virtual hosts, you can use this syntax:
 
     AddMonoApplications "www.example.com:/:/home/exampledotcom/www"
     AddMonoApplications "www.sample.com:/:/home/sampledotcom/www"
@@ -192,7 +192,7 @@ You might want to run different applications in different instances of mod-mono-
 -   You need completely separate Mono instances running.
 -   If you don't want Session or Application level objects to be shared among applications or that you want to set certain memory or CPU usage restrictions for an application.
 
-Let's see the configuration needed to achieve this separation for the two applications in the previous example. (Alias directives are omitted for brevity, and this example assumes the AddHandler directive has been used to associate ASP.NET file extensions with mod\_mono.)
+Let's see the configuration needed to achieve this separation for the two applications in the previous example. (Alias directives are omitted for brevity, and this example assumes the AddHandler directive has been used to associate ASP.NET file extensions with mod_mono.)
 
     1   MonoApplications testing "/test:/usr/share/doc/xsp/test"
     2   <Location /test>
@@ -204,16 +204,16 @@ Let's see the configuration needed to achieve this separation for the two applic
     8      MonoSetServerAlias personal
     9   </Location>
 
-When (Add)MonoApplications is given two arguments, the first argument is understood as a name or alias for a particular instance of the mod-mono-server backend. With this configuration mod\_mono will start two instances of mod-mono-server whose aliases are 'testing' and 'personal'. The 'testing' instance will handle /test and the 'personal' instance will handle /personal.
+When (Add)MonoApplications is given two arguments, the first argument is understood as a name or alias for a particular instance of the mod-mono-server backend. With this configuration mod_mono will start two instances of mod-mono-server whose aliases are 'testing' and 'personal'. The 'testing' instance will handle /test and the 'personal' instance will handle /personal.
 
-MonoSetServerAlias tells mod\_mono which instance of mod-mono-server will be used to process the requests for this \<Location\>. It can be used with apache \<Directory\> too.
+MonoSetServerAlias tells mod_mono which instance of mod-mono-server will be used to process the requests for this \<Location\>. It can be used with apache \<Directory\> too.
 
-The alias used when no alias is provided, as in the earlier examples, is "default". All of the mod\_mono directives below that show an alias as the first argument also can be specified by leaving the alias out, in which case the "default" alias is used.
+The alias used when no alias is provided, as in the earlier examples, is "default". All of the mod_mono directives below that show an alias as the first argument also can be specified by leaving the alias out, in which case the "default" alias is used.
 
 Control panel
 -------------
 
-mod\_mono provides a simple web-based control panel for restarting the mod-mono-server, which is useful when assemblies need to be reloaded from disk after they have been changed. To activate the control panel, place the following in your httpd.conf:
+mod_mono provides a simple web-based control panel for restarting the mod-mono-server, which is useful when assemblies need to be reloaded from disk after they have been changed. To activate the control panel, place the following in your httpd.conf:
 
     <Location /mono>
       SetHandler mono-ctrl
@@ -222,7 +222,7 @@ mod\_mono provides a simple web-based control panel for restarting the mod-mono-
       Allow from 127.0.0.1
     </Location>
 
-The Order/Deny/Allow access controls above restrict access to the control panel to the computer with IP address 127.0.0.1. Replace this (or add more Allow lines) with the IP address of your own computer so that you can access the control panel. Note that anyone on the machine 127.0.0.1 will have the ability to affect any configured mod\_mono applications. (These directives placed in a VirtualHost section allow access to only mod\_mono applications configured within that virtual host.)
+The Order/Deny/Allow access controls above restrict access to the control panel to the computer with IP address 127.0.0.1. Replace this (or add more Allow lines) with the IP address of your own computer so that you can access the control panel. Note that anyone on the machine 127.0.0.1 will have the ability to affect any configured mod_mono applications. (These directives placed in a VirtualHost section allow access to only mod_mono applications configured within that virtual host.)
 
 The control panel is then accessible at [http://yourdomain.com/mono](http://yourdomain.com/mono). It allows you to:
 
@@ -239,7 +239,7 @@ Advanced options
 Automatic restart of the mod-mono-server backend
 ------------------------------------------------
 
-mod\_mono can automatically restart the Mono (mod-mono-server) backend that is handling requests after a certain amount of time. This is useful if you find that the mono process is growing indefinitely over time, or if you just need to make sure you clean house every so often.
+mod_mono can automatically restart the Mono (mod-mono-server) backend that is handling requests after a certain amount of time. This is useful if you find that the mono process is growing indefinitely over time, or if you just need to make sure you clean house every so often.
 
 There are two automatic restart methods: one based on time, and one based on the number of requests served. You can active them as follows:
 
@@ -253,14 +253,14 @@ The time format above is DD[:HH[:MM[:SS]]].
     1 MonoAutoRestartMode Requests
     2 MonoAutoRestartRequests 10000
 
-As with most other mod\_mono directives, the first parameter to a directive can be the name or alias of a mod-mono-server. This is always optional and is omitted in the examples above.
+As with most other mod_mono directives, the first parameter to a directive can be the name or alias of a mod-mono-server. This is always optional and is omitted in the examples above.
 
 Limiting the number of concurrent requests
 ------------------------------------------
 
 The number of concurrent requests that can be processed by the mod-mono-server backend is limited by the size of the ThreadPool, and you could [experience deadlocks](/archived/articlethreadpool_deadlocks) when too many requests are going at once. As a result of the deadlocks, Apache child process instances that are processing requests get backed up until no more incoming HTTP connections can be made (even for any virtual host).
 
-mod\_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
+mod_mono will limit the number of concurrent requests that are passed off to mod-mono-server, and when the limit is reached, incoming requests wait for a certain amount of time until more requests can be passed off to the backend. The default limit of concurrent requests is 20, and the default limit of requests waiting to be passed off to the backend is 20. This should be just below the amount mod-mono-server can process without reaching the ThreadPool limit on a single processor machine.
 
 To adjust the limits, use these directives:
 
@@ -269,7 +269,7 @@ To adjust the limits, use these directives:
 
 A value of zero disables the limits.
 
-To adjust the number of threads in the threadpool, you have two choices: this can be either configured as part of your ASP.NET application configuration or it can be made global to Mono. you can do this by using the MONO\_THREADS\_PER\_CPU environment variable, the default being 50 (25 on windows):
+To adjust the number of threads in the threadpool, you have two choices: this can be either configured as part of your ASP.NET application configuration or it can be made global to Mono. you can do this by using the MONO_THREADS_PER_CPU environment variable, the default being 50 (25 on windows):
 
 ``` bash
 export MONO_THREADS_PER_CPU=2000
@@ -310,7 +310,7 @@ Lines 4 and 5 set the maximum memory to be used (bytes) and the maximum CPU time
 Unix and TCP sockets
 --------------------
 
-We said that mod\_mono and mod-mono-server can use a unix or a TCP socket to sent data back and forth. Use of unix sockets is the default, but you can use a TCP socket in case you have several computers running apache and one single machine providing mod-mono-server services.
+We said that mod_mono and mod-mono-server can use a unix or a TCP socket to sent data back and forth. Use of unix sockets is the default, but you can use a TCP socket in case you have several computers running apache and one single machine providing mod-mono-server services.
 
 The only parameter that you can control when using a unix socket is the file name. The directive is *MonoUnixSocket*:
 
@@ -374,7 +374,7 @@ In order to run an instance of mod-mono-server that listens on a TCP socket, the
 Paths
 -----
 
-In case it is needed, you can provide alternative locations for mod-mono-server. Other directories containing assemblies that mono could not find in the default search paths can also be specified. Mono needs a writable directory used by the windows I/O emulation layer that is usually in the user's home .wapi directory (\$HOME/.wapi). In mod\_mono, the directory where .wapi is created is set to /tmp, but you can change that too.
+In case it is needed, you can provide alternative locations for mod-mono-server. Other directories containing assemblies that mono could not find in the default search paths can also be specified. Mono needs a writable directory used by the windows I/O emulation layer that is usually in the user's home .wapi directory (\$HOME/.wapi). In mod_mono, the directory where .wapi is created is set to /tmp, but you can change that too.
 
         LoadModule mono_module modules/mod_mono.so
 
@@ -411,7 +411,7 @@ Troubleshooting
 ASP.NET 2 applications do not work
 ----------------------------------
 
-If your site uses .NET 2.0 classes, you will need to instruct mod\_mono to spawn the .NET 2.0 version of mod-mono-server, instead of the default .NET 1.1 version. To do that, use the following, changing the path to mod-mono-server2 and the alias as needed:
+If your site uses .NET 2.0 classes, you will need to instruct mod_mono to spawn the .NET 2.0 version of mod-mono-server, instead of the default .NET 1.1 version. To do that, use the following, changing the path to mod-mono-server2 and the alias as needed:
 
     MonoServerPath default /usr/bin/mod-mono-server2
 
@@ -423,14 +423,14 @@ If you're getting a 403 response from apache that probably means that the user r
 mod-mono-server does not start
 ------------------------------
 
-Check the apache error\_log file (/var/log/apache2/error\_log ...). It might contain some hints on what's happening. Possible causes are that mono or mod-mono-server are not found in the path, that a file with the same name as the unix socket mod-mono-server tries to create already exists and mod-mono-server can't remove it or a stale .wapi directory.
+Check the apache error_log file (/var/log/apache2/error_log ...). It might contain some hints on what's happening. Possible causes are that mono or mod-mono-server are not found in the path, that a file with the same name as the unix socket mod-mono-server tries to create already exists and mod-mono-server can't remove it or a stale .wapi directory.
 
 Restarting apache does not kill the spawned mod-mono-server.exe(s)
 ------------------------------------------------------------------
 
 Use 'apachectl reload' instead of 'apachectl restart'. There is some problem (may be fixed in apache 2.0.54) that made 'restart' not work properly.
 
-Problems with mod\_mono and cookie-less sessions
+Problems with mod_mono and cookie-less sessions
 ------------------------------------------------
 
 For cookie-less sessions to work, you need to use **SetHandler**. AddHandler won't work.
@@ -440,15 +440,15 @@ Under high load, mono process consumes a lot of memory, website stops responding
 
 These symptoms have been reported, but their underlying causes are not known. Set the MonoAutoRestartMode, MonoAutoRestartRequests, MonoMaxActiveRequests, and MonoMaxWaitingRequests directives as described earlier to limit the lifetime of the mono process and to restrict the concurrency happening in the server.
 
-mod\_mono on Windows
+mod_mono on Windows
 ====================
 
-For a Windows port of mod\_mono, see [here](http://dev.anmar.eu.org/mono/mod_mono/). This is a work in progress.
+For a Windows port of mod_mono, see [here](http://dev.anmar.eu.org/mono/mod_mono/). This is a work in progress.
 
 Profiling mod-mono-server
 =========================
 
-If you want to find the bottleneck in you ASP.NET application using mod\_mono, and assuing you're letting mod\_mono start mod-mono-server, you'll need to follow these steps:
+If you want to find the bottleneck in you ASP.NET application using mod_mono, and assuing you're letting mod_mono start mod-mono-server, you'll need to follow these steps:
 
 1.  Start apache.
 2.  Run 'ps aux' and copy the command line used to run mod-mono-server.exe
@@ -461,12 +461,12 @@ If you want to find the bottleneck in you ASP.NET application using mod\_mono, a
 
 Note that when --profile is enabled, mono is \*extremely\* slow. Do as many request as you need to get a result that excludes start up stuff.
 
-Compiling mod\_mono From Source
+Compiling mod_mono From Source
 ===============================
 
-If you already have installed mod\_mono as a package, skip this section.
+If you already have installed mod_mono as a package, skip this section.
 
-Before compiling mod\_mono, you need the development packages for apache installed (apache-dev...). You should have a file called mod\_mono-X.Y.Z.tar.gz at this stage. Follow these steps:
+Before compiling mod_mono, you need the development packages for apache installed (apache-dev...). You should have a file called mod_mono-X.Y.Z.tar.gz at this stage. Follow these steps:
 
 ``` bash
     $ tar xzf mod_mono-X.Y.Z.tar.gz
@@ -479,22 +479,22 @@ Before compiling mod\_mono, you need the development packages for apache install
 There are a few interesting options for (1) that you might want/need to use:
 
 `--prefix= /xxx/yyy`
-This will set the base path for installing mod\_mono files.
+This will set the base path for installing mod_mono files.
 
 `--with-mono-prefix= /aaa/bbb`
-If the prefix for mod\_mono is different from the one used for mono, you should set this to the prefix used for mono in order to make the default paths to mono executable and mod-mono-server.exe be correct. It is not mandatory, but useful.
+If the prefix for mod_mono is different from the one used for mono, you should set this to the prefix used for mono in order to make the default paths to mono executable and mod-mono-server.exe be correct. It is not mandatory, but useful.
 
 `--with-apxs= /xxx/yyy/apxs`
-If your system has different apache development files installed (ie, 1.3, 2.0 or 2.2) you might need this to choose the target version for mod\_mono. Provide the full path to the apxs executable of the version that you want.
+If your system has different apache development files installed (ie, 1.3, 2.0 or 2.2) you might need this to choose the target version for mod_mono. Provide the full path to the apxs executable of the version that you want.
 
 `--with-apr-config= /xxx/yyy`
 If you get errors when compiling for apache 2 because some headers files are not found, use this option. It takes the full path to apache 2 apr-config tool.
 
 `--enable-debug`
-You will get more output in the apache error\_log file. Useful when debugging.
+You will get more output in the apache error_log file. Useful when debugging.
 
-Improving mod\_mono
+Improving mod_mono
 ===================
 
-See our [Improving mod\_mono](/archived/improvingmodmono "ImprovingModMono") page for details on things that could be improved in the module.
+See our [Improving mod_mono](/archived/improvingmodmono "ImprovingModMono") page for details on things that could be improved in the module.
 

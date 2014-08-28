@@ -27,11 +27,11 @@ For notes on using the VMware image, see: [Instructions for VMware image](/VMwar
 
 **Windows Installer** Windows 2000 and above
 
-Mono for Windows, Gtk\# and XSP:
+Mono for Windows, Gtk# and XSP:
 
--   [Mono 1.2.3.50\_rtl1 Setup](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/windows-installer/rtl1/mono-1.2.3.50-gtksharp-2.8.3-win32-rtl1.exe)
+-   [Mono 1.2.3.50_rtl1 Setup](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/windows-installer/rtl1/mono-1.2.3.50-gtksharp-2.8.3-win32-rtl1.exe)
 
-Only Gtk\# for .NET:
+Only Gtk# for .NET:
 
 -   [SDK and Runtime](http://forge.novell.com/modules/xfmod/project/?gtks-inst4win)
 
@@ -41,16 +41,16 @@ Mono Migration Analyzer:
 
 **Mac OS X** 10.3 (Panther) and 10.4 (Tiger)
 
-Includes Mono, Cocoa\#, installs in /Library/Frameworks
+Includes Mono, Cocoa#, installs in /Library/Frameworks
 
--   [Mono 1.2.3.50\_rtl1 Framework - Universal](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/macos-10-universal/rtl1/MonoFramework-1.2.3.50_rtl1.macos10.novell.universal.dmg)
--   [Cocoa\# 0.9.1](http://go-mono.com/sources/cocoa-sharp/cocoa-sharp-0.9.1.tar.gz) source
+-   [Mono 1.2.3.50_rtl1 Framework - Universal](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/macos-10-universal/rtl1/MonoFramework-1.2.3.50_rtl1.macos10.novell.universal.dmg)
+-   [Cocoa# 0.9.1](http://go-mono.com/sources/cocoa-sharp/cocoa-sharp-0.9.1.tar.gz) source
 
 [![Solaris](/archived/images/2/2f/Mono_icon_solaris.gif)](/archived/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
 
 [Solaris package instructions](/SolarisInstructions "SolarisInstructions").
 
--   [Mono 1.2.3.50\_rtl1 Package](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/sunos-8-sparc/rtl1/mono-1.2.3.50_rtl1.sunos8.novell.sparc.pkg.gz)
+-   [Mono 1.2.3.50_rtl1 Package](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/sunos-8-sparc/rtl1/mono-1.2.3.50_rtl1.sunos8.novell.sparc.pkg.gz)
 
 [![Mono rpm.gif](/archived/images/4/48/Mono_rpm.gif)](/archived/images/4/48/Mono_rpm.gif)**Linux/x86**
 
@@ -116,7 +116,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif](/archived/images/4/48/Mono_rpm.gif)](/archived/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
+[![Mono rpm.gif](/archived/images/4/48/Mono_rpm.gif)](/archived/images/4/48/Mono_rpm.gif)**Linux/x86_64**
 
 <table>
 <col width="50%" />
@@ -268,6 +268,6 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 
 For help with the installation, see: [Instructions to use the Installer](/InstallerInstructions "InstallerInstructions").
 
--   [Mono 1.2.3.50\_rtl1 Installer](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/linux-installer/rtl1/mono-1.2.3.50_rtl1-installer.bin)
+-   [Mono 1.2.3.50_rtl1 Installer](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/linux-installer/rtl1/mono-1.2.3.50_rtl1-installer.bin)
 
 

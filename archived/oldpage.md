@@ -24,8 +24,8 @@ Users: [Downloads](/Downloads "Downloads") | [Bug Reporting](/Bugs "Bugs") | [So
  FAQ: [General](/FAQ:_General "FAQ: General") | [Technical](/FAQ:_Technical "FAQ: Technical") | [Licensing](/FAQ:_Licensing "FAQ: Licensing") | [Asp.net](/FAQ:_ASP.NET "FAQ: ASP.NET") | [Security](/FAQ:_Security "FAQ: Security")
 
 Server: [Asp.net](/ASP.NET "ASP.NET") | [Database Access](/Database_Access "Database Access")
- Client: [Gtk\#](/GtkSharp "GtkSharp") | [WinForms](/WinForms "WinForms") | [CocoaSharp](/MonoMac)
- Core: [C\#](/CSharp_Compiler "CSharp Compiler") | [Runtime](/Mono:Runtime "Mono:Runtime") | [Cryptography](/Cryptography "Cryptography") | [CAS](/CAS "CAS") | [XML](/XML "XML")
+ Client: [Gtk#](/GtkSharp "GtkSharp") | [WinForms](/WinForms "WinForms") | [CocoaSharp](/MonoMac)
+ Core: [C#](/CSharp_Compiler "CSharp Compiler") | [Runtime](/Mono:Runtime "Mono:Runtime") | [Cryptography](/Cryptography "Cryptography") | [CAS](/CAS "CAS") | [XML](/XML "XML")
  In Action: [Screenshots](/Screenshots "Screenshots") | [Videos](/Videos "Videos")
 
 <table>

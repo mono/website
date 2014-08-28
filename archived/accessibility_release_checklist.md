@@ -30,11 +30,11 @@ Release Checklist
     1.  TODO:
 
 11. Edit [releases](/Accessibility:_Releases?action=edit) wiki page
-12. Add Release Notes wiki page (e.g.: Accessibility:\_Release\_Notes\_0.9.1)
+12. Add Release Notes wiki page (e.g.: Accessibility:_Release_Notes_0.9.1)
 13. Update [homepage](/Accessibility?action=edit)
     1.  Use data from the [NEWS page](http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/NEWS) to populate the page
 
 14. Email [mono-a11y list](mailto:mono-a11y@forge.novell.com), [mono-announce list](mailto:mono-announce-list@lists.ximian.com) and [gnome-announce list](mailto:gnome-announce-list@lists.gnome.org)
-15. Change \#mono-a11y's topic
+15. Change #mono-a11y's topic
 
 

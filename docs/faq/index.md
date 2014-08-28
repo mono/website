@@ -20,7 +20,7 @@ Developing With Mono
 Desktop Applications
 --------------------
 
--   [GTK\#](/docs/faq/gtk/)
+-   [GTK#](/docs/faq/gtk/)
 -   [Windows Forms](/docs/faq/winforms/)
 
 Web Programming

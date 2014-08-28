@@ -10,14 +10,14 @@ Mono today runs on the iPhone, Android, it is known to run on ARM desktop machin
 
 It also supports the new ARM ABI (gnueabi also known as armel).
 
-It can run all of our software up to Gtk\# and the startup time is outstanding on the Nokia 770.
+It can run all of our software up to Gtk# and the startup time is outstanding on the Nokia 770.
 
 Work to bind the Hildon widget set is happening [here](http://maemo.ndesk.org/)
 
 Building Mono
 =============
 
-The mono build includes two major parts: the C-based code and the C\# code. The C\# code is compiled using mcs which is itself written in C\# so both the compiler and some of the base libraries are built multiple times.
+The mono build includes two major parts: the C-based code and the C# code. The C# code is compiled using mcs which is itself written in C# so both the compiler and some of the base libraries are built multiple times.
 
 Building Mono natively on an ARM box can be a slow process due to the size of the Mono code base, the multiple-stage process and the usually slow processors and configurations of such boxes.
 
@@ -29,7 +29,7 @@ With ScratchBox
 We recommend that you use [ScratchBox](http://www.scratchbox.org/) to do the build. Mono is made up of two chunks of code:
 
 -   **native code** for the virtual execution system, garbage collector and other unmanaged bits, and
--   **managed code** this includes the C\# compiler, assembler, class libraries and so on.
+-   **managed code** this includes the C# compiler, assembler, class libraries and so on.
 
 -   [Setup ScratchBox](http://maemo.org/platform/docs/tutorials/Maemo_tutorial.html#Installation) an easy to use installer is [here](http://repository.maemo.org/stable/scirocco/)
 
@@ -60,7 +60,7 @@ make install DESTDIR=`pwd`/tmptree
 
 Note that if you plan to use a particular installation prefix in the embedded box, you should use the same --prefix option to configure in both builds.
 
-Now build and configure the ARM code, inside the scratchbox sandbox (note the use of the )--disable-mcs-build option to avoid building the C\# code inside the mcs/ directory):
+Now build and configure the ARM code, inside the scratchbox sandbox (note the use of the )--disable-mcs-build option to avoid building the C# code inside the mcs/ directory):
 
 ``` bash
 [sbox-ARMEL: ~] > cd arm-mono-1.xx
@@ -79,7 +79,7 @@ Compilation on the device can be very slow, so using distcc is recommended, i.e.
 Screenshots and Movies
 ======================
 
-[Gtk\# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
+[Gtk# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 

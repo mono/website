@@ -32,7 +32,7 @@ Nginx configuration (as of version 0.7.63) is located in **/etc/nginx/nginx.conf
              }
      }
 
-ASP.NET and ASP.NET MVC web applications runs on Nginx through [FastCGI](http://en.wikipedia.org/wiki/Fastcgi) protocol, therefore you need to add few lines into **/etc/nginx/fastcgi\_params**.
+ASP.NET and ASP.NET MVC web applications runs on Nginx through [FastCGI](http://en.wikipedia.org/wiki/Fastcgi) protocol, therefore you need to add few lines into **/etc/nginx/fastcgi_params**.
 
      fastcgi_param  PATH_INFO          "";
      fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;

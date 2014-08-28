@@ -148,16 +148,16 @@ We have developed a test harness for our Strongwind test harness. The purpose of
 
 The test harness files are located in uia2atk/test/harness; here is a list of the files with their descriptions:
 
--   *tests.py*: A list of "enabled tests," that is, tests that should be executed when running *remote\_run.py* or *local\_run.py*.
+-   *tests.py*: A list of "enabled tests," that is, tests that should be executed when running *remote_run.py* or *local_run.py*.
 -   *machines.py*: A dictionary of machines on which the enabled tests should be run. This file also contains the directory where the tests reside on the machines in *machines.py*, directory where logs should be stored on the machines in *machines.py*, and the username for the machines in *machines.py*.
--   *remote\_run.py*: Run the enabled tests on the machines specified in *machines.py*.
--   *local\_run.py*: Run the enabled tests on the local machine.
+-   *remote_run.py*: Run the enabled tests on the machines specified in *machines.py*.
+-   *local_run.py*: Run the enabled tests on the local machine.
 
 Here is a brief overview of how tests are executed using our Strongwind test harness:
 
-#### local\_run.py
+#### local_run.py
 
-When using *local\_run.py* to execute tests, the following occurs:
+When using *local_run.py* to execute tests, the following occurs:
 
 1.  The list of enabled tests is retrieved from *tests.py*
 2.  If a test is specified in *tests.py*, but it cannot be found on the machine, a warning is issued and that test will not be run.
@@ -166,20 +166,20 @@ When using *local\_run.py* to execute tests, the following occurs:
 
 Information is also printed to the terminal at each step unless the [-q|--quiet] option is used.
 
-#### remote\_run.py
+#### remote_run.py
 
-When using *remote\_run.py* to execute tests, the following occurs:
+When using *remote_run.py* to execute tests, the following occurs:
 
 1.  The list of test machines is retrieved from *machines.py*
 2.  If a machine is specified in *machines.py*, but it cannot be pinged successfully, a warning is issues and the test(s) will not run on that machine.
-3.  *remote\_run.py* is executed via SSH on each available machine from *machines.py*. There are three **important** things to remember:
-    1.  *remote\_run.py'*s default log directory is overridden and logs are stored in LOG\_DIR as defined by *machines.py*.
+3.  *remote_run.py* is executed via SSH on each available machine from *machines.py*. There are three **important** things to remember:
+    1.  *remote_run.py'*s default log directory is overridden and logs are stored in LOG_DIR as defined by *machines.py*.
     2.  The user used to perform the SSH operation is defined by USERNAME in *machines.py*
-    3.  *remote\_run.py* looks for the *test* directory (i.e., uia2atk/test) in TEST\_DIR as defined by *machines.py*
+    3.  *remote_run.py* looks for the *test* directory (i.e., uia2atk/test) in TEST_DIR as defined by *machines.py*
 
 Information is also printed to the terminal unless the [-q|--quiet] option is used.
 
-The information normally displayed to the terminal by local\_run.py is dumped in /tmp/uiaqa unless otherwise specified using the [-l|--log] option.
+The information normally displayed to the terminal by local_run.py is dumped in /tmp/uiaqa unless otherwise specified using the [-l|--log] option.
 
 #### "Official Tests"
 
@@ -211,7 +211,7 @@ The test machines are actually virtual machines (running on VMware Workstation) 
 
 All of the test machines have a VNC server installed. The host machines have [NX Server](http://www.nomachine.com) installed, which can be connected to using [NX Client](http://www.nomachine.com/download.php); VMware could be running in the background. Running *vmware* will open the backgrounded session. Both the test machines and the VMware hosts have a user *a11y*. For more login details contact a [QA hacker](/Accessibility:_Team "Accessibility: Team").
 
-Each official test machine has a *tests* directory and a *logs* directory. *TEST\_DIR* in *machines.py* is set to the *tests* directory and *LOG\_DIR* in *machines.py* is set to the *logs* directory.
+Each official test machine has a *tests* directory and a *logs* directory. *TEST_DIR* in *machines.py* is set to the *tests* directory and *LOG_DIR* in *machines.py* is set to the *logs* directory.
 
 These directories are, in truth, mounted directories on uiaqa.sled.lab.novell.com.
 
@@ -220,7 +220,7 @@ These directories are, in truth, mounted directories on uiaqa.sled.lab.novell.co
 |*/var/qa/code/test*|*//uiaqa.sled.lab.novell.com/test*|The uia2atk test code is checked out at this location|
 |*/var/qa/logs*|*//uiaqa.sled.lab.novell.com/logs*|QA logs, which can be accessed from [http://uiaqa.sled.lab.novell.com/logs/](http://uiaqa.sled.lab.novell.com/logs/)|
 
-*//uiaqa.sled.lab.novell.com/test* is mounted by *TEST\_DIR* and *//uiaqa.sled.lab.novell.com/logs* is mounted by *LOG\_DIR*. As the above table states, the test code (*uia2atk/test*) is checked out at */var/qa/code/test*. This means that the test code can be updated on all test machines by simply running *svn up* at */var/qa/code/test* on *uiaqa.sled.lab.novell.com*. The QA logs for our project are stored in */var/qa/logs,* which is also pointed to by [http://uiaqa.sled.lab.novell.com/logs](http://uiaqa.sled.lab.novell.com/logs). This is where all the "official" logs are stored when our tests are run on the official test machines.
+*//uiaqa.sled.lab.novell.com/test* is mounted by *TEST_DIR* and *//uiaqa.sled.lab.novell.com/logs* is mounted by *LOG_DIR*. As the above table states, the test code (*uia2atk/test*) is checked out at */var/qa/code/test*. This means that the test code can be updated on all test machines by simply running *svn up* at */var/qa/code/test* on *uiaqa.sled.lab.novell.com*. The QA logs for our project are stored in */var/qa/logs,* which is also pointed to by [http://uiaqa.sled.lab.novell.com/logs](http://uiaqa.sled.lab.novell.com/logs). This is where all the "official" logs are stored when our tests are run on the official test machines.
 
 #### QA Architecture Diagram
 
@@ -527,7 +527,7 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [uia2atk code](/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 -   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
--   Set *orca.debug.debugLevel = orca.debug.LEVEL\_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.
+-   Set *orca.debug.debugLevel = orca.debug.LEVEL_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.
 -   Install [Accerciser](http://live.gnome.org/Accerciser) from source. [Here](http://bgmerrell.blogspot.com/2008/07/buildling-accerciser-from-source-on.html) are some instructions to do this easily.
 -   Install Macaroon by running *configure*, *make*, and *make install* in *accerciser/macaroon*.
 -   Add the *uia2atk/test/samples/winforms* (explained later) directory to PATH. You can do this by running *export PATH=/home/a11y/code/uia2atk/test/samples/winforms:\$PATH*. Add it to your profile script (e.g., /etc/profile.local in openSUSE) and log out for universal and permanent affect.
@@ -541,7 +541,7 @@ Orca already has its own test harness that the Orca team uses to perform regress
 
 In the *uia2atk/test* directory we have created a directory named *keystrokes*. This is where the Orca test scripts for our WinForms sample applications will reside.
 
-It is fairly simple to use Orca's test harness to execute our test scripts. Logs are stored in a directory whose name is of the form YY-MM-DD\_HH:MM:SS (e.g., 2006-11-29\_20:21:41)
+It is fairly simple to use Orca's test harness to execute our test scripts. Logs are stored in a directory whose name is of the form YY-MM-DD_HH:MM:SS (e.g., 2006-11-29_20:21:41)
 
 The code below will execute all our test scripts inside the the *uia2atk/test/keystrokes/gtk* directory. To execute all our WinForms test scripts, that path *uia2atk/test/keystrokes/winforms* would be used instead.
 
@@ -574,7 +574,7 @@ Gtk applications are already accessible in Linux. Our approach to testing WinFor
 
 1.  Create a Gtk application
 2.  Create a WinForms application that mirrors the Gtk application. That is, create a WinForms application that uses the same controls (or at least controls that are very similar and have the same accessible roles), text, title, etc., as the Gtk application
-3.  Create a keystrokes test (e.g., uia2atk/test/keystrokes/gtk/gtktutorial/gtktutorial\_example\_1.py) for the Gtk application.
+3.  Create a keystrokes test (e.g., uia2atk/test/keystrokes/gtk/gtktutorial/gtktutorial_example_1.py) for the Gtk application.
 4.  Use the keystrokes test to test the WinForms application to ensure that the WinForms application is accessible in the same way that the Gtk application is accessible.
 
 Two directories have been created for this purpose:
@@ -590,7 +590,7 @@ Moonlight
 Create Moonlight Sample
 -----------------------
 
-We will use Microsoft Visual Studio Silverlight Tools to create test samples in C\#, The steps are:
+We will use Microsoft Visual Studio Silverlight Tools to create test samples in C#, The steps are:
 
 1.  New a Project with "Silverlight" type, select "Silverlight Application", give project Name to be "control's name + sample" (ButtonSample as example).
 2.  Select "Add a new ASP.NET Web project to the solution to host Silverlight", click "OK" button, "ButtonSample" and "ButtonSample.Web" will be created, we will draw page in Page.xaml and write managed code in Page.xaml.cs.
@@ -672,14 +672,14 @@ Build Test Environment
 
 ### Manage Firefox
 
--   Download Firefox from [http://151.155.248.179:8010/job/moonatkbridge\_trunk\_firefox/](http://151.155.248.179:8010/job/moonatkbridge_trunk_firefox/) that is 3.6 version
+-   Download Firefox from [http://151.155.248.179:8010/job/moonatkbridge_trunk_firefox/](http://151.155.248.179:8010/job/moonatkbridge_trunk_firefox/) that is 3.6 version
 -   Extract to /var/lib/hudson/workspace/
 -   Run "./configure" that will install firefox to /usr/local/
 
 ### Install MoonAtkBridge to Make accessible
 
--   Install moonlight extension from [http://151.155.248.179:8010/job/moonatkbridge\_trunk\_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi](http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi)
--   Install moonlight-a11y extension from [http://151.155.248.179:8010/job/moonatkbridge\_trunk\_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi](http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi)
+-   Install moonlight extension from [http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi](http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/moon/plugin/install/novell-moonlight.xpi)
+-   Install moonlight-a11y extension from [http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi](http://151.155.248.179:8010/job/moonatkbridge_trunk_xpi/lastSuccessfulBuild/artifact/uia2atk/MoonAtkBridge/novell-moonlight-a11y.xpi)
 -   Run silverlight sample \*.html by /usr/local/bin/firefox
 -   Run accerciser, on the left treeview, you may see Sliverlight elements under "Sliverlight Control" are accessibled
 
@@ -786,7 +786,7 @@ In UI Automation, a core service lies between the server (provider) and the clie
 
 ### UIA Requirements
 
--   **C\#**: the client API was limited to managed code.
+-   **C#**: the client API was limited to managed code.
 -   **White assemblies**: Bricks.dll Bricks.RuntimeFramework.dll Castle.Core.dll Castle.DynamicProxy2.dll log4net.dll nunit.framework.dll White.Core.dll Xstream.Core.dll. (these dlls from [white-0.18-bin](http://white.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=16371))
 -   **UI Verify 1.0, UISpy v6.0**: the managed ATs tools.
 -   **UIA Client code**: git@github.com:raywang/UIAClientAPI.git.
@@ -804,7 +804,7 @@ svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclie
 
 svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs](svn://anonsvn.mono-project.com/source/trunk/uia2atk/test/samples/uiaclient/TransformProviderTest.cs)
 
-(you can use the C\# compiler to make the .cs file to a binary.)
+(you can use the C# compiler to make the .cs file to a binary.)
 
 Keepass.exe
 
@@ -1179,11 +1179,11 @@ Here are some things that should be done to prepare the official Novell test mac
 -   Install Orca specified in the Orca testing requirements above
 -   Install Iron Python (IPCE)
 -   Configure static IP and DNS
--   Allow passwordless SSH from qa@uiaqa.sled.lab.novell.com (see /home/a11y/.ssh/authorized\_keys on a previous test VM)
+-   Allow passwordless SSH from qa@uiaqa.sled.lab.novell.com (see /home/a11y/.ssh/authorized_keys on a previous test VM)
 -   Disable all automatic updates and automatic update notifications (this can be done from the control panel)
 -   Append "xhost +" to the /home/a11y/.profile file.
 -   Install a printer (so the print-related controls tests will run properly)
--   Disable Firefox's "resume from crash" feature. This can be done my browsing to about:config and setting the value of browser.sessionstore.resume\_from\_crash to false.
+-   Disable Firefox's "resume from crash" feature. This can be done my browsing to about:config and setting the value of browser.sessionstore.resume_from_crash to false.
 -   *add more...*
 
 After preparing the machine, take a single snapshot. Name the snapshot after the hostname of the machine (e.g., suse32v0).
@@ -1191,7 +1191,7 @@ After preparing the machine, take a single snapshot. Name the snapshot after the
 Csharp Introduction
 ===================
 
-We will use C\# to write our samples and tests in Moonlight and ClientAPI test, so What we need to do the first is to study C\#.
+We will use C# to write our samples and tests in Moonlight and ClientAPI test, so What we need to do the first is to study C#.
 
-Here is a link of a [C\# Introduction PDF](http://www.ecma-international.org/activities/Languages/Introduction%20to%20Csharp.pdf), please download and study it if you need.
+Here is a link of a [C# Introduction PDF](http://www.ecma-international.org/activities/Languages/Introduction%20to%20Csharp.pdf), please download and study it if you need.
 

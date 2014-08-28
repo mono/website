@@ -61,12 +61,12 @@ Windowless Cursors
 
 Firefox 3.0 on linux lacks support for windowless cursors. This is a failing of the NPAPI, not of moonlight. We have contributed an experimental patch to support windowless plugin cursors (within the set of CSS defined cursors, which unfortunately does not overlap completely with the set of Silverlight defined cursors). The code is compiled into moonlight, and if the patch is rolled into FireFox, it should all "just work" in a future version of xulrunner.
 
-More information at [Mozilla Bug \#430451](https://bugzilla.mozilla.org/show_bug.cgi?id=430451)
+More information at [Mozilla Bug #430451](https://bugzilla.mozilla.org/show_bug.cgi?id=430451)
 
 Windowless mouse event problems
 -------------------------------
 
 Firefox 3.0 shipped with faulty mouse motion compression, which leads to moonlight windowless plugins getting events out of order. It is impossible to diagnose and correct this problem from within moonlight. This has been fixed upstream in Firefox and should be released in xulrunner 1.9.1.
 
-More information is available at [Novell Bug \#433687](https://bugzilla.novell.com/show_bug.cgi?id=433687), including a url to 1.9.0 xulrunner packages for SuSE which contain the backported fix.
+More information is available at [Novell Bug #433687](https://bugzilla.novell.com/show_bug.cgi?id=433687), including a url to 1.9.0 xulrunner packages for SuSE which contain the backported fix.
 

@@ -100,7 +100,7 @@ Testing db4o
 
 -   The db4o engine is a single .dll file (Db4objects.Db4o.dll) that will be located in /usr/lib/db4o/ after installation (or in the corresponding path on a different Linux distribution). Simply place the Db4objects.Db4o.dll into the directory to where you build your application.
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
 using System;
@@ -146,7 +146,7 @@ public class Pilot {
 }
 ```
 
-**Building the C\# example**
+**Building the C# example**
 
 -   Save the example to a file, such as, Test.cs
 

@@ -356,7 +356,7 @@ You can replace git:// with https:// globally in your user preference:
 git config --global url."https://".insteadOf git://
 ```
 
-Source: [http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634\#10729634](http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634)
+Source: [http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634](http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634)
 
 Links
 =====

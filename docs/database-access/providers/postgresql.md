@@ -202,7 +202,7 @@ Using Npgsql
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 -   Save the example to a file, such as, TestExample.cs
 
 <!-- -->
@@ -321,7 +321,7 @@ create user postgres with password 'fun2db';
 
 -   The postmaster must be run with -i option.
 
--   In the /usr/local/pgsql/data/pg\_hba.conf file, you need to have the AUTH\_TYPE set to md5. You can read more on this at /usr/doc/postgresql-7.2.1/html/client-authentication.html or wherever your PostgreSQL html docs are located. See the 2nd line below, host 127.0.0.1 has an AUTH\_TYPE md5 in pg\_hba.conf.
+-   In the /usr/local/pgsql/data/pg_hba.conf file, you need to have the AUTH_TYPE set to md5. You can read more on this at /usr/doc/postgresql-7.2.1/html/client-authentication.html or wherever your PostgreSQL html docs are located. See the 2nd line below, host 127.0.0.1 has an AUTH_TYPE md5 in pg_hba.conf.
 
 <!-- -->
 

@@ -53,7 +53,7 @@ Database=databasefile.gdb;User=user;Password=pass;Dialect=3;Server=hostname
 |Password|password for Firebird database user|Password=masterkey|
 |Dialect|Not sure. See Firebird net provider docs.|Dialect=3|
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
 using System;
@@ -90,11 +90,11 @@ public class Test {
 }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
--   Build using Mono C\# compiler:
+-   Build using Mono C# compiler:
 
 <!-- -->
 

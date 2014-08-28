@@ -95,9 +95,9 @@ Tuning for embedded systems
 Challenges for Embedded Systems
 -------------------------------
 
-Flash file systems do not allow the MAP\_SHARED flag to share memory in the first place.
+Flash file systems do not allow the MAP_SHARED flag to share memory in the first place.
 
-On embedded systems we end up allocating the whole table to with MAP\_PRIVATE (Nokia) which is wasteful.
+On embedded systems we end up allocating the whole table to with MAP_PRIVATE (Nokia) which is wasteful.
 
 We could fall back on those devices to use SysV shared memory (there is the chance of collisions).
 
@@ -120,7 +120,7 @@ Maybe have two Mono Modes: the Windows emulation mode which would allow things l
 
 A more "native" implementation of Mono, which would be lighter in many scenarios.
 
-### \_write, \_read operations
+### _write, _read operations
 
-Handle validation happens in ReadFile, WriteFile, aren't the tests in each one of the \_write, \_read operations redundant? Could we remove them?
+Handle validation happens in ReadFile, WriteFile, aren't the tests in each one of the _write, _read operations redundant? Could we remove them?
 

@@ -35,7 +35,7 @@ Webservices and GtkSharp
 Introduction
 ============
 
-The applications are becoming more difficult and more robust, the requirements are increasing every day and the users demand better applications more quickly. Computing is more and more common and the new technologies forces the resources to operate to the maximum. Now with Web Services technology is possible to write powerful applications of one more a simpler form. The main purpose of this writing is to show a simple but useful example for using a web service through an application written in C\# using Gtk\#.
+The applications are becoming more difficult and more robust, the requirements are increasing every day and the users demand better applications more quickly. Computing is more and more common and the new technologies forces the resources to operate to the maximum. Now with Web Services technology is possible to write powerful applications of one more a simpler form. The main purpose of this writing is to show a simple but useful example for using a web service through an application written in C# using Gtk#.
 
 Requirements
 ============
@@ -43,13 +43,13 @@ Requirements
 The samples was written using:
 
 -   mono 1.1.9.1
--   Gtk\# 2.5.9
+-   Gtk# 2.5.9
 -   xsp 1.1.9.1
 -   Glade 2.12
 
 Compiling and running using [Ubuntu Linux](http://www.ubuntulinux.org) -breezy-.
 
-Gtk\# application
+Gtk# application
 =================
 
 This is a very simple application that uses the Web Service by calling it for adding two numbers written in the two Gtk.Entry widgets.
@@ -59,7 +59,7 @@ This is a very simple application that uses the Web Service by calling it for ad
 Glade design
 ------------
 
-The following is the glade definition for the Gtk\# application. This application has defined three events: when clicking the "Add" button, when clicking the "Close" button and when closing the Window.
+The following is the glade definition for the Gtk# application. This application has defined three events: when clicking the "Add" button, when clicking the "Close" button and when closing the Window.
 
 ``` xml
 #File: gui.glade
@@ -314,7 +314,7 @@ The following is the glade definition for the Gtk\# application. This applicatio
 </glade-interface>
 ```
 
-The following is the C\# code for using with the glade resource.
+The following is the C# code for using with the glade resource.
 
 ``` csharp
 #File: GtkApp.cs
@@ -422,7 +422,7 @@ If everything works **we have our web service!!** Now we need to *join* both app
 Joining both applications
 =========================
 
-You need to acces the web service from within your Gtk\# application, for doing that task you need to get the proxy from that web service, use this:
+You need to acces the web service from within your Gtk# application, for doing that task you need to get the proxy from that web service, use this:
 
     wsdl http://localhost:8081/index.asmx?wsdl -out:WSAppProxy.cs -n:GtkWebService
 
@@ -447,7 +447,7 @@ private void OnAddClicked (object o, EventArgs args)
 }
 ```
 
-and recompile the Gtk\# application again:
+and recompile the Gtk# application again:
 
     mcs -pkg:glade-sharp-2.0,gtk-sharp-2.0 -r:System.Web,System.Web.Services -resource:gui.glade,gui.glade GtkApp.cs WSAppProxy.cs -out:gtkapp.exe
 

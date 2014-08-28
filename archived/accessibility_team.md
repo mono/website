@@ -173,8 +173,8 @@ In the meantime, we'll request to the [LinuxFoundation](http://www.linuxfoundati
 -   [2008, Jun 04](/Accessibility:_Team_Meetings_2008_Jun_04 "Accessibility: Team Meetings 2008 Jun 04") IRC - Iteration 3 Planning
 -   [2008, May 28](/Accessibility:_Team_Meetings_2008_May_28 "Accessibility: Team Meetings 2008 May 28") IRC - Iteration 2 Planning
 -   [2008, May 15](/Accessibility:_Team_Meetings_2008_May_15 "Accessibility: Team Meetings 2008 May 15") IRC - Team Meeting
--   [2008, Aug 13](/Accessibility:_QA_Meetings_2008_Aug_13 "Accessibility: QA Meetings 2008 Aug 13") IRC - QA Meeting \#2
--   [2008, Jun 5](/Accessibility:_QA_Meetings_2008_Jun_5 "Accessibility: QA Meetings 2008 Jun 5") IRC - QA Meeting \#1
+-   [2008, Aug 13](/Accessibility:_QA_Meetings_2008_Aug_13 "Accessibility: QA Meetings 2008 Aug 13") IRC - QA Meeting #2
+-   [2008, Jun 5](/Accessibility:_QA_Meetings_2008_Jun_5 "Accessibility: QA Meetings 2008 Jun 5") IRC - QA Meeting #1
 
 (Generated using [Irc2Wiki](/Irc2Wiki "Irc2Wiki"))
 

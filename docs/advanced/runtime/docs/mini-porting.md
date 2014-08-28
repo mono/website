@@ -162,14 +162,14 @@ The MIR code for filter and finally handlers looks like:
        ...
        OP_END_FINALLY | OP_ENDFILTER(reg)
 
-OP\_START\_HANDLER: should save the stack pointer somewhere OP\_END\_FINALLY: restores the stack pointers and returns. OP\_ENDFILTER (reg): restores the stack pointers and returns the value in "reg".
+OP_START_HANDLER: should save the stack pointer somewhere OP_END_FINALLY: restores the stack pointers and returns. OP_ENDFILTER (reg): restores the stack pointers and returns the value in "reg".
 
 Calling finally/filter handlers
 -------------------------------
 
-There is a special opcode to call those handler, its called OP\_CALL\_HANDLER. It simple emits a call instruction.
+There is a special opcode to call those handler, its called OP_CALL_HANDLER. It simple emits a call instruction.
 
-Its a bit more complex to call handler from outside (in the stack unwinding code), because we have to restore the whole context of the method first. After that we simply emit a call instruction to invoke the handler. Its usually possible to use the same code to call filter and finally handlers (see arch\_get\_call\_filter).
+Its a bit more complex to call handler from outside (in the stack unwinding code), because we have to restore the whole context of the method first. After that we simply emit a call instruction to invoke the handler. Its usually possible to use the same code to call filter and finally handlers (see arch_get_call_filter).
 
 Calling catch handlers
 ----------------------
@@ -249,12 +249,12 @@ See the sources for IA64 and PPC64 on when to create and when to dereference fun
 Emulated opcodes
 ================
 
-Mini has code for emulating quite a few opcodes, most notably operations on longs, int/float conversions and atomic operations. If an architecture wishes such an opcode to be emulated, mini produces icalls instead of those opcodes. This should only be considered when the operation cannot be implemented efficiently and thus the overhead occured by the icall is not relatively large. Emulation of operations is controlled by \#defines in the arch header, but the naming is not consistent. They usually start with `MONO_ARCH_EMULATE_`, `MONO_ARCH_NO_EMULATE_` and `MONO_ARCH_HAVE_`.
+Mini has code for emulating quite a few opcodes, most notably operations on longs, int/float conversions and atomic operations. If an architecture wishes such an opcode to be emulated, mini produces icalls instead of those opcodes. This should only be considered when the operation cannot be implemented efficiently and thus the overhead occured by the icall is not relatively large. Emulation of operations is controlled by #defines in the arch header, but the naming is not consistent. They usually start with `MONO_ARCH_EMULATE_`, `MONO_ARCH_NO_EMULATE_` and `MONO_ARCH_HAVE_`.
 
 Prolog/Epilog
 =============
 
-The method prolog is emitted by the mono\_arch\_emit\_prolog () function. It usually consists of the following parts:
+The method prolog is emitted by the mono_arch_emit_prolog () function. It usually consists of the following parts:
 
 -   Allocate frame: set fp to sp, decrement sp.
 -   Save callee saved registers to the frame
@@ -267,14 +267,14 @@ The method prolog is emitted by the mono\_arch\_emit\_prolog () function. It usu
      lmf->previous_lmf = *(lmf->lmf_addr)
      *(lmf->lmf_addr)->lmf
 
--   Compute bb-\>max\_offset for each basic block: This enables mono\_jit\_output\_basic\_block () to emit short branches where possible.
+-   Compute bb-\>max_offset for each basic block: This enables mono_jit_output_basic_block () to emit short branches where possible.
 -   Store the runtime generic context, see the Generic Sharing section.
 -   Store the signature cookie used by vararg methods.
 -   Transfer arguments to the location they are allocated to, i.e. load arguments received on the stack to registers if needed, and store arguments received in registers to the stack/callee saved registers if needed.
 -   Initialize the various variables used by the soft debugger code.
 -   Implement tracing support.
 
-The epilog is emitted by the mono\_arch\_emit\_epilog () function. It usually consists of the following parts:
+The epilog is emitted by the mono_arch_emit_epilog () function. It usually consists of the following parts:
 
 -   Restore the LMF by doing:
 
@@ -290,26 +290,26 @@ The epilog is emitted by the mono\_arch\_emit\_epilog () function. It usually co
 
 Care must be taken during these steps to avoid clobbering the registers holding the return value of the method.
 
-Callee saved registers are either saved to dedicated stack slots, or they are saved into the LMF. The stack slots where various things are saved are allocated by mono\_arch\_allocate\_vars ().
+Callee saved registers are either saved to dedicated stack slots, or they are saved into the LMF. The stack slots where various things are saved are allocated by mono_arch_allocate_vars ().
 
 Delegate Invocation
 ===================
 
 A delegate is invoked like this by JITted code:
 
-delegate-\>invoke\_impl (delegate, arg1, arg2, arg3, ...)
+delegate-\>invoke_impl (delegate, arg1, arg2, arg3, ...)
 
-Here, 'invoke\_impl' originally points to a trampoline which ends up calling the 'mono\_delegate\_trampoline' C function. This function tries to find an architecture specific optimized implementation by calling 'mono\_arch\_get\_delegate\_invoke\_impl'.
+Here, 'invoke_impl' originally points to a trampoline which ends up calling the 'mono_delegate_trampoline' C function. This function tries to find an architecture specific optimized implementation by calling 'mono_arch_get_delegate_invoke_impl'.
 
-mono\_arch\_get\_delegate\_invoke\_impl () should return a small trampoline for invoking the delegate which matches the following pseudo code:
+mono_arch_get_delegate_invoke_impl () should return a small trampoline for invoking the delegate which matches the following pseudo code:
 
 -for instance delegates:
 
-delegate-\>method\_ptr (delegate-\>target, arg1, arg2, arg3, ...)
+delegate-\>method_ptr (delegate-\>target, arg1, arg2, arg3, ...)
 
 - for static delegates:
 
-delegate-\>method\_ptr (arg1, arg2, arg3, ...)
+delegate-\>method_ptr (arg1, arg2, arg3, ...)
 
 Varargs
 =======
@@ -334,14 +334,14 @@ then the real callee signature would look like:
 
      foo ("%d %d", <signature cookie>, 1, 2)
 
-To simplify things, both the sig cookie and the implicit arguments are always passed on the stack and not in registers. mono\_arch\_emit\_call () is responsible for emitting this argument.
+To simplify things, both the sig cookie and the implicit arguments are always passed on the stack and not in registers. mono_arch_emit_call () is responsible for emitting this argument.
 
 Callee side
 -----------
 
--   mono\_arch\_allocate\_vars () is responsible for allocating a local variable slot where the sig cookie will be saved. cfg-\>sig\_cookie should contain the stack offset of the local variable slot.
--   mono\_arch\_emit\_prolog () is responsible for saving the sig cookie argument into the local variable.
--   The implementation of OP\_ARGLIST should load the sig cookie from the local variable, and save it into its dreg, which will point to a local variable of type RuntimeArgumentHandle.
+-   mono_arch_allocate_vars () is responsible for allocating a local variable slot where the sig cookie will be saved. cfg-\>sig_cookie should contain the stack offset of the local variable slot.
+-   mono_arch_emit_prolog () is responsible for saving the sig cookie argument into the local variable.
+-   The implementation of OP_ARGLIST should load the sig cookie from the local variable, and save it into its dreg, which will point to a local variable of type RuntimeArgumentHandle.
 -   The fetching of vararg arguments is implemented by icalls in icalls.c.
 
 tests/vararg.exe contains test cases to exercise this functionality.
@@ -349,7 +349,7 @@ tests/vararg.exe contains test cases to exercise this functionality.
 Unwind info
 ===========
 
-On most platforms, the JIT uses DWARF unwind info to unwind the stack during exception handling. The API and some documentation is in the mini-unwind.h file. The mono\_arch\_emit\_prolog () function is required to emit this information using the macros in mini-unwind.h, and the mono\_arch\_find\_jit\_info () function needs to pass it to mono\_unwind\_frame (). In addition to this, the various trampolines might also have unwind info, which makes stack walks possible when using the gdb integration (XDEBUG).
+On most platforms, the JIT uses DWARF unwind info to unwind the stack during exception handling. The API and some documentation is in the mini-unwind.h file. The mono_arch_emit_prolog () function is required to emit this information using the macros in mini-unwind.h, and the mono_arch_find_jit_info () function needs to pass it to mono_unwind_frame (). In addition to this, the various trampolines might also have unwind info, which makes stack walks possible when using the gdb integration (XDEBUG).
 
 The task of a stack unwinder is to construct the machine state at the caller of the current stack frame, i.e: - find the return address of the caller - find the values of the various callee saved registers in the caller at the point of the call
 
@@ -374,15 +374,15 @@ Generic Sharing
 
 Generic code sharing is optional. See the document on [generic-sharing](/docs/advanced/runtime/docs/generic-sharing/) for information on how to support it on an architecture.
 
-MONO\_ARCH\_RGCTX\_REG
+MONO_ARCH_RGCTX_REG
 ----------------------
 
-The MONO\_ARCH\_RGCTX\_REG define should be set to a hardware register which will be used to pass the 'mrgctx' hidden argument to generic shared methods. It should be a caller saved register which is not used in local register allocation. Also, any code which gets executed between the caller and the callee (i.e. trampolines) needs to avoid clobbering this registers. The easiest solution is to set it to the be the same as MONO\_ARCH\_IMT\_REG, since IMT/generic sharing are never used together during a call. The method prolog must save this register to cfg-\>rgctx\_var.
+The MONO_ARCH_RGCTX_REG define should be set to a hardware register which will be used to pass the 'mrgctx' hidden argument to generic shared methods. It should be a caller saved register which is not used in local register allocation. Also, any code which gets executed between the caller and the callee (i.e. trampolines) needs to avoid clobbering this registers. The easiest solution is to set it to the be the same as MONO_ARCH_IMT_REG, since IMT/generic sharing are never used together during a call. The method prolog must save this register to cfg-\>rgctx_var.
 
 Static RGCTX trampolines
 ------------------------
 
-These trampolines are created by mono\_arch\_get\_static\_rgctx\_trampoline (). They are used to call generic shared methods indirectly from code which cannot pass an MRGCTX. They should implement the following pseudo code:
+These trampolines are created by mono_arch_get_static_rgctx_trampoline (). They are used to call generic shared methods indirectly from code which cannot pass an MRGCTX. They should implement the following pseudo code:
 
     <mrgctx reg> = mrgctx
     jump <method addr>
@@ -390,16 +390,16 @@ These trampolines are created by mono\_arch\_get\_static\_rgctx\_trampoline (). 
 Generic Class Init Trampoline
 -----------------------------
 
-This one of a kind trampoline is created by mono\_arch\_create\_generic\_class\_init\_trampoline (). They are used to run the .cctor of the vtable passed in as an argument in MONO\_ARCH\_VTABLE\_REG. They should implement the following pseudo code:
+This one of a kind trampoline is created by mono_arch_create_generic_class_init_trampoline (). They are used to run the .cctor of the vtable passed in as an argument in MONO_ARCH_VTABLE_REG. They should implement the following pseudo code:
 
     vtable = <vtable reg>
     if (!vtable->initialized)
       <call jit icall "specific_trampoline_generic_class_init">
 
-The generic trampoline code needs to be modified to pass the argument received in MONO\_ARCH\_VTABLE\_REG to the C trampoline function, which is mono\_generic\_class\_init\_trampoline ().
+The generic trampoline code needs to be modified to pass the argument received in MONO_ARCH_VTABLE_REG to the C trampoline function, which is mono_generic_class_init_trampoline ().
 
 RGCTX Lazy Fetch Trampoline
 ---------------------------
 
-These trampolines are created by mono\_arch\_create\_rgctx\_lazy\_fetch\_trampoline (). They are used for fetching values out of an MonoRuntimeGenericContext, lazily initializing them as needed.
+These trampolines are created by mono_arch_create_rgctx_lazy_fetch_trampoline (). They are used for fetching values out of an MonoRuntimeGenericContext, lazily initializing them as needed.
 

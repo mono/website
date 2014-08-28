@@ -16,7 +16,7 @@ Channel Settings
 
 **Network:** Gimpnet (servers: irc.gnome.org, irc.gimp.net)
 
-**Channel:** \#monotools
+**Channel:** #monotools
 
 -   If you have questions to ask, don't be afraid and feel free to ask them.
 -   You don't need to ask to ask a question.

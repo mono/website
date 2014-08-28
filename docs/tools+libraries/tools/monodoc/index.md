@@ -9,7 +9,7 @@ Monodoc is a set of libraries and applications for viewing and editing Mono clas
 Viewing The Documentation
 =========================
 
-The Gtk\# Documentation Browser
+The Gtk# Documentation Browser
 -------------------------------
 
 The doc browser is part of the mono-tools package, avaliable from the [Downloads](/download/) page.
@@ -23,7 +23,7 @@ The browser lets you navigate through different types of documentation installed
 -   Core Framework API
 -   Mono libraries
 -   Novell libraries
--   C\# Language Specification
+-   C# Language Specification
 -   Compiler error reference
 
 Depending on the libraries installed on your system it can show additionally:

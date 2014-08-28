@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp:_Tooltips/
 ---
 
-Tooltips are the little text strings that pop up when you leave your pointer over a button or other widget for a few seconds. They are easy to use, so I will just explain them without giving an example. If you want to see some code, take a look at the testgtk.cs program distributed with Gtk\#. Widgets that do not receive events (widgets that do not have their own window) will not work with tooltips.
+Tooltips are the little text strings that pop up when you leave your pointer over a button or other widget for a few seconds. They are easy to use, so I will just explain them without giving an example. If you want to see some code, take a look at the testgtk.cs program distributed with Gtk#. Widgets that do not receive events (widgets that do not have their own window) will not work with tooltips.
 
 The first call you will use creates a new tooltip. You only need to do this once for a set of tooltips as the GtkTooltips object this function returns can be used to create multiple tooltips.
 

@@ -124,7 +124,7 @@ List for some objects/methods that need interaction from managed code to DOM:
 
 In agclr, System.Windows.ErrorEventHandler and ErrorEventArgs are used to handle errors at managed side.
 
-Microsoft.Scripting.Silverlight.ErrorHandler is (in a sense) the closest API to the browser. It is tied to ErrorEventArgs in agclr and "default\_error\_handler" in silverlight.js, which
+Microsoft.Scripting.Silverlight.ErrorHandler is (in a sense) the closest API to the browser. It is tied to ErrorEventArgs in agclr and "default_error_handler" in silverlight.js, which
 
 -   expects ParserError and RuntimeError as errorType (ParserErrorEventArgs/RuntimeErrorEventArgs in agclr)
 -   expects errorCode, errorType and errorMessage (ErrorEventArgs properties)
@@ -132,7 +132,7 @@ Microsoft.Scripting.Silverlight.ErrorHandler is (in a sense) the closest API to 
 ### Misc notes
 
 -   WebApplication.Current is created and used to serve RegisterScriptableObject().
-    -   NPN\_CreateObject() is likely used.
+    -   NPN_CreateObject() is likely used.
 -   I'm not sure if SilverlightScriptHost and SilverlightPAL are created on silverlight apps. ScriptDomainManager.CurrentManager.PAL is not an instance of SilverlightPAL on silverlight apps.
 -   static property HtmlPage.Document accesses to the document. It somehow causes NRE on non-silverlight app.
 

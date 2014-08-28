@@ -272,7 +272,7 @@ References
 ==========
 
 -   [GConf Web Site](http://www.gnome.org/projects/gconf/)
--   [GConf\# Documentation](http://www.go-mono.com/docs/index.aspx?link=N:GConf)
+-   [GConf# Documentation](http://www.go-mono.com/docs/index.aspx?link=N:GConf)
 -   [GNOME HIG](http://developer.gnome.org/projects/gup/hig/)
 
 

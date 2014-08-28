@@ -95,8 +95,8 @@ These XamlLanguage directives are supported:
 -   Arguments
 -   Base
 -   FactoryMethod
--   \_Initialization
--   \_Items
+-   _Initialization
+-   _Items
 -   Key
 -   Lang
 -   Name
@@ -117,7 +117,7 @@ These XamlLanguage directives are not, but not sure if they are really used in t
 -   Shared
 -   Space
 -   Uid
--   \_UnknownContent
+-   _UnknownContent
 
 Code
 ----

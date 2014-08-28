@@ -18,7 +18,7 @@ Info
 
 -   Does not require a client library because it is fully managed.
 
--   Requires the assembly Mono.Data.Tds.dll which implements the TDS protocol in C\#
+-   Requires the assembly Mono.Data.Tds.dll which implements the TDS protocol in C#
 
 -   Uses TDS Protocol Version 7.0
 
@@ -49,7 +49,7 @@ Current Status
 
 -   Data can be filled in a DataTable in a DataSet via a SqlDataAdapter
 
--   Works in the SQL\# command-line and Gtk\# GUI version
+-   Works in the SQL# command-line and Gtk# GUI version
 
 Action Plan
 -----------
@@ -132,7 +132,7 @@ Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Passwo
 |hostname,port|Server=MYHOST,1433|
 |hostname\\instance|Server=MYHOST\\NETSDK|
 
--   C\# Example using SQL Server Authentication:
+-   C# Example using SQL Server Authentication:
 
 <!-- -->
 
@@ -172,7 +172,7 @@ Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Passwo
  }
 ```
 
--   C\# Example using NT Authentication (Integrated Security)
+-   C# Example using NT Authentication (Integrated Security)
 
 <!-- -->
 
@@ -213,7 +213,7 @@ Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Passwo
  }
 ```
 
--   C\# Example using Command Builder and Data Adapter to easily update the database based on inserts, updates, or deletes in a DataTable
+-   C# Example using Command Builder and Data Adapter to easily update the database based on inserts, updates, or deletes in a DataTable
 
 <!-- -->
 
@@ -373,7 +373,7 @@ namespace TestSqlClientAdapter {
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 

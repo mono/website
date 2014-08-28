@@ -136,7 +136,7 @@ Testing ODBC provider with MySQL
 "OPTION=3"
 ```
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -187,7 +187,7 @@ Testing ODBC provider with MySQL
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 

@@ -9,15 +9,15 @@ Accessibility: QA Meetings 2009 May 20
 ======================================
 
 BEGIN LOGGING AT Wed May 20 22:17:02 2009
- May 20 22:17:02 \* Now talking on \#mono-a11y-qa
+ May 20 22:17:02 \* Now talking on #mono-a11y-qa
  May 20 22:17:03 \* morbo gives channel operator status to calen
- May 20 22:17:07 \* bgmerrell (\~bean@166-70-62-135.ip.xmission.com) has joined \#mono-a11y-qa
+ May 20 22:17:07 \* bgmerrell (\~bean@166-70-62-135.ip.xmission.com) has joined #mono-a11y-qa
  May 20 22:17:08 \* morbo gives channel operator status to bgmerrell
- May 20 22:17:08 \* ngao (\~neville@123.117.188.223) has joined \#mono-a11y-qa
- May 20 22:17:22 \* ray (\~dream@123.118.74.195) has joined \#mono-a11y-qa
+ May 20 22:17:08 \* ngao (\~neville@123.117.188.223) has joined #mono-a11y-qa
+ May 20 22:17:22 \* ray (\~dream@123.118.74.195) has joined #mono-a11y-qa
  May 20 22:17:25 \<calen\> bgmerrell, those are what we have talked in last QA meeting, sorry we make some delay to reply the reviews and verify bugs due to the ITO :)
  May 20 22:17:29 \<ray\> hey hey hey
- May 20 22:17:50 \* fecilia (\~chatzilla@123.112.38.218) has joined \#mono-a11y-qa
+ May 20 22:17:50 \* fecilia (\~chatzilla@123.112.38.218) has joined #mono-a11y-qa
  May 20 22:17:52 \<bgmerrell\> calen: no problem! i was expecting that
  May 20 22:18:08 \<bgmerrell\> hey hey hey ray ray ray
  May 20 22:18:14 \<calen\> ....
@@ -26,7 +26,7 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 22:18:39 \<bgmerrell\> So, I have been thinking
  May 20 22:18:51 \<bgmerrell\> since the developers aren't focusing on bug fixes right now
  May 20 22:19:00 \<bgmerrell\> things might be a little slow for you guys
- May 20 22:19:23 \<bgmerrell\> so I thought of a very important 3rd priority in addition to the two we discussed last time (and I just mentioned in \#mono-a11y)
+ May 20 22:19:23 \<bgmerrell\> so I thought of a very important 3rd priority in addition to the two we discussed last time (and I just mentioned in #mono-a11y)
  May 20 22:19:47 \<bgmerrell\> since I have not had time to finish the dashboard, which will show the status of all the test results for every build
  May 20 22:19:58 \<bgmerrell\> we need to run these tests manually
  May 20 22:20:10 \<ray\> ok, that makes sense
@@ -126,9 +126,9 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 22:51:35 \<fecilia\> o I mix it with RP.
  May 20 22:51:50 \<ngao\> fecilia: hehe
  May 20 22:52:35 \<bgmerrell\> ngao: if you have some spare time, it might be cool for you to set up a machine with two VMs (32-bit and 64-bit openSUSE 11.1 VMs) and see if you can run the test harness code against them (i.e., tests running on both VMs simultaneously) and have the dashboard update with the log results
- May 20 22:53:39 \<ngao\> bgmerrell: run test/harness/local\_run.py?
- May 20 22:54:06 \<bgmerrell\> ngao: yeah, but you would be usuing remote\_run.py (which basically calls local\_run.py on the test VMs)
- May 20 22:54:27 \<bgmerrell\> ngao: [Accessibility:\_Testing\_Howto\#Strongwind\_Test\_Harness](/Accessibility:_Testing_Howto#Strongwind_Test_Harness)
+ May 20 22:53:39 \<ngao\> bgmerrell: run test/harness/local_run.py?
+ May 20 22:54:06 \<bgmerrell\> ngao: yeah, but you would be usuing remote_run.py (which basically calls local_run.py on the test VMs)
+ May 20 22:54:27 \<bgmerrell\> ngao: [Accessibility:_Testing_Howto#Strongwind_Test_Harness](/Accessibility:_Testing_Howto#Strongwind_Test_Harness)
  May 20 22:54:30 \<bgmerrell\> that explains how it works
  May 20 22:54:36 \<bgmerrell\> but there is some really cool code to work with there
  May 20 22:54:57 \<bgmerrell\> i use inotify to detect new logs for the dashboard to update
@@ -144,7 +144,7 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 22:57:07 \<bgmerrell\> ngao: no.. basically this is what happens
  May 20 22:57:39 \<bgmerrell\> 1. you set up the VMs, which will both mount a common CIFS/NFS share where the logs will be stores
  May 20 22:57:46 \<bgmerrell\> (there is other setup)
- May 20 22:58:09 \<bgmerrell\> 2. you will run remote\_run.py (after configuring machines.py), which will run local\_run.py on each of the machines in machines.py
+ May 20 22:58:09 \<bgmerrell\> 2. you will run remote_run.py (after configuring machines.py), which will run local_run.py on each of the machines in machines.py
  May 20 22:58:54 \<bgmerrell\> 3. when the tests finish on the remove machines (i.e., the machines in machines.py) the logs should be stored in the common shared CIFS/NFS share
  May 20 22:59:03 \<bgmerrell\> (you will need to configure that too)
  May 20 22:59:09 \<bgmerrell\> s/remove/remote
@@ -169,7 +169,7 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 23:04:30 \<fecilia\> bgmerrell, ngao:cool, I want to try it too.
  May 20 23:05:06 \<ngao\> fecilia: nice
  May 20 23:05:59 \<bgmerrell\> ngao: notice that when you click on one of the links on dashboard, it links to a log of the RPMs installing (if the RPMs were updated) and the test running
- May 20 23:06:03 \<bgmerrell\> for example, [http://uiaqa.sled.lab.novell.com/uiaqa\_logs/suse64v0\_package\_status](http://uiaqa.sled.lab.novell.com/uiaqa_logs/suse64v0_package_status)
+ May 20 23:06:03 \<bgmerrell\> for example, [http://uiaqa.sled.lab.novell.com/uiaqa_logs/suse64v0_package_status](http://uiaqa.sled.lab.novell.com/uiaqa_logs/suse64v0_package_status)
  May 20 23:06:15 \<bgmerrell\> the number at the very top is the test status
  May 20 23:06:18 \<bgmerrell\> 0 is pass, 1 is fail
  May 20 23:06:39 \<bgmerrell\> I use this to determine the color of the light icon on the dashabord

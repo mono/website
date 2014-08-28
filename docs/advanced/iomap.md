@@ -14,7 +14,7 @@ The Problem
 
 Windows developers are used to a case-insensitive file system, which means that they might create a file called "mydata" in one place, and try to access it somewhere else as "MyData" or as "MYDATA". This breaks on most Unix setups because Unix is case sensitive[1].
 
-Another problem is that developers sometimes hardcode the directory separator character in their source code ("\\") instead of using Path.DirectorySeparator and using Path.Combine for combining this paths. This is a problem because "\\" is a valid file name components on Unix. This means that if an application hardcodes for example "Logs\\access\_log", in Unix this will not store the contents in the "Logs" directory as the file "access\_log". Instead, it will store the results in a file called "Logs\\access\_log".
+Another problem is that developers sometimes hardcode the directory separator character in their source code ("\\") instead of using Path.DirectorySeparator and using Path.Combine for combining this paths. This is a problem because "\\" is a valid file name components on Unix. This means that if an application hardcodes for example "Logs\\access_log", in Unix this will not store the contents in the "Logs" directory as the file "access_log". Instead, it will store the results in a file called "Logs\\access_log".
 
 Only a few applications cope with drive letters, but they might still pose a problem as the colon is a valid filename in Unix, which means that "A:\\file" is a valid filename in the current directory.
 
@@ -34,7 +34,7 @@ The New Solution
 
 Mono now has a portability layer into Mono that will address those problems without requiring changes to your code. This will remove a large component of the porting cycle as a whole class of obnoxious problems are gone.
 
-The new portability framework is enabled by setting the environment variable MONO\_IOMAP (which we will likely rename to something shorter) to one of the following values:
+The new portability framework is enabled by setting the environment variable MONO_IOMAP (which we will likely rename to something shorter) to one of the following values:
 
 -   case: makes all file system access case insensitive.
 -   drive: strips drive name from pathnames.
@@ -47,7 +47,7 @@ In addition, if any of those options are enabled, the directory separator mappin
     $ mono myapp.exe
 ```
 
-For ASP.NET applications hosted with mod\_mono, you can add the following directive to your Apache configuration file:
+For ASP.NET applications hosted with mod_mono, you can add the following directive to your Apache configuration file:
 
 ``` bash
    MonoSetEnv MONO_IOMAP=all
@@ -68,7 +68,7 @@ The former part is very simple and it merely prints to the console a stack trace
 
 The code which does that is pretty fast, so it doesn't impact your application's performance too much even though it collects and stores a large amount of data (mostly pointers and some strings, though). When file name mapping is performed during file I/O, the profiler code looks up the string address and retrieves the stack trace to store it for later use. When the application exits a summary report is printed to the console which includes some statistics on the string, its original (requested) and target (mapped) form as well as a location (if it was possible to determine it) where the string was created. The location is determined using simple heuristics, so it might sometimes point to a location which is near the place where the string was created. The heuristics code walks the stack frames looking for first frame which is in application code - that is it ignores the well-known class library assemblies shipped with Mono (corlib, System\*, some Mono\* assemblies etc) and all the assemblies installed in the GAC. The first frame which doesn't belong in either of the above is considered to be user's code and is reported to be the string allocation location. If the stack trace doesn't contain any such frames, full trace is recorded and shown in the summary.
 
-It is advisable to compile your application with full debugging information, so that source files and line numbers can be reported (otherwise only Namespace.Class.Method will be printed). To enable the utility, make sure the MONO\_IOMAP environment variable is present and set to 'all', 'case' or 'drive' and execute your application as follows:
+It is advisable to compile your application with full debugging information, so that source files and line numbers can be reported (otherwise only Namespace.Class.Method will be printed). To enable the utility, make sure the MONO_IOMAP environment variable is present and set to 'all', 'case' or 'drive' and execute your application as follows:
 
 ``` bash
    mono --debug --profile=iomap your_application.exe

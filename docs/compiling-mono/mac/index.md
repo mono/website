@@ -68,7 +68,7 @@ By the end of this process, you will have Mono installed on your PREFIX director
 Building Mono From a Git Source Code Checkout
 ---------------------------------------------
 
-To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C\# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
+To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
 
 ``` bash
 PATH=$PREFIX/bin:$PATH

@@ -22,7 +22,7 @@ I got my tests for Form, RadioButton, and GroupBox committed, as I said
 Form could use a few more tests, I think, but the coverage is pretty good right now
 07:06
 I did update the new contributor guidelines
-Accessibility:\_Getting\_Started\_With\_Development
+Accessibility:_Getting_Started_With_Development
 there is now a little section about how our Coding Guidelines differ from the rest of Mono
 and some other cleanups
 like instructions for obtaining code coverage when you run unit tests
@@ -113,7 +113,7 @@ i'm not expecting the openSUSE bug to take long for mgorse to fix
 **\<@calvin\> **
 mgorse: that's awesome, and good to have you working in the bridge
 jpallen: ok
-Andres isn't here FTO (on an airplane) and I didn't get an update but his work with Mike getting issues in atk\# I know have continued along with bridge work.
+Andres isn't here FTO (on an airplane) and I didn't get an update but his work with Mike getting issues in atk# I know have continued along with bridge work.
 07:22
 He won't be here most or all of the iteration so we'll hear from him next time
 07:23
@@ -128,13 +128,13 @@ Ray: go ahead
 **\< Ray\> **
 yes
 QA part
-this week, I have some problems with HelpProvider and filed a bug with that, [https://bugzilla.novell.com/show\_bug.cgi](https://bugzilla.novell.com/show_bug.cgi) ?id=412849,
+this week, I have some problems with HelpProvider and filed a bug with that, [https://bugzilla.novell.com/show_bug.cgi](https://bugzilla.novell.com/show_bug.cgi) ?id=412849,
 07:25
 but unfortunately, the upstream(Mono?) does implement the helpbutton, so i might change code a bit, and check it out later.
 and Build part
 update accerciser to lastest version.
 07:26
-people could download it from [http://download.opensuse.org/repositorie](http://download.opensuse.org/repositorie) s/home://rawang/openSUSE\_11.0/i586/accer ciser-1.3.5-1.1.i586.rpm,
+people could download it from [http://download.opensuse.org/repositorie](http://download.opensuse.org/repositorie) s/home://rawang/openSUSE_11.0/i586/accer ciser-1.3.5-1.1.i586.rpm,
 and decriptor suggested me that i might change my mind to put the updates to mainsteam (openSUSE:Factory) so that the lastest stuff to a11y could be adopted in the next release.
 i have forked a accerciser branch from openSUSE:Factory, and built the newest version to this practice.
 second, as knocte mentioned last time, i paid attention to atspi-dbus. so i grabbed the source, but can't make dist until update to HEAD version today.
@@ -163,7 +163,7 @@ sorry, go ahead
 **\<@bgmerrell\> **
 hah!
 most of my time was spent writing some (hopefully) decent documentation for Strongwind that can be referred to by anyone who wants to work on QA
-Accessibility:\_Strongwind\_Basics
+Accessibility:_Strongwind_Basics
 07:30
 Strongwind was very lacking in the documentation department, so this should help
 and as a nice side-effect I can use it as a reference for our utosc presentation
@@ -192,7 +192,7 @@ we need those fixed
 maybe I've found my tasks, then?
 07:33
 **\< jpallen\> **
-i'd like to see some pass/fail status in Accessibility:\_Test\_Plan\_WinForms\_Controls
+i'd like to see some pass/fail status in Accessibility:_Test_Plan_WinForms_Controls
 sandy: maybe
 **\<@bgmerrell\> **
 jpallen: yeah, we should have done that
@@ -206,12 +206,12 @@ right now some of the bugs might be filed against the wrong components because w
 **\< jpallen\> **
 i'll get that going today
 so, moving forward
-i'm going to be looking at Accessibility:\_Control\_Status
+i'm going to be looking at Accessibility:_Control_Status
 07:35
 and
-Accessibility:\_Mapping\_UIA\_to\_ATK
+Accessibility:_Mapping_UIA_to_ATK
 and
-Accessibility:\_Test\_Plan\_WinForms\_Controls
+Accessibility:_Test_Plan_WinForms_Controls
 to determine how we are tracking to finish phase 1
 this means that everyone on the team should be doing the same :)
 we need to meet our phase 1 deadline
@@ -232,12 +232,12 @@ in this iteration, i have finished button, checkbox, radiobutton control's stron
 07:38
 i also have run button, checkbox test and log some bugs.
 radiobutton doesn't been finished (accerciser can't show the item with radiobutton role) so i just script the test in advance but not run it yet.
-and i spent some time to read and discussed strongwind\_basics tutorial that was wrote by Brian. he did a good job. very useful.
+and i spent some time to read and discussed strongwind_basics tutorial that was wrote by Brian. he did a good job. very useful.
 07:39
 in coming iteration
 07:40
 i am going to script strongwind test for scrollbar, and run the test if it's ready to be run test.
-and we also need update Accessibility:\_Test\_Plan\_WinForms\_Controls wiki page Promptly. :)
+and we also need update Accessibility:_Test_Plan_WinForms_Controls wiki page Promptly. :)
 here i have a question:
 07:41
 how can i consider if developer have finished one control complelely (i asked it before),
@@ -246,8 +246,8 @@ done
 07:42
 **\<@sandy\> **
 Calen: if we do a good job of updating these wiki pages:
-Accessibility:\_Control\_Status
-Accessibility:\_Mapping\_UIA\_to\_ATK
+Accessibility:_Control_Status
+Accessibility:_Mapping_UIA_to_ATK
 the info should be there
 **\<@calvin\> **
 sandy: agreed

@@ -27,7 +27,7 @@ To build Mono on Solaris you will need a complete GNU toolchain:
 
 -   You might need to add /usr/ccs/bin to your PATH since it contains the 'ar' utility needed during the build.
 
--   /usr/ccs/bin contains an 'mcs' command which has the same name as our C\# compiler. This will confuse the build process, so either rename it to something else, or copy the 'ar' command to another directory and include that directory in your path instead of /usr/ccs/bin.
+-   /usr/ccs/bin contains an 'mcs' command which has the same name as our C# compiler. This will confuse the build process, so either rename it to something else, or copy the 'ar' command to another directory and include that directory in your path instead of /usr/ccs/bin.
 
 -   If during compilation, gcc reports errors in system header files, you might need to to patch the header files to be compatible with gcc. To do this, run (as root);
 

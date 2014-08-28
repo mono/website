@@ -121,7 +121,7 @@ Getting Help
 -   A list of frequently asked questions can be found in [Gendarme.FAQ](/docs/tools+libraries/tools/gendarme/faq/).
 -   You can find some basic answers about developing rules, or hacking on Gendarme itself, in the [FAQ](/docs/tools+libraries/tools/gendarme/development-faq/).
 -   You are welcome to participate in Gendarme's discussions on [it's Google Group](http://groups.google.com/group/gendarme). This group is used for both users and developers of Gendarme.
--   Gendarme's fans are also present on [IRC](/community/help/irc/) (\#gendarme on GIMPnet).
+-   Gendarme's fans are also present on [IRC](/community/help/irc/) (#gendarme on GIMPnet).
 
 Feedback
 ========

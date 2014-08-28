@@ -69,8 +69,8 @@ Notes on the Moonlight implementation and notes on bringing Silverlight to Linux
 Testing
 =======
 
--   For a simple self contained html file with embedded Silverlight, [Moonlight\_Standalone\_File](/Moonlight_Standalone_File "Moonlight Standalone File")
--   We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. \#ifdef versus tools);
+-   For a simple self contained html file with embedded Silverlight, [Moonlight_Standalone_File](/Moonlight_Standalone_File "Moonlight Standalone File")
+-   We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. #ifdef versus tools);
 -   We need to run (parts of) the tests under the new security model - not just under Mono/Linux but also under MS Silverlight under Windows;
 -   We need to expand those tests, e.g. new classes, more coverage;
 -   [Instructions for Jackson's new test harness](/Moonlight_Test_Harness "Moonlight Test Harness")
@@ -128,7 +128,7 @@ Some notes that are relevant to WPF have been moved to the [WPF](/WPF "WPF") pag
 Silverlight SDKs
 ================
 
-Developers can create Silverlight 1.0 applications without any extra dependencies in MacOS and Linux. Silverlight 2.0 can optionally use C\# and the .NET framework to create applications.
+Developers can create Silverlight 1.0 applications without any extra dependencies in MacOS and Linux. Silverlight 2.0 can optionally use C# and the .NET framework to create applications.
 
 For users of Silverlight 2.0 we are creating an SDK that developers can use to create applications on Linux, Unix and MacOS.
 
@@ -204,7 +204,7 @@ As we can see in next figures Silverlight doesn't have any circular dependencies
 
 #### New versioned Libraries
 
-We introduced a new NET\_2\_1 define and a new net\_2\_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker](/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
+We introduced a new NET_2_1 define and a new net_2_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker](/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
 
 [![Mono20-to-21.png](/archived/images/d/da/Mono20-to-21.png)](/archived/images/d/da/Mono20-to-21.png)
 
@@ -220,7 +220,7 @@ Tasks:
 
 A peer project of this is [Completing the 2.0 Profile](/Completing2.0Profile "Completing2.0Profile") effort. As both 2.1.0.0 and 2.0.0.0 share a lot in common.
 
-I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET\_2\_1 that would be a superset of NET\_2\_0. The result would be a larger assembly than we need to have.
+I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET_2_1 that would be a superset of NET_2_0. The result would be a larger assembly than we need to have.
 
 At that point, we should use the Cecil-based linker (which will have to be modified) and have the linker strip out all the public code that is not necessary in the 2.1 profile.
 
@@ -243,7 +243,7 @@ As part of the Google Summer of Code some of the APIs in this assembly will be i
 This contains the interface to the rendering engine and lives in two parts:
 
 -   moon/src module on SVN (the C++ code)
--   moon/class/System.Windows on SVN (the C\# code)
+-   moon/class/System.Windows on SVN (the C# code)
 
 The class hierarchy for instance (on the [WPFNotes](/WPFNotes "WPFNotes") page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not. The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
 
@@ -251,7 +251,7 @@ It is probably simple for those that want to contribute to start work on the cla
 
 One thing that seems clear to me is that the rendering should be done in the unmanaged world. Just like the full WPF does, it seems like the managed code is merely a front-end that communicates with the backend and creates the object in the unmanaged world. The unmanaged world actually does all the rendering. There are a couple of questions as to how much needs to go in the unmanaged world, but at least it is clear that anything that derives from Visual as well as the majority of the things references from them (Brushes and Transforms at least, and maybe also PathSegments?)
 
-Currently the plan is to have the C++ code mirror the C\# class hierarchy, and it will be responsible for rendering and for loading XAML files into memory.
+Currently the plan is to have the C++ code mirror the C# class hierarchy, and it will be responsible for rendering and for loading XAML files into memory.
 
 There are some stubbed out some classes in olive/class/agclr, but they are not complete and no real work has happened, there are just bits to see how pieces fit together.
 
@@ -269,7 +269,7 @@ Current developments:
 
 -   Antonello contributed recently various core bits to LINQ.
 -   Atsushi has been working on the XML Linq support.
--   Marek Safar has been working on the C\# 3 linq syntax.
+-   Marek Safar has been working on the C# 3 linq syntax.
 
 ### Rendering
 
@@ -355,7 +355,7 @@ Some notes at [MoonlightHostingNotes](/MoonlightHostingNotes "MoonlightHostingNo
 
 The JavaScript compiler does not look like it will be open sourced, but some comments from the Mix conference indicate that it is probably a small compiler (scanning and parsing) that defers most of the work to the DLR (already open source).
 
-The size of the Javascript compiler in Silverlight and the runtime are 114,688 and 299,008 bytes respectively. Extrapolating this from the size of our C\# 1.0 compiler means that their Javascript compiler is roughly 9,000 lines of code, and the supporting runtime is roughly 22,000 lines of code.
+The size of the Javascript compiler in Silverlight and the runtime are 114,688 and 299,008 bytes respectively. Extrapolating this from the size of our C# 1.0 compiler means that their Javascript compiler is roughly 9,000 lines of code, and the supporting runtime is roughly 22,000 lines of code.
 
 We have a runtime we could start from already, but it will likely require some changes, while the Javascript compiler seems relatively trivial to implement.
 

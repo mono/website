@@ -46,21 +46,21 @@ MPhoto
 Phonic
 ------
 
--   [[http://www.atoker.com/phonic/](http://www.atoker.com/phonic/) Gtk\# audio Player,
+-   [[http://www.atoker.com/phonic/](http://www.atoker.com/phonic/) Gtk# audio Player,
 
 makes use of Gstreamer]
 
 Platano Multimedia Player
 -------------------------
 
--   [[http://www.atoker.com/platano/](http://www.atoker.com/platano/) Gtk\# video/audio
+-   [[http://www.atoker.com/platano/](http://www.atoker.com/platano/) Gtk# video/audio
 
 player, makes use of GStreamer]
 
 GSIRC
 -----
 
--   [[http://www.atoker.com/gsirc/](http://www.atoker.com/gsirc/) Gtk\# cross platform IRC
+-   [[http://www.atoker.com/gsirc/](http://www.atoker.com/gsirc/) Gtk# cross platform IRC
 
 client]
 

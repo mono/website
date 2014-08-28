@@ -71,9 +71,9 @@ You can either link LLVM into your mono executable, or you can split it in a sep
 make && make install
 ```
 
-Now you have an LLVM-powered Mono. By default, the mono JIT is used to compile code, to make the runtime use LLVM, pass the '--llvm' command line option, or add it to the MONO\_ENV\_OPTIONS environment variable.
+Now you have an LLVM-powered Mono. By default, the mono JIT is used to compile code, to make the runtime use LLVM, pass the '--llvm' command line option, or add it to the MONO_ENV_OPTIONS environment variable.
 
-LLVM generates better code at runtime, but also takes longer to execute. This is why you need to explicitly tell Mono's runtime to use the LLVM backend. This is achieved by either setting the environment variable MONO\_USE\_LLVM or by passing the --llvm command line option to Mono.
+LLVM generates better code at runtime, but also takes longer to execute. This is why you need to explicitly tell Mono's runtime to use the LLVM backend. This is achieved by either setting the environment variable MONO_USE_LLVM or by passing the --llvm command line option to Mono.
 
 Limitations
 ===========

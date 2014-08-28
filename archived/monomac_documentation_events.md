@@ -11,11 +11,11 @@ MonoMac/Documentation/Events
 Events
 ======
 
-If you want to intercept events from UIControl, you have a range of options: from using the C\# lambdas and delegate functions to using the low-level Objective-C APIs.
+If you want to intercept events from UIControl, you have a range of options: from using the C# lambdas and delegate functions to using the low-level Objective-C APIs.
 
 The following shows how you would capture the TouchDown event on a button, depending on how much control you need:
 
-C\# Style
+C# Style
 ---------
 
 Using the delegate syntax:

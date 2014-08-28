@@ -435,7 +435,7 @@ void Method (string lpstrArgument)
 void Method (string my_string)
 ```
 
-(There is an exception to this rule: [Gtk\#](/docs/gui/gtksharp/) codebase, in which you should use under\_score.)
+(There is an exception to this rule: [Gtk#](/docs/gui/gtksharp/) codebase, in which you should use under_score.)
 
 Instance fields should use underline as a separator:
 
@@ -529,7 +529,7 @@ class Message {
 Line length and alignment
 -------------------------
 
-Line length: The line length for C\# source code is 180 columns (Used to be 80).
+Line length: The line length for C# source code is 180 columns (Used to be 80).
 
 If your function declaration arguments go beyond this point, please align your arguments to match the opening brace. For best results use the same number of tabs used on the first line followed by enough spaces to align the arguments. That ensures that the arguments will remain aligned when viewed with a different tabsize. In the following example, the line that declares argc is indented with 2 tabs and 15 spaces:
 
@@ -558,7 +558,7 @@ void M ()
 Initializing Instances
 ----------------------
 
-Use the new C\# syntax to initialize newly created objects.
+Use the new C# syntax to initialize newly created objects.
 
 Bad:
 
@@ -582,7 +582,7 @@ Baroque Coding
 
 Baroque coding is discouraged.
 
-We discourage the use of the "private" keyword to flag internal fields or methods since this is the default visibility mode in C\#. The keyword exists because of Java. Avoid it, it merely is more line noise for people that are reading your code.
+We discourage the use of the "private" keyword to flag internal fields or methods since this is the default visibility mode in C#. The keyword exists because of Java. Avoid it, it merely is more line noise for people that are reading your code.
 
 But the same principle applies everywhere else in Mono. Avoid complex code or redundant code for the sake of it. Try to write the minimum amount of text possible.
 
@@ -596,7 +596,7 @@ Do not commit changes to the Makefiles that removes warnings, if anything warnin
 Conditional compilation
 -----------------------
 
-Ideally we would not need conditional compilation, and the use of \#ifdef is strongly discouraged. But due to our support for old C\# 1.0 compilers we have to use it in a few places.
+Ideally we would not need conditional compilation, and the use of #ifdef is strongly discouraged. But due to our support for old C# 1.0 compilers we have to use it in a few places.
 
 Try to avoid negative tests that have an else clause, for example:
 
@@ -791,7 +791,7 @@ Example:
 
 The `[Tag]` is optional, but you could try using these for your commits:
 
--   **Fix** for bug fixes, in the summary include the nature of the fix and the bug \#
+-   **Fix** for bug fixes, in the summary include the nature of the fix and the bug #
 -   **Performance** for changes that improve performance
 -   **Compatibility** changes done for the sake of compatibility
 -   **API** for API additions, changes or removals

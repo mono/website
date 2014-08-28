@@ -117,9 +117,9 @@ For example, to create a bundle for hello world, use the following command:
                  -rw-r--r--  1 ed users     136 2005-04-29 11:06 hello.cs
                  -rwxr-xr-x  1 ed users    3072 2005-04-29 11:06 hello.exe
 
-The resulting executable is self contained and does not need the Mono runtime installed to run. However, if your application relies on libraries linked to by the mono runtime or Gtk\#, those will need to be installed (Gtk\# helper libraries come to mind).
+The resulting executable is self contained and does not need the Mono runtime installed to run. However, if your application relies on libraries linked to by the mono runtime or Gtk#, those will need to be installed (Gtk# helper libraries come to mind).
 
-An example with a slightly more complex application (with the same mkbundle options) which uses Gtk\# and misc assemblies:
+An example with a slightly more complex application (with the same mkbundle options) which uses Gtk# and misc assemblies:
 
                 $ mkbundle eGuide.exe --deps -o eGuide
                 Sources: 1 Auto-dependencies: True
@@ -155,14 +155,14 @@ The -z option allows you to compress the assemblies included in the bundle, and 
 
 The -c option will create a host.c file which contains the main function of the program, which you can modify before compiling and linking the application.
 
-With -c, the further option --nomain will generate the host.c file without a main method so that you can embed it as a library in an existing native application in which you are embedding the Mono runtime yourself. Just call mono\_mkbundle\_init() before initializing the JIT to make the bundled assemblies available.
+With -c, the further option --nomain will generate the host.c file without a main method so that you can embed it as a library in an existing native application in which you are embedding the Mono runtime yourself. Just call mono_mkbundle_init() before initializing the JIT to make the bundled assemblies available.
 
 Bundles in addition support a --static flag. The --static flag causes mkbundle to generate a static executable that statically links the Mono runtime. Be advised that this option will trigger the LGPL requirement that you still distribute the independent pieces to your user so he can manually upgrade his Mono runtime if he chooses to do so. Alternatively, you can obtain a proprietary license of Mono by [contacting Xamarin](/Contact "Contact").
 
 macpack (Mac OS X only)
 -----------------------
 
-*macpack* is a tool that must be used to bundle Cocoa\# applications into Double-Clickable, Finder friendly, bundles on Mac OS X. It bundles static libraries and resources, as well as generates a basic info.plist into the .app bundle.
+*macpack* is a tool that must be used to bundle Cocoa# applications into Double-Clickable, Finder friendly, bundles on Mac OS X. It bundles static libraries and resources, as well as generates a basic info.plist into the .app bundle.
 
 For example the following commands are used to build the CurrencyConverter.exe into an application bundle:
 

@@ -53,7 +53,7 @@ If you are interested in building Mono Scratchbox devkit from sources, please ch
 Screenshots and Movies
 ======================
 
-[Gtk\# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
+[Gtk# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 

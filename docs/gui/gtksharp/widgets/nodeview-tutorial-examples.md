@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharpNodeViewTutorialExamples/
 ---
 
-Example Programs from the Gtk\# NodeView Tutorial
+Example Programs from the Gtk# NodeView Tutorial
 =================================================
 
 This page contains the sample applications and compile instructions for the applications described in the tutorial.

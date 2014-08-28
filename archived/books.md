@@ -47,12 +47,12 @@ The following covers an older version of Mono (a few years old):
 
 There is an online guide in this web site, the [Monkeyguide](/Monkeyguide "Monkeyguide")
 
-C\#
+C#
 ---
 
-[A Programmer's Introduction to C\# - Second Edition](http://www.amazon.com/exec/obidos/tg/detail/-/1893115623/qid=1086275793/sr=8-2/ref=sr_8_xs_ap_i2_xgl14/103-3987558-5955806?v=glance&s=books&n=507846): Eric Gunnerson
+[A Programmer's Introduction to C# - Second Edition](http://www.amazon.com/exec/obidos/tg/detail/-/1893115623/qid=1086275793/sr=8-2/ref=sr_8_xs_ap_i2_xgl14/103-3987558-5955806?v=glance&s=books&n=507846): Eric Gunnerson
 
-[C\# Language Specification](http://www.ecma-international.org/publications/standards/Ecma-334.htm). The ECMA standard contains a very good introduction to the language and goes in depth into it.
+[C# Language Specification](http://www.ecma-international.org/publications/standards/Ecma-334.htm). The ECMA standard contains a very good introduction to the language and goes in depth into it.
 
 .NET Framework
 --------------
@@ -84,7 +84,7 @@ Web Services
 ASP.NET
 -------
 
-[Essential ASP.NET with Examples in C\#](http://www.amazon.com/exec/obidos/tg/detail/-/0201760401/qid=1086275991/sr=1-1/ref=sr_1_1/103-3987558-5955806?v=glance&s=books) by Fritz Onion. This is a great book for understanding the inner workings of the ASP.NET engine.
+[Essential ASP.NET with Examples in C#](http://www.amazon.com/exec/obidos/tg/detail/-/0201760401/qid=1086275991/sr=1-1/ref=sr_1_1/103-3987558-5955806?v=glance&s=books) by Fritz Onion. This is a great book for understanding the inner workings of the ASP.NET engine.
 
 [ASP.NET in a Nutshell](http://www.amazon.com/exec/obidos/tg/detail/-/0596005202/qid=1086276030/sr=1-1/ref=sr_1_1/103-3987558-5955806?v=glance&s=books) by G. Andrew Duthie & Matthew MacDonald
 
@@ -98,7 +98,7 @@ Security
 Compiler Implementation
 -----------------------
 
-[Understanding Mono's C\# Compiler](https://bitly.com/understanding-mono-c-sharp-compiler)
+[Understanding Mono's C# Compiler](https://bitly.com/understanding-mono-c-sharp-compiler)
 
 [Compilers - Principles, Techniques, and Tools](http://www.bookpool.com/.x/maijdyouz8/ss/1?qs=ompilers+-+Principles%2C+Techniques%2C+and+Tools&Go.x=0&Go.y=0&Go=Go): Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman
 

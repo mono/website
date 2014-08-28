@@ -4,14 +4,14 @@ redirect_from:
   - /GtkSharpNewInVersion2x/
 ---
 
-This document describes the new features in Gtk\# 2, the upgrade to Gtk+'s .NET binding.
+This document describes the new features in Gtk# 2, the upgrade to Gtk+'s .NET binding.
 
-Gtk\# 2.12 additions
+Gtk# 2.12 additions
 --------------------
 
 #### Memory and Reference Management Improvements
 
-We now use the toggle\_ref API introduced in glib-2.8 to provide more accurate reference management for managed subclasses of GLib.Object. Toggle refs are a special class of reference that lets us determine if we are the sole owner of a native object. This is especially important when dealing with managed subclasses of GLib.Object. As long as unmanaged code holds references to a managed subclass, we have to artificially keep a managed ref around to ensure garbage collection doesn't occur, since the objects likely contain instance data that would be lost if the managed object is finalized.
+We now use the toggle_ref API introduced in glib-2.8 to provide more accurate reference management for managed subclasses of GLib.Object. Toggle refs are a special class of reference that lets us determine if we are the sole owner of a native object. This is especially important when dealing with managed subclasses of GLib.Object. As long as unmanaged code holds references to a managed subclass, we have to artificially keep a managed ref around to ensure garbage collection doesn't occur, since the objects likely contain instance data that would be lost if the managed object is finalized.
 
 #### Gtk.Object destruction enhancements
 
@@ -52,14 +52,14 @@ Registration of GInterface implementations is now supported. Details on how to i
 
 #### GObject property registration
 
-Properties with a [GLib.Property ("prop\_name")] attribute will now be registered with the GObject type system. This feature is especially useful when creating custom cell renderers. (since 2.12.2)
+Properties with a [GLib.Property ("prop_name")] attribute will now be registered with the GObject type system. This feature is especially useful when creating custom cell renderers. (since 2.12.2)
 
-Gtk\# 2.6 additions
+Gtk# 2.6 additions
 -------------------
 
-We are also simultaneously releasing bindings for Gtk+ 2.6 and Gnome 2.10 in source form only. Gtk\# 2.6.x is backward compatible with the 2.4.x releases via the new Publisher Policy mechanism. Once you upgrade your application to 2.4.x, you won't have to change anything again during the 2.x series, unless you want to use the new goodies in 2.6/2.8/etc...
+We are also simultaneously releasing bindings for Gtk+ 2.6 and Gnome 2.10 in source form only. Gtk# 2.6.x is backward compatible with the 2.4.x releases via the new Publisher Policy mechanism. Once you upgrade your application to 2.4.x, you won't have to change anything again during the 2.x series, unless you want to use the new goodies in 2.6/2.8/etc...
 
-The Gtk\# 2.6.x releases expose the following new API elements and more.
+The Gtk# 2.6.x releases expose the following new API elements and more.
 
 ### AboutDialog
 
@@ -69,7 +69,7 @@ The Gnome About dialog has been cleaned up and integrated directly into Gtk.
 
 ### New Cell renderer types
 
-Gtk\# 1.0.x came with Cell Renderers for [text](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererText), [images](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererPixbuf), and [checkboxes](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererToggle).
+Gtk# 1.0.x came with Cell Renderers for [text](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererText), [images](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererPixbuf), and [checkboxes](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererToggle).
 
 Starting in 2.6, we have the popular new [Gtk.CellRendererProgress](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererProgress) and [Gtk.CellRendererCombo](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererCombo] renderers. Use them to expose ProgressBar cells and dropdown ComboBox cells in your TreeViews and NodeViews.
 
@@ -84,7 +84,7 @@ See the API here: [Gtk.IconView](http://docs.go-mono.com/index.aspx?link=T:Gtk.I
 New Binding Features
 --------------------
 
-The following features provide more complete bindings for Application Developers using the Gtk and GNOME libraries bound by Gtk\# as well as providing more powerful binding capabilities for external Binding Authors.
+The following features provide more complete bindings for Application Developers using the Gtk and GNOME libraries bound by Gtk# as well as providing more powerful binding capabilities for external Binding Authors.
 
 ### Public Field generation for Objects and Opaques
 
@@ -108,7 +108,7 @@ A huge bug has been squashed in supporting the CDecl calling convention for nati
 
 ### Automatic null handling for Objects, Opaques, and Interfaces
 
-Gone are the days of adding null\_ok attributes to parameters that can accept NULL. The generator now automatically marshals null to NULL for the ref types.
+Gone are the days of adding null_ok attributes to parameters that can accept NULL. The generator now automatically marshals null to NULL for the ref types.
 
 ### Container Child Property generation
 
@@ -116,7 +116,7 @@ Types declaring container child properties now generate API elements to access t
 
 ### 64 bit marshaling support
 
-Support for marshaling of long, ulong, size\_t, etc... properly for ILP32 and LP64 platforms alike.
+Support for marshaling of long, ulong, size_t, etc... properly for ILP32 and LP64 platforms alike.
 
 ### List to Array marshaling
 
@@ -129,7 +129,7 @@ For those methods which declare callback delegates inline, we now generate deleg
 Gtk+ 2.4 API Additions
 ----------------------
 
-Several powerful widgets and objects were added in version 2.4 that are bound by Gtk\# version 2.4.x. The following are some of the highlights.
+Several powerful widgets and objects were added in version 2.4 that are bound by Gtk# version 2.4.x. The following are some of the highlights.
 
 ### Actions and UIManager
 
@@ -167,7 +167,7 @@ uim.AddUiFromString (ui_info);
 ...
 ```
 
-A complete sample application utilizing Actions and the UI manager can be found in the sample/Action.cs file shipped with the Gtk\# source or viewed [on the web](http://anonsvn.mono-project.com/viewcvs/trunk/gtk-sharp/sample/Actions.cs?view=markup).
+A complete sample application utilizing Actions and the UI manager can be found in the sample/Action.cs file shipped with the Gtk# source or viewed [on the web](http://anonsvn.mono-project.com/viewcvs/trunk/gtk-sharp/sample/Actions.cs?view=markup).
 
 ### ComboBox
 
@@ -215,7 +215,7 @@ New Extensions to the Bindings
 
 ### NodeView and NodeSelection
 
-The NodeStore is now interactive with new selection and view objects. Use NodeStore, NodeSelection, and NodeView to simplify the TreeView API with a nice attribute driven C\# friendly syntax.
+The NodeStore is now interactive with new selection and view objects. Use NodeStore, NodeSelection, and NodeView to simplify the TreeView API with a nice attribute driven C# friendly syntax.
 
 [![GtkSharpNodeViewSimple.png](/archived/images/0/04/GtkSharpNodeViewSimple.png)](/archived/images/0/04/GtkSharpNodeViewSimple.png)
 
@@ -227,7 +227,7 @@ Use the new gtk-dotnet.dll assembly to open up the power of System.Drawing to yo
 
 See the API here: [Gtk.DotNet.Graphics](http://docs.go-mono.com/index.aspx?link=T:Gtk.DotNet.Graphics).
 
-You can find a sample with various patterns in the Gtk\# distribution in the samples directory as "DrawingSample.cs"
+You can find a sample with various patterns in the Gtk# distribution in the samples directory as "DrawingSample.cs"
 
 ``` csharp
 using System.Drawing;
@@ -286,7 +286,7 @@ With version 2.4.x, it is now possible to create KeyBindings for your Widget sub
 
 ### Application.Invoke
 
-It is now simpler to use threads with Gtk\# applications using Gtk.Application.Invoke. This new API call can be used with anonymous methods to simplify writing code that must be executed on the Gtk\# main loop, for example:
+It is now simpler to use threads with Gtk# applications using Gtk.Application.Invoke. This new API call can be used with anonymous methods to simplify writing code that must be executed on the Gtk# main loop, for example:
 
 ``` csharp
 public void CountingThread ()

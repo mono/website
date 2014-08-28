@@ -114,7 +114,7 @@ Notes:
 -   Moonlight 1.x does not execute managed code (i.e. does not include Mono) so it is not affected by this vulnerability.
 -   The vulnerability is located in mono source code but can only be exploited (by untrusted applications) when used by Moonlight.
 
-XSP/mod\_mono source code disclosure
+XSP/mod_mono source code disclosure
 ------------------------------------
 
 CVE: [CVE-2010-4225](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4225)
@@ -123,11 +123,11 @@ An unloading bug can, under some circumstances, let ASP.NET applications misbeha
 
 Version affected:
 
--   Mono / XSP / mod\_mono 2.8.x
+-   Mono / XSP / mod_mono 2.8.x
 
 Version fixed:
 
--   Mono / XSP / mod\_mono 2.8.2
+-   Mono / XSP / mod_mono 2.8.2
 
 Moonlight Generic Constraints Bypass Vulnerability
 --------------------------------------------------
@@ -151,12 +151,12 @@ Notes:
 -   Moonlight 1.x does not execute managed code (i.e. does not include Mono) so it is not affected by this vulnerability.
 -   The bug (and fix) is in mono source code but can only be exploited (by untrusted applications) when used by Moonlight.
 
-mono-debugger Insecure Use of LD\_LIBRARY\_PATH
+mono-debugger Insecure Use of LD_LIBRARY_PATH
 -----------------------------------------------
 
 CVE: [CVE-2010-3369](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3369)
 
-The mono debugger scripts (mdb and mdb-symbolreader) misuse the LD\_LIBRARY\_PATH environment variable (empty case) which could allow loading shared libraries from the current directory.
+The mono debugger scripts (mdb and mdb-symbolreader) misuse the LD_LIBRARY_PATH environment variable (empty case) which could allow loading shared libraries from the current directory.
 
 Version affected:
 
@@ -316,7 +316,7 @@ Notes:
 
 -   Mono's System.Web.dll assembly didn't consider, before version 1.2.5.2, some Win32-specific behavior affecting filenames ending with spaces or dots. Win32 operating systems ignores the trailing characters, even if the file-system supports them, and can access the similarly named files without reporting any error. This caused XSP to return ASP.NET source code, instead of rendered content, when executed with Mono under Windows
 
-XSP/mod\_mono source code disclosure 2
+XSP/mod_mono source code disclosure 2
 --------------------------------------
 
 CVE: [CVE-2006-6104](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6104)
@@ -333,11 +333,11 @@ Fixed in
 
 Notes
 
--   The problem is exhibited in XSP and, in certain cases mod\_mono (when configured with **SetHandler**) but the fix is in the Mono class libraries. To avoid any compatibility issues you should update both Mono and XSP/mod\_mono to the same version.
+-   The problem is exhibited in XSP and, in certain cases mod_mono (when configured with **SetHandler**) but the fix is in the Mono class libraries. To avoid any compatibility issues you should update both Mono and XSP/mod_mono to the same version.
 
 Workaround
 
--   Use Apache/[Mod\_mono](/docs/web/mod_mono/) configured with **AddHander**.
+-   Use Apache/[Mod_mono](/docs/web/mod_mono/) configured with **AddHander**.
 
 Local privilege escalation via System.Xml.Serialization
 -------------------------------------------------------
@@ -355,16 +355,16 @@ Fixed in
 
 Workaround
 
--   Code generation for serialization can be turned off using **export MONO\_XMLSERIALIZER\_THS=no** prior to executing Mono applications
+-   Code generation for serialization can be turned off using **export MONO_XMLSERIALIZER_THS=no** prior to executing Mono applications
 
-XSP/mod\_mono directory traversal
+XSP/mod_mono directory traversal
 ---------------------------------
 
 CVE: [CVE-2006-2658](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2658)
 
 Versions affected
 
--   mod\_mono 1.1.14 (and prior releases)
+-   mod_mono 1.1.14 (and prior releases)
 
 Fixed in
 
@@ -374,7 +374,7 @@ Fixed in
 
 Notes
 
--   Yes the affected/fixed products are confusing. The bug was in XSP but only exposed when using mod\_mono. You should update both packages to avoid compatibility issues.
+-   Yes the affected/fixed products are confusing. The bug was in XSP but only exposed when using mod_mono. You should update both packages to avoid compatibility issues.
 
 Mono ASP.NET Unicode Conversion Cross-Site Scripting
 ----------------------------------------------------

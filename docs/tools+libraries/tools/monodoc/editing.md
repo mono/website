@@ -32,7 +32,7 @@ Use this to create a link in your documentation to the sections for types, names
 -   N:MyLibrary (to link to a namespace)
 -   T:MyLibrary.MyType (to link to a type)
 -   C:MyLibrary.MyType(System.String) (to link to a constructor)
-    -   Constructor links may also be written as: M:MyLibrary.MyType.\#ctor(System.String)
+    -   Constructor links may also be written as: M:MyLibrary.MyType.#ctor(System.String)
 -   M:MyLibrary.MyType.MethodName(System.String,MyLibray.MyOtherType) (to link to a method; for `ref` and `out` parameters, add an & to the end of the type name)
 -   P:MyLibrary.MyType.IsDefined (to link to a property)
 -   F:MyLibrary.MyType.COUNTER (to link to a field)
@@ -46,7 +46,7 @@ So your links might look like:
 
      <see langword="keyword"/>
 
-Use this to link to a keyword in the C\# language, for example to link to \`true', do:
+Use this to link to a keyword in the C# language, for example to link to \`true', do:
 
     <see langword="true"/>
 
@@ -60,13 +60,13 @@ Use example to insert an example. The example can contain explanatory text and c
 
      <code lang="C#">.. </code>
 
-Use this to provide a sample C\# program, typically used within the \<example\> tags.
+Use this to provide a sample C# program, typically used within the \<example\> tags.
 
 You can link to an example like this:
 
     <code lang="C#" source="file.cs"> </code>
 
-When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc](/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update](/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C\#" source="examples/file.cs" /\>.**
+When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc](/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update](/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C#" source="examples/file.cs" /\>.**
 
 ****
 

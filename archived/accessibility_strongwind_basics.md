@@ -324,13 +324,13 @@ The find\* and findAll\* functions have several other parameters aside from name
 |checkShowing|bool|True|whether or not to include *only* widgets that are showing|
 |raiseException|bool|True|whether to return None or to raise an exception if the search returns no results|
 
-Consider a window with several widgets and a scroll bar. As you scroll through the window, some accessibles come into view and others will go out of view. The accessibles that come into view will have the *showing* state and the accessibles that go out of view will not. We must be careful when discussing the *showing* state, because there is also a *visible* state! The *visible* state is much different than the *showing* state, however. It refers to accessibles that are either showing or **would be *showing*** if they came into view; developers can hide widgets so they are not *visible* and thus could never be *showing*. [http://library.gnome.org/devel/atk/unstable/atk-AtkState.html](http://library.gnome.org/devel/atk/unstable/atk-AtkState.html) describes both of these states in detail (see ATK\_STATE\_VISIBLE and ATK\_STATE\_SHOWING); this information is a little beyond the scope of this tutorial. Just remember that an accessible is *showing* if the user can actually see the widget when looking at the GUI at a given point in time.
+Consider a window with several widgets and a scroll bar. As you scroll through the window, some accessibles come into view and others will go out of view. The accessibles that come into view will have the *showing* state and the accessibles that go out of view will not. We must be careful when discussing the *showing* state, because there is also a *visible* state! The *visible* state is much different than the *showing* state, however. It refers to accessibles that are either showing or **would be *showing*** if they came into view; developers can hide widgets so they are not *visible* and thus could never be *showing*. [http://library.gnome.org/devel/atk/unstable/atk-AtkState.html](http://library.gnome.org/devel/atk/unstable/atk-AtkState.html) describes both of these states in detail (see ATK_STATE_VISIBLE and ATK_STATE_SHOWING); this information is a little beyond the scope of this tutorial. Just remember that an accessible is *showing* if the user can actually see the widget when looking at the GUI at a given point in time.
 
 **Search Tips:** Passing *None* instead of an accessible's name to a find\* or findAll\* function will find accessibles no matter what name they have. Passing "" to find\* or findAll\* will find accessibles with blank names. Thus, passing the argument *None* to a find\* function will match an accessible named "foo" or "", but the argument "" will match an accessible named "" and not "foo". Regular expressions can also be used when using the find\* and findAll\* functions. For exampe, regular expressions could be used to match multiple accessibles (using findAll\*) or to find accessibles who's names might change slightly.
 
 ### Test Script
 
-After all this work, the good news is that the test script becomes relatively easy. You will notice that there are no classes or functions; the test is very linear (running top to bottom). You may name this file anything you wish. Let's follow the format used in Strongwind's example directory and name it *gtkcheckbutton\_basic\_ops.py*.
+After all this work, the good news is that the test script becomes relatively easy. You will notice that there are no classes or functions; the test is very linear (running top to bottom). You may name this file anything you wish. Let's follow the format used in Strongwind's example directory and name it *gtkcheckbutton_basic_ops.py*.
 
 Once again, the first few lines are obvious.
 
@@ -352,7 +352,7 @@ from os import path
 app_path = None
 ```
 
-This next portion of code is optional because of the way we designed the *launchCheckButton* method in *\_\_init\_\_.py*. It only needs to be included if you would like to have the option of specifying the path to the testable application when running the test script (e.g., *./gtkcheckbutton\_basic\_ops.py /home/a11y/uia2atk/samples/gtkcheckbutton.py*). If this portion is not included, the path specified explicitly in *\_\_init\_\_.py* will always be used.
+This next portion of code is optional because of the way we designed the *launchCheckButton* method in *\_\_init\_\_.py*. It only needs to be included if you would like to have the option of specifying the path to the testable application when running the test script (e.g., *./gtkcheckbutton_basic_ops.py /home/a11y/uia2atk/samples/gtkcheckbutton.py*). If this portion is not included, the path specified explicitly in *\_\_init\_\_.py* will always be used.
 
 ``` python
 try:
@@ -428,19 +428,19 @@ Now that we have finished writing our test script and our application wrapper fo
 /home/a11y/code/uia2atk/test/testers/gtk/gtkcheckbutton_basic_ops.py
 ```
 
-Strongwind will log your actions and expected results to the terminal. It will also display any of its own logging information and let you know that it is taking screenshots as it goes. One of the great things about Strongwind is its beautiful and customizable logs. Strongwind takes a screenshot for each action, and expected results can be manually verified when necessary. By default the logs are stored in OUTPUT\_DIR, which is /tmp/strongwind by default. This default can be changed by modifying the OUTPUT\_DIR variable in Strongwind's *config.py*. Before viewing the log, copy all the files from Strongwind's resources directory to your OUTPUT\_DIR; this simply copies over some images and style sheets needed to make the log look pretty--of course, this can all be automated later.
+Strongwind will log your actions and expected results to the terminal. It will also display any of its own logging information and let you know that it is taking screenshots as it goes. One of the great things about Strongwind is its beautiful and customizable logs. Strongwind takes a screenshot for each action, and expected results can be manually verified when necessary. By default the logs are stored in OUTPUT_DIR, which is /tmp/strongwind by default. This default can be changed by modifying the OUTPUT_DIR variable in Strongwind's *config.py*. Before viewing the log, copy all the files from Strongwind's resources directory to your OUTPUT_DIR; this simply copies over some images and style sheets needed to make the log look pretty--of course, this can all be automated later.
 
 ``` bash
 cp ~/code/strongwind/resources/* /tmp/strongwind/
 ```
 
-Then, using your favorite browser, browse to procedures.xml in OUTPUT\_DIR to see the log! [Here](http://www.medsphere.org/projects/strongwind/sample_output/gcalctool-basic-ops/procedures.xml) is the log from Strongwind's gnome-calculator example test.
+Then, using your favorite browser, browse to procedures.xml in OUTPUT_DIR to see the log! [Here](http://www.medsphere.org/projects/strongwind/sample_output/gcalctool-basic-ops/procedures.xml) is the log from Strongwind's gnome-calculator example test.
 
 Tips & Tricks
 -------------
 
--   Using a Python interactive interpreter can be very helpful when trying to debug your problems. I like to test my application wrappers by importing them and calling their methods from the interpreter. You will want to call watchdog.stop(), however, or the watchdog will likely timeout when you're trying to work. You can also increase the WATCHDOG\_TIMEOUT in Strongwind's *config.py*.
--   If you want to debug a test script at a certain point, it's often useful to import pdb and then call pdb.set\_trace() at the point you wish to start debugging. This basically preserves everything and drops you at an interactive python prompt where you can use strongwind function calls to poke and prod at the app (Thanks Jonathan Tai)
+-   Using a Python interactive interpreter can be very helpful when trying to debug your problems. I like to test my application wrappers by importing them and calling their methods from the interpreter. You will want to call watchdog.stop(), however, or the watchdog will likely timeout when you're trying to work. You can also increase the WATCHDOG_TIMEOUT in Strongwind's *config.py*.
+-   If you want to debug a test script at a certain point, it's often useful to import pdb and then call pdb.set_trace() at the point you wish to start debugging. This basically preserves everything and drops you at an interactive python prompt where you can use strongwind function calls to poke and prod at the app (Thanks Jonathan Tai)
 
  Have your own tip or trick? Add it here or talk to one of the [QA hackers](/Accessibility:_Team "Accessibility: Team") on IRC!
 

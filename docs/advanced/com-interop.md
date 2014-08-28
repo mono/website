@@ -24,13 +24,13 @@ Progress
 
 COM Interop support includes the following:
 
-Creation of COM objects via Runtime Callable Wrappers. \<span id="rcw\_creation"/\>
+Creation of COM objects via Runtime Callable Wrappers. \<span id="rcw_creation"/\>
 
 ``` csharp
  MyCOMObject com_object_wrapper = new MyCOMObject();
 ```
 
-where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx) and a [GuidAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx) with the CLSID of the COM class. \<span id="rcw\_class\_def"/\>
+where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx) and a [GuidAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx) with the CLSID of the COM class. \<span id="rcw_class_def"/\>
 
 ``` csharp
  [ComImport ()]
@@ -55,7 +55,7 @@ COM objects can be marshalled into managed code, and managed objects can be mars
  }
 ```
 
-A large number of methods in the [Marshal Class](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx) related to COM Interop have also been implemented. Methods like: \<span id="marshal\_class"/\>
+A large number of methods in the [Marshal Class](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx) related to COM Interop have also been implemented. Methods like: \<span id="marshal_class"/\>
 
 ``` csharp
  public class Marshal
@@ -199,9 +199,9 @@ public interface nsIServiceManager
 Tools
 =====
 
-There is now a tool, **xpidl2cs**, that creates C\# interfaces from idl files. It is available from svn, [[1]](https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs).
+There is now a tool, **xpidl2cs**, that creates C# interfaces from idl files. It is available from svn, [[1]](https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs).
 
-xpidl2cs generates a C\# interface for the given idl file, and then goes up the inheritance tree, generating all parent interfaces. Since .NET interop does not support interface inheritance, whenever an interface derives from another, all the declarations from the parent interface must be included in the child - xpidl2cs recursively includes the body of the parent in the child, inside a region with the parent's name.
+xpidl2cs generates a C# interface for the given idl file, and then goes up the inheritance tree, generating all parent interfaces. Since .NET interop does not support interface inheritance, whenever an interface derives from another, all the declarations from the parent interface must be included in the child - xpidl2cs recursively includes the body of the parent in the child, inside a region with the parent's name.
 
 xpidl2cs also generates all dependent interfaces, i.e., all the interfaces that are used in the properties and methods of all the touched idl files. To avoid endless loops, it won't try to generate an interface for which there already exists a .cs file, so if you need to regenerate everything, you must delete the interfaces before running the tool.
 
@@ -211,7 +211,7 @@ The tool was designed originally to produce interfaces for Mono.Mozilla from the
 Usage: xpidl2cs.pl file.idl [/path/to/idl/]
 ```
 
-In the future, we will have a tool **xptimport** that will be able to import type libraries from your XPCOM components and generate the necessary C\# interface declarations.
+In the future, we will have a tool **xptimport** that will be able to import type libraries from your XPCOM components and generate the necessary C# interface declarations.
 
 TODO
 ====

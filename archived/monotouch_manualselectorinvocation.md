@@ -34,7 +34,7 @@ Objective-C Selectors
 
 The Objective-C language is based upon **selectors**. A selector is a message that can be sent to an object or a **class**. MonoTouch maps instance selectors to instance methods, and class selectors to static methods.
 
-Unlike normal C functions (and like C++ member functions), you cannot directly invoke a selector using [P/Invoke](/Interop_with_Native_Libraries). (Aside: in theory you could use P/Invoke for non-virtual C++ member functions, but you'd need to worry about per-compiler name mangling, which is a world of pain better ignored.) Instead, selectors are sent to an Objective-C class or instance using the [objc\_msgSend function](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend).
+Unlike normal C functions (and like C++ member functions), you cannot directly invoke a selector using [P/Invoke](/Interop_with_Native_Libraries). (Aside: in theory you could use P/Invoke for non-virtual C++ member functions, but you'd need to worry about per-compiler name mangling, which is a world of pain better ignored.) Instead, selectors are sent to an Objective-C class or instance using the [objc_msgSend function](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend).
 
 You may find [this helpful guide on Objective-C messaging](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html) useful.
 
@@ -53,7 +53,7 @@ The width parameter, a CGFloat, is mapped to [System.Single](http://www.go-mono.
 
 The lineBreakMode parameter, a UILineBreakMode, has already been bound in MonoTouch as the [UILineBreakMode](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.UIKit.UILineBreakMode) enumeration.
 
-Put it all together, and we want an objc\_msgSend declaration that matches:
+Put it all together, and we want an objc_msgSend declaration that matches:
 
 ``` csharp
 SizeF objc_msgSend(IntPtr target, IntPtr selector, IntPtr font, float width, UILineBreakMode mode);
@@ -93,7 +93,7 @@ Invoking a selector has three steps:
 
 1.  Get the selector target.
 2.  Get the selector name.
-3.  Call objc\_msgSend() with the appropriate arguments.
+3.  Call objc_msgSend() with the appropriate arguments.
 
 ### Selector Targets
 
@@ -103,15 +103,15 @@ If the target is a class, use [MonoTouch.ObjCRuntime.Class](http://www.go-mono.c
 
 ### Selector Names
 
-Selector names are listed within Apple's documentation. For example, the [http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString\_UIKit\_Additions/Reference/Reference.html](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html) UIKit NSString extension methods] include [sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:) and [sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:). The embedded and trailing colons are important, and are part of the selector name.
+Selector names are listed within Apple's documentation. For example, the [http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html) UIKit NSString extension methods] include [sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:) and [sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:). The embedded and trailing colons are important, and are part of the selector name.
 
 Once you have a selector name, you can create a [MonoTouch.ObjCRuntime.Selector](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Selector) instance for it.
 
-### Calling objc\_msgSend()
+### Calling objc_msgSend()
 
-When invoking objc\_msgSend(), you must pass the selector target (an instance or class handle), the selector, and any arguments required by the selector. To do so, you use a normal P/Invoke declaration for objc\_msgSend(). The instance and selector arguments must be System.IntPtr, and all remaining arguments must match the type the selector expects.
+When invoking objc_msgSend(), you must pass the selector target (an instance or class handle), the selector, and any arguments required by the selector. To do so, you use a normal P/Invoke declaration for objc_msgSend(). The instance and selector arguments must be System.IntPtr, and all remaining arguments must match the type the selector expects.
 
 Objective-C types (e.g. NSString, NSDictionary, UIView, anything that has NSObject as an eventual base type) are passed as System.IntPtr.
 
-A set of pre-made objc\_msgSend() declarations can be found in [MonoTouch.ObjCRuntime.Messaging](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*).
+A set of pre-made objc_msgSend() declarations can be found in [MonoTouch.ObjCRuntime.Messaging](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*).
 

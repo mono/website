@@ -8,7 +8,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Jul 23
 ========================================
 
--!- knocte changed the topic of \#mono-a11y to: Iteration meeting ( Accessibility )
+-!- knocte changed the topic of #mono-a11y to: Iteration meeting ( Accessibility )
 07:05
 **\<@knocte\> **
 well I guess we can start
@@ -226,7 +226,7 @@ done :)
 **\<@knocte\> **
 thanks Calen, where's strongwind bug tracking tool?
 ** **
--!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined \#mono-a11y
+-!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined #mono-a11y
 **\<@knocte\> **
 I mean, is there a bugzilla for strongwind?
 **\< bgm\> **
@@ -441,6 +441,6 @@ hugh, 1 hour meeting!
 **\* decriptor **
 oh and promote a11y stuff at the LWE :)
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility
+-!- knocte changed the topic of #mono-a11y to: Accessibility
 08:07
 

@@ -20,9 +20,9 @@ Embedding is also known as "hosting" to developers coming from the .NET Framewor
 
 Embedding is particularly useful when you have an existing application, but you would like to extend its functionality either by reusing third-party Mono, .NET components or Java components, or enable developers to "script" components of your application with any of the .NET or Java supported languages.
 
-The embedding API of Mono requires some little knowledge about C and C\#. You might not need to read this entire document, it depends very much on the needs of your application.
+The embedding API of Mono requires some little knowledge about C and C#. You might not need to read this entire document, it depends very much on the needs of your application.
 
-(P/Invoke allows Mono developers to call from the managed world APIs that are exposed by the C universe and provides various automatic marshalling mechanisms to convert information back and forth between the managed world and the unmanaged world. For more details on the P/Invoke platform, you are encouraged to read the [Interop\_with\_Native\_Libraries](/docs/advanced/pinvoke/).)
+(P/Invoke allows Mono developers to call from the managed world APIs that are exposed by the C universe and provides various automatic marshalling mechanisms to convert information back and forth between the managed world and the unmanaged world. For more details on the P/Invoke platform, you are encouraged to read the [Interop_with_Native_Libraries](/docs/advanced/pinvoke/).)
 
 For more information, see [Scripting With Mono](/docs/advanced/embedding/scripting/) and [Embedding Mono](/docs/advanced/embedding/).
 

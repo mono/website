@@ -54,7 +54,7 @@ Data Source=file:/path/to/file
 Data Source=|DataDirectory|filename
 ```
 
-The latter case for the 2.0 profile references the App\_Data directory (or any other directory that's configured to contain data files for an ASP.NET 2.0 application)
+The latter case for the 2.0 profile references the App_Data directory (or any other directory that's configured to contain data files for an ASP.NET 2.0 application)
 
 As an example:
 
@@ -92,9 +92,9 @@ The new assembly, as described above, uses only database format version 3.
 |:-------------------|:----------|:------|
 |URI|a file Universal Resource Identifier|URI=file:SqliteTest.db|
 |version|version of SQL Lite to use: version 2 or 3|version=3|
-|busy\_timeout|a timeout, in milliseconds, to wait when the database is locked before throwing a SqliteBusyException (since Mono 1.1.14)|busy\_timeout=3000|
+|busy_timeout|a timeout, in milliseconds, to wait when the database is locked before throwing a SqliteBusyException (since Mono 1.1.14)|busy_timeout=3000|
 
-The busy\_timeout parameter is implemented as a call to [sqlite(3)\_busy\_timeout](http://sqlite.org/capi3ref.html#sqlite3_busy_timeout). The default value is 0, which means to throw a SqliteBusyException immediately if the database is locked.
+The busy_timeout parameter is implemented as a call to [sqlite(3)_busy_timeout](http://sqlite.org/capi3ref.html#sqlite3_busy_timeout). The default value is 0, which means to throw a SqliteBusyException immediately if the database is locked.
 
 **For the 2.0 profile in the new assembly**
 
@@ -123,7 +123,7 @@ In Sqlite2, the client by default communicates with Sqlite using the UTF-8 encod
 
 When using Sqlite2, you can force Mono.Data.SqliteClient to use a different encoding instead of UTF-8 by adding ";encoding=ASCII" for instance to the connection string. It must be an encoding that ends with a single null terminator, however.
 
-C\# Example (1.1 profile of the new assembly and the old assembly)
+C# Example (1.1 profile of the new assembly and the old assembly)
 ------------------------------------------------------------------
 
 ``` csharp
@@ -171,7 +171,7 @@ C\# Example (1.1 profile of the new assembly and the old assembly)
 To build the example:
 
 -   Save the example to a file, such as, TestExample.cs
--   Build using Mono C\# compiler:
+-   Build using Mono C# compiler:
 
 <!-- -->
 

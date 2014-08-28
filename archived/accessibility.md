@@ -77,7 +77,7 @@ A summary of past releases are available on our [Releases](/Accessibility:_Relea
 Participating
 -------------
 
-The Mono Accessibility team is always looking for people to assist us writing code, documentation or finding and filing bugs. If you're interested, join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or hop in to our active IRC channel, [\#mono-a11y](irc://irc.gimp.org/mono-a11y) at irc.gimp.org.
+The Mono Accessibility team is always looking for people to assist us writing code, documentation or finding and filing bugs. If you're interested, join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or hop in to our active IRC channel, [#mono-a11y](irc://irc.gimp.org/mono-a11y) at irc.gimp.org.
 
 Development
 -----------
@@ -144,7 +144,7 @@ There is a lot of work being done in the area of accessibility and we encourage 
 
 -   [Accessibility Working Group](http://www.linux-foundation.org/en/Accessibility)
     -   [Accessibility](https://lists.linux-foundation.org/mailman/listinfo/accessibility) mailing list server
-    -   [\#a11y](irc://irc.linux-foundation.org/a11y) on irc.linux-foundation.org
+    -   [#a11y](irc://irc.linux-foundation.org/a11y) on irc.linux-foundation.org
 -   [ATK/AT-SPI](http://www.linux-foundation.org/en/Accessibility/ATK/AT-SPI) Special Interest Group
     -   [ATK/AT-SPI](https://lists.linux-foundation.org/mailman/listinfo/accessibility-atspi) mailing list server
 
@@ -153,7 +153,7 @@ There is a lot of work being done in the area of accessibility and we encourage 
 -   [GNOME Accessibility Project](http://live.gnome.org/GAP) with links to documentation etc.
 -   [GNOME Accessibility-devel](http://mail.gnome.org/mailman/listinfo/gnome-accessibility-devel) list - Technical discussions and patches for at-spi, gail, and ATs
 -   [GNOME Accessibility](http://mail.gnome.org/mailman/listinfo/gnome-accessibility-list) list - Accessibility development discussion
--   [\#a11y](irc://irc.gimp.org/a11y) on irc.gimp.org
+-   [#a11y](irc://irc.gimp.org/a11y) on irc.gimp.org
 -   [Python Powered Accessibility](http://live.gnome.org/Accessibility/PythonPoweredAccessibility)
 -   [GNOME Accessibility QA](http://developer.gnome.org/projects/gap/testing/index.html)
 -   [GNOME Accessibility slide intro](http://developer.gnome.org/projects/gap/presentations/GUAD3C/keynote/start.html)

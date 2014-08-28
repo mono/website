@@ -21,7 +21,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
+Before doing anthing else, you should read "[FastCGI#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
 
 Using Paths [Recommended]
 -------------------------
@@ -54,7 +54,7 @@ Using Extensions
 
 ### Extensions Warnings
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html\#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
 ### Extensions Step 1: Setting Up the Handler
 

@@ -15,9 +15,9 @@ System.Drawing
 
 The System.Drawing implementation in Mono is designed to be compatible with the Microsoft API. The imaging model is very similar to the PDF 1.4 composition-based imaging model.
 
-Our implementation is a C\# wrapper around the GDI+ C API (also called the ["GDI+ Flat API"](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdicpp/GDIPlus/GDIPlusReference.asp)). This means that the C\# code is the same for Windows and UNIX systems. The following graph explains the situation:
+Our implementation is a C# wrapper around the GDI+ C API (also called the ["GDI+ Flat API"](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdicpp/GDIPlus/GDIPlusReference.asp)). This means that the C# code is the same for Windows and UNIX systems. The following graph explains the situation:
 
-In Windows Mono uses the GDI+ library that is included with the operating system (`GDIPLUS.DLL`, while in UNIX we provide an implementation of this API in the `libgdiplus.so` shared library. Our [libgdiplus](/docs/gui/libgdiplus/) has the same C Flat API as the `GDIPLUS.DLL`. The C\# code that implement System.Drawing is the same for Windows and UNIX builds. Since this is an implementation of an existing Microsoft API no architectural changes go here.
+In Windows Mono uses the GDI+ library that is included with the operating system (`GDIPLUS.DLL`, while in UNIX we provide an implementation of this API in the `libgdiplus.so` shared library. Our [libgdiplus](/docs/gui/libgdiplus/) has the same C Flat API as the `GDIPLUS.DLL`. The C# code that implement System.Drawing is the same for Windows and UNIX builds. Since this is an implementation of an existing Microsoft API no architectural changes go here.
 
 Our implementation currently exposes the 1.1 and 2.0 APIs, with a few limitations from the underlying GDI+ implementation. The details are tracked on the [GDI+ todo page](http://anonsvn.mono-project.com/viewvc/trunk/libgdiplus/TODO?view=markup).
 

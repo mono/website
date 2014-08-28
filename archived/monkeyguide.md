@@ -8,7 +8,7 @@ redirect_from:
 Monkeyguide
 ===========
 
- The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C\# programming, see [Books](/Books "Books").
+ The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C# programming, see [Books](/Books "Books").
 
 <table>
 <col width="100%" />
@@ -76,7 +76,7 @@ Portability
 
 -   [Guidelines:Application Portability](/Guidelines:Application_Portability "Guidelines:Application Portability")
 -   [Guide: Porting Winforms Applications](/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications")
--   [Guide:\_Porting\_ASP.NET\_Applications](/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications")
+-   [Guide:_Porting_ASP.NET_Applications](/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications")
 
 Desktop Application Programming
 ===============================
@@ -84,13 +84,13 @@ Desktop Application Programming
 Beginners
 ---------
 
--   [Beginners Guide to Gtk\#](/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
+-   [Beginners Guide to Gtk#](/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
 -   [Building Gnome applications with Mono](/Mono_for_Gnome_Applications "Mono for Gnome Applications")
 
 Intermediate
 ------------
 
--   [Creating Responsive GUI applications with Gtk\#](/Responsive_Applications "Responsive Applications")
+-   [Creating Responsive GUI applications with Gtk#](/Responsive_Applications "Responsive Applications")
 -   [Writing Cross Platform applications using .NET/Mono](/Guidelines:Application_Portability)
 -   [Creating Notification Icons](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
 
@@ -102,7 +102,7 @@ Advanced
 Desktop Services
 ----------------
 
--   DBus\#
+-   DBus#
 -   Gnome Keyring access
 
 Extending your GUI
@@ -119,7 +119,7 @@ Extending your GUI
 Web Programming
 ===============
 
--   [ASP.NET and mod\_mono](/ASP.NET_and_mod_mono "ASP.NET and mod mono")
+-   [ASP.NET and mod_mono](/ASP.NET_and_mod_mono "ASP.NET and mod mono")
 -   [Web Services](/Web_Services "Web Services")
 -   [Using Client Certificates with XSP](/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP")
 
@@ -143,7 +143,7 @@ Mono on Windows
 ===============
 
 -   [Using Mono on Windows](/Using_Mono_on_Windows "Using Mono on Windows")
--   [Installing Gtk\# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework")
+-   [Installing Gtk# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework")
 -   [MonoTools allows you to use Visual Studio to target Mono systems](http://mono-tools.com/).
 
 Mono on MacOS X

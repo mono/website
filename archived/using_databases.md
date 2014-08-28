@@ -39,7 +39,7 @@ Tools
 
 The following Mono tools are useful when working with ADO.NET:
 
--   sqlsharp.exe (SQL\#), a command line query tool included with Mono to enter and execute SQL statements.
+-   sqlsharp.exe (SQL#), a command line query tool included with Mono to enter and execute SQL statements.
 -   xsd.exe , XML Schema Definition tool
     -   **XDR to XSD**- used to generate an XML schema from an XDR (XML Data Reduced schema) file. XDR was used by Microsoft prior to XSD becoming a W3C recommendation, and it needs to be supported for legacy reasons.
     -   **XML to XSD**- used to generate an XML schema from an XML file.

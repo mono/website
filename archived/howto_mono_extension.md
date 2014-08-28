@@ -70,7 +70,7 @@ Mono Extension Environment
 Setting up the Mono Extension environment
 -----------------------------------------
 
-To make it easier for administrators to use the mono extension, we've included a script that will temporarily set the default mono used in the administrators shell to the mono in the mono extension. Once this script is sourced, when the administrator runs the "mono" command, it will be the mono from the mono extension. Additionally, when an application is compiled with Mono's C\# compiler, "gmcs", it will use the gmcs from the mono extension and it will compile against the mono libraries included in the mono extension.
+To make it easier for administrators to use the mono extension, we've included a script that will temporarily set the default mono used in the administrators shell to the mono in the mono extension. Once this script is sourced, when the administrator runs the "mono" command, it will be the mono from the mono extension. Additionally, when an application is compiled with Mono's C# compiler, "gmcs", it will use the gmcs from the mono extension and it will compile against the mono libraries included in the mono extension.
 
 To setup the mono extension environment, execute the following command:
 
@@ -137,7 +137,7 @@ For some reason we can't find the apache2ctl utility. Either there is a path pro
 
 #### "Unable to determine Apache configuration directory"
 
-Whatever output we got from apache2ctl wasn't a valid directory, so something is improperly configured. Script parses output of 'apache2ctl -V' for the SERVER\_CONFIG\_FILE variable. User might be asked to provide output of the above command.
+Whatever output we got from apache2ctl wasn't a valid directory, so something is improperly configured. Script parses output of 'apache2ctl -V' for the SERVER_CONFIG_FILE variable. User might be asked to provide output of the above command.
 
 #### "Apache v2 package missing"
 
@@ -149,7 +149,7 @@ to see what apache related packages are installed on your system.
 
 #### "Unable to determine the Apache MPM"
 
-Using the apache program "find\_mpm", we couldn't determine what MPM is being used. Run this program manually to determine what went wrong. The program is part of SuSE Apache packaging, it is NOT a standard part of Apache distribution. By default is located in /usr/share/apache2/find\_mpm - user needs to type the full path in order to be able to run it.
+Using the apache program "find_mpm", we couldn't determine what MPM is being used. Run this program manually to determine what went wrong. The program is part of SuSE Apache packaging, it is NOT a standard part of Apache distribution. By default is located in /usr/share/apache2/find_mpm - user needs to type the full path in order to be able to run it.
 
 #### "Internal error"
 
@@ -163,19 +163,19 @@ and then asked to mail the /tmp/mono-check-output.log file for examination.
 
 While having apache2ctl check the apache configuration, it found errors. We've logged the output of the command to the log file.
 
-#### "The mod\_mono Apache module is not loaded or configuration syntax error (details logged)"
+#### "The mod_mono Apache module is not loaded or configuration syntax error (details logged)"
 
-We had apache2ctl list the loaded modules, and mod\_mono wasn't one of them. We've logged the output of the command to the log file (by default it's /var/log/mono/mono-check.log)
+We had apache2ctl list the loaded modules, and mod_mono wasn't one of them. We've logged the output of the command to the log file (by default it's /var/log/mono/mono-check.log)
 
-#### "Unable to find mod\_mono configuration"
+#### "Unable to find mod_mono configuration"
 
-We searched for the mod\_mono config file and we couldn't find it. It might have been accidentally removed. File should be located in the conf.d/ subdirectory of main apache configuration dir.
+We searched for the mod_mono config file and we couldn't find it. It might have been accidentally removed. File should be located in the conf.d/ subdirectory of main apache configuration dir.
 
-#### "The mod\_mono binary file does not exist at \<path to the expected mod\_mono binary\>"
+#### "The mod_mono binary file does not exist at \<path to the expected mod_mono binary\>"
 
-We can't find the mod\_mono binary in the path we found in the mod\_mono conf file. So either the conf file is pointing to the wrong binary (look for LoadModule mono\_module directive in Apache config), or mod\_mono isn't installed.
+We can't find the mod_mono binary in the path we found in the mod_mono conf file. So either the conf file is pointing to the wrong binary (look for LoadModule mono_module directive in Apache config), or mod_mono isn't installed.
 
-#### "Unknown OS architecture \$OS\_ARCH"
+#### "Unknown OS architecture \$OS_ARCH"
 
 This script is running on an architecture that it doesn't recognize. The most likely cause is that the mono extension is installed on an unsupported architecture (which is rather unlikely, but may happen). It might be because of unsupported/invalid output from the 'arch' and 'uname -m' commands ('arch' might be obsolete). Right now (2009-07-21) we recognize:
 
@@ -185,13 +185,13 @@ This script is running on an architecture that it doesn't recognize. The most li
 
  User should be asked to run 'arch' and 'uname -m' and provide their output.
 
-#### "mod\_mono has unresolvable shared library dependencies (details logged)"
+#### "mod_mono has unresolvable shared library dependencies (details logged)"
 
-We ran ldd against the mod\_mono binary, and ldd reported that some dependency was "not found". We've logged the output of the command to the log file. Ask the user to run ldd on the mod\_mono.so module and report the output (mod\_mono.so location can be found by looking for the LoadModule mono\_module directive in mod\_mono.conf)
+We ran ldd against the mod_mono binary, and ldd reported that some dependency was "not found". We've logged the output of the command to the log file. Ask the user to run ldd on the mod_mono.so module and report the output (mod_mono.so location can be found by looking for the LoadModule mono_module directive in mod_mono.conf)
 
-#### "mod\_mono might not be loadable on this architecture (\${OS\_ARCH}-bit, details logged)"
+#### "mod_mono might not be loadable on this architecture (\${OS_ARCH}-bit, details logged)"
 
-We ran ldd against the mod\_mono binary, and we noticed that libc wasn't the one we were expecting. We've logged the output of the command to the log file (by default it's /var/log/mono/mono-check.log).
+We ran ldd against the mod_mono binary, and we noticed that libc wasn't the one we were expecting. We've logged the output of the command to the log file (by default it's /var/log/mono/mono-check.log).
 
 #### "Some packages are missing: \<list of missing packages\>"
 
@@ -213,17 +213,17 @@ There's a vhost configured in apache that doesn't have a path configured. Check 
 
 We were expecting the virtual host path file at the above location, but it can't be found. This means that apache is improperly configured.
 
-Configuring mod\_mono
+Configuring mod_mono
 =====================
 
-The [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to handle traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod\_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
+The [Apache mod_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to handle traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
 
-More details about the mod\_mono configuration tool can be found on the [Mod\_mono](/Mod_mono "Mod mono") section of this site.
+More details about the mod_mono configuration tool can be found on the [Mod_mono](/Mod_mono "Mod mono") section of this site.
 
 Mono Extension specific configuration
 -------------------------------------
 
-By default, the mod\_mono configuration tool will generate a config file suitable for use with the mod-mono-server2 installed in /usr/bin. In order to use the generated configuration with the SUSE Linux Enterprise Mono Extension, the config should be updated to use the mod-mono-server2 installed in /opt/novell. This can easily be done by uncommenting the /opt/novell MonoServerPath directive and commenting out the /usr/bin MonoServerPath directive, so that these lines read like so:
+By default, the mod_mono configuration tool will generate a config file suitable for use with the mod-mono-server2 installed in /usr/bin. In order to use the generated configuration with the SUSE Linux Enterprise Mono Extension, the config should be updated to use the mod-mono-server2 installed in /opt/novell. This can easily be done by uncommenting the /opt/novell MonoServerPath directive and commenting out the /usr/bin MonoServerPath directive, so that these lines read like so:
 
      # For SUSE Linux Enterprise Mono Extension, uncomment the line below:
      MonoServerPath APPLICATION_NAME "/opt/novell/mono/bin/mod-mono-server2"

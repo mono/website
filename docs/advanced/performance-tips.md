@@ -97,7 +97,7 @@ See the manual page for further details.
 
 Some profilers in Mono have problems with applications that unload the application domains (because some of the resources they use to report the data are unloaded).
 
-Use the MONO\_NO\_UNLOAD=1 environment variable to make those work.
+Use the MONO_NO_UNLOAD=1 environment variable to make those work.
 
 Profiling without JIT instrumentation
 -------------------------------------
@@ -122,7 +122,7 @@ The .NET framework provides a rich hierarchy of object types. Each object not on
  // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ());
 ```
 
- The C\# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
+ The C# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
  Boxing performs the same thing as Java's `new Integer (1)`. The user is not forced to write the extra code. However, behind the scenes the *same thing* is being done by the runtime. Each time a primitive is cast to an object, a new object is allocated.
  You must be careful when casting a primitive to an object. Note that because it is an implicit conversion, you will not see it in your code. For example, boxing is happening here:
 
@@ -190,7 +190,7 @@ Other problems
 Common problems with `foreach`
 ------------------------------
 
-The `foreach` C\# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
+The `foreach` C# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
 
 But foreach sometimes might generate code that under stress performs badly. Foreach performs badly when its used in tight loops, and its use leads to the creation of many enumerators. Although technically obtaining an enumerator for some objects like ArrayList is more efficient than using the ArrayList indexer, the pressure introduced due to the extra memory requirements and the demands on the garbage collector make it more inefficient.
 

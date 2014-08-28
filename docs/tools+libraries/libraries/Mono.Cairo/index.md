@@ -17,7 +17,7 @@ A core class that does all the drawing is the `Cairo.Context` class. `Context` i
 
 To use Cairo in Gdk/Gtk applications, a `Context` with a `Gdk.Drawable` target surface is needed. It can be obtained using two methods:
 
--   Beginning in Gtk\# 2.8, the Gdk.CairoHelper class provides cairo access to Gdk drawables. You can create a cairo context for a given drawable:
+-   Beginning in Gtk# 2.8, the Gdk.CairoHelper class provides cairo access to Gdk drawables. You can create a cairo context for a given drawable:
 
 <!-- -->
 

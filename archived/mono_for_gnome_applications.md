@@ -8,7 +8,7 @@ redirect_from:
 Mono for Gnome Applications
 ===========================
 
- This is a more complete tutorial to developing desktop applications with Mono and Gtk\#
+ This is a more complete tutorial to developing desktop applications with Mono and Gtk#
 
 IMPORTANT
 =========

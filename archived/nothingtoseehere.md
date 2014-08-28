@@ -17,10 +17,10 @@ Mono Feature Highlights
 Runs on Linux, [OS X](/Mono:OSX "Mono:OSX"), [BSD](/Mono:BSD "Mono:BSD"), and [Microsoft Windows](/Using_Mono_on_Windows), including [x86](/Mono:X86 "Mono:X86"), [x86-64](/Mono:AMD64 "Mono:AMD64"), [ARM](/Mono:ARM "Mono:ARM"), [s390](/Mono:S390 "Mono:S390"), [PowerPC](/Mono:PowerPC "Mono:PowerPC") and much more
 
 [Multi-Language](/Languages "Languages")
-Develop in [C\# 4.0](/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8](/VisualBasic.NET_support), [Java](/Java "Java"), [Python](/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F\#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
+Develop in [C# 4.0](/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8](/VisualBasic.NET_support), [Java](/Java "Java"), [Python](/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
 
 Binary Compatible
-Built on an implementation of the [ECMA](/ECMA "ECMA")'s [Common Language Infrastructure](/Mono:Runtime "Mono:Runtime") and [C\#](/CSharp_Compiler "CSharp Compiler")
+Built on an implementation of the [ECMA](/ECMA "ECMA")'s [Common Language Infrastructure](/Mono:Runtime "Mono:Runtime") and [C#](/CSharp_Compiler "CSharp Compiler")
 
 [Microsoft Compatible API](/Guidelines:Application_Portability "Guidelines:Application Portability")
 Run [ASP.NET](/ASP.NET "ASP.NET"), [ADO.NET](/ADO.NET "ADO.NET"), [Silverlight](/Moonlight "Moonlight") and [Windows.Forms](/WinForms "WinForms") applications without recompilation

@@ -9,9 +9,9 @@ redirect_from:
 CreatingCustomThemedGtkSharpWidgets
 ===================================
 
-This document will try to highlight was is required to implement a custom Gtk\# widget that integrates properly with a Theme Engine.
+This document will try to highlight was is required to implement a custom Gtk# widget that integrates properly with a Theme Engine.
 
-Gtk\# based applications can be themed based on the user preferences. The themes control how applications look on the screen. Although the core widgets in Gtk\# already follow the guidelines developers that are implementing their own custom widgets need to pay special attention to make sure that their custom widgets render properly across different engines and looks.
+Gtk# based applications can be themed based on the user preferences. The themes control how applications look on the screen. Although the core widgets in Gtk# already follow the guidelines developers that are implementing their own custom widgets need to pay special attention to make sure that their custom widgets render properly across different engines and looks.
 
 For example, something that works like a button, should look like a button.
 

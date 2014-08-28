@@ -36,7 +36,7 @@ Previously supported (released as of 1.1.10) features includes:
 -   IsolatedStorage now supports user quotas (when the security manager is enabled);
 -   PermissionRequestEvidence is now part of the evidences during policy resolution;
 -   Stack propagation for Threads, ThreadPool, Async operations, SWF's `Control.BeginInvoke` using `CompressedStack`;
--   Cross-AppDomain support enabling appdomain based sandboxes (limited by \#74411);
+-   Cross-AppDomain support enabling appdomain based sandboxes (limited by #74411);
 -   Unification (policies, permissions) between framework version numbers;
 -   more security permissions present in `mscorlib.dll` (still unaudited);
 -   `Demand` for unmanaged code for P/Invoke including support for [SuppressUnmanagedCodeSecurity](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.SuppressUnmanagedCodeSecurityAttribute) attribute;

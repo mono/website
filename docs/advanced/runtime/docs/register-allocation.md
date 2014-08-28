@@ -34,7 +34,7 @@ The state of the allocator is stored in two arrays: iassign and isymbolic. iassi
 
        spill slot index (< -1)  vreg is spilled to the given spill slot. This means later instructions expect the value of vreg to be found on the stack in the given spill slot. When this vreg is used as a dreg of an instruction, a spill store needs to be generated after the instruction saving its value to the given spill slot.
 
-Also, the allocator keeps track of which hregs are free and which are used. This information is stored in a bitmask called ifree\_mask.
+Also, the allocator keeps track of which hregs are free and which are used. This information is stored in a bitmask called ifree_mask.
 
 There is a similar set of data structures for floating point registers.
 

@@ -101,7 +101,7 @@ Note that we could make our SSL server certificate a self-signed certificate but
 3.  **-sv root.key** The private key file. A 1024 bits RSA key pair will automatically be generated if the specified file name doesn't exists.
 4.  **root.cer** The created SSL certificate for your root CA.
 
-You can use `man makecert` to see all the options provided by the makecert tool. Be aware that some options, like generating PKCS\#12 files, is only available on the Mono version of the tool.
+You can use `man makecert` to see all the options provided by the makecert tool. Be aware that some options, like generating PKCS#12 files, is only available on the Mono version of the tool.
 
 Now that we have our own Certificate Authority the next step is, before we forget about it, is to install the root certificate into the current user **Trust** certificate store.
 
@@ -126,7 +126,7 @@ The parameters used to build this SSL server certificate are:
 2.  **-ic root.cer** The issuer's certificate. Some information about the issuer, like it's name, needs to be copied into the issued certificate.
 3.  **-eku 1.3.6.1.5.5.7.3.1** Optional (as sadly most client don't require it). This indicates that the certificate is intended for server-side authentication.
 4.  **-n "CN=pollux"** Common Name (CN) = Host name. This is verified the SSL client and must match the connected host (or else you'll get a warning or error or \*gasp\* nothing).
-5.  **-p12 pollux.p12 s3kr3t** The PKCS\#12 file that contains the SSL certificate and the password encrypted private key.
+5.  **-p12 pollux.p12 s3kr3t** The PKCS#12 file that contains the SSL certificate and the password encrypted private key.
 
 Testing the SSL connection
 --------------------------
@@ -139,7 +139,7 @@ Where
 
 1.  **--https** turns on SSL3/TLS (autodetection is enabled by default);
 2.  **--port 4433** to set our SSL test port (normally SSL uses port 443);
-3.  **--p12file pollux.p12** to read the SSL certificate and private key from the specified PKCS\#12 file;
+3.  **--p12file pollux.p12** to read the SSL certificate and private key from the specified PKCS#12 file;
 4.  **--pkpwd s3kr3t** to decrypt the private key so the server can use it to prove it's the real owner of the certificate.
 
 You should be able to point your web browser to `https://pollux:4433/cctest.aspx`. You should be prompted by your web browser because the certificate isn't trusted (i.e. certmgr works only for Mono). A positive answer should results in the "**Hello from an secure session. But who are you ?**" message.
@@ -177,7 +177,7 @@ The parameters used to build this test certificate are:
 2.  **-ic root.cer** The issuer's certificate. Some information about the issuer, like it's name, needs to be copied into the issued certificate.
 3.  **-eku 1.3.6.1.5.5.7.3.2** This indicates that your certificate is intended for client-side authentication.
 4.  **-n "CN=poupou"** This is generally verified the server against a database of users (if the certificate is accepted).
-5.  **-p12 poupou.p12 s3kr3t** The PKCS\#12 file, poupou.p12 will be created and encrypted using the s3kr3t password. This is the new option and isn't compatible with MS version of makecert.
+5.  **-p12 poupou.p12 s3kr3t** The PKCS#12 file, poupou.p12 will be created and encrypted using the s3kr3t password. This is the new option and isn't compatible with MS version of makecert.
 
 Testing
 -------
@@ -188,7 +188,7 @@ Stop (if running) and restart XSP with the following parameters.
 
 The difference with the earlier test is that we're using **--https-client-accept** instead of **-https**. This instruct the web server to accept client certificates (if available).
 
-Using a web browser on `https://pollux:4433/cctest.aspx` will still return **Hello from an secure session. But who are you ?**. Why ? because there's nothing "requesting" a client certificate and your web browser doesn't know anything about your PKCS\#12 file.
+Using a web browser on `https://pollux:4433/cctest.aspx` will still return **Hello from an secure session. But who are you ?**. Why ? because there's nothing "requesting" a client certificate and your web browser doesn't know anything about your PKCS#12 file.
 
 So the **--https-client-accept** option isn't really interesting for web browsers (i.e. but it can be much more interesting for web services) so let's try another one, **--https-client-require**
 
@@ -196,13 +196,13 @@ So the **--https-client-accept** option isn't really interesting for web browser
 
 ### Firefox
 
-Now try the URL with Firefox (sorry but every browser is different) and you'll get an error (-12250 in my case). Something has gone wrong, but what ? Well FireFox still doesn't know anything about your PKCS\#12 file.
+Now try the URL with Firefox (sorry but every browser is different) and you'll get an error (-12250 in my case). Something has gone wrong, but what ? Well FireFox still doesn't know anything about your PKCS#12 file.
 
 We'll need to import the file into its own certificate store (Edit, Preferences, Advanced, Manage Certificates, Import) and try again. This time you should see **Hello CN=poupou, your certificate is NOT valid**. So the web server has received, and verified, our client certificate.
 
 ### wget
 
-Another way to test this is using a tool that will let use supply the client certificate. **wget** can do this - but not with our PKCS\#12 file so we'll need to convert it to a PEM file using [OpenSSL](http://www.openssl.org).
+Another way to test this is using a tool that will let use supply the client certificate. **wget** can do this - but not with our PKCS#12 file so we'll need to convert it to a PEM file using [OpenSSL](http://www.openssl.org).
 
     % openssl pkcs12 -in poupou.p12 -out poupou.pem -nodes
     Enter Import Password:
@@ -269,7 +269,7 @@ Compile and execute the sample like this:
 
     % mono hwr2.exe https://localhost:4433/cctest.aspx poupou.p12 s3kr3t
 
-Note: this feature is working only on the 2.0 profile since Mono version 1.2.5. It is mandatory that the new **X509Certificate2** class be used to load a format that contains a private key (e.g. a PKCS\#12 file).
+Note: this feature is working only on the 2.0 profile since Mono version 1.2.5. It is mandatory that the new **X509Certificate2** class be used to load a format that contains a private key (e.g. a PKCS#12 file).
 
 Conclusion
 ==========

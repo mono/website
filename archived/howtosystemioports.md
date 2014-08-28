@@ -138,5 +138,5 @@ Here are some links that I have found helpful, and you might as well.
 Further Questions
 -----------------
 
-I spent a fair bit of time learning how to do this and collecting little bits of information. I'm by no means an expert, but if you need further help, you can sometimes find me (HanClinto) hanging out on the chatroom \#mono on ircd.gimp.org. Cheers!
+I spent a fair bit of time learning how to do this and collecting little bits of information. I'm by no means an expert, but if you need further help, you can sometimes find me (HanClinto) hanging out on the chatroom #mono on ircd.gimp.org. Cheers!
 

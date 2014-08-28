@@ -14,8 +14,8 @@ Host
 Hosting sounds scary ? It's not, at least **coreclr**-wise and it is likely your simplest step.
 
 1.  [Embed Mono](/docs/advanced/embedding/) into your application;
-2.  Enable CoreCLR (which also enables the verifier) with a call to **mono\_security\_enable\_core\_clr**; and
-3.  Provide your own callback to **mono\_security\_set\_core\_clr\_platform\_callback** to determine if an assembly is to be considered as platform code (return **TRUE**) or not (return **FALSE**).
+2.  Enable CoreCLR (which also enables the verifier) with a call to **mono_security_enable_core_clr**; and
+3.  Provide your own callback to **mono_security_set_core_clr_platform_callback** to determine if an assembly is to be considered as platform code (return **TRUE**) or not (return **FALSE**).
 
 <!-- -->
 

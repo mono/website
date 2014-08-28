@@ -52,7 +52,7 @@ cd path_to_your MySql.Data.dll assembly
 gacutil -i MySql.Data.dll
 ```
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -101,7 +101,7 @@ gacutil -i MySql.Data.dll
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 

@@ -165,7 +165,7 @@ The *path* attribute is a tag that lets the browser group the different document
 
 The *//node* element(s) allow you to declare paths that can be used by the *//source/@path* attribute. The value of *//source/@path* *must* come from one of two locations: the .source file, or the "global" monodoc.xml file, which only contains the paths *libraries*, *man*, *languages*, *tools*, and *various*. The *//node* element can have an optional *//node/@parent* attribute, which follows the same rules as *//source/@path*. You can nest *//node* elements in order to create additional structure underneath the global nodes.
 
-For example, if you wanted to create a tree structure of *Languages -\> C\# -\> Language Specification* and *Languages -\> C\# -\> Error Reference* (that is, a common "C\#" parent to the Language Specification and Error Reference nodes), you could do:
+For example, if you wanted to create a tree structure of *Languages -\> C# -\> Language Specification* and *Languages -\> C# -\> Error Reference* (that is, a common "C#" parent to the Language Specification and Error Reference nodes), you could do:
 
 ``` xml
 <?xml version="1.0"?>
@@ -260,7 +260,7 @@ Where *path-to-xml-file* is a path to a documentation file of a class. In the ex
 Inline XML Documentation
 ========================
 
-The `/doc` option of [mcs](/docs/about-mono/languages/csharp/) provides the same functionality as the `/doc` command of csc, Microsoft's C\# compiler (and it's an option in Visual Studio too). It looks for XML documentation comments within source code (comments that start with three slashes, ///), and puts them all into a single XML file. Here's an example:
+The `/doc` option of [mcs](/docs/about-mono/languages/csharp/) provides the same functionality as the `/doc` command of csc, Microsoft's C# compiler (and it's an option in Visual Studio too). It looks for XML documentation comments within source code (comments that start with three slashes, ///), and puts them all into a single XML file. Here's an example:
 
 ``` csharp
 namespace MyLibrary {

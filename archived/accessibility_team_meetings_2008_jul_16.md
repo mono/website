@@ -8,7 +8,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Jul 16
 ========================================
 
--!- knocte changed the topic of \#mono-a11y to: Accessibility team Iteration 9 meeting
+-!- knocte changed the topic of #mono-a11y to: Accessibility team Iteration 9 meeting
 06:03
 **\< knocte\> **
 ok, so
@@ -51,7 +51,7 @@ fine, thanks sandy, mario can you go now?
 I'm glad to announce that ListBox, ScrollBar and ComboBox support navigation.
 however, I'm still missing some tests, and I need to read the StructureChanged documentation in order to generate the valid events
 06:10
-I've update the wiki Accessibility:\_Winforms\_Implementation
+I've update the wiki Accessibility:_Winforms_Implementation
 s/update/updated
 I need to write the Navigation stuff in that page
 06:11
@@ -114,7 +114,7 @@ it's a new work method for me :)
 next iteration, i will read more navigation codes, and finish status bar navigation
 done
 ** **
--!- peteb [\~ptbrunet@cpe-66-69-198-254.austin.res. rr.com] has joined \#mono-a11y
+-!- peteb [\~ptbrunet@cpe-66-69-198-254.austin.res. rr.com] has joined #mono-a11y
 **\< knocte\> **
 ok, since mgorse will map the status bar in this iteration, it will be interesting for you to talk with him in case he has any issues
 06:24
@@ -155,7 +155,7 @@ knocte: Brian have submited a but to gail :)
 oh fine! can you guys then send the URL to our a11y mailing list?
 06:28
 **\< Calen\> **
-[http://bugzilla.gnome.org/show\_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542873
+[http://bugzilla.gnome.org/show_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542873
 **\< knocte\> **
 perfect, now it's in the meeting log, thanks, so Calen, your plan for next iteration?
 **\< Calen\> **
@@ -194,7 +194,7 @@ thanks Calen! bgmerrell: can you go on?
 06:34
 **\< bgmerrell\> **
 Calen mentioned I worked on figuring out why tooltip wasn't accessible in openSUSE11. A bug is logged against gail.
-I also got a patch accepted for Strongwind that adds a couple of features we might use ( [http://bugzilla.gnome.org/show\_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542458 )
+I also got a patch accepted for Strongwind that adds a couple of features we might use ( [http://bugzilla.gnome.org/show_bug.cgi?i](http://bugzilla.gnome.org/show_bug.cgi?i) d=542458 )
 In general I did a lot more experimenting with Strongwind and testing widgets I hadn't tried to test yet (that's what led to the patches)
 06:35
 I reviewed some of Calen's strongwind tests and we made some improvements. Same with Ray's WinForms samples.
@@ -224,7 +224,7 @@ in the next, hopefully I could have all samples done,
 also start to write new samples; learn some new stuff about building.
 over
 ** **
--!- calvin [\~calvin@fixe.dnsdhcp.provo.novell.com] has joined \#mono-a11y
+-!- calvin [\~calvin@fixe.dnsdhcp.provo.novell.com] has joined #mono-a11y
 **\< knocte\> **
 do you plan to write MWF samples as well? if yes be sure to sync with Calen and bgmerrell
 06:39
@@ -331,6 +331,6 @@ done
 hehe, fine!
 we'll change the topic then
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility: Accessibility
+-!- knocte changed the topic of #mono-a11y to: Accessibility: Accessibility
 06:52
 
