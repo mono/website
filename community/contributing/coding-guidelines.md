@@ -309,13 +309,13 @@ namespace N
 So, to summarize:
 
 | Statement                   | Brace position |
-|--------------------------------------------|
-| Namespace                   | same line    |
-| Type                        | same line    |
-| Method (including ctor)     | **new line** |
-| Properties                  | same line    |
-| Control blocks (if, for...) | same line    |
-| Anonymous types and methods | same line    |
+|-----------------------------|----------------|
+| Namespace                   | same line      |
+| Type                        | same line      |
+| Method (including ctor)     | **new line**   |
+| Properties                  | same line      |
+| Control blocks (if, for...) | same line      |
+| Anonymous types and methods | same line      |
 
 Multiline Parameters
 --------------------
