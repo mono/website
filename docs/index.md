@@ -6,16 +6,16 @@ redirect_from:
   - /Docs/
 ---
 
-These docs cover Mono specific topics, like setting up and configuring Mono or information about Mono internals such as the runtime, garbage collector or various Mono-specific tools.
+Estes documentos cober tópicos específicos do Mono, como ajustar e configurar o Mono ou informações internas do Mono como as da máquina virtual, coletor de lixo ou várias ferramentas específicas do mono. 
 
-For general information about the .NET framework and the class libraries you can refer to Microsoft's [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
+Para informações gerais sobre o .NET Framework e sobre as bibliotecas de classe você pode buscar no site da  Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
 {% capture docNote %}
-Our documentation is open source on [GitHub](https://github.com/mono/website/docs). If you find errors or think a page could be improved, just click the "Edit page on GitHub" link beneath the page title. See [contributing to the website](https://github.com/mono/website#contributing-to-the-website) for more details.
+Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a verão em portugues brasil está mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo que possa ser melhorado, apensa clique em "Edit page on GitHub" link abaixo do titulo da página. Veja [contributing to the website](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
-Getting Started
+Começando
 ---------------
 
  - [Overview](/docs/getting-started/)
@@ -24,7 +24,7 @@ Getting Started
  - [Development Environments](/docs/getting-started/development-environments/)
  - [Application Portability](/docs/getting-started/application-portability/) and [Application Deployment](/docs/getting-started/application-deployment/)
 
-About Mono
+Sobre Mono
 ----------
 
  - [Overview](/docs/about-mono/)
@@ -38,7 +38,7 @@ About Mono
  - [Vulnerabilities](/docs/about-mono/vulnerabilities/)
  - Showcase: [Screenshots](/docs/about-mono/showcase/screenshots/), [Software](/docs/about-mono/showcase/software/), [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/), [Mono Logos](/docs/about-mono/logos/)
 
-Compiling Mono
+Compilando o Mono
 --------------
 
  - [Overview](/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
@@ -60,14 +60,14 @@ FAQ
  - [GTK](/docs/faq/gtk/)
  - [WinForms](/docs/faq/winforms/)
 
-Database Access
+Acessandro Banco de Dados
 ---------------
 
  - [Overview](/docs/database-access/)
  - [ADO.NET](/docs/database-access/adonet/)
  - [EntityFramework](/docs/database-access/entityframework/)
  
-Debug and Profile
+Debug e Profile
 -----------------
 
  - [Debug - Overview](/docs/debug+profile/debug/)
@@ -99,7 +99,7 @@ Web
  - [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
  - [Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
 
-Tools and Libraries
+Ferramenta e Bibliotecas
 -------------------
 
  - [Tools - Overview](/docs/tools+libraries/tools/)
@@ -112,7 +112,7 @@ Tools and Libraries
    - [Mono.Cairo](/docs/tools+libraries/libraries/Mono.Cairo/)
    - [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/)
 
-Advanced Topics
+Tópicos Avançados
 ---------------
 
  - [Runtime](/docs/advanced/runtime/)
