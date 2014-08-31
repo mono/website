@@ -1,17 +1,17 @@
 ---
-title: Documentation
+title: Documentação
 redirect_from:
   - /Documentation/
   - /Class_Library_Documentation/
   - /Docs/
 ---
 
-Estes documentos cober tópicos específicos do Mono, como ajustar e configurar o Mono ou informações internas do Mono como as da máquina virtual, coletor de lixo ou várias ferramentas específicas do mono. 
+Estes documentos cobrem tópicos específicos do Mono, como ajustar e configurar o Mono ou informações internas do Mono como as da máquina virtual, coletor de lixo ou várias ferramentas específicas do mono. 
 
 Para informações gerais sobre o .NET Framework e sobre as bibliotecas de classe você pode buscar no site da  Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
 {% capture docNote %}
-Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a verão em portugues brasil está mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo que possa ser melhorado, apensa clique em "Edit page on GitHub" link abaixo do titulo da página. Veja [contributing to the website](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
+Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a verão em portugues brasil está mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo que possa ser melhorado, apenas clique em "Edit page on GitHub" link abaixo do título da página. Veja [contributing to the website](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
