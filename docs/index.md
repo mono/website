@@ -11,7 +11,7 @@ Estes documentos cobrem tópicos específicos do Mono, como ajustar e configurar
 Para informações gerais sobre o Framework .NET e sobre as bibliotecas de classes você pode buscar no site da Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
 {% capture docNote %}
-Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a versão em portugues brasil está mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique em no link "Edit page on GitHub" abaixo do título da página. Veja [contributing to the website](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
+Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a versão em portugues brasil está mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique em no link "Edit page on GitHub" abaixo do título da página. Veja [contribuindo com o site](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
@@ -22,7 +22,7 @@ Começando
  - Instalando o Mono no [Mac OS X](/docs/getting-started/install/mac/), no [Linux](/docs/getting-started/install/linux/) ou no [Windows](/docs/getting-started/install/windows/)
  - [O Básico do Mono](/docs/getting-started/mono-basics/)
  - [Ambientes de Desenvolvimento](/docs/getting-started/development-environments/)
- - [Portabilidade de Aplicações](/docs/getting-started/application-portability/) and [Publicação de Aplicações](/docs/getting-started/application-deployment/)
+ - [Portabilidade de Aplicações](/docs/getting-started/application-portability/) e [Publicação de Aplicações](/docs/getting-started/application-deployment/)
 
 Sobre o Mono
 ------------
