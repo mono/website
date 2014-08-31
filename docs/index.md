@@ -31,18 +31,18 @@ Sobre o Mono
  - [Plataformas Suportadas](/docs/about-mono/supported-platforms/)
  - [Linguagens](/docs/about-mono/languages/)
  - [Compatibilidade](/docs/about-mono/compatibility/) e [Status da Bibliotecas de Classes](/docs/about-mono/class-status/) 
- - [Liberações](/docs/about-mono/releases/) and [Versionamento](/docs/about-mono/versioning/) 
+ - [Liberações](/docs/about-mono/releases/) e [Versionamento](/docs/about-mono/versioning/) 
  - [Mantenedores](/docs/about-mono/maintainers/)
  - [História](/docs/about-mono/history/), [Preocupações com o uso do Mono](/docs/about-mono/concerns-about-mono/)
- - [A Estrada a Frente](/docs/about-mono/roadmap/) and [Planos](/docs/about-mono/plans/)
+ - [A Estrada a Frente](/docs/about-mono/roadmap/) e [Planos](/docs/about-mono/plans/)
  - [Vulnerabilidades](/docs/about-mono/vulnerabilities/)
- - Mostra: [Captura de Telas](/docs/about-mono/showcase/screenshots/), [Software](/docs/about-mono/showcase/software/), [Companhias usando o Mono](/docs/about-mono/showcase/companies-using-mono/), [Logotipos do Mono](/docs/about-mono/logos/)
+ - Mostra: [Captura de Telas](/docs/about-mono/showcase/screenshots/), [Software](/docs/about-mono/showcase/software/), [Companhias Usando o Mono](/docs/about-mono/showcase/companies-using-mono/), [Logotipos do Mono](/docs/about-mono/logos/)
 
 Compilando o Mono
 --------------
 
- - [Visão Geral](/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
- - [Compilando a Partir do Git](/docs/compiling-mono/compiling-from-git/) and [Compilando a Partir do Tarball](/docs/compiling-mono/compiling-from-tarball/)
+ - [Visão Geral](/docs/compiling-mono/), com instruções para compilar em OS X, Linux e Windows
+ - [Compilando a Partir do Git](/docs/compiling-mono/compiling-from-git/) e [Compilando a Partir do Tarball](/docs/compiling-mono/compiling-from-tarball/)
  - [Opções Avançadas de Compilação](/docs/compiling-mono/advanced-mono-compile-options/)
  - [Opções Avançadas de Compilação Não-Suportadas](/docs/compiling-mono/unsupported-advanced-compile-options/)
  - [Instalações Paralelas do Mono](/docs/compiling-mono/parallel-mono-environments/)
