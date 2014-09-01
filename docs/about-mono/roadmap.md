@@ -5,7 +5,11 @@ redirect_from:
   - /Roadmap/
 ---
 
-*Last update: November, 2012*
+*Last update: August, 2014*
+
+We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.
+The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.
+For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
 
 Per-component [Plans](/docs/about-mono/plans/) are available, you can also check our [Compatibility](/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
 
@@ -28,69 +32,23 @@ Current Releases
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong> Mono 2.12</strong></td>
-<td align="left"><strong>Released: October 22nd, 2012</strong></td>
+<td align="left"><strong>Mono 3.6</strong></td>
+<td align="left"><strong>Released: Early August, 2014</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>C# 5.0 (Unified for all profiles)</li>
-<li>IKVM Reflection or Cecil powered C# compiler</li>
-<li>SGen: Precise stack scanning</li>
-<li>Tuned Parallel Frameworks</li>
-<li>Complete .NET 4.5 core support
-<ul>
-<li>Async APIs in all core libraries</li>
-</ul></li>
-<li>Tail call optimizations for F#</li>
-<li>Ships Microsoft's open sourced stacks:
-<ul>
-<li>ASP.NET MVC 4</li>
-<li>ASP.NET WebPages</li>
-<li>Entity Framework</li>
-<li>Razor</li>
-<li>System.Json (replaces our own)</li>
-</ul></li>
+<li>Performance Counters</li>
+<li>We now distribute `nuget` and `ikdasm`</li>
+<li>Performance tuning for our GC bridge</li>
+<li>Debugger supports columns and ranges</li>
+<li>Debugger can examine properties by decompiling IL, without having to resume the target to evaluate.</li>
+<li>Major HTTP stack rewrite and test suite</li>
+<li>System.IO.Compression implemented</li>
+<li>System.Security.Claims implemented</li>
 </ul>
-<p>Features that have already shipped out of band:</p>
-<ul>
-<li>MonoMac and MonoMac bundler</li>
-<li>IronPython, IronRuby and F# bundled with Mono</li>
-</ul></td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.0.0/" title="Release Notes Mono 3.0">Mono 3.0 Release Notes</a></p>
+</td>
+<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.6.0 Release Notes</a></p>
 <p><br /></p></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<col width="50%" />
-<col width="50%" />
-<tbody>
-<tr class="odd">
-<td align="left"><strong> Mono 2.10</strong></td>
-<td align="left"><strong>Released: February 15th, 2011</strong></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Major changes (see release notes for details):</p>
-<ul>
-<li><a href="/docs/about-mono/releases/2.10.0#google-native-client-support" title="Release Notes Mono 2.10">Google Native Client Support</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#new-mono-profiler" title="Release Notes Mono 2.10">New Profiler engine</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#improved-socket-and-async-stack" title="Release Notes Mono 2.10">Faster socket stack</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#parallel-framework-updates" title="Release Notes Mono 2.10">Improved Parallel Framework</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#sgen-garbage-collector" title="Release Notes Mono 2.10">SGen Precise Stack Scanning and Many performance improvements</a>.</li>
-<li>Unified MonoTouch/Monodroid runtime support</li>
-<li><a href="/docs/about-mono/releases/2.10.0#cecil2flight" title="Release Notes Mono 2.10">Cecil/Light</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#new-c23-compiler-backend" title="Release Notes Mono 2.10">New C# Compiler backend</a> (can now use any custom mscorlib)</li>
-<li><a href="/docs/about-mono/releases/2.10.0#vb-compiler" title="Release Notes Mono 2.10">VB Compiler</a> can now compile to both 2.0 and 4.0 profiles.</li>
-<li><a href="/docs/about-mono/releases/2.10.0#aspnet-mvc3-support" title="Release Notes Mono 2.10">Supports ASP.NET MVC3</a>, Razor and new WebPages.</li>
-<li>New <a href="#webmatrixdata">WebMatrix.Data</a> database API.</li>
-<li><a href="/docs/about-mono/releases/2.10.0#osx-updates" title="Release Notes Mono 2.10">Improved OSX Mono</a></li>
-<li><a href="/docs/about-mono/releases/2.10.0#languages" title="Release Notes Mono 2.10">F#, IronPython and IronRuby</a></li>
-</ul></td>
-<td align="left"><p><a href="/docs/about-mono/releases/2.10.0" title="Release Notes Mono 2.10">Mono 2.10 Release Notes</a></p>
-<ul>
-<li><strong>Feb 15th, 2011:</strong> First 2.10 release</li>
-</ul></td>
 </tr>
 </tbody>
 </table>
@@ -98,21 +56,18 @@ Current Releases
 Upcoming Releases
 -----------------
 
-Mono 3.0 will be delivered with incremental updates, as our master branch will remain stable.
-
-For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
+Mono 3.8.0 currently available on a preview
 
 <table>
 <col width="50%" />
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong> Mono 3.0</strong></td>
+<td align="left"><strong> Mono 3.8.0</strong></td>
 <td align="left"><strong>Planned Release: TBD</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>New Generational GC becomes the default</li>
 </ul></td>
 <td align="left"></td>
 </tr>
@@ -122,17 +77,12 @@ For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](htt
 Subprojects projects
 --------------------
 
-Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk\#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
 
 ### Mono and Silverlight
 
-See our page on [Moonlight](/docs/web/moonlight/) for details on the work underway to support Silverlight with Mono.
-
-### Partial Implementations
-
-The following APIs and technologies have partial implementations and are under development.
-
--   Cardspace/Infocard.
+[Moonlight](/docs/web/moonlight/) the open source implementation of Silverlight on top of Mono for
+Linux is no longer being developed.
 
 ### Unsupported technologies
 
@@ -155,9 +105,9 @@ The following do not map to operating systems other than Windows, and we are unl
 
 -   System.Management
 
-Nobody has shown enough interest in the following:
+A third party implementation of PowerShell exists:
 
--   PowerShell
+- [PASH](https://github.com/Pash-Project/Pash)
 
 Comments
 --------

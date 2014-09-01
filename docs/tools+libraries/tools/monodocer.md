@@ -109,7 +109,7 @@ If you remove some classes from your source code a .remove extension will be add
 In [monodocer](/docs/tools+libraries/tools/monodocer/) 1.1.18 or later, you can provide the `-since:SINCE` command-line argument to insert a `<since/>` element for each *added* type and member within the assembly. The `SINCE` text will be inserted as the *version* attribute of the `<since/>` element, thus:
 
 ``` bash
-$ monodocer -path:en -assembly:lib.dll -since:2.0
+monodocer -path:en -assembly:lib.dll -since:2.0
 ```
 
 will insert a `<since version="2.0" />` element for *every* type and member that is added to the documentation XML files.
@@ -170,7 +170,7 @@ Editing Documentation
 You can edit these files by hand, or you can use [Monodoc](/docs/tools+libraries/tools/monodoc/), Mono's documentation browser to edit the files. To edit the files in Monodoc, run:
 
 ``` bash
-$ monodoc --edit docfiles
+monodoc --edit docfiles
 ```
 
 Your assembly will be listed last. Open up that node in the tree on the left, and you can browse your documentation on the right. Make sure the Editing option is checked in the Edit menu, and you'll see [Edit] links in various places. Clicking an [Edit] link brings up an editor where you can enter the XML documentation for that section. Some buttons for commonly used tags are available.

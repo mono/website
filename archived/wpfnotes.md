@@ -35,11 +35,11 @@ Storylines can contain multiple animations, which use the timer infrastructure i
 There is no separate thread to raise the events, it is possible to create an object that hangs for a few seconds when setting the value of a property:
 
 ``` csharp
-PhotosProperty = DependencyPRoperty.Register ("Photos", typeof (int), typeof(Camera), 
+PhotosProperty = DependencyPRoperty.Register ("Photos", typeof (int), typeof(Camera),
          new PropertyMetadata (32, changed_callback);
 ..
  
-static void changed_callback (DependencyObject target, 
+static void changed_callback (DependencyObject target,
                               DependencyPropertyChangedEventArgs e)
 {
         System.Threading.Thread.Sleep (10000);
@@ -137,7 +137,7 @@ The following is a simplified class hierarchy for the rendering system that migh
                 DiscretePointKeyFrame
                 LinearPointKeyFrame
                 SplinePointKeyFrame
-        KeySpline    
+        KeySpline
         MediaAttribute
         PathFigure
         PathSegment
@@ -151,7 +151,7 @@ The following is a simplified class hierarchy for the rendering system that migh
         StylusInfo
         StylusPoint
         Timeline (Begin, Duration, Loop, Repeat, Fill, Speed)
-            Animation 
+            Animation
                 ColorAnimation (From, To, By)
                     ColorAnimationUsingKeyFrames (KeyFrames)
                 DoubleAnimation (From, To, By)
@@ -173,7 +173,7 @@ The following is a simplified class hierarchy for the rendering system that migh
             UIElement (Clip, Opacity, Transform, Resources, Triggers, Visibility)
                 FrameworkElement (Height, Width, Parent)
                     Control (InitializeFromXaml)
-                    Glyphs 
+                    Glyphs
                     MediaBase (Source, Stretch)
                         MediaElement (media player)
                     Panel (Background, Children)
@@ -188,7 +188,7 @@ The following is a simplified class hierarchy for the rendering system that migh
                         Polygon
                         Polyline
                         Rectangle
-                
+
     DependencyProperty
     Duration
     KeyTime

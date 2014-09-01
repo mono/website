@@ -45,14 +45,14 @@ Approach
 Existing technologies that use Atk and AT-SPI currently use the following components:
 
 -   Atk: a C library which contains all the accessibility API's and infrastructure.
--   Atk-bridge: which is a C module (launched by demand depending if it's enabled in the environment variable GTK\_MODULES) that connects the Atk domain model to the AT-SPI daemon.
+-   Atk-bridge: which is a C module (launched by demand depending if it's enabled in the environment variable GTK_MODULES) that connects the Atk domain model to the AT-SPI daemon.
 -   AT-SPI: which runs on Bonobo (CORBA) but is likely to be migrated to DBUS.
 
 These components represent the server side of the accessibility technology. For a screen reader or inspector (such as ORCA or Accerciser) to connect to these components, they need to use an AT-SPI connector (for example, Python applications use the library [pyatspi](http://live.gnome.org/GAP/PythonATSPI)).
 
-Then, we need to implement a bridge which receives accessibility information from a .NET application (through a UIA provider) to the Atk component and send it via the Atk-bridge. The implementation will be coded in the managed world, so the translator between the unmanaged and managed layers will be held by a binding called Atk\# (AtkSharp).
+Then, we need to implement a bridge which receives accessibility information from a .NET application (through a UIA provider) to the Atk component and send it via the Atk-bridge. The implementation will be coded in the managed world, so the translator between the unmanaged and managed layers will be held by a binding called Atk# (AtkSharp).
 
-The bridge will be in its own assembly, which will talk to Atk\# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
+The bridge will be in its own assembly, which will talk to Atk# directly and will receive information from the provider it's connected to, either directly from it or via the UIA Core.
 
 [![Uia-atk bridge.png](/archived/images/2/28/Uia-atk_bridge.png)](/archived/images/2/28/Uia-atk_bridge.png)
 
@@ -75,16 +75,16 @@ Acceptance tests
 We have a Q1 deadline (March the 31st) in which we should have a basic test of the bridge working. We can show the progress here by just passing these acceptance tests:
 
 1.  Have accerciser see an unmanaged test application that uses Atk: **PASSED**.
-2.  Have accerciser see a managed test application that uses Atk\#: **PASSED**.
+2.  Have accerciser see a managed test application that uses Atk#: **PASSED**.
 3.  Have accerciser see an unmanaged test application that uses Atk with at least a children component: **PASSED**.
-4.  Have accerciser see a managed test application that uses Atk\# with at least a children component: **PASSED**.
+4.  Have accerciser see a managed test application that uses Atk# with at least a children component: **PASSED**.
 5.  Have a minimal Bridge that exposes this functionality with public methods: **FINISHED**
 6.  Have a basic MWF application (which holds just a window) that, thanks to the UIAProvider now, is seen by accerciser as an application and a window child (GOAL for Q1): **PASSED**
 
 The list of steps to make this work is:
 
 -   Create a folder in your computer for downloading code, e.g. /home/me/code
--   Place yourself there in a console and download Gtk\#/Glib\#/Atk\# bindings:
+-   Place yourself there in a console and download Gtk#/Glib#/Atk# bindings:
 
 <!-- -->
 
@@ -96,7 +96,7 @@ The list of steps to make this work is:
 
     svn co svn://anonsvn.mono-project.com/source/trunk/uia2atk/
 
--   Change to Atk\# dir:
+-   Change to Atk# dir:
 
 <!-- -->
 
@@ -129,7 +129,7 @@ The list of steps to make this work is:
     cp gtk-sharp/glib/glib-sharp.dll gtk-sharp/atk/
 
 -   Try to compile again and you will get a brand new exe.
--   Now copy the atk-bridge native lib into the path that will be our LD\_LIBRARY\_PATH:
+-   Now copy the atk-bridge native lib into the path that will be our LD_LIBRARY_PATH:
 
 <!-- -->
 
@@ -174,13 +174,13 @@ GInterfaces
 
 States
 
-[Gtk\# only]Application
+[Gtk# only]Application
 
 Toplevel (:AtkObject)
 
 Parent of all
 
-ATK\_ROLE\_APPLICATION
+ATK_ROLE_APPLICATION
 
 n/a
 
@@ -196,7 +196,7 @@ ComboBox (:Container)
 
 Contains a child with a menu role
 
-ATK\_ROLE\_COMBO\_BOX
+ATK_ROLE_COMBO_BOX
 
 Action, Selection, (Inherited:) Component
 
@@ -214,7 +214,7 @@ ComboBoxEntry (:ComboBox)
 
 contains two children: a menu role, and a text role
 
-ATK\_ROLE\_COMBO\_BOX
+ATK_ROLE_COMBO_BOX
 
 Action, Selection, (Inherited:) Component
 
@@ -232,7 +232,7 @@ Combo (:Container)
 
  ??
 
-ATK\_ROLE\_COMBO\_BOX
+ATK_ROLE_COMBO_BOX
 
 Action, Selection, (Inherited:) Component
 
@@ -286,11 +286,11 @@ Window (:Container)
 
 contains all the children widgets
 
-ATK\_ROLE\_FRAME
+ATK_ROLE_FRAME
 
 Component
 
-ATK\_STATE\_SHOWING, ATK\_STATE\_ACTIVE, ATK\_STATE\_ICONIFIED, ATK\_STATE\_MODAL, ATK\_STATE\_RESIZABLE
+ATK_STATE_SHOWING, ATK_STATE_ACTIVE, ATK_STATE_ICONIFIED, ATK_STATE_MODAL, ATK_STATE_RESIZABLE
 
 Window
 
@@ -304,11 +304,11 @@ Label (:Widget)
 
  ??
 
-ATK\_ROLE\_LABEL or ATK\_ROLE\_ACCEL\_LABEL
+ATK_ROLE_LABEL or ATK_ROLE_ACCEL_LABEL
 
 Component, Text
 
-ATK\_STATE\_MULTI\_LINE
+ATK_STATE_MULTI_LINE
 
 TextLabel
 
@@ -322,11 +322,11 @@ Button (:Container)
 
  ??
 
-ATK\_ROLE\_PUSH\_BUTTON
+ATK_ROLE_PUSH_BUTTON
 
 Action, Component, Image, Text
 
-ATK\_STATE\_ARMED, ATK\_STATE\_SELECTABLE
+ATK_STATE_ARMED, ATK_STATE_SELECTABLE
 
 Button
 
@@ -340,11 +340,11 @@ ToggleButton (:Button)
 
  ??
 
-ATK\_ROLE\_CHECK\_BOX
+ATK_ROLE_CHECK_BOX
 
 (Inherited:) Action, Component, Image, Text
 
-ATK\_STATE\_CHECKED, ATK\_STATE\_ENABLED
+ATK_STATE_CHECKED, ATK_STATE_ENABLED
 
 CheckBox
 
@@ -358,11 +358,11 @@ ToggleButton (:Button)
 
  ??
 
-ATK\_ROLE\_TOGGLE\_BUTTON
+ATK_ROLE_TOGGLE_BUTTON
 
 (Inherited:) Action, Component, Image, Text
 
-ATK\_STATE\_CHECKED, ATK\_STATE\_ENABLED
+ATK_STATE_CHECKED, ATK_STATE_ENABLED
 
  ??
 
@@ -376,11 +376,11 @@ RadioButton (:ToggleButton)
 
  ??
 
-ATK\_ROLE\_RADIO\_BUTTON
+ATK_ROLE_RADIO_BUTTON
 
 (Inherited: Action, Component, Image, Text)
 
-(Inherited?:) ATK\_STATE\_CHECKED, ATK\_STATE\_ENABLED
+(Inherited?:) ATK_STATE_CHECKED, ATK_STATE_ENABLED
 
 RadioButton
 
@@ -394,7 +394,7 @@ Statusbar (:Container)
 
  ??
 
-ATK\_ROLE\_STATUSBAR
+ATK_ROLE_STATUSBAR
 
 Text
 
@@ -412,7 +412,7 @@ SpinButton (:Entry)
 
  ??
 
-ATK\_ROLE\_SPIN\_BUTTON
+ATK_ROLE_SPIN_BUTTON
 
 Value
 
@@ -430,7 +430,7 @@ Image (:Widget)
 
  ??
 
-ATK\_ROLE\_ICON
+ATK_ROLE_ICON
 
 Image
 
@@ -448,11 +448,11 @@ Entry (:Widget)
 
  ??
 
-ATK\_ROLE\_TEXT or ATK\_ROLE\_PASSWORD\_TEXT
+ATK_ROLE_TEXT or ATK_ROLE_PASSWORD_TEXT
 
 Action, Text, EditableText
 
-ATK\_STATE\_EDITABLE, ATK\_STATE\_SINGLE\_LINE
+ATK_STATE_EDITABLE, ATK_STATE_SINGLE_LINE
 
 EditableTextBoxEntry
 
@@ -466,7 +466,7 @@ MenuShell (:Container)
 
 container of menu role children
 
-ATK\_ROLE\_MENU\_BAR or ATK\_ROLE\_UNKNOWN
+ATK_ROLE_MENU_BAR or ATK_ROLE_UNKNOWN
 
 Selection
 
@@ -484,7 +484,7 @@ Menu (:MenuShell)
 
 container of children roles: a tear off menu item, and n menu items
 
-ATK\_ROLE\_MENU
+ATK_ROLE_MENU
 
 Selection
 
@@ -502,7 +502,7 @@ SubMenuItem (:MenuItem)
 
 container of children roles: a tear off menu item, and n menu items
 
-ATK\_ROLE\_MENU
+ATK_ROLE_MENU
 
 Selection
 
@@ -520,11 +520,11 @@ MenuItem (:Item) (note the difference between Menuitem and MenuItem!)
 
  ??
 
-ATK\_ROLE\_TEAR\_OFF\_MENU\_ITEM or ATK\_ROLE\_SEPARATOR or ATK\_ROLE\_MENU\_ITEM
+ATK_ROLE_TEAR_OFF_MENU_ITEM or ATK_ROLE_SEPARATOR or ATK_ROLE_MENU_ITEM
 
 Action
 
-ATK\_STATE\_SELECTED
+ATK_STATE_SELECTED
 
  ??
 
@@ -538,11 +538,11 @@ Separator (:Widget)
 
  ??
 
-ATK\_ROLE\_SEPARATOR
+ATK_ROLE_SEPARATOR
 
 n/a
 
-ATK\_STATE\_HORIZONTAL
+ATK_STATE_HORIZONTAL
 
  ??
 
@@ -556,11 +556,11 @@ Separator (:Widget)
 
  ??
 
-ATK\_ROLE\_SEPARATOR
+ATK_ROLE_SEPARATOR
 
 n/a
 
-ATK\_STATE\_VERTICAL
+ATK_STATE_VERTICAL
 
  ??
 
@@ -574,11 +574,11 @@ Expander (:Container)
 
  ??
 
-ATK\_ROLE\_TOGGLE\_BUTTON
+ATK_ROLE_TOGGLE_BUTTON
 
 Action, Text
 
-ATK\_STATE\_CHECKED, ATK\_STATE\_EXPANDED
+ATK_STATE_CHECKED, ATK_STATE_EXPANDED
 
  ??
 
@@ -592,11 +592,11 @@ Frame (:Container)
 
  ??
 
-ATK\_ROLE\_PANEL
+ATK_ROLE_PANEL
 
 n/a
 
-ATK\_STATE\_DEFUNCT, ATK\_STATE\_VISIBLE, ATK\_STATE\_SHOWING
+ATK_STATE_DEFUNCT, ATK_STATE_VISIBLE, ATK_STATE_SHOWING
 
  ??
 
@@ -610,11 +610,11 @@ HtmlBox (:AtkGObject)
 
  ??
 
-ATK\_ROLE\_UNKNOWN
+ATK_ROLE_UNKNOWN
 
 Component
 
-ATK\_STATE\_DEFUNCT, ATK\_STATE\_VISIBLE, ATK\_STATE\_SHOWING
+ATK_STATE_DEFUNCT, ATK_STATE_VISIBLE, ATK_STATE_SHOWING
 
  ??
 
@@ -628,7 +628,7 @@ Container (:Widget)
 
  ??
 
-ATK\_ROLE\_VIEWPORT
+ATK_ROLE_VIEWPORT
 
 (Inherited:) Component
 
@@ -646,7 +646,7 @@ Container (:Widget)
 
  ??
 
-ATK\_ROLE\_TOOL\_BAR
+ATK_ROLE_TOOL_BAR
 
 (Inherited:) Component
 
@@ -790,7 +790,7 @@ Container (:Widget)
 
  ??
 
-ATK\_ROLE\_PANEL
+ATK_ROLE_PANEL
 
 (Inherited:) Component
 
@@ -808,11 +808,11 @@ Widget (:GtkAccessible)
 
  ??
 
-ATK\_ROLE\_UNKNOWN
+ATK_ROLE_UNKNOWN
 
 Component
 
-ATK\_STATE\_DEFUNCT, ATK\_STATE\_SENSITIVE, ATK\_STATE\_ENABLED, ATK\_STATE\_FOCUSABLE, ATK\_STATE\_VISIBLE, ATK\_STATE\_SHOWING, ATK\_STATE\_FOCUSED, ATK\_STATE\_DEFAULT
+ATK_STATE_DEFUNCT, ATK_STATE_SENSITIVE, ATK_STATE_ENABLED, ATK_STATE_FOCUSABLE, ATK_STATE_VISIBLE, ATK_STATE_SHOWING, ATK_STATE_FOCUSED, ATK_STATE_DEFAULT
 
 Adapter
 
@@ -825,11 +825,11 @@ Problems found
 
 1.  It would be interesting to change the C API of ATK to reflect interfaces with the 'I' prefix to mimic the managed notation. Not sure if the unmanaged community will want this change (but if yes, anyway it will take time because it breaks API). **Severity: Minor**
 2.  Many ATK documentation states that it exposes (along with AT-SPI) a set of interfaces that are toolkit independent ([example](http://blogs.sun.com/wwalker/entry/gail_migrated_into_gtk)). As a result, we should push changes in these frameworks that remove magic keywords or specific names from GTK or Gnome. These changes may have some impact (because some may break API/ABI) but should be pushed upstream in order to drop the barrier for other vendors/toolkit to use these components. **Severity: Minor** Examples:
-    1.  Since GTK\# is a non desirable dependency (because you may launch a MWF application from KDE) it's contradictory to have the atk-bridge module inside a path that belongs to Gtk (/usr/lib/gtk-2.0/modules) and to have it specified in an environment variable called GTK\_MODULES. We should push the change of the name of this variable to G\_MODULES(?) and use other path for the installation, upstream.
-    2.  Module atk-bridge should not have an external symbol with the name *gnome\_accessibility\_module\_init*, but rather something without the name 'gnome' in it. The source code of atk-bridge is part of [AT-SPI SVN](http://svn.gnome.org/svn/at-spi/trunk/).
+    1.  Since GTK# is a non desirable dependency (because you may launch a MWF application from KDE) it's contradictory to have the atk-bridge module inside a path that belongs to Gtk (/usr/lib/gtk-2.0/modules) and to have it specified in an environment variable called GTK_MODULES. We should push the change of the name of this variable to G_MODULES(?) and use other path for the installation, upstream.
+    2.  Module atk-bridge should not have an external symbol with the name *gnome_accessibility_module_init*, but rather something without the name 'gnome' in it. The source code of atk-bridge is part of [AT-SPI SVN](http://svn.gnome.org/svn/at-spi/trunk/).
 
 3.  According to Atk philosophy, each widget type (class) is associated with a particular custom AtkObject, and both types must derive from GLib.Object (GObject) to be GType's, so maybe we'll have some incompatibility between this concept and the current MWF implementation: should we modify the base class of MWF widgets to be Glib.Object? **Severity: Minor (for now)**
-4.  To prevent breaking API we currently haven't done these interesting changes in ATK\#:
+4.  To prevent breaking API we currently haven't done these interesting changes in ATK#:
     1.  Change virtual methods to abstract methods (OnGetNChildren and OnRefChild).
     2.  Make both methods OnGetNChildren and OnRefChild be implemented in just one property that is more managed-friendly: Atk.Object[] Children.
 
@@ -838,7 +838,7 @@ Problems found
     1.  It's a different way as the one used in the unmanaged world (different API), where you have to subclass AtkUtil and implement their methods.
     2.  Following the subclassing methods, we could make the overriding mandatory (by abstract methods) in order to prevent crashes (for example if someone stablishes GetRoot method without stablishing GetToolkit\* methods, accerciser will crash when navigating through the application).
 
-7.  We call the atk-bridge unmanaged module from the UiaAtkBridge managed library. Maybe it's better to put this call in Atk\# in order for other people to benefit from it. In the end, who is going to use ATK without GTK and without calling this module?
-8.  The unmanaged module atk-bridge seems to call n times the function hello\_util\_add\_global\_event\_listener (well, the equivalent to gail\_util\_add\_global\_event\_listener in Gail) with parameters that include the keyword "Gtk" in the event\_type (examples: Gtk:AtkHypertext:link-selected, Gtk:AtkObject:children-changed, Gtk:AtkComponent:bounds-changed...). This should be changed to a toolkit-agnostic methodology.
+7.  We call the atk-bridge unmanaged module from the UiaAtkBridge managed library. Maybe it's better to put this call in Atk# in order for other people to benefit from it. In the end, who is going to use ATK without GTK and without calling this module?
+8.  The unmanaged module atk-bridge seems to call n times the function hello_util_add_global_event_listener (well, the equivalent to gail_util_add_global_event_listener in Gail) with parameters that include the keyword "Gtk" in the event_type (examples: Gtk:AtkHypertext:link-selected, Gtk:AtkObject:children-changed, Gtk:AtkComponent:bounds-changed...). This should be changed to a toolkit-agnostic methodology.
 
 

@@ -20,14 +20,14 @@ Currently working on
 
 [A sandbox page to see what reorganising and adding to the MonkeyGuide Desktop Application Development Guide would do. Is this a better structure for a new user? You tell me](/BosteenMonkey_Guide)
 
-Two pre-existing pages that I have added to, or re-worded: [GtkSharp:\_Widget\_Overview](/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview") [GtkSharp:\_Widget\_Layout\_and\_Packing](/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
+Two pre-existing pages that I have added to, or re-worded: [GtkSharp:_Widget_Overview](/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview") [GtkSharp:_Widget_Layout_and_Packing](/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
 
 Tutorial Proposal
 -----------------
 
 I am not personally convinced that dealing with the widgets on an individual basis is a good thing. As this is how the API is already structured, newbies will probably need a little more aid.
 
-I propose a series of tutorials, graded in difficultly. The narrative would be written to reflect the process and decisions made to get to the final product. I can write up the first tutorial to reflect what I mean soon. I am not putting this here, demanding submissions, but any help/examples using Gtk.Drawables in C\# and perhaps even Mono.Cairo would be fantastic.
+I propose a series of tutorials, graded in difficultly. The narrative would be written to reflect the process and decisions made to get to the final product. I can write up the first tutorial to reflect what I mean soon. I am not putting this here, demanding submissions, but any help/examples using Gtk.Drawables in C# and perhaps even Mono.Cairo would be fantastic.
 
 1.  **Basic example, using the following:**
     -   Should this be shown with Monodevelop and Stetic?
@@ -51,7 +51,7 @@ I propose a series of tutorials, graded in difficultly. The narrative would be w
     -   StringBuilder
     -   Dialog window Run and Dispose
     -   'using' keyword
-    -   Glade\# design with Glade or Stetic in MonoDevelop
+    -   Glade# design with Glade or Stetic in MonoDevelop
     -   Scrollbar container
     -   RegExpressions
     -   Functionality:

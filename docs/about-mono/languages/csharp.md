@@ -10,7 +10,7 @@ redirect_from:
 Introduction
 ------------
 
-The Mono C\# compiler is considered feature complete for C\# 1.0, C\# 2.0, C\# 3.0, C\# 4.0 and C# 5.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C\# 6.0 is distributed with Mono 3.8 or when building Mono from our trunk source code release.
+The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0, C# 4.0 and C# 5.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C# 6.0 is distributed with Mono 3.8 or when building Mono from our trunk source code release.
 
 Historically, various version of same compiler existed.
 
@@ -22,9 +22,9 @@ Starting with Mono version 2.11 a new unified compiler **mcs** is available. It 
 
 Bug reports or any compiler issue can be [filed on our bug tracking system.](/community/bugs/)
 
-The compiler is able to compile itself and many more C\# programs (there is a test suite included that you can use). The compiler is routinely used to compile Mono, roughly four million lines of C\# code and a few other projects.
+The compiler is able to compile itself and many more C# programs (there is a test suite included that you can use). The compiler is routinely used to compile Mono, roughly four million lines of C# code and a few other projects.
 
-The compiler is also fairly fast. On a IBM ThinkPad t40 it compiles 18,000 lines of C\# code per second.
+The compiler is also fairly fast. On a IBM ThinkPad t40 it compiles 18,000 lines of C# code per second.
 
 ### Compiler Service
 
@@ -38,7 +38,7 @@ Both a console and GUI [read-eval-print](/docs/tools+libraries/tools/repl/) shel
 
 The (**mcs**) compiler defaults to the latest language specification available.
 
-All C\# 2.0 features are supported including:
+All C# 2.0 features are supported including:
 
 -   [Anonymous methods](http://msdn2.microsoft.com/library/0yw3tz5k.aspx)
 -   [Iterators](http://msdn2.microsoft.com/library/dscyy5s0.aspx)
@@ -54,7 +54,7 @@ All C\# 2.0 features are supported including:
 -   [namespace alias qualifier](http://msdn2.microsoft.com/library/htccxtad(en-us,vs.80).aspx)
 -   [Inline warning control](http://msdn2.microsoft.com/library/441722ys.aspx).
 
-All C\# 3.0 features are supported including:
+All C# 3.0 features are supported including:
 
 -   Extension methods
 -   Query expressions (LINQ)
@@ -67,19 +67,19 @@ All C\# 3.0 features are supported including:
 -   Implicitly typed arrays
 -   Partial methods
 
-All C\# 4.0 features are supported including:
+All C# 4.0 features are supported including:
 
 -   Dynamic binding support
 -   Generic type variance
 -   Optional parameters
 -   Named arguments
 
-All C\# 5.0 feature are supported including:
+All C# 5.0 feature are supported including:
 
 -   Asynchronous programming support
 -   Caller info attributes
 
-Many of upcomming C\# 6.0 features are supported including:
+Many of upcomming C# 6.0 features are supported including:
 
 -   Primary constructors
 -   Auto-property initializers
@@ -92,9 +92,9 @@ If you want to limit the mcs compiler to be a strict 2.0 compiler, use the -lang
 
 ### Specification
 
-The C\# 2.0 specification is available on the [third edition of the ECMA 334 standard](http://www.ecma-international.org/publications/standards/Ecma-334.htm).
+The C# 2.0 specification is available on the [third edition of the ECMA 334 standard](http://www.ecma-international.org/publications/standards/Ecma-334.htm).
 
-An on-line and hyperlinked version of the C\# 1.0 specification is available from [Jon Jagger's](http://www.jaggersoft.com) site [here](http://www.jaggersoft.com/csharp_standard/).
+An on-line and hyperlinked version of the C# 1.0 specification is available from [Jon Jagger's](http://www.jaggersoft.com) site [here](http://www.jaggersoft.com/csharp_standard/).
 
 The specification shipped with Monodoc, and available on our web downloads is based on Jon's original XML documentation that he extracted from the ECMA 334 specification.
 
@@ -102,44 +102,44 @@ The specification shipped with Monodoc, and available on our web downloads is ba
 
 #### Obtaining MCS
 
-The Mono C\# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code](/community/contributing/source-code-repository/) server, or you can get nightly [download page](/download/).
+The Mono C# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code](/community/contributing/source-code-repository/) server, or you can get nightly [download page](/download/).
 
 You can also browse or download a snapshot of the compiler alone:
 
 -   [browse the sources](http://github.com/mono/mono/tree/master/mcs/mcs/).
 
-If you are interested in developing the C\# compiler, the C\# Compiler as a Service or the interactive shell on Windows we provide Visual Studio solutions that work on VS 2008 and 2010 and allow developers to quickly get the compiler up and running.
+If you are interested in developing the C# compiler, the C# Compiler as a Service or the interactive shell on Windows we provide Visual Studio solutions that work on VS 2008 and 2010 and allow developers to quickly get the compiler up and running.
 
 To do this, download the entire MCS tree from:
 
 -   [http://github.com/mono/mono/tree/master/mcs/](http://github.com/mono/mono/tree/master/mcs/).
 
-And then open the Visual Studio solution on mcs/tools/csharp, this will build the Mono.CSharp.dll compiler as a service as well as the command line interactive C\# shell "csharp".
+And then open the Visual Studio solution on mcs/tools/csharp, this will build the Mono.CSharp.dll compiler as a service as well as the command line interactive C# shell "csharp".
 
 #### Running MCS
 
-MCS is written in C\# and uses heavily the .NET APIs. MCS runs on Linux with the Mono runtime and on Windows with both the .NET runtime and the Mono runtime.
+MCS is written in C# and uses heavily the .NET APIs. MCS runs on Linux with the Mono runtime and on Windows with both the .NET runtime and the Mono runtime.
 
 #### Reporting Bugs
 
-You can submit bugs by filing the bugs against the C\# compiler in our [Bugs](/community/bugs/) page.
+You can submit bugs by filing the bugs against the C# compiler in our [Bugs](/community/bugs/) page.
 
-When you report a bug, try to provide a small test case that would show the error so we can include this as part of the Mono C\# regression test suite. If the bug is an error or a warning that we do not flag, write a sample program called \`csXXXX.cs' where XXXX is the code number that is used by the Microsoft C\# compiler that illustrates the problem. That way we can also do regression tests on the invalid input.
+When you report a bug, try to provide a small test case that would show the error so we can include this as part of the Mono C# regression test suite. If the bug is an error or a warning that we do not flag, write a sample program called \`csXXXX.cs' where XXXX is the code number that is used by the Microsoft C# compiler that illustrates the problem. That way we can also do regression tests on the invalid input.
 
 Implementation details
 ----------------------
 
 The compiler is documented in the file [mcs/docs/compiler](http://github.com/mono/mono/blob/master/mcs/docs/compiler.txt)
 
-### CIL Optimizations.
+### CIL Optimizations
 
-The compiler performs a number of simple optimizations on its input: constant folding (this is required by the C\# language spec) and can perform dead code elimination.
+The compiler performs a number of simple optimizations on its input: constant folding (this is required by the C# language spec) and can perform dead code elimination.
 
 Other more interesting optimizations like hoisting are not possible at this point since the compiler output at this point does not generate an intermediate representation that is suitable to perform basic block computation.
 
 Adding an intermediate layer to enable the basic block computation to the compiler should be a simple task, but we are considering having a generic CIL optimizer. Since all the information that is required to perform basic block-based optimizations is available at the CIL level, we might just skip this step altogether and have just a generic IL optimizer that would perform hoisting on arbitrary CIL programs, not only those produced by MCS.
 
-If this tool is further expanded to perform constant folding (not needed for our C\# compiler, as it is already in there) and dead code elimination, other compiler authors might be able to use this generic CIL optimizer in their projects reducing their time to develop a production compiler.
+If this tool is further expanded to perform constant folding (not needed for our C# compiler, as it is already in there) and dead code elimination, other compiler authors might be able to use this generic CIL optimizer in their projects reducing their time to develop a production compiler.
 
 #### Open bugs
 
@@ -148,7 +148,7 @@ See the [bugs page](/community/bugs/) for more information. A test suite is main
 Slides
 ------
 
-Slides for the Mono C\# Compiler presentation at .NET ONE are available [here](http://primates.ximian.com/~miguel/slides-europe-nov-2002/Mono_C_Sharp_Overview_1007.sxi) in StarOffice format.
+Slides for the Mono C# Compiler presentation at .NET ONE are available [here](http://primates.ximian.com/~miguel/slides-europe-nov-2002/Mono_C_Sharp_Overview_1007.sxi) in StarOffice format.
 
 History
 -------
@@ -159,9 +159,9 @@ The Mono Runtime and the Mono execution engine were able to make our compiler se
 
 On July 2003 work started on the generics support of mcs. Since the core of the compiler was used in production and in the development of Mono itself, a fork of the compiler was created. This fork is \`gmcs'. The \`gmcs' fork merges all of the changes from mcs on a regular basis and will eventually become the default compiler.
 
-Support for the third edition of the C\# standard became available on the Mono 1.1.8 release in the summer of 2005.
+Support for the third edition of the C# standard became available on the Mono 1.1.8 release in the summer of 2005.
 
-The compiler was originally written as an attempt to learn the C\# language, it began as a tokenizer for the language, and then evolved into a parser for the language and later got the semantic analysis and code generation features in place. This explains the difference in coding styles from the tokenizer (which is the earliest code) and the code generation (which came at later phases).
+The compiler was originally written as an attempt to learn the C# language, it began as a tokenizer for the language, and then evolved into a parser for the language and later got the semantic analysis and code generation features in place. This explains the difference in coding styles from the tokenizer (which is the earliest code) and the code generation (which came at later phases).
 
 Miguel de Icaza started the compiler and did most of the early work. He was later was joined by Ravi Pratap who would take over attributes, delegates, and overload resolution.
 
@@ -177,13 +177,13 @@ Sebastien Pouliot wrote all the code required to sign assemblies, delay sign the
 
 Ben Maurer did a lot of profiling work on the mcs compiler and helped fixed some of the problems in it.
 
-Scott Peterson contributed in 2007 many of the foundation blocks for C\# 3 (var, support, anonymous types, automatic properties, variable type inference and object and collection initializers).
+Scott Peterson contributed in 2007 many of the foundation blocks for C# 3 (var, support, anonymous types, automatic properties, variable type inference and object and collection initializers).
 
-In 2007 Marek Safar took over the maintenance of the compiler and he completed the C\# 3.0 implementation, lambdas, mutators, type inferencing and LINQ expressions.
+In 2007 Marek Safar took over the maintenance of the compiler and he completed the C# 3.0 implementation, lambdas, mutators, type inferencing and LINQ expressions.
 
-In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the [Interactive C\# Shell](/docs/tools+libraries/tools/repl/).
+In 2008 Miguel de Icaza turned the compiler into a reusable library (Mono.CSharp.dll) and introduced the [Interactive C# Shell](/docs/tools+libraries/tools/repl/).
 
-In 2009 Marek Safar evolved the compiler to support C\# 4.0, adding support for the dynamic data type, named parameters, default parameter values as well as co/contravariance support.
+In 2009 Marek Safar evolved the compiler to support C# 4.0, adding support for the dynamic data type, named parameters, default parameter values as well as co/contravariance support.
 
 Many other developers contributed fixes and other small components in the compiler.
 
@@ -194,6 +194,6 @@ Common Questions
 
 They are the same compiler with three different set of defaults.
 
--   **dmcs**: references the 4.0-profile libraries (the APIs as defined in .NET 4.0) and supports C\# 4.0.
--   **gmcs**: references the 2.0-profile libraries (the APIs as defined in .NET 2.0 and .NET 3.5) and exposes the full C\# 3.0 language.
--   **smcs**: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C\# 3.0 language. This is the compiler used for creating Silverlight/[Moonlight](/docs/web/moonlight/) applications.
+-   **dmcs**: references the 4.0-profile libraries (the APIs as defined in .NET 4.0) and supports C# 4.0.
+-   **gmcs**: references the 2.0-profile libraries (the APIs as defined in .NET 2.0 and .NET 3.5) and exposes the full C# 3.0 language.
+-   **smcs**: references the 2.1-profile libraries (the APIs defined for Silverlight) and exposes the full C# 3.0 language. This is the compiler used for creating Silverlight/[Moonlight](/docs/web/moonlight/) applications.

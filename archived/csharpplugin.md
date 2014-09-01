@@ -8,7 +8,7 @@ redirect_from:
 CSharpPlugin
 ============
 
-Xcode Plugin and supporting files for Mono C\# integration
+Xcode Plugin and supporting files for Mono C# integration
 ----------------------------------------------------------
 
 ### **This page is no longer maintained. Please use the latest version at [http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin](http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin)**
@@ -113,7 +113,7 @@ Abstract
 </tbody>
 </table>
 
-This document describes the installation, use and some of the background details of an Xcode plugin that allows the use of the Mono C\# development environment.
+This document describes the installation, use and some of the background details of an Xcode plugin that allows the use of the Mono C# development environment.
 
 If you just want to get the code installed and running, then please start at the “Installation” section. If you want to understand how this plugin came about and how it operates (also why it has some of the ways of doing things and limitations that it has) then please read the introductory sections.
 
@@ -130,16 +130,16 @@ If you just want to get started, then follow these instructions. Be warned that 
 6.  Copy all files in '`File Templates`' to '`~/Library/Application Support/Apple/Developer Tools/File Templates`'
 7.  Copy all files in '`Target Templates`' to '`~/Library/Application Support/Apple/Developer Tools/Target Templates/C Sharp`'
 
-Starting Xcode should now show executable, library and Cocoa\# New Project templates under a ‘C Sharp’ heading, executable and library target templates also under a ‘C Sharp’ heading, and a ‘C Sharp’ new file type.
+Starting Xcode should now show executable, library and Cocoa# New Project templates under a ‘C Sharp’ heading, executable and library target templates also under a ‘C Sharp’ heading, and a ‘C Sharp’ new file type.
 
 Test it out by creating a ‘New Project’ form the Executable template and click the ‘Build and Go’ button. You should see the compilation take place and then the display a variation of the classic ‘Hello World’ theme.
 
 Preface
 -------
 
-I am fairly new to the OS X environment having bought a new MacBook Pro just a few months ago. However I have been using C\# (mainly within the Microsoft Visual Studio range of IDE’s) since the whole “.NET” thing started and C\# was first introduced.
+I am fairly new to the OS X environment having bought a new MacBook Pro just a few months ago. However I have been using C# (mainly within the Microsoft Visual Studio range of IDE’s) since the whole “.NET” thing started and C# was first introduced.
 
-Therefore, I was keen to start to transfer a number of my projects over to the Mono environment as well as beginning to use the Xcode environment for my development. I quickly discovered that Xcode was heavily slanted towards the C/C++/Objective-C languages through the use of the GCC product. While there has been some talk of someone providing a C\# ‘front-end’ to the GCC, I’m not aware of anything being available yet, or planned for sometime soon.
+Therefore, I was keen to start to transfer a number of my projects over to the Mono environment as well as beginning to use the Xcode environment for my development. I quickly discovered that Xcode was heavily slanted towards the C/C++/Objective-C languages through the use of the GCC product. While there has been some talk of someone providing a C# ‘front-end’ to the GCC, I’m not aware of anything being available yet, or planned for sometime soon.
 
 I think it was Isaac Newton that said, “If I have seen further than others, it is because I have stood on the shoulders of giants”. Well, this is certainly true of this little project.
 
@@ -153,22 +153,22 @@ Three books have helped me a lot. Firstly there is “Beginning Mac OS X Program
 
 Of course, there is also the large body of code included with Xcode itself, particularly in
 
-    /System/Library/PrivateFrameworks/DevToolsCore.framework/Versions/A/Resources 
+    /System/Library/PrivateFrameworks/DevToolsCore.framework/Versions/A/Resources
 
 There is a log of great stuff here – if you can reverse-engineer and/or understand it.
 
 I have also used little bits and pieces of code and ideas that I’ve found in various news groups and other areas of the Internet. If you think that I’ve used a bit or your code and I’ve not acknowledged you, then firstly my apologies, and secondly I acknowledge your contribution now.
 
-It has been said that “no work of art is ever completed – merely abandoned”. While I don’t feel that I have ‘abandoned’ this project, I do feel that it has reached a stage where it is useable and should be made available. I have supplied all of the source files needed to completely rebuild the plugin, as well as the ancillary files needed to bring C\# to Xcode. Please feel free to extend this work, and/or let me know of what works (and what doesn’t – I make no claim that it is bug free or will work for any particular situation<sup>1</sup>) so that we can all make it better. In particular I am interested in hearing from anyone about how to better parse the source code within Xcode to improve the “Intellisense”-like operation.
+It has been said that “no work of art is ever completed – merely abandoned”. While I don’t feel that I have ‘abandoned’ this project, I do feel that it has reached a stage where it is useable and should be made available. I have supplied all of the source files needed to completely rebuild the plugin, as well as the ancillary files needed to bring C# to Xcode. Please feel free to extend this work, and/or let me know of what works (and what doesn’t – I make no claim that it is bug free or will work for any particular situation<sup>1</sup>) so that we can all make it better. In particular I am interested in hearing from anyone about how to better parse the source code within Xcode to improve the “Intellisense”-like operation.
 
 <sup>1</sup>Insert your usual legal disclaimers here about fitness for purpose etc., that usage is purely at your own risk, and that I am not responsible for anything!
 
 Approach
 --------
 
-There appears to be a fundamental difference in the way Xcode is set up and they way Mono/C\# programs are created. Xcode seems to want to follow the ‘traditional’ scheme where there is a fairly ‘one-to-one’ line from the original source code (in the case of code generated form Yacc etc.), through the headers and code file to an object file. It is only when the object files are brought together by the linker is there a significant combining of the files into a unified ‘whole’.
+There appears to be a fundamental difference in the way Xcode is set up and they way Mono/C# programs are created. Xcode seems to want to follow the ‘traditional’ scheme where there is a fairly ‘one-to-one’ line from the original source code (in the case of code generated form Yacc etc.), through the headers and code file to an object file. It is only when the object files are brought together by the linker is there a significant combining of the files into a unified ‘whole’.
 
-On the other hand, the C\# compiler requires that all source files are brought together right from the start. This allows such constructs as partial classes, which can separate parts of a class definition into a number of files, but the compiler seems the whole definition at once. It also eliminates the “forward reference” issues between classes.
+On the other hand, the C# compiler requires that all source files are brought together right from the start. This allows such constructs as partial classes, which can separate parts of a class definition into a number of files, but the compiler seems the whole definition at once. It also eliminates the “forward reference” issues between classes.
 
 Xcode has ‘compile’ and ‘link’ phases, where the ‘compile’ phase operates on a single file at a time, and the ‘link’ phase, which expects to bring together, all of the object files generated during the compile phase, with any libraries<sup>2</sup>.
 
@@ -183,9 +183,9 @@ Scope and Exclusions
 
 The basic intension of the plugin is to allow the programmer to do anything that could be done in the terminal with a suitable editor and the (g)mcs and mono commands. I think that I have achieved much of this but certainly not all.
 
-The Xcode editor understands the basic C\# syntax and can highlight comments, keywords etc., but it has no understanding of the structure of the source. For example, it does not recognise when the cursor is in a ‘get’ or ‘set’ portion of a property definition – it just displays the overall class name.
+The Xcode editor understands the basic C# syntax and can highlight comments, keywords etc., but it has no understanding of the structure of the source. For example, it does not recognise when the cursor is in a ‘get’ or ‘set’ portion of a property definition – it just displays the overall class name.
 
-It has no equivalent to the “Visual Studio” Intellisense – Xcode does have a default equivalent for this, but, as it applies to C\# it is reduced to listing similar names that you have entered elsewhere in the source file. It does not understand which methods/properties belong to a class reference (typing “Console.Wr” will not show that “Write” and “WriteLine” as possible methods at this point).
+It has no equivalent to the “Visual Studio” Intellisense – Xcode does have a default equivalent for this, but, as it applies to C# it is reduced to listing similar names that you have entered elsewhere in the source file. It does not understand which methods/properties belong to a class reference (typing “Console.Wr” will not show that “Write” and “WriteLine” as possible methods at this point).
 
 Not all of the (g)mcs compiler options are available, but mainly those are the ones that relate to testing the (g)mcs complier itself – I left those out on purpose. However there is an "Other CSharp Flags" option that you can use to put in anything you want to appear in the command line. You are responsible for formatting it correctly, but you don’t have any option about where they appear – they will always be straight after the command name and before any source/library file references, as do all of the options that are available to you.
 
@@ -230,11 +230,11 @@ The first thing to do is to expand the .zip file. The easy way is to double-clic
 
 The plugin makes use of additional code to provide some of the functionality<sup>6</sup>. When Xcode starts up, it looks for any plugin code (identified by the "`.pbplugin`" file type) in the "`Plug-ins`" directory. Therefore: copy the "`build/Release/CSharpPlugin.pbplugin`" file to "`Plug-ins/CSharpPlugin.pbplugin`".
 
-<sup>6</sup>Xcode can be extended without this, but only in a very restricted way in certain areas Despite the file type, this file contains executable code file which (according to my understanding) is a universal binary. It also contains a number of other resource files that Xcode will read in that define the language and how it should handle C\# files.
+<sup>6</sup>Xcode can be extended without this, but only in a very restricted way in certain areas Despite the file type, this file contains executable code file which (according to my understanding) is a universal binary. It also contains a number of other resource files that Xcode will read in that define the language and how it should handle C# files.
 
 ### Project Templates
 
-The easiest way to set up the Xcode environment to handle C\#/mono is to create a new project based on either the executable or the library project template. These templates are found in the "`Project Templates`" directory.
+The easiest way to set up the Xcode environment to handle C#/mono is to create a new project based on either the executable or the library project template. These templates are found in the "`Project Templates`" directory.
 
 Xcode provides a hierarchical structure for the project templates: you’ve probably noticed the “New Project Assistant” lists top level entries such as ‘Action’, ‘Application’ and ‘Bundle’ with specific project templates listed underneath.
 
@@ -254,7 +254,7 @@ Drag the "`Target Templates/C Sharp`" source directory into the "`Target Templat
 
 ### File Template
 
-So far we have installed the code that does all of the work in the background, the project templates for when we create a new project and the target templates for when we add a new template to an existing project. The last step is to install the template used when we want to add a new C\# source file to a project.
+So far we have installed the code that does all of the work in the background, the project templates for when we create a new project and the target templates for when we add a new template to an existing project. The last step is to install the template used when we want to add a new C# source file to a project.
 
 The source directory "`File Templates/C Sharp.pbfiletemplate`" must be dragged to the destination directory "`File Templates"`. Despite the fact that the directory has a file type, it really is just a directory. However the file type helps to tell Xcode that it should expect, not only a template of the new file, but a ‘.plist’ file to tell it about the file.
 
@@ -369,9 +369,9 @@ To avoid cluttering up the command line passed to the compiler, the plugin uses 
 
 #### Extract Documentation To
 
-A single file path value can be entered against this option as the name of the file to be created with the XML-formatted documentation drawn from the C\# documentation comments.<sup>8</sup>
+A single file path value can be entered against this option as the name of the file to be created with the XML-formatted documentation drawn from the C# documentation comments.<sup>8</sup>
 
-<sup>8</sup>The C\# Plugin ‘knows’ about the documentation comment introducer of “///” but it has no idea how to handle this within the editor. It is not treated as a macro and expanded according to the location as it is within Visual Studio.
+<sup>8</sup>The C# Plugin ‘knows’ about the documentation comment introducer of “///” but it has no idea how to handle this within the editor. It is not treated as a macro and expanded according to the location as it is within Visual Studio.
 
 #### Specify Key File
 
@@ -461,7 +461,7 @@ Note that this option sets the code page for all source files used in the compil
 
 #### Define Symbols
 
-This option allows you to define one or more symbols that can be used by all of the source files for conditional compilations either by using the ‘\#if/\#else/\#endif’ preprocessor directives and the Conditional attribute.
+This option allows you to define one or more symbols that can be used by all of the source files for conditional compilations either by using the ‘#if/#else/#endif’ preprocessor directives and the Conditional attribute.
 
 Multiple symbols can be defined, one on each line in the drop-down sheet, or separated by spaces in the ‘in line’ editor.
 
@@ -485,7 +485,7 @@ This option allows you to select from a pre-defined set of values.
 
 Note that this option sets the code page for all source files used in the compilation, and cannot be set for an individual source file.
 
-#### TARGET\_TYPE
+#### TARGET_TYPE
 
 This option lies a bit outside the others and, in general, should not be altered. It is initially set to either ‘exe’ or ‘library’ depending on the type of the assembly that you are creating.
 
@@ -500,9 +500,9 @@ You can skip this section if you think you have enough to do what you want to wi
 
 ### Creating an Executable Project
 
-This is probably the most common starting point in working with C\#/Mono within the Xcode environment.
+This is probably the most common starting point in working with C#/Mono within the Xcode environment.
 
-The steps in creating a C\# project are exactly the same as for creating any new project in Xcode: start the New Project assistant, select the type of project, give it a name and top level directory, and have it set everything up for you.
+The steps in creating a C# project are exactly the same as for creating any new project in Xcode: start the New Project assistant, select the type of project, give it a name and top level directory, and have it set everything up for you.
 
 In this case the project template is listed under the ‘C Sharp’ heading, and you will need to choose the “Executable’ template.
 
@@ -522,7 +522,7 @@ The top of the file contains some comments that include the name of the name of 
 
 James Bucanek provides information in his “Beginning Xcode” book (Wrox) about the “\_\_MyCompanyName\_\_” item in the header comments, and how to set it. Basically it comes down to using the terminal to enter:
 
-    Defaults write com.apple.xcode PBXCustomTemplateMacroDefinitions –dict ORGANIZATIONNAME “My Company” 
+    Defaults write com.apple.xcode PBXCustomTemplateMacroDefinitions –dict ORGANIZATIONNAME “My Company”
 
 where you will need to put in something sensible for the “My Company” part.
 
@@ -549,7 +549,7 @@ Within the Target hierarchy are two build phases:
 
 As sources are added to the project, you have the option of which target(s) they are added to. Xcode will automatically place any new source files into the ‘Compile Sources” phase. Use the standard Xcode techniques to place source files in the right phase of multiple targets.
 
-To get at the compile options for this target, right/control-click on the target and select the Get Info menu option. The “Build” display within the inspector window will show all of the options that are available (and described above). A number of the options listed are irrelevant for C\# and Mono, but I haven’t found a way of suppressing them; and they are ignored when it comes to building the command line anyway.
+To get at the compile options for this target, right/control-click on the target and select the Get Info menu option. The “Build” display within the inspector window will show all of the options that are available (and described above). A number of the options listed are irrelevant for C# and Mono, but I haven’t found a way of suppressing them; and they are ignored when it comes to building the command line anyway.
 
 You can add additional targets via the normal Xcode methods. The plugin provides two templates: executable and library. There is no reason why you cannot have multiple executable targets in a single project, but I would imagine the more typical arrangement is to have one executable assembly target, and zero or more library assembly targets. Each target will be built into a single assembly file (represented as an entry in the Products group) with the appropriate file type (‘.exe’ for executable and ‘.dll’ for library assemblies).
 
@@ -597,7 +597,7 @@ Unfortunately, the ‘Executables’ generated by Xcode when you add a target do
 
 Aside: The Executable objects are actually stored in each users profile file that is stored within the ‘.xcodeproj’ file (which is actually an opaque directory, much line the ‘.app’ file). A suitable default user profile is included in the ‘Executable’ project template, but it as been ‘hacked’ to create the appropriate Executable object. See the ‘Customisation’ section for more information.
 
-### Creating A Library Project.
+### Creating A Library Project
 
 Basically, do everything specified in the ‘Creating An Executable Project’ except you start with the ‘C Sharp -Library’ project template. Therefore, what follows describes the differences between these types of projects rather than going over the same ground as above.
 
@@ -625,9 +625,9 @@ Basically, you can add either an executable or a library target to any type of p
 
 However, please read the comments in the “Creating a Library Project” about the problems with adding an executable target and the need to create a ‘Custom Executable’ manually.
 
-### Adding C\# Source Files
+### Adding C# Source Files
 
-You can add a file based on the C\# file template to any project. However, I don’t recommend trying to mix C\# and other source files within a project. I have not tried this out, but the plugin makes an assumption that a'llfiles listed in the ‘Compile…’ and ‘Link…’ phases need to be processed by the (g)mcs compiler. I doubt if the compiler would be happy with non-C\# source files!
+You can add a file based on the C# file template to any project. However, I don’t recommend trying to mix C# and other source files within a project. I have not tried this out, but the plugin makes an assumption that a'llfiles listed in the ‘Compile…’ and ‘Link…’ phases need to be processed by the (g)mcs compiler. I doubt if the compiler would be happy with non-C# source files!
 
 Customisation
 -------------
@@ -658,57 +658,57 @@ All object have three basic values:
 
 Xcode’s understanding of a plugin begins with the ‘Target Template’, and this plugin has two: one for the executable assembly target and the other for a library assembly target. The Executable file is as follows:
 
-    { 
+    {
         Class = Native;
-        ProductType = "com.mono.product-type.executable"; 
+        ProductType = "com.mono.product-type.executable";
         Description = "Target for building an application that uses the Mono .NET environment";
-        CustomBuildSettings = { 
-            INSTALL_PATH = "$(HOME)/Applications"; 
-            PRODUCT_NAME = "«PRODUCTNAME».exe"; 
-            EXECUTABLE_EXTENSION = "exe"; 
+        CustomBuildSettings = {
+            INSTALL_PATH = "$(HOME)/Applications";
+            PRODUCT_NAME = "«PRODUCTNAME».exe";
+            EXECUTABLE_EXTENSION = "exe";
             TARGET_TYPE = "-target:exe";
-        }; 
+        };
 
-        BuildPhases = ( 
+        BuildPhases = (
             {
-                Class = Sources; 
-            }, 
+                Class = Sources;
+            },
             {
-                Class = Frameworks; 
-            }, 
+                Class = Frameworks;
+            },
         );
     }
 
 The Library.trgttmpl is structurally the same with only a few values that differ.
 
-The ‘CustomBuildSettings’ dictionary specifies the name of the product and where it will be placed. It also specifies the ‘TARGET\_TYPE’ value that will eventually be passed to the compiler. The Library version has the appropriate value for building a library assembly.
+The ‘CustomBuildSettings’ dictionary specifies the name of the product and where it will be placed. It also specifies the ‘TARGET_TYPE’ value that will eventually be passed to the compiler. The Library version has the appropriate value for building a library assembly.
 
 The ‘BuildPhases’ tells Xcode which build phases to create within the target: in this case the Sources (‘Compile Sources’) and Frameworks (‘Link Binaries With Libraries’) phases.
 
-You will notice that there is no ‘identifier’ in this file; rather there is a ‘ProductType’ entry. The value of this item is used as the starting point into all of the other objects required to integrate C\#/Mono into Xcode. In this case it points to the ‘product type’ definition found in the next file.
+You will notice that there is no ‘identifier’ in this file; rather there is a ‘ProductType’ entry. The value of this item is used as the starting point into all of the other objects required to integrate C#/Mono into Xcode. In this case it points to the ‘product type’ definition found in the next file.
 
 #### CSharp.pbprodspec
 
 This file contains two ‘product specification’ object definitions. The following is the one related to the ‘executable’ product:
 
-    { 
-        // Mono Executable Assembly (.exe) Identifier = com.mono.product-type.executable; 
-        Class = MonoProductSpecificationCS; 
-        Name = "Mono Executable Builder"; 
-        Description = "Mono Executable Assembly Builder"; 
-        IconNamePrefix = "TargetExecutable"; 
-        DefaultTargetName = "Application"; 
-        SupportsZeroLink = NO; 
-        Vendor = "Mono"; 
-        AllowedBuildPhaseTypes = ( Sources, Frameworks ); 
-        DefaultBuildProperties = { 
-            ARCHS = (mono); 
-            VALID_ARCHS = (mono, i386, ppc ); 
+    {
+        // Mono Executable Assembly (.exe) Identifier = com.mono.product-type.executable;
+        Class = MonoProductSpecificationCS;
+        Name = "Mono Executable Builder";
+        Description = "Mono Executable Assembly Builder";
+        IconNamePrefix = "TargetExecutable";
+        DefaultTargetName = "Application";
+        SupportsZeroLink = NO;
+        Vendor = "Mono";
+        AllowedBuildPhaseTypes = ( Sources, Frameworks );
+        DefaultBuildProperties = {
+            ARCHS = (mono);
+            VALID_ARCHS = (mono, i386, ppc );
             FULL_PRODUCT_NAME = "$(PRODUCT_NAME).exe";
-        }; 
-        PackageTypes = ( 
-            com.mono.package-type.executable // default 
-        ); 
+        };
+        PackageTypes = (
+            com.mono.package-type.executable // default
+        );
     },
 
 As well as the standard ‘Identifier’, ‘Name’ and ‘Description’ items, the top level
@@ -721,9 +721,9 @@ My experimenting has not really come up with much meaning for the ‘IconNamePre
 
 I think the ‘AllowedBuildPhaseTypes’ item allows refinement of the build phases defined in the Target Template, but in this case they are the same.
 
-Within the ‘DefaultBuildProperties’ dictionary, the ‘VALID\_ARCHS’ and ‘ARCHS’ items set the possible ‘Architecture’ option values as well as the initial default one. The selected architecture is also passed to the compiler code, but is ignored by the plugin at this stage. The “mono” architecture is defined in the “Mono.xcspec” file described below.
+Within the ‘DefaultBuildProperties’ dictionary, the ‘VALID_ARCHS’ and ‘ARCHS’ items set the possible ‘Architecture’ option values as well as the initial default one. The selected architecture is also passed to the compiler code, but is ignored by the plugin at this stage. The “mono” architecture is defined in the “Mono.xcspec” file described below.
 
-The ‘FULL\_PRODUCT\_NAME’ item sets the name of the product. In this case it is the name of the project with a ‘.exe' extension added.
+The ‘FULL_PRODUCT_NAME’ item sets the name of the product. In this case it is the name of the project with a ‘.exe' extension added.
 
 The main item in this definition is ‘PackageTypes’ which links to the package definition object described next.
 
@@ -731,70 +731,70 @@ The main item in this definition is ‘PackageTypes’ which links to the packag
 
 This file contains the package specifications for both the executable and library assemblies. The executable definition follows:
 
-    // Mono executable assembly 
-    { 
-        Identifier = com.mono.package-type.executable; 
-        Name = "Mono Executable Assembly"; 
-        Description = "Mono assembly that can be run"; 
+    // Mono executable assembly
+    {
+        Identifier = com.mono.package-type.executable;
+        Name = "Mono Executable Assembly";
+        Description = "Mono assembly that can be run";
         DefaultBuildSettings = {
-             PACKAGE_TYPE = EXECUTABLE; 
-             EXECUTABLE_SUFFIX = ".exe"; 
+             PACKAGE_TYPE = EXECUTABLE;
+             EXECUTABLE_SUFFIX = ".exe";
              EXECUTABLE_NAME = "$(PRODUCT_NAME)$(EXECUTABLE_SUFFIX)";
-             EXECUTABLE_PATH = "$(EXECUTABLE_NAME)"; 
+             EXECUTABLE_PATH = "$(EXECUTABLE_NAME)";
              GENERATE_PKGINFO_FILE = NO;
         };
-        ProductReference = { 
-            FileType = compiled.mono.executable; 
-            Name = "$(PRODUCT_NAME).exe"; // always assumed to be relative to $(BUILD_DIR) 
-            IsLaunchable = YES; 
-        }; 
+        ProductReference = {
+            FileType = compiled.mono.executable;
+            Name = "$(PRODUCT_NAME).exe"; // always assumed to be relative to $(BUILD_DIR)
+            IsLaunchable = YES;
+        };
     },
 
 I have found that changing the items defined within the ‘DefaultBuildSettings’
 
 does not appear to do much.
 
-On the other hand, the ‘ProductReference’ part is very important. ‘FileType’ references the file type (see CSharp.pbfilespec later) object that tells Xcode the type of file that is created. I’m not sure if the ‘Name’ entry here, or the ‘FULL\_PRODUCT\_NAME’ item in the product specification actually sets the product name, but both have the same values here and it gets set to what it should be!
+On the other hand, the ‘ProductReference’ part is very important. ‘FileType’ references the file type (see CSharp.pbfilespec later) object that tells Xcode the type of file that is created. I’m not sure if the ‘Name’ entry here, or the ‘FULL_PRODUCT_NAME’ item in the product specification actually sets the product name, but both have the same values here and it gets set to what it should be!
 
 #### CSharp.pbfilespec
 
 This file defines the types of files that are used within the plugin. In this case there are 3:
 
--   A C\# source file
+-   A C# source file
 -   An executable assembly
 -   A library assembly
 
 The following shows the definitions for the source file and the executable assembly.
 
     {
-        // C-Sharp source code 
-        Identifier = sourcecode.csharp; 
-        BasedOn = sourcecode; 
-        Name = "C# File";     
-        Extensions = (cs, csharp); 
-        MIMETypes = ("text/C#"); 
-        ComputerLanguage = csharp; 
-        IsTextFile = YES; 
-        IsSourceCode = YES; 
-        AppliesToBuildRules = YES; 
-        ChangesCauseDependencyGraphInvalidation = YES; 
-        }, 
+        // C-Sharp source code
+        Identifier = sourcecode.csharp;
+        BasedOn = sourcecode;
+        Name = "C# File";
+        Extensions = (cs, csharp);
+        MIMETypes = ("text/C#");
+        ComputerLanguage = csharp;
+        IsTextFile = YES;
+        IsSourceCode = YES;
+        AppliesToBuildRules = YES;
+        ChangesCauseDependencyGraphInvalidation = YES;
+        },
         {
-            // Executable (.exe) file 
-            Identifier = compiled.mono.executable; 
-            BasedOn = compiled; 
-            Name = "Mono Executable File"; 
-            Extensions = (exe); 
-            TypeCodes = (APPL); 
-            IsTextFile = NO; 
-            IsSourceFile = NO; 
-            IsExecutable = YES; 
-            IsExecutableWithGUI = NO; 
-            IsTransparent = NO; 
-            IsApplication = NO; 
-            IsBundle = NO; 
-            ContainsNativeCode = NO; 
-            AppliesToBuildRules = NO; 
+            // Executable (.exe) file
+            Identifier = compiled.mono.executable;
+            BasedOn = compiled;
+            Name = "Mono Executable File";
+            Extensions = (exe);
+            TypeCodes = (APPL);
+            IsTextFile = NO;
+            IsSourceFile = NO;
+            IsExecutable = YES;
+            IsExecutableWithGUI = NO;
+            IsTransparent = NO;
+            IsApplication = NO;
+            IsBundle = NO;
+            ContainsNativeCode = NO;
+            AppliesToBuildRules = NO;
             ComputerLanguage = csharp;
     },
 
@@ -810,46 +810,46 @@ This definition file is used by the editor to allow syntax colouring and other e
 
 The beginning of the file is as follows:
 
-    { 
-        Identifier = csharp; 
-        Name = "CSharp"; 
-        Description = "CSharp source file"; 
-        BasedOn = "pbx_root_language"; 
-        SourceScannerClassName = PBXCPPSourceScanner; 
-        SupportsIndentation = YES; 
-        Indentation = { 
-        }; 
-        SyntaxColoring = { 
-            CaseSensitive = YES; 
+    {
+        Identifier = csharp;
+        Name = "CSharp";
+        Description = "CSharp source file";
+        BasedOn = "pbx_root_language";
+        SourceScannerClassName = PBXCPPSourceScanner;
+        SupportsIndentation = YES;
+        Indentation = {
+        };
+        SyntaxColoring = {
+            CaseSensitive = YES;
             UnicodeSymbols = YES;
-            UnicodeEscapes = YES; 
-            IndexedSymbols = YES; 
-            CommentsCanBeNested = YES; 
-            IdentifierStartChars = "_"; 
-            IdentifierChars = "_"; 
+            UnicodeEscapes = YES;
+            IndexedSymbols = YES;
+            CommentsCanBeNested = YES;
+            IdentifierStartChars = "_";
+            IdentifierChars = "_";
             MultiLineComment = (
-                ( "/*", "*/" ) 
-            ); 
-            String = ( 
-                ( "\"", "\"" ) 
-            ); 
+                ( "/*", "*/" )
+            );
+            String = (
+                ( "\"", "\"" )
+            );
             EscapeCharacter = "\\";
-            Character = ( 
-                ( "'", "'" ) 
-            ); 
-            SingleLineComment = ( "//" ); 
-            DocComment = "///"; 
-            DocCommentKeywords = ( 
-                "summary", 
-                "param", 
-                "returns" 
-            ); 
-            Keywords = ( 
-                "abstract", 
-                "as", 
-                "base", 
-                "bool", 
-                "break", 
+            Character = (
+                ( "'", "'" )
+            );
+            SingleLineComment = ( "//" );
+            DocComment = "///";
+            DocCommentKeywords = (
+                "summary",
+                "param",
+                "returns"
+            );
+            Keywords = (
+                "abstract",
+                "as",
+                "base",
+                "bool",
+                "break",
 
 I believe that, if you understood what the method definitions should be, that you could write a suitable class definition and reference it in the ‘SourceScannerClassName’ item and so improve the integration of the language with the editor. I’m guessing that this would overcome the issue the plugin currently has in (for example) not knowing about property accessors – the editor simply shows that the cursor is in the class definition, whereas it can understand a method definition enough to reference its name.
 
@@ -858,35 +858,35 @@ I believe that, if you understood what the method definitions should be, that yo
 This definition file defines an additional ‘architecture’ that can be referenced within Xcode. In this case it defines the ‘mono’ architecture:
 
     (
-        // Mono - architecture independent 
+        // Mono - architecture independent
         {
             Type = Architecture;
             Identifier = mono;
-            Name = "Mono IDL"; 
-            Description = "Mono architecture -independent of any hardware"; 
+            Name = "Mono IDL";
+            Description = "Mono architecture -independent of any hardware";
             ByteOrder = little;
             ShowInUI = YES;
             // SortNumber = 53;
-        }, 
+        },
     )
 
 I have no idea what the ‘SortNumber’ does, but it appears in some other architecture definitions and is commented out in others: either way this definition seems to make Xcode happy.
 
-Architectures seem to come into their own when a source file can be compiled for several different hardware devices. If multiple architectures are specified for a target, then the compiler is called once for each architecture for each source file, and the resulting object code is supposed to be placed into part of the internal directory tree for that architecture. This does not apply in this situation as Mono compiles the C\# into a platform independent form. I suppose if you tried to mix C\# and other languages together it may be needed, but how you would get that to work in beyond what I want to think about right now!
+Architectures seem to come into their own when a source file can be compiled for several different hardware devices. If multiple architectures are specified for a target, then the compiler is called once for each architecture for each source file, and the resulting object code is supposed to be placed into part of the internal directory tree for that architecture. This does not apply in this situation as Mono compiles the C# into a platform independent form. I suppose if you tried to mix C# and other languages together it may be needed, but how you would get that to work in beyond what I want to think about right now!
 
 #### CSharp.xcbuildrules
 
 This definition file links a source file with its compiler:
 
-    ( 
+    (
         {
-            // .NET V2 compatible compiler 
+            // .NET V2 compatible compiler
             // Note: The monoCompilerSpecificationCS.m doesn't actually use this
-            // It uses option values to select the V1/V2 compiler (mcs/gmcs) 
-            Name = "Mono Source rule"; 
-            FileType = sourcecode.csharp; 
+            // It uses option values to select the V1/V2 compiler (mcs/gmcs)
+            Name = "Mono Source rule";
+            FileType = sourcecode.csharp;
             CompilerSpec = com.mono.compilers.csharp.gmcs;
-        }, 
+        },
     )
 
 When Xcode wants to compile a ‘sourcecode.csharp’ file (see the .pbfilespec
@@ -897,55 +897,55 @@ definition), it will use this definition to select the
 
 #### CSharp.pbcompspec
 
-This definition file tells Xcode how to compile C\# source files. The start of it is as follows: {
+This definition file tells Xcode how to compile C# source files. The start of it is as follows: {
 
-       Type = Compiler; 
-       Identifier = com.mono.compilers.csharp.gmcs; 
-       Class = MonoCompilerSpecificationCS; 
-       Name = "Mono gmcs Compiler"; 
+       Type = Compiler;
+       Identifier = com.mono.compilers.csharp.gmcs;
+       Class = MonoCompilerSpecificationCS;
+       Name = "Mono gmcs Compiler";
        Description = "Mono development projects gmcs compiler for C# code";
-       Version = "2.0"; 
-       Vendor = "Mono"; 
-       Languages = (csharp); 
-       Architectures = ( mono, i386, ppc ); 
+       Version = "2.0";
+       Vendor = "Mono";
+       Languages = (csharp);
+       Architectures = ( mono, i386, ppc );
        FileTypes = (sourcecode.csharp);
-       ExecPath = "/usr/bin/gmcs"; 
+       ExecPath = "/usr/bin/gmcs";
        CommandOutputParser = MonoOutputParser;
        SupportsZeroLink = NO;
        SupportsPredictiveCompilation = NO;
-       Options = ( 
+       Options = (
            {
-           Name = OTHER_CSHARPFLAGS; 
+           Name = OTHER_CSHARPFLAGS;
            Type = stringlist;
            DefaultValue = "";
-           CommandLineArgs = { "" = (); 
+           CommandLineArgs = { "" = ();
            "<<otherwise>>" = ("${0}");
            };
-           Category = Building; 
+           Category = Building;
            },
            {
-           // Adds the module to the generated assembly 
-           Name = CS_ADDMODULE; 
+           // Adds the module to the generated assembly
+           Name = CS_ADDMODULE;
            Type = stringlist;
-           DefaultValue = ""; 
+           DefaultValue = "";
            CommandLineArgs = ( "--addmodule:${0}" );
            Category = Building; CommonOption = NO;
            },
-           { 
-           //Set default context to be checked 
-           Name = CS_CHECKED; 
-           Type = bool; 
-           DefaultValue = YES; 
+           {
+           //Set default context to be checked
+           Name = CS_CHECKED;
+           Type = bool;
+           DefaultValue = YES;
            CommandLineArgs = { YES = (); NO = ("-checked-"); };
-           Category = CodeGeneration; 
+           Category = CodeGeneration;
            CommonOption = NO;
            },
-           { 
+           {
            // Sets the code page
-           Name = CS_CODEPAGE; 
-           Type = enum; 
-           AllowedValues = ("", "Latin1", "utf8", "reset"); 
-           DefaultValue = ""; 
+           Name = CS_CODEPAGE;
+           Type = enum;
+           AllowedValues = ("", "Latin1", "utf8", "reset");
+           DefaultValue = "";
            CommandLineArgs = { "" = (); "<>" = ("-codepage:${0}"); };
            Category = Language;
            CommonOption = NO;
@@ -955,7 +955,7 @@ This definition file tells Xcode how to compile C\# source files. The start of i
 
 Most of the items are (I think!) self-explanatory. Two interesting items are ‘Class’ and ‘CommandOutputParser’, both of which refer to Objective-C classes to handle compiling each source file, and to convert the compiler output into the form expected by Xcode to allow navigation in the editor to errors. I discuss these classes later on.
 
-The ‘ExecPath’ item value is not actually used as it is hard-coded into the class, because the class uses the ‘.NET Version’ [CS\_DOTNETVERSION] option value to select the mcs or the gmcs compiler.
+The ‘ExecPath’ item value is not actually used as it is hard-coded into the class, because the class uses the ‘.NET Version’ [CS_DOTNETVERSION] option value to select the mcs or the gmcs compiler.
 
 At this stage, I can’t find enough information about how Xcode handles predictive compiling to use this function. Therefore, the ‘SupportsPredictiveCompilation’ item value is set to “NO”.
 
@@ -984,7 +984,7 @@ This file defines the linker to be used. Xcode locates the linker by calling the
 
     (
         {
-            Identifier = com.mono.compilers.csharp.linker; 
+            Identifier = com.mono.compilers.csharp.linker;
             Class = MonoLinkerSpecificationCS;
             Name = "CSharp Assembly Builder";
             Description = "C# Assembly Builder";
@@ -1004,9 +1004,9 @@ This file defines the linker to be used. Xcode locates the linker by calling the
                     DefaultValue = NO;
                     CommandLineArgs = { YES = ("-debug+"); NO = (); };
                     CommonOption = YES;
-                 }, 
-            ); 
-        } 
+                 },
+            );
+        }
     )
 
 I’m not at all sure if Xcode uses the ‘BinaryFormats’ and ‘InputFileTypes’ in
@@ -1067,7 +1067,7 @@ The method first checks to see if this is the first source file passed to it in 
 
 If the product node already exists, then the source node is added to the (by now) existing command.
 
-As the command is being created, it looks to see the value of the CS\_DOTNETVERSION option and uses this to select between the mcs and gmcs compiler.
+As the command is being created, it looks to see the value of the CS_DOTNETVERSION option and uses this to select between the mcs and gmcs compiler.
 
 #### MonoLinkerSpecificationCS.m/.h
 

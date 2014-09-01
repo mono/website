@@ -19,13 +19,13 @@ The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our [Roadma
 
 The Mono Project is an open development initiative sponsored by Novell to develop an open source, UNIX version of the Microsoft .NET development platform. Its objective is to enable UNIX developers to build and deploy cross-platform .NET Applications. The project implements various technologies developed by Microsoft that have now been submitted to the ECMA for standardization.
 
-The Mono Project has also sparked a lot of interest in developing C\#-based components, libraries and frameworks. The most important ones, some of which were developed by the Mono team, are:
+The Mono Project has also sparked a lot of interest in developing C#-based components, libraries and frameworks. The most important ones, some of which were developed by the Mono team, are:
 
--   [Gtk\#](http://gtk-sharp.sf.net): Bindings for the popular Gtk+ GUI toolkit for UNIX and Windows systems. Other bindings are available: Diacanvas-Sharp and MrProject.
+-   [Gtk#](http://gtk-sharp.sf.net): Bindings for the popular Gtk+ GUI toolkit for UNIX and Windows systems. Other bindings are available: Diacanvas-Sharp and MrProject.
 
 -   [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/): A library to generate and inspect CIL assemblies.
 
--   [\#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
+-   [#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
 
 -   [Tao Framework](/archived/tao "Tao"): bindings for OpenGL
 
@@ -35,7 +35,7 @@ The Mono Project has also sparked a lot of interest in developing C\#-based comp
 
 -   Mono.Cairo: Bindings for the [Cairo](http://www.cairographics.org) rendering engine (Our System.Drawing is implemented on top of this).
 
--   Mono.Posix / Mono.UNIX: Bindings for building POSIX applications using C\#.
+-   Mono.Posix / Mono.UNIX: Bindings for building POSIX applications using C#.
 
 -   Mono.Remoting.Channels.Unix: Unix socket based remoting
 
@@ -67,17 +67,17 @@ Mono contains a number of components useful for building new software:
 
 -   A class library that can work with any language which works on the CLR. Both .NET compatible class libraries as well as Mono-provided class libraries are included.
 
--   A compiler for the C\# language. In the future we might work on other compilers that target the Common Language Runtime.
+-   A compiler for the C# language. In the future we might work on other compilers that target the Common Language Runtime.
 
 Windows has compilers that target the virtual machine from [a number of languages:](http://msdn.microsoft.com/net/thirdparty/default.asp#lang) Managed C++, Java Script, Eiffel, Component Pascal, APL, Cobol, Perl, Python, Scheme, Smalltalk, Standard ML, Haskell, Mercury and Oberon.
 
-The CLR and the Common Type System (CTS) enables applications and libraries to be written in a collection of different languages that target the byte code This means for example that if you define a class to do algebraic manipulation in C\#, that class can be reused from any other language that supports the CLI. You could create a class in C\#, subclass it in C++ and instantiate it in an Eiffel program. A single object system, threading system, class libraries, and garbage collection system can be shared across all these languages.
+The CLR and the Common Type System (CTS) enables applications and libraries to be written in a collection of different languages that target the byte code This means for example that if you define a class to do algebraic manipulation in C#, that class can be reused from any other language that supports the CLI. You could create a class in C#, subclass it in C++ and instantiate it in an Eiffel program. A single object system, threading system, class libraries, and garbage collection system can be shared across all these languages.
 
 **Where can I find the specification for these technologies?**
 
 You can find the information here:
 
-C\# [http://www.ecma-international.org/publications/standards/Ecma-334.htm](http://www.ecma-international.org/publications/standards/Ecma-334.htm)
+C# [http://www.ecma-international.org/publications/standards/Ecma-334.htm](http://www.ecma-international.org/publications/standards/Ecma-334.htm)
 
 CLI [http://www.ecma-international.org/publications/standards/Ecma-335.htm](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
 
@@ -179,7 +179,7 @@ Mono and GNOME
 
 **How is Mono related to GNOME?**
 
-In a number of ways. This project was born out of the need of providing improved tools for the GNOME community, and will use existing components that have been developed for GNOME when they are available. Mono team members work actively on the [Gtk\#](/GtkSharp) project: a binding of the GNOME class libraries for .NET and Mono.
+In a number of ways. This project was born out of the need of providing improved tools for the GNOME community, and will use existing components that have been developed for GNOME when they are available. Mono team members work actively on the [Gtk#](/GtkSharp) project: a binding of the GNOME class libraries for .NET and Mono.
 
 **Has the GNOME Foundation or the GNOME team adopted Mono?**
 
@@ -187,7 +187,7 @@ Mono is too new to be adopted by those groups. We hope that the tools that we wi
 
 **Should GNOME programmers use Mono?**
 
-Yes, we believe that Mono is a great development platform for building applications for the GNOME desktop. Mono includes [Gtk\#](/docs/gui/gtksharp/) a .NET binding for GTK+ and various GNOME libraries which together with C\# and the System libraries provide developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing.
+Yes, we believe that Mono is a great development platform for building applications for the GNOME desktop. Mono includes [Gtk#](/docs/gui/gtksharp/) a .NET binding for GTK+ and various GNOME libraries which together with C# and the System libraries provide developers with great productivity for building graphical applications especially when compared to GTK+ or Java Swing.
 
 **Will Mono include compatibility with Bonobo components? What is the relationship between Mono and Bonobo?**
 
@@ -201,9 +201,9 @@ No, Mono does not depend on GNOME. We use a few packages produced by the GNOME t
 
 Yes, we will enable people to write GNOME applications using Mono.
 
-**Do you have C\# bindings for GNOME?**
+**Do you have C# bindings for GNOME?**
 
-Yes, the [Gtk\# project](/docs/gui/gtksharp/) provides bindings for Gtk+, Gdk, Atk, libgnome, libgnomecanvas, and libgnomeui. Other libraries under the GNOME framework will be added on an as-needed (and as-requested) basis.
+Yes, the [Gtk# project](/docs/gui/gtksharp/) provides bindings for Gtk+, Gdk, Atk, libgnome, libgnomecanvas, and libgnomeui. Other libraries under the GNOME framework will be added on an as-needed (and as-requested) basis.
 
 GUI applications
 ----------------
@@ -214,37 +214,37 @@ See also our [FAQ on Windows Forms](/docs/faq/winforms/) page.
 
 Yes, you will be able to build GUI applications.
 
-Indeed, that was the main driver for the creation of Mono. Today you can use [Gtk\#](/docs/gui/gtksharp/) to develop GUI applications on Windows, Linux and MacOS X.
+Indeed, that was the main driver for the creation of Mono. Today you can use [Gtk#](/docs/gui/gtksharp/) to develop GUI applications on Windows, Linux and MacOS X.
 
 We are also developing a complete [Windows.Forms](/docs/gui/winforms/) implementation.
 
 A list of pros and cons on the various APIs is available in our [Gui Toolkits](/docs/gui/gui-toolkits/) page.
 
-**Will Gtk\# applications run on Windows?**
+**Will Gtk# applications run on Windows?**
 
-Yes, applications compiled using Gtk\# will work out of the box on Windows.
+Yes, applications compiled using Gtk# will work out of the box on Windows.
 
 Note that using the Mozilla and most Gnome libraries is not currently supported and will limit the portability of your application.
 
-**What is the difference between Gtk\# and System.Windows.Forms?**
+**What is the difference between Gtk# and System.Windows.Forms?**
 
-Gtk\# is a set of bindings for the Gtk+ toolkit for C\# (and other CIL-enabled languages), it integrates natively with the Gnome desktop. System.Windows.Forms is an API defined by Microsoft to build GUI applications.
+Gtk# is a set of bindings for the Gtk+ toolkit for C# (and other CIL-enabled languages), it integrates natively with the Gnome desktop. System.Windows.Forms is an API defined by Microsoft to build GUI applications.
 
 For more details see the [Gui Toolkits](/docs/gui/gui-toolkits/) page which presents the pros and cons of using each option.
 
-**Where can I learn more about Gtk\#?**
+**Where can I learn more about Gtk#?**
 
-See the [Gtk\#](/docs/gui/gtksharp/) page for more information about Gtk\# or jump on over to the [Gtk\# Beginners Guide](/docs/gui/gtksharp/beginners-guide/) to get started.
+See the [Gtk#](/docs/gui/gtksharp/) page for more information about Gtk# or jump on over to the [Gtk# Beginners Guide](/docs/gui/gtksharp/beginners-guide/) to get started.
 
-**What can I do with Gtk\#?**
+**What can I do with Gtk#?**
 
-Gtk\# is becoming very usable and you can create applications and applets like those you see in a GNOME desktop environment. It's easy to install so it's worth a try.
+Gtk# is becoming very usable and you can create applications and applets like those you see in a GNOME desktop environment. It's easy to install so it's worth a try.
 
-**How can I compile my HelloWorld.cs which uses Gtk\#?**
+**How can I compile my HelloWorld.cs which uses Gtk#?**
 
 Try: mcs -pkg:gtk-sharp-2.0 HelloWorld.cs
 
-See [Gtk\# Beginners Guide](/docs/gui/gtksharp/beginners-guide/) for more details.
+See [Gtk# Beginners Guide](/docs/gui/gtksharp/beginners-guide/) for more details.
 
 **Do you have a comparison chart about the various toolkit offerings?**
 
@@ -284,11 +284,11 @@ In September 2007 an agreement between Microsoft and Novell opened the doors to 
 
 Silverlight 2.0 contains a subset of the virtual execution engine, and a subset of the class libraries that are designed to write rich web applications.
 
-Microsoft is interested in other implementations of .NET and are willing to help make the ECMA spec more accurate for this purpose. Novell participates in the ECMA committee meetings for C\# and the CLI.
+Microsoft is interested in other implementations of .NET and are willing to help make the ECMA spec more accurate for this purpose. Novell participates in the ECMA committee meetings for C# and the CLI.
 
  **Do you fear that Microsoft will change the spec and render Mono useless?**
 
-No. Microsoft proved with the CLI and the C\# language that it was possible to create a powerful foundation for many languages to inter-operate. We will always have that.
+No. Microsoft proved with the CLI and the C# language that it was possible to create a powerful foundation for many languages to inter-operate. We will always have that.
 
 Even if changes happened in the platform which were undocumented, the existing platform would have value on its own.
 

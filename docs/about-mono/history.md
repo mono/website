@@ -20,17 +20,17 @@ Milestones
 
 -   June 30: the Mono project is announced.
 
--   Aug 21: a remote compilation service is setup so that people who are contributing to Mono can submit their code over a web page and compile the code with the Microsoft C\# compiler.
+-   Aug 21: a remote compilation service is setup so that people who are contributing to Mono can submit their code over a web page and compile the code with the Microsoft C# compiler.
 
 -   Aug 28: the Mono runtime runs "Hello World" for the first time. Hello World consists of 1821 CIL instructions, performs 66 subroutine calls and loads 12 classes from the corlib.dll
 
 -   Sep 4: the monoburg tree pattern matching instruction selector is checked into CVS, this is the beginning of the Mono native code generator engine.
 
--   Sep 5: Mono's C\# compiler which is written in C\# compiles its first program: "Hello world" on Windows using the .NET runtime. The resulting executable runs on Linux as well with the runtime from August 28th.
+-   Sep 5: Mono's C# compiler which is written in C# compiles its first program: "Hello world" on Windows using the .NET runtime. The resulting executable runs on Linux as well with the runtime from August 28th.
 
 -   Sep 10: Dietmar Maurer checks the x86 code generation rules for monoburg.
 
--   Sep 17: the first version of Gtk\# is checked into Mono's CVS repository.
+-   Sep 17: the first version of Gtk# is checked into Mono's CVS repository.
 
 -   Sep 18: Mono 0.7 is released ([release notes](http://www.go-mono.com/archive/mono-0.7)).
 
@@ -42,20 +42,20 @@ Milestones
 
 -   Oct 5th: Sergey publishes his IL assembler.
 
--   Nov 4th: Mike posts an [update on Gtk\#](http://lists.ximian.com/archives/public/gtk-sharp-list/2001-November/000017.html)
+-   Nov 4th: Mike posts an [update on Gtk#](http://lists.ximian.com/archives/public/gtk-sharp-list/2001-November/000017.html)
 
--   Nov 14th: Paolo Molaro checks in the code that makes the C\# compiler run and compile "Hello world" on Linux for the first time.
+-   Nov 14th: Paolo Molaro checks in the code that makes the C# compiler run and compile "Hello world" on Linux for the first time.
 
 -   Nov 30th: Dietmar gets the JIT in good shape: All the tests that we had with the Mono interpreter now pass and execute with the Mono JIT engine.
 
--   Dec 11st: the JIT engine is able to host the Mono C\# compiler and run all of its regression tests.
+-   Dec 11st: the JIT engine is able to host the Mono C# compiler and run all of its regression tests.
 
--   Dec 28th: The Mono C\# compiler compiles itself, but the code generated is not correct yet.
+-   Dec 28th: The Mono C# compiler compiles itself, but the code generated is not correct yet.
 
 2002
 ----
 
--   Jan 3: Mono's C\# compiler can bootstrap itself using the .NET runtime. The next stage is to get it bootstrapping with the Mono runtime.
+-   Jan 3: Mono's C# compiler can bootstrap itself using the .NET runtime. The next stage is to get it bootstrapping with the Mono runtime.
 
 -   Jan 4: Mono gains Unicode support.
 
@@ -75,15 +75,13 @@ Milestones
 
 -   Feb 25: Sergey's StrongARM port of Mono's interpreter is checked in.
 
--   Mar 7: First time the Mono's C\# compiler compiles on Linux.
+-   Mar 7: First time the Mono's C# compiler compiles on Linux.
 
--   Mar 12: Paolo managed to make Mono's C\# compiler self-hosting on Linux.
+-   Mar 12: Paolo managed to make Mono's C# compiler self-hosting on Linux.
 
 -   June 25: Piers Haken contributes the initial XPath implementation to Mono and Dick Porter contributes the Process class and its related infrastructure to Mono.
 
--   June 30: The Mono C\# compiler is able to build mscorlib, the last piece to achieve self-hosting of the Mono runtime.
-
--   
+-   June 30: The Mono C# compiler is able to build mscorlib, the last piece to achieve self-hosting of the Mono runtime.
 
 2004
 ----

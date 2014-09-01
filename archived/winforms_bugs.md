@@ -82,7 +82,7 @@ Working with Bugzilla
 
 This value goes into the "Business Priority" field in Bugzilla.
 
-The composite values are available in the "NTS Support\#" field, like this: [5, 4, 5].
+The composite values are available in the "NTS Support#" field, like this: [5, 4, 5].
 
 You can then choose "Change Columns" at the bottom of the Bugzilla list to add the Business Priority column and sort by it.
 

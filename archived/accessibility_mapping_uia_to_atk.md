@@ -53,7 +53,7 @@ Almost finished
 
 [IInvokeProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iinvokeprovider.aspx) [IToggleProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itoggleprovider.aspx)
 
-ATK\_ROLE\_PUSH\_BUTTON
+ATK_ROLE_PUSH_BUTTON
 
 Work is still needed with states and updating FramingRect from UIA.
 
@@ -63,7 +63,7 @@ Not Started
 
 [IGridProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.igridprovider.aspx) [IScrollProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iscrollprovider.aspx) [ISelectionProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iselectionprovider.aspx) [ITableProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itableprovider.aspx) [IValueProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.ivalueprovider.aspx)
 
-ATK\_ROLE\_CALENDAR
+ATK_ROLE_CALENDAR
 
 [CheckBox](http://msdn.microsoft.com/en-us/library/ms751693.aspx)
 
@@ -71,19 +71,19 @@ Done (Andres)
 
 [IToggleProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itoggleprovider.aspx)
 
-ATK\_ROLE\_CHECK\_BOX
+ATK_ROLE_CHECK_BOX
 
 [ComboBox](http://msdn.microsoft.com/en-us/library/ms752305.aspx)
 
 Almost done (Andres)
 
-ATK\_ROLE\_COMBO\_BOX
+ATK_ROLE_COMBO_BOX
 
 [DataGrid](http://msdn.microsoft.com/en-us/library/ms752044.aspx)
 
 Not Started
 
-ATK\_ROLE\_TABLE
+ATK_ROLE_TABLE
 
 [DataItem](http://msdn.microsoft.com/en-us/library/ms742561.aspx)
 
@@ -93,13 +93,13 @@ Not Started
 
 Not Started
 
-ATK\_ROLE\_DOCUMENT\_FRAME
+ATK_ROLE_DOCUMENT_FRAME
 
 [Edit](http://msdn.microsoft.com/en-us/library/ms748367.aspx)
 
 In progress (Andres)
 
-ATK\_ROLE\_ENTRY
+ATK_ROLE_ENTRY
 
 [Group](http://msdn.microsoft.com/en-us/library/ms742689.aspx)
 
@@ -108,7 +108,7 @@ In Progress
 
 [IExpandCollapseProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.iexpandcollapseprovider.aspx)
 
-ATK\_ROLE\_PANEL
+ATK_ROLE_PANEL
 
 [Header](http://msdn.microsoft.com/en-us/library/ms753110.aspx)
 
@@ -118,38 +118,38 @@ Not Started
 
 Not Started
 
-ATK\_ROLE\_TABLE\_COLUMN\_HEADER ATK\_ROLE\_TABLE\_ROW\_HEADER
+ATK_ROLE_TABLE_COLUMN_HEADER ATK_ROLE_TABLE_ROW_HEADER
 
 [Hyperlink](http://msdn.microsoft.com/en-us/library/ms742530.aspx)
 
 Not Started
 
-ATK\_ROLE\_LINK
+ATK_ROLE_LINK
 
 [Image](http://msdn.microsoft.com/en-us/library/ms746603.aspx)
 
 Not Started
 
-ATK\_ROLE\_IMAGE
+ATK_ROLE_IMAGE
 
 [List](http://msdn.microsoft.com/en-us/library/ms742462.aspx)
 
 In Progress
 (Calvin)
 
-ATK\_ROLE\_LIST
+ATK_ROLE_LIST
 
 [ListItem](http://msdn.microsoft.com/en-us/library/ms744765.aspx)
 
 Done (Mike)
 
-ATK\_ROLE\_LIST\_ITEM
+ATK_ROLE_LIST_ITEM
 
 [Menu](http://msdn.microsoft.com/en-us/library/ms741841.aspx)
 
 In progress (Andres)
 
-ATK\_ROLE\_MENU
+ATK_ROLE_MENU
 
 We lack the provider yet
 
@@ -157,13 +157,13 @@ We lack the provider yet
 
 Not Started
 
-ATK\_ROLE\_MENU\_BAR
+ATK_ROLE_MENU_BAR
 
 [MenuItem](http://msdn.microsoft.com/en-us/library/ms746680.aspx)
 
 Not Started
 
-ATK\_ROLE\_MENU\_ITEM
+ATK_ROLE_MENU_ITEM
 
 [Pane](http://msdn.microsoft.com/en-us/library/ms749129.aspx)
 
@@ -172,7 +172,7 @@ In Progress
 
 [ITransformProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.itransformprovider.aspx) [IDockProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.idockprovider.aspx)
 
-ATK\_ROLE\_PANEL
+ATK_ROLE_PANEL
 
 Work is still needed with states and updating FramingRect from UIA.
 
@@ -180,13 +180,13 @@ Work is still needed with states and updating FramingRect from UIA.
 
 Not Started
 
-ATK\_ROLE\_PROGRESS\_BAR
+ATK_ROLE_PROGRESS_BAR
 
 [RadioButton](http://msdn.microsoft.com/en-us/library/ms750484.aspx)
 
 Done (Andres)
 
-ATK\_ROLE\_RADIO\_BUTTON
+ATK_ROLE_RADIO_BUTTON
 
 [ScrollBar](http://msdn.microsoft.com/en-us/library/ms743712.aspx)
 
@@ -195,25 +195,25 @@ In Progress
 
 [IRangeValueProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.irangevalueprovider.aspx)
 
-ATK\_ROLE\_SCROLL\_BAR
+ATK_ROLE_SCROLL_BAR
 
 [Separator](http://msdn.microsoft.com/en-us/library/ms750550.aspx)
 
 Not Started
 
-ATK\_ROLE\_SEPARATOR
+ATK_ROLE_SEPARATOR
 
 [Slider](http://msdn.microsoft.com/en-us/library/ms742106.aspx)
 
 Not Started
 
-ATK\_ROLE\_SLIDER
+ATK_ROLE_SLIDER
 
 [Spinner](http://msdn.microsoft.com/en-us/library/ms744847.aspx)
 
 Not Started
 
-ATK\_ROLE\_DIAL
+ATK_ROLE_DIAL
 
 [SplitButton](http://msdn.microsoft.com/en-us/library/ms742545.aspx)
 
@@ -225,31 +225,31 @@ Done (Mike)
 
 [IGridProvider](http://msdn.microsoft.com/en-us/library/system.windows.automation.provider.igridprovider.aspx)
 
-ATK\_ROLE\_STATUSBAR
+ATK_ROLE_STATUSBAR
 
 [Tab](http://msdn.microsoft.com/en-us/library/ms754207.aspx)
 
 Not Started
 
-ATK\_ROLE\_PAGE\_TAB\_LIST
+ATK_ROLE_PAGE_TAB_LIST
 
 [TabItem](http://msdn.microsoft.com/en-us/library/ms751611.aspx)
 
 Not Started
 
-ATK\_ROLE\_PAGE\_TAB
+ATK_ROLE_PAGE_TAB
 
 [Table](http://msdn.microsoft.com/en-us/library/ms750608.aspx)
 
 Not Started
 
-ATK\_ROLE\_TABLE
+ATK_ROLE_TABLE
 
 [Text](http://msdn.microsoft.com/en-us/library/ms752073.aspx)
 
 Not Started
 
-ATK\_ROLE\_TEXT
+ATK_ROLE_TEXT
 
 [Thumb](http://msdn.microsoft.com/en-us/library/ms742539.aspx)
 
@@ -259,37 +259,37 @@ Not Started
 
 Not Started
 
-ATK\_ROLE\_CAPTION
+ATK_ROLE_CAPTION
 
 [ToolBar](http://msdn.microsoft.com/en-us/library/ms750425.aspx)
 
 Not Started
 
-ATK\_ROLE\_TOOL\_BAR
+ATK_ROLE_TOOL_BAR
 
 [ToolTip](http://msdn.microsoft.com/en-us/library/ms752335.aspx)
 
 Not Started
 
-ATK\_ROLE\_TOOL\_TIP
+ATK_ROLE_TOOL_TIP
 
 [Tree](http://msdn.microsoft.com/en-us/library/ms743706.aspx)
 
 Not Started
 
-ATK\_ROLE\_TREE
+ATK_ROLE_TREE
 
 [TreeItem](http://msdn.microsoft.com/en-us/library/ms743384.aspx)
 
 Not Started
 
-ATK\_ROLE\_TREE\_TABLE
+ATK_ROLE_TREE_TABLE
 
 [Window](http://msdn.microsoft.com/en-us/library/ms746673.aspx)
 
 In Progress
 
-ATK\_ROLE\_WINDOW
+ATK_ROLE_WINDOW
 
 ### UIA Provider Interfaces
 

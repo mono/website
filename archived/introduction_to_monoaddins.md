@@ -57,7 +57,7 @@ Finally, Mono.Addins provides an **API** (implemented in Mono.Addins.dll) which 
 
 -   **Mono.Addins.dll**: implements the add-in engine.
 -   **Mono.Addins.Setup.dll**: provides classes for managing add-in repositories. Needed only if applications want to offer add-in management options to users.
--   **Mono.Addins.Gui.dll**: GTK\# frontend for Mono.Addins.Setup.
+-   **Mono.Addins.Gui.dll**: GTK# frontend for Mono.Addins.Setup.
 
 In order to clarify all those concepts, let's see a very simple example of an application based on Mono.Addins.
 
@@ -122,7 +122,7 @@ public class Application
         AddinManager.Initialize ();
  
         // Detect changes in add-ins
-        AddinManager.Registry.Update (null); 
+        AddinManager.Registry.Update (null);
  
         foreach (ICommand cmd in AddinManager.GetExtensionObjects (typeof(ICommand)))
             cmd.Run ();
@@ -183,7 +183,7 @@ And this could be the manifest for the add-in:
  
     <Extension path = "/TextEditor/TypeExtensions/ICommand">
         <Type type="HelloWorldExtension" />
-    </Extension> 
+    </Extension>
 </Addin>
 ```
 
@@ -282,7 +282,7 @@ namespace TextEditor
         public virtual string GetContent ()
         {
             using (StreamReader sr = new StreamReader(Addin.GetResource (resource))) {
-                return sr.ReadToEnd (); 
+                return sr.ReadToEnd ();
             }
         }
     }

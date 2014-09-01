@@ -393,7 +393,7 @@ Rate of Assemblies
 
 Rate of counts per second, 32bit
 
-Total \# of Load Failures
+Total # of Load Failures
 
 Number of items, 32bit
 
@@ -422,7 +422,7 @@ Type
 
 Description
 
-Total \# of Contentions
+Total # of Contentions
 
 Number of items, 32bit
 

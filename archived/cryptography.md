@@ -49,7 +49,7 @@ Namespace: **System.Security.Cryptography**
 
 -   X.509 certificates are parsed using 100% managed code (using the [Mono.Security.ASN1](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMono.Security.ASN1) class).
 -   Software Publisher Certificates (SPC) used by Authenticode(tm) to sign assemblies are supported and **minimally** validated.
--   Unit tests are generated from a set of existing certificates (about a dozen) each having different properties. Another set of certificates (more than 700) are used for a more complete test (but isn't part of the standard test suite for size and time consideration, i.e. a 7.5Mb C\# source file).
+-   Unit tests are generated from a set of existing certificates (about a dozen) each having different properties. Another set of certificates (more than 700) are used for a more complete test (but isn't part of the standard test suite for size and time consideration, i.e. a 7.5Mb C# source file).
 
  **Notes**
 
@@ -152,7 +152,7 @@ Namespace: **Mono.Security.Protocol.\***
 Namespace: **Mono.Security.X509.\***
 
 -   X.509 structures (certificate, CRL...) building and decoding.
--   PKCS\#12 decoding and encoding.
+-   PKCS#12 decoding and encoding.
 -   X.509 extensions (from public X.509 to private PKIX, Netscape, Microsoft, Entrust...).
 
  **Status**
@@ -222,18 +222,18 @@ There are many tools in the .NET framework that indirectly interacts with some c
 
 The following tools are complete (or mostly complete):
 
--   `secutil` is a tool to extract certificates and strongnames from assemblies in a format that can be easily re-used in source code (C\# or VB.NET syntax).
--   `cert2spc` is a tool to transform multiple X.509 certificates and CRLs into a Software Publisher Certificate (SPC) file - which is a long name for a simple PKCS\#7 file.
+-   `secutil` is a tool to extract certificates and strongnames from assemblies in a format that can be easily re-used in source code (C# or VB.NET syntax).
+-   `cert2spc` is a tool to transform multiple X.509 certificates and CRLs into a Software Publisher Certificate (SPC) file - which is a long name for a simple PKCS#7 file.
 -   `makecert` to create X.509 test certificates that can be used (once transformed in SPC) to sign assemblies. It's now possible to generate SSL certificates for web servers.
 -   `sn` is a tool to manage strongnames. Current version can create, convert, sign and verify strongnames signatures. Some configuration options are still missing, some will only work with Mono.
 -   `signcode` and `chktrust` for signing and validating Authenticode(tm) signatures on assemblies (or any PE file) are now working (signature and timestamps) but some options aren't yet supported.
 -   `setreg` can change some cryptographic parameters of the runtime. Currently it can add or remove two root test certificates (the one used by Mono's `makecert`, the other used by Microsoft's `makecert`).
 -   `certmgr` can add and remove certificates from the stores. Most common use is to add new trusted certificates or remove them.
--   `gasnview` is a Gtk\# based ASN.1 viewer. It is available in the [mono-tools SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono-tools/asn1view/) repository.
+-   `gasnview` is a Gtk# based ASN.1 viewer. It is available in the [mono-tools SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono-tools/asn1view/) repository.
 
 Somewhat usable, somewhat incomplete:
 
--   `certview` is a certificate viewer for `System.Windows.Forms` (right now only working on Windows), while `gcertview` is the same viewer implemented for Gtk\# (working on both Windows and Linux).
+-   `certview` is a certificate viewer for `System.Windows.Forms` (right now only working on Windows), while `gcertview` is the same viewer implemented for Gtk# (working on both Windows and Linux).
 
 -   Other tools like a, GUI-based, certificate manager...
 

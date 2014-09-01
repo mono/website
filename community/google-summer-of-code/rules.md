@@ -13,8 +13,8 @@ Ground Rules
 
 -   GCC extensions in C
 -   Mono VM extensions in C
--   Tools extensions in C\#
--   APIs in C\#
+-   Tools extensions in C#
+-   APIs in C#
 -   etc.
 
 **Licensing:** All of the code submitted must be contributed under the terms of the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -52,7 +52,7 @@ Your proposal should be submitted in the [Google Summer of Code](https://www.goo
 Contacting the Mono Team
 ------------------------
 
-If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "\#monosoc", "\#monodev" or the "\#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
+If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
 
 The mailing lists are a very important communication channel, students should use them to get more information and feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
 

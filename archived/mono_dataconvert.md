@@ -170,7 +170,7 @@ Pack and Unpack
 
 The DataConvert class offers two helper methods that can be used to reduce the number of code written when dealing with binary data structures. These methods are inspired by Perl's pack and unpack functions.
 
-The C\# prototypes are:
+The C# prototypes are:
 
 ``` csharp
 static public byte [] Pack (string description, params object [] args);
@@ -200,7 +200,7 @@ Pack Instruction Specification
 |Character|Description|
 |:--------|:----------|
 |\^|Switch to big endian encoding|
-|\_|Switch to little endian encoding|
+|_|Switch to little endian encoding|
 |%|Switch to host (native) encoding|
 |!|aligns the next data type to its natural boundary, for example for a double that would be 8 bytes, for a 32-bit int, that would be 4 bytes. For strings this is set to 4.|
 |N|a number between 1 and 9, indicates a repeat count (process N items with the following datatype|
@@ -284,7 +284,7 @@ IList l = DataConverter.Unpack ("_issbbbbbbbb", guid, 0);
 Static Methods
 ==============
 
-**Note:** the static methods are not included by default, if you want to use them you must enable their compilation by defining the MONO\_DATACONVERT\_STATIC\_METHODS define.
+**Note:** the static methods are not included by default, if you want to use them you must enable their compilation by defining the MONO_DATACONVERT_STATIC_METHODS define.
 
 The methods to convert from arrays of bytes into native types take the following naming convention: **Type**From**Source**. Where **Type** is one of Double, Float, Int64, UInt64, Int32, UInt32, Int32, UInt32, Int16, UInt16 and **Source** is one of BE, LE or Memory.
 
@@ -364,13 +364,13 @@ Obtaining Mono.DataConvert
 
 We encourage developers to use Mono.DataConvert in their applications by copying the source code file into their application.
 
-The Mono.DataConvert class by default is internal, but you can change this by defining the DATACONVERTER\_PUBLIC define when compiling the source code. Also, the static methods are not included by default.
+The Mono.DataConvert class by default is internal, but you can change this by defining the DATACONVERTER_PUBLIC define when compiling the source code. Also, the static methods are not included by default.
 
 **Compilation Options**:
 
-**MONO\_DATACONVERTER\_PUBLIC**: if set, the class is made public instead of the default setting which is internal.
+**MONO_DATACONVERTER_PUBLIC**: if set, the class is made public instead of the default setting which is internal.
 
-**MONO\_DATACONVERTER\_STATIC\_METHODS**: if set, this includes the static methods in the build. By default they are not included.
+**MONO_DATACONVERTER_STATIC_METHODS**: if set, this includes the static methods in the build. By default they are not included.
 
 At this point we do not have plans of shipping an independent assembly.
 

@@ -4,9 +4,9 @@ redirect_from:
   - /ECMA/
 ---
 
-In June 2005, the General Assembly of the international standardization organization Ecma approved edition 3 of the Common Language Infrastructure (CLI) and C\# specifications, as updated Ecma-334 and Ecma-335, respectively ([see press release](http://www.ecma-international.org/news/PressReleases/PR_TC39_CSharp_CLI.htm)). The updated technical report on the CLI, Ecma TR-84, and a new technical report on the CLI, Ecma TR-89, were also ratified.
+In June 2005, the General Assembly of the international standardization organization Ecma approved edition 3 of the Common Language Infrastructure (CLI) and C# specifications, as updated Ecma-334 and Ecma-335, respectively ([see press release](http://www.ecma-international.org/news/PressReleases/PR_TC39_CSharp_CLI.htm)). The updated technical report on the CLI, Ecma TR-84, and a new technical report on the CLI, Ecma TR-89, were also ratified.
 
-In July 2005, Ecma submitted the Standards and TRs to ISO/IEC JTC 1 via the ISO Fast-Track process. The Standards were adopted in April 2006 as ISO/IEC 23270:2006 (C\#), ISO/IEC 23270:2006 (CLI), ISO/IEC TR 23272:2006 (CLI, XML Libraries) and ISO ISO/IEC TR 25438:2006 (CLI, Common Generics).
+In July 2005, Ecma submitted the Standards and TRs to ISO/IEC JTC 1 via the ISO Fast-Track process. The Standards were adopted in April 2006 as ISO/IEC 23270:2006 (C#), ISO/IEC 23270:2006 (CLI), ISO/IEC TR 23272:2006 (CLI, XML Libraries) and ISO ISO/IEC TR 25438:2006 (CLI, Common Generics).
 
 In July 2006 the General Assembly of Ecma approved edition 4 of the Standards which correspond to the ISO 2006 versions.
 
@@ -18,9 +18,9 @@ If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit 
 Latest Standards
 ================
 
-The following official Ecma documents are available for [C\#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm), [TR-89](http://www.ecma-international.org/publications/techreports/E-TR-089.htm)).
+The following official Ecma documents are available for [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm), [TR-89](http://www.ecma-international.org/publications/techreports/E-TR-089.htm)).
 
--   [Ecma-334](http://www.go-mono.com/ecma/Ecma-334.pdf): C\# Specification (pdf)
+-   [Ecma-334](http://www.go-mono.com/ecma/Ecma-334.pdf): C# Specification (pdf)
 -   [Ecma-335](http://www.go-mono.com/ecma/Ecma-335.pdf): CLI Specification – Virtual Machine (pdf)
 -   [Ecma-335](http://www.go-mono.com/ecma/Ecma-335-xml.zip): CLI Specification – XML-based class library (zip)
 -   [TR-84](http://www.go-mono.com/ecma/TR-084.zip): CLI Technical Report – Microsoft© Word and PDF class library specification (zip)
@@ -68,7 +68,7 @@ Annotated Standards
 Members of the Standard committees and others have combined to produce annotated versions of the Standards. These are:
 
 -   The Common Language Infrastruture Annotated Standard, James S. Miller & Susann Ragsdale, Addison-Wesley, 2004, ISBN 0-321-15493-2 (based on Edition 2 of Ecma-335)
--   C\# Annotated Standard, Jon Jagger, Nigel Perry & Peter Sestoft, Morgan Kaufmann, 2007, ISBN 978-0-12-372511-0 (based on Edition 4 of Ecma-334)
+-   C# Annotated Standard, Jon Jagger, Nigel Perry & Peter Sestoft, Morgan Kaufmann, 2007, ISBN 978-0-12-372511-0 (based on Edition 4 of Ecma-334)
 
 The Ecma 4th and ISO 2nd Editions
 =================================
@@ -83,7 +83,7 @@ CLI
 -   Enhancements to the Common Intermediate Language (CIL) and Common Language Specification (CLS)
 -   An interchangeable debug format
 
-C\#
+C#
 ---
 
 -   First-class language support for generics
@@ -94,13 +94,13 @@ C\#
 Previous Editions Background
 ============================
 
-In August, 2000, Microsoft Corporation, Hewlett-Packard and Intel Corporation co-sponsored the submission of specifications for the Common Language Infrastructure (CLI) and C\# programming language to the international standardization organization Ecma. As a result, Ecma formed two task groups (TG3 and TG2, respectively) within TC39, its technical committee responsible for programming languages and application development.
+In August, 2000, Microsoft Corporation, Hewlett-Packard and Intel Corporation co-sponsored the submission of specifications for the Common Language Infrastructure (CLI) and C# programming language to the international standardization organization Ecma. As a result, Ecma formed two task groups (TG3 and TG2, respectively) within TC39, its technical committee responsible for programming languages and application development.
 
-During the next year, the co-sponsor companies, in conjunction with other Ecma members and guests (including IBM, Fujitsu Software, Plum Hall, Monash University and ISE), refined these specifications into standards. In December, 2001, the Ecma General Assembly ratified the 1st edition of the C\# and CLI standards as Ecma-334 and Ecma-335, respectively. A technical report on the CLI, Ecma TR-84, was also ratified.
+During the next year, the co-sponsor companies, in conjunction with other Ecma members and guests (including IBM, Fujitsu Software, Plum Hall, Monash University and ISE), refined these specifications into standards. In December, 2001, the Ecma General Assembly ratified the 1st edition of the C# and CLI standards as Ecma-334 and Ecma-335, respectively. A technical report on the CLI, Ecma TR-84, was also ratified.
 
 In late December, 2001, Ecma submitted the standards and TR to ISO/IEC JTC 1 via the latter's Fast-Track process. The subsequent 6-month evaluation and comment period resulted in two NO votes (Japan and UK) on the draft standards, and one NO vote (Japan) on the draft TR. All comments resulting from this review were considered at a ballot resolution meeting held in October, 2002. The two NO votes on the standards were resolved, making acceptance unanimous. However, Japan did not change its NO vote on the draft TR (Japan would like to see a formatted/readable rendering of the CLI class library as part of the standard, not as a TR; this will be considered for a future edition).
 
-The ISO/IEC standards and TR were published in April, 2003, and are known formally as ISO/IEC 23270 (C\#), ISO/IEC 23271 (CLI) and ISO/IEC 23272 (CLI TR). Equivalent specifications were adopted as 2nd edition standards and TR by Ecma at its December, 2002, General Assembly.
+The ISO/IEC standards and TR were published in April, 2003, and are known formally as ISO/IEC 23270 (C#), ISO/IEC 23271 (CLI) and ISO/IEC 23272 (CLI TR). Equivalent specifications were adopted as 2nd edition standards and TR by Ecma at its December, 2002, General Assembly.
 
 Joining Ecma
 ============

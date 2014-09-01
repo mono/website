@@ -101,7 +101,7 @@ XPathNodeIterator and Selection methods
 
 When we handle XPath "node-set", we use XPathNodeIterator class. The design of this class is simple; Once you get an XPathNodeIterator, firstly you will have to call MoveNext() to iterate the next node, and use Current property (of type XPathNavigator) that points to the iterated nodes. MoveNext() returns false if there is no more matched nodes.
 
-    XPathNavigator nav = 
+    XPathNavigator nav =
         new XPathDocument ("my_document.xml").CreateNavigator ();
     XPathNodeIterator links = nav.Select ("//a[@href]");
     while (links.MoveNext ()) {

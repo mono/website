@@ -130,7 +130,7 @@ lib/monodoc/*
 lib/pkgconfig
 lib/xsp/test
 lib/xsp/unittests
-lib/*a 
+lib/*a
 lib/mono/2.1
 lib/mono/monodoc
 ```

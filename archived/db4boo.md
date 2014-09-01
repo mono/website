@@ -54,7 +54,7 @@ A very simple demo of Boo I like to give is the following:
 <!-- -->
 
 ``` csharp
-import Gtk from "gtk-sharp"                                                        // (a)       
+import Gtk from "gtk-sharp"                                                        // (a)
  
 myWindow = Window ("Mono")                                                         // (b)
 myWindow.Show()                                                                    // (c)
@@ -114,8 +114,8 @@ Pilot class
  
         public def ToString():
  
-            /* I could be using 
-               return _name + "/" + _points 
+            /* I could be using
+               return _name + "/" + _points
                but latexer mentionned that boo's string interpolation is best : */
             return "${_name}/${_points}"
 ```

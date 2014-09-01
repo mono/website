@@ -44,7 +44,7 @@ Internationalization
 Introduction
 ============
 
-Using Mono.Unix is the recommended way to work with gettext on Mono to provide translations of your application's strings. An alternative exist with [Gettext\#](/I18nGettext "I18nGettext") but is no longer a recommended path.
+Using Mono.Unix is the recommended way to work with gettext on Mono to provide translations of your application's strings. An alternative exist with [Gettext#](/I18nGettext "I18nGettext") but is no longer a recommended path.
 
 Requirements
 ============
@@ -52,10 +52,10 @@ Requirements
 For running the samples you need the following:
 
 -   mono (\>= 1.0) for translating console-based applications.
--   Gtk\# (\>= 1.0) for translating window-based applications.
+-   Gtk# (\>= 1.0) for translating window-based applications.
 -   [Glade](http://glade.gnome.org/) or [Stetic](http://mysterion.org/~danw/blog/2005/03/stetic). for creating the GUI, not really needed but very useful
 
-All the examples were tested using mono 1.1.9, Gtk\# 1.9.3.
+All the examples were tested using mono 1.1.9, Gtk# 1.9.3.
 
 Using Mono.Unix
 ===============
@@ -129,7 +129,7 @@ As you can see, the Catalog object will provide us with translations for: "My na
 
 Lets compile our example.
 
-    $ mcs -r Mono.Posix i18n.cs
+    mcs -r Mono.Posix i18n.cs
 
 and run it:
 
@@ -139,7 +139,7 @@ and run it:
 
 You'll see that the output is untranslated. Why? Because we haven't translated the string, we marked it as translatable, now we need to translate it. For doing that we need to *get* the strings from our source code using **xgettext**:
 
-    $ xgettext -a --from-code=UTF-8 i18n.cs -o es.po
+    xgettext -a --from-code=UTF-8 i18n.cs -o es.po
 
 Using the **--from-code=UTF-8** parameter sets the source file format, and *es.po* is the file which contain all the strings to translate. We will translate this sample from English to Spanish. The command used above creates a file called es.po, and its content is something like the following:
 
@@ -197,8 +197,8 @@ If you look at the following lines:
 You will notice three important sections:
 
 -   *source file and line number*: file name and location where the translatable string exists.
--   *translatable string* (**msgid** or **msgid\_plural**): the string to be translated. This must not be changed.
--   *translated string*: empty by default, represents the new string which will be showed when running the translation. For plural strings the **msgstr[0]** is associated with **msgid**, while **msgstr[1]** is associated with **msgid\_plural**.
+-   *translatable string* (**msgid** or **msgid_plural**): the string to be translated. This must not be changed.
+-   *translated string*: empty by default, represents the new string which will be showed when running the translation. For plural strings the **msgstr[0]** is associated with **msgid**, while **msgstr[1]** is associated with **msgid_plural**.
 
 After translation, the file might look something like this:
 
@@ -234,24 +234,24 @@ After translation, the file might look something like this:
 
 Now we need to create the catalog; let's use the following commands to create it
 
-    $ mkdir -p locale/es/LC_MESSAGES/
-    $ msgfmt es.po -o locale/es/LC_MESSAGES/i18n.mo
+    mkdir -p locale/es/LC_MESSAGES/
+    msgfmt es.po -o locale/es/LC_MESSAGES/i18n.mo
 
-The **mkdir** command creates the directory where the message catalog will reside. The **msgfmt** command must be in sync with the [http:/monodoc/M:Mono.Unix.Catalog.Init Catalog.Init()] call within your program. The **bindtextdomain**(3) function, which Catalog wraps, requires that message catalogs be located at *localedir/locale/category/domainname.mo*. *domainname* is the first parameter to Catalog.Init(), while *localedir* is the second parameter. *locale* is the language you're providing a translation for, in this case **es**. In general *category* will always be **LC\_MESSAGES**.
+The **mkdir** command creates the directory where the message catalog will reside. The **msgfmt** command must be in sync with the [http:/monodoc/M:Mono.Unix.Catalog.Init Catalog.Init()] call within your program. The **bindtextdomain**(3) function, which Catalog wraps, requires that message catalogs be located at *localedir/locale/category/domainname.mo*. *domainname* is the first parameter to Catalog.Init(), while *localedir* is the second parameter. *locale* is the language you're providing a translation for, in this case **es**. In general *category* will always be **LC_MESSAGES**.
 
 Now that we have a message catalog for the Spanish language, let's try again:
 
-    $ LANGUAGE=es mono i18n.exe
+    LANGUAGE=es mono i18n.exe
 
 The output will be:
 
     Mi nombre es Enzo
     Soy 20 años de viejo
 
-Using Mono.Unix with Glade\# applications
+Using Mono.Unix with Glade# applications
 =========================================
 
-Starting with this Glade\# application
+Starting with this Glade# application
 
 [![Default language](/archived/images/0/0a/I18n_en.png)](/archived/images/0/0a/I18n_en.png "Default language")
 
@@ -374,7 +374,7 @@ we will translate it to this
 
 using the [Gettext](http://www.gnu.org/software/gettext/) package.
 
-The following C\# code is used for running the Glade\# application, using the glade resource:
+The following C# code is used for running the Glade# application, using the glade resource:
 
 ``` csharp
 #File: Gui.cs
@@ -399,7 +399,7 @@ public class gui
         glade.Autoconnect (this);
     }
  
-    private void OnWindowDeleteEvent (object o, DeleteEventArgs args) 
+    private void OnWindowDeleteEvent (object o, DeleteEventArgs args)
     {
         Application.Quit ();
         args.RetVal = true;
@@ -422,7 +422,7 @@ Then, we have
 
 We would repeat the step used for translating console-based applications
 
-    $ xgettext --from-code=UTF-8 Gui.cs gui.glade -o en.po
+    xgettext --from-code=UTF-8 Gui.cs gui.glade -o en.po
 
 A new file will be created
 
@@ -485,7 +485,7 @@ Notice that the format is the same, you need to change it to something like this
 
 Then run
 
-    $ msgfmt en.po -o myprogram.mo
+    msgfmt en.po -o myprogram.mo
 
 *myprogram* is the same name as we used in the Glade.XML constructor. We have our translated file and we need to move it to
 
@@ -493,50 +493,50 @@ Then run
 
 that (which is usually the default path for locale), in this example we are translating to spanish, so we need to move it the *es-folder*:
 
-    $ cp myprogram.mo /usr/share/locale/es/LC_MESSAGES/
+    cp myprogram.mo /usr/share/locale/es/LC_MESSAGES/
 
 Try
 
-    $ LANG=es mono gui.exe
+    LANG=es mono gui.exe
 
-And you should see the translated Glade\# application.
+And you should see the translated Glade# application.
 
 [![En español](/archived/images/9/9c/I18n_es.png)](/archived/images/9/9c/I18n_es.png "En español")
 
 *Note* For some distributions you should install extra packages for seeing the translated stock icons, such as [Ubuntu](http://www.ubuntulinux.org), you need to install the *language-pack* packages. If you want to do this by an automatic way (using autotools), read the [gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html) for learning how to integrate to your Makefile.am file.
 
-Using Mono.Unix with Gtk\# using Stetic applications
+Using Mono.Unix with Gtk# using Stetic applications
 ====================================================
 
 The current state of translating Mono gui apps made in stetic [is broken](http://bugzilla.ximian.com/show_bug.cgi?id=78883). [A patch](http://bugzilla.ximian.com/showattachment.cgi?attach_id=17307) must be applied to intltools-extract in order for it to work. Here are the steps to make it work:
 
 Enter your home directory.
 
-    $ cd ~
+    cd ~
 
 Download the patch, save as *thepatchfile.diff* in your home directory.
 
-    $ wget -O thepatchfile.diff http://bugzilla.ximian.com/showattachment.cgi?attach_id=17307
+    wget -O thepatchfile.diff http://bugzilla.ximian.com/showattachment.cgi?attach_id=17307
 
 Copy intltool-extract program to your home directory.
 
-    $ cp /usr/bin/intltool-extract ~
+    cp /usr/bin/intltool-extract ~
 
 Patch intltool-extract to give it stetic gui capability.
 
-    $ patch -p0 intltool-extract < thepatchfile.diff
+    patch -p0 intltool-extract < thepatchfile.diff
 
 Enter your project's source code directory.
 
-    $ cd project_source
+    cd project_source
 
-Compile stetic.gui into a form that intltools-extract can digest. This will create stetic.gui.h in C format (even if you wrote your code in C\#). *gtk-gui/gui.stetic* is the default location where MonoDevelop puts your stetic file.
+Compile stetic.gui into a form that intltools-extract can digest. This will create stetic.gui.h in C format (even if you wrote your code in C#). *gtk-gui/gui.stetic* is the default location where MonoDevelop puts your stetic file.
 
-    $ ~/intltool-extract --type=gettext/stetic gtk-gui/gui.stetic
+    ~/intltool-extract --type=gettext/stetic gtk-gui/gui.stetic
 
-Create .po file. Note the language is described as C, even though the code is written in C\# with Gtk\#. This is OK. It will output en.po, or whatever filename you choose after "-o"
+Create .po file. Note the language is described as C, even though the code is written in C# with Gtk#. This is OK. It will output en.po, or whatever filename you choose after "-o"
 
-    $ xgettext -a -T -o en.po --language=C gui.stetic.h
+    xgettext -a -T -o en.po --language=C gui.stetic.h
 
 You now have your .po file! Read above for how to edit this file.
 

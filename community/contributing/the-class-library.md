@@ -4,7 +4,7 @@ redirect_from:
   - /The_Class_Library/
 ---
 
-The Class Library is be compatible with Microsoft's .NET implementation. We will write as much code as possible in C\#. We may need to interface with code written in C to gain access to the functionality of libraries like libart, Gtk+, and libc.
+The Class Library is be compatible with Microsoft's .NET implementation. We will write as much code as possible in C#. We may need to interface with code written in C to gain access to the functionality of libraries like libart, Gtk+, and libc.
 
 Contributing
 ------------

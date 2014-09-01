@@ -62,12 +62,12 @@ Using Moonlight on the Desktop
 
 Sample Solution Layout
 
-To create desktop applications, create a Gtk\# project, and add to your project the following assemblies:
+To create desktop applications, create a Gtk# project, and add to your project the following assemblies:
 
 -   System.Windows.dll
 -   Moonlight.Gtk.dll
 
-The first assembly contains the Silverlight API, the second contains the glue that hosts your Silverlight content inside a Gtk\# application.
+The first assembly contains the Silverlight API, the second contains the glue that hosts your Silverlight content inside a Gtk# application.
 
 The solution should look like the image on the sidebar.
 
@@ -188,18 +188,18 @@ Make sure that you pass the flag: --enable-desktop-support to configure, to ensu
 For private installation use:
 
 ``` bash
-$ cd ../moon
-$ ./autogen.sh --prefix=$HOME/build --enable-desktop-support
-$ make && make install
+cd ../moon
+./autogen.sh --prefix=$HOME/build --enable-desktop-support
+make && make install
 ```
 
 For a system installation use:
 
 ``` bash
-$ cd ../moon
-$ ./autogen.sh --enable-desktop-support
-$ make 
-$ su
+cd ../moon
+./autogen.sh --enable-desktop-support
+make
+su
 Password: <enter-your-root-password>
 # make install
 ```
@@ -213,7 +213,7 @@ Moonlight configuration
   Silverlight Support:
     Silverlight 1.0: yes
     Silverlight 2.0: yes
-          Browser plugin assemblies: yes 
+          Browser plugin assemblies: yes
             Path to mcs tree: ./../mcs
             Path to mono-basic tree: ./../mono-basic
           Desktop application assemblies: yes
@@ -228,7 +228,7 @@ Use these settings in your shell:
 
 ``` bash
 export MONO_GAC_PREFIX=/usr:$HOME/build
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build/lib/pkgconfig 
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/build/lib
 ```
 

@@ -10,7 +10,7 @@ Main tools
 ==========
 
 -   [mono](/docs/advanced/runtime/) is the Mono runtime and Just In Time compiler (JIT)
--   [mcs](/docs/about-mono/languages/csharp/), Mono's C\# compiler
+-   [mcs](/docs/about-mono/languages/csharp/), Mono's C# compiler
 -   [gacutil](/docs/advanced/assemblies-and-the-gac/) is a tool used by developers to install versioned assemblies into the system Global Assembly Cache (GAC) to become part of the assemblies that are available for all applications at runtime.
 -   [xsp](/docs/web/aspnet/), mono's stand alone ASP.NET web services and web application server
 -   mono-config - Mono runtime file format configuration

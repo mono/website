@@ -29,7 +29,7 @@ Frequently Asked Questions
 -   [Security](/FAQ:_Security "FAQ: Security")
 -   [WinForms](/FAQ:_Winforms "FAQ: Winforms")
 
--   [Guidelines:Application\_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability")
+-   [Guidelines:Application_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability")
 -   [Developer Documents on this site](/Category:Developer_Resource "Category:Developer Resource")
 
 Resources & Community Sites
@@ -63,7 +63,7 @@ Mono 1.0 was released over two years ago, in June 2004, and since then Mono has 
 -   [Videos](/Videos "Videos")
 -   [Applications](/Software "Software") that use Mono (Commercial and open source)
 
-The .NET platform is unique in many ways, one being its ability to host many languages. Another is the ability to [bridge](/Bridges "Bridges") between other runtimes. [C\#](/CSharp_Compiler), [Boo](/Boo "Boo"), and [Java](/Java "Java") are just some of the [languages](/Languages "Languages") supported by Mono.
+The .NET platform is unique in many ways, one being its ability to host many languages. Another is the ability to [bridge](/Bridges "Bridges") between other runtimes. [C#](/CSharp_Compiler), [Boo](/Boo "Boo"), and [Java](/Java "Java") are just some of the [languages](/Languages "Languages") supported by Mono.
 
 For more technical details, see the description of the [Runtime](/Mono:Runtime "Mono:Runtime").
 
@@ -76,7 +76,7 @@ Much of the original .NET 1.1 specification has been implemented in Mono. Most w
 -   [XML](/XML "XML")
 -   [Code Access Security](/CAS "CAS")
 
-Other technologies, such as ASP.NET, Database Access, and Gtk\# are stable and completed. They are described in [Using Mono](/Use "Use").
+Other technologies, such as ASP.NET, Database Access, and Gtk# are stable and completed. They are described in [Using Mono](/Use "Use").
 
 Developers might be interested in the [various branches](/Branches "Branches") used in Mono development.
 

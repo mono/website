@@ -77,7 +77,7 @@ The maximum number of local variables which methods may have without a defect be
 
 ### AvoidLargeStructureRule
 
-This rule will fire if a value type (struct in C\#) is larger than a maximum value (16 bytes by default). This is a problem because, unlike reference types, value types are bitwise-copied whenever they are assigned to a variable or passed to a method. If the type cannot be reduced in size then it should be turned into a reference type (class in C\#).
+This rule will fire if a value type (struct in C#) is larger than a maximum value (16 bytes by default). This is a problem because, unlike reference types, value types are bitwise-copied whenever they are assigned to a variable or passed to a method. If the type cannot be reduced in size then it should be turned into a reference type (class in C#).
 
 **Bad** example:
 
@@ -710,7 +710,7 @@ int max = Math.Max (a, b);
 
 ### OverrideValueTypeDefaultsRule
 
-This rule checks all value types, except enumerations, to see if they use the default implementation of **Equals(object)** and **GetHashCode()** methods. While **ValueType** implementations work for any value type they do so at the expense of performance (the default implementation uses reflection to access fields). You can easily override both methods with much faster code since you know all meaningful fields inside your structure. At the same time you should also provide, if your language allows it, operator overloads for equality (**op\_Equality**, **==**) and inequality (**op\_Inequality**, **!=**).
+This rule checks all value types, except enumerations, to see if they use the default implementation of **Equals(object)** and **GetHashCode()** methods. While **ValueType** implementations work for any value type they do so at the expense of performance (the default implementation uses reflection to access fields). You can easily override both methods with much faster code since you know all meaningful fields inside your structure. At the same time you should also provide, if your language allows it, operator overloads for equality (**op_Equality**, **==**) and inequality (**op_Inequality**, **!=**).
 
 **Bad** example:
 
@@ -782,7 +782,7 @@ if (s.IndexOf (':') == -1) {
 
 ### PreferLiteralOverInitOnlyFieldsRule
 
-This rule looks for **InitOnly** fields (**readonly** in C\#) that could be turned into **Literal** (**const** in C\#) because their value is known at compile time. **Literal** fields don't need to be initialized (i.e. they don't force the compiler to add a static constructor to the type) resulting in less code and the value (not a reference to the field) will be directly used in the IL (which is OK if the field has internal visibility, but is often problematic if the field is visible outside the assembly).
+This rule looks for **InitOnly** fields (**readonly** in C#) that could be turned into **Literal** (**const** in C#) because their value is known at compile time. **Literal** fields don't need to be initialized (i.e. they don't force the compiler to add a static constructor to the type) resulting in less code and the value (not a reference to the field) will be directly used in the IL (which is OK if the field has internal visibility, but is often problematic if the field is visible outside the assembly).
 
 **Bad** example:
 
@@ -807,7 +807,7 @@ public class ClassWithConst
 
 ### RemoveUnneededFinalizerRule
 
-This rule looks for types that have an empty finalizer (a.k.a. destructor in C\# or **Finalize** method). Finalizers that simply set fields to null are considered to be empty because this does not help the garbage collection. You should remove the empty finalizer to alleviate pressure on the garbage collector and finalizer thread.
+This rule looks for types that have an empty finalizer (a.k.a. destructor in C# or **Finalize** method). Finalizers that simply set fields to null are considered to be empty because this does not help the garbage collection. You should remove the empty finalizer to alleviate pressure on the garbage collector and finalizer thread.
 
 **Bad** example (empty):
 
@@ -934,7 +934,7 @@ public void Append (List<string> lines, string line)
 
 ### UseIsOperatorRule
 
-This rule looks for complex cast operations (e.g. a **as**with a **null** check) that can be simplified using the **is** operator (C\# syntax). Note: in some case a compiler, like [g]mcs, can optimize the code and generate IL identical to a **is** operator. In this case the rule will not report an error even if you could see one while looking the at source code.
+This rule looks for complex cast operations (e.g. a **as**with a **null** check) that can be simplified using the **is** operator (C# syntax). Note: in some case a compiler, like [g]mcs, can optimize the code and generate IL identical to a **is** operator. In this case the rule will not report an error even if you could see one while looking the at source code.
 
 **Bad** example:
 
@@ -970,7 +970,7 @@ string s = String.Empty;
 
 ### UseSuppressFinalizeOnIDisposableTypeWithFinalizerRule
 
-This rule will fire if a type implements **System.IDisposable** and has a finalizer (called a destructor in C\#), but the Dispose method does not call **System.GC.SuppressFinalize**. Failing to do this should not cause properly written code to fail, but it does place a non-trivial amount of extra pressure on the garbage collector and on the finalizer thread.
+This rule will fire if a type implements **System.IDisposable** and has a finalizer (called a destructor in C#), but the Dispose method does not call **System.GC.SuppressFinalize**. Failing to do this should not cause properly written code to fail, but it does place a non-trivial amount of extra pressure on the garbage collector and on the finalizer thread.
 
 **Bad** example:
 

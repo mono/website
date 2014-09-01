@@ -48,8 +48,8 @@ If you have an account on the main Subversion repository, use the following comm
 
 ### Updating an existing checkout
 
-     $ (cd mono; svn update) 
-     $ (cd mcs; svn update) 
+     $ (cd mono; svn update)
+     $ (cd mcs; svn update)
      $ (cd libgdiplus; svn update)
 
 ### Building the source
@@ -65,9 +65,9 @@ Then, go into the mono directory, and configure:
 
 By running autogen.sh from the mono tree, it will automatically go into the mcs/ tree and build the binaries there, so you don't have to run it in both mono and mcs trees.
 
-This assumes that you have a working mono installation, and that there's a C\# compiler named 'mcs', and a corresponding IL runtime called 'mono'.
+This assumes that you have a working mono installation, and that there's a C# compiler named 'mcs', and a corresponding IL runtime called 'mono'.
 
-In order to use mcs and mono binaries during the build process which do not reside in your PATH, you can set two make variables, EXTERNAL\_MCS and EXTERNAL\_RUNTIME:
+In order to use mcs and mono binaries during the build process which do not reside in your PATH, you can set two make variables, EXTERNAL_MCS and EXTERNAL_RUNTIME:
 
 ``` bash
 make EXTERNAL_MCS=/foo/bar/mcs EXTERNAL_RUNTIME=/somewhere/else/mono
@@ -84,7 +84,7 @@ Also to get the latest changes in System.Drawing.dll and System.Windows.Forms.dl
       $ make
       $ make install
 
-If you use a different prefix then you may need to adjust your LD\_LIBRARY\_PATH environment variable to ensure libgdiplus.so can be loaded.
+If you use a different prefix then you may need to adjust your LD_LIBRARY_PATH environment variable to ensure libgdiplus.so can be loaded.
 
       export LD_LIBRARY_PATH=/your/own/prefix:$LD_LIBRARY_PATH
 

@@ -34,9 +34,6 @@ Accessibility: White%27s white list
 </tbody>
 </table>
 
-White's white list
-==================
-
 Introduction
 ------------
 
@@ -90,7 +87,7 @@ White's white list
 -   All types in Core.Session namespace
 -   All types in Core.UIA namespace
 -   All types in Core.UIItemEvents namespace
-    -   Though in the static ctor of many \*Event classes, native Win32 APIs are called, but they are just used to set the event name, and I don't think they will cause the risk mentioned in [\#What's the risk for writing test samples with White](#whats-the-risk-for-writing-test-samples-with-white)
+    -   Though in the static ctor of many \*Event classes, native Win32 APIs are called, but they are just used to set the event name, and I don't think they will cause the risk mentioned in [#What's the risk for writing test samples with White](#whats-the-risk-for-writing-test-samples-with-white)
 -   All types in Core.UIItems.Finders namespace
 -   All types in Core.UIItems.Actions namespace
 -   All types in Core.UIItems.Container namespace

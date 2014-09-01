@@ -110,16 +110,16 @@ Test Platforms:
 
 BUG references on strongwind tests:
 
--   button-regression.py:\# BUG553170: MessageBox is not accessible now.
--   button-regression.py:\# BUG554017: doesn't focus the clicked button
--   checkbox-regression.py:\# BUG554017: click action doesn't move focus
--   combobox-regression.py:\# BUG554449: application crashed
--   hyperlinkbutton-regression.py:\# BUG555714: do 'jump' action for the second link crash the app
--   radiobutton-regression.py:\# BUG559133, BUG554017:missing focused states
--   scrollviewer-regression.py:\# BUG572163: moonlight bug that \* ScrollBarVisibility.Hidden doesn't work
--   slider-regression.py:\# BUG558289: Key Navigation Does Not Update Slider's Value with SmallChange Property
--   textblock-regression.py:\# BUG561268: Multi-line Name Is Parsed Incorrectly
--   togglebutton-regression.py:\# BUG554017: doesn't focus to the clicked button
+-   button-regression.py:# BUG553170: MessageBox is not accessible now.
+-   button-regression.py:# BUG554017: doesn't focus the clicked button
+-   checkbox-regression.py:# BUG554017: click action doesn't move focus
+-   combobox-regression.py:# BUG554449: application crashed
+-   hyperlinkbutton-regression.py:# BUG555714: do 'jump' action for the second link crash the app
+-   radiobutton-regression.py:# BUG559133, BUG554017:missing focused states
+-   scrollviewer-regression.py:# BUG572163: moonlight bug that \* ScrollBarVisibility.Hidden doesn't work
+-   slider-regression.py:# BUG558289: Key Navigation Does Not Update Slider's Value with SmallChange Property
+-   textblock-regression.py:# BUG561268: Multi-line Name Is Parsed Incorrectly
+-   togglebutton-regression.py:# BUG554017: doesn't focus to the clicked button
 
 4. Test result:
  [Moonlight test result on Dashboard](http://147.2.207.213/dashboard/moonlight.xml) with VPN connection.
@@ -141,7 +141,7 @@ Test Platforms:
 
 3. Remains of bugs
 
--   BUG 574242 Can't define custom provider by using the WM\_GETOBJECT message
+-   BUG 574242 Can't define custom provider by using the WM_GETOBJECT message
 -   BUG 573464 [uiaclient-winforms] Some dialog's name has been changed in Linux compares to in Windows.
 -   BUG 574226 [uiaclient-winforms]The name of Button is "Icon" in Windows but in linux is ""
 -   BUG 574620 On linux a control who's control type is "SplitButton" on Windows is "Button"
@@ -160,7 +160,7 @@ Test Platforms:
 
 ### 2.1 Release Test Result
 
-#### WinformsAtkBridge
+#### WinformsAtkBridge 2
 
 Test Platforms:
  In both 32bit and 64bit: openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
@@ -171,7 +171,7 @@ Test result:
 Explanation of the failing tests:
  [Winforms Strongwind tests with some new bugs](https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&authkey=CPOZ2OAE&hl=zh_CN&pli=1#gid=0)
 
-#### MoonlightAtkBridge
+#### MoonlightAtkBridge 2
 
 Test Platforms:
  In both 32bit and 64bit: openSUSE 11.2, Fedora 12, Ubuntu 9.10

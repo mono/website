@@ -8,5 +8,5 @@ redirect_from:
 Talk:Testing
 ============
 
-This page seems useless but looks like it has a bit of content. Maybe be better just to send to [Test\_Suite](/Test_Suite "Test Suite").
+This page seems useless but looks like it has a bit of content. Maybe be better just to send to [Test_Suite](/Test_Suite "Test Suite").
 

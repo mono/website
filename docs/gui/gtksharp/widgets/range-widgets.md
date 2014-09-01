@@ -15,19 +15,19 @@ Update Policy
 
 The [update policy](http://docs.go-mono.com/index.aspx?link=P:Gtk.Range.UpdatePolicy) of a range widget defines at what points during user interaction it will change the value field of its Adjustment and emit the [Gtk.Adjustment.ValueChanged](http://docs.go-mono.com/index.aspx?link=E:Gtk.Adjustment.ValueChanged) event for this Adjustment. The update policies are held in the [Gtk.UpdateType](http://docs.go-mono.com/index.aspx?link=T:Gtk.UpdateType) enumeration and can have one of three values.
 
- Gtk.UpdateType.Continuous (default)   
+`Gtk.UpdateType.Continuous (default)`
 The ValueChanged event is emitted continuously, i.e., whenever the slider is moved by even the tiniest amount.
 
- Gtk.UpdateType.Discontinuous   
+`Gtk.UpdateType.Discontinuous`
 The ValueChanged event is only emitted once the slider has stopped moving and the user has released the mouse button.
 
- Gtk.UpdateType.Delayed   
+`Gtk.UpdateType.Delayed`
 The ValueChanged event is emitted when the user releases the mouse button, or if the slider stops moving for a short period of time.
 
 Mouse and Key Handling
 ======================
 
-All of the range widgets react to mouse clicks in more or less the same way. Clicking button-1 in the trough will cause its adjustment's *pageIncrement* to be added or subtracted from its value, and the slider to be moved accordingly. Clicking mouse button-2 in the trough will jump the slider to the point at which the button was clicked. Clicking button-3 in the trough of a range or any button on a scrollbar's arrows will cause its adjustment's value to change by *step\_increment* at a time.
+All of the range widgets react to mouse clicks in more or less the same way. Clicking button-1 in the trough will cause its adjustment's *pageIncrement* to be added or subtracted from its value, and the slider to be moved accordingly. Clicking mouse button-2 in the trough will jump the slider to the point at which the button was clicked. Clicking button-3 in the trough of a range or any button on a scrollbar's arrows will cause its adjustment's value to change by *step_increment* at a time.
 
 Scrollbars are not focusable; thus, they have no key bindings. The key bindings for the other range widgets (which are, of course, only active when the widget has focus) do not differentiate between horizontal and vertical range widgets.
 
@@ -96,9 +96,9 @@ namespace GtkSharpTutorial {
                         //set.PageSize = get.Value;
                         //set->page_increment = = get.Value;
  
-                        /* This sets the adjustment and makes it emit the "changed" signal to 
+                        /* This sets the adjustment and makes it emit the "changed" signal to
                            reconfigure all the widgets that are attached to this signal.  */
-                        //set.ClampPage (                       
+                        //set.ClampPage (
                 }
  
                 // FIXME
@@ -107,7 +107,7 @@ namespace GtkSharpTutorial {
                         /* Turn the value display on the scale widgets off or on depending
                          *  on the state of the checkbutton */
                         //((Scale) hscale).DrawValue  button.Active
-                        //((Scale) vscale).DrawValue  button.Active                     
+                        //((Scale) vscale).DrawValue  button.Active
                 }
  
  
@@ -218,10 +218,10 @@ namespace GtkSharpTutorial {
                         // item =
                         menu.Append (item);
  
-                        // item = 
+                        // item =
                         menu.Append (item);
  
-                        // item = 
+                        // item =
                         menu.Append (item);
  
                         ((OptionMenu) opt).Menu = menu;
@@ -318,9 +318,8 @@ namespace GtkSharpTutorial {
                         //FIXME: grab default
                         button.ShowAll ();
  
-                        window.ShowAll ();                      
+                        window.ShowAll ();
                 }
- 
  
                 public static void Main (string [] args)
                 {

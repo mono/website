@@ -12,7 +12,7 @@ Starting with Mono 2.6 the Mono runtime supports a continuation framework that a
 
 The API is contained in the Mono.Tasklets assemblies, and it is the Mono-team supported mechanism for doing continuations, microthreading and coroutines in the ISO CLI. It is based on [Tomi Valkeinen's excellent work on co-routines](http://www.bat.org/~tomba/) for Mono.
 
-Unlike the work that we typically do in Mono which is pure C\# and will work out of the box in .NET (even our Mono.SIMD code will work on .NET, it will just run a lot slower) Mono.Tasklets requires changes to the VM that are not portable to other ISO CLI implementations.
+Unlike the work that we typically do in Mono which is pure C# and will work out of the box in .NET (even our Mono.SIMD code will work on .NET, it will just run a lot slower) Mono.Tasklets requires changes to the VM that are not portable to other ISO CLI implementations.
 
 An introduction that describes various frameworks and the evolution of the Mono.Tasklet.Continuation framework is available in the [announcement post](http://tirania.org/blog/archive/2009/Apr-09.html) in Miguel's blog. That post also discusses some scenarios where continuations and co-routines are useful.
 

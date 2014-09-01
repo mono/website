@@ -32,11 +32,11 @@ API changes that we need to make to the Mono Runtime for Mono 2.8:
 Tasks
 =====
 
-Drop the MONO\_ZERO\_LEN\_ARRAY from the public header files currently based on the \_\_GNUC\_\_.
+Drop the MONO_ZERO_LEN_ARRAY from the public header files currently based on the \_\_GNUC\_\_.
 
 -   Instead use a mono-configuration.h for the system where MOno is compiled.
 
--   or, define MONO\_ZERO\_LEN\_ARRAY to be the empty string so as to depend on the C99 flexible array feature. This avoids the issues with installing a build-time header mono-configuration.h (see shenanigans with glib-config.h in the glib package, not to mention the issues with having an installed header customized for a particular compiler). Note that GCC claim support for C99 flexible arrays since at least GCC 3.0, and C99 is a 10 year old standard already
+-   or, define MONO_ZERO_LEN_ARRAY to be the empty string so as to depend on the C99 flexible array feature. This avoids the issues with installing a build-time header mono-configuration.h (see shenanigans with glib-config.h in the glib package, not to mention the issues with having an installed header customized for a particular compiler). Note that GCC claim support for C99 flexible arrays since at least GCC 3.0, and C99 is a 10 year old standard already
 
 Drop the current verifier API and make it saner. On its current form it is not very usable and it returns a GList, which is not very helpful.
 
@@ -54,11 +54,11 @@ API incompatibilities
 |The MonoType struct will become opaque.|Use the existing accessor functions instead of peeking inside the fields directly.|
 |The MonoMethodSignature struct will become opaque.|Use the existing accessor functions instead of peeking inside the fields directly.|
 |The MonoMarshalSpec struct will be hidden and all the public functions using it will become private.|If you need to access the marshal info you'll have to decode from the metadata tables.|
-|The MonoRemoteClass struct will be removed along with the mono\_remote\_class() function.|Embedders should have no need to access this struct.|
-|Managed structs and classes containing references cannot be freely manipulated any longer, to take into consideration the moving GC.|Every time a reference field (or a valuetype containing in any way a reference field) is set, it must be done using one of the mono\_gc\_wbarrie\*() set of funtcions. This applies also to arrays containing references.|
+|The MonoRemoteClass struct will be removed along with the mono_remote_class() function.|Embedders should have no need to access this struct.|
+|Managed structs and classes containing references cannot be freely manipulated any longer, to take into consideration the moving GC.|Every time a reference field (or a valuetype containing in any way a reference field) is set, it must be done using one of the mono_gc_wbarrie\*() set of funtcions. This applies also to arrays containing references.|
 |The MonoObject, MonoArray and MonoString structs may become opaque.|Use only the existing accessor macros and functions to access their internals.|
 |The MonoAssemblyName struct will become opaque.|Ways to allocate it and access it will be provided.|
-|The mono\_image\_add\_to\_name\_cache() functions will be removed.|There is no use for it for embedders.|
+|The mono_image_add_to_name_cache() functions will be removed.|There is no use for it for embedders.|
 |The MonoCustomAttrInfo and MonoCustomAttrEntry structs will become opaque|Appropriate accessors will be available.|
 |The MonoReflectionMethodAux struct will e removed|There is no use for it for embedders.|
 |The sizes and lobounds fields in MonoArrayType will change type to a pointer-sized integer.|Don't make assumptions about the fields (in particular that you could create large arrays on 64 bit systems) until the ABI break point.|
@@ -70,12 +70,12 @@ API improvements
 
 Extend the runtime API to handle generics. This is often requested on MDL.
 
-Change functions like mono\_method\_get\_param\_names and mono\_method\_get\_marshal\_info to return failure.
+Change functions like mono_method_get_param_names and mono_method_get_marshal_info to return failure.
 
 API Additions
 =============
 
-Add functions to retrieve all parameter information such as flags. Maybe a single function that return a [name, flags, marshal\_info?] tuple.
+Add functions to retrieve all parameter information such as flags. Maybe a single function that return a [name, flags, marshal_info?] tuple.
 
 Open for debate
 ===============

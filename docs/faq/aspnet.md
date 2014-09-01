@@ -33,7 +33,7 @@ Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mon
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
 
- You need the Mono runtime and use one of Apache with [mod\_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi "CGI") or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
+ You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi "CGI") or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
 
 To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 
@@ -61,7 +61,7 @@ Some of these are not complete replacements for ASP.NET, but they might be usefu
 
 -   [Dream](http://doc.opengarden.org/) is a framework for building the backend of web applications by providing a very complete framework for building REST applications.
 
--   [Spring.NET](http://www.springframework.net/) is a port of the spring framework from Java to C\#
+-   [Spring.NET](http://www.springframework.net/) is a port of the spring framework from Java to C#
 
 -   [Maverick.NET](http://mavnet.sourceforge.net/) a Model-View-Controller framework for building web applications.
 
@@ -74,11 +74,11 @@ Installation and Setup
 
 **Does Mono's ASP.NET run on Linux ?**
 
-Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod\_mono does not work with the Windows version of Apache, nor with IIS.
+Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
 
-**Should I use mod\_mono, FastCGI or XSP?**
+**Should I use mod_mono, FastCGI or XSP?**
 
-mod\_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
+mod_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
 
 FastCGI is a lightweight protocol implement by both Apache and many other web servers. It has become a universal protocol for web server extensions so it is supported by many web servers, in particular popular servers like [Nginx](/docs/web/fastcgi/nginx/). Configuring FastCGI is also a bit simpler for people not familiar with Apache configuration. The features are usually determined by the web server that uses FastCGI.
 
@@ -86,48 +86,48 @@ XSP is a very limited web server which is used typically during development or f
 
 XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is the most important one), but no work is currently underway to support HTTP 1.1 and it is also missing features like mime-type configuration and any other features that people expect from a web server.
 
-**Does mod\_mono run on Windows?**
+**Does mod_mono run on Windows?**
 
-mod\_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod\_mono compile work on the Windows version of Apache.
+mod_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod_mono compile work on the Windows version of Apache.
 
 **How do I restart my Mono applications without restarting Apache?**
 
-Enable the control panel in mod\_mono, see [mod\_mono's Control Panel section](/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
+Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
 
 **My Apache Module Is Not Recognized, what to do?**
 
 In certain Apache configurations (SUSE 9.0), Apache is configured with large file support. This requires that every apache module has to be compiled with large file support as well.
 
-You have to configure mod\_mono as follows:
+You have to configure mod_mono as follows:
 
 ``` bash
 CFLAGS="-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64" ./configure
 ```
 
-because mod\_mono's configure apparently doesn't query the CFLAGS from apxs. I'll fill a bug.
+because mod_mono's configure apparently doesn't query the CFLAGS from apxs. I'll fill a bug.
 
 In newer versions of Mono, this is taken care of by the configure script.
 
-**mod\_mono and mod\_proxy**
+**mod_mono and mod_proxy**
 
-What are the advantages/disadvantages of using mod\_mono with apache versus setting up apache with mod\_proxy to proxy an XSP server running on a private port?
+What are the advantages/disadvantages of using mod_mono with apache versus setting up apache with mod_proxy to proxy an XSP server running on a private port?
 
-The use of mod\_proxy is a common practice in the Java world with Tomcat/application serves, what is the reason not to use the same setup with XSP?
+The use of mod_proxy is a common practice in the Java world with Tomcat/application serves, what is the reason not to use the same setup with XSP?
 
-The mod\_proxy approach is not recommended for Mono for the following reasons:
+The mod_proxy approach is not recommended for Mono for the following reasons:
 
-mod\_mono:
+mod_mono:
 
--   mod\_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
+-   mod_mono performs better (it uses Unix domain sockets to communicate with the Mono server. The response headers doesn't need to be parsed/rewritten.
 -   faster file transfers
 -   common URL namespace with Apache (if AddHandler is used)
 -   autohosting: [AutoHosting](/docs/web/mod_mono-autoconfiguration/)
 -   enabled for mass hosting
--   xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them. By using mod\_mono your client software is exposed to a full HTTP 1.1 implmenentation.
+-   xsp is only an HTTP 1.0 server, with a few HTTP 1.1 extensions, but not all of them. By using mod_mono your client software is exposed to a full HTTP 1.1 implmenentation.
 
-mod\_proxy + mod\_proxy\_http:
+mod_proxy + mod_proxy_http:
 
--   ability to run the app server under a different UID (mod\_mono is supposed to support this too)
+-   ability to run the app server under a different UID (mod_mono is supposed to support this too)
 -   the app server process cannot be controlled by Apache
 -   difficult mass hosting
 
@@ -135,11 +135,11 @@ mod\_proxy + mod\_proxy\_http:
 
 Due to apache's design, there is no straightforward way to start processes from inside of a apache child as a specific user. Apache's SuExec wrapper is targeting CGI and is useless for modules.
 
-Mod\_mono provides the MonoRunXSP option. You can set it to "False" and start mod-mono-server manually as the specific user. Some tinkering with the Unix socket's permissions might be necessary, unless MonoListenPort is used, which turns on TCP between mod\_mono and mod-mono-server.
+Mod_mono provides the MonoRunXSP option. You can set it to "False" and start mod-mono-server manually as the specific user. Some tinkering with the Unix socket's permissions might be necessary, unless MonoListenPort is used, which turns on TCP between mod_mono and mod-mono-server.
 
 Another (very risky) way: use a setuid 'root' wrapper for the mono executable, inspired by the sources of Apache's SuExec.
 
-And finally: drop mod\_mono and use mod\_proxy + mod\_proxy\_http + XSP instead. It's slightly easier to configure, especially if you are not used to mod\_mono.
+And finally: drop mod_mono and use mod_proxy + mod_proxy_http + XSP instead. It's slightly easier to configure, especially if you are not used to mod_mono.
 
 From [the mono-devel-list](http://lists.ximian.com/pipermail/mono-devel-list/2006-May/018520.html)
 
@@ -157,11 +157,11 @@ Common Problems
 -   Place a "Bin" directory instead of "bin"
 -   Not placing all the required DLLs in the bin dierctory (or GAC)
 -   Running xsp[2], not configuring the --aplications parameter (or application in the root directory)
--   Running mod-mono, not configuring the MonoApplications directive (more info with man mod\_mono)
+-   Running mod-mono, not configuring the MonoApplications directive (more info with man mod_mono)
 
-**Performance is disappointing** Please consult [Mod\_mono](/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+**Performance is disappointing** Please consult [Mod_mono](/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
 
-**Compilation fails with the CS0169 error message** It will happen if you configured the C\# compiler in `Web.config` in a way similar to the one shown below:
+**Compilation fails with the CS0169 error message** It will happen if you configured the C# compiler in `Web.config` in a way similar to the one shown below:
 
 ``` xml
 <?xml version="1.0" encoding="iso-8859-1"?>
@@ -169,18 +169,19 @@ Common Problems
   <system.web>
     <compilation defaultLanguage="C#">
       <compilers>
-        <compiler language="c#;cs;csharp" extension=".cs" compilerOptions="/warnaserror" warningLevel="4"  
+        <compiler language="c#;cs;csharp" extension=".cs" compilerOptions="/warnaserror" warningLevel="4"
           type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
       </compilers>
-    </compilation>    
+    </compilation>
   </system.web>
 </configuration>
 ```
 
-This is result of an incompatibility between the Microsoft .NET C\# compiler and the Mono C\# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration "ASP.NET Mono Specific Configuration")
+This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration "ASP.NET Mono Specific Configuration")
 
 **ProviderException from SqliteMembershipProvider** When porting an ASP.NET app to Mono, you may get an exception similar to the following:
 
+``` bash
     System.Configuration.Provider.ProviderException: Operation aborted due to an exception (see Trace for details).
     at System.Web.Security.SqliteMembershipProvider.ValidateUser (string,string)
     at NerdDinner.Controllers.AccountMembershipService.ValidateUser (string,string)
@@ -191,7 +192,8 @@ This is result of an incompatibility between the Microsoft .NET C\# compiler and
     at System.Web.Mvc.ReflectedActionDescriptor.Execute (System.Web.Mvc.ControllerContext,System.Collections.Generic.IDictionary`2<string, object>)
     at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod (System.Web.Mvc.ControllerContext,System.Web.Mvc.ActionDescriptor,System.Collections.Generic.IDictionary`2<string, object>)
     at System.Web.Mvc.ControllerActionInvoker/<InvokeActionMethodWithFilters>c__AnonStoreyB.<>m__E ()
-    at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1<System.Web.Mvc.ActionExecutedContext>) 
+    at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter (System.Web.Mvc.IActionFilter,System.Web.Mvc.ActionExecutingContext,System.Func`1<System.Web.Mvc.ActionExecutedContext>)
+```
 
 This is due to ASP.NET 2.0's MembershipProvider support, which requires a backing database in order to store user account information.
 
@@ -209,7 +211,7 @@ Development
 
 **I would like line numbers in my stack traces**
 
-By default xsp and xsp2 run in "release" mode, which means that no debugging information is generated at runtime. If you want line numbers in your stack traces, you must pass the --debug option to Mono, this is done by invoking **xsp** or **xsp2** with the MONO\_OPTIONS environment variable, like this:
+By default xsp and xsp2 run in "release" mode, which means that no debugging information is generated at runtime. If you want line numbers in your stack traces, you must pass the --debug option to Mono, this is done by invoking **xsp** or **xsp2** with the MONO_OPTIONS environment variable, like this:
 
 ``` bash
 $ MONO_OPTIONS=--debug xsp
@@ -219,7 +221,7 @@ Root directory: /tmp/us
 Hit Return to stop the server.
 ```
 
-If you are running mod\_mono with Apache, you must use the **MonoDebug** directive in your configuration file, like this:
+If you are running mod_mono with Apache, you must use the **MonoDebug** directive in your configuration file, like this:
 
 ``` bash
 MonoDebug true
@@ -267,12 +269,12 @@ responseEncoding is the encoding of output (Content-Type: ...; charset)
 
 **Where are the various settings for System.Web documented?**
 
-Some documentation is available on this site on [Config\_system.web](/archived/config_systemweb "Config system.web"), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
+Some documentation is available on this site on [Config_system.web](/archived/config_systemweb "Config system.web"), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
 
 Features
 ========
 
-**Does Mono support the App\_Browsers folder and the .browser files?**
+**Does Mono support the App_Browsers folder and the .browser files?**
 
 Yes, they are supported starting from Mono version 2.0. However, there's one difference to the .NET support. Namely, Mono does not (and cannot) distribute the standard .NET .browser files - you can, however, copy them verbatim from your .NET distribution and drop those you need in the `~/App_Browsers` directory under your application root.
 
@@ -320,8 +322,8 @@ There are two kinds of libraries you can reference:
 To reference private libraries, just place the libraries in the "bin" directory below your application and they will be referenced automatically for you:
 
 ``` bash
-$ mkdir bin
-$ mcs -out:bin/library.dll -target:library mylibrary.cs
+mkdir bin
+mcs -out:bin/library.dll -target:library mylibrary.cs
 ```
 
 For GAC-installed libraries to be installed, you need to add the assembly to the Web.config file, the file should look like this:
@@ -387,7 +389,7 @@ Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if 
 
 2 - Change things in the machine.config (for the whole installation) or web.config (for specific web apps) files:
 
-``` asp
+``` xml
 <configuration>
 ...
  <system.web>
@@ -403,7 +405,7 @@ Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if 
    </compilers>
   </compilation>
   ...
-  <globalization  
+  <globalization
     requestEncoding="utf-8"
     responseEncoding="utf-8"
     fileEncoding="utf-8" />
@@ -464,22 +466,22 @@ There are a few Ajax libraries that developers could consider:
 -   [Magic Ajax.NET](http://www.magicajax.net/).
 -   GaiaWidgets
 
-**Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?** Yes, it is possible with Mono version from svn trunk or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET\_Settings\_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
+**Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?** Yes, it is possible with Mono version from svn trunk or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
 
 Extra Languages
 ===============
 
-**How can I use F\# with ASP.NET on Mono?**
+**How can I use F# with ASP.NET on Mono?**
 
-Out of the box, ASP.NET only supports pages written in C\# and VB.NET. To convince it to use the F\# compiler, the following extra steps are required:
+Out of the box, ASP.NET only supports pages written in C# and VB.NET. To convince it to use the F# compiler, the following extra steps are required:
 
--   Install the F\# compiler and runtime. Get it from [here](http://research.microsoft.com/fsharp/release.aspx). It should come with an install-mono.sh script. (On my system, I had to convert the newlines in that thing from CRLF (DOS format) to regular LF before sh would properly run it.)
+-   Install the F# compiler and runtime. Get it from [here](http://research.microsoft.com/fsharp/release.aspx). It should come with an install-mono.sh script. (On my system, I had to convert the newlines in that thing from CRLF (DOS format) to regular LF before sh would properly run it.)
 
--   Set up mod\_mono for apache, clx, or whichever web server you want, set up your ASP.NET page and configure the web-server to find it.
+-   Set up mod_mono for apache, clx, or whichever web server you want, set up your ASP.NET page and configure the web-server to find it.
 
 -   Copy the FSharp.Compiler.CodeDom.dll file from the bin directory of your FSharp installation to the bin directory of your ASP.NET page.
 
--   The web.conf for your page should look something like this to enable the compiling of F\# code:
+-   The web.conf for your page should look something like this to enable the compiling of F# code:
 
 <!-- -->
 
@@ -507,7 +509,7 @@ PublicKeyToken=a19089b1c74d0809"/>
 
 Note that you might have to adjust the version numbers mentioned. There are example files for this in the samples/fsharp/Web/ASP.NET/, but for me they wouldn't work out of the box.
 
--   Make sure there is a file fsc.exe somewhere in your path that invokes the F\# compiler. Since, on Unix, you can not directly run the .exe files, create a shell script named "fcs.exe" with this content:
+-   Make sure there is a file fsc.exe somewhere in your path that invokes the F# compiler. Since, on Unix, you can not directly run the .exe files, create a shell script named "fcs.exe" with this content:
 
 <!-- -->
 
@@ -525,13 +527,13 @@ Using Mono with Apache
 
 **Will you support Apache 1?**
 
-Yes, the mod\_mono module works on both major versions of Apache (1.x and 2.x)
+Yes, the mod_mono module works on both major versions of Apache (1.x and 2.x)
 
 **Can I run Apache 1 and Apache 2 on the same machine?**
 
 You can always keep a copy of Apache 2 running in parallel with your Apache 1.3 (either different port or using a reverse proxy). You can also bind the two servers to different IP addresses on the same physical machine.
 
-**How do I register a new extension to be processed by mod\_mono?**
+**How do I register a new extension to be processed by mod_mono?**
 
 Consider for example turning .htm files into files processed as .aspx files.
 
@@ -553,7 +555,7 @@ web.config, inside system.web and inside httpHandlers:
      ..
      <httpHandlers>
        <add verb="*" path="*.htm" type="System.Web.UI.PageHandlerFactory,
-System.Web, Version=1.0.5000.0, Culture=neutral, 
+System.Web, Version=1.0.5000.0, Culture=neutral,
 PublicKeyToken=b03f5f7f11d50a3a" />
       ...
      </httpHandlers>

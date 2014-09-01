@@ -15,23 +15,23 @@ This file references no external javascript or xaml file. It is completely indep
        <head>
           <title>Moonlight Stand-alone test page</title>
        </head>
-          
-       <body>      
+
+       <body>
           <object type="application/x-silverlight" data="data:," id="slControl" width="300" height="300">
              <param name="background" value="#CCCCCC"/>
              <param name="source"     value="#xamlContent"/>
-          </object> 
-          
+          </object>
+
           <!--  ADD YOUR XAML CONTENT HERE -->
           <script type="text/xaml" id="xamlContent">
-          
+
              <?xml version="1.0"?>
              <Canvas Width="300" Height="300" xmlns="http://schemas.microsoft.com/client/2007"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="rootCanvas" >
 
                 <TextBlock Canvas.Top="50" Canvas.Left="50">Standalone html/xaml file</TextBlock>
 
-             </Canvas> 
+             </Canvas>
 
           </script>
        </body>

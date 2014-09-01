@@ -348,7 +348,7 @@ public enum Answer {
 
 ### ParameterNamesShouldMatchOverriddenMethodRule
 
-This rule warns if an overriden method's parameter names does not match those of the base class or those of the implemented interface. This can be confusing because it may not always be clear that it is an override or implementation of an interface method. It also makes it more difficult to use the method with languages that support named parameters (like C\# 4.0).
+This rule warns if an overriden method's parameter names does not match those of the base class or those of the implemented interface. This can be confusing because it may not always be clear that it is an override or implementation of an interface method. It also makes it more difficult to use the method with languages that support named parameters (like C# 4.0).
 
 **Bad** example:
 

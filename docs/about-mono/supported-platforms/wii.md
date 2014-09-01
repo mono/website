@@ -13,7 +13,7 @@ To build Mono on the Wii, you will need a Mono 2.4 set of class libraries, and i
 
 ``` bash
  $ svn co .../branches/wii
- $ svn co .../trunk/wii 
+ $ svn co .../trunk/wii
  $ cd wii
  $ make
 ```
@@ -23,4 +23,4 @@ This will produce the Mono runtime for the Wii and build the samples in wii/samp
 Licensing
 =========
 
-Both the Mono runtime and the Mono C\# Compiler are available under proprietary license for those who cannot, or choose not to, use LGPL and GPL code in their projects.
+Both the Mono runtime and the Mono C# Compiler are available under proprietary license for those who cannot, or choose not to, use LGPL and GPL code in their projects.

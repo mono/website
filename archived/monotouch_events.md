@@ -8,11 +8,11 @@ redirect_from:
 MonoTouch Events
 ================
 
-If you want to intercept events from UIControl, you have a range of options: from using the C\# lambdas and delegate functions to using the low-level Objective-C APIs.
+If you want to intercept events from UIControl, you have a range of options: from using the C# lambdas and delegate functions to using the low-level Objective-C APIs.
 
 The following shows how you would capture the TouchDown event on a button, depending on how much control you need:
 
-C\# Style
+C# Style
 =========
 
 Using the delegate syntax:
@@ -50,7 +50,7 @@ button2.TouchDown += handler;
 Monitoring more than one kind of Event
 ======================================
 
-The C\# events for UIControlEvent flags have a one to one mapping to individual flags. Sometimes you might want to have the same piece of code handle two or more events, in that case, use the UIControl.AddTarget method:
+The C# events for UIControlEvent flags have a one to one mapping to individual flags. Sometimes you might want to have the same piece of code handle two or more events, in that case, use the UIControl.AddTarget method:
 
 ``` csharp
 button.AddTarget (handler, UIControlEvent.TouchDown | UIControl.TouchCancel);

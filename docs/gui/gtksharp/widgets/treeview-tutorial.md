@@ -782,10 +782,10 @@ public class TreeViewExample
         window.SetSizeRequest (500,200);
  
         Gtk.TreeView tree = new Gtk.TreeView ();
-        Gtk.ListStore musicListStore = new Gtk.ListStore (typeof (Gdk.Pixbuf), 
+        Gtk.ListStore musicListStore = new Gtk.ListStore (typeof (Gdk.Pixbuf),
             typeof (string),  typeof (string));
  
-        tree.AppendColumn ("Icon", new Gtk.CellRendererPixbuf (), "pixbuf", 0);  
+        tree.AppendColumn ("Icon", new Gtk.CellRendererPixbuf (), "pixbuf", 0);
         tree.AppendColumn ("Artist", new Gtk.CellRendererText (), "text", 1);
         tree.AppendColumn ("Title", new Gtk.CellRendererText (), "text", 2);
  

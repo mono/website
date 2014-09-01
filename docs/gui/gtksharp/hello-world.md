@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp:_Hello_World/
 ---
 
-A Hello World program with Gtk\#:
+A Hello World program with Gtk#:
 
 ``` csharp
 using Gtk;
@@ -33,7 +33,7 @@ mcs helloworld.cs -pkg:gtk-sharp-2.0
 
 It's a bit longer than console hello world and needs some explanation.
 
-Every Gtk\# application must import the Gtk namespace:
+Every Gtk# application must import the Gtk namespace:
 
 ``` csharp
 using Gtk;
@@ -47,7 +47,7 @@ Now, let's walk through Main().
 Application.Init()
 ```
 
-This initializes GTK and is needed in every Gtk\# application.
+This initializes GTK and is needed in every Gtk# application.
 
 Now, create a Window object; the first parameter is the title of the window. To display it, call Show().
 
@@ -67,7 +67,7 @@ Note that you'll need to exit this program with CTRL-C, as it doesn't have code 
 HelloWorld, second try
 ----------------------
 
-Here's a more elegant version of the above. It knows how to quit elegantly, and we'll use it to introduce *event handling*in Gtk\#.
+Here's a more elegant version of the above. It knows how to quit elegantly, and we'll use it to introduce *event handling*in Gtk#.
 
 ``` csharp
         using Gtk;
@@ -112,7 +112,7 @@ Here's a more elegant version of the above. It knows how to quit elegantly, and 
         }
 ```
 
-Gtk\# is an event driven toolkit, which means it will sleep in Application.Run() until an event occurs and control is passed to the appropriate function. Gtk\# can make use of the type "event". When you close the "HelloWorld" window, the window throws an event of type DeleteEvent. To enable your application to react on the DeleteEvent, you must connect it to an event handler.
+Gtk# is an event driven toolkit, which means it will sleep in Application.Run() until an event occurs and control is passed to the appropriate function. Gtk# can make use of the type "event". When you close the "HelloWorld" window, the window throws an event of type DeleteEvent. To enable your application to react on the DeleteEvent, you must connect it to an event handler.
 
 ``` csharp
 window.DeleteEvent += delete_event;
@@ -189,7 +189,7 @@ Public Module ToggleButtons
                 button.GrabDefault()
                 button.Show()
  
-                window.ShowAll() 
+                window.ShowAll()
  
                 Application.Run()
         End Sub

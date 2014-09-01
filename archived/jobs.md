@@ -12,8 +12,5 @@ The Mono development team is incredibly distributed (with folks living in differ
 
 We are also a small team with many tasks in mind, so you will usually have to step in to assist others in the team, with release engineering when we need your help.
 
-Jobs
-====
-
 [http://xamarin.com/jobs](http://xamarin.com/jobs)
 

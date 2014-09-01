@@ -8,7 +8,7 @@ redirect_from:
 ASP.NET Modules
 ===============
 
-Mono provides support for **gzip** encoding and **basic and digest authentication** in *xsp* as modules. These can be used with *mod\_mono* too, but as apache already has modules to do that, they are less useful.
+Mono provides support for **gzip** encoding and **basic and digest authentication** in *xsp* as modules. These can be used with *mod_mono* too, but as apache already has modules to do that, they are less useful.
 
 The modules are in the Mono.Http.dll assembly distributed with mono.
 
@@ -71,7 +71,7 @@ They both need to get the file name containing the users and the realm from the 
 Now we need to enable the corresponding module. This is done by adding the following line inside \<httpModules\>...\</httpModules\> in your web.config file:
 
 ``` xml
-<add name="BasicAuthenticationModule" 
+<add name="BasicAuthenticationModule"
      type="Mono.Http.Modules.BasicAuthenticationModule, Mono.Http, Version=1.0.5000.0, PublicKeyToken=0738eb9f132ed756"/>
 ```
 

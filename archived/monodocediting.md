@@ -40,7 +40,7 @@ Note: The milestones are not necessarily in order, beyond the first one.
 Milestone Hydrogen
 ------------------
 
-The first milestone is the ability to browse, edit, and assemble an existing documentation tree on disk as produced by monodocer. The primary test case will be the documentation for the new widget library I'll be producing. The existing Gtk\# documentation catalog will serve as a "release-ready" test case.
+The first milestone is the ability to browse, edit, and assemble an existing documentation tree on disk as produced by monodocer. The primary test case will be the documentation for the new widget library I'll be producing. The existing Gtk# documentation catalog will serve as a "release-ready" test case.
 
 Specific features of this milestone include:
 

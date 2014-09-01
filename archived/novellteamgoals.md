@@ -95,7 +95,7 @@ Lead: Paolo Molaro.
     -   Plans is available [debugger plans' here](/Debugger#plan "Debugger").
 -   Generics Support Improvements
     -   The current support needs to be audited, and cleaned up
-    -   Optimize memory usage of generics-relate data structures (like removing generic\_container from non-generic MonoMethods).
+    -   Optimize memory usage of generics-relate data structures (like removing generic_container from non-generic MonoMethods).
     -   Far future: code sharing optimizations.
 -   Compacting Garbage Collector
 -   Correctness/Bug Fixes
@@ -150,7 +150,7 @@ Ship MonoDevelop 1.0, the planning document is:
 Other Groups
 ------------
 
-Other groups include developers that do not directly belong to any of the previous groups, that own code in various places, or that on temporary loans to other projects (Mike Kestner for Gtk\#)
+Other groups include developers that do not directly belong to any of the previous groups, that own code in various places, or that on temporary loans to other projects (Mike Kestner for Gtk#)
 
 Lead by default: Miguel de Icaza
 

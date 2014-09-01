@@ -210,13 +210,13 @@ browser.ServiceAdded += delegate (object o, ServiceBrowseEventArgs args) {
     Console.WriteLine ("Found Service: {0}", args.Service.Name);
     args.Service.Resolved += delegate (object o, ServiceResolvedEventArgs args) {
         IResolvableService s = (IResolvableService)args.Service;
-        Console.WriteLine ("Resolved Service: {0} - {1}:{2} ({3} TXT record entries)", 
+        Console.WriteLine ("Resolved Service: {0} - {1}:{2} ({3} TXT record entries)",
             s.FullName, s.HostEntry.AddressList[0], s.Port, s.TxtRecord.Count);
     };
     args.Service.Resolve ();
 };
  
-// 
+//
 // Trigger the request
 //
 browser.Browse ("_daap._tcp", "local");

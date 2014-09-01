@@ -81,7 +81,7 @@ Here are some suggestions of ways to help clean the wiki up:
 In-Progress Tasks & Discussion
 ==============================
 
--   See the [Talk:Mono\_Documentation\_Improvement\_Project](/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
+-   See the [Talk:Mono_Documentation_Improvement_Project](/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
 -   All articles that are currently under construction can be found in the [Sandbox-Category](/Category:Sandbox)
 
 Writing good Documentation

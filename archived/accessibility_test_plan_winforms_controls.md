@@ -18,7 +18,7 @@ The Google document(s) linked below contains information about the progress of o
 
 ### Strongwind Tests
 
-[http://spreadsheets.google.com/ccc?key=pwydy7S3XPTBTRS9n\_oBjJA&hl=en](http://spreadsheets.google.com/ccc?key=pwydy7S3XPTBTRS9n_oBjJA&hl=en)
+[http://spreadsheets.google.com/ccc?key=pwydy7S3XPTBTRS9n_oBjJA&hl=en](http://spreadsheets.google.com/ccc?key=pwydy7S3XPTBTRS9n_oBjJA&hl=en)
 
 "Test Status" Guidelines:
 

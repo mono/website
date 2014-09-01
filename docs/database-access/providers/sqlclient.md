@@ -18,7 +18,7 @@ Info
 
 -   Does not require a client library because it is fully managed.
 
--   Requires the assembly Mono.Data.Tds.dll which implements the TDS protocol in C\#
+-   Requires the assembly Mono.Data.Tds.dll which implements the TDS protocol in C#
 
 -   Uses TDS Protocol Version 7.0
 
@@ -49,7 +49,7 @@ Current Status
 
 -   Data can be filled in a DataTable in a DataSet via a SqlDataAdapter
 
--   Works in the SQL\# command-line and Gtk\# GUI version
+-   Works in the SQL# command-line and Gtk# GUI version
 
 Action Plan
 -----------
@@ -99,13 +99,17 @@ There is a trial version which allows you to use it for 120 days. There is also 
 
 <!-- -->
 
-    Server=hostname;Database=databaseName;User ID=sqlServerUserid;Password=sqlServerPassword
+```
+Server=hostname;Database=databaseName;User ID=sqlServerUserid;Password=sqlServerPassword
+```
 
 -   Has a connection string format for NT Authentication:
 
 <!-- -->
 
-    Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Password=windowsPassword;Integrated Security=SSPI
+```
+Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Password=windowsPassword;Integrated Security=SSPI
+```
 
 -   Connection String Parameters:
 
@@ -128,7 +132,7 @@ There is a trial version which allows you to use it for 120 days. There is also 
 |hostname,port|Server=MYHOST,1433|
 |hostname\\instance|Server=MYHOST\\NETSDK|
 
--   C\# Example using SQL Server Authentication:
+-   C# Example using SQL Server Authentication:
 
 <!-- -->
 
@@ -168,7 +172,7 @@ There is a trial version which allows you to use it for 120 days. There is also 
  }
 ```
 
--   C\# Example using NT Authentication (Integrated Security)
+-   C# Example using NT Authentication (Integrated Security)
 
 <!-- -->
 
@@ -209,7 +213,7 @@ There is a trial version which allows you to use it for 120 days. There is also 
  }
 ```
 
--   C\# Example using Command Builder and Data Adapter to easily update the database based on inserts, updates, or deletes in a DataTable
+-   C# Example using Command Builder and Data Adapter to easily update the database based on inserts, updates, or deletes in a DataTable
 
 <!-- -->
 
@@ -224,11 +228,11 @@ namespace TestSqlClientAdapter {
         static SqlConnection con;
         static SqlTransaction trans;
  
-        public static void Main (string[] args) 
+        public static void Main (string[] args)
         {
             Console.WriteLine("Apapter Test Begin...");
             using (con = new SqlConnection(
-                            "server=localhost;" + 
+                            "server=localhost;" +
                             "database=pubs;" +
                             "user id=sa;" +
                             "password=mypass")) {
@@ -252,17 +256,17 @@ namespace TestSqlClientAdapter {
             Console.WriteLine("Done.");
         }
  
-        static void Setup() 
+        static void Setup()
         {
             using (SqlCommand cmd = con.CreateCommand()) {
                 cmd.Transaction = trans;
-                cmd.CommandText = 
+                cmd.CommandText =
                                   "DROP TABLE MONO_TEST_ADAPTER1";
  
-                try { cmd.ExecuteNonQuery(); 
+                try { cmd.ExecuteNonQuery();
                 } catch(SqlException e) { }
  
-                cmd.CommandText = 
+                cmd.CommandText =
                     "CREATE TABLE MONO_TEST_ADAPTER1 (" +
                     " num_value int primary key," +
                     " txt_value varchar(64))";
@@ -270,7 +274,7 @@ namespace TestSqlClientAdapter {
             }
         }
  
-        static void Insert() 
+        static void Insert()
         {
             Console.WriteLine("Insert...");
  
@@ -299,7 +303,7 @@ namespace TestSqlClientAdapter {
             ReadData(con, "SELECT * FROM MONO_TEST_ADAPTER1");
         }
  
-        static void Update() 
+        static void Update()
         {
             Console.WriteLine("Update...");
  
@@ -325,7 +329,7 @@ namespace TestSqlClientAdapter {
  
         }
  
-        static void Delete() 
+        static void Delete()
         {
             Console.WriteLine("Delete...");
  
@@ -349,7 +353,7 @@ namespace TestSqlClientAdapter {
  
         }
  
-        private static void ReadData(IDbConnection con, string sql) 
+        private static void ReadData(IDbConnection con, string sql)
         {
             using (IDbCommand cmd = con.CreateCommand()) {
                 cmd.Transaction = trans;
@@ -369,7 +373,7 @@ namespace TestSqlClientAdapter {
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
@@ -377,11 +381,14 @@ namespace TestSqlClientAdapter {
 
 <!-- -->
 
-    mcs TestExample.cs -r:System.Data.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
-
+``` bash
+     mono TestExample.exe
+```

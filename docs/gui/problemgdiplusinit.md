@@ -13,7 +13,7 @@ Fixing this issue is an operating-system specific problem.
 Linux
 =====
 
-Make sure that the file libgdiplus.so exists and that the directory containing it is listed in either the /etc/ld.so.conf file or in the LD\_LIBRARY\_PATH environment variable:
+Make sure that the file libgdiplus.so exists and that the directory containing it is listed in either the /etc/ld.so.conf file or in the LD_LIBRARY_PATH environment variable:
 
 ``` bash
 $ echo $LD_LIBRARY_PATH
@@ -23,8 +23,8 @@ $ echo $LD_LIBRARY_PATH
 If the directory is not listed, you can add it like this:
 
 ``` bash
-$ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/my/new/directory
-$ export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/my/new/directory
+export LD_LIBRARY_PATH
 ```
 
 If this still fails, it might be possible that one of the libraries that libgdiplus depends on does not exist, you can try to determine this using:
@@ -59,24 +59,24 @@ $ ldd /path/to/libgdiplus.so
 If one of those shows that it can not be resolved, you have found your problem.
 
 ``` bash
-$ LD_DEBUG=libs mono program.exe
+LD_DEBUG=libs mono program.exe
 ```
 
 Or you can try:
 
 ``` bash
-$ MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono glue.exe
+MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono glue.exe
 ```
 
 MacOS X
 =======
 
-Make sure that the file libgdiplus.dylib exists and that the directory containing it is listed in the DYLD\_LIBRARY\_PATH environment variable.
+Make sure that the file libgdiplus.dylib exists and that the directory containing it is listed in the DYLD_LIBRARY_PATH environment variable.
 
 You might want to try the otool command to find if there are any missing dependencies (otool is available in the devl package)
 
 ``` bash
-$ otool -L /full/path/to/libgdiplus.dylib
+otool -L /full/path/to/libgdiplus.dylib
 ```
 
 Windows

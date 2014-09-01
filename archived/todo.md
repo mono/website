@@ -106,7 +106,7 @@ A code optimizer would convert a CIL stream into a different CIL stream that is 
 
 These optimizations could be a lot more complex than what the JIT compiler can do today doing things like loop unrolling or processing a file to automatically multithread some pieces of the program.
 
-It is rumored that the MS C++ compiler produces better code than the C\# compiler as it does do some IL-level loop unrolling for example.
+It is rumored that the MS C++ compiler produces better code than the C# compiler as it does do some IL-level loop unrolling for example.
 
 Medium-Hard
 
@@ -130,7 +130,7 @@ Documentation
 |Area|Description|Difficulty|Time estimate|Additional information|
 |:---|:----------|:---------|:------------|:---------------------|
 |Version Information|Update monodocer so it can consume the output of corcompare (our tool to track differences in APIs) and flag documentation with the proper XML elements to state when the API first became available|Medium|1 months|N/A|
-|C\# specification|Integrate the new C\# specification into Monodoc|Easy|1 week|N/A|
+|C# specification|Integrate the new C# specification into Monodoc|Easy|1 week|N/A|
 |Comment Service API|Design a full system for comments and ratings so people can annotate the documentation in Monodoc.|Easy|2-3 months.|N/A|
 |Web-editing for Monodoc|Modify Monodoc so that it can be used over the web to accept contributions and edit the existing documentation|Easy|1 months.|N/A|
 

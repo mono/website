@@ -45,7 +45,7 @@ Moonlight 2
     -   Control framework
     -   Layout framework.
 -   Microsoft Media Pack 2.0 for playing video and audio.
--   Includes Mono for executing code (C\# and DLR-based languages).
+-   Includes Mono for executing code (C# and DLR-based languages).
 -   Runs the Silverlight 2.0 MS-PL controls and 2.0 based applications.
 
 |Release|Date|

@@ -43,7 +43,7 @@ The samples cover basic MacOS GUI applications, AppKit applications, creating Do
 Community
 =========
 
-A chat room to discuss MonoMac exists on the IRC server at irc.gnome.org on the channel \#monomac. You can access it on the [web as well](http://wbe02.mibbit.com/index.html?server=irc.gnome.org&channel=%23monomac).
+A chat room to discuss MonoMac exists on the IRC server at irc.gnome.org on the channel #monomac. You can access it on the [web as well](http://wbe02.mibbit.com/index.html?server=irc.gnome.org&channel=%23monomac).
 
 We are using the [mono-osx@lists.ximian.com mailing list](http://lists.ximian.com/mailman/listinfo/mono-osx) to discuss.
 
@@ -73,14 +73,14 @@ Background
 
 Many years ago Geoff Norton produced CocoaSharp, the first set of .NET bindings to the Cocoa API. CocoaSharp was a fine first binding at the time and it was a good place to start learning about the challenges of binding Objective-C APIs to be consumed by .NET clients.
 
-Over the years three other frameworks were created to integrate the Objective-C world and the Objective-C APIs with C\# and other .NET languages. Each one of these new frameworks had its pros and cons, and a year ago we made a call for all three competing frameworks to be merged, but sadly nothing came out of it.
+Over the years three other frameworks were created to integrate the Objective-C world and the Objective-C APIs with C# and other .NET languages. Each one of these new frameworks had its pros and cons, and a year ago we made a call for all three competing frameworks to be merged, but sadly nothing came out of it.
 
-When we created MonoTouch, we wanted a binding for the Cocoa APIs that would fit the patterns and idioms used in the C\# and .NET worlds, that would comply with the .NET Framework Design Guidelines and would allow give developers all the tools required to build full Cocoa applications.
+When we created MonoTouch, we wanted a binding for the Cocoa APIs that would fit the patterns and idioms used in the C# and .NET worlds, that would comply with the .NET Framework Design Guidelines and would allow give developers all the tools required to build full Cocoa applications.
 
-We had two main requirements: the binding should just work and the code should be MIT X11 licensed. For the binding to just work, we turned to the .NET Framework Design Guidelines book as it captures years of design decisions, programming idioms and advise that would help C\# and .NET developers. By following the Design Guidelines we:
+We had two main requirements: the binding should just work and the code should be MIT X11 licensed. For the binding to just work, we turned to the .NET Framework Design Guidelines book as it captures years of design decisions, programming idioms and advise that would help C# and .NET developers. By following the Design Guidelines we:
 
 -   Avoid surprises
--   Blend with other C\# and .NET libraries
+-   Blend with other C# and .NET libraries
 -   Reduce the room for errors
 -   Increase developer joy
 -   Minimizes time for the developer to be productive
@@ -90,35 +90,35 @@ Luckily for us, .NET was designed from the start to be an interoperability frame
 
 The above goals turned into the following technical requirements:
 
--   Developers should be able to consume Cocoa APIs as C\# APIs
+-   Developers should be able to consume Cocoa APIs as C# APIs
 -   Allow developers to subclass Objective-C classes
-    -   Subclass should work with C\# standard constructs
+    -   Subclass should work with C# standard constructs
     -   Derive from an existing class
     -   Call base constructor
-    -   Overriding methods should be done with C\#'s override system
+    -   Overriding methods should be done with C#'s override system
     -   Do not expose developers to Objective-C selectors
 -   Provide a mechanism to call arbitrary Objective-C libraries
 -   Make common Objective-C tasks easy, and hard Objective-C tasks possible
--   Expose Objective-C properties as C\# properties
+-   Expose Objective-C properties as C# properties
 -   Expose a strongly typed API, for example instead of exposing the generic-container NSArray or individual NSObjects. This means that developers get a few benefits:
     -   MonoDevelop can flag errors as you write the code
     -   MonoDevelop can present documentation popups on types, methods, properties and parameters as you type them.
     -   Minimize runtime errors by catching invalid casts at compile time.
     -   Encourage in-IDE API exploration without rebuilding, and without having to look up the types in the documentation.
--   Turn int and uint parameters that should have been enums as C\# enumerations and C\# enumerations with [Flags] attributes
--   Expose the basic Foundation as C\# native types:
+-   Turn int and uint parameters that should have been enums as C# enumerations and C# enumerations with [Flags] attributes
+-   Expose the basic Foundation as C# native types:
     -   NSString becomes string
     -   NSArray becomes strongly-typed array
 -   Events and notifications, give users a choice between:
     -   Support the Objective-C delegate pattern:
         -   Strongly typed version is the default
         -   Weakly typed version for advance use cases
-    -   C\# event system
+    -   C# event system
 -   Class libraries should be MIT X11 licensed, like the rest of Mono's class libraries.
--   Expose C\# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as "blocks".
+-   Expose C# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as "blocks".
 -   Curated APIs: there is no point in binding every UNIX or CoreFoundation C API available, as those are not very useful in practice. Bind only those that are required to build applications or get access to mandatory functionality.
 
-More information about our API can be found here: [http://monotouch.net/Documentation/API\_Design](http://monotouch.net/Documentation/API_Design)
+More information about our API can be found here: [http://monotouch.net/Documentation/API_Design](http://monotouch.net/Documentation/API_Design)
 
 Binding Cocoa Types
 ===================
@@ -181,7 +181,7 @@ If you are interested in advancing the state of MonoMac, we are currently lookin
 Where we are going
 ==================
 
-MonoMac is merely the library that gives C\# developers access to the underlying APIs on OSX, it does not include the tooling necessary to create a full application bundle.
+MonoMac is merely the library that gives C# developers access to the underlying APIs on OSX, it does not include the tooling necessary to create a full application bundle.
 
 Luckily, MonoDevelop has already most of the code needed in the form of the MonoTouch plugin. We will update this plugin to also support creating full application bundles for OSX.
 
@@ -201,7 +201,7 @@ We need contributors in the following areas:
 -   API binding for the rest of the Frameworks
 -   We need samples to be written
 -   We need tutorials to be written (like the ones we did for MonoTouch)
--   We need to port existing Cocoa samples to C\#:
+-   We need to port existing Cocoa samples to C#:
     -   To exercise the binding
     -   To serve as reference for new developers
     -   To identify missing frameworks

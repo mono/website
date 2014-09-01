@@ -143,7 +143,7 @@ Each non working sample was analyzed in order to understand the source of the fa
 Features
 --------
 
-### Serialization
+### Serialization features
 
 -   XML Serialization (XmlSerializerFormatAttribute) - supported
 -   MTOM not supported
@@ -295,9 +295,6 @@ Core Compare
 ------------
 
 The class status for WCF is now included in the \<a href="[http://go-mono.com/status/](http://go-mono.com/status/)"\>class status pages\</a\>.
-
-Configuration
-=============
 
 Contracts
 =========

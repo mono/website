@@ -50,7 +50,7 @@ rename_tag()
 EOF
  
 git for-each-ref refs/remotes/origin/ |
-while read sha type branch; do 
+while read sha type branch; do
     j=${branch##refs/remotes/origin/}
     git rev-parse --verify "refs/tags/$j" > /dev/null 2>&1 || continue
  

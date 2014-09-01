@@ -41,17 +41,17 @@ The results from the MoMA scan can be seen [here](http://jpobst.com/moma/nclassm
 
 Methods we are using that are not in Mono 1.2.4:
 
--   void ListView.add\_ItemSelectionChanged (ListViewItemSelectionChangedEventHandler)
--   void TreeView.set\_ShowNodeToolTips (bool)
--   void TreeNode.set\_ToolTipText (string)
--   void PrintDialog.set\_UseEXDialog (bool)
+-   void ListView.add_ItemSelectionChanged (ListViewItemSelectionChangedEventHandler)
+-   void TreeView.set_ShowNodeToolTips (bool)
+-   void TreeNode.set_ToolTipText (string)
+-   void PrintDialog.set_UseEXDialog (bool)
 
 Methods that are marked with a [MonoTODO] attribute in Mono.1.2.4:
 
--   void Control.set\_AutoSize (bool) - This method currently does nothing
--   void ContainerControl.set\_AutoScaleMode (AutoScaleMode) - Call scaling method
--   void ComboBox.set\_AutoCompleteMode (AutoCompleteMode) - AutoCompletion algorithm is currently not implemented.
--   void ComboBox.set\_AutoCompleteSource (AutoCompleteSource) - AutoCompletion algorithm is currently not implemented.
+-   void Control.set_AutoSize (bool) - This method currently does nothing
+-   void ContainerControl.set_AutoScaleMode (AutoScaleMode) - Call scaling method
+-   void ComboBox.set_AutoCompleteMode (AutoCompleteMode) - AutoCompletion algorithm is currently not implemented.
+-   void ComboBox.set_AutoCompleteSource (AutoCompleteSource) - AutoCompletion algorithm is currently not implemented.
 
 Looking at the report, we can immediately see several places we will most likely need to make adjustments for our program to work.
 
@@ -83,7 +83,7 @@ Looking at the log that was created, we see this error:
     at NClass.GUI.MainForm.Init () [0x00000]
     at NClass.GUI.MainForm..ctor () [0x00000]
     at (wrapper remoting-invoke-with-check) NClass.GUI.MainForm:.ctor ()
-    at NClass.GUI.Program.Main (System.String[] args) [0x00000] 
+    at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 
 This isn't really unexpected. It is telling us that we tried to set the property PrintDialog.UseEXDialog, which MoMA already told us didn't exist in Mono. So it time to start porting our source code to work around these issues.
 
@@ -93,16 +93,16 @@ Porting Strategies
 There are several approaches to porting code, depending on your goals.
 
 -   The unsupported code can simply be removed or commented out if it is not needed.
--   Compiler conditional directives (\#if) can be used to create separate executables for .Net and Mono.
+-   Compiler conditional directives (#if) can be used to create separate executables for .Net and Mono.
 -   The runtime (.Net or Mono) can be detected and use different code.
 -   The code can be rewritten to use supported methods in Mono.
 
 Here is the section of code that is setting PrintDialog.UseEXDialog in MainForm.Designer.cs:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   this.printDialog.UseEXDialog = true;
 ```
@@ -112,18 +112,18 @@ Here is the section of code that is setting PrintDialog.UseEXDialog in MainForm.
 If the code isn't really needed, the easiest thing to do is to remove it:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
 ```
 
 or comment it out:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   // this.printDialog.UseEXDialog = true;
 ```
@@ -135,9 +135,9 @@ However, there will be plenty of cases when this is not feasible.
 Another strategy is to create different assemblies for .Net and Mono. This can be done by wrapping all code that is not supported by Mono in conditional directives and compiling with and without the directive.
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
 #if !MONO
   this.printDialog.UseEXDialog = true;
@@ -164,9 +164,9 @@ In order to have only one assembly for all platforms, but run different code on 
 Then use the function to determine which code to run:
 
 ``` csharp
-  // 
+  //
   // printDialog
-  // 
+  //
   this.printDialog.Document = this.printDocument;
   if (!IsRunningOnMono ()){
     SetupPrintDialog ();
@@ -197,7 +197,7 @@ Which can be modified to:
   this.lstItems.SelectedIndexChanged += new System.EventHandler (this.lstItems_ItemSelectionChanged);
 ```
 
-We then modify lstItems\_ItemSelectionChanged from:
+We then modify lstItems_ItemSelectionChanged from:
 
 ``` csharp
   private void lstItems_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -253,7 +253,7 @@ MembersDialog.designer.cs - Line 238
   this.lstMembers.SelectedIndexChanged += new System.EventHandler (this.lstMembers_ItemSelectionChanged);
 ```
 
-Rewriting the listMembers\_ItemSelectionChanged method takes a little bit more effort. One way is to change it from:
+Rewriting the listMembers_ItemSelectionChanged method takes a little bit more effort. One way is to change it from:
 
 ``` csharp
 private void lstMembers_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -288,7 +288,7 @@ private void lstMembers_ItemSelectionChanged(object sender, EventArgs e)
     toolMoveUp.Enabled = false;
     toolMoveDown.Enabled = false;
     toolDelete.Enabled = false;
-    return;            
+    return;
   }
  
   ListViewItem lvi = lstMembers.SelectedItems[0];
@@ -309,7 +309,7 @@ private void lstMembers_ItemSelectionChanged(object sender, EventArgs e)
 }
 ```
 
-Also, make the changes to lstItems.ItemSelectionChanged and lstItems\_ItemSelectionChanged outlined in the "Rewriting Code" section above.
+Also, make the changes to lstItems.ItemSelectionChanged and lstItems_ItemSelectionChanged outlined in the "Rewriting Code" section above.
 
 With these changes made, rebuild the solution in Visual Studio. Then run the NClass.NClass.exe executable again. This time we get much better results:
 

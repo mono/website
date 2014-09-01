@@ -147,7 +147,7 @@ class HasReadOnlyNativeField {
 
 ### StaticConstructorsShouldBePrivateRule
 
-This rule will fire if a type's static constructor is not private. This is a problem because the static constructor is meant to be called by the runtime but if it is not private then other code may call it as well which may lead to security vulnerabilities. Note that C\# and VB.NET enforce this rule.
+This rule will fire if a type's static constructor is not private. This is a problem because the static constructor is meant to be called by the runtime but if it is not private then other code may call it as well which may lead to security vulnerabilities. Note that C# and VB.NET enforce this rule.
 
 Feedback
 ========

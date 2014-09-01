@@ -70,7 +70,7 @@ If you are a maintainer and you are not listed here, or the areas listed under y
 
 ### Marek Safar (mareks, msafar@xamarin.com)
 
--   C\# compiler (MCS)
+-   C# compiler (MCS)
 -   System.Core
 
 ### Miguel de Icaza (miguel, miguel@xamarin.com)
@@ -106,7 +106,7 @@ If you are a maintainer and you are not listed here, or the areas listed under y
 
 -   Windows Forms
 
-### Tom Hindle (tom\_hindle@sil.org)
+### Tom Hindle (tom_hindle@sil.org)
 
 -   Windows Forms
 

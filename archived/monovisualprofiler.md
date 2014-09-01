@@ -83,7 +83,7 @@ A view similar to the TreeMaps found in other profilers which shows the relative
 
 A view to depict the heap snapshot profile mode data visually. Reference graphs are a likely mechanism to use here to track down circular references and reference leaks.
 
-#### Heap Shot style profiling.
+#### Heap Shot style profiling
 
 Integration of a mode similar to Lluis Sanchez's nice heap shot profiler which does differencing for two snapshots of the heap to depict how the heap is changing over time.
 

@@ -14,7 +14,7 @@ ASP.NET Settings Mapping
 
 **Note: as of svn trunk revision 91160, the application-specific settings mapper configuration file name has changed to settings.map.config**
 
-When developing ASP.NET applications which may be ran by the end user on either MS.NET/ISS or Mono/XSP/mod\_mono, one may face a limitation of the .NET configuration system - the lack of conditional configuration constructs. Being unable to use different configuration settings for different operating systems/platforms, means that most of the time it is necessary to provide separate set of config files for every operating environment that differs to the other ones we support.
+When developing ASP.NET applications which may be ran by the end user on either MS.NET/ISS or Mono/XSP/mod_mono, one may face a limitation of the .NET configuration system - the lack of conditional configuration constructs. Being unable to use different configuration settings for different operating systems/platforms, means that most of the time it is necessary to provide separate set of config files for every operating environment that differs to the other ones we support.
 
 One example when such need arises is the usage of the WebParts feature of ASP.NET 2.0. As you may know, Mono currently does not support that feature and so applications which can optionally use it (like, e.g. MojoPortal) need to ship with a special configuration for Mono which excludes the WebPart configuration settings. Using settings mapping, it is possible to ignore the configuration sections related (and unsupported) by Mono.
 
@@ -147,8 +147,8 @@ This is the global settings.map file as currently shipped with Mono:
               The attributes to any of the above are freeform and are not processed by the mapper manager. They are stored verbatim for the
               mapper to peruse.
       -->
-      <replace name="AspNetSqlMembershipProvider" 
-               type="System.Web.Security.SqliteMembershipProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+      <replace name="AspNetSqlMembershipProvider"
+               type="System.Web.Security.SqliteMembershipProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                connectionStringName="LocalSqliteServer" />
     </what>
   </map>
@@ -170,8 +170,8 @@ This is the global settings.map file as currently shipped with Mono:
               The attributes to any of the above are freeform and are not processed by the mapper manager. They are stored verbatim for the
               mapper to peruse.
       -->
-      <replace name="AspNetSqlRoleProvider" 
-               type="System.Web.Security.SqliteRoleProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" 
+      <replace name="AspNetSqlRoleProvider"
+               type="System.Web.Security.SqliteRoleProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                connectionStringName="LocalSqliteServer" />
     </what>
   </map>
@@ -337,7 +337,7 @@ void ProcessReplace (NameValueCollection nvc, SettingsMappingWhatContents what)
 }
 ```
 
-Above you can observe what was described previously, that every operation tag's attrbutes are passed verbatim to the mapper. We specified a 'relativeTo' attribute whose value is to tell the mapper how to replace the path placeholder inside the original setting value. The placeholder value in our case is *@PATH\_PLACEHOLDER@* and is replaced with the value of the user's home/private directory.
+Above you can observe what was described previously, that every operation tag's attrbutes are passed verbatim to the mapper. We specified a 'relativeTo' attribute whose value is to tell the mapper how to replace the path placeholder inside the original setting value. The placeholder value in our case is *@PATH_PLACEHOLDER@* and is replaced with the value of the user's home/private directory.
 
 ``` csharp
 void MakeRelativeToUserHome (NameValueCollection nvc, string name)
@@ -513,7 +513,7 @@ The remaining files required for the mapper example to work
 </settingsMap>
 ```
 
-A word of explanation is required for the above file. You might have noticed that in the mapper we check for the NameValueCollection type of the passed section and in the above file we define a mapper for the System.Configuration.KeyValueInternalCollection type. This is because that's the exact type returned by the AppSettingsSection's GetRuntimeObject and that's what the SettingsMappingManager will see when looking for a mapper for the appSettings section. As already said above, the internal class derives from NameValueCollection. Also, note that the value of the 'mapperType' attribute doesn't specify the App\_Code assembly's version, culture and public key token. This is because App\_Code is a "virtual" assembly whose real name is different and changes between application runs. ASP.NET resolves the name internally to the real dynamically generated assembly.
+A word of explanation is required for the above file. You might have noticed that in the mapper we check for the NameValueCollection type of the passed section and in the above file we define a mapper for the System.Configuration.KeyValueInternalCollection type. This is because that's the exact type returned by the AppSettingsSection's GetRuntimeObject and that's what the SettingsMappingManager will see when looking for a mapper for the appSettings section. As already said above, the internal class derives from NameValueCollection. Also, note that the value of the 'mapperType' attribute doesn't specify the App_Code assembly's version, culture and public key token. This is because App_Code is a "virtual" assembly whose real name is different and changes between application runs. ASP.NET resolves the name internally to the real dynamically generated assembly.
 
 Final notes
 -----------

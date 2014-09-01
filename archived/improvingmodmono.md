@@ -8,7 +8,7 @@ redirect_from:
 ImprovingModMono
 ================
 
-The following are suggestions on things that we could do to improve mod\_mono:
+The following are suggestions on things that we could do to improve mod_mono:
 
 From Joshua Tauberer:
 
@@ -32,11 +32,11 @@ From Ted Milker:
 
 When MonoDebug is present in apache's configuration file, true or false, it spams up the apache error log with:
 
-    [Fri May 04 08:33:20 2007] [error] Not running mod-mono-server.exe 
-    because no MonoApplications, MonoApplicationsConfigFile or 
+    [Fri May 04 08:33:20 2007] [error] Not running mod-mono-server.exe
+    because no MonoApplications, MonoApplicationsConfigFile or
     MonoApplicationConfigDir specified.
 
-If you remove MonoDebug, this message goes away. There is some behavior in mod\_mono that does something different when MonoDebug is present(even if set to false) that probably needs to be looked at.
+If you remove MonoDebug, this message goes away. There is some behavior in mod_mono that does something different when MonoDebug is present(even if set to false) that probably needs to be looked at.
 
 Regarding the many instances of mod-mono-server that are spawned when Apache's MPM==prefork Apache launches many mod-mono-servers, only one of them survives. This is due to limits in the APR locking interfaces. If newer versions of APR support better locking interfaces, we should take advantage of those. [I have a patch in the works for this that doesn't use locking at all (surprisingly). -JT]
 

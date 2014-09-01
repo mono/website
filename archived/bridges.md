@@ -23,10 +23,10 @@ Bridges
 </tbody>
 </table>
 
-[ObjC\#](/ObjCSharp "ObjCSharp")
+[ObjC#](/ObjCSharp "ObjCSharp")
 ------------------------------------------------------------
 
-ObjC\# is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
+ObjC# is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
 
 [IKVM](/IKVM "IKVM")
 ------------------------------------------------
@@ -36,10 +36,10 @@ ObjC\# is a transparent two way bridge that allows the CLR to access the rich un
 [GAPI](/GAPI "GAPI")
 ------------------------------------------------
 
-[GAPI](/GAPI "GAPI") is a xml based code generator included in GTK\#, to build bindings (ussally) completely 100% cli based bridges to many different GObject and GLib classes.
+[GAPI](/GAPI "GAPI") is a xml based code generator included in GTK#, to build bindings (ussally) completely 100% cli based bridges to many different GObject and GLib classes.
 
 [SWIG](http://www.swig.org)
 ---------------------------
 
-Simplified Wrapper and Interface Generator (SWIG) is a code generator that builds bindings for many languages including C\# to communicate with C and C++. (It should be noted that most nearly all C interfaces can be handled by the built-in p/invoke interfaces without the need to use SWIG to do this)
+Simplified Wrapper and Interface Generator (SWIG) is a code generator that builds bindings for many languages including C# to communicate with C and C++. (It should be noted that most nearly all C interfaces can be handled by the built-in p/invoke interfaces without the need to use SWIG to do this)
 

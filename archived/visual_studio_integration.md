@@ -119,7 +119,7 @@ Covering the 80/20 case, I think the following assumptions can be made:
 -   Developers are primarily concerned with their apps running on Windows, but would like their apps to run on Mono/Linux if there is little to no additional development work required.
 -   Windows developers are not interested in switching to Linux, or SharpDevelop, or MonoDevelop. They want to program in Visual Studio on Windows, that is, using the tools they've used for years and are most productive in.
 -   Windows developers are not interested in learning how to use the various Linux tools like svn, make, yast, apt-get, rpm's, etc.
--   Windows developers are not interested in Gtk\#. Since the primary concern is their apps on Windows, Gtk\# is not useful. (Gaim on Windows sticks out pretty bad.)
+-   Windows developers are not interested in Gtk#. Since the primary concern is their apps on Windows, Gtk# is not useful. (Gaim on Windows sticks out pretty bad.)
 
 Obviously, there are exceptions to the above, but for the 80% case, it should work.
 
@@ -155,7 +155,7 @@ Before doing any deployments, the user needs to configure the directory on the l
 
  When the add-in is run, the following options should be available to the user:
 
-### Add-in configuration / options
+### Web: Add-in configuration / options
 
 -   Copy method (samba, ssh)
 -   Destination machine (name or ip)
@@ -175,7 +175,7 @@ Either the add-in or the daemon could create a wrapper script to make it easier 
 
 When the add-in is run, the following options should be available to the user:
 
-### Add-in configuration / options
+### Winforms: Add-in configuration / options
 
 -   Copy method (samba, ssh)
 -   Destination machine (name or ip)

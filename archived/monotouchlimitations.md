@@ -114,7 +114,7 @@ The lack of System.Reflection.Emit means that no code that depends on runtime co
 Reverse Callbacks
 -----------------
 
-In standard Mono it is possible to pass C\# delegate instances to unmanaged code in lieu of a function pointer. The runtime would typically transform those function pointers into a small thunk that allows unmanaged code to call back into managed code.
+In standard Mono it is possible to pass C# delegate instances to unmanaged code in lieu of a function pointer. The runtime would typically transform those function pointers into a small thunk that allows unmanaged code to call back into managed code.
 
 In Mono these bridges are implemented by the Just-in-Time compiler. When using the ahead-of-time compiler required by the iPhone there are two important limitations at this point:
 

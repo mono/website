@@ -43,12 +43,12 @@ Optional
 Required Local Changes
 ======================
 
-All required libraries for building mono in Visual Studio are referenced via the MONO\_DEPENDENCIES\_PREFIX environment variable. Set this variable to a previous installed mono (C:\\Mono-1.2.5.2 for example), or to a cygwin environment setup for building mono (D:\\cygwin\\opt for example).
+All required libraries for building mono in Visual Studio are referenced via the MONO_DEPENDENCIES_PREFIX environment variable. Set this variable to a previous installed mono (C:\\Mono-1.2.5.2 for example), or to a cygwin environment setup for building mono (D:\\cygwin\\opt for example).
 
-Each executed assembly (i.e. the EXE) must be able to find a working mscorlib.dll (and all the other required assemblies). This can be done in different ways. My preference is to use the project **properties pages** in the **Configuration Properties\\Debugging\\Environment** options and set **MONO\_PATH** to the class libraries directory build by cygwin (local) or on Linux (remote). E.g.
+Each executed assembly (i.e. the EXE) must be able to find a working mscorlib.dll (and all the other required assemblies). This can be done in different ways. My preference is to use the project **properties pages** in the **Configuration Properties\\Debugging\\Environment** options and set **MONO_PATH** to the class libraries directory build by cygwin (local) or on Linux (remote). E.g.
 
--   **MONO\_PATH=z:\\svn\\mcs\\class\\lib\\default\\** allows me to use the class libs build under Linux; while
--   **MONO\_PATH=C:\\cygwin\\opt\\mono\\lib\\mono\\1.0** use the one built from cygwin (after a make install)
+-   **MONO_PATH=z:\\svn\\mcs\\class\\lib\\default\\** allows me to use the class libs build under Linux; while
+-   **MONO_PATH=C:\\cygwin\\opt\\mono\\lib\\mono\\1.0** use the one built from cygwin (after a make install)
 
 Building
 ========
@@ -64,7 +64,7 @@ From the shell it is possible to build by using this command:
 Known Issues
 ============
 
-1. Most, BUT NOT ALL, the regressions tests pass under this build. The failures seems limited to some mathematical differences and to code relying on the stack walking functions. The hacks to replace the GCC functions (**\_\_builtin\_frame\_address** and **\_\_builtin\_return\_address**) are incomplete;
+1. Most, BUT NOT ALL, the regressions tests pass under this build. The failures seems limited to some mathematical differences and to code relying on the stack walking functions. The hacks to replace the GCC functions (**__builtin_frame_address** and **__builtin_return_address**) are incomplete;
 
 2. The solution doesn't provide complete (i.e. from scratch) build. It requires a working cygwin environment to create some files (e.g. via genmdesc, monoburg). This isn't so bad as without cygwin you wouldn't be able to test Mono properly;
 
@@ -107,7 +107,7 @@ Currently the rules have only been tested for the class libraries, but it will b
 The process will:
 
 -   Generate a .csproj file per-assembly/profile
-    -   This means: mscorlib-bootstrap, mscorlib-net\_1\_1, mscorlib-net\_2\_0, mscolib\_net\_2\_1
+    -   This means: mscorlib-bootstrap, mscorlib-net_1_1, mscorlib-net_2_0, mscolib_net_2_1
 -   Drive the compilation by changing the CscToolPath directory in each of those project files to point to a custom directory that contains a wrapper that calls Mono and MCS with the appropriate flags.
 
 A batch file in the mono/msvc/setup-solution.bat will prepare the tree before the solutions are ready to be used.

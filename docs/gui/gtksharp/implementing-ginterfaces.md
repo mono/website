@@ -12,13 +12,13 @@ Introduction
 
 The GObject type system allows multiple inheritance via GInterfaces. GInterfaces expose a set of methods which must be implemented by an object and registered with the type system. For example, in GtkTreeModel, the implementable portion of the API is defined in the GtkTreeModelIFace struct.
 
-Most GInterfaces also expose additional API which the implementor gets for free, like signals and helper methods to invoke the signals. In TreeModel, the gtk\_tree\_model\_foreach function is an example of this "extra" API. The implementor does not have to provide an implementation of the method, but consumers of the interface can invoke the helper method to iterate over all nodes in the tree.
+Most GInterfaces also expose additional API which the implementor gets for free, like signals and helper methods to invoke the signals. In TreeModel, the gtk_tree_model_foreach function is an example of this "extra" API. The implementor does not have to provide an implementation of the method, but consumers of the interface can invoke the helper method to iterate over all nodes in the tree.
 
-The initial stable implementation of GInterfaces in Gtk\# focused on consumption of GInterface APIs on native objects which implement them. For example, Gtk.ListStore implements the Gtk.TreeModel GInterface, so GAPI generates all the TreeModel methods and signals on the ListStore class so that users can access all of the interface functionality exposed by the ListStore.
+The initial stable implementation of GInterfaces in Gtk# focused on consumption of GInterface APIs on native objects which implement them. For example, Gtk.ListStore implements the Gtk.TreeModel GInterface, so GAPI generates all the TreeModel methods and signals on the ListStore class so that users can access all of the interface functionality exposed by the ListStore.
 
 Registration of GInterfaces on managed subclass types was not supported initially, however. It was not possible to implement the Gtk.TreeModel interface and have the native type system identify it as a GtkTreeModel implementor.
 
-In the Gtk\# 2.12 development interval, GInterface registration support has been introduced to allow users to implement these capabilities on their managed subclasses. In order to maintain compatibility with the existing stable API, the original GInterface "consumable" interfaces were left unchanged, while two new types, an "implementable" interface and a helper object, were added to support both registration and implementation.
+In the Gtk# 2.12 development interval, GInterface registration support has been introduced to allow users to implement these capabilities on their managed subclasses. In order to maintain compatibility with the existing stable API, the original GInterface "consumable" interfaces were left unchanged, while two new types, an "implementable" interface and a helper object, were added to support both registration and implementation.
 
 This article describes these three managed types now associated with a native GInterface and how to use them to implement and register a GInterface with the GObject type system. We will use GtkTreeModel for a concrete example.
 
@@ -30,19 +30,19 @@ Each GInterface exposed by a native library API causes three types to be generat
 The Consumable interface
 ------------------------
 
-Gtk.TreeModel is the public consumable interface containing all members exposed by the GtkTreeModel C API. This is the type that other objects in the API utilize as well. A Gtk.TreeView is instantiated using a Gtk.TreeModel. This type remains unaltered from its original form to preserve API compatibility with the original consume-only Gtk\# GInterface capability.
+Gtk.TreeModel is the public consumable interface containing all members exposed by the GtkTreeModel C API. This is the type that other objects in the API utilize as well. A Gtk.TreeView is instantiated using a Gtk.TreeModel. This type remains unaltered from its original form to preserve API compatibility with the original consume-only Gtk# GInterface capability.
 
 The Implementor interface
 -------------------------
 
-Gtk.TreeModelImplementor is the implementable portion of the native type. It contains the methods exposed by the native GtkTreeModelIface struct which is registered with the GObject type system. To implement a TreeModel in Gtk\#, you need only implement this interface on a GLib.Object subclass and it will be automatically registered with the native type system when the first instance of your subclass is created.
+Gtk.TreeModelImplementor is the implementable portion of the native type. It contains the methods exposed by the native GtkTreeModelIface struct which is registered with the GObject type system. To implement a TreeModel in Gtk#, you need only implement this interface on a GLib.Object subclass and it will be automatically registered with the native type system when the first instance of your subclass is created.
 
 The Adapter object
 ------------------
 
 Gtk.TreeModelAdapter is a helper object which exposes API wrappers for the extra portions of the native API, such as signals, foreach methods, and signal invocation helper methods. This object saves the user from providing a large amount of boilerplate code which is not necessary when implementing the interface in C.
 
-For example, Gtk.TreeModelAdapter implements a Foreach method which pinvokes the native gtk\_tree\_model\_foreach method, saving the user from either implementing the method in managed code or performing the pinvoke themselves. It also exposes RowChanged, RowInserted, RowDeleted, RowHasChildToggled, and RowsReordered events which connect into the unmanaged signal emission so that signals are forwarded properly to attached event handlers and Emit methods to properly raise all of native signals.
+For example, Gtk.TreeModelAdapter implements a Foreach method which pinvokes the native gtk_tree_model_foreach method, saving the user from either implementing the method in managed code or performing the pinvoke themselves. It also exposes RowChanged, RowInserted, RowDeleted, RowHasChildToggled, and RowsReordered events which connect into the unmanaged signal emission so that signals are forwarded properly to attached event handlers and Emit methods to properly raise all of native signals.
 
 An Example
 ==========
@@ -100,5 +100,5 @@ TreeModelAdapter provides a TreeModelImplementor cast operator to get access to 
 Availability
 ============
 
-As of October 2, 2007, the above capabilities are available on the trunk branch of gtk-sharp. The hearty and fearless among you are encouraged to dig in and report [any bugs you discover.](http://bugzilla.novell.com) This capability will be released in the Gtk\# 2.12 releases which will commence shortly with a 2.11.0 unstable release. We are currently debating whether to backport the capability to the 2.8 and 2.10 release lines. This will likely not happen until at least the 2.12.0 stable release.
+As of October 2, 2007, the above capabilities are available on the trunk branch of gtk-sharp. The hearty and fearless among you are encouraged to dig in and report [any bugs you discover.](http://bugzilla.novell.com) This capability will be released in the Gtk# 2.12 releases which will commence shortly with a 2.11.0 unstable release. We are currently debating whether to backport the capability to the 2.8 and 2.10 release lines. This will likely not happen until at least the 2.12.0 stable release.
 

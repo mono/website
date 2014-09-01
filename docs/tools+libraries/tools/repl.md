@@ -6,14 +6,14 @@ redirect_from:
 
 [![](/archived/images/9/9c/Xbyhja.png)](/archived/images/9/9c/Xbyhja.png)
 
-C\# GUI Shell
+C# GUI Shell
 
-This documents the features available in the C\# interactive shell that is part of Mono's C\# compiler. An interactive shell is usually referred to as a read eval print loop or repl. The C\# interactive shell is built on top of the [Mono.CSharp](http://docs.go-mono.com/index.aspx?link=N:Mono.CSharp) library, a library that provides a C\# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).
+This documents the features available in the C# interactive shell that is part of Mono's C# compiler. An interactive shell is usually referred to as a read eval print loop or repl. The C# interactive shell is built on top of the [Mono.CSharp](http://docs.go-mono.com/index.aspx?link=N:Mono.CSharp) library, a library that provides a C# compiler service that can be used to evaluate expressions and statements on the flight as well as creating toplevel types (classes, structures, enumerations).
 
 Using it
 ========
 
-To use the C\# compiler in interactive mode, you need to start it with the the "csharp" command from the command line:
+To use the C# compiler in interactive mode, you need to start it with the the "csharp" command from the command line:
 
 ``` bash
 $ csharp
@@ -28,8 +28,8 @@ Statements and expression can take multiple lines, for example, consider this LI
 ``` bash
 csharp> using System.IO;
 csharp> from f in Directory.GetFiles ("/etc")
-      >   let fi = new FileInfo (f)  
-      >   where fi.LastWriteTime > DateTime.Now-TimeSpan.FromDays(7) select f; 
+      >   let fi = new FileInfo (f)
+      >   where fi.LastWriteTime > DateTime.Now-TimeSpan.FromDays(7) select f;
 { "/etc/adjtime", "/etc/asound.state", "/etc/mtab", "/etc/printcap", "/etc/resolv.conf" }
 csharp>
 ```
@@ -170,7 +170,7 @@ The GUI version introduces a few more:
 
 ### Grammar
 
-The Interactive Shell allows valid C\# statements as well as expressions to be entered interactively. Unlike the batch-compiled C\#, plain expressions are allowed, for example, this is valid input in the interactive mode that is invalid on batch mode:
+The Interactive Shell allows valid C# statements as well as expressions to be entered interactively. Unlike the batch-compiled C#, plain expressions are allowed, for example, this is valid input in the interactive mode that is invalid on batch mode:
 
 ``` bash
 csharp> 1 == 2;
@@ -181,9 +181,9 @@ csharp>
 Startup Files
 =============
 
-On startup the csharp shell will load any C\# script files and pre-compiled libraries (ending with .dll) that are located in the \~/.config/csharp directory (on Windows this is the value of Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData)).
+On startup the csharp shell will load any C# script files and pre-compiled libraries (ending with .dll) that are located in the \~/.config/csharp directory (on Windows this is the value of Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData)).
 
 The assemblies are loaded first, and then the scripts are executed. This allows your scripts to depend on the code defined in the assemblies.
 
-C\# script files are merely files that contains statements and expressions, they can not contain full class definitions, those should be stored and precompiled in DLL files.
+C# script files are merely files that contains statements and expressions, they can not contain full class definitions, those should be stored and precompiled in DLL files.
 

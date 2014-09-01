@@ -28,7 +28,9 @@ Usage
 
 <!-- -->
 
-     "Server=hostname;" + "Database=database;" + "User ID=username;" + "Password=password;" + "Pooling=false"
+```
+"Server=hostname;" + "Database=database;" + "User ID=username;" + "Password=password;" + "Pooling=false"
+```
 
 -   Parameters:
 
@@ -45,10 +47,12 @@ Usage
 
 <!-- -->
 
-      cd path_to_your MySql.Data.dll assembly
-      gacutil -i MySql.Data.dll
+``` bash
+cd path_to_your MySql.Data.dll assembly
+gacutil -i MySql.Data.dll
+```
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -97,17 +101,20 @@ Usage
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
 <!-- -->
 
-    mcs TestExample.cs -r:System.Data.dll -r:/path/to/MySql.Data.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll -r:/path/to/MySql.Data.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
-
+``` bash
+mono TestExample.exe
+```

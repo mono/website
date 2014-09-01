@@ -36,8 +36,10 @@ through NpgsqlCommand.ExecuteNonQuery() method.
 
 <!-- -->
 
-     NpgsqlEventLog.Level = LogLevel.Debug; 
-     NpgsqlEventLog.LogName = "NpgsqlTests.LogFile"; 
+``` csharp
+NpgsqlEventLog.Level = LogLevel.Debug;
+NpgsqlEventLog.LogName = "NpgsqlTests.LogFile";
+```
 
 -   There is a winforms test suite (Thanks Dave Page).
 
@@ -200,18 +202,22 @@ Using Npgsql
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 -   Save the example to a file, such as, TestExample.cs
 
 <!-- -->
 
-    $ mcs TestExample.cs -r:System.Data.dll -r:Npgsql.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll -r:Npgsql.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
+``` bash
+mono TestExample.exe
+```
 
 #### Howto use PostgreSQL from ASP.Net
 
@@ -222,7 +228,7 @@ Using Npgsql
 <%@ Assembly name="Npgsql" %>
  
 <script runat="server">
-                protected void Page_Load(object sender, EventArgs e) 
+                protected void Page_Load(object sender, EventArgs e)
                 {
                         if (!Page.IsPostBack)
                         {
@@ -252,7 +258,7 @@ Using Npgsql
                 }
 </script>
  
-<html> 
+<html>
 <body>
 The DataGrid that follows should list employees </ br>
 <asp:DataGrid id="dg" runat="server">
@@ -290,15 +296,17 @@ at /usr/doc/postgresql-x.x.x/html/installation.html
 
 <!-- -->
 
-     su
-     adduser postgres
-     mkdir /usr/local/pgsql/data
-     chown postgres /usr/local/pgsql/data
-     su - postgres
-     initdb -D /usr/local/pgsql/data
-     postmaster -i -D /usr/local/pgsql/data
-     createdb test
-     psql test
+``` bash
+su
+adduser postgres
+mkdir /usr/local/pgsql/data
+chown postgres /usr/local/pgsql/data
+su - postgres
+initdb -D /usr/local/pgsql/data
+postmaster -i -D /usr/local/pgsql/data
+createdb test
+psql test
+```
 
 -   Make sure you have a database user named postgres. It is best to install the PostgreSQL DBMS under linux user postgres. When you run the postmaster, run it under the user postgres as well. If this was not done, then you will need to create a user named postgres for the System.Data tests.
 
@@ -306,19 +314,23 @@ at /usr/doc/postgresql-x.x.x/html/installation.html
 
 <!-- -->
 
-    psql test
-    create user postgres with password 'fun2db';
+``` bash
+psql test
+create user postgres with password 'fun2db';
+```
 
 -   The postmaster must be run with -i option.
 
--   In the /usr/local/pgsql/data/pg\_hba.conf file, you need to have the AUTH\_TYPE set to md5. You can read more on this at /usr/doc/postgresql-7.2.1/html/client-authentication.html or wherever your PostgreSQL html docs are located. See the 2nd line below, host 127.0.0.1 has an AUTH\_TYPE md5 in pg\_hba.conf.
+-   In the /usr/local/pgsql/data/pg_hba.conf file, you need to have the AUTH_TYPE set to md5. You can read more on this at /usr/doc/postgresql-7.2.1/html/client-authentication.html or wherever your PostgreSQL html docs are located. See the 2nd line below, host 127.0.0.1 has an AUTH_TYPE md5 in pg_hba.conf.
 
 <!-- -->
 
-    # # TYPE     DATABASE    IP_ADDRESS    MASK               AUTH_TYPE
+```
+# # TYPE     DATABASE    IP_ADDRESS    MASK               AUTH_TYPE
 
-     local      all                                          trust
-     host       all         127.0.0.1     255.255.255.255    md5
+ local      all                                          trust
+ host       all         127.0.0.1     255.255.255.255    md5
+```
 
 -   If you can not find your PostgreSQL documentation locally or you did not install it, then you can get it [here](http://www.postgresql.org/idocs/).
 

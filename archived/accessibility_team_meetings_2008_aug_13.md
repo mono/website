@@ -17,13 +17,13 @@ fine, let's start then, we'll follow the usual order, unless QA or build guys wa
 **\<@sandy\> **
 ok, should I start then?
 ** **
--!- knocte changed the topic of \#mono-a11y to: Accessibility: Iteration switch meeting (weekly)
+-!- knocte changed the topic of #mono-a11y to: Accessibility: Iteration switch meeting (weekly)
 **\<@knocte\> **
 yes, sandy, please, go ahead
 **\<@sandy\> **
 I've been spending a lot of time fixing up base provider unit tests this iteration (not yet committed). I've found some issues with my LabeledBy property implementation. I'm thinking now that I've just made some mistakes using the Navigation stuff, so I'll ask Mario for some help there today.
 I'm also working to add support for recursive property changes...for example when a control's BoundingRectangeProperty changes, this should also change for its children, etc.
-I also have a bridge patch to notify at-spi when IsOffscreenProperty and BoundingRectangleProperty change, but I need to genericize it a bit because right now it's only implemented for Button. This is related to bug \#411345.
+I also have a bridge patch to notify at-spi when IsOffscreenProperty and BoundingRectangleProperty change, but I need to genericize it a bit because right now it's only implemented for Button. This is related to bug #411345.
 I will have all of these bits wrapped up by the end of the week. Then I can move on to the next control. Also, decriptor has been working to see if we can get the UIA and WindowsBase assemblies moved from olive to mcs. I'm going to get him some details about how far along WindowsBase is, and I may also be helping him to finish filling out missing fields/classes/etc in olive's UIA assemblies. The discussion won't really start until Miguel
 is back in town next week.
 Oh, and I'm not sure that I'll be able to work Friday. I have to fast and take some nasty drugs in preparation for yet another doctor appointment (on Saturday), so that might affect my ability to work.
@@ -31,7 +31,7 @@ Oh, and I'm not sure that I'll be able to work Friday. I have to fast and take s
 I'll update the wiki after the meeting; sorry for not getting to it earlier
 done
 ** **
--!- jpallen [\~jpallen@137.65.132.9] has joined \#mono-a11y
+-!- jpallen [\~jpallen@137.65.132.9] has joined #mono-a11y
 **\<@sandy\> **
 jpallen: we just started; I just went
 you haven't missed much
@@ -89,7 +89,7 @@ Also started working on ListItem
 I haven't committed any of that yet, except for accidentally committing a ProgressBar test
 I've fixed a few bugs in the bridge
 I've been reworking the bridge unit tests to generate real widgets with a form as the parent, since I think that that will make it less likely that we'll run into strange problems with the tester, although I'm not sure yet
-I also tried to add in a PreviewKeyDown event listener on a form, in the hope that it would intercept keys and let me pass them on to the bridge, but it wasn't working. I'll ask about that on \#mono-winforms
+I also tried to add in a PreviewKeyDown event listener on a form, in the hope that it would intercept keys and let me pass them on to the bridge, but it wasn't working. I'll ask about that on #mono-winforms
 07:16
 **\<@knocte\> **
 ok, your plan for next iteration? a new bridge class?
@@ -162,7 +162,7 @@ added 'showing' state to our states list and modify some states with '-' to link
 read 'Testing Howto' and make a little bit correction, give some suggestions. discuss 'styles' issue.
 07:27
 I would like to keep on script strongwind test for listbox, checkedlistbox in the coming iteration.
-sandy: sorry i reopened [https://bugzilla.novell.com/show\_bug.cgi](https://bugzilla.novell.com/show_bug.cgi) ?id=411328, i think you have noticed that :)
+sandy: sorry i reopened [https://bugzilla.novell.com/show_bug.cgi](https://bugzilla.novell.com/show_bug.cgi) ?id=411328, i think you have noticed that :)
 knocte, decriptor: BTW, there is one crash when i run groupbox.py app today, the debug info in: [http://rafb.net/p/8tTUxc51.html](http://rafb.net/p/8tTUxc51.html)
 done
 **\<@knocte\> **
@@ -217,7 +217,7 @@ anyway, I have more info in a IM log with jpallen, so I'll check that
 **\<@knocte\> **
 fine, ok, we deviated a bit, I think we were with Ray's turn now, right?
 **\<@mgorse\> **
-bgmerrell: okay. I'm hoping that someone on \#mono-winforms might know what to do and I'll be able to make some progress on it
+bgmerrell: okay. I'm hoping that someone on #mono-winforms might know what to do and I'll be able to make some progress on it
 **\<@ray\> **
 yes
 07:32

@@ -4,14 +4,14 @@ redirect_from:
   - /Mono.Cairo_Tutorial/
 ---
 
-This tutorial is derived from Michael Urman's [cairo tutorial](http://www.tortall.net/mu/wiki/CairoTutorial) for python. The original code snippets have been translated to C\#, the text has only been changed as much as necessary. Translation to C\# done by mgsloan.
+This tutorial is derived from Michael Urman's [cairo tutorial](http://www.tortall.net/mu/wiki/CairoTutorial) for python. The original code snippets have been translated to C#, the text has only been changed as much as necessary. Translation to C# done by mgsloan.
 
 Cairo is a powerful 2d graphics library. This document introduces you to how cairo works and many of the functions you will use to create the graphic experience you desire.
 
 In order to follow along on your computer, you need the following things:
 
 1.  Cairo itself. You will need both the library and the development files. [Download it](http://cairographics.org/download/) if you don't have it already.
-2.  [Download Mono](/Downloads), if you haven't already - you will need it to compile the C\# code, and for the Mono.Cairo library.
+2.  [Download Mono](/Downloads), if you haven't already - you will need it to compile the C# code, and for the Mono.Cairo library.
 
      If you want to see the code snippets included in this tutorial in
      action, you can try to click on some of the images. You will get a
@@ -22,33 +22,33 @@ Cairo's Drawing Model
 
 In order to explain the operations used by cairo, we first delve into a model of how cairo models drawing. There are only a few concepts involved, which are then applied over and over by the different methods. First I'll describe the [nouns](#nouns): [destination](#destination), [source](#source), [mask](#mask), [path](#path), and [context](#context). After that I'll describe the [verbs](#verbs) which offer ways to manipulate the nouns and draw the graphics you wish to create.
 
-### Nouns
+### The Nouns
 
 Cairo's nouns are somewhat abstract. To make them concrete I'm including diagrams that depict how they interact. The first three nouns are the three layers in the diagrams you see in this section. The fourth noun, the path, is drawn on the middle layer when it is relevant. The final noun, the context, isn't shown.
 
-#### Destination
+#### The Destination
 
 [![Cairo destination.png](/archived/images/a/a2/Cairo_destination.png)](/archived/images/a/a2/Cairo_destination.png)
 
 The destination is the [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface) on which you're drawing. It may be tied to an array of pixels like in this tutorial, or it might be tied to a SVG or PDF file, or something else. This surface collects the elements of your graphic as you apply them, allowing you to build up a complex work as though painting on a canvas.
 
-#### Source
+#### The Source
 
 [![Cairo source.png](/archived/images/6/63/Cairo_source.png)](/archived/images/6/63/Cairo_source.png)
 
 The source is the "paint" you're about to work with. I show this as it is—plain black for several examples—but translucent to show lower layers. Unlike real paint, it doesn't have to be a single color; it can be a [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or even a previously created destination [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). Also unlike real paint it can contain transparency information—the Alpha channel.
 
-#### Mask
+#### The Mask
 
 [![Cairo the-mask.png](/archived/images/9/9d/Cairo_the-mask.png)](/archived/images/9/9d/Cairo_the-mask.png)
 
 The mask is the most important piece: it controls where you apply the source to the destination. I will show it as a yellow layer with holes where it lets the source through. When you apply a drawing verb, it's like you stamp the source to the destination. Anywhere the mask allows, the source is copied. Anywhere the mask disallows, nothing happens.
 
-#### Path
+#### The Path
 
 The path is somewhere between part of the mask and part of the context. I will show it as thin green lines on the mask layer. It is manipulated by path verbs, then used by drawing verbs.
 
-#### Context
+#### The Context
 
 The context keeps track of everything that verbs affect. It tracks one source, one destination, and one mask. It also tracks several helper variables like your line width and style, your font face and size, and more. Most importantly it tracks the path, which is turned into a mask by drawing verbs.
 
@@ -150,7 +150,7 @@ The [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.
 Drawing with Cairo
 ------------------
 
-In order to create an image you desire, you have to prepare the [context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) or [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo\_paint()](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()), you need a primary source.
+In order to create an image you desire, you have to prepare the [context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context) for each of the drawing verbs. To use [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) or [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) you first need a path. To use [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) you must position your text by its insertion point. To use [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) you need a second source [pattern](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Pattern) or [surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface). And to use any of the operations, including [cairo_paint()](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()), you need a primary source.
 
 ### Preparing and Selecting a Source
 

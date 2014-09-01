@@ -94,7 +94,7 @@ List of the components that we ship \*today\* and have a page per-component to d
 
 -   Link the page to the front-site, as part of the "Platforms" or something in developers.
 
-List of various components that work with Gtk\# or are certified with Gtk\#
+List of various components that work with Gtk# or are certified with Gtk#
 
 Platform Support
 ----------------

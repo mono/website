@@ -5,8 +5,8 @@ redirect_from:
   - /Branches/
 ---
 
-Branches
-========
+Mono Branches
+=============
 
 Important Branches on Mono SVN:
 
@@ -141,9 +141,9 @@ This is a branch for the Mono 1.2.5 releases. Branched on Jul 25 2007, r82614.
 Pending Fixes:
 
 -   r85144 - list control... bug number?
--   r85183 - nemerle \#[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
--   r85189 - Reflection TypeBuilder - \#[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
--   r85191 - Reflection TypeBuilder - \#[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
+-   r85183 - nemerle #[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
+-   r85189 - Reflection TypeBuilder - #[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
+-   r85191 - Reflection TypeBuilder - #[MONO82625](https://bugzilla.novell.com/show_bug.cgi?id=MONO82625)
 -   r85593 - Marshall - Out params (probably com related)
 -   r85595 - com
 -   r85598 - com
@@ -151,7 +151,7 @@ Pending Fixes:
 -   r85600 - com
 -   r85602 - com
 -   r85721 - BigInt Resync update
--   r85745 - LoadViewState - \#[MONO82192](https://bugzilla.novell.com/show_bug.cgi?id=MONO82192)
+-   r85745 - LoadViewState - #[MONO82192](https://bugzilla.novell.com/show_bug.cgi?id=MONO82192)
 
 branches/mono-1-2-4
 -------------------
@@ -247,28 +247,28 @@ branches/mono-1-1-6
 
 A temporary branch created for an early version of ZLM, but it will not be maintained on an ongoing basis.
 
-Gtk\# Stable Branches
+Gtk# Stable Branches
 =====================
 
 branches/gtk-sharp-1-0-branch
 -----------------------------
 
-Stable branch for the Gtk\# 1.0.x releases.
+Stable branch for the Gtk# 1.0.x releases.
 
 branches/gtk-sharp-2-468-branch
 -------------------------------
 
-Stable branch for the Gtk\# 2.4.x, 2.6.x, and 2.8.x releases.
+Stable branch for the Gtk# 2.4.x, 2.6.x, and 2.8.x releases.
 
 branches/gtk-sharp-2-10-branch
 ------------------------------
 
-Stable branch for the Gtk\# 2.10.x releases.
+Stable branch for the Gtk# 2.10.x releases.
 
 branches/gtk-sharp-2-12-branch
 ------------------------------
 
-Stable branch for the Gtk\# 2.12.x releases.
+Stable branch for the Gtk# 2.12.x releases.
 
 Development Branches
 ====================

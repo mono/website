@@ -39,7 +39,7 @@ If you chose not to explicitly request a prefix, the default prefix of */usr/loc
 
 If you are using a mono version from SVN or newer than mono-1.1.6, you may experience problems building related to documentation generation. Unfortunately, there is no single convenient location to disable documentation generation, but the following tidbit of bash can be used to disable the documentation building. The script assumes your present working directory is the top level folder of the NAnt source tarball.
 
-    $ for file in $(find ./src -name '*.build') ; do sed -i "s: doc=.*>:>:" ${file} ; done
+    for file in $(find ./src -name '*.build') ; do sed -i "s: doc=.*>:>:" ${file} ; done
 
 **Basic Usage**
 

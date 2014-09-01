@@ -74,7 +74,7 @@ where the elements of the path are described above. After that you can add the `
 Not all of the packages are strictly necessary, but having them around in your mingw environment can't hurt. If you're not using any distribution-specific package, you will need to unpack the packages in the top-level directory of your MinGW installation (e.g. `/opt/cross/i386-mingw32msvc`):
 
     * glib
-    * glib-dev 
+    * glib-dev
     * zlib binaries
     * zlib devel package
     * pkg-config
@@ -106,7 +106,7 @@ With openSUSE all you need to do in order to satisfy all the requirements is to 
     * http://download.opensuse.org/repositories/Mono:/Community/
     * http://download.opensuse.org/repositories/CrossToolchain:/mingw/
 
-Note that the above URLs do **NOT** specify the final repository - you need to visit them and pick the version of openSUSE you are using (e.g. [http://download.opensuse.org/repositories/Mono:/Community/openSUSE\_10.3/](http://download.opensuse.org/repositories/Mono:/Community/openSUSE_10.3/)) After configuring and refreshing the repositories in Yast, proceed to install the following packages:
+Note that the above URLs do **NOT** specify the final repository - you need to visit them and pick the version of openSUSE you are using (e.g. [http://download.opensuse.org/repositories/Mono:/Community/openSUSE_10.3/](http://download.opensuse.org/repositories/Mono:/Community/openSUSE_10.3/)) After configuring and refreshing the repositories in Yast, proceed to install the following packages:
 
     * cross-mingw-gcc
     * cross-mono-build-dependencies

@@ -31,7 +31,7 @@ Jenkara is the name of a (mostly) vaporware 3D Development Environment ([3DE](/3
 Roadmap
 -------
 
-With the advent of [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp"), the Jenkara development environment is being resurrected... again. Now using C\# on [Mono](/Main_Page). Go, new hotness.
+With the advent of [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp"), the Jenkara development environment is being resurrected... again. Now using C# on [Mono](/Main_Page). Go, new hotness.
 
 Screenshots
 -----------

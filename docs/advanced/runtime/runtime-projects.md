@@ -54,7 +54,7 @@ Read more about [Continuations](/archived/continuations "Continuations") here.
 Reflection.Emit Fixes
 ---------------------
 
-Fix executing SRE code(used by F\# and Boo interactive Boo Shells and DLR debug mode).
+Fix executing SRE code(used by F# and Boo interactive Boo Shells and DLR debug mode).
 
 This is a series of small tasks:
 
@@ -69,9 +69,9 @@ Lead:
 Runtime Fixes
 -------------
 
-Fix tail call support for F\#
+Fix tail call support for F#
 
-Add generic variance support (Required by C\# 4.0). This is a low priority project as it will be released only in 2010.
+Add generic variance support (Required by C# 4.0). This is a low priority project as it will be released only in 2010.
 
 Security: Moonlight
 -------------------
@@ -115,7 +115,7 @@ Innovative Features
 
 As part of Mono 2.8, we will be breaking the embedding API to clean up many issues that have cropped over the years.
 
-You can read more about them in the [Mono\_Runtime\_API\_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes") page.
+You can read more about them in the [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes") page.
 
 Cross Compilation
 -----------------

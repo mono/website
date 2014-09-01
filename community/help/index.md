@@ -21,7 +21,7 @@ Since Mono is a large piece of software you must strictly follow the [Compiling 
 Can not compile my source
 -------------------------
 
-When compiling your sources please bear in mind that mono provides three [C\#-Compilers](/docs/about-mono/languages/csharp/), **mcs**, **gmcs** and **smcs**.
+When compiling your sources please bear in mind that mono provides three [C#-Compilers](/docs/about-mono/languages/csharp/), **mcs**, **gmcs** and **smcs**.
 
 -   **mcs** is the standard compiler for code which is targeting the .Net Framework 1.1
 -   **gmcs** is Mono's compiler for the the .Net Framework 2.0 and beyond\*
@@ -30,7 +30,7 @@ When compiling your sources please bear in mind that mono provides three [C\#-Co
     *
     ```
 
-    gmcs does partly support [C\# 3.0 language features](/docs/about-mono/languages/csharp/#under-development-features "CSharp Compiler")
+    gmcs does partly support [C# 3.0 language features](/docs/about-mono/languages/csharp/#under-development-features "CSharp Compiler")
 
 -   **smcs**: compiler to target the 2.1 runtime, to build [Moonlight](/docs/web/moonlight/) applications.
 

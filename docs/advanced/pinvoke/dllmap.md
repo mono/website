@@ -61,7 +61,7 @@ The following example maps references to the \`cygwin1.dll' shared library to th
     </configuration>
 ```
 
-This one maps the following C\# method:
+This one maps the following C# method:
 
 ``` csharp
     [DllImport ("libc")]

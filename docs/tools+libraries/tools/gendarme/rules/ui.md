@@ -37,7 +37,7 @@ An executable assembly, i.e. an .exe, refers to the System.Windows.Forms assembl
 
 This rule checks executable assemblies, i.e. \*.exe's, that reference System.Windows.Forms to ensure that their entry point is decorated with **[System.STAThread]** attribute and is not decorated with **[System.MTAThread]** attribute to ensure that Windows Forms work properly.
 
-**Bad** example \#1 (no attributes):
+**Bad** example #1 (no attributes):
 
 ``` csharp
 public class WindowsFormsEntryPoint {
@@ -47,7 +47,7 @@ public class WindowsFormsEntryPoint {
 }
 ```
 
-**Bad** example \#2 (MTAThread)
+**Bad** example #2 (MTAThread)
 
 ``` csharp
 public class WindowsFormsEntryPoint {
@@ -58,7 +58,7 @@ public class WindowsFormsEntryPoint {
 }
 ```
 
-**Good** example \#1 (STAThread):
+**Good** example #1 (STAThread):
 
 ``` csharp
 public class WindowsFormsEntryPoint {
@@ -69,7 +69,7 @@ public class WindowsFormsEntryPoint {
 }
 ```
 
-**Good** example \#2 (not Windows Forms):
+**Good** example #2 (not Windows Forms):
 
 ``` csharp
 public class ConsoleAppEntryPoint {

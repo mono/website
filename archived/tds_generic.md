@@ -8,9 +8,6 @@ redirect_from:
 TDS Generic
 ===========
 
-TDS Generic
-===========
-
 -   ADO.NET Provider for old Sybase and Microsoft SQL Server databases
 
 -   Provider is no longer maintained
@@ -56,7 +53,7 @@ Using
 
 -   hostname,port - "Server=MYHOST,1533"
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -98,11 +95,11 @@ Using
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
--   Build using Mono C\# compiler:
+-   Build using Mono C# compiler:
 
 <!-- -->
 
@@ -112,5 +109,5 @@ Using
 
 <!-- -->
 
-     mono TestExample.exe 
+     mono TestExample.exe
 

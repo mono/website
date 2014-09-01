@@ -61,7 +61,7 @@ To do a comprehensive binding, you will want to understand the Objective-C API d
 
 The new **bmac** tool simplifies binding an Objective-C API and does the heavy lifting for you: registering the selectors, taking care of invoking the proper handle for overwritten classes, doing parameter checking and doing some of the common marshaling required for your project.
 
-To bind your library you will typically start with an API definition file. An API definition file is merely a C\# source file that contains interfaces that have been annotated with a handful of attributes that help drive the binding.
+To bind your library you will typically start with an API definition file. An API definition file is merely a C# source file that contains interfaces that have been annotated with a handful of attributes that help drive the binding.
 
 For example, this is a trivial api file for a library:
 
@@ -97,7 +97,7 @@ To produce a complete binding, you will typically deal with three sets of source
 
 -   The API definition file.
 -   Optional: any enums, types, structs required by the API definition file.
--   Optional: extra sources that might expand the generated binding, or provide a more C\# friendly API.
+-   Optional: extra sources that might expand the generated binding, or provide a more C# friendly API.
 
 The API Definition file: will only contain namespaces and interface definitions (with any members that an interface can contain) and should not contain classes, enumerations, delegates or structs. The API definition file is merely the contract that will be used to generate the API.
 
@@ -142,7 +142,7 @@ But since we are using the interface as a skeleton to generate a class we had to
 
 ### Binding Methods
 
-The simplest binding you can do is to bind a method. Just declare a method in the interface with the C\# naming conventions and decorate the method with the [Export] attribute. The [Export] attribute is what links your C\# name with the Objective-C name in the MonoMac runtime. The parameter of the Export attribute is the name of the Objective-C selector, some examples:
+The simplest binding you can do is to bind a method. Just declare a method in the interface with the C# naming conventions and decorate the method with the [Export] attribute. The [Export] attribute is what links your C# name with the Objective-C name in the MonoMac runtime. The parameter of the Export attribute is the name of the Objective-C selector, some examples:
 
 ``` csharp
 // A method, that takes no arguments
@@ -179,7 +179,7 @@ When exporting a reference type, with the [Export] keyword you can also specify 
 
 ### Binding Properties
 
-Just like methods, Objective-C properties are bound using the [Export] attribute and map directly to C\# properties. Just like methods, properties can be decorated with the [Static] and the [Internal] attributes.
+Just like methods, Objective-C properties are bound using the [Export] attribute and map directly to C# properties. Just like methods, properties can be decorated with the [Static] and the [Internal] attributes.
 
 When you use the [Export] attribute on a property under the covers bmac actually binds two methods: the getter and the setter. The name that you provide to export is the basename and the the setter is computed by prepending the word "set", turning the first letter of the basename into upper case and making the selector take an argument. This means that [Export ("label")] applied on a property actually binds the "label" and "setLabel:" Objective-C methods.
 
@@ -195,7 +195,7 @@ This then binds "isMenuVisible" and "setMenuVisible:".
 Just like methods allow some parameters to be flagged with [NullAllowed], you can apply [NullAllowed] to a property to indicate that null is a valid value for the property, for example:
 
 ``` csharp
-[Export ("text"), NullAllowed] 
+[Export ("text"), NullAllowed]
 string Text { get; set; }
 ```
 
@@ -205,16 +205,16 @@ The [NullAllowed] parameter can also be specified directly on the setter: [Expor
 
 The **bmac** tool will automatically generate fours constructors in your class, for a given class *Foo*, it generates:
 
->  Foo ()   
+> Foo ()
 > the default constructor (maps to Objective-C's "init" constructor)
 >
-> Foo (NSCoder)   
+> Foo (NSCoder)
 > the constructor used during deserialization of NIB files (maps to Objective-C's "initWithCoder:" constructor).
 >
-> Foo (IntPtr handle)   
+> Foo (IntPtr handle)
 > the constructor for handle-based creation, this is invoked by the runtime when the runtime needs to expose a managed object from an unmanaged object.
 >
-> Foo (NSEmptyFlag)   
+> Foo (NSEmptyFlag)
 > this is used by derived classes to prevent double initialization.
 >
 For constructors that you define, they need to be declared using the following signature inside the Interface definition: they must return an IntPtr value and the name of the method should be Constructor. For example to bind the initWithFrame: constructor, this is what you would use:
@@ -266,9 +266,9 @@ public interface NSTextStorage {
 }
 ```
 
-### Binding Class Extensions.
+### Binding Class Extensions
 
-In Objective-C it is possible to extend classes with new methods, similar in spirit to C\#'s extension methods. When one of these methods is present, you can use the [Target] attribute to flag the first parameter of a method as being the receiver of the Objective-C message.
+In Objective-C it is possible to extend classes with new methods, similar in spirit to C#'s extension methods. When one of these methods is present, you can use the [Target] attribute to flag the first parameter of a method as being the receiver of the Objective-C message.
 
 For example, in MonoMac we bound the extension methods that are defined on NSString when UIKit is imported as methods in the UIView, like this:
 
@@ -283,7 +283,7 @@ interface NSImage {
 }
 ```
 
-### 
+###
 
 ### Type mappings
 
@@ -300,9 +300,10 @@ The following table shows how you should map types from the Objective-C and Coco
 > |CoreFoundation types (CF\*)|[MonoMac.CoreFoundation](http://docs.go-mono.com/MonoMac.CoreFoundation).CF\*|
 > |Foundation Types (NS\*)|[MonoMac.Foundation](http://docs.go-mono.com/MonoMac.Foundation).NS\*|
 >
+
 ### Arrays
 
-The MonoMac runtime automatically takes care of converting C\# arrays to NSArrays and doing the conversion back, so for example the imaginary Objective-C method that returns an NSArray of NSViews:
+The MonoMac runtime automatically takes care of converting C# arrays to NSArrays and doing the conversion back, so for example the imaginary Objective-C method that returns an NSArray of NSViews:
 
     - NSArray *getPeerViews ();
 
@@ -344,7 +345,7 @@ Event Handlers and Callbacks
 
 Objective-C classes typically broadcast notifications or request information by sending a message on a delegate class (Objective-C delegate).
 
-This model, while fully supported and surfaced by MonoMac can sometimes be cumbersome. MonoMac exposes the C\# event pattern and a method-callback system on the class that can be used in these situations. This allows code like this to run:
+This model, while fully supported and surfaced by MonoMac can sometimes be cumbersome. MonoMac exposes the C# event pattern and a method-callback system on the class that can be used in these situations. This allows code like this to run:
 
 ``` csharp
 button.Clicked += delegate {
@@ -352,9 +353,9 @@ button.Clicked += delegate {
 };
 ```
 
-The binding generator is capable of reducing the amount of typing required to map the Objective-C pattern into the C\# pattern.
+The binding generator is capable of reducing the amount of typing required to map the Objective-C pattern into the C# pattern.
 
-Is is also possible to instruct the generator to produce bindings for a specific Objective-C delegates and expose the delegate as C\# events and properties on the host type.
+Is is also possible to instruct the generator to produce bindings for a specific Objective-C delegates and expose the delegate as C# events and properties on the host type.
 
 There are two classes involved in this process, the host class which will is the one that currently emits events and sends those into the Delegate or WeakDelegate and the actual delegate class.
 
@@ -379,7 +380,7 @@ interface MyClassDelegate {
 
 To wrap the class you must:
 
--   In your host class, add to your [BaseType] declaration the type that is acting as its delegate and the C\# name that you exposed. In our example above those are "typeof (MyClassDelegate)" and "WeakDelegate" respectively.\</li\>
+-   In your host class, add to your [BaseType] declaration the type that is acting as its delegate and the C# name that you exposed. In our example above those are "typeof (MyClassDelegate)" and "WeakDelegate" respectively.\</li\>
 -   In your delegate class, on each method that has more than two parameters, you need to specify the type that you want to use for the automatically generated EventArgs class.\</li\>
 
 The binding generator is not limited to wrapping only a single event destination, it is possible that some Objective-C classes to emit messages to more than one delegate, so you will have to provide arrays to support this setup. Most setups will not need it, but the generator is ready to support those cases.
@@ -388,7 +389,7 @@ The resulting code will be:
 
 ``` csharp
 [BaseType (typeof (NSObject),
-    Delegates=new string [] {"WeakDelegate"}, 
+    Delegates=new string [] {"WeakDelegate"},
     Events=new Type [] (typeof (MyClassDelegate)))]
 interface MyClass {
     [Export ("delegate", ArgumentSemantic.Assign)][NullAllowed]
@@ -415,8 +416,8 @@ public MyClassLoadedEventArgs : EventArgs {
     public int Bytes { get; set; }
 }
  
-public event EventHandler&lt;MyClassLoadedEventArgs&gt; Loaded { 
-    add; remove; 
+public event EventHandler&lt;MyClassLoadedEventArgs&gt; Loaded {
+    add; remove;
 }
 ```
 
@@ -431,7 +432,7 @@ c.Loaded += delegate (sender, args){
 
 Callbacks are just like event invocations, the difference is that instead of having multiple potential subscribers (for example, multiple methods can hook into a "Clicked" event or a "Download Finished" event) callbacks can only have a single subscriber.
 
-The process is identical, the only difference is that instead of exposing the name of the EventArgs class that will be generated, the EventArgs actually is used to name the resulting C\# delegate name.
+The process is identical, the only difference is that instead of exposing the name of the EventArgs class that will be generated, the EventArgs actually is used to name the resulting C# delegate name.
 
 If the method in the delegate class returns a value, the binding generator will map this into a delegate method in the parent class instead of an event. In these cases you need to provide the default value that should be returned by the method if the user does not hook up to the delegate. You do this using the [DefaultValue] or [DefaultValueFromArgument] attributes.
 
@@ -470,7 +471,7 @@ An Objective-C message looks like this:
 
     - (void) appendWorkers:(XWorker *) firstWorker, ... NS_REQUIRES_NIL_TERMINATION ;
 
-To invoke this method from C\# you will want to create a signature like this:
+To invoke this method from C# you will want to create a signature like this:
 
 ``` csharp
 [Export ("appendWorkers"), Internal]
@@ -501,7 +502,7 @@ public void AppendWorkers(params Worker[] workers)
 Binding Fields
 --------------
 
-There is also support for binding fields in a declaration. This simplifies the process of accessing a value that is declared in an external library from C\#.
+There is also support for binding fields in a declaration. This simplifies the process of accessing a value that is declared in an external library from C#.
 
 Usually these fields contain strings or integers values that must be referenced. They are commonly used as string that represent a specific notification and as keys in dictionaries.
 
@@ -515,13 +516,13 @@ string NSSomeEventNotification { get; }
 Binding Blocks
 --------------
 
-Blocks are a new construct introduced by Apple to bring the functional equivalent of C\# anonymous methods to Objective-C. For example, the NSSet class now exposes this method:
+Blocks are a new construct introduced by Apple to bring the functional equivalent of C# anonymous methods to Objective-C. For example, the NSSet class now exposes this method:
 
     - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop)) block
 
-The above description declares a method called *enumerateObjectsUsingBlock:* that takes one argument named *block*. This block is similar to a C\# anonymous method in that it has support for capturing the current environment (the "this" pointer, access to local variables and parameters). The above method in NSSet invokes the block with two parameters an NSObject (the *id obj* part) and a pointer to a boolean (the *BOOL \*stop*) part.
+The above description declares a method called *enumerateObjectsUsingBlock:* that takes one argument named *block*. This block is similar to a C# anonymous method in that it has support for capturing the current environment (the "this" pointer, access to local variables and parameters). The above method in NSSet invokes the block with two parameters an NSObject (the *id obj* part) and a pointer to a boolean (the *BOOL \*stop*) part.
 
-To bind this kind of API with bmap, you need to first declare the block type signature as a C\# delegate and then reference it from an API entry point, like this:
+To bind this kind of API with bmap, you need to first declare the block type signature as a C# delegate and then reference it from an API entry point, like this:
 
 ``` csharp
 // This declares the callback signature for the block:
@@ -556,13 +557,13 @@ Linking the Dependencies
 
 If you are binding APIs that are not part of your application, you need to make sure that your executable is linked against these libraries.
 
-On the project options for your final executable (not the library itself, but the final program) you need to add in "iPhone Build's" Extra argument (these are part of your project options) the "-gcc\_flags" option followed by a quoted string that contains all the extra libraries that are required for your program, for example:
+On the project options for your final executable (not the library itself, but the final program) you need to add in "iPhone Build's" Extra argument (these are part of your project options) the "-gcc_flags" option followed by a quoted string that contains all the extra libraries that are required for your program, for example:
 
     -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
 
 The above example will link *libMyLibrary.a*, *libSystemLibrary.dylib* and the *CFNetwork* framework library into your final executable.
 
-You might be wondering, why do you need "force\_load" command, and the reason is that the -ObjC flag although it compiles the code in, it does not preserve the metadata required to support categories (the linker/compiler dead code elimination strips it) which you need at runtime for MonoMac.
+You might be wondering, why do you need "force_load" command, and the reason is that the -ObjC flag although it compiles the code in, it does not preserve the metadata required to support categories (the linker/compiler dead code elimination strips it) which you need at runtime for MonoMac.
 
 Assisted References
 -------------------

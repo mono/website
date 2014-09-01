@@ -25,7 +25,7 @@ Meeting Summary
 
     <bgmerrell> (1)got Mono SVN access. (2)got a fully functional automated test for strongwind tests. (3)document for running tests. (4)have a method to automate the testing on all the lab machine
 
-    <Ray> (1)simplify the olive package on OBS. (2)have built and packaged Strongwind. (3)patched and packaged python-elememnttree, lastest Mono project 
+    <Ray> (1)simplify the olive package on OBS. (2)have built and packaged Strongwind. (3)patched and packaged python-elememnttree, lastest Mono project
 
     <ngao>focused on StatusBar ControlType and finished to implement StatusBar
 
@@ -36,7 +36,7 @@ Meeting Summary
     <decriptor> (1)have been looking at the olive package. (2)have been looking at osc and seeing if maybe we can get the builds automated
 
     Remind: we all need update our status and notes of what we had planned in schedule page.
-        
+
 
     Topic-- Iteration 3 plan:
 
@@ -152,21 +152,21 @@ RAW IRC Capture
     <calvin>  done
     <calvin>  I think knocte|tax is out, but he sent me his status
     <calvin>  Let me post it here
-    <calvin>  I've created the CheckBox class in the bridge. As it inherits from 
-    <calvin>  button, I've reforced the tests on this class and also in the 
-    <calvin>  Atk.Component testing interface. I've proposed a patch for adding the 
-    <calvin>  lacking virtual method RefStateSet to Atk#, which will hopefully allow 
-    <calvin>  us get the correct behaviour with Atk states. I've also restructured the 
-    <calvin>  tests in order to separate the Gail+Atk centric from the bridge-centric 
-    <calvin>  ones. I've also started to create the glue library for the bridge that 
-    <calvin>  will let us fix the workarounds that are currently laying in it (related 
-    <calvin>  to the AddEmissionHook binding, and the signals that don't behave well 
+    <calvin>  I've created the CheckBox class in the bridge. As it inherits from
+    <calvin>  button, I've reforced the tests on this class and also in the
+    <calvin>  Atk.Component testing interface. I've proposed a patch for adding the
+    <calvin>  lacking virtual method RefStateSet to Atk#, which will hopefully allow
+    <calvin>  us get the correct behaviour with Atk states. I've also restructured the
+    <calvin>  tests in order to separate the Gail+Atk centric from the bridge-centric
+    <calvin>  ones. I've also started to create the glue library for the bridge that
+    <calvin>  will let us fix the workarounds that are currently laying in it (related
+    <calvin>  to the AddEmissionHook binding, and the signals that don't behave well
     <calvin>  with it).
-    <calvin>  For this week I plan to: get some more Atk.Component bits finished in 
-    <calvin>  the adapter. Get the DoAction method on the checkbox (and maybe in the 
-    <calvin>  button) really do the action mapped to the provider. Create the ComboBox 
-    <calvin>  (or whatever name we select) class for the bridge and map it to the UIA 
-    <calvin>  provider. Finish the bridge glue library and maybe advance a bit more in 
+    <calvin>  For this week I plan to: get some more Atk.Component bits finished in
+    <calvin>  the adapter. Get the DoAction method on the checkbox (and maybe in the
+    <calvin>  button) really do the action mapped to the provider. Create the ComboBox
+    <calvin>  (or whatever name we select) class for the bridge and map it to the UIA
+    <calvin>  provider. Finish the bridge glue library and maybe advance a bit more in
     <calvin>  the patches to the Gtk#/Atk# binding fixes (bugs currently uploaded to BNC).
     <calvin>  phew, it worked!
     <calvin>  ok, done

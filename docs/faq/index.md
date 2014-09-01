@@ -20,7 +20,7 @@ Developing With Mono
 Desktop Applications
 --------------------
 
--   [GTK\#](/docs/faq/gtk/)
+-   [GTK#](/docs/faq/gtk/)
 -   [Windows Forms](/docs/faq/winforms/)
 
 Web Programming
@@ -34,8 +34,8 @@ Development Tools
 -   [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/faq/)
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/faq/)
 
-Documenting Mono and your applications.
-=======================================
+Documenting Mono and your applications
+======================================
 
 -   [FAQ: Documentation](/docs/faq/documentation/)
 

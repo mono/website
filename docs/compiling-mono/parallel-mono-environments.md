@@ -83,7 +83,7 @@ sudo make install
 
 ### mono
 
-*Under SUSE 10, compilation may fail. See the fix [related to the VER\_1](http://lists.ximian.com/pipermail/mono-list/2005-October/028833.html) ld build error.*
+*Under SUSE 10, compilation may fail. See the fix [related to the VER_1](http://lists.ximian.com/pipermail/mono-list/2005-October/028833.html) ld build error.*
 
 ``` bash
 tar zxf mono-1.1.9.1.tar.gz
@@ -156,11 +156,11 @@ cd mcs/class/System.Web
 make PROFILE=net_4_0 && make install PROFILE=net_4_0
 ```
 
-### Tip: CONFIG\_SITE
+### Tip: CONFIG_SITE
 
 Try adding this to the script:
 
-export CONFIG\_SITE="\$HOME/.config/automake/config.site"
+export CONFIG_SITE="\$HOME/.config/automake/config.site"
 
 and in that file writing:
 
@@ -168,18 +168,18 @@ test "\$prefix" = NONE && prefix=/opt/mono
 
 This will let you avoid typing --prefix all the time
 
-### Tip: MONO\_GAC\_PREFIX
+### Tip: MONO_GAC_PREFIX
 
-MONO\_GAC\_PREFIX is a colon-separated list of prefixes that should be searched for GAC directories. It is particularly useful for using your OS-provided GAC within your parallel environment.
+MONO_GAC_PREFIX is a colon-separated list of prefixes that should be searched for GAC directories. It is particularly useful for using your OS-provided GAC within your parallel environment.
 
-For example, if I have Gtk\# 1.0.x installed as part of my primary environment under /usr/lib/mono/gac/gtk-sharp and you want to build Gtk\# 1.0 applications using your parallel environment under /opt/mono. There are two ways to do this:
+For example, if I have Gtk# 1.0.x installed as part of my primary environment under /usr/lib/mono/gac/gtk-sharp and you want to build Gtk# 1.0 applications using your parallel environment under /opt/mono. There are two ways to do this:
 
-1.  Build Gtk\# 1.0.x yourself and install it with the prefix \$MONO\_PREFIX.
-2.  export MONO\_GAC\_PREFIX=/usr. This will allow your parallel environment to find the Gtk\# 1.0 libraries provided by your distribution.
+1.  Build Gtk# 1.0.x yourself and install it with the prefix \$MONO_PREFIX.
+2.  export MONO_GAC_PREFIX=/usr. This will allow your parallel environment to find the Gtk# 1.0 libraries provided by your distribution.
 
 ### BEWARE: pkgconfig fallback behaviour
 
-If you intend to leave your MONO\_GAC\_PREFIX empty to use a local GAC, beware about the fallback behaviour of pkgconfig when it doesn't find things in your local env: it will search in /usr/ and /usr/local/ in a hardcoded way.
+If you intend to leave your MONO_GAC_PREFIX empty to use a local GAC, beware about the fallback behaviour of pkgconfig when it doesn't find things in your local env: it will search in /usr/ and /usr/local/ in a hardcoded way.
 
 This may lead you to think that the configure scripts of your programs are buggy or lack some detection of libs because the build phase would be successful but you'll encounter errors at runtime.
 

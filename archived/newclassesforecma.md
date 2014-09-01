@@ -24,8 +24,8 @@ New classes that we would like to see in ECMA:
 -   System.Linq
     -   Everything LINQ
 
-Changes that we would like to see:
-==================================
+Changes that we would like to see
+=================================
 
 -   Charset Encoding (UTF8) for P/Invoke
 -   Add: System.Runtime.InteropServices/UnmanagedType.Long define that matches sizeof C's (long). This would help with pinvoking API's which use long arguments or struct members, since long is 32 bit on win32/win64, but 64 bit on unix.

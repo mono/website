@@ -19,7 +19,7 @@ The following widgets do not have an associated window. If you want to capture e
     Gtk.AspectFrame         Gtk.Frame          Gtk.VBox
     Gtk.HBox                Gtk.VSeparator     Gtk.HSeparator
 
-Overview of the widgets used in GTK\#
+Overview of the widgets used in GTK#
 -------------------------------------
 
 **Widget Overview**

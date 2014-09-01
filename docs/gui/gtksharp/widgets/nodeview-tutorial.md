@@ -7,7 +7,7 @@ redirect_from:
 Introduction
 ============
 
-The GTK TreeView widget is used to display data in lists and hierarchical trees. Each row in the tree or list can contain multiple columns. The TreeView API can be a little overwhelming, so we've provided the NodeView convenience APIs in Gtk\# to help simplify its use.
+The GTK TreeView widget is used to display data in lists and hierarchical trees. Each row in the tree or list can contain multiple columns. The TreeView API can be a little overwhelming, so we've provided the NodeView convenience APIs in Gtk# to help simplify its use.
 
 This tutorial is a brief introduction to the NodeView, NodeSelection, and NodeStore APIs with small samples to help get you started. Keep in mind that the NodeView is a work in progress, and doesn't expose all of the underlying power of the TreeView, but is quite useful for simple List and Tree user interfaces.
 
@@ -123,7 +123,7 @@ The Store property is defined as follows:
                 }
 ```
 
-If we haven't already built it, we create a NodeStore which will contain MyTreeNodes. Then we instantiate a few MyTreeNodes and add them to the store. All that's left is a Main method, which is pretty standard for any Gtk\# program:
+If we haven't already built it, we create a NodeStore which will contain MyTreeNodes. Then we instantiate a few MyTreeNodes and add them to the store. All that's left is a Main method, which is pretty standard for any Gtk# program:
 
 ``` csharp
                 public static void Main ()

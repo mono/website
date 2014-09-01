@@ -25,7 +25,7 @@ Once the plugin is installed, the following should be possible from Visual Studi
         -   A simple SCP would do, perhaps in the future "rsync" could be used.
         -   This tool runs on Windows, uses the MS APIs to read PDBs, and Mono APIs to generate the MDBs
     -   Run .NET applications under the debugger
-        -   This can probably be done entirely in C\# using the [DebugEngineSample](http://code.msdn.microsoft.com/debugenginesample/Release/ProjectReleases.aspx?ReleaseId=501) as a reference.
+        -   This can probably be done entirely in C# using the [DebugEngineSample](http://code.msdn.microsoft.com/debugenginesample/Release/ProjectReleases.aspx?ReleaseId=501) as a reference.
         -   Write/design a protocol to communicate between VS and the remote debugger
         -   Remote debugger is a thin wrapper around Mono.Debugger.dll
         -   Use the Mono.Debugger.dll library to host the process

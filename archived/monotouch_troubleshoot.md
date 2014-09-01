@@ -14,7 +14,7 @@ If you get this error when loading a NIB file it means that the value XXXX was n
 
 ``` csharp
 [Connect]
-TypeName XXXX { 
+TypeName XXXX {
    get {
        return (TypeName) GetNativeField ("XXXX");
    }

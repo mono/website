@@ -46,7 +46,7 @@ After that commit and push the changes to .gitmodule and the submodule itself.
 
 ### Submodule repository of origin maintenance
 
-The submodule repository of origin (at the REPOSITORY\_URL above) must always be modified outside the Mono directory. The repository may be a fork or clone of yet another GIT repository, either on github or elsewhere. If this is the case, you must configure your clone of it by adding a remote reference to the upstream repository:
+The submodule repository of origin (at the REPOSITORY_URL above) must always be modified outside the Mono directory. The repository may be a fork or clone of yet another GIT repository, either on github or elsewhere. If this is the case, you must configure your clone of it by adding a remote reference to the upstream repository:
 
        git remote add upstream UPSTREAM_URL
 
@@ -96,14 +96,14 @@ Let's assume the following directory hierarchy:
        |-------external
        \----------FOO_LIBRARY [submodule copy of FOO_LIBRARY repository]
 
-We have two scenarios to consider when working with FOO\_LIBRARY:
+We have two scenarios to consider when working with FOO_LIBRARY:
 
 -   it is a fork of some upstream repository
 -   it is the orignal repository
 
 What follows is a workflow which covers both cases above. The only difference is the first step - in the former case you pull changes from upstream, in the latter you make your own changes. You can, of course, combine the two. One thing to keep in mind is that if the submodule is a fork it is a good idea to keep your commits as finely grained as possible. That will make merging easier when you pull changes from the submodule's upstream.
 
-FOO\_LIBRARY upstream has made changes to their repository and you need those changes integrated in Mono. For brevity let's assume you make no further changes to the upstream code.
+FOO_LIBRARY upstream has made changes to their repository and you need those changes integrated in Mono. For brevity let's assume you make no further changes to the upstream code.
 
 Let's assume our current directory is `vc` in the hierarchy above.
 
@@ -117,7 +117,7 @@ Let's assume our current directory is `vc` in the hierarchy above.
       git merge upstream/master
 
 -   Resolve merge conflicts, if any
--   Push merged changes to our clone of FOO\_LIBRARY
+-   Push merged changes to our clone of FOO_LIBRARY
 
 <!-- -->
 
@@ -142,7 +142,7 @@ Let's assume our current directory is `vc` in the hierarchy above.
       rm -rf external/FOO_LIBRARY
       git submodule update --init --recursive
 
--   Update submodule with changes in FOO\_LIBRARY repository
+-   Update submodule with changes in FOO_LIBRARY repository
 
 <!-- -->
 
@@ -158,6 +158,6 @@ Let's assume our current directory is `vc` in the hierarchy above.
       git commit -m "FOO_LIBRARY submodule updated"
       git push
 
--   Do other work which depends on the new code in FOO\_LIBRARY
+-   Do other work which depends on the new code in FOO_LIBRARY
 
 

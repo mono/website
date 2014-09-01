@@ -141,7 +141,7 @@ ToggleButtons are similiar to normal buttons, but they keep track of their state
                 public static void Main(string[] args)
                 {
  
-                        Application.Init();   
+                        Application.Init();
  
  
                         Window window = new Window("toggle buttons");
@@ -228,7 +228,7 @@ namespace GtkSharpTutorial {
                 public static void Main(string[] args)
                 {
  
-                        Application.Init();   
+                        Application.Init();
  
  
                         Window window = new Window("radio buttons");

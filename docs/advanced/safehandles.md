@@ -22,7 +22,7 @@ The runtime support currently has:
 
 -   Support for passing SafeHandles on P/Invoke parameters (with AddRef/Release)
 -   Support for passing SafeHandles on P/Invoke structures (no AddRef/Release yet).
--   Support for creating SafeHandles-derivatives on return values fromP/Invoke.
+-   Support for creating SafeHandles-derivatives on return values from P/Invoke.
 -   Support for "ref SafeHandles" on P/Invoke parameters.
 -   throwing ArgumentNullException if null SafeHandles are passed to unmanaged code.
 
@@ -42,15 +42,15 @@ Open Research Issues:
 Notes on Limitations
 --------------------
 
-In one special case (SafeHandles in sturctures that are passed as parameters in P/Invoke functions) we are not calling AddRef/ReleaseRef because we would have to keep track of the original handle, but this data is currently not available in the release/cleanup code for marshalling.
+In one special case (SafeHandles in structures that are passed as parameters in P/Invoke functions) we are not calling AddRef/ReleaseRef because we would have to keep track of the original handle, but this data is currently not available in the release/cleanup code for marshalling.
 
 What we would have to do is keep a local variable and pass the local variable around pointing to the original safehandle and during the destruction phase use this information (instead of the SafeHandle.Handle IntPtr that is in the marshalled structure, which is what the shutdown code has access to) to call Release.
 
 A further complication is that the "ref release" argument that is typically used in the DangerousAddRef/Release pairs must also be passed around. An optimization could be to use a local variable that has a copy of the SafeHandle and set the slot to null if release is false (which currently in Mono is always false anyways).
 
-If a ref struct contains a SafeHandle and the value of the handle is modified in a P/Invoke call, we should throw a NotSuportedException ("SafeHandles can not be created in unmanaged code").
+If a ref struct contains a SafeHandle and the value of the handle is modified in a P/Invoke call, we should throw a NotSupportedException ("SafeHandles can not be created in unmanaged code").
 
-The limitation to do this is that we need access to the original SafeHandle to compare the value (and this is the same reason that we currently do not AddRef/ReleaseRef on SafeHandles that are part of structs: we need to modify the marshal.c code to pass around the source handle to do these kind of operations).
+The reason why we have to do this is that we need access to the original SafeHandle to compare the value (and this is the same reason that we currently do not AddRef/ReleaseRef on SafeHandles that are part of structs: we need to modify the marshal.c code to pass around the source handle to do these kind of operations).
 
 A possible implementation strategy would be to use another pre-determined slot in marshal.c to keep track of all the SafeHandles that must be disposed, an ArrayList where we track all of the SafeHandles that must be validated or DangerousReleased.
 

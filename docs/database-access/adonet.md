@@ -3,7 +3,7 @@ title: ADO.NET
 redirect_from:
   - /ADO.NET/
 ---
-See our [Database\_Access](/docs/database-access/) page for more details.
+See our [Database_Access](/docs/database-access/) page for more details.
 
 Status and tests for ADO.NET 2.0 are available in our [ADOTests](/archived/adotests "ADOTests") page.
 
@@ -13,7 +13,7 @@ Tools
 Some tools that can be used for ADO.NET and other technologies (ASP.NET, XML, etc).
 
 -   sqlsharp.exe
-    -   SQL\# is a command line query tool included with Mono to enter and execute SQL statements
+    -   SQL# is a command line query tool included with Mono to enter and execute SQL statements
 
 -   xsd.exe
     -   XML Schema Definition tool

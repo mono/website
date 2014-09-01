@@ -23,8 +23,8 @@ Help developers build applications by improving the cross-platform MonoDevelop /
 **[Mono Runtime](#mono-runtime)**
 Improve the core Mono runtime and JIT
 
-**[GTK\# and Bindings](#gtk-and-bindings)**
-GTK\# Core, Bindings and Applications
+**[GTK# and Bindings](#gtk-and-bindings)**
+GTK# Core, Bindings and Applications
 
 **[Contacting the Mono Team](#contacting-the-mono-team)**
 How to get in touch with us and ask questions
@@ -43,14 +43,14 @@ You can find some additional ideas on the [MonkeySquare ideas page](http://monke
 Compilers and Tools
 ===================
 
-C\# Compiler switch statement enhancements
+C# Compiler switch statement enhancements
 ------------------------------------------
 
 **Complexity:** Medium
 
-**Area:** C\#
+**Area:** C#
 
-Implement perfect hashing and other optimizations for C\# switch statement. The task is to come up with a heuristic backed up by some benchmarks for each implementation and implement it.
+Implement perfect hashing and other optimizations for C# switch statement. The task is to come up with a heuristic backed up by some benchmarks for each implementation and implement it.
 
 **Deliverable:** A set of patches which generally improve switch statement performance including tests for any special cases.
 
@@ -64,9 +64,9 @@ Make ASP.NET Awesome in Xamarin Studio
 
 **Complexity:** Easy
 
-**Area:** C\#, ASP.NET
+**Area:** C#, ASP.NET
 
-Xamarin Studio ASP.NET support is still maintained but has not been very actively developed in some time. There's lots of room for polishing and updating it and adding minor but useful features - for example, ASP.NET MVC4+5 templates, support for VS2013 projects, deploying to remote servers, being able to choose which web browser to launch when running/debugging, C\# tooltips and navigation in Razor files, etc. There's a lot of flexibility which features you want to work on, you can choose from the above examples and/or propose your own.
+Xamarin Studio ASP.NET support is still maintained but has not been very actively developed in some time. There's lots of room for polishing and updating it and adding minor but useful features - for example, ASP.NET MVC4+5 templates, support for VS2013 projects, deploying to remote servers, being able to choose which web browser to launch when running/debugging, C# tooltips and navigation in Razor files, etc. There's a lot of flexibility which features you want to work on, you can choose from the above examples and/or propose your own.
 
 **Deliverables:** Polish ASP.NET addin, implement some number of minor features.
 
@@ -77,7 +77,7 @@ Source Analysis and Refactoring
 
 **Complexity:** Medium
 
-**Area:** Parsers, C\#
+**Area:** Parsers, C#
 
 The IDE supports source analysis using NRefactory to analyze source code, indicate potential problems or improvements to the user as "code issues", and perform "code actions" and "quick fixes" to transform code automatically. There are almost unlimited possibilities what can be done to analyze or restructure source code. The system is very flexible, and we already support a large number of actions and code analysis rules. But there's plenty of room to add more to help people write good code. If you like source code analysis or refactoring, it's a great chance to work in this area. You should look at other similar tools and the existing rules in MonoDevelop, and propose a set of new and useful code actions and/or code issues.
 
@@ -90,7 +90,7 @@ Javascript Support
 
 **Complexity:** Hard
 
-**Area:** C\#, Javascript
+**Area:** C#, Javascript
 
 Full Javascript support would be very useful for developers writing web apps and embedding HTML pages in desktop and mobile apps. This includes code completion, code folding, syntax highlighting, document outline, etc. It should work in standalone JS files and inline in HTML, CSHTML and ASPX files. The code completion should be capable of handling common JS frameworks such as JQuery. There are several open-source managed JS/AS parsers that could perhaps be used.
 
@@ -103,7 +103,7 @@ TypeScript Support
 
 **Complexity:** Medium
 
-**Area:** C\#, Javascript
+**Area:** C#, Javascript
 
 Bring to Xamarin Studio support for the TypeScript language, similar to what the SharpDevelop team did:
 
@@ -118,7 +118,7 @@ Improve C/C++ Binding
 
 **Complexity:** Hard
 
-**Area:** C\#, C, C++
+**Area:** C#, C, C++
 
 The C/C++ binding is an under-maintained area of Xamarin Studio. The first part of this project would be to generally polish it and fix bugs, perhaps adding support for the clang and mingw32 compilers. The second part would be to replace the ctags based code completion with libclang, and generally improve code completion and code navigation.
 
@@ -131,7 +131,7 @@ Improve C/C++ build support in XBuild
 
 **Complexity:** Medium
 
-**Area:** C\#, C, C++
+**Area:** C#, C, C++
 
 The C/C++ build support in xbuild was much improved in GSoC 2011 but still needs some work to better integrate other compilers than MSVC. The first part of this project would be to generally polish it and fix bugs, and add support for the Clang and GCC compilers. This involves adding a mapping from the VS-compatible parameters to the respective command line options on those compilers. The second part would be to improve the C++ binding in MonoDevelop (see entry above) to use this and be able to compile and load and save MSBuild C++ projects from the IDE in Windows and OSX/Linux. This is important as MonoDevelop is migrating to MSBuild, and the C/C++ project type will be dropped unless it is ported to MSBuild.
 
@@ -144,7 +144,7 @@ Windows .NET 64-bit debugging
 
 **Complexity:** Medium/Hard
 
-**Area:** C\#, Win32, Debugging
+**Area:** C#, Win32, Debugging
 
 Add support for 64-bit app to the MS .NET debugger runtime on Windows.
 
@@ -157,7 +157,7 @@ Debugger Visualizers
 
 **Complexity:** Easy
 
-**Area:** C\#, Debugging
+**Area:** C#, Debugging
 
 There is plenty of room to improve the debugging experience with visualizer pop-ups that provide more useful ways to inspect common kinds of data - for example, collection visualizers that allow searching for items in the collection, XML/JSON visualizers that provide a structured, searchable tree view of the document, and so-on. Your proposal should include a list of visualizers that you propose to implement, and describe why they are useful.
 
@@ -209,7 +209,7 @@ GitHub Integration
 
 **Complexity:** Medium/Hard
 
-**Area:** C\#
+**Area:** C#
 
 Xamarin Studio's Git support could use improvements by using Octokit.NET to integrate with GitHub. Integrating features in the IDE which interact with GitHub would make workflow much better. The proposal should include a list of features that you think are good to have in Xamarin Studio and why you would add them.
 
@@ -240,11 +240,11 @@ Use IKVM.Reflection to implement parts of System.Reflection.Emit
 
 **Area**: Runtime/base class library
 
-Investigate replacing the image saving code in System.Reflection.Emit (AssemblyBuilder.Save), which is currently in C code, with c\# code from: [http://weblog.ikvm.net/PermaLink.aspx?guid=d0dc2476-471b-45f3-96bf-a90bc2f5800b](http://weblog.ikvm.net/PermaLink.aspx?guid=d0dc2476-471b-45f3-96bf-a90bc2f5800b)
+Investigate replacing the image saving code in System.Reflection.Emit (AssemblyBuilder.Save), which is currently in C code, with c# code from: [http://weblog.ikvm.net/PermaLink.aspx?guid=d0dc2476-471b-45f3-96bf-a90bc2f5800b](http://weblog.ikvm.net/PermaLink.aspx?guid=d0dc2476-471b-45f3-96bf-a90bc2f5800b)
 
 **Deliverables**: A version of mono which uses IKVM.Reflection code to implement System.Reflection.Emit save functionality, and which can run some amounts of tests.
 
-GTK\# and Bindings
+GTK# and Bindings
 ==================
 
 Bindinator: Create bindings for clutter/gst-clutter, improve gst
@@ -252,9 +252,9 @@ Bindinator: Create bindings for clutter/gst-clutter, improve gst
 
 **Complexity:** Medium
 
-**Area:** C\#, C, Glib, GTK, XML
+**Area:** C#, C, Glib, GTK, XML
 
-There is an ongoing effort to automate the generation of C\# bindings on the GNOME desktop by leveraging the new GObject introspection data that is now available for most libraries. GObject introspection data includes xml files and typeobject files (binary) describing the APIs a library exposes. The bindinator project ([https://github.com/andreiagaita/bindinator](https://github.com/andreiagaita/bindinator)) takes this information and produces gapi files that can then be used with GTK\# gapi tools for generating C\# bindings.
+There is an ongoing effort to automate the generation of C# bindings on the GNOME desktop by leveraging the new GObject introspection data that is now available for most libraries. GObject introspection data includes xml files and typeobject files (binary) describing the APIs a library exposes. The bindinator project ([https://github.com/andreiagaita/bindinator](https://github.com/andreiagaita/bindinator)) takes this information and produces gapi files that can then be used with GTK# gapi tools for generating C# bindings.
 
 The tasks are:
 
@@ -269,7 +269,7 @@ The tasks are:
 Contacting the Mono Team
 ========================
 
-If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "\#monosoc", "\#monodev" or the "\#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
+If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
 
 The mailing lists are a very important communication channel, students should use them to get more information and feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
 

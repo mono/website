@@ -8,7 +8,7 @@ redirect_from:
 User:ZacBowling
 ===============
 
-Local Mono contributor based out of Dallas TX. Contributions to Gecko\#, Gtk\#, MWF, this site, Monodoc, IRC, packaging.
+Local Mono contributor based out of Dallas TX. Contributions to Gecko#, Gtk#, MWF, this site, Monodoc, IRC, packaging.
 
 1.1.10
 

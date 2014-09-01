@@ -28,7 +28,7 @@ Gendarme 3.0+ (in planning)
 ===========================
 
 -   General
-    -   Start building against FX 4.0 and C\# 4
+    -   Start building against FX 4.0 and C# 4
     -   Update to cecil/light (latest version)
 -   Rules
     -   More (of course ;-)
@@ -49,7 +49,7 @@ Runner-related
 --------------
 
 -   New GUI-based runners, like
-    -   standalone (Gtk\#, Cocoa\#...)
+    -   standalone (Gtk#, Cocoa#...)
     -   MonoDevelop plugin
     -   VS.NET plugin, see GSoC 2008 work by Ed Ropple
 
@@ -62,7 +62,7 @@ Runner-related
 
     Source Text (regarding UseStringEmptyRule)
     File: C:\Development\mono\gendarme\console\ConsoleRunner.cs
-                           
+
     005    public void Foo () {
     006        Console.WriteLine ("");
      -------------------------^^
@@ -70,22 +70,22 @@ Runner-related
 
 That's pretty easy, Instruction has a ServicePoint which points to a Start/End-Line/Column.
 
--   -   Member based messages.
+-   Member based messages.
 
 <!-- -->
 
     Source Text
     File: C:\Development\mono\gendarme\console\ConsoleRunner.cs
-                           
+
     007 /// </summary>
     008    public void Foo (out bar) {
     ---------------------^^^
-    009        bar = null        
+    009        bar = null
     010    }
 
 I've yet to find a way to get a ServicePoint out of a Method declaration so that's pretty hard to display. A solution might be taking the first instruction of a method, but what offset shall we calculate? 1 line above the instruction?
 
--   -   Type/Module or Assembly based message
+-   Type/Module or Assembly based message
 
 <!-- -->
 
@@ -93,13 +93,13 @@ I've yet to find a way to get a ServicePoint out of a Method declaration so that
     File: C:\Development\mono\gendarme\console\ConsoleRunner.cs
 
     007 /// </summary>
-    008    public class Foo {        
-    009        
+    008    public class Foo {
+    009
     010
 
 What to display if a type/module or assembly rule is hit and no member is specified? The class header? How to identify it (Cecil has no TypeDefinition::ServicePoint property).
 
--   -   [reference](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
+-   [reference](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
 
 Framework
 ---------

@@ -7,6 +7,7 @@ The site uses Jekyll (http://jekyllrb.com), a static site generator. GitHub Page
 
 Contributing to the website
 ---------------------------
+
 **Note:** Major issues or feature requests should be filed on the [issue tracker](https://github.com/mono/website/issues) first, so we can discuss the implications.
 
 If you want to edit a page, the easiest way is to click the ![Edit page on GitHub](https://cloud.githubusercontent.com/assets/1376924/3712375/a6d7bc42-150f-11e4-9ceb-5230cbbfba3f.png) link under the page title on the website.
@@ -22,16 +23,18 @@ After you've finished your changes, enter a proper summary and description and c
 
 Setting up a local copy of the website
 --------------------------------------
+
 For larger changes, using the web-based editor on GitHub is not really convenient. A better way is to setup a local copy of the website where you can experiment.
 
-###Dependencies:
+### Dependencies
+
  - [Ruby](https://www.ruby-lang.org/) - Jekyll is written in Ruby
  - [Bundler](http://bundler.io/) - a package manager for Ruby. Install it by running `gem install bundler`
 
 After you've forked and cloned the repository, run the following commands:
  1. `bundle install` - downloads the required libraries
  2. `jekyll serve` - builds the website and runs a local webserver on port 4000
- 
+
 **Note:** you can add the `--watch` option when running `jekyll serve` to let Jekyll watch for file changes, which means the site will be rebuilt when a file is modified.
 
 The site should now be running locally:
@@ -39,6 +42,7 @@ The site should now be running locally:
 
 Repository structure
 --------------------
+
  - `_includes` - *special folder* contains snippets that can be included via `{% include file.html %}` in other pages
  - `_layouts` - *special folder* contains the layouts that are shared between pages. Layouts can be inherited, the root layout is `base.html`.
  - `_posts` - *special folder*, contains the source pages for the blog section, see [Writing a blog post](#writing-a-blog-post)
@@ -53,6 +57,7 @@ Repository structure
 
 Writing a blog post
 -------------------
+
 Blogging is very easy with Jekyll. Simply add a new Markdown file to the `_posts` folder following the file name convention: `YEAR-MONTH-DAY-title.md`
 
 Make sure to not include special characters in the file name. The blog entry's publishing date is automatically extracted from the file name.

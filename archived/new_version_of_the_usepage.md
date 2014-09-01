@@ -36,7 +36,7 @@ Usage Scenarios
 Mono can be used in variety of applications, however there are some pieces which are important regardless of the usage of Mono, such as:
 
 -   [Running your first Mono application](/Running_your_first_Mono_application "Running your first Mono application")
--   [C\# Compiler](/CSharp_Compiler "CSharp Compiler") and [Mono Runtime](/Mono:Runtime)
+-   [C# Compiler](/CSharp_Compiler "CSharp Compiler") and [Mono Runtime](/Mono:Runtime)
 -   [Debugger](/Debugger "Debugger"), [Debugging Tutorial](/Guide:Debugger "Guide:Debugger") and [Debugging](/Debugging "Debugging")
 -   [Profiling](/Profile "Profile")
 -   [Class Status](/Resources#api-completion-status-pages "Resources") and [API Documentation](http://www.go-mono.com/docs/)
@@ -51,7 +51,7 @@ Develop Web Applications
 ------------------------
 
 -   [ASP.NET](/ASP.NET "ASP.NET") and a tutorial for using [MS ASP.NET StarterKits on Mono](/Guide:StarterKitPrimer "Guide:StarterKitPrimer")
--   [XSP](/ASP.NET) and [mod\_mono](/Mod_mono "Mod mono")
+-   [XSP](/ASP.NET) and [mod_mono](/Mod_mono "Mod mono")
 -   [Web Services](/Web_Services "Web Services")
 -   [Database Access](/Database_Access "Database Access")
 
@@ -60,7 +60,7 @@ Port existing Applications from Windows to Linux or Mac
 
 -   [Mono Migration Analyzer](/MoMA "MoMA")
 -   [Guide: Porting Winforms Applications](/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications")
--   [Guide:\_Porting\_ASP.NET\_Applications](/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications")
+-   [Guide:_Porting_ASP.NET_Applications](/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications")
 -   [Guidelines:Application Portability](/Guidelines:Application_Portability "Guidelines:Application Portability")
 -   [WinForms](/WinForms "WinForms") *For information about the current status of Monos WinForms implementation.*
 -   [Using Mono on Windows](/Using_Mono_on_Windows "Using Mono on Windows")

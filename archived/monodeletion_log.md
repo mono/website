@@ -24,10 +24,10 @@ Below is a list of the most recent deletions. All times shown are server time (U
 -   21:18, 1 Apr 2005 Gonzalo deleted "Class Libraries" *(Links do not work and the class status page is the right one)*
 -   22:57, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") deleted "Image:RPM.gif" *(grrr)*
 -   22:39, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") deleted "Image:RPM.gif" *(better version)*
--   18:44, 21 Mar 2005 [Edasque](/User:Edasque "User:Edasque") deleted "Tutorials" *(content was: '\* O'Reilly has a beginner tutorial on [http://www.onlamp.com/pub/a/onlamp/excerpt/MonoTDN\_chap1/index.html how to write a basic Gtk\# program with Mono...')*
+-   18:44, 21 Mar 2005 [Edasque](/User:Edasque "User:Edasque") deleted "Tutorials" *(content was: '\* O'Reilly has a beginner tutorial on [http://www.onlamp.com/pub/a/onlamp/excerpt/MonoTDN_chap1/index.html how to write a basic Gtk# program with Mono...')*
 -   06:42, 17 Mar 2005 [ZacBowling](/User:ZacBowling "User:ZacBowling") deleted "Request account" *(Useless? we have the wiki now and no pointers)*
 -   06:40, 17 Mar 2005 [ZacBowling](/User:ZacBowling "User:ZacBowling") deleted "Mono Logos" *(Uselentss and no points. Looks like a bad import)*
--   20:53, 28 Feb 2005 [Miguel](/User:Miguel "User:Miguel") deleted "ASP.NET Ports" *(content was: '\#REDIRECT [http://www.go.mono.com/ports/]')*
+-   20:53, 28 Feb 2005 [Miguel](/User:Miguel "User:Miguel") deleted "ASP.NET Ports" *(content was: '#REDIRECT [http://www.go.mono.com/ports/]')*
 -   03:30, 27 Feb 2005 [Miguel](/User:Miguel "User:Miguel") deleted "FAQ" *(duplicated)*
 -   22:02, 26 Feb 2005 [Miguel](/User:Miguel "User:Miguel") deleted "Sample NUnit test" *(page was empty)*
 -   22:01, 26 Feb 2005 [Miguel](/User:Miguel "User:Miguel") deleted "Sample app.config File" *(page was empty)*

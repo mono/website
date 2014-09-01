@@ -38,8 +38,7 @@ namespace GtkSharpTutorial {
         public class frame
         {
  
-                static void delete_event (object obj,
-DeleteEventArgs args)
+                static void delete_event (object obj, DeleteEventArgs args)
                 {
                 Application.Quit();
                 }
@@ -51,11 +50,9 @@ DeleteEventArgs args)
                         Application.Init();
  
                         /* Create a new window */
-                        Window window = new Window ("Frame
-Example");
+                        Window window = new Window ("Frame Example");
  
-                        /* Here we connect the "destroy" event to a
-signal handler */ 
+                        /* Here we connect the "destroy" event to a signal handler */
                         window.DeleteEvent += delete_event;
  
                         window.SetSizeRequest(300, 300);
@@ -69,8 +66,7 @@ signal handler */
                         /* Set the frame's label */
                         frame.Label = "GTK Frame Widget";
  
-                        /* Align the label at the right of the
-frame */
+                        /* Align the label at the right of the frame */
  
                         frame.SetLabelAlign((float)1.0,(float)0.0);
  

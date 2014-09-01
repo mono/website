@@ -80,7 +80,7 @@ As always, you can get the development source from trunk:
 
 -   Local Messaging. Demos from last year's MIX, such as Chess Wars and the Bouncing Balls, work.
 
--   Effects are available now. Our blur effect is a hand coded version, while the DropShadow and all ShaderEffects are implemented by converting to Gallium's shader language. They can cause a big perf hit, but you can disable them by adding "effects=no" to the MOONLIGHT\_OVERRIDES environment variable before starting your browser. The Olympics player uses the BlurEffect pretty extensively, so you'll want to use that environment variable if you run into performance problems.
+-   Effects are available now. Our blur effect is a hand coded version, while the DropShadow and all ShaderEffects are implemented by converting to Gallium's shader language. They can cause a big perf hit, but you can disable them by adding "effects=no" to the MOONLIGHT_OVERRIDES environment variable before starting your browser. The Olympics player uses the BlurEffect pretty extensively, so you'll want to use that environment variable if you run into performance problems.
 
 -   Some optimizations making DependencyObject::GetValue a bit speedier, and we also do fewer GetValues in general by caching things locally (particularly when used in loop conditions).
 

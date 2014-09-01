@@ -26,5 +26,5 @@ Contact
 
 **Email:** monkey at jpobst dot com
 
-**IRC:** jpobst, residing in \#mono and \#mono-winforms, but does not actively watch \#mono. One must use the phrase jpobst or moma to trigger IRC highlighting.
+**IRC:** jpobst, residing in #mono and #mono-winforms, but does not actively watch #mono. One must use the phrase jpobst or moma to trigger IRC highlighting.
 

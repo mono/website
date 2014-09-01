@@ -31,7 +31,7 @@ sure
 
 ** **
 
--!- bgmerrell [\~bean@snout.provo.novell.com] has joined \#mono-a11y
+-!- bgmerrell [\~bean@snout.provo.novell.com] has joined #mono-a11y
 
 **\<@sandy\> **
 
@@ -127,7 +127,7 @@ I'm also adding new logic to support logic
 
 s/support logic/support navigation
 
-and the preview of the Winfors implementation is done: Accessibility:\_Winforms\_Implementation
+and the preview of the Winfors implementation is done: Accessibility:_Winforms_Implementation
 
 07:09
 
@@ -253,7 +253,7 @@ and, well, my plan is still not clear, maybe I'll just do refactoring of the bri
 
 ** **
 
--!- jpallen [\~jpallen@137.65.132.45] has joined \#mono-a11y
+-!- jpallen [\~jpallen@137.65.132.45] has joined #mono-a11y
 
 **\<@knocte\> **
 
@@ -297,7 +297,7 @@ Tested cspi registration and event passing some more.
 
 Added action, editableText, hyperlink, hypertext, and table interfaces.
 
-It now builds against gok for me, with a minor patch to gok to remove some \#includes.
+It now builds against gok for me, with a minor patch to gok to remove some #includes.
 
 I also set up a parallel Mono environment, with help from Sandy and others, and discovered that monodevelop from svn is inaccessible. Looks like I need to file a bug if one hasn't already been filed.
 

@@ -26,7 +26,7 @@ Boo
 Overview
 ========
 
-Boo is a new object oriented statically typed programming language for the Common Language Infrastructure with a python inspired syntax and a special focus on language and compiler extensibility. Features such as type inference, closures (similar to C\#'s anonymous delegates), duck typing, and syntactic macros are just a few of the features Boo offers that are not found in many currently available CLI languages.
+Boo is a new object oriented statically typed programming language for the Common Language Infrastructure with a python inspired syntax and a special focus on language and compiler extensibility. Features such as type inference, closures (similar to C#'s anonymous delegates), duck typing, and syntactic macros are just a few of the features Boo offers that are not found in many currently available CLI languages.
 
 Syntax Example
 ==============

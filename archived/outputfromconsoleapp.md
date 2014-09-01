@@ -45,7 +45,7 @@ class ProcessOutput {
  
     static void Main () // starting point of the program
     {
-        // sets up our process, the first argument is the command 
+        // sets up our process, the first argument is the command
         // and the second holds the arguments passed to the command
         ProcessStartInfo ps = new ProcessStartInfo ("ls", "./");
         ps.UseShellExecute = false;

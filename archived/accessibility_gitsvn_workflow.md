@@ -224,7 +224,7 @@ If you do not like vim, you can replace all but the last step with just copying 
 
 ### Preparing a Commit Message
 
-When you have finished updating all of your ChangeLog files, you can run \`clm\` from the root of your git repo to see what your commit message will look like (the leading "\#" characters are there so you can quickly quit your editor to abort a commit; you will delete them when you actually commit). If anything seems to be missing, then you probably forgot to \`git add\` one of your ChangeLog modifications.
+When you have finished updating all of your ChangeLog files, you can run \`clm\` from the root of your git repo to see what your commit message will look like (the leading "#" characters are there so you can quickly quit your editor to abort a commit; you will delete them when you actually commit). If anything seems to be missing, then you probably forgot to \`git add\` one of your ChangeLog modifications.
 
 ### Committing Your Change to git
 
@@ -232,7 +232,7 @@ You will now use clm to help you make a SVN-style commit into your git repo, in 
 
 #### Using git gui
 
-If you would like a convenient way to view all your diffs before you hit the "commit" button, you should try \`git gui\`. Copy the output of clm and paste it into the Commit Message box in git gui. You can click on files in the Staged Changes list to see the diffs that are going to be committed. When you are ready to commit to git, delete the leading "\#" in each line of your commit message, and click the Commit button.
+If you would like a convenient way to view all your diffs before you hit the "commit" button, you should try \`git gui\`. Copy the output of clm and paste it into the Commit Message box in git gui. You can click on files in the Staged Changes list to see the diffs that are going to be committed. When you are ready to commit to git, delete the leading "#" in each line of your commit message, and click the Commit button.
 
 #### Using the command line
 
@@ -242,7 +242,7 @@ From the root of your git repo:
 
 -   Run \`git commit\`
 -   In the vim prompt, type escape then ":r!clm"
--   Uncomment lines that you want to appear in the commit message by deleting the leading "\#" (delete any extra blank lines, too)
+-   Uncomment lines that you want to appear in the commit message by deleting the leading "#" (delete any extra blank lines, too)
 -   Type escape then "ZZ" to save your message, exit vim, and complete the commit
 
 ### For those "oh crap" moments: undoing a git commit

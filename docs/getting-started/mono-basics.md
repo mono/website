@@ -36,10 +36,10 @@ The program should run and output:
 
     Hello Mono World
 
-Gtk\# Hello World
+Gtk# Hello World
 -----------------
 
-The following program tests writing a Gtk\# application.
+The following program tests writing a Gtk# application.
 
 ``` csharp
 using Gtk;
@@ -60,7 +60,7 @@ class Hello {
 }
 ```
 
-To compile, use gmcs with the -pkg option to tell the compiler to pull in the Gtk\# libraries:
+To compile, use gmcs with the -pkg option to tell the compiler to pull in the Gtk# libraries:
 
     mcs hello.cs -pkg:gtk-sharp-2.0
 
@@ -117,7 +117,7 @@ Create a text file with the extension .aspx and put on it:
 Then run the xsp2 command from that directory:
 
 ``` bash
-$ xsp2
+xsp2
 ```
 
 Use a web browser to contact [http://localhost:8080/filename.aspx](http://localhost:8080/filename.aspx)

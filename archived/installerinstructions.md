@@ -102,7 +102,7 @@ MonoDevelop is included in the installer even though it won't work on all distro
 -   The natives gtk-sharp2 libraries have unresolved symbols.
 -   The environment necessary for runtime has not been loaded.
 
-The solution: run a distro that has gtk+ 2.4 or above, make sure Gnome is installed, and make sure you load the settings from .bashrc which were created by the installer. (They are also listed in the above faq question). You can try to run "\<install dir\>/bin/.installer\_post\_libscan \<install dir\>" to see why libraries you are missing (of course, replace \<install dir\> with the path where you installed Mono).
+The solution: run a distro that has gtk+ 2.4 or above, make sure Gnome is installed, and make sure you load the settings from .bashrc which were created by the installer. (They are also listed in the above faq question). You can try to run "\<install dir\>/bin/.installer_post_libscan \<install dir\>" to see why libraries you are missing (of course, replace \<install dir\> with the path where you installed Mono).
 
 If you're still getting this Exception, running monodevelop from the command line with:
 
@@ -110,7 +110,7 @@ If you're still getting this Exception, running monodevelop from the command lin
 
 can give some clues. Seriously though, if you're still having problems at this point, you'd be better off using a supported distribution and installing MonoDevelop from the rpms.
 
-**Will the installer work on x86\_64?**
+**Will the installer work on x86_64?**
 
 No, this installer is only built to run on 32 bit systems. Some distributions have both 32 bit and 64 bit libraries and programs installed. If a 64 bit system has all the necessary 32 bit components installed, it should work, although this is not a tested scenario.
 

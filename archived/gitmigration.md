@@ -52,7 +52,7 @@ Modules
 
 Should we split the jumbo SVN repository into separate GIT, self-contained modules?
 
-There are certain components that probably need to be kept in sync for the sake of the branches (like mono-2-6/{mono,mcs,libgdiplus,mod\_mono,xsp}).
+There are certain components that probably need to be kept in sync for the sake of the branches (like mono-2-6/{mono,mcs,libgdiplus,mod_mono,xsp}).
 
 Detail what the toplevel modules will be here.
 
@@ -77,7 +77,7 @@ Does this actually make sense? Maybe. Problem is, I don't know the entire depend
 
 -   Before migrating to git we do all our reorganising in SVN using "svn mv". This will keep history intact as we shuffle everything.
 -   After migrating to git we use some "git mv"s (or equivalent) and shuffle everything around there.
--   I don't think it's possible to move module source/trunk/x/y in svn to source/trunk/x\_y in git directly. We might be able to do it that way by importing modules one by one from SVN, but that might be overly complex.
+-   I don't think it's possible to move module source/trunk/x/y in svn to source/trunk/x_y in git directly. We might be able to do it that way by importing modules one by one from SVN, but that might be overly complex.
 
 Regardless, the above might suggest the minimum modules:
 
@@ -101,7 +101,7 @@ How do we keep track of all the branches that we need?
 
 Does Gonzalo script actually pull all the branches, and is that enough? -\> Need feedback from QA/Release Engineering.
 
-Check out the [mcs git-svn repo](http://repo.or.cz/w/mcs.git). There's also mono, xsp, monodevelop and mod\_mono.
+Check out the [mcs git-svn repo](http://repo.or.cz/w/mcs.git). There's also mono, xsp, monodevelop and mod_mono.
 
 Policies
 --------

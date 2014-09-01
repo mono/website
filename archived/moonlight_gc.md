@@ -13,7 +13,7 @@ The Problem
 
 Moonlight uses managed and unmanaged peers, with the managed peer lifetime being controlled by the GC, and the unmanaged peer lifetime being controlled via reference counts. It's possible (and quite easy in common usage) to create cycles that cross the managed/unmanaged boundary.
 
-This is a rather simple example, but is pretty much what happens with ScrollViewer+ScrollContentPresenter, along with pretty much all the other control/template scenarios. The "..." is any chain of strong references, either through collection+value, or direct reference like UIElement::subtree\_object or Control::template\_root.
+This is a rather simple example, but is pretty much what happens with ScrollViewer+ScrollContentPresenter, along with pretty much all the other control/template scenarios. The "..." is any chain of strong references, either through collection+value, or direct reference like UIElement::subtree_object or Control::template_root.
 
              strong
      +--------+ gchandle             +------------------+ +1
@@ -99,9 +99,9 @@ This approach requires that every unmanaged peer has a managed peer counterpart 
 
 -   local, autocreated Values must not increment the refcount of their DO's.
 
--   UIElement must not increment the refcount subtree\_object.
+-   UIElement must not increment the refcount subtree_object.
 
--   Control must not increment the refcount of template\_root.
+-   Control must not increment the refcount of template_root.
 
 The trouble with this is that until a possibly complex subtree is added to tree, there are no managed peers (and can't be any, since there would be no strong managed references to keep the managed subtree alive.) So, basically in DependencyObject::SetValueWithError (and Collection::AddImpl, and a few other places) we'd need to traverse everything, ensuring that managed peers are created and ensuring that strong refs are in place to duplicate the unmanaged refs. Also, during this process we'd need to decrement the refcount of all objects when their managed peer is created (in effect breaking the unmanaged reference.)
 

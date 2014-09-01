@@ -40,15 +40,15 @@ To implement a System.Messaging client, you will need to reference the following
 
 Simply implement a System.Messaging client as you would against the MS APIs.
 
-When running the client it is necessary to define the MONO\_MESSAGING\_PROVIDER environment variable. It should be set to:
+When running the client it is necessary to define the MONO_MESSAGING_PROVIDER environment variable. It should be set to:
 
 Mono.Messaging.RabbitMQ.RabbitMQMessagingProvider,Mono.Messaging.RabbitMQ
 
 Which is the full class name of the messaging provider class that is the entry point for the implementation of the Mono.Messaging SPI. In coming versions of Mono the value for the environment variable will be shortened.
 
-Due to a bug (which will be fixed in a later release), you will also need to add the mono assemblies to the MONO\_PATH environment variable, e.g:
+Due to a bug (which will be fixed in a later release), you will also need to add the mono assemblies to the MONO_PATH environment variable, e.g:
 
-MONO\_PATH=/usr/lib/mono/2.0
+MONO_PATH=/usr/lib/mono/2.0
 
 Example code:
 

@@ -27,8 +27,8 @@ A Novell Forge account is required in order to create a project on Novell Forge 
 
 You should be good to go at this point. Now, to create a project, simply choose the "Start New Project" link from the left menu and follow the steps. Novell Forge offers a limited set of context-sensitive help links and a full help section. If you have trouble, go to the help section at [http://forge.novell.com/modules/xfmod/help/about.php](http://forge.novell.com/modules/xfmod/help/about.php).
 
-Important Links:
-----------------
+Important Links
+---------------
 
 Novell Forge - [http://forge.novell.com/](http://forge.novell.com/)
 

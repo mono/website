@@ -26,8 +26,8 @@ There are three alternatives to solve this problem:
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
 
-I imported the root certificate but it still doesn't work!
-----------------------------------------------------------
+I imported the root certificate but it still doesn't work
+---------------------------------------------------------
 
 [HTTPS](http://www.ietf.org/rfc/rfc2818.txt), like many protocols using [SSL](http://wp.netscape.com/eng/ssl3/)/[TLS](http://www.ietf.org/rfc/rfc2246.txt), doesn't requires the server to send its root certificate when negotiating the handshake. In this case it won't be possible to use `certmgr --ssl` to download automatically the root certificate into Mono's certificate stores.
 
@@ -39,29 +39,31 @@ You'll need to either:
 How can I debug https traffic?
 ------------------------------
 
-Use the webscarab tool and set the http\_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
+Use the webscarab tool and set the http_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
 
-I got the root certificate but it doesn't install!
---------------------------------------------------
+I got the root certificate but it doesn't install
+-------------------------------------------------
 
 Some Certificate Authorities (CA) still use *very old* root certificates signed with the [MD2](http://www.ietf.org/rfc/rfc1319.txt) digest algorithm. MD2 is old enough not to be part of the standard .NET framework. This makes it impossible to validate the root certificate digital signature.
 
-To correct this you must enabled MD2 support in your `machine.config` file. This is possible because the `Mono.Security.dll` assembly contains a managed MD2 implementation to ensure compatibility with older certificates. The following XML snippet must be added, inside the inside the `<configuration>` element of your `machine.config` file in order to associate the MD2 OID (object identifier) with the hash algorithm implementation. ­
+To correct this you must enabled MD2 support in your `machine.config` file. This is possible because the `Mono.Security.dll` assembly contains a managed MD2 implementation to ensure compatibility with older certificates. The following XML snippet must be added, inside the inside the `<configuration>` element of your `machine.config` file in order to associate the MD2 OID (object identifier) with the hash algorithm implementation.
 
-    <mscorlib>
-        <cryptographySettings>
-            <cryptoNameMapping>
-                <cryptoClasses>
-                    <cryptoClass monoMD2="Mono.Security.Cryptography.MD2Managed, Mono.Security,
-                        Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
-                </cryptoClasses>
-                <nameEntry name="MD2" class="monoMD2" />
-            </cryptoNameMapping>
-            <oidMap>
-                <oidEntry OID="1.2.840.113549.2.2" name="MD2" />
-            </oidMap>
-        </cryptographySettings>
-    </mscorlib>
+``` xml
+<mscorlib>
+    <cryptographySettings>
+        <cryptoNameMapping>
+            <cryptoClasses>
+                <cryptoClass monoMD2="Mono.Security.Cryptography.MD2Managed, Mono.Security,
+                    Version=1.0.5000.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+            </cryptoClasses>
+            <nameEntry name="MD2" class="monoMD2" />
+        </cryptoNameMapping>
+        <oidMap>
+            <oidEntry OID="1.2.840.113549.2.2" name="MD2" />
+        </oidMap>
+    </cryptographySettings>
+</mscorlib>
+```
 
 Why does SSL use certificates ?
 -------------------------------
@@ -81,15 +83,21 @@ Does SSL works for SMTP, like GMail ?
 
 Yes it does. First you must import the root certificates using the `mozroots` tool:
 
-    mozroots --import --ask-remove 
+``` bash
+mozroots --import --ask-remove
+```
 
 Note that if you are using a web application (i.e. not the current user) you must add the `--machine` option like this:
 
-    mozroots --import --ask-remove --machine
+``` bash
+mozroots --import --ask-remove --machine
+```
 
 Next you need to import the intermediate certificates. You can do this by using the `certmgr` tool to connect to the SSL server. E.g.
 
-    certmgr -ssl smtps://smtp.gmail.com:465
+``` bash
+certmgr -ssl smtps://smtp.gmail.com:465
+```
 
 Use the `-m` option to import the certificates into the machine store if required.
 
@@ -187,7 +195,7 @@ where **1.3.6.1.5.5.7.3.1** is the OID for server-side authentication and **poll
 
     makecert -eku 1.3.6.1.5.5.7.3.2 -n "CN=poupou" -p12 poupou.p12 s3kr3t
 
-where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poupou** is your name. The `-p12` option is **mono specific** and creates a PKCS\#12 file protected with the supplied password.
+where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poupou** is your name. The `-p12` option is **mono specific** and creates a PKCS#12 file protected with the supplied password.
 
 Many more options are available from `makecert`. Consult the tool's [man page](http://anonsvn.mono-project.com/source/trunk/mono/man/makecert.1) (i.e. `man makecert`) for more details.
 
@@ -245,8 +253,8 @@ From the [/mcs/class/corlib/Makefile](http://anonsvn.mono-project.com/source/tru
 -   The results of using `__SECURITY_BOOTSTRAP_DB` for other assemblies is unknown (i.e. we don't know what else in CSC may be affected by the environment variable) so it should only be used when necessary;
 -   The CLR 2.x supports a new binary format for security attributes (very much like serialization) that is make directly from the security attribute (i.e. doesn't involve the permission class).
 
-System.Security.SecurityException : Failure decoding embedded permission set object.
-------------------------------------------------------------------------------------
+System.Security.SecurityException : Failure decoding embedded permission set object
+-----------------------------------------------------------------------------------
 
 This exception can occurs when using a path/file in a declarative [FileIOPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.FileIOPermissionAttribute) attribute (or any other security attribute accepting filenames). The Mono runtime supports UNIX-style filename when compiling (e.g. MCS) but the Microsoft runtime won't be able to decode them. The solution is to use imperative security when dealing with filenames.
 
