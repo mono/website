@@ -5,12 +5,12 @@ redirect_from:
   - /Multi-threaded_GtkSharp_Programing_and_Keeping_your_Application_Responsive/
 ---
 
-This article covers multi-threaded GTK\# programing as well as how to keep your GTK\# application responsive.
+This article covers multi-threaded GTK# programing as well as how to keep your GTK# application responsive.
 
 Background
 ==========
 
-The Gtk\# toolkit is an event-based system. At the core of the Gtk.Application.Run method there is a loop like this:
+The Gtk# toolkit is an event-based system. At the core of the Gtk.Application.Run method there is a loop like this:
 
 ``` csharp
     while (Gtk.Application.EventsPending ())
@@ -42,7 +42,7 @@ A common problem faced by GUI application developers is keeping an application r
 
 There are a number of reasons why an application might become unresponsive to a user: the application might be performing a long-running computation or it might be blocking on data to become available from the network, a file system or the operating system.
 
-Threads are often used to overcome this problem, but as explained above you have to be careful when using them. In this document we explore the solutions available to Gtk\# developers to keep your GUI responsive by using multiple threads and other approaches.
+Threads are often used to overcome this problem, but as explained above you have to be careful when using them. In this document we explore the solutions available to Gtk# developers to keep your GUI responsive by using multiple threads and other approaches.
 
 Approaches
 ==========
@@ -55,7 +55,7 @@ There are a number of approaches that can be used to make your application respo
 
 Event-based programming is the best option as it avoids the complexity that comes from writing multi-threaded applications. Event-based programming requires that you architect your software in a way in which it responds to events, but this is already the case for most GUI applications: callbacks are invoked in response to user actions or signals, so this is a natural model to use.
 
-You should think twice before you start using threads. Not only because you have to be careful about the way you use Gtk\# but also because it will make your code hard to debug, the bugs might be extremely hard to reproduce and you will need to become intimately familiar with a whole family of thread synchronization primitives and you must design your software in a way in which you avoid deadlocks.
+You should think twice before you start using threads. Not only because you have to be careful about the way you use Gtk# but also because it will make your code hard to debug, the bugs might be extremely hard to reproduce and you will need to become intimately familiar with a whole family of thread synchronization primitives and you must design your software in a way in which you avoid deadlocks.
 
 Idle Handlers
 -------------
@@ -78,12 +78,12 @@ For example, simple animations or status updates could be hooked up into an Idle
  
            // If no more images remain, stop the idle handler.
            if (img == null)
-                 return false; 
+                 return false;
  
            CreateThumbnail (img, img.ToString () + ".thumbnail");
  
            // There are more images, invoke this routine again on the next Idle moment.
-           return true;           
+           return true;
     }
 ```
 
@@ -123,7 +123,7 @@ Look at the documentation for [GLib.Timeout](http://docs.go-mono.com/index.aspx?
 Gtk.Application.Invoke
 ----------------------
 
-With Gtk\# 2 and C\# it is possible to use Gtk.Application.Invoke and anonymous methods to request from a thread that the GUI thread should wake up and execute some code in the context of the main loop.
+With Gtk# 2 and C# it is possible to use Gtk.Application.Invoke and anonymous methods to request from a thread that the GUI thread should wake up and execute some code in the context of the main loop.
 
 You must use this if you have a thread that needs to perform or access some GUI components during its execution:
 
@@ -214,7 +214,7 @@ Asynchronous Mono Programmning
 
 Programmers that use threads have to create their own communications protocols between the thread and the main application. Sometimes the features offered by the threads are enough, but some other times it might be useful to take advantage of a built-in protocol in the ECMA CLI for asynchronous programming.
 
-In the ECMA CLI every delegate declaration creates three methods in the delegate that you can use, for example consider the following C\# declaration for a BinaryOperator:
+In the ECMA CLI every delegate declaration creates three methods in the delegate that you can use, for example consider the following C# declaration for a BinaryOperator:
 
 ``` csharp
 delegate int BinaryOperator (int op1, int op2);
@@ -295,7 +295,7 @@ class x {
  
     static void Callback (IAsyncResult r)
     {
-                // 
+                //
                 // We pass the "adder" object as the "data" argument to
                 // BeginInvoke, here we retrieve it:
                 //
@@ -307,7 +307,7 @@ class x {
 }
 ```
 
-Here is the same sample, but this time rewritten using anonymous methods from C\# 2.0 which make the code more compact, and does not require us to pass the adder as a parameter (we could pass other data if we wanted to):
+Here is the same sample, but this time rewritten using anonymous methods from C# 2.0 which make the code more compact, and does not require us to pass the adder as a parameter (we could pass other data if we wanted to):
 
 ``` csharp
 using System;
@@ -399,7 +399,7 @@ Alternatives
 Application.Invoke
 ------------------
 
-Gtk\# 2.0 includes a new mechanism to invoke code on the main thread, this is part of the Gtk.Application class, to do this, just call the Invoke method with a delegate or anonymous method:
+Gtk# 2.0 includes a new mechanism to invoke code on the main thread, this is part of the Gtk.Application class, to do this, just call the Invoke method with a delegate or anonymous method:
 
 ``` csharp
 void UpdatingThread ()
@@ -414,13 +414,13 @@ void UpdatingThread ()
 Other options
 -------------
 
-Other options of doing the same are available for Gtk\# but are now outdated:
+Other options of doing the same are available for Gtk# but are now outdated:
 
 ### GuiDispatch
 
 Monodevelop has a class called GuiDispatch that automatically wraps delegates so they will be invoked on the main thread. This provides an extremely easy way to safely use threads in your application.
 
-Lots more information as well as many examples at [http://monodevelop.com/Thread\_Management](http://monodevelop.com/Thread_Management).
+Lots more information as well as many examples at [http://monodevelop.com/Thread_Management](http://monodevelop.com/Thread_Management).
 
 ``` csharp
 Runtime.DispatchService.GuiDispatch (new StatefulMessageHandler (UpdateGui), n);

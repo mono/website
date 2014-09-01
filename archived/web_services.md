@@ -10,7 +10,7 @@ Web Services
 
 Web services are basically a modern form of a remote procedure call (RPC) system. They allow applications on one machine to execute operations on another machine. Systems integrators use web services to make widely differing systems talk to one another.
 
--   [Using WebServices with Gtk\# applications](/Webservices_and_GtkSharp "Webservices and GtkSharp")
+-   [Using WebServices with Gtk# applications](/Webservices_and_GtkSharp "Webservices and GtkSharp")
 -   [See this article with Visual Basic code](/Web_Services_(Visual_Basic) "Web Services (Visual Basic)")
 
 <table>
@@ -73,17 +73,17 @@ Mono knows how to take XML response packets and turn them into data your applica
 Internal Communication
 ======================
 
-In order to use a web service, Mono requires a descriptor file written in WSDL (Web Services Description Language). WSDL is an XML description of the API for a given web service. Mono's tool `wsdl `knows how to translate a WSDL file into a C\# library that can run that web service. The local library file is a wrapper around the web service, but it gets installed into the GAC just like any other library.
+In order to use a web service, Mono requires a descriptor file written in WSDL (Web Services Description Language). WSDL is an XML description of the API for a given web service. Mono's tool `wsdl `knows how to translate a WSDL file into a C# library that can run that web service. The local library file is a wrapper around the web service, but it gets installed into the GAC just like any other library.
 
 Consuming Web Services
 ======================
 
-As an example of what can be done with web services, let's use a part of Google's publicly accessible web services, the Google spell checker. When you enter "spelll checker" in Google, it will ask you if you meant "spell checker". With the Google web service, you can use that function directly from C\#.
+As an example of what can be done with web services, let's use a part of Google's publicly accessible web services, the Google spell checker. When you enter "spelll checker" in Google, it will ask you if you meant "spell checker". With the Google web service, you can use that function directly from C#.
 
 First Steps: Creating the Local Stub
 ------------------------------------
 
-To create the local library that will invoke Google's web service, we'll use their WSDL file. You can get the Google WSDL files at [http://api.google.com/GoogleSearch.wsdl](http://api.google.com/GoogleSearch.wsdl). To generate the C\# stub source type:
+To create the local library that will invoke Google's web service, we'll use their WSDL file. You can get the Google WSDL files at [http://api.google.com/GoogleSearch.wsdl](http://api.google.com/GoogleSearch.wsdl). To generate the C# stub source type:
 
 ``` bash
 wsdl GoogleSearch.wsdl
@@ -113,23 +113,23 @@ We will start by using the spell checker on a simple web page. First you will ha
     <script runat="Server">
 
     void Page_Load(object sender, EventArgs e) {
-        
+
         // Put your license key here
         const string licensekey = "FCszK/FQFHJWQE1n5OkeGmZAWzCFY5+7";
-        
+
         // Create a Google Search object
         GoogleSearchService Service1 = new GoogleSearchService();
-        
+
         // Ask for spelling suggestion
         // The first argument is your key
         // The second one, the text the user should enter.
-        
-        String suggestion = Service1.doSpellingSuggestion(licensekey, TextBox1.Text);   
-        
+
+        String suggestion = Service1.doSpellingSuggestion(licensekey, TextBox1.Text);
+
         // Display the suggestion, if any
         if (suggestion == null)
             Label1.Text = "[No suggestion]";
-        else    
+        else
             Label1.Text = suggestion;
     }
     </script>
@@ -154,7 +154,7 @@ The code where the web service is accessed is marked red. To test the service en
 Application 2: A Console Application
 ------------------------------------
 
-You can also consume the WebService with a Console or Gtk\# application. You'll need to reference GoogleSearchService.dll when you compile.
+You can also consume the WebService with a Console or Gtk# application. You'll need to reference GoogleSearchService.dll when you compile.
 
 ``` bash
 mcs /r:GoogleSearchService.dll spellchecker.cs
@@ -179,12 +179,12 @@ class SpellChecker {
         // The first argument is your key
         // The second one, the text the user should enter.
  
-        String suggestion = Service1.doSpellingSuggestion(licensekey, args[0]);    
+        String suggestion = Service1.doSpellingSuggestion(licensekey, args[0]);
  
         // Display the suggestion, if any
         if (suggestion == null)
             Console.WriteLine("[No suggestion]");
-        else    
+        else
             Console.WriteLine(suggestion);
     }
 }
@@ -193,7 +193,7 @@ class SpellChecker {
 Documentation
 -------------
 
-If you want to do more, you will require documentation of the web service. For Google's API, one place to look is in the comments of the WSDL file. Individual web service providers are responsible for providing good documentation, though you may be able to use the C\# introspection tools or read the source generated by `wsdl `for a slightly better idea of how any given web service works.
+If you want to do more, you will require documentation of the web service. For Google's API, one place to look is in the comments of the WSDL file. Individual web service providers are responsible for providing good documentation, though you may be able to use the C# introspection tools or read the source generated by `wsdl `for a slightly better idea of how any given web service works.
 
 Contributors
 ============

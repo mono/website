@@ -34,7 +34,7 @@ The wire protocol is inspired by the [Java Debug Wire Protocol](http://java.sun.
 
 ### Client library
 
-The client library is a C\# assembly which uses the wire protocol to communicate with the debugger agent running inside the mono runtime. It is based on the [Java Debug Interface](http://java.sun.com/j2se/1.5.0/docs/guide/jpda/jdi/). The assembly is named Mono.Debugger.Soft.dll, and its source is in mcs/class/Mono.Debugger.Soft.
+The client library is a C# assembly which uses the wire protocol to communicate with the debugger agent running inside the mono runtime. It is based on the [Java Debug Interface](http://java.sun.com/j2se/1.5.0/docs/guide/jpda/jdi/). The assembly is named Mono.Debugger.Soft.dll, and its source is in mcs/class/Mono.Debugger.Soft.
 
 Implementation
 --------------
@@ -65,29 +65,29 @@ A suspend can be started by a normal runtime thread when it receives an event wh
 
 Threads running managed code are suspended by turning on single stepping, and suspending the thread when it reaches the single step event handler. Threads running native code are treated as suspended.
 
-A suspend can be started by calling suspend\_vm (), which is an async operation. This means that when the client receives an event, the runtime might not be entirely suspended yet, so code which needs the runtime to be suspended like the stack frame processing code needs to call wait\_for\_suspend (). After starting a suspend, the thread needs to suspend itself by calling suspend\_current ().
+A suspend can be started by calling suspend_vm (), which is an async operation. This means that when the client receives an event, the runtime might not be entirely suspended yet, so code which needs the runtime to be suspended like the stack frame processing code needs to call wait_for_suspend (). After starting a suspend, the thread needs to suspend itself by calling suspend_current ().
 
 #### Sequence points
 
 A sequence point is an IL offset where the program can be stopped and its state can be examined. Currently the debugger determines sequence points automatically. A sequence point is placed at the places:
 
--   IL offsets where the IL stack is empty. This generally corresponds to the end of C\# statements.
+-   IL offsets where the IL stack is empty. This generally corresponds to the end of C# statements.
 -   IL offsets which contain the NOP IL instructions. This can be used by a compiler to insert extra sequence points, like between nested calls.
 -   IL offsets which have a corresponding line number entry in the .mdb file.
 
 The mdbdump tool in mcs/tools/mdbdump can be used to examine the line number tables inside an .mdb file.
 
-A sequence point is represented by the JIT opcode OP\_SEQ\_POINT. The JIT backends generate code from this opcode which implements single stepping/breakpoints.
+A sequence point is represented by the JIT opcode OP_SEQ_POINT. The JIT backends generate code from this opcode which implements single stepping/breakpoints.
 
 #### Single Stepping
 
-The implementation of single stepping is target specific. On most platforms, it is implemented by allocating a memory page and having the implementation of OP\_SEQ\_POINT read from that page. Single stepping is then turned on by read-protecting that page, causing the memory read to turn into a SIGSEGV or similar signal. The signal handler needs to determine whenever the signal was caused by access to this page, and if it is, transfer control to the single step handler code in the debugger agent.
+The implementation of single stepping is target specific. On most platforms, it is implemented by allocating a memory page and having the implementation of OP_SEQ_POINT read from that page. Single stepping is then turned on by read-protecting that page, causing the memory read to turn into a SIGSEGV or similar signal. The signal handler needs to determine whenever the signal was caused by access to this page, and if it is, transfer control to the single step handler code in the debugger agent.
 
 Step over/out is implemented by single stepping repeatedly until the condition becomes true (i.e. we reach a different line/parent frame).
 
 #### Breakpoints
 
-Breakpoints are usually implemented similarly to single stepping, by reading from a memory page. OP\_SEQ\_POINT generates a few nops to act as a placeholder, then the code to read from the trigger page is written to the JITted code when the breakpoint is enabled, and changed back to nops when the breakpoint is disabled.
+Breakpoints are usually implemented similarly to single stepping, by reading from a memory page. OP_SEQ_POINT generates a few nops to act as a placeholder, then the code to read from the trigger page is written to the JITted code when the breakpoint is enabled, and changed back to nops when the breakpoint is disabled.
 
 #### AOT support
 

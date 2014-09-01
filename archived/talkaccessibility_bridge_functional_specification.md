@@ -11,7 +11,7 @@ Talk:Accessibility: Bridge Functional Specification
 
 ¿Difference between **dialog** and **window** role? FileChooser is a dialog, so I've put OpenFileDialog to be a dialog as well. But: in MWF this distinction seems to the fact of being a modal, or else that the dialog is an special window whose contents are determined by some custom settings when called, and which cannot be modified at runtime, an example of this is when you use MWF.Form.Show and MWF.Form.ShowDialog, when using Show the Form is independent of the called form, but when you are using the ShowDialog the Form is nested in the called form.
 
-Note as well that it seems there are even specific roles for each dialog, take this code snippet from [gail\_window.c](http://svn.gnome.org/viewvc/gtk%2B/trunk/modules/other/gail/gailwindow.c?view=markup):
+Note as well that it seems there are even specific roles for each dialog, take this code snippet from [gail_window.c](http://svn.gnome.org/viewvc/gtk%2B/trunk/modules/other/gail/gailwindow.c?view=markup):
 
      if (GTK_IS_FILE_SELECTION (widget))
        obj->role = ATK_ROLE_FILE_CHOOSER;

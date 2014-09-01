@@ -56,7 +56,7 @@ Generics support in System.Reflection.Emit (SRE) is very problematic because it 
 -   this type needs to be kept in sync with the original TypeBuilder, i.e. if methods/fields are added to the TypeBuilder, this should be reflected in the instantiation.
 -   this type cannot be used normally until its TypeBuilder is finished, ie. its not possible to create instances of it etc.
 
-These problems are currently handled by a hierarchy of C\# classes which inherit from the normal reflection classes:
+These problems are currently handled by a hierarchy of C# classes which inherit from the normal reflection classes:
 
 -   `MonoGenericClass` represents an instantiation of a generic TypeBuilder. MS.NET calls this `TypeBuilderInstantiation`, a much better name.
 -   `Method/Field/Event/PropertyOnTypeBuilderInst` represents a method/field etc. of a `MonoGenericClass`.

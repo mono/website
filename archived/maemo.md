@@ -53,7 +53,7 @@ If you are interested in building Mono Scratchbox devkit from sources, please ch
 Screenshots and Movies
 ======================
 
-[Gtk\# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
+[Gtk# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 
@@ -91,8 +91,8 @@ We recommend that you use [Scratchbox](http://www.scratchbox.org/) to develop an
 After setting up Scratchbox you can easily install [mono-devkit](http://go-mono.com/maemo/scratchbox-devkit-mono-2.0.1-1-i386.tar.gz) by running these commands outside scratchbox:
 
 ``` bash
-$ wget http://go-mono.com/maemo/scratchbox-devkit-mono-2.0.1-1-i386.tar.gz
-$ tar xzf scratchbox-devkit-mono-2.0.1-1-i386.tar.gz -C /
+wget http://go-mono.com/maemo/scratchbox-devkit-mono-2.0.1-1-i386.tar.gz
+tar xzf scratchbox-devkit-mono-2.0.1-1-i386.tar.gz -C /
 ```
 
 If you want to enable devkit for your ARMEL and/or X86 targets just type:

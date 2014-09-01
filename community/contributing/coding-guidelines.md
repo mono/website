@@ -80,14 +80,14 @@ Do not put a space after the opening parenthesis and the closing one, ie:
 good:
 
 ``` csharp
-method (a);   
+method (a);
 array [10];
 ```
 
 bad:
 
 ``` csharp
-method ( a ); 
+method ( a );
 array[ 10 ];
 ```
 
@@ -122,7 +122,7 @@ if (a) {
 bad:
 
 ``` csharp
-if (a) 
+if (a)
 {
     code ();
     code ();
@@ -199,7 +199,7 @@ int Property {
 bad:
 
 ``` csharp
-int Property 
+int Property
 {
     get {
         return value;
@@ -242,7 +242,7 @@ void EmptyMethod () {
 ```
 
 ``` csharp
-void EmptyMethod () 
+void EmptyMethod ()
 {}
 ```
 
@@ -254,20 +254,20 @@ good:
 if (dingus) {
         ...
 } else {
-        ... 
+        ...
 }
 ```
 
 bad:
 
 ``` csharp
-if (dingus) 
+if (dingus)
 {
         ...
-} 
-else 
+}
+else
 {
-        ... 
+        ...
 }
 ```
 
@@ -276,9 +276,9 @@ bad:
 ``` csharp
 if (dingus) {
         ...
-} 
+}
 else {
-        ... 
+        ...
 }
 ```
 
@@ -309,13 +309,13 @@ namespace N
 So, to summarize:
 
 | Statement                   | Brace position |
-|--------------------------------------------|
-| Namespace                   | same line    |
-| Type                        | same line    |
-| Method (including ctor)     | **new line** |
-| Properties                  | same line    |
-| Control blocks (if, for...) | same line    |
-| Anonymous types and methods | same line    |
+|-----------------------------|----------------|
+| Namespace                   | same line      |
+| Type                        | same line      |
+| Method (including ctor)     | **new line**   |
+| Properties                  | same line      |
+| Control blocks (if, for...) | same line      |
+| Anonymous types and methods | same line      |
 
 Multiline Parameters
 --------------------
@@ -435,7 +435,7 @@ void Method (string lpstrArgument)
 void Method (string my_string)
 ```
 
-(There is an exception to this rule: [Gtk\#](/docs/gui/gtksharp/) codebase, in which you should use under\_score.)
+(There is an exception to this rule: [Gtk#](/docs/gui/gtksharp/) codebase, in which you should use under_score.)
 
 Instance fields should use underline as a separator:
 
@@ -529,7 +529,7 @@ class Message {
 Line length and alignment
 -------------------------
 
-Line length: The line length for C\# source code is 180 columns (Used to be 80).
+Line length: The line length for C# source code is 180 columns (Used to be 80).
 
 If your function declaration arguments go beyond this point, please align your arguments to match the opening brace. For best results use the same number of tabs used on the first line followed by enough spaces to align the arguments. That ensures that the arguments will remain aligned when viewed with a different tabsize. In the following example, the line that declares argc is indented with 2 tabs and 15 spaces:
 
@@ -558,7 +558,7 @@ void M ()
 Initializing Instances
 ----------------------
 
-Use the new C\# syntax to initialize newly created objects.
+Use the new C# syntax to initialize newly created objects.
 
 Bad:
 
@@ -582,7 +582,7 @@ Baroque Coding
 
 Baroque coding is discouraged.
 
-We discourage the use of the "private" keyword to flag internal fields or methods since this is the default visibility mode in C\#. The keyword exists because of Java. Avoid it, it merely is more line noise for people that are reading your code.
+We discourage the use of the "private" keyword to flag internal fields or methods since this is the default visibility mode in C#. The keyword exists because of Java. Avoid it, it merely is more line noise for people that are reading your code.
 
 But the same principle applies everywhere else in Mono. Avoid complex code or redundant code for the sake of it. Try to write the minimum amount of text possible.
 
@@ -596,7 +596,7 @@ Do not commit changes to the Makefiles that removes warnings, if anything warnin
 Conditional compilation
 -----------------------
 
-Ideally we would not need conditional compilation, and the use of \#ifdef is strongly discouraged. But due to our support for old C\# 1.0 compilers we have to use it in a few places.
+Ideally we would not need conditional compilation, and the use of #ifdef is strongly discouraged. But due to our support for old C# 1.0 compilers we have to use it in a few places.
 
 Try to avoid negative tests that have an else clause, for example:
 
@@ -738,7 +738,7 @@ class X : Y {
  
         //
         // This sample helps keep your sanity while using 8-spaces for tabs
-        // 
+        //
         VeryLongIdentifierWhichTakesManyArguments (
             Argument1, Argument2, Argument3,
             NestedCallHere (
@@ -755,7 +755,7 @@ class X : Y {
         }
     }
  
-    void AnotherMethod () 
+    void AnotherMethod ()
     {
         if ((a + 5) != 4) {
         }
@@ -791,7 +791,7 @@ Example:
 
 The `[Tag]` is optional, but you could try using these for your commits:
 
--   **Fix** for bug fixes, in the summary include the nature of the fix and the bug \#
+-   **Fix** for bug fixes, in the summary include the nature of the fix and the bug #
 -   **Performance** for changes that improve performance
 -   **Compatibility** changes done for the sake of compatibility
 -   **API** for API additions, changes or removals
@@ -848,7 +848,7 @@ Switched to branch 'monotouch-2-0'
 Then to get the patch, use the hash number in the commit above:
 
 ``` bash
-$ git cherry-pick 778694e1b85416a3abfdac4952dd85c8384e1cf8
+git cherry-pick 778694e1b85416a3abfdac4952dd85c8384e1cf8
 ```
 
 You might need to fix any merge issues at this point.
@@ -856,19 +856,19 @@ You might need to fix any merge issues at this point.
 Then **git add** any new files and changed files and then before you commit, use the hash number in your commit to transfer any commit messages, author information and so on, like this:
 
 ``` bash
-$ git commit -c 778694e
+git commit -c 778694e
 ```
 
 The magic number there are the first seven digits of the large cherry-pick commit version. Alternatively, you can use the full commit version:
 
 ``` bash
-$ git commit -c 778694e1b85416a3abfdac4952dd85c8384e1cf8
+git commit -c 778694e1b85416a3abfdac4952dd85c8384e1cf8
 ```
 
 Now that your changes are committed you can push them:
 
 ``` bash
-$ git push
+git push
 ```
 
 ChangeLogs
@@ -903,8 +903,8 @@ For new files that you create, try to ensure that the line endings in your file 
 Please verify before commiting that your changes won't lose history, you can do this by examining the output of:
 
 ``` bash
-$ git diff
-$ git diff --stat
+git diff
+git diff --stat
 ```
 
 If you feel Git's automatic line-ending normalizer is kicking in inappropriately and changing too many lines, you can add a corresponding entry for that file in a nearby `.gitattributes` file, preferably in the same directory

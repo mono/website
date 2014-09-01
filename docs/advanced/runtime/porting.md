@@ -16,14 +16,14 @@ There are a number of documents in the wiki under [Runtime documentation](/docs/
 Endian, 64 bits and unaligned access issues
 -------------------------------------------
 
-Mono has been ported to little-endian, big-endian, 32 and 64 bit architectures, so it should just be a matter of configuring properly your target, in particular make sure to set ACCESS\_UNALIGNED="yes" if your architecture doesn't support accessing ints from unaligned memory locations.
+Mono has been ported to little-endian, big-endian, 32 and 64 bit architectures, so it should just be a matter of configuring properly your target, in particular make sure to set ACCESS_UNALIGNED="yes" if your architecture doesn't support accessing ints from unaligned memory locations.
 
 Generating assembly bytecodes for the target processor
 ------------------------------------------------------
 
 Next, you need to provide the support code for generating machine code for your target platform (in mono/arch/{ppc,sparc,alpha,\*}).
 
-The code should be more or less like the code in x86-codegen.h: macros that produce in-line code for each instruction that you need. For example the 80x86 instruction "ret" has a macro called "x86\_ret" that will generate the machine code for the ret instruction in a buffer provided to it.
+The code should be more or less like the code in x86-codegen.h: macros that produce in-line code for each instruction that you need. For example the 80x86 instruction "ret" has a macro called "x86_ret" that will generate the machine code for the ret instruction in a buffer provided to it.
 
 You do not need to provide code to create every possible opcode. Initially, you just need the code to create trampolines and execute them (you'll need to research how the call convention works on your platform): that would be, for example, the prolog and epilog code in a function, code to pass function parameters and deal with the return value and so on.
 
@@ -36,9 +36,9 @@ Getting the interpreter to work
 
 We used to sugget porting the interpreter first, but since we no longer maintain the interpreter code, you should skip this step, the interpreter is most likely not compilable anymore, so go to the JIT porting section.
 
-Once you can generate binary code, you can start working on a mono\_create\_trampoline() function for your platform: this function will receive a MonoMethod that describes the arguments and the return type of a C function and will create the code to call such function. When this function is complete you'll be able to run more sample programs, that use System.IO and P/Invoke functions.
+Once you can generate binary code, you can start working on a mono_create_trampoline() function for your platform: this function will receive a MonoMethod that describes the arguments and the return type of a C function and will create the code to call such function. When this function is complete you'll be able to run more sample programs, that use System.IO and P/Invoke functions.
 
-To support delegates you'll need to write a mono\_create\_method\_pointer() function that creates a native function: this can be used to call the method using the runtime's calling convention (it's basically the reverse of mono\_create\_trampoline()).
+To support delegates you'll need to write a mono_create_method_pointer() function that creates a native function: this can be used to call the method using the runtime's calling convention (it's basically the reverse of mono_create_trampoline()).
 
 The final step: porting the JIT
 -------------------------------

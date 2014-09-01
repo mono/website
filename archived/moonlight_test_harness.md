@@ -106,7 +106,6 @@ If you are running the test harness from the moon/test directory there are a cou
 |This will run the drtlist specified in the environment variable DRTLIST with gdb, otherwise it&#39;ll work as &#39;make run-tests&#39;
 |}
  
- 
 If you are running the test harness outside of the make targets, these options are available to you:
  
 {| border=&quot;1&quot;
@@ -128,7 +127,7 @@ If you are running the test harness outside of the make targets, these options a
 |- valign=&quot;top&quot;
 | -no-console-report
 |Disable reporting results to the terminal
-|- 
+|-
 | -html-report, -generate-html-report
 |Create an HTML report for the test run
 |-
@@ -139,7 +138,7 @@ If you are running the test harness outside of the make targets, these options a
 |List tests marked as known failure and their reason for failing.
 |-
 | -compare-to-moon
-|Compare to the moon master files instead of the master files specified in the 
+|Compare to the moon master files instead of the master files specified in the
 drtlist.
 |-
 | -valgrind
@@ -148,10 +147,9 @@ drtlist.
 | -gdb
 |Execute moonlight with gdb. There is currently no way to pass options to gdb. If -valgrind is specified, this flag is ignored.
 |-
-| -generate-master-files    
+| -generate-master-files
 |Generate master files to be used with the compare-to-moon option.
 |}
- 
  
 There are two ways of running a subset of the drtlist.xml tests.  You can use categories or specify the tests you would like to use:
  
@@ -184,7 +182,6 @@ You can also exclude categories, if you want to run all tests except text and br
  
     $ MOON_DRT_EXCLUDE_CATEGORIES=text,brushes make run-tests
  
- 
 === Specifying tests ===
  
 If you would like to limit a test run to just a single test, or a small set of tests, that aren&#39;t in the same category, you can specify the tests to run.  If you are using the make targets listed above, the easiest way to specify a single or set of tests to run is with the MOON_DRT_FIXTURE=&lt;test id&gt; and MOON_DRT_FIXTURES=&lt;test id&gt;,&lt;test id&gt;,&lt;test id&gt;,... environment variables.  To run tests 2 and 5 using this method your command line would look like this:
@@ -208,7 +205,7 @@ You can also specify a different drtlist.xml, this will run the drtlist in media
      $ DRTLIST=media/video/drtlist.xml make run-drtlist
  
 === Using Xvfb ===
-When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground. 
+When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground.
 Setup the virtual buffer like so:
 &lt;pre&gt;
      $ Xvfb -fp /usr/share/fonts/misc -ac -screen 0 1024x1024x24 -nolisten tcp :3

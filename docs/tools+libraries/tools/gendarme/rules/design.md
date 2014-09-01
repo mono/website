@@ -558,7 +558,7 @@ class HasFinalizer {
 
 ### DoNotDeclareProtectedMembersInSealedTypeRule
 
-This rule ensures that **sealed** types (i.e. types that you can't inherit from) do not define family (**protected** in C\#) fields or methods. Instead make the member private so that its accessibility is not misleading.
+This rule ensures that **sealed** types (i.e. types that you can't inherit from) do not define family (**protected** in C#) fields or methods. Instead make the member private so that its accessibility is not misleading.
 
 **Bad** example (field):
 
@@ -604,7 +604,7 @@ public sealed class MyClass {
 
 ### DoNotDeclareVirtualMethodsInSealedTypeRule
 
-This rule ensure that **sealed** types (i.e. types that you can't inherit from) do not define new **virtual** methods. Such methods would only be useful in sub-types. Note that some compilers, like C\# and VB.NET compilers, do not allow you to define such methods.
+This rule ensure that **sealed** types (i.e. types that you can't inherit from) do not define new **virtual** methods. Such methods would only be useful in sub-types. Note that some compilers, like C# and VB.NET compilers, do not allow you to define such methods.
 
 **Bad** example:
 
@@ -631,7 +631,7 @@ public sealed class MyClass {
 
 ### EnsureSymmetryForOverloadedOperatorsRule
 
-This rule checks for operators that are not overloaded in pairs. Some compilers, like the C\# compilers, require you to implement some of the pairs, but other languages might not. The following pairs are checked:
+This rule checks for operators that are not overloaded in pairs. Some compilers, like the C# compilers, require you to implement some of the pairs, but other languages might not. The following pairs are checked:
 
  **Bad** example:
 
@@ -720,7 +720,7 @@ public enum SmallFlag {
 
 ### FinalizersShouldBeProtectedRule
 
-This rule verifies that finalizers are only visible to the type's family (e.g. protected in C\#). If they are not family then they can be called from user code which could lead to problems. Note that this restriction is enforced by the C\# and VB.NET compilers but other compilers may not do so.
+This rule verifies that finalizers are only visible to the type's family (e.g. protected in C#). If they are not family then they can be called from user code which could lead to problems. Note that this restriction is enforced by the C# and VB.NET compilers but other compilers may not do so.
 
 **Bad** example (IL):
 
@@ -735,7 +735,7 @@ This rule verifies that finalizers are only visible to the type's family (e.g. p
 }
 ```
 
-**Good** example (C\#):
+**Good** example (C#):
 
 ``` csharp
 public class GoodProtectedFinalizer {
@@ -1313,35 +1313,35 @@ public class Application {
 
 The rule ensure that all overloaded operators are also accessible using named alternatives because some languages, like VB.NET, cannot use overloaded operators. For those languages named methods should be implemented that provide the same functionality. This rule verifies that a named alternative exists for each overloaded operator.
 
--   **op\_UnaryPlus** : Plus
--   **op\_UnaryNegation** : Negate
--   **op\_LogicalNot** : LogicalNot
--   **op\_OnesComplement** : OnesComplement
+-   **op_UnaryPlus** : Plus
+-   **op_UnaryNegation** : Negate
+-   **op_LogicalNot** : LogicalNot
+-   **op_OnesComplement** : OnesComplement
 
--   **op\_Increment** : Increment
--   **op\_Decrement** : Decrement
--   **op\_True** : IsTrue
--   **op\_False** : IsFalse
+-   **op_Increment** : Increment
+-   **op_Decrement** : Decrement
+-   **op_True** : IsTrue
+-   **op_False** : IsFalse
 
--   **op\_Addition** : Add
--   **op\_Subtraction** : Subtract
--   **op\_Multiply** : Multiply
--   **op\_Division** : Divide
--   **op\_Modulus** : Modulus
+-   **op_Addition** : Add
+-   **op_Subtraction** : Subtract
+-   **op_Multiply** : Multiply
+-   **op_Division** : Divide
+-   **op_Modulus** : Modulus
 
--   **op\_BitwiseAnd** : BitwiseAnd
--   **op\_BitwiseOr** : BitwiseOr
--   **op\_ExclusiveOr** : ExclusiveOr
+-   **op_BitwiseAnd** : BitwiseAnd
+-   **op_BitwiseOr** : BitwiseOr
+-   **op_ExclusiveOr** : ExclusiveOr
 
--   **op\_LeftShift** : LeftShift
--   **op\_RightShift** : RightShift
+-   **op_LeftShift** : LeftShift
+-   **op_RightShift** : RightShift
 
--   **op\_Equality** : Equals
--   **op\_Inequality** : (not) Equals
--   **op\_GreaterThan** : Compare
--   **op\_LessThan** : Compare
--   **op\_GreaterThanOrEqual** : Compare
--   **op\_LessThanOrEqual** : Compare
+-   **op_Equality** : Equals
+-   **op_Inequality** : (not) Equals
+-   **op_GreaterThan** : Compare
+-   **op_LessThan** : Compare
+-   **op_GreaterThanOrEqual** : Compare
+-   **op_LessThanOrEqual** : Compare
 
  **Bad** example:
 

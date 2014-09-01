@@ -12,7 +12,7 @@ Now that the progress bar has been created we can use it.
 
     progressbar1.Fraction = 0.5;
 
-The value is the amount "completed", meaning the amount the progress bar has been filled from 0-100%. It can be a number form 0 to 1, e.g. 0.55 would be 55%. Gtk\# has functionality that enables it to display its value in different ways, and to inform the user of its current value and its range.
+The value is the amount "completed", meaning the amount the progress bar has been filled from 0-100%. It can be a number form 0 to 1, e.g. 0.55 would be 55%. Gtk# has functionality that enables it to display its value in different ways, and to inform the user of its current value and its range.
 
 A progress bar may be set to one of a number of orientations using the Orientation property, which can be one of Gtk.Progress.LeftToRight, Gtk.Progress.RightToLeft, Gtk.Progress.BottomToTop, or Gtk.Progress.TopToBottom.
 
@@ -171,27 +171,27 @@ class ProgressBarSample {
  
         /* Add a check button to select displaying of the trough text*/
         check = new Gtk.CheckButton("Show text");
-        table.Attach(check, 0, 1, 0, 1, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 0, 1,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_show_text;
         check.Show();
  
         /* Add a check button to toggle activity mode */
         check = new Gtk.CheckButton("Activity mode");
-        table.Attach(check, 0, 1, 1, 2, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 1, 2,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_activity_mode;
         check.Show();
  
         /* Add a check button to toggle orientation */
         check = new Gtk.CheckButton("Right to Left");
-        table.Attach(check, 0, 1, 2, 3, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
-                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill, 
+        table.Attach(check, 0, 1, 2, 3,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
+                Gtk.AttachOptions.Expand | Gtk.AttachOptions.Fill,
                 5, 5);
         check.Clicked += toggle_orientation;
         check.Show();

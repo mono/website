@@ -39,7 +39,7 @@ This is the page for the [MonoTouch](/MonoTouch "MonoTouch") Beta program. If yo
 Live Support over Chat
 ======================
 
-You can get live support for MonoTouch using [IRC](/IRC "IRC") at server irc.gnome.org channel \#monotouch.
+You can get live support for MonoTouch using [IRC](/IRC "IRC") at server irc.gnome.org channel #monotouch.
 
 Bugs in MonoTouch
 =================
@@ -68,7 +68,7 @@ The beta does not come with a license to redistribute the code beyond testing. F
 The .NET API
 ------------
 
-MonoTouch is based on a hybrid .NET 2.0 and Silverlight 2 API profile, this was done to help the Mono Linker remove code to make your code smaller. If you want to use existing C\# code, you will need to compile it from scratch using our compiler and tools to make sure that the proper assemblies are referenced.
+MonoTouch is based on a hybrid .NET 2.0 and Silverlight 2 API profile, this was done to help the Mono Linker remove code to make your code smaller. If you want to use existing C# code, you will need to compile it from scratch using our compiler and tools to make sure that the proper assemblies are referenced.
 
 Limitations
 -----------

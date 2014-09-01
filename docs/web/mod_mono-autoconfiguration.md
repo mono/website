@@ -5,34 +5,34 @@ redirect_from:
   - /AutoHosting/
 ---
 
-Automatic configuration of ASP.NET applications with [mod\_mono](/docs/web/mod_mono/)
+Automatic configuration of ASP.NET applications with [mod_mono](/docs/web/mod_mono/)
 
 Motivation
 ----------
 
-In the past mod\_mono required each application deployed to be configured on the Apache configuration files, this followed closely the model from Windows where applications exposed to the public are manually registered.
+In the past mod_mono required each application deployed to be configured on the Apache configuration files, this followed closely the model from Windows where applications exposed to the public are manually registered.
 
 The auto-configuration capability is a mechanism to minimize the configuration required and to have a simple experience in deploying ASP.NET based applications on Apache systems with Mono.
 
-Deploying an application does not require any special sysadmin intervention to register the known applications with mod\_mono, it only requires the data to be exposed with any of the Apache directives.
+Deploying an application does not require any special sysadmin intervention to register the known applications with mod_mono, it only requires the data to be exposed with any of the Apache directives.
 
 With autohosting it is possible to allow all the accounts on a machine to deploy an ASP.NET application without having to do any manual configuration. Just having the ASP.NET pages will automatically serve them (.aspx, .ashx, .ascx, .asmx files).
 
 What is it?
 -----------
 
-Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see [mod\_mono](/docs/web/mod_mono/)), but still, it would be better if you could just copy your application and it worked without further action required.
+Before version 1.1.10, the user was required to manually configure apache for each ASP.NET application that was going to be hosted. Usually this was just a matter of adding a few lines (see [mod_mono](/docs/web/mod_mono/)), but still, it would be better if you could just copy your application and it worked without further action required.
 
-This is what mod\_mono automatic hosting provides: zero configuration for your applications.
+This is what mod_mono automatic hosting provides: zero configuration for your applications.
 
 How do I enable it?
 -------------------
 
-If you've never configured mod\_mono before, **just loading mod\_mono.conf will do**.
+If you've never configured mod_mono before, **just loading mod_mono.conf will do**.
 
             Include /etc/apache2/mod_mono.conf
 
-The actual path to mod\_mono.conf might vary depending on the distribution you use or the path where you installed apache.
+The actual path to mod_mono.conf might vary depending on the distribution you use or the path where you installed apache.
 
 **Note:** Firefox typically caches a request, so you might need to restart your firefox if you are experiencing problems when aspx pages are not recognized. Try testing with curl or another cache-less http client.
 
@@ -44,7 +44,7 @@ For those of you that have an existing configuration, you'll have to enable the 
 
             MonoAutoApplication enabled
 
-Be aware that if the application is handling any file extension not present in the list of *AddType*s in mod\_mono.conf, you have to add those extension to mod\_mono.conf manually. Ie., if the application has something like:
+Be aware that if the application is handling any file extension not present in the list of *AddType*s in mod_mono.conf, you have to add those extension to mod_mono.conf manually. Ie., if the application has something like:
 
     <httpHandlers>
        <add verb="*" path="*.m" type="Maverick.Dispatcher, Maverick" />
@@ -54,7 +54,7 @@ you need to add:
 
      AddType application/x-asp-net .m
 
-to your mod\_mono.conf.
+to your mod_mono.conf.
 
 Uses
 ----
@@ -76,7 +76,7 @@ and, assuming some simple names and a default Apache configuration, the applicat
     http://localhost/nGallery/
     http://localhost/MyPage/
 
-without having to register them with mod\_mono in any way. Three ASP.NET application will be created with the proper physical and virtual paths.
+without having to register them with mod_mono in any way. Three ASP.NET application will be created with the proper physical and virtual paths.
 
 ### Standalone pages
 
@@ -103,9 +103,9 @@ will just work.
 ASP.NET MVC and AutoConfiguration
 ---------------------------------
 
-Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions. For simple configuration of Apache [mod\_mono](/docs/web/mod_mono/), consider using the [Apache mod\_mono configuration tool](http://go-mono.com/config-mod-mono/).
+Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions. For simple configuration of Apache [mod_mono](/docs/web/mod_mono/), consider using the [Apache mod_mono configuration tool](http://go-mono.com/config-mod-mono/).
 
-That said, if you absolutely must use AutoConfiguration, you could add the following to your mod\_mono.conf file to set all content for the server to be served as x-asp-net content:
+That said, if you absolutely must use AutoConfiguration, you could add the following to your mod_mono.conf file to set all content for the server to be served as x-asp-net content:
 
         ForceType application/x-asp-net
 
@@ -116,13 +116,13 @@ There is a small but important difference between the packaged applications and 
 
 For the prepackaged applications, the physical base directory will be set to the directory that contains the *global.asax* (or *Global.asax*) file and the virtual path will be /CommunityServer/, /nGallery/...
 
-For the standalone file, the physical path will be determined comparing the physical and virtual paths, starting from the last directory and going up. The first non-matching path will determine the virtual and physical base paths. So, in our case, the application created would map the virtual path /\~rupert/ to /home/rupert/public\_html/.
+For the standalone file, the physical path will be determined comparing the physical and virtual paths, starting from the last directory and going up. The first non-matching path will determine the virtual and physical base paths. So, in our case, the application created would map the virtual path /\~rupert/ to /home/rupert/public_html/.
 
 The information about the physical root path of an application is important because ASP.NET will load your libraries from the "bin" directory at the base of the application, which is where you would have any third-party controls or assemblies required by your application.
 
 ### Detailed examples
 
-When no configured ASP.NET application is found, mod\_mono will guess the physical and virtual paths base on the presence or not of a *bin* directory or *global.asax* file.
+When no configured ASP.NET application is found, mod_mono will guess the physical and virtual paths base on the presence or not of a *bin* directory or *global.asax* file.
 
 Here are some examples of how it is done when there's no *global.asax* or *bin*directory:
 

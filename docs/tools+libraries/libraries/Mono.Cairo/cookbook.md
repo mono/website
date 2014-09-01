@@ -6,7 +6,7 @@ redirect_from:
 
 Some fun recipes to spice up your Cairo based drawing!
 
-C\# version created by Or Dvory.
+C# version created by Or Dvory.
 
 ### Simple Working with a Cairo Context
 
@@ -372,7 +372,7 @@ public class CairoGraphic : DrawingArea
         g.Color = new Color (1, 0.8, 0, 1);
         g.LineWidth = 8;
         g.Stroke ();
-    }     
+    }
         return true;
     }
 }
@@ -523,8 +523,6 @@ public class Truchet
             gr.Arc (x, y + cellsize, radius, -Math.PI / 2, 0);
             gr.MoveTo (x + radius, y);
             gr.ArcNegative (x + cellsize, y, radius, Math.PI, Math.PI / 2);
- 
- 
         }
  
         gr.Restore ();

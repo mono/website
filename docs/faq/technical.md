@@ -26,7 +26,7 @@ When porting your applications, you should make sure that you test its functiona
 
 Mono does not have every .NET 1.1 API implemented (see the Mono release notes for Mono 1.0) and when executing a binary from Windows that consumes an unimplemented API you might get an obscure message about tokens not being found.
 
-In these cases it is useful to compile your application with Mono's C\# compiler just to ensure that you are consuming APIs that are supported.
+In these cases it is useful to compile your application with Mono's C# compiler just to ensure that you are consuming APIs that are supported.
 
 This is not a perfect solution, as some APIs in Mono throw NotImplementedExceptions in certain cases, so you still should test your application with Mono.　If you care about application portability, check [MoMA](/docs/tools+libraries/tools/moma/), the migration analyzer.
 
@@ -52,7 +52,7 @@ Yes, this is possible on Linux systems, to do this, use something like:
 if [ ! -e /proc/sys/fs/binfmt_misc/register ]; then
      /sbin/modprobe binfmt_misc
      mount -t binfmt_misc none /proc/sys/fs/binfmt_misc
-fi 
+fi
 if [ -e /proc/sys/fs/binfmt_misc/register ]; then
      echo ':CLR:M::MZ::/usr/bin/mono:' > /proc/sys/fs/binfmt_misc/register
 else
@@ -100,18 +100,18 @@ There are various reasons:
 
 A reader comments:
 
-    In other words, I knew Mono would not cause 
+    In other words, I knew Mono would not cause
     any legacy enterprise applications
-    to stop working - and it hasn't. However, 
-    our CIO is against it because of the 
-    changes that would be made to Windows 2000, 
+    to stop working - and it hasn't. However,
+    our CIO is against it because of the
+    changes that would be made to Windows 2000,
     such as, affecting security.
 
 Another user comments:
 
-    By the way, the Mono libraries, 
-    including corlib, needed to support the 
-    application total 14MB so fit easily 
+    By the way, the Mono libraries,
+    including corlib, needed to support the
+    application total 14MB so fit easily
     on even the smallest memory sticks.
 
 **How to detect the execution platform ?**
@@ -147,11 +147,15 @@ While it can be argued that there are no totally reliable methods for detecting 
 
 Firstly, look for the version string stored in a certain registry key.
 
-    $version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
+``` bash
+$version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
+```
 
 Then, using this version string, check the registry again for the path prefix, \$monoprefix:
 
-    $monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
+``` bash
+$monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
+```
 
 (optional) You might wish to then check this by detecting whether or not \$mono-prefix\\bin\\mono.exe exists.
 
@@ -190,7 +194,7 @@ Updated as of May 8th.
 
 **Does Mono run on very small systems**
 
-The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk\# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the [Small footprint](/docs/compiling-mono/small-footprint/) page.
+The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the [Small footprint](/docs/compiling-mono/small-footprint/) page.
 
 Compatibility
 -------------
@@ -230,22 +234,22 @@ You can find which native methods an assembly is using by using [MoMA](/docs/too
 or alternatively, by using monodis like this:
 
 ``` bash
-$ monodis --implmap file.exe
+monodis --implmap file.exe
 ```
 
 The above command will list all of the invocations that the application has.
 
 [Gendarme](/docs/tools+libraries/tools/gendarme/) also gives you some interoperability warnings.
 
-**Must I have mono to create or run Gtk\# applications in Windows?**
+**Must I have mono to create or run Gtk# applications in Windows?**
 
-No. Currently you can use the [Gtk-Sharp Installer for .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/) which when coupled with the Microsoft .NET Framework, will allow you to build .NET applications that use Gtk\# as their graphical user interface.
+No. Currently you can use the [Gtk-Sharp Installer for .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/) which when coupled with the Microsoft .NET Framework, will allow you to build .NET applications that use Gtk# as their graphical user interface.
 
 **What is a 100% .NET application?**
 
 A '100% .NET application' is one that only uses the APIs defined under the System namespace and does not use P/Invoke. These applications would in theory run unmodified on Windows, Linux, Solaris, MacOS X and others. Note that this requirement also holds for all assemblies used by the application. If one of them is Windows-specific, then the entire program is not a 100% .NET application. Furthermore, a 100% .NET application must not contain non-standard data streams in the assembly. For example, Visual Studio .NET will insert a `#-` stream into assemblies built under the "Debug" target. This stream contains debugging information for use by Visual Studio .NET; however, this stream can not be interpreted by Mono (unless you're willing to donate support). Thus, it is recommended that all Visual Studio .NET-compiled code be compiled under the Release target before it is executed under Mono.
 
-**Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C\#, Managed Extensions for C++, C++/CLI, etc.) under Mono?**
+**Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C#, Managed Extensions for C++, C++/CLI, etc.) under Mono?**
 
 Yes, with some reservations.
 
@@ -253,7 +257,7 @@ The .NET program must either be a 100% .NET application, or (somehow) have all d
 
 Mono must also have an implementation for the .NET assemblies used. For example the System.EnterpriseServices namespace is part of .NET, but it has not been implemented in Mono. Thus, any applications using this namespace will not run under Mono.
 
-With regards to languages, C\# applications tend to be most portable. Visual Basic .NET applications are portable, but Mono's Microsoft.VisualBasic.dll implementation is incomplete. It is recommended to either avoid using this assembly in your own code, only use the portions that Mono has implemented, or to help implement the missing features. Additionally, you can set 'Option Strict On', which eliminates the implicit calls to the unimplemented Microsoft.VisualBasic.CompilerServices.ObjectType class. (Thanks to Jörg Rosenkranz.)
+With regards to languages, C# applications tend to be most portable. Visual Basic .NET applications are portable, but Mono's Microsoft.VisualBasic.dll implementation is incomplete. It is recommended to either avoid using this assembly in your own code, only use the portions that Mono has implemented, or to help implement the missing features. Additionally, you can set 'Option Strict On', which eliminates the implicit calls to the unimplemented Microsoft.VisualBasic.CompilerServices.ObjectType class. (Thanks to Jörg Rosenkranz.)
 
 Managed Extensions for C++ and C++/CLI are least likely to operate under Mono. Mono has support for mixed-mode assemblies (that is, assemblies containing both managed and unmanaged code, which Managed C++ can produce) on Windows. You need a fully-managed assembly to run under other platforms, and getting the Visual C++ .NET compiler to generate such an executable can be difficult. You need to use only the .NET-framework assemblies, not the C libraries (you can't use **printf**(3) for example.), and you need to use the linker options `/nodefaultlib /entry:main mscoree.lib` in addition to the `/clr` compiler flag. You can still use certain compiler intrinsic functions (such as **memcpy**(3)) and the STL.
 
@@ -353,7 +357,7 @@ See the [Profile](/docs/debug+profile/profile/) page for more information.
 Mono has a bundled code coverage tool that you can use with your applications. Use the "coverage" profiler, like this:
 
 ``` bash
-$ mono --profile=cov demo.exe
+mono --profile=cov demo.exe
 ```
 
 See the [Code Coverage](/docs/debug+profile/profile/code-coverage/) page for more information.
@@ -368,7 +372,7 @@ The tracing facility has a simple syntax for limiting the scope of traces, see t
 
 You can export the following environment variables to turn on DllImport logging, it is useful when tracking down the source of a problem when loading a library:
 
-MONO\_LOG\_LEVEL="debug" MONO\_LOG\_MASK="dll" mono program.exe
+MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono program.exe
 
 Web Services
 ------------
@@ -412,7 +416,7 @@ MonoDoc
 
 **What is MonoDoc?**
 
-MonoDoc is a graphical documentation browser for the Mono documentation: class libraries, tutorials and manual pages. Currently, monodoc has a GUI front-end written in Gtk\# and a Web front-end using ASP.NET
+MonoDoc is a graphical documentation browser for the Mono documentation: class libraries, tutorials and manual pages. Currently, monodoc has a GUI front-end written in Gtk# and a Web front-end using ASP.NET
 
 The contents of Monodoc today are visible on the web [here](http://www.go-mono.com/docs/)
 
@@ -443,7 +447,7 @@ The CIL is better suited to be JITed than JVM byte codes, but you can interpret 
 
 It is up to you, but we use NUnit for testing our own class libraries as a choice.
 
-**Is it possible to build a C\# file to some sort of intermediate format which can linked into a final module, like the traditional .c -\> .o -\> .so path?**
+**Is it possible to build a C# file to some sort of intermediate format which can linked into a final module, like the traditional .c -\> .o -\> .so path?**
 
 You can use:
 
@@ -453,7 +457,7 @@ mcs /target:library file2.cs
 mcs /target:exe file1.dll file2.dll /out:mybin.exe
 ```
 
-It is not worth doing the above for individual files. The C\# compiler is so fast that usually the cost of compiling a few hundred source files is smaller than the cost of creating the separate dll files.
+It is not worth doing the above for individual files. The C# compiler is so fast that usually the cost of compiling a few hundred source files is smaller than the cost of creating the separate dll files.
 
 Also the final results will be an assembly that references all of the other .dll files, it wont be a single unit.
 
@@ -465,13 +469,15 @@ The remoting infrastructure is in place. We have implementations of the TcpChann
 
 However, some classes from the library may have a different binary representation, because they may have a different internal data structure, so for example you won't be able to exchange a Hashtable object between Mono and MS.NET. It should not be a problem if you are using primitive types, arrays or your own classes. If you have problems, please post a test case.
 
-**My C code uses the \_\_stdcall which is not available on Linux, how can I make the code portable Windows/UNIX across platforms?**
+**My C code uses the __stdcall which is not available on Linux, how can I make the code portable Windows/UNIX across platforms?**
 
-Replace the \_\_stdcall attribute with the STDCALL macro, and include this in your C code for newer gcc versions:
+Replace the __stdcall attribute with the STDCALL macro, and include this in your C code for newer gcc versions:
 
-    #ifndef STDCALL 
-    #define STDCALL __attribute__((stdcall)) 
-    #endif 
+``` c
+#ifndef STDCALL
+#define STDCALL __attribute__((stdcall))
+#endif
+```
 
 **I see funny characters when I run programs, what is the problem?**
 
@@ -479,13 +485,17 @@ Replace the \_\_stdcall attribute with the STDCALL macro, and include this in yo
 
 This is Red Hat 9 (probably) using UTF8 on its console; the bytes are the UTF8 endianness markers. You can do:
 
-     LC_ALL=C mono myexe.exe 
+``` bash
+LC_ALL=C mono myexe.exe
+```
 
 And they wont show up.
 
 Alternatively, you can do:
 
-     $ echo -e "\033%G" 
+``` bash
+echo -e "\033%G"
+```
 
 to enable UTF-8 on the console.
 
@@ -493,10 +503,10 @@ to enable UTF-8 on the console.
 
 These are a few bits that you might want to know when dealing with Unicode strings in Mono and Unix:
 
--   Mono compilers will default to the current language encoding as their native encoding. If your LANG environment variable contains the terminator UTF-8 (for example mine is LANG=en\_US.UTF-8) it will process its input files as UTF-8
+-   Mono compilers will default to the current language encoding as their native encoding. If your LANG environment variable contains the terminator UTF-8 (for example mine is LANG=en_US.UTF-8) it will process its input files as UTF-8
 -   You can control the encoding used by the compilers using the -codepage: command line option, for the special case of utf-8, you can use: -codepage:utf8 to inform the compiler that your sources are in UTF-8, for more codepages, see the manual page for the compiler.
 -   CIL executables generated by the Mono compilers store everything in UTF-16 encodings.
--   If you are dealing with ASP.NET that invokes the compiler automatically for you, you can control the encoding used by specifying this on the web config file. See the reference for [[Config\_system.web\_globalization|web/globalization] for details.
+-   If you are dealing with ASP.NET that invokes the compiler automatically for you, you can control the encoding used by specifying this on the web config file. See the reference for [[Config_system.web_globalization|web/globalization] for details.
 
 The above takes care of converting the input you provide to Mono compilers and runtimes into Unicode. Another issue is how these characters get rendered into the screen.
 
@@ -513,7 +523,7 @@ Segfaults are typically the result of a stack overflow, these are caused by recu
 ``` csharp
 class Child : Parent {
      public override GetNumber ()
-     {  
+     {
            return GetNumber () + 1;
      }
 }
@@ -524,7 +534,7 @@ When the developer really wanted:
 ``` csharp
 class Child : Parent {
      public override GetNumber ()
-     {  
+     {
            return base.GetNumber () + 1;
      }
 }
@@ -613,7 +623,7 @@ The JVM is not designed to be a general purpose virtual machine. The Common Inte
 
 **Could Java target the CLI?**
 
-Yes, Java could target the CLI, Microsoft's J\# compiler does that. The [IKVM](http://www.ikvm.net/) project builds a Java runtime that works on top of .NET and on top of Mono. IKVM is essentially a JIT compiler that translates from JVM bytecodes into CIL instructions, and then lets the native JIT engine take over.
+Yes, Java could target the CLI, Microsoft's J# compiler does that. The [IKVM](http://www.ikvm.net/) project builds a Java runtime that works on top of .NET and on top of Mono. IKVM is essentially a JIT compiler that translates from JVM bytecodes into CIL instructions, and then lets the native JIT engine take over.
 
 **Is it possible to write a JVM byte code to CIL converter?**
 
@@ -659,7 +669,7 @@ If you have innovative ideas, and want to create new classes, we encourage you t
 
 The Mono team at Novell is currently focused on improving Mono's performance, platform support, coverage, quality and features, so we are likely going to be busy doing those things.
 
-But Mono has already been used as a foundation for trying out new ideas for the C\# language (there are three or four compilers derived from Mono's C\# compiler) and a number of innovative ideas (like continuations for the VM) have been implemented as research prototypes on top of Mono.
+But Mono has already been used as a foundation for trying out new ideas for the C# language (there are three or four compilers derived from Mono's C# compiler) and a number of innovative ideas (like continuations for the VM) have been implemented as research prototypes on top of Mono.
 
 We need to explore in a case-by-case basis which of these ideas can be integrated into Mono, we are certainly open to the idea of getting some of these ideas merged into Mono, but in addition to the standard considerations for any contributed code we have to take into account things like whether we can maintain it effectively, whether it makes too many changes to Mono, whether it is a clean and maintainable implementation.
 
@@ -744,11 +754,11 @@ Where each of the users that belong to the group are added there.
 
 **Will Mono depend on GNOME?**
 
-It will depend only if you are using a particular assembly (for example, for doing Gtk\# based GUI applications). If you are just interested in Mono for implementing a 'Hello World Enterprise P2P Web Service', you will not need any GNOME components.
+It will depend only if you are using a particular assembly (for example, for doing Gtk# based GUI applications). If you are just interested in Mono for implementing a 'Hello World Enterprise P2P Web Service', you will not need any GNOME components.
 
-**Do you plan to port Rhino to C\#?** . Eto Demerzal has started a Rhino port to C\#.
+**Do you plan to port Rhino to C#?** . Eto Demerzal has started a Rhino port to C#.
 
-**Has anyone succeeded in building a Mac version of the C\# environment. If so can you explain how?**
+**Has anyone succeeded in building a Mac version of the C# environment. If so can you explain how?**
 
 Yes, Mono works on Linux/PPC and MacOS X (10.2 and 10.3)
 
@@ -773,9 +783,9 @@ There is no need to rewrite your code as long as you keep using Microsoft SQL Se
 
  Try to avoid it. Although there would be a emulation for registry in Mono too. GNOME does have a registry like mechanism for configuration. But Even if gnome has a configuration system similar to the registry, the keys will not be equal, so you will probably end up having to do some runtime detection, and depending on this load an assembly that has your platform-specific hacks.
 
-**System.Data.SqlClient with FreeTDS, will you port parts of these to C\# and use them?**
+**System.Data.SqlClient with FreeTDS, will you port parts of these to C# and use them?**
 
-This has been done. System.Data.SqlClient is a fully managed provider for Microsoft SQL Server 7, 2000, and 2005 databases written in 100% C\#. It used FreeTDS and jTDS as resources.
+This has been done. System.Data.SqlClient is a fully managed provider for Microsoft SQL Server 7, 2000, and 2005 databases written in 100% C#. It used FreeTDS and jTDS as resources.
 
 Operating System Questions
 --------------------------
@@ -815,7 +825,7 @@ Thread signal_thread = new Thread (delegate () {
     //    Write to a pipe created with UnixPipes for server apps.
     //    Use an AutoResetEvent
  
-    // For example, this works with Gtk#  
+    // For example, this works with Gtk#
     Application.Invoke (delegate () { ReceivedSignal (signal); }
     });
 ```
@@ -836,7 +846,7 @@ A sample program that uses signal handlers in this way is `mono-service` you can
 
 **How to open a link in the user's browser?**
 
-See the [Howto\_OpenBrowser](/archived/howto_openbrowser "Howto OpenBrowser")
+See the [Howto_OpenBrowser](/archived/howto_openbrowser "Howto OpenBrowser")
 
 Mono and GCC
 ------------
@@ -855,9 +865,9 @@ For more details see our [C++ page](/docs/about-mono/languages/cplusplus/).
 
 There are a few possible approaches:
 
--   Use a code generator such as SWIG that parses the C++ code and generates C wrapper functions and C\# code which DllImports the C wrappers.
+-   Use a code generator such as SWIG that parses the C++ code and generates C wrapper functions and C# code which DllImports the C wrappers.
 
-Pro: This permits use of C++ code from C\# Con: Not terribly elegant; Extra layer of C code may impact performance.
+Pro: This permits use of C++ code from C# Con: Not terribly elegant; Extra layer of C code may impact performance.
 
 -   There was work on a WHIRL-to-IL compiler, which would compile C (and probably C++) into CIL which Mono could execute.
 
@@ -873,9 +883,9 @@ We are no longer considering WHIRL as an intermediate IR for supporting C and C+
 
  Once a full translator for GCC exists, we are interested in looking at expanding the GCC frontends to include extensions for Managed C++.
 
- **Are you working on a GCC front-end to C\#?**
+ **Are you working on a GCC front-end to C#?**
 
-We are not working on a GCC front-end for C\#.
+We are not working on a GCC front-end for C#.
 
 **What about making a front-end to GCC that takes CIL images and generates native code?**
 
@@ -960,7 +970,7 @@ Mono and Portable.NET
 
 **What are the differences between Mono and Portable.NET?**
 
-Most of Mono is being written using C\#, with only a few parts written in C (The JIT engine, the runtime, the interfaces to the garbage collection system).
+Most of Mono is being written using C#, with only a few parts written in C (The JIT engine, the runtime, the interfaces to the garbage collection system).
 
 It is easier to describe what is unique about Mono:
 
@@ -968,11 +978,11 @@ It is easier to describe what is unique about Mono:
 
 -   A foundation for code optimization: The new code generator in Mono builds on the experience of our first JIT engine, and enables us to implement various advanced compiler optimization tricks. With an SSA-framework, plenty of new optimizations are possible. The current list of optimizations are: Peephole postpass, Branch optimizations, Inline method calls, Constant folding, Constant propagation, Copy propagation, Dead code elimination, Linear scan global reg allocation, Conditional moves, Emit per-domain code, Instruction scheduling, Intrinsic method implementations, Tail recursion and tail calls, Loop related optimizations, Fast x86 FP compares, Leaf procedures optimizations. SSA-based partial redunancy elimination.
 
--   A self-hosting C\# compiler written in C\#, which is clean, easy to maintain.
+-   A self-hosting C# compiler written in C#, which is clean, easy to maintain.
 
--   Mono has a complete C\# 1.0 implementation and has been stress tested a lot more than Portable.NET's compiler.
+-   Mono has a complete C# 1.0 implementation and has been stress tested a lot more than Portable.NET's compiler.
 
--   Generics support and complete C\# 2.0 support.
+-   Generics support and complete C# 2.0 support.
 
 -   A multi-platform runtime engine: both a JIT engine and an interpreter exist. The JIT engine runs currently on x86, PowerPC, S390, S390x, Sparc, x86-64, Itanium and ARM systems, while the interpreter works on x86, SPARC, ARM, s390, PowerPC, HP-PA and Alpha systems.
 
@@ -980,7 +990,7 @@ It is easier to describe what is unique about Mono:
 
 -   Full support for remoting in the runtime.
 
--   The C\# compiler, the JIT engine and the class libraries are mature enough that the whole system has been self-hosting since April 2002. This means that we develop Mono completely with itself at this point.
+-   The C# compiler, the JIT engine and the class libraries are mature enough that the whole system has been self-hosting since April 2002. This means that we develop Mono completely with itself at this point.
 
 By forcing ourselves to use our own code to develop our tools, we bug fix problems rapidly, and the system is overall more robust and tested than if we did not.
 
@@ -990,13 +1000,13 @@ By forcing ourselves to use our own code to develop our tools, we bug fix proble
 
 -   Remoting implementation: Mono has a complete remoting infrastructure that is used in our own codebase to provide added functionality and performance to our ASP.NET engine and more.
 
--   Mono's C\# compiler flags more errors and warnings on invalid C\# code.
+-   Mono's C# compiler flags more errors and warnings on invalid C# code.
 
--   Mono's C\# compiler is a CLS consumer and producer, which means that it will enforce during development the CLS rules.
+-   Mono's C# compiler is a CLS consumer and producer, which means that it will enforce during development the CLS rules.
 
--   Mono's C\# compiler has strong error handling and has closer adherence to the specification with support for definite assignment (required to generate verifiable IL code).
+-   Mono's C# compiler has strong error handling and has closer adherence to the specification with support for definite assignment (required to generate verifiable IL code).
 
--   Mono's C\# compiler is written in C\# which is easier for new developers to come in and improve, fix and tune. The Mono C\# compiler in C\# is faster than their C-based compiler.
+-   Mono's C# compiler is written in C# which is easier for new developers to come in and improve, fix and tune. The Mono C# compiler in C# is faster than their C-based compiler.
 
 -   Mono has a complete Reflection and Reflection.Emit: these are important for advanced applications, compilers and dynamic code generation (Applications like IKVM and IronPython depend on this feature for example).
 
@@ -1025,7 +1035,7 @@ Common Problems
 
 For a complete explanation of the problem, see our article: [ThreadPool Deadlocks](/archived/articlethreadpool_deadlocks "Article:ThreadPool Deadlocks")
 
-**MONO\_EXTERNAL\_ENCODINGS**
+**MONO_EXTERNAL_ENCODINGS**
 
 When I run an application, I get the following error message:
 
@@ -1034,11 +1044,11 @@ When I run an application, I get the following error message:
 
 This problem arises when you have files in your file system that Mono can not convert into Unicode. Mono uses the UTF-8 encoding for the filenames stored in your file system by default, because it is the universally accepted standard.
 
-The problem typically arises when you transfer files that were stored on a system that used a different encoding. This might happen if you copy a backup from an older system that encoded filename is latin-1 encoding and your current system uses UTF-8 (Example: the old system probably had LANG set to "en\_US" and the new system uses "en\_US.UTF-8).
+The problem typically arises when you transfer files that were stored on a system that used a different encoding. This might happen if you copy a backup from an older system that encoded filename is latin-1 encoding and your current system uses UTF-8 (Example: the old system probably had LANG set to "en_US" and the new system uses "en_US.UTF-8).
 
 It is highly recommended that you fix the encoding of your filenames on your file system using a tool like *convmv*, a perl utility that lets you rename files from one encoding to another.
 
-Alternatively, you can set the MONO\_EXTERNAL\_ENCODINGS variable, but this is not recommended. To use this set the MONO\_EXTERNAL\_ENCODINGS variable to a comma separated list of encodings that the Mono runtime should try to use when guessing the values encoded in a filename.
+Alternatively, you can set the MONO_EXTERNAL_ENCODINGS variable, but this is not recommended. To use this set the MONO_EXTERNAL_ENCODINGS variable to a comma separated list of encodings that the Mono runtime should try to use when guessing the values encoded in a filename.
 
 See the manual page for details on how Mono uses this variable.
 
@@ -1047,46 +1057,54 @@ The values allowed are those returned by "iconv --list".
 This is a sample:
 
 ``` bash
-$ export MONO_EXTERNAL_ENCODINGS="utf8:latin1"
+export MONO_EXTERNAL_ENCODINGS="utf8:latin1"
 ```
 
-Notice that in older versions of Mono, the error message had a typo, and said "MONO\_EXTERNAL\_ENCODING" instead of "MONO\_EXTERNAL\_ENCODINGS"
+Notice that in older versions of Mono, the error message had a typo, and said "MONO_EXTERNAL_ENCODING" instead of "MONO_EXTERNAL_ENCODINGS"
 
-The problem with using MONO\_EXTERNAL\_ENCODINGS is that even if Mono will be able to parse your filenames, Mono will still store the filenames internall as Unicode. If you try to move, overwrite or do any other manipulation in the file Mono will transform the filename from Unicode to your native encoding and it might fail to find the file.
+The problem with using MONO_EXTERNAL_ENCODINGS is that even if Mono will be able to parse your filenames, Mono will still store the filenames internall as Unicode. If you try to move, overwrite or do any other manipulation in the file Mono will transform the filename from Unicode to your native encoding and it might fail to find the file.
 
 **ICMP Ping throws an exception**
 
-I used Mono to create a small C\# console application that uses the ICMP class from [http://cpp.sourceforge.net/?show=17688](http://cpp.sourceforge.net/?show=17688) to ping a host.
+I used Mono to create a small C# console application that uses the ICMP class from [http://cpp.sourceforge.net/?show=17688](http://cpp.sourceforge.net/?show=17688) to ping a host.
 
-    ICMP ping = new ICMP();
-    ping.Open();
-    TimeSpan span = ping.Send("192.168.1.1", new TimeSpan(0,0,5));
+``` csharp
+ICMP ping = new ICMP();
+ping.Open();
+TimeSpan span = ping.Send("192.168.1.1", new TimeSpan(0,0,5));
+```
 
 Unfortunately there is an exception.
 
-    Unhandled Exception: System.Net.Sockets.SocketException: Access denied 
-    in <0x000b8> System.Net.Sockets.Socket:.ctor (AddressFamily family, SocketType type, ProtocolType proto)
-    in [0x00004] (at cPing.cs:41) ICMP:Open ()
-    in [0x00007] (at Main.cs:14) MainClass:Main (System.String[] args
+``` bash
+Unhandled Exception: System.Net.Sockets.SocketException: Access denied
+in <0x000b8> System.Net.Sockets.Socket:.ctor (AddressFamily family, SocketType type, ProtocolType proto)
+in [0x00004] (at cPing.cs:41) ICMP:Open ()
+in [0x00007] (at Main.cs:14) MainClass:Main (System.String[] args
+```
 
 The same code works fine when run in Visual Studio 2005 Professional or Mono on Windows. It does not work on Linux because you must run as root in order send ICMP packets. The /bin/ping program runs on Linux with the setuid bit. To ping from a Mono program you may either P/Invoke /bin/ping or setuid root your Mono program (after undertaking a thorough security audit of the runtime, the class libraries and any third party libraries that are linked, of course).
 
 Alternatively, if your Linux kernel supports the so-called **Linux capabilities** you can use the `setcap` (part of the `libcap` library) to set the raw networking capability on the mono binary. In order to do it you need to log in as root and issue the following command:
 
-    setcap cap_net_raw=iep /path/to/mono
+``` bash
+setcap cap_net_raw=iep /path/to/mono
+```
 
 Doing it does **not** give mono the same privileges as setting the uid bit on the binary - it merely lets the mono runtime construct raw ip packets which is needed for the ICMP ping to work. **How can I configure Web.config and an ASPX file to turn the trace on?**
 
-    <configuration>
-            <system.web>
-                    <trace
-                            enabled="false"
-                            requestLimit="10"
-                            pageOutput="true"
-                            traceMode="SortByTime"
-                            localOnly="false"
-                    />
-    ...
+``` xml
+<configuration>
+        <system.web>
+                <trace
+                        enabled="false"
+                        requestLimit="10"
+                        pageOutput="true"
+                        traceMode="SortByTime"
+                        localOnly="false"
+                />
+...
+```
 
 I never used pageOutput="true". If it doesn't work you may set it to "false" and get the trace from Trace.axd.
 
@@ -1112,7 +1130,7 @@ return node.SelectSingleNode ("/h:html/h:body/h:form", nm);
 
 Note that you don't have to change the prefixes in queried documents. They have nothing to do with the registered prefixes in the argument XmlNamespaceManager.
 
-**\_wapi\_shm\_semaphores\_init problems**
+**_wapi_shm_semaphores_init problems**
 
 If you get an error message like this:
 

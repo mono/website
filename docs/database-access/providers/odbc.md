@@ -119,20 +119,24 @@ Testing ODBC provider with MySQL
 
 <!-- -->
 
-     "DSN=dataSetName;" +
-     "UID=myuserid;" + 
-     "PWD=mypassword" 
+```
+"DSN=dataSetName;" +
+"UID=myuserid;" +
+"PWD=mypassword"
+```
 
 -   Here is a ConnectionString format if you do not have a DSN (also called DSN-less connection). Note the use of DRIVER and SERVER parameters:
 
 <!-- -->
 
-     "DRIVER={MySQL ODBC 3.51 Driver};" + 
-     "SERVER=localhost;DATABASE=test;" + 
-     "UID=myuserid;PASSWORD=mypassword;" + 
-     "OPTION=3"
+```
+"DRIVER={MySQL ODBC 3.51 Driver};" +
+"SERVER=localhost;DATABASE=test;" +
+"UID=myuserid;PASSWORD=mypassword;" +
+"OPTION=3"
+```
 
-**C\# Example**
+**C# Example**
 
 ``` csharp
  using System;
@@ -183,7 +187,7 @@ Testing ODBC provider with MySQL
  }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
@@ -191,11 +195,15 @@ Testing ODBC provider with MySQL
 
 <!-- -->
 
-     mcs TestExample.cs -r:System.Data.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
+``` bash
+     mono TestExample.exe
+```
 

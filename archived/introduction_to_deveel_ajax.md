@@ -292,7 +292,7 @@ Inspecting the HTML code of your page you will now find:
 </html>
 ```
 
-if you go in deep and view at the code the dynamic JavaScript **App\_Code.eg35a7d.jsx** you will see this:
+if you go in deep and view at the code the dynamic JavaScript **App_Code.eg35a7d.jsx** you will see this:
 
 ``` javascript
 Deveel.addNamespace("Deveel.Web.Security.Users")

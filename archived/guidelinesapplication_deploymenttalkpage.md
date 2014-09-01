@@ -18,7 +18,7 @@ Being very new to formal Linux development (using autoconf and the rest), I want
 
     The link was incorrect, it has been fixed (also above)
 
-    Your other problems (installation) are due to a problem while running Automake on your system.  
+    Your other problems (installation) are due to a problem while running Automake on your system.
 
 -   Checking out sources and running the prescribed command gets me an error.
 
@@ -63,8 +63,8 @@ Being very new to formal Linux development (using autoconf and the rest), I want
     checking for mcs... /usr/bin/mcs
     checking for mono... /usr/bin/mono
     checking pkg-config is at least version 0.9.0... yes
-    checking for GTKSHARP_CFLAGS...  
-    checking for GTKSHARP_LIBS... -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll  
+    checking for GTKSHARP_CFLAGS...
+    checking for GTKSHARP_LIBS... -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll
     configure: creating ./config.status
     config.status: creating Makefile
     config.status: error: cannot find input file: Makefile.in
@@ -101,8 +101,8 @@ Being very new to formal Linux development (using autoconf and the rest), I want
     checking for mcs... /usr/bin/mcs
     checking for mono... /usr/bin/mono
     checking pkg-config is at least version 0.9.0... yes
-    checking for GTKSHARP_CFLAGS...  
-    checking for GTKSHARP_LIBS... -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll  
+    checking for GTKSHARP_CFLAGS...
+    checking for GTKSHARP_LIBS... -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll
     configure: creating ./config.status
     config.status: creating Makefile
     config.status: creating man/Makefile
@@ -125,7 +125,7 @@ Being very new to formal Linux development (using autoconf and the rest), I want
     make[1]: Leaving directory `/home/ala55/src/monoskel/resources'
     Making all in src
     make[1]: Entering directory `/home/ala55/src/monoskel/src'
-    /usr/bin/mcs -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll     -resource:./../resources/dummy.txt,dummy.txt -out:monoskel.exe main.cs 
+    /usr/bin/mcs -r:/usr/lib/mono/gtk-sharp/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp/pango-sharp.dll -r:/usr/lib/mono/gtk-sharp/atk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gdk-sharp.dll -r:/usr/lib/mono/gtk-sharp/gtk-sharp.dll     -resource:./../resources/dummy.txt,dummy.txt -out:monoskel.exe main.cs
     make[1]: Leaving directory `/home/ala55/src/monoskel/src'
     make[1]: Entering directory `/home/ala55/src/monoskel'
     sed -e "s|\@prefix\@|/usr/local|g" -e "s|\@pkglibdir\@|/usr/local/lib/monoskel|g" -e "s|\@bindir\@|/usr/local/bin|g" -e "s|\@MONO\@|/usr/bin/mono|g"  ./script.in > monoskel.tmp

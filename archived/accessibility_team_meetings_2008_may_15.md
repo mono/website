@@ -15,8 +15,8 @@ Meeting Summary
 
     Topic--remaining open positions on team(jared)
         2 development positions to fill in Beijing (not sure one of the candidates is going to accept)
-        1 build manager and 1 build/qa position left to fill( Decriptor will ready to start as build manager on Monday, June 2nd) 
-        1 project manager or development manager. 
+        1 build manager and 1 build/qa position left to fill( Decriptor will ready to start as build manager on Monday, June 2nd)
+        1 project manager or development manager.
 
     summarize: we still have 4 open positions. everyone can make some recommendations (sandy, mgorse, knocte have do that) .
     question 1: the different between devmgr and prjmgr?
@@ -31,7 +31,7 @@ Meeting Summary
                    2.andres: fix up everyone's bindings in managed code to ATK (can't communicate to ATK without that)
     3.a largest number of us: Bridge from UIA to ATK
     4.a largest number of us: Enable winforms controls to be accessible using UIA
-              
+
             About testing:
             we have two main products(projects) in phase 1:
                 1.winforms
@@ -40,7 +40,7 @@ Meeting Summary
 
     Topic--phase 1 development roadmap (calvin)
     roadmap: Accessibility:_Roadmap
-    schedule: Accessibility:_Project_Schedule 
+    schedule: Accessibility:_Project_Schedule
             1.notes: the iterative schedule is fluid: you should adjust the next iteration if you take longer than a weed, you should move on to next week's stuff if you take less than a week, you should change sequence of winforms controls and UIA control types if there is work that needs to be done in a specific order.
             2.task: MarioC and Sandy would talk and swap some controls in the iteration,
                         All people take a look at the schedule and do a planning on their own,
@@ -48,7 +48,7 @@ Meeting Summary
     iteration planning:  what need to be adjusted?
         1.CheckedListBox can be swapped with LinkLabel (MarioC),
         2.will work on Form and RadioButton in Iteration 1 - May 19 – 23 (Sandy),
-        3.change item by a controltype that is already done, instead of the List, the Label (knocte)  
+        3.change item by a controltype that is already done, instead of the List, the Label (knocte)
         4.it might be a good idea to list out in this table, which control type the MWF control is going to use (sandy and MarioC)
         5.adjust interation1 to set up a test framework and start playing with controls that are done (Brian, Calen),
         6.we already have gtk-sharp free of patches to apply, so the packaging could start, we could do a branch for the winforms patch (Raywang)
@@ -215,7 +215,7 @@ RAW IRC Capture
     * calvin thinks everyone is reading it now
     <MarioC> I don't
     <knocte> heh, I have read the majority I think
-    <MarioC> I mean.. I don't have any questions... 
+    <MarioC> I mean.. I don't have any questions...
     <mgorse> calvin: Have yo umodified it again since you asked us to look at it a couple days ago?
     <RayWang> calvin: so the orange part on the Architecture are the parts we shou\ld implement?
     <calvin> mgorse: maybe only slightly
@@ -296,7 +296,7 @@ RAW IRC Capture
     bgmerrell and Calen will be filling out their work in the iterations as we go
     Everyone should have tasks in the iterations
     The tables are far from complete,  they are only a skeleton of what is coming
-    <RayWang> ok 
+    <RayWang> ok
     <jpallen> so, i was hoping to cover some of what calvin is saying in the next agenda item
     <ngao> i see
     <jpallen> we definitely did not forget about Ray or Neville
@@ -330,8 +330,8 @@ RAW IRC Capture
     The first thing I'll ask is to the people already listed, what changes should we adjust?
     or what needs to be adjusted?
     Andres, how much time do you need to dedicate to the bindings still?
-    <RayWang> calvin: should i do something in iteration 1? 
-    <MarioC> I think CheckedListBox can be swapped with LinkLabel 
+    <RayWang> calvin: should i do something in iteration 1?
+    <MarioC> I think CheckedListBox can be swapped with LinkLabel
     <calvin> RayWang: yes, we'll get to that in a moment, ngao too
     <RayWang> calvin: ok, thanks. :)
     <ngao> ok
@@ -353,7 +353,7 @@ RAW IRC Capture
     <calvin> bgmerrell: packaged?  not sure about packaged, but installed and tested yes
     But if we could do packaging, that's what RayWang would do
     <sandy> bgmerrell: see Accessibility:_BuildingProviderSide
-    <RayWang> yes, 
+    <RayWang> yes,
     <calvin> What does everyone think?
     <MarioC> calvin, It's listed in Accessibility:_Control_Status, however we can list it again
     <calvin> knocte: I brought this up earlier and you seemed to think it was too early
@@ -383,7 +383,7 @@ RAW IRC Capture
     <calvin> ngao: I think you are going to be jumping in on the MWF control work
     <RayWang> what i should do is packaging the programs which helps to set up the environment?
     <calvin> RayWang: yes, so for this week,  much of your work will be discovering what needs to be packaged, and how to package it
-    <ngao> calvin, ok, 
+    <ngao> calvin, ok,
     <calvin> RayWang: well, package and build
     <RayWang> calvin: make sense
     <calvin> so sandy and MarioC, you guys will need to help ngao come up to speed

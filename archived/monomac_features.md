@@ -40,14 +40,14 @@ Mono comes with a garbage collector that allows developers to focus on their sof
 Type Safety
 -----------
 
-The C\# language in combination with the ECMA runtime prevent a whole class of errors from your application. With C\# the common errors of reusing disposed objects accidentally, overflowing a buffer, casting an object into the wrong type (leading to corruption), releasing the memory twice or keeping dangling objects are a thing of the past.
+The C# language in combination with the ECMA runtime prevent a whole class of errors from your application. With C# the common errors of reusing disposed objects accidentally, overflowing a buffer, casting an object into the wrong type (leading to corruption), releasing the memory twice or keeping dangling objects are a thing of the past.
 
-C\# 3.0
+C# 3.0
 -------
 
-The C\# 3.0 language is a rich high-level language that brings many constructs that improve programmer productivity.
+The C# 3.0 language is a rich high-level language that brings many constructs that improve programmer productivity.
 
-In addition to traditional object oriented languages, C\# offers many interesting new constructs: type safe generic types, automatic state machines created with iterators, lambda functions and anonymous methods, built-in properties and built-in event systems as well as the System.Linq namespace that allows developers to create functional programming constructs.
+In addition to traditional object oriented languages, C# offers many interesting new constructs: type safe generic types, automatic state machines created with iterators, lambda functions and anonymous methods, built-in properties and built-in event systems as well as the System.Linq namespace that allows developers to create functional programming constructs.
 
 The terse syntax allows configurations of objects in one pass:
 
@@ -68,9 +68,9 @@ slider.ValueChanged += delegate {
 Use Mac OS X APIs
 -----------------
 
-MonoMac binds the Objective-C APIs that developers use on the Mac into MonoMac/API C\# APIs that expose the functionality and map this to any ECMA CIL powered language. Objective-C delegates are exposed to C\# applications MonoMac/API\#Delegates in a number of ways giving developers complete control of how to consume and integrate with native APIs.
+MonoMac binds the Objective-C APIs that developers use on the Mac into MonoMac/API C# APIs that expose the functionality and map this to any ECMA CIL powered language. Objective-C delegates are exposed to C# applications MonoMac/API#Delegates in a number of ways giving developers complete control of how to consume and integrate with native APIs.
 
-MonoMac provides a C\#/ECMA binding for:
+MonoMac provides a C#/ECMA binding for:
 
 -   Addressbook and AddressbookUI
 -   AudioToolbox
@@ -89,7 +89,7 @@ MonoMac provides a C\#/ECMA binding for:
 -   MessageUI
 -   SystemConfiguration
 
-From the pure C\#-based event model to the native Objective-C system, the two mechanisms are supported.
+From the pure C#-based event model to the native Objective-C system, the two mechanisms are supported.
 
 For example, to respond to events, programmers can just connect to the events they are interested in:
 
@@ -108,25 +108,25 @@ page.TouchUpInside += delegate {
 Access to third party iPhone/Objective-C Libraries
 --------------------------------------------------
 
-MonoMac allows you to access libraries created in the Objective-C language for the Mac easily and to create C\#/.NET bindings to Objective-C libraries.
+MonoMac allows you to access libraries created in the Objective-C language for the Mac easily and to create C#/.NET bindings to Objective-C libraries.
 
-This process is described in detail in our MonoMac/Binding\_New\_Objective-C\_Types Binding Objective-C libraries.
+This process is described in detail in our MonoMac/Binding_New_Objective-C_Types Binding Objective-C libraries.
 
 MonoDevelop Integration
 -----------------------
 
 MonoMac is an SDK that can be used with your favorite editor, be it a full integrated development environment or a simple text editor.
 
-MonoDevelop's code completion helps you quickly explore the API as you write your application: \<img src="[http://monotouch.net/@api/deki/files/19/=Md\_hw\_iphone19.png](http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png)" style="width: 644px; height: 267px;" alt="Md\_hw\_iphone19.png" class="internal default" /\>
+MonoDevelop's code completion helps you quickly explore the API as you write your application: \<img src="[http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png](http://monotouch.net/@api/deki/files/19/=Md_hw_iphone19.png)" style="width: 644px; height: 267px;" alt="Md_hw_iphone19.png" class="internal default" /\>
 
-Our tutorial MonoMac/Tutorials/MonoDevelop\_HelloWorld walks you through creating your first MonoMac application.
+Our tutorial MonoMac/Tutorials/MonoDevelop_HelloWorld walks you through creating your first MonoMac application.
 
 Interface Builder Integration
 -----------------------------
 
 Both MonoDevelop and the MonoMac SDK allow you to use Interface Builder to create and customize your UIs.
 
-We take Interface Builder one step further than XCode does by making MonoMac automatically bind any outlets you define on your interface and any methods that you define in your interface to your C\# code.
+We take Interface Builder one step further than XCode does by making MonoMac automatically bind any outlets you define on your interface and any methods that you define in your interface to your C# code.
 
 You will never have to manually bind any outlets from Interface Builder to your code as MonoMac takes care of this.
 

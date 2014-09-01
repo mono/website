@@ -136,7 +136,7 @@ hostname:port
 
 Server=localhost:7210
 
-### C\# Example
+### C# Example
 
 #### Source code
 
@@ -192,12 +192,12 @@ public class Test
 Save the example to the file TestExample.cs and compile it
 
 ``` bash
-$ mcs TestExample.cs -r:System.Data.dll -r:MaxDB.Data.dll
+mcs TestExample.cs -r:System.Data.dll -r:MaxDB.Data.dll
 ```
 
 #### Running the Example
 
 ``` bash
-$ mono TestExample.exe
+mono TestExample.exe
 ```
 

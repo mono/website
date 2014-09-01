@@ -13,7 +13,7 @@ Introduction
 
 [Lighttpd](http://www.lighttpd.net/) (pronounced "lighty") is a popular lightweight and easy to configure HTTP server. Adding ASP.NET support through `fastcgi-mono-server` is very quick and painless and can be done by modifying only three files.
 
-### Configuration Tested On...
+### Configuration Tested On
 
 1.  [Fedora 8](http://www.fedoraproject.org) (Lighttpd 1.4.18-1, Mono 1.2.6 installed in a user account)
 
@@ -146,14 +146,14 @@ Where you previously added "`# TO BE ADDED`", replace it with the following:
                     ),
                     "max-procs" => 1,
 
-That configuration uses several mono\_\* configuration variables to control the how the FastCGI server starts and runs. To set those configuration variables add the following line to the top of fastcgi.conf:
+That configuration uses several mono_\* configuration variables to control the how the FastCGI server starts and runs. To set those configuration variables add the following line to the top of fastcgi.conf:
 
     include "conf.d/mono.conf"
 
 and create conf.d/mono.conf to contain the following:
 
-    # Add index.aspx and default.aspx to the list of files to check when a 
-    # directory is requested. 
+    # Add index.aspx and default.aspx to the list of files to check when a
+    # directory is requested.
     index-file.names += ( "index.aspx", "default.aspx" )
 
     ### The directory that contains your Mono installation.
@@ -271,7 +271,7 @@ The following example sends `.php` requests to a PHP FastCGI server and the rest
 
 ### Using Extensions
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html\#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
 To start, change the extension that triggers the mono FastCGI server from "" to ".aspx". So that your fastcgi.conf file looks like this:
 
@@ -319,8 +319,8 @@ If you have it, you're going to want to add a new extension to it so it looks li
             ".dll"    => ".aspx"
     )
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Lighttpd. Enjoy!
 

@@ -86,7 +86,7 @@ Changes in RC
 
 Additions in Beta 8
 
--   added -gcc\_flags option to mtouch
+-   added -gcc_flags option to mtouch
 -   added NSData.Bytes and NSData.Count
 -   added full support for decimal types
 
@@ -100,7 +100,7 @@ Fixes in Beta 8
 
 Changes in Beta 8
 
--   removed -lib flag from mtouch (use -gcc\_flags)
+-   removed -lib flag from mtouch (use -gcc_flags)
 
 [1.0 Beta 7](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090828-1.pkg)
 ====================================================================================
@@ -173,10 +173,10 @@ Fixes in Beta 4:
 
 -   fixed UIAlertView.Messeget typo
 -   fixed crash with HttpWebClient.Credentials in NtlmClient
--   fixed \#532128, UIBarButtonItem.Clicked not working in some cases
--   fixed \#530963, linking issue with virtual generics methods
--   fixed \#531955, full-aot crash when using Dictionary\<int,int\>
--   fixed \#532120, full-aot crash working with String[]
+-   fixed #532128, UIBarButtonItem.Clicked not working in some cases
+-   fixed #530963, linking issue with virtual generics methods
+-   fixed #531955, full-aot crash when using Dictionary\<int,int\>
+-   fixed #532120, full-aot crash working with String[]
 
 [1.0 Beta 3](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090817-3.pkg)
 ====================================================================================
@@ -192,13 +192,13 @@ Additions in Beta 3:
 Fixes in Beta 3:
 
 -   fixed alwaysBounceHorizontal typo
--   fixed \#530807 (typo in UITableView)
+-   fixed #530807 (typo in UITableView)
 -   fixed UIView.MovedToSuperview typo
 -   fixed alignment of doubles in the cross compiler
 -   Improve documentation import run at installation time
 -   fixed generic interface thunk code to not clobber IP register
 -   fixed LINQ iterators with value types
--   fixed linking of GenericComparer\<\> (\#530961)
+-   fixed linking of GenericComparer\<\> (#530961)
 -   fixed null argument handling in runtime marshaller
 -   fixed stackoverflow in PerformSelector call
 

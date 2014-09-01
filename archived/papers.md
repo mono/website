@@ -29,9 +29,6 @@ Papers
 </tbody>
 </table>
 
-Papers
-======
-
 -   [Efficient Type Inclusion Tests: Jahn Vitek, R. Nigel Horspool, Andres Krall](http://citeseer.nj.nec.com/vitek97efficient.html)
 
 -   [Efficiently Computing Static Single Assignment Form and the Control Dependence Graph: Ron Cytron, Jeanne Ferrante](http://citeseer.nj.nec.com/cytron91efficiently.html)
@@ -103,6 +100,6 @@ Garbage Collection
 Threads
 -------
 
--   [Programming with Threads in C\#: Andrew Birrell](http://research.microsoft.com/~birrell/papers/ThreadsCSharp.pdf)
+-   [Programming with Threads in C#: Andrew Birrell](http://research.microsoft.com/~birrell/papers/ThreadsCSharp.pdf)
 
 

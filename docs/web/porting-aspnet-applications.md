@@ -15,7 +15,7 @@ By their nature, Web applications tend to be more portable to other platforms th
 
 In this guide we will focus on issues arising from differences between the Unix and Windows platforms, as well as between the database systems (RDBMS) in common use by developers on each of the platforms.
 
-In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C\# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
+In this guide I will demonstrate the porting process based on the **Blog Starter Kit** application (you can download the original C# source from [http://www.shankun.com/BlogStarterKit.aspx](http://www.shankun.com/BlogStarterKit.aspx)):
 
 [![BlogStarterKit StartPage.png](/archived/images/8/83/BlogStarterKit_StartPage.png)](/archived/images/8/83/BlogStarterKit_StartPage.png)
 
@@ -38,7 +38,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 Porting the code
 ----------------
 
-When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO\_IOMAP](#iomap-anchor) approach. By using the MONO\_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
+When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO_IOMAP](#iomap-anchor) approach. By using the MONO_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
 
 Required assemblies
 -------------------
@@ -56,7 +56,7 @@ As we're using Npgsql from CVS, which is not configured for use with ADO.NET 2.0
  <DbProviderFactories>
   <add name="Npgsql2 Data Provider"
        invariant="Npgsql2"
-       description=".Net Framework Data Provider for PostgreSQL" 
+       description=".Net Framework Data Provider for PostgreSQL"
        type="Npgsql.NpgsqlFactory, Npgsql2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7" />
  </DbProviderFactories>
 </system.data>
@@ -64,7 +64,7 @@ As we're using Npgsql from CVS, which is not configured for use with ADO.NET 2.0
 
 Remember the *Npgsql* invariant name, as it will be used below.
 
-#### Npgsql and \~/App\_Code
+#### Npgsql and \~/App_Code
 
 Make sure that Npgsql is included in the set of assemblies to link with code compiled from `~/App_Code` and/or generated from your ASP.NET files by adding the following fragment to your `Web.config` file:
 
@@ -85,7 +85,7 @@ Change the connection string to point to your PostgreSQL server and database. Th
 ``` xml
 <connectionStrings>
  <add name="Blog"
-      connectionString="SERVER=localhost;Database=blogstarterkit;User name=test;Password=test" 
+      connectionString="SERVER=localhost;Database=blogstarterkit;User name=test;Password=test"
       providerName="Npgsql2"/> <!-- provider invariant name, configured above -->
 </connectionStrings>
 ```
@@ -98,7 +98,7 @@ The Membership/Roles provider requires a few changes to the application configur
 <roleManager enabled="true">
  <providers>
   <clear/>
-   <add name="AspNetSqlRoleProvider" 
+   <add name="AspNetSqlRoleProvider"
         connectionStringName="Blog" applicationName="/"
         type="NauckIT.PostgreSQLProvider.PgRoleProvider, PostgreSQLProviders, Version=1.0.2698.20744, Culture=neutral, PublicKeyToken=e35c7087b53d61d1"/>
  </providers>
@@ -116,7 +116,7 @@ The Membership/Roles provider requires a few changes to the application configur
         applicationName="/"
         requiresUniqueEmail="true"
         passwordFormat="Hashed"
-        maxInvalidPasswordAttempts="5" 
+        maxInvalidPasswordAttempts="5"
         minRequiredPasswordLength="7"
         minRequiredNonalphanumericCharacters="1"
         passwordAttemptWindow="10"
@@ -218,7 +218,7 @@ There are two ways of dealing with the issue:
 ``` csharp
 public string LoadDataFile (string filename)
 {
-  string path = String.Format ("{0}{1}DataFiles{1}{2}", HttpRuntime.AppDomainAppPath, Path.DirectorySeparatorChar, 
+  string path = String.Format ("{0}{1}DataFiles{1}{2}", HttpRuntime.AppDomainAppPath, Path.DirectorySeparatorChar,
 filename);
   if (File.Exists (path))
      return File.ReadAllText (path);
@@ -271,11 +271,11 @@ The providers require specific database schema to be present in your database. M
      Password                                character varying(255)  NOT NULL,
      PasswordQuestion                        character varying(255)  NULL,
      PasswordAnswer                          character varying(255)  NULL,
-     IsApproved                              boolean                 NULL, 
+     IsApproved                              boolean                 NULL,
      LastActivityDate                        timestamptz             NULL,
      LastLoginDate                           timestamptz             NULL,
      LastPasswordChangedDate                 timestamptz             NULL,
-     CreationDate                            timestamptz             NULL, 
+     CreationDate                            timestamptz             NULL,
      IsOnLine                                boolean                 NULL,
      IsLockedOut                             boolean                 NULL,
      LastLockedOutDate                       timestamptz             NULL,
@@ -445,9 +445,9 @@ The annotation section of the `.xsd` file may contain elements shown below:
    <CommandText>DELETE FROM [dbo.MemberInfo] WHERE (([memberid] = @Original_memberid))</CommandText>
    <Parameters>
     <Parameter AllowDbNull="False" AutogeneratedName="" DataSourceName=""
-               DbType="Guid" Direction="Input" ParameterName="@Original_memberid" 
-               Precision="0" ProviderType="UniqueIdentifier" Scale="0" 
-               Size="0" SourceColumn="memberid" 
+               DbType="Guid" Direction="Input" ParameterName="@Original_memberid"
+               Precision="0" ProviderType="UniqueIdentifier" Scale="0"
+               Size="0" SourceColumn="memberid"
                SourceColumnNullMapping="False" SourceVersion="Original">
     </Parameter>
    </Parameters>
@@ -480,8 +480,8 @@ The information below is only an excerpt from the document referenced above cont
 
 1.  Remove all the **[** and **]** characters from the table definitions and/or queries
 2.  Remove all the `dbo.` owner prefixes
-3.  Remove all the file group keywords (**ON PRIMARY**, **TEXTIMAGE\_ON**, **CLUSTERED**
-4.  Remove all occurrences of **SET ANSI\_NULLS** and **SET QUOTED\_IDENTIFIERS**
+3.  Remove all the file group keywords (**ON PRIMARY**, **TEXTIMAGE_ON**, **CLUSTERED**
+4.  Remove all occurrences of **SET ANSI_NULLS** and **SET QUOTED_IDENTIFIERS**
 5.  Remove all occurrences of **WITH NOCHECK**
 6.  Replace all instances of the **GO** keyword with semicolons (**;**)
 
@@ -590,7 +590,7 @@ Steps to port the stored procedures:
         CREATE TYPE FooTableSubset AS (column1 text, column2 int);
 
         CREATE FUNCTION Bar() RETURNS SETOF FooTableSubset AS $$
-        DECLARE 
+        DECLARE
                 r RECORD;
         BEGIN
                 FOR r IN SELECT column1, CAST(COUNT(*) AS int) AS num FROM FooTable *:LOOP
@@ -607,8 +607,8 @@ Steps to port the stored procedures:
 
     Instead of using `CREATE TEMPORARY TABLE`, you should rather create a new type and return result sets from a query limited to the columns you're interested in.
 
--   Use **FOUND** instead of **@@FETCH\_STATUS**
--   Use **currval(*sequence\_name*)** instead of **@@IDENTITY**
+-   Use **FOUND** instead of **@@FETCH_STATUS**
+-   Use **currval(*sequence_name*)** instead of **@@IDENTITY**
 -   Make sure to end each statement with semicolons (**;**)
 -   Conditional execution blocks in PL/pgsql do not use **BEGIN/END**, instead they use the following syntax:
 
@@ -621,7 +621,7 @@ Steps to port the stored procedures:
 Running the application on Unix
 -------------------------------
 
-**Using MONO\_IOMAP**
+**Using MONO_IOMAP**
 
 > On Unix systems, Mono supports an I/O compatibility mode which allows you to ignore the file name case when accessing files on disk. The mode also takes care of disk designators (e.g. `c:`). Enabling the translation carries, obviously, some performance penalty, but is a good way to get your application up and running quickly. To enable the compatibility mode, make sure your web server's (XSP's or Apache's) environment contains the `MONO_IOMAP` variable set to **all**:
 >

@@ -38,19 +38,19 @@ Mono is positioned to be the leading platform for development of Gnome applicati
 Core Components
 ===============
 
-The Mono platform consists of the C\# compiler, the just-in-time runtime, and other associated components:
+The Mono platform consists of the C# compiler, the just-in-time runtime, and other associated components:
 
--   [C\# Compiler](/CSharp_Compiler "CSharp Compiler")
+-   [C# Compiler](/CSharp_Compiler "CSharp Compiler")
 -   [Mono Runtime](/Mono:Runtime "Mono:Runtime")
 -   [Debugger](/Debugger "Debugger"), [Debugger Tutorial](/Guide:Debugger "Guide:Debugger") and [Debugging](/Debugging "Debugging") techniques.
 
-Mono supports several technologies for developing GUI desktop applications. Gtk\# is a mature binding to the Gtk platform, which is used primarily for Gnome in Linux but also works in Windows with a native feel. System.Windows.Forms is in active development. CocoaSharp is used for developing Mac OSX applications.
+Mono supports several technologies for developing GUI desktop applications. Gtk# is a mature binding to the Gtk platform, which is used primarily for Gnome in Linux but also works in Windows with a native feel. System.Windows.Forms is in active development. CocoaSharp is used for developing Mac OSX applications.
 
--   [Gtk\#](/GtkSharp "GtkSharp")
+-   [Gtk#](/GtkSharp "GtkSharp")
 -   [WinForms](/WinForms "WinForms")
 -   [CocoaSharp](/MonoMac)
 
-Web applications are an integral part of the Mono platform as well. ASP.NET 1.0 applications can be run within the Apache web server using mod\_mono or through a light-weight standalone C\# web server called XSP. ASP.NET 2.0 support is in development. Infrastructure for web services and database access through a number of providers is also provided with Mono.
+Web applications are an integral part of the Mono platform as well. ASP.NET 1.0 applications can be run within the Apache web server using mod_mono or through a light-weight standalone C# web server called XSP. ASP.NET 2.0 support is in development. Infrastructure for web services and database access through a number of providers is also provided with Mono.
 
 -   [ASP.NET](/ASP.NET "ASP.NET")
 -   [Web Services](/Web_Services "Web Services")

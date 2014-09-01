@@ -11,22 +11,22 @@ This article is about contributing to the class library documentation.
 Mono-specific API Documentation
 ===============================
 
-The Documentation of the libraries is not complete and your contribution would be greatly apreciated. For contributing you will need the [Gtk\# Documentation Browser](/docs/tools+libraries/tools/monodoc/).
+The Documentation of the libraries is not complete and your contribution would be greatly apreciated. For contributing you will need the [Gtk# Documentation Browser](/docs/tools+libraries/tools/monodoc/).
 
 The procedure is easy, browse to the part of the documentation you want to contribute and click on the [Edit] link to start writing the documentation. You can also look for the parts that are listed as *To be added* or as *Documentation for this section has not yet been entered*. You can find information about editing documentation [here](/docs/tools+libraries/tools/monodoc/editing/).
 
 The contributions you are writting will be listed as links at the home page in a red panel called *Contributions*. If you are not happy with a contribution, you can delete it using the *Restore* button when editing it.
 
-Once you are done, you can submit your contributions directly from the [Gtk\# Documentation Browser](/docs/tools+libraries/tools/monodoc/). Use the menu File --\> Contributions --\> Upload contributions. If you had never contributed before, you will have to register in our server. The process can be performed inside the program. You will recieve an email with a password the program will remember once you enter it. All the process lasts only a couple of minutes.
+Once you are done, you can submit your contributions directly from the [Gtk# Documentation Browser](/docs/tools+libraries/tools/monodoc/). Use the menu File --\> Contributions --\> Upload contributions. If you had never contributed before, you will have to register in our server. The process can be performed inside the program. You will recieve an email with a password the program will remember once you enter it. All the process lasts only a couple of minutes.
 
-Aside from the core libraries, we also have a large body of class libraries that are specific to Mono, for example the documentation for Gtk\#.
+Aside from the core libraries, we also have a large body of class libraries that are specific to Mono, for example the documentation for Gtk#.
 
-Gtk\# documentation
+Gtk# documentation
 -------------------
 
 The project goal is to fill in the data with useful information. Feel free to grab liberally information from the Gtk documentation from: [http://developer.gnome.org/doc/API/](http://developer.gnome.org/doc/API/)
 
-Of course, the API does not apply directly. It only applies at a foundational level, so you can not really just copy and paste. Summaries, and remarks sections can probably be lifted with little or no effort. Gtk\# uses properties to represent get/set operations in the C API, so you can also use some bits from there. Most of the documentation contains already place holders for text, we use the internationally approved phrase for this purpose, \`To be added'. So the quest is to remove all of the "To be added" strings with information which resembles as closely as possible the toolkit reality.
+Of course, the API does not apply directly. It only applies at a foundational level, so you can not really just copy and paste. Summaries, and remarks sections can probably be lifted with little or no effort. Gtk# uses properties to represent get/set operations in the C API, so you can also use some bits from there. Most of the documentation contains already place holders for text, we use the internationally approved phrase for this purpose, \`To be added'. So the quest is to remove all of the "To be added" strings with information which resembles as closely as possible the toolkit reality.
 
 Words of warning
 ================

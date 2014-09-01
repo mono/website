@@ -9,7 +9,6 @@ This document describes Mono's new JIT engine based on a rewrite to use a linear
 
 You might also want to check [Mono's Runtime Documentation](/docs/advanced/runtime/docs/).
 
-
 Intermediate Representation (IR)
 --------------------------------
 
@@ -30,12 +29,12 @@ The opcodes used by the JIT are defined in the [mini-ops.h](http://anonsvn.mono-
 The opcodes conform to the following naming conventions:
 
 -   CEE\_... opcodes are the original opcodes defined in the IL stream. The first pass of the JIT transforms these opcodes to the corresponding OP\_ opcodes so CEE\_ opcodes do not occur in the intermediate code. Correspondingly, they have no opcode metadata, and are not listed in mini-ops.h.
--   OP\_\<XX\> opcodes are either size agnostic, like OP\_THROW, or operate on the natural pointer size of the machine, ie. OP\_ADD adds two pointer size integers.
--   OP\_I\<XXX\> opcodes work on 32 bit integers, ie. vregs of type STACK\_I4.
--   OP\_L\<XXX\> opcodes work on 64 bit integers, ie. vregs of type STACK\_I8.
--   OP\_F\<XXX\> opcodes work on 64 bit floats, i.e. vregs of type STACK\_R8.
--   OP\_V\<XXX\> opcodes work on valuetypes.
--   OP\_P\<XXX\> opcodes are macros which map to either OP\_I\<XXX\> or OP\_L\<XXX\> opcodes depending on whenever the architecture is 32 or 64 bits.
+-   OP_\<XX\> opcodes are either size agnostic, like OP_THROW, or operate on the natural pointer size of the machine, ie. OP_ADD adds two pointer size integers.
+-   OP_I\<XXX\> opcodes work on 32 bit integers, ie. vregs of type STACK_I4.
+-   OP_L\<XXX\> opcodes work on 64 bit integers, ie. vregs of type STACK_I8.
+-   OP_F\<XXX\> opcodes work on 64 bit floats, i.e. vregs of type STACK_R8.
+-   OP_V\<XXX\> opcodes work on valuetypes.
+-   OP_P\<XXX\> opcodes are macros which map to either OP_I\<XXX\> or OP_L\<XXX\> opcodes depending on whenever the architecture is 32 or 64 bits.
 
 ### High/low level IR
 
@@ -52,30 +51,30 @@ Each IR instruction is represented by a MonoInst structure. The fields of the st
 -   ins-\>backend is used for various purposes:
     -   for MonoInst's representing vtype variables, it indicates that the variable is in unmanaged format (used during marshalling)
     -   instructions which operate on a register pair use it for storing the third input register of the instruction.
-    -   some opcodes, like X86\_LEA use it for storing auxiliary information
+    -   some opcodes, like X86_LEA use it for storing auxiliary information
 
 -   ins-\>next and ins-\>prev are used for linking the instructions.
 
--   ins-\>ssa\_op -\> not used anymore
+-   ins-\>ssa_op -\> not used anymore
 
--   ins-\>cil\_code -\> Points to the IL instructions this ins belongs to. Used for generating native offset-\> IL offset maps for debugging support.
+-   ins-\>cil_code -\> Points to the IL instructions this ins belongs to. Used for generating native offset-\> IL offset maps for debugging support.
 
 -   ins-\>flags is used for storing various flags
 
--   ins-\>type and ins-\>klass contain type information for the result of the instruction. These fields are only used during the method\_to\_ir () pass.
+-   ins-\>type and ins-\>klass contain type information for the result of the instruction. These fields are only used during the method_to_ir () pass.
 
-In addition to the fields above, each MonoInst structure contains two pointer sized fields which can be used by the instruction for storing arbitrary data. They can be accessed using a set of inst\_\<XXX\> macros.
+In addition to the fields above, each MonoInst structure contains two pointer sized fields which can be used by the instruction for storing arbitrary data. They can be accessed using a set of inst_\<XXX\> macros.
 
 Some guidelines for their usage are as follows:
 
--   OP\_\<XXX\>\_IMM macros store their immediate argument in inst\_imm.
--   OP\_\<XXX\>\_MEMBASE macros store the basereg in inst\_basereg (sreg1), and the displacement in inst\_offset.
--   OP\_STORE\<XXX\>\_MEMBASE macros store the basereg in inst\_destbasereg (dreg), and the displacement in inst\_offset. This has historical reasons since the dreg is not modified by the instruction.
+-   OP_\<XXX\>_IMM macros store their immediate argument in inst_imm.
+-   OP_\<XXX\>_MEMBASE macros store the basereg in inst_basereg (sreg1), and the displacement in inst_offset.
+-   OP_STORE\<XXX\>_MEMBASE macros store the basereg in inst_destbasereg (dreg), and the displacement in inst_offset. This has historical reasons since the dreg is not modified by the instruction.
 
 Virtual Registers (Vregs)
 -------------------------
 
-All IR instructions work on vregs. A vreg is identified by an index. A vreg also has a type, which is one of the MonoStackType enumeration values. This type is implicit, i.e. it is not stored anywhere. Rather, the type can be deduced from the opcodes which work on the vreg, i.e. the arguments of the OP\_IADD opcode are of type STACK\_I4.
+All IR instructions work on vregs. A vreg is identified by an index. A vreg also has a type, which is one of the MonoStackType enumeration values. This type is implicit, i.e. it is not stored anywhere. Rather, the type can be deduced from the opcodes which work on the vreg, i.e. the arguments of the OP_IADD opcode are of type STACK_I4.
 
 There are two types of vregs used inside the JIT: Local and Global. They have the following differences:
 
@@ -83,7 +82,7 @@ There are two types of vregs used inside the JIT: Local and Global. They have th
 
 -   are local to a basic block
 -   are lightweight: allocating an lvreg is equivalent to increasing a counter, and they don't consume any memory.
--   some optimization passes like local\_deadce operate only on local vregs
+-   some optimization passes like local_deadce operate only on local vregs
 -   local vregs are assigned to hard registers (hregs) by the local register allocator. They do not participate in liveness analysis, and in global register allocation.
 -   they have no address, i.e. it is not possible to take their address
 -   they cannot be volatile
@@ -93,7 +92,7 @@ There are two types of vregs used inside the JIT: Local and Global. They have th
 -   are heavyweight: allocating them is slower, and they consume memory. Each global vreg has an entry in the cfg-\>varinfo and cfg-\>vars arrays.
 -   global vregs are either allocated to hard registers during global register allocation, or are allocated to stack slots.
 -   they have an address, so it is possible to apply the LDADDR operator to them.
--   The mapping between global vregs and their associated entry in the cfg-\>varinfo array is done by the cfg-\>vreg\_to\_inst array. There is a macro called get\_vreg\_to\_inst () which indexes into this array. A vreg vr is global if get\_vreg\_to\_inst (cfg, vr) returns non NULL.
+-   The mapping between global vregs and their associated entry in the cfg-\>varinfo array is done by the cfg-\>vreg_to_inst array. There is a macro called get_vreg_to_inst () which indexes into this array. A vreg vr is global if get_vreg_to_inst (cfg, vr) returns non NULL.
 
 ### Motivation
 
@@ -102,7 +101,7 @@ The JIT allocates a large number of vregs. Most of these are created during the 
 ### Transitioning between the two states
 
 -   Most vregs start out being local. Others, like the ones representing the arguments and locals of a method, start out being global.
--   Some transformations done by the JIT can break the invariant that an lvreg is local to a basic block. There is a separate pass, mono\_handle\_global\_vregs (), which verifies this invariant and transforms lvregs into global vregs if neccesary. This pass also does the opposite transformation, by transforming global vregs used only in one bblock into an lvreg.
+-   Some transformations done by the JIT can break the invariant that an lvreg is local to a basic block. There is a separate pass, mono_handle_global_vregs (), which verifies this invariant and transforms lvregs into global vregs if neccesary. This pass also does the opposite transformation, by transforming global vregs used only in one bblock into an lvreg.
 -   If an address of a vreg needs to be taken, the vreg is transformed into a global vreg.
 
 JIT Passes
@@ -110,28 +109,28 @@ JIT Passes
 
 ### Method-to-IR
 
-This is the first pass of the JIT, and also the largest. Its job is to convert the IL code of the method to our intermediate representation. Complex opcodes like isinst are decomposed immediately. It also performs verification in parallel. The code is in the function method\_to\_ir () in method-to-ir.c.
+This is the first pass of the JIT, and also the largest. Its job is to convert the IL code of the method to our intermediate representation. Complex opcodes like isinst are decomposed immediately. It also performs verification in parallel. The code is in the function method_to_ir () in method-to-ir.c.
 
 ### Decompose-Long-Opts
 
-This pass is responsible for decomposing instructions operating on longs on 32 bit platforms as described in the section 'Handling longs on 32 bit machines'. This pass changes the CFG of the method by introducing new bblocks. It resides in the mono\_decompose\_long\_opts () function in decompose.c.
+This pass is responsible for decomposing instructions operating on longs on 32 bit platforms as described in the section 'Handling longs on 32 bit machines'. This pass changes the CFG of the method by introducing new bblocks. It resides in the mono_decompose_long_opts () function in decompose.c.
 
 ### Local Copy/Constant Propagation
 
-This pass performs copy and constant propagation on single bblocks. It works by making a linear pass over the instructions inside a basic block, remembering the instruction where each vreg was defined, and using this knowledge to replace references to vregs by their definition if possible. It resides in the mono\_local\_cprop2 () function in local-propagation.c. This pass can run anytime. Currently, it is executed twice:
+This pass performs copy and constant propagation on single bblocks. It works by making a linear pass over the instructions inside a basic block, remembering the instruction where each vreg was defined, and using this knowledge to replace references to vregs by their definition if possible. It resides in the mono_local_cprop2 () function in local-propagation.c. This pass can run anytime. Currently, it is executed twice:
 
 -   Just after the method-to-ir pass to clean up the many redundant copies generated during the initial conversion to IR.
 -   After the spill-global-vars pass to optimize the loads/stores created by that pass.
 
 ### Branch Optimizations
 
-This pass performs a variety of simple branch optimizations. It resides in the optimize\_branches () function in mini.c.
+This pass performs a variety of simple branch optimizations. It resides in the optimize_branches () function in mini.c.
 
 This pass runs after local-cprop since it can use the transformations generated in that pass to eliminate conditional branches.
 
 ### Handle-Global-Vregs
 
-This pass is responsible for promoting vregs used in more than one basic block into global vregs. It can also do the opposite transformation, i.e. it can denote global vregs used in only one basic block into local ones. It resides in the mono\_handle\_global\_vregs () function in method-to-ir.c.
+This pass is responsible for promoting vregs used in more than one basic block into global vregs. It can also do the opposite transformation, i.e. it can denote global vregs used in only one basic block into local ones. It resides in the mono_handle_global_vregs () function in method-to-ir.c.
 
 This pass must be run before passes that need to distinguish between global and local vregs, i.e. local-deadce.
 
@@ -145,7 +144,7 @@ This pass must be run after the handle-global-vregs pass since it needs to disti
 
 ### Decompose VType Opts
 
-This pass is responsible for decomposing valuetype operations into simpler operations, as described in the section 'Handling valuetypes'. It resides in the mono\_decompose\_vtype\_opts () function in decompose.c.
+This pass is responsible for decomposing valuetype operations into simpler operations, as described in the section 'Handling valuetypes'. It resides in the mono_decompose_vtype_opts () function in decompose.c.
 
 This pass can be run anytime, but it should be run as late as possible to enable vtype opcodes to be optimized by the local and SSA optimizations.
 
@@ -167,13 +166,13 @@ This pass is responsible for allocating some vregs to one of the hard registers 
 
 ### Allocate Vars
 
-This arch-specific function is responsible for allocating all variables (or global vregs) to either a hard reg (as determined during global register allocation) or to a stack location. It depends on the mono\_allocate\_stack\_slots () function to allocate stack slots using a linear scan algorithm.
+This arch-specific function is responsible for allocating all variables (or global vregs) to either a hard reg (as determined during global register allocation) or to a stack location. It depends on the mono_allocate_stack_slots () function to allocate stack slots using a linear scan algorithm.
 
 ### Spill Global Vars
 
-This pass is responsible for processing global vregs in the IR. Vregs which are assigned to hard registers are replaced with the given registers. Vregs which are assigned to stack slots are replaced by local vregs and loads/stores are generated between the local vreg and the stack location. In addition, this pass also performs some optimizations to minimalize the number of loads/stores added, and to fold them into the instructions themselves on x86/amd64. It resides in the mono\_spill\_global\_vars () function in method-to-ir.c.
+This pass is responsible for processing global vregs in the IR. Vregs which are assigned to hard registers are replaced with the given registers. Vregs which are assigned to stack slots are replaced by local vregs and loads/stores are generated between the local vreg and the stack location. In addition, this pass also performs some optimizations to minimalize the number of loads/stores added, and to fold them into the instructions themselves on x86/amd64. It resides in the mono_spill_global_vars () function in method-to-ir.c.
 
-This pass must be run after the allocate\_vars () pass.
+This pass must be run after the allocate_vars () pass.
 
 Handling longs on 32 bit machines
 ---------------------------------
@@ -190,7 +189,7 @@ On 32 bit platforms like x86, the JIT needs to decompose opcodes operating on lo
       R12 <- IOR R22 R32
       R13 <- IOR R23 R33
 
--   Some opcodes, like OP\_LCALL can't be decomposed so they are retained in the IR. This leads to some complexity since other parts of the JIT has to be prepared to deal with long vregs.
+-   Some opcodes, like OP_LCALL can't be decomposed so they are retained in the IR. This leads to some complexity since other parts of the JIT has to be prepared to deal with long vregs.
 
 Handling valuetypes
 -------------------
@@ -201,24 +200,24 @@ Porting an existing backend to the new IR
 -----------------------------------------
 
 -   Add the following new functions:
-    -   mono\_arch\_emit\_call (). Same as mono\_arch\_call\_opcode (), but emits IR for pushing arguments to the stack. All the stuff in mono\_arch\_emit\_this\_vret\_args () should be done in emit\_call () too.
-    -   mono\_arch\_emit\_outarg\_vt (). Emits IR to push a vtype to the stack
-    -   mono\_arch\_emit\_setret (). Emits IR to move its argument to the proper return register
-    -   mono\_arch\_emit\_inst\_for\_method (). Same as mono\_arch\_get\_inst\_for\_method, but also emits the instructions.
+    -   mono_arch_emit_call (). Same as mono_arch_call_opcode (), but emits IR for pushing arguments to the stack. All the stuff in mono_arch_emit_this_vret_args () should be done in emit_call () too.
+    -   mono_arch_emit_outarg_vt (). Emits IR to push a vtype to the stack
+    -   mono_arch_emit_setret (). Emits IR to move its argument to the proper return register
+    -   mono_arch_emit_inst_for_method (). Same as mono_arch_get_inst_for_method, but also emits the instructions.
 
--   Add new opcodes to cpu-\<ARCH\>.md and mono\_arch\_output\_basic\_block ():
-    -   dummy\_use, dummy\_store, not\_reached
-    -   long\_bCC and long\_cCC opcodes
-    -   cond\_exc\_iCC opcodes
-    -   lcompare\_imm == op\_compare\_imm
-    -   int\_neg == neg
-    -   int\_not == not
-    -   int\_convXX == conv.iXX
-    -   op\_jump\_table
-    -   long\_add == cee\_add (on 64 bit platforms)
-    -   op\_start\_handler, op\_endfinally, op\_endfilter
--   In mono\_arch\_create\_vars, when the result is a valuetype, it needs to create a new variable to represent the hidden argument holding the vtype return address and store this variable into cfg-\>vret\_addr.
--   Also, in mono\_arch\_allocate\_vars, when the result is a valuetype, it needs to setup cfg-\>vret\_addr instead of cfg-\>ret.
+-   Add new opcodes to cpu-\<ARCH\>.md and mono_arch_output_basic_block ():
+    -   dummy_use, dummy_store, not_reached
+    -   long_bCC and long_cCC opcodes
+    -   cond_exc_iCC opcodes
+    -   lcompare_imm == op_compare_imm
+    -   int_neg == neg
+    -   int_not == not
+    -   int_convXX == conv.iXX
+    -   op_jump_table
+    -   long_add == cee_add (on 64 bit platforms)
+    -   op_start_handler, op_endfinally, op_endfilter
+-   In mono_arch_create_vars, when the result is a valuetype, it needs to create a new variable to represent the hidden argument holding the vtype return address and store this variable into cfg-\>vret_addr.
+-   Also, in mono_arch_allocate_vars, when the result is a valuetype, it needs to setup cfg-\>vret_addr instead of cfg-\>ret.
 
 For more info, compare the already converted backends like x86/amd64/ia64 with their original versions in HEAD. For example: [[1]](http://lists.ximian.com/pipermail/mono-patches/2006-April/073170.html)
 
@@ -248,7 +247,7 @@ All the benchmarks were run on an amd64 machine in 64 bit mode.
         current JIT: 9.421 secs
         linear IR: 9.223 secs (2% faster)
 
--   ziptest.exe from [https://bugzilla.novell.com/show\_bug.cgi?id=342190](https://bugzilla.novell.com/show_bug.cgi?id=342190) on the zerofile.bin input file:
+-   ziptest.exe from [https://bugzilla.novell.com/show_bug.cgi?id=342190](https://bugzilla.novell.com/show_bug.cgi?id=342190) on the zerofile.bin input file:
 
 <!-- -->
 
@@ -317,7 +316,7 @@ Improvements compared to the Mono 1.x and Mono 2.0 JITs
     -   elimination of many redundant copies when the result of a call is passed as an argument to another call.
     -   passing and returning small valuetypes in registers on x86/amd64.
 
--   Due to the elimination of the tree format, it is much easier to generate IR code for complex IL instructions. Some things, like branches, which are almost impossible to generate in the current JIT in the method\_to\_ir () pass, can be generated easily.
+-   Due to the elimination of the tree format, it is much easier to generate IR code for complex IL instructions. Some things, like branches, which are almost impossible to generate in the current JIT in the method_to_ir () pass, can be generated easily.
 
 -   The handling of soft-float on ARM is done in a separate pass instead of in a miriad places, hopefully getting rid of bugs in this area.
 

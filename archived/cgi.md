@@ -10,9 +10,9 @@ CGI
 
  [CGI](http://hoohoo.ncsa.illinois.edu/cgi/) is the most widely supported web server application interface. [ASP.NET](/ASP.NET "ASP.NET") (and [Mono](/Main_Page)) has a relatively long startup time and requires a relatively large amount of initial memory that makes it unsuitable to be used as a CGI application in the traditional way because CGI requires the web server to create a new application process for each request.
 
-Both [mod\_mono](/Mod_mono "Mod mono") and [fastcgi-mono-server](/FastCGI "FastCGI") are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
+Both [mod_mono](/Mod_mono "Mod mono") and [fastcgi-mono-server](/FastCGI "FastCGI") are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
 
-Shared hosing environments usually use [Apache](http://httpd.apache.org) that only has support for CGI out of the box. Both mod\_mono and FastCGI support require installing modules that can only be done by server administrators.
+Shared hosing environments usually use [Apache](http://httpd.apache.org) that only has support for CGI out of the box. Both mod_mono and FastCGI support require installing modules that can only be done by server administrators.
 
 [cgi-fcgi](http://www.fastcgi.com/) is a CGI to FastCGI bridge also capable of starting a FastCGI application that has support for a wide range of platforms. **cgi-fcgi** along with **fastcgi-mono-server** enables **ASP.NET** on any web server that has support for CGI without noticeable performance impact.
 
@@ -43,13 +43,13 @@ The following sample configuration assumes installation prefixes used here to co
 $ tar xzf fcgi-2.4.0.tar.gz
 $ cd fcgi-2.4.0
 $ ./configure --prefix=/home/username/fcgi
-$ make 
+$ make
 $ make install
 ...
 $ tar xjf mono-2.4.tar.bz2
 $ cd mono-2.4
 $ ./configure --prefix=/home/username/mono
-$ make 
+$ make
 $ make install
 ...
 $ tar xjf xsp-2.4.tar.bz2
@@ -57,7 +57,7 @@ $ cd xsp-2.4
 $ export PATH=/home/username/mono/bin:$PATH
 $ export PKG_CONFIG_PATH=/home/username/mono/lib/pkgconfig:$PKG_CONFIG_PATH
 $ ./configure --prefix=/home/username/mono
-$ make 
+$ make
 $ make install
 ```
 
@@ -68,7 +68,7 @@ If you have no shell access to the web server you can use [PHP Shell](http://php
 Script files
 ------------
 
-Handler CGI script (*/home/username/public\_html/cgi-bin/mono-cgi*):
+Handler CGI script (*/home/username/public_html/cgi-bin/mono-cgi*):
 
 ``` bash
 #!/home/username/fcgi/bin/cgi-fcgi -f
@@ -145,7 +145,7 @@ For security reasons you should execute this script using the user account of th
 ASP.NET configuration
 ---------------------
 
-To improve security you should disable access to CGI script source code (*/home/username/public\_html/cgi-bin/Web.config*):
+To improve security you should disable access to CGI script source code (*/home/username/public_html/cgi-bin/Web.config*):
 
 ``` xml
 <configuration>
@@ -160,12 +160,12 @@ To improve security you should disable access to CGI script source code (*/home/
 Apache configuration
 --------------------
 
-A simple Apache configuration file (*/home/username/public\_html/.htaccess*):
+A simple Apache configuration file (*/home/username/public_html/.htaccess*):
 
     Action mono-cgi /cgi-bin/mono-cgi
     AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 
-You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod\_Mono Configuration](/Mod_mono#manual-mod-mono-configuration "Mod mono").
+You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/Mod_mono#manual-mod-mono-configuration "Mod mono").
 
  To improve security you should protect ASP.NET Application Folders:
 
@@ -187,7 +187,7 @@ You may want to handle other extensions with ASP.NET. For more examples on confi
     Action mono-cgi /cgi-bin/mono-cgi
     SetHandler mono-cgi
 
-You also will have to create a configuration file (*/home/username/public\_html/cgi-bin/.htaccess*) to avoid server error resulting from circular dependency:
+You also will have to create a configuration file (*/home/username/public_html/cgi-bin/.htaccess*) to avoid server error resulting from circular dependency:
 
     <Files mono-cgi>
       Options +ExecCGI

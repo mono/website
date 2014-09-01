@@ -57,7 +57,7 @@ For the most up-to-date errata, please look at the [Mono Accessibility bug track
 
 Accessing GTK+ applications with the UIA Client API requires the most recent development version of the new dbus-based at-spi2, which is known to cause system instability. In Fedora, at-spi2 repeatedly causes [GDM to segfault](https://bugs.freedesktop.org/show_bug.cgi?id=26775). If you do not need this feature, do not install the latest at-spi2 and atk, or our packages which depend on them, which are at-spi-sharp and AtspiUiaSource. We are working hard to identify these issues and hope to aid the GNOME Accessibility Team in stabilizing at-spi2 in the near future.
 
-Winforms apps can deadlock with Orca running. This should be fixed in the next release. In the meantime, there is a patch attached to [bug \#515507](http://bugzilla.novell.com/show_bug.cgi?id=515507) which should address this.
+Winforms apps can deadlock with Orca running. This should be fixed in the next release. In the meantime, there is a patch attached to [bug #515507](http://bugzilla.novell.com/show_bug.cgi?id=515507) which should address this.
 
 Downloading
 -----------
@@ -79,7 +79,7 @@ Installing UIA and ATK support for System.Windows.Forms is as simple as adding o
 
 However, adding accessibility support for the Moonlight browser plugin requires a different set of steps:
 
--   Install the updated `xulrunner` package from the above repositories. *(This is required until Firefox 3.7 because of [bug \#480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317))*
+-   Install the updated `xulrunner` package from the above repositories. *(This is required until Firefox 3.7 because of [bug #480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317))*
 -   Install Novell Moonlight with Accessibility Support for [32 bit](http://mono-a11y.org/releases/2.0/i586/novell-moonlight.xpi) or [64 bit](http://mono-a11y.org/releases/2.0/x86_64/novell-moonlight.xpi).
 -   Install [Novell Moonlight Accessibility Extensions](http://mono-a11y.org/releases/2.0/noarch/novell-moonlight-a11y.xpi)
 -   Restart Firefox
@@ -101,5 +101,5 @@ Reporting Bugs
 
 If you find any issues with this release, please don't hesitate to [file bugs](https://bugzilla.novell.com/enter_bug.cgi?product=UI%20Automation).
 
-If you want to contribute or need specific assistance, please join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or drop in [\#mono-a11y](irc://irc.gimp.org/mono-a11y) on irc.gimp.org.
+If you want to contribute or need specific assistance, please join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or drop in [#mono-a11y](irc://irc.gimp.org/mono-a11y) on irc.gimp.org.
 

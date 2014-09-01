@@ -9,7 +9,7 @@ redirect_from:
 BosteenMonkey Guide
 ===================
 
- The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C\# programming, see [Books](/Books "Books").
+ The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C# programming, see [Books](/Books "Books").
 
 <table>
 <col width="100%" />
@@ -74,12 +74,12 @@ Desktop Application Programming
 GUI Toolkits
 ------------
 
--   [GTK\# - .NET binding for the Gtk+ toolkit.](/GtkSharp "GtkSharp")
-    -   [Programming With GTK\#](/Template:Programming_With_GTKSharp "Template:Programming With GTKSharp"): **Note** This section on GTK\# does use some content from the GTK+ Tutorial by Tony Gale, Ian Main, & the GTK team
+-   [GTK# - .NET binding for the Gtk+ toolkit.](/GtkSharp "GtkSharp")
+    -   [Programming With GTK#](/Template:Programming_With_GTKSharp "Template:Programming With GTKSharp"): **Note** This section on GTK# does use some content from the GTK+ Tutorial by Tony Gale, Ian Main, & the GTK team
 
 -   [WinForms: The System.Windows.Forms implementation in Mono](/WinForms "WinForms")
 
--   [Cocoa\# - .NET binding to the native MacOSX GUI toolkit](/MonoMac)
+-   [Cocoa# - .NET binding to the native MacOSX GUI toolkit](/MonoMac)
     -   [[1]](http://www.cocoasharp.org/cocoaSharp/default.aspx/CocoaSharp/CocoaSharp.html) Link to the CocoaSharp Wiki
 
 -   [http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/) - wxNet - .NET binding for the wxWindows cross-platform toolkit.
@@ -87,7 +87,7 @@ GUI Toolkits
 Web Programming
 ===============
 
--   [ASP.NET and mod\_mono](/ASP.NET_and_mod_mono "ASP.NET and mod mono")
+-   [ASP.NET and mod_mono](/ASP.NET_and_mod_mono "ASP.NET and mod mono")
 -   [Web Services](/Web_Services "Web Services")
 -   [Using Client Certificates with XSP](/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP")
 
@@ -110,7 +110,7 @@ Mono on Windows
 ===============
 
 -   [Using Mono on Windows](/Using_Mono_on_Windows "Using Mono on Windows")
--   [Installing Gtk\# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework")
+-   [Installing Gtk# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework")
 -   [Working with Mono and Visual Studio](/Working_with_Mono_and_Visual_Studio "Working with Mono and Visual Studio"): Using Visual Studio to test your application with Mono.
 
 Appendices

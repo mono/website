@@ -39,12 +39,12 @@ When the program has finished executing, the profiler prints the data in human r
 ``` bash
 Total time spent compiling 227 methods (sec): 0.07154 Slowest method to compile
  (sec): 0.01893: System.Console::.cctor() Time(ms) Count P/call(ms) Method name ########################
-91.681 1 91.681 .DebugOne::Main() Callers (with count) that contribute at least 
+91.681 1 91.681 .DebugOne::Main() Callers (with count) that contribute at least
 for 1%:
 1 100 % .DebugOne::Main(object,intptr,intptr)
 ... Total number of calls: 3741 ... Allocation profiler Total mem Method ########################
 406 KB .DebugOne::Main()
-406 KB 1000 System.Int32[] 
+406 KB 1000 System.Int32[]
 Callers (with count) that contribute at least for 1%:
 1 100 % .DebugOne::Main(object,intptr,intptr)
 Total memory allocated: 448 KB
@@ -54,7 +54,7 @@ At the top, it shows each method that is called. The data is sorted by the total
 
 Below this, it shows the top callers of the method. This is very useful data. If you find, for example, that the method Data::Computate () takes a very long time to run, you can look to see if any of the calls can be avoided.
 
-    Two warnings must be given about the method data. 
+    Two warnings must be given about the method data.
 
 First, the profiler has an overhead associated with it. As such, a high number of calls to a method may show up as consuming lots of time, when in reality they do not consume much time at all. If you see a method that has a very high number of calls, you may be able to ignore it. However, do consider removing calls if possible, as that will sometimes help performance. This problem is often seen with the use of built in collection types.
  Secondly, due to the nature of the profiler, recursive calls have extremely large times (because the profiler double counts when the method calls itself). One easy way to see this problem is that if a method is shown as taking more time than the Main method, it is very likely recursive, and causing this problem.
@@ -97,15 +97,15 @@ See the manual page for further details.
 
 Some profilers in Mono have problems with applications that unload the application domains (because some of the resources they use to report the data are unloaded).
 
-Use the MONO\_NO\_UNLOAD=1 environment variable to make those work.
+Use the MONO_NO_UNLOAD=1 environment variable to make those work.
 
 Profiling without JIT instrumentation
 -------------------------------------
 
 You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData](/archived/oprofilewithanonjitdata "OprofileWithAnonJitData")
 
-Memory Management in the .NET/Mono world.
-=========================================
+Memory Management in the .NET/Mono world
+========================================
 
 Since Mono and .NET offer automatic garbage collection, the programmer is freed from having to track and dispose the objects it consumes (except for IDispose-like classes). This is a great productivity gain, but if you create thousands of objects, that will make the garbage collector do more work, and it might slow down your application.
  Remember, each time you allocate an object, the GC is forced to find space for the object. Each object has an 8 byte overhead (4 to tell what type it is, then 4 for a sync block). If the GC finds that it is running out of room, it will scan every object for pointers, looking for unreferenced objects. If you allocate extra objects, the GC then must take the effort to free the objects.
@@ -119,15 +119,15 @@ The .NET framework provides a rich hierarchy of object types. Each object not on
  However, the language also must be able to treat primitives as first class datums -- in the class with objects. Languages handle this issue in different ways. Some choose to make a special class for each primitive, and force the user to do an operation such as:
 
 ``` shell
- // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ()); 
+ // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ());
 ```
 
- The C\# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
+ The C# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
  Boxing performs the same thing as Java's `new Integer (1)`. The user is not forced to write the extra code. However, behind the scenes the *same thing* is being done by the runtime. Each time a primitive is cast to an object, a new object is allocated.
  You must be careful when casting a primitive to an object. Note that because it is an implicit conversion, you will not see it in your code. For example, boxing is happening here:
 
 ``` shell
- ArrayList foo = new ArrayList (); foo.Add (1); 
+ ArrayList foo = new ArrayList (); foo.Add (1);
 ```
 
  In high performance code, this operation can be very costly.
@@ -190,7 +190,7 @@ Other problems
 Common problems with `foreach`
 ------------------------------
 
-The `foreach` C\# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
+The `foreach` C# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
 
 But foreach sometimes might generate code that under stress performs badly. Foreach performs badly when its used in tight loops, and its use leads to the creation of many enumerators. Although technically obtaining an enumerator for some objects like ArrayList is more efficient than using the ArrayList indexer, the pressure introduced due to the extra memory requirements and the demands on the garbage collector make it more inefficient.
 

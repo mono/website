@@ -90,7 +90,7 @@ A compacting collector would be able to move the data and not grow the heap:
 
 [![Compacting.png](/archived/images/b/bc/Compacting.png)](/archived/images/b/bc/Compacting.png)
 
-This represents an ideal situation, but there are some cases when moving the objects is not possible. In the CIL universe this can be caused because objects have been "pinned" which prevent objects from being moved. Pinning can happen either explicitly, (when you use the "fixed" directive in C\# for example, or implicitly as Mono's SGen collector treats the contents of the stack conservatively.
+This represents an ideal situation, but there are some cases when moving the objects is not possible. In the CIL universe this can be caused because objects have been "pinned" which prevent objects from being moved. Pinning can happen either explicitly, (when you use the "fixed" directive in C# for example, or implicitly as Mono's SGen collector treats the contents of the stack conservatively.
 
 At a major collection all objects for which this is possible are copied to newly allocated blocks. Pinned objects clearly cannot be copied, so they stay in place. All blocks that have been vacated completely are freed. In the ones that still contain pinned objects we zero the regions that are now empty. We don’t actually reuse that space in those blocks but just keep them around until all their objects have become unpinned. This is clearly an area where things can be improved.
 
@@ -136,22 +136,22 @@ In a copying collector like SGen’s nursery collector, which copies reachable o
 Here is a simplified (pinning is not handled) pseudo-code implementation of the central loop for the nursery collector:
 
 ``` c
-1:  while (!gray_stack_is_empty ()) { 
-2:      object = gray_stack_pop ();  
-3:      foreach (refp in object) {  
-4:          old = *refp;  
-5:          if (!ptr_in_nursery (old))  
-6:              continue;  
-7:          if (object_is_forwarded (old)) {  
-8:              new = forwarding_destination (old);  
-9:          } else { 
-10:              new = major_alloc (object_size (old)); 
-11:              copy_object (new, old); 
-12:              forwarding_set (old, new); 
-13:              gray_stack_push (new); 
-14:         } 
-15:         *refp = new; 
-16:     } 
+1:  while (!gray_stack_is_empty ()) {
+2:      object = gray_stack_pop ();
+3:      foreach (refp in object) {
+4:          old = *refp;
+5:          if (!ptr_in_nursery (old))
+6:              continue;
+7:          if (object_is_forwarded (old)) {
+8:              new = forwarding_destination (old);
+9:          } else {
+10:              new = major_alloc (object_size (old));
+11:              copy_object (new, old);
+12:              forwarding_set (old, new);
+13:              gray_stack_push (new);
+14:         }
+15:         *refp = new;
+16:     }
 17:  }
 ```
 
@@ -165,7 +165,7 @@ Since the purpose of a nursery collection is to avoid scanning all the allocated
 
 ### Pinning
 
-Either because the programmer has manually pinned an object (by using the fixed statement in C\#) or because we implicitly pinned an object because it is referenced in a managed to unmanaged transition or because the platform does not support precise stack scanning some object might be pinned down in memory.
+Either because the programmer has manually pinned an object (by using the fixed statement in C#) or because we implicitly pinned an object because it is referenced in a managed to unmanaged transition or because the platform does not support precise stack scanning some object might be pinned down in memory.
 
 Pinned objects are a bit of a complication since it is not possible to completely clean out the nursery, so it can become fragmented. This also requires an additional check in the central loop.
 
@@ -180,8 +180,8 @@ Large Objects
 
 SGen-GC also handles large objects in a special way. Since moving large objects is an expensive operation that can easily hurt performance. The SGen-GC allocates large objects directly on pages managed by the operating system, this allows the collector to release the memory back to the operating system when those blocks are no longer in use.
 
-Implementation Details
-----------------------
+LO Implementation Details
+-------------------------
 
 Note: This is an evolving piece of SGen-GC.
 
@@ -282,8 +282,8 @@ The GC also provides the following convenience function to allocate memory and r
 
 `mono_gc_alloc_obj` is used from within the Mono runtime through the following macros: `ALLOC_PTRFREE`, `ALLOC_OBJECT`, `ALLOC_TYPED`.
 
-Collection
-==========
+Collection details
+==================
 
 Major Collection
 ----------------
@@ -304,8 +304,8 @@ During a major collection, the following steps take place:
 
 The various stages are described in more detail in the following sections.
 
-Stopping the world.
--------------------
+Stopping the world
+------------------
 
 To perform the garbage collection, it is important that all the running threads are stopped, this is called "stopping the world". This guarantees that no changes are happening behind the GC's back and also, the compacting collector will need to move the objects, and update all pointers to the objects to point to their new locations.
 
@@ -323,7 +323,7 @@ The Mono runtime will automatically register all threads that are created from t
 
 The information about each registered thread is tracked in the `thread_table` hash table, a hash table that contains nodes of type `SgenThreadInfo`. The `SgenThreadInfo` contains among other things the RememberedSet for the thread as well as the end of the stack.
 
-Another important side effect of suspending the threads with a signal handler is that the values held on the registers are stored on the stack of each thread. The signal handler will update the stack\_start value in the current thread information. The GC will use this to conservatively scan the memory between `stack_start` and `stack_end`.
+Another important side effect of suspending the threads with a signal handler is that the values held on the registers are stored on the stack of each thread. The signal handler will update the stack_start value in the current thread information. The GC will use this to conservatively scan the memory between `stack_start` and `stack_end`.
 
 The dark areas represent the blocks of memory that the SgenThreadInfo will track for each thread in the running application and contain the live data on each of the thread stacks, in addition to the register values.
 
@@ -350,7 +350,7 @@ Both records are created through the `mono_gc_register_root`, its prototype is:
 
 The *start* and *size* arguments are used to specify the block in memory that represents the root.
 
-The *descr* argument is a root descriptor used to specify the contents of the block. The *ROOT\_DESC\_CONSERVATIVE* descriptor (which happens to be *NULL*) means that the block will be scanned conservatively for roots. Otherwise the *descr* represents a descriptor that specifies the object references in the specified block.
+The *descr* argument is a root descriptor used to specify the contents of the block. The *ROOT_DESC_CONSERVATIVE* descriptor (which happens to be *NULL*) means that the block will be scanned conservatively for roots. Otherwise the *descr* represents a descriptor that specifies the object references in the specified block.
 
 Currently the stack and register contents are scanned conservatively (the CPU registers are copied into a small buffer of memory that has been registered as a root block of memory that is to be scanned conservatively).
 
@@ -370,7 +370,7 @@ There are a number of complications over a simple copy collection:
 
 The nursery is a contiguous region of memory where all new objects are allocated, the region is delimited by two global variables `nursery_start` and `nursery_real_end`, the `nursery_next` pointer points to the location where the next object will be allocated.
 
-#### Implementation Details
+#### Nursery Implementation Details
 
 Segments of the nursery memory are delimited by the `nursery_next` and `nursery_temp_end`. This serves a number of purposes:
 
@@ -481,7 +481,7 @@ Dray Gray Stack
 Pinned Objects
 --------------
 
-The garbage collector also supports "pinned" objects, these are objects that for some reason should not be moved. For example, if an object reference is passed to an unmanaged function through P/Invoke, the object is pinned, as unmanaged code can not cope with objects that move behind its back. Objects are also pinned when developers use the `fixed` statement in C\#, like this:
+The garbage collector also supports "pinned" objects, these are objects that for some reason should not be moved. For example, if an object reference is passed to an unmanaged function through P/Invoke, the object is pinned, as unmanaged code can not cope with objects that move behind its back. Objects are also pinned when developers use the `fixed` statement in C#, like this:
 
 ``` csharp
     fixed (MyObject *p = &object){
@@ -549,7 +549,7 @@ Large Object Allocation
 
 Note: SGen-GC's Large Object Allocation strategy is an evolving one. The description in this paragraph reflects the implementation as of Mono 2.12 and will likely change as the GC is tuned to cope with most common usage patterns.
 
-Since moving large objects is an expensive operation, the GC treats any objects above 64k specially (the actual size is MAX\_SMALL\_OBJ\_SIZE, a value defined in the `sgen-gc.c` file). These objects are allocated using the `get_os_memory` routine.
+Since moving large objects is an expensive operation, the GC treats any objects above 64k specially (the actual size is MAX_SMALL_OBJ_SIZE, a value defined in the `sgen-gc.c` file). These objects are allocated using the `get_os_memory` routine.
 
 These objects do not participate in the copying/compacting process and are not stored in the memory managed by `GCMemSection`. Instead these objects are managed by a mark and sweep algorithm during a major collection and are kept track in a global list of large objects (in the structure `LOSObject` and the `los_object_list` linked list).
 
@@ -562,7 +562,7 @@ Since sgen supports pinning nursery objects, we cannot use a bump pointer to all
 
 So, a fragment is simply a start address and a size that describes a region of memory to which we can bump alloc into. They are organized in a linked list and the mutator tries to alloc from them until none is usable and another collection cycle is triggered.
 
-To balance performance and nursery utilization we sometimes discard fragments that are too small. This is controlled by the SGEN\_MAX\_NURSERY\_WASTE define.
+To balance performance and nursery utilization we sometimes discard fragments that are too small. This is controlled by the SGEN_MAX_NURSERY_WASTE define.
 
 Descriptors
 -----------
@@ -575,9 +575,9 @@ To create such a descriptor, the following routine is used:
      void *mono_gc_make_descr_from_bitmap (gsize *bitmap, int numbits);
 ```
 
-This routine will return a descriptor that encodes the object references as specified in the given bitmap (one bit per pointer). Internally the routine will find the best possible descriptor encoding for the given bitmap, as of this writing the routine will create a bitmap descriptor, provided that the bitmap fits on a pointer, otherwise it will return a *ROOT\_DESC\_CONSERVATIVE* descriptor.
+This routine will return a descriptor that encodes the object references as specified in the given bitmap (one bit per pointer). Internally the routine will find the best possible descriptor encoding for the given bitmap, as of this writing the routine will create a bitmap descriptor, provided that the bitmap fits on a pointer, otherwise it will return a *ROOT_DESC_CONSERVATIVE* descriptor.
 
-The code should eventually support other descriptor encodings like *ROOT\_DESC\_RUN\_LEN* and *ROOT\_DESC\_LARGE\_BITMAP* in addition to the two existing ones.
+The code should eventually support other descriptor encodings like *ROOT_DESC_RUN_LEN* and *ROOT_DESC_LARGE_BITMAP* in addition to the two existing ones.
 
 GCVTable
 --------
@@ -637,7 +637,7 @@ Stack Frames
 
 A frame on a stack consists of stack slots. Currently, we handle the following types of stack slots:
 
--   Slots used by the prolog/epilog. This includes the slot storing the return address, saved registers, padding slots used for aligning the stack etc. The arch specific code in mono\_arch\_emit\_prolog () notifies the GC Map creation code about these slots using internal API calls.
+-   Slots used by the prolog/epilog. This includes the slot storing the return address, saved registers, padding slots used for aligning the stack etc. The arch specific code in mono_arch_emit_prolog () notifies the GC Map creation code about these slots using internal API calls.
 -   Slots holding arguments/locals. We have precise type information for these. We do a GC specific liveness pass to determine which of these slots are alive at each call site. There are many subtypes of these slots, i.e. ones holding refs/non refs/byval variables, volatile variables, vtypes, etc. Since stack slots are shared, it is possible for one to hold a REF at one call site, and a NOREF at another.
 -   Spill slots used by the local register allocator.
 -   Param area slots which are used for passing arguments to called methods on the stack.

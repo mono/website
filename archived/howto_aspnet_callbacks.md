@@ -24,24 +24,24 @@ Default.aspx
 </head>
 <script type="text/javascript">
  
-    function SendValuesToSumatoryOnServer() 
-        {     
+    function SendValuesToSumatoryOnServer()
+        {
      var foo_a = document.getElementById("txt_fooa").value;
-     var foo_b = document.getElementById("txt_foob").value;    
+     var foo_b = document.getElementById("txt_foob").value;
          SumatoryOnServer(foo_a + ":" + foo_b,"");
     }
  
     function GetDataFromServer(tmpValue)
         {
-     var foo_result = document.getElementById("txt_fooresult");     
-         foo_result.value = tmpValue;   
+     var foo_result = document.getElementById("txt_fooresult");
+         foo_result.value = tmpValue;
     }
  
 </script>
 <body>
  <form id="frmMain" runat="server">
-    Sumatory = <asp:TextBox id="txt_fooa" 
-                                runat="server" 
+    Sumatory = <asp:TextBox id="txt_fooa"
+                                runat="server"
                                 style="font:status-bar;border:1px solid lightgray" />
     +
     <asp:TextBox id="txt_foob"
@@ -49,12 +49,12 @@ Default.aspx
              style="font:status-bar;border:1px solid lightgray" />
  
     <input type="button" id="btn_sum" value="click here to exec sumatory on server"
-           onclick="SendValuesToSumatoryOnServer()" 
+           onclick="SendValuesToSumatoryOnServer()"
            style="font:status-bar;border:1px solid black" />
     <br><br><br>
     Result: <asp:TextBox id="txt_fooresult"
                 runat="server"
-                style="font:status-bar;border:1px solid lightblue" /> 
+                style="font:status-bar;border:1px solid lightblue" />
     <br>
  
  </form>
@@ -73,24 +73,24 @@ public partial class Default:Page,ICallbackEventHandler {
  
   protected string returnValue;
  
-  protected void Page_Load(object o,EventArgs e) 
+  protected void Page_Load(object o,EventArgs e)
   {
     string callback_event_reference = this.ClientScript.GetCallbackEventReference(this,"arg","GetDataFromServer","context");
  
-    string callback_implementation = "function SumatoryOnServer(arg,context)" + 
+    string callback_implementation = "function SumatoryOnServer(arg,context)" +
                       "{ " + callback_event_reference + ";}";
 this.ClientScript.RegisterClientScriptBlock(this.GetType(),"SumatoryOnServer",callback_implementation,true);
   }
  
-  public void RaiseCallbackEvent(string eventArguments) 
+  public void RaiseCallbackEvent(string eventArguments)
   {
     char[] sep = {':'};
     string[] values = eventArguments.Split(sep[0]);
     double sum = double.Parse(values[0]) + double.Parse(values[1]);
-    returnValue = sum.ToString(); 
+    returnValue = sum.ToString();
   }
  
-  public string GetCallbackResult() 
+  public string GetCallbackResult()
   {
     return returnValue;
   }

@@ -39,7 +39,7 @@ If you don't use CRT at all you can use it under Mono.
 
 Using /clr:safe you cannot use CRT so it will run under Mono. Note that /clr:safe uses a more strict syntax than /clr:pure so it may be better to use /clr:pure.
 
-I think that eliminating CRT references (replacing them with class library) is simpler than rewriting the code in C\#.
+I think that eliminating CRT references (replacing them with class library) is simpler than rewriting the code in C#.
 
 -   Use [Run-Time Routines by Category](http://msdn.microsoft.com/en-us/library/2aza74he.aspx) on MSDN to find class library replacements for CRT functions.
 
@@ -56,7 +56,7 @@ Alternatively, or additionally, you may need to do the following:
 <!-- -->
 
      #pragma warning(disable:4483)
-     
+
      void __clrcall __identifier(".cctor")()
      {
      }

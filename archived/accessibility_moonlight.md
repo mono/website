@@ -85,7 +85,7 @@ Also you will need to create a .mozconfig file to help you building Firefox, use
     ac_add_options --disable-crashreporter
     ac_add_options --disable-necko-wifi
 
-Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)
+Notice latest patch is tracked in [Mozilla Bug #480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)
 
 ### Building Firefox with Plugin Accessibility (mozilla-1.9.2)
 
@@ -97,7 +97,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-1.9.2)](#building-for-firefox-mozilla-192)
+-   Then you can continue to [#Building for Firefox (mozilla-1.9.2)](#building-for-firefox-mozilla-192)
 
 ### Building Firefox with Plugin Accessibility (mozilla-central)
 
@@ -109,7 +109,7 @@ Notice latest patch is tracked in [Mozilla Bug \#480317](https://bugzilla.mozill
 
     make -f client.mk build
 
--   Then you can continue to [\#Building for Firefox (mozilla-central)](#building-for-firefox-mozilla-central)
+-   Then you can continue to [#Building for Firefox (mozilla-central)](#building-for-firefox-mozilla-central)
 
 ### Useful notes
 
@@ -129,7 +129,7 @@ When you get to a good stopping point, `hg commit` your code, and continue worki
 Sooner or later, you'll have to pull in the latest changes from HEAD into your branch. To make this easier, enable the Mercurial `rebase` plugin by putting
 
     [extensions]
-    hgext.rebase = 
+    hgext.rebase =
 
 into your `~/.hgrc` file.
 
@@ -228,24 +228,24 @@ Press the *Create Profile* button. Set the profile name to `dev` and the path to
     cd ../moon
     patch -p 0 < ../uia2atk/MoonAtkBridge/patches/moonlight-a11y-core-extension.diff
     patch -p 0 < ../uia2atk/MoonAtkBridge/patches/moonlight-a11y-slot-tree.diff
-    ./autogen.sh --prefix=/path/to/my/prefix --with-mcspath=../mono/mcs 
+    ./autogen.sh --prefix=/path/to/my/prefix --with-mcspath=../mono/mcs
 
 Autogen takes a little bit to run, then make sure that `./autogen.sh`'s output includes something like:
 
       Silverlight Support:
             Silverlight 1.0: yes
             Silverlight 2.0: yes
-              Browser plugin assemblies: yes 
+              Browser plugin assemblies: yes
                 Path to mcs tree: ./../mcs
                 Path to mono-basic tree: ./../mono-basic
-              Desktop application assemblies: yes 
+              Desktop application assemblies: yes
 
       Browser Support:
             Firefox: yes
               Plugin Installer (.xpi): yes
               Gecko 1.8 (Firefox 2): no (reason: missing FF2 development packages)
-              Gecko 1.9 (Firefox 3): yes 
-              Curl bridge: embedded 
+              Gecko 1.9 (Firefox 3): yes
+              Curl bridge: embedded
             Chrome (.crx): no (no chrome executable)
 
 The most important thing to notice is **Plugin Installer (.xpi): yes**.
@@ -268,7 +268,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#setting-up-the-moonatkbridge-environment-mozilla-192)
+-   Then you can continue to [#Setting up the MoonAtkBridge Environment (mozilla-1.9.2)](#setting-up-the-moonatkbridge-environment-mozilla-192)
 
 #### Building for Firefox (mozilla-central)
 
@@ -276,7 +276,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
 <!-- -->
 
-    git clone git://github.com/mono/gtk-sharp.git && cd gtk-sharp && git branch gtk-sharp-2-12 origin/gtk-sharp-2-12-branch && git checkout gtk-sharp-2-12 
+    git clone git://github.com/mono/gtk-sharp.git && cd gtk-sharp && git branch gtk-sharp-2-12 origin/gtk-sharp-2-12-branch && git checkout gtk-sharp-2-12
 
 -   Building moon requires its own copy of mcs/mono/mono-basic so make a new directory and change to it:
 
@@ -294,7 +294,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
 <!-- -->
 
-    git clone git://github.com/mono/mono.git mono && cd mono && git reset --hard 9c8cb87fe336e678e902 
+    git clone git://github.com/mono/mono.git mono && cd mono && git reset --hard 9c8cb87fe336e678e902
     && cd .. git clone git://github.com/mono/mono-basic.git mono-basic && cd mono-basic && git reset --hard HEAD
 
 -   Copy the folders to a lower level (you can also checkout the **same modules** and **the same revisions**, copying should be faster)
@@ -330,7 +330,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     cd ../gtk-sharp-2-12/ && ./bootstrap-2.12 --prefix=/path/to/my/prefix && make && make install
 
--   Change to moon\_checkout/moon and apply the following patch:
+-   Change to moon_checkout/moon and apply the following patch:
 
 <!-- -->
 
@@ -349,9 +349,9 @@ Autogen takes a while to run, then make sure that `./autogen.sh`'s output includ
         Firefox: yes
               Plugin Installer (.xpi): yes
               Gecko 1.8 (Firefox 2): no (reason: missing FF2 development packages)
-              Gecko 1.9 (Firefox 3): yes 
+              Gecko 1.9 (Firefox 3): yes
         Fallback bridge support:
-              Curl bridge: embedded 
+              Curl bridge: embedded
             Chrome (.crx): no (no chrome executable)
 
       Platform abstraction layer:
@@ -382,9 +382,9 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     ffd plugin/install/novell-moonlight.xpi
 
--   Then you can continue to [\#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
+-   Then you can continue to [#Setting up the MoonAtkBridge Environment (mozilla-central)](#setting-up-the-moonatkbridge-environment-mozilla-central)
 
-#### Useful notes
+#### Useful notes 2
 
 If you're making changes to Moonlight, you'll often have to:
 
@@ -415,7 +415,7 @@ When developing in MoonAtkBridge, just `make` after you make changes, and re-run
 
 #### Setting up the MoonAtkBridge Environment (mozilla-central)
 
--   MoonAtkBridge requires a *moon* folder in the same level, so you will have to create a symbolic link to moon\_checkout/moon/ first.
+-   MoonAtkBridge requires a *moon* folder in the same level, so you will have to create a symbolic link to moon_checkout/moon/ first.
 
 <!-- -->
 

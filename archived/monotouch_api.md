@@ -52,7 +52,7 @@ Overview
 
 In addition to the core Base Class Libraries that are part of Mono, [MonoTouch](/MonoTouch "MonoTouch") ships with bindings for various iPhone APIs to allow developers to create native iPhone applications with Mono.
 
-At the core of MonoTouch there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the iPhone C-based APIs like CoreGraphics and [OpenGLES](#opengles).
+At the core of MonoTouch there is an interop engine that bridges the C# world with the Objective-C world as well as bindings for the iPhone C-based APIs like CoreGraphics and [OpenGLES](#opengles).
 
 The low-level runtime to communicate with Objective-C code is in the [MonoTouch.ObjCRuntime](#monotouchobjcruntime). On top of this foundation bindings for [Foundation](#monotouchfoundation), CoreFoundation and [UIKit](#monotouchuikit) are provided.
 
@@ -67,18 +67,18 @@ Major Namespaces
 MonoTouch.ObjCRuntime
 ---------------------
 
-The [MonoTouch.ObjCRuntime](http://www.go-mono.com/docs/index.aspx?tlink=20@N:MonoTouch.ObjCRuntime) namespace allows developers to bridge the worlds between C\# and Objective-C. This is a new binding designed specifically for the iPhone based on the experience from Cocoa\# and Gtk\#.
+The [MonoTouch.ObjCRuntime](http://www.go-mono.com/docs/index.aspx?tlink=20@N:MonoTouch.ObjCRuntime) namespace allows developers to bridge the worlds between C# and Objective-C. This is a new binding designed specifically for the iPhone based on the experience from Cocoa# and Gtk#.
 
 MonoTouch.Foundation
 --------------------
 
 The [MonoTouch.Foundation](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.Foundation) namespace provides the basic data types designed to interoperate with the Objective-C Foundation framework that is part of the iPhone and it is the base for object oriented programming in Objective-C.
 
-MonoTouch mirrors in C\# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) is usable from C\# via [MonoTouch.Foundation.NSObject](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.NSObject).
+MonoTouch mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) is usable from C# via [MonoTouch.Foundation.NSObject](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.NSObject).
 
 Although this namespace provides bindings for the underlying Objective-C Foundation types, in a few cases we have mapped the underlying types to .NET types. For example:
 
--   Instead of dealing with [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) and [NSArray](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html) the runtime instead exposes these as C\# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String)s and strongly typed [array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
+-   Instead of dealing with [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) and [NSArray](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String)s and strongly typed [array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
 -   Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other iPhone APIs or APIs that are not currently bound by MonoTouch.
 
 For more details on binding APIs see the MonoTouch Binding Generator section.
@@ -92,9 +92,9 @@ While Mono will provide garbage collection for all of your objects, we made the 
 MonoTouch.UIKit
 ---------------
 
-The [MonoTouch.UIKit](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.UIKit) namespace contains a 1 to 1 mapping to all of the UI components that make up CocoaTouch in the form of C\# classes. The API has been modified to follow the conventions used in the C\# language.
+The [MonoTouch.UIKit](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.UIKit) namespace contains a 1 to 1 mapping to all of the UI components that make up CocoaTouch in the form of C# classes. The API has been modified to follow the conventions used in the C# language.
 
-C\# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
+C# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
 
 OpenGLES
 --------
@@ -108,33 +108,33 @@ OpenGLES 2.0 functionality is available through the [ES](http://www.go-mono.com/
 Binding Design
 ==============
 
-MonoTouch is not merely a binding to the underlying Objective-C platform. It extends the .NET type system and dispatch system to better blend C\# and Objective-C.
+MonoTouch is not merely a binding to the underlying Objective-C platform. It extends the .NET type system and dispatch system to better blend C# and Objective-C.
 
-Just like P/Invoke is a useful tool to invoke native libraries on Windows and Linux, or how IJW support can be used for COM interop on Windows, MonoTouch extends the runtime to support binding C\# objects to Objective-C objects.
+Just like P/Invoke is a useful tool to invoke native libraries on Windows and Linux, or how IJW support can be used for COM interop on Windows, MonoTouch extends the runtime to support binding C# objects to Objective-C objects.
 
 The discussion in the next few sections is not necessary for users that are creating MonoTouch applications, but will help developers understand how things are done and will assist them when creating more complicated applications.
 
 Types
 -----
 
-Where it made sense, we exposed C\# types instead of low-level MonoTouch.Foundation types to the C\# universe. This means that the API uses the C\# "string" type instead of NSString and it uses strongly typed C\# arrays instead of exposing NSArray.
+Where it made sense, we exposed C# types instead of low-level MonoTouch.Foundation types to the C# universe. This means that the API uses the C# "string" type instead of NSString and it uses strongly typed C# arrays instead of exposing NSArray.
 
 Additionally, instead of exposing CGRect, CGPoint and CGSize from the CoreGraphics API, we replaced those with the System.Drawing implementations RectF, PointF and SizeF as they would help developers preserve existing OpenGL code that uses OpenTK.
 
 Delegates
 ---------
 
-Objective-C and C\# have different meanings for the words delegate in each language.
+Objective-C and C# have different meanings for the words delegate in each language.
 
-In the Objective-C world and in the documentation that you will find online about CocoaTouch, a delegate is typically an instance of a class that will respond to a set of methods. This is very similar to a C\# interface with the difference that the methods are not always mandatory.
+In the Objective-C world and in the documentation that you will find online about CocoaTouch, a delegate is typically an instance of a class that will respond to a set of methods. This is very similar to a C# interface with the difference that the methods are not always mandatory.
 
  These delegates play an important role in UIKit and other CocoaTouch APIs. They are used for various things:
 
--   To provide notifications to your code (Similar to event delivery in C\# or Gtk+)
+-   To provide notifications to your code (Similar to event delivery in C# or Gtk+)
 -   To implement models for data visualization controls.
 -   To drive the behavior of a control.
 
-The programming pattern was designed to minimize the creation of derived classes to alter behavior for a control. This solution is similar in spirit to what other GUI toolkits have done over the years: Gtk's signals, Qt slots, Winforms events, WPF/Silverlight events and so on. To avoid having hundreds of interfaces (one for each action) or requiring developers to implement too many methods they do not need, Objective-C supports optional method definitions. This is different than C\# interfaces that require all methods to be implemented.
+The programming pattern was designed to minimize the creation of derived classes to alter behavior for a control. This solution is similar in spirit to what other GUI toolkits have done over the years: Gtk's signals, Qt slots, Winforms events, WPF/Silverlight events and so on. To avoid having hundreds of interfaces (one for each action) or requiring developers to implement too many methods they do not need, Objective-C supports optional method definitions. This is different than C# interfaces that require all methods to be implemented.
 
 In Objective-C classes, you will see that classes that use this programming pattern expose a property, usually called `delegate` which is required to implement the mandatory parts of the interface and zero or more of the optional parts.
 
@@ -148,7 +148,7 @@ For example, consider the [UIWebView](http://developer.apple.com/iphone/library/
 
 ### Via Events
 
-For many types, MonoTouch will automatically create an appropriate delegate which will forward the UIWebViewDelegate calls onto C\# events. For UIWebView:
+For many types, MonoTouch will automatically create an appropriate delegate which will forward the UIWebViewDelegate calls onto C# events. For UIWebView:
 
 -   The [webViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) method is mapped to the [UIWebView.LoadStarted](http://www.go-mono.com/docs/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadStarted) event.
 -   The [webViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) method is mapped to the [UIWebView.LoadFinished](http://www.go-mono.com/docs/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadFinished) event.
@@ -179,7 +179,7 @@ class Notifier : UIWebViewDelegate  {
     }
  
     public override LoadingFinished (UIWebView webView)
-    { 
+    {
         endTime= DateTime.Now;
     }
 }
@@ -216,7 +216,7 @@ class Notifier : NSObject  {
  
     [Export ("webViewDidFinishLoad:")]
     public void LoadingFinished (UIWebView webView)
-    { 
+    {
         endTime= DateTime.Now;
     }
 }
@@ -235,7 +235,7 @@ When you see Objective-C samples that look like this:
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
-This instructs the language to create and construct an instance of the class "SomethingDelegate" and assign the value to the delegate property on the foo variable. This mechanism is supported by MonoTouch and C\# the syntax is:
+This instructs the language to create and construct an instance of the class "SomethingDelegate" and assign the value to the delegate property on the foo variable. This mechanism is supported by MonoTouch and C# the syntax is:
 
 ``` csharp
     foo.Delegate = new SomethingDelegate ();
@@ -254,10 +254,10 @@ In the following example, we provide the UIPickerView with an implementation for
 ``` csharp
 public class SampleTitleModel : UIPickerViewTitleModel {
  
-    public override string TitleForRow (UIPickerView picker, int row, int component) 
-    { 
+    public override string TitleForRow (UIPickerView picker, int row, int component)
+    {
         return String.Format ("At {0} {1}", row, component);
-    } 
+    }
 }
  
 [...]
@@ -265,7 +265,7 @@ public class SampleTitleModel : UIPickerViewTitleModel {
 pickerView.Model = new MyPickerModel ();
 ```
 
-The second form is to provide notification for events. In those cases, although we still expose the API in the form outlined above, we also provide C\# events, which should be simpler to use for quick operations and integrated with anonymous delegates and lambda expressions in C\#.
+The second form is to provide notification for events. In those cases, although we still expose the API in the form outlined above, we also provide C# events, which should be simpler to use for quick operations and integrated with anonymous delegates and lambda expressions in C#.
 
 For example, you can subscribe to UIAccelerometer events like this:
 
@@ -276,9 +276,9 @@ For example, you can subscribe to UIAccelerometer events like this:
    }
 ```
 
-The two options are available where they make sense, but as a programmer you must pick one or the other. If you create your own instance of a strongly typed responder/delegate and assign it, the C\# events will not be functional. If you use the C\# events, the methods in your responder/delegate class will never be called.
+The two options are available where they make sense, but as a programmer you must pick one or the other. If you create your own instance of a strongly typed responder/delegate and assign it, the C# events will not be functional. If you use the C# events, the methods in your responder/delegate class will never be called.
 
-The previous example that used UIWebView can be written using C\# 3.0 lambdas like this:
+The previous example that used UIWebView can be written using C# 3.0 lambdas like this:
 
 ``` csharp
 var web = new UIWebView (new CGRect (0, 0, 200, 200));
@@ -291,7 +291,7 @@ Responding to Events
 
 In Objective-C code sometimes event handlers for multiple controls and provides for information for multiple controls will be hosted in the same class. This is possible because classes respond to messages, and as long as a class responds to that message it is possible to link objects together.
 
-As previously detailed, MonoTouch supports both the Objective-C delegate pattern, when you can create a new class that implements the delegate and override the desired methods as well as the C\# event-based programming model.
+As previously detailed, MonoTouch supports both the Objective-C delegate pattern, when you can create a new class that implements the delegate and override the desired methods as well as the C# event-based programming model.
 
 It is also possible to support Objective-C's pattern where responders for multiple different operations are all hosted in the same instance of a class. To do this though, you will have to use low-level features of the MonoTouch binding.
 
@@ -305,7 +305,7 @@ public class MyCallbacks : NSObject {
         return true;
     }
  
-    [Export ("webViewDidStartLoad:")] 
+    [Export ("webViewDidStartLoad:")]
     public void OnWebViewStart (UIWebView view)
     {
         Console.WriteLine ("Loading started");
@@ -313,9 +313,9 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-The C\# names for the methods are not important, all that matters are the strings passed to the [Export] attribute.
+The C# names for the methods are not important, all that matters are the strings passed to the [Export] attribute.
 
-When using this style of programming you are responsible for making sure that the C\# parameters match the actual types that the runtime engine will pass.
+When using this style of programming you are responsible for making sure that the C# parameters match the actual types that the runtime engine will pass.
 
 Models
 ------
@@ -374,12 +374,12 @@ public class AppController : UIApplicationDelegate {
 }
 ```
 
-The advantage is that there is no need to dig into the Objective-C header files to find the selector, the types of the arguments, the mapping to C\# and that you get intellisense from MonoDevelop and strong types.
+The advantage is that there is no need to dig into the Objective-C header files to find the selector, the types of the arguments, the mapping to C# and that you get intellisense from MonoDevelop and strong types.
 
-Interface Builder Outlets and C\#
+Interface Builder Outlets and C#
 ---------------------------------
 
-This is a low-level description of how Outlets integrate with C\# and is provided for advanced users of MonoTouch. When using MonoDevelop the mapping is done automatically behind the scenes using generated code on the flight for you.
+This is a low-level description of how Outlets integrate with C# and is provided for advanced users of MonoTouch. When using MonoDevelop the mapping is done automatically behind the scenes using generated code on the flight for you.
 
 When you design your user interface with Interface Builder, you will only be designing the look of the application and will establish some default connections. If you want to programatically fetch information, alter the behavior of a control at runtime or modify the control at runtime, it is necessary to bind some of the controls to your managed code.
 
@@ -415,7 +415,7 @@ This loads the user interface from the NIB. Now, to access the outlets, it is ne
 
 ``` csharp
 [Connect]
-UITextField UserName { 
+UITextField UserName {
     get {
         return (UITextField) GetNativeField ("UserName");
     }
@@ -434,13 +434,13 @@ Selectors
 
 A core concept of Objective-C programming are selectors. You will often come across APIs that require you to pass a selector, or expects your code to respond to a selector.
 
-Creating new selectors in C\# is very easy, you just create a new instance of the `MonoTouch.ObjCRuntime.Selector` class and use the result in any place in the API that requires it. For example:
+Creating new selectors in C# is very easy, you just create a new instance of the `MonoTouch.ObjCRuntime.Selector` class and use the result in any place in the API that requires it. For example:
 
 ``` csharp
     var selector_add = new Selector ("add:plus:");
 ```
 
-To make a C\# method respond to a selector call, you need to inherit from the NSObject type and decorating your C\# method with the selector name using the [Export] attribute, for example:
+To make a C# method respond to a selector call, you need to inherit from the NSObject type and decorating your C# method with the selector name using the [Export] attribute, for example:
 
 ``` csharp
 public class MyMath : NSObject {

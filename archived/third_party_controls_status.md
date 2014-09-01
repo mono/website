@@ -558,7 +558,7 @@ Infragistics.Documents
 
 [Infragistics.Documents Official Website](http://www.infragistics.com/dotnet/netadvantage/winforms/infragisticsdocuments.aspx#Overview)
 
-The Infragistics.Documents code library for .NET helps C\# and VB.NET developers alike in the layout and production of quality electronic documents. Supporting both the Adobe® Portable Document Format (PDF) and the Extensible Paper Specification (XPS) document formats, Infragistics.Documents makes your content readable by any of the millions of PDF and XPS-supporting applications already installed worldwide. An interface-driven, easy to program against object model abstracts away low-level document format details. This organization focuses your development effort on using the features you need to produce as simple, or as sophisticated, a document layout as your application requires.
+The Infragistics.Documents code library for .NET helps C# and VB.NET developers alike in the layout and production of quality electronic documents. Supporting both the Adobe® Portable Document Format (PDF) and the Extensible Paper Specification (XPS) document formats, Infragistics.Documents makes your content readable by any of the millions of PDF and XPS-supporting applications already installed worldwide. An interface-driven, easy to program against object model abstracts away low-level document format details. This organization focuses your development effort on using the features you need to produce as simple, or as sophisticated, a document layout as your application requires.
 
 ||
 |[![Button ok.png](/archived/images/7/75/Button_ok.png)](/archived/images/7/75/Button_ok.png)|All methods called exist in Mono.|
@@ -573,7 +573,7 @@ Infragistics.Excel
 
 [Infragistics.Excel Official Website](http://www.infragistics.com/dotnet/netadvantage/winforms/infragisticsexcel.aspx#Overview)
 
-Maximize the value your users get out of the information in your Windows® Forms application by making it portable with Microsoft® Excel® and many other popular spreadsheet applications. Now you can build your data-driven solutions on top of the Infragistics.Excel code library for C\# and VB.NET developers, with the interoperability you need to both read and write .XLS files. Your users will appreciate the new found freedom of taking data with them to work with in the best environment for the task, such as running "What If?" scenarios in Excel and then importing those calculations back into your application. Leveraging this collaboration can produce remarkable returns because we take care of the file interoperability, and relieve you of having to replicate expensive spreadsheet capabilities on your own.
+Maximize the value your users get out of the information in your Windows® Forms application by making it portable with Microsoft® Excel® and many other popular spreadsheet applications. Now you can build your data-driven solutions on top of the Infragistics.Excel code library for C# and VB.NET developers, with the interoperability you need to both read and write .XLS files. Your users will appreciate the new found freedom of taking data with them to work with in the best environment for the task, such as running "What If?" scenarios in Excel and then importing those calculations back into your application. Leveraging this collaboration can produce remarkable returns because we take care of the file interoperability, and relieve you of having to replicate expensive spreadsheet capabilities on your own.
 
 ||
 |[![Button ok.png](/archived/images/7/75/Button_ok.png)](/archived/images/7/75/Button_ok.png)|All methods called exist in Mono.|
@@ -681,7 +681,7 @@ GridEX
 
 [Janus Systems Official Website](http://www.janusys.com/controls/)
 
-The Janus GridEX Control for .NET is a 100% C\# managed control that has been totally revamped to better take advantage of Microsoft’s .NET framework capabilities; The control has most features you could expect from a Grid and more.
+The Janus GridEX Control for .NET is a 100% C# managed control that has been totally revamped to better take advantage of Microsoft’s .NET framework capabilities; The control has most features you could expect from a Grid and more.
 
 ||
 |[![Button ok.png](/archived/images/7/75/Button_ok.png)](/archived/images/7/75/Button_ok.png)|All methods called exist in Mono.|
@@ -696,7 +696,7 @@ Schedule
 
 [Janus Systems Official Website](http://www.janusys.com/controls/)
 
-The Janus Schedule Control for .NET is a 100% C\#, managed control patterned after Outlook’s Calendar View.
+The Janus Schedule Control for .NET is a 100% C#, managed control patterned after Outlook’s Calendar View.
 
 The control can present appointments or items arranged on a calendar, similar to a day planner in paper form. You can view items in different blocks of time or “Views”, which represent Days, Work Weeks, Weeks and Months. Since all the Views are part of the same Schedule control you can easily switch between them.
 
@@ -740,9 +740,6 @@ A novel control patterned after MS Outlook’s Journal. The Janus Timeline Contr
 
 SpreadsheetGear
 ===============
-
-SpreadsheetGear
----------------
 
 [SpreadsheetGear Official Website](http://www.spreadsheetgear.com/products/spreadsheetgear.net.aspx)
 

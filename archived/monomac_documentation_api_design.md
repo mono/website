@@ -69,7 +69,7 @@ Overview
 
 In addition to the core Base Class Libraries that are part of Mono, [MonoMac](/MonoMac "MonoMac") ships with bindings for various APIs to allow developers to create native Mac OS X applications with Mono.
 
-At the core of MonoMac there is an interop engine that bridges the C\# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and [OpenGL](#opengl).
+At the core of MonoMac there is an interop engine that bridges the C# world with the Objective-C world as well as bindings for the OSX C-based APIs like CoreGraphics and [OpenGL](#opengl).
 
 The low-level runtime to communicate with Objective-C code is in the [MonoMac.ObjCRuntime](#monomacobjcruntime). On top of this foundation bindings for [Foundation](#monomacfoundation), CoreFoundation and [AppKit](#monomacappkit) are provided.
 
@@ -80,31 +80,31 @@ These are some of our design principles for the MonoMac binding:
 
 -   Follow the Framework Design Guidelines
 -   Allow developers to subclass Objective-C classes
-    -   Subclass should work with C\# standard constructs
+    -   Subclass should work with C# standard constructs
         -   Derive from an existing class
         -   Call base constructor to chain
-        -   Overriding methods should be done with C\#'s override system
+        -   Overriding methods should be done with C#'s override system
     -   Do not expose developers to Objective-C selectors.
 -   Provide a mechanism to call arbitrary Objective-C libraries
 -   Make common Objective-C tasks easy, and hard Objective-C tasks possible
--   Expose Objective-C properties as C\# properties
+-   Expose Objective-C properties as C# properties
 -   Expose a strongly typed API:
     -   Increase type-safety
     -   Minimize runtime errors
     -   Get IDE intellisense on return types
     -   Allows for IDE popup documentation
     -   Encourage in-IDE exploration of the APIs:
--   Native C\# types:
-    -   [MonoMac/Documentation/API\_Design/NSString|NSString becomes string]]
-    -   Turn int and uint parameters that should have been enums as C\# enumerations and C\# enumerations with [Flags] attributes.
+-   Native C# types:
+    -   [MonoMac/Documentation/API_Design/NSString|NSString becomes string]]
+    -   Turn int and uint parameters that should have been enums as C# enumerations and C# enumerations with [Flags] attributes.
     -   Instead of type-neutral NSArray objects expose arrays as strongly typed arrays.
         -   Example: instead of *NSArray \*getViews*, we expose the strongly typed: *NSView [] Views { get; set; }* which gives MonoDevelop a nicer code completion experience.
 -   Events and notifications, give users a choice between:
     -   Support the Objective-C delegate pattern:
         -   Strongly typed version is the default\</li\>
         -   Weakly typed version for advance use cases.\</li\>
-    -   C\# event system
--   Expose C\# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as *blocks*.
+    -   C# event system
+-   Expose C# delegates (lambdas, anonymous methods and System.Delegate) to Objective-C APIs as *blocks*.
 
 Unbound Types & Members
 -----------------------
@@ -116,17 +116,17 @@ Major Namespaces
 
 ### MonoMac.ObjCRuntime
 
-The [MonoMac.ObjCRuntime](http://docs.go-mono.com/MonoMac.ObjCRuntime) namespace allows developers to bridge the worlds between C\# and Objective-C.
+The [MonoMac.ObjCRuntime](http://docs.go-mono.com/MonoMac.ObjCRuntime) namespace allows developers to bridge the worlds between C# and Objective-C.
 
 ### MonoMac.Foundation
 
 The [MonoMac.Foundation](http://docs.go-mono.com/MonoMac.Foundation) namespace provides the basic data types designed to interoperate with the Objective-C Foundation framework that is part of Mac OS X and is the base for object oriented programming in Objective-C.
 
-MonoMac mirrors in C\# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003706) is usable from C\# via [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject).
+MonoMac mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003706) is usable from C# via [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject).
 
 Although this namespace provides bindings for the underlying Objective-C Foundation types, in a few cases we have mapped the underlying types to .NET types. For example:
 
-1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C\# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
+1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
 2.  Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other OS X APIs or APIs that are not currently bound by MonoMac.
 
 For more details on binding APIs see the [MonoMac Binding Generator](/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types") section.
@@ -153,9 +153,9 @@ You can apply this attribute on every member of a type, or on the type itself. I
 
 ### MonoMac.AppKit
 
-The [MonoMac.AppKit](http://docs.go-mono.com/MonoMac.AppKit) namespace contains a one to one mapping to all of the UI components that make up Cocoa in the form of C\# classes. The API has been modified to follow the conventions used in the C\# language.
+The [MonoMac.AppKit](http://docs.go-mono.com/MonoMac.AppKit) namespace contains a one to one mapping to all of the UI components that make up Cocoa in the form of C# classes. The API has been modified to follow the conventions used in the C# language.
 
-C\# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
+C# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
 
 ### OpenGL
 
@@ -164,21 +164,21 @@ For OpenGL we use the [MonoMac.OpenGL](http://docs.go-mono.com/MonoMac.OpenGL) n
 Binding Design
 --------------
 
-MonoMac is not merely a binding to the underlying Objective-C platform. It extends the .NET type system and dispatch system to better blend C\# and Objective-C.
+MonoMac is not merely a binding to the underlying Objective-C platform. It extends the .NET type system and dispatch system to better blend C# and Objective-C.
 
-Just like P/Invoke is a useful tool to invoke native libraries on Windows and Linux, or how IJW support can be used for COM interop on Windows, MonoMac extends the runtime to support binding C\# objects to Objective-C objects.
+Just like P/Invoke is a useful tool to invoke native libraries on Windows and Linux, or how IJW support can be used for COM interop on Windows, MonoMac extends the runtime to support binding C# objects to Objective-C objects.
 
 The discussion in the next few sections is not necessary for users that are creating MonoMac applications, but will help developers understand how things are done and will assist them when creating more complicated applications.
 
 ### Types
 
-Where it made sense, we exposed C\# types instead of low-level MonoMac.Foundation types to the C\# universe. This means that [the API uses the C\# "string" type instead of NSString](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString") and it uses strongly typed C\# arrays instead of exposing NSArray.
+Where it made sense, we exposed C# types instead of low-level MonoMac.Foundation types to the C# universe. This means that [the API uses the C# "string" type instead of NSString](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString") and it uses strongly typed C# arrays instead of exposing NSArray.
 
 Additionally, instead of exposing CGRect, CGPoint and CGSize from the CoreGraphics API, we replaced those with the System.Drawing implementations RectF, PointF and SizeF as they would help developers preserve existing OpenGL code that uses OpenTK.
 
 ### Inheritance
 
-The MonoMac API design allows developers to extend native Objective-C types in the same way that they would extend a C\# type, using the "override" keyword on a derived class as well as chaining up to the base implementation using the "base" C\# keyword.
+The MonoMac API design allows developers to extend native Objective-C types in the same way that they would extend a C# type, using the "override" keyword on a derived class as well as chaining up to the base implementation using the "base" C# keyword.
 
 This design allows developers to avoid dealing with Objective-C selectors as part of their development process as the entire Objective-C system is wrapped already by the MonoMac libraries.
 
@@ -197,17 +197,17 @@ public partial class void MyView : NSView {
 
 ### Delegates
 
-Objective-C and C\# have different meanings for the words delegate in each language.
+Objective-C and C# have different meanings for the words delegate in each language.
 
-In the Objective-C world and in the documentation that you will find online about Cocoa, a delegate is typically an instance of a class that will respond to a set of methods. This is very similar to a C\# interface with the difference that the methods are not always mandatory.
+In the Objective-C world and in the documentation that you will find online about Cocoa, a delegate is typically an instance of a class that will respond to a set of methods. This is very similar to a C# interface with the difference that the methods are not always mandatory.
 
 These delegates play an important role in UIKit and other Cocoa APIs. They are used for various things:
 
--   To provide notifications to your code (Similar to event delivery in C\# or Gtk+)
+-   To provide notifications to your code (Similar to event delivery in C# or Gtk+)
 -   To implement models for data visualization controls.
 -   To drive the behavior of a control.
 
-The programming pattern was designed to minimize the creation of derived classes to alter behavior for a control. This solution is similar in spirit to what other GUI toolkits have done over the years: Gtk's signals, Qt slots, Winforms events, WPF/Silverlight events and so on. To avoid having hundreds of interfaces (one for each action) or requiring developers to implement too many methods they do not need, Objective-C supports optional method definitions. This is different than C\# interfaces that require all methods to be implemented.
+The programming pattern was designed to minimize the creation of derived classes to alter behavior for a control. This solution is similar in spirit to what other GUI toolkits have done over the years: Gtk's signals, Qt slots, Winforms events, WPF/Silverlight events and so on. To avoid having hundreds of interfaces (one for each action) or requiring developers to implement too many methods they do not need, Objective-C supports optional method definitions. This is different than C# interfaces that require all methods to be implemented.
 
 In Objective-C classes, you will see that classes that use this programming pattern expose a property, usually called *delegate* which is required to implement the mandatory parts of the interface and zero or more of the optional parts.
 
@@ -216,13 +216,13 @@ In MonoMac we offer four mutually exclusive mechanisms to bind to these delegate
 -   [Via events](#via-events).
 -   [Via properties](#via-properties).
 -   [Strongly typed via a *Delegate* property](#strongly-typed-via-a-delegate-property).
--   [[\#Loosely\_typed\_via\_the\_WeakDelegate\_property|Loosely typed via a *WeakDelegate* property.
+-   [[#Loosely_typed_via_the_WeakDelegate_property|Loosely typed via a *WeakDelegate* property.
 
 For example, consider the [WebView](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) class. This dispatches to a [WebFrameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) instance which is assigned to the [frameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) property.
 
 #### Via Events
 
-For many types, MonoMac will automatically create an appropriate delegate which will forward the e.g. *WebFrameLoadDelegate* calls onto C\# events. For *WebView*:
+For many types, MonoMac will automatically create an appropriate delegate which will forward the e.g. *WebFrameLoadDelegate* calls onto C# events. For *WebView*:
 
 -   The [webView:didStartProvisionalLoadForFrame:](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.StartedProvisionalLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.StartedProvisionalLoad) event.
 -   The [webView:didFinishLoadForFrame:](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.FinishedLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.FinishedLoad) event.
@@ -328,7 +328,7 @@ When you see Objective-C samples that look like this:
 
     foo.delegate = [[SomethingDelegate alloc] init];
 
-This instructs the language to create and construct an instance of the class *SomethingDelegate* and assign the value to the delegate property on the foo variable. This mechanism is supported by MonoMac and C\# the syntax is:
+This instructs the language to create and construct an instance of the class *SomethingDelegate* and assign the value to the delegate property on the foo variable. This mechanism is supported by MonoMac and C# the syntax is:
 
 ``` csharp
 foo.Delegate = new SomethingDelegate ();
@@ -340,7 +340,7 @@ In MonoMac we have provided strongly-typed classes that map to the Objective-C d
 
 In Objective-C code sometimes event handlers for multiple controls and provides for information for multiple controls will be hosted in the same class. This is possible because classes respond to messages, and as long as a class responds to that message it is possible to link objects together.
 
-As previously detailed, MonoMac supports both the Objective-C delegate pattern, when you can create a new class that implements the delegate and override the desired methods as well as the C\# event-based programming model.
+As previously detailed, MonoMac supports both the Objective-C delegate pattern, when you can create a new class that implements the delegate and override the desired methods as well as the C# event-based programming model.
 
 It is also possible to support Objective-C's pattern where responders for multiple different operations are all hosted in the same instance of a class. To do this though, you will have to use low-level features of the MonoMac binding.
 
@@ -365,9 +365,9 @@ class MyCallbacks : NSObject {
 }
 ```
 
-The C\# names for the methods are not important, all that matters are the strings passed to the [Export] attribute.
+The C# names for the methods are not important, all that matters are the strings passed to the [Export] attribute.
 
-When using this style of programming you are responsible for making sure that the C\# parameters match the actual types that the runtime engine will pass.
+When using this style of programming you are responsible for making sure that the C# parameters match the actual types that the runtime engine will pass.
 
 ### Models
 
@@ -425,11 +425,11 @@ public class AppController : UIApplicationDelegate {
 }
 ```
 
-The advantage is that there is no need to dig into the Objective-C header files to find the selector, the types of the arguments, the mapping to C\# and that you get intellisense from MonoDevelop and strong types.
+The advantage is that there is no need to dig into the Objective-C header files to find the selector, the types of the arguments, the mapping to C# and that you get intellisense from MonoDevelop and strong types.
 
 ### Interface Builder Outlets and C\#
 
-This is a low-level description of how Outlets integrate with C\# and is provided for advanced users of MonoMac. When using MonoDevelop the mapping is done automatically behind the scenes using generated code on the flight for you.
+This is a low-level description of how Outlets integrate with C# and is provided for advanced users of MonoMac. When using MonoDevelop the mapping is done automatically behind the scenes using generated code on the flight for you.
 
 When you design your user interface with Interface Builder, you will only be designing the look of the application and will establish some default connections. If you want to programatically fetch information, alter the behavior of a control at runtime or modify the control at runtime, it is necessary to bind some of the controls to your managed code.
 
@@ -483,13 +483,13 @@ You do not need to worry about this when using MonoDevelop and InterfaceBuilder.
 
 A core concept of Objective-C programming are selectors. You will often come across APIs that require you to pass a selector, or expects your code to respond to a selector.
 
-Creating new selectors in C\# is very easy, you just create a new instance of the [MonoMac.ObjCRuntime.Selector](http://docs.go-mono.com/MonoMac.ObjCRuntime.Selector) class and use the result in any place in the API that requires it. For example:
+Creating new selectors in C# is very easy, you just create a new instance of the [MonoMac.ObjCRuntime.Selector](http://docs.go-mono.com/MonoMac.ObjCRuntime.Selector) class and use the result in any place in the API that requires it. For example:
 
 ``` csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-To make a C\# method respond to a selector call, you need to inherit from the NSObject type and decorating your C\# method with the selector name using the [Export] attribute, for example:
+To make a C# method respond to a selector call, you need to inherit from the NSObject type and decorating your C# method with the selector name using the [Export] attribute, for example:
 
 ``` csharp
 public class MyMath : NSObject {
@@ -509,21 +509,21 @@ Most classes in MonoMac that derive from NSObject will expose constructors speci
 
 The constructors are used as follows:
 
-**public Foo (IntPtr handle)**   
+**public Foo (IntPtr handle)**
 This constructor is used to instantiate your class when the runtime needs to map your class to an unmanaged class. This happens when you load a XIB/NIB file. The Objective-C runtime will have at this point created an object in the unmanaged world and this constructor will be called to initialize the managed side.
 
 Typically all you need to do is call the base constructor with the handle parameter and in your body do any initialization that is necessary.
 
-**public Foo ()**   
+**public Foo ()**
 This is the default constructor for a class, and in MonoTouch provided classes this initializes the MonoTouch.Foundation.NSObject class and all of the classes in between and at the end chains this to Objective's C "init" method on the class.
 
-**public Foo (NSObjectFlag x)**   
+**public Foo (NSObjectFlag x)**
 This constructor is used to initialize the instance, but prevent the code from calling the Objective-C "init" method at the end. You typically use this when you already have registered for initialization (when you use [Export] on your constructor) or when you have already done your initialization through another mean.
 
-**public Foo (NSCoder coder)**   
-This constructor is provided for the cases where the object is being initialized from an NSCoding instance. For more information see Apple's \<a href="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html\#//apple\_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" title="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html\#//apple\_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" class="external"\>Archives and Serialization Programming Guide\</a\>.
+**public Foo (NSCoder coder)**
+This constructor is provided for the cases where the object is being initialized from an NSCoding instance. For more information see Apple's \<a href="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" title="[http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)" class="external"\>Archives and Serialization Programming Guide\</a\>.
 
-The MonoMac API design does not raise Objective-C exceptions as C\# exceptions. The design enforces that no garbage be sent to the Objective-C world in the first place and that any exceptions that must be produced are produced by the binding itself before invalid data is ever passed to the Objective-C world.
+The MonoMac API design does not raise Objective-C exceptions as C# exceptions. The design enforces that no garbage be sent to the Objective-C world in the first place and that any exceptions that must be produced are produced by the binding itself before invalid data is ever passed to the Objective-C world.
 
 Memory Management
 -----------------
@@ -562,13 +562,13 @@ image.XXX = false;  // this at this point is an invalid operation
 
 Even if you can still access the variable "image", it is really an invalid reference and no longer points to the Objective-C object that held the image.
 
-But disposing an object in C\# does not mean that the object will necessarily be destroyed. All you do is release the reference that C\# had to the object. It is possible that the Cocoa environment might have kept a reference around for its own use. For example, if you set a NSImageView's Image property to an image, and then you dispose the image, the underlying UIImageView took its own reference and will keep a reference to this object until it is done using it.
+But disposing an object in C# does not mean that the object will necessarily be destroyed. All you do is release the reference that C# had to the object. It is possible that the Cocoa environment might have kept a reference around for its own use. For example, if you set a NSImageView's Image property to an image, and then you dispose the image, the underlying UIImageView took its own reference and will keep a reference to this object until it is done using it.
 
 ### When to call Dispose
 
 You should call Dispose when you need Mono to get rid of your object. A possible use case is when Mono has no knowledge that your NSObject is actually holding a reference to an important resource like memory, or an information pool. In those cases, you should call Dispose to immediately release the reference to the memory, instead of waiting for Mono to perform a garbage collection cycle.
 
-Internally, when Mono creates [NSString references from C\# strings](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString"), it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
+Internally, when Mono creates [NSString references from C# strings](/MonoMac/Documentation/API_Design/NSString "MonoMac/Documentation/API Design/NSString"), it will dispose them immediately to reduce the amount of work that the garbage collector has to do. The fewer objects around to deal with, the faster the GC will run.
 
 ### When to Keep References to Objects
 

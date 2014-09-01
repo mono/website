@@ -26,7 +26,7 @@ Below are instructions on how to run the **Personal Web Site Starter Kit** on Mo
 installvst PATH_TO_PWS_DIRECTORY/ PersonalWebSite.vstemplate PATH_TO_TARGET_DIRECTORY
 ```
 
--   Go to the PATH\_TO\_TARGET\_DIRECTORY/PersonalWebSite/ directory, edit the web.config file you find there find the Personal and LocalSqlServer connection strings and replace their connectionString attributes with, respectively, the following values:
+-   Go to the PATH_TO_TARGET_DIRECTORY/PersonalWebSite/ directory, edit the web.config file you find there find the Personal and LocalSqlServer connection strings and replace their connectionString attributes with, respectively, the following values:
 
 <!-- -->
 
@@ -41,8 +41,8 @@ Having completed the above steps, you need to prepare your Microsoft SQL server 
 
 -   Make sure your SQL server uses mixed SQL + Windows authentication, allow connections over TCP/IP (server port 1433)
 -   Create an SQL user named 'sktest' with the password 'sktest'
--   Create an empty database named aspnetdb, then fill it with required schema using the aspnet\_regsql utility that comes with Microsoft .Net 2.0 SDK. This database can be shared among all the starter kits ported to Mono. Add the 'sktest' user to this database users and make it the database owner.
--   Create an empty database named startkit\_personal, then use personal-add.sql script found in the PWS zip archive to populate it with the necessary schema and data. Add the 'sktest' user to this database users and make it the database owner.
+-   Create an empty database named aspnetdb, then fill it with required schema using the aspnet_regsql utility that comes with Microsoft .Net 2.0 SDK. This database can be shared among all the starter kits ported to Mono. Add the 'sktest' user to this database users and make it the database owner.
+-   Create an empty database named startkit_personal, then use personal-add.sql script found in the PWS zip archive to populate it with the necessary schema and data. Add the 'sktest' user to this database users and make it the database owner.
 
 At this point you are ready to run the application. To do so, issue the following command on your mono machine:
 
@@ -73,5 +73,5 @@ To remedy that, you have two options:
 UPDATE dbo.aspnet_Membership SET IsApproved=1
 ```
 
-It will approve all the users you have registered (if you want to do it for individual users, you need to consult the dbo.aspnet\_Users table, look up your user, note its ID and append **WHERE UserId=YOUR\_USER\_ID** clause to the above query)
+It will approve all the users you have registered (if you want to do it for individual users, you need to consult the dbo.aspnet_Users table, look up your user, note its ID and append **WHERE UserId=YOUR_USER_ID** clause to the above query)
 

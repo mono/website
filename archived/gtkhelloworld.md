@@ -8,7 +8,7 @@ redirect_from:
 Gtk:HelloWorld
 ==============
 
- Here is a basic Gtk\# application, written in C\#.
+ Here is a basic Gtk# application, written in C#.
 
 ``` csharp
 // helloworld.cs - Gtk# Tutorial example
@@ -70,7 +70,7 @@ public class HelloWorld {
         // This packs the button into the window (a gtk container).
         window.Add (btn);
  
-        // The final step is to display this newly created 
+        // The final step is to display this newly created
         window.ShowAll ();
  
         // All GTK applications must call the main loop: Application.Run
@@ -84,12 +84,12 @@ public class HelloWorld {
 To compile with Mono, type
 
 ``` bash
-$ mcs hello.cs
+mcs hello.cs
 ```
 
 This results in a file hello.exe, that you can execute with mono:
 
 ``` bash
-$ mono hello.exe
+mono hello.exe
 ```
 

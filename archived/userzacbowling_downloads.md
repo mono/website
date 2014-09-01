@@ -8,7 +8,7 @@ redirect_from:
 User:ZacBowling/Downloads
 =========================
 
-Please refer to our [Runtime](/Mono:Runtime "Mono:Runtime") description for more details on this part of the project. Optional packages are \`libgdiplus' (if you want to do graphics). The package \`mcs' contains the C\# source code to the compilers and class libraries. To run ASP.NET applications you need xsp and if you want to optionally integrate with Apache, get mod\_mono. Online API documentation for Mono is available in the \`monodoc' package. Gtk-sharp is package to build GUI applications with the Gtk toolkit.
+Please refer to our [Runtime](/Mono:Runtime "Mono:Runtime") description for more details on this part of the project. Optional packages are \`libgdiplus' (if you want to do graphics). The package \`mcs' contains the C# source code to the compilers and class libraries. To run ASP.NET applications you need xsp and if you want to optionally integrate with Apache, get mod_mono. Online API documentation for Mono is available in the \`monodoc' package. Gtk-sharp is package to build GUI applications with the Gtk toolkit.
 
 -   Current Stable Version: Mono 1.1.10 ([Release notes Sep 22th, 2005](http://go-mono.com/archive/1.1.10_0))
 
@@ -26,17 +26,17 @@ Please refer to our [Runtime](/Mono:Runtime "Mono:Runtime") description for more
 
 For help with the installation, see: [Instructions to use the Installer](/InstallerInstructions "InstallerInstructions").
 
--   [Mono 1.1.10\_1 Installer](http://www.go-mono.com/archive/1.1.10_1/installer/mono-1.1.10_1-installer.bin)
+-   [Mono 1.1.10_1 Installer](http://www.go-mono.com/archive/1.1.10_1/installer/mono-1.1.10_1-installer.bin)
 
 **Windows Installer** Windows 2000 and above
 
-Includes Mono, Gtk\# and XSP:
+Includes Mono, Gtk# and XSP:
 
 -   [Mono Setup (1.1.10)](http://www.go-mono.com/archive/1.1.10_1/windows/mono-1.1.10-gtksharp-1.0.10-2.3.91-win32-0.exe)
 
 **Mac OS X**
 
-Includes Mono, Cocoa\#, installs in /Library/Frameworks
+Includes Mono, Cocoa#, installs in /Library/Frameworks
 
 -   [MonoFramework-1.1.10.dmg](http://www.go-mono.com/archive/1.1.10_0/macosx/MonoFramework-1.1.10.dmg), for Mac OS X 10.3 (Panther) and Mac OS X 10.4 (Tiger)
 
@@ -89,7 +89,7 @@ Includes Mono, Cocoa\#, installs in /Library/Frameworks
 </tbody>
 </table>
 
-[![Mono rpm.gif](/archived/images/4/48/Mono_rpm.gif)](/archived/images/4/48/Mono_rpm.gif)**Linux/x86\_64**
+[![Mono rpm.gif](/archived/images/4/48/Mono_rpm.gif)](/archived/images/4/48/Mono_rpm.gif)**Linux/x86_64**
 
 <table>
 <col width="50%" />
@@ -197,7 +197,7 @@ Debian Linux - older 1.0 official packages:
 
 -   [http://pkg-mono.alioth.debian.org/](http://pkg-mono.alioth.debian.org/)
 
-Standalone Gtk\# Installer for Microsoft .NET Framework 1.1 SDK
+Standalone Gtk# Installer for Microsoft .NET Framework 1.1 SDK
 
 -   [http://forge.novell.com/modules/xfmod/project/?gtks-inst4win](http://forge.novell.com/modules/xfmod/project/?gtks-inst4win)
 

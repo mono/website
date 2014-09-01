@@ -22,7 +22,7 @@ On Debian based distribution you should guarantee that some packages are install
 This can be done easily by using *apt-get*:
 
 ```bash
-  $ sudo apt-get install git autoconf libtool automake build-essential mono-devel
+  $ sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext
 ```
 
 Building Mono from a Release Package
@@ -43,7 +43,7 @@ By the end of this process, you will have Mono installed on your PREFIX director
 Building Mono From a Git Source Code Checkout
 ---------------------------------------------
 
-To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C\# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
+To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
 
 ``` bash
 PATH=$PREFIX/bin:$PATH
@@ -75,7 +75,7 @@ sudo mkdir $PREFIX
 sudo chown -R `whoami` $PREFIX
 
 # Ensure that all required packages are installed.
-sudo apt-get install git autoconf libtool automake build-essential mono-devel
+sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext
 
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git

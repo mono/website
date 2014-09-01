@@ -7,12 +7,12 @@ redirect_from:
 Preface
 =======
 
-This article is a beginners guide to Gtk\# programming. It will help those who have never programmed a Gtk+ GUI before to get started. Programmers familiar with the Gtk+ API from other languages (e.g. C, C++, perl, python) will also find it useful as it explains the basic process under Mono/C\#. The article also introduces the use of Glade and libglade as a process for rapidly implementing graphic user interfaces.
+This article is a beginners guide to Gtk# programming. It will help those who have never programmed a Gtk+ GUI before to get started. Programmers familiar with the Gtk+ API from other languages (e.g. C, C++, perl, python) will also find it useful as it explains the basic process under Mono/C#. The article also introduces the use of Glade and libglade as a process for rapidly implementing graphic user interfaces.
 
-What is Gtk\#?
+What is Gtk#?
 --------------
 
-[Gtk\#](/docs/gui/gtksharp/) put simply is a wrapper on [gtk+](http://www.gtk.org), a cross platform GUI framework.
+[Gtk#](/docs/gui/gtksharp/) put simply is a wrapper on [gtk+](http://www.gtk.org), a cross platform GUI framework.
 
 Adapted from the [gtk+ website](http://www.gtk.org/): *gtk+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, gtk+ is suitable for projects ranging from small one-off toys to Enterprise application suites.*
 
@@ -20,25 +20,25 @@ Currently gtk+ works natively on any X server, Direct Framebuffer system and Mic
 
 A native port to Mac OSX is planned but needs warm bodies. This is a call for participation.
 
-One common misconception is that GTK\# requires Mono to work. This is far from the truth. GTK\# will run on any .NET compatible runtime. GTK\# is regularly tested on MS.NET and Mono but should run on any fully compliant runtime. This means if you write your applications in GTK\# and wished to run on Windows as well, you can choose to deploy with just GTK\# and use Microsoft's runtime, or alternately deploy with Mono's runtime for Windows.
+One common misconception is that GTK# requires Mono to work. This is far from the truth. GTK# will run on any .NET compatible runtime. GTK# is regularly tested on MS.NET and Mono but should run on any fully compliant runtime. This means if you write your applications in GTK# and wished to run on Windows as well, you can choose to deploy with just GTK# and use Microsoft's runtime, or alternately deploy with Mono's runtime for Windows.
 
 Getting Set Up
 ==============
 
-Download/Install GTK\#
+Download/Install GTK#
 ----------------------
 
-First thing you will want to do is get your GTK\# install up and running.
+First thing you will want to do is get your GTK# install up and running.
 
-**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK\# development packages as well as any Mono packages first. If not, check out [Downloads](/download/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
+**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out [Downloads](/download/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
 
-**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads](/download/) page. You might also like to grab a copy of the Gtk\# integration package for Visual Studio which will allow you to use GTK\# with Microsoft's Visual Studio without installing the rest of Mono.
+**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads](/download/) page. You might also like to grab a copy of the Gtk# integration package for Visual Studio which will allow you to use GTK# with Microsoft's Visual Studio without installing the rest of Mono.
 
-Inside the GTK\# libraries
+Inside the GTK# libraries
 --------------------------
 
-**Gtk\# Components**
-Gtk\# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.
+**Gtk# Components**
+Gtk# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.
 
 **Module:**
 
@@ -70,7 +70,7 @@ Supports dynamic loading of [Glade](http://glade.gnome.org) interface builder fi
 
 [gtk-dotnet](http://docs.go-mono.com/index.aspx?link=N:Gtk.DotNet)
 
-Integration of the Gtk\# namespace with System.Drawing.
+Integration of the Gtk# namespace with System.Drawing.
 
 **Module:**
 
@@ -120,18 +120,18 @@ wnck-sharp**\***
 
 Window navigator construction kit library.
 
-**\*** *Not not available on the Windows GTK\# package*
+**\*** *Not not available on the Windows GTK# package*
 
-Choosing Gtk\# or Glade\#
+Choosing Gtk# or Glade#
 -------------------------
 
-When people start out they sometimes get confused on what to use, Gtk\# or Glade\#. For that you need to understand what Glade\# is and what Gtk\# is. Gtk\# is the core of the windowing and widget system (a widget is like a control in SWF). Glade\# inherits Gtk\# so its a subset of Gtk\# and usually compatible, but it automatically layouts out the widgets with an XML based resource file. The XML to layout your GUI can be generated with the Glade tool, a WYSIWYG GUI designer studio.
+When people start out they sometimes get confused on what to use, Gtk# or Glade#. For that you need to understand what Glade# is and what Gtk# is. Gtk# is the core of the windowing and widget system (a widget is like a control in SWF). Glade# inherits Gtk# so its a subset of Gtk# and usually compatible, but it automatically layouts out the widgets with an XML based resource file. The XML to layout your GUI can be generated with the Glade tool, a WYSIWYG GUI designer studio.
 
-For most windows, Glade\# is perfect. It saves time by cutting out all the code to generate the UI and makes it very easy to change in the future. The problem is, depending on what you are doing, Glade\# can get annoying and sometimes its impossible to do what you want to do sometimes when your window does something special (hide elements, dynamically load new parts, re-parent widgets, etc. ). Only experience can help you understand which is best for each use.
+For most windows, Glade# is perfect. It saves time by cutting out all the code to generate the UI and makes it very easy to change in the future. The problem is, depending on what you are doing, Glade# can get annoying and sometimes its impossible to do what you want to do sometimes when your window does something special (hide elements, dynamically load new parts, re-parent widgets, etc. ). Only experience can help you understand which is best for each use.
 
-For a quick introduction to Glade\# you might wish to take a look at [this screencast](http://nat.org/demos/gtksharp.html) by [Nat Friedman](http://nat.org) in which hey creates a simple graphical application in just a couple of minutes.
+For a quick introduction to Glade# you might wish to take a look at [this screencast](http://nat.org/demos/gtksharp.html) by [Nat Friedman](http://nat.org) in which hey creates a simple graphical application in just a couple of minutes.
 
-Your first GTK\# application
+Your first GTK# application
 ============================
 
 Step 1: Get Comfortable
@@ -151,7 +151,7 @@ Now go ahead, open up your favorite editor (MonoDevelop, vi, emacs, notepad, etc
 Step 3: Laying it out
 ---------------------
 
-I'm assuming that you are familiar with C\#, so most of this will look normal. We will need to create a new to reference Gtk\# and create a new class and entry point for out application. It should look something like this.
+I'm assuming that you are familiar with C#, so most of this will look normal. We will need to create a new to reference Gtk# and create a new class and entry point for out application. It should look something like this.
 
 ``` csharp
  using System;
@@ -160,7 +160,7 @@ I'm assuming that you are familiar with C\#, so most of this will look normal. W
  public class GtkHelloWorld {
  
    public static void Main() {
-     Console.WriteLine("HelloWorld");    
+     Console.WriteLine("HelloWorld");
    }
  
  }
@@ -190,17 +190,17 @@ Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" stat
      Window myWin = new Window("My first GTK# Application! ");
      myWin.Resize(200,200);
  
-     //Create a label and put some text in it.     
+     //Create a label and put some text in it.
      Label myLabel = new Label();
      myLabel.Text = "Hello World!!!!";
  
-     //Add the label to the form     
+     //Add the label to the form
      myWin.Add(myLabel);
  
-     //Show Everything     
+     //Show Everything
      myWin.ShowAll();
  
-     Application.Run();   
+     Application.Run();
    }
  }
 ```
@@ -266,7 +266,7 @@ For example, to handle a button click event:
 public static void ButtonPressHandler(object obj, ButtonPressEventArgs args)
 ```
 
-ButtonPressEventArgs is a class derived from EventArgs. The class ButtonPressEventArgs, like many others in Gtk\#, adds a the property Gtk.Event (or something derived from Gtk.Event) to EventArgs.
+ButtonPressEventArgs is a class derived from EventArgs. The class ButtonPressEventArgs, like many others in Gtk#, adds a the property Gtk.Event (or something derived from Gtk.Event) to EventArgs.
 
 Gdk.Event types are:
 
@@ -332,13 +332,13 @@ using Gdk;
 
 In the above example you can see how we can determine whether the mouse was clicked only once or if it was double clicked.
 
-Your First Glade\# Application
+Your First Glade# Application
 ==============================
 
-Step 1: What is Glade\#
+Step 1: What is Glade#
 -----------------------
 
-Glade\# is a libglade binding in C\# to allow us to easily design GUI applications using visual tools and save them to in a format which the application can use at run time to create the interface. Two tools exist at the present for generating glade-format files: [Glade](http://glade.gnome.org/) and of course [Stetic](http://mysterion.org/~danw/blog/2005/03/stetic).
+Glade# is a libglade binding in C# to allow us to easily design GUI applications using visual tools and save them to in a format which the application can use at run time to create the interface. Two tools exist at the present for generating glade-format files: [Glade](http://glade.gnome.org/) and of course [Stetic](http://mysterion.org/~danw/blog/2005/03/stetic).
 
 ### What are glade files?
 
@@ -448,7 +448,7 @@ It is assumed that a .glade has already been generated in some way, whether with
 
 For purposes of this example we assumed that the GUI was saved to a file called gui.glade, it should contain the definition of a window called *window1*, a button called *button1* and a label called *label1*.
 
-We will need to create a new reference to Gtk\# and Glade\# and then create a new class and entry point for our application. Something like this:
+We will need to create a new reference to Gtk# and Glade# and then create a new class and entry point for our application. Something like this:
 
 ``` csharp
 // file: glade.cs
@@ -462,7 +462,7 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
@@ -485,13 +485,13 @@ By passing *null* as the first parameter to the Glade.XML constructor we are tel
 
 If we execute the program our GUI should pop up, however, clicking the button will have no effect as we haven't assigned any events to the widgets defined in the gui.glade file, go to the next section to learn how to do this.
 
-Step 3: How to use Glade\# in my code
+Step 3: How to use Glade# in my code
 -------------------------------------
 
 How to refer to widgets defined in gui.glade
 --------------------------------------------
 
-To access an object defined in our gui.glade file you should know the name of the object and its type, and then add it to your C\# code in the following way, note the
+To access an object defined in our gui.glade file you should know the name of the object and its type, and then add it to your C# code in the following way, note the
 
 ``` nowiki
 [Widget]
@@ -517,12 +517,12 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
                 Glade.XML gxml = new Glade.XML (null, "gui.glade", "window1", null);
-                gxml.Autoconnect (this);                                                          
+                gxml.Autoconnect (this);
                 Application.Run();
         }
  
@@ -550,7 +550,7 @@ public class GladeApp
                 new GladeApp (args);
         }
  
-        public GladeApp (string[] args) 
+        public GladeApp (string[] args)
         {
                 Application.Init();
  
@@ -571,7 +571,7 @@ public class GladeApp
        public void OnPressButtonEvent( object o, EventArgs e)
         {
            Console.WriteLine("Button press");
-           label1.Text = "Mono";  
+           label1.Text = "Mono";
         }
 }
 ```
@@ -580,11 +580,11 @@ Subsequently we will see the complete code to use events for defined objects in 
 
 ### References and Further Reading/Viewing
 
--   [Gtk\# Screencast](http://nat.org/demos/gtksharp.html) - A screencast video by Nat Friedman that clearly demonstrates the use of Glade with C\#/Mono
--   [Gtk\# website](http://gtk-sharp.sourceforge.net/) - Official website of Gtk\#
+-   [Gtk# Screencast](http://nat.org/demos/gtksharp.html) - A screencast video by Nat Friedman that clearly demonstrates the use of Glade with C#/Mono
+-   [Gtk# website](http://gtk-sharp.sourceforge.net/) - Official website of Gtk#
 -   [Glade website](http://glade.gnome.org/) - Official website of Glade
--   [Glade\# and Gecko\#](http://developer.novell.com/wiki/index.php/Glade-Sharp_and_Gecko-Sharp) - Sample application showing how to make a simple web-browser using Gtk\#, Glade\# and Gecko\#
+-   [Glade# and Gecko#](http://developer.novell.com/wiki/index.php/Glade-Sharp_and_Gecko-Sharp) - Sample application showing how to make a simple web-browser using Gtk#, Glade# and Gecko#
 -   [Steticzilla](http://mysterion.org/~danw/blog/2005/03/steticzilla.html) - Screencast video by [danw](http://mysterion.org/~danw/blog/) showing the construction of a simple Mozilla based browser using Stetic
--   [Glade - Rapid Application Development with Gnome 2](http://www.gotmono.com/docs/gnome/bindings/glade/glade.html) - Another tutorial on Glade\#, includes details on how to embed .glade files into your .exe
+-   [Glade - Rapid Application Development with Gnome 2](http://www.gotmono.com/docs/gnome/bindings/glade/glade.html) - Another tutorial on Glade#, includes details on how to embed .glade files into your .exe
 
 

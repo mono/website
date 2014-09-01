@@ -53,9 +53,9 @@ Data transfer technology
 
 Regarding entity data model, there is some complicated situation on the technology layers. To list things up, there are:
 
-- Linq to SQL : the first C\# Linq example that achieves data unification with query expressions. SQLServer-only in .NET, while we have dblinq-based implementation which works over any providers. Assembly: System.Data.Linq.dll Status: done. (jonp)
+- Linq to SQL : the first C# Linq example that achieves data unification with query expressions. SQLServer-only in .NET, while we have dblinq-based implementation which works over any providers. Assembly: System.Data.Linq.dll Status: done. (jonp)
 
-- Linq to Entities : another C\# Linq usage from MS ADO.NET team that achieves almost the same purpose as L2SQL. Includes entity data model, ADO.NET provider over entity client. Assembly: System.Data.Entity.dll Status: no plan to work on it.
+- Linq to Entities : another C# Linq usage from MS ADO.NET team that achieves almost the same purpose as L2SQL. Includes entity data model, ADO.NET provider over entity client. Assembly: System.Data.Entity.dll Status: no plan to work on it.
 
 - ASP.NET Dynamic Data : ASP.NET libraries that are application for the above. Provides data pager and manager. It does not involve the actual data transfer; it is done at server side. Assembly: System.Web.DynamicData.dll for base and L2SQL, System.Web.Entity.dll for Entities enhancements Status: done. (grendel)
 

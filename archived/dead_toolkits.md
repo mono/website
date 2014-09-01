@@ -19,7 +19,7 @@ THIS PROJECT IS DEAD. DEVELOPMENT HAS STOPPED BECAUSE OF LACK OF INTEREST.
 
 This is a project started by the developers of SharpDevelop.
 
-The project started due to the limitations on Windows.Forms and the need to port their large application to Linux. They picked the SWT toolkit which is part of Eclipse and ported it from Java to C\#.
+The project started due to the limitations on Windows.Forms and the need to port their large application to Linux. They picked the SWT toolkit which is part of Eclipse and ported it from Java to C#.
 
 SWT uses native widgets on each one of its target platforms, so the look and feel matches the underlying operating system.
 
@@ -36,12 +36,12 @@ Cons:
 -   Still under heavy development.
 -   Common denominator subset API problem.
 
-(DEAD) Qt\#
+(DEAD) Qt#
 -----------
 
 [![](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
 
-QT\# Sample
+QT# Sample
 
 Homepage: [http://qtcsharp.sourceforge.net/](http://qtcsharp.sourceforge.net/)
 

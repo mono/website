@@ -81,8 +81,8 @@ You can [subcribe](http://galactus.ximian.com/mailman/listinfo/tao-list) to the 
 
 [Search the mailing list archives](http://www.google.com/search?hl=en&q=site%3Agalactus.ximian.com+Tao)
 
-The Tao Framework for Mono and .NET.
-====================================
+The Tao Framework for Mono and .NET
+===================================
 
 The Tao Framework is a collection of bindings and libraries to facilitate cross-platform games-related development utilizing the Mono and .NET platforms.
 
@@ -102,7 +102,7 @@ Currently supported are:
 
  These libraries all run cross-platform and cross-runtime using Microsoft's .NET Runtime on Windows and Mono on Windows and non-Windows platforms.
 
-Other runtimes have not been tested, but will most likely work. The libraries are also CLS-compliant, they can be used by any .NET language, including both C\# and Visual Basic .NET, amongst others.
+Other runtimes have not been tested, but will most likely work. The libraries are also CLS-compliant, they can be used by any .NET language, including both C# and Visual Basic .NET, amongst others.
 
 Use our [Anonymous SVN repository](/SourceCodeRepository) to download it. The module name is \`tao'.
 

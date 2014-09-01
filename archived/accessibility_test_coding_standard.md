@@ -64,21 +64,21 @@ Application sample scripts for winforms controls should be stored in "uia2atk/te
 
 An application sample script file is suffixed as .py. and file name should include the name of Winforms Controls you have implemented. The full name of an application sample script should be like this: *the name of Winforms controls you have implemented* + .py. for example, if we create a script for "Button" winforms control, the name of the application sample script is **button.py**.
 
-Sometimes in one application sample script will include more than two winforms controls. In this situation, for example, if we create a script for "Button" and "Label" and "TextBox" control, the name of the application sample script is **button\_label\_textbox.py**.
+Sometimes in one application sample script will include more than two winforms controls. In this situation, for example, if we create a script for "Button" and "Label" and "TextBox" control, the name of the application sample script is **button_label_textbox.py**.
 
-The maximum length of one application sample script name should contain at most three winforms controls. If one application script have more than three winforms controls, for example, we create a script for "Button", "Label", "TextBox", "Form", "CheckBox", we should copy this script to another script (those two scripts will display the same, but names are distinguishable), the first script name should be **button\_label\_textbox.py**, the second script name should be **form\_checkbox.py**.
+The maximum length of one application sample script name should contain at most three winforms controls. If one application script have more than three winforms controls, for example, we create a script for "Button", "Label", "TextBox", "Form", "CheckBox", we should copy this script to another script (those two scripts will display the same, but names are distinguishable), the first script name should be **button_label_textbox.py**, the second script name should be **form_checkbox.py**.
 
 Notice: the file name should be all lowercase with underscores, and do not use acronyms.
 
 ### Files Name For Test Scripts
 
-Test scripts for application samples should be stored in the uia2atk/test/testers directory. Each test script should test each control listed in the application sample filename. For example, the test script for the sample application "button\_label\_textbox.py" should test the accessibility of Button, Label, and TextBox. Each test script should include:
+Test scripts for application samples should be stored in the uia2atk/test/testers directory. Each test script should test each control listed in the application sample filename. For example, the test script for the sample application "button_label_textbox.py" should test the accessibility of Button, Label, and TextBox. Each test script should include:
 
 1.  one base test script that explains to [strongwind](http://www.medsphere.org/projects/strongwind/) how to test a that application.
 2.  an "\_\_init\_\_.py" explains to strongwind where the winforms application is.
 3.  an "\<controls\>frame.py" script that explains what winforms controls exist in the sample script.
 
-The full name of base test script should be like this: *the name of Winforms controls you have implemented* + \_basic\_ops.py. The name of test directory should be like this: *the name of Winforms controls you have implemented*. *\<controls\>\_frame.py* file name should be like this: *the name of Winforms controls you have implemented* + "frame". so for example, if we create a test script for "Button" winforms control, this "Button" test script will include a base test script which name is **button\_basic\_ops.py** and a test directory named **button**. There would be two files in this directory. **\_\_init\_\_.py** and **buttonframe.py**.
+The full name of base test script should be like this: *the name of Winforms controls you have implemented* + _basic_ops.py. The name of test directory should be like this: *the name of Winforms controls you have implemented*. *\<controls\>_frame.py* file name should be like this: *the name of Winforms controls you have implemented* + "frame". so for example, if we create a test script for "Button" winforms control, this "Button" test script will include a base test script which name is **button_basic_ops.py** and a test directory named **button**. There would be two files in this directory. **__init__.py** and **buttonframe.py**.
 
 Notice: the file names should be all lowercase with underscores, and do not use acronyms.
 
@@ -89,14 +89,14 @@ Test harness scripts should be stored in the "uia2atk/test/drivers" directory.
 The test harness scripts consist of:
 
 1.  **machine.py**:
-    1.  **machines\_dict**: A Python dictionary of remote machines that should be tested with their respective IP addresses and host names. The host names do not need to resolve; the IPs are always used when connecting to the test machines.
-    2.  **LOG\_DIR**: The location where test logs should be stored on the remote machine.
-    3.  **TEST\_DIR**: The location where the test scripts (listed in testers\_list.py) can be found on the remote machine.
+    1.  **machines_dict**: A Python dictionary of remote machines that should be tested with their respective IP addresses and host names. The host names do not need to resolve; the IPs are always used when connecting to the test machines.
+    2.  **LOG_DIR**: The location where test logs should be stored on the remote machine.
+    3.  **TEST_DIR**: The location where the test scripts (listed in testers_list.py) can be found on the remote machine.
     4.  **USERNAME**: A valid username on the remote machine. This username is used to ssh to the remote machines.
 
 2.  **tests.py**: A list of finished test scripts that should be run on the test machines. Adding a test (from uia2atk/test/testers) effectively adds it to the test suite.
-3.  **local\_run.py**: Run the test suite on the local machine.
-4.  **remote\_run.py**: Run the test suite on the remote machines specified in machine\_list.py.
+3.  **local_run.py**: Run the test suite on the local machine.
+4.  **remote_run.py**: Run the test suite on the remote machines specified in machine_list.py.
 
 ### Files Name For Test Logs
 
@@ -104,10 +104,10 @@ Style sheets and images are stored in "uia2atk/test/resources" directory. These 
 
 By default, Strongwind stores its logs in /tmp/strongwind. The files from the "resources" directory can then be copied into the /tmp/strongwind directory to make the logs more viewable.
 
-However, when running using the test harness drivers local\_run.py or remote\_run.py script, custom test logs are created and stylized.
+However, when running using the test harness drivers local_run.py or remote_run.py script, custom test logs are created and stylized.
 
--   *local\_run.py*: Stylized log reports are stored in uia2atk/test/logs on the local machine.
--   *remote\_run.py*: Stylized log reports are stored in LOG\_DIR, which is specified in machines.py.
+-   *local_run.py*: Stylized log reports are stored in uia2atk/test/logs on the local machine.
+-   *remote_run.py*: Stylized log reports are stored in LOG_DIR, which is specified in machines.py.
 
 ### Files/Directories Name For Test Related
 
@@ -120,9 +120,9 @@ Standard For Scripts Coding
 
 Each script in the "uia2atk/test" directory should contain *interpreter line*, authors, create date, description.
 
--   The *interpreter line* should be the first line of the script. It makes scripts directly executable. For example "\#!/usr/bin/env python" is used for Python scripts and "\#!/usr/bin/env ipy" is used for IronPython scripts.
--   The authors are "\# written by: NAME + space + EMAIL".
--   The create date is "\# date: mm/dd/Year".
+-   The *interpreter line* should be the first line of the script. It makes scripts directly executable. For example "#!/usr/bin/env python" is used for Python scripts and "#!/usr/bin/env ipy" is used for IronPython scripts.
+-   The authors are "# written by: NAME + space + EMAIL".
+-   The create date is "# date: mm/dd/Year".
 -   The description should describe what each script does.
 
 Here are some examples:
@@ -168,11 +168,11 @@ IronPython introduces additional dynamics, but Python style should always trump 
 #### Naming Conventions
 
 -   Class names: CamelCaseLikeThis.
--   Class and instance variables: class\_variable.
--   Function names: some\_function.
--   Local variables: local\_variable.
--   Global variables: g\_module\_variable
--   Constants: ALL\_CAPS
+-   Class and instance variables: class_variable.
+-   Function names: some_function.
+-   Local variables: local_variable.
+-   Global variables: g_module_variable
+-   Constants: ALL_CAPS
 
 For example:
 
@@ -202,7 +202,7 @@ Files that will be executed directly should be given the permission 755 (-rwxr-x
 
 -   All test scripts in the "uia2atk/test/testers" directory (but not the files in the subdirectories).
 -   All sample applications in the "uia2atk/test/samples" directory.
--   local\_run.py and remote\_run.py in the "uia2atk/test/drivers" directory.
+-   local_run.py and remote_run.py in the "uia2atk/test/drivers" directory.
 
 All other files should have the permission 644 (-rw-r--r--).
 

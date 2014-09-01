@@ -63,7 +63,7 @@ Mono Class Library Parameter Names
 
 Mono provides many class libraries (assemblies) that are (near 100%) compatible with Microsoft .NET. This is possible because we provide the same API to developers. However, for historic reasons, the parameter names in our class libraries do not always match the one provided by Microsoft.
 
-This is becoming an increased compatibility issue for us since C\# version 4 (and all versions of VB.NET) allows developers to use 'named' parameters. In this case having different parameter names will result in compilation errors.
+This is becoming an increased compatibility issue for us since C# version 4 (and all versions of VB.NET) allows developers to use 'named' parameters. In this case having different parameter names will result in compilation errors.
 
 We'll provide a tool (gui-compare) that allow people to spot all different names. The student will review them, fix them in the source code, re-run the unit tests and, when completed, submit patch (diff) to us.
 
@@ -94,7 +94,7 @@ The task is to compile and run Mono unit tests against either .NET 3.5 or 4.0 an
 Mono Command-Line Tools
 -----------------------
 
-Mono provides a lot of development tools, most of them "command-line tools" and written in C\#. Almost all of them implement their own way of dealing with command-line options.
+Mono provides a lot of development tools, most of them "command-line tools" and written in C#. Almost all of them implement their own way of dealing with command-line options.
 
 The task is to migrate the custom command-line parsing code to use the excellent Mono.Options class. Once migrated the student will verify that the tool's documentation (i.e. the man page) is complete (includes everything the tool supports) then provide a patch (diff) to update the tool(s).
 
@@ -103,7 +103,7 @@ The task is to migrate the custom command-line parsing code to use the excellent
 Mono API Documentation
 ----------------------
 
-Mono provides a lot of functionality not available in Microsoft .NET (e.g. Gtk\#, Cecil...). However documentation for those API is completely missing, scarce or lack examples.
+Mono provides a lot of functionality not available in Microsoft .NET (e.g. Gtk#, Cecil...). However documentation for those API is completely missing, scarce or lack examples.
 
 The task is to find (e.g. blog entries, source code) or write some missing documentation for the Mono.\* class libraries. The student will be able to use monodoc to write and submit the documentation.
 
@@ -128,7 +128,7 @@ This task is limited to Mono specific APIs:
 Porting Gtk+ Samples to GtkSharp
 --------------------------------
 
-A lot of sample code exists for Gtk+, most of them written in C or Python. The task is to translate those samples to Gtk\# and make these available from our GitHub repository.
+A lot of sample code exists for Gtk+, most of them written in C or Python. The task is to translate those samples to Gtk# and make these available from our GitHub repository.
 
 -   Since a lot of Gtk+ samples exists this will be split into several, individual tasks.
 
@@ -139,7 +139,7 @@ Gendarme is a tool to find problems in programs. Gendarme inspects programs and 
 
 The task is to write one (or few similar) Gendarme rule(s) to check for a (task specific) problem. E.g. write a Gendarme rule that implement the logic of FxCop rule [CA1413](http://msdn.microsoft.com/en-US/library/ms182196%28v=VS.80%29.aspx)
 
-The student must write the rule (C\#), documentation (in source xmldoc) and unit tests then submit them for review.
+The student must write the rule (C#), documentation (in source xmldoc) and unit tests then submit them for review.
 
 -   Many different tasks (i.e. different rules) will be available to students. The difficulty level will vary between the rules and will be noted in each task.
 
@@ -156,7 +156,7 @@ MonoDevelop has a source analysis engine that finds potential issues in source c
 MonoDevelop unit tests
 ----------------------
 
-Write units tests for MonoDevelop features, especially the parsers and completion engines, and the vi editor mode. Simple tests will generally involve writing some input data - for example a C\# or XML snippet - and a set of expected values from the parser or completion engine. More advanced tests could involve manipulating the MD API to simulate common tasks, such as creating and compiling projects, and verifying the output.
+Write units tests for MonoDevelop features, especially the parsers and completion engines, and the vi editor mode. Simple tests will generally involve writing some input data - for example a C# or XML snippet - and a set of expected values from the parser or completion engine. More advanced tests could involve manipulating the MD API to simulate common tasks, such as creating and compiling projects, and verifying the output.
 
 MonoDevelop documentation and tutorials
 ---------------------------------------

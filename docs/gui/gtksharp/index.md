@@ -5,13 +5,13 @@ redirect_from:
   - /Gtk/
 ---
 
-What is Gtk\#?
+What is Gtk#?
 --------------
 
-Gtk\# is a Graphical User Interface Toolkit for mono and .Net. The project binds the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries, enabling fully native graphical Gnome application development using the Mono and .Net development frameworks.
+Gtk# is a Graphical User Interface Toolkit for mono and .Net. The project binds the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries, enabling fully native graphical Gnome application development using the Mono and .Net development frameworks.
 
 -   [Frequently Asked Questions](/docs/faq/general/)
--   [Contacting the Mono/Gtk\# Team](http://www.go-mono.com/contact/)
+-   [Contacting the Mono/Gtk# Team](http://www.go-mono.com/contact/)
 -   [Bug reporting](/community/bugs/)
 
 References
@@ -20,7 +20,7 @@ References
 -   [Online API Documentation](http://www.go-mono.com/docs/monodoc.ashx?link=root:/classlib-gnome)
 -   [What's New?](/docs/gui/gtksharp/new-in-version-2x/)
 -   [Release Plans](/docs/gui/gtksharp/plan/)
--   [Articles and Tutorials on Gtk\#](/docs/gui/gtksharp/tutorials/)
+-   [Articles and Tutorials on Gtk#](/docs/gui/gtksharp/tutorials/)
 -   [Component Descriptions](/docs/gui/gtksharp/details/#gtks-components)
 
 Features
@@ -30,18 +30,18 @@ Features
 -   Wide range of Widgets/Controls.
 -   Accessible via the ATK accessibility toolkit.
 -   Internationalization.
--   Available from C\#, Java, Python, VB.Net and [more](/docs/about-mono/languages/).
+-   Available from C#, Java, Python, VB.Net and [more](/docs/about-mono/languages/).
 -   UI Builder support.
 -   Open Source, Free Software.
 
-Gtk\# in the Real World
+Gtk# in the Real World
 -----------------------
 
 [![Md2.png](/archived/images/3/3d/Md2.png)](/archived/images/3/3d/Md2.png)
 
-Want to know how Gtk\# is being used in the real world?
+Want to know how Gtk# is being used in the real world?
 
-Check out [some screenshots](/docs/about-mono/showcase/screenshots/) of Gtk\# Applications. Some of our more prominent users include:
+Check out [some screenshots](/docs/about-mono/showcase/screenshots/) of Gtk# Applications. Some of our more prominent users include:
 
 -   [Banshee](http://banshee-project.org/Main_Page)
 -   [Smuxi](https://www.smuxi.org/)

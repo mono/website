@@ -11,7 +11,7 @@ Info
 
 -   Exists in namespace IBM.Data.DB2 and assembly IBM.Data.DB2.
 
--   This IBM DB2 data provider is built on top of Call Level Interface, a C interface similar to ODBC. The required libraries are db2cli.dll on Windows and db2\_36.so under Linux. Note, the version of the shared library could be different.
+-   This IBM DB2 data provider is built on top of Call Level Interface, a C interface similar to ODBC. The required libraries are db2cli.dll on Windows and db2_36.so under Linux. Note, the version of the shared library could be different.
 
 Current Status
 --------------

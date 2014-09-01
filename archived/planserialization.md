@@ -45,7 +45,7 @@ This message has some background:
        But one change which was particularly annoying was one dealing with
     the way that MS Color is serialized.  They have a concept of "Known
     Colors", and if a flag in the serialization is set, the color is
-    initialized from a known color index.   
+    initialized from a known color index.
 
        The idea is fine, but mixed with serialization it means that we do
     not get a chance to compute the color RGB values in advance, but have
@@ -86,7 +86,7 @@ Implementing ISerializable
 
 We could also sprinkle ISerializable into a number of classes, but this would significantly change the public contract that we expose. An argument has been made that as long as we do not document it, it could be fine, but am not so sure that this is such a great idea.
 
-Alternatively, we could have these classes implement an \_\_ISerializable interface (the double underscore meaning "this is really an internal interface, not something you would implement normally").
+Alternatively, we could have these classes implement an __ISerializable interface (the double underscore meaning "this is really an internal interface, not something you would implement normally").
 
 In our actual implementation, we could write something like this:
 
@@ -106,7 +106,7 @@ class Something : __ISerializable {
 }
 ```
 
-We would have to alter our code in Mono that might check for whether something is ISerializable to also check for \_\_ISerializable (it happens in a few formatters).
+We would have to alter our code in Mono that might check for whether something is ISerializable to also check for __ISerializable (it happens in a few formatters).
 
-This is a problem though, although we can fix our class libraries, the above solution would not work with custom formatters that are not aware of this new \_\_ISerializable framework. Lluis points out that we can encapsulate some of this logic in "ObjectManager", but the use of ObjectManager is not mandatory by formatters, so we might miss a few.
+This is a problem though, although we can fix our class libraries, the above solution would not work with custom formatters that are not aware of this new __ISerializable framework. Lluis points out that we can encapsulate some of this logic in "ObjectManager", but the use of ObjectManager is not mandatory by formatters, so we might miss a few.
 

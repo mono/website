@@ -67,7 +67,7 @@ The first thing to do is getting the System.Reflection.MethodInfo which correspo
 
 ``` csharp
 //Gets the MethodInfo of Console.WriteLine() method
-MethodInfo writeLineMethod = 
+MethodInfo writeLineMethod =
     typeof(Console).GetMethod("WriteLine", new Type[]{typeof(string)});
 ```
 
@@ -103,7 +103,7 @@ foreach(TypeDefinition type in assembly.MainModule.Types)
             Instruction insertSentence;
             insertSentence = worker.Create(OpCodes.Ldstr, sentence);
  
-            //Creates the CIL instruction for calling the 
+            //Creates the CIL instruction for calling the
             //Console.WriteLine(string value) method
             Instruction callWriteLine;
             callWriteLine = worker.Create(OpCodes.Call, writeLine);
@@ -118,7 +118,7 @@ foreach(TypeDefinition type in assembly.MainModule.Types)
             //Inserts the callWriteLineMethod after the //insertSentence instruction
             worker.InsertAfter(insertSentence, callWriteLine);
         }
-    } 
+    }
 }
 ```
 

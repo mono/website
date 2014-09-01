@@ -25,7 +25,7 @@ The following features can be removed:
 -   decimal: support for the System.Decimal (decimal type) in Mono.
 -   [pinvoke](/docs/advanced/pinvoke/): Platform Invoke services to call into native libraries
 -   debug: debugging support (line number information, debuggability of applications.
--   reflection\_emit: generating code with the System.Reflection.Emit API
+-   reflection_emit: generating code with the System.Reflection.Emit API
 -   logging: a handful of routines used for debugging the JIT.
 -   [com](/docs/advanced/com-interop/): Support for COM Interop.
 -   ssa: the SSA-family of optimizations.
@@ -45,11 +45,11 @@ The Mono compilation will produce a binary to run your ECMA CLI applications (mo
 
 Compilers generate slower code when they produce shared libraries, so by default the Mono build system will create the "mono" binary with a static copy of the libraries and will not use its own libmono shared library.
 
-You can change this feature by using the --with-static\_mono option, but we discourage this practice as static Mono is faster and static Mono is also the most commonly tested configuration.
+You can change this feature by using the --with-static_mono option, but we discourage this practice as static Mono is faster and static Mono is also the most commonly tested configuration.
 
 ### Thread Local Storage Specification
 
-Use the --with-tls option to specify the kind of thread local storage that Mono should use. The possible values are \_\_thread (which uses the compiler supported attribute for TLS) or pthread (which uses the POSIX API for storing thread-local data).
+Use the --with-tls option to specify the kind of thread local storage that Mono should use. The possible values are __thread (which uses the compiler supported attribute for TLS) or pthread (which uses the POSIX API for storing thread-local data).
 
 This configuration option is automatically detectd at configure time, and we only support this option if its auto-detected, if you force this option, you are on your own.
 

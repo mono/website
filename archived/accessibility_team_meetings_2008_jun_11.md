@@ -69,7 +69,7 @@ Meeting Summary
     (03:59:10 PM) knocte: well, I think the only person lacking is Ray, right?
     (03:59:28 PM) sandy: and jpallen
     (03:59:29 PM) Calen: MarioC: shall we begin our meeting?
-    Calen calvin_ 
+    Calen calvin_
     (03:59:52 PM) knocte: Calen: yes, in 2 minutes, maybe they will still come
     (03:59:54 PM) MarioC: Yes, sure.
     (03:59:55 PM) Calen: MarioC: Ray said he will late some minutes
@@ -94,7 +94,7 @@ Meeting Summary
     (04:02:50 PM) jpallen [~jpallen@137.65.132.4] entered the room.
     (04:03:08 PM) knocte: hi jpallen, we were starting the meeting, mgorse will start, if he's reading us
     (04:03:26 PM) jpallen: hello
-    (04:03:27 PM) knocte: mgorse: ping ^^ 
+    (04:03:27 PM) knocte: mgorse: ping ^^
     (04:03:28 PM) jpallen: sounds good
     (04:03:41 PM) mgorse: ok
     (04:03:51 PM) mgorse: I've been working on cspi still
@@ -157,7 +157,7 @@ Meeting Summary
     (04:12:59 PM) knocte: hi ngao, could you start? (remember to say when you're done)
     (04:13:09 PM) ngao: ok
     (04:13:21 PM) ngao: i finished StatusBarProviser, and added some fields in GridPatternIdentifiers
-    (04:13:28 PM) ngao: i set up vista last week, so i will determine the value of IDs, and run nunit on vista. 
+    (04:13:28 PM) ngao: i set up vista last week, so i will determine the value of IDs, and run nunit on vista.
     (04:13:35 PM) ngao: then move on to the next control.
     (04:13:44 PM) ngao: done.
     (04:14:22 PM) knocte: ok, I'm wondering if you're ok with current way of syncing with the UIA guys, or maybe you need more help from them?
@@ -181,14 +181,14 @@ Meeting Summary
     (04:19:44 PM) knocte: thanks!, would you think that it's good that the devs start using your these tests in some way?
     (04:19:57 PM) knocte: s/your/ /
     (04:20:31 PM) knocte: we can ask this also to Calen to see her opinion
-    Calen calvin_ 
+    Calen calvin_
     (04:20:38 PM) knocte: Calen: ^
-    (04:20:48 PM) Calen: knocte: i think maybe devs can use some of our winforms app samples :) 
+    (04:20:48 PM) Calen: knocte: i think maybe devs can use some of our winforms app samples :)
     (04:20:53 PM) bgmerrell: knocte: if anything you guys want to test can be tested via atspi, it can be automated and added to the test suite.
     (04:21:18 PM) sandy: Calen: are these described anywhere, or should we just poke around in svn?
     (04:21:19 PM) bgmerrell: Calen has created several winforms samples that can be tested against.
     (04:21:44 PM) knocte: yeah, I think we'll start to use it because we haven't got way to test events if not with this, thanks to both
-    Calen calvin_ 
+    Calen calvin_
     (04:22:00 PM) Calen: sandy: you can take them from svn
     (04:22:03 PM) knocte: Calen: your turn, after you answer sandy :)
     (04:22:17 PM) Calen: knocte: okay
@@ -197,9 +197,9 @@ Meeting Summary
     (04:23:27 PM) Calen: and update winforms application samples to abidy by the test coding standards.
     (04:24:04 PM) Calen: and start to create strongwind test scripts for winforms according to Brian's help :)
     (04:24:09 PM) Calen: done
-    Calen calvin_ 
+    Calen calvin_
     (04:24:26 PM) knocte: thanks Calen
-    (04:24:34 PM) knocte: interesting, there are some things in that wiki page that I see could be useful, as you guys are using Python, but maybe what about using the same policy as us the devs for file headers? 
+    (04:24:34 PM) knocte: interesting, there are some things in that wiki page that I see could be useful, as you guys are using Python, but maybe what about using the same policy as us the devs for file headers?
     (04:24:39 PM) knocte: what do you think sandy?
     (04:25:14 PM) ***sandy just reconnected
     (04:25:28 PM) knocte: oh, well, anyway, let's discuss this later
@@ -225,7 +225,7 @@ Meeting Summary
     (04:27:54 PM) kangaroo: np
     (04:27:59 PM) kangaroo: Ray: he usually hangs out in #mono
     (04:28:14 PM) Ray: kangaroo: ok, got it
-    (04:28:31 PM) Ray: decriptor: i'm sorry, go on pls, 
+    (04:28:31 PM) Ray: decriptor: i'm sorry, go on pls,
     (04:28:42 PM) kangaroo: (sorry for interrupting)
     (04:29:06 PM) knocte: ( kangaroo: np, thanks :) ) decriptor?
     (04:29:20 PM) decriptor: knocte: long and short, I'm learning python, building a local build server, trying to get a working laptop :/ , reading some more on rpms, spec files and learnig osc
@@ -248,7 +248,7 @@ Meeting Summary
     (04:33:14 PM) bgmerrell: Calen: do you know where the wiki page is with our QA meeting?  I lost it :(
     (04:33:22 PM) Ray: so I just learnt IronPython these days,
     (04:33:29 PM) Ray: not finish a sample test script yet,
-    (04:33:46 PM) Ray: and go through the test script coding standard which Calen created 
+    (04:33:46 PM) Ray: and go through the test script coding standard which Calen created
     (04:34:01 PM) knocte: ok
     (04:34:04 PM) Ray: in the next iteration, I'll catch up you guys' speed, continue to learn and write samples.
     (04:34:19 PM) Ray: on the another hand, I'll talk more about our building system with decriptor.
@@ -303,7 +303,7 @@ Meeting Summary
     (04:43:51 PM) knocte: well first, let's say we can consider the meeting finished, thanks to all!
     (04:44:04 PM) knocte has changed the topic to: Accessibility
     (04:44:05 PM) sandy: thank you knocte for doing such a great job leading it
-    (04:44:15 PM) Ray: thanks you! 
+    (04:44:15 PM) Ray: thanks you!
     (04:44:26 PM) knocte: thanks sandy, you all have helped me much too
 
 

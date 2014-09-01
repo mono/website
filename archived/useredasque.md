@@ -17,7 +17,7 @@ Recent writeups include:
 -   [At the time I was a bit monomaniac](http://www.frenchguys.com/wordpress/?p=134), the first draft of the only chapter ever written for the Addison Wesley Linux Application Development with Mono book.
 -   [Tomboy for Mac OS X](http://www.frenchguys.com/wordpress/?p=114)
 -   [New TOC for Monkeyguide](/Erik_GtkSharp_Toc "Erik GtkSharp Toc")
--   [Getting\_Mono](/Obtaining_Mono)
+-   [Getting_Mono](/Obtaining_Mono)
 -   [Mono, a technical whitepaper](/Mono,_a_technical_whitepaper "Mono, a technical whitepaper")
 -   [DB4BOO](/DB4BOO "DB4BOO")
 

@@ -56,7 +56,7 @@ If your company uses Mono and would like to get it listed here, please contact [
     -   media player software ([Banshee](http://banshee-project.org)), and its
     -   secret store manager (CASA).
 
--   [MedTronic](http://www.medtronic.com/) uses MonoTouch and MonoDroid to power their mobile applications from a [single C\# codebase](http://vagabondrev.org/2011/04/07/ipad-in-business-apple-features-medtronic/) and they are also featured in [Apple's Business web site](http://www.apple.com/ipad/business/profiles/medtronic/?aosid=p204&siteid=1503186&program_id=2554&cid=OAS-EMEA-AFF&tduid=7bbc283c72a33cc8329fa72a04e2e542).
+-   [MedTronic](http://www.medtronic.com/) uses MonoTouch and MonoDroid to power their mobile applications from a [single C# codebase](http://vagabondrev.org/2011/04/07/ipad-in-business-apple-features-medtronic/) and they are also featured in [Apple's Business web site](http://www.apple.com/ipad/business/profiles/medtronic/?aosid=p204&siteid=1503186&program_id=2554&cid=OAS-EMEA-AFF&tduid=7bbc283c72a33cc8329fa72a04e2e542).
 
 -   [FuturePrice](https://secure.futureprice.com/) is using Mono to provide cross-platform access to complete market-wide data feeds for shares and other instruments listed on NYSE, NASDAQ, and AMEX. Their Data API provides request/response mechanisms capable of handling thousands of simultaneous requests, as well as market-wide streaming feeds delivering quotes and trades across all (approx. 8,000) shares listed on NYSE, NASDAQ, and AMEX. The Data API receives institutional-quality market data from the NYSE Technologies Group's SuperFeed(tm) platform. Mono enables FuturePrice to provide simple, cross platform access to these complete feeds, on Windows, Linux, and OS X.
 
@@ -78,11 +78,11 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Slingshot Software](http://www.slingshotsoftware.com/) uses Mono and PostgreSQL to [offer their .NET-based ERP software on Linux](http://www.slingshotsoftware.com/news/slingshot-adds-support-linux-os-and-postgressql-database-management-system).
 
--   [Metrosharp Corporation](http://www.metrosharp.net) is a specialist in complex record keeping requirements and uses Mono and Cocoa\# for its Identity Management System line of software. Metrosharp OpenIMF (Identity Management Framework) released under Mozilla Public License and Metrosharp IMS 2007 (Identity Management System) bring advanced USC 2257 record keeping compliancy to Novell SUSE Linux and MacOS X.
+-   [Metrosharp Corporation](http://www.metrosharp.net) is a specialist in complex record keeping requirements and uses Mono and Cocoa# for its Identity Management System line of software. Metrosharp OpenIMF (Identity Management Framework) released under Mozilla Public License and Metrosharp IMS 2007 (Identity Management System) bring advanced USC 2257 record keeping compliancy to Novell SUSE Linux and MacOS X.
 
 -   [Codice Software](http://www.codicesoftware.com/): they develop a commercial Source Code Management product called [Plastic](http://www.codicesoftware.com/opproducts.aspx). Read the [Codice success story](http://www.go-mono.com/pdfs/Codice_v1.pdf) here.
 
--   [MicroInvest](http://www.microinvest.net/en): is the biggest software providers for warehouse management applications in Bulgaria. Warehouse Open is warehouse management software written in C\# and licensed under GPLv2. It is designed to work on the Linux platform and uses Mono, GTK as a user interface and MySQL as a database. Designed to be as easy to use as possible and uses the same database schema as Warehouse Pro.
+-   [MicroInvest](http://www.microinvest.net/en): is the biggest software providers for warehouse management applications in Bulgaria. Warehouse Open is warehouse management software written in C# and licensed under GPLv2. It is designed to work on the Linux platform and uses Mono, GTK as a user interface and MySQL as a database. Designed to be as easy to use as possible and uses the same database schema as Warehouse Pro.
 
 -   [Artisteer](http://www.artisteer.com/?p=news) uses Mono to bring their Web design creator to other platform. Starting with version 2.2 it is possible to run their software using Mono.
 
@@ -92,7 +92,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Völcker Informatik](http://www.voelcker.com): When customers began demanding Linux support for their ActiveEntry provisioning system, Völcker engineers turned to Mono to create a single cross-platform codebase. A complete profile of the process is available at [the Novell success stories page.](http://novell.com/success/volcker.html)
 
--   [Quantifi Solutions:](http://quantifisolutions.com) Specialists in complex financial instruments, Quantifi Solutions use Mono to mix C\# and C++ code in their finance modeling software. Their financial models are refined constantly, so they need code that is easy to manage and easy to maintain, while still running fast enough to keep up with the markets. One of the Quantifi engineers [discusses their implementation here in the mailing list archives](http://galactus.ximian.com/pipermail/mono-list/2005-May/027131.html).
+-   [Quantifi Solutions:](http://quantifisolutions.com) Specialists in complex financial instruments, Quantifi Solutions use Mono to mix C# and C++ code in their finance modeling software. Their financial models are refined constantly, so they need code that is easy to manage and easy to maintain, while still running fast enough to keep up with the markets. One of the Quantifi engineers [discusses their implementation here in the mailing list archives](http://galactus.ximian.com/pipermail/mono-list/2005-May/027131.html).
 
 -   [Unity Technologies](http://unity3d.com): Their Unity 3D game modeling tool uses Mono so customers can build cross-platform video games. Their engineers have also spoken about their Mono use [on the Mono mailing list](http://galactus.ximian.com/pipermail/mono-list/2005-May/027196.html). Read the [Unity Technologies success story](http://www.go-mono.com/pdfs/Otee_v21.pdf) here. Many companies using Unity's technology indirectly use Mono, these are some applications powered by Mono:
     -   Cartoon Network's [FusionFall](http://fusionfall.com).
@@ -100,11 +100,11 @@ If your company uses Mono and would like to get it listed here, please contact [
     -   Flashbang's [Blurst](http://blurst.com/) online and iPhone gaming.
     -   Over 100 developers that have published their games on the iPhone with Unity's iPhone support.
 
--   [Versora](http://versora.com): Windows-to-Linux migration specialists Versora used Mono and C\# to produce a cross-platform tool that helps companies move system and application setttings and user data. Read their [success story](http://www.go-mono.com/pdfs/Versora_v3.pdf) here.
+-   [Versora](http://versora.com): Windows-to-Linux migration specialists Versora used Mono and C# to produce a cross-platform tool that helps companies move system and application setttings and user data. Read their [success story](http://www.go-mono.com/pdfs/Versora_v3.pdf) here.
 
 -   [Fiducial](http://www.fiducial.fr/): This French business services company uses Mono to power their intranet.
 
--   [Neoware](http://neoware.com): Check the HTTP headers on the website for thin-client vendor Neoware: those ASPX pages are served up usig mod\_mono, Apache, and Linux. How many other ASP.NET sites using Mono can you find? Let us know when you come across one, and we'll post it here.
+-   [Neoware](http://neoware.com): Check the HTTP headers on the website for thin-client vendor Neoware: those ASPX pages are served up usig mod_mono, Apache, and Linux. How many other ASP.NET sites using Mono can you find? Let us know when you come across one, and we'll post it here.
 
 -   [imeem](http://www.imeem.com/): imeem's mac client takes advantage of Mono and open source cocoa binding they created called Dumbartion.
 
@@ -128,7 +128,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Zing](http://www.zing.net): their portable MP3/Wifi player uses Mono to drive their application stack. You can see various pictures of the player on this [hands-on review](http://www.engadget.com/2007/01/08/hands-on-with-sandisks-new-zune-bestin-sansa-connect/) at Engadget.
 
--   [Gaiaware](http://gaiaware.net) offers the Ajax framework Gaia Ajax, which is a complete suite of controls for ASP.NET that let you build powerful web applications without use of any JavaScript, only by writing C\# or VB.NET. Gaia is released under a dual-licensing scheme: GPL or proprietary.
+-   [Gaiaware](http://gaiaware.net) offers the Ajax framework Gaia Ajax, which is a complete suite of controls for ASP.NET that let you build powerful web applications without use of any JavaScript, only by writing C# or VB.NET. Gaia is released under a dual-licensing scheme: GPL or proprietary.
 
 -   [Interopix](http://www.interopix.com/) is using Mono.NET on a FreeBSD based server to provide back-end communications with in-field alarm and automation controllers. The server was designed to securely collect configuration and status data from many thousands of in-field systems and provide that information to users via a web application running on the same server. This is a commercial application.
 
@@ -169,11 +169,11 @@ Web Projects Using Mono
 
 <!-- -->
 
-    We launched a job board at www.agentka.cz in November 2008. 
-    The site runs on a Linux box and it uses Mono (currently we use version 1.9.1, 
-    but an upgrade is planned). The interesting thing is we do not use ASP.NET or 
-    Apache. The site is using a custom web server which was written in C# and also 
-    the web application is using a custom C# framework. The performance of the 
-    whole system (including full-text indexing) is really good when comparing to a 
+    We launched a job board at www.agentka.cz in November 2008.
+    The site runs on a Linux box and it uses Mono (currently we use version 1.9.1,
+    but an upgrade is planned). The interesting thing is we do not use ASP.NET or
+    Apache. The site is using a custom web server which was written in C# and also
+    the web application is using a custom C# framework. The performance of the
+    whole system (including full-text indexing) is really good when comparing to a
     "standard" LAMP solutions.
 

@@ -101,7 +101,7 @@ Mono's JScript compiler is part of the 'mcs' module and is built by default, it'
 
 #### How mjs is implemented
 
-Mono's JScript compiler is written in C\#, and it's constructed under the standard compiler architecture, which means that it is separated into phases. The current phases are tokenizing, parsing, semantic analysis and code generation.
+Mono's JScript compiler is written in C#, and it's constructed under the standard compiler architecture, which means that it is separated into phases. The current phases are tokenizing, parsing, semantic analysis and code generation.
 
 We use a handcoded tokenizer and parser which was ported from Mozilla's [Rhino](http://www.mozilla.org/rhino/) compiler, after that we build an abstract syntax tree which is used by the semantic analyser and code generator for context analysis and the generation of the CIL image, respectively. mjs uses .NET's System.Reflection.Emit API for code generation which makes it much more understandable and readable.
 
@@ -113,7 +113,7 @@ Currently, the best way of contributing is to have a look at the failing tests i
 
 If you need specific details don't hesitate to send an e-mail to [cesar](mailto:cesar@ciencias.unam.mx) or the [mono-devel](mailto:mono-devel-list@lists.ximian.com) mailing list. If you have questions about the run time you can also try contacting [flgr](mailto:flgr@ccan.de) for help.
 
-If you are generally interested in the project you might also want to join the developers at [\#mjs on irc.gimp.org](irc://irc.gimp.org/mjs).
+If you are generally interested in the project you might also want to join the developers at [#mjs on irc.gimp.org](irc://irc.gimp.org/mjs).
 
 #### Submitting bug reports
 

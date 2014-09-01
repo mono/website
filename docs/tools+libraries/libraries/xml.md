@@ -55,7 +55,7 @@ We also have RELAX NG validating reader (described later).
 System.Xml.Schema namespace
 ---------------------------
 
-Basically it is completed. You can test how current schema validation engine is complete (incomplete) by using standalone test module (see mcs/class/System.XML/Test/System.Xml.Schema/standalone\_tests). At least in my box, msxsdtest fails only 30 cases with bugfixed catalog - this score is better than that of Microsoft implementation. But instead, we need performance boost. There should be many points to improve schema compilation and validation.
+Basically it is completed. You can test how current schema validation engine is complete (incomplete) by using standalone test module (see mcs/class/System.XML/Test/System.Xml.Schema/standalone_tests). At least in my box, msxsdtest fails only 30 cases with bugfixed catalog - this score is better than that of Microsoft implementation. But instead, we need performance boost. There should be many points to improve schema compilation and validation.
 
 ### Schema Object Model
 
@@ -93,7 +93,7 @@ msxsl:script is supported. It would be nice if we can support [EXSLT](http://www
 
 -   In general, .NET's "extension objects" (including msxsl:script) is not useful to return node-sets. (MS XSLT implementation rejects just overriden XPathNodeIterator, but accepts only their hidden classes. And the same thing applies to Mono though classes are different.)
 
--   In .NET's extension object design, extension function name is a valid method name that cannot contain some characters such as '-'. That is, implementing EXSLT in C\# is impossible. So if we support EXSLT, it has to be done inside our System.XML.dll. Microsoft developers are also aware of this problem and some of them wish to have EXSLT support in WinFX (not whidbey). If anyone is interested in it, it would be nice.
+-   In .NET's extension object design, extension function name is a valid method name that cannot contain some characters such as '-'. That is, implementing EXSLT in C# is impossible. So if we support EXSLT, it has to be done inside our System.XML.dll. Microsoft developers are also aware of this problem and some of them wish to have EXSLT support in WinFX (not whidbey). If anyone is interested in it, it would be nice.
 
 Our managed XSLT implementation is slower than MS XSLT for some kind of stylesheets, and faster for some.
 
@@ -265,11 +265,11 @@ There seems some improved XML libraries in WinFX, taking shape of System.Runtime
 XLinq
 -----
 
-In C\# 3.0, the next development version of C\#, includes a new feature named "Linq". Linq brings language-integrated data query functionality to C\#. The bindings are "DLinq" for databases and "XLinq" for XML documents.
+In C# 3.0, the next development version of C#, includes a new feature named "Linq". Linq brings language-integrated data query functionality to C#. The bindings are "DLinq" for databases and "XLinq" for XML documents.
 
 We have a simple hacky XLinq implementation, but since the core of Linq (such as Sequence) are not implemented, it is practically not working. This development might resume when the related class libraries got documented.
 
-Though C\# 3.0 is the most related language to Linq, there are other languages (for example, Nemerle has own macro functionality) that would be useful to realize Linq feature.
+Though C# 3.0 is the most related language to Linq, there are other languages (for example, Nemerle has own macro functionality) that would be useful to realize Linq feature.
 
 You might also want to learn about PHP5 simpleXML API for its automatic structure inference.
 

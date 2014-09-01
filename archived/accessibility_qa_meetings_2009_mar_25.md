@@ -9,11 +9,11 @@ Accessibility: QA Meetings 2009 Mar 25
 ======================================
 
 BEGIN LOGGING AT Wed Mar 25 09:48:46 2009
- Mar 25 09:48:46 \* Now talking on \#mono-a11y-qa
+ Mar 25 09:48:46 \* Now talking on #mono-a11y-qa
  Mar 25 09:48:46 \* morbo gives channel operator status to calen
- Mar 25 10:01:04 \* bgmerrell (\~bean@166-70-62-135.ip.xmission.com) has joined \#mono-a11y-qa
+ Mar 25 10:01:04 \* bgmerrell (\~bean@166-70-62-135.ip.xmission.com) has joined #mono-a11y-qa
  Mar 25 10:01:05 \* morbo gives channel operator status to bgmerrell
- Mar 25 10:05:27 \* felicia (\~mufx@61.14.130.209) has joined \#mono-a11y-qa
+ Mar 25 10:05:27 \* felicia (\~mufx@61.14.130.209) has joined #mono-a11y-qa
  Mar 25 10:05:28 \* morbo gives channel operator status to felicia
  Mar 25 10:05:32 \<calen\> welcome
  Mar 25 10:05:34 \<felicia\> hi I'm in
@@ -52,7 +52,7 @@ BEGIN LOGGING AT Wed Mar 25 09:48:46 2009
  Mar 25 10:19:18 \<bgmerrell\> (remember, we only recently started using BUG references, so all tests don't have them)
  Mar 25 10:20:38 \<bgmerrell\> felicia: BUG references are just comments in our tests so we know why a test is failing. It is essentially a comment that says BUG\<bug number\>, e.g., BUG457479
  Mar 25 10:21:13 \<felicia\> year , I get it .
- Mar 25 10:22:18 \<bgmerrell\> Remember we should remove BUG references once the test passes.. we can change it to say something like "\# this test used to fail because of bug 457479, but it shouldn't say "BUG456479" anywhere, because we don't want the reference to appear when we grep for BUG\<bug number\>
+ Mar 25 10:22:18 \<bgmerrell\> Remember we should remove BUG references once the test passes.. we can change it to say something like "# this test used to fail because of bug 457479, but it shouldn't say "BUG456479" anywhere, because we don't want the reference to appear when we grep for BUG\<bug number\>
  Mar 25 10:23:12 \<bgmerrell\> You don't have to leave in a comment stating that the test failed in the past, it's optional.
  Mar 25 10:23:16 \<bgmerrell\> "used to" means "in the past"
  Mar 25 10:23:19 \<bgmerrell\> by the way :)
@@ -87,7 +87,7 @@ BEGIN LOGGING AT Wed Mar 25 09:48:46 2009
  Mar 25 10:32:18 \<calen\> we will share some tests with felicia
  Mar 25 10:32:23 \<bgmerrell\> Okay, and I will be working on something a bit different
  Mar 25 10:32:28 \<felicia\> welcome
- Mar 25 10:33:20 \<calen\> in fact she has been working something on combobox\_simple test.
+ Mar 25 10:33:20 \<calen\> in fact she has been working something on combobox_simple test.
  Mar 25 10:35:37 \<calen\> bgmerrell, BTW, do we need do some investigation for phase 2 test?
  Mar 25 10:35:41 \<bgmerrell\> I will be using our code review tool to start reviewing our 75% complete tests
  Mar 25 10:35:44 \<bgmerrell\> [http://code.mono-a11y.org/r/10/](http://code.mono-a11y.org/r/10/)

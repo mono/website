@@ -17,7 +17,7 @@ They are at:
 
     release/website/download_stats
 
-run './collect\_and\_gen\_reports' from this directory. An account on ftp.novell.com is required.
+run './collect_and_gen_reports' from this directory. An account on ftp.novell.com is required.
 
 This will create webalizer html output to:
 

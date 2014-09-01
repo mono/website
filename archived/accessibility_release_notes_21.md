@@ -78,7 +78,7 @@ Installing UIA and ATK support for System.Windows.Forms is as simple as adding o
 
 However, adding accessibility support for the Moonlight browser plugin requires a different set of steps:
 
--   Install the updated `xulrunner` package from the above repositories. *(Required until patch on [bug \#480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)) gets approved*
+-   Install the updated `xulrunner` package from the above repositories. *(Required until patch on [bug #480317](https://bugzilla.mozilla.org/show_bug.cgi?id=480317)) gets approved*
 -   Install Novell Moonlight with Accessibility Support for [32 bit](http://www.mono-a11y.org/archive/moonlight-plugins/2.3.99.0accessibility/novell-moonlight-2.3.99.0accessibility-i586.xpi) or [64 bit](http://www.mono-a11y.org/archive/moonlight-plugins/2.3.99.0accessibility/novell-moonlight-2.3.99.0accessibility-x86_64.xpi).
 -   Install [Novell Moonlight Accessibility Extensions](http://www.mono-a11y.org/archive/moonlight-a11y-plugins/2.1/novell-moonlight-a11y-2.1-noarch.xpi)
 -   Restart Firefox
@@ -100,5 +100,5 @@ Reporting Bugs
 
 If you find any issues with this release, please don't hesitate to [file bugs](https://bugzilla.novell.com/enter_bug.cgi?product=UI%20Automation).
 
-If you want to contribute or need specific assistance, please join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or drop in [\#mono-a11y](irc://irc.gimp.org/mono-a11y) on irc.gimp.org.
+If you want to contribute or need specific assistance, please join our [mailing list](http://forge.novell.com/mailman/listinfo/mono-a11y), or drop in [#mono-a11y](irc://irc.gimp.org/mono-a11y) on irc.gimp.org.
 

@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp:_Labels/
 ---
 
-Labels are used a lot in Gtk\#, and are relatively simple. Labels emit no events as they do not have an associated X window. If you need to catch events, or do clipping, place it inside a EventBox widget or a Button widget.
+Labels are used a lot in Gtk#, and are relatively simple. Labels emit no events as they do not have an associated X window. If you need to catch events, or do clipping, place it inside a EventBox widget or a Button widget.
 
 [Image:labels.png]
 
@@ -70,7 +70,7 @@ namespace GtkSharpTutorial {
                         Frame frame;
                         Label label;
  
-                        Application.Init ();   
+                        Application.Init ();
  
  
                         window = new Window ("Label sample");
@@ -105,8 +105,8 @@ namespace GtkSharpTutorial {
  
                         frame.Add (label);
                         vbox.PackStart (frame, false, false, 0);
- 
-                        frame = new Frame ("Right Justified Label");                    
+
+                        frame = new Frame ("Right Justified Label");
                         label = new Label ("This is a Right Justified\nMulti-line label.\n" + "Fourth Line, (j/k)");
                         label.Justify = Justification.Right;
                         frame.Add (label);

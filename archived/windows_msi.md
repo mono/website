@@ -54,9 +54,9 @@ This is simply a Mono 2.8 change. The 1.0/1.1 profile is no longer supported/shi
 
 ### Do not ship Gtk\#
 
-We should modify our "Gtk\# installer for .Net" to also install to the Mono GAC instead of shipping a second copy with Mono.
+We should modify our "Gtk# installer for .Net" to also install to the Mono GAC instead of shipping a second copy with Mono.
 
-Note: There needs to be some work done with regards to ensuring Gtk\# picks up our version of Gtk+ instead of the one installed with Pidgin, Inkscape, Miro, etc. Currently, the first one in PATH is used.
+Note: There needs to be some work done with regards to ensuring Gtk# picks up our version of Gtk+ instead of the one installed with Pidgin, Inkscape, Miro, etc. Currently, the first one in PATH is used.
 
 ### Strip out things that not many people use
 

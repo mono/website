@@ -9,9 +9,9 @@ redirect_from:
 CreatingCustomThemedGtkSharpWidgets
 ===================================
 
-This document will try to highlight was is required to implement a custom Gtk\# widget that integrates properly with a Theme Engine.
+This document will try to highlight was is required to implement a custom Gtk# widget that integrates properly with a Theme Engine.
 
-Gtk\# based applications can be themed based on the user preferences. The themes control how applications look on the screen. Although the core widgets in Gtk\# already follow the guidelines developers that are implementing their own custom widgets need to pay special attention to make sure that their custom widgets render properly across different engines and looks.
+Gtk# based applications can be themed based on the user preferences. The themes control how applications look on the screen. Although the core widgets in Gtk# already follow the guidelines developers that are implementing their own custom widgets need to pay special attention to make sure that their custom widgets render properly across different engines and looks.
 
 For example, something that works like a button, should look like a button.
 
@@ -75,38 +75,38 @@ protected override bool OnExposeEvent (Gdk.EventExpose evnt)
     // Resolve widget you want to use, it can also be null
     Gtk.Widget wgd = this;
  
-    // Load style based on fake               
+    // Load style based on fake
     Style myStyle = Rc.GetStyle (Fakes.Entry);
     base.OnExposeEvent (evnt);
  
     if (CONDITION_WIDGET_IS_SENSITIVE == false) {
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, StateType.Insensitive, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, StateType.Insensitive,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, StateType.Insensitive, 
-                              ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, StateType.Insensitive,
+                              ShadowType.In, rect, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
     }
-    else if (CONDITION_WIDGET_IS_FOCUSED == true) {                
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+    else if (CONDITION_WIDGET_IS_FOCUSED == true) {
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintFocus (myStyle, aArgs.Drawable, State, clip, wdg, "entry", 
+        Gtk.Style.PaintFocus (myStyle, aArgs.Drawable, State, clip, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry",
                                rect.X, rect.Y, rect.Width, rect.Height);
     }
     else {
-        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State, 
-                               ShadowType.In, rect, wdg, "entry_bg", 
+        Gtk.Style.PaintFlatBox (myStyle, aArgs.Drawable, State,
+                               ShadowType.In, rect, wdg, "entry_bg",
                                rect.X, rect.Y, rect.Width, rect.Height);
-        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, State, 
-                              ShadowType.In, rect, wdg, "entry", 
+        Gtk.Style.PaintShadow(myStyle, aArgs.Drawable, State,
+                              ShadowType.In, rect, wdg, "entry",
                               rect.X, rect.Y, rect.Width, rect.Height);
     }
  
-    // Dispose fake style     
+    // Dispose fake style
     myStyle.Dispose();
     myStyle = null;
 }

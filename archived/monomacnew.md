@@ -10,11 +10,7 @@ MonoMacNew
 
 [Get MonoMac](#getting-monomac)
 
- 
-
 Getting Started
-
- 
 
 [API Documentation](http://www.go-mono.com/docs/N:MonoMac)
 

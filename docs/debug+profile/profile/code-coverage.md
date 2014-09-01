@@ -39,7 +39,7 @@ To be able to easily collect coverage information from the unit tests in the mon
    make run-test RUNTIME_FLAGS="--profile=monocov:outfile=corlib.cov,+[mscorlib]"
 ```
 
-To use similar options while running unit tests directly with nunit-console2, specify MONO\_OPTIONS as follows:
+To use similar options while running unit tests directly with nunit-console2, specify MONO_OPTIONS as follows:
 
 ``` bash
    MONO_OPTIONS="--profile=monocov:+[MyAssembly]" nunit-console2 MyTestAssembly.dll

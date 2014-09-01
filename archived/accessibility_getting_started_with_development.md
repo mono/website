@@ -63,33 +63,18 @@ Setting Up Your Environment
     -   Follow the same instructions but for uia2atk/UIAutomation.
     -   Install [Mono.Addins 0.3.1 from tarball](http://www.go-mono.com/sources/mono-addins/mono-addins-0.3.1.tar.bz2) in the parallel environment.
     -   Install MonoDevelop in the parallel environment:
-        -   Checkout the latest MonoDevelop trunk (or use MonoDevelop 1.9.1 (aka 2.0 Alpha 2)):
+        -   Checkout the latest MonoDevelop trunk (or use MonoDevelop 1.9.1 (aka 2.0 Alpha 2)): `svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/monodevelop`
+        -   And build it with:
 
-<!-- -->
+            ``` bash
+            cd monodevelop
+            ./configure --profile=core --prefix=/home/[user]/parallel-mono
+            make
+            ```
 
-     svn co svn+ssh://[yournamehere]@mono-cvs.ximian.com/source/trunk/monodevelop
-
--   -   -   And build it with:
-
-<!-- -->
-
-    cd monodevelop
-    ./configure --profile=core --prefix=/home/[user]/parallel-mono
-    make
-
--   -   -   You can run it uninstalled if you like:
-
-<!-- -->
-
-    make run
-
--   -   -   Or install it in your parallel environment (may require sudo):
-
-<!-- -->
-
-    make install
-
--   -   -   If you have trouble starting your new MD, you may need to delete your old addin configuration by doing \`rm -rf \~/.config/MonoDevelop/addin\*\`.
+        -   You can run it uninstalled if you like: `make run`
+        -   Or install it in your parallel environment (may require sudo): `make install`
+        -   If you have trouble starting your new MD, you may need to delete your old addin configuration by doing \`rm -rf \~/.config/MonoDevelop/addin\*\`.
     -   **Whenever you deal with mono-a11y stuff, make sure you're running in the parallel environment!** You do this by doing everything from a terminal that has run \`source \~/mono-dev-env\` (replace \~/mono-dev-env with the location of your parallel mono environment script).
 
 Building the Code
@@ -100,7 +85,7 @@ First, always make sure you are running in the parallel mono environment when yo
     sandy@linux:~> source ~/mono-dev-env
     [mono] ~ @
 
-(If you don't have your [CONFIG\_SITE](/Parallel_Mono_Environments#Tip:_CONFIG_SITE) set up, you will need to specify the correct prefix when you run autogen.sh, for example \`./autogen.sh --prefix=/home/[user]/parallel-mono\`)
+(If you don't have your [CONFIG_SITE](/Parallel_Mono_Environments#Tip:_CONFIG_SITE) set up, you will need to specify the correct prefix when you run autogen.sh, for example \`./autogen.sh --prefix=/home/[user]/parallel-mono\`)
 
     [mono] ~/mono-svn/uia2atk/UIAutomation @ ./autogen.sh && make && make install
 
@@ -123,7 +108,7 @@ We highly recommend using MonoDevelop to edit UIA code. If you are adding any ne
 
 In general we follow the [Mono Coding Guidelines](/Coding_Guidelines "Coding Guidelines"), with the following notable exceptions:
 
--   We use camelCase instead of names\_with\_underscores for all private/protected fields and local variables.
+-   We use camelCase instead of names_with_underscores for all private/protected fields and local variables.
 -   We put the opening curly brace ('{') for a class on the next line.
 -   We align method call arguments the same way method declaration arguments are aligned according to the Mono guidelines (this is MonoDevelop's default behavior).
 -   Almost every non-private class you write should be internal instead of public. Make sure you have a good reason for making a class public.
@@ -174,7 +159,7 @@ Some of our files should be editable in Windows and in Linux. To make sure we do
 
 You need to edit your subversion configuration file. On Linux, this file is located at \~/.subversion/config . On Windows, using TortoiseSVN, right-click anywhere on the Desktop and go to TortoiseSVN -\> Settings -\> General -\> Subversion configuration file, and select the Edit button.
 
-Unless you have already customized yours, most of the file will be commented out with "\#" characters. Add this to your configuration file:
+Unless you have already customized yours, most of the file will be commented out with "#" characters. Add this to your configuration file:
 
     ### Set enable-auto-props to 'yes' to enable automatic properties
     ### for 'svn add' and 'svn import', it defaults to 'no'.

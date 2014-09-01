@@ -99,7 +99,7 @@ To interrupt the current job manually instead of using jail-do, put the above tw
 Shutting down monobuild
 -----------------------
 
-In order to shut down monobuild (which is usually done during release time) edit trunk/release/pyutils/config.py and change all \_active variables to 'False' instead of 'True'. This will prevent any additional jobs from being scheduled.
+In order to shut down monobuild (which is usually done during release time) edit trunk/release/pyutils/config.py and change all _active variables to 'False' instead of 'True'. This will prevent any additional jobs from being scheduled.
 
 Setting up a new build client
 -----------------------------
@@ -139,8 +139,8 @@ The main things to know are:
 -   svn trunk and tag paths
 -   which distros to build on
 -   whether the package is noarch or should be shared across distros
--   If the package isn't building on a system that uses rpm, you'll need to fill out the \_zip vars
--   For rpm base systems, you'll need a .spec file in release/packaging/rpm\_defs/\<def file\>
+-   If the package isn't building on a system that uses rpm, you'll need to fill out the _zip vars
+-   For rpm base systems, you'll need a .spec file in release/packaging/rpm_defs/\<def file\>
 
 If you want the module to be published with sources and added to the snapshot repositories, you'll need to add your module to the following files:
 
@@ -159,7 +159,7 @@ Configuring Apache for the MonoBuild Webview
 
 The webview gives a nice dashboard overview of the status of all of the latest builds in the system. You can see Mono's webview [here](http://mono.ximian.com/monobuild).
 
-To configure the build server you must have mod\_python installed. Here's an example of how to configure a suse 10.2 system.
+To configure the build server you must have mod_python installed. Here's an example of how to configure a suse 10.2 system.
 
     zypper install apache2-mod_python
 
@@ -190,7 +190,7 @@ Append 'log log.gz' to the 'text/plain' entry in /etc/apache2/mime.types so it m
 
     text/plain txt asc log log.gz
 
-For /etc/apache2/mod\_mime-defaults.conf, uncomment:
+For /etc/apache2/mod_mime-defaults.conf, uncomment:
 
     AddEncoding x-gzip .gz .tgz
 

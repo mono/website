@@ -252,24 +252,24 @@ Command list
 
 Types given in each command comments corresponds to the type described above. When there are additional arguments or multiple values in a command's reply, they are each time described in the order they appear or have to appear in the data part. Not also that there is no kind of separation sequence or added alignement padding between each value.
 
-In all cases, if you ask for a command that doesn't exist, a reply will be sent with an error code of NOT\_IMPLEMENTED.
+In all cases, if you ask for a command that doesn't exist, a reply will be sent with an error code of NOT_IMPLEMENTED.
 
 ### Virtual machine commands
 
 |Name|Value|Action and type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:-----------------------|:--------------------|:---------------------------|
 |VERSION|1|Returns a mono virtual machine version information (string) followed by two int giving respectively the runtime major and minor version|None|None|
-|ALL\_THREADS|2|Returns a list of ObjectID each mapping to a System.Threading.Thread instance.|None|None|
+|ALL_THREADS|2|Returns a list of ObjectID each mapping to a System.Threading.Thread instance.|None|None|
 |SUSPEND|3|Suspend the VM execution and returns an empty reply|None|None|
-|RESUME|4|Resume the VM execution and returns an empty reply|None|NOT\_SUSPENDED|
+|RESUME|4|Resume the VM execution and returns an empty reply|None|NOT_SUSPENDED|
 |EXIT|5|Stop VM and returns an empty reply|Ask for a exit code (int) to be used by the VM when it exits|None|
 |DISPOSE|6|Clear event requests, resume the VM and disconnect|None|None|
-|INVOKE\_METHOD|7|Returns a boolean telling if the call was successful followed by an exception object (as a variant) if it was not and by the actual returned value (variant) if it was.|Ask for an ObjectID (id) mapping to a System.Threading.Thread instance, a flags value (int) to pass to the invoke request, the MethodID (id) of the method to invoke, a variant value to be used as *this* (VALUE\_TYPE\_ID\_NULL in case of a valuetype) and a list of variant value representing the parameters of the method.|INVALID\_OBJECT, NOT\_SUSPENDED, INVALID\_METHODID, INVALID\_ARGUMENT|
-|SET\_PROTOCOL\_VERSION|8|Returns an empty reply|Ask for two int giving respectively the major and minor version of the procotol to use.|None|
-|ABORT\_INVOKE|9|Abort the invocation and returns an empty reply|Ask for an ObjectID (id) mapping to a System.Threading.Thread instance and the id (int) of the command packet that set up the invocation to cancel|INVALID\_OBJECT, NO\_INVOCATION|
-|SET\_KEEPALIVE|10|Set up the new keep alive value and returns an empty reply|Ask for a timeout value (int)|None|
-|GET\_TYPES\_FOR\_SOURCE\_FILE|11|Returns a list of TypeID (id) of class defined inside the supplied file name|Ask for a file name (string) and an ignore case flag (byte) although setting it to something different than 0 isn't currently supported.|None|
-|GET\_TYPES|12|Returns a list of TypeID (id) of type which corresponds to the provided type name|Ask for type name (string) and a ignore case flag (byte) which acts like a boolean value|INVALID\_ARGUMENT|
+|INVOKE_METHOD|7|Returns a boolean telling if the call was successful followed by an exception object (as a variant) if it was not and by the actual returned value (variant) if it was.|Ask for an ObjectID (id) mapping to a System.Threading.Thread instance, a flags value (int) to pass to the invoke request, the MethodID (id) of the method to invoke, a variant value to be used as *this* (VALUE_TYPE_ID_NULL in case of a valuetype) and a list of variant value representing the parameters of the method.|INVALID_OBJECT, NOT_SUSPENDED, INVALID_METHODID, INVALID_ARGUMENT|
+|SET_PROTOCOL_VERSION|8|Returns an empty reply|Ask for two int giving respectively the major and minor version of the procotol to use.|None|
+|ABORT_INVOKE|9|Abort the invocation and returns an empty reply|Ask for an ObjectID (id) mapping to a System.Threading.Thread instance and the id (int) of the command packet that set up the invocation to cancel|INVALID_OBJECT, NO_INVOCATION|
+|SET_KEEPALIVE|10|Set up the new keep alive value and returns an empty reply|Ask for a timeout value (int)|None|
+|GET_TYPES_FOR_SOURCE_FILE|11|Returns a list of TypeID (id) of class defined inside the supplied file name|Ask for a file name (string) and an ignore case flag (byte) although setting it to something different than 0 isn't currently supported.|None|
+|GET_TYPES|12|Returns a list of TypeID (id) of type which corresponds to the provided type name|Ask for type name (string) and a ignore case flag (byte) which acts like a boolean value|INVALID_ARGUMENT|
 
 The main function handling these commands is `vm_commands` and is situated at `debugger-agent.c:5671`
 
@@ -279,9 +279,9 @@ Events allows the debuggee to act on program execution (stepping) and also to se
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|REQUEST\_SET|1|Returns the request id (int)|Ask for 3 bytes giving the event kind (EventKind enumeration), suspend policy (SuspendPolicy enumeration) and a list of modifiers which content is context dependent and given in the table below|INVALID\_METHODID, INVALID\_TYPEID, NO\_SEQ\_POINT\_AT\_IL\_OFFSET, INVALID\_OBJECT, INVALID\_ASSEMBLYID|
-|REQUEST\_CLEAR|2|Clear the requested event and returns an empty reply|Ask for an event type (byte) and a request id (int)|None|
-|REQUEST\_CLEAR\_ALL\_BREAKPOINTS|3|Returns an empty reply|None|None|
+|REQUEST_SET|1|Returns the request id (int)|Ask for 3 bytes giving the event kind (EventKind enumeration), suspend policy (SuspendPolicy enumeration) and a list of modifiers which content is context dependent and given in the table below|INVALID_METHODID, INVALID_TYPEID, NO_SEQ_POINT_AT_IL_OFFSET, INVALID_OBJECT, INVALID_ASSEMBLYID|
+|REQUEST_CLEAR|2|Clear the requested event and returns an empty reply|Ask for an event type (byte) and a request id (int)|None|
+|REQUEST_CLEAR_ALL_BREAKPOINTS|3|Returns an empty reply|None|None|
 
 The main function handling these commands is `event_commands` and is situated at `debugger-agent.c:5916`
 
@@ -290,13 +290,13 @@ Each modifier has the first byte describing the modification it's carrying out a
 |Mod value|Body|
 |:--------|:---|
 |COUNT|a MethodID (id)|
-|LOCATION\_ONLY|a MethodID (id) and a location information (long)|
+|LOCATION_ONLY|a MethodID (id) and a location information (long)|
 |STEP|A thread id, size of the step (int) corresponding to the StepSize enumeration and depth of it (int) corresponding to the StepDepth enumeration|
-|THREAD\_ONLY|A thread id|
-|EXCEPTION\_ONLY|A TypeID representing a exception type and two byte values setting respectively the caught and uncaught filter|
-|ASSEMBLY\_ONLY|A list of AssemblyID (id)|
-|SOURCE\_FILE\_ONLY|A list of source file name (string)|
-|TYPE\_NAME\_ONLY|A list of type name (string)|
+|THREAD_ONLY|A thread id|
+|EXCEPTION_ONLY|A TypeID representing a exception type and two byte values setting respectively the caught and uncaught filter|
+|ASSEMBLY_ONLY|A list of AssemblyID (id)|
+|SOURCE_FILE_ONLY|A list of source file name (string)|
+|TYPE_NAME_ONLY|A list of type name (string)|
 
 ### Thread commands
 
@@ -304,12 +304,12 @@ Each command requires at least one ObjectID (of type id) parameter mapping to a 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_FRAME\_INFO|1|Returns a list of quadruplet of frame ID (int), MethodID (id), IL offset (int) and frame flags (byte)|Ask for a start frame (currently other value than 0 aren't supported) as an int and a length as a int|INVALID\_OBJECT|
-|GET\_NAME|2|Returns the name of the thread as a string|None|INVALID\_OBJECT|
-|GET\_STATE|3|Return the thread state as an int|None|INVALID\_OBJECT|
-|GET\_INFO|4|Returns a byte value telling if the thread is a threadpool thread (1) or not (0)|None|INVALID\_OBJECT|
-|GET\_ID|5|Returns the thread id (address of the object) as a long|None|INVALID\_OBJECT|
-|GET\_TID|6|Returns the proper thread id (or TID) as a long|None|INVALID\_OBJECT|
+|GET_FRAME_INFO|1|Returns a list of quadruplet of frame ID (int), MethodID (id), IL offset (int) and frame flags (byte)|Ask for a start frame (currently other value than 0 aren't supported) as an int and a length as a int|INVALID_OBJECT|
+|GET_NAME|2|Returns the name of the thread as a string|None|INVALID_OBJECT|
+|GET_STATE|3|Return the thread state as an int|None|INVALID_OBJECT|
+|GET_INFO|4|Returns a byte value telling if the thread is a threadpool thread (1) or not (0)|None|INVALID_OBJECT|
+|GET_ID|5|Returns the thread id (address of the object) as a long|None|INVALID_OBJECT|
+|GET_TID|6|Returns the proper thread id (or TID) as a long|None|INVALID_OBJECT|
 
 The main function handling these commands is `thread_commands` and is situated at `debugger-agent.c:6991`
 
@@ -317,13 +317,13 @@ The main function handling these commands is `thread_commands` and is situated a
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_ROOT\_DOMAIN|1|Returns the DomainID of the root domain|None|None|
-|GET\_FRIENDLY\_NAME|2|Returns the friendly name as a string of the provided DomainID|Ask for a DomainID (id)|INVALID\_DOMAINID|
-|GET\_ASSEMBLIES|3|Returns a list of AssemblyID contained inside this AppDomain|Ask for a DomainID (id)|INVALID\_DOMAINID|
-|GET\_ENTRY\_ASSEMBLY|4|Returns the entry AssemblyID of this domain|Ask for a DomainID (id)|INVALID\_DOMAINID|
-|CREATE\_STRING|5|Returns the ObjectID of the created string|Ask for a DomainID (id) where to create the new string and a string typed value to put inside the domain|INVALID\_DOMAINID|
-|GET\_CORLIB|6|Returns the AssemblyID of the load corlib inside this AppDomain|Ask for a DomainID (id)|INVALID\_DOMAINID|
-|CREATE\_BOXED\_VALUE|7|Returns the ObjectID of the boxed value|Ask for a DomainID (id), TypeID of the type that is going to be boxed and a variant value which is going to be put into the boxed value|INVALID\_DOMAINID, INVALID\_TYPEID|
+|GET_ROOT_DOMAIN|1|Returns the DomainID of the root domain|None|None|
+|GET_FRIENDLY_NAME|2|Returns the friendly name as a string of the provided DomainID|Ask for a DomainID (id)|INVALID_DOMAINID|
+|GET_ASSEMBLIES|3|Returns a list of AssemblyID contained inside this AppDomain|Ask for a DomainID (id)|INVALID_DOMAINID|
+|GET_ENTRY_ASSEMBLY|4|Returns the entry AssemblyID of this domain|Ask for a DomainID (id)|INVALID_DOMAINID|
+|CREATE_STRING|5|Returns the ObjectID of the created string|Ask for a DomainID (id) where to create the new string and a string typed value to put inside the domain|INVALID_DOMAINID|
+|GET_CORLIB|6|Returns the AssemblyID of the load corlib inside this AppDomain|Ask for a DomainID (id)|INVALID_DOMAINID|
+|CREATE_BOXED_VALUE|7|Returns the ObjectID of the boxed value|Ask for a DomainID (id), TypeID of the type that is going to be boxed and a variant value which is going to be put into the boxed value|INVALID_DOMAINID, INVALID_TYPEID|
 
 The main function handling these commands is `domain_commands` and is situated at `debugger-agent.c:6104`
 
@@ -333,12 +333,12 @@ Each command requires at least one AssemblyID (of type id) parameter before any 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_LOCATION|1|Returns the filename (string) of image associated to the assembly|None|INVALID\_ASSEMBLYID|
-|GET\_ENTRY\_POINT|2|Returns the MethodID (id) of the entry point or a 0 id if there is none (in case of dynamic assembly or library for instance)|None|INVALID\_ASSEMBLYID|
-|GET\_MANIFEST\_MODULE|3|Returns the ModuleID (id) of the assembly|None|INVALID\_ASSEMBLYID|
-|GET\_OBJECT|4|Returns the ObjectID of the AssemblyID object instance|None|INVALID\_ASSEMBLYID|
-|GET\_TYPE|5|Returns the TypeID of the found type or a null id if it wasn't found|Ask for a type information in form of a string and a byte value to tell if case should be ignored (1) or not (0)|INVALID\_ASSEMBLYID|
-|GET\_NAME|6|Return the full name of the assembly as a string|None|INVALID\_ASSEMBLYID|
+|GET_LOCATION|1|Returns the filename (string) of image associated to the assembly|None|INVALID_ASSEMBLYID|
+|GET_ENTRY_POINT|2|Returns the MethodID (id) of the entry point or a 0 id if there is none (in case of dynamic assembly or library for instance)|None|INVALID_ASSEMBLYID|
+|GET_MANIFEST_MODULE|3|Returns the ModuleID (id) of the assembly|None|INVALID_ASSEMBLYID|
+|GET_OBJECT|4|Returns the ObjectID of the AssemblyID object instance|None|INVALID_ASSEMBLYID|
+|GET_TYPE|5|Returns the TypeID of the found type or a null id if it wasn't found|Ask for a type information in form of a string and a byte value to tell if case should be ignored (1) or not (0)|INVALID_ASSEMBLYID|
+|GET_NAME|6|Return the full name of the assembly as a string|None|INVALID_ASSEMBLYID|
 
 The main function handling these commands is `assembly_commands` and is situated at `debugger-agent.c:6203`
 
@@ -346,7 +346,7 @@ The main function handling these commands is `assembly_commands` and is situated
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|CMD\_MODULE\_GET\_INFO|1|Returns the following strings: basename of the image, scope name, full name, GUID and the image AssemblyID (id)|Ask for a ModuleID (id)|None|
+|CMD_MODULE_GET_INFO|1|Returns the following strings: basename of the image, scope name, full name, GUID and the image AssemblyID (id)|Ask for a ModuleID (id)|None|
 
 The main function handling these commands is `module_commands` and is situated at `debugger-agent.c:6295`
 
@@ -356,14 +356,14 @@ Each command requires at least one MethodID (of type id) parameter before any ad
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_NAME|1|Returns a string of the method name|None|INVALID\_METHODID|
-|GET\_DECLARING\_TYPE|2|Returns a TypeID of the declaring type for this method|None|INVALID\_METHODID|
-|GET\_DEBUG\_INFO|3|Returns the code size of the method (int), source file name (string) and a list of tuple of IL offset (int) and line numbers (int) for the method|None|INVALID\_METHODID|
-|GET\_PARAM\_INFO|4|Returns the call convention (int), parameter count (int), generic parameter count (int), TypeID of the returned value (id), *parameter count* TypeID for each parameter type and finally *parameter count* parameter name (string) for each parameter.|None|INVALID\_METHODID|
-|GET\_LOCALS\_INFO|5|Returns the number of locals (int) followed by the TypeID (id) for each locals, followed by the name (string) of each locals (empty string if there is none) and finally followed by the scope of each locals which is a tuple of int giving the start address and end offset.|None|INVALID\_METHODID|
-|GET\_INFO|6|Returns 3 int representing respectively the method flags, implementation flags and token|None|INVALID\_METHODID|
-|GET\_BODY|7|Returns a list of byte corresponding to the method IL code.|None|INVALID\_METHODID|
-|RESOLVE\_TOKEN|8|Returns a variant value corresponding to the provided token|Ask for a token value (int)|INVALID\_METHODID|
+|GET_NAME|1|Returns a string of the method name|None|INVALID_METHODID|
+|GET_DECLARING_TYPE|2|Returns a TypeID of the declaring type for this method|None|INVALID_METHODID|
+|GET_DEBUG_INFO|3|Returns the code size of the method (int), source file name (string) and a list of tuple of IL offset (int) and line numbers (int) for the method|None|INVALID_METHODID|
+|GET_PARAM_INFO|4|Returns the call convention (int), parameter count (int), generic parameter count (int), TypeID of the returned value (id), *parameter count* TypeID for each parameter type and finally *parameter count* parameter name (string) for each parameter.|None|INVALID_METHODID|
+|GET_LOCALS_INFO|5|Returns the number of locals (int) followed by the TypeID (id) for each locals, followed by the name (string) of each locals (empty string if there is none) and finally followed by the scope of each locals which is a tuple of int giving the start address and end offset.|None|INVALID_METHODID|
+|GET_INFO|6|Returns 3 int representing respectively the method flags, implementation flags and token|None|INVALID_METHODID|
+|GET_BODY|7|Returns a list of byte corresponding to the method IL code.|None|INVALID_METHODID|
+|RESOLVE_TOKEN|8|Returns a variant value corresponding to the provided token|Ask for a token value (int)|INVALID_METHODID|
 
 The main functions handling these commands are `method_commands` and `method_commands_internal` and are situated at `debugger-agent.c:6968` and `debugger-agent.c:6968` respectively.
 
@@ -373,20 +373,20 @@ Each command requires at least one TypeID (of type id) parameter before any addi
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_INFO|1|Returns the following informations about the type in that order: namespace (string), class name (string), full name (string), AssemblyID (id), ModuleID (id), TypeID (id), TypeID (id) of underlying type (or a 0 id if there is none), type token (int), type rank (byte), type flags (int), underlying byval type (byte) flags (see after table) and a list of nested type TypeID|None|INVALID\_TYPEID|
-|GET\_METHODS|2|Returns a list of MethodID corresponding to each of the method of the type|None|INVALID\_TYPEID|
-|GET\_FIELDS|3|Returns list of quadruplet of FieldID (id), field name (string), field TypeID (id), field attributes (int)|None|INVALID\_TYPEID|
-|GET\_VALUES|4|Returns a number of variant value equals to the number of FieldID that was passed as parameter. If the field had a ThreadStatic attribute applied to it, value fetched are from the current thread point of view.|Ask for a list of FieldID representing this type static fields to the the value of. Only static field are supported.|INVALID\_TYPEID, INVALID\_FIELDID|
-|GET\_OBJECT|5|Returns an ObjectID corresponding to the type instance|None|INVALID\_TYPEID|
-|GET\_SOURCE\_FILES|6|Returns the same output than GET\_SOURCE\_FILES\_2 except only the basename of each path is returned|None|INVALID\_TYPEID|
-|SET\_VALUES|7|Returns an empty response|Ask for a list of tuple of FieldID and variant value. Only pure static field can be set (i.e. with no extra attribute like ThreadStatic).|INVALID\_TYPEID, INVALID\_FIELDID|
-|IS\_ASSIGNABLE\_FROM|8|Returns a boolean equals to true if the type is assignable from the other provided type, false otherwise|Ask for an extra TypeID|INVALID\_TYPEID|
-|GET\_PROPERTIES|9|Returns a list of quadruplet of FieldID (id), get accessor MethodID (string), set accessor MethodID (id), property attributes (int)|None|INVALID\_TYPEID|
-|GET\_CATTRS|10|Returns a list of custom attribute applied on the type. Custom attribute definition is given below.|Ask for a TypeID of an custom attribute type|INVALID\_TYPEID|
-|GET\_FIELD\_CATTRS|11|Returns a list of custom attributes of a type's field. Custom attribute definition is given below.|Ask for a FieldID of one the type field and a TypeID of an custom attribute type|INVALID\_TYPEID, INVALID\_FIELDID|
-|GET\_PROPERTY\_CATTRS|12|Returns a list of custom attributes of a type's property. Custom attribute definition is given below.|Ask for a PropertyID of one the type field and a TypeID of an custom attribute type|INVALID\_TYPEID, INVALID\_PROPERTYID|
-|GET\_SOURCE\_FILES\_2|13|Returns a list of source file full paths (string) where the type is defined|None|INVALID\_TYPEID|
-|GET\_VALUES\_2|14|Returns a number of variant value equals to the number of FieldID that was passed as parameter. If the field had a ThreadStatic attribute applied to it, value fetched are from the thread parameter point of view.|Ask for an ObjectID representing a System.Thread instance and a list of FieldID representing this type static fields to the the value of. Only static field are supported.|INVALID\_OBJECT, INVALID\_TYPEID, INVALID\_FIELDID|
+|GET_INFO|1|Returns the following informations about the type in that order: namespace (string), class name (string), full name (string), AssemblyID (id), ModuleID (id), TypeID (id), TypeID (id) of underlying type (or a 0 id if there is none), type token (int), type rank (byte), type flags (int), underlying byval type (byte) flags (see after table) and a list of nested type TypeID|None|INVALID_TYPEID|
+|GET_METHODS|2|Returns a list of MethodID corresponding to each of the method of the type|None|INVALID_TYPEID|
+|GET_FIELDS|3|Returns list of quadruplet of FieldID (id), field name (string), field TypeID (id), field attributes (int)|None|INVALID_TYPEID|
+|GET_VALUES|4|Returns a number of variant value equals to the number of FieldID that was passed as parameter. If the field had a ThreadStatic attribute applied to it, value fetched are from the current thread point of view.|Ask for a list of FieldID representing this type static fields to the the value of. Only static field are supported.|INVALID_TYPEID, INVALID_FIELDID|
+|GET_OBJECT|5|Returns an ObjectID corresponding to the type instance|None|INVALID_TYPEID|
+|GET_SOURCE_FILES|6|Returns the same output than GET_SOURCE_FILES_2 except only the basename of each path is returned|None|INVALID_TYPEID|
+|SET_VALUES|7|Returns an empty response|Ask for a list of tuple of FieldID and variant value. Only pure static field can be set (i.e. with no extra attribute like ThreadStatic).|INVALID_TYPEID, INVALID_FIELDID|
+|IS_ASSIGNABLE_FROM|8|Returns a boolean equals to true if the type is assignable from the other provided type, false otherwise|Ask for an extra TypeID|INVALID_TYPEID|
+|GET_PROPERTIES|9|Returns a list of quadruplet of FieldID (id), get accessor MethodID (string), set accessor MethodID (id), property attributes (int)|None|INVALID_TYPEID|
+|GET_CATTRS|10|Returns a list of custom attribute applied on the type. Custom attribute definition is given below.|Ask for a TypeID of an custom attribute type|INVALID_TYPEID|
+|GET_FIELD_CATTRS|11|Returns a list of custom attributes of a type's field. Custom attribute definition is given below.|Ask for a FieldID of one the type field and a TypeID of an custom attribute type|INVALID_TYPEID, INVALID_FIELDID|
+|GET_PROPERTY_CATTRS|12|Returns a list of custom attributes of a type's property. Custom attribute definition is given below.|Ask for a PropertyID of one the type field and a TypeID of an custom attribute type|INVALID_TYPEID, INVALID_PROPERTYID|
+|GET_SOURCE_FILES_2|13|Returns a list of source file full paths (string) where the type is defined|None|INVALID_TYPEID|
+|GET_VALUES_2|14|Returns a number of variant value equals to the number of FieldID that was passed as parameter. If the field had a ThreadStatic attribute applied to it, value fetched are from the thread parameter point of view.|Ask for an ObjectID representing a System.Thread instance and a list of FieldID representing this type static fields to the the value of. Only static field are supported.|INVALID_OBJECT, INVALID_TYPEID, INVALID_FIELDID|
 
 The main functions handling these commands are `type_commands` and `type_commands_internal` and are situated at `debugger-agent.c:6726` and `debugger-agent.c:6403` respectively.
 
@@ -404,9 +404,9 @@ Each command requires at least one ObjectID (of type id) parameter mapping to a 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_VALUES|1|Ask for a list of position (int) information.|Returns a list of miscelleanous typed values. If the position information was negative, the value corresponds to a parameter and if it was positive to a local variable.|INVALID\_OBJECT, INVALID\_FRAMEID, ABSENT\_INFORMATION|
-|GET\_THIS|2|Returns the *this* value prepended by a single byte value describing its type, or the special TYPE\_ID\_NULL (byte) value which is equal to 0xf0 in case there is no *this* parameter.|None|INVALID\_OBJECT, INVALID\_FRAMEID, ABSENT\_INFORMATION|
-|SET\_VALUES|3|Returns an empty reply|Ask for a list of pair of position (int) information and variant whose value is going to be used.|INVALID\_OBJECT, INVALID\_FRAMEID, ABSENT\_INFORMATION, INVALID\_ARGUMENT|
+|GET_VALUES|1|Ask for a list of position (int) information.|Returns a list of miscelleanous typed values. If the position information was negative, the value corresponds to a parameter and if it was positive to a local variable.|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION|
+|GET_THIS|2|Returns the *this* value prepended by a single byte value describing its type, or the special TYPE_ID_NULL (byte) value which is equal to 0xf0 in case there is no *this* parameter.|None|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION|
+|SET_VALUES|3|Returns an empty reply|Ask for a list of pair of position (int) information and variant whose value is going to be used.|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION, INVALID_ARGUMENT|
 
 The main function handling these commands is `frame_commands` and is situated at `debugger-agent.c:7082`
 
@@ -416,9 +416,9 @@ Each command requires at least one ObjectID (of type id) parameter mapping to a 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_LENGTH|1|Returns an int corresponding to the array rank followed by a set of int pair corresponding respectively to the length and lower bound of each of the array dimensions. In case of a single dimensional zero-based array, the returned data amount to 3 int values with the second being the total length of the array and the third one being 0.|None|INVALID\_OBJECT|
-|GET\_VALUES|2|Returns a list of *length* elements which individual size in bytes depends on the underlying type of the System.Array instance.|Ask for an index (int) and a length (int) to determine the range of value to return|INVALID\_OBJECT|
-|SET\_VALUES|3|Return an empty reply|Ask for an index (int) and a length (int) to determine the range of value to set and a *length* number of trailing values whose type and byte size match those of the underlying type of the System.Array instance.|INVALID\_OBJECT|
+|GET_LENGTH|1|Returns an int corresponding to the array rank followed by a set of int pair corresponding respectively to the length and lower bound of each of the array dimensions. In case of a single dimensional zero-based array, the returned data amount to 3 int values with the second being the total length of the array and the third one being 0.|None|INVALID_OBJECT|
+|GET_VALUES|2|Returns a list of *length* elements which individual size in bytes depends on the underlying type of the System.Array instance.|Ask for an index (int) and a length (int) to determine the range of value to return|INVALID_OBJECT|
+|SET_VALUES|3|Return an empty reply|Ask for an index (int) and a length (int) to determine the range of value to set and a *length* number of trailing values whose type and byte size match those of the underlying type of the System.Array instance.|INVALID_OBJECT|
 
 The main function handling these commands is `vm_commands` and is situated at `debugger-agent.c:5671`
 
@@ -428,9 +428,9 @@ Each command requires at least one ObjectID (of type id) parameter mapping to a 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_VALUE|1|Returns a UTF8-encoded string corresponding to the System.String instance with its length prepended as a int value|None|INVALID\_OBJECT|
-|GET\_LENGTH|2|Returns the length of a UTF8-encoded string corresponding to the System.String instance as an int value|None|INVALID\_OBJECT|
-|GET\_CHARS|3|Returns *length* short values each encoding a character of the string slice|Ask for a start index (long) and a length parameter (long) of the string slice to take.|INVALID\_OBJECT, INVALID\_ARGUMENT|
+|GET_VALUE|1|Returns a UTF8-encoded string corresponding to the System.String instance with its length prepended as a int value|None|INVALID_OBJECT|
+|GET_LENGTH|2|Returns the length of a UTF8-encoded string corresponding to the System.String instance as an int value|None|INVALID_OBJECT|
+|GET_CHARS|3|Returns *length* short values each encoding a character of the string slice|Ask for a start index (long) and a length parameter (long) of the string slice to take.|INVALID_OBJECT, INVALID_ARGUMENT|
 
 The main function handling these commands is `string_commands` and is situated at `debugger-agent.c:7293`
 
@@ -440,12 +440,12 @@ Each command requires at least one ObjectID (of type id) parameter before any ad
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET\_TYPE|1|Returns the TypeID as an id|None|INVALID\_OBJECT|
-|GET\_VALUES|2|Ask for a list of FieldID to fetch value of|Returns *length* values of miscellaneous type and size corresponding to the underlying type of each queried field|INVALID\_OBJECT, UNLOADED, INVALID\_FIELDID|
-|IS\_COLLECTED|3|Returns an int equals to 1 if the object has been collected by GC, 0 otherwise|None|None|
-|GET\_ADDRESS|4|Returns a long value corresponding to the address where the object is stored in memory|None|INVALID\_OBJECT|
-|GET\_DOMAIN|5|Returns an id corresponding to the DomainID the object is located in|None|INVALID\_OBJECT|
-|SET\_VALUES|6|Returns an empty reply|Ask for a list of tuple of FieldID (id) and of the value that should be set to it|INVALID\_OBJECT, UNLOADED, INVALID\_FIELDID|
+|GET_TYPE|1|Returns the TypeID as an id|None|INVALID_OBJECT|
+|GET_VALUES|2|Ask for a list of FieldID to fetch value of|Returns *length* values of miscellaneous type and size corresponding to the underlying type of each queried field|INVALID_OBJECT, UNLOADED, INVALID_FIELDID|
+|IS_COLLECTED|3|Returns an int equals to 1 if the object has been collected by GC, 0 otherwise|None|None|
+|GET_ADDRESS|4|Returns a long value corresponding to the address where the object is stored in memory|None|INVALID_OBJECT|
+|GET_DOMAIN|5|Returns an id corresponding to the DomainID the object is located in|None|INVALID_OBJECT|
+|SET_VALUES|6|Returns an empty reply|Ask for a list of tuple of FieldID (id) and of the value that should be set to it|INVALID_OBJECT, UNLOADED, INVALID_FIELDID|
 
 The main function handling these commands is `object_commands` and is situated at `debugger-agent.c:7318`
 

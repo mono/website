@@ -10,7 +10,7 @@ Publishing Websites From Visual Studio
 
 **This article is incomplete, please add to it.**
 
-The easiest way to test your ASP.Net website running on Mono on Linux is to download the Mono VMWare image. It comes preconfigured with a running instance of Apache and mod\_mono. These directions describe how to publish to this image from Visual Studio 2008, however they also apply to any similarly setup instance of Linux/Mono/Apache.
+The easiest way to test your ASP.Net website running on Mono on Linux is to download the Mono VMWare image. It comes preconfigured with a running instance of Apache and mod_mono. These directions describe how to publish to this image from Visual Studio 2008, however they also apply to any similarly setup instance of Linux/Mono/Apache.
 
 <table>
 <col width="100%" />
@@ -53,7 +53,7 @@ Publishing a web site project is easy.
         -   (Replace MyWebsite with whatever path you want.)
     -   You can replace or delete existing files.
     -   Copy "All files in the source project folder".
-    -   Select "Include files from the App\_Data folder.
+    -   Select "Include files from the App_Data folder.
 
 [![Asppublish1.png](/archived/images/5/5b/Asppublish1.png)](/archived/images/5/5b/Asppublish1.png)
 

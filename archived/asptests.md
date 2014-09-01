@@ -8,9 +8,9 @@ redirect_from:
 ASPTests
 ========
 
-The table below lists the results of executing the System.Web.UI.Controls tests with the net\_2\_0 profile.
+The table below lists the results of executing the System.Web.UI.Controls tests with the net_2_0 profile.
 
--   Test suite execution: mcs/class/System.Web/make run-test PROFILE=net\_2\_0
+-   Test suite execution: mcs/class/System.Web/make run-test PROFILE=net_2_0
 -   Tests Location: mcs/class/System.Web/Test/System.Web.UI.WebControls
 -   The table includes informatin only regard the new 2.0 tests that were developed by talk@mainsoft.com, yonik@mainsoft.com meravs@mainsoft.com and hagity@mainsoft.com. There is work to do to validate and integrate into this report the status of the remaining NUnit System.Web 2.0 tests.
 -   All failed tests listed belowe are marked with the [NotWorking] attribute and therefore excluded from the standard execution.

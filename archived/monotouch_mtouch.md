@@ -62,7 +62,7 @@ Building for the Device
 To build software for the device you will build your application using the `mtouch -dev` option, additionally you need to provide the name of the certificate used to sign your application. The following shows how the application is built for the device:
 
 ``` bash
-$ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
+mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
 In this particular case, we are using the "iPhone Developer: Miguel de Icaza" certificate to sign the application. This step is very important, or the physical device will refuse to load the application.

@@ -124,7 +124,7 @@ These properties are available for current node:
 -   NamespaceURI: namespace URI declared or premised in the document ("[http://www.w3.org/1999/XSL/Transform](http://www.w3.org/1999/XSL/Transform)")
 -   NodeType: one of the enumerated node kind. It is described immediate below.
 
-Note that they are somewhat different from the W3C DOM API. For example, it never returns "\#document" for the Value of a document node.
+Note that they are somewhat different from the W3C DOM API. For example, it never returns "#document" for the Value of a document node.
 
 Since CLI supports enum types, so node type is represented as an enum type, not likely W3C Document Object Model represents as integer. The type name is XmlNodeType. (Note that there is another XML node type named XPathNodeType.)
 

@@ -90,9 +90,9 @@ If you are interested in contributing, please contact [Michael](mailto:m.j.hutch
 Architecture
 ------------
 
-AspNetEdit is based on the Mozilla Editor, which it hosts in a Gecko\# GTK\# widget. A custom Mozilla extension allows it to visualise blocks of HTML emitted by ASP.NET Web Controls as discrete entities, and together with a C++ interop library allows it to be controlled from the C\# host.
+AspNetEdit is based on the Mozilla Editor, which it hosts in a Gecko# GTK# widget. A custom Mozilla extension allows it to visualise blocks of HTML emitted by ASP.NET Web Controls as discrete entities, and together with a C++ interop library allows it to be controlled from the C# host.
 
-The C\# host initatiates and tracks Web Control objects, and provides them with various designer services, using the .NET component model. It is also responsible for parsing and persisting .aspx pages.
+The C# host initatiates and tracks Web Control objects, and provides them with various designer services, using the .NET component model. It is also responsible for parsing and persisting .aspx pages.
 
 More in-depth discussions of AspNetEdit, and updates on the project's status, can be found on Michael Hutchinson's [blog](http://mjhutchinson.com/journal/category/mono)
 
@@ -110,11 +110,11 @@ Many thanks to **Google**, who originally funded the project as part of their [S
 
 ### Primary developers
 
-**Michael Hutchinson** wrote the C\# host, the designer infrastructure and the Gecko interop code, and integrated it into MonoDevelop.
+**Michael Hutchinson** wrote the C# host, the designer infrastructure and the Gecko interop code, and integrated it into MonoDevelop.
 
 **Blagovest Dachev** wrote the Mozilla extension, and provided valuable Mozilla editor expertise.
 
 ### Other contributors
 
-**Eric Butler** provided the initial GTK\# property grid implementation
+**Eric Butler** provided the initial GTK# property grid implementation
 

@@ -56,14 +56,14 @@ From a application developer point of view you should never assume that a partic
 2.  new certificates are used to replace older ones (like extending the validity period of the certificate authority).
 3.  existing roots certificates are removed (i.e. you stop trusting them);
 
-So it's important for applications to check for any trust problem, on any platform, but it's even more important on Mono because it doesn't ship with any trusted root by default (see the [FAQ:\_Security](/FAQ:_Security "FAQ: Security") for more details).
+So it's important for applications to check for any trust problem, on any platform, but it's even more important on Mono because it doesn't ship with any trusted root by default (see the [FAQ:_Security](/FAQ:_Security "FAQ: Security") for more details).
 
 Approaches
 ==========
 
 This articles goes over several approaches an application may take to solve, or even ignore, this situation. Source code for each case can be found at the end of the article.
 
-Approach \#-1: Actively ignore security concerns
+Approach #-1: Actively ignore security concerns
 ------------------------------------------------
 
 You believe that security is for the weak and/or that SSL is encrypting anyway (so why should you have to trust the other end?) and that your application has the divine right to choose what's secure, or not, for its end users.
@@ -82,7 +82,7 @@ Cons
 
 Note: This approach is different than using custom, i.e. application specific, rules to determine if the trust error should be ignored. E.g. the `tlstest` application in Mono's SVN is a test tool that reports (prints) errors but will continue downloading a web page no matter what error occurs.
 
-Approach \#0: Ignore the problem
+Approach #0: Ignore the problem
 --------------------------------
 
 Many existing application totally ignore the trust problem. This is a sad situation because they are simply dumping the problem on end-users - which probably have even less information and knowledge about the problem and how it can be solved.
@@ -104,7 +104,7 @@ Cons
     ---> System.IO.IOException: The authentication or decryption has failed.
     ---> Mono.Security.Protocol.Tls.TlsException: Invalid certificate received form server.
 
-Approach \#1: Minimalist
+Approach #1: Minimalist
 ------------------------
 
 Such an error is easy to trap and report to end-user. You only must catch the `WebException` exception thrown by `HttpWebRequest.GetResponse` and report an informative error and instructions to the end-user. E.g. Why the operation can't work and how this affects the current application.
@@ -121,7 +121,7 @@ Cons
 
 -   Applications are unusable until the end-user complete the instructions. Bad if/when the user is only testing/reviewing a new application. It's a good way to make a very bad impression the first time a user tries your application.
 
-Approach \#2: Warn and offer the possibility to continue
+Approach #2: Warn and offer the possibility to continue
 --------------------------------------------------------
 
 Inform the user about the trust issue and let them continue at their own risk.
@@ -141,7 +141,7 @@ Cons
 
 -   The same choice will be asked, over and over again, each time the application use this feature or, at least, each time the application is restarted and use the feature. You had the first impression right but your users may eventually loose patience over your application.
 
-Approach \#3: Application centric trust
+Approach #3: Application centric trust
 ---------------------------------------
 
 This isn't a very common approach but it can be a very good one for most applications. Trust decisions don't have to be global (i.e. for all managed applications) and may make sense only to your application (or to an application group). So keeping an history of the users past decisions is both more secure and more user friendly than the previous approach.
@@ -162,10 +162,10 @@ Cons
 
 -   The trust is limited to this application (or to an application group). Note that, depending on the application, this can be seen as an advantage;
 
-Approach \#4: Offer to trust the new root certificate
+Approach #4: Offer to trust the new root certificate
 -----------------------------------------------------
 
-This is similar to approach \#3 but it offers to make the trust relationship permanent. This may seem to makes a lot of sense for some applications but it's often hard to predict what other application will "inherit" this new trust.
+This is similar to approach #3 but it offers to make the trust relationship permanent. This may seem to makes a lot of sense for some applications but it's often hard to predict what other application will "inherit" this new trust.
 
 End User Choices
 
@@ -182,10 +182,10 @@ Cons
 -   Requires different code to work on Mono and MS Fx 2.0.
 -   The trust on the new root is "global", i.e. all Mono applications or all MS applications (including non-managed applications).
 
-Approach \#5: Application or global trust
+Approach #5: Application or global trust
 -----------------------------------------
 
-The last approach is to merge \#3 and \#4 to give all possible choice to the end user.
+The last approach is to merge #3 and #4 to give all possible choice to the end user.
 
 End User Choices
 
@@ -212,21 +212,21 @@ Conclusion
 
 Sadly trusting user input for security related question is, at best, a "risky business".
 
-There's no good reason to use approaches like \#-1 (adding code to be less secure), \#0 (doing nothing) and \#1 (only warn). An application should at least propose the user to continue (approach \#2).
+There's no good reason to use approaches like #-1 (adding code to be less secure), #0 (doing nothing) and #1 (only warn). An application should at least propose the user to continue (approach #2).
 
-Approach \#5 (too many choice) is the most complete. In fact it may be too complete for most (99%) of applications as it will likely confuse the end users more than help them. Also, and like \#4 (global trust), it's more difficult to make it work on all runtimes.
+Approach #5 (too many choice) is the most complete. In fact it may be too complete for most (99%) of applications as it will likely confuse the end users more than help them. Also, and like #4 (global trust), it's more difficult to make it work on all runtimes.
 
-Choosing between \#3 and \#4 is harder as it greatly depends on the type of application you're writing (e.g. a configuration tool doesn't want to have its own trust list) but if interoperability between Mono and MS runtime is a concern then you should consider using \#3.
+Choosing between #3 and #4 is harder as it greatly depends on the type of application you're writing (e.g. a configuration tool doesn't want to have its own trust list) but if interoperability between Mono and MS runtime is a concern then you should consider using #3.
 
 Appendix - Source code
 ======================
 
 Here's included some **sample** code for each approach. The code is provided only to show how this could be done (i.e. what's the **minimum** involved). Also don't use my bad English skills as an excuse for your bad UI ;-).
 
-The code is made to work, as much as possible, on every runtime. When this isn't possible (\#4/\#5) then the source code will only works on Mono. All samples use the `ICertificatePolicy`, deprecated in Fx 2.0, to provide users with a choice of options. The same technique can be used with Mono.Security.dll `SslClientStream.ServerCertValidationDelegate` (see tlstest.cs for an example) and Fx 2.0's `ServicePointManager.ServerCertificateValidationCallback`.
+The code is made to work, as much as possible, on every runtime. When this isn't possible (#4/#5) then the source code will only works on Mono. All samples use the `ICertificatePolicy`, deprecated in Fx 2.0, to provide users with a choice of options. The same technique can be used with Mono.Security.dll `SslClientStream.ServerCertValidationDelegate` (see tlstest.cs for an example) and Fx 2.0's `ServicePointManager.ServerCertificateValidationCallback`.
 
-Approach \#-1: Actively ignore security concerns =
-==================================================
+Appendix Approach #-1: Actively ignore security concerns =
+===========================================================
 
 Source code using the .NET 2.0 profile, which gives you better control over the certificates being examined:
 
@@ -236,7 +236,7 @@ using System.Net;
  
 class MainClass
 {
-    public static bool Validator (object sender, X509Certificate certificate, X509Chain chain, 
+    public static bool Validator (object sender, X509Certificate certificate, X509Chain chain,
                                       SslPolicyErrors sslPolicyErrors)
     {
         return true;
@@ -248,7 +248,7 @@ class MainClass
         WebRequest wr = WebRequest.Create (args [0]);
         Stream stream = wr.GetResponse ().GetResponseStream ();
         Console.WriteLine (new StreamReader (stream).ReadToEnd ());
-    }     
+    }
 }
 ```
 
@@ -262,13 +262,13 @@ using System.Security.Cryptography.X509Certificates;
  
 public class Program : ICertificatePolicy {
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         return true;
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         WebRequest wr = WebRequest.Create (args [0]);
@@ -285,8 +285,8 @@ Instructions
 
 This will show the web page content without any error.
 
-Approach \#0: Ignore the problem
---------------------------------
+Appendix Approach #0: Ignore the problem
+-----------------------------------------
 
 Source code
 
@@ -297,7 +297,7 @@ using System.Net;
  
 public class Program {
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         WebRequest wr = WebRequest.Create (args [0]);
         Stream stream = wr.GetResponse ().GetResponseStream ();
@@ -314,8 +314,8 @@ public class Program {
     ---> System.IO.IOException: The authentication or decryption has failed.
     ---> Mono.Security.Protocol.Tls.TlsException: Invalid certificate received form server.
 
-Approach \#1: Minimalist
-------------------------
+Appendix Approach #1: Minimalist
+---------------------------------
 
 Source code
 
@@ -326,7 +326,7 @@ using System.Net;
  
 public class Program {
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         try {
             WebRequest wr = WebRequest.Create (args [0]);
@@ -337,10 +337,10 @@ public class Program {
         catch (WebException we) {
             if (we.Status != WebExceptionStatus.TrustFailure)
                 throw;
-            Console.WriteLine ("You do not trust the people who " + 
-                "issued the certificate being used by '{0}'." + 
-                " Please see the application help file on " + 
-                "the 'trust certificate' subject to learn " + 
+            Console.WriteLine ("You do not trust the people who " +
+                "issued the certificate being used by '{0}'." +
+                " Please see the application help file on " +
+                "the 'trust certificate' subject to learn " +
                 "about how this can be fixed.", args [0]);
         }
     }
@@ -354,8 +354,8 @@ Instructions
     You do not trust the people who issued the certificate being used by 'https://www.some-site.com'.
     Please see the application help file on the 'trust certificate' subject to learn about how this can be fixed.
 
-Approach \#2: Warn and offer the possibility to continue
---------------------------------------------------------
+Appendix Approach #2: Warn and offer the possibility to continue
+-----------------------------------------------------------------
 
 Source code
 
@@ -367,7 +367,7 @@ using System.Security.Cryptography.X509Certificates;
  
 public class Program : ICertificatePolicy {
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         if (error == 0)
@@ -376,13 +376,13 @@ public class Program : ICertificatePolicy {
         if (error != -2146762486)
             return false;
  
-        Console.Write ("A trust error occured while attempting to " + 
+        Console.Write ("A trust error occured while attempting to " +
             "access the web site. Do you wish to continue this " +
             "session even if we couldn't assess its security? ");
         return (Console.ReadLine ().ToLower () == "yes");
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         try {
@@ -410,8 +410,8 @@ Instructions
 
 Entering anything but **yes** results in the second message (aborted).
 
-Approach \#3: Application centric trust
----------------------------------------
+Appendix Approach #3: Application centric trust
+------------------------------------------------
 
 Source code
 
@@ -440,7 +440,7 @@ public class Program : ICertificatePolicy {
         // TODO
     }
  
-    public bool CheckValidationResult (ServicePoint sp, 
+    public bool CheckValidationResult (ServicePoint sp,
         X509Certificate certificate, WebRequest request, int error)
     {
         if (error == 0)
@@ -455,7 +455,7 @@ public class Program : ICertificatePolicy {
         if ((result is int) && ((int)result == error))
             return true;
  
-        Console.WriteLine ("A trust error occured while attempting " + 
+        Console.WriteLine ("A trust error occured while attempting " +
             "to access the web site. Do you wish to:");
         Console.WriteLine ("\ta) abort this untrusted session;");
         Console.WriteLine ("\tb) continue this session (only once);");
@@ -474,7 +474,7 @@ public class Program : ICertificatePolicy {
         }
     }
  
-    public static void Main (string[] args) 
+    public static void Main (string[] args)
     {
         ServicePointManager.CertificatePolicy = new Program ();
         try {
@@ -505,8 +505,8 @@ Instructions
 
 Entering **a** (or any invalid input) will abort the operation, **b** will allow the web page to be downloaded and printed once (i.e. you'll be asked again next time you try), **c** will download and print the web page but will never ask you again trusting the web site (unless it changes its certificate **and** and the root CA that issued it).
 
-Approach \#4: Offer to trust the new root certificate
------------------------------------------------------
+Appendix Approach #4: Offer to trust the new root certificate
+--------------------------------------------------------------
 
 Source code
 
@@ -523,8 +523,8 @@ Instructions
 
 Note: this sample code will only work using Mono's certificate stores. You can use a similar technique by either p/invoking into CryptoAPI to access the Windows' certificate stores (fx 1.x) or use the new classes introduced in fx 2.0.
 
-Approach \#5: Application or global trust
------------------------------------------
+Appendix Approach #5: Application or global trust
+--------------------------------------------------
 
-No source code provided. You can easily merge both \#3 and \#4 source code to obtain a working sample.
+No source code provided. You can easily merge both #3 and #4 source code to obtain a working sample.
 

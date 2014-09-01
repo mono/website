@@ -17,7 +17,7 @@ It is possible to use the [[Register](http://docs.go-mono.com/MonoMac.Foundation
 
 First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
 
-Second, we need to create the C\# type. We'll likely want to place this into a namespace; since Objective-C doesn't support namespaces, we'll need to use the [Register] attribute to change the type name that MonoTouch will register with the Objective-C runtime. The C\# type must also inherit from [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject):
+Second, we need to create the C# type. We'll likely want to place this into a namespace; since Objective-C doesn't support namespaces, we'll need to use the [Register] attribute to change the type name that MonoTouch will register with the Objective-C runtime. The C# type must also inherit from [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject):
 
 ``` csharp
 namespace MonoMac.Example.Binding {
@@ -47,7 +47,7 @@ public NSEnumerator()
     Handle = Messaging.IntPtr_objc_msgSend(this.Handle, selInit.Handle);
 }
  
-// This constructor must be present so that MonoTouch 
+// This constructor must be present so that MonoTouch
 // can create instances of your type from Objective-C code.
 public NSEnumerator(IntPtr handle)
     : base(handle)
@@ -55,7 +55,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fifth, provide methods for each of the Selectors declared in Step 3. These will use objc\_msgSend() to invoke the selector on the native object. Note the use of [Runtime.GetNSObject()](http://docs.go-mono.com/MonoMac.ObjCRuntime.Runtime.GetNSObject%20(System.IntPtr)) to convert an IntPtr into an appropriately typed NSObject (sub-)type. If you want the method to be callable from Objective-C code, the member *must* be **virtual**.
+Fifth, provide methods for each of the Selectors declared in Step 3. These will use objc_msgSend() to invoke the selector on the native object. Note the use of [Runtime.GetNSObject()](http://docs.go-mono.com/MonoMac.ObjCRuntime.Runtime.GetNSObject%20(System.IntPtr)) to convert an IntPtr into an appropriately typed NSObject (sub-)type. If you want the method to be callable from Objective-C code, the member *must* be **virtual**.
 
 ``` csharp
 [Export("nextObject")]

@@ -180,8 +180,3 @@ Tracker Library
 ---------------
 
 The client library contains all the functionality to host a BitTorrent Tracker, or embed Tracker functionality in an application.
-
-#### Features
-
-?????
-

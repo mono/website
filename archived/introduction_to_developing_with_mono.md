@@ -13,7 +13,7 @@ Introduction to developing with Mono
 Assemblies
 ==========
 
-Mono and .NET compile source code into 'assemblies'. Assemblies, which are similar to collections of Java `.class` files, contain language-independent, platform-independent bytecode called CIL (Common Intermediate Language). Because assemblies are language independent, it doesn't matter what language was used to create them. Assemblies made with C\# can mix with assemblies created with VB.NET, Java (using [IKVM](/Java "Java")), or any language that someone has written a CIL compiler for.
+Mono and .NET compile source code into 'assemblies'. Assemblies, which are similar to collections of Java `.class` files, contain language-independent, platform-independent bytecode called CIL (Common Intermediate Language). Because assemblies are language independent, it doesn't matter what language was used to create them. Assemblies made with C# can mix with assemblies created with VB.NET, Java (using [IKVM](/Java "Java")), or any language that someone has written a CIL compiler for.
 
 But, being platform independent means, of course, that assemblies need to be compiled *again* into native code before they can run on any particular machine. It's important to distinguish the two compilations involved in Mono applications: from source code to byte code, and from byte code to native machine code. The first compilation is performed by the developer. The second compilation is generally performed just when the program begins executing, on the very computer that will run the application, and for this reason it's called Just-In-Time (JIT) compilation. This second compilation and the execution of the application is performed by a Common Language Runtime (CLR).
 
@@ -33,7 +33,7 @@ Namespaces often share their names with the names of assemblies, but don't be mi
 Hello World
 ===========
 
-Here's a Hello World application written in C\#. When the program starts, it writes "Hello, World!" to the console and exits.
+Here's a Hello World application written in C#. When the program starts, it writes "Hello, World!" to the console and exits.
 
 ``` csharp
 // Hello World! : hello.cs
@@ -51,7 +51,7 @@ If you have Mono installed, you can compile this source code with the command:
 
     mcs hello.cs
 
-Mono's C\# compiler, mcs, creates in an assembly named `hello.exe` that you can execute on any platform supporting the CLR -- using Mono on any supported platform, or using .NET on Windows. To run the program using Mono, type:
+Mono's C# compiler, mcs, creates in an assembly named `hello.exe` that you can execute on any platform supporting the CLR -- using Mono on any supported platform, or using .NET on Windows. To run the program using Mono, type:
 
     mono hello.exe
 

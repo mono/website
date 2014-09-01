@@ -12,7 +12,7 @@ ObjCSharp
 Introduction
 ------------
 
-ObjC\# is a two way bridge to leverage the CLR into the ObjectiveC programming language and expose your ObjectiveC classes to the CLR. ObjC\# is currently only support on Mac OS X. There are a few simple rules to remember when translating a CLR method into a ObjC selector:
+ObjC# is a two way bridge to leverage the CLR into the ObjectiveC programming language and expose your ObjectiveC classes to the CLR. ObjC# is currently only support on Mac OS X. There are a few simple rules to remember when translating a CLR method into a ObjC selector:
 
 -   All method names with arguments are appended based on the argument type. That is MyMethod (int a, float b) would become MyMethodWithInt32:Single:
 -   The parameterless constructor are mapped to init
@@ -26,14 +26,14 @@ public int MyMethod () {
 }
 ```
 
-Then your objc\# code would be:
+Then your objc# code would be:
 
 ` NSLog (*(int *)[yourinstance MyMethod]);`
 
 Tutorials
 ---------
 
-The beginning of every ObjC\# invokation involves initializing the bridge:
+The beginning of every ObjC# invokation involves initializing the bridge:
 
 Allocate a new instance of the bridge:
 
@@ -66,5 +66,5 @@ Make sure you look at the test/ directory in SVN for more examples of different 
 Versions & Status
 -----------------
 
-ObjC\# is currently at v0.1 and only available from SVN. It can successfully represent classes both ways across the bridge. It can also invoke events through the bridge. Marshalling of primitives works.
+ObjC# is currently at v0.1 and only available from SVN. It can successfully represent classes both ways across the bridge. It can also invoke events through the bridge. Marshalling of primitives works.
 

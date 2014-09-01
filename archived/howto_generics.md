@@ -22,12 +22,12 @@ public class Generics<T> {
     public Generics (T o)
     {
          obj = o;
-    } 
+    }
  
     public T GetObj ()
     {
         return obj;
-    } 
+    }
  
     public void ShowType ()
     {
@@ -43,11 +43,11 @@ public class TestGenerics {
          string string_value;
  
          //check for some command line arguments
-         if(args.Length == 0) 
+         if(args.Length == 0)
              Console.WriteLine("Usage: mono generics.exe integer string");
          else {
  
-             //apply to integer argument/type          
+             //apply to integer argument/type
              Generics<int> integer_obj = new Generics<int>(int.Parse(args[0]));
              integer_obj.ShowType();
              integer_value = integer_obj.GetObj();
@@ -59,8 +59,8 @@ public class TestGenerics {
              Generics<string> string_obj = new Generics<string>(args[1]);
              string_obj.ShowType();
              string_value = string_obj.GetObj();
-             Console.WriteLine("value:" + string_value); 
-         }         
+             Console.WriteLine("value:" + string_value);
+         }
     }
 }
 ```

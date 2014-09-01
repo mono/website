@@ -74,10 +74,10 @@ Accessibility: Team Meetings 2008 Sep 10
     (04:19:13 PM) knocte: ok, so let's go with QA now, calen: you here?
     (04:19:23 PM) calen: i am here
     (04:19:49 PM) knocte: fine, go ahead
-    (04:19:53 PM) calen: in this iteration i have commited new strongwind test code for progressbar and numericupdown controls. modified some old test code   for indentation issue, deleted some unuseful description, add sleep time for setting value 
+    (04:19:53 PM) calen: in this iteration i have commited new strongwind test code for progressbar and numericupdown controls. modified some old test code   for indentation issue, deleted some unuseful description, add sleep time for setting value
     (04:20:06 PM) calen: re-runed all strongwind tests those i have finished, and file a list to descript which bugs blocking us from using strongwind automation test. and file a new bug for checkbox control. virified some bugs
     (04:20:14 PM) calen: spent a little time talking to Ray about Orca test and smoke test.
-    (04:20:23 PM) calen: next iteration, i will keep on write strongwind test, virify bugs, update Test_Plan_WinForms_Controls wiki page. 
+    (04:20:23 PM) calen: next iteration, i will keep on write strongwind test, virify bugs, update Test_Plan_WinForms_Controls wiki page.
     (04:20:25 PM) calen: done
     (04:20:36 PM) knocte: thanks calen
     (04:20:40 PM) knocte: ﻿( jpallen: in case you want to review what you missed: http://monoport.com/37258 )
@@ -93,8 +93,8 @@ Accessibility: Team Meetings 2008 Sep 10
     (04:24:07 PM) knocte: thanks brian
     (04:24:31 PM) knocte: let's go with Ray: QA first please :)
     (04:24:38 PM) ray: ok, it's my turn
-    (04:24:46 PM) ray: so in this week, i have ThreadExceptionDialog control done. 
-    (04:25:05 PM) ray: but there are 4 datagrid* controls and WebBrowser, HelpProvider which has not been implemented, 
+    (04:24:46 PM) ray: so in this week, i have ThreadExceptionDialog control done.
+    (04:25:05 PM) ray: but there are 4 datagrid* controls and WebBrowser, HelpProvider which has not been implemented,
     (04:25:24 PM) ray: kind bgmerrell helps me out to take care of datagrid*, i thought about postpone the implementation of the rest two controls due to the Mono libraries have some issues with these.
     (04:25:35 PM) ray: and i have done RPMs smoke test for several times.
     (04:25:59 PM) ray: for the build part,  i have the latest UiaAtkBridge and olive built on openSUSE 11.0 platform, but UIAutomation seems has some problems.

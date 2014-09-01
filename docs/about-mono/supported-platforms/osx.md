@@ -26,13 +26,13 @@ If you plan on developing applications with Mono, we suggest that you also [inst
 The Mono package includes:
 
 -   The Mono Runtime
--   GUI Toolkits: Windows.Forms and Gtk\# for OSX.
+-   GUI Toolkits: Windows.Forms and Gtk# for OSX.
     -   Note: the [MonoMac](/docs/tools+libraries/libraries/monomac/) GUI toolkit for native OSX GUI development is currently a separate download.
--   SDK: C\#, Visual Basic compilers, assemblers and tools
+-   SDK: C#, Visual Basic compilers, assemblers and tools
 -   XSP ASP.NET server
 -   Manual pages.
 
-This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The MacOS X Mono package does not include [Gtk\#](/GtkSharp), XSP or mod\_mono. These will have to be compiled from source.
+This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The MacOS X Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
 
 Our packages currently require Mono OSX 10.4 or better, for older versions, you will need to build from source code.
 
@@ -46,7 +46,7 @@ To build applications you can use ["gmcs"](/docs/about-mono/languages/csharp/), 
 From a Terminal shell, you can try it out:
 
 ``` bash
-$ vi hello.cs 
+$ vi hello.cs
 $ gcs hello.cs
 $ mono hello.exe
 Hello, World
@@ -79,8 +79,8 @@ There are a few choices to build client applications on OSX, you should pick the
 
 ||
 |Toolkit|Runs on Linux|Runs on Windows|Runs on Mac|Binding Style|License|Status|
-|[MonoMac](/docs/tools+libraries/libraries/monomac/)|no|no|yes|Strongly typed C\# binding to Cocoa APIs|MIT X11|Actively developed, builds on the design lessons from [MonoTouch](http://monotouch.net) but still incomplete. This will be the new default binding for Mono on OSX. Separate download.|
-|Gtk\#|yes|yes|yes|Strongly typed C\# binding to the cross platform Gtk+ API. Applications look foreign on OSX.|LGPL v2|Actively developed, cross platform. Bundled with Mono.|
+|[MonoMac](/docs/tools+libraries/libraries/monomac/)|no|no|yes|Strongly typed C# binding to Cocoa APIs|MIT X11|Actively developed, builds on the design lessons from [MonoTouch](http://monotouch.net) but still incomplete. This will be the new default binding for Mono on OSX. Separate download.|
+|Gtk#|yes|yes|yes|Strongly typed C# binding to the cross platform Gtk+ API. Applications look foreign on OSX.|LGPL v2|Actively developed, cross platform. Bundled with Mono.|
 |Windows.Forms|yes|yes|yes|Cross platform implementation of Microsoft's Windows.Forms. Applications look foreign on OSX.|MIT X11|The Windows.Forms API was frozen in time by Microsoft. Bundled with Mono.|
 |[MonObjc](http://www.monobjc.net)|no|no|yes|Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.|LGPL v3|Actively developed. Separate download.|
 |CocoaSharp|no|no|yes|Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.|MIT X11|No longer developed, no longer maintained, deprecated. Bundled with Mono.|
@@ -92,7 +92,7 @@ Running applications on MacOS X is very similar to linux systems, from the termi
 
     mono myprogram.exe
 
-For GTK\# applications, it's easiest to run them the same way but using *xterm* from X11.app
+For GTK# applications, it's easiest to run them the same way but using *xterm* from X11.app
 
     A MacOS X specific Mono launcher was in development but its status is unclear today
 
@@ -104,7 +104,7 @@ Mono's implementation of the System.Windows.Forms API is built on top of Carbon 
 Third Party Libraries
 ---------------------
 
-[ObjC\#](/archived/objcsharp "ObjCSharp") is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
+[ObjC#](/archived/objcsharp "ObjCSharp") is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
 
 Uninstalling Mono on Mac OS X
 -----------------------------

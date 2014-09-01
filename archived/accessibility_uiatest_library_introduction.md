@@ -52,11 +52,11 @@ The following description is quoted from the project page:
 Sample Usage
 ============
 
-SampleDriver is a simple console application which will start the Microsoft Notepad application and run all priority \#0 tests on Notepad’s main window and all its decedent controls. You may find the SampleDriver project in the UIA Automation Verify solution. In Programs.cs, the TestMain.StartApplication is defined to launch Notepad.exe and return the AutomationElement object for the Notepad’s main window control. Then in TestMain.Main, after StartApplication is called:
+SampleDriver is a simple console application which will start the Microsoft Notepad application and run all priority #0 tests on Notepad’s main window and all its decedent controls. You may find the SampleDriver project in the UIA Automation Verify solution. In Programs.cs, the TestMain.StartApplication is defined to launch Notepad.exe and return the AutomationElement object for the Notepad’s main window control. Then in TestMain.Main, after StartApplication is called:
 
     AutomationElement element = StartApplication("NOTEPAD.EXE", null);
 
-The program will use the following line of code to run all the priority \#0 tests:
+The program will use the following line of code to run all the priority #0 tests:
 
     TestRuns.RunAllTests(element, true, TestPriorities.Pri0, TestCaseType.Generic, false, true, null);
 
@@ -196,7 +196,7 @@ At the end of the this method, we have this line of code:
 
     m_TestStep++;
 
-**m\_TestStep** is inherited from TestObject class, which stores the count of performed testing steps of a test suite object. For simple test cases like TitleBarControlTests.GetBoundingRect1, which contains only one testing step, will only increase m\_TestStep for once; while for some more complicate test case like AutomationElementTest.HwndWindowRect1MSAA, which have multiple testing steps, will increase m\_TestStep for multiple times. Usually we can query how many steps a test case have by viewing the Desciption property of its attached TestCaseAttribute object. Testing step can help us to get more precise position of a found bug.
+**m_TestStep** is inherited from TestObject class, which stores the count of performed testing steps of a test suite object. For simple test cases like TitleBarControlTests.GetBoundingRect1, which contains only one testing step, will only increase m_TestStep for once; while for some more complicate test case like AutomationElementTest.HwndWindowRect1MSAA, which have multiple testing steps, will increase m_TestStep for multiple times. Usually we can query how many steps a test case have by viewing the Desciption property of its attached TestCaseAttribute object. Testing step can help us to get more precise position of a found bug.
 
 Sample 2: ValueTests
 --------------------
@@ -207,11 +207,11 @@ Just like TitleBarControlTests, ValueTests defines a TestSuite const string memb
 
 ### ValueWrapper
 
-Instead of directly inherit PatternObject, ValueTests inherits ValueWrapper class, which then inherits PatternObject. We may find this kind of \*Wrapper class for each control pattern test in the code base. Usually the \*Wapper class will define members to invoke each method/property provided by the pattern. E.g. ValueWrapper defines pattern\_SetValue method to call ValuePattern.SetValue method, and defines pattern\_IsReadOnly and pattern\_Value property to retrieve ValuePattern.IsReadOnlyProperty and ValuePattern.ValueProperty respectively.
+Instead of directly inherit PatternObject, ValueTests inherits ValueWrapper class, which then inherits PatternObject. We may find this kind of \*Wrapper class for each control pattern test in the code base. Usually the \*Wapper class will define members to invoke each method/property provided by the pattern. E.g. ValueWrapper defines pattern_SetValue method to call ValuePattern.SetValue method, and defines pattern_IsReadOnly and pattern_Value property to retrieve ValuePattern.IsReadOnlyProperty and ValuePattern.ValueProperty respectively.
 
 ### ValueTests Test Steps
 
-ValueTests defines some test steps in the "Test Steps" code region. Each test step is a method whose name starts with "TS\_" or "TSC\_", performs a simple verification or action, and will increase m\_TestStep for once. Many ValueTests's test cases are consitituted by those defined test steps.
+ValueTests defines some test steps in the "Test Steps" code region. Each test step is a method whose name starts with "TS\_" or "TSC\_", performs a simple verification or action, and will increase m_TestStep for once. Many ValueTests's test cases are consitituted by those defined test steps.
 
 ### ValueTests Test Cases
 
@@ -221,12 +221,12 @@ ValueTests's test cases are defined in the "Tests: Pattern Specific" code region
     "Precondition: Verify that this control supports 'String' types",
     "Step: Get a random valid value",
     "Step: Add event that will catch PropertyChangeEvent",
-    "Step: Set the pattern to this value", 
-    "Step: Step: Wait for event", 
+    "Step: Set the pattern to this value",
+    "Step: Step: Wait for event",
     "Verify the pattern is set to this value",
     "Verify that the PropertyChangeEvent event is not fired"
 
-Then when we review the "SetValue\_SetToRandomValue" method used by this test case, we'll find that each check/step in the description turns out an invocation to the corresponding test step method.
+Then when we review the "SetValue_SetToRandomValue" method used by this test case, we'll find that each check/step in the description turns out an invocation to the corresponding test step method.
 
-And another thing: in the last step of **TestSetValue116**, actually whether the PropertyChangeEvent event is fired **is not** checked at all (EventFired.Undetermined is passed to the TSC\_VerifyPropertyChangedListener method), since the UIAutomation spec didn't mention whether an PropertyChangeEvent shall be fired if the **Value** is modified by calling ValuePattern.SetValue. However, if the **Value** is modified by non-UIA methods, such as by sending native mouse/keyboard messages or by manually inputs, we should verify that a PropertyChangeEvent is fired.
+And another thing: in the last step of **TestSetValue116**, actually whether the PropertyChangeEvent event is fired **is not** checked at all (EventFired.Undetermined is passed to the TSC_VerifyPropertyChangedListener method), since the UIAutomation spec didn't mention whether an PropertyChangeEvent shall be fired if the **Value** is modified by calling ValuePattern.SetValue. However, if the **Value** is modified by non-UIA methods, such as by sending native mouse/keyboard messages or by manually inputs, we should verify that a PropertyChangeEvent is fired.
 

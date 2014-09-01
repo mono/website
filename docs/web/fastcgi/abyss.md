@@ -13,7 +13,7 @@ Introduction
 
  True to its claims of "ease of use", Abyss was the easiest server to set up thus far. This is largely due to its simple and straightforward control center.
 
-### Configuration Tested On...
+### Configuration Tested On
 
 -   [OpenSuSE 10.2](http://en.opensuse.org/OpenSUSE_News/10.2-Release) (Abyss X1)\</li\>
 -   *If you have tested an additional configuration, please email me at [brian.nickel@gmail.com](mailto:brian.nickel@gmail.com).*
@@ -21,9 +21,9 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read [FastCGI\#Important\_Information](/docs/web/fastcgi/#important-information) section on the main FastCGI page.
+Before doing anthing else, you should read [FastCGI#Important_Information](/docs/web/fastcgi/#important-information) section on the main FastCGI page.
 
-### Step 1: Setting Up the Interpreter
+### General Step 1: Setting Up the Interpreter
 
 Upon starting the Abyss Web Server, a control center web server starts up as well, by default at <http://localhost:9999>. Simply open it up in your web browser to that address and follow the steps outlined below:
 
@@ -44,22 +44,22 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
 10. Enter "/\*" in "Virtual Path".
 11. Click "OK".
 
-### Step 2: Extending the Server Lifetime
+### General Step 2: Extending the Server Lifetime
 
 Upon completion of the previous step, you should have automatically returned to "Scripting Parameters". Click on "Edit..." next to "FastCGI Parameters". The option "FastCGI Processes Timeout" specifies the number of seconds after the last request you're going to want to wait before shutting down the Mono (or any) FastCGI server. Because ASP.NET pages need to recompiled and AppDomains need to be recreated every time the server starts up, you want to set this value to some arbitrarily high value. 604800 is the number of seconds in a week and the value I chose for my server. Once you've chosen your value, click "OK".
 
-### Step 3: Disabling Directory Listing
+### General Step 3: Disabling Directory Listing
 
 Upon completion of the previous step, you should have automatically returned to "Scripting Parameters". Click "OK" at the bottom of the page to get back to the host configuration page. Once there, click "Directory Listing" and proceed to set "Type" to "Disabled". If directory listing is enabled, paths aren't automatically sent to the FastCGI Mono Server.
 
 Using Extensions
 ----------------
 
-### Warnings
+### Extensions Warnings
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI\#Paths\_vs.\_Extensions](/docs/web/fastcgi/#paths-vs-extensions) on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult [FastCGI#Paths_vs._Extensions](/docs/web/fastcgi/#paths-vs-extensions) on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
-### Step 1: Setting Up the Interpreter
+### Extensions Step 1: Setting Up the Interpreter
 
 Upon starting the Abyss Web Server, a control center web server starts up as well, by default at <http://localhost:9999>. Simply open it up in your web browser to that address and follow the steps outlined below:
 
@@ -88,16 +88,16 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
 
 7.  Click "OK".
 
-### Step 2: Extending the Server Lifetime
+### Extensions Step 2: Extending the Server Lifetime
 
 Upon completion of the previous step, you should have automatically returned to "Scripting Parameters". Click on "Edit..." next to "FastCGI Parameters". The option "FastCGI Processes Timeout" specifies the number of seconds after the last request you're going to want to wait before shutting down the Mono (or any) FastCGI server. Because ASP.NET pages need to recompiled and AppDomains need to be recreated every time the server starts up, you want to set this value to some arbitrarily high value. 604800 is the number of seconds in a week and the value I chose for my server. Once you've chosen your value, click "OK".
 
-### Step 3: Adding Index Pages
+### Extensions Step 3: Adding Index Pages
 
 Upon completion of the previous step, you should have automatically returned to "Scripting Parameters". Click "OK" at the bottom of the page to get back to the host configuration page. Once there, click "Index Files" and proceed to add `index.aspx`, `default.aspx`, and `Default.aspx`. Click "OK" and then "Reset" to restart the web server.
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Abyss Web Server. Enjoy!
 

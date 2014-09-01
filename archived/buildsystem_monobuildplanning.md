@@ -88,11 +88,11 @@ Modify the Build/Config.pm and point \$releaseRepo to the working copy of the fo
 Configuring Apache for MonoBuild
 --------------------------------
 
-Make sure you have mod\_perl installed and working
+Make sure you have mod_perl installed and working
 
--   On SUSE type systems, make sure perl is included as part of the APACHE\_MODULES list in /etc/sysconfig/apache2
+-   On SUSE type systems, make sure perl is included as part of the APACHE_MODULES list in /etc/sysconfig/apache2
 
-Add the following to /etc/apache2/mod\_perl-startup.pl:
+Add the following to /etc/apache2/mod_perl-startup.pl:
 
 ``` perl
 use lib qw(/home/wberrier/wa/mono/msvn/release/monobuild);
@@ -100,11 +100,11 @@ use lib qw(/home/wberrier/wa/mono/msvn/release/monobuild);
 
 The above will point to your working copy.
 
-Make sure that your mod\_perl configuration includes the startup file.
+Make sure that your mod_perl configuration includes the startup file.
 
 Also, include the following Perl Directives: PerlInitHandler Apache::Reload
 
-Working example of /etc/apache2/conf.d/mod\_perl.conf
+Working example of /etc/apache2/conf.d/mod_perl.conf
 -----------------------------------------------------
 
     <Directory "/srv/www/perl-lib">

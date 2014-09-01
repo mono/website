@@ -7,13 +7,13 @@ redirect_from:
 GAPI Overview
 -------------
 
-The GAPI tools are distributed with [Gtk\#](http://gtk-sharp.sourceforge.net/). The tools make it easy create and maintain managed bindings to native libraries which utilize [glib](http://developer.gnome.org/doc/API/glib/) and [GObject](http://developer.gnome.org/doc/API/2.0/gobject/). Some examples of libraries currently bound using the GAPI tools include [Gtk](http://www.gtk.org/), [Atk](http://developer.gnome.org/doc/API/2.0/atk/atk.html), [Pango](http://www.pango.org/), [Gdk](http://developer.gnome.org/doc/API/gdk/), [libgnome](http://developer.gnome.org/doc/API/2.0/libgnome/), [libgnomeui](http://developer.gnome.org/doc/API/2.0/libgnomeui/),[libgnomecanvas](http://directory.fsf.org/graphics/misc/libgnomecanvas.html), and [GtkGLArea](/archived/gtkglarea "GtkGLArea").
+The GAPI tools are distributed with [Gtk#](http://gtk-sharp.sourceforge.net/). The tools make it easy create and maintain managed bindings to native libraries which utilize [glib](http://developer.gnome.org/doc/API/glib/) and [GObject](http://developer.gnome.org/doc/API/2.0/gobject/). Some examples of libraries currently bound using the GAPI tools include [Gtk](http://www.gtk.org/), [Atk](http://developer.gnome.org/doc/API/2.0/atk/atk.html), [Pango](http://www.pango.org/), [Gdk](http://developer.gnome.org/doc/API/gdk/), [libgnome](http://developer.gnome.org/doc/API/2.0/libgnome/), [libgnomeui](http://developer.gnome.org/doc/API/2.0/libgnomeui/),[libgnomecanvas](http://directory.fsf.org/graphics/misc/libgnomecanvas.html), and [GtkGLArea](/archived/gtkglarea "GtkGLArea").
 
 There are 3 primary tools provided by GAPI:
 
 -   gapi2-parser - The parser is a C source and header parser that produces an XML document describing the API.
 -   gapi2-fixup - The fixup tool is an alteration engine to manipulate XML API files via a set of transformation rules.
--   gapi2-codegen - The generator takes an XML API file as input and produces C\# source files to implement the specified API.
+-   gapi2-codegen - The generator takes an XML API file as input and produces C# source files to implement the specified API.
 
 This article addresses the use of the gapi-2.0 tools, but is mostly usable as an example for the gapi-1.0 toolset with minor exceptions. In most cases, simply changing all "gapi2" references to "gapi" and all "gtk-sharp-2.0" references to "gtk-sharp" will produce the proper commands for gapi version 1.0.
 
@@ -45,7 +45,7 @@ General rules of thumb are as follows:
 -   The \<file\> element can be used to specify a specific file. This is useful if there are only a few "public" files in a directory. The file element is valid within namespace elements.
 -   The \<exclude\> element is used to specify private files in a previously declared \<dir\> element. The exclude element is valid within namespace elements.
 -   You can use the new \<directory\> element to specify a directory path with child exclude elements that are relative to the path. This saves some typing on exclude paths and facilitates smoother version upgrading since often the version is in the path.
--   You should specify at a minimum all the public header files and the source files that contain class\_init and get\_type method implementations for all the public GObject and [GBoxed](http://developer.gnome.org/doc/API/2.0/gobject/gobject-Boxed-Types.html) types in the library.
+-   You should specify at a minimum all the public header files and the source files that contain class_init and get_type method implementations for all the public GObject and [GBoxed](http://developer.gnome.org/doc/API/2.0/gobject/gobject-Boxed-Types.html) types in the library.
 
 The definitive example of a .sources file is in the gtk-sharp sources directory and can be viewed online [here](http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/sources/gtk-sharp-2.12-sources.xml?view=markup).
 
@@ -117,11 +117,11 @@ The following is an example of an API file produced by the GAPI parser:
  </api>
 ```
 
-This file format is the input to the GAPI C\# code generator. If your library is only dependent on libglib/libgobject, you can generate code with the command:
+This file format is the input to the GAPI C# code generator. If your library is only dependent on libglib/libgobject, you can generate code with the command:
 
     gapi2-codegen --outdir=generated_dir --generate my-api-file
 
-This will produce a directory at the specified path containing the generated source files which can be compiled with your C\# compiler of choice. The mcs command to produce a managed library would be:
+This will produce a directory at the specified path containing the generated source files which can be compiled with your C# compiler of choice. The mcs command to produce a managed library would be:
 
     mcs -pkg:gtk-sharp-2.0 -target:library -o foo-sharp.dll generated_dir/*.cs
 
@@ -140,7 +140,7 @@ During generation, any symbols which are unrecognized will cause a warning messa
 Fixing API issues and Adding Customizations
 -------------------------------------------
 
-Unfortunately, it's really not possible for a set of automated tools to perfectly interpret the intent of C source code into a C\# interface. There will be issues that will need to be addressed such as whether a particular pointer parameter to a method represents an out, ref, or array param. There will be portions of the API that make sense from a C programming standpoint, but are better exposed in a different manner under C\#.
+Unfortunately, it's really not possible for a set of automated tools to perfectly interpret the intent of C source code into a C# interface. There will be issues that will need to be addressed such as whether a particular pointer parameter to a method represents an out, ref, or array param. There will be portions of the API that make sense from a C programming standpoint, but are better exposed in a different manner under C#.
 
 GAPI provides some additional tools/mechanisms to make these sorts of changes to your API.
 
@@ -148,7 +148,7 @@ GAPI provides some additional tools/mechanisms to make these sorts of changes to
 
 The gapi2-fixup tool is used to alter the API file. It is important to use the fixup tool to alter your API file instead of hand-editing it. At some point in the future, the library you are binding may ship a new version which adds API elements. If you use the fixup tool instead of hand editing the API file, you will be able to rerun the GAPI parser on the new C source files to extract all this new API automatically, and then rerun the fixup tool to apply your edits to the file. If you hand edit the file, you can never go back to the parse step without losing all your subsequent edits.
 
-It is for this reason that in most existing bindings, including Gtk\# itself, the API file produced by the parse step is suffixed with a .raw extension and checked into the source repository for the project. Once a library version has been chosen and a parse completed, there is no need to keep around the C source code as all subsequent edits/customizations occur on the raw XML, which can be replaced/updated by the project maintainer periodically as parser enhancements occur and library version targets change.
+It is for this reason that in most existing bindings, including Gtk# itself, the API file produced by the parse step is suffixed with a .raw extension and checked into the source repository for the project. Once a library version has been chosen and a parse completed, there is no need to keep around the C source code as all subsequent edits/customizations occur on the raw XML, which can be replaced/updated by the project maintainer periodically as parser enhancements occur and library version targets change.
 
 The fixup tool uses a couple of different types of input files which are typically referred to as metadata and symbols files. Since the fixup tool updates an API file in place, typically the raw API file is copied to another name first before running the fixup tool. For example:
 
@@ -159,7 +159,7 @@ The fixup tool uses a couple of different types of input files which are typical
 
 The symbols file is just a shorthand for a group of symbol elements to be appended to the API file. It is also possible to perform the function of the symbols file using metadata and the \<add-node\> element, but symbols support is included for backward compatibility to a kinder, gentler time when add-node didn't exist.
 
-The following is an excerpt from gdk-symbols.xml in Gtk\# and specifies some manually implemented symbols which didn't parse/generate very well because of some union related issues:
+The following is an excerpt from gdk-symbols.xml in Gtk# and specifies some manually implemented symbols which didn't parse/generate very well because of some union related issues:
 
 ``` xml
   <api>
@@ -210,19 +210,19 @@ The attr element is the workhorse of the metadata format. You can use it to chan
 -   name - renames an API member
 -   type - changes a member type, often used to identify enum parameters lazily exposed as ints in the C API
 -   hidden - causes a member to be ignored by the generator
--   new\_flag - inserts a "new" keyword on a member if it exists in a subclass of the type containing it
--   pass\_as - indicates out and ref parameters
--   array - indicates array parameters (this marks GAPI to search and find a another param under the name n\_\<name\> to get the array length)
+-   new_flag - inserts a "new" keyword on a member if it exists in a subclass of the type containing it
+-   pass_as - indicates out and ref parameters
+-   array - indicates array parameters (this marks GAPI to search and find a another param under the name n_\<name\> to get the array length)
 -   opaque - marks a struct as an opaque type so fields aren't accessible
--   disable\_raw\_ctor - suppresses generation of an IntPtr ctor for a type
--   disable\_gtype\_ctor - suppresses an obsolete constructor overload
+-   disable_raw_ctor - suppresses generation of an IntPtr ctor for a type
+-   disable_gtype_ctor - suppresses an obsolete constructor overload
 -   scope - used to specify the scope of callback parameters, currently supported scopes are call, async, and notified
--   property\_name - used to map ctor parameters to prop\_names for g\_object\_new usage
+-   property_name - used to map ctor parameters to prop_names for g_object_new usage
 -   preferred - marks a preferred ctor for conflict resolution when multiple constructor elements have the same signature
 -   parent - changes to parent type for a GObject or adds one for an Opaque type
 -   shared - indicates if a method is static or instance
 
-Some concrete examples from Gtk.metadata in Gtk\#:
+Some concrete examples from Gtk.metadata in Gtk#:
 
 ``` xml
   <?xml version="1.0"?>
@@ -231,7 +231,7 @@ Some concrete examples from Gtk.metadata in Gtk\#:
   </metadata>
 ```
 
-This is a "rename" rule. The signal "activate\_default" on GtkWindow collides with the method gtk\_window\_activate\_default when the parser is done converting the names to StudlyCase. In the above rule, we rename the signal to avoid a compilation error since a type cannot have to member with the same name other than overloaded method signatures.
+This is a "rename" rule. The signal "activate_default" on GtkWindow collides with the method gtk_window_activate_default when the parser is done converting the names to StudlyCase. In the above rule, we rename the signal to avoid a compilation error since a type cannot have to member with the same name other than overloaded method signatures.
 
 The following is another frequently used rule:
 
@@ -296,7 +296,7 @@ For example with my gtkspell-sharp libraries, I include a .custom file named "gt
 Putting it all together
 -----------------------
 
-The GtkSpell\# package is a good simple working example of all the tools in action. You can check it out from the SVN in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell\# viewvc](http://anonsvn.mono-project.com/viewvc/trunk/gtkspell-sharp/).
+The GtkSpell# package is a good simple working example of all the tools in action. You can check it out from the SVN in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell# viewvc](http://anonsvn.mono-project.com/viewvc/trunk/gtkspell-sharp/).
 
 Makefiles should be laid out to make this easy to replicate if you plan to distribute.
 
@@ -322,10 +322,10 @@ Extra Notes and Problem Solving Tips
 Internally when you run the gapi parser it will lanuch a few perl scripts under the hood.
 
 -   gapi.pl
--   gapi\_pp.pl
+-   gapi_pp.pl
 -   gapi2xml.pl
 
-Also a tool called gapi\_format\_xml is included that will reformat the gapi2xml.pl output so its readable.
+Also a tool called gapi_format_xml is included that will reformat the gapi2xml.pl output so its readable.
 
 Sometimes when figuring out what is breaking, its good to know what is going on under the hood.
 

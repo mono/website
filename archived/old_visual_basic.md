@@ -32,7 +32,7 @@ MonoBASIC (mbas) is a CIL compiler for the VisualBasic.NET language, an extended
 
 Applications developed on Windows with vbc can execute on Mono and applications compiled with 'mbas' can be executed on .NET runtime.
 
-mbas is based on mcs - Mono's C\# compiler. It is under active development and is available as an alpha preview on the Mono distribution.
+mbas is based on mcs - Mono's C# compiler. It is under active development and is available as an alpha preview on the Mono distribution.
 
 Compiler Status
 ---------------
@@ -54,7 +54,7 @@ The above features are fully implemented and are being checked for conformance t
 Runtime Status
 --------------
 
-A complete runtime for running Visual Basic.NET applications on Mono was contributed by [Mainsoft](http://www.mainsoft.com) in Java and has been ported to C\#. This allows applications compiled using Microsoft's Visual Basic.NET compiler to run on Mono.
+A complete runtime for running Visual Basic.NET applications on Mono was contributed by [Mainsoft](http://www.mainsoft.com) in Java and has been ported to C#. This allows applications compiled using Microsoft's Visual Basic.NET compiler to run on Mono.
 
 Team
 ----

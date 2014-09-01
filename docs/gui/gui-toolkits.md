@@ -10,29 +10,29 @@ One of the hardest and most important decision to make when starting a new deskt
 
 There are a number of factors to consider when choosing the toolkit. Different toolkits support different platforms (Linux, Windows, OSX) and have different features such as accessibility, layout engines, and looks.
 
-The two main toolkits offered by Mono are GTK\# and Winforms, however there are several other toolkits offered by the community which may suit your needs.
+The two main toolkits offered by Mono are GTK# and Winforms, however there are several other toolkits offered by the community which may suit your needs.
 
-Both GTK\# and Winforms, while being cross-platform, have clear roots in their original platforms. Gtk+ (the root of GTK\#) began life on the Linux platform, and has since been ported to Windows and OSX. Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and OSX. If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform. Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users. If you do not have a platform preference, your toolkit choice will have to rely on other factors.
+Both GTK# and Winforms, while being cross-platform, have clear roots in their original platforms. Gtk+ (the root of GTK#) began life on the Linux platform, and has since been ported to Windows and OSX. Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and OSX. If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform. Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users. If you do not have a platform preference, your toolkit choice will have to rely on other factors.
 
 Toolkits
 ========
 
-[Gtk\#](/docs/gui/gtksharp/)
+[Gtk#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
 [![](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
 
-[Banshee](http://banshee-project.org/Main_Page), a GTK\# app
+[Banshee](http://banshee-project.org/Main_Page), a GTK# app
 
 [![](/archived/images/9/92/Fspot1.png)](/archived/images/9/92/Fspot1.png)
 
-[F-Spot](http://f-spot.org/Main_Page), a GTK\# app
+[F-Spot](http://f-spot.org/Main_Page), a GTK# app
 
 Homepage: [GtkSharp](/docs/gui/gtksharp/)
 
-GTK\# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK\# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
+GTK# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
 
-In general, GTK\# applications are written using [MonoDevelop](http://www.monodevelop.com/Main_Page), which provides a visual designer for creating GTK\# GUIs.
+In general, GTK# applications are written using [MonoDevelop](http://www.monodevelop.com/Main_Page), which provides a visual designer for creating GTK# GUIs.
 
 Platforms: Unix, Windows, OSX
 
@@ -57,7 +57,7 @@ Cons:
 
 Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
-MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C\#, it is not limited to the AppKit GUI APIs.
+MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C#, it is not limited to the AppKit GUI APIs.
 
 The MonoMac APIs replaced the old CocoaSharp binding, which is now deprecated.
 
@@ -87,7 +87,7 @@ Homepage: [Winforms](/docs/gui/winforms/)
 
 Windows.Forms is a binding developed by Microsoft to the Win32 toolkit. As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
 
-Whereas the .Net implementation is a binding to the Win32 toolkit, the Mono implementation is written in C\# to allow it to work on multiple platforms. Most of the Windows.Forms API will work on Mono, however some applications (and especially third party controls) occasionally bypass the API and P/Invoke straight to the Win32 API. These calls will likely have to changed to work on Mono.
+Whereas the .Net implementation is a binding to the Win32 toolkit, the Mono implementation is written in C# to allow it to work on multiple platforms. Most of the Windows.Forms API will work on Mono, however some applications (and especially third party controls) occasionally bypass the API and P/Invoke straight to the Win32 API. These calls will likely have to changed to work on Mono.
 
 In general, Winforms applications are written using Microsoft's Visual Studio or [SharpDevelop](http://www.icsharpcode.net/opensource/sd/), which both provide a visual designer for creating Winforms GUIs.
 
@@ -110,7 +110,7 @@ Qyoto
 
 Homepage: [Qyoto](http://techbase.kde.org/Development/Languages/Qyoto)
 
-The Qyoto/Kimono languages bindings allow C\# and any other .NET language to be used to write Qt/KDE programs. The bindings are autogenerated directly from the Qt/KDE headers, greatly reducing the maintenance effort. KDE doxygen comments are automatically converted to the xml based C\# style of comment format. Substrate is well documented and supported. Qyoto 4.0 got nice [Documentation](http://api.kde.org/qyoto-api/) too.
+The Qyoto/Kimono languages bindings allow C# and any other .NET language to be used to write Qt/KDE programs. The bindings are autogenerated directly from the Qt/KDE headers, greatly reducing the maintenance effort. KDE doxygen comments are automatically converted to the xml based C# style of comment format. Substrate is well documented and supported. Qyoto 4.0 got nice [Documentation](http://api.kde.org/qyoto-api/) too.
 
 Platforms: Unix, Windows, OSX
 
@@ -128,7 +128,7 @@ wxNet
 
 [![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
-wx\# Sample
+wx# Sample
 
 Homepage: [http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)
 

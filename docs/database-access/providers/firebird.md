@@ -39,7 +39,9 @@ Using
 
 <!-- -->
 
-    Database=databasefile.gdb;User=user;Password=pass;Dialect=3;Server=hostname
+```
+Database=databasefile.gdb;User=user;Password=pass;Dialect=3;Server=hostname
+```
 
 -   Connection String Parameters:
 
@@ -51,56 +53,60 @@ Using
 |Password|password for Firebird database user|Password=masterkey|
 |Dialect|Not sure. See Firebird net provider docs.|Dialect=3|
 
- **C\# Example**
+**C# Example**
 
 ``` csharp
-using System; 
-using System.Data; 
+using System;
+using System.Data;
 using FirebirdSql.Data.Firebird;
  
 public class Test {
     public static void Main(string[] args) {
-        string connectionString = 
-            "Database=C:\\PROGRAM FILES\\FIREBIRD\\EXAMPLES\\EMPLOYEE.GDB;" + 
-            "User=SYSDBA;" + "Password=masterkey;" + 
+        string connectionString =
+            "Database=C:\\PROGRAM FILES\\FIREBIRD\\EXAMPLES\\EMPLOYEE.GDB;" +
+            "User=SYSDBA;" + "Password=masterkey;" +
             "Dialect=3;" + "Server=localhost";
  
-        IDbConnection dbcon = new FbConnection(connectionString); 
-        dbcon.Open(); 
-        IDbCommand dbcmd = dbcon.CreateCommand(); 
-        string sql = "SELECT * FROM employee"; 
-        dbcmd.CommandText = sql; 
-        IDataReader reader = dbcmd.ExecuteReader(); 
+        IDbConnection dbcon = new FbConnection(connectionString);
+        dbcon.Open();
+        IDbCommand dbcmd = dbcon.CreateCommand();
+        string sql = "SELECT * FROM employee";
+        dbcmd.CommandText = sql;
+        IDataReader reader = dbcmd.ExecuteReader();
         while(reader.Read()) {
-            object dataValue = reader.GetValue(0); 
-            string sValue = dataValue.ToString(); 
+            object dataValue = reader.GetValue(0);
+            string sValue = dataValue.ToString();
             Console.WriteLine("Value: " + sValue);
-        } 
+        }
  
-        // clean up 
-        reader.Close(); 
-        reader = null; 
-        dbcmd.Dispose(); 
-        dbcmd = null; 
-        dbcon.Close(); 
+        // clean up
+        reader.Close();
+        reader = null;
+        dbcmd.Dispose();
+        dbcmd = null;
+        dbcon.Close();
         dbcon = null;
     }
 }
 ```
 
--   Building C\# Example:
+-   Building C# Example:
 
 -   Save the example to a file, such as, TestExample.cs
 
--   Build using Mono C\# compiler:
+-   Build using Mono C# compiler:
 
 <!-- -->
 
-     mcs TestExample.cs -r System.Data.dll -r FirebirdSql.Data.Firebird.dll
+``` bash
+mcs TestExample.cs -r System.Data.dll -r FirebirdSql.Data.Firebird.dll
+```
 
 -   Running the Example:
 
 <!-- -->
 
-     mono TestExample.exe 
+``` bash
+mono TestExample.exe
+```
 

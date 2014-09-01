@@ -8,7 +8,7 @@ redirect_from:
 Accessibility: Team Meetings 2008 Aug 06
 ========================================
 
--!- calvin changed the topic of \#mono-a11y to: \*\*\* Iteration 12 Planning Meeting in progress \*\*\*\* - Accessibility
+-!- calvin changed the topic of #mono-a11y to: \*\*\* Iteration 12 Planning Meeting in progress \*\*\*\* - Accessibility
 07:01
 **\<@calvin\> **
 there are a number of people out of the office today
@@ -76,7 +76,7 @@ I've wrapped up an a11y issue with ORBit that Jared had me work on (not directly
 I made some more scrollbar changes to handle scrollbars that don't implement IRangeValueProvider, but haven't tested or committed
 Yesterday I reworked the code to add a child in the bridge to use Navigate.GetDirection(NavigateDirection. Parent) to get the parent rather than using HostRawElementProvider, so now it's better able to add things where they should be added
 I figured out that Orca doesn't see keys sent from apps using the bridge because it is the responsibility of the app (ie, the bridge) to pass them on to the at-spi registry
-I asked about this on \#a11y, if there was a reason that the registry daemon didn't do a key grab, and was told that popups and the screen saver won't come up if a program is doing a key grab
+I asked about this on #a11y, if there was a reason that the registry daemon didn't do a key grab, and was told that popups and the screen saver won't come up if a program is doing a key grab
 07:11
 so I guess that means that it is up to the app to pass keys on, in the current design anyway. Not sure right now if there's a good way to do that in the uia-atk bridge. It's a bit odd since UIA isn't involved in passing keys on, as far as I know, so, if there were an event for it, then it wouldn't be part of UIA
 07:12
@@ -116,7 +116,7 @@ Strongwind documentation, but mostly focused on documentation
 specific to using and understanding our test harness, adding tests
 to the test suite, the "official" test machines in Provo, etc. This
 documentation is almost finished
-(Accessibility:\_Testing\_Howto)
+(Accessibility:_Testing_Howto)
 This should basically finish up our basic automated framework for
 testing apps directly through pyatspi (using Strongwind), so next
 iteration I want to finally get into Orca testing and evaluate what
@@ -128,7 +128,7 @@ i have modified picturebox.py sample with giving a path to invoke the jpg pictur
 07:22
 and have modified some error in our test codes which i commited before.
 in next iteration i hope i can start to script for groupbox, picturebox, or listbox, checkedlistbox.
-actuality my script plan schedule base on Accessibility:\_Control\_Status and Accessibility:\_Mapping\_UIA\_to\_ATK wiki page with which one is marked 'done',
+actuality my script plan schedule base on Accessibility:_Control_Status and Accessibility:_Mapping_UIA_to_ATK wiki page with which one is marked 'done',
 so i hope every one can update them promptly. many many thanks :)
 07:23
 **\<@jpallen\> **
@@ -223,5 +223,5 @@ great! thanks everyone... have a good morning, good afternoon, and good night!
 **\<@Ray\> **
 thank you
 ** **
--!- calvin changed the topic of \#mono-a11y to: Accessibility
+-!- calvin changed the topic of #mono-a11y to: Accessibility
 

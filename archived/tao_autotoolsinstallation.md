@@ -10,19 +10,19 @@ Tao autotools:Installation
 
 // Download tao
 
-    $ wget http://colliertech.com/downloads/tao/tao-current.tbg
+    wget http://colliertech.com/downloads/tao/tao-current.tbg
 
 // Unpack Tao
 
-    $ gpg -d tao-current.tbg | tar xvj
+    gpg -d tao-current.tbg | tar xvj
 
 // Create a convenience link (symbolic):
 
-    $ ln -s tao-*/ tao-current
+    ln -s tao-*/ tao-current
 
 // change working directory to the unpacked directory
 
-    $ cd tao-current
+    cd tao-current
 
 // The --prefix argument to configure tells the build tools where to
  // install binaries, libraries and scripts. The default is /usr/local.
@@ -31,19 +31,19 @@ Tao autotools:Installation
 
 // First, make the directory:
 
-    $ mkdir -p $HOME/opt
+    mkdir -p $HOME/opt
 
 // Now configure the package with a prefix in your home directory:
 
-    $ ./configure --prefix=$HOME/opt
+    ./configure --prefix=$HOME/opt
 
 // You are now ready to build the source. It takes a while. Get a cup of
 
 // coffee or something while it's running. Ignore the XML warnings
 
-    $ make
+    make
 
 // You can now install the package to \$HOME/opt:
 
-    $ make install
+    make install
 

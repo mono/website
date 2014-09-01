@@ -55,12 +55,12 @@ The linker should have a list of types whose fields must not be removed or reord
 
 -   The linker should turn any public types and members that are pulled by the mark process that are absent from the source profile into "internal" types or members to ensure that the public API does not expose more than it should.
 
--   Handle base-classes that are not present. In a few cases (System.AppDomain) classes are made public because they are exposed by the inheritance chain should either be removed (\_AppDomain interface) or we should decide on a case-by-case basis if it is worth exposing them.
+-   Handle base-classes that are not present. In a few cases (System.AppDomain) classes are made public because they are exposed by the inheritance chain should either be removed (_AppDomain interface) or we should decide on a case-by-case basis if it is worth exposing them.
 
 For example, the following should be possible:
 
 ``` bash
-$ mkdir silverlight
-$ monolinker -profile:mscorlib.silver.info /usr/lib/mono/full/mscorlib.dll -out:silverlight/mscorlib.dll
+mkdir silverlight
+monolinker -profile:mscorlib.silver.info /usr/lib/mono/full/mscorlib.dll -out:silverlight/mscorlib.dll
 ```
 

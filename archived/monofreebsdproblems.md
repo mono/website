@@ -8,12 +8,12 @@ redirect_from:
 Mono:FreeBSD-Problems
 =====================
 
-Reporting problems to BSD\#
+Reporting problems to BSD#
 ---------------------------
 
 When reporting problems we need certain information to help us. The following directions will help you to give us the information we need to solve your problem.
 
-Crashes in a C\# application
+Crashes in a C# application
 
 -   Run in a terminal window:
 
@@ -46,5 +46,5 @@ Crashes in the Mono runtime
     ...recreate crash...
     (gdb) bt full
 
-Please then cut and paste the terminal output and send an email to [bsd-sharp-list](http://forge.novell.com/modules/xfmod/maillist/subscribe.php?group_id=1498&list=bsd-sharp-list). Include in that email the version of Mono being used, FreeBSD or BSD\# ports, and the versions of any other applications involved in the crash. If you are not sure whether the crash you are experiencing is an application or runtime crash then run the application in a terminal window and cut and paste the output into your email and we will determine what you need to do next.
+Please then cut and paste the terminal output and send an email to [bsd-sharp-list](http://forge.novell.com/modules/xfmod/maillist/subscribe.php?group_id=1498&list=bsd-sharp-list). Include in that email the version of Mono being used, FreeBSD or BSD# ports, and the versions of any other applications involved in the crash. If you are not sure whether the crash you are experiencing is an application or runtime crash then run the application in a terminal window and cut and paste the output into your email and we will determine what you need to do next.
 

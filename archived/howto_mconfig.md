@@ -116,7 +116,7 @@ Show the mconfig version
 
 `{addfeature, af} <feature_name> [config_file_path]`
 
-Adds the feature named *\<feature\_name\>* to the specified config file. If *config\_file\_path* is omitted, the name of the output configuration file will be chosen based on the selected target (see the `-t` option). If the specified config file exists, the feature will be injected into it at the locations specified by mconfig configuration. If the target config file does not exist, it will be created and will contain only the specified feature and all its dependencies. Default output filenames for the targets are:
+Adds the feature named *\<feature_name\>* to the specified config file. If *config_file_path* is omitted, the name of the output configuration file will be chosen based on the selected target (see the `-t` option). If the specified config file exists, the feature will be injected into it at the locations specified by mconfig configuration. If the target config file does not exist, it will be created and will contain only the specified feature and all its dependencies. Default output filenames for the targets are:
 
 -   **web** - `Web.config`
 -   **application** - `application.exe.config`.
@@ -124,9 +124,9 @@ Adds the feature named *\<feature\_name\>* to the specified config file. If *con
 
 `{defaultconfig, dc} [config_name [target_directory]]`
 
-Generates a default config file using the configuration entry named *[config\_name]* and outputs the resulting configuration file to the directory given by the *[target\_directory]* option. If *[config\_name]* is omitted, it defaults to to the names described above in the documentation for the `addfeature` command. If the *[target\_directory]* parameter is omitted, it defaults to the current directory.
+Generates a default config file using the configuration entry named *[config_name]* and outputs the resulting configuration file to the directory given by the *[target_directory]* option. If *[config_name]* is omitted, it defaults to to the names described above in the documentation for the `addfeature` command. If the *[target_directory]* parameter is omitted, it defaults to the current directory.
 
-Name of the output config file created in *[target\_directory]* is given in the config file layout definition.
+Name of the output config file created in *[target_directory]* is given in the config file layout definition.
 
 Configuration files
 -------------------
@@ -138,7 +138,7 @@ Configuration files
 -   `$prefix/etc/mono/mconfig/config.xml`
     The default configuration file, distributed with mconfig. *\$prefix* is the mconfig installation prefix specified on the compilation time.
 -   `$config_dir/mconfig/config.xml`
-    *\$config\_dir* is the directory specified in the `XDG_CONFIG_HOME` environment variable or, if it is empty, in the `.config` directory located in the user's home directory. This file is not distributed with Mono.
+    *\$config_dir* is the directory specified in the `XDG_CONFIG_HOME` environment variable or, if it is empty, in the `.config` directory located in the user's home directory. This file is not distributed with Mono.
 -   `./mconfig.xml`
     Local configuration file which can contain per-directory settings. This may be useful when shipping new versions of an application to avoid overwriting the config files possibly modified by the application user. By adding appropriate mconfig calls to your setup sequence, you can safely modify the existing config files to add the new required entries.
 
@@ -249,7 +249,7 @@ In this example we will add a feature to a `Web.config` file that consists of th
 
 The output shows that our instance of mconfig knows one default configuration file template - `web.config`. We can use this template to generate the file by issuing the following command:
 
-    $ mconfig dc web.config
+    mconfig dc web.config
 
 A basic configuration file is created in the current directory. The output file name for this template was set to `Web.config`, and that's the file that has just been created. The other option to create the new configuration file is to simply add any feature for it without pre-generating a default file. Adding a feature if a file does not exist will create the elements required by the feature and write them to the file.
 
@@ -289,7 +289,7 @@ The new feature will be valid only for the **Web** target and will consist of tw
      AJAX (Target: Web)
 
        Adds entries to your Web.config file which are required by any AJAX.NET application.
-       
+
 
      IronPython-Mono (Target: Web)
 
@@ -382,7 +382,7 @@ Each **\<default\>** element instance defines a uniquely named block, which will
 
 This fragment defines all three sections required by our configuration blocks. The other sections required by them (*system.web*, *configuration* etc.) are defined in the default configuration file shipped with Mono, so there is no need to override them unless you want to change something in their definition, in which case adding an appropriate *default* container will override the default definition. Out of the three default entries, the *connectionStrings* and *appSettings* will be valid for any feature defined in the configuration files and the *compilers* one is valid only for the web configuration files. Usually, it is a good practice for the *default* blocks to define only empty sections they are supposed to add, but in the case of our *connectionStrings* definition we can create a populated section, since it will be specific to our application anyway and is not very likely to be reused outside our context. As was the case with the *\<contents\>* element described before, it is required that the contents of concatenated child text nodes (plain text and CDATA elements) results in a well-formed XML document, which will be parsed into an XML DOM and added to the target config file at the location in the hierarchy where it is necessary. At this point, we can retry adding the newly defined feature to our target configuration file:
 
-    $ mconfig af IronPython-Mono Web.config
+    mconfig af IronPython-Mono Web.config
 
 The command completes without error, and you can look at the generated `Web.config` file:
 
@@ -485,7 +485,7 @@ This is the default configuration file as shipped with Mono.
 <mconfig>
   <configuration>
     <handlers>
-      <handler section="feature" 
+      <handler section="feature"
          type="Mono.MonoConfig.FeatureNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
          storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.FeatureNode, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
       <handler section="configBlock"

@@ -43,7 +43,7 @@ Mono:FreeBSD
 BSD\#
 =====
 
-Packaging for Mono and related applications on [FreeBSD](http://www.freebsd.org) is handled by the BSD\# Project. The purpose of this project is to maintain the existing Mono/C\# ports in the FreeBSD ports tree, port new applications, and work on resolving FreeBSD specific issues with Mono. BSD\# is entirely user supported and is not an official FreeBSD or Mono project.
+Packaging for Mono and related applications on [FreeBSD](http://www.freebsd.org) is handled by the BSD# Project. The purpose of this project is to maintain the existing Mono/C# ports in the FreeBSD ports tree, port new applications, and work on resolving FreeBSD specific issues with Mono. BSD# is entirely user supported and is not an official FreeBSD or Mono project.
 
 Who Are We?
 -----------
@@ -65,7 +65,7 @@ Mailing list
 Project hosting
 ---------------
 
--   [BSD\# on Google Code](http://code.google.com/p/bsd-sharp/)
+-   [BSD# on Google Code](http://code.google.com/p/bsd-sharp/)
 
 IRC
 ---
@@ -75,21 +75,21 @@ IRC
 Introduction
 ------------
 
-The BSD\# Project is devoted to porting and maintaining the Mono .NET framework for FreeBSD. The Mono framework consists of not only the Mono Runtime environment and compiler but the XSP web server for handling ASP.NET applications, the IKVM Java virtual machine for handling Java within the framework, and numerous data providers to provide common library functions in C\# or integration with existing C libraries.
+The BSD# Project is devoted to porting and maintaining the Mono .NET framework for FreeBSD. The Mono framework consists of not only the Mono Runtime environment and compiler but the XSP web server for handling ASP.NET applications, the IKVM Java virtual machine for handling Java within the framework, and numerous data providers to provide common library functions in C# or integration with existing C libraries.
 
-The BSD\# Project is hosted on [Google Code](http://code.google.com/p/bsd-sharp/). The project's [SVN repository](http://code.google.com/p/bsd-sharp/source/browse) currently contains FreeBSD ports for all Mono packages released by Novell. It also includes ports for applications and libraries from third parties as well with the intent that they be integrated into the standard FreeBSD ports tree. The project aims to act as a central testing point for porting new releases from Novell, for introducing new applications, and for testing framework wide changes that will affect all applications that rely on Mono before they reach the FreeBSD ports tree.
+The BSD# Project is hosted on [Google Code](http://code.google.com/p/bsd-sharp/). The project's [SVN repository](http://code.google.com/p/bsd-sharp/source/browse) currently contains FreeBSD ports for all Mono packages released by Novell. It also includes ports for applications and libraries from third parties as well with the intent that they be integrated into the standard FreeBSD ports tree. The project aims to act as a central testing point for porting new releases from Novell, for introducing new applications, and for testing framework wide changes that will affect all applications that rely on Mono before they reach the FreeBSD ports tree.
 
-Volunteer!
-----------
+Volunteer
+---------
 
-Mono on FreeBSD is user supported and there is a lot of work to do. Previous C\# or .NET is not even required. We have many needs that can be handled by anybody knowledgeable of FreeBSD (or is willing to learn). Most of our work is porting related and anyone that has read the [FreeBSD Porters Handbook](http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/) can easily get started with work updating the existing ports or creating new ports. The project makes a great starting point for those interested in Mono and are looking for something to do. If you are interested in volunteering just subscribe and email [mono@FreeBSD.org](http://lists.freebsd.org/mailman/listinfo/freebsd-mono) and ask what we currently need done.
+Mono on FreeBSD is user supported and there is a lot of work to do. Previous C# or .NET is not even required. We have many needs that can be handled by anybody knowledgeable of FreeBSD (or is willing to learn). Most of our work is porting related and anyone that has read the [FreeBSD Porters Handbook](http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/) can easily get started with work updating the existing ports or creating new ports. The project makes a great starting point for those interested in Mono and are looking for something to do. If you are interested in volunteering just subscribe and email [mono@FreeBSD.org](http://lists.freebsd.org/mailman/listinfo/freebsd-mono) and ask what we currently need done.
 
 Using Mono on FreeBSD
 ---------------------
 
 ### Obtaining Mono
 
-FreeBSD users interested in Mono can obtain it in two ways. For stability users can use the Mono port in the FreeBSD ports tree. For those interested in furthering Mono on FreeBSD they can use the BSD\# Ports Tree. The BSD\# Project also maintains [different versions of Mono within in the BSD\# Ports Tree](http://code.google.com/p/bsd-sharp/wiki/Branches).
+FreeBSD users interested in Mono can obtain it in two ways. For stability users can use the Mono port in the FreeBSD ports tree. For those interested in furthering Mono on FreeBSD they can use the BSD# Ports Tree. The BSD# Project also maintains [different versions of Mono within in the BSD# Ports Tree](http://code.google.com/p/bsd-sharp/wiki/Branches).
 
 **NOTE:** It is generally recommended that FreeBSD users NOT download the standard source tarball from the Mono download page and attempt to build/install it but use their ports system instead due to local patches contained in the ports tree. FreeBSD users interested in Mono can obtain it in two ways.
 
@@ -97,15 +97,15 @@ FreeBSD users interested in Mono can obtain it in two ways. For stability users 
 
 Mono and many other related applications can already be found in the FreeBSD Ports Tree. The version there represents the latest tested version of Mono's stable release line and is meant for those users that value a stable and working port the most. Those users that want a version of Mono simply to run other ports should use this version.
 
-#### Using the BSD\# Ports Tree (Development)
+#### Using the BSD# Ports Tree (Development)
 
-Those users more interested in using or developing with the latest stable version of Mono or the latest developmental version should use the BSD\# Ports. We cannot guarentee that the BSD\# Ports are always stable but we do our best to test ports before committing them and try to resolve reported breakage as quickly as possible.
+Those users more interested in using or developing with the latest stable version of Mono or the latest developmental version should use the BSD# Ports. We cannot guarentee that the BSD# Ports are always stable but we do our best to test ports before committing them and try to resolve reported breakage as quickly as possible.
 
-Integrating the BSD\# Ports Tree with your own is done through the portshaker script and is available in the BSD\# Project.
+Integrating the BSD# Ports Tree with your own is done through the portshaker script and is available in the BSD# Project.
 
--   [portshaker](http://code.google.com/p/bsd-sharp/downloads/list): Merges BSD\# Ports Tree with local tree.
+-   [portshaker](http://code.google.com/p/bsd-sharp/downloads/list): Merges BSD# Ports Tree with local tree.
 
-[Instruction for using portshaker](http://code.google.com/p/bsd-sharp/wiki/Installing) are provided on the BSD\# Wiki.
+[Instruction for using portshaker](http://code.google.com/p/bsd-sharp/wiki/Installing) are provided on the BSD# Wiki.
 
 ### Problems with Mono
 

@@ -4,7 +4,7 @@ redirect_from:
   - /GtkSharp3PortingGuide/
 ---
 
-There were extensive API removals and changes in Gtk3 which required breaks in the Gtk\# API as well. This guide is intended to assist users with transitioning their codebases to the new API. Users are encouraged to contribute their own experiences, either directly here or to gtk-sharp-list@lists.ximian.com and we'll try to incorporate them for other's benefit.
+There were extensive API removals and changes in Gtk3 which required breaks in the Gtk# API as well. This guide is intended to assist users with transitioning their codebases to the new API. Users are encouraged to contribute their own experiences, either directly here or to gtk-sharp-list@lists.ximian.com and we'll try to incorporate them for other's benefit.
 
 ### Size Negotiation
 

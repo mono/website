@@ -14,7 +14,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 4.5
 --------
 
-|<i class="fa fa-check"/>|C\# 5.0 - async support|
+|<i class="fa fa-check"/>|C# 5.0 - async support|
 |<i class="fa fa-check"/>|Async Base Class Library Upgrade|
 |<i class="fa fa-exclamation-triangle"/>|MVC4 *- Partial, no async features supported.*|
 |<i class="fa fa-ban"/>|ASP.NET 4.5 Async Pipeline *- Needs an parallel processing pipeline with async support, not done.*|
@@ -22,7 +22,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 4.0
 --------
 
-|<i class="fa fa-check"/>|C\# 4.0|
+|<i class="fa fa-check"/>|C# 4.0|
 |<i class="fa fa-check"/>|ASP.Net 4.0|
 |<i class="fa fa-check"/>|ASP.Net MVC 1, MVC 2 and MVC3|
 |<i class="fa fa-check"/>|System.Numerics|
@@ -37,7 +37,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 3.5
 --------
 
-|<i class="fa fa-check"/>|C\# 3.0|
+|<i class="fa fa-check"/>|C# 3.0|
 |<i class="fa fa-check"/>|System.Core|
 |<i class="fa fa-check"/>|LINQ|
 |<i class="fa fa-check"/>|ASP.Net 3.5|
@@ -54,7 +54,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 2.0
 --------
 
-|<i class="fa fa-check"/>|C\# 2.0 (generics)|
+|<i class="fa fa-check"/>|C# 2.0 (generics)|
 |<i class="fa fa-check"/>|Core Libraries 2.0: mscorlib, System, System.Xml|
 |<i class="fa fa-check"/>|ASP.Net 2.0 *- except WebParts*|
 |<i class="fa fa-check"/>|ADO.Net 2.0|
@@ -63,7 +63,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 1.1
 --------
 
-|<i class="fa fa-check"/>|C\# 1.0|
+|<i class="fa fa-check"/>|C# 1.0|
 |<i class="fa fa-check"/>|Core Libraries 1.1: mscorlib, System, System.Xml|
 |<i class="fa fa-check"/>|ASP.Net 1.1|
 |<i class="fa fa-check"/>|ADO.Net 1.1|

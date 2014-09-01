@@ -26,7 +26,7 @@ This page currently contains links to the wiki-fied version of the runtime docum
 
 Additionally, Jambunathan K has a very interesting blog that talks about [Mono Runtime Notes](http://monoruntime.wordpress.com/).
 
-For information on project planning see [Runtime\_Projects](/docs/advanced/runtime/runtime-projects/).
+For information on project planning see [Runtime_Projects](/docs/advanced/runtime/runtime-projects/).
 
 For runtime hacking see [Runtime Hacking](/docs/advanced/runtime/runtime-hacking/).
 

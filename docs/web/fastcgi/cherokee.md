@@ -13,7 +13,7 @@ Introduction
 
 [Cherokee HTTP Server](http://www.cherokee-project.com/) is a very fast, flexible and easy to configure Web Server. Adding ASP.NET support through `fastcgi-mono-server` is very simple and requires modification of only one file. As late as Cherokee 0.5.6, the FastCGI extension fails to send and empty Record when the request contains no input. `fastcgi-mono-server` does not currently work around this. **This documentation is for the [0.6.0 series](http://www.cherokee-project.com/download/0.6/0.6.0/).**
 
-### Configuration Tested On...
+### Configuration Tested On
 
 1.  [OpenSuSE10.2](http://en.opensuse.org/OpenSUSE_News/10.2-Release) (Cherokee 0.6.0b700 from its YaST repository)
 2.  *If you have tested an additional configuration,please email me at [brian.nickel@gmail.com](mailto:brian.nickel@gmail.com).*
@@ -21,16 +21,16 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI\#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
+Before doing anthing else, you should read "[FastCGI#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
 
 Using Paths [Recommended]
 -------------------------
 
-### Warnings
+### Paths Warnings
 
 **Not all the kinks of using the FastCGI Mono Server as a directory handler have been worked out.** Notably some test pages still aren't working and there appears to be some problems with running several concurrent requests.
 
-### Step 1: Setting Up the Handler
+### Paths Step 1: Setting Up the Handler
 
 All configuration is done in [file:///etc/cherokee/cherokee.conf /etc/cherokee/cherokee.conf] or [file:///usr/etc/cherokee/cherokee.conf /usr/etc/cherokee/cherokee.conf]. The following block can be inserted anywhere, but most appropriately near the bottom of the file.
 
@@ -52,11 +52,11 @@ The third and biggest change is to not spawn a host at all, but instead use an e
 Using Extensions
 ----------------
 
-### Warnings
+### Extensions Warnings
 
-**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html\#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
+**Using Extensions in place place of paths is NOT recommended.** Please consult "[../index.html#info1 Paths vs. Extensions]" on the main page for an in depth explanation. If you decide to use this configuration, please bear in mind that it is less secure suffers additional disadvantages when compared to using paths.
 
-### Step 1: Setting Up the Handler
+### Extensions Step 1: Setting Up the Handler
 
 All configuration is done in [file:///etc/cherokee/cherokee.conf /etc/cherokee/cherokee.conf] or [file:///usr/etc/cherokee/cherokee.conf /usr/etc/cherokee/cherokee.conf]. The following block can be inserted anywhere, but most appropriately near the bottom of the file.
 
@@ -85,8 +85,8 @@ You will need to modify it so it includes "index.aspx" and "default.aspx". For e
 
     vserver!default!directory_index = index.php,index.html<b>,index.aspx,default.aspx</b>
 
-Bada Bing!
-----------
+Success
+-------
 
 You should now have ASP.NET working with Cherokee. Enjoy!
 

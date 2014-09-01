@@ -34,7 +34,7 @@ The state of the allocator is stored in two arrays: iassign and isymbolic. iassi
 
        spill slot index (< -1)  vreg is spilled to the given spill slot. This means later instructions expect the value of vreg to be found on the stack in the given spill slot. When this vreg is used as a dreg of an instruction, a spill store needs to be generated after the instruction saving its value to the given spill slot.
 
-Also, the allocator keeps track of which hregs are free and which are used. This information is stored in a bitmask called ifree\_mask.
+Also, the allocator keeps track of which hregs are free and which are used. This information is stored in a bitmask called ifree_mask.
 
 There is a similar set of data structures for floating point registers.
 
@@ -76,7 +76,7 @@ An example:
 
       R33 <- 1
       R34 <- 2
-      call 
+      call
 
 When the call instruction is processed, R33 is assigned to RDI, and R34 is assigned to RSI. Later, when the two assignment instructions are processed, R33 and R34 are already assigned to a hreg, so they are replaced with the associated hreg leading to the following final code:
 
@@ -108,8 +108,8 @@ Beside these values, an architecture can define additional values (like the 's' 
 
 These macros usually receive a value from the machine description file (like the 's' in the example). The examples below are for x86.
 
-    /* 
-     * A bitmask selecting the caller-save registers (these are used for local 
+    /*
+     * A bitmask selecting the caller-save registers (these are used for local
      * allocation).
      */
     #define MONO_ARCH_CALLEE_REGS X86_CALLEE_REGS
@@ -148,7 +148,7 @@ These macros usually receive a value from the machine description file (like the
     #define MONO_ARCH_INST_IS_REGPAIR(desc) (desc == 'l' || desc == 'L')
 
     /*
-     * Given a descriptor value, and the first register of a regpair, return a 
+     * Given a descriptor value, and the first register of a regpair, return a
      * bitmask selecting the hregs which can be used for allocating the second
      * register of the regpair.
      */

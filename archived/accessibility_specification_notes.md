@@ -50,7 +50,7 @@ Issues
 
 ### MSDN
 
-1.  StatusBar control type has two IsKeyboardFocusableProperty entries. See: [http://msdn.microsoft.com/en-us/library/ms745809.aspx\#Required\_UI\_Automation\_Properties](http://msdn.microsoft.com/en-us/library/ms745809.aspx#Required_UI_Automation_Properties)
+1.  StatusBar control type has two IsKeyboardFocusableProperty entries. See: [http://msdn.microsoft.com/en-us/library/ms745809.aspx#Required_UI_Automation_Properties](http://msdn.microsoft.com/en-us/library/ms745809.aspx#Required_UI_Automation_Properties)
 2.  ScrollBar control type says: should support RangeValue Pattern when container doesn't support ScrollPattern, however, ScrollBar Winforms provider always supports RangeValue even if the container supports Scroll Pattern: *"This functionality is required to be supported only if the Scroll control pattern is not supported on the container that has the scroll bar."* [http://msdn.microsoft.com/en-us/library/ms743712.aspx](http://msdn.microsoft.com/en-us/library/ms743712.aspx)
 3.  StatusBarPanel is Edit control type, and on MSDN it says: TextPattern is required, but with nunit test on Vista, it is not supported. [http://msdn.microsoft.com/en-us/library/ms748367.aspx](http://msdn.microsoft.com/en-us/library/ms748367.aspx)
 4.  TextUnits are not well documented -- definition of "line" and "paragraph" are not well understood. See [http://msdn.microsoft.com/en-us/library/system.windows.automation.text.textunit.aspx](http://msdn.microsoft.com/en-us/library/system.windows.automation.text.textunit.aspx)
@@ -81,9 +81,9 @@ Feature requests
 ### Specific to the Winforms Implementation
 
 -   ToolStripButton should implement TogglePattern when CheckOnClick = True.
--   An AutomationPropertyChangedEvent is not fired (for the property HasKeyboardFocusProperty) when a widget looses focus (it should come with OldValue==true,NewValue==false). This is needed for Bug \#445199. FIXME: Right now, instead of not having this bug in our UIA impl, we have implemented the feature request above about sending AutomationFocusChangedEvent when a widget looses focus.
--   An AutomationPropertyChangedEvent is not fired (for the property AutomationNameProperty) when a widget's AccessibleDescription property is changed. This is needed for Bug \#457845.
--   A PopupButton in an OpenFileDialog is using MenuItem control type instead of the logical Button control type. This is needed for bug \#474647.
+-   An AutomationPropertyChangedEvent is not fired (for the property HasKeyboardFocusProperty) when a widget looses focus (it should come with OldValue==true,NewValue==false). This is needed for Bug #445199. FIXME: Right now, instead of not having this bug in our UIA impl, we have implemented the feature request above about sending AutomationFocusChangedEvent when a widget looses focus.
+-   An AutomationPropertyChangedEvent is not fired (for the property AutomationNameProperty) when a widget's AccessibleDescription property is changed. This is needed for Bug #457845.
+-   A PopupButton in an OpenFileDialog is using MenuItem control type instead of the logical Button control type. This is needed for bug #474647.
 -   ToolStripSplitButtons seems not to have a way to invoke them or to open their dropdown (because they don't implement any pattern and don't have children by default). Examples: a) on a SaveFileDialog, the Views button. b) [toolstripsplitbutton.py](http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/test/samples/toolstripsplitbutton.py?view=markup)
 
 

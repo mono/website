@@ -12,7 +12,7 @@ These are configuration options that the Mono team does provide support for.
 
 ### Xen Support
 
-If you are planning on running Mono on Xen instances, you should use the --with-xen\_opt=yes flag.
+If you are planning on running Mono on Xen instances, you should use the --with-xen_opt=yes flag.
 
 This will make Mono use a Xen-friendly set of TLS operations.
 

@@ -55,7 +55,7 @@ Accessibility: QA Meetings 2008 Aug 13
  10:32 \<bgmerrell\> if we know the revision numbers that were used to create the RPMs we can look at the ChangeLog differences
  10:32 \<calen\> sorry, i mean get patches from rpms
  10:32 \<ray\> i got it, smoke test is something like sanity check, then people could do the next
- 10:33 \<bgmerrell\> ray: right, [http://en.wikipedia.org/wiki/Smoke\_test\#Smoke\_testing\_in\_software\_development](http://en.wikipedia.org/wiki/Smoke_test#Smoke_testing_in_software_development)
+ 10:33 \<bgmerrell\> ray: right, [http://en.wikipedia.org/wiki/Smoke_test#Smoke_testing_in_software_development](http://en.wikipedia.org/wiki/Smoke_test#Smoke_testing_in_software_development)
  10:34 \<calen\> that is name "?????" in china. hehe
  10:36 \<calen\> bgmerrell: sorry, there is no way to check out patches from rpm :(
  10:37 \<calen\> how can we know new patch has been include into rpm?
@@ -121,7 +121,7 @@ Accessibility: QA Meetings 2008 Aug 13
  11:04 \<bgmerrell\> ray: yeah, he was me previous boss :)
  11:04 \<ray\> bgmerrell, just run tests.py
  11:04 \<ray\> just run that script ?
- 11:04 \<bgmerrell\> ray: well, you will run local\_run.py or remote\_run.py, which rely on tests.py
+ 11:04 \<bgmerrell\> ray: well, you will run local_run.py or remote_run.py, which rely on tests.py
  11:05 \<bgmerrell\> ray: do you have extra test/lab machines in china?
  11:05 \<ray\> yeah, i think i can use my desktop :)
  11:05 \<calen\> bgmerrell: yes, after they fix app closing issue, we can add form test into tests.py
@@ -147,12 +147,12 @@ Accessibility: QA Meetings 2008 Aug 13
  11:12 \<bgmerrell\> when do you both go back to the office?
  11:12 \<ray\> ah, sound interesting :)
  11:12 \<calen\> Aug.26
- 11:13 \<bgmerrell\> calen: do you understand how local\_run.py and remote\_run.py work?
+ 11:13 \<bgmerrell\> calen: do you understand how local_run.py and remote_run.py work?
  11:13 \<ray\> 25 i guess
  11:13 \<calen\> 25, yeah
  11:13 \<ray\> oops, from 25th, we have hack week
  11:13 \<calen\> bgmerrell: i think i understand
- 11:13 \<bgmerrell\> calen: have you tried running remote\_run.py before?
+ 11:13 \<bgmerrell\> calen: have you tried running remote_run.py before?
  11:14 \<calen\> bgmerrell: i just have tried one or two times
  11:14 \<bgmerrell\> calen: cool :) maybe you can show ray how they work when you get back to the office
  11:15 \<calen\> bgmerrell: np :)
@@ -160,9 +160,9 @@ Accessibility: QA Meetings 2008 Aug 13
  11:22 \<ray\> bgmerrell, sure
  11:26 \<calen\> i have sent test howto to ray, it would be more helpful to him yet
  11:26 \<bgmerrell\> it looks like the developers are already adding the revision number to comments when they fix the bugs
- 11:26 \<bgmerrell\> [https://bugzilla.novell.com/show\_bug.cgi?id=412206](https://bugzilla.novell.com/show_bug.cgi?id=412206)
- 11:27 \<bgmerrell\> [https://bugzilla.novell.com/show\_bug.cgi?id=411345](https://bugzilla.novell.com/show_bug.cgi?id=411345)
- 11:27 \<bgmerrell\> [https://bugzilla.novell.com/show\_bug.cgi?id=416602](https://bugzilla.novell.com/show_bug.cgi?id=416602)
+ 11:26 \<bgmerrell\> [https://bugzilla.novell.com/show_bug.cgi?id=412206](https://bugzilla.novell.com/show_bug.cgi?id=412206)
+ 11:27 \<bgmerrell\> [https://bugzilla.novell.com/show_bug.cgi?id=411345](https://bugzilla.novell.com/show_bug.cgi?id=411345)
+ 11:27 \<bgmerrell\> [https://bugzilla.novell.com/show_bug.cgi?id=416602](https://bugzilla.novell.com/show_bug.cgi?id=416602)
  11:27 \<calen\> yeah..i noticed it
  11:27 \<bgmerrell\> so we can just make sure those revisions are built if we need to
  11:27 \<ray\> yep

@@ -92,7 +92,7 @@ Functionality
             1.  Click
 
         5.  Default State: Enabled, Focusable, ManagesDescendants, Sensitive, Showing, Visible
-        6.  Children: option\_0, option\_1 (all roles: table cell)
+        6.  Children: option_0, option_1 (all roles: table cell)
 
     2.  DropDown
         1.  Acts As: Combo Box
@@ -100,7 +100,7 @@ Functionality
         3.  Provides: AtkAccessible, AtkAction, AtkComponent, AtkSelection
         4.  Default State: Enabled, Sensitive, Showing, Visible
         5.  Actions
-            1.  Anything that changes the selection (key press, mouse press, release...): selection-changed, active-descendant-changed(n, 0, [table\_cell\_obj) (where n is the pos + 1)
+            1.  Anything that changes the selection (key press, mouse press, release...): selection-changed, active-descendant-changed(n, 0, [table_cell_obj) (where n is the pos + 1)
 
     3.  DropDownList
         1.  Acts As: Combo Box
@@ -252,7 +252,7 @@ Functionality
     2.  Similar To: GtkTreeView (List style)
     3.  Provides: AtkAccessible, AtkComponent, AtkSelection, AtkTable
     4.  Default State: Enabled, Focusable, Manages Descendants, Sensitive, Showing, Visible
-    5.  Children: column\_0 (role: table column header), cell\_0\_in\_column\_0 (role: table cell), cell\_1\_in\_column\_0, ..., column\_1, cell\_0\_in\_column\_1, ...
+    5.  Children: column_0 (role: table column header), cell_0_in_column_0 (role: table cell), cell_1_in_column_0, ..., column_1, cell_0_in_column_1, ...
     6.  Actions:
         1.  Click on column header to cause row reordering: object:row-reordered, object:visible-data-changed
 

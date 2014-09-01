@@ -97,7 +97,7 @@ Connection String Format
 |Max Pool Size|Specifies the maximum number of connections in the connection pool. Default is 100.|Max Pool Size=100|
 |Pooling|Specifies whether or not to use connection pooling. Valid values are TRUE or YES to use connection pooling or FALSE or NOT to not use connection pooling. Default is TRUE.|Pooling=true|
 
-C\# Example
+C# Example
 ===========
 
 ``` csharp
@@ -138,14 +138,17 @@ C\# Example
  }
 ```
 
-Building C\# Example
+Building C# Example
 --------------------
 
 Save the example to a file, such as, TestExample.cs, then to build on Linux, do:
 
-     mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
+``` bash
+mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
+```
 
 To run the example:
 
-     mono TestExample.exe 
-
+``` bash
+mono TestExample.exe
+```

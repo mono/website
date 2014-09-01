@@ -12,7 +12,7 @@ Stetic
 
 Stetic integrated into MonoDevelop
 
-Stetic is the GUI designer for creating Gtk\# applications. To develop Gtk\# interfaces with Stetic, users should download and use MonoDevelop.
+Stetic is the GUI designer for creating Gtk# applications. To develop Gtk# interfaces with Stetic, users should download and use MonoDevelop.
 
 Screenshots and Demos
 ---------------------

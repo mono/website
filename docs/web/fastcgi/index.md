@@ -22,7 +22,7 @@ in many web servers. A web server will receive and respond to a request in the f
 1.  The browser tries accessing a page. It finds the host and sends it HTTP GET request.
 2.  The web server receives the request, recognizes that it is supposted to send it to a given socket, in this case `"/tmp/fastcgi-mono-server-0"`, connects to it, and sends the request in the CGI format using FastCGI records.
 3.  `fastcgi-mono-server receives` the request and creates a `Mono.WebServer.FastCgi.WorkerRequest` (a subclass of [System.Web.Hosting.SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest) and processes the request.
-4.  [SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest) checks for an existing compiled version of the requested page. If it does not exist, the page is converted into C\# (or the specified language) and compiled. It then invokes Render on the compiled representation of the page.
+4.  [SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest) checks for an existing compiled version of the requested page. If it does not exist, the page is converted into C# (or the specified language) and compiled. It then invokes Render on the compiled representation of the page.
 5.  The page is rendered and sent back to the [SimpleWorkerRequest](http://docs.go-mono.com/index.aspx?link=T:System.Web.Hosting.SimpleWorkerRequest)
 6.  Overwritten method calls in the FastCGI WorkerRequest send the response back to the web server using FastCGI records.
 7.  The web server sends the response back to the browser.
@@ -40,7 +40,7 @@ $ tar xzvf xsp-1.2.6.tar.gz
 ...
 $ cd xsp-1.2.6
 $ ./configure --prefix=/usr
-$ make 
+$ make
 $ make install
 ```
 

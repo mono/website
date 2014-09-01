@@ -30,7 +30,7 @@ For Monkeyguide Authors
 Source Code Examples
 ====================
 
-C\#
+C#
 ---
 
 Wrap source code in

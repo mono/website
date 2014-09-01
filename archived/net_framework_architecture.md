@@ -44,7 +44,7 @@ Refer to the above diagram for the following sections.
 Class Library
 =============
 
-The class library provides a comprehensive set of facilities for application development. Primarily written in C\#, it can be used by any language, thanks to the Common Language Specification .
+The class library provides a comprehensive set of facilities for application development. Primarily written in C#, it can be used by any language, thanks to the Common Language Specification .
 
 The class library is structured into Namespaces, and deployed in shared libraries known as Assemblies. When we speak of the .NET framework , we are primarily referring to this class library.
 
@@ -93,18 +93,18 @@ The ECMA standard formally defines a library that conforms to the CLS as a frame
 Managed and Unmanaged Code
 ==========================
 
-Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices `libraries to create C\# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk\#](/GtkSharp "GtkSharp") libraries are C\# wrappers around the underlying C libraries.
+Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices `libraries to create C# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk#](/GtkSharp "GtkSharp") libraries are C# wrappers around the underlying C libraries.
 
 Bibliography
 ============
 
-ECMA Standard [334](http://www.ecma-international.org/publications/standards/Ecma-334.htm) , the C\# language specification.
+ECMA Standard [334](http://www.ecma-international.org/publications/standards/Ecma-334.htm) , the C# language specification.
 
 ECMA Standard [335](http://www.ecma-international.org/publications/standards/Ecma-335.htm) , the Common Language Infrastructure.
 
 MSDN documentation for the .NET framework is [here.](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconinsidenetframework.asp)
 
-O'Reilly [C\# in a Nutshell](http://www.oreilly.com/catalog/csharpnut/chapter/ch01.html) is definitely recommended.
+O'Reilly [C# in a Nutshell](http://www.oreilly.com/catalog/csharpnut/chapter/ch01.html) is definitely recommended.
 
 Contributors
 ============
