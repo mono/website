@@ -8,10 +8,11 @@ redirect_from:
 
 Estes documentos cobrem tópicos específicos do Mono, como ajustar e configurar o Mono ou informações internas do Mono como as da máquina virtual, coletor de lixo ou várias ferramentas específicas do Mono. 
 
-Para informações gerais sobre o Framework .NET e sobre as bibliotecas de classes você pode buscar no site da Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
+Informações gerais sobre o Framework .NET e sobre as bibliotecas de classes você pode buscar no site da Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
 {% capture docNote %}
-Nossa documentação é open source está [GitHub](https://github.com/mono/website/docs), a versão em portugues brasil está sendo mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique em no link "Edit page on GitHub" abaixo do título da página. Veja [contribuindo com o site](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
+A documentação é open source e está (em Inglês) no [GitHub](https://github.com/mono/website/docs), a versão em Pôrtugues do Brasil está sendo mantida pela comunidade MonoBrasil em [GitHub](https://github.com/monobrasil/website/docs). 
+Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique no link "Edit page on GitHub" abaixo do título da página. Veja [Contribuindo com o Site](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
