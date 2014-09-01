@@ -47,7 +47,7 @@ Liberações Correntes
 <li>Implementação da System.Security.Claims</li>
 </ul>
 </td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.6.0 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Notas de Liberação do Mono 3.6.0">Notas de Liberação do Mono 3.6.0</a></p>
 <p><br /></p></td>
 </tr>
 </tbody>
