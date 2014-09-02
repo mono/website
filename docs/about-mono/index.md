@@ -17,7 +17,7 @@ The Components
 
 There are several components that make up Mono:
 
-**[C# Compiler](/docs/about-mono/languages/csharp/)** - Mono's C# compiler is feature complete for C# 1.0, 2.0, 3.0, and 4.0 (ECMA). A good description of the feature of the various versions is available on [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
+**[C# Compiler](/docs/about-mono/languages/csharp/)** - Mono's C# compiler is feature complete for C# 1.0, 2.0, 3.0, 4.0 and 5.0 (ECMA). A good description of the feature of the various versions is available on [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
 
 **[Mono Runtime](/docs/advanced/runtime/)** - The runtime implements the ECMA Common Language Infrastructure (CLI). The runtime provides a Just-in-Time (JIT) compiler, an Ahead-of-Time compiler (AOT), a library loader, the garbage collector, a threading system and interoperability functionality.
 
