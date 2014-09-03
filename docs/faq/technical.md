@@ -635,7 +635,7 @@ This can be obtained easily with IKVM.
 
 **Do you plan to implement a Javascript compiler?**
 
-Yes. The beginnings of the JScript compiler can be found on SVN. Cesar coordinates this effort.
+Yes. The beginnings of the JScript compiler can be found on git. Cesar coordinates this effort.
 
 **Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?**
 

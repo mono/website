@@ -32,7 +32,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 
 -   Npgsql version from [CVS](http://pgfoundry.org/scm/?group_id=1000140).
     The CVS version is required, since the ASP.NET 2.0 Membership classes rely on the DbProviderFactories model which is not available in Npgsql shipped with Mono.
--   ASP.NET PostgreSQL Membership/Role providers. I recommend the version from [Nauck, It](http://dev.nauck-it.de/projects/show/aspsqlprovider), which is the code I use in all the ported starter kits. Make sure that you use the version of the above provider from the [Mono branch](http://svn.nauck-it.de/aspsqlprovider/branches/mono/) as it contains changes necessary for the provider to work correctly with the CVS version of Npgsql.
+-   ASP.NET PostgreSQL Membership/Role providers. I recommend the version from [Nauck, It](http://dev.nauck-it.de/projects/show/aspsqlprovider), which is the code I use in all the ported starter kits. Make sure that you use the version of the above provider from the [Mono branch](https://github.com/dnauck/AspSQLProvider/tree/mono) as it contains changes necessary for the provider to work correctly with the CVS version of Npgsql.
 -   [PostgreSQL 8.2](http://www.postgresql.org/ftp/binary/v8.2.4/)
 
 Porting the code

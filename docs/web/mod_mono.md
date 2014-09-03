@@ -391,7 +391,7 @@ In case it is needed, you can provide alternative locations for mod-mono-server.
         Alias /jackie "/home/jackie/web"
         AddMonoApplications jackie "/jane:/home/jackie/web"
 
-        # This uses mono from SVN and the ASP.NET 2.0 mod-mono-server
+        # This uses mono from git and the ASP.NET 2.0 mod-mono-server
         MonoServerPath jackie /svn/install/bin/mod-mono-server2
 
         #

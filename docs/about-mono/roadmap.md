@@ -88,7 +88,7 @@ Linux is no longer being developed.
 
 Some of the .NET technologies have been either deprecated, are too Windows-specific or are very large efforts and our community is unable to produce viable implementations for them.
 
-If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on. There might be some code for these on our [SVN](/community/contributing/source-code-repository/) repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
+If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on. There might be some code for these on our [git](/community/contributing/source-code-repository/) repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
 
 Too large stacks:
 

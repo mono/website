@@ -29,7 +29,7 @@ Gtk# 3.0 will be built against the .net 2.0 profile, but it will be possible to 
 
 If Gtk 3 were to languish unreleased, we might release a binding for Gtk+ 2.18 first.
 
-GIO bindings are availiable in the gio-sharp module from Mono's [AnonSVN](/community/contributing/source-code-repository/) repository. Alternativly, you can build Gtk# from trunk.
+GIO bindings are availiable in the gio-sharp module from Mono's [git](/community/contributing/source-code-repository/) repository. Alternativly, you can build Gtk# from master.
 
 Future Plans
 ------------

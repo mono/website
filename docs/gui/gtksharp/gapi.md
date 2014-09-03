@@ -296,7 +296,7 @@ For example with my gtkspell-sharp libraries, I include a .custom file named "gt
 Putting it all together
 -----------------------
 
-The GtkSpell# package is a good simple working example of all the tools in action. You can check it out from the SVN in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell#](https://github.com/mono/gtkspell-sharp).
+The GtkSpell# package is a good simple working example of all the tools in action. You can check it out from git in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell#](https://github.com/mono/gtkspell-sharp).
 
 Makefiles should be laid out to make this easy to replicate if you plan to distribute.
 

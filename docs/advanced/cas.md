@@ -25,7 +25,7 @@ Since version 1.1.4 Mono supports the --security option to enable it's security 
 
     mono --security sample.exe
 
-New features in [SVN](/community/contributing/source-code-repository/) (unreleased as of 1.1.10) includes:
+New features in [git](/community/contributing/source-code-repository/) (unreleased as of 1.1.10) includes:
 
 -   none;
 

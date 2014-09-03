@@ -64,5 +64,5 @@ to remove debugging and unused symbol information.
 Reducing code in assemblies
 ---------------------------
 
-To reduce the size of the managed assemblies, use the linker tool in the cecil svn module.
+To reduce the size of the managed assemblies, use the linker tool in the cecil git module.
 
