@@ -12,8 +12,8 @@ Installation
 To build Mono on the Wii, you will need a Mono 2.4 set of class libraries, and in addition to that, you will need to check out the Mono/Wii branch and the special wii support system (obtain this URL from Novell after filling out your request in the middleware portal at Warioworld)
 
 ``` bash
- $ svn co .../branches/wii
- $ svn co .../trunk/wii
+ $ git clone -b wii ...
+ $ git clone ...
  $ cd wii
  $ make
 ```

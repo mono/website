@@ -96,7 +96,7 @@ Architecture:
 Implementation Overview
 =======================
 
-The WebBrowser implimentation is made up of several parts:
+The WebBrowser implementation is made up of several parts:
 
 -   libmozembed - The native wrapper that wraps Mozilla. Built to satisfy the requirements of the MWF control, it remains versatile enough to be reusable for other embedding projects that require a simple and static C based interface.
     -   Source: [http://anonsvn.mono-project.com/viewvc/trunk/mozembed/src/](http://anonsvn.mono-project.com/viewvc/trunk/mozembed/src/)

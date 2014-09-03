@@ -197,7 +197,7 @@ where **1.3.6.1.5.5.7.3.1** is the OID for server-side authentication and **poll
 
 where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poupou** is your name. The `-p12` option is **mono specific** and creates a PKCS#12 file protected with the supplied password.
 
-Many more options are available from `makecert`. Consult the tool's [man page](http://anonsvn.mono-project.com/source/trunk/mono/man/makecert.1) (i.e. `man makecert`) for more details.
+Many more options are available from `makecert`. Consult the tool's [man page](https://github.com/mono/mono/blob/master/man/makecert.1) (i.e. `man makecert`) for more details.
 
 Code Access Security (CAS)
 ==========================
@@ -244,7 +244,7 @@ With the CLR 1.x a security permission object (implementing [IPermission](http:/
 
 In order to bootstrap such assemblies CSC 7.x looks for the environment variable `__SECURITY_BOOTSTRAP_DB` to create a security database. The information within (format unknown) enables CSC to compile them.
 
-From the [/mcs/class/corlib/Makefile](http://anonsvn.mono-project.com/source/trunk/mcs/class/corlib/Makefile) file:
+From the [/mcs/class/corlib/Makefile](https://github.com/mono/mono/blob/master/mcs/class/corlib/Makefile) file:
 
     export __SECURITY_BOOTSTRAP_DB=$(topdir)/class/corlib
 

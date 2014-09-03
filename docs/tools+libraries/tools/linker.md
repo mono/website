@@ -32,7 +32,7 @@ See the man page for mkbundle for details on its operation.
 Download
 ========
 
-For the moment, no versions has been released, but you can download the code from the [SVN](/community/contributing/source-code-repository/), in the module [/mcs/tools/linker](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/linker)
+For the moment, no versions has been released, but you can download the code from the [SVN](/community/contributing/source-code-repository/), in the module [/mcs/tools/linker](https://github.com/mono/mono/tree/master/mcs/tools/linker)
 
 Links
 =====

@@ -51,7 +51,7 @@ An Example
 
 The TreeModelDemo sample application from the gtk-sharp package demonstrates implementation of a custom TreeModel in managed code. The custom model exposes the assemblies, types, and members of the current AppDomain using reflection. The sample source code can be viewed on-line:
 
-[Link to Complete Tree Model Demo Source Code](http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/sample/TreeModelDemo.cs?view=markup)
+[Link to Complete Tree Model Demo Source Code](https://github.com/mono/gtk-sharp/blob/master/sample/TreeModelDemo.cs)
 
 The MyTreeModel class identifies itself as a TreeModel in its declaration via the "implementor" interface:
 

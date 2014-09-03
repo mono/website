@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Design.Linq/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about LINQ-related design issues are located in the **Gendarme.Rules.Design.Linq.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design.Linq/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about LINQ-related design issues are located in the **Gendarme.Rules.Design.Linq.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Design.Linq/).
 
 Rules
 =====

@@ -17,7 +17,7 @@ The security manager is a collection of security features to implement every sec
 
 Sadly not every parts of the security manager cannot be tested using [NUnit](/community/contributing/test-suite/). In particular some security actions, like `LinkDemand` and `InheritanceDemand`, throws unhandled exceptions. While it is possible to promote `LinkDemand` into full `Demand` by using reflection, `InheritanceDemand` are still not testable using [NUnit](/community/contributing/test-suite/).
 
-Some tests for those hard-to-test features are present in directories under [/mono/mono/tests/cas/](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/tests/cas/) in [SVN](/community/contributing/source-code-repository/). They can be executed by doing a `make test` in each directory.
+Some tests for those hard-to-test features are present in directories under [/mono/mono/tests/cas/](https://github.com/mono/mono/tree/master/mono/tests/cas) in [git](/community/contributing/source-code-repository/). They can be executed by doing a `make test` in each directory.
 
 ### Status
 
@@ -109,7 +109,7 @@ Testing each class, security related or not, is done with *classic* [unit tests]
         }
 ```
 
-You can see a complete example in the [EnvironmentCas.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/corlib/Test/System/EnvironmentCas.cs?view=markup) file.
+You can see a complete example in the [EnvironmentCas.cs](https://github.com/mono/mono/blob/master/mcs/class/corlib/Test/System/EnvironmentCas.cs) file.
 
 ### ClassLib Status
 
@@ -150,7 +150,7 @@ Permview is a tool that can extract the declarative security permission sets fro
 **Status**
 
 -   The current version (i.e. the one part of the Mono 1.1.x releases) is limited to show the assembly-level permissions (e.g. `RequestMinimum`, `RequestOptional` and `RequestRefuse`) and works only on the Mono runtime;
--   A new version, based on [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/), is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the **mcs** [SVN](/community/contributing/source-code-repository/) trunk. Until then the source code is available [here](http://anonsvn.mono-project.com/viewvc/trunk/cecil/permview/permview.cs?view=markup).
+-   A new version, based on [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/), is feature complete and runtime agnostic. This version also has an extra option to output the data in XML format (so it can easily be consumed by other tools). It will replace the current version when the Cecil code joins the **mcs** [git](/community/contributing/source-code-repository/) trunk. Until then the source code is available [here](https://github.com/mono/mono/blob/master/mcs/tools/security/permview.cs).
 
 ### storeadm
 

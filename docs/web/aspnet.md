@@ -133,7 +133,7 @@ Work in Progress
 SVN access
 ----------
 
-Users interested in the latest version of mod_mono and xsp can retrieve these from our public [anonymous SVN](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
+Users interested in the latest version of mod_mono and xsp can retrieve these from our public [git](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
 
 Designer
 --------
