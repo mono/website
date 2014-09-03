@@ -30,27 +30,46 @@
       ga('send', 'pageview');
     </script>
     <style>
-      @media only screen and (max-width: 62em) and (min-width: 54em) {
-          .top-bar-section li:not(.has-form) a:not(.button) {
-          padding: 0 7px;
+      @media only screen and (min-width: 64em) {
+        .top-bar-section ul li>a {
+          font-size: 0.87rem;
+        }
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 15px;
         }
       }
-      @media only screen and (max-width: 43em) and (min-width: 40.063em) {
-          .top-bar-section li:not(.has-form) a:not(.button), 
-          .top-bar-section li.active:not(.has-form) a:not(.button) {
-          font-size: 10px;
+      @media only screen and (max-width: 64em) and (min-width: 60em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 11px;
         }
       }
-      @media only screen and (max-width: 46em) and (min-width: 43em) {
-          .top-bar-section li:not(.has-form) a:not(.button), 
-          .top-bar-section li.active:not(.has-form) a:not(.button) {
-          font-size: 11px;
+      @media only screen and (max-width: 60em) and (min-width: 54em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 9px;
         }
       }
       @media only screen and (max-width: 54em) and (min-width: 46em) {
-          .top-bar-section li:not(.has-form) a:not(.button), 
-          .top-bar-section li.active:not(.has-form) a:not(.button) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
           font-size: 12px;
+          padding: 0 7px;
+        }
+      }
+      @media only screen and (max-width: 46em) and (min-width: 43em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 11px;
+          padding: 0 6px;
+        }
+      }
+      @media only screen and (max-width: 43em) and (min-width: 40.063em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 10px;
+          padding: 0 5px;
         }
       }
     </style>
