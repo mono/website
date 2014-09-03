@@ -30,15 +30,21 @@
       ga('send', 'pageview');
     </script>
     <style>
-      @media only screen and (min-width: 40.063em) {
+      @media only screen and (max-width: 56em) and (min-width: 40.063em) {
           .top-bar-section li:not(.has-form) a:not(.button) {
           padding: 0 7px;
         }
       }
-      @media only screen and (max-width: 50em) and (min-width: 40.063em) {
+      @media only screen and (max-width: 43em) and (min-width: 40.063em) {
           .top-bar-section li:not(.has-form) a:not(.button), 
           .top-bar-section li.active:not(.has-form) a:not(.button) {
           font-size: 10px;
+        }
+      }
+      @media only screen and (max-width: 46em) and (min-width: 43em) {
+          .top-bar-section li:not(.has-form) a:not(.button), 
+          .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 11px;
         }
       }
     </style>
