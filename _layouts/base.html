@@ -29,6 +29,14 @@
       ga('create', 'UA-76510-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <style>
+      @media only screen and (min-width: 40.063em) .top-bar-section li:not(.has-form) a:not(.button) {
+        padding: 0 7px;
+      }
+      @media only screen and (max-width: 50em) and (min-width: 40.063em) .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section li.active:not(.has-form) a:not(.button) {
+        font-size: 10px;
+      }
+    </style>
   </head>
   <body>
     <div id="main-wrapper">
@@ -50,7 +58,7 @@
               <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fa fa-bullhorn"></i> Novidades</a></li>
               <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fa fa-github"></i> Communidade</a></li>
               <li class="has-form">
-                <form id="header-searchform" action="https://www.google.com/search" method="get" style="position: relative; top: -5px">
+                <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
                     <div class="small-11 medium-9 large-10 columns">
                       <input name="as_sitesearch" type="hidden" value="www.monobrasil.com.br" />
