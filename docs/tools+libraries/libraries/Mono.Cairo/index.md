@@ -25,7 +25,7 @@ To use Cairo in Gdk/Gtk applications, a `Context` with a `Gdk.Drawable` target s
     Cairo.Context context = Gdk.CairoHelper.Create(drawable);
 ```
 
--   A second choice (recommended for older versions of Gtk) is to use a function provided in the [Mono.Cairo samples](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/Mono.Cairo/Samples/). This will work on all platforms and with older Gdk versions. The code in question resides in [sysdraw.cs](http://anonsvn.mono-project.com/viewvc/trunk/mcs/class/Mono.Cairo/Samples/gtk/sysdraw.cs?view=markup) and you can simply download & use this file in your project.
+-   A second choice (recommended for older versions of Gtk) is to use a function provided in the [Mono.Cairo samples](https://github.com/mono/mono/tree/master/mcs/class/Mono.Cairo/Samples). This will work on all platforms and with older Gdk versions. The code in question resides in [sysdraw.cs](https://github.com/mono/mono/blob/master/mcs/class/Mono.Cairo/Samples/gtk/sysdraw.cs) and you can simply download & use this file in your project.
 
 The best place to create and use the `Context` is the [ExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?tlink=5@ecma%3a1351%23Widget%2fE%2f26) for the given widget. Usually you'll want to use the [Gtk.DrawingArea](http://www.go-mono.com/docs/monodoc.ashx?tlink=5@ecma%3a838%23DrawingArea%2f) for this task. An example implementation of the Expose event method:
 

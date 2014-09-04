@@ -10,14 +10,14 @@ redirect_from:
 
 Mono, a plataforma de código aberto de desenvolvimento baseada no framework .NET, permite aos desenvolvedores construir aplicações multi-plataforma com maior produtividade. A implementação .NET do Mono é baseada nas padronizações ECMA para o [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) e o [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
-Apoiado pela Xamarin, o projeto Mono tem uma ativa e entusiástica comunidade de contribuidores. O Mono inclue ferramentas de desenvolvimento e a infraestrutura necessária para rodar aplicações .NET cliente e servidor.
+Apoiado anteriormente pela Novell e agora pela [Xamarin](http://xamarin.com/), o projeto Mono tem uma ativa e entusiástica comunidade de contribuidores. O Mono inclue ferramentas de desenvolvimento e a infraestrutura necessária para rodar aplicações .NET cliente e servidor.
 
 Os Componentes
 --------------
 
 Existem diversos componentes que forma o Mono:
 
-**[Compilador C#](/docs/about-mono/languages/csharp/)** - O compilador C# do Mono tem todas as funcionalidades das versões do C# 1.0, 2.0, 3.0, and 4.0 (ECMA). Uma boa descrição das funcionalidades de cada versão está disponível na [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
+**[Compilador C#](/docs/about-mono/languages/csharp/)** - O compilador C# do Mono tem todas as funcionalidades das versões do C# 1.0, 2.0, 3.0, 4.0 e 5.0 (ECMA). Uma boa descrição das funcionalidades de cada versão está disponível na [Wikipedia](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29#Versions).
 
 **[Runtime do Mono](/docs/advanced/runtime/)** - O runtime (ambiente de execução) implementa a Common Language Infrastructure (CLI) do ECMA. O runtime prove um compilador Just-in-Time (JIT), um compilador Ahead-of-Time (AOT), um carregador de bibliotecas, o coletor de lixo, o sistema de execução concorrente (threads) e funcionalidade de interoperabilidade com bibliotecas nativas.
 

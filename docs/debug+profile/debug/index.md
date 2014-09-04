@@ -482,7 +482,7 @@ Historically Mono and Valgrind didn't always played well together. If this has d
 
 Recent valgrind versions are able to deal with for self-modifying programs (which is what the mono JIT does) by using the --smc-check=all option.
 
-As an extra bonus, Paolo (lupus) has shared his suppression file for Mono. This removes a lot, but not all, false positives (or unimportant) logs coming from the Mono runtime. This makes it easier and faster to find what you're looking for. The suppression file is available in Mono's SVN as /mono/data/mono.supp
+As an extra bonus, Paolo (lupus) has shared his suppression file for Mono. This removes a lot, but not all, false positives (or unimportant) logs coming from the Mono runtime. This makes it easier and faster to find what you're looking for. The suppression file is available in Mono's git as /mono/data/mono.supp
 
 Sample usage:
 

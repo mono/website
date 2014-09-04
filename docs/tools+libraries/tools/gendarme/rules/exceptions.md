@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Exceptions/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about exceptions are located in the **Gendarme.Rules.Exceptions.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Exceptions/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about exceptions are located in the **Gendarme.Rules.Exceptions.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Exceptions/).
 
 <table>
 <col width="100%" />

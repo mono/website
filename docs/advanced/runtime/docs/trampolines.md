@@ -15,7 +15,7 @@ Most, but not all trampolines consist of two parts:
 
 The generic part saves the machine state to the stack, and calls one of the trampoline functions in mini-trampolines.c with the state, the call site, and the argument passed by the specific trampoline. After the C function returns, it either returns normally, or branches to the address returned by the C function, depending on the trampoline type.
 
-Trampoline types are given by the MonoTrampolineType enumeration in [mini.h](http://anonsvn.mono-project.com/viewvc/trunk/mono/mono/mini/mini.h?view=log).
+Trampoline types are given by the MonoTrampolineType enumeration in [mini.h](https://github.com/mono/mono/blob/master/mono/mini/mini.h).
 
 The platform specific code for trampolines is in the file tramp-\<ARCH\>.c for each architecture, while the cross platform code is in mini-trampolines.c. There are two types of functions in mini-trampolines.c:
 

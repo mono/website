@@ -5,7 +5,7 @@ redirect_from:
   - /Compiling_Mono_for_Windows/
 ---
 
-Starting with Mono from svn revision 109671 (or version 2.2+) it is now possible to compile Mono for Windows on your Linux machine. To do it you will need to provide a [MinGW](http://mingw.org/) environment for your Linux distribution and several compile and runtime dependencies for Mono. Distribution-specific instructions follow below. Once you have your MinGW environment set up, go to your Mono source directory and type (make sure that your directory has NO files from previous compilations):
+Starting with Mono from git revision SVN/109671 (or version 2.2+) it is now possible to compile Mono for Windows on your Linux machine. To do it you will need to provide a [MinGW](http://mingw.org/) environment for your Linux distribution and several compile and runtime dependencies for Mono. Distribution-specific instructions follow below. Once you have your MinGW environment set up, go to your Mono source directory and type (make sure that your directory has NO files from previous compilations):
 
     ./build-mingw32.sh
 
@@ -28,8 +28,8 @@ Building will take some time since the mono runtime needs to be built twice (onc
 where:
 
     * X.Y - major.minor Mono version
-    * BRANCH - Mono branch or tarball if svn branch could not have been detected
-    * REVISION - Mono svn revision or rUNKNOWN if it wasn't possible to determine the revision number
+    * BRANCH - Mono branch or tarball if git branch could not have been detected
+    * REVISION - Mono git revision or rUNKNOWN if it wasn't possible to determine the revision number
 
 The zip file must be unpacked in the root directory of any Windows disk drive and you will be able to find the Mono installation in the directory whose name follows the pattern:
 
@@ -43,8 +43,8 @@ where:
 
     * Z - the letter identifying the Windows disk drive where you unpacked the zip
     * X.Y - major.minor mono version
-    * BRANCH - Mono branch or tarball if svn branch could not have been detected
-    * REVISION - Mono svn revision or rUNKNOWN if it wasn't possible to determine the revision number
+    * BRANCH - Mono branch or tarball if git branch could not have been detected
+    * REVISION - Mono git revision or rUNKNOWN if it wasn't possible to determine the revision number
 
 If you want to permanently put a path to the Mono bin directory from the above package in your global `PATH` environment variable, but you're worried you will have to update it every time you compile new package from another Mono revision, do not despair - there is a way to create symlinks on Windows 2000 onwards if your disk is formatted with the NTFS filesystem. Install [this utility](http://technet.microsoft.com/en-us/sysinternals/bb896768.aspx) and issue the following command from the cmd prompt:
 

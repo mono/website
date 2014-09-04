@@ -167,7 +167,7 @@ uim.AddUiFromString (ui_info);
 ...
 ```
 
-A complete sample application utilizing Actions and the UI manager can be found in the sample/Action.cs file shipped with the Gtk# source or viewed [on the web](http://anonsvn.mono-project.com/viewcvs/trunk/gtk-sharp/sample/Actions.cs?view=markup).
+A complete sample application utilizing Actions and the UI manager can be found in the sample/Action.cs file shipped with the Gtk# source or viewed [on the web](https://github.com/mono/gtk-sharp/blob/master/sample/Actions.cs).
 
 ### ComboBox
 
@@ -208,7 +208,7 @@ Use the PanelApplet object now exposed by gnome-sharp.dll to implement new Panel
 
 See the API here: [Gnome.PanelApplet](http://docs.go-mono.com/index.aspx?link=T:Gnome.PanelApplet).
 
-A full sample can be seen [here](http://anonsvn.mono-project.com/viewvc/trunk/gnome-sharp/sample/panelapplet/).
+A full sample can be seen [here](https://github.com/mono/gnome-sharp/tree/master/sample/panelapplet).
 
 New Extensions to the Bindings
 ------------------------------

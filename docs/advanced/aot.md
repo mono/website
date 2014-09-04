@@ -75,7 +75,7 @@ If you depend on the full AOT option because of OS limitations, you should make 
 
 #### Limitation: Platform
 
-Full AOT currently only works on AMD64/ARM and only with SVN HEAD, not 2.0/2.2/ 2.4.
+Full AOT currently only works on AMD64/ARM and only with git HEAD, not 2.0/2.2/ 2.4.
 
 #### Limitation: Generic Interface Instantiation
 

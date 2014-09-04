@@ -53,7 +53,7 @@ To subscribe to a mailing list, click the mailing list name in the left column a
     <a href="http://lists.ximian.com/mailman/listinfo/mono-patches">mono-patches</a>
     <p>Mirrored on the web at <a href="http://groups-beta.google.com/group/mono-svn-patches">mono-svn-patches</a></p>
   </td>
-  <td><p>Track the SVN activity of Mono on this mailing list (patches are sent to recipients). You can get <a href="http://www.go-mono.com/snapshots">daily snapshots</a> as well.</p></td>
+  <td><p>Track the git activity of Mono on this mailing list (patches are sent to recipients). You can get <a href="http://www.go-mono.com/snapshots">daily snapshots</a> as well.</p></td>
 </tr>
 <tr>
   <td><a href="http://lists.ximian.com/mailman/listinfo/mono-docs-list">mono-docs-list</a></td>

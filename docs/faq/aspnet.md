@@ -466,7 +466,7 @@ There are a few Ajax libraries that developers could consider:
 -   [Magic Ajax.NET](http://www.magicajax.net/).
 -   GaiaWidgets
 
-**Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?** Yes, it is possible with Mono version from svn trunk or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
+**Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?** Yes, it is possible with Mono version from git master or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
 
 Extra Languages
 ===============

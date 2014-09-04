@@ -87,22 +87,22 @@ Outros projetos como o [depurador](/docs/debug+profile/debug/debugger/), o naveg
 
 Algumas tecnologias .NET technologies ou foram descontinuadas (deprecated), ou são muito específicas do Windows ou seriam esforços muito grandes e nossa comunidade não é capaz de produzir implementações viáveis delas.
 
-Se alguém se importa **muito** com essas APIs e conseguir implementá-las, nós gostariamos de empacotá-las junto com o Mono, mas elas não estão sendo ativamente desenvolvidas. Pode exister código para algumas delas no nosso  [repositório](/community/contributing/source-code-repository/), mas ele não está com qualidade para ser posto em produção e não recomendamos que desenvolvedores construindo aplicações multi-plataforma dependem desse código.
+Se alguém se importa **muito** com essas APIs e conseguir implementá-las, nós gostariamos de empacotá-las junto com o Mono, mas elas não estão sendo ativamente desenvolvidas. Pode exister código para algumas delas no nosso [repositório git](/community/contributing/source-code-repository/), mas ele não está com qualidade para ser posto em produção e não recomendamos que desenvolvedores construindo aplicações multi-plataforma dependem desse código.
 
 Pilhas demasiado grandes:
 
--   Windows Presentation Foundation
+- Windows Presentation Foundation
 
 Não estamos trabalhando nestas APIs descontinuadas:
 
--   System.EnterpriseServices
--   [WSE](/archived/wse "WSE") - Extensões do System.Web.Services.
--   Workflow Foundation 3 (WF3)
--   [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
+- System.EnterpriseServices
+- [WSE](/archived/wse "WSE") - Extensões do System.Web.Services.
+- Workflow Foundation 3 (WF3)
+- [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
 
 O seguinte não mapeia para sistemas operacionais que não o Windows, e nós não iremos gastar nosso tempo para implementá-las mesmo em Windows:
 
--   System.Management
+- System.Management
 
 Uma implementação de terceiros existe para o PowerShell:
 

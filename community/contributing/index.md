@@ -64,7 +64,7 @@ You can see what needs to be done in the class libraries [here](http://www.go-mo
 
 You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project "Mono Documentation Improvement Project").
 
-After you have commited your patches to our [SVN](/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
+After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 
 Contributing to Mono
 ====================

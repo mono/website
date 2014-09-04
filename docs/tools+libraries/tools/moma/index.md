@@ -23,7 +23,7 @@ Other Resources
 -   [Guide: Fixing issues MoMA finds](/docs/tools+libraries/tools/moma/issue-descriptions/)
 -   [Guide: Run MoMA from command line (automated builds, etc.)](/docs/tools+libraries/tools/moma/command-line-moma/)
 -   [Submitted Reports](http://www.go-mono.com/momareports/)
--   [MoMA SVN](http://anonsvn.mono-project.com/viewvc/trunk/moma/)
+-   [MoMA GIT](https://github.com/mono/moma)
 -   [File MoMA bugs](https://bugzilla.novell.com/enter_bug.cgi?alias=&assigned_to=&blocked=&bug_file_loc=http%3A%2F%2F&bug_severity=Normal&bug_status=NEW&cf_foundby=---&cf_nts_priority=&cf_nts_support_num=&cf_partnerid=&comment=Description%20of%20Problem%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20problem%3A%0D%0A1.%20%0D%0A2.%20%0D%0A%0D%0A%0D%0AActual%20Results%3A%0D%0A%0D%0A%0D%0AExpected%20Results%3A%0D%0A%0D%0A%0D%0AHow%20often%20does%20this%20happen%3F%20%0D%0A%0D%0A%0D%0AAdditional%20Information%3A%0D%0A%0D%0A%0D%0A&component=MOMA&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text%2Fplain&data=&deadline=&dependson=&description=&estimated_time=0.0&flag_type-2=X&form_name=enter_bug&keywords=&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Other&priority=P5%20-%20None&product=Mono%3A%20Tools%20&qa_contact=&rep_platform=Other&short_desc=&version=unspecified)
 
 Previous Releases

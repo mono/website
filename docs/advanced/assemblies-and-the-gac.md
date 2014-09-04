@@ -229,7 +229,7 @@ This means that developers that consume unstable API libraries do not have to wo
 
 If the developer had been using the GAC for an unstable library, he would force the end-user deploying his application to always track the dependency of the latest library his application is consuming, risking missing packages for versions that are no longer distributed for example.
 
-Note: a production-ready, detailed example of this can be found in the [Autotools](/docs/getting-started/application-deployment/#auto-tools) section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono SVN.
+Note: a production-ready, detailed example of this can be found in the [Autotools](/docs/getting-started/application-deployment/#auto-tools) section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono git.
 
 Comparing this to other models
 ------------------------------

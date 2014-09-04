@@ -4,7 +4,7 @@ redirect_from:
   - /Mdoc/
 ---
 
-*mdoc* is a suite of tools much like [svn](http://subversion.tigris.org) or [git](http://git.or.cz) which provides a consistent front-end to the existing [Monodoc](/docs/tools+libraries/tools/monodoc/) related applications.
+*mdoc* is a suite of tools much like [svn](http://subversion.apache.org/) or [git](http://git.or.cz) which provides a consistent front-end to the existing [Monodoc](/docs/tools+libraries/tools/monodoc/) related applications.
 
 .NET Download
 -------------
