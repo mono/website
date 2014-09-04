@@ -629,5 +629,5 @@ Even if you link libmono dynamically (there is a \`configure' switch for this), 
 Samples
 =======
 
-See the sample programs in [mono/samples/embed](http://anonsvn.mono-project.com/viewvc/trunk/mono/samples/embed/) for examples of embedding the Mono runtime in your application.
+See the sample programs in [mono/samples/embed](https://github.com/mono/mono/tree/master/samples/embed) for examples of embedding the Mono runtime in your application.
 

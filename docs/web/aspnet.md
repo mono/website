@@ -58,7 +58,7 @@ ASP.NET hosting with Nginx
 ASP.NET hosting with XSP
 ------------------------
 
-XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/) (look for XSP web server) or from the [Anonymous SVN](/community/contributing/source-code-repository/) repository (module name: xsp).
+XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/) (look for XSP web server) or from the [git](/community/contributing/source-code-repository/) repository (module name: xsp).
 
 The easiest way to start XSP is to run it from within the root directory of your application. It will serve requests on port 8080. Place additional assemblies in the bin directory. Other XSP options can be set on the command line, such as the application directory and the port to listen on.
 
@@ -130,10 +130,10 @@ Mono's ASP.NET does not implement the following features:
 Work in Progress
 ================
 
-SVN access
+git access
 ----------
 
-Users interested in the latest version of mod_mono and xsp can retrieve these from our public [anonymous SVN](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
+Users interested in the latest version of mod_mono and xsp can retrieve these from our public [git](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
 
 Designer
 --------

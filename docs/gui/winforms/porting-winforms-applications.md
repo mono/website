@@ -460,6 +460,6 @@ Using this guide, we have managed to port a non-trivial winforms app to start up
 Advanced Guides
 ---------------
 
--   [Guide: Debugging With MWF](/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from SVN to debug issues.
+-   [Guide: Debugging With MWF](/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from git to debug issues.
 
 

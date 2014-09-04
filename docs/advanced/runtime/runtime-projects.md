@@ -24,7 +24,7 @@ Work towards the [Generational GC](/docs/advanced/garbage-collector/sgen/).
 Our current plan is:
 
 -   Complete the GC in single-threaded mode.
--   Activate the new GC on SVN.
+-   Activate the new GC on git.
 -   Debug/fix any issues with the GC.
 -   Implement a multi-threaded version of the major collector.
 

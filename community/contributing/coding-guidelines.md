@@ -820,7 +820,7 @@ RCS and CVS tags
 
 Some users like to use the special RCS/CVS tags in their source code: \$id\$, \$log\$ and so on.
 
-The use of these is not permitted on the Mono source code repository. This metadata belongs on a ChangeLog or in the SVN metadata.
+The use of these is not permitted on the Mono source code repository. This metadata belongs on a ChangeLog or in git metadata.
 
 Backporting Changes
 -------------------

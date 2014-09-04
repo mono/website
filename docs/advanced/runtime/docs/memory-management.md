@@ -33,7 +33,7 @@ Generics complicates things. A generic class could have many instantinations whe
      * MonoGenericInst
      * inflated MonoMethods
 
-[Original version of this document in SVN.](http://anonsvn.mono-project.com/viewvc/trunk/mono/docs/memory-management.txt?revision=85938&view=markup)
+[Original version of this document in git.](https://github.com/mono/mono/blob/425844619cbce18eaa64205b9007f0c833e4a5c4/docs/memory-management.txt)
 
 Memory management for executable code
 -------------------------------------

@@ -199,7 +199,7 @@ public interface nsIServiceManager
 Tools
 =====
 
-There is now a tool, **xpidl2cs**, that creates C# interfaces from idl files. It is available from svn, [[1]](https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs).
+There is now a tool, **xpidl2cs**, that creates C# interfaces from idl files. It is available from git, [[1]](https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs).
 
 xpidl2cs generates a C# interface for the given idl file, and then goes up the inheritance tree, generating all parent interfaces. Since .NET interop does not support interface inheritance, whenever an interface derives from another, all the declarations from the parent interface must be included in the child - xpidl2cs recursively includes the body of the parent in the child, inside a region with the parent's name.
 

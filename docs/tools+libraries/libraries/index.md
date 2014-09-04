@@ -50,31 +50,31 @@ Availability: [GitHub](http://www.github.com/mono/gnome-keyring-sharp), [Web](ht
 
 This library provides access to reading and writing structured files (OLE files), this depends on the libgsf library from the GNOME project:
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/gsf-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/gsf-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/gsf-sharp/) [snapshot](https://github.com/mono/gsf-sharp/archive/master.zip)
 
 #### GtkGlArea Sharp
 
 A binding for GtkGlArea, a widget that can host an OpenGL context in your Gtk# application.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/gtkglarea-sharp/) [snapshot](https://github.com/mono/gtkglarea-sharp/archive/master.zip)
 
 #### WebKit Sharp
 
 webkit-sharp provides access to [WebKit](http://live.gnome.org/WebKitGtk), a fast, high-quality web browser engine suited for embedding in GTK+ applications. It features bleeding-edge HTML5, AJAX, SVG and JavaScript capabilities with seamless UI integration.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/webkit-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/webkit-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/webkit-sharp/) [snapshot](https://github.com/mono/webkit-sharp/archive/master.zip)
 
 #### GtkMozEmbed Sharp
 
 This library provides access to the Mozilla rendering engine with Gtk+ using the GtkMozEmbed widget:
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/gtkmozembed-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/gtkmozembed-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/gtkmozembed-sharp/) [snapshot](https://github.com/mono/gtkmozembed-sharp/archive/master.zip)
 
 #### GtkSourceView Sharp
 
 Bindings to the GtkSourceView widget, this widget is typically used for writing programmer editors.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/gtksourceview-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/gtksourceview-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/gtksourceview-sharp/) [snapshot](https://github.com/mono/gtksourceview-sharp/archive/master.zip)
 
 #### Hal Sharp
 
@@ -82,7 +82,7 @@ This library provides access to the Hardware Abstraction Layer (HAL) from FreeDe
 
 This is used when you need to interact with the hardware. For example Banshee uses this to detect new media (reading and burning).
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/hal-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/hal-sharp.tar.gz?view=tar).
+Availability: [Web](https://github.com/mono/hal-sharp/) [snapshot](https://github.com/mono/hal-sharp/archive/master.zip).
 
 #### DBus Sharp
 
@@ -94,19 +94,19 @@ Availability: [Web](http://www.ndesk.org/DBusSharp) [downloads](http://www.ndesk
 
 ipod-sharp is a library that allows manipulation of the iTunesDB used in Apple iPod devices. Currently it supports adding/removing songs and manipulating playlists.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/ipod-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/ipod-sharp.tar.gz?view=tar).
+Availability: [Web](https://github.com/mono/ipod-sharp/) [snapshot](https://github.com/mono/ipod-sharp/archive/master.zip).
 
 #### Maemo Sharp
 
 Maemo# is a Gtk# bindings for Maemo libraries.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/maemo-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/maemo-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/maemo-sharp/) [snapshot](https://github.com/mono/maemo-sharp/archive/master.zip)
 
 #### JScall Sharp
 
 JSCall is a simple JavaScript bridge for Gecko#. It's an interim solution until someone writes a proper XPCOM bridge for Mono, and uses unmanaged code and P/Invoke to invoke Gecko's XPCOM components from managed code. It should work with any .NET language, but I've referred to C# for simplicity. I don't expect many people to use this, so the documentation is little more than minimal; lease contact me \<m.j.hutchinson@gmail.com\> if you need help working out how it works.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/jscall-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/jscall-sharp.tar.gz?view=tar)
+Availability: [Web](https://github.com/mono/jscall-sharp/) [snapshot](https://github.com/mono/jscall-sharp/archive/master.zip)
 
 #### NPlot Gtk
 
@@ -116,7 +116,7 @@ Now the wrapper of version 0.9.9.2 has just an NPlot upgrade and a few hacks ove
 
 This version of NPlot has been extended to support Gtk# on Linux.
 
-The version is based on NPlot 0.9.9.2 Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/nplot-gtk/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/nplot-gtk.tar.gz?view=tar).
+The version is based on NPlot 0.9.9.2 Availability: [Web](https://github.com/mono/nplot-gtk/) [snapshot](https://github.com/mono/nplot-gtk/archive/master.zip).
 
 #### Taglib Sharp
 
@@ -126,19 +126,19 @@ It supports a large variety of movie and music formats which abstract away the w
 
 A library for reading and writing metadata from audio files.
 
-Availability: [Web](http://developer.novell.com/wiki/index.php/TagLib_Sharp) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/taglib-sharp.tar.gz?view=tar).
+Availability: [Web](http://developer.novell.com/wiki/index.php/TagLib_Sharp) [snapshot](https://github.com/mono/taglib-sharp/archive/master.zip).
 
 #### Daap Sharp
 
 daap-sharp is a DAAP (Digial Audio Access Protocol) implementation. It is used by Apple's iTunes software to share music.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/daap-sharp/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/daap-sharp.tar.gz?view=tar).
+Availability: [Web](https://github.com/mono/daap-sharp/) [snapshot](https://github.com/mono/daap-sharp/archive/master.zip).
 
 #### Mono.ZeroConf
 
 Supports the ZeroConf/Bonjour protocol using mdnsdresponder or Avahi.
 
-Availability: [Web](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf/) [snapshot](http://anonsvn.mono-project.com/viewvc/trunk/Mono.Zeroconf.tar.gz?view=tar).
+Availability: [Web](https://github.com/mono/Mono.Zeroconf/) [snapshot](https://github.com/mono/Mono.Zeroconf/archive/master.zip).
 
 [Windows.Forms](/docs/gui/winforms/)
 -----------------------------------------------------------------
@@ -562,7 +562,7 @@ Mono.Reflection
 Bittorrent Libraries
 --------------------
 
-You can use [BitSharp](/archived/monotorrent), the Bittorrent libraries created my Alan McGovern, available from our [SVN](/community/contributing/source-code-repository/) repository in the module "bitsharp".
+You can use [BitSharp](/archived/monotorrent), the Bittorrent libraries created my Alan McGovern, available from our [git](/community/contributing/source-code-repository/) repository in the module "bitsharp".
 
 Data Conversion
 ---------------
@@ -756,7 +756,7 @@ Exiv2Sharp
 
 This poject, created by Stephane Delcroix during Novell's HackWeek III, is a managed binding of the popular exiv2 ([http://exiv2.org](http://exiv2.org)) metadata editor.
 
-The code is available from Mono's [SVN](/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/exiv2-sharp/).
+The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed [here](https://github.com/mono/exiv2-sharp/).
 
 * * * * *
 
@@ -840,23 +840,23 @@ Public Services
 GoogleSharp and PicassaSharp
 ----------------------------
 
-These modules created by Gonzalo Paniagua live in Mono's SVN repository and are used to provide applications with authentication facilities to a Google account (GoogleSharp) and access to the Picassa features for exporting, listing and accessing albums.
+These modules created by Gonzalo Paniagua live in Mono's git repository and are used to provide applications with authentication facilities to a Google account (GoogleSharp) and access to the Picassa features for exporting, listing and accessing albums.
 
-The code is available from Mono's [SVN](/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/google-sharp/src/).
+The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed [here](https://github.com/mono/google-sharp/src/).
 
 FacebookSharp
 -------------
 
 This library lets you access the Facebook Platform services from within a Mono/.NET application or an ASP.NET web application.
 
-The code is available from Mono's [SVN](/community/contributing/source-code-repository/) repository and can be browsed [here](http://anonsvn.mono-project.com/viewvc/trunk/facebook-sharp/).
+The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed [here](https://github.com/mono/facebook-sharp/).
 
 SmugMugSharp
 ------------
 
 A library created by Thomas Van Machelen provides an API for managing pictures collections at the [SmugMug](http://www.smugmug.com/) photo-sharing site.
 
-The code is available from Mono's [SVN](/community/contributing/source-code-repository/) repository and can be browsed and downloaded [here](http://anonsvn.mono-project.com/viewvc/trunk/smugmug-sharp/)
+The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed and downloaded [here](https://github.com/mono/smugmug-sharp/)
 
 FlickrNet
 ---------
@@ -868,7 +868,7 @@ The code is available from [the CodePlex](http://www.codeplex.com/FlickrNet/Sour
 UpcomingSharp
 -------------
 
-[UpcomingSharp](http://anonsvn.mono-project.com/viewvc/trunk/upcoming-sharp/) is a .NET library that lets you log in to upcoming.org and perform several actions like getting your watchlist, adding and editing events, querying venue information,...
+[UpcomingSharp](https://github.com/mono/upcoming-sharp/) is a .NET library that lets you log in to upcoming.org and perform several actions like getting your watchlist, adding and editing events, querying venue information,...
 
 * * * * *
 

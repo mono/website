@@ -635,7 +635,7 @@ This can be obtained easily with IKVM.
 
 **Do you plan to implement a Javascript compiler?**
 
-Yes. The beginnings of the JScript compiler can be found on SVN. Cesar coordinates this effort.
+Yes. The beginnings of the JScript compiler can be found on git. Cesar coordinates this effort.
 
 **Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?**
 
@@ -842,7 +842,7 @@ You should keep in mind that all you can do in a signal handler is set a static 
 
 But to set the variable, you need need to ensure that the signal handler is JITed before the signal is actually delivered. You must ensure at startup that your application will call the signal handler to ensure that the code has been JITed in advance, and only then set the signal handler to point to it.
 
-A sample program that uses signal handlers in this way is `mono-service` you can browse the source code [here](http://anonsvn.mono-project.com/viewvc/trunk/mcs/tools/mono-service/).
+A sample program that uses signal handlers in this way is `mono-service` you can browse the source code [here](https://github.com/mono/mono/tree/master/mcs/tools/mono-service).
 
 **How to open a link in the user's browser?**
 

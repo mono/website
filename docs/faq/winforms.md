@@ -111,7 +111,7 @@ You have three options:
 -   Implement the method in Mono.
 -   Wait for it to be implemented in Mono.
 
-To see which methods are currently missing from the SVN version of Mono, see the [class status pages](/docs/about-mono/class-status/).
+To see which methods are currently missing from the git version of Mono, see the [class status pages](/docs/about-mono/class-status/).
 
 #### Why not implement System.Windows.Forms on top of Gtk# or Qt#?
 

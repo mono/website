@@ -6,9 +6,9 @@ redirect_from:
 
 ### Installation
 
-Windows.Forms is part of a standard Mono installation. Since Windows.Forms is under active development you might be interested in using the latest version available from the SVN repository to test.
+Windows.Forms is part of a standard Mono installation. Since Windows.Forms is under active development you might be interested in using the latest version available from the git repository to test.
 
-To use the very latest version, you have to build mcs from svn. You can get the latest sources from one of our anonymous svn servers, for example from: [svn://anonsvn.mono-project.com/source/trunk/mcs](svn://anonsvn.mono-project.com/source/trunk/mcs).
+To use the very latest version, you have to build mcs from git. You can get the latest sources from our git repository: [https://github.com/mono/mono/tree/master/mcs](https://github.com/mono/mono/tree/master/mcs).
 
 To build Windows.Forms from source, you need:
 

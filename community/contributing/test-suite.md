@@ -163,9 +163,9 @@ Why do unit testing? It becomes simple to run automated tests for the whole libr
 
 We welcome all contributions to the Class Libary Test Suite.
 
-There is information to help you get started in SVN at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to [mono-list](/community/help/mailing-lists/).
+There is information to help you get started in git at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to [mono-list](/community/help/mailing-lists/).
 
-Someone will make sure to add the file or apply the patch as appropriate. If you plan to be an on-going contributor and would like to get a svn account, email [miguel](mailto:miguel@ximian.com).
+Someone will make sure to add the file or apply the patch as appropriate. If you plan to be an on-going contributor and would like to get a git account, email [miguel](mailto:miguel@ximian.com).
 
 Normally, after you send a couple of well-written new files and/or patches to the list, you will be given Git access.
 

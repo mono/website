@@ -108,7 +108,7 @@ Keeping track of code changes
 
 ### Via Web/Email
 
-It is now possible to subscribe to a special group to track changes to the Mono SVN repository over the web using Google Groups:
+It is now possible to subscribe to a special group to track changes to the Mono git repository over the web using Google Groups:
 
 -   [mono-svn-patches group](http://groups-beta.google.com/group/mono-svn-patches)
 
@@ -116,9 +116,9 @@ It is now possible to subscribe to a special group to track changes to the Mono 
 
 We provide an e-mail based mechanisms to keep track of changes to the code base:
 
--   [mono-patches](http://lists.ximian.com/mailman/listinfo/mono-patches): This mailing list receives in patch form all the changes that are being made to the SVN. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put \`subscribe' or click on the link.
+-   [mono-patches](http://lists.ximian.com/mailman/listinfo/mono-patches): This mailing list receives in patch form all the changes that are being made to git. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put \`subscribe' or click on the link.
 
-This will send you an email message every time a change is made to the SVN repository, together with the information that the author of the changes submitted.
+This will send you an email message every time a change is made to the git repository, together with the information that the author of the changes submitted.
 
 ### Cia.Navi.Cx
 
