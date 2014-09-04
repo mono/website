@@ -180,5 +180,5 @@ PLT entries are emitted by arch_emit_plt_entry () in aot-compiler.c. Each PLT en
 -   Currently, we get vtable addresses from the GOT. Another solution would be to store the data from the vtables in the .bss section, so accessing them would involve less indirection.
 -   When saving information used to identify classes/methods, we use an add-hoc encoding. An encoding similar to the metadata encoding should be used instead.
 
-[Original version of this document in SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono/docs/aot-compiler.txt?revision=107838&view=markup)
+[Original version of this document in git](https://github.com/mono/mono/blob/e6d522976e24e572f0e7bc344ae4b8f79f955c6f/docs/aot-compiler.txt)
 

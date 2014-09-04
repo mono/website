@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Design.Generic/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about generic-related design issues are located in the **Gendarme.Rules.Design.Generic.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Design.Generic/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about generic-related design issues are located in the **Gendarme.Rules.Design.Generic.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Design.Generic/).
 
 <table>
 <col width="100%" />

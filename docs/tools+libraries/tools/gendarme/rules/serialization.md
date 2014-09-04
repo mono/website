@@ -4,7 +4,7 @@ redirect_from:
   - /Gendarme.Rules.Serialization/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules that check for serialization issues are located in the **Gendarme.Rules.Serialization.dll** assembly. Latest sources are available from [anonymous SVN](http://anonsvn.mono-project.com/viewcvs/trunk/mono-tools/gendarme/rules/Gendarme.Rules.Serialization/).
+[Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules that check for serialization issues are located in the **Gendarme.Rules.Serialization.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Serialization).
 
 <table>
 <col width="100%" />

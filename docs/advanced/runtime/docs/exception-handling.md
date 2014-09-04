@@ -155,7 +155,7 @@ mono_arch_handle_exception (void *ctx, gpointer obj);
 
 This function is called by signal handlers. It receives the machine state as passed to the signal handlers in he CTX argument. On unix, this is an uncontext_t structure, It also receives the exception object in OBJ, which might be null. Handling exceptions in signal handlers is problematic for many reasons, so this function should set up CTX so when the signal handler returns, execution continues in another runtime function which does the real work. CTX/OBJ needs to be passed to that function. The former can be passed in TLS, while the later has to be passed in registers/on the stack (by modifying CTX), since TLS storage might not be GC tracked.
 
-[Original version of this document in SVN.](http://anonsvn.mono-project.com/viewvc/trunk/mono/docs/exception-handling.txt?revision=76035&view=markup)
+[Original version of this document in git.](https://github.com/mono/mono/blob/2279f440996923ac66a6ea85cf101d89615aad69/docs/exception-handling.txt)
 
 #### mono_arch_get_restore_context ()
 

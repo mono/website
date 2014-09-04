@@ -47,7 +47,7 @@ General rules of thumb are as follows:
 -   You can use the new \<directory\> element to specify a directory path with child exclude elements that are relative to the path. This saves some typing on exclude paths and facilitates smoother version upgrading since often the version is in the path.
 -   You should specify at a minimum all the public header files and the source files that contain class_init and get_type method implementations for all the public GObject and [GBoxed](http://developer.gnome.org/doc/API/2.0/gobject/gobject-Boxed-Types.html) types in the library.
 
-The definitive example of a .sources file is in the gtk-sharp sources directory and can be viewed online [here](http://anonsvn.mono-project.com/viewvc/trunk/gtk-sharp/sources/gtk-sharp-2.12-sources.xml?view=markup).
+The definitive example of a .sources file is in the gtk-sharp sources directory and can be viewed online [here](https://github.com/mono/gtk-sharp/blob/master/sources/sources.xml).
 
 Once your .sources file is complete, run the parser with the following syntax:
 
@@ -296,7 +296,7 @@ For example with my gtkspell-sharp libraries, I include a .custom file named "gt
 Putting it all together
 -----------------------
 
-The GtkSpell# package is a good simple working example of all the tools in action. You can check it out from the SVN in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell# viewvc](http://anonsvn.mono-project.com/viewvc/trunk/gtkspell-sharp/).
+The GtkSpell# package is a good simple working example of all the tools in action. You can check it out from git in the 'gtkspell-sharp' module. You can also view it online here [GtkSpell#](https://github.com/mono/gtkspell-sharp).
 
 Makefiles should be laid out to make this easy to replicate if you plan to distribute.
 

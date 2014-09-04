@@ -4,7 +4,7 @@ redirect_from:
   - /Mono_LLVM/
 ---
 
-Mono from SVN is now able to use LLVM as a backend for code generation in addition to Mono's built-in JIT compiler.
+Mono from git is now able to use LLVM as a backend for code generation in addition to Mono's built-in JIT compiler.
 
 This allows Mono to benefit from all of the compiler optimizations done in LLVM. For example the SciMark score goes from 482 to 610.
 
@@ -17,7 +17,7 @@ But computationally intensive applications will definitely benefit from this. Fi
 Taking it out for a spin
 ========================
 
-You need to install both LLVM and Mono from SVN, as follows:
+You need to install both LLVM and Mono from git, as follows:
 
 -   Mono 2.6 requires LLVM 2.6
 -   Mono trunk (post 2.6) works with LLVM 2.6 or LLVM trunk.

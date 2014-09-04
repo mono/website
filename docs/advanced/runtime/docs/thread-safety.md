@@ -113,7 +113,7 @@ This solution does not present scalability problems, but the created item might 
 
 -   lazy initialization of hashtables etc. is not thread safe
 
-[Original version of this document in SVN](http://anonsvn.mono-project.com/viewvc/trunk/mono/docs/thread-safety.txt?revision=126671&view=markup)
+[Original version of this document in git](https://github.com/mono/mono/blob/8f91e420d7fbbab7da758e57160d1d762129f38a/docs/thread-safety.txt)
 
 ### The Lock Tracer
 

@@ -85,8 +85,8 @@ It does this by asking the JIT to insert a call to the profiler every time a met
 There are a few other profilers authored by different people to look into programs from other angles:
 
 -   Lluis Sanchez [Heap Shot](/docs/debug+profile/profile/heapshot/) profiler, for exploring memory usage in an application.
--   Jon Trowbridge Heap Allocation profiler: [svn://svn.trowbridge.org/heap-buddy](svn://svn.trowbridge.org/heap-buddy)
--   Nemerle's profiler [here](http://nemerle.org/svn/nemerle/trunk/misc/profiler/)
+-   Jon Trowbridge Heap Allocation profiler: [https://github.com/mono/heap-buddy](https://github.com/mono/heap-buddy)
+-   Nemerle's profiler [here](https://github.com/rsdn/nemerle/tree/master/misc/profiler)
 -   AOT profiler: mono-profiler-aot
 
 These profilers can be used by passing the following command line option to Mono:
