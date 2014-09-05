@@ -11,7 +11,7 @@ Estes documentos cobrem tópicos específicos do Mono. Por exemplo: como ajustar
 Informações gerais sobre o Framework .NET e sobre as bibliotecas de classes você pode buscar no site da Microsoft [MSDN pages](http://msdn.microsoft.com/en-us/library/ff361664.aspx).
 
 {% capture docNote %}
-Esta documentação é código aberto e está (em Inglês) no [GitHub - Mono](https://github.com/mono/website/docs), a versão em Pôrtugues do Brasil está sendo mantida pela comunidade MonoBrasil também no [GitHub - MonoBrasil](https://github.com/monobrasil/website/docs). 
+Esta documentação é código aberto e está (em Inglês) no [GitHub - Mono](https://github.com/mono/website/docs), a versão em Pôrtugues do Brasil está sendo mantida pela comunidade MonoBrasil também no [GitHub - MonoBrasil](https://github.com/MonoBrasil/website). 
 Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique no link "Edit page on GitHub" abaixo do título da página. Veja [Contribuindo com o Site](https://github.com/mono/website#contributing-to-the-website) para maiores detalhes.
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
