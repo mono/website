@@ -88,7 +88,7 @@ Their [Delphi Prism](http://www.codegear.com/products/delphi/prism) compiler sup
 Lua
 ---
 
-[Lua2Il](http://www.lua.inf.puc-rio.br/luanet/lua2il/) is a compiler that will allow you to run your existing Lua code or reuse the existent expertise you have on Lua in your application and run it with the Mono JIT compiler.
+[Lua2Il](http://www.lua.inf.puc-rio.br/projects/lua2il.html) is a compiler that will allow you to run your existing Lua code or reuse the existent expertise you have on Lua in your application and run it with the Mono JIT compiler.
 
 Cobra
 -----
