@@ -5,6 +5,21 @@ redirect_from:
   - /Applications_ScreenShots/
 ---
 
+Games
+-----
+<table>
+  <tbody>
+    <tr>
+      <td><a href="http://www.openra.net">OpenRA</a> <br /> A modern cross-platform reimplementation of the Command & Conquer: Red Alert engine using ICSharpCode.SharpZipLib, OpenTK, SDL2#, SharpFont and Mono.NAT.</td>
+      <td><a class="image-link" title="OpenRA" href="http://www.openra.net/images/screenshots/20131130-allies02.png"><img src="http://www.openra.net/images/screenshots/20131130-allies02.png" width="180" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="http://blog.secondlife.com/2008/08/20/mono-launch/">Second Life</a> <br /> Second Life uses Mono as an engine that accelerates the execution of user provided scripts by translating LSL scripts into ECMA CIL bytecodes and in turn letting Mono turn that into x86 machine code.</td>
+      <td><a class="image-link" title="Second Life" href="/archived/images/f/f4/SecondLifeMig.png"><img src="/archived/images/f/f4/SecondLifeMig.png" width="180" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
 Gtk# Applications
 ------------------
 
@@ -138,10 +153,6 @@ Other Mono Applications
     <tr>
       <td><a href="http://unity3d.com/">Unity</a> <br /> Game Development Tool implemented using Mono.</td>
       <td><a class="image-link" title="Unity3d on OS X" href="/archived/images/6/68/Editorshot.jpg"><img src="/archived/images/6/68/Editorshot.jpg" width="180" /></a></td>
-    </tr>
-    <tr>
-      <td><a href="http://blog.secondlife.com/2008/08/20/mono-launch/">Second Life</a> <br /> Second Life uses Mono as an engine that accelerates the execution of user provided scripts by translating LSL scripts into ECMA CIL bytecodes and in turn letting Mono turn that into x86 machine code.</td>
-      <td><a class="image-link" title="Second Life" href="/archived/images/f/f4/SecondLifeMig.png"><img src="/archived/images/f/f4/SecondLifeMig.png" width="180" /></a></td>
     </tr>
     <tr>
       <td><a href="/Maemo">Maemo</a> <br /> Mono can be run on embedded devices like the Nokia 770. A video of the Nokia 770 running Gtk# is available <a href="http://www.go-mono.com/nokia/nokia-gtksharp.mov">here</a>.</td>
