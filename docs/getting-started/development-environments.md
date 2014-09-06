@@ -11,16 +11,9 @@ The Mono project focuses on compilers and runtime libraries and does not directl
 MonoDevelop
 -----------
 
-[Monodevelop](http://www.monodevelop.org) is a Mono/C# Integrated Developement Environment for Linux and MacOS X.
+[MonoDevelop](http://www.monodevelop.com) is a Mono/C# Integrated Developement Environment for Linux and Mac OS X. It parses your C# and VB programs as you type them and is able to provide contextual completion of methods.
 
-In late 2003, a few developers from the Mono community began migrating SharpDevelop, a successful .NET open source IDE from System.Windows.Forms on Windows to Gtk# on Linux. Since Mono 1.0 Beta 2, MonoDevelop is bundled with Mono releases and is available from the [Mono download page](/download/)
-
-MonoDevelop parses your C# and VB programs as you type them and is able to provide contextual completion of methods.
-
-Eclipse
--------
-
-The Eclipse IDE can be used to edit C# code, but lacks completion of methods.
+In late 2003, a few developers from the Mono community began migrating SharpDevelop, a successful .NET open source IDE from System.Windows.Forms on Windows to Gtk# on Linux. An enhanced fork named [Xamarin Studio](http://xamarin.com/studio) is sold by the commercial sponsor behind the project.
 
 Unix tools
 ----------
@@ -31,12 +24,11 @@ As you might expect, there are many development tools available to C# developers
 
 Emacs and Vim are general purpose text editors, not IDEs designed for use with .NET and C#. However, you can use them to write software in nearly any language.
 
-For Emacs, you will want to use the C# major mode available at [davh.dk](http://davh.dk/script) or [www.cybercom.net](http://www.cybercom.net/~zbrad/DotNet/Emacs) to handle syntax coloring and proper indentation.
+For Emacs, you will want to use the C# major mode available at [www.cybercom.net](http://www.cybercom.net/~zbrad/DotNet/Emacs) to handle syntax coloring and proper indentation.
 
 Vim supports syntax highlighting for C#, but not much else.
 
-X-Develop
----------
+Eclipse
+-------
 
-Recently a commercial IDE for Java and C# has been launched, you can find it [here](http://www.x-develop.com/)
-
+The Eclipse IDE can be used to edit C# code, but lacks completion of methods. The [emonic](http://emonic.sourceforge.net/) project is not maintained anymore.
