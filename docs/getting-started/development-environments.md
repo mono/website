@@ -11,7 +11,7 @@ The Mono project focuses on compilers and runtime libraries and does not directl
 MonoDevelop
 -----------
 
-[MonoDevelop](http://www.monodevelop.com) is a Mono/C# Integrated Developement Environment for Linux and Mac OS X. It parses your C# and VB programs as you type them and is able to provide contextual completion of methods.
+[MonoDevelop](http://www.monodevelop.com) is a Mono/C# Integrated Development Environment for Windows, Linux and OS X. It parses your C# and VB programs as you type them and is able to provide contextual completion of methods.
 
 In late 2003, a few developers from the Mono community began migrating SharpDevelop, a successful .NET open source IDE from System.Windows.Forms on Windows to Gtk# on Linux. A rebranded version named [Xamarin Studio](http://xamarin.com/studio) is sold by the commercial sponsor behind the project with proprietary iOS/Android addins.
 
