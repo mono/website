@@ -7,6 +7,7 @@ redirect_from:
 
 Games
 -----
+
 <table>
   <tbody>
     <tr>
