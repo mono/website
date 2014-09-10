@@ -35,7 +35,7 @@ Next, add the package repository in a root shell:
 
 Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
 
-Users of CentOS or RHEL (or similar distributions) may need to add the [https://fedoraproject.org/wiki/EPEL](EPEL repository) to their system to satisfy all dependencies
+Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL repository](https://fedoraproject.org/wiki/EPEL) to their system to satisfy all dependencies
 
 Usage
 -----
