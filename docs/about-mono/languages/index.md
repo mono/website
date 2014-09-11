@@ -88,7 +88,7 @@ Their [Delphi Prism](http://www.codegear.com/products/delphi/prism) compiler sup
 Lua
 ---
 
-[Lua2Il](http://www.lua.inf.puc-rio.br/projects/lua2il.html) is a compiler that will allow you to run your existing Lua code or reuse the existent expertise you have on Lua in your application and run it with the Mono JIT compiler.
+[NLua](http://nlua.org/) is the bind between Lua world and the .NET world. It allows the usage of Lua from C#, on Windows, Linux, Mac, iOS , Android, Windows Phone 7 and 8. 
 
 Cobra
 -----
