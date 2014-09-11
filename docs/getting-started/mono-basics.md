@@ -20,7 +20,6 @@ public class HelloWorld
     {
         Console.WriteLine ("Hello Mono World");
     }
- 
 }
 ```
 
@@ -44,19 +43,18 @@ The following program tests writing a Gtk# application.
 ``` csharp
 using Gtk;
 using System;
- 
-class Hello {
- 
-        static void Main()
-        {
-                Application.Init ();
- 
-                Window window = new Window ("helloworld");
-                window.Show();
- 
-                Application.Run ();
- 
-        }
+
+class Hello
+{
+    static void Main ()
+    {
+        Application.Init ();
+
+        Window window = new Window ("Hello Mono World");
+        window.Show ();
+
+        Application.Run ();
+    }
 }
 ```
 
@@ -76,14 +74,14 @@ The following program tests writing a Winforms application.
 ``` csharp
 using System;
 using System.Windows.Forms;
- 
+
 public class HelloWorld : Form
 {
     static public void Main ()
     {
         Application.Run (new HelloWorld ());
     }
- 
+
     public HelloWorld ()
     {
         Text = "Hello Mono World";

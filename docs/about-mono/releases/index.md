@@ -143,8 +143,10 @@ redirect_from:
   - /Release_Notes_Mono_3.0.9/
   - /Release_Notes_Mono_3.0.10/
   - /Release_Notes_Mono_3.2/
+  - /Release_Notes_Mono_3.2.3/
   - /Release_Notes_Mono_3.4/
   - /Release_Notes_Mono_3.6/
+  - /Release_Notes_Mono_3.8/
   - /OldReleases/
 ---
 

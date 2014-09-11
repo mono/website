@@ -29,7 +29,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       categories: [news]  # this is a slight hack so Jekyll generates the blog posts in /news
 gems:
