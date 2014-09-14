@@ -1,12 +1,9 @@
 ---
 title: "Dead Toolkits"
-lastmodified: '2006-01-02'
 redirect_from:
   - /Dead_Toolkits/
+  - /archived/dead_toolkits/
 ---
-
-Dead Toolkits
-=============
 
 The following toolkits are no longer under active development.
 

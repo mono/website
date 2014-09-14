@@ -223,7 +223,7 @@ It is GPLv2 licensed, so it can only be used for open source software.
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits](/archived/dead_toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/ "Dead Toolkits") that have been developed in the past.
 
 * * * * *
 
@@ -556,7 +556,7 @@ Console/Curses
 
 You can use Curses to build portable console-based applications.
 
-[MonoCurses](/archived/monocurses "MonoCurses") is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
+[MonoCurses](/docs/tools+libraries/libraries/monocurses/ "MonoCurses") is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
 
 [ConsoleFramework]( https://github.com/elw00d/consoleframework) is a cross-platform MIT licensed library to create console applications using some WPF-inspired concepts.
 
