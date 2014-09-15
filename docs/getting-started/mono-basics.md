@@ -97,7 +97,7 @@ Either compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
 
-NOTE: on mac osx you'll have to wait around a minute the very first time you run this command.
+NOTE: on Mac OS X you'll have to wait around a minute the very first time you run this command.
 
 ASP.Net Hello World
 -------------------
