@@ -23,6 +23,12 @@ Next, add the package repository in a root shell:
 
 Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
 
+### Ubuntu 12.04 and 12.10
+
+To enable installation on Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above:
+
+**`echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list`**
+
 ### CentOS, Fedora, and derivatives
 
 Add the GPG key in a root shell with:
