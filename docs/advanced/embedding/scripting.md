@@ -118,8 +118,6 @@ Language Support
 
 By using Mono as a scripting engine, you get to pick the language that better suits your needs. Mono's extensive [language support](/docs/about-mono/languages/) allows developers to pick the best language or the best languages for their particular problem.
 
-Developers familiar with LUA can use the [LUA2IL](http://www.lua.inf.puc-rio.br/luanet/lua2il/) compiler to run their existing code, or apply existing skills to run the same LUA code under the Mono optimizing JIT compiler at increased speed.
-
 In addition, developers get to reuse their experience with C# and the .NET class libraries with their game, companies get access to a larger pool of developers that are experienced with a mainstream language and they can focus on creating the best possible game play instead of spending precious resources and time implementing yet another virtual machine, another set of debugging tools and a new ad-hoc language.
 
 Mono allows code to be written in multiple languages: components can be authored in C# that is a language with strong support for best engineering practices (your core libraries, and reusable components can be authored in it) and yet allow the flexibility of a scripting language like Python or Javascript for code that you must quickly prototype or alter.
