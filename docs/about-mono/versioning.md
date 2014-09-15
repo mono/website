@@ -15,7 +15,7 @@ For an X.Y.Z tuple:
 -   *Y* is the minor version number
 -   *Z* is a revision number
 
-The major version number is used to indicate which ABI/API version Mono uses. When it changes, there is *no gaurantee* that existing code will continue to work (though the utmost effort will be made to maintain compatibility). The major version changes infrequently.
+The major version number is used to indicate which ABI/API version Mono uses. When it changes, there is *no guarantee* that existing code will continue to work (though the utmost effort will be made to maintain compatibility). The major version changes infrequently.
 
 The Minor version number consists of two sets: even numbers (stable releases) and odd numbers (development releases). The only improvements that stable releases receive are bug fixes; all new feature work is done in development releases. Features *may* be backported from a development release to a stable release, if appropriate. Stable releases are API and ABI stable, and can be expected to have minimal changes.
 
@@ -36,7 +36,7 @@ After Mono 1.2 is released, a Mono 1.3 development branch will be started. The 1
 
 Microsoft .NET's version policy is similar to Mono's, in that a major version number change indicates an API/ABI break. That's where the simularities stop. .NET does not have a stable/development split; .NET 1.0 and 1.1 were both stable releases.
 
-Furthermore, there is no mapping between Mono's version numbers and .NET's version numbers. Mono 1.0 implemented *parts* of the .NET 1.0/1.1 API; in particular, it lacked System.Windows.Forms support. Mono 1.1 (the current *development* branch) also implements parts of the .NET 1.0/1.1 API; in particular, it will support System.Windows.Forms. Mono 1.1 also implements parts of the .NET 2.0 API. Other parts of the .NET API are not implemented at all, such as System.EnterpriseServices.
+Furthermore, there is no mapping between Mono's version numbers and .NET's version numbers. Mono 1.0 implemented *parts* of the .NET 1.0/1.1 API; in particular, it lacked System.Windows.Forms support. Mono 1.1 (a *development* branch) also implements parts of the .NET 1.0/1.1 API; in particular, it will support System.Windows.Forms. Mono 1.1 also implements parts of the .NET 2.0 API. Other parts of the .NET API are not implemented at all, such as System.EnterpriseServices.
 
 Framework Versioning
 --------------------

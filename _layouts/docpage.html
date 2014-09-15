@@ -23,12 +23,14 @@ layout: base
 <div class="row">
   <div class="doc-content small-12 columns">
     <h1 id="page-title">{{ page.title }}</h1>
+    {% if site.github.repository_url %}
     <div class="meta">
       <span data-tooltip class="has-tip" title="Help us improve the Mono website by fixing mistakes on GitHub.<br/>This link will take you directly to this page in our GitHub repository.">
         <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><i class="fa fa-github"></i> Edit page on GitHub</a>
       </span>
     </div>
     <p></p>
+    {% endif %}
 
     {{ content }}
 
