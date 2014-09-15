@@ -15,11 +15,15 @@ Regardless of your distribution, you will need the Mono Project public Jenkins G
 
 Add the GPG key in a root shell with:
 
-**`apt-key add xamarin.gpg`**
+``` bash
+apt-key add xamarin.gpg
+```
 
 Next, add the package repository in a root shell:
 
-**`echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list`**
+``` bash
+echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
+```
 
 Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
 
@@ -27,17 +31,23 @@ Update your package cache if necessary, and run a package upgrade to upgrade exi
 
 To enable installation on Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above:
 
-**`echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list`**
+``` bash
+echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list
+```
 
 ### CentOS, Fedora, and derivatives
 
 Add the GPG key in a root shell with:
 
-**`rpm --import xamarin.gpg`**
+``` bash
+rpm --import xamarin.gpg
+```
 
 Next, add the package repository in a root shell:
 
-**`yum-config-manager --add-repo http://download.mono-project.com/repo/centos/`**
+``` bash
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
+```
 
 Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
 
