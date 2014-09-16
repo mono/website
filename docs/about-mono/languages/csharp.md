@@ -88,6 +88,10 @@ Many of upcomming C# 6.0 features are supported including:
 -   Null propagating operator
 -   Nameof operator
 
+Experimental features that are being brainstormed for future versions of C# when using `-langversion: experimental` are also available:
+
+- Pattern matching
+
 If you want to limit the mcs compiler to be a strict 2.0 compiler, use the -langversion:ISO-2 flag, further options are available for each language version.
 
 ### Specification
