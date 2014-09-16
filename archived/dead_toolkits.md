@@ -81,4 +81,11 @@ Cons:
 -   Custom-authored widgets look and feel is not preserved across platforms.
 -   Common denominator subset API problem.
 
+Gaia Ajax Widgets
+-----------------
+
+[Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) was built to mimic 100% the logic of conventional ASP.NET and basically this means that if you know ASP.NET you know how to use Gaia Ajax Widgets! Gaia Ajax Web Widgets does not have ANY cryptic properties or code model you need to learn before you can use Gaia effectively, almost none of our controls uses any other properties than the ones that comes with native ASP.NET so if you know your way around ASP.NET you know your way around Gaia! This can be seen from the fact that you don't need to use WebServices to e.g. populate our AutoCompleter and from the event that retrieves the AutoComplete data you can do whatever you like, including for instance making a DropDownList visible or showing a modal window.
+
+Gaia AjaxWidgets provides Mono support.
+
 
