@@ -59,4 +59,26 @@ Cons:
 -   Binding is unmaintained.
 -   Currently its layered on top of the C binding to Qt.
 
+wxNet
+-----
+
+[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
+
+wx# Sample
+
+Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
+
+wxNet is a .NET binding for the wxWindows cross-platform toolkit.
+
+Pros:
+
+-   Native look and feel on each platform.
+-   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
+
+Cons:
+
+-   Binding to non-supported extra widgets is hard.
+-   Custom-authored widgets look and feel is not preserved across platforms.
+-   Common denominator subset API problem.
+
 
