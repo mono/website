@@ -569,14 +569,14 @@ Data Conversion
 
 Mono provides [Mono DataConvert](/archived/mono_dataconvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
 
-Curses
-------
+Console/Curses
+--------------
 
 You can use Curses to build portable console-based applications.
 
-[Curses#](http://home.nedlinux.nl/~florian/downloads/) uses PDCurses on Windows and NCurses on Linux. It's almost crossplatform on an binary level.
+[MonoCurses](/archived/monocurses "MonoCurses") is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
 
-[MonoCurses](/archived/monocurses "MonoCurses") is an MIT-X11 licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
+[ConsoleFramework]( https://github.com/elw00d/consoleframework) is a cross-platform MIT licensed library to create console applications using some WPF-inspired concepts.
 
 DBus
 ----
