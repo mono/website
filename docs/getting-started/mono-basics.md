@@ -97,10 +97,12 @@ Either compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
 
+NOTE: on Mac OS X you'll have to wait around a minute the very first time you run this command.
+
 ASP.Net Hello World
 -------------------
 
-Create a text file with the extension .aspx and put on it:
+Create a text file with the name hello.aspx and the content:
 
 ``` csharp
 <%@ Page Language="C#" %>
@@ -118,5 +120,5 @@ Then run the xsp2 command from that directory:
 xsp2
 ```
 
-Use a web browser to contact [http://localhost:8080/filename.aspx](http://localhost:8080/filename.aspx)
+Use a web browser to contact [http://localhost:8080/hello.aspx](http://localhost:8080/hello.aspx)
 
