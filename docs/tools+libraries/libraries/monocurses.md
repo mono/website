@@ -1,12 +1,9 @@
 ---
 title: "MonoCurses"
-lastmodified: '2009-04-22'
 redirect_from:
   - /MonoCurses/
+  - /archived/monocurses/
 ---
-
-MonoCurses
-==========
 
 [![Screenshot1.png](/archived/images/8/81/Screenshot1.png)](/archived/images/8/81/Screenshot1.png)
 
@@ -15,31 +12,6 @@ MonoCurses provides managed applications with an API to create console-based app
 This API is still under development, and hence the library is not installed into the GAC.
 
 In addition to the low-level curses bindings, currently MonoCurses ships with a minimal GUI toolkit for creating console applications.
-
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#obtaining-mono-curses">1 Obtaining mono-curses</a></li>
-<li><a href="#guics">2 gui.cs</a>
-<ul>
-<li><a href="#programming-with-guics">2.1 Programming with gui.cs</a>
-<ul>
-<li><a href="#the-main-loop">2.1.1 The Main Loop</a></li>
-<li><a href="#containers">2.1.2 Containers</a></li>
-<li><a href="#input">2.1.3 Input</a></li>
-<li><a href="#rendering">2.1.4 Rendering</a></li>
-<li><a href="#cursor-positioning">2.1.5 Cursor Positioning</a></li>
-<li><a href="#resizing">2.1.6 Resizing</a></li>
-</ul></li>
-<li><a href="#missing-things">2.2 Missing things</a></li>
-</ul></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
 
 Obtaining mono-curses
 =====================

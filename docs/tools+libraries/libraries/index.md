@@ -168,6 +168,27 @@ Cons:
 -   Bad layout mechanisms: font size changes, and internationalization require manual relayout most of the time.
 -   All the Windows.Forms efforts are under heavy development.
 
+Xamarin.Mac
+-----------
+
+Xamarin.Mac is a commercial API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
+
+Homepage: [http://xamarin.com/mac
+
+Native MacOS toolkit.
+
+Pros:
+
+-   Native look and feel on MacOS X
+-   Extensive API and core documentation
+-   Samples
+-   Active, vibrant community.
+-   Actively developed by Xamarin
+
+Cons:
+
+-   Not portable outside of MacOS X
+
 MonObjc
 -------
 
@@ -186,19 +207,6 @@ Cons:
 
 -   Not portable outside of MacOS X
 
-Cocoa#
--------
-
-Native MacOSX toolkit.
-
-Pros:
-
--   Native look and feel on MacOS X
--   Substrate is well documented, this API lacks documentations.
-
-Cons:
-
--   Not portable outside of MacOS X
 
 Clutter
 -------
@@ -210,32 +218,12 @@ Vanilla DotNet
 
 [Vanilla.NET](http://code.google.com/p/vanilla-dotnet/) is a cross-platform graphical user interface toolkit, application framework and desktop environment based on Cairo and the .NET framework. It is written primarily in Boo, however code contributions will be accepted in other languages (e.g. C#). Vanilla.NET is still in development and not yet ready for production use.
 
-wxNet
------
-
-[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
-
-wx# Sample
-
-Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
-
-wxNet is a .NET binding for the wxWindows cross-platform toolkit.
-
-Pros:
-
--   Native look and feel on each platform.
--   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
-
-Cons:
-
--   Binding to non-supported extra widgets is hard.
--   Custom-authored widgets look and feel is not preserved across platforms.
--   Common denominator subset API problem.
+It is GPLv2 licensed, so it can only be used for open source software.
 
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits](/archived/dead_toolkits "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/ "Dead Toolkits") that have been developed in the past.
 
 * * * * *
 
@@ -247,12 +235,6 @@ JayRock
 
 [JayRock](http://jayrock.berlios.de/) is a modest and an open source (LGPL) implementation of JSON and JSON-RPC for the Microsoft .NET Framework, including ASP.NET. What can you do with Jayrock? In a few words, Jayrock allows clients, typically JavaScript in web pages, to be able to call into server-side methods using JSON as the wire format and JSON-RPC as the procedure invocation protocol. The methods can be called synchronously or asynchronously.
 
-Gaia Ajax Widgets
------------------
-
-[Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) was built to mimic 100% the logic of conventional ASP.NET and basically this means that if you know ASP.NET you know how to use Gaia Ajax Widgets! Gaia Ajax Web Widgets does not have ANY cryptic properties or code model you need to learn before you can use Gaia effectively, almost none of our controls uses any other properties than the ones that comes with native ASP.NET so if you know your way around ASP.NET you know your way around Gaia! This can be seen from the fact that you don't need to use WebServices to e.g. populate our AutoCompleter and from the event that retrieves the AutoComplete data you can do whatever you like, including for instance making a DropDownList visible or showing a modal window.
-
-Gaia AjaxWidgets provides Mono support.
 
 ExtJS Extender Controls
 -----------------------
@@ -569,14 +551,14 @@ Data Conversion
 
 Mono provides [Mono DataConvert](/archived/mono_dataconvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
 
-Curses
-------
+Console/Curses
+--------------
 
 You can use Curses to build portable console-based applications.
 
-[Curses#](http://home.nedlinux.nl/~florian/downloads/) uses PDCurses on Windows and NCurses on Linux. It's almost crossplatform on an binary level.
+[MonoCurses](/docs/tools+libraries/libraries/monocurses/ "MonoCurses") is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
 
-[MonoCurses](/archived/monocurses "MonoCurses") is an MIT-X11 licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
+[ConsoleFramework]( https://github.com/elw00d/consoleframework) is a cross-platform MIT licensed library to create console applications using some WPF-inspired concepts.
 
 DBus
 ----

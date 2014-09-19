@@ -1,12 +1,9 @@
 ---
 title: "Dead Toolkits"
-lastmodified: '2006-01-02'
 redirect_from:
   - /Dead_Toolkits/
+  - /archived/dead_toolkits/
 ---
-
-Dead Toolkits
-=============
 
 The following toolkits are no longer under active development.
 
@@ -58,5 +55,34 @@ Cons:
 -   Toolkit is licensed under the GPL, and the Qt substrate has further licensing limitations. It is not suitable for proprietary or non-GPL development.
 -   Binding is unmaintained.
 -   Currently its layered on top of the C binding to Qt.
+
+wxNet
+-----
+
+[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
+
+wx# Sample
+
+Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
+
+wxNet is a .NET binding for the wxWindows cross-platform toolkit.
+
+Pros:
+
+-   Native look and feel on each platform.
+-   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
+
+Cons:
+
+-   Binding to non-supported extra widgets is hard.
+-   Custom-authored widgets look and feel is not preserved across platforms.
+-   Common denominator subset API problem.
+
+Gaia Ajax Widgets
+-----------------
+
+[Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) was built to mimic 100% the logic of conventional ASP.NET and basically this means that if you know ASP.NET you know how to use Gaia Ajax Widgets! Gaia Ajax Web Widgets does not have ANY cryptic properties or code model you need to learn before you can use Gaia effectively, almost none of our controls uses any other properties than the ones that comes with native ASP.NET so if you know your way around ASP.NET you know your way around Gaia! This can be seen from the fact that you don't need to use WebServices to e.g. populate our AutoCompleter and from the event that retrieves the AutoComplete data you can do whatever you like, including for instance making a DropDownList visible or showing a modal window.
+
+Gaia AjaxWidgets provides Mono support.
 
 
