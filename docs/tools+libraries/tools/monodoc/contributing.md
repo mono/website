@@ -4,9 +4,14 @@ redirect_from:
   - /Monodoc_Contributing/
 ---
 
-**This article is incomplete, please add to it.**
-
 This article is about contributing to the class library documentation.
+
+Mono now includes the Microsoft documentation for the .NET libraries as 
+Microsoft has open sourced this documentation and we converted it to the 
+MonoDoc format.
+
+This document describes what to do when you want to document new APIs, or
+new libraries that are part of Mono.
 
 Mono-specific API Documentation
 ===============================
