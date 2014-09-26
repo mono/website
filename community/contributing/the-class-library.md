@@ -56,7 +56,7 @@ See our [Coding Guidelines](/community/contributing/coding-guidelines/) document
 Missing implementation bits
 ===========================
 
-If you implement a class and you are missing implementation bits, pleaseusre the MonoTODO attribute and a description of what is missing to be implemented, for example:
+If you implement a class and you are missing implementation bits, please use the MonoTODO attribute and a description of what is missing to be implemented, for example:
 
 ``` csharp
    [MonoTODO ("Finish this routine")]
