@@ -18,19 +18,19 @@ Regardless of your distribution, you will need the Mono Project public Jenkins G
 
 ### Debian, Ubuntu, and derivatives
 
-Add the GPG key in a root shell with:
+Add the GPG key **in a root shell** with:
 
 ``` bash
 apt-key add xamarin.gpg
 ```
 
-Next, add the package repository in a root shell:
+Next, add the package repository **in a root shell**:
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
+Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available.
 
 #### Ubuntu 12.04 and 12.10
 
@@ -50,13 +50,13 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat ma
 
 ### CentOS, Fedora, and derivatives
 
-Add the GPG key in a root shell with:
+Add the GPG key **in a root shell** with:
 
 ``` bash
 rpm --import xamarin.gpg
 ```
 
-Next, add the package repository in a root shell:
+Next, add the package repository **in a root shell**:
 
 ``` bash
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
