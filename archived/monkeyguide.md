@@ -44,7 +44,7 @@ About Mono
 
 -   [What is Mono?](/About_Mono "About Mono")
 -   The [History](/History "History") of Mono
--   [Why Mono?](/Why_Mono%3F "Why Mono?")
+-   [Why Mono?](/Why_Mono "Why Mono?")
 -   [.NET Framework Architecture](/.NET_Framework_Architecture ".NET Framework Architecture")
 -   [Supported Platforms](/Supported_Platforms "Supported Platforms")
 

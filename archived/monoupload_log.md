@@ -11,7 +11,7 @@ Mono:Upload log
 Below is a list of the most recent file uploads. All times shown are server time (UTC).
 
 -   19:22, 4 Aug 2005 Jbevain uploaded "[Jbthumb2.png](/archived/images/d/d5/Jbthumb2.png "File:Jbthumb2.png")" *(pic of me)*
--   19:19, 4 Aug 2005 Jbevain uploaded "[Jbthumb.png]( "File:Jbthumb.png (page does not exist)")" *(Pic of me)*
+-   19:19, 4 Aug 2005 Jbevain uploaded "Jbthumb.png" *(Pic of me)*
 -   03:31, 20 Jul 2005 [MarioCarrion](/User:MarioCarrion "User:MarioCarrion") uploaded "[Monouml.png](/archived/images/5/57/Monouml.png "File:Monouml.png")" *(MonoUML. CASE Tool)*
 -   16:02, 13 Jul 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "[Alta-grande.png](/archived/images/6/69/Alta-grande.png "File:Alta-grande.png")" *(gmovil screenshot)*
 -   14:46, 16 Jun 2005 Paco uploaded "[Paco.jpg](/archived/images/b/bc/Paco.jpg "File:Paco.jpg")" *(Paco in suit.)*
@@ -29,8 +29,8 @@ Below is a list of the most recent file uploads. All times shown are server time
 -   15:15, 7 Apr 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "[Ed-primate.png](/archived/images/c/c5/Ed-primate.png "File:Ed-primate.png")" *(Erik Dasque's photo)*
 -   00:55, 31 Mar 2005 [Tml](/User:Tml "User:Tml") uploaded "[Tml.png](/archived/images/0/0e/Tml.png "File:Tml.png")" *(Everyone has a picture... Why not me?)*
 -   23:00, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "[Mono_rpm.gif](/archived/images/4/48/Mono_rpm.gif "File:Mono rpm.gif")" *(mono logo)*
--   22:39, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "[RPM.gif]( "File:RPM.gif (page does not exist)")" *(RPM Logo)*
--   22:36, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "[RPM.gif]( "File:RPM.gif (page does not exist)")" *(RPM Logo)*
+-   22:39, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "RPM.gif" *(RPM Logo)*
+-   22:36, 30 Mar 2005 [Edasque](/User:Edasque "User:Edasque") uploaded "RPM.gif" *(RPM Logo)*
 -   06:39, 28 Mar 2005 Hari uploaded "[Harinath.jpg](/archived/images/0/0d/Harinath.jpg "File:Harinath.jpg")" *(rescaled to 60px)*
 -   11:46, 23 Mar 2005 Mwh uploaded "[Timc.png](/archived/images/b/bf/Timc.png "File:Timc.png")"
 -   11:46, 23 Mar 2005 Mwh uploaded "[Tberman.png](/archived/images/b/b5/Tberman.png "File:Tberman.png")"

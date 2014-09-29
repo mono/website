@@ -173,7 +173,7 @@ Xamarin.Mac
 
 Xamarin.Mac is a commercial API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
 
-Homepage: [http://xamarin.com/mac
+Homepage: [http://xamarin.com/mac](http://xamarin.com/mac)
 
 Native MacOS toolkit.
 
@@ -289,7 +289,7 @@ MonoRail differs from the standard WebForms way of development as it enforces se
 Deveel Ajax
 -----------
 
-[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax "Introduction to Deveel AJAX") on [Mono Project]().
+[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax "Introduction to Deveel AJAX") on Mono Project.
 
 Magic Ajax
 ----------
