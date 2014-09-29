@@ -16,7 +16,7 @@ Documentation for some developer branches on GitHub.
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#httpsgithubcomvargazmono">1 https://github.com/vargaz/mono</a>
+<li><a href="#zoltan-varga-branches">1 Zoltan Varga branches</a>
 <ul>
 <li><a href="#aot-direct-icalls">1.1 aot-direct-icalls</a></li>
 <li><a href="#inline-wrappers">1.2 inline-wrappers</a></li>
@@ -34,8 +34,8 @@ Documentation for some developer branches on GitHub.
 </tbody>
 </table>
 
-[https://github.com/vargaz/mono](https://github.com/vargaz/mono)
-================================================================
+Zoltan Varga branches
+=====================
 
 Most of these branches are unfinished/work-in-progress.
 

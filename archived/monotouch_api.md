@@ -140,9 +140,9 @@ In Objective-C classes, you will see that classes that use this programming patt
 
 In MonoTouch we offer three mutually exclusive mechanisms to bind to these delegates:
 
-1.  [Via events](#events).
-2.  [Strongly typed via a `Delegate` property](#strongdelegate).
-3.  [Loosely typed via a `WeakDelegate` property](#weakdelegate).
+1.  [Via events](#via-events).
+2.  [Strongly typed via a `Delegate` property](#strongly-typed-via-a-delegate-property).
+3.  [Loosely typed via a `WeakDelegate` property](#loosely-typed-via-the-weakdelegate-property).
 
 For example, consider the [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) class. This dispatches to a [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) instance which is assigned to the [delegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) property.
 

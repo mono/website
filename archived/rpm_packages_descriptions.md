@@ -15,7 +15,7 @@ RPM Packages Descriptions
 <td align="left"><h2>Table of contents</h2>
 <ul>
 <li><a href="#mono-11">1 Mono 1.1</a></li>
-<li><a href="#xspmod-mono">2 XSP/mod_mono</a></li>
+<li><a href="#xspmodmono">2 XSP/mod_mono</a></li>
 <li><a href="#gtk-1x">3 Gtk# 1.x</a></li>
 <li><a href="#development-tools">4 Development Tools</a></li>
 <li><a href="#gtk-2x">5 Gtk# 2.x</a></li>

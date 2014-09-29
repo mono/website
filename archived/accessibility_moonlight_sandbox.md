@@ -26,11 +26,11 @@ Accessibility: Moonlight Sandbox
 </ul></li>
 <li><a href="#bridge">1.1.2 Bridge</a>
 <ul>
-<li><a href="#deliverables_2">1.1.2.1 Deliverables</a></li>
+<li><a href="#deliverables-2">1.1.2.1 Deliverables</a></li>
 </ul></li>
 <li><a href="#plugin-integration">1.1.3 Plugin integration</a>
 <ul>
-<li><a href="#deliverables_3">1.1.3.1 Deliverables</a></li>
+<li><a href="#deliverables-3">1.1.3.1 Deliverables</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#requirements-for-moonlight-development">1.2 Requirements for Moonlight development</a></li>

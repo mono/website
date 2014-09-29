@@ -21,7 +21,7 @@ MonoTouch ManualSelectorInvocation
 <ul>
 <li><a href="#selector-targets">1.2.1 Selector Targets</a></li>
 <li><a href="#selector-names">1.2.2 Selector Names</a></li>
-<li><a href="#calling-objc-msgsend">1.2.3 Calling objc_msgSend()</a></li>
+<li><a href="#calling-objcmsgsend">1.2.3 Calling objc_msgSend()</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

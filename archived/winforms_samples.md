@@ -16,17 +16,17 @@ Winforms Samples
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#1011-applications">1 1.0/1.1 Applications</a></li>
-<li><a href="#20-applications">2 2.0 Applications</a></li>
-<li><a href="#35-applications">3 3.5 Applications</a></li>
+<li><a href="#net-1011-applications">1 1.0/1.1 Applications</a></li>
+<li><a href="#net-20-applications">2 2.0 Applications</a></li>
+<li><a href="#net-35-applications">3 3.5 Applications</a></li>
 <li><a href="#samples-sites">4 Samples sites</a></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-1.0/1.1 Applications
---------------------
+.NET 1.0/1.1 Applications
+-------------------------
 
 -   [SharpChess](http://sharpchess.com/)
 -   [Reversi](http://www.codeproject.com/csharp/Reversi.asp)
@@ -34,8 +34,8 @@ Winforms Samples
 -   [NUnit](http://www.nunit.org/)
 -   [Reflector](http://www.aisto.com/roeder/dotnet/) - Standard warning: DO NOT USE REFLECTOR TO LOOK AT MICROSOFT'S SOURCE CODE!
 
-2.0 Applications
-----------------
+.NET 2.0 Applications
+---------------------
 
 -   [MoMA](/MoMA)
 -   [NClass](http://nclass.sourceforge.net/index.html)
@@ -47,8 +47,8 @@ Winforms Samples
 -   [IronEditor](http://www.codeplex.com/IronEditor)
 -   [PocketCiv](http://www.jkntech.com/blog/page/Pocket-Civ-Download-Page.aspx)
 
-3.5 Applications
-----------------
+.NET 3.5 Applications
+---------------------
 
 The 3.5 profile does not currently ship with Mono. Please see [Olive](/Olive "Olive") for details on getting it from SVN.
 

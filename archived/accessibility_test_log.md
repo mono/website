@@ -17,16 +17,16 @@ Accessibility: Test Log
 <li><a href="#references">1 References</a></li>
 <li><a href="#description">2 Description</a>
 <ul>
-<li><a href="#20-release-test-result">2.1 2.0 Release Test Result</a>
+<li><a href="#net-20-release-test-result">2.1 2.0 Release Test Result</a>
 <ul>
 <li><a href="#winformsatkbridge">2.1.1 WinformsAtkBridge</a></li>
 <li><a href="#moonlightatkbridge">2.1.2 MoonlightAtkBridge</a></li>
 <li><a href="#clientapi-winforms">2.1.3 ClientAPI-Winforms</a></li>
 </ul></li>
-<li><a href="#21-release-test-result">2.2 2.1 Release Test Result</a>
+<li><a href="#net-21-release-test-result">2.2 2.1 Release Test Result</a>
 <ul>
-<li><a href="#winformsatkbridge_2">2.2.1 WinformsAtkBridge</a></li>
-<li><a href="#moonlightatkbridge_2">2.2.2 MoonlightAtkBridge</a></li>
+<li><a href="#winformsatkbridge-2">2.2.1 WinformsAtkBridge</a></li>
+<li><a href="#moonlightatkbridge-2">2.2.2 MoonlightAtkBridge</a></li>
 <li><a href="#clientapi">2.2.3 ClientAPI</a></li>
 <li><a href="#bug-report-list">2.2.4 Bug Report List</a></li>
 </ul></li>
@@ -51,7 +51,7 @@ Description
 
 The test log is used to log the relevant details about the execution of each release version test. Its purpose is to share information among testers, users, developers, and others. It also facilitates the replication of situations encountered during testing.
 
-### 2.0 Release Test Result
+### .NET 2.0 Release Test Result
 
 #### WinformsAtkBridge
 
@@ -158,7 +158,7 @@ Test Platforms:
 4. Test result:
  The tests of Winforms applications via client api have been run successfully on all platforms.
 
-### 2.1 Release Test Result
+### .NET 2.1 Release Test Result
 
 #### WinformsAtkBridge 2
 

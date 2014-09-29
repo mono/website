@@ -41,10 +41,9 @@ WCFStatusOld
 <ul>
 <li><a href="#core-compare">4.1 Core Compare</a></li>
 </ul></li>
-<li><a href="#configuration_2">5 Configuration</a></li>
 <li><a href="#contracts">6 Contracts</a>
 <ul>
-<li><a href="#serialization_2">6.1 Serialization</a>
+<li><a href="#serialization-features">6.1 Serialization</a>
 <ul>
 <li><a href="#data-contract">6.1.1 Data Contract</a></li>
 <li><a href="#message-contract">6.1.2 Message Contract</a>

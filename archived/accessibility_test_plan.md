@@ -52,8 +52,8 @@ Accessibility: Test Plan
 <li><a href="#responsibilities">5.2.13 Responsibilities</a>
 <ul>
 <li><a href="#test-suit">5.2.13.1 Test Suit</a></li>
-<li><a href="#winforms_2">5.2.13.2 WinForms</a></li>
-<li><a href="#moonlight_2">5.2.13.3 MoonLight</a></li>
+<li><a href="#winforms-responsibilities">5.2.13.2 WinForms</a></li>
+<li><a href="#moonlight-responsibilities">5.2.13.3 MoonLight</a></li>
 <li><a href="#uiautomation-client-api">5.2.13.4 UIAutomation Client API</a></li>
 </ul></li>
 <li><a href="#staffing-and-training-needs">5.2.14 Staffing and training needs</a>
@@ -62,8 +62,8 @@ Accessibility: Test Plan
 </ul></li>
 <li><a href="#schedule">5.2.15 Schedule</a>
 <ul>
-<li><a href="#winforms_3">5.2.15.1 WinForms</a></li>
-<li><a href="#moonlight_3">5.2.15.2 MoonLight</a></li>
+<li><a href="#winforms-schedule">5.2.15.1 WinForms</a></li>
+<li><a href="#moonlight-schedule">5.2.15.2 MoonLight</a></li>
 <li><a href="#client-api">5.2.15.3 Client API</a></li>
 </ul></li>
 <li><a href="#risks-and-contingencies">5.2.16 Risks and contingencies</a></li>
@@ -440,7 +440,7 @@ Strongwind Tests: Brian, Calen, Ray
  Smoke Tests: Brian
  Sample Applications: Calen, Ray
 
-##### MoonLight
+##### MoonLight Responsibilities
 
 Sample Applications: Calen, Neville
  Strongwind Tests:: Calen, Neville

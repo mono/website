@@ -14,25 +14,14 @@ Accessibility: UIA Client Sandbox
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#specific-tasks-for-research-week">1 Specific Tasks for Research Week</a>
-<ul>
-<li><a href="#investigate-at-spidbus-cspi-and-cspidbus-and-all-issues-related-to-the-creation-of-managed-bindings-for-at-spi-questions-to-answer">1.1 Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer:</a>
-<ul>
-<li><a href="#deliverables">1.1.1 Deliverables</a></li>
-</ul></li>
-<li><a href="#investigate-common-users-of-client-api-to-see-how-much-work-it-would-be-to-port-them-to-linux">1.2 Investigate common users of client API, to see how much work it would be to port them to Linux:</a>
-<ul>
-<li><a href="#deliverables_2">1.2.1 Deliverables</a></li>
-</ul></li>
-<li><a href="#we-want-a-uispy-alike-on-linux-written-in-winforms-for-testing-purposes-dogfooding-verification-etc-investigate-advantagesdisadvantages-of-creating-our-own-tool-vs-extending-uiaverify-consider-these-issues">1.3 We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues:</a>
-<ul>
-<li><a href="#deliverables_3">1.3.1 Deliverables</a></li>
-</ul></li>
-<li><a href="#investigate-how-to-perform-mapping-from-at-spi-accessibles-to-uia-automationelements-here-are-the-major-issues">1.4 Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues:</a>
-<ul>
-<li><a href="#deliverables_4">1.4.1 Deliverables</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#specific-tasks-for-research-week">1 Specific Tasks for Research Week</a></li>
+<li><a href="#investigate-at-spidbus-cspi-and-cspidbus-and-all-issues-related-to-the-creation-of-managed-bindings-for-at-spi-questions-to-answer">1.1 Investigate at-spi/dbus, cspi and cspi/dbus, and all issues related to the creation of managed bindings for at-spi. Questions to answer:</a></li>
+<li><a href="#deliverables-1">1.1.1 Deliverables</a></li>
+<li><a href="#investigate-common-users-of-client-api-to-see-how-much-work-it-would-be-to-port-them-to-linux">1.2 Investigate common users of client API, to see how much work it would be to port them to Linux:</a></li>
+<li><a href="#deliverables-2">1.2.1 Deliverables</a></li>
+<li><a href="#we-want-a-uispy-alike-on-linux-written-in-winforms-for-testing-purposes-dogfooding-verification-etc-investigate-advantagesdisadvantages-of-creating-our-own-tool-vs-extending-uiaverify-consider-these-issues">1.3 We want a UISpy-alike on Linux written in Winforms for testing purposes, dogfooding, verification, etc. Investigate advantages/disadvantages of creating our own tool vs extending UIAVerify. Consider these issues:</a></li>
+<li><a href="#deliverables-3">1.3.1 Deliverables</a></li>
+<li><a href="#investigate-how-to-perform-mapping-from-at-spi-accessibles-to-uia-automationelements-here-are-the-major-issues">1.4 Investigate how to perform mapping from at-spi accessibles to UIA AutomationElements. Here are the major issues:</a></li>
 </ul></td>
 </tr>
 </tbody>

@@ -29,14 +29,14 @@ UsingTrustedRootsRespectfully
 </ul></li>
 <li><a href="#conclusion">3 Conclusion</a></li>
 <li><a href="#appendix---source-code">4 Appendix - Source code</a></li>
-<li><a href="#approach--1-actively-ignore-security-concerns-">5 Approach #-1: Actively ignore security concerns =</a>
+<li><a href="#appendix-approach--1-actively-ignore-security-concerns-">5 Approach #-1: Actively ignore security concerns =</a>
 <ul>
-<li><a href="#approach-0-ignore-the-problem_2">5.1 Approach #0: Ignore the problem</a></li>
-<li><a href="#approach-1-minimalist_2">5.2 Approach #1: Minimalist</a></li>
-<li><a href="#approach-2-warn-and-offer-the-possibility-to-continue_2">5.3 Approach #2: Warn and offer the possibility to continue</a></li>
-<li><a href="#approach-3-application-centric-trust_2">5.4 Approach #3: Application centric trust</a></li>
-<li><a href="#approach-4-offer-to-trust-the-new-root-certificate_2">5.5 Approach #4: Offer to trust the new root certificate</a></li>
-<li><a href="#approach-5-application-or-global-trust_2">5.6 Approach #5: Application or global trust</a></li>
+<li><a href="#appendix-approach-0-ignore-the-problem">5.1 Approach #0: Ignore the problem</a></li>
+<li><a href="#appendix-approach-1-minimalist">5.2 Approach #1: Minimalist</a></li>
+<li><a href="#appendix-approach-2-warn-and-offer-the-possibility-to-continue">5.3 Approach #2: Warn and offer the possibility to continue</a></li>
+<li><a href="#appendix-approach-3-application-centric-trust">5.4 Approach #3: Application centric trust</a></li>
+<li><a href="#appendix-approach-4-offer-to-trust-the-new-root-certificate">5.5 Approach #4: Offer to trust the new root certificate</a></li>
+<li><a href="#appendix-approach-5-application-or-global-trust">5.6 Approach #5: Application or global trust</a></li>
 </ul></li>
 </ul></td>
 </tr>

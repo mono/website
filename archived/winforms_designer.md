@@ -47,11 +47,11 @@ WinForms Designer
 <li><a href="#services">7.1.2 Services</a></li>
 <li><a href="#design-time-attributes">7.1.3 Design-Time Attributes</a></li>
 </ul></li>
-<li><a href="#design-surface_2">7.2 Design Surface</a>
+<li><a href="#design-surface-description">7.2 Design Surface</a>
 <ul>
 <li><a href="#state-persistence">7.2.1 State Persistence</a></li>
 <li><a href="#design-time-container">7.2.2 Design-Time Container</a></li>
-<li><a href="#designers_2">7.2.3 Designers</a></li>
+<li><a href="#designers-description">7.2.3 Designers</a></li>
 <li><a href="#design-time-services">7.2.4 Design-Time Services</a></li>
 </ul></li>
 <li><a href="#design-time-serialization">7.3 Design-Time Serialization</a></li>

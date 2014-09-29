@@ -28,7 +28,7 @@ Best Practices
 <li><a href="#platform-invoke">3 Platform Invoke</a></li>
 <li><a href="#execution">4 Execution</a>
 <ul>
-<li><a href="#mono-path">4.1 MONO_PATH</a></li>
+<li><a href="#monopath">4.1 MONO_PATH</a></li>
 </ul></li>
 <li><a href="#cryptography">5 Cryptography</a>
 <ul>

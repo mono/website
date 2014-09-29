@@ -17,18 +17,18 @@ Garmono
 <li><a href="#introduction">1 Introduction</a></li>
 <li><a href="#cygwin">2 Cygwin</a>
 <ul>
-<li><a href="#status">2.1 Status</a></li>
-<li><a href="#building">2.2 Building</a></li>
+<li><a href="#cygwin-status">2.1 Status</a></li>
+<li><a href="#cygwin-building">2.2 Building</a></li>
 </ul></li>
 <li><a href="#linux">3 Linux</a>
 <ul>
-<li><a href="#status_2">3.1 Status</a></li>
-<li><a href="#building_2">3.2 Building</a></li>
+<li><a href="#linux-status">3.1 Status</a></li>
+<li><a href="#linux-building">3.2 Building</a></li>
 </ul></li>
 <li><a href="#maemo">4 Maemo</a>
 <ul>
-<li><a href="#status_3">4.1 Status</a></li>
-<li><a href="#building_3">4.2 Building</a></li>
+<li><a href="#maemo-status">4.1 Status</a></li>
+<li><a href="#maemo-building">4.2 Building</a></li>
 <li><a href="#generating-packages-deb">4.3 Generating packages (.deb)</a></li>
 <li><a href="#to-do">4.4 To Do</a></li>
 </ul></li>

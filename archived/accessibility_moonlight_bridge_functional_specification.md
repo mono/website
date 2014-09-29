@@ -34,38 +34,38 @@ Unlike the approach that was taken for the System.Windows.Forms ATK Bridge (wher
 </ul></li>
 <li><a href="#expandcollapseinvoketoggle-pattern-implementor">3.2 ExpandCollapse/Invoke/Toggle Pattern Implementor</a>
 <ul>
-<li><a href="#methods-to-expect-gtkgail-like-behavior_2">3.2.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#methods-that-cannot-be-implemented">3.2.2 Methods that cannot be implemented</a></li>
-<li><a href="#events_2">3.2.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior-1">3.2.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented-1">3.2.2 Methods that cannot be implemented</a></li>
+<li><a href="#events-1">3.2.3 Events</a></li>
 </ul></li>
 <li><a href="#gridtable-pattern-implementor">3.3 Grid/Table Pattern Implementor</a>
 <ul>
-<li><a href="#methods-to-expect-gtkgail-like-behavior_3">3.3.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#methods-to-expect-similar-gtkgail-like-behavior">3.3.2 Methods to expect similar GTK/GAIL like behavior</a></li>
-<li><a href="#methods-that-cannot-be-implemented_2">3.3.3 Methods that cannot be implemented</a></li>
-<li><a href="#events_3">3.3.4 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior-2">3.3.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-to-expect-similar-gtkgail-like-behavior-2">3.3.2 Methods to expect similar GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented-2">3.3.3 Methods that cannot be implemented</a></li>
+<li><a href="#events-2">3.3.4 Events</a></li>
 </ul></li>
 <li><a href="#rangevalue-pattern-implementor">3.4 RangeValue Pattern Implementor</a>
 <ul>
-<li><a href="#methods-to-expect-gtkgail-like-behavior_4">3.4.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#methods-that-cannot-be-implemented_3">3.4.2 Methods that cannot be implemented</a></li>
-<li><a href="#events_4">3.4.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior-3">3.4.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented-3">3.4.2 Methods that cannot be implemented</a></li>
+<li><a href="#events-3">3.4.3 Events</a></li>
 </ul></li>
 <li><a href="#selection-pattern-implementor">3.5 Selection Pattern Implementor</a>
 <ul>
-<li><a href="#methods-to-expect-gtkgail-like-behavior_5">3.5.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#methods-that-cannot-be-implemented_4">3.5.2 Methods that cannot be implemented</a></li>
-<li><a href="#events_5">3.5.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior-4">3.5.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented-4">3.5.2 Methods that cannot be implemented</a></li>
+<li><a href="#events-4">3.5.3 Events</a></li>
 </ul></li>
 <li><a href="#selectionitem-pattern-implementor">3.6 SelectionItem Pattern Implementor</a>
 <ul>
-<li><a href="#events_6">3.6.1 Events</a></li>
+<li><a href="#events-6">3.6.1 Events</a></li>
 </ul></li>
 <li><a href="#value-pattern-implementor">3.7 Value Pattern Implementor</a>
 <ul>
-<li><a href="#methods-to-expect-gtkgail-like-behavior_6">3.7.1 Methods to expect GTK/GAIL like behavior</a></li>
-<li><a href="#methods-that-cannot-be-implemented_5">3.7.2 Methods that cannot be implemented</a></li>
-<li><a href="#events_7">3.7.3 Events</a></li>
+<li><a href="#methods-to-expect-gtkgail-like-behavior-5">3.7.1 Methods to expect GTK/GAIL like behavior</a></li>
+<li><a href="#methods-that-cannot-be-implemented-5">3.7.2 Methods that cannot be implemented</a></li>
+<li><a href="#events-5">3.7.3 Events</a></li>
 </ul></li>
 <li><a href="#exceptions">3.8 Exceptions</a></li>
 </ul></li>

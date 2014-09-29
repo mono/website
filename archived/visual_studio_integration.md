@@ -37,11 +37,11 @@ Visual Studio Integration
 <li><a href="#deploying-web-projects">3.1 Deploying Web Projects</a>
 <ul>
 <li><a href="#daemon-actions">3.1.1 Daemon Actions</a></li>
-<li><a href="#add-in-configuration--options">3.1.2 Add-in configuration / options</a></li>
+<li><a href="#web-add-in-configuration--options">3.1.2 Add-in configuration / options</a></li>
 </ul></li>
 <li><a href="#deploying-winforms-projects">3.2 Deploying Winforms Projects</a>
 <ul>
-<li><a href="#add-in-configuration--options_2">3.2.1 Add-in configuration / options</a></li>
+<li><a href="#winforms-add-in-configuration--options">3.2.1 Add-in configuration / options</a></li>
 </ul></li>
 </ul></li>
 </ul></td>

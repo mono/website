@@ -26,7 +26,7 @@ Abstract
 <ul>
 <li><a href="#xcode-plugin-and-supporting-files-for-mono-c-integration">1 Xcode Plugin and supporting files for Mono C# integration</a>
 <ul>
-<li><a href="#this-page-is-no-longer-maintained-please-use-the-latest-version-at-httpcodegooglecompcocoa-sharp-devwikicsharpplugin">1.1 This page is no longer maintained. Please use the latest version at http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin</a></li>
+<li>1.1 This page is no longer maintained. Please use the latest version at http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin</li>
 </ul></li>
 <li><a href="#abstract">2 Abstract</a></li>
 <li><a href="#quick-start">3 Quick Start</a></li>
@@ -66,7 +66,7 @@ Abstract
 <li><a href="#define-symbols">9.1.18 Define Symbols</a></li>
 <li><a href="#allow-unsafe-code">9.1.19 Allow Unsafe Code</a></li>
 <li><a href="#specify-language">9.1.20 Specify Language</a></li>
-<li><a href="#target-type">9.1.21 TARGET_TYPE</a></li>
+<li><a href="#targettype">9.1.21 TARGET_TYPE</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#using-the-plugin">10 Using the Plugin</a>

@@ -40,7 +40,7 @@ This page list the security related **features** of Moonlight. Another [page](/S
 <li><a href="#javascript">3.2.2 JavaScript</a></li>
 <li><a href="#client-http-stack">3.2.3 Client Http Stack</a></li>
 <li><a href="#http-stack-registration">3.2.4 Http Stack Registration</a></li>
-<li><a href="#others">3.2.5 Others</a></li>
+<li><a href="#other">3.2.5 Others</a></li>
 <li><a href="#security-zones">3.2.6 Security Zones</a></li>
 </ul></li>
 <li><a href="#sockets">3.3 Sockets</a>
@@ -56,14 +56,14 @@ This page list the security related **features** of Moonlight. Another [page](/S
 <ul>
 <li><a href="#quota">4.1.1 Quota</a></li>
 <li><a href="#classes">4.1.2 Classes</a></li>
-<li><a href="#additional-documentation_2">4.1.3 Additional documentation</a></li>
+<li><a href="#isolated-storage-additional-documentation">4.1.3 Additional documentation</a></li>
 </ul></li>
 <li><a href="#openfiledialog">4.2 OpenFileDialog</a></li>
 <li><a href="#savefiledialog">4.3 SaveFileDialog</a></li>
 <li><a href="#local-messaging">4.4 Local Messaging</a></li>
 </ul></li>
 <li><a href="#digital-rights-management">5 Digital Rights Management</a></li>
-<li><a href="#others_2">6 Others</a>
+<li><a href="#others">6 Others</a>
 <ul>
 <li><a href="#regular-expressions">6.1 Regular Expressions</a></li>
 <li><a href="#user-initiated-events">6.2 User Initiated Events</a></li>

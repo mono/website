@@ -29,7 +29,7 @@ Accessibility: Bug Specification
 <li><a href="#expected-results">3.3.4 EXPECTED RESULTS:</a></li>
 <li><a href="#comments">3.3.5 COMMENTS:</a></li>
 </ul></li>
-<li><a href="#definitions_2">3.4 Definitions</a>
+<li><a href="#bug-definitions">3.4 Definitions</a>
 <ul>
 <li><a href="#severity">3.4.1 SEVERITY</a></li>
 <li><a href="#priority">3.4.2 PRIORITY</a></li>
