@@ -20,11 +20,11 @@ Toolkits
 [Gtk#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
+[![Banshee1.png](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
 
 [Banshee](http://banshee-project.org/Main_Page), a GTK# app
 
-[![](/archived/images/9/92/Fspot1.png)](/archived/images/9/92/Fspot1.png)
+[![Fspot1.png](/archived/images/9/92/Fspot1.png)](/archived/images/9/92/Fspot1.png)
 
 [F-Spot](http://f-spot.org/Main_Page), a GTK# app
 
@@ -75,11 +75,11 @@ Cons:
 [Windows.Forms](/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![](/archived/images/7/71/Nunit1.png)](/archived/images/7/71/Nunit1.png)
+[![Nunit1.png](/archived/images/7/71/Nunit1.png)](/archived/images/7/71/Nunit1.png)
 
 [NUnit](http://www.nunit.org/), a Winforms app
 
-[![](/archived/images/3/32/Screenshot-SharpChess.png)](/archived/images/3/32/Screenshot-SharpChess.png)
+[![Screenshot-SharpChess.png](/archived/images/3/32/Screenshot-SharpChess.png)](/archived/images/3/32/Screenshot-SharpChess.png)
 
 [SharpChess](http://sharpchess.com/), a Winforms app
 
@@ -126,7 +126,7 @@ This is a port of the QtJambi java bindings to .net using IKVM.
 wxNet
 -----
 
-[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
+[![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
 wx# Sample
 

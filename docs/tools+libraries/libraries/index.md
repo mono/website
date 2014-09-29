@@ -10,7 +10,7 @@ GUI Development
 [Gtk#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
+[![IFolder_Linux.png](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
 
 [GTK#](/docs/gui/gtksharp/) action with iFolder
 
@@ -143,7 +143,7 @@ Availability: [Web](https://github.com/mono/Mono.Zeroconf/) [snapshot](https://g
 [Windows.Forms](/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![](/archived/images/e/ec/Colordialog.png)](/archived/images/e/ec/Colordialog.png)
+[![Colordialog.png](/archived/images/e/ec/Colordialog.png)](/archived/images/e/ec/Colordialog.png)
 
 [MWF](/docs/gui/winforms/)'s color dialog box
 
@@ -315,7 +315,7 @@ Reporting
 fyiReporting
 ------------
 
-[![](/archived/images/c/ca/Fyireporting.jpg)](/archived/images/c/ca/Fyireporting.jpg)
+[![Fyireporting.jpg](/archived/images/c/ca/Fyireporting.jpg)](/archived/images/c/ca/Fyireporting.jpg)
 
 Designer screenshot
 
@@ -335,7 +335,7 @@ ReportMan is open source software.
 FlexCelNet
 ----------
 
-[![](/archived/images/b/bb/FlexCelPreview.gif)](/archived/images/b/bb/FlexCelPreview.gif)
+[![FlexCelPreview.gif](/archived/images/b/bb/FlexCelPreview.gif)](/archived/images/b/bb/FlexCelPreview.gif)
 
 An Excel report rendered
 

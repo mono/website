@@ -323,7 +323,7 @@ In some early discussions with David Reveman (the designer of Xgl and Compiz), w
 
 ### The Plugin and the DOM
 
-[![](/archived/images/b/b7/Plugin.png)](/archived/images/b/b7/Plugin.png)
+[![Plugin.png](/archived/images/b/b7/Plugin.png)](/archived/images/b/b7/Plugin.png)
 
 Plugin relation to the Browser
 

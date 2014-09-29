@@ -346,7 +346,7 @@ After installing the VMWare player and unzipping the VMWare image, start the Mon
 
 [![Linux1.jpg](/archived/images/b/bc/Linux1.jpg)](/archived/images/b/bc/Linux1.jpg)
 
-[![](/archived/images/d/db/Linux3.jpg)](/archived/images/d/db/Linux3.jpg)
+[![Linux3.jpg](/archived/images/d/db/Linux3.jpg)](/archived/images/d/db/Linux3.jpg)
 
 Enabling User Shares
 

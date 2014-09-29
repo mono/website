@@ -67,7 +67,7 @@ The reason you are using cairo in a program is to draw. Cairo internally draws w
 
 #### Stroke
 
-[![](/archived/images/b/b7/Cairo_stroke.png)](/archived/images/b/b7/Cairo_stroke.png)
+[![Cairo_stroke.png](/archived/images/b/b7/Cairo_stroke.png)](/archived/images/b/b7/Cairo_stroke.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/stroke.cs)
 
@@ -82,7 +82,7 @@ The [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke())
 
 #### Fill
 
-[![](/archived/images/7/7e/Cairo_fill.png)](/archived/images/7/7e/Cairo_fill.png)
+[![Cairo_fill.png](/archived/images/7/7e/Cairo_fill.png)](/archived/images/7/7e/Cairo_fill.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/fill.cs)
 
@@ -97,7 +97,7 @@ The [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) ope
 
 #### Show Text / Glyphs
 
-[![](/archived/images/2/2b/Cairo_showtext.png)](/archived/images/2/2b/Cairo_showtext.png)
+[![Cairo_showtext.png](/archived/images/2/2b/Cairo_showtext.png)](/archived/images/2/2b/Cairo_showtext.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/showtext.cs)
 
@@ -115,7 +115,7 @@ The [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowTex
 
 #### Paint
 
-[![](/archived/images/8/83/Cairo_paint.png)](/archived/images/8/83/Cairo_paint.png)
+[![Cairo_paint.png](/archived/images/8/83/Cairo_paint.png)](/archived/images/8/83/Cairo_paint.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/paint.cs)
 
@@ -128,7 +128,7 @@ The [Paint](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()) o
 
 #### Mask
 
-[![](/archived/images/e/ee/Cairo_mask.png)](/archived/images/e/ee/Cairo_mask.png)
+[![Cairo_mask.png](/archived/images/e/ee/Cairo_mask.png)](/archived/images/e/ee/Cairo_mask.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/mask.cs)
 
@@ -156,7 +156,7 @@ In order to create an image you desire, you have to prepare the [context](http:/
 
 There are three main kinds of sources in cairo: colors, gradients, and images. Colors are the simplest; they use a uniform hue and opacity for the entire source. You can select these without any preparation by setting the [Color](http://www.go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.Color) property.
 
-[![](/archived/images/c/cb/Cairo_setsourcergba.png)](/archived/images/c/cb/Cairo_setsourcergba.png)
+[![Cairo_setsourcergba.png](/archived/images/c/cb/Cairo_setsourcergba.png)](/archived/images/c/cb/Cairo_setsourcergba.png)
 
 [[1]](http://mgsloan.nfshost.com/cairo_tut/setsourcergba.cs)
 
@@ -184,7 +184,7 @@ There are three main kinds of sources in cairo: colors, gradients, and images. C
 
 Gradients describe a progression of colors by setting a start and stop reference location and a series of "stops" along the way. [Linear gradients](http://docs.go-mono.com/index.aspx?link=T%3aCairo.LinearGradient) are built from two points which pass through parallel lines to define the start and stop locations. [Radial gradients](http://docs.go-mono.com/index.aspx?link=T%3aCairo.RadialGradient) are also built from two points, but each has an associated radius of the circle on which to define the start and stop locations. Stops are added to the gradient with [AddColorStop](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Gradient.AddColorStop(System.Double%2cCairo.Color)) and [AddColorStopRgb](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Gradient.AddColorStopRgb(System.Double%2cCairo.Color)). These methods take an offset (to indicate where it lies between the reference locations) and color. The colors between adjacent stops are averaged over space to form a smooth blend.
 
-[![](/archived/images/1/19/Cairo_setsourcegradient.png)](/archived/images/1/19/Cairo_setsourcegradient.png)
+[![Cairo_setsourcegradient.png](/archived/images/1/19/Cairo_setsourcegradient.png)](/archived/images/1/19/Cairo_setsourcegradient.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/setsourcegradient.cs)
 
@@ -266,7 +266,7 @@ Curves in cairo are cubic BÃ©zier splines. They start at the current reference
 
 #### Close the path
 
-[![](/archived/images/d/d0/Cairo_path-close.png)](/archived/images/d/d0/Cairo_path-close.png)
+[![Cairo_path-close.png](/archived/images/d/d0/Cairo_path-close.png)](/archived/images/d/d0/Cairo_path-close.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/path-close.cs)
 
@@ -283,7 +283,7 @@ Finally text can be turned into a path with [TextPath](http://www.go-mono.com/do
 Understanding Text
 ------------------
 
-[![](/archived/images/9/9d/Cairo_textextents.png)](/archived/images/9/9d/Cairo_textextents.png)
+[![Cairo_textextents.png](/archived/images/9/9d/Cairo_textextents.png)](/archived/images/9/9d/Cairo_textextents.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/textextents.cs)
 
@@ -334,7 +334,7 @@ When you're working under a uniform scaling transform, you can't just use pixels
 
 When you're working under a deforming scale, you may wish to still have line widths that are uniform in device space. For this you should return to a uniform scale before you stroke the path. In the image, the arc on the left is stroked under a deformation, while the arc on the right is stroked under a uniform scale.
 
-[![](/archived/images/5/59/Cairo_tips-ellipse.png)](/archived/images/5/59/Cairo_tips-ellipse.png)
+[![Cairo_tips-ellipse.png](/archived/images/5/59/Cairo_tips-ellipse.png)](/archived/images/5/59/Cairo_tips-ellipse.png)
 
 [View Source](http://mgsloan.nfshost.com/tips-ellipse.cs)
 
@@ -356,7 +356,7 @@ When you're working under a deforming scale, you may wish to still have line wid
 
 When you try to center text letter by letter at various locations, you have to decide how you want to center it. For example the following code will actually center letters individually, leading to poor results when your letters are of different sizes. (Unlike most examples, here I assume a 26 x 1 workspace.)
 
-[![](/archived/images/c/ce/Cairo_tips-letter.png)](/archived/images/c/ce/Cairo_tips-letter.png)
+[![Cairo_tips-letter.png](/archived/images/c/ce/Cairo_tips-letter.png)](/archived/images/c/ce/Cairo_tips-letter.png)
 
 [View Source](http://mgsloan.nfshost.com/tips-letter.cs)
 
@@ -374,7 +374,7 @@ When you try to center text letter by letter at various locations, you have to d
 
 Instead the vertical centering must be based on the general size of the font, thus keeping your baseline steady. Note that the exact positioning now depends on the metrics provided by the font itself, so the results are not necessarily the same from font to font.
 
-[![](/archived/images/b/b8/Cairo_tips-font.png)](/archived/images/b/b8/Cairo_tips-font.png)
+[![Cairo_tips-font.png](/archived/images/b/b8/Cairo_tips-font.png)](/archived/images/b/b8/Cairo_tips-font.png)
 
 [View Source](http://mgsloan.nfshost.com/tips-font.cs)
 

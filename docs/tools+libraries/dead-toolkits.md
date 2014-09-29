@@ -36,7 +36,7 @@ Cons:
 (DEAD) Qt#
 -----------
 
-[![](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
+[![Mahjongg-0.6-window.png](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
 
 QT# Sample
 
@@ -59,7 +59,7 @@ Cons:
 wxNet
 -----
 
-[![](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
+[![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
 wx# Sample
 

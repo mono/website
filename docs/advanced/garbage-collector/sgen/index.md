@@ -309,7 +309,7 @@ Stopping the world
 
 To perform the garbage collection, it is important that all the running threads are stopped, this is called "stopping the world". This guarantees that no changes are happening behind the GC's back and also, the compacting collector will need to move the objects, and update all pointers to the objects to point to their new locations.
 
-[![](/archived/images/1/1c/Thread-stacks.png)](/archived/images/1/1c/Thread-stacks.png)
+[![Thread-stacks.png](/archived/images/1/1c/Thread-stacks.png)](/archived/images/1/1c/Thread-stacks.png)
 
 The dark grey areas are scanned conservatively
 

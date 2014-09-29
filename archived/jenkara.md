@@ -36,7 +36,7 @@ With the advent of [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp"), the Jenka
 Screenshots
 -----------
 
-[![](/archived/images/6/64/Jenkara-20020317-a.png)](/archived/images/6/64/Jenkara-20020317-a.png)
+[![Jenkara-20020317-a.png](/archived/images/6/64/Jenkara-20020317-a.png)](/archived/images/6/64/Jenkara-20020317-a.png)
 
 2002 screen shot
 
