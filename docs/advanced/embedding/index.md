@@ -90,7 +90,7 @@ For mono versions before 2.8, use "**mono**" instead of "**mono-2**" in the abov
 
 On windows you need to generate an import library for mono.dll by getting the following file:
 
-     http://github.com/mono/mono/blob/master/msvc/mono.def
+> http://github.com/mono/mono/blob/master/msvc/mono.def
 
 and creating mono.lib with the command:
 
@@ -102,32 +102,32 @@ Then you link your application with mono.lib.
 
 ### Initializing the Mono runtime
 
-To initialize the JIT runtime, call mono_jit_init, like this:
+To initialize the JIT runtime, call `mono_jit_init`, like this:
 
 ``` c
-        #include <glib/glib.h>
-        #include <mono/jit/jit.h>
-        #include <mono/metadata/assembly.h>
- 
-        MonoDomain *domain;
- 
-        domain = mono_jit_init (domain_name);
+#include <glib/glib.h>
+#include <mono/jit/jit.h>
+#include <mono/metadata/assembly.h>
+
+MonoDomain *domain;
+
+domain = mono_jit_init (domain_name);
 ```
 
 That will return a MonoDomain where your code will be executed. domain_name is the name of the main application domain. This call will initialize the default framework version, which could be 2.0 or 4.0, depending on the Mono version used. To specify a framework version, you can use something like:
 
 ``` c
-       domain = mono_jit_init_version ("myapp", ""v2.0.50727);
+domain = mono_jit_init_version ("myapp", ""v2.0.50727);
 ```
 
 The first thing you usually do is to load your assembly and execute it:
 
 ``` c
-  MonoAssembly *assembly;
- 
-    assembly = mono_domain_assembly_open (domain, "file.exe");
-    if (!assembly)
-        error ();
+MonoAssembly *assembly;
+
+assembly = mono_domain_assembly_open (domain, "file.exe");
+if (!assembly)
+  error ();
 ```
 
 In the above example, the contents of \`file.exe' will be loaded into the domain. This only loads the code, but it will not execute anything yet. You can replace \`file.exe' with another transport file, like \`file.dll'.
@@ -135,33 +135,33 @@ In the above example, the contents of \`file.exe' will be loaded into the domain
 To start executing code, you must invoke a method in the assembly, or if you have provided a static Main method (an entry point), you can use the convenience function:
 
 ``` c
-  retval = mono_jit_exec (domain, assembly, argc - 1, argv + 1);
+retval = mono_jit_exec (domain, assembly, argc - 1, argv + 1);
 ```
 
-Make sure you always provide a Main() method and execute it with mono_jit_exec() at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
+Make sure you always provide a Main() method and execute it with `mono_jit_exec()` at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
 
-If you want to invoke a different method, look at the [\`Invoking Methods in the CIL universe'](#invoking-methods-in-the-cil-universe) section.
+If you want to invoke a different method, look at the [Invoking Methods in the CIL universe](#invoking-methods-in-the-cil-universe) section.
 
 Certain features of the runtime like Dll remapping depend on a configuration file, to load the configuration file, just add:
 
 ``` c
-         mono_config_parse (NULL);
+mono_config_parse (NULL);
 ```
 
-Which will load the Mono configuration file (typically /etc/mono/config), but if you want to load your own configuration file, pass the filename as the argument to mono_config_parse:
+Which will load the Mono configuration file (typically /etc/mono/config), but if you want to load your own configuration file, pass the filename as the argument to `mono_config_parse`:
 
 ``` c
-         mono_config_parse ("my_mappings");
+mono_config_parse ("my_mappings");
 ```
 
 #### Configuring the Runtime
 
 When Mono is embedded into an application it needs a way of finding its runtime assemblies and configuration files. By default it will use the system defined locations that the runtime was built with (typically assemblies in /usr/lib/mono and configuration in /etc/mono). This will work out of the box for you.
 
-But if you are using a Mono that was relocated from an original distribution, for example if you are distributing your application with Mono, you must inform the Mono runtime where to find its assemblies and configuration files. To do so, you must call the mono_set_dirs routine:
+But if you are using a Mono that was relocated from an original distribution, for example if you are distributing your application with Mono, you must inform the Mono runtime where to find its assemblies and configuration files. To do so, you must call the `mono_set_dirs` routine:
 
 ``` c
-     mono_set_dirs (myapp_lib, myapp_etc);
+mono_set_dirs (myapp_lib, myapp_etc);
 ```
 
 In Windows this is common since you will install your Mono on a different directory, so for example:
@@ -174,9 +174,11 @@ mono_set_dirs("C:\\Mono-2.6.7\\lib","C:\\Mono-2.6.7\\etc");
 
 To shutdown the Mono runtime, you have to clean up all the domains that were created, use this function:
 
-        mono_jit_cleanup (domain);
+``` c
+mono_jit_cleanup (domain);
+```
 
-Note that for current versions of Mono, the mono runtime can't be reloaded into the same process, so call mono_jit_cleanup() only if you're never going to initialize it again.
+Note that for current versions of Mono, the mono runtime can't be reloaded into the same process, so call `mono_jit_cleanup()` only if you're never going to initialize it again.
 
 ### Exposing C code to the CIL universe
 
@@ -191,7 +193,7 @@ To use the P/Invoke system, you have to make your C function public, for example
 ``` c
 void DoSomething ()
 {
-   /* ... */
+  /* ... */
 }
 ```
 
@@ -199,7 +201,7 @@ To make the runtime lookup the symbol in the current executable, use the special
 
 ``` csharp
 using System.Runtime.InteropServices;
- 
+
 [DllImport ("__Internal", EntryPoint="DoSomething")]
 static extern void DoSomething ();
 ```
@@ -212,31 +214,37 @@ If you want direct access to managed objects you can register C code with the ru
 
 To register an internal call, use this call in the C code:
 
-        mono_add_internal_call ("Hello::Sample", sample);
+``` c
+mono_add_internal_call ("Hello::Sample", sample);
+```
 
 Now, you need to declare this on the C# side:
 
-       using System;
-        using System.Runtime.CompilerServices;
+``` csharp
+using System;
+using System.Runtime.CompilerServices;
 
-        class Hello {
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        extern static string Sample ();
-        }
+class Hello {
+  [MethodImplAttribute(MethodImplOptions.InternalCall)]
+  extern static string Sample ();
+}
+```
 
 Since this routine returns a string, here is the C definition:
 
-       static MonoString*
-        Sample ()
-        {
-            return mono_string_new (mono_domain_get (), "Hello!");
-        }
+``` c
+static MonoString*
+Sample ()
+{
+  return mono_string_new (mono_domain_get (), "Hello!");
+}
+```
 
 Notice that we have to return a \`MonoString', and we use the \`mono_string_new' API call to obtain this from a string.
 
 ### Windows Considerations
 
-On Windows, it is necessary for you to flag any methods that you want to expose through P/Invoke to be flagged with __dllexport or __declspec(dllexport).
+On Windows, it is necessary for you to flag any methods that you want to expose through P/Invoke to be flagged with `__dllexport` or `__declspec(dllexport)`.
 
 Updates for Mono version 2.8+
 =============================
@@ -245,7 +253,9 @@ To support advanced GC implementations, implement a few optimizations and to do 
 
 The first thing to change is to use mono-2 instead of mono in the pkg-config invocations. To get the preprocessor flags to use during compilation, for example, you'll use:
 
-    pkg-config --cflags mono-2
+``` bash
+pkg-config --cflags mono-2
+```
 
 Please also note that mono may not use GLib anymore internally, so if you use it in your program, make sure you also link to it explicitly. No other change to the build setup should be needed.
 
@@ -253,7 +263,7 @@ Now let's list the changes that may be needed to the source code.
 
 -   The glib.h header file is no longer included in the mono header files, so if you use GLib and relied on mono including the header for you, you'll need to explicitly include the glib.h header now.
 
--   A few functions in the API return a pointer to allocated memory: this memory must be freed with mono_free() instead of g_free().
+-   A few functions in the API return a pointer to allocated memory: this memory must be freed with `mono_free()` instead of `g_free()`.
 
 FIXME: provide a list or a small script to allow people to easily grep for them in their code.
 
@@ -263,21 +273,29 @@ FIXME: provide a list or a small script to allow people to easily grep for them 
 
 For example, if you accessed the byref flag of the type using:
 
-    type->byref
+``` c
+type->byref
+```
 
 you need to change the code to read:
 
-    mono_type_is_byref (type)
+``` c
+mono_type_is_byref (type)
+```
 
 -   The MonoMethodSignature struct is no longer fully visible: if you have code that accesses its fields directly, you need to change it to use the accessors that are already provided also in the 1.0 version of the mono API.
 
 For example, if you accessed the return type of the signature using:
 
-    signature->ret
+``` c
+signature->ret
+```
 
 you need to change the code to read:
 
-    mono_signature_get_return_type (signature)
+``` c
+mono_signature_get_return_type (signature)
+```
 
 -   The MonoArray and MonoString structures are no longer visible.
 
@@ -287,19 +305,21 @@ If you accessed the fields directly, you need to change the code to use the macr
 
 you need to use the newly-provided accessors. Note also that it can't be allocated on the stack anymore and you'll need to create and destroy it with the following API:
 
-    MonoAssemblyName *aname = mono_assembly_name_new ("mscorlib");
-    mono_assembly_name_free (aname);
+``` c
+MonoAssemblyName *aname = mono_assembly_name_new ("mscorlib");
+mono_assembly_name_free (aname);
+```
 
--   The MonoMethodHeader object is now transient: you need to free it when you're done to avoid leaking by calling the (already existing and safe to call) function mono_metadata_free_mh ().
+-   The MonoMethodHeader object is now transient: you need to free it when you're done to avoid leaking by calling the (already existing and safe to call) function `mono_metadata_free_mh ()`.
 
--   Array API changes: the integer types that represent arry lengths and array boundaries has changed to uintptr_t and intptr_t. This allows us to transparently provide a mono build that supports 64 bit indices on 64 bit systems. The affected APIs are:
+-   Array API changes: the integer types that represent arry lengths and array boundaries has changed to `uintptr_t` and `intptr_t`. This allows us to transparently provide a mono build that supports 64 bit indices on 64 bit systems. The affected APIs are:
 
-<!-- -->
-
-     mono_array_new ()
-     mono_array_new_full ()
-     mono_array_new_specific ()
-     mono_array_length ()
+``` c
+mono_array_new ()
+mono_array_new_full ()
+mono_array_new_specific ()
+mono_array_length ()
+```
 
 -   Profiler API changes.
 
@@ -307,24 +327,26 @@ Mono can now support multiple profilers running at the same time. The profiler i
 
 Also note that objects can move in memory. Use the
 
-     void mono_profiler_install_gc_moves    (MonoProfileGCMoveFunc callback);
+``` c
+void mono_profiler_install_gc_moves    (MonoProfileGCMoveFunc callback);
+```
 
 function to get notifications of the old and new addresses of objects as they are moved.
 
 -   The mono logger API now exposes only the ability to set the trace level and trace mask with the two functions:
 
-<!-- -->
-
-    void mono_trace_set_mask_string (const char *value);
-    void mono_trace_set_level_string (const char *value);
+``` c
+void mono_trace_set_mask_string (const char *value);
+void mono_trace_set_level_string (const char *value);
+```
 
 -   The following methods and structures (which were really unlikely to be used/useful to anyone outside of the mono internals) are not part of the public API anymore:
 
-<!-- -->
-
-    mono_remote_class() MonoRemoteClass
-    ves_icall_System_Environment_GetOSVersionString()
-    mono_alloc_special_static_data()/mono_get_special_static_data()
+``` c
+mono_remote_class() MonoRemoteClass
+ves_icall_System_Environment_GetOSVersionString()
+mono_alloc_special_static_data()/mono_get_special_static_data()
+```
 
 Invoking Methods in the CIL universe
 ====================================
@@ -338,63 +360,75 @@ To get a MonoMethod there are several ways.
 
 You can get a MonoClass (the structure representing a type) using:
 
-            MonoImage *
-            mono_assembly_get_image  (MonoAssembly *assembly);
+``` c
+MonoImage *
+mono_assembly_get_image  (MonoAssembly *assembly);
 
-        MonoClass *
-        mono_class_from_name (MonoImage *image, const char* name_space, const char *name);
+MonoClass *
+mono_class_from_name (MonoImage *image, const char* name_space, const char *name);
+```
 
 and then loop in the returned class method array until you get the one you're looking for. There are examples of such searches as static functions in several C files in metadata/\*.c: we need to expose one through the API and remove the duplicates.
 
 The other, simpler, way is to use the functions in debug-helpers.h: there are examples of their use in monograph, mint and the jit as well. You basically use a string description of the method, like:
 
-            "System.Object:GetHashCode()"
+> "System.Object:GetHashCode()"
 
 and create a MonoMethodDesc out of it with:
 
-    #include <mono/metadata/debug-helpers.h>
+``` c
+#include <mono/metadata/debug-helpers.h>
 
-    MonoMethodDesc* mono_method_desc_new (const char *name, gboolean include_namespace);
+MonoMethodDesc* mono_method_desc_new (const char *name, gboolean include_namespace);
+```
 
 You can then use:
 
-    MonoMethod*     mono_method_desc_search_in_class (MonoMethodDesc *desc, MonoClass *klass);
-    MonoMethod*     mono_method_desc_search_in_image (MonoMethodDesc *desc, MonoImage *image);
+``` c
+MonoMethod*     mono_method_desc_search_in_class (MonoMethodDesc *desc, MonoClass *klass);
+MonoMethod*     mono_method_desc_search_in_image (MonoMethodDesc *desc, MonoImage *image);
+```
 
 and
 
-    #include <mono/metadata/assembly.h>
+``` c
+#include <mono/metadata/assembly.h>
 
-    MonoImage    *mono_assembly_get_image  (MonoAssembly *assembly);
+MonoImage    *mono_assembly_get_image  (MonoAssembly *assembly);
+```
 
 to search for the method in a class or in an image. You would typically do this just once at the start of the program and store the result for reuse somewhere.
 
 Invoking a Method
 -----------------
 
-You can invoke methods either with [#Unmanaged_to_Managed_Thunks|Unmanaged to Managed Thunks] which create a custom version of an invocation method or by using the mono_runtime_invoke () methods.
+You can invoke methods either with [Unmanaged to Managed Thunks](#unmanaged-to-managed-thunks) which create a custom version of an invocation method or by using the `mono_runtime_invoke ()` methods.
 
-The unmanaged to managed thunks are faster because they will create a custom trampoline from unmanaged code to managed code for the particular method signature that you are invoking. The mono_runtime_invoke methods can be used with any arguments and any method signatures.
+The unmanaged to managed thunks are faster because they will create a custom trampoline from unmanaged code to managed code for the particular method signature that you are invoking. The `mono_runtime_invoke` methods can be used with any arguments and any method signatures.
 
-If you are doing a few invocations, mono_runtime_invoke will probably suffice, but if you are adding this to a code that in your code that requires the best possible performance, you will want to use the thunks.
+If you are doing a few invocations, `mono_runtime_invoke` will probably suffice, but if you are adding this to a code that in your code that requires the best possible performance, you will want to use the thunks.
 
 There are two functions to call a managed method:
 
 ``` c
-  MonoObject*
-    mono_runtime_invoke         (MonoMethod *method, void *obj, void **params,
-                                 MonoObject **exc);
-    and
-    MonoObject*
-    mono_runtime_invoke_array   (MonoMethod *method, void *obj, MonoArray *params,
-                                 MonoObject **exc);
+MonoObject*
+mono_runtime_invoke   (MonoMethod *method, void *obj, void **params,
+                       MonoObject **exc);
+```
+
+and
+
+``` c
+MonoObject*
+mono_runtime_invoke_array   (MonoMethod *method, void *obj, MonoArray *params,
+                             MonoObject **exc);
 ```
 
 obj is the 'this' pointer, it should be NULL for static methods, a MonoObject\* for object instances and a pointer to the value type for value types.
 
 The params array contains the arguments to the method with the same convention: MonoObject\* pointers for object instances and pointers to the value type otherwise. The _invoke_array variant takes a C# object[] as the params argument (MonoArray \*params): in this case the value types are boxed inside the respective reference representation.
 
-From unmanaged code you'll usually use the mono_runtime_invoke() variant.
+From unmanaged code you'll usually use the `mono_runtime_invoke()` variant.
 
 Note that this function doesn't handle virtual methods for you, it will exec the exact method you pass: we still need to expose a function to lookup the derived class implementation of a virtual method (there are examples of this in the code, though).
 
@@ -404,43 +438,43 @@ If the method returns a value type, it is boxed in an object.
 
 For example, to invoke the following C# methods:
 
-``` c
-  class MyClass {
-    static void Foo (int value) {
-      ...
-    }
- 
-    int Bar (string name) {
-      ...
-    }
+``` csharp
+class MyClass {
+  static void Foo (int value) {
+    ...
   }
+
+  int Bar (string name) {
+    ...
+  }
+}
 ```
 
-assuming you got the corresponding MonoMethod\* in foo_method and bar_method and this_arg is a MonoObject\* of type MyClass, you simply execute:
+assuming you got the corresponding MonoMethod\* in `foo_method` and `bar_method` and this_arg is a MonoObject\* of type MyClass, you simply execute:
 
 ``` c
-  /* we execute methods that take one argument */
-  void *args [1];
-  int val = 10;
-  /* Note we put the address of the value type in the args array */
-  args [0] = &val;
- 
-  /* execute Foo (10);
-   * it's a static method, so use NULL as the second argument.
-   */
-  mono_runtime_invoke (foo_method, NULL, args, NULL);
- 
-  /* a string is a reference, so we put it directly in the args array */
-  args [0] = mono_string_new (domain, "Hello");
-  /* execute my_class_instance.Bar ("Hello");
-   * See the Creating Objects section to learn how to get this_arg.
-   */
-  MonoObject *result = mono_runtime_invoke (bar_method, this_arg, args, NULL);
-  /* we always get a MonoObject* from mono_runtime_invoke (), so to get
-   * the integer value we need to unbox (which returns a pointer to
-   * the value stored in the object) and dereference.
-   */
-  int int_result = *(int*)mono_object_unbox (result);
+/* we execute methods that take one argument */
+void *args [1];
+int val = 10;
+/* Note we put the address of the value type in the args array */
+args [0] = &val;
+
+/* execute Foo (10);
+ * it's a static method, so use NULL as the second argument.
+ */
+mono_runtime_invoke (foo_method, NULL, args, NULL);
+
+/* a string is a reference, so we put it directly in the args array */
+args [0] = mono_string_new (domain, "Hello");
+/* execute my_class_instance.Bar ("Hello");
+ * See the Creating Objects section to learn how to get this_arg.
+ */
+MonoObject *result = mono_runtime_invoke (bar_method, this_arg, args, NULL);
+/* we always get a MonoObject* from mono_runtime_invoke (), so to get
+ * the integer value we need to unbox (which returns a pointer to
+ * the value stored in the object) and dereference.
+ */
+int int_result = *(int*)mono_object_unbox (result);
 ```
 
 ### Creating objects
@@ -450,27 +484,27 @@ Creating an object involves two separate actions: allocating the memory and invo
 For constructors that take no arguments this is very simple:
 
 ``` c
-  /* we usually get the class we need during initialization */
-  MonoImage *image = mono_assembly_get_image (assembly);
-  MonoClass *my_class = mono_class_from_name (image, "MyNamespace", "MyClass");
-  ...
-  /* allocate memory for the object */
-  MonoObject *my_class_instance = mono_object_new (domain, my_class);
-  /* execute the default argument-less constructor */
-  mono_runtime_object_init (my_class_instance);
+/* we usually get the class we need during initialization */
+MonoImage *image = mono_assembly_get_image (assembly);
+MonoClass *my_class = mono_class_from_name (image, "MyNamespace", "MyClass");
+...
+/* allocate memory for the object */
+MonoObject *my_class_instance = mono_object_new (domain, my_class);
+/* execute the default argument-less constructor */
+mono_runtime_object_init (my_class_instance);
 ```
 
-For more complex constructors or if you want to have more control of the execution of the constructor, you can use mono_runtime_invoke() as explained in the previous section, after getting the MonoMethod\* representing the constructor:
+For more complex constructors or if you want to have more control of the execution of the constructor, you can use `mono_runtime_invoke()` as explained in the previous section, after getting the MonoMethod\* representing the constructor:
 
 ``` c
-  /* execute my_class_instance = new MyClass ("Mono rocks"); */
-  MonoObject *my_class_instance = mono_object_new (domain, my_class);
-  void *args [1];
-  args [0] = mono_string_new (domain, "Mono rocks");
-  /* constructor methods return void, so we ignore the return value,
-   * the constructed object is my_class_instance.
-   */
-  mono_runtime_invoke (ctor_method, my_class_instance, args, NULL);
+/* execute my_class_instance = new MyClass ("Mono rocks"); */
+MonoObject *my_class_instance = mono_object_new (domain, my_class);
+void *args [1];
+args [0] = mono_string_new (domain, "Mono rocks");
+/* constructor methods return void, so we ignore the return value,
+ * the constructed object is my_class_instance.
+ */
+mono_runtime_invoke (ctor_method, my_class_instance, args, NULL);
 ```
 
 ### Data types
@@ -479,29 +513,10 @@ Unlike [PInvoke](/docs/advanced/pinvoke/), there is no intermediate layer that t
 
 This means that you need to convert your C types into Mono runtime types before you can pass them to Mono, or you must convert those Mono types to C types before you can consume them"
 
-C Type
-
-Mono Type
-
-C to Mono
-
-Mono to C
-
-strings, char \*
-
-MonoString \*
-
-mono_string_new, mono_string_new_len,
-
-mono_string_new_wrapper, mono_string-new_utf16
-
-mono_string_to_utf8, mono_string_to_utf16
-
-array of x
-
-MonoArray \*
-
-mono_array_new, mono_array_new_full, mono_array_new_specific
+|C Type|Mono Type|C to Mono|Mono to C|
+|------|---------|---------|---------|
+|strings, char \*|MonoString \*|mono_string_new, mono_string_new_len, mono_string_new_wrapper, mono_string-new_utf16|mono_string_to_utf8, mono_string_to_utf16|
+|array of x|MonoArray \*|mono_array_new, mono_array_new_full, mono_array_new_specific||
 
 See the embedded API documentation for more details about these.
 
@@ -510,20 +525,20 @@ See the embedded API documentation for more details about these.
 With Mono 2.0 we introduced a new function that can wrap a MonoMethod into a function pointer:
 
 ``` c
-  void* mono_method_get_unmanaged_thunk (MonoMethod *method);
+void* mono_method_get_unmanaged_thunk (MonoMethod *method);
 ```
 
 You'll be able to store the returned pointer in a function pointer with the proper signature and call that directly from C:
 
 ``` c
-  typedef gint32 (*GetHashCode) (MonoObject *obj);
- 
-    GetHashCode func = mono_method_get_unmanaged_thunk (System_Object_GetHashCode_method);
- 
-    gint32 hashvalue = func (myobject);
+typedef gint32 (*GetHashCode) (MonoObject *obj);
+
+GetHashCode func = mono_method_get_unmanaged_thunk (System_Object_GetHashCode_method);
+
+gint32 hashvalue = func (myobject);
 ```
 
-Another approach is calling [Marshal.GetFunctionPointerForDelegate ()](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.getfunctionpointerfordelegate.aspx) either from managed code, or using mono_runtime_invoke ().
+Another approach is calling [Marshal.GetFunctionPointerForDelegate ()](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.getfunctionpointerfordelegate.aspx) either from managed code, or using `mono_runtime_invoke ()`.
 
 ### C# to C delegate registration
 
@@ -535,21 +550,21 @@ The C# side of the code would look like this:
 
 ``` csharp
 using System.Runtime.InteropServices;
- 
+
 class Demo {
-    delegate int MyCallback1 (int a, int b);
- 
-    [DllImport ("MyRuntime")]
-    extern static void RegisterCallback (MyCallback1 callback1);
- 
-    static int Add (int a, int b) { return a + b; }
-    static int Sub (int a, int b) { return a - b; }
- 
-    void Init ()
-    {
-        // This one registers the method "Add" to be invoked back by C code
-        RegisterCallback (Add);
-    }
+  delegate int MyCallback1 (int a, int b);
+
+  [DllImport ("MyRuntime")]
+  extern static void RegisterCallback (MyCallback1 callback1);
+
+  static int Add (int a, int b) { return a + b; }
+  static int Sub (int a, int b) { return a - b; }
+
+  void Init ()
+  {
+    // This one registers the method "Add" to be invoked back by C code
+    RegisterCallback (Add);
+  }
 }
 ```
 
@@ -558,19 +573,19 @@ Then your C code would look like this:
 ``` c
 typedef int (*callback-t) (int a, int b);
 static callback_t my_callback;
- 
+
 void RegisterCallback (my_callback_t cb)
 {
-    my_callback = cb;
+  my_callback = cb;
 }
- 
+
 int InvokeManagedCode (int a, int b)
 {
-    if (my_callback == NULL){
-         printf ("Managed code has not initialized this library yet");
-         abort ();
-    }
-    return (*my_callback) (a, b);
+  if (my_callback == NULL){
+    printf ("Managed code has not initialized this library yet");
+    abort ();
+  }
+  return (*my_callback) (a, b);
 }
 ```
 
@@ -579,7 +594,7 @@ Threading issues
 
 If your application creates threads on its own, and you want them to be able to interact with Mono, you have to register the thread so that the runtime knows about it.
 
-To do so, call the mono_thread_attach() function before you execute any other Mono API or before manipulating any managed object.
+To do so, call the `mono_thread_attach()` function before you execute any other Mono API or before manipulating any managed object.
 
 Signal handling
 ---------------
@@ -615,7 +630,7 @@ If your applications has threads that will access Mono, access Mono variables, p
 Missing functionality
 ---------------------
 
-If the embedding API is missing some functionality, you might be able to work around it by invoking managed code using mono_runtime_invoke (), i.e. for creating delegates you can call Delegate.CreateDelegate () etc.
+If the embedding API is missing some functionality, you might be able to work around it by invoking managed code using `mono_runtime_invoke ()`, i.e. for creating delegates you can call `Delegate.CreateDelegate ()` etc.
 
 Chicken/Egg
 -----------
@@ -624,7 +639,7 @@ If you have a .NET app which P/Invokes to an unmanaged library, which embeds Mon
 
 Under Linux, libmono is statically linked by default. If you p/invoke a library that it turn is linked against libmono, you'll end up with 2 runtime instances.
 
-Even if you link libmono dynamically (there is a \`configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call mono_jit_init/cleanup from the SO.
+Even if you link libmono dynamically (there is a \`configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call `mono_jit_init/cleanup` from the SO.
 
 Samples
 =======
