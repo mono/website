@@ -1,5 +1,10 @@
 ---
 title: Install Mono on Linux
+redirect_from:
+  - /DistroPackages/Ubuntu/
+  - /DistroPackages/Debian/
+  - /docs/getting-started/install/linux/ubuntu/
+  - /docs/getting-started/install/linux/debian/
 ---
 
 The Linux community has made Mono available for various distributions, check the [download page](/download) for a list of packages.
