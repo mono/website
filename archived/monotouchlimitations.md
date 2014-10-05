@@ -50,7 +50,7 @@ Most of the debugging is done with Console.WriteLine.
 Limited Generics Support
 ========================
 
-Mono's [Full AOT](/AOT#full-aot "AOT") support has the following limitations with respect to generics:
+Mono's [Full AOT](/docs/advanced/aot/#full-aot "AOT") support has the following limitations with respect to generics:
 
 Generic Virtual Methods
 -----------------------

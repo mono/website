@@ -412,7 +412,7 @@ cbFrame.assertUnchecked(cbFrame.checkbox2)
 cbFrame.quit()
 ```
 
-Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script](/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
+Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script](#running-your-first-script).
 
 ``` python
 # tell the user where to find the log

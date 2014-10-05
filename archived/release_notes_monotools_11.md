@@ -28,7 +28,7 @@ MonoTools now checks the target server to see if files have changed since the la
 
 ### Preview of Visual Studio 2010 Support
 
-We are shipping a preview of MonoTools that supports [Visual Studio 2010 RC](http://msdn.microsoft.com/en-us/vstudio/dd582936.aspx). This preview should be feature complete, and everything should work exactly like it does in VS2008. Please [Download Mono Tools for Visual Studio 1.1 Release Candidate](http://go-mono.com/monovs-download/latest/monotools-1.1.5462.vsix) for VS2010 RC and let us know if you find any [bugs](/Bugs#Mono_Tools)! (Please note: If IE changes the extension to .zip, you will need to change it back to .vsix to install.)
+We are shipping a preview of MonoTools that supports [Visual Studio 2010 RC](http://msdn.microsoft.com/en-us/vstudio/dd582936.aspx). This preview should be feature complete, and everything should work exactly like it does in VS2008. Please [Download Mono Tools for Visual Studio 1.1 Release Candidate](http://go-mono.com/monovs-download/latest/monotools-1.1.5462.vsix) for VS2010 RC and let us know if you find any [bugs](/Bugs)! (Please note: If IE changes the extension to .zip, you will need to change it back to .vsix to install.)
 
 [Monotools1-1-a.png](/archived/images/a/a8/Monotools1-1-a.png)
 

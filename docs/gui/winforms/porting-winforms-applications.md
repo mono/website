@@ -152,7 +152,7 @@ The downside of this approach is that we must ship separate assemblies for diffe
 
 ### Runtime Conditionals
 
-In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ](/FAQ:_Technical#How_can_I_detect_if_am_running_in_Mono.3F)):
+In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ](/docs/faq/technical/)):
 
 ``` csharp
   public static bool IsRunningOnMono ()

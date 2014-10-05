@@ -300,5 +300,5 @@ The following is a list of UIA Provider interfaces to be used in the table above
 See also
 --------
 
-Interesting as well are the [MWF-\>UIA mappings](/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates](/Accessibility:_UiaAtkBridge#case-study-gtk "Accessibility: UiaAtkBridge").
+Interesting as well are the [MWF-\>UIA mappings](/Accessibility:_Control_Status "Accessibility: Control Status") and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates](/archived/accessibility_uiaatkbridge/#case-study-gtk "Accessibility: UiaAtkBridge").
 

@@ -75,9 +75,9 @@ Installation
     git clone https://github.com/mono/mwf-designer.git
     make; make run
 
-The WinForms Designer **requires** ~~[Mono SVN Head](/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono").~~ Mono 2.0 or newer.
+The WinForms Designer **requires** ~~[Mono SVN Head](/Compiling_Mono "Compiling Mono").~~ Mono 2.0 or newer.
 
-However if you do indeed run it on [Mono SVN Head](/Compiling_Mono#building-mono-from-the-subversion-repository "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
+However if you do indeed run it on [Mono SVN Head](/Compiling_Mono "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
 
 ### Visual Studio
 

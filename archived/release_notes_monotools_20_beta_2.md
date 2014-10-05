@@ -12,7 +12,7 @@ Mono Tools for Visual Studio 2.0 Beta 2
 
 We are proud to announce Mono Tools for Visual Studio 2.0 Beta 2! For MonoTools 2.0, we rewrote many of the techniques that turned out to be pain points for our users. Additionally, we are adding support for debugging more platforms like Mac and Windows.
 
-Beta 2 is primarily a bugfix release, and contains the fixes noted in the [Changes in Beta 2](/Release_Notes_MonoTools_2.0#Changes_in_Beta_2) section below.
+Beta 2 is primarily a bugfix release, and contains the fixes noted in the Changes in Beta 2 section below.
 
 What's New in 2.0
 =================
@@ -136,7 +136,7 @@ The beta is public, so download it now and let us know how it goes!
 
 ### Other useful resources
 
--   [Submit a Bug](/Bugs#Mono_Tools)
+-   [Submit a Bug](/Bugs)
 -   [Discuss in Forums](http://forums.mono-tools.com/)
 
 

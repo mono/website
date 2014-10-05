@@ -226,7 +226,7 @@ IntPtr Constructor (RectangleF frame);
 
 ### Binding Protocols
 
-As described in the API design document, in the section [discussing Models and Protocols](/MonoMac/Documentation/API#models "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
+As described in the API design document, in the section [discussing Models and Protocols](/MonoMac/Documentation/API "MonoMac/Documentation/API"), MonoMac maps the Objective-C protocols into classes that have been flagged with the [Model] attribute. This is typically used when implementing Objective-C delegate classes.
 
 The big difference between a regular bound class and a delegate class is that the delegate class might have one or more optional methods.
 

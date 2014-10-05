@@ -338,7 +338,7 @@ References
 ----------
 
 The [Product roadmap](/Accessibility:_Roadmap)
- The [Architecture overview](/Accessibility#Architecture)
+ The [Architecture overview](/archived/accessibility_architecture/)
  [The Novell & Microsoft announcement](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) to create cross-platform accessibility framework
 
 ### Build Systems

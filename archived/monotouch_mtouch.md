@@ -101,7 +101,7 @@ If your application fails, you can see the fiels output and error to diagnose th
 Debugging on the Simulator
 --------------------------
 
-Debugging on the simulator is currently limited to debugging at the GDB level. This debugging is described in [Debugging with GDB](/Debugging#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
+Debugging on the simulator is currently limited to debugging at the GDB level. This debugging is described in [Debugging with GDB](/docs/debug+profile/debug/#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
 
 ``` bash
  $ mtouch -debugsim Hello.app
@@ -129,7 +129,7 @@ Reading symbols for shared libraries . done
 Debugging on the Device
 -----------------------
 
-Debugging on the device is currently provided thru the Xcode debugging mechanism and uses GDB. This debugging is described in [Debugging with GDB](/Debugging#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
+Debugging on the device is currently provided thru the Xcode debugging mechanism and uses GDB. This debugging is described in [Debugging with GDB](/docs/debug+profile/debug/#debugging-with-gdb "Debugging"). This means that it is mostly useful if you are debugging low-level operations or if you are familiar with Mono internals, it is not a complete managed debugger.
 
 ``` bash
  $ mtouch -xcode Hello -res MainWindow.xib -res Icon.png hello.exe

@@ -8,7 +8,7 @@ redirect_from:
 
 Debugging a problem in an application is like solving a puzzle. There are certain tools that can help you solve the puzzle. This page documents some of the strategies, tools and tricks that you can use in solving these puzzles.
 
-You can find bugs by using a debugger: setting breakpoints, running the code line-by-line, examining variables, changing its state, exploring what other threads are doing, and see what the call stacks for each routines are. See the sections [Mono Debugger](/docs/debug+profile/debug/#mono-debugger), [Debugging with GDB](/docs/debug+profile/debug/#debugging-with-gdb) and [Debugging with LLDB](/docs/debug+profile/debug/#debugging-with-lldb) for more information on this.
+You can find bugs by using a debugger: setting breakpoints, running the code line-by-line, examining variables, changing its state, exploring what other threads are doing, and see what the call stacks for each routines are. See the sections [Debugging with GDB](/docs/debug+profile/debug/#debugging-with-gdb) and [Debugging with LLDB](/docs/debug+profile/debug/#debugging-with-lldb) for more information on this.
 
 You can also debug an application by looking at stack traces. These are typically the result of an exception being thrown, or are the result of the code containing explicit calls to `Console.WriteLine(Environment.StackTrace)`. This helps you understand what the call frames were at the point of the stack traces and you can use this to understand what could have lead to the particular state that you are exploring (the crash, the exception, the report).
 

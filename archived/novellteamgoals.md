@@ -92,7 +92,6 @@ Lead: Paolo Molaro.
 ### Runtime Team Goals
 
 -   Debugger
-    -   Plans is available [debugger plans' here](/Debugger#plan "Debugger").
 -   Generics Support Improvements
     -   The current support needs to be audited, and cleaned up
     -   Optimize memory usage of generics-relate data structures (like removing generic_container from non-generic MonoMethods).
@@ -109,7 +108,7 @@ Lead: Paolo Molaro.
 -   Security:
     -   Implementation of the Mono Verifier
     -   Implement stack overflow clean shutdown.
-    -   Implement new sandboxed execution system (see [Moonlight](/Moonlight#security-model "Moonlight") for details).
+    -   Implement new sandboxed execution system.
 -   Reduce Memory Usage
     -   For all runtime data structures (MonoMethod, MonoClassField, MonoClass, exception tables).
 -   IO-Layer

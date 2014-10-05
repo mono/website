@@ -229,5 +229,5 @@ Source code
 
 Source code for current and previous moonlight releases is available from [our ftp site.](http://ftp.novell.com/pub/mono/sources/moon/)
 
-If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here](/Moonlight#developing-moonlight "Moonlight").
+If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here](/Moonlight).
 

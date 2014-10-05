@@ -121,7 +121,7 @@ The beta is public, so download it now and let us know how it goes!
 
 ### Other useful resources
 
--   [Submit a Bug](/Bugs#Mono_Tools)
+-   [Submit a Bug](/Bugs)
 -   [Discuss in Forums](http://forums.mono-tools.com/)
 
 

@@ -64,7 +64,7 @@ This is the template that should be used for all bugs when they are entered into
 
 ### Remember
 
-Whenever you log a bug, please remember to add a comment with a [bug reference](/Accessibility:_Testing_Howto#bug-references "Accessibility: Testing Howto") (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
+Whenever you log a bug, please remember to add a comment with a [bug reference](/archived/accessibility_testing_howto/#bug-references "Accessibility: Testing Howto") (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
 
 ### Bug Template
 

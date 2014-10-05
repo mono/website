@@ -12,7 +12,6 @@ OldPage
 **32 bits:** [x86](/Mono:X86 "Mono:X86"), [PPC](/Mono:PowerPC "Mono:PowerPC"), [SPARC](/Mono:SPARC "Mono:SPARC"), [S390](/Mono:S390 "Mono:S390"), [ARM](/Mono:ARM "Mono:ARM")
 **64 bits:** [x86-64](/Mono:AMD64 "Mono:AMD64"), [SPARC](/Mono:SPARC "Mono:SPARC"), [IA64](/Mono:IA64 "Mono:IA64")
 **OS:** [Linux](/Mono:Linux "Mono:Linux"), [Windows](/Using_Mono_on_Windows), [OSX](/Mono:OSX "Mono:OSX"), [BSD](/Mono:BSD "Mono:BSD"), [Solaris](/Mono:SPARC "Mono:SPARC")
- **Class status:**[API completion](/Resources#api-completion-status-pages "Resources")
 
 Mono is a platform for running and developing modern applications, based on the ECMA/ISO Standards. Mono can run existing programs targeting the .NET or Java frameworks.
 Mono is an open source effort led by Novell and is the foundation for many new applications. [more...](/About_Mono "About Mono")

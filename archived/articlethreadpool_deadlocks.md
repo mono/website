@@ -36,7 +36,7 @@ The above conditions can lead to a scenario when one of the four users listed ab
 
 -   The end user queues all of his work items on the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool], but the worker code calls into a piece of the class libraries that requires the use of the ThreadPool.
 
--   [XSP](/ASP.NET#XSP) uses the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] to queue requests to handle ASP.NET web requests, and the underlying code internally uses HttpWebRequest, or needs to use the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool].
+-   [XSP](/ASP.NET) uses the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] to queue requests to handle ASP.NET web requests, and the underlying code internally uses HttpWebRequest, or needs to use the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool].
 
 In the above scenarios the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] could be be filled up and when one of the workers attempts to get some work done that requires the ThreadPool the system will deadlock.
 
@@ -77,7 +77,7 @@ These include:
 
 -   Using a separate [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] for the largest consumers of the [http:/monodoc/T:System.Threading.ThreadPool ThreadPool] in our class libraries.**UPDATE:** Implemented as of 2005-04-15.
 
--   Having [XSP](/ASP.NET#XSP) use its own thread pool management to benefit ASP.NET-based applications.
+-   Having [XSP](/ASP.NET) use its own thread pool management to benefit ASP.NET-based applications.
 
 -   Using a single thread to process most of the asynchronous I/O. **UPDATE:** Implemented as of 2005-04-15.
 
