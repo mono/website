@@ -309,8 +309,8 @@ If the deadlock you're experiencing is not caused by your code, it might be a Mo
 
 -   Get your application to deadlock.
 -   Launch gdb from the command line.
--   Execute "attach \<the-mono-process-id\>" (to find the process, pursue "ps -A | grep mono").
--   Execute "thread apply all bt".
+-   Execute `attach <the-mono-process-id>` (to find the process, pursue `ps -A | grep mono`).
+-   Execute `thread apply all bt`.
 
  The output you got with the last step is good to diagnose the problem or to attach to a bug.
 
