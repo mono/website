@@ -101,11 +101,11 @@ To subscribe to a mailing list, click the mailing list name in the left column a
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-cecil">mono-cecil</a></td>
-  <td>Discussion on the CIL manipulation library <a href="/docs/tools+libraries/libraries/Mono.Cecil/>Cecil</a>.</td>
+  <td>Discussion on the CIL manipulation library <a href="/docs/tools+libraries/libraries/Mono.Cecil/">Cecil</a>.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/gendarme">gendarme</a></td>
-  <td>User and developer discussions on the <a href="/docs/tools+libraries/tools/gendarme/>Gendarme</a> static code analyzer tool.</td>
+  <td>User and developer discussions on the <a href="/docs/tools+libraries/tools/gendarme/">Gendarme</a> static code analyzer tool.</td>
 </tr>
 <tr>
   <td><a href="http://groups.google.com/group/mono-olive">mono-olive</a></td>
