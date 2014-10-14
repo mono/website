@@ -61,7 +61,7 @@ Here we are tracking some plans to particular pieces of technology that are part
         </ul>
       </li>
     </ul>
-    
+
     <ul>
       <li>Language support:
         <ul>
@@ -74,7 +74,7 @@ Here we are tracking some plans to particular pieces of technology that are part
         </ul>
       </li>
     </ul>
-    
+
     <ul>
       <li>OpenGL
         <ul>
@@ -84,7 +84,7 @@ Here we are tracking some plans to particular pieces of technology that are part
         </ul>
       </li>
     </ul>
-    
+
     <ul>
       <li>Accessibility
         <ul>
@@ -94,7 +94,7 @@ Here we are tracking some plans to particular pieces of technology that are part
       </li>
     </ul>
   </td>
-  
+
   <td align="left">
     <ul>
       <li>Microsoft-compatible stack:
@@ -110,7 +110,7 @@ Here we are tracking some plans to particular pieces of technology that are part
         </ul>
       </li>
     </ul>
-    
+
     <ul>
       <li>MacOS X
         <ul>
@@ -119,7 +119,7 @@ Here we are tracking some plans to particular pieces of technology that are part
         </ul>
       </li>
     </ul>
-    
+
     <ul>
       <li>Tools
         <ul>
@@ -137,20 +137,19 @@ No longer being developed
 
 The following projects are not actively being developed:
 
-* [WSE](/archived/wse)
-* [EnterpriseServices](/archived/enterpriseservices)
-* [ASP.NET Designer](/archived/aspnet_visual_designer)
-* [WinForms Designer](/archived/winforms_designer)
-* [Transactions](/archived/transactions)
-* [Gecko# Bindings (Mozilla)](/archived/geckosharp)
+-   [WSE](/archived/wse)
+-   [EnterpriseServices](/archived/enterpriseservices)
+-   [ASP.NET Designer](/archived/aspnet_visual_designer)
+-   [WinForms Designer](/archived/winforms_designer)
+-   [Transactions](/archived/transactions)
+-   [Gecko# Bindings (Mozilla)](/archived/geckosharp)
 
 Mono Management
 ---------------
+
 In addition, the following are Mono project management plans:
 
 -   [Infrastructure Projects](/archived/infrastructureprojects "InfrastructureProjects")
 -   Visual Studio Projects
     -   [Mono Tools Getting Started Guide](/archived/gettingstartedwithmonotools "GettingStartedWithMonoTools")
     -   [Visual Studio Integration](/archived/visual_studio_integration "Visual Studio Integration")
-
-
