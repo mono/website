@@ -41,12 +41,7 @@ Server: [Asp.net](/ASP.NET "ASP.NET") | [Database Access](/Database_Access "Data
 <h3>Jun 28th, 2005: Summer of Code Begins</h3>
 <p><a href="http://www.google.com">Google's</a> sponsored <a href="http://code.google.com/summerofcode.html">Open Source Summer of Code</a> has started. Thanks a lot to Chris DiBona and Greg Stein at Google for driving the whole process forward and to Google for funding this effort.</p>
 <p>The Mono project will be mentoring sixteen students during the summer, for more information see our <a href="/Summer2005" title="Summer2005">Summer 2005</a> page.</p>
-<p>If you were not selected as part of the Summer of Code, you can still join the project and contribute. Let <script type="text/javascript">
-<!--
-h='&#110;&#x6f;&#118;&#x65;&#108;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x6d;&#x69;&#x67;&#x75;&#x65;&#108;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'us know'+'<\/'+'a'+'>');
-// -->
-</script><noscript>&#x75;&#x73;&#32;&#x6b;&#110;&#x6f;&#x77;&#32;&#40;&#x6d;&#x69;&#x67;&#x75;&#x65;&#108;&#32;&#x61;&#116;&#32;&#110;&#x6f;&#118;&#x65;&#108;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript> if you are interested.</p>
+<p>If you were not selected as part of the Summer of Code, you can still join the project and contribute. Let us know if you are interested.</p>
 <h3>June 16th, 2005: Mono 1.1.8 has been released</h3>
 <p>Mono 1.1.8 has been released, see the release notes <a href="http://www.go-mono.com/archive/1.1.8">here</a>, get it while its fresh from <a href="/Downloads" title="Downloads">Downloads</a>.</p>
 <h3>June 1st, 2005: Summer of Code</h3>
