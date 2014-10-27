@@ -12,16 +12,14 @@ The Linux community has made Mono available for various distributions, check the
 Installation
 ------------
 
-Regardless of your distribution, you will need the Mono Project public Jenkins GPG signing key, which package managers require:
-
-[http://download.mono-project.com/repo/xamarin.gpg](http://download.mono-project.com/repo/xamarin.gpg)
+Regardless of your distribution, you will need the Mono Project public Jenkins GPG signing key, which package managers require.
 
 ### Debian, Ubuntu, and derivatives
 
 Add the GPG key **in a root shell** with:
 
 ``` bash
-apt-key add xamarin.gpg
+apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
 Next, add the package repository **in a root shell**:
