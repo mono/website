@@ -26,7 +26,7 @@ Here are some of its features:
     -   Upcoming versions of Mono remove this limitation, see the *[Precise Stack Marking](#precise-stack-marking)* section for more information.
 -   Two major collectors:
     -   Copying for nursery/minor collections
-    -   Mark and Sweet for the old generation and major collector
+    -   Mark and Sweep for the old generation and major collector
 -   Per-thread fragments for fast per-thread allocation.
 -   Uses write barriers to minimize the work done on minor collections.
 -   Multi-core garbage collection
