@@ -7,7 +7,7 @@ redirect_from:
 Reporting vulnerabilities
 =========================
 
-Please report security vulnerabilities using our [contact form](http://www.go-mono.com/contact/).
+Please report security vulnerabilities by sending email to hello@xamarin.com
 
 Known vulnerabilities
 =====================
