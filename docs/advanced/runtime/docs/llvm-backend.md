@@ -11,7 +11,7 @@ Usage
 
 The back end requires the usage of our LLVM fork/branches, see 'The LLVM Mono Branch' section below.
 
-The llvm back end can be enabled by passing --enable-llvm=yes or --with-llvm=<llvm prefix> to configure.
+The llvm back end can be enabled by passing `--enable-llvm=yes` or `--with-llvm=<llvm prefix>` to configure.
 
 Platform support
 ---------------
