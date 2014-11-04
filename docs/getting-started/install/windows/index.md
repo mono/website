@@ -1,13 +1,13 @@
 ---
-title: Install Mono on Windows
+title: Instalando Mono no Windows
 redirect_from:
   - /Using_Mono_on_Windows/
   - /Mono:Windows/
 ---
 
-Mono runs on Windows, this page describes the various features available for users who want to use Mono on Windows as well as using Mono-based technologies on Windows without Mono (like Gtk#).
+Rodando o Mono no Windows, Esta página descreve os vários recursos disponíveis para os usuários que querem usar Mono no Windows, bem como a utilização de tecnologias baseadas em Mono no Windows sem Mono (como Gtk #)
 
-Installing Mono on Windows
+Instalando Mono no Windows
 ==========================
 
 1.  Download the latest Windows installer from the [Downloads](/download/)
