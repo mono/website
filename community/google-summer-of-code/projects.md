@@ -17,7 +17,7 @@ Suggest your own ideas for a project
 **[Compilers and Tools](#compilers-and-tools)**
 Work on Mono's tools and compilers
 
-**[MonoDevelop / Xamarin Studio IDE](#monodevelop-2f-xamarin-studio-ide)**
+**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
 **[Mono Runtime](#mono-runtime)**

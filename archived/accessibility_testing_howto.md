@@ -23,8 +23,8 @@ Accessibility: Testing Howto
 <li><a href="#strongwind-introduction">1.1.3 Strongwind Introduction</a></li>
 <li><a href="#strongwind-test-harness">1.1.4 Strongwind Test Harness</a>
 <ul>
-<li><a href="#local-runpy">1.1.4.1 local_run.py</a></li>
-<li><a href="#remote-runpy">1.1.4.2 remote_run.py</a></li>
+<li><a href="#localrunpy">1.1.4.1 local_run.py</a></li>
+<li><a href="#remoterunpy">1.1.4.2 remote_run.py</a></li>
 <li><a href="#official-tests">1.1.4.3 &quot;Official Tests&quot;</a></li>
 <li><a href="#official-test-machine-configuration">1.1.4.4 Official Test Machine Configuration</a></li>
 <li><a href="#qa-architecture-diagram">1.1.4.5 QA Architecture Diagram</a></li>
@@ -32,14 +32,14 @@ Accessibility: Testing Howto
 <li><a href="#example-sample-application">1.1.5 Example Sample Application</a></li>
 <li><a href="#example-application-wrapper">1.1.6 Example Application Wrapper</a>
 <ul>
-<li><a href="#init-py">1.1.6.1 __init__.py</a></li>
+<li><a href="#initpy">1.1.6.1 __init__.py</a></li>
 <li><a href="#gtktutorialframepy">1.1.6.2 gtktutorialframe.py</a></li>
 </ul></li>
 <li><a href="#example-test-script">1.1.7 Example Test Script</a></li>
 </ul></li>
 <li><a href="#orca">1.2 Orca</a>
 <ul>
-<li><a href="#requirements_2">1.2.1 Requirements</a></li>
+<li><a href="#orca-requirements">1.2.1 Requirements</a></li>
 <li><a href="#testing">1.2.2 Testing</a></li>
 <li><a href="#test-writing">1.2.3 Test Writing</a></li>
 </ul></li>
@@ -59,26 +59,26 @@ Accessibility: Testing Howto
 <ul>
 <li><a href="#white">3.1 White</a>
 <ul>
-<li><a href="#introduction_2">3.1.1 Introduction</a></li>
+<li><a href="#white-introduction">3.1.1 Introduction</a></li>
 <li><a href="#example-of-start-white">3.1.2 Example of start White</a></li>
 </ul></li>
 <li><a href="#uia-verify">3.2 UIA Verify</a>
 <ul>
-<li><a href="#introduction_3">3.2.1 Introduction</a></li>
+<li><a href="#uia-verify-introduction">3.2.1 Introduction</a></li>
 <li><a href="#automation-test-suit">3.2.2 Automation Test Suit</a></li>
 </ul></li>
 <li><a href="#uia-client-api-testing-how-to">3.3 UIA Client Api Testing How To</a>
 <ul>
 <li><a href="#what-is-the-ui-automaiton">3.3.1 What is the UI Automaiton?</a></li>
 <li><a href="#what-is-the-uiaclient-used-for">3.3.2 What is the uiaclient used for?</a></li>
-<li><a href="#requirements_3">3.3.3 Requirements</a>
+<li><a href="#uia-requirements">3.3.3 Requirements</a>
 <ul>
 <li><a href="#keepassexe">3.3.3.1 Keepass.exe:</a></li>
 <li><a href="#dockpatternproviderexe">3.3.3.2 DockPatternProvider.exe:</a></li>
 <li><a href="#windowandtransformpatternproviderexe">3.3.3.3 WindowAndTransformPatternProvider.exe:</a></li>
 </ul></li>
-<li><a href="#qa-architecture-diagram_2">3.3.4 QA Architecture Diagram</a></li>
-<li><a href="#example-application-wrapper_2">3.3.5 Example Application Wrapper</a>
+<li><a href="#qa-architecture-diagram-2">3.3.4 QA Architecture Diagram</a></li>
+<li><a href="#example-application-wrapper-2">3.3.5 Example Application Wrapper</a>
 <ul>
 <li><a href="#testbasecs">3.3.5.1 TestBase.cs</a></li>
 <li><a href="#configcs">3.3.5.2 Config.cs</a></li>
@@ -88,7 +88,7 @@ Accessibility: Testing Howto
 <li><a href="#procedureloggercs">3.3.5.6 ProcedureLogger.cs</a></li>
 <li><a href="#utilscs">3.3.5.7 Utils.cs</a></li>
 </ul></li>
-<li><a href="#example-test-script_2">3.3.6 Example Test script</a>
+<li><a href="#example-test-script-2">3.3.6 Example Test script</a>
 <ul>
 <li><a href="#keepasscs">3.3.6.1 Keepass.cs</a></li>
 </ul></li>
@@ -130,7 +130,7 @@ This tutorial will *not* have in-depth explanations about the Strongwind-specifi
 -   [Accerciser](http://live.gnome.org/Accerciser) (1.4.0 or later)
 -   [Strongwind](http://medsphere.org/projects/strongwind) (installing from SVN trunk is highly recommended)
 -   [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython) (the package name in openSUSE is IPCE). Our sample applications are written in IronPython, so it must be installed for them to run successfully.
--   [uia2atk code](/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 
 ### Strongwind Introduction
 
@@ -232,7 +232,7 @@ This diagram summarizes how WinForms testing is performed using Strongwind and t
 
 Our team does not test a specific application. Instead, our developers are writing code to make sure that Mono WinForms applications are accessible. This means that we can writer our testing against whatever application(s) we wish. The approach we take is to create small and simple "sample applications." Our sample applications can be found in our code repository in the *test/samples* directory.
 
-At this point you should [check out the uia2atk code](/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
+At this point you should [check out the uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
 
 After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples. For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
 
@@ -416,7 +416,7 @@ class GtkTreeViewFrame(accessibles.Frame):
         assert retryUntilTrue(resultMatches)
 ```
 
-### Example Test Script
+### Example Test script
 
 The test script is also no different than previous examples. The code below is aggressively documented and should be fairly easy to follow:
 
@@ -524,7 +524,7 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [Python](http://www.python.org)
 -   Enable "Assistive Technologies" from the GNOME Control Center
 -   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
--   [uia2atk code](/Accessibility:_Getting_Started_With_Development#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 -   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
 -   Set *orca.debug.debugLevel = orca.debug.LEVEL_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.
@@ -1042,7 +1042,7 @@ ouput the info to screen and write it into a xml file
 
 Takes a screenshot of the current action.
 
-### Example Test script
+### Example Test script 2
 
 #### Keepass.cs
 

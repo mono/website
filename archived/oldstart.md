@@ -52,7 +52,7 @@ Novell training:
 
 Novell support:
 
--   [Kickstart Developer Support from Novell](/Mono_Developer_Support_from_Novell)
+-   Kickstart Developer Support from Novell
 
 Mono in Action
 ==============

@@ -38,7 +38,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 Porting the code
 ----------------
 
-When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the [MONO_IOMAP](#iomap-anchor) approach. By using the MONO_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
+When initially testing the application on Unix, you might choose not to deal with case-sensitivity issues described below, but instead use the MONO_IOMAP approach. By using the MONO_IOMAP feature, you can ignore the differences between the Windows file system (case insensitive, and uses \\ as a path separator) and the Unix file system (case sensitive, and uses / as the path separator).
 
 Required assemblies
 -------------------

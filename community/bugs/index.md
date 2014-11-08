@@ -18,7 +18,7 @@ We encourage developers to use our software and help us make it a stable, featur
 Quick Resources:
 
 -   [Xamarin's Bugzilla](http://bugzilla.xamarin.com/index.cgi)
--   [How to make a good bug report](#how-to-make-a-good-bug-report)
+-   [How to make a good bug report](/community/bugs/make-a-good-bug-report/)
 
 |  |Query|Patches|Add|
 |[Mono Runtime](/docs/advanced/runtime/)|[Xam.](http://bit.ly/qNGtOO "Xamarin") / [Nov.](http://bit.ly/piDqhE "Novell")|[Xam.](http://bit.ly/rpD4oL "Xamarin") / [Nov.](http://bit.ly/qyRtsB "Novell")|[+](http://bit.ly/qFa0pT "Xamarin")|

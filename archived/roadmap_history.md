@@ -286,9 +286,9 @@ Mono 1.2 is an incremental upgrade to Mono 1.0, and contains the following new f
 
 Mono 1.2 also include assemblies from .NET 2.0 and these are available as technology previews:
 
--   XML 2.0 ([Track Progress](/XML#forthcoming-mono-12-features "XML"))
+-   XML 2.0
 
--   ASP.NET 2.0 ([Track Progress](/ASP.NET#aspnet-20 "ASP.NET"))
+-   ASP.NET 2.0
 
 -   ADO.NET 2.0
 

@@ -62,5 +62,5 @@ If you are calling into your own native library, then it depends on the cross-pl
 
 The native library that is being called is listed in the last column on MoMA's detail report.
 
-To find out at runtime which platform your application is running on, see: [FAQ:\_Technical#How\_to\_detect\_the\_execution_platform\_.3F](/docs/faq/technical/#how-to-detect-the-execution-platform-3f)
+To find out at runtime which platform your application is running on, see: [FAQ:\_Technical#How\_to\_detect\_the\_execution_platform\_.3F](/docs/faq/technical/)
 

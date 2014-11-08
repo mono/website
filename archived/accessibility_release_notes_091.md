@@ -112,7 +112,7 @@ Errata
 -   Support for focus and selection events for ToolStripItem is incomplete ([#443971](https://bugzilla.novell.com/show_bug.cgi?id=443971)).
 -   RadioButtons don't have a MemberOf relation yet. [#447885](https://bugzilla.novell.com/show_bug.cgi?id=447885)
 -   Text attributes are not present in any Atk.Object yet ([#442581](https://bugzilla.novell.com/show_bug.cgi?id=442581)) because of a bug in the Atk# binding: [#393565](https://bugzilla.novell.com/show_bug.cgi?id=393565).
--   Active state of a Form is not removed when switching to another application (due to a [limitation](/Accessibility:_Specification_Notes#Feature_requests) in the Provider API) ([#445199](https://bugzilla.novell.com/show_bug.cgi?id=445199))
+-   Active state of a Form is not removed when switching to another application (due to a [limitation](/archived/accessibility_specification_notes/#feature-requests) in the Provider API) ([#445199](https://bugzilla.novell.com/show_bug.cgi?id=445199))
 
 Downloading
 -----------

@@ -6,7 +6,7 @@ redirect_from:
   - /MoMa/
 ---
 
-[![](/archived/images/5/53/Moma2p1.png)](/archived/images/5/53/Moma2p1.png)
+[![Moma2p1.png](/archived/images/5/53/Moma2p1.png)](/archived/images/5/53/Moma2p1.png)
 
 Mono Migration Analyzer
 

@@ -28,7 +28,7 @@ Gcc4cil
 The gcc4cil project
 ===================
 
-A team in a research lab at [[ST Microelectronics](http://www.st.com)] added a CIL backend to gcc (incidentally, they published their results in the same summer in which a Google SOC [[project](/Summer2006#GCC_CIL_Backend)] was attempting the same thing).
+A team in a research lab at [[ST Microelectronics](http://www.st.com)] added a CIL backend to gcc (incidentally, they published their results in the same summer in which a Google SOC [[project](/archived/summer2006/#gcc-cil-backend)] was attempting the same thing).
 
 The project has then been accepted as an official gcc branch, so the code lives in the gcc repository ("svn co [svn://gcc.gnu.org/svn/gcc/branches/st/cli](svn://gcc.gnu.org/svn/gcc/branches/st/cli)").
 

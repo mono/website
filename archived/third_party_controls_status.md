@@ -83,9 +83,7 @@ Produced by AdTsai as part of the [GHOP](http://code.google.com/p/google-highly-
 <li><a href="#timeline">4.4 Timeline</a></li>
 </ul></li>
 <li><a href="#spreadsheetgear">5 SpreadsheetGear</a>
-<ul>
-<li><a href="#spreadsheetgear_2">5.1 SpreadsheetGear</a></li>
-</ul></li>
+</li>
 <li><a href="#xceed">6 Xceed</a>
 <ul>
 <li><a href="#compression">6.1 Compression</a></li>

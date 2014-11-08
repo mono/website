@@ -19,7 +19,7 @@ Accessibility: Sprint 4
 <li><a href="#high-priority-open-bugs">1.1 High-Priority Open bugs</a></li>
 <li><a href="#features-slated-for-09-release">1.2 Features slated for 0.9 release</a></li>
 <li><a href="#open-bugs">1.3 Open Bugs</a></li>
-<li><a href="#10-architecture-changes">1.4 1.0 Architecture changes</a></li>
+<li><a href="#architecture-changes">1.4 1.0 Architecture changes</a></li>
 </ul></li>
 </ul></td>
 </tr>

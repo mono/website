@@ -29,9 +29,7 @@ Some of the information here is out of date. For up to date information and samp
 <li><a href="#sample-code">2.2 Sample Code</a></li>
 </ul></li>
 <li><a href="#tracker-library">3 Tracker Library</a>
-<ul>
-<li><a href="#features_2">3.1 Features</a></li>
-</ul></li>
+</li>
 </ul></td>
 </tr>
 </tbody>

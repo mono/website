@@ -3,6 +3,7 @@ title: Sobre o Mono
 redirect_from:
   - /About_Mono/
   - /About/
+  - /about/
   - /Mono:About/
   - /What_is_Mono/
   - /What_is_Mono%3F/

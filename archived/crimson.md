@@ -14,7 +14,7 @@ Crimson
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#what-is-it-">1 What is it ?</a>
+<li><a href="#what-is-it">1 What is it ?</a>
 <ul>
 <li><a href="#target-audience">1.1 Target audience</a></li>
 <li><a href="#support">1.2 Support</a></li>

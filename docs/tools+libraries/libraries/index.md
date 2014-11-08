@@ -10,7 +10,7 @@ GUI Development
 [Gtk#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
 
-[![](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
+[![IFolder_Linux.png](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
 
 [GTK#](/docs/gui/gtksharp/) action with iFolder
 
@@ -143,7 +143,7 @@ Availability: [Web](https://github.com/mono/Mono.Zeroconf/) [snapshot](https://g
 [Windows.Forms](/docs/gui/winforms/)
 -----------------------------------------------------------------
 
-[![](/archived/images/e/ec/Colordialog.png)](/archived/images/e/ec/Colordialog.png)
+[![Colordialog.png](/archived/images/e/ec/Colordialog.png)](/archived/images/e/ec/Colordialog.png)
 
 [MWF](/docs/gui/winforms/)'s color dialog box
 
@@ -173,7 +173,7 @@ Xamarin.Mac
 
 Xamarin.Mac is a commercial API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
 
-Homepage: [http://xamarin.com/mac
+Homepage: [http://xamarin.com/mac](http://xamarin.com/mac)
 
 Native MacOS toolkit.
 
@@ -207,7 +207,6 @@ Cons:
 
 -   Not portable outside of MacOS X
 
-
 Clutter
 -------
 
@@ -234,7 +233,6 @@ JayRock
 -------
 
 [JayRock](http://jayrock.berlios.de/) is a modest and an open source (LGPL) implementation of JSON and JSON-RPC for the Microsoft .NET Framework, including ASP.NET. What can you do with Jayrock? In a few words, Jayrock allows clients, typically JavaScript in web pages, to be able to call into server-side methods using JSON as the wire format and JSON-RPC as the procedure invocation protocol. The methods can be called synchronously or asynchronously.
-
 
 ExtJS Extender Controls
 -----------------------
@@ -289,7 +287,7 @@ MonoRail differs from the standard WebForms way of development as it enforces se
 Deveel Ajax
 -----------
 
-[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax "Introduction to Deveel AJAX") on [Mono Project]().
+[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax "Introduction to Deveel AJAX") on Mono Project.
 
 Magic Ajax
 ----------
@@ -315,7 +313,7 @@ Reporting
 fyiReporting
 ------------
 
-[![](/archived/images/c/ca/Fyireporting.jpg)](/archived/images/c/ca/Fyireporting.jpg)
+[![Fyireporting.jpg](/archived/images/c/ca/Fyireporting.jpg)](/archived/images/c/ca/Fyireporting.jpg)
 
 Designer screenshot
 
@@ -335,7 +333,7 @@ ReportMan is open source software.
 FlexCelNet
 ----------
 
-[![](/archived/images/b/bb/FlexCelPreview.gif)](/archived/images/b/bb/FlexCelPreview.gif)
+[![FlexCelPreview.gif](/archived/images/b/bb/FlexCelPreview.gif)](/archived/images/b/bb/FlexCelPreview.gif)
 
 An Excel report rendered
 

@@ -20,33 +20,33 @@ During the Summer of 2005, the Mono project will be mentoring a group of student
 <li><a href="#the-objectives">2 The Objectives</a></li>
 <li><a href="#gcc-cil">3 GCC CIL</a>
 <ul>
-<li><a href="#objectives">3.1 Objectives</a></li>
+<li><a href="#gcc-cil-objectives">3.1 Objectives</a></li>
 <li><a href="#notes">3.2 Notes</a></li>
 </ul></li>
 <li><a href="#managed-c-extensions-to-gcc">4 Managed C++ extensions to GCC</a></li>
 <li><a href="#rubynet">5 Ruby.NET</a>
 <ul>
-<li><a href="#objectives_2">5.1 Objectives</a></li>
+<li><a href="#rubynet-objectives">5.1 Objectives</a></li>
 </ul></li>
 <li><a href="#msbuild-implementation">6 MSBuild implementation</a>
 <ul>
-<li><a href="#objectives_3">6.1 Objectives</a></li>
+<li><a href="#msbuild-objectives">6.1 Objectives</a></li>
 </ul></li>
 <li><a href="#diva">7 Diva</a>
 <ul>
-<li><a href="#objectives_4">7.1 Objectives</a></li>
+<li><a href="#diva-objectives">7.1 Objectives</a></li>
 </ul></li>
 <li><a href="#aspnet-gui-designer">8 ASP.NET GUI Designer</a>
 <ul>
-<li><a href="#objectives_5">8.1 Objectives</a></li>
+<li><a href="#aspnet-gui-designer-objectives">8.1 Objectives</a></li>
 </ul></li>
 <li><a href="#xaml-compiler">9 XAML Compiler</a>
 <ul>
-<li><a href="#objectives_6">9.1 Objectives</a></li>
+<li><a href="#xaml-compiler-objectives">9.1 Objectives</a></li>
 </ul></li>
 <li><a href="#monodoc">10 MonoDoc</a>
 <ul>
-<li><a href="#objectives_7">10.1 Objectives</a></li>
+<li><a href="#monodoc-objectives">10.1 Objectives</a></li>
 </ul></li>
 </ul></td>
 </tr>
@@ -59,7 +59,7 @@ The Members
 -   Jaen Saul: [#Ruby.NET](#rubynet) implementation
 -   Jb Evain: [Cecil/Write](/Cecil "Cecil") support
 -   Jeyasankar Kottalam: [GCC CIL](#gcc-cil) backend
--   Marek Sieradzki: [MSBuild](#msbuild) implementation
+-   Marek Sieradzki: [MSBuild](#msbuild-implementation) implementation
 -   Michael Hutchinson: [ASP.NET GUI Designer](#aspnet-gui-designer)
 -   Aaron Tomb: Bug finder
 -   Blagovest Dachev: [ASP.NET GUI Designer](#aspnet-gui-designer)
@@ -227,7 +227,7 @@ Location: Mono SVN repository.
 
 Blog: [http://msopena.blogspot.com](http://msopena.blogspot.com)
 
-### Objectives
+### MonoDoc Objectives
 
 Monodoc improvements.
 

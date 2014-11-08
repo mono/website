@@ -102,7 +102,7 @@ MONO_SHARED_DIR="/home/username/tmp" \
 
 This script also logs stdout and stderr and creates a pid file.
 
-You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled](/FastCGI#how-applications-are-handled-and-how-to-configure-them "FastCGI").
+You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled](/docs/web/fastcgi/#how-applications-are-handled-and-how-to-configure-them "FastCGI").
 
 Recycling the FastCGI server
 ----------------------------
@@ -165,7 +165,7 @@ A simple Apache configuration file (*/home/username/public_html/.htaccess*):
     Action mono-cgi /cgi-bin/mono-cgi
     AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 
-You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/Mod_mono#manual-mod-mono-configuration "Mod mono").
+You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/docs/web/mod_mono/#manual-modmono-configuration "Mod mono").
 
  To improve security you should protect ASP.NET Application Folders:
 

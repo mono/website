@@ -16,30 +16,30 @@ MonoTouch Release Notes:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#10-rc2">1 1.0 RC2</a></li>
-<li><a href="#10-rc">2 1.0 RC</a></li>
-<li><a href="#10-beta-8">3 1.0 Beta 8</a></li>
-<li><a href="#10-beta-7">4 1.0 Beta 7</a></li>
-<li><a href="#10-beta-6">5 1.0 Beta 6</a></li>
-<li><a href="#10-beta-5">6 1.0 Beta 5</a></li>
-<li><a href="#10-beta-4">7 1.0 Beta 4</a></li>
-<li><a href="#10-beta-3">8 1.0 Beta 3</a></li>
-<li><a href="#10-beta-2">9 1.0 Beta 2</a></li>
-<li><a href="#10-beta-1">10 1.0 Beta 1</a></li>
+<li><a href="#rc2">1 1.0 RC2</a></li>
+<li><a href="#rc">2 1.0 RC</a></li>
+<li><a href="#beta-8">3 1.0 Beta 8</a></li>
+<li><a href="#beta-7">4 1.0 Beta 7</a></li>
+<li><a href="#beta-6">5 1.0 Beta 6</a></li>
+<li><a href="#beta-5">6 1.0 Beta 5</a></li>
+<li><a href="#beta-4">7 1.0 Beta 4</a></li>
+<li><a href="#beta-3">8 1.0 Beta 3</a></li>
+<li><a href="#beta-2">9 1.0 Beta 2</a></li>
+<li><a href="#beta-1">10 1.0 Beta 1</a></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-[1.0 RC2](http://www.go-mono.com/monotouch-download/monotouch-0.9.10-20090913-0.pkg)
-====================================================================================
+1.0 RC2
+=======
 
 Fixes in RC2
 
 -   In very specific cases, wrappers could be shared improperly between methods leading to a crash.
 
-[1.0 RC](http://www.go-mono.com/monotouch-download/monotouch-0.9.9-20090912-2.pkg)
-==================================================================================
+1.0 RC
+======
 
 Additions in RC
 
@@ -81,8 +81,8 @@ Changes in RC
 -   Renamed static CGImage.FromImageMask (CGImage, CGImage) to instance CGImage.WithMask (CGImage)
 -   Renamed URL property to Url on NSUrlRequest
 
-[1.0 Beta 8](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090901-1.pkg)
-====================================================================================
+1.0 Beta 8
+==========
 
 Additions in Beta 8
 
@@ -102,8 +102,8 @@ Changes in Beta 8
 
 -   removed -lib flag from mtouch (use -gcc_flags)
 
-[1.0 Beta 7](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090828-1.pkg)
-====================================================================================
+1.0 Beta 7
+==========
 
 Additions in Beta 7
 
@@ -127,8 +127,8 @@ Changes in Beta 7
 -   The GLPaint and OpenGLESSample samples have been updated to use Utilities.CreateGraphicsContext() to initialize GL
 -   New GLPaint-GV and OpenTLESSample-GV samples have been added to use iPhoneOSGameView for comparison
 
-[1.0 Beta 6](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090825-2.pkg)
-====================================================================================
+1.0 Beta 6
+==========
 
 Additions in Beta 6
 
@@ -146,8 +146,8 @@ Changes in Beta 6
 -   renamed OpenTK.Graphics.ES11.ES to OpenTK.Graphics.ES11.GL
 -   renamed OpenTK.Graphics.ES20.ES to OpenTK.Graphics.ES20.GL
 
-[1.0 Beta 5](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090821-0.pkg)
-====================================================================================
+1.0 Beta 5
+==========
 
 Additions in Beta 5:
 
@@ -166,8 +166,8 @@ Fixes in Beta 5:
 -   fixed UILabel.Text to allow null's
 -   fixed mtouch to generate xcodeproj's with the requisite frameworks linked
 
-[1.0 Beta 4](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090818-0.pkg)
-====================================================================================
+1.0 Beta 4
+==========
 
 Fixes in Beta 4:
 
@@ -178,8 +178,8 @@ Fixes in Beta 4:
 -   fixed #531955, full-aot crash when using Dictionary\<int,int\>
 -   fixed #532120, full-aot crash working with String[]
 
-[1.0 Beta 3](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090817-3.pkg)
-====================================================================================
+1.0 Beta 3
+==========
 
 Additions in Beta 3:
 
@@ -202,8 +202,8 @@ Fixes in Beta 3:
 -   fixed null argument handling in runtime marshaller
 -   fixed stackoverflow in PerformSelector call
 
-[1.0 Beta 2](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090810-0.pkg)
-====================================================================================
+1.0 Beta 2
+==========
 
 Additions in Beta 2:
 
@@ -224,8 +224,8 @@ Fixes in Beta 2:
 -   Fixed -framework linking when using things .
 -   Improved imported documentation (properties now imported, etc.).
 
-[1.0 Beta 1](http://www.go-mono.com/monotouch-download/monotouch-0.9-20090805-3.pkg)
-====================================================================================
+1.0 Beta 1
+==========
 
 Initial Release.
 

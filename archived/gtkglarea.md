@@ -8,7 +8,7 @@ redirect_from:
 GtkGLArea
 =========
 
-[![](/archived/images/7/72/Gtkgl.png)](/archived/images/7/72/Gtkgl.png)
+[![Gtkgl.png](/archived/images/7/72/Gtkgl.png)](/archived/images/7/72/Gtkgl.png)
 
 A view of a 3D model using GtkGLArea
 

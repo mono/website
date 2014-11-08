@@ -109,9 +109,6 @@ Framework
     -   [reference 2](http://lists.ximian.com/pipermail/mono-devel-list/2006-August/020161.html)
     -   [reference 3](http://lists.ximian.com/pipermail/mono-devel-list/2006-August/020166.html)
 
--   Statistics
-    -   [Keep useful/debugging statistics in gendarme](/community/google-summer-of-code/projects/#Statistics_.26_Performance_Analysis)
-
 Rules
 -----
 

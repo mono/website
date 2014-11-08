@@ -54,7 +54,7 @@ When you run "myprogram," the shell will replace \$@ with any arguments you prov
 
 If you installed mono to a different location, substitute that for /usr/bin/mono. You can check with the "which mono" command.
 
-See also [Application Deployment Layout Guidelines](/Guidelines:Application_Deployment#layout-recommendation "Guidelines:Application Deployment").
+See also [Application Deployment Layout Guidelines](/docs/getting-started/application-deployment/#layout-recommendation "Guidelines:Application Deployment").
 
 Registering .exe as non-native binaries (Linux only)
 ----------------------------------------------------

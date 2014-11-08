@@ -15,7 +15,7 @@ These are the details of how the binding takes place.
 
 It is possible to use the [[Register](http://docs.go-mono.com/MonoMac.Foundation.RegisterAttribute)] attribute, [[Export](http://docs.go-mono.com/MonoMac.Foundation.ExportAttribute)] attribute, and manual Objective-C selector invocation together to manually bind new (previously unbound) Objective-C types.
 
-First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
+First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
 
 Second, we need to create the C# type. We'll likely want to place this into a namespace; since Objective-C doesn't support namespaces, we'll need to use the [Register] attribute to change the type name that MonoTouch will register with the Objective-C runtime. The C# type must also inherit from [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject):
 

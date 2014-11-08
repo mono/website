@@ -2,7 +2,7 @@
 layout: base
 title: Download
 navgroup: download
-latestmono: 3.8.0
+latestmono: 3.10.0
 redirect_from:
   - /downloads/
   - /Downloads/
@@ -27,8 +27,10 @@ redirect_from:
         <p>Por favor procure no <a href="/docs/getting-started/install/mac"> guia de instalação</a> maiores informações sobre como intalar e configurar o ambiente do Mono no Mac.</p>
         <p><i>O MDK package é para desenvolvedores.</i></p>
         <div>
-          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MRE-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MRE</a>
-          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
+          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MRE-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Baixar Mono MRE</a>
+          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Baixar Mono MDK</a>
+          <p>MRE é o  Mono Runtime Environment, MDK é o Mono Development Kit.</p>
+          <p><i>Use o MDK se você está desenvolvendo aplicações que rodam no .NET/Mono. Ele inclui o MRE e ferramentas adicionais, bibliotecas, perfis .NET PCL (Portable Class Library), etc. que são necessários para desenvolvimento.</i></p>
         </div>
       </div>
       <div class="panel content" id="download-lin">
@@ -36,13 +38,11 @@ redirect_from:
         <p>Por favor procure informações no <a href="/docs/getting-started/install/linux"> guia de instalação</a> por mais informações de como instalar e configurar o ambiente do Mono.</p>
         <h4>Pacotes Xamarin</h4>
         <div>
-          {% include note.html type="alert" message="Estes pacotes são versões de previsualização técnica. Para pacotes mais rigorosamente testados use a versão do Mono que está disponível para a sua distribuição." %}
           <p>Estes pacotes são construídos, testados e distribuidos pela Xamarin. Use estes se você quiser usar a versão estável oficial do Mono.</p>
-          <p>Por favor veja o guia de instalação para saber como adicionar o repositório no seu gerenciador de pacotes!</p>
-          <h5>Pacotes do Mono para Debian, Ubuntu e derivados</h5>
-          <p>Repositório Apt: <tt>deb http://download.mono-project.com/repo/debian wheezy main</tt></p>
-          <h5>Pacotes do Mono para Red Hat, SUSE e derivados</h5>
-          <p>Repositório Yum: <tt>http://download.mono-project.com/repo/centos/</tt></p>
+          <ul>
+            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives">Debian, Ubuntu, e derivados</a></li>
+            <li><a href="/docs/getting-started/install/linux/#centos-fedora-and-derivatives">Red Hat, SUSE e derivados</a></li>
+          </ul>
         </div>
         <h4>Pacotes das Próprias Distribuições Linux</h4>
         <p>O Mono é empacotado para diversas distribuições Linux por mantenedores externos. Alguns pacotes não contém a última versão do Mono, isso depende de cada distribuição/mantenedor.</p>
@@ -65,7 +65,8 @@ redirect_from:
         <div>
           <p>Estes pacotes são desenvolvidos pela comunidade, os links estão aqui para sua conveniencia. Eles não são testados pela Xamarin, use por sua conta e risco.</p>
           <ul>
-            <li><a href="http://software.opensuse.org/download/package?project=home:tpokorra:mono&package=mono-opt">Pacotes Mono para instalar no /opt para uso no CentOS, Fedora, Debian e Ubuntu</a></li>
+            <li><a href="http://software.opensuse.org/download/package?project=home:tpokorra:mono&amp;package=mono-opt">Pacotes Mono para instalar no /opt para uso no CentOS, Fedora, Debian e Ubuntu</a></li>
+            <li><a href="http://software.opensuse.org/download/package?project=Mono:Factory&amp;package=mono-complete">Latest SUSE mono packages, part of the official "Factory" repository</a></li>
           </ul>
         </div>
       </div>

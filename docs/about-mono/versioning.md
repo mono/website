@@ -46,4 +46,4 @@ For compatibility reasons, Mono's `System.Environment.Version` property returns 
 Application Versioning
 ----------------------
 
-\`mono --version\` and \`mcs --version\` return the version of the Mono distribution.
+`mono --version` and `mcs --version` return the version of the Mono distribution.

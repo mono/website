@@ -25,7 +25,7 @@ XML Schema Inference
 <ul>
 <li><a href="#targets">3.1 Targets</a></li>
 <li><a href="#generating-xsattribute">3.2 Generating xs:attribute</a></li>
-<li><a href="#use--required--optional-">3.3 use = &quot;required&quot; ? &quot;optional&quot; ?</a></li>
+<li><a href="#use--required-optional">3.3 use = &quot;required&quot; ? &quot;optional&quot; ?</a></li>
 <li><a href="#type">3.4 type</a></li>
 <li><a href="#complextype">3.5 complexType</a></li>
 <li><a href="#not-supported-inference-attributegroup">3.6 Not supported inference: attributeGroup</a></li>

@@ -39,7 +39,7 @@ Mono can be used in variety of applications, however there are some pieces which
 -   [C# Compiler](/CSharp_Compiler "CSharp Compiler") and [Mono Runtime](/Mono:Runtime)
 -   [Debugger](/Debugger "Debugger"), [Debugging Tutorial](/Guide:Debugger "Guide:Debugger") and [Debugging](/Debugging "Debugging")
 -   [Profiling](/Profile "Profile")
--   [Class Status](/Resources#api-completion-status-pages "Resources") and [API Documentation](http://www.go-mono.com/docs/)
+-   [API Documentation](http://www.go-mono.com/docs/)
 
 Create a cross-platform application
 -----------------------------------

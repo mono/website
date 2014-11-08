@@ -813,7 +813,7 @@ When committing code on behalf of others use the --author option, for example:
 Work Branches
 -------------
 
-See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
+See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-master-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
 RCS and CVS tags
 ----------------
@@ -1077,7 +1077,7 @@ The ChangeLogs are automatically generated at distribution time from the Git com
 Personal Work Branches
 ----------------------
 
-See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-27master27-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
+See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-master-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
 If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [http://github.com/mono](http://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
 

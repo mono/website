@@ -25,7 +25,7 @@ Usage
 mkbundle, the linker's best friend
 ----------------------------------
 
-The linker operates only at the assemblies level. By using the [mkbundle](/docs/tools+libraries/tools/#project-converstion-26-deployment) program, you can create a single executable which will contain the strict minimum it needs to run.
+The linker operates only at the assemblies level. By using the [mkbundle](/docs/tools+libraries/tools/#project-conversion--deployment) program, you can create a single executable which will contain the strict minimum it needs to run.
 
 See the man page for mkbundle for details on its operation.
 

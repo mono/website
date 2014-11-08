@@ -21,31 +21,19 @@ Since Mono is a large piece of software you must strictly follow the [Compiling 
 Can not compile my source
 -------------------------
 
-When compiling your sources please bear in mind that mono provides three [C#-Compilers](/docs/about-mono/languages/csharp/), **mcs**, **gmcs** and **smcs**.
-
--   **mcs** is the standard compiler for code which is targeting the .Net Framework 1.1
--   **gmcs** is Mono's compiler for the the .Net Framework 2.0 and beyond\*
-
-    ``` nowiki
-    *
-    ```
-
-    gmcs does partly support [C# 3.0 language features](/docs/about-mono/languages/csharp/#under-development-features "CSharp Compiler")
-
--   **smcs**: compiler to target the 2.1 runtime, to build [Moonlight](/docs/web/moonlight/) applications.
-
+When compiling your sources please bear in mind that Mono provides a [C#-Compiler](/docs/about-mono/languages/csharp/), **mcs**.
 Most help request regarding the compilation of user software can be fixed by adding the proper references because only `mscorlib.dll` and `System.dll` are referenced by default.
 
 To add references to additional assemblies, the `-r:Assembly` switch can be used:
 
 ``` bash
-gmcs Source.cs -r:System.Drawing.dll -r:System.Windows.Forms.dll
+mcs Source.cs -r:System.Drawing.dll -r:System.Windows.Forms.dll
 ```
 
-More help can be found in the manuals of mcs and gmcs:
+More help can be found in the manuals of mcs:
 
 ``` bash
-man gmcs
+man mcs
 ```
 
 Works under .Net but not on Mono

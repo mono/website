@@ -140,5 +140,3 @@ Adicionalmente os seguintes são projetos administrativos do projeto Mono:
 -   Projetos do Visual Studio
     -   [Guia 'Primeiros Passos' das Ferramentas do Mono para o Visual Studio](/archived/gettingstartedwithmonotools)
     -   [Integração com o Visual Studio](/archived/visual_studio_integration)
-
-

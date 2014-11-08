@@ -103,7 +103,7 @@ Knowing where to look for the library is only half of the problem. Knowing what 
 
 Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>[1](#lib-name-note)</sup>. Mac OS X platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
 
-Note 1: Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
+<span id="lib-name-note">Note 1:</span> Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
 
 If you have control over the library name, keep the above naming conventions in mind and don't use a platform-specific library name in the **DllImport** statement. Instead, just use the library name itself, without any prefixes or suffixes, and rely on the runtime to find the appropriate library at runtime. For example:
 
@@ -498,7 +498,7 @@ This means that you cannot use classes to invoke unmanaged functions that expect
 
 There are two other issues with classes. First of all, classes by default use [LayoutKind.Auto](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Auto) layout. This means that the ordering of class data members is unknown, and won't be determined until runtime. The runtime can rearrange the order of members in any way it chooses, to optimize for access time or data layout space. As such, you *MUST* use the [StructLayout](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.StructLayoutAttribute) attribute and specify a [LayoutKind](http://docs.go-mono.com/index.aspx?link=E:System.Runtime.InteropServices.LayoutKind) value of [LayoutKind.Sequential](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Sequential) or [LayoutKind.Explicit](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.LayoutKind.Explicit).
 
-Secondly, classes (again, by default) only have in-bound marshaling. That is, [Step 4](#marshal-step-4) (copying the unmanaged memory representation back into managed memory) is ommitted. If you need the unmanaged memory to be copied back into managed memory, you must addorn the **DllImport** function declaration argument with an [Out](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.OutAttribute) attribute. You will also need to use the [In](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.InAttribute) attribute if you want copy-in and copy-out behavior. To summarize:
+Secondly, classes (again, by default) only have in-bound marshaling. That is, Step 4 (copying the unmanaged memory representation back into managed memory) is ommitted. If you need the unmanaged memory to be copied back into managed memory, you must addorn the **DllImport** function declaration argument with an [Out](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.OutAttribute) attribute. You will also need to use the [In](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.InAttribute) attribute if you want copy-in and copy-out behavior. To summarize:
 
 -   Using `[In]` is equivalent to not specifying any parameter attributes, and will skip Step 4 (copying unmanaged memory into managed memory).
 -   Using `[Out]` will skip Step 2 (copying managed memory into unmanaged memory).
@@ -733,7 +733,7 @@ The C 'long' type is difficult to marshal as a struct member, since there is no 
 
 Inline arrays can be marshaled by using a **MarshalAs** attribute with **UnmanagedType.ByValArray** and specifying the [MarshalAsAttribute.SizeConst](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst) field to the size of the array to marshal. Inline arrays which contain strings can use **UnmanagedType.ByValTStr** for a string.
 
-However, the runtime doesn't automatically allocate arrays specified as **UnmanagedType.ByValArray**. The programmer is still responsible for allocating the managed array. See the [summary](#marshaling-members-summary) for more information.
+However, the runtime doesn't automatically allocate arrays specified as **UnmanagedType.ByValArray**. The programmer is still responsible for allocating the managed array. See the [summary](#summary-2) for more information.
 
 TODO: Bernie Solomon says that for `out` parameters, the runtime will allocate the inline array memory. Check this out.
 

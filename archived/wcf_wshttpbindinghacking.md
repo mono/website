@@ -21,9 +21,8 @@ On this page I put my hacking notes for WSHttpBinding and relevant stuff which w
 <li><a href="#transactionflowbindingelement">1.1 TransactionFlowBindingElement</a></li>
 <li><a href="#reliablesessionbindingelement">1.2 ReliableSessionBindingElement</a></li>
 <li><a href="#compositeduplexbindingelement-and-onewaybindingelement">1.3 CompositeDuplexBindingElement and OneWayBindingElement</a></li>
-<li><a href="#securitybindingelement">1.4 SecurityBindingElement</a></li>
 </ul></li>
-<li><a href="#securitybindingelement_2">2 SecurityBindingElement</a>
+<li><a href="#securitybindingelement">2 SecurityBindingElement</a>
 <ul>
 <li><a href="#wshttpbindingsecuritymessage-nondualmessagesecurityoverhttp">2.1 WSHttpBinding.Security.Message (NonDualMessageSecurityOverHttp)</a></li>
 </ul></li>

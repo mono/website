@@ -21,7 +21,7 @@ CoreCLR *agnostic* information is available [here](/Moonlight2CoreCLR "Moonlight
 <li><a href="#goals">1.1 Goals</a></li>
 <li><a href="#tools">1.2 Tools</a>
 <ul>
-<li><a href="#find-sc--compatibility">1.2.1 Find-SC : Compatibility</a></li>
+<li><a href="#find-sc-compatibility">1.2.1 Find-SC : Compatibility</a></li>
 <li><a href="#manual-override-files">1.2.2 Manual override files</a></li>
 <li><a href="#detect">1.2.3 Detect</a></li>
 <li><a href="#tuner">1.2.4 Tuner</a></li>
