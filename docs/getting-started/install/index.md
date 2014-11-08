@@ -1,5 +1,5 @@
 ---
-title: Install Mono
+title: Instalar Mono
 ---
 
 - [Mac OS X](/docs/getting-started/install/mac/)
