@@ -88,7 +88,7 @@ Their [Delphi Prism](http://www.codegear.com/products/delphi/prism) compiler sup
 Lua
 ---
 
-[NLua](http://nlua.org/) is the bind between Lua world and the .NET world. It allows the usage of Lua from C#, on Windows, Linux, Mac, iOS , Android, Windows Phone 7 and 8. 
+[NLua](http://nlua.org/) is the bind between Lua world and the .NET world. It allows the usage of Lua from C#, on Windows, Linux, Mac, iOS , Android, Windows Phone 7 and 8.
 
 Cobra
 -----

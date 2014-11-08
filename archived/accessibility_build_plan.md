@@ -44,7 +44,7 @@ Accessibility: Build Plan
 <li><a href="#build1">4.11.1.2 Build1</a></li>
 </ul></li>
 <li><a href="#architectures">4.11.2 Architectures</a></li>
-<li><a href="#software_2">4.11.3 Software:</a></li>
+<li><a href="#software-needs">4.11.3 Software:</a></li>
 </ul></li>
 <li><a href="#responsibilities">4.12 Responsibilities</a></li>
 <li><a href="#staffing-needs">4.13 Staffing needs</a></li>
@@ -338,7 +338,7 @@ References
 ----------
 
 The [Product roadmap](/Accessibility:_Roadmap)
- The [Architecture overview](/Accessibility#Architecture)
+ The [Architecture overview](/archived/accessibility_architecture/)
  [The Novell & Microsoft announcement](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) to create cross-platform accessibility framework
 
 ### Build Systems

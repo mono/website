@@ -13,7 +13,7 @@ The above web site compares the results from our [continuous builds](http://wren
 Comparing Locally
 -----------------
 
-[![](/archived/images/e/e9/Screenshot24.png)](/archived/images/e/e9/Screenshot24.png)
+[![Screenshot24.png](/archived/images/e/e9/Screenshot24.png)](/archived/images/e/e9/Screenshot24.png)
 
 Native Client GUI Compare
 

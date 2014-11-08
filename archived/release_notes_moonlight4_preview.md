@@ -22,7 +22,7 @@ Moonlight 4 Preview 1 is the first preview of Moonlight that includes support fo
 <li><a href="#new-rendering-engine">1.2 New Rendering Engine</a>
 <ul>
 <li><a href="#gpu-based-acceleration">1.2.1 GPU-based acceleration</a></li>
-<li><a href="#3d-transformations">1.2.2 3D Transformations</a></li>
+<li><a href="#d-transformations">1.2.2 3D Transformations</a></li>
 <li><a href="#shaders">1.2.3 Shaders</a></li>
 </ul></li>
 <li><a href="#new-platform-abstraction-layer">1.3 New Platform Abstraction Layer</a>
@@ -229,5 +229,5 @@ Source code
 
 Source code for current and previous moonlight releases is available from [our ftp site.](http://ftp.novell.com/pub/mono/sources/moon/)
 
-If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here](/Moonlight#developing-moonlight "Moonlight").
+If you plan on tracking the source it's much easier to use git. The instructions for checking things out can be found [here](/Moonlight).
 

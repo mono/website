@@ -25,7 +25,7 @@ This tutorial is not meant to cover all Strongwind features exhaustively. This t
 <li><a href="#testable-application">2.1 Testable Application</a></li>
 <li><a href="#application-wrapper">2.2 Application Wrapper</a>
 <ul>
-<li><a href="#init-py">2.2.1 __init__.py</a></li>
+<li><a href="#initpy">2.2.1 __init__.py</a></li>
 <li><a href="#gtkcheckbuttonframepy">2.2.2 gtkcheckbuttonframe.py</a></li>
 <li><a href="#the-find-functions">2.2.3 the find* functions</a></li>
 </ul></li>
@@ -412,7 +412,7 @@ cbFrame.assertUnchecked(cbFrame.checkbox2)
 cbFrame.quit()
 ```
 
-Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script](/Accessibility:_Strongwind_Basics#Running_Your_First_Script).
+Finally, we print the location of the logs Strongwind generated for us. Logging is discussed further in the next section, [Running Your First Script](#running-your-first-script).
 
 ``` python
 # tell the user where to find the log

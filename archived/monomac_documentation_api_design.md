@@ -122,11 +122,11 @@ The [MonoMac.ObjCRuntime](http://docs.go-mono.com/MonoMac.ObjCRuntime) namespace
 
 The [MonoMac.Foundation](http://docs.go-mono.com/MonoMac.Foundation) namespace provides the basic data types designed to interoperate with the Objective-C Foundation framework that is part of Mac OS X and is the base for object oriented programming in Objective-C.
 
-MonoMac mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003706) is usable from C# via [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject).
+MonoMac mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003706) is usable from C# via [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject).
 
 Although this namespace provides bindings for the underlying Objective-C Foundation types, in a few cases we have mapped the underlying types to .NET types. For example:
 
-1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
+1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
 2.  Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other OS X APIs or APIs that are not currently bound by MonoMac.
 
 For more details on binding APIs see the [MonoMac Binding Generator](/MonoMac/Documentation/Binding_New_Objective-C_Types "MonoMac/Documentation/Binding New Objective-C Types") section.
@@ -218,15 +218,15 @@ In MonoMac we offer four mutually exclusive mechanisms to bind to these delegate
 -   [Strongly typed via a *Delegate* property](#strongly-typed-via-a-delegate-property).
 -   [[#Loosely_typed_via_the_WeakDelegate_property|Loosely typed via a *WeakDelegate* property.
 
-For example, consider the [WebView](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) class. This dispatches to a [WebFrameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) instance which is assigned to the [frameLoadDelegate](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) property.
+For example, consider the [WebView](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) class. This dispatches to a [WebFrameLoadDelegate](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) instance which is assigned to the [frameLoadDelegate](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003822) property.
 
 #### Via Events
 
 For many types, MonoMac will automatically create an appropriate delegate which will forward the e.g. *WebFrameLoadDelegate* calls onto C# events. For *WebView*:
 
--   The [webView:didStartProvisionalLoadForFrame:](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.StartedProvisionalLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.StartedProvisionalLoad) event.
--   The [webView:didFinishLoadForFrame:](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.FinishedLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.FinishedLoad) event.
--   The [webView:didFailLoadWithError:forFrame:](http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.FailedLoadWithError](http://docs.go-mono.com/MonoMac.WebKit.WebView.FailedLoadWithError) event.
+-   The [webView:didStartProvisionalLoadForFrame:](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.StartedProvisionalLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.StartedProvisionalLoad) event.
+-   The [webView:didFinishLoadForFrame:](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.FinishedLoad](http://docs.go-mono.com/MonoMac.WebKit.WebView.FinishedLoad) event.
+-   The [webView:didFailLoadWithError:forFrame:](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40003828) method is mapped to the [WebView.FailedLoadWithError](http://docs.go-mono.com/MonoMac.WebKit.WebView.FailedLoadWithError) event.
 
 For example, this simple program times the time it takes to load a web view:
 

@@ -11,7 +11,7 @@ For a list of the new features see [Whats new on Gtk# 2](/docs/gui/gtksharp/new-
 Introduction
 ------------
 
-[![](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
+[![IFolder_Linux.png](/archived/images/5/57/IFolder_Linux.png)](/archived/images/5/57/IFolder_Linux.png)
 
 iFolder, a [GTK#](/docs/gui/gtksharp/) application
 

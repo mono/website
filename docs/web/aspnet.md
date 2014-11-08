@@ -100,7 +100,7 @@ To obtain line numbers in stack traces you need to do two things:
 
 1. Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
 
-You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option](/archived/config#3ccompilation3e "Config")).
+You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option](/archived/config/#compilation "Config")).
 
 Use the --debug command line option to Mono, this is done by setting the MONO_OPTIONS environment variable, like this:
 

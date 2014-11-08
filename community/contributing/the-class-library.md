@@ -11,7 +11,7 @@ Contributing
 
 We welcome contributions to the the Class Library. To get started, check the status page for information about which APIs are being worked on, and how to get in touch with individual maintainers.
 
-If you want to work on a class, first check the [Classes Distribution](/download/) to see if it is not implemented yet, if not, check the [class status pages](/archived/resources#class-status-pages-for-mono "Resources") to see if someone is already working on it, and maybe contact them.
+If you want to work on a class, first check the [Classes Distribution](/download/) to see if it is not implemented yet, if not, check the class status pages to see if someone is already working on it, and maybe contact them.
 
 If nobody is working on it, mail [mono-list@ximian.com](mailto:mono-list@ximian.com) with the class you want to implement and CC [miguel@ximian.com](mailto:miguel@ximian.com).
 
@@ -56,7 +56,7 @@ See our [Coding Guidelines](/community/contributing/coding-guidelines/) document
 Missing implementation bits
 ===========================
 
-If you implement a class and you are missing implementation bits, pleaseusre the MonoTODO attribute and a description of what is missing to be implemented, for example:
+If you implement a class and you are missing implementation bits, please use the MonoTODO attribute and a description of what is missing to be implemented, for example:
 
 ``` csharp
    [MonoTODO ("Finish this routine")]

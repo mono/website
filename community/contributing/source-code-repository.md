@@ -13,7 +13,7 @@ Here we describe how one obtains commit access to the Mono Git repository and th
 Browsing the Sources
 --------------------
 
-If all you need is to browse the sources, you can go to [Mono Organization page on GitHub](http://github.com/mono).
+If all you need is to browse the sources, you can go to [Mono Organization page on GitHub](https://github.com/mono).
 
 Building Mono from source
 -------------------------
@@ -23,9 +23,9 @@ Once you've obtained the source code for different modules of the Mono project, 
 Contributing Patches
 ====================
 
-Now that Mono is hosted on GitHub, contributing patches has never been easier. If you aren't yet familiar with GitHub, you may wish to read GitHub's guide on [getting started](http://help.github.com/mac-set-up-git/).
+Now that Mono is hosted on GitHub, contributing patches has never been easier. If you aren't yet familiar with GitHub, you may wish to read GitHub's guide on [getting started](https://help.github.com/articles/set-up-git/).
 
-Once you've gotten a GitHub account and gotten set up, you should read GitHub's guide to [branching a repository](http://help.github.com/fork-a-repo/). Once you feel that your patch is finished and you've tested that everything still builds and works as expected, you can then issue a [pull request](http://help.github.com/send-pull-requests/) which alerts the active maintainers that they should examine and review your patch, merging it into the mainline source repository.
+Once you've gotten a GitHub account and gotten set up, you should read GitHub's guide to [forking a repository](https://help.github.com/articles/fork-a-repo/). Once you feel that your patch is finished and you've tested that everything still builds and works as expected, you can then issue a [pull request](https://help.github.com/articles/using-pull-requests/) which alerts the active maintainers that they should examine and review your patch, merging it into the mainline source repository.
 
 Policies
 ========
@@ -101,16 +101,10 @@ Getting Help With Git
 
 GitHub maintains some great resources for developers here:
 
-[http://help.github.com/](http://help.github.com/)
+[https://help.github.com/](https://help.github.com/)
 
 Keeping track of code changes
 =============================
-
-### Via Web/Email
-
-It is now possible to subscribe to a special group to track changes to the Mono git repository over the web using Google Groups:
-
--   [mono-svn-patches group](http://groups-beta.google.com/group/mono-svn-patches)
 
 ### Via Email
 
@@ -119,8 +113,3 @@ We provide an e-mail based mechanisms to keep track of changes to the code base:
 -   [mono-patches](http://lists.ximian.com/mailman/listinfo/mono-patches): This mailing list receives in patch form all the changes that are being made to git. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put \`subscribe' or click on the link.
 
 This will send you an email message every time a change is made to the git repository, together with the information that the author of the changes submitted.
-
-### Cia.Navi.Cx
-
-The CIA.Navi.Cx project tracks the changes [in their page](http://cia.navi.cx/stats/project/mono)
-

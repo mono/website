@@ -18,7 +18,7 @@ DB4BOO
 <li><a href="#boo">2 Boo</a></li>
 <li><a href="#lets-boo-first">3 Let's Boo first</a>
 <ul>
-<li><a href="#what-happened-">3.1 What happened ?</a></li>
+<li><a href="#what-happened">3.1 What happened ?</a></li>
 </ul></li>
 <li><a href="#pilot-class">4 Pilot class</a></li>
 </ul></td>

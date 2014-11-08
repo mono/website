@@ -26,8 +26,8 @@ Monodoc Documentation
 
 The process for generating the documentation can be splitted in several parts.
 
-Generate the inital stubs
--------------------------
+Generate the initial stubs
+--------------------------
 
 The initial stubs for the documentation are generated with [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 

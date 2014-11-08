@@ -189,7 +189,7 @@ partial void sampleTap (UIButton sender)
 
 However, you are free to ignore the partial method definition and instead write the handler signature and its Export attribute manually. The C# compiler ignores partial methods without implementations.
 
-There is more information on the binding in the [responding to events](/MonoTouch_API#responding-to-events "MonoTouch API") section of the API.
+There is more information on the binding in the [responding to events](/archived/monotouch_api/#responding-to-events "MonoTouch API") section of the API.
 
 Deploying to the device
 =======================

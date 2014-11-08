@@ -28,7 +28,7 @@ Accessibility: Moonlight
 <li><a href="#setting-up-the-base-environment">1.1.5.2 Setting up the Base Environment</a></li>
 <li><a href="#building-for-firefox-mozilla-192">1.1.5.3 Building for Firefox (mozilla-1.9.2)</a></li>
 <li><a href="#building-for-firefox-mozilla-central">1.1.5.4 Building for Firefox (mozilla-central)</a></li>
-<li><a href="#useful-notes_2">1.1.5.5 Useful notes</a></li>
+<li><a href="#useful-notes-2">1.1.5.5 Useful notes</a></li>
 <li><a href="#setting-up-the-moonatkbridge-environment-mozilla-192">1.1.5.6 Setting up the MoonAtkBridge Environment (mozilla-1.9.2)</a></li>
 <li><a href="#setting-up-the-moonatkbridge-environment-mozilla-central">1.1.5.7 Setting up the MoonAtkBridge Environment (mozilla-central)</a></li>
 </ul></li>

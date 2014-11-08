@@ -8,7 +8,7 @@ redirect_from:
 Stetic
 ======
 
-[![](/archived/images/b/b1/Steticinmonodevelop_s.png)](/archived/images/b/b1/Steticinmonodevelop_s.png)
+[![Steticinmonodevelop_s.png](/archived/images/b/b1/Steticinmonodevelop_s.png)](/archived/images/b/b1/Steticinmonodevelop_s.png)
 
 Stetic integrated into MonoDevelop
 

@@ -21,7 +21,7 @@ Introduction
 General Warnings
 ----------------
 
-Before doing anthing else, you should read "[FastCGI#ImportantInformation](/docs/web/fastcgi/#importantinformation)" on the main page.
+Before doing anthing else, you should read "[FastCGI#ImportantInformation](/docs/web/fastcgi/#important-information)" on the main page.
 
 Using Paths [Recommended]
 -------------------------

@@ -36,7 +36,7 @@ GtkGLAreaSharp
 Introduction
 ------------
 
-[![](/archived/images/8/8a/Gtkglext-sharp1.png)](/archived/images/8/8a/Gtkglext-sharp1.png)
+[![Gtkglext-sharp1.png](/archived/images/8/8a/Gtkglext-sharp1.png)](/archived/images/8/8a/Gtkglext-sharp1.png)
 
 A view of a 3d Teapot generated using GtkGLAreaSharp
 

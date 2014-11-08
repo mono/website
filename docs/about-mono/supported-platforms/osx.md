@@ -41,13 +41,13 @@ Using Mono on MacOS X
 
 At this point, you must use Mono from the command line, the usual set of commands that are available on other ports of Mono are available.
 
-To build applications you can use ["gmcs"](/docs/about-mono/languages/csharp/), to run then you can use [mono](/docs/advanced/runtime/).
+To build applications you can use ["mcs"](/docs/about-mono/languages/csharp/), to run then you can use [mono](/docs/advanced/runtime/).
 
 From a Terminal shell, you can try it out:
 
 ``` bash
 $ vi hello.cs
-$ gcs hello.cs
+$ mcs hello.cs
 $ mono hello.exe
 Hello, World
 $

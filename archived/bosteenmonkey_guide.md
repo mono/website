@@ -39,7 +39,7 @@ About Mono
 
 -   [What is Mono?](/About_Mono "About Mono")
 -   The [History](/History "History") of Mono
--   [Why Mono?](/Why_Mono%3F "Why Mono?")
+-   [Why Mono?](/Why_Mono "Why Mono?")
 -   [.NET Framework Architecture](/.NET_Framework_Architecture ".NET Framework Architecture")
 -   [Supported Platforms](/Supported_Platforms "Supported Platforms")
 
@@ -75,7 +75,7 @@ GUI Toolkits
 ------------
 
 -   [GTK# - .NET binding for the Gtk+ toolkit.](/GtkSharp "GtkSharp")
-    -   [Programming With GTK#](/Template:Programming_With_GTKSharp "Template:Programming With GTKSharp"): **Note** This section on GTK# does use some content from the GTK+ Tutorial by Tony Gale, Ian Main, & the GTK team
+    -   [Programming With GTK#](/GtkSharpTutorials/): **Note** This section on GTK# does use some content from the GTK+ Tutorial by Tony Gale, Ian Main, & the GTK team
 
 -   [WinForms: The System.Windows.Forms implementation in Mono](/WinForms "WinForms")
 

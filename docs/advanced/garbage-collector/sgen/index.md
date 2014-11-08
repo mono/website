@@ -26,7 +26,7 @@ Here are some of its features:
     -   Upcoming versions of Mono remove this limitation, see the *[Precise Stack Marking](#precise-stack-marking)* section for more information.
 -   Two major collectors:
     -   Copying for nursery/minor collections
-    -   Mark and Sweet for the old generation and major collector
+    -   Mark and Sweep for the old generation and major collector
 -   Per-thread fragments for fast per-thread allocation.
 -   Uses write barriers to minimize the work done on minor collections.
 -   Multi-core garbage collection
@@ -309,7 +309,7 @@ Stopping the world
 
 To perform the garbage collection, it is important that all the running threads are stopped, this is called "stopping the world". This guarantees that no changes are happening behind the GC's back and also, the compacting collector will need to move the objects, and update all pointers to the objects to point to their new locations.
 
-[![](/archived/images/1/1c/Thread-stacks.png)](/archived/images/1/1c/Thread-stacks.png)
+[![Thread-stacks.png](/archived/images/1/1c/Thread-stacks.png)](/archived/images/1/1c/Thread-stacks.png)
 
 The dark grey areas are scanned conservatively
 

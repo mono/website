@@ -12,7 +12,7 @@ If you have a concern that you would like us to consider addressing, please feel
 
 #### Background
 
-Patents are a lightning rod of attention in the area of software development. The fact that .NET is a Microsoft created technology has caused concern about Mono, given Microsoft's history of tough, and sometimes monopolistic business practices. [Mono's Licensing page](/Licensing#Patents) addresses some of the issues with how any potential patent infringement would be delt with, via rewriting infringing portions of the code, as well as the basic issue of whether replicating the .Net languages is infringement.
+Patents are a lightning rod of attention in the area of software development. The fact that .NET is a Microsoft created technology has caused concern about Mono, given Microsoft's history of tough, and sometimes monopolistic business practices. [Mono's Licensing page](/docs/faq/licensing/#patents) addresses some of the issues with how any potential patent infringement would be delt with, via rewriting infringing portions of the code, as well as the basic issue of whether replicating the .Net languages is infringement.
 
 Microsoft has made some [claims of intellectual property violations by Linux companies](http://www.youtube.com/watch?v=5B0GTYfPoMo). Some have suggested that because .NET is Microsoft technology, that there are patents that Mono is infringing upon that will be brought out at an opportune time to take Mono and any Mono applications down.
 

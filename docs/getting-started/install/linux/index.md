@@ -1,31 +1,34 @@
 ---
 title: Install Mono on Linux
+redirect_from:
+  - /DistroPackages/Ubuntu/
+  - /DistroPackages/Debian/
+  - /docs/getting-started/install/linux/ubuntu/
+  - /docs/getting-started/install/linux/debian/
 ---
 
-The Linux community has made Mono available for various distributions, check the [download page](/download) for a list of packages.
+The Linux community has made Mono available for various distributions, check the [download page](/download/) for a list of packages.
 
-Installation
-------------
+Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require.
 
-Regardless of your distribution, you will need the Mono Project public Jenkins GPG signing key, which package managers require:
+Debian, Ubuntu, and derivatives
+-------------------------------
 
-[http://download.mono-project.com/repo/xamarin.gpg](http://download.mono-project.com/repo/xamarin.gpg)
-
-### Debian, Ubuntu, and derivatives
-
-Add the GPG key in a root shell with:
+Add the Mono Project GPG signing key **in a root shell** with:
 
 ``` bash
-apt-key add xamarin.gpg
+apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
-Next, add the package repository in a root shell:
+Next, add the package repository **in a root shell**:
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
+Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [usage](#usage) section.
+
+Note: While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
 
 #### Ubuntu 12.04 and 12.10
 
@@ -43,15 +46,16 @@ To enable mod_mono installation on Ubuntu 13.10 and later, and Debian 8.0 and la
 echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-### CentOS, Fedora, and derivatives
+CentOS, Fedora, and derivatives
+-------------------------------
 
-Add the GPG key in a root shell with:
+Add the Mono Project GPG signing key **in a root shell** with:
 
 ``` bash
-rpm --import xamarin.gpg
+rpm --import "https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 ```
 
-Next, add the package repository in a root shell:
+Next, add the package repository **in a root shell**:
 
 ``` bash
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos/

@@ -61,7 +61,7 @@ Either compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
 
-[![](/archived/images/f/f5/Helloworld.png)](/archived/images/f/f5/Helloworld.png)
+[![Helloworld.png](/archived/images/f/f5/Helloworld.png)](/archived/images/f/f5/Helloworld.png)
 
 Results running on openSUSE 10.2
 

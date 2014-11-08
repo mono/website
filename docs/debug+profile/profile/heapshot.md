@@ -4,7 +4,7 @@ redirect_from:
   - /HeapShot/
 ---
 
-[![](/archived/images/6/69/Heapshot.png)](/archived/images/6/69/Heapshot.png)
+[![Heapshot.png](/archived/images/6/69/Heapshot.png)](/archived/images/6/69/Heapshot.png)
 
 HeapShot in action
 

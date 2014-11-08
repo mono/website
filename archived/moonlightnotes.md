@@ -135,7 +135,7 @@ For users of Silverlight 2.0 we are creating an SDK that developers can use to c
 For Developing on non-Microsoft Systems
 ---------------------------------------
 
-If you install Mono as described in the [Getting Started](#gettingstarted) section you will get an SDK that you can use to develop against Microsoft Silverlight and Mono Moonlight APIs.
+If you install Mono as described in the Getting Started section you will get an SDK that you can use to develop against Microsoft Silverlight and Mono Moonlight APIs.
 
 Instead of using the **mcs** or **gmcs** compilers as you do regularly with Mono you need to use the **smcs** compiler that will generate and reference the proper assembly versions that are suitable for Silverlight development.
 
@@ -323,7 +323,7 @@ In some early discussions with David Reveman (the designer of Xgl and Compiz), w
 
 ### The Plugin and the DOM
 
-[![](/archived/images/b/b7/Plugin.png)](/archived/images/b/b7/Plugin.png)
+[![Plugin.png](/archived/images/b/b7/Plugin.png)](/archived/images/b/b7/Plugin.png)
 
 Plugin relation to the Browser
 

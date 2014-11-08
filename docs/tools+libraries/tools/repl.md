@@ -4,7 +4,7 @@ redirect_from:
   - /CsharpRepl/
 ---
 
-[![](/archived/images/9/9c/Xbyhja.png)](/archived/images/9/9c/Xbyhja.png)
+[![Xbyhja.png](/archived/images/9/9c/Xbyhja.png)](/archived/images/9/9c/Xbyhja.png)
 
 C# GUI Shell
 
