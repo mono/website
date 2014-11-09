@@ -1,65 +1,65 @@
 ---
-title: "FAQ: General"
-redirect_from:
+título: "FAQ: Geral"
+arquivo original_from:
   - /FAQ:_General/
 ---
 
-Basics
+Perguntas Básicas
 ------
 
-**Can Mono run binaries produced by Visual Studio?**
+**O Mono pode executar binários gerados pelo Visual Studio?**
 
-Yes, Mono can run binaries produced by Visual Studio, there is no need to recompile.
+Sim, o Mono pode executar os binários gerados pelo Visual Studio, sem necessidade de compilar os fontes originais.
 
-Use our [Mono Migration Analysis](/docs/tools+libraries/tools/moma/) tool to check if everything that your application uses has been implemented in Mono or if there are special considerations to keep in mind.
+Utilize nossa ferramenta [Mono Migration Analysis](/docs/tools+libraries/tools/moma/) para verificar se os recursos que sua aplicação utiliza foram implementados e/ou são compatíveis com o Mono, ou se existem quaisquer particularidades que necessitam de atenção.
 
-The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our [Roadmap](/docs/about-mono/roadmap/) for details about what is implemented.
+A API atual do Mono está entre a versão .NET 2.0 e .NET 4.0; veja nosso [Roadmap](/docs/about-mono/roadmap/) para detalhes sobre o que está efetivamente implementado.
 
-**What is Mono™ exactly?**
+**O que o Mono™ é exatamente?**
 
-The Mono Project is an open development initiative sponsored by Novell to develop an open source, UNIX version of the Microsoft .NET development platform. Its objective is to enable UNIX developers to build and deploy cross-platform .NET Applications. The project implements various technologies developed by Microsoft that have now been submitted to the ECMA for standardization.
+O Projeto Mono é uma iniciativa de desenvolvimento de um framework de desenvolvimento comunitário, patrocinado pela Novell, de uma versão UNIX e livre (open source), da plataforma .NET da Microsoft. Ele tem por objetivo permitir que desenvolvedores UNIX possam criar e distribuir aplicações .NET cross-platform. O projeto implementa várias tecnologias desenvolvidas pela Microsoft que foram então submetidas à ECMA para padronização.
 
-The Mono Project has also sparked a lot of interest in developing C#-based components, libraries and frameworks. The most important ones, some of which were developed by the Mono team, are:
+O Projeto Mono também tem despertado grande interesse no desenvolvimento de componentes derivados do C#, bibliotecas e frameworks. Dentre os mais importantes, alguns deles inclusive foram desenvolvidos pelo time do Mono, podemos citar:
 
--   [Gtk#](http://gtk-sharp.sf.net): Bindings for the popular Gtk+ GUI toolkit for UNIX and Windows systems. Other bindings are available: Diacanvas-Sharp and MrProject.
+-   [Gtk#](http://gtk-sharp.sf.net): uma variante do popular conjunto de ferramentas gráficas Gtk+ dos sistemas UNIX e Windows. Outras vertentes disponíveis são: Diacanvas-Sharp e MrProject.
 
--   [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/): A library to generate and inspect CIL assemblies.
+-   [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/): biblioteca para gerar e analisar assemblies CIL.
 
--   [#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
+-   [#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): biblioteca para manipular diferentes tipo de arquivos compactados (Zip e tar).
 
--   [Tao Framework](/archived/tao "Tao"): bindings for OpenGL
+-   [Tao Framework](/archived/tao "Tao"): variante do OpenGL.
 
--   Mono.Directory.LDAP / Novell.Directory.LDAP: LDAP access for .NET apps.
+-   Mono.Directory.LDAP / Novell.Directory.LDAP: acesso LDAP para aplicações .NET.
 
--   Mono.Data: We ship support for PostgreSQL, MySQL, Firebird, Sybase ASE, IBM DB2, SQLite, Microsoft SQL Server, Oracle, and ODBC data sources.
+-   Mono.Data: suporte para banco de dados PostgreSQL, MySQL, Firebird, Sybase ASE, IBM DB2, SQLite, Microsoft SQL Server, Oracle, e ODBC.
 
--   Mono.Cairo: Bindings for the [Cairo](http://www.cairographics.org) rendering engine (Our System.Drawing is implemented on top of this).
+-   Mono.Cairo: variante da engine de renderização [Cairo](http://www.cairographics.org) (nosso System.Drawing utiliza esse pacote).
 
--   Mono.Posix / Mono.UNIX: Bindings for building POSIX applications using C#.
+-   Mono.Posix / Mono.UNIX: variante para criar aplicações POSIX utilizando C#.
 
--   Mono.Remoting.Channels.Unix: Unix socket based remoting
+-   Mono.Remoting.Channels.Unix: socket UNIX para comunicação remota.
 
--   Mono.Security: Enhanced security and crypto framework
+-   Mono.Security: framework com recursos avançados de segurança e criptografia.
 
--   Mono.Math: BigInteger and Prime number generation
+-   Mono.Math: geração de números BigInteger e Prime.
 
--   Mono.Http: Support for creating custom, embedded HTTP servers and common HTTP handlers for your applications.
+-   Mono.Http: suporte à criação de servidores HTTP customizados e servers and manipuladores HTTP bastante úteis para suas aplicações.
 
--   Mono.XML: Extended support for XML
+-   Mono.XML: provê suporte adicional à XML.
 
--   Managed.Windows.Forms (aka System.Windows.Forms): A complete and cross platform, System.Drawing based Winforms implementation.
+-   Managed.Windows.Forms (também conhecido como System.Windows.Forms): implementação de pacote (System.Drawing) completo e cross-platform, baseado na implementação Winforms.
 
--   [Remoting.CORBA](http://remoting-corba.sourceforge.net/): A CORBA implementation for Mono.
+-   [Remoting.CORBA](http://remoting-corba.sourceforge.net/): implementação CORBA para Mono.
 
--   Ginzu: An implementation on top of Remoting for the [ICE](http://www.zeroc.com) stack
+-   Ginzu: implementação sobre o pacote Remoting da pilha [ICE](http://www.zeroc.com).
 
-For a more complete list, see the [Libraries](/docs/tools+libraries/libraries/) and [Software](/docs/about-mono/showcase/software/) pages.
+Para a lista completa, veja as páginas [Libraries](/docs/tools+libraries/libraries/) e [Software](/docs/about-mono/showcase/software/).
 
-**What is the difference between Mono and the .NET Initiative?**
+**Qual a diferença entre o Mono e .NET Initiative?**
 
-The ".NET Initiative" is a somewhat nebulous company-wide effort by Microsoft, one part of which is a cross-platform development framework. Mono is an implementation of the development framework, but not an implementation of anything else related to the .NET Initiative, such as Passport or software-as-a-service.
+A ".NET Initiative" é uma espécie de esforço corporativo da Microsoft, e parte desse projeto prevê o desenvolvimento de um framework cross-platform. O Mono é uma implementação de um framework de desenvolvimento, mas não é uma implementação de nada relativo à .NET Initiative, como por exemplo o Passport ou o software-as-a-service.
 
-**What technologies are included in Mono?**
+**Quais tecnologias estão incluídas no Mono?**
 
 Mono contains a number of components useful for building new software:
 
