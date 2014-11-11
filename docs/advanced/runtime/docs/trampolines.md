@@ -4,7 +4,7 @@ redirect_from:
   - /Mono:Runtime:Documentation:Trampolines/
 ---
 
-Trampolines are small, hand-written pieces of assembly code used to perform various tasks in the mono runtime. They are generated at runtime using the native code generation macros used by the JIT. They usually have a corresponding C function they can fall back to if they need to perform a more complicated task. They can be viewed as ways to pass control from JITted code back to the runtime.
+Trampolins são pequenos, pedaços de código assembly escritos à mão usados para executar várias tarefas em tempo de execução do mono. Eles são gerados em tempo de execução usando as macros de geração de código nativas utilizadas pelo JIT. Eles geralmente têm uma função C correspondente que pode ser utilizada caso seja necessário executar uma tarefa mais complexa. Eles podem ser vistos como formas de passar o controle do código JIT de volta para o tempo de execução.
 
 The common code for all architectures is in mini-trampolines.c, this file contains the trampoline creation functions plus the C functions called by the trampolines. The tramp-\<ARCH\>.c files contain the arch-dependent code which creates the trampolines themselves.
 
