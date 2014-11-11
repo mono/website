@@ -1,6 +1,6 @@
 ---
 título: "FAQ: Geral"
-arquivo original_from:
+redirect_from:
   - /FAQ:_General/
 ---
 
