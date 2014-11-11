@@ -5,6 +5,23 @@ Este repositório contem os arquivos que geram o site do MonoBrasil http://www.m
 
 O site usa a ferramenta Jekyll (http://jekyllrb.com), um gerador de site estático. O GitHub Pages, onde o site está hospeado, suporta nativamente o Jekyll de forma que cada vez que alguém publica um comite neste repositório, o site será reconstruído e atualizado (após alguns segundos a minutos). Para hospedar o site você mesmo, veja [Setting up a local copy of the website](#setting-up-a-local-copy-of-the-website).
 
+Esforço de Tradução
+-------------------
+
+Um passo-a-passo simplificado:
+- Tudo acontece aqui no GitHub, então o primeiro passo é você criar a sua conta aqui. Como é só para repositório abertos é sem custo.
+- Depois você tem criar um fork seu deste repositório https://github.com/MonoBrasil/website. É só clicar no botão fork no canto superior direito.
+- Os caminhos na planilha de [planejamento](https://docs.google.com/spreadsheets/d/1B_iFGvaDhm8jSC0STXHdNgQAX57DRaY8F3wd-7czSjA/edit#gid=1820428232) são os caminhos dentro do repositório e a maioria das páginas estão em MarkDown não em html.
+- Para páginas pequenas dá para editar diretamente no github, navegue até o arquivo, e clique no link da canetinha.
+- Cuidado para não alterar comandos do processador de geração do site (Jekyll) normalmente o que está no topo entre duas linhas marcadas com ---, apenas o texto que está após o prefixo title: na primeira linha deve ser traduzido.
+- Cada vez que você salvar as alterações estará fazendo um commit no seu fork.
+- Para trabalhos maiores, é interessante fazer um clone do seu repositório em um ambiente que suporte git (Eclipse,Visual Studio, Linux em linha de comando, GitHub for Windows) para poder fazer as alterações em um editor de texto como o Notepad++,Vim,etc... só que aí tem que fazer em duas etapas commit local e pull para o seu fork.
+- Quando quiser enviar o que você realizou até o momento, você deve fazer um Pull Request (use o link Compare no topo da página raiz do seu repositório e depois o botão Create Pull Request).
+- Envie um email do seu PR para o revisor correspondente na planilha. O revisor deverá colocar comentários para a melhoria da tradução no próprio PR e ao final marcá-lo com um :shipit:, que nós commiters vamos olhar e comitar a contribuição da dupla. 
+- Para fazer as correções pedidas pelo revisor é melhor usar uma cópia local do seu repositório para fazer um commit -amend (que reincorpora as alterações diretamente no PR já aberto). Aí atualizaremos o percentual do seu trabalho na planilha e aí **é só partir para o abraço**.
+- Caso o revisor não der sinal de vida em um prazo de 2 ou 3 dias, você manda um email na lista do MonoBrasil para olharmos o seu PR e a coisa não estancar.
+
+
 Contribuindo para o site
 ---------------------------
 
