@@ -19,7 +19,7 @@ Um passo-a-passo simplificado:
 - Quando quiser enviar o que você realizou até o momento, você deve fazer um Pull Request (use o link Compare no topo da página raiz do seu repositório e depois o botão Create Pull Request).
 - Envie um email do seu PR para o revisor correspondente na planilha. O revisor deverá colocar comentários para a melhoria da tradução no próprio PR e ao final marcá-lo com um :shipit:, que nós commiters vamos olhar e comitar a contribuição da dupla. 
 - Para fazer as correções pedidas pelo revisor é melhor usar uma cópia local do seu repositório para fazer um commit -amend (que reincorpora as alterações diretamente no PR já aberto). Aí atualizaremos o percentual do seu trabalho na planilha e aí **é só partir para o abraço**.
-- Caso o revisor não der sinal de vida em um prazo de 2 ou 3 dias, você manda um email na lista do MonoBrasil para olharmos o seu PR e a coisa não estancar.
+- Caso o revisor não der sinal de vida em um prazo de 2 ou 3 dias, você manda um email na lista do MonoBrasil (monobrasil@googlegroups.com) para olharmos o seu PR e a coisa não estancar.
 
 
 Contribuindo para o site
