@@ -1,5 +1,5 @@
 ---
-título: "FAQ: Geral"
+title: "FAQ: General"
 redirect_from:
   - /FAQ:_General/
 ---
@@ -55,7 +55,7 @@ O Projeto Mono também tem despertado grande interesse no desenvolvimento de com
 
 Para a lista completa, veja as páginas [Libraries](/docs/tools+libraries/libraries/) e [Software](/docs/about-mono/showcase/software/).
 
-**Qual a diferença entre o Mono e .NET Initiative?**
+**Qual a diferença entre o Mono e o .NET Initiative?**
 
 A ".NET Initiative" é uma espécie de esforço corporativo da Microsoft, e parte desse projeto prevê o desenvolvimento de um framework cross-platform. O Mono é uma implementação de um framework de desenvolvimento, mas não é uma implementação de nada relativo à .NET Initiative, como por exemplo o Passport ou o software-as-a-service.
 
