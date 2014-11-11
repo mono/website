@@ -1,31 +1,31 @@
 ---
-title: Mono Project Roadmap
+title: Caminho a Frente para o Projeto Mono
 redirect_from:
   - /Mono_Project_Roadmap/
   - /Roadmap/
 ---
 
-*Last update: August, 2014*
+*Última atualização: Agosto, 2014*
 
-We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.
-The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.
-For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
+Nós estamos adotando uma nova sistemática de desenvolvimento em que novas funcionalidades são desenvolvidas em ramos (branches) e mesclados no ramo `master` depois de completadas e aprovadas nos testes do controle de qualidade.
+O objetivo é reduzir nosso inventário de funcionalidades e bugs pendentes e entregar as correções tão logo elas sejam completadas aos usuários do Mono.
+Para maiores informações veja: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
 
-Per-component [Plans](/docs/about-mono/plans/) are available, you can also check our [Compatibility](/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
+Os [Planos](/docs/about-mono/plans/) por componente estão disponíveis, e você pode checar nossa página de [Compatibilidade](/docs/about-mono/compatibility/) para ter uma visão geral do que é suportado na última versão liberada do Mono.
 
-Versioning
-----------
+Versionamento
+-------------
 
-Mono releases are versioned like this:
+As versões do Mono seguem a fórmula:
 
     MAJOR.MINOR.SUBRELEASE
 
--   Even-numbered ***MINOR*** releases are stable releases.
--   Odd-numbered ***MINOR*** releases are unstable releases (development/daily builds).
--   ***SUBRELEASE*** indicates a minor update to a specific release.
+-   Versões com o ***MINOR*** par são liberações estáveis.
+-   Versões com o ***MINOR*** ímpar são liberações instáveis (desenvolvimento/compilações diárias).
+-   ***SUBRELEASE*** indica uma atualização menor de uma liberação específica.
 
-Current Releases
-----------------
+Liberações Correntes
+--------------------
 
 <table>
 <col width="50%" />
@@ -33,30 +33,30 @@ Current Releases
 <tbody>
 <tr class="odd">
 <td align="left"><strong>Mono 3.6</strong></td>
-<td align="left"><strong>Released: Early August, 2014</strong></td>
+<td align="left"><strong>Liberada: No início de Agosto de 2014</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>Performance Counters</li>
-<li>We now distribute `nuget` and `ikdasm`</li>
-<li>Performance tuning for our GC bridge</li>
-<li>Debugger supports columns and ranges</li>
-<li>Debugger can examine properties by decompiling IL, without having to resume the target to evaluate.</li>
-<li>Major HTTP stack rewrite and test suite</li>
-<li>System.IO.Compression implemented</li>
-<li>System.Security.Claims implemented</li>
+<li>Contadores de Performance</li>
+<li>Nós agora distribuimos `nuget` e `ikdasm`</li>
+<li>Ajuste de performance na ponte do Coletor de Lixo (GC bridge)</li>
+<li>Depurador suporta colunas e faixas</li>
+<li>Depurador examina propriedades descompilando IL, sem ter que desbloquear a execução do código alvo.</li>
+<li>Grande reescrita da pilha HTTP e da sua suite de testes</li>
+<li>Implementação da System.IO.Compression</li>
+<li>Implementação da System.Security.Claims</li>
 </ul>
 </td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.6.0 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Notas de Liberação do Mono 3.6.0">Notas de Liberação do Mono 3.6.0</a></p>
 <p><br /></p></td>
 </tr>
 </tbody>
 </table>
 
-Upcoming Releases
+Liberações Futuras
 -----------------
 
-Mono 3.8.0 currently available on a preview
+Mono 3.8.0 atualmente disponível em pré-visualização
 
 <table>
 <col width="50%" />
@@ -64,7 +64,7 @@ Mono 3.8.0 currently available on a preview
 <tbody>
 <tr class="odd">
 <td align="left"><strong> Mono 3.8.0</strong></td>
-<td align="left"><strong>Planned Release: TBD</strong></td>
+<td align="left"><strong>Liberação Planejada Para: Ainda Por Definir</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
@@ -74,48 +74,47 @@ Mono 3.8.0 currently available on a preview
 </tbody>
 </table>
 
-Subprojects projects
---------------------
+Subprojetos
+-----------
 
-Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Outros projetos como o [depurador](/docs/debug+profile/debug/debugger/), o navegador de documentação, integração com [Java](/docs/about-mono/languages/java/) via IKVM, [Olive](/archived/olive "Olive") e [Gtk#](/docs/gui/gtksharp/) permanecem com suas próprias agendas. Esta página será atualizada para conter novas informações conforme elam estejam disponível.
 
-### Mono and Silverlight
+### Mono e Silverlight
 
-[Moonlight](/docs/web/moonlight/) the open source implementation of Silverlight on top of Mono for
-Linux is no longer being developed.
+[Moonlight](/docs/web/moonlight/) a implementação de código aberto do Silverlight em cima do Mono para Linux não está mais sendo desenvolvido.
 
-### Unsupported technologies
+### Tecnologias não suportadas
 
-Some of the .NET technologies have been either deprecated, are too Windows-specific or are very large efforts and our community is unable to produce viable implementations for them.
+Algumas tecnologias .NET technologies ou foram descontinuadas (deprecated), ou são muito específicas do Windows ou seriam esforços muito grandes e nossa comunidade não é capaz de produzir implementações viáveis delas.
 
-If someone cares deeply about these APIs and implements them, we would likely bundle them with Mono, but they are not actively being worked on. There might be some code for these on our [git](/community/contributing/source-code-repository/) repository, but the code is not suitable for production use nor do we recommend that developers building cross platform applications depend on it.
+Se alguém se importa **muito** com essas APIs e conseguir implementá-las, nós gostariamos de empacotá-las junto com o Mono, mas elas não estão sendo ativamente desenvolvidas. Pode exister código para algumas delas no nosso [repositório git](/community/contributing/source-code-repository/), mas ele não está com qualidade para ser posto em produção e não recomendamos que desenvolvedores construindo aplicações multi-plataforma dependem desse código.
 
-Too large stacks:
+Pilhas demasiado grandes:
 
--   Windows Presentation Foundation
+- Windows Presentation Foundation
 
-We are not working on any of the following deprecated APIs:
+Não estamos trabalhando nestas APIs descontinuadas:
 
--   System.EnterpriseServices
--   [WSE](/archived/wse "WSE") - Extensions to System.Web.Services.
--   Workflow Foundation 3 (WF3)
--   [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
+- System.EnterpriseServices
+- [WSE](/archived/wse "WSE") - Extensões do System.Web.Services.
+- Workflow Foundation 3 (WF3)
+- [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
 
-The following do not map to operating systems other than Windows, and we are unlike going to spend time to support them even on Windows:
+O seguinte não mapeia para sistemas operacionais que não o Windows, e nós não iremos gastar nosso tempo para implementá-las mesmo em Windows:
 
--   System.Management
+- System.Management
 
-A third party implementation of PowerShell exists:
+Uma implementação de terceiros existe para o PowerShell:
 
 - [PASH](https://github.com/Pash-Project/Pash)
 
-Comments
---------
+Comentários
+-----------
 
-Feel free to [send us your comments or questions](http://www.go-mono.com/contact/) about the roadmap.
+Sinta-se livre para [nos enviar seus comentários e questões](http://www.go-mono.com/contact/) sobre este caminho.
 
-Roadmap History
+Histórico
 ---------------
 
-For our previous roadmap information, please see [Roadmap History](/archived/roadmap_history "Roadmap History").
+Para informação antiga sobre este caminho veja [Histórico do Caminho a Frente](/archived/roadmap_history).
 

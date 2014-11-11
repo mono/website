@@ -1,23 +1,23 @@
 ---
-title: Install Mono on Windows
+title: Instalando Mono no Windows
 redirect_from:
   - /Using_Mono_on_Windows/
   - /Mono:Windows/
 ---
 
-Mono runs on Windows, this page describes the various features available for users who want to use Mono on Windows as well as using Mono-based technologies on Windows without Mono (like Gtk#).
+O Mono roda no Windows, esta página descreve os vários recursos disponíveis para os usuários que querem usar Mono no Windows, bem como a utilização de tecnologias baseadas em Mono no Windows sem Mono (como Gtk #)
 
-Installing Mono on Windows
-==========================
+Instalando o Mono no Windows
+============================
 
-1.  Download the latest Windows installer from the [Downloads](/download/)
-2.  Run the downloaded executable as administrator. During the installation, you will be asked to accept the terms of the license, presented with an information page, and then asked to answer a few standard questions, including:
-    1.  What directory to install Mono to
-    2.  What optional components to install
-    3.  What Start Menu Folder to install to
-    4.  What port will XSP (Mono's web server) use
+1.  Baixe o último instalador do Mono para Windows em [Downloads](/download/)
+2.  Execute o programa baixado como administrador. Durante a instalação lhe será perguntado se aceita os termos da licença, apresentada com a página de informações, bem como pedidas algumas poucas outras informações, incluindo:
+    1.  Em qual diretório o Mono deve ser instalado
+    2.  Que componentes opcionais devem ser instalados
+    3.  Em qual pasta do Menu Iniciar deve ser colocados os atalhos
+    4.  Qual porta IP o servidor web do Mono (XSP) deve usar
 
-The default installation will create a new "Mono for Windows" program group under the Start menu with links to all of the common tools you will need to get started with Mono
+A instalação padrão cria uma pasta "Mono for Windows" dentro do Menu Iniciar com atalhos para as ferramentas de uso mais comum ao começar a lidar com o Mono
 
 Mono Experimental Installer for Windows
 ---------------------------------------

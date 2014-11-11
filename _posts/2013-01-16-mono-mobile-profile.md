@@ -2,7 +2,7 @@
 layout: blog
 title: "Mono Mobile Profile"
 author: Miguel de Icaza
-tags: [mobile]
+tags: [mobile, mono]
 ---
 
 When Mono for iOS was launched, we designed a new lightweight API profile.  This lightweight profile was designed to deliver all of the major features that developers needed and remove things that did not make sense on iOS or caused binaries to bloat too much on an environment where everything would have to be included.

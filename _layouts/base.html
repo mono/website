@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>{{ page.title }} | Mono</title>
+    <meta name="google-site-verification" content="hQ4GLU8CN_Qkno8842XVU489cLmOCWqXP3AID_aewM0" />
+    <title>{{ page.title }} | MonoBrasil</title>
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="alternate"  href="/atom.xml" type="application/rss+xml" title="Mono Project News" />
+    <link rel="alternate"  href="/atom.xml" type="application/rss+xml" title="Novidades do MonoBrasil" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/normalize.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
@@ -28,6 +29,50 @@
       ga('create', 'UA-76510-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <style>
+      @media only screen and (min-width: 64em) {
+        .top-bar-section ul li>a {
+          font-size: 0.87rem;
+        }
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 15px;
+        }
+      }
+      @media only screen and (max-width: 64em) and (min-width: 60em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 11px;
+        }
+      }
+      @media only screen and (max-width: 60em) and (min-width: 54em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          padding: 0 9px;
+        }
+      }
+      @media only screen and (max-width: 54em) and (min-width: 46em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 12px;
+          padding: 0 7px;
+        }
+      }
+      @media only screen and (max-width: 46em) and (min-width: 43em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 11px;
+          padding: 0 6px;
+        }
+      }
+      @media only screen and (max-width: 43em) and (min-width: 40.063em) {
+        .top-bar-section li:not(.has-form) a:not(.button), 
+        .top-bar-section li.active:not(.has-form) a:not(.button) {
+          font-size: 10px;
+          padding: 0 5px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="main-wrapper">
@@ -43,17 +88,17 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li {% if page.navgroup == "home" %}class="active"{% endif %}><a href="/"><i class="fa fa-home"></i> Home</a></li>
+              <li {% if page.navgroup == "home" %}class="active"{% endif %}><a href="/"><i class="fa fa-home"></i> Início</a></li>
               <li {% if page.navgroup == "download" %}class="active"{% endif %}><a href="/download/"><i class="fa fa-download"></i> Download</a></li>
-              <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fa fa-book"></i> Documentation</a></li>
-              <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fa fa-bullhorn"></i> News</a></li>
-              <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fa fa-github"></i> Community</a></li>
+              <li {% if page.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fa fa-book"></i> Documentação</a></li>
+              <li {% if page.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fa fa-bullhorn"></i> Novidades</a></li>
+              <li {% if page.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fa fa-github"></i> Communidade</a></li>
               <li class="has-form">
                 <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
                     <div class="small-11 medium-9 large-10 columns">
-                      <input name="as_sitesearch" type="hidden" value="www.mono-project.com" />
-                      <input name="q" type="text" placeholder="Search..." />
+                      <input name="as_sitesearch" type="hidden" value="www.monobrasil.com.br" />
+                      <input name="q" type="text" placeholder="Procurar..." />
                     </div>
                     <div class="small-1 medium-3 large-2 columns">
                      <button type="submit" class="postfix button"><i class="fa fa-search"></i></button>
@@ -75,10 +120,10 @@
       <div class="row">
         <div class="small-12 columns">
           <div class="left">
-            <strong>&copy; {{site.time | date: '%Y'}} Mono Project</strong>
+            <strong>&copy; {{site.time | date: '%Y'}} Projetos Mono &amp; MonoBrasil</strong>
             <br/>
             <div id="footer-notes">
-              <a href="/docs/about-mono/legal/">Legal Notices</a>
+              <a href="/docs/about-mono/legal/">Notas Legais</a> - <em>Comunidade Brasileira do Mono</em>
             </div>
           </div>
           <div class="right">

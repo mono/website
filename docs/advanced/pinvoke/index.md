@@ -1,5 +1,5 @@
 ---
-title: Interop with Native Libraries
+title: Interoperação com Bibliotecas Nativas
 redirect_from:
   - /Interop_with_Native_Libraries/
   - /Dllimport/
@@ -7,32 +7,32 @@ redirect_from:
   - /PInvoke/
 ---
 
-Introduction
-============
+Introdução
+==========
 
-The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principal, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
+O [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) foi projetado para "facilitar" a interoperação com código existente. Basicamente, tudo que você precisa fazer é criar um declaração de importação de função marcada com o atributo [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) para o código existente a ser chamado, e o ambiente de execução cuida do resto. Por exemplo:
 
 ``` csharp
  [DllImport ("libc.so")]
  private static extern int getpid ();
 ```
 
-Please note that most of the classes and enumerations mentioned in this document reside in the [System.Runtime.InteropServices](http://docs.go-mono.com/index.aspx?link=N:System.Runtime.InteropServices) namespace.
+Note que a maioria das classes e enumerações mencionadas neste documento residem no espaço de nomes (namespace) [System.Runtime.InteropServices](http://docs.go-mono.com/index.aspx?link=N:System.Runtime.InteropServices).
 
-The above C# function declaration would invoke the POSIX **getpid**(2) system call on platforms that have the `libc.so` library. If `libc.so` exists but doesn't have the **getpid** export, an [EntryPointNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.EntryPointNotFoundException) exception is thrown. If `libc.so` can't be loaded, a [DllNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.DllNotFoundException) exception is thrown. Simple. Straightforward. What could be easier?
+A declaração da função C# acima chamaria a system call POSIX **getpid**(2) nas plataformas que tem um biblioteca `libc.so`. Se `libc.so` existe mas não contém uma exportação denominada **getpid**, uma exceção do tipo [EntryPointNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.EntryPointNotFoundException) é arremessada. Se a biblioteca `libc.so` não puder ser carregada, uma exceção do tipo [DllNotFoundException](http://docs.go-mono.com/index.aspx?link=T:System.DllNotFoundException) é arremessada. Simples. Direta. O que poderia ser mais fácil?
 
-There are three problems with this:
+Temos três problemas com isso:
 
-1.  [Specifying the library in the DllImport statement](#library-handling).
-2.  [Determining what function to actually invoke](#invoking-unmanaged-code).
-3.  [Passing parameters](#marshaling); most existing code is far more complex. Strings will need to be passed, structures may need to be passed, memory management practices will become involved...
+1.  [Especificar a biblioteca com o atributo DLLImport](#localização-e-carga-de-bibliotecas-nativas).
+2.  [Determinar que função deve ser efetivamente chamadas](#invoking-unmanaged-code).
+3.  [Passar parâmetros na forma apropriada](#marshaling); a maior parte do código existente é muito mais complexo. Cadeias de caracteres (strings) precisam ser convertidas e passadas, estruturas podem precisar ser passadas, práticas de gerenciamento de memória podem ser envolvidas...
 
-Existing code is a complex beast, and the interop layer needs to support this complexity.
+Código existente é um monstro complexo, e a camada de interoperação precisa atender essa complexidade.
 
-Library Handling
-================
+Localização e Carga de Bibliotecas Nativas
+==========================================
 
-How does the runtime find the library specified in the **DllImport** attribute? This question is inherently platform specific.
+Como o ambiente de execução acha a biblioteca especificada no atributo **DllImport**? Essa é uma questão inerentemente específica a cada plataforma.
 
 Windows DLL Search Path
 -----------------------

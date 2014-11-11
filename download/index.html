@@ -12,8 +12,8 @@ redirect_from:
   <div class="small-12 columns">
     <h1>Download</h1>
 
-    <h5>The latest Mono release is: <strong>{{page.latestmono}}</strong></h5>
-    <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> or as a <a href="http://download.mono-project.com/sources/mono/">Tarball</a>.</p>
+    <h5>O último release do  Mono é: <strong>{{page.latestmono}}</strong></h5>
+    <p>Por favor escolha seu sistema operacional para ver os pacotes disponíveis. O código fonte está disponível em <a href="https://github.com/mono/mono">GitHub</a> ou como um <a href="http://download.mono-project.com/sources/mono/">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs vertical" data-tab data-options="deep_linking: true; scroll_to_content: false">
       <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
@@ -23,63 +23,64 @@ redirect_from:
 
     <div class="tabs-content vertical">
       <div class="panel content active" id="download-mac">
-        <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
-        <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+        <h3>O Mono para Mac OS X está disponível como um Mac Package (.pkg)</h3>
+        <p>Por favor procure no <a href="/docs/getting-started/install/mac"> guia de instalação</a> maiores informações sobre como intalar e configurar o ambiente do Mono no Mac.</p>
+        <p><i>O MDK package é para desenvolvedores.</i></p>
         <div>
-          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MRE-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MRE</a>
-          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
-          <p>MRE is the Mono Runtime Environment, MDK is the Mono Development Kit.</p>
-          <p><i>Use the MDK if you're developing applications that run on .NET/Mono. It includes the MRE and extra tools, libraries, .NET PCL (Portable Class Library) profiles, etc. that are required for development.</i></p>
+          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MRE-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Baixar Mono MRE</a>
+          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Baixar Mono MDK</a>
+          <p>MRE é o  Mono Runtime Environment, MDK é o Mono Development Kit.</p>
+          <p><i>Use o MDK se você está desenvolvendo aplicações que rodam no .NET/Mono. Ele inclui o MRE e ferramentas adicionais, bibliotecas, perfis .NET PCL (Portable Class Library), etc. que são necessários para desenvolvimento.</i></p>
         </div>
       </div>
       <div class="panel content" id="download-lin">
-        <h3>Mono for Linux is available for various distributions</h3>
-        <p>Please refer to the <a href="/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
-        <h4>Xamarin packages</h4>
+        <h3>O Mono para o Linux está disponível para várias distribuições</h3>
+        <p>Por favor procure informações no <a href="/docs/getting-started/install/linux"> guia de instalação</a> por mais informações de como instalar e configurar o ambiente do Mono.</p>
+        <h4>Pacotes Xamarin</h4>
         <div>
-          <p>These packages are built, tested and distributed by Xamarin. Use these if you want to use a stable, official and up-to-date version of Mono.</p>
+          <p>Estes pacotes são construídos, testados e distribuidos pela Xamarin. Use estes se você quiser usar a versão estável oficial do Mono.</p>
           <ul>
-            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives">Debian, Ubuntu, and derivatives</a></li>
-            <li><a href="/docs/getting-started/install/linux/#centos-fedora-and-derivatives">Red Hat, SUSE, and derivatives</a></li>
+            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives">Debian, Ubuntu, e derivados</a></li>
+            <li><a href="/docs/getting-started/install/linux/#centos-fedora-and-derivatives">Red Hat, SUSE e derivados</a></li>
           </ul>
         </div>
-        <h4>Linux distribution packages</h4>
-        <p>Mono is packaged in various Linux distributions by third-party maintainers. Some packages do not ship the latest Mono version; this depends on the distribution/maintainer.</p>
+        <h4>Pacotes das Próprias Distribuições Linux</h4>
+        <p>O Mono é empacotado para diversas distribuições Linux por mantenedores externos. Alguns pacotes não contém a última versão do Mono, isso depende de cada distribuição/mantenedor.</p>
         <div>
           <ul>
             <li><a href="https://www.archlinux.org/packages/extra/i686/mono/">Arch Linux</a></li>
-            <li>CentOS</li>
+            <li><a href="/docs/getting-started/install/linux/centos/">CentOS</a></li>
             <li><a href="https://packages.debian.org/mono-complete">Debian</a></li>
             <li><a href="https://packages.gentoo.org/package/dev-lang/mono">Gentoo</a></li>
             <li><a href="https://software.opensuse.org/package/mono-complete">openSUSE</a></li>
             <li><a href="http://packages.ubuntu.com/mono-complete">Ubuntu</a></li>
           </ul>
         </div>
-        <h4>Continuous Integration packages</h4>
+        <h4>Integração Continua dos Pacotes</h4>
         <div>
-          <p>Every commit to our repository automatically builds distribution packages. Use these if you want a bleeding edge Mono version and don't care about stability.</p>
-          <p><a href="/docs/getting-started/install/linux/ci-packages/"><i class="fa fa-book"></i> Learn more about CI packages</a></p>
+          <p>Todo comite em nosso repositório é automaticamente causa a compilação e construção dos pacotes a serem distribuídos. Use está versão se você quizer uma versão 'fresca' do Mono e não estiver preocupado com a estabilidade da mesma.</p>
+          <p><a href="/docs/getting-started/install/linux/ci-packages/"><i class="fa fa-book"></i> Aprenda sobre os pacotes da Integração Contínua</a></p>
         </div>
-        <h4>Community packages</h4>
+        <h4>Pacotes da Comunidade</h4>
         <div>
-          <p>These packages are provided by the community and linked here for your convenience. They are not tested by Xamarin, so use them at your own risk.</p>
+          <p>Estes pacotes são desenvolvidos pela comunidade, os links estão aqui para sua conveniencia. Eles não são testados pela Xamarin, use por sua conta e risco.</p>
           <ul>
-            <li><a href="http://software.opensuse.org/download/package?project=home:tpokorra:mono&amp;package=mono-opt">Mono Packages installed to /opt for CentOS, Fedora, Debian and Ubuntu</a></li>
+            <li><a href="http://software.opensuse.org/download/package?project=home:tpokorra:mono&amp;package=mono-opt">Pacotes Mono para instalar no /opt para uso no CentOS, Fedora, Debian e Ubuntu</a></li>
             <li><a href="http://software.opensuse.org/download/package?project=Mono:Factory&amp;package=mono-complete">Latest SUSE mono packages, part of the official "Factory" repository</a></li>
           </ul>
         </div>
       </div>
       <div class="panel content" id="download-win">
-        <h3>Mono for Windows is available as a Windows Installer file</h3>
-        <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
-        {% include note.html type="alert" message="Currently the latest Mono for Windows version is **3.2.3**. We're working on getting a more recent version released." %}
+        <h3>O Mono para Windows esta disponível com um instalador executável padrão do Windows</h3>
+        <p>Por favor busque detalhes no <a href="/docs/getting-started/install/windows">guia de instalação</a> sobre como instalar e configurações o ambiente do  Mono em Windows.</p>
+        {% include note.html type="alert" message="Atualmente a última versão do Mono para Windows é a versão **3.2.3**. Nós estamos trabalhando para empacotar a versão mais recente." %}
         <div>
           <a href="http://download.mono-project.com/archive/3.2.3/windows-installer/mono-3.2.3-gtksharp-2.12.11-win32-0.exe" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
         </div>
       </div>
     </div>
 
-    <h2>Release Notes</h2>
-    <p>Check out the release notes of <a href="/docs/about-mono/releases/{{page.latestmono}}/">Mono {{page.latestmono}}</a>, or view the release notes of older Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
+    <h2>Notas de Liberação</h2>
+    <p>Verifique aqui as notas das versões do <a href="/docs/about-mono/releases/{{page.latestmono}}/">Mono {{page.latestmono}}</a>, ou veja as notas de versões anteriores do Mono <a href="/docs/about-mono/releases/"> aqui</a>.</p>
   </div>
 </div>

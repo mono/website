@@ -1,6 +1,6 @@
 ---
 layout: base
-title: News
+title: Novidades
 navgroup: news
 ---
 <div class="row">
@@ -16,10 +16,10 @@ navgroup: news
      </div>
      <nav>
        {% if paginator.previous_page %}
-         <a href="{{ paginator.previous_page_path | replace: 'index.html', '' }}" class="prev">&laquo; Previous Page</a>
+         <a href="{{ paginator.previous_page_path | replace: 'index.html', '' }}" class="prev">&laquo; Página Anterior</a>
        {% endif %}
        {% if paginator.next_page %}
-         <a href="{{ paginator.next_page_path }}/" class="next">Next Page &raquo; </a>
+         <a href="{{ paginator.next_page_path }}/" class="next">Página Seguinte &raquo; </a>
        {% endif %}
      </nav>
   </div>
