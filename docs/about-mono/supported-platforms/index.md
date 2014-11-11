@@ -1,5 +1,5 @@
 ---
-title: Plataformas Suportadas
+title: Supported Platforms
 redirect_from:
   - /Supported_Platforms/
   - /Platforms_Supported/
