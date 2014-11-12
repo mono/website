@@ -1,68 +1,68 @@
 ---
-title: Small footprint
+title: Menos espaço
 redirect_from:
   - /Small_footprint/
   - /Small/
 ---
 
-How to make a smaller Mono install
-==================================
+Como fazer uma instalação menor do Mono
+=======================================
 
-The most basic mono install currently takes about 3.7 MB of disk space, this includes about 1.7 MB for the JIT and 2 MB for mscorlib.dll.
+A instalação mais básica do mono atualmente ocupa cerca de 3,7 MB de espaço em disco, isso inclui cerca de 1,7 MB para o JIT e 2 MB para o mscorlib.dll.
 
-The runtime memory requirements depend on how complex the target application is. A simple application will be happy with 2 MB of writable memory for the mono process itself and 5 MB of readonly shared memory for the mmapped libraries and assemblies. At this time we suggest that the minimum system memory is 32 MB, though of course mono can be run in less memory, the total depends on the applications that run on the system.
+Os requisitos de memória para execução dependem de quão complexa é a aplicação alvo. Uma aplicação simples vai se satisfazer com 2 MB de memória de escrita para o processo do mono em si e 5 MB de memória compartilhada de apenas leitura para as bibliotecas mmapped e montagens. Até aqui sugere-se que o requisito mínimo de memória de sistema seja 32 MB, embora o mono possa executar com menos memória, o total depende das aplicações que estão executando no sistema.
 
-There are several things that can be done to reduce the footprint of the mono runtime. Here are a few hints and ideas:
+Há várias coisas que podem ser feitas para reduzir o espaço ocupado pela execução do mono. Seguem algumas dicas e ideias:
 
--   Removing unneeded features
--   Removing unneeded data
--   Compilation hints
--   Reducing code in assemblies
+-   Removendo recursos desnecessários
+-   Removendo informações desnecessárias
+-   Dicas de compilação
+-   Reduzindo o código nas montagens
 
-Removing unneeded features
---------------------------
+Removendo recursos desnecessários
+---------------------------------
 
-The runtime can be configured to disable certain features. A few of this are needed only to help debugging mono, or only on some systems. The flag to use is --enable-minimal=list where list is a comma-separated list of features such as: aot, profiler, decimal, pinvoke, debug, reflection_emit, large_code, logging, com, ssa, generics. So do something like this in the mono source directory:
+O Mono pode ser configurado para desabilitar certos recursos. Alguns deles são necessários apenas para ajudar a depurar o mono, ou apenas em alguns sistemas. A diretiva a ser usada é --enable-minimal=list onde list é uma lista de recursos separadas por vírgula, dessa forma: aot, profiler, decimal, pinvoke, debug, reflection_emit, large_code, logging, com, ssa, generics. Então faça algo parecido com isso em seu diretório com o código fonte do mono:
 
      ./configure --enable-minimal=aot,profiler
 
-to remove support for AOT and profiling in the build.
+para remover o suporte à AOT e profiling da construção.
 
-The additional option --enable-small-config will further reduce the runtime memory requirements and limit some capabilities, like the maximum number of threads and the maximum code size in methods etc.
+A opção adicional --enable-small-config vai reduzir mais ainda os requisitos de memória em tempo de execução e limitar algumas capacidades, com o número máximo de threads e o tamanho máximo de código em métodos, etc.
 
-Note that some of the flags are currently not actually implemented, but it is very easy to contribute in this area: choose an unimplemented flag, patch the runtime with the proper #ifdefs, test the build with and without the feature and sumbit us a patch.
+Note que algumas das diretivas não estão implementadas no momento, mas é muito fácil contribuir nessa área: escolha uma diretiva não implementada, modifique o mono com os #ifdefs apropriados, teste a construção com e sem a funcionalidade e envie-nos um patch.
 
-The Boehm GC can be built to suite small heaps better (usually if you want a small mono, you also have constraints on the runtime RAM usage). Change libgc/configure.in to unconditionally define SMALL_CONFIG adding the following line:
+O GC Boehm pode ser construído para suportar melhor heaps menores (normalmente se você quer um mono menor, você também tem restrições no uso da memória RAM). Modifique libgc/configure.in para definir incondicionalmente SMALL_CONFIG adicionando a seguinte linha:
 
      AC_DEFINE(SMALL_CONFIG)
 
-Removing unneeded data
+Removendo informações desnecessárias
 ----------------------
 
-The runtime does include data to support locale handling and collation. To reduce the number of supported locales, go into the tools/locale-builder and type
+O mono inclui informações para suportar o gerenciamento de internacionalização e agrupamento. Para reduzir o número de internacionalizações suportadas, entre em tools/locale-builder e digite
 
      make minimal MINIMAL_LOCALES=en_US
      make install-culture-table
 
-and then run make in the toplevel dir to build a mono runtime with support for just the en_US locale.
+e então execute make no diretório do topo para construir um mono com suporte apenas à internacionalização en_US.
 
-Several KBs can be saved by removed unneeded collation data (FIXME: add details here).
+Muitos KBs podem ser poupados removendo dados de agrupamento desnecessários (FIXME: adicione detalhes aqui).
 
-Compilation hints
------------------
+Dicas de compilação
+-------------------
 
-Make sure you compile with optimizations for size, this is done by typing:
+Garanta a compilação com otimizações de tamanho, faça isso digitando:
 
      make CFLAGS=-Os
 
-in the toplevel mono dir after configuring. This can save hundred of kilobytes. Remember to strip the installed binary, too:
+no diretório topo do mono depois de configurar. Isso pode poupar centenas de kilobytes. Lembre-se também de retirar informações desnecessárias do binário final com o comando strip:
 
      strip $prefix/bin/mono
 
-to remove debugging and unused symbol information.
+para remover informações de depuração e de símbolos não utilizados.
 
-Reducing code in assemblies
+Reduzindo o código nas montagens
 ---------------------------
 
-To reduce the size of the managed assemblies, use the linker tool in the cecil git module.
+Para reduzir o tamanho das montagens gerenciadas, use a ferramenta de ligação no módulo cecil no git.
 
