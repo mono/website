@@ -6,33 +6,33 @@ redirect_from:
 
 Trampolins são pequenos, pedaços de código assembly escritos à mão usados para executar várias tarefas em tempo de execução do mono. Eles são gerados em tempo de execução usando as macros de geração de código nativas utilizadas pelo JIT. Eles geralmente têm uma função C correspondente que pode ser utilizada caso seja necessário executar uma tarefa mais complexa. Eles podem ser vistos como formas de passar o controle do código JIT de volta para o tempo de execução.
 
-The common code for all architectures is in mini-trampolines.c, this file contains the trampoline creation functions plus the C functions called by the trampolines. The tramp-\<ARCH\>.c files contain the arch-dependent code which creates the trampolines themselves.
+O código comum para todas as arquiteturas está em mini-trampolines.c, este arquivo contém funções de criação de trampolim mais as funções C chamadas pelos trampolins. Os arquivos tramp-\<ARCH\>.c contém o código dependente da arquitetura que cria os próprios trampolins.
 
-Most, but not all trampolines consist of two parts:
+A maioria, mas não todos os trampolins consistem de duas partes:
 
--   a generic part containing most of the code. This is created by the mono_arch_create_trampoline_code () function in tramp-\<ARCH\>.c. Generic trampolines can be large (1kb).
--   a specific part whose job is to call the generic part, passing in a parameter. The parameter to pass and the method by it is passed depends on the type of the trampoline. Specific trampolines are created by the mono_arch_create_specific_trampoline () function in tramp-\<ARCH\>.c. Specific trampolines are small, since the runtime creates lots of them.
+-   uma parte genérica contendo a maior parte do código. Esta é criada pela função mono_arch_create_trampoline_code () em tramp-\<ARCH\>.c. Trampolins genéricos podem ser grandes (1kb).
+-   uma parte específica cuja a função é chamar a parte genérica, passando um parâmetro. O parâmetro para passar e o método pelo qual é passado depende do tipo de trampolim. Trampolins específicos são criados pela função mono_arch_create_specific_trampoline () em tramp-\<ARCH\>.c. Trampolins específicos são pequenos, desde que sejam criados vários em tempo de execução.
 
-The generic part saves the machine state to the stack, and calls one of the trampoline functions in mini-trampolines.c with the state, the call site, and the argument passed by the specific trampoline. After the C function returns, it either returns normally, or branches to the address returned by the C function, depending on the trampoline type.
+A parte genérica salva o estado da máquina para a pilha, e chama uma das funções trampolim em mini-trampolines.c com o estado, o site de chamada, e o argumento passado para um trampolim específico. Após a função C retornar, normalmente retorna, ou ramos para o endereço retornado pela função C, dependendo do tipo de trampolim.
 
-Trampoline types are given by the MonoTrampolineType enumeration in [mini.h](https://github.com/mono/mono/blob/master/mono/mini/mini.h).
+Tipos de trampolim são dadas pela enumeração MonoTrampolineType em [mini.h](https://github.com/mono/mono/blob/master/mono/mini/mini.h).
 
-The platform specific code for trampolines is in the file tramp-\<ARCH\>.c for each architecture, while the cross platform code is in mini-trampolines.c. There are two types of functions in mini-trampolines.c:
+O código específico da plataforma para trampolins está no arquivo tramp-\<ARCH\>.c para cada arquitetura, enquanto o código entre plataformas está em mini-trampolines.c. Há dois tipos de funções em mini-trampolines.c:
 
--   The actual C functions called by the trampolines.
--   Functions to create the different trampolines types.
+-   As funções C reais chamados pelos trampolins.
+-   Funções para criar os diferentes tipos de trampolins.
 
-Trampoline creation functions have the following signature:
+Funções de criação de trampolim tem a seguinte assinatura:
 
 ``` bash
 gpointer
 mono_arch_create_foo_trampoline (<args>, MonoTrampInfo **info, gboolean aot)
 ```
 
-The function should return a pointer to the newly created trampoline, allocating memory from either the global code manager, or from a domain's code manager. If INFO is not NULL, it is set to a pointer to a MonoTrampInfo structure, which contains information about the trampoline, like its name, unwind info, etc. This is used for two purposes:
+A função deve retornar um ponteiro para o trampolim recém-criado, alocando memória a partir de qualquer gerenciador de código global, ou a partir de um gerenciador de código de domínio. Se INFO não for NULL, ele é definido como um ponteiro para uma estrutura do tipo MonoTrampInfo, que contém informação sobre o trampolim, como o seu nome, informação genérica, etc. Isto é utilizado para duas finalidades:
 
--   Saving the trampoline info an AOT image in 'full-aot' mode.
--   Saving debug info about the trampoline in XDEBUG mode.
+-   Salvar a informação do trampolim em uma imagem AOT em modo 'full-aot'.
+-   Salvar a informação de debug sobre o trampolim em modo XDEBUG.
 
 ### JIT Trampolines
 
