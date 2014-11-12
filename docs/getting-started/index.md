@@ -1,21 +1,21 @@
 ---
-title: Getting Started
+title: Iniciando com Mono
 redirect_from:
   - /Start/
   - /Getting_Started_Test/
   - /Learn/
 ---
 
-[What is Mono?](/docs/about-mono/)
- Find out what Mono is and what it can help you do.
+[O que é o Mono?](/docs/about-mono/)
+ Descubra o que é o Mono e o que ele pode fazer para ajudar você.
 
-[Mono Basics](/docs/getting-started/mono-basics/)
- Make sure Mono is installed correctly by compiling/running Hello World.
+[Basico do Mono](/docs/getting-started/mono-basics/)
+ Tenha certeza de que o Mono está instalado corretamente compilando/rodando o Hello World.
 
-[Compatibility](/docs/about-mono/compatibility/)
- Check Mono's compatibility with Microsoft .NET.
-
-Working with Mono
+[Compatibilidade](/docs/about-mono/compatibility/)
+ Verifique a compatibilidade do Mono com Microsoft .NET
+ 
+Trabalhando com o Mono
 -----------------
 
 <table>
@@ -24,9 +24,9 @@ Working with Mono
 <col width="33%" />
 <thead>
 <tr class="header">
-<th align="left"><h3>Mono for the Web</h3></th>
-<th align="left"><h3>Mono for the Desktop</h3></th>
-<th align="left"><h3>Documentation</h3></th>
+<th align="left"><h3>Mono para Web</h3></th>
+<th align="left"><h3>Mono para Desktop</h3></th>
+<th align="left"><h3>Documentação</h3></th>
 </tr>
 </thead>
 <tbody>
