@@ -55,7 +55,7 @@ Marcos Importantes
 2002
 ----
 
--   03 de Janeiro: O compilador Mono C# pode iniciar a si mesmo utilizando a plataforma .NET. O próximo passo é inicializar com a plataforma Mono (Mono runtime).
+-   03 de Janeiro: O compilador Mono C# pode compilar a si próprio utilizando a plataforma .NET. O próximo passo é inicializar com a plataforma Mono (Mono runtime).
 
 -   04 de Janeiro: Mono recebe suporte Unicode.
 
