@@ -4,39 +4,39 @@ redirect_from:
   - /FAQ/
 ---
 
-This site provides an overview of all available FAQ's.
+Esta página fornece uma visão de todas FAQ (Perguntas frequentes) disponíveis.
 
-FAQ's directly about Mono
+FAQ's diretas sobre Mono
 =========================
 
--   [General Mono FAQ](/docs/faq/)
--   [Licensing and Patents](/docs/faq/licensing/)
--   [Questions about Security](/docs/faq/security/)
--   [Technical FAQ](/docs/faq/technical/)
+-   [FAQ Geral sobre Mono](/docs/faq/)
+-   [Licensas e Patentes](/docs/faq/licensing/)
+-   [Questões sobre Segurança](/docs/faq/security/)
+-   [FAQ técnicas](/docs/faq/technical/)
 
-Developing With Mono
+Desenvolvendo com Mono
 ====================
 
-Desktop Applications
+Aplicações Desktop
 --------------------
 
 -   [GTK#](/docs/faq/gtk/)
 -   [Windows Forms](/docs/faq/winforms/)
 
-Web Programming
+Programação Web
 ---------------
 
 -   [ASP.NET](/docs/faq/aspnet/)
 
-Development Tools
+Ferramentas de desenvolvimento
 -----------------
 
 -   [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/faq/)
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/faq/)
 
-Documenting Mono and your applications
+Documentação Mono e suas aplicações
 ======================================
 
--   [FAQ: Documentation](/docs/faq/documentation/)
+-   [FAQ: Documentação](/docs/faq/documentation/)
 
 
