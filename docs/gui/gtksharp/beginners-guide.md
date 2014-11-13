@@ -18,9 +18,9 @@ Adaptado do [gtk+ website](http://www.gtk.org/): *GTK+ é um conjunto de ferrame
 
 Atualmente GTK+ funciona nativamente em qualquer servidor X, sistema Framebuffer direto e derivitives Microsoft Windows NT. A biblioteca tem origem a partir do Linux, onde ele fornece uma base para o popular ambiente [GNOME] (http://www.gnome.org/) desktop. GTK+ é rotineiramente incluído na maioria das distribuições Linux, e tem se mantido estável em derivitives do Windows NT por um bom tempo agora (provavelmente mais ou menos por volta de 2000, se a memória não me falha).
 
-A native port to Mac OSX is planned but needs warm bodies. This is a call for participation.
+Uma portabilidade nativa para Mac OSX está prevista, mas precisa de pessoal disponível para ajudar. Esta é uma chamada para a participar do projeto.
 
-One common misconception is that GTK# requires Mono to work. This is far from the truth. GTK# will run on any .NET compatible runtime. GTK# is regularly tested on MS.NET and Mono but should run on any fully compliant runtime. This means if you write your applications in GTK# and wished to run on Windows as well, you can choose to deploy with just GTK# and use Microsoft's runtime, or alternately deploy with Mono's runtime for Windows.
+Um equívoco comum, é que GTK# requer o Mono para funcionar. Isto está muito longe da verdade. GTK# será executado em qualquer tempo de execução compatível com .NET. GTK# é regularmente testado em MS.NET e Mono, mas deve ser executado em qualquer tempo de execução totalmente compatível. Isto significa que se você escrever seus aplicativos em GTK# e deseja rodar em Windows, assim, você pode optar por implantar com apenas GTK# e usar tempo de execução da Microsoft, ou alternativamente implantar com runtime do Mono para Windows.
 
 Getting Set Up
 ==============
