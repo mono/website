@@ -5,11 +5,11 @@ redirect_from:
   - /MDB/
 ---
 
-The Mono runtime implements a debugging interface that allows debuggers and IDEs to debug managed code. This is called the [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) and is supported by both MonoDevelop, Xamarin Studio and Visual Studio (when the appropriate plugins are installed) as well as the command line [SDB client](https://github.com/mono/sdb).
+A runtime do Mono implementa uma interface de depuração que permite depuradores e IDEs para depurar código gerenciado. Isso é chamado de [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) e é suportado por MonoDevelop, Xamarin Studio e Visual Studio (quando os plugins adequados estão instalados), bem como a linha de comando [SDB client](https://github.com/mono/sdb).
 
-Mono provides an API to communicate with the debugger and create your own debugging UIs via the Mono.Debugger.Soft.dll assembly
+Mono fornece uma API para se comunicar com o depurador e criar suas próprias UIs de depuração através do assembly Mono.Debugger.Soft.dll
 
-In addition, if you can [use the Unix GDB debugger with Mono](/docs/debug+profile/debug/) to debug low level problems.
+Além disso, se você pode [use the Unix GDB debugger with Mono](/docs/debug+profile/debug/) para depurar problemas de baixo nível.
 
 Bugs
 ====
