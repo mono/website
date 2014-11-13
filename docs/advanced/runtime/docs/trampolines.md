@@ -34,23 +34,23 @@ A função deve retornar um ponteiro para o trampolim recém-criado, alocando me
 -   Salvar a informação do trampolim em uma imagem AOT em modo 'full-aot'.
 -   Salvar a informação de debug sobre o trampolim em modo XDEBUG.
 
-### JIT Trampolines
+### Trampolins JIT
 
-These trampolines are used to JIT compile a method the first time it is called. When the JIT compiles a call instruction, it doesn't compile the called method right away. Instead, it creates a JIT trampoline, and emits a call instruction referencing the trampoline. When the trampoline is called, it calls mono_magic_trampoline () which compiles the target method, and returns the address of the compiled code to the trampoline which branches to it. This process is somewhat slow, so mono_magic_trampoline () tries to patch the calling JITted code so it calls the compiled code instead of the trampoline from now on. This is done by mono_arch_patch_callsite () in tramp-\<ARCH\>.c.
+Estes trampolins são utilizados para compilar um método JIT a primeira vez que ele é chamado. Quando o JIT compila uma instrução de chamada, ele não compila o método chamado de imediato. Como alternativa, ele cria um trampolim JIT, e emite uma chamada de instrução referenciando o trampolim. Quando o trampolim é chamado, ele chama mono_magic_trampoline () que compila o método de destino, e retorna um endereço do código compilado para o trampolim que se ramifica a ele. Este processo é um pouco lento, então mono_magic_trampoline () tenta consertar o código gerado pelo JIT assim ele chama o código compilado em vez do trampolim a partir de agora. Isso é feito pelo mono_arch_patch_callsite () em tramp-\<ARCH\>.c.
 
-### Virtual Call Trampolines
+### Chamadas Virtuais de Trampolins
 
-There is one virtual call trampoline per vtable slot index. The trampoline uses this index plus the 'this' argument which is passed in a fixed register/stack slots by the managed calling convention to obtain the virtual method which needs to be compiled. It then patches the vtable slot with the address of the newly compiled method.
+Há uma chamada virtual de trampolim por índice vtable. O trampolim usa este índice mais o argumento 'this' que é passado num registro fixo/pilha pela convenção de chamada gerenciada para obter o método virtual que é necessário para compilar. Em seguida, ele corrige o conector vtable com o endereço do novo método compilado.
 
 \<TODO IMT\>
 
-### Jump Trampolines
+### Salto de Trampolins
 
-Jump trampolines are very similar to JIT trampolines, they even use the same mono_magic_trampoline () C function. They are used to implement the LDFTN and the JMP IL opcodes.
+Salto de trampolins são muito similares aos trampolins JIT, eles ainda usam a mesma função C mono_magic_trampoline (). Eles são usados para implementar os códigos de operação LDFTN e o JMP IL.
 
-### Class Init Trampolines
+### Classe Init Trampolines
 
-These trampolines are used to implement the type initialization sematics of the CLI spec. They call the mono_class_init_trampoline () C function which executes the class initializer of the class passed as the trampoline argument, then replaces the code calling the class init trampoline with NOPs so it is not executed anymore.
+Estes trampolins são usados para implementar os tipos de inicialização sematics da especificação CLI. Eles chamam a função C mono_class_init_trampoline () que executa o inicializador da classe passada como argumento do trampolim, em seguida, substitui o código chamadando a classe init trampoline com NOPs para que ele não seja mais executado.
 
 ### Generic Class Init Trampoline
 
