@@ -10,9 +10,9 @@ FAQ's diretas sobre Mono
 =========================
 
 -   [FAQ Geral sobre Mono](/docs/faq/)
--   [Licensas e Patentes](/docs/faq/licensing/)
+-   [Licenças e Patentes](/docs/faq/licensing/)
 -   [Questões sobre Segurança](/docs/faq/security/)
--   [FAQ técnicas](/docs/faq/technical/)
+-   [FAQs técnicas](/docs/faq/technical/)
 
 Desenvolvendo com Mono
 ====================
@@ -34,7 +34,7 @@ Ferramentas de desenvolvimento
 -   [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/faq/)
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/faq/)
 
-Documentação Mono e suas aplicações
+Documentando Mono e suas aplicações
 ======================================
 
 -   [FAQ: Documentação](/docs/faq/documentation/)
