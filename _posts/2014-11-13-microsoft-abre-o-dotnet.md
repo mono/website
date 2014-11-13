@@ -19,13 +19,12 @@ O código atual está residindo no [repositório github da Fundação .NET](http
 
 Essa promessa de patentes endereça as preocupações históricas que as comunidades de código aberto, Unix e de software livre levantaram ao longo dos anos.
 
-.NET Components
----------------
+Componentes liberados do .NET
+-----------------------------
 
 Existem 3 componentes sendo abertos: as bibliotecas do Framework .NET clássico, as bibliotecas do novo Framework .NET Core e a VM RyuJit. Mais detalhes abaixo.
 
-Bibliotecas de Classes do Framework .NET 
-----------------------------------------
+### Bibliotecas de Classes do Framework .NET 
 
 Estas são as bibliotecas de classe que implementam o framework .NET que existe no Windows. Aquelas que historicamente o projeto Mono reimplementou em forma de código aberto.
 
@@ -37,8 +36,8 @@ Nós estaremos atualizando o código no repositório github.com/mono no fim da s
 
 A Microsoft divulgou que eles não tem planos de aceitar patches ou engajar no estilo de comunidade de código aberto neste pacote de fontes, pois os requisitos de compatibilidade retroativa no Windows são extremamente fortes.
 
-.NET Core
----------
+### .NET Core
+
 O framework .NET Core é uma versão redesenhada do .NET que é baseado em uma versão simplificada das bibliotecas de classe bem como um projeto que permite incorporar o que for preciso do framework nas aplicações. (nota do tradutor: isso permite instalações lado-a-lado de aplicações com dependências em versões diferentes das bibliotecas do framework.)
 
 Aqueles familiarizados com as assemblies de contrato PCL 2.0 tem uma boa idéia do como essas assemblies se parecerão.
@@ -49,8 +48,7 @@ Hoje, eles liberaram os primeiros componentes no github; o plano é para o resto
 
 A Xamarin e o projeto Mono estarão contribuindo com o esforço de trazer o .NET para o Mac, Unix, Linux e outras plataformas. Nós iremos fazer isso conforme a Microsoft for abrindo mais peças do .NET Core, incluindo o RyuJIT.
 
-Próximos Passos
----------------
+### Próximos Passos
 
 Como nós fizemos no passado com o código .NET que a Microsoft foi liberando, e como nós fizemos com o Roslyn, nós estaremos integrando esse código no Mono e nos produtos da Xamarin.
 
@@ -62,4 +60,5 @@ Nós estaremos movendo as discussões sobre o .NET Core para os fóruns da Funda
 
 Com o projeto Mono, nós trabalhamos por 14 anos para ter uma versão de código aberto do .NET. Tendo a Microsoft liberado o .NET e publicado a promessa de patentes garantirá que todos nós poderemos cooperara em construir uma comunidade .NET maior, mais rica e mais vibrante.
 
+---
 Postado em 12 Nov 2014 por Miguel de Icaza
