@@ -4,12 +4,11 @@ redirect_from:
   - /Oracle/
   - /Oracle_fix/
 ---
+Mono vem com um cliente Oracle o assembly System.Data.OracleClient que acompanha a biblioteca Microsoft System.Data.OracleClient. Esta biblioteca foi descontinuada pela Microsoft e não é mais mantida.
 
-Mono comes with an Oracle client in the System.Data.OracleClient assembly and tracks the Microsoft System.Data.OracleClient library. This library has been discontinued by Microsoft and is no longer maintained.
+A Oracle produz um cliente para Windows, mas este não é suportado pelo Mono.
 
-Oracle produces a client for Windows, but they do not support this on Mono.
-
-Some commercial providers for Mono are available:
+Alguns providers comerciais para Mono estão disponíveis:
 
 -   [http://www.devart.com/dotconnect/oracle/](http://www.devart.com/dotconnect/oracle/)
 -   [http://www.datadirect.com/products/net/net%5Ffor%5Foracle/index.ssp](http://www.datadirect.com/products/net/net%5Ffor%5Foracle/index.ssp)
@@ -18,116 +17,116 @@ Some commercial providers for Mono are available:
 <col width="100%" />
 <tbody>
 <tr class="odd">
-<td align="left"><h2>Table of contents</h2>
+<td align="left"><h2>Índice</h2>
 <ul>
-<li><a href="#info">1 Info</a></li>
-<li><a href="#current-status-for-systemdataoracleclient">2 Current Status for System.Data.OracleClient</a></li>
-<li><a href="#action-plan">3 Action plan</a></li>
-<li><a href="#testing">4 Testing</a></li>
+<li><a href="#info">1 Informações</a></li>
+<li><a href="#current-status-for-systemdataoracleclient">2 Status atual para System.Data.OracleClient</a></li>
+<li><a href="#action-plan">3 Plano de Ação</a></li>
+<li><a href="#testing">4 Testando</a></li>
 <li><a href="#examples">5 Examples</a></li>
-<li><a href="#building-c-examples">6 Building C# Examples</a></li>
+<li><a href="#building-c-examples">6 Construindo exemplos C#</a></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-Info
-----
-
--   ADO.NET Data Provider for [Oracle](http://www.oracle.com/) databases
-
--   Exists in namespace System.Data.OracleClient and assembly System.Data.OracleClient.dll
-
--   Works on Windows, Linux x86, and Solaris x86. Can you help us get it to work on other systems, such as, Solaris SPARC and Mac OS X?
-
--   Works with Oracle 8i, 9i, 10g, and 11g databases
-
--   Uses OCI (Oracle call-level interface) which is a C library for accessing Oracle databases
-
--   System.Data.OracleClient is deprecated in Microsoft .Net 4.0
-
--   Alternative that works on Mono but is not included with Mono - [dotConnect for Oracle](http://www.devart.com/dotconnect/oracle/)
-
-Current Status for System.Data.OracleClient
--------------------------------------------
-
--   You have two ways to connect to Oracle: using a User ID and Password or using external authentication using "Integrated Security=true" in your connection string
-
--   OracleCommandBuilder has been implemented and can let you do simple Inserts/Updates/Deletes with a DataSet and OracleDataAdapter. However, OracleDataReader needs more implementation for getting KeyInfo and other meta data correctly. The Oracle SQL parser is very simple and will not be able to handle complex queries. Will need a real Oracle SQL parser which would use the jay compiler-compiler. Jay is used by mcs to parse c# files and System.Data to parse expressions in a DataColumn.
-
--   REF CURSOR can be returned from a stored procedure as an OracleDataReader via an output parameter defined as OracleType.Cursor
-
--   Connection pooling working
-
--   OracleConnection can connect to Oracle 8i, 9i, and 10g databases via OCI (Oracle Call Level Interface)
-
--   Input and Output parameters (char, varchar2, number, date, raw, long varchar, blob, clob, and timestamp) can now be used in SQL queries, non-queries, PL/SQL Blocks, and stored procedures.
-
--   Input/Output and Return parameters have not been tested.
-
--   OracleException and Error handling exists.
-
--   Message handling needs to be added for non-critical messages received from Oracle (IN PROGRESS)
-
--   Handling of various data types need to be added [IN PROGRESS]
-
--   Data Adapter exists, and a DataSet can be filled using it.
-
--   May not work on non-X86 platforms such as Mac OS X nor Solaris SPARC. Does not work due to byte-ordering or alignment issues with different processors. We accept patches to get these platforms working.
-
-Action plan
+Informações
 -----------
 
--   Parameters support needs to be Cleaned up (Input and Output parameters WORKING). Input/Output and Return parameters are a TODO)
+-   ADO.NET Data Provider para banco de dados [Oracle](http://www.oracle.com/)
 
--   Support for Oracle 8i on Linux and Windows (WORKING)
+-   Está no namespace System.Data.OracleClient e assembly System.Data.OracleClient.dll
 
--   Support for Oracle 9i on Linux and Windows (WORKING. Still need to add features for 9i).
+-   Funciona no Windows, Linux x86, e Solaris x86. Você pode nos ajudar a fazê-lo funcionar em outros sistemas, tais como, Solaris SPARC e Mac OS X?
 
--   Support for Oracle 10g on Linux and Windows (WORKING. Still need to add features for 10g)
+-   Funciona com as versões do Oracle 8i, 9i, 10g, and 11g
 
--   Support for Oracle 10g on Mac OS X. This requires resolving byte-ordering and alignment issues (TODO).
+-   Utilize OCI (Oracle call-level interface) que é uma biblioteca C para acessar bancos de dados Oracle
 
--   Support for Oracle 10g on Solaris x86. (WORKING on Solaris 10 x86 and Solaris Express x86)
+-   System.Data.OracleClient foi descontinuado pela Microsoft na versão .Net 4.0
 
--   Support for Oracle 10g on Solaris SPARC. This requires resolving byte-ordering and alignment issues (TODO)
+-   Outras alternativas que funcionam no Mono, porém não estão inclusos como o Mono - [dotConnect for Oracle](http://www.devart.com/dotconnect/oracle/)
 
--   Support for Oracle 10g Express Edition on Windows and Linux (WORKING)
+Status atual para System.Data.OracleClient
+-------------------------------------------
 
--   Support for Oracle 11g on Linux and Windows (WORKING)
+-   Existem duas maneiras para conectar-se com o Oracle: utilizando o Usuário e Senha ou utilizando uma autenticação externa, usando "Integrated Security=true" em sua string de conexão
 
--   Support Large Objects like LONG VARCHAR, BLOB, CLOB (WORKING)
+-   OracleCommandBuilder foi implementado e permite você fazer Inserts/Updates/Deletes com DataSet e OracleDataAdapter. No entando o OracleDataReader necessita de maiores implementações para permitir que seja utilizado KeyInfo para recuperar alguns metadaos da consulta executada. O analisador de consultas Oracle SQL é muito simples e não será capaz de lidar com consultas complexas. Neste sentido, você necessitará de um analisador Oracle SQL real, utilizando o compilador jay. Jay é usado por mcs para analisar arquivos c# e para o System.Data analisar expressões em um DataColumn. 
 
--   Support all the data types (STILL IMPLEMENTING). Still need to implement INTERVAL. Many of the Oracle .net types like OracleDateTime internally use a System .net type like DateTime. This is insufficient for supporting Oracle data types like TIMESTAMP.
+-   REF CURSOR podem ser retornados por stored procedures com um OracleDataReader através de um parâmetro de output definido como OracleType.Cursor
 
--   Security Audit (TODO)
+-   Pool de conexões estão funcionando
 
--   NLS / Unicode support / Multi-byte character sets (NEEDS IMPROVEMENT)
+-   OracleConnection pode conectar-se em Oracle 8i, 9i e 10g através de OCI (Oracle Call Level Interface)
 
-Testing
--------
+-   Parâmetros de input e output (char, varchar2, number, date, raw, long varchar, blob, clob and timestamp) pode agora ser utilizado na instruções SQL, blocos PL/SQL e stored procedures.
 
-**Prerequisites**
+-   Parâmetros Input/Output e Return não foram testados.
 
--   Have a working mono and gmcs.
+-   OracleException and tratamento de erros existentes.
 
--   Have access to an Oracle 8i, 9i, 10g, 10g Express, or 11g database or download it from [Oracle Downloads](http://www.oracle.com/technology/software/index.html). If you are connecting remotely to an Oracle database, you need the Oracle client software. Registration to the [Oracle Technology Network](http://www.oracle.com/technology/index.html) is free. If installing on Linux, I suggest you do a lot of searching to see how others installed Oracle on Linux. [Werner Puschitz's Oracle on Linux page](http://www.puschitz.com/OracleOnLinux.shtml) contains great step by step guides on installing Oracle on Linux.
+-   Tratamento de mensagens precisam ser adicionados para mensagens não críticas recebidas pelo Oracle (EM ANDAMENTO)
 
--   [Oracle Database 10g Express Edition](http://www.oracle.com/technology/software/products/database/xe/index.html) is free to download and redistribute. It works on Windows and Linux. It is also much easier to install the Express edition compared to the Enterprise and Standard editions.
+-   Manipuladores de vários tipos de dados precisam ser adicionados (EM ANDAMENTO)
 
--   If you do not have any Oracle software installed on the computer you are running Mono but you need to access an Oracle database remotely, may I suggest using the [Oracle Instant Client](http://www.oracle.com/technology/tech/oci/instantclient/index.html). The Oracle Instant Client is far more easier to install than the normal Oracle client software. You can also re-distribute the Oracle Instant Client for free.
+-   DataSet pode ser preenchido por DataAdapter.
 
--   Oracle 10g Express Edition (XE) installation on Debian/Ubuntu Linux is a breeze via apt-get.
+-   Pode não funcionar em plataformas não X86 como Mac OS ou Solaris SPARC. Não funciona devido à problemas com byte-ordering e diferenças entre alguns processadores. Nós estas aceitando patches de correção para que funcione nestas plataformas.
+
+Plano de Ação
+-------------
+
+-   Suporte à limpeza dos parâmetros (Parâmetros de Input e Output FUNCIONANDO). Parâmetros de Input/Output e Return precisam FAZER)
+
+-   Suporte para Oracle 8i no Linux e Windows (FUNCIONANDO).
+
+-   Suporte para Oracle 9i no Linux e Windows (FUNCIONANDO. Ainda precisa adicionar recursos para 9i).
+
+-   Suporte para Oracle 10g no Linux e Windows (FUNCIONANDO. Ainda precisa adicionar recursos para 10g).
+
+-   Suporte para Oracle 10g no Mac OS X. Exige resolução de problemas de byte-ordering e alinhamento. (PARA FAZER).
+
+-   Suporte para Oracle 10g no Solaris x86. (FUNCIONANDO no Solaris 10 x86 e Solaris Express x86).
+
+-   Suporte para Oracle 10g no Solaris SPARC. Exige resolução de problemas de byte-ordering e alinhamento. (PARA FAZER).
+
+-   Suporte para Oracle 10g Express Edition no Windows e Linux (FUNCIONANDO).
+
+-   Suporte para Oracle 11g no Linux e Windows (FUNCIONANDO).
+
+-   Suporte a grandes objetos como LONG VARCHAR, BLOB, CLOB (FUNCIONANDO).
+
+-   Suporte todos os tipos de dados (AINDA DE EXECUÇÃO). Ainda precisa implementar INTERVAL. Muitos dos tipos Oracle .net, como OracleDateTime utilizam internamente os tipos definidos em .NET como DateTime. Isto é insuficiente para suportar tipos de dados do Oracle como TIMESTAMP.
+
+-   Auditoria de Segurança (PARA FAZER)
+
+-   NLS / Suporte a Unicode / conjunto de caracteres Multi-byte (PRECISAM MELHORAR)
+
+Testando
+--------
+
+**Pré-requisitos**
+
+-   Tenha o mono e gmcs funcionando.
+
+-   Ter acesso ao Oracle 8i, 9i, 10g, 10g Express, ou 11g ou realizar o download em [Oracle Downloads](http://www.oracle.com/technology/software/index.html). Se você está se conectando remotamente a um banco de dados Oracle, é necessário o software cliente Oracle. As inscrições para o [Oracle Technology Network](http://www.oracle.com/technology/index.html) é grátis. Se estiver instalando o Linux, sugiro que você pesquise bastante para ver como outros instalaram o Oracle no Linux. [Werner Puschitz's Oracle on Linux page](http://www.puschitz.com/OracleOnLinux.shtml) contém bons guias passo-a-passo pra a instalação do Oracle no Linux.
+
+-   [Oracle Database 10g Express Edition](http://www.oracle.com/technology/software/products/database/xe/index.html) é grátis para download e redistribuição. Ele funciona no Windows e Linux, além disto ele é bem mais fácil de instalar se comparado com as versões Standard e Enterprise.
+
+-   Se você nao tem nenhum Oracle instalado no computador em que você está executando o Mono, mas você precisa acessar o banco de dados Oracle remotamente, sugiro que utilize [Oracle Instant Client](http://www.oracle.com/technology/tech/oci/instantclient/index.html). O Oracle Instant Client é bem mais fácil de instalar do que um cliente Oracle. Você também pode redistribuir o Oracle Instant Client gratuitamente.
+
+-   A instalação do Oracle 10g Express Edition (XE) no Debian/Ubuntu Linux é feita via apt-get.
 
 <!-- -->
 
-Basically, you add to your /etc/apt/sources.list
+Basicamente, você adiciona em seu /etc/apt/sources.list
 
 ``` bash
 deb http://oss.oracle.com/debian unstable main non-free
 ```
 
-And then run the following:
+em então execute o seguinte:
 
 ``` bash
 sudo apt-get update
@@ -135,13 +134,13 @@ sudo apt-get install oracle-xe-universal
 sudo /etc/init.d/oracle-xe configure
 ```
 
--   In the mcs source code, you can find tests at mcs/class/System.Data.OracleClient/Test
+-   No mcs você pode encontrar códigos fontes e teste em mcs/class/System.Data.OracleClient/Test
 
--   The Data Source is an Oracle TNS Name
+-   O Data Source está no Oracle TNS Name
 
-**Connection String Format**
+**Formato da string de conexão**
 
--   Has a connection string format:
+-   Segue o formato da string de conexão:
 
 <!-- -->
 
@@ -149,9 +148,9 @@ sudo /etc/init.d/oracle-xe configure
 "Data Source=tnsname;User ID=userid;Password=password"
 ```
 
-**Connection String Format using TNS network description which does not use a tnsnames.ora file**
+**Formato da string de conexão utilizando descrição de rede TNS sem utilizar o arquivo tnsnames.ora**
 
--   Has a connection string format:
+-   Segue o formato da string de conexão:
 
 <!-- -->
 
@@ -165,9 +164,9 @@ sudo /etc/init.d/oracle-xe configure
 "(SERVICE_NAME=TESTDB)))"
 ```
 
-**Connection String Format for External Authentication**
+**Formato da string de conexão para autenticação externa**
 
--   Has a connection string format:
+-   Segue o formato da string de conexão:
 
 <!-- -->
 
@@ -175,36 +174,36 @@ sudo /etc/init.d/oracle-xe configure
 "Data Source=tnsname;Integrated Security=true"
 ```
 
--   Connection String Parameters:
+-   Parâmetros da string de conexão:
 
-|Parameter Definition|Description|Example|
+|Definição do parâmetro|Descrição|Exemplo|
 |:-------------------|:----------|:------|
-|Server or Data Source|TNS Name or Network Address of the Oracle instance to connect|Server=TESTDB|
-|User ID|name of Oracle database user|User ID=scott|
-|Password|password for Oracle database user|Password=mypass12|
-|Integrated Security|To connect using external authentication or not. Valid values for Integrated Security are: YES or TRUE to use external authentication. NO or FALSE to not use external authentication. The default is false.|Integrated Security=true|
-|Min Pool Size|Specifies the minimum number of connections in the connection pool. Default is 0.|Min Pool Size=0|
-|Max Pool Size|Specifies the maximum number of connections in the connection pool. Default is 100.|Max Pool Size=100|
-|Pooling|Specifies whether or not to use connection pooling. Valid values are TRUE or YES to use connection pooling or FALSE or NOT to not use connection pooling. Default is TRUE.|Pooling=true|
+|Server or Data Source|TNS Name ou Network Address da instância do Oracle para conectar|Server=TESTDB|
+|User ID|nome do usuário de banco de dados Oracle|User ID=scott|
+|Password|senha para o usuário de banco de dados Oracle |Password=mypass12|
+|Integrated Security|Para conectar utilizando autenticação externa ou não. Valores válidos para Integrated Security são: YES ou TRUE para utilizar autenticação externa. NO ou FALSE para não utilizar autenticação externa. Padrão é false.|Integrated Security=true|
+|Min Pool Size|Determina o número mínimo de conexões para o pool de conexões. Padrão é 0.|Min Pool Size=0|
+|Max Pool Size|Determina o número máximo de conexões para o pool de conexões. Padrão é 100.|Max Pool Size=100|
+|Pooling|Determina se deve ou não utilizar o pool de conexões. Valores válidos são TRUE ou YES para utilizar o pool de conexões ou FALSE ou NOT para não utilizar o pool de conexões. Padrão é TRUE.|Pooling=true|
 
--   If you use External Authentication, make sure you have a user created externally. Also, make sure you know what you are doing if you use external authentication - there are security implications. Read [Oracle® Database Advanced Security Administrator's Guide](http://download-east.oracle.com/docs/cd/B19306_01/network.102/b14268/asoauth.htm#sthref731) for more info about external authentication.
+-   Se você usar a autenticação externa, certifique-se de ter um usuário criado externamente. Além disso, verifique se você sabe o que está fazendo, se você usar a autenticação externa - há implicações de segurança. Leia [Oracle® Database Advanced Security Administrator's Guide](http://download-east.oracle.com/docs/cd/B19306_01/network.102/b14268/asoauth.htm#sthref731) para mais informações sobre a autenticação externa.
 
--   How-To create a Windows user named SomeUser on Windows NT/2000 Domain MyNTDomain for external authentication in Oracle: If you're not on a Windows domain, then your MachineName is the Domain. Note how the domain user is in double quotes and is upper case.
+-   Como criar um usuário do Windows chamado SomeUser no Windows NT/2000 Domínio MyNTDomain para autenticação externa no Oracle: Se você não estiver em um domínio do Windows, então o Nome da sua Máquina é o domínio. Observe como o usuário do domínio é entre aspas duplas e é maiúsculas.
 
 ``` sql
 CREATE USER "MYNTDOMAIN\\SOMEUSER" IDENTIFIED EXTERNALLY;
 ```
 
--   How-To create a Linux user named someuser in Oracle which gets authenticated externally:
+-   Como criar um usuário no Linux chamado someuser no Oracle com permissão de autenticação externa:
 
 ``` sql
 CREATE USER someuser IDENTIFIED EXTERNALLY;
 ```
 
-Examples
+Exemplos
 --------
 
-**C# Example 1a - Basic Connection and Retrieval**
+**C# Exemplo 1a - Conexão básica e recuperação de dados**
 
 ``` csharp
  using System;
@@ -245,7 +244,7 @@ Examples
  }
 ```
 
-**C# Example 1b - Basic Connection and Retrieval using Integrated Security**
+**C# Exemplo 1b - Conexão básica e recuperação de dados utilizando Integrated Security**
 
 ``` csharp
  using System;
@@ -285,7 +284,7 @@ Examples
  }
 ```
 
-**C# Example 2 - Calling Stored Procedure**
+**C# Exemplo 2 - Chamando uma Stored Procedure**
 
 ``` csharp
  using System;
@@ -376,9 +375,9 @@ Examples
  }
 ```
 
-**C# Example 3 - Executing PL/SQL Block**
+**C# Exemplo 3 - Executando um bloco PL/SQL**
 
-Why would I want to do that? Let's say I need to execute a stored procedure, yet there is no support for Boolean data type in OCI. I can do this via a PL/SQL block.
+Por que eu faria isso? Vamos dizer que eu precise executar uma stored procedure, porém ainda não é suportado o tipo boolean no OCI. Então eu posso fazer isto através de um bloco PL/SQL.
 
 ``` csharp
  using System;
@@ -463,9 +462,9 @@ Why would I want to do that? Let's say I need to execute a stored procedure, yet
  }
 ```
 
-**C# Example 4 - ASP.NET DataGrid Data Binding to an Oracle database table**
+**C# Exemplo 4 - ASP.NET DataGrid Data Binding para uma tabela em um banco de dados Oracle**
 
-First, you will need to make sure there is a table named CUSTOMERS with some data.
+Primeiro, você precisará ter certeza que existe a tabela chamada CUSTOMERS com alguns dados.
 
 ``` csharp
  CREATE TABLE CUSTOMERS (
@@ -590,7 +589,7 @@ First, you will need to make sure there is a table named CUSTOMERS with some dat
  </html>
 ```
 
- **C# Example 5 - Returning a REF CURSOR from an Oracle stored procedure via an OracleDataReader from an out parameter**
+ **C# Exemplo 5 - Retornando um REF CURSOR de uma stored procedures no Oracle utilizando um OracleDataReader para um parâmetro de saída**
 
 ``` csharp
  using System;
@@ -717,12 +716,12 @@ First, you will need to make sure there is a table named CUSTOMERS with some dat
  }
 ```
 
-Building C# Examples
----------------------
+Construindo C# Examples
+-----------------------
 
-Save the example to a file, such as, TestExample.cs
+Salve o exemplo em um arquivo, como, TestExample.cs
 
--   Build with Mono C# compiler:
+-   Compilando com compilador Mono C#:
 
 <!-- -->
 
@@ -730,7 +729,7 @@ Save the example to a file, such as, TestExample.cs
 mcs TestExample.cs /r:System.Data.dll /r:System.Data.OracleClient.dll
 ```
 
--   Running the Example:
+-   Executando o exemplo:
 
 <!-- -->
 
