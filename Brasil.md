@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: "docpage"
 title: MonoBRASIL
 navgroup: Brasil
 ---
