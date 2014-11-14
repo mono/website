@@ -52,29 +52,29 @@ Salto de trampolins são muito similares aos trampolins JIT, eles ainda usam a m
 
 Estes trampolins são usados para implementar os tipos de inicialização sematics da especificação CLI. Eles chamam a função C mono_class_init_trampoline () que executa o inicializador da classe passada como argumento do trampolim, em seguida, substitui o código chamadando a classe init trampoline com NOPs para que ele não seja mais executado.
 
-### Generic Class Init Trampoline
+### Classe Genérica Init Trampoline
 
-This is similar to the class init trampolines, but is used for initalizing classes which are only known at run-time, in generic-shared code. It receives the class to be initialized in a register instead of from a specific trampoline. This means there is only one instance of this trampoline.
+É semelhante a classe init trampolines, mas é utilizada para inicializar classes que são conhecidas somente em tempo de execução, em código compartilhado genérico. Ele recebe a classe para ser inicializada em um registro em vez de um trampolim específico. Isto significa que existe apenas uma instância deste trampolim.
 
-### RGCTX Lazy Fetch Trampolines
+### Trampolins RGCTX Lazy Fetch
 
-These are used for fetching values from a runtime generic context, lazily initializing the values if they do not exist yet. There is one instance of this trampoline for each offset value.
+Estes são usados para buscar valores de um contexto genérico em tempo de execução, inicializando lentamente os valores se eles ainda não existem. Há uma instância desse trampolim para cada valor de deslocamento.
 
-### AOT Trampolines
+### Trampolins AOT
 
-These are similar to the JIT trampolines but instead of receiving a MonoMethod to compile, they receive an image+token pair. If the method identified by this pair is also AOT compiled, the address of its compiled code can be obtained without loading the metadata for the method.
+Estes são semelhantes aos trampolins JIT mas em vez de receber um MonoMethod para compilar, eles recebem um par imagem+token. Se o método identificado por este par é também compilado de forma AOT (Ahead Of Time - Antes do Tempo), o endereço do seu código compilado pode ser obtido sem carregar o metadado para o método.
 
-### AOT PLT Trampolines
+### Trampolins AOT PLT
 
-These trampolines handle calls made from AOT code though the PLT.
+Estes trampolins manipulam tanto chamadas de código AOT quanto PLT.
 
-### Delegate Trampolines
+### Trampolins Delegate
 
-These trampolines are used to handle the first call made to the delegate though its Invoke method. They call mono_delegate_trampoline () which creates a specialized calling sequence optimized to the delegate instance before calling it. Further calls will go through to this optimized code sequence.
+Estes trampolins são usados para manipular a primeira chamada para o delegate que seu método Invoke. Eles chamam mono_delegate_trampoline () que cria uma sequência de chamadas específicas otimizadas para a instância delegada antes de chamá-la. Chamadas adicionais passam por essa sequência de código otimizado.
 
-### Monitor Enter/Exit Trampolines
+### Trampolins Monitor Enter/Exit
 
-These trampolines implement the fastpath of Monitor.Enter/Exit on some platforms.
+Estes trampolins implementam o fastpath de Monitor.Enter/Exit em algumas plataformas.
 
 \<TODO REMAINING TRAMPOLINE TYPES\>
 
