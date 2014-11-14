@@ -8,7 +8,7 @@ O site usa a ferramenta Jekyll (http://jekyllrb.com), um gerador de site estáti
 Esforço de Tradução
 -------------------
 
-Movi o passo-a-passo para a página [Brasil](/Brasil)
+Movi o passo-a-passo para a página [Brasil](http://www.monobrasil.com.br/Brasil/)
 
 Contribuindo para o site
 ---------------------------
