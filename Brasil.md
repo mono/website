@@ -11,7 +11,9 @@ Aulas:
 ------
 
 - [Aula Inaugural](https://www.youtube.com/watch?v=EuAkD7PS0Ao#t=871)
+
 ---
+
 - [Aula 02 - Conceitos Básicos de C#]() __Com Marcio Rossato__
     15/11/2014  08:30 - 11:00
         - Conceitos Básicos de C#
@@ -22,4 +24,25 @@ Aulas:
         - História do Mono
         - Como Ser um Contribuidor do Mono 
         - Depoimento (Mono Hacker desde 2001)
+
 ---
+
+Esforço de Tradução:
+--------------------
+
+Os participantes do curso estão 'pagando' ajudando a traduzir este site. Mas quem quiser ajudar com a tradução é só se integrar ao time. :)
+
+O processo, para quem deseja participar do esforço, é mais ou menos o seguinte:
+
+1. Tudo acontece no [GitHub](https://github.com), então o primeiro passo é você criar a sua conta lá. Como é só para repositórios abertos é sem custo. :+1:
+2. Depois você tem criar um fork seu do [repositório deste site](https://github.com/MonoBrasil/website). É só clicar no botão fork no canto superior direito.
+3. Existe uma [planilha de controle](https://docs.google.com/spreadsheets/d/1B_iFGvaDhm8jSC0STXHdNgQAX57DRaY8F3wd-7czSjA/edit#gid=1820428232). Os caminhos na planilha são os caminhos relativos dentro do repositório e a maioria das páginas estão muma [variante da linguagem MarkDown](https://help.github.com/articles/github-flavored-markdown/) com [front-matter](https://help.github.com/articles/using-jekyll-with-pages/#frontmatter-is-required) obrigatória, e umas poucas em html.
+4. Para páginas pequenas dá para editar diretamente no github, navegando até o arquivo, e clicando no no link da canetinha.
+Cuidado para não alterar incorretamente o cabeçalho (front-matter) exigido pelo processador de geração do site (Jekyll) normalmente o que está no topo entre duas linhas marcadas com ---, apenas o texto que está após o prefixo title: na primeira linha deve ser traduzido.
+5. Cada vez que você salvar as alterações estará fazendo um commit no seu fork.
+6. Para trabalhos maiores, é interessante fazer um clone do seu repositório em um ambiente que suporte git (Eclipse, Visual Studio Community, Linux em linha de comando, GitHub for Windows) para poder fazer as alterações em um editor de texto como o Notepad++, Vim, etc... ou na própria IDE, só que aí tem que fazer em duas etapas: [commit local](https://www.kernel.org/pub/software/scm/git/docs/git-commit.html) e [push](https://www.kernel.org/pub/software/scm/git/docs/git-push.html) para o seu fork.
+7. Quando quiser enviar o que você realizou até o momento, você deve fazer um Pull Request (use o link Compare no topo da página raiz do seu repositório e depois o botão **Create Pull Request**).
+8. Envie um email do seu PR para o revisor correspondente na planilha, **com cópia para a lista do MonoBrasil** (monobrasil@googlegroups.com) que você deverá ter previamente se [inscrito](https://groups.google.com/forum/#!forum/monobrasil). 
+9. O revisor deverá colocar comentários para a melhoria da tradução no próprio PR (como comentário de linha, de preferência) e ao final marcá-lo com um ```:shipit:```, que nós commiters vamos olhar e comitar a contribuição da dupla. 
+10. Para fazer as correções pedidas pelo revisor é melhor usar uma cópia local do seu repositório para fazer um ```git commit -amend``` (que reincorpora as alterações diretamente no PR já aberto). Aí atualizaremos o percentual do seu trabalho na planilha e é só partir para o abraço.
+11. Caso o revisor não dê sinal de vida em um prazo de 2 ou 3 dias, você manda um email aqui na lista para olharmos o seu PR e a coisa não estancar.
