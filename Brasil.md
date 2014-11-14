@@ -6,7 +6,7 @@ redirect_from:
   - /Brasil
 ---
 
-MonoBrasil em Ação
+MonoBrasil em AÃ§Ã£o
 ==================
 
 
