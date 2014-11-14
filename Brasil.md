@@ -11,8 +11,8 @@ Aulas:
 ------
 
 - [Aula Inaugural](https://www.youtube.com/watch?v=EuAkD7PS0Ao#t=871)
-- [Slides 01](http://www.slideshare.net/alebinhara/palestra-do-teched-o-projeto-mono-aplicaes-net-para-sistemas-no-windows) 
-
+- [Slides 01 - O Projeto Mono](http://www.slideshare.net/alebinhara/palestra-do-teched-o-projeto-mono-aplicaes-net-para-sistemas-no-windows) 
+- [Slides 02 - Orientação a Objetos Conceitos](http://www.slideshare.net/alebinhara/curso-c-em-mono-orientao-a-objeto-basico)
 ---
 
 - [Aula 02 - Conceitos Básicos de C#]() __Com Alessandro Binhara__
