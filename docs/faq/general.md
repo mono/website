@@ -13,11 +13,11 @@ Sim, o Mono pode executar os binários gerados pelo Visual Studio, sem necessida
 
 Utilize nossa ferramenta [Mono Migration Analysis](/docs/tools+libraries/tools/moma/) para verificar se os recursos que sua aplicação utiliza foram implementados e/ou são compatíveis com o Mono, ou se existem quaisquer particularidades que necessitam de atenção.
 
-A API atual do Mono está entre a versão .NET 2.0 e .NET 4.0; veja nosso [Roadmap](/docs/about-mono/roadmap/) para detalhes sobre o que está efetivamente implementado.
+A API atual do Mono está entre a versão .NET 4.0 e .NET 4.5; veja nosso [Roadmap](/docs/about-mono/roadmap/) para detalhes sobre o que está efetivamente implementado.
 
 **O que o Mono™ é exatamente?**
 
-O Projeto Mono é uma iniciativa de desenvolvimento de um framework de desenvolvimento comunitário, patrocinado pela Novell, de uma versão UNIX e livre (open source), da plataforma .NET da Microsoft. Ele tem por objetivo permitir que desenvolvedores UNIX possam criar e distribuir aplicações .NET cross-platform. O projeto implementa várias tecnologias desenvolvidas pela Microsoft que foram então submetidas à ECMA para padronização.
+O Projeto Mono é uma iniciativa de desenvolvimento de um framework de desenvolvimento comunitário, patrocinado pela Novell/Xamarin, de uma versão livre (open source), da plataforma .NET da Microsoft. Ele tem por objetivo permitir que desenvolvedores Linux/Android/MacOSX/iOS... possam criar e distribuir aplicações .NET cross-platform. O projeto implementa várias tecnologias desenvolvidas pela Microsoft que foram então submetidas à ECMA para padronização.
 
 O Projeto Mono também tem despertado grande interesse no desenvolvimento de componentes derivados do C#, bibliotecas e frameworks. Dentre os mais importantes, alguns deles inclusive foram desenvolvidos pelo time do Mono, podemos citar:
 
@@ -61,17 +61,17 @@ A ".NET Initiative" é uma espécie de esforço corporativo da Microsoft, e part
 
 **Quais tecnologias estão incluídas no Mono?**
 
-Mono contains a number of components useful for building new software:
+O Mono contém um conjunto de componente útil para desenvolver novas softwares:
 
--   A Common Language Infrastructure (CLI) virtual machine that contains a class loader, Just-in-time compiler, and a garbage collecting runtime.
+-   Common Language Infrastructure (CLI - Infraestrutura Comum as Linguagens): Máquina virtual que contém um carregador de classes (class loader), um compilador Just-in-time, e um mecanismo de coleta de lixo (gerenciamento automátivo de memória).
 
--   A class library that can work with any language which works on the CLR. Both .NET compatible class libraries as well as Mono-provided class libraries are included.
+-   Uma biblioteca de classes que funciona com qualquer linguagem que adota o CLR (Common Language Runtime - Executor Comun as Linguagens) como alvo. Tanto bibliotecas compatíveis com as do .NET (não todas) como bibliotecas próprias do Mono estão incluídas.
 
--   A compiler for the C# language. In the future we might work on other compilers that target the Common Language Runtime.
+-   Um compilador da linguagem C#. Existe também um compilador de VB.NET (desatualizado) e compiladores de código aberto para outras linguagens, particularmente ativos os das linguagens F# e Boo, que são mantidos por seus respectivos projetos.
 
-Windows has compilers that target the virtual machine from [a number of languages:](http://msdn.microsoft.com/net/thirdparty/default.asp#lang) Managed C++, Java Script, Eiffel, Component Pascal, APL, Cobol, Perl, Python, Scheme, Smalltalk, Standard ML, Haskell, Mercury and Oberon.
+Existem diversos outros compiladores disponíveis em Windows que miram a VM padronizada do Mono/.NET para [um conjunto de linguagens:](http://msdn.microsoft.com/net/thirdparty/default.asp#lang) C++ Gerenciado, Javascript, Eiffel, APL, Cobol, Perl, Python, Scheme, Smalltalk, Standard ML, Haskell, Mercury and Oberon.
 
-The CLR and the Common Type System (CTS) enables applications and libraries to be written in a collection of different languages that target the byte code This means for example that if you define a class to do algebraic manipulation in C#, that class can be reused from any other language that supports the CLI. You could create a class in C#, subclass it in C++ and instantiate it in an Eiffel program. A single object system, threading system, class libraries, and garbage collection system can be shared across all these languages.
+O CLR e o Common Type System (CTS - Sistema Comum de Tipos) permitem que aplicações e bibliotecas escritas em variadas linguagens interajam porque são compiladas para um mesmo byte code (código intermediário). Isto significa, por exemplo, que se você define uma classe para manipulação algébrica em C#, essa classe pode ser reutilizada em qualquer outra linguagem que suporta a CLI. Você pode criar uma classe em C#, subclassea-la em C++ gerenciado e instanciar a classe derivada em um programa em Boo. Um sistema de objetos, um sistema de linhas de execução (threading), um conjunto de bibliotecas de classes fundamentais, e um sistema de coleta de lixo são compartilhados por todas essas linguagens.
 
 **Where can I find the specification for these technologies?**
 
