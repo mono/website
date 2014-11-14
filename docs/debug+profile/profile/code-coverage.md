@@ -4,7 +4,7 @@ redirect_from:
   - /Code_Coverage/
 ---
 
-A Cobertura de código pode ser usada para controlar a forma como muitos dos caminhos de código que o programa está usando será realmente exercida.
+A Cobertura de código pode ser usada para controlar a forma como muitos dos caminhos de código que o programa está usando será realmente exercutada.
 
 Para mais informações veja [Perfil](/docs/debug+profile/profile/).
 
@@ -13,19 +13,19 @@ MonoCov
 
 O MonoCov é composto por dois componentes: Um módulo de cobertura de código e uma GUI (interface gráfica) para fazer a cobertura de código. Isto está disponível como parte do pacote "monocov" (diponível [aqui](http://github.com/mono/monocov)).
 
-Para usá-lo, execute o programa dessa forma:
+Para usá-lo, execute o comando dessa forma:
 
 ``` bash
    mono --debug --profile=monocov program.exe
 ```
 
-A informação de cobertura será a saída para o arquivo program.exe.cov. Agora você pode carregar esse arquivo na GUI com:
+A informação de cobertura será a saída para o arquivo program.exe.cov. Agora você pode carregar esse arquivo na GUI com o comando:
 
 ``` bash
    monocov program.exe.cov
 ```
 
-e procurar os namespaces de tipos interessantes que você deseja verificar para a cobertura de código. Clicando duas vezes sobre um método trará um visor com o arquivo de origem do método com as linhas de código, não atingidas pela execução destacadas em vermelho.
+e procurar os namespaces de tipos que você deseja verificar para a cobertura de código. Clicando duas vezes sobre um método, trará uma tela com o arquivo de origem do método com as linhas de código, as linhas não atingidas pela execução estão destacadas em vermelho.
 
 Para limitar a coleta de dados de um conjunto específico, você pode especificá-lo como um argumento para o profiler. Por exemplo, considerar apenas o código em mscorlib, use:
 
@@ -33,7 +33,7 @@ Para limitar a coleta de dados de um conjunto específico, você pode especific�
    mono --debug --profile=monocov:+[mscorlib] test-suite.exe
 ```
 
-Para ser capaz de coletar facilmente informações de cobertura dos testes de unidade no diretório msc do mono você também pode executar o teste da seguinte forma, por exemplo mcs/class/corlib:
+Para ser capaz de coletar facilmente informações de cobertura dos testes de unidade no diretório msc do mono, você também pode executar o teste da seguinte forma, por exemplo mcs/class/corlib:
 
 ``` bash
    make run-test RUNTIME_FLAGS="--profile=monocov:outfile=corlib.cov,+[mscorlib]"
@@ -53,7 +53,7 @@ O Monocov também pode gerar um conjunto de páginas HTML que mostram os dados d
 
 Esperemos que esta ferramenta irá ajudar os novos colaboradores e os antigos para encontrar facilmente os pontos não testados em nossas bibliotecas e contribuir com testes para eles.
 
-Built-in de Cobertura de CódigoC
+Built-in de Cobertura de Código
 ======================
 
 O modulo built-in de cobertura de código é bastante limitada
@@ -62,7 +62,7 @@ Preparar o Mono com um módulo de cobertura de código. Este módulo é ativado 
 
     --profile=cov[:assembly-name[/namespace]] test-suite.exe
 
- Por padrão, o código de cobertura será default para todas as assemblies carregados, você pode limitar isso especificando o nome da assembly, por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, por exemplo, a seguinte linha de comando limita a cobertura de código para rotinas na assembly "demo"
+ Por padrão, o código de cobertura será default para todas as assemblys carregadas, você pode limitar isso especificando o nome da assembly, por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, por exemplo, a seguinte linha de comando limita a cobertura de código para rotinas na assembly "demo"
 
 ``` bash
         mono --profile=cov:demo demo.exe
