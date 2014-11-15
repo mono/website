@@ -26,7 +26,7 @@ Aulas:
         
 
 - [Aula Especial 01 - História do Mono]() __Com Rafael 'Monoman' Teixeira__
-
+- [Link para Pagina do Evento](https://plus.google.com/u/0/hangouts/onair/watch?hid=hoaevent%2Fc30ucaoa0hl5veobo6khcia9irc&hl=en)
     15/11/2014  15:00
         - História do Mono
         - Como Ser um Contribuidor do Mono 
