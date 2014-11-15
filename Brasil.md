@@ -19,6 +19,7 @@ Aulas:
 - [Aula 02 - Conceitos Básicos de C#]() __Com Alessandro Binhara__
 - [Link da Aula no YouTube](http://www.youtube.com/watch?v=D7K5jlyIqi0)
 - [Link da Página do Evento](https://plus.google.com/events/cedra3c9acjheihvjouvsc7opao)
+- [Link no youtube ](http://www.youtube.com/watch?v=nSsWMzHcb70)
     15/11/2014  08:30 - 11:00
         - Conceitos Básicos de C#
         - Demonstrações
