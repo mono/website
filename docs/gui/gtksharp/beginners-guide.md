@@ -1,22 +1,22 @@
 ---
-title: Guia para Iniciantes do GTK#
+title: GtkSharpBeginnersGuide
 redirect_from:
   - /GtkSharpBeginnersGuide/
 ---
 
-Prefácio
+Preface
 =======
 
-Este artigo é um guia para iniciantes da prograação Gtk #. Ele irá ajudar aqueles que nunca programaram em uma interface gráfica GTK#, mas antes de começar. Programadores familiarizados com a API do Gtk# de outras línguagens (por exemplo, C, C ++, Perl, Python), também vão achar útil como ele explica o processo básico sobre Mono/C#. O artigo também apresenta o uso de Glade e libglade como um processo para implementar rapidamente interfaces gráficas.
+This article is a beginners guide to Gtk# programming. It will help those who have never programmed a Gtk+ GUI before to get started. Programmers familiar with the Gtk+ API from other languages (e.g. C, C++, perl, python) will also find it useful as it explains the basic process under Mono/C#. The article also introduces the use of Glade and libglade as a process for rapidly implementing graphic user interfaces.
 
-O que é o Gtk#?
+What is Gtk#?
 --------------
 
-[Gtk#](/docs/gui/gtksharp/) É simplesmente colocar um revestimento [gtk+](http://www.gtk.org), em uma estrutura de plataforma (GUI) de interface gráfica.
+[Gtk#](/docs/gui/gtksharp/) put simply is a wrapper on [gtk+](http://www.gtk.org), a cross platform GUI framework.
 
-Adaptado do [gtk+ website](http://www.gtk.org/): *GTK+ é um conjunto de ferramentas multi-plataforma para criar interfaces gráficas de usuário. Oferecendo um conjunto completo de widgets, o GTK+ é adequado para projetos que vão desde pequenas aplicações para brincar atá suites de aplicativos da empresa.*
+Adapted from the [gtk+ website](http://www.gtk.org/): *gtk+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, gtk+ is suitable for projects ranging from small one-off toys to Enterprise application suites.*
 
-Atualmente GTK+ funciona nativamente em qualquer servidor X, sistema Framebuffer direto e derivitives Microsoft Windows NT. A biblioteca tem origem a partir do Linux, onde ele fornece uma base para o popular ambiente [GNOME] (http://www.gnome.org/) desktop. GTK+ é rotineiramente incluído na maioria das distribuições Linux, e tem se mantido estável em derivitives do Windows NT por um bom tempo agora (provavelmente mais ou menos por volta de 2000, se a memória não me falha).
+Currently gtk+ works natively on any X server, Direct Framebuffer system and Microsoft Windows NT derivitives. The library originates from Linux where it provides a basis for the popular [GNOME](http://www.gnome.org/) desktop environment. gtk+ is routinely included in most Linux distributions, and has been stable on Windows NT derivitives for quite a while now (probably roughly around 2000, if my memory serves me correctly).
 
 Uma portabilidade nativa para Mac OSX está prevista, mas precisa de pessoal disponível para ajudar. Esta é uma chamada para a participar do projeto.
 
