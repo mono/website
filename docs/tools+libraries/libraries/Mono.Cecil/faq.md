@@ -20,7 +20,7 @@ foreach (TypeDefinition type in myLibrary.MainModule.Types) {
 }
 ```
 
-Pdemos ver o resultado no console de saída:
+Podemos ver o resultado no console de saída:
 
 ``` bash
 <Module>
@@ -29,7 +29,7 @@ MyLibrary.Employee
 MyLibrary.Person
 ```
 
-Este código cria o Mono.Cecil.AssemblyDefinition que corresponde ao MyLibrary assembly. Você também pode obter um dos ModuleDefinitions (AssemblyDefinition.Modules property) que estão contidos no assembly. Em geral, você tem que trabalhar com nomenando o  MainModule (AssemblyDefinition.MainModule property)
+Este código cria o Mono.Cecil.AssemblyDefinition que corresponde ao MyLibrary assembly. Você também pode obter um dos ModuleDefinitions (AssemblyDefinition.Modules property) que estão contidos no assembly. Em geral, você tem que trabalhar com o  MainModule (AssemblyDefinition.MainModule property)
 
 Quais são as entidades contidas no assembly que o Cecil fornece para um modelo de objeto?
 ----------------------------------------------------------------------------------------
@@ -52,10 +52,10 @@ Um MethodDefinition contém um MethodBody. Você pode obter todas as instruçõe
 
 [![CecilInstrCD.png](/archived/images/1/12/CecilInstrCD.png)](/archived/images/1/12/CecilInstrCD.png)
 
-Eu gostaria de adicionar alguma funcionalidade de rastreamento para um conjunto que não pode depurar, é possivel usar o Cecil?
+Eu gostaria de adicionar alguma funcionalidade de rastreamento para um conjunto que não consegue ser depurado, é possivel usar o Cecil?
 --------------------------------------------------------------------------------------------------------
 
-Sim, é, Esta técnica é denominada [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Aqui está um exemplo de como fazê-lo com Cecil. Você vai ter que aprender [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) se você quiser fazer alguma coisa mais avançada.
+Pode sim, Esta técnica é denominada [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Aqui está um exemplo de como fazê-lo com Cecil. Você vai ter que aprender [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) se você quiser fazer alguma coisa mais avançada.
 
 Tomamos para este exemplo o mesmo assembly MyLibrary como anteriormente. Em vez de escrever o nome de cada tipo, vamos inserir o seguinte código para cada método de cada tipo da assembly:
 
@@ -147,7 +147,7 @@ set_Birthday was called
 GetAge was called
 ```
 
-Você pode baixar os exemplos usados neste FAQ [here](http://evain.net/public/cecil_faq_samples.zip)
+Você pode baixar os exemplos usados neste FAQ [Aqui](http://evain.net/public/cecil_faq_samples.zip)
 
 Autor: Fabien Reinle, f.reinle_at_evaluant.com
 
