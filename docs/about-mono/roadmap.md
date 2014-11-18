@@ -29,7 +29,7 @@ Mono releases are versioned like this:
 Releases
 --------
 
-Check our (full list of releases)[http://www.mono-project.com/docs/about-mono/releases/]
+Check our [full list of releases](http://www.mono-project.com/docs/about-mono/releases/)
 
 Current Releases
 ----------------
