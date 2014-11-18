@@ -16,6 +16,7 @@ Here we are tracking some plans to particular pieces of technology that are part
   <ul>
     <li>Mono:
       <ul>
+        <li><a href="/docs/about-mono/dotnet-integration">.NET Framework Source Code Integration</a></li>
         <li><a href="/docs/advanced/runtime/">Mono:Runtime</a></li>
         <li><a href="/docs/advanced/runtime/runtime-projects/">Runtime_Projects</a></li>
         <li><a href="/docs/advanced/runtime/docs/">Runtime Internals</a></li>

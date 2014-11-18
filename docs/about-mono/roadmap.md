@@ -5,11 +5,13 @@ redirect_from:
   - /Roadmap/
 ---
 
-*Last update: August, 2014*
+*Last update: November, 2014*
 
 We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.
 The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.
 For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
+
+We are now integrating [.NET Open Source code into Mono](/docs/about-mono/dotnet-integration).
 
 Per-component [Plans](/docs/about-mono/plans/) are available, you can also check our [Compatibility](/docs/about-mono/compatibility/) page that gives an overview of what is supported as of the latest public release of Mono.
 
@@ -24,6 +26,11 @@ Mono releases are versioned like this:
 -   Odd-numbered ***MINOR*** releases are unstable releases (development/daily builds).
 -   ***SUBRELEASE*** indicates a minor update to a specific release.
 
+Releases
+--------
+
+Check our (full list of releases)[http://www.mono-project.com/docs/about-mono/releases/]
+
 Current Releases
 ----------------
 
@@ -32,47 +39,24 @@ Current Releases
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Mono 3.6</strong></td>
-<td align="left"><strong>Released: Early August, 2014</strong></td>
+<td align="left"><strong>Mono 3.10</strong></td>
+<td align="left"><strong>Released: October, 2014</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>Performance Counters</li>
-<li>We now distribute `nuget` and `ikdasm`</li>
-<li>Performance tuning for our GC bridge</li>
-<li>Debugger supports columns and ranges</li>
-<li>Debugger can examine properties by decompiling IL, without having to resume the target to evaluate.</li>
-<li>Major HTTP stack rewrite and test suite</li>
-<li>System.IO.Compression implemented</li>
-<li>System.Security.Claims implemented</li>
+<li>Implemented System.IO.Compression.FileSystem.
+<li>Uri now implements the .NET 4.5 behavior, it can be reverted to the old behavior in the same way by setting the System.Uri::s_IriParsing static field to false.
+<li>Performance
+<li>Remove unnecessary locking from core metadata parsing functions.
+<li>Avoid cache thrashing of locals array when looping over enumerator.
 </ul>
 </td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Release Notes Mono 3.6.0">Mono 3.6.0 Release Notes</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.10.0/" title="Release Notes Mono 3.10.0">Mono 3.10.0 Release Notes</a></p>
 <p><br /></p></td>
 </tr>
 </tbody>
 </table>
 
-Upcoming Releases
------------------
-
-Mono 3.8.0 currently available on a preview
-
-<table>
-<col width="50%" />
-<col width="50%" />
-<tbody>
-<tr class="odd">
-<td align="left"><strong> Mono 3.8.0</strong></td>
-<td align="left"><strong>Planned Release: TBD</strong></td>
-</tr>
-<tr class="even">
-<td align="left"><ul>
-</ul></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
 
 Subprojects projects
 --------------------
