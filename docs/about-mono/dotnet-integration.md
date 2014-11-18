@@ -8,7 +8,7 @@ components of Mono to the .NET efforts.
 
 This document describes the strategies that we will employ.
 
-We will be (tracking the efforts on Trello)[https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono]
+We will be [tracking the efforts on Trello](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono)
 
 Background
 ==========
@@ -180,8 +180,8 @@ In general, we will be integrating code from the [Reference
 Source](http://github.com/Microsoft/referencesource) release, as this
 contains the API that is closest to Mono.
 
-We (are tracking the task
-assignements)[https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono]
+We [are tracking the task
+assignements](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono)
 on Trello.
 
 Later on, when we implement Mono Core, we will instead contribute the
