@@ -6,65 +6,65 @@ redirect_from:
   - /XSP/
 ---
 
-Mono has an implementation of ASP.NET 2.0, ASP.NET MVC and ASP.NET AJAX.
+Mono possui implementações de ASP.NET 2.0, ASP.NET MVC e ASP.NET AJAX.
 
-Quick Resources:
+Recursos rápidos:
 
--   [ASP.NET FAQ](/docs/faq/aspnet/) for common questions on ASP.NET.
--   [Hosting on Apache servers](/docs/web/mod_mono/).
--   [Hosting with FastCGI-based servers](/docs/web/fastcgi/).
--   [Hosting with CGI-based servers](/archived/cgi "CGI").
--   [Hosting with Nginx](/docs/web/fastcgi/nginx/).
--   [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/).
+-   [ASP.NET FAQ](/docs/faq/aspnet/) para perguntas frequentes sobre ASP.NET.
+-   [Hospedagem com servidores Apache](/docs/web/mod_mono/).
+-   [Hospedagem com servidores baseados em FastCGI](/docs/web/fastcgi/).
+-   [Hospedagem com servidores baseados em CGI](/archived/cgi "CGI").
+-   [Hospedagem com Nginx](/docs/web/fastcgi/nginx/).
+-   [Portando aplicações ASP.NET](/docs/web/porting-aspnet-applications/).
 
-Mono's ASP.NET implementations supports two kinds of applications:
+As implementações ASP.NET do Mono suportam dois tipos de aplicações:
 
--   Web Forms (Web Applications infrastructure).
--   [Web Services](/archived/web_services "Web Services") (the SOAP-based RPC system).
+-   Web Forms (infraestrutura para Aplicações Web).
+-   [Web Services](/archived/web_services "Serviços Web") (sistema RPC baseado em SOAP).
 
-Status and tests for ASP.NET 2.0 are available in our [ASPTests](/archived/asptests "ASPTests") page.
+Status e testes para ASP.NET 2.0 estão disponíveis na nossa página [ASPTests](/archived/asptests "ASPTests").
 
-Running ASP.NET applications
+Executando aplicações ASP.NET
 ============================
 
-To run your ASP.NET applications with Mono, you have three classes of options:
+Para executar suas aplicações ASP.NET com Mono, você tem três classes de opções:
 
--   Apache hosting: use [mod_mono](/docs/web/mod_mono/), a module that allows Apache to serve ASP.NET applications.
--   FastCGI hosting: use the [FastCGI](/docs/web/fastcgi/) hosting if you have a web server that supports the FastCGI protocol (for example [Nginx](/docs/web/fastcgi/nginx/)) for extending the server. You also may use a web server that only has support for [CGI](/archived/cgi "CGI") using **cgi-fcgi**.
--   XSP: this is a simple way to get started, a lightweight and simple webserver written in C#.
+-   Hospedagem Apache: use [mod_mono](/docs/web/mod_mono/), um módulo que possibilita ao servidor Apache servir aplicações ASP.NET.
+-   Hospedagem FastCGI: use a hospedagem [FastCGI](/docs/web/fastcgi/) se você tem um servidor web que suporta o protocolo FastCGI (por exemplo [Nginx](/docs/web/fastcgi/nginx/)) para estender o servidor. Você também pode usar um servidor web que tem suporte apenas para [CGI](/archived/cgi "CGI") usando **cgi-fcgi**.
+-   XSP: esta é uma opção simples para começar, um servidor web leve e simples escrito em C#.
 
-For deploying applications, we recommend the use of the [mod_mono](/docs/web/mod_mono/) or [FastCGI](/docs/web/fastcgi/) approaches, as that will give you all the configuration options and flexibility that come with using Apache or a FastCGI server.
+Para implantar aplicações, recomenda-se as opções [mod_mono](/docs/web/mod_mono/) ou [FastCGI](/docs/web/fastcgi/), pois isso te dará todas as opções de configuração e flexibilidade que vem junto com o servidor Apache ou um servidor FastCGI.
 
-For quickly getting started, get familiar with Mono and ASP.NET, XSP is the ideal solution. Keep in mind that XSP is a very limited server and is only useful to get acquainted with ASP.NET and Mono, it only support HTTP 1.0 and does not provide much extensibility or configuration.
+Para iniciar rapidamente, e familizar-se com o Mono e ASP.NET, XSP é a solução ideal. Mantenha em mente que XSP é um servidor muito limitado e é util apenas para familiarizar-se com ASP.NET e Mono, ele suporta apenas HTTP 1.0 e não provê muita extensibilidade ou opções de configuração.
 
-More advaned users can use the HttpListener and the ASP.NET hosting to create their own hosts for ASP.NET applications.
+Usuários mais avançados podem usar o HttpListener e a hospedagem ASP.NET para criar seus próprios servidores de aplicações ASP.NET.
 
-ASP.NET hosting with Apache
+Hospedagem ASP.NET com Apache
 ---------------------------
 
-The [mod_mono](/docs/web/mod_mono/) Apache module is used to run ASP.NET applications within the [Apache](http://httpd.apache.org) web server.
+O módulo Apache [mod_mono](/docs/web/mod_mono/) é usado para executar aplicações ASP.NET dentro do servidor [Apache](http://httpd.apache.org).
 
-The mod_mono module runs within an Apache process and passes all the requests to ASP.NET applications to an external Mono process that actually hosts your ASP.NET applications. The external ASP.NET host is called "mod-mono-server" and is part of the XSP module.
+O módulo mod_mono executa junto ao processo Apache e direciona todas as requisições a aplicações ASP.NET para um processo Mono externo que hospeda suas aplicações ASP.NET na verdade. O serviço ASP.NET externo é chamado "mod-mono-server" e é parte do módulo XSP.
 
-To use this, you must download and install the mod_mono and xsp components of Mono. mod_mono contains the actual Apache module, and xsp contains the actual ASP.NET hosting engine, both are available from our [download page](/download/).
+Para usá-lo, você precisa baixar e instalar os componentes mod_mono e xsp do Mono. mod_mono contém o módulo Apache em si, e xsp contém o motor de hospedagem ASP.NET, ambos estão disponíveis em nossa [página de download](/download/).
 
-See the [mod_mono](/docs/web/mod_mono/) page for details on installation and configuration.
+Veja a página [mod_mono](/docs/web/mod_mono/) para detalhes de instalação e configuração.
 
-ASP.NET hosting with Nginx
+Hospedagem ASP.NET com Nginx
 --------------------------
 
-[Nginx](http://wiki.nginx.org/) is a high-performance HTTP server which support running ASP.NET and ASP.NET MVC web applications through FastCGI protocol. See the [FastCGI Nginx](/FastCGI_Nginx) page for details on installation and configuration.
+[Nginx](http://wiki.nginx.org/) é um servidor HTTP de alta performance que suporta executar aplicações ASP.NET e ASP.NET MVC através do protocolo FastCGI. Veja a página [FastCGI Nginx](/FastCGI_Nginx) para detalhes de instalação e configuração.
 
-ASP.NET hosting with XSP
+Hospedagem ASP.NET com XSP
 ------------------------
 
-XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/) (look for XSP web server) or from the [git](/community/contributing/source-code-repository/) repository (module name: xsp).
+XSP é um servidor web independente escrito em C# que pode ser usado para executar aplicações ASP.NET com menos esforço. XSP trabalha tanto na execução do Mono quanto da versão Microsoft. O código está disponível em nossa  [página de download](/download/) (procure por servidor XSP) ou no repositório Git [git](/community/contributing/source-code-repository/) (nome do módulo: xsp).
 
-The easiest way to start XSP is to run it from within the root directory of your application. It will serve requests on port 8080. Place additional assemblies in the bin directory. Other XSP options can be set on the command line, such as the application directory and the port to listen on.
+A forma mais fácil de iniciar o XSP é executá-lo de dentro do diretório raiz da sua aplicação. Ele vai servir requisições no porto 8080. Coloque montagens adicionais no diretório bin. Outras opções do XSP podem ser configuradas pela linha de comando, por exemplo o diretório da aplicação e o porto a ser utilizado.
 
-XSP comes with a set of pages, controls and web services that you can use to test the server and see what ASP.NET looks like.
+XSP vem com um conjunto de páginas, controles e serviços web que você pode usar para testar o servidor e ver a aparência do ASP.NET.
 
-For example, once you install XSP, you can try some samples like this:
+Por exemplo, assim que você instalar o XSP, você pode tentar alguns exemplos dessa forma:
 
 ``` bash
  $ cd /usr/lib/xsp/test
@@ -75,34 +75,35 @@ For example, once you install XSP, you can try some samples like this:
  Hit Return to stop the server.
 ```
 
-You can now browse to <http://localhost:8080> and see various sample programs
+Agora você pode acessar <http://localhost:8080> no seu navegador web e ver vários programas de exemplo
 
-### SSL support in XSP
+### Suporte SSL no XSP
 
-XSP supports SSL and TLS Client Certificates. For further details about setting it up, see the [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) document.
+XSP suporta SSL e Certificados Cliente TLS. Para maiores detalhes sobre como configurá-los, veja o documento  [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) document.
 
-### Configuration
+### Configuração
 
-Applications can be configured through the web.config file, the full documentation is available from [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), and also a Mono-specific version is available on this site [here](/archived/config_systemweb "Config system.web").
+Aplicações podem ser configuradas através do arquivo web.config, a documentação completa está disponível na  [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), além disso uma versão específica para Mono está disponível neste site [aqui](/archived/config_systemweb "Configuração system.web").
 
-Additionally, you can configure Mono-specific ASP.NET settings (to have applications that behave differently depending on the operating system they are deployed in) using the [ASP.NET Settings Mapping](/archived/aspnet_settings_mapping "aSP.NET Settings Mapping") engine.
+Além disso, você pode configurar opções ASP.NET específicas para Mono (para ter aplicações que se comportam de formas diferentes dependendo do sistema operacional em que estão implantadas) usando o motor [Mapeamento de Configurações ASP.NET](/archived/aspnet_settings_mapping "Mapeamento de configurações aSP.NET") .
 
-### Other extensions
+### Outras extensões
 
-Check out [ASP.NET Modules](/archived/aspnet_modules "asP.NET Modules") for details on how to support deflate/gzip encodings and authentication.
+Confira em [Módulos ASP.NET](/archived/aspnet_modules "Módulos asP.NET") para detalhes sobre como suportar codificações deflate/gzip e autenticação.
 
-Debugging
+Depurando
 ---------
 
-By default xsp and xsp2 run in Release mode, which means that debugging line-number information will not be available in stack traces when errors occur.
+Por padrão xsp e xsp2 executam em modo normal, o que significa que informações de números de linha para depuração não estarão disponíveis nos rastreamentos da pilha quando erros acontecerem.
 
-To obtain line numbers in stack traces you need to do two things:
+Para obter os números de linha em rastreamentos da pilha você precisa fazer duas coisas:
 
-1. Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
+1. Habilitar geração de código de depuração na sua página. 
+2. Executar o Mono com a opção de linha de comando --debug.
 
-You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option](/archived/config/#compilation "Config")).
+Você precisa habilitar a geração de código de depuração na sua página usando **Debug="true"** no topo da sua página, ou configurando a diretiva ([opção de compilação](/archived/config/#compilation "Configuração")) no Web.config.
 
-Use the --debug command line option to Mono, this is done by setting the MONO_OPTIONS environment variable, like this:
+Use a opção de linha de comando --debug para o Mono, isso é feito configurando a variável de ambiente MONO_OPTIONS, dessa forma:
 
 ``` bash
 $ MONO_OPTIONS=--debug xsp2
@@ -112,31 +113,31 @@ Root directory: /tmp/us
 Hit Return to stop the server.
 ```
 
-To do the same with the Apache mod_mono module, use the **MonoDebug true** directive in your apache configuration file.
+Para fazer o mesmo com o módulo Apache mod_mono, use a diretiva **MonoDebug true** no seu arquivo de configuração do apache.
 
-Supported Versions
+Versões Suportadas
 ==================
 
-Mono supports ASP.NET 2.0, ASP.NET AJAX and a handful of 3.5 controls.
+Mono suporta ASP.NET 2.0, ASP.NET AJAX e um punhado de controles 3.5.
 
-Limitations
------------
-
-Mono's ASP.NET does not implement the following features:
-
--   Precompiled updatable web sites.
--   WebParts APIs.
-
-Work in Progress
-================
-
-git access
+Limitações
 ----------
 
-Users interested in the latest version of mod_mono and xsp can retrieve these from our public [git](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
+O ASP.NET do Mono não implementa as seguintes funcionalidades:
+
+-   Web sites pré-compilados atualizáveis.
+-   APIs WebParts.
+
+Trabalho em Andamento
+=====================
+
+Acesso aos Fontes via Git
+----------
+
+Usuários interessados na última versão de mod_mono e xsp podem recuperá-los a partir do nosso repositório [git](/community/contributing/source-code-repository/) publico. Os nomes dos módulos são **mod_mono** e **xsp** respectivamente. Você tambem vai precisar do módulo **mcs** já que as classes System.Web estão em mcs/class/System.Web.
 
 Designer
 --------
 
-There is work in progress on an [ASP.NET Designer](/archived/aspnet_visual_designer) the designer will eventually be integrated into the [MonoDevelop IDE](/docs/getting-started/development-environments/).
+Há um trabalho em andamento de um [Editor de Páginas ASP.NET](/archived/aspnet_visual_designer) o designer deverá ser integrada à [IDE MonoDevelop](/docs/getting-started/development-environments/).
 
