@@ -7,7 +7,7 @@ redirect_from:
 
 O assembly Mono.Data.SqliteClient contém um provedor de dados ADO.NET para o banco de dados [SQLite](http://www.sqlite.org/) (tanto para a versão 2 quanto para a versão 3).
 
-É importante observar que o SQLite possui uma peculiaridade importante: a célula da tabela de dados não registra a informação referente à qual era o tipo de dado que estava contido nela. Nas versão atual do SQLite (versão 3), os dados são armazenados como long, double, string, ou como blob (de "Binary Large Object"), enquanto que na versão 2 do SQLite, todo dado é armazenado como string. Portanto, você precisa tomar cuidado com relação ao uso de casting de valores retornados pelo SQLite, sem antes verificar o tipo de dado retornado. Veja as observações abaixo sobre armazenamento de Data/Hora.
+É importante observar que o SQLite possui uma peculiaridade importante: a célula da tabela de dados não registra a informação referente à qual era o tipo de dado que estava contido nela. Na versão atual do SQLite (versão 3), os dados são armazenados como long, double, string, ou como blob (de "Binary Large Object"), enquanto que na versão 2 do SQLite, todo dado é armazenado como string. Portanto, você precisa tomar cuidado para evitar o uso de casting de valores retornados pelo SQLite, sem antes verificar o tipo de dado retornado. Veja as observações abaixo sobre armazenamento de Data/Hora.
 
 (o último mantenedor do Mono.Data.SqliteClient foi [Josh Tauberer](http://razor.occams.info).)
 
@@ -17,7 +17,7 @@ O assembly Mono.Data.SqliteClient contém um provedor de dados ADO.NET para o ba
 <tr class="odd">
 <td align="left"><h2>Sumário</h2>
 <ul>
-<li><a href="#new-style-assembly-shipped-with-mono-124">1 O novo assembly a partir do Mono 1.2.4</a></li>
+<li><a href="#new-style-assembly-shipped-with-mono-124">1 O Assembly no novo formato empacotado com o Mono a partir da versão 1.2.4</a></li>
 <li><a href="#prerequisites">2 Pré-requisitos</a></li>
 <li><a href="#connection-string-format">3 Formato da string de conexão</a></li>
 <li><a href="#storing-datetimes">4 Armazenamento de Data/Hora</a></li>
@@ -28,8 +28,8 @@ O assembly Mono.Data.SqliteClient contém um provedor de dados ADO.NET para o ba
 </tbody>
 </table>
 
-O novo assembly a partir do Mono 1.2.4
---------------------------------------
+O Assembly no novo formato empacotado com o Mono a partir da versão 1.2.4
+-------------------------------------------------------------------------
 
 A partir da versão 1.2.4, o Mono vem com um novo assembly do SQLite - Mono.Data.Sqlite. Esse novo assembly prevê suporte **somente para a versão 3 do SQLite** e não é 100% compatível em termos binários e de API com o assembly antigo. O novo assembly é baseado no código do Robert Simpson [http://sqlite.phxsoftware.com/](http://sqlite.phxsoftware.com/) e disponibiliza uma API ADO.NET 2.0 completa. O código binário do assembly antigo está contido no novo, mas está disponível **somente no perfil 1.1**. O perfil 2.0 não consegue acessar o binário antigo se o novo assembly for referenciado. Nós escolhemos essa forma para que houvesse uma opção de migração para desenvolvedores que utilizem SQLite em suas aplicações .NET - ambos assemblies serão disponibilizados com as futuras versões do Mono e, em algum momento (ainda não determinado), o assembly antigo será removido da distribuição. Sendo assim, encorajamos todos os desenvolvedores à iniciar o processo de migração de seu código para o novo assembly - tanto para o perfil 1.1 quanto para o perfil 2.0.
 
