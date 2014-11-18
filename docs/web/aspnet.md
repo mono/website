@@ -131,7 +131,7 @@ O ASP.NET do Mono não implementa as seguintes funcionalidades:
 Trabalho em Andamento
 =====================
 
-acesso git
+Acesso aos Fontes via Git
 ----------
 
 Usuários interessados na última versão de mod_mono e xsp podem recuperá-los a partir do nosso repositório [git](/community/contributing/source-code-repository/) publico. Os nomes dos módulos são **mod_mono** e **xsp** respectivamente. Você tambem vai precisar do módulo **mcs** já que as classes System.Web estão em mcs/class/System.Web.
@@ -139,5 +139,5 @@ Usuários interessados na última versão de mod_mono e xsp podem recuperá-los 
 Designer
 --------
 
-Há um trabalho em andamento em [Designer ASP.NET](/archived/aspnet_visual_designer) o designer deverá ser integrada à [IDE MonoDevelop](/docs/getting-started/development-environments/).
+Há um trabalho em andamento de um [Editor de Páginas ASP.NET](/archived/aspnet_visual_designer) o designer deverá ser integrada à [IDE MonoDevelop](/docs/getting-started/development-environments/).
 
