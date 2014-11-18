@@ -44,11 +44,11 @@ Current Releases
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>Implemented System.IO.Compression.FileSystem.
-<li>Uri now implements the .NET 4.5 behavior, it can be reverted to the old behavior in the same way by setting the System.Uri::s_IriParsing static field to false.
-<li>Performance
-<li>Remove unnecessary locking from core metadata parsing functions.
-<li>Avoid cache thrashing of locals array when looping over enumerator.
+<li>Implemented System.IO.Compression.FileSystem.</li>
+<li>Uri now implements the .NET 4.5 behavior, it can be reverted to the old behavior in the same way by setting the System.Uri::s_IriParsing static field to false.</li>
+<li>Performance</li>
+<li>Remove unnecessary locking from core metadata parsing functions.</li>
+<li>Avoid cache thrashing of locals array when looping over enumerator.</li>
 </ul>
 </td>
 <td align="left"><p><a href="/docs/about-mono/releases/3.10.0/" title="Release Notes Mono 3.10.0">Mono 3.10.0 Release Notes</a></p>
