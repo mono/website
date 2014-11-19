@@ -2,14 +2,15 @@
 title: GUI Toolkits
 redirect_from:
   - /Gui_Toolkits/
+  - /docs/gui/gui-toolkits/
 ---
 
 This page contains a list with a couple of known toolkits for Graphical User Interfaces that you can use in your Mono software.
 
-If you need help to know which one is the best for your project, please have a look at [Choosing a GUI Toolkit](/docs/gui/choosing-a-gui/).
+If you need help to know which one is the best for your project, please have a look at [Choosing a GUI Toolkit](/docs/gui/choosing-a-gui-toolkit/).
 
 [Gtk#](/docs/gui/gtksharp/)
----------------------------------------------------------
+---------------------------
 
 [![Banshee1.png](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
 
@@ -44,7 +45,7 @@ Cons:
 -   Incomplete documentation.
 
 [MonoMac](/docs/tools+libraries/libraries/monomac/)
----------------------------------------------------------
+---------------------------------------------------
 
 Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
@@ -64,7 +65,7 @@ Cons:
 -   Not portable outside of MacOS X.
 
 [Windows.Forms](/docs/gui/winforms/)
------------------------------------------------------------------
+------------------------------------
 
 [![Nunit1.png](/archived/images/7/71/Nunit1.png)](/archived/images/7/71/Nunit1.png)
 
@@ -113,30 +114,6 @@ Qt4Dotnet
 Homepage: [Qt4Dotnet](http://code.google.com/p/qt4dotnet/)
 
 This is a port of the QtJambi java bindings to .net using IKVM.
-
-wxNet
------
-
-[![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
-
-wx# Sample
-
-Homepage: [http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)
-
-wxNet is a .NET binding for the wxWindows cross-platform toolkit.
-
-Platforms: Windows, Linux, OSX
-
-Pros:
-
--   Native look and feel on each platform.
--   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
-
-Cons:
-
--   Binding to non-supported extra widgets is hard.
--   Custom-authored widgets look and feel is not preserved across platforms.
--   Common denominator subset API problem.
 
 Dead efforts
 ------------
