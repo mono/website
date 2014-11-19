@@ -66,6 +66,13 @@ The bootstrapping of the core libraries is not exactly fun. Microsoft has cyclic
 
 Mono currently has a multi-stage build process to create these libraries that have cyclic dependencies. Bringing new code from Microsoft is possible, but for each class that we bring, we might need to adjust the cyclic dependency build.
 
+Missing Resources
+-----------------
+
+The distribution does not include the resouces for some of the code.   These manifest themselves as references to a class called "SR".
+
+We are going to need to autogenerate those.
+
 Limited Man Power
 -----------------
 
