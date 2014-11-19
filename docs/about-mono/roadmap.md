@@ -13,7 +13,7 @@ Para maiores informações veja: [http://tirania.org/blog/archive/2011/Oct-14.ht
 
 Nós estamos agora integrando o [código de fontes abertos do .NET dentro do Mono](/docs/about-mono/dotnet-integration).
 
-Os [Planos](/docs/about-mono/plans/) por componente estão disponíveis, e você pode checar nossa página de [Compatibilidade](/docs/about-mono/compatibility/) para ter uma visão geral do que é suportado na última versão liberada do Mono.
+Os [planos](/docs/about-mono/plans/) por componente estão disponíveis, e você pode checar nossa página de [compatibilidade](/docs/about-mono/compatibility/) para ter uma visão geral do que é suportado na última versão liberada do Mono.
 
 Versionamento
 -------------
