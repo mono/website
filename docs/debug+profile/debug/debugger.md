@@ -9,7 +9,7 @@ A runtime do Mono implementa uma interface de depuração que permite depuradore
 
 Mono fornece uma API para se comunicar com o depurador e criar suas próprias UIs de depuração através do assembly Mono.Debugger.Soft.dll
 
-Além disso, se você pode [use the Unix GDB debugger with Mono](/docs/debug+profile/debug/) para depurar problemas de baixo nível.
+Além disso, se você pode [utilizar o depurador Unix GDB com o Mono](/docs/debug+profile/debug/) para depurar problemas de baixo nível.
 
 Bugs
 ====
