@@ -1,4 +1,4 @@
-﻿---
+---
 layout: blog
 title: "Plano de integração do .NET no Mono"
 author: Miguel de Icaza
