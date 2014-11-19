@@ -83,11 +83,11 @@ Trabalhando com o Mono
 <li><a href="/archived/user_groups" title="User Groups">Grupos de usuários</a></li>
 <li><a href="/docs/tools+libraries/tools/moma/">Mono Migration Analyzer</a></li>
 </ul></td>
-<td align="left">Mono 1.0 foi lançado em Junho de 2004. Desde então, Mono tem sido uma plataforma escolhida para desenvolvimentos de muitos projetos open-source e comerciais. Veja o Mono em ação:
+<td align="left">O Mono 1.0 foi lançado em Junho de 2004. Desde então, o Mono tem sido uma plataforma escolhida para desenvolvimentos de muitos projetos open-source e comerciais. Veja o Mono em ação:
 <ul>
 <li><a href="/docs/about-mono/showcase/screenshots/">Screenshots</a></li>
 <li><a href="/archived/videos" title="Videos">Videos</a></li>
-<li><a href="/docs/about-mono/showcase/software/">Aplicações</a> que utilizam Mono</li>
+<li><a href="/docs/about-mono/showcase/software/">Aplicações</a> que utilizam o Mono</li>
 </ul></td>
 </tr>
 </tbody>
