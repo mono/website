@@ -1,91 +1,91 @@
 ---
-title: History
+title: História
 redirect_from:
   - /History/
 ---
 
-Here are some historical data points about Mono:
+Aqui algumas datas importantes para o Mono.
 
-Early Posts
+Posts Recentes
 ===========
 
--   [Mono and GNOME, the long reply](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Local Copy](/archived/mailpostlongreply "Mailpost:longreply")
--   [Mono early history](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Local Copy](/archived/mailpostearlystory "Mailpost:earlystory")
+-   [Mono e Gnome, a longa resposta (em inglês)](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Cópia Local](/archived/mailpostlongreply "Mailpost:longreply")
+-   [A história inicial do Mono](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Copia Local](/archived/mailpostearlystory "Mailpost:earlystory")
 
-Milestones
+Marcos Importantes
 ==========
 
 2001
 ----
 
--   June 30: the Mono project is announced.
+-   30 de Junho: O projeto Mono é anunciado.
 
--   Aug 21: a remote compilation service is setup so that people who are contributing to Mono can submit their code over a web page and compile the code with the Microsoft C# compiler.
+-   21 de Agosto: Um serviço de compilação remota é criado. As pessoas que contribuem para o Mono podem enviar seus códigos via web e compilar o código com o Compilador C# da Microsoft.
 
--   Aug 28: the Mono runtime runs "Hello World" for the first time. Hello World consists of 1821 CIL instructions, performs 66 subroutine calls and loads 12 classes from the corlib.dll
+-   28 de Agosto: O ambiente de execução do Mono roda o "Hello World" pela primeira vez. O "Hello World" consiste de 1821 instruções CIL, executa 66 chamadas de subrotinas e carrega 12 classes da biblioteca corlib.dll
 
--   Sep 4: the monoburg tree pattern matching instruction selector is checked into CVS, this is the beginning of the Mono native code generator engine.
+-   04 de Setembro: O mecanismo de seleção de instruções por casamento de padrões (pattern matching) em árvore (monoburg) é incorporado no CVS, este é o início do sistema gerador de código nativo Mono.
 
--   Sep 5: Mono's C# compiler which is written in C# compiles its first program: "Hello world" on Windows using the .NET runtime. The resulting executable runs on Linux as well with the runtime from August 28th.
+-   05 de Setembro: O compilador de Mono C# que é escrito em C# compila seu primeiro programa: "Hello World" no Windows usando o .NET runtime. O executável gerado, roda no Linux como o runtime de 28 de Agosto.
 
--   Sep 10: Dietmar Maurer checks the x86 code generation rules for monoburg.
+-   10 de Setembro: Dietmar Maurer incorpora as regras de geração de código x86 para o monoburg.
 
--   Sep 17: the first version of Gtk# is checked into Mono's CVS repository.
+-   17 de Setembro: A primeira versão do Gtk# é incorporada no repositório CVS do Mono.
 
--   Sep 18: Mono 0.7 is released ([release notes](http://www.go-mono.com/archive/mono-0.7)).
+-   18 de Setembro: É lançada a versão 0.7 do Mono.([release notes](http://www.go-mono.com/archive/mono-0.7)).
 
--   Sep 21: Dick Porter gets the initial thread support into Mono's interpreter; Paolo Molaro implemented many new opcodes; Dietmar Maurer got long operations and mul/div working on the JIT engine; Ravi rewrote the Method selector for expressions to be conformant; Miguel gets i++ working in the compiler.
+-   21 de Setembro: Dick Porter fornece o suporte inicial de thread no interpretador do Mono. Paolo Molaro implementa muitos novos opcodes; Dietmar Maurer faz com que operações com long e mul/div funcionem no motor do JIT.. Ravi reescreve o seletor de metodos para expressões ficarem conformes; Miguel faz o compilador C# entender e compilar o operador de incremento (i++).
 
--   Sep 26: A build system based on Ant is contributed by Sergey and Sean. We will be maintaining a dual build system based on Makefiles and Ant for quite some time.
+-   26 de Setembro: O sistema de compilação baseado em Ant é contribuido por Sergey e Sean. Nós mantivemos o duplo sistema de compilação baseado em Makefiles e Ant por algum tempo.
 
--   Oct 4th: The reflection support is complete enough to generate a sample program.
+-   04 de Outubro: O suporte para o Mono está completo o suficiente para gerar um programa de exemplo.
 
--   Oct 5th: Sergey publishes his IL assembler.
+-   05 de Outubro: Sergey publica seu IL assembler.
 
--   Nov 4th: Mike posts an [update on Gtk#](http://lists.ximian.com/archives/public/gtk-sharp-list/2001-November/000017.html)
+-   04 de Novembro: Mike posta uma [atualização sobre o Gtk#](http://lists.ximian.com/archives/public/gtk-sharp-list/2001-November/000017.html)
 
--   Nov 14th: Paolo Molaro checks in the code that makes the C# compiler run and compile "Hello world" on Linux for the first time.
+-   14 de Novembro: Paolo Molaro incorpora o código que faz o compilador C# rodar e compilar "Hello World" no Linux pela primeira vez.
 
--   Nov 30th: Dietmar gets the JIT in good shape: All the tests that we had with the Mono interpreter now pass and execute with the Mono JIT engine.
+-   30 de Novembro: Diemar deixa o JIT em boa forma: Todos os testes que nós tinhamos rodando com o interpretador Mono agora rodam no motor JIT do Mono.
 
--   Dec 11st: the JIT engine is able to host the Mono C# compiler and run all of its regression tests.
+-   11 de Dezembro: O motor JIT está apto a executar o compilador Mono C# e rodar todos os testes anteriores.
 
--   Dec 28th: The Mono C# compiler compiles itself, but the code generated is not correct yet.
+-   28 de Dezembro: O compilador Mono C# compila a si mesmo, mas o código gerado ainda não está correto.
 
 2002
 ----
 
--   Jan 3: Mono's C# compiler can bootstrap itself using the .NET runtime. The next stage is to get it bootstrapping with the Mono runtime.
+-   03 de Janeiro: O compilador Mono C# pode compilar a si próprio utilizando a plataforma .NET. O próximo passo é fazer o mesmo ser possível na própria plataforma do Mono.
 
--   Jan 4: Mono gains Unicode support.
+-   04 de Janeiro: O Mono implementa suporte a Unicode.
 
--   Jan 21: Dick posts a screenshot of a simple web server running on Mono: [here](http://primates.ximian.com/~miguel/dick-mis-server.png). This web server is used to test and exercise our IO layer.
+-   21 de Janeiro: Dick postou uma screenshot de um simples web server rodando em Mono. [here](http://primates.ximian.com/~miguel/dick-mis-server.png). Este web server é utilizado para testar e exercitar nossa camada de E/S.
 
--   Jan 23: the mono-patches mailing list debuts. Each patch is mailed to people in this mailing list. The era of asynchronous reviews begins.
+-   23 de Janeiro: Lançada a lista de e-mails mono-patches. Cada patch é enviado as pessoas da lista de e-mails. Começa a era das revisões assíncronas.
 
--   Jan 28: Mono class libraries are relicensed from the LGPL to the [MIT X11](http://www.opensource.org/licenses/mit-license.html) license.
+-   28 de Janeiro: As bibliotecas de classes do Mono são relicensiadas do LGPL para a licença [MIT X11](http://www.opensource.org/licenses/mit-license.html).
 
--   Jan 29: Dan Lewis contributes System.Text.RegularExpressions.
+-   29 de Janeiro: Dan Lewis contribui para o System.Text.RegularExpressions.
 
--   Feb 11: Initial ports of the Mono interpreter to SPARC and PowerPC.
+-   11 de Fevereiro: Porte inicial do interpretador Mono para as arquiteturas SPARC e PowerPC.
 
--   Feb 13: Dietmar checks-in the code to support AppDomains, Nick Drochak has lead the group to use NUnit for testing the current implementation of our class libraries.
+-   13 de Fevereiro: Dietmar incorpora o código para de suporte a AppDomains, Nick Drochak lidera grupo que usa NUnit para testar a implementação atual das bibliotecas de classes.
 
--   Feb 22: Mono 0.9 is [released](http://www.go-mono.com/archive/mono-0.9).
+-   22 de Fevereiro. É lançado o [Mono 0.9] [released](http://www.go-mono.com/archive/mono-0.9).
 
--   Feb 25: Sergey's StrongARM port of Mono's interpreter is checked in.
+-   25 de Fevereiro: O porte para StrongARM do interpretador do Mono, contribuido pelo Sergey, é incorporado.
 
--   Mar 7: First time the Mono's C# compiler compiles on Linux.
+-   07 de Março: Primeira vez que o compilador Mono C# compila no Linux.
 
--   Mar 12: Paolo managed to make Mono's C# compiler self-hosting on Linux.
+-   12 de Março: Paolo providencia que o compilador Mono C# se auto-hospede no Linux. P
 
--   June 25: Piers Haken contributes the initial XPath implementation to Mono and Dick Porter contributes the Process class and its related infrastructure to Mono.
+-   25 de Junho: Piers Haken contribui para a implementação inicial do XPath para o Mono e Dick Porter contribui a implementação da classe Process e a sua infraestrutura relacionada.
 
--   June 30: The Mono C# compiler is able to build mscorlib, the last piece to achieve self-hosting of the Mono runtime.
+-   30 de Junho: O compilador C# do Mono finalmente consegue compilar a nossa implementação da mscorlib, a ultima peça para alcançar a auto-hospedagem do Mono runtime.
 
 2004
 ----
 
--   June 30th: Mono 1.0 is released.
+-   30 de Junho: Lançado o Mono 1.0
 
 
