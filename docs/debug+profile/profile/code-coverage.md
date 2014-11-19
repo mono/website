@@ -1,12 +1,12 @@
 ---
-title: Código de Cobertura
+title: Cobertura de Código
 redirect_from:
   - /Code_Coverage/
 ---
 
-A Cobertura de código pode ser usada para controlar a forma como muitos dos caminhos de código que o programa está usando será realmente exercutada.
+A Cobertura de código pode ser usada para controlar quantos dos muitos muitos dos caminhos de código que o programa emprega estão sendo realmente exercitados.
 
-Para mais informações veja [Perfil](/docs/debug+profile/profile/).
+Para mais informações veja [Profile](/docs/debug+profile/profile/).
 
 MonoCov
 =======
@@ -33,7 +33,7 @@ Para limitar a coleta de dados de um conjunto específico, você pode especific�
    mono --debug --profile=monocov:+[mscorlib] test-suite.exe
 ```
 
-Para ser capaz de coletar facilmente informações de cobertura dos testes de unidade no diretório msc do mono, você também pode executar o teste da seguinte forma, por exemplo mcs/class/corlib:
+Para ser capaz de coletar facilmente informações de cobertura dos testes de unidade no diretório mcs do mono, você também pode executar o teste da seguinte forma, por exemplo mcs/class/corlib:
 
 ``` bash
    make run-test RUNTIME_FLAGS="--profile=monocov:outfile=corlib.cov,+[mscorlib]"
@@ -51,18 +51,18 @@ O Monocov também pode gerar um conjunto de páginas HTML que mostram os dados d
     monocov --export-html=/tmp/corlib-cov corlib.cov
 ```
 
-Esperemos que esta ferramenta irá ajudar os novos colaboradores e os antigos para encontrar facilmente os pontos não testados em nossas bibliotecas e contribuir com testes para eles.
+Esperamos que esta ferramenta ajude os novos colaboradores e os antigos a encontrar facilmente os pontos não testados em nossas bibliotecas e contribuir com testes para eles.
 
-Built-in de Cobertura de Código
+Cobertura de Código Integrada
 ======================
 
-O modulo built-in de cobertura de código é bastante limitada
+O modulo integrado de cobertura de código é bastante limitado
 
-Preparar o Mono com um módulo de cobertura de código. Este módulo é ativado usando a opção Mono --profile = cov. O formato é:
+O Mono ja vem um módulo integrado de cobertura de código. Este módulo é ativado usando a opção Mono --profile = cov. O formato é:
 
     --profile=cov[:assembly-name[/namespace]] test-suite.exe
 
- Por padrão, o código de cobertura será default para todas as assemblys carregadas, você pode limitar isso especificando o nome da assembly, por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, por exemplo, a seguinte linha de comando limita a cobertura de código para rotinas na assembly "demo"
+ Por padrão, o código de cobertura estará operando sobre todas as assemblys carregadas, você pode limitar isso especificando o nome da assembly, por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, por exemplo, a seguinte linha de comando limita a cobertura de código para rotinas na assembly "demo"
 
 ``` bash
         mono --profile=cov:demo demo.exe
@@ -76,7 +76,7 @@ Você pode restringir ainda mais a saída de cobertura de código, especificando
         mono --profile=cov:demo/My.Utilities demo.exe
 ```
 
-Só irá realizar a cobertura de código na assembly em que o namespace for dado.
+Nesse caso só sera realizada a cobertura de código nas classes dentro namespace especificado.
 
 A saída típica se parece com isso:
 
@@ -87,4 +87,4 @@ A saída típica se parece com isso:
            Partial coverage: Driver:Main ()
                    offset 0x000a
 
-Os deslocamentos exibidos são compensações IL.
+Os deslocamentos exibidos são deslocamentos IL.

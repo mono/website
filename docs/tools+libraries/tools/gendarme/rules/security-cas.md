@@ -4,13 +4,13 @@ redirect_from:
   - /Gendarme.Rules.Security.Cas/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s Code Access Security (CAS) As regras estão localizados na  assembly **Gendarme.Rules.Security.Cas.dll**. Os Últimos sources(código fonte) estão disponíveis a partir do [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
+As regras do [Gendarme](/docs/tools+libraries/tools/gendarme/) para o Code Access Security (CAS) estão localizados na  assembly **Gendarme.Rules.Security.Cas.dll**. Os Últimos fontes correntes estão disponíveis a partir do [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
 
 <table>
 <col width="100%" />
 <tbody>
 <tr class="odd">
-<td align="left"><h2>Tabela de conteúdo</h2>
+<td align="left"><h2>Sumário</h2>
 <ul>
 <li><a href="#rules">1 Regras</a>
 <ul>
@@ -62,7 +62,7 @@ public sealed class Correto {
 
 **Notas**
 
--   Antes do Gendarme 2.2 essa regra era parte de Gendarme.Rules.Security a da nomenclatura TypeLinkDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte de Gendarme.Rules.Security com o nome de TypeLinkDemandRule.
 
 ### DoNotExposeFieldsInSecuredTypeRule
 
@@ -143,7 +143,7 @@ public class Class : BaseClass  {
 
 **Notas**
 
--   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security e da nomenclatura MethodCallWithSubsetLinkDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security com o nome de MethodCallWithSubsetLinkDemandRule.
 
 ### DoNotReduceTypeSecurityOnMethodsRule
 
@@ -207,7 +207,7 @@ public sealed class Correto {
 
 **Notas**
 
--   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security e da nomenclatura SealedTypeWithInheritanceDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security com o nome de SealedTypeWithInheritanceDemandRule.
 
 ### ReviewSuppressUnmanagedCodeSecurityUsageRule
 
