@@ -7,7 +7,7 @@ redirect_from:
 Agora que eu tenho a biblioteca, como posso usá-la ?
 ---------------------------------------------
 
-Aqui está um exemplo de um aplicativo de navegação de todos os tipos contidos em um gerenciador de montagem: 
+Aqui está um exemplo de um aplicativo de navegação de todos os tipos contidos em uma montagem (assembly) gerenciada: 
 
 ``` csharp
 //Creates an AssemblyDefinition from the "MyLibrary.dll" assembly
@@ -46,7 +46,7 @@ A ModuleDefinition contém TypeDefinitions. Cada um deles contém coleções de:
 -   FieldDefinition
 -   PropertyDefinition
 
-Você também pode obter tipos de construtores usando a propriedade construtores. Um constructor é um MethodDefinition. A PropertyDefinition possui duas MethodDefinitions que corresponde ao Get e o Set.
+Você também pode obter tipos de Construtors usando a propriedade Construtors. Um Construtors é um MethodDefinition. A PropertyDefinition possui duas MethodDefinitions que corresponde ao Get e o Set.
 
 Um MethodDefinition contém um MethodBody. Você pode obter todas as instruções CIL de um MethodDefinition usando a propriedade  CilWorker. Além disso, o MethodDefinition contém uma propriedade de instruções.
 
@@ -55,7 +55,7 @@ Um MethodDefinition contém um MethodBody. Você pode obter todas as instruçõe
 Eu gostaria de adicionar alguma funcionalidade de rastreamento para um conjunto que não consegue ser depurado, é possivel usar o Cecil?
 --------------------------------------------------------------------------------------------------------
 
-Pode sim, Esta técnica é denominada [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Aqui está um exemplo de como fazê-lo com Cecil. Você vai ter que aprender [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) se você quiser fazer alguma coisa mais avançada.
+Pode sim. Esta técnica é denominada [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Aqui está um exemplo de como fazê-lo com Cecil. Você vai ter que aprender [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) se você quiser fazer alguma coisa mais avançada.
 
 Tomamos para este exemplo o mesmo assembly MyLibrary como anteriormente. Em vez de escrever o nome de cada tipo, vamos inserir o seguinte código para cada método de cada tipo da assembly:
 
@@ -129,7 +129,7 @@ A última coisa a fazer é salvar o conjunto que contém os tipos de modificaç�
 AssemblyFactory.SaveAssembly(assembly, pathBin);
 ```
 
-Depois de execultar este código, você pode usar o assembly em um novo projeto Console.. Você tem que adicionar uma referência ao assembly.
+Depois de executar este código, você pode usar o assembly em um novo projeto Console. Você tem que adicionar uma referência ao assembly.
 
 ``` csharp
 MyLibrary.Person p = new MyLibrary.Person();
@@ -139,7 +139,7 @@ int age = p.GetAge();
 Console.ReadLine();
 ```
 
-Este codigo também produz este resultado:
+Este código também produz este resultado:
 
 ``` bash
 set_Name was called
