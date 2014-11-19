@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: ".NET integration into Mono Plans"
+title: "Mono and .NET integration"
 author: Miguel de Icaza
 tags: [plans]
 ---

@@ -57,7 +57,6 @@ Current Releases
 </tbody>
 </table>
 
-
 Subprojects projects
 --------------------
 
