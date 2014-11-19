@@ -16,6 +16,7 @@ Aqui estamos alinhando nossos planos para peças específicas de tecnologia que 
 	<ul>
 	<li>Mono:
 	<ul>
+    <li><a href="/docs/about-mono/dotnet-integration">Integração do fontes abertos do .NET</a></li>
 	<li><a href="/docs/advanced/runtime/">Mono:Runtime</a></li>
 	<li><a href="/docs/advanced/runtime/runtime-projects/">Projetos do Runtime</a></li>
 	<li><a href="/docs/advanced/runtime/docs/">Detalhes Internos do Runtime</a></li>

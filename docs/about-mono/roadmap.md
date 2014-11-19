@@ -5,11 +5,13 @@ redirect_from:
   - /Roadmap/
 ---
 
-*Última atualização: Agosto, 2014*
+*Última atualização: Novembro, 2014*
 
 Nós estamos adotando uma nova sistemática de desenvolvimento em que novas funcionalidades são desenvolvidas em ramos (branches) e mesclados no ramo `master` depois de completadas e aprovadas nos testes do controle de qualidade.
 O objetivo é reduzir nosso inventário de funcionalidades e bugs pendentes e entregar as correções tão logo elas sejam completadas aos usuários do Mono.
 Para maiores informações veja: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
+
+Nós estamos agora integrando o [código de fontes abertos do .NET dentro do Mono](/docs/about-mono/dotnet-integration).
 
 Os [Planos](/docs/about-mono/plans/) por componente estão disponíveis, e você pode checar nossa página de [Compatibilidade](/docs/about-mono/compatibility/) para ter uma visão geral do que é suportado na última versão liberada do Mono.
 
@@ -24,6 +26,11 @@ As versões do Mono seguem a fórmula:
 -   Versões com o ***MINOR*** ímpar são liberações instáveis (desenvolvimento/compilações diárias).
 -   ***SUBRELEASE*** indica uma atualização menor de uma liberação específica.
 
+Liberações
+----------
+
+Veja nossa [lista completa de liberações](http://www.mono-project.com/docs/about-mono/releases/)
+
 Liberações Correntes
 --------------------
 
@@ -32,44 +39,20 @@ Liberações Correntes
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><strong>Mono 3.6</strong></td>
-<td align="left"><strong>Liberada: No início de Agosto de 2014</strong></td>
+<td align="left"><strong>Mono 3.10</strong></td>
+<td align="left"><strong>Liberada: Outubro/2014</strong></td>
 </tr>
 <tr class="even">
 <td align="left"><ul>
-<li>Contadores de Performance</li>
-<li>Nós agora distribuimos `nuget` e `ikdasm`</li>
-<li>Ajuste de performance na ponte do Coletor de Lixo (GC bridge)</li>
-<li>Depurador suporta colunas e faixas</li>
-<li>Depurador examina propriedades descompilando IL, sem ter que desbloquear a execução do código alvo.</li>
-<li>Grande reescrita da pilha HTTP e da sua suite de testes</li>
-<li>Implementação da System.IO.Compression</li>
-<li>Implementação da System.Security.Claims</li>
+<li>Implementada System.IO.Compression.FileSystem.</li>
+<li>Uri implementa o comportamento do .NET 4.5, isto pode ser revertido ao comportamento antigo ao setar o campo estático  System.Uri::s_IriParsing para false.</li>
+<li>Performance</li>
+<li>Removida bloqueios desnecessários nas funções core de parseamento de metadados.</li>
+<li>Evitar o despejo do cache de matrizes locais ao iterar um enumerador.</li>
 </ul>
 </td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.6.0/" title="Notas de Liberação do Mono 3.6.0">Notas de Liberação do Mono 3.6.0</a></p>
+<td align="left"><p><a href="/docs/about-mono/releases/3.10.0/" title="Notas de Liberação do Mono 3.10.0">Notas de Liberação do Mono 3.10.0</a></p>
 <p><br /></p></td>
-</tr>
-</tbody>
-</table>
-
-Liberações Futuras
------------------
-
-Mono 3.8.0 atualmente disponível em pré-visualização
-
-<table>
-<col width="50%" />
-<col width="50%" />
-<tbody>
-<tr class="odd">
-<td align="left"><strong> Mono 3.8.0</strong></td>
-<td align="left"><strong>Liberação Planejada Para: Ainda Por Definir</strong></td>
-</tr>
-<tr class="even">
-<td align="left"><ul>
-</ul></td>
-<td align="left"></td>
 </tr>
 </tbody>
 </table>

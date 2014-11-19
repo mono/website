@@ -86,7 +86,7 @@ Create a text file with the name hello.aspx and the content:
 Then run the xsp4 command from that directory:
 
 ``` bash
-xsp4
+xsp4 --port 9000
 ```
 
 Use a web browser to contact [http://localhost:9000/hello.aspx](http://localhost:9000/hello.aspx)

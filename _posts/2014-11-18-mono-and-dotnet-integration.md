@@ -1,0 +1,9 @@
+---
+layout: blog
+title: "Plano de integração do .NET no Mono"
+author: Miguel de Icaza
+tags: [planejamento]
+---
+
+Nós acabamos de publicar o [plano de iIntegração do fontes abertos do .NET no Mono](/docs/about-mono/dotnet-integration), e nossos planos para contribuir com o esforço do .NET Core.
+

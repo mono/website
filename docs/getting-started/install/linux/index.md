@@ -30,20 +30,20 @@ Update your package cache if necessary (i.e. run `apt-get update`), and run a pa
 
 Note: While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
 
-#### Ubuntu 12.04 and 12.10
-
-To enable installation on Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above:
-
-``` bash
-echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list
-```
-
-#### mod_mono on Ubuntu 13.10 and later, Debian 8.0 and later
+#### mod_mono (Ubuntu 13.10 and later, Debian 8.0 and later)
 
 To enable mod_mono installation on Ubuntu 13.10 and later, and Debian 8.0 and later (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above:
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list
+```
+
+#### Older Ubuntu releases
+
+To enable installation on older Ubuntu releases such as Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above:
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" >> /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
 CentOS, Fedora, and derivatives
