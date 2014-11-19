@@ -123,30 +123,6 @@ Homepage: [Qt4Dotnet](http://code.google.com/p/qt4dotnet/)
 
 This is a port of the QtJambi java bindings to .net using IKVM.
 
-wxNet
------
-
-[![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
-
-wx# Sample
-
-Homepage: [http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)
-
-wxNet is a .NET binding for the wxWindows cross-platform toolkit.
-
-Platforms: Windows, Linux, OSX
-
-Pros:
-
--   Native look and feel on each platform.
--   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
-
-Cons:
-
--   Binding to non-supported extra widgets is hard.
--   Custom-authored widgets look and feel is not preserved across platforms.
--   Common denominator subset API problem.
-
 Dead efforts
 ------------
 
