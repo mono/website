@@ -6,7 +6,7 @@ redirect_from:
 
 This page contains a list with a couple of known toolkits for Graphical User Interfaces that you can use in your Mono software.
 
-If you need help to know which one is the best for your project, please have a look at [Picking the Right Toolkit](/docs/gui/gui-toolkits/).
+If you need help to know which one is the best for your project, please have a look at [Choosing a GUI Toolkit](/docs/gui/choosing-a-gui/).
 
 [Gtk#](/docs/gui/gtksharp/)
 ---------------------------------------------------------
