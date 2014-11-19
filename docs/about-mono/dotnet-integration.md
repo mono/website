@@ -1,5 +1,5 @@
 ---
-title: Integração do Fontes Abertos do .NET
+title: Integração dos Fontes Abertos do .NET
 ---
 
 Com a recente liberação de partes do código do .NET, nós queremos trazer
@@ -164,7 +164,7 @@ Microsoft, nós temos que fazer uma auditoria e determinar que funcionalidades s
 Estratégia
 ==========
 
-Em geral, nós estaremos integrando código que vem do [Fonte de Referência](http://github.com/Microsoft/referencesource)
+Em geral, nós estaremos integrando código que vem do [Fonte de Referência](https://github.com/Microsoft/referencesource)
 liberado, porque este contem a API que é mais próxima da do Mono.
 
 Nós [estaremos acompanhando a atribuição de tarefas](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) no Trello.
@@ -211,7 +211,7 @@ problemas.  Candidatos incluem:
 
 * System.Text.RegularExpressions
 
-** Trabalho Misto: **
+**Trabalho Misto:**
 
 São bibliotecas que tem código de alta qualidade e que as contrapartes no Mono podem
 ter limitações, bugs ou problemas. Mas a implementação da Microsoft contem dependências
@@ -222,7 +222,7 @@ a bibliotecas nativas que não existem em todas as plataformas. Possíveis candi
 que tem que ser refatoradas para suportar múltiplas plataformas.
 
 
-** Membros Individuais:** Nós encontraremos esse tipo de código em alguns lugares. 
+**Membros Individuais:** Nós encontraremos esse tipo de código em alguns lugares. 
 Existem lugares no Mono que embora bons de forma geral, podem ter bugs conhecidos e limitações.
 A funcionalidade de `binding` em `System.Reflection` é um exemplo de um método que funciona, 
 mas que pode ter bugs e erros nas 'bordas'.
@@ -273,7 +273,7 @@ Estilo do Código Fonte
 
 Ao fazer mudanças, tente manter o estilo do projeto original. Se está mudando o código do .NET, use o estilo deles. Quando fazendo mudanças no Mono, use o nosso estilo.
 
-Nós acreditamos que poderemos fazer poucas mudanças no código de origem e basicamente usar ou blocos `#if', classes `partial` e dividir algumas coisas para alcançar a portabilidade.
+Nós acreditamos que poderemos fazer poucas mudanças no código de origem e basicamente usar ou blocos `#if`, classes `partial` e dividir algumas coisas para alcançar a portabilidade.
 
 .NET Core e o Mono
 ==================
