@@ -109,7 +109,7 @@ Homepage: https://github.com/mono/xwt
 
 Xwt is a cross-platform toolkit that works by exposing one unified API across all environments. The API is mapped to native controls on each platform.
 
-It can be used as a standalone framework or it can be embedded into existing applications. The Monodevelop uses this toolkit for simple interfaces that needs to feel native across all the platforms, such as Files Dialogs.
+It can be used as a standalone framework or it can be embedded into existing applications. The Monodevelop uses this toolkit for simple interfaces that needs to feel native across all the platforms, without the need to rewrite them.
 
 Pros:
 -   Extremely simple API.
