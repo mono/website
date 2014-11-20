@@ -37,6 +37,8 @@ After you've forked and cloned the repository, run the following commands:
 
 **Note:** you can add the `--watch` option when running `jekyll serve` to let Jekyll watch for file changes, which means the site will be rebuilt when a file is modified.
 
+**Note 2:** on case-insensitive file systems like on Windows and Mac OS X you'll run into redirect loops for some URLs. The workaround is to disable redirects locally by removing the `gems: jekyll-redirect-from` entry from `_config.yml`.
+
 The site should now be running locally:
 ![website](https://cloud.githubusercontent.com/assets/1376924/3712425/c1ab2e9c-1513-11e4-9df2-6e69d461c3cf.png)
 
