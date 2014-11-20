@@ -97,7 +97,7 @@ Cons:
 -   Looks alien on non-Windows platforms.
 -   Code that calls the Win32 API is not portable.
 
-Working in Progress
+Work in Progress
 ===================
 
 Listed below is some Toolkits that are in several stages of active development but didn't have a stable release yet.
