@@ -100,7 +100,7 @@ Cons:
 Work in Progress
 ===================
 
-Listed below are some Toolkits that are in several stages of active development but didn't have a stable release yet.
+Listed below are some Toolkits that are in several stages of active development but don't have a stable release yet.
 
 Xwt
 ---
@@ -109,7 +109,7 @@ Homepage: https://github.com/mono/xwt
 
 Xwt is a cross-platform toolkit that works by exposing one unified API across all environments. The API is mapped to native controls on each platform.
 
-It can be used as a standalone framework or it can be embedded into existing applications. Monodevelop uses this toolkit for simple interfaces that need to feel native across all the platforms, without the need to write platform specific code.
+It can be used as a standalone framework or it can be embedded into existing applications. MonoDevelop uses this toolkit for simple interfaces that need to feel native across all the platforms, without the need to write platform specific code.
 
 Pros:
 -   Extremely simple API.
@@ -124,7 +124,7 @@ QtSharp
 
 Homepage: https://github.com/ddobrev/QtSharp
 
-QtSharp started as a sucessor of the Qyoto project. It aims to create libraries that wrap [Qt](https://qt-project.org/) thus enabling its usage through C#. It relies on [CppSharp](https://github.com/mono/CppSharp) and generates the wrappers based on a pre-installed Qt set-up.
+QtSharp started as a sucessor of the Qyoto project. It aims to create libraries that wrap [Qt](https://qt-project.org/) thus enabling its usage through C#. It relies on [CppSharp](https://github.com/mono/CppSharp) and generates the wrappers based on a pre-installed Qt setup.
 
 Still in early development.
 
