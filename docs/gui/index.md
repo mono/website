@@ -113,13 +113,13 @@ It can be used as a standalone framework or it can be embedded into existing app
 
 Pros:
 
-- Extremely simple API.
--	Native look and feel on each platform.
--	Can be embedded in existing applications.
+-   Extremely simple API.
+-   Native look and feel on each platform.
+-   Can be embedded in existing applications.
 
 Cons:
 
--	Poor documentation.
+-   Poor documentation.
 
 QtSharp
 -------
