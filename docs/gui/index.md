@@ -112,11 +112,13 @@ Xwt is a cross-platform toolkit that works by exposing one unified API across al
 It can be used as a standalone framework or it can be embedded into existing applications. MonoDevelop uses this toolkit for simple interfaces that need to feel native across all the platforms, without the need to write platform specific code.
 
 Pros:
--   Extremely simple API.
+
+- Extremely simple API.
 -	Native look and feel on each platform.
 -	Can be embedded in existing applications.
 
 Cons:
+
 -	Poor documentation.
 
 QtSharp

@@ -11,22 +11,22 @@ This page lists some ideas for Mono GSoC projects that students can apply for. A
 
 You can use the following links to jump to sections that you're interested in:
 
-**[Other Ideas](#other-ideas)**
+**[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
 
-**[Compilers and Tools](#compilers-and-tools)**
+**[Compilers and Tools](#compilers-and-tools)**<br/>
 Work on Mono's tools and compilers
 
-**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**
+**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
-**[Mono Runtime](#mono-runtime)**
+**[Mono Runtime](#mono-runtime)**<br/>
 Improve the core Mono runtime and JIT
 
-**[GTK# and Bindings](#gtk-and-bindings)**
+**[GTK# and Bindings](#gtk-and-bindings)**<br/>
 GTK# Core, Bindings and Applications
 
-**[Contacting the Mono Team](#contacting-the-mono-team)**
+**[Contacting the Mono Team](#contacting-the-mono-team)**<br/>
 How to get in touch with us and ask questions
 
 Other Ideas

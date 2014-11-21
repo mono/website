@@ -159,11 +159,11 @@ Calling convention can be specified in C code by using the `__stdcall` and `__cd
 
 Does having the default CallingConvention vary between platforms cause portability problems? Yes. All the more reason to write as much code as possible as managed code, avoiding the whole P/Invoke/marshaling conundrum in the first place.
 
-If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function,
-and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses
+If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function,<br/>
+and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses<br/>
 a known calling convention. If you use option (2), you'll need to set the
-[DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint)
-field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's
+[DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint)<br/>
+field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's<br/>
 binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
 
 1.  make your .NET assembly platform specific (you'll need a different assembly for each different platform);
@@ -394,12 +394,12 @@ Perhaps in the future the [CharSet](http://docs.go-mono.com/index.aspx?link=T:Sy
 
 ### More Control
 
-Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more
-control? You would need more control if a string is a member of a structure, or if the function uses multiple different
+Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more<br/>
+control? You would need more control if a string is a member of a structure, or if the function uses multiple different<br/>
 types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the
-[Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value) property
+[Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value) property<br/>
 (which is set in the constructor) to a value from the
-[UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration.
+[UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration.<br/>
 For example:
 
 ``` csharp
@@ -1549,28 +1549,28 @@ Note that some portions of this document are quotations from others; the origina
 Revision History
 ================
 
- August 15, 2005
+ August 15, 2005<br/>
 Added char\*\* marshalling tutorial
 
- April 12, 2005
+ April 12, 2005<br/>
 Moved into the wiki.
 
- February 3, 2005
+ February 3, 2005<br/>
 Revised navigation menu to show 1st and 2nd level links. Documented Mono's __Internal library name extension for importing symbols from within the loading program. Added Marshaling Arrays section, which clarifies array marshaling issues and includes the David Jesk commentary (which shouldn't have been in the "Avoiding Marshaling" section anyway). Added boolean marshaling information. Added Marshaling Embedded Strings information. Minor corrections, additional links to blogs and articles.
 
- June 14, 2004
+ June 14, 2004<br/>
 Added Properly Disposing of Resources section; changed title to clarify document's intent.
 
- June 6, 2004
+ June 6, 2004<br/>
 Mono properly frees the memory of class-typed return values now. Remove comment stating otherwise. (miguel)
 
- May 15, 2004
+ May 15, 2004<br/>
 Added Exception Propogation section, updated Mono's .config file handling; spelling correction: s/marshalling/marshaling/g (this matches MSDN spelling conventions).
 
- March 20, 2004
+ March 20, 2004<br/>
 Added Memory Boundaries section based on suggestions from Marcus; formatting changes.
 
- August-October 2003
+ August-October 2003<br/>
 Initial Version.
 
 

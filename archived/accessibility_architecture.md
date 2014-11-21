@@ -85,20 +85,20 @@ Details about the actual mapping of UIA Providers and Control Types to ATK can b
 Definitions
 -----------
 
-[UIA](http://msdn2.microsoft.com/en-us/accessibility/bb892133.aspx)---Microsoft UI Automation. A managed code application programming interface (API), exposing user interface controls for test automation and assistive technology. Part of the .NET framework starting at 3.0. Successor of MSAA (Microsoft Active Accessibility)
- UIA Clients---Applications such as screen readers and testing frameworks written in managed code (e.g., C#/VB).
- UIA Providers---UI implementations or application controls such as checkboxes. Written in managed code or C/C++.
- AT---Assistive technology. A generic term that includes assistive, adaptive, and rehabilitative devices and the process used in selecting, locating, and using them.
- AT-SPI---A toolkit neutral way of providing accessibility facilities in applications. AT-SPI can also be used to automate testing of user interfaces. AT-SPI is currently supported by GTK+2, JAVA/Swing, Mozilla, and StarOffice/OpenOffice. For our product, AT-SPI will act as the equivalent of the UIA core.
- ATK---Accessibility toolkit. A developer toolkit that allows programmers to use common GNOME accessibility features in their applications. The ATK interface is toolkit-independent--implementations could be written for any widget set, such as GTK, Motif or Qt.
- GAIL---GNOME Accessbility Implementation Library. GAIL provides accessibility support for GTK by implementing AtkObjects for widgets in GTK. GAIL is dynamically loadable (as a module) at runtime by a GTK application. Once loaded, those parts of your application that use standard GTK widgets will have a basic level of accessibility, without you having to modify your application at all. (If GAIL is not loaded, GTK widgets will have a default accessibility implementation that essentially returns no information, though it nominally conforms to the ATK API.)
- ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.
- UIA/at-spi Bridge---Mapping of AT-SPI to the UIA client APIs.
- [WinForms](/docs/gui/winforms/)---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
- [Moonlight](/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.
- [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.
- [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).
- [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.
- [CPython](http://www.python.org)---The default, most-widely used implementation of the Python programming language. It is written in C, hence the name CPython.
+[UIA](http://msdn2.microsoft.com/en-us/accessibility/bb892133.aspx)---Microsoft UI Automation. A managed code application programming interface (API), exposing user interface controls for test automation and assistive technology. Part of the .NET framework starting at 3.0. Successor of MSAA (Microsoft Active Accessibility)<br/>
+ UIA Clients---Applications such as screen readers and testing frameworks written in managed code (e.g., C#/VB).<br/>
+ UIA Providers---UI implementations or application controls such as checkboxes. Written in managed code or C/C++.<br/>
+ AT---Assistive technology. A generic term that includes assistive, adaptive, and rehabilitative devices and the process used in selecting, locating, and using them.<br/>
+ AT-SPI---A toolkit neutral way of providing accessibility facilities in applications. AT-SPI can also be used to automate testing of user interfaces. AT-SPI is currently supported by GTK+2, JAVA/Swing, Mozilla, and StarOffice/OpenOffice. For our product, AT-SPI will act as the equivalent of the UIA core.<br/>
+ ATK---Accessibility toolkit. A developer toolkit that allows programmers to use common GNOME accessibility features in their applications. The ATK interface is toolkit-independent--implementations could be written for any widget set, such as GTK, Motif or Qt.<br/>
+ GAIL---GNOME Accessbility Implementation Library. GAIL provides accessibility support for GTK by implementing AtkObjects for widgets in GTK. GAIL is dynamically loadable (as a module) at runtime by a GTK application. Once loaded, those parts of your application that use standard GTK widgets will have a basic level of accessibility, without you having to modify your application at all. (If GAIL is not loaded, GTK widgets will have a default accessibility implementation that essentially returns no information, though it nominally conforms to the ATK API.)<br/>
+ ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.<br/>
+ UIA/at-spi Bridge---Mapping of AT-SPI to the UIA client APIs.<br/>
+ [WinForms](/docs/gui/winforms/)---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br/>
+ [Moonlight](/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.<br/>
+ [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.<br/>
+ [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).<br/>
+ [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.<br/>
+ [CPython](http://www.python.org)---The default, most-widely used implementation of the Python programming language. It is written in C, hence the name CPython.<br/>
  [Strongwind](http://medsphere.org/projects/strongwind)---A GUI test automation framework inspired by dogtail. Strongwind is object-oriented and extensible. Strongwind is written in Python and uses the pyatspi library to manipulate and query the state of applications.
 

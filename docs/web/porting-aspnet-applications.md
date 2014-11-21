@@ -30,7 +30,7 @@ If your application uses MS SQL then on your Unix system you will need to instal
 
 ### Prerequisite software
 
--   Npgsql version from [CVS](http://pgfoundry.org/scm/?group_id=1000140).
+-   Npgsql version from [CVS](http://pgfoundry.org/scm/?group_id=1000140).<br/>
     The CVS version is required, since the ASP.NET 2.0 Membership classes rely on the DbProviderFactories model which is not available in Npgsql shipped with Mono.
 -   ASP.NET PostgreSQL Membership/Role providers. I recommend the version from [Nauck, It](http://dev.nauck-it.de/projects/show/aspsqlprovider), which is the code I use in all the ported starter kits. Make sure that you use the version of the above provider from the [Mono branch](https://github.com/dnauck/AspSQLProvider/tree/mono) as it contains changes necessary for the provider to work correctly with the CVS version of Npgsql.
 -   [PostgreSQL 8.2](http://www.postgresql.org/ftp/binary/v8.2.4/)
@@ -429,7 +429,7 @@ If this is the case with your file(s), you should generate the code using the Mi
 
 Before processing the `.xsd` file on Windows you need to edit it to make sure the generated code is compatible with Npgsql. There are two sets of changes that need to be made in order to achieve the goal:
 
-1.  Make sure the provider mentioned in the file is Npgsql
+1.  Make sure the provider mentioned in the file is Npgsql<br/>
     To do so, locate the `<Connections>` section within the `<xs:appinfo>` element and modify each `<Connection>` element's `Provider` attribute to say **Npgsql**
 2.  Edit the queries and parameters as described [below](#editing-queries)
 

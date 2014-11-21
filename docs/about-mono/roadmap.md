@@ -7,8 +7,8 @@ redirect_from:
 
 *Last update: November, 2014*
 
-We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.
-The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.
+We are adopting a new development system where new features are developed in branches and merged into master after they have been completed and they pass our QA tests.<br/>
+The goal is to reduce our feature and bug fix inventory and deliver those fixes shortly after they are fixed to Mono users.<br/>
 For more information see: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
 
 We are now integrating [.NET Open Source code into Mono](/docs/about-mono/dotnet-integration).
@@ -64,8 +64,7 @@ Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the doc
 
 ### Mono and Silverlight
 
-[Moonlight](/docs/web/moonlight/) the open source implementation of Silverlight on top of Mono for
-Linux is no longer being developed.
+[Moonlight](/docs/web/moonlight/) the open source implementation of Silverlight on top of Mono for Linux is no longer being developed.
 
 ### Unsupported technologies
 

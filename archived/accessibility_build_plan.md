@@ -70,7 +70,7 @@ A build plan for the Accessibility team's efforts in bringing accessibility to m
 Build Team
 ----------
 
-Stephen Shaw (aka decriptor)
+Stephen Shaw (aka decriptor)<br/>
  Ray Wang (aka Ray)
 
 [Full A11y team](/Accessibility:_Team "Accessibility: Team")
@@ -337,13 +337,13 @@ Based on Q2 in roadmap, our initial testing schedule is below:
 References
 ----------
 
-The [Product roadmap](/Accessibility:_Roadmap)
- The [Architecture overview](/archived/accessibility_architecture/)
+The [Product roadmap](/Accessibility:_Roadmap)<br/>
+ The [Architecture overview](/archived/accessibility_architecture/)<br/>
  [The Novell & Microsoft announcement](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) to create cross-platform accessibility framework
 
 ### Build Systems
 
-[BuildSystem/MonoBuild](/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.
+[BuildSystem/MonoBuild](/BuildSystem/MonoBuild) MonoBuild---The current mono build system. We have tied into this for the time being.<br/>
  [https://build.opensuse.org/](https://build.opensuse.org/) OBS---This is a really cool build system that can handle several different distributions and architectures
 
 Build plan identifier

@@ -56,9 +56,9 @@ Below this, it shows the top callers of the method. This is very useful data. If
 
     Two warnings must be given about the method data.
 
-First, the profiler has an overhead associated with it. As such, a high number of calls to a method may show up as consuming lots of time, when in reality they do not consume much time at all. If you see a method that has a very high number of calls, you may be able to ignore it. However, do consider removing calls if possible, as that will sometimes help performance. This problem is often seen with the use of built in collection types.
- Secondly, due to the nature of the profiler, recursive calls have extremely large times (because the profiler double counts when the method calls itself). One easy way to see this problem is that if a method is shown as taking more time than the Main method, it is very likely recursive, and causing this problem.
- Below the method data, allocation data is shown. This shows how much memory each method allocates. The number beside the method is the total amount of memory. Below that, it is broken down into types. Then, the caller data is given. This data is again useful when you want to figure out how to eliminate calls.
+First, the profiler has an overhead associated with it. As such, a high number of calls to a method may show up as consuming lots of time, when in reality they do not consume much time at all. If you see a method that has a very high number of calls, you may be able to ignore it. However, do consider removing calls if possible, as that will sometimes help performance. This problem is often seen with the use of built in collection types.<br/>
+ Secondly, due to the nature of the profiler, recursive calls have extremely large times (because the profiler double counts when the method calls itself). One easy way to see this problem is that if a method is shown as taking more time than the Main method, it is very likely recursive, and causing this problem.<br/>
+ Below the method data, allocation data is shown. This shows how much memory each method allocates. The number beside the method is the total amount of memory. Below that, it is broken down into types. Then, the caller data is given. This data is again useful when you want to figure out how to eliminate calls.<br/>
  You might want to keep a close eye on the memory consumption and on the method invocation counts. A lot of the performance gains in MCS for example came from reducing its memory usage, as opposed to changes in the execution path.
 
 Heap Profiling
@@ -107,23 +107,23 @@ You might also be interested in using mono --aot to generate precompiled code, a
 Memory Management in the .NET/Mono world
 ========================================
 
-Since Mono and .NET offer automatic garbage collection, the programmer is freed from having to track and dispose the objects it consumes (except for IDispose-like classes). This is a great productivity gain, but if you create thousands of objects, that will make the garbage collector do more work, and it might slow down your application.
- Remember, each time you allocate an object, the GC is forced to find space for the object. Each object has an 8 byte overhead (4 to tell what type it is, then 4 for a sync block). If the GC finds that it is running out of room, it will scan every object for pointers, looking for unreferenced objects. If you allocate extra objects, the GC then must take the effort to free the objects.
+Since Mono and .NET offer automatic garbage collection, the programmer is freed from having to track and dispose the objects it consumes (except for IDispose-like classes). This is a great productivity gain, but if you create thousands of objects, that will make the garbage collector do more work, and it might slow down your application.<br/>
+ Remember, each time you allocate an object, the GC is forced to find space for the object. Each object has an 8 byte overhead (4 to tell what type it is, then 4 for a sync block). If the GC finds that it is running out of room, it will scan every object for pointers, looking for unreferenced objects. If you allocate extra objects, the GC then must take the effort to free the objects.<br/>
  Mono uses the Boehm GC, which is a conservative collector, and this might lead to some memory fragmentation and unlike generational GC systems, it has to scan the entire allocated memory pool.
 
 Boxing
 ------
 
-The .NET framework provides a rich hierarchy of object types. Each object not only has value information, but also type information associated with it. This type information makes many types of programs easier to write. It also has a cost associated with it. The type information takes up space.
- In order to reduce the cost of type information, almost every Object Oriented language has the concept of \`primitives'. They usually map to types such as integers and booleans. These types do not have any type information associated with them.
+The .NET framework provides a rich hierarchy of object types. Each object not only has value information, but also type information associated with it. This type information makes many types of programs easier to write. It also has a cost associated with it. The type information takes up space.<br/>
+ In order to reduce the cost of type information, almost every Object Oriented language has the concept of \`primitives'. They usually map to types such as integers and booleans. These types do not have any type information associated with them.<br/>
  However, the language also must be able to treat primitives as first class datums -- in the class with objects. Languages handle this issue in different ways. Some choose to make a special class for each primitive, and force the user to do an operation such as:
 
 ``` shell
  // This is Java list.add (new Integer (1)); System.out.println (list.get (1).intValue ());
 ```
 
- The C# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.
- Boxing performs the same thing as Java's `new Integer (1)`. The user is not forced to write the extra code. However, behind the scenes the *same thing* is being done by the runtime. Each time a primitive is cast to an object, a new object is allocated.
+ The C# design team was not satisfied with this type of construct. They added a notion of \`boxing' to the language.<br/>
+ Boxing performs the same thing as Java's `new Integer (1)`. The user is not forced to write the extra code. However, behind the scenes the *same thing* is being done by the runtime. Each time a primitive is cast to an object, a new object is allocated.<br/>
  You must be careful when casting a primitive to an object. Note that because it is an implicit conversion, you will not see it in your code. For example, boxing is happening here:
 
 ``` shell

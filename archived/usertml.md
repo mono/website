@@ -44,7 +44,7 @@ Some obligatory bits about myself and Mono. I'm the FreeBSD port maintainer for 
  Let me list my qualifications:
 
 -   I am a novice programmer, if you could even call me that.
--   I have no C# experience... no C experience... and no OOP experience.
+-   I have no C# experience... no C experience... and no OOP experience.<br/>
     (Heck, I have no experience with a language other than Bourne script.)
 -   I have a lot of time on my hands.
 

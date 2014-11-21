@@ -4,7 +4,7 @@ redirect_from:
   - /Compatibility/
 ---
 
-The easiest way to describe what Mono currently supports is:
+The easiest way to describe what Mono currently supports is:<br/>
  **Everything in .NET 4.5** except **WPF**, **WWF**, and with **limited WCF** and **limited ASP.NET 4.5 async stack**.
 
 Here is a slightly more detailed view, by .NET framework version:

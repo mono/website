@@ -92,3 +92,4 @@ You can further control various data files by using one or more of the following
   --libdir=DIR           object code libraries [EPREFIX/lib]
   --includedir=DIR       C header files [PREFIX/include]
   --oldincludedir=DIR    C header files for non-gcc [/usr/include]
+```

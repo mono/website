@@ -8,15 +8,15 @@ Track our various [Development Plans](/docs/about-mono/plans/)
 
 **Resources**
 
-Users:
-  [Downloads](/download/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)
- Developers:
-  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books "Books") | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)
- Contributors:
-  [Class Status](/archived/resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)
- Community:
-  [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)
- FAQ:
+Users:<br/>
+  [Downloads](/download/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)<br/>
+ Developers:<br/>
+  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books "Books") | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
+ Contributors:<br/>
+  [Class Status](/archived/resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)<br/>
+ Community:<br/>
+  [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)<br/>
+ FAQ:<br/>
   [General](/docs/faq/general/) | [Technical](/docs/faq/technical/) | [Licensing](/docs/faq/licensing/) | [Asp.net](/docs/faq/aspnet/) | [Security](/docs/faq/security/) | [WinForms](/docs/faq/winforms/)
 
 Mono shipped its first release in June 2004, and the project is moving forward in various directions:

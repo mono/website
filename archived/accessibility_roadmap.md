@@ -55,7 +55,7 @@ Current release
 
 ### Release 1.0 - March 17th 2009
 
-[Release Notes](/Accessibility:_Release_Notes_1.0 "Accessibility: Release Notes 1.0")
+[Release Notes](/Accessibility:_Release_Notes_1.0 "Accessibility: Release Notes 1.0")<br/>
 100% of the System.Windows.Forms controls supported.
 
 Upcoming releases
@@ -70,11 +70,11 @@ Past releases
 
 ### Release 0.9.1 - December 6th 2008
 
-[Release Notes](/Accessibility:_Release_Notes_0.9.1 "Accessibility: Release Notes 0.9.1")
+[Release Notes](/Accessibility:_Release_Notes_0.9.1 "Accessibility: Release Notes 0.9.1")<br/>
 Bugfix release for 0.9.
 
 ### Release 0.9 - November 26th 2008
 
-[Release Notes](/Accessibility:_Release_Notes_0.9 "Accessibility: Release Notes 0.9")
+[Release Notes](/Accessibility:_Release_Notes_0.9 "Accessibility: Release Notes 0.9")<br/>
 Initial preview release, not all controls covered.
 

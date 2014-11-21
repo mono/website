@@ -6,13 +6,13 @@ redirect_from:
   - /Learn/
 ---
 
-[What is Mono?](/docs/about-mono/)
+[What is Mono?](/docs/about-mono/)<br/>
  Find out what Mono is and what it can help you do.
 
-[Mono Basics](/docs/getting-started/mono-basics/)
+[Mono Basics](/docs/getting-started/mono-basics/)<br/>
  Make sure Mono is installed correctly by compiling/running Hello World.
 
-[Compatibility](/docs/about-mono/compatibility/)
+[Compatibility](/docs/about-mono/compatibility/)<br/>
  Check Mono's compatibility with Microsoft .NET.
 
 Working with Mono

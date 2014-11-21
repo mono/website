@@ -10,15 +10,15 @@ Use
 
 **Resources**
 
-Users:
-  [Downloads](/Downloads "Downloads") | [Bug Reporting](/Bugs "Bugs") | [Software](/Software "Software")
- Developers:
-  [API Docs](http://www.go-mono.com/docs/) | [Languages](/Languages "Languages") | [Books](/Books "Books") | [Roadmap](/Mono_Project_Roadmap) | [Plans](/Plans "Plans")
- Contributors:
-  [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/SourceCodeRepository)
- Community:
-  [Mailing Lists](/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat](/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)
- FAQ:
+Users:<br/>
+  [Downloads](/Downloads "Downloads") | [Bug Reporting](/Bugs "Bugs") | [Software](/Software "Software")<br/>
+ Developers:<br/>
+  [API Docs](http://www.go-mono.com/docs/) | [Languages](/Languages "Languages") | [Books](/Books "Books") | [Roadmap](/Mono_Project_Roadmap) | [Plans](/Plans "Plans")<br/>
+ Contributors:<br/>
+  [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/SourceCodeRepository)<br/>
+ Community:<br/>
+  [Mailing Lists](/Mailing_Lists "Mailing Lists") | [Forums](http://www.go-mono.com/forums/) | [Chat](/IRC "IRC") | [Blogs](http://www.go-mono.com/monologue/)<br/>
+ FAQ:<br/>
   [General](/FAQ:_General "FAQ: General") | [Technical](/FAQ:_Technical "FAQ: Technical") | [Licensing](/FAQ:_Licensing "FAQ: Licensing") | [Asp.net](/FAQ:_ASP.NET "FAQ: ASP.NET") | [Security](/FAQ:_Security "FAQ: Security") | [WinForms](/FAQ:_Winforms "FAQ: Winforms")
 
 Mono is positioned to be the leading platform for development of Gnome applications on Linux and is an open-source alternative for Microsoft Windows development. The following links should help you get started with Mono:

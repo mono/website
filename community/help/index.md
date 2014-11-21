@@ -21,7 +21,7 @@ Since Mono is a large piece of software you must strictly follow the [Compiling 
 Can not compile my source
 -------------------------
 
-When compiling your sources please bear in mind that Mono provides a [C#-Compiler](/docs/about-mono/languages/csharp/), **mcs**.
+When compiling your sources please bear in mind that Mono provides a [C#-Compiler](/docs/about-mono/languages/csharp/), **mcs**.<br/>
 Most help request regarding the compilation of user software can be fixed by adding the proper references because only `mscorlib.dll` and `System.dll` are referenced by default.
 
 To add references to additional assemblies, the `-r:Assembly` switch can be used:

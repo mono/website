@@ -18,7 +18,7 @@ On some distribution you will need to install some development tools which are n
 Debian based distributions
 --------------------------
 
-On Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.
+On Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.<br/>
 This can be done easily by using *apt-get*:
 
 ```bash

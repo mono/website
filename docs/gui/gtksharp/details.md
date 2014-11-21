@@ -212,7 +212,7 @@ If you know of anything else that should be added to this page, let someone in #
 Gtk#'s Components
 ------------------
 
-**Gtk# Components**
+**Gtk# Components**<br/>
 Gtk# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.
 
 **Module:**

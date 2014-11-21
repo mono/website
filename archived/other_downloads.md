@@ -51,7 +51,7 @@ The [AnonSVN](/AnonSVN) mirrors are updated in real time.
 
 [Snapshot RPMs](http://mono.ximian.com/monobuild/snapshot/download-trunk/) built from trunk get updated every hour. These contain most of the packages we ship but very well may be broken.
 
-[Daniel Nauck](mailto:dna@mono-project.de) maintains a Ubuntu VMware image with the latest Mono from svn head. You can find it at [mono-project.de](http://www.mono-project.de/mono-image/).
+[Daniel Nauck](mailto:dna@mono-project.de) maintains a Ubuntu VMware image with the latest Mono from svn head. You can find it at [mono-project.de](http://www.mono-project.de/mono-image/).<br/>
 User/password = mono/mono
 
 The vm is setup for German, but the English language packages are installed as well. To change the vm to English:

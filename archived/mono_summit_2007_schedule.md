@@ -47,18 +47,18 @@ Doors Open
 
 9:45
 
-**Introduction**
+**Introduction**<br/>
  Rafael Pastor Vargas
 
 10:00
 
-**[Opening Keynote](/archived/mono_summit_2007_session_list/#opening-keynote "Mono Summit 2007 Session List")**
+**[Opening Keynote](/archived/mono_summit_2007_session_list/#opening-keynote "Mono Summit 2007 Session List")**<br/>
 Miguel de Icaza
 
-**[NUnit](/archived/mono_summit_2007_session_list/#nunit "Mono Summit 2007 Session List")**
+**[NUnit](/archived/mono_summit_2007_session_list/#nunit "Mono Summit 2007 Session List")**<br/>
 Charlie Poole
 
-**[Debugging Mono Applications with MDB](/archived/mono_summit_2007_session_list/#debugging-mono-applications-with-mdb "Mono Summit 2007 Session List")**
+**[Debugging Mono Applications with MDB](/archived/mono_summit_2007_session_list/#debugging-mono-applications-with-mdb "Mono Summit 2007 Session List")**<br/>
 Martin Baulig
 
 10:45
@@ -69,13 +69,13 @@ Martin Baulig
 
 11:00
 
-**[Mono on the Mac](/archived/mono_summit_2007_session_list/#mono-on-the-mac "Mono Summit 2007 Session List")**
+**[Mono on the Mac](/archived/mono_summit_2007_session_list/#mono-on-the-mac "Mono Summit 2007 Session List")**<br/>
 Geoff Norton
 
-**[Greengrass](/archived/mono_summit_2007_session_list/#greengrass "Mono Summit 2007 Session List")**
+**[Greengrass](/archived/mono_summit_2007_session_list/#greengrass "Mono Summit 2007 Session List")**<br/>
 Federico Di Gregorio
 
-**[Boo – A lean mean DSL Machine](/archived/mono_summit_2007_session_list/#boo--a-lean-mean-dsl-machine "Mono Summit 2007 Session List")**
+**[Boo – A lean mean DSL Machine](/archived/mono_summit_2007_session_list/#boo--a-lean-mean-dsl-machine "Mono Summit 2007 Session List")**<br/>
 Rodrigo B. de Oliveira
 
 11:45
@@ -88,19 +88,19 @@ Rodrigo B. de Oliveira
 
 12:00
 
-**[C Sharp 3.0 and LINQ](/archived/mono_summit_2007_session_list/#c-sharp-30-and-linq "Mono Summit 2007 Session List")**
+**[C Sharp 3.0 and LINQ](/archived/mono_summit_2007_session_list/#c-sharp-30-and-linq "Mono Summit 2007 Session List")**<br/>
 Marek Safar
 
-**[DB4Objects](/archived/mono_summit_2007_session_list/#db4o "Mono Summit 2007 Session List")**
+**[DB4Objects](/archived/mono_summit_2007_session_list/#db4o "Mono Summit 2007 Session List")**<br/>
  Rodrigo B. de Oliveira
 
-**[Mono on Embedded Devices](/archived/mono_summit_2007_session_list/#mono-on-embedded-devices "Mono Summit 2007 Session List")**
+**[Mono on Embedded Devices](/archived/mono_summit_2007_session_list/#mono-on-embedded-devices "Mono Summit 2007 Session List")**<br/>
 Everaldo Canuto
 
-**[OpenSuse Build Service](/archived/mono_summit_2007_session_list/#opensuse-build-service "Mono Summit 2007 Session List")**
+**[OpenSuse Build Service](/archived/mono_summit_2007_session_list/#opensuse-build-service "Mono Summit 2007 Session List")**<br/>
 Wade Berrier
 
-**[Boxerp](/archived/mono_summit_2007_session_list/#boxerp "Mono Summit 2007 Session List")**
+**[Boxerp](/archived/mono_summit_2007_session_list/#boxerp "Mono Summit 2007 Session List")**<br/>
 Carlos Ble
 
 13:00
@@ -115,7 +115,7 @@ Carlos Ble
 
 **[Birds of a Feather Sessions](/archived/mono_summit_2007_session_list/#birds-of-a-feather-sessions "Mono Summit 2007 Session List")**
 
-**[Developing Desktop applications with Moonlight](/archived/mono_summit_2007_session_list/#developing-desktop-applications-with-moonlight "Mono Summit 2007 Session List")**
+**[Developing Desktop applications with Moonlight](/archived/mono_summit_2007_session_list/#developing-desktop-applications-with-moonlight "Mono Summit 2007 Session List")**<br/>
 Stephane Delcroix
 
 **[Birds of a Feather Sessions](/archived/mono_summit_2007_session_list/#birds-of-a-feather-sessions "Mono Summit 2007 Session List")**
@@ -130,13 +130,13 @@ Stephane Delcroix
 
 16:00
 
-**[Developing Applications with Monodevelop](/archived/mono_summit_2007_session_list/#developing-applications-with-monodevelop "Mono Summit 2007 Session List")**
+**[Developing Applications with Monodevelop](/archived/mono_summit_2007_session_list/#developing-applications-with-monodevelop "Mono Summit 2007 Session List")**<br/>
 Lluis Sanchez
 
-**[Gaia Ajax Widgets - The alternative to Ajax](/archived/mono_summit_2007_session_list/#gaia-ajax-widgets---the-alternative-to-ajax "Mono Summit 2007 Session List")**
+**[Gaia Ajax Widgets - The alternative to Ajax](/archived/mono_summit_2007_session_list/#gaia-ajax-widgets---the-alternative-to-ajax "Mono Summit 2007 Session List")**<br/>
 Thomas Hansen
 
-**[Mono.Cecil](/archived/mono_summit_2007_session_list/#monocecil "Mono Summit 2007 Session List")**
+**[Mono.Cecil](/archived/mono_summit_2007_session_list/#monocecil "Mono Summit 2007 Session List")**<br/>
 JB Evain
 
 16:45
@@ -149,13 +149,13 @@ JB Evain
 
 17:00
 
-**[Towards A Virtual Babel: Mono In Second Life](/archived/mono_summit_2007_session_list/#towards-a-virtual-babel-mono-in-second-life "Mono Summit 2007 Session List")**
+**[Towards A Virtual Babel: Mono In Second Life](/archived/mono_summit_2007_session_list/#towards-a-virtual-babel-mono-in-second-life "Mono Summit 2007 Session List")**<br/>
 Jim Purbrick
 
-**[Meet The Experts](/archived/mono_summit_2007_session_list/#meet-the-experts "Mono Summit 2007 Session List")**
+**[Meet The Experts](/archived/mono_summit_2007_session_list/#meet-the-experts "Mono Summit 2007 Session List")**<br/>
  **(17:00-19:00)**
 
-**[Using Mono.Addins](/archived/mono_summit_2007_session_list/#using-monoaddins "Mono Summit 2007 Session List")**
+**[Using Mono.Addins](/archived/mono_summit_2007_session_list/#using-monoaddins "Mono Summit 2007 Session List")**<br/>
 Lluis Sanchez
 
 17:45

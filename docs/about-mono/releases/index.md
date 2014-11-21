@@ -151,7 +151,7 @@ redirect_from:
   - /OldReleases/
 ---
 
-This page contains a list of all Mono releases. The latest release can be found [here](/download).
+This page contains a list of all Mono releases. The latest release can be found [here](/download).<br/>
 Mono version numbers follow a specific policy, more [here](/docs/about-mono/versioning/).
 
 Mono 3.x

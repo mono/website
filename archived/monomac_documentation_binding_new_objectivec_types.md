@@ -205,16 +205,16 @@ The [NullAllowed] parameter can also be specified directly on the setter: [Expor
 
 The **bmac** tool will automatically generate fours constructors in your class, for a given class *Foo*, it generates:
 
-> Foo ()
+> Foo ()<br/>
 > the default constructor (maps to Objective-C's "init" constructor)
 >
-> Foo (NSCoder)
+> Foo (NSCoder)<br/>
 > the constructor used during deserialization of NIB files (maps to Objective-C's "initWithCoder:" constructor).
 >
-> Foo (IntPtr handle)
+> Foo (IntPtr handle)<br/>
 > the constructor for handle-based creation, this is invoked by the runtime when the runtime needs to expose a managed object from an unmanaged object.
 >
-> Foo (NSEmptyFlag)
+> Foo (NSEmptyFlag)<br/>
 > this is used by derived classes to prevent double initialization.
 >
 For constructors that you define, they need to be declared using the following signature inside the Interface definition: they must return an IntPtr value and the name of the method should be Constructor. For example to bind the initWithFrame: constructor, this is what you would use:
@@ -328,8 +328,8 @@ When you use the [Export] attribute and you are passing data that will be retain
 
 The above would flag the value as having the "Retain" semantics. The semantics available are:
 
-> Assign
-> Copy
+> Assign<br/>
+> Copy<br/>
 > Retain
 
 ### Style Guidelines
