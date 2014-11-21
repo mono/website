@@ -100,7 +100,7 @@ Cons:
 Work in Progress
 ===================
 
-Listed below is some Toolkits that are in several stages of active development but didn't have a stable release yet.
+Listed below are some Toolkits that are in several stages of active development but didn't have a stable release yet.
 
 Xwt
 ---
@@ -109,12 +109,12 @@ Homepage: https://github.com/mono/xwt
 
 Xwt is a cross-platform toolkit that works by exposing one unified API across all environments. The API is mapped to native controls on each platform.
 
-It can be used as a standalone framework or it can be embedded into existing applications. The Monodevelop uses this toolkit for simple interfaces that needs to feel native across all the platforms, without the need to write specific code.
+It can be used as a standalone framework or it can be embedded into existing applications. Monodevelop uses this toolkit for simple interfaces that need to feel native across all the platforms, without the need to write platform specific code.
 
 Pros:
 -   Extremely simple API.
 -	Native look and feel on each platform.
--	Can be embed in existing applications.
+-	Can be embedded in existing applications.
 
 Cons:
 -	Poor documentation.
