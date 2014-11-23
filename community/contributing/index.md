@@ -37,7 +37,7 @@ The project is under active development and has a vibrant community. If you are 
 Important Rules
 ===============
 
--   ~~**Microsoft .NET source code:** If you have looked at Microsoft's proprietary implementation of .NET or their shared source code (which is also proprietary), you will not be able to contribute to Mono. If you would like to contribute in this area, be careful to not look into them in Visual Studio debugging experience.~~ Microsoft open-sourced parts of the .NET Framework, see [.NET Source Code Integration](/docs/about-mono/dotnet-integration/) for more details.
+-   <s>**Microsoft .NET source code:** If you have looked at Microsoft's proprietary implementation of .NET or their shared source code (which is also proprietary), you will not be able to contribute to Mono. If you would like to contribute in this area, be careful to not look into them in Visual Studio debugging experience.</s> Microsoft open-sourced parts of the .NET Framework, see [.NET Source Code Integration](/docs/about-mono/dotnet-integration/) for more details.
 
 -   **Contributing to the Mono runtime:** If you are submitting changes to the runtime, you must make sure to release your change under the MIT license before it is integrated. You may do so by adding this line to your commit messages:
 
