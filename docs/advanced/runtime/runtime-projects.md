@@ -4,91 +4,91 @@ redirect_from:
   - /Runtime_Projects/
 ---
 
-Current Projects for the Mono Runtime
+Projetos correntes para o ambiente de execução do Mono
 
-These track the projects for the VM team.
+Trilha de projetos para a equipe VM.
 
-Ongoing Projects
+Projetos em Andamento
 ================
 
 Soft Debugger
 -------------
 
-The [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) is a new debugger technology, used primarily by Mono on the iPhone.
+O [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) é uma nova tecnologia de depuração, usado principalmente pelo Mono no iPhone.
 
-Compacting GC
+Compactação do GC
 -------------
 
-Work towards the [Generational GC](/docs/advanced/garbage-collector/sgen/).
+Trabalha com respeito ao [GC Geracional](/docs/advanced/garbage-collector/sgen/).
 
-Our current plan is:
+Nosso plano atual é:
 
 -   Complete the GC in single-threaded mode.
--   Activate the new GC on git.
--   Debug/fix any issues with the GC.
+-   Ativar o novo GC no git.
+-   Depurar/corrigir quaisquer problemas com o GC.
 -   Implement a multi-threaded version of the major collector.
 
-Lead: Paolo
+Liderança: Paolo
 
-LLVM as a Code Generation Backend
+LLVM como um Backend de Geração de Código
 ---------------------------------
 
-Use the LLVM code optimized as a backend for Mono's JIT. For more information see the [Mono LLVM](/docs/advanced/mono-llvm/) page.
+Utilizar o código LLVM otimizado como um backend para o JIT do Mono. Para mais informação veja o [Mono LLVM](/docs/advanced/mono-llvm/) page.
 
-Lead: Zoltan
+Liderança: Zoltan
 
-Reflection Fixes
+Correções de Reflexão
 ----------------
 
-Support for User defined Types (used by PostSharp and other similar tools).
+Suporte para tipos definidos pelo usuário (utilizado pelo PostSharp e outras ferramentas similares).
 
-This is a very time intensive task as it requires to test all entry points in corlib that take System.Type or System.Reflection.\* types.
+Esta é uma tarefa intensiva que consome muito tempo, pois requer testar todos os pontos de entrada na corlib que levam os tipos System.Type ou System.Reflection.\*.
 
-Continuations
+Continuações
 -------------
 
-Support for [Continuations](/archived/continuations "Continuations") is supported in versions of Mono after April 16th (to be publicly available in Mono 2.6).
+Suporte para [Continuações](/archived/continuations "Continuations") é suportado nas versões do Mono após 16 de Abril (para estar disponível ao público no Mono 2.6).
 
-Read more about [Continuations](/archived/continuations "Continuations") here.
+Leia mais sobre [Continuações](/archived/continuations "Continuations") aqui.
 
-Reflection.Emit Fixes
+Correções do Reflection.Emit
 ---------------------
 
-Fix executing SRE code(used by F# and Boo interactive Boo Shells and DLR debug mode).
+Corrigir execução do código SRE (utilizado pelo F# e shells Boo interativos e DLR em modo de depuração).
 
-This is a series of small tasks:
+Esta é uma série de pequenas tarefas:
 
--   Finish lifting generic instantiations to managed code. We still lack inflated generic method and inflated generic method over inflated generic type.
+-   Terminar o levantamento das instanciações genéricas para o código gerenciado. Ainda nos falto o método genérico inflado e o método genérico inflado sobre o tipo genérico inflado.
 
--   Remove the two stage setup of MonoClass. This step is a bit more complicated and will lead to quite a lot of internal changes to the runtime reflection code.
+-   Remover a instalação de dois estágios do MonoClass. Esta etapa é um pouco mais complicada e levará à diversas mudanças internas ao código de reflexão no ambiente de execução.
 
--   Review all code in the runtime that make assumptions on SRE objects, this should lead to a lot of simplification and fixing long standing bugs.
+-   Revisar todo o código no ambiente de execução que faz suposições sobre os objetos SRE, isso deve levar a uma série de simplicação e correção de erros de longa data.
 
-Lead:
+Liderança:
 
-Runtime Fixes
+Correções do Ambiente de Execução
 -------------
 
-Fix tail call support for F#
+Corrigir suporte à chamada de cauda para F#.
 
-Add generic variance support (Required by C# 4.0). This is a low priority project as it will be released only in 2010.
+Adicionar suporte à variância genérica (requerido pelo C# 4.0). Este é um projeto de baixa prioridade, uma vez que apenas será lançado em 2010.
 
-Security: Moonlight
+Segurança: Moonlight
 -------------------
 
--   Metadata validation.
--   System.Reflection.Emit code audit.
--   IL validation.
--   CoreCLR Security system.
+-   Validação de metadados.
+-   Auditoria do código System.Reflection.Emit.
+-   Validação IL.
+-   Sistema de segurança CoreCLR.
 
 Performance
 -----------
 
-### Frameless methods on x86
+### Frameless Methods on x86
 
-On x86 we can avoid using the frame pointer and gaining an extra register.
+Em x86 podemos evitar usar o ponteiro e ganhar um registro extra.
 
-Lead: Mark Probst
+Liderança: Mark Probst
 
 ### Generics code improvements
 
