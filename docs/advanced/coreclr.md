@@ -1,71 +1,72 @@
 ---
 title: CoreCLR
 redirect_from:
-  - /Moonlight2CoreCLR/
+- /Moonlight2CoreCLR/
 ---
 
-Note: due to the circular nature of the definitions you'll need some prior knowledge of the CoreCLR security model **or** reading it twice to make sense out of this ;-)
+Nota: devido à complexidade das definições você vai precisar de algum conhecimento prévio do modelo de segurança CoreCLR **ou** ler duas vezes para entender o sentido ;-)
 
-Security levels
+Os níveis de segurança
 ===============
 
-The CoreCLR security model divide all code into three distinct levels: **transparent**, **safe-critical** and **critical**. This model is much simpler to understand (and implement) than [CAS](/docs/advanced/cas/) (e.g. no stack-walk). Only a few rules can describe much of it.
+O modelo de segurança CoreCLR divide todo o código em três níveis distintos: **transparent**, **safe-critical** e **critical**. Este modelo é muito mais simples de entender (e aplicar) do que [CAS](/docs/advanced/cas/) (e.g, sem stack-walk). Com apenas algumas regras podemos  descrever grande parte dele.
 
 Transparent
 -----------
 
-By default all code is *transparent* under the CoreCLR model.
+Por padrão todo o código é *transparent* dentro do modelo CoreCLR
 
--   *Transparent* code is limited to what it can do. Specifically it cannot directly call **critical** code (e.g. p/invokes, unsafe code) but it can call *safe-critical* and other *transparent* code.
+-   O código *Transparent* é limitado. Especificadamente, não pode chamar diretamente o código **critical** (e.g. p/ chamar no código não seguro), mas pode chamar o código **safe-critical** e outros códigos *Transparent*.
 
--   Since it's default there's no need to add a `[SecurityTransparent]` attribute everywhere.
+-   Como é padrão, não há necessidade de adicionar um atributo `[SecurityTransparent]` em todo lugar.
 
 Safe Critical
 -------------
 
-Safe critical code is a **gateway** between *transparent* and *critical* code. As such it represent the *riskiest* code (the less, the better).
+O código crítico é uma **ponte** entre o código *transparent* e o código *critical*. Como tal representa o código mais arriscado (quanto menos melhor) .
 
--   Code needed to bridge a (safe) *transparent* API to (not necessarily safe) *critical* code needs to be decorated with `[SecuritySafeCritical]` attributes.
+-   Todo código que interposto entre uma API transparent (segura) e código critical (não necessariamente seguro) deve ser anotado com o atributo [SecuritySafeCritical].
 
--   *Safe critical* code needs to make extra (pre and/or post) validations between the *transparent* and *critical* in order to make the call earn its **safe** prefix.
+-   O código *Safe critical* precisa fazer validações extras (pré e/ou pós) entre o *transparent* e o *critical* afim de merecer o prefixo safe(seguro).
 
 Critical
 --------
 
-Critical code can do anything, like p/invoking into native code and having access to everything outside the host browser. The plugin itself could not work without critical code. However applications can (and must) do without direct access to it.
+O código crítico pode fazer qualquer coisa, como chamar um código nativo e ter acesso a tudo fora do navegador host. O plugin em si não conseguiria funcionar sem o código crítico. No entanto aplicações podem (e devem) funcionar se acessadas diretamente a esse tipo de código.
 
--   Critical code, including every visible API that does things that application code should not do (e.g. file IO), must be marked with a `[SecurityCritical]` attribute.
+-   O código crítico, incluindo cada API visível que faz coisas que o código do aplicativo não deve fazer (e.g,  acesso a arquivos), devem ser marcados com um atributo `[SecurityCritical]`.
 
--   All unsafe code, p/invoke declarations are **critical** (but still needs to be marked as such).
+-   Todo código unsafe e declarações p/invoke são critical (mas ainda precisam ser marcados como tal).
 
-Code categories
+
+Categorias dos códigos
 ===============
 
-To make this even easier to understand, from an application developer point of view, all assemblies are split into two categories: the **application** (or user) code and the **platform** code.
+Para tornar isso ainda mais fácil de entender, de um ponto de vista do aplicativo do desenvolvedor, todos os assemblies são divididos em duas categorias: o código da aplicação (ou usuário) e o código da plataforma.
 
-Application Code
+Código da aplicação
 ----------------
 
-Application code runs with *limited* trust. This makes it possible, along with other features, to safely run untrusted code inside your browser. Application code is bound by the following rules:
+O código da aplicação é executado com confiança limitada. Isso torna possível, juntamente com outros recursos, executar com segurança código não confiável dentro do seu navegador. O código do aplicativo funciona com seguintes regras:
 
--   All *application* code is **transparent**. Using attributes to (try to) change this will compile but will be **ignored** at execution time.
+-   Todo o código da aplicação é **transparent**. Usando atributos para (tentar) mudar isso irá compilar mas será ignorado em tempo de execução.
 
--   As **transparent** it can call other *application* code (all transparent) and *platform* code that is **transparent** (default) or decorated with the `[SecuritySafeCritical]` attribute.
+-   Como **transparent** ele pode chamar outro código da aplicação (todo transparent) e o código da plataforma que é **transparent** (padrão) ou anotado com o atributo `[ SecuritySafeCritical ]`.
 
--   *Application* code cannot **directly** call `[SecurityCritical]` decorated methods/types present in *platform* code.
+-   O código da aplicação não pode chamar diretamente métodos/tipos decorados com [SecurityCritical] presentes.
 
-Platform Code
+Código da plataforma
 -------------
 
-Platform code is a subset of the managed code provided with the plugin. This code is fully-trusted. As such it cannot expose all of its API to *application* code, instead it expose them using three different security levels (see next section).
+Código da plataforma é um subconjunto do código gerenciado fornecido com o plugin. Este código é totalmente confiável. Como tal, não pode expor toda a sua API para o código da aplicação, em vez disso, pode expor seus métodos/tipos usando três níveis de segurança diferentes (veja a próxima seção).
 
--   *Platform* code is, by default, **transparent**. This means that most of it can be called directly from *application* code.
+-   O código de plataforma, por padrão, **transparent**. Isto significa que a maior parte dele pode ser chamado diretamente do código do aplicativo.
 
--   *Platform* code contains **critical** code - i.e. code that do anything (like p/invoking, unsafe code). Such code is decorated with `[SecurityCritical]` attributes and **cannot** be called from *application* code.
+-   O código de plataforma contém código **critical** - i.e. o código que pode fazer qualquer coisa (como chamar código inseguro). Esse código é implementado com atributos `[SecurityCritical]` e não pode ser chamado do código da aplicação.
 
--   Access from **transparent** to **critical** code (e.g. using the safe, and transparent, IsolatedStorage that itself use the p/invoke, and critical, System.IO code) is possible thru code decorated with a `[SecuritySafeCritical]` attribute.
+-   Acesso do código **transparent** para o código **critical** (e.g. usando segurança, e transparente, IsolatedStorage que por si só chama, e *critical*, código System.IO) é possível através de código implementado com o atributo `[SecuritySafeCritical]`.
 
-Platform Code Assemblies includes:
+A lista de assemblies que constam do Código de Plataforma inclui:
 
 -   mscorlib
 -   Microsoft.VisualBasic [1][2]
@@ -79,61 +80,61 @@ Platform Code Assemblies includes:
 -   System.Windows.Browser
 -   System.Xml
 
-[1] does not contain any [SecurityCritical] or [SecuritySafeCritical] attribute [2] has a different public key than the other assemblies
+[1] não contém qualquer atributo [SecurityCritical] ou [SecuritySafeCritical] [2] tem uma chave pública diferente do que em outros assemblies.
 
-Both [1] and [2] may be considered platform code - but since they don't (but, I guess, eventually could) use `[SecurityCritical]` nor `[SecuritySafeCritical]` they are in effect totally transparent (like application code).
+Ambos [1] e [2] podem ser considerados códigos de plataforma - mas desde que eles não o façam (mas, eu acho que, eventualmente, poderia) uso do `[SecurityCritical]` e nem do `[SecuritySafeCritical]`, eles são efetivamente código totalmente transparent (como o código aplicação)
 
-Where ? On Windows / Silverlight 2 the platform files can be found in:
+Onde? No Windows/Silverlight 2 os arquivos da plataforma podem ser encontrados em:
 
 -   C:\\Program Files\\Microsoft Silverlight\\2.0.31005.0
 -   C:\\Program Files\\Microsoft SDKs\\Silverlight\\v2.0\\Reference Assemblies
 
-The later only exists if you have the Silverlight 2 SDK installed.
+O último só existe se você tiver o Silverlight 2 SDK instalado.
 
-Application Developer Shortcut
+Lembrete para o Desenvolvedor de Aplicações
 ==============================
 
-Just remember this: under the CoreCLR an *application* can call anything (i.e. **transparent** or **safe-critical**) as long as it is not **critical**.
+Apenas lembre-se: sob a CoreCLR uma aplicação pode chamar qualquer coisa (i.e. **transparent** ou **safe-critical**), desde que não seja **critical**.
 
-Special Considerations
+Considerações Especiais
 ======================
 
 [InternalsVisibleTo]
 --------------------
 
-Special care is needed wrt **internal** code since most of the **platform** assemblies include `[InternalsVisibleTo]` attributes - and yes, the internals are open to some **non-platform** (i.e. application code) assemblies.
+São necessários cuidados especiais com código interno já que a maioria da plataforma assemblies inclui atributos `[InternalsVisibleTo ]` - e sim, os internos estão abertas para alguns assemblies não-plataforma (i.e. o código da aplicação).
 
-Reflection
+Introspecção (Reflection)
 ----------
 
-Reflection is possible but has some limitations.
+A instrospecção é possível, mas tem algumas limitações.
 
 Reflection.Emit
 ---------------
 
-Code generation is possible (e.g. DLR) but also has some limitations.
+Geração de código é possível (e.g. DLR), mas também tem algumas limitações
 
-Policies
+Políticas
 --------
 
-The *CoreCLR* security model does not deal with policies - its decisions are a boolean **CAN** or **CANNOT** do. While this works for the most basic parts it does not solve cases where more elaborate access rules are required, e.g.:
+O modelo de segurança *CoreCLR* não lida com políticas - suas decisões são verdadeiras ou falsas, PODE ou NÃO PODE. Enquanto isso funciona para a maioria das peças básicas não resolve os casos em que são necessárias regras de acesso mais elaboradas, como por exemplo:
 
--   downloader policies
--   sockets policies
+-   Políticas de downloads.
+-   Políticas de soquetes.
 
-Special care (outside the scope of *CoreCLR*) are needed to cover them.
+É necessário (fora do escopo do *CoreCLR*) ter um cuidado especial para protege-los.
 
-Implementation details
+Detalhes da Implementação
 ======================
 
-Security Attributes Compatibility
+Compatibilidade entre atributos de Segurança
 ---------------------------------
 
-Calls from **application code** to **platform code** (that Moonlight provides) either succeed (e.g. calling transparent or `[SecuritySafeCritical]` code) or fails (e.g. calling `[SecurityCritical]` code).
+Chamadas do **código da aplicação** para **código de plataforma** (fornecido pelo Moonlight) ou funcionam (e.g. chamando o código transparent ou o código `[SecuritySafeCritical]`) ou falham (e.g. chamando o código `[SecurityCritical]`)
 
-Since there is **no** distinction from calling **transparent** or **safe critical** code our (Moonlight) `[SecuritySafeCritical]` attributes do not need to match Silverlight implementation. However we do have to match `[SecurityCritical]` attributes on the visible (public and protected) API.
+Como não há distinção entre chamar o código *transparent** ou **safe critical** os usos do atributo [SecuritySafeCritical] no Moonlight não precisam corresponder a implementação Silverlight. No entanto temos de 'casar' o uso visível do atributo `[SecurityCritical]` na API pública ou protegida.
 
-References
+Referências
 ==========
 
 -   [Introducing Microsoft Silverlight 1.1 Alpha](http://blogs.msdn.com/bclteam/archive/2007/04/30/introducing-microsoft-silverlight-1-1-alpha-justin-van-patten.aspx) by Justin Van Patten
