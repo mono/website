@@ -39,11 +39,11 @@ Accessibility: Test Log
 References
 ----------
 
-[Product Test Case Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")
- [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
- [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log") (current page)
- [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")
- [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
+[Product Test Case Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")<br/>
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")<br/>
+ [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log") (current page)<br/>
+ [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")<br/>
+ [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")<br/>
  [Product Home](/Accessibility "Accessibility")
 
 Description
@@ -55,7 +55,7 @@ The test log is used to log the relevant details about the execution of each rel
 
 #### WinformsAtkBridge
 
-Test Platforms:
+Test Platforms:<br/>
  openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
 1. Closed bugs:
@@ -74,19 +74,19 @@ Test Platforms:
 -   Bug 590090 - ToolStripMenuItem: KeyCombo Has No Effect
 -   Bug 590093 - NotifyIcon: notifyicon doesn't appears on panel except for openSUSE11.2
 
-3. Bugs wait to be fixed:
+3. Bugs wait to be fixed:<br/>
  [Bug List](https://bugzilla.novell.com/buglist.cgi?classification=Mono&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&component=Winforms%20-%20ATK&component=Winforms%20-%20ATK%20Spec&component=Winforms%20-%20General&component=Winforms%20-%20UIA&product=UI%20Automation)
 
-4. Test result:
- [Winforms test result on Dashboard](http://147.2.207.213/dashboard/winforms.xml) with VPN connection.
- DataGridBoolColumn: Bug 589987, Bug 574257
- DomainUpDown: Bug589989
- NotifyIcon: Bug 590093
+4. Test result:<br/>
+ [Winforms test result on Dashboard](http://147.2.207.213/dashboard/winforms.xml) with VPN connection.<br/>
+ DataGridBoolColumn: Bug 589987, Bug 574257<br/>
+ DomainUpDown: Bug589989<br/>
+ NotifyIcon: Bug 590093<br/>
  ToolStripMenuItem: Bug 590090
 
 #### MoonlightAtkBridge
 
-Test Platforms:
+Test Platforms:<br/>
  openSUSE 11.2, Fedora 12, Ubuntu 9.10
 
 1. Closed bugs:
@@ -105,7 +105,7 @@ Test Platforms:
 -   BUG 587783 NEW TabControl: 'page tab' has 2 extraneous labels
 -   BUG 587792 NEW TabControl: select invisible label child make the application crashed
 
-3. Bugs wait to be fixed:
+3. Bugs wait to be fixed:<br/>
  [Bug list](https://bugzilla.novell.com/buglist.cgi?bug_severity=Blocker&bug_severity=Critical&bug_severity=Major&bug_severity=Normal&bug_severity=Minor&classification=Mono&query_based_on=moon&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&component=Moonlight%20-%20ATK&component=Moonlight%20-%20General&component=Moonlight%20-%20UIA&product=UI%20Automation&known_name=moon)
 
 BUG references on strongwind tests:
@@ -121,13 +121,13 @@ BUG references on strongwind tests:
 -   textblock-regression.py:# BUG561268: Multi-line Name Is Parsed Incorrectly
 -   togglebutton-regression.py:# BUG554017: doesn't focus to the clicked button
 
-4. Test result:
- [Moonlight test result on Dashboard](http://147.2.207.213/dashboard/moonlight.xml) with VPN connection.
+4. Test result:<br/>
+ [Moonlight test result on Dashboard](http://147.2.207.213/dashboard/moonlight.xml) with VPN connection.<br/>
  We are going to test ComboBox and GridSplitter on 2.0.1 since BUG554449 and BUG555165 have been fixed.
 
 #### ClientAPI-Winforms
 
-Test Platforms:
+Test Platforms:<br/>
  openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
 1. Closed bugs:
@@ -136,7 +136,7 @@ Test Platforms:
 -   BUG 571799 [uiaclient-Winforms]：The dialog who has parent has been found twice
 -   BUG 574269 Cannot find pane control on Linux
 
-2. New bugs:
+2. New bugs:<br/>
  nope
 
 3. Remains of bugs
@@ -155,41 +155,41 @@ Test Platforms:
 -   BUG 580452 [UIAClient-Winforms] The window is same size on Window and Linux, but the horizontal or vertical scroll percentage is not identical
 -   BUG 580447 The viewId is difference between on Linux and Windows
 
-4. Test result:
+4. Test result:<br/>
  The tests of Winforms applications via client api have been run successfully on all platforms.
 
 ### .NET 2.1 Release Test Result
 
 #### WinformsAtkBridge 2
 
-Test Platforms:
+Test Platforms:<br/>
  In both 32bit and 64bit: openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
-Test result:
+Test result:<br/>
  [Winforms test result on Dashboard](http://147.2.207.213/dashboard/winforms.xml) with VPN connection.
 
-Explanation of the failing tests:
+Explanation of the failing tests:<br/>
  [Winforms Strongwind tests with some new bugs](https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&authkey=CPOZ2OAE&hl=zh_CN&pli=1#gid=0)
 
 #### MoonlightAtkBridge 2
 
-Test Platforms:
+Test Platforms:<br/>
  In both 32bit and 64bit: openSUSE 11.2, Fedora 12, Ubuntu 9.10
 
-Test result:
+Test result:<br/>
  [Moonlight test result on Dashboard](http://147.2.207.213/dashboard/moonlight.xml) with VPN connection.
 
-Explanation of the failing tests:
+Explanation of the failing tests:<br/>
  [Moonlight Strongwind tests with some new bugs](https://spreadsheets.google.com/ccc?key=tbc5LQC4kyt8MyxPYMKjdeQ&authkey=CPOZ2OAE&hl=zh_CN&pli=1#gid=1)
 
 #### ClientAPI
 
-Test Platforms:
+Test Platforms:<br/>
  In both 32bit and 64bit: openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
 Test result:
 
-Bug List:
+Bug List:<br/>
  Product still remains more than 100 [bugs of UIAClientAPI](https://bugzilla.novell.com/buglist.cgi?classification=Mono&query_based_on=clientAPI&query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&component=at-spi-dbus&component=at-spi-sharp&component=Client%20-%20AT-SPI&component=Client%20-%20General&component=Client%20-%20UIA&component=Moonlight%20-%20UIA&component=Winforms%20-%20UIA&product=UI%20Automation&known_name=clientAPI)
 
 #### Bug Report List

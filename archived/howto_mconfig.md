@@ -135,11 +135,11 @@ Configuration files
 
 ### File locations
 
--   `$prefix/etc/mono/mconfig/config.xml`
+-   `$prefix/etc/mono/mconfig/config.xml`<br/>
     The default configuration file, distributed with mconfig. *\$prefix* is the mconfig installation prefix specified on the compilation time.
 -   `$config_dir/mconfig/config.xml`
     *\$config_dir* is the directory specified in the `XDG_CONFIG_HOME` environment variable or, if it is empty, in the `.config` directory located in the user's home directory. This file is not distributed with Mono.
--   `./mconfig.xml`
+-   `./mconfig.xml`<br/>
     Local configuration file which can contain per-directory settings. This may be useful when shipping new versions of an application to avoid overwriting the config files possibly modified by the application user. By adding appropriate mconfig calls to your setup sequence, you can safely modify the existing config files to add the new required entries.
 
 ### Configuration file syntax
@@ -166,9 +166,9 @@ Each `<handler>` element introduces a new parsable config file section into mcon
 
 This element defines a single feature. Accepted attributes are:
 
--   **name** (required)
+-   **name** (required)<br/>
     Unique feature name. If the name is used more than once, the later feature blocks will silently override the earlier ones.
--   **target** (required)
+-   **target** (required)<br/>
     Specifies the target with which the feature can be used.
 
 The following child elements are supported:
@@ -185,25 +185,25 @@ Contains a collection of block defnitions that together create the contents of t
 
 Names a single feature block. The following attributes are supported:
 
--   **name** (required)
+-   **name** (required)<br/>
     Gives name of a `<configBlock>` instance to form part of the feature.
 
 #### \<section\>
 
 This is a shared element supported as a child of several elements defined below. It is **not** a child element of the root node. `<section>` elements can be nested within each other, which forms the hierarchy of the sections as required by the containing element. If an existing configuration file has been read by mconfig for modification, then a check is made whether the original file contains the named section and, if not, the section and all of its children are inserted using their default definitions. The accepted attributes are:
 
--   **name** (required)
+-   **name** (required)<br/>
     Gives name of a config file section that is required by the ocntaining element. If the section doesn't exist in the target configuration file, the name is used to reference a `<default>` tag instance which contains the default contents of the section.
--   **attachPoint** (optional)
+-   **attachPoint** (optional)<br/>
     Defines the place in the section hierarchy where the contents of the parent [\<configBlock\>](#configblock) is inserted.
--   **defaultBlockName** (optional)
+-   **defaultBlockName** (optional)<br/>
     Specifies the alternative name by which to look for the appropriate *\<default\>* block. This is useful if several sections found in different places of the XML element hierarchy have the same name and it would be impossible to define two *\<default\>* blocks sharing the same name. If this attribute is absent, it defaults to the value of the **name** attribute above.
 
 #### \<configBlock\>
 
 Defines a single feature block for use in the `<feature>` elements. The accepted attributes are:
 
--   **name** (required)
+-   **name** (required)<br/>
     Assigns a unique name to the block
 
 ##### \<requires\>
@@ -218,20 +218,20 @@ All the child text nodes of this element are contanated to form the config block
 
 Defines contents of a section should it be missing from the target file, or to be used when generating a default config file. Child text nodes of the element are treated as an XML document, parsed and injected into the target document's DOM at the locations specified by other elements described above. Since the contents should be read verbatim, you must enclose it in the CDATA container. The accepted attributes are:
 
--   **section** (required)
+-   **section** (required)<br/>
     Assigns a unique name to the section definition. Used by the [\<section\>](#section) element.
--   **target** (required)
+-   **target** (required)<br/>
     Specifies for wich target the section definition is valid.
 
 #### \<defaultConfigFile\>
 
 Defines the contents and structure of a default configuration file, to be used with the `defaultconfig` command. Contains a nested list of the `<section>` elements. The accepted attributes are:
 
--   **name** (required)
+-   **name** (required)<br/>
     Assigns a unique name to the entry, to be used with the `defaultconfig` command.
--   **fileName** (optional)
+-   **fileName** (optional)<br/>
     Sets the output file name when this configuration is requested with the `defaultconfig` command. Defaults to the value of the *name* attribute
--   **target** (required)
+-   **target** (required)<br/>
     Sets the target for which this definition is valid.
 
 Examples

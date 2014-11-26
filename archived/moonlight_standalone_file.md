@@ -8,7 +8,7 @@ redirect_from:
 Moonlight Standalone File
 =========================
 
-This file references no external javascript or xaml file. It is completely indepedant. Use this stand alone template to create xaml content that can be rendered in both Silverlight/Windows and Moonlight/Linux.
+This file references no external javascript or xaml file. It is completely indepedant. Use this stand alone template to create xaml content that can be rendered in both Silverlight/Windows and Moonlight/Linux.<br/>
  This file will be useful if you need to log a bug against Moonlight. For more complex xaml/javascript you will want to expand this into multiple files.
 
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">

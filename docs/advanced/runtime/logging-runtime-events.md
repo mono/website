@@ -20,13 +20,8 @@ There are a number of different types of trace information the runtime can displ
 -   "dll" - The native library (pinvoke) loader
 -   "cfg" - The configuration file loader
 -   "all" - Display all messages regardless of type
-
-There are also two trace message types that are not currently used in the runtime:
-
 -   "type" - Type load information
 -   "gc" - Garbage collector information
-
-These two message types will be implemented in future versions of the runtime.
 
 The MONO_LOG_MASK can be set to one or more values. Values are separated by a comma. To display only messages for native library loading and config file loading the log mask would look like this: MONO_LOG_MASK="dll,config".
 

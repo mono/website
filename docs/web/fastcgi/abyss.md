@@ -31,9 +31,9 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
 2.  Click on "Scripting Parameters".
 3.  Click on "Add" in the "Interpreters" box.
 4.  You are now on the page to add the ASP.NET interpretter. The two options I would recommend are "FastCGI (Local - Pipes)" and "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.
+    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.<br/>
         If using this option, simply set "Interpreter" to "/usr/bin/fastcgi-mono-server" or "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like "`fastcgi-mono-server2 /socket=tcp:8002`"
+    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
         If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
 
 5.  Uncheck "Check for file existence before execution". This option improves performance but can cripple ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.
@@ -67,9 +67,9 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
 2.  Click on "Scripting Parameters".
 3.  Click on "Add" in the "Interpreters" box.
 4.  You are now on the page to add the ASP.NET interpretter. The two options I would recommend are "FastCGI (Local - Pipes)" and "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.
+    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.<br/>
         If using this option, simply set "Interpreter" to "/usr/bin/fastcgi-mono-server" or "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like "`fastcgi-mono-server2 /socket=tcp:8002`"
+    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
          If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
 
 5.  Uncheck "Check for file existence before execution". This option improves performance but can cripple ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.

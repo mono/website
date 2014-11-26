@@ -15,13 +15,13 @@ Update Policy
 
 The [update policy](http://docs.go-mono.com/index.aspx?link=P:Gtk.Range.UpdatePolicy) of a range widget defines at what points during user interaction it will change the value field of its Adjustment and emit the [Gtk.Adjustment.ValueChanged](http://docs.go-mono.com/index.aspx?link=E:Gtk.Adjustment.ValueChanged) event for this Adjustment. The update policies are held in the [Gtk.UpdateType](http://docs.go-mono.com/index.aspx?link=T:Gtk.UpdateType) enumeration and can have one of three values.
 
-`Gtk.UpdateType.Continuous (default)`
+`Gtk.UpdateType.Continuous (default)`<br/>
 The ValueChanged event is emitted continuously, i.e., whenever the slider is moved by even the tiniest amount.
 
-`Gtk.UpdateType.Discontinuous`
+`Gtk.UpdateType.Discontinuous`<br/>
 The ValueChanged event is only emitted once the slider has stopped moving and the user has released the mouse button.
 
-`Gtk.UpdateType.Delayed`
+`Gtk.UpdateType.Delayed`<br/>
 The ValueChanged event is emitted when the user releases the mouse button, or if the slider stops moving for a short period of time.
 
 Mouse and Key Handling

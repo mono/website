@@ -282,7 +282,7 @@ Stack frames and backtraces
 
 When the target stopped, you normally want to see the current stack frame or get a backtrace:
 
-**backtrace**, **bt**
+**backtrace**, **bt**<br/>
 Prints a backtrace.
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -295,7 +295,7 @@ Takes an optional *-max* command specifying the maximum number of frames to prin
 
     (mdb) bt -max 8
 
-**frame**, **f**
+**frame**, **f**<br/>
 Show the current stack frame or the frame specified by the optional *-frame* argument:
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -304,7 +304,7 @@ Show the current stack frame or the frame specified by the optional *-frame* arg
     #1: 0x401ba448 in X.Main()+0x8 at Foo.cs:219
     219         BoxedValueType ();
 
-**up**, **down**
+**up**, **down**<br/>
 Walks one frame up or down in the current backtrace. Prints the new stack frame.
 
     Process @3 stopped at #0: 0x401ba5cd in X.Simple()+0x2d at Foo.cs:113.
@@ -321,18 +321,18 @@ Printing expressions
 
 To print variables or evaluate arbitrary expressions, use the *print* command. You can also use the *ptype* command to print the type of an expression.
 
-**print**, **p**
+**print**, **p**<br/>
 Evaluate and print an expression.
 
     (mdb) print a
     (System.Int32) a
 
-**print /default**, **p /default**
+**print /default**, **p /default**<br/>
 Evaluate and print the context of an expression. Unlike print, this will not show the ToString() representation of the object, but will instead show the values in a class or struct.
 
     (mdb) print /default a
 
-**ptype**
+**ptype**<br/>
 Print the type of an expression
 
     (mdb) ptype a

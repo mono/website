@@ -83,24 +83,24 @@ A test plan for the Accessibility team's efforts in bringing accessibility to mo
 References
 ----------
 
-[Product Test Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan") (current page)
- [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")
- [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")
- [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")
- [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
- [Product Test Coding Standard](/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")
+[Product Test Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan") (current page)<br/>
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")<br/>
+ [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")<br/>
+ [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")<br/>
+ [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")<br/>
+ [Product Test Coding Standard](/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")<br/>
  [Product Home](/Accessibility "Accessibility")
 
-The [Product roadmap](/Accessibility:_Roadmap)
- The [Architecture overview](/archived/accessibility_architecture/)
+The [Product roadmap](/Accessibility:_Roadmap)<br/>
+ The [Architecture overview](/archived/accessibility_architecture/)<br/>
  [The Novell & Microsoft announcement](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) to create cross-platform accessibility framework
 
 QA Meetings
 -----------
 
-[June 5 2008](/Accessibility:_QA_Meetings_2008_Jun_5 "Accessibility: QA Meetings 2008 Jun 5")
- [August 13 2008](/Accessibility:_QA_Meetings_2008_Aug_13 "Accessibility: QA Meetings 2008 Aug 13")
- [Mar 25 2009](/Accessibility:_QA_Meetings_2009_Mar_25 "Accessibility: QA Meetings 2009 Mar 25")
+[June 5 2008](/Accessibility:_QA_Meetings_2008_Jun_5 "Accessibility: QA Meetings 2008 Jun 5")<br/>
+ [August 13 2008](/Accessibility:_QA_Meetings_2008_Aug_13 "Accessibility: QA Meetings 2008 Aug 13")<br/>
+ [Mar 25 2009](/Accessibility:_QA_Meetings_2009_Mar_25 "Accessibility: QA Meetings 2009 Mar 25")<br/>
  [May 20 2009](/Accessibility:_QA_Meetings_2009_May_20 "Accessibility: QA Meetings 2009 May 20")
 
 No meetings scheduled
@@ -108,20 +108,20 @@ No meetings scheduled
 Definitions
 -----------
 
-[UIA](http://msdn2.microsoft.com/en-us/accessibility/bb892133.aspx)---Microsoft UI Automation. A managed code application programming interface (API), exposing user interface controls for test automation and assistive technology. Part of the .NET framework starting at 3.0. Successor of MSAA (Microsoft Active Accessibility)
- UIA Clients---Applications such as screen readers and testing frameworks written in managed code (e.g., C#/VB).
- UIA Providers---UI implementations or application controls such as checkboxes. Written in managed code or C/C++.
- AT---Assistive technology. A generic term that includes assistive, adaptive, and rehabilitative devices and the process used in selecting, locating, and using them.
- AT-SPI---A toolkit neutral way of providing accessibility facilities in applications. AT-SPI can also be used to automate testing of user interfaces. AT-SPI is currently supported by GTK+2, JAVA/Swing, Mozilla, and StarOffice/OpenOffice. For our product, AT-SPI will act as the equivalent of the UIA core.
- ATK---Accessibility toolkit. A developer toolkit that allows programmers to use common GNOME accessibility features in their applications.
- ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.
- UIA/at-spi Bridge---Mapping of AT-SPI to the UIA provider APIs.
- [WinForms](/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.
- [Moonlight](/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.
- [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.
- [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).
- [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.
- [CPython](http://www.python.org)---The default, most-widely used implementation of the Python programming language. It is written in C, hence the name CPython.
+[UIA](http://msdn2.microsoft.com/en-us/accessibility/bb892133.aspx)---Microsoft UI Automation. A managed code application programming interface (API), exposing user interface controls for test automation and assistive technology. Part of the .NET framework starting at 3.0. Successor of MSAA (Microsoft Active Accessibility)<br/>
+ UIA Clients---Applications such as screen readers and testing frameworks written in managed code (e.g., C#/VB).<br/>
+ UIA Providers---UI implementations or application controls such as checkboxes. Written in managed code or C/C++.<br/>
+ AT---Assistive technology. A generic term that includes assistive, adaptive, and rehabilitative devices and the process used in selecting, locating, and using them.<br/>
+ AT-SPI---A toolkit neutral way of providing accessibility facilities in applications. AT-SPI can also be used to automate testing of user interfaces. AT-SPI is currently supported by GTK+2, JAVA/Swing, Mozilla, and StarOffice/OpenOffice. For our product, AT-SPI will act as the equivalent of the UIA core.<br/>
+ ATK---Accessibility toolkit. A developer toolkit that allows programmers to use common GNOME accessibility features in their applications.<br/>
+ ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.<br/>
+ UIA/at-spi Bridge---Mapping of AT-SPI to the UIA provider APIs.<br/>
+ [WinForms](/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br/>
+ [Moonlight](/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.<br/>
+ [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.<br/>
+ [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).<br/>
+ [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.<br/>
+ [CPython](http://www.python.org)---The default, most-widely used implementation of the Python programming language. It is written in C, hence the name CPython.<br/>
  [Strongwind](http://medsphere.org/projects/strongwind)---A GUI test automation framework inspired by dogtail. Strongwind is object-oriented and extensible. Strongwind is written in Python and uses the pyatspi library to manipulate and query the state of applications.
 
 Test plan
@@ -154,8 +154,8 @@ Testing efforts will be related to the project goals, which are:
 
 This plan includes integration, system, and acceptance testing. Unit testing is excluded, as it is being managed by individual developers.
 
-Integration testing to test WinForms accessibility via UIA provider and UIA/ATK bridge to AT-SPI is scheduled to be completed in 2008.
- System testing will be performed in 2009. Testing will be performed using an AT management tool to test the client and provider.
+Integration testing to test WinForms accessibility via UIA provider and UIA/ATK bridge to AT-SPI is scheduled to be completed in 2008.<br/>
+ System testing will be performed in 2009. Testing will be performed using an AT management tool to test the client and provider.<br/>
  Acceptance testing will be performed later in 2009 before the product is released. During system testing, the product should be tested in its entirety from the end user's point of view.
 
 #### Test items
@@ -430,19 +430,19 @@ Software:
 
 ##### Test Suit
 
-Test Harness: Brian
+Test Harness: Brian<br/>
  DashBoard: Brian, Neville
 
 ##### WinForms Responsibilities
 
-Strongwind Tests: Brian, Calen, Ray
- Orca Tests: Brian
- Smoke Tests: Brian
+Strongwind Tests: Brian, Calen, Ray<br/>
+ Orca Tests: Brian<br/>
+ Smoke Tests: Brian<br/>
  Sample Applications: Calen, Ray
 
 ##### MoonLight Responsibilities
 
-Sample Applications: Calen, Neville
+Sample Applications: Calen, Neville<br/>
  Strongwind Tests:: Calen, Neville
 
 ##### UIAutomation Client API
@@ -532,8 +532,8 @@ Based on Q2 in roadmap, our initial testing schedule is below:
 
 *Persons who declare that the software is ready to move to the next stage*
 
-Brian Merrell
- Calen Chen
+Brian Merrell<br/>
+ Calen Chen<br/>
  Brad Taylor
 
 

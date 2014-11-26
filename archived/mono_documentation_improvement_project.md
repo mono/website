@@ -43,7 +43,7 @@ Cleanup
 
 Here are some suggestions of ways to help clean the wiki up:
 
--   **Go through the [documentation table of contents](/Start "Start") and find new things to add to it.
+-   **Go through the [documentation table of contents](/Start "Start") and find new things to add to it.<br/>
     **
 -   Go through Special:Shortpages and add more content.
 -   Go through Special:Lonelypages, figure out which page(s) should link back to this page, and add the link.
@@ -55,7 +55,7 @@ Here are some suggestions of ways to help clean the wiki up:
     {{NeedsCleanup}}
     ```
 
-    " to the top.
+    " to the top.<br/>
     You can see every page that is marked as needing cleanup at [NeedsCleanup](/Category:NeedsCleanup).
 
 -   If you see a page that looks incomplete, add "****
@@ -64,7 +64,7 @@ Here are some suggestions of ways to help clean the wiki up:
     {{Incomplete}}
     ```
 
-    " to the top.
+    " to the top.<br/>
     You can see every page that is marked as incomplete at [Incomplete](/Category:Incomplete).
 
 -   If you see a page that looks out of date, add "****
@@ -73,7 +73,7 @@ Here are some suggestions of ways to help clean the wiki up:
     {{Obsolete}}
     ```
 
-    " to the top.
+    " to the top.<br/>
     You can see every page that is marked as obsolete at [Obsolete](/Category:Obsolete).
 
 -   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ](/FAQ "FAQ").

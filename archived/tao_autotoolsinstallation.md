@@ -24,9 +24,9 @@ Tao autotools:Installation
 
     cd tao-current
 
-// The --prefix argument to configure tells the build tools where to
- // install binaries, libraries and scripts. The default is /usr/local.
- // Mono's default is often /usr/lib/mono. You might want to specify this
+// The --prefix argument to configure tells the build tools where to<br/>
+ // install binaries, libraries and scripts. The default is /usr/local.<br/>
+ // Mono's default is often /usr/lib/mono. You might want to specify this<br/>
  argument to the // configure script as I have done below. It is recommended that you use a // directory under your \$HOME, since it interferes less with your operating // system's directory structure.\</pre\>
 
 // First, make the directory:

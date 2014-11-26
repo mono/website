@@ -13,8 +13,8 @@ In order to follow along on your computer, you need the following things:
 1.  Cairo itself. You will need both the library and the development files. [Download it](http://cairographics.org/download/) if you don't have it already.
 2.  [Download Mono](/Downloads), if you haven't already - you will need it to compile the C# code, and for the Mono.Cairo library.
 
-     If you want to see the code snippets included in this tutorial in
-     action, you can try to click on some of the images. You will get a
+     If you want to see the code snippets included in this tutorial in<br/>
+     action, you can try to click on some of the images. You will get a<br/>
      small C# program which includes the described drawing code.
 
 Cairo's Drawing Model

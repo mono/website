@@ -579,7 +579,7 @@ Gtk applications are already accessible in Linux. Our approach to testing WinFor
 
 Two directories have been created for this purpose:
 
-**uia2atk/test/keystrokes/gtk:** keystroke tests for Gtk applications
+**uia2atk/test/keystrokes/gtk:** keystroke tests for Gtk applications<br/>
  **uia2atk/test/keystrokes/winforms:** keystroke tests for WinForms applications that mirror the Gtk applications.
 
 Of course, when we run our tests, we will only run the WinForms keystroke tests. We are only saving the Gtk keystroke tests for references, comparison, and examples.
@@ -596,7 +596,7 @@ We will use Microsoft Visual Studio Silverlight Tools to create test samples in 
 2.  Select "Add a new ASP.NET Web project to the solution to host Silverlight", click "OK" button, "ButtonSample" and "ButtonSample.Web" will be created, we will draw page in Page.xaml and write managed code in Page.xaml.cs.
 3.  After build Solution, ButtonSample.xap will be created under Bin/Debug, run TestPage.html, Silverlight application is running on web browser [![Silverlight sample.jpg](/archived/images/c/c7/Silverlight_sample.jpg)](/archived/images/c/c7/Silverlight_sample.jpg)
 
-Example of create Canvas and Button sample:
+Example of create Canvas and Button sample:<br/>
  Page.xaml
 
 ``` python
@@ -691,7 +691,7 @@ White
 
 ### White Introduction
 
-White supports all rich client applications, It is .NET based and hence you wouldn't have use proprietary scripting language. You can use your favourite .NET language, IDE and tools for developing tests/automation programs. White provides consistent object oriented API for all kinds of applications. Also it hides all the complexity of Microsoft's UIAutomation library and windows messages.
+White supports all rich client applications, It is .NET based and hence you wouldn't have use proprietary scripting language. You can use your favourite .NET language, IDE and tools for developing tests/automation programs. White provides consistent object oriented API for all kinds of applications. Also it hides all the complexity of Microsoft's UIAutomation library and windows messages.<br/>
  White is a thin wrapper of UIAutomationClient API on Windows that is similar to Strongwind wrap pyatspi on Linux that will be posted to Linux. We will use it to write tests for ClientAPI testing against WinForms, Moonlight and Gtk+ applications.
 
 ### Example of start White

@@ -47,8 +47,8 @@ Now when Mono FastCGI server is up and running, Nginx configuration is complete 
 
 ### Useful resources
 
-[http://wiki.nginx.org/NginxConfiguration](http://wiki.nginx.org/NginxConfiguration)
- [http://wiki.nginx.org/NginxVirtualHostExample](http://wiki.nginx.org/NginxVirtualHostExample)
+[http://wiki.nginx.org/NginxConfiguration](http://wiki.nginx.org/NginxConfiguration)<br/>
+ [http://wiki.nginx.org/NginxVirtualHostExample](http://wiki.nginx.org/NginxVirtualHostExample)<br/>
  [Linux startup script for mono FastCGI server](http://tomi.developmententity.sk/Blog/Post/2)
 
 

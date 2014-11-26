@@ -37,7 +37,7 @@ First thing you will want to do is get your GTK# install up and running.
 Inside the GTK# libraries
 --------------------------
 
-**Gtk# Components**
+**Gtk# Components**<br/>
 Gtk# is composed of three modules: gtk-sharp, gnome-sharp, and gnome-desktop-sharp.
 
 **Module:**

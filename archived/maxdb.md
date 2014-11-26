@@ -66,7 +66,7 @@ Description
 
 Example
 
-Data Source or Server or Address or
+Data Source or Server or Address or<br/>
 Addr or Network Address
 
 Hostname or IP Address of the MaxDB server
@@ -115,7 +115,7 @@ Max size of connection pool. Default: 20
 
 Max Pool Size=20
 
-Connection Lifetime or
+Connection Lifetime or<br/>
 Load Balance Timeout
 
 Connection lifetime in the connection pool (in seconds). Default: 0

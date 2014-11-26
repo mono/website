@@ -6,13 +6,13 @@ redirect_from:
   - /Learn/
 ---
 
-[What is Mono?](/docs/about-mono/)
+[What is Mono?](/docs/about-mono/)<br/>
  Find out what Mono is and what it can help you do.
 
-[Mono Basics](/docs/getting-started/mono-basics/)
+[Mono Basics](/docs/getting-started/mono-basics/)<br/>
  Make sure Mono is installed correctly by compiling/running Hello World.
 
-[Compatibility](/docs/about-mono/compatibility/)
+[Compatibility](/docs/about-mono/compatibility/)<br/>
  Check Mono's compatibility with Microsoft .NET.
 
 Working with Mono
@@ -37,7 +37,8 @@ Working with Mono
 <p><a href="/archived/writing_a_webservice" title="Writing a WebService">Writing a WebService</a> <br /> Guide to creating a web service to run on Mono.</p>
 <p><a href="/archived/consuming_a_webservice" title="Consuming a WebService">Consuming a WebService</a> <br /> How to consume a web service in your application.</p>
 <p><a href="/docs/database-access/" title="Database Access">Connecting to Databases</a> <br /> How to write code to communicate with various databases.</p></td>
-<td align="left"><p><a href="/docs/gui/gui-toolkits/" title="Gui Toolkits">Choosing a GUI Toolkit</a> <br /> There are many GUI toolkits to choose from for Mono, this guide explains the pros and cons of each.</p>
+<td align="left"><p><a href="/docs/gui/" title="GUI Toolkits">GUI Toolkits</a> <br /> A list with some of the GUI Toolkits known to run on Mono.</p>
+<p><a href="/docs/gui/choosing-a-gui-toolkit/" title="Choosing a GUI Toolkit">Choosing a GUI Toolkit</a> <br /> There are many GUI toolkits to choose from for Mono, this guide explains the pros and cons of each.</p>
 <p><a href="http://www.monodevelop.com/Stetic_GUI_Designer">Writing a Gtk# Application</a> <br /> Tutorial that shows how to write a Gtk# application using MonoDevelop and its visual Gtk# designer.</p>
 <p><a href="/docs/gui/winforms/porting-winforms-applications/">Porting Winforms Applications</a> <br /> Guide to porting a Winforms application to run on Mono.</p>
 <p><a href="/docs/gui/winforms/debugging-with-mwf/">Debugging Winforms Applications with VS</a> <br /> Guide to setting up the Winforms project in your application solution to enable debugging in Visual Studio.</p></td>

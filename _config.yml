@@ -8,6 +8,7 @@ highlighter: null   # we use a javascript based highlighter
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: false
 defaults:
   -
     scope:

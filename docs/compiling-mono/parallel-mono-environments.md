@@ -28,7 +28,7 @@ The "parallel" environment this document details is installed from either source
 
 ### Source Tarballs
 
-First, download the [Released Source Mono Tarballs](http://go-mono.com/sources-stable/). This document is concerned only with *mono*, *libgdiplus*, *gtk-sharp-1.x*, *gtk-sharp-2.x*, and *mono-tools*.
+First, download the [Released Source Mono Tarballs](http://download.mono-project.com/sources/mono/). This document is concerned only with *mono*, *libgdiplus*, *gtk-sharp-1.x*, *gtk-sharp-2.x*, and *mono-tools*.
 
 ### Source from Version Control (Mono Git)
 
