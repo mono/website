@@ -9,7 +9,7 @@ Informação de como configurar o [FastCGI] (/docs/web/fastcgi/) com suporte ao 
 Introdução
 ------------
 
-[Abyss Web Server](http://www.aprelium.com/) é um servidor web rico em recursos e fácil de usar. 
+O [Abyss Web Server](http://www.aprelium.com/) é um servidor web rico em recursos e fácil de usar. 
 Embora de fonte fechado o servidor X1 é *"um software grátis e funcional : sem telas promocionais, 
 sem limitação de tempo, sem spyware, e sem propagandas."* 
 ([Download](http://www.aprelium.com/abyssws/download.php))
@@ -24,33 +24,21 @@ Isso devido principalmente ao seu simples e direto centro de controle.
 Alertas Gerais
 ----------------
 
-Antes de fazer qualquer coisa, você deve ler a seção [FastCGI#Important_Information](/docs/web/fastcgi/#important-information) no site principal do FastCGI.
+Antes de fazer qualquer coisa, você deve ler a seção [Informação Importante](/docs/web/fastcgi/#important-information) na página principal sobre FastCGI.
 
 ### Primeiro Passo: Configurar o Interpretador
 
 Ao iniciar o servidor web Abyss, um centro de controle do servidor web será iniciado por padrão no endereço
 <http://localhost:9999>. Simplesmente abra seu navegador neste endereço e siga os passos abaixo:
 
-<<<<<<< HEAD
-1.  Click "Configure" on the host you wish to add ASP.NET support to.
-2.  Click on "Scripting Parameters".
-3.  Click on "Add" in the "Interpreters" box.
-4.  You are now on the page to add the ASP.NET interpretter. The two options I would recommend are "FastCGI (Local - Pipes)" and "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.<br/>
-        If using this option, simply set "Interpreter" to "/usr/bin/fastcgi-mono-server" or "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
-        If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
-=======
 1.  Clique em "Configure" no host que você deseja adicionar suporte a ASP.NET
 2.  Clique em "Scripting Parameters".
 3.  Clique em "Add" na caixa "Interpreters".
 4.  Você está agora na página para adicionar o interpretador ASP.NET. As duas opções que eu poderia recomendar são "FastCGI (Local - Pipes)" e "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss vai iniciar o servidor mono automaticamente usando um piped socket. Pipes são a maneira mais rápida de se comunicar e ter o Abyss repassando o seu próprio servidor, o que significa que você não terá que fazer isto manualmente. Esta é possivelmente a opção mais fácil.
+    -   **FastCGI (Local - Pipes)** - Abyss vai iniciar o servidor mono automaticamente usando um piped socket. Pipes são a maneira mais rápida de se comunicar e ter o Abyss repassando o seu próprio servidor, o que significa que você não terá que fazer isto manualmente. Esta é possivelmente a opção mais fácil.<br/>
         Se você estiver usando esta opção, Apenas configure o "Interpreter" para "/usr/bin/fastcgi-mono-server" ou "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss vai procurar pelo servidor mono em um endereço IP e porta específicos. Você pode usar isto para rodar o servidor em 
-	uma outra máquina e redistribuir a carga entre processadores. O único alerta é que você precisará iniciar o servidor mono manualmente em outro computador, usando um comando como "`fastcgi-mono-server2 /socket=tcp:8002`"
+    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss vai procurar pelo servidor mono em um endereço IP e porta específicos. Você pode usar isto para rodar o servidor em uma outra máquina e redistribuir a carga entre processadores. O único alerta é que você precisará iniciar o servidor mono manualmente em outro computador, usando um comando como "`fastcgi-mono-server2 /socket=tcp:8002`"<br/>
         Se estiver usando esta opção, simplesmente configure o "Remote server IP Address" para o IP da máquina que você estiver rodando o servidor do Mono, e a porta que você usou na linha de comando. Pela linha de comando que indicamos acima, esta deveria ser 8002.
->>>>>>> 4d874b4a425ee9b145359886178bdf42e0b4dcb2
 
 5.  Desmarque a opção "Check for file existence before execution". Esta opão otimiza a performance mas pode corromper o ASP.NET 2.0 assim como algumas vezes usa caminhos que não necessáriamente existem como WebResource.axd.
 6.  Desmarque a opção "Use the associated extensions to automatically update the Script Paths".
@@ -81,25 +69,14 @@ Usando Extensões
 Ao iniciar o servidor web Abyss, um centro de controle do servidor web será iniciado por padrão no endereço
 <http://localhost:9999>. Simplesmente abra seu navegador neste endereço e siga os passos abaixo:teps outlined below:
 
-<<<<<<< HEAD
-1.  Click "Configure" on the host you wish to add ASP.NET support to.
-2.  Click on "Scripting Parameters".
-3.  Click on "Add" in the "Interpreters" box.
-4.  You are now on the page to add the ASP.NET interpretter. The two options I would recommend are "FastCGI (Local - Pipes)" and "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss will start the Mono server by itself using a piped socket. Pipes are the fastest way to communicate and having the Abyss spawn its own server means you don't have to do it manually. This is possibly the simplest option.<br/>
-        If using this option, simply set "Interpreter" to "/usr/bin/fastcgi-mono-server" or "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
-         If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
-=======
 1.  Clique em "Configure" no host que você deseja adicionar suporte a ASP.NET
 2.  Clique em "Scripting Parameters".
 3.  Clique em "Add" na caixa "Interpreters".
 4.  Você está agora na página para adicionar o interpretador ASP.NET. As duas opções que eu poderia recomendar são "FastCGI (Local - Pipes)" e "FastCGI (Remote - TCP/IP sockets)":
-    -   **FastCGI (Local - Pipes)** - Abyss vai iniciar o servidor mono automaticamente usando um piped socket. Pipes são a maneira mais rápida de se comunicar e ter o Abyss repassando o seu próprio servidor, o que significa que você não terá que fazer isto manualmente. Esta é possivelmente a opção mais fácil.
+    -   **FastCGI (Local - Pipes)** - Abyss vai iniciar o servidor mono automaticamente usando um piped socket. Pipes são a maneira mais rápida de se comunicar e ter o Abyss repassando o seu próprio servidor, o que significa que você não terá que fazer isto manualmente. Esta é possivelmente a opção mais fácil.<br/>
         Se você estiver usando esta opção, Apenas configure o "Interpreter" para "/usr/bin/fastcgi-mono-server" ou "/usr/bin/fastcgi-mono-server2".
-    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss vai procurar pelo servidor mono em um endereço IP e porta específicos. Você pode usar isto para rodar o servidor em uma outra máquinae redistribuir o processo de carga. O único alerta é que você precisará iniciar o servidor mono manualmente em outro computador, usando um comando como "`fastcgi-mono-server2 /socket=tcp:8002`"
+    -   **FastCGI (Remote - TCP/IP sockets)** - Abyss vai procurar pelo servidor mono em um endereço IP e porta específicos. Você pode usar isto para rodar o servidor em uma outra máquinae redistribuir o processo de carga. O único alerta é que você precisará iniciar o servidor mono manualmente em outro computador, usando um comando como "`fastcgi-mono-server2 /socket=tcp:8002`"<br/>
         Se estiver usando esta opção, simplesmente configure o "Remote server IP Address" para o IP da máquina que você estiver rodando o servidor do Mono, e a porta que você usou na linha de comando. Pela linha de comando que indicamos acima, esta deveria ser 8002.
->>>>>>> 4d874b4a425ee9b145359886178bdf42e0b4dcb2
 
 5.  Desmarque a opção "Check for file existence before execution". Esta opão otimiza a performance mas pode corromper o ASP.NET 2.0 assim como algumas vezes usa caminhos que não necessáriamente existem como WebResource.axd.
 6.  Adicione as extensões abaixo:
