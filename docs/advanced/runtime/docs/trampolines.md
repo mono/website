@@ -4,77 +4,141 @@ redirect_from:
   - /Mono:Runtime:Documentation:Trampolines/
 ---
 
-Trampolins são pequenos, pedaços de código assembly escritos à mão usados para executar várias tarefas em tempo de execução do mono. Eles são gerados em tempo de execução usando as macros de geração de código nativas utilizadas pelo JIT. Eles geralmente têm uma função C correspondente que pode ser utilizada caso seja necessário executar uma tarefa mais complexa. Eles podem ser vistos como formas de passar o controle do código JIT de volta para o tempo de execução.
+ Trampolins são pequenos pedaços de código nativo, escritos à mão, 
+usados para executar várias tarefas no ambiente de execução do Mono. 
+Eles são gerados em tempo de execução usando as macros de geração de 
+código nativo utilizadas pelo JIT. Eles geralmente têm uma 
+função C correspondente que pode ser utilizada caso seja necessário 
+executar uma tarefa mais complexa. Eles podem ser vistos como formas de 
+passar o controle do código jitado de volta para o ambiente de execução. 
 
-O código comum para todas as arquiteturas está em mini-trampolines.c, este arquivo contém funções de criação de trampolim mais as funções C chamadas pelos trampolins. Os arquivos tramp-\<ARCH\>.c contém o código dependente da arquitetura que cria os próprios trampolins.
+O código comum para todas as arquiteturas está em mini-trampolines.c, 
+este arquivo contém funções de criação de trampolim mais as 
+funções C chamadas pelos trampolins. Os arquivos tramp-\<ARCH\>.c 
+contém o código dependente da arquitetura que cria os trampolins em si. 
 
-A maioria, mas não todos os trampolins consistem de duas partes:
+A maioria dos trampolins, mas não todos, consistem de duas partes: 
 
--   uma parte genérica contendo a maior parte do código. Esta é criada pela função mono_arch_create_trampoline_code () em tramp-\<ARCH\>.c. Trampolins genéricos podem ser grandes (1kb).
--   uma parte específica cuja a função é chamar a parte genérica, passando um parâmetro. O parâmetro para passar e o método pelo qual é passado depende do tipo de trampolim. Trampolins específicos são criados pela função mono_arch_create_specific_trampoline () em tramp-\<ARCH\>.c. Trampolins específicos são pequenos, desde que sejam criados vários em tempo de execução.
+- uma parte genérica contendo a maior parte do código. Esta é criada 
+pela função mono_arch_create_trampoline_code () em tramp-\<ARCH\>.c. 
+Trampolins genéricos podem ser grandes (1kb). 
+- uma parte específica cuja a função é chamar a parte genérica, passando um 
+parâmetro. O parâmetro para passar e o método pelo qual é passado depende do 
+tipo de trampolim. Trampolins específicos são criados pela função 
+mono_arch_create_specific_trampoline () em tramp-\<ARCH\>.c. Trampolins 
+específicos são necessáriamente pequenos, porque um número enorme deles
+é criado em tempo de execução. 
 
-A parte genérica salva o estado da máquina para a pilha, e chama uma das funções trampolim em mini-trampolines.c com o estado, o site de chamada, e o argumento passado para um trampolim específico. Após a função C retornar, normalmente retorna, ou ramos para o endereço retornado pela função C, dependendo do tipo de trampolim.
+A parte genérica salva o estado da máquina para a pilha, e chama uma 
+das funções trampolim em mini-trampolines.c com o estado, o local da
+chamada, e o argumento passado para um trampolim específico. Após a 
+função C retornar, ou ela retorna normalmente, ou desvia para o endereço 
+retornado pela função C, dependendo do tipo de trampolim. 
 
-Tipos de trampolim são dadas pela enumeração MonoTrampolineType em [mini.h](https://github.com/mono/mono/blob/master/mono/mini/mini.h).
+Os tipos de trampolim são definidos pela enumeração MonoTrampolineType em 
+[mini.h](https://github.com/mono/mono/blob/master/mono/mini/mini.h). 
 
-O código específico da plataforma para trampolins está no arquivo tramp-\<ARCH\>.c para cada arquitetura, enquanto o código entre plataformas está em mini-trampolines.c. Há dois tipos de funções em mini-trampolines.c:
+Há dois tipos de funções em mini-trampolines.c: 
 
--   As funções C reais chamados pelos trampolins.
--   Funções para criar os diferentes tipos de trampolins.
+- As funções C reais chamadas pelos trampolins. 
+- Funções para criar os diferentes tipos de trampolins. 
 
-Funções de criação de trampolim tem a seguinte assinatura:
+Funções de criação de trampolim tem a seguinte assinatura: 
 
-``` bash
-gpointer
-mono_arch_create_foo_trampoline (<args>, MonoTrampInfo **info, gboolean aot)
-```
+``` bash 
+gpointer 
+mono_arch_create_foo_trampoline (<args>, MonoTrampInfo **info, gboolean aot) 
+``` 
 
-A função deve retornar um ponteiro para o trampolim recém-criado, alocando memória a partir de qualquer gerenciador de código global, ou a partir de um gerenciador de código de domínio. Se INFO não for NULL, ele é definido como um ponteiro para uma estrutura do tipo MonoTrampInfo, que contém informação sobre o trampolim, como o seu nome, informação genérica, etc. Isto é utilizado para duas finalidades:
+A função deve retornar um ponteiro para o trampolim recém-criado, 
+alocando memória a do gerenciador de código global, ou 
+a partir do gerenciador de código do domínio. Se INFO não for 
+NULL, ele é definido como um ponteiro para uma estrutura do tipo 
+MonoTrampInfo, que contém informação sobre o trampolim, como o seu 
+nome, informação de desempilhamento, etc. Isto é utilizado para duas 
+finalidades: 
 
--   Salvar a informação do trampolim em uma imagem AOT em modo 'full-aot'.
--   Salvar a informação de debug sobre o trampolim em modo XDEBUG.
+- Salvar a informação do trampolim em uma imagem AOT em modo 'full-aot'. 
+- Salvar a informação de debug sobre o trampolim em modo XDEBUG. 
 
-### Trampolins JIT
+### Trampolins JIT 
 
-Estes trampolins são utilizados para compilar um método JIT a primeira vez que ele é chamado. Quando o JIT compila uma instrução de chamada, ele não compila o método chamado de imediato. Como alternativa, ele cria um trampolim JIT, e emite uma chamada de instrução referenciando o trampolim. Quando o trampolim é chamado, ele chama mono_magic_trampoline () que compila o método de destino, e retorna um endereço do código compilado para o trampolim que se ramifica a ele. Este processo é um pouco lento, então mono_magic_trampoline () tenta consertar o código gerado pelo JIT assim ele chama o código compilado em vez do trampolim a partir de agora. Isso é feito pelo mono_arch_patch_callsite () em tramp-\<ARCH\>.c.
+Estes trampolins são utilizados para compilar um método gerenciado para 
+código nativo a primeira vez que ele é chamado. Quando o JIT compila 
+uma instrução de chamada, ele não compila o método chamado de imediato. 
+Ao invés disso, ele cria um trampolim JIT, e emite uma chamada de instrução 
+referenciando o trampolim. Quando o trampolim é chamado, ele chama 
+mono_magic_trampoline () que compila o método de destino, e retorna um 
+endereço do código compilado para o trampolim que desvia para ele. 
+Este processo é um pouco lento, então mono_magic_trampoline () tenta 
+consertar o código inicialmente gerado pelo JIT, para ele chamar o código compilado 
+em vez do trampolim a partir de agora. Isso é feito pelo 
+mono_arch_patch_callsite () em tramp-\<ARCH\>.c. 
 
-### Chamadas Virtuais de Trampolins
+### Trampolins de Chamadas de Métodos Virtuais
 
-Há uma chamada virtual de trampolim por índice vtable. O trampolim usa este índice mais o argumento 'this' que é passado num registro fixo/pilha pela convenção de chamada gerenciada para obter o método virtual que é necessário para compilar. Em seguida, ele corrige o conector vtable com o endereço do novo método compilado.
+Há um trampolin de chamadas de método virtual para cada entrada na vtable.
+O trampolim usa este índice mais o argumento 'this' que é passado num registro 
+fixo/pilha pela convenção de chamada gerenciada para obter o método 
+virtual que é necessário para compilar. Em seguida, ele corrige a entrada na 
+vtable com o endereço do novo método compilado.
 
-\<TODO IMT\>
+\<TODO IMT\> 
 
-### Salto de Trampolins
+### Trampolins de Desvio 
 
-Salto de trampolins são muito similares aos trampolins JIT, eles ainda usam a mesma função C mono_magic_trampoline (). Eles são usados para implementar os códigos de operação LDFTN e o JMP IL.
+Trampolins de Desvio são muito similares aos trampolins JIT, eles ainda 
+usam a mesma função C mono_magic_trampoline (). Eles são usados para 
+implementar os códigos das operações LDFTN e JMP IL. 
 
-### Classe Init Trampolines
+### Trampolins de Inicialização de Classe
 
-Estes trampolins são usados para implementar os tipos de inicialização sematics da especificação CLI. Eles chamam a função C mono_class_init_trampoline () que executa o inicializador da classe passada como argumento do trampolim, em seguida, substitui o código chamadando a classe init trampoline com NOPs para que ele não seja mais executado.
+Estes trampolins são usados para implementar a semântica de inicialização de 
+tipo da especificação CLI. Eles chamam a função 
+C mono_class_init_trampoline () que executa o inicializador da classe 
+passada como argumento do trampolim, em seguida, substitui o código 
+que chama esse trampolin com NOPs para que ele não seja mais 
+executado. 
 
-### Classe Genérica Init Trampoline
+### Trampolim de Inicialização de Classe Genérica
 
-É semelhante a classe init trampolines, mas é utilizada para inicializar classes que são conhecidas somente em tempo de execução, em código compartilhado genérico. Ele recebe a classe para ser inicializada em um registro em vez de um trampolim específico. Isto significa que existe apenas uma instância deste trampolim.
+É semelhante aos trampolins de inicialização de classe, mas é utilizada para 
+inicializar classes que são conhecidas somente em tempo de execução, 
+em código genérico compartilhado. Ele recebe a classe para ser 
+inicializada em um registro em vez de um trampolim específico. Isto 
+significa que existe apenas uma instância deste trampolim. 
 
-### Trampolins RGCTX Lazy Fetch
+### Trampolins RGCTX Lazy Fetch 
 
-Estes são usados para buscar valores de um contexto genérico em tempo de execução, inicializando lentamente os valores se eles ainda não existem. Há uma instância desse trampolim para cada valor de deslocamento.
+Estes são usados para buscar valores de um contexto genérico em tempo 
+de execução, inicializando tardiamente os valores se eles ainda não 
+existem. Há uma instância desse trampolim para cada valor de 
+deslocamento. 
 
-### Trampolins AOT
+### Trampolins AOT 
 
-Estes são semelhantes aos trampolins JIT mas em vez de receber um MonoMethod para compilar, eles recebem um par imagem+token. Se o método identificado por este par é também compilado de forma AOT (Ahead Of Time - Antes do Tempo), o endereço do seu código compilado pode ser obtido sem carregar o metadado para o método.
+Estes são semelhantes aos trampolins JIT mas em vez de receber um 
+MonoMethod para compilar, eles recebem um par imagem+token. Se o método 
+identificado por este par é também compilado de forma AOT (Ahead Of 
+Time - antecipadamente), o endereço do seu código compilado pode ser 
+obtido sem carregar o metadado para o método. 
 
-### Trampolins AOT PLT
+### Trampolins AOT PLT 
 
-Estes trampolins manipulam tanto chamadas de código AOT quanto PLT.
+Estes trampolins manipulam tanto chamadas de código AOT quanto PLT. 
 
-### Trampolins Delegate
+### Trampolins Delegate 
 
-Estes trampolins são usados para manipular a primeira chamada para o delegate que seu método Invoke. Eles chamam mono_delegate_trampoline () que cria uma sequência de chamadas específicas otimizadas para a instância delegada antes de chamá-la. Chamadas adicionais passam por essa sequência de código otimizado.
+Estes trampolins são usados para manipular a primeira chamada para o 
+método Invoke de um delegate. Eles chamam mono_delegate_trampoline () 
+que cria uma sequência de chamadas específicas otimizadas para a 
+instância delegada antes de chamá-la. Chamadas adicionais passam por 
+essa sequência de código otimizado. 
 
-### Trampolins Monitor Enter/Exit
+### Trampolins de Aquisição/Liberação de Monitores 
 
-Estes trampolins implementam o fastpath de Monitor.Enter/Exit em algumas plataformas.
+Estes trampolins implementam o fastpath de Monitor.Enter/Exit em algumas 
+plataformas. 
 
-\<TODO REMAINING TRAMPOLINE TYPES\>
+\<TODO REMAINING TRAMPOLINE TYPES\> 
 
