@@ -29,7 +29,9 @@ MyLibrary.Employee
 MyLibrary.Person
 ```
 
-Este código cria o Mono.Cecil.AssemblyDefinition que corresponde ao MyLibrary assembly. Você também pode obter um dos ModuleDefinitions (AssemblyDefinition.Modules property) que estão contidos no assembly. Em geral, você tem que trabalhar com o  MainModule (AssemblyDefinition.MainModule property)
+Este código cria o Mono.Cecil.AssemblyDefinition que corresponde ao MyLibrary assembly. 
+Você também pode obter um dos ModuleDefinitions (AssemblyDefinition.Modules property) que estão contidos no assembly. 
+Em geral, você tem que trabalhar com o MainModule (AssemblyDefinition.MainModule property)
 
 Quais são as entidades contidas no assembly que o Cecil fornece para um modelo de objeto?
 ----------------------------------------------------------------------------------------
@@ -38,7 +40,8 @@ Aqui está um diagrama de classes simplificado das principais entidades que o Ce
 
 [![CecilMainCD.png](/archived/images/4/47/CecilMainCD.png)](/archived/images/4/47/CecilMainCD.png)
 
-Um AssemblyDefinition é criado por um AssemblyFactory que trabalha com um arquivo de montagem. Cada um deles contém uma coleção ModuleDefinitions. Em geral, você tem que trabalhar com um  ModuleDefinition principal (você pode obtê-lo usando a propriedade MainModule).
+Um AssemblyDefinition é criado por um AssemblyFactory que trabalha com um arquivo de montagem. Cada um deles contém uma coleção ModuleDefinitions. 
+Em geral, você tem que trabalhar com um ModuleDefinition principal (você pode obtê-lo usando a propriedade MainModule).
 
 A ModuleDefinition contém TypeDefinitions. Cada um deles contém coleções de:
 
@@ -46,9 +49,9 @@ A ModuleDefinition contém TypeDefinitions. Cada um deles contém coleções de:
 -   FieldDefinition
 -   PropertyDefinition
 
-Você também pode obter tipos de Construtors usando a propriedade Construtors. Um Construtors é um MethodDefinition. A PropertyDefinition possui duas MethodDefinitions que corresponde ao Get e o Set.
+Você também pode obter definições de construtores usando a propriedade Constructors. Uma definição de construtor é um MethodDefinition. A PropertyDefinition possui duas MethodDefinitions que correspondem aos métodos de acesso Get e Set.
 
-Um MethodDefinition contém um MethodBody. Você pode obter todas as instruções CIL de um MethodDefinition usando a propriedade  CilWorker. Além disso, o MethodDefinition contém uma propriedade de instruções.
+Um MethodDefinition contém um MethodBody. Você pode obter todas as instruções CIL de um MethodDefinition usando a propriedade CilWorker. Além disso, o MethodDefinition contém uma propriedade de instruções.
 
 [![CecilInstrCD.png](/archived/images/1/12/CecilInstrCD.png)](/archived/images/1/12/CecilInstrCD.png)
 
