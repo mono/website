@@ -62,7 +62,7 @@ Usando Extensões
 
 ### Alerta Sobre o Uso de Extensões
 
-**Usar extensões ao invés de caminhos NÃO é recomendado.** por favor consulte [FastCGI#Paths_vs._Extensions](/docs/web/fastcgi/#paths-vs-extensions) na página principal por uma explicação detalhada. Se você decidir usar esta configuração, por favor tenha em mente que é menos seguro, e sofre desvantegens adicionais quando comparado com o uso de caminhos.
+**Usar extensões ao invés de caminhos NÃO é recomendado.** por favor consulte [Paths vs Extensions](/docs/web/fastcgi/#paths-vs-extensions) na página principal para uma explicação detalhada. Se você decidir usar esta configuração, por favor tenha em mente que é menos seguro, e sofre desvantegens adicionais quando comparado com o uso de caminhos.
 
 ### Extensões - Primeiro Passo: Configurando o Interpretador
 
