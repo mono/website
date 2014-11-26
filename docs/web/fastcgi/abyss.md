@@ -40,7 +40,7 @@ Ao iniciar o servidor web Abyss, um centro de controle do servidor web será ini
     -   **FastCGI (Remote - TCP/IP sockets)** - Abyss vai procurar pelo servidor mono em um endereço IP e porta específicos. Você pode usar isto para rodar o servidor em uma outra máquina e redistribuir a carga entre processadores. O único alerta é que você precisará iniciar o servidor mono manualmente em outro computador, usando um comando como "`fastcgi-mono-server2 /socket=tcp:8002`"<br/>
         Se estiver usando esta opção, simplesmente configure o "Remote server IP Address" para o IP da máquina que você estiver rodando o servidor do Mono, e a porta que você usou na linha de comando. Pela linha de comando que indicamos acima, esta deveria ser 8002.
 
-5.  Desmarque a opção "Check for file existence before execution". Esta opão otimiza a performance mas pode corromper o ASP.NET 2.0 assim como algumas vezes usa caminhos que não necessáriamente existem como WebResource.axd.
+5.  Desmarque a opção "Check for file existence before execution". Esta opção otimiza a performance mas pode corromper o ASP.NET 2.0 assim como algumas vezes usa caminhos que não necessáriamente existem como WebResource.axd.
 6.  Desmarque a opção "Use the associated extensions to automatically update the Script Paths".
 7.  Adicione "\*" à "Extensions". Isto não é uma necessidade real, mas será usado para garantir que todas as requisições cheguem ao FastCGI do servidor Mono.
 8.  Clique em "OK".
@@ -48,26 +48,26 @@ Ao iniciar o servidor web Abyss, um centro de controle do servidor web será ini
 10. Entre "/\*" no "Virtual Path".
 11. Clique "OK".
 
-### Segundo Passo: Extender o tempo de vida do servidor
+### Segundo Passo: Aumentar o Tempo de Vida do Servidor
 
-Ao completar o passo anterior, você deverá ter automaticamente retornado ao "Scripting Parameters". Clique em "Edit..." próximo a "FastCGI Parameters". A opção "FastCGI Processes Timeout" especifica o numero de segundos depois da ultima requisição você vai quere aguardar antes de desligar o Servidor Mono FasCGI(ou qualquer outro). Porque páginas ASP.NET precisam ser recompiladas a AppDomains precisam sere recriados toda a vez que o servidor inicia. Você configura este para um valor arbitrariamente alto. 604800 é um numero de segundos de uma semana e o valor que escolhi para meu servidor. Apenas após ter setado este valor clique em "OK". 
+Ao completar o passo anterior, você deverá ter automaticamente retornado ao "Scripting Parameters". Clique em "Edit..." próximo a "FastCGI Parameters". A opção "FastCGI Processes Timeout" especifica o numero de segundos depois da ultima requisição você vai querer aguardar antes de desligar o Servidor Mono FasCGI(ou qualquer outro). Porque páginas ASP.NET precisam ser recompiladas a AppDomains precisam sere recriados toda a vez que o servidor inicia. Você configura este para um valor arbitrariamente alto. 604800 é um numero de segundos de uma semana e o valor que escolhi para meu servidor. Apenas após ter setado este valor clique em "OK". 
 
 
-### Terceiro Passo: Desabilitando listar diretórios
+### Terceiro Passo: Desabilitando a Listagem de Diretórios
 
-Ao completar o passo anterior, você deverá ter automaticamente retornado ao "Scripting Parameters". Clique botão "OK" rodapá da página para voltar para a pagina de configuração do host. Apenas lá, clique em "Directory Listing" e configure "Type" para "Disabled". Se a listagem de diretórios estiver habilitada, os paths não serão automaticamente enviados para o servidor FastCGI Mono.
+Ao completar o passo anterior, você deverá ter automaticamente retornado ao "Scripting Parameters". Clique botão "OK" rodapá da página para voltar para a página de configuração do host. Apenas lá, clique em "Directory Listing" e configure "Type" para "Disabled". Se a listagem de diretórios estiver habilitada, os paths não serão automaticamente enviados para o servidor FastCGI Mono.
 
 Usando Extensões
 ----------------
 
-### Alertas de Extensões
+### Alerta Sobre o Uso de Extensões
 
-**Usar extensões ao invés de caminhos NÃO é recomendado.** por favor consulte [FastCGI#Paths_vs._Extensions](/docs/web/fastcgi/#paths-vs-extensions) na página principal por uma explicação detalhada. Se você decidir usar esta configuração, por favor tenha em mente que é menos seguro, sofre desvantegens adicionais quando comparado com o uso de paths.
+**Usar extensões ao invés de caminhos NÃO é recomendado.** por favor consulte [FastCGI#Paths_vs._Extensions](/docs/web/fastcgi/#paths-vs-extensions) na página principal por uma explicação detalhada. Se você decidir usar esta configuração, por favor tenha em mente que é menos seguro, e sofre desvantegens adicionais quando comparado com o uso de caminhos.
 
 ### Extensões - Primeiro Passo: Configurando o Interpretador
 
 Ao iniciar o servidor web Abyss, um centro de controle do servidor web será iniciado por padrão no endereço
-<http://localhost:9999>. Simplesmente abra seu navegador neste endereço e siga os passos abaixo:teps outlined below:
+<http://localhost:9999>. Simplesmente abra seu navegador neste endereço e siga os passos abaixo:
 
 1.  Clique em "Configure" no host que você deseja adicionar suporte a ASP.NET
 2.  Clique em "Scripting Parameters".
@@ -94,16 +94,16 @@ Ao iniciar o servidor web Abyss, um centro de controle do servidor web será ini
 
 7.  Clique em "OK".
 
-### Extensões - Segundo Passo: Extendendo o Tempo de vida do servidor
+### Extensões - Segundo Passo: Aumentar o Tempo de Vida do Servidor
 
 Ao completar o passo anterior, você deve ter automaticamente retornado ao "Scripting Parameters". Clique em "Edit..." próximo a "FastCGI Parameters". A opção "FastCGI Processes Timeout" especifica o numero de segundos depois da ultima requisição você vai quere aguardar antes de desligar o Servidor Mono FasCGI(ou qualquer outro). Porque páginas ASP.NET precisam ser recompiladas a AppDomains precisam sere recriados toda a vez que o servidor inicia. Você configura este para um valor arbitrariamente alto. 604800 é um numero de segundos de uma semana e o valor que escolhi para meu servidor. Apenas após ter setado este valor clique em "OK". 
 
 
-### Extensões - Terceiro Passo: Adicionando Páginas Index
+### Extensões - Terceiro Passo: Adicionando Páginas Iniciais
 
 Ao completar o passo anterior, você deve automaticamente retornar para "Scripting Parameters". Clique em "OK" no rodapé da página para retornar para a página de configuração do host. Apenas lá, clique em "Index Files" e continue adicionando `index.aspx`, `default.aspx`, e `Default.aspx`. Clique em "OK" e entao em "Reset" para reiniciar o servidor.
 
 Sucesso
 -------
-Agora você deve estar com ASP.NET funcionando com o Servidor Web Abyss. Divirta-se!
+Agora você deve estar com o ASP.NET funcionando com o Servidor Web Abyss. Divirta-se!
 
