@@ -62,7 +62,9 @@ Depois que você clonou o seu fork do repositório, rode os seguintes comandos:
  1. `bundle install` - baixa as bibliotecas necessárias ao Jekyll
  2. `jekyll serve` - constroi o site e roda um servidor local na porta 4000
 
-**Nota:** você pode adicionar a opção `--watch` ao executar `jekyll serve` para que o Jekyll monitore as mudanças de arquivo, o que significa que o site será reconstruido quand um arquivo é modificado.
+**Nota:** você pode adicionar a opção `--watch` ao executar `jekyll serve` para que o Jekyll monitore as mudanças de arquivo, o que significa que o site será reconstruido quand um arquivo é modificado.</br>
+**Nota 2:** em sistemas de arquivos sem diferenciação de maiúsculas/minúsculas como no Windows e Mac OS X você pode cair em laços infinitos de redirecionamento com algumas URLs. 
+O 'jeitinho' é desabilitar localmente os redirecionamentos removendo a entrada `gems: jekyll-redirect-from` da sua cópia do `_config.yml`.
 
 O site estará rodando localmente:
 ![website](https://cloud.githubusercontent.com/assets/1376924/3712425/c1ab2e9c-1513-11e4-9df2-6e69d461c3cf.png)

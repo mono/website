@@ -106,6 +106,13 @@ O Mono atualmente tem um processo de compilação em múltiplos estágios para c
 bibliotecas que tem dependência cíclica.  Trazer novo código da Microsoft é possível, mas a
 cada classe que for incorporada, podemos ter que ajustar o processo de compilação.
 
+'Recursos' Faltantes
+--------------------
+
+O fonte liberado pela Microsoft não incluem os recursos (resources) exigidos por parte do código. Isto se manifesta com referências a uma classe chamada "SR".
+
+Nós teremos que autogerá-los.
+
 Mão de Obra Escassa
 -------------------
 
@@ -150,7 +157,7 @@ Pode ser que não seja importante, mas devemos prestar alguma atenção a isso.
 a suas funções. O Mono não faz isso, portanto podemos ter um impacto na performance ao importar
 esse tipo de código.
 
-As checagens de Code Access Security são provavelmente o que nós devemos nos preocupar em 
+As checagens de Code Access Security são provavelmente o que mais nós devemos nos preocupar em 
 filtrar, por serem completamente inúteis no Mono.
 
 Definiçoes de Tempo de Compilação
@@ -159,7 +166,6 @@ Definiçoes de Tempo de Compilação
 O código fonte da Microsoft contem muitos tipos diferentes de definições de tempo de compilação 
 (defines) que são usados para compilação condicional.  Sempre que importarmos algum código da 
 Microsoft, nós temos que fazer uma auditoria e determinar que funcionalidades são necessárias.
-
 
 Estratégia
 ==========
@@ -187,7 +193,9 @@ Ao trazer código para o Mono, nós podemos fazê-lo das seguintes formas:
 * Trabalho misto
 * Membros individuais
 
-**Assemblies inteiros:** Nós podemos portar assemblies inteiros quando nosso assembly 
+### Assemblies Inteiros
+
+Nós podemos portar assemblies inteiros quando nosso assembly 
 é reconhecido como sendo muito cheio de bugs, em má forma, ou completamente quebrado.
 
 Candidatos imediatos para isto incluem:
@@ -205,13 +213,15 @@ Candidatos de longo prazo incluem:
 
 * A pilha XML
 
-**Entire Classes:** Nós portaremos classes inteiras quando a classe ou família de classes 
+### Classes Inteiras
+
+Nós portaremos classes inteiras quando a classe ou família de classes 
 é reconhecida como sendo muito cheia de bugs no Mono, mal conservada ou como uma fonte de 
 problemas.  Candidatos incluem:
 
 * System.Text.RegularExpressions
 
-**Trabalho Misto:**
+### Trabalho Misto
 
 São bibliotecas que tem código de alta qualidade e que as contrapartes no Mono podem
 ter limitações, bugs ou problemas. Mas a implementação da Microsoft contem dependências
@@ -221,8 +231,9 @@ a bibliotecas nativas que não existem em todas as plataformas. Possíveis candi
 * `System.Data.*` - A implementação da Microsoft tem muitas dependências a código nativo 
 que tem que ser refatoradas para suportar múltiplas plataformas.
 
+### Membros Individuais
 
-**Membros Individuais:** Nós encontraremos esse tipo de código em alguns lugares. 
+Nós encontraremos esse tipo de código em alguns lugares. 
 Existem lugares no Mono que embora bons de forma geral, podem ter bugs conhecidos e limitações.
 A funcionalidade de `binding` em `System.Reflection` é um exemplo de um método que funciona, 
 mas que pode ter bugs e erros nas 'bordas'.
@@ -238,6 +249,7 @@ acostumados a muito tempo.
 Em geral, quando portando código para o Mono, nós devemos garantir que a suite de testes do Mono 
 continue a passar sem problemas, e que nenhuma regressão seja introduzida. Se uma regressão for introduzida,
 nós temos que registrar o bug e atuar na busca da solução do problema específico.
+>>>>>>> abdedc04bb366fb61a02a32b388f497cd91a75e8
 
 APIs muito populares, majoritariamente livres de bugs: pule
 -----------------------------------------------------------
@@ -281,4 +293,3 @@ Nós acreditamos que poderemos fazer poucas mudanças no código de origem e bas
 Nós queremos contribuir parte do código multi-plataforma do Mono, bem como trechos que nós portarmos do código de referência do Framework .NET ao esforço do .NET Core.
 
 Nós atualizaremos esta página com mais informação conforme o processo de porte de código da Microsoft evolua e nós contribuamos algo do nosso código ou do deles para o esforço.
-
