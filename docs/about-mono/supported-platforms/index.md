@@ -1,12 +1,13 @@
 ---
-title: Supported Platforms
+title: Plataformas Suportadas
 redirect_from:
   - /Supported_Platforms/
   - /Platforms_Supported/
   - /Template:Platforms_Supported/
 ---
 
-Mono possui suporte para os sistemas operacionais de 32 e 64 bits sobre uma série de arquiteturas, bem como vários sistemas operacionais.
+O Mono possui suporte para a sistemas de 32 e 64 bits sobre uma série de arquiteturas, bem como 
+vários sistemas operacionais.
 
 ### Sistemas Operacionais Suportados
 
@@ -22,9 +23,12 @@ Mono possui suporte para os sistemas operacionais de 32 e 64 bits sobre uma sér
 
 ### Arquiteturas Suportadas
 
-Mono possui ambos os sistemas otimizados de tempo de execução, o just-in-time (JIT) e o interpretador. O interpretador é muito menos complexo e foi utilizado principalmente nos estágios iniciais, antes de uma versão JIT ser implantada em tal arquitetura. Arquiteturas onde o JIT já foi portado o interpretador não é mais suportado.
+Mono possui um par de ambientes de execução, o just-in-time (JIT) otimizado e o interpretador. 
+O interpretador é menos complexo e é utilizado principalmente nos estágios iniciais, antes de 
+uma versão JIT ser implantada em uma dada arquitetura. Nas arquiteturas para as quais o JIT já 
+foi portado o interpretador não é mais suportado.
 
-|Arquiteturas Suportadas|Tempo de Execução|Sistema Operacional|
+|Arquiteturas Suportadas|Ambiente de Execução|Sistema Operacional|
 |:----------------------|:------|:---------------|
 |[s390, s390x (32 e 64 bits)](/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
 |[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
@@ -32,16 +36,18 @@ Mono possui ambos os sistemas otimizados de tempo de execução, o just-in-time 
 |[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
 |[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, Solaris, OS X|
 |[IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|JIT|Linux|
-|[ARM](/docs/about-mono/supported-platforms/arm/): little e big endian|JIT|Linux (antigas e novas aplicações de interfaces binárias (ABI)), iPhone, Android|
+|[ARM](/docs/about-mono/supported-platforms/arm/): little e big endian|JIT|Linux (para a nova e a antiga ABIs (interfaces binárias)), iPhone, Android|
 |Alpha|JIT|**não mantido**. Linux|
 |[MIPS](/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
 |HPPA|JIT|**não mantido** Linux|
 
-Repare que as arquiteturas Alpha, MIPS, ARM big-endian e HPPA são suportadas por comunidades e podem não estar completas como as outras arquiteturas.
+Repare que as arquiteturas Alpha, MIPS, ARM big-endian e HPPA são suportadas por comunidades 
+e podem não estar completas como as outras arquiteturas.<br/>
 Suporte para SPARC64 funciona em versões antigas do Mono, mas não em versões recentes.
 
- Pacotes para mais plataformas estão disponíveis na página de [Downloads](/download/).
+Pacotes para outras plataformas estão disponíveis na página de [Downloads](/download/).
 
 ### Sistemas Embarcados
 
-Para deixar o mono mais adequado em arquiteturas que utilizam sistemas embarcados, dê uma olhada na página [small-footprint](/docs/compiling-mono/small-footprint/).
+Para deixar o Mono mais adequado às restrições das plataformas utilizadas em sistemas embarcados, 
+dê uma olhada na página [diminuindo a 'pegada'](/docs/compiling-mono/small-footprint/).
