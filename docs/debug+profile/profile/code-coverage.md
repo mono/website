@@ -4,9 +4,9 @@ redirect_from:
   - /Code_Coverage/
 ---
 
-A Cobertura de código pode ser usada para controlar quantos dos muitos muitos dos caminhos de código que o programa emprega estão sendo realmente exercitados.
+A cobertura de código pode ser usada para monitorar quantos dos muitos caminhos de código que o programa emprega estão sendo realmente exercitados.
 
-Para mais informações veja [Profile](/docs/debug+profile/profile/).
+Para mais informações veja [Perfil](/docs/debug+profile/profile/).
 
 MonoCov
 =======
@@ -51,18 +51,20 @@ O Monocov também pode gerar um conjunto de páginas HTML que mostram os dados d
     monocov --export-html=/tmp/corlib-cov corlib.cov
 ```
 
-Esperamos que esta ferramenta ajude os novos colaboradores e os antigos a encontrar facilmente os pontos não testados em nossas bibliotecas e contribuir com testes para eles.
+Esperamos que esta ferramenta ajude os novos colaboradores e os antigos a encontrarem facilmente os pontos não testados em nossas bibliotecas e contribuir com testes para eles.
 
 Cobertura de Código Integrada
-======================
+=============================
 
-O modulo integrado de cobertura de código é bastante limitado
+O módulo integrado de cobertura de código é bastante limitado
 
-O Mono ja vem um módulo integrado de cobertura de código. Este módulo é ativado usando a opção Mono --profile = cov. O formato é:
+O Mono já vem com um módulo integrado de cobertura de código. Este módulo é ativado usando a opção Mono --profile = cov. O formato é:
 
     --profile=cov[:assembly-name[/namespace]] test-suite.exe
 
- Por padrão, o código de cobertura estará operando sobre todas as assemblys carregadas, você pode limitar isso especificando o nome da assembly, por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, por exemplo, a seguinte linha de comando limita a cobertura de código para rotinas na assembly "demo"
+ Por padrão, o código de cobertura estará operando sobre todas as assemblys carregadas, você pode limitar isso especificando o nome da assembly, 
+ por exemplo, para realizar a cobertura de código nas rotinas de uso do seu programa, a seguinte linha de comando limita a cobertura de código 
+ para rotinas na assembly "demo"
 
 ``` bash
         mono --profile=cov:demo demo.exe
@@ -70,21 +72,21 @@ O Mono ja vem um módulo integrado de cobertura de código. Este módulo é ativ
 
 Observe que o nome da assembly não inclui a extensão.
 
-Você pode restringir ainda mais a saída de cobertura de código, especificando um namespace:
+Você pode restringir ainda mais a saída de cobertura de código, especificando um espaço de nomes:
 
 ``` bash
         mono --profile=cov:demo/My.Utilities demo.exe
 ```
 
-Nesse caso só sera realizada a cobertura de código nas classes dentro namespace especificado.
+Nesse caso só será realizada a cobertura de código nas classes dentro espaço de nomes especificado.
 
-A saída típica se parece com isso:
+A saída típica se parece com:
 
-           Not covered: Class:.ctor ()
-           Not covered: Class:A ()
-           Not covered: Driver:.ctor ()
-           Not covered: Driver:method ()
-           Partial coverage: Driver:Main ()
-                   offset 0x000a
+        Not covered: Class:.ctor ()
+        Not covered: Class:A ()
+        Not covered: Driver:.ctor ()
+        Not covered: Driver:method ()
+		Partial coverage: Driver:Main ()
+			offset 0x000a
 
-Os deslocamentos exibidos são deslocamentos IL.
+Os deslocamentos (```offset```) exibidos são deslocamentos IL.

@@ -4,7 +4,8 @@ redirect_from:
   - /Gendarme.Rules.Security.Cas/
 ---
 
-As regras do [Gendarme](/docs/tools+libraries/tools/gendarme/) para o Code Access Security (CAS) estão localizados na  assembly **Gendarme.Rules.Security.Cas.dll**. Os Últimos fontes correntes estão disponíveis a partir do [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
+As regras do [Gendarme](/docs/tools+libraries/tools/gendarme/) para o Code Access Security (CAS) estão localizados na assembly **Gendarme.Rules.Security.Cas.dll**. 
+Os fontes correntes estão disponíveis no [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
 
 <table>
 <col width="100%" />
@@ -33,7 +34,7 @@ Regras
 
 ### AddMissingTypeInheritanceDemandRule
 
-Essa regra verifica se há tipos que não são **selados** mas tem um **LinkDemand**. Neste caso, o tipo também deve ter um **InheritanceDemand** para as mesmas permissões. Uma alternativa é o de selar o tipo.
+Essa regra verifica se há tipos que não são **selados**  (```sealed```) mas tem um **LinkDemand**. Neste caso, o tipo também deve ter um **InheritanceDemand** para as mesmas permissões. Uma alternativa é selar o tipo.
 
 Exemplo **Errado**:
 
@@ -99,7 +100,7 @@ public sealed class Correto {
 
 ### DoNotExposeMethodsProtectedByLinkDemandRule
 
-Esta regra verifica métodos visíveis que são menos protegidos (ou seja, os requisitos de segurança são mais baixas) do que o método que eles chamam. Se os métodos  chamados são protegidos por um **LinkDemand** em seguida, o chamador pode ser utilizado para verificações de segurança de bypass.
+Esta regra verifica métodos visíveis que são menos protegidos (ou seja, os requisitos de segurança são mais baixas) do que o método que eles chamam. Se os métodos chamados são protegidos por um **LinkDemand** em seguida, o chamador pode ser utilizado para verificações de segurança de bypass.
 
 Exemplo **Errado**:
 
@@ -256,8 +257,8 @@ public class Correto : ISerializable {
 
 -   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security.
 
-Comentarios
-========
+Comentários
+===========
 
-Por favor, reporte qualquer erro na documentação, erros de digitação ou sugestões para o [Gendarme Google Group](http://groups.google.com/group/gendarme). Obrigado!
+Por favor, reporte qualquer erro na documentação, erros de digitação ou sugestões para o [Grupo de Discussão do Gendarme](http://groups.google.com/group/gendarme) no Google. Obrigado!
 
