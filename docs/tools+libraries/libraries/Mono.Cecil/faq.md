@@ -4,10 +4,10 @@ redirect_from:
   - /Cecil:FAQ/
 ---
 
-Now that I have the library, how do I use it?
+Agora que eu tenho a biblioteca, como posso usá-la ?
 ---------------------------------------------
 
-Here is an example of an application browsing all the types contained in a managed assembly:
+Aqui está um exemplo de um aplicativo de navegação de todos os tipos contidos em uma montagem (assembly) gerenciada: 
 
 ``` csharp
 //Creates an AssemblyDefinition from the "MyLibrary.dll" assembly
@@ -20,7 +20,7 @@ foreach (TypeDefinition type in myLibrary.MainModule.Types) {
 }
 ```
 
-We can see the result on the output console:
+Podemos ver o resultado no console de saída:
 
 ``` bash
 <Module>
@@ -29,41 +29,44 @@ MyLibrary.Employee
 MyLibrary.Person
 ```
 
-This code creates the Mono.Cecil.AssemblyDefinition which corresponds to the MyLibrary assembly. You can also get one of the ModuleDefinitions (AssemblyDefinition.Modules property) which are contained into an assembly. In general, you have to work with that one named MainModule (AssemblyDefinition.MainModule property)
+Este código cria o Mono.Cecil.AssemblyDefinition que corresponde ao MyLibrary assembly. 
+Você também pode obter um dos ModuleDefinitions (AssemblyDefinition.Modules property) que estão contidos no assembly. 
+Em geral, você tem que trabalhar com o MainModule (AssemblyDefinition.MainModule property)
 
-What are the entities contained in an assembly which Cecil provides an object model for?
+Quais são as entidades contidas no assembly que o Cecil fornece para um modelo de objeto?
 ----------------------------------------------------------------------------------------
 
-Here is a simplified class diagram of the main entities Cecil is dealing with and their relationships all together:
+Aqui está um diagrama de classes simplificado das principais entidades que o Cecil está lidando e todas as suas relações:
 
 [![CecilMainCD.png](/archived/images/4/47/CecilMainCD.png)](/archived/images/4/47/CecilMainCD.png)
 
-An AssemblyDefinition is created by an AssemblyFactory which works with an assembly file. Each of them contains a ModuleDefinitions collection. In general, you have to work with a main ModuleDefinition (you can get it by using the MainModule property).
+Um AssemblyDefinition é criado por um AssemblyFactory que trabalha com um arquivo de montagem. Cada um deles contém uma coleção ModuleDefinitions. 
+Em geral, você tem que trabalhar com um ModuleDefinition principal (você pode obtê-lo usando a propriedade MainModule).
 
-A ModuleDefinition contains TypeDefinitions. Each of them contains collections of:
+A ModuleDefinition contém TypeDefinitions. Cada um deles contém coleções de:
 
 -   MethodDefinition
 -   FieldDefinition
 -   PropertyDefinition
 
-You can also get the constructors of a type by using the Constructors property. A constructor is a MethodDefinition. A PropertyDefinition owns two MethodDefinitions which corresponds to the Get and the Set.
+Você também pode obter definições de construtores usando a propriedade Constructors. Uma definição de construtor é um MethodDefinition. A PropertyDefinition possui duas MethodDefinitions que correspondem aos métodos de acesso Get e Set.
 
-A MethodDefinition contains a MethodBody. You can get all the CIL instructions of a MethodDefinition by using the CilWorker property. In addition, the MethodDefinition contains an Instructions property.
+Um MethodDefinition contém um MethodBody. Você pode obter todas as instruções CIL de um MethodDefinition usando a propriedade CilWorker. Além disso, o MethodDefinition contém uma propriedade de instruções.
 
 [![CecilInstrCD.png](/archived/images/1/12/CecilInstrCD.png)](/archived/images/1/12/CecilInstrCD.png)
 
-I would like to add some tracing functionality to an assembly I can’t debug, is it possible using Cecil?
+Eu gostaria de adicionar alguma funcionalidade de rastreamento para um conjunto que não consegue ser depurado, é possivel usar o Cecil?
 --------------------------------------------------------------------------------------------------------
 
-Yes it is. This technique is named [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Here is a simple example on how to do it with Cecil. You’ll have to learn [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) if you want to make some more advanced stuff.
+Pode sim. Esta técnica é denominada [AOP](http://en.wikipedia.org/wiki/Aspect-oriented_programming). Aqui está um exemplo de como fazê-lo com Cecil. Você vai ter que aprender [CIL](http://en.wikipedia.org/wiki/Common_Intermediate_Language) se você quiser fazer alguma coisa mais avançada.
 
-We take for this example the same assembly MyLibrary as previously. Instead of writing the name of each type, we will insert the following code into each methods of each type of the assembly:
+Tomamos para este exemplo o mesmo assembly MyLibrary como anteriormente. Em vez de escrever o nome de cada tipo, vamos inserir o seguinte código para cada método de cada tipo da assembly:
 
 ``` csharp
 Console.WriteLine ("Code added in ", method.Name);
 ```
 
-The first thing to do is getting the System.Reflection.MethodInfo which correspond to the Console.WriteLine (string value) method.
+A primeira coisa a fazer é obter o System.Reflection.MethodInfo que corresponde ao método Console.WriteLine (valor string).
 
 ``` csharp
 //Gets the MethodInfo of Console.WriteLine() method
@@ -71,7 +74,7 @@ MethodInfo writeLineMethod =
     typeof(Console).GetMethod("WriteLine", new Type[]{typeof(string)});
 ```
 
-Next, you have to get all methods of each type of the MyLibrary assembly in order to insert the MSIL instructions.
+Em seguida, você tem que ter todos os métodos de cada tipo do conjunto MyLibrary afim de inserir as instruções MSIL.
 
 ``` csharp
 //Getting the path of the "MyLibrary.dll" assembly
@@ -122,14 +125,14 @@ foreach(TypeDefinition type in assembly.MainModule.Types)
 }
 ```
 
-The last thing to do is saving the assembly which contains the modifying types:
+A última coisa a fazer é salvar o conjunto que contém os tipos de modificação:
 
 ``` csharp
 //Save the modified "MyLibrary" assembly
 AssemblyFactory.SaveAssembly(assembly, pathBin);
 ```
 
-After executing this code, you can use the modifying assembly in a new Console project. You have to add a reference to this assembly.
+Depois de executar este código, você pode usar o assembly em um novo projeto Console. Você tem que adicionar uma referência ao assembly.
 
 ``` csharp
 MyLibrary.Person p = new MyLibrary.Person();
@@ -139,7 +142,7 @@ int age = p.GetAge();
 Console.ReadLine();
 ```
 
-This code produces also this result:
+Este código também produz este resultado:
 
 ``` bash
 set_Name was called
@@ -147,7 +150,7 @@ set_Birthday was called
 GetAge was called
 ```
 
-You can download the examples used in this FAQ [here](http://evain.net/public/cecil_faq_samples.zip)
+Você pode baixar os exemplos usados neste FAQ [Aqui](http://evain.net/public/cecil_faq_samples.zip)
 
-Author: Fabien Reinle, f.reinle_at_evaluant.com
+Autor: Fabien Reinle, f.reinle_at_evaluant.com
 
