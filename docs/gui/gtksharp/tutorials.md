@@ -11,8 +11,8 @@ Para quem está começando a utilizar o Gtk#
     -   Um visão geral sobre o Gtk# e um exemplo simples de aplicação, comentado passo-a-passo.
 -   ["Olá Mundo" em C# e VB.NET com o Gtk#](/docs/gui/gtksharp/hello-world/)
     -   Uma breve introdução ao Gtk# através da abordagem 'Olá Mundo'
--   [Gtk# no MonoDevelop](http://www.monodevelop.com/Stetic_GUI_Designer)
-    -   Criando uma aplicação Gtk# com a Ferramenta para Design de Interfaces Gráficas do [Monodevelop](http://www.monodevelop.com/Main_Page), Stetic.
+-   [Gtk# no MonoDevelop](http://www.monodevelop.com/documentation/stetic-gui-designer/)
+    -   Criando uma aplicação Gtk# com a Ferramenta para Design de Interfaces Gráficas do [Monodevelop](http://www.monodevelop.com/), Stetic.
 
 Detalhes da GUI do Gtk# e algumas técnicas utilizadas
 -----------------------------------------------------
@@ -54,7 +54,7 @@ Outros tutoriais Gtk#
 
 -   Criando sua primeira aplicação "Olá Mundo" com Gtk# utilizando o MonoDevelop como IDE
 
-[http://www.monodevelop.com/tutorials/helloworld.aspx](http://www.monodevelop.com/tutorials/helloworld.aspx)
+[http://www.monodevelop.com/documentation/building-a-simple-application-using-the-stetic-gui-designer/](http://www.monodevelop.com/documentation/building-a-simple-application-using-the-stetic-gui-designer/)
 
 -   Uma coletânea antiga de documentação referente ao Gtk# (seria interessante se alguém pudesse garimpar o que tiver de mais relevante lá e inserir na página Wiki do projeto...)
 

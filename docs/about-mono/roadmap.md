@@ -7,8 +7,8 @@ redirect_from:
 
 *Última atualização: Novembro, 2014*
 
-Nós estamos adotando uma nova sistemática de desenvolvimento em que novas funcionalidades são desenvolvidas em ramos (branches) e mesclados no ramo `master` depois de completadas e aprovadas nos testes do controle de qualidade.
-O objetivo é reduzir nosso inventário de funcionalidades e bugs pendentes e entregar as correções tão logo elas sejam completadas aos usuários do Mono.
+Nós estamos adotando uma nova sistemática de desenvolvimento em que novas funcionalidades são desenvolvidas em ramos (branches) e mesclados no ramo `master` depois de completadas e aprovadas nos testes do controle de qualidade.<br/>
+O objetivo é reduzir nosso inventário de funcionalidades e bugs pendentes e entregar as correções tão logo elas sejam completadas aos usuários do Mono.<br/>
 Para maiores informações veja: [http://tirania.org/blog/archive/2011/Oct-14.html](http://tirania.org/blog/archive/2011/Oct-14.html)
 
 Nós estamos agora integrando o [código de fontes abertos do .NET dentro do Mono](/docs/about-mono/dotnet-integration).
@@ -61,7 +61,6 @@ Subprojetos
 -----------
 
 Outros projetos como o [depurador](/docs/debug+profile/debug/debugger/), o navegador de documentação, integração com [Java](/docs/about-mono/languages/java/) via IKVM, [Olive](/archived/olive "Olive") e [Gtk#](/docs/gui/gtksharp/) permanecem com suas próprias agendas. Esta página será atualizada para conter novas informações conforme elam estejam disponível.
-
 ### Mono e Silverlight
 
 [Moonlight](/docs/web/moonlight/) a implementação de código aberto do Silverlight em cima do Mono para Linux não está mais sendo desenvolvido.
@@ -100,4 +99,3 @@ Histórico
 ---------------
 
 Para informação antiga sobre este caminho veja [Histórico do Caminho a Frente](/archived/roadmap_history).
-

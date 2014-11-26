@@ -29,22 +29,22 @@ Existem diversos componentes que forma o Mono:
 Pontos Altos das Capacidades do Mono
 ------------------------------------
 
-[Multi-Plataforma](/docs/about-mono/supported-platforms/)
+[Multi-Plataforma](/docs/about-mono/supported-platforms/)<br/>
 Roda em [Linux](/docs/about-mono/supported-platforms/linux/), [OS X](/docs/about-mono/supported-platforms/osx/), [BSD](/docs/about-mono/supported-platforms/bsd/), e [Microsoft Windows](/docs/getting-started/install/windows/), incluindo hardware [x86](/docs/about-mono/supported-platforms/x86/), [x86-64](/docs/about-mono/supported-platforms/amd64/), [ARM](/docs/about-mono/supported-platforms/arm/), [s390](/docs/about-mono/supported-platforms/s390/), [PowerPC](/docs/about-mono/supported-platforms/powerpc/) e muito mais...
 
-[Multi-Linguagem](/docs/about-mono/languages/)
+[Multi-Linguagem](/docs/about-mono/languages/)<br/>
 Desenvolva em [C# 4.5](/docs/about-mono/languages/csharp/) (incluindo LINQ e `dynamic`), [VB 8](/docs/about-mono/languages/visualbasic/), [Java](/docs/about-mono/languages/java/), [Python](/archived/python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), [Boo](http://pt.wikipedia.org/wiki/Boo) e mais...
 
-Compatibilidade Binária
+Compatibilidade Binária<br/>
 Construa sua aplicação em uma implementação no padrão [ECMA](/docs/about-mono/languages/ecma/) do [Common Language Infrastructure](/docs/advanced/runtime/)e do [C#](/docs/about-mono/languages/csharp/).
 
-[API Compatível com a Microsoft](/docs/getting-started/application-portability/)
+[API Compatível com a Microsoft](/docs/getting-started/application-portability/)<br/>
 Rode aplicações [ASP.NET](/docs/web/aspnet/), [ADO.NET](/docs/database-access/adonet/), [Silverlight](/docs/web/moonlight/) e [Windows.Forms](/docs/gui/winforms/) sem recompilação.
 
-[Código Aberto, Software Livre](/docs/faq/licensing/)
+[Código Aberto, Software Livre](/docs/faq/licensing/)<br/>
 O runtime, compiladores, e bibliotecas do Mono são distribuidos sob licenças aprovadas pela OSI e estão disponíveis para licenciamento-dual.
 
-[Extensiva Cobertura Tecnológica](/docs/about-mono/plans/)
+[Extensiva Cobertura Tecnológica](/docs/about-mono/plans/)<br/>
 Conexões nativas(bindings) e implementações gerenciadas de muitas bibliotecas e protocolos.
 
 Os Benefícios
@@ -70,4 +70,3 @@ Outros Usos
 Veja [Embarcando o Mono](/docs/advanced/embedding/) para detalhes sobre como embutir o Mono.
 
 Veja [Scripting com o Mono](/docs/advanced/embedding/scripting/) para estratégias para habilitar scripts na sua aplicação usando o Mono.
-
