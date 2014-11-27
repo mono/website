@@ -14,16 +14,16 @@ Regardless of your distribution, you will need the Mono Project GPG signing key,
 Debian, Ubuntu, and derivatives
 -------------------------------
 
-Add the Mono Project GPG signing key **in a root shell** with:
+Add the Mono Project GPG signing key with (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
-Next, add the package repository **in a root shell**:
+Next, add the package repository:
 
 ``` bash
-echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
 Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [usage](#usage) section.
