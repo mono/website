@@ -18,7 +18,7 @@ For **Red Hat-derived** distributions (any distribution which uses .rpm files), 
 Installation
 ------------
 
-Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require:
+Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require.
 
 ### Debian, Ubuntu, and derivatives
 
