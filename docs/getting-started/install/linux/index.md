@@ -72,6 +72,13 @@ The package ***mono-devel*** should be installed to compile code.
 
 The package ***mono-complete*** should be installed to install everything - this should cover most cases of "assembly not found" errors.
 
+Notes
+-----
+
+After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
+
+**Note:** Mono on Linux by default doesn't trust any SSL certificates so you'll get errors when accessing HTTPS resources. To import Mozilla's list of trusted certificates and fix those errors, you need to run `mozroots --import --sync`.
+
 Accessing older releases
 ------------------------
 
@@ -80,10 +87,3 @@ If for some reason you want to pin an older version of Mono rather than updating
 These snapshots will cease receiving updates as soon as the next major Mono version gets uploaded - for example, as soon as Mono 3.12 gets uploaded, 3.10 will never receive updates.
 
 On RPM distributions, force the package version in your package manager - all older versions are published in the YUM metadata and should be available.
-
-Notes
------
-
-After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
-
-**Note:** Mono on Linux by default doesn't trust any SSL certificates so you'll get errors when accessing HTTPS resources. To import Mozilla's list of trusted certificates and fix those errors, you need to run `mozroots --import --sync`.
