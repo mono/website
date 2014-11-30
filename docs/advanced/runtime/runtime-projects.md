@@ -26,7 +26,7 @@ Nosso plano atual é:
 -   Complete the GC in single-threaded mode.
 -   Ativar o novo GC no git.
 -   Depurar/corrigir quaisquer problemas com o GC.
--   Implement a multi-threaded version of the major collector.
+-   Implementar uma versão multi-thread do coletor principal.
 
 Liderança: Paolo
 
@@ -84,56 +84,56 @@ Segurança: Moonlight
 Performance
 -----------
 
-### Frameless Methods on x86
+### Métdos sem ponteiros em x86
 
 Em x86 podemos evitar usar o ponteiro e ganhar um registro extra.
 
 Liderança: Mark Probst
 
-### Generics code improvements
+### Melhorias do código generics
 
-Generics IL is a bit different from regular code and the current JIT doesn't properly handle it.
+A linguagem intermediária do generics é um pouco diferente do código usual e o JIT atual não consegue tratá-lo adequadamente.
 
-Areas where can can improve:
+Áreas onde pode-se melhorar:
 
--   Avoid LDADDR for constrained calls on reference types.
--   Intrinsify and remove boxing for methods on System.Object over primitive types. This is important to make generic collections produce code close to the manually crafted equivalent.
+-   Evitar LDADDR para chamadas restritas sobre tipos de referência.
+-   Intensificar e remover encapsulamento para métodos em System.Object sobre tipos primitivos. Isso é importatnte para fazer as coleções genéricas produzirem código o mais próximo possível do feito manualmente.
 
-Console Ports
+Port para Consoles
 -------------
 
-Work to port and support Mono on the [Mono:Wii](/docs/about-mono/supported-platforms/wii/) and the [Mono:PlayStation3](/docs/about-mono/supported-platforms/playstation3/).
+Trabalhar para portar e dar suporte do Mono no [Mono:Wii](/docs/about-mono/supported-platforms/wii/) e no [Mono:PlayStation3](/docs/about-mono/supported-platforms/playstation3/).
 
-The Wii port is ready; The PlayStation3 port is finished, but requires some work to package and polish the sharp edges.
+O porte para Wii está pronto; O porte para PlayStation3 está terminado, porém requer algum trabalho para empacotar e polir as arestas.
 
-Innovative Features
+Características Inovadoras
 -------------------
 
--   Paolo's Continuation Framework.
+-   Framework de Continuação do Paolo.
 
-### API Changes
+### Mudanças na API
 
-As part of Mono 2.8, we will be breaking the embedding API to clean up many issues that have cropped over the years.
+Como parte do Mono 2.8, As part of Mono 2.8, estaremos quebrando a API embarcada par limpar muitas questões que surgiram ao longo dos anos.
 
-You can read more about them in the [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes") page.
+Você pode ler mais sobre eles na página [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes").
 
-Cross Compilation
+Compilação entre Plataformas
 -----------------
 
-Support for configuring Mono as a cross-compiler. Initially it is OK to mandate that the host and the target have the same endianess and the same word size.
+Suporte para configurar Mono como um compilador multiplataforma.Support for configuring Mono as a cross-compiler. Incialmente está OK para quando a origem e o destino possuem a mesma extremidade e o mesmo tamanho de palavra.
 
-The most important scenario is MacOS X/Intel host compiling for iPhone/ARM target.
+O cenário mais importante é quando a origem é um MacOS/Intel compilando para um destino iPhone/ARM.
 
-Low Priority Projects
+Projetos de Baixa Prioridade
 =====================
 
--   Mono.Simd for NEON (ARM processors) and/or VMX (Cell Processor).
--   C++ bindings without C glue.
+-   Mono.Simd para NEON (processadores ARM) e/ou VMX (processador de celular).
+-   Bindings C++ sem C.
 
-Completed Projects
+Projetos Concluídos
 ==================
 
--   [Linear](/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
--   JIT Regalloc: A new register allocation framework.
--   [SafeHandles](/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
+-   [Linear](/docs/advanced/runtime/docs/linear-ir/): Uma atualização para a representação interna (RI) do JIT.
+-   JIT Regalloc: Um novo framework de alocação de registro.
+-   [SafeHandles](/docs/advanced/safehandles/): Suporte para SafeHandles 2.0.
 
