@@ -5,14 +5,12 @@ navgroup: Brasil
 ---
 
 Curso de C#
-==================
-
-Aulas:
-------
+-----------
+### Aulas:
 
 - [Aula Inaugural](https://www.youtube.com/watch?v=EuAkD7PS0Ao#t=871)
 - [Slides 01 - O Projeto Mono](http://www.slideshare.net/alebinhara/palestra-do-teched-o-projeto-mono-aplicaes-net-para-sistemas-no-windows) 
--  [Slides 02 - Orientação a Objetos Conceitos](http://www.slideshare.net/alebinhara/curso-c-em-mono-orientao-a-objeto-basico)
+- [Slides 02 - Orientação a Objetos Conceitos](http://www.slideshare.net/alebinhara/curso-c-em-mono-orientao-a-objeto-basico)
 
 ---
 
@@ -39,8 +37,7 @@ Aulas:
 
 ---
 
-Esforço de Tradução:
---------------------
+### Esforço de Tradução
 
 Os participantes do curso estão 'pagando' ajudando a traduzir este site.
 
