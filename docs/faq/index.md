@@ -2,6 +2,7 @@
 title: FAQ
 redirect_from:
   - /FAQ/
+  - /about/faq.html
 ---
 
 Esta página fornece uma visão de todas FAQ (Perguntas frequentes) disponíveis.

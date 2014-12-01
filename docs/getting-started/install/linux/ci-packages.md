@@ -18,32 +18,30 @@ For **Red Hat-derived** distributions (any distribution which uses .rpm files), 
 Installation
 ------------
 
-Regardless of your distribution, you will need the Mono Project public Jenkins GPG signing key, which package managers require:
-
-[http://jenkins.mono-project.com/repo/xamarin.gpg](http://jenkins.mono-project.com/repo/xamarin.gpg)
+Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require.
 
 ### Debian, Ubuntu, and derivatives
 
-Add the GPG key **in a root shell** with:
+Add the Mono Project GPG signing key (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-apt-key add xamarin.gpg
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
-Next, add the package repository **in a root shell**:
+Next, add the package repository (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-echo "deb http://jenkins.mono-project.com/repo/debian sid main" > /etc/apt/sources.list.d/mono-jenkins.list
+echo "deb http://jenkins.mono-project.com/repo/debian sid main" | sudo tee /etc/apt/sources.list.d/mono-jenkins.list
 ```
 
 Update your package cache if necessary (i.e. run `apt-get update`).
 
 ### CentOS, Fedora, and derivatives
 
-Add the GPG key **in a root shell** with:
+Add the Mono Project GPG signing key **in a root shell** with:
 
 ``` bash
-rpm --import xamarin.gpg
+rpm --import "https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 ```
 
 Next, add the package repository **in a root shell**:
