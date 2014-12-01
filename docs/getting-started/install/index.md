@@ -1,5 +1,8 @@
 ---
-title: Instalar Mono
+title: Instalar o Mono
+redirect_from:
+  - /Mono_Installation/
+  - /archived/mono_installation/
 ---
 
 - [Mac OS X](/docs/getting-started/install/mac/)
