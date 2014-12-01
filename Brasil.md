@@ -6,6 +6,7 @@ navgroup: Brasil
 
 Curso de C#
 -----------
+
 ### Aulas:
 
 - [Aula Inaugural](https://www.youtube.com/watch?v=EuAkD7PS0Ao#t=871)
@@ -23,7 +24,6 @@ Curso de C#
         - Conceitos Básicos de C#
         - Demonstrações
         - Exercícios
-        
 
 - [Aula Especial 01 - História do Mono]() __Com Rafael 'Monoman' Teixeira__
 - [Link para Pagina do Evento](https://plus.google.com/u/0/hangouts/onair/watch?hid=hoaevent%2Fc30ucaoa0hl5veobo6khcia9irc&hl=en)
