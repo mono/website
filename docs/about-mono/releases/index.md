@@ -1,5 +1,5 @@
 ---
-title: Mono Releases
+title: Versões Liberadas do Mono
 mono3xreleases:
  - {version: 3.10.0, date: '2014-10-04'}
  - {version: 3.8.0, date: '2014-09-04'}
@@ -152,26 +152,26 @@ redirect_from:
   - /OldReleases/
 ---
 
-This page contains a list of all Mono releases. The latest release can be found [here](/download).<br/>
-Mono version numbers follow a specific policy, more [here](/docs/about-mono/versioning/).
+Esta página contém a lista de todas as versões liberadas do Mono. A última versão pode ser encontrada [aqui](/download).<br/>
+A política específica de números de versão do Mono é descrita [aqui](/docs/about-mono/versioning/).
 
 Mono 3.x
 --------
 
 {% for release in page.mono3xreleases %}
-  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date: "%d/%m/%Y" }})* {% endif %}
 {% endfor %}
 
 Mono 2.x
 --------
 
 {% for release in page.mono2xreleases %}
-  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date: "%d/%m/%Y" }})* {% endif %}
 {% endfor %}
 
 Mono 1.x
 --------
 
 {% for release in page.mono1xreleases %}
-  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date: "%d/%m/%Y" }})* {% endif %}
 {% endfor %}
