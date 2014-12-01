@@ -2,7 +2,7 @@
 layout: "docpage"
 title: Esforço de Tradução
 redirect_from:
-  - /Contributing/Translation
+  - /Contributing/Translation/
 navgroup: Brasil
 ---
 
