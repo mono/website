@@ -42,4 +42,4 @@ Curso de C#
 Esforço de Tradução
 ---
 
-Os participantes do curso estão 'pagando' ajudando a traduzir este site. Para saber mais veja o [processo](/Contributing/Translation).
+Os participantes do curso estão 'pagando' ajudando a traduzir este site. Para saber mais veja o [processo](/community/contributing/translation/).
