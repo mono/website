@@ -2,6 +2,7 @@
 title: FAQ
 redirect_from:
   - /FAQ/
+  - /about/faq.html
 ---
 
 This site provides an overview of all available FAQ's.

@@ -2,6 +2,7 @@
 title: GAPI
 redirect_from:
   - /GAPI/
+  - /_GAPI/
 ---
 
 GAPI Overview
