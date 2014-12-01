@@ -6,7 +6,7 @@ redirect_from:
 
 Projetos correntes para o ambiente de execução do Mono
 
-Trilha de projetos para a equipe VM.
+Acompanhamento dos projetos da equipe da VM.
 
 Projetos em Andamento
 ================
@@ -19,7 +19,7 @@ O [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/) é uma nova tecnol
 Compactação do GC
 -------------
 
-Trabalha com respeito ao [GC Geracional](/docs/advanced/garbage-collector/sgen/).
+Trabalho no [Coletor de Lixo Geracional](/docs/advanced/garbage-collector/sgen/).
 
 Nosso plano atual é:
 
@@ -28,21 +28,21 @@ Nosso plano atual é:
 -   Depurar/corrigir quaisquer problemas com o GC.
 -   Implementar uma versão multi-thread do coletor principal.
 
-Liderança: Paolo
+Líder: Paolo
 
 LLVM como um Backend de Geração de Código
 ---------------------------------
 
 Utilizar o código LLVM otimizado como um backend para o JIT do Mono. Para mais informação veja o [Mono LLVM](/docs/advanced/mono-llvm/) page.
 
-Liderança: Zoltan
+Líder: Zoltan
 
-Correções de Reflexão
+Correções na Introspecção
 ----------------
 
 Suporte para tipos definidos pelo usuário (utilizado pelo PostSharp e outras ferramentas similares).
 
-Esta é uma tarefa intensiva que consome muito tempo, pois requer testar todos os pontos de entrada na corlib que levam os tipos System.Type ou System.Reflection.\*.
+Esta é uma tarefa que consome muito tempo, pois requer testar todos os pontos de entrada na corlib que aceitam os tipos System.Type ou System.Reflection.\*.
 
 Continuações
 -------------
@@ -64,7 +64,7 @@ Esta é uma série de pequenas tarefas:
 
 -   Revisar todo o código no ambiente de execução que faz suposições sobre os objetos SRE, isso deve levar a uma série de simplicação e correção de erros de longa data.
 
-Liderança:
+Líder: ?
 
 Correções do Ambiente de Execução
 -------------
@@ -84,22 +84,22 @@ Segurança: Moonlight
 Performance
 -----------
 
-### Métdos sem ponteiros em x86
+### Métodos sem "quadro de pilha" em x86
 
-Em x86 podemos evitar usar o ponteiro e ganhar um registro extra.
+Em x86 podemos evitar o uso do ponteiro para quadro de pilha (FP - Frame Pointer) e ganhar um registro extra.
 
-Liderança: Mark Probst
+Líder: Mark Probst
 
-### Melhorias do código generics
+### Melhorias no código genérico
 
-A linguagem intermediária do generics é um pouco diferente do código usual e o JIT atual não consegue tratá-lo adequadamente.
+O código IL do código genérico é um pouco diferente do código usual e o JIT atual não consegue tratá-lo adequadamente.
 
 Áreas onde pode-se melhorar:
 
 -   Evitar LDADDR para chamadas restritas sobre tipos de referência.
--   Intensificar e remover encapsulamento para métodos em System.Object sobre tipos primitivos. Isso é importatnte para fazer as coleções genéricas produzirem código o mais próximo possível do feito manualmente.
+-   Gerar código intrínsico (otimizado) e remover o "envelopamento" (boxing) de métodos em System.Object sobre tipos primitivos. Isso é importante para fazer as coleções genéricas produzirem código muito próximo do escrito manualmente.
 
-Port para Consoles
+Porte para Consoles de Jogos
 -------------
 
 Trabalhar para portar e dar suporte do Mono no [Mono:Wii](/docs/about-mono/supported-platforms/wii/) e no [Mono:PlayStation3](/docs/about-mono/supported-platforms/playstation3/).
@@ -113,14 +113,14 @@ Características Inovadoras
 
 ### Mudanças na API
 
-Como parte do Mono 2.8, As part of Mono 2.8, estaremos quebrando a API embarcada par limpar muitas questões que surgiram ao longo dos anos.
+Como parte do Mono 2.8, estaremos quebrando a API embarcada para limpar muitos problemas que surgiram ao longo dos anos.
 
 Você pode ler mais sobre eles na página [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes").
 
 Compilação entre Plataformas
 -----------------
 
-Suporte para configurar Mono como um compilador multiplataforma.Support for configuring Mono as a cross-compiler. Incialmente está OK para quando a origem e o destino possuem a mesma extremidade e o mesmo tamanho de palavra.
+Suporte para configurar o Mono para compilação cruzada. Inicialmente está OK para quando a origem e o destino possuem a mesma ordenação de bits (endianess) e o mesmo tamanho de 'palavra' (32/64 bits).
 
 O cenário mais importante é quando a origem é um MacOS/Intel compilando para um destino iPhone/ARM.
 
@@ -128,12 +128,12 @@ Projetos de Baixa Prioridade
 =====================
 
 -   Mono.Simd para NEON (processadores ARM) e/ou VMX (processador de celular).
--   Bindings C++ sem C.
+-   Ligação ao código C++ sem necessitar código intermediário em C.
 
 Projetos Concluídos
 ==================
 
 -   [Linear](/docs/advanced/runtime/docs/linear-ir/): Uma atualização para a representação interna (RI) do JIT.
--   JIT Regalloc: Um novo framework de alocação de registro.
+-   JIT Regalloc: Um novo framework de alocação de registros.
 -   [SafeHandles](/docs/advanced/safehandles/): Suporte para SafeHandles 2.0.
 
