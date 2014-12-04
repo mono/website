@@ -11,7 +11,7 @@ Aqui está um exemplo de um aplicativo de navegação de todos os tipos contidos
 
 ``` csharp
 //Creates an AssemblyDefinition from the "MyLibrary.dll" assembly
-AssemblyDefinition myLibrary = AssemblyFactory.GetAssembly ("MyLibrary.dll");
+AssemblyDefinition myLibrary = AssemblyDefinition.ReadAssembly ("MyLibrary.dll");
  
 //Gets all types which are declared in the Main Module of "MyLibrary.dll"
 foreach (TypeDefinition type in myLibrary.MainModule.Types) {
@@ -40,7 +40,7 @@ Aqui está um diagrama de classes simplificado das principais entidades que o Ce
 
 [![CecilMainCD.png](/archived/images/4/47/CecilMainCD.png)](/archived/images/4/47/CecilMainCD.png)
 
-Um AssemblyDefinition é criado por um AssemblyFactory que trabalha com um arquivo de montagem. Cada um deles contém uma coleção ModuleDefinitions. 
+Um AssemblyDefinition é criado pelo método estático ReadAssembly que trabalha com um arquivo de montagem. Cada um deles contém uma coleção de ModuleDefinitions. 
 Em geral, você tem que trabalhar com um ModuleDefinition principal (você pode obtê-lo usando a propriedade MainModule).
 
 A ModuleDefinition contém TypeDefinitions. Cada um deles contém coleções de:
@@ -81,7 +81,7 @@ Em seguida, você tem que ter todos os métodos de cada tipo do conjunto MyLibra
 string pathBin = "../../../MyLibrary/bin/debug/MyLibrary.dll";
  
 //Gets the AssemblyDefinition of "MyLibrary"
-AssemblyDefinition assembly = AssemblyFactory.GetAssembly(pathBin);
+AssemblyDefinition assembly = AssemblyDefinition.ReadAssembly(pathBin);
  
 //Gets all types of the MainModule of the assembly
 foreach(TypeDefinition type in assembly.MainModule.Types)
@@ -129,7 +129,7 @@ A última coisa a fazer é salvar o conjunto que contém os tipos de modificaç�
 
 ``` csharp
 //Save the modified "MyLibrary" assembly
-AssemblyFactory.SaveAssembly(assembly, pathBin);
+assembly.Write(pathBin);
 ```
 
 Depois de executar este código, você pode usar o assembly em um novo projeto Console. Você tem que adicionar uma referência ao assembly.
