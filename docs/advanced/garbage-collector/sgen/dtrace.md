@@ -4,45 +4,45 @@ redirect_from:
   - /SGen_DTrace/
 ---
 
-On MacOS X Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) is instrumented with several [DTrace](/docs/debug+profile/profile/dtrace/) probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
+O [Gerenciador GC](/docs/advanced/garbage-collector/sgen/) do Mono no MacOS X  é instrumentado com vários testes de [DTrace](/docs/debug+profile/profile/dtrace/) que dão uma visão sobre o processo de coleta de lixo e pode ajudar a encontrar as causas de problemas de desempenho.
 
-The Probes
+Os Testes
 ==========
 
-The DTrace provider name for all these probes is `monoPID`, where `PID` is the respective process's PID.
+O nome do provider do DTrace para todos os testes é `monoPID`, onde` PID` é PID do respectivo processo.
 
 ``` c
 gc-begin (int generation)
 gc-end (int generation)
 ```
 
-These probes fire whenever a garbage collection starts or finishes. The value for generation can be `0` for the nursery or `1` for the old generation.
+Os testes são acionados sempre que uma (garbage collector)coleta de lixo começa ou termina. O valor para o gerenciador pode ser `0` para o inicio ou` 1` para o gerenciador antigo.
 
 ``` c
 gc-locked ()
 gc-unlocked ()
 ```
 
-Fire whenever the global GC lock is taken or released. This happens around garbage collections and in other circumstances, but only during collections should the lock be held for an extended period of time.
+É acionado sempre que o bloqueio global do GC é tomado ou liberado. Isso acontece em outras circunstâncias mas geralmente em (garbage collector)coletas de lixo, mas apenas durante as coletas os bloqueios devem ser mantidos por um período de tempo prolongado.
 
 ``` c
 gc-heap-alloc (uintptr_t addr, uintptr_t len)
 gc-heap-free (uintptr_t addr, uintptr_t len)
 ```
 
-These fire when the garbage collector allocates or frees a section of memory from the operating system for the purpose of storing managed objects. Memory allocated for metadata or internal garbage collector data is not reported via these probes.
+Estes acionam quando o (garbage collector)coletor de lixo aloca ou libera uma seção de memória do sistema operacional para fins de armazenamento de objetos gerenciados. A memória alocada para metadados ou dados (garbage collector)coletor de lixo interno não é relatada através destes testes.
 
 ``` c
 gc-nursery-tlab-alloc (uintptr_t addr, uintptr_t len)
 ```
 
-This probe fires when a thread local allocation buffer (TLAB) is allocated to a thread. At the point when the probe fires the TLAB is empty, i.e. it contains no objects.
+Este teste é acionado quando um buffer de alocação local de thread (TLAB) é atribuída a uma thread. No momento em que o teste dispara o TLAB está vazio, ou seja, não contém objetos.
 
 ``` c
 gc-nursery-obj-alloc (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Fires whenever an object is allocated in the nursery from unmanaged code. Most of the time objects in TLABs are allocated in the managed allocator which is not instrumented due to performance considerations. To disable the managed allocator use the `MONO_GC_DEBUG` environment variable option `no-managed-allocator`. That will make all nursery allocations trigger the probe.
+É acionado sempre que um objeto é alocados no inicio do código não gerenciado. A maior parte do tempo os objetos TLABs são alocados no gereciador de locação que não é instrumentado devido a considerações de desempenho. Para desabilitar o gerenciador de locação usar nas configuraçoes das variáveis de ambiente `MONO_GC_DEBUG` a opção `no-managed-allocator`. Isso fará com que todas as alocações acionem os testes.
 
 ``` c
 gc-major-obj-alloc-large (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
@@ -51,29 +51,29 @@ gc-major-obj-alloc-degraded (uintptr_t addr, uintptr_t size, char *ns_name, char
 gc-major-obj-alloc-mature (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Fires when objects are allocated directly from the old generation. This happens in the following cases.
+Acionados quando objetos são alocados diretamente de gerações anteriores. Isso acontece nos seguintes casos.
 
--   Large objects, meaning objects larger than 8000 bytes.
+-   Grandes objetos, significando objetos maiores que 8000 bytes.
 
--   Objects that are specifically requested to be allocated pinned.
+-   Objectos que são especificamente solicitados a atribuições fixas.
 
--   Degraded allocation. If the nursery is pinned to such an extent that it doesn't permit object allocation, SGen switches into degraded mode, allocating all objects directly from the major heap. If nontrivial amounts of degraded allocations occur, increase the nursery size.
+-   Atribuições degradadas. Se o gerenciaddor é fixado de tal forma que ela não permite alocação de objeto, o SGen muda para o modo degradado, alocando todos os objetos diretamente do acervo principal. Se ocorrer quantidades não triviais de alocações degradadas, aumentar o tamanho do gerenciador.
 
--   Objects that are specifically requested to be allocated in the old
+-   Objectos que são especificamente solicitados a atribuir antigas
 
-generation.
+gerações.
 
 ``` c
 gc-obj-moved (uintptr_t dest, uintptr_t src, int dest_gen, int src_gen, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Whenever an object is moved this probe fires. Moves can occur within and between generations, specifically:
+Sempre que um objeto é movido este teste é acionado. Alterações podem ocorrer dentro e entre gerações, especificamente:
 
--   Within the nursery, if the aging semi-spaces are used.
+-   Dentro do gerenciador, se os semi-espaços antigos são utilizados.
 
--   From the nursery to the major heap, for objects surviving the nursery and therefore being promoted.
+-   A partir do gerenciador para acervo principal, para objetos sobreviventes do gerenciador e, portanto, a ser promovido.
 
--   Within the major heap, in case of defragmentation.
+-   Dentro do acervo principal, em caso de desfragmentação.
 
 <!-- -->
 
@@ -82,25 +82,25 @@ gc-nursery-swept (uintptr_t addr, uintptr_t len)
 gc-major-swept (uintptr_t addr, uintptr_t len)
 ```
 
-These probes fire when parts of the nursery or major heap are swept clean of objects. Note that the swept regions can encompass more than one (dead) object.
+Estes testes será disparado quando partes do gerenciador ou acervo principl for elimidada de objetos. Note-se que as regiões eliminadas podem abranger mais de um objeto(morto).
 
 ``` c
 gc-obj-pinned (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name, int generation)
 ```
 
-Fires whenever an object is pinned.
+É acionado sempre que um objeto é fixado.
 
-Example scripts
+Scripts de exemplo
 ===============
 
-Garbage collection times
+Tempos de coleta de lixo
 ------------------------
 
-How long do garbage collections take for a specific workload?
+Quanto tempo a coletas de lixo levar para uma carga específica de trabalho?
 
     dtrace -q -c "mono-sgen foo.exe" -n 'mono$target:::gc-begin { self->ts = timestamp; } mono$target:::gc-end { @[arg0] = quantize ((timestamp - self->ts)/1000); }'
 
-Example output:
+Exemplo saída:
 
          1
     value  ------------- Distribution ------------- count
@@ -134,7 +134,7 @@ Example output:
     16384 |                                         1
     32768 |                                         0
 
-The graph for `0` shows collection times for the nursery, the graph for `1` shows times for the major collections. We can see here that the majority of nursery collections took about half a millisecond, with 4 outliers taking around 10 ms. There were 3 major collections, two of which took around 16 ms and the third one barely took any time at all.
+O gráfico `0` mostra od tempos de coleta para o gerenciador, o gráfico` 1` mostra as quantidades de grandes coleções. We can see here that the majority of nursery collections took about half a millisecond, with 4 outliers taking around 10 ms. There were 3 major collections, two of which took around 16 ms and the third one barely took any time at all.
 
 GC lock
 -------
