@@ -51,7 +51,7 @@ sistema de arquivos.
 * A classe `Registry` que provê uma abstração que mapeia para as APIs do Windows 
 ou uma implementação baseada em arquivos no Unix.
 
-Classes do Mono com Integração Extreita com o Ambiente de Execução
+Classes do Mono com Integração Estreita com o Ambiente de Execução
 -------------------------------------------------------------------
 
 Algumas APIs do framework .NET tem extreita dependência com a implementação do 
@@ -85,7 +85,7 @@ As Classes do Mono são Amigáveis ao Linker
 ------------------------------------------
 
 Algumas das bibliotecas de classe do Mono foram projetadas para manter o seu 
-resultado amigável ao linker, um peadço importante da funcionalidade requerida 
+resultado amigável ao linker, um pedaço importante da funcionalidade requerida 
 pelas nossas implementações para Android e iOS.
 
 Isto é feito substituindo algumas associações 'fracas', manifestas só em tempo de 
@@ -163,7 +163,7 @@ filtrar, por serem completamente inúteis no Mono.
 Definiçoes de Tempo de Compilação
 --------------------
 
-O código fonte da Microsoft contem muitos tipos diferentes de definições de tempo de compilação 
+O código fonte da Microsoft contém muitos tipos diferentes de definições de tempo de compilação 
 (defines) que são usados para compilação condicional.  Sempre que importarmos algum código da 
 Microsoft, nós temos que fazer uma auditoria e determinar que funcionalidades são necessárias.
 
@@ -175,7 +175,7 @@ liberado, porque este contem a API que é mais próxima da do Mono.
 
 Nós [estaremos acompanhando a atribuição de tarefas](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) no Trello.
 
-Mais tarden, quando implementarmos o Mono Core, nós inversamente contribuiremos bits específicos a VM/SO para o .NET Core.
+Mais tarde, quando implementarmos o Mono Core, nós inversamente contribuiremos bits específicos a VM/SO para o .NET Core.
 
 Nós temos que bolar um plano de integração que maximize os benefícios ao Mono e nossos usuários com
 o mínimo de esforço de engenharia. Embora em um mundo ideal nós pudessemos trazer até 80-90% do código,
@@ -205,7 +205,7 @@ Candidatos imediatos para isto incluem:
 
 Candidatos de médio prazo incluem:
 
-* System.Configuration - possível, mes requer cuidadosa verificação
+* System.Configuration - possível, mas requer cuidadosa verificação
 * System.Linq.Data
 * Remoting
 
@@ -241,7 +241,7 @@ mas que pode ter bugs e erros nas 'bordas'.
 Porte e Regressões
 -----------------------
 
-Sempre que trouxermos código .NET code para substituir código do Mono, pode haver casos
+Sempre que trouxermos código .NET para substituir código do Mono, pode haver casos
 em que será introduzida uma regressão de algum tipo: funcionalidade, performance ou trazemos
 um comportamento que é incompatível com o uso idiomático que os usuários do Mono estão
 acostumados a muito tempo.
@@ -269,7 +269,7 @@ nosso processo de compilação para contribuirem.
 Lidando com System.Configuration
 ---------------------------------
 
-Em geral, o processo a seguir ao protar código que involve `System.Configuration`
+Em geral, o processo a seguir ao portar código que envolve o `System.Configuration`
 que nós queremos que funcione no perfil completo e no perfil Mobile é aproximadamente: 
 
 * Comentar fora a classe pública derivada de `ConfigurationSection`.
