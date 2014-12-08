@@ -7,8 +7,6 @@ redirect_from:
   - /docs/getting-started/install/linux/debian/
 ---
 
-The Linux community has made Mono available for various distributions, check the [download page](/download/) for a list of packages.
-
 Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require.
 
 Debian, Ubuntu, and derivatives
@@ -26,9 +24,9 @@ Next, add the package repository (if you don't use sudo, be sure to switch to ro
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [usage](#usage) section.
+Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
-Note: While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
+*Note:* While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
 
 #### mod_mono (Ubuntu 13.10 and later, Debian 8.0 and later)
 
@@ -40,7 +38,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat ma
 
 #### Older Ubuntu releases
 
-To enable installation on older Ubuntu releases such as Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above (if you don't use sudo, be sure to switch to root):
+To enable installation on older Ubuntu releases such as Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, **in addition** to the generic Debian/Ubuntu repository (if you don't use sudo, be sure to switch to root):
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list

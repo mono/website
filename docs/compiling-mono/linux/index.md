@@ -65,12 +65,11 @@ If you are on a Debian system (Debian/Ubuntu) and you just want to install Mono 
 #!/bin/bash
 
 PREFIX=$@
-
 if [ -z $PREFIX ]; then
-  PREFIX="/opt/mono/"
+  PREFIX="/usr/local"
 fi
 
-# Ensure you have write permissions to /opt/mono/
+# Ensure you have write permissions to PREFIX
 sudo mkdir $PREFIX
 sudo chown -R `whoami` $PREFIX
 
@@ -85,6 +84,6 @@ make
 make install
 ```
 
-This will by default install mono in /opt/mono/, but you can specify in the first argument of the script the directory of installation. ~/.mono/ might be a nice target as well.
+This will by default install mono in `/usr/local`, but you can specify in the first argument of the script the directory of installation. `/opt/mono` or `~/.mono/` might be a nice target as well.
 
 After installing it successfully, read the notes on [Parallel Mono environments](/docs/compiling-mono/parallel-mono-environments/) on how to use the installed mono instance.
