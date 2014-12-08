@@ -10,7 +10,7 @@ redirect_from:
 Introduction
 ============
 
-The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principal, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
+The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principle, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
 
 ``` csharp
  [DllImport ("libc.so")]
@@ -145,7 +145,7 @@ Invoking Unmanaged Code
 
 As far as managed code is concerned, unmanaged code is invoked merely by invoking a method with an associated **DllImport** attribute. The CLI runtime must do more work to actually invoke the unmanaged code.
 
-In principal, this is a straightforward process. The library specified in the **DllImport** attribute is loaded, as described above. Then, the specified function is looked up (via [GetProcAddress()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/getprocaddress.asp) or **dlsym**(3)). Finally, the function is invoked.
+In principle, this is a straightforward process. The library specified in the **DllImport** attribute is loaded, as described above. Then, the specified function is looked up (via [GetProcAddress()](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/getprocaddress.asp) or **dlsym**(3)). Finally, the function is invoked.
 
 But what string is used for the function lookup (in `GetProcAddress()` or **dlopen**(3))? By default, the name of the managed code method is used, which is why [getpid() in the above example](#introduction) invokes **getpid**(2) from the C library.
 
@@ -476,7 +476,7 @@ Class and Structure Marshaling
 
 The conceptual steps that occur to marshal classes and structures is detailed above, in the [Memory Boundaries](#memory-boundaries) section.
 
-The principal difference between class and structure marshaling is which, if any, of conceptual steps actually occurs.
+The principle difference between class and structure marshaling is which, if any, of conceptual steps actually occurs.
 
 ### Class Marshaling
 
