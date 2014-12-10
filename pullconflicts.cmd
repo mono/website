@@ -6,3 +6,5 @@ git pull https://github.com/mono/website.git gh-pages
 git status | grep "both modified" | cut -c19- > .conflicts
 cat .conflicts
 FOR /F %%p IN ('cat .conflicts') DO "C:\Program Files (x86)\Notepad++\notepad++.exe" %%p
+git add .
+git commit -m "Fix conflict"
