@@ -476,7 +476,7 @@ Class and Structure Marshaling
 
 The conceptual steps that occur to marshal classes and structures is detailed above, in the [Memory Boundaries](#memory-boundaries) section.
 
-The main difference between class and structure marshaling is which, if any, of the conceptual steps actually occurs.
+The main difference between class and structure marshaling is which ones, if any, of the conceptual steps actually occur.
 
 ### Class Marshaling
 
