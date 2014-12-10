@@ -4,45 +4,45 @@ redirect_from:
   - /SGen_DTrace/
 ---
 
-On MacOS X Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) is instrumented with several [DTrace](/docs/debug+profile/profile/dtrace/) probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
+O [Coletor Geracional](/docs/advanced/garbage-collector/sgen/) do Mono no MacOS X  é instrumentado com pontas de prova de [DTrace](/docs/debug+profile/profile/dtrace/) que dão uma visão sobre o processo de coleta de lixo, e que podem ajudar a encontrar as causas de problemas de desempenho.
 
-The Probes
+Os Testes
 ==========
 
-The DTrace provider name for all these probes is `monoPID`, where `PID` is the respective process's PID.
+O nome do provedor do DTrace para todos os testes é `monoPID`, onde` PID` é PID do respectivo processo.
 
 ``` c
 gc-begin (int generation)
 gc-end (int generation)
 ```
 
-These probes fire whenever a garbage collection starts or finishes. The value for generation can be `0` for the nursery or `1` for the old generation.
+As pontas de prova acionados sempre que uma coleta de lixo começa ou termina. O valor da nova geração pode ser `0` para o berçário ou `1` para a geração anterior.
 
 ``` c
 gc-locked ()
 gc-unlocked ()
 ```
 
-Fire whenever the global GC lock is taken or released. This happens around garbage collections and in other circumstances, but only during collections should the lock be held for an extended period of time.
+Essas pontas são acionadas quando a trava global do coletor é obtido ou liberado. Isso acontece nas 'bordas'da coleta de lixo e em outras circunstâncias, mas apenas durante as coletas a travas é mantida por um período de tempo prolongado.
 
 ``` c
 gc-heap-alloc (uintptr_t addr, uintptr_t len)
 gc-heap-free (uintptr_t addr, uintptr_t len)
 ```
 
-These fire when the garbage collector allocates or frees a section of memory from the operating system for the purpose of storing managed objects. Memory allocated for metadata or internal garbage collector data is not reported via these probes.
+Estas pontas são disparadas quando o coletor de lixo aloca ou libera uma seção de memória do sistema operacional para fins de armazenamento de objetos gerenciados. A memória alocada para metadados ou dados do coletor de lixo interno não é relatada através destas pontas de prova.
 
 ``` c
 gc-nursery-tlab-alloc (uintptr_t addr, uintptr_t len)
 ```
 
-This probe fires when a thread local allocation buffer (TLAB) is allocated to a thread. At the point when the probe fires the TLAB is empty, i.e. it contains no objects.
+Esta ponta de prova é disparada quando um buffer de alocação local da linha de excução (TLAB - thread local allocation buffer) é alocado. No momento em que a ponta é disparada, o TLAB está vazio, ou seja, não contém objetos.
 
 ``` c
 gc-nursery-obj-alloc (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Fires whenever an object is allocated in the nursery from unmanaged code. Most of the time objects in TLABs are allocated in the managed allocator which is not instrumented due to performance considerations. To disable the managed allocator use the `MONO_GC_DEBUG` environment variable option `no-managed-allocator`. That will make all nursery allocations trigger the probe.
+É disparado sempre que um objeto é alocados no berçário a partir de código não-gerenciado. A maior parte ds objetos TLABs são alocados no alocador gereciado que não é instrumentado, devido a considerações de desempenho. Para desabilitar o alocador gerenciado ajuste a variáveis de ambiente `MONO_GC_DEBUG` colocando a opção `no-managed-allocator`. Isso fará com que todas as alocações no berçário disparem essa ponta de prova.
 
 ``` c
 gc-major-obj-alloc-large (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
@@ -51,29 +51,27 @@ gc-major-obj-alloc-degraded (uintptr_t addr, uintptr_t size, char *ns_name, char
 gc-major-obj-alloc-mature (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Fires when objects are allocated directly from the old generation. This happens in the following cases.
+Acionados quando objetos são alocados diretamente de gerações anteriores. Isso acontece nos seguintes casos.
 
--   Large objects, meaning objects larger than 8000 bytes.
+-   Objetos grandes, significando objetos maiores que 8000 bytes.
 
--   Objects that are specifically requested to be allocated pinned.
+-   Objectos especificamente solicitados para serem alocados ja 'imobilizados'.
 
--   Degraded allocation. If the nursery is pinned to such an extent that it doesn't permit object allocation, SGen switches into degraded mode, allocating all objects directly from the major heap. If nontrivial amounts of degraded allocations occur, increase the nursery size.
+-   Atribuição degradada. Se o berçário tem um volume enorme de objeto 'imobilizados' que nao permitem a alocação de novos objetos, o coletor geracional(SGen) chaveia para o modo degradado, alocando todos os objetos diretamente do acervo principal. Se quantidades não triviais de alocações degradadas occorem aumente o tamnho do berçário.
 
--   Objects that are specifically requested to be allocated in the old
-
-generation.
+-   Objectos que são especificamente solicitados para serem alocados na geração antiga(e vão demorar mais a serem coletados).
 
 ``` c
 gc-obj-moved (uintptr_t dest, uintptr_t src, int dest_gen, int src_gen, uintptr_t size, char *ns_name, char *class_name)
 ```
 
-Whenever an object is moved this probe fires. Moves can occur within and between generations, specifically:
+Sempre que um objeto é movido esta ponta de prova é disparada. Movimentações podem ocorrer dentro e entre gerações, especificamente:
 
--   Within the nursery, if the aging semi-spaces are used.
+-   Dentro do berçário, se os semi-espaços antigos são utilizados.
 
--   From the nursery to the major heap, for objects surviving the nursery and therefore being promoted.
+-   Do berçário para acervo principal, para objetos  que sobreviveram no berçário e que portanto, estão sendo promovidos para uma geração mais antiga.
 
--   Within the major heap, in case of defragmentation.
+-   Dentro do acervo principal, em caso de desfragmentação.
 
 <!-- -->
 
@@ -82,25 +80,25 @@ gc-nursery-swept (uintptr_t addr, uintptr_t len)
 gc-major-swept (uintptr_t addr, uintptr_t len)
 ```
 
-These probes fire when parts of the nursery or major heap are swept clean of objects. Note that the swept regions can encompass more than one (dead) object.
+Estas pontas seram disparados quando partes do berçário ou acervo principal tiverem seus objetos varridos. Note-se que as regiões varridas podem abranger mais de um objeto morto.
 
 ``` c
 gc-obj-pinned (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name, int generation)
 ```
 
-Fires whenever an object is pinned.
+É acionado sempre que um objeto é mobilizado.
 
-Example scripts
+Scripts de exemplo
 ===============
 
-Garbage collection times
+Tempos das coletas de lixo
 ------------------------
 
-How long do garbage collections take for a specific workload?
+Quanto tempo a coleta de lixo leva para uma carga específica de trabalho?
 
     dtrace -q -c "mono-sgen foo.exe" -n 'mono$target:::gc-begin { self->ts = timestamp; } mono$target:::gc-end { @[arg0] = quantize ((timestamp - self->ts)/1000); }'
 
-Example output:
+Exemplo saída:
 
          1
     value  ------------- Distribution ------------- count
@@ -134,16 +132,16 @@ Example output:
     16384 |                                         1
     32768 |                                         0
 
-The graph for `0` shows collection times for the nursery, the graph for `1` shows times for the major collections. We can see here that the majority of nursery collections took about half a millisecond, with 4 outliers taking around 10 ms. There were 3 major collections, two of which took around 16 ms and the third one barely took any time at all.
+O gráfico `0` mostra os tempos de coleta para o berçário, o gráfico `1` mostra as quantidades de grandes limpezas. Podemos ver aqui que a maioria das coleções do berçário levaram cerca de metade de um milésimo de segundo, com 4 casos anômalos, tendo cerca de 10 ms. Havia três grandes limpezas, duas das quais tiveram em torno de 16 ms e uma terceira quase não tomou tempo algum.
 
-GC lock
+Trava de Coletor de Lixo
 -------
 
-Not counting garbage collections, how often and for how long is the GC lock held?
+Sem contar as coletas de lixo, quantas vezes e por quanto tempo o coletor manteve a trava ativa?
 
     dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono*:::gc-locked { self->ts = timestamp; } mono*:::gc-begin { @ = quantize ((timestamp - self->ts)/1000); } mono*:::gc-end { self->ts = timestamp; } mono*:::gc-unlocked { @ = quantize ((timestamp - self->ts)/1000); }'
 
-Output:
+Saída:
 
     value  ------------- Distribution ------------- count
         0 |                                         0
@@ -160,16 +158,16 @@ Output:
      1024 |                                         1
      2048 |                                         0
 
-SGen takes the lock quite often, but apart from one outlier at about 1 millisecond, it's released almost immediately. Further analysis (not presented here) shows that the outlier is a result of thread-pool initialization during startup, when a few objects are allocated pinned, requiring allocating some memory from the operating system.
+O SGen lida com travamentos muito frequentemente, mas além de um caso isolado com cerca de 1 milissegundo, a trava é liberada quase que imediatamente. Uma análise mais aprofundada (não apresentado aqui) mostra que o caso espúrio é resultado da construção da reserva de linha de execuções durante a inicialização, quando alguns objetos são alocados imobilizados, exigindo alocar parte da memória do sistema operacional.
 
-Objects pinned in the nursery
+Objetos imobilizados no berçário.
 -----------------------------
 
-How many objects of which types are pinned during nursery collections?
+Quantos objetos e de quais tipos são imobilizados durante as coletas no berçário?
 
     dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0/ { @[strjoin(copyinstr(arg2),strjoin(".",copyinstr(arg3)))] = count (); }' | tail -5
 
-Output:
+Saída:
 
     Microsoft.Scripting.Actions.DynamicSiteTarget`3                  863
     IronPython.Runtime.Calls.CallTarget1                             864
@@ -177,9 +175,9 @@ Output:
     Microsoft.Scripting.Actions.CallSite`1                          1350
     System.String[]                                                 1440
 
-Here we see the pin counts for the 5 most pinned classes during nursery collections. Combining all nursery collections, for example, 1440 string arrays were pinned.
+Aqui vemos a contagem de imobilizaçoes para as 5 classes mais imobilizadas durante as coletas no berçário. Combinando todas as varrições no berçário, por exemplo, 1.440 matrizes de strings estavam imobilizadas.
 
-What if we'd like to know how many bytes of memory are pinned in the nursery during each collection?
+E se nós quisessemos saber quantos bytes de memória estão imobilizados no berçário durante cada coleta?
 
     dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-begin /arg0==0/ { bytes=0; } mono$target:::gc-obj-pinned /arg4==0/ { bytes += arg1; } mono$target:::gc-end /arg0==0/ { @ = quantize(bytes); }'
 
@@ -194,11 +192,11 @@ What if we'd like to know how many bytes of memory are pinned in the nursery dur
      4096 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  95
      8192 |                                         0
 
-This looks a bit suspicious. We had about 100 nursery collections, so according to the object counts above there were on average 13 object arrays and 14 string arrays pinned per nursery collection, in addition to lots of other objects. All of those supposedly amount to only about 4 kilobytes of memory. Are we counting something wrong or are these very short arrays? Let's see:
+Isso parece um pouco suspeito. Tivemos cerca de 100 coletas no berçário, portanto de acordo com a contagem de objetos acima, houve uma média de 13 matrizes de objetos e 14 matrizes de strings fixas por coleção no berçário, além de muitos outros objetos. tudo isso equivaleria a apenas cerca de 4 kilobytes de memória. Estamos contando algo errado ou são essas matrizes que são muito curtas? Vamos ver:
 
     dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0/ { @[strjoin(copyinstr(arg2),strjoin(".",copyinstr(arg3)))] = quantize (arg1); }'
 
-These are the parts of the output giving the counts for the arrays we're interested in:
+Estas são as partes da saída dando as contagens para as matrizes que nos interessam:
 
     System.String[]
              value  ------------- Distribution ------------- count
@@ -214,11 +212,11 @@ These are the parts of the output giving the counts for the arrays we're interes
                 32 |@@@@@@@@@@@@@                            409
                 64 |                                         0
 
-Apparently those arrays really are very short. But maybe the probe is lying to us about the object size? If we know about Mono's internal object layout we can read out the array length directly from the heap:
+Aparentemente, essas matrizes são realmente muito curtas. Mas será que a ponta de prova está mentindo para nós sobre o tamanho do objeto? Se nós sabemos sobre o layout interno do objeto no Mono podemos ler o comprimento de matrizes diretamente da memária:
 
     dtrace -q -c "mono-sgen ipy.exe pystone.py 500000" -n 'mono$target:::gc-obj-pinned /arg4==0 && copyinstr(arg3)=="Object[]"/ { this->l = *(int*)copyin(arg0+12,4); @[arg1] = lquantize(this->l, 0, 8); }'
 
-On 32-bit Mono the length of an array is at offset 12, so we read 4 bytes from there and cast it to an `int`. We get a few graphs like these:
+No Mono em 32-bit o comprimento de uma matriz é no deslocamento 12, assim podemos ler 4 bytes a partir dessa posição e converte-los para um `int`. Podemos então obter gráficos como estes:
 
         16
     value  ------------- Distribution ------------- count
@@ -238,7 +236,7 @@ On 32-bit Mono the length of an array is at offset 12, so we read 4 bytes from t
         1 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 481
         2 |                                         0
 
-Each of them gives us the distribution of the array lengths for array objects of specific sizes. If everything is correct then for each array object size there must only be one array length, which is exactly what we get. For example, all 481 array objects of size 20 bytes have a length of one.
+Cada um deles nos dá a distribuição dos comprimentos de matriz para matriz de objectos de tamanhos específicos. Se tudo estiver certo, em seguida, para cada tamanho de objeto de matriz deve haver apenas um comprimento de matriz, que é exatamente o que temos. Por exemplo, todos os objectos da matriz 481 de tamanho 20 bytes têm um comprimento igual a um.
 
-In fact, the numbers show that the sizes we get are exactly what we should expect given Mono's object layout on 32-bits: A reference array with a given length has a size of 16+4n bytes.
+De fato, os números mostram que os tamanhos que recebemos são exatamente o que devemos esperar dado o layout de objetos no Mono em 32-bits: Matriz para tipos por referência com um determinado comprimento tem um tamanho de 16+4n bytes.
 
