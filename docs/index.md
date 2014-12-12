@@ -15,7 +15,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
-
 <dl class="accordion" data-accordion>
     <dd class="accordion-navigation">
         <a class="panel" href="#getting-started"><h2>Getting Started</h2></a>
@@ -30,7 +29,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
         </div>
     </dd>
     <br/>
- 
+
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>About Mono</h2></a>
         <div id="about-mono" class="content">
