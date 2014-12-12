@@ -25,7 +25,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
                 <li>Install Mono on <a href="/docs/getting-started/install/mac/">Mac OS X</a>,<a href="/docs/getting-started/install/linux/">Linux</a>,<a href="/docs/getting-started/install/windows/">Windows</a></li>
                 <li><a href="/docs/getting-started/mono-basics/">Mono Basics</a></li>
                 <li><a href="/docs/getting-started/development-environments/">Development Environments</a> </li>
-                <li><a href="/docs/getting-started/application-portability/">Application Portability</a> and <a href="/docs/getting-started/application-deployment" >Application Deployment</a></li>
+                <li><a href="/docs/getting-started/application-portability/">Application Portability</a> and <a href="/docs/getting-started/application-deployment/">Application Deployment</a></li>
             </ul>
         </div>
     </dd>
@@ -38,13 +38,13 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
                 <li><a href="/docs/about-mono/">Overview</a></li>
                 <li><a href="/docs/about-mono/supported-platforms/">Supported Platforms</a></li>
                 <li><a href="/docs/about-mono/languages/">Languages</a></li>
-                <li><a href="/docs/about-mono/compatibility/">Compatibility</a> and <a href="/docs/about-mono/class-status/" >Class Status</a></li>
-                <li><a href="/docs/about-mono/releases/">Releases</a> and <a href="/docs/about-mono/versioning/" >Versioning</a></li>
+                <li><a href="/docs/about-mono/compatibility/">Compatibility</a> and <a href="/docs/about-mono/class-status/">Class Status</a></li>
+                <li><a href="/docs/about-mono/releases/">Releases</a> and <a href="/docs/about-mono/versioning/">Versioning</a></li>
                 <li><a href="/docs/about-mono/maintainers/">Maintainers</a></li>
-                <li><a href="/docs/about-mono/history/">History</a> , <a href="/docs/about-mono/concerns-about-mono/" >Concerns about Mono</a></li>
-                <li><a href="/docs/about-mono/roadmap/">Roadmap</a> and <a href="/docs/about-mono/plans/" >Plans</a></li>
+                <li><a href="/docs/about-mono/history/">History</a> , <a href="/docs/about-mono/concerns-about-mono/">Concerns about Mono</a></li>
+                <li><a href="/docs/about-mono/roadmap/">Roadmap</a> and <a href="/docs/about-mono/plans/">Plans</a></li>
                 <li><a href="/docs/about-mono/vulnerabilities/">Vulnerabilities</a></li>
-                <li>Showcase: <a href="/docs/about-mono/showcase/screenshots/">Screenshots </a> , <a href="/docs/about-mono/showcase/software" >Software</a> , <a href="/docs/about-mono/showcase/companies-using-mono" >Companies using Mono</a> , <a href="/docs/about-mono/logos" >Mono Logos</a></li>
+                <li>Showcase: <a href="/docs/about-mono/showcase/screenshots/">Screenshots</a> , <a href="/docs/about-mono/showcase/software/">Software</a> , <a href="/docs/about-mono/showcase/companies-using-mono/">Companies using Mono</a> , <a href="/docs/about-mono/logos/">Mono Logos</a></li>
             </ul>
         </div>
     </dd>
@@ -207,7 +207,3 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
     </dd>
     <br/>
 </dl>
-
-  
-
-  
