@@ -86,10 +86,6 @@ XSP is a very limited web server which is used typically during development or f
 
 XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is the most important one), but no work is currently underway to support HTTP 1.1 and it is also missing features like mime-type configuration and any other features that people expect from a web server.
 
-### Does mod_mono run on Windows?
-
-mod_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod_mono compile work on the Windows version of Apache.
-
 ### How do I restart my Mono applications without restarting Apache?
 
 Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
@@ -361,10 +357,6 @@ Now if there's a control in MyTags.dll called *SuperDuper* you can use this in y
  <something:SuperDuper id="myid" otherattributes="go here" />
 ```
 
-### Can I run ASP.NET 2.x applications with Mono?
-
-Support for 2.x ASP.NET applications is under active development, but it's not complete. If you want to try it out, use the \`xsp2' command. You will need to install the 2.0 preview assemblies and compilers.
-
 ### OutputCache and VarByParam
 
 The VaryByParam="None" semantics are not implemented in Mono, for example in:
@@ -483,7 +475,7 @@ Extra Languages
 
 Out of the box, ASP.NET only supports pages written in C# and VB.NET. To convince it to use the F# compiler, the following extra steps are required:
 
--   Install the F# compiler and runtime. Get it from [here](http://research.microsoft.com/fsharp/release.aspx). It should come with an install-mono.sh script. (On my system, I had to convert the newlines in that thing from CRLF (DOS format) to regular LF before sh would properly run it.)
+-   Install the F# compiler and runtime.
 
 -   Set up mod_mono for apache, clx, or whichever web server you want, set up your ASP.NET page and configure the web-server to find it.
 
@@ -577,27 +569,12 @@ PublicKeyToken=b03f5f7f11d50a3a" />
 
 Joe Audette has a tutorial [here](http://www.joeaudette.com/settingupapachevirtualhostswithmod_mono.aspx)
 
-Hosting
--------
-
-### Who provides Mono-based hosting of applications?
-
--   [Ubiquity Hosting](http://www.ubiquityhosting.com/) is provides Mono-based ASP.NET hosting.
-
 Memory Usage
 ------------
 
 ### Why does the memory consumed by the Mono process keep growing?
 
-Mono currently uses a conservative, non-moving, non-compacting garbage collector. This means that the heap is not compacted when memory is released. This means that applications can produce memory allocation patterns that will effectively make the process grow, just like C, C++, Perl, Python applications would.
+In the past, Mono used a conservative, non-moving, non-compacting garbage collector. This meant that the heap was not compacted when memory was released.
 
-It is hence important to not get into patterns that would create these holes, for example such a hole could be created if you create a block of size SIZE, release it, and then create two blocks of size SIZE/2+1.
-
-ASP.NET in Mono is particularly vulnerable to this kind of memory problems because it is easy for developers to define APIs that transfer large blobs of data like entire image files, these would allocate a lot of memory that can easily be fragmented.
-
-A simple solution is to try to write your software in a way that large data blocks are not allocated, but instead your application handles them in blocks (like writing a "copy" command).
-
-### Is there a better collector in the works?
-
-Yes, there is work to make a new generational collector under way, but it will not be ready for a while. For more information on it, see the [Generational GC](/docs/advanced/garbage-collector/sgen/) page.
+It now uses a new collector, see the [Generational GC](/docs/advanced/garbage-collector/sgen/) page.
 

@@ -13,7 +13,7 @@ Yes, Mono can run binaries produced by Visual Studio, there is no need to recomp
 
 Use our [Mono Migration Analysis](/docs/tools+libraries/tools/moma/) tool to check if everything that your application uses has been implemented in Mono or if there are special considerations to keep in mind.
 
-The Mono API today is somewhere in between .NET 2.0 and .NET 4.0 see our [Roadmap](/docs/about-mono/roadmap/) for details about what is implemented.
+See our [Roadmap](/docs/about-mono/roadmap/) for details about what is implemented.
 
 ### What is Mono exactly?
 
@@ -54,10 +54,6 @@ The Mono Project has also sparked a lot of interest in developing C#-based compo
 -   Ginzu: An implementation on top of Remoting for the [ICE](http://www.zeroc.com) stack
 
 For a more complete list, see the [Libraries](/docs/tools+libraries/libraries/) and [Software](/docs/about-mono/showcase/software/) pages.
-
-### What is the difference between Mono and the .NET Initiative?
-
-The ".NET Initiative" is a somewhat nebulous company-wide effort by Microsoft, one part of which is a cross-platform development framework. Mono is an implementation of the development framework, but not an implementation of anything else related to the .NET Initiative, such as Passport or software-as-a-service.
 
 ### What technologies are included in Mono?
 
@@ -113,10 +109,6 @@ Please see the [Mono Roadmap](/docs/about-mono/roadmap/) for more details on the
 
 Check the [contributing](/community/contributing/) section.
 
-### Is there an online guide for Mono?
-
-Visit the [Monkeyguide](/archived/monkeyguide "Monkeyguide") page.
-
 ### Aren't you just copying someone else's work?
 
 We are interested in providing the best tools for programmers to develop applications for Free Operating Systems. We also want to help provide the interoperability that will allow those systems to fit in with other standards.
@@ -149,14 +141,6 @@ Most Unix variants behave very similarly, so porting to a new Unix is relatively
 
 Porting Mono to a new architecture takes about three months of work.
 
-### Will Novell port Mono to my architecture/operating system?
-
-In the past Novell has done ports of Mono to new architectures and operating systems. We have done this for internal Novell needs (x86-64, Itanium and with Neale's help to s390, s390x) or for customer needs (PowerPC).
-
-Novell is certainly open to adding support for new architectures, but there are a number of variables: is the port going to benefit a large segment of users, hardware requirements and adequate funding.
-
-If you want to discuss a port of Mono to a new architecture, you should [contact the Mono team at Novell](http://www.go-mono.com/contact/).
-
 Installation Problems
 ---------------------
 
@@ -183,7 +167,7 @@ In a number of ways. This project was born out of the need of providing improved
 
 ### Has the GNOME Foundation or the GNOME team adopted Mono?
 
-Mono is too new to be adopted by those groups. We hope that the tools that we will provide will be adopted by free software programmers including the GNOME Foundation members and the GNOME project generally.
+We hope that the tools that we will provide will be adopted by free software programmers including the GNOME Foundation members and the GNOME project generally.
 
 ### Should GNOME programmers use Mono?
 
@@ -276,7 +260,7 @@ openSUSE ships with a Mono-enabled version of OpenOffice which developers can us
 Mono and Microsoft
 ------------------
 
-### Is Microsoft helping Novell with this project?
+### Was Microsoft helping Novell with this project?
 
 Until September of 2007 there was no high level communication between Novell and Microsoft, but engineers who work on .NET or the ECMA groups have been very friendly, and very nice to answer our questions, or clarify part of the specification for us.
 
@@ -284,7 +268,7 @@ In September 2007 an agreement between Microsoft and Novell opened the doors to 
 
 Silverlight 2.0 contains a subset of the virtual execution engine, and a subset of the class libraries that are designed to write rich web applications.
 
-Microsoft is interested in other implementations of .NET and are willing to help make the ECMA spec more accurate for this purpose. Novell participates in the ECMA committee meetings for C# and the CLI.
+Microsoft is interested in other implementations of .NET and are willing to help make the ECMA spec more accurate for this purpose. Novell participated in the ECMA committee meetings for C# and the CLI.
 
 ### Do you fear that Microsoft will change the spec and render Mono useless?
 
@@ -300,25 +284,13 @@ Yes, we are writing them from the ECMA specs and the published materials in prin
 
 No. Mono is not related to Microsoft's initiative of software-as-a-service.
 
-### If Microsoft will release a port of their .NET platform under the 'Shared Source' license, why should I bother with anything else?
-
-The Shared Source implementation will be expensive and its uses will be tightly restricted, especially for commercial use. We are working towards an implementation that will grant a number of important rights to recipients: use for any purpose, redistribution, modification, and redistribution of modifications. This is what we call [Free Software](http://www.gnu.org/philosophy/free-sw.html)
-
-### Will Mono running on Linux make Passport available for Linux?
-
-No. However, the Passport toolkit for Linux-based web servers is available from Microsoft.
-
 ### Will Mono allow me to run Microsoft Office on Linux?
 
 No, it will not. Microsoft Office is a Windows application. To learn more about running Windows applications on Intel UNIX systems refer to [the Wine Project](http://www.winehq.com).
 
-### Can mono run the WebMatrix?
+### Can Mono run the WebMatrix?
 
 No. WebMatrix is not a pure .NET application making use of many different Win32 API calls.
-
-### Does mono have something like Passport? Will mono have a server side Passport/Similar framework for XSP as well as client classes?
-
-Not yet, but the client side API for authentication is not the problem. We will likely have a lot of other authentication APIs, like the Liberty Alliance APIs. The problem is people on the web provider end that might use this for authentication.
 
 Credits
 -------

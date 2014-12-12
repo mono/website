@@ -72,7 +72,7 @@ Both SslClientStream and SslServerStream, in Mono.Security.dll, support client c
 
 Also recent versions of [XSP](/docs/web/aspnet/) do support SSL/TLS and client certificates. See the [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) article for more details.
 
-### Does SSL works for SMTP, like GMail ?
+### Does SSL work for SMTP, like GMail ?
 
 Yes it does. First you must import the root certificates using the `mozroots` tool:
 

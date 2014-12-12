@@ -36,12 +36,6 @@ You need to compile you application with -target:winexe, like this:
 mcs -target:winexe myapp.cs
 ```
 
-- or -
-
-``` bash
-gmcs -target:winexe myapp.cs
-```
-
 ### How can I use Visual Styles?
 
 Beginning in Mono 2.2, we have a VisualStyles theme for Windows XP/Vista/7 that uses native Windows rendering.

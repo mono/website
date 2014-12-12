@@ -24,7 +24,7 @@ Yes, Mono is binary compatible with Windows. Which means that you can run binari
 
 When porting your applications, you should make sure that you test its functionality as differences in the underlying operating system and differences in the VM implementations (bugs, missing features) might affect your application.
 
-Mono does not have every .NET 1.1 API implemented (see the Mono release notes for Mono 1.0) and when executing a binary from Windows that consumes an unimplemented API you might get an obscure message about tokens not being found.
+Mono does not have every .NET API implemented and when executing a binary from Windows that consumes an unimplemented API you might get an obscure message about tokens not being found.
 
 In these cases it is useful to compile your application with Mono's C# compiler just to ensure that you are consuming APIs that are supported.
 
@@ -141,28 +141,6 @@ Notice that as of Mono 2.2 the version returned on MacOS X is still 4 for legacy
 
 A better way of testing for Unixness is to make tests that are feature specific instead of dividing the code in Unix vs Windows. For example, for file system operations, it is better to use the path character separator and compare it for '/' or '\\' as that would not depend on the actual enumeration value.
 
-### How can I tell where the Mono runtime is installed (Windows OS)?
-
-While it can be argued that there are no totally reliable methods for detecting the presence of a Mono installation in a Windows environment, the following shows one way which detection may be achieved:
-
-Firstly, look for the version string stored in a certain registry key.
-
-``` bash
-$version = HKLM_LOCAL_MACHINE\Software\Novell\Mono\DefaultCLR
-```
-
-Then, using this version string, check the registry again for the path prefix, \$monoprefix:
-
-``` bash
-$monoprefix = HKLM_LOCAL_MACHINE\Software\Novell\Mono\$version\SdkInstallRoot
-```
-
-(optional) You might wish to then check this by detecting whether or not \$mono-prefix\\bin\\mono.exe exists.
-
-If one of the steps above failed, Mono may not be properly installed or the version may be too old.
-
-*Adapted from Robert Jordan's explanation, [link to email held at the mono-list archive](http://lists.ximian.com/pipermail/mono-list/2006-August/032573.html)*
-
 ### How can I detect if am running in Mono?
 
 Having code that depends on the underlying runtime is considered to be **bad coding** style, but sometimes such code is necessary to work around runtime bugs. The supported way of detecting Mono is:
@@ -184,14 +162,6 @@ class Program {
 
 Any other hack, such as checking the underlying type of System.Int32 or of other corlib types, is doomed to fail in the future.
 
-### Does Mono run on Fedora Core 5
-
-Mono will run on FC5 as long as you turn off SELinux. Otherwise, some applications may experience errors.
-
-Some people have reported compilation problems as well, but there are no details at this point, make sure you turn off SELinux if you want to use Mono
-
-Updated as of May 8th.
-
 ### Does Mono run on very small systems
 
 The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the [Small footprint](/docs/compiling-mono/small-footprint/) page.
@@ -201,17 +171,7 @@ Compatibility
 
 ### Can Mono run applications developed with the Microsoft.NET framework?
 
-Yes, Mono can run applications developed with the Microsoft .NET Framework on UNIX. There are a few caveats to keep in mind: Mono has not been completed yet, so a few API calls might be missing; And in some cases the Mono behavior *might be incorrect*.
-
-Mono today ships with support for the .NET 2.0 API for the supported namespaces; Support for the 3.0 and 3.5 and 4.0 API is not complete.
-
-### I am using Visual Studio 2008 (or 2005), will Mono run my code?
-
-Visual Studio 2005 and 2008 produces code that targets from .NET 2.x up to 3.5 API. This means that most code will work until you hit an API that has not been implemented in Mono.
-
-This will appear as a TypeLoadException when you try to use a method or a property from one of the assemblies.
-
-To make Visual Studio produce 1.1-based applications see this blog post [here](http://weblogs.asp.net/israelio/archive/2005/06/08/410811.aspx).
+Yes, Mono can run applications developed with the Microsoft .NET Framework on UNIX. There are a few caveats to keep in mind: a few API calls might be missing and in some cases the Mono behavior *might be incorrect*.
 
 ### Will missing API entry points be implemented?
 
@@ -219,7 +179,7 @@ Yes, the goal of Mono is to implement precisely the .NET Framework API (as well 
 
 ### If the behavior of an API call is different, will you fix it?
 
-Yes, we will. But we will need your assistance for this. If you find a bug in the Mono implementation, please fill a bug report in [http://bugzilla.ximian.com](http://bugzilla.ximian.com). Do not assume we know about the problem, we might not, and using the bug tracking system helps us organize the development process.
+Yes, we will. But we will need your assistance for this. If you find a bug in the Mono implementation, please fill a bug report in [http://bugzilla.xamarin.com](http://bugzilla.xamarin.com). Do not assume we know about the problem, we might not, and using the bug tracking system helps us organize the development process.
 
 ### Can I develop my applications on Windows, and deploy on a supported Mono platform (like Linux)?
 
@@ -429,10 +389,6 @@ Development Tools and Issues
 
 Yes. The CLI engine will be made available as a shared library. The garbage collection engine, the threading abstraction, the object system, the dynamic type code system and the JIT are available for C developers to integrate with their applications if they wish to do so.
 
-### Will you have new development tools?
-
-With any luck, Free Software enthusiasts will contribute tools to improve the developer environment. These tools could be developed initially using the Microsoft implementation of the CLI and then executed later with Mono. We are recommending people to use and contribute to existing projects like SharpDevelop, Anjuta and Eclipse.
-
 ### What kind of rules make the Common Intermediate Language useful for JITers?
 
 The main rule is that the stack in the CLI is not a general purpose stack. You are not allowed to use it for other purposes than computing values and passing arguments to functions or return values. At any given call or return instruction, the types on the stack have to be the same independently of the flow of execution of your code.
@@ -441,7 +397,9 @@ The main rule is that the stack in the CLI is not a general purpose stack. You a
 
 The CIL is better suited to be JITed than JVM byte codes, but you can interpret them as trivially as you can interpret JVM byte codes.
 
-### Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries? Yes. Just use two installation prefixes. Use --prefix=/whatever/you/prefer option when configuring mono.
+### Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?
+
+Yes. Just use two installation prefixes. Use `--prefix=/whatever/you/prefer` option when configuring mono.
 
 ### How should I write tests or a tests suite?
 
@@ -479,26 +437,6 @@ Replace the __stdcall attribute with the STDCALL macro, and include this in your
 #endif
 ```
 
-### I see funny characters when I run programs, what is the problem?
-
-(From Peter Williams and Gonzalo Paniagua):
-
-This is Red Hat 9 (probably) using UTF8 on its console; the bytes are the UTF8 endianness markers. You can do:
-
-``` bash
-LC_ALL=C mono myexe.exe
-```
-
-And they wont show up.
-
-Alternatively, you can do:
-
-``` bash
-echo -e "\033%G"
-```
-
-to enable UTF-8 on the console.
-
 ### How does Unicode interact with Mono?
 
 These are a few bits that you might want to know when dealing with Unicode strings in Mono and Unix:
@@ -511,10 +449,6 @@ These are a few bits that you might want to know when dealing with Unicode strin
 The above takes care of converting the input you provide to Mono compilers and runtimes into Unicode. Another issue is how these characters get rendered into the screen.
 
 For console output Mono will use the encoding specified in your LANG environment variable to display the Unicode strings that the program has. If your LANG variable does not allow for the full range of Unicode strings to be displayed (for example, LANG=en alone) then only the subset supported by that specific character set can be displayed.
-
-### How do I build mono/mcs on Windows from Mono's Subversion [repository](/community/contributing/source-code-repository/)?
-
-See this "[Compiling Mono on Windows](/docs/compiling-mono/windows/)" page.
 
 ### I just made a change in my code and am getting Segfaults, what is it?
 
@@ -583,11 +517,11 @@ We are implementing all the classes in Microsoft .NET's System.Data, so you can 
 
 ### Can you connect to a Sybase database using Mono?
 
-Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class. See [here](/Sybase) for more info.
+Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class. See [here](/docs/database-access/providers/sybase/) for more info.
 
 ### Has the MySQL Connector/Net replaced ByteFX.Data
 
-Yes it has. MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases. The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now. See [here](/MySQL) for more info.
+Yes it has. MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases. The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now. See [here](/docs/database-access/providers/mysql/) for more info.
 
 ### How do I connect to a SQLite database?
 
@@ -595,11 +529,7 @@ Use Mono.Data.SqliteClient. Make sure you are using at least Mono 1.1.4 since SQ
 
 ### What provider do I use to connect to PostgreSQL?
 
-You would use Npgsql which is included with Mono. It is also included with the Win32 installer for PostgreSQL 8.0 which runs natively on Windows. See [here](/PostgreSQL) for more info.
-
-### Do you have any plans to implement ObjectSpaces?
-
-No. Note that Microsoft dropped ObjectSpaces for .NET Framework 2.0.
+You would use Npgsql which is included with Mono. It is also included with the Win32 installer for PostgreSQL 8.0 which runs natively on Windows. See [here](/docs/database-access/providers/postgresql/) for more info.
 
 Mono and EnterpriseServices
 ---------------------------
@@ -623,7 +553,7 @@ The JVM is not designed to be a general purpose virtual machine. The Common Inte
 
 ### Could Java target the CLI?
 
-Yes, Java could target the CLI, Microsoft's J# compiler does that. The [IKVM](http://www.ikvm.net/) project builds a Java runtime that works on top of .NET and on top of Mono. IKVM is essentially a JIT compiler that translates from JVM bytecodes into CIL instructions, and then lets the native JIT engine take over.
+Yes, Java could target the CLI, Microsoft's J# compiler did that. The [IKVM](http://www.ikvm.net/) project builds a Java runtime that works on top of .NET and on top of Mono. IKVM is essentially a JIT compiler that translates from JVM bytecodes into CIL instructions, and then lets the native JIT engine take over.
 
 ### Is it possible to write a JVM byte code to CIL converter?
 
@@ -633,24 +563,9 @@ Yes, this is what [IKVM](http://www.ikvm.net/) does.
 
 This can be obtained easily with IKVM.
 
-### Do you plan to implement a Javascript compiler?
-
-Yes. The beginnings of the JScript compiler can be found on git. Cesar coordinates this effort.
-
 ### Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?
 
 What you can do with mono is to load different applications in their own application domain: this is a feature of the CLR that allows sandboxing applications inside a single process space. This is usually exploited to compartmentalize different parts of the same app, but it can also be effectively used to reduce the startup and memory overhead. Using different appdomains the runtime representation of types and methods is shared across applications.
-
-Mono and the Enterprise Application Blocks
-------------------------------------------
-
-The Enteprise Application Blocks license that Microsoft has chosen explicitly prevents developers from using it on non-Windows platforms (see the [[http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnpag2/html/pageula.asp](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnpag2/html/pageula.asp) license wording, section 10).
-
-There are a few alternatives available on Mono.
-
-### What can I used instead of the Data Access Application Block?
-
-You can use the Mono [Provider Factory](/archived/provider_factory "Provider Factory") which is a standard component of all Mono installations.
 
 Extending Mono
 --------------
@@ -667,7 +582,7 @@ If you have innovative ideas, and want to create new classes, we encourage you t
 
 ### Do you plan on exploring, changing other parts?
 
-The Mono team at Novell is currently focused on improving Mono's performance, platform support, coverage, quality and features, so we are likely going to be busy doing those things.
+The Mono team at Xamarin is currently focused on improving Mono's performance, platform support, coverage, quality and features, so we are likely going to be busy doing those things.
 
 But Mono has already been used as a foundation for trying out new ideas for the C# language (there are three or four compilers derived from Mono's C# compiler) and a number of innovative ideas (like continuations for the VM) have been implemented as research prototypes on top of Mono.
 
@@ -702,19 +617,15 @@ Portability
 
 ### Will Mono only work on Linux?
 
- Currently, we are doing our work on Linux-based systems and Windows. We do not expect many Linux-isms in the code, so it should be easy to port Mono to other UNIX variants.
-
-### What about Mono on non Linux-based systems?
-
-Our main intention at Novell is to be able to develop GNOME applications with Mono, but if you are interested in providing a port of the Winforms classes to other platforms (frame buffer or MacOS X for example), we would gladly integrate them, as long they are under an open source license.
+We do not expect many Linux-isms in the code, so it should be easy to port Mono to other UNIX variants.
 
 ### What operating systems/CPUs do you support?
 
-Mono currently runs on [Linux](/docs/about-mono/supported-platforms/linux/), [Windows](/docs/getting-started/install/windows/), Solaris, [FreeBSD](/docs/about-mono/supported-platforms/bsd/) and [MacOS X](/docs/about-mono/supported-platforms/osx/). The Just-In-Time engine (JIT) is available on [x86](/docs/about-mono/supported-platforms/x86/) and [PowerPC](/docs/about-mono/supported-platforms/powerpc/), [Sparc](/docs/about-mono/supported-platforms/sparc/) and S390 processors and can generate code and optimizations tailored for a particular CPU. Interpreters exist for the Itanium, HP-PA, StrongARM CPUs.
+Please see the [Supported Platforms](/docs/about-mono/supported-platforms/) page.
 
 ### Does Mono run on Windows?
 
-Yes. You can get pre-compiled binaries from [downloads](/download/)
+Yes. You can get pre-compiled binaries from the [download](/download/) page.
 
 ### What is WAPI?
 
@@ -726,15 +637,11 @@ So on Windows, Mono directly uses Win32, while on Unix Mono uses Win32 APIs impl
 
 This was necessary because many of the System.IO, etc. APIs have "Win32-isms" which prevent direct Unix implementation.
 
-Part of the wapi implementation is per-user shared-data, stored in =\~/.wapi=. This holds process IDs of mono processes, file share information (so opening a file opened for exclusive read can be denied), and other assorted information.
+Part of the wapi implementation is per-user shared-data, stored in `~/.wapi`. This holds process IDs of mono processes, file share information (so opening a file opened for exclusive read can be denied), and other assorted information.
 
 Deleting this shared data can have bad effects on mono applications. :-)
 
-### Does Mono run on Linux?
-
-Yes. You can get pre-compiled binaries from [downloads](/download/)
-
-### Will I require Cygwin to run mono?
+### Will I require Cygwin to run Mono?
 
 No. Cygwin is only required to build Mono.
 
@@ -758,28 +665,16 @@ Where each of the users that belong to the group are added there.
 
 It will depend only if you are using a particular assembly (for example, for doing Gtk# based GUI applications). If you are just interested in Mono for implementing a 'Hello World Enterprise P2P Web Service', you will not need any GNOME components.
 
-### Do you plan to port Rhino to C#?
-
-Eto Demerzal has started a Rhino port to C#.
-
-### Has anyone succeeded in building a Mac version of the C# environment. If so can you explain how?
-
-Yes, Mono works on Linux/PPC and MacOS X (10.2 and 10.3)
-
 Reusing Existing Code
 ---------------------
 
-### What projects will you reuse or build upon?
-
- We want to get Mono in the hands of programmers soon. We are interested in reusing existing open source software.
-
-### Will I be able to use Microsoft SQL Server 2000 or will I need to switch to a specific Open Source Database. Will I need to recode?
+### Will I be able to use Microsoft SQL Server or will I need to switch to a specific Open Source Database. Will I need to recode?
 
 There is no need to rewrite your code as long as you keep using Microsoft SQL Server. If you want to use an open source database, you might need to make changes to your code.
 
 ### What do I need to watch out for when programming in VB.NET so that I'm sure to be able to run those apps on Linux?
 
- Not making any P/Invoke or DLL calls should and not using anything in the Microsoft namespaces should suffice. Also do not use any Methods/Classes marked as "This type/method supports the .NET Framework infrastructure and is not intended to be used directly from your code." even if you know what these classes/methods do.
+Not making any P/Invoke or DLL calls should and not using anything in the Microsoft namespaces should suffice. Also do not use any Methods/Classes marked as "This type/method supports the .NET Framework infrastructure and is not intended to be used directly from your code." even if you know what these classes/methods do.
 
 ### Will built-in reporting be supported for crystal reports?
 
@@ -787,7 +682,7 @@ Crystal Reports are proprietary. Someone may try to emulate the behavior, but no
 
 ### What about writing to the registry? As I understand it, Linux does not have a counterpart to the registry. Should I avoid relying on that feature?
 
- Try to avoid it. Although there would be a emulation for registry in Mono too. GNOME does have a registry like mechanism for configuration. But Even if gnome has a configuration system similar to the registry, the keys will not be equal, so you will probably end up having to do some runtime detection, and depending on this load an assembly that has your platform-specific hacks.
+Try to avoid it. Although there would be a emulation for registry in Mono too. GNOME does have a registry like mechanism for configuration. But Even if gnome has a configuration system similar to the registry, the keys will not be equal, so you will probably end up having to do some runtime detection, and depending on this load an assembly that has your platform-specific hacks.
 
 ### System.Data.SqlClient with FreeTDS, will you port parts of these to C# and use them?
 
@@ -895,7 +790,7 @@ We are not working on a GCC front-end for C#.
 
 ### What about making a front-end to GCC that takes CIL images and generates native code?
 
- There is no active work on this area, but Mono already provides pre-compilation services (Ahead-of-Time compilation).
+There is no active work on this area, but Mono already provides pre-compilation services (Ahead-of-Time compilation).
 
 Mono and the Basic Language
 ---------------------------
@@ -925,15 +820,12 @@ We can not predict the future, but a conservative estimate is that it would be a
 
 In general, it is hard to answer the question rating from zero to ten as on a typical application there are many elements involved:
 
--   the quality of the generated code, this being a metric of the code generator and the optimizations implemented on it. You can read about some optimizations in Mono on the [Runtime](/docs/advanced/runtime/) page.
+-   The quality of the generated code, this being a metric of the code generator and the optimizations implemented on it. You can read about some optimizations in Mono on the [Runtime](/docs/advanced/runtime/) page.
 -   The maturity of the class libraries used by the application. Mono's tuning of class libraries has been done in an as-needed basis, and not every class is at the same level of maturity.
 -   The host operating system: I/O benchmarks are dominated by the operating system specifics (file system performance, file system synchronization guarantees, micro kernel or not and so on).
--   Mono's GC is a conservative collector, while Java and Microsoft's .NET are copying/tracing collectors, so many benchmarks will go in one direction or the other depending on the task being performed.
 -   On Web applications and database applications, the configuration and tuning of the web server will play a dominant role, while Mono's performance these days is no longer on the critical path.
 
 The best thing to do is to test your application in Mono and identify if the performance of your application is good enough in Mono.
-
-We are currently working on a [Generational GC](/docs/advanced/garbage-collector/sgen/) that will assist in some of the limitations described above.
 
 ### Can you compare Mono performance with other languages/platforms?
 
@@ -967,7 +859,7 @@ The CIL is really an intermediate representation and there are a number of restr
 
 For example, on the CIL, the stack is not really an abstraction available for the code generator to use at will. Rather, it is a way of creating a postfix representation of the parsed tree. At any given call point or return point, the contents of the stack are expected to contain the same object types independently of how the instruction was reached.
 
-### Does mono support performance counters?
+### Does Mono support performance counters?
 
 Yes, they are described in our [Mono Performance Counters](/archived/mono_performance_counters "Mono Performance Counters") page.
 
@@ -1026,13 +918,9 @@ By forcing ourselves to use our own code to develop our tools, we bug fix proble
 
 -   Mono includes LDAP support.
 
--   Mono has a larger community of active developers. Full time developer from companies (Novell and Mainsoft) as well as volunteers from the community.
+-   Mono has a larger community of active developers. Full time developer from companies (Xamarin) as well as volunteers from the community.
 
 In general, Mono is more mature and complete since it has been used to develop itself, which is a big motivator for stability and correctness, while Portable.NET remains pretty much an untested platform.
-
-### I hear Mono keeps changing the P/Invoke API, why?
-
-We are just fixing our implementation to be compatible with the Microsoft implementation. In other words, the Mono P/Invoke API is more complete when compared to the Portable.NET version, hence various pieces of software that depend on this extended functionality fail to work properly with Portable.NET.
 
 Common Problems
 ---------------

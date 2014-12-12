@@ -26,10 +26,6 @@ Writing Documentation
 
 A good article on how to create documentation can be found under: [Generating Documentation](/docs/tools+libraries/tools/monodoc/generating-documentation/)
 
-### How can I contribute to the Wiki?
-
-If you have no Wiki account but still want to contribute documentation to the wiki please send your articles to the [mono-docs-list](http://lists.ximian.com/mailman/listinfo/mono-docs-list). Someone will then upload it to the Wiki.
-
 ### How can I write documentation for the base class libraries?
 
 At the moment only by using the [GTK# documentation browser](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser "Monodoc"). [Monodoc Editing](/docs/tools+libraries/tools/monodoc/editing/) has a short tutorial on how to do so.
