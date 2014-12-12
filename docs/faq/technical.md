@@ -594,10 +594,6 @@ So in short: we are open to the idea of deviating from .NET for research purpose
 
 Yes. Mono has been self hosting since March 2002.
 
-### Is there any way I can install a known working copy of mono in /usr, and an experimental copy somewhere else, and have both copies use their own libraries?
-
-Yes. Just use two installation prefixes.
-
 ### I have a great library that I want to contribute, will you take it?
 
 The first step for a library to be integrated into Mono is for the library to be licensed under the terms of the MIT X11 license.
