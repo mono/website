@@ -15,121 +15,199 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
-Getting Started
----------------
 
- - [Overview](/docs/getting-started/)
- - Install Mono on [Mac OS X](/docs/getting-started/install/mac/), [Linux](/docs/getting-started/install/linux/) or [Windows](/docs/getting-started/install/windows/)
- - [Mono Basics](/docs/getting-started/mono-basics/)
- - [Development Environments](/docs/getting-started/development-environments/)
- - [Application Portability](/docs/getting-started/application-portability/) and [Application Deployment](/docs/getting-started/application-deployment/)
+<dl class="accordion" data-accordion>
+    <dd class="accordion-navigation">
+        <a class="panel" href="#getting-started"><h2>Getting Started</h2></a>
+        <div id="getting-started" class="content active">
+            <ul class="disc">
+                <li><a href="/docs/getting-started">Overview</a></li>
+                <li>Install Mono on <a href="/docs/getting-started/install/mac/">Mac OS X</a>,<a href="/docs/getting-started/install/linux/">Linux</a>,<a href="/docs/getting-started/install/windows/">Windows</a></li>
+                <li><a href="/docs/getting-started/mono-basics/">Mono Basics</a></li>
+                <li><a href="/docs/getting-started/development-environments/">Development Environments</a> </li>
+                <li><a href="/docs/getting-started/application-portability/">Application Portability</a> and <a href="/docs/getting-started/application-deployment" >Application Deployment</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
+ 
+   <dd class="accordion-navigation">
+        <a class="panel" href="#about-mono"><h2>About Mono</h2></a>
+        <div id="about-mono" class="content">
+            <ul class="disc">
+                <li><a href="/docs/about-mono/">Overview</a></li>
+                <li><a href="/docs/about-mono/supported-platforms/">Supported Platforms</a></li>
+                <li><a href="/docs/about-mono/languages/">Languages</a></li>
+                <li><a href="/docs/about-mono/compatibility/">Compatibility</a> and <a href="/docs/about-mono/class-status/" >Class Status</a></li>
+                <li><a href="/docs/about-mono/releases/">Releases</a> and <a href="/docs/about-mono/versioning/" >Versioning</a></li>
+                <li><a href="/docs/about-mono/maintainers/">Maintainers</a></li>
+                <li><a href="/docs/about-mono/history/">History</a> , <a href="/docs/about-mono/concerns-about-mono/" >Concerns about Mono</a></li>
+                <li><a href="/docs/about-mono/roadmap/">Roadmap</a> and <a href="/docs/about-mono/plans/" >Plans</a></li>
+                <li><a href="/docs/about-mono/vulnerabilities/">Vulnerabilities</a></li>
+                <li>Showcase: <a href="/docs/about-mono/showcase/screenshots/">Screenshots </a> , <a href="/docs/about-mono/showcase/software" >Software</a> , <a href="/docs/about-mono/showcase/companies-using-mono" >Companies using Mono</a> , <a href="/docs/about-mono/logos" >Mono Logos</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
-About Mono
-----------
+   <dd class="accordion-navigation">
+        <a class="panel" href="#compiling-mono"><h2>Compiling Mono</h2></a>
+        <div id="compiling-mono" class="content">
+            <ul class="disc">
+                <li><a href="/docs/compiling-mono/">Overview</a>, with instructions for compiling on OS X, Linux and Windows</li>
+                <li><a href="/docs/compiling-mono/compiling-from-git/">Compiling from Git</a> and <a href="/docs/compiling-mono/compiling-from-tarball/">Compiling from Tarball</a></li>
+                <li><a href="/docs/compiling-mono/advanced-mono-compile-options/">Advanced compile options</a></li>
+                <li><a href="/docs/compiling-mono/unsupported-advanced-compile-options/">Unsupported advanced compile options</a></li>
+                <li><a href="/docs/compiling-mono/parallel-mono-environments/">Parallel Mono environments</a></li>
+                <li><a href="/docs/compiling-mono/small-footprint/">Small footprint</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
- - [Overview](/docs/about-mono/)
- - [Supported Platforms](/docs/about-mono/supported-platforms/)
- - [Languages](/docs/about-mono/languages/)
- - [Compatibility](/docs/about-mono/compatibility/) and [Class Status](/docs/about-mono/class-status/)
- - [Releases](/docs/about-mono/releases/) and [Versioning](/docs/about-mono/versioning/)
- - [Maintainers](/docs/about-mono/maintainers/)
- - [History](/docs/about-mono/history/), [Concerns about Mono](/docs/about-mono/concerns-about-mono/)
- - [Roadmap](/docs/about-mono/roadmap/) and [Plans](/docs/about-mono/plans/)
- - [Vulnerabilities](/docs/about-mono/vulnerabilities/)
- - Showcase: [Screenshots](/docs/about-mono/showcase/screenshots/), [Software](/docs/about-mono/showcase/software/), [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/), [Mono Logos](/docs/about-mono/logos/)
+    <dd class="accordion-navigation">
+        <a class="panel" href="#faq"><h2>FAQ</h2></a>
+        <div id="faq" class="content">
+            <ul class="disc">
+                  <li><a href="/docs/faq/general/">General</a></li>
+                  <li><a href="/docs/faq/security/">Security</a></li>
+                  <li><a href="/docs/faq/technical/">Technical</a></li>
+                  <li><a href="/docs/faq/licensing/">Licensing</a></li>
+                  <li><a href="/docs/faq/documentation/">Documentation</a></li>
+                  <li><a href="/docs/faq/aspnet/">ASP.NET</a></li>
+                  <li><a href="/docs/faq/gtk/">GTK</a></li>
+                  <li><a href="/docs/faq/winforms/">WinForms</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
-Compiling Mono
---------------
+    <dd class="accordion-navigation">
+        <a class="panel" href="#database-access"><h2>Database Access</h2></a>
+        <div id="database-access" class="content">
+            <ul class="disc">
+                <li><a href="/docs/database-access/">Overview</a></li>
+                <li><a href="/docs/database-access/adonet/">ADO.NET</a></li>
+                <li><a href="/docs/database-access/entityframework/">EntityFramework</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
- - [Overview](/docs/compiling-mono/), with instructions for compiling on OS X, Linux and Windows
- - [Compiling from Git](/docs/compiling-mono/compiling-from-git/) and [Compiling from Tarball](/docs/compiling-mono/compiling-from-tarball/)
- - [Advanced compile options](/docs/compiling-mono/advanced-mono-compile-options/)
- - [Unsupported advanced compile options](/docs/compiling-mono/unsupported-advanced-compile-options/)
- - [Parallel Mono environments](/docs/compiling-mono/parallel-mono-environments/)
- - [Small footprint](/docs/compiling-mono/small-footprint/)
+    <dd class="accordion-navigation">
+        <a class="panel" href="#debug-and-profile"><h2>Debug and Profile</h2></a>
+        <div id="debug-and-profile" class="content">
+            <ul class="disc">
+                <li><a href="/docs/debug+profile/debug/">Debug - Overview</a>
+                    <ul>
+                        <li><a href="/docs/debug+profile/debug/debugger/">Debugger</a></li>
+                    </ul>
+                </li>
+                <li><a href="/docs/debug+profile/profile/">Profile - Overview</a>
+                    <ul>
+                        <li><a href="/docs/debug+profile/profile/profiler/">Profiler</a></li>
+                        <li><a href="/docs/debug+profile/profile/heapshot/">HeapShot</a></li>
+                        <li><a href="/docs/debug+profile/profile/dtrace/">DTrace</a></li>
+                        <li><a href="/docs/debug+profile/profile/code-coverage/">Code Coverage</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+   </dd>
+   <br/>
 
-FAQ
----
+    <dd class="accordion-navigation">
+        <a class="panel" href="#gui"><h2>GUI</h2></a>
+        <div id="gui" class="content">
+            <ul class="disc">
+                <li><a href="/docs/gui/gui-toolkits/">GUI Toolkits</a></li>
+                <li><a href="/docs/gui/winforms/">WinForms</a></li>
+                <li><a href="/docs/gui/gtksharp/">Gtk#</a></li>
+                <li><a href="/docs/gui/drawing/">Drawing</a></li>
+                <li><a href="/docs/gui/libgdiplus/">libgdiplus</a></li>
+                <li><a href="/docs/gui/wpf/">WPF</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
- - [General](/docs/faq/general/)
- - [Security](/docs/faq/security/)
- - [Technical](/docs/faq/technical/)
- - [Licensing](/docs/faq/licensing/)
- - [Documentation](/docs/faq/documentation/)
- - [ASP.NET](/docs/faq/aspnet/)
- - [GTK](/docs/faq/gtk/)
- - [WinForms](/docs/faq/winforms/)
+    <dd class="accordion-navigation">
+        <a class="panel" href="#web"><h2>Web</h2></a>
+        <div id="web" class="content">
+            <ul class="disc">
+                <li><a href="/docs/web/aspnet/">ASP.NET</a></li>
+                <li><a href="/docs/web/wcf/">WCF</a></li>
+                <li><a href="/docs/web/fastcgi/">FastCGI</a></li>
+                <li><a href="/docs/web/mod_mono/">mod_mono</a></li>
+                <li><a href="/docs/web/moonlight/">Moonlight</a></li>
+                <li><a href="/docs/web/porting-aspnet-applications/">Porting ASP.NET applications</a></li>
+                <li><a href="/docs/web/using-clientcertificates-with-xsp/">Using client certificates with XSP</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
-Database Access
----------------
+   <dd class="accordion-navigation">
+        <a class="panel" href="#tools-and-libraries"><h2>Tools and Libraries</h2></a>
+        <div id="tools-and-libraries" class="content">
+            <ul class="disc">
+                <li><a href="/docs/tools+libraries/tools/">Tools - Overview</a>
+                    <ul>
+                        <li><a href="/docs/tools+libraries/tools/gendarme/">Gendarme</a></li>
+                        <li><a href="/docs/tools+libraries/tools/moma/">MoMA</a></li>
+                        <li><a href="/docs/tools+libraries/tools/xbuild/">XBuild</a></li>
+                    </ul>
+                </li>
+                <li><a href="/docs/tools+libraries/libraries/">Libraries - Overview</a>
+                   <ul>
+                      <li><a href="/docs/tools+libraries/libraries/monomac/">MonoMac</a></li>
+                      <li><a href="/docs/tools+libraries/libraries/xml/">XML</a></li>
+                      <li><a href="/docs/tools+libraries/libraries/Mono.Cairo/">Mono.Cairo</a></li>
+                      <li><a href="/docs/tools+libraries/libraries/Mono.Cecil/">Mono.Cecil</a></li>
+                   </ul>
+                </li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
 
- - [Overview](/docs/database-access/)
- - [ADO.NET](/docs/database-access/adonet/)
- - [EntityFramework](/docs/database-access/entityframework/)
+   <dd class="accordion-navigation">
+        <a class="panel" href="#advanced-topics"><h2>Advanced Topics</h2></a>
+        <div id="advanced-topics" class="content">
+            <ul class="disc">
+                <li><a href="/docs/advanced/runtime/">Runtime</a></li>
+                <li><a href="/docs/advanced/garbage-collector/sgen/">Garbage Collector - SGEN</a>
+                    <ul>
+                        <li><a href="/docs/advanced/garbage-collector/benchmark-suite/">GC Benchmark Suite</a></li>
+                    </ul>
+                </li>
+                <li><a href="/docs/advanced/aot/">AOT</a></li>
+                <li><a href="/docs/advanced/embedding/">Embedding</a></li>
+                <li><a href="/docs/advanced/assemblies-and-the-gac/">Assemblies and the GAC</a></li>
+                <li><a href="/docs/advanced/pinvoke/">P/Invoke</a></li>
+                <li><a href="/docs/advanced/iomap/">IOMap</a></li>
+                <li><a href="/docs/advanced/monolite/">monolite</a></li>
+                <li><a href="/docs/advanced/mono-llvm/">Mono LLVM</a></li>
+                <li><a href="/docs/advanced/cas/">CAS</a></li>
+                <li><a href="/docs/advanced/com/">COM</a>
+                    <ul>
+                        <li><a href="/docs/advanced/com-interop/">COM-Interop</a></li>
+                    </ul>
+                </li>
+                <li><a href="/docs/advanced/coreclr/">CoreCLR</a>
+                    <ul>
+                        <li><a href="/docs/advanced/coreclr-howto/">CoreCLR HowTo</a></li>
+                    </ul>
+                </li>
+                <li><a href="/docs/advanced/performance-tips/">Performance Tips</a></li>
+                <li><a href="/docs/advanced/safehandles/">SafeHandles</a></li>
+                <li><a href="/docs/advanced/sandbox/">Sandbox</a></li>
+            </ul>
+        </div>
+    </dd>
+    <br/>
+</dl>
 
-Debug and Profile
------------------
+  
 
- - [Debug - Overview](/docs/debug+profile/debug/)
-   - [Debugger](/docs/debug+profile/debug/debugger/)
- - [Profile - Overview](/docs/debug+profile/profile/)
-   - [Profiler](/docs/debug+profile/profile/profiler/)
-   - [HeapShot](/docs/debug+profile/profile/heapshot/)
-   - [DTrace](/docs/debug+profile/profile/dtrace/)
-   - [Code Coverage](/docs/debug+profile/profile/code-coverage/)
-
-GUI
----
-
- - [GUI Toolkits](/docs/gui/gui-toolkits/)
- - [WinForms](/docs/gui/winforms/)
- - [Gtk#](/docs/gui/gtksharp/)
- - [Drawing](/docs/gui/drawing/)
- - [libgdiplus](/docs/gui/libgdiplus/)
- - [WPF](/docs/gui/wpf/)
-
-Web
----
-
- - [ASP.NET](/docs/web/aspnet/)
- - [WCF](/docs/web/wcf/)
- - [FastCGI](/docs/web/fastcgi/)
- - [mod_mono](/docs/web/mod_mono/)
- - [Moonlight](/docs/web/moonlight/)
- - [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
- - [Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
-
-Tools and Libraries
--------------------
-
- - [Tools - Overview](/docs/tools+libraries/tools/)
-   - [Gendarme](/docs/tools+libraries/tools/gendarme/)
-   - [MoMA](/docs/tools+libraries/tools/moma/)
-   - [XBuild](/docs/tools+libraries/tools/xbuild/)
- - [Libraries - Overview](/docs/tools+libraries/libraries/)
-   - [MonoMac](/docs/tools+libraries/libraries/monomac/)
-   - [XML](/docs/tools+libraries/libraries/xml/)
-   - [Mono.Cairo](/docs/tools+libraries/libraries/Mono.Cairo/)
-   - [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/)
-
-Advanced Topics
----------------
-
- - [Runtime](/docs/advanced/runtime/)
- - [Garbage Collector - SGEN](/docs/advanced/garbage-collector/sgen/)
-   - [GC Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)
- - [AOT](/docs/advanced/aot/)
- - [Embedding](/docs/advanced/embedding/)
- - [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/)
- - [P/Invoke](/docs/advanced/pinvoke/)
- - [IOMap](/docs/advanced/iomap/)
- - [monolite](/docs/advanced/monolite/)
- - [Mono LLVM](/docs/advanced/mono-llvm/)
- - [CAS](/docs/advanced/cas/)
- - [COM](/docs/advanced/com/)
-   - [COM-Interop](/docs/advanced/com-interop/)
- - [CoreCLR](/docs/advanced/coreclr/)
-   - [CoreCLR HowTo](/docs/advanced/coreclr-howto/)
- - [Performance Tips](/docs/advanced/performance-tips/)
- - [SafeHandles](/docs/advanced/safehandles/)
- - [Sandbox](/docs/advanced/sandbox/)
+  
