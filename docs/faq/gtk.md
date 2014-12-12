@@ -5,21 +5,21 @@ redirect_from:
 ---
 
 General Questions
-=================
+-----------------
 
-**How is Gtk# related to Gtk+?**
+### How is Gtk# related to Gtk+?
 
 Gtk# is a managed binding for CIL-based languages to the Gtk+ library. The binding features a number of mappings from Gtk+ features into CIL-features like mapping signals to events and allowing developers to use C# constructs to alter the behavior of C-based widgets (for example, overwriting methods).
 
 GTK+ is a graphical user interface toolkit for Unix and Windows and is written in C while the Gtk# binding is written in C#.
 
-**Can I use Gtk# on Windows?**
+### Can I use Gtk# on Windows?
 
 Yes, Gtk# is available for Windows developers.
 
 In addition, when you install Gtk# for .NET if Visual Studio is installed templates for VB.NET and C# are installed, so you can create Gtk# based applications right from Visual Studio.
 
-**What is Glade?**
+### What is Glade?
 
 Glade is a GUI designer for Gtk+ applications that stores your designs in an XML file (the file name ends in ".glade"). User interfaces created with Glade can are dynamically loaded at runtime using the Glade.XML class.
 
@@ -47,18 +47,18 @@ class PersonalDataDialog {
 }
 ```
 
-**Can I embed Glade files in my executable?**
+### Can I embed Glade files in my executable?
 
 Yes, just bundle your glade files as resources (using the -resource: option in the compiler) and change your constructor call or use the Glade.XML.FromAssembly () method to create your Glade.XML ui.
 
 Gtk# widget questions
-======================
+---------------------
 
-**Can I use absolute positioning for my dialogs?**
+### Can I use absolute positioning for my dialogs?
 
 Yes, use the Gtk.Fixed or Gtk.Layout widgets if you need to use absolute positioning for your widgets.
 
-**How do I fill a Gtk.ComboBox?**
+### How do I fill a Gtk.ComboBox?
 
 ``` csharp
     void FillCombo (Gtk.ComboBox cb)
@@ -76,7 +76,7 @@ Yes, use the Gtk.Fixed or Gtk.Layout widgets if you need to use absolute positio
     }
 ```
 
-**How can I change the colors of a widget?**
+### How can I change the colors of a widget?
 
 You can use the ModifyBase and ModifyText routines which are part of the Widget subclass, like this:
 
@@ -86,13 +86,13 @@ myEntry.ModifyText(StateType.Normal, new Gdk.Color(0,255,0));
 ```
 
 Custom Widgets
-==============
+--------------
 
-**How do I create a custom widget?**
+### How do I create a custom widget?
 
 You can create custom widgets by inheriting from a base class that is appropriate. If you plan to do a custom widget that will display itself, a good starting point is the Gtk.DrawingArea widget.
 
-**Do I need to create a custom widget to respond to events?**
+### Do I need to create a custom widget to respond to events?
 
 Gtk# exposes a number of events that allow developers to customize existing widgets without resorting to subclassing. It is possible to attach arbitrary code to be executed by a handler, for example:
 
@@ -103,7 +103,7 @@ Gtk# exposes a number of events that allow developers to customize existing widg
     };
 ```
 
-**Should I hook up to events, or override methods to create a custom widget?**
+### Should I hook up to events, or override methods to create a custom widget?
 
 Gtk# supports both models.
 
@@ -154,19 +154,17 @@ class MyWidget : Gtk.DrawingArea {
 ```
 
 Common Questions
-================
+----------------
 
 Some frequently asked questions about [GtkSharp](/docs/gui/gtksharp/).
 
 For a list of varios pages dealing with Gtk# on this site see [GtkSharp Articles](/Category:GtkSharp).
 
-**Common Problems**
-
-**= On Windows, Idle times are not being called**=
+### On Windows, Idle times are not being called
 
 Make sure you call GLib.Thread.Init ()
 
-**= My application crashes with threads**=
+### My application crashes with threads
 
 If your application crashes with a message like this:
 
@@ -179,9 +177,9 @@ It means that you are trying to invoke methods in Gtk# from a thread that is not
 This topic is covered in more detail in these two pages: [Best_Practices](/archived/best_practices "Best Practices") and [Responsive Applications](/docs/gui/gtksharp/responsive-applications/) pages for details on how to solve this issue.
 
 Gecko# and Mozilla
-===================
+------------------
 
-**How do I use Gecko or Mozilla with Gtk#?**
+### How do I use Gecko or Mozilla with Gtk#?
 
 You can use pkg-config to auto-detect whether the Mozilla development libraries are installed, the pkg-config module name is: gecko-sharp-2.0
 
@@ -210,7 +208,7 @@ mono demo.exe
 
 Those are usually set on scripts, as recommended on our [Application Deployment Guidelines](/docs/getting-started/application-deployment/).
 
- **Mozilla and Plugins**
+### Mozilla and Plugins
 
 If you are having trouble embedding Flash content (or any other plugin) into your Gecko# application, make sure you have set the MOZ_PLUGIN_PATH to the directory holding mozilla, like this:
 
@@ -225,16 +223,16 @@ WebControl.CompPath = "/usr/lib/mozilla-firefox";
 ```
 
 Migration
-=========
+---------
 
-**How do I migrate a Gtk# 1.0 to Gtk# 2.0 application?**
+### How do I migrate a Gtk# 1.0 to Gtk# 2.0 application?
 
 The steps are described in [Gtk# Upgrade page](/docs/gui/gtksharp/upgrade/).
 
 Common Problems
-===============
+---------------
 
-**I can not build Gtk# on my system**
+### I can not build Gtk# on my system
 
 If you are getting errors like this:
 
