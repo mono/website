@@ -24,13 +24,13 @@ Progress
 
 COM Interop support includes the following:
 
-Creation of COM objects via Runtime Callable Wrappers. \<span id="rcw_creation"/\>
+Creation of COM objects via Runtime Callable Wrappers.
 
 ``` csharp
  MyCOMObject com_object_wrapper = new MyCOMObject();
 ```
 
-where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx) and a [GuidAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx) with the CLSID of the COM class. \<span id="rcw_class_def"/\>
+where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx) and a [GuidAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx) with the CLSID of the COM class.
 
 ``` csharp
  [ComImport ()]
@@ -41,7 +41,7 @@ where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.m
  }
 ```
 
-COM objects can be marshalled into managed code, and managed objects can be marshalled into unmanaged code using the [MarshalAsAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshalasattribute.aspx). Also, VARIANT and BSTR marshalling is supported. \<span id="marshalasattribute"/\>
+COM objects can be marshalled into managed code, and managed objects can be marshalled into unmanaged code using the [MarshalAsAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshalasattribute.aspx). Also, VARIANT and BSTR marshalling is supported.
 
 ``` csharp
  [ComImport ()]
@@ -55,7 +55,7 @@ COM objects can be marshalled into managed code, and managed objects can be mars
  }
 ```
 
-A large number of methods in the [Marshal Class](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx) related to COM Interop have also been implemented. Methods like: \<span id="marshal_class"/\>
+A large number of methods in the [Marshal Class](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx) related to COM Interop have also been implemented. Methods like:
 
 ``` csharp
  public class Marshal
