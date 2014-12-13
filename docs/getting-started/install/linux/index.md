@@ -30,13 +30,13 @@ Update your package cache if necessary (i.e. run `apt-get update`), and run a pa
 
 #### mod_mono (Ubuntu 13.10 and later, Debian 8.0 and later)
 
-To enable mod_mono installation on Ubuntu 13.10 and later, and Debian 8.0 and later (and their derivatives), you will need to add a second repository to your system, in addition to the generic Debian/Ubuntu repository above (if you don't use sudo, be sure to switch to root):
+To enable mod_mono installation on Ubuntu 13.10 and later, and Debian 8.0 and later (and their derivatives), you will need to add a second repository to your system, **in addition** to the generic Debian/Ubuntu repository above (if you don't use sudo, be sure to switch to root):
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-#### Older Ubuntu releases
+#### Older Ubuntu releases (Ubuntu 12.10 and 12.04)
 
 To enable installation on older Ubuntu releases such as Ubuntu 12.04 and Ubuntu 12.10 (and their derivatives), you will need to add a second repository to your system, **in addition** to the generic Debian/Ubuntu repository (if you don't use sudo, be sure to switch to root):
 
