@@ -15,7 +15,7 @@ Debian, Ubuntu, and derivatives
 Add the Mono Project GPG signing key (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
 Next, add the package repository (if you don't use sudo, be sure to switch to root):
@@ -50,7 +50,7 @@ CentOS, Fedora, and derivatives
 Add the Mono Project GPG signing key **in a root shell** with:
 
 ``` bash
-rpm --import "https://pgp.mit.edu/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 ```
 
 Next, add the package repository **in a root shell**:
