@@ -117,7 +117,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
    <br/>
 
     <dd class="accordion-navigation">
-        <a class="panel" href="#gui"><h2>Interfacews Gráficas</h2></a>
+        <a class="panel" href="#gui"><h2>Interfaces Gráficas</h2></a>
         <div id="gui" class="content">
             <ul class="disc">
                 <li><a href="/docs/gui/gui-toolkits/">Toolkits Gráficos</a></li>
