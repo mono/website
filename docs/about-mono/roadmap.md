@@ -60,7 +60,7 @@ Current Releases
 Subprojects projects
 --------------------
 
-Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive "Olive") and [Gtk#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
+Other projects like the [debugger](/docs/debug+profile/debug/debugger/), the documentation browser, [Java](/docs/about-mono/languages/java/) integration through IKVM, [Olive](/archived/olive) and [Gtk#](/docs/gui/gtksharp/) will remain on their own schedules. This page will be updated to contain that information when it becomes available.
 
 ### Mono and Silverlight
 
@@ -79,7 +79,7 @@ Too large stacks:
 We are not working on any of the following deprecated APIs:
 
 -   System.EnterpriseServices
--   [WSE](/archived/wse "WSE") - Extensions to System.Web.Services.
+-   [WSE](/archived/wse) - Extensions to System.Web.Services.
 -   Workflow Foundation 3 (WF3)
 -   [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
 
@@ -99,5 +99,5 @@ Feel free to [send us your comments or questions](http://www.go-mono.com/contact
 Roadmap History
 ---------------
 
-For our previous roadmap information, please see [Roadmap History](/archived/roadmap_history "Roadmap History").
+For our previous roadmap information, please see [Roadmap History](/archived/roadmap_history).
 

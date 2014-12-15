@@ -8,7 +8,7 @@ redirect_from:
 Monkeyguide
 ===========
 
- The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C# programming, see [Books](/Books "Books").
+ The Mono Handbook is a guide to the Mono runtime, related tools, and libraries developed by the Mono team. For more resources about .NET or C# programming, see [Books](/Books).
 
 <table>
 <col width="100%" />
@@ -42,41 +42,41 @@ Monkeyguide
 About Mono
 ==========
 
--   [What is Mono?](/About_Mono "About Mono")
--   The [History](/History "History") of Mono
--   [Why Mono?](/Why_Mono "Why Mono?")
--   [.NET Framework Architecture](/.NET_Framework_Architecture ".NET Framework Architecture")
--   [Supported Platforms](/Supported_Platforms "Supported Platforms")
+-   [What is Mono?](/About_Mono)
+-   The [History](/History) of Mono
+-   [Why Mono?](/Why_Mono)
+-   [.NET Framework Architecture](/.NET_Framework_Architecture)
+-   [Supported Platforms](/Supported_Platforms)
 
 Getting Started
 ===============
 
 -   [Getting Mono](/Obtaining_Mono)
-    -   [Mono For Linux Developers](/Mono_For_Linux_Developers "Mono For Linux Developers")
-    -   [Mono for MacOS developers](/Mono:OSX "Mono:OSX")
+    -   [Mono For Linux Developers](/Mono_For_Linux_Developers)
+    -   [Mono for MacOS developers](/Mono:OSX)
     -   [Mono For Windows Developers](/Using_Mono_on_Windows)
-    -   [Mono On Other Platforms](/Mono_On_Other_Platforms "Mono On Other Platforms")
--   [Running Mono/.NET applications](/Guide:Running_Mono_Applications "Guide:Running Mono Applications")
+    -   [Mono On Other Platforms](/Mono_On_Other_Platforms)
+-   [Running Mono/.NET applications](/Guide:Running_Mono_Applications)
 
 Programming with Mono
 =====================
 
--   [Introduction to developing with Mono](/Introduction_to_developing_with_Mono "Introduction to developing with Mono")
--   [Using Databases](/Using_Databases "Using Databases")
--   [Using XML](/Using_XML "Using XML")
--   [Interop with Native Libraries](/Interop_with_Native_Libraries "Interop with Native Libraries")
--   [Mixing with Other Languages](/Mixing_with_Other_Languages "Mixing with Other Languages")
--   [Assemblies and the GAC](/Assemblies_and_the_GAC "Assemblies and the GAC")
--   [Guidelines:Application Deployment](/Guidelines:Application_Deployment "Guidelines:Application Deployment")
--   [Best Practices](/Best_Practices "Best Practices")
--   [More Sample Code](/More_Sample_Code "More Sample Code")
+-   [Introduction to developing with Mono](/Introduction_to_developing_with_Mono)
+-   [Using Databases](/Using_Databases)
+-   [Using XML](/Using_XML)
+-   [Interop with Native Libraries](/Interop_with_Native_Libraries)
+-   [Mixing with Other Languages](/Mixing_with_Other_Languages)
+-   [Assemblies and the GAC](/Assemblies_and_the_GAC)
+-   [Guidelines:Application Deployment](/Guidelines:Application_Deployment)
+-   [Best Practices](/Best_Practices)
+-   [More Sample Code](/More_Sample_Code)
 
 Portability
 ===========
 
--   [Guidelines:Application Portability](/Guidelines:Application_Portability "Guidelines:Application Portability")
--   [Guide: Porting Winforms Applications](/Guide:_Porting_Winforms_Applications "Guide: Porting Winforms Applications")
--   [Guide:_Porting_ASP.NET_Applications](/Guide:_Porting_ASP.NET_Applications "Guide: Porting ASP.NET Applications")
+-   [Guidelines:Application Portability](/Guidelines:Application_Portability)
+-   [Guide: Porting Winforms Applications](/Guide:_Porting_Winforms_Applications)
+-   [Guide:_Porting_ASP.NET_Applications](/Guide:_Porting_ASP.NET_Applications)
 
 Desktop Application Programming
 ===============================
@@ -84,20 +84,20 @@ Desktop Application Programming
 Beginners
 ---------
 
--   [Beginners Guide to Gtk#](/GtkSharpBeginnersGuide "GtkSharpBeginnersGuide")
--   [Building Gnome applications with Mono](/Mono_for_Gnome_Applications "Mono for Gnome Applications")
+-   [Beginners Guide to Gtk#](/GtkSharpBeginnersGuide)
+-   [Building Gnome applications with Mono](/Mono_for_Gnome_Applications)
 
 Intermediate
 ------------
 
--   [Creating Responsive GUI applications with Gtk#](/Responsive_Applications "Responsive Applications")
+-   [Creating Responsive GUI applications with Gtk#](/Responsive_Applications)
 -   [Writing Cross Platform applications using .NET/Mono](/Guidelines:Application_Portability)
--   [Creating Notification Icons](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Creating Notification Icons](/GtkSharpNotificationIcon)
 
 Advanced
 --------
 
--   [Generating bindings to GLib/gobject libraries](/GAPI "GAPI")
+-   [Generating bindings to GLib/gobject libraries](/GAPI)
 
 Desktop Services
 ----------------
@@ -119,47 +119,47 @@ Extending your GUI
 Web Programming
 ===============
 
--   [ASP.NET and mod_mono](/ASP.NET_and_mod_mono "ASP.NET and mod mono")
--   [Web Services](/Web_Services "Web Services")
--   [Using Client Certificates with XSP](/UsingClientCertificatesWithXSP "UsingClientCertificatesWithXSP")
+-   [ASP.NET and mod_mono](/ASP.NET_and_mod_mono)
+-   [Web Services](/Web_Services)
+-   [Using Client Certificates with XSP](/UsingClientCertificatesWithXSP)
 
 Operating System Programming
 ============================
 
--   Using the [IO.Ports](/HowToSystemIOPorts "HowToSystemIOPorts") for RS-232 Serial programming.
+-   Using the [IO.Ports](/HowToSystemIOPorts) for RS-232 Serial programming.
 
 Developer Tools
 ===============
 
 -   [MonoDevelop Integrated Development Environment](http://monodevelop.com)
--   [Class Library Documentation (API Docs)](/Monodoc "Monodoc")
--   [Debugging](/Debugging "Debugging")
--   [Logging Runtime Events](/Logging_Runtime_Events "Logging Runtime Events")
--   [Dis/Assembling CIL Code](/Dis/Assembling_CIL_Code "Dis/Assembling CIL Code")
--   [Command-Line Tools](/Command-Line_Tools "Command-Line Tools")
--   [Documenting Your Libraries](/Generating_Documentation "Generating Documentation")
+-   [Class Library Documentation (API Docs)](/Monodoc)
+-   [Debugging](/Debugging)
+-   [Logging Runtime Events](/Logging_Runtime_Events)
+-   [Dis/Assembling CIL Code](/Dis/Assembling_CIL_Code)
+-   [Command-Line Tools](/Command-Line_Tools)
+-   [Documenting Your Libraries](/Generating_Documentation)
 
 Mono on Windows
 ===============
 
--   [Using Mono on Windows](/Using_Mono_on_Windows "Using Mono on Windows")
--   [Installing Gtk# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework "Gtk-Sharp Installer for .NET Framework")
+-   [Using Mono on Windows](/Using_Mono_on_Windows)
+-   [Installing Gtk# for .NET](/Gtk-Sharp_Installer_for_.NET_Framework)
 -   [MonoTools allows you to use Visual Studio to target Mono systems](http://mono-tools.com/).
 
 Mono on MacOS X
 ===============
 
--   [MonoMac](/MonoMac "MonoMac") describes how to build native OSX applications with Mono using our MonoDevelop IDE.
+-   [MonoMac](/MonoMac) describes how to build native OSX applications with Mono using our MonoDevelop IDE.
 
--   Deprecated: [Using Mono with XCode](/CSharpPlugin "CSharpPlugin") on MacOS X.
+-   Deprecated: [Using Mono with XCode](/CSharpPlugin) on MacOS X.
 
 Appendices
 ==========
 
--   [Contributing](/Contributing "Contributing")
--   [How-to documents](/Howto "Howto")
--   [Other Resources](/Books "Books")
--   [Monkeyguide License and Credits](/Monkeyguide_License_and_Credits "Monkeyguide License and Credits")
--   [For Monkeyguide Authors](/For_Monkeyguide_Authors "For Monkeyguide Authors")
+-   [Contributing](/Contributing)
+-   [How-to documents](/Howto)
+-   [Other Resources](/Books)
+-   [Monkeyguide License and Credits](/Monkeyguide_License_and_Credits)
+-   [For Monkeyguide Authors](/For_Monkeyguide_Authors)
 
 

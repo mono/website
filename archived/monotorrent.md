@@ -58,7 +58,7 @@ Currently there are no precompiled binaries hosted anywhere.
 
 #### UIs
 
-There is a curses based UI, in module [MonoCurses](/MonoCurses "MonoCurses") and a Windows.Forms UI in [http://code.google.com/p/monotorrent](http://code.google.com/p/monotorrent).
+There is a curses based UI, in module [MonoCurses](/MonoCurses) and a Windows.Forms UI in [http://code.google.com/p/monotorrent](http://code.google.com/p/monotorrent).
 
 Client Library
 --------------

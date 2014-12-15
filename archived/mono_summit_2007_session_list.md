@@ -84,7 +84,7 @@ NUnit
 
 Presenter: **Charlie Poole, NUnit Project**
 
-[NUnit](/NUnit "NUnit") is an open source test framework for all languages that run on Mono or .NET. It is one of the most widely used test frameworks for .NET and seems to be the only framework with the stated goal of supporting Mono on an equal footing with .NET. This session will a mix of information about currently available features and those things that are coming in the new NUnit 3.0 platform. Here are some of the highlights I plan to cover...
+[NUnit](/NUnit) is an open source test framework for all languages that run on Mono or .NET. It is one of the most widely used test frameworks for .NET and seems to be the only framework with the stated goal of supporting Mono on an equal footing with .NET. This session will a mix of information about currently available features and those things that are coming in the new NUnit 3.0 platform. Here are some of the highlights I plan to cover...
 
 For newbies (brief)
 
@@ -94,7 +94,7 @@ For newbies (brief)
 For those who already use NUnit
 
 -   Cool stuff in the latest release
--   [NUnitHowTo](/NUnitHowTo "NUnitHowTo") - You tell me what you want covered
+-   [NUnitHowTo](/NUnitHowTo) - You tell me what you want covered
 
 For the intrepid
 
@@ -179,7 +179,7 @@ Mono.Cecil
 
 Presenter: **[Jb Evain](http://evain.net/blog)**
 
-[Cecil](/Cecil "Cecil") is a library to generate and inspect programs and libraries in the ECMA CIL format. This talk will be the occasion to discover, or re-discover in details what's exactly [Cecil](/Cecil "Cecil"), what it can do, what it is used for, and its lively ecosystem.
+[Cecil](/Cecil) is a library to generate and inspect programs and libraries in the ECMA CIL format. This talk will be the occasion to discover, or re-discover in details what's exactly [Cecil](/Cecil), what it can do, what it is used for, and its lively ecosystem.
 
 JB Evain created the Cecil library which is now in wide use in many applications in .NET and Mono. He joined Novell to work on Moonlight and our core class libraries. Prior to joining Novell he worked for db4o.
 

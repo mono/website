@@ -8,9 +8,9 @@ redirect_from:
 MonoTouch Installation
 ======================
 
-[MonoTouch](/MonoTouch "MonoTouch") is an SDK for developing applications for the iPhone using Mono. In addition to the Unix SDK, we are also releasing an optional alpha release of MonoDevelop 2.2 that contains support for iPhone application development.
+[MonoTouch](/MonoTouch) is an SDK for developing applications for the iPhone using Mono. In addition to the Unix SDK, we are also releasing an optional alpha release of MonoDevelop 2.2 that contains support for iPhone application development.
 
-Our [MonoTouch_Beta](/MonoTouch_Beta "MonoTouch Beta") page contains other useful information for developers getting started with MonoTouch on the iPhone Beta program, and instructions for signing up for the beta program.
+Our [MonoTouch_Beta](/MonoTouch_Beta) page contains other useful information for developers getting started with MonoTouch on the iPhone Beta program, and instructions for signing up for the beta program.
 
 **The SDK can only be downloaded if you have received a beta invitation. Invitations are going out in waves to people who have filled out the [beta signup form](http://spreadsheets.google.com/viewform?hl=en&formkey=dHRXeFI5b1NjUWdRRkpiSmxkanh6T1E6MA..).**
 
@@ -51,7 +51,7 @@ MonoTouch SDK Installation
 
 **Do not bother performing this step until you have Mono 2.4 from the previous step done. If you do not install Mono 2.4, your install will not work.**
 
-Download and install the [MonoTouch DMG](http://www.go-mono.com/monotouch-download/monotouch-0.9.10-20090913-0.pkg) file. This will give you access to the command line tools to develop applications with MonoTouch. The [tutorials](/MonoTouch_Tutorials "MonoTouch Tutorials") on this site will guide you through the steps of getting your sample applications running from the command line.
+Download and install the [MonoTouch DMG](http://www.go-mono.com/monotouch-download/monotouch-0.9.10-20090913-0.pkg) file. This will give you access to the command line tools to develop applications with MonoTouch. The [tutorials](/MonoTouch_Tutorials) on this site will guide you through the steps of getting your sample applications running from the command line.
 
 MonoDevelop Installation
 ========================
@@ -68,19 +68,19 @@ Downloads
 -   [MonoTouch Installer](http://www.go-mono.com/monotouch-download/monotouch-0.9.10-20090913-0.pkg)
 -   [MonoTouch-enabled MonoDevelop 2.2 Alpha Installer](http://go-mono.com/archive/MonoDevelop-MonoTouch-Preview-20090904-0.dmg).
 
-[Release History](/MonoTouch_ReleaseNotes "MonoTouch ReleaseNotes")
+[Release History](/MonoTouch_ReleaseNotes)
 
 Documentation
 =============
 
 In addition to the tutorials on this site, our web site at [www.go-mono.com/docs](http://www.go-mono.com/docs) contains the API documentation for the libraries shipped with MonoTouch. Look for the MonoTouch namespace.
 
-The API design for the CIL/Objective-C binding is covered in our [MonoTouch_API](/MonoTouch_API "MonoTouch API") document.
+The API design for the CIL/Objective-C binding is covered in our [MonoTouch_API](/MonoTouch_API) document.
 
 Samples
 =======
 
-We have ported some sample applications from CocoaTouch/Objective-C to [MonoTouch](/MonoTouch "MonoTouch"), you can:
+We have ported some sample applications from CocoaTouch/Objective-C to [MonoTouch](/MonoTouch), you can:
 
 -   [Browse the Source Code on the web](http://anonsvn.mono-project.com/viewvc/trunk/monotouch/samples/)
 -   Use [AnonSVN](/SourceCodeRepository) to download a copy to your machine using SVN.
@@ -90,5 +90,5 @@ Most of the samples are built using the pure SDK and Unix makefiles. This is don
 
 There is one MonoDevelop for iPhone setup called `monocatalog-md` which is identical to `monocatalog`. The only difference is that this is a pre-made MonoDevelop solution file.
 
-The samples require [MonoTouch to be installed](/MonoTouch_Installation "MonoTouch Installation").
+The samples require [MonoTouch to be installed](/MonoTouch_Installation).
 

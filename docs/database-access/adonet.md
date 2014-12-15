@@ -5,7 +5,7 @@ redirect_from:
 ---
 See our [Database_Access](/docs/database-access/) page for more details.
 
-Status and tests for ADO.NET 2.0 are available in our [ADOTests](/archived/adotests "ADOTests") page.
+Status and tests for ADO.NET 2.0 are available in our [ADOTests](/archived/adotests) page.
 
 Tools
 -----
@@ -25,9 +25,9 @@ Some tools that can be used for ADO.NET and other technologies (ASP.NET, XML, et
 Generic Database access in Mono ADO.NET
 ---------------------------------------
 
-An ADO.NET [Provider Factory](/archived/provider_factory "Provider Factory") was created by Brian Ritchie. The Provider Factory is a way to dynamically create connections, commands, parameters, and data adapters based on configuration information. This implmentation is based on the interfaces exposed in ADO.NET provider classes.
+An ADO.NET [Provider Factory](/archived/provider_factory) was created by Brian Ritchie. The Provider Factory is a way to dynamically create connections, commands, parameters, and data adapters based on configuration information. This implmentation is based on the interfaces exposed in ADO.NET provider classes.
 
-[Another Provider Factory](/archived/baseclass_provider_factory "BaseClass Provider Factory") implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
+[Another Provider Factory](/archived/baseclass_provider_factory) implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
 
 -   System.Data.SqlClient
 -   System.Data.Odbc
@@ -54,7 +54,7 @@ Database Access from ASP.NET
 Testing
 -------
 
--   Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests. The following table shows the stand alone test files for specific providers. Refer [Writing Connected Mode Testcases](/archived/writing_connected_mode_testcases "Writing Connected Mode Testcases") also for testing specific Data Providers.
+-   Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests. The following table shows the stand alone test files for specific providers. Refer [Writing Connected Mode Testcases](/archived/writing_connected_mode_testcases) also for testing specific Data Providers.
 
 ||
 |**Name**|**Assembly /<br/> Namespace**|**Test**|

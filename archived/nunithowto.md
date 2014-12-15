@@ -11,7 +11,7 @@ NUnitHowTo
 What Do You Want to Know?
 -------------------------
 
-Since there is so much to talk about, and so little time, I created this page for you to list things you to know about [NUnit](/NUnit "NUnit"). I'll try to cover as many of these as I can during [[my talk](/archived/mono_summit_2007_session_list/#nunit)] at the Mono Summit. If you don't have editor access, you can send your questions to charlie AT nunit DOT com.
+Since there is so much to talk about, and so little time, I created this page for you to list things you to know about [NUnit](/NUnit). I'll try to cover as many of these as I can during [[my talk](/archived/mono_summit_2007_session_list/#nunit)] at the Mono Summit. If you don't have editor access, you can send your questions to charlie AT nunit DOT com.
 
 Questions
 ---------

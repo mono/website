@@ -40,7 +40,7 @@ Output from [first NeHe Lesson](http://nehe.gamedev.net/data/lessons/lesson.asp?
 
 Code can be found here: [http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/NeHe/Lessons/01/Lesson01.cs?view=markup](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/NeHe/Lessons/01/Lesson01.cs?view=markup)
 
-This is the most simple demo of [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp"). It doesn't even draw anything. It is an example of creating a drawing area and will be very useful for anyone who wants to get started developing with this widget. All of the following tutorials are based on this simple example.
+This is the most simple demo of [GtkGLAreaSharp](/GtkGLAreaSharp). It doesn't even draw anything. It is an example of creating a drawing area and will be very useful for anyone who wants to get started developing with this widget. All of the following tutorials are based on this simple example.
 
 NeHe Lesson 02
 --------------

@@ -130,7 +130,7 @@ This tutorial will *not* have in-depth explanations about the Strongwind-specifi
 -   [Accerciser](http://live.gnome.org/Accerciser) (1.4.0 or later)
 -   [Strongwind](http://medsphere.org/projects/strongwind) (installing from SVN trunk is highly recommended)
 -   [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython) (the package name in openSUSE is IPCE). Our sample applications are written in IronPython, so it must be installed for them to run successfully.
--   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 
 ### Strongwind Introduction
 
@@ -185,7 +185,7 @@ The information normally displayed to the terminal by local_run.py is dumped in 
 
 Currently, the "official tests" are run on the "official" test machines, which are located at Novell in Provo. These are the machines that are found in the *machines.py* in our source code and are only available internally to Novell employees.
 
-We encourage anyone to help us write tests! If you want to submit a test to be added to the official tests and you have not received permission from a [QA hacker](/Accessibility:_Team "Accessibility: Team") to check patches into our Subversion repository, please e-mail our mailing list (mono-a11y@forge.novell.com) and attach a patch with the following:
+We encourage anyone to help us write tests! If you want to submit a test to be added to the official tests and you have not received permission from a [QA hacker](/Accessibility:_Team) to check patches into our Subversion repository, please e-mail our mailing list (mono-a11y@forge.novell.com) and attach a patch with the following:
 
 -   Sample application modifications (recommended) or new sample application. Not applicable if you are writing a test for an already existing application that does not need modified. *NOTE:* If you are modifying a sample application, make sure it doesn't break any of the existing tests.
 -   New or modified Application wrapper. Not applicable if you are writing a test for an already existing application wrapper that does not need modified.
@@ -209,7 +209,7 @@ The test machines are actually virtual machines (running on VMware Workstation) 
 |Fedora 9 32-bit|fedora32v0.sled.lab.novell.com|d755e.sled.lab.novell.com|
 |Fedora 9 64-bit|fedora64v0.sled.lab.novell.com|d755f.sled.lab.novell.com|
 
-All of the test machines have a VNC server installed. The host machines have [NX Server](http://www.nomachine.com) installed, which can be connected to using [NX Client](http://www.nomachine.com/download.php); VMware could be running in the background. Running *vmware* will open the backgrounded session. Both the test machines and the VMware hosts have a user *a11y*. For more login details contact a [QA hacker](/Accessibility:_Team "Accessibility: Team").
+All of the test machines have a VNC server installed. The host machines have [NX Server](http://www.nomachine.com) installed, which can be connected to using [NX Client](http://www.nomachine.com/download.php); VMware could be running in the background. Running *vmware* will open the backgrounded session. Both the test machines and the VMware hosts have a user *a11y*. For more login details contact a [QA hacker](/Accessibility:_Team).
 
 Each official test machine has a *tests* directory and a *logs* directory. *TEST_DIR* in *machines.py* is set to the *tests* directory and *LOG_DIR* in *machines.py* is set to the *logs* directory.
 
@@ -232,7 +232,7 @@ This diagram summarizes how WinForms testing is performed using Strongwind and t
 
 Our team does not test a specific application. Instead, our developers are writing code to make sure that Mono WinForms applications are accessible. This means that we can writer our testing against whatever application(s) we wish. The approach we take is to create small and simple "sample applications." Our sample applications can be found in our code repository in the *test/samples* directory.
 
-At this point you should [check out the uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development") if you haven't already.
+At this point you should [check out the uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code) if you haven't already.
 
 After you have checked out the uia2atk code, you can find several sample applications in uia2atk/test/samples. For this example, we will use uia2atk/test/samples/gtk/gtktutorial.py.
 
@@ -524,7 +524,7 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [Python](http://www.python.org)
 -   Enable "Assistive Technologies" from the GNOME Control Center
 -   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
--   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code "Accessibility: Getting Started With Development"). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
+-   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
 -   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
 -   Set *orca.debug.debugLevel = orca.debug.LEVEL_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.

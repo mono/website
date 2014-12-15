@@ -16,5 +16,5 @@ Definition
 Examples
 --------
 
-[Jenkara](/Jenkara "Jenkara")
+[Jenkara](/Jenkara)
 

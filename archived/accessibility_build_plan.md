@@ -73,7 +73,7 @@ Build Team
 Stephen Shaw (aka decriptor)<br/>
  Ray Wang (aka Ray)
 
-[Full A11y team](/Accessibility:_Team "Accessibility: Team")
+[Full A11y team](/Accessibility:_Team)
 
 Build Meetings
 --------------
@@ -303,7 +303,7 @@ Anyone interested in learn/helping with build is welcome to join our team.
 
 #### Schedule
 
-*Built around the [roadmap](/Accessibility:_Roadmap "Accessibility: Roadmap")*
+*Built around the [roadmap](/Accessibility:_Roadmap)*
 
 Based on Q2 in roadmap, our initial testing schedule is below:
 

@@ -29,9 +29,9 @@ DB4BOO
 Introduction
 ------------
 
-Doing some research to build new Mono demos for tradeshows, I decided to research [db4o](/DB4O "DB4O"), an open source object database that works with Mono as well as [Boo](http://boo.codehaus.org/), an simple object oriented scripting language for the CLR. Boo's simple syntax is especially attractive to me as I prototype or build little applications. Also, the [Boo](http://boo.codehaus.org/) shell in [Monodevelop](/Development_Environments) (or in a Terminal, using *booish*) makes it very easy to try things out quickly.
+Doing some research to build new Mono demos for tradeshows, I decided to research [db4o](/DB4O), an open source object database that works with Mono as well as [Boo](http://boo.codehaus.org/), an simple object oriented scripting language for the CLR. Boo's simple syntax is especially attractive to me as I prototype or build little applications. Also, the [Boo](http://boo.codehaus.org/) shell in [Monodevelop](/Development_Environments) (or in a Terminal, using *booish*) makes it very easy to try things out quickly.
 
-Through this short tutorial, we'll use a little bit of [Boo](http://boo.codehaus.org/) to create a simplistic little application to test out and explore [db4o](/DB4O "DB4O")'s object persistence features.
+Through this short tutorial, we'll use a little bit of [Boo](http://boo.codehaus.org/) to create a simplistic little application to test out and explore [db4o](/DB4O)'s object persistence features.
 
 Boo
 ---

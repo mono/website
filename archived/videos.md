@@ -52,7 +52,7 @@ Mono Demos
 
 #### SteticZilla
 
-[Demo](http://mysterion.org/~danw/blog/2005/03/steticzilla.html)Building a web browser using the new [Stetic](/Stetic "Stetic") Mono GUI designer.
+[Demo](http://mysterion.org/~danw/blog/2005/03/steticzilla.html)Building a web browser using the new [Stetic](/Stetic) Mono GUI designer.
 
 [![Stetic-thumb.png](/archived/images/d/d0/Stetic-thumb.png)](/archived/images/d/d0/Stetic-thumb.png)
 

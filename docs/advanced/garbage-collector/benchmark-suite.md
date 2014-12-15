@@ -6,7 +6,7 @@ redirect_from:
 
 The [Mono benchmark suite](http://storage.bos.xamarin.com/mono-gcbench/index.html) is a set of benchmarks that is run by Wrench against newly built revisions. The data thereby gathered is then put into visual form, so as to be quickly comprehensible. The source of the benchmark suite is [available](https://github.com/xamarin/benchmarker).
 
-We have a list of explanations for [Benchmark Regressions](/archived/benchmark_regressions "Benchmark Regressions").
+We have a list of explanations for [Benchmark Regressions](/archived/benchmark_regressions).
 
 Index
 =====

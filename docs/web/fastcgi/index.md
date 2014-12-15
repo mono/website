@@ -50,7 +50,7 @@ To install the FastCGI on Unix, follow the instructions on the FastCGI Linux pag
 -   [Cherokee HTTP Server](/docs/web/fastcgi/cherokee/)
 -   [Lighttpd](/docs/web/fastcgi/lighttpd/)
 -   [Nginx](/docs/web/fastcgi/nginx/)
--   [CGI](/archived/cgi "CGI") via cgi-fcgi
+-   [CGI](/archived/cgi) via cgi-fcgi
 
 The following servers support FastCGI, but we currently do not have per-server configuration information:
 

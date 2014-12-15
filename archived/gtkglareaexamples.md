@@ -15,12 +15,12 @@ Rotate Buttons
 
 This example expands on many of the other examples written so far. Some of the things that I find interesting about this example that were not previously in the others follow:
 
--   The OpenGL Object interface, [GtkGL.IGLObject](/GtkGL.IGLObject "GtkGL.IGLObject")
--   The [GtkGL.GLObjectBase](/GtkGL.GLObjectBase "GtkGL.GLObjectBase") class
--   The [GtkGL.Teapot](/GtkGL.Teapot "GtkGL.Teapot") class
--   The [GtkGL.ObjectRotationButton](/GtkGL.ObjectRotationButton "GtkGL.ObjectRotationButton") class
--   The [GtkGL.GLObjectRotationController](/GtkGL.GLObjectRotationController "GtkGL.GLObjectRotationController") class
--   The [GtkGL.Rotation](/GtkGL.Rotation "GtkGL.Rotation") class
--   The [GtkGL.RotationUtil](/GtkGL.RotationUtil "GtkGL.RotationUtil") class
+-   The OpenGL Object interface, [GtkGL.IGLObject](/GtkGL.IGLObject)
+-   The [GtkGL.GLObjectBase](/GtkGL.GLObjectBase) class
+-   The [GtkGL.Teapot](/GtkGL.Teapot) class
+-   The [GtkGL.ObjectRotationButton](/GtkGL.ObjectRotationButton) class
+-   The [GtkGL.GLObjectRotationController](/GtkGL.GLObjectRotationController) class
+-   The [GtkGL.Rotation](/GtkGL.Rotation) class
+-   The [GtkGL.RotationUtil](/GtkGL.RotationUtil) class
 
 

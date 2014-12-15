@@ -442,10 +442,10 @@ Tips & Tricks
 -   Using a Python interactive interpreter can be very helpful when trying to debug your problems. I like to test my application wrappers by importing them and calling their methods from the interpreter. You will want to call watchdog.stop(), however, or the watchdog will likely timeout when you're trying to work. You can also increase the WATCHDOG_TIMEOUT in Strongwind's *config.py*.
 -   If you want to debug a test script at a certain point, it's often useful to import pdb and then call pdb.set_trace() at the point you wish to start debugging. This basically preserves everything and drops you at an interactive python prompt where you can use strongwind function calls to poke and prod at the app (Thanks Jonathan Tai)
 
- Have your own tip or trick? Add it here or talk to one of the [QA hackers](/Accessibility:_Team "Accessibility: Team") on IRC!
+ Have your own tip or trick? Add it here or talk to one of the [QA hackers](/Accessibility:_Team) on IRC!
 
 What Now?
 ---------
 
-Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+Write tests! If you are interested in writing tests for the UIA Mono Accessibility team, read the UIAQA [Testing Howto](/Accessibility:_Testing_Howto).
 

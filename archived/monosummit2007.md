@@ -52,7 +52,7 @@ Developer Meeting: November 28th, 29th, 30th.
 Information
 ===========
 
--   [Agenda](/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule")
+-   [Agenda](/Mono_Summit_2007_Schedule)
 -   Registration: [this web site](http://www.whyfloss.com/en/summit/mono07/)
 -   Location: [here](http://www.whyfloss.com/en/summit/mono07/location)
 -   How to arrive: [Páginas Amarilla](http://engcallejero.paginasamarillas.es/flash/mapa.asp?ciudad=MADRID&x=-6415&y=5404&l1=28012,%20MADRID&l2=Calle%20Tribulete,%2014&t_act=&radio=1000&Ops=Vacio&idCalle=6349&localidadgis=MADRID&idioma=eng&site=callejero) & [Google Maps](http://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&ttype=&q=+c%2F+Tribulete,+14,+Madrid&sll=37.0625,-95.677068&sspn=30.406222,63.896484&ie=UTF8&ll=40.408317,-3.70295&spn=0.007124,0.0156&z=16&iwloc=addr&om=1)
@@ -62,7 +62,7 @@ Planning Meeting
 
 The planning meeting on Monday and Tuesday is open to contributors to the Mono project to discuss goals, roadmap, objectives and help plan and prioritize the tasks for the Mono project.
 
-This includes Mono, [Moonlight](/Moonlight "Moonlight") and [Olive](/Olive "Olive") as well as discussing future developments.
+This includes Mono, [Moonlight](/Moonlight) and [Olive](/Olive) as well as discussing future developments.
 
 Developer Meeting
 -----------------
@@ -71,7 +71,7 @@ The Developer Meeting will be held from Wednesday to Friday, we will open with a
 
 This year we will be allocating more free face-to-face time for people to talk to the developers by having explicit "Meet the Experts" sessions, and dedicating the afternoons for un-conference sessions, hacking and consulting.
 
-The current agenda is available [here](/Mono_Summit_2007_Schedule "Mono Summit 2007 Schedule"), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.ximian.com mailing list. [(Mailing List info)](/Mailing_Lists "Mailing Lists")
+The current agenda is available [here](/Mono_Summit_2007_Schedule), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.ximian.com mailing list. [(Mailing List info)](/Mailing_Lists)
 
 Event Planning
 ==============

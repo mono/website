@@ -20,7 +20,7 @@ We've made a special release for Race To Linux that has several ASP.Net fixes ov
 
 Mono 1.2.3.50 rtl1 on openSUSE 10.2
 
-For notes on using the VMware image, see: [Instructions for VMware image](/VMware_Image "VMware Image").
+For notes on using the VMware image, see: [Instructions for VMware image](/VMware_Image).
 
 -   [Download Torrent](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip.torrent)
 -   [Download VM](http://anonsvn.mono-project.com/mono1.2.3.50_opensuse10.2_vmware_rtl1.zip)
@@ -37,7 +37,7 @@ Only Gtk# for .NET:
 
 Mono Migration Analyzer:
 
--   [See the Mono Migration Analyzer page](/MoMA "MoMA").
+-   [See the Mono Migration Analyzer page](/MoMA).
 
 **Mac OS X** 10.3 (Panther) and 10.4 (Tiger)
 
@@ -48,7 +48,7 @@ Includes Mono, Cocoa#, installs in /Library/Frameworks
 
 [![Solaris](/archived/images/2/2f/Mono_icon_solaris.gif)](/archived/images/2/2f/Mono_icon_solaris.gif "Solaris")  **Solaris 8 (Sparc)**
 
-[Solaris package instructions](/SolarisInstructions "SolarisInstructions").
+[Solaris package instructions](/SolarisInstructions).
 
 -   [Mono 1.2.3.50_rtl1 Package](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/sunos-8-sparc/rtl1/mono-1.2.3.50_rtl1.sunos8.novell.sparc.pkg.gz)
 
@@ -266,7 +266,7 @@ Includes Mono, Cocoa#, installs in /Library/Frameworks
 
 (All distributions)
 
-For help with the installation, see: [Instructions to use the Installer](/InstallerInstructions "InstallerInstructions").
+For help with the installation, see: [Instructions to use the Installer](/InstallerInstructions).
 
 -   [Mono 1.2.3.50_rtl1 Installer](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/linux-installer/rtl1/mono-1.2.3.50_rtl1-installer.bin)
 

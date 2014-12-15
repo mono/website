@@ -33,7 +33,7 @@ Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mon
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
 
- You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi "CGI") or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
+ You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi) or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
 
 To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 
@@ -47,11 +47,11 @@ Yes, Mono supports ASP.NET-based web services (files ending in .asmx)
 
 At this point Mono does not have support for the "Web Services Enhancements" package and there are no plans on supporting it.
 
-See the [WSE](/archived/wse "WSE") page for more details about it.
+See the [WSE](/archived/wse) page for more details about it.
 
 ### Does Mono support XHTML and Web standards?
 
-See the long reply on [WebStandards](/archived/webstandards "WebStandards").
+See the long reply on [WebStandards](/archived/webstandards).
 
 ### Are there alternatives to ASP.NET?
 
@@ -88,7 +88,7 @@ XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is 
 
 ### How do I restart my Mono applications without restarting Apache?
 
-Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
+Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel) for details on setting it up.
 
 ### My Apache Module Is Not Recognized, what to do?
 
@@ -177,7 +177,7 @@ It will happen if you configured the C# compiler in `Web.config` in a way simila
 </configuration>
 ```
 
-This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration "ASP.NET Mono Specific Configuration")
+This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration)
 
 ### ProviderException from SqliteMembershipProvider
 
@@ -271,7 +271,7 @@ responseEncoding is the encoding of output (Content-Type: ...; charset)
 
 ### Where are the various settings for System.Web documented?
 
-Some documentation is available on this site on [Config_system.web](/archived/config_systemweb "Config system.web"), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
+Some documentation is available on this site on [Config_system.web](/archived/config_systemweb), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
 
 Features
 --------
@@ -466,7 +466,7 @@ There are a few Ajax libraries that developers could consider:
 
 ### Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?
 
-Yes, it is possible with Mono version from git master or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
+Yes, it is possible with Mono version from git master or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping)
 
 Extra Languages
 ---------------

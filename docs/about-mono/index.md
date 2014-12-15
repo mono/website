@@ -33,7 +33,7 @@ Mono Feature Highlights
 Runs on [Linux](/docs/about-mono/supported-platforms/linux/), [OS X](/docs/about-mono/supported-platforms/osx/), [BSD](/docs/about-mono/supported-platforms/bsd/), and [Microsoft Windows](/docs/getting-started/install/windows/), including [x86](/docs/about-mono/supported-platforms/x86/), [x86-64](/docs/about-mono/supported-platforms/amd64/), [ARM](/docs/about-mono/supported-platforms/arm/), [s390](/docs/about-mono/supported-platforms/s390/), [PowerPC](/docs/about-mono/supported-platforms/powerpc/) and much more
 
 [Multi-Language](/docs/about-mono/languages/)<br/>
-Develop in [C# 4.0](/docs/about-mono/languages/csharp/) (including LINQ and `dynamic`), [VB 8](/docs/about-mono/languages/visualbasic/), [Java](/docs/about-mono/languages/java/), [Python](/archived/python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
+Develop in [C# 4.0](/docs/about-mono/languages/csharp/) (including LINQ and `dynamic`), [VB 8](/docs/about-mono/languages/visualbasic/), [Java](/docs/about-mono/languages/java/), [Python](/archived/python), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
 
 Binary Compatible<br/>
 Built on an implementation of the [ECMA](/docs/about-mono/languages/ecma/)'s [Common Language Infrastructure](/docs/advanced/runtime/) and [C#](/docs/about-mono/languages/csharp/)

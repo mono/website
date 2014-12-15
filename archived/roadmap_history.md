@@ -274,13 +274,13 @@ Mono 1.2 is an incremental upgrade to Mono 1.0, and contains the following new f
 
 -   Generic types support: C# compiler, execution system and core class libraries (C# 2.0)
 
--   System.Windows.Forms 1.1 support ([Track Progress](/WinForms "WinForms"))
+-   System.Windows.Forms 1.1 support ([Track Progress](/WinForms))
 
--   [Mono Debugger](/Debugger "Debugger") (new alpha available soon - see release notes)
+-   [Mono Debugger](/Debugger) (new alpha available soon - see release notes)
 
--   [gtk# 2.0](/GtkSharp "GtkSharp") (includes support for gtk 2.12)
+-   [gtk# 2.0](/GtkSharp) (includes support for gtk 2.12)
 
--   New platforms: [ARM](/Mono:ARM "Mono:ARM"), [Itanium](/Mono:IA64 "Mono:IA64"), [s390](/Mono:S390 "Mono:S390"), [s390x](/Mono:S390 "Mono:S390").
+-   New platforms: [ARM](/Mono:ARM), [Itanium](/Mono:IA64), [s390](/Mono:S390), [s390x](/Mono:S390).
 
 -   Numerous scalability and performance enhancements
 
@@ -298,7 +298,7 @@ Mono 1.2 also include assemblies from .NET 2.0 and these are available as techno
 
 **Released on:** November 9, 2006.
 
-There are various milestone branches in this release, see our [Branches](/Branches "Branches") page for more details.
+There are various milestone branches in this release, see our [Branches](/Branches) page for more details.
 
 Previous Goals
 --------------
@@ -374,30 +374,30 @@ In addition, an "add-on" to the core of .NET has been released, called ".NET 3.0
 
 The Mono project has been tracking some of the improvements available in those releases, some of the highlights of our work so far are:
 
--   Core: mscorlib, System and System.XML assemblies. These support both the 1.x and 2.0 profiles. Work is underway to complete the [2.0 profile](/Completing2.0Profile "Completing2.0Profile").
+-   Core: mscorlib, System and System.XML assemblies. These support both the 1.x and 2.0 profiles. Work is underway to complete the [2.0 profile](/Completing2.0Profile).
 
--   [ADO.NET](/ADO.NET "ADO.NET"): System.Data and various other database providers, they are 1.x complete, and most of 2.x is complete
+-   [ADO.NET](/ADO.NET): System.Data and various other database providers, they are 1.x complete, and most of 2.x is complete
 
--   [ASP.NET](/ASP.NET "ASP.NET") 1.x and 2.x: WebForms and Web Services are supported. Only WebParts are missing from our 2.x support.
+-   [ASP.NET](/ASP.NET) 1.x and 2.x: WebForms and Web Services are supported. Only WebParts are missing from our 2.x support.
 
 -   System.Security support 1.1 features and has partial support for 2.0 (like XML encryption) but the S.S.C.Pkcs namespace is still imcomplete.
 
 -   DirectoryServices implemented on top of Novell.LDAP
 
--   [Windows.Forms](/WinForms "WinForms") 1.1 with almost complete 2.0 support.
+-   [Windows.Forms](/WinForms) 1.1 with almost complete 2.0 support.
 
--   [System.Drawing](/Drawing "Drawing") supports both 1.x and 2.0 profiles.
+-   [System.Drawing](/Drawing) supports both 1.x and 2.0 profiles.
 
 -   Compilers: C# 1 and 2 as well as bits of 3, VB.NET 8 and various command line tools that are part of the SDK.
 
--   Transaction support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes](/Transactions "Transactions") on its implementation and limitations).
+-   Transaction support, we have some partial support but currently no plans exist beyond the current implementation (see the [notes](/Transactions) on its implementation and limitations).
 
--   Open Source, Unix and Gnome specific libraries, see our [Plans](/Plans "Plans") page for more details.
+-   Open Source, Unix and Gnome specific libraries, see our [Plans](/Plans) page for more details.
 
 There are certain features that we are not planning on supporting and are available either as stubs (to allow other code to compile or to satisfy dependencies) or are not even present in Mono, these include:
 
 -   EnterpriseServices
--   [Web Services Enhancements (WSE)](/WSE "WSE")
+-   [Web Services Enhancements (WSE)](/WSE)
 -   System.Management: too Windows specific
 -   [System.Messaging](/System.Messaging).
 
@@ -407,8 +407,8 @@ Designer support is only needed at development-time, this is not something that 
 
 Some components exist that were once developed but are no longer actively developed, these include:
 
--   [Transactions](/Transactions "Transactions")
--   [JScript](/JScript "JScript")
+-   [Transactions](/Transactions)
+-   [JScript](/JScript)
 
 See the following sections for more details on plans for 2.0, 3.0 and 3.5 APIs.
 

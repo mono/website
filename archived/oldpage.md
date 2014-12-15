@@ -9,23 +9,23 @@ OldPage
 =======
 
 **Mono Status**
-**32 bits:** [x86](/Mono:X86 "Mono:X86"), [PPC](/Mono:PowerPC "Mono:PowerPC"), [SPARC](/Mono:SPARC "Mono:SPARC"), [S390](/Mono:S390 "Mono:S390"), [ARM](/Mono:ARM "Mono:ARM")
-**64 bits:** [x86-64](/Mono:AMD64 "Mono:AMD64"), [SPARC](/Mono:SPARC "Mono:SPARC"), [IA64](/Mono:IA64 "Mono:IA64")
-**OS:** [Linux](/Mono:Linux "Mono:Linux"), [Windows](/Using_Mono_on_Windows), [OSX](/Mono:OSX "Mono:OSX"), [BSD](/Mono:BSD "Mono:BSD"), [Solaris](/Mono:SPARC "Mono:SPARC")
+**32 bits:** [x86](/Mono:X86), [PPC](/Mono:PowerPC), [SPARC](/Mono:SPARC), [S390](/Mono:S390), [ARM](/Mono:ARM)
+**64 bits:** [x86-64](/Mono:AMD64), [SPARC](/Mono:SPARC), [IA64](/Mono:IA64)
+**OS:** [Linux](/Mono:Linux), [Windows](/Using_Mono_on_Windows), [OSX](/Mono:OSX), [BSD](/Mono:BSD), [Solaris](/Mono:SPARC)
 
 Mono is a platform for running and developing modern applications, based on the ECMA/ISO Standards. Mono can run existing programs targeting the .NET or Java frameworks.<br/>
-Mono is an open source effort led by Novell and is the foundation for many new applications. [more...](/About_Mono "About Mono")
+Mono is an open source effort led by Novell and is the foundation for many new applications. [more...](/About_Mono)
 
-Users: [Downloads](/Downloads "Downloads") | [Bug Reporting](/Bugs "Bugs") | [Software](/Software "Software") | [Support](/Support "Support")
- Developers: [Source Code](/SourceCodeRepository) | [Books](/Books "Books") | [Languages](/Languages "Languages") | [Forge](/Novell_Forge "Novell Forge") | [API Docs](http://www.go-mono.com/docs/)
- Contributors: [Resources](/Resources "Resources") | [Development Plans](/Plans "Plans") | [Tasks](/Todo "Todo") | [Bug Tracking](/Bugs "Bugs")
- Community: [Mailing Lists](/Mailing_Lists "Mailing Lists") | [IRC](/IRC "IRC") | [Related Sites](/Related_Mono_Sites "Related Mono Sites") | [User Groups](/User_Groups "User Groups") | [Blogs](http://www.go-mono.com/monologue/)
- FAQ: [General](/FAQ:_General "FAQ: General") | [Technical](/FAQ:_Technical "FAQ: Technical") | [Licensing](/FAQ:_Licensing "FAQ: Licensing") | [Asp.net](/FAQ:_ASP.NET "FAQ: ASP.NET") | [Security](/FAQ:_Security "FAQ: Security")
+Users: [Downloads](/Downloads) | [Bug Reporting](/Bugs) | [Software](/Software) | [Support](/Support)
+ Developers: [Source Code](/SourceCodeRepository) | [Books](/Books) | [Languages](/Languages) | [Forge](/Novell_Forge) | [API Docs](http://www.go-mono.com/docs/)
+ Contributors: [Resources](/Resources) | [Development Plans](/Plans) | [Tasks](/Todo) | [Bug Tracking](/Bugs)
+ Community: [Mailing Lists](/Mailing_Lists) | [IRC](/IRC) | [Related Sites](/Related_Mono_Sites) | [User Groups](/User_Groups) | [Blogs](http://www.go-mono.com/monologue/)
+ FAQ: [General](/FAQ:_General) | [Technical](/FAQ:_Technical) | [Licensing](/FAQ:_Licensing) | [Asp.net](/FAQ:_ASP.NET) | [Security](/FAQ:_Security)
 
-Server: [Asp.net](/ASP.NET "ASP.NET") | [Database Access](/Database_Access "Database Access")
- Client: [Gtk#](/GtkSharp "GtkSharp") | [WinForms](/WinForms "WinForms") | [CocoaSharp](/MonoMac)
- Core: [C#](/CSharp_Compiler "CSharp Compiler") | [Runtime](/Mono:Runtime "Mono:Runtime") | [Cryptography](/Cryptography "Cryptography") | [CAS](/CAS "CAS") | [XML](/XML "XML")
- In Action: [Screenshots](/Screenshots "Screenshots") | [Videos](/Videos "Videos")
+Server: [Asp.net](/ASP.NET) | [Database Access](/Database_Access)
+ Client: [Gtk#](/GtkSharp) | [WinForms](/WinForms) | [CocoaSharp](/MonoMac)
+ Core: [C#](/CSharp_Compiler) | [Runtime](/Mono:Runtime) | [Cryptography](/Cryptography) | [CAS](/CAS) | [XML](/XML)
+ In Action: [Screenshots](/Screenshots) | [Videos](/Videos)
 
 <table>
 <col width="50%" />

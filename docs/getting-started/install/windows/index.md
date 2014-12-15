@@ -64,7 +64,7 @@ If you get this far, you have a working Mono installation.
 Gtk#
 -----
 
-[Gtk#](/docs/gui/gtksharp/) is included as part of the Mono installation, this will allow you to create Gtk# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk#](/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide](/archived/monkeyguide "Monkeyguide") to check the [Gtk# beginner's guide](/docs/gui/gtksharp/beginners-guide/).
+[Gtk#](/docs/gui/gtksharp/) is included as part of the Mono installation, this will allow you to create Gtk# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk#](/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Monkeyguide](/archived/monkeyguide) to check the [Gtk# beginner's guide](/docs/gui/gtksharp/beginners-guide/).
 
 The combined installer creates an "Applications" folder under the main Mono program group with two sample Gtk# applications which can be run to test your Gtk# installation.
 
@@ -72,7 +72,7 @@ The combined installer creates an "Applications" folder under the main Mono prog
 
 These are:
 
--   Prj2Make# GTK - This is a graphical interface to the prj2make library which can be used to generate Makefiles from Visual Studio.NET C# projects and solutions. You can find out more about this application in the article [Working with Mono and Visual Studio](/archived/working_with_mono_and_visual_studio "Working with Mono and Visual Studio").
+-   Prj2Make# GTK - This is a graphical interface to the prj2make library which can be used to generate Makefiles from Visual Studio.NET C# projects and solutions. You can find out more about this application in the article [Working with Mono and Visual Studio](/archived/working_with_mono_and_visual_studio).
 -   Sql# GTK - A Graphical "Query Analyzer" style tool which supports several different databases.
 
 Alternatively, if you only want to use Gtk# on Windows, without Mono, you can use the [Gtk# installer for the .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/).

@@ -8,5 +8,5 @@ redirect_from:
 Category:WinForms
 =================
 
-This category contains articles about the Windows Forms GUI Toolkit. Please see [WinForms](/WinForms "WinForms") for a general overview.
+This category contains articles about the Windows Forms GUI Toolkit. Please see [WinForms](/WinForms) for a general overview.
 

@@ -174,7 +174,7 @@ Xlib: unexpected async reply (sequence 0x146)!
 
 It means that you are trying to invoke methods in Gtk# from a thread that is not the one that has invoked Application.Run (). This is not supported, to fix this you must ensure that all calls to Gtk+ are done from the thread that invoked Application.Run. This is done by either just hooking up to signals, using GLib timers or events and not threads.
 
-This topic is covered in more detail in these two pages: [Best_Practices](/archived/best_practices "Best Practices") and [Responsive Applications](/docs/gui/gtksharp/responsive-applications/) pages for details on how to solve this issue.
+This topic is covered in more detail in these two pages: [Best_Practices](/archived/best_practices) and [Responsive Applications](/docs/gui/gtksharp/responsive-applications/) pages for details on how to solve this issue.
 
 Gecko# and Mozilla
 ------------------

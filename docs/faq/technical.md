@@ -268,11 +268,11 @@ Development Tools
 
 Yes, see our [Debugger](/docs/debug+profile/debug/debugger/) page for more information.
 
-Also look at the [Guide:Debugger](/archived/guidedebugger "Guide:Debugger") for a tutorial and reference guide to the Mono debugger.
+Also look at the [Guide:Debugger](/archived/guidedebugger) for a tutorial and reference guide to the Mono debugger.
 
 ### Debugger Tutorial
 
-See the [Guide:Debugger](/archived/guidedebugger "guide:Debugger") for a debugger tutorial and reference guide.
+See the [Guide:Debugger](/archived/guidedebugger) for a debugger tutorial and reference guide.
 
 ### What Platforms does the Debugger Support?
 
@@ -308,7 +308,7 @@ A more advanced profiler is the [Logging Profiler](/docs/debug+profile/profile/p
 
 ### Does Mono have a memory profiler?
 
-Mono has several memory profilers: a built-in one (see manual page), [HeapShot](/docs/debug+profile/profile/heapshot/) for information about the Mono live memory usage, [HeapBuddy](/archived/heapbuddy "HeapBuddy") for memory allocation patterns and OprofileWithAnonJitData using OProfile to profile JITed code.
+Mono has several memory profilers: a built-in one (see manual page), [HeapShot](/docs/debug+profile/profile/heapshot/) for information about the Mono live memory usage, [HeapBuddy](/archived/heapbuddy) for memory allocation patterns and OprofileWithAnonJitData using OProfile to profile JITed code.
 
 See the [Profile](/docs/debug+profile/profile/) page for more information.
 
@@ -536,9 +536,9 @@ Mono and EnterpriseServices
 
 The following document link to the status of EnterpriseServices in Mono:
 
--   [EnterpriseServices](/archived/enterpriseservices "EnterpriseServices")
+-   [EnterpriseServices](/archived/enterpriseservices)
 -   [SystemMessaging](/archived/systemmessaging)
--   [Transactions](/archived/transactions "Transactions")
+-   [Transactions](/archived/transactions)
 
 Mono and Java
 -------------
@@ -578,7 +578,7 @@ Yes. The Microsoft class collection is very big, but it is by no means complete.
 
 Embracing a good technology is good. Extending technologies in incompatible ways is bad for the users, so we do not plan on making incompatible changes to the technologies.
 
-If you have innovative ideas, and want to create new classes, we encourage you to make those classes operate correctly well in both Mono and .NET. Today Mono ships with a number of extra libraries that were developed either by members of the Mono community, or other groups. In some cases, we have found the bits from Microsoft to be incomplete, but we avoid breaking the API, instead we expose the missing functionality in new assemblies (see [Mono.Security](/archived/cryptography "Cryptography")).
+If you have innovative ideas, and want to create new classes, we encourage you to make those classes operate correctly well in both Mono and .NET. Today Mono ships with a number of extra libraries that were developed either by members of the Mono community, or other groups. In some cases, we have found the bits from Microsoft to be incomplete, but we avoid breaking the API, instead we expose the missing functionality in new assemblies (see [Mono.Security](/archived/cryptography)).
 
 ### Do you plan on exploring, changing other parts?
 
@@ -743,7 +743,7 @@ A sample program that uses signal handlers in this way is `mono-service` you can
 
 ### How to open a link in the user's browser?
 
-See the [Howto_OpenBrowser](/archived/howto_openbrowser "Howto OpenBrowser")
+See the [Howto_OpenBrowser](/archived/howto_openbrowser)
 
 Mono and GCC
 ------------
@@ -829,7 +829,7 @@ The folks at the [Language Shootout](http://shootout.alioth.debian.org/debian/cs
 
 ### Do you track Mono's performance improvements?
 
-See our [Performance Testing](/archived/performancetesting "PerformanceTesting") page for more details on the tests that we are tracking on performance.
+See our [Performance Testing](/archived/performancetesting) page for more details on the tests that we are tracking on performance.
 
 ### What kind of framework does Mono have for new optimizations?
 
@@ -857,7 +857,7 @@ For example, on the CIL, the stack is not really an abstraction available for th
 
 ### Does Mono support performance counters?
 
-Yes, they are described in our [Mono Performance Counters](/archived/mono_performance_counters "Mono Performance Counters") page.
+Yes, they are described in our [Mono Performance Counters](/archived/mono_performance_counters) page.
 
 Mono and Portable.NET
 ---------------------
@@ -906,9 +906,9 @@ By forcing ourselves to use our own code to develop our tools, we bug fix proble
 
 -   Mono has a [complete managed XML stack](/docs/tools+libraries/libraries/xml/): XML, XPath, XML Serializer, XML Schema handling are fully functional, feature complete and tuned for performance. In addition to the Microsoft API, mono ships with the Mono.Xml.Ext library that contains an XQuery/XPath2 implementations.
 
--   Mono has a [complete cryptography stack](/archived/cryptography "Cryptography"): we implement the 1.0 and 1.1 APIs as well as using our fully managed stack to implement the SSL/TLS transports.
+-   Mono has a [complete cryptography stack](/archived/cryptography): we implement the 1.0 and 1.1 APIs as well as using our fully managed stack to implement the SSL/TLS transports.
 
--   [Extensive database support](/docs/database-access/adonet/): Mono ships with database provides for [Firebird](/docs/database-access/providers/firebird/), [IBM DB2](/docs/database-access/providers/db2/), [Oracle](/docs/database-access/providers/oracle/), [Sybase](/docs/database-access/providers/sybase/), Microsoft [SQL Server](/docs/database-access/providers/sqlclient/), [SQLite](/docs/database-access/providers/sqlite/), [MySQL](/docs/database-access/providers/mysql/), [PostgreSQL](/docs/database-access/providers/postgresql/), [Ole DB](/archived/ole_db "OLE DB") and [ODBC](/docs/database-access/providers/odbc/).
+-   [Extensive database support](/docs/database-access/adonet/): Mono ships with database provides for [Firebird](/docs/database-access/providers/firebird/), [IBM DB2](/docs/database-access/providers/db2/), [Oracle](/docs/database-access/providers/oracle/), [Sybase](/docs/database-access/providers/sybase/), Microsoft [SQL Server](/docs/database-access/providers/sqlclient/), [SQLite](/docs/database-access/providers/sqlite/), [MySQL](/docs/database-access/providers/mysql/), [PostgreSQL](/docs/database-access/providers/postgresql/), [Ole DB](/archived/ole_db) and [ODBC](/docs/database-access/providers/odbc/).
 
 -   A more complete System.Drawing implementation, based on Cairo.
 
@@ -923,7 +923,7 @@ Common Problems
 
 ### I have a multi-threaded application, and I keep getting timeouts, what is happening?
 
-For a complete explanation of the problem, see our article: [ThreadPool Deadlocks](/archived/articlethreadpool_deadlocks "Article:ThreadPool Deadlocks")
+For a complete explanation of the problem, see our article: [ThreadPool Deadlocks](/archived/articlethreadpool_deadlocks)
 
 ### MONO_EXTERNAL_ENCODINGS
 

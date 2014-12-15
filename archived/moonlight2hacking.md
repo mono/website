@@ -79,5 +79,5 @@ Grid widget, Text editor (its very simple, limited, only one font, no inlines/ru
 Security
 ========
 
-The current state of all the Moonlight 2 security work is available at [Security Status](/Moonlight/SecurityStatus "Moonlight/SecurityStatus")
+The current state of all the Moonlight 2 security work is available at [Security Status](/Moonlight/SecurityStatus)
 

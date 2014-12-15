@@ -104,7 +104,7 @@ Mono's implementation of the System.Windows.Forms API is built on top of Carbon 
 Third Party Libraries
 ---------------------
 
-[ObjC#](/archived/objcsharp "ObjCSharp") is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
+[ObjC#](/archived/objcsharp) is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
 
 Uninstalling Mono on Mac OS X
 -----------------------------

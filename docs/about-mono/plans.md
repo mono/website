@@ -150,7 +150,7 @@ Mono Management
 
 In addition, the following are Mono project management plans:
 
--   [Infrastructure Projects](/archived/infrastructureprojects "InfrastructureProjects")
+-   [Infrastructure Projects](/archived/infrastructureprojects)
 -   Visual Studio Projects
-    -   [Mono Tools Getting Started Guide](/archived/gettingstartedwithmonotools "GettingStartedWithMonoTools")
-    -   [Visual Studio Integration](/archived/visual_studio_integration "Visual Studio Integration")
+    -   [Mono Tools Getting Started Guide](/archived/gettingstartedwithmonotools)
+    -   [Visual Studio Integration](/archived/visual_studio_integration)

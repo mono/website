@@ -8,5 +8,5 @@ redirect_from:
 Category:FastCGI
 ================
 
-Pages containing information about [FastCGI](/FastCGI "FastCGI")
+Pages containing information about [FastCGI](/FastCGI)
 

@@ -53,8 +53,8 @@ The use of [Cairo](http://cairographics.org/introduction) and [Glitz](http://www
 Projects using this package
 ---------------------------
 
--   [Jenkara](/Jenkara "Jenkara")
--   [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp")
+-   [Jenkara](/Jenkara)
+-   [GtkGLAreaSharp](/GtkGLAreaSharp)
 
 Download
 --------

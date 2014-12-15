@@ -21,14 +21,14 @@ Gtk# GUI details and techniques
 -   [Widget Layout and Packing](/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
 -   [Creating Responsive GUI applications with Gtk#](/docs/gui/gtksharp/responsive-applications/)
 -   [Creating Notification Icons](/docs/gui/gtksharp/widgets/notification-icon/)
--   [Gtk# used as a Web Service Interface](/archived/webservices_and_gtksharp "Webservices and GtkSharp")
--   [Gtk# example used to access GConf settings](/archived/gconftutorial "GConfTutorial")
+-   [Gtk# used as a Web Service Interface](/archived/webservices_and_gtksharp)
+-   [Gtk# example used to access GConf settings](/archived/gconftutorial)
 
 Advanced Gtk#
 --------------
 
 -   [Generating bindings to GLib/gobject libraries](/docs/gui/gtksharp/gapi/)
--   [Quick guide to using Pango#](/archived/pangobeginners "Pango:Beginners")
+-   [Quick guide to using Pango#](/archived/pangobeginners)
 -   [Gtk# TreeView Tutorial](/docs/gui/gtksharp/widgets/treeview-tutorial/)
     -   [Gtk# NodeView: A Convenience API to TreeView](/docs/gui/gtksharp/widgets/nodeview-tutorial/)
     -   [Example Programs from the Gtk# NodeView Tutorial](/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)

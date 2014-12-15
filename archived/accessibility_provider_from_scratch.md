@@ -30,14 +30,14 @@ Notice this page does not explain how to implement a custom provider for Windows
 
 If you want to support accessibility using UIA in your custom controls then you should follow [Microsoft documentation](http://msdn.microsoft.com/en-us/library/ms747229.aspx):
 
-This page is complementary to [Windows Forms Implementation](/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation").
+This page is complementary to [Windows Forms Implementation](/Accessibility:_Winforms_Implementation).
 
 Quick Steps List
 ----------------
 
 Basically to implement a new mono-a11y provider you should use the following list of steps:
 
-1.  Select your not-implemented provider. Read [Winform Control Status](/Accessibility:_Control_Status "Accessibility: Control Status").
+1.  Select your not-implemented provider. Read [Winform Control Status](/Accessibility:_Control_Status).
 2.  Write a simple Winform Application that includes your selected Winform Control and run it in Windows Vista to examine it using [UISpy](http://msdn.microsoft.com/en-us/library/ms727247.aspx). (Note: UISpy isn't included in MS VS 2008, so you need to download "Windows Vista SDK" from MSDN)
 3.  In UISpy look for the Automation Property labeled as "Control Type", then read the [documentation](http://msdn.microsoft.com/en-us/library/ms743581.aspx) associated.
 4.  In your Control Type documentation read the table under the section "Required UI Automation Tree Structure", don't forget to verify UISpy information to match the implementation. If your provider supports navigation you must subclass FragmentRootControlProvider, otherwise you must subclass FragmentControlProvider. This is important to generate a valid [UI Automation Tree](http://msdn.microsoft.com/en-us/library/ms741931.aspx). The difference between FragmentRootControlProvider and FragmentControlProvider is that FragmentRootControlProvider should add/remove children and generate events to keep navigation updated.

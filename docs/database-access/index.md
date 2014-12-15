@@ -15,7 +15,7 @@ Providers for Open Source databases:
 
 Providers for commercial databases:
 
--   [Mimer SQL](/archived/mimer_sql "Mimer SQL") Mimer Data Provider for Mimer SQL, from Mimer [[1]](http://developer.mimer.com/platforms/productinfo_39.htm)
+-   [Mimer SQL](/archived/mimer_sql) Mimer Data Provider for Mimer SQL, from Mimer [[1]](http://developer.mimer.com/platforms/productinfo_39.htm)
 -   [ODBC](/docs/database-access/providers/odbc/) requires ODBC software which is available for Unix and Windows
 -   [Oracle](/docs/database-access/providers/oracle/) provider for Oracle 8i, 9i, 10g, and 11g and requires Oracle client software
 -   [Microsoft SQL Server](/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000 and 2005 databases
@@ -33,7 +33,7 @@ Open Source Providers:
 -   [NPgsql](http://npgsql.projects.postgresql.org/) is a fully managed provider for PostgreSQL and is included with Mono.
 -   [Firebird](http://sourceforge.net/projects/firebird/) fully managed provider for Firebird databases and is included with Mono.
 -   [Advanced Data Provider](http://advanced-ado.sourceforge.net/) ADP, is a transparent factory for ADO.NET which loads providers dynamically.
--   [MaxDB](/archived/maxdb "MaxDB") MaxDB database.
+-   [MaxDB](/archived/maxdb) MaxDB database.
 
 Object Persistent Libraries and Object Databases
 
@@ -50,8 +50,8 @@ Database Tools
 
 Unmaintained Providers in Mono:
 
--   [OLE DB](/archived/ole_db "OLE DB")
--   [Ancient Microsoft SQL Server and Sybase databases](/archived/tds_generic "TDS Generic")
+-   [OLE DB](/archived/ole_db)
+-   [Ancient Microsoft SQL Server and Sybase databases](/archived/tds_generic)
 -   [ByteFX.Data.MySqlClient](http://sourceforge.net/projects/mysqlnet/) is a MySQL Managed data provider. ByteFX.Data is no longer maintained, but it is included with Mono. Please use the MySQL Connector/Net provider from MySQL AB instead.
 -   [IBM DB2 Universal Database](/docs/database-access/providers/db2/) provider for IBM DB2 requires DB2 client software
 

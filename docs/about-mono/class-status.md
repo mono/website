@@ -26,7 +26,7 @@ In addition, it is possible to use **gui-compare** to compare assemblies against
 Generating class status pages for your own assemblies
 -----------------------------------------------------
 
-See [Generating class status pages](/archived/generating_class_status_pages "Generating class status pages") for instructions.
+See [Generating class status pages](/archived/generating_class_status_pages) for instructions.
 
 MasterInfos
 -----------

@@ -27,7 +27,7 @@ The Mono Project has also sparked a lot of interest in developing C#-based compo
 
 -   [#ZipLib](http://www.icsharpcode.net/OpenSource/SharpZipLib/Default.aspx): A library to manipulate various kinds of compressed files and archives (Zip and tar).
 
--   [Tao Framework](/archived/tao "Tao"): bindings for OpenGL
+-   [Tao Framework](/archived/tao): bindings for OpenGL
 
 -   Mono.Directory.LDAP / Novell.Directory.LDAP: LDAP access for .NET apps.
 

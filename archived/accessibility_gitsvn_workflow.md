@@ -66,7 +66,7 @@ Daily Workflow With git-svn
 Setup
 -----
 
-Before reading this guide, make sure you set up your git repository according to the [Getting Started instructions](/archived/accessibility_gitsvn/#getting-started "Accessibility: GitSVN").
+Before reading this guide, make sure you set up your git repository according to the [Getting Started instructions](/archived/accessibility_gitsvn/#getting-started).
 
 Your git "master" branch will be associated with the remote git-svn/trunk branch that maps to SVN trunk. If you need to you can create a local branch for each SVN remote branch like this:
 
@@ -167,7 +167,7 @@ TODO: Use git gui to visualize uncommitted changes. You can use this as a commit
 Get Feedback With Reviewboard
 -----------------------------
 
-Make sure you are familiar with our [code review policy](/Accessibility:_Reviews "Accessibility: Reviews").
+Make sure you are familiar with our [code review policy](/Accessibility:_Reviews).
 
 When you're ready for a review, make sure all of your changes are committed in the feature branch, then run \`post-review\` from the feature branch. For git, only committed changes will be included in the Reviewboard diff.
 

@@ -9,7 +9,7 @@ Getting Documentation
 
 ### Where can I find Mono documentation?
 
-Mono documentation can either be viewed [on line](http://www.go-mono.com/docs/) or off line using the [GTK#](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser "Monodoc") or [console based](/docs/tools+libraries/tools/monodoc/#mod-command-line-documentation-viewer "Monodoc") documentation browsers.
+Mono documentation can either be viewed [on line](http://www.go-mono.com/docs/) or off line using the [GTK#](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser) or [console based](/docs/tools+libraries/tools/monodoc/#mod-command-line-documentation-viewer) documentation browsers.
 
 ### Why do I read "Documentation for this section has not yet been entered." everywhere?
 
@@ -28,5 +28,5 @@ A good article on how to create documentation can be found under: [Generating Do
 
 ### How can I write documentation for the base class libraries?
 
-At the moment only by using the [GTK# documentation browser](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser "Monodoc"). [Monodoc Editing](/docs/tools+libraries/tools/monodoc/editing/) has a short tutorial on how to do so.
+At the moment only by using the [GTK# documentation browser](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser). [Monodoc Editing](/docs/tools+libraries/tools/monodoc/editing/) has a short tutorial on how to do so.
 

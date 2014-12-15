@@ -8,14 +8,14 @@ redirect_from:
 MonoTouch Beta
 ==============
 
-This is the page for the [MonoTouch](/MonoTouch "MonoTouch") Beta program. If you are interested in participating on the beta, you can fill out our [Beta Signup Form](http://spreadsheets.google.com/viewform?hl=en&formkey=dHRXeFI5b1NjUWdRRkpiSmxkanh6T1E6MA..).
+This is the page for the [MonoTouch](/MonoTouch) Beta program. If you are interested in participating on the beta, you can fill out our [Beta Signup Form](http://spreadsheets.google.com/viewform?hl=en&formkey=dHRXeFI5b1NjUWdRRkpiSmxkanh6T1E6MA..).
 
  Here are some pointers to get you started:
 
--   [Installing MonoTouch](/MonoTouch_Installation "MonoTouch Installation").
--   [MonoTouch Tutorials](/MonoTouch_Tutorials "MonoTouch Tutorials").
--   [API design for MonoTouch](/MonoTouch_API "MonoTouch API").
--   [Using MonoDevelop to create a MonoTouch application](/MonoTouch_Tutorial_MonoDevelop_HelloWorld "MonoTouch Tutorial MonoDevelop HelloWorld").
+-   [Installing MonoTouch](/MonoTouch_Installation).
+-   [MonoTouch Tutorials](/MonoTouch_Tutorials).
+-   [API design for MonoTouch](/MonoTouch_API).
+-   [Using MonoDevelop to create a MonoTouch application](/MonoTouch_Tutorial_MonoDevelop_HelloWorld).
 
 <table>
 <col width="100%" />
@@ -39,7 +39,7 @@ This is the page for the [MonoTouch](/MonoTouch "MonoTouch") Beta program. If yo
 Live Support over Chat
 ======================
 
-You can get live support for MonoTouch using [IRC](/IRC "IRC") at server irc.gnome.org channel #monotouch.
+You can get live support for MonoTouch using [IRC](/IRC) at server irc.gnome.org channel #monotouch.
 
 Bugs in MonoTouch
 =================
@@ -56,7 +56,7 @@ You can query or report new bugs using Bugzilla, here are some links:
 Release History
 ===============
 
-[MonoTouch Release History](/MonoTouch_ReleaseNotes "MonoTouch ReleaseNotes")
+[MonoTouch Release History](/MonoTouch_ReleaseNotes)
 
 Caveats
 =======
@@ -73,5 +73,5 @@ MonoTouch is based on a hybrid .NET 2.0 and Silverlight 2 API profile, this was 
 Limitations
 -----------
 
-Since MonoTouch is a static compiler (no JIT engine), there are some [limitations](/MonoTouch:Limitations "MonoTouch:Limitations") that you should be aware of before you write your code.
+Since MonoTouch is a static compiler (no JIT engine), there are some [limitations](/MonoTouch:Limitations) that you should be aware of before you write your code.
 

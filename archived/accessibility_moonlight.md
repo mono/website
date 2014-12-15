@@ -42,7 +42,7 @@ Accessibility: Moonlight
 Moonlight Accessibility
 =======================
 
-As part of their second phase, the Mono Accessibility team will be implementing full UIA support for [Moonlight](/Moonlight "Moonlight").
+As part of their second phase, the Mono Accessibility team will be implementing full UIA support for [Moonlight](/Moonlight).
 
 The following platforms will be supported using our plugin:
 

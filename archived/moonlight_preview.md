@@ -48,7 +48,7 @@ To build the above, you should build the modules in this order:
 -   mono-basic
 -   moon
 
-Follow the instructions in our [Compiling Mono From SVN](/Compiling_Mono_From_SVN "Compiling Mono From SVN") page.
+Follow the instructions in our [Compiling Mono From SVN](/Compiling_Mono_From_SVN) page.
 
 As always, you can get the development source from trunk:
 
@@ -76,7 +76,7 @@ As always, you can get the development source from trunk:
 
 -   Firefox 3.6 and 3.7: We added a Firefox 3.6 specific bridge, and as long as the app doesn't do anything with mms urls, things \*should\* work in Firefox 3.7. For instance, the nbc olympics site works in 3.7, and performance of both the plugin and the browser is improved on multi-cpu systems.
 
--   Olympics support. This is our first preview to really start working with the NBC Olympics site. We are tracking issues at [Moonlight/OlympicsPlayerIssues](/Moonlight/OlympicsPlayerIssues "Moonlight/OlympicsPlayerIssues")
+-   Olympics support. This is our first preview to really start working with the NBC Olympics site. We are tracking issues at [Moonlight/OlympicsPlayerIssues](/Moonlight/OlympicsPlayerIssues)
 
 -   Local Messaging. Demos from last year's MIX, such as Chess Wars and the Bouncing Balls, work.
 

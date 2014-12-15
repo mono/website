@@ -19,7 +19,7 @@ You can confirm this by using the [[1]](https://raw.github.com/mono/mono/master/
 
 There are three alternatives to solve this problem:
 
--   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully "UsingTrustedRootsRespectfully") article.
+-   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully) article.
 
 -   Use the `certmgr.exe` tool (included in Mono) to add the root certificates into the Mono **Trust** store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 
@@ -109,7 +109,7 @@ Alternatively, if you have a certified implementation and the wrapper, you can i
 
 ### Are there any efforts to bind external libraries that are FIPS certified?
 
-There is an ongoing effort part of Mono called the [Crimson](/archived/crimson "Crimson") project, you might want to contribute to that effort.
+There is an ongoing effort part of Mono called the [Crimson](/archived/crimson) project, you might want to contribute to that effort.
 
 Authenticode(r) Code Signing
 ----------------------------
