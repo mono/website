@@ -5,10 +5,9 @@ redirect_from:
 ---
 
 Secure Socket Layer (SSL) / Transport Layer Security (TLS)
-==========================================================
+----------------------------------------------------------
 
-WebRequest.Create ("[https://www.anywhere.com](https://www.anywhere.com)"); throws an exception
------------------------------------------------------------------------------------------------
+### WebRequest.Create ("[https://www.anywhere.com](https://www.anywhere.com)"); throws an exception
 
 That's probably because you do not trust the site you are connecting to. Note that a default installation of Mono doesn't trust anyone!
 
@@ -20,14 +19,13 @@ You can confirm this by using the [[1]](https://raw.github.com/mono/mono/master/
 
 There are three alternatives to solve this problem:
 
--   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully "UsingTrustedRootsRespectfully") article.
+-   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully) article.
 
 -   Use the `certmgr.exe` tool (included in Mono) to add the root certificates into the Mono **Trust** store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
 
-I imported the root certificate but it still doesn't work
----------------------------------------------------------
+### I imported the root certificate but it still doesn't work
 
 [HTTPS](http://www.ietf.org/rfc/rfc2818.txt), like many protocols using [SSL](http://wp.netscape.com/eng/ssl3/)/[TLS](http://www.ietf.org/rfc/rfc2246.txt), doesn't requires the server to send its root certificate when negotiating the handshake. In this case it won't be possible to use `certmgr --ssl` to download automatically the root certificate into Mono's certificate stores.
 
@@ -36,13 +34,11 @@ You'll need to either:
 -   find the root certificate and install it manually with `certmgr`; **or**
 -   use the `mozroots` tool to install all (or part of) Mozilla's root certificates. This has a high probability to install the required root certificate - but will also install a lot of extra roots (about 100 of them).
 
-How can I debug https traffic?
-------------------------------
+### How can I debug https traffic?
 
 Use the webscarab tool and set the http_proxy environment variable to the address of the webscarab server, this will allow you to watch the traffic unencrypted.
 
-I got the root certificate but it doesn't install
--------------------------------------------------
+### I got the root certificate but it doesn't install
 
 Some Certificate Authorities (CA) still use *very old* root certificates signed with the [MD2](http://www.ietf.org/rfc/rfc1319.txt) digest algorithm. MD2 is old enough not to be part of the standard .NET framework. This makes it impossible to validate the root certificate digital signature.
 
@@ -65,21 +61,18 @@ To correct this you must enabled MD2 support in your `machine.config` file. This
 </mscorlib>
 ```
 
-Why does SSL use certificates ?
--------------------------------
+### Why does SSL use certificates ?
 
 1.  SSL encrypts data - but encrypting data to an untrusted server doesn't improve much security. You need to know who is on the other side of the socket! (e.g. think about a man-in-the-middle attack between you and your bank).
 2.  SSL use X.509 certificates for the purpose of binding a public key with an entity (in this case the web server). The server gets its certificate from a certificate authority (CA) who certify that the key belongs to its owner. Finally you must **trust** that CA to do its job properly.
 
-Are SSL client certificates supported ?
----------------------------------------
+### Are SSL client certificates supported ?
 
 Both SslClientStream and SslServerStream, in Mono.Security.dll, support client certificates, however HttpWebRequest doesn't due to a strange design/relationship between the 1.x framework and Windows/CryptoAPI (i.e. there is no managed API to associate a certificate with a private key). This should be fixed in the 2.0 profile as the X509Certificate class has been extended to provide this association.
 
 Also recent versions of [XSP](/docs/web/aspnet/) do support SSL/TLS and client certificates. See the [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) article for more details.
 
-Does SSL works for SMTP, like GMail ?
--------------------------------------
+### Does SSL work for SMTP, like GMail ?
 
 Yes it does. First you must import the root certificates using the `mozroots` tool:
 
@@ -104,9 +97,9 @@ Use the `-m` option to import the certificates into the machine store if require
 Finally you need to make sure to use the SSL-enabled port in your application. This is generally 465 or 587 instead of port 25.
 
 FIPS Certification
-==================
+------------------
 
-**What is the status of FIPS 140 certification?**
+### What is the status of FIPS 140 certification?
 
 The Mono cryptographic stack is not FIPS 140 certified and there are currently no plans on doing so as it is both a time consuming and expensive certification to go through.
 
@@ -114,26 +107,22 @@ If you absolutely must use FIPS 140 certified code, you should be able to call a
 
 Alternatively, if you have a certified implementation and the wrapper, you can instruct Mono to automatically use your new implementation by using the machine.config mapping.
 
-Are there any efforts to bind external libraries that are FIPS certified?
--------------------------------------------------------------------------
+### Are there any efforts to bind external libraries that are FIPS certified?
 
-There is an ongoing effort part of Mono called the [Crimson](/archived/crimson "Crimson") project, you might want to contribute to that effort.
+There is an ongoing effort part of Mono called the [Crimson](/archived/crimson) project, you might want to contribute to that effort.
 
 Authenticode(r) Code Signing
-============================
+----------------------------
 
-Does Mono support Authenticode(r) signatures ?
-----------------------------------------------
+### Does Mono support Authenticode(r) signatures ?
 
 Yes. Mono supports Authenticode signatures for **assemblies**. As assemblies are **PE** files this also means that Mono support signing any kind of PE file, e.g. EXE, DLL, OCX, SCR ...
 
-Does Mono support Authenticode(r) signatures on CAB file ?
-----------------------------------------------------------
+### Does Mono support Authenticode(r) signatures on CAB file ?
 
 No. CAB files aren't **PE** file. While the signature mechanim is probably much alike the CAB format is very different from the PE format. Mono doesn't requires CAB files at this time (and may never will) so support for signing/verifying CAB files is unlikely to appear (unless someone feel likes contributing it).
 
-What does "*signature can't be traced back to a trusted root!*" means ?
------------------------------------------------------------------------
+### What does "*signature can't be traced back to a trusted root!*" means ?
 
 The default installation of Mono doesn't trust any root certificate authority (CA). While verifying a signed PE file the `chktrust` utility will try to find a **trusted root** and if it cannot will display the following error.
 
@@ -148,23 +137,20 @@ The default installation of Mono doesn't trust any root certificate authority (C
 You can use the `certmgr` tool to add the code signing root certificate in the Mono trust certificate store.
 
 Public Key Infrastructure (PKI)
-===============================
+-------------------------------
 
-Is Mono fully compatible with RFC2459 or RFC3280 ?
---------------------------------------------------
+### Is Mono fully compatible with RFC2459 or RFC3280 ?
 
 No. Mono support a limited subset of PKIX certificate path building and validation. This is enough to support **simple** cases like SSL/TLS and Authenticode(r). Version 2.0 of the .NET framework includes improved support for PKI, e.g. a new `X509Chain` class, so better support for PKI is on the Mono roadmap.
 
-Why doesn't Mono includes root certificates from X, Y and Z ?
--------------------------------------------------------------
+### Why doesn't Mono includes root certificates from X, Y and Z ?
 
 There are two main reasons not to include "defaults" root certificates in Mono.
 
 1.  Digital certificates are, like many digital files, copyrightable. This means that **there are** restrictions on how the roots certificates can be distributed.
 2.  We aren't in the business to decide on **who you are going to trust**. Certificates Authorities exists all around the world. The ones best suited to you aren't necessarily the ones best suited for everybody else and having a terribly long list of "trusted" roots isn't a very secure solution.
 
-So where can I download them ?
-------------------------------
+### So where can I download them ?
 
 Too many CA, too many places. The most common ones are (in alphabetical order):
 
@@ -176,8 +162,7 @@ Too many CA, too many places. The most common ones are (in alphabetical order):
 
 An easier alternative is to use the `mozroots` tool to download and install all Mozilla's root certificates. The downside is that it's more difficult to handpick only the one you really require.
 
-Can I make my own certificates ?
---------------------------------
+### Can I make my own certificates ?
 
 Mono includes the `makecert` tool that can be used to create **test** (i.e. untrusted) certificates. The tool is generally used to create code-signing (i.e. Authenticode) certificates but can also be used to create both server and client SSL certificates.
 
@@ -200,24 +185,21 @@ where **1.3.6.1.5.5.7.3.2** is the OID for client-side authentication and **poup
 Many more options are available from `makecert`. Consult the tool's [man page](https://github.com/mono/mono/blob/master/man/makecert.1) (i.e. `man makecert`) for more details.
 
 Code Access Security (CAS)
-==========================
+--------------------------
 
-Does Mono support CAS ?
------------------------
+### Does Mono support CAS ?
 
 Mono 1.0.x **doesn't** support [Code Access Security](/docs/advanced/cas/). Mono 1.2 has an experimental preview of the technology (turned **off** by default) with partial (and unaudited) class library support.
 
 In addition, Mono currently does not have a complete verifier, which means that invalid assemblies will produce an assertion in the runtime.
 
-How can I activate CAS ?
-------------------------
+### How can I activate CAS ?
 
 By default [Code Access Security](/docs/advanced/cas/) is turned **off** in Mono. On Mono 1.1.4 and later you can turn on the security manager by using the `--security` option. E.g.
 
     mono --security sample.exe
 
-Will Mono have a complete verifier?
------------------------------------
+### Will Mono have a complete verifier?
 
 Mono 2.0 already has an IL verifier while the metadata verifier will be complete by the time that [Moonlight](/docs/web/moonlight/) 2.0 ships.
 
@@ -229,16 +211,14 @@ In the meantime, you can invoke Mono from the command line to test whether the m
 
 If this succeeds, it means that Mono will not assert at runtime due to invalid metadata or invalid code (sometimes produced by obfuscators, which break the ECMA requirements for valid code).
 
-How many checks are missing to have a full verifier?
-----------------------------------------------------
+### How many checks are missing to have a full verifier?
 
 There are many checks that need to be performed, it's not as simple as doing opcode checks as someone could believe. The only way to know which are missing is to review all the code. Of course the review needs to be done independently by multiple people with the right skills and mindset (and time)...
 
 Security related compilation issues
-===================================
+-----------------------------------
 
-Compiling Mono's mscorlib.dll with CSC 7.x (Fx 1.x)
----------------------------------------------------
+### Compiling Mono's mscorlib.dll with CSC 7.x (Fx 1.x)
 
 With the CLR 1.x a security permission object (implementing [IPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.IPermission)) must be created, from its security attribute (inherited from [SecurityAttribute](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAttribute)), to generate the XML output that is embedded in the assembly. This means that the compiler cannot accept the use of *PermissionX* if *PermissionX* is defined in the assembly being compiled. This cause a problem for some assemblies, like `mscorlib.dll` which consume its own permission.
 
@@ -253,20 +233,17 @@ From the [/mcs/class/corlib/Makefile](https://github.com/mono/mono/blob/master/m
 -   The results of using `__SECURITY_BOOTSTRAP_DB` for other assemblies is unknown (i.e. we don't know what else in CSC may be affected by the environment variable) so it should only be used when necessary;
 -   The CLR 2.x supports a new binary format for security attributes (very much like serialization) that is make directly from the security attribute (i.e. doesn't involve the permission class).
 
-System.Security.SecurityException : Failure decoding embedded permission set object
------------------------------------------------------------------------------------
+### System.Security.SecurityException : Failure decoding embedded permission set object
 
 This exception can occurs when using a path/file in a declarative [FileIOPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.FileIOPermissionAttribute) attribute (or any other security attribute accepting filenames). The Mono runtime supports UNIX-style filename when compiling (e.g. MCS) but the Microsoft runtime won't be able to decode them. The solution is to use imperative security when dealing with filenames.
 
  **Note**: You can see this problem if you compile corlib's unit tests under Linux then try to execute the tests under the MS runtime.
 
-How are Windows roles mapped into Unix roles?
----------------------------------------------
+### How are Windows roles mapped into Unix roles?
 
 We map roles from WindowsPrincipal.IsInRole to Unix groups.
 
-How can I make calls to WindowsPrincipal.IsInRole () work on Linux?
--------------------------------------------------------------------
+### How can I make calls to WindowsPrincipal.IsInRole () work on Linux?
 
 If you have an application that makes a call like this:
 
@@ -283,10 +260,9 @@ USAGNT\UGR_RBP:x:300:miguel,don,jon,julia
 Where each of the users that belong to the group are added there.
 
 Other resources on this site
-============================
+----------------------------
 
-Known Vulnerabilities
----------------------
+### Known Vulnerabilities
 
 A list of known [vulnerabilities](/docs/about-mono/vulnerabilities/) affecting older versions of Mono is available.
 

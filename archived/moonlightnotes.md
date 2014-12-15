@@ -69,11 +69,11 @@ Notes on the Moonlight implementation and notes on bringing Silverlight to Linux
 Testing
 =======
 
--   For a simple self contained html file with embedded Silverlight, [Moonlight_Standalone_File](/Moonlight_Standalone_File "Moonlight Standalone File")
+-   For a simple self contained html file with embedded Silverlight, [Moonlight_Standalone_File](/Moonlight_Standalone_File)
 -   We need to be able to reuse existing, mostly unit, tests we already have. Here we face the same difficulties as the assemblies themselves (e.g. #ifdef versus tools);
 -   We need to run (parts of) the tests under the new security model - not just under Mono/Linux but also under MS Silverlight under Windows;
 -   We need to expand those tests, e.g. new classes, more coverage;
--   [Instructions for Jackson's new test harness](/Moonlight_Test_Harness "Moonlight Test Harness")
+-   [Instructions for Jackson's new test harness](/Moonlight_Test_Harness)
 
 Debugging Tricks
 ================
@@ -121,7 +121,7 @@ Resources
 
 Books on WPF are good resources, although they cover the "larger" API of which Silverlight is merely a subset.
 
-Some notes that are relevant to WPF have been moved to the [WPF](/WPF "WPF") page.
+Some notes that are relevant to WPF have been moved to the [WPF](/WPF) page.
 
 [Adam Nathan's](http://blogs.msdn.com/adam_nathan/) book on WPF is very good, and it goes into some of the technical details that other books merely skim on.
 
@@ -159,15 +159,15 @@ Currently Moonlight supports the 1.0 engine (no runtime engine, purely exposed a
 
 ### Security Model
 
-Mono has not historically been used to run untrusted code inside the virtual machine. Although we have done some work towards the implementation of the [CAS](/CAS "CAS") this work has not been completed.
+Mono has not historically been used to run untrusted code inside the virtual machine. Although we have done some work towards the implementation of the [CAS](/CAS) this work has not been completed.
 
-Silverlight 2.0 introduce a new security model to replace [CAS](/CAS "CAS") for it's applications. This model is discussed in details [here](/Moonlight2CoreCLR "Moonlight2CoreCLR").
+Silverlight 2.0 introduce a new security model to replace [CAS](/CAS) for it's applications. This model is discussed in details [here](/Moonlight2CoreCLR).
 
-Details about how Moonlight implement this features can be found [here](/MoonlightSecurity "MoonlightSecurity").
+Details about how Moonlight implement this features can be found [here](/MoonlightSecurity).
 
 ### Other Security Requirements
 
-While this new security model looks easier to implement, wrt to the stackwalk-based [CAS](/CAS "CAS"), most of the requirements for the [MonoSandbox](/MonoSandbox "MonoSandbox") are still needed to provide a safe execution environment.
+While this new security model looks easier to implement, wrt to the stackwalk-based [CAS](/CAS), most of the requirements for the [MonoSandbox](/MonoSandbox) are still needed to provide a safe execution environment.
 
 A few other things must be completed:
 
@@ -204,11 +204,11 @@ As we can see in next figures Silverlight doesn't have any circular dependencies
 
 #### New versioned Libraries
 
-We introduced a new NET_2_1 define and a new net_2_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker](/Linker "Linker") to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
+We introduced a new NET_2_1 define and a new net_2_1 profile in the build system. The resulting libraries would be a superset that encompasses both 2.0 and the 2.1 API, but since 2.0 and 2.1 only have a few intersection points we will probably expand the [Cecil Linker](/Linker) to specifically tune the 2.1 library to its right size without entering the world of pain that it would be to maintain the 2.0 and 2.1 defines at the same time.
 
 [![Mono20-to-21.png](/archived/images/d/da/Mono20-to-21.png)](/archived/images/d/da/Mono20-to-21.png)
 
-In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another [Cecil](/Cecil "Cecil")-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
+In addition, we should look into injecting the security attributes System.Security.SecuritySafeCriticalAttribute and System.Security.SecurityCriticalAttribute out-of-line with another [Cecil](/Cecil)-based tool, again to avoid populating the code base with too many defines (Note: the injector has been completed).
 
 Tasks:
 
@@ -218,7 +218,7 @@ Tasks:
 -   Setup mono-api-info, mono-api-compare, corcompare pages for it.
 -   Integrate into the build system.
 
-A peer project of this is [Completing the 2.0 Profile](/Completing2.0Profile "Completing2.0Profile") effort. As both 2.1.0.0 and 2.0.0.0 share a lot in common.
+A peer project of this is [Completing the 2.0 Profile](/Completing2.0Profile) effort. As both 2.1.0.0 and 2.0.0.0 share a lot in common.
 
 I would like to avoid an ifdef mess, my personal hope is that we can create probably a new profile NET_2_1 that would be a superset of NET_2_0. The result would be a larger assembly than we need to have.
 
@@ -245,7 +245,7 @@ This contains the interface to the rendering engine and lives in two parts:
 -   moon/src module on SVN (the C++ code)
 -   moon/class/System.Windows on SVN (the C# code)
 
-The class hierarchy for instance (on the [WPFNotes](/WPFNotes "WPFNotes") page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not. The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
+The class hierarchy for instance (on the [WPFNotes](/WPFNotes) page) looks fairly simple, there are two kinds of classes there: those that derive from DependencyObject, and those that do not. The ones that derive from DependencyObject participate in the whole notification/propagation system and the others do not.
 
 It is probably simple for those that want to contribute to start work on the classes that do not derive from DependencyObject. We should follow the regular process: write nunit test cases to understand the API, and then write the API.
 
@@ -349,7 +349,7 @@ Open questions:
 
 System.Silverlight.dll and Microsoft.Scripting.dll are involved.
 
-Some notes at [MoonlightHostingNotes](/MoonlightHostingNotes "MoonlightHostingNotes").
+Some notes at [MoonlightHostingNotes](/MoonlightHostingNotes).
 
 ### JavaScript compiler
 

@@ -40,7 +40,7 @@ Accessibility: Getting Started With Development
 Introduction
 ------------
 
-So you've just joined the [UIA team](/Accessibility:_Team "Accessibility: Team"), or are interested in contributing to the development effort. Welcome! Here are some guidelines to get started with building our software, making changes, submitting patches, and committing to SVN.
+So you've just joined the [UIA team](/Accessibility:_Team), or are interested in contributing to the development effort. Welcome! Here are some guidelines to get started with building our software, making changes, submitting patches, and committing to SVN.
 
 Getting the Code
 ----------------
@@ -58,7 +58,7 @@ As of this writing, you will also need gtk-sharp, mono, and mcs from SVN.
 Setting Up Your Environment
 ---------------------------
 
--   You need a bunch of bleeding edge stuff in your GAC. Easiest way to do that is to set up [Parallel Mono Environments](/Parallel_Mono_Environments "Parallel Mono Environments"). We recommend using a user-writable path for your prefix, so you don't have to use \`sudo\` whenever you \`make install\`. On this page we'll use the example prefix of /home/[user]/parallel-mono
+-   You need a bunch of bleeding edge stuff in your GAC. Easiest way to do that is to set up [Parallel Mono Environments](/Parallel_Mono_Environments). We recommend using a user-writable path for your prefix, so you don't have to use \`sudo\` whenever you \`make install\`. On this page we'll use the example prefix of /home/[user]/parallel-mono
     -   Follow the wiki page exactly, installing mono/gtk-sharp/etc from latest SVN (not from tarballs).
     -   Follow the same instructions but for uia2atk/UIAutomation.
     -   Install [Mono.Addins 0.3.1 from tarball](http://www.go-mono.com/sources/mono-addins/mono-addins-0.3.1.tar.bz2) in the parallel environment.
@@ -106,7 +106,7 @@ We highly recommend using MonoDevelop to edit UIA code. If you are adding any ne
 
 ### Coding Guidelines
 
-In general we follow the [Mono Coding Guidelines](/Coding_Guidelines "Coding Guidelines"), with the following notable exceptions:
+In general we follow the [Mono Coding Guidelines](/Coding_Guidelines), with the following notable exceptions:
 
 -   We use camelCase instead of names_with_underscores for all private/protected fields and local variables.
 -   We put the opening curly brace ('{') for a class on the next line.
@@ -116,8 +116,8 @@ In general we follow the [Mono Coding Guidelines](/Coding_Guidelines "Coding Gui
 
 ### Good resources
 
--   [Writing Provider from Scratch](/Accessibility:_Provider_From_Scratch "Accessibility: Provider From Scratch")
--   [Windows Forms Implementation](/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation")
+-   [Writing Provider from Scratch](/Accessibility:_Provider_From_Scratch)
+-   [Windows Forms Implementation](/Accessibility:_Winforms_Implementation)
 
 Testing Your Changes
 --------------------

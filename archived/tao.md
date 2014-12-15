@@ -59,7 +59,7 @@ You can also get the latest code from SVN via [AnonSVN](/SourceCodeRepository) o
 Tao + autotools
 ---------------
 
-[Tao autotools](/Tao_autotools "Tao autotools") has been superceeded by the addition of autotools build system generation to [Prebuild](/Prebuild "Prebuild"). Autotools is one of the build system targets supported by Tao and other Prebuild-based packages.
+[Tao autotools](/Tao_autotools) has been superceeded by the addition of autotools build system generation to [Prebuild](/Prebuild). Autotools is one of the build system targets supported by Tao and other Prebuild-based packages.
 
 Building Tao
 ============
@@ -121,7 +121,7 @@ Developers/Maintainers
 Plans
 =====
 
--   [Future Plans](/Tao:FuturePlans "Tao:FuturePlans") -- notes about upcoming changes to Tao
+-   [Future Plans](/Tao:FuturePlans) -- notes about upcoming changes to Tao
 
 Future Plans
 ------------

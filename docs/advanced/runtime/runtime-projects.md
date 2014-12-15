@@ -47,9 +47,7 @@ Esta é uma tarefa que consome muito tempo, pois requer testar todos os pontos d
 Continuações
 -------------
 
-Suporte para [Continuações](/archived/continuations "Continuations") é suportado nas versões do Mono após 16 de Abril (para estar disponível ao público no Mono 2.6).
-
-Leia mais sobre [Continuações](/archived/continuations "Continuations") aqui.
+Suporte para [Continuações](/archived/continuations) existe nas versões do Mono após a 2.6.
 
 Correções do Reflection.Emit
 ---------------------
@@ -115,7 +113,7 @@ Características Inovadoras
 
 Como parte do Mono 2.8, estaremos quebrando a API embarcada para limpar muitos problemas que surgiram ao longo dos anos.
 
-Você pode ler mais sobre eles na página [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes").
+Você pode ler mais sobre eles na página [Mudanças da API de Tempo de Execução do Mono](/archived/mono_runtime_api_changes).
 
 Compilação entre Plataformas
 -----------------

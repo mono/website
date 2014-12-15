@@ -10,11 +10,11 @@ redirect_from:
 Licensing
 ---------
 
-**Can I write commercial or proprietary applications that run with Mono?**
+### Can I write commercial or proprietary applications that run with Mono?
 
 Yes. The licensing scheme is planned to allow proprietary developers to write applications with Mono.
 
-**What license or licenses are you using for the Mono Project?**
+### What license or licenses are you using for the Mono Project?
 
 We use four open source licenses:
 
@@ -32,7 +32,7 @@ Mono is available to be licensed commercially if the LGPL/GPL/X11 combination is
 
 For other licensing options, [contact us](http://www.go-mono.com/contact/).
 
-**Why are the class libraries licensed under the MIT X11 license?**
+### Why are the class libraries licensed under the MIT X11 license?
 
 Originally, the class libraries were released under the terms of the GNU Library GPL (LGPL). The problem with the GNU LGPL is an outdated wording related to "derived works". A derived work of the library must be covered by the same license as the library itself. This definition was fine before object oriented frameworks existed, but with the introduction of object oriented frameworks, different people disagree whether some code that uses object-oriented inheritance is an instance of a "derived work".
 
@@ -42,7 +42,7 @@ Given the ambiguity, and given the chance that every author to the class librari
 
 The ambiguity would have allowed an author of the code would demand an application developer to release pieces of its source code based on a technicality, and we did not want to risk the future of Mono on this.
 
-**When do I need to obtain a license from Xamarin to the Mono Runtime?**
+### When do I need to obtain a license from Xamarin to the Mono Runtime?
 
 We only require licensing for uses of Mono and Moonlight on embedded systems, or systems where you are unable to fulfill the obligations of the GNU LGPL.
 
@@ -52,11 +52,11 @@ Or if you ship an application that requires to statically link the Mono runtime 
 
 Use our [Contact](http://www.go-mono.com/contact/) form with the information about your needs to discuss this.
 
-**I would like to contribute code to Mono under a particular license. What licenses will you accept?**
+### I would like to contribute code to Mono under a particular license. What licenses will you accept?
 
 We will have to evaluate the licenses for compatibility first, but as a general rule, we will accept the code under the same terms of the "container" module.
 
-**Why does Xamarin require a copyright assignment?**
+### Why does Xamarin require a copyright assignment?
 
 When a developer contributes code to the C# compiler or the Mono runtime engine, we require that the author grants Xamarin the right to relicense his/her contribution under other licensing terms.
 
@@ -67,11 +67,11 @@ Particularly embedded system vendors obtain grants to the Mono runtime engine an
 Patents
 -------
 
-**Could patents be used to completely disable Mono?**
+### Could patents be used to completely disable Mono?
 
 No. For a more nuanced response, see the next question.
 
-**What kind of patent coverage exists for Mono?**
+### What kind of patent coverage exists for Mono?
 
 The coverage is divided in various areas, that we explore below:
 
@@ -108,15 +108,15 @@ The patents do not apply in countries where software patents are not allowed.
 
 For Linux server and desktop development, we only need the ECMA components, and things that we have developed (like Gtk#) or Apache integration.
 
-**Are there alternatives to ASP.NET?**
+### Are there alternatives to ASP.NET?
 
 Yes, there are a number of alternatives that people have been using for developing Web applications that do not use the ASP.NET model: [Jitsu](http://www.jitsu.org) and [Dream](http://developer.mindtouch.com/Dream).
 
-**Are there alternatives to Windows.Forms?**
+### Are there alternatives to Windows.Forms?
 
 Yes, there are plenty of alternatives, including [Gtk#](/docs/gui/gtksharp/) see our page on [Gui Toolkits](/docs/gui/gui-toolkits/) for more information.
 
-**Is Mono only an implementation of the .NET Framework?**
+### Is Mono only an implementation of the .NET Framework?
 
 Mono implements both the .NET Framework, as well as plenty of class libraries that are ethier UNIX specific, [Gnome](http://www.gnome.org) specific, or that are not part of the .NET Framework but people find useful.
 

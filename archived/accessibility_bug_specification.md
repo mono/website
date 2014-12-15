@@ -43,12 +43,12 @@ Accessibility: Bug Specification
 References
 ----------
 
-[Product Test Case Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")<br/>
- [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")<br/>
- [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")<br/>
- [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")<br/>
+[Product Test Case Plan](/Accessibility:_Test_Plan)<br/>
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification)<br/>
+ [Product Test Log](/Accessibility:_Test_Log)<br/>
+ [Product Test Summary](/Accessibility:_Test_Summary)<br/>
  [Product Bug Specification](/Accessibility:_Bug_Specification) (current page)<br/>
- [Product Home](/Accessibility "Accessibility")
+ [Product Home](/Accessibility)
 
 Definitions
 -----------
@@ -64,7 +64,7 @@ This is the template that should be used for all bugs when they are entered into
 
 ### Remember
 
-Whenever you log a bug, please remember to add a comment with a [bug reference](/archived/accessibility_testing_howto/#bug-references "Accessibility: Testing Howto") (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
+Whenever you log a bug, please remember to add a comment with a [bug reference](/archived/accessibility_testing_howto/#bug-references) (e.g., BUG459153) where the bug occurs in your test. You must use the syntax BUG[0-9][0-9][0-9][0-9][0-9][0-9] so it can be easily found when regressing bugs.
 
 ### Bug Template
 

@@ -29,37 +29,37 @@ Howto
 Operating System
 ================
 
--   [Obtain the output of a child process](/Howto_PipeOutput "Howto PipeOutput")
+-   [Obtain the output of a child process](/Howto_PipeOutput)
 
 Desktop
 =======
 
--   [Open a url in a cross-platform fashion](/Howto_OpenBrowser "Howto OpenBrowser")
--   [Use the parametrized types over a class](/Howto_Generics "Howto Generics")
+-   [Open a url in a cross-platform fashion](/Howto_OpenBrowser)
+-   [Use the parametrized types over a class](/Howto_Generics)
 
 Graphics
 ========
 
--   [Use Cairo to draw graphics](/Mono.Cairo_Cookbook "Mono.Cairo Cookbook").
+-   [Use Cairo to draw graphics](/Mono.Cairo_Cookbook).
 
 Network
 =======
 
--   [Use Dns classes to determine local system IP information](/Howto_IpInfobyDns "Howto IpInfobyDns")
+-   [Use Dns classes to determine local system IP information](/Howto_IpInfobyDns)
 
 Web
 ===
 
--   [Getting data from asp.net callbacks without a visible postback](/Howto_aspnet_Callbacks "Howto aspnet Callbacks")
+-   [Getting data from asp.net callbacks without a visible postback](/Howto_aspnet_Callbacks)
 
 Moonlight
 =========
 
--   [Shows how to develop a simple hello world](/Howto_helloWorld_Moonlight_ff3 "Howto helloWorld Moonlight ff3")
+-   [Shows how to develop a simple hello world](/Howto_helloWorld_Moonlight_ff3)
 
 Configuration
 =============
 
--   [Configuring your applications using mconfig](/Howto_Mconfig "Howto Mconfig")
+-   [Configuring your applications using mconfig](/Howto_Mconfig)
 
 

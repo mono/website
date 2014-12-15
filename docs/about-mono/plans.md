@@ -137,7 +137,7 @@ Administração do Mono
 ---------------------
 Adicionalmente os seguintes são projetos administrativos do projeto Mono:
 
--   [Projetos de Infrastrutura](/archived/infrastructureprojects "InfrastructureProjects")
+-   [Projetos de Infrastrutura](/archived/infrastructureprojects)
 -   Projetos do Visual Studio
     -   [Guia 'Primeiros Passos' das Ferramentas do Mono para o Visual Studio](/archived/gettingstartedwithmonotools)
     -   [Integração com o Visual Studio](/archived/visual_studio_integration)

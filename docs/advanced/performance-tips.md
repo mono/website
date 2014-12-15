@@ -102,7 +102,7 @@ Use the MONO_NO_UNLOAD=1 environment variable to make those work.
 Profiling without JIT instrumentation
 -------------------------------------
 
-You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData](/archived/oprofilewithanonjitdata "OprofileWithAnonJitData")
+You might also be interested in using mono --aot to generate precompiled code, and then use a system like \`oprofile' to profile your programs. We are also working [OprofileWithAnonJitData](/archived/oprofilewithanonjitdata)
 
 Memory Management in the .NET/Mono world
 ========================================

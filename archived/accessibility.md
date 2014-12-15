@@ -9,7 +9,7 @@ redirect_from:
 Accessibility
 =============
 
-The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.](/Accessibility:_Release_Notes_2.1 "Accessibility: Release Notes 2.1")
+The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.](/Accessibility:_Release_Notes_2.1)
 
 <table>
 <col width="100%" />
@@ -58,21 +58,21 @@ The Mono Accessibility project enables many Windows applications to be fully acc
 
 Applications based upon System.Windows.Forms can take advantage of this with no extra code, and enjoy the same level of Accessibility provided by Windows on any system Mono supports.
 
-This is accomplished through two efforts -- First, implement the managed [UI Automation](/UI_Automation "UI Automation") framework targeted towards Mono's [System.Windows.Forms](/WinForms) project and second, implement a [bridge](/Accessibility:_UiaAtkBridge "Accessibility: UiaAtkBridge") between our UI Automation implementation and [ATK](http://www.linuxfoundation.org/en/Accessibility/ATK), the dominant Accessibility technology on Linux.
+This is accomplished through two efforts -- First, implement the managed [UI Automation](/UI_Automation) framework targeted towards Mono's [System.Windows.Forms](/WinForms) project and second, implement a [bridge](/Accessibility:_UiaAtkBridge) between our UI Automation implementation and [ATK](http://www.linuxfoundation.org/en/Accessibility/ATK), the dominant Accessibility technology on Linux.
 
 Project Goals
 -------------
 
 -   Make [System.Windows.Forms](/docs/gui/winforms/) applications accessible via ATK
--   Make [Silverlight](http://silverlight.net/) applications (using [Moonlight](/Moonlight "Moonlight")) accessible via ATK
--   Allow [UI Automation](/UI_Automation "UI Automation") based Accessibility Technologies to read Linux applications built on at-spi
+-   Make [Silverlight](http://silverlight.net/) applications (using [Moonlight](/Moonlight)) accessible via ATK
+-   Allow [UI Automation](/UI_Automation) based Accessibility Technologies to read Linux applications built on at-spi
 
 How do I get it?
 ----------------
 
-Packages are provided for various Linux distributions, or you can [build from source](/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
+Packages are provided for various Linux distributions, or you can [build from source](/Accessibility:_Installing_From_Source).
 
-A summary of past releases are available on our [Releases](/Accessibility:_Releases "Accessibility: Releases") page.
+A summary of past releases are available on our [Releases](/Accessibility:_Releases) page.
 
 Participating
 -------------
@@ -84,49 +84,49 @@ Development
 
 ### High Level Overview
 
--   [Architecture](/Accessibility:_Architecture "Accessibility: Architecture") of UI Automation on Linux
--   [Project Roadmap](/Accessibility:_Roadmap "Accessibility: Roadmap") (High Level View)
--   [Development Schedule](/Accessibility:_Project_Schedule "Accessibility: Project Schedule") (Detailed View)
--   [Phase II Work Breakdown](/Accessibility:_Phase_II_Work_Breakdown "Accessibility: Phase II Work Breakdown")
--   Members of the Novell [UIA Team](/Accessibility:_Team "Accessibility: Team")
+-   [Architecture](/Accessibility:_Architecture) of UI Automation on Linux
+-   [Project Roadmap](/Accessibility:_Roadmap) (High Level View)
+-   [Development Schedule](/Accessibility:_Project_Schedule) (Detailed View)
+-   [Phase II Work Breakdown](/Accessibility:_Phase_II_Work_Breakdown)
+-   Members of the Novell [UIA Team](/Accessibility:_Team)
 
 ### Functional Specifications
 
--   [Provider](/Accessibility:_Provider_Functional_Specification "Accessibility: Provider Functional Specification")
--   [Bridge](/Accessibility:_Bridge_Functional_Specification "Accessibility: Bridge Functional Specification")
--   [Notes](/Accessibility:_Specification_Notes "Accessibility: Specification Notes") on the UI Automation specification
--   [Similarities and Differences](/Accessibility:_Similarities_and_Differences "Accessibility: Similarities and Differences")
+-   [Provider](/Accessibility:_Provider_Functional_Specification)
+-   [Bridge](/Accessibility:_Bridge_Functional_Specification)
+-   [Notes](/Accessibility:_Specification_Notes) on the UI Automation specification
+-   [Similarities and Differences](/Accessibility:_Similarities_and_Differences)
 
 For Team Members
 ----------------
 
 ### General
 
--   [Development with Scrum](/Accessibility:_Scrum "Accessibility: Scrum")
--   [Getting Started With Development](/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development")
+-   [Development with Scrum](/Accessibility:_Scrum)
+-   [Getting Started With Development](/Accessibility:_Getting_Started_With_Development)
 
 ### Developers
 
--   [Moonlight Main Page](/Accessibility:_Moonlight "Accessibility: Moonlight")
--   Provider: ([Architecture](/Accessibility:_Winforms_Implementation "Accessibility: Winforms Implementation"), [Implementation Notes](/Accessibility:_Implementation "Accessibility: Implementation"))
+-   [Moonlight Main Page](/Accessibility:_Moonlight)
+-   Provider: ([Architecture](/Accessibility:_Winforms_Implementation), [Implementation Notes](/Accessibility:_Implementation))
 
 ### Quality Assurance
 
 -   [All Open UIAutomation Bugs](https://bugzilla.novell.com/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=fulltext&long_desc=&classification=Mono&product=UI+Automation&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=anywords&keywords=&deadlinefrom=&deadlineto=&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailqa_contact2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=)
--   [Development Progress](/Accessibility:_Development_Progress "Accessibility: Development Progress") (Enhancement Bugs by Control)
+-   [Development Progress](/Accessibility:_Development_Progress) (Enhancement Bugs by Control)
 
--   [Product Test Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")
--   [Test Progress](/Accessibility:_Test_Plan_WinForms_Controls "Accessibility: Test Plan WinForms Controls")
--   [Test Coding Standard](/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")
--   [Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")
--   [Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")
--   [Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")
--   [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto")
--   [Strongwind Basics Tutorial](/Accessibility:_Strongwind_Basics "Accessibility: Strongwind Basics")
+-   [Product Test Plan](/Accessibility:_Test_Plan)
+-   [Test Progress](/Accessibility:_Test_Plan_WinForms_Controls)
+-   [Test Coding Standard](/Accessibility:_Test_Coding_Standard)
+-   [Test Log](/Accessibility:_Test_Log)
+-   [Test Summary](/Accessibility:_Test_Summary)
+-   [Bug Specification](/Accessibility:_Bug_Specification)
+-   [Testing Howto](/Accessibility:_Testing_Howto)
+-   [Strongwind Basics Tutorial](/Accessibility:_Strongwind_Basics)
 
 ### Build
 
--   [Product Build Plan](/Accessibility:_Build_Plan "Accessibility: Build Plan")
+-   [Product Build Plan](/Accessibility:_Build_Plan)
 
 Related Material
 ----------------

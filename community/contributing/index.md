@@ -11,9 +11,9 @@ Track our various [Development Plans](/docs/about-mono/plans/)
 Users:<br/>
   [Downloads](/download/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)<br/>
  Developers:<br/>
-  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books "Books") | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
+  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books) | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
  Contributors:<br/>
-  [Class Status](/archived/resources#api-completion-status-pages "Resources") | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)<br/>
+  [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)<br/>
  Community:<br/>
   [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)<br/>
  FAQ:<br/>
@@ -30,7 +30,7 @@ If you are interested in contributing, here are some pointers:
 -   [Contribution HowTo](/community/contributing/contribution-howto/)
 -   [Bugs](/community/bugs/): Known bugs in Mono, you can look at which issues people are reporting.
 -   MoMA Migration Reports: These are report of applications that people want to run with Mono, and the APIs that are missing or pending
--   [Resources](/archived/resources "Resources"): Go to this page to take a look at the status of our API classes.
+-   [Resources](/archived/resources): Go to this page to take a look at the status of our API classes.
 
 The project is under active development and has a vibrant community. If you are looking at ways of helping the project, you have come to the right web page.
 
@@ -56,13 +56,13 @@ Work Areas
 
 Our immediate goals are described in the [Mono Roadmap](/docs/about-mono/roadmap/), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans](/docs/about-mono/plans/) page.
 
-You might want to look at the project [To-Do](/archived/todo "Todo") list, there are various medium and large projects there.
+You might want to look at the project [To-Do](/archived/todo) list, there are various medium and large projects there.
 
 Those are just broad things that need to be worked on, but something that would help tremendously would be to help with small duties in the project that need to be addressed.
 
 You can see what needs to be done in the class libraries [here](http://www.go-mono.com/status/)
 
-You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project "Mono Documentation Improvement Project").
+You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project).
 
 After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 

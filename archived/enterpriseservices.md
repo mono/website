@@ -16,7 +16,7 @@ Some consideration has been given to create a shared substrate that could be use
 
 Some related components being developed and designed include:
 
--   [Transactions processing](/Transactions "Transactions")
+-   [Transactions processing](/Transactions)
 -   [Messaging support](/System.Messaging)
 
 

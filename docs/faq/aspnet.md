@@ -5,15 +5,15 @@ redirect_from:
 ---
 
 General
-=======
+-------
 
-**Does Mono support ASP.NET?**
+### Does Mono support ASP.NET?
 
 Yes.
 
 Mono supports ASP.NET 1.1 and most of ASP.NET 2.0 (currently we are missing WebParts and some tiny small features).
 
-**Does Mono Support ASP?**
+### Does Mono Support ASP?
 
 No.
 
@@ -21,7 +21,7 @@ Mono does not support the old style ASP pages, it only supports ASP.NET pages; T
 
 Once you have a working ASP.NET application, you could use Mono to run it.
 
-**How can I run ASP.NET-based applications with Mono?**
+### How can I run ASP.NET-based applications with Mono?
 
 You can read our [Guide to port ASP.NET Applications with Mono](/docs/web/porting-aspnet-applications/).
 
@@ -33,27 +33,27 @@ Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mon
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
 
- You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi "CGI") or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
+ You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi) or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
 
 To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 
 To run ASP.NET 2.0 applications use mod-mono-server2 (for Apache), fastcgi-mono-server2 (for FastCGI servers) or xsp2 (for testing)
 
-**Does Mono support ASP.NET's web services?**
+### Does Mono support ASP.NET's web services?
 
 Yes, Mono supports ASP.NET-based web services (files ending in .asmx)
 
-**Does Mono have support for WSE?**
+### Does Mono have support for WSE?
 
 At this point Mono does not have support for the "Web Services Enhancements" package and there are no plans on supporting it.
 
-See the [WSE](/archived/wse "WSE") page for more details about it.
+See the [WSE](/archived/wse) page for more details about it.
 
-**Does Mono support XHTML and Web standards?**
+### Does Mono support XHTML and Web standards?
 
-See the long reply on [WebStandards](/archived/webstandards "WebStandards").
+See the long reply on [WebStandards](/archived/webstandards).
 
-**Are there alternatives to ASP.NET?**
+### Are there alternatives to ASP.NET?
 
 Some of these are not complete replacements for ASP.NET, but they might be useful for your particular domain:
 
@@ -72,11 +72,11 @@ The following are built on top of the basic of ASP.NET, so they are more of a co
 Installation and Setup
 ======================
 
-**Does Mono's ASP.NET run on Linux ?**
+### Does Mono's ASP.NET run on Linux ?
 
 Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
 
-**Should I use mod_mono, FastCGI or XSP?**
+### Should I use mod_mono, FastCGI or XSP?
 
 mod_mono will allow you to integrate Mono and ASP.NET web pages in an existing Apache installation which means that you get all the benefits that Apache has (HTTP 1.1 support, extensive configuration options, extensive documentation and support) and you can mix on a single server many other services.
 
@@ -86,15 +86,11 @@ XSP is a very limited web server which is used typically during development or f
 
 XSP at this point only implements HTTP 1.0 with a few extensions (keep-alive is the most important one), but no work is currently underway to support HTTP 1.1 and it is also missing features like mime-type configuration and any other features that people expect from a web server.
 
-**Does mod_mono run on Windows?**
+### How do I restart my Mono applications without restarting Apache?
 
-mod_mono at this point only runs on Unix systems. There is a patch (to be reviewed) that makes mod_mono compile work on the Windows version of Apache.
+Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel) for details on setting it up.
 
-**How do I restart my Mono applications without restarting Apache?**
-
-Enable the control panel in mod_mono, see [mod_mono's Control Panel section](/docs/web/mod_mono/#control-panel "Mod mono") for details on setting it up.
-
-**My Apache Module Is Not Recognized, what to do?**
+### My Apache Module Is Not Recognized, what to do?
 
 In certain Apache configurations (SUSE 9.0), Apache is configured with large file support. This requires that every apache module has to be compiled with large file support as well.
 
@@ -108,7 +104,7 @@ because mod_mono's configure apparently doesn't query the CFLAGS from apxs. I'll
 
 In newer versions of Mono, this is taken care of by the configure script.
 
-**mod_mono and mod_proxy**
+### mod_mono and mod_proxy
 
 What are the advantages/disadvantages of using mod_mono with apache versus setting up apache with mod_proxy to proxy an XSP server running on a private port?
 
@@ -131,7 +127,7 @@ mod_proxy + mod_proxy_http:
 -   the app server process cannot be controlled by Apache
 -   difficult mass hosting
 
-**How can I Run mod-mono-server as a different user?**
+### How can I Run mod-mono-server as a different user?
 
 Due to apache's design, there is no straightforward way to start processes from inside of a apache child as a specific user. Apache's SuExec wrapper is targeting CGI and is useless for modules.
 
@@ -143,25 +139,29 @@ And finally: drop mod_mono and use mod_proxy + mod_proxy_http + XSP instead. It'
 
 From [the mono-devel-list](http://lists.ximian.com/pipermail/mono-devel-list/2006-May/018520.html)
 
-**I get Service Unavailable**
+### I get Service Unavailable
 
 If you are getting an error like "Service Temporary Unavailable".
 
 Make sure that your MonoExecutablePath actually points to Mono, or simply delete the file, as it is redundant.
 
 Common Problems
-===============
+---------------
 
-**What are some common problems when porting applications?**
+### What are some common problems when porting applications?
 
 -   Place a "Bin" directory instead of "bin"
 -   Not placing all the required DLLs in the bin dierctory (or GAC)
 -   Running xsp[2], not configuring the --aplications parameter (or application in the root directory)
 -   Running mod-mono, not configuring the MonoApplications directive (more info with man mod_mono)
 
-**Performance is disappointing** Please consult [Mod_mono](/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+### Performance is disappointing
 
-**Compilation fails with the CS0169 error message** It will happen if you configured the C# compiler in `Web.config` in a way similar to the one shown below:
+Please consult [Mod_mono](/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+
+### Compilation fails with the CS0169 error message
+
+It will happen if you configured the C# compiler in `Web.config` in a way similar to the one shown below:
 
 ``` xml
 <?xml version="1.0" encoding="iso-8859-1"?>
@@ -177,9 +177,11 @@ Common Problems
 </configuration>
 ```
 
-This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration "ASP.NET Mono Specific Configuration")
+This is result of an incompatibility between the Microsoft .NET C# compiler and the Mono C# compiler. Please read [this article for more information](/archived/aspnet_mono_specific_configuration)
 
-**ProviderException from SqliteMembershipProvider** When porting an ASP.NET app to Mono, you may get an exception similar to the following:
+### ProviderException from SqliteMembershipProvider
+
+When porting an ASP.NET app to Mono, you may get an exception similar to the following:
 
 ``` bash
     System.Configuration.Provider.ProviderException: Operation aborted due to an exception (see Trace for details).
@@ -207,9 +209,9 @@ sqlite> CREATE TABLE Users ( -- etc., from above link page );
 Once you've created the `~/App_Data/apsnetdb.sqlite` file, restart your ASP.NET app and things should Just Work (wrt MembershipProvider, anyway).
 
 Development
-===========
+-----------
 
-**I would like line numbers in my stack traces**
+### I would like line numbers in my stack traces
 
 By default xsp and xsp2 run in "release" mode, which means that no debugging information is generated at runtime. If you want line numbers in your stack traces, you must pass the --debug option to Mono, this is done by invoking **xsp** or **xsp2** with the MONO_OPTIONS environment variable, like this:
 
@@ -227,7 +229,7 @@ If you are running mod_mono with Apache, you must use the **MonoDebug** directiv
 MonoDebug true
 ```
 
-**My application fails if I replace binaries**
+### My application fails if I replace binaries
 
 Current versions of Mono use the actual libraries and dlls that you might have in your bin/ directory of your application.
 
@@ -257,7 +259,7 @@ The compiler takes care of this for you automatically, so you can integrate this
 mcs -target:library -output:dll/GraphControls.dll GraphControls.cs
 ```
 
-**How can I set the encoding of my files?**
+### How can I set the encoding of my files?
 
 By default Mono will assume that the files on the file system are encoded with the encoding determined by the LANG environment variable. If you need to change the encoding, you might want to use the globalization configuration element (see ["globalization Element"](http://msdn2.microsoft.com/en-us/library/hy4kkhe0.aspx)).
 
@@ -267,24 +269,24 @@ responseEncoding is the encoding of input (posted data)
 
 responseEncoding is the encoding of output (Content-Type: ...; charset)
 
-**Where are the various settings for System.Web documented?**
+### Where are the various settings for System.Web documented?
 
-Some documentation is available on this site on [Config_system.web](/archived/config_systemweb "Config system.web"), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
+Some documentation is available on this site on [Config_system.web](/archived/config_systemweb), but you might also use the documentation from [[http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx) MSDN.
 
 Features
-========
+--------
 
-**Does Mono support the App_Browsers folder and the .browser files?**
+### Does Mono support the App_Browsers folder and the .browser files?
 
 Yes, they are supported starting from Mono version 2.0. However, there's one difference to the .NET support. Namely, Mono does not (and cannot) distribute the standard .NET .browser files - you can, however, copy them verbatim from your .NET distribution and drop those you need in the `~/App_Browsers` directory under your application root.
 
-**Does Mono support code-behind in ASP.NET?**
+### Does Mono support code-behind in ASP.NET?
 
 Yes, code-behind is supported in Mono's implementation of ASP.NET.
 
 **Be warned** that this has nothing to do with the *CodeBehind* attribute that VS.NET adds to the pages its generates. That attribute is ignored by MS and Mono parsing code and so you need to compile and deploy the codebehind classes to the proper folder.
 
-**How can I reference an assembly in my .aspx pages?**
+### How can I reference an assembly in my .aspx pages?
 
 By default, the ASP.NET engine will reference a few *default* assemblies and all the assemblies in the bin directory of your application.
 
@@ -312,7 +314,7 @@ Or better yet, registering this in your web.config file. If you register this on
 
 For more details, see the Config system.web compilation page or the [docs at Microsoft](http://msdn2.microsoft.com/en-us/library/s10awwz0.aspx)
 
-**How can I reference a library in my .asmx web service?**
+### How can I reference a library in my .asmx web service?
 
 There are two kinds of libraries you can reference:
 
@@ -341,7 +343,7 @@ For GAC-installed libraries to be installed, you need to add the assembly to the
 </configuration>
 ```
 
-**How do I register a tag?**
+### How do I register a tag?
 
 If you have a tag in the file *MyTags.dll*, this file in in bin directory or the GAC, and you want the prefix to be *something*, add the following to the page consuming it:
 
@@ -355,11 +357,7 @@ Now if there's a control in MyTags.dll called *SuperDuper* you can use this in y
  <something:SuperDuper id="myid" otherattributes="go here" />
 ```
 
-**Can I run ASP.NET 2.x applications with Mono?**
-
-Support for 2.x ASP.NET applications is under active development, but it's not complete. If you want to try it out, use the \`xsp2' command. You will need to install the 2.0 preview assemblies and compilers.
-
-**OutputCache and VarByParam**
+### OutputCache and VarByParam
 
 The VaryByParam="None" semantics are not implemented in Mono, for example in:
 
@@ -371,13 +369,13 @@ Use a true parameter name or "\*" instead.
 
 Instead of Location="Server", use "ServerAndClient".
 
-**Does Mono's ASP.NET support SSL/TLS?**
+### Does Mono's ASP.NET support SSL/TLS?
 
 If you are using the Apache module, https support is handled directly by Apache and all the variables are available using the System.Web APIs.
 
 If you are using XSP, read the [using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/) article which details the process.
 
-**I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong?**
+### I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong?
 
 Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if possible, so that no further action is needed. If they are in utf-8 (default nowadays in Linux) or any other encoding you will need to tell the compiler for the language your page will be translated into to expect this other encoding. There are two forms:
 
@@ -413,7 +411,7 @@ Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if 
 </configuration>
 ```
 
-**My Repeater/DataList/DataGrid events aren't firing. What's wrong?**
+### My Repeater/DataList/DataGrid events aren't firing. What's wrong?
 
 A common error is to **always** databind the content in the PageLoad. If you do so for PostBacks you will be recreating the child controls from the datasource and will lose any ties to the events that are encoded in the request. **Just make DataBinding conditional on the IsPostBack property not being true**. That will preserve the viewstate and so the ties for the encoded event that will be fired later in the page processing.
 
@@ -428,13 +426,13 @@ Example:
 ```
 
 Portability
-===========
+-----------
 
 Portability is mostly a problem when moving an existing application from Windows/.NET to Mono on non-Windows platforms.
 
 If you are developing your application from scratch, portability problems will be kept to a minimum if you test the application regularly on both Linux and Windows during the development.
 
-**Do all ASP.NET applications run out of the box on Mono?**
+### Do all ASP.NET applications run out of the box on Mono?
 
 Not all applications written for ASP.NET work on Mono, most of the time this is due to file system assumptions that the developers made. In Unix filenames with different case are considered different, so for example it is possible to have both a "Login.aspx" and a "login.aspx" file. If programmers are not consistent in their file naming practices applications will not run.
 
@@ -448,17 +446,17 @@ These are a few common problems:
 
 Porting an application typically requires those changes to be made.
 
-**Does \<app\> run on Mono?**
+### Does \<app\> run on Mono?
 
 Most applications will run on mono without a hassle, but others will need to be audited for the problems stated above in this section.
 
 Some applications already include direct support for Mono, like [nGallery](http://sourceforge.net/projects/ngallery/).
 
-**Does Mono support ASP.NET AJAX?**
+### Does Mono support ASP.NET AJAX?
 
 Yes, Mono versions after 1.9 do support ASP.NET AJAX.
 
-**Are there other AJAX frameworks that could be used with Mono?**
+### Are there other AJAX frameworks that could be used with Mono?
 
 There are a few Ajax libraries that developers could consider:
 
@@ -466,16 +464,18 @@ There are a few Ajax libraries that developers could consider:
 -   [Magic Ajax.NET](http://www.magicajax.net/).
 -   GaiaWidgets
 
-**Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?** Yes, it is possible with Mono version from git master or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping "ASP.NET Settings Mapping")
+### Is it possible to have different ASP.NET configuration for different operating systems without separate configuration files?
+
+Yes, it is possible with Mono version from git master or 1.2.7 or newer. This is a Mono-specific feature which allows you to change various configuration settings on the application run time without the neeed to ship a separate set of configuration files for each supported operating system. If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems. For more information see [ASP.NET_Settings_Mapping](/archived/aspnet_settings_mapping)
 
 Extra Languages
-===============
+---------------
 
-**How can I use F# with ASP.NET on Mono?**
+### How can I use F# with ASP.NET on Mono?
 
 Out of the box, ASP.NET only supports pages written in C# and VB.NET. To convince it to use the F# compiler, the following extra steps are required:
 
--   Install the F# compiler and runtime. Get it from [here](http://research.microsoft.com/fsharp/release.aspx). It should come with an install-mono.sh script. (On my system, I had to convert the newlines in that thing from CRLF (DOS format) to regular LF before sh would properly run it.)
+-   Install the F# compiler and runtime.
 
 -   Set up mod_mono for apache, clx, or whichever web server you want, set up your ASP.NET page and configure the web-server to find it.
 
@@ -523,17 +523,17 @@ Now your ASP.NET page should load.
 (thanks to Marijn Haverbeke for the contribution)
 
 Using Mono with Apache
-======================
+----------------------
 
-**Will you support Apache 1?**
+### Will you support Apache 1?
 
 Yes, the mod_mono module works on both major versions of Apache (1.x and 2.x)
 
-**Can I run Apache 1 and Apache 2 on the same machine?**
+### Can I run Apache 1 and Apache 2 on the same machine?
 
 You can always keep a copy of Apache 2 running in parallel with your Apache 1.3 (either different port or using a reverse proxy). You can also bind the two servers to different IP addresses on the same physical machine.
 
-**How do I register a new extension to be processed by mod_mono?**
+### How do I register a new extension to be processed by mod_mono?
 
 Consider for example turning .htm files into files processed as .aspx files.
 
@@ -565,31 +565,16 @@ PublicKeyToken=b03f5f7f11d50a3a" />
 
 (thanks to Marijn Haverbeke, for this contribution)
 
-**How do I setup multiple virtual hosts?**
+### How do I setup multiple virtual hosts?
 
 Joe Audette has a tutorial [here](http://www.joeaudette.com/settingupapachevirtualhostswithmod_mono.aspx)
 
-Hosting
-=======
-
-**Who provides Mono-based hosting of applications?**
-
--   [Ubiquity Hosting](http://www.ubiquityhosting.com/) is provides Mono-based ASP.NET hosting.
-
 Memory Usage
-============
+------------
 
-**Why does the memory consumed by the Mono process keep growing?**
+### Why does the memory consumed by the Mono process keep growing?
 
-Mono currently uses a conservative, non-moving, non-compacting garbage collector. This means that the heap is not compacted when memory is released. This means that applications can produce memory allocation patterns that will effectively make the process grow, just like C, C++, Perl, Python applications would.
+In the past, Mono used a conservative, non-moving, non-compacting garbage collector. This meant that the heap was not compacted when memory was released.
 
-It is hence important to not get into patterns that would create these holes, for example such a hole could be created if you create a block of size SIZE, release it, and then create two blocks of size SIZE/2+1.
-
-ASP.NET in Mono is particularly vulnerable to this kind of memory problems because it is easy for developers to define APIs that transfer large blobs of data like entire image files, these would allocate a lot of memory that can easily be fragmented.
-
-A simple solution is to try to write your software in a way that large data blocks are not allocated, but instead your application handles them in blocks (like writing a "copy" command).
-
-**Is there a better collector in the works?**
-
-Yes, there is work to make a new generational collector under way, but it will not be ready for a while. For more information on it, see the [Generational GC](/docs/advanced/garbage-collector/sgen/) page.
+It now uses a new collector, see the [Generational GC](/docs/advanced/garbage-collector/sgen/) page.
 

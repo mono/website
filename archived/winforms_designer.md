@@ -75,9 +75,9 @@ Installation
     git clone https://github.com/mono/mwf-designer.git
     make; make run
 
-The WinForms Designer **requires** ~~[Mono SVN Head](/Compiling_Mono "Compiling Mono").~~ Mono 2.0 or newer.
+The WinForms Designer **requires** ~~[Mono SVN Head](/Compiling_Mono).~~ Mono 2.0 or newer.
 
-However if you do indeed run it on [Mono SVN Head](/Compiling_Mono "Compiling Mono") you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
+However if you do indeed run it on [Mono SVN Head](/Compiling_Mono) you could benefit from any bugfixes and improvements added since the last official release, because 99% of the actual code is part of the class libraries.
 
 ### Visual Studio
 
@@ -130,9 +130,9 @@ Currently the designer can:
 Bugs, Patches, Questions
 ------------------------
 
-*Bugs* can be filed on the Mono bug tracker and should be assigned to me (Ivan N. Zlatev) - contact AT i-nz.net.. For more information on how to file bugs take a look at the [Bugs](/Bugs "Bugs") wiki page.
+*Bugs* can be filed on the Mono bug tracker and should be assigned to me (Ivan N. Zlatev) - contact AT i-nz.net.. For more information on how to file bugs take a look at the [Bugs](/Bugs) wiki page.
 
-*Patches* can be send to the mono-devel-list or mono-winforms-list [Mailing Lists](/Mailing_Lists "Mailing Lists"). That's also the place to ask questions. Please follow the [Mono Code Style Guidelines](/Coding_Guidelines "Coding Guidelines").
+*Patches* can be send to the mono-devel-list or mono-winforms-list [Mailing Lists](/Mailing_Lists). That's also the place to ask questions. Please follow the [Mono Code Style Guidelines](/Coding_Guidelines).
 
 Screenshots
 -----------

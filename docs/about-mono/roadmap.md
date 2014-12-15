@@ -60,7 +60,8 @@ Liberações Correntes
 Subprojetos
 -----------
 
-Outros projetos como o [depurador](/docs/debug+profile/debug/debugger/), o navegador de documentação, integração com [Java](/docs/about-mono/languages/java/) via IKVM, [Olive](/archived/olive "Olive") e [Gtk#](/docs/gui/gtksharp/) permanecem com suas próprias agendas. Esta página será atualizada para conter novas informações conforme elam estejam disponível.
+Outros projetos como o [depurador](/docs/debug+profile/debug/debugger/), o navegador de documentação, integração com [Java](/docs/about-mono/languages/java/) via IKVM, [Olive](/archived/olive) e [Gtk#](/docs/gui/gtksharp/) permanecem com suas próprias agendas. Esta página será atualizada para conter novas informações conforme elam estejam disponível.
+
 ### Mono e Silverlight
 
 [Moonlight](/docs/web/moonlight/) a implementação de código aberto do Silverlight em cima do Mono para Linux não está mais sendo desenvolvido.

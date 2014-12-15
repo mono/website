@@ -47,7 +47,7 @@ It is the responsibility of team leaders to update the goals set in this page fo
 
 Since Mono is a relatively small team compared to the goals of the project, developers in the team should do much more than just write code, each developer should:
 
--   Run the [test suite](/Test_Suite "Test Suite") for the given component.
+-   Run the [test suite](/Test_Suite) for the given component.
 -   Monitor the [build bots](http://wrench.mono-project.com/builds) for potential failures and regressions.
 -   When writing code, ensure that tests exist for this new feature.
 -   Make sure that proper documentation exists.
@@ -57,7 +57,7 @@ Since Mono is a relatively small team compared to the goals of the project, deve
 Communication
 =============
 
-Communication happens mostly in public forums ([mailing lists](/Mailing_Lists "Mailing Lists"), [chat rooms](/IRC "IRC") and this web site).
+Communication happens mostly in public forums ([mailing lists](/Mailing_Lists), [chat rooms](/IRC) and this web site).
 
 Documentation
 =============
@@ -71,11 +71,11 @@ If you add a new tool, a new command line option, a new feature to a tool:
 If you introduce a new API to Mono-developed APIs:
 
 -   Ensure that there is proper coverage in Monodoc for it
--   If there is no Monodoc framework for it, make sure you [generate it](/Generating_Documentation "Generating Documentation").
+-   If there is no Monodoc framework for it, make sure you [generate it](/Generating_Documentation).
 
 If you improve or change the semantics of an API:
 
--   Make sure that [you contribute the update](/Monodoc_Contributing "Monodoc Contributing").
+-   Make sure that [you contribute the update](/Monodoc_Contributing).
 
 If you answer a public question on the forums, consider whether it would not be a good candidate for the FAQs.
 
@@ -135,7 +135,7 @@ Windows.Forms Goals
 Moonlight Team
 --------------
 
-Details about the Silverlight implementation are available on the [Moonlight](/Moonlight "Moonlight") page.
+Details about the Silverlight implementation are available on the [Moonlight](/Moonlight) page.
 
 MonoDevelop Team
 ----------------

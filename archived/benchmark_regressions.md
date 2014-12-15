@@ -8,7 +8,7 @@ redirect_from:
 Benchmark Regressions
 =====================
 
-This is a list of explanations for regressions in the [Benchmark Suite](/Benchmark_Suite "Benchmark Suite").
+This is a list of explanations for regressions in the [Benchmark Suite](/Benchmark_Suite).
 
 sharpsatbench
 =============

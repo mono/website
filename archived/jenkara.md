@@ -26,12 +26,12 @@ Jenkara
 History
 -------
 
-Jenkara is the name of a (mostly) vaporware 3D Development Environment ([3DE](/3DE "3DE")?) built on the gtk+ platform. The core was written in early 2000 in C using [GtkGLArea](/GtkGLArea "GtkGLArea"). In 2002, portions were ported to C++ using [GTKMM](/GTKMM "GTKMM") and [GtkGLExtMM](/GtkGLExtMM "GtkGLExtMM"), the C++ wrapper around [GtkGLExt](/GtkGLExt "GtkGLExt").
+Jenkara is the name of a (mostly) vaporware 3D Development Environment ([3DE](/3DE)?) built on the gtk+ platform. The core was written in early 2000 in C using [GtkGLArea](/GtkGLArea). In 2002, portions were ported to C++ using [GTKMM](/GTKMM) and [GtkGLExtMM](/GtkGLExtMM), the C++ wrapper around [GtkGLExt](/GtkGLExt).
 
 Roadmap
 -------
 
-With the advent of [GtkGLAreaSharp](/GtkGLAreaSharp "GtkGLAreaSharp"), the Jenkara development environment is being resurrected... again. Now using C# on [Mono](/Main_Page). Go, new hotness.
+With the advent of [GtkGLAreaSharp](/GtkGLAreaSharp), the Jenkara development environment is being resurrected... again. Now using C# on [Mono](/Main_Page). Go, new hotness.
 
 Screenshots
 -----------

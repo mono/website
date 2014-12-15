@@ -9,8 +9,8 @@ Aqui algumas datas importantes para o Mono.
 Posts Recentes
 ===========
 
--   [Mono e Gnome, a longa resposta (em inglês)](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Cópia Local](/archived/mailpostlongreply "Mailpost:longreply")
--   [A história inicial do Mono](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Copia Local](/archived/mailpostearlystory "Mailpost:earlystory")
+-   [Mono e Gnome, a longa resposta (em inglês)](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Cópia Local](/archived/mailpostlongreply)
+-   [A história inicial do Mono](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Copia Local](/archived/mailpostearlystory)
 
 Marcos Importantes
 ==========

@@ -50,7 +50,7 @@ The `git push` will fail if you're not up-to-date: for instance, if there was so
 Merge branch 'master' of git@github.com:/mono/repo
 ```
 
-This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry](/community/contributing/gitfaq/#how-do-i-know-whats-going-to-be-pushed "GitFAQ"))
+This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry](/community/contributing/gitfaq/#how-do-i-know-whats-going-to-be-pushed))
 
 Workflow 2: Use 'master' as integration branch
 ----------------------------------------------

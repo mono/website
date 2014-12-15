@@ -64,7 +64,7 @@ JavaScript
 
 Historically mono used to ship 'mjs', an implementation of the JavaScript language as part of its distribution, the main author behind this effort is César Natarén.
 
-For more details see [JScript](/archived/jscript "JScript")
+For more details see [JScript](/archived/jscript)
 
 Oberon
 ------
@@ -108,9 +108,9 @@ Other languages
 Supporting GCC languages
 ========================
 
-The choosen strategy is to use the GCC4 GIMPLE backend to target CIL bytecodes, as planned in the [GCC CIL](/archived/summer2006#gcc-cil-backend "Summer2006") SOC project (or the [2005 attempt](/archived/summer2005#gcc-cil "Summer2005")).
+The choosen strategy is to use the GCC4 GIMPLE backend to target CIL bytecodes, as planned in the [GCC CIL](/archived/summer2006#gcc-cil-backend) SOC project (or the [2005 attempt](/archived/summer2005#gcc-cil)).
 
-In 2006, the [Gcc4cil](/archived/gcc4cil "Gcc4cil") project was publicly announced. For now it supports the C language but it could be extended to support more gcc front ends.
+In 2006, the [Gcc4cil](/archived/gcc4cil) project was publicly announced. For now it supports the C language but it could be extended to support more gcc front ends.
 
 Missing languages
 =================
@@ -128,7 +128,7 @@ LCC is not an open source compiler, but it is free as long as you do not profit 
 
 ### Using GCC
 
-See [Gcc4cil](/archived/gcc4cil "Gcc4cil").
+See [Gcc4cil](/archived/gcc4cil).
 
 Ruby
 ----

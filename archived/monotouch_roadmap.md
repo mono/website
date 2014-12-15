@@ -8,7 +8,7 @@ redirect_from:
 MonoTouch Roadmap
 =================
 
-This is what we would like to see happen with [MonoTouch](/MonoTouch "MonoTouch"), priorities and goals will change based on what we hear from developers.
+This is what we would like to see happen with [MonoTouch](/MonoTouch), priorities and goals will change based on what we hear from developers.
 
 Version 1.0
 ===========
@@ -23,7 +23,7 @@ Version 2.0
 ===========
 
 -   Silverlight to iPhone compiler.
-    -   There will be [Limitations](/MonoTouch:Limitations "MonoTouch:Limitations") on it.
+    -   There will be [Limitations](/MonoTouch:Limitations) on it.
 -   LINQ support.
 -   Debugger support.
 -   Expand the API coverage to cover the rest of Apple's APIs.

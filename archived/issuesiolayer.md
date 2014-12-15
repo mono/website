@@ -70,7 +70,7 @@ Request
 Documentation
 -------------
 
-Our [Documentation](/Article:IOChanges "Article:IOChanges") needs to be improved:
+Our [Documentation](/Article:IOChanges) needs to be improved:
 
 -   The documentation is based on some conversations with Dick.
 -   It is not up-to-date.

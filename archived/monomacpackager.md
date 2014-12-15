@@ -10,7 +10,7 @@ redirect_from:
 MonoMacPackager
 ===============
 
-With the new release of the [MonoMac](/MonoMac "MonoMac") add-in for MonoDevelop, you can easily turn your Mono application into a Mac bundle, and you can also get a Mac installer for your application.
+With the new release of the [MonoMac](/MonoMac) add-in for MonoDevelop, you can easily turn your Mono application into a Mac bundle, and you can also get a Mac installer for your application.
 
 If you want to create self-contained Mac bundles or publish your software to the Mac AppStore, you should get [Xamarin.Mac](http://xamarin.com/mac) which is a strict superset of MonoMac.
 

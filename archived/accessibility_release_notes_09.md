@@ -97,7 +97,7 @@ Mono Accessibility is available for a variety of Linux distributions, including:
 
 -   OpenSUSE 11.0 - [1-Click Install](http://download.opensuse.org/repositories/Mono:/UIA/MonoPreviewOpenSUSE_11.0/mono-uia.ymp)
 
-If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available](/Accessibility:_Installing_From_Source "Accessibility: Installing From Source").
+If packages aren't available for your distribution, you'll probably have to install Mono Accessibility from source. Step-by-step instructions are [available](/Accessibility:_Installing_From_Source).
 
 If you just want to grab a source tarball, check out the [Novell ftp](ftp://ftp.novell.com/pub/mono/uia/) page.
 

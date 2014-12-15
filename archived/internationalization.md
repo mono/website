@@ -44,7 +44,7 @@ Internationalization
 Introduction
 ============
 
-Using Mono.Unix is the recommended way to work with gettext on Mono to provide translations of your application's strings. An alternative exist with [Gettext#](/I18nGettext "I18nGettext") but is no longer a recommended path.
+Using Mono.Unix is the recommended way to work with gettext on Mono to provide translations of your application's strings. An alternative exist with [Gettext#](/I18nGettext) but is no longer a recommended path.
 
 Requirements
 ============

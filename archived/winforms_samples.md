@@ -50,7 +50,7 @@ Winforms Samples
 .NET 3.5 Applications
 ---------------------
 
-The 3.5 profile does not currently ship with Mono. Please see [Olive](/Olive "Olive") for details on getting it from SVN.
+The 3.5 profile does not currently ship with Mono. Please see [Olive](/Olive) for details on getting it from SVN.
 
 -   [LINQPad](http://www.albahari.com/linqpad.html)
 

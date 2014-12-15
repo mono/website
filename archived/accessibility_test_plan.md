@@ -83,13 +83,13 @@ A test plan for the Accessibility team's efforts in bringing accessibility to mo
 References
 ----------
 
-[Product Test Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan") (current page)<br/>
- [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")<br/>
- [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")<br/>
- [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary")<br/>
- [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")<br/>
- [Product Test Coding Standard](/Accessibility:_Test_Coding_Standard "Accessibility: Test Coding Standard")<br/>
- [Product Home](/Accessibility "Accessibility")
+[Product Test Plan](/Accessibility:_Test_Plan) (current page)<br/>
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification)<br/>
+ [Product Test Log](/Accessibility:_Test_Log)<br/>
+ [Product Test Summary](/Accessibility:_Test_Summary)<br/>
+ [Product Bug Specification](/Accessibility:_Bug_Specification)<br/>
+ [Product Test Coding Standard](/Accessibility:_Test_Coding_Standard)<br/>
+ [Product Home](/Accessibility)
 
 The [Product roadmap](/Accessibility:_Roadmap)<br/>
  The [Architecture overview](/archived/accessibility_architecture/)<br/>
@@ -98,10 +98,10 @@ The [Product roadmap](/Accessibility:_Roadmap)<br/>
 QA Meetings
 -----------
 
-[June 5 2008](/Accessibility:_QA_Meetings_2008_Jun_5 "Accessibility: QA Meetings 2008 Jun 5")<br/>
- [August 13 2008](/Accessibility:_QA_Meetings_2008_Aug_13 "Accessibility: QA Meetings 2008 Aug 13")<br/>
- [Mar 25 2009](/Accessibility:_QA_Meetings_2009_Mar_25 "Accessibility: QA Meetings 2009 Mar 25")<br/>
- [May 20 2009](/Accessibility:_QA_Meetings_2009_May_20 "Accessibility: QA Meetings 2009 May 20")
+[June 5 2008](/Accessibility:_QA_Meetings_2008_Jun_5)<br/>
+ [August 13 2008](/Accessibility:_QA_Meetings_2008_Aug_13)<br/>
+ [Mar 25 2009](/Accessibility:_QA_Meetings_2009_Mar_25)<br/>
+ [May 20 2009](/Accessibility:_QA_Meetings_2009_May_20)
 
 No meetings scheduled
 
@@ -116,8 +116,8 @@ Definitions
  ATK---Accessibility toolkit. A developer toolkit that allows programmers to use common GNOME accessibility features in their applications.<br/>
  ATK/UIA Bridge---Mapping of ATK to the UIA provider APIs.<br/>
  UIA/at-spi Bridge---Mapping of AT-SPI to the UIA provider APIs.<br/>
- [WinForms](/WinForms "WinForms")---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br/>
- [Moonlight](/Moonlight "Moonlight")---The Mono-based implementation of Silverlight.<br/>
+ [WinForms](/WinForms)---One of the many GUI Toolkits for use with Mono, working towards compatibility with Microsoft's System.Windows.Forms.<br/>
+ [Moonlight](/Moonlight)---The Mono-based implementation of Silverlight.<br/>
  [Accerciser](http://live.gnome.org/Accerciser)---An interactive Python accessibility explorer for the GNOME desktop. It uses AT-SPI to inspect and control widgets, allowing you to check if an application is providing correct information to assistive technologies and automated test frameworks.<br/>
  [Orca](http://live.gnome.org/Orca)---Open source scriptable screen reader. Using various combinations of speech, braille, and magnification, Orca helps provide access to applications and toolkits that support the AT-SPI (e.g., the GNOME desktop).<br/>
  [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)---Implementation of the Python programming language, targeting .NET and Mono. It makes .NET libraries easily available to Python programmers, while maintaining full compatibility with the Python language.<br/>
@@ -148,9 +148,9 @@ The purpose of this section is to identify the current and previous versions of 
 
 Testing efforts will be related to the project goals, which are:
 
--   Make mono [WinForms](/WinForms "WinForms") accessible. All WinForms currently supported by mono.
--   Make [Moonlight](/Moonlight "Moonlight") accessible
--   Allow [UI Automation](/UI_Automation "UI Automation") based Accessibility Technologies to run on Linux
+-   Make mono [WinForms](/WinForms) accessible. All WinForms currently supported by mono.
+-   Make [Moonlight](/Moonlight) accessible
+-   Allow [UI Automation](/UI_Automation) based Accessibility Technologies to run on Linux
 
 This plan includes integration, system, and acceptance testing. Unit testing is excluded, as it is being managed by individual developers.
 
@@ -191,7 +191,7 @@ Developers are also tracking problems they encounter:
 
 We plan to test all Functionalities of WinForms controls those have been mentioned in [Provider_Functional_Specification](http://monouia.wik.is/Provider_Functional_Specification) and [Bridge_Functional_Specification](/Accessibility:_Bridge_Functional_Specification).
 
-According to Q2 2008 of the [Accessibility#Roadmap roadmap](/archived/accessibility_roadmap/ "Accessibility"), testing contents need relate with below info:
+According to Q2 2008 of the [Accessibility#Roadmap roadmap](/archived/accessibility_roadmap/), testing contents need relate with below info:
 
 -   The WinForms sheet in [WinForms Controls list](/Accessibility:_Test_Plan_WinForms_Controls) defines which WinForms controls will be implemented and therefore need to be tested.
 -   Create WinForms application samples to test against. These application samples should be written in IronPython. Our sample applications can be found at [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk) /test/samples. Some C# samples (that can be translated) can be checked out via svn from [http://anonsvn.mono-project.com/viewvc/trunk/winforms](http://anonsvn.mono-project.com/viewvc/trunk/winforms).
@@ -279,15 +279,15 @@ At this time we plan to test all features exhaustively.
 
 ##### WinForms Testing
 
-The accessibility of WinForms applications will be tested using Strongwind tests and WinForms sample applications. A test harness has also been developed to facilitate the execution and logging of a suite of tests. For more information see the [WinForms portion](/archived/accessibility_testing_howto/#winforms "Accessibility: Testing Howto") of the [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+The accessibility of WinForms applications will be tested using Strongwind tests and WinForms sample applications. A test harness has also been developed to facilitate the execution and logging of a suite of tests. For more information see the [WinForms portion](/archived/accessibility_testing_howto/#winforms) of the [Testing Howto](/Accessibility:_Testing_Howto).
 
 ##### Moonlight Testing
 
-The accessibility of Moonlight applications will be tested using Strongwind tests and Moonlight sample applications. Moonlight application will be writted in C#. For more information see the [Moonlight portion](/archived/accessibility_testing_howto/#moonlight "Accessibility: Testing Howto") of the [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+The accessibility of Moonlight applications will be tested using Strongwind tests and Moonlight sample applications. Moonlight application will be writted in C#. For more information see the [Moonlight portion](/archived/accessibility_testing_howto/#moonlight) of the [Testing Howto](/Accessibility:_Testing_Howto).
 
 ##### UIAutomation Client API Testing
 
-WinForms, Moonlight and Gtk+ applications will be tested using White framework. For more information of how to create White test please see [ClientAPI portion](/archived/accessibility_testing_howto/#uiautomation-client-api "Accessibility: Testing Howto") of the [Testing Howto](/Accessibility:_Testing_Howto "Accessibility: Testing Howto").
+WinForms, Moonlight and Gtk+ applications will be tested using White framework. For more information of how to create White test please see [ClientAPI portion](/archived/accessibility_testing_howto/#uiautomation-client-api) of the [Testing Howto](/Accessibility:_Testing_Howto).
 
 ##### General Guidelines
 
@@ -300,7 +300,7 @@ WinForms, Moonlight and Gtk+ applications will be tested using White framework. 
 -   Types of system testing include function, performance, security, load, reliability, usability, documentation testing.
 -   Acceptance criteria for patch acceptance: Before a patch is accepted, a QA engineer must ensure that the patch submitted from developer passes QA testing. A build engineer must ensure the patch builds properly and meets packaging standards. QA and build engineers will then create a patch acceptance report, and the patch can be included in the product.
 -   Testers may perform system testing on the product only after development has verified that they have completed a development milestone and the build team has created a stable release.
--   WinForms samples will be created in C#, Boo, or IronPython(here we chose IronPython). Automation scripts, that test the accessibility of the WinForms apps will be created in CPython. [Strongwind](/archived/accessibility_testing_howto/#strongwind "Accessibility: Testing Howto") and [Orca Regression Tests](/archived/accessibility_testing_howto/#orca "Accessibility: Testing Howto") will be used for the automation scripts.
+-   WinForms samples will be created in C#, Boo, or IronPython(here we chose IronPython). Automation scripts, that test the accessibility of the WinForms apps will be created in CPython. [Strongwind](/archived/accessibility_testing_howto/#strongwind) and [Orca Regression Tests](/archived/accessibility_testing_howto/#orca) will be used for the automation scripts.
 -   No regularly scheduled meetings at this time
 -   Minor editing (grammar and spelling corrections) of this test plan can be done at any time. Any change to the test plan that changes how the product will be tested shall be approved by the QA team who will determine if the changes are large enough to require a change to the test plan identifier.
 -   Black box and white box testing methods are both acceptable. However, it is anticipated that black box testing will be the norm.
@@ -327,7 +327,7 @@ Criteria for Test Components:
 |ATKBridge| ?||
 |ATSPIBridge| ?||
 
-Individual test case pass/fail criterion is defined by the automated script which performs the testing. Upon failure of a test case, the script should will log the failure. For exit criteria, see [Approach](#approach "Accessibility: Test Plan").
+Individual test case pass/fail criterion is defined by the automated script which performs the testing. Upon failure of a test case, the script should will log the failure. For exit criteria, see [Approach](#approach).
 
 #### Suspension criteria and resumption requirements
 
@@ -469,7 +469,7 @@ Everyone in the open source community is encouraged to join our QA team!
 
 #### Schedule
 
-*Built around the [roadmap](/Accessibility:_Roadmap "Accessibility: Roadmap") but specific to testing with testing milestones*
+*Built around the [roadmap](/Accessibility:_Roadmap) but specific to testing with testing milestones*
 
 ##### WinForms schedule
 
