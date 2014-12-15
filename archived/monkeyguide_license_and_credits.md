@@ -22,10 +22,10 @@ The following people have contributed to many pages throughout the Monkeyguide:
 
 -   Johannes Roith
 -   Martin Willemoes Hansen
--   [Miguel de Icaza](/User:Miguel "User:Miguel")
+-   [Miguel de Icaza](/User:Miguel)
 -   Shane Landrum
 -   Joshua Tauberer
--   [Zac Bowling](/User:ZacBowling "User:ZacBowling")
--   [Erik Dasque](/User:Edasque "User:Edasque")
+-   [Zac Bowling](/User:ZacBowling)
+-   [Erik Dasque](/User:Edasque)
 
 

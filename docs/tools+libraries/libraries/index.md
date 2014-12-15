@@ -222,7 +222,7 @@ It is GPLv2 licensed, so it can only be used for open source software.
 Dead efforts
 ------------
 
-There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/ "Dead Toolkits") that have been developed in the past.
+There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/) that have been developed in the past.
 
 * * * * *
 
@@ -287,7 +287,7 @@ MonoRail differs from the standard WebForms way of development as it enforces se
 Deveel Ajax
 -----------
 
-[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax "Introduction to Deveel AJAX") on Mono Project.
+[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([http://www.prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax) on Mono Project.
 
 Magic Ajax
 ----------
@@ -388,7 +388,7 @@ Axiom 3D
 
 [Axiom 3D Engine](http://axiomengine.sourceforge.net/wiki/index.php/Main_Page) is an open-source, cross-platform 3D graphics rendering engine for .NET and Mono. The engine is a high-performance C# port of the powerful OGRE engine. Its flexible component-oriented architecture allows easy extension and provides full support for both DirectX and OpenGL. The engine is also cross platform supporting both Windows and Linux operating systems.
 
-[GtkGLAreaSharp](/archived/gtkglareasharp "GtkGLAreaSharp")
+[GtkGLAreaSharp](/archived/gtkglareasharp)
 ------------------------------------------------------------------------------
 
 Still in its infancy, this library provides an OpenGL interface to the GTK# UI platform
@@ -502,7 +502,7 @@ System Programming
 Mono.Addins
 -----------
 
-[Mono.Addins](/archived/introduction_to_monoaddins "Introduction to Mono.Addins") is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
+[Mono.Addins](/archived/introduction_to_monoaddins) is a generic framework for creating extensible applications, and for creating libraries which extend those applications.
 
 This framework is derived from the add-in engine used by MonoDevelop, although it has been completely rewritten and improved in many ways to make it more generic and easier to use. The MonoDevelop add-in engine was an improvement over the SharpDevelop engine, which took many ideas from the Eclipse add-in engine.
 
@@ -547,14 +547,14 @@ You can use [BitSharp](/archived/monotorrent), the Bittorrent libraries created 
 Data Conversion
 ---------------
 
-Mono provides [Mono DataConvert](/archived/mono_dataconvert "Mono DataConvert") as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
+Mono provides [Mono DataConvert](/archived/mono_dataconvert) as a replacement for [System.BitConverter](http://docs.go-mono.com/index.aspx?link=T:System.BitConverter) that is more versatile and does not have the design flaws in BitConverter
 
 Console/Curses
 --------------
 
 You can use Curses to build portable console-based applications.
 
-[MonoCurses](/docs/tools+libraries/libraries/monocurses/ "MonoCurses") is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
+[MonoCurses](/docs/tools+libraries/libraries/monocurses/) is an MIT licensed binding of curses, and it includes the minimalistic `gui.cs` GUI toolkit for creating console-based applications.
 
 [ConsoleFramework]( https://github.com/elw00d/consoleframework) is a cross-platform MIT licensed library to create console applications using some WPF-inspired concepts.
 
@@ -637,9 +637,9 @@ The [Divan](http://github.com/gokr/Divan/tree/master) library can be used to acc
 DB4O
 ----
 
-[DB4O](/archived/db4o "DB4O") is a non-intrusive persistence system that stores any complex object with one single line of code. The class schema of your application classes is analysed and adjusted in real time when objects are stored. Object-oriented querying functionality is provided through Native Queries (NQ), the ability to query the database using .NET syntax and semantics (similar in concept to LINQ/DLINQ), Query by Example (QbE) and other APIs. High performance is achieved with indexed fields and by reducing database-file-internal redirections to the absolute minimum. db4o features ACID transactions, fast embedded single-user mode and multi-transactional Client/Server access, locally and through TCP, object-oriented replication, and the ObjectManager to browse database files.
+[DB4O](/archived/db4o) is a non-intrusive persistence system that stores any complex object with one single line of code. The class schema of your application classes is analysed and adjusted in real time when objects are stored. Object-oriented querying functionality is provided through Native Queries (NQ), the ability to query the database using .NET syntax and semantics (similar in concept to LINQ/DLINQ), Query by Example (QbE) and other APIs. High performance is achieved with indexed fields and by reducing database-file-internal redirections to the absolute minimum. db4o features ACID transactions, fast embedded single-user mode and multi-transactional Client/Server access, locally and through TCP, object-oriented replication, and the ObjectManager to browse database files.
 
-For more information see the Mono's [DB4O](/archived/db4o "DB4O") page.
+For more information see the Mono's [DB4O](/archived/db4o) page.
 
 EntitySpaces
 ------------

@@ -165,7 +165,7 @@ That will do the actual copy.
 Update mono-project.com wiki
 ----------------------------
 
-Add current release to the list of releases at [OldReleases](/OldReleases "OldReleases"). Update download page by editing:
+Add current release to the list of releases at [OldReleases](/OldReleases). Update download page by editing:
 
     release/website/download_page/release_data.js
 

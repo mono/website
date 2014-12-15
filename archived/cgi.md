@@ -8,9 +8,9 @@ redirect_from:
 CGI
 ===
 
- [CGI](http://hoohoo.ncsa.illinois.edu/cgi/) is the most widely supported web server application interface. [ASP.NET](/ASP.NET "ASP.NET") (and [Mono](/Main_Page)) has a relatively long startup time and requires a relatively large amount of initial memory that makes it unsuitable to be used as a CGI application in the traditional way because CGI requires the web server to create a new application process for each request.
+ [CGI](http://hoohoo.ncsa.illinois.edu/cgi/) is the most widely supported web server application interface. [ASP.NET](/ASP.NET) (and [Mono](/Main_Page)) has a relatively long startup time and requires a relatively large amount of initial memory that makes it unsuitable to be used as a CGI application in the traditional way because CGI requires the web server to create a new application process for each request.
 
-Both [mod_mono](/Mod_mono "Mod mono") and [fastcgi-mono-server](/FastCGI "FastCGI") are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
+Both [mod_mono](/Mod_mono) and [fastcgi-mono-server](/FastCGI) are using a persistent separate process that is processing the requests thus eliminating the performance impact of long startup time and reducing overall memory requirements.
 
 Shared hosing environments usually use [Apache](http://httpd.apache.org) that only has support for CGI out of the box. Both mod_mono and FastCGI support require installing modules that can only be done by server administrators.
 
@@ -35,7 +35,7 @@ Shared hosing environments usually use [Apache](http://httpd.apache.org) that on
 Installing Mono and cgi-fcgi
 ----------------------------
 
-For more detailed instructions on installing Mono see our [Getting Mono](/Obtaining_Mono) and [Compiling Mono](/Compiling_Mono "Compiling Mono") pages. cgi-fcgi is available for download from the [FastCGI](http://www.fastcgi.com/drupal/node/5) site as part of the **Development Kit**.
+For more detailed instructions on installing Mono see our [Getting Mono](/Obtaining_Mono) and [Compiling Mono](/Compiling_Mono) pages. cgi-fcgi is available for download from the [FastCGI](http://www.fastcgi.com/drupal/node/5) site as part of the **Development Kit**.
 
 The following sample configuration assumes installation prefixes used here to configure cgi-fcgi and mono. If you use different prefixes you also will have to modify the sample files:
 
@@ -102,7 +102,7 @@ MONO_SHARED_DIR="/home/username/tmp" \
 
 This script also logs stdout and stderr and creates a pid file.
 
-You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled](/docs/web/fastcgi/#how-applications-are-handled-and-how-to-configure-them "FastCGI").
+You may want to use name based virtual hosts or define more applications on command line. For more information see [How Applications are Handled](/docs/web/fastcgi/#how-applications-are-handled-and-how-to-configure-them).
 
 Recycling the FastCGI server
 ----------------------------
@@ -165,7 +165,7 @@ A simple Apache configuration file (*/home/username/public_html/.htaccess*):
     Action mono-cgi /cgi-bin/mono-cgi
     AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 
-You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/docs/web/mod_mono/#manual-modmono-configuration "Mod mono").
+You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/docs/web/mod_mono/#manual-modmono-configuration).
 
  To improve security you should protect ASP.NET Application Folders:
 

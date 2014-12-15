@@ -10,7 +10,7 @@ Summer2006
 
 During the Summer of 2006, the Mono project will be mentoring a group of students as part of Google's Open Source Summer of Code initiative. We thank Google for their financial support.
 
-Last year Summer projects are listed [here](/Summer2005 "Summer2005")
+Last year Summer projects are listed [here](/Summer2005)
 
 <table>
 <col width="100%" />

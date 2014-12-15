@@ -86,5 +86,5 @@ Other Libraries
 Platforms
 =========
 
-Discussion on [Improving Gtk+ on Windows](/archived/improvinggtkwin32 "ImprovingGtkWin32")
+Discussion on [Improving Gtk+ on Windows](/archived/improvinggtkwin32)
 

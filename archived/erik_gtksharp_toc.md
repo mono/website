@@ -24,7 +24,7 @@ This is a new TOC for the Gtk# section of the Mono guide
     -   Treeview
     -   Open and save dialogs
     -   Gecko#
--   [Notification Icons](/GtkSharpNotificationIcon "GtkSharpNotificationIcon")
+-   [Notification Icons](/GtkSharpNotificationIcon)
 -   Selection and Clipboard
 -   Graphics
     -   Painting and drawing (2D)
@@ -37,7 +37,7 @@ This is a new TOC for the Gtk# section of the Mono guide
     -   Cross platform
 -   Working with threads
 -   Application configuration
-    -   [GConf](/GConfTutorial "GConfTutorial")
+    -   [GConf](/GConfTutorial)
 -   GUI builders
     -   Glade
     -   Stetic

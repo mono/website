@@ -8,7 +8,7 @@ redirect_from:
 MoonlightDesktop
 ================
 
-As of today, [Moonlight](/Moonlight "Moonlight")'s engine is used in two scenarios:
+As of today, [Moonlight](/Moonlight)'s engine is used in two scenarios:
 
 -   As part of the Moonlight Web Plugin, to render online Silverlight content.
 -   As a standalone library to create desktop applications that can use the Silverlight API.

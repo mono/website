@@ -36,7 +36,7 @@ From personal experience, I have never created my own consts.cs file. I found a 
 
 And of course "real" Mono is built from the .sources file, so we aren't screwing up the build or anything by doing this.
 
---[jpobst](/User:Jpobst "User:Jpobst") 10:07, 30 May 2007 (EDT)
+--[jpobst](/User:Jpobst) 10:07, 30 May 2007 (EDT)
 
 For the sake of argument: None of the other libraries are able to be dropped into Visual Studio and built standalone, why should MWF be special? Without the rest of the build tree, would people be able to run the unit tests? If not, should we be making it easier for people to develop on MWF without writing and running tests?
 
@@ -46,5 +46,5 @@ MWF is slightly special in that its target users are probably hardcore VS users.
 
 I have a VS project of the tests that I use to build the tests quickly after I add new ones. I can add that to the tree, however, as I said, I don't know that hacking on MWF is really the intended goal here. (Although it might be a nice side effect.)
 
-[jpobst](/User:Jpobst "User:Jpobst") 1:38, 30 May 2007 (EDT)
+[jpobst](/User:Jpobst) 1:38, 30 May 2007 (EDT)
 

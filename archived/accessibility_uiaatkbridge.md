@@ -61,9 +61,9 @@ Mapping infrastructure
 
 We will need to map UIA structures to ATK structures. More info:
 
--   ATK roles: Refer to our [table of Atk.Roles](/archived/accessibility_mapping_uia_to_atk/ "Accessibility: Mapping UIA to ATK"), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
--   [Mapping UIA to ATK](/archived/accessibility_mapping_uia_to_atk/ "Accessibility: Mapping UIA to ATK"): [UiaControlType-\>Atk mapping draft](/archived/accessibility_mapping_uia_to_atk/#uia-control-types "Accessibility: Mapping UIA to ATK").
--   [MWF-\>UiaControlType-\>UiaProvider mappings](/Accessibility:_Control_Status "Accessibility: Control Status").
+-   ATK roles: Refer to our [table of Atk.Roles](/archived/accessibility_mapping_uia_to_atk/), or directly from the [ATK sources](http://svn.gnome.org/viewvc/atk/trunk/atk/atkobject.h?view=markup).
+-   [Mapping UIA to ATK](/archived/accessibility_mapping_uia_to_atk/): [UiaControlType-\>Atk mapping draft](/archived/accessibility_mapping_uia_to_atk/#uia-control-types).
+-   [MWF-\>UiaControlType-\>UiaProvider mappings](/Accessibility:_Control_Status).
 -   From the GTK Case study: [Gtk-\>Gail-\>Atk-\>UiaControlType](#case-study-gtk).
 -   For historic reference: [Mapping MSAA to ATK](http://developer.mozilla.org/en/docs/ARIA_UA_Best_Practices#11.3.5_Role).
 
@@ -164,7 +164,7 @@ UiaAtkBridge class
 
 UIA Provider
 
-[UiaControlType](/archived/accessibility_mapping_uia_to_atk/#uia-control-types "Accessibility: Mapping UIA to ATK")
+[UiaControlType](/archived/accessibility_mapping_uia_to_atk/#uia-control-types)
 
 Hierarchy (children?)
 

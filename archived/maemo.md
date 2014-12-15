@@ -48,7 +48,7 @@ The Mono scratchbox devkit includes a full Mono installation, gtk-sharp 2.4.3 an
 
 The Mono apt repository for Nokia includes the mono runtime, gtk-sharp, maemo-sharp and Paco's peditgtksharp sample application. Look [here](http://go-mono.com/maemo/packages.list) for a full list of packages available in the repository. If you need any Mono assembly that is not available in the repository please contact us on the Mono mailing lists.
 
-If you are interested in building Mono Scratchbox devkit from sources, please check our [Scratchbox](/Scratchbox "Scratchbox") page.
+If you are interested in building Mono Scratchbox devkit from sources, please check our [Scratchbox](/Scratchbox) page.
 
 Screenshots and Movies
 ======================

@@ -13,16 +13,16 @@ Recursos rápidos:
 -   [ASP.NET FAQ](/docs/faq/aspnet/) para perguntas frequentes sobre ASP.NET.
 -   [Hospedagem com servidores Apache](/docs/web/mod_mono/).
 -   [Hospedagem com servidores baseados em FastCGI](/docs/web/fastcgi/).
--   [Hospedagem com servidores baseados em CGI](/archived/cgi "CGI").
+-   [Hospedagem com servidores baseados em CGI](/archived/cgi).
 -   [Hospedagem com Nginx](/docs/web/fastcgi/nginx/).
 -   [Portando aplicações ASP.NET](/docs/web/porting-aspnet-applications/).
 
 As implementações ASP.NET do Mono suportam dois tipos de aplicações:
 
 -   Web Forms (infraestrutura para Aplicações Web).
--   [Web Services](/archived/web_services "Serviços Web") (sistema RPC baseado em SOAP).
+-   [Web Services](/archived/web_services) (sistema RPC baseado em SOAP).
 
-Status e testes para ASP.NET 2.0 estão disponíveis na nossa página [ASPTests](/archived/asptests "ASPTests").
+Status e testes para ASP.NET 2.0 estão disponíveis na nossa página [ASPTests](/archived/asptests).
 
 Executando aplicações ASP.NET
 ============================
@@ -30,7 +30,7 @@ Executando aplicações ASP.NET
 Para executar suas aplicações ASP.NET com Mono, você tem três classes de opções:
 
 -   Hospedagem Apache: use [mod_mono](/docs/web/mod_mono/), um módulo que possibilita ao servidor Apache servir aplicações ASP.NET.
--   Hospedagem FastCGI: use a hospedagem [FastCGI](/docs/web/fastcgi/) se você tem um servidor web que suporta o protocolo FastCGI (por exemplo [Nginx](/docs/web/fastcgi/nginx/)) para estender o servidor. Você também pode usar um servidor web que tem suporte apenas para [CGI](/archived/cgi "CGI") usando **cgi-fcgi**.
+-   Hospedagem FastCGI: use a hospedagem [FastCGI](/docs/web/fastcgi/) se você tem um servidor web que suporta o protocolo FastCGI (por exemplo [Nginx](/docs/web/fastcgi/nginx/)) para estender o servidor. Você também pode usar um servidor web que tem suporte apenas para [CGI](/archived/cgi) usando **cgi-fcgi**.
 -   XSP: esta é uma opção simples para começar, um servidor web leve e simples escrito em C#.
 
 Para implantar aplicações, recomenda-se as opções [mod_mono](/docs/web/mod_mono/) ou [FastCGI](/docs/web/fastcgi/), pois isso te dará todas as opções de configuração e flexibilidade que vem junto com o servidor Apache ou um servidor FastCGI.
@@ -83,13 +83,13 @@ XSP suporta SSL e Certificados Cliente TLS. Para maiores detalhes sobre como con
 
 ### Configuração
 
-Aplicações podem ser configuradas através do arquivo web.config, a documentação completa está disponível na  [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), além disso uma versão específica para Mono está disponível neste site [aqui](/archived/config_systemweb "Configuração system.web").
+Aplicações podem ser configuradas através do arquivo web.config, a documentação completa está disponível na  [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), além disso uma versão específica para Mono está disponível neste site [aqui](/archived/config_systemweb).
 
-Além disso, você pode configurar opções ASP.NET específicas para Mono (para ter aplicações que se comportam de formas diferentes dependendo do sistema operacional em que estão implantadas) usando o motor [Mapeamento de Configurações ASP.NET](/archived/aspnet_settings_mapping "Mapeamento de configurações aSP.NET") .
+Além disso, você pode configurar opções ASP.NET específicas para Mono (para ter aplicações que se comportam de formas diferentes dependendo do sistema operacional em que estão implantadas) usando o motor [Mapeamento de Configurações ASP.NET](/archived/aspnet_settings_mapping) .
 
 ### Outras extensões
 
-Confira em [Módulos ASP.NET](/archived/aspnet_modules "Módulos asP.NET") para detalhes sobre como suportar codificações deflate/gzip e autenticação.
+Confira em [Módulos ASP.NET](/archived/aspnet_modules) para detalhes sobre como suportar codificações deflate/gzip e autenticação.
 
 Depurando
 ---------
@@ -101,7 +101,7 @@ Para obter os números de linha em rastreamentos da pilha você precisa fazer du
 1. Habilitar geração de código de depuração na sua página. 
 2. Executar o Mono com a opção de linha de comando --debug.
 
-Você precisa habilitar a geração de código de depuração na sua página usando **Debug="true"** no topo da sua página, ou configurando a diretiva ([opção de compilação](/archived/config/#compilation "Configuração")) no Web.config.
+Você precisa habilitar a geração de código de depuração na sua página usando **Debug="true"** no topo da sua página, ou configurando a diretiva ([opção de compilação](/archived/config/#compilation)) no Web.config.
 
 Use a opção de linha de comando --debug para o Mono, isso é feito configurando a variável de ambiente MONO_OPTIONS, dessa forma:
 

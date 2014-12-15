@@ -496,5 +496,5 @@ You will get more output in the apache error_log file. Useful when debugging.
 Improving mod_mono
 ===================
 
-See our [Improving mod_mono](/archived/improvingmodmono "ImprovingModMono") page for details on things that could be improved in the module.
+See our [Improving mod_mono](/archived/improvingmodmono) page for details on things that could be improved in the module.
 

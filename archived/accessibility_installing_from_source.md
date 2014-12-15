@@ -8,7 +8,7 @@ redirect_from:
 Accessibility: Installing From Source
 =====================================
 
-The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.](/Accessibility:_Release_Notes_2.1 "Accessibility: Release Notes 2.1")
+The latest version of Mono Accessibility is 2.1, released on August 24, 2010. [Get more info about this release.](/Accessibility:_Release_Notes_2.1)
 
 <table>
 <col width="100%" />
@@ -49,7 +49,7 @@ NOTE: Latest code in GIT head may have different requirements (such as unrelease
 -   atk
 -   nunit \>= 2.4.7 (if building tests)
 
-Since the Mono UIA packages require a very recent Mono and gtk-sharp, you may have trouble finding packages for your distribution. If that is the case, you may want to consider installing Mono and gtk-sharp from source in a [parallel Mono environment](/Parallel_Mono_Environments "Parallel Mono Environments").
+Since the Mono UIA packages require a very recent Mono and gtk-sharp, you may have trouble finding packages for your distribution. If that is the case, you may want to consider installing Mono and gtk-sharp from source in a [parallel Mono environment](/Parallel_Mono_Environments).
 
 Getting the Source
 ------------------
@@ -63,7 +63,7 @@ Please download [mono-uia](ftp://ftp.novell.com/pub/mono/sources/mono-uia), [uia
 Building and Installing
 -----------------------
 
-If you have a [parallel Mono environment](/Parallel_Mono_Environments "Parallel Mono Environments"), make sure to specify the correct prefix during the autogen.sh/configure stage.
+If you have a [parallel Mono environment](/Parallel_Mono_Environments), make sure to specify the correct prefix during the autogen.sh/configure stage.
 
 If you downloaded a release tarball instead of getting the code from Git, use \`configure\` instead of \`autogen.sh\`.
 
@@ -87,5 +87,5 @@ What Now?
 
 Make sure you have Accessibility turned on in your GNOME preferences, and everything should Just Work.
 
-If you're interested in contributing to the project, see our [Getting Started Guide](/Accessibility:_Getting_Started_With_Development "Accessibility: Getting Started With Development").
+If you're interested in contributing to the project, see our [Getting Started Guide](/Accessibility:_Getting_Started_With_Development).
 

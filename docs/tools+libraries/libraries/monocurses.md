@@ -16,9 +16,7 @@ In addition to the low-level curses bindings, currently MonoCurses ships with a 
 Obtaining mono-curses
 =====================
 
-You can download mono-curses from the [AnonSVN](/SourceCodeRepository) SVN repository, look for module mono-curses. Packaged tarballs are available from [http://tirania.org/software/mono-curses](http://tirania.org/software/mono-curses)
-
-You can [browse the source code](http://anonsvn.mono-project.com/viewvc/trunk/mono-curses/)
+The source code of mono-curses is available in the [GitHub repository](https://github.com/mono/mono-curses/). Packaged tarballs are available from [http://tirania.org/software/mono-curses](http://tirania.org/software/mono-curses)
 
 gui.cs
 ======

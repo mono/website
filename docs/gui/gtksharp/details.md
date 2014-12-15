@@ -19,7 +19,7 @@ Gtk#, a [GUI Toolkit](/docs/gui/gui-toolkits/), is a set of .NET bindings for th
 
 Applications built using Gtk# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
 
-You can use [Glade](http://glade.gnome.org/) along with the Glade# bindings to easily design GUI applications. A new GUI designer called [Stetic](/archived/stetic "Stetic") is being built which will be integrated with the MonoDevelop IDE.
+You can use [Glade](http://glade.gnome.org/) along with the Glade# bindings to easily design GUI applications. A new GUI designer called [Stetic](/archived/stetic) is being built which will be integrated with the MonoDevelop IDE.
 
 In addition to support the standard Gtk/Gnome stack of development tools, the gtk-dotnet.dll assembly provides a bridge to consume functionality available on the .NET stack, at this point this includes the functionality to use System.Drawing to draw on a widget.
 
@@ -51,13 +51,13 @@ Tutorials
 -   [Widget Layout and Packing](/docs/gui/gtksharp/widgets/widget-layout-and-packing/)
 -   [Creating Responsive GUI applications with Gtk#](/docs/gui/gtksharp/responsive-applications/)
 -   [Creating Notification Icons](/docs/gui/gtksharp/widgets/notification-icon/)
--   [Gtk# used as a Web Service Interface](/archived/webservices_and_gtksharp "Webservices and GtkSharp")
--   [Gtk# example used to access GConf settings](/archived/gconftutorial "GConfTutorial")
+-   [Gtk# used as a Web Service Interface](/archived/webservices_and_gtksharp)
+-   [Gtk# example used to access GConf settings](/archived/gconftutorial)
 
 ### Advanced Gtk\#
 
 -   [Generating bindings to GLib/gobject libraries](/docs/gui/gtksharp/gapi/)
--   [Quick guide to using Pango#](/archived/pangobeginners "Pango:Beginners")
+-   [Quick guide to using Pango#](/archived/pangobeginners)
 -   [Gtk# TreeView Tutorial](/docs/gui/gtksharp/widgets/treeview-tutorial/)
     -   [Gtk# NodeView: A Convenience API to TreeView](/docs/gui/gtksharp/widgets/nodeview-tutorial/)
     -   [Example Programs from the Gtk# NodeView Tutorial](/docs/gui/gtksharp/widgets/nodeview-tutorial-examples/)
@@ -105,7 +105,7 @@ The following is a list of additional widgets (known as "controls" in Windows) t
 -   [NPlot 0.9.8.5 for Gtk#](http://primates.ximian.com/~miguel/tmp/NPlot-Gtk-0.9.8.5.tar.gz) - A Free Graph / Chart Library for .NET (Original version: [here](http://netcontrols.org/nplot/)).
 -   [DiaCanvas#](http://diacanvas.sourceforge.net/csharp.php) - Create and display diagrams and flowcharts
 -   [GtkGL#](http://www.olympum.com/~bruno/gtkgl-sharp.html) - OpenGL and Gtk# integration. Not maintained.
--   [GtkGLAreaSharp](/archived/gtkglareasharp "GtkGLAreaSharp") - OpenGL widget, based on the [GtkGLArea](/archived/gtkglarea "GtkGLArea") widget. Currently maintained by CJCollier.
+-   [GtkGLAreaSharp](/archived/gtkglareasharp) - OpenGL widget, based on the [GtkGLArea](/archived/gtkglarea) widget. Currently maintained by CJCollier.
 
 #### Gnome-KeyRing-Sharp
 

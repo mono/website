@@ -30,7 +30,7 @@ mono --gc=sgen --profile=log:heapshot MyProgram.exe
 
 This activates the sgen garbage collector and also the profiler in 'heapshot' mode. This will result in the profiler writing a dump of every live object at the end of every garbage collection to a log file called 'output.mldp'.
 
-Note: By default the log profiler will not overwrite an existing log file. You must either specify a different filename when launching the profiler, as described in the [documentation](/docs/debug+profile/profile/profiler/#profiler-option-documentation "Profiler") or you must delete/rename existing logs before running the profiler.
+Note: By default the log profiler will not overwrite an existing log file. You must either specify a different filename when launching the profiler, as described in the [documentation](/docs/debug+profile/profile/profiler/#profiler-option-documentation) or you must delete/rename existing logs before running the profiler.
 
 Using the GUI for HeapShot
 ==========================

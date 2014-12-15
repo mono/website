@@ -43,7 +43,7 @@ Cleanup
 
 Here are some suggestions of ways to help clean the wiki up:
 
--   **Go through the [documentation table of contents](/Start "Start") and find new things to add to it.<br/>
+-   **Go through the [documentation table of contents](/Start) and find new things to add to it.<br/>
     **
 -   Go through Special:Shortpages and add more content.
 -   Go through Special:Lonelypages, figure out which page(s) should link back to this page, and add the link.
@@ -76,12 +76,12 @@ Here are some suggestions of ways to help clean the wiki up:
     " to the top.<br/>
     You can see every page that is marked as obsolete at [Obsolete](/Category:Obsolete).
 
--   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ](/FAQ "FAQ").
+-   Go through the mailing list archives, and pay attention on IRC. If someone asked a question that was answered, but is not properly documented, create a new wiki page or add it to the [FAQ](/FAQ).
 
 In-Progress Tasks & Discussion
 ==============================
 
--   See the [Talk:Mono_Documentation_Improvement_Project](/Talk:Mono_Documentation_Improvement_Project "Talk:Mono Documentation Improvement Project") page for an overview about what all is currently being discussed.
+-   See the [Talk:Mono_Documentation_Improvement_Project](/Talk:Mono_Documentation_Improvement_Project) page for an overview about what all is currently being discussed.
 -   All articles that are currently under construction can be found in the [Sandbox-Category](/Category:Sandbox)
 
 Writing good Documentation

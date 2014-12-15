@@ -456,5 +456,5 @@ Run it, write to valid numbers and click the "Add" button, everything should wor
 Contributors
 ============
 
-[Mario Carrión](/User:MarioCarrion "User:MarioCarrion")
+[Mario Carrión](/User:MarioCarrion)
 

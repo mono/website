@@ -38,12 +38,12 @@ Accessibility: Test Summary
 References
 ----------
 
-[Product Test Case Plan](/Accessibility:_Test_Plan "Accessibility: Test Plan")<br/>
- [Product Test Case Specification](/Accessibility:_Test_Case_Specification "Accessibility: Test Case Specification")<br/>
- [Product Test Log](/Accessibility:_Test_Log "Accessibility: Test Log")<br/>
- [Product Test Summary](/Accessibility:_Test_Summary "Accessibility: Test Summary") (current page)<br/>
- [Product Bug Specification](/Accessibility:_Bug_Specification "Accessibility: Bug Specification")<br/>
- [Product Home](/Accessibility "Accessibility")
+[Product Test Case Plan](/Accessibility:_Test_Plan)<br/>
+ [Product Test Case Specification](/Accessibility:_Test_Case_Specification)<br/>
+ [Product Test Log](/Accessibility:_Test_Log)<br/>
+ [Product Test Summary](/Accessibility:_Test_Summary) (current page)<br/>
+ [Product Bug Specification](/Accessibility:_Bug_Specification)<br/>
+ [Product Home](/Accessibility)
 
 Test summary report
 -------------------

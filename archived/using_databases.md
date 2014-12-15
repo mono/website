@@ -19,19 +19,19 @@ Database Providers
 
 The following database providers are available for Mono applications:
 
--   [MySQL](/MySQL "MySQL")
--   [ODBC](/ODBC "ODBC")
--   [SQLClient](/SQLClient "SQLClient")
--   [Oracle](/Oracle "Oracle")
--   [PostgreSQL](/PostgreSQL "PostgreSQL")
--   [Firebird and Interbase](/Firebird_Interbase "Firebird Interbase")
--   [IBM DB2](/IBM_DB2 "IBM DB2")
--   [OLE DB](/OLE_DB "OLE DB")
--   [SQLite](/SQLite "SQLite")
--   [Sybase](/Sybase "Sybase")
--   [TDS Providers](/TDS_Providers "TDS Providers")
--   [TDS Generic](/TDS_Generic "TDS Generic")
--   [MaxDB](/MaxDB "MaxDB")
+-   [MySQL](/MySQL)
+-   [ODBC](/ODBC)
+-   [SQLClient](/SQLClient)
+-   [Oracle](/Oracle)
+-   [PostgreSQL](/PostgreSQL)
+-   [Firebird and Interbase](/Firebird_Interbase)
+-   [IBM DB2](/IBM_DB2)
+-   [OLE DB](/OLE_DB)
+-   [SQLite](/SQLite)
+-   [Sybase](/Sybase)
+-   [TDS Providers](/TDS_Providers)
+-   [TDS Generic](/TDS_Generic)
+-   [MaxDB](/MaxDB)
 -   [VistaDB](http://www.vistadb.com)
 
 Tools

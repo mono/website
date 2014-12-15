@@ -4,7 +4,7 @@ redirect_from:
   - /CoreClrHowTo/
 ---
 
-This *how to* is intended for people who have read about **coreclr** on [MSDN](/docs/advanced/coreclr/#references "Moonlight2CoreCLR"), [MS employees blogs](/docs/advanced/coreclr/#references), Mono's [wiki](/docs/advanced/coreclr/) and how this applies to [Moonlight](/docs/web/moonlight/). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
+This *how to* is intended for people who have read about **coreclr** on [MSDN](/docs/advanced/coreclr/#references), [MS employees blogs](/docs/advanced/coreclr/#references), Mono's [wiki](/docs/advanced/coreclr/) and how this applies to [Moonlight](/docs/web/moonlight/). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
 
 So what's needed ? Simply a host (full trusted), some platform assemblies (partially trusted code) and applications (untrusted).
 
@@ -76,7 +76,7 @@ So what kind of profile should/can be provided ? Here's a few, simple to comple
 
 1.  Use the Moonlight profile *as-is*. It is well tested, supported and [audited](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/audit);
 2.  Use a **subset** of Moonlight. With a little extra work you can all the benefits of the above and a smaller footprint (which likely improves your security since it reduce the surface); or
-3.  Define your own profile from scratch. You're not totally on your own since Moonlight provides several [tools](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/) and [guidance](/archived/securityvalidation "SecurityValidation"). However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent **coreclr**.
+3.  Define your own profile from scratch. You're not totally on your own since Moonlight provides several [tools](https://github.com/mono/moon/tree/master/class/tuning/SecurityAttributes/) and [guidance](/archived/securityvalidation). However this can be a huge undertaking since you'll need to ensure your profile is secure and does not open doors that would circumvent **coreclr**.
 
 Applications
 ============

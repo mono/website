@@ -8,5 +8,5 @@ redirect_from:
 Category:Java
 =============
 
-See [IKVM](/IKVM "IKVM")
+See [IKVM](/IKVM)
 

@@ -113,7 +113,7 @@ WCFStatusOld
 This page is OLD
 ================
 
-This page had not been maintained for years, and it has been obsoleted a lot. It will be rewritten with the latest status, with updated milestones to achieve rational milestones and need. Check the new status at [WCF Development](/WCF_Development "WCF Development").
+This page had not been maintained for years, and it has been obsoleted a lot. It will be rewritten with the latest status, with updated milestones to achieve rational milestones and need. Check the new status at [WCF Development](/WCF_Development).
 
 We used to write WCF code in "Olive" module and hence there is a lot of lines that mention it in the following sections. But the WCF module is moved to mcs tree like other class libraries.
 

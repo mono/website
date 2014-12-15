@@ -9,7 +9,7 @@ redirect_from:
 MonoTouch Tutorial HelloiPhone
 ==============================
 
-This tutorial explains how to use [MonoTouch](/MonoTouch "MonoTouch") and the [MonoTouch API](/MonoTouch_API "MonoTouch API") to build applications for the iPhone. The focus of this article is on the underlying framework and not on how to use the IDE for development. For more tutorials see [MonoTouch Tutorials](/MonoTouch_Tutorials "MonoTouch Tutorials").
+This tutorial explains how to use [MonoTouch](/MonoTouch) and the [MonoTouch API](/MonoTouch_API) to build applications for the iPhone. The focus of this article is on the underlying framework and not on how to use the IDE for development. For more tutorials see [MonoTouch Tutorials](/MonoTouch_Tutorials).
 
 The smallest MonoTouch application that merely starts and shuts down is this:
 
@@ -31,7 +31,7 @@ Use your favorite text editor to create a file named hello.cs with the contents 
 /Developer/MonoTouch/usr/bin/smcs hello.cs -r:monotouch.dll
 ```
 
-At this point, you have two options, one is to run the resulting program on the simulator, and the other is to deploy it to a device. To run on the simulator, all you need to do is have the iPhone SDK installed on your system. Deploying on a device requires you to be an approved Apple developer and have the tools setup to deploy to a device, since that is a more elaborate setup this is covered in a separate document, see the [MonoTouch mtouch](/MonoTouch_mtouch "MonoTouch mtouch") document for more information on this.
+At this point, you have two options, one is to run the resulting program on the simulator, and the other is to deploy it to a device. To run on the simulator, all you need to do is have the iPhone SDK installed on your system. Deploying on a device requires you to be an approved Apple developer and have the tools setup to deploy to a device, since that is a more elaborate setup this is covered in a separate document, see the [MonoTouch mtouch](/MonoTouch_mtouch) document for more information on this.
 
 The iPhone deployment contains not only your program but also data files, configuration files and manifests. To turn your .exe into a package you use the mtouch command, like this:
 

@@ -13,22 +13,22 @@ NothingToSeeHere
 Mono Feature Highlights
 -----------------------
 
-[Multi-Platform](/Supported_Platforms "Supported Platforms")<br/>
-Runs on Linux, [OS X](/Mono:OSX "Mono:OSX"), [BSD](/Mono:BSD "Mono:BSD"), and [Microsoft Windows](/Using_Mono_on_Windows), including [x86](/Mono:X86 "Mono:X86"), [x86-64](/Mono:AMD64 "Mono:AMD64"), [ARM](/Mono:ARM "Mono:ARM"), [s390](/Mono:S390 "Mono:S390"), [PowerPC](/Mono:PowerPC "Mono:PowerPC") and much more
+[Multi-Platform](/Supported_Platforms)<br/>
+Runs on Linux, [OS X](/Mono:OSX), [BSD](/Mono:BSD), and [Microsoft Windows](/Using_Mono_on_Windows), including [x86](/Mono:X86), [x86-64](/Mono:AMD64), [ARM](/Mono:ARM), [s390](/Mono:S390), [PowerPC](/Mono:PowerPC) and much more
 
-[Multi-Language](/Languages "Languages")<br/>
-Develop in [C# 4.0](/CSharp_Compiler "CSharp Compiler") (including LINQ and `dynamic`), [VB 8](/VisualBasic.NET_support), [Java](/Java "Java"), [Python](/Python "Python"), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
+[Multi-Language](/Languages)<br/>
+Develop in [C# 4.0](/CSharp_Compiler) (including LINQ and `dynamic`), [VB 8](/VisualBasic.NET_support), [Java](/Java), [Python](/Python), [Ruby](http://www.ironruby.net/), [Eiffel](http://www.eiffel.com/), [F#](http://research.microsoft.com/fsharp/), [Oxygene](http://remobjects.com/oxygene), and more
 
 Binary Compatible<br/>
-Built on an implementation of the [ECMA](/ECMA "ECMA")'s [Common Language Infrastructure](/Mono:Runtime "Mono:Runtime") and [C#](/CSharp_Compiler "CSharp Compiler")
+Built on an implementation of the [ECMA](/ECMA)'s [Common Language Infrastructure](/Mono:Runtime) and [C#](/CSharp_Compiler)
 
-[Microsoft Compatible API](/Guidelines:Application_Portability "Guidelines:Application Portability")<br/>
-Run [ASP.NET](/ASP.NET "ASP.NET"), [ADO.NET](/ADO.NET "ADO.NET"), [Silverlight](/Moonlight "Moonlight") and [Windows.Forms](/WinForms "WinForms") applications without recompilation
+[Microsoft Compatible API](/Guidelines:Application_Portability)<br/>
+Run [ASP.NET](/ASP.NET), [ADO.NET](/ADO.NET), [Silverlight](/Moonlight) and [Windows.Forms](/WinForms) applications without recompilation
 
 [Open Source, Free Software](/FAQ:_Licensing)<br/>
 Mono's runtime, compilers, and libraries are distributed under OSI approved licenses and are available for dual-licensing
 
-[Comprehensive Technology Coverage](/Plans "Plans")<br/>
+[Comprehensive Technology Coverage](/Plans)<br/>
 Bindings and managed implementations of many popular libraries and protocols
 
 [View more news items](/news)
@@ -38,15 +38,15 @@ Bindings and managed implementations of many popular libraries and protocols
 Quick Links
 -----------
 
--   [Current Status](/Compatibility "Compatibility")
+-   [Current Status](/Compatibility)
 -   [Roadmap](/Mono_Project_Roadmap)
--   [FAQ](/FAQ:_General "FAQ: General")
--   [Screenshots](/Screenshots "Screenshots")
--   [Success Stories](/Companies_Using_Mono "Companies Using Mono")
--   [Articles](/Articles "Articles")
+-   [FAQ](/FAQ:_General)
+-   [Screenshots](/Screenshots)
+-   [Success Stories](/Companies_Using_Mono)
+-   [Articles](/Articles)
 -   [API Docs](http://www.go-mono.com/docs/)
--   [Plans](/Plans "Plans")
--   [Report Bugs](/Bugs "Bugs")
+-   [Plans](/Plans)
+-   [Report Bugs](/Bugs)
 
  
 

@@ -124,7 +124,7 @@ Some features like Reflection.Emit and other forms of dynamic code generation ar
 
 Notice that for Mono 2.0 generics are not supported when doing full-AOT.
 
-Some optimizations are being planned: [OptimizingAOT](/archived/optimizingaot "OptimizingAOT")
+Some optimizations are being planned: [OptimizingAOT](/archived/optimizingaot)
 
 ### Bundles
 
@@ -248,7 +248,7 @@ To achieve this, the io-layer uses a shared file mapping across multiple Mono pr
 Useful links
 ------------
 
-See our [Papers](/archived/papers "Papers") section for various articles describing virtual machines and JIT compilers.
+See our [Papers](/archived/papers) section for various articles describing virtual machines and JIT compilers.
 
 Porting
 -------
@@ -264,11 +264,11 @@ There are a number of projects being developed in branches or on separate trees 
 -   [Runtime Requests](/docs/advanced/runtime/runtime-requests/): Ideas of things that we could use to improve Mono's runtime.
 -   [Compacting GC](/docs/advanced/garbage-collector/sgen/): A generational, compacting GC for Mono.
 -   JIT Regalloc: A new register allocation framework.
--   [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes "Mono Runtime API Changes"): Changes that will be introduced in Mono 2.8.
+-   [Mono_Runtime_API_Changes](/archived/mono_runtime_api_changes): Changes that will be introduced in Mono 2.8.
 
 Completed projects:
 
--   [Continuations](/archived/continuations "Continuations"): Support for co-routines and continuations in Mono.
+-   [Continuations](/archived/continuations): Support for co-routines and continuations in Mono.
 -   [SafeHandles](/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
 -   [Linear](/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
 

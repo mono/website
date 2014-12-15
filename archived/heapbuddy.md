@@ -8,9 +8,9 @@ redirect_from:
 HeapBuddy
 =========
 
-Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented [here](/Profiler "Profiler").
+Note: HeapBuddy is obsolete, Mono from git has a better profiler that is documented [here](/Profiler).
 
-HeapBuddy is a summarizing profiler. It is part of the Mono [profiling](/Profile "Profile") tools.
+HeapBuddy is a summarizing profiler. It is part of the Mono [profiling](/Profile) tools.
 
 HeapBuddy collects allocation statistics while the program is running and writes out the aggregate info to a file which you analyze with a command-line tool after it's finished running.
 
@@ -88,7 +88,7 @@ make install
 See Also
 ========
 
-[Performance Tips](/Performance_Tips "Performance Tips")
+[Performance Tips](/Performance_Tips)
 
-[Heap Shot Memory Profiler](/HeapShot "HeapShot")
+[Heap Shot Memory Profiler](/HeapShot)
 

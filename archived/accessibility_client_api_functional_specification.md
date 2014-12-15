@@ -54,12 +54,12 @@ KeePass, Paint.NET, and NClass might be some good applications to look at first.
 Silverlight Apps
 ----------------
 
-See [Accessibility:_Moonlight_Bridge_Functional_Specification](/Accessibility:_Moonlight_Bridge_Functional_Specification "Accessibility: Moonlight Bridge Functional Specification") for a mapping between Silverlight controls, ControlTypes, and supported AutomationPatterns.
+See [Accessibility:_Moonlight_Bridge_Functional_Specification](/Accessibility:_Moonlight_Bridge_Functional_Specification) for a mapping between Silverlight controls, ControlTypes, and supported AutomationPatterns.
 
 Linux Apps (via at-spi)
 -----------------------
 
-This is intended to be as close as possible to a reverse of the [Accessibility:_Bridge_Functional_Specification](/Accessibility:_Bridge_Functional_Specification "Accessibility: Bridge Functional Specification"). However, there is not a one-to-one mapping between at-spi roles and UIA control types. It is possible that, as we write real world application tests, we will find ways that this mapping could be improved, so this specification is a work in progress.
+This is intended to be as close as possible to a reverse of the [Accessibility:_Bridge_Functional_Specification](/Accessibility:_Bridge_Functional_Specification). However, there is not a one-to-one mapping between at-spi roles and UIA control types. It is possible that, as we write real world application tests, we will find ways that this mapping could be improved, so this specification is a work in progress.
 
 Note that for Linux apps, we should still take the approach of writing QA tests for real world applications. GTK#-based applications might even welcome such tests upstream, so starting with applications like Banshee, Tomboy, and F-Spot might be the best approach.
 

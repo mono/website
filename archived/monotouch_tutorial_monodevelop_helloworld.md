@@ -8,7 +8,7 @@ redirect_from:
 MonoTouch Tutorial MonoDevelop HelloWorld
 =========================================
 
-In this tutorial part of the [MonoTouch Tutorials](/MonoTouch_Tutorials "MonoTouch Tutorials") we write a very simple application using [MonoDevelop MonoTouch Edition](http://www.monodevelop.com) for OSX and Interface Builder.
+In this tutorial part of the [MonoTouch Tutorials](/MonoTouch_Tutorials) we write a very simple application using [MonoDevelop MonoTouch Edition](http://www.monodevelop.com) for OSX and Interface Builder.
 
 <table>
 <col width="100%" />
@@ -189,7 +189,7 @@ partial void sampleTap (UIButton sender)
 
 However, you are free to ignore the partial method definition and instead write the handler signature and its Export attribute manually. The C# compiler ignores partial methods without implementations.
 
-There is more information on the binding in the [responding to events](/archived/monotouch_api/#responding-to-events "MonoTouch API") section of the API.
+There is more information on the binding in the [responding to events](/archived/monotouch_api/#responding-to-events) section of the API.
 
 Deploying to the device
 =======================
@@ -219,9 +219,9 @@ Resources
 
 Here are some pointers to dig deeper into MonoDevelop and Interface Builder:
 
--   [MonoTouch](/MonoTouch "MonoTouch")
--   [MonoTouch API](/MonoTouch_API "MonoTouch API")
--   [MonoTouch Events](/MonoTouch_Events "MonoTouch Events")
+-   [MonoTouch](/MonoTouch)
+-   [MonoTouch API](/MonoTouch_API)
+-   [MonoTouch Events](/MonoTouch_Events)
 -   [Interface Builder](http://developer.apple.com/documentation/developertools/Conceptual/IB_UserGuide/ApplicationBasics/ApplicationBasics.html#//apple_ref/doc/uid/TP40005344-CH3-SW1)
 -   [Defining Outlets in Interface Builder](http://developer.apple.com/documentation/developertools/Conceptual/IB_UserGuide/CodeIntegration/CodeIntegration.html)
 -   [MonoDevelop](http://www.monodevelop.com)

@@ -20,7 +20,7 @@ Currently working on
 
 [A sandbox page to see what reorganising and adding to the MonkeyGuide Desktop Application Development Guide would do. Is this a better structure for a new user? You tell me](/BosteenMonkey_Guide)
 
-Two pre-existing pages that I have added to, or re-worded: [GtkSharp:_Widget_Overview](/GtkSharp:_Widget_Overview "GtkSharp: Widget Overview") [GtkSharp:_Widget_Layout_and_Packing](/GtkSharp:_Widget_Layout_and_Packing "GtkSharp: Widget Layout and Packing")
+Two pre-existing pages that I have added to, or re-worded: [GtkSharp:_Widget_Overview](/GtkSharp:_Widget_Overview) [GtkSharp:_Widget_Layout_and_Packing](/GtkSharp:_Widget_Layout_and_Packing)
 
 Tutorial Proposal
 -----------------

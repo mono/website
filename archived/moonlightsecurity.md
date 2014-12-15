@@ -8,7 +8,7 @@ redirect_from:
 MoonlightSecurity
 =================
 
-CoreCLR *agnostic* information is available [here](/Moonlight2CoreCLR "Moonlight2CoreCLR").
+CoreCLR *agnostic* information is available [here](/Moonlight2CoreCLR).
 
 <table>
 <col width="100%" />

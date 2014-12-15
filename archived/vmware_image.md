@@ -44,7 +44,7 @@ The VMware image contains a SUSE Linux installation with Mono and the various Mo
 
 **Where do I get the image from?**
 
-You can download the VMware image with Mono pre-installed and pre-configured from our [Downloads](/Downloads "Downloads") page.
+You can download the VMware image with Mono pre-installed and pre-configured from our [Downloads](/Downloads) page.
 
 You can download it either with HTTP (simple) or if you want to get it faster you can use BitTorrent.
 
@@ -91,7 +91,7 @@ htdocs is the apache directory where you can put asp.net files.
 
 Yes, they will.
 
-See our [Guidelines:Application_Portability](/Guidelines:Application_Portability "Guidelines:Application Portability") for recommendations on how to make your software port better.
+See our [Guidelines:Application_Portability](/Guidelines:Application_Portability) for recommendations on how to make your software port better.
 
 **How do I know my torrent downloaded successfully?**
 

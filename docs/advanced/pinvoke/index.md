@@ -101,9 +101,9 @@ Library Names
 
 Knowing where to look for the library is only half of the problem. Knowing what library to load is the other half.
 
-Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>[1](#lib-name-note)</sup>. Mac OS X platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
+Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>(see Note 1)</sup>. Mac OS X platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
 
-<span id="lib-name-note">Note 1:</span> Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
+Note 1: Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
 
 If you have control over the library name, keep the above naming conventions in mind and don't use a platform-specific library name in the **DllImport** statement. Instead, just use the library name itself, without any prefixes or suffixes, and rely on the runtime to find the appropriate library at runtime. For example:
 

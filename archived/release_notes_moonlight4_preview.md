@@ -77,7 +77,7 @@ If your system has a GPU with OpenGL 2.0 drivers installed for it, Moonlight can
 
 Developers can also choose to use GPU acceleration for images by using the CacheMode property and setting it to BitmapCache.
 
-Go to the [OpenGL status page](/Moonlight4_OpenGL_Status "Moonlight4 OpenGL Status") to find out if your driver is currently supported by Moonlight.
+Go to the [OpenGL status page](/Moonlight4_OpenGL_Status) to find out if your driver is currently supported by Moonlight.
 
 ### 3D Transformations
 
