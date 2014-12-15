@@ -162,6 +162,25 @@ class Program {
 
 Any other hack, such as checking the underlying type of System.Int32 or of other corlib types, is doomed to fail in the future.
 
+### How can I detect if my code is compiled by the Mono mcs compiler?
+
+Having code that depends on the underlying compiler is considered to be **bad coding** style, but sometimes such code is necessary. You can do it by checking the special `__MonoCS__` symbol:
+
+``` csharp
+using System;
+
+class Program {
+    static void Main ()
+    {
+#if __MonoCS__
+      Console.WriteLine ("Compiled with the Mono compiler");
+#else
+      Console.WriteLine ("Compiled with something else");
+#endif
+    }
+}
+```
+
 ### Does Mono run on very small systems
 
 The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the [Small footprint](/docs/compiling-mono/small-footprint/) page.
