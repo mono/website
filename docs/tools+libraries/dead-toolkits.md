@@ -10,7 +10,7 @@ Os seguintes conjuntos de ferramentas não estão mais sendo ativamente desenvol
 Sharp WT
 ---------------
 
-Homepage: [http://sourceforge.net/projects/sharpdevelop](http://sourceforge.net/projects/sharpdevelop)
+Homepage: [#Develop](http://sourceforge.net/projects/sharpdevelop)
 
 **ESSE PROJETO FOI DESCONTINUADO. O DESENVOLVIMENTO FOI PARADO POR FALTA DE INTERESSE.**
 
@@ -61,7 +61,7 @@ wxNet
 
 [![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
-Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
+Homepage: [wxNet](http://wxnet.sourceforge.net/)]
 
 O wxNet é um conector para o toolkit multiplataforma wxWindows.
 
