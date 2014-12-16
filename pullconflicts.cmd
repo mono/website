@@ -1,3 +1,4 @@
+@if [%1]==[] goto :END
 git checkout gh-pages
 git branch -D pullrequest
 git pull
@@ -8,3 +9,7 @@ cat .conflicts
 FOR /F %%p IN ('cat .conflicts') DO "C:\Program Files (x86)\Notepad++\notepad++.exe" %%p
 git add .
 git commit -m "Fix conflicts"
+@goto :ENDEND
+:END
+@echo You need to pass the PR github account to make the pull
+:ENDEND
