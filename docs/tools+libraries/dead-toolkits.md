@@ -20,13 +20,13 @@ O projeto teve início devido às limitações ao Windows.Forms e da necessidade
 
 SWT usa widgets nativos em cada uma de suas plataformas de destino, portanto parece, e da a sensação de corresponder ao sistema operacional subjacente.
 
-Prós:
+### Prós:
 
 -   Aparência nativa em várias plataformas (Windows, Linux and MacOS).
 -   Design limpo.
 -   A versão java tem sido usada com sucesso pelo projeto Eclipse.
 
-Contras:
+### Contras:
 
 -   Pequena ou nenhuma documentação.
 -   Criação de novos widgets é difícil (devido aos testes em várias plataformas), ou a aparência é única.
@@ -38,18 +38,18 @@ Qt#
 
 [![Mahjongg-0.6-window.png](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
 
-Homepage: [http://qtcsharp.sourceforge.net/](http://qtcsharp.sourceforge.net/)
+Homepage: [Qt#](http://qtcsharp.sourceforge.net/)
 
 **ESSE PROJETO FOI DESCONTINUADO. O DESENVOLVIMENTO FOI PARADO POR FALTA DE INTERESSE.**
 
 Este é um conector (binding) para o toolkit Qt,mas o seu desenvolvimento está praticamente parado.
 
-Prós:
+### Prós:
 
 -   Aparência nativa em várias plataformas.
 
 
-Contras:
+### Contras:
 
 -   O toolkit está sob a licença GPL, e o que compõe o toolkit Qt tem mais limitações de licenciamento. Não é adequado para o desenvolvimento de código proprietário ou não GPL.
 -   O conector não está sendo mantido.
@@ -61,19 +61,16 @@ wxNet
 
 [![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
-Exemplo de wx#
-
 Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
 
 O wxNet é um conector para o toolkit multiplataforma wxWindows.
 
-Prós:
+### Prós:
 
 -   Aparência nativa em várias plataformas.
 -   A camada inferior (wxWindows) é bem documentada, o conector .NET possui pouca documentação.
 
-Contras:
-
+### Contras:
 
 -   A conexão com widgets extras não suportados é difícil.
 -   Componentes personalizados não terão aparência consistente em todas as plataformas.
@@ -83,8 +80,7 @@ Contras:
 Gaia Ajax Widgets
 -----------------
 
-[Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) foi construído para
-imitar 100% a lógica do ASP.NET convencional e, basicamente, significa que se você sabe ASP.NET você sabe 
+O conjunto de componentes [Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) foi construído para imitar 100% a lógica do ASP.NET convencional e, basicamente, significa que se você sabe ASP.NET você sabe 
 como usar Gaia Ajax Widgets! Os widgets não contém nenhuma propriedade ininteligível ou modelo de código 
 que você precisa aprender antes de poder usar o Gaia efetivamente, quase nenhum dos nossos controles usa 
 quaisquer outras propriedades diferentes das que vem nos controles nativos do ASP.NET por isso, se você 
@@ -107,7 +103,7 @@ são automaticamente convertidos para o formato dos comentários xml do C#.
 O substrato é bem documentado e suportado. 
 A documentação da versão 4.0 do Qyoto 4.0 pode ser encontrada [aqui](http://api.kde.org/qyoto-api/).
 
-Plataforms: Unix, Windows, OSX
+Plataformas: Unix, Windows, OSX
 
 No Debian/Ubuntu, você pode instalar o pacote 'qyoto-dev' para utilizar os conectores.
 
