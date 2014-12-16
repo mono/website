@@ -1,5 +1,5 @@
 ---
-title: "Dead Toolkits"
+title: "Toolkits Gráficos Abandonados"
 redirect_from:
   - /Dead_Toolkits/
   - /archived/dead_toolkits/
