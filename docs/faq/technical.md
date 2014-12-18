@@ -1,5 +1,5 @@
 ---
-title: "FAQ: Technical"
+title: "FAQ: Técnico"
 redirect_from:
   - /FAQ:_Technical/
 ---
@@ -114,7 +114,7 @@ Another user comments:
     application total 14MB so fit easily
     on even the smallest memory sticks.
 
-### How to detect the execution platform ?
+### Como detectar a plataforma de execução ?
 
 The execution platform can be detected by using the `System.Environment.OSVersion.Platform` value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any `PlatformID` value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the `PlatformID` enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and MacOS X, introducing yet another value 6 for MacOS X.
 
