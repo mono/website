@@ -25,6 +25,7 @@ Miscellaneous tools
 -   sqlsharp: command line SQL client for most of the the System.Data based DB Connectors
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/): Rule-based assembly analyser for developers.
 -   [Monoxide](/archived/monoxide): Interactive assembly analyser.
+-   [MoMa](/MoMA/): Analizador de Migração para o Mono
 
 XML & Web Service
 =================
