@@ -66,5 +66,5 @@ Se você está chamando em sua própria biblioteca nativa, então, tudo depende 
 
 A biblioteca nativa que está sendo chamada é listada na última coluna no relatório de detalhes do MoMA.
 
-Para saber em tempo de execução em qual plataforma (SO) sua aplicação está sendo executada, consulte: [FAQ:\_Técnico](/docs/faq/technical/) no item ***Como detectar a plataforma de execução ?***.
+Para saber em tempo de execução em qual plataforma (SO) sua aplicação está sendo executada, consulte: [FAQ:\_Técnico no item ***Como detectar a plataforma de execução ?***](/docs/faq/technical/#como-detectar-a-plataforma-de-execuo).
 
