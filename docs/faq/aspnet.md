@@ -9,9 +9,7 @@ General
 
 ### Does Mono support ASP.NET?
 
-Yes.
-
-Mono supports ASP.NET 1.1 and most of ASP.NET 2.0 (currently we are missing WebParts and some tiny small features).
+Yes. For a more detailed view of what's supported, see the [Compatibility](/docs/about-mono/compatibility/) page.
 
 ### Does Mono Support ASP?
 
