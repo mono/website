@@ -70,6 +70,8 @@ The package ***mono-devel*** should be installed to compile code.
 
 The package ***mono-complete*** should be installed to install everything - this should cover most cases of "assembly not found" errors.
 
+The package ***referenceassemblies-pcl*** should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.
+
 Notes
 -----
 
