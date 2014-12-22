@@ -63,6 +63,11 @@ Update your package cache if necessary, and run a package upgrade to upgrade exi
 
 Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL repository](https://fedoraproject.org/wiki/EPEL) to their system to satisfy all dependencies
 
+openSUSE and SLES
+-----------------
+
+You can install using SUSE One-Click files: [mono-devel](http://origin-download.mono-project.com/repo/mono-devel.ymp), [mono-complete](http://origin-download.mono-project.com/repo/mono-complete.ymp) and [referenceassemblies-pcl](http://origin-download.mono-project.com/repo/referenceassemblies-pcl.ymp). (See below for descriptions)
+
 Usage
 -----
 
