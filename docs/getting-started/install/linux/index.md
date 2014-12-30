@@ -66,7 +66,13 @@ Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL rep
 openSUSE and SLES
 -----------------
 
-You can install using SUSE One-Click files: [mono-devel](http://download.mono-project.com/repo/mono-devel.ymp), [mono-complete](http://download.mono-project.com/repo/mono-complete.ymp) and [referenceassemblies-pcl](http://download.mono-project.com/repo/referenceassemblies-pcl.ymp). (See below for descriptions)
+You can install using SUSE One-Click files (see below for descriptions):
+
+[![mono-devel](/images/OneClick.svg)](http://download.mono-project.com/repo/mono-devel.ymp) **mono-devel**
+
+[![mono-complete](/images/OneClick.svg)](http://download.mono-project.com/repo/mono-complete.ymp) **mono-complete**
+
+[![referenceassemblies-pcl](/images/OneClick.svg)](http://download.mono-project.com/repo/referenceassemblies-pcl.ymp) **referenceassemblies-pcl**
 
 Usage
 -----
