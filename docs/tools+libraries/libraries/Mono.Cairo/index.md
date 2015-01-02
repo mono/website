@@ -113,7 +113,7 @@ Take a look at the [Graphics class members](http://www.go-mono.com/docs/monodoc.
 
 ### Saving and restoring the Cairo state
 
-As you have already noticed, most of the drawing parameters are controlled in a stated-based manner. Various `Graphics` properties you can set include:
+As you have already noticed, most of the drawing parameters are controlled in a state-based manner. Various `Graphics` properties you can set include:
 
 -   [Color](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f3) -- to set the stroke/fill color. Color values (Red, Green, Blue, Alpha) are expressed in a 0 - 1 range (as `double`).
 -   [LineWidth](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f7) -- to control the width of the stroke line.
