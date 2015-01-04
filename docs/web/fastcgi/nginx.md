@@ -39,7 +39,7 @@ ASP.NET and ASP.NET MVC web applications runs on Nginx through [FastCGI](http://
 
 Now the Nginx part is complete, but to finish the whole thing Mono FastCGI server needs to be started.
 
-     fastcgi-mono-server2 /applications=www.domain1.xyz:/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
+     fastcgi-mono-server4 /applications=www.domain1.xyz:/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
 
 Now when Mono FastCGI server is up and running, Nginx configuration is complete and your application is in place (located in /var/www/www.domain1.xyz/) you can run the web server.
 
