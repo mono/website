@@ -3,8 +3,8 @@ title: Advanced
 ---
 
 * [Runtime](/docs/advanced/runtime/)
-* [Garbage Collector - SGEN](/docs/advanced/sgen/)
-    * [GC Benchmark Suite](/docs/advanced/benchmark-suite/)
+* [Garbage Collector - SGEN](/docs/advanced/garbage-collector/sgen/)
+    * [GC Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)
 * [AOT](/docs/advanced/aot/)
 * [Embedding](/docs/advanced/embedding/)
 * [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/)
