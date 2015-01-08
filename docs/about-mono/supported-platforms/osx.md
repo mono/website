@@ -8,7 +8,7 @@ redirect_from:
 Introduction to Mono on MacOS X
 -------------------------------
 
-Mono has supported MacOS X since version 10.3 (Panther) and supports both Intel and PowerPC based versions with both 32 bits and 64 bits configuration supported.
+Mono supports Mac OS X version 10.7 (Lion) and later.
 
 You can use Mono on OSX to build server, console and GUI applications. Read below for the options available for GUI application development.
 
@@ -34,7 +34,7 @@ The Mono package includes:
 
 This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The MacOS X Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
 
-Our packages currently require Mono OSX 10.4 or better, for older versions, you will need to build from source code.
+Our packages currently require Mono OSX 10.7 or better, for older versions, you will need to build from source code.
 
 Using Mono on MacOS X
 ---------------------
