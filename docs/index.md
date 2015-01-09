@@ -17,20 +17,33 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
 
 <dl class="accordion" data-accordion>
-    <dd class="accordion-navigation">
+   
+<dd class="accordion-navigation">
         <a class="panel" href="#getting-started"><h2>Getting Started</h2></a>
         <div id="getting-started" class="content active">
+           <table>
+<tbody>
+<tr class="">
+<td width="1000">
             <ul class="disc">
                 <li><a href="/docs/getting-started">Overview</a></li>
                 <li>Install Mono on <a href="/docs/getting-started/install/mac/">Mac OS X</a>,<a href="/docs/getting-started/install/linux/">Linux</a>,<a href="/docs/getting-started/install/windows/">Windows</a></li>
                 <li><a href="/docs/getting-started/mono-basics/">Mono Basics</a></li>
                 <li><a href="/docs/getting-started/development-environments/">Development Environments</a> </li>
-                <li><a href="/docs/getting-started/application-portability/">Application Portability</a> and <a href="/docs/getting-started/application-deployment" >Application Deployment</a></li>
+                <li><a href="/docs/getting-started/application-portability/">Application Portability</a> and <a href="/docs/getting-started/application-deployment/">Application Deployment</a></li>
             </ul>
+            </td>
+</tr>
+</tbody>
+</table>
         </div>
     </dd>
+
     <br/>
- 
+  <table>
+<tbody>
+<tr class="">
+<td width="1000">
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>About Mono</h2></a>
         <div id="about-mono" class="content">
@@ -48,8 +61,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
    <dd class="accordion-navigation">
         <a class="panel" href="#compiling-mono"><h2>Compiling Mono</h2></a>
         <div id="compiling-mono" class="content">
@@ -63,8 +83,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
     <dd class="accordion-navigation">
         <a class="panel" href="#faq"><h2>FAQ</h2></a>
         <div id="faq" class="content">
@@ -80,8 +107,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
     <dd class="accordion-navigation">
         <a class="panel" href="#database-access"><h2>Database Access</h2></a>
         <div id="database-access" class="content">
@@ -92,8 +126,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
     <dd class="accordion-navigation">
         <a class="panel" href="#debug-and-profile"><h2>Debug and Profile</h2></a>
         <div id="debug-and-profile" class="content">
@@ -114,8 +155,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
    </dd>
+   </td>
+</tr>
+</tbody>
+</table>
    <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
     <dd class="accordion-navigation">
         <a class="panel" href="#gui"><h2>GUI</h2></a>
         <div id="gui" class="content">
@@ -129,8 +177,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
         <div id="web" class="content">
@@ -145,8 +200,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Tools and Libraries</h2></a>
         <div id="tools-and-libraries" class="content">
@@ -169,8 +231,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
+    </td>
+</tr>
+</tbody>
+</table>
     <br/>
-
+   <table>
+<tbody>
+<tr class="">
+<td width="1000">
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Advanced Topics</h2></a>
         <div id="advanced-topics" class="content">
@@ -206,6 +275,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
         </div>
     </dd>
     <br/>
+    </td>
+</tr>
+</tbody>
+</table>
 </dl>
 
   
