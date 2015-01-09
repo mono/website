@@ -43,7 +43,7 @@ Note that later entries will override the entries defined earlier in the file.
 Both the `<dllmap>` and `<dllentry>` elements allow the following attributes which make it easy to use a single configuration file and support multiple operating systems and architectures with different mapping requirements:
 
 -   `os`: This is the name of the operating system for which the mapping should be applied. Allowed values are: linux, osx, solaris, freebsd, openbsd, netbsd, windows, aix, hpux.
--   `cpu` This is the name of the architecture for which the mapping should be applied. Allowed values are: x86, x86-64, sparc, ppc, s390, s390x, arm, mips, alpha, hppa, ia64.
+-   `cpu` This is the name of the architecture for which the mapping should be applied. Allowed values are: x86, x86-64, sparc, ppc, s390, s390x, arm, armv8 (AArch64), mips, alpha, hppa, ia64.
 -   `wordsize` you can use this to differentiate between 32 and 64 bit systems. The possible values are : 32 and 64.
 
 The attribute value for both attributes can be a comma-separated list of the allowed values. Additionally, the first character may be a '!' to reverse the meaning. An attribute value of `!windows,osx`, for example, would mean that the entry is considered on all operating systems, except on Windows and OS X.
