@@ -192,6 +192,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
         <div id="web" class="content">
+        <table>
+            <tbody>
+               <tr class="">
+                   <td width="1000">
                       <ul class="disc">
                           <li><a href="/docs/web/aspnet/">ASP.NET</a></li>
                           <li><a href="/docs/web/wcf/">WCF</a></li>
@@ -211,6 +215,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Tools and Libraries</h2></a>
         <div id="tools-and-libraries" class="content">
+        <table>
+            <tbody>
+               <tr class="">
+                   <td width="1000">
                       <ul class="disc">
                           <li><a href="/docs/tools+libraries/tools/">Tools - Overview</a>
                               <ul>
@@ -239,6 +247,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Advanced Topics</h2></a>
         <div id="advanced-topics" class="content">
+          <table>
+            <tbody>
+               <tr class="">
+                   <td width="1000">
                       <ul class="disc">
                           <li><a href="/docs/advanced/runtime/">Runtime</a></li>
                           <li><a href="/docs/advanced/garbage-collector/sgen/">Garbage Collector - SGEN</a>
