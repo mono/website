@@ -9,8 +9,10 @@ navgroup: news
      <div itemscope itemtype="http://schema.org/Blog">
      {% for blogpost in paginator.posts %}
      {% assign content = blogpost.content %}
+       <br/>
        <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
          {% include blogpost.html %}
+         <hr/>
        </article>
      {% endfor %}
      </div>
