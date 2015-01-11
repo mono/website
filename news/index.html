@@ -7,13 +7,13 @@ navgroup: news
   <div class="small-12 columns">
      {% assign index = true %}
      <div itemscope itemtype="http://schema.org/Blog">
+     <br/>
      {% for blogpost in paginator.posts %}
      {% assign content = blogpost.content %}
-       <br/>
        <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
          {% include blogpost.html %}
-         <hr/>
        </article>
+       <hr/>
      {% endfor %}
      </div>
      <nav>
