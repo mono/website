@@ -29,7 +29,9 @@ See [Mono Experimental Installer for Windows](/Mono_Experimental_Installer_For_W
 Using Mono on Windows
 =====================
 
-The combined installer creates a "Mono Command Prompt" shortcut under the main Mono program group which starts a command shell with mono-relevant path information already configured. [![WinMonoCmdStart.png](/archived/images/9/92/WinMonoCmdStart.png)](/archived/images/9/92/WinMonoCmdStart.png)
+The combined installer creates a "Mono Command Prompt" shortcut under the main Mono program group which starts a command shell with mono-relevant path information already configured.
+
+[![WinMonoCmdStart.png](/archived/images/9/92/WinMonoCmdStart.png)](/archived/images/9/92/WinMonoCmdStart.png)
 
 To test the mcs compiler and the mono runtime, launch this command prompt, from there create a simple C# file:
 
