@@ -21,14 +21,14 @@ Tutorials
 -   [MonoMac packaging, and AppStore distribution](/archived/monomacpackager)
 -   [.NET Development for OSX](http://www.satter.org/2010/09/net-development-for-os-x.html)
 -   Online blogs/tutorials:
-    -   [Getting Started Part 1](http://cocoa-mono.org/archives/22/chapter-1-getting-started-part-1/)
-    -   [Getting Started Part 2](http://cocoa-mono.org/archives/80/exploring-cocoa-with-monomac-and-c-chapter-1-%e2%80%93-getting-started-%e2%80%93-part-2/)
+    -   [Getting Started Part 1](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/22/chapter-1-getting-started-part-1/)
+    -   [Getting Started Part 2](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/80/exploring-cocoa-with-monomac-and-c-chapter-1-%e2%80%93-getting-started-%e2%80%93-part-2/)
     -   [Using Key-Value Coding with MonoMac](http://tirania.org/monomac/archive/2010/Dec-07.html)
-    -   [Using KVC and KVO with MonoMac](http://cocoa-mono.org/archives/153/kvc-kvo-and-cocoa-bindings-oh-my-part-1/)
-    -   [.NET Timer vs NSTimer on MonoMac](http://cocoa-mono.org/archives/212/net-timer-or-cocoa-nstimer-for-monomac/)
-    -   [Using the Animator Proxy](http://cocoa-mono.org/archives/235/using-animator-with-frameorigin/)
-    -   [Using Growl with MonoMac](http://cocoa-mono.org/archives/254/growl-my-monomac-application-says/)
-    -   [Adding an Application Icon to your MonoMac app](http://cocoa-mono.org/archives/329/adding-an-application-icon-to-your-monomac-application/)
+    -   [Using KVC and KVO with MonoMac](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/153/kvc-kvo-and-cocoa-bindings-oh-my-part-1/)
+    -   [.NET Timer vs NSTimer on MonoMac](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/212/net-timer-or-cocoa-nstimer-for-monomac/)
+    -   [Using the Animator Proxy](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/235/using-animator-with-frameorigin/)
+    -   [Using Growl with MonoMac](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/254/growl-my-monomac-application-says/)
+    -   [Adding an Application Icon to your MonoMac app](https://web.archive.org/web/20141216215113/http://cocoa-mono.org/archives/329/adding-an-application-icon-to-your-monomac-application/)
     -   Getting started with OpenGL in MonoMac, posting and samples: [[1]](http://lists.ximian.com/pipermail/mono-osx/2011-April/004267.html)
 
 Samples
