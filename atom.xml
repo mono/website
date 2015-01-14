@@ -19,6 +19,9 @@ redirect_from:
   {% for post in site.posts limit: 20 %}
   <entry>
     <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
+    <author>
+      <name>{{ post.author }}</name>
+    </author>
     <link href="http://www.mono-project.com{{ post.url }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>http://www.mono-project.com{{ post.id }}</id>
