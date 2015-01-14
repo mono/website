@@ -18,7 +18,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 <dl class="accordion" data-accordion>
     <dd class="accordion-navigation">
         <a class="panel" href="#getting-started"><h2>Getting Started</h2></a>
-        <div id="getting-started" class="content active">
+        <div id="getting-started" class="content panel active">
             <ul class="disc">
                 <li><a href="/docs/getting-started">Overview</a></li>
                 <li>Install Mono on <a href="/docs/getting-started/install/mac/">Mac OS X</a>,<a href="/docs/getting-started/install/linux/">Linux</a>,<a href="/docs/getting-started/install/windows/">Windows</a></li>
@@ -32,7 +32,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>About Mono</h2></a>
-        <div id="about-mono" class="content">
+        <div id="about-mono" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/about-mono/">Overview</a></li>
                 <li><a href="/docs/about-mono/supported-platforms/">Supported Platforms</a></li>
@@ -51,7 +51,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
    <dd class="accordion-navigation">
         <a class="panel" href="#compiling-mono"><h2>Compiling Mono</h2></a>
-        <div id="compiling-mono" class="content">
+        <div id="compiling-mono" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/compiling-mono/">Overview</a>, with instructions for compiling on OS X, Linux and Windows</li>
                 <li><a href="/docs/compiling-mono/compiling-from-git/">Compiling from Git</a> and <a href="/docs/compiling-mono/compiling-from-tarball/">Compiling from Tarball</a></li>
@@ -66,7 +66,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
     <dd class="accordion-navigation">
         <a class="panel" href="#faq"><h2>FAQ</h2></a>
-        <div id="faq" class="content">
+        <div id="faq" class="content panel ">
             <ul class="disc">
                   <li><a href="/docs/faq/general/">General</a></li>
                   <li><a href="/docs/faq/security/">Security</a></li>
@@ -83,7 +83,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
     <dd class="accordion-navigation">
         <a class="panel" href="#database-access"><h2>Database Access</h2></a>
-        <div id="database-access" class="content">
+        <div id="database-access" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/database-access/">Overview</a></li>
                 <li><a href="/docs/database-access/adonet/">ADO.NET</a></li>
@@ -95,7 +95,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
     <dd class="accordion-navigation">
         <a class="panel" href="#debug-and-profile"><h2>Debug and Profile</h2></a>
-        <div id="debug-and-profile" class="content">
+        <div id="debug-and-profile" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/debug+profile/debug/">Debug - Overview</a>
                     <ul>
@@ -117,7 +117,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
     <dd class="accordion-navigation">
         <a class="panel" href="#gui"><h2>GUI</h2></a>
-        <div id="gui" class="content">
+        <div id="gui" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/gui/gui-toolkits/">GUI Toolkits</a></li>
                 <li><a href="/docs/gui/winforms/">WinForms</a></li>
@@ -132,7 +132,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
-        <div id="web" class="content">
+        <div id="web" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/web/aspnet/">ASP.NET</a></li>
                 <li><a href="/docs/web/wcf/">WCF</a></li>
@@ -148,7 +148,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Tools and Libraries</h2></a>
-        <div id="tools-and-libraries" class="content">
+        <div id="tools-and-libraries" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/tools+libraries/tools/">Tools - Overview</a>
                     <ul>
@@ -172,7 +172,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Advanced Topics</h2></a>
-        <div id="advanced-topics" class="content">
+        <div id="advanced-topics" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/advanced/runtime/">Runtime</a></li>
                 <li><a href="/docs/advanced/garbage-collector/sgen/">Garbage Collector - SGEN</a>
