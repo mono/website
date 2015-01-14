@@ -33,6 +33,7 @@ Installation Wizard
    [![step4-mac-install-mono.png](/images/step4-mac-install-mono.png)](/images/step4-mac-install-mono.png)
 
 5. Congratulations, Now Mono Framework is Successfully Installed.
+
    [![step5-mac-install-mono.png](/images/step5-mac-install-mono.png)](/images/step5-mac-install-mono.png)
 
 After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
