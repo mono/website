@@ -24,7 +24,7 @@ Next, add the package repository (if you don't use sudo, be sure to switch to ro
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-Update your package cache if necessary (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
+Update your package cache (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
 *Note:* While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
 
@@ -59,7 +59,7 @@ Next, add the package repository **in a root shell**:
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
 ```
 
-Update your package cache if necessary, and run a package upgrade to upgrade existing packages to the latest available.
+Update your package cache and run a package upgrade to upgrade existing packages to the latest available.
 
 Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL repository](https://fedoraproject.org/wiki/EPEL) to their system to satisfy all dependencies
 
