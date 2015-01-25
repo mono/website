@@ -1,5 +1,5 @@
 ---
-title: Empacotando o Mono
+title: Embarcando o Mono
 redirect_from:
   - /Embedding_Mono/
 ---
@@ -13,8 +13,8 @@ Código Fonte
 
 O código fonte e os exemplos de como incorporar o Mono podem ser encontrados no diretório mono/samples/embed.
 
-Como o Processo de Empacotamento Funciona
-=========================================
+Como o Processo de Embarcar Funciona
+====================================
 
 Tipicamente, você começaria com uma aplicação escrita em C:
 
@@ -52,10 +52,10 @@ O assembly carregado pode ser tão simples quanto você necessite. Algumas coisa
 
 Uma vez que o Mono é reconhecidamente um poderoso framework, praticamente não existem limitações em relação às diferentes aplicações que você pode criar com as configurações acima.
 
-Empacotando o Runtime
+Embarcando o Runtime
 =====================
 
-O processo de empacotamento do runtime consiste em algumas etapas:
+O processo de embarcar o runtime consiste em algumas etapas:
 
 -   Compilar o código e fazer o link com o runtime do Mono
 -   Inicializar o runtime do Mono
@@ -65,7 +65,7 @@ Cada uma dessas etapas são discutidas em detalhes abaixo.
 
 ### Compilar o código e fazer o link com o runtime do Mono
 
-Para empacotar o runtime, você precisa atrelar o seu código com as bibliotecas runtime do Mono. Para tal, você precisa informar os parâmetros retornados pelo pkg-config para o compilador:
+Para embarcar o runtime, você precisa atrelar o seu código com as bibliotecas runtime do Mono. Para tal, você precisa informar os parâmetros retornados pelo pkg-config para o compilador:
 
 ``` bash
 pkg-config --cflags --libs mono-2
@@ -156,7 +156,7 @@ mono_config_parse ("my_mappings");
 
 #### Configurando o runtime
 
-Quando o Mono é empacotado dentro de uma aplicação, esta necessita conhecer os assemblies rutime e os arquivos de configuração. Por padrão, a aplicação irá utilizar os locais definidos pelo sistema sobre o qual o runtime foi contruido (tipicamente os assemblies ficam em /usr/lib/mono e os arquivos de configuração em /etc/mono). Isso normalmente funciona de maneira transparente.
+Quando o Mono é embarcado dentro de uma aplicação, esta necessita conhecer os assemblies rutime e os arquivos de configuração. Por padrão, a aplicação irá utilizar os locais definidos pelo sistema sobre o qual o runtime foi contruido (tipicamente os assemblies ficam em /usr/lib/mono e os arquivos de configuração em /etc/mono). Isso normalmente funciona de maneira transparente.
 
 Mas se você está utilizando um Mono que foi realocado de sua distribuição original, como por exemplo no caso de você distribuir o Mono junto com sua aplicação, você precisa informar para o Mono runtime onde encontrar os assemblies e os arquivos de configuração. Para fazer isso, você precisa chamar a rotina `mono_set_dirs`:
 
