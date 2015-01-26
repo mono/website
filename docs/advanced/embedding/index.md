@@ -20,13 +20,13 @@ Tipicamente, você começaria com uma aplicação escrita em C:
 
 [![Existing.png](/archived/images/f/fa/Existing.png)](/archived/images/f/fa/Existing.png)
 
-O processo de incorporação associa o runtime do Mono com sua aplicação, fazendo com que ela tenha um sistema de execução virtual completo rodando lado-a-lado com sua aplicação. Isso é feito associando a \`libmono' com sua aplicação (nós detalharemos como isso é feito mais à frente). Uma vez feita essa associação, as áreas de endereçamento de sua aplicação ficaria da seguinte forma:
+O processo de incorporação associa o runtime do Mono com sua aplicação, fazendo com que ela tenha um sistema de execução virtual completo rodando lado-a-lado com sua aplicação. Isso é feito associando a 'libmono' com sua aplicação (nós detalharemos como isso é feito mais à frente). Uma vez feita essa associação, as áreas de endereçamento de sua aplicação ficariam da seguinte forma:
 
 [![Linked.png](/archived/images/8/87/Linked.png)](/archived/images/8/87/Linked.png)
 
-A API do Mono incorporado expõe o Mono Runtime ao código em C. Essa interface exposta pelo Runtime do Mono permite ao desenvolvedor controlar vários aspectos em tempo de execução e também analisar o código que roda no mundo CIL, dentro do Runtime do Mono.
+A API do Mono incorporada expõe o ambiente de execução (Runtime) do Mono ao código em C. Essa interface exposta pelo Runtime do Mono permite ao desenvolvedor controlar vários aspectos em tempo de execução e também analisar o código que roda no mundo CIL, dentro do Runtime do Mono.
 
-Uma vez que o runtime do Mono é inicializado, a coisa mais interessante a se fazer é carregar algum código CIL/.NET na aplicação. O código pode ser escrito em qualquer uma das [Linguagens Suportadas pelo Mono](/docs/about-mono/languages/), como por exemplo C#, Java, IronPython ou Visual Basic. Isso irá resultar em uma área de endereçamento de sua aplicação conforme segue:
+Uma vez que o runtime do Mono é inicializado, a coisa mais interessante a se fazer é carregar algum código CIL/.NET na aplicação. O código pode ser escrito em qualquer uma das [Linguagens Suportadas pelo Mono](/docs/about-mono/languages/), como por exemplo C#, F#, Java, IronPython ou Visual Basic. Isso irá resultar em uma área de endereçamento de sua aplicação conforme segue:
 
 [![Loaded.png](/archived/images/2/2b/Loaded.png)](/archived/images/2/2b/Loaded.png)
 
@@ -38,22 +38,23 @@ O código gerenciado pode chamar código não gerenciado de duas formas: utiliza
 
 O resultado é o seguinte:
 
-[Image:exposing.png] Agora o seu código em C pode disparar métodos no mundo gerenciado, assim como o mundo gerenciado pode reagir e ser notificado de qualquer evento ou condição de interesse no código em C:
+[Image:exposing.png] 
+Agora o seu código em C pode disparar métodos no mundo gerenciado, assim como o mundo gerenciado pode reagir e ser notificado de qualquer evento ou condição de interesse no código em C:
 
 O assembly carregado pode ser tão simples quanto você necessite. Algumas coisas interessantes que os desenvolvedores têm feito são:
 
 -   Carregar uma biblioteca de métodos que estão atreladas à interface do usuário (elementos da GUI) de uma determinada aplicação: caixas de diálogos podem então ser manipuladas pelo mundo gerenciado, enquanto que o processamento da lógica em si (core) continua em C.
 -   Carregar código escrito pelo usuário na forma de assemblies, e executá-los através do código em C.
--   Mover parte do desenvolvimento para o mundo gerenciado, obtendo todos os benefícios associados à isso, como (tratamento de exceções, verificação de erros de tipagem em runtime, compilação just-in-time, maior robustez do sistema, bibliotecas que evitam erros de tipagem, etc.) ainda sim mantendo intacto o que foi desenvolvido em C.
--   Um lançador que parte threads no plano de fundo para executar alguma tarefa pertinente à aplicação.
+-   Mover parte do desenvolvimento para o mundo gerenciado, obtendo todos os benefícios associados à isso, como (tratamento de exceções, verificação de erros de tipagem em runtime, compilação just-in-time, maior robustez do sistema, bibliotecas que evitam erros de tipagem, etc.) ainda assim mantendo intacto o que foi desenvolvido em C.
+-   Um lançador que inicia linhas de execução (threads) no plano de fundo para executar alguma tarefa pertinente à aplicação.
 -   Encapsular uma aplicação web ou um serviço de um servidor web dentro da sua aplicação.
 -   Utilizar o Mono para hospedar o script da interface de usuário, transformando o Mono e o script em um plugin genérico daquela interface.
 -   Integrar os objetos de sistema do Mono com objetos desenvolvidos por outras empresas.
 
 Uma vez que o Mono é reconhecidamente um poderoso framework, praticamente não existem limitações em relação às diferentes aplicações que você pode criar com as configurações acima.
 
-Embarcando o Runtime
-=====================
+Embarcando o Ambiente de Execução
+=================================
 
 O processo de embarcar o runtime consiste em algumas etapas:
 
@@ -65,7 +66,7 @@ Cada uma dessas etapas são discutidas em detalhes abaixo.
 
 ### Compilar o código e fazer o link com o runtime do Mono
 
-Para embarcar o runtime, você precisa atrelar o seu código com as bibliotecas runtime do Mono. Para tal, você precisa informar os parâmetros retornados pelo pkg-config para o compilador:
+Para embarcar o runtime, você precisa 'linkar' o seu código com as bibliotecas runtime do Mono. Para tal, você precisa informar os parâmetros retornados pelo pkg-config para o compilador:
 
 ``` bash
 pkg-config --cflags --libs mono-2
@@ -130,9 +131,9 @@ if (!assembly)
   error ();
 ```
 
-No exemplo acima, o conteúdo do arquivo \`file.exe' será carregado no domínio. Isto simplesmente carrega o código, mas não irá executar nada. Você podesubstituir o arquivo \`file.exe' por algum outro arquivo de transporte, como por exemplo \`file.dll'.
+No exemplo acima, o conteúdo do arquivo 'file.exe' será carregado no domínio. Isto simplesmente carrega o código, mas não irá executar nada. Você pode substituir o arquivo 'file.exe' por algum outro arquivo de transporte, como por exemplo 'file.dll'.
 
-Para executar o código, você precisará chamar um método no assembly, ou então, caso você tenha fornecido um método Man estático (ou seja, um ponto de entrada no código), você poderá utilizar uma função mais conveniente:
+Para executar o código, você precisará chamar um método no assembly, ou então, caso você tenha fornecido um método Main() estático (ou seja, um ponto de entrada no código), você poderá utilizar uma função mais conveniente:
 
 ``` c
 retval = mono_jit_exec (domain, assembly, argc - 1, argv + 1);
@@ -142,7 +143,7 @@ Certifique-se de que você sempre forneça um método Main() e execute-o com o `
 
 Se você quiser invocar um método diferente, dê uma olhada na seção [Invocando Métodos no Universo CIL](#invoking-methods-in-the-cil-universe).
 
-Certas características do runtime,como remapeamento de Dll, dependem do arquivo de configuração. Para carregar o arquivo de configuração, simplesmente adicione:
+Certas características do runtime, como remapeamento de Dll, dependem do arquivo de configuração. Para carregar o arquivo de configuração, simplesmente adicione:
 
 ``` c
 mono_config_parse (NULL);
@@ -156,7 +157,7 @@ mono_config_parse ("my_mappings");
 
 #### Configurando o runtime
 
-Quando o Mono é embarcado dentro de uma aplicação, esta necessita conhecer os assemblies rutime e os arquivos de configuração. Por padrão, a aplicação irá utilizar os locais definidos pelo sistema sobre o qual o runtime foi contruido (tipicamente os assemblies ficam em /usr/lib/mono e os arquivos de configuração em /etc/mono). Isso normalmente funciona de maneira transparente.
+Quando o Mono é embarcado dentro de uma aplicação, esta necessita conhecer os assemblies runtime e os arquivos de configuração. Por padrão, a aplicação irá utilizar os locais definidos pelo sistema sobre o qual o runtime foi contruido (tipicamente os assemblies ficam em /usr/lib/mono e os arquivos de configuração em /etc/mono). Isso normalmente funciona de maneira transparente.
 
 Mas se você está utilizando um Mono que foi realocado de sua distribuição original, como por exemplo no caso de você distribuir o Mono junto com sua aplicação, você precisa informar para o Mono runtime onde encontrar os assemblies e os arquivos de configuração. Para fazer isso, você precisa chamar a rotina `mono_set_dirs`:
 
@@ -178,7 +179,7 @@ Para desativar o runtime do Mono, você precisará limpar todos os domínios que
 mono_jit_cleanup (domain);
 ```
 
-Note que nas versões atuais do Mono, o Mono runtime pode ser recarregado no mesmo processo, então apenas chame o `mono_jit_cleanup()` somente se você nunca precisar reinicializar o processo.
+Note que nas versões atuais do Mono, o Mono runtime pode ser recarregado no mesmo processo, então chame o `mono_jit_cleanup()` somente se você nunca precisar reinicializar o processo.
 
 ### Expondo o código C para o universo CIL
 
@@ -240,7 +241,7 @@ Sample ()
 }
 ```
 
-Notice that we have to return a \`MonoString', and we use the \`mono_string_new' API call to obtain this from a string.
+Notice that we have to return a 'MonoString', and we use the 'mono_string_new' API call to obtain this from a string.
 
 ### Windows Considerations
 
@@ -639,7 +640,7 @@ If you have a .NET app which P/Invokes to an unmanaged library, which embeds Mon
 
 Under Linux, libmono is statically linked by default. If you p/invoke a library that it turn is linked against libmono, you'll end up with 2 runtime instances.
 
-Even if you link libmono dynamically (there is a \`configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call `mono_jit_init/cleanup` from the SO.
+Even if you link libmono dynamically (there is a 'configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call `mono_jit_init/cleanup` from the SO.
 
 Samples
 =======
