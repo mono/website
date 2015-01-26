@@ -774,6 +774,11 @@ MonoGIS
 
 [MonoGIS](http://www.monogis.org/) is a set of Geographic Information System (GIS) libraries.
 
+ColorSharp
+----------
+
+[ColorSharp](https://github.com/Litipk/ColorSharp) is a .NET/Mono library to handle color spaces and light spectrums.
+
 * * * * *
 
 Messaging

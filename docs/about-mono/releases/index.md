@@ -1,6 +1,7 @@
 ---
 title: Versões Liberadas do Mono
 mono3xreleases:
+ - {version: 3.12.0, date: '2015-01-13'}
  - {version: 3.10.0, date: '2014-10-04'}
  - {version: 3.8.0, date: '2014-09-04'}
  - {version: 3.6.0, date: '2014-08-12'}
@@ -149,6 +150,7 @@ redirect_from:
   - /Release_Notes_Mono_3.6/
   - /Release_Notes_Mono_3.8/
   - /Release_Notes_Mono_3.10/
+  - /Release_Notes_Mono_3.12/
   - /OldReleases/
 ---
 

@@ -19,7 +19,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 <dl class="accordion" data-accordion>
     <dd class="accordion-navigation">
         <a class="panel" href="#getting-started"><h2>Começando</h2></a>
-        <div id="getting-started" class="content active">
+        <div id="getting-started" class="content panel active">
             <ul class="disc">
                 <li><a href="/docs/getting-started">Visão Geral</a></li>
                 <li>Instalando o Mono no <a href="/docs/getting-started/install/mac/">Mac OS X</a>,<a href="/docs/getting-started/install/linux/">Linux</a>,<a href="/docs/getting-started/install/windows/">Windows</a></li>
@@ -33,7 +33,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>Sobre o Mono</h2></a>
-        <div id="about-mono" class="content">
+        <div id="about-mono" class="content panel">
             <ul class="disc">
                 <li><a href="/docs/about-mono/">Visão Geral</a></li>
                 <li><a href="/docs/about-mono/supported-platforms/">Plataformas Suportadas</a></li>
@@ -52,7 +52,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
    <dd class="accordion-navigation">
         <a class="panel" href="#compiling-mono"><h2>Compilando o Mono</h2></a>
-        <div id="compiling-mono" class="content">
+        <div id="compiling-mono" class="content panel">
             <ul class="disc">
                 <li><a href="/docs/compiling-mono/">Visão Geral</a>, com instruções para compilar em OS X, Linux e Windows</li>
                 <li><a href="/docs/compiling-mono/compiling-from-git/">Compilando a Partir do Git</a> e <a href="/docs/compiling-mono/compiling-from-tarball/">Compilando a Partir do Tarball</a></li>
@@ -67,7 +67,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 	
     <dd class="accordion-navigation">
         <a class="panel" href="#faq"><h2>FAQ - Perguntas Frequentes</h2></a>
-        <div id="faq" class="content">
+        <div id="faq" class="content panel">
             <ul class="disc">
                   <li><a href="/docs/faq/general/">Geral</a></li>
                   <li><a href="/docs/faq/security/">Segurança</a></li>
@@ -84,7 +84,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
     <dd class="accordion-navigation">
         <a class="panel" href="#database-access"><h2>Acessando Banco de Dados</h2></a>
-        <div id="database-access" class="content">
+        <div id="database-access" class="content panel">
             <ul class="disc">
                 <li><a href="/docs/database-access/">Visão Geral</a></li>
                 <li><a href="/docs/database-access/adonet/">ADO.NET</a></li>
@@ -96,7 +96,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
     <dd class="accordion-navigation">
         <a class="panel" href="#debug-and-profile"><h2>Debug e Profile</h2></a>
-        <div id="debug-and-profile" class="content">
+        <div id="debug-and-profile" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/debug+profile/debug/">Debug - Visão Geral</a>
                     <ul>
@@ -118,7 +118,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
     <dd class="accordion-navigation">
         <a class="panel" href="#gui"><h2>Interfaces Gráficas</h2></a>
-        <div id="gui" class="content">
+        <div id="gui" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/gui/gui-toolkits/">Toolkits Gráficos</a></li>
                 <li><a href="/docs/gui/winforms/">WinForms</a></li>
@@ -133,7 +133,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
-        <div id="web" class="content">
+        <div id="web" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/web/aspnet/">ASP.NET</a></li>
                 <li><a href="/docs/web/wcf/">WCF</a></li>
@@ -149,7 +149,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Ferramentas e Bibliotecas</h2></a>
-        <div id="tools-and-libraries" class="content">
+        <div id="tools-and-libraries" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/tools+libraries/tools/">Ferramentas - Visão Geral</a>
                     <ul>
@@ -173,7 +173,7 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
 
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Tópicos Avançados</h2></a>
-        <div id="advanced-topics" class="content">
+        <div id="advanced-topics" class="content panel ">
             <ul class="disc">
                 <li><a href="/docs/advanced/runtime/">Ambiente de Execução</a></li>
                 <li><a href="/docs/advanced/garbage-collector/sgen/">Coletor de Lixo - SGEN</a>

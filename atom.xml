@@ -19,7 +19,11 @@ redirect_from:
   {% for post in site.posts limit: 20 %}
   <entry>
     <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="http://www.monobrasil.com.br/{{ post.url }}"/>
+    <author>
+      <name><![CDATA[{{ post.author }}]]></name>
+    </author>
+    <link href="http://www.monobrasil.com.br{{ post.url }}"/>
+    <link href="http://www.mono-project.com{{ post.url }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>http://www.monobrasil.com.br/{{ post.id }}</id>
     <content type="html"><![CDATA[{{ post.content | expand_urls: "http://www.monobrasil.com.br/" | cdata_escape }}]]></content>
