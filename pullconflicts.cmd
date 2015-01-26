@@ -7,7 +7,6 @@ git pull
 git checkout -b pullrequest gh-pages
 @if errorlevel 1 goto :END
 git pull https://github.com/%1/website.git gh-pages
-@if errorlevel 1 goto :END
 git status | grep "both modified" | cut -c19- > .conflicts
 @if errorlevel 1 goto :END
 cat .conflicts
