@@ -1,9 +1,3 @@
-git checkout pullrequest
-@if errorlevel 1 goto :END
-git fetch origin gh-pages
-@if errorlevel 1 goto :END
-git rebase origin/gh-pages
-@if errorlevel 1 goto :END
 git checkout gh-pages
 @if errorlevel 1 goto :END
 git pull
