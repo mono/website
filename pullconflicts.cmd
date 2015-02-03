@@ -15,6 +15,19 @@ FOR /F %%p IN ('cat .conflicts') DO "C:\Program Files (x86)\Notepad++\notepad++.
 git add .
 @if errorlevel 1 goto :END
 git commit -m "Fix conflicts"
+@if errorlevel 1 goto :END
+git fetch origin gh-pages
+@if errorlevel 1 goto :END
+git rebase --merge origin/gh-pages
+@if errorlevel 1 goto :END
+git checkout gh-pages
+@if errorlevel 1 goto :END
+git pull
+@if errorlevel 1 goto :END
+git rebase pullrequest
+@if errorlevel 1 goto :END
+git push origin gh-pages
+@if errorlevel 1 goto :END
 @goto :ENDEND
 :FAIL
 @echo You need to pass the PR github account to make the pull
