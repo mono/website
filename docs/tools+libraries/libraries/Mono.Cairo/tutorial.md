@@ -54,9 +54,7 @@ The context keeps track of everything that verbs affect. It tracks one source, o
 
 Before you can start to draw something with cairo, you need to create the [Context](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Context). When you create a cairo context, it must be tied to a specific [Surface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.Surface) —for example, an [ImageSurface](http://docs.go-mono.com/index.aspx?link=T%3aCairo.ImageSurface) if you want to create a PNG file. You can initialize your cairo context like this:
 
-``
-
-    ImageSurface surface = new ImageSurface(Format.RGV24, 120, 120);
+    ImageSurface surface = new ImageSurface(Format.RGB24, 120, 120);
     Context cr = new Context(surface);
 
 The cairo context in this example is tied to an image surface of dimension 120 x 120 and 32 bits per pixel to store RGB and Alpha information. Surfaces can be created specific to most cairo backends, see the [manual](http://docs.go-mono.com/index.aspx?tlink=0%40N%3aCairo) for details.
@@ -73,8 +71,6 @@ The reason you are using cairo in a program is to draw. Cairo internally draws w
 
 The [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke()) operation takes a virtual pen along the path. It allows the source to transfer through the mask in a thin (or thick) line around the path, according to the pen's [line width](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineWidth), [line caps](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineCap), [line join](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.LineJoin), and [dash style](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.SetDash(System.Double%5b%5d%2cSystem.Double)).
 
-``
-
     cr.LineWidth = 0.1;
     cr.Color = new Color(0, 0, 0);
     cr.Rectangle(0.25, 0.25, 0.5, 0.5);
@@ -88,8 +84,6 @@ The [Stroke](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Stroke())
 
 The [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) operation instead uses the path like the lines of a coloring book, and allows the source through the mask within the hole whose boundaries are the path. For complex paths (paths with multiple closed sub-paths—like a donut—or paths that self-intersect) this is influenced by the [fill rule](http://docs.go-mono.com/index.aspx?link=P%3aCairo.Context.FillRule). Note that while stroking the path transfers the source for half of the line width on each side of the path, filling a path fills directly up to the edge of the path and no further.
 
-``
-
     cr.Color = new Color(0, 0, 0);
     cr.SetSourceRGB(0, 0, 0);
     cr.Rectangle(0.25, 0.25, 0.5, 0.5);
@@ -102,8 +96,6 @@ The [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) ope
 [View Source](http://mgsloan.nfshost.com/cairo_tut/showtext.cs)
 
 The [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowText(System.String)) operation forms the mask from text. It may be easier to think of ShowText as a shortcut for creating a path with [TextPath](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.TextPath(System.String)) and then using [Fill](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Fill()) to transfer it. Be aware that ShowText caches glyphs so is much more efficient if you work with a lot of text.
-
-``
 
     cr.Color = new Color(0, 0, 0);
     cr.SelectFontFace("Georgia", FontSlant.Normal, FontWeight.Bold);
@@ -121,8 +113,6 @@ The [ShowText](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.ShowTex
 
 The [Paint](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()) operation uses a mask that transfers the entire source to the destination. Some people consider this an infinitely large mask, and others consider it no mask; the result is the same. The related operation [PaintWithAlpha](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.PaintWithAlpha(System.Double)) similarly allows transfer of the full source to destination, but it transfers only the provided percentage of the color.
 
-``
-
     cr.Color = new Color(0, 0, 0);
     cr.PaintWithAlpha(0.5);
 
@@ -133,8 +123,6 @@ The [Paint](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Paint()) o
 [View Source](http://mgsloan.nfshost.com/cairo_tut/mask.cs)
 
 The [Mask](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.Mask(Cairo.Pattern)) and [MaskSurface](http://docs.go-mono.com/index.aspx?link=M%3aCairo.Context.MaskSurface(Cairo.Surface%2cSystem.Double%2cSystem.Double)) operations allow transfer according to the transparency/opacity of a second source pattern or surface. Where the pattern or surface is opaque, the current source is transferred to the destination. Where the pattern or surface is transparent, nothing is transferred.
-
-``
 
     Gradient linpat = new LinearGradient(0, 0, 1, 1);
     linpat.AddColorStop(0, new Color(0, 0.3, 0.8));
@@ -159,8 +147,6 @@ There are three main kinds of sources in cairo: colors, gradients, and images. C
 [![Cairo_setsourcergba.png](/archived/images/c/cb/Cairo_setsourcergba.png)](/archived/images/c/cb/Cairo_setsourcergba.png)
 
 [[1]](http://mgsloan.nfshost.com/cairo_tut/setsourcergba.cs)
-
-``
 
     cr.Color = new Color(0, 0, 0);
     cr.MoveTo(0, 0);
@@ -187,8 +173,6 @@ Gradients describe a progression of colors by setting a start and stop reference
 [![Cairo_setsourcegradient.png](/archived/images/1/19/Cairo_setsourcegradient.png)](/archived/images/1/19/Cairo_setsourcegradient.png)
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/setsourcegradient.cs)
-
-``
 
     Gradient radpat = new RadialGradient(0.25, 0.25, 0.1, 0.5, 0.5, 0.5);
     radpat.AddColorStop(0, new Color(1.0, 0.8, 0.8));
@@ -229,8 +213,6 @@ Cairo supports easily reusing paths by having alternate versions of its operatio
 
 Cairo uses a connect-the-dots style system when creating paths. Start at 1, draw a line to 2, then 3, and so forth. When you start a path, or when you need to start a new sub-path, you want it to be like point 1: it has nothing connecting to it. For this, use [MoveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2fMoveTo). This sets the current reference point without making the path connect the previous point to it. There is also a relative coordinate variant, [RelMoveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2fRelMoveTo), which sets the new reference a specified distance away from the current reference instead. After setting your first reference point, use the other path operations which both update the reference point and connect to it in some way.
 
-``
-
     cr.MoveTo(0.25, 0.25);
 
 #### Straight Lines
@@ -238,8 +220,6 @@ Cairo uses a connect-the-dots style system when creating paths. Start at 1, draw
 [![Cairo path-lineto.png](/archived/images/a/a1/Cairo_path-lineto.png)](/archived/images/a/a1/Cairo_path-lineto.png)
 
 Whether with absolute coordinates [LineTo](http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15) (extend the path from the reference to this point), or relative coordinates [RelLineTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2fRelLineTo) (extend the path from the reference this far in this direction), the path connection will be a straight line. The new reference point will be at the other end of the line.
-
-``
 
     cr.LineTo(0.5, 0.375);
     cr.RelLineTo(0.25, -0.125);
@@ -250,8 +230,6 @@ Whether with absolute coordinates [LineTo](http://www.go-mono.com/docs/index.asp
 
 Arcs are parts of the outside of a circle. Unlike straight lines, the point you directly specify is not on the path. Instead it is the center of the circle that makes up the addition to the path. Both a starting and ending point on the circle must be specified, and these points are connected either clockwise by [Arc](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f10) or counter-clockwise by [ArcNegative](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f11) If the previous reference point is not on this new curve, a straight line is added from it to where the arc begins. The reference point is then updated to where the arc ends. There are only absolute versions.
 
-``
-
     cr.Arc(0.5, 0.5, 0.25 * Math.Sqrt(2), -0.25 * Math.PI, 0.25 * Math.PI);
 
 #### Curves
@@ -259,8 +237,6 @@ Arcs are parts of the outside of a circle. Unlike straight lines, the point you 
 [![Cairo path-curveto.png](/archived/images/c/c4/Cairo_path-curveto.png)](/archived/images/c/c4/Cairo_path-curveto.png)
 
 Curves in cairo are cubic BÃ©zier splines. They start at the current reference point and smoothly follow the direction of two other points (without going through them) to get to a third specified point. Like lines, there are both absolute ([CurveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2fCurveTo)) and relative ([RelCurveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2fRelCurveTo)) versions. Note that the relative variant specifies all points relative to the previous reference point, rather than each relative to the preceding control point of the curve.
-
-``
 
     cr.RelCurveTo(-0.25, -0.125, -0.25, 0.125, -0.5, 0);
 
@@ -271,8 +247,6 @@ Curves in cairo are cubic BÃ©zier splines. They start at the current reference
 [View Source](http://mgsloan.nfshost.com/cairo_tut/path-close.cs)
 
 Cairo can also close the path by drawing a straight line to the beginning of the current sub-path. This straight line can be useful for the last edge of a polygon, but is not directly useful for curve-based shapes. A closed path is fundamentally different from an open path: it's one continuous path and has no start or end. A closed path has no line caps for there is no place to put them.
-
-``
 
     cr.ClosePath();
 
@@ -326,8 +300,6 @@ In the previous sections you should have built up a firm grasp of the operations
 
 When you're working under a uniform scaling transform, you can't just use pixels for the width of your line. However it's easy to translate it with the help of `InverseTransformDistance` (assuming that the pixel width is `1`):
 
-``
-
     double ux=1, uy=1;
     cr.InverseTransformDistance(ref ux, ref uy);
     cr.LineWidth = Math.Max(ux, uy);
@@ -337,8 +309,6 @@ When you're working under a deforming scale, you may wish to still have line wid
 [![Cairo_tips-ellipse.png](/archived/images/5/59/Cairo_tips-ellipse.png)](/archived/images/5/59/Cairo_tips-ellipse.png)
 
 [View Source](http://mgsloan.nfshost.com/tips-ellipse.cs)
-
-``
 
     cr.LineWidth = 0.1;
 
@@ -360,8 +330,6 @@ When you try to center text letter by letter at various locations, you have to d
 
 [View Source](http://mgsloan.nfshost.com/tips-letter.cs)
 
-``
-
     FontExtents fe = cr.FontExtents;
     string alph = "AbCdEfGhIjKlMnOpQrStUvWxYz";
     for(int i = 0; i < alph.Length; i++) {
@@ -377,8 +345,6 @@ Instead the vertical centering must be based on the general size of the font, th
 [![Cairo_tips-font.png](/archived/images/b/b8/Cairo_tips-font.png)](/archived/images/b/b8/Cairo_tips-font.png)
 
 [View Source](http://mgsloan.nfshost.com/tips-font.cs)
-
-``
 
     FontExtents fe = cr.FontExtents;
     string alph = "AbCdEfGhIjKlMnOpQrStUvWxYz";
