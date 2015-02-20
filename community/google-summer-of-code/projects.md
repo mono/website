@@ -14,7 +14,7 @@ You can use the following links to jump to sections that you're interested in:
 **[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
 
-**[Microsoft .NET and Mono integation](#microsoft-net-and-mono-integration)**<br/>
+**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
 Work on blending the worlds of open source .NET and Mono projects together
 
 **[Compilers and Tools](#compilers-and-tools)**<br/>
@@ -74,7 +74,7 @@ like their Garbage Collector, their JIT, or extend Mono to support some of the
 features that the CoreCLR JIT now has, and Mono lacks (like the recently introduced
 Microsoft SIMD support).
 
-Mono Core: Just like like the CoreCLR supports a new model for libraries, we want
+Mono Core: Just like the CoreCLR supports a new model for libraries, we want
 to adjust Mono to become a runtime that uses this new library model.   It moves
 away from the Global Assembly Cache model, and moves into a self-contained system.
 
