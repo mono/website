@@ -15,6 +15,7 @@ You can use the following links to jump to sections that you're interested in:
 Suggest your own ideas for a project
 
 **[Microsoft .NET and Mono integation](#microsoft-.net-and-mono-integration)**<br/>
+Work on blending the worlds of open source .NET and Mono projects together
 
 **[Compilers and Tools](#compilers-and-tools)**<br/>
 Work on Mono's tools and compilers
