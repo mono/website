@@ -54,6 +54,8 @@ Microsoft open sourced large chunks of code this year:
 * Roslyn: Microsoft's C# and VB compiler as a service
 * CodeContracts: the tools needed to instrument your code
 
+We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
+
 Class Library Work
 ------------------
 While the Mono team has replaced some parts of the Mono class libraries with 
