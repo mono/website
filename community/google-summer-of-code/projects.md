@@ -14,6 +14,9 @@ You can use the following links to jump to sections that you're interested in:
 **[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
 
+**[Microsoft .NET and Mono integation](#microsoft-net-and-mono-integration)**<br/>
+Work on blending the worlds of open source .NET and Mono projects together
+
 **[Compilers and Tools](#compilers-and-tools)**<br/>
 Work on Mono's tools and compilers
 
@@ -39,6 +42,61 @@ Over the past years we have picked projects that were not listed here because th
 Do not be afraid to pick up a project that would be interesting and also help the Mono universe.
 
 You can find some additional ideas on the [MonkeySquare ideas page](http://monkeysquare.org/gsoc/projects), and on the [Gnome ideas page](https://live.gnome.org/SummerOfCode2013/Ideas) (Mono-based projects in Gnome: Banshee, Blam, Tasque, Tomboy, GBrainy, Mistelix, F-Spot, ChronoJump, SparkleShare, LongoMatch).
+
+Microsoft .NET and Mono Integration
+===================================
+
+Microsoft open sourced large chunks of code this year:
+
+* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+* Roslyn: Microsoft's C# and VB compiler as a service
+* CodeContracts: the tools needed to instrument your code
+
+We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
+
+Class Library Work
+------------------
+While the Mono team has replaced some parts of the Mono class libraries with 
+code from Microsoft, we have found that some of the interesting bits are either
+tied to the Windows platform, is not portable, or will not work with Mono's
+multi-profile facades.
+
+We are interested in students that would like to take on the challenge of porting
+existing ReferenceSource code to Linux, Mac, Unix, Android, iOS and making it
+available to both Mono and the CoreFX efforts.
+
+Runtime Work
+------------
+We are interested in allowing Mono to optionally use components of the CoreCLR,
+like their Garbage Collector, their JIT, or extend Mono to support some of the
+features that the CoreCLR JIT now has, and Mono lacks (like the recently introduced
+Microsoft SIMD support).
+
+Mono Core: Just like like the CoreCLR supports a new model for libraries, we want
+to adjust Mono to become a runtime that uses this new library model.   It moves
+away from the Global Assembly Cache model, and moves into a self-contained system.
+
+Mono Core is an effort to make the Mono runtime an alternative runtime that consumes
+the same set of assemblies and libraries that are produced for .NET Core.    During
+this process, we want to contribute patches and fixes to the CoreFX libraries so that
+they work with Mono and on the variety of platforms that Mono supports.
+
+IDE Work
+--------
+We have been working on a branch of MonoDevelop that uses Roslyn for code completion,
+background compilation and can use Roslyn analyzers.   There are still various 
+components to complete.   We also want to contribute patches to the Roslyn group 
+so that Roslyn gets support for some of the features that were previously available
+as part of NRefactory.
+
+We also want to add Code Contracts support to MonoDevelop, which will require porting
+Code Contracts to Unix and Mono and adding the IDE hooks to support it.
+
+We want to add support for creating ".NET Core/Mono Core" projects in MonoDevelop, 
+allowing developers to create their own self-contained solutions with .NET Core or 
+Mono Core on Mac, Linux and Unix and to create self-contained applications.
 
 Compilers and Tools
 ===================
