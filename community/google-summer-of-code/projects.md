@@ -278,19 +278,6 @@ Xamarin Studio's Git support could use improvements by using Octokit.NET to inte
 Mono Runtime
 ============
 
-Push-less X86 backend
----------------------
-
-**Complexity:** Medium
-
-**Area:** Runtime
-
-The x86 backend uses push/pop instructions. This produced code that is less efficient and harder to be dealt with internally.
-
-**Deliverables:** A x86 backend that uses fixed size frames and mov instead.
-
-**Mentors:** Rodrigo Kumpera, Zoltan Varga
-
 Use IKVM.Reflection to implement parts of System.Reflection.Emit
 ----------------------------------------------------------------
 
