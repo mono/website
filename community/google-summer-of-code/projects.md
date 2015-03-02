@@ -80,6 +80,24 @@ Your proposal should identify the CoreCLR features you wish to port and explain 
 **Mentors:** Ludovic Henry
 
 
+Integrate Reference Sources code into Mono
+------------------------------------------
+
+**Complexity:** Medium
+
+While the Mono team has replaced some parts of the Mono class libraries with code from Microsoft, we have found that some of the interesting bits are either tied to the Windows platform, is not portable, or will not work with Mono’s multi-profile facades.
+
+We are interested in students that would like to take on the challenge of porting existing ReferenceSource code to Linux, Mac, Unix, Android, iOS and making it available to both Mono and the CoreFX efforts.
+
+The things that we are interested in porting are tracked in [this Trello board](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono).
+
+Your proposal should identify the features you wish to port and explain why it is beneficial to port them.
+
+**Deliverables**: Port Reference Sources code of your choice to Mono.
+
+**Mentors:** Ludovic Henry
+
+
 Compilers and Tools
 ===================
 
@@ -116,24 +134,6 @@ https://github.com/mono/CppSharp/blob/master/src/AST/Expression.cs
 Feel free to get in touch with @tritao if you're interested in this and would like more guidance.
 
 **Mentors:** João Matos
-
-
-Integrate Reference Sources code into Mono
-------------------------------------------
-
-**Complexity:** Medium
-
-While the Mono team has replaced some parts of the Mono class libraries with code from Microsoft, we have found that some of the interesting bits are either tied to the Windows platform, is not portable, or will not work with Mono’s multi-profile facades.
-
-We are interested in students that would like to take on the challenge of porting existing ReferenceSource code to Linux, Mac, Unix, Android, iOS and making it available to both Mono and the CoreFX efforts.
-
-The things that we are interested in porting are tracked in [this Trello board](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono).
-
-Your proposal should identify the features you wish to port and explain why it is beneficial to port them.
-
-**Deliverables**: Port Reference Sources code of your choice to Mono.
-
-**Mentors:** Ludovic Henry
 
 
 MonoDevelop / Xamarin Studio IDE
@@ -216,7 +216,7 @@ Adding Version Control Backends
 
 MonoDevelop has support for a plugging new Version Control systems. Currently, Subversion and Git support is implemented.
 
--- TODO: How to mention Eno's HG addin and the TFS one?
+Community versions of TFS and HG exist, so implementing those are a really low priority.
 
 Having additional systems would add diversity to the options developers have when they want IDE support for Version Control.
 
@@ -269,6 +269,86 @@ Mono Runtime
 ============
 
 
+Port mono to asm.js
+-------------------
+
+**Complexity:** Hard
+
+asm.js is the new big thing in the web.
+
+Port mono to work on it. This project should be able to:
+
+-Get the mono runtime compiled with emscripten;
+-Get a mono cross compiler that can target emscripten;
+
+Mash everything together and get it to work. No threads or GC support for this is needed.
+
+Deliverables: A asm.js hello world running in a browser.
+
+
+
+
+**Mentors:** João Matos
+
+
+Add PortablePDB support into the Mono ecosystem
+-----------------------------------------------
+
+**Complexity:** Hard
+
+PortablePDB is the new debug format proposed by the Roslyn team.
+
+This project would introduce support for it over the Mono ecosystem. This includes:
+
+- The mono runtime needs to be able to parse it.
+- Cecil must be able to parse and write this format.
+- IKVM.Reflect must be able to write this format.
+- MCS must be able to generate this format.
+- SDB (mono's debugger) must be able to use it.
+- MonoDevelop can give a better debug experience by reading it.
+
+Each of those bullets is not enough for a single student over summer, but all of them are too much. So pick and choose which ones you want to do.
+
+Deliverables: One or more of the above bullet points.
+
+**Mentors:** João Matos
+
+
+Port mono to winrt
+------------------
+
+**Complexity:** Hard
+
+WinRT is the runtime sandbox where Windows Store apps run in.
+
+Right now mono doesn't run on it.
+
+The goal of this project is to get the runtime to compile for WinRT and get
+a simple hello world APP working.
+
+Deliverables: A hello world running in the WinRT sandbox.
+
+**Mentors:** João Matos
+
+
+Implement a LLDB plugin that can understands the mono runtime
+-------------------------------------------------------------
+
+**Complexity:** Hard
+
+LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
+
+- object layout, introspection and heap walking
+- unwinding and symbolifying managed methods
+- lookup line information for managed methods
+- pretty print all runtime structs
+- threadpool introspection?
+
+Deliverables: One or more of the above bullet points.
+
+**Mentors:** João Matos
+
+
 Make the SGen garbage collector work independently of Mono
 ----------------------------------------------------------
 
@@ -286,6 +366,18 @@ It also needs a nontrivial project to use it.  Ideally another free language imp
 Your proposal should include how you plan to benchmark SGen, and some candidates for other languages to implement it in.
 
 **Deliverables**: SGen garbage collector successfully working with another free language implementation.
+
+**Mentors:** Mark Probst
+
+
+Port the coreclr GC to work on top of Mono
+------------------------------------------
+
+**Complexity:** Hard
+
+With the recent open sourcing of CoreCLR comes CoreCLR's garbage collector, which has a quite well definted interface. Porting this to work with mono would be a great student project.
+
+**Deliverables**: A working mono port of the CoreCLR garbage collector.
 
 **Mentors:** Mark Probst
 
@@ -314,7 +406,42 @@ Your proposal should include which components of the project you wish to work on
 GTK# and Bindings
 ==================
 
-**We don't have any ideas in this area right now, but feel free to propose your own!**
+
+CppSharp | Continue Mono/.NET bindings for Qt
+---------------------------------------------
+
+**Complexity:** Medium
+
+As part of this task you’ll need to continue the bindings effort for the Qt framework so that it can be used with Mono/.NET languages such as C#, similar to the existing bindings of GTK# for GTK+.
+
+Qt, while an excellent development platform, has been notorious for its lack of bindings for many languages. The reason is that it's written in C++ and does not have a C API. This means that the task involves using CppSharp to generate the C# code. A large part of the work has been completed in the [QtSharp](https://github.com/ddobrev/QtSharp) project.
+
+Most of the task involves contribution to CppSharp itself because as the generator it does the overwhelming majority of the work. In particular, QtSharp needs the following features to be present in CppSharp:
+
+1. Support for instantiated templates (non-instantiated templates are impossible to support save for entirely rewriting them in C#);
+2. A map between managed objects and their unmanaged counterparts – if we call in C# a method returning a pointer, subsequent calls to that method must return the same managed object rather than create a new one. Therefore we need to keep a map with the key a pointer and the value its managed representation so that we can get the same managed object each time. When an unmanaged object is deleted, we must remove its entry from this map;
+3. Support for dependencies between wrapped modules – this feature is partially done. It has to mirror the dependencies between the unmanaged libraries in the managed side. That is, as QtGui depends on QtCore, the wrapper of QtGui must depend on QtCore, otherwise the binding cannot have the types it needs.
+
+Besides that major part, the task involves a few Qt specifics. Some of them are already done, such as generating XML documentation by parsing the documentaion of Qt. So this part is mostly about creating type maps: mapping common Qt types to common CLI ones. The most important examples would be:
+
+1. QList<>, QVector<> ↔ List<>;
+2. QMap<,>, QHash<,> ↔ Dictionary<,>;
+3. QChar<> ↔ char;
+
+Some cases, such as QFile(Info) ↔ File(Info) or QDir ↔ Directory(Info), need some more consideration. In some cases both have features their counterpart lacks, in other cases people would just prefer the Qt API. So the priority of this part goes to the most basic types as enumerated in the list above.
+
+The last part is testing and fixing any crashes or incorrect behaviour. Unit tests are especially welcome. A good starting point can be porting some of the Qt examples to C# and then checking if they behave the same way as their original counterparts.
+
+Related code:
+
+https://github.com/mono/CppSharp
+https://github.com/ddobrev/QtSharp
+https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
+
+Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
+
+**Mentors:** João Matos
+
 
 Contacting the Mono Team
 ========================
@@ -339,4 +466,3 @@ A mailing list dedicated to discussions about developing Mono itself, such as de
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
-
