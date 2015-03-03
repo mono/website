@@ -278,15 +278,12 @@ asm.js is the new big thing in the web.
 
 Port mono to work on it. This project should be able to:
 
--Get the mono runtime compiled with emscripten;
--Get a mono cross compiler that can target emscripten;
+- Get the mono runtime compiled with emscripten
+- Get a mono cross compiler that can target emscripten
 
 Mash everything together and get it to work. No threads or GC support for this is needed.
 
-Deliverables: A asm.js hello world running in a browser.
-
-
-
+**Deliverables:** A asm.js hello world running in a browser.
 
 **Mentors:** João Matos
 
@@ -309,12 +306,12 @@ This project would introduce support for it over the Mono ecosystem. This includ
 
 Each of those bullets is not enough for a single student over summer, but all of them are too much. So pick and choose which ones you want to do.
 
-Deliverables: One or more of the above bullet points.
+**Deliverables:** One or more of the above bullet points.
 
 **Mentors:** João Matos
 
 
-Port mono to winrt
+Port mono to WinRT
 ------------------
 
 **Complexity:** Hard
@@ -326,7 +323,7 @@ Right now mono doesn't run on it.
 The goal of this project is to get the runtime to compile for WinRT and get
 a simple hello world APP working.
 
-Deliverables: A hello world running in the WinRT sandbox.
+**Deliverables:** A hello world running in the WinRT sandbox.
 
 **Mentors:** João Matos
 
@@ -344,7 +341,7 @@ LLDB support plugins and we should write one that exposes as much as possible of
 - pretty print all runtime structs
 - threadpool introspection?
 
-Deliverables: One or more of the above bullet points.
+**Deliverables:** One or more of the above bullet points.
 
 **Mentors:** João Matos
 
@@ -439,6 +436,8 @@ https://github.com/ddobrev/QtSharp
 https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
+
+**Deliverables**: Improve the QT bindings generator to the point that they can be used for a non-trivial QT sample written in idiomatic C#.
 
 **Mentors:** João Matos
 
