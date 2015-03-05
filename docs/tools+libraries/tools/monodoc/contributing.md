@@ -26,7 +26,7 @@ Aside from the core libraries, we also have a large body of class libraries that
 Gtk# documentation
 -------------------
 
-The project goal is to fill in the data with useful information. Feel free to grab liberally information from the Gtk documentation from: [http://developer.gnome.org/doc/API/](http://developer.gnome.org/doc/API/)
+The project goal is to fill in the data with useful information. Feel free to grab liberally information from the Gtk documentation from: [https://developer.gnome.org/references](https://developer.gnome.org/references)
 
 Of course, the API does not apply directly. It only applies at a foundational level, so you can not really just copy and paste. Summaries, and remarks sections can probably be lifted with little or no effort. Gtk# uses properties to represent get/set operations in the C API, so you can also use some bits from there. Most of the documentation contains already place holders for text, we use the internationally approved phrase for this purpose, \`To be added'. So the quest is to remove all of the "To be added" strings with information which resembles as closely as possible the toolkit reality.
 
