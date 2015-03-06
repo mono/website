@@ -12,14 +12,52 @@ Please report security vulnerabilities by sending email to hello@xamarin.com
 Known vulnerabilities
 =====================
 
-Some versions of Mono had security vulnerabilities found after their public release. This page contains a list of the known vulnerabilities, starting with the most recent one.
+Some versions of Mono had security vulnerabilities found after their
+public release. This page contains a list of the known
+vulnerabilities, starting with the most recent one.
+
+TLS bugs
+--------
+
+Mono's implementation of the SSL/TLS stack failed to check the order
+of the handshake messages.  Which would allow various attacks on the
+protocol to succeed.  Details of this vulnerability are discussed in
+[SKIP-TLS post](https://www.smacktls.com/#skip).
+
+Mono's implementation of SSL/TLS also contained support for the weak
+EXPORT cyphers and was susceptible to the
+[FREAK](https://www.smacktls.com/#freak) attack.
+
+Versions affected:
+- All Mono versions available before March 6th, 2015.
+
+Versions fixed:
+- [Mono 3.10.1] (https://github.com/mono/mono/tree/mono-3.10.0-branch)
+- [Mono 3.12.1] (https://github.com/mono/mono/tree/mono-3.12.0-branch)
+- [Mono 4.0.0]  (https://github.com/mono/mono/tree/mono-4.0.0-branch)
+
+Individual Patches for versions earlier than Mono 3.10:
+
+- Handshake fix: [patch](https://gist.github.com/directhex/f8c6e67f551d8a608154)
+- Removal of EXPORT ciphers: [patch](https://gist.github.com/directhex/728af6f96d1b8c976659)
+
+We also encourage developers to disable the SSLv2 fallback, patch for Mono:
+- https://gist.github.com/spouliot/8e33a158e132e1738c90
+
+
+Credits:
+- Karthikeyan Bhargavan <karthikeyan.bhargavan@inria.fr>
+- [miTLS Team at INRIA](http://www.mitls.org/)
+
 
 Moonlight RuntimeHelpers.InitializeArray on non-primitive value types
 ---------------------------------------------------------------------
 
 CVE: [CVE-2011-0989](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0989)
 
-Missing validations on RuntimeHelpers.InitializeArray can allow untrusted code to modify internal structures leading to plugin crashes and possibly corrupting Moonlight's security manager internal state.
+Missing validations on RuntimeHelpers.InitializeArray can allow
+untrusted code to modify internal structures leading to plugin crashes
+and possibly corrupting Moonlight's security manager internal state.
 
 Version affected:
 
@@ -45,7 +83,10 @@ Moonlight Race in Array.Copy "FastCopy" Internal Call
 
 CVE: [CVE-2011-0990](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0990)
 
-A race in the internal call implementing a fast-copy optimization for Array.Copy can allow untrusted code to modify internal structures leading to to plugin crashes and possibly corrupting Moonlight's security manager internal state.
+A race in the internal call implementing a fast-copy optimization for
+Array.Copy can allow untrusted code to modify internal structures
+leading to to plugin crashes and possibly corrupting Moonlight's
+security manager internal state.
 
 Version affected:
 
