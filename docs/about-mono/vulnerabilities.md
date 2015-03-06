@@ -20,7 +20,7 @@ TLS bugs
 --------
 
 Mono's implementation of the SSL/TLS stack failed to check the order
-of the handshake messages.  Which would allow various attacks on the
+of the handshake messages. Which would allow various attacks on the
 protocol to succeed.  Details of this vulnerability are discussed in
 [SKIP-TLS post](https://www.smacktls.com/#skip).
 
@@ -29,12 +29,14 @@ EXPORT cyphers and was susceptible to the
 [FREAK](https://www.smacktls.com/#freak) attack.
 
 Versions affected:
+
 - All Mono versions available before March 6th, 2015.
 
 Versions fixed:
-- [Mono 3.10.1] (https://github.com/mono/mono/tree/mono-3.10.0-branch)
-- [Mono 3.12.1] (https://github.com/mono/mono/tree/mono-3.12.0-branch)
-- [Mono 4.0.0]  (https://github.com/mono/mono/tree/mono-4.0.0-branch)
+
+- [Mono 3.10.1](https://github.com/mono/mono/tree/mono-3.10.0-branch)
+- [Mono 3.12.1](https://github.com/mono/mono/tree/mono-3.12.0-branch)
+- [Mono 4.0.0](https://github.com/mono/mono/tree/mono-4.0.0-branch)
 
 Individual Patches for versions earlier than Mono 3.10:
 
@@ -42,13 +44,13 @@ Individual Patches for versions earlier than Mono 3.10:
 - Removal of EXPORT ciphers: [patch](https://gist.github.com/directhex/728af6f96d1b8c976659)
 
 We also encourage developers to disable the SSLv2 fallback, patch for Mono:
+
 - https://gist.github.com/spouliot/8e33a158e132e1738c90
 
-
 Credits:
+
 - Karthikeyan Bhargavan <karthikeyan.bhargavan@inria.fr>
 - [miTLS Team at INRIA](http://www.mitls.org/)
-
 
 Moonlight RuntimeHelpers.InitializeArray on non-primitive value types
 ---------------------------------------------------------------------
