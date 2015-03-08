@@ -46,7 +46,7 @@ for i in */configure; do (cd `dirname $i`; ./configure --prefix=$PREFIX && make 
 Alternatively, dependencies can be installed through Homebrew:
 
 ``` bash
-brew install autoconf automake libtool pkg-config glib libmcrypt freetype cmake libmemcached
+brew install autoconf automake libtool pkg-config glib
 ```
 
 Building Mono from a Release Package
