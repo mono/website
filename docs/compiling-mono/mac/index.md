@@ -43,6 +43,12 @@ for i in *.tar.gz; do tar xzvf $i; done
 for i in */configure; do (cd `dirname $i`; ./configure --prefix=$PREFIX && make && make install); done
 ```
 
+Alternatively, dependencies can be installed through Homebrew:
+
+``` bash
+brew install autoconf automake libtool pkg-config
+```
+
 Building Mono from a Release Package
 ------------------------------------
 
