@@ -65,8 +65,10 @@ You can install using SUSE One-Click files (see below for descriptions):
 
 [![referenceassemblies-pcl](/images/OneClick.svg)](http://download.mono-project.com/repo/referenceassemblies-pcl.ymp) **referenceassemblies-pcl**
 
+<hr/>
+
 Usage
------
+=====
 
 The package ***mono-devel*** should be installed to compile code.
 
