@@ -33,7 +33,7 @@ Using
 
 -   Need access to a Firebird Relational Database or you can download it from [here](http://firebirdsql.org/en/downloads/)
 
--   Get the Firebird .NET data provider from here as [firebird-net-provider](http://lists.sourceforge.net/lists/listinfo/firebird-net-provider). Make sure the Firebird .NET data provider binary assembly FirebirdSql.Data.Firebird.dll is installed in the same place as the mono class libraries.
+-   Get the Firebird .NET data provider from here as [firebird-net-provider](http://www.firebirdsql.org/en/additional-downloads/). Make sure the Firebird .NET data provider binary assembly FirebirdSql.Data.Firebird.dll is installed in the same place as the mono class libraries.
 
 -   Connection String format:
 
