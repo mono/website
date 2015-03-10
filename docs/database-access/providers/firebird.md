@@ -1,5 +1,5 @@
 ---
-title: Firebird Interbase
+title: Firebird
 redirect_from:
   - /Firebird_Interbase/
 ---
@@ -11,9 +11,9 @@ Recent versions of Firebird bundle an up-to-date version of the database provide
 Info
 ----
 
--   Fully Managed ADO.NET Data Provider for Firebird and Interbase databases
+-   Fully Managed ADO.NET Data Provider for Firebird database
 
--   The [Firebird Relational Database](http://firebird.sourceforge.net/index.php) is is an independent project which uses source code based on the Interbase source code released by Borland under the Interbase Public License
+-   The [Firebird Relational Database](http://firebirdsql.org) is is an independent project which uses source code based on the Interbase source code released by Borland under the Interbase Public License
 
 -   Both the Firebird Relational Database and the Firebird .NET Data Provider can be downloaded from [here](http://sourceforge.net/projects/firebird/)
 
@@ -31,7 +31,7 @@ Using
 
 -   Need a working mono and mcs
 
--   Need access to a Firebird Relational Database or you can download it from [here](http://firebird.sourceforge.net)
+-   Need access to a Firebird Relational Database or you can download it from [here](http://firebirdsql.org/en/downloads/)
 
 -   Get the Firebird .NET data provider from here as [firebird-net-provider](http://lists.sourceforge.net/lists/listinfo/firebird-net-provider). Make sure the Firebird .NET data provider binary assembly FirebirdSql.Data.Firebird.dll is installed in the same place as the mono class libraries.
 
