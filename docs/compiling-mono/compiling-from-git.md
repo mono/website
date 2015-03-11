@@ -48,7 +48,7 @@ Then, go into the mono directory, and configure:
 In order to use mcs and mono binaries during the build process which do not reside in your PATH, you can set two make variables, EXTERNAL_MCS and EXTERNAL_RUNTIME:
 
 ``` bash
-make EXTERNAL_MCS=/foo/bar/gmcs.exe EXTERNAL_RUNTIME=/somewhere/else/mono
+make EXTERNAL_MCS=/foo/bar/mcs.exe EXTERNAL_RUNTIME=/somewhere/else/mono
 ```
 
 If you do not currently have mono installed, build and install mono from a recently released tarball or run:
@@ -56,7 +56,7 @@ If you do not currently have mono installed, build and install mono from a recen
 ``` bash
 # ./autogen.sh must be run prior to this
 make get-monolite-latest
-make EXTERNAL_MCS="${PWD}/mcs/class/lib/monolite/gmcs.exe"
+make EXTERNAL_MCS="${PWD}/mcs/class/lib/monolite/basic.exe"
 ```
 
 The file [README.md](http://github.com/mono/mono/blob/master/README.md) contains more information about ways to compile Mono from the repository, consult it if you need more details.
