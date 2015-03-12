@@ -24,7 +24,7 @@ As you might expect, there are many development tools available to C# developers
 
 Emacs and Vim are general purpose text editors, not IDEs designed for use with .NET and C#. However, you can use them to write software in nearly any language.
 
-For Emacs, you will want to use the C# major mode available at [www.cybercom.net](http://www.cybercom.net/~zbrad/DotNet/Emacs) to handle syntax coloring and proper indentation. You may want to install the [OmniSharp](https://github.com/OmniSharp/omnisharp-emacs) plugin for autocompletion and various other features. 
+For Emacs, you will want to use the C# major mode available at [www.cybercom.net](http://www.cybercom.net/~zbrad/DotNet/Emacs) to handle syntax coloring and proper indentation. You may want to install the [OmniSharp](https://github.com/OmniSharp/omnisharp-emacs) plugin for autocompletion and various other features.
 
 Vim supports syntax highlighting for C#. For autocompletion, the [OmniSharp](https://github.com/OmniSharp/omnisharp-vim) plugin is also available.
 
