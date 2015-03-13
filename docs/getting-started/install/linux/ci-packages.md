@@ -22,35 +22,26 @@ Regardless of your distribution, you will need the Mono Project GPG signing key,
 
 ### Debian, Ubuntu, and derivatives
 
-Add the Mono Project GPG signing key (if you don't use sudo, be sure to switch to root):
+Add the Mono Project GPG signing key and the package repository (if you don't use sudo, be sure to switch to root):
 
 ``` bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-```
-
-Next, add the package repository (if you don't use sudo, be sure to switch to root):
-
-``` bash
 echo "deb http://jenkins.mono-project.com/repo/debian sid main" | sudo tee /etc/apt/sources.list.d/mono-jenkins.list
+sudo apt-get update
 ```
 
-Update your package cache if necessary (i.e. run `apt-get update`).
+Run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
 ### CentOS, Fedora, and derivatives
 
-Add the Mono Project GPG signing key **in a root shell** with:
+Add the Mono Project GPG signing key and the package repository **in a root shell** with:
 
 ``` bash
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-```
-
-Next, add the package repository **in a root shell**:
-
-``` bash
 yum-config-manager --add-repo http://jenkins.mono-project.com/repo/centos/
 ```
 
-Update your package cache if necessary.
+Run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
 Usage
 -----

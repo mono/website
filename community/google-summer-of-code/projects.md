@@ -57,14 +57,13 @@ Microsoft .NET and Mono Integration
 
 Microsoft open sourced large chunks of code this year:
 
-* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-* Roslyn: Microsoft's C# and VB compiler as a service
-* CodeContracts: the tools needed to instrument your code
+- ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+- CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+- CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+- Roslyn: Microsoft's C# and VB compiler as a service
+- CodeContracts: the tools needed to instrument your code
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
-
 
 Port CoreCLR Features to Mono
 -----------------------------
@@ -78,7 +77,6 @@ Your proposal should identify the CoreCLR features you wish to port and explain 
 **Deliverables**: Port a CoreCLR feature of your choice to the Mono runtime.
 
 **Mentors:** Ludovic Henry
-
 
 Integrate Reference Sources code into Mono
 ------------------------------------------
@@ -97,10 +95,8 @@ Your proposal should identify the features you wish to port and explain why it i
 
 **Mentors:** Ludovic Henry
 
-
 Compilers and Tools
 ===================
-
 
 CppSharp | Improve C++ inline code / default arguments bindings
 ---------------------------------------------------------------
@@ -135,10 +131,8 @@ Feel free to get in touch with @tritao if you're interested in this and would li
 
 **Mentors:** João Matos
 
-
 MonoDevelop / Xamarin Studio IDE
 ================================
-
 
 Overhaul MonoDevelop C/C++ addin
 --------------------------------
@@ -149,17 +143,16 @@ The MonoDevelop C/C++ addin has been unmaintained for some time. We would like t
 
 There are many other aspects of the addin that could be improved, such as:
 
-* improving the code completion using libclang instead of CTags
-* adding refactoring support
-* improving the GDB debugger addin or switching to LLDB
-* making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
+- improving the code completion using libclang instead of CTags
+- adding refactoring support
+- improving the GDB debugger addin or switching to LLDB
+- making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
 
 Your proposal can include any of that you find interesting and feel can be realistically be completed in addition to the core tasks.
 
 **Deliverables:** a standalone C/C++ addin that uses MSBuild or CMake, along with other improvements of your choosing
 
 **Mentors:** Michael Hutchinson, João Matos
-
 
 Improve Auto-Documentation System
 ---------------------------------
@@ -178,7 +171,6 @@ Your proposal should describe the approaches you intend to use to fix the issue,
 
 **Mentors:** Mike Krüger
 
-
 Port NRefactory 5 Actions/Issues to NRefactory 6
 ------------------------------------------------
 
@@ -189,7 +181,6 @@ NRefactory is the library used by MonoDevelop for parsing, analysis and refactor
 **Deliverables**: Port the Code Actions and Code issues listed in your proposal to NR6
 
 **Mentors:** Mike Krüger
-
 
 MD Class Diagrams
 -----------------
@@ -207,7 +198,6 @@ Your proposal should include what form you think the class diagrams will take, a
 **Deliverables**: A MonoDevelop addin for generating class diagrams.
 
 **Mentors:** Michael Hutchinson
-
 
 Adding Version Control Backends
 -------------------------------
@@ -228,9 +218,8 @@ Your proposal should describe the approaches you intend to use to implement the 
 
 **Mentors:** Marius Ungureanu
 
-
-Syntax highlighting overhaul.
------------------------------
+Syntax highlighting overhaul
+----------------------------
 
 **Complexity:** Medium
 
@@ -239,7 +228,6 @@ The syntax highlighting in MonoDevelop is done by defining a grammar as xml file
 **Deliverables**: An extensible syntax highlighting system that reads our xml files or a similar format. It should be scalable even for large files (lazy analysis) and much faster than the current implementation (speed tests included).
 
 **Mentors:** Mike Krüger
-
 
 Debugger Tasks window support
 -----------------------------
@@ -252,7 +240,6 @@ Since async and await keywords were introduced, tasks have become crucial part o
 
 **Mentors:** David Karlas
 
-
 Debugging disassembled code could use C# decompiler to generate source
 ----------------------------------------------------------------------
 
@@ -264,10 +251,8 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 
 **Mentors:** David Karlas, Jeff Stedfast
 
-
 Mono Runtime
 ============
-
 
 Port mono to asm.js
 -------------------
@@ -286,7 +271,6 @@ Mash everything together and get it to work. No threads or GC support for this i
 **Deliverables:** A asm.js hello world running in a browser.
 
 **Mentors:** João Matos
-
 
 Add PortablePDB support into the Mono ecosystem
 -----------------------------------------------
@@ -310,7 +294,6 @@ Each of those bullets is not enough for a single student over summer, but all of
 
 **Mentors:** João Matos
 
-
 Port mono to WinRT
 ------------------
 
@@ -326,7 +309,6 @@ a simple hello world APP working.
 **Deliverables:** A hello world running in the WinRT sandbox.
 
 **Mentors:** João Matos
-
 
 Implement a LLDB plugin that can understands the mono runtime
 -------------------------------------------------------------
@@ -344,7 +326,6 @@ LLDB support plugins and we should write one that exposes as much as possible of
 **Deliverables:** One or more of the above bullet points.
 
 **Mentors:** João Matos
-
 
 Make the SGen garbage collector work independently of Mono
 ----------------------------------------------------------
@@ -366,7 +347,6 @@ Your proposal should include how you plan to benchmark SGen, and some candidates
 
 **Mentors:** Mark Probst
 
-
 Port the coreclr GC to work on top of Mono
 ------------------------------------------
 
@@ -377,7 +357,6 @@ With the recent open sourcing of CoreCLR comes CoreCLR's garbage collector, whic
 **Deliverables**: A working mono port of the CoreCLR garbage collector.
 
 **Mentors:** Mark Probst
-
 
 Show Referring Objects in Debugger
 ----------------------------------
@@ -396,13 +375,10 @@ Your proposal should include which components of the project you wish to work on
 
 **Deliverables**: Mono runtime support to show referring objects, and some UI implementation of referring objects information.
 
-
 **Mentors:** David Karlas, Mark Probst
-
 
 GTK# and Bindings
 ==================
-
 
 CppSharp | Continue Mono/.NET bindings for Qt
 ---------------------------------------------
@@ -441,7 +417,6 @@ Feel free to get in touch with @tritao if you’re interested in this and would 
 
 **Mentors:** João Matos
 
-
 Contacting the Mono Team
 ========================
 
@@ -449,19 +424,19 @@ If you have questions or suggestions that you want to make in real-time and talk
 on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and
 students from past years are usually there and can answer some quick questions about the program and about Mono.
 
-The mailing lists are a very important communication channel, students should use them to get more information and 
+The mailing lists are a very important communication channel, students should use them to get more information and
 feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
 
-For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use 
+For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
 [soc@xamarin.com](mailto:soc@xamarin.com).
 
 Mailing Lists
 -------------
 
-[http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list) 
+[http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list)
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
 
-[http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list) 
+[http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list)
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).

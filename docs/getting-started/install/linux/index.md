@@ -12,19 +12,15 @@ Regardless of your distribution, you will need the Mono Project GPG signing key,
 Debian, Ubuntu, and derivatives
 -------------------------------
 
-Add the Mono Project GPG signing key (if you don't use sudo, be sure to switch to root):
+Add the Mono Project GPG signing key and the package repository to your system (if you don't use sudo, be sure to switch to root):
 
 ``` bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-```
-
-Next, add the package repository (if you don't use sudo, be sure to switch to root):
-
-``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+sudo apt-get update
 ```
 
-Update your package cache (i.e. run `apt-get update`), and run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
+Run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
 *Note:* While the APT package is built against Debian Wheezy, it is compatible with a number of Debian derivatives (including Ubuntu) which means you can use the same repository across all these distributions.
 
@@ -47,21 +43,16 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat mai
 CentOS, Fedora, and derivatives
 -------------------------------
 
-Add the Mono Project GPG signing key **in a root shell** with:
+Add the Mono Project GPG signing key and the package repository **in a root shell** with:
 
 ``` bash
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-```
-
-Next, add the package repository **in a root shell**:
-
-``` bash
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
 ```
 
-Update your package cache and run a package upgrade to upgrade existing packages to the latest available.
+Run a package upgrade to upgrade existing packages to the latest available. Then install Mono as described in the [Usage](#usage) section.
 
-Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL repository](https://fedoraproject.org/wiki/EPEL) to their system to satisfy all dependencies
+Users of CentOS or RHEL (or similar distributions) may need to add the [EPEL repository](https://fedoraproject.org/wiki/EPEL) to their system to satisfy all dependencies.
 
 openSUSE and SLES
 -----------------
@@ -74,8 +65,10 @@ You can install using SUSE One-Click files (see below for descriptions):
 
 [![referenceassemblies-pcl](/images/OneClick.svg)](http://download.mono-project.com/repo/referenceassemblies-pcl.ymp) **referenceassemblies-pcl**
 
+<hr/>
+
 Usage
------
+=====
 
 The package ***mono-devel*** should be installed to compile code.
 
