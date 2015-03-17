@@ -19,6 +19,8 @@ vulnerabilities, starting with the most recent one.
 TLS bugs
 --------
 
+CVE: [CVE-2015-2318](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2318), [CVE-2015-2319](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2319), [CVE-2015-2320](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2320)
+
 Mono's implementation of the SSL/TLS stack failed to check the order
 of the handshake messages. Which would allow various attacks on the
 protocol to succeed.  Details of this vulnerability are discussed in
