@@ -85,7 +85,7 @@ Looking at the log that was created, we see this error:
     at (wrapper remoting-invoke-with-check) NClass.GUI.MainForm:.ctor ()
     at NClass.GUI.Program.Main (System.String[] args) [0x00000]
 
-This isn't really unexpected. It is telling us that we tried to set the property PrintDialog.UseEXDialog, which MoMA already told us didn't exist in Mono. So it time to start porting our source code to work around these issues.
+This isn't really unexpected. It is telling us that we tried to set the property PrintDialog.UseEXDialog, which MoMA already told us didn't exist in Mono. So it's time to start porting our source code to work around these issues.
 
 Porting Strategies
 ------------------
