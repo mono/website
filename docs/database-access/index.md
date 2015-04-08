@@ -37,7 +37,7 @@ Open Source Providers:
 
 Object Persistent Libraries and Object Databases
 
--   [NHibernate](http://wiki.nhibernate.org/display/NH/Home) NHibernate is a .NET based object persistence library for relational databases. NHibernate is a port of the excellent Java Hibernate relational persistence tool.
+-   [NHibernate](http://nhibernate.info/) NHibernate is a .NET based object persistence library for relational databases. NHibernate is a port of the excellent Java Hibernate relational persistence tool.
 
 Commercial Object Persistent Libraries and Object Databases:
 
