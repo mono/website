@@ -23,7 +23,6 @@ Providers for commercial databases:
 
 Commercially Supported Providers:
 
--   [EffiProz](http://www.EffiProz.com) is an embeddable SQL database featuring stored procedures, compatibility with SQL CE data types. It written in pure C# and distributed as a single 1.5 Mb dll. It support Mono, MonoTouch and MonoDroid as well as standard .NET. Some distinguishing features can be found [here](http://blog.effiproz.com/2011/04/effiproz-vs-sqlite-file-database.html).
 -   [VistaDB](http://www.vistadb.com) The VistaDB embeddable and commercial library.
 -   [OpenLink Software](http://www.openlinksw.com/) has High-Performance, Fully Managed .NET Data Providers for Major Databases which you can [download](http://oplweb.openlinksw.com:8080/download/).
 
@@ -37,7 +36,7 @@ Open Source Providers:
 
 Object Persistent Libraries and Object Databases
 
--   [NHibernate](http://wiki.nhibernate.org/display/NH/Home) NHibernate is a .NET based object persistence library for relational databases. NHibernate is a port of the excellent Java Hibernate relational persistence tool.
+-   [NHibernate](http://nhibernate.info/) NHibernate is a .NET based object persistence library for relational databases. NHibernate is a port of the excellent Java Hibernate relational persistence tool.
 
 Commercial Object Persistent Libraries and Object Databases:
 

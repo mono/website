@@ -9,6 +9,8 @@ This is the Mono Project's SoC rules page. For project ideas and other informati
 Ground Rules
 ============
 
+**This must be your primary project for the duration of the Summer of Code coding period**, and you should expect to put in put in the amount of work that you would for a full-time job. You should not have another internship or job during this time. The only default exception to this rule is examinations and other academic requirements.
+
 **Language:** Code must be written in the same language as the host of the project:
 
 -   GCC extensions in C

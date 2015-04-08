@@ -11,7 +11,9 @@ To speed up runtime builds, use one or more of the following:
 
 -   Turn off optimization by passing CFLAGS=-O0 to configure.
 -   Turn off generation of libmono by passing --disable-libraries to configure.
+-  Turn off boeh support by passing --disable-boehm to configure.
 -   Build in parallel, i.e. using make -j4.
+- Use ccache by passing CC="ccache gcc" CXX="ccache g++" to configure.
 
 Runtime debugging methods
 =========================
