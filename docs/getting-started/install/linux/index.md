@@ -91,3 +91,13 @@ If for some reason you want to pin an older version of Mono rather than updating
 These snapshots will cease receiving updates as soon as the next major Mono version gets uploaded - for example, as soon as Mono 3.12 gets uploaded, 3.10 will never receive updates.
 
 On RPM distributions, force the package version in your package manager - all older versions are published in the YUM metadata and should be available.
+
+Alpha update channel
+--------------------
+
+If you want to test bleeding-edge updates to Mono, we now have an alpha update channel. Please report bugs promptly, so we have time to fix them before packages are migrated to stable!
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian alpha main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update
+```
