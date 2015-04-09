@@ -95,9 +95,9 @@ On RPM distributions, force the package version in your package manager - all ol
 Alpha update channel
 --------------------
 
-#### Debian, Ubuntu, and derivatives
-
 If you want to test bleeding-edge updates to Mono, we now have an alpha update channel. Please report bugs promptly, so we have time to fix them before packages are migrated to stable!
+
+#### Debian, Ubuntu, and derivatives
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian alpha main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
