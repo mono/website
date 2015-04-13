@@ -119,7 +119,7 @@ Testing ODBC provider with MySQL
 
 <!-- -->
 
-```
+``` text
 "DSN=dataSetName;" +
 "UID=myuserid;" +
 "PWD=mypassword"
@@ -129,7 +129,7 @@ Testing ODBC provider with MySQL
 
 <!-- -->
 
-```
+``` text
 "DRIVER={MySQL ODBC 3.51 Driver};" +
 "SERVER=localhost;DATABASE=test;" +
 "UID=myuserid;PASSWORD=mypassword;" +

@@ -99,7 +99,7 @@ There is a trial version which allows you to use it for 120 days. There is also 
 
 <!-- -->
 
-```
+``` text
 Server=hostname;Database=databaseName;User ID=sqlServerUserid;Password=sqlServerPassword
 ```
 
@@ -107,7 +107,7 @@ Server=hostname;Database=databaseName;User ID=sqlServerUserid;Password=sqlServer
 
 <!-- -->
 
-```
+``` text
 Server=hostname;Database=databaseName;User ID=windowsDomain\windowsUserid;Password=windowsPassword;Integrated Security=SSPI
 ```
 

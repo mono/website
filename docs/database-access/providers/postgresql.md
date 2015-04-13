@@ -325,7 +325,7 @@ create user postgres with password 'fun2db';
 
 <!-- -->
 
-```
+``` bash
 # # TYPE     DATABASE    IP_ADDRESS    MASK               AUTH_TYPE
 
  local      all                                          trust

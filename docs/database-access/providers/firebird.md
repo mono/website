@@ -39,7 +39,7 @@ Using
 
 <!-- -->
 
-```
+``` text
 Database=databasefile.gdb;User=user;Password=pass;Dialect=3;Server=hostname
 ```
 

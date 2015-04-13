@@ -45,7 +45,7 @@ Connection String Format
 
 The format of the connection string is:
 
-```
+``` text
 [1.1 profile and the old assembly]
 URI=file:/path/to/file
 
@@ -58,7 +58,7 @@ The latter case for the 2.0 profile references the App_Data directory (or any ot
 
 As an example:
 
-```
+``` text
 [1.1 and the old assembly]
 URI=file:SqliteTest.db
 
@@ -70,7 +70,7 @@ That will use the database SqliteTest.db in the current directory. It will be cr
 
 Or you prefer to use SQLite as an in memory database
 
-```
+``` text
 URI=file::memory:,version=3
 ```
 
@@ -78,7 +78,7 @@ The `version=3` is supported, but not necessary with the new assembly.
 
 With the old assembly, the ADO.NET adapter will use SQLite version 2 by default, but if version 2 is not found and version 3 is available, it will fallback to version 3. You can force the adapter to use version 3 by adding "version=3" to the connection string:
 
-```
+``` text
 URI=file:SqliteTest.db,version=3
 ```
 
