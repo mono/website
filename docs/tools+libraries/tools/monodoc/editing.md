@@ -11,21 +11,15 @@ See the [mdoc(5)](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)) man
 
 The following tags can be used inside the \<summary\> and \<remarks\> sections of your documentation.
 
-****
-
-     <para> </para>
+    <para> </para>
 
 Used to separate paragraphs.
 
-****
-
-     <paramref name="param_name"/>
+    <paramref name="param_name"/>
 
 Used to reference a formal parameter to a function.
 
-****
-
-     <see cref="destination"/>
+    <see cref="destination"/>
 
 Use this to create a link in your documentation to the sections for types, namespaces, methods, etc. where destination has one of the following formats:
 
@@ -42,23 +36,17 @@ So your links might look like:
 
     <see cref="M:MyLibrary.MyType.MethodName(System.String,MyLibray.MyOtherType)"/>
 
-****
-
-     <see langword="keyword"/>
+    <see langword="keyword"/>
 
 Use this to link to a keyword in the C# language, for example to link to \`true', do:
 
     <see langword="true"/>
 
-****
-
-     <example> ... </example>
+    <example> ... </example>
 
 Use example to insert an example. The example can contain explanatory text and code.
 
-****
-
-     <code lang="C#">.. </code>
+    <code lang="C#">.. </code>
 
 Use this to provide a sample C# program, typically used within the \<example\> tags.
 
@@ -68,13 +56,11 @@ You can link to an example like this:
 
 When the **source** attribute is provided, the contents of the file *file.cs* will be inserted within the \<code/\> element by [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) the next time they are run. *file.cs* MUST be located in the base directory of the XML documentation, i.e. the [monodoc](/docs/tools+libraries/tools/monodocer/) *-path* or [mdoc-update](/docs/tools+libraries/tools/mdoc/) *--out* directory. *file.cs* may contain relative directory information as well, e.g. **\<code lang="C#" source="examples/file.cs" /\>.**
 
-****
-
-     <list type="bullet"> </list>
+    <list type="bullet"> </list>
 
 Use this to create lists. Lists contains \<item\> elements which have to contain \<term\> containers.
 
-     <list type="table"> </lits>
+    <list type="table"> </lits>
     <listheader>
     <term>YOUR FIRST COLUMN</term>
     <description>YOUR DESCRIPTION</description>
@@ -82,7 +68,7 @@ Use this to create lists. Lists contains \<item\> elements which have to contain
 
 For two-column tables. Inside use:
 
-     <item>
+    <item>
     <term>First</term>
     <description>First description</description>
     </item> <item>

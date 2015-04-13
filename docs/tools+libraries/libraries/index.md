@@ -224,8 +224,6 @@ Dead efforts
 
 There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/) that have been developed in the past.
 
-* * * * *
-
 ASP.NET Components
 ==================
 
@@ -261,8 +259,6 @@ PostgreSQL Provider Suite
 
 [[1]](http://dev.nauck-it.de/projects/show/aspsqlprovider) from NauckIT is a PostgreSQL implementation of the ASP.NET 2.0 Membership, Role, Profile and Session State providers.
 
-* * * * *
-
 Web Frameworks
 ==============
 
@@ -293,8 +289,6 @@ Magic Ajax
 ----------
 
 [Magic Ajax](http://www.magicajax.net/), MagicAjax.NET is a free open-source framework, designed to make it easier and more intuitive for developers to integrate AJAX technology into their web pages, without replacing the ASP.NET controls and/or writing tons of javascript code. MagicAjax initially appeared as a [codeproject article](http://www.codeproject.com/ajax/magicajax.asp). Now it is hosted on Sourceforge and you can find the latest release at the [downloads section](http://www.magicajax.net/Default.aspx/tabid/29). [Ajax.Net](http://ajax.schwarz-interactive.de/csharpsample/default.aspx) Another Ajax framework.
-
-* * * * *
 
 Apple Push Notification and Feedback Services Client C# Library
 ----------------------------------------------------------------
@@ -342,8 +336,6 @@ An Excel report rendered
 [Product WhitePaper](http://www.tmssoftware.com/flexcel/FlexcelWhitepaper.pdf)
 
 FlexNet is commercial software.
-
-* * * * *
 
 3D and Games Frameworks
 =======================
@@ -401,8 +393,6 @@ GemBoxSoftware
 
 [GemBox.Spreadsheet](http://www.gemboxsoftware.com/) is a .NET component which provides easy and high performance way to write, read or convert native Microsoft Excel files (XLS files in BIFF format, CSV files in text format or XLSX files in Open XML format) without the need for Microsoft Excel on either the developer or client machines. GemBox.Spreadsheet Free comes free of charge while GemBox.Spreadsheet Professional is a commercial version (licensed per developer).
 
-* * * * *
-
 Charting
 ========
 
@@ -423,8 +413,6 @@ ZedGraph
 [ZedGraph](http://zedgraph.org) ZedGraph is a set of classes, written in C#, for creating 2D line and bar graphs of arbitrary datasets. The classes provide a high degree of flexibility -- almost every aspect of the graph can be user-modified. At the same time, usage of the classes is kept simple by providing default values for all of the graph attributes. The classes include code for choosing appropriate scale ranges and step sizes based on the range of data values being plotted.
 
 ZedGraph also includes a UserControl interface, allowing drag and drop editing within the Visual Studio forms editor, plus access from other languages such as C++ and VB. ZedGraph is licensed under the LGPL.
-
-* * * * *
 
 Parallel Computing
 ==================
@@ -493,8 +481,6 @@ NauckIT.Remoting
 ----------------
 
 [[2]](http://dev.nauck-it.de/projects/show/utilities) NauckIT.Remoting is a small helper library to setup .NET remoting and publish or consume remote objects.
-
-* * * * *
 
 System Programming
 ==================
@@ -605,8 +591,6 @@ NauckIT.MicroKernel
 
 [[3]](http://dev.nauck-it.de/projects/show/microkernel) NauckIT.MicroKernel is a lightweight Inversion-of-Control C# library for .NET 2.0 and Mono.
 
-* * * * *
-
 Database Abstraction
 ====================
 
@@ -658,8 +642,6 @@ Berkeley DB bindings
 
 Joshua Tauberer has authored a binding for Berkeley DB, its available [here](http://razor.occams.info/code/repo/?/semweb/src/BDB.cs)
 
-* * * * *
-
 Configuration and Logging
 =========================
 
@@ -672,8 +654,6 @@ Log4net
 -------
 
 Apache sponsored logging framework.
-
-* * * * *
 
 Domain Specific
 ===============
@@ -702,8 +682,6 @@ PCSC-Sharp
 ----------
 
 [pcsc-sharp](http://code.google.com/p/pcsc-sharp/): This is a set of libraries for accessing smartcards on Windows and Linux
-
-* * * * *
 
 C# Bindings for Popular APIs
 =============================
@@ -738,8 +716,6 @@ This poject, created by Stephane Delcroix during Novell's HackWeek III, is a man
 
 The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed [here](https://github.com/mono/exiv2-sharp/).
 
-* * * * *
-
 Math
 ====
 
@@ -764,8 +740,6 @@ Current features:
 -   Runs under Microsoft® Windows and Linux.
 -   Works with Mono.
 
-* * * * *
-
 Science
 =======
 
@@ -778,8 +752,6 @@ ColorSharp
 ----------
 
 [ColorSharp](https://github.com/Litipk/ColorSharp) is a .NET/Mono library to handle color spaces and light spectrums.
-
-* * * * *
 
 Messaging
 =========
@@ -817,8 +789,6 @@ Protocol: IRC
 
 [SmartIrc4net](http://smartirc4net.meebey.net/) is an multi-layered IRC library written in C#.
 
-* * * * *
-
 Public Services
 ===============
 
@@ -854,8 +824,6 @@ UpcomingSharp
 -------------
 
 [UpcomingSharp](https://github.com/mono/upcoming-sharp/) is a .NET library that lets you log in to upcoming.org and perform several actions like getting your watchlist, adding and editing events, querying venue information,...
-
-* * * * *
 
 Document Handling
 =================

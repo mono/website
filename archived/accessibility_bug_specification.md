@@ -68,8 +68,6 @@ Whenever you log a bug, please remember to add a comment with a [bug reference](
 
 ### Bug Template
 
-* * * * *
-
 #### PROBLEM STATEMENT
 
 *More detailed expansion of summary. (The summary is a very abstract description of the problem required by Bugzilla to create a bug.)*
@@ -89,8 +87,6 @@ Whenever you log a bug, please remember to add a comment with a [bug reference](
 #### COMMENTS
 
 *Any additional information*
-
-* * * * *
 
 ### Bug Definitions
 
