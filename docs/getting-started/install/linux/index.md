@@ -97,14 +97,14 @@ Alpha update channel
 
 If you want to test bleeding-edge updates to Mono, we now have an alpha update channel. Please report bugs promptly, so we have time to fix them before packages are migrated to stable!
 
-#### Debian, Ubuntu, and derivatives
+#### Debian, Ubuntu, and derivatives (alpha channel)
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian alpha main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
 sudo apt-get update
 ```
 
-#### CentOS, Fedora, and derivatives
+#### CentOS, Fedora, and derivatives (alpha channel)
 
 ``` bash
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos-alpha/
