@@ -98,7 +98,7 @@ git push
 git branch -d work-on-topic
 ```
 
-If `git push` fails, it's because your master is not up to date. Refresh it with ` git pull --rebase `, do ` make check ` and then you can try `git push` again.
+If `git push` fails, it's because your master is not up to date. Refresh it with `git pull --rebase`, do `make check` and then you can try `git push` again.
 
 Branches are useful to isolate several pieces of work, so you can have some changes on one branch that relate to a certain feature, other changes on another branch for another feature, while master is left clean and pristine, just updated with the latest commits from upstream and used, in this workflow, when you're ready to push your changes.
 

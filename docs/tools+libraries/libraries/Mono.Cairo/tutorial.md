@@ -278,9 +278,9 @@ I leverage all of these reasons to draw the diagrams in this document. Whether I
 
 To understand your transforms, read them bottom to top, applying them to the point you're drawing. To figure out which transforms to create, think through this process in reverse. For example if I want my 1.0 x 1.0 workspace to be 100 x 100 pixels in the middle of a 120 x 120 pixel surface, I can set it up one of three ways:
 
-1.  `cr.Translate(10, 10); cr.Scale(100, 100); `
-2.  `cr.Scale(100, 100); cr.Translate(0.1, 0.1); `
-3.  `cr.Transform(Matrix(100, 0, 0, 100, 10, 10)); `
+1.  `cr.Translate(10, 10); cr.Scale(100, 100);`
+2.  `cr.Scale(100, 100); cr.Translate(0.1, 0.1);`
+3.  `cr.Transform(Matrix(100, 0, 0, 100, 10, 10));`
 
 Use the first when relevant because it is often the most readable; use the third when necessary to access additional control not available with the primary functions.
 

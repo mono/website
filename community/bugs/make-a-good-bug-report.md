@@ -7,7 +7,7 @@ title: How to make a good bug report
 3.  Use [bugzilla.xamarin.com](http://bugzilla.xamarin.com) to report the bug. In **addition** to bugzilla, posting to the list is fine if the bug merits larger exposure or design discussions to solve; posting to the list twice or more is just a way to annoy people and make them waste time, especially when you start a new thread about it.
 4.  If the test involves libraries or assemblies that are not part of mono, add infomation on where to download all dependencies, and how to compile/install them.
 5.  If compiling the test case requires more than: `mcs test.cs` provide the **full command line** you used to compile the test.
-6.  If running the test requires more than: `mono test.exe ` provide the **full command line** needed to replicate the bug.
+6.  If running the test requires more than: `mono test.exe` provide the **full command line** needed to replicate the bug.
 7.  Provide info about the version of the software you're using (both mono and the operating system or relevant libraries).
 8.  Provide the output you expect the test case to produce.
 9.  Provide the actual output **you** get from the test case.

@@ -93,7 +93,7 @@ The ECMA standard formally defines a library that conforms to the CLS as a frame
 Managed and Unmanaged Code
 ==========================
 
-Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices `libraries to create C# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk#](/GtkSharp) libraries are C# wrappers around the underlying C libraries.
+Within a native .NET/Mono application, all code is *managed*; that is, it is governed by the CLI's style of memory management and thread safety. .NET/Mono applications can use legacy code, which is referred to as *unmanaged*, by using the `System.InterOpServices` libraries to create C# bindings. Many of the libraries which ship with Mono use this feature of the CLI; in particular, the [Gtk#](/GtkSharp) libraries are C# wrappers around the underlying C libraries.
 
 Bibliography
 ============

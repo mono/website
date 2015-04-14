@@ -45,7 +45,7 @@ Formato da string de conexão
 
 O formato da string de conexão é:
 
-```
+``` text
 [perfil 1.1 e o assembly antigo]
 URI=file:/caminho/para/o/arquivo
 
@@ -58,7 +58,7 @@ A última linha acima no caso do perfil 2.0 ao diretório App_Data (ou qualquer 
 
 Por exemplo:
 
-```
+``` text
 [perfil 1.1 e o assembly antigo]
 URI=file:SqliteTest.db
 
@@ -70,7 +70,7 @@ O exemplo acima irá utilizar o arquivo SqliteTest.db localizado no diretório a
 
 Ou se preferir, você pode utilizar o SQLite como uma base de dados carregada na memória:
 
-```
+``` text
 URI=file::memory:,version=3
 ```
 
@@ -78,7 +78,7 @@ A `version=3` também é suportada, mas não necessariamente com o novo assembly
 
 Com o assembly antigo, o adaptador ADO.NET irá utilizar o SQLite versão 2 por padrão, mas caso a versão 2 não for encontrada e a versão 3 estiver disponível, ele irá automaticamente carregar a versão 3. Você também pode forçar o adaptador para utilizar a versão 3 adicionando o parâmetro "version=3" à string de conexão:
 
-```
+``` text
 URI=file:SqliteTest.db,version=3
 ```
 

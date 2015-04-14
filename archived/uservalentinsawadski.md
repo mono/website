@@ -14,11 +14,6 @@ However I want to help and contribute by mostly giving support on the lists and 
 
 Kind Regards, Valentin.
 
-* * * * *
-
 **Articles I'm working on:**
 
 -   **[New Version of the Use-Page](/New_Version_of_the_Use-Page)**: The Entry-Usage article is currently all about "Use this or that of Mono", while I'm trying to rewrite the article in a way that shows *what* Mono can be used for.
-
-* * * * *
-

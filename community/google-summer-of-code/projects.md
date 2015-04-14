@@ -57,15 +57,13 @@ Microsoft .NET and Mono Integration
 
 Microsoft open sourced large chunks of code this year:
 
-* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-* Roslyn: Microsoft's C# and VB compiler as a service
-* CodeContracts: the tools needed to instrument your code
+- ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+- CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+- CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+- Roslyn: Microsoft's C# and VB compiler as a service
+- CodeContracts: the tools needed to instrument your code
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
-
-
 
 Port CoreCLR Features to Mono
 -----------------------------
@@ -99,8 +97,6 @@ Your proposal should identify the features you wish to port and explain why it i
 
 Compilers and Tools
 ===================
-
-
 
 CppSharp | Improve C++ inline code / default arguments bindings
 ---------------------------------------------------------------
@@ -137,8 +133,6 @@ Feel free to get in touch with @tritao if you're interested in this and would li
 
 MonoDevelop / Xamarin Studio IDE
 ================================
-
-
 
 Overhaul MonoDevelop C/C++ addin
 --------------------------------
@@ -260,8 +254,6 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 Mono Runtime
 ============
 
-
-
 Port mono to asm.js
 -------------------
 
@@ -301,7 +293,6 @@ Each of those bullets is not enough for a single student over summer, but all of
 **Deliverables:** One or more of the above bullet points.
 
 Resources:
-
 
 Specification: https://github.com/dotnet/roslyn/blob/portable-pdb/docs/specs/PortablePdb-Metadata.md
 
@@ -394,7 +385,6 @@ Your proposal should include which components of the project you wish to work on
 
 **Deliverables**: Mono runtime support to show referring objects, and some UI implementation of referring objects information.
 
-
 **Mentors:** David Karlas, Mark Probst
 
 Implement System.Numerics.Vectors
@@ -410,8 +400,6 @@ Implement the MS System.Numerics.Vectors SIMD library and include JIT support to
 
 GTK# and Bindings
 ==================
-
-
 
 CppSharp | Continue Mono/.NET bindings for Qt
 ---------------------------------------------
