@@ -155,7 +155,7 @@ Either way, the string used is assumed to refer to a C ABI-compatible function e
 
 Note that a C ABI is assumed. This makes it nearly impossible to directly invoke functions that are not C ABI compatible, such as C++ library functions that are not `extern "C"`. Some variation on the C ABI is permitted, such as variation in the function's [CallingConvention](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.CallingConvention). The default CallingConvention is platform-specific. Under Windows, [Winapi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Winapi) is the default, as this is used for most Win32 API functions. (**Winapi** is equivalent to **Stdcall** for Windows 9x and Windows NT.) Under Unix platforms, [Cdecl](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Cdecl) is the default.
 
-Calling convention can be specified in C code by using the `__stdcall` and `__cdecl `compiler intrinsics under Microsoft Visual C++, and by using the `__attribute__((stdcall)) `and `__attribute__((cdecl)) `compiler intrinsics under GCC.
+Calling convention can be specified in C code   by using the `__stdcall` and `__cdecl` compiler intrinsics under Microsoft Visual C++, and by using the `__attribute__((stdcall))` and `__attribute__((cdecl))` compiler intrinsics under GCC.
 
 Does having the default CallingConvention vary between platforms cause portability problems? Yes. All the more reason to write as much code as possible as managed code, avoiding the whole P/Invoke/marshaling conundrum in the first place.
 
@@ -185,7 +185,7 @@ Furthermore, it's fairly simple for an exception to propagate through unmanaged 
 
 The problem is, again, C doesn't support exceptions. C++ supports exceptions, BUT, and this is crucial, the C++ exception mechanism will be different from the managed code exception mechanism (with one exception to this rule). Since managed code doesn't know about unmanaged code's exception handling support (C is assumed, and C doesn't support exceptions), unmanaged exception handling support might as well not exist, because it won't be used.
 
-The one exception to this is when you use *both* Microsoft .NET and Microsoft Visual C++ to compile the unmanaged code. .NET uses Windows Structured Exception Handling (SEH) at the P/Invoke layer for its exception handling mechanism, and Microsoft Visual C++ uses SEH to implement C++ exception handling and supports the use of SEH in C as a language extension through the `__try `, `__except `, and `__finally `keywords. SEH is a Microsoft extension; it does not exist outside of Microsoft and .NET, and as such is not portable.
+The one exception to this is when you use *both* Microsoft .NET and Microsoft Visual C++ to compile the unmanaged code. .NET uses Windows Structured Exception Handling (SEH) at the P/Invoke layer for its exception handling mechanism, and Microsoft Visual C++ uses SEH to implement C++ exception handling and supports the use of SEH in C as a language extension through the `__try`, `__except`, and `__finally` keywords. SEH is a Microsoft extension; it does not exist outside of Microsoft and .NET, and as such is not portable.
 
 Given the above scenario -- unmanaged code invokes function pointer which generates a managed exception -- what would happen? The managed exception handling mechanism is executed: the stack is searched for an appropriate exception handler, then the stack is unwound, with any `finally` blocks executed during the stack unwind process.
 
@@ -1276,9 +1276,9 @@ Here is an example adapted from Chris Brumme's blog:
  }
 ```
 
-Consider this: `Other.work `invokes `C.m`, which invokes the unmanaged code `C.OperateOnHandle`. Note that `Other.work `doesn't use `c` anymore, so `c` is eligible to be collected, and is placed on the GC finalization queue.
+Consider this: `Other.work` invokes `C.m`, which invokes the unmanaged code `C.OperateOnHandle`. Note that `Other.work` doesn't use `c` anymore, so `c` is eligible to be collected, and is placed on the GC finalization queue.
 
-This would normally be reasonable, except for the interplay with unmanaged code. The unmanaged code `C.OperateOnHandle `is still using a member held by the instance `c`, but the GC doesn't -- and *can't* -- know this.
+This would normally be reasonable, except for the interplay with unmanaged code. The unmanaged code `C.OperateOnHandle` is still using a member held by the instance `c`, but the GC doesn't -- and *can't* -- know this.
 
 This introduces the possibility that, although unlikely, `C.DeleteHandle` will be invoked (from the GC finalization thread) *while* `C.OperateOnHandle` is still operating.
 

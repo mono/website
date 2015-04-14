@@ -43,25 +43,9 @@ Section attributes
 
 The following table describes all the attributes currently defined for the section tag. Number in brackets preceeding each key is Mono version in which the key first appeared:
 
-****
+`useCompilersCompatibility`: a boolean which tells ASP.NET whether or not to augment compiler information read from either `<system.codeDom/compilers>` or `<system.web/compilation>` configuration sections. Defaults to **true**. For more details about the compiler settings available see below
 
-``` nowiki
-[2.1]
-```
-
-useCompilersCompatibility 
-
-a boolean which tells ASP.NET whether or not to augment compiler information read from either `<system.codeDom/compilers>` or `<system.web/compilation>` configuration sections. Defaults to **true**. For more details about the compiler settings available see below
-
-****
-
-``` nowiki
-[2.4.2]
-```
-
-verificationCompatibility 
-
-an integer which serves the same purpose as the **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\ASP.NET\\VerificationCompatibility** Win32 registry key (described in [this article](http://support.microsoft.com/kb/932552)) - to let the user turn off virtual path validity verification. When Mono runs under Windows it will first check the value of the above registry key and then consult web.config to check for value of the property described here. See also [this bug report](https://bugzilla.novell.com/show_bug.cgi?id=509163).
+`verificationCompatibility`: an integer which serves the same purpose as the **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\ASP.NET\\VerificationCompatibility** Win32 registry key (described in [this article](http://support.microsoft.com/kb/932552)) - to let the user turn off virtual path validity verification. When Mono runs under Windows it will first check the value of the above registry key and then consult web.config to check for value of the property described here. See also [this bug report](https://bugzilla.novell.com/show_bug.cgi?id=509163).
 
 Child elements
 --------------

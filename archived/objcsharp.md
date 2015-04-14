@@ -28,7 +28,7 @@ public int MyMethod () {
 
 Then your objc# code would be:
 
-` NSLog (*(int *)[yourinstance MyMethod]);`
+`NSLog (*(int *)[yourinstance MyMethod]);`
 
 Tutorials
 ---------
@@ -37,27 +37,27 @@ The beginning of every ObjC# invokation involves initializing the bridge:
 
 Allocate a new instance of the bridge:
 
-` ObjCSharpBridge bridge = [ObjCSharpBridge alloc];`
+`ObjCSharpBridge bridge = [ObjCSharpBridge alloc];`
 
 Initialize the bridge:
 
-` [bridge init];`
+`[bridge init];`
 
 After you have a working instance of the bridge you need to load the assembly you wish to interact with:
 
-` [bridge loadAssembly: "test-library.dll"]`
+`[bridge loadAssembly: "test-library.dll"]`
 
 You are now ready to load a class representation of any class in the loaded assembly (or its referenced assemblies).
 
-` Class yourClass = [bridge getClass: "YourNameSpace.YourClass"];`
+`Class yourClass = [bridge getClass: "YourNameSpace.YourClass"];`
 
 If you wanted to call a static method; you do so directly on the class representation:
 
-` [yourClass YourStaticMethod];`
+`[yourClass YourStaticMethod];`
 
 You now of course need to initialize the class (mapped to the constructor in the CLR):
 
-` id instance = [yourClass initWithInt32:-2];`
+`id instance = [yourClass initWithInt32:-2];`
 
 You may now call methods according to the rules stated above.
 

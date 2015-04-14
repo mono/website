@@ -28,7 +28,7 @@ Usage
 
 <!-- -->
 
-```
+``` text
 "Server=hostname;" + "Database=database;" + "User ID=username;" + "Password=password;" + "Pooling=false"
 ```
 

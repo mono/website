@@ -357,13 +357,13 @@ But how do developers cope with having multiple assemblies, and how does the com
 
 The compiler will automatically load assemblies that are located in the same directory as the compiler (by default /usr/lib/mono/1.0) and these include all the assemblies that are part of the standard Mono. But for third party assemblies, it is necessary to indicate a directory that holds the assembly to link against.
 
-In the GAC world, the assemblies are exposed in two places: in the GAC (which is what the runtime uses to load assemblies) and to the compiler in a different location, this is done with the `-package `flag to the `gacutil `command.
+In the GAC world, the assemblies are exposed in two places: in the GAC (which is what the runtime uses to load assemblies) and to the compiler in a different location, this is done with the `-package` flag to the `gacutil` command.
 
-What the `-package `option does is to expose the assembly in a different location for the compiler to pick up (by default the assembly is only exposed in a cryptic location, for example:: /usr/lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll) which is not very practical to type. The `-package NAME `option will surface the assembly (using a symbolic link) in /usr/lib/mono/NAME directory, which is a convenient assembly to pass to the compiler.
+What the `-package` option does is to expose the assembly in a different location for the compiler to pick up (by default the assembly is only exposed in a cryptic location, for example:: /usr/lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll) which is not very practical to type. The `-package NAME` option will surface the assembly (using a symbolic link) in /usr/lib/mono/NAME directory, which is a convenient assembly to pass to the compiler.
 
-To further integrate into the Unix build process, we go one step beyond, and we encourage developers to not only install their assembly into the GAC and surface it for developers with the `-package `option, but to also ship a `pkg-config `configuration file. The pkg-config configuration file has all the information required to build against a assembly.
+To further integrate into the Unix build process, we go one step beyond, and we encourage developers to not only install their assembly into the GAC and surface it for developers with the `-package` option, but to also ship a `pkg-config` configuration file. The pkg-config configuration file has all the information required to build against a assembly.
 
-This can be used in conjunction with the compiler flag `-pkg: `to directly reference a software package, for example to compile with Gtk# and Pango#, this is the command line used:
+This can be used in conjunction with the compiler flag `-pkg:` to directly reference a software package, for example to compile with Gtk# and Pango#, this is the command line used:
 
     $ mcs -pkg:gtk-sharp,pango-sharp sample.cs
     Compilation succeeded

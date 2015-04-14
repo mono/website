@@ -144,7 +144,7 @@ sudo /etc/init.d/oracle-xe configure
 
 <!-- -->
 
-```
+``` text
 "Data Source=tnsname;User ID=userid;Password=password"
 ```
 
@@ -154,7 +154,7 @@ sudo /etc/init.d/oracle-xe configure
 
 <!-- -->
 
-```
+``` text
 "User ID=SCOTT;" +
 "Password=TIGER;" +
 "Data Source=(" +
@@ -170,7 +170,7 @@ sudo /etc/init.d/oracle-xe configure
 
 <!-- -->
 
-```
+``` text
 "Data Source=tnsname;Integrated Security=true"
 ```
 

@@ -15,7 +15,7 @@ Gtk# is really a bad name. Because Gtk# is not limited to C#, any programming la
 Exposing .NET Libraries to Java
 ===============================
 
-Now, Gtk# is a .NET assembly (this is the ECMA lingo for "library"), and Java does not know anything about this. It is necessary first to generate some stubs for these classes to let the Java compiler knows about the types defined in the C# world. This is done using the `netexp.exe `program from IKVM, like this:
+Now, Gtk# is a .NET assembly (this is the ECMA lingo for "library"), and Java does not know anything about this. It is necessary first to generate some stubs for these classes to let the Java compiler knows about the types defined in the C# world. This is done using the `netexp.exe` program from IKVM, like this:
 
 ``` bash
 ikvmstub /mono/lib/mscorlib.dll
@@ -31,7 +31,7 @@ $ ls *.jar
 atk-sharp.jar  glib-sharp.jar  gtk-sharp.jar  mscorlib.jar
 ```
 
-The `ikvmstub `program will import all of the types into the "cli" namespace. So if you had a class called "Gtk.Window", it will be exposed to Java as "cli.Gtk.Window".
+The `ikvmstub` program will import all of the types into the "cli" namespace. So if you had a class called "Gtk.Window", it will be exposed to Java as "cli.Gtk.Window".
 
 Compiling Our Program
 =====================
@@ -54,7 +54,7 @@ To compile the above program type:
 javac -classpath gtk-sharp.jar Demo.java
 ```
 
-This produces a `Demo.class `file that contains the Java bytecodes. The -classpath file instructs the Java compiler to find the type definitions on the `gtk-sharp.jar `file that we had previously produced with `ikvmstub `.
+This produces a `Demo.class` file that contains the Java bytecodes. The -classpath file instructs the Java compiler to find the type definitions on the `gtk-sharp.jar` file that we had previously produced with `ikvmstub`.
 
 Running Our Java Code in Mono
 =============================
@@ -113,7 +113,7 @@ But we can go one step further. We can avoid completely the JIT process by preco
     $ ls Demo.*
     Demo.class  Demo.dll  Demo.exe  Demo.exe.so
 
-The `Demo.exe.so `contains the native x86 code. Mono still requires the Demo.exe file to be around to extract metadata, but the Just-in-Time compiler will not be used in that case:
+The `Demo.exe.so` contains the native x86 code. Mono still requires the Demo.exe file to be around to extract metadata, but the Just-in-Time compiler will not be used in that case:
 
     mono Demo.exe
 

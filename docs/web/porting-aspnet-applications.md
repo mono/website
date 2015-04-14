@@ -623,14 +623,18 @@ Running the application on Unix
 
 **Using MONO_IOMAP**
 
-> On Unix systems, Mono supports an I/O compatibility mode which allows you to ignore the file name case when accessing files on disk. The mode also takes care of disk designators (e.g. `c:`). Enabling the translation carries, obviously, some performance penalty, but is a good way to get your application up and running quickly. To enable the compatibility mode, make sure your web server's (XSP's or Apache's) environment contains the `MONO_IOMAP` variable set to **all**:
->
->     MONO_IOMAP=all
->     export MONO_IOMAP
->
-> If you're using `mod_mono`, put the following line in your virtual host config file:
->
->     MonoSetEnv MONO_IOMAP=all
+On Unix systems, Mono supports an I/O compatibility mode which allows you to ignore the file name case when accessing files on disk. The mode also takes care of disk designators (e.g. `c:`). Enabling the translation carries, obviously, some performance penalty, but is a good way to get your application up and running quickly. To enable the compatibility mode, make sure your web server's (XSP's or Apache's) environment contains the `MONO_IOMAP` variable set to **all**:
+
+``` bash
+MONO_IOMAP=all
+export MONO_IOMAP
+```
+
+If you're using `mod_mono`, put the following line in your virtual host config file:
+
+``` text
+MonoSetEnv MONO_IOMAP=all
+```
 
 Supporting Multiple Platforms
 -----------------------------

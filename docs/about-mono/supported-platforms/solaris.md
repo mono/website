@@ -17,19 +17,21 @@ Solaris has a buggy tar implementation, so make sure you extract the mono source
 
 Make sure you use GNU make, not sun's make. Otherwise you will get an error message like:
 
-` make: Fatal error in reader: Makefile, line 2: Unexpected end of line seen`
+`make: Fatal error in reader: Makefile, line 2: Unexpected end of line seen`
 
 On solaris, some tools like 'ar' are not in the default PATH, but in /usr/sfw/bin. The symptom is a build failure like this:
 
-` false cru .libs/libmonogc.a .libs/allchblk.o .libs/alloc.o .libs/blacklst.o .libs/checksums.o .libs/dbg_mlc.o .libs/dyn_load.o .libs/finalize.o .libs/gc_dlopen.o .libs/gcj_mlc.o .libs/headers.o .libs/malloc.o .libs/mallocx.o .libs/mark.o .libs/mark_rts.o .libs/misc.o .libs/new_hblk.o .libs/obj_map.o .libs/os_dep.o .libs/pcr_interface.o .libs/ptr_chck.o .libs/real_malloc.o .libs/reclaim.o .libs/solaris_pthreads.o .libs/solaris_threads.o .libs/specific.o .libs/stubborn.o .libs/typd_mlc.o .libs/backgraph.o .libs/win32_threads.o .libs/pthread_support.o .libs/pthread_stop_world.o .libs/darwin_stop_world.o .libs/mach_dep.o make[3]: *** [libmonogc.la] Error 1`
+`false cru .libs/libmonogc.a .libs/allchblk.o .libs/alloc.o .libs/blacklst.o .libs/checksums.o .libs/dbg_mlc.o .libs/dyn_load.o .libs/finalize.o .libs/gc_dlopen.o .libs/gcj_mlc.o .libs/headers.o .libs/malloc.o .libs/mallocx.o .libs/mark.o .libs/mark_rts.o .libs/misc.o .libs/new_hblk.o .libs/obj_map.o .libs/os_dep.o .libs/pcr_interface.o .libs/ptr_chck.o .libs/real_malloc.o .libs/reclaim.o .libs/solaris_pthreads.o .libs/solaris_threads.o .libs/specific.o .libs/stubborn.o .libs/typd_mlc.o .libs/backgraph.o .libs/win32_threads.o .libs/pthread_support.o .libs/pthread_stop_world.o .libs/darwin_stop_world.o .libs/mach_dep.o make[3]: *** [libmonogc.la] Error 1`
 
 Solaris has a tool named 'mcs' which is not our mcs compiler. The symptom is a message like this:
 
-` gmake[5]: Entering directory '/home/pablo/mono/trunk/mcs' usage: mcs [-cdpVz] [-a string] [-n name] file ... gmake[6]: *** [build/deps/basic-profile-check.exe] Error 1`
+`gmake[5]: Entering directory '/home/pablo/mono/trunk/mcs' usage: mcs [-cdpVz] [-a string] [-n name] file ... gmake[6]: *** [build/deps/basic-profile-check.exe] Error 1`
 
 Some glib packages on solaris have been compiled with sun's C compiler, so they are including the '-mt' argument in gthread-2.0.pc. This causes the build to fail with gcc:
 
-``  /bin/bash ../../libtool --quiet --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../.. -I../../mono -I../../libgc/include -mt -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DGC_SOLARIS_THREADS -DGC_SOLARIS_PTHREADS -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DUSE_MMAP -DUSE_MUNMAP -DPLATFORM_SOLARIS -D_FILE_OFFSET_BITS=64 -D_XOPEN_SOURCE=500 -D__EXTENSIONS__ -D_XOPEN_SOURCE_EXTENDED=1  -g -O2 -fno-strict-aliasing -g -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -Wstrict-prototypes  -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wno-cast-qual -Wcast-align -Wwrite-strings -Wno-char-subscripts -MT mono-hash.lo -MD -MP -MF .deps/mono-hash.Tpo -c -o mono-hash.lo mono-hash.c cc1: error: invalid option `t' ``
+``` bash
+/bin/bash ../../libtool --quiet --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../.. -I../.. -I../../mono -I../../libgc/include -mt -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -DGC_SOLARIS_THREADS -DGC_SOLARIS_PTHREADS -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DUSE_MMAP -DUSE_MUNMAP -DPLATFORM_SOLARIS -D_FILE_OFFSET_BITS=64 -D_XOPEN_SOURCE=500 -D__EXTENSIONS__ -D_XOPEN_SOURCE_EXTENDED=1  -g -O2 -fno-strict-aliasing -g -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -Wstrict-prototypes  -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wno-cast-qual -Wcast-align -Wwrite-strings -Wno-char-subscripts -MT mono-hash.lo -MD -MP -MF .deps/mono-hash.Tpo -c -o mono-hash.lo mono-hash.c cc1: error: invalid option `t'
+```
 
 To build Mono on Solaris/x86-64, you should install the latest Boehm GC from the Boehm web site and then you can build Mono like this:
 

@@ -85,7 +85,7 @@ You have the following possible combinations of APP/VER:
 Calling APP without specifying VER will load the latest version
 ```
 
-You can then configure your environment to use the desired version by calling **`. mono-snapshot APP/VER`** - for example, **`. mono-snapshot mono/20140807112602`** (or simply **`. mono-snapshot mono`**). Please note the leading "**`. `**":
+You can then configure your environment to use the desired version by calling **`. mono-snapshot APP/VER`** - for example, **`. mono-snapshot mono/20140807112602`** (or simply **`. mono-snapshot mono`**). Please note the leading "**`.`**":
 
 ``` bash
 [directhex@centossy ~]$ . mono-snapshot mono
