@@ -2,7 +2,7 @@
 title: Compiling Mono on Linux
 ---
 
-Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.
+Pick an installation directory where you want your new copy of Mono to be installed. Let's call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.
 
 If you have more than one Mono installation (for example to keep multiple versions around), you will want to read the document on [Parallel Mono Environments](/docs/compiling-mono/parallel-mono-environments/) on how to keep your various Mono installations separate.
 
@@ -18,7 +18,7 @@ On some distribution you will need to install some development tools which are n
 Debian based distributions
 --------------------------
 
-On Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.<br/>
+On a Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.<br/>
 This can be done easily by using *apt-get*:
 
 ```bash
@@ -43,7 +43,7 @@ By the end of this process, you will have Mono installed on your PREFIX director
 Building Mono From a Git Source Code Checkout
 ---------------------------------------------
 
-To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
+To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands (remember to replace PREFIX with your installation prefix that you selected):
 
 ``` bash
 PATH=$PREFIX/bin:$PATH
@@ -54,12 +54,12 @@ make
 make install
 ```
 
-Note that you have to have git installed your distribution.
+Note that you have to have git installed on your distribution.
 
 One Stop Shop Build Script (Debian)
 -----------------------------------
 
-If you are on a Debian system (Debian/Ubuntu) and you just want to install Mono without thinking too much, just cut and paste the following script, and enter your root password when requested:
+If you are on a Debian system (Debian/Ubuntu) and you just want to install Mono without thinking too much, just copy and paste the following script, and enter your root password when requested:
 
 ``` bash
 #!/bin/bash
