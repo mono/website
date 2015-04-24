@@ -20,11 +20,11 @@ Latest Standards
 
 The following official Ecma documents are available for [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm), [TR-89](http://www.ecma-international.org/publications/techreports/E-TR-089.htm)).
 
--   [Ecma-334](http://www.go-mono.com/ecma/Ecma-334.pdf): C# Specification (pdf)
--   [Ecma-335](http://www.go-mono.com/ecma/Ecma-335.pdf): CLI Specification – Virtual Machine (pdf)
--   [Ecma-335](http://www.go-mono.com/ecma/Ecma-335-xml.zip): CLI Specification – XML-based class library (zip)
--   [TR-84](http://www.go-mono.com/ecma/TR-084.zip): CLI Technical Report – Microsoft© Word and PDF class library specification (zip)
--   [TR-89](http://www.go-mono.com/ecma/TR-089.pdf): CLI Technical Report – Additional Generics Library (pdf)
+-   [Ecma-334](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf): C# Specification (pdf)
+-   [Ecma-335](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf): CLI Specification – Virtual Machine (pdf)
+-   [Ecma-335](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip): CLI Specification – XML-based class library (zip)
+-   [TR-84](http://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip): CLI Technical Report – Microsoft© Word and PDF class library specification (zip)
+-   [TR-89](http://www.ecma-international.org/publications/files/ECMA-TR/TR-089.pdf): CLI Technical Report – Additional Generics Library (pdf)
 
  A reference implementation for TR-89 can be found [here](http://kahu.zoot.net.nz/ecma/index.html#Anchor-Ecma-49575); a reference implementation for the Parallel API can be found [here](http://sourceforge.net/projects/cli-parallel).
 
