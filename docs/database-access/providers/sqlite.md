@@ -3,6 +3,7 @@ title: SQLite
 redirect_from:
   - /SQLite/
   - /SQL_Lite/
+  - /SQLit/
 ---
 
 O assembly Mono.Data.SqliteClient contém um provedor de dados ADO.NET para o banco de dados [SQLite](http://www.sqlite.org/) (tanto para a versão 2 quanto para a versão 3).

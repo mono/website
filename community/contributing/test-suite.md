@@ -176,7 +176,7 @@ Mono ships with three compilers: C#, VB.NET and JScript. The tests are executed 
 
 The C# compilation tests live in mcs/tests, and the C# error tests live in mcs/errors.
 
-The VB.NET compilation tests live in mcs/btests.
+The VB.NET compilation tests live in vbnc/tests in the [mono-basic](https://github.com/mono/mono-basic) repository.
 
 Runtime tests
 -------------

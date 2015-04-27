@@ -50,7 +50,9 @@ As such this host, unless you provide your own **mscorlib.dll** or wish to hack 
 
 ### Moonlight
 
-[Moonlight](/docs/web/moonlight/), Mono's open source Silverlight implemention, is a complete, real-life and usable, **coreclr** host.
+[Moonlight](/docs/web/moonlight/), Mono's open source Silverlight implemention, ~~is a complete, real-life and usable, **coreclr** host~~.
+
+**Note: Moonlight isn't actively developed anymore. If you're feeling adventurous you can probably get it working by compiling from [source](https://github.com/mono/moon), but we recommend you move away from Moonlight as soon as possible.**
 
 Being a web browser plugin this may looks like a very different hosting scenario - and it is in many cases. But from a **coreclr** point of view things are very similar the earlier, generic code sample.
 
