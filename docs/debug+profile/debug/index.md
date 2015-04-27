@@ -215,7 +215,7 @@ def __lldb_init_module (debugger, dict):
     print '"monobt" command installed'
 ```
 
-Assuming the above script is saved in \~/Library/lldb/monobt.py, you can load it automatically in every lldb session by putting the following into .lldbinit (in your \$HOME directory):
+Assuming the above script is saved in `~/Library/lldb/monobt.py`, you can load it automatically in every lldb session by putting the following into .lldbinit (in your \$HOME directory):
 
     command script import ~/Library/lldb/monobt.py
 
