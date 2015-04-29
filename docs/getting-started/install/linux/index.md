@@ -76,12 +76,14 @@ The package ***mono-complete*** should be installed to install everything - this
 
 The package ***referenceassemblies-pcl*** should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.
 
+The package ***ca-certificates-mono*** should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.
+
 Notes
 -----
 
 After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
 
-Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running `mozroots --import --sync`).
+Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running `mozroots --import --sync`). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases **make sure the `ca-certificates-mono` package is installed**.
 
 Accessing older releases
 ------------------------
