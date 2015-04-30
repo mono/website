@@ -1,5 +1,7 @@
 ---
 title: Mono Releases
+mono4xreleases:
+ - {version: 4.0.0, date: '2015-04-29'}
 mono3xreleases:
  - {version: 3.12.1, date: '2015-03-07'}
  - {version: 3.12.0, date: '2015-01-13'}
@@ -157,6 +159,13 @@ redirect_from:
 
 This page contains a list of all Mono releases. The latest release can be found [here](/download).<br/>
 Mono version numbers follow a specific policy, more [here](/docs/about-mono/versioning/).
+
+Mono 4.x
+--------
+
+{% for release in page.mono4xreleases %}
+  - [Mono {{ release.version }}](/docs/about-mono/releases/{{ release.version }}) {% if release.date %} *({{ release.date | date_to_string }})* {% endif %}
+{% endfor %}
 
 Mono 3.x
 --------
