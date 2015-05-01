@@ -132,39 +132,36 @@ C# Example (1.1 profile of the new assembly and the old assembly)
  using System.Data;
  using Mono.Data.SqliteClient;
  
- public class Test
+ public class SQLiteTest
  {
-    public static void Main(string[] args)
+    public static void Main()
     {
-       string connectionString = "URI=file:SqliteTest.db";
-       IDbConnection dbcon;
-       dbcon = (IDbConnection) new SqliteConnection(connectionString);
+       const string connectionString = "URI=file:SqliteTest.db";
+       IDbConnection dbcon = new SqliteConnection(connectionString);
        dbcon.Open();
        IDbCommand dbcmd = dbcon.CreateCommand();
        // requires a table to be created named employee
        // with columns firstname and lastname
        // such as,
        //        CREATE TABLE employee (
-       //           firstname varchar(32),
-       //           lastname varchar(32));
-       string sql =
+       //           firstname nvarchar(32),
+       //           lastname nvarchar(32));
+       const string sql =
           "SELECT firstname, lastname " +
           "FROM employee";
        dbcmd.CommandText = sql;
        IDataReader reader = dbcmd.ExecuteReader();
-       while(reader.Read()) {
-            string FirstName = reader.GetString (0);
-            string LastName = reader.GetString (1);
-            Console.WriteLine("Name: " +
-                FirstName + " " + LastName);
+       while(reader.Read())
+       {
+            string firstName = reader.GetString(0);
+            string lastName = reader.GetString(1);
+            Console.WriteLine("Name: {0} {1}",
+                firstName, lastName);
        }
        // clean up
-       reader.Close();
-       reader = null;
+       reader.Dispose();
        dbcmd.Dispose();
-       dbcmd = null;
        dbcon.Close();
-       dbcon = null;
     }
  }
 ```
