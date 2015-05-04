@@ -54,7 +54,7 @@ make
 make install
 ```
 
-Note that you have to have git installed your distribution.
+Note that you have to have git installed on your distribution.
 
 One Stop Shop Build Script (Debian)
 -----------------------------------
