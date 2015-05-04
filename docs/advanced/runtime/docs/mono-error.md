@@ -11,7 +11,7 @@ This document highlights some of the design goals and decisions, the implementat
 ## Design goals
 
 - Replace the majority of the adhoc error handling subsystems present today in the runtime. Each one is broken
-is a subtle way, has slightly different semantics and error conversion between them is spot, at best.
+in a subtle way, has slightly different semantics and error conversion between them is spot, at best.
 
 - Map well to the final destination of all runtime errors: managed exceptions. This includes being compatible
 with .net when it comes to the kind of exception produced by a given error condition.
@@ -33,7 +33,7 @@ are not supported to be able to produce them - such use case has yet to arise.
 
 ### Writing a function that produces errors
 
-```
+```c
 /**
  *
  * @returns NULL on error
@@ -61,7 +61,7 @@ Important points from the above:
 Writing a function that consumes errors
 =======================================
 
-```
+```c
 void
 other_function (void)
 {
@@ -122,5 +122,3 @@ assert on failure as there's no adequate alternative at this point.
 - Use a static initializer in the declaration site instead of mono_error_init?
 - Force an error to always be set or only when there's an exception situation? I.E. mono_class_from_name failing to find the class X finding the class but it failed to load.
 - g_assert (mono_errork_ok (&error)) could be replaced by a macro that uses g_error so we can see the error contents on crashes.
-
-
