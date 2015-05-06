@@ -41,6 +41,7 @@ There are a lot of global data structures which can be protected by a 'simple' l
 Simple locks include, at least, the following :
 
 -   the per-image lock acquired by using mono_image_(un)lock functions.
+-   the threads lock acquired by using mono_threads_(un)lock.
 
 #### The loader lock
 
@@ -53,6 +54,11 @@ Each appdomain has a lock which protects the per-domain data structures.
 #### The domain jit code hash lock
 
 This per-domain lock protects the JIT'ed code of each domain. Originally we used the domain lock, but it was split to reduce contention.
+
+#### Allocation locks and foreigh locks
+
+Mono features a few memory allocation subsystems such as: a lock-free allocator, the GC. Those subsystems are designed so they don't rely on any of the other subsystems in the runtime. This ensures that locking within them is transparent to the rest of the runtime and are not covered here. It's the same rule  when dealing with locking that happens within libc.
+
 
 ### The locking hierarchy
 
