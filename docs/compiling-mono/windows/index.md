@@ -4,65 +4,50 @@ redirect_from:
   - /Compiling_Mono_on_Windows/
 ---
 
-There are two ways of building Mono on Windows, both do require a Cygwin setup which provides some tools required by Mono at build time. First, download and install Cygwin from [www.cygwin.com](http://www.cygwin.com). Use the 32 bit installer (setup-x86.exe).
+There are two ways of building Mono on Windows, both do require a Cygwin setup which provides some tools required by Mono at build time. First, download Cygwin from [www.cygwin.com](http://www.cygwin.com). Use the 32 bit installer (setup-x86.exe).
 
-Make sure you select the following packages when installing:
+Run the following command in cmd.exe to install the required packages:
 
-    * autoconf
-    * automake
-    * bison
-    * gcc-core
-    * gcc-g++
-    * mingw-gcc
-    * libtool
-    * make
-    * python
+``` shell
+setup-x86.exe --root "C:\cygwin" --quiet-mode --packages autoconf,automake,bison,gcc-core,gcc-g++,mingw-runtime,mingw-binutils,mingw-gcc-core,mingw-gcc-g++,mingw-pthreads,mingw-w32api,libtool,make,python,gettext-devel,gettext,intltool,libiconv,pkg-config,git,curl,libxslt
+```
 
-Make sure you are using a recent cygwin version.
+At this point, you can either do a [Visual Studio build](/docs/compiling-mono/windows/compiling-with-visualstudio/) or you can continue reading the instructions for a Cygwin build.
 
-Select some handy utils for later use:
+The following steps assume you're running in an instance of the Cygwin terminal. Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there.
 
-    * wget
-    * zip
+Building Mono from a Release Package
+------------------------------------
 
-Some other tools that are nice:
+Mono releases are distributed as .tar.gz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
-    * patch
-    * openssh or PuTTY
-    * vim
+``` bash
+tar xvf mono-VERSION.tar.gz
+cd mono-VERSION
+./configure --prefix=PREFIX --host=i686-pc-mingw32
+make
+make install
+```
 
-At this point, you can do a [VisualStudio build](/docs/compiling-mono/windows/compiling-with-visualstudio/) or you can continue reading the instructions for a cygwin build.
+By the end of this process, you will have Mono installed on your PREFIX directory.
 
-Download the Mono source code from the [released tarballs](/download/) or [GitHub](https://github.com/mono/mono).
+Building Mono From a Git Source Code Checkout
+---------------------------------------------
 
-If you download the tarball, extract it with:
+To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system and in you PATH, as the build requires a working C# compiler to run.
 
-    tar -zxvf mono-x.x.x.x.tar.gz
+On Windows, you should set the following Git setting to avoid issues with line endings: `git config --global core.autocrlf input`
 
-Add mono to your path. This could be either a previous build of Mono, or an install from the Mono Windows Combined Installer from [Downloads](/download/). Using the installer is probably the easiest for most cases.
+Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
 
-    export PATH=$PATH:<path to installed mono>/bin
-
- When using the mono tarball, in the mono source directory, run the following:
-
-    ./configure --host=i686-pc-mingw32
-
-If using mono from git, use:
-
-    ./autogen.sh --host=i686-pc-mingw32
-
-Feel free to use any prefix you like. Continue with:
-
-    make
-    make install
-
-If everything goes well, you will have a compiled mono in an hour or two.
-
-Some versions of mingw ship with broken headers which causes compilation to fail. In that case, check this post:
-
-[http://mono.1490590.n4.nabble.com/mono-from-git-will-not-build-on-cygwin-32-td4660749.html#a4660756](http://mono.1490590.n4.nabble.com/mono-from-git-will-not-build-on-cygwin-32-td4660749.html#a4660756)
-
-Archive: a tutorial on building Mono on Windows by Andreia Gaita is available [here](http://shana.worldofcoding.com/en/mono_cygwin_tutorial.html).
+``` bash
+PATH=$PREFIX/bin:$PATH
+git clone https://github.com/mono/mono.git
+cd mono
+./autogen.sh --prefix=$PREFIX --host=i686-pc-mingw32
+make
+make install
+```
 
 See also these articles:
 
