@@ -59,7 +59,6 @@ This per-domain lock protects the JIT'ed code of each domain. Originally we used
 
 Mono features a few memory allocation subsystems such as: a lock-free allocator, the GC. Those subsystems are designed so they don't rely on any of the other subsystems in the runtime. This ensures that locking within them is transparent to the rest of the runtime and are not covered here. It's the same rule  when dealing with locking that happens within libc.
 
-
 ### The locking hierarchy
 
 It is useful to model locks by a locking hierarchy, which is a relation between locks, which is reflexive, transitive, and antisymmetric, in other words, a lattice. If a thread wants to acquire a lock B, while already holding A, it can only do it if A \< B. If all threads work this way, then no deadlocks can occur.

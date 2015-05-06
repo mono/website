@@ -41,12 +41,12 @@ are not supported to be able to produce them - such use case has yet to arise.
 void*
 my_function (int a, MonoError *error)
 {
-	mono_error_init (error);
-	if (a <= 0) {//
-		mono_error_set_argument (error, "a", "argument a must be bigger than zero, it was %d", a);
-		return NULL;
-	}
-	return malloc (a);
+    mono_error_init (error);
+    if (a <= 0) {//
+        mono_error_set_argument (error, "a", "argument a must be bigger than zero, it was %d", a);
+        return NULL;
+    }
+    return malloc (a);
 }
 ```
 
@@ -57,7 +57,6 @@ Important points from the above:
 - Call one of the mono_error_set functions based on what managed exception this should produce and the available information
 - Document that a NULL returns means an error
 
-
 Writing a function that consumes errors
 =======================================
 
@@ -65,23 +64,23 @@ Writing a function that consumes errors
 void
 other_function (void)
 {
-	MonoError error;
-	void *res;
-	
-	res = my_function (10, &error);
-	//handling the error:
-	//1st option: raise an exception
-	mono_error_raise (&error); //won't raise in case of no error
+    MonoError error;
+    void *res;
 
-	//2nd option: legacy code that can't handle failures:
-	g_assert (mono_error_ok (&error));
+    res = my_function (10, &error);
+    //handling the error:
+    //1st option: raise an exception
+    mono_error_raise (&error); //won't raise in case of no error
 
-	//3rd option: convert to an exception and handle it upwards
-	if (!res)
-		return mono_error_convert_to_exception (&error); //implicit cleanup
+    //2nd option: legacy code that can't handle failures:
+    g_assert (mono_error_ok (&error));
 
-	//4th option: ignore
-	mono_error_cleanup (&error);
+    //3rd option: convert to an exception and handle it upwards
+    if (!res)
+        return mono_error_convert_to_exception (&error); //implicit cleanup
+
+    //4th option: ignore
+    mono_error_cleanup (&error);
 }
 ```
 
