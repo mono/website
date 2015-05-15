@@ -2,6 +2,7 @@
 title: Mono Releases
 mono4xreleases:
  - {version: 4.0.0, date: '2015-04-29'}
+ - {version: 4.0.1, date: '2015-05-14'}
 mono3xreleases:
  - {version: 3.12.1, date: '2015-03-07'}
  - {version: 3.12.0, date: '2015-01-13'}
