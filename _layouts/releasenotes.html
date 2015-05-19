@@ -1,0 +1,16 @@
+---
+layout: docpage
+---
+{% if page.releasedate and page.releasedate != '' %}
+<div class="meta">
+  <span class="date"> Release date: {{ page.releasedate | date_to_string }}</span>
+</div>
+{% else %}
+<div class="row">
+  <div class="small-12 columns">
+     <div data-alert class="alert-box warning"><h6><i class="fa fa-warning"></i> This page is a <strong>DRAFT</strong> and might not reflect the final release. The specified Mono version has not been released yet, we only use this document to track the major themes.</div>
+  </div>
+</div>
+{% endif %}
+
+{{ content }}
