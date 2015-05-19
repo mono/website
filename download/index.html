@@ -2,7 +2,6 @@
 layout: base
 title: Download
 navgroup: download
-latestmono: 4.0.0
 redirect_from:
   - /downloads/
   - /Downloads/
@@ -12,7 +11,7 @@ redirect_from:
   <div class="small-12 columns">
     <h1>Download</h1>
 
-    <h5>The latest Mono release is: <strong>{{page.latestmono}}</strong></h5>
+    <h5>The latest Mono release is: <strong>{{ site.data.latestrelease.version }}</strong></h5>
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> or as a <a href="http://download.mono-project.com/sources/mono/">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs vertical" data-tab data-options="deep_linking: true; scroll_to_content: false">
@@ -26,7 +25,7 @@ redirect_from:
         <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
-          <a href="http://download.mono-project.com/archive/{{page.latestmono}}/macos-10-x86/MonoFramework-MDK-{{page.latestmono}}.macos10.xamarin.x86.pkg" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
+          <a href="{{ site.data.latestrelease.mono_mac_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
         </div>
       </div>
       <div class="panel content" id="download-lin">
@@ -71,19 +70,19 @@ redirect_from:
         <h3>Mono for Windows is available as a Windows Installer file</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
-          <a href="http://download.mono-project.com/archive/4.0.1/windows-installer/mono-4.0.1-gtksharp-2.12.26-win32-0.msi" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
+          <a href="{{ site.data.latestrelease.mono_windows_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
         </div>
         <hr />
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
         <div>
-          <a href="http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.26.msi" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
+          <a href="{{ site.data.latestrelease.gtksharp_windows_url }}" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
         </div>
       </div>
     </div>
 
     <h2>Release Notes</h2>
-    <p>Check out the release notes of <a href="/docs/about-mono/releases/{{page.latestmono}}/">Mono {{page.latestmono}}</a>, or view the release notes of older Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
+    <p>Check out the release notes of all Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
 
     <h2>MonoDevelop IDE</h2>
     <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p> 
