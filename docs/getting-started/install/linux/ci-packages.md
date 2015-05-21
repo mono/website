@@ -25,7 +25,7 @@ Regardless of your distribution, you will need the Mono Project GPG signing key,
 Add the Mono Project GPG signing key and the package repository (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://jenkins.mono-project.com/repo/debian sid main" | sudo tee /etc/apt/sources.list.d/mono-jenkins.list
 sudo apt-get update
 ```
