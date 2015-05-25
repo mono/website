@@ -35,6 +35,18 @@ The program should run and output:
 
     Hello Mono World
 
+HTTPS connections
+-----------------
+
+To make sure HTTPS connections work, download and run the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
+
+``` bash
+mcs tlstest.cs /r:System.dll /r:Mono.Security.dll
+mono tlstest.exe https://www.nuget.org
+```
+
+The program prints an error if something is wrong.
+
 Winforms Hello World
 --------------------
 

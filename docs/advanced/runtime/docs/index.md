@@ -24,6 +24,12 @@ This page currently contains links to the wiki-fied version of the runtime docum
 -   [Other topics](/docs/advanced/runtime/docs/other/)
 -   [Glossary](/docs/advanced/runtime/docs/glossary)
 
+### Runtime guidelines
+
+The following describe guidelines for specific areas of the runtime
+
+-   [Error handling/MonoError](/docs/advanced/runtime/docs/mono-error/)
+
 Additionally, Jambunathan K has a very interesting blog that talks about [Mono Runtime Notes](http://monoruntime.wordpress.com/).
 
 For information on project planning see [Runtime_Projects](/docs/advanced/runtime/runtime-projects/).
