@@ -11,7 +11,7 @@ Secure Socket Layer (SSL) / Transport Layer Security (TLS)
 
 That's probably because you do not trust the site you are connecting to. Note that a default installation of Mono doesn't trust anyone!
 
-You can confirm this by using the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
+You can confirm this by using the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0). It prints an error if something is wrong.
 
 ``` bash
 mcs tlstest.cs /r:System.dll /r:Mono.Security.dll
@@ -20,13 +20,13 @@ mono tlstest.exe https://www.anywhere.com
 
 There are four alternatives to solve this problem:
 
+-   Starting with Mono 3.12.0 a new tool called `cert-sync` is [included](/docs/about-mono/releases/3.12.0/#cert-sync) which syncs Mono's certificate store with the system certificate store. It should run automatically when you install the official Mono packages. Make sure the `ca-certificates-mono` package is installed.
+
 -   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully) article.
 
 -   Use the `certmgr.exe` tool (included in Mono) to add the root certificates into the Mono **Trust** store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
-
--   Starting with Mono 3.12.0 a new tool called `cert-sync` is [included](/docs/about-mono/releases/3.12.0/#cert-sync) which syncs Mono's certificate store with the system certificate store. It should run automatically when you install the official Mono packages.
 
 ### I imported the root certificate but it still doesn't work
 

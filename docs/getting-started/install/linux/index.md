@@ -15,7 +15,7 @@ Debian, Ubuntu, and derivatives
 Add the Mono Project GPG signing key and the package repository to your system (if you don't use sudo, be sure to switch to root):
 
 ``` bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 sudo apt-get update
 ```
@@ -30,6 +30,14 @@ To enable mod_mono installation on Ubuntu 13.10 and later, and Debian 8.0 and la
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+```
+
+#### libgdiplus (Debian 8.0 and later, NOT Ubuntu)
+
+To enable libgdiplus installation on Debian 8.0 and later (and their derivatives), you will need to add a second repository to your system, **in addition** to the generic Debian/Ubuntu repository above (if you don't use sudo, be sure to switch to root):
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
 #### Older Ubuntu releases (Ubuntu 12.10 and 12.04)
@@ -76,12 +84,14 @@ The package ***mono-complete*** should be installed to install everything - this
 
 The package ***referenceassemblies-pcl*** should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.
 
+The package ***ca-certificates-mono*** should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.
+
 Notes
 -----
 
 After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
 
-Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running `mozroots --import --sync`).
+Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running `mozroots --import --sync`). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases **make sure the `ca-certificates-mono` package is installed**.
 
 Accessing older releases
 ------------------------
