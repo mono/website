@@ -1,0 +1,49 @@
+---
+layout: base
+title: Beta Download
+navgroup: download
+redirect_from:
+  - /beta/
+  - /Beta/
+---
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Beta Download</h1>
+
+    <h5>The latest Beta Mono release is: <strong>{{ site.data.betarelease.version }}</strong></h5>
+    <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> or as a <a href="http://download.mono-project.com/sources/mono/">Tarball</a>.</p>
+
+    <dl id="mono-download" class="tabs vertical" data-tab data-options="deep_linking: true; scroll_to_content: false">
+      <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
+      <dd><a href="#download-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
+    </dl>
+
+    <div class="tabs-content vertical">
+      <div class="panel content active" id="download-mac">
+        <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
+        <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+        <div>
+          <a href="{{ site.data.betarelease.mono_mac_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono MDK</a>
+        </div>
+      </div>
+      <div class="panel content" id="download-lin">
+        <h3>Mono for Linux is available for various distributions</h3>
+        <p>Please refer to the <a href="/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+        <h4>Xamarin packages</h4>
+        <div>
+          <p>These packages are built, tested and distributed by Xamarin. Use these if you want to use a stable, official and up-to-date version of Mono.</p>
+          <ul>
+            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives-beta-channel">Debian, Ubuntu, and derivatives</a></li>
+            <li><a href="/docs/getting-started/install/linux/#centos-fedora-and-derivatives-beta-channel">CentOS, Fedora, and derivatives</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>Release Notes</h2>
+    <p>Check out the release notes of all Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
+
+    <h2>MonoDevelop IDE</h2>
+    <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p> 
+  </div>
+</div>
