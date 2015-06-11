@@ -22,7 +22,7 @@ On Debian based distribution you should guarantee that some packages are install
 This can be done easily by using *apt-get*:
 
 ```bash
-  $ sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext
+  $ sudo apt-get install git autoconf libtool libtool-bin automake build-essential mono-devel gettext
 ```
 
 Building Mono from a Release Package
