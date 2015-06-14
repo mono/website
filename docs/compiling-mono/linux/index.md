@@ -24,6 +24,7 @@ This can be done easily by using *apt-get*:
 ```bash
   $ sudo apt-get install git autoconf libtool libtool-bin automake build-essential mono-devel gettext
 ```
+Note if you are using Ubuntu 15.04, you also need to install libtool-bin package.
 
 Building Mono from a Release Package
 ------------------------------------
