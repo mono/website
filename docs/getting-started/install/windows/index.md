@@ -7,7 +7,6 @@ redirect_from:
 
 O Mono roda no Windows, esta página descreve os vários recursos disponíveis para os usuários que querem usar Mono no Windows, bem como a utilização de tecnologias baseadas em Mono no Windows sem Mono (como Gtk #)
 
-<<<<<<< HEAD
 Instalando o Mono no Windows
 ============================
 
