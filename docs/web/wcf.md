@@ -14,7 +14,7 @@ WCF in Mono was originally developed as part of the "olive" module in our source
 WCF development was started in 2005 and has been suspended and resumed various times. These are the four major efforts over the years:
 
 -   Initial development by the time of Mono Summit 2006 in Boston. ([Presentation](http://www.go-mono.com/meeting06/infocard-indigo.pdf))
--   Google Sumemr of Code development for P2P binding development by Marcos Cobena Morian. Seealso: [Mono Olive: Introducing Windows Communication Foundation notebook](http://www.youcannoteatbits.org/Files/Documents/Mono%20Olive%20Notebook%20-%2018-09-07.pdf)
+-   Google Summer of Code development for P2P binding development by Marcos Cobena Morian. Seealso: [Mono Olive: Introducing Windows Communication Foundation notebook](http://www.youcannoteatbits.org/Files/Documents/Mono%20Olive%20Notebook%20-%2018-09-07.pdf)
 -   Development led by Mainsoft team. See [Noam Lampert's blog](http://noamlampert.blogspot.com/search/label/Mono)
 -   Current phase, originally started as part of Moonlight 2.0 effort since 2009.
     -   We were working on WSHttpBinding support, which is mostly for the security stack (WS-Security, WS-Trust, WS-SecureConversation). It is left incomplete. For details, see [WCF_WSHttpBindingHacking](/archived/wcf_wshttpbindinghacking) page.
