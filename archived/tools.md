@@ -14,7 +14,7 @@ Some tools created and maintained by the Mono community to facilitate writing an
 <col width="50%" />
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>MonoDevelop</strong><br /> Homepage: <a href="http://www.monodevelop.com/">http://www.monodevelop.com/</a> <br /><br /> MonoDevelop is a free GNOME IDE primarily designed for C# and other .NET languages, supporting code completion, class management, and a Gtk# visual designer.</p></td>
+<td align="left"><p><strong>MonoDevelop</strong><br /> Homepage: <a href="http://www.monodevelop.com/">MonoDevelop</a> <br /><br /> MonoDevelop is a free GNOME IDE primarily designed for C# and other .NET languages, supporting code completion, class management, and a Gtk# visual designer.</p></td>
 </tr>
 </tbody>
 </table>

@@ -90,7 +90,7 @@ For mono versions before 2.8, use "**mono**" instead of "**mono-2**" in the abov
 
 On windows you need to generate an import library for mono.dll by getting the following file:
 
-> http://github.com/mono/mono/blob/master/msvc/mono.def
+<http://github.com/mono/mono/blob/master/msvc/mono.def>
 
 and creating mono.lib with the command:
 
