@@ -61,7 +61,7 @@ wxNet
 
 wx# Sample
 
-Homepage: [[|http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
+Homepage: [[http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
 
 wxNet is a .NET binding for the wxWindows cross-platform toolkit.
 
