@@ -33,7 +33,9 @@ The compiler will create "hello.exe", which you can run using:
 
 The program should run and output:
 
-    Hello Mono World
+``` bash
+Hello Mono World
+```
 
 HTTPS connections
 -----------------

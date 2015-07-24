@@ -22,6 +22,8 @@ Info
 Current Status
 --------------
 
+-   Not part of the mono builds any more, moved to https://github.com/mono/old-code
+
 -   Able to connect to Sybase ASE (Adapter Server Enterprise) 12.x databases
 
 -   Does not work with Sybase databases prior to 12.x, such as, 11.x. Is this due to Unicode or something with our TDS 5.0 implementation?

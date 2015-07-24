@@ -91,7 +91,7 @@ Para quem utiliza o Mono com versões anteriores à 2.8, utilize "**mono**" ao i
 
 No Windows você precisa gerar uma biblioteca de importação mono.dll através do seguinte arquivo:
 
-> http://github.com/mono/mono/blob/master/msvc/mono.def
+<http://github.com/mono/mono/blob/master/msvc/mono.def>
 
 e gerar o mono.lib com o seguinte comando:
 

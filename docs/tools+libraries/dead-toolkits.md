@@ -61,7 +61,7 @@ wxNet
 
 [![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
-Homepage: [wxNet](http://wxnet.sourceforge.net/)
+Homepage: [[wxNet](http://wxnet.sourceforge.net/)]
 
 O wxNet é um conector para o toolkit multiplataforma wxWindows.
 

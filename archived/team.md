@@ -1969,7 +1969,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Tim Haynes'+'<\/'+'a'+'>')
 </tr>
 <tr class="odd">
 <td align="left">Description:</td>
-<td align="left"><a href="http://www.openlinksw.com/">http://www.openlinksw.com/</a></td>
+<td align="left"><a href="http://www.openlinksw.com/">openlinksw</a></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Tasks:</p></td>

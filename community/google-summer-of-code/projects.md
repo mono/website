@@ -123,9 +123,9 @@ The main tasks would be:
 
 Related code:
 
-https://github.com/mono/CppSharp/blob/master/src/CppParser/Parser.cpp#L2559
+<https://github.com/mono/CppSharp/blob/master/src/CppParser/Parser.cpp#L2559>
 
-https://github.com/mono/CppSharp/blob/master/src/AST/Expression.cs
+<https://github.com/mono/CppSharp/blob/master/src/AST/Expression.cs>
 
 Feel free to get in touch with @tritao if you're interested in this and would like more guidance.
 
@@ -234,7 +234,7 @@ Debugger Tasks window support
 
 **Complexity:** Medium
 
-Since async and await keywords were introduced, tasks have become crucial part of development process. With the Tasks window, a user will be able to easily see current task state (Scheduled, Executing, Waiting or Deadlocked). More information: https://msdn.microsoft.com/en-us/library/dd998369.aspx
+Since async and await keywords were introduced, tasks have become crucial part of development process. With the Tasks window, a user will be able to easily see current task state (Scheduled, Executing, Waiting or Deadlocked). More information: <https://msdn.microsoft.com/en-us/library/dd998369.aspx>
 
 **Deliverables:** Tasks window implemented in MonoDevelop.
 
@@ -294,13 +294,13 @@ Each of those bullets is not enough for a single student over summer, but all of
 
 Resources:
 
-Specification: https://github.com/dotnet/roslyn/blob/portable-pdb/docs/specs/PortablePdb-Metadata.md
+Specification: <https://github.com/dotnet/roslyn/blob/portable-pdb/docs/specs/PortablePdb-Metadata.md>
 
-Roslyn's generator: https://github.com/dotnet/roslyn/tree/portable-pdb
+Roslyn's generator: <https://github.com/dotnet/roslyn/tree/portable-pdb>
 
 Branch of CoreFX with the metadata writer for portable PDB:
 
-https://github.com/dotnet/corefx/tree/dev/metadata/src/System.Reflection.Metadata
+<https://github.com/dotnet/corefx/tree/dev/metadata/src/System.Reflection.Metadata>
 
 **Mentors:** João Matos, Alexis Christoforides
 
@@ -344,8 +344,8 @@ Make the SGen garbage collector work independently of Mono
 
 We've begun work on making Mono's garbage collector, SGen, work independently of Mono, for embedding in other programming language implementations:
 
-  https://github.com/schani/mono/tree/sgen-independence
-  https://github.com/schani/simple-sgen-client
+  <https://github.com/schani/mono/tree/sgen-independence>
+  <https://github.com/schani/simple-sgen-client>
 
 It still needs a lot of polishing, documentation, and has to be brought into a state where it can be merged with Mono.  That includes doing benchmarking to make sure it doesn't regress in performance or memory usage.
 
@@ -375,7 +375,7 @@ Show Referring Objects in Debugger
 
 IntelliJ's debugger has a feature "Show Referring Objects", which displays a list of all objects that reference a given object:
 
-  http://blog.jetbrains.com/idea/2014/09/intellij-idea-14-eap-138-1980-1-is-out/
+  <http://blog.jetbrains.com/idea/2014/09/intellij-idea-14-eap-138-1980-1-is-out/>
 
 Wouldn't it be nice if the mono debugger had that feature, too?  SGen already has the functionality for internal debugging (it doesn't handle all states the heap can be in, but that can be arranged).
 
@@ -428,9 +428,9 @@ The last part is testing and fixing any crashes or incorrect behaviour. Unit tes
 
 Related code:
 
-https://github.com/mono/CppSharp
-https://github.com/ddobrev/QtSharp
-https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
+<https://github.com/mono/CppSharp>
+<https://github.com/ddobrev/QtSharp>
+<https://techbase.kde.org/Development/Languages/Qyoto> – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
 

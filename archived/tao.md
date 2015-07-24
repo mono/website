@@ -106,7 +106,7 @@ Other runtimes have not been tested, but will most likely work. The libraries ar
 
 Use our [Anonymous SVN repository](/SourceCodeRepository) to download it. The module name is \`tao'.
 
-You can browse the source at http://anonsvn.mono-project.com/viewcvs/trunk/tao/
+You can browse the source at <http://anonsvn.mono-project.com/viewcvs/trunk/tao/>
 
 Developers/Maintainers
 ======================

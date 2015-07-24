@@ -4,7 +4,7 @@ redirect_from:
   - /CPlusPlus/
 ---
 
-The CLI is able to host C++ compiled code on all [supported platforms](/docs/about-mono/supported-platforms/) as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default.
+The CLI is able to host C++ compiled code on all [supported platforms](/docs/about-mono/supported-platforms/) as long as the compiled code only contains CIL instructions and not a mix of CIL and native code. Microsoft Managed C++ and C++/CLI compilers produce mixed-mode assemblies by default, see [this guide](https://msdn.microsoft.com/en-us/library/t337zeha.aspx) on MSDN about converting them to pure CIL projects.
 
 Mixed-mode assemblies are experimentally supported only on Windows because native code is platform specific. With the help of [Wine](http://www.winehq.org/) mixed-mode assemblies can be used on other platforms by the [Windows version](/docs/getting-started/install/windows/) of Mono.
 
