@@ -1023,7 +1023,7 @@ I never used pageOutput="true". If it doesn't work you may set it to "false" and
 
 (It is also likely to happen that you do not pass the XmlNamespaceManager argument to SelectNodes and SelectSingleNode, though in such cases you will soon notice since it will cause an error saying that you need it.)
 
-You can't use the default namespace in XPath (see [| section 2.3](http://www.w3.org/TR/xpath#node-tests) of the XPath specification for details). Thus code like below won't work:
+You can't use the default namespace in XPath (see [section 2.3](http://www.w3.org/TR/xpath#node-tests) of the XPath specification for details). Thus code like below won't work:
 
 ``` csharp
 XmlNamespaceManager nm = new XmlNamespaceManager (nameTable);

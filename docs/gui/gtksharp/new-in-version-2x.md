@@ -71,7 +71,7 @@ The Gnome About dialog has been cleaned up and integrated directly into Gtk.
 
 Gtk# 1.0.x came with Cell Renderers for [text](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererText), [images](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererPixbuf), and [checkboxes](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererToggle).
 
-Starting in 2.6, we have the popular new [Gtk.CellRendererProgress](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererProgress) and [Gtk.CellRendererCombo](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererCombo] renderers. Use them to expose ProgressBar cells and dropdown ComboBox cells in your TreeViews and NodeViews.
+Starting in 2.6, we have the popular new [Gtk.CellRendererProgress](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererProgress) and [Gtk.CellRendererCombo](http://docs.go-mono.com/index.aspx?link=T:Gtk.CellRendererCombo) renderers. Use them to expose ProgressBar cells and dropdown ComboBox cells in your TreeViews and NodeViews.
 
 ### IconView
 

@@ -2,6 +2,7 @@
 title: Runtime projects
 redirect_from:
   - /Runtime_Projects/
+  - /docs/advanced/runtime/runtime-projects/
 ---
 
 Projetos correntes para o ambiente de execução do Mono

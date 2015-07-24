@@ -26,7 +26,7 @@ Abstract
 <ul>
 <li><a href="#xcode-plugin-and-supporting-files-for-mono-c-integration">1 Xcode Plugin and supporting files for Mono C# integration</a>
 <ul>
-<li>1.1 This page is no longer maintained. Please use the latest version at http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin</li>
+<li>1.1 This page is no longer maintained. Please use the latest version at <a href="http://code.google.com/p/cocoa-sharp-dev/wiki/CSharpPlugin">here</a></li>
 </ul></li>
 <li><a href="#abstract">2 Abstract</a></li>
 <li><a href="#quick-start">3 Quick Start</a></li>

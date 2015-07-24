@@ -47,7 +47,7 @@ Individual Patches for versions earlier than Mono 3.10:
 
 We also encourage developers to disable the SSLv2 fallback, patch for Mono:
 
-- https://gist.github.com/spouliot/8e33a158e132e1738c90
+- <https://gist.github.com/spouliot/8e33a158e132e1738c90>
 
 Credits:
 

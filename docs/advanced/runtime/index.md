@@ -153,7 +153,7 @@ Of course, you can also just embed the libraries, without the actual Mono runtim
 
 A downside of the --static flag is that it will trigger the LGPL license requirement in the runtime. If you are planning on using this feature as an obfuscation technique you must obtain a commercial license of Mono; otherwise you should distribute all the components that are necessary to comply with the LGPL with bundles.
 
-[Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. For other licensing options, [contact us](http://www.go-mono.com/contact/).
+The commercial license can be acquired from [Xamarin](http://xamarin.com/licensing).
 
 ### Platform for Code Optimizations
 

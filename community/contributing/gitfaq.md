@@ -350,7 +350,7 @@ before trying to push again.
 I can't checkout the required submodules because the git:// protocol is blocked by a firewall
 ---------------------------------------------------------------------------------------------
 
-You can replace git:// with https:// globally in your user preference:
+You can replace `git://` with `https://` globally in your user preference:
 
 ``` bash
 git config --global url."https://".insteadOf git://
