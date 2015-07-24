@@ -83,7 +83,7 @@ We are not working on any of the following deprecated APIs:
 -   Workflow Foundation 3 (WF3)
 -   [Code Access Security](/docs/advanced/cas/) (.NET 1.0).
 
-The following do not map to operating systems other than Windows, and we are unlike going to spend time to support them even on Windows:
+The following do not map to operating systems other than Windows, and we are unlikely to spend time to support them even on Windows:
 
 -   System.Management
 
