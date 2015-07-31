@@ -7,18 +7,18 @@ redirect_from:
 
 O Mono roda no Windows, esta página descreve os vários recursos disponíveis para os usuários que querem usar Mono no Windows, bem como a utilização de tecnologias baseadas em Mono no Windows sem Mono (como Gtk #)
 
-<<<<<<< HEAD
 Instalando o Mono no Windows
 ============================
 
 1.  Baixe o último instalador do Mono para Windows em [Downloads](/download/)
 2.  Execute o programa baixado como administrador. Durante a instalação lhe será perguntado se aceita os termos da licença, apresentada com a página de informações, bem como pedidas algumas poucas outras informações, incluindo:
-    [![windows-install-mono.png](/images/windows-install-mono.png)](/images/windows-install-mono.png)
+
+[![windows-install-mono.png](/images/windows-install-mono.png)](/images/windows-install-mono.png)
 
 A instalação padrão cria uma pasta "Mono for Windows" dentro do Menu Iniciar com um atalho "Open Mono Command Prompt".
 Este atalho abre um shell de linha de comando com o PATH ajustado para o Mono, o que significa que as ferramentas do Mono "simplesmente funcionam".
 
-	[![windows-install-mono-cmd.png](/images/windows-install-mono-cmd.png)](/images/windows-install-mono-cmd.png)
+[![windows-install-mono-cmd.png](/images/windows-install-mono-cmd.png)](/images/windows-install-mono-cmd.png)
 
 Neste ponto é uma boa idéia 'passear' pelos exemplos básicos de "hello world" desta [ página](/docs/getting-started/mono-basics/) para verificar que o Mono está funcionando corretamente.
 
