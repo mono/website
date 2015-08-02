@@ -42,10 +42,10 @@ Generic shared code that have a `RGCTX` receive it in `RGCTX_REG`. There must be
 Dealing with types
 ------------------
 
-During JITting and at runtime, the generic parameters used in shared methods are represented by `MonoGenericParam` with the `gshared_constraint` field set pointing to a `MonoType` which identifies the set of types this
-generic param is constrained to. If the constraint is `MONO_TYPE_OBJECT`, it means the parameter can match all reference types. If its `MONO_TYPE_INT`, it can match `MONO_TYPE_INT` and all enums whose basetype is `MONO_TYPE_INT` etc.
+During JITting and at runtime, the generic parameters used in shared methods are represented by a `MonoGenericParam` with the `gshared_constraint` field pointing to a `MonoType` which identifies the set of types this
+generic param is constrained to. If the constraint is `object`, it means the parameter can match all reference types. If its `int`, it can match `int` and all enums whose basetype is `int` etc.
 
-Calling `mini_get_underlying_type()` on the type will return the constraint type. This is used through the JIT to handle generic parameters without needed to special case them, since a generic parameter constrained to be a reference type can be handled the same way as `MONO_TYPE_OBJECT`.
+Calling `mini_get_underlying_type()` on the type will return the constraint type. This is used through the JIT to handle generic parameters without needing to special case them, since for example, a generic parameter constrained to be a reference type can be handled the same way as `MONO_TYPE_OBJECT`.
 
 (M)RGCTX lazy fetch trampoline
 ------------------------------
