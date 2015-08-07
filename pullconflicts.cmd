@@ -1,12 +1,12 @@
-@if [%1]==[] goto :FAIL
+set REPO=%1
+@if [%1]==[] set REPO=mono
 git checkout gh-pages
 @if errorlevel 1 goto :END
-git branch -D pullrequest
 git pull
 @if errorlevel 1 goto :END
 git checkout -b pullrequest gh-pages
 @if errorlevel 1 goto :END
-git pull https://github.com/%1/website.git gh-pages
+git pull https://github.com/%REPO%/website.git gh-pages
 git status | grep "both modified" | cut -c19- > .conflicts
 @if errorlevel 1 goto :END
 cat .conflicts
