@@ -4,19 +4,10 @@ redirect_from:
   - /Mono:Runtime:Documentation:GenericSharing/
 ---
 
-Porting
-=======
+Source code
+----------
 
-This describes how to port the generic code sharing infrastructure in Mono. This is in addition to the [Mono Runtime Porting](/docs/advanced/runtime/docs/mini-porting/) instructions.
-
-Generic class init trampoline
------------------------------
-
-The generic class init trampoline is very similar to the class init trampoline, with the exception that the VTable of the class to be inited is passed in a register, `MONO_ARCH_VTABLE_REG`. That register can be the same as the IMT register.
-
-The call to the generic class init trampoline is never patched because the VTable is not constant - it depends on the type arguments of the class/method doing the call to the trampoline. For that reason, the trampoline needs a fast path for the case that the class is already inited, i.e. the trampoline needs to check the initialized bit of the MonoVTable and immediately return if it is set. See tramp-x86.c for how to portably figure out the number of the bit in the bit-field that needs to be checked. Since the `MONO_ARCH_VTABLE_REG` is needed by the generic class init trampoline function (in mini-trampolines.c) it needs to be saved by the generic trampoline code in the register save block which is passed to the trampoline. This also applies to the RGCTX fetch trampoline (see below).
-
-Like the normal class init trampoline, the result of the generic class init trampoline function is not a pointer to code that needs to be jumped to. Instead, just like for the class init trampoline, the generic trampoline code must return to the caller instead of jumping to the returned value. The same applies for the RGCTX fetch trampoline (see below).
+The code which implements generic sharing is in `mini-generic-sharing.c`. The architecture specific parts are in `mini-<arch>.c` and `tramp-<arch>.c`.
 
 RGCTX register
 --------------
@@ -31,11 +22,17 @@ Generic shared code needs access to type information. This information is contai
 
 The `MONO_ARCH_RGCTX_REG` must not be clobbered by trampolines.
 
-`MONO_ARCH_RGCTX_REG` can be the same as the IMT register for now, but this might change in the future when we implement virtual generic method calls (more) efficiently.
+`MONO_ARCH_RGCTX_REG` is the same as the IMT register on all platforms. The reason for this is that the RGCTX register is used to pass information to a concrete method, while the IMT register is used for indirect calls where
+the called method is not known, so the the same call doesn't use both an RGCTX and an IMT register.
 
 This register lifetime starts at the call site that loads it and ends in the callee prologue when it is either discarded or stored into a local variable.
 
 It's better to avoid registers used for argument passing for the RGCTX as it would make the code dealing with calling conventions code a lot harder.
+
+For indirect calls, the caller doesn't know the RGCTX value which needs to be passed to the callee. In this case, an 'rgctx trampoline' is used. These are small trampolines created by `mono_create_static_rgctx_trampoline()`. The caller calls the trampoline, which sets the RGCTX to the required value and jumps to the callee. These trampolines are inserted into the call chain when indirect calls are used (virtual calls, delegates, runtime invoke etc.).
+
+An alternative design would pass the rgctx as a normal parameter, which would avoid the need for an RGCTX register. The problem with this approach is that the caller might not know whenever the callee needs an RGCTX argument
+or not. I.e. the callee might be a non-shared method, or even a non-generic method (i.e. `Action<int>` can end up calling a `foo(int)` or a `foo<T> (T)` instantiated with `int`.).
 
 Method prologue
 ---------------
@@ -45,7 +42,10 @@ Generic shared code that have a `RGCTX` receive it in `RGCTX_REG`. There must be
 Dealing with types
 ------------------
 
-Types passed to arch functions might be type parameters (`MONO_TYPE_(M)VAR`) if the `MonoGenericSharingContext*` argument is non-NULL. For example, an argument or return type in a method passed to `mono_arch_find_this_argument()` could be a `MONO_TYPE_VAR`. To guard for that case use `mini_get_basic_type_from_generic()` on the type. See `get_call_info()` in mini-x86.c, for example.
+During JITting and at runtime, the generic parameters used in shared methods are represented by a `MonoGenericParam` with the `gshared_constraint` field pointing to a `MonoType` which identifies the set of types this
+generic param is constrained to. If the constraint is `object`, it means the parameter can match all reference types. If its `int`, it can match `int` and all enums whose basetype is `int` etc.
+
+Calling `mini_get_underlying_type()` on the type will return the constraint type. This is used through the JIT to handle generic parameters without needing to special case them, since for example, a generic parameter constrained to be a reference type can be handled the same way as `MONO_TYPE_OBJECT`.
 
 (M)RGCTX lazy fetch trampoline
 ------------------------------
@@ -102,18 +102,19 @@ All other arrays have the same layout as the RGCTX ones, except possibly for the
 
 The function to create the trampoline, mono_arch_create_rgctx_lazy_fetch_trampoline(), gets passed an encoded slot number. Use the macro `MONO_RGCTX_SLOT_IS_MRGCTX` to query whether a trampoline for an MRGCTX is needed, as opposed to one for a RGCTX. Use `MONO_RGCTX_SLOT_INDEX` to get the index of the slot (like 2 for "slot 2" as above). The unmanaged fetch code is yet another trampoline created via `mono_arch_create_specific_trampoline()`, of type `MONO_TRAMPOLINE_RGCTX_LAZY_FETCH`. It's given the slot number as the trampoline argument. In addition, the pointer to the VTable/MRGCTX is passed in `MONO_ARCH_VTABLE_REG` (like the VTable to the generic class init trampoline - see above).
 
-Like the class init and generic class init trampolines, the RGCTX fetch trampoline code doesn't return code that must be jumped to, so, like for those trampolines (see above), the generic trampoline code must do a normal return instead.
+The RGCTX fetch trampoline code doesn't return code that must be jumped to, so, like for those trampolines (see above), the generic trampoline code must do a normal return instead.
 
 Getting generics information about a stack frame
 ================================================
 
-If a method is compiled with generic sharing, its `MonoJitInfo` has `has_generic_jit_info` set. In that case, the `MonoJitInfo` is followed (after the `MonoJitExceptionInfo` array) by a `MonoGenericJitInfo`.
+If a method is compiled with generic sharing, its `MonoJitInfo` has the `has_generic_jit_info` bit set. In that case, the `mono_jit_info_get_generic_jit_info()` function will return
+a `MonoGenericJitInfo` structure.
 
-The MonoGenericJitInfo contains information about the location of the this/vtable/MRGCTX variable, if the has_this flag is set. If that is the case, there are two possibilities:
+The `MonoGenericJitInfo` contains information about the location of the this/vtable/MRGCTX variable, if the `has_this` flag is set. If that is the case, there are two possibilities:
 
-1.  this_in_reg is set. this_reg is the number of the register where the variable is stored.
+1.  `this_in_reg` is set. `this_reg` is the number of the register where the variable is stored.
 
-1.  this_in_reg is not set. The variable is stored at offset this_offset from the address in the register with number this_reg.
+1.  `this_in_reg` is not set. The variable is stored at offset `this_offset` from the address in the register with number `this_reg`.
 
 The variable can either point to the "this" object, to a vtable or to an MRGCTX:
 
