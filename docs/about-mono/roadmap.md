@@ -31,32 +31,6 @@ Liberações
 
 Veja nossa [lista completa de liberações](http://www.mono-project.com/docs/about-mono/releases/)
 
-Liberações Correntes
---------------------
-
-<table>
-<col width="50%" />
-<col width="50%" />
-<tbody>
-<tr class="odd">
-<td align="left"><strong>Mono 3.10</strong></td>
-<td align="left"><strong>Liberada: Outubro/2014</strong></td>
-</tr>
-<tr class="even">
-<td align="left"><ul>
-<li>Implementada System.IO.Compression.FileSystem.</li>
-<li>Uri implementa o comportamento do .NET 4.5, isto pode ser revertido ao comportamento antigo ao setar o campo estático  System.Uri::s_IriParsing para false.</li>
-<li>Performance</li>
-<li>Removida bloqueios desnecessários nas funções core de parseamento de metadados.</li>
-<li>Evitar o despejo do cache de matrizes locais ao iterar um enumerador.</li>
-</ul>
-</td>
-<td align="left"><p><a href="/docs/about-mono/releases/3.10.0/" title="Notas de Liberação do Mono 3.10.0">Notas de Liberação do Mono 3.10.0</a></p>
-<p><br /></p></td>
-</tr>
-</tbody>
-</table>
-
 Subprojetos
 -----------
 
