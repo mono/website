@@ -146,6 +146,7 @@ but do help figure out what's going on.
 The current system doesn't take into account the runtime been used embedded. This boils down to a couple of issues.
 First, if a native thread calls into managed then keep doing its thing. We might not be leaving the thread in the
 appropriate state.
+
 Second, the embedding API allows for raw object access, which is incompatible with coop. We need to figure out how to expose
 coop to embedders.
 
