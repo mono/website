@@ -90,18 +90,18 @@ Modifying the managed heap is mostly forbidden, as is learning new pointers. Cal
 The runtime itself consumes the macros in mono-threads-coop.h.
 Those macros define a series of transitions that happens in the runtime. They are:
 
-
 ### MONO_SUSPEND_CHECK
 
 This polls the current GC state and possibly suspend the thread.
 Ok only under cooperative mode.
-Use it when a huge computation is happening with no explicit blocking happening.
 
+Use it when a huge computation is happening with no explicit blocking happening.
 
 ### MONO_PREPARE_BLOCKING / MONO_FINISH_BLOCKING
 
 Creates a C lexical scope. It causes a transition from cooperative to preemptive mode.
 Ok only under cooperative mode.
+
 Great around a syscall that can block for a while (sockets, io).
 Managed pointers can leak into the preemptive region. For example:
 ```c
@@ -116,7 +116,9 @@ MONO_FINISH_BLOCKING
 
 Creates a C lexical scope. It causes a transition to cooperative mode. Resets to the previous mode on exit.
 Ok under both modes.
+
 This covers the case where code was expected to be in preeptive mode but it now needs to be under cooperative.
+
 For example, the first call to a pinvoke will hit a trampoline that needs to move the runtime back into cooperative
 mode before going around resolving it. Once the pinvoke is resolved, the previous mode must be restored.
 
@@ -124,6 +126,7 @@ mode before going around resolving it. Once the pinvoke is resolved, the previou
 
 Creates a C lexical scope. It tries to transition the runtime to preeptive mode. Resets to the previous mode on exit.
 Ok under both modes.
+
 This coves the case where code must enter preemptive mode but it doesn't know if it is already under it. 
 Great to use around locks, that might be used both modes.
 
