@@ -21,6 +21,7 @@ This page currently contains links to the wiki-fied version of the runtime docum
 -   [Soft Debugger](/docs/advanced/runtime/docs/soft-debugger/)
 -   [LLVM Backend](/docs/advanced/runtime/docs/llvm-backend)
 -   [GDB Debugging Support (XDEBUG)](/docs/advanced/runtime/docs/xdebug/)
+-   [Cooperative suspend](/docs/advanced/runtime/docs/coop-suspend)
 -   [Other topics](/docs/advanced/runtime/docs/other/)
 -   [Glossary](/docs/advanced/runtime/docs/glossary)
 
