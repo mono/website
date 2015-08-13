@@ -79,31 +79,70 @@ mono-threads-coop.c is the cooperative backend. It doesn't use any async APIs pr
 
 ## Adding coop to the runtime
 
-The best way to understand how to enable coop in the runtime is by spliting it in 2 modes. Cooperative and Preemptive.
+The runtime code must satisfy two properties to work with cooperative suspend, It must suspend in bounded time, by polling and
+check pointing before blocking, and it must coordinate with the GC when accessing the managed heap.
 
-In cooperative mode, the thread is usually in the runnable state and code must explicitly take action to leave it suspend.
-Poking at managed state is ok. Calling into unknown code or doing blocking syscalls is a no-no-no.
 
-In preemptive mode, the thread is usually in the blocking state and code doesn't need to do anything to help the GC.
-Modifying the managed heap is mostly forbidden, as is learning new pointers. Calling into unknown code or blocking is ok.
+We combine those two properties together are they are completementary. Every region of code in the runtime is then classified
+in one of 3 kinds, which tells what can and can't be done.
 
-The runtime itself consumes the macros in mono-threads-coop.h.
-Those macros define a series of transitions that happens in the runtime. They are:
+### GC unsafe mode
+
+Under this mode, the GC won't be able to proceed until explicit polling or a transition to GC Safe mode happens.
+
+- Can touch managed memory (read/write).
+- Can call GC Unsafe or GC Neutral functions.
+- Can pass managed pointers to GC Safe regions/functions through pinning
+- Can return managed pointers
+- Cannot call foreign native code (embedder callbacks, pinvokes, etc)
+- Cannot call into blocking functions/syscalls
+- Cannot be dettached
+
+## GC safe mode
+
+Under this mode, the GC will assume the thread is suspended and will scan the last saved state.
+
+- Can call into foreigh functions.
+- Can call into blocking functions/syscalls
+- Can call GC Safe or GC Neutral functions
+- Can read from pinned managed memory
+- Cannot touch managed memory (read/write)
+- Cannot be dettached
+
+## GC Neutral mode
+
+This mode only signals that the function works under Safe and Unsafe modes. The actual effect on the GC will depend
+on the dynamic mode the thread is when the function is executed.
+
+- Can call GC Neutral functions
+- Cannot call into foreigh functions.
+- Cannot call into blocking functions/syscalls
+- Cannot read from pinned managed memory
+- Cannot touch managed memory (read/write)
+- Cannot be dettached
+
+There's a special group of functions that are allowed to run dettached. All they are allowed to do is
+attach, pick a GC mode and call into regular GC functions.
+
+All functions can transition from one mode to the other and then back. The runtime provides macros that
+make a region of a function run in a different mode. Those macros are defined in mono-threads-coop.h.
+
+Those macros define a possible transitions between GC safe/unsafe. They are:
 
 ### MONO_SUSPEND_CHECK
 
 This polls the current GC state and possibly suspend the thread.
-Ok only under cooperative mode.
+Ok only under GC unsafe mode.
 
 Use it when a huge computation is happening with no explicit blocking happening.
 
 ### MONO_PREPARE_BLOCKING / MONO_FINISH_BLOCKING
 
-Creates a C lexical scope. It causes a transition from cooperative to preemptive mode.
-Ok only under cooperative mode.
+Creates a C lexical scope. It causes a transition from Unsafe to Safe mode.
+Ok only under Unsafe mode.
 
 Great around a syscall that can block for a while (sockets, io).
-Managed pointers can leak into the preemptive region. For example:
+Managed pointers can leak into the GC Safe region. For example:
 ```c
 MonoArray *x;
 int res;
@@ -114,21 +153,21 @@ MONO_FINISH_BLOCKING
 
 ### MONO_PREPARE_RESET_BLOCKING / MONO_FINISH_RESET_BLOCKING
 
-Creates a C lexical scope. It causes a transition to cooperative mode. Resets to the previous mode on exit.
-Ok under both modes.
+Creates a C lexical scope. It causes a transition to Unsafe mode. Resets to the previous mode on exit.
+Ok under any mode.
 
-This covers the case where code was expected to be in preeptive mode but it now needs to be under cooperative.
+This covers the case where code was expected to be in GC Safe mode but it now needs to be under GC Unsafe.
 
-For example, the first call to a pinvoke will hit a trampoline that needs to move the runtime back into cooperative
+For example, the first call to a pinvoke will hit a trampoline that needs to move the runtime back into GC Unsafe
 mode before going around resolving it. Once the pinvoke is resolved, the previous mode must be restored.
 
 ### MONO_TRY_BLOCKING / MONO_FINISH_TRY_BLOCKING
 
-Creates a C lexical scope. It tries to transition the runtime to preeptive mode. Resets to the previous mode on exit.
-Ok under both modes.
+Creates a C lexical scope. It tries to transition the runtime to GC Safe mode. Resets to the previous mode on exit.
+Ok under any mode.
 
-This coves the case where code must enter preemptive mode but it doesn't know if it is already under it. 
-Great to use around locks, that might be used both modes.
+This coves the case where code must enter GC Safe mode but it doesn't know if it is already under it. 
+Great to use around locks, that might be used in both modes.
 
 
 ## Debugging
