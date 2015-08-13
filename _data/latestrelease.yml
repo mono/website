@@ -1,4 +1,4 @@
-version: 4.0.2 SR 2 (4.0.2.5)
-mono_mac_url: http://download.mono-project.com/archive/4.0.2/macos-10-x86/MonoFramework-MDK-4.0.2.5.macos10.xamarin.x86.pkg
+version: 4.0.3 SR 3 (4.0.3.20)
+mono_mac_url: http://download.mono-project.com/archive/4.0.3/macos-10-x86/MonoFramework-MDK-4.0.3.20.macos10.xamarin.x86.pkg
 mono_windows_url: http://download.mono-project.com/archive/4.0.2/windows-installer/mono-4.0.2-gtksharp-2.12.26-win32-0.msi
 gtksharp_windows_url: http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.26.msi
