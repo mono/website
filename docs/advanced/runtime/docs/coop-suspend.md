@@ -96,18 +96,18 @@ Under this mode, the GC won't be able to proceed until explicit polling or a tra
 - Can return managed pointers
 - Cannot call foreign native code (embedder callbacks, pinvokes, etc)
 - Cannot call into blocking functions/syscalls
-- Cannot be dettached
+- Cannot be detached
 
 ## GC safe mode
 
 Under this mode, the GC will assume the thread is suspended and will scan the last saved state.
 
-- Can call into foreigh functions.
+- Can call into foreign functions.
 - Can call into blocking functions/syscalls
 - Can call GC Safe or GC Neutral functions
 - Can read from pinned managed memory
 - Cannot touch managed memory (read/write)
-- Cannot be dettached
+- Cannot be detached
 
 ## GC Neutral mode
 
@@ -115,13 +115,13 @@ This mode only signals that the function works under Safe and Unsafe modes. The 
 on the dynamic mode the thread is when the function is executed.
 
 - Can call GC Neutral functions
-- Cannot call into foreigh functions.
+- Cannot call into foreign functions.
 - Cannot call into blocking functions/syscalls
 - Cannot read from pinned managed memory
 - Cannot touch managed memory (read/write)
-- Cannot be dettached
+- Cannot be detached
 
-There's a special group of functions that are allowed to run dettached. All they are allowed to do is
+There's a special group of functions that are allowed to run detached. All they are allowed to do is
 attach, pick a GC mode and call into regular GC functions.
 
 All functions can transition from one mode to the other and then back. The runtime provides macros that
