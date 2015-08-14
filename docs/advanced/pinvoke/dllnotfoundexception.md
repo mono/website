@@ -96,6 +96,20 @@ Yay! Your application should now run properly.
 
 NOTE: As mentioned above you can also set the \$LD_LIBRARY_PATH environment variable to the path containing the library, but this is not as recomended because it can cause other problems and is more difficult to maintain.
 
+### Native dependencies and P/Invoke
+
+When using native libraries via P/Invoke you may see similar errors when a library could not be located. Note that when a native library is loaded the native library may attempt to load other libraries on which it depends as well. 
+Any failure seems to result in a DllNotFoundException which only indicates that the original native library being loaded was not found. One may thus end up with a DllNotFoundException while the library is in place.
+
+Troubleshooting this problem can be done setting the debug log level:
+
+    $ MONO_LOG_LEVEL=debug mono YourApp.exe
+    <snip>
+    Mono-INFO: DllImport error loading library: 'Interop.so': '/usr/lib/Interop.so: undefined symbol: __some_function
+    <snip>
+    
+In the above excerpt the library Interop.so was found but was unable to load due to ``__some_function`` not being linked.
+
 Additional Information
 ----------------------
 
