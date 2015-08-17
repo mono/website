@@ -1,4 +1,5 @@
 ---
+title: UriKind.RelativeOrAbsolute workaround
 ---
 
 In .NET `new Uri ("/foo", UriKind.RelativeOrAbsolute)` returns a
