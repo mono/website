@@ -32,10 +32,13 @@ static UriKind DotNetRelativeOrAbsolute = (Type.GetType ("Mono.Runtime") == null
 ```
 
 Problematic usages of UriKind.RelativeOrAbsolute such as:
+
 ``` csharp
 var uri = new Uri (str,UriKind.RelativeOrAbsolute)
 ```
+
 can then be fixed by replacing them with:
+
 ``` csharp
 var uri = new Uri (str,DotNetRelativeOrAbsolute)
 ```
@@ -46,11 +49,13 @@ It is also possible to change all `uri = new Uri (str,UriKind.RelativeOrAbsolute
 **Warning:** The following workarounds fix libraries that are expecting `new Uri ("/foo", UriKind.RelativeOrAbsolute)` to be relative but they will also introduce issues to the libraries that are expecting the uri to be an absolute file path.
 
 **Environment variable workaround:**
+
 ```
 MONO_URI_DOTNETRELATIVEORABSOLUTE=true mono app.exe
 ```
 
 **Reflection workaround:**
+
 ``` csharp
 if (Type.GetType ("Mono.Runtime") != null) {
     var field = typeof (Uri).GetField ("useDotNetRelativeOrAbsolute",
