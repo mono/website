@@ -16,35 +16,37 @@ Thus we propose some workarounds.
 The current workaround that can be used consists on using `UriKind.Relative` instead of `UriKind.RelativeOrAbsolute` when the uri starts with '/'.
 
 ``` csharp
-var uri = new Uri (str,(str.StartsWith ("/"))? UriKind.Relative : UriKind.RelativeOrAbsolute)
+var uri = new Uri (str, (str.StartsWith ("/"))? UriKind.Relative : UriKind.RelativeOrAbsolute)
 ```
 
 ### Mono 4.2 workarounds (to be released)
 
 #### Localized workaround
+
 This workaround consists in defining DotNetRelativeOrAbsolute and using
 it instead of UriKind.RelativeOrAbsolute.
 
 DotNetRelativeOrAbsolute should be defined as follows:
 
 ``` csharp
-static UriKind DotNetRelativeOrAbsolute = (Type.GetType ("Mono.Runtime") == null)? UriKind.RelativeOrAbsolute : (UriKind) 300;
+static UriKind DotNetRelativeOrAbsolute = (Type.GetType ("Mono.Runtime") == null) ? UriKind.RelativeOrAbsolute : (UriKind) 300;
 ```
 
 Problematic usages of UriKind.RelativeOrAbsolute such as:
 
 ``` csharp
-var uri = new Uri (str,UriKind.RelativeOrAbsolute)
+var uri = new Uri (str, UriKind.RelativeOrAbsolute)
 ```
 
 can then be fixed by replacing them with:
 
 ``` csharp
-var uri = new Uri (str,DotNetRelativeOrAbsolute)
+var uri = new Uri (str, DotNetRelativeOrAbsolute)
 ```
 
 #### Global workarounds
-It is also possible to change all `uri = new Uri (str,UriKind.RelativeOrAbsolute)` in your app and libraries to behave like in .NET.
+
+It is also possible to change all `uri = new Uri (str, UriKind.RelativeOrAbsolute)` in your app and libraries to behave like in .NET.
 
 **Warning:** The following workarounds fix libraries that are expecting `new Uri ("/foo", UriKind.RelativeOrAbsolute)` to be relative but they will also introduce issues to the libraries that are expecting the uri to be an absolute file path.
 
