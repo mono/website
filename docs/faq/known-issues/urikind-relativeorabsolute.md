@@ -7,7 +7,7 @@ relative Uri whereas Mono assumes it is an absolute file path.
 
 Mono diverges from .NET because UNIX
  file paths starting with '/' are absolute file paths.
- 
+
 Changing the behavior to match the .NET one is not possible without breaking existing Mono applications that rely on `UriKind.RelativeOrAbsolute` to parse absolute file paths.
 Thus we propose some workarounds.
 
@@ -16,7 +16,7 @@ Thus we propose some workarounds.
 The current workaround that can be used consists on using `UriKind.Relative` instead of `UriKind.RelativeOrAbsolute` when the uri starts with '/'.
 
 ``` csharp
-var uri = new Uri (str, (str.StartsWith ("/"))? UriKind.Relative : UriKind.RelativeOrAbsolute)
+var uri = new Uri (str, (str.StartsWith ("/")) ? UriKind.Relative : UriKind.RelativeOrAbsolute)
 ```
 
 ### Mono 4.2 workarounds (to be released)
@@ -52,7 +52,7 @@ It is also possible to change all `uri = new Uri (str, UriKind.RelativeOrAbsolut
 
 **Environment variable workaround:**
 
-```
+``` bash
 MONO_URI_DOTNETRELATIVEORABSOLUTE=true mono app.exe
 ```
 

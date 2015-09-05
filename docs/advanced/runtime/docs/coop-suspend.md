@@ -26,7 +26,7 @@ Cooperative suspend limits what a suspender thread can do to simply request that
 The target thread can serve a suspend in two manners, by frequently polling its state or checkpointing its state
 at points the runtime loses control of the thread (pinvoke, blocking syscall).
 
-We can split code in 3 categories: managed, runtime native code and foreign native code. This tells how coop suspend happens. 
+We can split code in 3 categories: managed, runtime native code and foreign native code. This tells how coop suspend happens.
 
 ### Managed code
 
@@ -58,15 +58,15 @@ of how we access managed memory once we save the thread state.
 The current implementation is a state machine that tells what's the current status of a thread. These are the
 states:
 
-* Starting: Initial state of a thread, nothing interesting should happen while in this state
-* Running: Running managed or runtime code
-* Detached: Thread is shuting down, it won't touch managed memory or do any runtime work
-* AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens on coop)
-* SelfSuspended: Thread suspended by itself
-* AsyncSuspendRequested: Another thread requested that the current thread be suspended
-* SelfSuspendRequested: The current thread requested itself to self suspend (this exists due to race conditions and deadlocks in threads.c)
-* Blocking: The current thread is executing code that won't touch managed memory, so it can be assumed to be suspended
-* Blocking and Suspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed
+- Starting: Initial state of a thread, nothing interesting should happen while in this state
+- Running: Running managed or runtime code
+- Detached: Thread is shuting down, it won't touch managed memory or do any runtime work
+- AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens on coop)
+- SelfSuspended: Thread suspended by itself
+- AsyncSuspendRequested: Another thread requested that the current thread be suspended
+- SelfSuspendRequested: The current thread requested itself to self suspend (this exists due to race conditions and deadlocks in threads.c)
+- Blocking: The current thread is executing code that won't touch managed memory, so it can be assumed to be suspended
+- Blocking and Suspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed
 
 In addition to those states, there are a number of transitions, that are used to move a thread from one state to another.
 
@@ -85,7 +85,6 @@ mono-threads-coop.c is the cooperative backend. It doesn't use any async APIs pr
 
 The runtime code must satisfy two properties to work with cooperative suspend, It must suspend in bounded time, by polling and
 check pointing before blocking, and it must coordinate with the GC when accessing the managed heap.
-
 
 We combine those two properties together are they are completementary. Every region of code in the runtime is then classified
 in one of 3 kinds, which tells what can and can't be done.
@@ -147,6 +146,7 @@ Ok only under Unsafe mode.
 
 Great around a syscall that can block for a while (sockets, io).
 Managed pointers can leak into the GC Safe region. For example:
+
 ```c
 MonoArray *x;
 int res;
@@ -170,9 +170,8 @@ mode before going around resolving it. Once the pinvoke is resolved, the previou
 Creates a C lexical scope. It tries to transition the runtime to GC Safe mode. Resets to the previous mode on exit.
 Ok under any mode.
 
-This coves the case where code must enter GC Safe mode but it doesn't know if it is already under it. 
+This coves the case where code must enter GC Safe mode but it doesn't know if it is already under it.
 Great to use around locks, that might be used in both modes.
-
 
 ## Debugging
 
@@ -182,10 +181,10 @@ It dumps the thread state of each thread plus a cue card on the beginning to hel
 The second one are the toggles in mono-threads.h for specific logging of threading events. Those are VERY verbose
 but do help figure out what's going on.
 
-
 ## Known issues
 
 ### Can't handle the embedding API
+
 The current system doesn't take into account the runtime being used embedded. This boils down to a couple of issues.
 First, if a native thread calls into managed then keep doing its thing. We might not be leaving the thread in the
 appropriate state.
@@ -194,17 +193,19 @@ Second, the embedding API allows for raw object access, which is incompatible wi
 coop to embedders.
 
 ### Thread start/finish still shit
+
 There are a lot of hacks around how we handle threads starting and finishing. If a suspend hits a thread while it's
 starting/finishing we fail every now and then.
 
 ### Non nested blocking state
+
 An early decision that I made was to disallow nested blocking states. It was forbidden because it's more complicated and
 could hide bugs in between the nesting. The downside is that it's hard to cover large blocks of code under a single blocking region.
 
 ### Thread attach/detach
-This aspect of the runtime is due to some revision. I don't think it goes well with what we need now.
 
+This aspect of the runtime is due to some revision. I don't think it goes well with what we need now.
 
 # References
 
-[1] https://github.com/mono/mono/commit/0e12ff3017d470676e94e561cd0de4ca22230532
+[1] <https://github.com/mono/mono/commit/0e12ff3017d470676e94e561cd0de4ca22230532>
