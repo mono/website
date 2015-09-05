@@ -19,8 +19,9 @@ The current workaround that can be used consists on using `UriKind.Relative` ins
 var uri = new Uri (str,(str.StartsWith ("/"))? UriKind.Relative : UriKind.RelativeOrAbsolute)
 ```
 
-### Mono 4.2 workaround (to be released)
+### Mono 4.2 workarounds (to be released)
 
+#### Localized workaround
 This workaround consists in defining DotNetRelativeOrAbsolute and using
 it instead of UriKind.RelativeOrAbsolute.
 
@@ -38,3 +39,24 @@ can then be fixed by replacing them with:
 ``` csharp
 var uri = new Uri (str,DotNetRelativeOrAbsolute)
 ```
+
+#### Global workarounds
+It is also possible to change all `uri = new Uri (str,UriKind.RelativeOrAbsolute)` in your app and libraries to behave like in .NET.
+
+**Warning:** The following workarounds fix libraries that are expecting `new Uri ("/foo", UriKind.RelativeOrAbsolute)` to be relative but they will also introduce issues to the libraries that are expecting the uri to be an absolute file path.
+
+**Environment variable workaround:**
+```
+MONO_URI_DOTNETRELATIVEORABSOLUTE=true mono app.exe
+```
+
+**Reflection workaround:**
+``` csharp
+if (Type.GetType ("Mono.Runtime") != null) {
+    var field = typeof (Uri).GetField ("useDotNetRelativeOrAbsolute",
+        BindingFlags.Static | BindingFlags.GetField | BindingFlags.NonPublic);
+    if (field)
+        field.SetValue (null, true);
+}
+```
+
