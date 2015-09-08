@@ -13,10 +13,14 @@ Here is a slightly more detailed view, by .NET framework version:
 
 |<i class="fa fa-check"/>|Implemented|<i class="fa fa-exclamation-triangle"/>|Partially Implemented|<i class="fa fa-ban"/>|Not Implemented|
 
-.NET 4.5
+.NET 4.6
 --------
 
 |<i class="fa fa-check"/>|C# 6.0|
+
+.NET 4.5
+--------
+
 |<i class="fa fa-check"/>|C# 5.0 - async support|
 |<i class="fa fa-check"/>|Async Base Class Library Upgrade|
 |<i class="fa fa-exclamation-triangle"/>|MVC4 *- Partial, no async features supported.*|
