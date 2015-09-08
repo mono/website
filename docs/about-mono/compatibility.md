@@ -24,6 +24,7 @@ Here is a slightly more detailed view, by .NET framework version:
 |<i class="fa fa-check"/>|C# 5.0 - async support|
 |<i class="fa fa-check"/>|Async Base Class Library Upgrade|
 |<i class="fa fa-exclamation-triangle"/>|MVC4 *- Partial, no async features supported.*|
+|<i class="fa fa-exclamation-triangle"/>|MVC5 *- Partial, no async features supported.*|
 |<i class="fa fa-ban"/>|ASP.NET 4.5 Async Pipeline *- Needs a parallel processing pipeline with async support, not done.*|
 
 .NET 4.0
