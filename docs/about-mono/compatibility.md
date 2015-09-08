@@ -16,6 +16,7 @@ Here is a slightly more detailed view, by .NET framework version:
 .NET 4.5
 --------
 
+|<i class="fa fa-check"/>|C# 6.0|
 |<i class="fa fa-check"/>|C# 5.0 - async support|
 |<i class="fa fa-check"/>|Async Base Class Library Upgrade|
 |<i class="fa fa-exclamation-triangle"/>|MVC4 *- Partial, no async features supported.*|
