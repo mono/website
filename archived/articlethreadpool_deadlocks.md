@@ -45,10 +45,10 @@ Typically users of [http:/monodoc/T:System.Net.HttpWebRequest HttpWebRequest] wi
 The Solution
 ============
 
-Currently the Mono team is working on various long-term solutions to the problem, but in the meantime a quick solution is to increase the number of active threads in the ThreadPool, effectively defeating part of the reason for the ThreadPool's own existance, you can do this by using the MONO_THREADS_PER_CPU environment variable, the default being 50 (25 on windows):
+Currently the Mono team is working on various long-term solutions to the problem, but in the meantime a quick solution is to increase the number of active threads in the ThreadPool, effectively defeating part of the reason for the ThreadPool's own existance, you can do this by using the MONO_THREADS_PER_CPU environment variable, the default being 1:
 
 ``` bash
-export MONO_THREADS_PER_CPU=2000
+export MONO_THREADS_PER_CPU=50
 ```
 
 If you are using Mono from [Apache](http://www.apache.org/) to run ASP.NET, you can use the MonoSetEnv configuration option in Apache:

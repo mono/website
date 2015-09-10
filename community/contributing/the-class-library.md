@@ -75,24 +75,6 @@ Tagging Incomplete Specifications
 
 Sometimes the specification will be lame (consider Version.ToString (fieldCount) where there is no way of knowing how many fields are available, making the API not only stupid, but leading to unreliable code). In those cases, use the keyword "LAMESPEC".
 
-Namespaces
-----------
-
-We are using a number of namespaces in the class libraries for private classes when we need them, you are encouraged to use these:
-
-    Mono
-     .Languages     // General Compiler classes
-       .CSharp      // Specific C# parsing/tokenizing classes
-       .MonoBASIC   // Specific VB.NET/MonoBASIC parsing/tokenizing classes
-       .Python      // Specific Python parsing/tokenizing classes
-     .Runtime
-       .LateBind    // General latebinding-support for MonoBASIC/Python
-       .MonoBASIC   // Specific runtime classes for MonoBASIC programs
-       .Python      // Specific runtime classes for Python programs
-     .Web
-       .UI
-         .Utils     // Gaurav utility classes
-
 FAQ
 ---
 
