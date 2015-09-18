@@ -22,7 +22,7 @@ Info
 Current Status
 --------------
 
--   Not part of the mono builds any more, moved to https://github.com/mono/old-code
+-   Not part of the mono builds any more, moved to <https://github.com/mono/old-code>
 
 -   Able to connect to Sybase ASE (Adapter Server Enterprise) 12.x databases
 

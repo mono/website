@@ -269,10 +269,10 @@ To adjust the limits, use these directives:
 
 A value of zero disables the limits.
 
-To adjust the number of threads in the threadpool, you have two choices: this can be either configured as part of your ASP.NET application configuration or it can be made global to Mono. you can do this by using the MONO_THREADS_PER_CPU environment variable, the default being 50 (25 on windows):
+To adjust the number of threads in the threadpool, you have two choices: this can be either configured as part of your ASP.NET application configuration or it can be made global to Mono. you can do this by using the MONO_THREADS_PER_CPU environment variable, the default being 1:
 
 ``` bash
-export MONO_THREADS_PER_CPU=2000
+export MONO_THREADS_PER_CPU=50
 ```
 
 If you are using Mono from [Apache](http://www.apache.org/) to run ASP.NET, you can use the MonoSetEnv configuration option in Apache:
