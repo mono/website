@@ -3,11 +3,14 @@ paginate_path: "news/page/:num"
 paginate: 5
 
 # General settings
+name: Mono Project
 permalink: pretty
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+feed:
+  path: atom.xml
 defaults:
   -
     scope:
@@ -34,6 +37,7 @@ defaults:
       categories: [news]  # this is a slight hack so Jekyll generates the blog posts in /news
 gems:
   - jekyll-redirect-from
+  - jekyll-feed
 exclude:
   - CNAME
   - README.md
