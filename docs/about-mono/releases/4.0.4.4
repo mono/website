@@ -1,0 +1,18 @@
+---
+layout: releasenotes
+title: Mono 4.0.4.4 Release Notes
+version: 4.0.4.4
+releasedate: '2015-09-29'
+---
+
+4.0.4.4 is an OSX hotfix release for mono 4.0.4.
+
+Bug Fix
+---------
+
+* [33585](https://bugzilla.xamarin.com/show_bug.cgi?id=33585): El Capitan System Integrity Protection support.
+
+El Capitan SIP removes DYLB_ environment variables when launching programs from the shell. This adversely affects our users.
+The fix is to extend the search path for dynamic libraries to include the prefix where mono is installed. Which is not
+usually on the dynamic linker path.
+
