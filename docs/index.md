@@ -28,7 +28,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>About Mono</h2></a>
@@ -47,7 +46,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#compiling-mono"><h2>Compiling Mono</h2></a>
@@ -62,7 +60,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#faq"><h2>FAQ</h2></a>
@@ -79,7 +76,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#database-access"><h2>Database Access</h2></a>
@@ -91,7 +87,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#debug-and-profile"><h2>Debug and Profile</h2></a>
@@ -113,7 +108,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
    </dd>
-   <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#gui"><h2>GUI</h2></a>
@@ -128,7 +122,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
@@ -144,7 +137,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Tools and Libraries</h2></a>
@@ -168,7 +160,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Advanced Topics</h2></a>
@@ -204,5 +195,4 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
             </ul>
         </div>
     </dd>
-    <br/>
 </dl>
