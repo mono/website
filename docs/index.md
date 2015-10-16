@@ -3,7 +3,7 @@ title: Documentação
 redirect_from:
   - /Documentation/
   - /Class_Library_Documentation/
-  - /docs/
+  - /Docs/
 ---
 
 Estes documentos cobrem tópicos específicos do Mono. Por exemplo: como ajustar e configurar o Mono, informações internas do Mono sobre a máquina virtual, o coletor de lixo e sobre várias ferramentas especializadas do Mono. 
