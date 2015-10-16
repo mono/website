@@ -1,4 +1,4 @@
----
+﻿---
 title: Documentação
 redirect_from:
   - /Documentation/
@@ -29,7 +29,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#about-mono"><h2>Sobre o Mono</h2></a>
@@ -48,7 +47,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#compiling-mono"><h2>Compilando o Mono</h2></a>
@@ -63,8 +61,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
-	
     <dd class="accordion-navigation">
         <a class="panel" href="#faq"><h2>FAQ - Perguntas Frequentes</h2></a>
         <div id="faq" class="content panel">
@@ -80,7 +76,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#database-access"><h2>Acessando Banco de Dados</h2></a>
@@ -92,7 +87,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#debug-and-profile"><h2>Debug e Profile</h2></a>
@@ -114,7 +108,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
    </dd>
-   <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#gui"><h2>Interfaces Gráficas</h2></a>
@@ -129,7 +122,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
     <dd class="accordion-navigation">
         <a class="panel" href="#web"><h2>Web</h2></a>
@@ -145,7 +137,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#tools-and-libraries"><h2>Ferramentas e Bibliotecas</h2></a>
@@ -169,7 +160,6 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 
    <dd class="accordion-navigation">
         <a class="panel" href="#advanced-topics"><h2>Tópicos Avançados</h2></a>
@@ -205,5 +195,4 @@ Caso você encontre erros ou pense que algo possa ser melhorado, apenas clique n
             </ul>
         </div>
     </dd>
-    <br/>
 </dl>
