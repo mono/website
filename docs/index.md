@@ -1,4 +1,4 @@
-﻿---
+---
 title: Documentação
 redirect_from:
   - /Documentation/
