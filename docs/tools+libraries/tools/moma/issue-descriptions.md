@@ -1,66 +1,70 @@
 ---
-title: MoMA - Issue Descriptions
+title: MoMA - Descrição dos Problemas Relatados
 redirect_from:
   - /MoMA_-_Issue_Descriptions/
 ---
 
-There are 4 types of issues that MoMA will detect and report. Here is a description of each, as well as what to do to resolve each type.
+Existem 4 tipos de problemas que o MoMA irá detectar e relatar. Aqui está a descrição de cada um, bem como o que fazer para resolver cada tipo.
 
-Missing Methods
----------------
+Métodos Faltantes
+-----------------
 
-This is the most severe type of issue. These methods are methods that are not implemented in Mono is any way, not even as stubs. If you try to compile your application that uses these methods with Mono, you will get an error like:
+Este é o tipo mais grave de problema. Estes métodos são métodos que não estão implementados de modo algum no Mono, nem mesmo como protótipos (stubs). 
+Se você tentar compilar a aplicação que usa esses métodos com o Mono, você receberá um erro como:
 
-myfile.cs(22,16): error CS0117: 'xxxxxxxxxxxxxxxxx' does not contain a definition for 'xxxxxxxxxxxxxxx'
+    myfile.cs (22,16): error CS0117: 'xxxxxxxxxxxxxxxxx' does not contain a definition for 'xxxxxxxxxxxxxxx'.
 
-If you compile your application with MS's compiler, your application will run on Mono until it tries to use the missing method. It will then exit the whole application with an error like:
+Se você compilar a aplicação com o compilador da Microsoft, a aplicação será executada em Mono até que ele tente usar o método que falta. Ele vai em seguida sair da aplicação com um erro como:
 
-System.MissingMethodException: Method not found: xxxxxxxxxxxxxxxxxxx
+    System.MissingMethodException: Method not found: 'xxxxxxxxxxxxxxxxxxx'.
 
-**What to do:**
+**O que fazer:**
 
-These method calls must be worked around and removed from your application before you can compile or run on Mono.
+Estas chamadas de métodos devem ser contornadas e removidas do sua aplicação antes que você possa compilar ou executar no Mono.
 
-Alternatively, you can implement the function yourself in Mono and submit it for inclusion in future version of Mono.
+Alternativamente, você pode implementar a função em Mono e apresentá-la para inclusão numa futura versão do Mono.
 
 MonoTodo
 --------
 
-Methods marked with [MonoTodo] may or may not cause problems for your application. Sometimes a method may be marked with this to remind a developer that some small part is not implemented or to clean it up later. Other times, the method may not be implemented at all and simply will not perform any function. This is generally done to make an application compile and run, even if it missing some functionality.
+Métodos marcados com [MonoTodo] podem ou não causar problemas para a sua aplicação. Às vezes, um método pode ser marcado assim para lembrar o desenvolvedor que uma pequena parte não está implementada ou precisa ser limpa mais tarde. Outras vezes, o método não pode ser implementado totalmente e simplesmente não executa nenhuma função. Isso geralmente é feito para permitir a compilação da aplicação e sua execução, mesmo faltando alguma funcionalidade.
 
-The detail report may list a specific reason why the method is marked with [MonoTodo]. Going forward, it has been requested that any developer who uses [MonoTodo] provide a reason that can be used for this report. However, numerous pre-existing tags do not have this reason.
+O relatório detalhado pode listar a razão específica para o método estar marcado com o [MonoTodo]. Temos solicitado que qualquer desenvolvedor que use a marcação [MonoTodo] justifique o motivo, via campos da marcação, para constar nesse relatório. No entanto, inúmeras marcações mais antigas não têm essa informação.
 
-**What to do:**
+**O que fazer:**
 
-These can probably be ignored in your initial porting. Your application should still run without crashing, however there may be missing functionality. Missing functionality can be fixed by working around Mono's unfinished method, implementing the method yourself, or waiting until the method is completed in Mono.
+Estes problemas podem provavelmente ser ignoradas em seu porte inicial. Sua aplicação ainda deve ser executada sem deixar de funcionar, no entanto, pode haver perda de funcionalidade. A perda de funcionalidade pode ser contornada, com uma implementação condicional no seu código ou corrigida contribuindo para a implementação do método inacabado no Mono.
+
 
 NotImplementedException
 -----------------------
 
-These can be tricky to determine if they are a problem or not. In many cases the methods are not implemented at all, and simply throw a NotImplementedException as soon as they are called. In other cases, the method may only throw the exception under certain circumstances, while most calls work as expected. We would be very interested in any feedback about these issues. If certain methods provide a lot of false positives, we need to come up with a solution to discount them.
+Estes podem ser difíceis de determinar se eles são ou não um problema real. Em muitos casos, os métodos não são realmente implementados, e simplesmente lançam uma exceção NotImplementedException assim que eles são chamados. Em outros casos, o método somente lança a exceção em certas circunstâncias, enquanto a maioria das chamadas funciona como esperado. Estamos muito interessados em qualquer feedback sobre essas questões. Se certos métodos fornecem uma grande quantidade de falsos positivos, temos de chegar a uma solução para descontá-los na lógica do MoMA.
 
-**What to do:**
 
-These are pretty much like MonoTodo's. It's a gamble as to whether they will cause you problems or not. Your application will compile just fine under Mono with these issues, and you will need to test your application to see if you need to work around these calls.
+**O que fazer:**
+
+Estes são muito parecidos com o [MonoTodo]. É uma incógnita saber se eles vão lhe causar problemas ou não. A aplicação irá compilar corretamente no Mono com estes problemas, e você vai precisar testar sua aplicação para ver se precisa contornar essas chamadas.
+
 
 P/Invokes
 ---------
 
-P/Invokes (platform invokes) are used to call functions that are written in unmanaged languages, often times provided by the platform itself (user32.dll, shell32.dll). However, these can also be calls into your own unmanaged libraries. Mono can handle these calls when the unmanaged library is available for the platform you are using, however many times the whole purpose of using Mono is to run on many platforms.
+P/Invokes (chamadas nativas) são usadas para chamar funções que são escritas em linguagens não gerenciadas, muitas vezes fornecidas pela própria plataforma (user32.dll, shell32.dll). No entanto, estas também podem ser chamadas em suas próprias bibliotecas nativas. O Mono consegue lidar com essas chamadas quando a biblioteca nativa correta está disponível para a plataforma que você está usando, no entanto, muitas vezes o propósito de se usar o Mono é poder executar uniformente em várias plataformas.
 
-**What to do:**
+**O que fazer:**
 
-The long answer is available here: [Interop_with_Native_Libraries](/docs/advanced/pinvoke/).
+A resposta longa está disponível aqui: [Interoperação com Bibliotecas Nativas](/docs/advanced/pinvoke/).
 
-The summary:
+O resumo:
 
-If you are calling something that is provided by your platform (usually the win32 API), you will have to find a way to accomplish the same functionality on all your target platforms. This could mean replacing your unmanaged call with a managed equivalent, or it can mean detecting what platform you are running on and calling the Win32/\*nix/OSX/etc. equivalent.
+Se você está chamando algo que é fornecido por sua plataforma (geralmente a API win32), você vai ter que encontrar uma maneira de fazer a mesma funcionalidade em todas as suas plataformas de destino. Isto poderia significar substituir a sua chamada não gerenciada por uma equivalente gerenciada, ou pode significar a identificação de qual plataforma você está executando e chamando o Win32 / * nix / OSX / etc. equivalente.
 
-([http://pinvoke.net](http://pinvoke.net) can sometimes help you find the managed equivalent to Win32 API calls.)
+([http://pinvoke.net](http://pinvoke.net) às vezes pode ajudá-lo a encontrar as chamadas gerenciadas equivalentes para a API Win32.)
 
-If you are calling into your own native library, then it depends on the cross-platform capabilities of your library. If your native library will work on all your target platforms, then your application should be fine. If not, you can make your native library cross-platform compatible, do the operation in managed code, or work around it by detecting what platform you are running on.
+Se você está chamando em sua própria biblioteca nativa, então, tudo depende dos recursos de multi-plataforma de sua biblioteca. Se a sua biblioteca nativa irá trabalhar em todas as suas plataformas de destino, então, sua aplicação funcionará corretamente. Se não, você pode fazer a sua biblioteca nativa compatível com as múltiplas plataformas, ou fazer a operação em código gerenciado, ou contornar o uso da biblioteca nativa conforme a plataforma em que você está executando.
 
-The native library that is being called is listed in the last column on MoMA's detail report.
+A biblioteca nativa que está sendo chamada é listada na última coluna no relatório de detalhes do MoMA.
 
-To find out at runtime which platform your application is running on, see: [FAQ:\_Technical#How\_to\_detect\_the\_execution_platform\_.3F](/docs/faq/technical/)
+Para saber em tempo de execução em qual plataforma (SO) sua aplicação está sendo executada, consulte: [FAQ:\_Técnico no item ***Como detectar a plataforma de execução ?***](/docs/faq/technical/#como-detectar-a-plataforma-de-execuo).
 

@@ -1,5 +1,5 @@
 ---
-title: Install Mono
+title: Instalar o Mono
 redirect_from:
   - /Mono_Installation/
   - /archived/mono_installation/

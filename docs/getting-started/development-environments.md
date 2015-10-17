@@ -6,7 +6,7 @@ redirect_from:
   - /Development_Environment/
 ---
 
-The Mono project focuses on compilers and runtime libraries and does not directly provide an IDE. Developers must choose from a series of available tools the one best suited for them.
+O Projeto  Mono foca ... focuses on compilers and runtime libraries and does not directly provide an IDE. Developers must choose from a series of available tools the one best suited for them.
 
 MonoDevelop
 -----------

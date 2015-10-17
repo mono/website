@@ -1,5 +1,5 @@
 ---
-title: Mono Releases
+title: Versões Liberadas do Mono
 redirect_from:
   - /1.0/
   - /1.0.1/
@@ -63,8 +63,8 @@ redirect_from:
   - /OldReleases/
 ---
 
-This page contains a list of all Mono releases. The latest release is {{ site.data.latestrelease.version }}.<br/>
-Mono version numbers follow a specific policy, learn more [here](/docs/about-mono/versioning/).
+Esta página contém a lista de todas as versões liberadas do Mono. A última versão pode ser encontrada [aqui](/download).<br/>
+A política específica de números de versão do Mono é descrita [aqui](/docs/about-mono/versioning/).
 
 {% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "releasedate" | reverse %}
 

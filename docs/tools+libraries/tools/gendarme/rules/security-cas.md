@@ -1,18 +1,19 @@
 ---
-title: "Gendarme Rules: Security - CAS"
+title: "Regras Gendarme: Segurança - CAS"
 redirect_from:
   - /Gendarme.Rules.Security.Cas/
 ---
 
-[Gendarme](/docs/tools+libraries/tools/gendarme/)'s Code Access Security (CAS) rules are located in the **Gendarme.Rules.Security.Cas.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
+As regras do [Gendarme](/docs/tools+libraries/tools/gendarme/) para o Code Access Security (CAS) estão localizados na assembly **Gendarme.Rules.Security.Cas.dll**. 
+Os fontes correntes estão disponíveis no [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Security.Cas).
 
 <table>
 <col width="100%" />
 <tbody>
 <tr class="odd">
-<td align="left"><h2>Table of contents</h2>
+<td align="left"><h2>Sumário</h2>
 <ul>
-<li><a href="#rules">1 Rules</a>
+<li><a href="#rules">1 Regras</a>
 <ul>
 <li><a href="#addmissingtypeinheritancedemandrule">1.1 AddMissingTypeInheritanceDemandRule</a></li>
 <li><a href="#donotexposefieldsinsecuredtyperule">1.2 DoNotExposeFieldsInSecuredTypeRule</a></li>
@@ -22,86 +23,86 @@ redirect_from:
 <li><a href="#reviewsuppressunmanagedcodesecurityusagerule">1.6 ReviewSuppressUnmanagedCodeSecurityUsageRule</a></li>
 <li><a href="#securegetobjectdataoverridesrule">1.7 SecureGetObjectDataOverridesRule</a></li>
 </ul></li>
-<li><a href="#feedback">2 Feedback</a></li>
+<li><a href="#feedback">2 Comentários</a></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-Rules
+Regras
 =====
 
 ### AddMissingTypeInheritanceDemandRule
 
-The rule checks for types that are not **sealed** but have a **LinkDemand**. In this case the type should also have an **InheritanceDemand** for the same permissions. An alternative is to seal the type.
+Essa regra verifica se há tipos que não são **selados**  (```sealed```) mas tem um **LinkDemand**. Neste caso, o tipo também deve ter um **InheritanceDemand** para as mesmas permissões. Uma alternativa é selar o tipo.
 
-**Bad** example:
+Exemplo **Errado**:
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
-public class Bad {
+public class Errado{
 }
 ```
 
-**Good** example (InheritanceDemand):
+Exemplo **Correto** usando (InheritanceDemand):
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
 [SecurityPermission (SecurityAction.InheritanceDemand, ControlThread = true)]
-public class Correct {
+public class Correto {
 }
 ```
 
-**Good** example (sealed):
+Exemplo **Correto** usando (sealed):
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
-public sealed class Correct {
+public sealed class Correto {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeLinkDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte de Gendarme.Rules.Security com o nome de TypeLinkDemandRule.
 
 ### DoNotExposeFieldsInSecuredTypeRule
 
-The rule checks for types that are secured by **Demand** or **LinkDemand**but also expose visible fields. Access to these fields is not covered by the declarative demands, opening potential security holes.
+Essa regra verifica os tipos que são protegidos por **Demand** ou **LinkDemand** mas também expõe campos visíveis. O acesso a estes campos não são cobertos pelas exigências declarativas, abrindo brechas de segurança em potencial.
 
-**Bad** example:
+Exemplo **Errado**:
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
-public class Bad {
+public class Errado {
 }
 ```
 
-**Good** example (InheritanceDemand):
+Exemplo **Correto** usando (InheritanceDemand):
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
 [SecurityPermission (SecurityAction.InheritanceDemand, ControlThread = true)]
-public class Correct {
+public class Correto {
 }
 ```
 
-**Good** example (sealed):
+Exemplo **Correto** usando (sealed):
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, ControlThread = true)]
-public sealed class Correct {
+public sealed class Correto {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeExposeFieldsRule.
+-   Antes do Gendarme 2.2 essa regra era parte da Gendarme.Rules.Security e da nomenclatura TypeExposeFieldsRule.
 
 ### DoNotExposeMethodsProtectedByLinkDemandRule
 
-This rule checks for visible methods that are less protected (i.e. lower security requirements) than the method they call. If the called methods are protected by a **LinkDemand** then the caller can be used to bypass security checks.
+Esta regra verifica métodos visíveis que são menos protegidos (ou seja, os requisitos de segurança são mais baixas) do que o método que eles chamam. Se os métodos chamados são protegidos por um **LinkDemand** em seguida, o chamador pode ser utilizado para verificações de segurança de bypass.
 
-**Bad** example:
+Exemplo **Errado**:
 
 ``` csharp
 public class BaseClass {
@@ -112,7 +113,7 @@ public class BaseClass {
 }
  
 public class Class : BaseClass  {
-    // bad since a caller with only ControlAppDomain will be able to call the base method
+    // Errado, já que um chamador com apenas ControlAppDomain será capaz de chamar o método base
     [SecurityPermission (SecurityAction.LinkDemand, ControlAppDomain = true)]
     public override void VirtualMethod ()
     {
@@ -121,7 +122,7 @@ public class Class : BaseClass  {
 }
 ```
 
-**Good** example (InheritanceDemand):
+Exemplo **Correto** usando (InheritanceDemand):
 
 ``` csharp
 public class BaseClass {
@@ -132,7 +133,7 @@ public class BaseClass {
 }
  
 public class Class : BaseClass  {
-    // ok since this permission cover the base class permission
+    // Correto desde essa permissão cubra a permissão da classe base
     [SecurityPermission (SecurityAction.LinkDemand, Unrestricted = true)]
     public override void VirtualMethod ()
     {
@@ -141,15 +142,15 @@ public class Class : BaseClass  {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named MethodCallWithSubsetLinkDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security com o nome de MethodCallWithSubsetLinkDemandRule.
 
 ### DoNotReduceTypeSecurityOnMethodsRule
 
-This rule checks for types that have declarative security permission which aren't a subset of the security permission of some of their methods.
+Esta regra verifica os tipos que têm permissão de segurança declarativa, que não são um subconjunto da permissão de alguns de seus métodos de segurança.
 
-**Bad** example:
+Exemplo **Errado**
 
 ``` csharp
 [SecurityPermission (SecurityAction.Assert, ControlThread = true)]
@@ -161,7 +162,7 @@ public class NotSubset {
 }
 ```
 
-**Good** example:
+Exemplo **Correto**
 
 ``` csharp
 [SecurityPermission (SecurityAction.Assert, ControlThread = true)]
@@ -173,78 +174,78 @@ public class Subset {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named TypeIsNotSubsetOfMethodSecurityRule.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security a da nomenclatura TypeIsNotSubsetOfMethodSecurityRule.
 
 ### ReviewSealedTypeWithInheritanceDemandRule
 
-This rule checks for sealed types that have **InheritanceDemand** declarative security applied to them. Since those types cannot be inherited from the **InheritanceDemand** will never be executed by the runtime. Check if the permission is required and, if so, change the **SecurityAction** to the correct one. Otherwise remove the permission.
+Esta regra verifica os tipos fechados que têm **InheritanceDemand** segurança declarativa aplicada a eles. Desde que esses tipos não possam ser herdadas do **InheritanceDemand** nunca serão executado pelo tempo de execução. Verifique se a permissão é necessária e, em caso afirmativo, altere o **SecurityAction** para a correta. Caso contrário, remover a permissão.
 
-**Bad** example:
-
-``` csharp
-[SecurityPermission (SecurityAction.InheritanceDemand, Unrestricted = true)]
-public sealed class Bad {
-}
-```
-
-**Good** example (non sealed):
+Exemplo **Errado**:
 
 ``` csharp
 [SecurityPermission (SecurityAction.InheritanceDemand, Unrestricted = true)]
-public class Good {
+public sealed class Errado {
 }
 ```
 
-**Good** example (LinkDemand):
+Exemplo **Correto** usando (sem sealed):
+
+``` csharp
+[SecurityPermission (SecurityAction.InheritanceDemand, Unrestricted = true)]
+public class Correto {
+}
+```
+
+Exemplo **Correto** usando (LinkDemand):
 
 ``` csharp
 [SecurityPermission (SecurityAction.LinkDemand, Unrestricted = true)]
-public sealed class Good {
+public sealed class Correto {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security and named SealedTypeWithInheritanceDemandRule.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security com o nome de SealedTypeWithInheritanceDemandRule.
 
 ### ReviewSuppressUnmanagedCodeSecurityUsageRule
 
-This rule fires if a type or method is decorated with the **[SuppressUnmanagedCodeSecurity]**attribute. This attribute reduces the security checks done when executing unmanaged code and its usage should be reviewed to confirm that no exploitable security holes are present.
+Essa regra dispara, se um tipo ou método é marcado com o atributo **[SuppressUnmanagedCodeSecurity]**. Esse atributo reduz as verificações de segurança feitas durante a execução de código não gerenciado, e seu uso deve ser revisto para confirmar que não há falhas de segurança exploráveis presentes na implementação.
 
-Example:
+Exemplo:
 
 ``` csharp
 [SuppressUnmanagedCodeSecurity]
-public class Safe {
+public class Seguro {
     [DllImport ("User32.dll")]
     static extern Boolean MessageBeep (UInt32 beepType);
 }
 ```
 
-**Notes**
+**Notas**
 
--   This is an Audit rule. As such it does not check for valid or invalid patterns but warns about a specific problem that needs to be reviewed by someone.
+-   Essa é uma regra de auditoria. Como tal, ela não verifica padrões válidos ou inválidos, mas adverte sobre um problema específico que precisa ser revisado por alguém.
 
 ### SecureGetObjectDataOverridesRule
 
-This rule fires if a type implements **System.Runtime.Serialization.ISerializable**but the **GetObjectData** method is not protected with a **Demand** or **LinkDemand** for **SerializationFormatter**.
+Esta regra é acionado quando se implementa um tipo **System.Runtime.Serialization.ISerializable** mas o método **GetObjectData** não está protegido com uma **Demand** ou um **LinkDemand** para **SerializationFormatter**.
 
-**Bad** example:
+Exemplo **Errado**:
 
 ``` csharp
-public class Bad : ISerializable {
+public class Errodo : ISerializable {
     public override void GetObjectData (SerializationInfo info, StreamingContext context)
     {
     }
 }
 ```
 
-**Good** example:
+Exemplo **Correto**:
 
 ``` csharp
-public class Good : ISerializable {
+public class Correto : ISerializable {
     [SecurityPermission (SecurityAction.LinkDemand, SerializationFormatter = true)]
     public override void GetObjectData (SerializationInfo info, StreamingContext context)
     {
@@ -252,12 +253,12 @@ public class Good : ISerializable {
 }
 ```
 
-**Notes**
+**Notas**
 
--   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security.
+-   Antes do Gendarme 2.2 essa regra era parte do Gendarme.Rules.Security.
 
-Feedback
-========
+Comentários
+===========
 
-Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
+Por favor, reporte qualquer erro na documentação, erros de digitação ou sugestões para o [Grupo de Discussão do Gendarme](http://groups.google.com/group/gendarme) no Google. Obrigado!
 

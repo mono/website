@@ -1,58 +1,58 @@
 ---
-title: Source Code Repository
+title: Repositório de Fontes
 redirect_from:
   - /SourceCodeRepository/
   - /AnonSVN/
   - /SVN/
 ---
 
-The Mono source code is hosted on [GitHub](http://GitHub.com) using the [Git](http://git-scm.com/) source code control system for all of its source code. Although only active contributors get write access to the modules on Git, third party developers and easily fork the code on GitHub or download full copies of the repositories to their own systems.
+O fonte do Mono está hospedado no [GitHub](http://GitHub.com) usando o [Git](http://git-scm.com/) como sistema de controle de fontes para todo o seu código. Embora só contribuidores ativos tenham acesso de escrita ao módulos via Git, outros desenvolvedores podem facilmente realizar um ```fork``` do código no GitHub ou baixar uma cópia completa dos repositórios para seu próprios sistemas.
 
-Here we describe how one obtains commit access to the Mono Git repository and the responsibilities that come with that access privilege.
+Aqui descrevemos com alguém pode obter acesso de escrita (commit) no repositório Git do Mono e as responsabilidades que vem junto com esse privilégio.
 
-Browsing the Sources
---------------------
+Olhando os Fontes
+-----------------
 
-If all you need is to browse the sources, you can go to [Mono Organization page on GitHub](https://github.com/mono).
+Se tudo que você precisa é olhar os fontes, vá diretamente para a página da nossa [organização no GitHub](https://github.com/mono).
 
-Building Mono from source
--------------------------
+Compilando o Mono
+-----------------
 
-Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source](/docs/compiling-mono/)
+Uma vez que você obteve os fontes dos diferentes módulos do projeto Mono, você provavelmente quererá [compilar o Mono a partir dos fontes](/docs/compiling-mono/)
 
-Contributing Patches
+Contribuindo Patches
 ====================
 
-Now that Mono is hosted on GitHub, contributing patches has never been easier. If you aren't yet familiar with GitHub, you may wish to read GitHub's guide on [getting started](https://help.github.com/articles/set-up-git/).
+Agora que o Mono está hospedado no GitHub, contribuir se tornou muito mais fácil. Se você não está familiarizado com o Git/GitHub, você pode desejar ler o guia do próprio GitHub sobre [como começar a usar(em Inglês)](https://help.github.com/articles/set-up-git/).
 
-Once you've gotten a GitHub account and gotten set up, you should read GitHub's guide to [forking a repository](https://help.github.com/articles/fork-a-repo/). Once you feel that your patch is finished and you've tested that everything still builds and works as expected, you can then issue a [pull request](https://help.github.com/articles/using-pull-requests/) which alerts the active maintainers that they should examine and review your patch, merging it into the mainline source repository.
+Depois que você obteve a sua conta do GitHub e montou o seu ambiente, você deve ler o outro guia sobre [fazer um _fork_ de um repositório (em Inglês)](https://help.github.com/articles/fork-a-repo/). Assim que você achar que um patch está finalizado e que você testou que tudo ainda compila e funciona como esperado, você pode iniciar um [_pull request_](https://help.github.com/articles/using-pull-requests/) que alerta os mantenedores ativos que devem examinar e revisar o seu patch, mergeando o mesmo no repositório principal se ele for adequado.
 
-Policies
-========
+Regras
+======
 
-It is important that everyone follow these policies:
+É importante que todos sigam estas regras e convenções:
 
-### Coding Guidelines
+### Convenções de Código
 
-We have our own [coding guidelines](/community/contributing/coding-guidelines/).
+Nós temos nosso conjunto de  [convenções de código](/community/contributing/coding-guidelines/).
 
-### Code License
+### Licenciamento do Código
 
-If you are about to commit code to a module, the code that is being committed should be released under the X11 license. Mono code licenses themselves are basically: compilers, class libraries and managed code tools: X11; runtime: LGPL.
+Se você está providenciando código para ser incorporado em algum módulo, esse código deve ser liberado sob uma licença X11. O código do Mono em sis está licenciado da seguinte forma: compiladores, bibliotecas de código e ferramentas em código gerenciado: X11; ambiente de execução: LGPL.
 
-If in doubt, check with the maintainers of the module, or send mail to mono-devel-list@ximian.com.
+Se em dúvida, verifique com os mantenedores do módulo, ou mande um email para mono-devel-list@ximian.com.
 
-### Changing Code
+### Alterando o Código Existente
 
-Even if you have write access to the official Mono Project GitHub repositories, that doesn't mean you can change code at will in any directory or module. Directories and Namespaces have a sort of unofficial ownership. If you are not the owner of a piece of code and you want to make changes/fixes to it, there are two cases.
+Mesmo se você tem acesso de escrita nos repositórios oficiais do Projeto Mono no GitHub, isso não significa que você pode mudar o código ao seu bel-prazer em qualquer diretório ou módulo. Diretórios e Espaços de Nomes (Namespaces) têm 'donos' extra-oficiais. Se você não é o dono de um pedaço de código e quer fazer modificações/correções, existem dois casos:
 
--   The change is a typo fix or a one-liner build or trivial fix. In this case almost anyone can commit (always remembering to add the proper changelog entry to explain the change). We say "almost anyone", because changes to certain directories almost always should be reviewed first. Such as changes to core stuff: corlib/System, System.Collections, mini/, metadata/, System.IO.
+- A alteração é de um pequeno erro tipográfico ou só uma linha de código, uma correção trivial. Neste caso quase qualquer um pode comitar (sempre lembrando de adicionar uma entrada na lista de alterações (changelog) para explicar a alteração). Nós dizemos "quase qualquer um", porque mudanças em alguns diretórios quase sempre devem ser revisadas antes. Mudanças para pedaços críticos como: corlib/System, System.Collections, mini/, metadata/, System.IO.
 
--   The change is larger. In this case the patch **must** be sent to mono-devel-list for review by the owner of the code and by the other hackers. Always submit such patches to the list or bugzilla, although you may put the owner of the code in the CC header. Hackers come and go. Mailing a patch to only a personal address is a good way to get the patch forgotten and missed. Plus, getting the patches reviewed as well as reviewing them, is a good thing, so try to get used to it.
+- A alteração é maior. Neste caso o patch **DEVE** ser enviado para a lista mono-devel-list para revisão pelo dono do código e por outros hackers. Sempre envie esses patches para lista ou no controle de bugs (bugzilla), embora você possa 'copiar' o dono do código no email. Hackers vem e vão. Enviando o patch apenas para um email pessoal é um bom jeito de vê-lo ser esquecido e perdido. Além disso, fazendo os patches serem revistos e revisando os de outros, é uma boa coisa, portanto se habitue a fazê-lo.
 
-Note: If the patch is an addition of code and doesn't change any of the existing code, the rules are slightly relaxed: there is more freedom in committing such changes, if they don't interfere with the existing codebase.
+Nota: Se um patch é uma adição de código e não modifica nenhum código existente (inclusive configurações/scripts de compilação), as regras sem levemente mais relaxadas: existe liberdade para incorporar essas modificações, se eleas não interferirem com o código existente. Mas evitem entulhar o Mono, não queremos bloatware!
 
-### Owning Code
+### Virando Dono de Código
 
 Now, how do you get to be the owner of a chunk of code? The answer is simple. You wrote the code, so you're the unofficial owner. There is also another way. After sending a few patches for the code, the owner (or the core developers of mono, if the owner somehow disappeared) trusts you and tells you you're free to commit without getting his review first.
 

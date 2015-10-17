@@ -1,209 +1,295 @@
 ---
-title: .NET Source Code Integration
+title: Integração dos Fontes Abertos do .NET
 ---
 
-With the recent open sourcing of parts of .NET, we want to bring the best pieces of .NET to Mono, and contribute the cross platform components of Mono to the .NET efforts.
+Com a recente liberação de partes do código do .NET, nós queremos trazer
+os melhores pedaços do .NET para o Mono, e contribuir os componentes 
+multi-plataforma do Mono para os esforços do .NET.
 
-This document describes the strategies that we will employ.
+Este documento descreve as estratégias que nos utilizaremos.
 
-We will be [tracking the efforts on Trello](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono).
+Nós estaremos [acompanhando os esforços no Trello](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono)
 
-Background
-==========
+Contexto
+========
 
-Microsoft is open sourcing .NET in two ways:
+A Microsoft está abrindo o .NET em duas formas:
 
-* [.NET Core](https://github.com/dotnet/corefx): a re-imagined version of .NET that is suitable to be deployed alongside web apps and places a strong focus on a new set of assemblies and APIs based on the PCL 2.0 profile. This is a full open source project, with Microsoft taking contributions and developing in the open.
+* [.NET Core](http://github.com/corefx): é uma versão re-imaginada do .NET
+que é capaz de ser instalada integrada a aplicações web e fortemente focada 
+em um novo conjunto de assemblies e APIs baseada no perfil PCL 2.0. 
+É um projeto completamente open source, com a Microsoft aceitando contribuições 
+e desenvolvendo de forma aberta.
 
-* [Parts of the .NET Framework](https://github.com/Microsoft/referencesource): these are parts of the .NET framework as it ships on Windows, and the API that Mono has been implementing over the years. The version published here is a snapshot of the .NET Framework source code. While Microsoft is publishing the source code, they are not actively developing this tree in the open, nor are they taking patches.
+* [Partes do Framework .NET](http://github.com/Microsoft/referencesource): 
+são partes do framework .NET que vem com o Windows, e a API que o Mono vem 
+implementado ao longo de anos. A versão publicada é um instantâneo do fonte 
+do Framework .NET. Embora a Microsoft esteja publicando o código fonte, eles 
+não estão ativamente desenvolvendo esta árvore em aberto, nem aceitando 
+correções.
 
-Considerations
+Considerações
 ==============
 
-This section lists a set of issues to keep in mind while bringing the Microsoft .NET source code into Mono, and what we need to keep in mind as we upgrade the code.
+Esta seção lista os cuidados que devemos ter em mente ao incorporar código fonte 
+do .NET dentro do Mono, e que não podemos esquecer ao aprimorar o código.
 
-The list of issues below identifies the constraints that we have to bring .NET code into Mono.
+Os itens listados abaixo identificam as restrições que temos ao incorporar 
+essa massa de código.
 
-Mono's Platform Specific Code
------------------------------
+Código Específico de Plataforma do Mono
+---------------------------------------
 
-In numerous instances, Mono contains platform specific code which is currently missing from .NET. There are a wide variety of features like this. Some examples include:
+Em muitos casos, o Mono contem código específico de plataforma que atualmente 
+inexiste no .NET.  Existe uma grande variedade de funcionalidades desse tipo.  
+Alguns exemplos:
 
-* the `System.Environment` class which provides a platform-specific set of locations for applications to lookup certain well known file system locations.
+* A classe `System.Environment` que provê um conjunto de locais específicos por
+plataforma para as aplicações procurarem certos 'locais bem conhecidos' no 
+sistema de arquivos.
 
-* The `Registry` class which provides an abstraction that maps to Windows APIs or a file backed implementation on Unix.
+* A classe `Registry` que provê uma abstração que mapeia para as APIs do Windows 
+ou uma implementação baseada em arquivos no Unix.
 
-Mono's Classes with Tight Runtime Integration
----------------------------------------------
+Classes do Mono com Integração Estreita com o Ambiente de Execução
+-------------------------------------------------------------------
 
-Some of the APIs in the .NET framework are bound to have tight dependencies on their runtime implementation. Just like Mono's implementation does.
+Algumas APIs do framework .NET tem extreita dependência com a implementação do 
+ambiente de execução. E esse também é o caso da implementação do Mono.
 
-There are cases where we might want to take on the extra challenge of doing the runtime integration work (for example, switching from our barely maintained decimal support, to Microsoft's version would be a win). In other cases, the amount of work is not worth doing the changes, like the support for `System.Reflection.Emit`.
+Há casos em que teremos um desafio extra pela frente para fazer a integração com 
+o ambiente de execução funcionar (por exemplo, chavear nosso pobre suporte ao tipo 
+decimal pela versão da Microsoft seria decididamente um ganho).  Em outros casos, 
+o tamanho da tarefa não vale o esforço, como o suporte a `System.Reflection.Emit`.
 
-Mono Profiles
+Perfis do Mono
 -------------
 
-Mono ships a mobile API profile which is designed to be a lightweight API profile and is used in mobile devices, game consoles and the Mono for Unreal Engine project.
+O Mono disponibiliza um perfil de API Mobile projetado para expor uma API mais 
+leve para utilização em dispositivos móveis, consoles de jogos e no projeto Mono 
+for Unreal Engine.
 
-The Mobile Profile basically removes some of the heavier .NET dependencies from the system. It mostly deals with removing `System.Configuration` dependencies from our class libraries.
+O Perfil Mobile basicamente remove do sistema algumas da dependências .NET mais 
+pesadas.  Ele principalmente lida com remover dependências a `System.Configuration` 
+das nossas bibliotecas de classes.
 
 Mono Core
 ---------
 
-In the long term, we want to adopt a .NET-Core like approach, where we have a thin layer of platform/VM specific APIs, and we allow users to use Mono in the same way that .NET core can be used, without the large libraries/profiles.
+No longo prazo, nós queremos adotar uma estratégia similar ao do .NET Core, 
+onde nós teremos uma camada fina de APIs específicas da plataforma/VM, e 
+permitiremos aos nossos usuários usar o Mono na mesma forma que o .NET core 
+pode ser usado, sem grandes bibliotecas/perfis.
 
-Mono Classes are Linker Friendly
---------------------------------
+As Classes do Mono são Amigáveis ao Linker
+------------------------------------------
 
-Some of the class libraries in Mono have been designed to keep the result linker-friendly, an important piece of functionality required by our Android and iOS deployments.
+Algumas das bibliotecas de classe do Mono foram projetadas para manter o seu 
+resultado amigável ao linker, um pedaço importante da funcionalidade requerida 
+pelas nossas implementações para Android e iOS.
 
-This comes in the form of removing some runtime weak association with a strong association, or teaching our linker and class libraries of connections between certain classes and their requirements. Many of those links would likely exist in .NET as well, but we would need to ensure that we do not regress when incorporating code here.
+Isto é feito substituindo algumas associações 'fracas', manifestas só em tempo de 
+execução, por associações fortes, ou ensinando nosso linker sobre as bibliotecas 
+e as conexões entre certas classes e suas exigências. Muitos dessas ligações 
+provavelmente existem no .NET também, mas nós precisamos assegurar que não haja 
+regressões ao incorporar código do .NET.
 
-Base Class Libraries Bootstrapping
-----------------------------------
+Bootstrapping das Bibliotecas Básicas
+-------------------------------------
 
-The bootstrapping of the core libraries is not exactly fun. Microsoft has cyclic dependencies on various assembly groups. For example `mscorlib`, `System`, `System.Xml`, `System.Configuration` and `System.Core` are build referencing each other's types. Another cluster includes the `System.Web` family.
+O bootstrapping das bibliotecas fundamentais não é uma coisa divertida. A Microsoft 
+incluiu dependências cíclicas em vários grupos de bibliotecas.  Por exemplo, `mscorlib`, 
+`System`, `System.Xml`, `System.Configuration` e `System.Core` são compiladas referenciando 
+os tipos umas das outras. Outro emaranhado existe na família `System.Web`.
 
-Mono currently has a multi-stage build process to create these libraries that have cyclic dependencies. Bringing new code from Microsoft is possible, but for each class that we bring, we might need to adjust the cyclic dependency build.
+O Mono atualmente tem um processo de compilação em múltiplos estágios para criar essas 
+bibliotecas que tem dependência cíclica.  Trazer novo código da Microsoft é possível, mas a
+cada classe que for incorporada, podemos ter que ajustar o processo de compilação.
 
-Missing Resources
------------------
-
-The distribution does not include the resouces for some of the code.   These manifest themselves as references to a class called "SR".
-
-We are going to need to autogenerate those.
-
-Limited Man Power
------------------
-
-We have limited manpower, so when bringing code from .NET, we need to pick our battles.
-
-The pieces of Mono that have been used the most are of higher quality than the pieces that have not been used very much, or have not been maintained for a long time.
-
-It is best to focus our efforts on the high-value targets in the .NET class libraries than to bring things that are known to work well in Mono and are well tested.
-
-Some .NET Code might not be complete
-------------------------------------
-
-Some of the .NET code that we are getting might not be complete, it might be missing resources, strings, build files and might not be trivially buildable. So it is important that when you submit a pull request, the patch builds completely.
-
-Performance/Memory side effects
--------------------------------
-
-This is mostly a non-issue, but we might find cases where Mono class libraries have been fine-tuned for use in the Mono runtime and bringing the equivalent code from Microsoft might regress our performance or make us allocate more memory.
-
-Some items to watch out for:
-
-* **Code Access Security checks**: these are likely present in .NET, and they do not exist in Mono. They are relatively expensive to perform, and Mono does not even implement it correctly. So we would need to ifdef out all the CAS-related support when importing the code.
-
-* **Object Disposed**: Mono did not always faithfully implement the object disposed pattern. This is a pattern where objects that implement `IDisposable` throw the `ObjectDisposedException` whenever an object's Dispose method was called, but a member of that instance was called. This requires extra testing that Mono currently does not have in a few places. It might not matter, but we might want to watch out for this.
-
-* **Enumeration Validation**: .NET tends to validate the values of enumeration passed to its functions. Mono does not do this, so we might have a performance impact when we bring some of the code.
-
-Code Access Security Checks is probably the one that we should be worried about, as it is completely useless in Mono.
-
-Compile-Time Defines
+'Recursos' Faltantes
 --------------------
 
-The Microsoft source code contains many different kinds of compiler defines that are used for conditional compilation. Whenever we are importing code from Microsoft, we need to perfom an audit and determine which features we want to take.
+O fonte liberado pela Microsoft não incluem os recursos (resources) exigidos por parte do código. Isto se manifesta com referências a uma classe chamada "SR".
 
-Strategy
-========
+Nós teremos que autogerá-los.
 
-In general, we will be integrating code from the [Reference Source](https://github.com/Microsoft/referencesource) release, as this contains the API that is closest to Mono.
+Mão de Obra Escassa
+-------------------
 
-We [are tracking the task assignements](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) on Trello.
+Nós temos escassez de mão de obra, então ao trazer código do .NET, nós temos que escolher 
+nossas batalhas.
 
-Later on, when we implement Mono Core, we will instead contribute the VM/OS specific bits to .NET Core.
+Os pedaços do Mono que tem sido bastantes utilizados são de uma melhor qualidade do que os 
+pedaços não muito utilizados, ou que estão a muito tempo sem manutenção.
 
-We need to come up with an integration plan that will maximize the benefits to Mono and our users with the least amount of engineering effort. While in an ideal world we could bring some 80-90% of the code over, this is a major effort with many risks involved. We will prioritize the work to focus on what would give us the most benefits upfront for the Mono community, and leave the more complex/harder difficult bits for later.
+É melhor focar os nossos esforços nos alvos que possam trazer-nos alto-valor nas bibliotecas 
+de classe do .NET do que trazer coisas que funcionam bem no Mono e estão bem testadas.
 
-Giving Mono a big boost from the start
+Código .NET Incompleto
+----------------------
 
-When bringing code to Mono, we can bring code in the following ways:
+Parte do código .NET que está sendo disponibilizado pode não estar completo, podem estar 
+faltando resources, strings, scripts de compilação e pode não ser trivialmente compilável.   
+Portanto é importante que ao submeter um pull request, a alteração compile completamente.
 
-* Entire assemblies
-* Entire classes
-* Blended Work
-* Individual members
+Efeitos Colaterais na Performance/Uso de Memória
+------------------------------------------------
 
-### Entire Assemblies
+Este é provavelmente um problema inexistente, mas nós podemos achar casos em que as 
+bibliotecas de classes do Mono foram otimizadas para uso no ambiente de execução do Mono 
+de tal forma que incorporar o código equivalente da Microsoft pode regredir a performance 
+ou causar a alocação de mais memória.
 
-We should port entire assemblies when our assembly is known to be very buggy, in bad shape, or just completely broken.
+Alguns casos para ficar de olho:
 
-Immediate candidates for this include:
+* **Checagens do Code Access Security**: estas provavelmente estão presentes no código do .NET, 
+e elas essencialmente não existem no Mono. São relativamente custosas para executar, e o Mono 
+não chegou a implementá-las corretamente. Então nós teriamos que colocar um monte de ifdefs ao 
+importar todo código relacionado ao suporte ao CAS.
 
-* WCF - almost immediately
-* System.Web - almost immediately
+* **Descarte de Objetos*: O Mono nem sempre implementou fielmente o padrão de descarte de objetos
+(Dispose). É um padrão em que objetos que implementam a interface `IDisposable` arremessam um 
+exceção do tipo `ObjectDisposedException` sempre que o método Dispose já foi chamado, mas um membro 
+dessa instância é executado. Isto requer mais código condicional que o Mono não tem em alguns lugares.
+Pode ser que não seja importante, mas devemos prestar alguma atenção a isso.
 
-Medium term candidates include:
+* **Validação de Enumerações**: O .NET tende a validar os valores de enumerações passados 
+a suas funções. O Mono não faz isso, portanto podemos ter um impacto na performance ao importar
+esse tipo de código.
 
-* System.Configuration - possible, but requires careful examination
+As checagens de Code Access Security são provavelmente o que mais nós devemos nos preocupar em 
+filtrar, por serem completamente inúteis no Mono.
+
+Definiçoes de Tempo de Compilação
+--------------------
+
+O código fonte da Microsoft contém muitos tipos diferentes de definições de tempo de compilação 
+(defines) que são usados para compilação condicional.  Sempre que importarmos algum código da 
+Microsoft, nós temos que fazer uma auditoria e determinar que funcionalidades são necessárias.
+
+Estratégia
+==========
+
+Em geral, nós estaremos integrando código que vem do [Fonte de Referência](https://github.com/Microsoft/referencesource)
+liberado, porque este contem a API que é mais próxima da do Mono.
+
+Nós [estaremos acompanhando a atribuição de tarefas](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) no Trello.
+
+Mais tarde, quando implementarmos o Mono Core, nós inversamente contribuiremos bits específicos a VM/SO para o .NET Core.
+
+Nós temos que bolar um plano de integração que maximize os benefícios ao Mono e nossos usuários com
+o mínimo de esforço de engenharia. Embora em um mundo ideal nós pudessemos trazer até 80-90% do código,
+seria um esforço imenso com muitos riscos envolvidos. Nós iremos priorizar o trabalho para focar naquilo que
+traga os maiores benefícios de cara para a comunidade Mono, e deixar os pedaços mais complicados/intensivos 
+para depois.
+
+Dando um grande impulso ao Mono desde o começo
+----------------------------------------------
+
+Ao trazer código para o Mono, nós podemos fazê-lo das seguintes formas:
+
+* Assemblies inteiros
+* Classes inteiras
+* Trabalho misto
+* Membros individuais
+
+### Assemblies Inteiros
+
+Nós podemos portar assemblies inteiros quando nosso assembly 
+é reconhecido como sendo muito cheio de bugs, em má forma, ou completamente quebrado.
+
+Candidatos imediatos para isto incluem:
+
+* WCF - quase que imediatamente
+* System.Web - quase que imediatamente
+
+Candidatos de médio prazo incluem:
+
+* System.Configuration - possível, mas requer cuidadosa verificação
 * System.Linq.Data
 * Remoting
 
-Long term candidates include:
+Candidatos de longo prazo incluem:
 
-* XML stack
+* A pilha XML
 
-### Entire Classes
+### Classes Inteiras
 
-We would port entire classes when a class or a family of classes is known in Mono to be buggy, poorly maintained or a source of problems.
-
-Candidates for this include:
+Nós portaremos classes inteiras quando a classe ou família de classes 
+é reconhecida como sendo muito cheia de bugs no Mono, mal conservada ou como uma fonte de 
+problemas.  Candidatos incluem:
 
 * System.Text.RegularExpressions
 
-### Blended Work
+### Trabalho Misto
 
-These are libraries of high quality code and whose Mono counterpart might be known to have limitations, bugs or problems. But yet, the Microsoft implementation contains dependencies on native libraries that do not exist across all platforms.
+São bibliotecas que tem código de alta qualidade e que as contrapartes no Mono podem
+ter limitações, bugs ou problemas. Mas a implementação da Microsoft contem dependências
+a bibliotecas nativas que não existem em todas as plataformas. Possíveis candidatos:
 
-* HTTP client stack
-* `System.Data.*` - Microsoft's impementation has many dependencies on native code that need to be refactored to be cross platform.
+* Pilha cliente de HTTP
+* `System.Data.*` - A implementação da Microsoft tem muitas dependências a código nativo 
+que tem que ser refatoradas para suportar múltiplas plataformas.
 
-### Individual Members
+### Membros Individuais
 
-We will find some of this code in a few places. There are places in Mono that while pretty good overall, might have some known bugs and limitations. The binding functionality in System.Reflection is an example of a method that works, but might have bugs and mistakes on the edges.
+Nós encontraremos esse tipo de código em alguns lugares. 
+Existem lugares no Mono que embora bons de forma geral, podem ter bugs conhecidos e limitações.
+A funcionalidade de `binding` em `System.Reflection` é um exemplo de um método que funciona, 
+mas que pode ter bugs e erros nas 'bordas'.
 
-Porting and Regressions
+Porte e Regressões
 -----------------------
 
-Whenever we bring .NET code to replace Mono code, there might be cases where we introduce a regression of some kind: functionality, performance or we bring in a behavior that is incompatible with the idioms that Mono users have used for a long time.
+Sempre que trouxermos código .NET para substituir código do Mono, pode haver casos
+em que será introduzida uma regressão de algum tipo: funcionalidade, performance ou trazemos
+um comportamento que é incompatível com o uso idiomático que os usuários do Mono estão
+acostumados a muito tempo.
 
-In general, when porting code to Mono, we should make sure that Mono's test suite continues to pass, and that no regressions are introduced. If a regression is introduced, we need to file a bug and track this particular problem.
+Em geral, quando portando código para o Mono, nós devemos garantir que a suite de testes do Mono 
+continue a passar sem problemas, e que nenhuma regressão seja introduzida. Se uma regressão for introduzida,
+nós temos que registrar o bug e atuar na busca da solução do problema específico.
+>>>>>>> abdedc04bb366fb61a02a32b388f497cd91a75e8
 
-Very popular, mostly bug-free APIs: skip
-----------------------------------------
+APIs muito populares, majoritariamente livres de bugs: pule
+-----------------------------------------------------------
 
-Mono's core is in very good shape, and there will be very little value in bringing the .NET implementation to Mono. It would consume valuable engineering time to replace good code with another piece of good code, while also paying the price of potential regressions.
+O núcleo do Mono está em muito boa forma, e muito pouco valor pode ser agregado trazendo 
+a implementação do .NET nesses pedaços.  Consumiria um valioso tempo de engenharia para 
+substituir código bom por outro pedaço de código bom, ao mesmo tempo que estariamos pagando o preço de
+regressões em potencial.
 
-Empowering Third Parties
-------------------------
+Capacitando Terceiros
+---------------------
 
-There are certain pieces of code that are going to be difficult to do, but if we do them, we can assist third parties that do not know as much about Mono's internals or our build process to contribute.
+Existem certos pedaços de código que serão difíceis de processar, mas que se o fizermos, 
+poderemos ajudar o esforço de terceiros que não conhecem as internalidades do Mono ou 
+nosso processo de compilação para contribuirem.
 
-Dealing with System.Configuration
+Lidando com System.Configuration
 ---------------------------------
 
-In general, the idiom that we will use when porting code that involves `System.Configuration` that we want to support both in the full profile mode and the Mobile Profile mode will be roughly:
+Em geral, o processo a seguir ao portar código que envolve o `System.Configuration`
+que nós queremos que funcione no perfil completo e no perfil Mobile é aproximadamente: 
 
-* Comment out the public class that subclasses `ConfigurationSection`.
-* Keep the `SettingsSectionInternal` class around, since so much code depends on it.
-* ifdef-out the constructor that depends on `System.Configuration` from this class that uses `System.Configuration`, and replace it instead with hardcoded values that we obtain from running the code in .NET and obtaining the default values.
-* Add the `partial` class modifier to the `SettingsSectionInternal` class.
-* Provide a constructor in the partial class in Mono to setup the default values.
-* Track each setting, so that we can later decide if we want to provide a C# API to change these values.
+* Comentar fora a classe pública derivada de `ConfigurationSection`.
+* Manter a classe `SettingsSectionInternal`, pois muito código depende dela.
+* Usar ifdef para excluir o construtor que depende em `System.Configuration` dessa classe que usa `System.Configuration`, 
+  e substituir por valores fixos obtidos ao rodar o código no .NET (valores default).
+* Adicionar o modificador `partial` na classe `SettingsSectionInternal`.
+* Prover um construtor na classe parcial do Mono para inserir os valores default.
+* Monitorar cada setting, para depois decidirmos se queremos prover uma API C# para mudar esses valores.
 
-Source Code Style
------------------
+Estilo do Código Fonte
+----------------------
 
-When making changes, try to keep the style of the original project. If you are making changes to .NET's code, use their style. When making changes to Mono, use our style.
+Ao fazer mudanças, tente manter o estilo do projeto original. Se está mudando o código do .NET, use o estilo deles. Quando fazendo mudanças no Mono, use o nosso estilo.
 
-We believe that we can mostly make few changes to the upstream code and mostly use either `#if` blocks, `partial` classes and split a few things to achieve portability.
+Nós acreditamos que poderemos fazer poucas mudanças no código de origem e basicamente usar ou blocos `#if`, classes `partial` e dividir algumas coisas para alcançar a portabilidade.
 
-.NET Core and Mono
+.NET Core e o Mono
 ==================
 
-We want to contribute some of the cross platform code from Mono, as well as chunks that we port from the .NET Framework Reference Source to the .NET Core effort.
+Nós queremos contribuir parte do código multi-plataforma do Mono, bem como trechos que nós portarmos do código de referência do Framework .NET ao esforço do .NET Core.
 
-We will update this page with information as the porting process at Microsoft evolves and we can volunteer some of our/their code back to the .NET Core effort.
+Nós atualizaremos esta página com mais informação conforme o processo de porte de código da Microsoft evolua e nós contribuamos algo do nosso código ou do deles para o esforço.

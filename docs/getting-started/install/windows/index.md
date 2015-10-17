@@ -1,27 +1,30 @@
 ---
-title: Install Mono on Windows
+title: Instalando Mono no Windows
 redirect_from:
   - /Using_Mono_on_Windows/
   - /Mono:Windows/
 ---
 
-Mono runs on Windows, this page describes the various features available for users who want to use Mono on Windows as well as using Mono-based technologies on Windows without Mono (like Gtk#).
+O Mono roda no Windows, esta página descreve os vários recursos disponíveis para os usuários que querem usar Mono no Windows, bem como a utilização de tecnologias baseadas em Mono no Windows sem Mono (como Gtk #)
 
-1.  Download the latest Windows installer from the [download](/download/) page.
-2.  Run the installer and accept the terms of the license. Mono is now installing:
+Instalando o Mono no Windows
+============================
 
-    [![windows-install-mono.png](/images/windows-install-mono.png)](/images/windows-install-mono.png)
+1.  Baixe o último instalador do Mono para Windows em [Downloads](/download/)
+2.  Execute o programa baixado como administrador. Durante a instalação lhe será perguntado se aceita os termos da licença, apresentada com a página de informações, bem como pedidas algumas poucas outras informações, incluindo:
 
-The installer creates a "Open Mono Command Prompt" shortcut under the Mono program group in the start menu.
-This shortcut starts a command shell with Mono-relevant path information already configured, which means all the Mono tools "just work".
+[![windows-install-mono.png](/images/windows-install-mono.png)](/images/windows-install-mono.png)
+
+A instalação padrão cria uma pasta "Mono for Windows" dentro do Menu Iniciar com um atalho "Open Mono Command Prompt".
+Este atalho abre um shell de linha de comando com o PATH ajustado para o Mono, o que significa que as ferramentas do Mono "simplesmente funcionam".
 
 [![windows-install-mono-cmd.png](/images/windows-install-mono-cmd.png)](/images/windows-install-mono-cmd.png)
 
-At this point, it’s a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
+Neste ponto é uma boa idéia 'passear' pelos exemplos básicos de "hello world" desta [ página](/docs/getting-started/mono-basics/) para verificar que o Mono está funcionando corretamente.
 
 Gtk#
 -----
 
-[Gtk#](/docs/gui/gtksharp/) is included as part of the Mono installation, this will allow you to create Gtk# applications on Windows with the Mono runtime which you can later deploy into Linux. See the [Gtk#](/docs/gui/gtksharp/) page for more details about the toolkit, or go directly to the [Gtk# beginner's guide](/docs/gui/gtksharp/beginners-guide/).
+O [Gtk#](/docs/gui/gtksharp/) está incluido como parte da instalação do Mono, isso permite que você crie aplicações Gtk# em Windows como o runtime do Mono que depois você pode instalar em Linux. Veja a página do [Gtk#](/docs/gui/gtksharp/) para mais detalhes sobre o toolkit, ou vá direto ao [Guia para Iniciantes do Gtk#](/docs/gui/gtksharp/beginners-guide/).
 
-Alternatively, if you only want to use Gtk# on Windows, without Mono, you can use the [Gtk# installer for the .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/).
+Alternativamente, se você só quiser usar o Gtk# em Windows, sem o Mono, você pode usar o [Instalador do Gtk# para .NET](/docs/gui/gtksharp/installer-for-net-framework/).

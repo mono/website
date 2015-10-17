@@ -1,102 +1,115 @@
 ---
-title: "Dead Toolkits"
+title: "Toolkits Gráficos Abandonados"
 redirect_from:
   - /Dead_Toolkits/
   - /archived/dead_toolkits/
 ---
 
-The following toolkits are no longer under active development.
+Os seguintes conjuntos de ferramentas não estão mais sendo ativamente desenvolvidos.
 
 Sharp WT
---------
+---------------
 
-Homepage: [http://sourceforge.net/projects/sharpdevelop](http://sourceforge.net/projects/sharpdevelop)
+Homepage: [#Develop](http://sourceforge.net/projects/sharpdevelop)
 
-This is a project started by the developers of SharpDevelop.
+**ESSE PROJETO FOI DESCONTINUADO. O DESENVOLVIMENTO FOI PARADO POR FALTA DE INTERESSE.**
 
-The project started due to the limitations on Windows.Forms and the need to port their large application to Linux. They picked the SWT toolkit which is part of Eclipse and ported it from Java to C#.
+Esse é um projeto iniciado pelos desenvolvedores do SharpDevelop.
 
-SWT uses native widgets on each one of its target platforms, so the look and feel matches the underlying operating system.
+O projeto teve início devido às limitações ao Windows.Forms e da necessidade de portar sua grande aplicação para Linux. Eles pegaram o kit de ferramentas SWT que faz parte do Eclipse e portaram de Java para C #.
 
-Pros:
+SWT usa widgets nativos em cada uma de suas plataformas de destino, portanto parece, e da a sensação de corresponder ao sistema operacional subjacente.
 
--   Native look and feel on various platforms (Windows, Linux and MacOS).
--   Clean design.
--   The Java version has been successfully used by the Eclipse project.
+### Prós:
 
-Cons:
+-   Aparência nativa em várias plataformas (Windows, Linux and MacOS).
+-   Design limpo.
+-   A versão java tem sido usada com sucesso pelo projeto Eclipse.
 
--   Little or no documentation.
--   Authoring new widgets is either hard (due to testing on multiple platforms), or the look and feel is unique.
--   Still under heavy development.
--   Common denominator subset API problem.
+### Contras:
+
+-   Pequena ou nenhuma documentação.
+-   Criação de novos widgets é difícil (devido aos testes em várias plataformas), ou a aparência é única.
+-   Ainda está sendo desenvolvido.
+-   Problema de mínimo denominador comum na API (acaba sendo um subconjunto muito limitado).
 
 Qt#
 ---
 
 [![Mahjongg-0.6-window.png](/archived/images/9/91/Mahjongg-0.6-window.png)](/archived/images/9/91/Mahjongg-0.6-window.png)
 
-QT# Sample
+Homepage: [Qt#](http://qtcsharp.sourceforge.net/)
 
-Homepage: [http://qtcsharp.sourceforge.net/](http://qtcsharp.sourceforge.net/)
+**ESSE PROJETO FOI DESCONTINUADO. O DESENVOLVIMENTO FOI PARADO POR FALTA DE INTERESSE.**
 
-THIS PROJECT IS DEAD. DEVELOPMENT HAS STOPPED BECAUSE OF LACK OF INTEREST.
+Este é um conector (binding) para o toolkit Qt,mas o seu desenvolvimento está praticamente parado.
 
-This is a binding to the Qt toolkit. This toolkit used to be under development, but its development has pretty much stopped.
+### Prós:
 
-Pros:
+-   Aparência nativa em várias plataformas.
 
--   Native look and feel on each platform.
 
-Cons:
+### Contras:
 
--   Toolkit is licensed under the GPL, and the Qt substrate has further licensing limitations. It is not suitable for proprietary or non-GPL development.
--   Binding is unmaintained.
--   Currently its layered on top of the C binding to Qt.
+-   O toolkit está sob a licença GPL, e o que compõe o toolkit Qt tem mais limitações de licenciamento. Não é adequado para o desenvolvimento de código proprietário ou não GPL.
+-   O conector não está sendo mantido.
+-   Atualmente é um conector sobreposto ao conector C, já que o QT está escrito em C++.
+
 
 wxNet
 -----
 
 [![Linux-05.png](/archived/images/c/cf/Linux-05.png)](/archived/images/c/cf/Linux-05.png)
 
-wx# Sample
+Homepage: [[wxNet](http://wxnet.sourceforge.net/)]
 
-Homepage: [[http://wxnet.sourceforge.net/](http://wxnet.sourceforge.net/)]
+O wxNet é um conector para o toolkit multiplataforma wxWindows.
 
-wxNet is a .NET binding for the wxWindows cross-platform toolkit.
+### Prós:
 
-Pros:
+-   Aparência nativa em várias plataformas.
+-   A camada inferior (wxWindows) é bem documentada, o conector .NET possui pouca documentação.
 
--   Native look and feel on each platform.
--   Substrate (wxWindows) is well documented, .NET binding lacks documentation.
+### Contras:
 
-Cons:
+-   A conexão com widgets extras não suportados é difícil.
+-   Componentes personalizados não terão aparência consistente em todas as plataformas.
+-   Problema de mínimo denominador comum na API (acaba sendo um subconjunto muito limitado).
 
--   Binding to non-supported extra widgets is hard.
--   Custom-authored widgets look and feel is not preserved across platforms.
--   Common denominator subset API problem.
 
 Gaia Ajax Widgets
 -----------------
 
-[Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) was built to mimic 100% the logic of conventional ASP.NET and basically this means that if you know ASP.NET you know how to use Gaia Ajax Widgets! Gaia Ajax Web Widgets does not have ANY cryptic properties or code model you need to learn before you can use Gaia effectively, almost none of our controls uses any other properties than the ones that comes with native ASP.NET so if you know your way around ASP.NET you know your way around Gaia! This can be seen from the fact that you don't need to use WebServices to e.g. populate our AutoCompleter and from the event that retrieves the AutoComplete data you can do whatever you like, including for instance making a DropDownList visible or showing a modal window.
+O conjunto de componentes [Gaia Ajax Widgets](http://ajaxwidgets.com/more/about_gaia_ajax_framework/mono_support.aa) foi construído para imitar 100% a lógica do ASP.NET convencional e, basicamente, significa que se você sabe ASP.NET você sabe 
+como usar Gaia Ajax Widgets! Os widgets não contém nenhuma propriedade ininteligível ou modelo de código 
+que você precisa aprender antes de poder usar o Gaia efetivamente, quase nenhum dos nossos controles usa 
+quaisquer outras propriedades diferentes das que vem nos controles nativos do ASP.NET por isso, se você 
+sabe resolver um problema com ASP.NET você saberá também com o Gaia! Isso pode ser visto a partir do fato 
+de que você não precisa usar WebServices para, por exemplo, carregar o auto completar e do evento que 
+recupera os dados de auto completar você pode fazer o que quiser, incluindo, por exemplo, fazer uma 
+lista de opções visível ou mostrando uma janela modal.
 
-Gaia AjaxWidgets provides Mono support.
+Gaia Ajax Widgets provê suporte ao Mono.
 
 Qyoto
 -----
 
 Homepage: [Qyoto](http://techbase.kde.org/Development/Languages/Qyoto)
 
-The Qyoto/Kimono languages bindings allow C# and any other .NET language to be used to write Qt/KDE programs. The bindings are autogenerated directly from the Qt/KDE headers, greatly reducing the maintenance effort. KDE doxygen comments are automatically converted to the xml based C# style of comment format. Substrate is well documented and supported. Qyoto 4.0 documentation can be found [here](http://api.kde.org/qyoto-api/).
+O conector Qyoto/Kimono permite usar C# e outras linguagens .NET para escrever programas Qt/KDE.
+O conjunto de conectores é autogerado diretamente dos cabeçalhos (headers) do Qt/KDE,
+reduzindo enormemente o esforço de manutenção. Os comentários de documentação doxygen do KDE
+são automaticamente convertidos para o formato dos comentários xml do C#. 
+O substrato é bem documentado e suportado. 
+A documentação da versão 4.0 do Qyoto 4.0 pode ser encontrada [aqui](http://api.kde.org/qyoto-api/).
 
-Platforms: Unix, Windows, OSX
+Plataformas: Unix, Windows, OSX
 
-On Debian/Ubuntu, it can be acquired by installing the 'qyoto-dev' package.
+No Debian/Ubuntu, você pode instalar o pacote 'qyoto-dev' para utilizar os conectores.
 
 Qt4Dotnet
 ---------
 
 Homepage: [Qt4Dotnet](http://code.google.com/p/qt4dotnet/)
 
-This is a port of the QtJambi java bindings to .NET using IKVM.
+Este é um porte dos conectores java QtJambi para o .NET usando IKVM.
