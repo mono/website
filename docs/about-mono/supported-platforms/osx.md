@@ -52,31 +52,30 @@ $ mono hello.exe
 Hello, World
 $
 ```
-A maioria dos usuários deve estar utilizando o 
 
-A maioria dos usuários estariam usando  [MonoDevelop IDE](http://monodevelop.com) para criar suas aplicações.
+A maioria dos usuários utiliza o[MonoDevelop IDE](http://monodevelop.com) para criar suas aplicações.
 
 Vocë pode escolher entre o [GUI toolkits](/docs/gui/gui-toolkits/) para construir as suas aplicações cross platform, para aplicações especificas para o Mac pode utilizar o [MonoMac](/docs/tools+libraries/libraries/monomac/).
 
 Suporte a 32 e a 64 bit
 ---------------------
 
-The Mono packages published on this web site provide a 32-bit Mono VM.
+Os pacotes do Mono, publicados neste site são disponibilizados com suporte a Mono VM de 32-bit.
 
-Support for 64-bit VMs as of Mono 2.10 is only available if you build Mono from source code and install your own copy of the VM. In the future we will ship both mono and mono64 binaries for our users.
+O suporte para VM de 64-bit assim como Mono 2.10, só está disponível se você compilar e criar sua propria VM partindo do codigo fonte do Mono. (macho que é macho compila a sua propria VM). Em um futuro iremos disponibilizar as duas versões dos binarios para download.
 
-The 64 bit support has a few limitations today which is why we have not entirely switched to it:
+Atualmente o suporte a 64-bit possui algumas limitações e é por isso que por enquanto a versão do Mono não foi completamente alterada para ela.
 
--   Our Windows.Forms implementation uses Carbon, and as such, it would not work with a 64-bit Mono.
--   MonoDevelop uses Carbon for its menu integration so it would not run on a 64-bit VM.
--   MonoMac bindings have not been ported to 64 bits.
+-   A implementação do Windows.Forms utilizad Carbon e, como tal, não trabalha com a versão 64-bit do Mono.
+-   MonoDevelop utiliza Carbon para integração do seu menu, por isso não vai rodar na versão 64-bit da VM.
+-   Os bindings do MonoMac ainda não foram portados para a versão de 64 bits.
 
-Supporting 64-bit Mono across the board would also require us to ship a 64-bit Gtk+ stack and that would increase the download size for most users.
+O suporte a 64-bit, exigiria a disponibilização de um pacote incluindo a versão 64-bit mais o stack Gtk+ o que aumentaria o tamanho do download para a maioria dos usuários.
 
-Building Client Applications
+Construindo aplicações Client
 ----------------------------
 
-There are a few choices to build client applications on OSX, you should pick the technology that better fits your goals, your choices are:
+Existem algumas opções para construir aplicações no OSX, você deve escolher a tecnologia que melhor se adequa aos seus objetivos, você pode escolher entre:
 
 ||
 |Toolkit|Runs on Linux|Runs on Windows|Runs on Mac|Binding Style|License|Status|
@@ -86,35 +85,37 @@ There are a few choices to build client applications on OSX, you should pick the
 |[MonObjc](http://www.monobjc.net)|no|no|yes|Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.|LGPL v3|Actively developed. Separate download.|
 |CocoaSharp|no|no|yes|Binding to the native Cocoa APIs, but requires manual use of Objective-C selectors to work with, relatively thin wrapper around the underlying APIs.|MIT X11|No longer developed, no longer maintained, deprecated. Bundled with Mono.|
 
-Running Mono applications on MacOS X
+Executando aplicações Mono no MacOS X
 ------------------------------------
 
-Running applications on MacOS X is very similar to linux systems, from the terminal:
+Executar aplicações no MacOS X é muito similiar a execução em sistemas Linux, partindo do Terminal digite:
 
     mono myprogram.exe
 
-For GTK# applications, it's easiest to run them the same way but using *xterm* from X11.app
+Para aplicações GTK#, o processo é facilitado, você de utilizar o *xterm* por X11.app
 
-    A MacOS X specific Mono launcher was in development but its status is unclear today
+    Existe uma versão especifica em desenvolvimento do launcher para MacOS X Mono mas o seu atual status não esta claro.
 
 Windows.Forms
 -------------
 
 Mono's implementation of the System.Windows.Forms API is built on top of Carbon and can only run with Mono on 32 bit systems. The look and feel of System.Windows.Forms applications mimics the Windows style and does not currently render like a native OSX application.
 
-Third Party Libraries
+A implementação do Mono para a API System.Windows.Forms é construida em cima do Carbon e só pode ser executada com a versão 32 bits do Mono. O visual das aplicações System.Windows.Forms imita o estilo do Windows e atualmente não são renderizados como um aplicativo nativo OSX.
+
+Bibliotecas de terceiros
 ---------------------
 
-[ObjC#](/archived/objcsharp) is a transparent two way bridge that allows the CLR to access the rich underlying ObjectiveC frameworks as well as providing direct access to the CLR frameworks from the ObjectiveC language.
+[ObjC#](/archived/objcsharp) é uma biblioteca que implementa de forma transparente uma ponte que permite ao CLR ter acesso aos frameworks do ObjectiveC (two way), proporcionando acesso direto aos frameworks da linguagem ObjectiveC.
 
-Uninstalling Mono on Mac OS X
+Desinstalando o Mono no Mac OSX
 -----------------------------
 
-Run this script in a terminal:
+Execute no Terminal:
 
     #!/bin/sh -x
 
-    #This script removes Mono from an OS X System.  It must be run as root
+    #Este script remove o Mono do sistema OSC, você deve ter acesso de super usuário para executa-lo.
 
     rm -r /Library/Frameworks/Mono.framework
 
