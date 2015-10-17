@@ -5,45 +5,45 @@ redirect_from:
   - /Mono_on_MacOS_X/
 ---
 
-Introduction to Mono on MacOS X
+Introdução ao Mono no MacOS X
 -------------------------------
 
-Mono supports Mac OS X version 10.7 (Lion) and later.
+O Mono suporta as versão 10.7 (Lion) e superiores do Mac OS X.
 
-You can use Mono on OSX to build server, console and GUI applications. Read below for the options available for GUI application development.
+Você pode utilizar o Mono no OSX para construir aplicações console, server e com interface gráfica para usuários. Abaixo você vai encontrar uma lista de opções para construção de aplicações disponíveis para criação de interface gráfica para usuários.
 
-If you are interested in creating native GUI applications, use the [MonoMac](/docs/tools+libraries/libraries/monomac/) bindings and our MonoDevelop add-in. Read the description on [MonoMac](/docs/tools+libraries/libraries/monomac/) for more information on how to get started.
+Se você está interessado em criar aplicações que utilizam GUI nativas, utilize o [MonoMac](/docs/tools+libraries/libraries/monomac/) ou o MonoDevelop add-in. Leia a descrição na página [MonoMac](/docs/tools+libraries/libraries/monomac/), para obter mais informações de como você pode começar.
 
-Installing Mono on MacOS X
+Instalando o Mono no MacOS X
 --------------------------
 
-You can use Mono either as a runtime to run existing application, or as an SDK to develop new applications with Mono.
+Você pode utilizar o mono como runtime para execução de aplicações pre existentes, ou como SDK para desenvolver novas aplicações.
 
-Visit the [download page](/download/) to find the latest MacOS X package. Run it and follow the instructions there, you can either get a basic runtime, or a complete runtime plus a software development kit.
+Na [página de downloads](/download/) você vai enconrar a versão mais recente do pacote para MacOS X. Seguindo as instruções disponíveis nesta página, você pode instalar uma runtime basica, ou completa incluindo a SDK. 
 
-If you plan on developing applications with Mono, we suggest that you also [install the MonoDevelop IDE](http://monodevelop.com/download) after you install Mono.
+Se você pretente desenvolver aplicações utilizando o Mono, nós sugerimos que você tambem efetue o download e instale a [IDE MonoDevelop](http://monodevelop.com/download) logo depois que você já tiver instalado o Mono.
 
-The Mono package includes:
+O pacote do Mono inclui:
 
--   The Mono Runtime
--   GUI Toolkits: Windows.Forms and Gtk# for OSX.
-    -   Note: the [MonoMac](/docs/tools+libraries/libraries/monomac/) GUI toolkit for native OSX GUI development is currently a separate download.
--   SDK: C#, Visual Basic compilers, assemblers and tools
+-   A Runtime do Mono
+-   GUI Toolkits: Windows.Forms e Gtk# para OSX.
+    -   Observação: A GUI toolkit [MonoMac](/docs/tools+libraries/libraries/monomac/) para desenvolvimento de GUI nativas, para OSX está disponível em um pacote para download separado.
+-   SDK: compiladores C#, Visual Basic, assemblers e tools (ferramentas).
 -   XSP ASP.NET server
--   Manual pages.
+-   Manuais.
 
-This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The MacOS X Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
+O pacote do Mono instala o framework no diretorio /Library/Framework (da mesma forma que os pacotes Java são instalados). São criados symlinks para os executaveis localizados em /usr/bin. Caso você queira acessa a mono *manpages* é necessario acrescentar /Library/Frameworks/Mono.framework/Versions/Current/man ao seu *manpath*. O pacote do Mono para MacOS C não incluem [Gtk#](/GtkSharp), XSP ou mod_mono, eles devem ser compilados a partir de sua origem.
 
-Our packages currently require Mono OSX 10.7 or better, for older versions, you will need to build from source code.
+Caso você precise utilizar o Mono em uma versão do OSX inferior a 10.7 tera que compilar a partir da origem.
 
-Using Mono on MacOS X
+Utilizando o Mono no MacOS X
 ---------------------
 
-At this point, you must use Mono from the command line, the usual set of commands that are available on other ports of Mono are available.
+Por enquanto você precisa utilizar o Mono partindo do Terminal via linha de comando, não se preocupe pois os comandos usuais que estão disponíveis em outros ports do Mono tambem já incluidos. 
 
-To build applications you can use ["mcs"](/docs/about-mono/languages/csharp/), to run then you can use [mono](/docs/advanced/runtime/).
+Para compilar suas aplicações você pode utilizar o comando ["mcs"](/docs/about-mono/languages/csharp/) e para executá-las você deve executar o comando [mono](/docs/advanced/runtime/).
 
-From a Terminal shell, you can try it out:
+Vamos tentar? Abra o Terminal e execute os comandos abaixo:
 
 ``` bash
 $ vi hello.cs
@@ -52,12 +52,13 @@ $ mono hello.exe
 Hello, World
 $
 ```
+A maioria dos usuários deve estar utilizando o 
 
-Most users would be using the [MonoDevelop IDE](http://monodevelop.com) to create their projects.
+A maioria dos usuários estariam usando  [MonoDevelop IDE](http://monodevelop.com) para criar suas aplicações.
 
-You will have a choice of [GUI toolkits](/docs/gui/gui-toolkits/) for building your application, from pure cross platform, to Mac-specific using [MonoMac](/docs/tools+libraries/libraries/monomac/).
+Vocë pode escolher entre o [GUI toolkits](/docs/gui/gui-toolkits/) para construir as suas aplicações cross platform, para aplicações especificas para o Mac pode utilizar o [MonoMac](/docs/tools+libraries/libraries/monomac/).
 
-32 and 64 bit support
+Suporte a 32 e a 64 bit
 ---------------------
 
 The Mono packages published on this web site provide a 32-bit Mono VM.
