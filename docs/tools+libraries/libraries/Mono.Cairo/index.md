@@ -13,7 +13,7 @@ Cairo is a low-level 2D vector drawing library. Various rendering backends (XRen
 
 ### Using Cairo with Gtk/Gdk
 
-A core class that does all the drawing is the `Cairo.Context` class. `Context` is always attached to a `Surface`. `Surface` can be window on the screen, an off-screen buffer or a static file on the disk.
+A core class that does all the drawing is the `Cairo.Context` class. A `Context` is always attached to a `Surface`. `Surface` can be window on the screen, an off-screen buffer or a static file on the disk.
 
 To use Cairo in Gdk/Gtk applications, a `Context` with a `Gdk.Drawable` target surface is needed. It can be obtained using two methods:
 
@@ -33,24 +33,24 @@ The best place to create and use the `Context` is the [ExposeEvent](http://www.g
 void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 {
     DrawingArea area = (DrawingArea) o;
-    using (Cairo.Context context = Gdk.CairoHelper.Create (area.GdkWindow)) {
+    using (Cairo.Context g = Gdk.CairoHelper.Create (area.GdkWindow)) {
  
         // Perform some drawing
  
-        ((IDisposable) gr.Target).Dispose ();
+        g.GetTarget ().Dispose ();
     }
 }
 ```
 
-Notice that `Context` is manually disposed before we leave the function. This is required for the time being since garbage collecting is not yet supported in Mono.Cairo.
+Notice that `Surface` (the target the `Context` is actually drawing to), as well as the `Context` itself are manually disposed before we leave the function. This is required for the time being since garbage collecting is not yet supported in Mono.Cairo.
 
 ### Drawing simple primitives
 
 Cairo drawing model works very much like a plotting machine. An abstract pen moves around the `Surface` area drawing lines and curves. The basic functions to handle the "plotting" are: [MoveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f7), [LineTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f8), [CurveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f9). These functions take [PointD](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a26%23PointD%2f) objects as the arguments. `PointD` is a two-dimensional coordinate where `X` and `Y` are expressed as `double`.
 
--   `Graphics.MoveTo (PointD coordinate)` will position the cursor/pen at the given coordinate
--   `Graphics.LineTo (PointD coordinate)` will make a straight line from the current pen position to the given coordinate. After calling this function the pen is located at the given coordinate.
--   `Graphics.CurveTo (PointD coordinate1, PointD coordinate2, PointD coordinate3)` draws a curved line from the current pen position to the coordinate3 position. Coordinates 1 & 2 act as control points and affect the shape of the curve (Bezier).
+-   `Context.MoveTo (PointD coordinate)` will position the cursor/pen at the given coordinate
+-   `Context.LineTo (PointD coordinate)` will make a straight line from the current pen position to the given coordinate. After calling this function the pen is located at the given coordinate.
+-   `Context.CurveTo (PointD coordinate1, PointD coordinate2, PointD coordinate3)` draws a curved line from the current pen position to the coordinate3 position. Coordinates 1 & 2 act as control points and affect the shape of the curve (Bezier).
 
 Having this in mind, we can draw a square using the following instructions:
 
@@ -72,7 +72,7 @@ g.ClosePath ();
 
 However, our plotter analogy ends here -- **nothing has been drawn to the surface yet**. At this point we only have an outlined path, which we made sure is closed (thanks to `ClosePath`). To actually draw the path we need to call the `Stroke` method (`g.Stroke ()`). To fill the path one would call `g.Fill ()`.
 
-Notice, that the `Stroke` and `Fill` methods don't take any arguments. The color for the stroke/fill, pen width and other interesting parameters are taken from the `Graphics` at the moment of stroking/filling. In other words we can say that `Graphics` class acts like a state machine.
+Notice, that the `Stroke` and `Fill` methods don't take any arguments. The color for the stroke/fill, pen width and other interesting parameters are taken from the `Cairo.Context` at the moment of stroking/filling. In other words we can say that `Context` class acts like a state machine.
 
 Here is a complete implementation of the `ExposeEvent` that draws a black square with a red border inside a Gtk.DrawingArea:
 
@@ -80,7 +80,7 @@ Here is a complete implementation of the `ExposeEvent` that draws a black square
 void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 {
     DrawingArea area = (DrawingArea) o;
-    Cairo.Graphics g = Graphics.CreateDrawable (area.GdkWindow);
+    Cairo.Context g = Gdk.CairoHelper.Create (area.GdkWindow);
  
     PointD p1,p2,p3,p4;
     p1 = new PointD (10,10);
@@ -100,8 +100,8 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
     g.Color = new Color (1,0,0);
     g.Stroke ();
  
-    ((IDisposable) g.Target).Dispose ();
-    ((IDisposable) g).Dispose ();
+    g.GetTarget ().Dispose ();
+    g.Dispose ();
 }
 ```
 
@@ -123,14 +123,14 @@ This state-based approach is far more convenient than specifying all drawing par
 
 Cairo provides us with methods to control the state stack. The respective `Graphics` members are [Save](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f2) and [Restore](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f3).
 
-`Grahics.Save` will copy the current state and push the copy on the top of the stack. `Graphics.Restore` will pop one state back from the stack. Clearly all the state-altering calls placed inside `Save`/`Restore` parenthesis are local.
+`Context.Save` will copy the current state and push the copy on the top of the stack. `Context.Restore` will pop one state back from the stack. Clearly all the state-altering calls placed inside `Save`/`Restore` parenthesis are local.
 
 It's a good programming practice to place *all* state modifications inside `Save`/`Restore` brackets. This way you can easily control the Cairo state and work on a "clean" (unpolluted) state in higher-level functions.
 
 For example, you might create yourself the following function to draw a triangle:
 
 ``` csharp
-void DrawTriangle (Cairo.Graphics g, double x, double y, bool fill)
+void DrawTriangle (Cairo.Context g, double x, double y, bool fill)
 {
     g.Save ();
  
@@ -175,37 +175,37 @@ Here is a sample `ExposeEvent` that draws some smooth shapes.
 void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 {
         DrawingArea area = (DrawingArea) o;
-        Cairo.Graphics gr = CreateDrawable (area.GdkWindow);
+        Cairo.Context g = Gdk.CairoHelper.Create (area.GdkWindow);
  
         // Shape
-        gr.MoveTo (new PointD (100,200));
-        gr.CurveTo (new PointD (100,100), new PointD (100,100),
+        g.MoveTo (new PointD (100,200));
+        g.CurveTo (new PointD (100,100), new PointD (100,100),
                     new PointD (200,100));
-        gr.CurveTo (new PointD (200,200), new PointD (200,200),
+        g.CurveTo (new PointD (200,200), new PointD (200,200),
                     new PointD (100,200));
-        gr.ClosePath ();
+        g.ClosePath ();
  
         // Save the state to restore it later. That will NOT save the path
-        gr.Save ();
+        g.Save ();
         Cairo.Gradient pat = new Cairo.LinearGradient (100,200, 200, 100);
         pat.AddColorStop (0, new Cairo.Color (0,0,0,1));
         pat.AddColorStop (1, new Cairo.Color (1,0,0,1));
-        gr.Pattern = pat;
+        g.Pattern = pat;
  
         // Fill the path with pattern
-        gr.FillPreserve ();
+        g.FillPreserve ();
  
         // We "undo" the pattern setting here
-        gr.Restore ();
+        g.Restore ();
  
         // Color for the stroke
-        gr.Color = new Color (0,0,0);
+        g.Color = new Color (0,0,0);
  
-        gr.LineWidth = 3;
-        gr.Stroke ();
+        g.LineWidth = 3;
+        g.Stroke ();
  
-        ((IDisposable) gr.Target).Dispose ();
-        ((IDisposable) gr).Dispose ();
+        g.GetTarget().Dispose ();
+        g.Dispose ();
 }
 ```
 
@@ -213,11 +213,10 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 
 ### Hints
 
--   Don't try to keep `Graphics` across multiple expose events, this will not work due to double-buffering
+-   Don't try to keep `Cairo.Context` across multiple expose events, this will not work due to double-buffering
 -   Don't try to use Cairo in threads other than the main (Gdk) thread.
 -   If you need to draw sharp (crisp) 1 pixel lines, add 0.5 to the coordinates. This is related to how the anti-aliasing works. Normally a 1px line is drawn "between" two pixels, which means that two points get 1/2 of the color value (blur)
--   Don't assume Cairo is the ultimate answer to every drawing need. Raw Gdk pixbuf blitting is still much faster than Cairo drawing and Pango is a better choice if you need to perform advanced text rendering (wrapping, ellipsizing, etc.) Gdk and Pango routines can be used along with Cairo without any special tricks.
 -   Color (and Alpha) values are expressed in a 0-1 range not 0-255 range.
--   Don't forget to manually dispose the `Graphics` and the target `Surface` at the end of the expose event. Automatic garbage collecting is not yet 100% working in Cairo.
+-   Don't forget to manually dispose the `Context` and the target `Surface` at the end of the expose event. Automatic garbage collecting is not yet 100% working in Cairo.
 
 
