@@ -41,4 +41,3 @@ There are various IRC clients available, here are some recommendations:
 -   Linux: [XChat](http://www.xchat.org/)
 -   MacOS X: [Colloquy](http://www.colloquy.info)
 -   Windows: [mIRC](http://www.mirc.com)
--   Web Interface (via Mibbit): [http://go-mono.com/chat/](http://go-mono.com/chat/)

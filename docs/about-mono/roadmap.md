@@ -68,7 +68,7 @@ A third party implementation of PowerShell exists:
 Comments
 --------
 
-Feel free to [send us your comments or questions](http://www.go-mono.com/contact/) about the roadmap.
+Feel free to [send us your comments or questions](/community/) about the roadmap.
 
 Roadmap History
 ---------------

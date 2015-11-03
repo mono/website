@@ -144,7 +144,7 @@ Mono is an open source technology that can be used freely under the terms of the
 
 [Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
 
-For other licensing options, [contact us](http://www.go-mono.com/contact/).
+For other licensing options, [contact us](https://xamarin.com/contact-us).
 
 Continued Performance Increase
 ==============================
