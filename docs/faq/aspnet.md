@@ -72,7 +72,7 @@ Installation and Setup
 
 ### Does Mono's ASP.NET run on Linux ?
 
-Yes. And on all the platoforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
+Yes. And on all the platforms on which mono runs. In Windows you must use XSP as mod_mono does not work with the Windows version of Apache, nor with IIS.
 
 ### Should I use mod_mono, FastCGI or XSP?
 
