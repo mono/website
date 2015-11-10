@@ -1,4 +1,4 @@
-version: 4.0.4 SR 4 El Capitan hotfix (4.0.4.4)
-mono_mac_url: http://download.mono-project.com/archive/4.0.4/macos-10-x86/MonoFramework-MDK-4.0.4.4.macos10.xamarin.x86.pkg
+version: 4.0.5 SR 5 (4.0.5.1)
+mono_mac_url: http://download.mono-project.com/archive/4.0.5/macos-10-x86/MonoFramework-MDK-4.0.5.1.macos10.xamarin.x86.pkg
 mono_windows_url: http://download.mono-project.com/archive/4.0.3/windows-installer/mono-4.0.3-gtksharp-2.12.26-win32-0.msi
 gtksharp_windows_url: http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.26.msi
