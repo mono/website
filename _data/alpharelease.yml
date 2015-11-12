@@ -1,2 +1,3 @@
-version: 4.2.0 Alpha (4.2.1.91)
-mono_mac_url: http://download.mono-project.com/archive/4.2.1/macos-10-x86/MonoFramework-MDK-4.2.1.91.macos10.xamarin.x86.pkg
+version: 4.2.1 RC2 (4.2.1.102)
+mono_mac_url: http://download.mono-project.com/archive/4.2.1/macos-10-x86/MonoFramework-MDK-4.2.1.102.macos10.xamarin.x86.pkg
+mono_mac64_url: http://download.mono-project.com/archive/4.2.1/macos-10-universal/MonoFramework-MDK-4.2.1.102.macos10.xamarin.universal.pkg
