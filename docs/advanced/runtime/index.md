@@ -26,7 +26,7 @@ The runtime offers the following services:
     -   [First-class SIMD datatypes (Mono.Simd)](http://go-mono.com/docs/index.aspx?link=N%3aMono.Simd)
 -   Exception Handling
     -   Software-triggered exceptions
-    -   Hardware-triggered exceptions like Floating point exceotions, null reference exceptions
+    -   Hardware-triggered exceptions like Floating point exceptions, null reference exceptions
 -   Operating system interface
     -   File system IO
     -   Networking IO
