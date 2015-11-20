@@ -9,7 +9,7 @@ This document discusses the internals of SGen. If you are interested on how to u
 
 For a few releases, Mono has shipped with a new garbage collector, we call this the SGen garbage collector. This garbage collector can be enabled by passing the --gc=sgen flag to Mono or if you are embedding Mono, by linking against the `libmonosgen` library instead of the `libmono` library.
 
-The [Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/) continuously runs benchmarks for each Mono revision to track performance regressions using MonkeyWrench. The data is automatically collected and processed on this page: [http://wrench.mono-project.com/gcbench/](http://wrench.mono-project.com/gcbench/).
+The [Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/) continuously runs benchmarks for each Mono revision to track performance regressions using CI.
 
 On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace](/docs/advanced/garbage-collector/sgen/dtrace/).
 

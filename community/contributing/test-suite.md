@@ -20,7 +20,7 @@ There are various kinds of tests in Mono:
 
 -   **Web Services tests**: Web Services client/server tests.
 
-The latest test results are available at [https://wrench.mono-project.com/Wrench/](https://wrench.mono-project.com/Wrench/) for all major platform run continuously after every commit.
+The latest test results are available at [https://jenkins.mono-project.com/](https://jenkins.mono-project.com/) for all major platform run continuously after every commit.
 
 Class Library tests
 -------------------

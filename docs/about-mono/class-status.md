@@ -8,7 +8,7 @@ We keep track of the differences between the major APIs between Mono and .NET in
 
 [http://go-mono.com/status/](http://go-mono.com/status/)
 
-The above web site compares the results from our [continuous builds](http://wrench.mono-project.com/builds) against the public definitions of various APIs available in .NET.
+The above web site compares the results from our [continuous builds](https://jenkins.mono-project.com/) against the public definitions of various APIs available in .NET.
 
 Comparing Locally
 -----------------

@@ -13,7 +13,7 @@ Users:<br/>
  Developers:<br/>
   [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books) | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
  Contributors:<br/>
-  [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/community/contributing/source-code-repository/)<br/>
+  [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](https://jenkins.mono-project.com/) | [Source Code](/community/contributing/source-code-repository/)<br/>
  Community:<br/>
   [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)<br/>
  FAQ:<br/>
@@ -64,7 +64,7 @@ You can see what needs to be done in the class libraries [here](http://www.go-mo
 
 You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project).
 
-After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](http://wrench.mono-project.com/builds) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
+After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](https://jenkins.mono-project.com/) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 
 Contributing to Mono
 ====================
@@ -83,7 +83,7 @@ When contributing to the class libraries, please have a look at our [Coding_Guid
 Testing on Various Platforms
 ----------------------------
 
-Mono runs on many different platforms on many different architectures. However, no one can be expected to test their changes on all these platforms. To facilitate this, we run continuous builds for many platforms. The results are available on the [Mono Build Status](http://wrench.mono-project.com/) page.
+Mono runs on many different platforms on many different architectures. However, no one can be expected to test their changes on all these platforms. To facilitate this, we run continuous builds for many platforms. The results are available on the [Mono Build Status](https://jenkins.mono-project.com/) page.
 
 This page allows you to ensure that:
 
