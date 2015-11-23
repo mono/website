@@ -41,6 +41,11 @@ Now the Nginx part is complete, but to finish the whole thing Mono FastCGI serve
 
      fastcgi-mono-server4 /applications=www.domain1.xyz:/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
 
+This specifies `www.domain1.xyz` as the hostname, `/` as the virtual root/location and `/var/www/www.domain1.xyz` as the physical path (see [FastCGI page](/docs/web/fastcgi/#how-applications-are-handled-and-how-to-configure-them)).
+To listen on all hostnames, use the following:
+
+     fastcgi-mono-server4 /applications=/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
+
 Now when Mono FastCGI server is up and running, Nginx configuration is complete and your application is in place (located in /var/www/www.domain1.xyz/) you can run the web server.
 
      /etc/init.d/nginx start
