@@ -2,7 +2,7 @@
 title: Compiling Mono on Linux
 ---
 
-Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /mono, so I would replace PREFIX with /mono in the following discussion.
+Pick an installation directory where you want your new copy of Mono to be installed. Lets call that location PREFIX. Your Mono installation and its dependencies will be installed there. For example, I like to use the directory /opt/mono, so I would replace PREFIX with /opt/mono in the following discussion.
 
 If you have more than one Mono installation (for example to keep multiple versions around), you will want to read the document on [Parallel Mono Environments](/docs/compiling-mono/parallel-mono-environments/) on how to keep your various Mono installations separate.
 
@@ -30,14 +30,16 @@ Note: if you are using Ubuntu 15.04 or later, you also need to install the `libt
 Building Mono from a Release Package
 ------------------------------------
 
-Mono releases are distributed as .tar.gz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
+Mono releases are distributed as .tar.bz2 packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
 ``` bash
-  $ tar xvf mono-VERSION.tar.gz
-  $ cd mono-VERSION
-  $ ./configure --prefix=PREFIX
-  $ make
-  $ make install
+PREFIX=/usr/local
+VERSION=4.2.1
+tar xvf mono-$VERSION.tar.bz2
+cd mono-$VERSION
+./configure --prefix=$PREFIX
+make
+make install
 ```
 
 By the end of this process, you will have Mono installed on your PREFIX directory.

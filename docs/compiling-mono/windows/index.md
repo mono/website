@@ -19,12 +19,14 @@ The following steps assume you're running in an instance of the Cygwin terminal.
 Building Mono from a Release Package
 ------------------------------------
 
-Mono releases are distributed as .tar.gz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
+Mono releases are distributed as .tar.bz2 packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
 ``` bash
-tar xvf mono-VERSION.tar.gz
-cd mono-VERSION
-./configure --prefix=PREFIX --host=i686-pc-mingw32
+PREFIX=/usr/local
+VERSION=4.2.1
+tar xvf mono-$VERSION.tar.bz2
+cd mono-$VERSION
+./configure --prefix=$PREFIX --host=i686-pc-mingw32
 make
 make install
 ```
@@ -34,7 +36,7 @@ By the end of this process, you will have Mono installed on your PREFIX director
 Building Mono From a Git Source Code Checkout
 ---------------------------------------------
 
-To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system and in you PATH, as the build requires a working C# compiler to run.
+To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system and in your PATH, as the build requires a working C# compiler to run.
 
 On Windows, you should set the following Git setting to avoid issues with line endings: `git config --global core.autocrlf input`
 
