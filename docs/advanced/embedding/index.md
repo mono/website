@@ -88,17 +88,7 @@ LDFLAGS=`pkg-config --libs mono-2`
 
 For mono versions before 2.8, use "**mono**" instead of "**mono-2**" in the above commands: the ABI version of the libmono library has changed.
 
-On windows you need to generate an import library for mono.dll by getting the following file:
-
-<http://github.com/mono/mono/blob/master/msvc/mono.def>
-
-and creating mono.lib with the command:
-
-``` bash
-lib /nologo /def:mono.def /out:mono.lib /machine:x86
-```
-
-Then you link your application with mono.lib.
+On Windows, depending on the GC implementation to be used (Boehm or [SGen](/docs/advanced/garbage-collector/sgen/)), you need to link your application with mono-2.0.lib or monosgen-2.0.lib.
 
 ### Initializing the Mono runtime
 
