@@ -12,7 +12,7 @@ Source tarballs can be found [here](http://download.mono-project.com/sources/mon
 Mac OS X
 --------
 
-Mac OS X packages can be found [here](http://download.mono-project.com/archive/nightly/macos-10-x86/)
+Mac OS X packages can be found [here](http://download.mono-project.com/archive/nightly/macos-10-universal/)
 
 Debian, Ubuntu, and derivatives
 -------------------------------
