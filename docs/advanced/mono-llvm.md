@@ -32,7 +32,7 @@ make && make install
 ```
 
 Note that on OSX mono is a 32 bit app, so you need to configure llvm
-with the `--target=i386-apple-darwin10.8.0` flag as by default it will
+with the `--host=i386-apple-darwin10.8.0` flag as by default it will
 build a 64 bit version of the libraries.
 
 Use 'git checkout mono' when compiling against mono HEAD.
