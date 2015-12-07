@@ -102,6 +102,29 @@ These snapshots will cease receiving updates as soon as the next major Mono vers
 
 On RPM distributions, force the package version in your package manager - all older versions are published in the YUM metadata and should be available.
 
+Security updates for older releases
+-----------------------------------
+
+Due to our repository management software, we are unable to directly offer security fixes in our standard reposijtories for any version of Mono other than the latest.
+
+If you are running a snapshot version, and want security support, add a repository as appropriate from the list below:
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian 38-security main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin-security.list
+```
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian 310-security main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin-security.list
+```
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian 312-security main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin-security.list
+```
+
+``` bash
+echo "deb http://download.mono-project.com/repo/debian 40-security main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin-security.list
+```
+
 Alpha update channel
 --------------------
 
