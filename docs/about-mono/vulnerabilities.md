@@ -16,6 +16,45 @@ Some versions of Mono had security vulnerabilities found after their
 public release. This page contains a list of the known
 vulnerabilities, starting with the most recent one.
 
+string-to-double parser bug
+---------------------------
+
+CVE: [CVE-2009-0689](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0689)
+
+Mono's string-to-double parser may crash, on specially crafted input. 
+This could theoretically lead to arbitrary code execution.
+
+The following sample program may crash the runtime, on affected versions:
+
+```
+using System;
+class Test
+{
+    static void Main()
+    {
+        string input = "1." + new string('1', 294912);
+        Double.Parse(input);
+    }
+}
+```
+
+Versions affected:
+
+- All versions prior to 4.2.0.179
+
+Versions fixed:
+
+- 3.10.0-0xamarin4, 3.12.1-0xamarin2, 3.8.0-0xamarin3, 4.0.5.1-0xamarin2 packages in our [Debian security repositories](http://www.mono-project.com/docs/getting-started/install/linux/#security-updates-for-older-releases).
+
+Individual patch for affected versions:
+
+https://gist.github.com/directhex/01e853567fd2cc74ed39
+
+Credits:
+
+- Peter McLarnan <Peter.McLarnan@nccgroup.trust>
+- Andy Schmitz <andy.schmitz@nccgroup.trust>
+
 TLS bugs
 --------
 
