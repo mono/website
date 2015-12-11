@@ -1,0 +1,13 @@
+language: ruby
+rvm: 2.2.2
+cache: bundler
+sudo: false
+install:
+ - bundle config build.nokogiri --use-system-libraries
+ - travis_retry bundle install
+ - gem install mdl -v 0.2.1
+ - gem install html-proofer -v 2.6.1
+script:
+ - jekyll build
+ - mdl -s markdownlint-config.rb . || true  # markdownlint errors shouldn't fail the build for now
+ - htmlproof ./_site --disable-external --allow-hash-href --check-html
