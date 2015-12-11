@@ -10,40 +10,40 @@ Accessibility: Team Meetings 2008 Aug 06
 
     -!- calvin changed the topic of #mono-a11y to: \*\*\* Iteration 12 Planning Meeting in progress \*\*\*\* - Accessibility
     07:01
-    **\<@calvin\> **
+    **<@calvin> **
     there are a number of people out of the office today
     so this might go rather quick
     07:02
-    **\<@Calen\> **
+    **<@Calen> **
     calvin: Brian asked me to give his report :)
-    **\<@calvin\> **
+    **<@calvin> **
     Calen: ok, I was going to ask you about that
     good
     let's go through our reports first and then I'll have jpallen review anything additional he has
     07:03
     ok, so top of the iteration is Sandy, go ahead
-    **\<@sandy\> **
+    **<@sandy> **
     I've mostly finished the NumericUpDownProvider, but its tests are not yet complete. I realized for it to work properly, I needed to get the LabeledBy property working. I spent quite some time trying to figure out how Microsoft was determining which label went with which control. Finally I decided that there was no decent logic to it, and started to implement a simple distance algorithm.
     Then Calvin asked me to look into the open UIA bugs, so I put that on hold (will finish it up today and tomorrow). I resolved two majors bugs and one minor one. There are two other bugs (411882 and 411444) that I think are pretty important, so unless somebody else was planning on fixing them I think I'll work on those this iteration, too.
     So this iteration I'll work on bugs, finish the NumericUpDownProvider tests, implement proper LabeledBy property support, improve our notifications when controls move on the screen (or move off of it), and start on a new control: PrintPreviewDialog.
     done
     (and I just realized my wiki changes got overwritten so I'll fix that after the meeting)
-    **\<@calvin\> **
+    **<@calvin> **
     sandy: wow, that was either prepared or you type super fast!
     07:04
-    **\<@sandy\> **
+    **<@sandy> **
      :-)
-    **\<@calvin\> **
+    **<@calvin> **
     thanks
     Mario, go ahead
-    **\<@sandy\> **
+    **<@sandy> **
     Calen: I think your changes got overwritten, too
-    **\<@mario\> **
+    **<@mario> **
     In this iteration I fixed some bugs in ScrollBar, most of them because of a confusion in the MSDN documentation
     07:05
-    **\<@Calen\> **
+    **<@Calen> **
     sandy: oh..thanks, i will fix
-    **\<@mario\> **
+    **<@mario> **
     tried to finish ErrorProvider, but I found that the component has a "special" behavior, because add controls that represent the error
     07:06
     (you know the ! mark)
@@ -55,21 +55,21 @@ Accessibility: Team Meetings 2008 Aug 06
     07:08
     my plans for next iteration is to finish Navigation, fix some bugs found by mgorse in Scrollbar navigation and send the patches to review
     done
-    **\<@calvin\> **
+    **<@calvin> **
     mario: thanks
     07:09
     ngao: go ahead
-    **\<@ngao\> **
+    **<@ngao> **
     ok
     last iteration, i finished ProgressBar test and StatusBar navigation, also fixed some TODO fields.
     there are some troubles then implementing Image, since there are no image type controls, we couldn't construct or get image provider from a control. i'm still looking for controls in uispy.
     next iteration, i will implement edit and StatusBarPanel, by then i think the whole StatusBar will complete.
     done
-    **\<@calvin\> **
+    **<@calvin> **
     great!
     07:10
     mgorse: go ahead
-    **\<@mgorse\> **
+    **<@mgorse> **
     It wasn't a very productive iteration for me
     I was trying to work on scrollbar tests but have been running into issues
     I've wrapped up an a11y issue with ORBit that Jared had me work on (not directly related to our project)
@@ -82,15 +82,15 @@ Accessibility: Team Meetings 2008 Aug 06
     07:12
     next iteration I plan to finish working on scrollbars and map ProgressBar in the bridge
     done
-    **\<@calvin\> **
+    **<@calvin> **
     mgorse: yeah, when I first came on the desktop team I did some work on the screensaver and logout dialogs, and the key grab code was a mess in there!
     07:13
     mgorse: anything of significance from the open a11y meeting yesterday?
     well, I'll go ahead while waiting for a response from mgorse
     07:15
-    **\<@mgorse\> **
+    **<@mgorse> **
     calvin: That reminds me that I need to post minutes. It was a short meeting; there weren't many people there. People were talking about modifying their statement on at-spi to mention CodeThink. I suggested that Novell should be mentioned, too. So we'll work on that and vote on the new statement next week
-    **\<@calvin\> **
+    **<@calvin> **
     I didn't get much done on my UIA plans due to a combination of some non-related UIA Novell work and some administrative work
     07:16
     So I asked sandy to start looking into the bugs in my place
@@ -99,15 +99,15 @@ Accessibility: Team Meetings 2008 Aug 06
     07:17
     knocte is still on vacation and I don't have a report from him so perhaps he can inject his plans in here when he returns from vacation
     07:18
-    **\<@mgorse\> **
+    **<@mgorse> **
     calvin: That reminds me that I have a work-around for bug 411444, but it involves a hack in at-spi, so it isn't really ideal. Better if we can fix the issues with the glib mainloop, but I'm not relaly sure how to do that. I added a comment that explains the issue
-    **\<@sandy\> **
+    **<@sandy> **
     thanks mgorse
     07:19
-    **\<@calvin\> **
+    **<@calvin> **
     mgorse: ok, I'll review your comment (sandy, probably good to look at it too)
     Calen: why don't you go ahead with both your report and Brian's
-    **\<@Calen\> **
+    **<@Calen> **
     calvin: okay
     07:20
     Brian:
@@ -131,15 +131,15 @@ Accessibility: Team Meetings 2008 Aug 06
     actuality my script plan schedule base on Accessibility:_Control_Status and Accessibility:_Mapping_UIA_to_ATK wiki page with which one is marked 'done',
     so i hope every one can update them promptly. many many thanks :)
     07:23
-    **\<@jpallen\> **
+    **<@jpallen> **
     good point calen
     07:24
-    **\<@Calen\> **
+    **<@Calen> **
     and thanks sandy and mgorse fixed bugs in time \^ \^
     done
-    **\<@calvin\> **
+    **<@calvin> **
     thanks
-    **\<@jpallen\> **
+    **<@jpallen> **
     that is where we're doing our project tracking
     (high level project tracking)
     in other words
@@ -150,19 +150,19 @@ Accessibility: Team Meetings 2008 Aug 06
     it appears that we are behind schedule
     is the UIA to ATK mapping wiki up to date?
     07:26
-    **\<@calvin\> **
+    **<@calvin> **
     jpallen: no, it's not
     07:27
-    **\<@jpallen\> **
+    **<@jpallen> **
     ok
-    **\<@mgorse\> **
+    **<@mgorse> **
     StatusBar is done, and ScrollBar is 50% done. I'll update the wiki to say that after the meeting
     07:28
-    **\<@calvin\> **
+    **<@calvin> **
     jpallen: I'll chat with knocte and make sure it gets up to date (oh, and mgorse)
     mgorse: thanks
     Ray: go ahead
-    **\<@Ray\> **
+    **<@Ray> **
     sure
     for my Build part:
     played with at-spi-dbus for a bit time, and succeeded to build at-spi-dbus on my laptop, but failed on OBS with same spec file, i don't know why, so i'll check it out later.
@@ -174,53 +174,53 @@ Accessibility: Team Meetings 2008 Aug 06
     bgmerrel suggests me switching to write Strongwind test samples after i finish all the controls. so in the coming week, i'm still going to keep on playing with winform control samples.
     and to see what's the problem about at-spi-dbus on OBS.
     done
-    **\<@calvin\> **
+    **<@calvin> **
     Ray: nice, that sounds great
     07:31
     decriptor: don't want to miss you, are you here?
     decriptor: is at a conference and I'm not sure if he is really sitting in front of his computer
-    **\<@jpallen\> **
+    **<@jpallen> **
     he's probably standing in the lab talking to a customer :)
     07:32
-    **\<@calvin\> **
+    **<@calvin> **
     it would appear that he is not there, so we can wrap up
     jpallen: do you have more to add?
-    **\<@jpallen\> **
+    **<@jpallen> **
     just my normal rant about project tracking, which you already covered :)
     07:33
-    **\<@calvin\> **
+    **<@calvin> **
     heh
     ok
-    **\<@jpallen\> **
+    **<@jpallen> **
     i think we're farther along than our wiki pages show
     we'll get those updated
     we'll talk more about this tomorrow in our team meeting
     07:34
     i'm assuming everyone will be there?
-    **\<@sandy\> **
+    **<@sandy> **
     yup
-    **\<@ngao\> **
+    **<@ngao> **
     yes
-    **\<@Ray\> **
+    **<@Ray> **
     yes!
-    **\<@Calen\> **
+    **<@Calen> **
     jpallen: yeah.
-    **\<@mario\> **
+    **<@mario> **
     y!
-    **\<@calvin\> **
+    **<@calvin> **
     yes
-    **\<@jpallen\> **
+    **<@jpallen> **
     good
      :)
     that's all
-    **\<@calvin\> **
+    **<@calvin> **
     ok, sandy will you do your normal IRC log magic to the wiki?
-    **\<@sandy\> **
+    **<@sandy> **
     sure thing
     07:35
-    **\<@calvin\> **
+    **<@calvin> **
     great! thanks everyone... have a good morning, good afternoon, and good night!
-    **\<@Ray\> **
+    **<@Ray> **
     thank you
     ** **
     -!- calvin changed the topic of #mono-a11y to: Accessibility

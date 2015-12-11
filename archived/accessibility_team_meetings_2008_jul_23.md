@@ -10,19 +10,19 @@ Accessibility: Team Meetings 2008 Jul 23
 
     -!- knocte changed the topic of #mono-a11y to: Iteration meeting ( Accessibility )
     07:05
-    **\<@knocte\> **
+    **<@knocte> **
     well I guess we can start
     calvin told me to run the meeting, he was not going to be able to join
     as usual we will be asking for the status report of everyone and plan for next iteration
     07:06
     anything that anybody want to arise before we start? everyone is ok with the usual order of people reporting?
-    **\<@Ray\> **
+    **<@Ray> **
     yep
     07:07
-    **\<@knocte\> **
+    **<@knocte> **
     I guess it's ok so let's start with the first in the class :) ermmm, sandy?
     how was your iteration?
-    **\<@sandy\> **
+    **<@sandy> **
     Alright, the main thing I worked on this iteration was getting our StructureChangedEvents in order
     which involved some refactoring in UIAutomationWinforms and in the bridge, too
     07:08
@@ -43,41 +43,41 @@ Accessibility: Team Meetings 2008 Jul 23
     or if there is other architectural work I should focus on
     done
     07:11
-    **\<@knocte\> **
+    **<@knocte> **
     thanks sandy, about the olive's patch, my fault that I wasn't paying attention to it, still didn't subscribe to olive's list, so no replies on the thread at all?
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: I pinged again the other day on the list
-    **\< kangaroo\> **
+    **< kangaroo> **
     why are you guys patching olive?
-    **\<@sandy\> **
+    **<@sandy> **
     kangaroo: it's just a pc file
-    **\< kangaroo\> **
+    **< kangaroo> **
     oh
-    **\<@sandy\> **
+    **<@sandy> **
     but miguel wanted to review it
-    **\< kangaroo\> **
+    **< kangaroo> **
     monoport the change?
     miguel is travelling this week
     expect delays
-    **\<@sandy\> **
+    **<@sandy> **
     yeah, it's been a busy month
-    **\<@knocte\> **
+    **<@knocte> **
     kangaroo: I guess the change is on the mailing list
     07:12
     and about the contributor guidelines, sorry but I didn't look into them very deeply, but I guess our main differences are one glitch about the coding style and the .py files headers and... anymore?
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: I don't know, I will have to review
     07:13
-    **\<@knocte\> **
+    **<@knocte> **
     maybe it's worth resyncing ourselves again to Mono conventions
     ok we'll talk about this later
     let's switch to mario, thanks again sandy
-    **\<@sandy\> **
+    **<@sandy> **
     kangaroo: [http://monoport.com/36522](http://monoport.com/36522)
-    **\<@knocte\> **
+    **<@knocte> **
     mario: ready there?
     07:14
-    **\<@mario\> **
+    **<@mario> **
     this iteration: I finished the unitary tests for ListBox and ComboBox
     I started working with the winform Components
     such as ToolTip, HelpProvider, ErrorProvider
@@ -87,11 +87,11 @@ Accessibility: Team Meetings 2008 Jul 23
     so, next iteration is: winfor components: "ToolTip, HelpProvider, ErrorProvider". Write CheckedListBox unitary tests. Update winform patches.
     07:16
     done :)
-    **\<@knocte\> **
+    **<@knocte> **
     fine, that seems to be a very complete iteration, thanks mario
     let's see if we can keep on with neville
     ngao: ready?
-    **\<@ngao\> **
+    **<@ngao> **
     yes
     07:17
     last iteration, i spent a little time on struggling with monodevelop...
@@ -100,23 +100,23 @@ Accessibility: Team Meetings 2008 Jul 23
     i think that would be a part of status bar navigation
     07:18
     done
-    **\<@knocte\> **
+    **<@knocte> **
     thanks ngao, so finally using MD 1.0 right?
-    **\<@ngao\> **
+    **<@ngao> **
     yeah, but still some trivial problems
     07:19
-    **\< kangaroo\> **
+    **< kangaroo> **
     sandy: looks fine, but if miguel wanted to review thats up to him
-    **\<@knocte\> **
+    **<@knocte> **
     kangaroo: thanks for the follow-up
     ok, I wanted to be the last one of the devs to give my status because I wanted to ask you how did you feel about a slight change on how we structure some things in the wiki (the project schedule)
     07:20
-    **\<@mgorse\> **
+    **<@mgorse> **
     knocte: I should go first?
-    **\<@knocte\> **
+    **<@knocte> **
     oh sorry mgorse, dumb of me!
     mgorse: please
-    **\<@mgorse\> **
+    **<@mgorse> **
     I've been working on mapping the StatusBar control type to atk
     07:21
     I have a bunch of code that I'm close to being ready to commit. I mailed the list, then made some changes to the tests per knocte's request
@@ -126,36 +126,36 @@ Accessibility: Team Meetings 2008 Jul 23
     and I fixed a couple of issues with the text implementor in the bridge that I found while testing the statusbar. Going to commit those later
     07:23
     Next iteration I plan on working on mapping the ScrollBar control type to atk
-    **\<@knocte\> **
+    **<@knocte> **
     maybe you'll reuse some Panel class stuff for StatusBarPanels?
-    **\<@mgorse\> **
+    **<@mgorse> **
     I also talked to Mark Doffman about collections in atspi-dbus and realized that I should finish the work that I started on them, so I plan on doing that as well
     07:24
     done
-    **\<@knocte\> **
+    **<@knocte> **
     oh yeah please, tell us when you think the dbus side needs more attention
     thanks mgorse
-    **\<@mgorse\> **
+    **<@mgorse> **
     knocte: I consider myself to be in maintenance mode with that code
     07:25
-    **\<@knocte\> **
+    **<@knocte> **
     ok perfect, I'll ask you some more questions about that later
-    **\<@mgorse\> **
+    **<@mgorse> **
     ok
-    **\<@knocte\> **
+    **<@knocte> **
     ok so what I wanted to arise is 2 proposal for change: firstly try to figure out percentages of work done before having the meeting, in order to reflect them on the meeting log, and , regarding the project schedule:
     first a question, how are you guys handling the case when there is a delay of what was \*originally\* planned in the first version of the project plan?
     07:26
     I guess you're just adding the elements to the next iteration right?
     sandy: I noticed you were doing that?
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: well, we aren't actually planned in advance
     we randomly tossed things into future iterations
     07:27
-    **\<@mario\> **
+    **<@mario> **
     I'm moving to last iteration, then I move to current when the controls are alike, for example right now, the "component-controls" (tooltip, helpprovider, etc)
     I did the same with the scrollbars
-    **\<@knocte\> **
+    **<@knocte> **
     I see, ok what I meant with this is, maybe you already noticed...
     last week I added an extra "meta-iteration" on the page
     called "elements delayed"
@@ -165,16 +165,16 @@ Accessibility: Team Meetings 2008 Jul 23
     and secondly a delay because you have needed more time to finish more things or got stuck with something
     07:29
     so I was thinking about specifying this kind of stuff here
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: if something is delayed, it shows in iteration X as "not done"
     and there are notes to specify why
     and it gets bumped to the next iteration
-    **\<@knocte\> **
+    **<@knocte> **
     yeah but what I noticed is that it's not easy to see all the delayed elements
     07:30
-    **\<@sandy\> **
+    **<@sandy> **
     is that a problem?
-    **\<@knocte\> **
+    **<@knocte> **
     maybe for project planning, well, maybe we just have to agree on some keywords to distinguish between these types of delays I've talked about
     07:31
     we'll talk about this later.. and I'll give my status report now
@@ -195,25 +195,25 @@ Accessibility: Team Meetings 2008 Jul 23
     bgmerrell: ping?
     07:36
     we'll switch to Calen in 3, 2, 1... :)
-    **\<@Calen\> **
+    **<@Calen> **
     hehe..
-    **\<@knocte\> **
+    **<@knocte> **
     Calen: ready?
-    **\<@Calen\> **
+    **<@Calen> **
     i am ready
-    **\<@knocte\> **
+    **<@knocte> **
     ok go ahead
-    **\<@Calen\> **
+    **<@Calen> **
     in last Iteration i upgraded some winforms application to not use '&' in form's text, beauce it cause an error with accerciser can't get correct frame's name
     07:37
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: weird he just emailed the list
-    **\<@Calen\> **
+    **<@Calen> **
     i also have scripted a strongwind test for winforms button control application.
     but fased some problems, so i spent many times to search solution and log bug:
-    **\<@knocte\> **
+    **<@knocte> **
     decriptor: thanks for pointing out, we'll wait for him in the last slot :)
-    **\<@Calen\> **
+    **<@Calen> **
     first one is strongwind couldn't run cache.launchApplication(args=args), solved by add name='ipy'
     07:38
     second is strongwind couldn't find Frame beause program doesn't support 'showing' state for winforms app items, but strongwind base on 'x.showing' to run findFrame(), so if we want to run the test before it's be supported we need change 'x.showing' to 'not x.showing' in strongwind.
@@ -223,56 +223,56 @@ Accessibility: Team Meetings 2008 Jul 23
     so in this Iteration i will look at it. and also will continue to script strongwind test for a new winforms control
     done :)
     07:40
-    **\<@knocte\> **
+    **<@knocte> **
     thanks Calen, where's strongwind bug tracking tool?
     ** **
     -!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has joined #mono-a11y
-    **\<@knocte\> **
+    **<@knocte> **
     I mean, is there a bugzilla for strongwind?
-    **\< bgm\> **
+    **< bgm> **
     yes
-    **\<@Calen\> **
+    **<@Calen> **
     knocte: strongwind have a bugzilla
-    **\<@knocte\> **
+    **<@knocte> **
     is it public? you have the URL?
     07:41
     bgm: hey
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     sorry my VPN got disconnected again, i just thought mgorse was taking a long time :)
     ** **
     -!- bgm [\~bean@c-76-27-10-135.hsd1.ut.comcast.ne t] has quit [leaving]
-    **\<@Calen\> **
+    **<@Calen> **
     wait, let me see
-    **\<@knocte\> **
+    **<@knocte> **
     bgmerrell: doesn't matter, you'll go next to Calen now
     BTW, in which language is strongwind tool developed?
     07:42
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     python!
-    **\<@Calen\> **
+    **<@Calen> **
     python
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
      ;)
-    **\<@knocte\> **
+    **<@knocte> **
     ok :)
-    **\<@Calen\> **
+    **<@Calen> **
     haha..
     **\* decriptor **
     remains unsurprised :)
-    **\<@knocte\> **
+    **<@knocte> **
     well then if you've submitted bugs, I'd love to see their URLs! just for the sake of the log, as soon as you find them
     07:43
     bgmerrell: you can go ahead with your report
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     [http://bugzilla.gnome.org/browse.cgi?pro](http://bugzilla.gnome.org/browse.cgi?pro) duct=strongwind
-    **\<@knocte\> **
+    **<@knocte> **
     ohh it's a gnome module, I didn't know that, thanks guys
     07:44
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     I have gotten patches accepted to Strongwind, so we should be able to tackle any problems on that end.
-    **\<@knocte\> **
+    **<@knocte> **
     fine fine
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     okay, my report..
     07:45
     i was kind of all over the place this iteration, i wanted to get the test harness and gtk examples polished up so we had some pristine examples to go by now that we have started the WinForms testing
@@ -289,21 +289,21 @@ Accessibility: Team Meetings 2008 Jul 23
     07:49
     and continue to make sure we get any problems resolved for using Strongwind to test the WinForms apps
     07:50
-    **\<@knocte\> **
+    **<@knocte> **
     that sounded as really fun hacking (except the wiki part :) ), so done?
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     and i still hope to get started on Orca testing (this has been planned for a while now)
     done
     07:51
-    **\<@knocte\> **
+    **<@knocte> **
     oh yes, orca sounds like a plan to start finding tons of bugs :) thanks bgmerrell
     we'll get to the QA&build man, Ray?
-    **\<@Ray\> **
+    **<@Ray> **
     yeah, here i come.
-    **\<@knocte\> **
+    **<@knocte> **
     ok, QA first please (if you did any QA)
     07:52
-    **\<@Ray\> **
+    **<@Ray> **
     this time, i have nearly all the sample scripts to be changed to suite the needs for testing except webbrowser.py
     i'm stuck by WebBrowser control. and ask the question in mono-olive google groups. but no answer yet.
     I would figure things out in this iteration.
@@ -314,127 +314,127 @@ Accessibility: Team Meetings 2008 Jul 23
     I should start to do some codes for the rest of controls.
     and keep walking. :)
     done
-    **\<@knocte\> **
+    **<@knocte> **
     ok, although WebBrowser seems to be a ton of work by just one widget, it's fine you start dealing with it early
     thanks Ray
-    **\<@Ray\> **
+    **<@Ray> **
     you're welcome
-    **\<@knocte\> **
+    **<@knocte> **
     and before decriptor starts I wanted to ask you first
     07:54
-    **\<@Ray\> **
+    **<@Ray> **
     sure
-    **\<@knocte\> **
+    **<@knocte> **
     (both of you)
-    if you could start, wrt packaging, looking at the CORBA-\>DBUS stuff
-    **\<@Ray\> **
+    if you could start, wrt packaging, looking at the CORBA->DBUS stuff
+    **<@Ray> **
     where is the source code?
     07:55
-    **\<@knocte\> **
+    **<@knocte> **
     I don't know if the location of the code is going to be definitive, well this stuff will need just to talk with mgorse
     decriptor: are you very busy to start looking briefly at this?
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: I can start looking at it
-    **\<@Ray\> **
+    **<@Ray> **
     ok, so we have to package what mgorse code?
     07:56
-    **\<@knocte\> **
+    **<@knocte> **
     yeah, mgorse will guide you about all that stuff
-    **\<@mgorse\> **
+    **<@mgorse> **
     The code is currently at [git://git.codethink.co.uk/git/atspi-dbus](git://git.codethink.co.uk/git/atspi-dbus)
     but it might eventually get moved to freedesktop.org
-    **\<@decriptor\> **
+    **<@decriptor> **
     oh, I get to learn git :)
-    **\<@knocte\> **
+    **<@knocte> **
     mgorse: thanks for pointing out
-    **\<@Ray\> **
+    **<@Ray> **
     knocte, sure, i will . :)
-    **\<@knocte\> **
+    **<@knocte> **
     well then we can finish with decriptor report
     **\* decriptor **
     disappears for a week :)
-    **\<@mgorse\> **
+    **<@mgorse> **
     decriptor: Yeah. You should jus tneed to clone the repository, though. We can talk about it later
     07:57
-    **\<@Ray\> **
+    **<@Ray> **
     decriptor, so do i . :D
-    **\<@decriptor\> **
+    **<@decriptor> **
     sorry, taking notes
     now I'm ready
     07:58
-    **\<@knocte\> **
+    **<@knocte> **
     perfect, go ahead
-    **\<@decriptor\> **
+    **<@decriptor> **
     so as bgmerrell mentioned we worked on getting the rpms right as far as whats needed
     they will be at [http://build1.sled.lan.novell.com/uia](http://build1.sled.lan.novell.com/uia)
     I created a script that would dig through monobuild and collect out the packages of interest. I can post that script if anyone is interested
     07:59
     **\* Ray **
     is interested in that.
-    **\<@decriptor\> **
+    **<@decriptor> **
     they why that I've set it up is it cleans out the current stuff on build1 and uploads the new stuff
     the old stuff remains on the build.mono.lab.novell.com
     08:00
-    **\<@knocte\> **
+    **<@knocte> **
     yeah, maybe it's interesting to commit it, check it with mono packagers as well
-    **\<@decriptor\> **
+    **<@decriptor> **
     ok
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     [http://build1.sled.lab.novell.com/uia](http://build1.sled.lab.novell.com/uia) btw
-    **\<@decriptor\> **
+    **<@decriptor> **
     bgmerrell: thanks
     08:01
      :)
-    **\<@knocte\> **
+    **<@knocte> **
     s/lan/lab, right, thanks
-    **\<@bgmerrell\> **
+    **<@bgmerrell> **
     sandy will fix it in editing.. ;)
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: they might go a different way. the reason for the script is to handle mono packages that need patches
-    **\<@knocte\> **
+    **<@knocte> **
     oh I see
-    **\<@decriptor\> **
+    **<@decriptor> **
     so as for the build stuff, we are going to go with a hybrid of monobuild and OBS
-    **\<@knocte\> **
+    **<@knocte> **
     nice to know
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: if we end up not patching over time, then we might change that up
     08:02
     but for now
-    **\<@knocte\> **
+    **<@knocte> **
     oh I thought monobuild was based on OBS, I should learn more about this stuff
-    **\<@decriptor\> **
+    **<@decriptor> **
     both systems come with limitations :(
     no
     knocte: monobuild is completely written by wade solely for mono stuff
     so I've taken the code and done a friendly branch of it and try to learn it
     08:03
-    **\<@knocte\> **
+    **<@knocte> **
     I see
-    **\<@decriptor\> **
+    **<@decriptor> **
     no one knew the code other than wade :(
-    **\<@knocte\> **
+    **<@knocte> **
     well, then, next thing is your plan for next it.?
-    **\<@decriptor\> **
+    **<@decriptor> **
     its going to be an embrass and extend thing I think
-    **\<@knocte\> **
+    **<@knocte> **
     aha, sounds good
     08:04
-    **\<@decriptor\> **
+    **<@decriptor> **
     go over the code some more and see where we can improve it and take advantage of obs for the actual building (jails) which will give us multi-distro capabilities
     **\* decriptor **
     sidenote I got access to the provo build system (new obs stuff)
     08:05
-    **\<@decriptor\> **
-    start looking into the corba-\>dbus stuff
-    **\<@knocte\> **
+    **<@decriptor> **
+    start looking into the corba->dbus stuff
+    **<@knocte> **
     ok that sounds very good too
-    **\<@decriptor\> **
+    **<@decriptor> **
     btw I created a google doc in hopes to keep ray and myself and [yet to be hired] :) in sync with the build stuff
     (not sure if other want access to that)
     08:06
     I think that's it... done
-    **\<@knocte\> **
+    **<@knocte> **
     well, if anyone's interested, just ask decriptor!
     thanks very much decriptor, and all
     hugh, 1 hour meeting!

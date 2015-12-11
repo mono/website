@@ -11,24 +11,24 @@ Accessibility: Team Meetings 2008 Jun 25
 Meeting Log
 -----------
 
-    **\<@knocte\> **
+    **<@knocte> **
     well guys, today I run the meeting again, as calvin told me he was going to be late
     07:01
     so we'll use the same technique as usual
     first the devs, then build&QA
     sandy: you want to start? you know, tell when you're done
     07:02
-    **\<@sandy\> **
+    **<@sandy> **
     sure
     ** **
     -!- bgmerrell [\~bean@snout.provo.novell.com] has joined #mono-a11y
-    **\<@sandy\> **
+    **<@sandy> **
     I worked again on the olive infrastructure patch, but due to the boston meeting it has yet to be reviewed
     hopefully we'll here about it early next week
     07:03
-    **\< Ray\> **
+    **< Ray> **
     sure
-    **\<@sandy\> **
+    **<@sandy> **
     I wrote up a little documentation on the wiki for setting up a parallel mono dev environment
     and helped everybody get that set up
     and then just spent a lot of time wrestling with makefiles
@@ -39,25 +39,25 @@ Meeting Log
     and then I'll finish the many testing tasks I have for some providers
     and I think I may have work to do to adapt them to MarioC's new base classes, but I haven't looked yet
     done
-    **\<@knocte\> **
+    **<@knocte> **
     ok, what was the provider(s) assigned for this iteration?
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: nothing new
-    **\<@knocte\> **
+    **<@knocte> **
     ok
     07:05
     wiki , in order to do it without conflicting other's changes)
-    **\<@sandy\> **
+    **<@sandy> **
     Form, GroupBox, Button, RadioButton
     just finishing testing on them
     I'll pick up another provider if I have time
-    **\<@knocte\> **
+    **<@knocte> **
     ok
-    **\<@sandy\> **
+    **<@sandy> **
     done done
-    **\<@knocte\> **
+    **<@knocte> **
     MarioC: you go?
-    **\<@MarioC\> **
+    **<@MarioC> **
     sure
     this time, I decided to start implementing ComboBox to test both the bridge and the providers at the same time, and I did
     07:06
@@ -71,87 +71,87 @@ Meeting Log
     s/support logic/support navigation
     and the preview of the Winfors implementation is done: Accessibility:_Winforms_Implementation
     07:09
-    **\<@sandy\> **
+    **<@sandy> **
     beautiful!
-    **\<@MarioC\> **
+    **<@MarioC> **
     I'll be updating it as soon as I have more things to add
     I'm sure sandy, will add more information
-    **\<@sandy\> **
+    **<@sandy> **
      :-)
-    **\<@knocte\> **
+    **<@knocte> **
     ok, done?
     07:10
-    **\<@MarioC\> **
+    **<@MarioC> **
     not yet
     next iteration I'm planning to finish Navigation for ComboBox, this includes the internal navigation for ListBox and ScrollBar
     done
-    **\<@knocte\> **
+    **<@knocte> **
     thanks MarioC
-    **\<@MarioC\> **
+    **<@MarioC> **
      :)
-    **\<@knocte\> **
+    **<@knocte> **
     MarioC, sandy: do you guys know a brief summary of what ngao was planning for the following iteration ? any missing provider?
-    **\<@MarioC\> **
+    **<@MarioC> **
     He needs to finish the tests first
     07:11
-    **\<@knocte\> **
+    **<@knocte> **
     in case you have, just name it, for the sake of the meeting log
     ok
-    **\<@MarioC\> **
+    **<@MarioC> **
     and... his new provider: CheckedListBox
-    **\<@knocte\> **
+    **<@knocte> **
     ok, next would be calvin, who's not here
-    **\<@MarioC\> **
+    **<@MarioC> **
     I t hink will be implemented as soon as the ListBox is already done
-    **\<@knocte\> **
+    **<@knocte> **
     cool, thanks MarioC
     07:12
     I'll paste here calvin's plans
     [Calvin] I think we need to look at doing a lot more helper type classes to flush out the different providers. I noticed in your ComboBox, you have all of the SelectionProvider stuff stubbed in. Well, I just implemented all of that for the list class and it will be EXACTLY the same code. We'll also need to do some rework on the way the hierarchy is being built up in the bridge so I'm not going to add any more work to this ne
     and now I'll go
     07:13
-    **\<@sandy\> **
+    **<@sandy> **
     knocte: it was cut off
-    **\< bgmerrell\> **
+    **< bgmerrell> **
     I'm not going to add any more work to this ne[snip]
-    **\<@knocte\> **
+    **<@knocte> **
     oh
     it finished "to this next iteration."
     07:14
     and that's it
-    **\<@sandy\> **
+    **<@sandy> **
     heh
-    **\<@knocte\> **
+    **<@knocte> **
     thanks for noticing bgmerrell and sandy
     I'll tell my status now
     I have completed the more important bits of RadioButton and ComboBox that were lacking, though still not passing the tests because of some mysterious behaviour I have to investigate
     ** **
     -!- jpallen [\~jpallen@ariadne.provo.novell.com] has quit [used jmIrc]
-    **\<@knocte\> **
+    **<@knocte> **
     Window class is almost there, as we just need the events to be implemented. My new mono env is almost ready too. I've also spent some time in this iteration for creating the presentation to show at Guadec.
     07:15
     and, well, my plan is still not clear, maybe I'll just do refactoring of the bridge upon the info we got on the MS email
     ** **
     -!- jpallen [\~jpallen@137.65.132.45] has joined #mono-a11y
-    **\<@knocte\> **
+    **<@knocte> **
     and I'll finish the rest of things that are not complete in past iterations
     07:16
     now let's go with build guys
     decriptor: you ready?
-    **\< mgorse\> **
+    **< mgorse> **
     Knocte: want me to go first? I haven't gone yet
-    **\<@knocte\> **
+    **<@knocte> **
     oohhh, sorry mgorse
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: yup
-    **\<@knocte\> **
+    **<@knocte> **
     yes, go ahead mike
-    **\< mgorse\> **
+    **< mgorse> **
     ok
     07:17
-    **\<@knocte\> **
+    **<@knocte> **
     decriptor: wait a bit please :)
-    **\< mgorse\> **
+    **< mgorse> **
     Tested cspi registration and event passing some more.
     Added action, editableText, hyperlink, hypertext, and table interfaces.
     It now builds against gok for me, with a minor patch to gok to remove some #includes.
@@ -160,82 +160,82 @@ Meeting Log
     I'm also going to try to look at the test template developed by George Kraft's group at IBM, to see about testing cspi.
     I'm unsure as to how much time I should take to create cspi tests, since the Open A11y group may seek a grant for someone to devise tests for the lsb.
     done
-    **\<@knocte\> **
+    **<@knocte> **
     cool news mgorse
     BTW, the MD issue seems strange to me, MD is visible for accerciser
     07:18
     (in my system)
-    **\< mgorse\> **
+    **< mgorse> **
     knocte: md from svn? Okay. I haven't tried with accerciser. Was trying with Orca. I'll see if Accerciser sees it
-    **\<@knocte\> **
+    **<@knocte> **
     ok
     mgorse: where are you putting your code? any repository?
     07:19
     how do you coordinate with Mark?
-    **\< mgorse\> **
+    **< mgorse> **
     knocte: [git://git.codethink.co.uk/git/atspi-dbus](git://git.codethink.co.uk/git/atspi-dbus)
-    **\<@knocte\> **
+    **<@knocte> **
     oh, cool to know, thanks
-    **\< mgorse\> **
+    **< mgorse> **
     some of it is in the mgorse branch currently and not in master
-    **\<@knocte\> **
+    **<@knocte> **
     perfect, thanks for the info
     now we'll let decriptor actually start :)
     decriptor: \^\^
     07:20
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: ok
     ok I finally update the wiki page :) ok just barely
     been working on getting autotools to work with our stuff, which seems to be mostly finished
     07:21
     huge thanks to sandy for helping on that
-    **\<@knocte\> **
+    **<@knocte> **
     perfect, maybe it's interesting for you to have a SVN account as well?
     07:22
-    **\<@decriptor\> **
+    **<@decriptor> **
     working on getting the rpms built now which I haven't completely figured out the best way to do that, but I'm hoping to have them very soon
     knocte: :(
-    **\<@knocte\> **
+    **<@knocte> **
     ok, any bits you miss from the devs that could help on that?
-    **\<@decriptor\> **
+    **<@decriptor> **
     knocte: I really really wish I did, but because of meetings and other things, my email I'm sure is at the bottom of the todo list
-    **\<@knocte\> **
+    **<@knocte> **
     I see
     07:23
-    **\<@decriptor\> **
+    **<@decriptor> **
     so hopefully this week or next, so far I've just been creating patches and sending them to sandy
-    **\<@knocte\> **
+    **<@knocte> **
     ok we'll talk after the meeting about all this
-    **\<@decriptor\> **
+    **<@decriptor> **
     its more the 30 minute delay in syncing trunk that makes this take longer
     07:24
     so anyways,
     **\* knocte **
     nods
-    **\<@knocte\> **
+    **<@knocte> **
     ok, and any special plan apart from finishing the rpms?
-    **\<@decriptor\> **
+    **<@decriptor> **
     plan is to get rpm soon and some sort of build system/methodology in place for building
-    **\<@knocte\> **
+    **<@knocte> **
     ok, you done?
     07:25
-    **\<@decriptor\> **
+    **<@decriptor> **
     I want to get that some what automated so that we can build on demand
     done
-    **\<@knocte\> **
+    **<@knocte> **
     ok
     let's go with Ray now
-    **\< Ray\> **
+    **< Ray> **
     OK
-    **\<@knocte\> **
+    **<@knocte> **
     Ray: could you do build stuff first and then QA?
-    **\< Ray\> **
+    **< Ray> **
     knocte: ok, this iteration, i didn't do much work on build stuff
     07:26
-    **\<@knocte\> **
+    **<@knocte> **
     (just to keep us on subject ;) )
     ok, just switch to QA then
-    **\< Ray\> **
+    **< Ray> **
     and I'll spent some time in next iteration to handle UiaAtkBridge and UIAutomation te be package into rpms with decriptor
     07:27
     that's the building plan
@@ -244,40 +244,40 @@ Meeting Log
     get the benifit from the practice in last iteration,
     I'm more and more familiar with that, and have implemented 19 controls.
     07:28
-    **\<@MarioC\> **
+    **<@MarioC> **
     decriptor, you "broke" the next iteration table, you added a new column.
-    **\<@decriptor\> **
+    **<@decriptor> **
     MarioC: :( sorry
-    **\< Ray\> **
+    **< Ray> **
     all of them are very simple, i feeled a little worry about whether those samples could fulfill the need or not.
     so i asked bgmerrell to have a look at them a bit in his spare time.
-    **\<@decriptor\> **
+    **<@decriptor> **
     MarioC: my browser was small and didn't even notice that :(
-    **\< Ray\> **
+    **< Ray> **
     in the up-coming iteration, i'll continue to implement the rest of them unless there is something interrupt
     07:29
     personally, I was starting to learn autotool for the preparation of future build work use.
     over
-    **\<@knocte\> **
+    **<@knocte> **
     whatever methodology)
     thanks Ray
-    **\< Ray\> **
+    **< Ray> **
     knocte: :D
-    **\<@knocte\> **
+    **<@knocte> **
     ok, let's continue with QA then
     07:30
     Calen: you here?
-    **\< Calen\> **
+    **< Calen> **
     yes
-    **\<@knocte\> **
+    **<@knocte> **
     can you go?
-    **\< Calen\> **
+    **< Calen> **
     of course
     after discuss with Brian, i have finished one strongwind test
     07:31
-    **\< bgmerrell\> **
+    **< bgmerrell> **
     Hooray!
-    **\< Calen\> **
+    **< Calen> **
     for treeview control(gtk) as practice to check the status when expand&contract the TableCell.
     now i think i make sence what should and will be checked when we test a winforms control,thanks bgmerrell :) .
     but i am also have some technology questions should ask Brian.
@@ -285,24 +285,24 @@ Meeting Log
     BTW i have spent some time to update my laptop to openSUSE11 :)
     07:32
     Done
-    **\<@knocte\> **
+    **<@knocte> **
     cool
     thanks Calen
     bgmerrell: hi! you next?
-    **\< bgmerrell\> **
+    **< bgmerrell> **
     i think so!
     07:33
-    **\< Calen\> **
+    **< Calen> **
      :)
-    **\< bgmerrell\> **
+    **< bgmerrell> **
     Last week I mostly spent upgrading all my work machines and dealing with bugs un
     oh. nice.
     Last week I mostly spent upgrading all my work machines and dealing with bugs unfortunately. This week I was able to upgrade our QA virtual machines to openSUSE11 and get the test environment setup and the tests running on them.
     07:34
     I also went over Strongwind testing with Calen and reviewed a little bit of Ray's code.
-    **\< Ray\> **
+    **< Ray> **
     bgmerrell: GREAT! thanks :)
-    **\< bgmerrell\> **
+    **< bgmerrell> **
     This next iteration I play on consuming the packages decriptor is building assuming they are available. I also have a lot of tasks that involve documentation, HOWTOs for QA, updating the test plan, etc., that I would liek to get out of the way this iteration
     And review Calen's Strongwind test and Ray's samples
     07:35
@@ -311,7 +311,7 @@ Meeting Log
     So that was weird and I'm sure I'll get to deal with that today.
     done
     07:36
-    **\<@knocte\> **
+    **<@knocte> **
     ok sounds good
     did I miss anybody?
     it doesn't seem so I'll upload the log to the wiki
