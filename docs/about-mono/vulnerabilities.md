@@ -21,12 +21,12 @@ string-to-double parser bug
 
 CVE: [CVE-2009-0689](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0689)
 
-Mono's string-to-double parser may crash, on specially crafted input. 
+Mono's string-to-double parser may crash, on specially crafted input.
 This could theoretically lead to arbitrary code execution.
 
 The following sample program may crash the runtime, on affected versions:
 
-```
+```csharp
 using System;
 class Test
 {
@@ -48,7 +48,7 @@ Versions fixed:
 
 Individual patch for affected versions:
 
-https://gist.github.com/directhex/01e853567fd2cc74ed39
+[https://gist.github.com/directhex/01e853567fd2cc74ed39](https://gist.github.com/directhex/01e853567fd2cc74ed39)
 
 Credits:
 
