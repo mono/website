@@ -9,7 +9,7 @@ There are 4 types of issues that MoMA will detect and report. Here is a descript
 Missing Methods
 ---------------
 
-This is the most severe type of issue. These methods are methods that are not implemented in Mono is any way, not even as stubs. If you try to compile your application that uses these methods with Mono, you will get an error like:
+This is the most severe type of issue. These methods are methods that are not implemented in Mono in any way, not even as stubs. If you try to compile your application that uses these methods with Mono, you will get an error like:
 
 myfile.cs(22,16): error CS0117: 'xxxxxxxxxxxxxxxxx' does not contain a definition for 'xxxxxxxxxxxxxxx'
 
