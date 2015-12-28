@@ -104,6 +104,7 @@ Open Source applications
 -   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation](/archived/nant_installation) guide.
 -   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme](/docs/tools+libraries/tools/gendarme/). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C# compiler.
+-   [BuildAMation](http://buildamation.com/) is an open source (BSD 3-clause) build system and project generator that runs on Windows, Linux and OSX, using Mono on the latter two platforms. Requires at least Mono 4. Build scripts are written in C#, and compiled at runtime. C, C++ and Objective C code are the main build targets. The current version of BuildAMation supports a multithreaded command line build, or generation of Visual Studio or Xcode projects, or MakeFiles.
 
 ### Server Applications
 
