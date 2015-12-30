@@ -561,10 +561,12 @@ class Demo {
 Then your C code would look like this:
 
 ``` c
-typedef int (*callback-t) (int a, int b);
+#include <stdlib.h>
+
+typedef int (*callback_t) (int a, int b);
 static callback_t my_callback;
 
-void RegisterCallback (my_callback_t cb)
+void RegisterCallback (callback_t cb)
 {
   my_callback = cb;
 }
