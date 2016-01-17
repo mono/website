@@ -173,6 +173,40 @@ Ok under any mode.
 This coves the case where code must enter GC Safe mode but it doesn't know if it is already under it.
 Great to use around locks, that might be used in both modes.
 
+## Managed object handles
+
+Mono coop handles (`MonoObjectHandle`) allow native code to hold a
+handle to a managed object.  While currently raw pointers to managed
+objects in native code work without problems, they do so only because
+we use a conservative technique when the garbage collector is scanning
+the native stack: every object that looks like it may be referenced
+from the native stack is pinned.
+
+In the future, we want to move away from conservative scanning, and
+coop handles give native code a way to coordinate with the GC.
+
+TODO: Document this more
+
+### MONO_PREPARE_GC_CRITICAL_REGION / MONO_FINISH_GC_CRITICAL_REGION
+
+When a thread is in Unsafe mode and uses the coop handles, it may need
+to enter a *GC critical region* where it is manipulating the managed
+objects in a non-atomic manner and must not be interrupted by the GC.
+
+In a GC critical region:
+
+- The thread *must not* transition from Unsafe to Safe mode.
+- The thread *may* use `gc_handle_obj` to get a raw pointer to a managed object from a coop handle.
+
+GC critical regions may be nested (for example, you may enter a GC
+critical region and then call a function that again enters a GC
+critical region).
+
+#### MONO_REQ_GC_CRITICAL and MONO_REC_GC_NOT_CRITICAL
+
+In checked Mono builds, this pair of macros can be used to assert that
+the thread is (respectively, isn't) in a GC critical region.
+
 ## Debugging
 
 There are two debug helpers in place. The first is the thread state dump when we fail to suspend in time.
