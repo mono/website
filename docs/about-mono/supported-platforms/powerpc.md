@@ -25,6 +25,6 @@ A nice introduction to PowerPC assembly language at [http://www.ibm.com/develope
 **Calling conventions:**
 
 -   Linux on PPC32 uses the [The PowerPC SystemV ABI specification](http://refspecs.linux-foundation.org/elf/elfspec_ppc.pdf).
--   On MacOS X, the conventions are documented in the [Mach-O Runtime Architecture](http://developer.apple.com/documentation/DeveloperTools/Conceptual/MachORuntime/MachORuntime.pdf).
+-   On MacOS X, the conventions are documented in the [Mach-O Runtime Architecture](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/MachORuntime/).
 
 
