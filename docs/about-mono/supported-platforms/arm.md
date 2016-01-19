@@ -31,7 +31,7 @@ We recommend that you use [ScratchBox](http://www.scratchbox.org/) to do the bui
 -   **native code** for the virtual execution system, garbage collector and other unmanaged bits, and
 -   **managed code** this includes the C# compiler, assembler, class libraries and so on.
 
--   [Setup ScratchBox](http://maemo.org/platform/docs/tutorials/Maemo_tutorial.html#Installation) an easy to use installer is [here](http://repository.maemo.org/stable/scirocco/)
+-   [Setup ScratchBox](https://wiki.maemo.org/Documentation/Maemo_5_Final_SDK_Installation#Installing_Maemo_5_SDK_using_Text-based_Installer) an easy to use installer is [here](http://repository.maemo.org/stable/fremantle/)
 
 You should do a two-step build: one build does the unmanaged code that targets the ARM processor, while the other build takes care of all of the managed code. To do this, you will be unpacking two trees of Mono, one on the host (usually a x86 Linux box, but any other fast box will do):
 
