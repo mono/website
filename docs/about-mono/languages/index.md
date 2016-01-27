@@ -14,7 +14,7 @@ Mono-compatible compilers
 C#
 ---
 
-The main C# compiler of the Mono Project is [**mcs**](/docs/about-mono/languages/csharp/). It covers all the features in C# 3.0 (2.6), 4.0, 5.0 and 6.0 (preview), including 3.0 LINQ, 4.0 dynamic and 5.0 async-await support. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
+The main C# compiler of the Mono Project is [**mcs**](/docs/about-mono/languages/csharp/). It covers all the features in C# 3.0 (2.6), 4.0, 5.0 and 6.0, including 3.0 LINQ, 4.0 dynamic and 5.0 async-await support. As of today, 'gmcs' is the default compiler based on 2.0 runtime profile, and 'dmcs' is for 4.0 runtime profile.
 
 C# is specified in the ISO/IEC 23271:2006 and ECMA 334 standards. Microsoft has [granted access to their patents](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) under their [Community Promise](http://www.microsoft.com/interop/cp/default.mspx).
 
