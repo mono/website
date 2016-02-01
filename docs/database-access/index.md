@@ -18,7 +18,7 @@ Providers for commercial databases:
 -   [Mimer SQL](/archived/mimer_sql) Mimer Data Provider for Mimer SQL, from Mimer [[1]](http://developer.mimer.com/platforms/productinfo_39.htm)
 -   [ODBC](/docs/database-access/providers/odbc/) requires ODBC software which is available for Unix and Windows
 -   [Oracle](/docs/database-access/providers/oracle/) provider for Oracle 8i, 9i, 10g, and 11g and requires Oracle client software
--   [Microsoft SQL Server](/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000 and 2005 databases
+-   [Microsoft SQL Server](/docs/database-access/providers/sqlclient/) managed provider for Microsoft SQL Server 7.0, 2000, 2005 and 2008 databases
 
 Commercially Supported Providers:
 
