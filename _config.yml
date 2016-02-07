@@ -9,6 +9,8 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  syntax_highlighter_opts:
+    disable : true
 feed:
   path: atom.xml
 defaults:
