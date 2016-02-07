@@ -116,9 +116,9 @@ function runScripts() {
       $('#download-' + os).addClass('active');
     }
     if (!window.location.hash) {
-      if (window.navigator.appVersion.search('Linux') || window.navigator.platform.search('Linux') > 0) {
+      if (window.navigator.appVersion.search('Linux') > 0 || window.navigator.platform.search('Linux') > 0) {
         activate('lin');
-      } else if (window.navigator.appVersion.search('Windows') || window.navigator.platform.search('Windows') > 0) {
+      } else if (window.navigator.appVersion.search('Windows') > 0 || window.navigator.platform.search('Windows') > 0) {
         activate('win');
       }
     }
