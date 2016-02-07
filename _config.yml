@@ -1,5 +1,5 @@
 # Blog specific settings
-paginate_path: "news/page/:num"
+paginate_path: "news/page/:num/"
 paginate: 5
 
 # General settings
@@ -38,6 +38,7 @@ defaults:
 gems:
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - CNAME
   - README.md

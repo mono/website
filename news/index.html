@@ -21,7 +21,7 @@ navgroup: news
          <a href="{{ paginator.previous_page_path | replace: 'index.html', '' }}" class="prev">&laquo; Previous Page</a>
        {% endif %}
        {% if paginator.next_page %}
-         <a href="{{ paginator.next_page_path }}/" class="next">Next Page &raquo; </a>
+         <a href="{{ paginator.next_page_path }}" class="next">Next Page &raquo; </a>
        {% endif %}
      </nav>
   </div>
