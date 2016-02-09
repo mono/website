@@ -55,6 +55,8 @@ Since the Mono framework is a fairly powerful framework there are almost no limi
 Embedding the Runtime
 =====================
 
+Check the [reference guide](http://docs.go-mono.com/?link=root:/embed) for details on the API.
+
 Embedding the runtime consists of various steps:
 
 -   Compiling and linking the Mono runtime
