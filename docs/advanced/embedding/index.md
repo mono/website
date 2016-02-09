@@ -611,7 +611,7 @@ Currently Mono does not provide a mechanism for signal chaining, but one might b
 API Documentation
 =================
 
-See [here](http://go-mono.com/docs/index.aspx?tlink=root:/embed).
+Mono's [API Documentation](http://docs.go-mono.com/?link=root:/embed) covers the various APIs that you can invoke from your C/C++ application.
 
 Common Problems
 ===============
