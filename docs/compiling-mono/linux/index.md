@@ -30,14 +30,14 @@ Note: if you are using Ubuntu 15.04 or later, you also need to install the `libt
 Building Mono from a Release Package
 ------------------------------------
 
-Mono releases are distributed as .tar.bz2 packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
+Mono releases are distributed as .tar.gz packages from the Mono github [repository](https://github.com/mono/mono/releases). Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
 ``` bash
 PREFIX=/usr/local
 VERSION=4.2.1
 tar xvf mono-$VERSION.tar.bz2
 cd mono-$VERSION
-./configure --prefix=$PREFIX
+./autogen.sh --prefix=$PREFIX
 make
 make install
 ```
