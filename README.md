@@ -54,6 +54,7 @@ Repository structure
  - `css` - contains the main stylesheet
  - `docs` - contains the source pages for the `/docs` website section
  - `download` - contains the source pages for the `/download` website section
+ - `files` - stores binary files used in pages
  - `images` - stores the images used in pages
  - `news` - lists the blog pages from the `_posts` directory
 
