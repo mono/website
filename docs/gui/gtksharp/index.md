@@ -43,7 +43,7 @@ Want to know how Gtk# is being used in the real world?
 
 Check out [some screenshots](/docs/about-mono/showcase/screenshots/) of Gtk# Applications. Some of our more prominent users include:
 
--   [Banshee](http://banshee-project.org/Main_Page)
+-   [Banshee](http://banshee.fm/)
 -   [Smuxi](https://www.smuxi.org/)
 -   [F-spot](http://f-spot.org/Main_Page)
 -   [MonoDevelop](http://www.monodevelop.com/Main_Page)
