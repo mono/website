@@ -53,7 +53,7 @@ Python
 
 There are two possible choices here: PythonNet and IronPython.
 
-**PythonNet:** [Brian Lloyd](mailto:brian@No.Spam.zope.com) wrote a bridge to link the Python runtime with the .NET runtime. More information on the PS.NET project can be found [here](http://pythonnet.sourceforge.net/). This uses the real Python engine and provides a bridge between the Python world and the .NET world to interoperate.
+**PythonNet:** [Brian Lloyd](mailto:brian@No.Spam.zope.com) wrote a bridge to link the Python runtime with the .NET runtime. More information on the PS.NET project can be found [here](http://pythonnet.github.io/). This uses the real Python engine and provides a bridge between the Python world and the .NET world to interoperate.
 
 **IronPython:** is Jim Hugunin's compiler for Python, it is a complete implementation of Python from scratch that compiles Python code into native CIL. More information is available on [the IronPython site](http://ironpython.net/)
 
