@@ -19,7 +19,7 @@ Ground Rules
 -   APIs in C#
 -   etc.
 
-**Licensing:** All of the code submitted must be contributed under the terms of the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
+**Licensing:** All of the code submitted must be contributed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 **Acceptance criteria:** The results must be maintainable and clean. If the code works as advertised but its a quick hack or something we would have to rewrite from scratch, we would not accept the project as completed.
 
