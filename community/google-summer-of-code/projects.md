@@ -65,7 +65,6 @@ Microsoft open sourced large chunks of code this year:
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
 
-
 Import reference source System.Web* assemblies
 ----------------------------------------------
 
@@ -77,10 +76,19 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 
 **Mentors:** Marek Safar
 
-
 Compilers and Tools
 ===================
 
+Port ilasm to use IKVM.Reflection instead of PEAPI.
+---------------------------------------------------
+
+**Complexity:** Medium
+
+Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+
+**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+
+**Mentors:** Marek Safar
 
 A ccache-like tool for managed languages
 ----------------------------------------
@@ -100,22 +108,19 @@ ccache (for reference): https://github.com/jrosdahl/ccache
 
 **Mentors:** Rolf Bjarne Kvinge
 
-
 MonoDevelop / Xamarin Studio IDE
 ================================
-
 
 Syntax Highlighting Overhaul
 ----------------------------
 
 **Complexity:** Medium
 
-The syntax highlighting in MonoDevelop is done by defining a grammar as xml file to colorize tokens. Some highlightings are extended with hand written code. The highlighting system can be made faster (maybe with an on the fly compiler approach), more extensible (atm it's difficult to write semantic highlightings) and more scaleable . You will first need to understand how our highlighting files are defined and how the semantic highlighting currently works. After that a new implementation approach needs to be implemented. One of our current drawbacks are that regular expressions could be integrated better - for example span begin/end constructs aren't atm regular. In fact everything should be based on regular expressions.
+The syntax highlighting in MonoDevelop is done by defining a grammar as xml file to colorize tokens. Some highlightings are extended with hand written code. The highlighting system can be made faster (maybe with an on the fly compiler approach), more extensible (atm it’s difficult to write semantic highlightings) and more scaleable . You will first need to understand how our highlighting files are defined and how the semantic highlighting currently works. After that a new implementation approach needs to be implemented. One of our current drawbacks are that regular expressions could be integrated better - for example span begin/end constructs aren’t atm regular. In fact everything should be based on regular expressions.
 
 **Deliverables**: An extensible syntax highlighting system that reads our xml files or a similar format. It should be scalable even for large files (lazy analysis) and much faster than the current implementation (speed tests included).
 
-**Mentors:** Mike Krger
-
+**Mentors:** Mike Krüger
 
 Improve Auto-Documentation System
 ---------------------------------
@@ -132,8 +137,7 @@ Your proposal should describe the approaches you intend to use to fix the issue,
 
 **Deliverables:** Fix the docs generation for the cases covered in your proposal.
 
-**Mentors:** Mike Krger
-
+**Mentors:** Mike Krüger
 
 Overhaul MonoDevelop C/C++ addin
 --------------------------------
@@ -142,10 +146,10 @@ Overhaul MonoDevelop C/C++ addin
 
 The [MonoDevelop C/C++ addin](https://github.com/mhutch/cbinding) was substantially updated as part of last year's Summer of Code. However, there are still many things that could be done to improve it!
 
-- improving the code completion and adding a test suite
-- adding refactoring support
-- improving the GDB debugger addin or switching to LLDB
-- making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
+* improving the code completion and adding a test suite
+* adding refactoring support
+* improving the GDB debugger addin or switching to LLDB
+* making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
 
 Your proposal can include any of that you find interesting and feel can be realistically be completed in addition to the core tasks.
 
@@ -153,10 +157,8 @@ Your proposal can include any of that you find interesting and feel can be reali
 
 **Mentors:** mhutch
 
-
 Mono Runtime
 ============
-
 
 Implement a LLDB plugin that can understands the mono runtime
 -------------------------------------------------------------
@@ -165,16 +167,15 @@ Implement a LLDB plugin that can understands the mono runtime
 
 LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
 
-- object layout, introspection and heap walking
-- unwinding and symbolifying managed methods
-- lookup line information for managed methods
-- pretty print all runtime structs
-- threadpool introspection?
+* object layout, introspection and heap walking
+* unwinding and symbolifying managed methods
+* lookup line information for managed methods
+* pretty print all runtime structs
+* threadpool introspection?
 
 **Deliverables:** One or more of the above bullet points.
 
-**Mentors:** Joao Matos, Alexis Christoforides
-
+**Mentors:** João Matos, Alexis Christoforides
 
 Port mono to WinRT
 ------------------
@@ -190,8 +191,7 @@ a simple Hello World app working.
 
 **Deliverables:** A Hello World app running in the WinRT sandbox.
 
-**Mentors:** Joao Matos, Alexis Christoforides
-
+**Mentors:** João Matos, Alexis Christoforides
 
 Make FileStream async operation really async
 --------------------------------------------
@@ -205,7 +205,6 @@ They are right now simple their synchronous method counter part called enqueued 
 
 **Mentors:** Ludovic Henry
 
-
 JIT optimizations
 -----------------
 
@@ -213,14 +212,13 @@ JIT optimizations
 
 There are a few JIT optimizations that we could profile from:
 
-- type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
+* type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
 
-- delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
+* delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
 
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
 **Mentors:** Rodrigo Kumpera
-
 
 GTK# and Bindings
 ==================
@@ -234,20 +232,19 @@ If you have questions or suggestions that you want to make in real-time and talk
 on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and
 students from past years are usually there and can answer some quick questions about the program and about Mono.
 
-The mailing lists are a very important communication channel, students should use them to get more information and 
+The mailing lists are a very important communication channel, students should use them to get more information and
 feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
 
-For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use 
+For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
 [soc@xamarin.com](mailto:soc@xamarin.com).
 
 Mailing Lists
 -------------
 
-[http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list) 
+[http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list)
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
 
-[http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list) 
+[http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list)
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
-
