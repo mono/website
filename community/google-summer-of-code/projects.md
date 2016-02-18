@@ -117,6 +117,34 @@ MonoDevelop / Xamarin Studio IDE
 
 
 
+Visual Basic with Roslyn on Windows
+-----------------------------------
+
+**Complexity:** Medium
+
+Overhaul the VB language binding addin or rewrite it from scratch and
+make use of the full VB .NET support in Roslyn (without mono-basic). The CSharpBinding addin is a good starting point and reference.
+
+Main goals:
+
+* Compatibility with Visual Studio projects
+* Panels for editing all project options
+* Updated project templates
+* Integration into the MonoDevelop type system
+* Code completion ported from Roslyn EditorFeatures
+* Other standard IDE language integration (code folding, document outline, symbol tooltips, Find References, etc)
+
+Optional:
+
+* Mac/Linux support (depends on MSBuild and Roslyn compilers being included in Mono)
+* VB.NET source analysis
+* VB.NET refactorings ported from Roslyn EditorFeatures
+* Semantic highlighting
+
+**Deliverables**: VB.NET support in MonoDevelop with updated project options and templates, and Roslyn-based code completion
+
+**Mentors:** Vsevolod Kukol
+
 Debugging .fsx scripts in FSI
 -----------------------------
 
