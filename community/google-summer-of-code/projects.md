@@ -117,6 +117,19 @@ MonoDevelop / Xamarin Studio IDE
 
 
 
+Unit tests code coverage visualised inside MonoDevelop editor
+-------------------------------------------------------------
+
+**Complexity:** Easy
+
+The Mono runtime supports outputting an xml file containing information about which lines were executed. This could be used to collect code coverage information when running unit tests, which could be visualized in the text editor.
+
+This project would involve adding support to the MonoDevelop.UnitTesting AddIn to collect code coverage information when running tests, and to display that information visually in the editor.
+
+**Deliverables**: Add support to MonoDevelop to collect code coverage information when running tests, and display it visually in the text editor.
+
+**Mentors:** Iain Holmes
+
 Visual Basic with Roslyn on Windows
 -----------------------------------
 
@@ -163,6 +176,19 @@ To implement this, we would need to:
 **Deliverables**: Working "Debug in F# interactive" command in MonoDevelop.
 
 **Mentors:** Alex Corrado
+
+Reuse MonoDevelop Roslyn compilation to perform compile
+-------------------------------------------------------
+
+**Complexity:** Medium
+
+MonoDevelop now uses the Roslyn compiler for its type system, and keeps fully updated Roslyn compilations in memory. It should be possible when building for the build engine to connect back the the IDE and use the existing Roslyn compilations for code generation, in the same way that Visual Studio does. This will greatly improve compile time during development.
+
+This will require implementing the MSBuild ICscHostObject interface in the MonoDevelop build system and having the Csc build task delegate the code generation to the in-process compiler.
+
+**Deliverables**: Fully implement ICscHostObject in the MonoDevelop build system, including tests.
+
+**Mentors:** David Karlas
 
 Support for Symbol Servers
 --------------------------
