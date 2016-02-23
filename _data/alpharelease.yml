@@ -1,5 +1,5 @@
-version: 4.2 SR1 beta (4.2.2.30)
-mono_mac_url: http://download.mono-project.com/archive/4.2.2/macos-10-x86/MonoFramework-MDK-4.2.2.30.macos10.xamarin.x86.pkg
-mono_mac64_url: http://download.mono-project.com/archive/4.2.1/macos-10-universal/MonoFramework-MDK-4.2.1.102.macos10.xamarin.universal.pkg
-mono_windows_url: http://download.mono-project.com/archive/4.2.2/windows-installer/mono-4.2.2.30-gtksharp-2.12.30-win32-0.msi
-gtksharp_windows_url: http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.30.msi
+version: 4.4 Alpha 1 (4.3.2.467)
+mono_mac_url: http://download.mono-project.com/archive/4.3.2/macos-10-universal/MonoFramework-MDK-4.3.2.467.macos10.xamarin.universal.pkg
+mono_windows_url: http://download.mono-project.com/archive/4.3.2/windows-installer/mono-4.3.2.467-gtksharp-2.12.30.1-win32-0.msi
+mono_windows64_url: http://download.mono-project.com/archive/4.3.2/windows-installer/mono-4.3.2.467-x64-0.msi
+gtksharp_windows_url: http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.30.1.msi
