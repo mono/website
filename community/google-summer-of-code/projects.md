@@ -62,10 +62,11 @@ Suggest your own ideas for a project
 **[Contacting the Mono Team](#contacting-the-mono-team)**<br/>
 How to get in touch with us and ask questions
 
+## MonoDevelop / Xamarin Studio IDE
 
 
-Unit tests code coverage visualised inside MonoDevelop editor
--------------------------------------------------------------
+
+### Unit tests code coverage visualised inside MonoDevelop editor
 
 **Complexity:** Easy
 
@@ -77,8 +78,7 @@ This project would involve adding support to the MonoDevelop.UnitTesting AddIn t
 
 **Mentors:** Iain Holmes
 
-Visual Basic with Roslyn on Windows
------------------------------------
+### Visual Basic with Roslyn on Windows
 
 **Complexity:** Medium
 
@@ -105,8 +105,7 @@ Optional:
 
 **Mentors:** Vsevolod Kukol
 
-Debugging .fsx scripts in FSI
------------------------------
+### Debugging .fsx scripts in FSI
 
 **Complexity:** Hard
 
@@ -124,8 +123,7 @@ To implement this, we would need to:
 
 **Mentors:** Alex Corrado
 
-Reuse MonoDevelop Roslyn compilation to perform compile
--------------------------------------------------------
+### Reuse MonoDevelop Roslyn compilation to perform compile
 
 **Complexity:** Medium
 
@@ -137,8 +135,7 @@ This will require implementing the MSBuild ICscHostObject interface in the MonoD
 
 **Mentors:** David Karlas
 
-Support for Symbol Servers
---------------------------
+### Support for Symbol Servers
 
 **Complexity:** Hard
 
@@ -150,8 +147,7 @@ Making this work will require implementing support for handling debugger symbols
 
 **Mentors:** David Karlas
 
-Lambda support in debugger expression evaluator
------------------------------------------------
+### Lambda support in debugger expression evaluator
 
 **Complexity:** Hard
 
@@ -163,8 +159,7 @@ Roslyn has [support for compiling expressions](https://github.com/dotnet/roslyn/
 
 **Mentors:** David Karlas
 
-Debugging disassembled code could use C# decompiler to generate source
-----------------------------------------------------------------------
+### Debugging disassembled code could use C# decompiler to generate source
 
 **Complexity:** Medium
 
@@ -174,8 +169,7 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 
 **Mentors:** David Karlas, Jeff Stedfast
 
-Syntax Highlighting Overhaul
-----------------------------
+### Syntax Highlighting Overhaul
 
 **Complexity:** Medium
 
@@ -185,8 +179,7 @@ The syntax highlighting in MonoDevelop is done by defining a grammar as xml file
 
 **Mentors:** Mike Krüger
 
-Improve Auto-Documentation System
----------------------------------
+### Improve Auto-Documentation System
 
 **Complexity:** Medium
 
@@ -202,8 +195,7 @@ Your proposal should describe the approaches you intend to use to fix the issue,
 
 **Mentors:** Mike Krüger
 
-Overhaul MonoDevelop C/C++ addin
---------------------------------
+### Overhaul MonoDevelop C/C++ addin
 
 **Complexity:** Medium
 
@@ -219,10 +211,11 @@ Your proposal can include any of that you find interesting and feel can be reali
 **Deliverables:** a set of improvements to the C/C++ addin of your choosing, to be specified in your proposal
 
 **Mentors:** mhutch
+## Compilers and Tools
 
 
-Port ilasm to use IKVM.Reflection instead of PEAPI.
----------------------------------------------------
+
+### Port ilasm to use IKVM.Reflection instead of PEAPI.
 
 **Complexity:** Medium
 
@@ -232,8 +225,7 @@ Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backen
 
 **Mentors:** Marek Safar
 
-A ccache-like tool for managed languages
-----------------------------------------
+### A ccache-like tool for managed languages
 
 **Complexity:** Medium
 
@@ -249,10 +241,11 @@ ccache (for reference): https://github.com/jrosdahl/ccache
 **Deliverables**: a functional tool for C# that works on linux + mac, with a test suite, and is able to cache/lookup everything during a (re)build of the mono BCL.
 
 **Mentors:** Rolf Bjarne Kvinge
+## Mono Runtime
 
 
-Implement a LLDB plugin that can understands the mono runtime
--------------------------------------------------------------
+
+### Implement a LLDB plugin that can understands the mono runtime
 
 **Complexity:** Hard
 
@@ -268,8 +261,7 @@ LLDB support plugins and we should write one that exposes as much as possible of
 
 **Mentors:** João Matos, Alexis Christoforides
 
-Port mono to WinRT
-------------------
+### Port mono to WinRT
 
 **Complexity:** Hard
 
@@ -284,8 +276,7 @@ a simple Hello World app working.
 
 **Mentors:** João Matos, Alexis Christoforides
 
-Make FileStream async operation really async
---------------------------------------------
+### Make FileStream async operation really async
 
 **Complexity:** Easy
 
@@ -296,8 +287,7 @@ They are right now simple their synchronous method counter part called enqueued 
 
 **Mentors:** Ludovic Henry
 
-JIT optimizations
------------------
+### JIT optimizations
 
 **Complexity:** Hard
 
@@ -310,6 +300,8 @@ There are a few JIT optimizations that we could profile from:
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
 **Mentors:** Rodrigo Kumpera
+## Microsoft .NET and Mono integration
+
 Microsoft open sourced large chunks of code the past couple of years:
 
 - ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
@@ -321,8 +313,8 @@ Microsoft open sourced large chunks of code the past couple of years:
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
 
 
-Import reference source System.Web* assemblies
-----------------------------------------------
+
+### Import reference source System.Web* assemblies
 
 **Complexity:** Medium
 
@@ -331,10 +323,11 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 **Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
 
 **Mentors:** Marek Safar
+## GTK# and Bindings
 
 
-Urho3d Game Engine Improvements
--------------------------------
+
+### Urho3d Game Engine Improvements
 
 **Complexity:** Hard
 
@@ -356,8 +349,7 @@ NOTE: Contributions must follow the Urho3D contribution rules, and you should co
 
 **Mentors:** Miguel de Icaza
 
-CppSharp | Continue Mono/.NET bindings for Qt
----------------------------------------------
+### CppSharp | Continue Mono/.NET bindings for Qt
 
 **Complexity:** Hard
 
@@ -392,8 +384,7 @@ Feel free to get in touch with @tritao if you’re interested in this and would 
 
 **Mentors:** João Matos
 
-Other Ideas
-===========
+## Other Ideas
 
 If a project is not listed here, but you think you have a great idea, feel free to
 [contact the Mono team, mentors and org admins](#contacting-the-mono-team) to discuss or suggest your own project ideas.
@@ -407,8 +398,7 @@ You can find some additional ideas on the [MonkeySquare ideas page](http://monke
 [Gnome ideas page](https://live.gnome.org/SummerOfCode2013/Ideas) (Mono-based projects in Gnome: Banshee, Blam, Tasque,
 Tomboy, GBrainy, Mistelix, F-Spot, ChronoJump, SparkleShare, LongoMatch).
 
-Contacting the Mono Team
-========================
+## Contacting the Mono Team
 
 If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us
 on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and
@@ -420,8 +410,7 @@ feedback about ideas and proposals. Community engagement is essential for a succ
 For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
 [soc@xamarin.com](mailto:soc@xamarin.com).
 
-Mailing Lists
--------------
+### Mailing Lists
 
 [http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list)
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
