@@ -16,104 +16,51 @@ so you can submit your own ideas as well as apply for one from this list - but o
 
 You can use the following links to jump to sections that you're interested in:
 
-**[Other Ideas](#other-ideas)**<br/>
-Suggest your own ideas for a project
+**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
+Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
-**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
-Work on blending the worlds of open source .NET and Mono projects together
+  * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
+  * [Visual Basic with Roslyn on Windows](#visual-basic-with-roslyn-on-windows)
+  * [Debugging .fsx scripts in FSI](#debugging-fsx-scripts-in-fsi)
+  * [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
+  * [Support for Symbol Servers](#support-for-symbol-servers)
+  * [Lambda support in debugger expression evaluator](#lambda-support-in-debugger-expression-evaluator)
+  * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
+  * [Syntax Highlighting Overhaul](#syntax-highlighting-overhaul)
+  * [Improve Auto-Documentation System](#improve-autodocumentation-system)
+  * [Overhaul MonoDevelop C/C++ addin](#overhaul-monodevelop-cc-addin)
 
 **[Compilers and Tools](#compilers-and-tools)**<br/>
 Work on Mono's tools and compilers
 
-**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
-Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
+  * [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
+  * [A ccache-like tool for managed languages](#a-ccachelike-tool-for-managed-languages)
 
 **[Mono Runtime](#mono-runtime)**<br/>
 Improve the core Mono runtime and JIT
 
+  * [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
+  * [Port mono to WinRT](#port-mono-to-winrt)
+  * [Make FileStream async operation really async](#make-filestream-async-operation-really-async)
+  * [JIT optimizations](#jit-optimizations)
+
+**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
+Work on blending the worlds of open source .NET and Mono projects together
+
+  * [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
+
 **[GTK# and Bindings](#gtk-and-bindings)**<br/>
 GTK# Core, Bindings and Applications
 
+  * [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
+  * [CppSharp | Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
+
+
+**[Other Ideas](#other-ideas)**<br/>
+Suggest your own ideas for a project
+
 **[Contacting the Mono Team](#contacting-the-mono-team)**<br/>
 How to get in touch with us and ask questions
-
-Other Ideas
-===========
-
-If a project is not listed here, but you think you have a great idea, feel free to
-[contact the Mono team, mentors and org admins](#contacting-the-mono-team) to discuss or suggest your own project ideas.
-
-Over the past years we have picked projects that were not listed here because they were great ideas, and we had students
-that were passionate about those projects. In the end, most of these projects were a success.
-
-Do not be afraid to pick up a project that would be interesting and also help the Mono universe.
-
-You can find some additional ideas on the [MonkeySquare ideas page](http://monkeysquare.org/gsoc/projects), and on the
-[Gnome ideas page](https://live.gnome.org/SummerOfCode2013/Ideas) (Mono-based projects in Gnome: Banshee, Blam, Tasque,
-Tomboy, GBrainy, Mistelix, F-Spot, ChronoJump, SparkleShare, LongoMatch).
-
-Microsoft .NET and Mono Integration
-===================================
-
-Microsoft open sourced large chunks of code this year:
-
-* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-* Roslyn: Microsoft's C# and VB compiler as a service
-* CodeContracts: the tools needed to instrument your code
-
-We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
-
-
-
-Import reference source System.Web* assemblies
-----------------------------------------------
-
-**Complexity:** Medium
-
-Mono has its own implementation of the System.Web assemblies. Microsoft has open-sourced their Reference Source implementation. We would like to replace Mono's existing implementation with Reference Source in order to increase compatibility, and fix bugs and missing features..
-
-**Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
-
-**Mentors:** Marek Safar
-
-Compilers and Tools
-===================
-
-
-
-Port ilasm to use IKVM.Reflection instead of PEAPI.
----------------------------------------------------
-
-**Complexity:** Medium
-
-Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
-
-**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
-
-**Mentors:** Marek Safar
-
-A ccache-like tool for managed languages
-----------------------------------------
-
-**Complexity:** Medium
-
-C-based languages (C/C++/Objective-C) have ccache to cache results of compilations to make rebuilds faster.
-
-It would be nice to have something similar for C#/VB/F#.
-
-This can be used as a starting point to identify the set of inputs for C#/VB:
-https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md
-
-ccache (for reference): https://github.com/jrosdahl/ccache
-
-**Deliverables**: a functional tool for C# that works on linux + mac, with a test suite, and is able to cache/lookup everything during a (re)build of the mono BCL.
-
-**Mentors:** Rolf Bjarne Kvinge
-
-MonoDevelop / Xamarin Studio IDE
-================================
 
 
 
@@ -273,9 +220,35 @@ Your proposal can include any of that you find interesting and feel can be reali
 
 **Mentors:** mhutch
 
-Mono Runtime
-============
 
+Port ilasm to use IKVM.Reflection instead of PEAPI.
+---------------------------------------------------
+
+**Complexity:** Medium
+
+Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+
+**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+
+**Mentors:** Marek Safar
+
+A ccache-like tool for managed languages
+----------------------------------------
+
+**Complexity:** Medium
+
+C-based languages (C/C++/Objective-C) have ccache to cache results of compilations to make rebuilds faster.
+
+It would be nice to have something similar for C#/VB/F#.
+
+This can be used as a starting point to identify the set of inputs for C#/VB:
+https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md
+
+ccache (for reference): https://github.com/jrosdahl/ccache
+
+**Deliverables**: a functional tool for C# that works on linux + mac, with a test suite, and is able to cache/lookup everything during a (re)build of the mono BCL.
+
+**Mentors:** Rolf Bjarne Kvinge
 
 
 Implement a LLDB plugin that can understands the mono runtime
@@ -337,10 +310,27 @@ There are a few JIT optimizations that we could profile from:
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
 **Mentors:** Rodrigo Kumpera
+Microsoft open sourced large chunks of code the past couple of years:
 
-GTK# and Bindings
-==================
+- ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+- CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+- CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+- Roslyn: Microsoft's C# and VB compiler as a service
+- CodeContracts: the tools needed to instrument your code
 
+We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
+
+
+Import reference source System.Web* assemblies
+----------------------------------------------
+
+**Complexity:** Medium
+
+Mono has its own implementation of the System.Web assemblies. Microsoft has open-sourced their Reference Source implementation. We would like to replace Mono's existing implementation with Reference Source in order to increase compatibility, and fix bugs and missing features..
+
+**Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
+
+**Mentors:** Marek Safar
 
 
 Urho3d Game Engine Improvements
@@ -402,6 +392,21 @@ Feel free to get in touch with @tritao if you’re interested in this and would 
 
 **Mentors:** João Matos
 
+Other Ideas
+===========
+
+If a project is not listed here, but you think you have a great idea, feel free to
+[contact the Mono team, mentors and org admins](#contacting-the-mono-team) to discuss or suggest your own project ideas.
+
+Over the past years we have picked projects that were not listed here because they were great ideas, and we had students
+that were passionate about those projects. In the end, most of these projects were a success.
+
+Do not be afraid to pick up a project that would be interesting and also help the Mono universe.
+
+You can find some additional ideas on the [MonkeySquare ideas page](http://monkeysquare.org/gsoc/projects), and on the
+[Gnome ideas page](https://live.gnome.org/SummerOfCode2013/Ideas) (Mono-based projects in Gnome: Banshee, Blam, Tasque,
+Tomboy, GBrainy, Mistelix, F-Spot, ChronoJump, SparkleShare, LongoMatch).
+
 Contacting the Mono Team
 ========================
 
@@ -425,3 +430,4 @@ A mailing list dedicated to discussions about developing Mono itself, such as de
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
+
