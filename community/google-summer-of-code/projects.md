@@ -341,7 +341,66 @@ There are a few JIT optimizations that we could profile from:
 GTK# and Bindings
 ==================
 
-**We don't have any ideas in this area right now, but feel free to propose your own!**
+
+
+Urho3d Game Engine Improvements
+-------------------------------
+
+**Complexity:** Hard
+
+The [UrhoSharp](https://github.com/xamarin/urho) binding makes the [Urho3D](http://urho3d.github.io) game engine accessible from C#, F# and other .NET languages.
+
+Improvements to Urho3D will directly benefit UrhoSharp users. This is an open-ended project idea; you should pick a specific project for your proposal.
+
+Examples of possible projects include:
+
+* [Vulkan](https://www.khronos.org/vulkan) rendering backend
+* [Metal](https://developer.apple.com/metal) rendering backend
+* Impostor system
+* Procedural texture generation
+* Water or sky simulation
+
+NOTE: Contributions must follow the Urho3D contribution rules, and you should confirm with the Urho3D maintainers that they will be willing to merge the feature.
+
+**Deliverables**: Add a feature of your choice to the Urho3D engine, as specified in your proposal.
+
+**Mentors:** Miguel de Icaza
+
+CppSharp | Continue Mono/.NET bindings for Qt
+---------------------------------------------
+
+**Complexity:** Hard
+
+As part of this task you’ll need to continue the bindings effort for the Qt framework so that it can be used with Mono/.NET languages such as C#, similar to the existing bindings of GTK# for GTK+.
+
+QtSharp has reached alpha status and it needs the final improvements to make it a complete product. The necessary work can be broken down into five categories:
+
+- Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience.
+Deliverables: The following type maps: QList<>, QVector<> ↔ List<>; QMap<,>, QHash<,> ↔ Dictionary<,>; and QChar<> ↔ char;
+
+- Qt Quick support –  enables writing of Qt Quick applications using C#.
+Deliverables: the ability to include QML files in the application (an integrated in Visual Studio/MonoDevelop editor is not included, for now external editors such as Qt Creator will have to be used) and working interaction between C# and QML (property changes and emitting of signals in QML must call the corresponding C# code);
+
+- Documentation package – online and off-line documentation for QtSharp.
+Deliverables: A compressed directory containing a complete DOxygen documentation package for QtSharp. The documentation itself is generated as XML code comments which DOxygen then takes from the source files and uses a configuration file to generate the package;
+
+- Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X.
+Deliverables: Build scripts to produce and upload Qt# binaries;
+
+- Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203, http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all.
+Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
+
+Related code:
+
+https://github.com/mono/CppSharp 
+https://gitlab.com/ddobrev/QtSharp 
+https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
+
+Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
+
+**Deliverables:** Improve the Qt bindings generator to the point that they can be used for a non-trivial Qt sample written in idiomatic C#, with and without QML.
+
+**Mentors:** João Matos
 
 Contacting the Mono Team
 ========================
