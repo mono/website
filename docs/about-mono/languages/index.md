@@ -97,6 +97,11 @@ Cobra
 
 Cobra combines productivity-boosting features that are otherwise scattered across multiple languages.
 
+Synergy-DBL
+-----
+
+[Synergy-DBL](http://www.synergex.com/language) is a flexible, object-oriented language that runs on Mono on Android, iOS, and Linux, as well as on .NET and other platforms.
+
 Other languages
 ---------------
 
