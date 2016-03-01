@@ -21,7 +21,7 @@ Runtime debugging methods
 Debugging crashes which don't happen inside gdb, or only happen when a test program is ran in a loop
 ----------------------------------------------------------------------------------------------------
 
-Set the MONO_DEBUG env variable to 'suspend-to-sigsegv'. This causes the runtime native SIGSEGV handler to spin in a loop, so gdb can be attached to the running process.
+Set the MONO_DEBUG env variable to 'suspend-on-sigsegv'. This causes the runtime native SIGSEGV handler to spin in a loop, so gdb can be attached to the running process.
 
 Setting native breakpoints in managed methods
 ---------------------------------------------
