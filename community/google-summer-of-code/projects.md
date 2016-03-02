@@ -53,7 +53,7 @@ Work on blending the worlds of open source .NET and Mono projects together
 GTK# Core, Bindings and Applications
 
 * [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
-* [CppSharp | Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
+* [CppSharp / Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
 
 **[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
