@@ -19,42 +19,41 @@ You can use the following links to jump to sections that you're interested in:
 **[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
-  * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
-  * [Visual Basic with Roslyn on Windows](#visual-basic-with-roslyn-on-windows)
-  * [Debugging .fsx scripts in FSI](#debugging-fsx-scripts-in-fsi)
-  * [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
-  * [Support for Symbol Servers](#support-for-symbol-servers)
-  * [Lambda support in debugger expression evaluator](#lambda-support-in-debugger-expression-evaluator)
-  * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
-  * [Syntax Highlighting Overhaul](#syntax-highlighting-overhaul)
-  * [Improve Auto-Documentation System](#improve-autodocumentation-system)
-  * [Overhaul MonoDevelop C/C++ addin](#overhaul-monodevelop-cc-addin)
+* [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
+* [Visual Basic with Roslyn on Windows](#visual-basic-with-roslyn-on-windows)
+* [Debugging .fsx scripts in FSI](#debugging-fsx-scripts-in-fsi)
+* [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
+* [Support for Symbol Servers](#support-for-symbol-servers)
+* [Lambda support in debugger expression evaluator](#lambda-support-in-debugger-expression-evaluator)
+* [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
+* [Syntax Highlighting Overhaul](#syntax-highlighting-overhaul)
+* [Improve Auto-Documentation System](#improve-auto-documentation-system)
+* [Overhaul MonoDevelop C/C++ addin](#overhaul-monodevelop-cc-addin)
 
 **[Compilers and Tools](#compilers-and-tools)**<br/>
 Work on Mono's tools and compilers
 
-  * [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
-  * [A ccache-like tool for managed languages](#a-ccachelike-tool-for-managed-languages)
+* [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
+* [A ccache-like tool for managed languages](#a-ccache-like-tool-for-managed-languages)
 
 **[Mono Runtime](#mono-runtime)**<br/>
 Improve the core Mono runtime and JIT
 
-  * [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
-  * [Port mono to WinRT](#port-mono-to-winrt)
-  * [Make FileStream async operation really async](#make-filestream-async-operation-really-async)
-  * [JIT optimizations](#jit-optimizations)
+* [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
+* [Port mono to WinRT](#port-mono-to-winrt)
+* [Make FileStream async operation really async](#make-filestream-async-operation-really-async)
+* [JIT optimizations](#jit-optimizations)
 
 **[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
 Work on blending the worlds of open source .NET and Mono projects together
 
-  * [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
+* [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
 
 **[GTK# and Bindings](#gtk-and-bindings)**<br/>
 GTK# Core, Bindings and Applications
 
-  * [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
-  * [CppSharp | Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
-
+* [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
+* [CppSharp | Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
 
 **[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
@@ -63,8 +62,6 @@ Suggest your own ideas for a project
 How to get in touch with us and ask questions
 
 ## MonoDevelop / Xamarin Studio IDE
-
-
 
 ### Unit tests code coverage visualised inside MonoDevelop editor
 
@@ -155,7 +152,7 @@ Support for lambdas in the MonoDevelop debugger's expression evaluator, used in 
 
 Roslyn has [support for compiling expressions](https://github.com/dotnet/roslyn/tree/master/src/ExpressionEvaluator) that could be used as a basis for this.
 
-**Deliverables**: Support for lambdas in the Immediate pad. 
+**Deliverables**: Support for lambdas in the Immediate pad.
 
 **Mentors:** David Karlas
 
@@ -201,21 +198,20 @@ Your proposal should describe the approaches you intend to use to fix the issue,
 
 The [MonoDevelop C/C++ addin](https://github.com/mhutch/cbinding) was substantially updated as part of last year's Summer of Code. However, there are still many things that could be done to improve it!
 
-- improving the code completion and adding a test suite
-- adding refactoring support
-- improving the GDB debugger addin or switching to LLDB
-- making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
+* improving the code completion and adding a test suite
+* adding refactoring support
+* improving the GDB debugger addin or switching to LLDB
+* making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
 
 Your proposal can include any of that you find interesting and feel can be realistically be completed in addition to the core tasks.
 
 **Deliverables:** a set of improvements to the C/C++ addin of your choosing, to be specified in your proposal
 
 **Mentors:** mhutch
+
 ## Compilers and Tools
 
-
-
-### Port ilasm to use IKVM.Reflection instead of PEAPI.
+### Port ilasm to use IKVM.Reflection instead of PEAPI
 
 **Complexity:** Medium
 
@@ -234,16 +230,15 @@ C-based languages (C/C++/Objective-C) have ccache to cache results of compilatio
 It would be nice to have something similar for C#/VB/F#.
 
 This can be used as a starting point to identify the set of inputs for C#/VB:
-https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md
+<https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md>
 
-ccache (for reference): https://github.com/jrosdahl/ccache
+ccache (for reference): <https://github.com/jrosdahl/ccache>
 
 **Deliverables**: a functional tool for C# that works on linux + mac, with a test suite, and is able to cache/lookup everything during a (re)build of the mono BCL.
 
 **Mentors:** Rolf Bjarne Kvinge
+
 ## Mono Runtime
-
-
 
 ### Implement a LLDB plugin that can understands the mono runtime
 
@@ -251,11 +246,11 @@ ccache (for reference): https://github.com/jrosdahl/ccache
 
 LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
 
-- object layout, introspection and heap walking
-- unwinding and symbolifying managed methods
-- lookup line information for managed methods
-- pretty print all runtime structs
-- threadpool introspection?
+* object layout, introspection and heap walking
+* unwinding and symbolifying managed methods
+* lookup line information for managed methods
+* pretty print all runtime structs
+* threadpool introspection?
 
 **Deliverables:** One or more of the above bullet points.
 
@@ -283,7 +278,7 @@ a simple Hello World app working.
 We could use our already existing infrastructure used for Socket, to make FileStream BeginRead, BegrinWrite, etc. methods really async.
 They are right now simple their synchronous method counter part called enqueued on the ThreadPool. For example, `FileStream.BeginRead` is implemented as `Read.BeginInvoke (...)`
 
-**Deliverables**: Properly async FileStream, passing Mono tests. 
+**Deliverables**: Properly async FileStream, passing Mono tests.
 
 **Mentors:** Ludovic Henry
 
@@ -293,26 +288,25 @@ They are right now simple their synchronous method counter part called enqueued 
 
 There are a few JIT optimizations that we could profile from:
 
-- type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
+* type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
 
-- delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
+* delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
 
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
 **Mentors:** Rodrigo Kumpera
+
 ## Microsoft .NET and Mono integration
 
 Microsoft open sourced large chunks of code the past couple of years:
 
-- ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-- CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-- CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-- Roslyn: Microsoft's C# and VB compiler as a service
-- CodeContracts: the tools needed to instrument your code
+* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+* Roslyn: Microsoft's C# and VB compiler as a service
+* CodeContracts: the tools needed to instrument your code
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
-
-
 
 ### Import reference source System.Web* assemblies
 
@@ -323,9 +317,8 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 **Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
 
 **Mentors:** Marek Safar
+
 ## GTK# and Bindings
-
-
 
 ### Urho3d Game Engine Improvements
 
@@ -357,25 +350,25 @@ As part of this task you’ll need to continue the bindings effort for the Qt fr
 
 QtSharp has reached alpha status and it needs the final improvements to make it a complete product. The necessary work can be broken down into five categories:
 
-- Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience.
+* Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience.
 Deliverables: The following type maps: QList<>, QVector<> ↔ List<>; QMap<,>, QHash<,> ↔ Dictionary<,>; and QChar<> ↔ char;
 
-- Qt Quick support –  enables writing of Qt Quick applications using C#.
+* Qt Quick support –  enables writing of Qt Quick applications using C#.
 Deliverables: the ability to include QML files in the application (an integrated in Visual Studio/MonoDevelop editor is not included, for now external editors such as Qt Creator will have to be used) and working interaction between C# and QML (property changes and emitting of signals in QML must call the corresponding C# code);
 
-- Documentation package – online and off-line documentation for QtSharp.
+* Documentation package – online and off-line documentation for QtSharp.
 Deliverables: A compressed directory containing a complete DOxygen documentation package for QtSharp. The documentation itself is generated as XML code comments which DOxygen then takes from the source files and uses a configuration file to generate the package;
 
-- Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X.
+* Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X.
 Deliverables: Build scripts to produce and upload Qt# binaries;
 
-- Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203, http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all.
+* Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (<https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203>, <http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html>) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all.
 Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
 
 Related code:
 
 <https://github.com/mono/CppSharp>
-<https://gitlab.com/ddobrev/QtSharp> 
+<https://gitlab.com/ddobrev/QtSharp>
 <https://techbase.kde.org/Development/Languages/Qyoto> – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
