@@ -26,7 +26,7 @@ Mono uses GNU autoconf, automake and libtool. You need to install those in your 
 brew install autoconf automake libtool pkg-config
 ```
 
-Alternatively, you can cut and paste the following script to get these dependencies built:
+Alternatively, you can copy and paste the following script to get these dependencies built:
 
 ``` bash
 PREFIX=/usr/local
@@ -97,7 +97,7 @@ To build Mono in 64 bit mode instead use this to configure the build:
 One Stop Shop Build Script (32-bit)
 -----------------------------------
 
-If you are on Mavericks and you just want to install Mono without thinking too much, just cut and paste the following script, and enter your root password when requested:
+If you are on Mavericks and you just want to install Mono without thinking too much, just copy and paste the following script, and enter your root password when requested:
 
 ``` bash
 PREFIX=/usr/local
