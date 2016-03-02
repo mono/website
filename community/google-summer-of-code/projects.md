@@ -374,9 +374,9 @@ Deliverables: Generation of managed destructors (finalisers) to call their nativ
 
 Related code:
 
-https://github.com/mono/CppSharp 
-https://gitlab.com/ddobrev/QtSharp 
-https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
+<https://github.com/mono/CppSharp>
+<https://gitlab.com/ddobrev/QtSharp> 
+<https://techbase.kde.org/Development/Languages/Qyoto> – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
 
