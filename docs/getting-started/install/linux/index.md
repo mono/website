@@ -48,7 +48,7 @@ To enable installation on older Ubuntu releases such as Ubuntu 12.04 and Ubuntu 
 echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 ```
 
-CentOS 7, Fedora 22 (and later), and derivatives
+CentOS 7, Fedora 19 (and later), and derivatives
 -------------------------------
 
 Add the Mono Project GPG signing key and the package repository **in a root shell** with:
