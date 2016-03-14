@@ -1,7 +1,5 @@
 ---
 title: Checked Builds
-redirect_from:
-  - /Checked_Build/
 ---
 
 Introduction
@@ -9,7 +7,11 @@ Introduction
 
 The Mono VM uses asserts throughout to ensure it is in a correct state. There are a few classes of asserts which are useful for debugging Mono, but which are too expensive to include in a production VM. If you are doing development on Mono, you can enable these with a specially built VM.
 
-To enable the checked modes, you must build with the `--with-checked-build=` argument passed to `autogen.sh`/`configure`, and then run with the `MONO_CHECK_MODE` environment variable. Both `--with-checked-build` and `MONO_CHECK_MODE` should be set to either the word `all`, or a comma-separated list of mode names if you need to do fine-grained testing. (In particular you might want to skip `metadata` mode, since it is exceptionally slow.)
+## Enabling
+
+To enable the checked modes, you must build with the `--enable-checked-build=` argument passed to `autogen.sh`/`configure`, and then run the built mono with the `MONO_CHECK_MODE` environment variable. Both `--enable-checked-build` and `MONO_CHECK_MODE` accept a mode list, which can be either the word `all`, or a comma-separated list of mode names. The mode list passed to `--enable-checked-build=` determines which check modes will be built into the executable. The mode list passed to `MONO_CHECK_MODE` determines which check modes will be actually tested at runtime. The modes selected at runtime must be a subset of the modes selected at compile time; the modes are specified in two passes like this because some checks may introduce performance penalties even when they are not run.
+
+If you do not need fine-grained control over which modes run, run autogen with the `--enable-checked-build=all` argument and mono with the `MONO_CHECK_MODE=all` environment variable.
 
 ## Modes
 
@@ -32,12 +34,12 @@ This mode also enables tracking history of thread state transition points. Asser
 
 This mode causes assignments from one metadata mempool to another to be checked to ensure they are following the reference rules for assemblies. The reference rules are described in the comments in `checked-build.c`.
 
-This mode is most useful if you are seeing crashes following the unloading of an app domain.
+This mode is most useful if you are seeing crashes following the unloading of an app domain. You are very likely to want to disable this mode if you do not need it, as it is very slow.
 
 Adding checked-build asserts
 ============================
 
-### General
+### General asserts
 
 To add code to one of the checked-build modes, wrap your code in a `ENABLE_CHECKED_BUILD_GC`, `ENABLE_CHECKED_BUILD_THREAD`, or `ENABLE_CHECKED_BUILD_METADATA` ifdef. Then before running your code, check the value of `mono_check_mode_enabled()` with one of the `MonoCheckMode` enums in `checked-build.h`.
 
@@ -45,7 +47,7 @@ There is also a general `ENABLE_CHECKED_BUILD` define which is true if any check
 
 ### Adding a new mode
 
-To add a new mode, add a new check to the `with-checked-build` definition in `configure.ac` and a new value to the `MonoCheckMode` enum.
+To add a new mode, add a new check to the `enable-checked-build` definition in `configure.ac` and a new value to the `MonoCheckMode` enum.
 
 ### Adding `gc` asserts
 
