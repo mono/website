@@ -33,6 +33,70 @@ Displaying JIT debug output
 
 Use the -v -v -v -v command line argument. Set the MONO_VERBOSE_METHOD env variable to display output for only one method.
 
+
+Dumping JIT IR to IGV
+---------------------
+Set `MONO_JIT_DUMP_METHOD` to specify a method to dump over network to a running instance of the [IdealGraphVisualizer (IGV)](http://ssw.jku.at/General/Staff/TW/igv.html).
+An IGV build that is compatible with the implementation in Mono is available for [Mac/Linux/Windows](https://github.com/lewurm/GraalJVMCI8/releases/tag/v0.1) and requires at least JRE 1.7 to run.
+
+On Mac:
+
+``` bash
+$ # unpack zip file
+$ open idealgraphvisualizer
+```
+
+For Linux there's `bin/idealgraphvisualizer` and for Windows there's `bin/idealgraphvisualizer.exe`.
+After starting IGV, it will listen on port 4445 and is ready to receive graphs.
+
+Here an example for dumping the IR of a method:
+
+``` bash
+$ cat fib.cs
+using System;
+
+public class Fib {
+
+        public static int fib (int n) {
+                if (n < 2)
+                        return 1;
+                return fib(n-2)+fib(n-1);
+        }
+        public static int Main (string[] args) {
+                int repeat = 1;
+
+                if (args.Length == 1)
+                        repeat = Convert.ToInt32 (args [0]);
+
+                // Console.WriteLine ("Repeat = " + repeat);
+
+                if (repeat > 32) {
+                        Console.WriteLine ("{0}", fib (repeat));
+                        return 0;
+                }
+
+                for (int i = 0; i < repeat; i++)
+                        if (fib (32) != 3524578)
+                                return 1;
+
+                return 0;
+        }
+}
+$ mcs fib.cs
+$ MONO_JIT_DUMP_METHOD=Fib::fib mono fib.exe
+cfg_dump: create context for "Fib::fib"
+```
+
+
+now switch to IGV, you should see something like that:
+[![igv-screenshot.png](/images/igv-screenshot.png)](/images/igv-screenshot.png)
+
+you can explore the different compiler passes in the navigation bar on the left side. IGV also has a graph diff feature:
+
+[![igv-diff.png](/images/igv-diff.png)](/images/igv-diff.png)
+
+
+
 Displaying runtime debug output
 -------------------------------
 
