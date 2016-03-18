@@ -55,7 +55,7 @@ See the `MONO_REQ_GC_SAFE_MODE`, `MONO_REQ_GC_UNSAFE_MODE`, `MONO_REQ_GC_NEUTRAL
 
 ### Adding `thread` asserts
 
-If you have a failure where it would be helpful to print out state transition history, use `g_error_with_history` instead of `g_error`. This will degrade to `g_error` when not in the `thread` checked mode.
+If you have a failure where it would be helpful to print out state transition history, use `mono_fatal_with_history` instead of `g_error`. This will degrade to `g_error` when not in the `thread` checked mode.
 
 ### Adding `metadata` asserts
 
