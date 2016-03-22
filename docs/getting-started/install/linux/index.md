@@ -143,7 +143,7 @@ sudo apt-get update
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos-alpha/
 ```
 
-This repository URL is also valid for SUSE when added to YaST. This can be done using the [YaST GUI](https://en.opensuse.org/SDB:Add_package_repositories#YaST_software_repositories), or via [zypper](https://en.opensuse.org/SDB:Add_package_repositories#Zypper): 
+This repository URL is also valid for SUSE when added to YaST. This can be done using the [YaST GUI](https://en.opensuse.org/SDB:Add_package_repositories#YaST_software_repositories), or via [zypper](https://en.opensuse.org/SDB:Add_package_repositories#Zypper):
 
 ``` bash
 zypper ar -f http://download.mono-project.com/repo/centos-alpha/ mono-project-alpha
@@ -167,7 +167,7 @@ sudo apt-get update
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos-beta/
 ```
 
-This repository URL is also valid for SUSE when added to YaST. This can be done using the [YaST GUI](https://en.opensuse.org/SDB:Add_package_repositories#YaST_software_repositories), or via [zypper](https://en.opensuse.org/SDB:Add_package_repositories#Zypper): 
+This repository URL is also valid for SUSE when added to YaST. This can be done using the [YaST GUI](https://en.opensuse.org/SDB:Add_package_repositories#YaST_software_repositories), or via [zypper](https://en.opensuse.org/SDB:Add_package_repositories#Zypper):
 
 ``` bash
 zypper ar -f http://download.mono-project.com/repo/centos-beta/ mono-project-beta
