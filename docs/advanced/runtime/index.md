@@ -138,8 +138,6 @@ For example, to create a fully static and bundled version of Mono for "hello wor
 bash$ mcs hello.cs
 bash$ mkbundle --static hello.exe -o hello
  OS is: Linux
- Note that statically linking the LGPL Mono runtime has more licensing restrictions than dynamically linking.
- See [Licensing](/docs/faq/licensing/) for details on licensing.
  Sources: 1 Auto-dependencies: False
    embedding: /tmp/hello.exe
  Compiling:
@@ -150,10 +148,6 @@ bash$
 ```
 
 Of course, you can also just embed the libraries, without the actual Mono runtime, by removing the --static flag.
-
-A downside of the --static flag is that it will trigger the LGPL license requirement in the runtime. If you are planning on using this feature as an obfuscation technique you must obtain a commercial license of Mono; otherwise you should distribute all the components that are necessary to comply with the LGPL with bundles.
-
-The commercial license can be acquired from [Xamarin](http://xamarin.com/licensing).
 
 ### Platform for Code Optimizations
 

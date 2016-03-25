@@ -38,7 +38,7 @@ We have our own [coding guidelines](/community/contributing/coding-guidelines/).
 
 ### Code License
 
-If you are about to commit code to a module, the code that is being committed should be released under the X11 license. Mono code licenses themselves are basically: compilers, class libraries and managed code tools: X11; runtime: LGPL.
+If you are about to commit code to a module, the code that is being committed should be released under the MIT license.
 
 If in doubt, check with the maintainers of the module, or send mail to mono-devel-list@ximian.com.
 
@@ -65,6 +65,8 @@ But, if you're not the owner of the code, committing a rewrite without getting a
 ### Pull-Request Rules
 
 There are a few rules to follow before making a pull request on GitHub:
+
+-   Sign the [.NET Foundation CLA] (https://cla2.dotnetfoundation.org)
 
 -   Always make sure to add meaningful commit logs
 
