@@ -25,4 +25,4 @@ Over the past 5 years, Xamarin has developed a number of proprietary extensions 
 - Generic Value Type Sharing
 - Offset tool to maintain the cross compiler
 
-These have been integrated with the main Mono codebase, contributed along with Mono to the .NET Foundation, and are being released under under the MIT license today.
+These have been integrated with the main Mono codebase, contributed along with Mono to the .NET Foundation, and are being released under the MIT license today.
