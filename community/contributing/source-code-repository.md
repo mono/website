@@ -66,7 +66,7 @@ But, if you're not the owner of the code, committing a rewrite without getting a
 
 There are a few rules to follow before making a pull request on GitHub:
 
--   Sign the [.NET Foundation CLA] (https://cla2.dotnetfoundation.org)
+-   Sign the [.NET Foundation CLA](https://cla2.dotnetfoundation.org)
 
 -   Always make sure to add meaningful commit logs
 
