@@ -16,7 +16,7 @@ To build Windows.Forms from source, you need:
 
 -   The latest [libgdiplus](http://www.go-mono.com/download.html) library. Not needed on Windows XP since it includes gdiplus.dll and for Windows 2000 it can be downloaded from MSDN.
 
-[Paul Johnson provides a nice writup on how to build from source [here](http://www.all-the-johnsons.co.uk/mono/mono-compiling.shtml)]
+[Paul Johnson provides a nice writup on how to build from source [here](http://www.all-the-johnsons.co.uk/mono/mono-compiling.html)]
 
 ### Winforms Example
 
