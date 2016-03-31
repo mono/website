@@ -96,7 +96,7 @@ Since Mono has no way of determining from the static analysis what method will i
 
 Xamarin's version of AOT compilation extends the AOT compiler to support generic code generation for value types. This can be either an optimization (generate fewer versions of Foo\<X\> where X is a value type) to filling holes where previously you would get a runtime failure due to a Foo\<X\> where X is value type from not being implemented.
 
-This feature is currently only available to iOS users of Xamarin.
+This feature was previously only available to iOS users of Xamarin, but is now available to everyone.
 
 Supported Platforms
 -------------------

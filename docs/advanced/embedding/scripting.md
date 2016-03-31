@@ -129,22 +129,7 @@ The [Boo programming language](http://boo.codehaus.org/) is also a popular choic
 Licensing
 ---------
 
-Mono is an open source technology that can be used freely under the terms of the GNU LGPL license. Novell alternatively offers commercial licenses of the Mono runtime if you require to use Mono in any of the following situations:
-
--   On Windows or Mac games, if:
-    -   Static linking Mono into your application.
-    -   Preventing Mono or its class libraries from being upgraded (for example, to prevent gamers from cheating).
-    -   You want to add proprietary extensions that you want to keep.
-
--   On Consoles where the end user is not allowed to upgrade the Mono runtime and repackage the game:
-    -   Wii, PS3 or Xbox360
-
--   Proprietary extensions:
-    -   If your game requires proprietary extensions that would be incompatible with the LGPL.
-
-[Mono Tools for Visual Studio Ultimate Edition](http://www.go-mono.com/store/#Mono_Tools_Ultimate) includes a commercial license to redistribute Mono under non-LGPL terms on Windows, Linux, and Mac OS X PCs for products with volumes under 100,000 and revenues under \$2M annually. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
-
-For other licensing options, [contact us](https://xamarin.com/contact-us).
+Mono is an open source technology that can be used freely under the terms of the MIT license (as of March 31st 2016, prior versions were available under GNU LGPL license).
 
 Continued Performance Increase
 ==============================

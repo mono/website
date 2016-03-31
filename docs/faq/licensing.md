@@ -16,123 +16,68 @@ Yes. The licensing scheme is planned to allow proprietary developers to write ap
 
 ### What license or licenses are you using for the Mono Project?
 
-We use four open source licenses:
+The Mono runtime, compilers and tools and most of the class libraries are licensed under the [MIT](http://www.opensource.org/licenses/mit-license.html) license.
 
--   The C# compiler is dual-licensed under the MIT/X11 license and the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
+The Mono runtime include some bits of code licensed under the BSD license and some class libraries are under the Apache 2 license.   The exact list is [available here](https://github.com/mono/mono/blob/master/LICENSE)
 
--   The tools are released under the terms of the [GNU General Public License](http://www.opensource.org/licenses/gpl-license.html) (GPL).
-
--   The runtime libraries are under the [GNU Library GPL 2.0](http://www.gnu.org/copyleft/library.html#TOC1) (LGPL 2.0).
-
--   The class libraries are released under the terms of the [MIT X11](http://www.opensource.org/licenses/mit-license.html) license.
-
--   ASP.NET MVC, the Managed Extensibility Framework (MEF), the Dynamic Language Runtime (DLR), System.Data.Services.Client, parts of System.Numerics and ASP.NET AJAX client software are released by Microsoft under the open source [Microsoft Permissive License](http://www.opensource.org/licenses/ms-pl.html), some of them are dual licensed also as [Apache2](http://www.apache.org/licenses/LICENSE-2.0)
-
-Mono is available to be licensed commercially if the LGPL/GPL/X11 combination is not suitable for you. [Xamarin](http://xamarin.com/) offers [commercial licensing](http://xamarin.com/licensing) options to redistribute Mono under non-LGPL terms. If your organization intends to redistribute software which embeds or bundles Mono, but is unable to comply with the terms of GNU LGPL v2, the Ultimate Edition may be right for you.
-
-For other licensing options, [contact us](https://xamarin.com/contact-us).
-
-### Why are the class libraries licensed under the MIT X11 license?
-
-Originally, the class libraries were released under the terms of the GNU Library GPL (LGPL). The problem with the GNU LGPL is an outdated wording related to "derived works". A derived work of the library must be covered by the same license as the library itself. This definition was fine before object oriented frameworks existed, but with the introduction of object oriented frameworks, different people disagree whether some code that uses object-oriented inheritance is an instance of a "derived work".
-
-The class libraries are a big component of Mono and it is where the most diverse group of individuals have contributed to.
-
-Given the ambiguity, and given the chance that every author to the class libraries could have a different understanding of the terms of the license, we chose a license that was still an open source/free software license, but did not have these ambiguities.
-
-The ambiguity would have allowed an author of the code would demand an application developer to release pieces of its source code based on a technicality, and we did not want to risk the future of Mono on this.
-
-### When do I need to obtain a license from Xamarin to the Mono Runtime?
-
-We only require licensing for uses of Mono and Moonlight on embedded systems, or systems where you are unable to fulfill the obligations of the GNU LGPL.
-
-For example, if you manufacture a device where the end user is not able to do an upgrade of the Mono virtual machine or the Moonlight runtime from the source code, you will need a commercial license of Mono and Moonlight.
-
-Or if you ship an application that requires to statically link the Mono runtime and you are not able to provide the object code to relink Mono, you must obtain a commercial license from Xamarin.
-
-Use our [Contact](hhttps://xamarin.com/contact-us) form with the information about your needs to discuss this.
+Note that as of March 31st, 2016 the Mono runtime and tools have been relicensed to the MIT license.
 
 ### I would like to contribute code to Mono under a particular license. What licenses will you accept?
 
-We will have to evaluate the licenses for compatibility first, but as a general rule, we will accept the code under the same terms of the "container" module.
-
-### Why does Xamarin require a copyright assignment?
-
-When a developer contributes code to the C# compiler or the Mono runtime engine, we require that the author grants Xamarin the right to relicense his/her contribution under other licensing terms.
-
-This allows Xamarin to re-distribute the Mono source code to parties that might not want to use the GPL or LGPL versions of the code.
-
-Particularly embedded system vendors obtain grants to the Mono runtime engine and modify it for their own purposes without having to release those changes back.
+Contributions are now taken under the [.NET Foundation CLA] (https://cla2.dotnetfoundation.org).
 
 Patents
 -------
 
-### Could patents be used to completely disable Mono?
-
-No. For a more nuanced response, see the next question.
-
 ### What kind of patent coverage exists for Mono?
 
-The coverage is divided in various areas, that we explore below:
+Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/blob/master/PATENTS.TXT), as follows:
 
--   Code covered under the Microsoft Community Promise (ECMA/ISO standards)
--   Microsoft code licensed under the MS-PL or Apache2 Licenses, which come with patent grants.
-    -   Class libraries shipped with Mono
-    -   Code not in ECMA/ISO but opened with patent grants by the .NET Micro Framework.
--   Standards covered by the [Microsoft Open Specification Promise](http://www.microsoft.com/interop/osp/default.mspx)
--   Code protected by the [Moonlight 3/4 patent covenant](http://www.microsoft.com/interop/msnovellcollab/newmoonlight.mspx)
 
-First some background information.
+     Microsoft Patent Promise for Mono
+     
+     Microsoft Corporation and its affiliates (“Microsoft”) promise not to
+     assert any Applicable Patents against you for making, using, selling,
+     offering for sale, importing, or distributing Mono.
+     
+     If you file, maintain, or voluntarily participate in any claim in a
+     lawsuit alleging direct or contributory patent infringement by Mono,
+     or inducement of patent infringement by Mono, then your rights under
+     this promise will automatically terminate.
+     
+     This promise is not an assurance that (i) any Applicable Patents are
+     valid or enforceable or (ii) Mono does not infringe patents or other
+     intellectual property rights of any third party. No rights except
+     those expressly stated in this promise are granted, waived or received
+     by Microsoft, whether by implication, exhaustion, estoppel or
+     otherwise. This is a personal promise directly from Microsoft to you,
+     and you agree as a condition of benefitting from it that no Microsoft
+     rights are received from suppliers, distributors, or otherwise in
+     connection with this promise.
+     
+     Definitions:
+     
+     “Mono” means those portions of the software development technology, as
+     originally distributed by Xamarin, Inc. or the .NET Foundation under
+     the name “Mono,” that implement .NET Framework Functionality, provided
+     that such portions at a minimum implement all of the required parts of
+     the mandatory provisions of Standard ECMA-335 – Common Language
+     Infrastructure (CLI).
+     
+     “.NET Framework Functionality” means any functionality in Microsoft’s
+     .NET Framework as described in Microsoft’s API documentation on
+     Microsoft’s MSDN website, including the functionality in
+     Windowsbase.dll, but excluding all other functionality in the Windows
+     Presentation Foundation component of .NET Framework.
+     
+     “Applicable Patents” are those patent claims, currently owned by
+     Microsoft and acquired in the future, that are necessarily infringed
+     by Mono. For clarity, Applicable Patents do not include any patent
+     claims that are infringed (x) by any underlying or enabling technology
+     that may be used, combined, or distributed in connection with Mono
+     (such as hardware, operating systems, or applications that run on
+     Mono), (y) only as a consequence of modification of Mono, or (z) only
+     by the combination of Mono with third party code.
 
-The .NET Framework is divided in two parts: the ECMA/ISO covered technologies and the other technologies developed on top of it like ADO.NET, ASP.NET and Windows.Forms.
 
-Mono implements the ECMA/ISO covered parts, as well as being a project that aims to implement the higher level blocks like ASP.NET, ADO.NET and Windows.Forms.
-
-The Mono project has gone beyond both of those components and has developed and integrated third party class libraries, the most important being: Debugging APIs, integration with the Gnome platform (Accessibility, Pango rendering, Gdk/Gtk, Glade, GnomeUI), Mozilla, OpenGL, extensive database support (Microsoft only supports a couple of providers out of the box, while Mono has support for 11 different providers), our POSIX integration libraries and finally the embedded API (used to add scripting to applications and host the CLI, or for example as an embedded runtime in Apache).
-
-The core of the .NET Framework, and what has been patented by Microsoft falls under the ECMA/ISO submission.
-
-Microsoft [has announced](http://port25.technet.com/archive/2009/07/06/the-ecma-c-and-cli-standards.aspx) that the ECMA standards for C# and the CLI are covered under the [Community Promise](http://www.microsoft.com/interop/cp/default.mspx) patent license.
-
-Basically a grant is given to anyone who want to implement those components for free and for any purpose.
-
-**In addition** to the grants made on the Community Promise, they have also released large swats of code under the Microsoft Public License and the Apache2 licenses, code that Mono bundles, for example the Managed Extensibility Framework, the Dynamic Language Runtime, ASP.NET MVC and even an embedded version of .NET and a complete CLI implementation with a complete class library called the .NET Micro Framework. All of the code in there comes with a patent grant.
-
-The actual patent coverage includes the sum of both the ECMA-covered standards, their MS-PL licensed code and their Apache licensed code.
-
-For people who need full compatibility with the Windows platform, Mono's strategy for dealing with any potential issues that might arise with ASP.NET, ADO.NET or Windows.Forms is: (1) work around the patent by using a different implementation technique that retains the API, but changes the mechanism; if that is not possible, we would (2) remove the pieces of code that were covered by those patents, and also (3) find prior art that would render the patent useless.
-
-Not providing a patented capability would weaken the interoperability, but it would still provide the free software / open source software community with good development tools, which is the primary reason for developing Mono.
-
-The patents do not apply in countries where software patents are not allowed.
-
-For Linux server and desktop development, we only need the ECMA components, and things that we have developed (like Gtk#) or Apache integration.
-
-### Are there alternatives to ASP.NET?
-
-Yes, there are a number of alternatives that people have been using for developing Web applications that do not use the ASP.NET model: [Jitsu](http://www.jitsu.org) and [Dream](http://developer.mindtouch.com/Dream).
-
-### Are there alternatives to Windows.Forms?
-
-Yes, there are plenty of alternatives, including [Gtk#](/docs/gui/gtksharp/) see our page on [Gui Toolkits](/docs/gui/gui-toolkits/) for more information.
-
-### Is Mono only an implementation of the .NET Framework?
-
-Mono implements both the .NET Framework, as well as plenty of class libraries that are ethier UNIX specific, [Gnome](http://www.gnome.org) specific, or that are not part of the .NET Framework but people find useful.
-
-Mono can also be used a Java Virtual Machine via [IKVM](http://www.ikvm.net).
-
-Old Background
-==============
-
-This contains some old information that we are keeping here for the sake of finding it for future reference. The information below is now superseded by Microsoft's announcement on using the Community Promise for the ECMA CLI and C#.
-
-Jim Miller at Microsoft has made a statement on the patents covering ISO/ECMA, (he is one of the inventors listed in the patent): [here](http://web.archive.org/web/20030424174805/http://mailserver.di.unipi.it/pipermail/dotnet-sscli/msg00218.html).
-
-Microsoft's letter to ECMA is [here](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma%20PATENT/Patent%20statements%20ok/ECMA-335%204th%20edition%20Microsoft%20patent%20statement.pdf) for ECMA335 and [here](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma%20PATENT/Patent%20statements%20ok/ECMA-334%20Microsoft%20and%20Hewlett%20Packard%20patent%20statements.pdf) for ECMA334.
-
-Credits
--------
-
-The FAQ contains material contributed by Miguel de Icaza, Jaime Anguiano, Lluis Sánchez.
 

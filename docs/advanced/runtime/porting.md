@@ -61,7 +61,4 @@ If the OS doesn't support pthreads, you will need to implement the io-layer inte
 
 If the OS doesn't support POSIX and the standard libc calls, you'll likely have to make changes in many places.
 
-Licensing
-=========
 
-If you intend to have your port merged into the main Mono distribution, keep in mind that you must grant Novell permission to redistribute your work under other licenses other than the LGPL. This means that you must be the owner of any code contributed to Novell and that you are in a position to sign such an agreement. You can also license your changes under the X11/MIT license, instead of signing a copyright assignment.

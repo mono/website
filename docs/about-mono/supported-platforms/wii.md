@@ -4,7 +4,7 @@ redirect_from:
   - /Mono:Wii/
 ---
 
-The Mono runtime has been ported to the Wii, and a commercial port is available to Official Nintendo Licensed Wii Developers. If you want to evaluate Mono for the Wii, you must use Nintendo's third party validation tool to request access to the code.
+The Mono runtime has been ported to the Wii, and a commercial port is available to Official Nintendo Licensed Wii Developers. If you want to evaluate Mono for the Wii, you must use Nintendo's third party validation tool to request access to the code.   This port is currently only available through Novell.
 
 Installation
 ============
@@ -20,7 +20,3 @@ To build Mono on the Wii, you will need a Mono 2.4 set of class libraries, and i
 
 This will produce the Mono runtime for the Wii and build the samples in wii/samples.
 
-Licensing
-=========
-
-Both the Mono runtime and the Mono C# Compiler are available under proprietary license for those who cannot, or choose not to, use LGPL and GPL code in their projects.

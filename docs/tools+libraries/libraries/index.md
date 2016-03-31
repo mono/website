@@ -171,7 +171,7 @@ Cons:
 Xamarin.Mac
 -----------
 
-Xamarin.Mac is a commercial API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
+Xamarin.Mac is a API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
 
 Homepage: [http://xamarin.com/mac](http://xamarin.com/mac)
 
