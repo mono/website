@@ -83,7 +83,7 @@ Screenshots and Movies
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 
-Techincal Details
+Technical Details
 =================
 
 Mono's port to the ARM uses the FPA mode for generating floating point instructions. Starting from mono 1.2.1 we also support the new soft-float Linux ABI as used, for example, on the nokia 770 OS 2006 (also known as armel ABI or gnueabi).
