@@ -109,7 +109,7 @@ domain = mono_jit_init (domain_name);
 That will return a MonoDomain where your code will be executed. domain_name is the name of the main application domain. This call will initialize the default framework version, which could be 2.0 or 4.0, depending on the Mono version used. To specify a framework version, you can use something like:
 
 ``` c
-domain = mono_jit_init_version ("myapp", ""v2.0.50727);
+domain = mono_jit_init_version ("myapp", "v2.0.50727");
 ```
 
 The first thing you usually do is to load your assembly and execute it:
