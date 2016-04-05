@@ -69,16 +69,17 @@ other_function (void)
 
     res = my_function (10, &error);
     //handling the error:
-    //1st option: raise an exception
-    mono_error_raise (&error); //won't raise in case of no error
+    //1st option: set the pending exception.  Only safe to do in icalls
+    if (mono_error_set_pending_exception (&error)) //returns TRUE if an exception was set
+        return;
 
     //2nd option: legacy code that can't handle failures:
-    g_assert (mono_error_ok (&error));
+    mono_error_assert_ok (&error);
 
-    //3rd option: convert to an exception and handle it upwards
-    if (!res)
-        return mono_error_convert_to_exception (&error); //implicit cleanup
-
+    //3rd option (deprecated): raise an exception and write a FIXME note
+    //  (implicit cleanup, no-op if there was no error)
+    mono_error_raise_exception (&error); /* FIXME don't raise here */
+    
     //4th option: ignore
     mono_error_cleanup (&error);
 }
@@ -99,21 +100,13 @@ The transition work is not complete and we're doing it piece-by-piece to ensure 
 don't introduce massive regressions in the runtime. The idea is to move the least
 amount of code a time to use the new error machinery.
 
-Due to the loader error been transparently passed around, we need a setup where
-we can slowly contain its presence in the runtime. With that in mind, here are the
-rules for code conversion:
-
-- Code that takes a MonoError* arguments MUST NOT accept or produce loader errors.
-Add asserts both on the entry and exit paths to ensure that if you're not sure.
-
-- Sometimes we need to keep the old semantics while porting a piece of code. Use
-mono_error_set_from_loader_error and mono_loader_set_error_from_mono_error to move
-between the two error models.
+Here are the rules for code conversion:
 
 - Mono API functions that need to call functions which take a MonoError should
-assert on failure as there's no adequate alternative at this point.
+assert on failure or cleanup the error as there's no adequate alternative at this point.  They **must not** use `mono_error_raise_exception` or `mono_error_set_pending_exception`
 
-- When possible, change the function signature. If not, add a _checked variant.
+- When possible, change the function signature. If not, add a _checked variant and add the `MONO_RT_EXTERNAL_ONLY` to
+the non-checked version if it's in the Mono API.  That symbol will prevent the rest of the Mono runtime from calling the non-checked version.
 
 ## Design issues
 
