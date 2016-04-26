@@ -51,7 +51,7 @@ You can change this feature by using the --with-static_mono option, but we disco
 
 Use the --with-tls option to specify the kind of thread local storage that Mono should use. The possible values are __thread (which uses the compiler supported attribute for TLS) or pthread (which uses the POSIX API for storing thread-local data).
 
-This configuration option is automatically detectd at configure time, and we only support this option if its auto-detected, if you force this option, you are on your own.
+This configuration option is automatically detected at configure time, and we only support this option if its auto-detected, if you force this option, you are on your own.
 
 ### Controlling the Profile to Build
 
