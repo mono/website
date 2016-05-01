@@ -32,7 +32,7 @@ There are a number of examples:
 -   Dialog Box Layout: this tends to change across operating systems.
 -   Configuration options: these tend to be radically different across different operating systems.
 
-As an example, consider the UI for [Tangerine](http://snorp.net/log/tangerine) an application used to stream music over DAAP. Tangerine has a core engine and three user interfaces, one for each major operating system:
+As an example, consider the UI for [Tangerine](https://launchpad.net/tangerine) an application used to stream music over DAAP. Tangerine has a core engine and three user interfaces, one for each major operating system:
 
 On Windows:
 
