@@ -87,6 +87,8 @@ The package ***referenceassemblies-pcl*** should be installed for PCL compilatio
 
 The package ***ca-certificates-mono*** should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.
 
+The module ***mono-xsp4*** should be installed for running ASP.NET applications.
+
 Notes
 -----
 
