@@ -155,7 +155,7 @@ res = read (1, mono_array_addr (x, char, 0), mono_array_length (x), 0); // if a 
 MONO_FINISH_BLOCKING
 ```
 
-To use an object reference in a blocking section, you need to pin the object in the managed heap with a GC handle.
+To safely use an object reference in a GC safe section, the object needs to be pinned in the managed heap with a GC handle, and you cannot access any ref field on this object.
 
 ### MONO_PREPARE_RESET_BLOCKING / MONO_FINISH_RESET_BLOCKING
 
