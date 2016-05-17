@@ -68,7 +68,7 @@ states:
 - Blocking: The current thread is executing code that won't touch managed memory, so it can be assumed to be suspended
 - Blocking and Suspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed
 
-![Coop state machine transition diagram](coop-state-machine.png)
+![Coop state machine transition diagram](/docs/advanced/runtime/docs/coop-state-machine.png)
 
 In addition to those states, there are a number of transitions, that are used to move a thread from one state to another.
 
