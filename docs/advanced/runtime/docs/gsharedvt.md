@@ -8,6 +8,7 @@ In some environments like ios, its not possible to generate native code at
 runtime. This means that we have to compile all possible methods used by 
 the application at compilation time. For generic methods, this is not
 always possible, i.e.:
+
 ```
 interface IFace {
 	void foo<T> (T t);
@@ -22,6 +23,7 @@ class Class1 : IFace {
 IFace o = new Class1 ();
 o.foo<int> ();
 ```
+
 In this particular case, it is very hard to determine at compile time that 
 `Class1:foo<int>` will be needed at runtime. For generic methods instantiated 
 with reference types, the mono runtime supports 'generic sharing'. 
@@ -34,6 +36,7 @@ types have the same size: 1 word.
 
 In order to extend generic sharing to valuetypes, we need to solve many 
 problems. Take the following method:
+
 ```
 void swap<T> (T[] a, int i, int j)
 {
@@ -42,17 +45,20 @@ void swap<T> (T[] a, int i, int j)
   a [j] = t;
 }
 ```
+
 Here, the size of 'T' is only known at runtime, so we don't know how much stack 
 space to allocate for 't', or how much memory to copy from a [i] to t in the
 first assignment.
 
 For methods which contain their type parameters in their signatures, the 
 situation is even more complex:
+
 ```
 public T return_t<T> (T t) {
     return t;
 }
 ```
+
 Here, the native signature of the method depends on its type parameter. One 
 caller might call this as `return_t<int> (1)`, passing in an int in one register, 
 and expecting the result to be in the return register, while another might call
@@ -74,6 +80,7 @@ when needed. The information required for this is stored in a
 `MonoGSharedVtMethodRuntimeInfo` structure. This structure is stored in
 an rgctx slot. At the start of the method, the following pseudo code
 is used to initialize the locals area:
+
 ```
 info_var = rgctx_fetch(<METHOD GSHAREDVT INFO>)
 locals_var = localloc (info_var->locals_size)
@@ -81,21 +88,27 @@ locals_var = localloc (info_var->locals_size)
 
 Whenever an address of a variable sized locals is required, its
 computed using:
+
 ```
 locals_var + info_var->locals_offsets [<local idx>]
 ```
+
 Local variables are initialized using memset, and copied using
 memcpy. The size of the locals is fetched from the rgctx. So
+
 ```
 T a = b;
 ```
+
 is compiled to:
+
 ```
 a_addr = locals_var + info_var->locals_offsets [<a idx>]
 b_addr = locals_var + info_var->locals_offsets [<b idx>]
 size = rgctx_fetch(<T size>)
 memcpy(a_addr, b_addr, size)
 ```
+
 Methods complied with this type of sharing are called 'gsharedvt' methods.
 
 ## Calling gsharedvt methods ##
@@ -103,13 +116,17 @@ Methods complied with this type of sharing are called 'gsharedvt' methods.
 GSharedvt methods whose signature includes variable types use a
 different calling convention where gsharedvt arguments are passed by
 ref.
+
 ```
 foo(int,int,int,T)
 ```
+
 is called using:
+
 ```
 foo(inti,int,int,T&)
 ```
+
 The return value is returned using the same calling convention used to
 return
 large structures, i.e. by passing a hidden parameter pointing to a
@@ -130,9 +147,11 @@ structure is not passed by the caller, so we use another trampoline to pass
 the info structure to the trampoline:
 
 So a call goes:
+
 ```
 <caller> -> <gsharedvt arg trampoline> -> <gsharedvt trampoline> -> <callee>
 ```
+
 The same is true in the reverse case, i.e. when the caller is a gsharedvt method, 
 and the callee is a normal method.
 
@@ -219,9 +238,11 @@ method, and it can be called by both normal and gsharedvt code. To solve this,
 when a virtual method is compiled as gsharedvt, we put an 'in' wrapper around 
 it, and put the address of this wrapper into the vtable slot, instead 
 of the method code. The virtual call will add an 'out' wrapper, so the call sequence will be:
+
 ```
 <caller> -> <out wrapper> -> <in wrapper> -> <callee>
 ```
+
 # AOT support #
 
 We AOT a gsharedvt version of every generic method, and use it at runtime if 
