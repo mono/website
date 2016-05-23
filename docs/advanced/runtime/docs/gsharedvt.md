@@ -1,3 +1,7 @@
+---
+title: Generic sharing for valuetypes
+---
+
 # The problem #
 
 In some environments like ios, its not possible to generate native code at 

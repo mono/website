@@ -1,3 +1,7 @@
+---
+title: Bitcode
+---
+
 # Introduction #
 
 Bitcode imposes the following major restrictions:
