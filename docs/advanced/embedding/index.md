@@ -599,6 +599,7 @@ Mono consumes a set of signals during execution that your applications will not 
 -   SIGFPE: caught so we can turn that into an exception
 -   SIGQUIT, SIGKILL to produce ExecutionEngineException.
 -   SIGSEGV: to produce NullReferenceExceptions
+-   SIGCHLD: to track the life-cycle of processes (notably System.Diagnostics.Process)
 
 One signal picked at startup time between SIGRTMIN and SIGRTMAX. The signal is picked up by finding a signal in that range which is set to SIG_DFL.
 
