@@ -258,6 +258,7 @@ the two, we use anon generic parameters whose `gshared_constraint` field
 is set to point to a valuetype.
 
 Relevant files/functions include:
+
 * `method-to-ir.c`:
 * `mini-generic-sharing.c`:
  `instantiate_info ()`: This contains the code which handles calls made from gsharedvt methods through an rgctx entry.
