@@ -5,11 +5,13 @@ title: Bitcode
 # Introduction #
 
 Bitcode imposes the following major restrictions:
+
 * No inline assembly/machine code
 * Compilation using stock clang
 
 To enable the runtime to operate in this environment, a new execution
 mode 'llvmonly' was implemented. In this mode:
+
 * everything is compiled to llvm bitcode, then compiled to native
 code using clang.
 * no trampolines, etc. are used.
@@ -27,7 +29,11 @@ is responsible for passing them. The method address and the possible additional 
 together into a function descriptor represented by a MonoFtnDesc structure. These function descriptors are
 used instead of method addresses anywhere where a callee might require an extra argument. A call
 using an ftndesc looks like this:
+
+```c
 ftndesc->addr (<normal args>, ftndesc->arg);
+```
+
 The 'arg' field might be null, in which case the caller will pass one more argument than the callee requires, but
 that is not a problem with most calling conventions.
 
@@ -76,7 +82,7 @@ method can be looked up at compile time.
 Vtable slots contain ftn descriptors. They are initialized to null when the vtable is created, so the calling code
 has to initialize them on demand. So a virtual calls looks like this:
 
-```
+```c
 if (vtable [slot] == null)
    init_vtable_slot (vtable, slot);
 ftndesc = vtable [slot];
@@ -87,11 +93,11 @@ ftndesc = vtable [slot];
 
 Interface calls are implemented using IMT. The imt entries in the vtable contain an ftndesc. The ftndesc
 points to a imt thunk. IMT thunks are C functions implemented in the runtime. They receive the imt method,
-and a table of <method, ftndesc> pairs, and return the ftndesc corresponding to the imt method.
+and a table of `<method, ftndesc>` pairs, and return the ftndesc corresponding to the imt method.
 
 The generated code looks like this:
 
-```
+```c
 imt_ftndesc = vtable [imt_slot];
 ftndesc = imt_ftndesc->addr (imt_method, imt_ftndesc->arg);
 <call using ftndesc>
@@ -109,9 +115,9 @@ These are handled similarly to interface calls.
 
 There are two kinds of gsharedvt methods: ones with a variable signature, and those without one. A variable signature is a signature which includes parameters/return values whose size is not known at compile time.
 Gsharedvt methods without variable signatures are handler similarly as in normal mode. Methods with variable signatures are handles as follows: all parameters and returned by ref, even the fixed size ones.
-I.e., for T foo<T> (int i, T t), both 'i' and 't' are passed by ref, and the result is returned by ref using a hidden argument. So the real signature of the gsharedvt version of foo looks like this:
+I.e., for `T foo<T> (int i, T t)`, both 'i' and 't' are passed by ref, and the result is returned by ref using a hidden argument. So the real signature of the gsharedvt version of foo looks like this:
 
-```
+```c
 void foo (ref T_GSHAREDVT vret, ref int i, ref T_GSHAREDVT t, <rgctx arg>);
 ```
 
@@ -120,7 +126,7 @@ every possible concrete signature from the program, and generates in/out wrapper
 
 A gsharedvt in wrapper for the method above looks like this (T==int):
 
-```
+```c
 int gsharedvt_in_int_int (int i, int t, ftndesc callee)
 {
 	int res;
@@ -131,7 +137,7 @@ int gsharedvt_in_int_int (int i, int t, ftndesc callee)
 ```
 While a gsharedvt out wrapper for the same instantiation looks like:
 
-```
+```c
 void gsharedvt_out_int_int (ref int vret, ref int i, ref int t, ftndesc callee)
 {
 	*vret = callee->addr (*i, *t, callee->arg);
@@ -143,20 +149,20 @@ The last argument to the wrappers is an ftndesc for the method which needs to be
 ## Delegates ##
 
 In normal mode, delegate trampolines and various small invoke trampolines are used to implement delegate creation/invocation efficiently. In llvmonly mode, we fall back to the normal delegate-invoke wrappers.
-The delegates need to invoke an ftndesc since the target method can require an extra argument. The 'addr' part of the ftndesc is stored in MonoDelegate.method_ptr, and the 'arg' part is stored in
-MonoDelegate.extra_arg. The delegate invoke wrapper uses a special IL opcode called CEE_MONO_CALLI_EXTRA_ARG to make the call which takes this into account.
+The delegates need to invoke an ftndesc since the target method can require an extra argument. The 'addr' part of the ftndesc is stored in `MonoDelegate.method_ptr`, and the 'arg' part is stored in
+`MonoDelegate.extra_arg`. The delegate invoke wrapper uses a special IL opcode called `CEE_MONO_CALLI_EXTRA_ARG` to make the call which takes this into account.
 
 If the target method is gsharedvt, we cannot add an gsharedvt in wrapper around it, since the concrete signature required might not exist at compile time if the delegate is only invoked through a gsharedvt
-delegate-invoke wrapper. To work around this, we set the lowest bit of MonoDelegate.extra_arg to indicate this, and the CALLI_EXTRA_ARG opcode generates code which checks at runtime to see which
+delegate-invoke wrapper. To work around this, we set the lowest bit of `MonoDelegate.extra_arg` to indicate this, and the `CALLI_EXTRA_ARG` opcode generates code which checks at runtime to see which
 calling conv needs to be used.
 
 ## Runtime invoke ##
 
 Runtime invoke is used to dynamically invoke managed methods. It is implemented using runtime-invoke wrappers, which receive an C array of parameter values, and pass it to a method which is called.
 
-For example, the runtime-invoke wrapper for the foo<int> method above looks like:
+For example, the runtime-invoke wrapper for the `foo<int>` method above looks like:
 
-```
+```c
 void runtime_invoke_int_int (gpointer[] params, gpointer addr, gpointer *exc)
 {
 	try {

@@ -9,7 +9,7 @@ runtime. This means that we have to compile all possible methods used by
 the application at compilation time. For generic methods, this is not
 always possible, i.e.:
 
-```
+```c
 interface IFace {
 	void foo<T> (T t);
 }
@@ -37,7 +37,7 @@ types have the same size: 1 word.
 In order to extend generic sharing to valuetypes, we need to solve many 
 problems. Take the following method:
 
-```
+```c
 void swap<T> (T[] a, int i, int j)
 {
    var t = a [i];
@@ -53,7 +53,7 @@ first assignment.
 For methods which contain their type parameters in their signatures, the 
 situation is even more complex:
 
-```
+```c
 public T return_t<T> (T t) {
     return t;
 }
@@ -81,7 +81,7 @@ when needed. The information required for this is stored in a
 an rgctx slot. At the start of the method, the following pseudo code
 is used to initialize the locals area:
 
-```
+```c
 info_var = rgctx_fetch(<METHOD GSHAREDVT INFO>)
 locals_var = localloc (info_var->locals_size)
 ```
@@ -89,20 +89,20 @@ locals_var = localloc (info_var->locals_size)
 Whenever an address of a variable sized locals is required, its
 computed using:
 
-```
+```c
 locals_var + info_var->locals_offsets [<local idx>]
 ```
 
 Local variables are initialized using memset, and copied using
 memcpy. The size of the locals is fetched from the rgctx. So
 
-```
+```c
 T a = b;
 ```
 
 is compiled to:
 
-```
+```c
 a_addr = locals_var + info_var->locals_offsets [<a idx>]
 b_addr = locals_var + info_var->locals_offsets [<b idx>]
 size = rgctx_fetch(<T size>)
@@ -117,13 +117,13 @@ GSharedvt methods whose signature includes variable types use a
 different calling convention where gsharedvt arguments are passed by
 ref.
 
-```
+```c
 foo(int,int,int,T)
 ```
 
 is called using:
 
-```
+```c
 foo(inti,int,int,T&)
 ```
 
@@ -148,7 +148,7 @@ the info structure to the trampoline:
 
 So a call goes:
 
-```
+```c
 <caller> -> <gsharedvt arg trampoline> -> <gsharedvt trampoline> -> <callee>
 ```
 
@@ -157,6 +157,7 @@ and the callee is a normal method.
 
 The info structure contains everything need to transfer arguments and make 
 the call, this includes:
+
 * the callee address.
 * an rgctx to pass to the callee.
 * a mapping for registers and stack slots.
@@ -239,7 +240,7 @@ when a virtual method is compiled as gsharedvt, we put an 'in' wrapper around
 it, and put the address of this wrapper into the vtable slot, instead 
 of the method code. The virtual call will add an 'out' wrapper, so the call sequence will be:
 
-```
+```c
 <caller> -> <out wrapper> -> <in wrapper> -> <callee>
 ```
 
