@@ -24,8 +24,6 @@ After creating a button using its argument-less constructor, it's then up to you
 
 Here's an example of creating a button with a image and a label in it. I've broken up the code to create a box from the rest so you can use it in your programs. There are further examples of using images later in the tutorial.
 
-[Image:buttons.png]
-
 ``` csharp
 // /samples/tutorial/buttons/buttons.cs - Gtk# Tutorial example
 //
