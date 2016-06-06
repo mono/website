@@ -589,7 +589,7 @@ But the same principle applies everywhere else in Mono. Avoid complex code or re
 Warnings
 --------
 
-Avoid commiting code with warnings to the repository, the use of #pragmas to disable warnings is strongly discouraged, but can be used on unique cases. Please justify the use of the warning ignore clause on a comment.
+Avoid committing code with warnings to the repository, the use of #pragmas to disable warnings is strongly discouraged, but can be used on unique cases. Please justify the use of the warning ignore clause on a comment.
 
 Do not commit changes to the Makefiles that removes warnings, if anything warnings should be eliminated one at a time, and if not possible, they must be flagged.
 
