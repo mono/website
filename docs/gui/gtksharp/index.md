@@ -56,13 +56,17 @@ Our current stable release targets the GNOME 2.20 release.
 
 Current Source Releases:
 
--   [gtk-sharp](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12/gtk-sharp-2.12.10.tar.gz)
--   [gnome-sharp](http://ftp.gnome.org/pub/gnome/sources/gnome-sharp/2.24/gnome-sharp-2.24.1.tar.gz)
--   [gnome-desktop-sharp](http://ftp.gnome.org/pub/gnome/sources/gnome-desktop-sharp/2.24/gnome-desktop-sharp-2.24.0.tar.gz)
+-   [gtk-sharp](http://download.mono-project.com/sources/gtk-sharp212/)
+-   [gnome-sharp](http://ftp.gnome.org/pub/gnome/sources/gnome-sharp/2.24/)
+-   [gnome-desktop-sharp](http://ftp.gnome.org/pub/gnome/sources/gnome-desktop-sharp/2.26/)
 
 [Packages and installers](/download/)
 
-Sources for older releases can be downloaded from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp).
+Sources for releases up to 2.12.10 are available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp),
+while later 2.12.x releases are only available from [MONO DOWNLOAD](http://download.mono-project.com/sources/gtk-sharp212/).
+
+Source packages for GTK#3 beta releases (2.99.x) are only available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp).
+
 
 ### GTK#3 porting guide
 
