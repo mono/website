@@ -4,7 +4,7 @@ redirect_from:
   - /Software/
 ---
 
-The following applications were developped with Mono and run on its runtime:
+The following applications were developed with Mono and run on its runtime:
 
 Applications
 ============
