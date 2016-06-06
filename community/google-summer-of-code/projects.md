@@ -350,7 +350,7 @@ As part of this task you’ll need to continue the bindings effort for the Qt fr
 
 QtSharp has reached alpha status and it needs the final improvements to make it a complete product. The necessary work can be broken down into five categories:
 
-* Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience.
+* Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an optimal coding experience.
 Deliverables: The following type maps: QList<>, QVector<> ↔ List<>; QMap<,>, QHash<,> ↔ Dictionary<,>; and QChar<> ↔ char;
 
 * Qt Quick support –  enables writing of Qt Quick applications using C#.
