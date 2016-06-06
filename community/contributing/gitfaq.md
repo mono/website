@@ -324,7 +324,7 @@ Please add the following to either your Mono repository's .git/config or your gl
 When I commit, my commit "repeats" commits of other people
 ----------------------------------------------------------
 
-There's nothing to worry -- you don't need to do anything, there's nothing to "fix" on that commit. 'git' probably created a merge commit when it found that independent commits occured on the repository while you were working on the current commit/push. In fact, it's the Github UI for displaying merges that misleads us to think that there are "repeats", and make us worry about unintended changes.
+There's nothing to worry -- you don't need to do anything, there's nothing to "fix" on that commit. 'git' probably created a merge commit when it found that independent commits occurred on the repository while you were working on the current commit/push. In fact, it's the Github UI for displaying merges that misleads us to think that there are "repeats", and make us worry about unintended changes.
 
 There's no information loss, and no duplication of work. Using a better UI, like 'gitk' or the Github "Network" view, will help better illustrate the non-linear commit history around such a merge.
 
