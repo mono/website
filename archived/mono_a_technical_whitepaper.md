@@ -266,7 +266,7 @@ Deploying ASP.NET applications to Linux (or other Unixes) is a very attractive p
 
 #### Desktop Applications with System.Windows.Forms
 
-While many applications we use on a daily basis are web applications, there are still a lot of rich client applications being developped either as packaged commercial software (think Adobe Acrobat, Quicken Turbo Tax, Microsoft Word), business applications built by your IT organization or all the great little applications you might use on a daily basis (RSS reader, note taking application, Mp3 or Movie players and many others).
+While many applications we use on a daily basis are web applications, there are still a lot of rich client applications being developed either as packaged commercial software (think Adobe Acrobat, Quicken Turbo Tax, Microsoft Word), business applications built by your IT organization or all the great little applications you might use on a daily basis (RSS reader, note taking application, Mp3 or Movie players and many others).
 
 On Windows, most .NET developers use the Windows.Forms API to build those applications. System.Windows.Forms (or SWF) is the name given to the GUI portion of the Microsoft .NET development framework, providing access to the native Windows widgets by wrapping the existing Win32 API.
 
