@@ -147,15 +147,17 @@ Creates a C lexical scope. It causes a transition from Unsafe to Safe mode.
 Ok only under Unsafe mode.
 
 Great around a syscall that can block for a while (sockets, io).
-Managed pointers can leak into the GC Safe region. For example:
+Managed pointers *cannot* leak into the GC Safe region, as the GC might run while the thread is in this section, and move the referenced object around in the managed heap, leading to an invalid naked object pointer. For example, the following code is broken:
 
 ```c
 MonoArray *x;
 int res;
 MONO_PREPARE_BLOCKING
-res = read (1, mono_array_addr (x, char, 0), mono_array_length (x), 0);
+res = read (1, mono_array_addr (x, char, 0), mono_array_length (x), 0); // if a GC run while read is blocked in the OS, the object x might be moved, and x would then point to garbage, or worst, in the middle of another object. And whenever the OS would write into the buffer passed to read, it would override managed memory.
 MONO_FINISH_BLOCKING
 ```
+
+To safely use an object reference in a GC safe section, the object needs to be pinned in the managed heap with a GC handle, and you cannot access any ref field on this object.
 
 ### MONO_PREPARE_RESET_BLOCKING / MONO_FINISH_RESET_BLOCKING
 
@@ -166,14 +168,6 @@ This covers the case where code was expected to be in GC Safe mode but it now ne
 
 For example, the first call to a pinvoke will hit a trampoline that needs to move the runtime back into GC Unsafe
 mode before going around resolving it. Once the pinvoke is resolved, the previous mode must be restored.
-
-### MONO_TRY_BLOCKING / MONO_FINISH_TRY_BLOCKING
-
-Creates a C lexical scope. It tries to transition the runtime to GC Safe mode. Resets to the previous mode on exit.
-Ok under any mode.
-
-This coves the case where code must enter GC Safe mode but it doesn't know if it is already under it.
-Great to use around locks, that might be used in both modes.
 
 ## Managed object handles
 
