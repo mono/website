@@ -6,6 +6,8 @@ redirect_from:
   - /MoMa/
 ---
 
+{% include note.html type='warning' message='MoMA is not updated with data for the latest Mono releases and there are no current plans to do so.' %}
+
 [![Moma2p1.png](/archived/images/5/53/Moma2p1.png)](/archived/images/5/53/Moma2p1.png)
 
 Mono Migration Analyzer
