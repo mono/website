@@ -26,7 +26,7 @@ The `<dllentry>` element takes 3 attributes:
 
 -   `name`: This is the name of the function as it appears in the metadata: it is the name of the P/Invoke method.
 
--   `target`: This is the name of the function to lookup instead of the name specified in the P/Invoke method.
+-   `target`: This is the name of the function to lookup instead of the name specified in the P/Invoke method.   As of Mono 4.8.0, this element is optional, and if not specified, it will default to the same value as `name`.    In previous versions, you must specify the value.
 
 Usage
 -----
@@ -75,6 +75,17 @@ to a different function in libdifferent.so, but to the same function in the libr
   <dllmap dll="libc">
     <dllentry dll="libdifferent.so" name="somefunction" target="differentfunction" />
     <dllentry os="solaris,freebsd" dll="libanother.so" name="somefunction" target="differentfunction" />
+  </dllmap>
+</configuration>
+```
+
+Starting with Mono 4.8.0, you can also specify a different dll target on a per-`dllentry` basis.  Imagine that on Windows you have a library `SolarSystem.dll`, but on Unix the same functionality is available in two libraries `libearth.so` and `libmars.so`, so you can write:
+
+```xml
+<configuration>
+  <dllmap os="!windows" dll="SolarSystem">
+    <dllentry dll="libearth.so" name="get_Animals" />
+    <dllentry dll="libmars.so" nane="get_Plants" />
   </dllmap>
 </configuration>
 ```
