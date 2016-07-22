@@ -67,7 +67,6 @@ while later 2.12.x releases are only available from [MONO DOWNLOAD](http://downl
 
 Source packages for GTK#3 beta releases (2.99.x) are only available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp).
 
-
 ### GTK#3 porting guide
 
 See [GTK#3 porting guide](/docs/gui/gtksharp/gtksharp3-porting-guide/)

@@ -79,7 +79,7 @@ other_function (void)
     //3rd option (deprecated): raise an exception and write a FIXME note
     //  (implicit cleanup, no-op if there was no error)
     mono_error_raise_exception (&error); /* FIXME don't raise here */
-    
+
     //4th option: ignore
     mono_error_cleanup (&error);
 }

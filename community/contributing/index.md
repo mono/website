@@ -70,8 +70,9 @@ Contributing to Mono
 ====================
 
 Mono now part of the .NET Foundation
------------------------------------
-The Mono project is now part of the .NET Foundation and contributors have to sign the [.NET Foundation CLA](https://cla2.dotnetfoundation.org) before submitting a pull request. 
+------------------------------------
+
+The Mono project is now part of the .NET Foundation and contributors have to sign the [.NET Foundation CLA](https://cla2.dotnetfoundation.org) before submitting a pull request.
 
 Contributing to the Class Libraries
 -----------------------------------

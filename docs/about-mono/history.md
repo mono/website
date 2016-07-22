@@ -88,7 +88,6 @@ Milestones
 
 -   June 30th: Mono 1.0 is released.
 
-
 2016
 ----
 

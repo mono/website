@@ -56,7 +56,7 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 -   [Android](https://developer.xamarin.com/guides/android/)
 -   [Apple iOS](https://developer.xamarin.com/guides/ios), [iOS](/docs/about-mono/supported-platforms/iphone/)
--   [Apple macOS](/docs/about-mono/supported-platforms/osx/), 
+-   [Apple macOS](/docs/about-mono/supported-platforms/osx/),
 -   [Apple tvOS](https://developer.xamarin.com/guides/ios/tvos/)
 -   [Apple watchOS](https://developer.xamarin.com/guides/ios/watch/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
@@ -143,14 +143,14 @@ bash$ mkbundle --simple hello.exe -o hello
 Done
 bash$ ./hello
 Hello, world.
-bash$ 
+bash$
 ```
 
 Of course, you can also just embed the libraries, without the actual Mono runtime, by removing the --static flag.
 
 ### Linker
 
-Mono ships with a customizable assembly-linker.   This is a technology that can be used to 
+Mono ships with a customizable assembly-linker.   This is a technology that can be used to
 create a custom deployment of the Mono runtime that only contains the code that your application
 uses.   This is similar to what a native linker does, except that we retain the same assemblies.
 

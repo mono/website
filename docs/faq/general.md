@@ -103,7 +103,7 @@ Please see the [Mono Roadmap](/docs/about-mono/roadmap/) for more details on the
 
 ### How can I contribute?
 
-Check the [contributing](/community/contributing/) section. You will also have to sign the [.NET Foundation CLA] (https://cla2.dotnetfoundation.org). 
+Check the [contributing](/community/contributing/) section. You will also have to sign the [.NET Foundation CLA](https://cla2.dotnetfoundation.org).
 
 ### Aren't you just copying someone else's work?
 
@@ -207,7 +207,6 @@ See [COM Interop](/docs/advanced/com-interop/).
 There are .NET bindings for creating OpenOffice applications. For more details see Go-OpenOffice's [Open Office integration with Mono](http://go-ooo.org/wiki/index.php/Mono_Integration) article.
 
 openSUSE ships with a Mono-enabled version of OpenOffice which developers can use right away.
-
 
 Credits
 -------

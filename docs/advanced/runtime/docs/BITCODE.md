@@ -129,18 +129,19 @@ A gsharedvt in wrapper for the method above looks like this (T==int):
 ```c
 int gsharedvt_in_int_int (int i, int t, ftndesc callee)
 {
-	int res;
+    int res;
 
     callee->addr (&res, &i, &t, callee->arg);
     return res;
 }
 ```
+
 While a gsharedvt out wrapper for the same instantiation looks like:
 
 ```c
 void gsharedvt_out_int_int (ref int vret, ref int i, ref int t, ftndesc callee)
 {
-	*vret = callee->addr (*i, *t, callee->arg);
+    *vret = callee->addr (*i, *t, callee->arg);
 }
 ```
 
@@ -165,11 +166,11 @@ For example, the runtime-invoke wrapper for the `foo<int>` method above looks li
 ```c
 void runtime_invoke_int_int (gpointer[] params, gpointer addr, gpointer *exc)
 {
-	try {
+    try {
          int ret = addr (params [0], params [1]);
          return box(ret, typeof<int>);
     } catch (Exception ex) {
-          *exc = ex;
+         *exc = ex;
    }
 }
 ```

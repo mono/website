@@ -4,37 +4,37 @@ title: Generic sharing for valuetypes
 
 # The problem #
 
-In some environments like ios, its not possible to generate native code at 
-runtime. This means that we have to compile all possible methods used by 
+In some environments like ios, its not possible to generate native code at
+runtime. This means that we have to compile all possible methods used by
 the application at compilation time. For generic methods, this is not
 always possible, i.e.:
 
 ```c
 interface IFace {
-	void foo<T> (T t);
+    void foo<T> (T t);
 }
 
 class Class1 : IFace {
-	  public virtual void foo<T> (T t) {
+    public virtual void foo<T> (T t) {
       ...
-	  }
+    }
 }
 
 IFace o = new Class1 ();
 o.foo<int> ();
 ```
 
-In this particular case, it is very hard to determine at compile time that 
-`Class1:foo<int>` will be needed at runtime. For generic methods instantiated 
-with reference types, the mono runtime supports 'generic sharing'. 
+In this particular case, it is very hard to determine at compile time that
+`Class1:foo<int>` will be needed at runtime. For generic methods instantiated
+with reference types, the mono runtime supports 'generic sharing'.
 
-This means that we only compile one version of the method, and use it for all 
-instantiations made with reference types, i.e. `Array.Sort<string>` and 
+This means that we only compile one version of the method, and use it for all
+instantiations made with reference types, i.e. `Array.Sort<string>` and
 `Array.Sort<object>` is actually the same native method at runtime. Generating
-native code for generic shared methods is not very complex since all reference 
+native code for generic shared methods is not very complex since all reference
 types have the same size: 1 word.
 
-In order to extend generic sharing to valuetypes, we need to solve many 
+In order to extend generic sharing to valuetypes, we need to solve many
 problems. Take the following method:
 
 ```c
@@ -42,15 +42,15 @@ void swap<T> (T[] a, int i, int j)
 {
    var t = a [i];
    a [i] = a [j];
-  a [j] = t;
+   a [j] = t;
 }
 ```
 
-Here, the size of 'T' is only known at runtime, so we don't know how much stack 
+Here, the size of 'T' is only known at runtime, so we don't know how much stack
 space to allocate for 't', or how much memory to copy from a [i] to t in the
 first assignment.
 
-For methods which contain their type parameters in their signatures, the 
+For methods which contain their type parameters in their signatures, the
 situation is even more complex:
 
 ```c
@@ -59,11 +59,11 @@ public T return_t<T> (T t) {
 }
 ```
 
-Here, the native signature of the method depends on its type parameter. One 
-caller might call this as `return_t<int> (1)`, passing in an int in one register, 
+Here, the native signature of the method depends on its type parameter. One
+caller might call this as `return_t<int> (1)`, passing in an int in one register,
 and expecting the result to be in the return register, while another might call
-this with a struct, passing it in registers and/or the stack, and expecting the 
-result to be in a memory area whose address was passed in as an extra hidden 
+this with a struct, passing it in registers and/or the stack, and expecting the
+result to be in a memory area whose address was passed in as an extra hidden
 parameter.
 
 # Basic implementation #
@@ -133,17 +133,17 @@ large structures, i.e. by passing a hidden parameter pointing to a
 memory area where the method is expected to store the return value.
 
 When a call is made to a generic method from a normal method, the caller uses
-a signature with concrete types, i.e.: `return_t<int> (1)`. If the callee is 
-also a normal method, then there is no further work needed. However, if the 
-callee is a gsharedvt method, then we have to transition between the signature 
+a signature with concrete types, i.e.: `return_t<int> (1)`. If the callee is
+also a normal method, then there is no further work needed. However, if the
+callee is a gsharedvt method, then we have to transition between the signature
 used by the caller (int (int) in this case), and the signature used by the callee
 . This process is very low level and architecture specific.
 
-It typically involves reordering values in registers, stack slots etc. It is done 
-by a trampoline called the gsharedvt trampoline. The trampoline receives a pointer 
-to an info structure which describes the calling convention used by the caller 
-and the callee, and the steps needed to transition between the two. The info 
-structure is not passed by the caller, so we use another trampoline to pass 
+It typically involves reordering values in registers, stack slots etc. It is done
+by a trampoline called the gsharedvt trampoline. The trampoline receives a pointer
+to an info structure which describes the calling convention used by the caller
+and the callee, and the steps needed to transition between the two. The info
+structure is not passed by the caller, so we use another trampoline to pass
 the info structure to the trampoline:
 
 So a call goes:
@@ -152,10 +152,10 @@ So a call goes:
 <caller> -> <gsharedvt arg trampoline> -> <gsharedvt trampoline> -> <callee>
 ```
 
-The same is true in the reverse case, i.e. when the caller is a gsharedvt method, 
+The same is true in the reverse case, i.e. when the caller is a gsharedvt method,
 and the callee is a normal method.
 
-The info structure contains everything need to transfer arguments and make 
+The info structure contains everything need to transfer arguments and make
 the call, this includes:
 
 * the callee address.
@@ -166,49 +166,49 @@ the call, this includes:
 
 As an example, here is what happens for the `return_t<int>` case on ARM:
 
-- The caller passes in the argument in r0, and expects the return value to
+* The caller passes in the argument in r0, and expects the return value to
 be in r0.
 
-- The callee receives the address of the int value in  r1,
+* The callee receives the address of the int value in  r1,
 and it receives the valuetype return address in r0.
 
 Here is the calling sequence:
 
-- The caller puts the value 1 in r0, then makes the call, which goes to the 
+* The caller puts the value 1 in r0, then makes the call, which goes to the
   trampoline code.
 
-- The trampoline infrastructure detects that the call needs a gsharedvt 
-  trampoline. It computes the info structure holding the calling convention 
+* The trampoline infrastructure detects that the call needs a gsharedvt
+  trampoline. It computes the info structure holding the calling convention
   information, then creates a gsharedvt arg trampoline for it.
 
-- The gsharedvt arg trampoline is called, which calls the gsharedvt trampoline, 
+* The gsharedvt arg trampoline is called, which calls the gsharedvt trampoline,
   passing the info structure as an argument.
 
-- The trampoline allocates a new stack frame, along with a 1 word area to hold
+* The trampoline allocates a new stack frame, along with a 1 word area to hold
   the return value.
 
-- It receives the parameter value in r0, saves it into one of its
+* It receives the parameter value in r0, saves it into one of its
 stack slots, and passes the address of the stack slot in r1.
 
-- It puts the address of the return value into r0.
+* It puts the address of the return value into r0.
 
-- It calls the gsharedvt method.
+* It calls the gsharedvt method.
 
-- The method copies the memory pointed to by r1 to the memory pointed
+* The method copies the memory pointed to by r1 to the memory pointed
 to by r0, and returns to the trampoline.
 
-- The trampoline loads the return value from the return value area into r0 and 
+* The trampoline loads the return value from the return value area into r0 and
 returns to the caller.
 
-- The caller receives the return value in r0.
+* The caller receives the return value in r0.
 
-For exception handling purposes, we create a wrapper method for the gsharedvt 
-trampoline, so it shows up in stack traces, and the unwind code can unwind 
+For exception handling purposes, we create a wrapper method for the gsharedvt
+trampoline, so it shows up in stack traces, and the unwind code can unwind
 through it.  There are two kinds of wrappers, 'in' and 'out'.
-'in' wrappers handle calls made to gsharedvt methods from callers which use 
-a variable signature, while 'out' wrappers handle calls made to normal methods 
+'in' wrappers handle calls made to gsharedvt methods from callers which use
+a variable signature, while 'out' wrappers handle calls made to normal methods
 from callers which use a variable signature. In later parts of
-this document, we use the term 'wrapper' to mean a gsharedvt arg trampoline. 
+this document, we use the term 'wrapper' to mean a gsharedvt arg trampoline.
 
 ## Making calls out of gsharedvt methods ##
 
@@ -220,24 +220,24 @@ These are handed normally.
 
 These have several problems:
 
-* The callee might end up being a gsharedvt or a non-gsharedvt method. The former 
+* The callee might end up being a gsharedvt or a non-gsharedvt method. The former
   doesn't need a wrapper, the latter does.
 
-* The wrapper needs to do different things for different instantiations. This means 
-  that the call cannot be patched to go to a wrapper, since the wrapper is specific 
+* The wrapper needs to do different things for different instantiations. This means
+  that the call cannot be patched to go to a wrapper, since the wrapper is specific
   to one instantiation.
 
-To solve these problems, we make an indirect call through an rgctx entry. The 
-rgctx entry resolver code determines what wrapper is needed, and patches the 
-rgctx entry with the address of the wrapper, so later calls made from the gsharedvt 
+To solve these problems, we make an indirect call through an rgctx entry. The
+rgctx entry resolver code determines what wrapper is needed, and patches the
+rgctx entry with the address of the wrapper, so later calls made from the gsharedvt
 method with the same instantiation will go straight to the wrapper.
 
 ### Virtual calls made using a variable signature ###
 
-Virtual methods have an extra complexity: there is only one vtable entry for a 
-method, and it can be called by both normal and gsharedvt code. To solve this, 
-when a virtual method is compiled as gsharedvt, we put an 'in' wrapper around 
-it, and put the address of this wrapper into the vtable slot, instead 
+Virtual methods have an extra complexity: there is only one vtable entry for a
+method, and it can be called by both normal and gsharedvt code. To solve this,
+when a virtual method is compiled as gsharedvt, we put an 'in' wrapper around
+it, and put the address of this wrapper into the vtable slot, instead
 of the method code. The virtual call will add an 'out' wrapper, so the call sequence will be:
 
 ```c
@@ -246,9 +246,9 @@ of the method code. The virtual call will add an 'out' wrapper, so the call sequ
 
 # AOT support #
 
-We AOT a gsharedvt version of every generic method, and use it at runtime if 
-the specific instantiation of a method is not found. We also save the gsharedvt 
-trampoline to the mscorlib AOT image, along with a bunch of gsharedvt 
+We AOT a gsharedvt version of every generic method, and use it at runtime if
+the specific instantiation of a method is not found. We also save the gsharedvt
+trampoline to the mscorlib AOT image, along with a bunch of gsharedvt
 arg trampolines.
 
 # Implementation details #

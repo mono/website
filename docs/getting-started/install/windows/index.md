@@ -26,7 +26,7 @@ Gtk#
 
 Alternatively, if you only want to use Gtk# on Windows, without Mono, you can use the [Gtk# installer for the .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/).
 
-Mono in the Windows 10 Bash 
+Mono in the Windows 10 Bash
 ---------------------------
 
 Windows 10 Insider builds 14316 and greater come with an *experimental*, optional Ubuntu subsystem that exposes bash as an alternative shell. This can be used to install the Debian/Ubuntu version of Mono alongside or instead of the Windows version. Note that this feature is in beta and you need to [manually enable it](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/). For more information about how to install Mono inside Windows Bash and known problems, refer to [this issue](https://github.com/mono/website/issues/199).

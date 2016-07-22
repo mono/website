@@ -33,18 +33,17 @@ Patents
 
 Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/blob/master/PATENTS.TXT), as follows:
 
-
      Microsoft Patent Promise for Mono
-     
+
      Microsoft Corporation and its affiliates (“Microsoft”) promise not to
      assert any Applicable Patents against you for making, using, selling,
      offering for sale, importing, or distributing Mono.
-     
+
      If you file, maintain, or voluntarily participate in any claim in a
      lawsuit alleging direct or contributory patent infringement by Mono,
      or inducement of patent infringement by Mono, then your rights under
      this promise will automatically terminate.
-     
+
      This promise is not an assurance that (i) any Applicable Patents are
      valid or enforceable or (ii) Mono does not infringe patents or other
      intellectual property rights of any third party. No rights except
@@ -54,22 +53,22 @@ Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/bl
      and you agree as a condition of benefitting from it that no Microsoft
      rights are received from suppliers, distributors, or otherwise in
      connection with this promise.
-     
+
      Definitions:
-     
+
      “Mono” means those portions of the software development technology, as
      originally distributed by Xamarin, Inc. or the .NET Foundation under
      the name “Mono,” that implement .NET Framework Functionality, provided
      that such portions at a minimum implement all of the required parts of
      the mandatory provisions of Standard ECMA-335 – Common Language
      Infrastructure (CLI).
-     
+
      “.NET Framework Functionality” means any functionality in Microsoft’s
      .NET Framework as described in Microsoft’s API documentation on
      Microsoft’s MSDN website, including the functionality in
      Windowsbase.dll, but excluding all other functionality in the Windows
      Presentation Foundation component of .NET Framework.
-     
+
      “Applicable Patents” are those patent claims, currently owned by
      Microsoft and acquired in the future, that are necessarily infringed
      by Mono. For clarity, Applicable Patents do not include any patent

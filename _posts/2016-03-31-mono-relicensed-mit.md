@@ -5,7 +5,7 @@ author: Miguel de Icaza
 tags: [releases]
 ---
 
-At Microsoft Build today, we announced that we are re-releasing Mono under the [MIT license](https://opensource.org/licenses/mit-license.html) and have contributed it to the [.NET Foundation](http://www.dotnetfoundation.org/).  These are major news for Mono developers and contributors, and I am incredibly excited about the opportunities that this will create for the Mono project, and for other projects that will be able to benefit from this.  
+At Microsoft Build today, we announced that we are re-releasing Mono under the [MIT license](https://opensource.org/licenses/mit-license.html) and have contributed it to the [.NET Foundation](http://www.dotnetfoundation.org/).  These are major news for Mono developers and contributors, and I am incredibly excited about the opportunities that this will create for the Mono project, and for other projects that will be able to benefit from this.
 
 ## Mono Runtime Released under MIT License
 
@@ -16,7 +16,7 @@ Moving the Mono runtime to the MIT license removes barriers to the adoption of C
 ## Open Sourcing Proprietary Mono Extensions
 
 Over the past 5 years, Xamarin has developed a number of proprietary extensions to Mono, including:
- 
+
 - ARM64 port of the Mono runtime
 - Workarounds for bugs in some ARM chips
 - Use of Apple's CommonCrypto to implement the crypto classes in the .NET API
