@@ -54,13 +54,18 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 **Operating Systems**
 
--   [Linux](/docs/about-mono/supported-platforms/linux/)
--   [Mac OS X](/docs/about-mono/supported-platforms/osx/), [iPhone OS](/docs/about-mono/supported-platforms/iphone/)
--   [Sun Solaris](/docs/about-mono/supported-platforms/solaris/)
+-   [Android](https://developer.xamarin.com/guides/android/)
+-   [Apple iOS](https://developer.xamarin.com/guides/ios), [iOS](/docs/about-mono/supported-platforms/iphone/)
+-   [Apple macOS](/docs/about-mono/supported-platforms/osx/), 
+-   [Apple tvOS](https://developer.xamarin.com/guides/ios/tvos/)
+-   [Apple watchOS](https://developer.xamarin.com/guides/ios/watch/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
+-   [Linux](/docs/about-mono/supported-platforms/linux/)
 -   [Microsoft Windows](/docs/getting-started/install/windows/)
 -   [Nintendo Wii](/docs/about-mono/supported-platforms/wii/)
 -   [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/)
+-   [Sony PlayStation 4](/docs/about-mono/supported-platforms/playstation4/)
+-   [Sun Solaris](/docs/about-mono/supported-platforms/solaris/)
 
 ### Supported Architectures
 
@@ -136,18 +141,42 @@ For example, to create a fully static and bundled version of Mono for "hello wor
 
 ``` bash
 bash$ mcs hello.cs
-bash$ mkbundle --static hello.exe -o hello
- OS is: Linux
- Sources: 1 Auto-dependencies: False
-   embedding: /tmp/hello.exe
- Compiling:
- as -o temp.o temp.s
- cc -o helol -Wall `pkg-config --cflags mono` temp.c  `pkg-config --libs-only-L mono` -Wl,-Bstatic -lmono -Wl,-Bdynamic `pkg-config --libs-only-l mono | sed -e "s/\-lmono //"` temp.o
- Done
-bash$
+bash$ mkbundle --simple hello.exe -o hello
+Done
+bash$ ./hello
+Hello, world.
+bash$ 
 ```
 
 Of course, you can also just embed the libraries, without the actual Mono runtime, by removing the --static flag.
+
+### Linker
+
+Mono ships with a customizable assembly-linker.   This is a technology that can be used to 
+create a custom deployment of the Mono runtime that only contains the code that your application
+uses.   This is similar to what a native linker does, except that we retain the same assemblies.
+
+For example:
+
+``` bash
+bash$ mcs hello.cs
+bash$ monolinker -c link -a hello.exe -out minimal
+bash$ ls -l minimal
+-rwxr-xr-x  1 miguel  wheel   683008 Jun  2 15:16 I18N.CJK.dll
+-rwxr-xr-x  1 miguel  wheel    32768 Jun  2 15:16 I18N.MidEast.dll
+-rwxr-xr-x  1 miguel  wheel    36352 Jun  2 15:16 I18N.Other.dll
+-rwxr-xr-x  1 miguel  wheel   182272 Jun  2 15:16 I18N.Rare.dll
+-rwxr-xr-x  1 miguel  wheel    71168 Jun  2 15:16 I18N.West.dll
+-rwxr-xr-x  1 miguel  wheel    39936 Jun  2 15:16 I18N.dll
+-rw-r--r--  1 miguel  wheel     3072 Jul 21 23:49 hello.exe
+-rw-r--r--  1 miguel  wheel  2223104 Jul 21 23:49 mscorlib.dll
+bash$ cd minimal
+bash$ mono hello.exe
+Hello, world.
+```
+
+You can combine the output of the linker with the bundler.   Allowing you to produce
+smaller versions of your self-contained executables.
 
 ### Platform for Code Optimizations
 
