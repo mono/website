@@ -69,20 +69,18 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 ### Supported Architectures
 
-Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime. The interpreter runtime is far less complex and is primarily used in the early stages before a JIT version for that architecture is constructed. The interpreter is not supported on architectures where the JIT has been ported.
-
-|Supported Architectures|Runtime|Operating system|
-|:----------------------|:------|:---------------|
-|[s390, s390x (32 and 64 bits)](/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
-|[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
-|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, Mac OSX, Wii, PlayStation 3|
-|[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
-|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, Solaris, OS X|
-|[IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|JIT|Linux|
-|[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
-|Alpha|JIT|**not maintained**. Linux|
-|[MIPS](/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
-|HPPA|JIT|**not maintained** Linux|
+|Supported Architectures|Operating system|
+|:----------------------|:---------------|
+|[s390, s390x (32 and 64 bits)](/docs/about-mono/supported-platforms/s390/)|Linux|
+|[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|Solaris, Linux|
+|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|Linux, Mac OSX, Wii, PlayStation 3|
+|[x86](/docs/about-mono/supported-platforms/x86/)|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
+|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|Linux, FreeBSD, OpenBSD, Solaris, OS X|
+|[IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|Linux|
+|[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|Linux (both old and new ABI), iPhone, Android|
+|Alpha|**not maintained**. Linux|
+|[MIPS](/docs/about-mono/supported-platforms/mips/)|Linux|
+|HPPA|**not maintained** Linux|
 
 Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-supported and may not be as complete as the other architectures.
 
