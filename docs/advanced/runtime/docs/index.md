@@ -26,6 +26,10 @@ This page currently contains links to the wiki-fied version of the runtime docum
 -   [Other topics](/docs/advanced/runtime/docs/other/)
 -   [Glossary](/docs/advanced/runtime/docs/glossary)
 
+### RFCs
+
+-   [ASCII strings proposal](/docs/advanced/runtime/docs/ascii-strings/)
+
 ### Runtime guidelines
 
 The following describe guidelines for specific areas of the runtime
