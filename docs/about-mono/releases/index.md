@@ -67,9 +67,16 @@ This page contains a list of all Mono releases. The latest release is {{ site.da
 Mono version numbers follow a specific policy, learn more [here](/docs/about-mono/versioning/).
 
 {% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "releasedate" | reverse %}
+{% assign upcoming = site.pages | where: "layout", "releasenotes" | sort: "version" | reverse %}
 
 Mono 4.x
 --------
+
+{% for p in upcoming %}
+{% if p.releasedate == null %}
+  - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(not released yet)*
+{% endif %}
+{% endfor %}
 
 {% for p in release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
