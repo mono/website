@@ -50,13 +50,15 @@ public int Length {
 }
 ```
 
-## Updating Native Code
+## Getting There: Updating Native Code
 
 Many places in Mono unsafely access `String` data, but they can be updated fairly easily: we can rename the fields, and use accessors that assert that a particular encoding is in use. However, we must be careful to verify that all those paths are covered by the test suite.
 
-## Disabling `fixed` on Strings
+## Getting There: Disabling `fixed` on Strings
 
-Now, every managed method that unsafely accesses `String` character data must be updated to account for whether the `String` is compact. This is tractable within `corlib`, but there is some third-party code that uses strings unsafely.
+The following is a technique that helped us bootstrap the effort.
+
+We needed very managed method that unsafely accesses `String` character data must be updated to account for whether the `String` is compact. This is tractable within `corlib`, but there is some third-party code that uses strings unsafely.
 
 The `fixed` statement on strings calls a method `get_OffsetToStringData`, which is used to adjust the `fixed` pointer to refer to the character data, rather than the `String` object. In ASCII Mono, we can make this method throw a `NotSupportedException` with a message like
 
@@ -64,7 +66,10 @@ The `fixed` statement on strings calls a method `get_OffsetToStringData`, which 
 
 Now we’re sure that only `corlib`-internal methods can access the `String` data, because only those methods have access to the `firstByte` field.
 
-## Adding `UnsafeApply` API
+Once we have completed this auditing work, we are going to replace the `get_OffsetToStringData` with a method that duplicates
+any ASCII-strings into UTF-16 strings if the user happens to call fixed on a comapct string.
+
+## Getting there: Adding `UnsafeApply` API
 
 In order to update existing third-party code that uses strings unsafely, we need some kind of `UnsafeApply` API:
 
