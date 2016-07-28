@@ -12,6 +12,12 @@ However, most strings in typical .NET applications consist solely of ASCII chara
 
 Since strings are immutable, we can scan the character data when the string is constructed, then dynamically select an encoding, thereby saving 50% of string memory in most cases.
 
+## Working Version
+
+A working version of this work is currently hosted here:
+
+[https://github.com/evincarofautumn/mono/commits/feature-strings](https://github.com/evincarofautumn/mono/commits/feature-strings)
+
 ## Updating `String`
 
 Strings currently have the following representation:
