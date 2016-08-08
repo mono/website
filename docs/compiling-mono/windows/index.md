@@ -26,7 +26,7 @@ PREFIX=/usr/local
 VERSION=4.2.1
 tar xvf mono-$VERSION.tar.bz2
 cd mono-$VERSION
-./configure --prefix=$PREFIX --host=i686-pc-mingw32
+./configure --prefix=$PREFIX --host=i686-w64-mingw32
 make
 make install
 ```
@@ -46,7 +46,7 @@ Once you do this, run the following commands, remember to replace PREFIX with yo
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git
 cd mono
-./autogen.sh --prefix=$PREFIX --host=i686-pc-mingw32
+./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32
 make
 make install
 ```
