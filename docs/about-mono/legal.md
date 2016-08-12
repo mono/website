@@ -9,3 +9,5 @@ All text and image content on mono-project.com, unless otherwise specified, is l
 This does not include the Mono name, logo, or icon, which are registered trademarks of [Novell](http://www.novell.com/linux).
 
 This does not include Mono source code.
+
+Sample code shown on the website is licensed under the [MIT license](https://opensource.org/licenses/MIT).
