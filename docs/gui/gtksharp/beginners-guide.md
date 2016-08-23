@@ -211,7 +211,7 @@ Now just compile like we did before and run it using \`mono HelloWorld.exe\` and
 
 Pretty easy, isn't it?"
 
-The first thing that you might notice, if you have used System.Windows.Forms is that we didn't add any layout code for our label. For example we didn't say 'myLabel.Left = 100' or 'myLabel.Width = 200' or anything that to add the label to the form, and just simply said 'myWin.Add(...)'. This is because a 'Gtk.Window' is a widget that inherits from a '[Bin](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Box)', or single widget hosting '[Container](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Container)'.
+The first thing that you might notice, if you have used System.Windows.Forms is that we didn't add any layout code for our label. For example we didn't say 'myLabel.Left = 100' or 'myLabel.Width = 200' or anything that to add the label to the form, and just simply said 'myWin.Add(...)'. This is because a 'Gtk.Window' is a widget that inherits from a '[Bin](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Bin)', or single widget hosting '[Container](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Container)'.
 
 The other part you may be interested in is what the "Application.Init()" and "Application.Run()" statements are for. If you have ever used System.Windows.Forms, its similar to "Application.Run()" in many ways. Normally, when the application gets done processing any code on its main thread the application will stop. Since "ShowAll()" doesn't block the code would continue on and shut down. The "Application.Init()" command tells the runtime to listen for any Gtk.Windows launched and when you run the run command it starts a the main loop on those windows. This keeps the application running until all the windows are closed. For more information check out the Monodoc information on the [Application](http://www.go-mono.com/docs/index.aspx?tlink=6@ecma%3a830%23Application%2f) object.
 
@@ -225,36 +225,36 @@ In order to have multiple widgets on our Window (since its a Bin) we need to add
 Step 6: Adding Events
 ---------------------
 
-All the classes that derive from '[Widget](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Box)' provide the following events:
+All the classes that derive from '[Widget](http://www.go-mono.com/docs/index.aspx?link=T%3aGtk.Widget)' provide the following events:
 
--   [ButtonPressEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ButtonPressEvent)
--   [ButtonReleaseEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ButtonReleaseEvent)
--   [ScrollEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ScrollEvent)
--   [MotionNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.MotionNotifyEvent)
--   [DeleteEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.DeleteEvent)
--   [DestroyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.DestroyEvent)
--   [ExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ExposeEvent)
--   [KeyPressEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.KeyPressEvent)
--   [KeyReleaseEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.KeyReleaseEvent)
--   [EnterNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.EnterNotifyEvent)
--   [LeaveNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.LeaveNotifyEvent)
--   [ConfigureEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ConfigureEvent)
--   [FocusInEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.FocusInEvent)
--   [FocusOutEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.FocusOutEvent)
--   [MapEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.MapEvent)
--   [UnmapEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.UnmapEvent)
--   [PropertyNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.PropertyNotifyEvent)
--   [SelectionClearEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionClearEvent)
--   [SelectionRequestEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionRequestEvent)
--   [SelectionNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.SelectionNotifyEvent)
--   [ProximityInEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ProximityInEvent)
--   [ProximityOutEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ProximityOutEvent)
--   [VisibilityNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.VisibilityNotifyEvent)
--   [ClientEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.ClientEvent)
--   [NoExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.NoExposeEvent)
--   [WindowStateEvent](http://www.go-mono.com/docs/monodoc.ashx?link=F%3aGtk.Widget.WindowStateEvent)
+-   [ButtonPressEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ButtonPressEvent)
+-   [ButtonReleaseEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ButtonReleaseEvent)
+-   [ScrollEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ScrollEvent)
+-   [MotionNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.MotionNotifyEvent)
+-   [DeleteEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.DeleteEvent)
+-   [DestroyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.DestroyEvent)
+-   [ExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ExposeEvent)
+-   [KeyPressEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.KeyPressEvent)
+-   [KeyReleaseEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.KeyReleaseEvent)
+-   [EnterNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.EnterNotifyEvent)
+-   [LeaveNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.LeaveNotifyEvent)
+-   [ConfigureEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ConfigureEvent)
+-   [FocusInEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.FocusInEvent)
+-   [FocusOutEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.FocusOutEvent)
+-   [MapEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.MapEvent)
+-   [UnmapEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.UnmapEvent)
+-   [PropertyNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.PropertyNotifyEvent)
+-   [SelectionClearEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.SelectionClearEvent)
+-   [SelectionRequestEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.SelectionRequestEvent)
+-   [SelectionNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.SelectionNotifyEvent)
+-   [ProximityInEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ProximityInEvent)
+-   [ProximityOutEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ProximityOutEvent)
+-   [VisibilityNotifyEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.VisibilityNotifyEvent)
+-   [ClientEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.ClientEvent)
+-   [NoExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.NoExposeEvent)
+-   [WindowStateEvent](http://www.go-mono.com/docs/monodoc.ashx?link=E%3aGtk.Widget.WindowStateEvent)
 
- Many of these events can be handled with a standard event handler. For example:
+Many of these events can be handled with a standard event handler. For example:
 
 ``` csharp
 public static void HandlerMethod(object obj, EventArgs args)
