@@ -2,7 +2,7 @@
 title: "Accessibility: Installing 2.0 From Source"
 lastmodified: '2010-02-26'
 redirect_from:
-  - /Accessibility:_Installing_2.0_From_Source/
+  - /Accessibility%3A_Installing_2.0_From_Source/
 ---
 
 Accessibility: Installing 2.0 From Source

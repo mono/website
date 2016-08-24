@@ -2,7 +2,7 @@
 title: "Talk:Need Help"
 lastmodified: '2007-05-30'
 redirect_from:
-  - /Talk:Need_Help/
+  - /Talk%3ANeed_Help/
 ---
 
 Talk:Need Help

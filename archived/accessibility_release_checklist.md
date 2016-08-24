@@ -2,7 +2,7 @@
 title: "Accessibility: Release Checklist"
 lastmodified: '2009-03-13'
 redirect_from:
-  - /Accessibility:_Release_Checklist/
+  - /Accessibility%3A_Release_Checklist/
 ---
 
 Accessibility: Release Checklist

@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Widget Layout and Packing"
 redirect_from:
-  - /GtkSharp:_Widget_Layout_and_Packing/
+  - /GtkSharp%3A_Widget_Layout_and_Packing/
 ---
 
 ### Multiple widgets in a single window

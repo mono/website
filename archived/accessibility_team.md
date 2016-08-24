@@ -2,7 +2,7 @@
 title: "Accessibility: Team"
 lastmodified: '2010-07-15'
 redirect_from:
-  - /Accessibility:_Team/
+  - /Accessibility%3A_Team/
 ---
 
 Accessibility: Team

@@ -2,7 +2,7 @@
 title: "Accessibility: UiaAtkBridge"
 lastmodified: '2008-11-21'
 redirect_from:
-  - /Accessibility:_UiaAtkBridge/
+  - /Accessibility%3A_UiaAtkBridge/
 ---
 
 Accessibility: UiaAtkBridge

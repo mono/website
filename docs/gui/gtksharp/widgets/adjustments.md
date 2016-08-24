@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Adjustments"
 redirect_from:
-  - /GtkSharp:_Adjustments/
+  - /GtkSharp%3A_Adjustments/
 ---
 
 Gtk# has various widgets that can be visually adjusted by the user using the mouse or the keyboard, such as the range widgets, described in the Range Widgets section. There are also a few widgets that display some adjustable portion of a larger area of data, such as the text widget and the viewport widget.

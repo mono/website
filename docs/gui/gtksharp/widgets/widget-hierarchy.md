@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Widget Hierarchy"
 redirect_from:
-  - /GtkSharp:_Widget_Hierarchy/
+  - /GtkSharp%3A_Widget_Hierarchy/
 ---
 
 This is the class hierarchy tree used to implement widgets, with links to each class's detailed documentation.

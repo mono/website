@@ -1,7 +1,7 @@
 ---
 title: OSX
 redirect_from:
-  - /Mono:OSX/
+  - /Mono%3AOSX/
   - /Mono_on_MacOS_X/
 ---
 

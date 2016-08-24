@@ -2,7 +2,7 @@
 title: "Mono:Upload log"
 lastmodified: '2005-08-04'
 redirect_from:
-  - /Mono:Upload_log/
+  - /Mono%3AUpload_log/
 ---
 
 Mono:Upload log

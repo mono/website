@@ -3,7 +3,7 @@ title: "CreatingCustomThemedGtkSharpWidgets"
 lastmodified: '2009-07-10'
 redirect_from:
   - /CreatingCustomThemedGtkSharpWidgets/
-  - /User:MatjasMihelic/
+  - /User%3AMatjasMihelic/
 ---
 
 CreatingCustomThemedGtkSharpWidgets

@@ -2,7 +2,7 @@
 title: "Category:Porting"
 lastmodified: '2007-03-12'
 redirect_from:
-  - /Category:Porting/
+  - /Category%3APorting/
 ---
 
 Category:Porting

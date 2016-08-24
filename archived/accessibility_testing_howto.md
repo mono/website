@@ -2,7 +2,7 @@
 title: "Accessibility: Testing Howto"
 lastmodified: '2010-01-07'
 redirect_from:
-  - /Accessibility:_Testing_Howto/
+  - /Accessibility%3A_Testing_Howto/
 ---
 
 Accessibility: Testing Howto

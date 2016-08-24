@@ -2,7 +2,7 @@
 title: "Mono:Bureaucrat log"
 lastmodified: '2005-05-26'
 redirect_from:
-  - /Mono:Bureaucrat_log/
+  - /Mono%3ABureaucrat_log/
 ---
 
 Mono:Bureaucrat log

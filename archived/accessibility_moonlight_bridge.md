@@ -2,7 +2,7 @@
 title: "Accessibility: Moonlight Bridge"
 lastmodified: '2009-06-18'
 redirect_from:
-  - /Accessibility:_Moonlight_Bridge/
+  - /Accessibility%3A_Moonlight_Bridge/
 ---
 
 Accessibility: Moonlight Bridge

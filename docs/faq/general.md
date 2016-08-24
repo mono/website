@@ -1,7 +1,7 @@
 ---
 title: "FAQ: General"
 redirect_from:
-  - /FAQ:_General/
+  - /FAQ%3A_General/
 ---
 
 Basics

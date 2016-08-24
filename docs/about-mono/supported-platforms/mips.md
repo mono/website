@@ -1,7 +1,7 @@
 ---
 title: MIPS
 redirect_from:
-  - /Mono:MIPS/
+  - /Mono%3AMIPS/
 ---
 
 Mono 1.2.1 was the first version to support the MIPS cpu.

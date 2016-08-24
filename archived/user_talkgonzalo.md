@@ -2,7 +2,7 @@
 title: "User talk:Gonzalo"
 lastmodified: '2005-03-03'
 redirect_from:
-  - /User_talk:Gonzalo/
+  - /User_talk%3AGonzalo/
 ---
 
 User talk:Gonzalo

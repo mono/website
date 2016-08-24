@@ -1,7 +1,7 @@
 ---
 title: SPARC
 redirect_from:
-  - /Mono:SPARC/
+  - /Mono%3ASPARC/
 ---
 
 Platforms Supported

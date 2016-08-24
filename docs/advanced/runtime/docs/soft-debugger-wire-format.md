@@ -1,7 +1,7 @@
 ---
 title: Soft Debugger Wire Format
 redirect_from:
-  - /SoftDebugger:WireFormat/
+  - /SoftDebugger%3AWireFormat/
 ---
 
 Introduction

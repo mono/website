@@ -2,7 +2,7 @@
 title: "Accessibility: Specification Notes"
 lastmodified: '2009-07-31'
 redirect_from:
-  - /Accessibility:_Specification_Notes/
+  - /Accessibility%3A_Specification_Notes/
 ---
 
 Accessibility: Specification Notes

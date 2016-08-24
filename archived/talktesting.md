@@ -2,7 +2,7 @@
 title: "Talk:Testing"
 lastmodified: '2005-03-17'
 redirect_from:
-  - /Talk:Testing/
+  - /Talk%3ATesting/
 ---
 
 Talk:Testing

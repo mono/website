@@ -2,7 +2,7 @@
 title: "Help:Editing"
 lastmodified: '2012-03-07'
 redirect_from:
-  - /Help:Editing/
+  - /Help%3AEditing/
 ---
 
 Help:Editing

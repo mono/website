@@ -2,8 +2,8 @@
 title: "Talk:Team"
 lastmodified: '2005-03-10'
 redirect_from:
-  - /Talk:Team/
-  - /Talk:Team-Unmaintained/
+  - /Talk%3ATeam/
+  - /Talk%3ATeam-Unmaintained/
 ---
 
 Talk:Team

@@ -2,7 +2,7 @@
 title: "Accessibility: Test Coding Standard"
 lastmodified: '2009-02-24'
 redirect_from:
-  - /Accessibility:_Test_Coding_Standard/
+  - /Accessibility%3A_Test_Coding_Standard/
 ---
 
 Accessibility: Test Coding Standard

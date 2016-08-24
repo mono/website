@@ -2,7 +2,7 @@
 title: "Accessibility: Client API Functional Specification"
 lastmodified: '2009-09-10'
 redirect_from:
-  - /Accessibility:_Client_API_Functional_Specification/
+  - /Accessibility%3A_Client_API_Functional_Specification/
 ---
 
 Accessibility: Client API Functional Specification

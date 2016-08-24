@@ -2,7 +2,7 @@
 title: "Accessibility: Team Meetings 2008 Oct 29"
 lastmodified: '2008-10-29'
 redirect_from:
-  - /Accessibility:_Team_Meetings_2008_Oct_29/
+  - /Accessibility%3A_Team_Meetings_2008_Oct_29/
 ---
 
 Accessibility: Team Meetings 2008 Oct 29

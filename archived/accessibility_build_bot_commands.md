@@ -2,7 +2,7 @@
 title: "Accessibility: Build Bot Commands"
 lastmodified: '2009-01-14'
 redirect_from:
-  - /Accessibility:_Build_Bot_Commands/
+  - /Accessibility%3A_Build_Bot_Commands/
 ---
 
 Accessibility: Build Bot Commands

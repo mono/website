@@ -2,7 +2,7 @@
 title: "Accessibility: Test Plan"
 lastmodified: '2010-01-27'
 redirect_from:
-  - /Accessibility:_Test_Plan/
+  - /Accessibility%3A_Test_Plan/
 ---
 
 Accessibility: Test Plan

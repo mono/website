@@ -2,7 +2,7 @@
 title: "Category:Workflow"
 lastmodified: '2007-03-12'
 redirect_from:
-  - /Category:Workflow/
+  - /Category%3AWorkflow/
 ---
 
 Category:Workflow

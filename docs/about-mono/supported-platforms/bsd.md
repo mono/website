@@ -1,7 +1,7 @@
 ---
 title: BSD
 redirect_from:
-  - /Mono:BSD/
+  - /Mono%3ABSD/
 ---
 
 Mono support for BSD operating systems.

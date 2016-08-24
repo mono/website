@@ -2,7 +2,7 @@
 title: "User talk:ZacBowling"
 lastmodified: '2006-09-23'
 redirect_from:
-  - /User_talk:ZacBowling/
+  - /User_talk%3AZacBowling/
 ---
 
 User talk:ZacBowling

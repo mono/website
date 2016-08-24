@@ -1,7 +1,7 @@
 ---
 title: Mono Runtime Documentation
 redirect_from:
-  - /Mono:Runtime:Documentation/
+  - /Mono%3ARuntime%3ADocumentation/
 ---
 
 ### Mono Runtime Developer Documentation

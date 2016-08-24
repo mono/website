@@ -1,8 +1,8 @@
 ---
 title: "FAQ: Winforms"
 redirect_from:
-  - /FAQ:_Winforms/
-  - /FAQ:_WinForms/
+  - /FAQ%3A_Winforms/
+  - /FAQ%3A_WinForms/
 ---
 
 ### My forms are sized improperly

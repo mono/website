@@ -1,7 +1,7 @@
 ---
 title: The Mono Runtime
 redirect_from:
-  - /Mono:Runtime/
+  - /Mono%3ARuntime/
   - /Mono_Runtime/
 ---
 

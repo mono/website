@@ -2,7 +2,7 @@
 title: "Accessibility: Client Implementation"
 lastmodified: '2009-03-26'
 redirect_from:
-  - /Accessibility:_Client_Implementation/
+  - /Accessibility%3A_Client_Implementation/
 ---
 
 Accessibility: Client Implementation

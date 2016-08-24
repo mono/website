@@ -2,7 +2,7 @@
 title: "Accessibility: Build Plan"
 lastmodified: '2010-05-06'
 redirect_from:
-  - /Accessibility:_Build_Plan/
+  - /Accessibility%3A_Build_Plan/
 ---
 
 Accessibility: Build Plan

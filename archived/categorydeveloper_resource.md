@@ -2,7 +2,7 @@
 title: "Category:Developer Resource"
 lastmodified: '2005-09-06'
 redirect_from:
-  - /Category:Developer_Resource/
+  - /Category%3ADeveloper_Resource/
 ---
 
 Category:Developer Resource

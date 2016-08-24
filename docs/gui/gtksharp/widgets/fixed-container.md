@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Fixed Container"
 redirect_from:
-  - /GtkSharp:_Fixed_Container/
+  - /GtkSharp%3A_Fixed_Container/
 ---
 
 The Fixed container allows you to place widgets at a fixed position within it's window, relative to it's upper left hand corner. The position of the widgets can be changed dynamically. There are only a few functions associated with the fixed widget:

@@ -1,7 +1,7 @@
 ---
 title: Register allocation in the Mono JIT
 redirect_from:
-  - /Mono:Runtime:Documentation:RegisterAllocation/
+  - /Mono%3ARuntime%3ADocumentation%3ARegisterAllocation/
 ---
 
 ### Global Register Allocation

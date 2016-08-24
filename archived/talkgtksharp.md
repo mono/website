@@ -2,7 +2,7 @@
 title: "Talk:GtkSharp"
 lastmodified: '2006-08-17'
 redirect_from:
-  - /Talk:GtkSharp/
+  - /Talk%3AGtkSharp/
 ---
 
 Talk:GtkSharp

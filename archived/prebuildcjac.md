@@ -2,7 +2,7 @@
 title: "Prebuild:cjac"
 lastmodified: '2007-04-05'
 redirect_from:
-  - /Prebuild:cjac/
+  - /Prebuild%3Acjac/
 ---
 
 Prebuild:cjac

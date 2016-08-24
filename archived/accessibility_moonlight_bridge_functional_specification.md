@@ -2,7 +2,7 @@
 title: "Accessibility: Moonlight Bridge Functional Specification"
 lastmodified: '2009-09-03'
 redirect_from:
-  - /Accessibility:_Moonlight_Bridge_Functional_Specification/
+  - /Accessibility%3A_Moonlight_Bridge_Functional_Specification/
 ---
 
 Accessibility: Moonlight Bridge Functional Specification

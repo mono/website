@@ -2,7 +2,7 @@
 title: "Accessibility: Moonlight"
 lastmodified: '2010-07-26'
 redirect_from:
-  - /Accessibility:_Moonlight/
+  - /Accessibility%3A_Moonlight/
 ---
 
 Accessibility: Moonlight

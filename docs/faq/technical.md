@@ -1,7 +1,7 @@
 ---
 title: "FAQ: Technical"
 redirect_from:
-  - /FAQ:_Technical/
+  - /FAQ%3A_Technical/
 ---
 
 Mono Runtime

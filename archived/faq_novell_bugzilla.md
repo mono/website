@@ -2,7 +2,7 @@
 title: "FAQ: Novell Bugzilla"
 lastmodified: '2008-07-11'
 redirect_from:
-  - /FAQ:_Novell_Bugzilla/
+  - /FAQ%3A_Novell_Bugzilla/
 ---
 
 FAQ: Novell Bugzilla

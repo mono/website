@@ -2,7 +2,7 @@
 title: "Mono:Copyrights"
 lastmodified: '2005-03-05'
 redirect_from:
-  - /Mono:Copyrights/
+  - /Mono%3ACopyrights/
 ---
 
 Mono:Copyrights

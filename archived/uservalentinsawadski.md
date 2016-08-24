@@ -2,7 +2,7 @@
 title: "User:ValentinSawadski"
 lastmodified: '2007-05-17'
 redirect_from:
-  - /User:ValentinSawadski/
+  - /User%3AValentinSawadski/
 ---
 
 User:ValentinSawadski

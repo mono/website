@@ -2,7 +2,7 @@
 title: "User:Ggundy"
 lastmodified: '2005-03-03'
 redirect_from:
-  - /User:Ggundy/
+  - /User%3AGgundy/
 ---
 
 User:Ggundy

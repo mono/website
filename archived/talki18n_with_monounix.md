@@ -2,7 +2,7 @@
 title: "Talk:I18N with Mono.Unix"
 lastmodified: '2006-08-10'
 redirect_from:
-  - /Talk:I18N_with_Mono.Unix/
+  - /Talk%3AI18N_with_Mono.Unix/
 ---
 
 Talk:I18N with Mono.Unix

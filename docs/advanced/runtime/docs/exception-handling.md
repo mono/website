@@ -1,7 +1,7 @@
 ---
 title: Exception Handling
 redirect_from:
-  - /Mono:Runtime:Documentation:ExceptionHandling/
+  - /Mono%3ARuntime%3ADocumentation%3AExceptionHandling/
 ---
 
 Exception Handling In the Mono Runtime

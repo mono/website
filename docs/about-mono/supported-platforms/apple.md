@@ -1,7 +1,7 @@
 ---
 title: Apple Platforms
 redirect_from:
-  - /Mono:Iphone/
+  - /Mono%3AIphone/
   - /docs/about-mono/supported-platforms/iphone/
 ---
 

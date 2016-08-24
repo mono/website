@@ -2,7 +2,7 @@
 title: "Accessibility: QA Meetings 2008 Aug 13"
 lastmodified: '2008-08-13'
 redirect_from:
-  - /Accessibility:_QA_Meetings_2008_Aug_13/
+  - /Accessibility%3A_QA_Meetings_2008_Aug_13/
 ---
 
 Accessibility: QA Meetings 2008 Aug 13

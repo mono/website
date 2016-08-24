@@ -1,7 +1,7 @@
 ---
 title: Mono.Cecil FAQ
 redirect_from:
-  - /Cecil:FAQ/
+  - /Cecil%3AFAQ/
 ---
 
 Now that I have the library, how do I use it?

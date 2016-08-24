@@ -1,7 +1,7 @@
 ---
 title: Porting the Engine
 redirect_from:
-  - /Mono:Runtime:Documentation:MiniPorting/
+  - /Mono%3ARuntime%3ADocumentation%3AMiniPorting/
 ---
 
 Introduction

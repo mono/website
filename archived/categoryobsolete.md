@@ -2,7 +2,7 @@
 title: "Category:Obsolete"
 lastmodified: '2007-05-14'
 redirect_from:
-  - /Category:Obsolete/
+  - /Category%3AObsolete/
 ---
 
 Category:Obsolete

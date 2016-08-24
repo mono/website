@@ -2,7 +2,7 @@
 title: "Accessibility: Release Notes 0.9"
 lastmodified: '2008-11-26'
 redirect_from:
-  - /Accessibility:_Release_Notes_0.9/
+  - /Accessibility%3A_Release_Notes_0.9/
 ---
 
 Accessibility: Release Notes 0.9

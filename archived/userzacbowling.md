@@ -2,7 +2,7 @@
 title: "User:ZacBowling"
 lastmodified: '2005-11-25'
 redirect_from:
-  - /User:ZacBowling/
+  - /User%3AZacBowling/
 ---
 
 User:ZacBowling

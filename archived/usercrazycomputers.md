@@ -2,7 +2,7 @@
 title: "User:Crazycomputers"
 lastmodified: '2007-01-07'
 redirect_from:
-  - /User:Crazycomputers/
+  - /User%3ACrazycomputers/
 ---
 
 User:Crazycomputers

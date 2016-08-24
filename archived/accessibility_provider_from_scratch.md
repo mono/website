@@ -2,7 +2,7 @@
 title: "Accessibility: Provider From Scratch"
 lastmodified: '2008-11-21'
 redirect_from:
-  - /Accessibility:_Provider_From_Scratch/
+  - /Accessibility%3A_Provider_From_Scratch/
 ---
 
 Accessibility: Provider From Scratch

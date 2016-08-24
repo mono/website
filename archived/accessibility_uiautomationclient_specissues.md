@@ -2,7 +2,7 @@
 title: "Accessibility: UIAutomationClient SpecIssues"
 lastmodified: '2009-06-25'
 redirect_from:
-  - /Accessibility:_UIAutomationClient_SpecIssues/
+  - /Accessibility%3A_UIAutomationClient_SpecIssues/
 ---
 
 Accessibility: UIAutomationClient SpecIssues

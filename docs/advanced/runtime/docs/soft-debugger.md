@@ -1,7 +1,7 @@
 ---
 title: Soft-Mode Debugger
 redirect_from:
-  - /Mono:Runtime:Documentation:SoftDebugger/
+  - /Mono%3ARuntime%3ADocumentation%3ASoftDebugger/
   - /Soft_Debugger/
 ---
 

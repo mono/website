@@ -1,7 +1,7 @@
 ---
 title: Android
 redirect_from:
-  - /Mono:Android/
+  - /Mono%3AAndroid/
 ---
 
 The Mono runtime has been ported to the Android OS.

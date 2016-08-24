@@ -2,7 +2,7 @@
 title: "Tao:FuturePlans"
 lastmodified: '2005-05-20'
 redirect_from:
-  - /Tao:FuturePlans/
+  - /Tao%3AFuturePlans/
 ---
 
 Tao:FuturePlans

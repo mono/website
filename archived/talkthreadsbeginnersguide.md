@@ -2,7 +2,7 @@
 title: "Talk:ThreadsBeginnersGuide"
 lastmodified: '2007-03-12'
 redirect_from:
-  - /Talk:ThreadsBeginnersGuide/
+  - /Talk%3AThreadsBeginnersGuide/
 ---
 
 Talk:ThreadsBeginnersGuide

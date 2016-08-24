@@ -2,7 +2,7 @@
 title: "Accessibility: Moonlight Sandbox"
 lastmodified: '2009-04-08'
 redirect_from:
-  - /Accessibility:_Moonlight_Sandbox/
+  - /Accessibility%3A_Moonlight_Sandbox/
 ---
 
 Accessibility: Moonlight Sandbox

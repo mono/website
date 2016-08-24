@@ -2,7 +2,7 @@
 title: "Mailpost:earlystory"
 lastmodified: '2005-11-03'
 redirect_from:
-  - /Mailpost:earlystory/
+  - /Mailpost%3Aearlystory/
 ---
 
 Mailpost:earlystory

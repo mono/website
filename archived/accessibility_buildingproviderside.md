@@ -2,7 +2,7 @@
 title: "Accessibility: BuildingProviderSide"
 lastmodified: '2008-08-18'
 redirect_from:
-  - /Accessibility:_BuildingProviderSide/
+  - /Accessibility%3A_BuildingProviderSide/
 ---
 
 Accessibility: BuildingProviderSide

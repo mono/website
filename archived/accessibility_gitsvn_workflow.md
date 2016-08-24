@@ -2,7 +2,7 @@
 title: "Accessibility: GitSVN: Workflow"
 lastmodified: '2009-04-09'
 redirect_from:
-  - /Accessibility:_GitSVN:_Workflow/
+  - /Accessibility%3A_GitSVN%3A_Workflow/
 ---
 
 Accessibility: GitSVN: Workflow

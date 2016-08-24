@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Packing with Tables"
 redirect_from:
-  - /GtkSharp:_Packing_with_Tables/
+  - /GtkSharp%3A_Packing_with_Tables/
 ---
 
 Using Tables

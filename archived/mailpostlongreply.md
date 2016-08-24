@@ -2,7 +2,7 @@
 title: "Mailpost:longreply"
 lastmodified: '2005-11-03'
 redirect_from:
-  - /Mailpost:longreply/
+  - /Mailpost%3Alongreply/
 ---
 
 Mailpost:longreply

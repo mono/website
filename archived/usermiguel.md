@@ -2,7 +2,7 @@
 title: "User:Miguel"
 lastmodified: '2005-03-20'
 redirect_from:
-  - /User:Miguel/
+  - /User%3AMiguel/
 ---
 
 User:Miguel

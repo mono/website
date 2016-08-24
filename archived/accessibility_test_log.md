@@ -2,7 +2,7 @@
 title: "Accessibility: Test Log"
 lastmodified: '2010-09-13'
 redirect_from:
-  - /Accessibility:_Test_Log/
+  - /Accessibility%3A_Test_Log/
 ---
 
 Accessibility: Test Log

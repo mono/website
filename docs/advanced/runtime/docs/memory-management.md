@@ -1,7 +1,7 @@
 ---
 title: Memory Management
 redirect_from:
-  - /Mono:Runtime:Documentation:MemoryManagement/
+  - /Mono%3ARuntime%3ADocumentation%3AMemoryManagement/
 ---
 
 Metadata memory management

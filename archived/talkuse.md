@@ -2,7 +2,7 @@
 title: "Talk:Use"
 lastmodified: '2007-05-17'
 redirect_from:
-  - /Talk:Use/
+  - /Talk%3AUse/
 ---
 
 Talk:Use

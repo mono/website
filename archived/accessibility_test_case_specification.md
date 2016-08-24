@@ -2,7 +2,7 @@
 title: "Accessibility: Test Case Specification"
 lastmodified: '2008-11-12'
 redirect_from:
-  - /Accessibility:_Test_Case_Specification/
+  - /Accessibility%3A_Test_Case_Specification/
 ---
 
 Accessibility: Test Case Specification

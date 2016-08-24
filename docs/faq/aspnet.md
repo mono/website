@@ -1,7 +1,7 @@
 ---
 title: "FAQ: ASP.NET"
 redirect_from:
-  - /FAQ:_ASP.NET/
+  - /FAQ%3A_ASP.NET/
 ---
 
 General

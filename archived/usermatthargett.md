@@ -2,7 +2,7 @@
 title: "User:MattHargett"
 lastmodified: '2006-01-08'
 redirect_from:
-  - /User:MattHargett/
+  - /User%3AMattHargett/
 ---
 
 User:MattHargett

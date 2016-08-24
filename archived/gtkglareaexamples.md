@@ -2,7 +2,7 @@
 title: "GtkGLArea:Examples"
 lastmodified: '2007-05-25'
 redirect_from:
-  - /GtkGLArea:Examples/
+  - /GtkGLArea%3AExamples/
 ---
 
 GtkGLArea:Examples

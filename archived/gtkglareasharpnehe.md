@@ -2,8 +2,8 @@
 title: "GtkGLAreaSharp:NeHe"
 lastmodified: '2008-09-03'
 redirect_from:
-  - /GtkGLAreaSharp:NeHe/
-  - /GtkGLSharp:NeHe/
+  - /GtkGLAreaSharp%3ANeHe/
+  - /GtkGLSharp%3ANeHe/
 ---
 
 GtkGLAreaSharp:NeHe

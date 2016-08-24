@@ -2,7 +2,7 @@
 title: "Accessibility: Winforms Implementation"
 lastmodified: '2008-08-11'
 redirect_from:
-  - /Accessibility:_Winforms_Implementation/
+  - /Accessibility%3A_Winforms_Implementation/
 ---
 
 Accessibility: Winforms Implementation

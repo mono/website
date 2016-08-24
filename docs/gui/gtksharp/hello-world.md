@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Hello World"
 redirect_from:
-  - /GtkSharp:_Hello_World/
+  - /GtkSharp%3A_Hello_World/
 ---
 
 A Hello World program with Gtk#:

@@ -2,7 +2,7 @@
 title: "Talk:Cecil"
 lastmodified: '2005-03-04'
 redirect_from:
-  - /Talk:Cecil/
+  - /Talk%3ACecil/
 ---
 
 Talk:Cecil

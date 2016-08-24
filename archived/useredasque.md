@@ -2,7 +2,7 @@
 title: "User:Edasque"
 lastmodified: '2008-01-02'
 redirect_from:
-  - /User:Edasque/
+  - /User%3AEdasque/
 ---
 
 User:Edasque

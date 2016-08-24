@@ -2,7 +2,7 @@
 title: "User:HubertFONGARNAND"
 lastmodified: '2005-06-19'
 redirect_from:
-  - /User:HubertFONGARNAND/
+  - /User%3AHubertFONGARNAND/
 ---
 
 User:HubertFONGARNAND

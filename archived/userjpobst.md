@@ -2,7 +2,7 @@
 title: "User:Jpobst"
 lastmodified: '2007-04-26'
 redirect_from:
-  - /User:Jpobst/
+  - /User%3AJpobst/
 ---
 
 User:Jpobst

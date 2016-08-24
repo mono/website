@@ -2,7 +2,7 @@
 title: "User:WayneJohnson"
 lastmodified: '2005-11-25'
 redirect_from:
-  - /User:WayneJohnson/
+  - /User%3AWayneJohnson/
 ---
 
 User:WayneJohnson

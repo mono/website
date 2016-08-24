@@ -1,7 +1,7 @@
 ---
 title: "FAQ: Licensing"
 redirect_from:
-  - /FAQ:_Licensing/
+  - /FAQ%3A_Licensing/
   - /FAQ_Licensing/
   - /License/
   - /Licensing/

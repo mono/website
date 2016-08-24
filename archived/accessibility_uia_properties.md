@@ -2,7 +2,7 @@
 title: "Accessibility: UIA Properties"
 lastmodified: '2008-05-16'
 redirect_from:
-  - /Accessibility:_UIA_Properties/
+  - /Accessibility%3A_UIA_Properties/
 ---
 
 Accessibility: UIA Properties

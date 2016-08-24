@@ -2,7 +2,7 @@
 title: "Accessibility: Implementation"
 lastmodified: '2008-11-21'
 redirect_from:
-  - /Accessibility:_Implementation/
+  - /Accessibility%3A_Implementation/
 ---
 
 Accessibility: Implementation

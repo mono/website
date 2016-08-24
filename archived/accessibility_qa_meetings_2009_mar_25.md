@@ -2,7 +2,7 @@
 title: "Accessibility: QA Meetings 2009 Mar 25"
 lastmodified: '2009-06-01'
 redirect_from:
-  - /Accessibility:_QA_Meetings_2009_Mar_25/
+  - /Accessibility%3A_QA_Meetings_2009_Mar_25/
 ---
 
 Accessibility: QA Meetings 2009 Mar 25

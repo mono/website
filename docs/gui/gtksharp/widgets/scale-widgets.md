@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Scale Widgets"
 redirect_from:
-  - /GtkSharp:_Scale_Widgets/
+  - /GtkSharp%3A_Scale_Widgets/
 ---
 
 Scale widgets are used to allow the user to visually select and manipulate a value within a specific range. You might want to use a scale widget, for example, to adjust the magnification level on a zoomed preview of a picture, or to control the brightness of a color, or to specify the number of minutes of inactivity before a screensaver takes over the screen.

@@ -2,7 +2,7 @@
 title: "FAQ: MonoVS"
 lastmodified: '2010-07-28'
 redirect_from:
-  - /FAQ:_MonoVS/
+  - /FAQ%3A_MonoVS/
 ---
 
 FAQ: MonoVS

@@ -2,7 +2,7 @@
 title: "MUG:Colombia"
 lastmodified: '2005-09-08'
 redirect_from:
-  - /MUG:Colombia/
+  - /MUG%3AColombia/
 ---
 
 MUG:Colombia

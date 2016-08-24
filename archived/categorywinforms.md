@@ -2,7 +2,7 @@
 title: "Category:WinForms"
 lastmodified: '2007-01-26'
 redirect_from:
-  - /Category:WinForms/
+  - /Category%3AWinForms/
 ---
 
 Category:WinForms

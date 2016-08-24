@@ -2,8 +2,8 @@
 title: "Accessibility: Bridge Functional Specification"
 lastmodified: '2009-07-14'
 redirect_from:
-  - /Accessibility:_Bridge_Functional_Specification/
-  - /Accessibility:_Functional_Specification/
+  - /Accessibility%3A_Bridge_Functional_Specification/
+  - /Accessibility%3A_Functional_Specification/
 ---
 
 Accessibility: Bridge Functional Specification

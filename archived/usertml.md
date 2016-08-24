@@ -2,7 +2,7 @@
 title: "User:Tml"
 lastmodified: '2005-04-30'
 redirect_from:
-  - /User:Tml/
+  - /User%3ATml/
 ---
 
 User:Tml

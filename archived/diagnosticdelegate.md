@@ -2,7 +2,7 @@
 title: "Diagnostic:Delegate"
 lastmodified: '2005-10-29'
 redirect_from:
-  - /Diagnostic:Delegate/
+  - /Diagnostic%3ADelegate/
 ---
 
 Diagnostic:Delegate

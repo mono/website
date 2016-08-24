@@ -2,7 +2,7 @@
 title: "Mono:FreeBSD-Problems"
 lastmodified: '2005-04-04'
 redirect_from:
-  - /Mono:FreeBSD-Problems/
+  - /Mono%3AFreeBSD-Problems/
 ---
 
 Mono:FreeBSD-Problems

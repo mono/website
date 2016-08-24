@@ -2,7 +2,7 @@
 title: "Guide:Debugger"
 lastmodified: '2014-03-12'
 redirect_from:
-  - /Guide:Debugger/
+  - /Guide%3ADebugger/
 ---
 
 Guide:Debugger

@@ -2,7 +2,7 @@
 title: "GtkGlAreaSharp:Installation"
 lastmodified: '2008-09-03'
 redirect_from:
-  - /GtkGlAreaSharp:Installation/
+  - /GtkGlAreaSharp%3AInstallation/
 ---
 
 GtkGlAreaSharp:Installation

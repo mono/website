@@ -2,7 +2,7 @@
 title: "Accessibility: UiaWinformsProvider"
 lastmodified: '2008-03-24'
 redirect_from:
-  - /Accessibility:_UiaWinformsProvider/
+  - /Accessibility%3A_UiaWinformsProvider/
 ---
 
 Accessibility: UiaWinformsProvider

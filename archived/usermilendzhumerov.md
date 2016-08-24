@@ -2,7 +2,7 @@
 title: "User:MilenDzhumerov"
 lastmodified: '2005-04-30'
 redirect_from:
-  - /User:MilenDzhumerov/
+  - /User%3AMilenDzhumerov/
 ---
 
 User:MilenDzhumerov

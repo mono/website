@@ -2,8 +2,8 @@
 title: "Talk:Accessibility: Bridge Functional Specification"
 lastmodified: '2008-09-09'
 redirect_from:
-  - /Talk:Accessibility:_Bridge_Functional_Specification/
-  - /Talk:Accessibility:_Functional_Specification/
+  - /Talk%3AAccessibility%3A_Bridge_Functional_Specification/
+  - /Talk%3AAccessibility%3A_Functional_Specification/
 ---
 
 Talk:Accessibility: Bridge Functional Specification

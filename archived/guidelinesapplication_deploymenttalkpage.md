@@ -2,7 +2,7 @@
 title: "Guidelines:Application Deployment:Talkpage"
 lastmodified: '2007-04-11'
 redirect_from:
-  - /Guidelines:Application_Deployment:Talkpage/
+  - /Guidelines%3AApplication_Deployment%3ATalkpage/
 ---
 
 Guidelines:Application Deployment:Talkpage

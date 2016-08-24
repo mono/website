@@ -2,7 +2,7 @@
 title: "Accessibility: Releases"
 lastmodified: '2010-08-24'
 redirect_from:
-  - /Accessibility:_Releases/
+  - /Accessibility%3A_Releases/
 ---
 
 Accessibility: Releases

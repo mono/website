@@ -2,7 +2,7 @@
 title: "Mono:HPUX"
 lastmodified: '2006-05-08'
 redirect_from:
-  - /Mono:HPUX/
+  - /Mono%3AHPUX/
 ---
 
 Mono:HPUX

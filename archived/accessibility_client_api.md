@@ -2,7 +2,7 @@
 title: "Accessibility: Client API"
 lastmodified: '2009-11-20'
 redirect_from:
-  - /Accessibility:_Client_API/
+  - /Accessibility%3A_Client_API/
 ---
 
 Accessibility: Client API

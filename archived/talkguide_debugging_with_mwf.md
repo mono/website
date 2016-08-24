@@ -2,7 +2,7 @@
 title: "Talk:Guide: Debugging With MWF"
 lastmodified: '2007-05-30'
 redirect_from:
-  - /Talk:Guide:_Debugging_With_MWF/
+  - /Talk%3AGuide%3A_Debugging_With_MWF/
 ---
 
 Talk:Guide: Debugging With MWF

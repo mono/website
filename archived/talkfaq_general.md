@@ -2,7 +2,7 @@
 title: "Talk:FAQ: General"
 lastmodified: '2005-03-05'
 redirect_from:
-  - /Talk:FAQ:_General/
+  - /Talk%3AFAQ%3A_General/
 ---
 
 Talk:FAQ: General

@@ -2,8 +2,8 @@
 title: "Accessibility: Strongwind Basics"
 lastmodified: '2010-02-12'
 redirect_from:
-  - /Accessibility:_Strongwind_Basics/
-  - /Accessibility:_Test_Strongwind_Basics/
+  - /Accessibility%3A_Strongwind_Basics/
+  - /Accessibility%3A_Test_Strongwind_Basics/
 ---
 
 Accessibility: Strongwind Basics

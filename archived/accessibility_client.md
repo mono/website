@@ -2,7 +2,7 @@
 title: "Accessibility: Client"
 lastmodified: '2009-06-17'
 redirect_from:
-  - /Accessibility:_Client/
+  - /Accessibility%3A_Client/
 ---
 
 Accessibility: Client

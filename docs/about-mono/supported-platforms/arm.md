@@ -1,7 +1,7 @@
 ---
 title: ARM
 redirect_from:
-  - /Mono:ARM/
+  - /Mono%3AARM/
 ---
 
 Fully bootstrapping on little endian Linux system. Should also work on big endian systems.

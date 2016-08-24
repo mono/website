@@ -2,7 +2,7 @@
 title: "Category:Sandbox"
 lastmodified: '2007-05-17'
 redirect_from:
-  - /Category:Sandbox/
+  - /Category%3ASandbox/
 ---
 
 Category:Sandbox

@@ -2,7 +2,7 @@
 title: "GitSVN:create-repo.sh"
 lastmodified: '2009-11-21'
 redirect_from:
-  - /GitSVN:create-repo.sh/
+  - /GitSVN%3Acreate-repo.sh/
 ---
 
 GitSVN:create-repo.sh

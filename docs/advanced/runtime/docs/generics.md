@@ -1,7 +1,7 @@
 ---
 title: Generics
 redirect_from:
-  - /Mono:Runtime:Documentation:Generics/
+  - /Mono%3ARuntime%3ADocumentation%3AGenerics/
 ---
 
 Terminology

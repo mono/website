@@ -1,7 +1,7 @@
 ---
 title: "FAQ: Security"
 redirect_from:
-  - /FAQ:_Security/
+  - /FAQ%3A_Security/
 ---
 
 Secure Socket Layer (SSL) / Transport Layer Security (TLS)

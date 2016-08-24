@@ -2,7 +2,7 @@
 title: "User:Db4o"
 lastmodified: '2005-05-09'
 redirect_from:
-  - /User:Db4o/
+  - /User%3ADb4o/
 ---
 
 User:Db4o

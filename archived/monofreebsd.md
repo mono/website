@@ -2,7 +2,7 @@
 title: "Mono:FreeBSD"
 lastmodified: '2010-02-04'
 redirect_from:
-  - /Mono:FreeBSD/
+  - /Mono%3AFreeBSD/
 ---
 
 Mono:FreeBSD

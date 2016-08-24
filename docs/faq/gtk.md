@@ -1,7 +1,7 @@
 ---
 title: "FAQ: Gtk"
 redirect_from:
-  - /FAQ:_Gtk/
+  - /FAQ%3A_Gtk/
 ---
 
 General Questions

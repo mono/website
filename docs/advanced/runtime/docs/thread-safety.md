@@ -1,7 +1,7 @@
 ---
 title: Thread Safety/Synchronization
 redirect_from:
-  - /Mono:Runtime:Documentation:ThreadSafety/
+  - /Mono%3ARuntime%3ADocumentation%3AThreadSafety/
 ---
 
 Thread safety of metadata structures

@@ -1,7 +1,7 @@
 ---
 title: Wii
 redirect_from:
-  - /Mono:Wii/
+  - /Mono%3AWii/
 ---
 
 The Mono runtime has been ported to the Wii, and a commercial port is available to Official Nintendo Licensed Wii Developers. If you want to evaluate Mono for the Wii, you must use Nintendo's third party validation tool to request access to the code.   This port is currently only available through Novell.

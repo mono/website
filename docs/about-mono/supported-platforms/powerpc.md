@@ -1,7 +1,7 @@
 ---
 title: PowerPC
 redirect_from:
-  - /Mono:PowerPC/
+  - /Mono%3APowerPC/
   - /Mono_PowerPC_Port/
 ---
 

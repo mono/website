@@ -2,7 +2,7 @@
 title: "Category:FAQ"
 lastmodified: '2007-01-26'
 redirect_from:
-  - /Category:FAQ/
+  - /Category%3AFAQ/
 ---
 
 Category:FAQ

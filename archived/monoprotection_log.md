@@ -2,7 +2,7 @@
 title: "Mono:Protection log"
 lastmodified: '2005-03-03'
 redirect_from:
-  - /Mono:Protection_log/
+  - /Mono%3AProtection_log/
 ---
 
 Mono:Protection log

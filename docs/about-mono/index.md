@@ -4,7 +4,7 @@ redirect_from:
   - /About_Mono/
   - /About/
   - /about/
-  - /Mono:About/
+  - /Mono%3AAbout/
   - /What_is_Mono/
   - /What_is_Mono%3F/
 ---

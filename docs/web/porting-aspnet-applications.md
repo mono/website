@@ -1,7 +1,7 @@
 ---
 title: Porting ASP.NET Applications
 redirect_from:
-  - /Guide:_Porting_ASP.NET_Applications/
+  - /Guide%3A_Porting_ASP.NET_Applications/
 ---
 
 by Marek Habersack

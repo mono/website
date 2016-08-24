@@ -2,7 +2,7 @@
 title: "Accessibility: Reviews"
 lastmodified: '2009-06-10'
 redirect_from:
-  - /Accessibility:_Reviews/
+  - /Accessibility%3A_Reviews/
 ---
 
 Accessibility: Reviews

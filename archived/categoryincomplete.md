@@ -2,7 +2,7 @@
 title: "Category:Incomplete"
 lastmodified: '2005-09-20'
 redirect_from:
-  - /Category:Incomplete/
+  - /Category%3AIncomplete/
 ---
 
 Category:Incomplete

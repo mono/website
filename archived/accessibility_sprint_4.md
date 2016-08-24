@@ -2,7 +2,7 @@
 title: "Accessibility: Sprint 4"
 lastmodified: '2008-12-10'
 redirect_from:
-  - /Accessibility:_Sprint_4/
+  - /Accessibility%3A_Sprint_4/
 ---
 
 Accessibility: Sprint 4

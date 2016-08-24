@@ -2,7 +2,7 @@
 title: "Talk:Downloads"
 lastmodified: '2006-05-23'
 redirect_from:
-  - /Talk:Downloads/
+  - /Talk%3ADownloads/
 ---
 
 Talk:Downloads

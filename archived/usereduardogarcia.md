@@ -2,7 +2,7 @@
 title: "User:EduardoGarcia"
 lastmodified: '2005-04-29'
 redirect_from:
-  - /User:EduardoGarcia/
+  - /User%3AEduardoGarcia/
 ---
 
 User:EduardoGarcia

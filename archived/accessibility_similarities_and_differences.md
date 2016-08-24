@@ -2,7 +2,7 @@
 title: "Accessibility: Similarities and Differences"
 lastmodified: '2008-12-25'
 redirect_from:
-  - /Accessibility:_Similarities_and_Differences/
+  - /Accessibility%3A_Similarities_and_Differences/
 ---
 
 Accessibility: Similarities and Differences

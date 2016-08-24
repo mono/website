@@ -2,7 +2,7 @@
 title: "User:BenOSteen"
 lastmodified: '2006-08-22'
 redirect_from:
-  - /User:BenOSteen/
+  - /User%3ABenOSteen/
 ---
 
 User:BenOSteen

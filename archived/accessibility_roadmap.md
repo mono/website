@@ -2,7 +2,7 @@
 title: "Accessibility: Roadmap"
 lastmodified: '2009-03-16'
 redirect_from:
-  - /Accessibility:_Roadmap/
+  - /Accessibility%3A_Roadmap/
 ---
 
 Accessibility: Roadmap

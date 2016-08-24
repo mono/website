@@ -1,7 +1,7 @@
 ---
 title: Generic Sharing
 redirect_from:
-  - /Mono:Runtime:Documentation:GenericSharing/
+  - /Mono%3ARuntime%3ADocumentation%3AGenericSharing/
 ---
 
 Source code

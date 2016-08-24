@@ -2,7 +2,7 @@
 title: "Gtk:HelloWorld"
 lastmodified: '2005-10-19'
 redirect_from:
-  - /Gtk:HelloWorld/
+  - /Gtk%3AHelloWorld/
 ---
 
 Gtk:HelloWorld

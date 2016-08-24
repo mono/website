@@ -1,7 +1,7 @@
 ---
 title: Solaris
 redirect_from:
-  - /Mono:Solaris/
+  - /Mono%3ASolaris/
 ---
 
 Mono supports Solaris on [SPARC](/docs/about-mono/supported-platforms/sparc/), [x86](/docs/about-mono/supported-platforms/x86/) and [x86-64](/docs/about-mono/supported-platforms/amd64/) architectures.

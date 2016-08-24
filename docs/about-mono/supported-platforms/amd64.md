@@ -1,7 +1,7 @@
 ---
 title: AMD64
 redirect_from:
-  - /Mono:AMD64/
+  - /Mono%3AAMD64/
   - /New_Custom_Page/
 ---
 

@@ -2,7 +2,7 @@
 title: "User:CJCollier"
 lastmodified: '2009-01-07'
 redirect_from:
-  - /User:CJCollier/
+  - /User%3ACJCollier/
 ---
 
 User:CJCollier

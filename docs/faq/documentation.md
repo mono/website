@@ -1,7 +1,7 @@
 ---
 title: "FAQ: Documentation"
 redirect_from:
-  - /FAQ:_Documentation/
+  - /FAQ%3A_Documentation/
 ---
 
 Getting Documentation

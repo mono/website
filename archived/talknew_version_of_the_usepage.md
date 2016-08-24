@@ -2,7 +2,7 @@
 title: "Talk:New Version of the Use-Page"
 lastmodified: '2007-05-20'
 redirect_from:
-  - /Talk:New_Version_of_the_Use-Page/
+  - /Talk%3ANew_Version_of_the_Use-Page/
 ---
 
 Talk:New Version of the Use-Page

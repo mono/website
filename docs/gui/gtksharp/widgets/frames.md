@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Frames"
 redirect_from:
-  - /GtkSharp:_Frames/
+  - /GtkSharp%3A_Frames/
 ---
 
 Frames can be used to enclose one or a group of widgets with a box which can optionally be labeled. The position of the label and the style of the box can be altered to suit. A Frame can be created with the following constructor:

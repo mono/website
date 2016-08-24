@@ -2,7 +2,7 @@
 title: "Category:HowTo"
 lastmodified: '2007-10-25'
 redirect_from:
-  - /Category:HowTo/
+  - /Category%3AHowTo/
 ---
 
 Category:HowTo

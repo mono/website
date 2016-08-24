@@ -2,7 +2,7 @@
 title: "Pango:Beginners"
 lastmodified: '2005-11-25'
 redirect_from:
-  - /Pango:Beginners/
+  - /Pango%3ABeginners/
 ---
 
 Pango:Beginners

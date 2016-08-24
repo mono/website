@@ -1,7 +1,7 @@
 ---
 title: Other
 redirect_from:
-  - /Mono:Runtime:Documentation:Other/
+  - /Mono%3ARuntime%3ADocumentation%3AOther/
 ---
 
 Faster runtime builds

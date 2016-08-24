@@ -2,7 +2,7 @@
 title: "User:MarioCarrion"
 lastmodified: '2005-10-22'
 redirect_from:
-  - /User:MarioCarrion/
+  - /User%3AMarioCarrion/
 ---
 
 User:MarioCarrion

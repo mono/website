@@ -2,7 +2,7 @@
 title: "Accessibility: Phase II Work Breakdown"
 lastmodified: '2009-03-24'
 redirect_from:
-  - /Accessibility:_Phase_II_Work_Breakdown/
+  - /Accessibility%3A_Phase_II_Work_Breakdown/
 ---
 
 Accessibility: Phase II Work Breakdown

@@ -2,7 +2,7 @@
 title: "User:Ray"
 lastmodified: '2008-05-04'
 redirect_from:
-  - /User:Ray/
+  - /User%3ARay/
 ---
 
 User:Ray

@@ -2,7 +2,7 @@
 title: "Guide:Running Mono Applications"
 lastmodified: '2012-04-14'
 redirect_from:
-  - /Guide:Running_Mono_Applications/
+  - /Guide%3ARunning_Mono_Applications/
 ---
 
 Guide:Running Mono Applications

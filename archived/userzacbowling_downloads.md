@@ -2,7 +2,7 @@
 title: "User:ZacBowling/Downloads"
 lastmodified: '2005-10-01'
 redirect_from:
-  - /User:ZacBowling/Downloads/
+  - /User%3AZacBowling/Downloads/
 ---
 
 User:ZacBowling/Downloads

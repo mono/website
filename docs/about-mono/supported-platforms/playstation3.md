@@ -1,7 +1,7 @@
 ---
 title: PlayStation3
 redirect_from:
-  - /Mono:PlayStation3/
+  - /Mono%3APlayStation3/
 ---
 
 The Mono runtime runs on the PLAYSTATION®3 3 with Linux.

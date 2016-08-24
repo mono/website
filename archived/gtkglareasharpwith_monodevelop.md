@@ -2,7 +2,7 @@
 title: "GtkGLAreaSharp:With MonoDevelop"
 lastmodified: '2007-05-25'
 redirect_from:
-  - /GtkGLAreaSharp:With_MonoDevelop/
+  - /GtkGLAreaSharp%3AWith_MonoDevelop/
 ---
 
 GtkGLAreaSharp:With MonoDevelop

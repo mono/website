@@ -2,8 +2,8 @@
 title: "MUG:Denmark"
 lastmodified: '2007-01-29'
 redirect_from:
-  - /MUG:Denmark/
-  - /MUG:%C3%85rhus/
+  - /MUG%3ADenmark/
+  - /MUG%3A%C3%85rhus/
 ---
 
 MUG:Denmark

@@ -2,8 +2,8 @@
 title: "Accessibility: Development Progress"
 lastmodified: '2009-08-05'
 redirect_from:
-  - /Accessibility:_Development_Progress/
-  - /Accessibility:_Bugs_by_Control/
+  - /Accessibility%3A_Development_Progress/
+  - /Accessibility%3A_Bugs_by_Control/
 ---
 
 Accessibility: Development Progress

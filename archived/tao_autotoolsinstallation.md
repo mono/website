@@ -2,7 +2,7 @@
 title: "Tao autotools:Installation"
 lastmodified: '2006-01-26'
 redirect_from:
-  - /Tao_autotools:Installation/
+  - /Tao_autotools%3AInstallation/
 ---
 
 Tao autotools:Installation

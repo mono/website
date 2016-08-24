@@ -1,8 +1,8 @@
 ---
 title: "GtkSharp: Buttons"
 redirect_from:
-  - /GtkSharp:_Buttons/
-  - /GtkSharp:_Normal_Buttons/
+  - /GtkSharp%3A_Buttons/
+  - /GtkSharp%3A_Normal_Buttons/
 ---
 
 Normal Buttons

@@ -2,7 +2,7 @@
 title: Install Mono on Windows
 redirect_from:
   - /Using_Mono_on_Windows/
-  - /Mono:Windows/
+  - /Mono%3AWindows/
 ---
 
 Mono runs on Windows, this page describes the various features available for users who want to use Mono on Windows as well as using Mono-based technologies on Windows without Mono (like Gtk#).

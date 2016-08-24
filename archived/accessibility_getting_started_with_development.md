@@ -2,7 +2,7 @@
 title: "Accessibility: Getting Started With Development"
 lastmodified: '2009-02-02'
 redirect_from:
-  - /Accessibility:_Getting_Started_With_Development/
+  - /Accessibility%3A_Getting_Started_With_Development/
 ---
 
 Accessibility: Getting Started With Development

@@ -1,7 +1,7 @@
 ---
 title: Ahead of Time Compilation (AOT)
 redirect_from:
-  - /Mono:Runtime:Documentation:AOT/
+  - /Mono%3ARuntime%3ADocumentation%3AAOT/
 ---
 
 Mono Ahead Of Time Compiler

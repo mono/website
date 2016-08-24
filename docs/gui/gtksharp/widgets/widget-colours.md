@@ -1,7 +1,7 @@
 ---
 title: "GtkSharp: Widget Colours"
 redirect_from:
-  - /GtkSharp:_Widget_Colours/
+  - /GtkSharp%3A_Widget_Colours/
 ---
 
 Colouring Widgets and Windows

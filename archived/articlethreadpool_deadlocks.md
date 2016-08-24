@@ -2,7 +2,7 @@
 title: "Article:ThreadPool Deadlocks"
 lastmodified: '2010-12-11'
 redirect_from:
-  - /Article:ThreadPool_Deadlocks/
+  - /Article%3AThreadPool_Deadlocks/
   - /ThreadPool_DeadLocks/
 ---
 

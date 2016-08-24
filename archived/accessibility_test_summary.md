@@ -2,7 +2,7 @@
 title: "Accessibility: Test Summary"
 lastmodified: '2008-04-03'
 redirect_from:
-  - /Accessibility:_Test_Summary/
+  - /Accessibility%3A_Test_Summary/
 ---
 
 Accessibility: Test Summary

@@ -2,7 +2,7 @@
 title: "Accessibility: Project Schedule"
 lastmodified: '2008-09-17'
 redirect_from:
-  - /Accessibility:_Project_Schedule/
+  - /Accessibility%3A_Project_Schedule/
 ---
 
 Accessibility: Project Schedule

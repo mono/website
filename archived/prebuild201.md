@@ -2,7 +2,7 @@
 title: "Prebuild:2.0.1"
 lastmodified: '2007-04-11'
 redirect_from:
-  - /Prebuild:2.0.1/
+  - /Prebuild%3A2.0.1/
 ---
 
 Prebuild:2.0.1

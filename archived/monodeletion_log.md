@@ -2,7 +2,7 @@
 title: "Mono:Deletion log"
 lastmodified: '2005-08-04'
 redirect_from:
-  - /Mono:Deletion_log/
+  - /Mono%3ADeletion_log/
 ---
 
 Mono:Deletion log

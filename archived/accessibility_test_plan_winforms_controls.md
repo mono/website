@@ -2,8 +2,8 @@
 title: "Accessibility: Test Plan WinForms Controls"
 lastmodified: '2009-08-06'
 redirect_from:
-  - /Accessibility:_Test_Plan_WinForms_Controls/
-  - /Accessibility:_Test_Plan_WinForms_Control/
+  - /Accessibility%3A_Test_Plan_WinForms_Controls/
+  - /Accessibility%3A_Test_Plan_WinForms_Control/
 ---
 
 Accessibility: Test Plan WinForms Controls

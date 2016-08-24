@@ -1,7 +1,7 @@
 ---
 title: Porting Winforms Applications
 redirect_from:
-  - /Guide:_Porting_Winforms_Applications/
+  - /Guide%3A_Porting_Winforms_Applications/
 ---
 
 by Jonathan Pobst

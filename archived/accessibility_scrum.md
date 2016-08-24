@@ -2,7 +2,7 @@
 title: "Accessibility: Scrum"
 lastmodified: '2008-09-16'
 redirect_from:
-  - /Accessibility:_Scrum/
+  - /Accessibility%3A_Scrum/
 ---
 
 Accessibility: Scrum

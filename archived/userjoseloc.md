@@ -2,7 +2,7 @@
 title: "User:Joseloc"
 lastmodified: '2005-06-22'
 redirect_from:
-  - /User:Joseloc/
+  - /User%3AJoseloc/
 ---
 
 User:Joseloc

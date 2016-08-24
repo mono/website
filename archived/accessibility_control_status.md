@@ -2,7 +2,7 @@
 title: "Accessibility: Control Status"
 lastmodified: '2008-10-14'
 redirect_from:
-  - /Accessibility:_Control_Status/
+  - /Accessibility%3A_Control_Status/
 ---
 
 Accessibility: Control Status

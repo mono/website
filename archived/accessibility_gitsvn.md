@@ -2,7 +2,7 @@
 title: "Accessibility: GitSVN"
 lastmodified: '2009-03-29'
 redirect_from:
-  - /Accessibility:_GitSVN/
+  - /Accessibility%3A_GitSVN/
 ---
 
 Accessibility: GitSVN

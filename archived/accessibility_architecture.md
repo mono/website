@@ -2,7 +2,7 @@
 title: "Accessibility: Architecture"
 lastmodified: '2008-08-15'
 redirect_from:
-  - /Accessibility:_Architecture/
+  - /Accessibility%3A_Architecture/
 ---
 
 Accessibility: Architecture

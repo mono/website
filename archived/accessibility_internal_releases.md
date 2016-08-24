@@ -2,8 +2,8 @@
 title: "Accessibility: Internal Releases"
 lastmodified: '2010-09-17'
 redirect_from:
-  - /Accessibility:_Internal_Releases/
-  - /Accessibility:_Potential_Internal_Release_Codenames/
+  - /Accessibility%3A_Internal_Releases/
+  - /Accessibility%3A_Potential_Internal_Release_Codenames/
 ---
 
 Accessibility: Internal Releases

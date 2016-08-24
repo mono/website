@@ -2,7 +2,7 @@
 title: "User:IsmaelOlea"
 lastmodified: '2007-11-12'
 redirect_from:
-  - /User:IsmaelOlea/
+  - /User%3AIsmaelOlea/
 ---
 
 User:IsmaelOlea

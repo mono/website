@@ -2,7 +2,7 @@
 title: "Accessibility: White%27s white list"
 lastmodified: '2009-09-11'
 redirect_from:
-  - /Accessibility:_White%27s_white_list/
+  - /Accessibility%3A_White%27s_white_list/
 ---
 
 Accessibility: White%27s white list
