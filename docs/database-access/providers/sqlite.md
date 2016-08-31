@@ -10,8 +10,6 @@ The Mono.Data.SqliteClient assembly contains an ADO.NET data provider for the [S
 
 SQLite has a notable oddity: table cell data does not retain what kind of data it was. Everything is stored as either a long, double, string, or blob. And in SQLite version 2, everything is stored as a string. So you need to be careful about avoiding casting values returned by SQLite without checking the type of the value returned. See below for notes on storing DateTimes.
 
-(The last maintainer of Mono.Data.SqliteClient was [Josh Tauberer](http://razor.occams.info).)
-
 <table>
 <col width="100%" />
 <tbody>
