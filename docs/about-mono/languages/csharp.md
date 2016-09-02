@@ -10,7 +10,7 @@ redirect_from:
 Introduction
 ------------
 
-The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0, C# 4.0 and C# 5.0 ([ECMA](/docs/about-mono/languages/ecma/)). A preview of C# 6.0 is distributed with Mono 3.8 or when building Mono from our trunk source code release.
+The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0, C# 4.0, C# 5.0 and C# 6.0 ([ECMA](/docs/about-mono/languages/ecma/)).
 
 Historically, various version of same compiler existed.
 
@@ -79,14 +79,17 @@ All C# 5.0 feature are supported including:
 -   Asynchronous programming support
 -   Caller info attributes
 
-Many of upcomming C# 6.0 features are supported including:
+All C# 6.0 features are supported including:
 
--   Primary constructors
 -   Auto-property initializers
+-   Await in catch and finally blocks
 -   Exception filters
--   Expression bodied members
--   Null propagating operator
+-   Expression-bodied function members
+-   Index initializers
+-   Null-conditional operator
 -   Nameof operator
+-   String interpolation
+-   Using static
 
 Experimental features that are being brainstormed for future versions of C# when using `-langversion: experimental` are also available:
 
