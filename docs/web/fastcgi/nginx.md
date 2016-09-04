@@ -22,9 +22,9 @@ Nginx configuration (as of version 0.7.63) is located in **/etc/nginx/nginx.conf
              listen   80;
              server_name  www.domain1.xyz;
              access_log   /var/log/nginx/your.domain1.xyz.access.log;
+             root /var/www/www.domain1.xyz/;
 
              location / {
-                     root /var/www/www.domain1.xyz/;
                      index index.html index.htm default.aspx Default.aspx;
                      fastcgi_index Default.aspx;
                      fastcgi_pass 127.0.0.1:9000;
@@ -52,8 +52,8 @@ Now when Mono FastCGI server is up and running, Nginx configuration is complete 
 
 ### Useful resources
 
-[http://wiki.nginx.org/NginxConfiguration](http://wiki.nginx.org/NginxConfiguration)<br/>
- [http://wiki.nginx.org/NginxVirtualHostExample](http://wiki.nginx.org/NginxVirtualHostExample)<br/>
- [Linux startup script for mono FastCGI server](http://tomi.developmententity.sk/Blog/Post/2)
-
+- [NGINX - Getting Started](https://www.nginx.com/resources/wiki/start/)
+- [NGINX - Server Block Examples](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/)
+- [NGINX - Pitfalls and Common Mistakes](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
+- [Linux startup script for mono FastCGI server](http://tomi.developmententity.sk/Blog/Post/2)
 
