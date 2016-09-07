@@ -58,7 +58,7 @@ Many places in Mono unsafely access `String` data, but they can be updated fairl
 
 The following is a technique that helped us bootstrap the effort.
 
-We needed very managed method that unsafely accesses `String` character data must be updated to account for whether the `String` is compact. This is tractable within `corlib`, but there is some third-party code that uses strings unsafely.
+Every managed method that unsafely accesses `String` character data must be updated to account for whether the `String` is compact. This is tractable within `corlib`, but there is some third-party code that uses strings unsafely.
 
 The `fixed` statement on strings calls a method `get_OffsetToStringData`, which is used to adjust the `fixed` pointer to refer to the character data, rather than the `String` object. In ASCII Mono, we can make this method throw a `NotSupportedException` with a message like
 
