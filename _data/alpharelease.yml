@@ -1,5 +1,5 @@
-version: 4.6 Beta Preview 3 (4.6.0.182)
-mono_mac_url: http://download.mono-project.com/archive/4.6.0/macos-10-universal/MonoFramework-MDK-4.6.0.182.macos10.xamarin.universal.pkg
-mono_windows_url: http://download.mono-project.com/archive/4.6.0/windows-installer/mono-4.6.0.182-gtksharp-2.12.38-win32-0.msi
-mono_windows64_url: http://download.mono-project.com/archive/4.6.0/windows-installer/mono-4.6.0.182-x64-0.msi
+version: 4.6 Stable (4.6.0.245)
+mono_mac_url: http://download.mono-project.com/archive/4.6.0/macos-10-universal/MonoFramework-MDK-4.6.0.245.macos10.xamarin.universal.pkg
+mono_windows_url: http://download.mono-project.com/archive/4.6.0/windows-installer/mono-4.6.0.245-gtksharp-2.12.38-win32-0.msi
+mono_windows64_url: http://download.mono-project.com/archive/4.6.0/windows-installer/mono-4.6.0.245-x64-0.msi
 gtksharp_windows_url: http://download.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.38.msi
