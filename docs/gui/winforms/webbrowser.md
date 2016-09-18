@@ -20,7 +20,7 @@ The Mono implementation
 
 This is an overview of all the components that support both the Gecko and WebKit backends. Each square with a thin border represents a different library.
 
-On top is the System.Windows.Forms class library. It has litle logic in itself for the WebBrowser control, and just uses the interfaces exposed by the next library, Mono.WebBrowser.
+On top is the System.Windows.Forms class library. It has little logic in itself for the WebBrowser control, and just uses the interfaces exposed by the next library, Mono.WebBrowser.
 
 Mono.WebBrowser is also a class library, but a private one (i.e., it's in the gac but can't be "discovered" by pkg-config tools since it doesn't ship a .pc file. It can obviously be linked to directly). Winforms depends on it directly, and it exposes interfaces that hide browser engine implementation details. The interfaces are more in line with the DOM spec, but are not as complete, mainly because the .NET Winforms WebBrowser control is not feature-complete in itself.
 
