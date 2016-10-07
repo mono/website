@@ -103,7 +103,7 @@ Then run the xsp4 command from that directory:
 xsp4 --port 9000
 ```
 
-Use a web browser to contact [http://localhost:9000/hello.aspx](http://localhost:9000/hello.aspx)
+Use a web browser to contact [http://localhost:8080/hello.aspx](http://localhost:8080/hello.aspx)
 
 Gtk# Hello World
 -----------------
