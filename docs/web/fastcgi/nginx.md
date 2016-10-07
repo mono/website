@@ -46,6 +46,11 @@ To listen on all hostnames, use the following:
 
      fastcgi-mono-server4 /applications=/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
 
+Note: On some systems this command doesn't work - you will get a "No Application Found
+Unable to find a matching application for request" Error  - removing the name (as demonstrated below) fixes the problem
+
+     fastcgi-mono-server2 /applications=/:/var/www/www.domain1.xyz/ /socket=tcp:127.0.0.1:9000
+
 Now when Mono FastCGI server is up and running, Nginx configuration is complete and your application is in place (located in /var/www/www.domain1.xyz/) you can run the web server.
 
      /etc/init.d/nginx start
