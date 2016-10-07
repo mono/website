@@ -22,7 +22,7 @@ So you are enjoying your day developing with mono when all of a sudden you run i
 
 Panic. Confusion. Chaos. These are generally the common reactions to such an Exception.
 
-Fortunetly there is hope. This error means that mono was unable to locate a library that one of the classes you are trying to use needs. This guide is here to help.
+Fortunately there is hope. This error means that mono was unable to locate a library that one of the classes you are trying to use needs. This guide is here to help.
 
 Background Information & Possible Questions
 -------------------------------------------
