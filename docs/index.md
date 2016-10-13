@@ -192,6 +192,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
                 <li><a href="/docs/advanced/performance-tips/">Performance Tips</a></li>
                 <li><a href="/docs/advanced/safehandles/">SafeHandles</a></li>
                 <li><a href="/docs/advanced/sandbox/">Sandbox</a></li>
+                <li><a href="/docs/advanced/signals/">Signals and third-party crash reporters</a></li>
             </ul>
         </div>
     </dd>
