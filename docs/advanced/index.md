@@ -20,3 +20,4 @@ title: Advanced
 * [Performance Tips](/docs/advanced/performance-tips/)
 * [SafeHandles](/docs/advanced/safehandles/)
 * [Sandbox](/docs/advanced/sandbox/)
+* [Signals and third-party crash reporters](/docs/advanced/signals/)
