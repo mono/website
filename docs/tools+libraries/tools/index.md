@@ -25,7 +25,7 @@ Miscellaneous tools
 -   sqlsharp: command line SQL client for most of the the System.Data based DB Connectors
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/): Rule-based assembly analyser for developers.
 -   [Monoxide](/archived/monoxide): Interactive assembly analyser.
--   [csharp](repl.md): An interactive shell (REPL) for C#.
+-   [csharp](/docs/tools+libraries/tools/repl/): An interactive shell (REPL) for C#.
 
 XML & Web Service
 =================
