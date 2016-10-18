@@ -158,6 +158,6 @@ AOTing all the system libraries
 You can use the following commands to AOT all of the libraries on your system:
 
 ``` bash
-mono --aot /usr/lib/mono/1.0/mscorlib.dll
-for i in /usr/lib/mono/gac/*/*/*.dll; do mono --aot $i; done
+sudo mono --aot /usr/lib/mono/4.5/mscorlib.dll
+for i in /usr/lib/mono/gac/*/*/*.dll; do sudo mono --aot $i; done
 ```
