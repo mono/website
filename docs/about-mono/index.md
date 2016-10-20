@@ -42,7 +42,7 @@ Built on an implementation of the [ECMA](/docs/about-mono/languages/ecma/)'s [Co
 Run [ASP.NET](/docs/web/aspnet/), [ADO.NET](/docs/database-access/adonet/), [Silverlight](/docs/web/moonlight/) and [Windows.Forms](/docs/gui/winforms/) applications without recompilation
 
 [Open Source, Free Software](/docs/faq/licensing/)<br/>
-Mono's runtime, compilers, and libraries are distributed the MIT license.
+Mono's runtime, compilers, and libraries are distributed using the MIT license.
 
 [Comprehensive Technology Coverage](/docs/about-mono/plans/)<br/>
 Bindings and managed implementations of many popular libraries and protocols
