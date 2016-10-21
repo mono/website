@@ -266,7 +266,7 @@ For example, to handle a button click event:
 public static void ButtonPressHandler(object obj, ButtonPressEventArgs args)
 ```
 
-ButtonPressEventArgs is a class derived from EventArgs. The class ButtonPressEventArgs, like many others in Gtk#, adds a the property Gtk.Event (or something derived from Gtk.Event) to EventArgs.
+ButtonPressEventArgs is a class derived from EventArgs. The class ButtonPressEventArgs, like many others in Gtk#, adds the property Gtk.Event (or something derived from Gtk.Event) to EventArgs.
 
 Gdk.Event types are:
 
