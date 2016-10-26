@@ -181,7 +181,7 @@ Building Moonlight for the Desktop
 Building Moonlight
 ------------------
 
-Please carefully read the [README](http://github.com/mono/moon/raw/master/README) file on github for the latest Moonlight build instructions.
+Please carefully read the [README](https://github.com/mono/moon/raw/master/README) file on github for the latest Moonlight build instructions.
 
 Make sure that you pass the flag: --enable-desktop-support to configure, to ensure that the Moonlight Desktop assemblies are compiled.
 

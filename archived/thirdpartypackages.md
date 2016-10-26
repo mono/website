@@ -50,7 +50,7 @@ Debian
 
 Binary packages for Debian are available for Debian/Unstable and Debian/Testing:
 
-[http://packages.debian.org/unstable/interpreters/mono](http://packages.debian.org/unstable/interpreters/mono)
+[https://packages.debian.org/unstable/interpreters/mono](https://packages.debian.org/unstable/interpreters/mono)
 
 Backports for Debian/Stable (Sarge):
 

@@ -13,7 +13,7 @@ Getting the MWF Project
 
 Download Mono's source tree from:
 
-[http://github.com/mono/mono](http://github.com/mono/mono)
+[https://github.com/mono/mono](https://github.com/mono/mono)
 
 Setting up the Environment
 --------------------------

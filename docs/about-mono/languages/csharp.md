@@ -113,13 +113,13 @@ The Mono C# compiler is part of the \`mono' module in the Mono Git you can get i
 
 You can also browse or download a snapshot of the compiler alone:
 
--   [browse the sources](http://github.com/mono/mono/tree/master/mcs/mcs/).
+-   [browse the sources](https://github.com/mono/mono/tree/master/mcs/mcs/).
 
 If you are interested in developing the C# compiler, the C# Compiler as a Service or the interactive shell on Windows we provide Visual Studio solutions that work on VS 2008 and 2010 and allow developers to quickly get the compiler up and running.
 
 To do this, download the entire MCS tree from:
 
--   [http://github.com/mono/mono/tree/master/mcs/](http://github.com/mono/mono/tree/master/mcs/).
+-   [https://github.com/mono/mono/tree/master/mcs/](https://github.com/mono/mono/tree/master/mcs/).
 
 And then open the Visual Studio solution on mcs/tools/csharp, this will build the Mono.CSharp.dll compiler as a service as well as the command line interactive C# shell "csharp".
 
@@ -136,7 +136,7 @@ When you report a bug, try to provide a small test case that would show the erro
 Implementation details
 ----------------------
 
-The compiler is documented in the file [mcs/docs/compiler](http://github.com/mono/mono/blob/master/mcs/docs/compiler.txt)
+The compiler is documented in the file [mcs/docs/compiler](https://github.com/mono/mono/blob/master/mcs/docs/compiler.txt)
 
 ### CIL Optimizations
 

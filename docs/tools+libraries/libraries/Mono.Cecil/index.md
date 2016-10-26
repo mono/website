@@ -20,7 +20,7 @@ Versions
 
 Recently, Cecil undergone a large refactoring, to be able to fix some issues the previous version had. In its previous form, the code was compilable on a .net 1.0 profile, and you need to use Cecil from the 0.6 family if you still want to use it.
 
-For every other usage, you're urged to switch to the new version 0.9. Its development has been moved to the [Cecil github page](http://github.com/jbevain/cecil) until all the code in Mono is updated to this version.
+For every other usage, you're urged to switch to the new version 0.9. Its development has been moved to the [Cecil github page](https://github.com/jbevain/cecil) until all the code in Mono is updated to this version.
 
 Using Cecil
 ===========
@@ -50,7 +50,7 @@ And adding Mono.Cecil.dll as one of your dependencies.
 Download
 ========
 
-If you want the up to date version of Mono.Cecil, you need to get it from its [github page](http://github.com/jbevain/cecil).
+If you want the up to date version of Mono.Cecil, you need to get it from its [github page](https://github.com/jbevain/cecil).
 
 If you need a recent build of the 0.6 branch, the recommended way of quickly getting a binary of Mono.Cecil.dll, is to grab it from the last MonoCharge tarball which are part of our [daily builds](http://mono.ximian.com/daily/).
 

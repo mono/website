@@ -18,7 +18,7 @@ We are now in stable bugfixing mode for the 2.4, 2.6, 2.8 and 2.10 bindings. The
 
 ### 2.12 bindings
 
-Gtk# 2.12 bindings are in stable release. Gnome# 2.20 and the new GnomeDesktop# unstable library bindings package have been released as well. Source tarballs are available from [GNOME FTP](http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12). See [GtkSharpNewInVersion2x](/docs/gui/gtksharp/new-in-version-2x/) for a list of enhancements and new features that were delivered in 2.12, along with newly bound API members from Gtk+ 2.12 and GNOME 2.20.
+Gtk# 2.12 bindings are in stable release. Gnome# 2.20 and the new GnomeDesktop# unstable library bindings package have been released as well. Source tarballs are available from [GNOME FTP](https://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12). See [GtkSharpNewInVersion2x](/docs/gui/gtksharp/new-in-version-2x/) for a list of enhancements and new features that were delivered in 2.12, along with newly bound API members from Gtk+ 2.12 and GNOME 2.20.
 
 Release plan
 ------------

@@ -68,11 +68,11 @@ openSUSE and SLES
 
 You can install using SUSE One-Click files (see below for descriptions):
 
-[![mono-devel](/images/OneClick.svg)](http://download.mono-project.com/repo/mono-devel.ymp) **mono-devel**
+[![mono-devel](/images/OneClick.svg)](https://download.mono-project.com/repo/mono-devel.ymp) **mono-devel**
 
-[![mono-complete](/images/OneClick.svg)](http://download.mono-project.com/repo/mono-complete.ymp) **mono-complete**
+[![mono-complete](/images/OneClick.svg)](https://download.mono-project.com/repo/mono-complete.ymp) **mono-complete**
 
-[![referenceassemblies-pcl](/images/OneClick.svg)](http://download.mono-project.com/repo/referenceassemblies-pcl.ymp) **referenceassemblies-pcl**
+[![referenceassemblies-pcl](/images/OneClick.svg)](https://download.mono-project.com/repo/referenceassemblies-pcl.ymp) **referenceassemblies-pcl**
 
 <hr/>
 

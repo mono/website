@@ -60,7 +60,7 @@ There are two possible choices here: PythonNet and IronPython.
 JavaScript
 ----------
 
-[IronJS](http://github.com/fholm/IronJS) is a DLR-based Javascript implementation that targets mono as well as .NET.
+[IronJS](https://github.com/fholm/IronJS) is a DLR-based Javascript implementation that targets mono as well as .NET.
 
 Historically mono used to ship 'mjs', an implementation of the JavaScript language as part of its distribution, the main author behind this effort is César Natarén.
 

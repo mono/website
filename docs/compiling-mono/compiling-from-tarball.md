@@ -8,7 +8,7 @@ If you are building versions of Mono prior to 2.8, you will need to obtain the M
 
 **Building From Packages**
 
-This applies to the officially [released packages](http://download.mono-project.com/sources/mono/).
+This applies to the officially [released packages](https://download.mono-project.com/sources/mono/).
 
 Unpack the Mono runtime distribution:
 

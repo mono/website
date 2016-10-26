@@ -133,8 +133,8 @@ Related Material
 
 ### Mono Winforms
 
--   [WinForms](http://github.com/mono/winforms) code in Mono's mcs project (ViewVC)
--   [UIAutomationWinforms](http://github.com/mono/uia2atk) project for winforms providers (ViewVC)
+-   [WinForms](https://github.com/mono/winforms) code in Mono's mcs project (ViewVC)
+-   [UIAutomationWinforms](https://github.com/mono/uia2atk) project for winforms providers (ViewVC)
 
 ### Other Organizations
 

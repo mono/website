@@ -8,9 +8,9 @@ redirect_from:
 Availability
 ============
 
-Mono is using GitHub's [Organizations](http://github.com/blog/674-introducing-organizations) functionality which allows us to keep all of the Mono modules that used to be hosted on our Subversion repository as repositories of the **mono** organization on GitHub.
+Mono is using GitHub's [Organizations](https://github.com/blog/674-introducing-organizations) functionality which allows us to keep all of the Mono modules that used to be hosted on our Subversion repository as repositories of the **mono** organization on GitHub.
 
-The Mono organization is available at [http://github.com/mono](http://github.com/mono)
+The Mono organization is available at [https://github.com/mono](https://github.com/mono)
 
 Windows Users
 =============
@@ -170,7 +170,7 @@ If you actually wanted a bugfix from 'master', just skip the last step, while ke
 
 If you want to publish the long-lived topic without integrating it into 'master', you should use a personal fork.
 
-This process is fairly efficient on Github. Go to the repository webpage and create a fork in your personal workspace. For instance, you take an origin repository `git://github.com/mono/mono.git` and fork it into `git@github.com:myrepos/mono.git` by going to `http://github.com/mono/mono` and clicking on the button marked "Fork".
+This process is fairly efficient on Github. Go to the repository webpage and create a fork in your personal workspace. For instance, you take an origin repository `git://github.com/mono/mono.git` and fork it into `git@github.com:myrepos/mono.git` by going to `https://github.com/mono/mono` and clicking on the button marked "Fork".
 
 You can add your personal fork as an additional remote with
 

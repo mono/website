@@ -50,8 +50,8 @@ Prerequisites
 -   atk
 -   nunit \>= 2.4.7 (if building tests)
 -   at-spi2 \>= 0.3.90
-    -   [http://download.gnome.org/sources/at-spi2-core/0.3/](http://download.gnome.org/sources/at-spi2-core/0.3/)
-    -   [http://download.gnome.org/sources/at-spi2-atk/0.3/](http://download.gnome.org/sources/at-spi2-atk/0.3/)
+    -   [https://download.gnome.org/sources/at-spi2-core/0.3/](https://download.gnome.org/sources/at-spi2-core/0.3/)
+    -   [https://download.gnome.org/sources/at-spi2-atk/0.3/](https://download.gnome.org/sources/at-spi2-atk/0.3/)
 
 Getting the Source
 ------------------

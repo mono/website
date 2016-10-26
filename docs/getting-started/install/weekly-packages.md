@@ -7,12 +7,12 @@ The Mono project is making packages available containing the absolute latest cod
 Source Code
 -----------
 
-Source tarballs can be found [here](http://download.mono-project.com/sources/mono/nightly/)
+Source tarballs can be found [here](https://download.mono-project.com/sources/mono/nightly/)
 
 Mac OS X
 --------
 
-Mac OS X packages can be found [here](http://download.mono-project.com/archive/nightly/macos-10-universal/)
+Mac OS X packages can be found [here](https://download.mono-project.com/archive/nightly/macos-10-universal/)
 
 Debian, Ubuntu, and derivatives
 -------------------------------
