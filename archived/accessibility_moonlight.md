@@ -61,8 +61,8 @@ For Developers
 
 In order to enable Moonlight Accessibility in Firefox you have to apply a patch, this patch depends on the version of Firefox. We have two patches, one for *mozilla-1.9.2* and one for *mozilla-central*. Make sure you are using compatible revisions and patches otherwise Moonlight Accessibility will not compile nor work.
 
--   *mozilla-1.9.2* is compatible with [Moon 2.0 (branch)](http://github.com/mono/moon/tree/moon/moon-2-0) and MoonAtkBridge (trunk).
--   *mozilla-central* is compatible with [Moon (master)](http://github.com/mono/moon) and MoonAtkBridge+patch (trunk).
+-   *mozilla-1.9.2* is compatible with [Moon 2.0 (branch)](https://github.com/mono/moon/tree/moon/moon-2-0) and MoonAtkBridge (trunk).
+-   *mozilla-central* is compatible with [Moon (master)](https://github.com/mono/moon) and MoonAtkBridge+patch (trunk).
 
 Before building Firefox you will need to install the following libraries:
 
@@ -90,7 +90,7 @@ Notice latest patch is tracked in [Mozilla Bug #480317](https://bugzilla.mozilla
 ### Building Firefox with Plugin Accessibility (mozilla-1.9.2)
 
 -   [Check out](https://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)) Firefox from *mozilla-1.9.2 (Firefox 3.6)*
--   Apply the latest plugin accessibility patch from [uia2atk/MoonAtkBridge](http://github.com/mono/uia2atk/blob/master/MoonAtkBridge/patches/ff-plugin-a11y.patch)
+-   Apply the latest plugin accessibility patch from [uia2atk/MoonAtkBridge](https://github.com/mono/uia2atk/blob/master/MoonAtkBridge/patches/ff-plugin-a11y.patch)
 -   Move your .mozconfig to your checkout folder and build for the first time:
 
 <!-- -->
@@ -102,7 +102,7 @@ Notice latest patch is tracked in [Mozilla Bug #480317](https://bugzilla.mozilla
 ### Building Firefox with Plugin Accessibility (mozilla-central)
 
 -   [Check out](https://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)) Firefox from *mozilla-central (Firefox 4.0)*
--   Apply the latest plugin accessibility patch from [uia2atk/MoonAtkBridge](http://github.com/mono/uia2atk/blob/master/MoonAtkBridge/patches/mozilla-central/ff-plugin-a11y.patch)
+-   Apply the latest plugin accessibility patch from [uia2atk/MoonAtkBridge](https://github.com/mono/uia2atk/blob/master/MoonAtkBridge/patches/mozilla-central/ff-plugin-a11y.patch)
 -   Move your .mozconfig to your checkout folder and build for the first time:
 
 <!-- -->
@@ -290,7 +290,7 @@ The most important thing to notice is **Plugin Installer (.xpi): yes**.
 
     git clone git://github.com/mono/moon.git
 
--   Open the README file in moon and look for the section called: **Requirements**, in that section you will notice the revisions required to build moonlight, for example *[moon 79a21b](http://github.com/mono/moon/commit/79a21bf3713bef8832a5c8c04f3c3e4ca84295d6)*:
+-   Open the README file in moon and look for the section called: **Requirements**, in that section you will notice the revisions required to build moonlight, for example *[moon 79a21b](https://github.com/mono/moon/commit/79a21bf3713bef8832a5c8c04f3c3e4ca84295d6)*:
 
 <!-- -->
 

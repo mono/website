@@ -59,5 +59,5 @@ Projects using this package
 Download
 --------
 
-[http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/](http://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/)
+[https://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/](https://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/)
 

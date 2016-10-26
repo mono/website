@@ -126,7 +126,7 @@ This tutorial will *not* have in-depth explanations about the Strongwind-specifi
 -   [GNOME](http://www.gnome.org)
 -   [Python](http://www.python.org) (\>=2.5, \<3.0)
 -   Enable "Assistive Technologies" from the GNOME Control Center
--   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
+-   pyatspi (packaged with [AT-SPI](https://ftp.gnome.org/pub/GNOME/sources/at-spi))
 -   [Accerciser](http://live.gnome.org/Accerciser) (1.4.0 or later)
 -   [Strongwind](http://medsphere.org/projects/strongwind) (installing from SVN trunk is highly recommended)
 -   [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython) (the package name in openSUSE is IPCE). Our sample applications are written in IronPython, so it must be installed for them to run successfully.
@@ -523,9 +523,9 @@ It is recommended that you use a Virtual Machine (VM) for testing. You should ta
 -   [GNOME](http://www.gnome.org)
 -   [Python](http://www.python.org)
 -   Enable "Assistive Technologies" from the GNOME Control Center
--   pyatspi (packaged with [AT-SPI](http://ftp.gnome.org/pub/GNOME/sources/at-spi))
+-   pyatspi (packaged with [AT-SPI](https://ftp.gnome.org/pub/GNOME/sources/at-spi))
 -   [uia2atk code](/archived/accessibility_getting_started_with_development/#getting-the-code). The QA-related code is in the test directory. There are short README files in the test directory and each of its subdirectories. Read these README files if you are confused about the files and directories you are seeing. The code can also be checked out anonymously (using subversion) by running *svn co [svn://anonsvn.mono-project.com/source/trunk/uia2atk](svn://anonsvn.mono-project.com/source/trunk/uia2atk)*.
--   Install intltool \>=0.40.0 ([http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](http://ftp.acc.umu.se/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
+-   Install intltool \>=0.40.0 ([https://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz](https://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz)).
 -   Install Orca revision 4277 (version 2.24.00???) from source (svn co -r 4277 [http://svn.gnome.org/svn/orca/trunk](http://svn.gnome.org/svn/orca/trunk) orca) so you can follow along with the examples. We must check out the code fron svn because the test code is in the svn trunk but it not in the tarballs or source packages. Additionally, we want to make sure we use the same revision on all test machines so we do not get varying test results.
 -   Set *orca.debug.debugLevel = orca.debug.LEVEL_INFO* in your \~/.orca/user-settings.py file. This is explained in [Writing Orca Tests](http://live.gnome.org/Orca/RegressionTesting/WritingTests), which is mentioned below and should be read prior to writing tests for Orca.
 -   Install [Accerciser](http://live.gnome.org/Accerciser) from source. [Here](http://bgmerrell.blogspot.com/2008/07/buildling-accerciser-from-source-on.html) are some instructions to do this easily.

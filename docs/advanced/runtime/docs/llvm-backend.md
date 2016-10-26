@@ -42,13 +42,13 @@ The LLVM Mono Branch
 
 We maintain a fork/branch of LLVM with various changes to enable better integration with mono. The repo is at:
 
-[http://github.com/mono/llvm](http://github.com/mono/llvm)
+[https://github.com/mono/llvm](https://github.com/mono/llvm)
 
 The LLVM backend is currently only supported when using this version of LLVM. When using this version, it can compile about 99% of mscorlib methods.
 
 The GIT repo is forked from the unofficial LLVM git mirror at:
 
-[http://github.com/earl/llvm-mirror](http://github.com/earl/llvm-mirror)
+[https://github.com/earl/llvm-mirror](https://github.com/earl/llvm-mirror)
 
 ### Changes relative to stock LLVM
 
@@ -81,7 +81,7 @@ git diff `git merge-base mirror/master master`..master
 The master branch is maintained by regularly rebasing it on top of 'mirror/master'. This makes examining our changes easier. To merge changes from llvm-mirror to this repo, do:
 
 ``` bash
-git remote add mirror http://github.com/earl/llvm-mirror.git
+git remote add mirror https://github.com/earl/llvm-mirror.git
 git fetch mirror
 git rebase mirror/master
 <fix conflicts/commit>
@@ -236,5 +236,5 @@ LLVM has a LoopUnswitch pass which can do something like this for constant expre
 
 An experimental version of this optimization which can only handle simple cases is now in mono's llvm repository:
 
-[http://github.com/mono/llvm/tree/mono-abcrem](http://github.com/mono/llvm/tree/mono-abcrem)
+[https://github.com/mono/llvm/tree/mono-abcrem](https://github.com/mono/llvm/tree/mono-abcrem)
 

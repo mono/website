@@ -15,7 +15,7 @@ Mono on BSD operating systems is supported independently by the respective opera
 -   NetBSD [(Port)](http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/mono/)
 -   OpenBSD ([Port](http://www.openbsd.org/cgi-bin/cvsweb/ports/lang/mono/))
 -   DragonflyBSD (Port: no official port)
--   [Debian GNU/kFreeBSD](http://www.debian.org/ports/kfreebsd-gnu/) [(Package)](http://packages.debian.org/unstable/interpreters/mono-runtime)
+-   [Debian GNU/kFreeBSD](http://www.debian.org/ports/kfreebsd-gnu/) [(Package)](https://packages.debian.org/unstable/interpreters/mono-runtime)
 
 Using Mono on the BSDs
 ======================

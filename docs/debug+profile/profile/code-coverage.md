@@ -11,7 +11,7 @@ For more information see [Profile](/docs/debug+profile/profile/).
 MonoCov
 =======
 
-MonoCov is made up of two components: a code coverage module, and a GUI interface for doing code coverage. This is available as part of the package "monocov" (available [here](http://github.com/mono/monocov)).
+MonoCov is made up of two components: a code coverage module, and a GUI interface for doing code coverage. This is available as part of the package "monocov" (available [here](https://github.com/mono/monocov)).
 
 To use it, run your program like this:
 

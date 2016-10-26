@@ -130,5 +130,5 @@ More informations
 
 Please email **\<mono-devel-list@lists.ximian.com\>** if you have any problem and/or if there's something wrong or missing in the instructions.
 
-An offline version of this document is available in the file [README.vsnet](http://github.com/mono/mono/blob/master/README.vsnet).
+An offline version of this document is available in the file [README.vsnet](https://github.com/mono/mono/blob/master/README.vsnet).
 

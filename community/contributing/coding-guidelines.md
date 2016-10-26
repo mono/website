@@ -827,7 +827,7 @@ Backporting Changes
 
 If you want to backport an interesting change to a branch, you can follow these steps.
 
-Let us say that you want to backport this change: [http://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8](http://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8) into the remote branch monotouch-2-0.
+Let us say that you want to backport this change: [https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8](https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8) into the remote branch monotouch-2-0.
 
 To do this, first you would create a local branch called "monotouch-2-0" that tracks the remote monotouch-2-0 branch:
 
@@ -874,7 +874,7 @@ git push
 ChangeLogs
 ----------
 
-**Update**: ChangeLogs are no longer manually updated, instead just use the ChangeLog message on your commit. At release time, a script merges the commit messages into the proper ChangeLogs that are distributed. For a few examples on how the script operates on commit messages, see [this branch on our public repository](http://github.com/mono/mono/commits/commit-to-changelog-tests).
+**Update**: ChangeLogs are no longer manually updated, instead just use the ChangeLog message on your commit. At release time, a script merges the commit messages into the proper ChangeLogs that are distributed. For a few examples on how the script operates on commit messages, see [this branch on our public repository](https://github.com/mono/mono/commits/commit-to-changelog-tests).
 
 You would typically commit your message like this:
 
@@ -1079,7 +1079,7 @@ Personal Work Branches
 
 See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-master-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
-If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [http://github.com/mono](http://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
+If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [https://github.com/mono](https://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
 
 As somewhat of a corollary, you need to fork only when you publish your feature branch. After all, Git treats your local clone as a first-class repository, not just as a mirror of some remote repository. You *don't* need to fork to create local branches.
 

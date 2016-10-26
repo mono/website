@@ -95,8 +95,8 @@ Packages for many Linux distributions are available through the Mono project in 
 -   [Fedora 8](http://download.opensuse.org/repositories/Mono/Fedora_8)
 -   [Fedora 7](http://download.opensuse.org/repositories/Mono/Fedora_7)
 -   [Fedora Core 6](http://download.opensuse.org/repositories/Mono/Fedora_Extras_6)
--   [Debian/Testing](http://packages.debian.org/testing/libmono-zeroconf1.0-cil)
--   [Debian/Unstable](http://packages.debian.org/unstable/libmono-zeroconf1.0-cil)
+-   [Debian/Testing](https://packages.debian.org/testing/libmono-zeroconf1.0-cil)
+-   [Debian/Unstable](https://packages.debian.org/unstable/libmono-zeroconf1.0-cil)
 
 ### Git
 

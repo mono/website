@@ -6,7 +6,7 @@ redirect_from:
   - /SVN/
 ---
 
-The Mono source code is hosted on [GitHub](http://GitHub.com) using the [Git](http://git-scm.com/) source code control system for all of its source code. Although only active contributors get write access to the modules on Git, third party developers and easily fork the code on GitHub or download full copies of the repositories to their own systems.
+The Mono source code is hosted on [GitHub](https://github.com) using the [Git](http://git-scm.com/) source code control system for all of its source code. Although only active contributors get write access to the modules on Git, third party developers and easily fork the code on GitHub or download full copies of the repositories to their own systems.
 
 Here we describe how one obtains commit access to the Mono Git repository and the responsibilities that come with that access privilege.
 

@@ -18,7 +18,7 @@ GtkGlAreaSharp:Installation
 
 // Download gtkglarea
 
-    wget ftp://ftp.gnome.org/mirror/gnome.org/sources/gtkglarea/1.99/gtkglarea-1.99.0.tar.bz2
+    wget https://ftp.gnome.org/mirror/gnome.org/sources/gtkglarea/1.99/gtkglarea-1.99.0.tar.bz2
 
 // Check out gtkglarea-sharp from svn
 

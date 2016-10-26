@@ -523,7 +523,7 @@ Read the [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/) on this site for m
 Mono.Reflection
 ---------------
 
-[Mono.Reflection](http://github.com/jbevain/mono.reflection/) is a helper library to complement the System.Reflection and System.Reflection.Emit with useful extension methods and helpers, including a IL disassembler.
+[Mono.Reflection](https://github.com/jbevain/mono.reflection/) is a helper library to complement the System.Reflection and System.Reflection.Emit with useful extension methods and helpers, including a IL disassembler.
 
 Bittorrent Libraries
 --------------------
@@ -616,7 +616,7 @@ You can read about how they ported NDO to work on Mono on their ["NDO runs under
 CouchDB access
 --------------
 
-The [Divan](http://github.com/gokr/Divan/tree/master) library can be used to access CouchDB servers.
+The [Divan](https://github.com/gokr/Divan/tree/master) library can be used to access CouchDB servers.
 
 DB4O
 ----

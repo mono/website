@@ -47,7 +47,7 @@ All the examples were tested using mono 1.1.6, Gtk# 1.9.3 and Gettext# 0.14.
 
 #### Installation
 
-You can download the current version from [here](http://ftp.gnu.org/gnu/gettext/gettext-0.14.tar.gz). The older version can the downloaded from [this](http://ftp.gnu.org/gnu/gettext/) site. Older versions of Gettext doesn't support C#, so older versions doesn't work.
+You can download the current version from [here](https://ftp.gnu.org/gnu/gettext/gettext-0.14.tar.gz). The older version can the downloaded from [this](https://ftp.gnu.org/gnu/gettext/) site. Older versions of Gettext doesn't support C#, so older versions doesn't work.
 
 After downloading the package you need to uncompress it.
 
