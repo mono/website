@@ -4,12 +4,12 @@ redirect_from:
   - /Compiling_Mono_on_Windows/
 ---
 
-There are two ways of building Mono on Windows, both do require a Cygwin setup which provides some tools required by Mono at build time. First, download Cygwin from [www.cygwin.com](http://www.cygwin.com). Use the 32 bit installer (setup-x86.exe).
+There are two ways of building Mono on Windows, both do require a Cygwin setup which provides some tools required by Mono at build time. First, download Cygwin from [www.cygwin.com](http://www.cygwin.com).
 
 Run the following command in cmd.exe to install the required packages:
 
 ``` shell
-setup-x86.exe --root "C:\cygwin" --quiet-mode --packages autoconf,automake,bison,gcc-core,gcc-g++,mingw64-i686-runtime,mingw64-i686-binutils,mingw64-i686-gcc-core,mingw64-i686-gcc-g++,mingw64-i686-pthreads,w32api-headers,libtool,make,python,gettext-devel,gettext,intltool,libiconv,pkg-config,git,curl,libxslt
+setup-x86.exe --root "C:\cygwin" --quiet-mode --packages autoconf,automake,bison,gcc-core,gcc-g++,mingw64-i686-runtime,mingw64-i686-binutils,mingw64-i686-gcc-core,mingw64-i686-gcc-g++,mingw64-i686-pthreads,mingw64-x86_64-runtime,mingw64-x86_64-binutils,mingw64-x86_64-gcc-core,mingw64-x86_64-gcc-g++,mingw64-x86_64-pthreads,w32api-headers,libtool,make,python,gettext-devel,gettext,intltool,libiconv,pkg-config,git,curl,libxslt
 ```
 
 At this point, you can either do a [Visual Studio build](/docs/compiling-mono/windows/compiling-with-visualstudio/) or you can continue reading the instructions for a Cygwin build.
