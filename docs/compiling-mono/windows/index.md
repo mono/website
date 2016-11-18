@@ -34,7 +34,7 @@ cd mono
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --disable-boehm
 ```
 
-Now open the mono solution `msvc\mono.sln` in Visual Studio. (Re)Build the solution and point the `MONO_EXECUTABLE` to the mono exe you build in Visual Studio. Eg:
+Now open the mono solution `msvc\mono.sln` in Visual Studio. (Re)Build the solution and point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
 ```
 export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
 ```
@@ -51,7 +51,7 @@ It is possible to parallelize the cygwin build passing in for example `-j8`,  wh
 To build Mono 32-bit, run autogen with `--host=i686-w64-mingw32` instead and choose 32-bit when building in Visual Studio.
 
 ### Command line using msbuild.exe
-Instead of building from within Visual Studio you can use msbuild.exe directly in the cygwin terminal:
+Instead of building from within Visual Studio you can use `msbuild.exe` directly in the cygwin terminal:
 ```
 /cygdrive/c/Program\ Files\ \(x86\)/MSBuild/14.0/Bin/MSBuild.exe /p:PlatformToolset=v140 /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
@@ -81,7 +81,7 @@ make get-monolite-latest
 ```
 * Open Visual Studio project msvc/mono.sln
 * Select configuration to build and make a clean/rebuild all.
-* Point the `MONO_EXECUTABLE` to the mono exe you build in Visual Studio. Eg:
+* Point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
 ```
 export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
 ```
