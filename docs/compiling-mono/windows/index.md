@@ -10,8 +10,9 @@ To build Mono on Windows, a Cygwin setup is required since it provides some tool
 
 * Download and install 64 bit Cygwin from [www.cygwin.com](http://www.cygwin.com).
 * Install [Visual Studio 2015 or later](https://www.visualstudio.com) - Community Edition works fine.
-* Download and install [Mono for Windows](http://www.mono-project.com/docs/getting-started/install/windows/)
+* Download and install [Mono for Windows](http://www.mono-project.com/docs/getting-started/install/windows/) or use `monolite` build step as described below.
 * Run the following command in cmd.exe to install the required packages: 
+
 ```
 setup-x86_64.exe -q -P autoconf,automake,bison,gcc-core,gcc-g++,mingw64-i686-runtime,mingw64-i686-binutils,mingw64-i686-gcc-cor,ming-i686-gcc-g++,mingw64-i686-pthreads,mingw64-i686-w32api,mingw64-x86_64-runtime,mingw64-x86_64-binutils,mingw64-x86_64-gcc-cor,mingw6-x86_64-gcc-g++,mingw64-x86_64-pthreads,mingw64-x86_64-w32api,libtool,make,python,gettext-devel,gettext,intltool,libiconv,pkg-config,git,curl,libxslt
 ```
@@ -35,12 +36,15 @@ cd mono
 ```
 
 Now open the mono solution `msvc\mono.sln` in Visual Studio. (Re)Build the solution and point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
+
 ```
 export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
 ```
+
 if you built 64-bit Debug version.
 
 Next step is to build the BCL and all System libraries. Go back to cygwin and run make:
+
 ```
 make
 make install
@@ -48,49 +52,28 @@ make install
 
 It is possible to parallelize the cygwin build passing in for example `-j8`,  where 8 in this case is the number of parallel builders to run.
 
+### Building without installed Mono distribution
+If no Mono distribution is installed, you can build using `monolite`. Just run the below before running `make`:
+
+```
+make get-monolite-latest
+```
+
+### 32-bit build
 To build Mono 32-bit, run autogen with `--host=i686-w64-mingw32` instead and choose 32-bit when building in Visual Studio.
 
 ### Command line using msbuild.exe
 Instead of building from within Visual Studio you can use `msbuild.exe` directly in the cygwin terminal:
+
 ```
 /cygdrive/c/Program\ Files\ \(x86\)/MSBuild/14.0/Bin/MSBuild.exe /p:PlatformToolset=v140 /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
+
 Use desired parameters in the Platform and Configuration parameters to change between 64 and 32 bit builds as well as Release and Debug builds.
 
 If only changes has been done to the native code and no changes have been 
 done to base class libraries or .NET tests, building/rebuilding using Visual Studio solution 
 is enough. If, however there are changes done to the base class libraries or tests, you need to run make in cygwin to rebuild the class libraries and/or tests.
-
-## Build with no Mono distribution available
-
-### Prerequisites:
-* 64-bit Cygwin.
-* All packages as listed above.
-* Visual Studio 2015 (if custom branch is used).
-
-### Steps
-
-* Open cygwin prompt.
-```
-git config --global core.autocrlf input
-git clone https://github.com/mono/mono.git
-cd mono
-export PREFIX=/cygdrive/c/mono-dist
-./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --disable-boehm
-make get-monolite-latest
-```
-* Open Visual Studio project msvc/mono.sln
-* Select configuration to build and make a clean/rebuild all.
-* Point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
-```
-export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
-```
-* Go back to cygwin and run
-```
-make -j8
-make install
-``` 
-
 
 ## Building Mono from a Release Package
 
