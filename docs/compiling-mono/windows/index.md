@@ -9,7 +9,7 @@ To build Mono on Windows, a Cygwin setup is required since it provides some tool
 ## Install prerequisites
 
 * Download and install 64 bit Cygwin from [www.cygwin.com](http://www.cygwin.com).
-* Install [Visual Studio 2015 or later](https://www.visualstudio.com).
+* Install [Visual Studio 2015 or later](https://www.visualstudio.com) - Community Edition works fine.
 * Download and install [Mono for Windows](http://www.mono-project.com/docs/getting-started/install/windows/)
 * Run the following command in cmd.exe to install the required packages: 
 ```
@@ -36,7 +36,7 @@ cd mono
 
 Now open the mono solution `msvc\mono.sln` in Visual Studio. (Re)Build the solution and point the `MONO_EXECUTABLE` to the mono exe you build in Visual Studio. Eg:
 ```
-export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Debug/mono-sgen.exe 
+export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
 ```
 if you built 64-bit Debug version.
 
@@ -68,7 +68,7 @@ is enough. If, however there are changes done to the base class libraries or tes
 * All packages as listed above.
 * Visual Studio 2015 (if custom branch is used).
 
-Steps:
+### Steps
 
 * Open cygwin prompt.
 ```
@@ -78,11 +78,19 @@ cd mono
 export PREFIX=/cygdrive/c/mono-dist
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --disable-boehm
 make get-monolite-latest
+```
+* Open Visual Studio project msvc/mono.sln
+* Select configuration to build and make a clean/rebuild all.
+* Point the `MONO_EXECUTABLE` to the mono exe you build in Visual Studio. Eg:
+```
+export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
+```
+* Go back to cygwin and run
+```
 make -j8
 make install
 ``` 
-* Open Visual Studio project msvc/mono.sln
-* Select configuration to build and make a clean/rebuild all.
+
 
 ## Building Mono from a Release Package
 
