@@ -1,5 +1,5 @@
 version: 4.8 Alpha (4.8.0.344)
 mono_mac_url: https://download.mono-project.com/archive/4.8.0/macos-10-universal/MonoFramework-MDK-4.8.0.344.macos10.xamarin.universal.pkg
-mono_windows_url: https://download.mono-project.com/archive/4.6.1/windows-installer/mono-4.6.1.5-gtksharp-2.12.38-win32-0.msi
-mono_windows64_url: https://download.mono-project.com/archive/4.6.1/windows-installer/mono-4.6.1.5-x64-0.msi
+mono_windows_url: https://download.mono-project.com/archive/4.6.1/windows-installer/mono-4.8.0.344-gtksharp-2.12.42-win32-0.msi
+mono_windows64_url: https://download.mono-project.com/archive/4.6.1/windows-installer/mono-4.8.0.344-x64-0.msi
 gtksharp_windows_url: https://dl.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.42.msi
