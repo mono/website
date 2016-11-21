@@ -38,7 +38,7 @@ cd mono
 Now open the mono solution `msvc\mono.sln` in Visual Studio. (Re)Build the solution and point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
 
 ```
-export MONO_EXECUTABLE=./msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
+export MONO_EXECUTABLE=/cygdrive/c/..../msvc/build/sgen/x64/bin/Release/mono-sgen.exe 
 ```
 
 if you built 64-bit Debug version.
