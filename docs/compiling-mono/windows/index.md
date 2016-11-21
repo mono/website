@@ -10,7 +10,7 @@ To build Mono on Windows, a Cygwin setup is required since it provides some tool
 
 * Download and install 64 bit Cygwin from [www.cygwin.com](http://www.cygwin.com).
 * Install [Visual Studio 2015 or later](https://www.visualstudio.com) - Community Edition works fine.
-* Download and install [Mono for Windows](http://www.mono-project.com/docs/getting-started/install/windows/) or use `monolite` build step as described below.
+* Download and install [Mono for Windows](/docs/getting-started/install/windows/) or use `monolite` build step as described below.
 * Run the following command in cmd.exe to install the required packages: 
 
 ```
