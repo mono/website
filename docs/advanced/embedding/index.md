@@ -127,8 +127,14 @@ In the above example, the contents of \`file.exe' will be loaded into the domain
 To start executing code, you must invoke a method in the assembly, or if you have provided a static Main method (an entry point), you can use the convenience function:
 
 ``` c
-retval = mono_jit_exec (domain, assembly, argc, argv);
+retval = mono_jit_exec (domain, assembly, argc - 1, argv + 1);
 ```
+
+And execute c program like:
+``` bash
+./c_program file.exe
+```
+> `mono_jit_exec` expects the assembly file name in argv[0], so we adjust c argc and argv a bit.
 
 Make sure you always provide a Main() method and execute it with `mono_jit_exec()` at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
 
