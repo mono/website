@@ -10,7 +10,7 @@ Mono's use of Reference Source Code
 
 Since the first release of the .NET open source code, the Mono project
 has been integrating the published [Reference
-Source](https://github.com/microsoft/referencesource) code into Mono. 
+Source](https://github.com/microsoft/referencesource) code into Mono.
 
 We have been using the Reference Source code instead of the
 [CoreFX](https://github.com/dotnet/corefx), as Mono implements a

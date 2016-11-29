@@ -28,14 +28,14 @@ In addition to programmers’ regular use of handles, Mono uses them in its impl
 
 A `GCHandle` object consists of a type and an index, packed together into a 32-bit unsigned integer. To get the value of a handle, say with `WeakReference.Target`, we first look up the array of handle data corresponding to its type, then look up the value at the given index; in pseudocode:
 
-```
+```text
 (type, index) = unpack(handle)
 value = handles[type][index]
 ```
 
 The original implementation of GC handles was based on a bitmap allocator. For each handle type, it stored a bitmap indicating the available slots for allocating new handles, and an array of pointers to their target objects:
 
-```
+```text
 bitmap   = 11010…
 pointers = [0xPPPPPPPP, 0xPPPPPPPP, NULL, 0xPPPPPPPP, NULL, …]
 ```
@@ -44,7 +44,7 @@ There’s an interesting constraint, though: when we unload an `AppDomain`, we w
 
 But if the weak reference has expired, we can’t tell what domain it came from, because we no longer have an object to look at! So for weak references, we kept a parallel array of domain pointers:
 
-```
+```text
 domains  = [0xDDDDDDDD, 0xDDDDDDDD, NULL, 0xDDDDDDDD, NULL, …]
 ```
 
@@ -65,13 +65,13 @@ After removing the redundant hash table, the first step toward a new lock-free i
 
 We ended up with a single array of *slots* in the following bit format:
 
-```
+```text
 PPPPPPPP…0VX
 ```
 
 Where `PPPP…` are pointer bits, `V` is the “valid” flag, and `X` is the “occupied” flag, packed together with bitwise OR:
 
-```
+```text
 slot = pointer | valid_bit | occupied_bit
 ```
 
@@ -79,7 +79,7 @@ If the “occupied” flag is clear, the slot is free to be claimed by `GCHandle
 
 [Interlocked.CompareExchange]: https://msdn.microsoft.com/en-us/library/system.threading.interlocked.compareexchange(v=vs.110).aspx
 
-```
+```text
 cas(slot, tag(pointer), NULL)
 
 00000000…000
@@ -93,7 +93,7 @@ As for `AppDomain` unloading, we can observe that we only need to store a domain
 
 Therefore, when a weak reference expires, all we have to do is clear the “valid” flag and replace the object pointer with a domain pointer:
 
-```
+```text
 PPPPPPPP…011
      ↓
 DDDDDDDD…001
@@ -116,7 +116,7 @@ Now that we have our representation of slots, how do we grow the handle array wh
 
 To solve this, instead of a single handle array, we use a handle *table* consisting of an array of *buckets*, each twice the size of the last:
 
-```
+```text
 [0] → xxxxxxxx
 [1] → xxxxxxxxxxxxxxxx
 [2] → xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -139,7 +139,7 @@ If the CAS fails, then another thread has already allocated a new bucket, so we 
 
 Before this change was implemented, these were the average timings over 5 runs:
 
-```
+```bash
 real    0m2.441s
 user    0m1.591s
 sys     0m0.959s
@@ -147,7 +147,7 @@ sys     0m0.959s
 
 After the change:
 
-```
+```bash
 real    0m0.358s
 user    0m0.406s
 sys     0m0.063s
@@ -157,7 +157,7 @@ Cool! We got about an 80% improvement.
 
 Let’s look at `monitor-stress`, which stress-tests `Monitor` operations using the C♯ `lock` statement. Before the change, average of 5 runs:
 
-```
+```bash
 real    0m2.714s
 user    0m6.963s
 sys     0m0.244s
@@ -165,7 +165,7 @@ sys     0m0.244s
 
 Now, with the change:
 
-```
+```bash
 real    0m2.681s
 user    0m6.783s
 sys     0m0.242s

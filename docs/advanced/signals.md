@@ -63,12 +63,12 @@ which are to be used like this:
 ``` csharp
 try {
 } finally {
-	Mono.Runtime.RemoveSignalHandlers ();
-	try {
-		EnableCrashReporting ();
-	} finally {
-		Mono.Runtime.InstallSignalHandlers ();
-	}
+    Mono.Runtime.RemoveSignalHandlers ();
+    try {
+        EnableCrashReporting ();
+    } finally {
+        Mono.Runtime.InstallSignalHandlers ();
+    }
 }
 ```
 

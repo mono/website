@@ -22,7 +22,7 @@ A working version of this work is currently hosted here:
 
 Strings currently have the following representation:
 
-```
+```csharp
 class String {
     int length;
     char firstChar;
@@ -31,7 +31,7 @@ class String {
 
 Where `&firstChar` is the starting address of the co-allocated string data. First we can observe that the `length` field is a *signed* 32-bit integer (`System.Int32`). Changing this to an *unsigned* integer (`System.UInt32`) gives us a free bit, which we can use to tell whether the string is normal (UCS-2) or *compact* (ASCII):
 
-```
+```csharp
 class String {
     uint taggedLength;
     byte firstByte;
@@ -42,7 +42,7 @@ Here, `(taggedLength & 1) == 0` indicates the non-compact encoding, for which `(
 
 I use the low-order bit instead of the sign bit because it lets us get the length with a simple shift, regardless of encoding:
 
-```
+```csharp
 public int Length {
     get {
         return (int)(taggedLength >> 1);
@@ -73,7 +73,7 @@ any ASCII-strings into UTF-16 strings if the user happens to call fixed on a com
 
 In order to update existing third-party code that uses strings unsafely, we need some kind of `UnsafeApply` API:
 
-```
+```csharp
 public unsafe T UnsafeApply<T>
     (Func<BytePtr, T> compact, Func<CharPtr, T> noncompact)
 ```
@@ -96,7 +96,7 @@ The `String.Iterator` interface would provide methods such as:
 
 And have two concrete implementations, `CompactIterator` and `NonCompactIterator`, returned by a new `String` method `GetIterator` like so:
 
-```
+```csharp
 private static unsafe Iterator GetIterator (IntPtr data, bool compact)
 {
     if (compact)

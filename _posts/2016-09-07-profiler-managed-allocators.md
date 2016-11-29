@@ -43,19 +43,19 @@ the actual source code):
 static gboolean
 is_ip_in_managed_allocator (MonoDomain *domain, gpointer ip)
 {
-	/*
-	 * ip is the instruction pointer of the thread, as obtained by the STW
-	 * machinery when it temporarily suspends the thread.
-	 */
+    /*
+     * ip is the instruction pointer of the thread, as obtained by the STW
+     * machinery when it temporarily suspends the thread.
+     */
 
-	MonoJitInfo *ji = mono_jit_info_table_find_internal (domain, ip, FALSE, FALSE);
+    MonoJitInfo *ji = mono_jit_info_table_find_internal (domain, ip, FALSE, FALSE);
 
-	if (!ji)
-		return FALSE;
+    if (!ji)
+        return FALSE;
 
-	MonoMethod *m = mono_jit_info_get_method (ji);
+    MonoMethod *m = mono_jit_info_get_method (ji);
 
-	return sgen_is_managed_allocator (m);
+    return sgen_is_managed_allocator (m);
 }
 ```
 
@@ -66,7 +66,7 @@ two separate signal handlers for `SIGUSR1` and `SIGUSR2`, both of which simply
 do `while (1);` to spin forever, and you send `SIGUSR1` followed by `SIGUSR2`
 to your program, you'll see a stack trace looking something like this:
 
-```
+```gdb
 (gdb) bt
 #0  0x0000000000400564 in sigusr2_signal_handler ()
 #1  <signal handler called>
@@ -78,7 +78,7 @@ to your program, you'll see a stack trace looking something like this:
 Unsurprisingly, if we print the instruction pointer, we'll find that it's
 pointing into the most recently called signal handler:
 
-```
+```gdb
 (gdb) p $pc
 $1 = (void (*)()) 0x400564 <sigusr2_signal_handler+15>
 ```
@@ -90,7 +90,7 @@ arrive at any point, including while the other is being handled. In an
 allocation-heavy program, we could very easily see a stack looking something
 like this:
 
-```
+```gdb
 #0 suspend_signal_handler ()
 #1 <signal handler called>
 #2 profiler_signal_handler ()
@@ -103,7 +103,7 @@ like this:
 
 Under normal (non-profiling) circumstances, it would look like this:
 
-```
+```gdb
 #0 suspend_signal_handler ()
 #1 <signal handler called>
 #2 AllocSmall ()
@@ -180,29 +180,29 @@ at how SGen allocates a `System.String` in the native allocation functions:
 MonoString *
 mono_gc_alloc_string (MonoVTable *vtable, size_t size, gint32 len)
 {
-	TLAB_ACCESS_INIT;
+    TLAB_ACCESS_INIT;
 
-	ENTER_CRITICAL_REGION;
+    ENTER_CRITICAL_REGION;
 
-	MonoString *str = sgen_try_alloc_obj_nolock (vtable, size);
+    MonoString *str = sgen_try_alloc_obj_nolock (vtable, size);
 
-	if (str)
-		str->length = len;
+    if (str)
+        str->length = len;
 
-	EXIT_CRITICAL_REGION;
+    EXIT_CRITICAL_REGION;
 
-	if (!str) {
-		LOCK_GC;
+    if (!str) {
+        LOCK_GC;
 
-		str = sgen_alloc_obj_nolock (vtable, size);
+        str = sgen_alloc_obj_nolock (vtable, size);
 
-		if (str)
-			str->length = len;
+        if (str)
+            str->length = len;
 
-		UNLOCK_GC;
-	}
+        UNLOCK_GC;
+    }
 
-	return str;
+    return str;
 }
 ```
 
@@ -233,35 +233,35 @@ so:
 static MonoMethod *
 create_allocator (int atype, ManagedAllocatorVariant variant)
 {
-	// ... snip ...
+    // ... snip ...
 
-	MonoMethodBuilder *mb = mono_mb_new (mono_defaults.object_class, name, MONO_WRAPPER_ALLOC);
-	int thread_var;
+    MonoMethodBuilder *mb = mono_mb_new (mono_defaults.object_class, name, MONO_WRAPPER_ALLOC);
+    int thread_var;
 
-	// ... snip ...
+    // ... snip ...
 
-	EMIT_TLS_ACCESS_VAR (mb, thread_var);
+    EMIT_TLS_ACCESS_VAR (mb, thread_var);
 
-	EMIT_TLS_ACCESS_IN_CRITICAL_REGION_ADDR (mb, thread_var);
-	mono_mb_emit_byte (mb, CEE_LDC_I4_1);
-	mono_mb_emit_byte (mb, MONO_CUSTOM_PREFIX);
-	mono_mb_emit_byte (mb, CEE_MONO_ATOMIC_STORE_I4);
-	mono_mb_emit_i4 (mb, MONO_MEMORY_BARRIER_NONE);
+    EMIT_TLS_ACCESS_IN_CRITICAL_REGION_ADDR (mb, thread_var);
+    mono_mb_emit_byte (mb, CEE_LDC_I4_1);
+    mono_mb_emit_byte (mb, MONO_CUSTOM_PREFIX);
+    mono_mb_emit_byte (mb, CEE_MONO_ATOMIC_STORE_I4);
+    mono_mb_emit_i4 (mb, MONO_MEMORY_BARRIER_NONE);
 
-	// ... snip: allocation logic ...
+    // ... snip: allocation logic ...
 
-	EMIT_TLS_ACCESS_IN_CRITICAL_REGION_ADDR (mb, thread_var);
-	mono_mb_emit_byte (mb, CEE_LDC_I4_0);
-	mono_mb_emit_byte (mb, MONO_CUSTOM_PREFIX);
-	mono_mb_emit_byte (mb, CEE_MONO_ATOMIC_STORE_I4);
-	mono_mb_emit_i4 (mb, MONO_MEMORY_BARRIER_REL);
+    EMIT_TLS_ACCESS_IN_CRITICAL_REGION_ADDR (mb, thread_var);
+    mono_mb_emit_byte (mb, CEE_LDC_I4_0);
+    mono_mb_emit_byte (mb, MONO_CUSTOM_PREFIX);
+    mono_mb_emit_byte (mb, CEE_MONO_ATOMIC_STORE_I4);
+    mono_mb_emit_i4 (mb, MONO_MEMORY_BARRIER_REL);
 
-	// ... snip ...
+    // ... snip ...
 
-	MonoMethod *m = mono_mb_create (mb, csig, 8, info);
-	mono_mb_free (mb);
+    MonoMethod *m = mono_mb_create (mb, csig, 8, info);
+    mono_mb_free (mb);
 
-	return m;
+    return m;
 }
 ```
 
@@ -278,19 +278,19 @@ I ran this small program before and after the changes:
 using System;
 
 class Program {
-	public static object o;
+    public static object o;
 
-	static void Main ()
-	{
-		for (var i = 0; i < 100000000; i++)
-			o = new object ();
-	}
+    static void Main ()
+
+        for (var i = 0; i < 100000000; i++)
+            o = new object ();
+    }
 }
 ```
 
 Before:
 
-```
+```bash
 real    0m0.625s
 user    0m0.652s
 sys     0m0.032s
@@ -298,7 +298,7 @@ sys     0m0.032s
 
 After:
 
-```
+```bash
 real    0m0.883s
 user    0m0.948s
 sys     0m0.012s
@@ -314,7 +314,7 @@ point in being fast if Mono is crashy as a result. To put things in
 perspective, this program is still way slower without managed allocators
 (`MONO_GC_DEBUG=no-managed-allocator`):
 
-```
+```bash
 real    0m7.678s
 user    0m8.529s
 sys     0m0.024s
