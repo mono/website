@@ -130,6 +130,12 @@ To start executing code, you must invoke a method in the assembly, or if you hav
 retval = mono_jit_exec (domain, assembly, argc - 1, argv + 1);
 ```
 
+And execute c program like:
+``` bash
+./c_program file.exe
+```
+> `mono_jit_exec` expects the assembly file name in argv[0], so we adjust c argc and argv to respect the requirement.
+
 Make sure you always provide a Main() method and execute it with `mono_jit_exec()` at startup: this sets up some additional information in the application domain, like the main assembly and the base loading path. You will be able to execute other methods even after Main() returns.
 
 If you want to invoke a different method, look at the [Invoking Methods in the CIL universe](#invoking-methods-in-the-cil-universe) section.
