@@ -72,10 +72,11 @@ support for the larger API surface, or we make the API pluggable
 (likely with a tasteful use of the `partial` modifier).
 
 One open issue is that Mono has historically used a single set of
-libraries that work across Linux, MacOS, Unix and Windows and they
-dynamically detect how to behave based on the platform.  This is
-useful on scenarios where you want to bootstrap work in one platform
-by using another one, as the libraries are identical.
+framework libraries (like mscorlib.dll, System.dll etc.) that work
+across Linux, MacOS, Unix and Windows and they dynamically detect
+how to behave based on the platform.  This is useful on scenarios
+where you want to bootstrap work in one platform by using another
+one, as the framework libraries are identical.
 
 CoreFX takes a different approach, the libraries are tied to a
 particular platform flavor.
