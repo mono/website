@@ -28,6 +28,8 @@ There are four alternatives to solve this problem:
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
 
+Additionally, starting with Mono 4.8 if you are using BoringSSL as your SSL stack, you will need to convert the existing certificates into a format suitable to be consumed by BTLS, to do this, use the `btls-cert-sync` tool.
+
 ### I imported the root certificate but it still doesn't work
 
 [HTTPS](http://www.ietf.org/rfc/rfc2818.txt), like many protocols using [SSL](http://wp.netscape.com/eng/ssl3/)/[TLS](http://www.ietf.org/rfc/rfc2246.txt), doesn't requires the server to send its root certificate when negotiating the handshake. In this case it won't be possible to use `certmgr --ssl` to download automatically the root certificate into Mono's certificate stores.
