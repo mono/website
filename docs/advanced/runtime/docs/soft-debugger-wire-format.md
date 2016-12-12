@@ -241,7 +241,7 @@ typedef enum {
  
 typedef enum {
     FRAME_FLAG_DEBUGGER_INVOKE = 1,
-    
+
     // Use to allow the debugger to display managed-to-native transitions in stack frames.
     FRAME_FLAG_NATIVE_TRANSITION = 2
 } StackFrameFlags;
@@ -249,13 +249,13 @@ typedef enum {
 typedef enum {
     INVOKE_FLAG_DISABLE_BREAKPOINTS = 1,
     INVOKE_FLAG_SINGLE_THREADED = 2,
-    
+
     // Allow for returning the changed value types after an invocation
     INVOKE_FLAG_RETURN_OUT_THIS = 4,
-    
+
     // Allows the return of modified value types after invocation
     INVOKE_FLAG_RETURN_OUT_ARGS = 8,
-    
+
     // Performs a virtual method invocation
     INVOKE_FLAG_VIRTUAL = 16
 } InvokeFlags;
@@ -287,6 +287,7 @@ In all cases, if you ask for a command that doesn't exist, a reply will be sent 
 |INVOKE_METHODS|13|Batch invocation of methods|Ask for an ObjectID (id) mapping to a System.Threading.Thread instance, a flags value (int) to pass to the invoke request, the number of methods to invoke (int), and for each method the the MethodID (id) for each method to invoke, a variant value to be used as *this* (VALUE_TYPE_ID_NULL in case of a valuetype) and a list of variant value representing the parameters of the method.|INVALID_OBJECT, NOT_SUSPENDED, INVALID_METHODID, INVALID_ARGUMENT|
 |VM_START_BUFFERING|14|Initiates the buffering of reply packets to improve latency.   Must be paired with a VM_STOP_BUFFERING command|None|None|
 |VM_STOP_BUFFERING|15|Ends the block of buffered commands, must come after a call to VM_START_BUFFERING|None|None|
+
 The main function handling these commands is `vm_commands` and is situated at `debugger-agent.c:5671`
 
 ### Events commands
@@ -384,6 +385,7 @@ Each command requires at least one MethodID (of type id) parameter before any ad
 |RESOLVE_TOKEN|8|Returns a variant value corresponding to the provided token|Ask for a token value (int)|INVALID_METHODID|
 |GET_CATTRS|9|Returns the custom attributes for the methods|Method ID, attribute-type ID|INVALID_METHODID,LOADER_ERROR|
 |MAKE_GENERIC_METHOD|10|Makes a generic version of the method|Method ID, number of type arguments (int), TypeID for each type argument (int)|INVALID_ARGUMENT, INVALID_METHODID|
+
 The main functions handling these commands are `method_commands` and `method_commands_internal` and are situated at `debugger-agent.c:6968` and `debugger-agent.c:6968` respectively.
 
 ### Type commands
