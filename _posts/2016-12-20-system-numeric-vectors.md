@@ -10,7 +10,7 @@ While Mono has had support for SIMD instructions in the form of the
 this API was limited to run on x86 platforms.
 
 .NET introduced the
-[https://msdn.microsoft.com/en-us/library/dn858218(v=vs.111).aspx](System.Numeric.Vectors)
+[System.Numeric.Vectors](https://msdn.microsoft.com/en-us/library/dn858218(v=vs.111).aspx)
 API which sports a more general design that adapts to the SIMD
 registers available on different platforms.
 
