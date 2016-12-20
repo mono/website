@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: System.Numeric.Vectors are now accelerated in Monon
+title: System.Numeric.Vectors are now accelerated in Mono
 author: Miguel de Icaza
 tags: [runtime]
 ---
@@ -12,7 +12,7 @@ this API was limited to run on x86 platforms.
 .NET introduced the
 [https://msdn.microsoft.com/en-us/library/dn858218(v=vs.111).aspx](System.Numeric.Vectors)
 API which sports a more general design that adapts to the SIMD
-registers available on different platforms.   
+registers available on different platforms.
 
 The `master` branch of Mono now treats the various Vector operations
 as runtime intrinsics, so they are hardware accelerated.  They are
