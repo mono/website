@@ -51,7 +51,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
         <a class="panel" href="#compiling-mono"><h2>Compiling Mono</h2></a>
         <div id="compiling-mono" class="content panel ">
             <ul class="disc">
-                <li><a href="/docs/compiling-mono/">Overview</a>, with instructions for compiling on OS X, Linux and Windows</li>
+                <li><a href="/docs/compiling-mono/">Overview</a>, with instructions for compiling on <a href="/docs/compiling-mono/mac/">Mac OS X</a>, <a href="/docs/compiling-mono/linux/">Linux</a> and <a href="/docs/compiling-mono/windows/">Windows</a></li>
                 <li><a href="/docs/compiling-mono/compiling-from-git/">Compiling from Git</a> and <a href="/docs/compiling-mono/compiling-from-tarball/">Compiling from Tarball</a></li>
                 <li><a href="/docs/compiling-mono/advanced-mono-compile-options/">Advanced compile options</a></li>
                 <li><a href="/docs/compiling-mono/unsupported-advanced-compile-options/">Unsupported advanced compile options</a></li>
