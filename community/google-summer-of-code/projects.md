@@ -19,6 +19,7 @@ You can use the following links to jump to sections that you're interested in:
 **[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
+* [MonoDevelop code complexity metrics](#monodevelop-code-complexity-metrics)
 * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
 * [Improve Auto-Documentation System](#improve-auto-documentation-system)
 * [Visual Basic with Roslyn in MD](#visual-basic-with-roslyn-in-md)
@@ -48,12 +49,17 @@ Improve the core Mono runtime and JIT
 **[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
 Work on blending the worlds of open source .NET and Mono projects together
 
+* [Import ThreadPool from CoreRT](#import-threadpool-from-corert)
+* [Import System.IO.FileStream from CoreFX](#import-systemiofilestream-from-corefx)
+* [Import Process from CoreFX](#import-process-from-corefx)
 * [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
 
-**[GTK# and Bindings](#gtk-and-bindings)**<br/>
-GTK# Core, Bindings and Applications
+**[Platforms and Bindings](#platforms-and-bindings)**<br/>
+Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xamarin.iOS, Xamarin.Mac and UrhoSharp
 
 * [CppSharp / Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
+* [Support building Xamarin.Android on Windows](#support-building-xamarinandroid-on-windows)
+* [Port Xamarin.Android unit tests to xUnit](#port-xamarinandroid-unit-tests-to-xunit)
 
 
 **[Other Ideas](#other-ideas)**<br/>
@@ -65,6 +71,22 @@ How to get in touch with us and ask questions
 
 ## MonoDevelop / Xamarin Studio IDE
 
+
+### MonoDevelop code complexity metrics
+
+**Complexity:** Medium
+
+Code complexity metrics are a tool for helping to make your code easier to understand.
+
+This project will use a code metrics library called [ArchiMetrics](https://github.com/jjrdk/ArchiMetrics). It's based on Roslyn, the same C# parsing/analysis/compilation library that we already use inside MonoDevelop, so should be straightforward to integrate.
+
+Your proposal should describe how you plan to integrate the code metrics inside the IDE. For example, you may use tooltips, pads, [markers in the editor](http://netcodemetrics.codeplex.com), CodeLens, or any other means of displaying the metrics in a way that is informative and useful. It is strongly suggested that you investigate approaches that other IDEs such as Visual Studio, Eclipse and IntelliJ have taken.
+
+**Deliverables**: A code metrics addin for MonoDevelop that integrates multiple metrics in a useful way.
+
+
+
+**Mentors:** Mike Krüger
 
 ### Unit tests code coverage visualised inside MonoDevelop editor
 
@@ -225,18 +247,21 @@ We need to allocate blocks in well determined contiguous regions that we can kee
 
 One way we're improving how we test mono is by having a build mode with a lot of extra checks done.
 
-This project would extend that work by doing the following:
+This project would extend it with some number of the following improvements, to be specified in your proposal:
 
-- Integrate the locks checker into that model
+- Integrate the existing offline lock checker tool into checked builds
+- Extend the memory management audit points to more places
 - Continue the work of verifying memory stores
+- Optimize the mm checker
 - Add fault injection mode [1]
 - Add do-a-lot mode [2]
+- Implement other checked modes (TBD)
 
 [1] It's very hard to produce test cases for a lot of failure conditions, so injecting faults instead is a much easier way to test those paths.
 
-[2] Some important, but rarely done, runtime mechanism are not well tested since they naturally happen very rarely. The idea is to identify a few and have a checked-build mode that triggers then *A LOT*.
+[2] Some important, but rarely done, runtime mechanisms are not well tested since they naturally happen very rarely. The idea is to identify a few and have a checked-build mode that triggers then *A LOT*.
 
-**Deliverables**: Add the listed checks into the dynamic checking mode.
+**Deliverables**: Implement the dynamic checking mode improvements listed in your proposal.
 
 **Mentors:** Jonathan Purdy, Andi Mcclure
 
@@ -306,7 +331,7 @@ There are a few JIT optimizations that we could profile from:
 
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
-**Mentors:** Rodrigo Kumpera
+**Mentors:** Rodrigo Kumpera, Bernhard Urban
 
 ### Extend the profiler
 
@@ -363,6 +388,48 @@ Microsoft open sourced large chunks of code the past couple of years:
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
 
 
+### Import ThreadPool from CoreRT
+
+**Complexity:** Medium
+
+`System.Threading.ThreadPool` is the main class that allow users to launch background tasks, and it's one of the component that the TPL is based on. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
+
+The goal is to replace our BCL implementation of `System.Threading.ThreadPool` (https://github.com/mono/mono/blob/master/mcs/class/referencesource/mscorlib/system/threading/threadpool.cs), with the CoreRT one (https://github.com/dotnet/corert/blob/master/src/System.Private.CoreLib/src/System/Threading/ThreadPool.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+
+All changes made to adapt `System.Threading.ThreadPool` to Mono would then be upstreamed to the .NET foundation CoreRT repo (https://github.com/dotnet/corert)
+
+**Deliverables**: Integrate `ThreadPool` from CoreRT into Mono and upstream any necessary changes.
+
+**Mentors:** Ludovic Henry
+
+### Import System.IO.FileStream from CoreFX
+
+**Complexity:** Medium
+
+`System.IO.FileStream` is the main class that allow users to read and write to files, pipes and consoles. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
+
+The goal is to replace our BCL implementation of `System.IO.FileStream` (https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the CoreFX one (https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+
+All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
+
+**Deliverables**: Integrate `FileStream` from CoreFX into Mono and upstream any necessary changes.
+
+**Mentors:** Ludovic Henry
+
+### Import Process from CoreFX
+
+**Complexity:** Medium
+
+`System.Diagnostics.Process` is the main class that allow users to launch and access other processes. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
+
+The goal is to replace our BCL implementation of `System.Diagnostics.Process` (https://github.com/mono/mono/blob/master/mcs/class/System/System.Diagnostics/Process.cs), with the CoreFX one (https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Process/src/System/Diagnostics/Process.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+
+All changes made to adapt `System.Diagnostics.Process` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
+
+**Deliverables**: Integrate `Process` from CoreFX into Mono and upstream any necessary changes.
+
+**Mentors:** Ludovic Henry
+
 ### Import reference source System.Web* assemblies
 
 **Complexity:** Medium
@@ -373,7 +440,7 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 
 **Mentors:** Marek Safar
 
-## GTK# and Bindings
+## Platforms and Bindings
 
 
 ### CppSharp / Continue Mono/.NET bindings for Qt
@@ -410,6 +477,34 @@ Feel free to get in touch with @tritao if you’re interested in this and would 
 **Deliverables:** Improve the Qt bindings generator to the point that they can be used for a non-trivial Qt sample written in idiomatic C#, with and without QML.
 
 **Mentors:** João Matos
+
+### Support building Xamarin.Android on Windows
+
+**Complexity:** Hard
+
+Xamarin.Android uses MSBuild to "drive" the building of the product.
+
+This does *not* mean that MSBuild is used for *everything*; many of the projects use the MSBuild `<Exec/>` task to invoke `configure`, `make`, `cmake`, and various other utilities to build various dependencies such as mono.
+
+The GSOC project would be to improve the xamarin-android repo so that it can be built on Windows.
+
+**Simplifications**: This *need not* include building the mono runtimes. Many -- but not all! -- dependencies are cached in a "bundle", to speed up build times. This bundle contains the mono runtimes for all supported architectures. The initial version of Windows build support should rely on this bundle, which (I assume) will drastically reduce the work required.
+
+Which isn't to say that this will be *easy*. I don't expect this to be easy.
+
+**Mentors:** Jonathan Pryor
+
+### Port Xamarin.Android unit tests to xUnit
+
+**Complexity:** Medium
+
+.NET CoreFX/etc. use xUnit for unit tests. It would be useful if all our platforms could standardize on a single unit testing stack, presumably xUnit.
+
+This task would require checking to see if xUnit is missing any features required by Xamarin.Android (e.g. `instrumentation`-based execution), migrate the existing unit tests to use xUnit, support on-device unit test execution and "downloading" of unit test results for display, and documentation of how it all works.
+
+**Deliverables**: Port the Xamarin.Android unit tests to xUnit.
+
+**Mentors:** Jonathan Pryor
 
 ## Other Ideas
 
