@@ -12,7 +12,7 @@ install:
 script:
  - jekyll build
  - mdl -s markdownlint-config.rb . || true  # markdownlint errors shouldn't fail the build for now
- - htmlproofer ./_site --disable-external --allow-hash-href --check-html
+ - htmlproofer ./_site --disable-external --allow-hash-href --check-html --file-ignore "api/index.html"
 
 branches:
   only:
