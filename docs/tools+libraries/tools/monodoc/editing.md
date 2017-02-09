@@ -44,9 +44,9 @@ Use this to link to a keyword in the C# language, for example to link to \`true'
 
     <example> ... </example>
 
-Use example to insert an example. The example can contain explanatory text and code.
+Use example to insert an example. The example can contain explanatory text and code. The code content should be wrapped in a CDATA element so that it is not parsed by the XML processor:
 
-    <code lang="C#">.. </code>
+    <code lang="C#"><![CDATA[ .. ]]></code>
 
 Use this to provide a sample C# program, typically used within the \<example\> tags.
 
@@ -81,6 +81,10 @@ To embed images you use the \<img\> tag.There are two different ways to use that
 -   If you want to bundle your image inside the documentation bundle (i.e. the documentation zipball), simply drop the files in an `_images` folder inside your source documentation tree (that is where the `ns-*.xml` files are). You can then refer to these pictures in the XML by its filename in a `href` attribute (notice how this is not the same attribute as before).
 
 For example, if you want to link the following image `http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png`, use `<img src="http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png" />`. If you want to link to the `monkey.png` you dropped in your `_images` folder, simply write tt\>\<img href="monkey.png" /\>\</tt\>
+
+Note that bundled images must have unique names at the scope of the documentation bundle, so it may be wise to use a naming scheme that avoids collision, e.g., prepending the namespace to the filename.   
+
+
 
 Monodoc browser editing
 =======================
