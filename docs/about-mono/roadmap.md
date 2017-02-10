@@ -61,10 +61,6 @@ The following do not map to operating systems other than Windows, and we are unl
 
 -   System.Management
 
-A third party implementation of PowerShell exists:
-
-- [PASH](https://github.com/Pash-Project/Pash)
-
 Comments
 --------
 
