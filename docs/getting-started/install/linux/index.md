@@ -10,7 +10,7 @@ redirect_from:
 Regardless of your distribution, you will need the Mono Project GPG signing key, which package managers require.
 
 Ubuntu and derivatives
--------------------------------
+----------------------
 
 Add the Mono Project GPG signing key and the package repository to your system (if you don't use sudo, be sure to switch to root):
 
@@ -41,7 +41,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat mai
 ```
 
 Debian and derivatives
--------------------------------
+----------------------
 
 Add the Mono Project GPG signing key and the package repository to your system (if you don't use sudo, be sure to switch to root):
 
