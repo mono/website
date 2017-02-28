@@ -4,7 +4,7 @@ title: "GtkSharp: Widget Overview"
 
 
 Overview of the Widgets used in GTK#
-====================================
+------------------------------------
 
 -   [Widget Hierarchy](/docs/gui/gtksharp/widgets/widget-hierarchy/)
 -   [The Button Widget](/docs/gui/gtksharp/widgets/buttons/)
@@ -22,7 +22,7 @@ Overview of the Widgets used in GTK#
 -   [Widget Colours](/docs/gui/gtksharp/widgets/widget-colours/)
 
 Widgets without Windows
-=======================
+-----------------------
 
 The following widgets do not have an associated window. If you want to capture events, you'll have to use the EventBox. For more information, see the section on the EventBox widget.
 
