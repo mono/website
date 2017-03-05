@@ -20,15 +20,13 @@ mono tlstest.exe https://www.anywhere.com
 
 There are four alternatives to solve this problem:
 
--   Starting with Mono 3.12.0 a new tool called `cert-sync` is [included](/docs/about-mono/releases/3.12.0/#cert-sync) which syncs Mono's certificate store with the system certificate store. It should run automatically when you install the official Mono packages. Make sure the `ca-certificates-mono` package is installed.
+-   (Recommended) Starting with Mono 3.12.0 a new tool called `cert-sync` is [included](/docs/about-mono/releases/3.12.0/#cert-sync) which syncs Mono's certificate store with the system certificate store. It should run automatically when you install the official Mono packages. *Make sure the `ca-certificates-mono` package is installed.*
 
 -   Implement a `ICertificatePolicy` class. By doing this you can override the normal results of the certificate validation (e.g. accepting an untrusted certificate). However you are now responsible of applying your own trust rules for your application. Further suggestions and source code are available in the [UsingTrustedRootsRespectfully](/archived/usingtrustedrootsrespectfully) article.
 
 -   Use the `certmgr.exe` tool (included in Mono) to add the root certificates into the Mono **Trust** store. Every SSL certificate signed from this root will then be accepted (i.e. no exception will be thrown) for SSL usage (for all Mono applications running for the user or the computer - depending on the certificate store where the certificate was installed).
 
 -   Use the `mozroots.exe` tool (included in Mono 1.1.10 and later) to download and install **all** Mozilla's root certificates (i.e. the ones used in FireFox and other Mozilla's softwares). It's easier than finding a specific root but it's also less granular to make a decision about which one(s) you install or not.
-
-Additionally, starting with Mono 4.8 if you are using BoringSSL as your SSL stack, you will need to convert the existing certificates into a format suitable to be consumed by BTLS, to do this, use the `btls-cert-sync` tool.
 
 ### I imported the root certificate but it still doesn't work
 
