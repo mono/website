@@ -42,6 +42,7 @@ Improve the core Mono runtime and JIT
 * [Improve sgen debugging](#improve-sgen-debugging)
 * [Make sgen's binary protocol a general purpose runtime tool](#make-sgens-binary-protocol-a-general-purpose-runtime-tool)
 * [LLVM Sanitizers](#llvm-sanitizers)
+* [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
 * [JIT optimizations](#jit-optimizations)
 * [Extend the profiler](#extend-the-profiler)
 * [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
@@ -57,6 +58,7 @@ Work on blending the worlds of open source .NET and Mono projects together
 **[Platforms and Bindings](#platforms-and-bindings)**<br/>
 Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xamarin.iOS, Xamarin.Mac and UrhoSharp
 
+* [CppSharp / Maintenance & Improvement tasks](#cppsharp--maintenance--improvement-tasks)
 * [CppSharp / Continue Mono/.NET bindings for Qt](#cppsharp--continue-mononet-bindings-for-qt)
 * [Support building Xamarin.Android on Windows](#support-building-xamarinandroid-on-windows)
 * [Port Xamarin.Android unit tests to xUnit](#port-xamarinandroid-unit-tests-to-xunit)
@@ -319,6 +321,24 @@ An additional goal would be to figure out how to have tsan reports include C# de
 
 **Mentors:** Alexander Kyte, Rodrigo Kumpera
 
+### Implement a LLDB plugin that can understands the mono runtime
+
+**Complexity:** Hard
+
+LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
+
+- object layout, introspection and heap walking
+- unwinding and symbolifying managed methods
+- lookup line information for managed methods
+- pretty print all runtime structs
+- threadpool introspection?
+
+Note that some work on this has been done already and can be found [here](https://github.com/mono/lldb) and [here](https://github.com/mono/lldb-binaries).
+
+**Deliverables:** One or more of the above bullet points, as listed in your proposals.
+
+**Mentors:** João Matos, Zoltan Varga
+
 ### JIT optimizations
 
 **Complexity:** Hard
@@ -443,6 +463,31 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 ## Platforms and Bindings
 
 
+### CppSharp / Maintenance & Improvement tasks
+
+**Complexity:** Medium
+
+CppSharp has been getting very popular and users have found numerous bugs and missing features. In addition, many people prefer directly downloading binaries which CppSharp only has available to certain platforms. 
+
+This task is going to present the student with a large list of these three types of relatively short tasks. The goal is to complete as many of them as possible, along with unit tests where applicable.
+
+The tasks are listed at [https://github.com/mono/CppSharp/issues](https://github.com/mono/CppSharp/issues). The list below contains a few examples of each type of task:
+
+* features – switch from explicit to sequential layouts which would allow other features, such as universal C bindings, to be implemented; add support for STD containers; handle parameters of type array;
+* bugs – correctly patch virtual tables of 64-bit Itanium libraries; fix the support for std::string; handle partially defined structs in C;
+* deployment – add 32-bit NuGet for Windows; publish binaries for Linux and macOS by getting them directly from our Travis CI; add 64-bit Windows and macOS build to that same CI.
+
+Related code:
+[https://github.com/mono/CppSharp](https://github.com/mono/CppSharp)
+
+Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
+
+**Deliverables**: C++ and C# code which resolves as many tasks as possible, along with a unit test for each task unless it belongs to the deployment type.
+
+
+
+**Mentors:** João Matos
+
 ### CppSharp / Continue Mono/.NET bindings for Qt
 
 **Complexity:** Hard
@@ -541,4 +586,3 @@ A mailing list dedicated to discussions about developing Mono itself, such as de
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
-
