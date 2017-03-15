@@ -1,5 +1,5 @@
 ---
-title: Application Guidance
+title: Summer of Code Application Guidance
 redirect_from:
   - /GSoC_Rules/
   - /community/google-summer-of-code/rules/
