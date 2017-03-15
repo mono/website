@@ -9,6 +9,6 @@ redirect_from:
 
 Please note that to apply for GSoC, you will need to go through the standard Google application process. You do not apply directly to the Mono Project. Any questions or comments about this program can be sent to soc@xamarin.com.
 
-* [Rules](/community/google-summer-of-code/rules/)
+* [Application Guidance](/community/google-summer-of-code/guidance/)
 * [Project Ideas](/community/google-summer-of-code/projects/)
 * [Previous Years](/community/google-summer-of-code/previous-years/)
