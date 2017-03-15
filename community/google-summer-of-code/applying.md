@@ -6,19 +6,19 @@ redirect_from:
 ---
 
 Introduction
-============
+------------
 
 First of all, please engage with the mentors and other community members on [our mailing lists and IRC](#contacting-the-mono-team)! Participating in a community is an essential part of open-source development. We understand that it can be intimidating if you are not experienced, but we've all been there and will do our best to welcome you and show you the ropes.
 
 Project Ideas
-=============
+-------------
 
 We have an [project ideas page](community/google-summer-of-code/projects) that lists project ideas suggested by our mentors. You may submit any project proposal at all that is related to open-source C#/F#/.NET development, however we can only accept proposals for which we have a mentor available with relevant expertise. Ideas listed on our ideas page already have mentors who are able and willing to mentor them.
 
 Do not cut-and-paste the text from our [project ideas page](/community/google-summer-of-code/projects/) in your application. We know full well what the text there is. Instead, explain to us your take on the problem, like "I could implement this using this and that", "I would need to research these areas", "I might need help sorting this out", etc.
 
 Applying
-========
+--------
 
 Remember that many people will apply to work on the Summer of Code and we cannot accept them all. Keep in mind that those of us evaluating your application do not know you, we do not know what kind of experience you have, we do not know what you have done in the past, and we have to pick the best people suited for a particular task.
 
@@ -37,7 +37,7 @@ Remember that multiple people may apply for the same project, and we cannot acce
 Make sure you get your application in by the deadline, which is shown on the [Summer of Code website](https://summerofcode.withgoogle.com/). Don't leave it till the last minute!
 
 Ground Rules
-============
+------------
 
 **This must be your primary project for the duration of the Summer of Code coding period**, and you should expect to put in put in the amount of work that you would for a full-time job. You should not have another internship or job during this time. The only default exception to this rule is examinations and other academic requirements.
 
