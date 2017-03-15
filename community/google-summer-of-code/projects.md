@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Summer of Code Project Ideas
 redirect_from:
   - /StudentProjects/
   - /GSoC/
