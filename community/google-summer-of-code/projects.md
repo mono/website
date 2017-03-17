@@ -16,7 +16,8 @@ so you can submit your own ideas as well as apply for one from this list - but o
 
 You can use the following links to jump to sections that you're interested in:
 
-**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**<br/>
+**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**
+
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
 * [MonoDevelop code complexity metrics](#monodevelop-code-complexity-metrics)
@@ -30,12 +31,14 @@ Help developers build applications by improving the cross-platform MonoDevelop /
 * [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
 * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
 
-**[Compilers and Tools](#compilers-and-tools)**<br/>
+**[Compilers and Tools](#compilers-and-tools)**
+
 Work on Mono's tools and compilers
 
 * [A ccache-like tool for managed languages](#a-ccache-like-tool-for-managed-languages)
 
-**[Mono Runtime](#mono-runtime)**<br/>
+**[Mono Runtime](#mono-runtime)**
+
 Improve the core Mono runtime and JIT
 
 * [Sgen improvements](#sgen-improvements)
@@ -49,7 +52,8 @@ Improve the core Mono runtime and JIT
 * [Extend the profiler](#extend-the-profiler)
 * [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
 
-**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**<br/>
+**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**
+
 Work on blending the worlds of open source .NET and Mono projects together
 
 * [Import ThreadPool from CoreRT](#import-threadpool-from-corert)
@@ -57,7 +61,8 @@ Work on blending the worlds of open source .NET and Mono projects together
 * [Import Process from CoreFX](#import-process-from-corefx)
 * [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
 
-**[Platforms and Bindings](#platforms-and-bindings)**<br/>
+**[Platforms and Bindings](#platforms-and-bindings)**
+
 Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xamarin.iOS, Xamarin.Mac and UrhoSharp
 
 * [CppSharp / Maintenance & Improvement tasks](#cppsharp--maintenance--improvement-tasks)
@@ -65,16 +70,15 @@ Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xama
 * [Support building Xamarin.Android on Windows](#support-building-xamarinandroid-on-windows)
 * [Port Xamarin.Android unit tests to xUnit](#port-xamarinandroid-unit-tests-to-xunit)
 
+**[Other Ideas](#other-ideas)**
 
-**[Other Ideas](#other-ideas)**<br/>
 Suggest your own ideas for a project
 
-**[Contacting the Mono Team](#contacting-the-mono-team)**<br/>
+**[Contacting the Mono Team](#contacting-the-mono-team)**
+
 How to get in touch with us and ask questions
 
-
 ## MonoDevelop / Xamarin Studio IDE
-
 
 ### MonoDevelop code complexity metrics
 
@@ -87,8 +91,6 @@ This project will use a code metrics library called [ArchiMetrics](https://githu
 Your proposal should describe how you plan to integrate the code metrics inside the IDE. For example, you may use tooltips, pads, [markers in the editor](http://netcodemetrics.codeplex.com), CodeLens, or any other means of displaying the metrics in a way that is informative and useful. It is strongly suggested that you investigate approaches that other IDEs such as Visual Studio, Eclipse and IntelliJ have taken.
 
 **Deliverables**: A code metrics addin for MonoDevelop that integrates multiple metrics in a useful way.
-
-
 
 **Mentors:** Mike Krüger
 
@@ -110,7 +112,7 @@ This project would involve adding support to the MonoDevelop.UnitTesting AddIn t
 
 The goal of this project is to add Code COntracts support to Mono using the open-source [.NET Code Code Contracts support](https://github.com/Microsoft/CodeContracts).
 
-For more information, see: 
+For more information, see:
 
 * https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx
 * http://research.microsoft.com/en-us/projects/contracts/
@@ -188,15 +190,15 @@ The [MonoDevelop C/C++ addin](https://github.com/mhutch/cbinding) was substantia
 
 There's far more than could be done in a single Summer of Code, so feel free to pick and choose from the list of tasks when writing your proposal:
 
-- detect missing dependencies (libclang, CMake etc) and prompting the user to install them
-- improve the code completion and add a test suite
-- adding various refactorings
-- integrating the (Clang Source Analyzer)[https://clang-analyzer.llvm.org]
-- improving the GDB debugger integration
-- integrating the LLDB debugger
-- making the addin usable on Windows with msvc, clang and/or mingw32 gcc
-- improving the file and project templates
-- anything else you can think of!
+* detect missing dependencies (libclang, CMake etc) and prompting the user to install them
+* improve the code completion and add a test suite
+* adding various refactorings
+* integrating the [Clang Source Analyzer](https://clang-analyzer.llvm.org)
+* improving the GDB debugger integration
+* integrating the LLDB debugger
+* making the addin usable on Windows with msvc, clang and/or mingw32 gcc
+* improving the file and project templates
+* anything else you can think of!
 
 Your proposal can include any of that you find interesting and feel can be realistically be completed in addition to the core tasks.
 
@@ -224,7 +226,7 @@ Support for lambdas in the MonoDevelop debugger's expression evaluator, used in 
 
 Roslyn has [support for compiling expressions](https://github.com/dotnet/roslyn/tree/master/src/ExpressionEvaluator) that could be used as a basis for this.
 
-**Deliverables**: Support for lambdas in the Immediate pad. 
+**Deliverables**: Support for lambdas in the Immediate pad.
 
 **Mentors:** David Karlas, Kirill Osenkov
 
@@ -252,7 +254,6 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 
 ## Compilers and Tools
 
-
 ### A ccache-like tool for managed languages
 
 **Complexity:** Medium
@@ -272,23 +273,21 @@ ccache (for reference): https://github.com/ccache/ccache
 
 ## Mono Runtime
 
-
 ### Sgen improvements
 
 **Complexity:** Medium
 
 List of SGen projects to consider:
 
-- Store-replacing write barrier
-- Crash-safe process/heap dump & analysis tool
-- Improve our canaries (better handle nursery & AOT)
-- Improve heap checker to handle roots
-- Reduce the number of roots the runtime register (types and threads)
+* Store-replacing write barrier
+* Crash-safe process/heap dump & analysis tool
+* Improve our canaries (better handle nursery & AOT)
+* Improve heap checker to handle roots
+* Reduce the number of roots the runtime register (types and threads)
 
 Your proposal proposal may include one of these or a combination of several of them.
 
 **Deliverables**: the sgen improvements described in your proposal, passing all tests.
-
 
 **Mentors:** Jonathan Purdy, Vlad Brezae
 
@@ -312,13 +311,13 @@ One way we're improving how we test mono is by having a build mode with a lot of
 
 This project would extend it with some number of the following improvements, to be specified in your proposal:
 
-- Integrate the existing offline lock checker tool into checked builds
-- Extend the memory management audit points to more places
-- Continue the work of verifying memory stores
-- Optimize the mm checker
-- Add fault injection mode [1]
-- Add do-a-lot mode [2]
-- Implement other checked modes (TBD)
+* Integrate the existing offline lock checker tool into checked builds
+* Extend the memory management audit points to more places
+* Continue the work of verifying memory stores
+* Optimize the mm checker
+* Add fault injection mode [1]
+* Add do-a-lot mode [2]
+* Implement other checked modes (TBD)
 
 [1] It's very hard to produce test cases for a lot of failure conditions, so injecting faults instead is a much easier way to test those paths.
 
@@ -336,7 +335,7 @@ In order to debug issues with our garbage collector, we have a set of functions 
 
 We encounter problems with these debugging functions crashing on invalid heap states (we need safe dereferencing of invalid pointers and recovering) or not being fully supported on all configurations.
 
-**Deliverables**: Make debug functions crash safe. Expand support for nursery canaries. 
+**Deliverables**: Make debug functions crash safe. Expand support for nursery canaries.
 
 **Mentors:** Vlad Brezae
 
@@ -352,16 +351,15 @@ This project is to extract it from sgen and make it a general purpose tool for t
 
 In addition, it should add probes for a few runtime facilities:
 
-- threadpool events
-- JIT activity
-- ???
+* threadpool events
+* JIT activity
+* ???
 
 A good use case would be to use it to replace the runtime's dtrace probes.
 
 Additionally, improving the tooling around processing binprot files can be part of this project.
 
 **Deliverables**: Extract the binary protocol from sgen and use it to replace the runtime's dtrace probes.
-
 
 **Mentors:** Vlad Brezae, Jonathan Purdy
 
@@ -388,11 +386,11 @@ An additional goal would be to figure out how to have tsan reports include C# de
 
 LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
 
-- object layout, introspection and heap walking
-- unwinding and symbolifying managed methods
-- lookup line information for managed methods
-- pretty print all runtime structs
-- threadpool introspection?
+* object layout, introspection and heap walking
+* unwinding and symbolifying managed methods
+* lookup line information for managed methods
+* pretty print all runtime structs
+* threadpool introspection?
 
 Note that some work on this has been done already and can be found [here](https://github.com/mono/lldb) and [here](https://github.com/mono/lldb-binaries).
 
@@ -406,9 +404,8 @@ Note that some work on this has been done already and can be found [here](https:
 
 There are a few JIT optimizations that we could profile from:
 
-- type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
-
-- delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
+* type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
+* delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
 
 **Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
 
@@ -422,16 +419,11 @@ The runtime profiler module could use some love.
 
 Here are a few projects that students could tackle:
 
-- Prefix compression of stacks. Most stack traces, specially the big ones, share a lot in common. The idea is to LZ this puppy.
-
-- Add tagging to the profiler and the runtime API (and then at least to objects and gchandles). Tags allow the runtime or an embedder to report interesting objects to the profiler. 
-
-- Add tracepoints to the profiler and instrument a few places in the runtime and BCL.
-
+* Prefix compression of stacks. Most stack traces, specially the big ones, share a lot in common. The idea is to LZ this puppy.
+* Add tagging to the profiler and the runtime API (and then at least to objects and gchandles). Tags allow the runtime or an embedder to report interesting objects to the profiler.
+* Add tracepoints to the profiler and instrument a few places in the runtime and BCL.
 
 **Deliverables**: Implement one the suggested projects, including tests.
-
-
 
 **Mentors:** Rodrigo Kumpera
 
@@ -443,14 +435,13 @@ Clang static analyser support writing custom rules.
 
 Add new rules that understand idioms in the runtime (and maybe extra hints on it) to verify multiple conditions:
 
-- Managed exception cleaningness;
-- Managed allocation OOM handling;
-- Correct lock ordering;
-- GC invariants;
-- AppDomain invariants;
+* Managed exception cleaningness;
+* Managed allocation OOM handling;
+* Correct lock ordering;
+* GC invariants;
+* AppDomain invariants;
 
 Together with the clang work, this project should annotate the runtime to verify those properties as needed.
-
 
 **Deliverables:** One or more of the above bullet points.
 
@@ -460,14 +451,13 @@ Together with the clang work, this project should annotate the runtime to verify
 
 Microsoft open sourced large chunks of code the past couple of years:
 
-- ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-- CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-- CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-- Roslyn: Microsoft's C# and VB compiler as a service
-- CodeContracts: the tools needed to instrument your code
+* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
+* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
+* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
+* Roslyn: Microsoft's C# and VB compiler as a service
+* CodeContracts: the tools needed to instrument your code
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
-
 
 ### Import ThreadPool from CoreRT
 
@@ -523,12 +513,11 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 
 ## Platforms and Bindings
 
-
 ### CppSharp / Maintenance & Improvement tasks
 
 **Complexity:** Medium
 
-CppSharp has been getting very popular and users have found numerous bugs and missing features. In addition, many people prefer directly downloading binaries which CppSharp only has available to certain platforms. 
+CppSharp has been getting very popular and users have found numerous bugs and missing features. In addition, many people prefer directly downloading binaries which CppSharp only has available to certain platforms.
 
 This task is going to present the student with a large list of these three types of relatively short tasks. The goal is to complete as many of them as possible, along with unit tests where applicable.
 
@@ -545,8 +534,6 @@ Feel free to get in touch with @tritao if you’re interested in this and would 
 
 **Deliverables**: C++ and C# code which resolves as many tasks as possible, along with a unit test for each task unless it belongs to the deployment type.
 
-
-
 **Mentors:** João Matos
 
 ### CppSharp / Continue Mono/.NET bindings for Qt
@@ -557,25 +544,16 @@ As part of this task you’ll need to continue the bindings effort for the Qt fr
 
 QtSharp has reached alpha status and it needs the final improvements to make it a complete product. The necessary work can be broken down into five categories:
 
-- Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience.
-Deliverables: The following type maps: QList<>, QVector<> ↔ List<>; QMap<,>, QHash<,> ↔ Dictionary<,>; and QChar<> ↔ char;
-
-- Qt Quick support –  enables writing of Qt Quick applications using C#.
-Deliverables: the ability to include QML files in the application (an integrated in Visual Studio/MonoDevelop editor is not included, for now external editors such as Qt Creator will have to be used) and working interaction between C# and QML (property changes and emitting of signals in QML must call the corresponding C# code);
-
-- Documentation package – online and off-line documentation for QtSharp.
-Deliverables: A compressed directory containing a complete DOxygen documentation package for QtSharp. The documentation itself is generated as XML code comments which DOxygen then takes from the source files and uses a configuration file to generate the package;
-
-- Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X.
-Deliverables: Build scripts to produce and upload Qt# binaries;
-
-- Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203, http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all.
-Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
+* Type maps for basic types – mostly because of the relatively new support for wrapping templates, QtSharp still only has a type map for QString ↔ string. Many other basic type maps are necessary for an opitmal coding experience. Deliverables: The following type maps: QList<>, QVector<> ↔ List<>; QMap<,>, QHash<,> ↔ Dictionary<,>; and QChar<> ↔ char.
+* Qt Quick support –  enables writing of Qt Quick applications using C#. Deliverables: the ability to include QML files in the application (an integrated in Visual Studio/MonoDevelop editor is not included, for now external editors such as Qt Creator will have to be used) and working interaction between C# and QML (property changes and emitting of signals in QML must call the corresponding C# code);
+* Documentation package – online and off-line documentation for QtSharp. Deliverables: A compressed directory containing a complete DOxygen documentation package for QtSharp. The documentation itself is generated as XML code comments which DOxygen then takes from the source files and uses a configuration file to generate the package.
+* Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X. Deliverables: Build scripts to produce and upload Qt# binaries.
+* Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203, http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all. Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
 
 Related code:
 
-https://github.com/mono/CppSharp 
-https://gitlab.com/ddobrev/QtSharp 
+https://github.com/mono/CppSharp
+https://gitlab.com/ddobrev/QtSharp
 https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
