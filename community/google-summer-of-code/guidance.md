@@ -59,7 +59,9 @@ Contacting the Mono Team
 
 If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
 
-The mailing lists are a very important communication channel, students should use them to get more information and feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
+Our Gitter IM channels for [mono](https://gitter.im/mono/mono) and [monodevelop](https://gitter.im/mono/monodevelop) are also a great place to chat to developers and students.
+
+The mailing lists are a very important communication channel, students should use them to get more information and feedback about ideas and proposals. Community engagement is essential for a successful Summer of Code, so get involved!
 
 For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use [soc@xamarin.com](mailto:soc@xamarin.com).
 
