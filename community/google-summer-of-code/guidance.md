@@ -13,7 +13,7 @@ First of all, please engage with the mentors and other community members on [our
 Project Ideas
 -------------
 
-We have an [project ideas page](community/google-summer-of-code/projects) that lists project ideas suggested by our mentors. You may submit any project proposal at all that is related to open-source C#/F#/.NET development, however we can only accept proposals for which we have a mentor available with relevant expertise. Ideas listed on our ideas page already have mentors who are able and willing to mentor them.
+We have an [project ideas page](/community/google-summer-of-code/projects/) that lists project ideas suggested by our mentors. You may submit any project proposal at all that is related to open-source C#/F#/.NET development, however we can only accept proposals for which we have a mentor available with relevant expertise. Ideas listed on our ideas page already have mentors who are able and willing to mentor them.
 
 Do not cut-and-paste the text from our [project ideas page](/community/google-summer-of-code/projects/) in your application. We know full well what the text there is. Instead, explain to us your take on the problem, like "I could implement this using this and that", "I would need to research these areas", "I might need help sorting this out", etc.
 
